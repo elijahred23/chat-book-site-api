@@ -14,7 +14,7 @@ export default function ApiCheck() {
             setApiMessage(message);
         }).catch(error => {
             setSuccess(false);
-            setApiMessage(JSON.stringify(error));
+            setApiMessage(error?.message ?? 'NO ERROR MESSAGE PROVIDED BY API');
         })
     }
 
