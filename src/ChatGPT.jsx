@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { ClipLoader } from 'react-spinners';
 
 function GptPromptComponent() {
     const [messages, setMessages] = useState([]);
     const [prompt, setPrompt] = useState('');
+    const [loading, setLoading] = useState(false);
 
     const handleInputChange = (event) => {
         setPrompt(event.target.value);
@@ -10,6 +12,7 @@ function GptPromptComponent() {
 
     const handleSubmit = async () => {
         try {
+            setLoading(true);
             const response = await fetch(`http://localhost:3000/gpt/prompt?prompt=${prompt}`);
             const data = await response.json();
             const newMessage = { text: prompt, sender: 'user' };
@@ -18,6 +21,8 @@ function GptPromptComponent() {
             setPrompt('');
         } catch (error) {
             console.error('Error fetching data:', error);
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -33,7 +38,10 @@ function GptPromptComponent() {
                 ))}
             </div>
             <input type="text" value={prompt} onChange={handleInputChange} style={{ marginRight: '10px' }} />
-            <button onClick={handleSubmit}>Send</button>
+            <ClipLoader color="blue" loading={loading} />
+            {!loading &&
+                <button onClick={handleSubmit}>Send</button>
+            }
         </div>
     );
 }
