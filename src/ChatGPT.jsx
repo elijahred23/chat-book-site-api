@@ -14,7 +14,7 @@ function GptPromptComponent() {
     };
 
     const scrollToBottom = () => {
-        messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
+        messagesEndRef.current.scrollTop = messagesEndRef.current.scrollHeight;
     }
 
     const handleSubmit = async () => {
