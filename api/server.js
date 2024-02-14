@@ -19,7 +19,7 @@ const messages = [
     "Greetings, world! This is Eli GPT reporting in.",
     "Hey there! Eli GPT here to lend a hand.",
     "Hello everyone! Eli GPT ready to assist you."
-  ];
+];
 
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
@@ -28,11 +28,12 @@ app.use((req, res, next) => {
     next();
 });
 
-  
-  app.get('/', (req, res) => {
+
+app.get('/', (req, res) => {
     const randomIndex = Math.floor(Math.random() * messages.length);
     res.send({ message: messages[randomIndex] });
-  });
+});
+
 app.get('/gpt/prompt', async (req, res) => {
     let prompt = req.query.prompt;
 
