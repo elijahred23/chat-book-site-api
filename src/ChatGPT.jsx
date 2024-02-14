@@ -1,24 +1,34 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { ClipLoader } from 'react-spinners';
+const baseURL = 'http://localhost:3000';
 
 function GptPromptComponent() {
     const [messages, setMessages] = useState([]);
     const [prompt, setPrompt] = useState('');
     const [loading, setLoading] = useState(false);
+    const messagesEndRef = useRef(null);
 
     const handleInputChange = (event) => {
         setPrompt(event.target.value);
     };
 
+    const scrollToBottom = () => {
+        messagesEndRef.current.scrollIntoView({behavior: "smooth"});
+    }
+
     const handleSubmit = async () => {
         try {
+            if(prompt === '' || prompt === null || prompt === undefined) {
+                return;
+            }
             setLoading(true);
-            const response = await fetch(`http://localhost:3000/gpt/prompt?prompt=${prompt}`);
+            const response = await fetch(`${baseURL}/gpt/prompt?prompt=${prompt}`);
             const data = await response.json();
             const newMessage = { text: prompt, sender: 'user' };
             const botMessage = { text: data.gptResponse?.message?.content, sender: 'bot' };
             setMessages([...messages, newMessage, botMessage]);
             setPrompt('');
+            scrollToBottom();
         } catch (error) {
             console.error('Error fetching data:', error);
         } finally {
@@ -28,8 +38,8 @@ function GptPromptComponent() {
 
     return (
         <div>
-            <h1>Chat Interface</h1>
-            <div style={{ maxHeight: '300px', overflowY: 'scroll', border: '1px solid #ccc', padding: '10px', marginBottom: '10px' }}>
+            <h2>Chat GPT</h2>
+            <div ref={messagesEndRef} style={{ maxHeight: '300px', overflowY: 'scroll', border: '1px solid #ccc', padding: '10px', marginBottom: '10px' }}>
                 {messages.map((message, index) => (
                     <div key={index} style={{ marginBottom: '10px', textAlign: message.sender === 'user' ? 'right' : 'left' }}>
                         <span style={{ fontWeight: 'bold' }}>{message.sender === 'user' ? 'You: ' : 'Bot: '}</span>
@@ -37,7 +47,11 @@ function GptPromptComponent() {
                     </div>
                 ))}
             </div>
-            <input type="text" value={prompt} onChange={handleInputChange} style={{ marginRight: '10px' }} />
+            <input onKeyDown={event=>{
+                if(event.key === 'Enter'){
+                    handleSubmit();
+                }
+            }} type="text" value={prompt} onChange={handleInputChange} style={{ marginRight: '10px' }} />
             <ClipLoader color="blue" loading={loading} />
             {!loading &&
                 <button onClick={handleSubmit}>Send</button>
