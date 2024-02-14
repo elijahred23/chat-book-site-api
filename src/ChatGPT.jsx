@@ -1,5 +1,6 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { ClipLoader } from 'react-spinners';
+import ReactMarkdown from 'react-markdown';
 const baseURL = 'http://localhost:3000';
 
 function GptPromptComponent() {
@@ -13,12 +14,12 @@ function GptPromptComponent() {
     };
 
     const scrollToBottom = () => {
-        messagesEndRef.current.scrollIntoView({behavior: "smooth"});
+        messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
     }
 
     const handleSubmit = async () => {
         try {
-            if(prompt === '' || prompt === null || prompt === undefined) {
+            if (prompt === '' || prompt === null || prompt === undefined) {
                 return;
             }
             setLoading(true);
@@ -28,13 +29,16 @@ function GptPromptComponent() {
             const botMessage = { text: data.gptResponse?.message?.content, sender: 'bot' };
             setMessages([...messages, newMessage, botMessage]);
             setPrompt('');
-            scrollToBottom();
         } catch (error) {
             console.error('Error fetching data:', error);
         } finally {
             setLoading(false);
         }
     };
+
+    useEffect(() => {
+        scrollToBottom();
+    }, [messages]);
 
     return (
         <div>
@@ -43,12 +47,12 @@ function GptPromptComponent() {
                 {messages.map((message, index) => (
                     <div key={index} style={{ marginBottom: '10px', textAlign: message.sender === 'user' ? 'right' : 'left' }}>
                         <span style={{ fontWeight: 'bold' }}>{message.sender === 'user' ? 'You: ' : 'Bot: '}</span>
-                        {message.text}
+                        <ReactMarkdown>{message.text}</ReactMarkdown>
                     </div>
                 ))}
             </div>
-            <input onKeyDown={event=>{
-                if(event.key === 'Enter'){
+            <input onKeyDown={event => {
+                if (event.key === 'Enter') {
                     handleSubmit();
                 }
             }} type="text" value={prompt} onChange={handleInputChange} style={{ marginRight: '10px' }} />
