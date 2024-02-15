@@ -24,6 +24,7 @@ export default function ChatBookApp() {
     const [executionStarted, setExecutionStarted] = useState(false);
 
     const [maxWords, setMaxWords] = useState(500);
+    const [printWhenFinished, setPrintWhenFinished] = useState(true);
 
     const getInitialInstructionMessage = (steps = null) => {
         if (steps === null) {
@@ -54,8 +55,10 @@ export default function ChatBookApp() {
         setInitialInstructionResponse(gptResponse);
         setLoading(false);
     }
+    const print = () => window.print();
 
     const executeSubsequentInstructions = async () => {
+        setLoading(true);
         let newResponses = [];
         await Promise.all(subsequentInstructions.map(async (currentStep, currentStepIndex) => {
             let prompt = `using these steps: ${initialInstructionResponse} : ${currentStep}`;
@@ -64,8 +67,15 @@ export default function ChatBookApp() {
             let gptResponse = data.gptResponse?.message?.content;
             newResponses[currentStepIndex] = (gptResponse);
         }));
+        setLoading(false);
         setSubsequentInstructionResponses(newResponses);
     }
+
+    useEffect(() => {
+        if (subsequentInstructionResponses?.length > 0 && printWhenFinished) {
+            print();
+        }
+    }, [subsequentInstructionResponses])
 
 
     useEffect(() => {
@@ -128,6 +138,9 @@ export default function ChatBookApp() {
                 {executionStarted ? <></> :
                     <p>
                         <button disabled={subject === '' || executionStarted} onClick={executeInstructions}>Execute</button>
+                        &nbsp;
+                        Print When Finished
+                        <input type="checkbox" checked={printWhenFinished} onClick={() => setPrintWhenFinished(!(printWhenFinished))} />
                     </p>
                 }
                 <p>
