@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { ClipLoader } from "react-spinners";
 import ReactMarkdown from 'react-markdown';
 
-const baseURL = 'http://localhost:3000';
+const baseURL = 'http://localhost:3005';
 export default function ChatBookApp() {
     const modes = ["chapters", "steps"];
 

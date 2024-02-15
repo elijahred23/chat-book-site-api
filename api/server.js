@@ -6,7 +6,7 @@ const app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }))
 
-const port = 3000;
+const port = 3005;
 
 const messages = [
     "HELLO WORLD, THIS IS ELI GPT REPORTING FOR DUTY",
