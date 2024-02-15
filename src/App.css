@@ -44,11 +44,35 @@ h1 {
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  max-width: 800px;
+  width: 90vw;
   margin-left: auto;
   margin-right: auto;
   flex-grow: 1; /* Allows the content to expand */
   display: flex; /* Enables flexbox for the content */
   flex-direction: column; /* Aligns children vertically */
   justify-content: center; /* Centers content vertically */
+}
+.chat-book-container {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+h2 {
+    color: #333;
+}
+
+p {
+    margin: 10px 0;
 }
