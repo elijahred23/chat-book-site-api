@@ -23,7 +23,7 @@ export default function ChatBookApp() {
 
     const [executionStarted, setExecutionStarted] = useState(false);
 
-    const maxWords = 1000;
+    const [maxWords, setMaxWords] = useState(500);
 
     const getInitialInstructionMessage = (steps = null) => {
         if (steps === null) {
@@ -47,20 +47,22 @@ export default function ChatBookApp() {
         //execute initial instruction
         setLoading(true);
         setExecutionStarted(true);
-        await fetch(`${baseURL}/`).then(res => res.json()).then(res => {
-            let message = res?.message ?? 'MESSAGE NOT SENT AS RESPONSE';
-            setInitialInstructionResponse(message);
-        });
+        const prompt = initialInstruction;
+        const response = await fetch(`${baseURL}/gpt/prompt?prompt=${prompt}`);
+        const data = await response.json();
+        let gptResponse = data.gptResponse?.message?.content;
+        setInitialInstructionResponse(gptResponse);
         setLoading(false);
     }
 
     const executeSubsequentInstructions = async () => {
         let newResponses = [];
         await Promise.all(subsequentInstructions.map(async (currentStep, currentStepIndex) => {
-            let prompt = `using these steps: ${initialInstruction} : ${currentStep}`;
-            const res = await fetch(`${baseURL}/`);
-            const data = await res.json();
-            newResponses[currentStepIndex] = (data?.message);
+            let prompt = `using these steps: ${initialInstructionResponse} : ${currentStep}`;
+            const response = await fetch(`${baseURL}/gpt/prompt?prompt=${prompt}`);
+            const data = await response.json();
+            let gptResponse = data.gptResponse?.message?.content;
+            newResponses[currentStepIndex] = (gptResponse);
         }));
         setSubsequentInstructionResponses(newResponses);
     }
@@ -78,7 +80,7 @@ export default function ChatBookApp() {
             setInitialInstruction(instructions);
             initializeSubsequentInstructions();
         }
-    }, [numSteps]);
+    }, [numSteps, maxWords]);
 
     useEffect(() => {
         let newInitialInstruction = getInitialInstructionMessage();
@@ -111,7 +113,7 @@ export default function ChatBookApp() {
                     <h3>Executed Instructions:</h3>
                     {subsequentInstructionResponses.map(instructionResponse => {
                         return (
-                            <div style={{border: "1px dotted red", padding: "10px"}}>
+                            <div style={{ border: "1px dotted red", padding: "10px" }}>
                                 <ReactMarkdown>{instructionResponse}</ReactMarkdown>
                             </div>
                         )
@@ -123,17 +125,25 @@ export default function ChatBookApp() {
                     }} />
                 </p>
                 <ClipLoader color="blue" loading={loading} />
-                {executionStarted ? <></>:
+                {executionStarted ? <></> :
                     <p>
                         <button disabled={subject === '' || executionStarted} onClick={executeInstructions}>Execute</button>
                     </p>
                 }
                 <p>
                     Number of Steps &nbsp;
-                    <input type="number" disabled={loading} onChange={event => {
+                    <input type="number" min="1" max="10" step="1" disabled={loading} onChange={event => {
                         setNumSteps(event.target.value);
                     }}
                         value={numSteps}
+                    />
+                </p>
+                <p>
+                    Max Words &nbsp;
+                    <input type="number" step="100" min="100" max="2000" disabled={loading} onChange={event => {
+                        setMaxWords(event.target.value);
+                    }}
+                        value={maxWords}
                     />
                 </p>
                 {subsequentInstructions.map((instruction, index) => {
