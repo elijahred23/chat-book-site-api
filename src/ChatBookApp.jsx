@@ -98,7 +98,7 @@ export default function ChatBookApp() {
     }, [subject])
 
     useEffect(() => {
-        let initialStepNumbers = 2;
+        let initialStepNumbers = 5;
         let instructions = getInitialInstructionMessage(initialStepNumbers);
         setNumSteps(initialStepNumbers);
         setInitialInstruction(instructions);
@@ -130,7 +130,11 @@ export default function ChatBookApp() {
                     })}
                 </>}
                 <p> Subject
-                    &nbsp;<input disabled={loading} value={subject} onChange={event => {
+                    &nbsp;<input disabled={loading} value={subject} onKeyDown={event=>{
+                        if(event.key === 'Enter' && !(subject === '' || executionStarted)){
+                            executeInstructions();
+                        }
+                    }} onChange={event => {
                         setSubject(event.target.value);
                     }} />
                 </p>

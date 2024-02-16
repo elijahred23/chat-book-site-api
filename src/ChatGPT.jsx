@@ -31,6 +31,7 @@ function GptPromptComponent() {
             setPrompt('');
         } catch (error) {
             console.error('Error fetching data:', error);
+            window.alert('Error fetching data:', error);
         } finally {
             setLoading(false);
         }
