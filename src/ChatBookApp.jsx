@@ -121,7 +121,7 @@ export default function ChatBookApp() {
                 {executionStarted && <>
                     <ProgressBar progress={(stepsExecuted/(numSteps + 1)) * 100}/>
                     <h3>Instructions:</h3>
-                    <p style={{ border: "1px dotted blue", padding: "10px" }}>
+                    <p style={{ border: initialInstructionResponse !== "" ? "1px dotted blue" : "none", padding: "10px" }}>
                         <ReactMarkdown>
                             {initialInstructionResponse}
                         </ReactMarkdown>
