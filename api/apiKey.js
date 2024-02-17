@@ -1,3 +1,4 @@
 
 const apiKey = '';
-export {apiKey}
+const geminiApiKey = '';
+export {apiKey, geminiApiKey}

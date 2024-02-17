@@ -11,6 +11,7 @@
   "author": "author",
   "license": "ISC",
   "dependencies": {
+    "@google/generative-ai": "^0.2.1",
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "openai": "^4.28.0"
