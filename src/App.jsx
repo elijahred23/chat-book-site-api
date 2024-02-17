@@ -4,6 +4,7 @@ import {BrowserRouter, Routes, Route, NavLink} from 'react-router-dom';
 import ChatBookApp from './ChatBookApp';
 import ApiCheck from './ApiCheck';
 import ChatGPT from './ChatGPT';
+import ProgressBar from './ui/ProgressBar';
 
 
 
@@ -24,6 +25,7 @@ function App(){
           <Route path="/chatBook" element={<ChatBookApp />} />
           <Route path="/apiCheck" element={<ApiCheck />} />
           <Route path="/chatGPT" element={<ChatGPT />} />
+          <Route path="/progress" element={<ProgressBar progress={5} />} />
         </Routes>
       </div>
     </BrowserRouter>   

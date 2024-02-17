@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { ClipLoader } from "react-spinners";
 import ReactMarkdown from 'react-markdown';
+import ProgressBar from "./ui/ProgressBar";
 
 const baseURL = 'http://localhost:3005';
 export default function ChatBookApp() {
@@ -25,6 +26,7 @@ export default function ChatBookApp() {
 
     const [maxWords, setMaxWords] = useState(500);
     const [printWhenFinished, setPrintWhenFinished] = useState(true);
+    const [stepsExecuted, setStepsExecuted] = useState(0);
 
     const getInitialInstructionMessage = (steps = null) => {
         if (steps === null) {
@@ -43,6 +45,7 @@ export default function ChatBookApp() {
         }
         setSubsequentInstructions(newExecutionInstructions);
     }
+    const incrementStepsExecuted = () => setStepsExecuted(prev=> prev+1);
 
     const executeInstructions = async () => {
         //execute initial instruction
@@ -52,6 +55,7 @@ export default function ChatBookApp() {
         const response = await fetch(`${baseURL}/gpt/prompt?prompt=${prompt}`);
         const data = await response.json();
         let gptResponse = data.gptResponse?.message?.content;
+        incrementStepsExecuted();
         setInitialInstructionResponse(gptResponse);
         setLoading(false);
     }
@@ -66,6 +70,7 @@ export default function ChatBookApp() {
             const data = await response.json();
             let gptResponse = data.gptResponse?.message?.content;
             newResponses[currentStepIndex] = (gptResponse);
+            incrementStepsExecuted();
         }));
         setLoading(false);
         setSubsequentInstructionResponses(newResponses);
@@ -114,6 +119,7 @@ export default function ChatBookApp() {
                     &nbsp;<input readOnly value={initialInstruction} disabled />
                 </p>
                 {executionStarted && <>
+                    <ProgressBar progress={(stepsExecuted/(numSteps + 1)) * 100}/>
                     <h3>Instructions:</h3>
                     <p style={{ border: "1px dotted blue", padding: "10px" }}>
                         <ReactMarkdown>

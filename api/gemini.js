@@ -21,7 +21,7 @@ async function generateGeminiResponse(msg) {
             },
         ],
         generationConfig: {
-            maxOutputTokens: 1000,
+            maxOutputTokens: 2000,
         },
     });
 
