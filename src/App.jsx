@@ -6,9 +6,6 @@ import ApiCheck from './ApiCheck';
 import ChatGPT from './ChatGPT';
 import ProgressBar from './ui/ProgressBar';
 
-
-
-
 function App(){
   return (
     <>
