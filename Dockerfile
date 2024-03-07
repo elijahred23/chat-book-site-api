@@ -19,7 +19,7 @@ RUN chmod +x /app/start-services.sh
 
 WORKDIR /app
 
-EXPOSE 5173
-EXPOSE 3000
+EXPOSE 3005 
+EXPOSE 3006 
 
 CMD ["/app/start-services.sh"]
