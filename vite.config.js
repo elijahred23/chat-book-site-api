@@ -12,7 +12,9 @@ export default defineConfig({
     strictPort: true,
     port: 3006, // you can replace this port with any port
     proxy:{
-      '/api': 'http://localhost:3005'
+      target: 'http://localhost:3005',
+      changeOrigin: true,
+      rewritePath: path=>path.replace(/^\/api/, ''),
     }
   }
 })
