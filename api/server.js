@@ -73,10 +73,10 @@ app.get('/gemini/prompt', async (req,res) => {
     }
 
     try {
-        let geminiResponseResponse = await generateGeminiResponse('You are a helpful assistant', prompt);
+        let geminiResponse = await generateGeminiResponse('You are a helpful assistant', prompt);
 
-        if (geminiResponseResponse?.text?.includes('Sorry, something went wrong.')) throw new Error(geminiResponseResponse?.text)
-        return res.send({ geminiResponseResponse: geminiResponseResponse, message: "success" });
+        if (geminiResponse?.text?.includes('Sorry, something went wrong.')) throw new Error(geminiResponse?.text)
+        return res.send({ geminiResponse: geminiResponse, message: "success" });
     } catch (error) {
         return res.status(500).send({ error: 'Server Error', message: error?.message ?? "Failed to generate chatGPT response." })
     }
