@@ -1,5 +1,6 @@
 import express from 'express';
 import { generateResponse, safeGenerateResponse } from './chatGPT.js';
+import { generateGeminiResponse } from './gemini.js';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 
@@ -62,8 +63,24 @@ app.get('/gpt/prompt', async (req, res) => {
     } catch (error) {
         return res.status(500).send({ error: 'Server Error', message: error?.message ?? "Failed to generate chatGPT response." })
     }
-
 });
+
+app.get('/gemini/prompt', async (req,res) => {
+    let prompt = req.query.prompt;
+
+    if (prompt === null || prompt === undefined || prompt === '' || prompt?.length === 0) {
+        return res.status(400).send({ error: 'Bad Request', message: 'Prompt parameter is missing' });
+    }
+
+    try {
+        let geminiResponseResponse = await generateGeminiResponse('You are a helpful assistant', prompt);
+
+        if (geminiResponseResponse?.text?.includes('Sorry, something went wrong.')) throw new Error(geminiResponseResponse?.text)
+        return res.send({ geminiResponseResponse: geminiResponseResponse, message: "success" });
+    } catch (error) {
+        return res.status(500).send({ error: 'Server Error', message: error?.message ?? "Failed to generate chatGPT response." })
+    }
+})
 
 
 app.listen(port, () => {
