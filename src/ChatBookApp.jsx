@@ -47,16 +47,21 @@ export default function ChatBookApp() {
     }
     const incrementStepsExecuted = () => setStepsExecuted(prev=> prev+1);
 
-    const executeInstructions = async () => {
-        //execute initial instruction
-        setLoading(true);
-        setExecutionStarted(true);
-        const prompt = (initialInstruction);
+    const executeInitialInstruction = async () => {
+        let prompt = (initialInstruction);
+        let hash = Math.random().toString(36).substring(2,20+2);
+        prompt = `${hash} ignore hash at beginning. Do prompt: ${prompt}`
         const response = await fetch(`${baseURL}/gemini/prompt?prompt=${encodeURIComponent(prompt)}`);
         const data = await response.json();
         let gptResponse = data.geminiResponse;
         incrementStepsExecuted();
         setInitialInstructionResponse(gptResponse);
+    }
+    const executeInstructions = async () => {
+        //execute initial instruction
+        setLoading(true);
+        setExecutionStarted(true);
+        await executeInitialInstruction();
         setLoading(false);
     }
     const print = () => window.print();
