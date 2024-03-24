@@ -23,10 +23,10 @@ function GptPromptComponent() {
                 return;
             }
             setLoading(true);
-            const response = await fetch(`${baseURL}/gpt/prompt?prompt=${prompt}`);
+            const response = await fetch(`${baseURL}/gemini/prompt?prompt=${prompt}`);
             const data = await response.json();
             const newMessage = { text: prompt, sender: 'user' };
-            const botMessage = { text: data.gptResponse?.message?.content, sender: 'bot' };
+            const botMessage = { text: data.geminiResponse, sender: 'bot' };
             setMessages([...messages, newMessage, botMessage]);
             setPrompt('');
         } catch (error) {

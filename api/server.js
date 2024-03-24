@@ -73,7 +73,7 @@ app.get('/gemini/prompt', async (req,res) => {
     }
 
     try {
-        let geminiResponse = await generateGeminiResponse('You are a helpful assistant', prompt);
+        let geminiResponse = await generateGeminiResponse(prompt);
 
         if (geminiResponse?.text?.includes('Sorry, something went wrong.')) throw new Error(geminiResponse?.text)
         return res.send({ geminiResponse: geminiResponse, message: "success" });

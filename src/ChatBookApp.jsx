@@ -51,10 +51,10 @@ export default function ChatBookApp() {
         //execute initial instruction
         setLoading(true);
         setExecutionStarted(true);
-        const prompt = initialInstruction;
-        const response = await fetch(`${baseURL}/gpt/prompt?prompt=${prompt}`);
+        const prompt = (initialInstruction);
+        const response = await fetch(`${baseURL}/gemini/prompt?prompt=${encodeURIComponent(prompt)}`);
         const data = await response.json();
-        let gptResponse = data.gptResponse?.message?.content;
+        let gptResponse = data.geminiResponse;
         incrementStepsExecuted();
         setInitialInstructionResponse(gptResponse);
         setLoading(false);
@@ -65,10 +65,10 @@ export default function ChatBookApp() {
         setLoading(true);
         let newResponses = [];
         await Promise.all(subsequentInstructions.map(async (currentStep, currentStepIndex) => {
-            let prompt = `using these steps: ${initialInstructionResponse} : ${currentStep}`;
-            const response = await fetch(`${baseURL}/gpt/prompt?prompt=${prompt}`);
+            let prompt = (`using these steps: ${initialInstructionResponse} : ${currentStep}`);
+            const response = await fetch(`${baseURL}/gemini/prompt?prompt=${encodeURIComponent(prompt)}`);
             const data = await response.json();
-            let gptResponse = data.gptResponse?.message?.content;
+            let gptResponse = data.geminiResponse;
             newResponses[currentStepIndex] = (gptResponse);
             incrementStepsExecuted();
         }));
