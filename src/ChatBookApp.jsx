@@ -3,7 +3,7 @@ import { ClipLoader } from "react-spinners";
 import ReactMarkdown from 'react-markdown';
 import ProgressBar from "./ui/ProgressBar";
 
-const baseURL = `http://${window.location}:3005`;
+const baseURL = `http://localhost:3005`;
 export default function ChatBookApp() {
     const modes = ["chapters", "steps"];
 

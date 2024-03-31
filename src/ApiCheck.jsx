@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const baseURL = 'http://localhost:3005';
+const baseURL = `http://localhost:3005`;
 
 
 export default function ApiCheck() {
