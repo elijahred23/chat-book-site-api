@@ -6,23 +6,12 @@ import cors from 'cors';
 
 const app = express();
 
-const allowedOrigins = ['http://127.0.0.1','http://localhost:3006', 'http://159.203.85.164:3006', '*'];
-// Enable CORS with dynamic origin support
-app.use(cors({
-    origin: (origin, callback) => {
-        // Allow requests with no origin (like mobile apps, curl requests)
-        if (!origin) return callback(null, true);
-
-        if (allowedOrigins.includes(origin) || !origin) {
-            // Allow specific origins or if no origin is provided (e.g., when request is made from localhost)
-            callback(null, true);
-        } else {
-            // Potentially allow other origins, depending on business requirements
-            callback(null, true); // Replace this with `callback(new Error('Not allowed by CORS'))` to block other origins
-        }
-    },
-    credentials: true // This option is to allow cookies to be sent with the request
-}));
+app.use((req,res,next)=>{
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET','POST','PUT','DELETE');
+    res.header('Access-Control-Allow-Headers', 'Contenty-Type');
+    next();
+});
 
 app.use(bodyParser.urlencoded({ extended: false }))
 
