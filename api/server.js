@@ -6,7 +6,7 @@ import cors from 'cors';
 
 const app = express();
 
-const allowedOrigins = ['http://localhost:3006', 'http://159.203.85.164:3006', '*'];
+const allowedOrigins = ['http://127.0.0.1','http://localhost:3006', 'http://159.203.85.164:3006', '*'];
 // Enable CORS with dynamic origin support
 app.use(cors({
     origin: (origin, callback) => {
