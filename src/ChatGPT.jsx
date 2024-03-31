@@ -1,7 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { ClipLoader } from 'react-spinners';
 import ReactMarkdown from 'react-markdown';
-const baseURL = `http://localhost:3005`;
+import { hostname } from "./utils/hostname";
+
+const baseURL = hostname;
+
 
 function GptPromptComponent() {
     const [messages, setMessages] = useState([]);

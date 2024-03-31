@@ -2,8 +2,10 @@ import React, { useState, useEffect } from "react";
 import { ClipLoader } from "react-spinners";
 import ReactMarkdown from 'react-markdown';
 import ProgressBar from "./ui/ProgressBar";
+import { hostname } from "./utils/hostname";
 
-const baseURL = `http://localhost:3005`;
+const baseURL = hostname;
+
 export default function ChatBookApp() {
     const modes = ["chapters", "steps"];
 
