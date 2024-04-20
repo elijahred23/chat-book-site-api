@@ -1,0 +1,9 @@
+version: '3.8'  # Adjust if needed based on your Docker version
+
+services:
+  chat-book-site-api:
+    image: elijahred23/chat-book-site-api:0.0.10  # Replace with your actual image name
+    build: .  # Assuming your Dockerfile is in the current directory
+    ports:
+      - "3005:3005"  # Replace with desired port mapping
+      - "3006:3006"  # Replace with desired port mapping
