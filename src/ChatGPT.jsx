@@ -49,7 +49,7 @@ function GptPromptComponent() {
     return (
         <div>
             <h2>Chat GPT</h2>
-            <div ref={messagesEndRef} style={{ maxHeight: '300px', overflowY: 'scroll', border: '1px solid #ccc', padding: '10px', marginBottom: '10px' }}>
+            <div ref={messagesEndRef} style={{ border: '1px solid #ccc', padding: '10px', marginBottom: '10px' }}>
                 {messages.map((message, index) => (
                     <div key={index} style={{ marginBottom: '10px', textAlign: message.sender === 'user' ? 'right' : 'left' }}>
                         <span style={{ fontWeight: 'bold' }}>{message.sender === 'user' ? 'You: ' : 'Bot: '}</span>
