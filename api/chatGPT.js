@@ -48,23 +48,3 @@ export const safeGenerateResponseWithHistory = async (systemContent, prompt, his
         return { text: "Sorry, something went wrong." };
     }
 };
-
-/**
- * 
- * // Example conversation history
-let conversationHistory = [
-    { role: 'system', content: 'This is a chatbot that can answer your questions.' },
-    { role: 'user', content: 'Who is the president of the United States?' },
-    { role: 'system', content: 'The president of the United States is Joe Biden.' },
-    // Add more messages as the conversation progresses
-];
-safeGenerateResponseWithHistory(systemContent, userPrompt, conversationHistory)
-    .then(response => {
-        console.log("ChatGPT says:", response.text);
-        // Update the conversation history with the new system response
-        conversationHistory.push({ role: 'system', content: response.text });
-    })
-    .catch(error => {
-        console.error("Failed to generate response:", error);
-    });
- */

@@ -109,7 +109,7 @@ export default function ChatBookApp() {
         let newInitialInstruction = getInitialInstructionMessage();
         setInitialInstruction(newInitialInstruction);
     }, [subject])
-    
+
     useEffect(() => {
         let initialStepNumbers = 5;
         let instructions = getInitialInstructionMessage(initialStepNumbers);
