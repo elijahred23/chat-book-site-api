@@ -40,6 +40,8 @@ function GptPromptComponent() {
         }
     };
 
+    const print = () => window.print();
+
     useEffect(() => {
         scrollToBottom();
     }, [messages]);
@@ -61,6 +63,7 @@ function GptPromptComponent() {
                 }
             }} type="text" value={prompt} onChange={handleInputChange} style={{ marginRight: '10px' }} />
             <ClipLoader color="blue" loading={loading} />
+            <button onClick={print}>Print</button>
             {!loading &&
                 <button onClick={handleSubmit}>Send</button>
             }
