@@ -158,6 +158,7 @@ export default function ChatBookApp() {
                 {executionStarted ? <></> :
                     <p>
                         <button disabled={subject === '' || executionStarted} onClick={executeInstructions}>Execute</button>
+                        <button onClick={print}>Print</button>
                         &nbsp;
                         Print When Finished
                         <input type="checkbox" checked={printWhenFinished} onClick={() => setPrintWhenFinished(!(printWhenFinished))} />
