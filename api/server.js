@@ -71,6 +71,13 @@ app.get('/gemini/prompt', async (req,res) => {
     }
 })
 
+app.post('/chatTemplate', async (req,res) => {
+    
+})
+
+app.get('/chatTemplate', async (req,res) => {
+    
+})
 
 app.listen(port, () => {
     console.log(`Listening on port ${port}`);
