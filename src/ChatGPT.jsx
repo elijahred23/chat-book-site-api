@@ -46,6 +46,10 @@ function GptPromptComponent() {
         scrollToBottom();
     }, [messages]);
 
+    useEffect(()=>{
+        document.title = prompt;
+    }, [prompt])
+
     return (
         <div>
             <h2>Chat GPT</h2>
