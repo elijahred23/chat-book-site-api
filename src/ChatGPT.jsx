@@ -5,10 +5,29 @@ import { hostname } from "./utils/hostname";
 
 const baseURL = hostname;
 
+const getMessageFromLocalStorage = () => {
+    const newMessages = localStorage.getItem('messages');
+    return newMessages ?? []
+}
+const getPromptFromLocalStorage = () => {
+    const newPrompt = localStorage.getItem('prompt');
+    return newPrompt ?? '' 
+}
+const getValuesLocalStorage = () => {
+    const localMessages = localStorage.getItem('messages');
+    const localPrompt = localStorage.getItem('prompt');
+
+    return {
+        prompt: localPrompt ? JSON.parse(localPrompt) : '',
+        messages: localMessages ? JSON.parse(localMessages) : [] ,
+    }
+}
 
 function GptPromptComponent() {
-    const [messages, setMessages] = useState([]);
-    const [prompt, setPrompt] = useState('');
+    let localStorageValues = getValuesLocalStorage(); 
+    const [messages, setMessages] = useState(localStorageValues.messages);
+    const [prompt, setPrompt] = useState(localStorageValues.prompt);
+
     const [loading, setLoading] = useState(false);
     const messagesEndRef = useRef(null);
 
@@ -46,9 +65,20 @@ function GptPromptComponent() {
         scrollToBottom();
     }, [messages]);
 
-    useEffect(()=>{
-        document.title = prompt;
+    useEffect(() => {
     }, [prompt])
+
+    useEffect(() => {
+        return () => {
+            let jsonMessages = JSON.stringify(messages);
+            localStorage.setItem('messages', jsonMessages);
+
+            let jsonPrompt = JSON.stringify(prompt);
+            localStorage.setItem('prompt', jsonPrompt);
+        };
+    }, [messages, prompt]); 
+    useEffect(() => {
+    }, []);
 
     return (
         <div>
