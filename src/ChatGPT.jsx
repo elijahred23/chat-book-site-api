@@ -5,14 +5,6 @@ import { hostname } from "./utils/hostname";
 
 const baseURL = hostname;
 
-const getMessageFromLocalStorage = () => {
-    const newMessages = localStorage.getItem('messages');
-    return newMessages ?? []
-}
-const getPromptFromLocalStorage = () => {
-    const newPrompt = localStorage.getItem('prompt');
-    return newPrompt ?? '' 
-}
 const getValuesLocalStorage = () => {
     const localMessages = localStorage.getItem('messages');
     const localPrompt = localStorage.getItem('prompt');
@@ -60,6 +52,10 @@ function GptPromptComponent() {
     };
 
     const print = () => window.print();
+    const clear = () => {
+        setMessages([]);
+        setPrompt('');
+    }
 
     useEffect(() => {
         scrollToBottom();
@@ -98,6 +94,7 @@ function GptPromptComponent() {
             }} type="text" value={prompt} onChange={handleInputChange} style={{ marginRight: '10px' }} />
             <ClipLoader color="blue" loading={loading} />
             <button onClick={print}>Print</button>
+            <button onClick={clear}>Clear</button>
             {!loading &&
                 <button onClick={handleSubmit}>Send</button>
             }
