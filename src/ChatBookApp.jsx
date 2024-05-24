@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { ClipLoader } from "react-spinners";
 import ReactMarkdown from 'react-markdown';
 import ProgressBar from "./ui/ProgressBar";
@@ -179,7 +179,10 @@ export default function ChatBookApp() {
         }
     }, [numSteps, subject, initialInstruction, subsequentInstructions, maxWords ]);
 
-
+    console.log({numSteps})
+    const progress = useMemo(() => {
+        return (parseInt(stepsExecuted)/(parseInt(numSteps) + 1)) * 100;
+    }, [stepsExecuted, numSteps])
 
     return (
         <>
@@ -189,7 +192,7 @@ export default function ChatBookApp() {
                     &nbsp;<input readOnly value={initialInstruction} disabled />
                 </p>
                 {executionStarted && <>
-                    <ProgressBar progress={(stepsExecuted/(numSteps + 1)) * 100}/>
+                    <ProgressBar progress={progress}/>
                     <h3>Instructions:</h3>
                     <p style={{ border: state.initialInstructionResponse !== "" ? "1px dotted blue" : "none", padding: "10px" }}>
                         <ReactMarkdown>
