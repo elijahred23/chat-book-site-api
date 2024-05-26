@@ -16,15 +16,15 @@ const getValuesInLocalStorage = () => {
 
     return {
         numSteps: localNumSteps ? JSON.parse(localNumSteps) : 5,
-        subject: localSubject ? JSON.parse(localSubject) : "" ,
-        initialInstruction: localInitialInstruction ? JSON.parse(localInitialInstruction) : "" ,
-        subsequentInstructions: localSubsequentInstructions ? JSON.parse(localSubsequentInstructions) : [] ,
+        subject: localSubject ? JSON.parse(localSubject) : "",
+        initialInstruction: localInitialInstruction ? JSON.parse(localInitialInstruction) : "",
+        subsequentInstructions: localSubsequentInstructions ? JSON.parse(localSubsequentInstructions) : [],
         maxWords: localMaxWords ? JSON.parse(localMaxWords) : 500,
     }
 }
 
 export default function ChatBookApp() {
-    const {state, dispatch} = useAppContext();
+    const { state, dispatch } = useAppContext();
 
     const localStorageValues = getValuesInLocalStorage();
 
@@ -68,24 +68,24 @@ export default function ChatBookApp() {
         }
         setSubsequentInstructions(newExecutionInstructions);
     }
-    const incrementStepsExecuted = () => setStepsExecuted(prev=> prev+1);
+    const incrementStepsExecuted = () => setStepsExecuted(prev => prev + 1);
 
     const executeInitialInstruction = async () => {
-        if(canExecuteKey){
-            dispatch({type:appActionTypes.SET_INITIAL_INSTRUCTION_RESPONSE, payload: ""})
-            dispatch({type:appActionTypes.SET_SUBSEQUENT_INSTRUCTION_RESPONSES, payload: []})
+        if (canExecuteKey) {
+            dispatch({ type: appActionTypes.SET_INITIAL_INSTRUCTION_RESPONSE, payload: "" })
+            dispatch({ type: appActionTypes.SET_SUBSEQUENT_INSTRUCTION_RESPONSES, payload: [] })
             let prompt = (initialInstruction);
-            let hash = Math.random().toString(36).substring(2,20+2);
+            let hash = Math.random().toString(36).substring(2, 20 + 2);
             prompt = `${hash} ignore hash at beginning. Do prompt: ${prompt}`
             const response = await fetch(`${baseURL}/gemini/prompt?prompt=${encodeURIComponent(prompt)}`);
             const data = await response.json();
             let gptResponse = data.geminiResponse;
             incrementStepsExecuted();
-            dispatch({type: appActionTypes.SET_INITIAL_INSTRUCTION_RESPONSE, payload: gptResponse});
+            dispatch({ type: appActionTypes.SET_INITIAL_INSTRUCTION_RESPONSE, payload: gptResponse });
         }
     }
     const executeInstructions = async () => {
-        if(canExecuteKey){
+        if (canExecuteKey) {
             //execute initial instruction
             setLoading(true);
             setExecutionStarted(true);
@@ -94,15 +94,48 @@ export default function ChatBookApp() {
         }
     }
     const print = () => window.print();
+    const generatePDF = async () => {
+        if (state.initialInstructionResponse !== "") {
+            try {
+                const response = await fetch(`${baseURL}/generate-pdf`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        markdown: state.initialInstructionResponse,
+                        messagesToCombine: state.subsequentInstructionResponses,
+                        pdfFileName: document.title 
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to generate PDF');
+                }
+
+                const blob = await response.blob();
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `${subject}.pdf`;
+                document.body.appendChild(a);
+                a.click();
+                a.remove();
+            } catch (error) {
+                console.error('Error generating PDF:', error);
+            }
+        }
+    };
+
 
     const clear = () => {
         setSubject("");
-        dispatch({type: appActionTypes.SET_INITIAL_INSTRUCTION_RESPONSE, payload: ""})
-        dispatch({type: appActionTypes.SET_SUBSEQUENT_INSTRUCTION_RESPONSES, payload: []})
-    } 
+        dispatch({ type: appActionTypes.SET_INITIAL_INSTRUCTION_RESPONSE, payload: "" })
+        dispatch({ type: appActionTypes.SET_SUBSEQUENT_INSTRUCTION_RESPONSES, payload: [] })
+    }
 
     const executeSubsequentInstructions = async () => {
-        if(canExecuteKey){
+        if (canExecuteKey) {
             setLoading(true);
             let newResponses = [];
             await Promise.all(subsequentInstructions.map(async (currentStep, currentStepIndex) => {
@@ -114,7 +147,7 @@ export default function ChatBookApp() {
                 incrementStepsExecuted();
             }));
             setLoading(false);
-            dispatch({type: appActionTypes.SET_SUBSEQUENT_INSTRUCTION_RESPONSES, payload: newResponses});
+            dispatch({ type: appActionTypes.SET_SUBSEQUENT_INSTRUCTION_RESPONSES, payload: newResponses });
         }
     }
 
@@ -144,19 +177,19 @@ export default function ChatBookApp() {
         setInitialInstruction(newInitialInstruction);
     }, [subject])
 
-    useEffect(()=>{
+    useEffect(() => {
         setCanExecuteKey(true);
     }, [initialInstruction])
 
-    useEffect(()=>{
+    useEffect(() => {
         setCanExecuteKey(false);
-       setExecutionStarted(false); 
+        setExecutionStarted(false);
 
-       return () => {
-        setExecutionStarted(false); 
-        setPrintWhenFinished(false);
-        setCanExecuteKey(false);
-       }
+        return () => {
+            setExecutionStarted(false);
+            setPrintWhenFinished(false);
+            setCanExecuteKey(false);
+        }
     }, [])
 
     useEffect(() => {
@@ -177,11 +210,10 @@ export default function ChatBookApp() {
             let jsonMaxWords = JSON.stringify(maxWords);
             localStorage.setItem('maxWords', jsonMaxWords);
         }
-    }, [numSteps, subject, initialInstruction, subsequentInstructions, maxWords ]);
+    }, [numSteps, subject, initialInstruction, subsequentInstructions, maxWords]);
 
-    console.log({numSteps})
     const progress = useMemo(() => {
-        return (parseInt(stepsExecuted)/(parseInt(numSteps) + 1)) * 100;
+        return (parseInt(stepsExecuted) / (parseInt(numSteps) + 1)) * 100;
     }, [stepsExecuted, numSteps])
 
     return (
@@ -191,8 +223,11 @@ export default function ChatBookApp() {
                 <p> Initial Instruction
                     &nbsp;<input readOnly value={initialInstruction} disabled />
                 </p>
+                <button onClick={generatePDF}>
+                    Generate PDF
+                </button>
                 {executionStarted && <>
-                    <ProgressBar progress={progress}/>
+                    <ProgressBar progress={progress} />
                     <h3>Instructions:</h3>
                     <p style={{ border: state.initialInstructionResponse !== "" ? "1px dotted blue" : "none", padding: "10px" }}>
                         <ReactMarkdown>
@@ -200,17 +235,17 @@ export default function ChatBookApp() {
                         </ReactMarkdown>
                     </p>
                     <h3>Executed Instructions:</h3>
-                    {state.subsequentInstructionResponses.map(instructionResponse => {
+                    {state.subsequentInstructionResponses.map(subsequentInstructionResponse => {
                         return (
                             <div style={{ border: "1px dotted red", padding: "10px" }}>
-                                <ReactMarkdown>{instructionResponse}</ReactMarkdown>
+                                <ReactMarkdown>{subsequentInstructionResponse}</ReactMarkdown>
                             </div>
                         )
                     })}
                 </>}
                 <p> Subject
-                    &nbsp;<input disabled={loading} value={subject} onKeyDown={event=>{
-                        if(event.key === 'Enter' && !(subject === '' || executionStarted)){
+                    &nbsp;<input disabled={loading} value={subject} onKeyDown={event => {
+                        if (event.key === 'Enter' && !(subject === '' || executionStarted)) {
                             executeInstructions();
                         }
                     }} onChange={event => {

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import {BrowserRouter, Routes, Route, NavLink} from 'react-router-dom';
-import ChatBookApp from './ChatBookApp';
+import ChatBookApp from './ChatBookApp.jsx';
 import ApiCheck from './ApiCheck';
 import ChatGPT from './ChatGPT';
 import ProgressBar from './ui/ProgressBar';
@@ -24,7 +24,7 @@ function App(){
           <Route path="/chatBook" element={<ChatBookApp />} />
           <Route path="/apiCheck" element={<ApiCheck />} />
           <Route path="/chatGPT" element={<ChatGPT />} />
-          <Route path="/progress" element={<ProgressBar progress={5} />} />
+          <Route path="/progressBar" element={<ProgressBar progress={100} />} />
           <Route path="/chatTemplate" element={<ChatTemplate />} />
         </Routes>
       </div>
