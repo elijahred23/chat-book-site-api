@@ -7,7 +7,20 @@ import fs from 'fs';
 import puppeteer from 'puppeteer';
 
 const app = express();
-
+(async () => {
+    try {
+      const browser = await puppeteer.launch({
+        headless: true,
+        args: ['--no-sandbox', '--disable-setuid-sandbox'],
+      });
+      const page = await browser.newPage();
+      await page.goto('https://example.com');
+      console.log('Browser launched successfully');
+      await browser.close();
+    } catch (error) {
+      console.error('Failed to launch browser:', error);
+    }
+  })();
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
