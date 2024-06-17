@@ -3,7 +3,7 @@ version: '3.8'  # Adjust if needed based on your Docker version
 #last deployment took 400 seconds 6.6 minutes
 services:
   chat-book-site-api:
-    image: elijahred23/chat-book-site-api:0.0.14  # Replace with your actual image name
+    image: elijahred23/chat-book-site-api:0.0.15  # Replace with your actual image name
     build: .  # Assuming your Dockerfile is in the current directory
     ports:
       - "3005:3005"  # Replace with desired port mapping

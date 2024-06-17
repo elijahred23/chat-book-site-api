@@ -58,8 +58,8 @@ export default function ChatBookApp() {
         return `Write a step by step process that has ${steps} steps total about ${subject}`;
     }
     const getExecutionInstructionMessage = (currentStep) => {
-        return `write in detail how to execute step ${currentStep} from step by step process with about ${maxWords} words or more with code if necessary or more`;
-    }
+        return `Provide a comprehensive, detailed guide on how to execute step ${currentStep} in a step-by-step manner. Ensure the instructions are clear and precise, with a focus on achieving accuracy and completeness. Aim for about ${maxWords} words, but use more if necessary to cover all important details.`;
+    };
     const initializeSubsequentInstructions = () => {
         let newExecutionInstructions = []
         for (let currentStep = 1; currentStep <= numSteps; currentStep++) {
