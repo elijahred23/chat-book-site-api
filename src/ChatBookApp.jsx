@@ -42,6 +42,8 @@ export default function ChatBookApp() {
 
     const [loading, setLoading] = useState(false);
 
+    const [loadingPDF, setLoadingPDF] = useState(false);
+
     const [executionStarted, setExecutionStarted] = useState(false);
 
     const [maxWords, setMaxWords] = useState(localStorageValues.maxWords);
@@ -95,8 +97,11 @@ export default function ChatBookApp() {
     }
     const print = () => window.print();
     const generatePDF = async () => {
+        console.log({message:"GENERATING PDF"})
         if (state.initialInstructionResponse !== "") {
             try {
+                setLoadingPDF(true);
+                console.log({loadingPDF})
                 const response = await fetch(`${baseURL}/generate-pdf`, {
                     method: 'POST',
                     headers: {
@@ -105,7 +110,7 @@ export default function ChatBookApp() {
                     body: JSON.stringify({
                         markdown: state.initialInstructionResponse,
                         messagesToCombine: state.subsequentInstructionResponses,
-                        pdfFileName: document.title 
+                        pdfFileName: document.title
                     })
                 });
 
@@ -123,6 +128,10 @@ export default function ChatBookApp() {
                 a.remove();
             } catch (error) {
                 console.error('Error generating PDF:', error);
+            }
+            finally {
+                setLoadingPDF(false);
+                console.log({loadingPDF})
             }
         }
     };
@@ -223,9 +232,12 @@ export default function ChatBookApp() {
                 <p> Initial Instruction
                     &nbsp;<input readOnly value={initialInstruction} disabled />
                 </p>
-                <button onClick={generatePDF}>
-                    Generate PDF
-                </button>
+                <ClipLoader color="blue" loading={loadingPDF} />
+                {
+                    !(loadingPDF) && (state.initialInstructionResponse !== "") && <button onClick={generatePDF}>
+                        Generate PDF
+                    </button>
+                }
                 {executionStarted && <>
                     <ProgressBar progress={progress} />
                     <h3>Instructions:</h3>
@@ -255,7 +267,7 @@ export default function ChatBookApp() {
                 <ClipLoader color="blue" loading={loading} />
                 {executionStarted ? <></> :
                     <p>
-                        <button disabled={subject === '' || executionStarted} onClick={executeInstructions}>Execute</button>
+                        <button className={subject === '' || executionStarted || !canExecuteKey ? 'disabled' : ''} disabled={subject === '' || executionStarted} onClick={executeInstructions}>Execute</button>
                         <button onClick={print}>Print</button>
                         <button onClick={clear}>Clear</button>
                         &nbsp;
