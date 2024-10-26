@@ -13,6 +13,7 @@ const getValuesInLocalStorage = () => {
     const localInitialInstruction = localStorage.getItem('initialInstruction');
     const localSubsequentInstructions = localStorage.getItem('subsequentInstructions');
     const localMaxWords = localStorage.getItem('maxWords');
+    const localMode = localStorage.getItem('mode');
 
     return {
         numSteps: localNumSteps ? JSON.parse(localNumSteps) : 5,
@@ -20,6 +21,7 @@ const getValuesInLocalStorage = () => {
         initialInstruction: localInitialInstruction ? JSON.parse(localInitialInstruction) : "",
         subsequentInstructions: localSubsequentInstructions ? JSON.parse(localSubsequentInstructions) : [],
         maxWords: localMaxWords ? JSON.parse(localMaxWords) : 500,
+        mode: localMaxWords ? JSON.parse(localMode) : "steps",
     }
 }
 
@@ -28,9 +30,9 @@ export default function ChatBookApp() {
 
     const localStorageValues = getValuesInLocalStorage();
 
-    const modes = ["chapters", "steps"];
+    const modes = ["steps", "splits"];
 
-    const [mode, setMode] = useState("steps");
+    const [mode, setMode] = useState(localStorageValues.mode);
 
     const [numSteps, setNumSteps] = useState(localStorageValues.numSteps);
 
@@ -57,10 +59,21 @@ export default function ChatBookApp() {
         if (steps === null) {
             steps = numSteps;
         }
-        return `Write a step by step process that has ${steps} steps total about ${subject}`;
+        switch(mode){
+            case 'steps':
+                return `Write a step by step process that has ${steps} steps total about ${subject}`;
+            case 'splits':
+                return `Split paragraph into ${steps} sections about ${subject}`;
+        }
     }
     const getExecutionInstructionMessage = (currentStep) => {
-        return `Provide a comprehensive, detailed guide on how to execute step ${currentStep} in a step-by-step manner. Ensure the instructions are clear and precise, with a focus on achieving accuracy and completeness. Aim for about ${maxWords} words, but use more if necessary to cover all important details.`;
+        
+        switch(mode){
+            case 'steps':
+                return `Provide a comprehensive, detailed guide on how to execute step ${currentStep} in a step-by-step manner. Ensure the instructions are clear and precise, with a focus on achieving accuracy and completeness. Aim for about ${maxWords} words, but use more if necessary to cover all important details.`;
+            case 'splits':
+                return `Provide a comprehensive, detailed explanation on section ${currentStep}. Ensure the explanation is clear and precise, with a focus on achieving accuracy and completeness. Aim for about ${maxWords} words, but use more if necessary to cover all important details.`;
+        }
     };
     const initializeSubsequentInstructions = () => {
         let newExecutionInstructions = []
@@ -173,12 +186,10 @@ export default function ChatBookApp() {
     }, [state.initialInstructionResponse]);
 
     useEffect(() => {
-        if (mode === "steps") {
-            let instructions = getInitialInstructionMessage(numSteps);
-            setInitialInstruction(instructions);
-            initializeSubsequentInstructions();
-        }
-    }, [numSteps, maxWords]);
+        let instructions = getInitialInstructionMessage(numSteps);
+        setInitialInstruction(instructions);
+        initializeSubsequentInstructions();
+    }, [numSteps, maxWords, mode]);
 
     useEffect(() => {
         document.title = subject;
@@ -218,6 +229,9 @@ export default function ChatBookApp() {
 
             let jsonMaxWords = JSON.stringify(maxWords);
             localStorage.setItem('maxWords', jsonMaxWords);
+
+            let jsonMode = JSON.stringify(mode);
+            localStorage.setItem('mode', jsonMode);
         }
     }, [numSteps, subject, initialInstruction, subsequentInstructions, maxWords]);
 
@@ -227,8 +241,25 @@ export default function ChatBookApp() {
 
     return (
         <>
-            <div>
-                <h2>Chat Book App</h2>
+        <div>
+            <h2>Chat Book App</h2>
+            <select
+                value={mode}
+                onChange={(event) => setMode(event.target.value)}
+            >
+                {modes.map((mod, index) => {
+                    return (
+                        <option
+                            key={index}
+                            selected={mod === mode}
+                            value={mod}
+                        >
+                            {mod}
+                        </option>
+                    );
+                })}
+            </select>
+
                 <p> Initial Instruction
                     &nbsp;<input readOnly value={initialInstruction} disabled />
                 </p>
