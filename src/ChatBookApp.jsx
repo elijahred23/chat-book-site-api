@@ -30,7 +30,7 @@ export default function ChatBookApp() {
 
     const localStorageValues = getValuesInLocalStorage();
 
-    const modes = ["steps", "splits"];
+    const modes = ["steps", "splits", "mind_map"];
 
     const [mode, setMode] = useState(localStorageValues.mode);
 
@@ -59,22 +59,27 @@ export default function ChatBookApp() {
         if (steps === null) {
             steps = numSteps;
         }
-        switch(mode){
+        switch(mode) {
             case 'steps':
-                return `Write a step by step process that has ${steps} steps total about ${subject}`;
+                return `Write a step-by-step process with ${steps} steps about ${subject}.`;
             case 'splits':
-                return `Split paragraph into ${steps} sections about ${subject}`;
+                return `Split the paragraph into ${steps} sections about ${subject}.`;
+            case 'mind_map':
+                return `Create a mind map of ${steps} main branches for the topic '${subject}', with sub-branches under each if needed.`;
         }
     }
+    
     const getExecutionInstructionMessage = (currentStep) => {
-        
-        switch(mode){
+        switch(mode) {
             case 'steps':
-                return `Provide a comprehensive, detailed guide on how to execute step ${currentStep} in a step-by-step manner. Ensure the instructions are clear and precise, with a focus on achieving accuracy and completeness. Aim for about ${maxWords} words, but use more if necessary to cover all important details.`;
+                return `Detail step ${currentStep} of the process in about ${maxWords} words.`;
             case 'splits':
-                return `Provide a comprehensive, detailed explanation on section ${currentStep}. Ensure the explanation is clear and precise, with a focus on achieving accuracy and completeness. Aim for about ${maxWords} words, but use more if necessary to cover all important details.`;
+                return `Explain section ${currentStep} in detail, focusing on completeness in about ${maxWords} words.`;
+            case 'mind_map':
+                return `Expand on branch ${currentStep} of the mind map. Add details to sub-branches as needed, aiming for about ${maxWords} words.`;
         }
     };
+    
     const initializeSubsequentInstructions = () => {
         let newExecutionInstructions = []
         for (let currentStep = 1; currentStep <= numSteps; currentStep++) {
@@ -110,7 +115,6 @@ export default function ChatBookApp() {
     }
     const print = () => window.print();
     const generatePDF = async () => {
-        console.log({message:"GENERATING PDF"})
         if (state.initialInstructionResponse !== "") {
             try {
                 setLoadingPDF(true);

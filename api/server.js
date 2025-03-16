@@ -5,6 +5,7 @@ import bodyParser from 'body-parser';
 import MarkdownIt from 'markdown-it';
 import fs from 'fs';
 import puppeteer from 'puppeteer';
+import { fetchTranscript } from './youtube.js';
 
 const app = express();
 (async () => {
@@ -54,6 +55,27 @@ const logErrorToFile = (error) => {
 app.get('/', (req, res) => {
   const randomIndex = Math.floor(Math.random() * messages.length);
   res.send({ message: messages[randomIndex] });
+});
+
+app.get('/youtube/transcript', async (req, res) => {
+  try {
+    const { url } = req.query;
+    if (!url) {
+      return res.status(400).send({ error: 'Bad Request', message: 'YouTube URL is required' });
+    }
+
+    const videoIdMatch = url.match(/(?:youtube\.com\/(?:[^/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/);
+    if (!videoIdMatch) {
+      return res.status(400).send({ error: 'Bad Request', message: 'Invalid YouTube URL' });
+    }
+
+    let transcript = await fetchTranscript(url);
+
+    res.send({ transcript });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send({ error: 'Server Error', message: 'Failed to fetch transcript' });
+  }
 });
 
 app.get('/gpt/prompt', async (req, res) => {
