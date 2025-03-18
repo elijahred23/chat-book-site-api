@@ -16,10 +16,10 @@ function App(){
       <h1>Eli GPT</h1>
       <div className='nav-links'>
         <NavLink to='/chatBook'>Chat Book</NavLink>
-        <NavLink to='/apiCheck'>API Check</NavLink>
         <NavLink to='/chatGPT'>Chat GPT</NavLink>
-        <NavLink to='/chatTemplate'>Chat Template</NavLink>
         <NavLink to='/youTubeTranscript'>YouTube Transcript</NavLink>
+        {/* <NavLink to='/chatTemplate'>Chat Template</NavLink> */}
+        <NavLink to='/apiCheck'>API Check</NavLink>
       </div>
       <div className="content">
         <Routes>

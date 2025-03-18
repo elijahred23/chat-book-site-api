@@ -6,15 +6,27 @@ const isValidYouTubeUrl = (url) => {
     const regex = /^(https?:\/\/)?(www\.)?(youtube\.com\/(watch\?v=|embed\/|v\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
     return regex.test(url);
 }
+
 const getTranscript = async (url) => {
     if (isValidYouTubeUrl(url)) {
-        const response = await fetch(`${hostname}/youtube/transcript?url=${encodeURIComponent(url)}`);
-        const data = await response.json();
-        return data.transcript;
+        try {
+            const response = await fetch(`${hostname}/youtube/transcript?url=${encodeURIComponent(url)}`).catch(err=>window.alert(err));
+            if (!response.ok) {
+                console.log({response})
+                let message= `Error: ${response.statusText}`
+                window.alert(message)
+                throw new Error(message);
+            }
+            const data = await response.json();
+            return data.transcript || '';
+        } catch (error) {
+            console.error('Failed to fetch transcript:', error);
+            return '';
+        }
     } else {
-        return ''
+        return '';
     }
-}
+};
 
 function splitStringByWords(str, splitCount) {
     if (!str || splitCount < 1) return [];
@@ -53,6 +65,7 @@ export default function YouTubeTranscript() {
     const [splitTranscript, setSplitTranscript] = useState([]);
     const [promptResponses, setPromptResponses] = useState([]);
     const [loadingPrompt, setLoadingPrompt] = useState(false);
+    const [manuallyEnteredTranscript, setManuallyEnteredTranscript] = useState("");
 
     useEffect(() => {
         if (isValidYouTubeUrl(url)) {
@@ -81,7 +94,7 @@ export default function YouTubeTranscript() {
         if (splitLength > 0 && transcript?.length > 0) {
             setSplitTranscript(splitStringByWords(transcript, splitLength));
         }
-    }, [splitLength]);
+    }, [splitLength, transcript]);
 
 
     const executePrompt = async () => { 
@@ -94,6 +107,16 @@ export default function YouTubeTranscript() {
     return (<>
         <div style={{ height: "10px", width: "10px", backgroundColor: valid ? 'green' : 'red' }}></div>
         <input value={url} placeholder="YouTube URL" onChange={event => setUrl(event.target.value)} />
+        {(transcript?.length ?? 0) == 0 && 
+        <>
+            <input value={manuallyEnteredTranscript} placeholder="Manually Enter Transcript" onChange={event => setManuallyEnteredTranscript(event.target.value)} />
+            <button onClick={event=>{
+                setSplitLength(1);
+                setWordCount(manuallyEnteredTranscript?.length ?? 0);
+                setTranscript(manuallyEnteredTranscript);
+            }}>Add Transcript</button>
+        </>
+        }
         {transcript?.length > 0 &&
             <>
                 <input value={splitLength} type="number" min="1" step="1" placeholder="Split" onChange={event => setSplitLength(event.target.value)} />
@@ -107,11 +130,11 @@ export default function YouTubeTranscript() {
             <input value={prompt} placeholder="Prompt" onChange={event => setPrompt(event.target.value)} />
             <ClipLoader color="blue" loading={loadingPrompt} />
             <button disabled={prompt?.length < 1 || loadingPrompt} onClick={executePrompt} >Execute</button>
+                {promptResponses?.length > 0 && <h2>Prompt Response</h2>}
                 {
                     promptResponses?.map(trans => {
                         return (
                             <>
-                            <h2>Prompt Response</h2>
                             <div style={{ border: "1px solid green", marginBottom: "10px" }}>
                                 {trans}
                             </div>
