@@ -4,10 +4,10 @@ import { geminiApiKey } from "./apiKey.js";
 // Initialize the GoogleGenerativeAI instance
 const genAI = new GoogleGenerativeAI(geminiApiKey);
 
-async function generateGeminiResponse(msg) {
+async function generateGeminiResponse(msg, gemini_model = "gemini-1.5-flash") {
     try {
         // Access the gemini-pro model
-        const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" });
+        const model = genAI.getGenerativeModel({ model: gemini_model });
 
         // Start the chat with initial conversation history
         const chat = model.startChat({
