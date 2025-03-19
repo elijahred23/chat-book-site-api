@@ -81,6 +81,7 @@ async function promptTranscript(prompt, transcripts) {
     }));
     return newResponses;
 }
+const countWords = (s) => (s.match(/\b\w+\b/g) || []).length;
 
 export default function YouTubeTranscript() {
     const [url, setUrl] = useState("");
@@ -108,7 +109,7 @@ export default function YouTubeTranscript() {
         let data = await fetchYouTubeTranscript(url);
         let newTranscript = data?.transcript;
         setTranscript(newTranscript);
-        setWordCount(newTranscript?.length ?? 0);
+        setWordCount(countWords(newTranscript));
         setSplitLength(1);
     }
     useEffect(
