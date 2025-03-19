@@ -1,18 +1,46 @@
 import { hostname } from "./utils/hostname";
 import { useState, useEffect } from 'react';
 import { ClipLoader } from "react-spinners";
+import ReactMarkdown from 'react-markdown';
 
 const isValidYouTubeUrl = (url) => {
     const regex = /^(https?:\/\/)?(www\.)?(youtube\.com\/(watch\?v=|embed\/|v\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
     return regex.test(url);
 }
+const fetchYouTubeTranscript = async (video_url) => {
+    const url = "https://api.kome.ai/api/tools/youtube-transcripts";
+    
+    const requestBody = {
+        video_id: video_url,
+        format: true
+    };
+
+    try {
+        const response = await fetch(url, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify(requestBody)
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error("Error fetching transcript:", error);
+    }
+};
 
 const getTranscript = async (url) => {
     if (isValidYouTubeUrl(url)) {
         try {
-            const response = await fetch(`${hostname}/youtube/transcript?url=${encodeURIComponent(url)}`).catch(err=>window.alert(err));
+            const response = await fetch(`${hostname}/youtube/transcript`).catch(err=>window.alert(err));
             if (!response.ok) {
-                console.log({response})
                 let message= `Error: ${response.statusText}`
                 window.alert(message)
                 throw new Error(message);
@@ -75,15 +103,19 @@ export default function YouTubeTranscript() {
         }
     }, [url]);
 
+    const getTranscript = async () => {
+        setLastUrl(url);
+        let data = await fetchYouTubeTranscript(url);
+        let newTranscript = data?.transcript;
+        setTranscript(newTranscript);
+        setWordCount(newTranscript?.length ?? 0);
+        setSplitLength(1);
+    }
     useEffect(
         () => {
             let newTrans = async () => {
                 if (valid === true && url !== lastUrl) {
-                    setLastUrl(url);
-                    let newTranscript = await getTranscript(url);
-                    setTranscript(newTranscript);
-                    setWordCount(newTranscript?.length ?? 0);
-                    setSplitLength(1);
+                    await getTranscript();
                 }
             }
             newTrans();
@@ -132,11 +164,12 @@ export default function YouTubeTranscript() {
             <button disabled={prompt?.length < 1 || loadingPrompt} onClick={executePrompt} >Execute</button>
                 {promptResponses?.length > 0 && <h2>Prompt Response</h2>}
                 {
-                    promptResponses?.map(trans => {
+                    promptResponses?.map(promptResponse => {
                         return (
                             <>
                             <div style={{ border: "1px solid green", marginBottom: "10px" }}>
-                                {trans}
+                                <ReactMarkdown>{promptResponse}</ReactMarkdown>
+                                {promptResponse}
                             </div>
                             </>
                         )
