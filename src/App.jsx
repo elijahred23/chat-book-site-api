@@ -7,6 +7,7 @@ import ChatGPT from './ChatGPT';
 import ProgressBar from './ui/ProgressBar';
 import ChatTemplate from './ChatTemplate';
 import YouTubeTranscript from './YouTubeTranscript';
+import Wiki from './Wiki';
 
 function App(){
   return (
@@ -18,7 +19,7 @@ function App(){
         <NavLink to='/chatBook'>Chat Book</NavLink>
         <NavLink to='/chatGPT'>Chat GPT</NavLink>
         <NavLink to='/youTubeTranscript'>YouTube Transcript</NavLink>
-        {/* <NavLink to='/chatTemplate'>Chat Template</NavLink> */}
+        <NavLink to='/wiki'>Wiki</NavLink>
         <NavLink to='/apiCheck'>API Check</NavLink>
       </div>
       <div className="content">
@@ -29,6 +30,7 @@ function App(){
           <Route path="/progressBar" element={<ProgressBar progress={100} />} />
           <Route path="/chatTemplate" element={<ChatTemplate />} />
           <Route path="/youTubeTranscript" element={<YouTubeTranscript />} />
+          <Route path="/wiki" element={<Wiki />} />
         </Routes>
       </div>
     </BrowserRouter>   

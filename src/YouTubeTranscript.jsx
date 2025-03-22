@@ -170,7 +170,6 @@ export default function YouTubeTranscript() {
                             <>
                             <div style={{ border: "1px solid green", marginBottom: "10px" }}>
                                 <ReactMarkdown>{promptResponse}</ReactMarkdown>
-                                {promptResponse}
                             </div>
                             </>
                         )
