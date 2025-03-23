@@ -1,4 +1,3 @@
-// File: App.jsx
 import React, { useState } from "react";
 import { getGeminiResponse } from "./utils/callGemini";
 import ReactMarkdown from 'react-markdown';
@@ -8,17 +7,30 @@ export default function Wiki() {
     const [results, setResults] = useState([]);
     const [pageDetail, setPageDetail] = useState(null);
     const [loading, setLoading] = useState(false);
-    const [prompt , setPrompt] = useState("");
-    const [geminiResponse , setGeminiResponse] = useState("");
+    const [prompt, setPrompt] = useState("");
+    const [geminiResponse, setGeminiResponse] = useState("");
 
+    const promptSuggestions = [
+        "Summarize this article",
+        "Explain like I'm 5",
+        "What are the key facts?",
+        "What are the pros and cons?",
+        "List five important takeaways",
+        "Provide historical context",
+        "What are potential controversies?",
+        "Break this down into bullet points",
+        "Compare this topic with another",
+        "What questions can I ask about this topic?",
+        "Create a quiz based on this content"
+    ];
+    
     const searchWikipedia = async () => {
         setLoading(true);
         setResults([]);
         setPageDetail(null);
+        setGeminiResponse("");
         try {
-            const searchUrl = `https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=${encodeURIComponent(
-                query
-            )}&format=json&origin=*`;
+            const searchUrl = `https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=${encodeURIComponent(query)}&format=json&origin=*`;
             const res = await fetch(searchUrl);
             const data = await res.json();
             setResults(data.query.search);
@@ -30,10 +42,9 @@ export default function Wiki() {
 
     const getPageDetails = async (title) => {
         setPageDetail({ loading: true });
+        setGeminiResponse("");
         try {
-            const detailUrl = `https://en.wikipedia.org/w/api.php?action=query&prop=extracts|pageimages|info&inprop=url&exintro&explaintext&piprop=original&titles=${encodeURIComponent(
-                title
-            )}&format=json&origin=*`;
+            const detailUrl = `https://en.wikipedia.org/w/api.php?action=query&prop=extracts|pageimages|info&inprop=url&exintro&explaintext&piprop=original&titles=${encodeURIComponent(title)}&format=json&origin=*`;
             const res = await fetch(detailUrl);
             const data = await res.json();
             const page = Object.values(data.query.pages)[0];
@@ -43,6 +54,9 @@ export default function Wiki() {
                 fullUrl: page.fullurl,
                 image: page.original?.source || null,
             });
+
+            const autoSummary = await getGeminiResponse(`Summarize this article: ${page.extract}`);
+            setGeminiResponse(autoSummary);
         } catch (error) {
             setPageDetail({ error: "Failed to fetch page details." });
         }
@@ -88,25 +102,54 @@ export default function Wiki() {
 
             {pageDetail?.error && <p className="text-red-600">{pageDetail.error}</p>}
 
-            {pageDetail?.extract &&
+            {pageDetail?.extract && (
                 <>
-                    <input placeholder="prompt" value={prompt} onChange={event=>setPrompt(event.target.value)} />
-                    <button disabled={(prompt?.length == 0) || loading} onClick={async ()=>{
-                        setLoading(true);
-                        let geminiPrompt = `${prompt}: ${pageDetail.extract}`;
-                        let response = await getGeminiResponse(geminiPrompt);
-                        setGeminiResponse(response);
-                        setLoading(false);
-                    }}>Send</button>
+                    <div className="mb-4">
+                        <input
+                            placeholder="Ask Gemini about this article..."
+                            value={prompt}
+                            onChange={(event) => setPrompt(event.target.value)}
+                            className="border px-3 py-2 w-full mb-2"
+                        />
+                        <div className="mb-2 flex flex-wrap gap-2">
+                            {promptSuggestions.map((s, i) => (
+                                <button
+                                    key={i}
+                                    className="bg-gray-200 px-2 py-1 rounded"
+                                    onClick={() => setPrompt(s)}
+                                >
+                                    {s}
+                                </button>
+                            ))}
+                        </div>
+                        <button
+                            disabled={prompt.length === 0 || loading}
+                            onClick={async () => {
+                                try {
+                                    setLoading(true);
+                                    let geminiPrompt = `${prompt}: ${pageDetail.extract}`;
+                                    let response = await getGeminiResponse(geminiPrompt);
+                                    setGeminiResponse(response);
+                                } catch (e) {
+                                    setGeminiResponse("⚠️ Failed to get a response from Gemini.");
+                                } finally {
+                                    setLoading(false);
+                                }
+                            }}
+                            className="bg-green-600 text-white px-4 py-2 rounded"
+                        >
+                            Send
+                        </button>
+                    </div>
                 </>
-            }
-            {geminiResponse && 
-                <>
-                <div style={{ border: "1px solid green", marginBottom: "10px" }}>
+            )}
+
+            {geminiResponse && (
+                <div style={{ border: "1px solid green", padding: "10px", marginBottom: "10px" }}>
                     <ReactMarkdown>{geminiResponse}</ReactMarkdown>
                 </div>
-                </>
-            }
+            )}
+
             {pageDetail && !pageDetail.loading && !pageDetail.error && (
                 <div className="bg-gray-100 p-4 rounded">
                     <h2 className="font-bold text-xl mb-2">{pageDetail.title}</h2>
