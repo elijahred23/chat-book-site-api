@@ -27,8 +27,8 @@ function App() {
             <NavLink to='/youTubeTranscript'>YouTube Transcript</NavLink>
             <NavLink to='/wiki'>Wiki</NavLink>
             <NavLink to='/apiCheck'>API Check</NavLink>
-            <button onClick={toggleChat} className='chat-toggle-btn'>
-              {isChatOpen ? 'Close Assistant ❌' : 'Ask AI 💬'}
+            <button onClick={toggleChat} className='chat-toggle-btn floating-chat-btn'>
+              {isChatOpen ? '❌' : '💬 Ask AI'}
             </button>
           </div>
 

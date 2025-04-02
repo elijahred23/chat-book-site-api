@@ -76,17 +76,20 @@ function GptPromptComponent() {
     }, [messages, prompt]);
 
     return (
-        <div style={{ maxWidth: '800px', margin: '0 auto', padding: '1rem' }}>
+        <div style={{ maxWidth: '800px', margin: '0 auto', height: '100vh', display: 'flex', flexDirection: 'column' }}>
             <h2 style={{ fontSize: '24px', marginBottom: '1rem' }}>💬 Gemini Chat</h2>
+    
+            {/* Scrollable message area */}
             <div
                 ref={messagesEndRef}
                 style={{
                     border: '1px solid #ccc',
                     padding: '10px',
-                    marginBottom: '10px',
-                    height: '400px',
+                    flexGrow: 1,
                     overflowY: 'auto',
-                    backgroundColor: '#f9f9f9'
+                    backgroundColor: '#f9f9f9',
+                    marginBottom: '10px',
+                    borderRadius: '5px'
                 }}
             >
                 {messages.map((message, index) => (
@@ -110,33 +113,36 @@ function GptPromptComponent() {
                     </div>
                 ))}
             </div>
-
-            <textarea
-                rows={3}
-                value={prompt}
-                onChange={handleInputChange}
-                onKeyDown={e => {
-                    if (e.key === 'Enter' && !e.shiftKey) {
-                        e.preventDefault();
-                        handleSubmit();
-                    }
-                }}
-                style={{ width: '100%', marginBottom: '10px' }}
-                placeholder="Type your prompt and hit Enter..."
-            />
-
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '10px' }}>
-                {promptSuggestions.map((s, i) => (
-                    <button key={i} onClick={() => setPrompt(s)}>{s}</button>
-                ))}
-            </div>
-
-            {loading && <p><ClipLoader color="blue" size={20} /> Bot is thinking...</p>}
-
-            <div style={{ display: 'flex', gap: '10px' }}>
-                <button onClick={print}>Print</button>
-                <button onClick={clear}>Clear</button>
-                {!loading && <button onClick={handleSubmit}>Send</button>}
+    
+            {/* Fixed bottom input and controls */}
+            <div style={{ position: 'sticky', bottom: 0, backgroundColor: '#fff', padding: '10px 0', zIndex: 10 }}>
+                <textarea
+                    rows={3}
+                    value={prompt}
+                    onChange={handleInputChange}
+                    onKeyDown={e => {
+                        if (e.key === 'Enter' && !e.shiftKey) {
+                            e.preventDefault();
+                            handleSubmit();
+                        }
+                    }}
+                    style={{ width: '100%', marginBottom: '10px' }}
+                    placeholder="Type your prompt and hit Enter..."
+                />
+    
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '10px' }}>
+                    {promptSuggestions.map((s, i) => (
+                        <button key={i} onClick={() => setPrompt(s)}>{s}</button>
+                    ))}
+                </div>
+    
+                {loading && <p><ClipLoader color="blue" size={20} /> Bot is thinking...</p>}
+    
+                <div style={{ display: 'flex', gap: '10px' }}>
+                    <button onClick={print}>Print</button>
+                    <button onClick={clear}>Clear</button>
+                    {!loading && <button onClick={handleSubmit}>Send</button>}
+                </div>
             </div>
         </div>
     );
