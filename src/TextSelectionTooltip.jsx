@@ -6,9 +6,8 @@ const TextSelectionTooltip = ({ onAskAI }) => {
   const [selectedText, setSelectedText] = useState('');
 
   useEffect(() => {
-    const handleMouseUp = (e) => {
-      // ✅ Add some logs to ensure this runs
-      console.log('🖱 MouseUp triggered');
+    const handleSelection = () => {
+      console.log('📱 Selection triggered');
 
       const selection = window.getSelection();
       if (!selection || selection.rangeCount === 0) {
@@ -29,25 +28,34 @@ const TextSelectionTooltip = ({ onAskAI }) => {
 
         console.log('✅ Selected:', text);
 
+        const tooltipWidth = 180;
+        const calculatedLeft = rect.left + rect.width / 2 - tooltipWidth / 2 + window.scrollX;
+        const maxLeft = window.innerWidth - tooltipWidth - 10;
+
         setSelectedText(text);
         setPosition({
-          top: rect.top + window.scrollY - 40,
-          left: rect.left + window.scrollX,
+          top: rect.top + window.scrollY - 60,
+          left: Math.min(Math.max(calculatedLeft, 10), maxLeft),
         });
-        setVisible(true);
+
+        setTimeout(() => {
+          setVisible(true);
+        }, 100); // slight delay for mobile long press
       } catch (err) {
-        console.error('Error getting selection rect:', err);
+        console.error('❌ Error getting selection rect:', err);
       }
     };
 
     const hideTooltip = () => setVisible(false);
 
-    document.addEventListener('mouseup', handleMouseUp);
+    document.addEventListener('mouseup', handleSelection);
+    document.addEventListener('touchend', handleSelection); // ✅ mobile
     document.addEventListener('mousedown', hideTooltip);
     document.addEventListener('scroll', hideTooltip);
 
     return () => {
-      document.removeEventListener('mouseup', handleMouseUp);
+      document.removeEventListener('mouseup', handleSelection);
+      document.removeEventListener('touchend', handleSelection);
       document.removeEventListener('mousedown', hideTooltip);
       document.removeEventListener('scroll', hideTooltip);
     };
@@ -56,14 +64,13 @@ const TextSelectionTooltip = ({ onAskAI }) => {
   const handleClick = (e) => {
     e.preventDefault();
     e.stopPropagation();
-  
+
     if (!selectedText || selectedText.trim() === '') return;
-  
+
     console.log('🚀 Sending to Ask AI:', selectedText);
     onAskAI(selectedText);
     setVisible(false);
   };
-  
 
   if (!visible) return null;
 
@@ -80,9 +87,15 @@ const TextSelectionTooltip = ({ onAskAI }) => {
         boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
         cursor: 'pointer',
         zIndex: 9999,
+        maxWidth: '180px',
+        fontSize: '14px',
+        whiteSpace: 'nowrap',
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
+        userSelect: 'none',
       }}
       onClick={handleClick}
-      onMouseDown={handleClick}
+      onMouseDown={handleClick} // still needed for desktop
     >
       💬 Ask AI about this
     </div>

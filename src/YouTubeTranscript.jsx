@@ -5,9 +5,10 @@ import ReactMarkdown from 'react-markdown';
 import { getGeminiResponse } from "./utils/callGemini";
 
 const isValidYouTubeUrl = (url) => {
-    const regex = /^(https?:\/\/)?(www\.)?(youtube\.com\/(watch\?v=|embed\/|v\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
+    const regex = /^(https?:\/\/)?(www\.)?(youtube\.com\/(watch\?v=|embed\/|v\/|shorts\/|live\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})(\S*)?$/;
     return regex.test(url);
-}
+  };
+  
 
 const fetchYouTubeTranscript = async (video_url) => {
     const url = "https://api.kome.ai/api/tools/youtube-transcripts";
