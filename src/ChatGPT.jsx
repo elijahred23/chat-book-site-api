@@ -12,7 +12,7 @@ const getValuesLocalStorage = () => {
     }
 }
 
-function GptPromptComponent() {
+function GptPromptComponent({selectedText}) {
     const localStorageValues = getValuesLocalStorage();
     const [messages, setMessages] = useState(localStorageValues.messages);
     const [prompt, setPrompt] = useState(localStorageValues.prompt);
@@ -74,6 +74,12 @@ function GptPromptComponent() {
             localStorage.setItem('prompt', JSON.stringify(prompt));
         };
     }, [messages, prompt]);
+
+    useEffect(()=>{
+        if(selectedText != ""){
+            setPrompt(selectedText);
+        }
+    }, [selectedText])
 
     return (
         <div style={{ maxWidth: '800px', margin: '0 auto', height: '100vh', display: 'flex', flexDirection: 'column' }}>

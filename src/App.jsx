@@ -8,10 +8,12 @@ import ChatTemplate from './ChatTemplate';
 import YouTubeTranscript from './YouTubeTranscript';
 import Wiki from './Wiki';
 import GptPromptComponent from './ChatGPT';
+import TextSelectionTooltip from './TextSelectionTooltip';
 
 function App() {
   const [isChatOpen, setIsChatOpen] = useState(false);
   const [isFullWidth, setIsFullWidth] = useState(false);
+  const [selectedText, setSelectedText] = useState("");
 
   const toggleChat = () => setIsChatOpen(prev => !prev);
   const toggleWidth = () => setIsFullWidth(prev => !prev);
@@ -58,10 +60,17 @@ function App() {
                 </button>
               </div>
             </div>
-            <GptPromptComponent />
+            <GptPromptComponent selectedText={selectedText}/>
           </div>
 
         </BrowserRouter>
+        <TextSelectionTooltip 
+        onAskAI={(text) => {
+          console.log({text})
+
+          setIsChatOpen(true);
+          setSelectedText(text)
+        }} />
       </div>
     </>
   );
