@@ -1,4 +1,3 @@
-import { hostname } from "./utils/hostname";
 import { useState, useEffect } from 'react';
 import { ClipLoader } from "react-spinners";
 import ReactMarkdown from 'react-markdown';
@@ -8,7 +7,6 @@ const isValidYouTubeUrl = (url) => {
     const regex = /^(https?:\/\/)?(www\.)?(youtube\.com\/(watch\?v=|embed\/|v\/|shorts\/|live\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})(\S*)?$/;
     return regex.test(url);
 };
-
 
 const fetchYouTubeTranscript = async (video_url) => {
     const url = "https://api.kome.ai/api/tools/youtube-transcripts";
@@ -44,32 +42,30 @@ function splitStringByWords(str, splitCount) {
 }
 
 async function promptTranscript(prompt, transcripts, setProgress) {
-    // Map all transcript parts to a Promise
-    const promises = transcripts.map((chunk, index) =>
+    const promises = transcripts.map((chunk) =>
         getGeminiResponse(`${prompt}: ${chunk}`).then(response => {
             setProgress(prev => prev + 1);
             return response;
         })
     );
-
-    // Wait for all of them to resolve
-    const newResponses = await Promise.all(promises);
-    return newResponses;
+    return await Promise.all(promises);
 }
-
 
 const countWords = (s) => (s.match(/\b\w+\b/g) || []).length;
 
 export default function YouTubeTranscript() {
     const [url, setUrl] = useState("");
-    const [prompt, setPrompt] = useState("");
+    const [prompt, setPrompt] = useState(() => localStorage.getItem("yt_prompt") || "");
     const [lastUrl, setLastUrl] = useState("");
     const [valid, setValid] = useState(false);
-    const [transcript, setTranscript] = useState("");
-    const [wordCount, setWordCount] = useState(0);
+    const [transcript, setTranscript] = useState(() => localStorage.getItem("yt_transcript") || "");
+    const [wordCount, setWordCount] = useState(() => countWords(localStorage.getItem("yt_transcript") || ""));
     const [splitLength, setSplitLength] = useState(1);
     const [splitTranscript, setSplitTranscript] = useState([]);
-    const [promptResponses, setPromptResponses] = useState([]);
+    const [promptResponses, setPromptResponses] = useState(() => {
+        const saved = localStorage.getItem("yt_promptResponses");
+        return saved ? JSON.parse(saved) : [];
+    });
     const [loadingPrompt, setLoadingPrompt] = useState(false);
     const [manuallyEnteredTranscript, setManuallyEnteredTranscript] = useState("");
     const [progress, setProgress] = useState(0);
@@ -85,7 +81,7 @@ export default function YouTubeTranscript() {
         setTranscript(newTranscript);
         setWordCount(countWords(newTranscript));
         setSplitLength(1);
-    }
+    };
 
     useEffect(() => {
         if (valid && url !== lastUrl) {
@@ -105,7 +101,28 @@ export default function YouTubeTranscript() {
         const responses = await promptTranscript(prompt, splitTranscript, setProgress);
         setPromptResponses(responses);
         setLoadingPrompt(false);
-    }
+    };
+
+    // Save data to localStorage
+    useEffect(() => {
+        localStorage.setItem("yt_transcript", transcript);
+        localStorage.setItem("yt_prompt", prompt);
+        localStorage.setItem("yt_promptResponses", JSON.stringify(promptResponses));
+    }, [transcript, prompt, promptResponses]);
+
+    const clearAll = () => {
+        setTranscript("");
+        setPrompt("");
+        setPromptResponses([]);
+        setManuallyEnteredTranscript("");
+        setUrl("");
+        setSplitLength(1);
+        setWordCount(0);
+        setSplitTranscript([]);
+        localStorage.removeItem("yt_transcript");
+        localStorage.removeItem("yt_prompt");
+        localStorage.removeItem("yt_promptResponses");
+    };
 
     const promptSuggestions = [
         "Summarize this video",
@@ -129,10 +146,22 @@ export default function YouTubeTranscript() {
     return (
         <div style={{ maxWidth: "800px", margin: "0 auto", padding: "1rem" }}>
             <div style={{ height: "10px", width: "10px", backgroundColor: valid ? 'green' : 'red' }}></div>
-            <input value={url} placeholder="YouTube URL" onChange={e => setUrl(e.target.value)} style={{ width: '100%', marginBottom: '10px' }} />
+
+            <input
+                value={url}
+                placeholder="YouTube URL"
+                onChange={e => setUrl(e.target.value)}
+                style={{ width: '100%', marginBottom: '10px' }}
+            />
+
             {transcript?.length === 0 && (
                 <>
-                    <input value={manuallyEnteredTranscript} placeholder="Manually Enter Transcript" onChange={e => setManuallyEnteredTranscript(e.target.value)} style={{ width: '100%' }} />
+                    <input
+                        value={manuallyEnteredTranscript}
+                        placeholder="Manually Enter Transcript"
+                        onChange={e => setManuallyEnteredTranscript(e.target.value)}
+                        style={{ width: '100%' }}
+                    />
                     <button onClick={() => {
                         setSplitLength(1);
                         setWordCount(countWords(manuallyEnteredTranscript));
@@ -140,11 +169,20 @@ export default function YouTubeTranscript() {
                     }}>Add Transcript</button>
                 </>
             )}
+
             {transcript?.length > 0 && (
                 <>
-                    <input value={splitLength} type="number" min="1" step="1" placeholder="Split" onChange={e => setSplitLength(Number(e.target.value))} />
+                    <input
+                        value={splitLength}
+                        type="number"
+                        min="1"
+                        step="1"
+                        placeholder="Split"
+                        onChange={e => setSplitLength(Number(e.target.value))}
+                    />
                     <div>Word Count: {wordCount}</div>
                     <div>Split Word Count: {Math.round(wordCount / splitLength)}</div>
+
                     <div
                         style={{
                             display: 'flex',
@@ -175,23 +213,43 @@ export default function YouTubeTranscript() {
                             </button>
                         ))}
                     </div>
-                    <input value={prompt} placeholder="Prompt" onChange={e => setPrompt(e.target.value)} style={{ width: '100%' }} />
-                    <button disabled={prompt.length < 1 || loadingPrompt} onClick={executePrompt}>Execute</button>
+
+                    <input
+                        value={prompt}
+                        placeholder="Prompt"
+                        onChange={e => setPrompt(e.target.value)}
+                        style={{ width: '100%' }}
+                    />
+
+                    <div style={{ marginTop: '10px' }}>
+                        <button
+                            disabled={prompt.length < 1 || loadingPrompt}
+                            onClick={executePrompt}
+                        >
+                            Execute
+                        </button>
+                        <button onClick={clearAll} style={{ marginLeft: '10px' }}>Clear All</button>
+                    </div>
+
                     {loadingPrompt && (
                         <div style={{ margin: "10px 0" }}>
                             <ClipLoader color="blue" loading={true} />
                             <p>Generating: {progress}/{splitTranscript.length}</p>
                         </div>
                     )}
+
                     {promptResponses.length > 0 && <h2>Prompt Response</h2>}
                     {promptResponses.map((res, i) => (
                         <div key={i} style={{ border: "1px solid green", padding: "10px", marginBottom: "10px" }}>
                             <ReactMarkdown>{res}</ReactMarkdown>
                         </div>
                     ))}
+
                     <h2>Transcript</h2>
                     {splitTranscript.map((trans, i) => (
-                        <div key={i} style={{ border: "1px solid black", padding: "10px", marginBottom: "10px" }}>{trans}</div>
+                        <div key={i} style={{ border: "1px solid black", padding: "10px", marginBottom: "10px" }}>
+                            {trans}
+                        </div>
                     ))}
                 </>
             )}
