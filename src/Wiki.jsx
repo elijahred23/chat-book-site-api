@@ -1,14 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { getGeminiResponse } from "./utils/callGemini";
 import ReactMarkdown from 'react-markdown';
 
 export default function Wiki() {
-    const [query, setQuery] = useState("");
+    const [query, setQuery] = useState(localStorage.getItem("wiki_query") || "");
     const [results, setResults] = useState([]);
     const [pageDetail, setPageDetail] = useState(null);
     const [loading, setLoading] = useState(false);
-    const [prompt, setPrompt] = useState("");
-    const [geminiResponse, setGeminiResponse] = useState("");
+    const [prompt, setPrompt] = useState(localStorage.getItem("wiki_prompt") || "");
+    const [geminiResponse, setGeminiResponse] = useState(localStorage.getItem("wiki_response") || "");
+
+    const containerRef = useRef(null);
 
     const promptSuggestions = [
         "Summarize this article",
@@ -23,13 +25,20 @@ export default function Wiki() {
         "What questions can I ask about this topic?",
         "Create a quiz based on this content"
     ];
-    
+
+    const scrollToBottom = () => {
+        setTimeout(() => {
+            containerRef.current?.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+    };
+
     const searchWikipedia = async () => {
         setLoading(true);
         setResults([]);
         setPageDetail(null);
         setGeminiResponse("");
         try {
+            localStorage.setItem("wiki_query", query);
             const searchUrl = `https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=${encodeURIComponent(query)}&format=json&origin=*`;
             const res = await fetch(searchUrl);
             const data = await res.json();
@@ -48,18 +57,21 @@ export default function Wiki() {
             const res = await fetch(detailUrl);
             const data = await res.json();
             const page = Object.values(data.query.pages)[0];
-            setPageDetail({
+            const details = {
                 title: page.title,
                 extract: page.extract,
                 fullUrl: page.fullurl,
                 image: page.original?.source || null,
-            });
+            };
+            setPageDetail(details);
 
             const autoSummary = await getGeminiResponse(`Summarize this article: ${page.extract}`);
             setGeminiResponse(autoSummary);
+            localStorage.setItem("wiki_response", autoSummary);
         } catch (error) {
             setPageDetail({ error: "Failed to fetch page details." });
         }
+        scrollToBottom();
     };
 
     return (
@@ -99,7 +111,6 @@ export default function Wiki() {
             </ul>
 
             {pageDetail?.loading && <p>🔄 Loading article...</p>}
-
             {pageDetail?.error && <p className="text-red-600">{pageDetail.error}</p>}
 
             {pageDetail?.extract && (
@@ -108,7 +119,10 @@ export default function Wiki() {
                         <input
                             placeholder="Ask Gemini about this article..."
                             value={prompt}
-                            onChange={(event) => setPrompt(event.target.value)}
+                            onChange={(event) => {
+                                setPrompt(event.target.value);
+                                localStorage.setItem("wiki_prompt", event.target.value);
+                            }}
                             className="border px-3 py-2 w-full mb-2"
                         />
                         <div className="mb-2 flex flex-wrap gap-2">
@@ -116,7 +130,10 @@ export default function Wiki() {
                                 <button
                                     key={i}
                                     className="bg-gray-200 px-2 py-1 rounded"
-                                    onClick={() => setPrompt(s)}
+                                    onClick={() => {
+                                        setPrompt(s);
+                                        localStorage.setItem("wiki_prompt", s);
+                                    }}
                                 >
                                     {s}
                                 </button>
@@ -127,9 +144,10 @@ export default function Wiki() {
                             onClick={async () => {
                                 try {
                                     setLoading(true);
-                                    let geminiPrompt = `${prompt}: ${pageDetail.extract}`;
-                                    let response = await getGeminiResponse(geminiPrompt);
+                                    const geminiPrompt = `${prompt}: ${pageDetail.extract}`;
+                                    const response = await getGeminiResponse(geminiPrompt);
                                     setGeminiResponse(response);
+                                    localStorage.setItem("wiki_response", response);
                                 } catch (e) {
                                     setGeminiResponse("⚠️ Failed to get a response from Gemini.");
                                 } finally {
@@ -151,7 +169,7 @@ export default function Wiki() {
             )}
 
             {pageDetail && !pageDetail.loading && !pageDetail.error && (
-                <div className="bg-gray-100 p-4 rounded">
+                <div ref={containerRef} className="bg-gray-100 p-4 rounded">
                     <h2 className="font-bold text-xl mb-2">{pageDetail.title}</h2>
                     <p className="mb-4 whitespace-pre-wrap">{pageDetail.extract}</p>
                     <a
