@@ -7,8 +7,8 @@ import { getGeminiResponse } from "./utils/callGemini";
 const isValidYouTubeUrl = (url) => {
     const regex = /^(https?:\/\/)?(www\.)?(youtube\.com\/(watch\?v=|embed\/|v\/|shorts\/|live\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})(\S*)?$/;
     return regex.test(url);
-  };
-  
+};
+
 
 const fetchYouTubeTranscript = async (video_url) => {
     const url = "https://api.kome.ai/api/tools/youtube-transcripts";
@@ -44,14 +44,19 @@ function splitStringByWords(str, splitCount) {
 }
 
 async function promptTranscript(prompt, transcripts, setProgress) {
-    let newResponses = [];
-    for (let i = 0; i < transcripts.length; i++) {
-        const response = await getGeminiResponse(`${prompt}: ${transcripts[i]}`);
-        newResponses[i] = response;
-        setProgress(i + 1);
-    }
+    // Map all transcript parts to a Promise
+    const promises = transcripts.map((chunk, index) =>
+        getGeminiResponse(`${prompt}: ${chunk}`).then(response => {
+            setProgress(prev => prev + 1);
+            return response;
+        })
+    );
+
+    // Wait for all of them to resolve
+    const newResponses = await Promise.all(promises);
     return newResponses;
 }
+
 
 const countWords = (s) => (s.match(/\b\w+\b/g) || []).length;
 
@@ -140,9 +145,34 @@ export default function YouTubeTranscript() {
                     <input value={splitLength} type="number" min="1" step="1" placeholder="Split" onChange={e => setSplitLength(Number(e.target.value))} />
                     <div>Word Count: {wordCount}</div>
                     <div>Split Word Count: {Math.round(wordCount / splitLength)}</div>
-                    <div style={{ marginBottom: "10px" }}>
-                        {promptSuggestions.map(suggestion => (
-                            <button key={suggestion} onClick={() => setPrompt(suggestion)}>{suggestion}</button>
+                    <div
+                        style={{
+                            display: 'flex',
+                            flexWrap: 'wrap',
+                            gap: '8px',
+                            marginBottom: '10px',
+                            justifyContent: 'center',
+                        }}
+                    >
+                        {promptSuggestions.map((suggestion, i) => (
+                            <button
+                                key={i}
+                                onClick={() => setPrompt(suggestion)}
+                                style={{
+                                    padding: '6px 10px',
+                                    fontSize: '12px',
+                                    borderRadius: '5px',
+                                    backgroundColor: '#e0e0e0',
+                                    border: '1px solid #ccc',
+                                    cursor: 'pointer',
+                                    maxWidth: '180px',
+                                    whiteSpace: 'nowrap',
+                                    overflow: 'hidden',
+                                    textOverflow: 'ellipsis',
+                                }}
+                            >
+                                {suggestion}
+                            </button>
                         ))}
                     </div>
                     <input value={prompt} placeholder="Prompt" onChange={e => setPrompt(e.target.value)} style={{ width: '100%' }} />

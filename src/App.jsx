@@ -12,7 +12,7 @@ import TextSelectionTooltip from './TextSelectionTooltip';
 
 function App() {
   const [isChatOpen, setIsChatOpen] = useState(false);
-  const [isFullWidth, setIsFullWidth] = useState(false);
+  const [isFullWidth, setIsFullWidth] = useState(true);
   const [selectedText, setSelectedText] = useState("");
 
   const toggleChat = () => setIsChatOpen(prev => !prev);

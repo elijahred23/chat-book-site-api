@@ -12,7 +12,7 @@ const getValuesLocalStorage = () => {
     }
 }
 
-function GptPromptComponent({selectedText}) {
+function GptPromptComponent({ selectedText }) {
     const localStorageValues = getValuesLocalStorage();
     const [messages, setMessages] = useState(localStorageValues.messages);
     const [prompt, setPrompt] = useState(localStorageValues.prompt);
@@ -75,8 +75,8 @@ function GptPromptComponent({selectedText}) {
         };
     }, [messages, prompt]);
 
-    useEffect(()=>{
-        if(selectedText != ""){
+    useEffect(() => {
+        if (selectedText != "") {
             setPrompt(selectedText);
         }
     }, [selectedText])
@@ -84,7 +84,7 @@ function GptPromptComponent({selectedText}) {
     return (
         <div style={{ maxWidth: '800px', margin: '0 auto', height: '100vh', display: 'flex', flexDirection: 'column' }}>
             <h2 style={{ fontSize: '24px', marginBottom: '1rem' }}>💬 Gemini Chat</h2>
-    
+
             {/* Scrollable message area */}
             <div
                 ref={messagesEndRef}
@@ -119,7 +119,7 @@ function GptPromptComponent({selectedText}) {
                     </div>
                 ))}
             </div>
-    
+
             {/* Fixed bottom input and controls */}
             <div style={{ position: 'sticky', bottom: 0, backgroundColor: '#fff', padding: '10px 0', zIndex: 10 }}>
                 <textarea
@@ -135,15 +135,39 @@ function GptPromptComponent({selectedText}) {
                     style={{ width: '100%', marginBottom: '10px' }}
                     placeholder="Type your prompt and hit Enter..."
                 />
-    
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '10px' }}>
+
+                <div style={{
+                    display: 'flex',
+                    flexWrap: 'wrap',
+                    gap: '8px',
+                    marginBottom: '10px',
+                    justifyContent: 'center'
+                }}>
                     {promptSuggestions.map((s, i) => (
-                        <button key={i} onClick={() => setPrompt(s)}>{s}</button>
+                        <button
+                            key={i}
+                            onClick={() => setPrompt(`${s}: ${prompt}`)}
+                            style={{
+                                padding: '6px 10px',
+                                fontSize: '12px',
+                                borderRadius: '5px',
+                                backgroundColor: '#e0e0e0',
+                                border: '1px solid #ccc',
+                                cursor: 'pointer',
+                                maxWidth: '150px',
+                                whiteSpace: 'nowrap',
+                                overflow: 'hidden',
+                                textOverflow: 'ellipsis',
+                            }}
+                        >
+                            {s}
+                        </button>
                     ))}
                 </div>
-    
+
+
                 {loading && <p><ClipLoader color="blue" size={20} /> Bot is thinking...</p>}
-    
+
                 <div style={{ display: 'flex', gap: '10px' }}>
                     <button onClick={print}>Print</button>
                     <button onClick={clear}>Clear</button>

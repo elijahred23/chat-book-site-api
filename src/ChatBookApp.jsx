@@ -166,18 +166,26 @@ export default function ChatBookApp() {
     const executeSubsequentInstructions = async () => {
         if (!canExecuteKey) return;
         setLoading(true);
-        const newResponses = [];
 
-        for (let i = 0; i < subsequentInstructions.length; i++) {
-            const prompt = `Refer to previous instruction:\n${state.initialInstructionResponse}\nNow respond to:\n${subsequentInstructions[i]}`;
-            const geminiResponse = await getGeminiResponse(prompt);
-            newResponses.push(geminiResponse);
-            incrementStepsExecuted();
+        try {
+            const promises = subsequentInstructions.map((instruction, index) => {
+                const prompt = `Refer to previous instruction:\n${state.initialInstructionResponse}\nNow respond to:\n${instruction}`;
+                return getGeminiResponse(prompt).then(response => {
+                    incrementStepsExecuted(); // still track progress
+                    return response;
+                });
+            });
+
+            const newResponses = await Promise.all(promises);
+            dispatch({ type: appActionTypes.SET_SUBSEQUENT_INSTRUCTION_RESPONSES, payload: newResponses });
+
+        } catch (error) {
+            console.error("Error executing subsequent instructions:", error);
+        } finally {
+            setLoading(false);
         }
-
-        dispatch({ type: appActionTypes.SET_SUBSEQUENT_INSTRUCTION_RESPONSES, payload: newResponses });
-        setLoading(false);
     };
+
 
     useEffect(() => {
         if (state.subsequentInstructionResponses?.length > 0 && printWhenFinished) print();

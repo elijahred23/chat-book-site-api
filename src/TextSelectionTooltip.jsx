@@ -34,9 +34,10 @@ const TextSelectionTooltip = ({ onAskAI }) => {
 
         setSelectedText(text);
         setPosition({
-          top: rect.top + window.scrollY - 60,
-          left: Math.min(Math.max(calculatedLeft, 10), maxLeft),
+            top: rect.top + window.scrollY - 70, // ← changed from -60 to -110
+            left: Math.min(Math.max(calculatedLeft, 10), maxLeft),
         });
+
 
         setTimeout(() => {
           setVisible(true);
