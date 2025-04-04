@@ -14,9 +14,12 @@ const getValuesInLocalStorage = () => {
     const localNumSteps = localStorage.getItem('numSteps');
     const localSubject = localStorage.getItem('subject');
     const localInitialInstruction = localStorage.getItem('initialInstruction');
+    const localInitialInstructionResponse = localStorage.getItem('initialInstructionResponse');
     const localSubsequentInstructions = localStorage.getItem('subsequentInstructions');
+    const localSubsequentInstructionResponses = localStorage.getItem('subsequentInstructionResponses');
     const localMaxWords = localStorage.getItem('maxWords');
     const localMode = localStorage.getItem('mode');
+    const localExecutionStarted = localStorage.getItem('executionStarted');
 
     return {
         numSteps: localNumSteps ? JSON.parse(localNumSteps) : 5,
@@ -25,6 +28,9 @@ const getValuesInLocalStorage = () => {
         subsequentInstructions: localSubsequentInstructions ? JSON.parse(localSubsequentInstructions) : [],
         maxWords: localMaxWords ? JSON.parse(localMaxWords) : 500,
         mode: localMode ? JSON.parse(localMode) : "steps",
+        initialInstructionResponse: localInitialInstructionResponse ? JSON.parse(localInitialInstructionResponse) : "",  
+        subsequentInstructionResponses: localSubsequentInstructionResponses ? JSON.parse(localSubsequentInstructionResponses) : [],  
+        executionStarted: localExecutionStarted ? JSON.parse(localExecutionStarted) : false,  
     }
 }
 
@@ -32,7 +38,6 @@ const promptSuggestions = [
 ];
 
 export default function ChatBookApp() {
-    const { state, dispatch } = useAppContext();
     const localStorageValues = getValuesInLocalStorage();
 
     const modes = ["steps", "splits", "mind_map"];
@@ -44,12 +49,14 @@ export default function ChatBookApp() {
     const [subsequentInstructions, setSubsequentInstructions] = useState(localStorageValues.subsequentInstructions);
     const [loading, setLoading] = useState(false);
     const [loadingPDF, setLoadingPDF] = useState(false);
-    const [executionStarted, setExecutionStarted] = useState(false);
+    const [executionStarted, setExecutionStarted] = useState(localStorageValues.executionStarted);
     const [maxWords, setMaxWords] = useState(localStorageValues.maxWords);
     const [printWhenFinished, setPrintWhenFinished] = useState(false);
     const [stepsExecuted, setStepsExecuted] = useState(0);
     const [canExecuteKey, setCanExecuteKey] = useState(false);
     const chatLogRef = useRef(null);
+    const [initialInstructionResponse, setInitialInstructionResponse] = useState(localStorageValues.initialInstructionResponse);
+    const [subsequentInstructionResponses, setSubsequentInstructionResponses] = useState(localStorageValues.subsequentInstructionResponses);
 
     const scrollToBottom = () => {
         chatLogRef.current?.scrollTo({ top: chatLogRef.current.scrollHeight, behavior: 'smooth' });
@@ -91,14 +98,12 @@ export default function ChatBookApp() {
 
     const executeInitialInstruction = async () => {
         if (!canExecuteKey) return;
-        dispatch({ type: appActionTypes.SET_INITIAL_INSTRUCTION_RESPONSE, payload: "" });
-        dispatch({ type: appActionTypes.SET_SUBSEQUENT_INSTRUCTION_RESPONSES, payload: [] });
 
         const prompt = `### Instruction Start ###\n${initialInstruction}\n### End ###`;
         const geminiResponse = await getGeminiResponse(prompt);
 
         incrementStepsExecuted();
-        dispatch({ type: appActionTypes.SET_INITIAL_INSTRUCTION_RESPONSE, payload: geminiResponse });
+        setInitialInstructionResponse(geminiResponse);
     };
 
     const executeInstructions = async () => {
@@ -113,15 +118,15 @@ export default function ChatBookApp() {
     const print = () => window.print();
 
     const generatePDF = async () => {
-        if (!state.initialInstructionResponse) return;
+        if (!initialInstructionResponse) return;
         try {
             setLoadingPDF(true);
             const response = await fetch(`${baseURL}/generate-pdf`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    markdown: state.initialInstructionResponse,
-                    messagesToCombine: state.subsequentInstructionResponses,
+                    markdown: initialInstructionResponse,
+                    messagesToCombine: subsequentInstructionResponses,
                     pdfFileName: document.title
                 })
             });
@@ -144,8 +149,8 @@ export default function ChatBookApp() {
 
     const clear = () => {
         setSubject("");
-        dispatch({ type: appActionTypes.SET_INITIAL_INSTRUCTION_RESPONSE, payload: "" });
-        dispatch({ type: appActionTypes.SET_SUBSEQUENT_INSTRUCTION_RESPONSES, payload: [] });
+        setInitialInstructionResponse("");
+        setSubsequentInstructionResponses([])
     };
 
     const executeSubsequentInstructions = async () => {
@@ -154,7 +159,7 @@ export default function ChatBookApp() {
 
         try {
             const promises = subsequentInstructions.map((instruction, index) => {
-                const prompt = `Refer to previous instruction:\n${state.initialInstructionResponse}\nNow respond to:\n${instruction}`;
+                const prompt = `Refer to previous instruction:\n${initialInstructionResponse}\nNow respond to:\n${instruction}`;
                 return getGeminiResponse(prompt).then(response => {
                     incrementStepsExecuted(); // still track progress
                     return response;
@@ -162,7 +167,7 @@ export default function ChatBookApp() {
             });
 
             const newResponses = await Promise.all(promises);
-            dispatch({ type: appActionTypes.SET_SUBSEQUENT_INSTRUCTION_RESPONSES, payload: newResponses });
+            setSubsequentInstructionResponses(newResponses);
 
         } catch (error) {
             console.error("Error executing subsequent instructions:", error);
@@ -173,12 +178,12 @@ export default function ChatBookApp() {
 
 
     useEffect(() => {
-        if (state.subsequentInstructionResponses?.length > 0 && printWhenFinished) print();
-    }, [state.subsequentInstructionResponses]);
+        if (subsequentInstructionResponses?.length > 0 && printWhenFinished) print();
+    }, [subsequentInstructionResponses]);
 
     useEffect(() => {
-        if (state.initialInstructionResponse !== '') executeSubsequentInstructions();
-    }, [state.initialInstructionResponse]);
+        if (initialInstructionResponse !== '') executeSubsequentInstructions();
+    }, [initialInstructionResponse]);
 
     useEffect(() => {
         setInitialInstruction(getInitialInstructionMessage(numSteps));
@@ -210,8 +215,11 @@ export default function ChatBookApp() {
             localStorage.setItem('subsequentInstructions', JSON.stringify(subsequentInstructions));
             localStorage.setItem('maxWords', JSON.stringify(maxWords));
             localStorage.setItem('mode', JSON.stringify(mode));
+            localStorage.setItem('subsequentInstructionResponses', JSON.stringify(subsequentInstructionResponses));
+            localStorage.setItem('initialInstructionResponse', JSON.stringify(initialInstructionResponse));
+            localStorage.setItem('executionStarted', JSON.stringify(executionStarted));
         };
-    }, [numSteps, subject, initialInstruction, subsequentInstructions, maxWords]);
+    }, [numSteps, subject, initialInstruction, subsequentInstructions, maxWords, subsequentInstructionResponses, initialInstructionResponse, executionStarted]);
 
     const progress = useMemo(() => {
         return (parseInt(stepsExecuted) / (parseInt(numSteps) + 1)) * 100;
@@ -219,7 +227,7 @@ export default function ChatBookApp() {
 
     useEffect(() => {
         scrollToBottom();
-    }, [state.initialInstructionResponse, state.subsequentInstructionResponses]);
+    }, [initialInstructionResponse, subsequentInstructionResponses]);
 
     return (
         <div>
@@ -247,19 +255,19 @@ export default function ChatBookApp() {
             </div>
 
             <ClipLoader color="blue" loading={loadingPDF} />
-            {!loadingPDF && state.initialInstructionResponse !== "" && (
+            {!loadingPDF && initialInstructionResponse !== "" && (
                 <button onClick={generatePDF}>Generate PDF</button>
             )}
 
-            {executionStarted && (
+            {(executionStarted || initialInstructionResponse != "") && (
                 <div ref={chatLogRef} style={{ maxHeight: '400px', overflowY: 'auto' }}>
                     <ProgressBar progress={progress} />
                     <h3>Instructions:</h3>
-                    <div style={{ border: state.initialInstructionResponse ? "1px dotted blue" : "none", padding: "10px" }}>
-                        <ReactMarkdown>{state.initialInstructionResponse}</ReactMarkdown>
+                    <div style={{ border: initialInstructionResponse ? "1px dotted blue" : "none", padding: "10px" }}>
+                        <ReactMarkdown>{initialInstructionResponse}</ReactMarkdown>
                     </div>
                     <h3>Executed Instructions:</h3>
-                    {state.subsequentInstructionResponses.map((res, idx) => (
+                    {subsequentInstructionResponses.map((res, idx) => (
                         <div key={idx} style={{ border: "1px dotted red", padding: "10px" }}>
                             <ReactMarkdown>{res}</ReactMarkdown>
                         </div>

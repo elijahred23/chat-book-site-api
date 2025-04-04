@@ -2,28 +2,55 @@ import React, { useState, useEffect, useRef } from "react";
 import { getGeminiResponse } from "./utils/callGemini";
 import ReactMarkdown from 'react-markdown';
 
+const getValuesInLocalStorage = () => {
+    const localQuery = localStorage.getItem('wiki_query');
+    const localResults = localStorage.getItem('wiki_results');
+    const localPageDetails = localStorage.getItem('wiki_page_detail');
+    const localPrompt = localStorage.getItem('wiki_prompt');
+    const localGeminiResponse = localStorage.getItem('wiki_response');
+
+    return {
+        query: localQuery ? JSON.parse(localQuery) : "",
+        results: localResults ? JSON.parse(localResults) : [],
+        pageDetail: localPageDetails ? JSON.parse(localPageDetails) : null,
+        prompt: localPrompt ? JSON.parse(localPrompt) : "",
+        geminiResponse: localGeminiResponse ? JSON.parse(localGeminiResponse) : "",
+    }
+}
 export default function Wiki() {
-    const [query, setQuery] = useState(localStorage.getItem("wiki_query") || "");
-    const [results, setResults] = useState([]);
-    const [pageDetail, setPageDetail] = useState(null);
+    const localStorageValues = getValuesInLocalStorage();
+
+    const [query, setQuery] = useState(localStorageValues.query);
+    const [results, setResults] = useState(localStorageValues.results);
+    const [pageDetail, setPageDetail] = useState(localStorageValues.pageDetail);
     const [loading, setLoading] = useState(false);
-    const [prompt, setPrompt] = useState(localStorage.getItem("wiki_prompt") || "");
-    const [geminiResponse, setGeminiResponse] = useState(localStorage.getItem("wiki_response") || "");
+    const [prompt, setPrompt] = useState(localStorageValues.prompt);
+    const [geminiResponse, setGeminiResponse] = useState(localStorageValues.geminiResponse);
 
     const containerRef = useRef(null);
 
+    const clear = () => {
+        setQuery("");
+        setResults([]);
+        setPageDetail(null);
+        setPrompt("");
+        setGeminiResponse("");
+    }
+    useEffect(()=>{
+        localStorage.setItem("wiki_query", JSON.stringify(query));
+        localStorage.setItem("wiki_results", JSON.stringify(results));
+        localStorage.setItem("wiki_page_detail", JSON.stringify(pageDetail));
+        localStorage.setItem("wiki_prompt", JSON.stringify(prompt));
+        localStorage.setItem("wiki_response", JSON.stringify(geminiResponse));
+    }, [query, results, pageDetail, prompt, geminiResponse])
+
     const promptSuggestions = [
         "Summarize this article",
-        "Explain like I'm 5",
+        "Elaborate",
+        "Explain Simply",
         "What are the key facts?",
-        "What are the pros and cons?",
-        "List five important takeaways",
         "Provide historical context",
         "What are potential controversies?",
-        "Break this down into bullet points",
-        "Compare this topic with another",
-        "What questions can I ask about this topic?",
-        "Create a quiz based on this content"
     ];
 
     const scrollToBottom = () => {
@@ -38,7 +65,6 @@ export default function Wiki() {
         setPageDetail(null);
         setGeminiResponse("");
         try {
-            localStorage.setItem("wiki_query", query);
             const searchUrl = `https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=${encodeURIComponent(query)}&format=json&origin=*`;
             const res = await fetch(searchUrl);
             const data = await res.json();
@@ -67,7 +93,6 @@ export default function Wiki() {
 
             const autoSummary = await getGeminiResponse(`Summarize this article: ${page.extract}`);
             setGeminiResponse(autoSummary);
-            localStorage.setItem("wiki_response", autoSummary);
         } catch (error) {
             setPageDetail({ error: "Failed to fetch page details." });
         }
@@ -92,12 +117,18 @@ export default function Wiki() {
                 >
                     Search
                 </button>
+                <button
+                    onClick={clear}
+                    className="bg-blue-600 text-white px-4 py-2 rounded"
+                >
+                    Clear
+                </button>
             </div>
 
             {loading && <p>🔄 Searching...</p>}
 
             <ul className="list-disc pl-5 mb-4">
-                {results.map((result) => (
+                {results?.map((result) => (
                     <li key={result.pageid} className="mb-2">
                         <button
                             className="text-blue-700 underline"
@@ -121,18 +152,16 @@ export default function Wiki() {
                             value={prompt}
                             onChange={(event) => {
                                 setPrompt(event.target.value);
-                                localStorage.setItem("wiki_prompt", event.target.value);
                             }}
                             className="border px-3 py-2 w-full mb-2"
                         />
                         <div className="mb-2 flex flex-wrap gap-2">
-                            {promptSuggestions.map((s, i) => (
+                            {promptSuggestions?.map((s, i) => (
                                 <button
                                     key={i}
                                     className="bg-gray-200 px-2 py-1 rounded"
                                     onClick={() => {
                                         setPrompt(s);
-                                        localStorage.setItem("wiki_prompt", s);
                                     }}
                                 >
                                     {s}
@@ -147,7 +176,6 @@ export default function Wiki() {
                                     const geminiPrompt = `${prompt}: ${pageDetail.extract}`;
                                     const response = await getGeminiResponse(geminiPrompt);
                                     setGeminiResponse(response);
-                                    localStorage.setItem("wiki_response", response);
                                 } catch (e) {
                                     setGeminiResponse("⚠️ Failed to get a response from Gemini.");
                                 } finally {
