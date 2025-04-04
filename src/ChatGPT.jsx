@@ -21,15 +21,10 @@ function GptPromptComponent({ selectedText }) {
 
     const promptSuggestions = [
         "Summarize this text",
-        "Explain like I'm 5",
-        "Give pros and cons",
-        "Translate this",
+        "Elaborate on this",
+        "Explain simply",
         "List 5 key points",
-        "Turn this into a poem",
-        "Make a quiz",
-        "Give a metaphor",
         "Add historical context",
-        "Create a fun fact"
     ];
 
     const handleInputChange = (event) => setPrompt(event.target.value);

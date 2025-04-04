@@ -127,20 +127,9 @@ export default function YouTubeTranscript() {
     const promptSuggestions = [
         "Summarize this video",
         "Explain in simple terms",
-        "Generate quiz questions",
         "Extract key takeaways",
-        "List important timestamps",
-        "Translate to Spanish",
-        "Create a LinkedIn post",
-        "Turn into a blog post",
-        "Generate a tweet thread",
-        "Highlight controversial points",
         "Identify the speaker's main arguments",
-        "Write a YouTube video description",
         "Create flashcards",
-        "Generate a study guide",
-        "Explain with an analogy",
-        "Turn into a podcast script",
     ];
 
     return (

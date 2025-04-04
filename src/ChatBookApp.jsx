@@ -29,21 +29,6 @@ const getValuesInLocalStorage = () => {
 }
 
 const promptSuggestions = [
-    "Summarize the main ideas",
-    "List the pros and cons",
-    "Explain like I'm 5",
-    "Generate FAQs",
-    "Create a glossary of terms",
-    "Turn into a poem",
-    "Translate to plain English",
-    "Build a quiz based on the content",
-    "Write a tweet-sized summary",
-    "Compare this to another topic",
-    "Suggest use cases",
-    "Provide examples",
-    "Break down by timeline",
-    "Suggest visuals for this content",
-    "Highlight controversial points"
 ];
 
 export default function ChatBookApp() {
