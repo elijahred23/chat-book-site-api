@@ -227,19 +227,23 @@ export default function YouTubeTranscript() {
                         </div>
                     )}
 
-                    {promptResponses.length > 0 && <h2>Prompt Response</h2>}
-                    {promptResponses.map((res, i) => (
-                        <div key={i} style={{ border: "1px solid green", padding: "10px", marginBottom: "10px" }}>
-                            <ReactMarkdown>{res}</ReactMarkdown>
-                        </div>
-                    ))}
+                    <div style={{ maxHeight: '400px', overflowY: 'auto' }}>
+                        {promptResponses.length > 0 && <h2>Prompt Response</h2>}
+                        {promptResponses.map((res, i) => (
+                            <div key={i} style={{ border: "1px solid green", padding: "10px", marginBottom: "10px" }}>
+                                <ReactMarkdown>{res}</ReactMarkdown>
+                            </div>
+                        ))}
+                    </div>
 
-                    <h2>Transcript</h2>
-                    {splitTranscript.map((trans, i) => (
-                        <div key={i} style={{ border: "1px solid black", padding: "10px", marginBottom: "10px" }}>
-                            {trans}
-                        </div>
-                    ))}
+                    <div style={{ maxHeight: '400px', overflowY: 'auto' }}>
+                        <h2>Transcript</h2>
+                        {splitTranscript.map((trans, i) => (
+                            <div key={i} style={{ border: "1px solid black", padding: "10px", marginBottom: "10px" }}>
+                                {trans}
+                            </div>
+                        ))}
+                    </div>
                 </>
             )}
         </div>
