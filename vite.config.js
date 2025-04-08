@@ -17,6 +17,7 @@ export default defineConfig({
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ''),
       },
-    }
+    },
+    allowedHosts: ['chat-book-site-api-rbg9y.ondigitalocean.app']
   }
 })
