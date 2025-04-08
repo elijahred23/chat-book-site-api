@@ -4,6 +4,7 @@ function getHostnameWithoutPort() {
   }
 
 const hostnameWithoutPort = getHostnameWithoutPort()
-const hostname = `http://${hostnameWithoutPort}:3005`;
+// const hostname = `http://${hostnameWithoutPort}:3005`;
+const hostname = '/api'
 
   export {getHostnameWithoutPort, hostname}
