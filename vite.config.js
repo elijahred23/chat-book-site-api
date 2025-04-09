@@ -12,13 +12,6 @@ export default defineConfig(({ command }) => {
         host: 'localhost',
         strictPort: true,
         port: 3006,
-        proxy: {
-          '/api': {
-            target: 'http://localhost:8080', // <-- now points to backend on 8080
-            changeOrigin: true,
-            rewrite: path => path.replace(/^\/api/, ''),
-          },
-        },
         allowedHosts: ['localhost'],
       },
     }),
