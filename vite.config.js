@@ -1,23 +1,26 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [react()],
-  server: {
-    watch: {
-      usePolling: true,
-    },
-    host: true, // needed for the Docker Container port mapping to work
-    strictPort: true,
-    port: 3006, // you can replace this port with any port
-    proxy:{
-      '/api':{
-        target:  'http://localhost:3005',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ''),
+export default defineConfig(({ command }) => {
+  return {
+    plugins: [react()],
+    resolve: { dedupe: ['react', 'react-dom'] },
+    optimizeDeps: { include: ['react', 'react-dom'] },
+    ...(command === 'serve' && {
+      server: {
+        watch: { usePolling: true },
+        host: 'localhost',
+        strictPort: true,
+        port: 3006,
+        proxy: {
+          '/api': {
+            target: 'http://localhost:8080', // <-- now points to backend on 8080
+            changeOrigin: true,
+            rewrite: path => path.replace(/^\/api/, ''),
+          },
+        },
+        allowedHosts: ['localhost'],
       },
-    },
-    allowedHosts: ['chat-book-site-api-rbg9y.ondigitalocean.app']
+    }),
   }
 })

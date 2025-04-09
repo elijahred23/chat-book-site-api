@@ -1,12 +1,7 @@
 #!/bin/bash
 
-# Start npm run dev in the background
-npm run dev &
-P1=$!
+# Build the frontend
+npm run build
 
-# Start the Node.js server in the background
-node api/server.js &
-P2=$!
-
-# Wait for both background processes to finish
-wait $P1 $P2
+# Start the unified Express server (which serves both frontend + API)
+node api/server.js

@@ -43,7 +43,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 # Expose necessary ports
 EXPOSE 3005 
-EXPOSE 3006 
+EXPOSE 8080 
 
 # Set the default command to run the application
 CMD ["/app/start-services.sh"]

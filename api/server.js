@@ -1,4 +1,6 @@
 import express from 'express';
+import path from 'path';
+import { fileURLToPath } from 'url';
 import { generateResponse, safeGenerateResponse } from './chatGPT.js';
 import { generateGeminiResponse } from './gemini.js';
 import bodyParser from 'body-parser';
@@ -8,6 +10,9 @@ import puppeteer from 'puppeteer';
 import { fetchTranscript } from './youtube.js';
 
 const app = express();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 (async () => {
     try {
       const browser = await puppeteer.launch({
@@ -28,11 +33,11 @@ app.use((req, res, next) => {
   res.header('Access-Control-Allow-Headers', 'Content-Type');
   next();
 });
+// Serve static files from frontend build
+app.use(express.static(path.join(__dirname, '../dist')));
 
 const md = new MarkdownIt();
 app.use(bodyParser.json());
-
-const port = 3005;
 
 const messages = [
   "HELLO WORLD, THIS IS ELI GPT REPORTING FOR DUTY",
@@ -184,6 +189,11 @@ app.get('/gemini/prompt', async (req, res) => {
   }
 });
 
-app.listen(port, () => {
-  console.log(`Listening on port ${port}`);
+// Catch-all: send index.html for client-side routes (e.g. React Router)
+app.get(/^\/(?!api).*/, (req, res) => {
+  res.sendFile(path.join(__dirname, '../dist', 'index.html'));
+});
+
+app.listen(8080, () => {
+  console.log(`Server listening on port 8080`);
 });

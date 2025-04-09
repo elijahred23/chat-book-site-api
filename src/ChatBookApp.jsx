@@ -1,10 +1,8 @@
 import { useState, useEffect, useRef, useMemo } from "react";
-import { useAppContext } from "./context-api/AppProvider";
 import { getGeminiResponse } from "./utils/callGemini";
 import { hostname } from "./utils/hostname";
 import { ClipLoader } from "react-spinners";
 import ProgressBar from "./ui/ProgressBar";
-import { appActionTypes } from "./context-api/AppProvider";
 import ReactMarkdown from 'react-markdown';
 
 
