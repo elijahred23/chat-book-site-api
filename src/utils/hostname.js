@@ -1,10 +1,12 @@
-function getHostnameWithoutPort() {
-    const hostname = window.location.hostname;
-    return hostname.split(':')[0]; // Split on ':' and take the first part (hostname)
-  }
+// Determine if running locally
+const isLocalhost = ['localhost', '127.0.0.1'].includes(window.location.hostname);
 
-const hostnameWithoutPort = getHostnameWithoutPort()
-// const hostname = `http://${hostnameWithoutPort}:3005`;
-const hostname = '/api'
+// Use HTTP and port 8080 for local dev, otherwise use HTTPS and default port
+const protocol = isLocalhost ? 'http' : 'https';
+const port = isLocalhost ? ':8080' : ''; // Only include port 8080 locally
+const hostname = `${protocol}://${window.location.hostname}${port}`;
 
-  export {getHostnameWithoutPort, hostname}
+// Example usage:
+// fetch(`${hostname}/api/check`)
+
+export { hostname };

@@ -8,7 +8,7 @@ export default function ApiCheck() {
     const [success, setSuccess] = useState(false);
 
     const getMessageFromAPI = async () => {
-        await fetch(`${baseURL}/`).then(res => res.json()).then(res => {
+        await fetch(`${baseURL}/api/check`).then(res => res.json()).then(res => {
             setSuccess(true);
             let message = res?.message ?? 'MESSAGE NOT SENT AS RESPONSE';
             setApiMessage(message);

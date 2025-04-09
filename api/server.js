@@ -57,7 +57,7 @@ const logErrorToFile = (error) => {
   fs.appendFileSync('error.log', errorLog, 'utf8');
 };
 
-app.get('/', (req, res) => {
+app.get('/api/check', (req, res) => {
   const randomIndex = Math.floor(Math.random() * messages.length);
   res.send({ message: messages[randomIndex] });
 });
