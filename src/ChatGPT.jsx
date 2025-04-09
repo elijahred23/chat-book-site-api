@@ -166,6 +166,9 @@ function GptPromptComponent({ selectedText }) {
                 <div style={{ display: 'flex', gap: '10px' }}>
                     <button onClick={print}>Print</button>
                     <button onClick={clear}>Clear</button>
+                    {selectedText != "" && selectedText != prompt && 
+                        <button onClick={()=>{setPrompt(selectedText)}}>Add Selected Text Back</button>
+                    }
                     {!loading && <button onClick={handleSubmit}>Send</button>}
                 </div>
             </div>

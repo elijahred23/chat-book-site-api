@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
 import ChatBookApp from './ChatBookApp.jsx';
@@ -17,6 +17,13 @@ function App() {
 
   const toggleChat = () => setIsChatOpen(prev => !prev);
   const toggleWidth = () => setIsFullWidth(prev => !prev);
+
+  useEffect(() => {
+    const savedText = localStorage.getItem('selectedText');
+    if (savedText) {
+      setSelectedText(savedText);
+    }
+  }, []);
 
   return (
     <>
@@ -66,8 +73,7 @@ function App() {
         </BrowserRouter>
         <TextSelectionTooltip 
         onAskAI={(text) => {
-          console.log({text})
-
+          localStorage.setItem('selectedText', text);
           setIsChatOpen(true);
           setSelectedText(text)
         }} />

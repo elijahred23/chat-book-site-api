@@ -125,7 +125,7 @@ export default function YouTubeTranscript() {
     };
 
     const promptSuggestions = [
-        "Summarize this video",
+        "Summarize",
         "Explain in simple terms",
         "Extract key takeaways",
         "Identify the speaker's main arguments",
