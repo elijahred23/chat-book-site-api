@@ -3,6 +3,8 @@ import { ClipLoader } from "react-spinners";
 import ReactMarkdown from 'react-markdown';
 import { getGeminiResponse } from "./utils/callGemini";
 import PasteButton from './ui/PasteButton';
+import CopyButton from './ui/CopyButton';
+import { hostname } from './utils/hostname';
 
 const isValidYouTubeUrl = (url) => {
     const regex = /^(https?:\/\/)?(www\.)?(youtube\.com\/(watch\?v=|embed\/|v\/|shorts\/|live\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})(\S*)?$/;
@@ -70,10 +72,42 @@ export default function YouTubeTranscript() {
     const [loadingPrompt, setLoadingPrompt] = useState(false);
     const [manuallyEnteredTranscript, setManuallyEnteredTranscript] = useState("");
     const [progress, setProgress] = useState(0);
+    const [loadingPDF, setLoadingPDF] = useState(false);
 
     useEffect(() => {
         setValid(isValidYouTubeUrl(url));
     }, [url]);
+
+    const generatePDF = async () => {
+        if (!transcript) return;
+        try {
+            setLoadingPDF(true);
+            let pdfFileName = "Youtube Transcript";
+            const response = await fetch(`${hostname}/generate-pdf`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    markdown: transcript,
+                    messagesToCombine: [promptResponses],
+                    pdfFileName: pdfFileName 
+                })
+            });
+            if (!response.ok) throw new Error('Failed to generate PDF');
+
+            const blob = await response.blob();
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `${pdfFileName}.pdf`;
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+        } catch (error) {
+            console.error('Error generating PDF:', error);
+        } finally {
+            setLoadingPDF(false);
+        }
+    };
 
     const getTranscript = async () => {
         setLastUrl(url);
@@ -90,7 +124,7 @@ export default function YouTubeTranscript() {
         if (valid && url !== lastUrl) {
             getTranscript();
         }
-    }, [valid]);
+    }, []);
 
     useEffect(() => {
         if (splitLength > 0 && transcript?.length > 0) {
@@ -230,21 +264,32 @@ export default function YouTubeTranscript() {
                             <p>Generating: {progress}/{splitTranscript.length}</p>
                         </div>
                     )}
+                    {transcript?.length > 0 && 
+                        <>
+                        <ClipLoader color="blue" loading={loadingPDF} />
+                        {!loadingPDF && transcript !== "" && (
+                            <button onClick={generatePDF}>Generate PDF</button>
+                        )}
+                        </>
+                    }
 
                     <div style={{ maxHeight: '400px', overflowY: 'auto' }}>
                         {promptResponses.length > 0 && <h2>Prompt Response</h2>}
                         {promptResponses.map((res, i) => (
                             <div key={i} style={{ border: "1px solid green", padding: "10px", marginBottom: "10px" }}>
                                 <ReactMarkdown>{res}</ReactMarkdown>
+                                <CopyButton text={res} />
                             </div>
                         ))}
                     </div>
 
                     <div style={{ maxHeight: '400px', overflowY: 'auto' }}>
                         <h2>Transcript</h2>
+                        <CopyButton buttonText='Copy Complete Transcript' text={transcript} />
                         {splitTranscript.map((trans, i) => (
                             <div key={i} style={{ border: "1px solid black", padding: "10px", marginBottom: "10px" }}>
                                 {trans}
+                                <CopyButton text={trans} />
                             </div>
                         ))}
                     </div>

@@ -4,6 +4,8 @@ import { hostname } from "./utils/hostname";
 import { ClipLoader } from "react-spinners";
 import ProgressBar from "./ui/ProgressBar";
 import ReactMarkdown from 'react-markdown';
+import PasteButton from "./ui/PasteButton";
+import CopyButton from "./ui/CopyButton";
 
 
 const baseURL = hostname;
@@ -205,6 +207,14 @@ export default function ChatBookApp() {
         };
     }, []);
 
+
+    let allInstructionResponsesText = useMemo(()=>{
+        let responses = [initialInstructionResponse, ...subsequentInstructionResponses]; 
+
+        let responseText = responses.join(' ');
+        return responseText;
+    }, [initialInstructionResponse, subsequentInstructionResponses])
+
     useEffect(() => {
         return () => {
             localStorage.setItem('numSteps', JSON.stringify(numSteps));
@@ -260,14 +270,17 @@ export default function ChatBookApp() {
             {(executionStarted || initialInstructionResponse != "") && (
                 <div ref={chatLogRef} style={{ maxHeight: '400px', overflowY: 'auto' }}>
                     <ProgressBar progress={progress} />
+                    <CopyButton buttonText="Copy all responses" text={allInstructionResponsesText} />
                     <h3>Instructions:</h3>
                     <div style={{ border: initialInstructionResponse ? "1px dotted blue" : "none", padding: "10px" }}>
                         <ReactMarkdown>{initialInstructionResponse}</ReactMarkdown>
+                        <CopyButton text={initialInstructionResponse} />
                     </div>
                     <h3>Executed Instructions:</h3>
                     {subsequentInstructionResponses.map((res, idx) => (
                         <div key={idx} style={{ border: "1px dotted red", padding: "10px" }}>
                             <ReactMarkdown>{res}</ReactMarkdown>
+                            <CopyButton text={res} />
                         </div>
                     ))}
                 </div>
@@ -293,14 +306,8 @@ export default function ChatBookApp() {
                     >
                         Execute
                     </button>
-                    <button onClick={print}>Print</button>
+                    <PasteButton setPasteText={setSubject} />
                     <button onClick={clear}>Clear</button>
-                    &nbsp; Print When Finished
-                    <input
-                        type="checkbox"
-                        checked={printWhenFinished}
-                        onChange={() => setPrintWhenFinished(!printWhenFinished)}
-                    />
                 </p>
             )}
 

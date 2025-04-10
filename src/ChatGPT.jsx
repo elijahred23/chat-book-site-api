@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import { ClipLoader } from 'react-spinners';
 import ReactMarkdown from 'react-markdown';
 import { getGeminiResponse } from './utils/callGemini';
+import PasteButton from './ui/PasteButton';
+import CopyButton from './ui/CopyButton';
 
 const getValuesLocalStorage = () => {
     const localMessages = localStorage.getItem('messages');
@@ -110,6 +112,7 @@ function GptPromptComponent({ selectedText }) {
                         }}>
                             <span style={{ fontWeight: 'bold' }}>{message.sender === 'user' ? 'You: ' : 'Bot: '}</span>
                             <ReactMarkdown>{message.text}</ReactMarkdown>
+                            <CopyButton text={message.text} />
                         </div>
                     </div>
                 ))}
@@ -164,12 +167,12 @@ function GptPromptComponent({ selectedText }) {
                 {loading && <p><ClipLoader color="blue" size={20} /> Bot is thinking...</p>}
 
                 <div style={{ display: 'flex', gap: '10px' }}>
-                    <button onClick={print}>Print</button>
+                    <PasteButton setPasteText={setPrompt} />
                     <button onClick={clear}>Clear</button>
+                    {!loading && <button onClick={handleSubmit}>Send</button>}
                     {selectedText != "" && selectedText != prompt && 
                         <button onClick={()=>{setPrompt(selectedText)}}>Add Selected Text Back</button>
                     }
-                    {!loading && <button onClick={handleSubmit}>Send</button>}
                 </div>
             </div>
         </div>
