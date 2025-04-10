@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { ClipLoader } from "react-spinners";
 import ReactMarkdown from 'react-markdown';
 import { getGeminiResponse } from "./utils/callGemini";
+import PasteButton from './ui/PasteButton';
 
 const isValidYouTubeUrl = (url) => {
     const regex = /^(https?:\/\/)?(www\.)?(youtube\.com\/(watch\?v=|embed\/|v\/|shorts\/|live\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})(\S*)?$/;
@@ -142,6 +143,7 @@ export default function YouTubeTranscript() {
                 onChange={e => setUrl(e.target.value)}
                 style={{ width: '100%', marginBottom: '10px' }}
             />
+            <PasteButton setPasteText={setUrl} />
 
             {transcript?.length === 0 && (
                 <>
