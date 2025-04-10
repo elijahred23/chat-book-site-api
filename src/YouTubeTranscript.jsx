@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { ClipLoader } from "react-spinners";
 import ReactMarkdown from 'react-markdown';
 import { getGeminiResponse } from "./utils/callGemini";
@@ -124,7 +124,7 @@ export default function YouTubeTranscript() {
         if (valid && url !== lastUrl) {
             getTranscript();
         }
-    }, []);
+    }, [url, valid]);
 
     useEffect(() => {
         if (splitLength > 0 && transcript?.length > 0) {
@@ -168,6 +168,13 @@ export default function YouTubeTranscript() {
         "Identify the speaker's main arguments",
         "Create flashcards",
     ];
+
+    const promptResponsesText = useMemo(()=>{
+        if(!(promptResponses?.length > 0)){
+            return '';
+        }
+        return promptResponses.join(' \n');
+    }, [promptResponses]);
 
     return (
         <div style={{ maxWidth: "800px", margin: "0 auto", padding: "1rem" }}>
@@ -274,7 +281,10 @@ export default function YouTubeTranscript() {
                     }
 
                     <div style={{ maxHeight: '400px', overflowY: 'auto' }}>
-                        {promptResponses.length > 0 && <h2>Prompt Response</h2>}
+                        {promptResponses.length > 0 && <>
+                        <h2>Prompt Response</h2>
+                        <CopyButton buttonText='Copy all responses' text={promptResponsesText} />
+                        </>}
                         {promptResponses.map((res, i) => (
                             <div key={i} style={{ border: "1px solid green", padding: "10px", marginBottom: "10px" }}>
                                 <ReactMarkdown>{res}</ReactMarkdown>
