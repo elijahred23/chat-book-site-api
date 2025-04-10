@@ -80,8 +80,10 @@ export default function YouTubeTranscript() {
         let data = await fetchYouTubeTranscript(url);
         let newTranscript = data?.transcript;
         setTranscript(newTranscript);
-        setWordCount(countWords(newTranscript));
-        setSplitLength(1);
+        let newWordCount = countWords(newTranscript);
+        let newSplitLength = Math.ceil(newWordCount / 1000); 
+        setWordCount(newWordCount);
+        setSplitLength(newSplitLength);
     };
 
     useEffect(() => {
