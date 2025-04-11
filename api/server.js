@@ -83,8 +83,8 @@ app.get('/youtube/transcript', async (req, res) => {
   }
 });
 
-app.get('/gpt/prompt', async (req, res) => {
-  const { prompt } = req.query;
+app.post('/gpt/prompt', async (req, res) => {
+  const { prompt } = req.body;
 
   if (!prompt) {
     return res.status(400).send({ error: 'Bad Request', message: 'Prompt parameter is missing' });
@@ -97,13 +97,14 @@ app.get('/gpt/prompt', async (req, res) => {
       throw new Error(gptResponse.text);
     }
 
-    return res.send({ gptResponse: gptResponse.text, message: "success" });
+    return res.send({ gptResponse: gptResponse.text, message: "success", success: 1 });
   } catch (error) {
     console.error(error);
     logErrorToFile(error);
     return res.status(500).send({ error: 'Server Error', message: error.message });
   }
 });
+
 
 
 app.post('/generate-pdf', async (req, res) => {

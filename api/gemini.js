@@ -20,7 +20,7 @@ async function generateGeminiResponse(msg, gemini_model = "gemini-1.5-flash") {
                 },
             ],
             generationConfig: {
-                maxOutputTokens: 50000,
+                maxOutputTokens: 100000,
             },
         });
 

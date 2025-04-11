@@ -78,7 +78,9 @@ async function promptTranscript(prompt, transcripts, setProgress, showMessage) {
         );
 
         results.push(...batchResults);
-        await sleep(2000);
+        if(i < (transcripts.length - 1)){
+            await sleep(1000);
+        }
     }
 
     return results;
@@ -157,7 +159,7 @@ export default function YouTubeTranscript() {
             setTranscript(newTranscript);
     
             let newWordCount = countWords(newTranscript);
-            let newSplitLength = Math.ceil(newWordCount / 1000);
+            let newSplitLength = Math.ceil(newWordCount / 3000);
             setWordCount(newWordCount);
             setSplitLength(newSplitLength);
     

@@ -1,6 +1,6 @@
 services:
   chat-book-site-api:
-    image: elijahred23/chat-book-site-api:0.0.23
+    image: elijahred23/chat-book-site-api:0.0.24
     build: .
     ports:
       - "3005:3005"
