@@ -1,36 +1,51 @@
 // context/AppContext.js
 import React, { createContext, useContext, useReducer } from 'react';
 
-// Initial State
 const initialState = {
     copyText: '',
+    htmlBuilder: {
+        input: '',
+        generatedHTML: ''
+    }
 };
 
-// Action Types
 const actionTypes = {
     SET_COPY_TEXT: 'SET_COPY_TEXT',
+    SET_HTML_INPUT: 'SET_HTML_INPUT',
+    SET_GENERATED_HTML: 'SET_GENERATED_HTML'
 };
 
-// Reducer
 function appReducer(state, action) {
     switch (action.type) {
         case actionTypes.SET_COPY_TEXT:
             return { ...state, copyText: action.payload };
-        // Add more cases here
+        case actionTypes.SET_HTML_INPUT:
+            return {
+                ...state,
+                htmlBuilder: {
+                    ...state.htmlBuilder,
+                    input: action.payload
+                }
+            };
+        case actionTypes.SET_GENERATED_HTML:
+            return {
+                ...state,
+                htmlBuilder: {
+                    ...state.htmlBuilder,
+                    generatedHTML: action.payload
+                }
+            };
         default:
             console.warn(`Unhandled action type: ${action.type}`);
             return state;
     }
 }
 
-// Contexts
 const AppStateContext = createContext();
 const AppDispatchContext = createContext();
 
-// Provider
 export const AppProvider = ({ children }) => {
     const [state, dispatch] = useReducer(appReducer, initialState);
-
     return (
         <AppStateContext.Provider value={state}>
             <AppDispatchContext.Provider value={dispatch}>
@@ -40,14 +55,20 @@ export const AppProvider = ({ children }) => {
     );
 };
 
-// Hooks
 export const useAppState = () => useContext(AppStateContext);
 export const useAppDispatch = () => useContext(AppDispatchContext);
 
-// Actions
 export const actions = {
     setCopyText: (text) => ({
         type: actionTypes.SET_COPY_TEXT,
-        payload: text,
+        payload: text
+    }),
+    setHtmlInput: (input) => ({
+        type: actionTypes.SET_HTML_INPUT,
+        payload: input
+    }),
+    setGeneratedHtml: (html) => ({
+        type: actionTypes.SET_GENERATED_HTML,
+        payload: html
     })
-}
+};

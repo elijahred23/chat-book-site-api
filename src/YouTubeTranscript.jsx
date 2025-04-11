@@ -254,22 +254,37 @@ export default function YouTubeTranscript() {
                 style={{ width: '100%', marginBottom: '10px' }}
             />
             <PasteButton setPasteText={setUrl} />
+            <div style={{ marginBottom: "10px" }}>
+                <input
+                    type="file"
+                    accept=".txt"
+                    onChange={async (e) => {
+                        const file = e.target.files[0];
+                        if (file) {
+                            const text = await file.text();
+                            setManuallyEnteredTranscript(text);
+                        }
+                    }}
+                />
+            </div>
 
-            {transcript?.length === 0 && (
-                <>
-                    <input
-                        value={manuallyEnteredTranscript}
-                        placeholder="Manually Enter Transcript"
-                        onChange={e => setManuallyEnteredTranscript(e.target.value)}
-                        style={{ width: '100%' }}
-                    />
-                    <button onClick={() => {
-                        setSplitLength(1);
-                        setWordCount(countWords(manuallyEnteredTranscript));
-                        setTranscript(manuallyEnteredTranscript);
-                    }}>Add Transcript</button>
-                </>
-            )}
+            <textarea
+                value={manuallyEnteredTranscript}
+                placeholder="Or manually enter transcript..."
+                onChange={e => setManuallyEnteredTranscript(e.target.value)}
+                rows={6}
+                style={{ width: '100%', marginBottom: '10px' }}
+            />
+
+            <button onClick={() => {
+                const wc = countWords(manuallyEnteredTranscript);
+                setTranscript(manuallyEnteredTranscript);
+                setWordCount(wc);
+                setSplitLength(Math.ceil(wc / 3000));
+            }}>
+                Add Transcript
+            </button>
+
 
             {transcript?.length > 0 && (
                 <>
@@ -381,8 +396,8 @@ export default function YouTubeTranscript() {
                                                 setProgress(0);
                                                 try {
                                                     let retryTranscript = [splitTranscript[i]];
-                                                    const retryResponse = await promptTranscript(retryPromptText, retryTranscript , setProgress, showMessage);
-                                                    console.log({retryTranscript, retryPromptText, retryResponse, i, splitTranscript});
+                                                    const retryResponse = await promptTranscript(retryPromptText, retryTranscript, setProgress, showMessage);
+                                                    console.log({ retryTranscript, retryPromptText, retryResponse, i, splitTranscript });
                                                     const updatedResponses = [...promptResponses];
                                                     updatedResponses[i] = retryResponse[0];
                                                     setPromptResponses(updatedResponses);

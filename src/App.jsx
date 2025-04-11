@@ -10,6 +10,7 @@ import Wiki from './Wiki';
 import GptPromptComponent from './ChatGPT';
 import TextSelectionTooltip from './TextSelectionTooltip';
 import DownloadCopyTextFile from './DownloadCopyTextFile.jsx';
+import HtmlBuilder from './HtmlBuilder';
 
 function App() {
   const [isChatOpen, setIsChatOpen] = useState(false);
@@ -35,8 +36,9 @@ function App() {
           <div className='nav-links'>
             <NavLink to='/chatBook'>Chat Book</NavLink>
             <NavLink to='/youTubeTranscript'>YouTube Transcript</NavLink>
-            <NavLink to='/wiki'>Wiki</NavLink>
+            <NavLink to='/htmlBuilder'>HTML Builder</NavLink>
             <NavLink to='/apiCheck'>API Check</NavLink>
+
             <button onClick={toggleChat} className='chat-toggle-btn floating-chat-btn'>
               {isChatOpen ? '❌' : '💬 Ask AI'}
             </button>
@@ -50,6 +52,7 @@ function App() {
               <Route path="/chatTemplate" element={<ChatTemplate />} />
               <Route path="/youTubeTranscript" element={<YouTubeTranscript />} />
               <Route path="/wiki" element={<Wiki />} />
+              <Route path="/htmlBuilder" element={<HtmlBuilder />} />
             </Routes>
           </div>
 

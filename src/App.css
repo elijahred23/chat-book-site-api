@@ -94,34 +94,32 @@ option {
   color: #333;
   font: 16px;
 }
-/* Chat drawer styles */
 .chat-drawer {
   position: fixed;
   top: 0;
-  right: -100%;
-  height: 100%;
-  background-color: #ffffff;
-  box-shadow: -4px 0 12px rgba(0, 0, 0, 0.2);
-  transition: right 0.3s ease-in-out, width 0.3s ease-in-out;
-  z-index: 1000;
-  overflow-y: auto;
-  padding: 1rem;
-}
-
-/* Slide in */
-.chat-drawer.open {
   right: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 100%;
+  background-color: #fff;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  overflow-y: auto;
 }
 
-/* Half-width drawer */
+.chat-drawer.full {
+  width: 100%;
+}
+
 .chat-drawer.half {
   width: 50%;
   max-width: 600px;
 }
 
-/* Full-width drawer */
-.chat-drawer.full {
-  width: 100%;
+.chat-drawer.open {
+  transform: translateX(0%);
 }
 
 /* Toggle button inside drawer */
