@@ -84,23 +84,27 @@ app.get('/youtube/transcript', async (req, res) => {
 });
 
 app.get('/gpt/prompt', async (req, res) => {
-  let prompt = req.query.prompt;
+  const { prompt } = req.query;
 
   if (!prompt) {
     return res.status(400).send({ error: 'Bad Request', message: 'Prompt parameter is missing' });
   }
 
   try {
-    let gptResponse = await safeGenerateResponse('You are a helpful assistant', prompt);
+    const gptResponse = await generateGeminiResponse(prompt);
 
-    if (gptResponse?.text?.includes('Sorry, something went wrong.')) throw new Error(gptResponse?.text);
-    return res.send({ gptResponse: gptResponse, message: "success" });
+    if (!gptResponse.success) {
+      throw new Error(gptResponse.text);
+    }
+
+    return res.send({ gptResponse: gptResponse.text, message: "success" });
   } catch (error) {
     console.error(error);
     logErrorToFile(error);
-    return res.status(500).send({ error: 'Server Error', message: error?.message ?? "Failed to generate chatGPT response." });
+    return res.status(500).send({ error: 'Server Error', message: error.message });
   }
 });
+
 
 app.post('/generate-pdf', async (req, res) => {
     const { markdown, messagesToCombine, pdfFileName } = req.body;

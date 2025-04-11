@@ -5,6 +5,8 @@ import { getGeminiResponse } from "./utils/callGemini";
 import PasteButton from './ui/PasteButton';
 import CopyButton from './ui/CopyButton';
 import { hostname } from './utils/hostname';
+import { useFlyout } from './context/FlyoutContext';
+
 
 const isValidYouTubeUrl = (url) => {
     const regex = /^(https?:\/\/)?(www\.)?(youtube\.com\/(watch\?v=|embed\/|v\/|shorts\/|live\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})(\S*)?$/;
@@ -44,19 +46,49 @@ function splitStringByWords(str, splitCount) {
     return result;
 }
 
-async function promptTranscript(prompt, transcripts, setProgress) {
-    const promises = transcripts.map((chunk) =>
-        getGeminiResponse(`${prompt}: ${chunk}`).then(response => {
-            setProgress(prev => prev + 1);
-            return response;
-        })
-    );
-    return await Promise.all(promises);
+const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+async function promptTranscript(prompt, transcripts, setProgress, showMessage) {
+    const batchSize = 5;
+    const results = [];
+
+    for (let i = 0; i < transcripts.length; i += batchSize) {
+        const batch = transcripts.slice(i, i + batchSize);
+
+        const batchResults = await Promise.all(
+            batch.map(async (chunk, index) => {
+                try {
+                    const response = await getGeminiResponse(`${prompt}: ${chunk}`);
+                    setProgress((prev) => prev + 1);
+                    showMessage({
+                        type: "success",
+                        message: `Gemini succeeded on part ${i + index + 1}`,
+                        duration: 1000 
+                    });
+                    return response;
+                } catch (err) {
+                    console.error(`Gemini error on chunk ${i + index + 1}:`, err);
+                    showMessage({
+                        type: "error",
+                        message: `Gemini failed on part ${i + index + 1}: ${err.message || "Unknown error"}`,
+                        duration: 5000
+                    });
+                    return `Error: Gemini failed on part ${i + index + 1}`;
+                }
+            })
+        );
+
+        results.push(...batchResults);
+        await sleep(2000);
+    }
+
+    return results;
 }
+
 
 const countWords = (s) => (s.match(/\b\w+\b/g) || []).length;
 
 export default function YouTubeTranscript() {
+    const { showMessage } = useFlyout();
     const [url, setUrl] = useState("");
     const [prompt, setPrompt] = useState(() => localStorage.getItem("yt_prompt") || "");
     const [lastUrl, setLastUrl] = useState("");
@@ -74,6 +106,7 @@ export default function YouTubeTranscript() {
     const [progress, setProgress] = useState(0);
     const [loadingPDF, setLoadingPDF] = useState(false);
 
+
     useEffect(() => {
         setValid(isValidYouTubeUrl(url));
     }, [url]);
@@ -83,17 +116,19 @@ export default function YouTubeTranscript() {
         try {
             setLoadingPDF(true);
             let pdfFileName = "Youtube Transcript";
+    
             const response = await fetch(`${hostname}/generate-pdf`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     markdown: transcript,
                     messagesToCombine: [promptResponses],
-                    pdfFileName: pdfFileName 
+                    pdfFileName: pdfFileName
                 })
             });
+    
             if (!response.ok) throw new Error('Failed to generate PDF');
-
+    
             const blob = await response.blob();
             const url = window.URL.createObjectURL(blob);
             const a = document.createElement('a');
@@ -102,26 +137,40 @@ export default function YouTubeTranscript() {
             document.body.appendChild(a);
             a.click();
             a.remove();
+    
+            showMessage({ type: "success", message: "✅ PDF generated and downloaded!" });
         } catch (error) {
             console.error('Error generating PDF:', error);
+            showMessage({ type: "error", message: `❌ PDF generation failed: ${error.message}` });
         } finally {
             setLoadingPDF(false);
         }
     };
+    
 
     const getTranscript = async () => {
-        setLastUrl(url);
-        let data = await fetchYouTubeTranscript(url);
-        let newTranscript = data?.transcript;
-        setTranscript(newTranscript);
-        let newWordCount = countWords(newTranscript);
-        let newSplitLength = Math.ceil(newWordCount / 1000); 
-        setWordCount(newWordCount);
-        setSplitLength(newSplitLength);
+        try {
+            setLastUrl(url);
+            let data = await fetchYouTubeTranscript(url);
+            let newTranscript = data?.transcript;
+            if (!newTranscript) throw new Error("Transcript not found.");
+            setTranscript(newTranscript);
+    
+            let newWordCount = countWords(newTranscript);
+            let newSplitLength = Math.ceil(newWordCount / 1000);
+            setWordCount(newWordCount);
+            setSplitLength(newSplitLength);
+    
+            showMessage({ type: "success", message: "Transcript loaded successfully!" });
+        } catch (err) {
+            console.error(err);
+            showMessage({ type: "error", message: `Error loading transcript: ${err.message}` });
+        }
     };
+    
 
     useEffect(() => {
-        if (valid && url !== lastUrl) {
+        if (valid && url !== lastUrl && url != "") {
             getTranscript();
         }
     }, [url, valid]);
@@ -133,12 +182,20 @@ export default function YouTubeTranscript() {
     }, [splitLength, transcript]);
 
     const executePrompt = async () => {
-        setLoadingPrompt(true);
-        setProgress(0);
-        const responses = await promptTranscript(prompt, splitTranscript, setProgress);
-        setPromptResponses(responses);
-        setLoadingPrompt(false);
+        try {
+            setLoadingPrompt(true);
+            setProgress(0);
+            const responses = await promptTranscript(prompt, splitTranscript, setProgress, showMessage);
+            setPromptResponses(responses);
+            showMessage({ type: "success", message: "✅ Prompt execution finished!" });
+        } catch (err) {
+            console.error("Prompt execution failed:", err);
+            showMessage({ type: "error", message: `❌ Prompt execution error: ${err.message}` });
+        } finally {
+            setLoadingPrompt(false);
+        }
     };
+    
 
     // Save data to localStorage
     useEffect(() => {
@@ -169,8 +226,8 @@ export default function YouTubeTranscript() {
         "Create flashcards",
     ];
 
-    const promptResponsesText = useMemo(()=>{
-        if(!(promptResponses?.length > 0)){
+    const promptResponsesText = useMemo(() => {
+        if (!(promptResponses?.length > 0)) {
             return '';
         }
         return promptResponses.join(' \n');
@@ -271,19 +328,19 @@ export default function YouTubeTranscript() {
                             <p>Generating: {progress}/{splitTranscript.length}</p>
                         </div>
                     )}
-                    {transcript?.length > 0 && 
+                    {transcript?.length > 0 &&
                         <>
-                        <ClipLoader color="blue" loading={loadingPDF} />
-                        {!loadingPDF && transcript !== "" && (
-                            <button onClick={generatePDF}>Generate PDF</button>
-                        )}
+                            <ClipLoader color="blue" loading={loadingPDF} />
+                            {!loadingPDF && transcript !== "" && (
+                                <button onClick={generatePDF}>Generate PDF</button>
+                            )}
                         </>
                     }
 
                     <div style={{ maxHeight: '400px', overflowY: 'auto' }}>
                         {promptResponses.length > 0 && <>
-                        <h2>Prompt Response</h2>
-                        <CopyButton buttonText='Copy all responses' text={promptResponsesText} />
+                            <h2>Prompt Response</h2>
+                            <CopyButton buttonText='Copy all responses' text={promptResponsesText} />
                         </>}
                         {promptResponses.map((res, i) => (
                             <div key={i} style={{ border: "1px solid green", padding: "10px", marginBottom: "10px" }}>

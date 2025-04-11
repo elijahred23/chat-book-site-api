@@ -6,6 +6,8 @@ import ProgressBar from "./ui/ProgressBar";
 import ReactMarkdown from 'react-markdown';
 import PasteButton from "./ui/PasteButton";
 import CopyButton from "./ui/CopyButton";
+import { useFlyout } from "./context/FlyoutContext"; // adjust path as needed
+
 
 
 const baseURL = hostname;
@@ -28,9 +30,9 @@ const getValuesInLocalStorage = () => {
         subsequentInstructions: localSubsequentInstructions ? JSON.parse(localSubsequentInstructions) : [],
         maxWords: localMaxWords ? JSON.parse(localMaxWords) : 500,
         mode: localMode ? JSON.parse(localMode) : "steps",
-        initialInstructionResponse: localInitialInstructionResponse ? JSON.parse(localInitialInstructionResponse) : "",  
-        subsequentInstructionResponses: localSubsequentInstructionResponses ? JSON.parse(localSubsequentInstructionResponses) : [],  
-        executionStarted: localExecutionStarted ? JSON.parse(localExecutionStarted) : false,  
+        initialInstructionResponse: localInitialInstructionResponse ? JSON.parse(localInitialInstructionResponse) : "",
+        subsequentInstructionResponses: localSubsequentInstructionResponses ? JSON.parse(localSubsequentInstructionResponses) : [],
+        executionStarted: localExecutionStarted ? JSON.parse(localExecutionStarted) : false,
     }
 }
 
@@ -38,6 +40,7 @@ const promptSuggestions = [
 ];
 
 export default function ChatBookApp() {
+    const { showMessage } = useFlyout();
     const localStorageValues = getValuesInLocalStorage();
 
     const modes = ["steps", "splits", "mind_map"];
@@ -102,9 +105,16 @@ export default function ChatBookApp() {
         const prompt = `### Instruction Start ###\n${initialInstruction}\n### End ###`;
         const geminiResponse = await getGeminiResponse(prompt);
 
+        if (!geminiResponse.success) {
+            showMessage({ type: "error", message: geminiResponse.error || "Unknown error occurred" });
+            return;
+        }
+
         incrementStepsExecuted();
-        setInitialInstructionResponse(geminiResponse);
+        setInitialInstructionResponse(geminiResponse.text);
+        showMessage({ type: "success", message: "Initial instruction completed!" });
     };
+
 
     const executeInstructions = async () => {
         if (canExecuteKey) {
@@ -168,9 +178,11 @@ export default function ChatBookApp() {
 
             const newResponses = await Promise.all(promises);
             setSubsequentInstructionResponses(newResponses);
+            showMessage({ type: "success", message: "Subsequent Instructions completed!" });
 
         } catch (error) {
             console.error("Error executing subsequent instructions:", error);
+            showMessage({ type: "error", message: error.message || "Error during execution" });
         } finally {
             setLoading(false);
         }
@@ -208,8 +220,8 @@ export default function ChatBookApp() {
     }, []);
 
 
-    let allInstructionResponsesText = useMemo(()=>{
-        let responses = [initialInstructionResponse, ...subsequentInstructionResponses]; 
+    let allInstructionResponsesText = useMemo(() => {
+        let responses = [initialInstructionResponse, ...subsequentInstructionResponses];
 
         let responseText = responses.join(' ');
         return responseText;
