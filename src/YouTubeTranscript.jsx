@@ -62,7 +62,7 @@ async function promptTranscript(prompt, transcripts, setProgress, showMessage) {
                     showMessage({
                         type: "success",
                         message: `Gemini succeeded on part ${i + index + 1}`,
-                        duration: 1000 
+                        duration: 1000
                     });
                     return response;
                 } catch (err) {
@@ -78,7 +78,7 @@ async function promptTranscript(prompt, transcripts, setProgress, showMessage) {
         );
 
         results.push(...batchResults);
-        if(i < (transcripts.length - 1)){
+        if (i < (transcripts.length - 1)) {
             await sleep(1000);
         }
     }
@@ -96,8 +96,9 @@ export default function YouTubeTranscript() {
     const [lastUrl, setLastUrl] = useState("");
     const [valid, setValid] = useState(false);
     const [transcript, setTranscript] = useState(() => localStorage.getItem("yt_transcript") || "");
-    const [wordCount, setWordCount] = useState(() => countWords(localStorage.getItem("yt_transcript") || ""));
-    const [splitLength, setSplitLength] = useState(1);
+    const localStorageWordCount = localStorage.getItem("yt_word_count") || 0;
+    const [wordCount, setWordCount] = useState(localStorageWordCount);
+    const [splitLength, setSplitLength] = useState(() => localStorage.getItem("yt_split_length") || 1);
     const [splitTranscript, setSplitTranscript] = useState([]);
     const [promptResponses, setPromptResponses] = useState(() => {
         const saved = localStorage.getItem("yt_promptResponses");
@@ -107,6 +108,9 @@ export default function YouTubeTranscript() {
     const [manuallyEnteredTranscript, setManuallyEnteredTranscript] = useState("");
     const [progress, setProgress] = useState(0);
     const [loadingPDF, setLoadingPDF] = useState(false);
+    const [retryIndex, setRetryIndex] = useState(null);
+    const [retryPromptText, setRetryPromptText] = useState("");
+
 
 
     useEffect(() => {
@@ -118,7 +122,7 @@ export default function YouTubeTranscript() {
         try {
             setLoadingPDF(true);
             let pdfFileName = "Youtube Transcript";
-    
+
             const response = await fetch(`${hostname}/generate-pdf`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -128,9 +132,9 @@ export default function YouTubeTranscript() {
                     pdfFileName: pdfFileName
                 })
             });
-    
+
             if (!response.ok) throw new Error('Failed to generate PDF');
-    
+
             const blob = await response.blob();
             const url = window.URL.createObjectURL(blob);
             const a = document.createElement('a');
@@ -139,7 +143,7 @@ export default function YouTubeTranscript() {
             document.body.appendChild(a);
             a.click();
             a.remove();
-    
+
             showMessage({ type: "success", message: "✅ PDF generated and downloaded!" });
         } catch (error) {
             console.error('Error generating PDF:', error);
@@ -148,7 +152,7 @@ export default function YouTubeTranscript() {
             setLoadingPDF(false);
         }
     };
-    
+
 
     const getTranscript = async () => {
         try {
@@ -157,19 +161,19 @@ export default function YouTubeTranscript() {
             let newTranscript = data?.transcript;
             if (!newTranscript) throw new Error("Transcript not found.");
             setTranscript(newTranscript);
-    
+
             let newWordCount = countWords(newTranscript);
             let newSplitLength = Math.ceil(newWordCount / 3000);
             setWordCount(newWordCount);
             setSplitLength(newSplitLength);
-    
+
             showMessage({ type: "success", message: "Transcript loaded successfully!" });
         } catch (err) {
             console.error(err);
             showMessage({ type: "error", message: `Error loading transcript: ${err.message}` });
         }
     };
-    
+
 
     useEffect(() => {
         if (valid && url !== lastUrl && url != "") {
@@ -197,14 +201,16 @@ export default function YouTubeTranscript() {
             setLoadingPrompt(false);
         }
     };
-    
+
 
     // Save data to localStorage
     useEffect(() => {
         localStorage.setItem("yt_transcript", transcript);
         localStorage.setItem("yt_prompt", prompt);
+        localStorage.setItem("yt_split_length", splitLength);
+        localStorage.setItem("yt_word_count", wordCount);
         localStorage.setItem("yt_promptResponses", JSON.stringify(promptResponses));
-    }, [transcript, prompt, promptResponses]);
+    }, [transcript, prompt, promptResponses, splitLength, wordCount]);
 
     const clearAll = () => {
         setTranscript("");
@@ -217,6 +223,8 @@ export default function YouTubeTranscript() {
         setSplitTranscript([]);
         localStorage.removeItem("yt_transcript");
         localStorage.removeItem("yt_prompt");
+        localStorage.removeItem("yt_split_length");
+        localStorage.removeItem("yt_word_count");
         localStorage.removeItem("yt_promptResponses");
     };
 
@@ -348,8 +356,59 @@ export default function YouTubeTranscript() {
                             <div key={i} style={{ border: "1px solid green", padding: "10px", marginBottom: "10px" }}>
                                 <ReactMarkdown>{res}</ReactMarkdown>
                                 <CopyButton text={res} />
+
+                                <button
+                                    style={{ marginTop: "5px" }}
+                                    onClick={() => {
+                                        setRetryIndex(i);
+                                        setRetryPromptText(prompt); // default to current prompt
+                                    }}
+                                >
+                                    Retry Prompt
+                                </button>
+
+                                {retryIndex === i && (
+                                    <div style={{ marginTop: "10px" }}>
+                                        <input
+                                            value={retryPromptText}
+                                            onChange={(e) => setRetryPromptText(e.target.value)}
+                                            placeholder="Retry prompt"
+                                            style={{ width: "100%", marginBottom: "5px" }}
+                                        />
+                                        <button
+                                            onClick={async () => {
+                                                setLoadingPrompt(true);
+                                                setProgress(0);
+                                                try {
+                                                    let retryTranscript = [splitTranscript[i]];
+                                                    const retryResponse = await promptTranscript(retryPromptText, retryTranscript , setProgress, showMessage);
+                                                    console.log({retryTranscript, retryPromptText, retryResponse, i, splitTranscript});
+                                                    const updatedResponses = [...promptResponses];
+                                                    updatedResponses[i] = retryResponse[0];
+                                                    setPromptResponses(updatedResponses);
+                                                    showMessage({ type: "success", message: `✅ Retried prompt succeeded on part ${i + 1}` });
+                                                } catch (err) {
+                                                    showMessage({ type: "error", message: `❌ Retry failed: ${err.message}` });
+                                                } finally {
+                                                    setLoadingPrompt(false);
+                                                    setRetryIndex(null);
+                                                    setRetryPromptText("");
+                                                }
+                                            }}
+                                        >
+                                            Submit Retry
+                                        </button>
+                                        <button
+                                            style={{ marginLeft: "5px" }}
+                                            onClick={() => setRetryIndex(null)}
+                                        >
+                                            Cancel
+                                        </button>
+                                    </div>
+                                )}
                             </div>
                         ))}
+
                     </div>
 
                     <div style={{ maxHeight: '400px', overflowY: 'auto' }}>

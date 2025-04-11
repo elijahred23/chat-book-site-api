@@ -9,6 +9,7 @@ import YouTubeTranscript from './YouTubeTranscript';
 import Wiki from './Wiki';
 import GptPromptComponent from './ChatGPT';
 import TextSelectionTooltip from './TextSelectionTooltip';
+import DownloadCopyTextFile from './DownloadCopyTextFile.jsx';
 
 function App() {
   const [isChatOpen, setIsChatOpen] = useState(false);
@@ -71,6 +72,7 @@ function App() {
           </div>
 
         </BrowserRouter>
+        <DownloadCopyTextFile />
         <TextSelectionTooltip 
         onAskAI={(text) => {
           localStorage.setItem('selectedText', text);

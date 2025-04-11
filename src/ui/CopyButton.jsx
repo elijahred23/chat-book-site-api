@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { actions, useAppDispatch } from '../context/AppContext';
 
 // Utility function to remove basic Markdown syntax
 const stripMarkdown = (markdownText) => {
@@ -18,9 +19,11 @@ const stripMarkdown = (markdownText) => {
 
 const CopyButton = ({ text, buttonText = 'Copy', onCopy, className = '' }) => {
   const [copied, setCopied] = useState(false);
+  const dispatch = useAppDispatch();
 
   const handleCopy = async () => {
     const plainText = stripMarkdown(text);
+    dispatch(actions.setCopyText(plainText));
     try {
       await navigator.clipboard.writeText(plainText);
       setCopied(true);
