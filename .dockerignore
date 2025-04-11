@@ -3,6 +3,8 @@ dist
 .git
 .gitignore
 Dockerfile
+docker-compose.yml
 .dockerignore
 api/app.log
 api/node_modules
+**/.env

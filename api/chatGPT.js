@@ -1,7 +1,9 @@
 import OpenAI from "openai";
-import { apiKey } from "./apiKey.js";
+
+const chatGptApiKey = process.env.CHAT_GPT_API_KEY || "";
+
 const openai = new OpenAI({
-    apiKey: apiKey
+    apiKey: chatGptApiKey
 });
 
 export const generateResponse = async (systemContent, prompt) => {
