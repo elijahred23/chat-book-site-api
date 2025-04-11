@@ -6,18 +6,15 @@ import PasteButton from './ui/PasteButton';
 import CopyButton from './ui/CopyButton';
 
 const getValuesLocalStorage = () => {
-    const localMessages = localStorage.getItem('messages');
-    const localPrompt = localStorage.getItem('prompt');
-    return {
-        prompt: localPrompt ? JSON.parse(localPrompt) : '',
-        messages: localMessages ? JSON.parse(localMessages) : [],
-    }
-}
+    const prompt = JSON.parse(localStorage.getItem('prompt') || '""');
+    const messages = JSON.parse(localStorage.getItem('messages') || '[]');
+    return { prompt, messages };
+};
 
 function GptPromptComponent({ selectedText }) {
-    const localStorageValues = getValuesLocalStorage();
-    const [messages, setMessages] = useState(localStorageValues.messages);
-    const [prompt, setPrompt] = useState(localStorageValues.prompt);
+    const { prompt: savedPrompt, messages: savedMessages } = getValuesLocalStorage();
+    const [prompt, setPrompt] = useState(savedPrompt);
+    const [messages, setMessages] = useState(savedMessages);
     const [loading, setLoading] = useState(false);
     const messagesEndRef = useRef(null);
 
@@ -29,7 +26,7 @@ function GptPromptComponent({ selectedText }) {
         "Add historical context",
     ];
 
-    const handleInputChange = (event) => setPrompt(event.target.value);
+    const handleInputChange = (e) => setPrompt(e.target.value);
 
     const scrollToBottom = () => {
         messagesEndRef.current?.scrollTo({
@@ -43,23 +40,24 @@ function GptPromptComponent({ selectedText }) {
         try {
             setLoading(true);
             const geminiResponse = await getGeminiResponse(prompt);
-            const newMessage = { text: prompt, sender: 'user' };
+            const userMessage = { text: prompt, sender: 'user' };
             const botMessage = { text: geminiResponse, sender: 'bot' };
-            setMessages(prev => [...prev, newMessage, botMessage]);
+            setMessages(prev => [...prev, userMessage, botMessage]);
             setPrompt('');
         } catch (error) {
             console.error('Error fetching data:', error);
-            window.alert('Error fetching data');
+            alert('Error fetching data');
         } finally {
             setLoading(false);
         }
     };
 
-    const print = () => window.print();
     const clear = () => {
         setMessages([]);
         setPrompt('');
     };
+
+    const print = () => window.print();
 
     useEffect(() => {
         scrollToBottom();
@@ -73,16 +71,15 @@ function GptPromptComponent({ selectedText }) {
     }, [messages, prompt]);
 
     useEffect(() => {
-        if (selectedText != "") {
+        if (selectedText && selectedText !== prompt) {
             setPrompt(selectedText);
         }
-    }, [selectedText])
+    }, [selectedText]);
 
     return (
-        <div style={{ maxWidth: '800px', margin: '0 auto', height: '100vh', display: 'flex', flexDirection: 'column' }}>
+        <div style={{ maxWidth: '800px', margin: '0 auto', height: '100vh', display: 'flex', flexDirection: 'column', paddingBottom: '80px' }}>
             <h2 style={{ fontSize: '24px', marginBottom: '1rem' }}>💬 Gemini Chat</h2>
 
-            {/* Scrollable message area */}
             <div
                 ref={messagesEndRef}
                 style={{
@@ -110,7 +107,9 @@ function GptPromptComponent({ selectedText }) {
                             backgroundColor: message.sender === 'user' ? '#DCF8C6' : '#F1F0F0',
                             maxWidth: '75%'
                         }}>
-                            <span style={{ fontWeight: 'bold' }}>{message.sender === 'user' ? 'You: ' : 'Bot: '}</span>
+                            <span style={{ fontWeight: 'bold' }}>
+                                {message.sender === 'user' ? 'You: ' : 'Bot: '}
+                            </span>
                             <ReactMarkdown>{message.text}</ReactMarkdown>
                             <CopyButton text={message.text} />
                         </div>
@@ -118,63 +117,91 @@ function GptPromptComponent({ selectedText }) {
                 ))}
             </div>
 
-            {/* Fixed bottom input and controls */}
-            <div style={{ position: 'sticky', bottom: 0, backgroundColor: '#fff', padding: '10px 0', zIndex: 10 }}>
-                <textarea
-                    rows={3}
-                    value={prompt}
-                    onChange={handleInputChange}
-                    onKeyDown={e => {
-                        if (e.key === 'Enter' && !e.shiftKey) {
-                            e.preventDefault();
-                            handleSubmit();
-                        }
-                    }}
-                    style={{ width: '100%', marginBottom: '10px' }}
-                    placeholder="Type your prompt and hit Enter..."
-                />
-
-                <div style={{
+            {/* Suggestions */}
+            <div
+                style={{
                     display: 'flex',
                     flexWrap: 'wrap',
                     gap: '8px',
+                    marginBottom: '12px',
+                    justifyContent: 'center',
+                }}
+            >
+                {promptSuggestions.map((suggestion, index) => (
+                    <button
+                        key={index}
+                        onClick={() => setPrompt(`${suggestion}: ${prompt}`)}
+                        style={{
+                            padding: '6px 10px',
+                            fontSize: '12px',
+                            borderRadius: '5px',
+                            backgroundColor: '#e0e0e0',
+                            border: '1px solid #ccc',
+                            cursor: 'pointer',
+                            flexGrow: 1,
+                            flexBasis: 'calc(50% - 10px)', // 2 per row on mobile
+                            maxWidth: '48%',
+                        }}
+                    >
+                        {suggestion}
+                    </button>
+                ))}
+            </div>
+
+            {/* Action Buttons */}
+            <div
+                style={{
+                    display: 'flex',
+                    flexWrap: 'wrap',
+                    gap: '10px',
+                    justifyContent: 'space-between',
                     marginBottom: '10px',
-                    justifyContent: 'center'
-                }}>
-                    {promptSuggestions.map((s, i) => (
-                        <button
-                            key={i}
-                            onClick={() => setPrompt(`${s}: ${prompt}`)}
-                            style={{
-                                padding: '6px 10px',
-                                fontSize: '12px',
-                                borderRadius: '5px',
-                                backgroundColor: '#e0e0e0',
-                                border: '1px solid #ccc',
-                                cursor: 'pointer',
-                                maxWidth: '150px',
-                                whiteSpace: 'nowrap',
-                                overflow: 'hidden',
-                                textOverflow: 'ellipsis',
-                            }}
-                        >
-                            {s}
-                        </button>
-                    ))}
-                </div>
-
-
-                {loading && <p><ClipLoader color="blue" size={20} /> Bot is thinking...</p>}
-
-                <div style={{ display: 'flex', gap: '10px' }}>
+                }}
+            >
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', flex: 1 }}>
                     <PasteButton setPasteText={setPrompt} />
                     <button onClick={clear}>Clear</button>
+                    {selectedText && selectedText !== prompt && (
+                        <button onClick={() => setPrompt(selectedText)}>Add Selected</button>
+                    )}
+                </div>
+                <div style={{ flexShrink: 0 }}>
                     {!loading && <button onClick={handleSubmit}>Send</button>}
-                    {selectedText != "" && selectedText != prompt && 
-                        <button onClick={()=>{setPrompt(selectedText)}}>Add Selected Text Back</button>
-                    }
                 </div>
             </div>
+
+            <textarea
+                rows={4}
+                value={prompt}
+                onChange={handleInputChange}
+                onKeyDown={(e) => {
+                    if (e.key === 'Enter' && !e.shiftKey) {
+                        e.preventDefault();
+                        handleSubmit();
+                    }
+                }}
+                placeholder="Type your prompt and hit Enter..."
+                style={{
+                    width: '100%',
+                    marginBottom: '10px',
+                    padding: '12px',
+                    fontSize: '15px',
+                    lineHeight: '1.5',
+                    border: '1px solid #ccc',
+                    borderRadius: '8px',
+                    resize: 'vertical',
+                    boxSizing: 'border-box',
+                }}
+            />
+
+
+            {/* Loader */}
+            {loading && (
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <ClipLoader color="blue" size={20} />
+                    <p>Bot is thinking...</p>
+                </div>
+            )}
         </div>
     );
 }
