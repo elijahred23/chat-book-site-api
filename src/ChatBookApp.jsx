@@ -105,13 +105,8 @@ export default function ChatBookApp() {
         const prompt = `### Instruction Start ###\n${initialInstruction}\n### End ###`;
         const geminiResponse = await getGeminiResponse(prompt);
 
-        if (!geminiResponse.success) {
-            showMessage({ type: "error", message: geminiResponse.error || "Unknown error occurred" });
-            return;
-        }
-
         incrementStepsExecuted();
-        setInitialInstructionResponse(geminiResponse.text);
+        setInitialInstructionResponse(geminiResponse);
         showMessage({ type: "success", message: "Initial instruction completed!" });
     };
 

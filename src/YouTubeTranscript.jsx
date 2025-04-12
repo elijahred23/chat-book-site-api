@@ -275,7 +275,8 @@ export default function YouTubeTranscript() {
                 rows={6}
                 style={{ width: '100%', marginBottom: '10px' }}
             />
-
+            <PasteButton setPasteText={setManuallyEnteredTranscript} />
+            <button onClick={()=> setManuallyEnteredTranscript("")}>Clear Transcript</button>
             <button onClick={() => {
                 const wc = countWords(manuallyEnteredTranscript);
                 setTranscript(manuallyEnteredTranscript);
@@ -397,7 +398,6 @@ export default function YouTubeTranscript() {
                                                 try {
                                                     let retryTranscript = [splitTranscript[i]];
                                                     const retryResponse = await promptTranscript(retryPromptText, retryTranscript, setProgress, showMessage);
-                                                    console.log({ retryTranscript, retryPromptText, retryResponse, i, splitTranscript });
                                                     const updatedResponses = [...promptResponses];
                                                     updatedResponses[i] = retryResponse[0];
                                                     setPromptResponses(updatedResponses);
