@@ -22,7 +22,7 @@ jobs:
       run: |
         docker build . \
           --file Dockerfile \
-          --tag elijahred23/chat-book-site-api:0.0.28 \
+          --tag elijahred23/chat-book-site-api:0.0.29 \
           --no-cache
 
     - name: Push Docker image
