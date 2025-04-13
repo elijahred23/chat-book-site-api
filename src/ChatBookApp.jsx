@@ -271,13 +271,18 @@ export default function ChatBookApp() {
 
             <ClipLoader color="blue" loading={loadingPDF} />
             {!loadingPDF && initialInstructionResponse !== "" && (
-                <button onClick={generatePDF}>Generate PDF</button>
+                <>
+                    <button onClick={generatePDF}>Generate PDF</button>
+                    <CopyButton buttonText="Copy all responses" text={allInstructionResponsesText} />
+                </>
             )}
 
             {(executionStarted || initialInstructionResponse != "") && (
+                <>
+
                 <div ref={chatLogRef} style={{ maxHeight: '400px', overflowY: 'auto' }}>
                     <ProgressBar progress={progress} />
-                    <CopyButton buttonText="Copy all responses" text={allInstructionResponsesText} />
+
                     <h3>Instructions:</h3>
                     <div style={{ border: initialInstructionResponse ? "1px dotted blue" : "none", padding: "10px" }}>
                         <ReactMarkdown>{initialInstructionResponse}</ReactMarkdown>
@@ -291,6 +296,7 @@ export default function ChatBookApp() {
                         </div>
                     ))}
                 </div>
+                </>
             )}
 
             <p>Subject &nbsp;

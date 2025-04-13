@@ -362,12 +362,16 @@ export default function YouTubeTranscript() {
                             )}
                         </>
                     }
-
+                    {promptResponses.length > 0 && <>
+                        <h2>Prompt Response</h2>
+                        <CopyButton buttonText='Copy all responses' text={promptResponsesText} />
+                        <button onClick={()=>{
+                            setManuallyEnteredTranscript(promptResponsesText);
+                            setTranscript(promptResponsesText);
+                        }}>Set as transcript</button>
+                    </>}
                     <div style={{ maxHeight: '400px', overflowY: 'auto' }}>
-                        {promptResponses.length > 0 && <>
-                            <h2>Prompt Response</h2>
-                            <CopyButton buttonText='Copy all responses' text={promptResponsesText} />
-                        </>}
+
                         {promptResponses.map((res, i) => (
                             <div key={i} style={{ border: "1px solid green", padding: "10px", marginBottom: "10px" }}>
                                 <ReactMarkdown>{res}</ReactMarkdown>

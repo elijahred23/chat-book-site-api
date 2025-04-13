@@ -26,5 +26,5 @@ jobs:
           --no-cache
 
     - name: Push Docker image
-      run: docker push elijahred23/chat-book-site-api:0.0.28
+      run: docker push elijahred23/chat-book-site-api:0.0.29
 

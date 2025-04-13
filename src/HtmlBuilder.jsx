@@ -1,6 +1,8 @@
 import React, { useRef, useState } from 'react';
 import { getGeminiResponse } from './utils/callGemini';
 import { useAppState, useAppDispatch, actions } from './context/AppContext';
+import CopyButton from './ui/CopyButton';
+import PasteButton from './ui/PasteButton';
 
 const HtmlBuilder = () => {
     const { htmlBuilder } = useAppState();
@@ -102,6 +104,8 @@ ${htmlBuilder.input}
                 <button onClick={() => { dispatch(actions.setHtmlInput("")) }} disabled={htmlBuilder.input?.length == 0}>
                     Clear
                 </button>
+                <CopyButton text={htmlBuilder.input} />
+                <PasteButton onPaste={(text)=> dispatch(actions.setHtmlInput(text))} />
                 <button onClick={handleGenerate} disabled={loading}>
                     {loading ? 'Generating...' : 'Generate with Gemini'}
                 </button>
