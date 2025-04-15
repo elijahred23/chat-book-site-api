@@ -110,7 +110,7 @@ function GptPromptComponent({ selectedText }) {
                             <span style={{ fontWeight: 'bold' }}>
                                 {message.sender === 'user' ? 'You: ' : 'Bot: '}
                             </span>
-                            <ReactMarkdown>{message.text}</ReactMarkdown>
+                            <ReactMarkdown className="markdown-body">{message.text}</ReactMarkdown>
                             <CopyButton text={message.text} />
                         </div>
                     </div>

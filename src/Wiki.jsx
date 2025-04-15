@@ -192,7 +192,7 @@ export default function Wiki() {
 
             {geminiResponse && (
                 <div style={{ border: "1px solid green", padding: "10px", marginBottom: "10px" }}>
-                    <ReactMarkdown>{geminiResponse}</ReactMarkdown>
+                    <ReactMarkdown className="markdown-body">{geminiResponse}</ReactMarkdown>
                 </div>
             )}
 

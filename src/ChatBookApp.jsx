@@ -285,13 +285,13 @@ export default function ChatBookApp() {
 
                     <h3>Instructions:</h3>
                     <div style={{ border: initialInstructionResponse ? "1px dotted blue" : "none", padding: "10px" }}>
-                        <ReactMarkdown>{initialInstructionResponse}</ReactMarkdown>
+                        <ReactMarkdown className="markdown-body">{initialInstructionResponse}</ReactMarkdown>
                         <CopyButton text={initialInstructionResponse} />
                     </div>
                     <h3>Executed Instructions:</h3>
                     {subsequentInstructionResponses.map((res, idx) => (
                         <div key={idx} style={{ border: "1px dotted red", padding: "10px" }}>
-                            <ReactMarkdown>{res}</ReactMarkdown>
+                            <ReactMarkdown className="markdown-body">{res}</ReactMarkdown>
                             <CopyButton text={res} />
                         </div>
                     ))}

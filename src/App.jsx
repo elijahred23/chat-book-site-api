@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import './App.css';
 import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
 import ChatBookApp from './ChatBookApp.jsx';
 import ApiCheck from './ApiCheck';
