@@ -33,7 +33,7 @@ const fetchYouTubeTranscript = async (video_url) => {
     }
 };
 
-function splitStringByWords(str, splitCount) {
+const splitStringByWords = (str, splitCount) => {
     if (!str || splitCount < 1) return [];
     const words = str.split(/\s+/);
     const wordsPerChunk = Math.ceil(words.length / splitCount);
@@ -42,11 +42,11 @@ function splitStringByWords(str, splitCount) {
         result.push(words.slice(i, i + wordsPerChunk).join(" "));
     }
     return result;
-}
+};
 
 const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
-async function promptTranscript(prompt, transcripts, setProgress, showMessage) {
+const promptTranscript = async (prompt, transcripts, setProgress, showMessage) => {
     const batchSize = 5;
     const results = [];
 
@@ -69,14 +69,14 @@ async function promptTranscript(prompt, transcripts, setProgress, showMessage) {
         results.push(...batchResults);
         if (i < (transcripts.length - 1)) await sleep(1000);
     }
-
     return results;
-}
+};
 
 const countWords = (s) => (s.match(/\b\w+\b/g) || []).length;
 
 export default function YouTubeTranscript() {
     const { showMessage } = useFlyout();
+    const [activeTab, setActiveTab] = useState("transcript");
     const [url, setUrl] = useState("");
     const [prompt, setPrompt] = useState(() => localStorage.getItem("yt_prompt") || "");
     const [transcript, setTranscript] = useState(() => localStorage.getItem("yt_transcript") || "");
@@ -90,22 +90,11 @@ export default function YouTubeTranscript() {
 
     const promptSuggestions = [
         "Summarize this transcript",
-        "Extract 5 key points from this content",
+        "Extract key points from this content",
         "Explain this content simply"
     ];
 
-
-
-    const promptResponsesText = useMemo(() => {
-        return promptResponses?.length > 0 ? promptResponses.join('\n\n') : '';
-    }, [promptResponses]);
-
-    const handleManualTranscript = () => {
-        const wc = countWords(manuallyEnteredTranscript);
-        setTranscript(manuallyEnteredTranscript);
-        setSplitLength(Math.ceil(wc / 3000));
-        showMessage?.({ type: "success", message: "Transcript loaded." });
-    };
+    const promptResponsesText = useMemo(() => promptResponses.join('\n\n'), [promptResponses]);
 
     const executePrompt = async () => {
         try {
@@ -113,6 +102,7 @@ export default function YouTubeTranscript() {
             setProgress(0);
             const responses = await promptTranscript(prompt, splitTranscript, setProgress, showMessage);
             setPromptResponses(responses);
+            setActiveTab("responses")
         } finally {
             setLoadingPrompt(false);
         }
@@ -124,6 +114,12 @@ export default function YouTubeTranscript() {
         localStorage.setItem("yt_split_length", splitLength);
         localStorage.setItem("yt_promptResponses", JSON.stringify(promptResponses));
     }, [transcript, prompt, splitLength, promptResponses]);
+
+    useEffect(() => {
+        const wc = countWords(manuallyEnteredTranscript);
+        setTranscript(manuallyEnteredTranscript);
+        setSplitLength(Math.ceil(wc / 3000));
+    }, [manuallyEnteredTranscript])
 
     useEffect(() => {
         if (splitLength > 0 && transcript?.length > 0) {
@@ -152,7 +148,6 @@ export default function YouTubeTranscript() {
                 }
             }
         };
-
         loadTranscript();
     }, [url]);
 
@@ -160,132 +155,123 @@ export default function YouTubeTranscript() {
         <div className="container">
             <h1>YouTube Transcript Analyzer</h1>
 
-            <div className="input-group">
-                <input
-                    className="input"
-                    style={{
-                        borderColor: url === "" ? "#ccc" : isValidYouTubeUrl(url) ? "green" : "red",
-                    }}
-                    type="text"
-                    value={url}
-                    placeholder="YouTube URL"
-                    onChange={(e) => setUrl(e.target.value)}
-                />
-                <PasteButton setPasteText={setUrl} className="btn paste-btn" />
+            <div className="tab-bar">
+                <button className={`tab-btn ${activeTab === "transcript" ? "active" : ""}`} onClick={() => setActiveTab("transcript")}>Transcript</button>
+                <button className={`tab-btn ${activeTab === "responses" ? "active" : ""}`} onClick={() => setActiveTab("responses")}>Prompt Responses</button>
             </div>
 
-            <div className="input-group">
-                <input
-                    type="file"
-                    accept=".txt"
-                    className="input"
-                    onChange={async (e) => {
-                        const file = e.target.files[0];
-                        if (file) setManuallyEnteredTranscript(await file.text());
-                    }}
-                />
-                <PasteButton setPasteText={setManuallyEnteredTranscript} className="btn paste-btn" />
-            </div>
 
-            <textarea
-                className="textarea"
-                rows={6}
-                value={manuallyEnteredTranscript}
-                onChange={(e) => setManuallyEnteredTranscript(e.target.value)}
-                placeholder="Or manually enter transcript here..."
-            />
-            <CopyButton text={manuallyEnteredTranscript} className="btn copy-btn" />
+            {activeTab === "transcript" &&
+                <>
+                    <div className="input-group">
+                        <input className="input" type="text" value={url} placeholder="YouTube URL"
+                            onChange={(e) => setUrl(e.target.value)} />
+                        <PasteButton setPasteText={setUrl} className="btn paste-btn" />
+                    </div>
 
-            <div className="button-group">
-                <button className="btn primary-btn" onClick={handleManualTranscript}>Use Transcript</button>
-                <button className="btn secondary-btn" onClick={() => setManuallyEnteredTranscript("")}>Clear</button>
-            </div>
+                    <textarea
+                        className="textarea"
+                        rows={6}
+                        value={manuallyEnteredTranscript}
+                        onChange={(e) => setManuallyEnteredTranscript(e.target.value)}
+                        placeholder="Or manually enter transcript here..."
+                    />
+                    <div className="button-group">
+                        <PasteButton
+                            setPasteText={setManuallyEnteredTranscript}
+                            className="btn paste-btn"
+                        />
+                        <CopyButton
+                            text={manuallyEnteredTranscript}
+                            className="btn copy-btn"
+                        />
+                        <button
+                            className="btn secondary-btn"
+                            onClick={() => setManuallyEnteredTranscript("")}
+                        >
+                            Clear
+                        </button>
 
-            <div className="input-group">
-                <input
-                    className="input"
-                    value={prompt}
-                    placeholder="Prompt (e.g. Summarize this)"
-                    onChange={(e) => setPrompt(e.target.value)}
-                />
-                <PasteButton setPasteText={setPrompt} className="btn paste-btn" />
-            </div>
-            <div className="prompt-suggestions">
-                {promptSuggestions.map((text, index) => (
-                    <button
-                        key={index}
-                        onClick={() => setPrompt(text)}
-                        className="suggestion-btn"
-                    >
-                        {text}
+                        {/* ✅ Upload TXT File */}
+                        <label className="btn secondary-btn" style={{ cursor: 'pointer' }}>
+                            Upload .txt
+                            <input
+                                type="file"
+                                accept=".txt"
+                                style={{ display: 'none' }}
+                                onChange={(e) => {
+                                    const file = e.target.files[0];
+                                    if (!file) return;
+
+                                    const reader = new FileReader();
+                                    reader.onload = (event) => {
+                                        setManuallyEnteredTranscript(event.target.result);
+                                    };
+                                    reader.readAsText(file);
+                                }}
+                            />
+                        </label>
+                    </div>
+                    <div className="input-group">
+                        <input
+                            className="input"
+                            value={prompt}
+                            placeholder="Prompt (e.g. Summarize this)"
+                            onChange={(e) => setPrompt(e.target.value)}
+                        />
+                        <PasteButton setPasteText={setPrompt} className="btn paste-btn" />
+                    </div>
+                    <div className="prompt-suggestions">
+                        {promptSuggestions.map((text, index) => (
+                            <button key={index} onClick={() => setPrompt(text)} className="suggestion-btn">{text}</button>
+                        ))}
+                    </div>
+                    <button className="btn primary-btn" onClick={executePrompt} disabled={loadingPrompt || !prompt}>
+                        {loadingPrompt ? <ClipLoader size={12} color="white" /> : "Execute Prompt"}
                     </button>
-                ))}
-            </div>
+                </>
+            }
 
 
-            <button className="btn primary-btn" onClick={executePrompt} disabled={loadingPrompt || !prompt}>
-                {loadingPrompt ? <ClipLoader size={12} color="white" /> : "Execute Prompt"}
-            </button>
+
             {loadingPrompt && (
                 <div style={{ marginTop: '10px' }}>
                     <label style={{ fontWeight: 'bold' }}>Progress: {progress}/{splitTranscript.length}</label>
-                    <div style={{
-                        width: '100%',
-                        height: '10px',
-                        backgroundColor: '#ddd',
-                        borderRadius: '5px',
-                        overflow: 'hidden',
-                        marginTop: '4px'
-                    }}>
-                        <div style={{
-                            width: `${(progress / splitTranscript.length) * 100}%`,
-                            height: '100%',
-                            backgroundColor: '#4caf50',
-                            transition: 'width 0.4s ease-in-out'
-                        }} />
+                    <div style={{ width: '100%', height: '10px', backgroundColor: '#ddd', borderRadius: '5px', overflow: 'hidden', marginTop: '4px' }}>
+                        <div style={{ width: `${(progress / splitTranscript.length) * 100}%`, height: '100%', backgroundColor: '#4caf50', transition: 'width 0.4s ease-in-out' }} />
                     </div>
                 </div>
             )}
 
-
-            <h2>Prompt Responses</h2>
-            {promptResponses.length > 0 && (
+            {activeTab === "responses" && (
                 <>
-                    <div className="button-group">
-                        <CopyButton
-                            text={promptResponsesText}
-                            buttonText="📋 Copy All Prompt Responses"
-                            className="btn copy-btn"
-                        />
-                    </div>
+                    <h2>Prompt Responses</h2>
+                    {promptResponses.length > 0 && (
+                        <CopyButton text={promptResponsesText} buttonText="📋 Copy All Prompt Responses" className="btn copy-btn" />
+                    )}
+                    {promptResponses.map((res, i) => (
+                        <div key={i} className="card">
+                            <ReactMarkdown>{res}</ReactMarkdown>
+                            <CopyButton text={res} className="btn copy-btn" />
+                        </div>
+                    ))}
                 </>
             )}
 
-            {promptResponses.map((res, i) => (
-                <div key={i} className="card">
-                    <ReactMarkdown>{res}</ReactMarkdown>
-                    <CopyButton text={res} className="btn copy-btn" />
-                </div>
-            ))}
-
-            <h2>Transcript Preview</h2>
-            {transcript && (
-                <div className="button-group">
-                    <CopyButton
-                        text={transcript}
-                        buttonText="📋 Copy Complete Transcript"
-                        className="btn copy-btn"
-                    />
-                </div>
-            )}
-            <div className="card">
-                {splitTranscript.map((chunk, i) => (
-                    <div key={i} className="chunk">
-                        <ReactMarkdown>{chunk}</ReactMarkdown>
-                        <CopyButton text={chunk} className="btn copy-btn" />
+            {activeTab === "transcript" && (
+                <>
+                    <h2>Transcript Preview</h2>
+                    <CopyButton text={transcript} buttonText="📋 Copy Complete Transcript" className="btn copy-btn" />
+                    <div className="card">
+                        {splitTranscript.map((chunk, i) => (
+                            <div key={i} className="chunk">
+                                <ReactMarkdown>{chunk}</ReactMarkdown>
+                                <CopyButton text={chunk} className="btn copy-btn" />
+                            </div>
+                        ))}
                     </div>
-                ))}
-            </div>
+                </>
+            )}
         </div>
     );
 }
