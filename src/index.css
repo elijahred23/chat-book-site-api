@@ -478,3 +478,12 @@ textarea {
   border-bottom: 3px solid #1e88e5;
   color: #1e88e5;
 }
+
+.scrollable-card {
+  max-height: 400px;
+  /* Adjust height as needed */
+  overflow-y: auto;
+  padding-right: 10px;
+  /* Adds spacing for scrollbar */
+  margin-bottom: 1rem;
+}

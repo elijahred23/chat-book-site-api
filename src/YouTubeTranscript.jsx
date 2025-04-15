@@ -87,6 +87,9 @@ export default function YouTubeTranscript() {
     const [manuallyEnteredTranscript, setManuallyEnteredTranscript] = useState("");
     const [progress, setProgress] = useState(0);
     const [lastFetchedUrl, setLastFetchedUrl] = useState("");
+    const [retryIndex, setRetryIndex] = useState(null);
+    const [retryPromptText, setRetryPromptText] = useState("");
+
 
     const promptSuggestions = [
         "Summarize this transcript",
@@ -95,6 +98,7 @@ export default function YouTubeTranscript() {
     ];
 
     const promptResponsesText = useMemo(() => promptResponses.join('\n\n'), [promptResponses]);
+    const transcriptWordCount = useMemo(() => countWords(transcript), [transcript])
 
     const executePrompt = async () => {
         try {
@@ -153,7 +157,7 @@ export default function YouTubeTranscript() {
 
     return (
         <div className="container">
-            <h1>YouTube Transcript Analyzer</h1>
+            <h2>YouTube Transcript Analyzer</h2>
 
             <div className="tab-bar">
                 <button className={`tab-btn ${activeTab === "transcript" ? "active" : ""}`} onClick={() => setActiveTab("transcript")}>Transcript</button>
@@ -249,20 +253,75 @@ export default function YouTubeTranscript() {
                     {promptResponses.length > 0 && (
                         <CopyButton text={promptResponsesText} buttonText="📋 Copy All Prompt Responses" className="btn copy-btn" />
                     )}
-                    {promptResponses.map((res, i) => (
-                        <div key={i} className="card">
-                            <ReactMarkdown>{res}</ReactMarkdown>
-                            <CopyButton text={res} className="btn copy-btn" />
-                        </div>
-                    ))}
+                    <div className="card scrollable-card">
+                        {promptResponses.map((res, i) => (
+                            <div key={i} >
+                                <ReactMarkdown>{res}</ReactMarkdown>
+                                <CopyButton text={res} className="btn copy-btn" />
+
+                                <button className="btn secondary-btn" onClick={() => {
+                                    setRetryIndex(i);
+                                    setRetryPromptText(prompt);
+                                }}>
+                                    🔁 Retry
+                                </button>
+
+                                {retryIndex === i && (
+                                    <div style={{ marginTop: "1rem" }}>
+                                        <input
+                                            className="input"
+                                            value={retryPromptText}
+                                            onChange={(e) => setRetryPromptText(e.target.value)}
+                                            placeholder="New prompt for retry"
+                                        />
+                                        <div className="button-group">
+                                            <button
+                                                className="btn primary-btn"
+                                                onClick={async () => {
+                                                    try {
+                                                        setLoadingPrompt(true);
+                                                        setProgress(0);
+                                                        const retryChunk = [splitTranscript[i]];
+                                                        const retryResponse = await promptTranscript(retryPromptText, retryChunk, setProgress, showMessage);
+                                                        const updatedResponses = [...promptResponses];
+                                                        updatedResponses[i] = retryResponse[0];
+                                                        setPromptResponses(updatedResponses);
+                                                        setRetryIndex(null);
+                                                        setRetryPromptText("");
+                                                        showMessage({ type: "success", message: `✅ Retry successful for part ${i + 1}` });
+                                                    } catch (err) {
+                                                        showMessage({ type: "error", message: `❌ Retry failed: ${err.message}` });
+                                                    } finally {
+                                                        setLoadingPrompt(false);
+                                                    }
+                                                }}
+                                            >
+                                                Submit Retry
+                                            </button>
+                                            <button
+                                                className="btn secondary-btn"
+                                                onClick={() => setRetryIndex(null)}
+                                            >
+                                                Cancel
+                                            </button>
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
+                        ))}
+                    </div>
+
+
                 </>
             )}
 
             {activeTab === "transcript" && (
                 <>
-                    <h2>Transcript Preview</h2>
+                    <h2>
+                        Transcript Preview <span style={{ fontSize: '0.9rem', color: '#666' }}>({transcriptWordCount} words)</span>
+                    </h2>
                     <CopyButton text={transcript} buttonText="📋 Copy Complete Transcript" className="btn copy-btn" />
-                    <div className="card">
+                    <div className="card scrollable-card">
                         {splitTranscript.map((chunk, i) => (
                             <div key={i} className="chunk">
                                 <ReactMarkdown>{chunk}</ReactMarkdown>
