@@ -6,6 +6,7 @@ import PasteButton from './ui/PasteButton';
 import CopyButton from './ui/CopyButton';
 import { hostname } from './utils/hostname';
 import { useFlyout } from './context/FlyoutContext';
+import AutoScroller from './ui/AutoScroller';
 
 const isValidYouTubeUrl = (url) => {
     const regex = /^(https?:\/\/)?(www\.)?(youtube\.com\/(watch\?v=|embed\/|v\/|shorts\/|live\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})(\S*)?$/;
@@ -253,12 +254,12 @@ export default function YouTubeTranscript() {
                     {promptResponses.length > 0 && (
                         <CopyButton text={promptResponsesText} buttonText="📋 Copy All Prompt Responses" className="btn copy-btn" />
                     )}
-                    <div className="card scrollable-card">
+
+                    <AutoScroller activeIndex={promptResponses.length - 1} >
                         {promptResponses.map((res, i) => (
-                            <div key={i} >
+                            <div key={i} data-index={i} style={{ padding: "1rem 0", borderBottom: "1px solid #ddd" }}>
                                 <ReactMarkdown>{res}</ReactMarkdown>
                                 <CopyButton text={res} className="btn copy-btn" />
-
                                 <button className="btn secondary-btn" onClick={() => {
                                     setRetryIndex(i);
                                     setRetryPromptText(prompt);
@@ -309,7 +310,7 @@ export default function YouTubeTranscript() {
                                 )}
                             </div>
                         ))}
-                    </div>
+                    </AutoScroller>
 
 
                 </>
