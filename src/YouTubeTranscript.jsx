@@ -90,6 +90,7 @@ export default function YouTubeTranscript() {
     const [lastFetchedUrl, setLastFetchedUrl] = useState("");
     const [retryIndex, setRetryIndex] = useState(null);
     const [retryPromptText, setRetryPromptText] = useState("");
+    const [retryLoadingIndex, setRetryLoadingIndex] = useState(null);
 
 
     const promptSuggestions = [
@@ -255,7 +256,7 @@ export default function YouTubeTranscript() {
                         <CopyButton text={promptResponsesText} buttonText="📋 Copy All Prompt Responses" className="btn copy-btn" />
                     )}
 
-                    <AutoScroller activeIndex={promptResponses.length - 1} >
+                    <AutoScroller activeIndex={0} >
                         {promptResponses.map((res, i) => (
                             <div key={i} data-index={i} style={{ padding: "1rem 0", borderBottom: "1px solid #ddd" }}>
                                 <ReactMarkdown>{res}</ReactMarkdown>
@@ -268,46 +269,65 @@ export default function YouTubeTranscript() {
                                 </button>
 
                                 {retryIndex === i && (
-                                    <div style={{ marginTop: "1rem" }}>
+                                    <div className="retry-box">
                                         <input
                                             className="input"
                                             value={retryPromptText}
                                             onChange={(e) => setRetryPromptText(e.target.value)}
                                             placeholder="New prompt for retry"
                                         />
+
                                         <div className="button-group">
                                             <button
                                                 className="btn primary-btn"
+                                                disabled={retryLoadingIndex === i}
                                                 onClick={async () => {
                                                     try {
-                                                        setLoadingPrompt(true);
+                                                        setRetryLoadingIndex(i);
                                                         setProgress(0);
                                                         const retryChunk = [splitTranscript[i]];
-                                                        const retryResponse = await promptTranscript(retryPromptText, retryChunk, setProgress, showMessage);
+                                                        const retryResponse = await promptTranscript(
+                                                            retryPromptText,
+                                                            retryChunk,
+                                                            setProgress,
+                                                            showMessage
+                                                        );
                                                         const updatedResponses = [...promptResponses];
                                                         updatedResponses[i] = retryResponse[0];
                                                         setPromptResponses(updatedResponses);
+                                                        showMessage({
+                                                            type: "success",
+                                                            message: `✅ Retry successful for part ${i + 1}`,
+                                                        });
+                                                    } catch (err) {
+                                                        showMessage({
+                                                            type: "error",
+                                                            message: `❌ Retry failed: ${err.message}`,
+                                                        });
+                                                    } finally {
+                                                        setRetryLoadingIndex(null);
                                                         setRetryIndex(null);
                                                         setRetryPromptText("");
-                                                        showMessage({ type: "success", message: `✅ Retry successful for part ${i + 1}` });
-                                                    } catch (err) {
-                                                        showMessage({ type: "error", message: `❌ Retry failed: ${err.message}` });
-                                                    } finally {
-                                                        setLoadingPrompt(false);
                                                     }
                                                 }}
                                             >
-                                                Submit Retry
+                                                {retryLoadingIndex === i ? <ClipLoader size={12} color="white" /> : "Submit Retry"}
                                             </button>
+
                                             <button
                                                 className="btn secondary-btn"
-                                                onClick={() => setRetryIndex(null)}
+                                                onClick={() => {
+                                                    setRetryIndex(null);
+                                                    setRetryPromptText("");
+                                                }}
+                                                disabled={retryLoadingIndex === i}
                                             >
                                                 Cancel
                                             </button>
                                         </div>
                                     </div>
                                 )}
+
                             </div>
                         ))}
                     </AutoScroller>

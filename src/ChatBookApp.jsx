@@ -7,6 +7,7 @@ import ReactMarkdown from 'react-markdown';
 import PasteButton from "./ui/PasteButton";
 import CopyButton from "./ui/CopyButton";
 import { useFlyout } from "./context/FlyoutContext"; // adjust path as needed
+import AutoScroller from "./ui/AutoScroller";
 
 
 
@@ -60,10 +61,6 @@ export default function ChatBookApp() {
     const chatLogRef = useRef(null);
     const [initialInstructionResponse, setInitialInstructionResponse] = useState(localStorageValues.initialInstructionResponse);
     const [subsequentInstructionResponses, setSubsequentInstructionResponses] = useState(localStorageValues.subsequentInstructionResponses);
-
-    const scrollToBottom = () => {
-        chatLogRef.current?.scrollTo({ top: chatLogRef.current.scrollHeight, behavior: 'smooth' });
-    };
 
     const getInitialInstructionMessage = (steps = null) => {
         if (steps === null) steps = numSteps;
@@ -240,10 +237,6 @@ export default function ChatBookApp() {
         return (parseInt(stepsExecuted) / (parseInt(numSteps) + 1)) * 100;
     }, [stepsExecuted, numSteps]);
 
-    useEffect(() => {
-        scrollToBottom();
-    }, [initialInstructionResponse, subsequentInstructionResponses]);
-
     return (
         <div>
             <h2>Chat Book App</h2>
@@ -279,23 +272,24 @@ export default function ChatBookApp() {
 
             {(executionStarted || initialInstructionResponse != "") && (
                 <>
+                    <AutoScroller activeIndex={subsequentInstructionResponses.length}>
+                        <ProgressBar progress={progress} />
 
-                <div ref={chatLogRef} style={{ maxHeight: '400px', overflowY: 'auto' }}>
-                    <ProgressBar progress={progress} />
-
-                    <h3>Instructions:</h3>
-                    <div style={{ border: initialInstructionResponse ? "1px dotted blue" : "none", padding: "10px" }}>
-                        <ReactMarkdown className="markdown-body">{initialInstructionResponse}</ReactMarkdown>
-                        <CopyButton text={initialInstructionResponse} />
-                    </div>
-                    <h3>Executed Instructions:</h3>
-                    {subsequentInstructionResponses.map((res, idx) => (
-                        <div key={idx} style={{ border: "1px dotted red", padding: "10px" }}>
-                            <ReactMarkdown className="markdown-body">{res}</ReactMarkdown>
-                            <CopyButton text={res} />
+                        <h3>Instructions:</h3>
+                        <div style={{ border: initialInstructionResponse ? "1px dotted blue" : "none", padding: "10px" }}>
+                            <ReactMarkdown className="markdown-body">{initialInstructionResponse}</ReactMarkdown>
+                            <CopyButton text={initialInstructionResponse} />
                         </div>
-                    ))}
-                </div>
+
+                        <h3>Executed Instructions:</h3>
+                        {subsequentInstructionResponses.map((res, idx) => (
+                            <div key={idx} style={{ border: "1px dotted red", padding: "10px" }}>
+                                <ReactMarkdown className="markdown-body">{res}</ReactMarkdown>
+                                <CopyButton text={res} />
+                            </div>
+                        ))}
+                    </AutoScroller>
+
                 </>
             )}
 
