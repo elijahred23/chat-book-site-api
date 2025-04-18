@@ -27,8 +27,15 @@ const PasteButton = ({
       onClick={handlePaste}
       className={className}
       aria-label="Paste from clipboard"
+      style={{
+        minWidth: '100px', // fixed width based on max content (adjust as needed)
+        textAlign: 'center',
+        whiteSpace: 'nowrap'
+      }}
     >
-      {pasted ? '✅ Pasted!' : children}
+      <span style={{ display: 'inline-block', width: '100%' }}>
+        {pasted ? '✅ Pasted!' : children}
+      </span>
     </button>
   );
 };

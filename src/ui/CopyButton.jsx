@@ -35,8 +35,18 @@ const CopyButton = ({ text, buttonText = 'Copy', onCopy, className = '' }) => {
   };
 
   return (
-    <button onClick={handleCopy} className={className}>
-      {copied ? '✅ Copied!' : buttonText}
+    <button
+      onClick={handleCopy}
+      className={className}
+      style={{
+        minWidth: '100px', // ensure consistent width
+        textAlign: 'center',
+        whiteSpace: 'nowrap'
+      }}
+    >
+      <span style={{ display: 'inline-block', width: '100%' }}>
+        {copied ? '✅ Copied!' : buttonText}
+      </span>
     </button>
   );
 };

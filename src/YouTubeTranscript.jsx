@@ -253,7 +253,13 @@ export default function YouTubeTranscript() {
                 <>
                     <h2>Prompt Responses</h2>
                     {promptResponses.length > 0 && (
-                        <CopyButton text={promptResponsesText} buttonText="📋 Copy All Prompt Responses" className="btn copy-btn" />
+                        <>
+                        <CopyButton text={promptResponsesText} buttonText="📋 Copy Responses" className="btn copy-btn" />
+                        <button className="btn secondary-btn" onClick={() => {
+                            setManuallyEnteredTranscript(promptResponsesText);
+                            setActiveTab("transcript");
+                        }}>Copy to Transcript</button>
+                        </>
                     )}
 
                     <AutoScroller activeIndex={0} >

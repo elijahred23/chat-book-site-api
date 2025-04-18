@@ -22,8 +22,6 @@ function GptPromptComponent({ selectedText }) {
         "Summarize this text",
         "Elaborate on this",
         "Explain simply",
-        "List 5 key points",
-        "Add historical context",
     ];
 
     const handleInputChange = (e) => setPrompt(e.target.value);
@@ -78,8 +76,6 @@ function GptPromptComponent({ selectedText }) {
 
     return (
         <div style={{ maxWidth: '800px', margin: '0 auto', height: '100vh', display: 'flex', flexDirection: 'column', paddingBottom: '80px' }}>
-            <h2 style={{ fontSize: '24px', marginBottom: '1rem' }}>💬 Gemini Chat</h2>
-
             <div
                 ref={messagesEndRef}
                 style={{
