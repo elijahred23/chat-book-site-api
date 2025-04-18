@@ -45,7 +45,7 @@ const CopyButton = ({ text, buttonText = 'Copy', onCopy, className = '' }) => {
       }}
     >
       <span style={{ display: 'inline-block', width: '100%' }}>
-        {copied ? '✅ Copied!' : buttonText}
+        {copied ? 'Done' : buttonText}
       </span>
     </button>
   );

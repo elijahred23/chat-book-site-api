@@ -34,7 +34,7 @@ const PasteButton = ({
       }}
     >
       <span style={{ display: 'inline-block', width: '100%' }}>
-        {pasted ? '✅ Pasted!' : children}
+        {pasted ? 'Done!' : children}
       </span>
     </button>
   );
