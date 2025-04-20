@@ -38,7 +38,7 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo }) 
     }, [searchQuery]);
 
     return (
-        <div className={`chat-drawer half ${isOpen ? 'open' : ''}`}>
+        <div className={`chat-drawer full ${isOpen ? 'open' : ''}`}>
             <div className="chat-drawer-header">
                 <h3>YouTube Search</h3>
                 <button className="close-chat-btn" onClick={onClose}>×</button>
