@@ -10,6 +10,7 @@ import MarkdownIt from 'markdown-it';
 import fs from 'fs';
 import puppeteer from 'puppeteer';
 import { fetchTranscript } from './youtube.js';
+import { searchYouTube, getVideoDetails } from './youtube.js';
 
 const app = express();
 const __filename = fileURLToPath(import.meta.url);
@@ -83,6 +84,42 @@ app.get('/youtube/transcript', async (req, res) => {
   } catch (error) {
     console.error(error);
     res.status(500).send({ error: 'Server Error', message: 'Failed to fetch transcript' });
+  }
+});
+
+
+// GET /youtube/search?q=nodejs
+app.get('/youtube/search', async (req, res) => {
+  const query = req.query.q;
+
+  if (!query) {
+    return res.status(400).json({ error: 'Missing search query.' });
+  }
+
+  try {
+    const results = await searchYouTube(query);
+    res.json(results);
+  } catch (error) {
+    console.error('Search API error:', error);
+    res.status(500).json({ error: 'Internal server error.' });
+  }
+});
+
+// GET /youtube/video/:id
+app.get('/youtube/video/:id', async (req, res) => {
+  const videoId = req.params.id;
+
+  try {
+    const details = await getVideoDetails(videoId);
+
+    if (!details) {
+      return res.status(404).json({ error: 'Video not found.' });
+    }
+
+    res.json(details);
+  } catch (error) {
+    console.error('Video details API error:', error);
+    res.status(500).json({ error: 'Internal server error.' });
   }
 });
 

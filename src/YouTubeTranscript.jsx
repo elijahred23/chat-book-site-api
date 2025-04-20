@@ -7,6 +7,7 @@ import CopyButton from './ui/CopyButton';
 import { hostname } from './utils/hostname';
 import { useFlyout } from './context/FlyoutContext';
 import AutoScroller from './ui/AutoScroller';
+import YouTubeSearchDrawer from './YouTubeSearchDrawer';
 
 const isValidYouTubeUrl = (url) => {
     const regex = /^(https?:\/\/)?(www\.)?(youtube\.com\/(watch\?v=|embed\/|v\/|shorts\/|live\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})(\S*)?$/;
@@ -91,6 +92,8 @@ export default function YouTubeTranscript() {
     const [retryIndex, setRetryIndex] = useState(null);
     const [retryPromptText, setRetryPromptText] = useState("");
     const [retryLoadingIndex, setRetryLoadingIndex] = useState(null);
+    const [drawerOpen, setDrawerOpen] = useState(false);
+
 
 
     const promptSuggestions = [
@@ -159,8 +162,6 @@ export default function YouTubeTranscript() {
 
     return (
         <div className="container">
-            <h2>YouTube Transcript Analyzer</h2>
-
             <div className="tab-bar">
                 <button className={`tab-btn ${activeTab === "transcript" ? "active" : ""}`} onClick={() => setActiveTab("transcript")}>Transcript</button>
                 <button className={`tab-btn ${activeTab === "responses" ? "active" : ""}`} onClick={() => setActiveTab("responses")}>Prompt Responses</button>
@@ -172,10 +173,18 @@ export default function YouTubeTranscript() {
                     <div className="input-group">
                         <input className="input" type="text" value={url} placeholder="YouTube URL"
                             onChange={(e) => setUrl(e.target.value)} />
+                        <div className="button-group">
+                            <button className="btn secondary-btn" onClick={() => setDrawerOpen(true)}>
+                                🔎 Search YouTube
+                            </button>
+                        </div>
+
                         <PasteButton setPasteText={setUrl} className="btn paste-btn" />
                     </div>
 
+
                     <textarea
+                        style={{height: "25px"}}
                         className="textarea"
                         rows={6}
                         value={manuallyEnteredTranscript}
@@ -235,6 +244,19 @@ export default function YouTubeTranscript() {
                     <button className="btn primary-btn" onClick={executePrompt} disabled={loadingPrompt || !prompt}>
                         {loadingPrompt ? <ClipLoader size={12} color="white" /> : "Execute Prompt"}
                     </button>
+                    <YouTubeSearchDrawer
+                        isOpen={drawerOpen}
+                        onClose={() => setDrawerOpen(false)}
+                        onSelectVideo={(selectedUrl) => {
+                            setUrl(selectedUrl);
+                            setDrawerOpen(false); // Close after selecting
+                        }}
+                        setUrl={(url) => {
+                            setUrl(url);
+                            setDrawerOpen(false);
+                        }}
+                    />
+
                 </>
             }
 

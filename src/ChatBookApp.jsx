@@ -114,6 +114,7 @@ export default function ChatBookApp() {
             setExecutionStarted(true);
             await executeInitialInstruction();
             setLoading(false);
+            setExecutionStarted(false);
         }
     };
 
