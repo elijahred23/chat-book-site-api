@@ -97,9 +97,9 @@ export default function YouTubeTranscript() {
 
 
     const promptSuggestions = [
-        "Summarize this transcript",
-        "Extract key points from this content",
-        "Explain this content simply"
+        {label: "Summary", value: "Summarize this transcript"},
+        {label: "Key Points", value: "Extract key points from this content"},
+        {label: "Simple", value: "Explain this content simply"}
     ];
 
     const promptResponsesText = useMemo(() => promptResponses.join('\n\n'), [promptResponses]);
@@ -184,7 +184,7 @@ export default function YouTubeTranscript() {
 
 
                     <textarea
-                        style={{height: "25px"}}
+                        style={{height: "35px"}}
                         className="textarea"
                         rows={6}
                         value={manuallyEnteredTranscript}
@@ -238,7 +238,7 @@ export default function YouTubeTranscript() {
                     </div>
                     <div className="prompt-suggestions">
                         {promptSuggestions.map((text, index) => (
-                            <button key={index} onClick={() => setPrompt(text)} className="suggestion-btn">{text}</button>
+                            <button key={index} onClick={() => setPrompt(text.value)} className="suggestion-btn">{text.label}</button>
                         ))}
                     </div>
                     <button className="btn primary-btn" onClick={executePrompt} disabled={loadingPrompt || !prompt}>

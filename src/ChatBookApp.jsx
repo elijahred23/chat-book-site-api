@@ -261,7 +261,32 @@ export default function ChatBookApp() {
                         {s}
                     </button>
                 ))}
-            </div>
+             <p>Subject &nbsp;
+                <input
+                    disabled={loading}
+                    value={subject}
+                    onKeyDown={e => e.key === 'Enter' && subject && !executionStarted && executeInstructions()}
+                    onChange={e => setSubject(e.target.value)}
+                />
+            </p>
+
+            <ClipLoader color="blue" loading={loading} />
+
+            {!executionStarted && (
+                <p>
+                    <button
+                        className={subject === '' || !canExecuteKey ? 'disabled' : ''}
+                        disabled={subject === '' || !canExecuteKey}
+                        onClick={executeInstructions}
+                    >
+                        Execute
+                    </button>
+                    <PasteButton setPasteText={setSubject} />
+                    <button onClick={clear}>Clear</button>
+                </p>
+            )}
+
+           </div>
 
             <ClipLoader color="blue" loading={loadingPDF} />
             {!loadingPDF && initialInstructionResponse !== "" && (
@@ -292,31 +317,6 @@ export default function ChatBookApp() {
                     </AutoScroller>
 
                 </>
-            )}
-
-            <p>Subject &nbsp;
-                <input
-                    disabled={loading}
-                    value={subject}
-                    onKeyDown={e => e.key === 'Enter' && subject && !executionStarted && executeInstructions()}
-                    onChange={e => setSubject(e.target.value)}
-                />
-            </p>
-
-            <ClipLoader color="blue" loading={loading} />
-
-            {!executionStarted && (
-                <p>
-                    <button
-                        className={subject === '' || !canExecuteKey ? 'disabled' : ''}
-                        disabled={subject === '' || !canExecuteKey}
-                        onClick={executeInstructions}
-                    >
-                        Execute
-                    </button>
-                    <PasteButton setPasteText={setSubject} />
-                    <button onClick={clear}>Clear</button>
-                </p>
             )}
 
             <p>Number of Steps &nbsp;

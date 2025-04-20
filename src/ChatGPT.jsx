@@ -19,11 +19,10 @@ function GptPromptComponent({ selectedText }) {
     const messagesEndRef = useRef(null);
 
     const promptSuggestions = [
-        "Summarize this text",
-        "Elaborate on this",
-        "Explain simply",
+        {label: "Summary", value: "Summarize this transcript"},
+        {label: "Elaborate", value: "Elaborate on this"},
+        {label: "Simple", value: "Explain this content simply"}
     ];
-
     const handleInputChange = (e) => setPrompt(e.target.value);
 
     const scrollToBottom = () => {
@@ -126,7 +125,7 @@ function GptPromptComponent({ selectedText }) {
                 {promptSuggestions.map((suggestion, index) => (
                     <button
                         key={index}
-                        onClick={() => setPrompt(`${suggestion}: ${prompt}`)}
+                        onClick={() => setPrompt(`${suggestion.value}: ${prompt}`)}
                         style={{
                             padding: '6px 10px',
                             fontSize: '12px',
@@ -136,10 +135,10 @@ function GptPromptComponent({ selectedText }) {
                             cursor: 'pointer',
                             flexGrow: 1,
                             flexBasis: 'calc(50% - 10px)', // 2 per row on mobile
-                            maxWidth: '48%',
+                            maxWidth: '10%',
                         }}
                     >
-                        {suggestion}
+                        {suggestion.label}
                     </button>
                 ))}
             </div>
