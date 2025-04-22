@@ -99,7 +99,8 @@ export default function YouTubeTranscript() {
     const promptSuggestions = [
         {label: "Summary", value: "Summarize this transcript"},
         {label: "Key Points", value: "Extract key points from this content"},
-        {label: "Simple", value: "Explain this content simply"}
+        {label: "Simple", value: "Explain this content simply"},
+        {label: "Elaborate", value: "Elaborate on this transcript"}
     ];
 
     const promptResponsesText = useMemo(() => promptResponses.join('\n\n'), [promptResponses]);

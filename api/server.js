@@ -10,7 +10,7 @@ import MarkdownIt from 'markdown-it';
 import fs from 'fs';
 import puppeteer from 'puppeteer';
 import { fetchTranscript } from './youtube.js';
-import { searchYouTube, getVideoDetails } from './youtube.js';
+import { searchYouTube, getVideoDetails, searchYouTubePlaylists, getPlaylistItems} from './youtube.js';
 
 const app = express();
 const __filename = fileURLToPath(import.meta.url);
@@ -122,6 +122,28 @@ app.get('/youtube/video/:id', async (req, res) => {
     res.status(500).json({ error: 'Internal server error.' });
   }
 });
+app.get('/youtube/search/playlists', async (req, res) => {
+  const query = req.query.q;
+  if (!query) return res.status(400).json({ message: 'Missing search query' });
+
+  try {
+    const playlists = await searchYouTubePlaylists(query);
+    res.json(playlists);
+  } catch (err) {
+    res.status(500).json({ message: err.message || 'Failed to fetch playlists' });
+  }
+});
+
+app.get('/youtube/playlist/:playlistId', async (req, res) => {
+  try {
+    const playlistId = req.params.playlistId;
+    const videos = await getPlaylistItems(playlistId);
+    res.json(videos);
+  } catch (err) {
+    res.status(500).json({ message: err.message || 'Failed to fetch playlist items' });
+  }
+});
+
 
 app.post('/gpt/prompt', async (req, res) => {
   const { prompt } = req.body;

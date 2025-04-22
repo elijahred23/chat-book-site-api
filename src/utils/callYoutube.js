@@ -56,3 +56,25 @@ export const getYouTubeVideoDetails = async (videoId) => {
     throw error;
   }
 };
+
+export const searchYouTubePlaylists = async (query) => {
+  try {
+    const response = await fetch(`${hostname}/youtube/search/playlists?q=${encodeURIComponent(query)}`);
+    if (!response.ok) throw new Error("Playlist search failed");
+    return await response.json();
+  } catch (error) {
+    console.error('Playlist search error:', error);
+    throw error;
+  }
+};
+
+export const getPlaylistVideos = async (playlistId) => {
+  try {
+    const response = await fetch(`${hostname}/youtube/playlist/${playlistId}`);
+    if (!response.ok) throw new Error("Failed to fetch playlist videos");
+    return await response.json();
+  } catch (err) {
+    console.error("Playlist items fetch error:", err);
+    throw err;
+  }
+};

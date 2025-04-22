@@ -67,3 +67,46 @@ export async function getVideoDetails(videoId) {
     return null;
   }
 }
+
+export async function searchYouTubePlaylists(query, maxResults = 20) {
+  try {
+    const response = await youtube.search.list({
+      part: 'snippet',
+      q: query,
+      maxResults,
+      type: 'playlist',
+    });
+
+    return response.data.items.map(item => ({
+      title: item.snippet.title,
+      playlistId: item.id.playlistId,
+      url: `https://www.youtube.com/playlist?list=${item.id.playlistId}`,
+      thumbnail: item.snippet.thumbnails?.default?.url,
+      channelTitle: item.snippet.channelTitle,
+    }));
+  } catch (error) {
+    console.error('YouTube Playlist Search Error:', error);
+    return [];
+  }
+}
+
+export async function getPlaylistItems(playlistId, maxResults = 25) {
+  try {
+    const response = await youtube.playlistItems.list({
+      part: 'snippet',
+      playlistId,
+      maxResults,
+    });
+
+    return response.data.items.map(item => ({
+      title: item.snippet.title,
+      videoId: item.snippet.resourceId.videoId,
+      url: `https://www.youtube.com/watch?v=${item.snippet.resourceId.videoId}`,
+      thumbnail: item.snippet.thumbnails?.default?.url,
+      channelTitle: item.snippet.videoOwnerChannelTitle,
+    }));
+  } catch (error) {
+    console.error('Error fetching playlist items:', error);
+    return [];
+  }
+}
