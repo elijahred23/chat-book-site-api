@@ -174,85 +174,98 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo }) 
 
                 <ul style={{ listStyle: 'none', padding: 0, marginTop: '1rem' }}>
                     {results.map((item, i) => (
-                        <li key={i} className="youtube-result" style={{ display: 'flex', gap: '1rem', marginBottom: '1rem', padding: '1rem', border: '1px solid #ddd', borderRadius: '8px', background: '#fafafa' }}>
-                            <img src={item.thumbnail} alt={item.title} width="120" style={{ borderRadius: '4px' }} />
-                            <div style={{ flex: 1 }}>
-                                <p><strong>{item.title}</strong></p>
-                                <p style={{ fontSize: '0.8rem', color: '#777' }}>{item.channelTitle}</p>
+                        <li
+                            key={i}
+                            className="youtube-result"
+                            style={{
+                                marginBottom: '1rem',
+                                padding: '1rem',
+                                border: '1px solid #ddd',
+                                borderRadius: '8px',
+                                background: '#fafafa'
+                            }}
+                        >
+                            {/* Main Content Flex Container */}
+                            <div style={{ display: 'flex', gap: '1rem' }}>
+                                {/* Hide Thumbnail if Playlist is Expanded */}
+                                {(!item.playlistId || !expandedPlaylists.includes(item.playlistId)) && (
+                                    <img src={item.thumbnail} alt={item.title} width="120" style={{ borderRadius: '4px' }} />
+                                )}
 
-                                <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', marginTop: '0.5rem' }}>
-                                    <button
-                                        className="btn small-btn"
-                                        onClick={() => {
-                                            onSelectVideo(item.url);
-                                            onClose();
-                                        }}
-                                    >
-                                        Use This Video
-                                    </button>
-                                    <button
-                                        className="btn small-btn"
-                                        onClick={() => handleCopy(item.url)}
-                                    >
-                                        📋 {copiedUrl === item.url ? 'Copied!' : 'Copy URL'}
-                                    </button>
+                                <div style={{ flex: 1 }}>
+                                    <p><strong>{item.title}</strong></p>
+                                    <p style={{ fontSize: '0.8rem', color: '#777' }}>{item.channelTitle}</p>
 
-                                    {item.playlistId && (
+                                    <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', marginTop: '0.5rem' }}>
                                         <button
                                             className="btn small-btn"
-                                            onClick={async () => {
-                                                const isExpanded = expandedPlaylists.includes(item.playlistId);
-
-                                                if (!isExpanded) {
-                                                    if (!playlistVideos[item.playlistId]) {
-                                                        const videos = await getPlaylistVideos(item.playlistId);
-                                                        setPlaylistVideos(prev => ({ ...prev, [item.playlistId]: videos }));
-                                                    }
-                                                    setExpandedPlaylists(prev => [...prev, item.playlistId]);
-                                                } else {
-                                                    setExpandedPlaylists(prev => prev.filter(id => id !== item.playlistId));
-                                                }
+                                            onClick={() => {
+                                                onSelectVideo(item.url);
+                                                onClose();
                                             }}
                                         >
-                                            {expandedPlaylists.includes(item.playlistId) ? 'Hide Videos' : 'Show Playlist Videos'}
+                                            Use This Video
                                         </button>
-                                    )}
-                                </div>
+                                        <button
+                                            className="btn small-btn"
+                                            onClick={() => handleCopy(item.url)}
+                                        >
+                                            📋 {copiedUrl === item.url ? 'Copied!' : 'Copy URL'}
+                                        </button>
 
-                                {expandedPlaylists.includes(item.playlistId) && playlistVideos[item.playlistId] && (
-                                    <ul style={{ marginTop: '1rem', paddingLeft: '1rem' }}>
-                                        {playlistVideos[item.playlistId].map((vid, j) => (
-                                            <li key={j} style={{ display: 'flex', gap: '10px', marginBottom: '0.75rem', borderTop: '1px dashed #ccc', paddingTop: '0.5rem' }}>
-                                                <img src={vid.thumbnail} alt={vid.title} width="80" style={{ borderRadius: '4px' }} />
-                                                <div style={{ flex: 1 }}>
-                                                    <p style={{ margin: 0 }}><strong>{vid.title}</strong></p>
-                                                    <p style={{ fontSize: '0.75rem', color: '#777', margin: '0.25rem 0' }}>{vid.channelTitle}</p>
-                                                    <div style={{ display: 'flex', gap: '0.5rem' }}>
-                                                        <button
-                                                            className="btn small-btn"
-                                                            onClick={() => {
-                                                                onSelectVideo(vid.url);
-                                                                onClose();
-                                                            }}
-                                                        >
-                                                            Use This Video
-                                                        </button>
-                                                        <button
-                                                            className="btn small-btn"
-                                                            onClick={() => handleCopy(vid.url)}
-                                                        >
-                                                            📋 {copiedUrl === vid.url ? 'Copied!' : 'Copy URL'}
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                )}
+                                        {item.playlistId && (
+                                            <button
+                                                className="btn small-btn"
+                                                onClick={async () => {
+                                                    const isExpanded = expandedPlaylists.includes(item.playlistId);
+                                                    if (!isExpanded) {
+                                                        if (!playlistVideos[item.playlistId]) {
+                                                            const videos = await getPlaylistVideos(item.playlistId);
+                                                            setPlaylistVideos(prev => ({ ...prev, [item.playlistId]: videos }));
+                                                        }
+                                                        setExpandedPlaylists(prev => [...prev, item.playlistId]);
+                                                    } else {
+                                                        setExpandedPlaylists(prev => prev.filter(id => id !== item.playlistId));
+                                                    }
+                                                }}
+                                            >
+                                                {expandedPlaylists.includes(item.playlistId) ? 'Hide Videos' : 'Show Playlist Videos'}
+                                            </button>
+                                        )}
+                                    </div>
+                                </div>
                             </div>
+
+                            {/* Playlist Videos - Only Once, Below Main Flex */}
+                            {expandedPlaylists.includes(item.playlistId) && playlistVideos[item.playlistId] && (
+                                <ul style={{
+                                    marginTop: '1rem',
+                                    padding: '0.5rem',
+                                    background: '#f0f0f0',
+                                    borderRadius: '6px',
+                                    maxHeight: '300px',
+                                    overflowY: 'auto',
+                                    transition: 'all 0.3s ease'
+                                }}>
+                                    {playlistVideos[item.playlistId].map((vid, j) => (
+                                        <li key={j} style={{ display: 'flex', gap: '10px', marginBottom: '0.75rem', borderBottom: '1px dashed #ccc', paddingBottom: '0.5rem' }}>
+                                            <img src={vid.thumbnail} alt={vid.title} width="80" style={{ borderRadius: '4px' }} />
+                                            <div style={{ flex: 1 }}>
+                                                <p style={{ margin: 0 }}><strong>{vid.title}</strong></p>
+                                                <p style={{ fontSize: '0.75rem', color: '#777', margin: '0.25rem 0' }}>{vid.channelTitle}</p>
+                                                <div style={{ display: 'flex', gap: '0.5rem' }}>
+                                                    <button className="btn small-btn" onClick={() => { onSelectVideo(vid.url); onClose(); }}>Use This Video</button>
+                                                    <button className="btn small-btn" onClick={() => handleCopy(vid.url)}>📋 {copiedUrl === vid.url ? 'Copied!' : 'Copy URL'}</button>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    ))}
+                                </ul>
+                            )}
                         </li>
                     ))}
                 </ul>
+
             </div>
         </div>
     );
