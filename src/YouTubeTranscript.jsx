@@ -78,7 +78,10 @@ const countWords = (s) => (s.match(/\b\w+\b/g) || []).length;
 
 export default function YouTubeTranscript() {
     const { showMessage } = useFlyout();
-    const [activeTab, setActiveTab] = useState("transcript");
+    const [activeTab, setActiveTab] = useState("transcript");  // Options: transcript, comments, responses
+    const [comments, setComments] = useState([]);
+    const [splitComments, setSplitComments] = useState([]);
+
     const [url, setUrl] = useState("");
     const [prompt, setPrompt] = useState(() => localStorage.getItem("yt_prompt") || "");
     const [transcript, setTranscript] = useState(() => localStorage.getItem("yt_transcript") || "");
@@ -97,14 +100,25 @@ export default function YouTubeTranscript() {
 
 
     const promptSuggestions = [
-        {label: "Summary", value: "Summarize this transcript"},
-        {label: "Key Points", value: "Extract key points from this content"},
-        {label: "Simple", value: "Explain this content simply"},
-        {label: "Elaborate", value: "Elaborate on this transcript"}
+        { label: "Summary", value: "Summarize this transcript" },
+        { label: "Key Points", value: "Extract key points from this content" },
+        { label: "Simple", value: "Explain this content simply" },
+        { label: "Elaborate", value: "Elaborate on this transcript" }
     ];
 
     const promptResponsesText = useMemo(() => promptResponses.join('\n\n'), [promptResponses]);
     const transcriptWordCount = useMemo(() => countWords(transcript), [transcript])
+    const fetchYouTubeComments = async (video_url) => {
+        try {
+            const response = await fetch(`${hostname}/youtube/comments?video=${encodeURIComponent(video_url)}&maxResults=50`);
+            if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+            return await response.json();
+        } catch (error) {
+            console.error("Error fetching comments:", error);
+            return [];
+        }
+    };
+
 
     const executePrompt = async () => {
         try {
@@ -117,6 +131,43 @@ export default function YouTubeTranscript() {
             setLoadingPrompt(false);
         }
     };
+    const executePromptOnComments = async () => {
+        try {
+            setLoadingPrompt(true);
+            setProgress(0);
+            const responses = await promptTranscript(prompt, splitComments, setProgress, showMessage);
+            setPromptResponses(responses);
+            setActiveTab("responses");
+        } finally {
+            setLoadingPrompt(false);
+        }
+    };
+
+
+    useEffect(() => {
+        const loadComments = async () => {
+            if (url && validYoutubeUrl && url !== lastFetchedUrl) {
+                try {
+                    const data = await fetchYouTubeComments(url);
+                    if (data.length > 0) {
+                        const commentsText = data.map(c => `• ${c.author}: ${c.comment}`).join('\n\n');
+                        const wordCount = countWords(commentsText);
+                        const splits = Math.ceil(wordCount / 3000);
+                        setComments(commentsText);
+                        setSplitComments(splitStringByWords(commentsText, splits));
+                        setLastFetchedUrl(url);
+                        showMessage?.({ type: "success", message: "Comments loaded." });
+                    } else {
+                        showMessage?.({ type: "error", message: "No comments found." });
+                    }
+                } catch (err) {
+                    showMessage?.({ type: "error", message: "Failed to load comments." });
+                }
+            }
+        };
+        loadComments();
+    }, [url]);
+
 
     useEffect(() => {
         localStorage.setItem("yt_transcript", transcript);
@@ -161,10 +212,20 @@ export default function YouTubeTranscript() {
         loadTranscript();
     }, [url]);
 
+    let validYoutubeUrl = useMemo(()=> {
+        return isValidYouTubeUrl(url);
+    }, [url]) 
+
     return (
         <div className="container">
+
             <div className="tab-bar">
                 <button className={`tab-btn ${activeTab === "transcript" ? "active" : ""}`} onClick={() => setActiveTab("transcript")}>Transcript</button>
+                {validYoutubeUrl && 
+                    <>
+                    <button className={`tab-btn ${activeTab === "comments" ? "active" : ""}`} onClick={() => setActiveTab("comments")}>Comments</button>
+                    </>
+                }
                 <button className={`tab-btn ${activeTab === "responses" ? "active" : ""}`} onClick={() => setActiveTab("responses")}>Prompt Responses</button>
             </div>
 
@@ -185,7 +246,7 @@ export default function YouTubeTranscript() {
 
 
                     <textarea
-                        style={{height: "35px"}}
+                        style={{ height: "35px" }}
                         className="textarea"
                         rows={6}
                         value={manuallyEnteredTranscript}
@@ -271,17 +332,40 @@ export default function YouTubeTranscript() {
                     </div>
                 </div>
             )}
+            {activeTab === "comments" &&
+                <>
+                    <h2>Comments Preview</h2>
+                    <CopyButton text={comments} buttonText="📋 Copy All Comments" className="btn copy-btn" />
+                    <div className="prompt-suggestions">
+                        {promptSuggestions.map((text, index) => (
+                            <button key={index} onClick={() => setPrompt(text.value)} className="suggestion-btn">{text.label}</button>
+                        ))}
+                    </div>
+                    <button className="btn primary-btn" onClick={executePromptOnComments} disabled={loadingPrompt || !prompt}>
+                        {loadingPrompt ? <ClipLoader size={12} color="white" /> : "Execute Prompt on Comments"}
+                    </button>
+                    <div className="card scrollable-card">
+                        {splitComments.map((chunk, i) => (
+                            <div key={i} className="chunk">
+                                <ReactMarkdown>{chunk}</ReactMarkdown>
+                                <CopyButton text={chunk} className="btn copy-btn" />
+                            </div>
+                        ))}
+                    </div>
+                </>
+            }
+
 
             {activeTab === "responses" && (
                 <>
                     <h2>Prompt Responses</h2>
                     {promptResponses.length > 0 && (
                         <>
-                        <CopyButton text={promptResponsesText} buttonText="📋 Copy Responses" className="btn copy-btn" />
-                        <button className="btn secondary-btn" onClick={() => {
-                            setManuallyEnteredTranscript(promptResponsesText);
-                            setActiveTab("transcript");
-                        }}>Copy to Transcript</button>
+                            <CopyButton text={promptResponsesText} buttonText="📋 Copy Responses" className="btn copy-btn" />
+                            <button className="btn secondary-btn" onClick={() => {
+                                setManuallyEnteredTranscript(promptResponsesText);
+                                setActiveTab("transcript");
+                            }}>Copy to Transcript</button>
                         </>
                     )}
 

@@ -9,7 +9,7 @@ import bodyParser from 'body-parser';
 import MarkdownIt from 'markdown-it';
 import fs from 'fs';
 import puppeteer from 'puppeteer';
-import { fetchTranscript } from './youtube.js';
+import { fetchTranscript, getVideoComments } from './youtube.js';
 import { searchYouTube, getVideoDetails, searchYouTubePlaylists, getPlaylistItems} from './youtube.js';
 
 const app = express();
@@ -87,6 +87,23 @@ app.get('/youtube/transcript', async (req, res) => {
   }
 });
 
+// GET /youtube/comments?video=VIDEO_URL_OR_ID&maxResults=20
+app.get('/youtube/comments', async (req, res) => {
+  const videoParam = req.query.video;
+  const maxResults = parseInt(req.query.maxResults) || 20;
+
+  if (!videoParam) {
+    return res.status(400).json({ error: 'Missing video URL or ID.' });
+  }
+
+  try {
+    const comments = await getVideoComments(videoParam, maxResults);
+    res.json(comments);
+  } catch (error) {
+    console.error('Comments API error:', error);
+    res.status(500).json({ error: 'Internal server error.' });
+  }
+});
 
 // GET /youtube/search?q=nodejs
 app.get('/youtube/search', async (req, res) => {

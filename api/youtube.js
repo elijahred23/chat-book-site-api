@@ -8,9 +8,9 @@ const youtube = google.youtube({
   auth: apiKey
 });
 
-export async function fetchTranscript(url){
-    
-    return url;
+export async function fetchTranscript(url) {
+
+  return url;
 }
 
 /**
@@ -107,6 +107,52 @@ export async function getPlaylistItems(playlistId, maxResults = 25) {
     }));
   } catch (error) {
     console.error('Error fetching playlist items:', error);
+    return [];
+  }
+}
+
+function extractVideoId(input) {
+  if (!input) return null;
+
+  // If it's exactly 11 characters, assume it's a video ID
+  if (/^[a-zA-Z0-9_-]{11}$/.test(input)) return input;
+
+  // Comprehensive regex to handle watch, embed, shorts, and youtu.be links
+  const urlPattern = /(?:v=|\/embed\/|youtu\.be\/|\/shorts\/)([a-zA-Z0-9_-]{11})/;
+
+  const match = input.match(urlPattern);
+  return match ? match[1] : null;
+}
+
+
+/**
+ * Get top-level comments from a YouTube video
+ * @param {string} videoUrlOrId - YouTube video URL or video ID
+ * @param {number} maxResults - Number of comments to fetch (max 100 per API call)
+ * @returns {Promise<Array>} List of comments with author and text
+ */
+export async function getVideoComments(videoUrlOrId, maxResults = 30) {
+  try {
+    const videoId = extractVideoId(videoUrlOrId);
+    if (!videoId) {
+      console.error('Invalid video URL or ID');
+      return [];
+    }
+
+    const response = await youtube.commentThreads.list({
+      part: 'snippet',
+      videoId: videoId,
+      maxResults: maxResults
+    });
+
+    return response.data.items.map(item => ({
+      author: item.snippet.topLevelComment.snippet.authorDisplayName,
+      comment: item.snippet.topLevelComment.snippet.textDisplay,
+      publishedAt: item.snippet.topLevelComment.snippet.publishedAt,
+      likeCount: item.snippet.topLevelComment.snippet.likeCount
+    }));
+  } catch (error) {
+    console.error('Error fetching video comments:', error);
     return [];
   }
 }

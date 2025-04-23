@@ -78,3 +78,35 @@ export const getPlaylistVideos = async (playlistId) => {
     throw err;
   }
 };
+
+/**
+ * Get comments for a YouTube video by URL or ID
+ * @param {string} videoUrlOrId - The YouTube video URL or video ID
+ * @param {number} maxResults - Number of comments to fetch (default 20)
+ * @returns {Promise<Array>} Array of comments with author, text, etc.
+ */
+export const getYouTubeVideoComments = async (videoUrlOrId, maxResults = 20) => {
+  try {
+    const url = `${hostname}/youtube/comments?video=${encodeURIComponent(videoUrlOrId)}&maxResults=${maxResults}`;
+
+    const response = await fetch(url);
+
+    if (!response.ok) {
+      const errorData = await response.json().catch(() => ({}));
+      const message = errorData?.message || `Request failed with status ${response.status}`;
+      throw new Error(message);
+    }
+
+    const data = await response.json();
+
+    if (!Array.isArray(data)) {
+      throw new Error("Unexpected response format when fetching comments.");
+    }
+
+    return data;
+  } catch (error) {
+    const errorMessage = error?.message || String(error);
+    console.error("YouTube comments fetch error:", errorMessage);
+    throw error;
+  }
+};
