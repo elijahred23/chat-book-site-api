@@ -12,8 +12,12 @@ const WebBrowser = () => {
     }, []);
 
     const isValidUrl = (url) => {
-        const pattern = /^(https?:\/\/)?([\w\d\-]+\.)+\w{2,}(\/.*)?$/;
-        return pattern.test(url);
+        try {
+            new URL(url);
+            return true;
+        } catch (_) {
+            return false;
+        }
     };
 
     const handleSearch = () => {
@@ -33,17 +37,40 @@ const WebBrowser = () => {
         }
 
         let url = searchQuery.trim();
-        if (!url.startsWith('http')) {
+        if (!url.startsWith('http://') && !url.startsWith('https://')) {
             url = 'https://' + url;
         }
 
         if (isValidUrl(url)) {
             setError('');
             setSelectedUrl(url);
-            localStorage.setItem('lastVisitedUrl', url);
             setIsLoading(true);
         } else {
             setError('Invalid URL format. Example: https://example.com');
+        }
+    };
+
+    const handlePaste = async () => {
+        try {
+            const text = await navigator.clipboard.readText();
+            setSearchQuery(text);
+        } catch (err) {
+            setError('Failed to paste from clipboard.');
+        }
+    };
+
+    const handleClear = () => {
+        setSearchQuery('');
+        setError('');
+    };
+
+    const handleReloadLastUrl = () => {
+        const lastUrl = localStorage.getItem('lastVisitedUrl');
+        if (lastUrl) {
+            setSelectedUrl(lastUrl);
+            setIsLoading(true);
+        } else {
+            setError('No previously loaded URL found.');
         }
     };
 
@@ -56,8 +83,11 @@ const WebBrowser = () => {
                     placeholder="Type a Google search or enter a URL"
                     onChange={(e) => setSearchQuery(e.target.value)}
                 />
-                <button onClick={handleSearch}>🔎 Search Google</button>
-                <button onClick={handleLoadUrl}>📥 Load in iFrame</button>
+                <button onClick={handleSearch} disabled={!searchQuery.trim()}>🔎 Search</button>
+                <button onClick={handleLoadUrl} disabled={!searchQuery.trim()}>📥 Load</button>
+                <button onClick={handlePaste}>📋 Paste</button>
+                <button onClick={handleClear} disabled={!searchQuery}>❌ Clear</button>
+                <button onClick={handleReloadLastUrl}>🔄 Reload Last URL</button>
             </div>
 
             {error && <div className="error-message">{error}</div>}
@@ -70,51 +100,62 @@ const WebBrowser = () => {
                         width="100%"
                         height="600px"
                         title="Web Viewer"
-                        onLoad={() => setIsLoading(false)}
+                        onLoad={() => {
+                            setIsLoading(false);
+                            localStorage.setItem('lastVisitedUrl', selectedUrl);
+                        }}
                     />
                 </div>
             )}
 
             <style>{`
-        .web-browser-container {
-          padding: 20px;
-          max-width: 900px;
-          margin: auto;
-          text-align: center;
-        }
-        .input-group {
-          margin-bottom: 15px;
-        }
-        input {
-          width: 60%;
-          padding: 8px;
-          margin-right: 5px;
-          border: 1px solid #ccc;
-          border-radius: 4px;
-        }
-        button {
-          padding: 8px 12px;
-          margin-right: 5px;
-          border: none;
-          background-color: #007bff;
-          color: white;
-          border-radius: 4px;
-          cursor: pointer;
-        }
-        button:hover {
-          background-color: #0056b3;
-        }
-        .error-message {
-          color: red;
-          margin-bottom: 10px;
-        }
-        .iframe-container {
-          margin-top: 20px;
-          border: 1px solid #ddd;
-          border-radius: 8px;
-          overflow: hidden;
-        }
-      `}</style>
+                .web-browser-container {
+                  padding: 20px;
+                  max-width: 900px;
+                  margin: auto;
+                  text-align: center;
+                  font-family: Arial, sans-serif;
+                }
+                .input-group {
+                  margin-bottom: 15px;
+                  display: flex;
+                  flex-wrap: wrap;
+                  justify-content: center;
+                  gap: 8px;
+                }
+                input {
+                  width: 60%;
+                  min-width: 250px;
+                  padding: 8px;
+                  border: 1px solid #ccc;
+                  border-radius: 4px;
+                }
+                button {
+                  padding: 8px 12px;
+                  border: none;
+                  background-color: #007bff;
+                  color: white;
+                  border-radius: 4px;
+                  cursor: pointer;
+                }
+                button:disabled {
+                  background-color: #999;
+                  cursor: not-allowed;
+                }
+                button:hover:not(:disabled) {
+                  background-color: #0056b3;
+                }
+                .error-message {
+                  color: red;
+                  margin-bottom: 10px;
+                }
+                .iframe-container {
+                  margin-top: 20px;
+                  border: 1px solid #ddd;
+                  border-radius: 8px;
+                  overflow: hidden;
+                }
+            `}</style>
         </div>
     );
 };
