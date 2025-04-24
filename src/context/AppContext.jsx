@@ -6,13 +6,15 @@ const initialState = {
     htmlBuilder: {
         input: '',
         generatedHTML: ''
-    }
+    },
+    isChatOpen: false,
 };
 
 const actionTypes = {
     SET_COPY_TEXT: 'SET_COPY_TEXT',
     SET_HTML_INPUT: 'SET_HTML_INPUT',
-    SET_GENERATED_HTML: 'SET_GENERATED_HTML'
+    SET_GENERATED_HTML: 'SET_GENERATED_HTML',
+    SET_IS_CHAT_OPEN: 'SET_IS_CHAT_OPEN'
 };
 
 function appReducer(state, action) {
@@ -35,6 +37,8 @@ function appReducer(state, action) {
                     generatedHTML: action.payload
                 }
             };
+        case actionTypes.SET_IS_CHAT_OPEN:
+            return { ...state, isChatOpen: action.payload };
         default:
             console.warn(`Unhandled action type: ${action.type}`);
             return state;
@@ -69,6 +73,10 @@ export const actions = {
     }),
     setGeneratedHtml: (html) => ({
         type: actionTypes.SET_GENERATED_HTML,
+        payload: html
+    }),
+    setIsChatOpen: (html) => ({
+        type: actionTypes.SET_IS_CHAT_OPEN,
         payload: html
     })
 };

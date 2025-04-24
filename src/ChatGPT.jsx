@@ -4,6 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import { getGeminiResponse } from './utils/callGemini';
 import PasteButton from './ui/PasteButton';
 import CopyButton from './ui/CopyButton';
+import { useAppDispatch, useAppState } from './context/AppContext';
 
 const getValuesLocalStorage = () => {
     const prompt = JSON.parse(localStorage.getItem('prompt') || '""');

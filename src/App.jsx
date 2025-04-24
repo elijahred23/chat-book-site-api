@@ -11,13 +11,15 @@ import TextSelectionTooltip from './TextSelectionTooltip';
 import DownloadCopyTextFile from './DownloadCopyTextFile.jsx';
 import HtmlBuilder from './HtmlBuilder';
 import WebBrowser from './WebBrowser.jsx';
+import { useAppDispatch, useAppState, actions} from './context/AppContext.jsx';
 
 function App() {
-  const [isChatOpen, setIsChatOpen] = useState(false);
   const [isFullWidth, setIsFullWidth] = useState(true);
   const [selectedText, setSelectedText] = useState("");
+  const dispatch = useAppDispatch();
+  const {isChatOpen} = useAppState();
 
-  const toggleChat = () => setIsChatOpen(prev => !prev);
+  const toggleChat = () => dispatch(actions.setIsChatOpen(!isChatOpen));
   const toggleWidth = () => setIsFullWidth(prev => !prev);
 
   useEffect(() => {
@@ -81,7 +83,7 @@ function App() {
         <TextSelectionTooltip 
         onAskAI={(text) => {
           localStorage.setItem('selectedText', text);
-          setIsChatOpen(true);
+          dispatch(actions.setIsChatOpen(true));
           setSelectedText(text)
         }} />
       </div>
