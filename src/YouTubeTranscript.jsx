@@ -8,6 +8,7 @@ import { hostname } from './utils/hostname';
 import { useFlyout } from './context/FlyoutContext';
 import AutoScroller from './ui/AutoScroller';
 import YouTubeSearchDrawer from './YouTubeSearchDrawer';
+import { actions, useAppDispatch } from './context/AppContext';
 
 const isValidYouTubeUrl = (url) => {
     const regex = /^(https?:\/\/)?(www\.)?(youtube\.com\/(watch\?v=|embed\/|v\/|shorts\/|live\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})(\S*)?$/;
@@ -96,6 +97,7 @@ export default function YouTubeTranscript() {
     const [retryPromptText, setRetryPromptText] = useState("");
     const [retryLoadingIndex, setRetryLoadingIndex] = useState(null);
     const [drawerOpen, setDrawerOpen] = useState(false);
+    const dispatch = useAppDispatch();
 
 
 
@@ -374,6 +376,11 @@ export default function YouTubeTranscript() {
                             <div key={i} data-index={i} style={{ padding: "1rem 0", borderBottom: "1px solid #ddd" }}>
                                 <ReactMarkdown>{res}</ReactMarkdown>
                                 <CopyButton text={res} className="btn copy-btn" />
+                                <button onClick={()=>{
+                                    localStorage.setItem('selectedText', res);
+                                    dispatch(actions.setIsChatOpen(true));
+                                    dispatch(actions.setSelectedText(res)) 
+                                }} className="btn primary-btn">Ask AI</button>
                                 <button className="btn secondary-btn" onClick={() => {
                                     setRetryIndex(i);
                                     setRetryPromptText(prompt);
