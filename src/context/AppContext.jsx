@@ -9,6 +9,7 @@ const initialState = {
     },
     isChatOpen: false,
     chatPrompt: '',
+    selectedText: '',
 };
 
 const actionTypes = {
@@ -16,7 +17,8 @@ const actionTypes = {
     SET_HTML_INPUT: 'SET_HTML_INPUT',
     SET_GENERATED_HTML: 'SET_GENERATED_HTML',
     SET_IS_CHAT_OPEN: 'SET_IS_CHAT_OPEN',
-    SET_CHAT_PROMPT: 'SET_CHAT_PROMPT:',
+    SET_CHAT_PROMPT: 'SET_CHAT_PROMPT',
+    SET_SELECTED_TEXT: 'SET_SELECTED_TEXT',
 };
 
 function appReducer(state, action) {
@@ -43,6 +45,8 @@ function appReducer(state, action) {
             return { ...state, isChatOpen: action.payload };
         case actionTypes.SET_CHAT_PROMPT:
             return { ...state, chatPrompt: action.payload };
+        case actionTypes.SET_SELECTED_TEXT:
+            return { ...state, selectedText: action.payload };
         default:
             console.warn(`Unhandled action type: ${action.type}`);
             return state;
@@ -79,12 +83,16 @@ export const actions = {
         type: actionTypes.SET_GENERATED_HTML,
         payload: html
     }),
-    setIsChatOpen: (html) => ({
+    setIsChatOpen: (open) => ({
         type: actionTypes.SET_IS_CHAT_OPEN,
-        payload: html
+        payload: open 
     }),
-    setChatPrompt: (html) => ({
+    setChatPrompt: (prompt) => ({
         type: actionTypes.SET_CHAT_PROMPT,
-        payload: html
+        payload: prompt
+    }),
+    setSelectedText: (selectedText) => ({
+        type: actionTypes.SET_SELECTED_TEXT,
+        payload: selectedText
     })
 };

@@ -6,12 +6,12 @@ import PasteButton from './ui/PasteButton';
 import CopyButton from './ui/CopyButton';
 import { actions, useAppDispatch, useAppState } from './context/AppContext';
 
-function GptPromptComponent({ selectedText }) {
+function GptPromptComponent() {
     const [messages, setMessages] = useState([]);
     const [loading, setLoading] = useState(false);
     const messagesEndRef = useRef(null);
     const dispatch = useAppDispatch();
-    const { chatPrompt } = useAppState();
+    const { chatPrompt, selectedText } = useAppState();
 
     const promptSuggestions = [
         { label: "Summary", value: "Summarize this transcript" },

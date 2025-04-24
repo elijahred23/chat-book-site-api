@@ -15,7 +15,6 @@ import { useAppDispatch, useAppState, actions} from './context/AppContext.jsx';
 
 function App() {
   const [isFullWidth, setIsFullWidth] = useState(true);
-  const [selectedText, setSelectedText] = useState("");
   const dispatch = useAppDispatch();
   const {isChatOpen} = useAppState();
 
@@ -25,7 +24,7 @@ function App() {
   useEffect(() => {
     const savedText = localStorage.getItem('selectedText');
     if (savedText) {
-      setSelectedText(savedText);
+      dispatch(actions.setSelectedText(savedText));
     }
   }, []);
 
@@ -75,7 +74,7 @@ function App() {
                 </button>
               </div>
             </div>
-            <GptPromptComponent selectedText={selectedText}/>
+            <GptPromptComponent />
           </div>
 
         </BrowserRouter>
@@ -84,7 +83,7 @@ function App() {
         onAskAI={(text) => {
           localStorage.setItem('selectedText', text);
           dispatch(actions.setIsChatOpen(true));
-          setSelectedText(text)
+          dispatch(actions.setSelectedText(text)) 
         }} />
       </div>
     </>
