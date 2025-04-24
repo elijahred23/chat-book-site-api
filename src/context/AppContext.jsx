@@ -8,13 +8,15 @@ const initialState = {
         generatedHTML: ''
     },
     isChatOpen: false,
+    chatPrompt: '',
 };
 
 const actionTypes = {
     SET_COPY_TEXT: 'SET_COPY_TEXT',
     SET_HTML_INPUT: 'SET_HTML_INPUT',
     SET_GENERATED_HTML: 'SET_GENERATED_HTML',
-    SET_IS_CHAT_OPEN: 'SET_IS_CHAT_OPEN'
+    SET_IS_CHAT_OPEN: 'SET_IS_CHAT_OPEN',
+    SET_CHAT_PROMPT: 'SET_CHAT_PROMPT:',
 };
 
 function appReducer(state, action) {
@@ -39,6 +41,8 @@ function appReducer(state, action) {
             };
         case actionTypes.SET_IS_CHAT_OPEN:
             return { ...state, isChatOpen: action.payload };
+        case actionTypes.SET_CHAT_PROMPT:
+            return { ...state, chatPrompt: action.payload };
         default:
             console.warn(`Unhandled action type: ${action.type}`);
             return state;
@@ -77,6 +81,10 @@ export const actions = {
     }),
     setIsChatOpen: (html) => ({
         type: actionTypes.SET_IS_CHAT_OPEN,
+        payload: html
+    }),
+    setChatPrompt: (html) => ({
+        type: actionTypes.SET_CHAT_PROMPT,
         payload: html
     })
 };

@@ -4,27 +4,22 @@ import ReactMarkdown from 'react-markdown';
 import { getGeminiResponse } from './utils/callGemini';
 import PasteButton from './ui/PasteButton';
 import CopyButton from './ui/CopyButton';
-import { useAppDispatch, useAppState } from './context/AppContext';
-
-const getValuesLocalStorage = () => {
-    const prompt = JSON.parse(localStorage.getItem('prompt') || '""');
-    const messages = JSON.parse(localStorage.getItem('messages') || '[]');
-    return { prompt, messages };
-};
+import { actions, useAppDispatch, useAppState } from './context/AppContext';
 
 function GptPromptComponent({ selectedText }) {
-    const { prompt: savedPrompt, messages: savedMessages } = getValuesLocalStorage();
-    const [prompt, setPrompt] = useState(savedPrompt);
-    const [messages, setMessages] = useState(savedMessages);
+    const [messages, setMessages] = useState([]);
     const [loading, setLoading] = useState(false);
     const messagesEndRef = useRef(null);
+    const dispatch = useAppDispatch();
+    const { chatPrompt } = useAppState();
 
     const promptSuggestions = [
-        {label: "Summary", value: "Summarize this transcript"},
-        {label: "Elaborate", value: "Elaborate on this"},
-        {label: "Simple", value: "Explain this content simply"}
+        { label: "Summary", value: "Summarize this transcript" },
+        { label: "Elaborate", value: "Elaborate on this" },
+        { label: "Simple", value: "Explain this content simply" }
     ];
-    const handleInputChange = (e) => setPrompt(e.target.value);
+
+    const handleInputChange = (e) => dispatch(actions.setChatPrompt(e.target.value));
 
     const scrollToBottom = () => {
         messagesEndRef.current?.scrollTo({
@@ -34,14 +29,14 @@ function GptPromptComponent({ selectedText }) {
     };
 
     const handleSubmit = async () => {
-        if (!prompt) return;
+        if (!chatPrompt) return;
         try {
             setLoading(true);
-            const geminiResponse = await getGeminiResponse(prompt);
-            const userMessage = { text: prompt, sender: 'user' };
+            const geminiResponse = await getGeminiResponse(chatPrompt);
+            const userMessage = { text: chatPrompt, sender: 'user' };
             const botMessage = { text: geminiResponse, sender: 'bot' };
             setMessages(prev => [...prev, userMessage, botMessage]);
-            setPrompt('');
+            dispatch(actions.setChatPrompt(''));
         } catch (error) {
             console.error('Error fetching data:', error);
             alert('Error fetching data');
@@ -52,27 +47,39 @@ function GptPromptComponent({ selectedText }) {
 
     const clear = () => {
         setMessages([]);
-        setPrompt('');
+        dispatch(actions.setChatPrompt(''));
     };
-
-    const print = () => window.print();
 
     useEffect(() => {
         scrollToBottom();
     }, [messages]);
 
     useEffect(() => {
-        return () => {
-            localStorage.setItem('messages', JSON.stringify(messages));
-            localStorage.setItem('prompt', JSON.stringify(prompt));
-        };
-    }, [messages, prompt]);
+        const savedPrompt = JSON.parse(localStorage.getItem('prompt') || '""');
+        const savedMessages = JSON.parse(localStorage.getItem('messages') || '[]');
+
+        console.log("Loaded from localStorage:", { savedPrompt, savedMessages });
+
+        if (savedPrompt) dispatch(actions.setChatPrompt(savedPrompt));
+        if (savedMessages.length) setMessages(savedMessages);
+    }, []);
+
 
     useEffect(() => {
-        if (selectedText && selectedText !== prompt) {
-            setPrompt(selectedText);
+        if (messages.length > 0) {
+            localStorage.setItem('messages', JSON.stringify(messages));
+        }
+        if (chatPrompt.trim() !== "") {
+            localStorage.setItem('prompt', JSON.stringify(chatPrompt));
+        }
+    }, [messages, chatPrompt]);
+
+    useEffect(() => {
+        if (selectedText && selectedText !== chatPrompt) {
+            dispatch(actions.setChatPrompt(selectedText));
         }
     }, [selectedText]);
+
 
     return (
         <div style={{ maxWidth: '800px', margin: '0 auto', height: '100vh', display: 'flex', flexDirection: 'column', paddingBottom: '80px' }}>
@@ -114,19 +121,11 @@ function GptPromptComponent({ selectedText }) {
             </div>
 
             {/* Suggestions */}
-            <div
-                style={{
-                    display: 'flex',
-                    flexWrap: 'wrap',
-                    gap: '8px',
-                    marginBottom: '12px',
-                    justifyContent: 'center',
-                }}
-            >
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '12px', justifyContent: 'center' }}>
                 {promptSuggestions.map((suggestion, index) => (
                     <button
                         key={index}
-                        onClick={() => setPrompt(`${suggestion.value}: ${prompt}`)}
+                        onClick={() => dispatch(actions.setChatPrompt(`${suggestion.value}: ${chatPrompt}`))}
                         style={{
                             padding: '6px 10px',
                             fontSize: '12px',
@@ -135,7 +134,7 @@ function GptPromptComponent({ selectedText }) {
                             border: '1px solid #ccc',
                             cursor: 'pointer',
                             flexGrow: 1,
-                            flexBasis: 'calc(50% - 10px)', // 2 per row on mobile
+                            flexBasis: 'calc(50% - 10px)',
                             maxWidth: '10%',
                         }}
                     >
@@ -145,20 +144,12 @@ function GptPromptComponent({ selectedText }) {
             </div>
 
             {/* Action Buttons */}
-            <div
-                style={{
-                    display: 'flex',
-                    flexWrap: 'wrap',
-                    gap: '10px',
-                    justifyContent: 'space-between',
-                    marginBottom: '10px',
-                }}
-            >
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', justifyContent: 'space-between', marginBottom: '10px' }}>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', flex: 1 }}>
-                    <PasteButton setPasteText={setPrompt} />
+                    <PasteButton setPasteText={(text) => dispatch(actions.setChatPrompt(text))} />
                     <button onClick={clear}>Clear</button>
-                    {selectedText && selectedText !== prompt && (
-                        <button onClick={() => setPrompt(selectedText)}>Add Selected</button>
+                    {selectedText && selectedText !== chatPrompt && (
+                        <button onClick={() => dispatch(actions.setChatPrompt(selectedText))}>Add Selected</button>
                     )}
                 </div>
                 <div style={{ flexShrink: 0 }}>
@@ -168,7 +159,7 @@ function GptPromptComponent({ selectedText }) {
 
             <textarea
                 rows={4}
-                value={prompt}
+                value={chatPrompt}
                 onChange={handleInputChange}
                 onKeyDown={(e) => {
                     if (e.key === 'Enter' && !e.shiftKey) {
@@ -190,8 +181,6 @@ function GptPromptComponent({ selectedText }) {
                 }}
             />
 
-
-            {/* Loader */}
             {loading && (
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                     <ClipLoader color="blue" size={20} />
