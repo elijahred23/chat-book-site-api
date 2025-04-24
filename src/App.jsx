@@ -10,6 +10,7 @@ import GptPromptComponent from './ChatGPT';
 import TextSelectionTooltip from './TextSelectionTooltip';
 import DownloadCopyTextFile from './DownloadCopyTextFile.jsx';
 import HtmlBuilder from './HtmlBuilder';
+import WebBrowser from './WebBrowser.jsx';
 
 function App() {
   const [isChatOpen, setIsChatOpen] = useState(false);
@@ -35,6 +36,7 @@ function App() {
           <div className='nav-links'>
             <NavLink to='/chatBook'>Chat Book</NavLink>
             <NavLink to='/youTubeTranscript'>YouTube Transcript</NavLink>
+            <NavLink to='/webBrowser'>Web Browser</NavLink>
             <NavLink to='/htmlBuilder'>HTML Builder</NavLink>
             <NavLink to='/apiCheck'>API Check</NavLink>
 
@@ -52,6 +54,7 @@ function App() {
               <Route path="/youTubeTranscript" element={<YouTubeTranscript />} />
               <Route path="/wiki" element={<Wiki />} />
               <Route path="/htmlBuilder" element={<HtmlBuilder />} />
+              <Route path="/webBrowser" element={<WebBrowser />} />
             </Routes>
           </div>
 
