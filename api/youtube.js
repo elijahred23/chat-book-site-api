@@ -131,7 +131,7 @@ function extractVideoId(input) {
  * @param {number} maxResults - Number of comments to fetch (max 100 per API call)
  * @returns {Promise<Array>} List of comments with author and text
  */
-export async function getVideoComments(videoUrlOrId, maxResults = 30) {
+export async function getVideoComments(videoUrlOrId, maxResults = 100) {
   try {
     const videoId = extractVideoId(videoUrlOrId);
     if (!videoId) {

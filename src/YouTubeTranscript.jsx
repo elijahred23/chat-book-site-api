@@ -105,7 +105,8 @@ export default function YouTubeTranscript() {
         { label: "Summary", value: "Summarize this transcript" },
         { label: "Key Points", value: "Extract key points from this content" },
         { label: "Simple", value: "Explain this content simply" },
-        { label: "Elaborate", value: "Elaborate on this transcript" }
+        { label: "Elaborate", value: "Elaborate on this transcript" },
+        { label: "Code", value: "Show code examples" },
     ];
 
     const promptResponsesText = useMemo(() => promptResponses.join('\n\n'), [promptResponses]);
@@ -219,8 +220,7 @@ export default function YouTubeTranscript() {
     }, [url]) 
 
     return (
-        <div className="container">
-
+        <div className="">
             <div className="tab-bar">
                 <button className={`tab-btn ${activeTab === "transcript" ? "active" : ""}`} onClick={() => setActiveTab("transcript")}>Transcript</button>
                 {validYoutubeUrl && 

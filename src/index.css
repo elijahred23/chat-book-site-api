@@ -307,6 +307,8 @@ body {
 
 .container {
   max-width: 800px;
+  width: 80vw;
+  overflow: scroll;
   margin: 10px auto auto auto;
   padding: 10px;
 }

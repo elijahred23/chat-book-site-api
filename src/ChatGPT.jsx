@@ -16,7 +16,8 @@ function GptPromptComponent() {
     const promptSuggestions = [
         { label: "Summary", value: "Summarize this transcript" },
         { label: "Elaborate", value: "Elaborate on this" },
-        { label: "Simple", value: "Explain this content simply" }
+        { label: "Simple", value: "Explain this content simply" },
+        { label: "Code", value: "Show code examples" }
     ];
 
     const handleInputChange = (e) => dispatch(actions.setChatPrompt(e.target.value));
