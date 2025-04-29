@@ -70,7 +70,6 @@ const promptTranscript = async (prompt, transcripts, setProgress, showMessage) =
             })
         );
         results.push(...batchResults);
-        if (i < (transcripts.length - 1)) await sleep(1000);
     }
     return results;
 };
