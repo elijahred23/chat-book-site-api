@@ -365,9 +365,9 @@ export default function YouTubeTranscript() {
                         <>
                             <CopyButton text={promptResponsesText} buttonText="Copy All" className="btn copy-btn" />
                             <button onClick={()=>{
-                                localStorage.setItem('selectedText', promptResponses);
+                                localStorage.setItem('selectedText', promptResponsesText);
                                 dispatch(actions.setIsChatOpen(true));
-                                dispatch(actions.setSelectedText(promptResponses)) 
+                                dispatch(actions.setSelectedText(promptResponsesText)) 
                             }} className="btn primary-btn">Ask AI</button>
                             <button className="btn secondary-btn" onClick={() => {
                                 setManuallyEnteredTranscript(promptResponsesText);
