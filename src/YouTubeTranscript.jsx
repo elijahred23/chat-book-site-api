@@ -349,7 +349,7 @@ export default function YouTubeTranscript() {
                     <div className="card scrollable-card">
                         {splitComments.map((chunk, i) => (
                             <div key={i} className="chunk">
-                                <ReactMarkdown>{chunk}</ReactMarkdown>
+                                <ReactMarkdown className="markdown-body">{chunk}</ReactMarkdown>
                                 <CopyButton text={chunk} className="btn copy-btn" />
                             </div>
                         ))}
@@ -363,7 +363,12 @@ export default function YouTubeTranscript() {
                     <h2>Prompt Responses</h2>
                     {promptResponses.length > 0 && (
                         <>
-                            <CopyButton text={promptResponsesText} buttonText="📋 Copy Responses" className="btn copy-btn" />
+                            <CopyButton text={promptResponsesText} buttonText="Copy All" className="btn copy-btn" />
+                            <button onClick={()=>{
+                                localStorage.setItem('selectedText', promptResponses);
+                                dispatch(actions.setIsChatOpen(true));
+                                dispatch(actions.setSelectedText(promptResponses)) 
+                            }} className="btn primary-btn">Ask AI</button>
                             <button className="btn secondary-btn" onClick={() => {
                                 setManuallyEnteredTranscript(promptResponsesText);
                                 setActiveTab("transcript");
@@ -374,7 +379,7 @@ export default function YouTubeTranscript() {
                     <AutoScroller activeIndex={0} >
                         {promptResponses.map((res, i) => (
                             <div key={i} data-index={i} style={{ padding: "1rem 0", borderBottom: "1px solid #ddd" }}>
-                                <ReactMarkdown>{res}</ReactMarkdown>
+                                <ReactMarkdown className="markdown-body">{res}</ReactMarkdown>
                                 <CopyButton text={res} className="btn copy-btn" />
                                 <button onClick={()=>{
                                     localStorage.setItem('selectedText', res);

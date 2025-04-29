@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import {useRef, useEffect, useState } from 'react';
 import { searchYouTubeVideos, searchYouTubePlaylists, getPlaylistVideos } from './utils/callYoutube';
 
 export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo }) {
@@ -38,6 +38,7 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo }) 
 
     const [loading, setLoading] = useState(false);
     const [copiedUrl, setCopiedUrl] = useState(null);
+    const inputRef = useRef(null);
 
     const handleSearch = async () => {
         setLoading(true);
@@ -67,6 +68,11 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo }) 
 
     useEffect(() => {
         localStorage.setItem('yt_search_query', searchQuery);
+        if (searchQuery === '') {
+            setTimeout(() => {
+                inputRef.current?.focus();
+            }, 100); // focus again after clearing
+        }
     }, [searchQuery]);
 
     useEffect(() => {
@@ -80,6 +86,14 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo }) 
     useEffect(() => {
         localStorage.setItem('yt_playlist_cache', JSON.stringify(playlistVideos));
     }, [playlistVideos]);
+
+    useEffect(() => {
+        if (isOpen) {
+            setTimeout(() => {
+                inputRef.current?.focus();
+            }, 100); // small timeout to allow drawer to render
+        }
+    }, [isOpen]);
 
     return (
         <div className={`chat-drawer full ${isOpen ? 'open' : ''}`}>
@@ -102,6 +116,7 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo }) 
                         <button className="close-chat-btn" onClick={onClose}>×</button>
                     </div>
                     <input
+                        ref={inputRef}
                         type="text"
                         value={searchQuery}
                         placeholder="Search YouTube..."
@@ -114,7 +129,7 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo }) 
                         style={{ width: '100%', padding: '0.5rem', fontSize: '1rem', marginBottom: '0.75rem' }}
                     />
 
-                    <div className="search-type-selector" style={{ display: 'flex', gap: '1rem', marginBottom: '0.75rem' }}>
+                    <div className="search-type-selector" >
                         <label>
                             <input
                                 type="radio"
