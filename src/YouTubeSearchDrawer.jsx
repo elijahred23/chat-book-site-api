@@ -1,4 +1,4 @@
-import {useRef, useEffect, useState } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import { searchYouTubeVideos, searchYouTubePlaylists, getPlaylistVideos } from './utils/callYoutube';
 
 export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo }) {
@@ -40,6 +40,17 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo }) 
     const [copiedUrl, setCopiedUrl] = useState(null);
     const inputRef = useRef(null);
 
+    const focusInput = () => {
+        const handler = () => {
+            inputRef.current?.focus();
+            window.removeEventListener('touchstart', handler);
+            window.removeEventListener('click', handler);
+        };
+
+        window.addEventListener('touchstart', handler, { once: true });
+        window.addEventListener('click', handler, { once: true });
+    }
+
     const handleSearch = async () => {
         setLoading(true);
         try {
@@ -69,9 +80,7 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo }) 
     useEffect(() => {
         localStorage.setItem('yt_search_query', searchQuery);
         if (searchQuery === '') {
-            setTimeout(() => {
-                inputRef.current?.focus();
-            }, 100); // focus again after clearing
+            focusInput();
         }
     }, [searchQuery]);
 
@@ -89,12 +98,15 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo }) 
 
     useEffect(() => {
         if (isOpen) {
-            setTimeout(() => {
-                inputRef.current?.focus();
-            }, 100); // small timeout to allow drawer to render
+            focusInput();
         }
     }, [isOpen]);
 
+    useEffect(() => {
+        if (isOpen) {
+            focusInput();
+        }
+    }, [searchType]);
     return (
         <div className={`chat-drawer full ${isOpen ? 'open' : ''}`}>
 
