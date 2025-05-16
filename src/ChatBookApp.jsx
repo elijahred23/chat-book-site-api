@@ -8,7 +8,7 @@ import PasteButton from "./ui/PasteButton";
 import CopyButton from "./ui/CopyButton";
 import { useFlyout } from "./context/FlyoutContext"; // adjust path as needed
 import AutoScroller from "./ui/AutoScroller";
-
+import { actions, useAppDispatch } from "./context/AppContext";
 
 
 const baseURL = hostname;
@@ -61,6 +61,8 @@ export default function ChatBookApp() {
     const chatLogRef = useRef(null);
     const [initialInstructionResponse, setInitialInstructionResponse] = useState(localStorageValues.initialInstructionResponse);
     const [subsequentInstructionResponses, setSubsequentInstructionResponses] = useState(localStorageValues.subsequentInstructionResponses);
+    const dispatch = useAppDispatch();
+
 
     const getInitialInstructionMessage = (steps = null) => {
         if (steps === null) steps = numSteps;
@@ -238,6 +240,18 @@ export default function ChatBookApp() {
         return (parseInt(stepsExecuted) / (parseInt(numSteps) + 1)) * 100;
     }, [stepsExecuted, numSteps]);
 
+    const AskAIButton = ({text}) => {
+        return (
+            <>
+                <button onClick={() => {
+                    localStorage.setItem('selectedText', text);
+                    dispatch(actions.setIsChatOpen(true));
+                    dispatch(actions.setSelectedText(text))
+                }} className="btn primary-btn">Ask AI</button>
+            </>
+        )
+    }
+
     return (
         <div>
             <h2>Chat Book App</h2>
@@ -261,32 +275,32 @@ export default function ChatBookApp() {
                         {s}
                     </button>
                 ))}
-             <p>Subject &nbsp;
-                <input
-                    disabled={loading}
-                    value={subject}
-                    onKeyDown={e => e.key === 'Enter' && subject && !executionStarted && executeInstructions()}
-                    onChange={e => setSubject(e.target.value)}
-                />
-            </p>
-
-            <ClipLoader color="blue" loading={loading} />
-
-            {!executionStarted && (
-                <p>
-                    <button
-                        className={subject === '' || !canExecuteKey ? 'disabled' : ''}
-                        disabled={subject === '' || !canExecuteKey}
-                        onClick={executeInstructions}
-                    >
-                        Execute
-                    </button>
-                    <PasteButton setPasteText={setSubject} />
-                    <button onClick={clear}>Clear</button>
+                <p>Subject &nbsp;
+                    <input
+                        disabled={loading}
+                        value={subject}
+                        onKeyDown={e => e.key === 'Enter' && subject && !executionStarted && executeInstructions()}
+                        onChange={e => setSubject(e.target.value)}
+                    />
                 </p>
-            )}
 
-           </div>
+                <ClipLoader color="blue" loading={loading} />
+
+                {!executionStarted && (
+                    <p>
+                        <button
+                            className={subject === '' || !canExecuteKey ? 'disabled' : ''}
+                            disabled={subject === '' || !canExecuteKey}
+                            onClick={executeInstructions}
+                        >
+                            Execute
+                        </button>
+                        <PasteButton setPasteText={setSubject} />
+                        <button onClick={clear}>Clear</button>
+                    </p>
+                )}
+
+            </div>
 
             <ClipLoader color="blue" loading={loadingPDF} />
             {!loadingPDF && initialInstructionResponse !== "" && (
@@ -304,6 +318,7 @@ export default function ChatBookApp() {
                         <h3>Instructions:</h3>
                         <div style={{ border: initialInstructionResponse ? "1px dotted blue" : "none", padding: "10px" }}>
                             <ReactMarkdown className="markdown-body">{initialInstructionResponse}</ReactMarkdown>
+                            <AskAIButton text={initialInstructionResponse} />
                             <CopyButton text={initialInstructionResponse} />
                         </div>
 
@@ -311,6 +326,7 @@ export default function ChatBookApp() {
                         {subsequentInstructionResponses.map((res, idx) => (
                             <div key={idx} style={{ border: "1px dotted red", padding: "10px" }}>
                                 <ReactMarkdown className="markdown-body">{res}</ReactMarkdown>
+                                <AskAIButton text={res} />
                                 <CopyButton text={res} />
                             </div>
                         ))}
