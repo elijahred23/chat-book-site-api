@@ -110,3 +110,29 @@ export const getYouTubeVideoComments = async (videoUrlOrId, maxResults = 20) => 
     throw error;
   }
 };
+
+export const getTrendingVideos = async () => {
+  try {
+    const url = `${hostname}/youtube/trending`;
+    const response = await fetch(url);
+    if (!response.ok) throw new Error("Failed to fetch trending videos");
+    return await response.json();
+  }
+  catch (error) {
+    console.error('YouTube trending videos fetch error:', error);
+    throw error;
+  }
+};
+
+export const getNewsVideos = async () => {
+  try {
+    const url = `${hostname}/youtube/news`;
+    const response = await fetch(url);
+    if (!response.ok) throw new Error("Failed to fetch news videos");
+    return await response.json();
+  } catch (error) {
+    const errorMessage = error?.message || String(error);
+    console.error("YouTube news fetch error:", errorMessage);
+    throw error;
+  }
+}

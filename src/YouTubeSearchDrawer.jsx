@@ -1,5 +1,5 @@
 import { useRef, useEffect, useState } from 'react';
-import { searchYouTubeVideos, searchYouTubePlaylists, getPlaylistVideos } from './utils/callYoutube';
+import { getNewsVideos, getTrendingVideos, searchYouTubeVideos, searchYouTubePlaylists, getPlaylistVideos } from './utils/callYoutube';
 
 export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo }) {
     const [searchQuery, setSearchQuery] = useState(() => localStorage.getItem('yt_search_query') || '');
@@ -49,6 +49,38 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo }) 
 
         window.addEventListener('touchstart', handler, { once: true });
         window.addEventListener('click', handler, { once: true });
+    }
+
+    const getYoutubeTrending = async () => {
+        setLoading(true);
+        try {
+            const results = await getTrendingVideos();
+            setResults(results);
+            localStorage.setItem(
+                'yt_search_results',
+                JSON.stringify({ timestamp: Date.now(), data: results })
+            );
+        } catch (err) {
+            console.error('Search failed:', err);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    const getYoutubeNews = async () => {
+        setLoading(true);
+        try {
+            const results = await getNewsVideos();
+            setResults(results);
+            localStorage.setItem(
+                'yt_search_results',
+                JSON.stringify({ timestamp: Date.now(), data: results })
+            );
+        } catch (err) {
+            console.error('Search failed:', err);
+        } finally {
+            setLoading(false);
+        }
     }
 
     const handleSearch = async () => {
@@ -191,6 +223,22 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo }) 
                             }}
                         >
                             🧹 Clear Search
+                        </button>
+                        <button
+                            className="btn small-btn"
+                            onClick={() => {
+                                getYoutubeNews();
+                            }}
+                        >
+                            {/*Emoji for news */ "📰" }News
+                        </button>
+                        <button
+                            className="btn small-btn"
+                            onClick={() => {
+                                getYoutubeTrending();
+                            }}
+                        >
+                            {/*Emoji for trending */ "🔥"}Trending
                         </button>
                     </div>
                 </div>

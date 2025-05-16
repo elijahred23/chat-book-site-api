@@ -41,6 +41,51 @@ export async function searchYouTube(query, maxResults = 50) {
   }
 }
 
+export async function getTrendingVideos(maxResults = 50) {
+  try {
+    const response = await youtube.videos.list({
+      part: 'snippet,statistics',
+      chart: 'mostPopular',
+      maxResults,
+      regionCode: 'US'
+    });
+
+    return response.data.items.map(item => ({
+      title: item.snippet.title,
+      videoId: item.id,
+      url: `https://youtube.com/watch?v=${item.id.videoId}`,
+      thumbnail: item.snippet.thumbnails.default.url,
+      channelTitle: item.snippet.channelTitle
+    }));
+  } catch (error) {
+    console.error('YouTube Trending Videos Error:', error);
+    return [];
+  }
+}
+
+export async function getNewsVideos(maxResults = 50){
+  try {
+    const response = await youtube.search.list({
+      part: 'snippet',
+      q: 'news',
+      maxResults,
+      type: 'video'
+    });
+
+    return response.data.items.map(item => ({
+      title: item.snippet.title,
+      videoId: item.id,
+      url: `https://youtube.com/watch?v=${item.id.videoId}`,
+      thumbnail: item.snippet.thumbnails.default.url,
+      channelTitle: item.snippet.channelTitle
+    }));
+  } catch (error){
+    console.error('YouTube News Videos Error:', error);
+    return [];
+  }
+}
+
+
 /**
  * Get detailed stats and metadata for a video
  * @param {string} videoId
@@ -131,7 +176,7 @@ function extractVideoId(input) {
  * @param {number} maxResults - Number of comments to fetch (max 100 per API call)
  * @returns {Promise<Array>} List of comments with author and text
  */
-export async function getVideoComments(videoUrlOrId, maxResults = 100) {
+export async function getVideoComments(videoUrlOrId, maxResults = 200) {
   try {
     const videoId = extractVideoId(videoUrlOrId);
     if (!videoId) {

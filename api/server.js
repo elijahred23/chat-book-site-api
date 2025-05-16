@@ -9,8 +9,8 @@ import bodyParser from 'body-parser';
 import MarkdownIt from 'markdown-it';
 import fs from 'fs';
 import puppeteer from 'puppeteer';
-import { fetchTranscript, getVideoComments } from './youtube.js';
-import { searchYouTube, getVideoDetails, searchYouTubePlaylists, getPlaylistItems} from './youtube.js';
+import { fetchTranscript, getNewsVideos, getVideoComments } from './youtube.js';
+import { searchYouTube, getVideoDetails, searchYouTubePlaylists, getPlaylistItems, getTrendingVideos } from './youtube.js';
 
 const app = express();
 const __filename = fileURLToPath(import.meta.url);
@@ -18,19 +18,19 @@ const __dirname = path.dirname(__filename);
 
 
 (async () => {
-    try {
-      const browser = await puppeteer.launch({
-        headless: true,
-        args: ['--no-sandbox', '--disable-setuid-sandbox'],
-      });
-      const page = await browser.newPage();
-      await page.goto('https://example.com');
-      console.log('Browser launched successfully');
-      await browser.close();
-    } catch (error) {
-      console.error('Failed to launch browser:', error);
-    }
-  })();
+  try {
+    const browser = await puppeteer.launch({
+      headless: true,
+      args: ['--no-sandbox', '--disable-setuid-sandbox'],
+    });
+    const page = await browser.newPage();
+    await page.goto('https://example.com');
+    console.log('Browser launched successfully');
+    await browser.close();
+  } catch (error) {
+    console.error('Failed to launch browser:', error);
+  }
+})();
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
@@ -122,6 +122,30 @@ app.get('/youtube/search', async (req, res) => {
   }
 });
 
+// GET trending youtube
+app.get('/youtube/trending', async (req, res) => {
+    try {
+      const results = await getTrendingVideos();
+      res.json(results);
+    } catch (error) {
+      console.error('Trending API error:', error);
+      res.status(500).json({ error: 'Internal server error.' });
+    }
+  }
+);
+
+// endpoint to get news
+app.get('/youtube/news', async (req, res) => {
+  try {
+    const results = await getNewsVideos();
+    res.json(results);
+  } catch (error) {
+    console.error('News API error:', error);
+
+    res.status(500).json({ error: 'Internal server error.' });
+  }
+});
+
 // GET /youtube/video/:id
 app.get('/youtube/video/:id', async (req, res) => {
   const videoId = req.params.id;
@@ -187,36 +211,36 @@ app.post('/gpt/prompt', async (req, res) => {
 
 
 app.post('/generate-pdf', async (req, res) => {
-    const { markdown, messagesToCombine, pdfFileName } = req.body;
-    console.log({ markdown, messagesToCombine });
-  
-    if (!markdown && !messagesToCombine) {
-      return res.status(400).send('Markdown content or messages to combine are required');
-    }
-  
-    // Combine messages if provided
-    let finalMarkdown = markdown || '';
-    if (messagesToCombine && Array.isArray(messagesToCombine)) {
-      finalMarkdown += '\n\n' + messagesToCombine.join('\n\n');
-    }
-  
-    // Convert markdown to HTML
-    const htmlContent = md.render(finalMarkdown);
-    console.log({ htmlContent });
-  
-    try {
-      // Launch a headless browser
-      const browser = await puppeteer.launch({
-        headless: true,
-        args: ['--no-sandbox', '--disable-setuid-sandbox'],
-      });
-      const page = await browser.newPage();
-  
-      // Set a longer default navigation timeout
-      page.setDefaultNavigationTimeout(60000); // 60 seconds
-  
-      // Set the content of the page
-      await page.setContent(`
+  const { markdown, messagesToCombine, pdfFileName } = req.body;
+  console.log({ markdown, messagesToCombine });
+
+  if (!markdown && !messagesToCombine) {
+    return res.status(400).send('Markdown content or messages to combine are required');
+  }
+
+  // Combine messages if provided
+  let finalMarkdown = markdown || '';
+  if (messagesToCombine && Array.isArray(messagesToCombine)) {
+    finalMarkdown += '\n\n' + messagesToCombine.join('\n\n');
+  }
+
+  // Convert markdown to HTML
+  const htmlContent = md.render(finalMarkdown);
+  console.log({ htmlContent });
+
+  try {
+    // Launch a headless browser
+    const browser = await puppeteer.launch({
+      headless: true,
+      args: ['--no-sandbox', '--disable-setuid-sandbox'],
+    });
+    const page = await browser.newPage();
+
+    // Set a longer default navigation timeout
+    page.setDefaultNavigationTimeout(60000); // 60 seconds
+
+    // Set the content of the page
+    await page.setContent(`
         <html>
           <head>
             <style>
@@ -237,24 +261,24 @@ app.post('/generate-pdf', async (req, res) => {
           </body>
         </html>
       `, { waitUntil: 'networkidle0' });
-  
-      // Generate the PDF from the page content
-      const pdfBuffer = await page.pdf({ format: 'A4' });
-  
-      await browser.close();
-  
-      // Set headers to send PDF as a response
-      res.setHeader('Content-disposition', `attachment; filename=${pdfFileName}.pdf`);
-      res.setHeader('Content-type', 'application/pdf');
-  
-      // Send the PDF buffer as the response
-      res.send(pdfBuffer);
-    } catch (error) {
-      console.error(error);
-      logErrorToFile(error);
-      res.status(500).send('Error generating PDF');
-    }
-  });
+
+    // Generate the PDF from the page content
+    const pdfBuffer = await page.pdf({ format: 'A4' });
+
+    await browser.close();
+
+    // Set headers to send PDF as a response
+    res.setHeader('Content-disposition', `attachment; filename=${pdfFileName}.pdf`);
+    res.setHeader('Content-type', 'application/pdf');
+
+    // Send the PDF buffer as the response
+    res.send(pdfBuffer);
+  } catch (error) {
+    console.error(error);
+    logErrorToFile(error);
+    res.status(500).send('Error generating PDF');
+  }
+});
 app.get('/gemini/prompt', async (req, res) => {
   let prompt = req.query.prompt;
 
