@@ -65,15 +65,27 @@ export async function getTrendingVideos(maxResults = 50) {
 
 export async function getNewsVideos(maxResults = 50){
   try {
+    let today = new Date();
+    let hour = today.getHours();
+    // If it's after 6 PM, use today's date, otherwise use yesterday's date
+    if (hour >= 18) {
+      today = today.toISOString().split('T')[0]; // Format as YYYY-MM-DD
+    } else {
+      today.setDate(today.getDate() - 1); // Subtract one day
+      today = today.toISOString().split('T')[0]; // Format as YYYY-MM-DD
+    }
+    
+    let news_query = 'americas news ' + today;
     const response = await youtube.search.list({
       part: 'snippet',
-      q: 'news',
+      q: news_query,
       maxResults,
-      type: 'video'
+      type: 'video',
+      regionCode: 'US'
     });
 
     return response.data.items.map(item => ({
-      title: item.snippet.title,
+      title: item.snippet.title, 
       videoId: item.id,
       url: `https://youtube.com/watch?v=${item.id.videoId}`,
       thumbnail: item.snippet.thumbnails.default.url,
