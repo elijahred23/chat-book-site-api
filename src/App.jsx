@@ -12,6 +12,7 @@ import DownloadCopyTextFile from './DownloadCopyTextFile.jsx';
 import HtmlBuilder from './HtmlBuilder';
 import WebBrowser from './WebBrowser.jsx';
 import { useAppDispatch, useAppState, actions} from './context/AppContext.jsx';
+import Quran from './Quran.jsx';
 
 function App() {
   const [isFullWidth, setIsFullWidth] = useState(true);
@@ -39,6 +40,7 @@ function App() {
             <NavLink to='/youTubeTranscript'>YouTube Transcript</NavLink>
             <NavLink to='/webBrowser'>Web Browser</NavLink>
             <NavLink to='/htmlBuilder'>HTML Builder</NavLink>
+            <NavLink to='/Quran'>Quran</NavLink>
             {/* <NavLink to='/apiCheck'>API Check</NavLink> */}
 
             <button onClick={toggleChat} className='chat-toggle-btn floating-chat-btn'>
@@ -56,6 +58,7 @@ function App() {
               <Route path="/wiki" element={<Wiki />} />
               <Route path="/htmlBuilder" element={<HtmlBuilder />} />
               <Route path="/webBrowser" element={<WebBrowser />} />
+              <Route path="/Quran" element={<Quran />} />
             </Routes>
           </div>
 
