@@ -21,25 +21,65 @@ export async function fetchTranscript(url) {
  */
 export async function searchYouTube(query, maxResults = 50) {
   try {
-    const response = await youtube.search.list({
+    const searchResponse = await youtube.search.list({
       part: 'snippet',
       q: query,
       maxResults,
       type: 'video'
     });
 
-    return response.data.items.map(item => ({
-      title: item.snippet.title,
-      videoId: item.id.videoId,
-      url: `https://youtube.com/watch?v=${item.id.videoId}`,
-      thumbnail: item.snippet.thumbnails.default.url,
-      channelTitle: item.snippet.channelTitle
-    }));
-  } catch (error) {
-    console.error('YouTube Search Error:', error);
+    if (!searchResponse.data.items || searchResponse.data.items.length === 0) {
+      return [];
+    }
+
+    const videoIds = searchResponse.data.items.map(item => item.id.videoId);
+
+    // Fetch additional details (duration, likes) for these videos
+    let videoDetailsMap = new Map();
+    if (videoIds.length > 0) {
+      try {
+        const detailsResponse = await youtube.videos.list({
+          part: 'contentDetails,statistics', // Request contentDetails for duration, statistics for likes
+          id: videoIds.join(','),          // Comma-separated list of video IDs
+        });
+
+        detailsResponse.data.items.forEach(video => {
+          videoDetailsMap.set(video.id, {
+            duration: video.contentDetails?.duration,
+            likeCount: video.statistics?.likeCount,
+            viewCount: video.statistics?.viewCount, // Also available if needed
+          });
+        });
+      } catch (detailsError) {
+        console.error('YouTube Video Details Error (in searchYouTube):', detailsError);
+        // If fetching details fails, we'll proceed with the basic info from search results.
+        // Duration and likeCount will be undefined for the items.
+      }
+    }
+
+    return searchResponse.data.items.map(item => {
+      const details = videoDetailsMap.get(item.id.videoId) || {};
+      return {
+        title: item.snippet.title,
+        videoId: item.id.videoId,
+        url: `https://youtube.com/watch?v=${item.id.videoId}`,
+        thumbnail: item.snippet.thumbnails.default.url,
+        channelTitle: item.snippet.channelTitle,
+        duration: details.duration, // e.g., "PT5M30S"
+        likeCount: details.likeCount,
+        viewCount: details.viewCount,
+        publishedAt: item.snippet.publishedAt,
+        description: item.snippet.description,
+        channelId: item.snippet.channelId,
+      };
+    });
+
+  } catch (searchError) {
+    console.error('YouTube Search Error:', searchError);
     return [];
   }
 }
+
 
 export async function getTrendingVideos(maxResults = 50) {
   try {
@@ -64,37 +104,9 @@ export async function getTrendingVideos(maxResults = 50) {
 }
 
 export async function getNewsVideos(maxResults = 50){
-  try {
-    let today = new Date();
-    let hour = today.getHours();
-    // If it's after 6 PM, use today's date, otherwise use yesterday's date
-    if (hour >= 18) {
-      today = today.toISOString().split('T')[0]; // Format as YYYY-MM-DD
-    } else {
-      today.setDate(today.getDate() - 1); // Subtract one day
-      today = today.toISOString().split('T')[0]; // Format as YYYY-MM-DD
-    }
-    
-    let news_query = 'americas news ' + today;
-    const response = await youtube.search.list({
-      part: 'snippet',
-      q: news_query,
-      maxResults,
-      type: 'video',
-      regionCode: 'US'
-    });
+  let results = await searchYouTube('news', maxResults);
 
-    return response.data.items.map(item => ({
-      title: item.snippet.title, 
-      videoId: item.id,
-      url: `https://youtube.com/watch?v=${item.id.videoId}`,
-      thumbnail: item.snippet.thumbnails.default.url,
-      channelTitle: item.snippet.channelTitle
-    }));
-  } catch (error){
-    console.error('YouTube News Videos Error:', error);
-    return [];
-  }
+  return results;
 }
 
 
@@ -155,13 +167,44 @@ export async function getPlaylistItems(playlistId, maxResults = 25) {
       maxResults,
     });
 
-    return response.data.items.map(item => ({
-      title: item.snippet.title,
-      videoId: item.snippet.resourceId.videoId,
-      url: `https://www.youtube.com/watch?v=${item.snippet.resourceId.videoId}`,
-      thumbnail: item.snippet.thumbnails?.default?.url,
-      channelTitle: item.snippet.videoOwnerChannelTitle,
-    }));
+    const videoIds = response.data.items.map(item => item.snippet.resourceId.videoId);
+
+    // Fetch additional details (duration, likes) for these videos
+    let videoDetailsMap = new Map();
+    if (videoIds.length > 0) {
+      try {
+        const detailsResponse = await youtube.videos.list({
+          part: 'contentDetails,statistics', // Request contentDetails for duration, statistics for likes
+          id: videoIds.join(','),          // Comma-separated list of video IDs
+        });
+
+        detailsResponse.data.items.forEach(video => {
+          videoDetailsMap.set(video.id, {
+            duration: video.contentDetails?.duration,
+            likeCount: video.statistics?.likeCount,
+            viewCount: video.statistics?.viewCount, // Also available if needed
+          });
+        });
+      } catch (detailsError) {
+        console.error('YouTube Video Details Error (in getPlaylistItems):', detailsError);
+        // If fetching details fails, we'll proceed with the basic info from search results.
+        // Duration and likeCount will be undefined for the items.
+      }
+    }
+
+    return response.data.items.map(item => {
+      const details = videoDetailsMap.get(item.snippet.resourceId.videoId) || {};
+      return {
+        title: item.snippet.title,
+        videoId: item.snippet.resourceId.videoId,
+        url: `https://www.youtube.com/watch?v=${item.snippet.resourceId.videoId}`,
+        thumbnail: item.snippet.thumbnails?.default?.url,
+        channelTitle: item.snippet.videoOwnerChannelTitle,
+        duration: details.duration, // e.g., "PT5M30S"
+        likeCount: details.likeCount,
+        viewCount: details.viewCount,
+      };
+    });
   } catch (error) {
     console.error('Error fetching playlist items:', error);
     return [];

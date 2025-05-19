@@ -268,7 +268,35 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo }) 
                                 )}
 
                                 <div style={{ flex: 1 }}>
-                                    <p><strong>{item.title}</strong></p>
+                                    <p><strong>{item.title}</strong></p>                                    
+                                    {item.description && (
+                                        <p style={{ fontSize: '0.9rem', color: '#555', marginTop: '0.25rem', position: 'relative' }}>
+                                            <span title={item.description} style={{ display: 'inline-block', overflow: 'hidden', textOverflow: 'ellipsis', maxWidth: '100%', whiteSpace: 'nowrap' }}>
+                                                {item.description.length > 100 ? item.description.substring(0, 100) + '...' : item.description}
+                                            </span>                                            
+
+                                        </p>
+                                    )}                                    
+                                    <p style={{ fontSize: '0.8rem', color: '#777' }}>
+                                        {item.duration && <span>⏱️ {item.duration.replace('PT', '').replace('S', 's').replace('M', 'm')} </span>}
+                                        {item.viewCount && <span>👁️ {parseInt(item.viewCount).toLocaleString()} </span>}
+                                        {item.likeCount && <span>👍 {parseInt(item.likeCount).toLocaleString()} </span>}
+                                        {item.publishedAt && (
+                                            <span>
+                                                📅 {new Date(item.publishedAt).toLocaleDateString()} (
+                                                {(() => {
+                                                    const diff = Math.floor((Date.now() - new Date(item.publishedAt).getTime()) / (1000 * 60 * 60 * 24));
+                                                    if (diff < 30) return `${diff} days ago`;
+                                                    if (diff < 7) return `${Math.floor(diff / 7)} weeks ago`;
+                                                    if (diff < 365) return `${Math.floor(diff / 30)} months ago`;
+                                                    return `${Math.floor(diff / 365)} years ago`;
+                                                })()}
+                                                )
+                                                
+                                            </span>
+                                        )}
+
+                                    </p>
                                     <p style={{ fontSize: '0.8rem', color: '#777' }}>{item.channelTitle}</p>
 
                                     <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', marginTop: '0.5rem' }}>
@@ -326,8 +354,36 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo }) 
                                         <li key={j} style={{ display: 'flex', gap: '10px', marginBottom: '0.75rem', borderBottom: '1px dashed #ccc', paddingBottom: '0.5rem' }}>
                                             <img src={vid.thumbnail} alt={vid.title} width="80" style={{ borderRadius: '4px' }} />
                                             <div style={{ flex: 1 }}>
-                                                <p style={{ margin: 0 }}><strong>{vid.title}</strong></p>
-                                                <p style={{ fontSize: '0.75rem', color: '#777', margin: '0.25rem 0' }}>{vid.channelTitle}</p>
+                                                <p><strong>{vid.title}</strong></p>
+                                                {vid.description && (
+                                                    <p style={{ fontSize: '0.9rem', color: '#555', marginTop: '0.25rem', position: 'relative' }}>
+                                                        <span title={vid.description} style={{ display: 'inline-block', overflow: 'hidden', textOverflow: 'ellipsis', maxWidth: '100%', whiteSpace: 'nowrap' }}>
+                                                            {vid.description.length > 100 ? vid.description.substring(0, 100) + '...' : vid.description}
+                                                        </span>
+
+                                                    </p>
+                                                )}
+                                                <p style={{ fontSize: '0.8rem', color: '#777' }}>
+                                                    {vid.duration && <span>⏱️ {vid.duration.replace('PT', '').replace('S', 's').replace('M', 'm')} </span>}
+                                                    {vid.viewCount && <span>👁️ {parseInt(vid.viewCount).toLocaleString()} </span>}
+                                                    {vid.likeCount && <span>👍 {parseInt(vid.likeCount).toLocaleString()} </span>}
+                                                    {vid.publishedAt && (
+                                                        <span>
+                                                            📅 {new Date(vid.publishedAt).toLocaleDateString()} (
+                                                            {(() => {
+                                                                const diff = Math.floor((Date.now() - new Date(vid.publishedAt).getTime()) / (1000 * 60 * 60 * 24));
+                                                                if (diff < 30) return `${diff} days ago`;
+                                                                if (diff < 7) return `${Math.floor(diff / 7)} weeks ago`;
+                                                                if (diff < 365) return `${Math.floor(diff / 30)} months ago`;
+                                                                return `${Math.floor(diff / 365)} years ago`;
+                                                            })()}
+                                                            )
+
+                                                        </span>
+                                                    )}
+
+                                                </p>
+                                                <p style={{ fontSize: '0.8rem', color: '#777' }}>{vid.channelTitle}</p>
                                                 <div style={{ display: 'flex', gap: '0.5rem' }}>
                                                     <button className="btn small-btn" onClick={() => { onSelectVideo(vid.url); onClose(); }}>Use This Video</button>
                                                     <button className="btn small-btn" onClick={() => handleCopy(vid.url)}>📋 {copiedUrl === vid.url ? 'Copied!' : 'Copy URL'}</button>
