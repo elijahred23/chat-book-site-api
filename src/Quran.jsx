@@ -26,7 +26,7 @@ const Quran = () => {
   const promptResponsesText = useMemo(() => promptResponses.join('\n\n'), [promptResponses]);
   // Fetch Quran data on load
   useEffect(() => {
-    fetch('http://api.alquran.cloud/v1/quran/en.asad')
+    fetch('https://api.alquran.cloud/v1/quran/en.asad')
       .then((res) => {
         if (!res.ok) {
           throw new Error('Failed to fetch Quran data');
