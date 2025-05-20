@@ -10,6 +10,7 @@ import AutoScroller from './ui/AutoScroller';
 import YouTubeSearchDrawer from './YouTubeSearchDrawer';
 import { actions, useAppDispatch } from './context/AppContext';
 
+const wordSplitNumber = 5000;
 const isValidYouTubeUrl = (url) => {
     const regex = /^(https?:\/\/)?(www\.)?(youtube\.com\/(watch\?v=|embed\/|v\/|shorts\/|live\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})(\S*)?$/;
     return regex.test(url);
@@ -154,7 +155,7 @@ export default function YouTubeTranscript() {
                     if (data.length > 0) {
                         const commentsText = data.map(c => `• ${c.author}: ${c.comment}`).join('\n\n');
                         const wordCount = countWords(commentsText);
-                        const splits = Math.ceil(wordCount / 3000);
+                        const splits = Math.ceil(wordCount / wordSplitNumber);
                         setComments(commentsText);
                         setSplitComments(splitStringByWords(commentsText, splits));
                         setLastFetchedUrl(url);
@@ -181,7 +182,7 @@ export default function YouTubeTranscript() {
     useEffect(() => {
         const wc = countWords(manuallyEnteredTranscript);
         setTranscript(manuallyEnteredTranscript);
-        setSplitLength(Math.ceil(wc / 3000));
+        setSplitLength(Math.ceil(wc / wordSplitNumber));
     }, [manuallyEnteredTranscript])
 
     useEffect(() => {
@@ -198,7 +199,7 @@ export default function YouTubeTranscript() {
                     if (data?.transcript) {
                         const newTranscript = data.transcript;
                         const wordCount = countWords(newTranscript);
-                        const splits = Math.ceil(wordCount / 3000);
+                        const splits = Math.ceil(wordCount / wordSplitNumber);
                         setTranscript(newTranscript);
                         setSplitLength(splits);
                         setLastFetchedUrl(url);
