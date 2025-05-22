@@ -41,7 +41,7 @@ function App() {
             <NavLink to='/webBrowser'>Web Browser</NavLink>
             <NavLink to='/htmlBuilder'>HTML Builder</NavLink>
             <NavLink to='/Quran'>Quran</NavLink>
-            {/* <NavLink to='/apiCheck'>API Check</NavLink> */}
+            <NavLink to='/apiCheck'>API Check</NavLink>
 
             <button onClick={toggleChat} className='chat-toggle-btn floating-chat-btn'>
               {isChatOpen ? '❌' : '💬 Ask AI'}
