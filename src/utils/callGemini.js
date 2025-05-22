@@ -1,5 +1,25 @@
 import { hostname } from "./hostname";
 
+export const getGeminiModel = async () => {
+  const response = await fetch(`${hostname}/geminiModel`);
+  if (response.ok) {
+    const data = await response.json();
+    return data.model;
+  }
+  return null;
+}
+export const updateGeminiModel = async (model) => {
+  const response = await fetch(`${hostname}/geminiModel`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ model })
+  });
+  if (response.ok) {
+    localStorage.setItem("geminiModel", model);
+  }
+}
 export const getGeminiResponse = async (prompt) => {
   try {
     const response = await fetch(`${hostname}/gpt/prompt`, {

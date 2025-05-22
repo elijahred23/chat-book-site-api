@@ -6,8 +6,18 @@ const geminiApiKey = process.env.GEMINI_API_KEY || "";
 // Initialize the GoogleGenerativeAI instance
 const genAI = new GoogleGenerativeAI(geminiApiKey);
 
-async function generateGeminiResponse(msg, gemini_model = "gemini-1.5-flash") {
+export class GeminiModel {
+    // static variable for current model
+    static currentModel = "gemini-1.5-flash"}
+
+async function generateGeminiResponse(msg, gemini_model = null) {
     try {
+        if (gemini_model === null) {
+            gemini_model = GeminiModel.currentModel;
+        }
+        if (!gemini_model) {
+            throw new Error("Model not specified");
+        }
         const model = genAI.getGenerativeModel({ model: gemini_model });
 
         const chat = model.startChat({

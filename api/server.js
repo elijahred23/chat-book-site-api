@@ -4,7 +4,7 @@ dotenv.config();
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { generateResponse, safeGenerateResponse } from './chatGPT.js';
-import { generateGeminiResponse } from './gemini.js';
+import { generateGeminiResponse, GeminiModel } from './gemini.js';
 import bodyParser from 'body-parser';
 import MarkdownIt from 'markdown-it';
 import fs from 'fs';
@@ -64,6 +64,35 @@ const logErrorToFile = (error) => {
 app.get('/api/check', (req, res) => {
   const randomIndex = Math.floor(Math.random() * messages.length);
   res.send({ message: messages[randomIndex] });
+});
+
+app.get('/geminiModel', (req, res) => {
+  const currentModel = GeminiModel.currentModel;
+  if (!currentModel) {
+    return res.status(400).send({ error: 'Bad Request', message: 'Model parameter is missing' });
+  }
+  try {
+    return res.send({ model: currentModel });
+  } catch (error) {
+    console.error(error);
+    logErrorToFile(error);
+    return res.status(500).send({ error: 'Server Error', message: error.message });
+  }
+});
+app.post('/geminiModel', async (req, res) => {
+  const { model } = req.body;
+  if (!model) {
+    return res.status(400).send({ error: 'Bad Request', message: 'Model parameter is missing' });
+  }
+
+  try {
+    GeminiModel.currentModel = model;
+    return res.send({ message: `Model set to ${model}` });
+  } catch (error) {
+    console.error(error);
+    logErrorToFile(error);
+    return res.status(500).send({ error: 'Server Error', message: error.message });
+  }
 });
 
 app.get('/youtube/transcript', async (req, res) => {
