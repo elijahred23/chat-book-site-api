@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { hostname } from './utils/hostname';
-import { getGeminiModel, updateGeminiModel } from './utils/callGemini';
+import { getGeminiModel, updateGeminiModel, getGeminiModelList } from './utils/callGemini';
 const baseURL = hostname;
 
 export default function ApiCheck() {
@@ -9,6 +9,8 @@ export default function ApiCheck() {
 
     const [geminiModel, setGeminiModel] = useState('');
     const [geminiModelInput, setGeminiModelInput] = useState('');
+    const [geminiModelList, setGeminiModelList] = useState([]);
+
 
     const getMessageFromAPI = async () => {
         await fetch(`${baseURL}/api/check`).then(res => res.json()).then(res => {
@@ -28,6 +30,8 @@ export default function ApiCheck() {
 
         const fetchData = async () => {
             getMessageFromAPI();
+            const models = await getGeminiModelList();
+            setGeminiModelList(models);
             let newModel = await getGeminiModel();
             console.log({ newModel })
             if(newModel) {
@@ -57,5 +61,15 @@ export default function ApiCheck() {
             setGeminiModelInput('');
         }
         }>Update</button>
+        <h3>Gemini Model List</h3>
+        <ul>
+            {geminiModelList.map((model, index) => (
+                <li onClick={() => {
+                    setGeminiModelInput(model.id);
+                }} key={index}>
+                    <strong>{model.name}</strong> - {model.input} - {model.output} - {model.description}
+                </li>
+            ))}
+        </ul>
     </div></>)
 }

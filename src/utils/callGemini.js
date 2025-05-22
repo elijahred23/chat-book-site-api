@@ -1,5 +1,14 @@
 import { hostname } from "./hostname";
 
+
+export const getGeminiModelList = async () => {
+  const response = await fetch(`${hostname}/geminiModelList`);
+  if (response.ok) {
+    const data = await response.json();
+    return data.models;
+  }
+  return [];
+}
 export const getGeminiModel = async () => {
   const response = await fetch(`${hostname}/geminiModel`);
   if (response.ok) {

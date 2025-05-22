@@ -4,7 +4,7 @@ dotenv.config();
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { generateResponse, safeGenerateResponse } from './chatGPT.js';
-import { generateGeminiResponse, GeminiModel } from './gemini.js';
+import { generateGeminiResponse, GeminiModel, listGeminiModels } from './gemini.js';
 import bodyParser from 'body-parser';
 import MarkdownIt from 'markdown-it';
 import fs from 'fs';
@@ -66,6 +66,17 @@ app.get('/api/check', (req, res) => {
   res.send({ message: messages[randomIndex] });
 });
 
+app.get('/geminiModelList', async (req, res) => {
+  try {
+    const models = await listGeminiModels();
+    return res.send({ models });
+  } catch (error) {
+    console.error(error);
+    logErrorToFile(error);
+    return res.status(500).send({ error: 'Server Error', message: error.message });
+  }
+}
+);
 app.get('/geminiModel', (req, res) => {
   const currentModel = GeminiModel.currentModel;
   if (!currentModel) {

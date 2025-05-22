@@ -1,10 +1,9 @@
-import { generateGeminiResponse } from "./gemini.js";
+import { generateGeminiResponse, listGeminiModels } from "./gemini.js";
 import { fetchTranscript } from "./youtube.js";
 
-const message = "What is time according to Einstein";
+const models = await listGeminiModels();
 
-const response = await generateGeminiResponse(message);
-console.log({response})
+console.log("Gemini Models:", models);
 
 // let url = "https://www.youtube.com/watch?v=Fi3_BjVzpqk&pp=ygUMc2RsYyBwcm9jZXNz"
 // let transcript = await fetchTranscript(url);
