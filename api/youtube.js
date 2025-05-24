@@ -19,7 +19,7 @@ export async function fetchTranscript(url) {
  * @param {number} maxResults
  * @returns {Promise<Array>} List of videos with title, videoId, and URL
  */
-export async function searchYouTube(query, maxResults = 50) {
+export async function searchYouTube(query, maxResults = 100) {
   try {
     const searchResponse = await youtube.search.list({
       part: 'snippet',

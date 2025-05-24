@@ -4,6 +4,7 @@ import { getNewsVideos, getTrendingVideos, searchYouTubeVideos, searchYouTubePla
 export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo }) {
     const [searchQuery, setSearchQuery] = useState(() => localStorage.getItem('yt_search_query') || '');
     const [searchType, setSearchType] = useState(() => localStorage.getItem('yt_search_type') || 'video');
+    const [filterType, setFilterType] = useState(() => localStorage.getItem('yt_filter_type') || 'relevance');
     const [playlistVideos, setPlaylistVideos] = useState(() => {
         try {
             const stored = localStorage.getItem('yt_playlist_cache');
@@ -40,6 +41,28 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo }) 
     const [copiedUrl, setCopiedUrl] = useState(null);
     const inputRef = useRef(null);
 
+    const radioStyle = {
+                        display: 'flex',
+                        gap: '1rem',
+                        marginBottom: '0.75rem',
+                        alignItems: 'center',
+                        padding: '0.5rem',
+                        border: '1px solid #ddd',
+                        borderRadius: '4px',
+                        background: '#f9f9f9'
+                    }
+    const filterRadioStyle = {
+        margin: '1rem 0',
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(100px, 1fr))', // Responsive grid
+        gridGap: '0.5rem', // Smaller gap between grid items
+        marginBottom: '0.75rem',
+        alignItems: 'center',
+        padding: '0.5rem',
+        border: '1px solid #ddd',
+        borderRadius: '4px',
+        background: '#f9f9f9'
+    }
     const focusInput = () => {
         const handler = () => {
             inputRef.current?.focus();
@@ -51,6 +74,20 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo }) 
         window.addEventListener('click', handler, { once: true });
     }
 
+    const parseISODurationToSeconds = (duration) => {
+        if (!duration || typeof duration !== 'string') {
+            return 0; // Or handle as an error, or return a very large/small number depending on desired sort for missing durations
+        }
+        // Regex to capture H, M, S components from ISO 8601 duration (e.g., PT#H#M#S)
+        const matches = duration.match(/PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?/);
+        if (!matches) return 0; // Or handle error
+
+        const hours = parseInt(matches[1]) || 0;
+        const minutes = parseInt(matches[2]) || 0;
+        const seconds = parseInt(matches[3]) || 0;
+
+        return (hours * 3600) + (minutes * 60) + seconds;
+    };
     const getYoutubeTrending = async () => {
         setLoading(true);
         try {
@@ -139,6 +176,16 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo }) 
             focusInput();
         }
     }, [searchType]);
+
+    const filterOptions = [
+        { value: 'relevance', label: 'Relevance' }, // Default or initial state
+        { value: 'longest', label: 'Longest' },
+        { value: 'shortest', label: 'Shortest' },
+        { value: 'popular', label: 'Popular' },
+        { value: 'most-likes', label: 'Most Likes' },
+        { value: 'newest', label: 'Newest' },
+        { value: 'oldest', label: 'Oldest' },
+    ];
     return (
         <div className={`chat-drawer full ${isOpen ? 'open' : ''}`}>
 
@@ -173,7 +220,7 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo }) 
                         style={{ width: '100%', padding: '0.5rem', fontSize: '1rem', marginBottom: '0.75rem' }}
                     />
 
-                    <div className="search-type-selector" >
+                    <div style={radioStyle}>
                         <label>
                             <input
                                 type="radio"
@@ -241,6 +288,36 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo }) 
                             {/*Emoji for trending */ "🔥"}Trending
                         </button>
                     </div>
+                    <div style={filterRadioStyle}>
+                        {filterOptions.map(option => (
+                            <label
+                                key={option.value}
+                                style={{
+                                    cursor: 'pointer',
+                                    padding: '0.3rem 0.6rem', // Slightly adjusted padding
+                                    borderRadius: '4px',
+                                    border: '1px solid transparent', // Base border
+                                    transition: 'background-color 0.2s ease, border-color 0.2s ease', // Smooth transitions
+                                    // Conditional styling for the selected item
+                                    ...(filterType === option.value && {
+                                        backgroundColor: '#e9ecef', // A light background for selected
+                                        borderColor: '#adb5bd',    // A border for selected
+                                        fontWeight: '500'          // Slightly bolder text for selected
+                                    })
+                                }}
+                            >
+                                <input
+                                    type="radio"
+                                    name="filterMode"
+                                    value={option.value}
+                                    checked={filterType === option.value}
+                                    onChange={(e) => setFilterType(e.target.value)}
+                                    style={{ marginRight: '0.3rem', accentColor: '#007bff' }} // Space out radio and text, custom accent
+                                />
+                                {option.label}
+                            </label>
+                        ))}
+                    </div>
                 </div>
 
 
@@ -248,7 +325,30 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo }) 
                 {loading && <p style={{ marginTop: '1rem' }}>Loading...</p>}
 
                 <ul style={{ listStyle: 'none', padding: 0, marginTop: '1rem' }}>
-                    {results.map((item, i) => (
+                    {results?.sort((a, b) => {
+                        const durationA = parseISODurationToSeconds(a.duration);
+                        const durationB = parseISODurationToSeconds(b.duration);
+                        const dateA = a.publishedAt ? new Date(a.publishedAt).getTime() : 0;
+                        const dateB = b.publishedAt ? new Date(b.publishedAt).getTime() : 0;
+                        // Handle 'relevance' or default case - no specific sort, or rely on API's default
+                        if (filterType === 'relevance') return 0; 
+
+                        if (filterType === 'longest') {
+                            return durationB - durationA;
+                        } else if (filterType === 'shortest') {
+                            return durationA - durationB;
+                        } else if (filterType === 'popular') {
+                            return b.viewCount - a.viewCount;
+                        } else if (filterType === 'most-likes') {
+                            return b.likeCount - a.likeCount;
+                        } else if (filterType === 'newest') {
+                            return dateB - dateA;
+                        } else if (filterType === 'oldest') {
+                            return dateA - dateB;
+                        } else {
+                            return 0;
+                        }
+                    })?.map((item, i) => (
                         <li
                             key={i}
                             className="youtube-result"
