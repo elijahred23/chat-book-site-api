@@ -90,23 +90,8 @@ export default function ChatBookApp() {
         code_generator: {
             key: 'code_generator',
             label: 'Code Generator',
-            getInitialInstruction: (params) => {
-                const { steps: numComponents, subject: taskDescription } = params;
-                return `The user wants to generate code and related artifacts for the following task: '${taskDescription}'.
-The process should be broken down into ${numComponents} distinct component(s)/step(s).
-For example, if the task is "a Python function to sort a list and then unit tests for it", and numComponents is 2:
-Component 1 could be the Python function.
-Component 2 could be the unit tests.
-Please outline the ${numComponents} component(s) you will generate for '${taskDescription}'. If a programming language isn't specified in the task, please choose a suitable one and state it in your outline.
-IMPORTANT: Do not write the full code for any component in this initial outline. Only list what each component will be.`;
-            },
-            getExecutionInstruction: (params) => {
-                const { currentStep: componentNumber, maxWords, subject: taskDescription } = params;
-                return `Regarding the coding task for '${taskDescription}':
-Based on the outline you provided in the previous step (where you listed the components to be generated), now generate the content for component number ${componentNumber}.
-If this component is code, ensure it is well-commented and functional. If this component is explanatory text (e.g., a usage guide or test plan), provide the detailed text.
-Aim for approximately ${maxWords} words if it's primarily text, or produce complete, functional code if it's a code component.`;
-            },
+            getInitialInstruction: (numberOfComponents, subject) => `Generate a list of ${numberOfComponents} number of programming components for creating an application for '${subject}'`,
+            getExecutionInstruction: (questionNumber, maxWords, subject) => `Write code to implement logic for component number ${questionNumber} about application subject '${subject}'. Aim for approximately ${maxWords} words for this answer.`,
         }
     }), []); 
 
