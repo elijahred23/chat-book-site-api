@@ -33,7 +33,7 @@ function App() {
     <>
       <div>
         <BrowserRouter>
-          <h1>Eli GPT</h1>
+          <h1>Eli Himi GPT</h1>
 
           <div className='nav-links'>
             <NavLink to='/chatBook'>Chat Book</NavLink>
