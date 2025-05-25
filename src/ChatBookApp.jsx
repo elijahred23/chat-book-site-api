@@ -44,7 +44,6 @@ export default function ChatBookApp() {
     const { showMessage } = useFlyout();
     const localStorageValues = getValuesInLocalStorage();
 
-    const modes = ["steps", "splits", "mind_map"];
 
     const [mode, setMode] = useState(localStorageValues.mode);
     const [numSteps, setNumSteps] = useState(localStorageValues.numSteps);
@@ -63,32 +62,55 @@ export default function ChatBookApp() {
     const [subsequentInstructionResponses, setSubsequentInstructionResponses] = useState(localStorageValues.subsequentInstructionResponses);
     const dispatch = useAppDispatch();
 
+    const MODE_CONFIGS = useMemo(() => ({
+        steps: {
+            key: 'steps',
+            label: 'Step-by-Step Process',
+            getInitialInstruction: (steps, subject) => `Write a step-by-step process with ${steps} steps about ${subject}.`,
+            getExecutionInstruction: (currentStep, maxWords) => `Detail step ${currentStep} of the process in about ${maxWords} words.`,
+        },
+        splits: {
+            key: 'splits',
+            label: 'Split Paragraph',
+            getInitialInstruction: (sections, subject) => `Split the paragraph into ${sections} sections about ${subject}.`,
+            getExecutionInstruction: (currentSection, maxWords) => `Explain section ${currentSection} in detail, focusing on completeness in about ${maxWords} words.`,
+        },
+        mind_map: {
+            key: 'mind_map',
+            label: 'Mind Map',
+            getInitialInstruction: (branches, subject) => `Create a mind map of ${branches} main branches for the topic '${subject}', with sub-branches under each if needed.`,
+            getExecutionInstruction: (currentBranch, maxWords) => `Expand on branch ${currentBranch} of the mind map. Add details to sub-branches as needed, aiming for about ${maxWords} words.`,
+        },
+        faq_generator: {
+            key: 'faq_generator',
+            label: 'FAQ Generator',
+            getInitialInstruction: (numFAQs, subject) => `Generate a list of ${numFAQs} frequently asked questions (FAQs) about the topic '${subject}'. List only the questions, do not provide answers yet.`,
+            getExecutionInstruction: (questionNumber, maxWords, subject) => `Provide a comprehensive answer for question number ${questionNumber} from the previously generated list of FAQs about '${subject}'. Aim for approximately ${maxWords} words for this answer.`,
+        },
+    }), []); // Empty dependency array means this object is created once
+
+    const modesForSelect = useMemo(() => Object.values(MODE_CONFIGS).map(config => ({
+        value: config.key,
+        label: config.label,
+    })), [MODE_CONFIGS]);
 
     const getInitialInstructionMessage = (steps = null) => {
         if (steps === null) steps = numSteps;
-        switch (mode) {
-            case 'steps':
-                return `Write a step-by-step process with ${steps} steps about ${subject}.`;
-            case 'splits':
-                return `Split the paragraph into ${steps} sections about ${subject}.`;
-            case 'mind_map':
-                return `Create a mind map of ${steps} main branches for the topic '${subject}', with sub-branches under each if needed.`;
-            default:
-                return "";
+        const currentModeConfig = MODE_CONFIGS[mode];
+        if (currentModeConfig && currentModeConfig.getInitialInstruction) {
+            return currentModeConfig.getInitialInstruction(steps, subject);
         }
+        console.warn(`[ChatBookApp] Unknown mode or missing getInitialInstruction for mode: ${mode}`);
+        return "";
     };
 
-    const getExecutionInstructionMessage = (currentStep) => {
-        switch (mode) {
-            case 'steps':
-                return `Detail step ${currentStep} of the process in about ${maxWords} words.`;
-            case 'splits':
-                return `Explain section ${currentStep} in detail, focusing on completeness in about ${maxWords} words.`;
-            case 'mind_map':
-                return `Expand on branch ${currentStep} of the mind map. Add details to sub-branches as needed, aiming for about ${maxWords} words.`;
-            default:
-                return "";
+    const getExecutionInstructionMessage = (currentStep, numPointsForModeDetail) => {
+        const currentModeConfig = MODE_CONFIGS[mode];
+        if (currentModeConfig && currentModeConfig.getExecutionInstruction) {
+            return currentModeConfig.getExecutionInstruction(currentStep, maxWords, subject, numPointsForModeDetail);
         }
+        console.warn(`[ChatBookApp] Unknown mode or missing getExecutionInstruction for mode: ${mode}`);
+        return "";
     };
 
     const initializeSubsequentInstructions = () => {
@@ -256,8 +278,8 @@ export default function ChatBookApp() {
         <div>
             <h2>Chat Book App</h2>
             <select value={mode} onChange={(e) => setMode(e.target.value)}>
-                {modes.map((mod, index) => (
-                    <option key={index} value={mod}>{mod}</option>
+                {modesForSelect.map((modConfig) => (
+                    <option key={modConfig.value} value={modConfig.value}>{modConfig.label}</option>
                 ))}
             </select>
 
