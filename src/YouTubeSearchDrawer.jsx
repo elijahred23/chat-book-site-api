@@ -14,6 +14,7 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo }) 
         }
     });
 
+    const [isSearchVisible, setIsSearchVisible] = useState(true);
     const [expandedPlaylists, setExpandedPlaylists] = useState(() => {
         try {
             const stored = localStorage.getItem('yt_expanded_playlists');
@@ -206,6 +207,13 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo }) 
                         <h3>YouTube Search</h3>
                         <button className="close-chat-btn" onClick={onClose}>×</button>
                     </div>
+                    <button onClick={() => setIsSearchVisible(!isSearchVisible)}>
+                        {isSearchVisible ? 'Hide Search' : 'Show Search'}
+                    </button>
+
+                    {isSearchVisible && (
+                    <>
+
                     <input
                         ref={inputRef}
                         type="text"
@@ -288,36 +296,18 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo }) 
                             {/*Emoji for trending */ "🔥"}Trending
                         </button>
                     </div>
-                    <div style={filterRadioStyle}>
-                        {filterOptions.map(option => (
-                            <label
-                                key={option.value}
-                                style={{
-                                    cursor: 'pointer',
-                                    padding: '0.3rem 0.6rem', // Slightly adjusted padding
-                                    borderRadius: '4px',
-                                    border: '1px solid transparent', // Base border
-                                    transition: 'background-color 0.2s ease, border-color 0.2s ease', // Smooth transitions
-                                    // Conditional styling for the selected item
-                                    ...(filterType === option.value && {
-                                        backgroundColor: '#e9ecef', // A light background for selected
-                                        borderColor: '#adb5bd',    // A border for selected
-                                        fontWeight: '500'          // Slightly bolder text for selected
-                                    })
-                                }}
-                            >
-                                <input
-                                    type="radio"
-                                    name="filterMode"
-                                    value={option.value}
-                                    checked={filterType === option.value}
-                                    onChange={(e) => setFilterType(e.target.value)}
-                                    style={{ marginRight: '0.3rem', accentColor: '#007bff' }} // Space out radio and text, custom accent
-                                />
-                                {option.label}
-                            </label>
-                        ))}
+                    <div style={{ marginTop: '0.75rem' }}>
+                        <label htmlFor="filterModeSelect" style={{ marginRight: '0.5rem', fontWeight: 'bold' }}>Filter Mode:</label>
+                        <select id="filterModeSelect" value={filterType} onChange={(e) => setFilterType(e.target.value)} style={{...filterRadioStyle, display: 'inline-block', width: 'auto', verticalAlign: 'middle' }}>
+                            {filterOptions.map((option) => (
+                                <option key={option.value} value={option.value}>
+                                    {option.label}
+                                </option>
+                            ))}
+                        </select>
                     </div>
+                    </>
+                    )}
                 </div>
 
 
