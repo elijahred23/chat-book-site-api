@@ -207,9 +207,11 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo }) 
                         <h3>YouTube Search</h3>
                         <button className="close-chat-btn" onClick={onClose}>×</button>
                     </div>
-                    <button onClick={() => setIsSearchVisible(!isSearchVisible)}>
-                        {isSearchVisible ? 'Hide Search' : 'Show Search'}
-                    </button>
+                    <div style={{marginTop:"5px"}}>
+                        <button onClick={() => setIsSearchVisible(!isSearchVisible)}>
+                            {isSearchVisible ? 'Hide Search' : 'Show Search'}
+                        </button>
+                    </div>
 
                     {isSearchVisible && (
                     <>
@@ -362,9 +364,8 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo }) 
                                     {item.description && (
                                         <p style={{ fontSize: '0.9rem', color: '#555', marginTop: '0.25rem', position: 'relative' }}>
                                             <span title={item.description} style={{ display: 'inline-block', overflow: 'hidden', textOverflow: 'ellipsis', maxWidth: '100%', whiteSpace: 'nowrap' }}>
-                                                {item.description.length > 100 ? item.description.substring(0, 100) + '...' : item.description}
+                                                {item.description}
                                             </span>                                            
-
                                         </p>
                                     )}                                    
                                     <p style={{ fontSize: '0.8rem', color: '#777' }}>
