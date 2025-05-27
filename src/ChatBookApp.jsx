@@ -81,6 +81,23 @@ export default function ChatBookApp() {
             getInitialInstruction: (branches, subject) => `Create a mind map of ${branches} main branches for the topic '${subject}', with sub-branches under each if needed.`,
             getExecutionInstruction: (currentBranch, maxWords) => `Expand on branch ${currentBranch} of the mind map. Add details to sub-branches as needed, aiming for about ${maxWords} words.`,
         },
+        mind_map_key_points: {
+            key: 'mind_map_key_points',
+            label: 'Detailed Mind Map with Explained Key Points',
+            
+            getInitialInstruction: (branches, subject) => 
+                `Create a detailed mind map on the topic: "${subject}". 
+                Include ${branches} main branches covering core aspects of the topic. 
+                For each main branch, add relevant sub-branches that represent major concepts, categories, or techniques. 
+                Each sub-branch should contain a list of key points or facts, 
+                and where applicable, include brief explanations, real-world examples, use cases, or code snippets to illustrate the concept.`,
+
+            getExecutionInstruction: (currentBranch, maxWords) => 
+                `Expand and elaborate on the branch "${currentBranch}" of the mind map. 
+                For each sub-branch, explain the meaning of each key point in simple terms. 
+                Include supporting details such as definitions, examples, analogies, or typical applications. 
+                Aim for at least ${maxWords} words, and exceed this limit if it improves clarity or completeness.`,
+        },
         faq_generator: {
             key: 'faq_generator',
             label: 'FAQ Generator',
