@@ -35,19 +35,23 @@ function App() {
         <BrowserRouter>
           <h1>Eli Himi GPT</h1>
 
-          <div className='nav-links'>
-            <NavLink to='/chatBook'>Chat Book</NavLink>
-            <NavLink to='/youTubeTranscript'>YouTube Transcript</NavLink>
-            <NavLink to='/webBrowser'>Web Browser</NavLink>
-            <NavLink to='/htmlBuilder'>HTML Builder</NavLink>
-            <NavLink to='/Quran'>Quran</NavLink>
-            <NavLink to='/apiCheck'>API Check</NavLink>
+          <div className="dropdown-nav">
+            <button className="dropdown-toggle">Menu ▾</button>
+            <div className="dropdown-menu">
+              <NavLink to="/chatBook" activeClassName="active">Chat Book</NavLink>
+              <NavLink to="/youTubeTranscript" activeClassName="active">YouTube Transcript</NavLink>
+              <NavLink to="/htmlBuilder" activeClassName="active">HTML Builder</NavLink>
+              <NavLink to="/Quran" activeClassName="active">Quran</NavLink>
+              <NavLink to="/apiCheck" activeClassName="active">Settings</NavLink>
+            </div>
+          </div>
 
+
+          <div>
             <button onClick={toggleChat} className='chat-toggle-btn floating-chat-btn'>
               {isChatOpen ? '❌' : '💬 Ask AI'}
             </button>
           </div>
-
           <div className="content">
             <Routes>
               <Route path="/chatBook" element={<ChatBookApp />} />

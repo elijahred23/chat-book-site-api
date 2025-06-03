@@ -150,6 +150,66 @@ option {
   pointer-events: none;
 }
 
+.dropdown-nav {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-toggle {
+  background-color: #1e88e5;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dropdown-toggle:hover,
+.dropdown-toggle:focus {
+  background-color: #1565c0;
+  outline: none;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 110%;
+  left: 0;
+  background-color: #1e88e5;
+  border-radius: 8px;
+  padding: 0.5rem 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  min-width: 200px;
+  z-index: 1000;
+  flex-direction: column;
+}
+
+.dropdown-nav:hover .dropdown-menu,
+.dropdown-nav:focus-within .dropdown-menu {
+  display: flex;
+}
+
+.dropdown-menu a {
+  color: white;
+  text-decoration: none;
+  padding: 0.6rem 1rem;
+  display: block;
+  transition: background-color 0.3s;
+}
+
+.dropdown-menu a:hover,
+.dropdown-menu a:focus {
+  background-color: #1565c0;
+  outline: none;
+}
+
+.dropdown-menu a.active {
+  background-color: #0d47a1;
+  pointer-events: none;
+}
+
 
 .chat-book-container {
   padding: 2rem;
