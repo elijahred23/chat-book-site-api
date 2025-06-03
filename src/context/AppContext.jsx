@@ -10,6 +10,8 @@ const initialState = {
     isChatOpen: false,
     chatPrompt: '',
     selectedText: '',
+    transcriptTypes: ['my-api', 'external-api'],
+    selectedTranscriptType: 'my-api',
 };
 
 const actionTypes = {
@@ -18,7 +20,7 @@ const actionTypes = {
     SET_GENERATED_HTML: 'SET_GENERATED_HTML',
     SET_IS_CHAT_OPEN: 'SET_IS_CHAT_OPEN',
     SET_CHAT_PROMPT: 'SET_CHAT_PROMPT',
-    SET_SELECTED_TEXT: 'SET_SELECTED_TEXT',
+    SET_SELECTED_TRANSCRIPT_TYPE: 'SET_SELECTED_TRANSCRIPT_TYPE',
 };
 
 function appReducer(state, action) {
@@ -47,6 +49,8 @@ function appReducer(state, action) {
             return { ...state, chatPrompt: action.payload };
         case actionTypes.SET_SELECTED_TEXT:
             return { ...state, selectedText: action.payload };
+        case actionTypes.SET_SELECTED_TRANSCRIPT_TYPE:
+            return { ...state, selectedTranscriptType: action.payload };
         default:
             console.warn(`Unhandled action type: ${action.type}`);
             return state;
@@ -94,5 +98,9 @@ export const actions = {
     setSelectedText: (selectedText) => ({
         type: actionTypes.SET_SELECTED_TEXT,
         payload: selectedText
+    }),
+    setSelectedTranscriptType: (transcriptType) => ({
+        type: actionTypes.SET_SELECTED_TRANSCRIPT_TYPE,
+        payload: transcriptType
     })
 };

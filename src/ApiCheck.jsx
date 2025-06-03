@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { hostname } from './utils/hostname';
 import { getGeminiModel, updateGeminiModel, getGeminiModelList } from './utils/callGemini';
+import { actions, useAppDispatch, useAppState } from './context/AppContext';
 const baseURL = hostname;
 
 export default function ApiCheck() {
@@ -10,7 +11,8 @@ export default function ApiCheck() {
     const [geminiModel, setGeminiModel] = useState('');
     const [geminiModelInput, setGeminiModelInput] = useState('');
     const [geminiModelList, setGeminiModelList] = useState([]);
-
+    const state = useAppState();
+    const dispatch = useAppDispatch();
 
     const getMessageFromAPI = async () => {
         await fetch(`${baseURL}/api/check`).then(res => res.json()).then(res => {
@@ -52,6 +54,12 @@ export default function ApiCheck() {
     return (<><div>
         <h2>API Check</h2>
         <p style={{ color: success ? 'green' : 'red' }}>{apiMessage}</p>
+        <h3>Transcript Type</h3>
+        <select value={state.selectedTranscriptType ?? ''} onChange={(e) => dispatch(actions.setSelectedTranscriptType(e.target.value))}>
+            {state.transcriptTypes.map((type) => (
+                <option key={type} value={type}>{type}</option>
+            ))}
+        </select>
         <h3>Gemini Model</h3>
         <p style={{ color: success ? 'green' : 'red' }}>{geminiModel}</p>
         <input placeholder='Update Gemini Model' type="text" value={geminiModelInput} onChange={(e) => setGeminiModelInput(e.target.value)} />
