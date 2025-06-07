@@ -107,23 +107,16 @@ app.post('/geminiModel', async (req, res) => {
 });
 
 app.get('/youtube/transcript', async (req, res) => {
+  const { url } = req.query;
+  if (!url) {
+    return res.status(400).json({ error: 'Missing URL parameter' });
+  }
+
   try {
-    const { url } = req.query;
-    if (!url) {
-      return res.status(400).send({ error: 'Bad Request', message: 'YouTube URL is required' });
-    }
-
-    const videoIdMatch = url.match(/(?:youtube\.com\/(?:[^/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/);
-    if (!videoIdMatch) {
-      return res.status(400).send({ error: 'Bad Request', message: 'Invalid YouTube URL' });
-    }
-
-    let transcript = await fetchTranscript(url);
-
-    res.send({ transcript });
-  } catch (error) {
-    console.error(error);
-    res.status(500).send({ error: 'Server Error', message: 'Failed to fetch transcript' });
+    const transcript = await fetchTranscript(url);
+    res.json({ transcript });
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to fetch transcript' });
   }
 });
 

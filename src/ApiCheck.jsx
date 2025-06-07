@@ -13,6 +13,7 @@ export default function ApiCheck() {
     const [geminiModelList, setGeminiModelList] = useState([]);
     const state = useAppState();
     const dispatch = useAppDispatch();
+    
 
     const getMessageFromAPI = async () => {
         await fetch(`${baseURL}/api/check`).then(res => res.json()).then(res => {
@@ -26,6 +27,20 @@ export default function ApiCheck() {
             setApiMessage(error?.message ?? 'NO ERROR MESSAGE PROVIDED BY API');
         })
     }
+    
+    useEffect(()=>{
+
+        let storedTranscriptType = localStorage.getItem('selectedTranscriptType');
+        if(storedTranscriptType) {
+            dispatch(actions.setSelectedTranscriptType(storedTranscriptType));
+        } else {
+            dispatch(actions.setSelectedTranscriptType(state.transcriptTypes[0] || ''));
+        }
+
+    }, [])
+    useEffect(() => {
+        localStorage.setItem('selectedTranscriptType', state.selectedTranscriptType);
+    }, [state.selectedTranscriptType]);
 
     useEffect(() => {
         const storedModel = localStorage.getItem('geminiModel');
@@ -55,10 +70,10 @@ export default function ApiCheck() {
         <h2>API Check</h2>
         <p style={{ color: success ? 'green' : 'red' }}>{apiMessage}</p>
         <h3>Transcript Type</h3>
-        <select value={state.selectedTranscriptType ?? ''} onChange={(e) => dispatch(actions.setSelectedTranscriptType(e.target.value))}>
+        <select value={state.selectedTranscriptType} onChange={(e) => setSelectedTranscriptType(e.target.value)}>
             {state.transcriptTypes.map((type) => (
                 <option key={type} value={type}>{type}</option>
-            ))}
+                ))}
         </select>
         <h3>Gemini Model</h3>
         <p style={{ color: success ? 'green' : 'red' }}>{geminiModel}</p>

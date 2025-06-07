@@ -10,8 +10,8 @@ const initialState = {
     isChatOpen: false,
     chatPrompt: '',
     selectedText: '',
-    transcriptTypes: ['my-api', 'external-api'],
-    selectedTranscriptType: 'my-api',
+    transcriptTypes: [ 'internal', 'external' ],
+    selectedTranscriptType: 'internal',
 };
 
 const actionTypes = {

@@ -136,3 +136,33 @@ export const getNewsVideos = async () => {
     throw error;
   }
 }
+/**
+ * Get transcript for a YouTube video by URL or ID
+ * @param {string} videoUrlOrId - Full YouTube URL or video ID
+ * @returns {Promise<string>} Transcript text as a single string
+ */
+export const getYouTubeTranscript = async (videoUrlOrId) => {
+  try {
+    const url = `${hostname}/youtube/transcript?url=${encodeURIComponent(videoUrlOrId)}`;
+    const response = await fetch(url);
+
+    if (!response.ok) {
+      const errorData = await response.json().catch(() => ({}));
+      const message = errorData?.message || `Request failed with status ${response.status}`;
+      throw new Error(message);
+    }
+
+    const data = await response.json();
+
+    if (data === null || typeof data.transcript !== 'string') {
+      throw new Error("Unexpected response format for transcript. Expected transcript to be a string.");
+    }
+
+    console.log({data})
+    return data;
+  } catch (error) {
+    const errorMessage = error?.message || String(error);
+    console.error("YouTube transcript fetch error:", errorMessage);
+    throw error;
+  }
+};

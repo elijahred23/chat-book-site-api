@@ -1,5 +1,7 @@
 import { google } from 'googleapis';
 import dotenv from 'dotenv';
+import { fetchTranscript as fetchYoutubeTranscript } from 'youtube-transcript-plus';
+
 dotenv.config();
 
 const apiKey = process.env.YOUTUBE_API_KEY || '';
@@ -8,10 +10,34 @@ const youtube = google.youtube({
   auth: apiKey
 });
 
-export async function fetchTranscript(url) {
-
-  return url;
+function extractVideoId(input) {
+  if (!input) return null;
+  if (/^[a-zA-Z0-9_-]{11}$/.test(input)) return input;
+  const urlPattern = /(?:v=|\/embed\/|youtu\.be\/|\/shorts\/)([a-zA-Z0-9_-]{11})/;
+  const match = input.match(urlPattern);
+  return match ? match[1] : null;
 }
+
+export async function fetchTranscript(urlOrId) {
+  const videoId = extractVideoId(urlOrId);
+  if (!videoId) return '';
+
+  try {
+    const transcript = await fetchYoutubeTranscript(videoId, {
+      userAgent:
+        'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+    });
+
+    // Combine all text fields into a single string
+    console.log({transcript})
+    const transcriptText = transcript.map(entry => entry.text).join(' ');
+    return transcriptText;
+  } catch (error) {
+    console.error('Transcript fetch failed:', error);
+    return '';
+  }
+}
+
 
 /**
  * Search YouTube videos based on a query string
@@ -210,20 +236,6 @@ export async function getPlaylistItems(playlistId, maxResults = 25) {
     return [];
   }
 }
-
-function extractVideoId(input) {
-  if (!input) return null;
-
-  // If it's exactly 11 characters, assume it's a video ID
-  if (/^[a-zA-Z0-9_-]{11}$/.test(input)) return input;
-
-  // Comprehensive regex to handle watch, embed, shorts, and youtu.be links
-  const urlPattern = /(?:v=|\/embed\/|youtu\.be\/|\/shorts\/)([a-zA-Z0-9_-]{11})/;
-
-  const match = input.match(urlPattern);
-  return match ? match[1] : null;
-}
-
 
 /**
  * Get top-level comments from a YouTube video

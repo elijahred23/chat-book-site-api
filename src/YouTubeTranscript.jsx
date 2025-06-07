@@ -8,7 +8,8 @@ import { hostname } from './utils/hostname';
 import { useFlyout } from './context/FlyoutContext';
 import AutoScroller from './ui/AutoScroller';
 import YouTubeSearchDrawer from './YouTubeSearchDrawer';
-import { actions, useAppDispatch } from './context/AppContext';
+import { actions, useAppDispatch, useAppState } from './context/AppContext';
+import { getYouTubeTranscript as fetchYouTubeTranscriptInternal } from './utils/callYoutube';
 
 const wordSplitNumber = 5000;
 const isValidYouTubeUrl = (url) => {
@@ -16,8 +17,8 @@ const isValidYouTubeUrl = (url) => {
     return regex.test(url);
 };
 
-const fetchYouTubeTranscript = async (video_url) => {
-    const url = "https://api.kome.ai/api/tools/youtube-transcripts";
+const fetchYouTubeTranscriptExternal = async (video_url) => {
+    const url = "https://kome.ai/api/transcript";
     const requestBody = { video_id: video_url, format: true };
 
     try {
@@ -78,7 +79,7 @@ const promptTranscript = async (prompt, transcripts, setProgress, showMessage) =
 const countWords = (s) => (s.match(/\b\w+\b/g) || []).length;
 
 export default function YouTubeTranscript() {
-    const { showMessage } = useFlyout();
+    const state = useAppState();
     const [activeTab, setActiveTab] = useState("transcript");  // Options: transcript, comments, responses
     const [comments, setComments] = useState([]);
     const [splitComments, setSplitComments] = useState([]);
@@ -97,10 +98,20 @@ export default function YouTubeTranscript() {
     const [retryPromptText, setRetryPromptText] = useState("");
     const [retryLoadingIndex, setRetryLoadingIndex] = useState(null);
     const [drawerOpen, setDrawerOpen] = useState(false);
+    const { showMessage } = useFlyout();
+
     const dispatch = useAppDispatch();
 
-
-
+    const fetchYouTubeTranscript = async (video_url) => {
+        let transcript = '';
+        if(state.selectedTranscriptType === "external") {
+            transcript = await fetchYouTubeTranscriptExternal(video_url)
+        } else {
+            transcript = await fetchYouTubeTranscriptInternal(video_url);
+        }
+        console.log("Transcript fetched:", transcript);
+        return transcript;
+    }
     const promptSuggestions = [
         { label: "Summary", value: "Summarize this transcript" },
         { label: "Key Points", value: "Extract key points from this content" },
@@ -196,6 +207,7 @@ export default function YouTubeTranscript() {
             if (url && isValidYouTubeUrl(url) && url !== lastFetchedUrl) {
                 try {
                     const data = await fetchYouTubeTranscript(url);
+                    console.log("Transcript data:", data);
                     if (data?.transcript) {
                         const newTranscript = data.transcript;
                         const wordCount = countWords(newTranscript);
