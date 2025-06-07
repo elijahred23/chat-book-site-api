@@ -1,6 +1,6 @@
 import { google } from 'googleapis';
 import dotenv from 'dotenv';
-import { fetchTranscript as fetchYoutubeTranscript } from 'youtube-transcript-plus';
+import { getSubtitles } from 'youtube-captions-scraper';
 
 dotenv.config();
 
@@ -20,24 +20,23 @@ function extractVideoId(input) {
 
 export async function fetchTranscript(urlOrId) {
   const videoId = extractVideoId(urlOrId);
-  if (!videoId) return '';
+  if (!videoId) {
+    throw new Error('Invalid YouTube URL or Video ID provided.');
+  }
 
   try {
-    const transcript = await fetchYoutubeTranscript(videoId, {
-      lang: 'en',
-      userAgent:
-        'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+    const captions = await getSubtitles({
+      videoID: videoId,
+      lang: 'en'
     });
-
-    // Combine all text fields into a single string
-    console.log({transcript})
-    const transcriptText = transcript.map(entry => entry.text).join(' ');
+    const transcriptText = captions.map(c => c.text).join(' ');
     return transcriptText;
   } catch (error) {
-    console.error('Transcript fetch failed:', error);
-    return '';
+    console.error('Error fetching subtitles:', error);
+    throw new Error('Failed to fetch subtitles for the video.');
   }
 }
+
 
 
 /**
