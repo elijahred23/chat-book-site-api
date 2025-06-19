@@ -394,6 +394,7 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo }) 
                                         <button
                                             className="btn small-btn"
                                             onClick={() => {
+                                                handleCopy(item.url);
                                                 onSelectVideo(item.url);
                                                 onClose();
                                             }}

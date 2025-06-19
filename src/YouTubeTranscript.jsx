@@ -99,6 +99,7 @@ export default function YouTubeTranscript() {
     const [retryLoadingIndex, setRetryLoadingIndex] = useState(null);
     const [drawerOpen, setDrawerOpen] = useState(false);
     const { showMessage } = useFlyout();
+    const [youtubeIframeShowing, setYoutubeIframeShowing] = useState(false);
 
     const dispatch = useAppDispatch();
 
@@ -157,6 +158,9 @@ export default function YouTubeTranscript() {
         }
     };
 
+    const hasValidURL = useMemo(() => {
+        return url && isValidYouTubeUrl(url);
+    }, [url]);
 
     useEffect(() => {
         const loadComments = async () => {
@@ -234,6 +238,7 @@ export default function YouTubeTranscript() {
     return (
         <div className="">
             <div className="tab-bar">
+                <button className={`tab-btn ${activeTab === "transcript-iframes" ? "active" : ""}`} onClick={() => setActiveTab("transcript-iframes")}>Transcript Generator</button>
                 <button className={`tab-btn ${activeTab === "transcript" ? "active" : ""}`} onClick={() => setActiveTab("transcript")}>Transcript</button>
                 {validYoutubeUrl && 
                     <>
@@ -241,9 +246,39 @@ export default function YouTubeTranscript() {
                     </>
                 }
                 <button className={`tab-btn ${activeTab === "responses" ? "active" : ""}`} onClick={() => setActiveTab("responses")}>Prompt Responses</button>
+                <button className="btn primary-btn" disabled={!hasValidURL} onClick={async () => {
+                    setYoutubeIframeShowing(!youtubeIframeShowing);
+                }}>
+                    {youtubeIframeShowing ? "Hide Iframe" : "Show Iframe"}   
+                </button>
             </div>
 
-
+            {youtubeIframeShowing && (
+            <div className="iframe-container">
+                <iframe
+                    src={`https://www.youtube.com/embed/${url.split('v=')[1]}`}
+                    title="YouTube Video"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    style={{ width: '100%', height: '500px' }}
+                ></iframe>
+            </div>
+            )}
+            {
+                activeTab === 'transcript-iframes' && (
+                    <div className="iframe-container">
+                        <iframe
+                            src={`https://kome.ai/tools/youtube-transcript-generator`}
+                            title="YouTube Video"
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                            style={{ width: '100%', height: '500px' }}
+                        ></iframe>
+                    </div>
+                )
+            }
             {activeTab === "transcript" &&
                 <>
                     <div className="input-group">
@@ -254,7 +289,6 @@ export default function YouTubeTranscript() {
                                 🔎 Search YouTube
                             </button>
                         </div>
-
                         <PasteButton setPasteText={setUrl} className="btn paste-btn" />
                     </div>
 
