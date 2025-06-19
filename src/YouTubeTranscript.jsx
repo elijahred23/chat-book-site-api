@@ -100,6 +100,7 @@ export default function YouTubeTranscript() {
     const [drawerOpen, setDrawerOpen] = useState(false);
     const { showMessage } = useFlyout();
     const [youtubeIframeShowing, setYoutubeIframeShowing] = useState(false);
+    const [isMinimized, setIsMinimized] = useState(false);
 
     const dispatch = useAppDispatch();
 
@@ -246,25 +247,51 @@ export default function YouTubeTranscript() {
                     </>
                 }
                 <button className={`tab-btn ${activeTab === "responses" ? "active" : ""}`} onClick={() => setActiveTab("responses")}>Prompt Responses</button>
-                <button className="btn primary-btn" disabled={!hasValidURL} onClick={async () => {
+                <button className="btn primary-btn" onClick={async () => {
                     setYoutubeIframeShowing(!youtubeIframeShowing);
                 }}>
                     {youtubeIframeShowing ? "Hide Iframe" : "Show Iframe"}   
                 </button>
+                {youtubeIframeShowing && (
+                    <button
+                        className="btn secondary-btn"
+                        onClick={() => setIsMinimized((prev) => !prev)}
+                    >
+                        {isMinimized ? "Expand Video" : "Minimize Video"}
+                    </button>
+                )}
             </div>
 
-            {youtubeIframeShowing && (
-            <div className="iframe-container">
-                <iframe
-                    src={`https://www.youtube.com/embed/${url.split('v=')[1]}`}
-                    title="YouTube Video"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    style={{ width: '100%', height: '500px' }}
-                ></iframe>
-            </div>
-            )}
+<div
+    className={`iframe-container ${isMinimized ? "minimized-iframe" : ""}`}
+    style={isMinimized ? {
+        position: 'fixed',
+        bottom: '10px',
+        right: '10px',
+        width: '320px',
+        height: '180px',
+        zIndex: 1000,
+        boxShadow: '0 0 10px rgba(0,0,0,0.3)'
+    } : {
+        width: '100%',
+        height: '500px',
+        marginBottom: '1rem'
+    }}
+>
+    <iframe
+        src={`https://www.youtube.com/embed/${url.split('v=')[1]}`}
+        title="YouTube Video"
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+        style={{
+            width: '100%',
+            height: '100%',
+            borderRadius: '8px'
+        }}
+    ></iframe>
+</div>
+
             {
                 activeTab === 'transcript-iframes' && (
                     <div className="iframe-container">
