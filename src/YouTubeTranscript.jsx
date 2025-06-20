@@ -99,9 +99,15 @@ export default function YouTubeTranscript() {
     const [retryLoadingIndex, setRetryLoadingIndex] = useState(null);
     const [drawerOpen, setDrawerOpen] = useState(false);
     const { showMessage } = useFlyout();
-    const [youtubeIframeShowing, setYoutubeIframeShowing] = useState(false);
-    const [isMinimized, setIsMinimized] = useState(false);
+    const [youtubeIframeShowing, setYoutubeIframeShowing] = useState(() => {
+    const storedValue = localStorage.getItem("yt_iframe_showing");
+        return storedValue !== null ? JSON.parse(storedValue) : false;
+    });
 
+    const [isMinimized, setIsMinimized] = useState(() => {
+    const storedValue = localStorage.getItem("yt_iframe_minimized");
+        return storedValue !== null ? JSON.parse(storedValue) : false;
+    });
     const dispatch = useAppDispatch();
 
     const fetchYouTubeTranscript = async (video_url) => {
@@ -142,7 +148,7 @@ export default function YouTubeTranscript() {
             setProgress(0);
             const responses = await promptTranscript(prompt, splitTranscript, setProgress, showMessage);
             setPromptResponses(responses);
-            setActiveTab("responses")
+            setActiveTab("responses");
         } finally {
             setLoadingPrompt(false);
         }
@@ -193,7 +199,9 @@ export default function YouTubeTranscript() {
         localStorage.setItem("yt_prompt", prompt);
         localStorage.setItem("yt_split_length", splitLength);
         localStorage.setItem("yt_promptResponses", JSON.stringify(promptResponses));
-    }, [transcript, prompt, splitLength, promptResponses]);
+        localStorage.setItem("yt_iframe_showing", JSON.stringify(youtubeIframeShowing));
+        localStorage.setItem("yt_iframe_minimized", JSON.stringify(isMinimized));
+    }, [transcript, prompt, splitLength, promptResponses, youtubeIframeShowing, isMinimized]);
 
     useEffect(() => {
         const wc = countWords(manuallyEnteredTranscript);
@@ -262,35 +270,38 @@ export default function YouTubeTranscript() {
                 )}
             </div>
 
-<div
-    className={`iframe-container ${isMinimized ? "minimized-iframe" : ""}`}
-    style={isMinimized ? {
-        position: 'fixed',
-        bottom: '10px',
-        right: '10px',
-        width: '320px',
-        height: '180px',
-        zIndex: 1000,
-        boxShadow: '0 0 10px rgba(0,0,0,0.3)'
-    } : {
-        width: '100%',
-        height: '500px',
-        marginBottom: '1rem'
-    }}
->
-    <iframe
-        src={`https://www.youtube.com/embed/${url.split('v=')[1]}`}
-        title="YouTube Video"
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-        style={{
-            width: '100%',
-            height: '100%',
-            borderRadius: '8px'
-        }}
-    ></iframe>
-</div>
+            { youtubeIframeShowing && 
+                <div
+                    className={`iframe-container ${isMinimized ? "minimized-iframe" : ""}`}
+                    style={isMinimized ? {
+                        position: 'fixed',
+                        bottom: '10px',
+                        right: '10px',
+                        width: '320px',
+                        height: '180px',
+                        zIndex: 1000,
+                        boxShadow: '0 0 10px rgba(0,0,0,0.3)'
+                    } : {
+                        width: '100%',
+                        height: '500px',
+                        marginBottom: '1rem'
+                    }}
+                >
+                    <iframe
+                        src={`https://www.youtube.com/embed/${url.split('v=')[1]}`}
+                        title="YouTube Video"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        style={{
+                            width: '100%',
+                            height: '100%',
+                            borderRadius: '8px'
+                        }}
+                    ></iframe>
+                </div>
+            }
+
 
             {
                 activeTab === 'transcript-iframes' && (
