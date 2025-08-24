@@ -1,0 +1,103 @@
+:root {
+  --bg: #0b1020;
+  --fg: #e6e9ef;
+  --muted: #aab0c0;
+  --accent: #5dd3ff;
+  --ok: #6ee7a5;
+  --bad: #ff7a7a;
+  --current: #ffd76e;
+  --barbg: #1a2035;
+}
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+body {
+  margin: 0;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  background: var(--bg);
+  color: var(--fg);
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px 16px 64px;
+}
+h1 { margin: 0 0 16px; font-size: 24px; }
+.controls {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+textarea {
+  width: 100%;
+  min-height: 160px;
+  resize: vertical;
+  background: #0f152b;
+  color: var(--fg);
+  border: 1px solid #243052;
+  border-radius: 8px;
+  padding: 12px;
+  line-height: 1.4;
+}
+button {
+  background: var(--accent);
+  color: #001018;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+button.secondary {
+  background: #2b3558;
+  color: var(--fg);
+}
+.row { display: flex; gap: 8px; flex-wrap: wrap; }
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(120px, 1fr));
+  gap: 8px;
+  margin: 12px 0 6px;
+}
+.metric {
+  background: #101736;
+  border: 1px solid #232c50;
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+.metric .label { color: var(--muted); font-size: 12px; }
+.metric .value { font-size: 20px; font-weight: 800; }
+.progress {
+  height: 10px;
+  background: var(--barbg);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 14px;
+  border: 1px solid #2a3360;
+}
+.progress > div {
+  height: 100%;
+  background: linear-gradient(90deg, #56ccf2, #2f80ed);
+  width: 0%;
+}
+.reader {
+  background: #0f152b;
+  border: 1px solid #243052;
+  border-radius: 10px;
+  padding: 14px;
+  min-height: 180px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+span.ok { color: var(--ok); }
+span.bad { color: var(--bad); text-decoration: underline; text-decoration-thickness: 2px; }
+span.current { background: var(--current); color: #1b1300; }
+.small { color: var(--muted); font-size: 12px; }
+kbd {
+  background: #2b3558;
+  border-radius: 6px;
+  padding: 2px 6px;
+  font-size: 12px;
+  border: 1px solid #3b4770;
+}
+.footer { margin-top: 20px; color: var(--muted); font-size: 12px; }

@@ -13,6 +13,7 @@ import HtmlBuilder from './HtmlBuilder';
 import WebBrowser from './WebBrowser.jsx';
 import { useAppDispatch, useAppState, actions} from './context/AppContext.jsx';
 import Quran from './Quran.jsx';
+import TypingTest from './TypingText.jsx';
 
 function App() {
   const [isFullWidth, setIsFullWidth] = useState(true);
@@ -43,6 +44,7 @@ function App() {
               <NavLink to="/htmlBuilder" activeClassName="active">HTML Builder</NavLink>
               <NavLink to="/Quran" activeClassName="active">Quran</NavLink>
               <NavLink to="/apiCheck" activeClassName="active">Settings</NavLink>
+              <NavLink to="/typingTest" activeClassName="active">Typing Test</NavLink>
             </div>
           </div>
 
@@ -63,6 +65,7 @@ function App() {
               <Route path="/htmlBuilder" element={<HtmlBuilder />} />
               <Route path="/webBrowser" element={<WebBrowser />} />
               <Route path="/Quran" element={<Quran />} />
+              <Route path="/typingTest" element={<TypingTest />} />
             </Routes>
           </div>
 
