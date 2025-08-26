@@ -231,7 +231,7 @@ greet("world");`)
 
   return (
     <div className="container">
-      <h1>Programming Typing Test</h1>
+      <h6 style={{ textAlign: 'center' }}>Programming Typing Test</h6>
 
       <div className="controls">
         <textarea
