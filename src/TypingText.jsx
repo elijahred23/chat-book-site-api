@@ -48,6 +48,10 @@ greet("world");`)
     if (started && !finished) hiddenInputRef.current?.focus()
   }, [started, finished])
 
+  const focus = () => {
+    hiddenInputRef.current?.focus()
+  }
+
   // Timer tick
   useEffect(() => {
     if (!started || finished) return
@@ -245,6 +249,7 @@ greet("world");`)
           <button className="secondary" onClick={() => { setSource(''); }}>Clear</button>
           <button onClick={start} disabled={!normalized.length || (started && !finished)}>Start</button>
           <button className="secondary" onClick={stop} disabled={!started}>Stop</button>
+          <button className="secondary" onClick={focus}>Focus</button>
           <PasteButton onPaste={(text) => setSource(text)} />
         </div>
 
@@ -304,6 +309,10 @@ greet("world");`)
       <div className="footer">
         <div>Loaded characters: {normalized.length} • Typed: {typed.length} • Correct: {correctChars}</div>
         <div>Elapsed: {(elapsedMs/1000).toFixed(1)}s</div>
+        {/*
+        button that takes you to top of the screen
+        */}
+        <button className="secondary" onClick={() => window.scrollTo(0, 500)}>Top ↑</button>
       </div>
     </div>
   )
