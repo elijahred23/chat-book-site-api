@@ -312,7 +312,19 @@ greet("world");`)
         {/*
         button that takes you to top of the screen
         */}
-        <button className="secondary" onClick={() => window.scrollTo(0, 500)}>Top ↑</button>
+        <button
+            className="secondary"
+            type="button"
+            onMouseDown={(e) => e.preventDefault()}     // stop button from taking focus
+            onTouchStart={(e) => e.preventDefault()}    // same for touch
+            onClick={() => {
+                window.scrollTo({ top: 500, behavior: 'smooth' }); // you had (0, 500)
+                requestAnimationFrame(() => hiddenInputRef.current?.focus()); // re-focus just in case
+            }}
+            >
+            Top ↑
+        </button>
+
       </div>
     </div>
   )
