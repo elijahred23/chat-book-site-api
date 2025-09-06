@@ -232,6 +232,7 @@ greet("world");`)
     if (ch === '\n') return '⏎\n'
     return ch
   }
+  const focusing = hiddenInputRef.current === document.activeElement;
 
   return (
     <div className="container">
@@ -272,6 +273,7 @@ greet("world");`)
         </div>
       </div>
 
+      {focusing && 
       <div className="metrics">
         <div className="metric">
           <div className="label">WPM</div>
@@ -290,6 +292,7 @@ greet("world");`)
           <div className="value">{Math.round(progress * 100)}%</div>
         </div>
       </div>
+      }
 
       <div className="progress" aria-label="progress">
         <div style={{ width: `${Math.round(progress * 100)}%` }} />
@@ -309,6 +312,7 @@ greet("world");`)
       <div className="footer">
         <div>Loaded characters: {normalized.length} • Typed: {typed.length} • Correct: {correctChars}</div>
         <div>Elapsed: {(elapsedMs/1000).toFixed(1)}s</div>
+        <div>Elapsed Minutes: {((elapsedMs/1000)/60).toFixed(1)}m</div>
         {/*
         button that takes you to top of the screen
         */}

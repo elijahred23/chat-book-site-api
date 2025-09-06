@@ -55,18 +55,23 @@ button.secondary {
 .row { display: flex; gap: 8px; flex-wrap: wrap; }
 .metrics {
   display: grid;
-  grid-template-columns: repeat(4, minmax(120px, 1fr));
+  grid-template-columns: repeat(4, minmax(70px, 1fr));
   gap: 8px;
   margin: 12px 0 6px;
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1000;
 }
 .metric {
   background: #101736;
   border: 1px solid #232c50;
   border-radius: 8px;
-  padding: 10px 12px;
+  padding: 5px 5px;
 }
-.metric .label { color: var(--muted); font-size: 12px; }
-.metric .value { font-size: 20px; font-weight: 800; }
+.metric .label { color: var(--muted); font-size: 8px; }
+.metric .value { font-size: 12px; font-weight: 800; }
 .progress {
   height: 10px;
   background: var(--barbg);
@@ -81,7 +86,7 @@ button.secondary {
   width: 0%;
 }
 .reader {
-  background: #0f152b;
+  /* background: #0f152b; */
   border: 1px solid #243052;
   border-radius: 10px;
   padding: 14px;
