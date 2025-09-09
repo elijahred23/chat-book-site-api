@@ -79,6 +79,19 @@ greet("world");`)
   const accuracy = typedChars ? Math.max(0, Math.min(1, correctChars / typedChars)) : 1
   const progress = normalized.length ? Math.min(1, caret / normalized.length) : 0
 
+  const determineWordCount = (text) => {
+    // Split the text by whitespace and filter out empty strings
+    const words = text.trim().split(/\s+/).filter(Boolean);
+    return words.length;
+  };
+
+  const predictedMinutesToComplete = useMemo(() => {
+    let avgWpm = 60;
+    let wordCount = determineWordCount(removeMarkdown(source));  
+    let minutesToComplete = (wordCount / avgWpm).toFixed(2);
+    return minutesToComplete;
+  }, [source]);
+
   const start = () => {
     if (!normalized.length) return
     setStarted(true)
@@ -251,7 +264,9 @@ greet("world");`)
           <button onClick={start} disabled={!normalized.length || (started && !finished)}>Start</button>
           <button className="secondary" onClick={stop} disabled={!started}>Stop</button>
           <button className="secondary" onClick={focus}>Focus</button>
-          <PasteButton onPaste={(text) => setSource(text)} />
+          {source && 
+          <div style={{fontSize:"12px"}}>Completion Time (60wpm): {predictedMinutesToComplete} minutes</div>
+          }
         </div>
 
         <div className="row">
