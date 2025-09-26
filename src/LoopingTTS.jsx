@@ -14,6 +14,8 @@ const LoopingTTS = () => {
   const [darkMode, setDarkMode] = useState(false);
   const [currentSentence, setCurrentSentence] = useState("");
   const [timeEstimate, setTimeEstimate] = useState("");
+  const [progress, setProgress] = useState(0);
+  const [endTime, setEndTime] = useState("");
 
   const voicesRef = useRef([]);
   const voiceRef = useRef(null);
@@ -37,19 +39,20 @@ const LoopingTTS = () => {
     synth.onvoiceschanged = loadVoices;
   }, [samOnly]);
 
-  // Compute time estimate
+  // Compute time estimate string
   const computeTimeEstimate = () => {
     const words = text.trim().split(/\s+/).filter(Boolean);
     const wpm = 200 * rate;
     const totalMinutes = words.length / (wpm || 1);
     const mins = Math.floor(totalMinutes);
     const secs = Math.round((totalMinutes - mins) * 60);
-    return (mins > 0 ? mins + "m " : "") + secs + "s";
+    return { mins, secs, str: (mins > 0 ? mins + "m " : "") + secs + "s" };
   };
 
   useEffect(() => {
     if (text.trim()) {
-      setTimeEstimate("Approximate duration: " + computeTimeEstimate());
+      const { str } = computeTimeEstimate();
+      setTimeEstimate("Approximate duration: " + str);
     } else {
       setTimeEstimate("");
     }
@@ -57,6 +60,27 @@ const LoopingTTS = () => {
 
   const splitText = (txt) => {
     return txt.match(/[^.!?]+[.!?]*/g) || [txt];
+  };
+
+  const updateProgress = () => {
+    const total = chunksRef.current.length;
+    if (!total) {
+      setProgress(0);
+      return;
+    }
+    setProgress(((idxRef.current) / total) * 100);
+
+    // Calculate estimated end time
+    const { mins, secs } = computeTimeEstimate();
+    const totalSeconds = mins * 60 + secs;
+    const remainingFraction = 1 - idxRef.current / total;
+    const remainingSeconds = totalSeconds * remainingFraction;
+
+    const end = new Date(Date.now() + remainingSeconds * 1000);
+    setEndTime(
+      "Estimated end: " +
+        end.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })
+    );
   };
 
   const speakNext = () => {
@@ -69,6 +93,8 @@ const LoopingTTS = () => {
         setStatus("Finished");
         playingRef.current = false;
         setCurrentSentence("");
+        setProgress(100);
+        setEndTime("Completed");
       }
       return;
     }
@@ -80,9 +106,13 @@ const LoopingTTS = () => {
     utter.pitch = pitch;
     utter.volume = volume;
     setCurrentSentence(utter.text.trim());
-    utter.onend = speakNext;
+    utter.onend = () => {
+      updateProgress();
+      speakNext();
+    };
     synth.speak(utter);
     setStatus("Speaking…");
+    updateProgress();
   };
 
   const handleStart = () => {
@@ -91,6 +121,8 @@ const LoopingTTS = () => {
     idxRef.current = 0;
     playingRef.current = true;
     setCurrentSentence("");
+    setProgress(0);
+    updateProgress();
     speakNext();
   };
 
@@ -109,6 +141,8 @@ const LoopingTTS = () => {
     playingRef.current = false;
     setStatus("Stopped");
     setCurrentSentence("");
+    setProgress(0);
+    setEndTime("");
   };
 
   const handlePrev = () => {
@@ -149,56 +183,26 @@ const LoopingTTS = () => {
     setText("");
     setStatus("Cleared");
     setCurrentSentence("");
+    setProgress(0);
+    setEndTime("");
   };
 
   return (
     <div className={`container ${darkMode ? "dark" : ""}`}>
       <style>{`
-        :root {
-          --primary: #4a7afe;
-          --secondary: #f0f0f5;
-          --radius: 12px;
-          --gap: 14px;
-        }
-        * { box-sizing: border-box; }
-        body.dark { background: #0b0f19; color: #f5f5f5; }
-        .container {
-          max-width: 600px;
-          margin: auto;
-          display: flex;
-          flex-direction: column;
-          gap: var(--gap);
-          font-family: -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
-          padding: 16px;
-        }
-        textarea {
+        .progress-bar-container {
           width: 100%;
-          min-height: 40vh;
-          padding: 12px;
-          font-size: 1rem;
-          border-radius: var(--radius);
-          border: 1px solid #ccc;
-          resize: vertical;
+          background: #e0e0e0;
+          border-radius: 8px;
+          height: 12px;
+          overflow: hidden;
+          margin: 8px 0;
         }
-        .buttons, .sliders {
-          display: flex;
-          gap: var(--gap);
-          flex-wrap: wrap;
-          justify-content: center;
+        .progress-bar {
+          height: 100%;
+          background: #4a7afe;
+          transition: width 0.3s ease;
         }
-        button {
-          flex: 1;
-          min-width: 80px;
-          padding: 14px;
-          font-size: 1rem;
-          font-weight: 600;
-          border: none;
-          border-radius: var(--radius);
-          cursor: pointer;
-        }
-        button.primary { background: var(--primary); color: #fff; }
-        button.secondary { background: var(--secondary); }
-        button.danger { background: #ff4d4d; color: #fff; }
       `}</style>
 
       <h1>Looping Text-to-Speech (Samantha)</h1>
@@ -277,11 +281,20 @@ const LoopingTTS = () => {
       </div>
 
       <div className="status">{status}</div>
+
       <div style={{ textAlign: "center", fontWeight: "bold" }}>
         {currentSentence}
       </div>
+
+      <div className="progress-bar-container">
+        <div className="progress-bar" style={{ width: `${progress}%` }}></div>
+      </div>
+
       <div style={{ textAlign: "center", fontSize: "0.85rem" }}>
         {timeEstimate}
+      </div>
+      <div style={{ textAlign: "center", fontSize: "0.85rem" }}>
+        {endTime}
       </div>
 
       <div className="options">
