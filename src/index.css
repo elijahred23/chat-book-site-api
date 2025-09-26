@@ -277,10 +277,17 @@ option {
   background-color: #1565c0;
 }
 
-.floating-chat-btn {
+.floating-chat-container {
   position: fixed;
   bottom: 1.5rem;
   right: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem; /* space between buttons */
+  z-index: 1500;
+}
+
+.chat-toggle-btn {
   background-color: #1e88e5;
   color: white;
   padding: 0.8rem 1.4rem;
@@ -288,11 +295,10 @@ option {
   border-radius: 50px;
   font-size: 1.1rem;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
-  z-index: 1500;
   transition: background-color 0.3s ease;
 }
 
-.floating-chat-btn:hover {
+.chat-toggle-btn:hover {
   background-color: #1565c0;
 }
 

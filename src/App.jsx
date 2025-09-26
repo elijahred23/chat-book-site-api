@@ -14,15 +14,17 @@ import WebBrowser from './WebBrowser.jsx';
 import { useAppDispatch, useAppState, actions} from './context/AppContext.jsx';
 import Quran from './Quran.jsx';
 import TypingTest from './TypingText.jsx';
+import LoopingTTS from './LoopingTTS.jsx';
 
 function App() {
   const [isFullWidth, setIsFullWidth] = useState(true);
+  const [isTTSOpen, setIsTTSOpen] = useState(false);  // NEW
   const dispatch = useAppDispatch();
-  const {isChatOpen} = useAppState();
+  const { isChatOpen } = useAppState();
 
   const toggleChat = () => dispatch(actions.setIsChatOpen(!isChatOpen));
+  const toggleTTS = () => setIsTTSOpen(prev => !prev);   // NEW
   const toggleWidth = () => setIsFullWidth(prev => !prev);
-
   useEffect(() => {
     const savedText = localStorage.getItem('selectedText');
     if (savedText) {
@@ -49,11 +51,15 @@ function App() {
           </div>
 
 
-          <div>
-            <button onClick={toggleChat} className='chat-toggle-btn floating-chat-btn'>
+          <div className="floating-chat-container">
+            <button onClick={toggleChat} className="chat-toggle-btn floating-chat-btn">
               {isChatOpen ? '❌' : '💬 Ask AI'}
             </button>
+            <button onClick={toggleTTS} className="chat-toggle-btn floating-chat-btn">
+              {isTTSOpen ? '❌' : '🔊 TTS'}
+            </button>
           </div>
+
           <div className="content">
             <Routes>
               <Route path="/chatBook" element={<ChatBookApp />} />
@@ -85,6 +91,22 @@ function App() {
               </div>
             </div>
             <GptPromptComponent />
+          </div>
+          {/* Slide-out Looping TTS */}
+          <div className={`chat-drawer ${isTTSOpen ? 'open' : ''} ${isFullWidth ? 'full' : 'half'}`}>
+            <div className="chat-drawer-header">
+              <div>
+                <button className="width-toggle-btn" onClick={toggleWidth}>
+                  {isFullWidth ? '↔ Half Width' : '↔ Full Width'}
+                </button>
+              </div>
+              <div>
+                <button className="close-chat-btn" onClick={toggleTTS}>
+                  ✖
+                </button>
+              </div>
+            </div>
+            <LoopingTTS />
           </div>
 
         </BrowserRouter>
