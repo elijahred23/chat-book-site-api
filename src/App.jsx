@@ -20,14 +20,16 @@ import FlashCardApp from './FlashCardApp.jsx';
 
 function App() {
   const [isFullWidth, setIsFullWidth] = useState(true);
-  const [isTTSOpen, setIsTTSOpen] = useState(false);  // NEW
-  const [isTeleprompterOpen, setIsTeleprompterOpen] = useState(false); // NEW
+  const [isTTSOpen, setIsTTSOpen] = useState(false);
+  const [isTeleprompterOpen, setIsTeleprompterOpen] = useState(false);
+  const [showFloatingBtns, setShowFloatingBtns] = useState(true); // NEW state
   const dispatch = useAppDispatch();
   const { isChatOpen } = useAppState();
 
   const toggleChat = () => dispatch(actions.setIsChatOpen(!isChatOpen));
-  const toggleTTS = () => setIsTTSOpen(prev => !prev);   // NEW
+  const toggleTTS = () => setIsTTSOpen(prev => !prev);
   const toggleWidth = () => setIsFullWidth(prev => !prev);
+
   useEffect(() => {
     const savedText = localStorage.getItem('selectedText');
     if (savedText) {
@@ -54,17 +56,42 @@ function App() {
             </div>
           </div>
 
-
+          {/* Floating Buttons */}
           <div className="floating-chat-container">
-            <button onClick={toggleChat} className="chat-toggle-btn floating-chat-btn">
-              {isChatOpen ? '❌' : '💬 Ask AI'}
+            {/* Small toggle button */}
+            <button
+              onClick={() => setShowFloatingBtns(prev => !prev)}
+              className="floating-toggle-btn"
+              style={{
+                position: "fixed",
+                bottom: "20px",
+                right: "20px",
+                width: "40px",
+                height: "40px",
+                borderRadius: "50%",
+                background: "#444",
+                color: "#fff",
+                fontSize: "18px",
+                zIndex: 1000
+              }}
+            >
+              {showFloatingBtns ? "–" : "+"}
             </button>
-            <button onClick={toggleTTS} className="chat-toggle-btn floating-chat-btn">
-              {isTTSOpen ? '❌' : '🔊 TTS'}
-            </button>
-            <button onClick={() => setIsTeleprompterOpen(true)} className="chat-toggle-btn floating-chat-btn">
-              {isTeleprompterOpen ? '❌' : '📜 Teleprompter'}
-            </button>
+
+            {/* Other floating buttons, only visible if toggled on */}
+            {showFloatingBtns && (
+              <>
+                <button onClick={toggleChat} className="chat-toggle-btn floating-chat-btn">
+                  {isChatOpen ? '❌' : '💬 Ask AI'}
+                </button>
+                <button onClick={toggleTTS} className="chat-toggle-btn floating-chat-btn">
+                  {isTTSOpen ? '❌' : '🔊 TTS'}
+                </button>
+                <button onClick={() => setIsTeleprompterOpen(true)} className="chat-toggle-btn floating-chat-btn">
+                  {isTeleprompterOpen ? '❌' : '📜 Teleprompter'}
+                </button>
+              </>
+            )}
           </div>
 
           <div className="content">
@@ -83,58 +110,45 @@ function App() {
             </Routes>
           </div>
 
-
-          {/* Slide-out ChatGPT assistant */}
+          {/* Slide-out components */}
           <div className={`chat-drawer ${isChatOpen ? 'open' : ''} ${isFullWidth ? 'full' : 'half'}`}>
             <div className="chat-drawer-header">
-              <div>
-                <button className="width-toggle-btn" onClick={toggleWidth}>
-                  {isFullWidth ? '↔ Half Width' : '↔ Full Width'}
-                </button>
-              </div>
-              <div>
-                <button className="close-chat-btn" onClick={toggleChat}>
-                  ✖
-                </button>
-              </div>
+              <button className="width-toggle-btn" onClick={toggleWidth}>
+                {isFullWidth ? '↔ Half Width' : '↔ Full Width'}
+              </button>
+              <button className="close-chat-btn" onClick={toggleChat}>✖</button>
             </div>
             <GptPromptComponent />
           </div>
-          {/* Slide-out Looping TTS */}
+
           <div className={`chat-drawer ${isTTSOpen ? 'open' : ''} ${isFullWidth ? 'full' : 'half'}`}>
             <div className="chat-drawer-header">
-              <div>
-                <button className="width-toggle-btn" onClick={toggleWidth}>
-                  {isFullWidth ? '↔ Half Width' : '↔ Full Width'}
-                </button>
-              </div>
-              <div>
-                <button className="close-chat-btn" onClick={toggleTTS}>
-                  ✖
-                </button>
-              </div>
+              <button className="width-toggle-btn" onClick={toggleWidth}>
+                {isFullWidth ? '↔ Half Width' : '↔ Full Width'}
+              </button>
+              <button className="close-chat-btn" onClick={toggleTTS}>✖</button>
             </div>
             <LoopingTTS />
           </div>
-          {/* Slide-out Teleprompter */}
+
           <div className={`chat-drawer ${isTeleprompterOpen ? 'open' : ''} ${isFullWidth ? 'full' : 'half'}`}>
             <div className="chat-drawer-header">
-              <div>
-                <button className="width-toggle-btn" onClick={() => setIsTeleprompterOpen(false)}>
-                  ✖ Close Teleprompter
-                </button>
-              </div>
+              <button className="width-toggle-btn" onClick={() => setIsTeleprompterOpen(false)}>
+                ✖ Close Teleprompter
+              </button>
             </div>
             <Teleprompter />
           </div>
         </BrowserRouter>
+
         <DownloadCopyTextFile />
         <TextSelectionTooltip 
-        onAskAI={(text) => {
-          localStorage.setItem('selectedText', text);
-          dispatch(actions.setIsChatOpen(true));
-          dispatch(actions.setSelectedText(text)) 
-        }} />
+          onAskAI={(text) => {
+            localStorage.setItem('selectedText', text);
+            dispatch(actions.setIsChatOpen(true));
+            dispatch(actions.setSelectedText(text));
+          }} 
+        />
       </div>
     </>
   );
