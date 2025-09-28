@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 // Import the back‑end helpers. These functions are assumed to be defined
 // elsewhere in your project (for example in a geminiApi.js file). They
@@ -148,6 +148,10 @@ export default function FlashCardApp() {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
+  /* ---------------------------------------------------------------------- */
+  /* Gemini API integration                                                 */
+  /* ---------------------------------------------------------------------- */
+
   /**
    * Submit the user's prompt to Gemini and attempt to extract a JSON array
    * of cards from the response. If successful, the new cards will be
@@ -204,7 +208,7 @@ export default function FlashCardApp() {
   };
 
   /* ---------------------------------------------------------------------- */
-  /* File upload and download                                               */
+  /* File upload, download, copy and paste                                 */
   /* ---------------------------------------------------------------------- */
 
   /**
@@ -271,6 +275,143 @@ export default function FlashCardApp() {
     } catch (err) {
       setError("Failed to prepare download: " + err.message);
     }
+  };
+
+  /**
+   * Copy the current deck of cards to the user's clipboard as pretty printed JSON.
+   */
+  const handleCopyJson = async () => {
+    try {
+      const jsonString = JSON.stringify(cards, null, 2);
+      await navigator.clipboard.writeText(jsonString);
+      setError(null);
+    } catch (err) {
+      setError("Failed to copy to clipboard: " + err.message);
+    }
+  };
+
+  /**
+   * Paste JSON content from the user's clipboard and load it as the current deck.
+   * Attempts to parse clipboard text as JSON and normalises the resulting
+   * array of flashcards. If parsing fails, an error is shown.
+   */
+  const handlePasteJson = async () => {
+    try {
+      const text = await navigator.clipboard.readText();
+      const json = JSON.parse(text);
+      const rawCards = Array.isArray(json)
+        ? json
+        : Array.isArray(json.cards)
+        ? json.cards
+        : null;
+      if (rawCards) {
+        const imported = rawCards.map((card) => ({
+          question: (card.question || card.word || card.term || "").toString(),
+          answer: (card.answer || card.definition || card.meaning || "").toString(),
+        }));
+        setCards(imported);
+        setError(null);
+      } else {
+        setError(
+          "Clipboard does not contain a valid array of flash cards."
+        );
+      }
+    } catch (err) {
+      setError("Failed to paste JSON: " + err.message);
+    }
+  };
+
+  /* ---------------------------------------------------------------------- */
+  /* Text to speech (TTS) functionality                                    */
+  /* ---------------------------------------------------------------------- */
+
+  /**
+   * A ref used to control whether a looped TTS session should continue.
+   * When set to `false`, any ongoing read loop will terminate after the
+   * current utterance finishes.
+   */
+  const ttsLoopRef = useRef(false);
+
+  /**
+   * Speak a given string using the Web Speech API. Adjusts pitch and rate
+   * slightly for a more natural cadence. This helper returns a
+   * SpeechSynthesisUtterance instance so that callers can attach their own
+   * event handlers (e.g. for chaining multiple utterances).
+   *
+   * @param {string} text The text to be spoken aloud.
+   */
+  const speakText = (text) => {
+    const utterance = new SpeechSynthesisUtterance(text);
+    // Adjust these values to tune the voice characteristics.
+    utterance.rate = 1;
+    utterance.pitch = 1;
+    // You could also choose a specific voice here if multiple are installed.
+    return utterance;
+  };
+
+  /**
+   * Read aloud the current card's question and answer. Determines the
+   * appropriate card based on the active mode. Cancels any ongoing speech
+   * before speaking the new content.
+   */
+  const readCurrentCard = () => {
+    if (cards.length === 0) return;
+    let index = 0;
+    if (mode === "study") {
+      index = studyIndex;
+    } else if (mode === "quiz") {
+      index = quizIndex;
+    } else if (mode === "recall") {
+      index = recallIndex;
+    } else {
+      index = 0;
+    }
+    const card = cards[index];
+    if (!card) return;
+    // Stop any existing utterances before starting a new one.
+    window.speechSynthesis.cancel();
+    const utterance = speakText(`${card.question}. ${card.answer}.`);
+    window.speechSynthesis.speak(utterance);
+  };
+
+  /**
+   * Loop through all cards in the deck and read each question and answer
+   * sequentially. Once the end is reached, the loop starts over. Users
+   * can stop the loop at any time via the stopTts function. If called
+   * while a loop is already running, it restarts from the beginning.
+   */
+  const readAllCards = () => {
+    if (cards.length === 0) return;
+    // Cancel any current speech and signal that the loop should run.
+    window.speechSynthesis.cancel();
+    ttsLoopRef.current = true;
+    let i = 0;
+    const speakNext = () => {
+      if (!ttsLoopRef.current) return;
+      // Wrap around when reaching the end of the deck.
+      if (i >= cards.length) {
+        i = 0;
+      }
+      const card = cards[i];
+      const utterance = speakText(`${card.question}. ${card.answer}.`);
+      utterance.onend = () => {
+        i++;
+        if (ttsLoopRef.current) {
+          speakNext();
+        }
+      };
+      window.speechSynthesis.speak(utterance);
+    };
+    speakNext();
+  };
+
+  /**
+   * Stop any ongoing text-to-speech activity. Cancels the current
+   * utterance and prevents looped playback from continuing.
+   */
+  const stopTts = () => {
+    ttsLoopRef.current = false;
+    window.speechSynthesis.cancel();
   };
 
   /* ---------------------------------------------------------------------- */
@@ -504,7 +645,8 @@ export default function FlashCardApp() {
   );
 
   /**
-   * Render the controls for uploading, generating and downloading cards.
+   * Render the controls for uploading, generating and downloading cards,
+   * plus copying and pasting JSON via the clipboard.
    */
   const renderControls = () => (
     <div style={{ marginBottom: "1rem", color: COLORS.text }}>
@@ -532,6 +674,34 @@ export default function FlashCardApp() {
         >
           Download JSON
         </button>
+        <button
+          onClick={handleCopyJson}
+          style={{
+            marginLeft: "0.5rem",
+            padding: "0.5rem 1rem",
+            backgroundColor: COLORS.buttonBg,
+            border: `1px solid ${COLORS.border}`,
+            borderRadius: "4px",
+            color: COLORS.text,
+            cursor: "pointer",
+          }}
+        >
+          Copy JSON
+        </button>
+        <button
+          onClick={handlePasteJson}
+          style={{
+            marginLeft: "0.5rem",
+            padding: "0.5rem 1rem",
+            backgroundColor: COLORS.buttonBg,
+            border: `1px solid ${COLORS.border}`,
+            borderRadius: "4px",
+            color: COLORS.text,
+            cursor: "pointer",
+          }}
+        >
+          Paste JSON
+        </button>
       </div>
       <div style={{ marginBottom: "0.5rem" }}>
         <label>
@@ -540,6 +710,12 @@ export default function FlashCardApp() {
             type="text"
             value={prompt}
             onChange={(e) => setPrompt(e.target.value)}
+            onKeyDown={e => {
+              if (e.key === 'Enter' && !loading) {
+                e.preventDefault();
+                handleGenerateFromPrompt();
+              }
+            }}
             placeholder="Enter topic for vocabulary flash cards"
             style={{
               marginLeft: "0.5rem",
@@ -576,6 +752,58 @@ export default function FlashCardApp() {
       {error && (
         <div style={{ color: "#dc2626", marginTop: "0.5rem" }}>{error}</div>
       )}
+    </div>
+  );
+
+  /**
+   * Render the controls for text-to-speech. Provides buttons to read the
+   * current card, to loop through all cards, and to stop any ongoing
+   * narration. These controls operate across modes and depend on the
+   * contents of the current deck.
+   */
+  const renderTtsControls = () => (
+    <div style={{ marginBottom: "1rem", display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
+      <button
+        onClick={readCurrentCard}
+        style={{
+          padding: "0.5rem 1rem",
+          backgroundColor: COLORS.buttonBg,
+          border: `1px solid ${COLORS.border}`,
+          borderRadius: "4px",
+          color: COLORS.text,
+          cursor: cards.length === 0 ? "default" : "pointer",
+        }}
+        disabled={cards.length === 0}
+      >
+        Read Current Card
+      </button>
+      <button
+        onClick={readAllCards}
+        style={{
+          padding: "0.5rem 1rem",
+          backgroundColor: COLORS.buttonBg,
+          border: `1px solid ${COLORS.border}`,
+          borderRadius: "4px",
+          color: COLORS.text,
+          cursor: cards.length === 0 ? "default" : "pointer",
+        }}
+        disabled={cards.length === 0}
+      >
+        Loop All Cards
+      </button>
+      <button
+        onClick={stopTts}
+        style={{
+          padding: "0.5rem 1rem",
+          backgroundColor: COLORS.buttonBg,
+          border: `1px solid ${COLORS.border}`,
+          borderRadius: "4px",
+          color: COLORS.text,
+          cursor: "pointer",
+        }}
+      >
+        Stop TTS
+      </button>
     </div>
   );
 
@@ -704,7 +932,7 @@ export default function FlashCardApp() {
         </h3>
         <p style={{ marginBottom: "0.5rem" }}>{cards[quizIndex].question}</p>
         <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-        {options.map((option) => {
+          {options.map((option) => {
             const isSelected = selectedOption === option;
             const isCorrect = option === cards[quizIndex].answer;
             const backgroundColor = isSelected
@@ -972,6 +1200,7 @@ export default function FlashCardApp() {
       </h2>
       {renderControls()}
       {renderNavigation()}
+      {renderTtsControls()}
       {renderCurrentMode()}
     </div>
   );
