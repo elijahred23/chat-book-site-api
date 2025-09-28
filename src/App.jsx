@@ -16,6 +16,7 @@ import Quran from './Quran.jsx';
 import TypingTest from './TypingText.jsx';
 import LoopingTTS from './LoopingTTS.jsx';
 import Teleprompter from './Teleprompter.jsx';
+import FlashCardApp from './FlashCardApp.jsx';
 
 function App() {
   const [isFullWidth, setIsFullWidth] = useState(true);
@@ -45,10 +46,11 @@ function App() {
             <div className="dropdown-menu">
               <NavLink to="/chatBook" activeClassName="active">Chat Book</NavLink>
               <NavLink to="/youTubeTranscript" activeClassName="active">YouTube Transcript</NavLink>
+              <NavLink to="/typingTest" activeClassName="active">Typing Test</NavLink>
+              <NavLink to="/flashCards" activeClassName="active">Flash Cards</NavLink>
               <NavLink to="/htmlBuilder" activeClassName="active">HTML Builder</NavLink>
               <NavLink to="/Quran" activeClassName="active">Quran</NavLink>
               <NavLink to="/apiCheck" activeClassName="active">Settings</NavLink>
-              <NavLink to="/typingTest" activeClassName="active">Typing Test</NavLink>
             </div>
           </div>
 
@@ -77,6 +79,7 @@ function App() {
               <Route path="/webBrowser" element={<WebBrowser />} />
               <Route path="/Quran" element={<Quran />} />
               <Route path="/typingTest" element={<TypingTest />} />
+              <Route path="/flashCards" element={<FlashCardApp/>} />
             </Routes>
           </div>
 
