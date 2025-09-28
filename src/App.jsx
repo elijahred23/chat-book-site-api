@@ -15,10 +15,12 @@ import { useAppDispatch, useAppState, actions} from './context/AppContext.jsx';
 import Quran from './Quran.jsx';
 import TypingTest from './TypingText.jsx';
 import LoopingTTS from './LoopingTTS.jsx';
+import Teleprompter from './Teleprompter.jsx';
 
 function App() {
   const [isFullWidth, setIsFullWidth] = useState(true);
   const [isTTSOpen, setIsTTSOpen] = useState(false);  // NEW
+  const [isTeleprompterOpen, setIsTeleprompterOpen] = useState(false); // NEW
   const dispatch = useAppDispatch();
   const { isChatOpen } = useAppState();
 
@@ -57,6 +59,9 @@ function App() {
             </button>
             <button onClick={toggleTTS} className="chat-toggle-btn floating-chat-btn">
               {isTTSOpen ? '❌' : '🔊 TTS'}
+            </button>
+            <button onClick={() => setIsTeleprompterOpen(true)} className="chat-toggle-btn floating-chat-btn">
+              {isTeleprompterOpen ? '❌' : '📜 Teleprompter'}
             </button>
           </div>
 
@@ -108,7 +113,17 @@ function App() {
             </div>
             <LoopingTTS />
           </div>
-
+          {/* Slide-out Teleprompter */}
+          <div className={`chat-drawer ${isTeleprompterOpen ? 'open' : ''} ${isFullWidth ? 'full' : 'half'}`}>
+            <div className="chat-drawer-header">
+              <div>
+                <button className="width-toggle-btn" onClick={() => setIsTeleprompterOpen(false)}>
+                  ✖ Close Teleprompter
+                </button>
+              </div>
+            </div>
+            <Teleprompter />
+          </div>
         </BrowserRouter>
         <DownloadCopyTextFile />
         <TextSelectionTooltip 
