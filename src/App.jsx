@@ -17,6 +17,7 @@ import TypingTest from './TypingText.jsx';
 import LoopingTTS from './LoopingTTS.jsx';
 import Teleprompter from './Teleprompter.jsx';
 import FlashCardApp from './FlashCardApp.jsx';
+import PlantUMLViewer from './PlantUML.jsx';
 
 function App() {
   const [isFullWidth, setIsFullWidth] = useState(true);
@@ -52,6 +53,7 @@ function App() {
               <NavLink to="/flashCards" activeClassName="active">Flash Cards</NavLink>
               <NavLink to="/htmlBuilder" activeClassName="active">HTML Builder</NavLink>
               <NavLink to="/Quran" activeClassName="active">Quran</NavLink>
+              <NavLink to="/plantUML" activeClassName="active">PlantUML</NavLink>
               <NavLink to="/apiCheck" activeClassName="active">Settings</NavLink>
             </div>
           </div>
@@ -107,6 +109,7 @@ function App() {
               <Route path="/Quran" element={<Quran />} />
               <Route path="/typingTest" element={<TypingTest />} />
               <Route path="/flashCards" element={<FlashCardApp/>} />
+              <Route path="/plantUML" element={<PlantUMLViewer />} />
             </Routes>
           </div>
 
