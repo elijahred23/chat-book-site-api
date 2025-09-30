@@ -142,11 +142,28 @@ export default function FlashCardApp() {
   // The prompt to send to Gemini when generating cards.
   const [prompt, setPrompt] = useState("");
   // The currently selected feature/mode. One of: "study", "quiz",
-  // "match", "recall".
+  // "match", "recall", "memory", "survival", "table".
   const [mode, setMode] = useState("study");
   // Error handling for API calls and parsing.
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
+
+  // Track whether the viewport is narrow enough to be considered mobile. This helps
+  // adjust layouts responsively without relying on external CSS files. The threshold
+  // of 640px matches common breakpoints for small devices. The state is updated
+  // whenever the window resizes.
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const handleResize = () => {
+      if (typeof window !== "undefined") {
+        setIsMobile(window.innerWidth <= 640);
+      }
+    };
+    // Initialize on mount
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   /* ---------------------------------------------------------------------- */
   /* Gemini API integration                                                 */
@@ -608,6 +625,366 @@ export default function FlashCardApp() {
   };
 
   /* ---------------------------------------------------------------------- */
+  /* Memory Flip mode (concentration)                                       */
+  /* ---------------------------------------------------------------------- */
+  // In memory mode each card yields two tiles: one for the question and
+  // one for the answer. The user flips two tiles at a time and tries
+  // to find matching pairs. A pair is matched when the question and
+  // answer belonging to the same card are revealed together. When all
+  // pairs are matched, the game is complete.
+  const [memoryItems, setMemoryItems] = useState([]);
+  const [memorySelected, setMemorySelected] = useState([]);
+  const [memoryMatched, setMemoryMatched] = useState([]);
+
+  useEffect(() => {
+    if (mode === "memory") {
+      const items = [];
+      cards.forEach((card, idx) => {
+        items.push({ id: idx, type: "question", text: card.question });
+        items.push({ id: idx, type: "answer", text: card.answer });
+      });
+      setMemoryItems(shuffleArray(items));
+      setMemorySelected([]);
+      setMemoryMatched([]);
+    }
+  }, [cards, mode]);
+
+  const handleMemorySelect = (index) => {
+    if (
+      memoryMatched.includes(memoryItems[index]?.id) ||
+      memorySelected.includes(index)
+    ) {
+      return;
+    }
+    if (memorySelected.length === 2) return;
+    if (memorySelected.length === 0) {
+      setMemorySelected([index]);
+    } else if (memorySelected.length === 1) {
+      const firstIndex = memorySelected[0];
+      const first = memoryItems[firstIndex];
+      const second = memoryItems[index];
+      const isMatch = first.id === second.id && first.type !== second.type;
+      setMemorySelected([firstIndex, index]);
+      setTimeout(() => {
+        if (isMatch) {
+          setMemoryMatched((prev) => [...prev, first.id]);
+        }
+        setMemorySelected([]);
+      }, 600);
+    }
+  };
+
+  const renderMemoryMode = () => {
+    if (cards.length === 0) {
+      return <p>No cards available for memory game.</p>;
+    }
+    const allMatched = memoryMatched.length === cards.length;
+    if (allMatched) {
+      return (
+        <div style={{ textAlign: "center" }}>
+          <h3>All pairs found!</h3>
+          <button
+            onClick={() => {
+              const items = [];
+              cards.forEach((card, idx) => {
+                items.push({ id: idx, type: "question", text: card.question });
+                items.push({ id: idx, type: "answer", text: card.answer });
+              });
+              setMemoryItems(shuffleArray(items));
+              setMemoryMatched([]);
+              setMemorySelected([]);
+            }}
+            style={{
+              padding: "0.5rem 1rem",
+              backgroundColor: COLORS.buttonBg,
+              border: `1px solid ${COLORS.border}`,
+              borderRadius: "4px",
+              color: COLORS.text,
+              cursor: "pointer",
+            }}
+          >
+            Play Again
+          </button>
+        </div>
+      );
+    }
+    return (
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: isMobile
+            ? "repeat(auto-fill, minmax(100px, 1fr))"
+            : "repeat(auto-fill, minmax(120px, 1fr))",
+          gap: "0.5rem",
+        }}
+      >
+        {memoryItems.map((item, idx) => {
+          const matched = memoryMatched.includes(item.id);
+          const selected = memorySelected.includes(idx);
+          const disabled = matched || memorySelected.length === 2;
+          return (
+            <div
+              key={idx}
+              onClick={() => !disabled && handleMemorySelect(idx)}
+              style={{
+                padding: "1rem",
+                minHeight: "80px",
+                border: `1px solid ${COLORS.border}`,
+                borderRadius: "8px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                backgroundColor: matched
+                  ? COLORS.matchedBg
+                  : selected
+                  ? COLORS.selectedBg
+                  : COLORS.buttonBg,
+                color: COLORS.text,
+                cursor: disabled ? "default" : "pointer",
+                userSelect: "none",
+                wordWrap: "break-word",
+              }}
+            >
+              {matched || selected ? (
+                <span>{item.text}</span>
+              ) : (
+                <span style={{ fontSize: "1.5rem", fontWeight: "bold" }}>?</span>
+              )}
+            </div>
+          );
+        })}
+      </div>
+    );
+  };
+
+  /* ---------------------------------------------------------------------- */
+  /* Survival mode (multiple choice with limited lives)                      */
+  /* ---------------------------------------------------------------------- */
+  const [survivalOrder, setSurvivalOrder] = useState([]);
+  const [survivalIndex, setSurvivalIndex] = useState(0);
+  const [survivalLives, setSurvivalLives] = useState(3);
+  const [survivalScore, setSurvivalScore] = useState(0);
+  const [survivalSelected, setSurvivalSelected] = useState(null);
+  const [survivalComplete, setSurvivalComplete] = useState(false);
+
+  useEffect(() => {
+    if (mode === "survival") {
+      const order = shuffleArray(cards.map((_, i) => i));
+      setSurvivalOrder(order);
+      setSurvivalIndex(0);
+      setSurvivalLives(3);
+      setSurvivalScore(0);
+      setSurvivalSelected(null);
+      setSurvivalComplete(false);
+    }
+  }, [cards, mode]);
+
+  const handleSelectSurvivalOption = (option) => {
+    if (survivalComplete || survivalSelected !== null) return;
+    const cardIdx = survivalOrder[survivalIndex];
+    const correctAnswer = cards[cardIdx]?.answer;
+    const isCorrect = option === correctAnswer;
+    const updatedLives = isCorrect ? survivalLives : survivalLives - 1;
+    setSurvivalSelected(option);
+    if (isCorrect) {
+      setSurvivalScore((score) => score + 1);
+    }
+    setTimeout(() => {
+      setSurvivalSelected(null);
+      if (!isCorrect) {
+        setSurvivalLives(updatedLives);
+      }
+      const atEnd = survivalIndex + 1 >= survivalOrder.length;
+      if (updatedLives <= 0 || atEnd) {
+        setSurvivalComplete(true);
+      } else {
+        setSurvivalIndex((idx) => idx + 1);
+      }
+    }, 600);
+  };
+
+  const renderSurvivalMode = () => {
+    // If there are no cards at all, there's nothing to play
+    if (cards.length === 0) {
+      return <p>No cards available for survival mode.</p>;
+    }
+
+    // If the game has been completed (e.g. player ran out of lives or finished all questions), show summary
+    // We check this early before referencing survivalOrder to avoid reading undefined indices
+    if (survivalComplete || survivalIndex >= survivalOrder.length || survivalLives <= 0) {
+      return (
+        <div style={{ textAlign: "center" }}>
+          <h3>Game Over</h3>
+          <p>
+            You answered {survivalScore} out of {survivalOrder.length} correctly.
+          </p>
+          <button
+            onClick={() => {
+              // Start a new game by shuffling the order and resetting state
+              const order = shuffleArray(cards.map((_, i) => i));
+              setSurvivalOrder(order);
+              setSurvivalIndex(0);
+              setSurvivalLives(3);
+              setSurvivalScore(0);
+              setSurvivalSelected(null);
+              setSurvivalComplete(false);
+            }}
+            style={{
+              padding: "0.5rem 1rem",
+              backgroundColor: COLORS.buttonBg,
+              border: `1px solid ${COLORS.border}`,
+              borderRadius: "4px",
+              color: COLORS.text,
+              cursor: "pointer",
+            }}
+          >
+            Play Again
+          </button>
+        </div>
+      );
+    }
+
+    // Guard against empty order or invalid card indices
+    if (!survivalOrder.length) {
+      return <p>No cards available for survival mode.</p>;
+    }
+
+    const cardIdx = survivalOrder[survivalIndex];
+    // If for some reason cardIdx is undefined or the card does not exist, display a fallback
+    if (typeof cardIdx !== "number" || !cards[cardIdx]) {
+      return <p>No cards available for survival mode.</p>;
+    }
+
+    const options = generateQuizOptions(cards, cardIdx);
+    return (
+      <div>
+        {/* Header with lives, progress and score */}
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            marginBottom: "0.5rem",
+          }}
+        >
+          <span>Lives: {"❤️".repeat(survivalLives)}</span>
+          <span>
+            Question {survivalIndex + 1} of {survivalOrder.length}
+          </span>
+          <span>Score: {survivalScore}</span>
+        </div>
+        {/* Current question */}
+        <p style={{ marginBottom: "0.5rem" }}>{cards[cardIdx].question}</p>
+        {/* Answer options */}
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "0.5rem",
+          }}
+        >
+          {options.map((option) => {
+            const isSelected = survivalSelected === option;
+            const isCorrect = option === cards[cardIdx].answer;
+            const backgroundColor = isSelected
+              ? isCorrect
+                ? COLORS.correctBg
+                : COLORS.incorrectBg
+              : COLORS.buttonBg;
+            const borderColor = isSelected ? COLORS.primary : COLORS.border;
+            return (
+              <button
+                key={option}
+                onClick={() => handleSelectSurvivalOption(option)}
+                disabled={survivalSelected !== null}
+                style={{
+                  padding: "0.5rem",
+                  backgroundColor,
+                  border: `1px solid ${borderColor}`,
+                  borderRadius: "4px",
+                  cursor: survivalSelected ? "default" : "pointer",
+                  textAlign: "left",
+                  color: COLORS.text,
+                }}
+              >
+                {option}
+              </button>
+            );
+          })}
+        </div>
+      </div>
+    );
+  };
+
+  /* ---------------------------------------------------------------------- */
+  /* Table mode (list all cards)                                            */
+  /* ---------------------------------------------------------------------- */
+  const renderTableMode = () => {
+    if (cards.length === 0) {
+      return <p>No cards available to display.</p>;
+    }
+    return (
+      <div style={{ overflowX: "auto" }}>
+        <table
+          style={{
+            width: "100%",
+            borderCollapse: "collapse",
+            color: COLORS.text,
+          }}
+        >
+          <thead>
+            <tr>
+              <th
+                style={{
+                  borderBottom: `2px solid ${COLORS.border}`,
+                  textAlign: "left",
+                  padding: "0.5rem",
+                }}
+              >
+                Question
+              </th>
+              <th
+                style={{
+                  borderBottom: `2px solid ${COLORS.border}`,
+                  textAlign: "left",
+                  padding: "0.5rem",
+                }}
+              >
+                Answer
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {cards.map((card, idx) => (
+              <tr key={idx}>
+                <td
+                  style={{
+                    borderBottom: `1px solid ${COLORS.border}`,
+                    padding: "0.5rem",
+                    verticalAlign: "top",
+                    whiteSpace: "normal",
+                  }}
+                >
+                  {card.question}
+                </td>
+                <td
+                  style={{
+                    borderBottom: `1px solid ${COLORS.border}`,
+                    padding: "0.5rem",
+                    verticalAlign: "top",
+                    whiteSpace: "normal",
+                  }}
+                >
+                  {card.answer}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    );
+  };
+
+  /* ---------------------------------------------------------------------- */
   /* Render helpers                                                         */
   /* ---------------------------------------------------------------------- */
 
@@ -621,6 +998,9 @@ export default function FlashCardApp() {
         { key: "quiz", label: "Quiz" },
         { key: "match", label: "Matching" },
         { key: "recall", label: "Recall" },
+        { key: "memory", label: "Memory Flip" },
+        { key: "survival", label: "Survival" },
+        { key: "table", label: "Table" },
       ].map(({ key, label }) => (
         <button
           key={key}
@@ -1004,7 +1384,13 @@ export default function FlashCardApp() {
             </button>
           </div>
         ) : (
-          <div style={{ display: "flex", gap: "2rem" }}>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: isMobile ? "column" : "row",
+              gap: isMobile ? "1rem" : "2rem",
+            }}
+          >
             <div style={{ flex: 1 }}>
               <h4 style={{ color: COLORS.text }}>Terms</h4>
               {matchTerms.map(({ idx, text }) => {
@@ -1033,6 +1419,11 @@ export default function FlashCardApp() {
                       borderRadius: "4px",
                       cursor: matched ? "default" : "pointer",
                       color: COLORS.text,
+                      display: "inline-block",
+                      width: "auto",
+                      maxWidth: "100%",
+                      whiteSpace: "normal",
+                      wordBreak: "break-word",
                     }}
                   >
                     {text}
@@ -1068,6 +1459,11 @@ export default function FlashCardApp() {
                       borderRadius: "4px",
                       cursor: matched ? "default" : "pointer",
                       color: COLORS.text,
+                      display: "inline-block",
+                      width: "auto",
+                      maxWidth: "100%",
+                      whiteSpace: "normal",
+                      wordBreak: "break-word",
                     }}
                   >
                     {text}
@@ -1178,6 +1574,12 @@ export default function FlashCardApp() {
         return renderMatchMode();
       case "recall":
         return renderRecallMode();
+      case "memory":
+        return renderMemoryMode();
+      case "survival":
+        return renderSurvivalMode();
+      case "table":
+        return renderTableMode();
       default:
         return <div>Select a mode to begin.</div>;
     }
