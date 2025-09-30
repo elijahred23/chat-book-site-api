@@ -701,6 +701,7 @@ export default function FlashCardApp() {
               borderRadius: "4px",
               color: COLORS.text,
               cursor: "pointer",
+              width: isMobile ? "100%" : "auto",
             }}
           >
             Play Again
@@ -836,6 +837,7 @@ export default function FlashCardApp() {
               borderRadius: "4px",
               color: COLORS.text,
               cursor: "pointer",
+              width: isMobile ? "100%" : "auto",
             }}
           >
             Play Again
@@ -904,6 +906,7 @@ export default function FlashCardApp() {
                   cursor: survivalSelected ? "default" : "pointer",
                   textAlign: "left",
                   color: COLORS.text,
+                  width: isMobile ? "100%" : "auto",
                 }}
               >
                 {option}
@@ -991,149 +994,188 @@ export default function FlashCardApp() {
   /**
    * Render the navigation bar that allows switching between modes.
    */
-  const renderNavigation = () => (
-    <div style={{ marginBottom: "1rem", display: "flex", gap: "0.5rem" }}>
-      {[
-        { key: "study", label: "Study" },
-        { key: "quiz", label: "Quiz" },
-        { key: "match", label: "Matching" },
-        { key: "recall", label: "Recall" },
-        { key: "memory", label: "Memory Flip" },
-        { key: "survival", label: "Survival" },
-        { key: "table", label: "Table" },
-      ].map(({ key, label }) => (
-        <button
-          key={key}
-          onClick={() => setMode(key)}
-          style={{
-            padding: "0.5rem 1rem",
-            border:
-              key === mode
-                ? `2px solid ${COLORS.primary}`
-                : `1px solid ${COLORS.border}`,
-            backgroundColor:
-              key === mode ? COLORS.buttonBgActive : COLORS.buttonBg,
-            borderRadius: "4px",
-            cursor: "pointer",
-            color: COLORS.text,
-          }}
-        >
-          {label}
-        </button>
-      ))}
-    </div>
-  );
+  const renderNavigation = () => {
+    // Use a column layout for small screens so buttons don't cram into a single row
+    const navContainerStyle = {
+      marginBottom: "1rem",
+      display: "flex",
+      flexDirection: isMobile ? "column" : "row",
+      gap: "0.5rem",
+      // allow wrapping when in row layout to prevent overflow on narrow screens
+      flexWrap: isMobile ? "nowrap" : "wrap",
+    };
+    return (
+      <div style={navContainerStyle}>
+        {[
+          { key: "study", label: "Study" },
+          { key: "quiz", label: "Quiz" },
+          { key: "match", label: "Matching" },
+          { key: "recall", label: "Recall" },
+          { key: "memory", label: "Memory Flip" },
+          { key: "survival", label: "Survival" },
+          { key: "table", label: "Table" },
+        ].map(({ key, label }) => (
+          <button
+            key={key}
+            onClick={() => setMode(key)}
+            style={{
+              padding: isMobile ? "0.5rem" : "0.5rem 1rem",
+              border:
+                key === mode
+                  ? `2px solid ${COLORS.primary}`
+                  : `1px solid ${COLORS.border}`,
+              backgroundColor:
+                key === mode ? COLORS.buttonBgActive : COLORS.buttonBg,
+              borderRadius: "4px",
+              cursor: "pointer",
+              color: COLORS.text,
+              width: isMobile ? "100%" : "auto",
+              textAlign: "center",
+            }}
+          >
+            {label}
+          </button>
+        ))}
+      </div>
+    );
+  };
 
   /**
    * Render the controls for uploading, generating and downloading cards,
    * plus copying and pasting JSON via the clipboard.
    */
-  const renderControls = () => (
-    <div style={{ marginBottom: "1rem", color: COLORS.text }}>
-      <div style={{ marginBottom: "0.5rem" }}>
-        <label style={{ marginRight: "0.5rem" }}>
-          Upload JSON:
-          <input
-            type="file"
-            accept="application/json"
-            onChange={handleFileUpload}
-            style={{ marginLeft: "0.5rem" }}
-          />
-        </label>
-        <button
-          onClick={handleDownload}
-          style={{
-            marginLeft: "0.5rem",
-            padding: "0.5rem 1rem",
-            backgroundColor: COLORS.buttonBg,
-            border: `1px solid ${COLORS.border}`,
-            borderRadius: "4px",
-            color: COLORS.text,
-            cursor: "pointer",
-          }}
-        >
-          Download JSON
-        </button>
-        <button
-          onClick={handleCopyJson}
-          style={{
-            marginLeft: "0.5rem",
-            padding: "0.5rem 1rem",
-            backgroundColor: COLORS.buttonBg,
-            border: `1px solid ${COLORS.border}`,
-            borderRadius: "4px",
-            color: COLORS.text,
-            cursor: "pointer",
-          }}
-        >
-          Copy JSON
-        </button>
-        <button
-          onClick={handlePasteJson}
-          style={{
-            marginLeft: "0.5rem",
-            padding: "0.5rem 1rem",
-            backgroundColor: COLORS.buttonBg,
-            border: `1px solid ${COLORS.border}`,
-            borderRadius: "4px",
-            color: COLORS.text,
-            cursor: "pointer",
-          }}
-        >
-          Paste JSON
-        </button>
-      </div>
-      <div style={{ marginBottom: "0.5rem" }}>
-        <label>
-          Topic:
-          <input
-            type="text"
-            value={prompt}
-            onChange={(e) => setPrompt(e.target.value)}
-            onKeyDown={e => {
-              if (e.key === 'Enter' && !loading) {
-                e.preventDefault();
-                handleGenerateFromPrompt();
-              }
-            }}
-            placeholder="Enter topic for vocabulary flash cards"
+  const renderControls = () => {
+    // Responsive container for all control elements
+    const containerStyle = {
+      marginBottom: "1rem",
+      color: COLORS.text,
+      display: "flex",
+      flexDirection: "column",
+      gap: "0.5rem",
+    };
+    // Style for the first row of actions (file upload and JSON buttons)
+    const fileActionsStyle = {
+      display: "flex",
+      flexDirection: isMobile ? "column" : "row",
+      alignItems: isMobile ? "stretch" : "center",
+      gap: "0.5rem",
+      flexWrap: isMobile ? "nowrap" : "wrap",
+    };
+    // Style for the second row containing the topic input and generate button
+    const topicRowStyle = {
+      display: "flex",
+      flexDirection: isMobile ? "column" : "row",
+      alignItems: isMobile ? "stretch" : "center",
+      gap: "0.5rem",
+    };
+    return (
+      <div style={containerStyle}>
+        <div style={fileActionsStyle}>
+          <label style={{ display: "flex", alignItems: "center" }}>
+            Upload JSON:
+            <input
+              type="file"
+              accept="application/json"
+              onChange={handleFileUpload}
+              style={{ marginLeft: isMobile ? "0" : "0.5rem" }}
+            />
+          </label>
+          <button
+            onClick={handleDownload}
             style={{
-              marginLeft: "0.5rem",
-              width: "60%",
-              padding: "0.5rem",
+              padding: "0.5rem 1rem",
               backgroundColor: COLORS.buttonBg,
               border: `1px solid ${COLORS.border}`,
               borderRadius: "4px",
               color: COLORS.text,
+              cursor: "pointer",
+              width: isMobile ? "100%" : "auto",
             }}
-          />
-        </label>
-        <button
-          onClick={handleGenerateFromPrompt}
-          style={{
-            marginLeft: "0.5rem",
-            padding: "0.5rem 1rem",
-            backgroundColor: COLORS.buttonBg,
-            border: `1px solid ${COLORS.border}`,
-            borderRadius: "4px",
-            color: COLORS.text,
-            cursor: loading ? "default" : "pointer",
-          }}
-          disabled={loading}
-        >
-          {loading ? "Generating..." : "Generate"}
-        </button>
-      </div>
-      {loading && (
-        <div style={{ marginTop: "0.5rem", color: "#2563eb" }}>
-          🔄 Generating flashcards...
+          >
+            Download JSON
+          </button>
+          <button
+            onClick={handleCopyJson}
+            style={{
+              padding: "0.5rem 1rem",
+              backgroundColor: COLORS.buttonBg,
+              border: `1px solid ${COLORS.border}`,
+              borderRadius: "4px",
+              color: COLORS.text,
+              cursor: "pointer",
+              width: isMobile ? "100%" : "auto",
+            }}
+          >
+            Copy JSON
+          </button>
+          <button
+            onClick={handlePasteJson}
+            style={{
+              padding: "0.5rem 1rem",
+              backgroundColor: COLORS.buttonBg,
+              border: `1px solid ${COLORS.border}`,
+              borderRadius: "4px",
+              color: COLORS.text,
+              cursor: "pointer",
+              width: isMobile ? "100%" : "auto",
+            }}
+          >
+            Paste JSON
+          </button>
         </div>
-      )}
-      {error && (
-        <div style={{ color: "#dc2626", marginTop: "0.5rem" }}>{error}</div>
-      )}
-    </div>
-  );
+        <div style={topicRowStyle}>
+          <label style={{ display: "flex", alignItems: "center", width: isMobile ? "100%" : "auto" }}>
+            Topic:
+            <input
+              type="text"
+              value={prompt}
+              onChange={(e) => setPrompt(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" && !loading) {
+                  e.preventDefault();
+                  handleGenerateFromPrompt();
+                }
+              }}
+              placeholder="Enter topic for vocabulary flash cards"
+              style={{
+                marginLeft: isMobile ? "0" : "0.5rem",
+                flex: isMobile ? "none" : 1,
+                width: isMobile ? "100%" : "60%",
+                padding: "0.5rem",
+                backgroundColor: COLORS.buttonBg,
+                border: `1px solid ${COLORS.border}`,
+                borderRadius: "4px",
+                color: COLORS.text,
+              }}
+            />
+          </label>
+          <button
+            onClick={handleGenerateFromPrompt}
+            style={{
+              padding: "0.5rem 1rem",
+              backgroundColor: COLORS.buttonBg,
+              border: `1px solid ${COLORS.border}`,
+              borderRadius: "4px",
+              color: COLORS.text,
+              cursor: loading ? "default" : "pointer",
+              width: isMobile ? "100%" : "auto",
+            }}
+            disabled={loading}
+          >
+            {loading ? "Generating..." : "Generate"}
+          </button>
+        </div>
+        {loading && (
+          <div style={{ marginTop: "0.5rem", color: "#2563eb" }}>
+            🔄 Generating flashcards...
+          </div>
+        )}
+        {error && (
+          <div style={{ color: "#dc2626", marginTop: "0.5rem" }}>{error}</div>
+        )}
+      </div>
+    );
+  };
 
   /**
    * Render the controls for text-to-speech. Provides buttons to read the
@@ -1223,6 +1265,8 @@ export default function FlashCardApp() {
             display: "flex",
             gap: "0.5rem",
             justifyContent: "center",
+            flexDirection: isMobile ? "column" : "row",
+            alignItems: isMobile ? "stretch" : "center",
           }}
         >
           <button
@@ -1234,6 +1278,7 @@ export default function FlashCardApp() {
               borderRadius: "4px",
               color: COLORS.text,
               cursor: "pointer",
+              width: isMobile ? "100%" : "auto",
             }}
           >
             Previous
@@ -1247,6 +1292,7 @@ export default function FlashCardApp() {
               borderRadius: "4px",
               color: COLORS.text,
               cursor: "pointer",
+              width: isMobile ? "100%" : "auto",
             }}
           >
             {showAnswer ? "Show Question" : "Show Answer"}
@@ -1260,6 +1306,7 @@ export default function FlashCardApp() {
               borderRadius: "4px",
               color: COLORS.text,
               cursor: "pointer",
+              width: isMobile ? "100%" : "auto",
             }}
           >
             Next
@@ -1297,6 +1344,7 @@ export default function FlashCardApp() {
               borderRadius: "4px",
               color: COLORS.text,
               cursor: "pointer",
+              width: isMobile ? "100%" : "auto",
             }}
           >
             Restart Quiz
@@ -1378,6 +1426,7 @@ export default function FlashCardApp() {
                 borderRadius: "4px",
                 color: COLORS.text,
                 cursor: "pointer",
+                width: isMobile ? "100%" : "auto",
               }}
             >
               Play Again
@@ -1505,6 +1554,7 @@ export default function FlashCardApp() {
               borderRadius: "4px",
               color: COLORS.text,
               cursor: "pointer",
+              width: isMobile ? "100%" : "auto",
             }}
           >
             Restart Recall
@@ -1522,14 +1572,22 @@ export default function FlashCardApp() {
           Question {recallIndex + 1} of {cards.length}
         </h3>
         <p style={{ marginBottom: "0.5rem" }}>{card.question}</p>
-        <div style={{ display: "flex", gap: "0.5rem" }}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: isMobile ? "column" : "row",
+            gap: "0.5rem",
+            alignItems: isMobile ? "stretch" : "center",
+          }}
+        >
           <input
             type="text"
             value={recallInput}
             onChange={(e) => setRecallInput(e.target.value)}
             placeholder="Type your answer"
             style={{
-              flex: 1,
+              flex: isMobile ? "none" : 1,
+              width: isMobile ? "100%" : "auto",
               padding: "0.5rem",
               backgroundColor: COLORS.buttonBg,
               border: `1px solid ${COLORS.border}`,
@@ -1546,6 +1604,7 @@ export default function FlashCardApp() {
               borderRadius: "4px",
               color: COLORS.text,
               cursor: "pointer",
+              width: isMobile ? "100%" : "auto",
             }}
           >
             Submit
