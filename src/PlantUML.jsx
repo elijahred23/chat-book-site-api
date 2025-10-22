@@ -107,32 +107,50 @@ Do NOT wrap in markdown fences or explanations.`;
   };
 
   // --- Render diagram ---
-  const renderDiagram = () => {
-    if (!uml.trim() || !stageRef.current) return;
-    const url = buildUrl(uml, format, encoding);
-    const stage = stageRef.current;
-    stage.innerHTML = "";
+  // --- Render diagram ---
+const renderDiagram = () => {
+  if (!uml.trim() || !stageRef.current) return;
+  const url = buildUrl(uml, format, encoding);
+  const stage = stageRef.current;
+  stage.innerHTML = "";
 
-    if (format.endsWith("svg")) {
-      const obj = document.createElement("object");
-      obj.type = "image/svg+xml";
-      obj.data = url;
-      stage.appendChild(obj);
-      obj.addEventListener("load", () => {
-        try {
-          const svg = obj.contentDocument?.querySelector("svg");
-          if (svg) Panzoom(svg, { maxScale: 6, contain: "outside" });
-        } catch {}
-      });
-    } else {
-      const img = document.createElement("img");
-      img.src = url;
-      stage.appendChild(img);
-      img.addEventListener("load", () =>
-        Panzoom(img, { maxScale: 6, contain: "outside" })
-      );
-    }
-  };
+  if (format.endsWith("svg")) {
+    const obj = document.createElement("object");
+    obj.type = "image/svg+xml";
+    obj.data = url;
+    obj.style.width = "200px";       // ✅ Small base width
+    obj.style.maxWidth = "60vw";     // ✅ Scales nicely on mobile
+    obj.style.height = "auto";
+    obj.style.display = "block";
+    obj.style.margin = "0 auto";
+    stage.appendChild(obj);
+    obj.addEventListener("load", () => {
+      try {
+        const svg = obj.contentDocument?.querySelector("svg");
+        if (svg) Panzoom(svg, { maxScale: 6, contain: "outside" });
+      } catch {}
+    });
+  } else {
+    const img = document.createElement("img");
+    img.src = url;
+
+    // ✅ Compact, mobile-friendly sizing
+    img.style.width = "200px";        // Small default width
+    img.style.maxWidth = "60vw";      // On small screens, shrink automatically
+    img.style.height = "auto";        // Keep aspect ratio
+    img.style.display = "block";
+    img.style.margin = "0 auto";      // Center it visually
+    img.style.borderRadius = "8px";
+    img.style.boxShadow = "0 2px 6px rgba(0,0,0,0.1)";
+
+    stage.appendChild(img);
+
+    img.addEventListener("load", () =>
+      Panzoom(img, { maxScale: 6, contain: "outside" })
+    );
+  }
+};
+
 
   // --- Auto render ---
   useEffect(() => {

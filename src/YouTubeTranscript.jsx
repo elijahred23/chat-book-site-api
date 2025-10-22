@@ -554,7 +554,9 @@ export default function YouTubeTranscript() {
                     <div className="card scrollable-card">
                         {splitTranscript.map((chunk, i) => (
                             <div key={i} className="chunk">
-                                <ReactMarkdown>{chunk}</ReactMarkdown>
+                                <textarea maxWidth="60vw" readOnly>
+                                    {chunk}
+                                </textarea>
                                 <CopyButton text={chunk} className="btn copy-btn" />
                             </div>
                         ))}
