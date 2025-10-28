@@ -145,17 +145,21 @@ function App() {
         </BrowserRouter>
 
         <DownloadCopyTextFile />
-        <TextSelectionTooltip 
-          onAskAI={(text) => {
-            localStorage.setItem('selectedText', text);
-            dispatch(actions.setIsChatOpen(true));
-            dispatch(actions.setSelectedText(text));
-          }}
-          onSendToTTS={(text) => {
-            dispatch(actions.setTtsText(text)); // 🆕 stores in context
-            setIsTTSOpen(true); // open the drawer
-          }}
-        />
+      <TextSelectionTooltip
+        onAskAI={(text) => {
+          dispatch(actions.setIsChatOpen(true));
+          dispatch(actions.setSelectedText(text));
+        }}
+        onSendToTTS={(text) => {
+          dispatch(actions.setTtsText(text));
+          setIsTTSOpen(true);
+        }}
+        onSendToTeleprompter={(text) => {
+          dispatch(actions.setTeleprompterText(text));
+          setIsTeleprompterOpen(true);
+        }}
+      />
+
       </div>
     </>
   );

@@ -1,23 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
+import { useAppState } from "./context/AppContext";
 
-/**
- * A more advanced teleprompter component.
- *
- * This component builds on a basic teleprompter implementation with several
- * enhancements:
- *
- * - Responsive layout that automatically resizes the teleprompter area
- *   depending on whether the control panel is shown.
- * - Full‐screen mode toggle for distraction‑free reading.
- * - Adjustable text and background colours via colour pickers.
- * - Optional font family selector to change the look of the script.
- * - Mirror (horizontal flip) mode to support use with reflective glass
- *   teleprompter rigs.
- * - Adjustable scroll direction (up or down) via a simple dropdown.
- * - All previous features (uploading a .txt file, pasting from the
- *   clipboard, adjustable font size and scroll speed, pause/resume,
- *   clearing the script and toggling the control panel) are preserved.
- */
 const TeleprompterAdvanced = () => {
   // Core state
   const [script, setScript] = useState("");
@@ -25,6 +8,13 @@ const TeleprompterAdvanced = () => {
   const [fontSize, setFontSize] = useState(1.2); // em
   const [speed, setSpeed] = useState(60); // pixels per second
   const [showControls, setShowControls] = useState(true);
+  const { teleprompterText } = useAppState();
+
+  useEffect(() => {
+    if (teleprompterText) {
+      setScript(teleprompterText);
+    }
+  }, [teleprompterText]);
 
   // Advanced state
   const [textColor, setTextColor] = useState("#ffffff");
