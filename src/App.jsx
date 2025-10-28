@@ -150,7 +150,11 @@ function App() {
             localStorage.setItem('selectedText', text);
             dispatch(actions.setIsChatOpen(true));
             dispatch(actions.setSelectedText(text));
-          }} 
+          }}
+          onSendToTTS={(text) => {
+            dispatch(actions.setTtsText(text)); // 🆕 stores in context
+            setIsTTSOpen(true); // open the drawer
+          }}
         />
       </div>
     </>

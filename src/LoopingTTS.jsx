@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useAppState } from "./context/AppContext";
 
 const LoopingTTS = () => {
   const synth = window.speechSynthesis;
+  const {ttsText} = useAppState();
   const [text, setText] = useState(
     "Paste or type your text here, then press Start. It will speak on loop until you stop."
   );
@@ -57,6 +59,15 @@ const LoopingTTS = () => {
       setTimeEstimate("");
     }
   }, [text, rate]);
+  
+    useEffect(() => {
+    if (ttsText) setText(ttsText);
+    else {
+      const saved = localStorage.getItem('ttsText');
+      if (saved && !text.trim()) setText(saved);
+    }
+  }, [ttsText]);
+
 
   const splitText = (txt) => {
     return txt.match(/[^.!?]+[.!?]*/g) || [txt];
