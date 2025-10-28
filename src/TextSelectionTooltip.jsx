@@ -29,9 +29,17 @@ const TextSelectionTooltip = ({ onAskAI, onSendToTTS, onSendToTeleprompter }) =>
           rect.left + rect.width / 2 - tooltipWidth / 2 + window.scrollX;
         const maxLeft = window.innerWidth - tooltipWidth - 10;
 
+      const isMobile = window.innerWidth <= 768;
+
+      setSelectedText(text);
+      setPosition({
+        top: rect.top + window.scrollY - (isMobile ? 120 : 80),
+        left: Math.min(Math.max(calculatedLeft, 10), maxLeft),
+      });
+
         setSelectedText(text);
         setPosition({
-          top: rect.top + window.scrollY - 80,
+          top: rect.top + window.scrollY - 120,
           left: Math.min(Math.max(calculatedLeft, 10), maxLeft),
         });
 

@@ -143,7 +143,7 @@ export default function FlashCardApp() {
   const [prompt, setPrompt] = useState("");
   // The currently selected feature/mode. One of: "study", "quiz",
   // "match", "recall", "memory", "survival", "table".
-  const [mode, setMode] = useState("study");
+  const [mode, setMode] = useState("table");
   // Error handling for API calls and parsing.
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
