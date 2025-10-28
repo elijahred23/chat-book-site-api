@@ -11,16 +11,17 @@ import YouTubeSearchDrawer from './YouTubeSearchDrawer';
 import { actions, useAppDispatch, useAppState } from './context/AppContext';
 import { getYouTubeTranscript as fetchYouTubeTranscriptInternal } from './utils/callYoutube';
 
+// Constants
 const wordSplitNumber = 5000;
 const isValidYouTubeUrl = (url) => {
     const regex = /^(https?:\/\/)?(www\.)?(youtube\.com\/(watch\?v=|embed\/|v\/|shorts\/|live\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})(\S*)?$/;
     return regex.test(url);
 };
 
+// Fetch transcript from external API when selected
 const fetchYouTubeTranscriptExternal = async (video_url) => {
     const url = "https://kome.ai/api/transcript";
     const requestBody = { video_id: video_url, format: true };
-
     try {
         const response = await fetch(url, {
             method: "POST",
@@ -30,7 +31,6 @@ const fetchYouTubeTranscriptExternal = async (video_url) => {
             },
             body: JSON.stringify(requestBody)
         });
-
         if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
         return await response.json();
     } catch (error) {
@@ -38,6 +38,7 @@ const fetchYouTubeTranscriptExternal = async (video_url) => {
     }
 };
 
+// Split a string into roughly equal word chunks
 const splitStringByWords = (str, splitCount) => {
     if (!str || splitCount < 1) return [];
     const words = str.split(/\s+/);
@@ -49,12 +50,13 @@ const splitStringByWords = (str, splitCount) => {
     return result;
 };
 
+// Generic sleep helper
 const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
+// Execute a prompt against each transcript chunk
 const promptTranscript = async (prompt, transcripts, setProgress, showMessage) => {
     const batchSize = 5;
     const results = [];
-
     for (let i = 0; i < transcripts.length; i += batchSize) {
         const batch = transcripts.slice(i, i + batchSize);
         const batchResults = await Promise.all(
@@ -62,11 +64,11 @@ const promptTranscript = async (prompt, transcripts, setProgress, showMessage) =
                 try {
                     const response = await getGeminiResponse(`${prompt}: ${chunk}`);
                     setProgress(prev => prev + 1);
-                    showMessage({ type: "success", message: `Gemini succeeded on part ${i + index + 1}`, duration: 1000 });
+                    showMessage?.({ type: "success", message: `Gemini succeeded on part ${i + index + 1}`, duration: 1000 });
                     return response;
                 } catch (err) {
                     console.error(`Gemini error on chunk ${i + index + 1}:`, err);
-                    showMessage({ type: "error", message: `Gemini failed on part ${i + index + 1}: ${err.message}` });
+                    showMessage?.({ type: "error", message: `Gemini failed on part ${i + index + 1}: ${err.message}` });
                     return `Error: Gemini failed on part ${i + index + 1}`;
                 }
             })
@@ -76,14 +78,14 @@ const promptTranscript = async (prompt, transcripts, setProgress, showMessage) =
     return results;
 };
 
+// Count number of words in a string
 const countWords = (s) => (s.match(/\b\w+\b/g) || []).length;
 
 export default function YouTubeTranscript() {
     const state = useAppState();
-    const [activeTab, setActiveTab] = useState("transcript");  // Options: transcript, comments, responses
+    const [activeTab, setActiveTab] = useState("transcript");  // Options: transcript, comments, responses, transcript-iframes
     const [comments, setComments] = useState([]);
     const [splitComments, setSplitComments] = useState([]);
-
     const [url, setUrl] = useState("");
     const [prompt, setPrompt] = useState(() => localStorage.getItem("yt_prompt") || "");
     const [transcript, setTranscript] = useState(() => localStorage.getItem("yt_transcript") || "");
@@ -100,26 +102,26 @@ export default function YouTubeTranscript() {
     const [drawerOpen, setDrawerOpen] = useState(false);
     const { showMessage } = useFlyout();
     const [youtubeIframeShowing, setYoutubeIframeShowing] = useState(() => {
-    const storedValue = localStorage.getItem("yt_iframe_showing");
+        const storedValue = localStorage.getItem("yt_iframe_showing");
         return storedValue !== null ? JSON.parse(storedValue) : false;
     });
-
     const [isMinimized, setIsMinimized] = useState(() => {
-    const storedValue = localStorage.getItem("yt_iframe_minimized");
+        const storedValue = localStorage.getItem("yt_iframe_minimized");
         return storedValue !== null ? JSON.parse(storedValue) : false;
     });
     const dispatch = useAppDispatch();
 
+    // Helpers to fetch transcript and comments based on selected provider
     const fetchYouTubeTranscript = async (video_url) => {
         let transcript = '';
-        if(state.selectedTranscriptType === "external") {
-            transcript = await fetchYouTubeTranscriptExternal(video_url)
+        if (state.selectedTranscriptType === "external") {
+            transcript = await fetchYouTubeTranscriptExternal(video_url);
         } else {
             transcript = await fetchYouTubeTranscriptInternal(video_url);
         }
-        console.log("Transcript fetched:", transcript);
         return transcript;
-    }
+    };
+
     const promptSuggestions = [
         { label: "Summary", value: "Summarize this transcript" },
         { label: "Key Points", value: "Extract key points from this content" },
@@ -129,7 +131,8 @@ export default function YouTubeTranscript() {
     ];
 
     const promptResponsesText = useMemo(() => promptResponses.join('\n\n'), [promptResponses]);
-    const transcriptWordCount = useMemo(() => countWords(transcript), [transcript])
+    const transcriptWordCount = useMemo(() => countWords(transcript), [transcript]);
+
     const fetchYouTubeComments = async (video_url) => {
         try {
             const response = await fetch(`${hostname}/youtube/comments?video=${encodeURIComponent(video_url)}&maxResults=50`);
@@ -141,7 +144,7 @@ export default function YouTubeTranscript() {
         }
     };
 
-
+    // Execute prompt on transcript
     const executePrompt = async () => {
         try {
             setLoadingPrompt(true);
@@ -153,6 +156,8 @@ export default function YouTubeTranscript() {
             setLoadingPrompt(false);
         }
     };
+
+    // Execute prompt on comments
     const executePromptOnComments = async () => {
         try {
             setLoadingPrompt(true);
@@ -169,6 +174,7 @@ export default function YouTubeTranscript() {
         return url && isValidYouTubeUrl(url);
     }, [url]);
 
+    // Load comments when URL changes
     useEffect(() => {
         const loadComments = async () => {
             if (url && validYoutubeUrl && url !== lastFetchedUrl) {
@@ -193,7 +199,7 @@ export default function YouTubeTranscript() {
         loadComments();
     }, [url]);
 
-
+    // Persist settings to localStorage
     useEffect(() => {
         localStorage.setItem("yt_transcript", transcript);
         localStorage.setItem("yt_prompt", prompt);
@@ -203,24 +209,26 @@ export default function YouTubeTranscript() {
         localStorage.setItem("yt_iframe_minimized", JSON.stringify(isMinimized));
     }, [transcript, prompt, splitLength, promptResponses, youtubeIframeShowing, isMinimized]);
 
+    // Update transcript and split length when manual transcript changes
     useEffect(() => {
         const wc = countWords(manuallyEnteredTranscript);
         setTranscript(manuallyEnteredTranscript);
         setSplitLength(Math.ceil(wc / wordSplitNumber));
-    }, [manuallyEnteredTranscript])
+    }, [manuallyEnteredTranscript]);
 
+    // Split transcript into chunks when length or content changes
     useEffect(() => {
         if (splitLength > 0 && transcript?.length > 0) {
             setSplitTranscript(splitStringByWords(transcript, splitLength));
         }
     }, [splitLength, transcript]);
 
+    // Load transcript when URL changes
     useEffect(() => {
         const loadTranscript = async () => {
             if (url && isValidYouTubeUrl(url) && url !== lastFetchedUrl) {
                 try {
                     const data = await fetchYouTubeTranscript(url);
-                    console.log("Transcript data:", data);
                     if (data?.transcript) {
                         const newTranscript = data.transcript;
                         const wordCount = countWords(newTranscript);
@@ -240,37 +248,180 @@ export default function YouTubeTranscript() {
         loadTranscript();
     }, [url]);
 
-    let validYoutubeUrl = useMemo(()=> {
+    const validYoutubeUrl = useMemo(() => {
         return isValidYouTubeUrl(url);
-    }, [url]) 
+    }, [url]);
+
+    // Internal styles scoped to this component. These override any external styles and ensure good mobile layout.
+    const styles = `
+        .yt-container {
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            font-family: Arial, sans-serif;
+        }
+        .tab-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 0.5rem;
+        }
+        .tab-btn {
+            flex: 1 1 auto;
+            padding: 0.5rem 0.75rem;
+            border: none;
+            border-radius: 4px;
+            background: #f0f0f0;
+            cursor: pointer;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        .tab-btn.active {
+            background: #4a7afe;
+            color: #fff;
+            font-weight: bold;
+        }
+        .btn {
+            padding: 0.5rem 0.75rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        .primary-btn {
+            background: #4a7afe;
+            color: #fff;
+        }
+        .secondary-btn {
+            background: #e0e0e0;
+            color: #333;
+        }
+        .primary-btn:hover {
+            background: #3b64d8;
+        }
+        .secondary-btn:hover {
+            background: #d0d0d0;
+        }
+        .input-group,
+        .button-group,
+        .prompt-suggestions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .input {
+            flex: 1 1 auto;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+        .textarea {
+            width: 100%;
+            min-height: 6rem;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            resize: vertical;
+        }
+        .suggestion-btn {
+            padding: 0.4rem 0.6rem;
+            border: none;
+            border-radius: 4px;
+            background: #f7f7f7;
+            cursor: pointer;
+            font-size: 0.85rem;
+        }
+        .suggestion-btn:hover {
+            background: #e0e0e0;
+        }
+        .scrollable-card {
+            max-height: 300px;
+            overflow-y: auto;
+            padding: 0.5rem;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            background: #f9f9f9;
+        }
+        .chunk {
+            margin-bottom: 0.75rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+        .progress-container {
+            margin-top: 0.5rem;
+        }
+        .progress-bar-wrapper {
+            width: 100%;
+            height: 10px;
+            background: #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .progress-bar {
+            height: 100%;
+            background: #4caf50;
+            transition: width 0.4s ease-in-out;
+        }
+        .retry-box {
+            margin-top: 0.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            padding: 0.5rem;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            background: #f9f9f9;
+        }
+        @media (max-width: 480px) {
+            .tab-btn {
+                flex-basis: 100%;
+            }
+            .input-group,
+            .button-group,
+            .prompt-suggestions {
+                flex-direction: column;
+            }
+            .btn,
+            .primary-btn,
+            .secondary-btn,
+            .tab-btn {
+                width: 100%;
+            }
+        }
+    `;
 
     return (
-        <div className="">
+        <div className="yt-container">
+            <style>{styles}</style>
+            {/* Tab navigation */}
             <div className="tab-bar">
                 <button className={`tab-btn ${activeTab === "transcript-iframes" ? "active" : ""}`} onClick={() => setActiveTab("transcript-iframes")}>Transcript Generator</button>
                 <button className={`tab-btn ${activeTab === "transcript" ? "active" : ""}`} onClick={() => setActiveTab("transcript")}>Transcript</button>
-                {validYoutubeUrl && 
-                    <>
+                {validYoutubeUrl && (
                     <button className={`tab-btn ${activeTab === "comments" ? "active" : ""}`} onClick={() => setActiveTab("comments")}>Comments</button>
-                    </>
-                }
+                )}
                 <button className={`tab-btn ${activeTab === "responses" ? "active" : ""}`} onClick={() => setActiveTab("responses")}>Prompt Responses</button>
                 <button className="btn primary-btn" onClick={async () => {
                     setYoutubeIframeShowing(!youtubeIframeShowing);
                 }}>
-                    {youtubeIframeShowing ? "Hide Iframe" : "Show Iframe"}   
+                    {youtubeIframeShowing ? "Hide Iframe" : "Show Iframe"}
                 </button>
                 {youtubeIframeShowing && (
-                    <button
-                        className="btn secondary-btn"
-                        onClick={() => setIsMinimized((prev) => !prev)}
-                    >
+                    <button className="btn secondary-btn" onClick={() => setIsMinimized((prev) => !prev)}>
                         {isMinimized ? "Expand Video" : "Minimize Video"}
                     </button>
                 )}
             </div>
 
-            { youtubeIframeShowing && 
+            {/* Video iframe section */}
+            {youtubeIframeShowing && (
                 <div
                     className={`iframe-container ${isMinimized ? "minimized-iframe" : ""}`}
                     style={isMinimized ? {
@@ -283,45 +434,46 @@ export default function YouTubeTranscript() {
                         boxShadow: '0 0 10px rgba(0,0,0,0.3)'
                     } : {
                         width: '100%',
-                        height: '500px',
+                        height: '200px',
                         marginBottom: '1rem'
                     }}
                 >
-                    <iframe
-                        src={`https://www.youtube.com/embed/${url.split('v=')[1]}`}
-                        title="YouTube Video"
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                        style={{
-                            width: '100%',
-                            height: '100%',
-                            borderRadius: '8px'
-                        }}
-                    ></iframe>
-                </div>
-            }
-
-
-            {
-                activeTab === 'transcript-iframes' && (
-                    <div className="iframe-container">
+                    {validYoutubeUrl && (
                         <iframe
-                            src={`https://kome.ai/tools/youtube-transcript-generator`}
+                            src={`https://www.youtube.com/embed/${url.split('v=')[1]}`}
                             title="YouTube Video"
                             frameBorder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen
-                            style={{ width: '100%', height: '500px' }}
+                            style={{
+                                width: '100%',
+                                height: '100%',
+                                borderRadius: '8px'
+                            }}
                         ></iframe>
-                    </div>
-                )
-            }
-            {activeTab === "transcript" &&
+                    )}
+                </div>
+            )}
+
+            {/* Iframe generator tab */}
+            {activeTab === 'transcript-iframes' && (
+                <div className="iframe-container">
+                    <iframe
+                        src={`https://kome.ai/tools/youtube-transcript-generator`}
+                        title="YouTube Transcript Generator"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        style={{ width: '100%', height: '300px' }}
+                    ></iframe>
+                </div>
+            )}
+
+            {/* Transcript tab */}
+            {activeTab === "transcript" && (
                 <>
                     <div className="input-group">
-                        <input className="input" type="text" value={url} placeholder="YouTube URL"
-                            onChange={(e) => setUrl(e.target.value)} />
+                        <input className="input" type="text" value={url} placeholder="YouTube URL" onChange={(e) => setUrl(e.target.value)} />
                         <div className="button-group">
                             <button className="btn secondary-btn" onClick={() => setDrawerOpen(true)}>
                                 🔎 Search YouTube
@@ -330,9 +482,7 @@ export default function YouTubeTranscript() {
                         <PasteButton setPasteText={setUrl} className="btn paste-btn" />
                     </div>
 
-
                     <textarea
-                        style={{ height: "35px" }}
                         className="textarea"
                         rows={6}
                         value={manuallyEnteredTranscript}
@@ -354,8 +504,6 @@ export default function YouTubeTranscript() {
                         >
                             Clear
                         </button>
-
-                        {/* ✅ Upload TXT File */}
                         <label className="btn secondary-btn" style={{ cursor: 'pointer' }}>
                             Upload .txt
                             <input
@@ -365,7 +513,6 @@ export default function YouTubeTranscript() {
                                 onChange={(e) => {
                                     const file = e.target.files[0];
                                     if (!file) return;
-
                                     const reader = new FileReader();
                                     reader.onload = (event) => {
                                         setManuallyEnteredTranscript(event.target.result);
@@ -385,8 +532,8 @@ export default function YouTubeTranscript() {
                         <PasteButton setPasteText={setPrompt} className="btn paste-btn" />
                     </div>
                     <div className="prompt-suggestions">
-                        {promptSuggestions.map((text, index) => (
-                            <button key={index} onClick={() => setPrompt(text.value)} className="suggestion-btn">{text.label}</button>
+                        {promptSuggestions.map((item, index) => (
+                            <button key={index} onClick={() => setPrompt(item.value)} className="suggestion-btn">{item.label}</button>
                         ))}
                     </div>
                     <button className="btn primary-btn" onClick={executePrompt} disabled={loadingPrompt || !prompt}>
@@ -397,40 +544,40 @@ export default function YouTubeTranscript() {
                         onClose={() => setDrawerOpen(false)}
                         onSelectVideo={(selectedUrl) => {
                             setUrl(selectedUrl);
-                            setDrawerOpen(false); // Close after selecting
+                            setDrawerOpen(false);
                         }}
                         setUrl={(url) => {
                             setUrl(url);
                             setDrawerOpen(false);
                         }}
                     />
-
                 </>
-            }
+            )}
 
-
-
+            {/* Prompt loading progress */}
             {loadingPrompt && (
-                <div style={{ marginTop: '10px' }}>
+                <div className="progress-container">
                     <label style={{ fontWeight: 'bold' }}>Progress: {progress}/{splitTranscript.length}</label>
-                    <div style={{ width: '100%', height: '10px', backgroundColor: '#ddd', borderRadius: '5px', overflow: 'hidden', marginTop: '4px' }}>
-                        <div style={{ width: `${(progress / splitTranscript.length) * 100}%`, height: '100%', backgroundColor: '#4caf50', transition: 'width 0.4s ease-in-out' }} />
+                    <div className="progress-bar-wrapper">
+                        <div className="progress-bar" style={{ width: `${(progress / splitTranscript.length) * 100}%` }} />
                     </div>
                 </div>
             )}
-            {activeTab === "comments" &&
+
+            {/* Comments tab */}
+            {activeTab === "comments" && (
                 <>
                     <h2>Comments Preview</h2>
                     <CopyButton text={comments} buttonText="📋 Copy All Comments" className="btn copy-btn" />
                     <div className="prompt-suggestions">
-                        {promptSuggestions.map((text, index) => (
-                            <button key={index} onClick={() => setPrompt(text.value)} className="suggestion-btn">{text.label}</button>
+                        {promptSuggestions.map((item, index) => (
+                            <button key={index} onClick={() => setPrompt(item.value)} className="suggestion-btn">{item.label}</button>
                         ))}
                     </div>
                     <button className="btn primary-btn" onClick={executePromptOnComments} disabled={loadingPrompt || !prompt}>
                         {loadingPrompt ? <ClipLoader size={12} color="white" /> : "Execute Prompt on Comments"}
                     </button>
-                    <div className="card scrollable-card">
+                    <div className="scrollable-card">
                         {splitComments.map((chunk, i) => (
                             <div key={i} className="chunk">
                                 <ReactMarkdown className="markdown-body">{chunk}</ReactMarkdown>
@@ -439,19 +586,19 @@ export default function YouTubeTranscript() {
                         ))}
                     </div>
                 </>
-            }
+            )}
 
-
+            {/* Responses tab */}
             {activeTab === "responses" && (
                 <>
                     <h2>Prompt Responses</h2>
                     {promptResponses.length > 0 && (
                         <>
                             <CopyButton text={promptResponsesText} buttonText="Copy All" className="btn copy-btn" />
-                            <button onClick={()=>{
+                            <button onClick={() => {
                                 localStorage.setItem('selectedText', promptResponsesText);
                                 dispatch(actions.setIsChatOpen(true));
-                                dispatch(actions.setSelectedText(promptResponsesText)) 
+                                dispatch(actions.setSelectedText(promptResponsesText));
                             }} className="btn primary-btn">Ask AI</button>
                             <button className="btn secondary-btn" onClick={() => {
                                 setManuallyEnteredTranscript(promptResponsesText);
@@ -459,16 +606,15 @@ export default function YouTubeTranscript() {
                             }}>Copy to Transcript</button>
                         </>
                     )}
-
-                    <AutoScroller activeIndex={0} >
+                    <AutoScroller activeIndex={0}>
                         {promptResponses.map((res, i) => (
                             <div key={i} data-index={i} style={{ padding: "1rem 0", borderBottom: "1px solid #ddd" }}>
                                 <ReactMarkdown className="markdown-body">{res}</ReactMarkdown>
                                 <CopyButton text={res} className="btn copy-btn" />
-                                <button onClick={()=>{
+                                <button onClick={() => {
                                     localStorage.setItem('selectedText', res);
                                     dispatch(actions.setIsChatOpen(true));
-                                    dispatch(actions.setSelectedText(res)) 
+                                    dispatch(actions.setSelectedText(res));
                                 }} className="btn primary-btn">Ask AI</button>
                                 <button className="btn secondary-btn" onClick={() => {
                                     setRetryIndex(i);
@@ -476,7 +622,6 @@ export default function YouTubeTranscript() {
                                 }}>
                                     🔁 Retry
                                 </button>
-
                                 {retryIndex === i && (
                                     <div className="retry-box">
                                         <input
@@ -485,7 +630,6 @@ export default function YouTubeTranscript() {
                                             onChange={(e) => setRetryPromptText(e.target.value)}
                                             placeholder="New prompt for retry"
                                         />
-
                                         <div className="button-group">
                                             <button
                                                 className="btn primary-btn"
@@ -504,12 +648,12 @@ export default function YouTubeTranscript() {
                                                         const updatedResponses = [...promptResponses];
                                                         updatedResponses[i] = retryResponse[0];
                                                         setPromptResponses(updatedResponses);
-                                                        showMessage({
+                                                        showMessage?.({
                                                             type: "success",
                                                             message: `✅ Retry successful for part ${i + 1}`,
                                                         });
                                                     } catch (err) {
-                                                        showMessage({
+                                                        showMessage?.({
                                                             type: "error",
                                                             message: `❌ Retry failed: ${err.message}`,
                                                         });
@@ -522,7 +666,6 @@ export default function YouTubeTranscript() {
                                             >
                                                 {retryLoadingIndex === i ? <ClipLoader size={12} color="white" /> : "Submit Retry"}
                                             </button>
-
                                             <button
                                                 className="btn secondary-btn"
                                                 onClick={() => {
@@ -536,25 +679,23 @@ export default function YouTubeTranscript() {
                                         </div>
                                     </div>
                                 )}
-
                             </div>
                         ))}
                     </AutoScroller>
-
-
                 </>
             )}
 
+            {/* Transcript preview in transcript tab */}
             {activeTab === "transcript" && (
                 <>
                     <h2>
                         Transcript Preview <span style={{ fontSize: '0.9rem', color: '#666' }}>({transcriptWordCount} words)</span>
                     </h2>
                     <CopyButton text={transcript} buttonText="📋 Copy Complete Transcript" className="btn copy-btn" />
-                    <div className="card scrollable-card">
+                    <div className="scrollable-card">
                         {splitTranscript.map((chunk, i) => (
                             <div key={i} className="chunk">
-                                <textarea maxWidth="60vw" readOnly>
+                                <textarea readOnly className="textarea">
                                     {chunk}
                                 </textarea>
                                 <CopyButton text={chunk} className="btn copy-btn" />
