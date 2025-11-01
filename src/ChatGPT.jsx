@@ -93,7 +93,7 @@ export default function GptPromptComponent({
     }
   };
 
-  const clear = () => {
+  const clearMessages = () => {
     setMessages([]);
     dispatch(actions.setChatPrompt(""));
   };
@@ -242,7 +242,8 @@ export default function GptPromptComponent({
           <div style={{ display: "flex", gap: "0.5rem", justifyContent: "space-between" }}>
             <div style={{ display: "flex", gap: "0.5rem" }}>
               <PasteButton setPasteText={(text) => dispatch(actions.setChatPrompt(text))} />
-              <button onClick={clear}>Clear</button>
+              <button onClick={clearMessages}>Clear Chat Log</button>
+              <button onClick={()=>dispatch(actions.setChatPrompt(""))}>Clear Prompt</button>
             </div>
             <button onClick={handleSubmit} disabled={loading}>
               {loading ? "Thinking..." : "Send"}
