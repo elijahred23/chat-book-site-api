@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useAppState } from "./context/AppContext";
 
-const LoopingTTS = () => {
+const LoopingTTSImproved = () => {
   const synth = window.speechSynthesis;
   const { ttsText } = useAppState();
 
@@ -9,8 +9,10 @@ const LoopingTTS = () => {
   const [text, setText] = useState(
     "Paste or type your text here, then press Start. It will speak on loop until you stop."
   );
-  // Loop counter – counts how many times the text has repeated
+  // Loop counter – counts how many times the entire text has repeated
   const [loopCount, setLoopCount] = useState(0);
+  // Number of times to repeat each individual sentence
+  const [sentenceRepeats, setSentenceRepeats] = useState(1);
   // Speech synthesis settings
   const [rate, setRate] = useState(1);
   const [pitch, setPitch] = useState(1);
@@ -29,8 +31,9 @@ const LoopingTTS = () => {
   const voicesRef = useRef([]);
   const voiceRef = useRef(null);
   const chunksRef = useRef([]);
-  const idxRef = useRef(0);
+  const idxRef = useRef(0); // index of the current sentence
   const playingRef = useRef(false);
+  const sentenceRepeatRef = useRef(0); // how many times the current sentence has been repeated so far
 
   /**
    * Load available voices and select a default. When `samOnly` is true
@@ -57,19 +60,23 @@ const LoopingTTS = () => {
   /**
    * Compute a rough time estimate for how long the current text will
    * take to speak at the current rate. This is used to display
-   * approximations of duration and the expected end time.
+   * approximations of duration and the expected end time. The
+   * calculation accounts for repeating each sentence multiple times via
+   * `sentenceRepeats`.
    */
   const computeTimeEstimate = () => {
     const words = text.trim().split(/\s+/).filter(Boolean);
     // We assume ~200 words per minute at rate=1; adjust wpm linearly
     const wpm = 200 * rate;
-    const totalMinutes = words.length / (wpm || 1);
+    const baseMinutes = words.length / (wpm || 1);
+    // Multiply by the number of repeats per sentence
+    const totalMinutes = baseMinutes * Math.max(sentenceRepeats, 1);
     const mins = Math.floor(totalMinutes);
     const secs = Math.round((totalMinutes - mins) * 60);
     return { mins, secs, str: (mins > 0 ? mins + "m " : "") + secs + "s" };
   };
 
-  // Update the displayed time estimate whenever the text or rate changes
+  // Update the displayed time estimate whenever the text, rate or sentenceRepeats changes
   useEffect(() => {
     if (text.trim()) {
       const { str } = computeTimeEstimate();
@@ -77,7 +84,7 @@ const LoopingTTS = () => {
     } else {
       setTimeEstimate("");
     }
-  }, [text, rate]);
+  }, [text, rate, sentenceRepeats]);
 
   // Load saved text from local storage or use provided ttsText from context
   useEffect(() => {
@@ -105,22 +112,39 @@ const LoopingTTS = () => {
 
   /**
    * Update progress and calculate an estimated end time. Progress is
-   * measured as a percentage of chunks spoken. The end time is
-   * calculated based on the remaining fraction of the estimated
-   * duration.
+   * measured as a percentage of utterances spoken relative to the
+   * total number of utterances in one cycle. Each sentence may be
+   * repeated multiple times, so the total number of utterances is
+   * `chunksRef.current.length * sentenceRepeats`. When looping
+   * indefinitely, the progress resets at the end of each cycle.
    */
-  const updateProgress = () => {
-    const total = chunksRef.current.length;
-    if (!total) {
+  const updateProgress = (cycleComplete = false) => {
+    const totalSentences = chunksRef.current.length;
+    const repeats = Math.max(sentenceRepeats, 1);
+    const totalUtterances = totalSentences * repeats;
+    if (!totalUtterances) {
       setProgress(0);
       return;
     }
-    setProgress((idxRef.current / total) * 100);
-    // Estimate remaining time
+    if (cycleComplete) {
+      // When a cycle completes we set progress to 100%
+      setProgress(100);
+    } else {
+      // Compute how many utterances have been spoken in the current cycle
+      const spokenUtterances = idxRef.current * repeats + sentenceRepeatRef.current;
+      setProgress((spokenUtterances / totalUtterances) * 100);
+    }
+    // Estimate remaining time (one cycle) based on remaining utterances
     const { mins, secs } = computeTimeEstimate();
     const totalSeconds = mins * 60 + secs;
-    const remainingFraction = 1 - idxRef.current / total;
-    const remainingSeconds = totalSeconds * remainingFraction;
+    if (!totalSeconds) {
+      setEndTime("");
+      return;
+    }
+    const fractionComplete = cycleComplete
+      ? 1
+      : (idxRef.current * repeats + sentenceRepeatRef.current) / totalUtterances;
+    const remainingSeconds = totalSeconds * (1 - fractionComplete);
     const end = new Date(Date.now() + remainingSeconds * 1000);
     setEndTime(
       "Estimated end: " +
@@ -129,18 +153,24 @@ const LoopingTTS = () => {
   };
 
   /**
-   * Speak the next chunk of text. If the end of the chunks array is
-   * reached and looping is enabled, reset to the beginning and
-   * increment the loop counter. Otherwise mark the synthesis as
-   * complete.
+   * Speak the next utterance. Each sentence may be repeated
+   * `sentenceRepeats` times before proceeding to the next sentence. If
+   * the end of the chunks array is reached and looping the entire
+   * passage is enabled, reset to the beginning and increment the loop
+   * counter. Otherwise mark the synthesis as complete.
    */
   const speakNext = () => {
     if (!playingRef.current) return;
+    const repeats = Math.max(sentenceRepeats, 1);
+    // If we've gone past the last sentence in the list
     if (idxRef.current >= chunksRef.current.length) {
       if (loop) {
-        // Increment loop counter when starting over
+        // Completed a full cycle; increment loop counter and reset
         setLoopCount((prev) => prev + 1);
         idxRef.current = 0;
+        sentenceRepeatRef.current = 0;
+        updateProgress(true);
+        // Kick off the next cycle
         speakNext();
       } else {
         setStatus("Finished");
@@ -151,17 +181,29 @@ const LoopingTTS = () => {
       }
       return;
     }
-    const utter = new SpeechSynthesisUtterance(
-      chunksRef.current[idxRef.current++]
-    );
+    // Determine the current sentence to speak
+    const sentence = chunksRef.current[idxRef.current];
+    const utter = new SpeechSynthesisUtterance(sentence);
     if (voiceRef.current) utter.voice = voiceRef.current;
     utter.rate = rate;
     utter.pitch = pitch;
     utter.volume = volume;
+    // Update UI with the sentence we are about to speak
     setCurrentSentence(utter.text.trim());
     utter.onend = () => {
+      // After each utterance, update repeat counters
+      if (sentenceRepeatRef.current < repeats - 1) {
+        sentenceRepeatRef.current += 1;
+      } else {
+        // Move to next sentence and reset repeat counter
+        sentenceRepeatRef.current = 0;
+        idxRef.current += 1;
+      }
       updateProgress();
-      speakNext();
+      // Continue speaking if still playing
+      if (playingRef.current) {
+        speakNext();
+      }
     };
     synth.speak(utter);
     setStatus("Speaking…");
@@ -176,6 +218,7 @@ const LoopingTTS = () => {
     synth.cancel();
     chunksRef.current = splitText(text.trim());
     idxRef.current = 0;
+    sentenceRepeatRef.current = 0;
     playingRef.current = true;
     setCurrentSentence("");
     setProgress(0);
@@ -205,13 +248,19 @@ const LoopingTTS = () => {
     setEndTime("");
   };
 
-  /** Go back one sentence if possible. */
+  /** Go back one sentence if possible. Note that we cannot go back
+   * within repeats; this jumps back one sentence and resets
+   * repeats. */
   const handlePrev = () => {
     if (!chunksRef.current.length) return;
-    idxRef.current = Math.max(0, idxRef.current - 2);
-    playingRef.current = true;
-    synth.cancel();
-    speakNext();
+    // Ensure we step back at least one sentence
+    if (idxRef.current > 0) {
+      idxRef.current = Math.max(0, idxRef.current - 1);
+      sentenceRepeatRef.current = 0;
+      playingRef.current = true;
+      synth.cancel();
+      speakNext();
+    }
   };
 
   /** Immediately jump to the next sentence. */
@@ -219,6 +268,9 @@ const LoopingTTS = () => {
     if (!chunksRef.current.length) return;
     playingRef.current = true;
     synth.cancel();
+    // Skip remaining repeats for current sentence and move to next sentence
+    sentenceRepeatRef.current = 0;
+    idxRef.current = Math.min(idxRef.current + 1, chunksRef.current.length);
     speakNext();
   };
 
@@ -235,8 +287,7 @@ const LoopingTTS = () => {
   };
 
   /** Paste clipboard contents into the text box. If access is denied
-   * prompt the user to paste manually.
-   */
+   * prompt the user to paste manually. */
   const handlePaste = async () => {
     try {
       const clip = await navigator.clipboard.readText();
@@ -255,6 +306,8 @@ const LoopingTTS = () => {
     setProgress(0);
     setEndTime("");
     setLoopCount(0);
+    idxRef.current = 0;
+    sentenceRepeatRef.current = 0;
   };
 
   // CSS styles for the component. These are scoped to this component
@@ -302,7 +355,8 @@ const LoopingTTS = () => {
       flex: 1 1 auto;
       min-width: 80px;
     }
-    .sliders input[type="range"] {
+    .sliders input[type="range"],
+    .options input[type="number"] {
       width: 100%;
     }
     .progress-bar-container {
@@ -329,7 +383,8 @@ const LoopingTTS = () => {
     @media (max-width: 480px) {
       .controls button,
       .controls label,
-      .sliders label {
+      .sliders label,
+      .options label {
         flex-basis: 100%;
       }
     }
@@ -401,6 +456,21 @@ const LoopingTTS = () => {
           />
         </label>
       </div>
+      {/* New control: how many times to repeat each sentence */}
+      <div className="options">
+        <label>
+          Repeat each sentence
+          <input
+            type="number"
+            min="1"
+            value={sentenceRepeats}
+            onChange={(e) => {
+              const val = parseInt(e.target.value, 10);
+              setSentenceRepeats(isNaN(val) || val < 1 ? 1 : val);
+            }}
+          />
+        </label>
+      </div>
       <div className="controls">
         <button className="primary" onClick={handleStart}>
           ▶ Start
@@ -465,4 +535,4 @@ const LoopingTTS = () => {
   );
 };
 
-export default LoopingTTS;
+export default LoopingTTSImproved;
