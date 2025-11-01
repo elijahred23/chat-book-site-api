@@ -21,7 +21,7 @@ const LoopingTTSImproved = () => {
   const [status, setStatus] = useState("Idle");
   const [loop, setLoop] = useState(true);
   const [samOnly, setSamOnly] = useState(false);
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
   const [currentSentence, setCurrentSentence] = useState("");
   const [timeEstimate, setTimeEstimate] = useState("");
   const [progress, setProgress] = useState(0);
@@ -456,21 +456,40 @@ const LoopingTTSImproved = () => {
           />
         </label>
       </div>
-      {/* New control: how many times to repeat each sentence */}
-      <div className="options">
-        <label>
-          Repeat each sentence
-          <input
-            type="number"
-            min="1"
-            value={sentenceRepeats}
-            onChange={(e) => {
-              const val = parseInt(e.target.value, 10);
-              setSentenceRepeats(isNaN(val) || val < 1 ? 1 : val);
-            }}
-          />
-        </label>
-      </div>
+<div className="options">
+  <label className="repeat-label">
+    Repeat each sentence
+    <div className="repeat-input-container">
+      <button
+        type="button"
+        className="repeat-btn"
+        onClick={() => setSentenceRepeats(prev => Math.max(1, prev - 1))}
+      >
+        –
+      </button>
+
+      <input
+        type="number"
+        min="1"
+        value={sentenceRepeats}
+        onChange={(e) => {
+          const val = parseInt(e.target.value, 10);
+          setSentenceRepeats(isNaN(val) || val < 1 ? 1 : val);
+        }}
+        className="repeat-input"
+      />
+
+      <button
+        type="button"
+        className="repeat-btn"
+        onClick={() => setSentenceRepeats(prev => prev + 1)}
+      >
+        +
+      </button>
+    </div>
+  </label>
+</div>
+
       <div className="controls">
         <button className="primary" onClick={handleStart}>
           ▶ Start
