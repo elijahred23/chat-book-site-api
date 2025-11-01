@@ -139,7 +139,20 @@ export default function FlashCardApp() {
   // `question` and `answer` fields. Some LLM responses may use
   // alternative keys (e.g. `word`/`definition`), so we normalise
   // them after parsing.
-  const [cards, setCards] = useState([]);
+    const [cards, setCards] = useState(() => {
+    try {
+      const stored = localStorage.getItem("cards");
+      const parsed = JSON.parse(stored);
+      return Array.isArray(parsed) ? parsed : [];
+    } catch {
+      return [];
+    }
+  });
+
+  // Whenever cards update, persist them to localStorage
+  useEffect(() => {
+    localStorage.setItem("cards", JSON.stringify(cards));
+  }, [cards]);
   // The prompt to send to Gemini when generating cards.
   const [prompt, setPrompt] = useState("");
   // The currently selected feature/mode. One of: "study", "quiz",
@@ -1123,6 +1136,17 @@ export default function FlashCardApp() {
             }}
           >
             Paste JSON
+          </button>
+          <button onClick={()=> setCards([])} style={{
+              padding: "0.5rem 1rem",
+              backgroundColor: COLORS.buttonBg,
+              border: `1px solid ${COLORS.border}`,
+              borderRadius: "4px",
+              color: COLORS.text,
+              cursor: "pointer",
+              width: isMobile ? "100%" : "auto",
+            }}>
+            Clear Cards
           </button>
         </div>
         <div style={topicRowStyle}>
