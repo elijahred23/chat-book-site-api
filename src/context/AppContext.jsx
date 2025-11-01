@@ -14,6 +14,7 @@ const initialState = {
   teleprompterText: '',
   transcriptTypes: ['internal', 'external'],
   selectedTranscriptType: 'internal',
+  isTeleprompterOpen: false,
 };
 
 const actionTypes = {
@@ -26,6 +27,7 @@ const actionTypes = {
   SET_TTS_TEXT: 'SET_TTS_TEXT',
   SET_TELEPROMPTER_TEXT: 'SET_TELEPROMPTER_TEXT',
   SET_SELECTED_TRANSCRIPT_TYPE: 'SET_SELECTED_TRANSCRIPT_TYPE',
+  SET_IS_TELEPROMPTER_OPEN: 'SET_IS_TELEPROMPTER_OPEN',
 };
 
 function appReducer(state, action) {
@@ -54,6 +56,8 @@ function appReducer(state, action) {
       return { ...state, teleprompterText: action.payload };
     case actionTypes.SET_SELECTED_TRANSCRIPT_TYPE:
       return { ...state, selectedTranscriptType: action.payload };
+    case actionTypes.SET_IS_TELEPROMPTER_OPEN:
+      return { ...state, isTeleprompterOpen: action.payload };
     default:
       console.warn(`Unhandled action type: ${action.type}`);
       return state;
@@ -90,4 +94,5 @@ export const actions = {
     type: actionTypes.SET_SELECTED_TRANSCRIPT_TYPE,
     payload: transcriptType,
   }),
+  setIsTeleprompterOpen: (open) => ({ type: actionTypes.SET_IS_TELEPROMPTER_OPEN, payload: open }),
 };

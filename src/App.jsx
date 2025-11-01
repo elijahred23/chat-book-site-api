@@ -22,14 +22,16 @@ import PlantUMLViewer from './PlantUML.jsx';
 function App() {
   const [isFullWidth, setIsFullWidth] = useState(true);
   const [isTTSOpen, setIsTTSOpen] = useState(false);
-  const [isTeleprompterOpen, setIsTeleprompterOpen] = useState(false);
   const [showFloatingBtns, setShowFloatingBtns] = useState(true); // NEW state
   const dispatch = useAppDispatch();
-  const { isChatOpen } = useAppState();
+  const { isChatOpen, isTeleprompterOpen } = useAppState();
 
   const toggleChat = () => dispatch(actions.setIsChatOpen(!isChatOpen));
   const toggleTTS = () => setIsTTSOpen(prev => !prev);
   const toggleWidth = () => setIsFullWidth(prev => !prev);
+  const setIsTeleprompterOpen = (newValue) => {
+    dispatch(actions.setIsTeleprompterOpen(newValue));
+  }
 
   useEffect(() => {
     const savedText = localStorage.getItem('selectedText');
@@ -89,7 +91,7 @@ function App() {
                 <button onClick={toggleTTS} className="chat-toggle-btn floating-chat-btn">
                   {isTTSOpen ? '❌' : '🔊 TTS'}
                 </button>
-                <button onClick={() => setIsTeleprompterOpen(true)} className="chat-toggle-btn floating-chat-btn">
+                <button onClick={()=>setIsTeleprompterOpen(true)} className="chat-toggle-btn floating-chat-btn">
                   {isTeleprompterOpen ? '❌' : '📜 Teleprompter'}
                 </button>
               </>
@@ -136,7 +138,7 @@ function App() {
 
           <div className={`chat-drawer ${isTeleprompterOpen ? 'open' : ''} ${isFullWidth ? 'full' : 'half'}`}>
             <div className="chat-drawer-header">
-              <button className="width-toggle-btn" onClick={() => setIsTeleprompterOpen(false)}>
+              <button className="width-toggle-btn" onClick={()=>setIsTeleprompterOpen(false)}>
                 ✖ Close Teleprompter
               </button>
             </div>
