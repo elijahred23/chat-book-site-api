@@ -21,16 +21,20 @@ import PlantUMLViewer from './PlantUML.jsx';
 
 function App() {
   const [isFullWidth, setIsFullWidth] = useState(true);
-  const [isTTSOpen, setIsTTSOpen] = useState(false);
   const [showFloatingBtns, setShowFloatingBtns] = useState(true); // NEW state
   const dispatch = useAppDispatch();
-  const { isChatOpen, isTeleprompterOpen } = useAppState();
+  const { isChatOpen, isTeleprompterOpen, isTTSOpen} = useAppState();
 
   const toggleChat = () => dispatch(actions.setIsChatOpen(!isChatOpen));
-  const toggleTTS = () => setIsTTSOpen(prev => !prev);
+  const toggleTTS = () =>  setIsTTSOpen(!isTTSOpen);
   const toggleWidth = () => setIsFullWidth(prev => !prev);
+
   const setIsTeleprompterOpen = (newValue) => {
     dispatch(actions.setIsTeleprompterOpen(newValue));
+  }
+
+  const setIsTTSOpen = (newValue) => {
+    dispatch(actions.setIsTTSOpen(newValue));
   }
 
   useEffect(() => {
