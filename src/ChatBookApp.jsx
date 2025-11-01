@@ -9,6 +9,7 @@ import CopyButton from "./ui/CopyButton";
 import { useFlyout } from "./context/FlyoutContext"; // adjust path as needed
 import AutoScroller from "./ui/AutoScroller";
 import { actions, useAppDispatch } from "./context/AppContext";
+import ActionButtons from "./ui/ActionButtons";
 
 
 const baseURL = hostname;
@@ -288,11 +289,7 @@ export default function ChatBookApp() {
     const AskAIButton = ({text}) => {
         return (
             <>
-                <button onClick={() => {
-                    localStorage.setItem('selectedText', text);
-                    dispatch(actions.setIsChatOpen(true));
-                    dispatch(actions.setSelectedText(text))
-                }} className="btn primary-btn">Ask AI</button>
+            <ActionButtons promptText={text} />
             </>
         )
     }
@@ -352,6 +349,7 @@ export default function ChatBookApp() {
                 <>
                     <button onClick={generatePDF}>Generate PDF</button>
                     <CopyButton buttonText="Copy all responses" text={allInstructionResponsesText} />
+                    <ActionButtons promptText={allInstructionResponsesText} />
                 </>
             )}
 

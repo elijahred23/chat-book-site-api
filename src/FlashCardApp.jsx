@@ -5,6 +5,7 @@ import React, { useState, useEffect, useRef } from "react";
 // provide access to Gemini via HTTP endpoints. Adjust the import path
 // to match where you've placed these functions in your codebase.
 import { getGeminiResponse } from "./utils/callGemini.js";
+import ActionButtons from "./ui/ActionButtons.jsx";
 
 /**
  * Attempt to extract a JSON object or array from an arbitrary string.
@@ -978,6 +979,7 @@ export default function FlashCardApp() {
                   }}
                 >
                   {card.answer}
+                  <ActionButtons promptText={card.answer} />
                 </td>
               </tr>
             ))}
