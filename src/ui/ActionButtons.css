@@ -1,0 +1,41 @@
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin: 10px 0;
+}
+
+.action-btn {
+  flex: 1;
+  min-width: 80px;
+  padding: 10px 14px;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.action-btn:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+}
+
+@media (max-width: 600px) {
+  .action-buttons {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 4px;
+    padding: 4px;
+  }
+  .action-btn {
+    font-size: 12px;
+    padding: 8px;
+    border-radius: 8px;
+  }
+}

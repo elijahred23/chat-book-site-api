@@ -10,6 +10,7 @@ import AutoScroller from './ui/AutoScroller';
 import YouTubeSearchDrawer from './YouTubeSearchDrawer';
 import { actions, useAppDispatch, useAppState } from './context/AppContext';
 import { getYouTubeTranscript as fetchYouTubeTranscriptInternal } from './utils/callYoutube';
+import ActionButtons from './ui/ActionButtons';
 
 // Constants
 const wordSplitNumber = 5000;
@@ -595,11 +596,7 @@ export default function YouTubeTranscript() {
                     {promptResponses.length > 0 && (
                         <>
                             <CopyButton text={promptResponsesText} buttonText="Copy All" className="btn copy-btn" />
-                            <button onClick={() => {
-                                localStorage.setItem('selectedText', promptResponsesText);
-                                dispatch(actions.setIsChatOpen(true));
-                                dispatch(actions.setSelectedText(promptResponsesText));
-                            }} className="btn primary-btn">Ask AI</button>
+                            <ActionButtons promptText={promptResponsesText} />
                             <button className="btn secondary-btn" onClick={() => {
                                 setManuallyEnteredTranscript(promptResponsesText);
                                 setActiveTab("transcript");
@@ -611,17 +608,13 @@ export default function YouTubeTranscript() {
                             <div key={i} data-index={i} style={{ padding: "1rem 0", borderBottom: "1px solid #ddd" }}>
                                 <ReactMarkdown className="markdown-body">{res}</ReactMarkdown>
                                 <CopyButton text={res} className="btn copy-btn" />
-                                <button onClick={() => {
-                                    localStorage.setItem('selectedText', res);
-                                    dispatch(actions.setIsChatOpen(true));
-                                    dispatch(actions.setSelectedText(res));
-                                }} className="btn primary-btn">Ask AI</button>
                                 <button className="btn secondary-btn" onClick={() => {
                                     setRetryIndex(i);
                                     setRetryPromptText(prompt);
                                 }}>
                                     🔁 Retry
                                 </button>
+                                <ActionButtons promptText={res} />
                                 {retryIndex === i && (
                                     <div className="retry-box">
                                         <input
