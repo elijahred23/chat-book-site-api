@@ -21,136 +21,133 @@ import PlantUMLViewer from './PlantUML.jsx';
 
 function App() {
   const [isFullWidth, setIsFullWidth] = useState(true);
-  const [showFloatingBtns, setShowFloatingBtns] = useState(true); // NEW state
+  const [isChatVisible, setIsChatVisible] = useState(true);
+  const [isChatFullscreen, setIsChatFullscreen] = useState(false);
+  const [showFloatingBtns, setShowFloatingBtns] = useState(true);
   const dispatch = useAppDispatch();
-  const { isChatOpen, isTeleprompterOpen, isTTSOpen} = useAppState();
+  const { isChatOpen, isTeleprompterOpen, isTTSOpen } = useAppState();
 
   const toggleChat = () => dispatch(actions.setIsChatOpen(!isChatOpen));
-  const toggleTTS = () =>  setIsTTSOpen(!isTTSOpen);
-  const toggleWidth = () => setIsFullWidth(prev => !prev);
-
-  const setIsTeleprompterOpen = (newValue) => {
-    dispatch(actions.setIsTeleprompterOpen(newValue));
-  }
-
-  const setIsTTSOpen = (newValue) => {
-    dispatch(actions.setIsTTSOpen(newValue));
-  }
+  const setIsTeleprompterOpen = (val) => dispatch(actions.setIsTeleprompterOpen(val));
+  const setIsTTSOpen = (val) => dispatch(actions.setIsTTSOpen(val));
+  const toggleWidth = () => setIsFullWidth((p) => !p);
 
   useEffect(() => {
     const savedText = localStorage.getItem('selectedText');
-    if (savedText) {
-      dispatch(actions.setSelectedText(savedText));
-    }
+    if (savedText) dispatch(actions.setSelectedText(savedText));
   }, []);
 
   return (
     <>
-      <div>
-        <BrowserRouter>
-          <h1>Eli Himi GPT</h1>
+      <BrowserRouter>
+        <h1>Eli Himi GPT</h1>
 
-          <div className="dropdown-nav">
-            <button className="dropdown-toggle">Menu ▾</button>
-            <div className="dropdown-menu">
-              <NavLink to="/chatBook" activeClassName="active">Chat Book</NavLink>
-              <NavLink to="/youTubeTranscript" activeClassName="active">YouTube Transcript</NavLink>
-              <NavLink to="/typingTest" activeClassName="active">Typing Test</NavLink>
-              <NavLink to="/flashCards" activeClassName="active">Flash Cards</NavLink>
-              <NavLink to="/htmlBuilder" activeClassName="active">HTML Builder</NavLink>
-              <NavLink to="/Quran" activeClassName="active">Quran</NavLink>
-              <NavLink to="/plantUML" activeClassName="active">PlantUML</NavLink>
-              <NavLink to="/apiCheck" activeClassName="active">Settings</NavLink>
-            </div>
+        {/* Dropdown Menu */}
+        <div className="dropdown-nav">
+          <button className="dropdown-toggle">Menu ▾</button>
+          <div className="dropdown-menu">
+            <NavLink to="/chatBook">Chat Book</NavLink>
+            <NavLink to="/youTubeTranscript">YouTube Transcript</NavLink>
+            <NavLink to="/typingTest">Typing Test</NavLink>
+            <NavLink to="/flashCards">Flash Cards</NavLink>
+            <NavLink to="/htmlBuilder">HTML Builder</NavLink>
+            <NavLink to="/Quran">Quran</NavLink>
+            <NavLink to="/plantUML">PlantUML</NavLink>
+            <NavLink to="/apiCheck">Settings</NavLink>
           </div>
+        </div>
 
-          {/* Floating Buttons */}
-          <div className="floating-chat-container">
-            {/* Small toggle button */}
-            <button
-              onClick={() => setShowFloatingBtns(prev => !prev)}
-              className="floating-toggle-btn"
-              style={{
-                position: "fixed",
-                bottom: "20px",
-                right: "20px",
-                width: "40px",
-                height: "40px",
-                borderRadius: "50%",
-                background: "#444",
-                color: "#fff",
-                fontSize: "18px",
-                zIndex: 1000
-              }}
-            >
-              {showFloatingBtns ? "–" : "+"}
-            </button>
+        {/* Floating Buttons */}
+        <div className="floating-chat-container">
+          <button
+            onClick={() => setShowFloatingBtns((p) => !p)}
+            className="floating-toggle-btn"
+            style={{
+              position: 'fixed',
+              bottom: '20px',
+              right: '20px',
+              width: '40px',
+              height: '40px',
+              borderRadius: '50%',
+              background: '#444',
+              color: '#fff',
+              fontSize: '18px',
+              zIndex: 1000,
+            }}
+          >
+            {showFloatingBtns ? '–' : '+'}
+          </button>
 
-            {/* Other floating buttons, only visible if toggled on */}
-            {showFloatingBtns && (
-              <>
-                <button onClick={toggleChat} className="chat-toggle-btn floating-chat-btn">
-                  {isChatOpen ? '❌' : '💬 Ask AI'}
-                </button>
-                <button onClick={toggleTTS} className="chat-toggle-btn floating-chat-btn">
-                  {isTTSOpen ? '❌' : '🔊 TTS'}
-                </button>
-                <button onClick={()=>setIsTeleprompterOpen(true)} className="chat-toggle-btn floating-chat-btn">
-                  {isTeleprompterOpen ? '❌' : '📜 Teleprompter'}
-                </button>
-              </>
-            )}
-          </div>
+          {showFloatingBtns && (
+            <>
+              <button onClick={toggleChat} className="chat-toggle-btn floating-chat-btn">
+                {isChatOpen ? '❌' : '💬 Ask AI'}
+              </button>
+              <button onClick={() => setIsTTSOpen(!isTTSOpen)} className="chat-toggle-btn floating-chat-btn">
+                {isTTSOpen ? '❌' : '🔊 TTS'}
+              </button>
+              <button onClick={() => setIsTeleprompterOpen(true)} className="chat-toggle-btn floating-chat-btn">
+                {isTeleprompterOpen ? '❌' : '📜 Teleprompter'}
+              </button>
+            </>
+          )}
+        </div>
 
-          <div className="content">
-            <Routes>
-              <Route path="/chatBook" element={<ChatBookApp />} />
-              <Route path="/apiCheck" element={<ApiCheck />} />
-              <Route path="/progressBar" element={<ProgressBar progress={100} />} />
-              <Route path="/chatTemplate" element={<ChatTemplate />} />
-              <Route path="/youTubeTranscript" element={<YouTubeTranscript />} />
-              <Route path="/wiki" element={<Wiki />} />
-              <Route path="/htmlBuilder" element={<HtmlBuilder />} />
-              <Route path="/webBrowser" element={<WebBrowser />} />
-              <Route path="/Quran" element={<Quran />} />
-              <Route path="/typingTest" element={<TypingTest />} />
-              <Route path="/flashCards" element={<FlashCardApp/>} />
-              <Route path="/plantUML" element={<PlantUMLViewer />} />
-            </Routes>
-          </div>
+        <div className="content">
+          <Routes>
+            <Route path="/chatBook" element={<ChatBookApp />} />
+            <Route path="/apiCheck" element={<ApiCheck />} />
+            <Route path="/progressBar" element={<ProgressBar progress={100} />} />
+            <Route path="/chatTemplate" element={<ChatTemplate />} />
+            <Route path="/youTubeTranscript" element={<YouTubeTranscript />} />
+            <Route path="/wiki" element={<Wiki />} />
+            <Route path="/htmlBuilder" element={<HtmlBuilder />} />
+            <Route path="/webBrowser" element={<WebBrowser />} />
+            <Route path="/Quran" element={<Quran />} />
+            <Route path="/typingTest" element={<TypingTest />} />
+            <Route path="/flashCards" element={<FlashCardApp />} />
+            <Route path="/plantUML" element={<PlantUMLViewer />} />
+          </Routes>
+        </div>
 
-          {/* Slide-out components */}
+        {/* Chat Drawer */}
+        {isChatOpen && (
           <div className={`chat-drawer ${isChatOpen ? 'open' : ''} ${isFullWidth ? 'full' : 'half'}`}>
-            <div className="chat-drawer-header">
-              <button className="width-toggle-btn" onClick={toggleWidth}>
-                {isFullWidth ? '↔ Half Width' : '↔ Full Width'}
-              </button>
-              <button className="close-chat-btn" onClick={toggleChat}>✖</button>
+            <div className="chat-drawer-content" style={{ height: '100%', overflowY: 'auto' }}>
+              <GptPromptComponent
+                isCollapsed={!isChatVisible}
+                isFullScreen={isChatFullscreen}
+                onClose={toggleChat}
+                onToggleCollapse={() => setIsChatVisible((prev) => !prev)}
+                onToggleFullScreen={() => setIsChatFullscreen((prev) => !prev)}
+              />
             </div>
-            <GptPromptComponent />
           </div>
+        )}
 
-          <div className={`chat-drawer ${isTTSOpen ? 'open' : ''} ${isFullWidth ? 'full' : 'half'}`}>
-            <div className="chat-drawer-header">
-              <button className="width-toggle-btn" onClick={toggleWidth}>
-                {isFullWidth ? '↔ Half Width' : '↔ Full Width'}
-              </button>
-              <button className="close-chat-btn" onClick={toggleTTS}>✖</button>
-            </div>
-            <LoopingTTS />
+        {/* TTS Drawer */}
+        <div className={`chat-drawer ${isTTSOpen ? 'open' : ''} ${isFullWidth ? 'full' : 'half'}`}>
+          <div className="chat-drawer-header">
+            <button className="width-toggle-btn" onClick={toggleWidth}>
+              {isFullWidth ? '↔ Half Width' : '↔ Full Width'}
+            </button>
+            <button className="close-chat-btn" onClick={() => setIsTTSOpen(false)}>✖</button>
           </div>
+          <LoopingTTS />
+        </div>
 
-          <div className={`chat-drawer ${isTeleprompterOpen ? 'open' : ''} ${isFullWidth ? 'full' : 'half'}`}>
-            <div className="chat-drawer-header">
-              <button className="width-toggle-btn" onClick={()=>setIsTeleprompterOpen(false)}>
-                ✖ Close Teleprompter
-              </button>
-            </div>
-            <Teleprompter />
+        {/* Teleprompter Drawer */}
+        <div className={`chat-drawer ${isTeleprompterOpen ? 'open' : ''} ${isFullWidth ? 'full' : 'half'}`}>
+          <div className="chat-drawer-header">
+            <button className="width-toggle-btn" onClick={() => setIsTeleprompterOpen(false)}>
+              ✖ Close Teleprompter
+            </button>
           </div>
-        </BrowserRouter>
+          <Teleprompter />
+        </div>
+      </BrowserRouter>
 
-        <DownloadCopyTextFile />
+      <DownloadCopyTextFile />
       <TextSelectionTooltip
         onAskAI={(text) => {
           dispatch(actions.setIsChatOpen(true));
@@ -165,8 +162,6 @@ function App() {
           setIsTeleprompterOpen(true);
         }}
       />
-
-      </div>
     </>
   );
 }
