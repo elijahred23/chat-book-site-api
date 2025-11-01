@@ -7,56 +7,87 @@ import CopyButton from './ui/CopyButton';
 import { actions, useAppDispatch, useAppState } from './context/AppContext';
 
 /**
- * A drop‑in replacement for the original chat component with a number of
- * improvements:
- *  - Loads messages and prompts from localStorage on mount.
- *  - Persists messages and the current draft prompt back to localStorage when
- *    they change.
- *  - Provides a richer set of one‑click prompt suggestions.
- *  - Includes a toggle to hide/show the chat log so users can focus on the
- *    current prompt when working on smaller screens.
- *  - Uses responsive styles so the layout collapses gracefully on mobile
- *    devices while still filling available space on larger displays.
+ * A refactored version of the chat component that introduces a custom hook
+ * for persisting state to localStorage and simplifies the UI state handling.
+ *
+ * Key improvements:
+ *  - Consolidates view controls into a single `viewMode` state to avoid
+ *    juggling multiple booleans (`showChat` and `fullScreen`).
+ *  - Extracts the localStorage persistence logic into a reusable hook
+ *    `useLocalStorageState` for cleaner code and easier reuse.
+ *  - Uses top level constants for suggestions to avoid recreating arrays
+ *    on every render.
+ *  - Maintains responsive styling and control toggles, while making the
+ *    component easier to reason about.
  */
-export default function GptPromptComponent() {
-  // Global card state. Each card is expected to be an object with
-  // `question` and `answer` fields. Some LLM responses may use
-  // alternative keys (e.g. `word`/`definition`), so we normalise
-  // them after parsing.
-  const [messages, setMessages] = useState(() => {
+
+// Suggestion presets defined outside the component to avoid recreation on
+// every render. Each suggestion maps a button label to a prompt template.
+const SUGGESTIONS = [
+  { label: 'Summary', value: 'Summarize this transcript' },
+  { label: 'Elaborate', value: 'Elaborate on this' },
+  { label: 'Explain Simply', value: 'Explain this content in simple terms' },
+  { label: 'Code Examples', value: 'Show code examples for this topic' },
+  { label: 'Questions', value: 'Generate a few comprehension questions about this content' },
+  { label: 'Translate', value: 'Translate this into Spanish' },
+  { label: 'Define Terms', value: 'List and define key terms from this content' },
+  { label: 'Outline', value: 'Create an outline of the main points' },
+];
+
+/**
+ * Persist a piece of state to localStorage. When the component mounts,
+ * the hook will attempt to load any previously saved value from
+ * localStorage. Any updates to the state are automatically written back.
+ *
+ * @param {string} key The localStorage key.
+ * @param {*} defaultValue The initial value if nothing is stored.
+ */
+function useLocalStorageState(key, defaultValue) {
+  const [state, setState] = useState(() => {
     try {
-      const savedMessages = JSON.parse(localStorage.getItem('messages') || '[]');
-      return Array.isArray(savedMessages) ? savedMessages : [];
+      const stored = JSON.parse(localStorage.getItem(key));
+      // Only use the stored value if it is not undefined/null, otherwise
+      // fall back to the provided default.
+      return stored !== null && stored !== undefined ? stored : defaultValue;
     } catch {
-      return [];
+      return defaultValue;
     }
   });
+  useEffect(() => {
+    try {
+      localStorage.setItem(key, JSON.stringify(state));
+    } catch {
+      /* ignore storage write errors */
+    }
+  }, [key, state]);
+  return [state, setState];
+}
+
+export default function RefactoredGptPromptComponent() {
+  // Persist the chat messages to localStorage. Because we use a custom hook,
+  // localStorage reads/writes are encapsulated and the code below remains
+  // focused on application logic.
+  const [messages, setMessages] = useLocalStorageState('messages', []);
+
+  // Manage the view state of the conversation. Three modes are supported:
+  //  - 'normal': show everything (chat, suggestions, controls, input)
+  //  - 'collapsed': hide the chat log but keep controls and input visible
+  //  - 'full': show only the chat log and hide controls/input
+  const [viewMode, setViewMode] = useState('normal');
+
   const [loading, setLoading] = useState(false);
-  const [showChat, setShowChat] = useState(true);
-  // Track whether the conversation view should take up the full height of the
-  // component. When enabled, controls and the prompt area are hidden so the
-  // user can focus on reading the chat history. Toggling fullScreen on
-  // automatically reveals the conversation if it was previously hidden.
-  const [fullScreen, setFullScreen] = useState(false);
   const messagesEndRef = useRef(null);
   const dispatch = useAppDispatch();
   const { chatPrompt, selectedText } = useAppState();
 
-  // A more comprehensive list of prompt suggestions. These short labels map
-  // to complete prompt templates that can be applied with a single click.
-  const promptSuggestions = [
-    { label: 'Summary', value: 'Summarize this transcript' },
-    { label: 'Elaborate', value: 'Elaborate on this' },
-    { label: 'Explain Simply', value: 'Explain this content in simple terms' },
-    { label: 'Code Examples', value: 'Show code examples for this topic' },
-    { label: 'Questions', value: 'Generate a few comprehension questions about this content' },
-    { label: 'Translate', value: 'Translate this into Spanish' },
-    { label: 'Define Terms', value: 'List and define key terms from this content' },
-    { label: 'Outline', value: 'Create an outline of the main points' },
-  ];
+  // Helper flags derived from viewMode to simplify conditional rendering.
+  const isCollapsed = viewMode === 'collapsed';
+  const isFull = viewMode === 'full';
 
-  const handleInputChange = (e) => dispatch(actions.setChatPrompt(e.target.value));
-
+  /**
+   * Scroll the chat log to the bottom whenever messages change. We use
+   * optional chaining in case the ref isn't attached yet.
+   */
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollTo({
       top: messagesEndRef.current.scrollHeight,
@@ -64,6 +95,9 @@ export default function GptPromptComponent() {
     });
   };
 
+  /**
+   * Send the current prompt to Gemini and append the response to the chat log.
+   */
   const handleSubmit = async () => {
     if (!chatPrompt.trim()) return;
     try {
@@ -81,27 +115,32 @@ export default function GptPromptComponent() {
     }
   };
 
+  /**
+   * Clear the chat log and the current prompt. The messages state will be
+   * persisted by the `useLocalStorageState` hook.
+   */
   const clear = () => {
     setMessages([]);
     dispatch(actions.setChatPrompt(''));
   };
 
-  // When messages update, persist them to localStorage and scroll to bottom.
+  // Scroll chat to the bottom whenever new messages arrive.
   useEffect(() => {
-    if (messages.length) {
-      localStorage.setItem('messages', JSON.stringify(messages));
-    }
     scrollToBottom();
   }, [messages]);
 
-  // Persist the draft prompt to localStorage so we can restore it on refresh.
+  // Persist the current prompt to localStorage so it can be restored on reload.
   useEffect(() => {
-    if (chatPrompt.trim() !== '') {
-      localStorage.setItem('prompt', JSON.stringify(chatPrompt));
+    try {
+      if (chatPrompt.trim() !== '') {
+        localStorage.setItem('prompt', JSON.stringify(chatPrompt));
+      }
+    } catch {
+      /* ignore storage errors */
     }
   }, [chatPrompt]);
 
-  // Restore the prompt and messages from storage on initial mount.
+  // Restore the prompt from localStorage on mount.
   useEffect(() => {
     try {
       const savedPrompt = JSON.parse(localStorage.getItem('prompt') || '""');
@@ -111,13 +150,33 @@ export default function GptPromptComponent() {
     }
   }, []);
 
-  // When the user has selected text in another part of the app, prefill it
-  // into the prompt area so they can act on it quickly.
+  // If the user selects text elsewhere in the app, prefill it into the prompt.
   useEffect(() => {
     if (selectedText && selectedText !== chatPrompt) {
       dispatch(actions.setChatPrompt(selectedText));
     }
   }, [selectedText]);
+
+  // View toggles. Changing to 'full' or 'collapsed' will adjust the UI
+  // accordingly. Toggling collapse while in full screen returns to normal.
+  const toggleCollapse = () => {
+    setViewMode((mode) => {
+      if (mode === 'collapsed') return 'normal';
+      // If we're in full screen, collapse doesn't make sense; return to normal
+      if (mode === 'full') return 'normal';
+      return 'collapsed';
+    });
+  };
+
+  const toggleFullScreen = () => {
+    setViewMode((mode) => (mode === 'full' ? 'normal' : 'full'));
+  };
+
+  /**
+   * Handler for the prompt input change. Delegates to the AppContext action.
+   * @param {*} e
+   */
+  const handleInputChange = (e) => dispatch(actions.setChatPrompt(e.target.value));
 
   return (
     <div
@@ -131,9 +190,7 @@ export default function GptPromptComponent() {
         boxSizing: 'border-box',
       }}
     >
-      {/* Toggle controls for showing/hiding the conversation and for entering
-         full‑screen mode. Both buttons are placed in a single row so they
-         align neatly on all screen sizes. */}
+      {/* Control buttons for collapsing and full screen. */}
       <div
         style={{
           display: 'flex',
@@ -143,7 +200,7 @@ export default function GptPromptComponent() {
         }}
       >
         <button
-          onClick={() => setShowChat((prev) => !prev)}
+          onClick={toggleCollapse}
           style={{
             padding: '0.5rem 0.75rem',
             fontSize: '0.9rem',
@@ -153,18 +210,10 @@ export default function GptPromptComponent() {
             cursor: 'pointer',
           }}
         >
-          {showChat ? 'Hide Conversation' : 'Show Conversation'}
+          {isCollapsed ? 'Show Conversation' : 'Hide Conversation'}
         </button>
         <button
-          onClick={() => {
-            // When enabling full screen, ensure the chat is visible so
-            // the user actually sees the conversation.
-            setFullScreen((prev) => {
-              const next = !prev;
-              if (next) setShowChat(true);
-              return next;
-            });
-          }}
+          onClick={toggleFullScreen}
           style={{
             padding: '0.5rem 0.75rem',
             fontSize: '0.9rem',
@@ -174,12 +223,12 @@ export default function GptPromptComponent() {
             cursor: 'pointer',
           }}
         >
-          {fullScreen ? 'Exit Full Screen' : 'Full Screen'}
+          {isFull ? 'Exit Full Screen' : 'Full Screen'}
         </button>
       </div>
 
-      {/* Chat log container – hidden when showChat is false. */}
-      {showChat && (
+      {/* Chat log; hidden when collapsed. */}
+      {!isCollapsed && (
         <div
           ref={messagesEndRef}
           style={{
@@ -188,9 +237,7 @@ export default function GptPromptComponent() {
             flexGrow: 1,
             overflowY: 'auto',
             backgroundColor: '#f9f9f9',
-            // When in full screen, remove the bottom margin so the chat
-            // container fills the available height.
-            marginBottom: fullScreen ? '0' : '0.75rem',
+            marginBottom: isFull ? '0' : '0.75rem',
             borderRadius: '5px',
           }}
         >
@@ -219,7 +266,6 @@ export default function GptPromptComponent() {
                 <ReactMarkdown className="markdown-body">
                   {message.text}
                 </ReactMarkdown>
-                {/* Copy button on each message. */}
                 <div style={{ marginTop: '0.25rem', textAlign: 'right' }}>
                   <CopyButton text={message.text} />
                 </div>
@@ -229,11 +275,8 @@ export default function GptPromptComponent() {
         </div>
       )}
 
-      {/* Prompt suggestion buttons. Use a wrap layout so they stack nicely on
-         narrow screens. */}
-      {/* Hide suggestion buttons when in full screen so the conversation
-         occupies the full height. */}
-      {!fullScreen && (
+      {/* Suggestion buttons; only visible when not in full screen. */}
+      {!isFull && (
         <div
           style={{
             display: 'flex',
@@ -243,7 +286,7 @@ export default function GptPromptComponent() {
             justifyContent: 'center',
           }}
         >
-          {promptSuggestions.map((suggestion, index) => (
+          {SUGGESTIONS.map((suggestion, index) => (
             <button
               key={index}
               onClick={() =>
@@ -270,10 +313,8 @@ export default function GptPromptComponent() {
         </div>
       )}
 
-      {/* Action buttons row. Separating the action area from the input so they
-         float above the keyboard on mobile makes for a better experience. */}
-      {/* Hide action buttons in full screen mode to maximise conversation space. */}
-      {!fullScreen && (
+      {/* Action controls; hidden in full screen mode. */}
+      {!isFull && (
         <div
           style={{
             display: 'flex',
@@ -316,10 +357,8 @@ export default function GptPromptComponent() {
         </div>
       )}
 
-      {/* Text area for entering the prompt. On mobile this takes the full
-         width and uses a comfortable line height. */}
-      {/* Hide the input area and loading indicator when in full screen. */}
-      {!fullScreen && (
+      {/* Prompt input and loading indicator; hidden in full screen. */}
+      {!isFull && (
         <>
           <textarea
             rows={4}
