@@ -95,7 +95,6 @@ export default function GptPromptComponent({
 
   const clearMessages = () => {
     setMessages([]);
-    dispatch(actions.setChatPrompt(""));
   };
 
   useEffect(() => {
@@ -197,7 +196,7 @@ export default function GptPromptComponent({
               marginBottom: "0.75rem",
             }}
           >
-            {visibleSuggestions.map((s, i) => (
+            {(showAllSuggestions ? SUGGESTIONS : visibleSuggestions).map((s, i) => (
               <button
                 key={i}
                 onClick={() =>
@@ -215,6 +214,9 @@ export default function GptPromptComponent({
                 {s.label}
               </button>
             ))}
+            <button onClick={() => setShowAllSuggestions((p) => !p)} style={{ padding: "0.5rem 0.75rem", borderRadius: "4px", border: "1px solid #ccc", background: "#e0e0e0", fontSize: "0.85rem", cursor: "pointer" }}>
+              {showAllSuggestions ? "Show Less ▲" : "Show All ▼"}
+            </button>
           </div>
 
           <textarea
