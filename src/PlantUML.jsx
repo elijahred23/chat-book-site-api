@@ -2,8 +2,10 @@ import React, { useState, useEffect, useRef } from "react";
 import pako from "pako";
 import Panzoom from "@panzoom/panzoom";
 import { getGeminiResponse } from "./utils/callGemini.js";
+import { useAppState } from "./context/AppContext.jsx";
 
 export default function PlantUMLViewer() {
+  const { plantUMLPrompt } = useAppState();
   const [uml, setUml] = useState("@startuml\nAlice -> Bob: Hello\n@enduml");
   const [prompt, setPrompt] = useState("");
   const [server, setServer] = useState("https://www.plantuml.com/plantuml");
@@ -14,6 +16,10 @@ export default function PlantUMLViewer() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const stageRef = useRef(null);
+
+  useEffect(() => {
+    setPrompt(plantUMLPrompt ?? "");
+  }, [plantUMLPrompt])
 
   // --- Extract PlantUML from Gemini response ---
   function extractPlantUmlFromResponse(text) {
@@ -198,7 +204,7 @@ const renderDiagram = () => {
 
       {/* Prompt input for Gemini */}
       <div className="flex gap-2 mb-4">
-        <input
+        <textarea
           type="text"
           value={prompt}
           onChange={(e) => setPrompt(e.target.value)}

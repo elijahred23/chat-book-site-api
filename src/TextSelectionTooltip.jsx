@@ -169,6 +169,19 @@ const TextSelectionTooltip = ({ onAskAI, onSendToTTS, onSendToTeleprompter }) =>
       >
         📜 Teleprompter
       </button>
+      {/* Send to plant uml */}
+      <button 
+        style={buttonStyle}
+        onClick={(e) => {
+          e.stopPropagation();
+          dispatch(actions.setPlantUMLPrompt(selectedText));
+          dispatch(actions.setIsPlantUMLOpen(true));
+          window.getSelection().removeAllRanges();
+          setVisible(false);
+        }}
+      >
+        🌿 PlantUML
+      </button>
     </div>
   );
 };
