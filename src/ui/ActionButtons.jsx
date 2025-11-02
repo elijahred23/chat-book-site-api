@@ -59,10 +59,16 @@ const ActionButtons = ({ promptText }) => {
     dispatch(actions.setIsTeleprompterOpen(!isTeleprompterOpen));
   };
 
+  const handlePlantUML = () => {
+    dispatch(actions.setPlantUMLPrompt(cleanText));
+    dispatch(actions.setIsPlantUMLOpen(true));
+  };
+
   const buttons = [
     { label: "💬 Ask AI", onClick: handleAskAI },
     { label: "🔊 TTS", onClick: handleTTS },
     { label: "📜 Teleprompter", onClick: handleTeleprompter },
+    { label: "🖼️ PlantUML", onClick: handlePlantUML },
   ];
 
   return (
