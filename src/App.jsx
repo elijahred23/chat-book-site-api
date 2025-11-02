@@ -27,7 +27,7 @@ function App() {
   const dispatch = useAppDispatch();
   const { isChatOpen, isTeleprompterOpen, isTTSOpen, isPlantUMLOpen } = useAppState();
 
-  const toggleChat = () => dispatch(actions.setIsChatOpen(!isChatOpen));
+  const toggleChat = () => dispatch(actions.setIsChatOpen(false));
   const toggleWidth = () => setIsFullWidth((p) => !p);
   const setIsTeleprompterOpen = (val) => dispatch(actions.setIsTeleprompterOpen(val));
   const setIsTTSOpen = (val) => dispatch(actions.setIsTTSOpen(val));
@@ -80,10 +80,10 @@ function App() {
 
           {showFloatingBtns && (
             <>
-              <button onClick={toggleChat} className="chat-toggle-btn floating-chat-btn">
+              <button onClick={()=>dispatch(actions.setIsChatOpen(true))} className="chat-toggle-btn floating-chat-btn">
                 {isChatOpen ? '❌' : '💬 Ask AI'}
               </button>
-              <button onClick={() => setIsTTSOpen(!isTTSOpen)} className="chat-toggle-btn floating-chat-btn">
+              <button onClick={() => setIsTTSOpen(true)} className="chat-toggle-btn floating-chat-btn">
                 {isTTSOpen ? '❌' : '🔊 TTS'}
               </button>
               <button onClick={() => setIsTeleprompterOpen(true)} className="chat-toggle-btn floating-chat-btn">
@@ -113,18 +113,18 @@ function App() {
           </Routes>
         </div>
 
-        {/* Chat Drawer */}
-        {isChatOpen && (
-          <div className={`chat-drawer ${isFullWidth ? 'full' : 'half'}`}>
+        <div className={`chat-drawer ${isChatOpen ? 'open' : ''} ${isFullWidth ? 'full' : 'half'}`}>
+            <div className="chat-drawer-header">
+              <button className="close-chat-btn" onClick={() => dispatch(actions.setIsChatOpen(false))}>✖</button>
+            </div>
             <GptPromptComponent
               isCollapsed={!isChatVisible}
               isFullScreen={isChatFullscreen}
-              onClose={toggleChat}
+              onClose={() => dispatch(actions.setIsChatOpen(false))}
               onToggleCollapse={() => setIsChatVisible((prev) => !prev)}
               onToggleFullScreen={() => setIsChatFullscreen((prev) => !prev)}
             />
           </div>
-        )}
 
         {/* TTS Drawer */}
         <div className={`chat-drawer ${isTTSOpen ? 'open' : ''} ${isFullWidth ? 'full' : 'half'}`}>

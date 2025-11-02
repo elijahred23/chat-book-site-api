@@ -45,8 +45,9 @@ const ActionButtons = ({ promptText }) => {
   const cleanText = removeMarkdown(promptText || "");
 
   const handleAskAI = () => {
-    dispatch(actions.setSelectedText(cleanText));
-    dispatch(actions.setIsChatOpen(!isChatOpen));
+    // dispatch(actions.setSelectedText(cleanText));
+    dispatch(actions.setChatPrompt(cleanText));
+    dispatch(actions.setIsChatOpen(true));
   };
 
   const handleTTS = () => {
