@@ -82,10 +82,17 @@ export default function GptPromptComponent({
     <div
       className={`gpt-container ${isFullScreen ? "fullscreen" : ""}`}
       style={{
+        position: isFullScreen ? "fixed" : "relative",
+        top: isFullScreen ? 0 : "auto",
+        left: isFullScreen ? 0 : "auto",
+        width: isFullScreen ? "100vw" : "100%",
         height: isFullScreen ? "100vh" : "100%",
+        background: isFullScreen ? "#fff" : "transparent",
+        zIndex: isFullScreen ? 100000 : "auto",
         overflow: "hidden",
-        position: "relative",
         paddingTop: "60px",
+        display: "flex",
+        flexDirection: "column",
       }}
     >
       {/* Fixed Controls */}
@@ -94,18 +101,20 @@ export default function GptPromptComponent({
           position: "fixed",
           top: "10px",
           right: "10px",
-          zIndex: 10000,
+          zIndex: 100001,
           display: "flex",
           flexWrap: "wrap",
           gap: "0.5rem",
-          background: "rgba(255,255,255,0.9)",
+          background: "rgba(255,255,255,0.95)",
           padding: "0.5rem 0.75rem",
           borderRadius: "8px",
           boxShadow: "0 2px 8px rgba(0,0,0,0.25)",
           backdropFilter: "blur(8px)",
         }}
       >
-        <button onClick={onToggleCollapse}>{isCollapsed ? "Show Chat" : "Hide Chat"}</button>
+        <button onClick={onToggleCollapse}>
+          {isCollapsed ? "Show Chat" : "Hide Chat"}
+        </button>
         <button onClick={onToggleFullScreen}>
           {isFullScreen ? "Exit Full Screen" : "Full Screen"}
         </button>
@@ -123,8 +132,9 @@ export default function GptPromptComponent({
             padding: "0.75rem",
             background: "#f9f9f9",
             overflowY: "auto",
-            height: isFullScreen ? "75vh" : "55vh",
-            marginBottom: "0.75rem",
+            flexGrow: 1,
+            marginBottom: isFullScreen ? "0" : "0.75rem",
+            height: isFullScreen ? "calc(100vh - 80px)" : "auto",
           }}
         >
           {messages.map((m, i) => (
@@ -156,6 +166,7 @@ export default function GptPromptComponent({
         </div>
       )}
 
+      {/* Input, buttons, suggestions hidden when full screen */}
       {!isCollapsed && !isFullScreen && (
         <div style={{ paddingBottom: "1rem" }}>
           <div
@@ -171,7 +182,9 @@ export default function GptPromptComponent({
               <button
                 key={i}
                 onClick={() =>
-                  dispatch(actions.setChatPrompt(`${s.value}${chatPrompt ? `: ${chatPrompt}` : ""}`))
+                  dispatch(
+                    actions.setChatPrompt(`${s.value}${chatPrompt ? `: ${chatPrompt}` : ""}`)
+                  )
                 }
                 style={{
                   padding: "0.5rem 0.75rem",
@@ -185,7 +198,17 @@ export default function GptPromptComponent({
                 {s.label}
               </button>
             ))}
-            <button onClick={() => setShowAllSuggestions((p) => !p)} style={{ padding: "0.5rem 0.75rem", borderRadius: "4px", border: "1px solid #ccc", background: "#e0e0e0", fontSize: "0.85rem", cursor: "pointer" }}>
+            <button
+              onClick={() => setShowAllSuggestions((p) => !p)}
+              style={{
+                padding: "0.5rem 0.75rem",
+                borderRadius: "4px",
+                border: "1px solid #ccc",
+                background: "#e0e0e0",
+                fontSize: "0.85rem",
+                cursor: "pointer",
+              }}
+            >
               {showAllSuggestions ? "Show Less ▲" : "Show All ▼"}
             </button>
           </div>
@@ -216,7 +239,7 @@ export default function GptPromptComponent({
             <div style={{ display: "flex", gap: "0.5rem" }}>
               <PasteButton setPasteText={(text) => dispatch(actions.setChatPrompt(text))} />
               <button onClick={clearMessages}>Clear Chat Log</button>
-              <button onClick={()=>dispatch(actions.setChatPrompt(""))}>Clear Prompt</button>
+              <button onClick={() => dispatch(actions.setChatPrompt(""))}>Clear Prompt</button>
             </div>
             <button onClick={handleSubmit} disabled={loading}>
               {loading ? "Thinking..." : "Send"}
@@ -224,7 +247,14 @@ export default function GptPromptComponent({
           </div>
 
           {loading && (
-            <div style={{ marginTop: "0.5rem", display: "flex", alignItems: "center", gap: "0.5rem" }}>
+            <div
+              style={{
+                marginTop: "0.5rem",
+                display: "flex",
+                alignItems: "center",
+                gap: "0.5rem",
+              }}
+            >
               <ClipLoader color="blue" size={20} />
               <span>Generating response...</span>
             </div>

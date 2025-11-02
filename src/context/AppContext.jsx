@@ -3,10 +3,7 @@ import React, { createContext, useContext, useReducer } from 'react';
 
 const initialState = {
   copyText: '',
-  htmlBuilder: {
-    input: '',
-    generatedHTML: ''
-  },
+  htmlBuilder: { input: '', generatedHTML: '' },
   isChatOpen: false,
   chatPrompt: '',
   selectedText: '',
@@ -16,6 +13,7 @@ const initialState = {
   selectedTranscriptType: 'internal',
   isTeleprompterOpen: false,
   isTTSOpen: false,
+  isPlantUMLOpen: false, // ✅ NEW
 };
 
 const actionTypes = {
@@ -30,6 +28,7 @@ const actionTypes = {
   SET_SELECTED_TRANSCRIPT_TYPE: 'SET_SELECTED_TRANSCRIPT_TYPE',
   SET_IS_TELEPROMPTER_OPEN: 'SET_IS_TELEPROMPTER_OPEN',
   SET_IS_TTS_OPEN: 'SET_IS_TTS_OPEN',
+  SET_IS_PLANTUML_OPEN: 'SET_IS_PLANTUML_OPEN', // ✅ NEW
 };
 
 function appReducer(state, action) {
@@ -37,15 +36,9 @@ function appReducer(state, action) {
     case actionTypes.SET_COPY_TEXT:
       return { ...state, copyText: action.payload };
     case actionTypes.SET_HTML_INPUT:
-      return {
-        ...state,
-        htmlBuilder: { ...state.htmlBuilder, input: action.payload }
-      };
+      return { ...state, htmlBuilder: { ...state.htmlBuilder, input: action.payload } };
     case actionTypes.SET_GENERATED_HTML:
-      return {
-        ...state,
-        htmlBuilder: { ...state.htmlBuilder, generatedHTML: action.payload }
-      };
+      return { ...state, htmlBuilder: { ...state.htmlBuilder, generatedHTML: action.payload } };
     case actionTypes.SET_IS_CHAT_OPEN:
       return { ...state, isChatOpen: action.payload };
     case actionTypes.SET_CHAT_PROMPT:
@@ -62,6 +55,8 @@ function appReducer(state, action) {
       return { ...state, isTeleprompterOpen: action.payload };
     case actionTypes.SET_IS_TTS_OPEN:
       return { ...state, isTTSOpen: action.payload };
+    case actionTypes.SET_IS_PLANTUML_OPEN:
+      return { ...state, isPlantUMLOpen: action.payload }; // ✅ NEW
     default:
       console.warn(`Unhandled action type: ${action.type}`);
       return state;
@@ -91,13 +86,14 @@ export const actions = {
   setGeneratedHtml: (html) => ({ type: actionTypes.SET_GENERATED_HTML, payload: html }),
   setIsChatOpen: (open) => ({ type: actionTypes.SET_IS_CHAT_OPEN, payload: open }),
   setChatPrompt: (prompt) => ({ type: actionTypes.SET_CHAT_PROMPT, payload: prompt }),
-  setSelectedText: (selectedText) => ({ type: actionTypes.SET_SELECTED_TEXT, payload: selectedText }),
-  setTtsText: (ttsText) => ({ type: actionTypes.SET_TTS_TEXT, payload: ttsText }),
+  setSelectedText: (text) => ({ type: actionTypes.SET_SELECTED_TEXT, payload: text }),
+  setTtsText: (text) => ({ type: actionTypes.SET_TTS_TEXT, payload: text }),
   setTeleprompterText: (text) => ({ type: actionTypes.SET_TELEPROMPTER_TEXT, payload: text }),
-  setSelectedTranscriptType: (transcriptType) => ({
+  setSelectedTranscriptType: (type) => ({
     type: actionTypes.SET_SELECTED_TRANSCRIPT_TYPE,
-    payload: transcriptType,
+    payload: type,
   }),
   setIsTeleprompterOpen: (open) => ({ type: actionTypes.SET_IS_TELEPROMPTER_OPEN, payload: open }),
   setIsTTSOpen: (open) => ({ type: actionTypes.SET_IS_TTS_OPEN, payload: open }),
+  setIsPlantUMLOpen: (open) => ({ type: actionTypes.SET_IS_PLANTUML_OPEN, payload: open }), // ✅ NEW
 };

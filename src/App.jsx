@@ -11,7 +11,7 @@ import TextSelectionTooltip from './TextSelectionTooltip';
 import DownloadCopyTextFile from './DownloadCopyTextFile.jsx';
 import HtmlBuilder from './HtmlBuilder';
 import WebBrowser from './WebBrowser.jsx';
-import { useAppDispatch, useAppState, actions} from './context/AppContext.jsx';
+import { useAppDispatch, useAppState, actions } from './context/AppContext.jsx';
 import Quran from './Quran.jsx';
 import TypingTest from './TypingText.jsx';
 import LoopingTTS from './LoopingTTS.jsx';
@@ -23,14 +23,15 @@ function App() {
   const [isFullWidth, setIsFullWidth] = useState(true);
   const [isChatVisible, setIsChatVisible] = useState(true);
   const [isChatFullscreen, setIsChatFullscreen] = useState(false);
-  const [showFloatingBtns, setShowFloatingBtns] = useState(true);
+  const [showFloatingBtns, setShowFloatingBtns] = useState(false);
   const dispatch = useAppDispatch();
-  const { isChatOpen, isTeleprompterOpen, isTTSOpen } = useAppState();
+  const { isChatOpen, isTeleprompterOpen, isTTSOpen, isPlantUMLOpen } = useAppState();
 
   const toggleChat = () => dispatch(actions.setIsChatOpen(!isChatOpen));
+  const toggleWidth = () => setIsFullWidth((p) => !p);
   const setIsTeleprompterOpen = (val) => dispatch(actions.setIsTeleprompterOpen(val));
   const setIsTTSOpen = (val) => dispatch(actions.setIsTTSOpen(val));
-  const toggleWidth = () => setIsFullWidth((p) => !p);
+  const setIsPlantUMLOpen = (val) => dispatch(actions.setIsPlantUMLOpen(val)); // ✅ NEW
 
   useEffect(() => {
     const savedText = localStorage.getItem('selectedText');
@@ -52,7 +53,6 @@ function App() {
             <NavLink to="/flashCards">Flash Cards</NavLink>
             <NavLink to="/htmlBuilder">HTML Builder</NavLink>
             <NavLink to="/Quran">Quran</NavLink>
-            <NavLink to="/plantUML">PlantUML</NavLink>
             <NavLink to="/apiCheck">Settings</NavLink>
           </div>
         </div>
@@ -89,6 +89,9 @@ function App() {
               <button onClick={() => setIsTeleprompterOpen(true)} className="chat-toggle-btn floating-chat-btn">
                 {isTeleprompterOpen ? '❌' : '📜 Teleprompter'}
               </button>
+              <button onClick={() => setIsPlantUMLOpen(true)} className="chat-toggle-btn floating-chat-btn">
+                {isPlantUMLOpen ? '❌' : '🧩 UML'}
+              </button>
             </>
           )}
         </div>
@@ -112,16 +115,14 @@ function App() {
 
         {/* Chat Drawer */}
         {isChatOpen && (
-          <div className={`chat-drawer ${isChatOpen ? 'open' : ''} ${isFullWidth ? 'full' : 'half'}`}>
-            <div className="chat-drawer-content" style={{ height: '100%', overflowY: 'auto' }}>
-              <GptPromptComponent
-                isCollapsed={!isChatVisible}
-                isFullScreen={isChatFullscreen}
-                onClose={toggleChat}
-                onToggleCollapse={() => setIsChatVisible((prev) => !prev)}
-                onToggleFullScreen={() => setIsChatFullscreen((prev) => !prev)}
-              />
-            </div>
+          <div className={`chat-drawer ${isFullWidth ? 'full' : 'half'}`}>
+            <GptPromptComponent
+              isCollapsed={!isChatVisible}
+              isFullScreen={isChatFullscreen}
+              onClose={toggleChat}
+              onToggleCollapse={() => setIsChatVisible((prev) => !prev)}
+              onToggleFullScreen={() => setIsChatFullscreen((prev) => !prev)}
+            />
           </div>
         )}
 
@@ -144,6 +145,16 @@ function App() {
             </button>
           </div>
           <Teleprompter />
+        </div>
+
+        {/* ✅ NEW PlantUML Drawer */}
+        <div className={`chat-drawer ${isPlantUMLOpen ? 'open' : ''} ${isFullWidth ? 'full' : 'half'}`}>
+          <div className="chat-drawer-header">
+            <button className="width-toggle-btn" onClick={() => setIsPlantUMLOpen(false)}>
+              ✖ Close UML Viewer
+            </button>
+          </div>
+          <PlantUMLViewer />
         </div>
       </BrowserRouter>
 
