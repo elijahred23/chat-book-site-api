@@ -5,8 +5,8 @@ export const SUGGESTIONS = [
   { label: "Explain Algorithm", value: "Explain the algorithm or logic in simple terms" },
   { label: "Explain Output", value: "Explain what the output of this code will be and why" },
   { label: "Visualize Flow", value: "Describe how to visualize this logic in a flowchart or UML diagram" },
-  { label: "Trace Execution", value: "Simulate how this code executes line by line" },
   {label: "Memory Acronym", value: "Provide a acronym to help remember this concept" },
+  { label: "Trace Execution", value: "Simulate how this code executes line by line" },
 
   // 🧠 Debugging and Troubleshooting
   { label: "Fix Bugs", value: "Find and fix potential bugs or logic errors in this code" },
