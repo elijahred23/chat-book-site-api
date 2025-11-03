@@ -1,41 +1,45 @@
+:root {
+  --btn-blue: linear-gradient(135deg, #3b82f6, #2563eb);
+  --btn-purple: linear-gradient(135deg, #9333ea, #7e22ce);
+  --btn-green: linear-gradient(135deg, #10b981, #059669);
+  --btn-orange: linear-gradient(135deg, #f97316, #ea580c);
+}
+
 .action-buttons {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   flex-wrap: wrap;
-  margin: 10px 0;
+  margin: 8px 0;
 }
 
-.action-btn {
-  flex: 1;
-  min-width: 80px;
-  padding: 10px 14px;
-  background: linear-gradient(135deg, #3b82f6, #2563eb);
-  color: white;
+.icon-btn {
   border: none;
-  border-radius: 10px;
-  font-size: 14px;
-  font-weight: 600;
+  border-radius: 50%;
+  color: white;
+  font-size: 20px;
+  padding: 8px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  transition: transform 0.2s ease, background 0.3s ease;
+  transition: transform 0.2s ease, filter 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
 }
 
-.action-btn:hover {
-  transform: translateY(-2px);
-  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+.icon-btn:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
 }
 
 @media (max-width: 600px) {
-  .action-buttons {
-    flex-direction: row;
-    flex-wrap: nowrap;
-    gap: 4px;
-    padding: 4px;
-  }
-  .action-btn {
-    font-size: 12px;
-    padding: 8px;
-    border-radius: 8px;
+  .icon-btn {
+    font-size: 18px;
+    width: 34px;
+    height: 34px;
+    padding: 6px;
   }
 }

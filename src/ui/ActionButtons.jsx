@@ -1,86 +1,82 @@
 import "./ActionButtons.css";
 import { useAppDispatch, useAppState, actions } from "../context/AppContext";
+import { FaComments, FaVolumeUp, FaScroll, FaProjectDiagram } from "react-icons/fa";
 
 function removeMarkdown(text) {
-  // Preserve content of code blocks (```...```)
-  text = text.replace(/```[\s\S]*?```/g, match =>
-    match.replace(/```[a-zA-Z]*\n?/, '').replace(/```$/, '')
-  );
-
-  // Preserve inline code
-  text = text.replace(/`([^`]*)`/g, '$1');
-
-  // Remove images
-  text = text.replace(/!\[.*?\]\(.*?\)/g, '');
-
-  // Convert links [text](url) → text
-  text = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '$1');
-
-  // Remove bold, italics, strikethrough
-  text = text.replace(/(\*\*|__)(.*?)\1/g, '$2'); // Bold
-  text = text.replace(/(\*|_)(.*?)\1/g, '$2');    // Italics
-  text = text.replace(/~~(.*?)~~/g, '$1');        // Strikethrough
-
-  // Remove headers
-  text = text.replace(/^\s{0,3}#{1,6}\s*/gm, '');
-
-  // Remove blockquotes
-  text = text.replace(/^>\s?/gm, '');
-
-  // Remove lists and horizontal rules
-  text = text.replace(/^\s*[\*\-\+]\s+/gm, '');
-  text = text.replace(/^\s*\d+\.\s+/gm, '');
-  text = text.replace(/^([-*_] *){3,}$/gm, '');
-
-  // Collapse extra newlines
-  text = text.replace(/\n{3,}/g, '\n\n');
-
-  return text.trim();
+  return text
+    .replace(/```[\s\S]*?```/g, m => m.replace(/```[a-zA-Z]*\n?/, "").replace(/```$/, ""))
+    .replace(/`([^`]*)`/g, "$1")
+    .replace(/!\[.*?\]\(.*?\)/g, "")
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, "$1")
+    .replace(/(\*\*|__)(.*?)\1/g, "$2")
+    .replace(/(\*|_)(.*?)\1/g, "$2")
+    .replace(/~~(.*?)~~/g, "$1")
+    .replace(/^\s{0,3}#{1,6}\s*/gm, "")
+    .replace(/^>\s?/gm, "")
+    .replace(/^\s*[\*\-\+]\s+/gm, "")
+    .replace(/^\s*\d+\.\s+/gm, "")
+    .replace(/^([-*_] *){3,}$/gm, "")
+    .replace(/\n{3,}/g, "\n\n")
+    .trim();
 }
 
-const ActionButtons = ({ promptText }) => {
+export default function ActionButtons({ promptText }) {
   const dispatch = useAppDispatch();
   const { isChatOpen, isTTSOpen, isTeleprompterOpen } = useAppState();
-
   const cleanText = removeMarkdown(promptText || "");
 
-  const handleAskAI = () => {
-    // dispatch(actions.setSelectedText(cleanText));
-    dispatch(actions.setChatPrompt(cleanText));
-    dispatch(actions.setIsChatOpen(true));
-  };
-
-  const handleTTS = () => {
-    dispatch(actions.setTtsText(cleanText));
-    dispatch(actions.setIsTTSOpen(!isTTSOpen));
-  };
-
-  const handleTeleprompter = () => {
-    dispatch(actions.setTeleprompterText(cleanText));
-    dispatch(actions.setIsTeleprompterOpen(!isTeleprompterOpen));
-  };
-
-  const handlePlantUML = () => {
-    dispatch(actions.setPlantUMLPrompt(cleanText));
-    dispatch(actions.setIsPlantUMLOpen(true));
-  };
-
   const buttons = [
-    { label: "💬 Ask AI", onClick: handleAskAI },
-    { label: "🔊 TTS", onClick: handleTTS },
-    { label: "📜 Teleprompter", onClick: handleTeleprompter },
-    { label: "🖼️ PlantUML", onClick: handlePlantUML },
+    {
+      icon: <FaComments />,
+      title: "Ask AI",
+      color: "var(--btn-blue)",
+      onClick: () => {
+        dispatch(actions.setChatPrompt(cleanText));
+        dispatch(actions.setIsChatOpen(true));
+      },
+    },
+    {
+      icon: <FaVolumeUp />,
+      title: "TTS",
+      color: "var(--btn-purple)",
+      onClick: () => {
+        dispatch(actions.setTtsText(cleanText));
+        dispatch(actions.setIsTTSOpen(!isTTSOpen));
+      },
+    },
+    {
+      icon: <FaScroll />,
+      title: "Teleprompter",
+      color: "var(--btn-green)",
+      onClick: () => {
+        dispatch(actions.setTeleprompterText(cleanText));
+        dispatch(actions.setIsTeleprompterOpen(!isTeleprompterOpen));
+      },
+    },
+    {
+      icon: <FaProjectDiagram />,
+      title: "PlantUML",
+      color: "var(--btn-orange)",
+      onClick: () => {
+        dispatch(actions.setPlantUMLPrompt(cleanText));
+        dispatch(actions.setIsPlantUMLOpen(true));
+      },
+    },
   ];
 
   return (
     <div className="action-buttons">
       {buttons.map((btn, idx) => (
-        <button key={idx} onClick={btn.onClick} className="action-btn">
-          {btn.label}
+        <button
+          key={idx}
+          onClick={btn.onClick}
+          className="icon-btn"
+          title={btn.title}
+          style={{ background: btn.color }}
+        >
+          {btn.icon}
         </button>
       ))}
     </div>
   );
-};
-
-export default ActionButtons;
+}
