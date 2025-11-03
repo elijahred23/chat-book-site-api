@@ -11,6 +11,7 @@ import fs from 'fs';
 import puppeteer from 'puppeteer';
 import { fetchTranscript, getNewsVideos, getVideoComments } from './youtube.js';
 import { searchYouTube, getVideoDetails, searchYouTubePlaylists, getPlaylistItems, getTrendingVideos } from './youtube.js';
+GeminiModel.currentModel = process.env.GEMINI_MODEL || "gemini-2.0-flash";
 
 const app = express();
 const __filename = fileURLToPath(import.meta.url);
