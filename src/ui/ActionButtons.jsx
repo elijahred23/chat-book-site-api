@@ -6,8 +6,8 @@ function removeMarkdown(text) {
   return text
     .replace(/```[\s\S]*?```/g, m => m.replace(/```[a-zA-Z]*\n?/, "").replace(/```$/, ""))
     .replace(/`([^`]*)`/g, "$1")
-    .replace(/!\[.*?\]\(.*?\)/g, "")
-    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, "$1")
+    .replace(/!$begin:math:display$.*?$end:math:display$$begin:math:text$.*?$end:math:text$/g, "")
+    .replace(/$begin:math:display$([^$end:math:display$]+)\]$begin:math:text$([^)]+)$end:math:text$/g, "$1")
     .replace(/(\*\*|__)(.*?)\1/g, "$2")
     .replace(/(\*|_)(.*?)\1/g, "$2")
     .replace(/~~(.*?)~~/g, "$1")
@@ -30,7 +30,8 @@ export default function ActionButtons({ promptText }) {
       icon: <FaComments />,
       title: "Ask AI",
       color: "var(--btn-blue)",
-      onClick: () => {
+      onClick: (e) => {
+        e.stopPropagation();
         dispatch(actions.setChatPrompt(cleanText));
         dispatch(actions.setIsChatOpen(true));
       },
@@ -39,7 +40,8 @@ export default function ActionButtons({ promptText }) {
       icon: <FaVolumeUp />,
       title: "TTS",
       color: "var(--btn-purple)",
-      onClick: () => {
+      onClick: (e) => {
+        e.stopPropagation();
         dispatch(actions.setTtsText(cleanText));
         dispatch(actions.setIsTTSOpen(!isTTSOpen));
       },
@@ -48,7 +50,8 @@ export default function ActionButtons({ promptText }) {
       icon: <FaScroll />,
       title: "Teleprompter",
       color: "var(--btn-green)",
-      onClick: () => {
+      onClick: (e) => {
+        e.stopPropagation();
         dispatch(actions.setTeleprompterText(cleanText));
         dispatch(actions.setIsTeleprompterOpen(!isTeleprompterOpen));
       },
@@ -57,7 +60,8 @@ export default function ActionButtons({ promptText }) {
       icon: <FaProjectDiagram />,
       title: "PlantUML",
       color: "var(--btn-orange)",
-      onClick: () => {
+      onClick: (e) => {
+        e.stopPropagation();
         dispatch(actions.setPlantUMLPrompt(cleanText));
         dispatch(actions.setIsPlantUMLOpen(true));
       },
@@ -65,7 +69,7 @@ export default function ActionButtons({ promptText }) {
   ];
 
   return (
-    <div className="action-buttons">
+    <div className="action-buttons" onClick={(e) => e.stopPropagation()}>
       {buttons.map((btn, idx) => (
         <button
           key={idx}
