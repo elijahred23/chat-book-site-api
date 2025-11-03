@@ -151,7 +151,7 @@ export default function GptPromptComponent({
                   background: m.sender === "user" ? "#DCF8C6" : "#F1F0F0",
                   padding: "0.5rem 0.75rem",
                   borderRadius: "12px",
-                  maxWidth: "85%",
+                  maxWidth: "95vw",
                   wordBreak: "break-word",
                 }}
               >
