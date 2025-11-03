@@ -1,12 +1,3 @@
-// Improved PlantUML viewer with better mobile support, a dedicated paste button for
-// the prompt, and explicit instructions to always generate class diagrams. The
-// component uses Tailwind CSS classes for styling and remains fully
-// functional on both light and dark themes. When generating PlantUML from
-// Gemini, it asks specifically for a class diagram to ensure consistent
-// output. A new paste button next to the description input allows users to
-// quickly insert clipboard text as the prompt. Layout adjustments make the
-// interface more pleasant on small screens by stacking controls vertically.
-
 import React, { useState, useEffect, useRef } from "react";
 import pako from "pako";
 import Panzoom from "@panzoom/panzoom";
@@ -14,72 +5,67 @@ import { getGeminiResponse } from "./utils/callGemini.js";
 import { useAppState } from "./context/AppContext.jsx";
 
 export default function PlantUMLViewer() {
-  // Pull any default prompt from context
   const { plantUMLPrompt } = useAppState();
-  // PlantUML code to render
   const [uml, setUml] = useState("@startuml\nAlice -> Bob: Hello\n@enduml");
-  // Prompt description to send to Gemini
   const [prompt, setPrompt] = useState("");
-  // PlantUML server and encoding settings
   const [server, setServer] = useState("https://www.plantuml.com/plantuml");
   const [format, setFormat] = useState("svg");
   const [encoding, setEncoding] = useState("raw");
-  // Rendering and UI flags
-  const [autoRender, setAutoRender] = useState(false);
+  
   const [darkMode, setDarkMode] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const stageRef = useRef(null);
 
-  // Update local prompt whenever the context prompt changes
   useEffect(() => {
     setPrompt(plantUMLPrompt ?? "");
   }, [plantUMLPrompt]);
 
-  // Extract PlantUML from Gemini's response. Handles both fenced code
-  // blocks and plain @startuml/@enduml snippets.
   function extractPlantUmlFromResponse(text) {
     if (!text || typeof text !== "string") return null;
-    // Unwrap a fenced code block if present
     const fenced = text.match(/```(?:plantuml)?\s*([\s\S]*?)```/i);
     if (fenced && fenced[1]) text = fenced[1].trim();
-    // Find the @startuml ... @enduml block
     const block = text.match(/(@startuml[\s\S]*?@enduml)/i);
     if (block) return block[1].trim();
     return null;
   }
 
-  // Generate PlantUML code from the current prompt using Gemini. We
-  // explicitly request a class diagram so that the output always uses
-  // class-based syntax. Only PlantUML code between @startuml and @enduml
-  // should be returned.
   const handleGenerateFromPrompt = async () => {
     if (!prompt) return;
     try {
       setLoading(true);
-      // Explicit instruction for a class diagram. Gemini is asked to return
-      // ONLY the PlantUML content for a class diagram. No markdown fences or
-      // additional commentary should appear in the response.
-      const instruction = `Generate a PlantUML class diagram for the following description: "${prompt}".
-Return ONLY valid PlantUML code between @startuml and @enduml for a class diagram.
-Do NOT wrap the output in markdown fences or explanations.`;
+      const instruction = `Generate a PlantUML class diagram for the following description: "${prompt}".\nReturn ONLY valid PlantUML code between @startuml and @enduml for a class diagram.\nDo NOT wrap the output in markdown fences or explanations.`;
       const rawResponse = await getGeminiResponse(instruction);
       const umlCode = extractPlantUmlFromResponse(rawResponse);
       if (!umlCode) throw new Error("Gemini response did not contain valid PlantUML.");
+      // Update the UML state so the diagram renders in the component
       setUml(umlCode);
       setError(null);
-      // If auto-render is on, trigger rendering after generation
-      if (autoRender) {
-        setTimeout(renderDiagram, 100);
+      // Render the diagram immediately in the stage
+      renderDiagram();
+      // Build the PNG URL and prefetch it. To avoid popup blocking, open a tab
+      // synchronously on the user-initiated event, then update its location once
+      // the PlantUML server responds with the PNG. Waiting for fetch ensures
+      // the server has generated the image before navigating the new tab.
+      const newTab = window.open("", "_blank");
+      const pngUrl = buildUrl(umlCode, "png", encoding);
+      try {
+        // Prefetch the PNG to ensure the diagram has been generated. We ignore
+        // the fetched data; the call is only to await completion. If this
+        // fails, we'll still attempt to open the PNG URL.
+        await fetch(pngUrl);
+      } catch {}
+      if (newTab) {
+        newTab.location.href = pngUrl;
       }
     } catch (err) {
       setError(err.message);
     } finally {
+      // Ensure the loading state is cleared regardless of success or failure
       setLoading(false);
     }
   };
 
-  // Copy the current UML to the clipboard
   const handleCopy = async () => {
     try {
       await navigator.clipboard.writeText(uml);
@@ -87,7 +73,7 @@ Do NOT wrap the output in markdown fences or explanations.`;
       alert("Failed to copy UML");
     }
   };
-  // Paste UML from the clipboard into the UML editor
+
   const handlePaste = async () => {
     try {
       const text = await navigator.clipboard.readText();
@@ -97,9 +83,7 @@ Do NOT wrap the output in markdown fences or explanations.`;
       alert("Failed to paste UML");
     }
   };
-  // Paste text from the clipboard into the prompt description. This is
-  // separate from handlePaste (which pastes into the UML editor). The new
-  // function allows quick insertion of clipboard text into the prompt area.
+
   const handlePromptPaste = async () => {
     try {
       const text = await navigator.clipboard.readText();
@@ -109,7 +93,6 @@ Do NOT wrap the output in markdown fences or explanations.`;
     }
   };
 
-  // Encoding helpers
   const encode6bit = (b) => {
     if (b < 10) return String.fromCharCode(48 + b);
     b -= 10;
@@ -152,9 +135,65 @@ Do NOT wrap the output in markdown fences or explanations.`;
     return `${base}/${fmt}/${header}${payload}`;
   };
 
-  // Render the UML diagram into the stage. Adjust sizing for SVG/PNG
-  // outputs so they look good on mobile screens. Panzoom is applied to
-  // enable zooming and panning of the rendered diagram.
+  // Render a given PlantUML string to the stage and return a promise
+  // that resolves once the SVG or IMG element has fully loaded. This
+  // ensures that subsequent actions (like opening a new tab) only occur
+  // after the diagram has rendered. The provided UML string is used
+  // directly rather than relying on component state, allowing callers
+  // to render newly generated diagrams immediately.
+  const renderDiagramAndWait = (umlString) => {
+    return new Promise((resolve) => {
+      if (!umlString || !umlString.trim() || !stageRef.current) {
+        resolve();
+        return;
+      }
+      const url = buildUrl(umlString, format, encoding);
+      const stage = stageRef.current;
+      stage.innerHTML = "";
+      if (format.endsWith("svg")) {
+        const obj = document.createElement("object");
+        obj.type = "image/svg+xml";
+        obj.data = url;
+        obj.style.width = "260px";
+        obj.style.maxWidth = "100%";
+        obj.style.height = "auto";
+        obj.style.display = "block";
+        obj.style.margin = "0 auto";
+        stage.appendChild(obj);
+        obj.addEventListener(
+          "load",
+          () => {
+            try {
+              const svg = obj.contentDocument?.querySelector("svg");
+              if (svg) Panzoom(svg, { maxScale: 6, contain: "outside" });
+            } catch {}
+            resolve();
+          },
+          { once: true }
+        );
+      } else {
+        const img = document.createElement("img");
+        img.src = url;
+        img.style.width = "260px";
+        img.style.maxWidth = "100%";
+        img.style.height = "auto";
+        img.style.display = "block";
+        img.style.margin = "0 auto";
+        img.style.borderRadius = "8px";
+        img.style.boxShadow = "0 2px 6px rgba(0,0,0,0.1)";
+        stage.appendChild(img);
+        img.addEventListener(
+          "load",
+          () => {
+            Panzoom(img, { maxScale: 6, contain: "outside" });
+            resolve();
+          },
+          { once: true }
+        );
+      }
+    });
+  };
+
   const renderDiagram = () => {
     if (!uml.trim() || !stageRef.current) return;
     const url = buildUrl(uml, format, encoding);
@@ -164,7 +203,6 @@ Do NOT wrap the output in markdown fences or explanations.`;
       const obj = document.createElement("object");
       obj.type = "image/svg+xml";
       obj.data = url;
-      // Base width for small screens; expands up to 100% width
       obj.style.width = "260px";
       obj.style.maxWidth = "100%";
       obj.style.height = "auto";
@@ -194,15 +232,10 @@ Do NOT wrap the output in markdown fences or explanations.`;
     }
   };
 
-  // Automatically re-render when underlying values change, if autoRender
-  // is enabled. Debounces changes with a short timeout.
   useEffect(() => {
-    if (!autoRender) return;
-    const timeout = setTimeout(renderDiagram, 600);
-    return () => clearTimeout(timeout);
-  }, [uml, format, encoding, server, autoRender]);
+    renderDiagram();
+  }, [uml, format, encoding, server]);
 
-  // Download the UML either as plain PlantUML text or as a PNG image
   const downloadAs = async (type) => {
     if (type === "puml") {
       const blob = new Blob([uml], { type: "text/plain" });
@@ -222,21 +255,15 @@ Do NOT wrap the output in markdown fences or explanations.`;
       link.click();
     }
   };
-  // Open the diagram in a new tab as a PNG image
   const openPngInNewTab = () => {
     const url = buildUrl(uml, "png", encoding);
     window.open(url, "_blank");
   };
-  // Upload a UML file (.puml or .txt) and load it into the editor
   const handleFileUpload = async (e) => {
     const f = e.target.files?.[0];
     if (f) setUml(await f.text());
   };
 
-  // Main JSX return. Layout is designed to be mobile-first with full
-  // width elements that stack vertically. On medium and larger screens
-  // certain elements align side-by-side using Tailwind's responsive
-  // utilities.
   return (
     <div
       className={`${darkMode ? "dark" : ""} p-4 bg-gray-50 dark:bg-slate-900 min-h-screen`}
@@ -245,15 +272,12 @@ Do NOT wrap the output in markdown fences or explanations.`;
         <h2 className="text-2xl font-bold mb-4 text-center text-indigo-600 dark:text-indigo-400">
           🌿 PlantUML Class Diagram Viewer
         </h2>
-
-        {/* Prompt input for Gemini */}
         <div className="flex flex-col space-y-2 sm:flex-row sm:space-y-0 sm:gap-2 mb-4">
           <textarea
             value={prompt}
             onChange={(e) => setPrompt(e.target.value)}
             onKeyDown={(e) => {
               if (e.key === "Enter" && !e.shiftKey) {
-                // Submit on Enter (without shift) to avoid newlines
                 e.preventDefault();
                 handleGenerateFromPrompt();
               }
@@ -283,16 +307,12 @@ Do NOT wrap the output in markdown fences or explanations.`;
           </div>
         </div>
         {error && <div className="text-red-600 mb-2">{error}</div>}
-
-        {/* UML editor and controls */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-          {/* Editor */}
           <textarea
             value={uml}
             onChange={(e) => setUml(e.target.value)}
             className="w-full h-40 p-3 rounded border dark:bg-slate-800"
           />
-          {/* Controls */}
           <div className="flex flex-col gap-2">
             <button onClick={handleCopy} className="bg-purple-600 text-white px-3 py-2 rounded shadow">
               Copy UML
@@ -321,17 +341,7 @@ Do NOT wrap the output in markdown fences or explanations.`;
                 onChange={handleFileUpload}
               />
             </label>
-            <label className="inline-flex items-center mt-2">
-              <input
-                type="checkbox"
-                checked={autoRender}
-                onChange={(e) => setAutoRender(e.target.checked)}
-                className="mr-2"
-              />
-              Auto render
-            </label>
           </div>
-          {/* Tips */}
           <div className="text-sm opacity-80">
             <p>
               <b>Tip:</b> If you see "not DEFLATE", switch encoding to <i>zlib deflate (~1)</i>.
@@ -342,8 +352,6 @@ Do NOT wrap the output in markdown fences or explanations.`;
             </p>
           </div>
         </div>
-
-        {/* Rendered diagram */}
         <div
           ref={stageRef}
           className="min-h-[45vh] rounded border mt-6 grid place-items-center p-4 bg-white dark:bg-slate-800"

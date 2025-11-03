@@ -8,7 +8,7 @@ const genAI = new GoogleGenerativeAI(geminiApiKey);
 
 export class GeminiModel {
     // static variable for current model
-    static currentModel = "gemini-1.5-flash"}
+    static currentModel = "gemini-2.0-flash"}
 
     
 async function listGeminiModels() {    
