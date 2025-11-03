@@ -5,8 +5,8 @@ const TeleprompterAdvanced = () => {
   // Core state
   const [script, setScript] = useState("");
   const [isPaused, setIsPaused] = useState(false);
-  const [fontSize, setFontSize] = useState(1.2); // em
-  const [speed, setSpeed] = useState(60); // pixels per second
+  const [fontSize, setFontSize] = useState(3); // em
+  const [speed, setSpeed] = useState(20); // pixels per second
   const [showControls, setShowControls] = useState(true);
   const { teleprompterText } = useAppState();
 
@@ -206,7 +206,7 @@ const TeleprompterAdvanced = () => {
             <label>Scroll Speed (pixels/sec)</label>
             <input
               type="range"
-              min="20"
+              min="10"
               max="200"
               value={speed}
               onChange={(e) => setSpeed(parseInt(e.target.value, 10))}

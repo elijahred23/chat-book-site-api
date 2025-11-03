@@ -508,7 +508,7 @@ const LoopingTTSImproved = () => {
         </button>
       </div>
       <div className="status">{status}</div>
-      <div style={{ textAlign: "center", fontWeight: "bold" }}>
+      <div style={{ textAlign: "center", fontWeight: "bold", fontSize: "2em" }}>
         {currentSentence}
       </div>
       <div className="progress-bar-container">

@@ -6,6 +6,7 @@ import React, { useState, useEffect, useRef } from "react";
 // to match where you've placed these functions in your codebase.
 import { getGeminiResponse } from "./utils/callGemini.js";
 import ActionButtons from "./ui/ActionButtons.jsx";
+import FlashCardTable from "./FlashCardTable.jsx";
 
 /**
  * Attempt to extract a JSON object or array from an arbitrary string.
@@ -933,76 +934,6 @@ export default function FlashCardApp() {
   };
 
   /* ---------------------------------------------------------------------- */
-  /* Table mode (list all cards)                                            */
-  /* ---------------------------------------------------------------------- */
-  const renderTableMode = () => {
-    if (cards.length === 0) {
-      return <p>No cards available to display.</p>;
-    }
-    return (
-      <div style={{ overflowX: "auto" }}>
-        <table
-          style={{
-            width: "100%",
-            borderCollapse: "collapse",
-            color: COLORS.text,
-          }}
-        >
-          <thead>
-            <tr>
-              <th
-                style={{
-                  borderBottom: `2px solid ${COLORS.border}`,
-                  textAlign: "left",
-                  padding: "0.5rem",
-                }}
-              >
-                Question
-              </th>
-              <th
-                style={{
-                  borderBottom: `2px solid ${COLORS.border}`,
-                  textAlign: "left",
-                  padding: "0.5rem",
-                }}
-              >
-                Answer
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {cards.map((card, idx) => (
-              <tr key={idx}>
-                <td
-                  style={{
-                    borderBottom: `1px solid ${COLORS.border}`,
-                    padding: "0.5rem",
-                    verticalAlign: "top",
-                    whiteSpace: "normal",
-                  }}
-                >
-                  {card.question}
-                </td>
-                <td
-                  style={{
-                    borderBottom: `1px solid ${COLORS.border}`,
-                    padding: "0.5rem",
-                    verticalAlign: "top",
-                    whiteSpace: "normal",
-                  }}
-                >
-                  {card.answer}
-                  <ActionButtons promptText={card.answer} />
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    );
-  };
-
-  /* ---------------------------------------------------------------------- */
   /* Render helpers                                                         */
   /* ---------------------------------------------------------------------- */
 
@@ -1664,7 +1595,7 @@ export default function FlashCardApp() {
       case "survival":
         return renderSurvivalMode();
       case "table":
-        return renderTableMode();
+        return <FlashCardTable cards={cards} COLORS={COLORS}/>;
       default:
         return <div>Select a mode to begin.</div>;
     }
