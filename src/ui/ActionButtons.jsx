@@ -1,6 +1,6 @@
 import "./ActionButtons.css";
 import { useAppDispatch, useAppState, actions } from "../context/AppContext";
-import { FaComments, FaVolumeUp, FaScroll, FaProjectDiagram, FaPodcast, FaCopy } from "react-icons/fa";
+import { FaComments, FaVolumeUp, FaScroll, FaProjectDiagram, FaPodcast, FaCopy, FaCode } from "react-icons/fa";
 import { useFlyout } from "../context/FlyoutContext";
 
 function removeMarkdown(text) {
@@ -74,6 +74,16 @@ export default function ActionButtons({ promptText }) {
         e.stopPropagation();
         dispatch(actions.setPodcastTTSPrompt(cleanText));
         dispatch(actions.setIsPodcastTTSOpen(true));
+      },
+    },
+    {
+      icon: <FaCode />,
+      title: "JS Generator",
+      color: "var(--btn-code)",
+      onClick: async (e) => {
+        e.stopPropagation();
+        dispatch(actions.setIsJSGeneratorOpen(true));
+        dispatch(actions.setJSGeneratorPrompt(cleanText));
       },
     },
     {
