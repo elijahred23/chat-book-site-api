@@ -145,7 +145,6 @@ const FlashCardTable = ({ cards, COLORS }) => {
         >
           <thead>
             <tr>
-              <th></th>
               <th
                 style={{
                   borderBottom: `2px solid ${COLORS?.border || "#444"}`,
@@ -198,14 +197,6 @@ const FlashCardTable = ({ cards, COLORS }) => {
                 >
                   {card.answer}
                   <ActionButtons promptText={`${card.question} - ${card.answer}`} />
-                </td>
-                <td style={{ padding: "0.5rem", textAlign: "center" }}>
-                  <input
-                    type="checkbox"
-                    checked={selectedCards.includes(idx)}
-                    onChange={() => toggleCardSelection(idx)}
-                    style={{ transform: "scale(1.2)" }}
-                  />
                 </td>
               </tr>
             ))}
