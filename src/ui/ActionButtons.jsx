@@ -1,15 +1,11 @@
 import "./ActionButtons.css";
 import { useAppDispatch, useAppState, actions } from "../context/AppContext";
-import { FaComments, FaVolumeUp, FaScroll, FaProjectDiagram } from "react-icons/fa";
-import { FaPodcast } from "react-icons/fa";
-
+import { FaComments, FaVolumeUp, FaScroll, FaProjectDiagram, FaPodcast, FaCopy } from "react-icons/fa";
 
 function removeMarkdown(text) {
   return text
     .replace(/```[\s\S]*?```/g, m => m.replace(/```[a-zA-Z]*\n?/, "").replace(/```$/, ""))
     .replace(/`([^`]*)`/g, "$1")
-    .replace(/!$begin:math:display$.*?$end:math:display$$begin:math:text$.*?$end:math:text$/g, "")
-    .replace(/$begin:math:display$([^$end:math:display$]+)\]$begin:math:text$([^)]+)$end:math:text$/g, "$1")
     .replace(/(\*\*|__)(.*?)\1/g, "$2")
     .replace(/(\*|_)(.*?)\1/g, "$2")
     .replace(/~~(.*?)~~/g, "$1")
@@ -70,12 +66,23 @@ export default function ActionButtons({ promptText }) {
     },
     {
       icon: <FaPodcast />,
-      title: "PlantUML",
+      title: "Podcast TTS",
       color: "var(--btn-podcast)",
       onClick: (e) => {
         e.stopPropagation();
         dispatch(actions.setPodcastTTSPrompt(cleanText));
         dispatch(actions.setIsPodcastTTSOpen(true));
+      },
+    },
+    {
+      icon: <FaCopy />,
+      title: "Copy Text",
+      color: "var(--btn-gray)",
+      onClick: async (e) => {
+        e.stopPropagation();
+        try {
+          await navigator.clipboard.writeText(cleanText);
+        } catch {}
       },
     },
   ];

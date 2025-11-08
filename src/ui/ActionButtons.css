@@ -4,6 +4,8 @@
   --btn-green: linear-gradient(135deg, #10b981, #059669);
   --btn-orange: linear-gradient(135deg, #f97316, #ea580c);
   --btn-podcast: linear-gradient(135deg, #ec4899, #db2777);
+  --btn-gray: linear-gradient(135deg, #94a3b8, #64748b);
+
 }
 
 .action-buttons {

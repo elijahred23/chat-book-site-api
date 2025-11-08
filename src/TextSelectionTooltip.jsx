@@ -182,6 +182,19 @@ const TextSelectionTooltip = ({ onAskAI, onSendToTTS, onSendToTeleprompter }) =>
       >
         🌿 PlantUML
       </button>
+      {/* Send to podcast */}
+      <button 
+        style={buttonStyle}
+        onClick={(e) => {
+          e.stopPropagation();
+          dispatch(actions.setPodcastTTSPrompt(selectedText));
+          dispatch(actions.setIsPodcastTTSOpen(true));
+          window.getSelection().removeAllRanges();
+          setVisible(false);
+        }}
+      >
+        🎙️ Podcast
+      </button>
     </div>
   );
 };
