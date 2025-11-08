@@ -19,6 +19,7 @@ import Teleprompter from './Teleprompter.jsx';
 import FlashCardApp from './FlashCardApp.jsx';
 import PlantUMLViewer from './PlantUML.jsx';
 import PodcastTTSPlayer from './PodcastTTSPlayer.jsx';
+import JSConsoleGenerator from './JSConsoleGenerator.jsx';
 
 function App() {
   const [isFullWidth, setIsFullWidth] = useState(true);
@@ -56,6 +57,7 @@ function App() {
             <NavLink to="/htmlBuilder">HTML Builder</NavLink>
             <NavLink to="/Quran">Quran</NavLink>
             <NavLink to="/apiCheck">Settings</NavLink>
+            <NavLink to="/jsGenerator">JS Generator</NavLink>
           </div>
         </div>
 
@@ -115,6 +117,7 @@ function App() {
             <Route path="/typingTest" element={<TypingTest />} />
             <Route path="/flashCards" element={<FlashCardApp />} />
             <Route path="/plantUML" element={<PlantUMLViewer />} />
+            <Route path="/jsGenerator" element={<JSConsoleGenerator />} />
           </Routes>
         </div>
 
