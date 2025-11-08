@@ -2,6 +2,7 @@ import "./ActionButtons.css";
 import { useAppDispatch, useAppState, actions } from "../context/AppContext";
 import { FaComments, FaVolumeUp, FaScroll, FaProjectDiagram, FaPodcast, FaCopy, FaCode } from "react-icons/fa";
 import { useFlyout } from "../context/FlyoutContext";
+import { FcGoogle } from "react-icons/fc";
 
 function removeMarkdown(text) {
   return text
@@ -85,6 +86,17 @@ export default function ActionButtons({ promptText }) {
         dispatch(actions.setIsJSGeneratorOpen(true));
         dispatch(actions.setJSGeneratorPrompt(cleanText));
       },
+    },
+    {
+      icon: <FcGoogle />,
+      title: "Ask Google",
+      color: "var(--google-blue)",
+      onClick: async (e) => {
+        e.stopPropagation();
+        const query = encodeURIComponent(cleanText);
+        const url = `https://www.google.com/search?q=${query}`;
+        window.open(url, "_blank");
+      }
     },
     {
       icon: <FaCopy />,

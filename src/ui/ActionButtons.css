@@ -6,7 +6,8 @@
   --btn-podcast: linear-gradient(135deg, #ec4899, #db2777);
   --btn-gray: linear-gradient(135deg, #94a3b8, #64748b);
   --btn-code: linear-gradient(135deg, #06b6d4, #0e7490); /* Tailwind cyan range */
-
+  --btn-yellow: linear-gradient(135deg, #f59e0b, #d97706);
+  --google-blue: linear-gradient(135deg, #4285F4, #1a73e8);
 
 }
 
