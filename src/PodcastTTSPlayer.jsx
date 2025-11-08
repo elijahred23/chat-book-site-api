@@ -1,9 +1,11 @@
 import { useEffect, useState, useRef } from "react";
 import "./PodcastTTSPlayer.css";
 import {getGeminiResponse} from "./utils/callGemini";
+import { useAppState } from "./context/AppContext";
 
 export default function PodcastTTSPlayer() {
   const synth = window.speechSynthesis;
+  const {podcastTTSPrompt} = useAppState();
 
   const [voices, setVoices] = useState([]);
   const [scriptData, setScriptData] = useState([]);
@@ -18,6 +20,11 @@ export default function PodcastTTSPlayer() {
   const [prompt, setPrompt] = useState("");
 
   const scriptInputRef = useRef();
+
+
+  useEffect(() => {
+    setPrompt(podcastTTSPrompt || "");
+  }, [podcastTTSPrompt]);
 
   /* ---------------- Voice Loading ---------------- */
   useEffect(() => {
