@@ -62,6 +62,40 @@ export default function PodcastTTSPlayer() {
       return { ...item, gender: item.gender.toLowerCase() };
     });
   }
+  const downloadJson = async () => {
+  try {
+    const jsonBlob = new Blob([JSON.stringify(scriptData, null, 2)], { type: "application/json" });
+
+    // If browser supports File System Access API
+    if (window.showSaveFilePicker) {
+      const handle = await window.showSaveFilePicker({
+        suggestedName: "podcast_script.json",
+        types: [
+          {
+            description: "JSON File",
+            accept: { "application/json": [".json"] }
+          }
+        ]
+      });
+      const writable = await handle.createWritable();
+      await writable.write(jsonBlob);
+      await writable.close();
+      return;
+    }
+
+    // Fallback for unsupported browsers (Safari, Firefox)
+    const dataStr = URL.createObjectURL(jsonBlob);
+    const dlAnchorElem = document.createElement("a");
+    dlAnchorElem.href = dataStr;
+    dlAnchorElem.download = "podcast_script.json";
+    dlAnchorElem.click();
+    URL.revokeObjectURL(dataStr);
+
+  } catch (error) {
+    console.error("Save failed:", error);
+    setErrorMsg("Saving failed. Browser may not support choosing save location.");
+  }
+};
 
   const loadScript = () => {
     try {
@@ -204,6 +238,8 @@ export default function PodcastTTSPlayer() {
           <div className="controls">
             <button onClick={loadScript}>Load</button>
             <button onClick={pasteFromClipboard}>📋 Paste</button>
+            <button onClick={downloadJson}>💾 Download JSON</button>
+            <button onClick={() => speak(currentIndex)}>▶ Play</button>
             <input type="file" accept="application/json" onChange={loadFromFile} />
           </div>
 
