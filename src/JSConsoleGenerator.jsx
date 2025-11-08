@@ -7,6 +7,7 @@ import Editor from "react-simple-code-editor";
 import Prism from "prismjs";
 import "prismjs/components/prism-javascript";
 import "prismjs/themes/prism.css"; // you can swap this theme later
+import { useAppState } from "./context/AppContext";
 
 
 export default function JSConsoleGenerator() {
@@ -15,8 +16,13 @@ export default function JSConsoleGenerator() {
   const [logs, setLogs] = useState([]);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const {jsGeneratorPrompt} = useAppState();
 
   const outputRef = useRef(null);
+
+  useEffect(()=>{
+    setPrompt(jsGeneratorPrompt);
+  }, [jsGeneratorPrompt])
 
   function buildStrictPrompt(userTopic) {
     return `

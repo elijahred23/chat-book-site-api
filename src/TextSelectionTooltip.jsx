@@ -195,6 +195,19 @@ const TextSelectionTooltip = ({ onAskAI, onSendToTTS, onSendToTeleprompter }) =>
       >
         🎙️ Podcast
       </button>
+      {/* Send to JS Generator */}
+      <button 
+        style={buttonStyle}
+        onClick={(e) => {
+          e.stopPropagation();
+          dispatch(actions.setJSGeneratorPrompt(selectedText));
+          dispatch(actions.setIsJSGeneratorOpen(true));
+          window.getSelection().removeAllRanges();
+          setVisible(false);
+        }}
+      >
+        💻 JS Gen
+      </button>
     </div>
   );
 };

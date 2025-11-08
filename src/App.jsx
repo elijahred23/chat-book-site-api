@@ -57,7 +57,6 @@ function App() {
             <NavLink to="/htmlBuilder">HTML Builder</NavLink>
             <NavLink to="/Quran">Quran</NavLink>
             <NavLink to="/apiCheck">Settings</NavLink>
-            <NavLink to="/jsGenerator">JS Generator</NavLink>
           </div>
         </div>
 
@@ -98,6 +97,9 @@ function App() {
               </button>
               <button onClick={() => setPodcastTTSOpen(true)} className="chat-toggle-btn floating-chat-btn">
                 {isPodcastTTSOpen ? '❌' : '🎙️ Podcast TTS'}
+              </button>
+              <button onClick={() => dispatch(actions.setIsJSGeneratorOpen(true))} className="chat-toggle-btn floating-chat-btn">
+                {useAppState().isJSGeneratorOpen ? '❌' : '💻 JS Generator'}
               </button>
             </>
           )}
@@ -174,6 +176,15 @@ function App() {
           </div>
           <PodcastTTSPlayer />
         </div>
+        {/* New JS Console Generator Drawer */}
+        <div className={`chat-drawer ${useAppState().isJSGeneratorOpen ? 'open' : ''} ${isFullWidth ? 'full' : 'half'}`}>
+          <div className="chat-drawer-header">
+            <button className="width-toggle-btn" onClick={() => dispatch(actions.setIsJSGeneratorOpen(false))}>
+              ✖ Close JS Console Generator
+            </button>
+          </div>
+          <JSConsoleGenerator />
+        </div>  
       </BrowserRouter>
 
       <DownloadCopyTextFile />

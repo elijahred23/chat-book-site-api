@@ -16,7 +16,9 @@ const initialState = {
   isPlantUMLOpen: false,
   plantUMLPrompt: '',
   isPodcastTTSOpen: false,
-  podcastTTSPrompt: ''
+  podcastTTSPrompt: '',
+  isJSGeneratorOpen: false,
+  jsGeneratorPrompt: '',
 };
 
 const actionTypes = {
@@ -34,7 +36,9 @@ const actionTypes = {
   SET_IS_PLANTUML_OPEN: 'SET_IS_PLANTUML_OPEN',
   SET_PLANT_UML_PROMPT: 'SET_PLANT_UML_PROMPT',
   SET_IS_PODCAST_TTS_OPEN: 'SET_IS_PODCAST_TTS_OPEN',
-  SET_PODCAST_TTS_PROMPT: 'SET_PODCAST_TTS_PROMPT'
+  SET_PODCAST_TTS_PROMPT: 'SET_PODCAST_TTS_PROMPT',
+  SET_IS_JS_GENERATOR_OPEN: 'SET_IS_JS_GENERATOR_OPEN',
+  SET_JS_GENERATOR_PROMPT: 'SET_JS_GENERATOR_PROMPT',
 };
 
 // ✅ closes all open UI panels
@@ -45,6 +49,7 @@ const closeAllPanels = (state) => ({
   isTTSOpen: false,
   isPlantUMLOpen: false,
   isPodcastTTSOpen: false,
+  isJSGeneratorOpen: false,
 });
 
 function appReducer(state, action) {
@@ -100,6 +105,14 @@ function appReducer(state, action) {
       return action.payload
         ? { ...closeAllPanels(state), isPodcastTTSOpen: true }
         : { ...state, isPodcastTTSOpen: false };
+      
+    case actionTypes.SET_IS_JS_GENERATOR_OPEN:
+      return action.payload
+        ? { ...closeAllPanels(state), isJSGeneratorOpen: true }
+        : { ...state, isJSGeneratorOpen: false };
+
+    case actionTypes.SET_JS_GENERATOR_PROMPT:
+      return { ...state, jsGeneratorPrompt: action.payload };
 
     case actionTypes.SET_PODCAST_TTS_PROMPT:
       return { ...state, podcastTTSPrompt: action.payload };
@@ -143,4 +156,6 @@ export const actions = {
   setPlantUMLPrompt: (prompt) => ({ type: actionTypes.SET_PLANT_UML_PROMPT, payload: prompt }),
   setIsPodcastTTSOpen: (open) => ({ type: actionTypes.SET_IS_PODCAST_TTS_OPEN, payload: open }),
   setPodcastTTSPrompt: (prompt) => ({ type: actionTypes.SET_PODCAST_TTS_PROMPT, payload: prompt }),
+  setIsJSGeneratorOpen: (open) => ({ type: actionTypes.SET_IS_JS_GENERATOR_OPEN, payload: open }),
+  setJSGeneratorPrompt: (prompt) => ({ type: actionTypes.SET_JS_GENERATOR_PROMPT, payload: prompt }),
 };
