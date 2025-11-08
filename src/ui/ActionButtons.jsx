@@ -1,6 +1,8 @@
 import "./ActionButtons.css";
 import { useAppDispatch, useAppState, actions } from "../context/AppContext";
 import { FaComments, FaVolumeUp, FaScroll, FaProjectDiagram } from "react-icons/fa";
+import { FaPodcast } from "react-icons/fa";
+
 
 function removeMarkdown(text) {
   return text
@@ -64,6 +66,16 @@ export default function ActionButtons({ promptText }) {
         e.stopPropagation();
         dispatch(actions.setPlantUMLPrompt(cleanText));
         dispatch(actions.setIsPlantUMLOpen(true));
+      },
+    },
+    {
+      icon: <FaPodcast />,
+      title: "PlantUML",
+      color: "var(--btn-podcast)",
+      onClick: (e) => {
+        e.stopPropagation();
+        dispatch(actions.setPodcastTTSPrompt(cleanText));
+        dispatch(actions.setIsPodcastTTSOpen(true));
       },
     },
   ];
