@@ -18,6 +18,7 @@ import LoopingTTS from './LoopingTTS.jsx';
 import Teleprompter from './Teleprompter.jsx';
 import FlashCardApp from './FlashCardApp.jsx';
 import PlantUMLViewer from './PlantUML.jsx';
+import PodcastTTSPlayer from './PodcastTTSPlayer.jsx';
 
 function App() {
   const [isFullWidth, setIsFullWidth] = useState(true);
@@ -25,13 +26,14 @@ function App() {
   const [isChatFullscreen, setIsChatFullscreen] = useState(false);
   const [showFloatingBtns, setShowFloatingBtns] = useState(false);
   const dispatch = useAppDispatch();
-  const { isChatOpen, isTeleprompterOpen, isTTSOpen, isPlantUMLOpen } = useAppState();
+  const { isChatOpen, isTeleprompterOpen, isTTSOpen, isPlantUMLOpen, isPodcastTTSOpen} = useAppState();
 
   const toggleChat = () => dispatch(actions.setIsChatOpen(false));
   const toggleWidth = () => setIsFullWidth((p) => !p);
   const setIsTeleprompterOpen = (val) => dispatch(actions.setIsTeleprompterOpen(val));
   const setIsTTSOpen = (val) => dispatch(actions.setIsTTSOpen(val));
   const setIsPlantUMLOpen = (val) => dispatch(actions.setIsPlantUMLOpen(val)); // ✅ NEW
+  const setPodcastTTSOpen = (val) => dispatch(actions.setIsPodcastTTSOpen(val)); // ✅ NEW
 
   useEffect(() => {
     const savedText = localStorage.getItem('selectedText');
@@ -91,6 +93,9 @@ function App() {
               </button>
               <button onClick={() => setIsPlantUMLOpen(true)} className="chat-toggle-btn floating-chat-btn">
                 {isPlantUMLOpen ? '❌' : '🧩 UML'}
+              </button>
+              <button onClick={() => setPodcastTTSOpen(true)} className="chat-toggle-btn floating-chat-btn">
+                {isPodcastTTSOpen ? '❌' : '🎙️ Podcast TTS'}
               </button>
             </>
           )}
@@ -155,6 +160,16 @@ function App() {
             </button>
           </div>
           <PlantUMLViewer />
+        </div>
+
+        {/* ✅ NEW Podcast TTS Drawer */}
+        <div className={`chat-drawer ${isPodcastTTSOpen ? 'open' : ''} ${isFullWidth ? 'full' : 'half'}`}>
+          <div className="chat-drawer-header">
+            <button className="width-toggle-btn" onClick={() => setPodcastTTSOpen(false)}>
+              ✖ Close Podcast TTS Player
+            </button>
+          </div>
+          <PodcastTTSPlayer />
         </div>
       </BrowserRouter>
 

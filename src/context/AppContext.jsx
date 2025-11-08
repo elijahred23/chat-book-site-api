@@ -15,6 +15,7 @@ const initialState = {
   isTTSOpen: false,
   isPlantUMLOpen: false, // ✅ NEW
   plantUMLPrompt: '', // ✅ NEW
+  isPodcastTTSOpen: false, // ✅ NEW
 };
 
 const actionTypes = {
@@ -31,6 +32,7 @@ const actionTypes = {
   SET_IS_TTS_OPEN: 'SET_IS_TTS_OPEN',
   SET_IS_PLANTUML_OPEN: 'SET_IS_PLANTUML_OPEN', // ✅ NEW
   SET_PLANT_UML_PROMPT: 'SET_PLANT_UML_PROMPT', // ✅ NEW
+  SET_IS_PODCAST_TTS_OPEN: 'SET_IS_PODCAST_TTS_OPEN', // ✅ NEW
 };
 
 function appReducer(state, action) {
@@ -61,6 +63,8 @@ function appReducer(state, action) {
       return { ...state, isPlantUMLOpen: action.payload }; // ✅ NEW
     case actionTypes.SET_PLANT_UML_PROMPT:
       return { ...state, plantUMLPrompt: action.payload }; // ✅ NEW
+    case actionTypes.SET_IS_PODCAST_TTS_OPEN:
+      return { ...state, isPodcastTTSOpen: action.payload }; // ✅ NEW  
     default:
       console.warn(`Unhandled action type: ${action.type}`);
       return state;
@@ -101,4 +105,5 @@ export const actions = {
   setIsTTSOpen: (open) => ({ type: actionTypes.SET_IS_TTS_OPEN, payload: open }),
   setIsPlantUMLOpen: (open) => ({ type: actionTypes.SET_IS_PLANTUML_OPEN, payload: open }), // ✅ NEW
   setPlantUMLPrompt: (prompt) => ({ type: actionTypes.SET_PLANT_UML_PROMPT, payload: prompt }), // ✅ NEW
+  setIsPodcastTTSOpen: (open) => ({ type: actionTypes.SET_IS_PODCAST_TTS_OPEN, payload: open }), // ✅ NEW
 };
