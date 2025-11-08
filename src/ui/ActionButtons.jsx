@@ -3,6 +3,7 @@ import { useAppDispatch, useAppState, actions } from "../context/AppContext";
 import { FaComments, FaVolumeUp, FaScroll, FaProjectDiagram, FaPodcast, FaCopy, FaCode } from "react-icons/fa";
 import { useFlyout } from "../context/FlyoutContext";
 import { FcGoogle } from "react-icons/fc";
+import { SiWikipedia } from "react-icons/si";
 
 function removeMarkdown(text) {
   return text
@@ -98,6 +99,17 @@ export default function ActionButtons({ promptText }) {
         window.open(url, "_blank");
       }
     },
+    {
+  icon: <SiWikipedia />,
+  title: "Ask Wikipedia",
+  color: "var(--wiki-grey)",
+  onClick: async (e) => {
+    e.stopPropagation();
+    const query = encodeURIComponent(cleanText);
+    const url = `https://en.wikipedia.org/wiki/Special:Search?search=${query}`;
+    window.open(url, "_blank");
+  }
+},
     {
       icon: <FaCopy />,
       title: "Copy Text",
