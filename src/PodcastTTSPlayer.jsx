@@ -8,8 +8,8 @@ export default function PodcastTTSPlayer() {
   const [voices, setVoices] = useState([]);
   const [scriptData, setScriptData] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [femaleVoice, setFemaleVoice] = useState("");
-  const [maleVoice, setMaleVoice] = useState("");
+  const [femaleVoice, setFemaleVoice] = useState("Samantha");
+  const [maleVoice, setMaleVoice] = useState("Aaron");
   const [rate, setRate] = useState(1);
   const [pitch, setPitch] = useState(1);
   const [volume, setVolume] = useState(1);
