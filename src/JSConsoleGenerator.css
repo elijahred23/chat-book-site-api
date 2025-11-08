@@ -1,195 +1,79 @@
-/* Container */
+/* Container layout */
 .jsgen-wrapper {
-  padding: 16px;
-  max-width: 800px;
-  margin: auto;
-  color: #1a1a1a;
-}
-
-/* Description */
-.jsgen-description {
-  margin-top: 4px;
-  margin-bottom: 8px;
-  opacity: 0.8;
-  font-size: 14px;
-}
-
-/* Language selector row */
-.jsgen-select-row {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 8px;
-  flex-wrap: wrap;
-}
-
-.jsgen-select-label {
-  font-weight: 600;
-}
-
-.jsgen-select {
-  padding: 8px 10px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  min-width: 120px;
-  font-size: 14px;
-  background-color: #fff;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem;
+  font-family: system-ui, sans-serif;
 }
 
 /* Prompt textarea */
 .jsgen-textarea {
   width: 100%;
-  padding: 12px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  min-height: 90px;
-  font-size: 15px;
+  min-height: 80px;
+  padding: 0.5rem;
   resize: vertical;
 }
 
-/* Action buttons */
+/* Buttons row */
 .jsgen-button-row {
+  margin-top: 0.5rem;
   display: flex;
-  gap: 8px;
-  margin-top: 8px;
+  gap: 0.5rem;
 }
 
-.jsgen-button-row button {
-  flex: 1;
-  padding: 12px;
-  border-radius: 6px;
-  border: none;
-  color: white;
-  font-weight: 600;
-  font-size: 15px;
+/* Simple buttons */
+.jsgen-button-row button,
+.jsgen-run {
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
 }
 
-.jsgen-button-row button:first-child {
-  background: #0074ff;
-}
-
-.jsgen-button-row button:nth-child(2) {
-  background: #666;
-}
-
-/* Error message */
-.jsgen-error {
-  margin-top: 8px;
-  color: #d32f2f;
-  font-size: 14px;
-}
-
-/* Panels section */
+/* Code + Output layout */
 .jsgen-panels {
+  margin-top: 1rem;
   display: flex;
-  gap: 16px;
-  margin-top: 20px;
+  gap: 1rem;
   flex-wrap: wrap;
 }
 
 .jsgen-panel {
-  flex: 1;
-  min-width: 280px;
-  background: white;
-  border-radius: 8px;
-  border: 1px solid #ddd;
-  overflow: hidden;
+  flex: 1 1 45%;
   display: flex;
   flex-direction: column;
+  min-height: 200px;
+  border: 1px solid #ddd;
 }
 
+/* Panel header (for Run button placement) */
 .jsgen-panel-header {
-  padding: 10px 14px;
-  background: #f4f4f4;
-  font-weight: bold;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-between;
   border-bottom: 1px solid #ddd;
-  font-size: 15px;
 }
 
-/* Code block styling */
-.code-block {
-  padding: 12px;
-  background: #1e1e1e;
-  color: #dcdcdc;
-  font-family: Menlo, Consolas, monospace;
-  font-size: 14px;
-  overflow-x: auto;
-  white-space: pre-wrap;
-  word-break: break-word;
-}
-
-/* Output block */
+/* Make output scrollable */
 .jsgen-output {
-  padding: 12px;
-  min-height: 160px;
-  font-family: monospace;
-  background: #fafafa;
+  flex-grow: 1;
+  padding: 0.5rem;
   overflow-y: auto;
-  white-space: pre-wrap;
-  word-break: break-word;
+  font-family: monospace;
 }
 
-.jsgen-log-line {
-  margin-bottom: 4px;
-}
-
+/* Muted placeholder message */
 .jsgen-muted {
   opacity: 0.6;
-  font-style: italic;
 }
 
-/* Run button */
-.jsgen-run {
-  margin: 12px;
-  padding: 10px;
-  background: #0ea95e;
-  color: white;
-  border-radius: 6px;
-  border: none;
-  font-weight: bold;
-  font-size: 15px;
-  cursor: pointer;
+/* Remove custom editor styling — Prism takes over */
+.code-editor {
+  min-height: 200px;
+  padding: 12px;
+  font-family: inherit;
+  background: transparent !important;
 }
 
-.jsgen-run:disabled {
-  background: #b3b3b3;
-  cursor: not-allowed;
-}
-
-/* Responsive adjustments for small screens */
-@media (max-width: 600px) {
-  .jsgen-wrapper {
-    padding: 12px;
-  }
-  .jsgen-button-row {
-    flex-direction: column;
-  }
-  .jsgen-button-row button {
-    width: 100%;
-    font-size: 14px;
-  }
-  .jsgen-panels {
-    flex-direction: column;
-    gap: 12px;
-  }
-  .jsgen-panel {
-    min-width: 100%;
-  }
-  .jsgen-run {
-    width: calc(100% - 24px);
-    margin: 8px 12px 12px;
-  }
-  .code-block,
-  .jsgen-output {
-    font-size: 13px;
-    padding: 10px;
-  }
-  .jsgen-select-row {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .jsgen-select {
-    width: 100%;
-    margin-top: 4px;
-  }
+.code-editor textarea {
+  outline: none !important;
+  background: transparent !important;
 }
