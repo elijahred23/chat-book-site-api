@@ -1,6 +1,7 @@
 import "./ActionButtons.css";
 import { useAppDispatch, useAppState, actions } from "../context/AppContext";
 import { FaComments, FaVolumeUp, FaScroll, FaProjectDiagram, FaPodcast, FaCopy } from "react-icons/fa";
+import { useFlyout } from "../context/FlyoutContext";
 
 function removeMarkdown(text) {
   return text
@@ -22,6 +23,7 @@ export default function ActionButtons({ promptText }) {
   const dispatch = useAppDispatch();
   const { isChatOpen, isTTSOpen, isTeleprompterOpen } = useAppState();
   const cleanText = removeMarkdown(promptText || "");
+  const {showMessage } = useFlyout();
 
   const buttons = [
     {
@@ -82,6 +84,7 @@ export default function ActionButtons({ promptText }) {
         e.stopPropagation();
         try {
           await navigator.clipboard.writeText(cleanText);
+          showMessage({ type: "success", message: "Text copied to clipboard!" });
         } catch {}
       },
     },
