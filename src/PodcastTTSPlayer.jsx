@@ -109,25 +109,38 @@ export default function PodcastTTSPlayer() {
   };
 
   const handleGenerateScriptFromPrompt = async () => {
-    if (!prompt.trim()) return;
-    try {
-      setLoading(true);
-      const raw = await getGeminiResponse(`
-        Return ONLY a JSON array representing a podcast conversation (no markdown).
-        Each item: { "speaker": "", "gender": "male|female", "text": "" }
-        Topic: "${prompt}"
-      `);
-      const parsed = extractJsonFromResponse(raw);
-      const validated = validateScriptFormat(parsed);
-      setScriptData(validated);
-      scriptInputRef.current.value = JSON.stringify(validated, null, 2);
-      setErrorMsg("");
-    } catch {
-      setErrorMsg("Generation failed. Try again.");
-    } finally {
-      setLoading(false);
-    }
-  };
+  if (!prompt.trim()) return;
+  try {
+    setLoading(true);
+    const raw = await getGeminiResponse(`
+      Return ONLY a JSON array representing a podcast conversation (no markdown).
+      Each item: { "speaker": "", "gender": "male|female", "text": "" }
+      Topic: "${prompt}"
+    `);
+
+    const parsed = extractJsonFromResponse(raw);
+    const validated = validateScriptFormat(parsed);
+
+    setScriptData(validated);
+    setErrorMsg("");
+
+    // Switch to Script Tab
+    setActiveTab("script");
+
+    // Update textarea if it's rendered
+    setTimeout(() => {
+      if (scriptInputRef.current) {
+        scriptInputRef.current.value = JSON.stringify(validated, null, 2);
+      }
+    }, 50);
+
+  } catch (err) {
+    setErrorMsg("Generation failed. Ensure prompt is clear.");
+  } finally {
+    setLoading(false);
+  }
+};
+
 
   const getVoice = (gender) =>
     voices.find(v => v.name === (gender === "male" ? maleVoice : femaleVoice)) || voices[0];
