@@ -34,41 +34,76 @@ const actionTypes = {
   SET_IS_PLANTUML_OPEN: 'SET_IS_PLANTUML_OPEN',
   SET_PLANT_UML_PROMPT: 'SET_PLANT_UML_PROMPT',
   SET_IS_PODCAST_TTS_OPEN: 'SET_IS_PODCAST_TTS_OPEN',
-  SET_PODCAST_TTS_PROMPT: 'SET_PODCAST_TTS_PROMPT',
+  SET_PODCAST_TTS_PROMPT: 'SET_PODCAST_TTS_PROMPT'
 };
+
+// ✅ closes all open UI panels
+const closeAllPanels = (state) => ({
+  ...state,
+  isChatOpen: false,
+  isTeleprompterOpen: false,
+  isTTSOpen: false,
+  isPlantUMLOpen: false,
+  isPodcastTTSOpen: false,
+});
 
 function appReducer(state, action) {
   switch (action.type) {
     case actionTypes.SET_COPY_TEXT:
       return { ...state, copyText: action.payload };
+
     case actionTypes.SET_HTML_INPUT:
       return { ...state, htmlBuilder: { ...state.htmlBuilder, input: action.payload } };
+
     case actionTypes.SET_GENERATED_HTML:
       return { ...state, htmlBuilder: { ...state.htmlBuilder, generatedHTML: action.payload } };
+
     case actionTypes.SET_IS_CHAT_OPEN:
-      return { ...state, isChatOpen: action.payload };
+      return action.payload
+        ? { ...closeAllPanels(state), isChatOpen: true }
+        : { ...state, isChatOpen: false };
+
     case actionTypes.SET_CHAT_PROMPT:
       return { ...state, chatPrompt: action.payload };
+
     case actionTypes.SET_SELECTED_TEXT:
       return { ...state, selectedText: action.payload };
+
     case actionTypes.SET_TTS_TEXT:
       return { ...state, ttsText: action.payload };
+
     case actionTypes.SET_TELEPROMPTER_TEXT:
       return { ...state, teleprompterText: action.payload };
+
     case actionTypes.SET_SELECTED_TRANSCRIPT_TYPE:
       return { ...state, selectedTranscriptType: action.payload };
+
     case actionTypes.SET_IS_TELEPROMPTER_OPEN:
-      return { ...state, isTeleprompterOpen: action.payload };
+      return action.payload
+        ? { ...closeAllPanels(state), isTeleprompterOpen: true }
+        : { ...state, isTeleprompterOpen: false };
+
     case actionTypes.SET_IS_TTS_OPEN:
-      return { ...state, isTTSOpen: action.payload };
+      return action.payload
+        ? { ...closeAllPanels(state), isTTSOpen: true }
+        : { ...state, isTTSOpen: false };
+
     case actionTypes.SET_IS_PLANTUML_OPEN:
-      return { ...state, isPlantUMLOpen: action.payload };
+      return action.payload
+        ? { ...closeAllPanels(state), isPlantUMLOpen: true }
+        : { ...state, isPlantUMLOpen: false };
+
     case actionTypes.SET_PLANT_UML_PROMPT:
       return { ...state, plantUMLPrompt: action.payload };
+
     case actionTypes.SET_IS_PODCAST_TTS_OPEN:
-      return { ...state, isPodcastTTSOpen: action.payload };
+      return action.payload
+        ? { ...closeAllPanels(state), isPodcastTTSOpen: true }
+        : { ...state, isPodcastTTSOpen: false };
+
     case actionTypes.SET_PODCAST_TTS_PROMPT:
       return { ...state, podcastTTSPrompt: action.payload };
+
     default:
       console.warn(`Unhandled action type: ${action.type}`);
       return state;
@@ -101,10 +136,7 @@ export const actions = {
   setSelectedText: (text) => ({ type: actionTypes.SET_SELECTED_TEXT, payload: text }),
   setTtsText: (text) => ({ type: actionTypes.SET_TTS_TEXT, payload: text }),
   setTeleprompterText: (text) => ({ type: actionTypes.SET_TELEPROMPTER_TEXT, payload: text }),
-  setSelectedTranscriptType: (type) => ({
-    type: actionTypes.SET_SELECTED_TRANSCRIPT_TYPE,
-    payload: type,
-  }),
+  setSelectedTranscriptType: (type) => ({ type: actionTypes.SET_SELECTED_TRANSCRIPT_TYPE, payload: type }),
   setIsTeleprompterOpen: (open) => ({ type: actionTypes.SET_IS_TELEPROMPTER_OPEN, payload: open }),
   setIsTTSOpen: (open) => ({ type: actionTypes.SET_IS_TTS_OPEN, payload: open }),
   setIsPlantUMLOpen: (open) => ({ type: actionTypes.SET_IS_PLANTUML_OPEN, payload: open }),

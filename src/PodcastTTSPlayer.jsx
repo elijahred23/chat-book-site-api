@@ -31,6 +31,7 @@ export default function PodcastTTSPlayer() {
   /* ------------ Load Prompt from Global State ------------- */
   useEffect(() => {
     setPrompt(podcastTTSPrompt || "");
+    setActiveTab("generate");
   }, [podcastTTSPrompt]);
 
   /* ------------ Voice Loading ------------- */
