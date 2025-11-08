@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import "./PodcastTTSPlayer.css";
+import {getGeminiResponse} from "./utils/callGemini";
 
 export default function PodcastTTSPlayer() {
   const synth = window.speechSynthesis;
@@ -13,6 +14,9 @@ export default function PodcastTTSPlayer() {
   const [pitch, setPitch] = useState(1);
   const [volume, setVolume] = useState(1);
   const [errorMsg, setErrorMsg] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [prompt, setPrompt] = useState("");
+
   const scriptInputRef = useRef();
 
   /* ---------------- Voice Loading ---------------- */
@@ -25,33 +29,59 @@ export default function PodcastTTSPlayer() {
     synth.onvoiceschanged = load;
   }, []);
 
-  /* -------------- Helpers -------------- */
-  const getVoiceForGender = (gender) => {
-    const name = gender === "male" ? maleVoice : femaleVoice;
-    return voices.find((v) => v.name === name) || voices[0];
-  };
+  /* ---------------- JSON Extractor ---------------- */
+  function extractJsonFromResponse(text) {
+    if (!text || typeof text !== "string") return null;
 
-  const validateScript = (data) => {
-    if (!Array.isArray(data)) throw new Error("JSON must be an array.");
-    return data.map((item, i) => {
-      if (!item.speaker || !item.gender || !item.text)
-        throw new Error(`Missing fields in item ${i + 1}`);
-      return { speaker: item.speaker, gender: item.gender.toLowerCase(), text: item.text };
+    // remove fenced code block if present
+    const fenced = text.match(/```(?:json)?\s*([\s\S]*?)```/i);
+    if (fenced && fenced[1]) text = fenced[1].trim();
+
+    try {
+      return JSON.parse(text);
+    } catch {
+      const inner = text.match(/(\[[\s\S]*\]|\{[\s\S]*\})/);
+      if (inner) {
+        try {
+          return JSON.parse(inner[0]);
+        } catch {}
+      }
+    }
+    return null;
+  }
+
+  /* ---------------- Format Validator ---------------- */
+  function validateScriptFormat(data) {
+    if (!Array.isArray(data)) throw new Error("Script must be a JSON array.");
+
+    data.forEach((item, i) => {
+      if (!item.speaker || !item.gender || !item.text) {
+        throw new Error(`Item ${i + 1} must have speaker, gender, and text.`);
+      }
+      if (!["male", "female"].includes(item.gender.toLowerCase())) {
+        throw new Error(`Invalid gender at item ${i + 1}. Must be "male" or "female".`);
+      }
     });
-  };
+    return data.map(i => ({
+      speaker: i.speaker,
+      gender: i.gender.toLowerCase(),
+      text: i.text
+    }));
+  }
 
+  /* ---------------- Load JSON from Textarea ---------------- */
   const loadScript = () => {
     setErrorMsg("");
     try {
       const json = JSON.parse(scriptInputRef.current.value);
-      setScriptData(validateScript(json));
+      setScriptData(validateScriptFormat(json));
       setCurrentIndex(0);
     } catch (e) {
       setErrorMsg(e.message);
     }
   };
 
-  /* ✅ Paste from Clipboard */
+  /* ---------------- Paste from Clipboard ---------------- */
   const pasteFromClipboard = async () => {
     setErrorMsg("");
     try {
@@ -59,11 +89,11 @@ export default function PodcastTTSPlayer() {
       scriptInputRef.current.value = text;
       loadScript();
     } catch {
-      setErrorMsg("Clipboard access blocked. Allow permissions.");
+      setErrorMsg("Clipboard permissions blocked.");
     }
   };
 
-  /* ✅ Load from File */
+  /* ---------------- Load JSON From File ---------------- */
   const loadFromFile = (e) => {
     setErrorMsg("");
     const file = e.target.files[0];
@@ -73,22 +103,58 @@ export default function PodcastTTSPlayer() {
     reader.onload = () => {
       try {
         const json = JSON.parse(reader.result);
-        setScriptData(validateScript(json));
+        setScriptData(validateScriptFormat(json));
         setCurrentIndex(0);
-      } catch (err) {
+      } catch {
         setErrorMsg("Invalid JSON file.");
       }
     };
     reader.readAsText(file);
   };
 
-  /* -------------- Playback -------------- */
+  /* ---------------- Generate Script Using Gemini ---------------- */
+  const handleGenerateScriptFromPrompt = async () => {
+    if (!prompt) return;
+    try {
+      setLoading(true);
+      const instruction = `
+        Generate a JSON array representing a podcast-style conversation.
+        Format example:
+        [
+          { "speaker": "Alice", "gender": "female", "text": "Hello" },
+          { "speaker": "Bob", "gender": "male", "text": "Hi" }
+        ]
+        Gender must be "male" or "female". Do NOT add explanations or markdown.
+        Topic: "${prompt}"
+      `;
+
+      const rawResponse = await getGeminiResponse(instruction);
+      const extractedJson = extractJsonFromResponse(rawResponse);
+      if (!extractedJson) throw new Error("Model did not return valid JSON.");
+
+      const validated = validateScriptFormat(extractedJson);
+      setScriptData(validated);
+      scriptInputRef.current.value = JSON.stringify(validated, null, 2);
+      setErrorMsg(null);
+
+    } catch (err) {
+      setErrorMsg(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  /* ---------------- Playback ---------------- */
+  const getVoiceForGender = (gender) => {
+    const name = gender === "male" ? maleVoice : femaleVoice;
+    return voices.find((v) => v.name === name) || voices[0];
+  };
+
   const speak = (index) => {
     if (!scriptData[index]) return;
-
     setCurrentIndex(index);
-    let line = scriptData[index];
 
+    const line = scriptData[index];
     const utter = new SpeechSynthesisUtterance(line.text);
     utter.voice = getVoiceForGender(line.gender);
     utter.rate = rate;
@@ -104,7 +170,7 @@ export default function PodcastTTSPlayer() {
 
   const stop = () => synth.cancel();
 
-  /* -------------- Download JSON -------------- */
+  /* ---------------- Download ---------------- */
   const downloadJSON = () => {
     const blob = new Blob([JSON.stringify(scriptData, null, 2)], { type: "application/json" });
     const url = URL.createObjectURL(blob);
@@ -119,14 +185,29 @@ export default function PodcastTTSPlayer() {
 
       <header>
         <h1>Podcast Text-to-Speech Player</h1>
-        <p>Load your JSON script, select voices, and start playback.</p>
+        <p>Load or Generate a JSON script, then play it with voice synthesis.</p>
       </header>
+
+      {/* Prompt to Generate JSON */}
+      <section className="panel" style={{ margin: "16px auto", maxWidth: "900px" }}>
+        <h3>Generate Script From Prompt</h3>
+
+        <input
+          type="text"
+          placeholder="Describe the conversation topic..."
+          value={prompt}
+          onChange={(e) => setPrompt(e.target.value)}
+        />
+
+        <button onClick={handleGenerateScriptFromPrompt} disabled={loading}>
+          {loading ? "Generating..." : "Generate Script"}
+        </button>
+      </section>
 
       <div className="main">
 
         <section className="panel">
           <h3>Playback</h3>
-
           <div className="controls">
             <button onClick={() => speak(currentIndex)}>▶ Play</button>
             <button onClick={() => synth.pause()}>⏸ Pause</button>
@@ -159,9 +240,7 @@ export default function PodcastTTSPlayer() {
 
           <button onClick={loadScript}>Load JSON</button>
           <button onClick={pasteFromClipboard}>📋 Paste from Clipboard</button>
-
           <input type="file" accept="application/json" onChange={loadFromFile} />
-
           <button onClick={downloadJSON}>💾 Download JSON</button>
 
           {errorMsg && <div className="error">{errorMsg}</div>}
@@ -171,10 +250,12 @@ export default function PodcastTTSPlayer() {
           <h3>Script</h3>
           <div className="script-list">
             {scriptData.map((line, i) => (
-              <div key={i} className={`script-item ${i === currentIndex ? "active" : ""}`}
-                onClick={() => setCurrentIndex(i)}>
-                <strong>{line.speaker}</strong> ({line.gender})<br />
-                {line.text}
+              <div
+                key={i}
+                className={`script-item ${i === currentIndex ? "active" : ""}`}
+                onClick={() => setCurrentIndex(i)}
+              >
+                <strong>{line.speaker}</strong> ({line.gender})<br />{line.text}
               </div>
             ))}
           </div>
