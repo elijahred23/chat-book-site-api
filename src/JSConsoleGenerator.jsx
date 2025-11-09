@@ -1,14 +1,16 @@
-// JSConsoleGenerator.jsx
 import React, { useEffect, useRef, useState } from "react";
 import { getGeminiResponse } from "./utils/callGemini";
 import "./JSConsoleGenerator.css";
-
 import Editor from "react-simple-code-editor";
 import Prism from "prismjs";
-import "prismjs/components/prism-javascript";
-import "prismjs/themes/prism.css"; // you can swap this theme later
-import { useAppState } from "./context/AppContext";
 
+import "prismjs/components/prism-javascript";
+import "prismjs/components/prism-python";
+import "prismjs/components/prism-java";
+import "prismjs/components/prism-c";
+import "prismjs/themes/prism.css";
+
+import { useAppState } from "./context/AppContext";
 
 export default function JSConsoleGenerator() {
   const [prompt, setPrompt] = useState("");
@@ -16,31 +18,28 @@ export default function JSConsoleGenerator() {
   const [logs, setLogs] = useState([]);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const {jsGeneratorPrompt} = useAppState();
-
+  const [language, setLanguage] = useState("javascript");
+  const { jsGeneratorPrompt } = useAppState();
   const outputRef = useRef(null);
 
-  useEffect(()=>{
+  useEffect(() => {
     setPrompt(jsGeneratorPrompt);
-  }, [jsGeneratorPrompt])
+  }, [jsGeneratorPrompt]);
 
   function buildStrictPrompt(userTopic) {
     return `
-Return ONLY one JavaScript code block. No explanation, no extra text.
+Return ONLY one code block.
 
-\`\`\`javascript
-// JavaScript code that, when run, prints output via console.log
+\`\`\`${language}
+// A short ${language} program that prints output.
 \`\`\`
 
-Rules:
-- Must NOT require DOM
-- Must ONLY use console.log
-Content topic: "${userTopic}"
+Topic: "${userTopic}"
 `.trim();
   }
 
   function extractSingleCodeBlock(text) {
-    const match = text.match(/```javascript\s*([\s\S]*?)```/i);
+    const match = text.match(new RegExp("```" + language + "\\s*([\\s\\S]*?)```", "i"));
     return match ? match[1].trim() : null;
   }
 
@@ -49,12 +48,9 @@ Content topic: "${userTopic}"
       setLoading(true);
       setError("");
       setLogs([]);
-
       const raw = await getGeminiResponse(buildStrictPrompt(prompt.trim()));
       const extracted = extractSingleCodeBlock(raw);
-
-      if (!extracted) throw new Error("No valid JavaScript code block returned.");
-
+      if (!extracted) throw new Error(`No valid ${language} code block returned.`);
       setCode(extracted);
     } catch (e) {
       setError(e.message);
@@ -64,9 +60,9 @@ Content topic: "${userTopic}"
   }
 
   function runCode() {
+    if (language !== "javascript") return;
     const captured = [];
     const safeConsole = { log: (...args) => captured.push(args.join(" ")) };
-
     try {
       new Function("console", `"use strict";\n${code}`)(safeConsole);
       setLogs(captured);
@@ -75,14 +71,53 @@ Content topic: "${userTopic}"
     }
   }
 
+  async function openCompilerForLanguage() {
+    try {
+      await navigator.clipboard.writeText(code);
+      let url = "";
+
+      switch (language) {
+        case "javascript":
+          url = "https://onecompiler.com/javascript";
+          break;
+        case "python":
+          url = "https://www.onlinegdb.com/online_python_interpreter";
+          break;
+        case "java":
+          url = "https://www.onlinegdb.com/online_java_compiler";
+          break;
+        case "c":
+          url = "https://www.onlinegdb.com/online_c_compiler";
+          break;
+        default:
+          return;
+      }
+
+      window.open(url, "_blank");
+    } catch {
+      alert("Clipboard copy blocked by browser.");
+    }
+  }
+
   return (
     <div className="jsgen-wrapper">
-      <h2>🧪 JavaScript Console-Only Code Generator</h2>
+      <h2>🧪 Multi-Language Code Generator</h2>
+
+      <select
+        value={language}
+        onChange={(e) => setLanguage(e.target.value)}
+        className="jsgen-language-select"
+      >
+        <option value="javascript">JavaScript</option>
+        <option value="python">Python</option>
+        <option value="java">Java</option>
+        <option value="c">C</option>
+      </select>
 
       <textarea
         value={prompt}
-        onChange={e => setPrompt(e.target.value)}
-        placeholder="Describe what the code should print..."
+        onChange={(e) => setPrompt(e.target.value)}
+        placeholder="Describe the program goal..."
         className="jsgen-textarea"
       />
 
@@ -96,36 +131,41 @@ Content topic: "${userTopic}"
       {error && <div className="jsgen-error">{error}</div>}
 
       <div className="jsgen-panels">
-        {/* CODE PANEL */}
         <div className="jsgen-panel">
           <div className="jsgen-panel-header">
-            <span>Generated Code</span>
-            <button onClick={runCode} className="jsgen-run">Run</button>
+            <span>Generated Code ({language})</span>
+            {language === "javascript" && (
+              <button onClick={runCode} className="jsgen-run">Run</button>
+            )}
+            <button onClick={openCompilerForLanguage} className="jsgen-run">
+              Open Compiler & Paste
+            </button>
           </div>
 
           <Editor
             value={code}
-            onValueChange={newCode => setCode(newCode)}
-            highlight={c => Prism.highlight(c, Prism.languages.javascript, "javascript")}
+            onValueChange={setCode}
+            highlight={(c) =>
+              Prism.highlight(c, Prism.languages[language] || Prism.languages.javascript, language)
+            }
             padding={12}
             className="code-editor"
-            textareaId="codeEditor"
             spellCheck={false}
           />
         </div>
 
-        {/* OUTPUT PANEL */}
-        <div className="jsgen-panel">
-          <div className="jsgen-panel-header">Program Output</div>
-
-          <div className="jsgen-output" ref={outputRef}>
-            {logs.length ? (
-              logs.map((l, i) => <div key={i}>{l}</div>)
-            ) : (
-              <div className="jsgen-muted">No output yet</div>
-            )}
+        {language === "javascript" && (
+          <div className="jsgen-panel">
+            <div className="jsgen-panel-header">Program Output</div>
+            <div className="jsgen-output" ref={outputRef}>
+              {logs.length ? (
+                logs.map((l, i) => <div key={i}>{l}</div>)
+              ) : (
+                <div className="jsgen-muted">No output yet</div>
+              )}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   );
