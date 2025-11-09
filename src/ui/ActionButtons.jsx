@@ -1,13 +1,28 @@
 import "./ActionButtons.css";
 import { useAppDispatch, useAppState, actions } from "../context/AppContext";
-import { FaComments, FaVolumeUp, FaScroll, FaProjectDiagram, FaPodcast, FaCopy, FaCode } from "react-icons/fa";
+import {
+  FaComments,
+  FaVolumeUp,
+  FaScroll,
+  FaProjectDiagram,
+  FaPodcast,
+  FaCopy,
+  FaCode,
+  FaBook,
+  FaStackOverflow,
+  FaYoutube,
+  FaImage,
+} from "react-icons/fa";
 import { useFlyout } from "../context/FlyoutContext";
 import { FcGoogle } from "react-icons/fc";
 import { SiWikipedia } from "react-icons/si";
+import { GiGraduateCap } from "react-icons/gi";
 
 function removeMarkdown(text) {
   return text
-    .replace(/```[\s\S]*?```/g, m => m.replace(/```[a-zA-Z]*\n?/, "").replace(/```$/, ""))
+    .replace(/```[\s\S]*?```/g, (m) =>
+      m.replace(/```[a-zA-Z]*\n?/, "").replace(/```$/, "")
+    )
     .replace(/`([^`]*)`/g, "$1")
     .replace(/(\*\*|__)(.*?)\1/g, "$2")
     .replace(/(\*|_)(.*?)\1/g, "$2")
@@ -25,7 +40,7 @@ export default function ActionButtons({ promptText }) {
   const dispatch = useAppDispatch();
   const { isChatOpen, isTTSOpen, isTeleprompterOpen } = useAppState();
   const cleanText = removeMarkdown(promptText || "");
-  const {showMessage } = useFlyout();
+  const { showMessage } = useFlyout();
 
   const buttons = [
     {
@@ -97,19 +112,65 @@ export default function ActionButtons({ promptText }) {
         const query = encodeURIComponent(cleanText);
         const url = `https://www.google.com/search?q=${query}`;
         window.open(url, "_blank");
-      }
+      },
     },
     {
-  icon: <SiWikipedia />,
-  title: "Ask Wikipedia",
-  color: "var(--wiki-grey)",
-  onClick: async (e) => {
-    e.stopPropagation();
-    const query = encodeURIComponent(cleanText);
-    const url = `https://en.wikipedia.org/wiki/Special:Search?search=${query}`;
-    window.open(url, "_blank");
-  }
-},
+      icon: <SiWikipedia />,
+      title: "Ask Wikipedia",
+      color: "var(--wiki-grey)",
+      onClick: async (e) => {
+        e.stopPropagation();
+        const query = encodeURIComponent(cleanText);
+        const url = `https://en.wikipedia.org/wiki/Special:Search?search=${query}`;
+        window.open(url, "_blank");
+      },
+    },
+    {
+      icon: <FaYoutube />,
+      title: "Ask YouTube",
+      color: "var(--yt-red)",
+      onClick: (e) => {
+        e.stopPropagation();
+        const query = encodeURIComponent(cleanText + " explanation");
+        window.open(
+          `https://www.youtube.com/results?search_query=${query}`,
+          "_blank"
+        );
+      },
+    },
+    {
+      icon: <FaBook />,
+      title: "Define Word",
+      color: "var(--btn-gray)",
+      onClick: (e) => {
+        e.stopPropagation();
+        const query = encodeURIComponent(cleanText);
+        window.open(`https://www.dictionary.com/browse/${query}`, "_blank");
+      },
+    },
+    {
+      icon: <GiGraduateCap />,
+      title: "Google Scholar",
+      color: "var(--scholar-blue)",
+      onClick: (e) => {
+        e.stopPropagation();
+        const query = encodeURIComponent(cleanText);
+        window.open(`https://scholar.google.com/scholar?q=${query}`, "_blank");
+      },
+    },
+    {
+      icon: <FaImage />,
+      title: "Image Search",
+      color: "var(--google-blue)",
+      onClick: (e) => {
+        e.stopPropagation();
+        const query = encodeURIComponent(cleanText);
+        window.open(
+          `https://www.google.com/search?tbm=isch&q=${query}`,
+          "_blank"
+        );
+      },
+    },
     {
       icon: <FaCopy />,
       title: "Copy Text",
@@ -118,7 +179,10 @@ export default function ActionButtons({ promptText }) {
         e.stopPropagation();
         try {
           await navigator.clipboard.writeText(cleanText);
-          showMessage({ type: "success", message: "Text copied to clipboard!" });
+          showMessage({
+            type: "success",
+            message: "Text copied to clipboard!",
+          });
         } catch {}
       },
     },
