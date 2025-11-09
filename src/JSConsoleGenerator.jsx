@@ -34,6 +34,7 @@ import "prismjs/themes/prism.css";
 
 import "prismjs/themes/prism.css";
 import { useAppState } from "./context/AppContext";
+import ActionButtons from "./ui/ActionButtons";
 
 export default function JSConsoleGenerator() {
   const [prompt, setPrompt] = useState("");
@@ -174,6 +175,7 @@ Topic: "${userTopic}"
             {language === "javascript" && (
               <button onClick={runCode} className="jsgen-run">Run</button>
             )}
+            <ActionButtons limitButtons promptText={code} />
             <button onClick={openCompilerForLanguage} className="jsgen-run">
               Open Compiler & Paste
             </button>
