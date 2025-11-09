@@ -1131,6 +1131,32 @@ const handleDownload = async () => {
           >
             {loading ? "Generating..." : "Generate"}
           </button>
+          <button onClick={() => setPrompt('')} style={{
+              padding: "0.5rem 1rem",
+              backgroundColor: COLORS.buttonBg,
+              border: `1px solid ${COLORS.border}`,
+              borderRadius: "4px",
+              color: COLORS.text,
+              cursor: "pointer",
+              width: isMobile ? "100%" : "auto",
+            }}>
+            Clear Prompt
+          </button>
+          <button onClick={()=>{
+            navigator.clipboard.readText().then(text => setPrompt(text));
+          }} 
+            style={{
+              padding: "0.5rem 1rem",
+              backgroundColor: COLORS.buttonBg,
+              border: `1px solid ${COLORS.border}`,
+              borderRadius: "4px",
+              color: COLORS.text,
+              cursor: "pointer",
+              width: isMobile ? "100%" : "auto",
+            }} 
+          >
+            Paste Topic
+          </button>
         </div>
         {loading && (
           <div style={{ marginTop: "0.5rem", color: "#2563eb" }}>

@@ -6,6 +6,7 @@ import PasteButton from "./ui/PasteButton";
 import CopyButton from "./ui/CopyButton";
 import { actions, useAppDispatch, useAppState } from "./context/AppContext";
 import { SUGGESTION_GROUPS } from "./utils/suggestions";
+import ActionButtons from "./ui/ActionButtons";
 
 function useLocalStorageState(key, defaultValue) {
   const [state, setState] = useState(() => {
@@ -150,7 +151,7 @@ export default function GptPromptComponent({
                 <strong>{m.sender === "user" ? "You: " : "Bot: "}</strong>
                 <ReactMarkdown className="markdown-body">{m.text}</ReactMarkdown>
                 <div style={{ textAlign: "right" }}>
-                  <CopyButton text={m.text} />
+                  <ActionButtons promptText={m.text} />
                 </div>
               </div>
             </div>
