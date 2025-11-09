@@ -5,7 +5,7 @@ import { getGeminiResponse } from "./utils/callGemini";
 import PasteButton from "./ui/PasteButton";
 import CopyButton from "./ui/CopyButton";
 import { actions, useAppDispatch, useAppState } from "./context/AppContext";
-import { SUGGESTIONS } from "./utils/suggestions";
+import { SUGGESTION_GROUPS } from "./utils/suggestions";
 
 function useLocalStorageState(key, defaultValue) {
   const [state, setState] = useState(() => {
@@ -34,11 +34,13 @@ export default function GptPromptComponent({
   const [messages, setMessages] = useLocalStorageState("messages", []);
   const [loading, setLoading] = useState(false);
   const [showAllSuggestions, setShowAllSuggestions] = useState(false);
+  const [selectedGroup, setSelectedGroup] = useLocalStorageState("suggestionGroup", "code");
   const messagesEndRef = useRef(null);
   const dispatch = useAppDispatch();
   const { chatPrompt, selectedText } = useAppState();
 
-  const visibleSuggestions = showAllSuggestions ? SUGGESTIONS : SUGGESTIONS.slice(0, 6);
+  const currentSuggestions = SUGGESTION_GROUPS[selectedGroup] ?? [];
+  const visibleSuggestions = showAllSuggestions ? currentSuggestions : currentSuggestions.slice(0, 6);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollTo({
@@ -56,17 +58,14 @@ export default function GptPromptComponent({
       const botMsg = { text: response, sender: "bot" };
       setMessages((prev) => [...prev, userMsg, botMsg]);
       dispatch(actions.setChatPrompt(""));
-    } catch (err) {
-      console.error(err);
+    } catch {
       alert("Error fetching response.");
     } finally {
       setLoading(false);
     }
   };
 
-  const clearMessages = () => {
-    setMessages([]);
-  };
+  const clearMessages = () => setMessages([]);
 
   useEffect(() => {
     if (selectedText && selectedText !== chatPrompt) {
@@ -74,7 +73,7 @@ export default function GptPromptComponent({
     }
   }, [selectedText]);
 
-  useEffect(() => scrollToBottom(), [messages]);
+  useEffect(scrollToBottom, [messages]);
 
   const handleInputChange = (e) => dispatch(actions.setChatPrompt(e.target.value));
 
@@ -95,7 +94,6 @@ export default function GptPromptComponent({
         flexDirection: "column",
       }}
     >
-      {/* Fixed Controls */}
       <div
         style={{
           position: "fixed",
@@ -138,13 +136,7 @@ export default function GptPromptComponent({
           }}
         >
           {messages.map((m, i) => (
-            <div
-              key={i}
-              style={{
-                textAlign: m.sender === "user" ? "right" : "left",
-                marginBottom: "0.75rem",
-              }}
-            >
+            <div key={i} style={{ textAlign: m.sender === "user" ? "right" : "left", marginBottom: "0.75rem" }}>
               <div
                 style={{
                   display: "inline-block",
@@ -166,9 +158,29 @@ export default function GptPromptComponent({
         </div>
       )}
 
-      {/* Input, buttons, suggestions hidden when full screen */}
       {!isCollapsed && !isFullScreen && (
         <div style={{ paddingBottom: "1rem" }}>
+          <div style={{ textAlign: "center", marginBottom: "0.5rem" }}>
+            <select
+              value={selectedGroup}
+              onChange={(e) => setSelectedGroup(e.target.value)}
+              style={{
+                padding: "0.4rem 0.6rem",
+                borderRadius: "6px",
+                border: "1px solid #999",
+                background: "#f1f1f1",
+                fontSize: "0.9rem",
+                cursor: "pointer",
+              }}
+            >
+              {Object.keys(SUGGESTION_GROUPS).map((key) => (
+                <option key={key} value={key}>
+                  {key.charAt(0).toUpperCase() + key.slice(1)}
+                </option>
+              ))}
+            </select>
+          </div>
+
           <div
             style={{
               display: "flex",
@@ -178,14 +190,10 @@ export default function GptPromptComponent({
               marginBottom: "0.75rem",
             }}
           >
-            {(showAllSuggestions ? SUGGESTIONS : visibleSuggestions).map((s, i) => (
+            {visibleSuggestions.map((s, i) => (
               <button
                 key={i}
-                onClick={() =>
-                  dispatch(
-                    actions.setChatPrompt(`${s.value}${chatPrompt ? `: ${chatPrompt}` : ""}`)
-                  )
-                }
+                onClick={() => dispatch(actions.setChatPrompt(`${s.value}${chatPrompt ? `: ${chatPrompt}` : ""}`))}
                 style={{
                   padding: "0.5rem 0.75rem",
                   borderRadius: "4px",
@@ -247,14 +255,7 @@ export default function GptPromptComponent({
           </div>
 
           {loading && (
-            <div
-              style={{
-                marginTop: "0.5rem",
-                display: "flex",
-                alignItems: "center",
-                gap: "0.5rem",
-              }}
-            >
+            <div style={{ marginTop: "0.5rem", display: "flex", alignItems: "center", gap: "0.5rem" }}>
               <ClipLoader color="blue" size={20} />
               <span>Generating response...</span>
             </div>
