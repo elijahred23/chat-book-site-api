@@ -292,22 +292,32 @@ export default function FlashCardApp() {
    * name defaults to `flashcards.json` and contains a pretty‑printed
    * representation of the cards array.
    */
-  const handleDownload = () => {
-    try {
-      const data = JSON.stringify(cards, null, 2);
-      const blob = new Blob([data], { type: "application/json" });
-      const url = URL.createObjectURL(blob);
-      const anchor = document.createElement("a");
-      anchor.href = url;
-      anchor.download = "flashcards.json";
-      document.body.appendChild(anchor);
-      anchor.click();
-      document.body.removeChild(anchor);
-      URL.revokeObjectURL(url);
-    } catch (err) {
-      setError("Failed to prepare download: " + err.message);
+const handleDownload = async () => {
+  try {
+    const data = JSON.stringify(cards, null, 2);
+
+    // Ask where to save it
+    const fileHandle = await window.showSaveFilePicker({
+      suggestedName: "flashcards.json",
+      types: [
+        {
+          description: "JSON Files",
+          accept: { "application/json": [".json"] }
+        }
+      ]
+    });
+
+    // Write to the selected file
+    const writable = await fileHandle.createWritable();
+    await writable.write(data);
+    await writable.close();
+
+  } catch (err) {
+    if (err.name !== "AbortError") {
+      setError("Failed to save file: " + err.message);
     }
-  };
+  }
+};
 
   /**
    * Copy the current deck of cards to the user's clipboard as pretty printed JSON.
