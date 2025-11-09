@@ -4,12 +4,35 @@ import "./JSConsoleGenerator.css";
 import Editor from "react-simple-code-editor";
 import Prism from "prismjs";
 
+// Load core + clike
+import "prismjs/components/prism-core";
+import "prismjs/components/prism-clike";
+
+// Base languages
 import "prismjs/components/prism-javascript";
 import "prismjs/components/prism-python";
 import "prismjs/components/prism-java";
 import "prismjs/components/prism-c";
+import "prismjs/components/prism-cpp";
+import "prismjs/components/prism-csharp";
+
+// Additional languages
+import "prismjs/components/prism-go";
+import "prismjs/components/prism-rust";
+import "prismjs/components/prism-php";
+import "prismjs/components/prism-ruby";
+import "prismjs/components/prism-swift";
+import "prismjs/components/prism-kotlin";
+import "prismjs/components/prism-typescript";
+import "prismjs/components/prism-r";
+import "prismjs/components/prism-bash";
+import "prismjs/components/prism-sql";
+import "prismjs/components/prism-markup"; // HTML
+import "prismjs/components/prism-lua";
+
 import "prismjs/themes/prism.css";
 
+import "prismjs/themes/prism.css";
 import { useAppState } from "./context/AppContext";
 
 export default function JSConsoleGenerator() {
@@ -28,15 +51,17 @@ export default function JSConsoleGenerator() {
 
   function buildStrictPrompt(userTopic) {
     return `
-Return ONLY one code block.
-
+Return ONLY one code block:
 \`\`\`${language}
-// A short ${language} program that prints output.
+// A short ${language} program that prints output
 \`\`\`
 
 Topic: "${userTopic}"
 `.trim();
   }
+
+  const prismLanguage = language === "html" ? "markup" : language;
+
 
   function extractSingleCodeBlock(text) {
     const match = text.match(new RegExp("```" + language + "\\s*([\\s\\S]*?)```", "i"));
@@ -48,9 +73,12 @@ Topic: "${userTopic}"
       setLoading(true);
       setError("");
       setLogs([]);
+
       const raw = await getGeminiResponse(buildStrictPrompt(prompt.trim()));
       const extracted = extractSingleCodeBlock(raw);
-      if (!extracted) throw new Error(`No valid ${language} code block returned.`);
+
+      if (!extracted) throw new Error(`No valid ${language} code returned.`);
+
       setCode(extracted);
     } catch (e) {
       setError(e.message);
@@ -74,30 +102,36 @@ Topic: "${userTopic}"
   async function openCompilerForLanguage() {
     try {
       await navigator.clipboard.writeText(code);
-      let url = "";
 
-      switch (language) {
-        case "javascript":
-          url = "https://onecompiler.com/javascript";
-          break;
-        case "python":
-          url = "https://www.onlinegdb.com/online_python_interpreter";
-          break;
-        case "java":
-          url = "https://www.onlinegdb.com/online_java_compiler";
-          break;
-        case "c":
-          url = "https://www.onlinegdb.com/online_c_compiler";
-          break;
-        default:
-          return;
-      }
+      const compilers = {
+        javascript: "https://onecompiler.com/javascript",
+        python: "https://onecompiler.com/python",
+        java: "https://onecompiler.com/java",
+        c: "https://onecompiler.com/c",
+        cpp: "https://onecompiler.com/cpp",
+        csharp: "https://onecompiler.com/csharp",
+        go: "https://onecompiler.com/go",
+        rust: "https://onecompiler.com/rust",
+        php: "https://onecompiler.com/php",
+        ruby: "https://onecompiler.com/ruby",
+        swift: "https://onecompiler.com/swift",
+        kotlin: "https://onecompiler.com/kotlin",
+        typescript: "https://onecompiler.com/typescript",
+        r: "https://onecompiler.com/r",
+        bash: "https://onecompiler.com/bash",
+        sql: "https://onecompiler.com/mysql",
+        html: "https://onecompiler.com/html",
+        lua: "https://onecompiler.com/lua",
+      };
 
-      window.open(url, "_blank");
+      window.open(compilers[language], "_blank");
     } catch {
       alert("Clipboard copy blocked by browser.");
     }
   }
+
+  // Fix Prism highlight for HTML (alias markup)
+  const prismLang = language === "html" ? "markup" : language;
 
   return (
     <div className="jsgen-wrapper">
@@ -108,10 +142,13 @@ Topic: "${userTopic}"
         onChange={(e) => setLanguage(e.target.value)}
         className="jsgen-language-select"
       >
-        <option value="javascript">JavaScript</option>
-        <option value="python">Python</option>
-        <option value="java">Java</option>
-        <option value="c">C</option>
+        {[
+          "javascript", "python", "java", "c", "cpp", "csharp", "go",
+          "rust", "php", "ruby", "swift", "kotlin", "typescript",
+          "r", "bash", "sql", "html", "lua"
+        ].map((lang) => (
+          <option key={lang} value={lang}>{lang.toUpperCase()}</option>
+        ))}
       </select>
 
       <textarea
@@ -146,7 +183,7 @@ Topic: "${userTopic}"
             value={code}
             onValueChange={setCode}
             highlight={(c) =>
-              Prism.highlight(c, Prism.languages[language] || Prism.languages.javascript, language)
+              Prism.highlight(c, Prism.languages[prismLanguage] ?? Prism.languages.javascript, prismLanguage)
             }
             padding={12}
             className="code-editor"
@@ -158,11 +195,8 @@ Topic: "${userTopic}"
           <div className="jsgen-panel">
             <div className="jsgen-panel-header">Program Output</div>
             <div className="jsgen-output" ref={outputRef}>
-              {logs.length ? (
-                logs.map((l, i) => <div key={i}>{l}</div>)
-              ) : (
-                <div className="jsgen-muted">No output yet</div>
-              )}
+              {logs.length ? logs.map((l, i) => <div key={i}>{l}</div>)
+                : <div className="jsgen-muted">No output yet</div>}
             </div>
           </div>
         )}
@@ -170,3 +204,4 @@ Topic: "${userTopic}"
     </div>
   );
 }
+
