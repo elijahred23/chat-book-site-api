@@ -124,7 +124,7 @@ const FlashCardTable = ({ cards, COLORS }) => {
             >
               {/* Disable ActionButtons when nothing is selected to avoid empty prompts */}
               <div style={{ opacity: hasSelection ? 1 : 0.55 }}>
-                <ActionButtons promptText={hasSelection ? combinedPrompt : ""} />
+                <ActionButtons limitButtons promptText={hasSelection ? combinedPrompt : ""} />
               </div>
             </div>
           </div>
@@ -196,7 +196,7 @@ const FlashCardTable = ({ cards, COLORS }) => {
                   }}
                 >
                   {card.answer}
-                  <ActionButtons promptText={`${card.question} - ${card.answer}`} />
+                  <ActionButtons limitButtons promptText={`${card.question} - ${card.answer}`} />
                 </td>
               </tr>
             ))}

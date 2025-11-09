@@ -9,14 +9,16 @@ import {
   FaCopy,
   FaCode,
   FaBook,
-  FaStackOverflow,
   FaYoutube,
   FaImage,
+  FaEllipsisH,
+  FaChevronUp,
 } from "react-icons/fa";
 import { useFlyout } from "../context/FlyoutContext";
 import { FcGoogle } from "react-icons/fc";
 import { SiWikipedia } from "react-icons/si";
 import { GiGraduateCap } from "react-icons/gi";
+import { useState } from "react";
 
 function removeMarkdown(text) {
   return text
@@ -36,11 +38,12 @@ function removeMarkdown(text) {
     .trim();
 }
 
-export default function ActionButtons({ promptText }) {
+export default function ActionButtons({ promptText, limitButtons = false }) {
   const dispatch = useAppDispatch();
   const { isChatOpen, isTTSOpen, isTeleprompterOpen } = useAppState();
   const cleanText = removeMarkdown(promptText || "");
   const { showMessage } = useFlyout();
+  const [showAll, setShowAll] = useState(false);
 
   const buttons = [
     {
@@ -97,7 +100,7 @@ export default function ActionButtons({ promptText }) {
       icon: <FaCode />,
       title: "JS Generator",
       color: "var(--btn-code)",
-      onClick: async (e) => {
+      onClick: (e) => {
         e.stopPropagation();
         dispatch(actions.setIsJSGeneratorOpen(true));
         dispatch(actions.setJSGeneratorPrompt(cleanText));
@@ -107,22 +110,23 @@ export default function ActionButtons({ promptText }) {
       icon: <FcGoogle />,
       title: "Ask Google",
       color: "var(--google-blue)",
-      onClick: async (e) => {
+      onClick: (e) => {
         e.stopPropagation();
         const query = encodeURIComponent(cleanText);
-        const url = `https://www.google.com/search?q=${query}`;
-        window.open(url, "_blank");
+        window.open(`https://www.google.com/search?q=${query}`, "_blank");
       },
     },
     {
       icon: <SiWikipedia />,
       title: "Ask Wikipedia",
       color: "var(--wiki-grey)",
-      onClick: async (e) => {
+      onClick: (e) => {
         e.stopPropagation();
         const query = encodeURIComponent(cleanText);
-        const url = `https://en.wikipedia.org/wiki/Special:Search?search=${query}`;
-        window.open(url, "_blank");
+        window.open(
+          `https://en.wikipedia.org/wiki/Special:Search?search=${query}`,
+          "_blank"
+        );
       },
     },
     {
@@ -177,20 +181,18 @@ export default function ActionButtons({ promptText }) {
       color: "var(--btn-gray)",
       onClick: async (e) => {
         e.stopPropagation();
-        try {
-          await navigator.clipboard.writeText(cleanText);
-          showMessage({
-            type: "success",
-            message: "Text copied to clipboard!",
-          });
-        } catch {}
+        await navigator.clipboard.writeText(cleanText);
+        showMessage({ type: "success", message: "Text copied to clipboard!" });
       },
     },
   ];
 
+  const visibleButtons =
+    limitButtons && !showAll ? buttons.slice(0, 5) : buttons;
+
   return (
     <div className="action-buttons" onClick={(e) => e.stopPropagation()}>
-      {buttons.map((btn, idx) => (
+      {visibleButtons.map((btn, idx) => (
         <button
           key={idx}
           onClick={btn.onClick}
@@ -201,6 +203,19 @@ export default function ActionButtons({ promptText }) {
           {btn.icon}
         </button>
       ))}
+
+      {limitButtons && (
+        <button
+          className="icon-btn more-btn"
+          onClick={(e) => {
+            e.stopPropagation();
+            setShowAll(!showAll);
+          }}
+          title={showAll ? "Show Less" : "Show More"}
+        >
+          {showAll ? <FaChevronUp /> : <FaEllipsisH />}
+        </button>
+      )}
     </div>
   );
 }
