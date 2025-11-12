@@ -287,30 +287,38 @@ export default function FlashCardApp() {
     reader.readAsText(file);
   };
 
-  /**
-   * Download the current deck of cards as a JSON file. The file
-   * name defaults to `flashcards.json` and contains a pretty‑printed
-   * representation of the cards array.
-   */
-const handleDownload = async () => {
+
+  const handleDownload = async () => {
   try {
     const data = JSON.stringify(cards, null, 2);
+    const blob = new Blob([data], { type: "application/json" });
 
-    // Ask where to save it
-    const fileHandle = await window.showSaveFilePicker({
-      suggestedName: "flashcards.json",
-      types: [
-        {
-          description: "JSON Files",
-          accept: { "application/json": [".json"] }
-        }
-      ]
-    });
+    // ✅ Desktop browsers that support File System Access API
+    if (window.showSaveFilePicker) {
+      const fileHandle = await window.showSaveFilePicker({
+        suggestedName: "flashcards.json",
+        types: [
+          {
+            description: "JSON Files",
+            accept: { "application/json": [".json"] }
+          }
+        ]
+      });
+      const writable = await fileHandle.createWritable();
+      await writable.write(blob);
+      await writable.close();
+      return;
+    }
 
-    // Write to the selected file
-    const writable = await fileHandle.createWritable();
-    await writable.write(data);
-    await writable.close();
+    // ✅ Fallback for iOS / Android / unsupported browsers
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "flashcards.json";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
 
   } catch (err) {
     if (err.name !== "AbortError") {
