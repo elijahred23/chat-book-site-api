@@ -288,44 +288,61 @@ export default function FlashCardApp() {
   };
 
 
-  const handleDownload = async () => {
+const handleDownload = async () => {
   try {
     const data = JSON.stringify(cards, null, 2);
     const blob = new Blob([data], { type: "application/json" });
+    const fileName = "flashcards.json";
 
-    // ✅ Desktop browsers that support File System Access API
-    if (window.showSaveFilePicker) {
-      const fileHandle = await window.showSaveFilePicker({
-        suggestedName: "flashcards.json",
-        types: [
-          {
-            description: "JSON Files",
-            accept: { "application/json": [".json"] }
-          }
-        ]
-      });
-      const writable = await fileHandle.createWritable();
-      await writable.write(blob);
-      await writable.close();
-      return;
+    // --- DESKTOP: File System Access API supported ---
+    if (typeof window.showSaveFilePicker === "function") {
+      try {
+        const fileHandle = await window.showSaveFilePicker({
+          suggestedName: fileName,
+          types: [
+            {
+              description: "JSON Files",
+              accept: { "application/json": [".json"] }
+            }
+          ]
+        });
+
+        const writable = await fileHandle.createWritable();
+        await writable.write(blob);
+        await writable.close();
+        return; // done
+      } catch (err) {
+        // If user cancels, silently exit
+        if (err.name === "AbortError") return;
+        console.warn("File picker failed, falling back to download", err);
+      }
     }
 
-    // ✅ Fallback for iOS / Android / unsupported browsers
+    // --- MOBILE & UNSUPPORTED BROWSERS FALLBACK ---
     const url = URL.createObjectURL(blob);
+
+    // Create hidden link
     const a = document.createElement("a");
     a.href = url;
-    a.download = "flashcards.json";
+    a.download = fileName;
+
+    // Required for iOS Safari
+    a.rel = "noopener";
+    a.target = "_blank";
+
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
+
+    // Free memory
     URL.revokeObjectURL(url);
 
   } catch (err) {
-    if (err.name !== "AbortError") {
-      setError("Failed to save file: " + err.message);
-    }
+    console.error("Download failed:", err);
+    setError("Failed to save file: " + err.message);
   }
 };
+ 
 
   /**
    * Copy the current deck of cards to the user's clipboard as pretty printed JSON.
