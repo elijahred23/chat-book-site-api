@@ -11,6 +11,7 @@ import YouTubeSearchDrawer from './YouTubeSearchDrawer';
 import { actions, useAppDispatch, useAppState } from './context/AppContext';
 import { getYouTubeTranscript as fetchYouTubeTranscriptInternal } from './utils/callYoutube';
 import ActionButtons from './ui/ActionButtons';
+import { getSupadataTranscript } from './utils/callSupadata';
 
 // Constants
 const wordSplitNumber = 5000;
@@ -114,14 +115,9 @@ export default function YouTubeTranscript() {
 
     // Helpers to fetch transcript and comments based on selected provider
     const fetchYouTubeTranscript = async (video_url) => {
-        let transcript = '';
-        if (state.selectedTranscriptType === "external") {
-            transcript = await fetchYouTubeTranscriptExternal(video_url);
-        } else {
-            transcript = await fetchYouTubeTranscriptInternal(video_url);
-        }
-        return transcript;
-    };
+            let transcript = await getSupadataTranscript(video_url);
+            return transcript;
+        };
 
     const promptSuggestions = [
         { label: "Summary", value: "Summarize this transcript" },
@@ -230,8 +226,8 @@ export default function YouTubeTranscript() {
             if (url && isValidYouTubeUrl(url) && url !== lastFetchedUrl) {
                 try {
                     const data = await fetchYouTubeTranscript(url);
-                    if (data?.transcript) {
-                        const newTranscript = data.transcript;
+                    if (data?.transcript?.content) {
+                        const newTranscript = data.transcript.content;
                         const wordCount = countWords(newTranscript);
                         const splits = Math.ceil(wordCount / wordSplitNumber);
                         setTranscript(newTranscript);

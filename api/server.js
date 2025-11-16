@@ -11,6 +11,7 @@ import fs from 'fs';
 import puppeteer from 'puppeteer';
 import { fetchTranscript, getNewsVideos, getVideoComments } from './youtube.js';
 import { searchYouTube, getVideoDetails, searchYouTubePlaylists, getPlaylistItems, getTrendingVideos } from './youtube.js';
+import { getTranscript } from './supadata.js';
 GeminiModel.currentModel = process.env.GEMINI_MODEL || "gemini-2.0-flash";
 
 const app = express();
@@ -61,6 +62,20 @@ const logErrorToFile = (error) => {
   const errorLog = `${new Date().toISOString()} - ${error.message}\n${error.stack}\n\n`;
   fs.appendFileSync('error.log', errorLog, 'utf8');
 };
+
+app.get('/supadata/transcript', async (req, res) => {
+
+  const { url } = req.query;
+  if (!url) {
+    return res.status(400).json({ error: 'Missing URL parameter' });
+  }
+  try {
+    const transcript = await getTranscript(url);
+    res.json({ transcript });
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to fetch transcript' });
+  }
+});
 
 app.get('/api/check', (req, res) => {
   const randomIndex = Math.floor(Math.random() * messages.length);
