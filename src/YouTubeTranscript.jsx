@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, useRef } from 'react';
 import { ClipLoader } from "react-spinners";
 import ReactMarkdown from 'react-markdown';
 import { getGeminiResponse } from "./utils/callGemini";
@@ -103,6 +103,7 @@ export default function YouTubeTranscript() {
     const [retryLoadingIndex, setRetryLoadingIndex] = useState(null);
     const [drawerOpen, setDrawerOpen] = useState(false);
     const { showMessage } = useFlyout();
+    const latestRetryRef = useRef({});
     const [youtubeIframeShowing, setYoutubeIframeShowing] = useState(() => {
         const storedValue = localStorage.getItem("yt_iframe_showing");
         return storedValue !== null ? JSON.parse(storedValue) : false;
@@ -599,6 +600,139 @@ export default function YouTubeTranscript() {
                             }}>Copy to Transcript</button>
                         </>
                     )}
+                    {/* --- Alternate Compact Retry View (Improved: Mobile + Race-Safe) --- */}
+<div
+    style={{
+        display: "flex",
+        flexWrap: "wrap",
+        gap: "8px",
+        marginBottom: "1rem",
+        padding: "0.75rem",
+        border: "1px solid #ddd",
+        borderRadius: "10px",
+        background: "#fafafa"
+    }}
+>
+    {promptResponses.map((res, i) => {
+        const isError =
+            res?.startsWith("Error: Gemini failed on part") ||
+            res?.includes("❌");
+        const isSuccess = !isError;
+
+        return (
+            <div
+                key={i}
+                style={{
+                    border: "1px solid #ccc",
+                    borderRadius: "8px",
+                    padding: "6px",
+                    width: "120px",              // 👈 looks good on both mobile & desktop
+                    flexShrink: 0,
+                    background: isSuccess ? "#d6ffd6" : "#ffd6d6",
+                    display: "flex",
+                    flexDirection: "column"
+                }}
+            >
+                {/* Part label */}
+                <div
+                    style={{
+                        fontSize: "0.75rem",
+                        marginBottom: "4px",
+                        fontWeight: 600,
+                        textAlign: "center"
+                    }}
+                >
+                    Part {i + 1}
+                </div>
+
+                {/* Mini retry input */}
+                <input
+                    style={{
+                        width: "100%",
+                        fontSize: "0.7rem",
+                        padding: "4px",
+                        marginBottom: "6px",
+                        borderRadius: "4px",
+                        border: "1px solid #bbb"
+                    }}
+                    value={retryIndex === i ? retryPromptText : ""}
+                    placeholder="New text"
+                    onChange={(e) => {
+                        setRetryIndex(i);
+                        setRetryPromptText(e.target.value);
+                    }}
+                    onFocus={() => {
+                        setRetryIndex(i);
+                        setRetryPromptText(prompt);
+                    }}
+                />
+
+                {/* Mini Retry Button */}
+                <button
+                    style={{
+                        width: "100%",
+                        fontSize: "0.7rem",
+                        padding: "6px",
+                        background: retryLoadingIndex === i ? "#999" : "#007bff",
+                        color: "white",
+                        border: "none",
+                        borderRadius: "4px",
+                        cursor: retryLoadingIndex === i ? "default" : "pointer"
+                    }}
+                    disabled={retryLoadingIndex === i}
+                    onClick={async () => {
+                        // --- ✔️ Add race condition protection with request ID ---
+                        const requestId = crypto.randomUUID();
+                        latestRetryRef.current[i] = requestId;
+
+                        try {
+                            setRetryLoadingIndex(i);
+                            setProgress(0);
+
+                            const retryChunk = [splitTranscript[i]];
+                            const retryResponse = await promptTranscript(
+                                retryPromptText || prompt,
+                                retryChunk,
+                                setProgress,
+                                showMessage
+                            );
+
+                            // ---- ✔️ Only update if request is still latest for this index ----
+                            if (latestRetryRef.current[i] === requestId) {
+                                const updated = [...promptResponses];
+                                updated[i] = retryResponse[0];
+                                setPromptResponses(updated);
+
+                                showMessage?.({
+                                    type: "success",
+                                    message: `Retry successful for part ${i + 1}`,
+                                });
+                            }
+                        } catch (err) {
+                            // Ignore stale errors (race-safe)
+                            if (latestRetryRef.current[i] === requestId) {
+                                showMessage?.({
+                                    type: "error",
+                                    message: `Retry failed: ${err.message}`,
+                                });
+                            }
+                        } finally {
+                            if (latestRetryRef.current[i] === requestId) {
+                                setRetryLoadingIndex(null);
+                                setRetryIndex(null);
+                                setRetryPromptText("");
+                            }
+                        }
+                    }}
+                >
+                    {retryLoadingIndex === i ? "..." : "Retry"}
+                </button>
+            </div>
+        );
+    })}
+</div>
+
+
                     <AutoScroller activeIndex={0}>
                         {promptResponses.map((res, i) => (
                             <div key={i} data-index={i} style={{ padding: "1rem 0", borderBottom: "1px solid #ddd" }}>
