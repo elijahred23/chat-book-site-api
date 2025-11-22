@@ -1,0 +1,75 @@
+name: CI/CD Pipeline – Chat Book Site API
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+jobs:
+  build-and-push:
+    name: Build & Push Docker Image
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: |
+            ${{ secrets.DOCKERHUB_USERNAME }}/chat-book-site-api:latest
+            ${{ secrets.DOCKERHUB_USERNAME }}/chat-book-site-api:${{ github.sha }}
+
+  deploy:
+    name: Deploy to DigitalOcean Kubernetes
+    needs: build-and-push
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install doctl
+        run: |
+          curl -sL https://github.com/digitalocean/doctl/releases/download/v1.108.0/doctl-1.108.0-linux-amd64.tar.gz -o doctl.tar.gz
+          tar -xzf doctl.tar.gz
+          sudo mv doctl /usr/local/bin/
+
+      - name: Authenticate doctl
+        run: doctl auth init -t "${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}"
+
+      - name: Fetch kubeconfig from DigitalOcean
+        run: doctl kubernetes cluster kubeconfig save eli-k8s
+
+      # Recreate K8s secret from GitHub Secrets on every deploy
+      - name: Create/Update Kubernetes Secret
+        run: |
+          kubectl delete secret chat-book-site-api-secret --ignore-not-found
+          kubectl create secret generic chat-book-site-api-secret \
+            --from-literal=GEMINI_API_KEY="${{ secrets.GEMINI_API_KEY }}" \
+            --from-literal=YOUTUBE_API_KEY="${{ secrets.YOUTUBE_API_KEY }}" \
+            --from-literal=SUPA_DATA_API_KEY="${{ secrets.SUPA_DATA_API_KEY }}"
+
+      # Apply Deployment + Service manifest (make sure this path exists in your repo)
+      - name: Apply Kubernetes manifests
+        run: |
+          kubectl apply -f infra/k8s/chat-book-site-api.yaml
+
+      # Update the image on the deployment to the new SHA tag
+      - name: Set image on deployment
+        run: |
+          kubectl set image deployment/chat-book-site-api \
+            chat-book-site-api=${{ secrets.DOCKERHUB_USERNAME }}/chat-book-site-api:${{ github.sha }}
+
+      - name: Wait for rollout to complete
+        run: kubectl rollout status deployment/chat-book-site-api --timeout=180s
