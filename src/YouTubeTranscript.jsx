@@ -9,9 +9,9 @@ import { useFlyout } from './context/FlyoutContext';
 import AutoScroller from './ui/AutoScroller';
 import YouTubeSearchDrawer from './YouTubeSearchDrawer';
 import { actions, useAppDispatch, useAppState } from './context/AppContext';
-import { getYouTubeTranscript as fetchYouTubeTranscriptInternal } from './utils/callYoutube';
 import ActionButtons from './ui/ActionButtons';
 import { getSupadataTranscript } from './utils/callSupadata';
+import { getFlaskYoutubeTranscript } from './utils/callFlaskYoutubeTranscript';
 
 // Constants
 const wordSplitNumber = 5000;
@@ -22,22 +22,7 @@ const isValidYouTubeUrl = (url) => {
 
 // Fetch transcript from external API when selected
 const fetchYouTubeTranscriptExternal = async (video_url) => {
-    const url = "https://kome.ai/api/transcript";
-    const requestBody = { video_id: video_url, format: true };
-    try {
-        const response = await fetch(url, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                "Accept": "application/json"
-            },
-            body: JSON.stringify(requestBody)
-        });
-        if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
-        return await response.json();
-    } catch (error) {
-        console.error("Error fetching transcript:", error);
-    }
+    
 };
 
 // Split a string into roughly equal word chunks
@@ -113,12 +98,12 @@ export default function YouTubeTranscript() {
         return storedValue !== null ? JSON.parse(storedValue) : false;
     });
     const dispatch = useAppDispatch();
+    const [loadingTranscript, setLoadingTranscript] = useState(false);
 
     // Helpers to fetch transcript and comments based on selected provider
     const fetchYouTubeTranscript = async (video_url) => {
-            let transcript = await getSupadataTranscript(video_url);
             return transcript;
-        };
+    };
 
     const promptSuggestions = [
         { label: "Summary", value: "Summarize this transcript" },
@@ -221,30 +206,47 @@ export default function YouTubeTranscript() {
         }
     }, [splitLength, transcript]);
 
-    // Load transcript when URL changes
-    useEffect(() => {
-        const loadTranscript = async () => {
-            if (url && isValidYouTubeUrl(url) && url !== lastFetchedUrl) {
-                try {
-                    const data = await fetchYouTubeTranscript(url);
-                    if (data?.transcript?.content) {
-                        const newTranscript = data.transcript.content;
-                        const wordCount = countWords(newTranscript);
-                        const splits = Math.ceil(wordCount / wordSplitNumber);
-                        setTranscript(newTranscript);
-                        setSplitLength(splits);
-                        setLastFetchedUrl(url);
-                        showMessage?.({ type: "success", message: "Transcript found." });
-                    } else {
-                        showMessage?.({ type: "error", message: "Transcript not found." });
-                    }
-                } catch (err) {
-                    showMessage?.({ type: "error", message: "Failed to load transcript." });
-                }
+    const loadFlaskYoutubeTranscript = async () => {
+        setLoadingTranscript(true);
+        try {
+            let data = await getFlaskYoutubeTranscript(url);
+            if(data?.transcript?.length > 0){
+                const newTranscript = data.transcript;
+                const wordCount = countWords(newTranscript);
+                const splits = Math.ceil(wordCount / wordSplitNumber);
+                setTranscript(newTranscript);
+                setSplitLength(splits);
+                setLastFetchedUrl(url);
+                showMessage?.({ type: "success", message: "Transcript found." });
             }
-        };
-        loadTranscript();
-    }, [url]);
+
+        } catch (err) {
+            showMessage?.({ type: "error", message: "Failed to load transcript." });    
+        }
+        setLoadingTranscript(false);
+    };
+
+    const loadTranscriptSupaData = async () => {
+        setLoadingTranscript(true);
+        try {
+            let data = await getSupadataTranscript(video_url);
+
+            if (data?.transcript?.content) {
+                const newTranscript = data.transcript.content;
+                const wordCount = countWords(newTranscript);
+                const splits = Math.ceil(wordCount / wordSplitNumber);
+                setTranscript(newTranscript);
+                setSplitLength(splits);
+                setLastFetchedUrl(url);
+                showMessage?.({ type: "success", message: "Transcript found." });
+            } else {
+                showMessage?.({ type: "error", message: "Transcript not found." });
+            }
+        } catch (err) {
+            showMessage?.({ type: "error", message: "Failed to load transcript." });
+        }
+        setLoadingTranscript(false);
+    };
 
     const validYoutubeUrl = useMemo(() => {
         return isValidYouTubeUrl(url);
@@ -472,6 +474,14 @@ export default function YouTubeTranscript() {
                 <>
                     <div className="input-group">
                         <input className="input" type="text" value={url} placeholder="YouTube URL" onChange={(e) => setUrl(e.target.value)} />
+                        <button disabled={!hasValidURL || loadingTranscript} className="btn primary-btn" onClick={loadFlaskYoutubeTranscript}>
+                            Load Flask Transcript
+                        </button>
+                        <button disabled={!hasValidURL || loadingTranscript} className="btn primary-btn" onClick={loadTranscriptSupaData}>
+                            Load SupaData Transcript
+                        </button>
+                    </div>
+                    <div className="input-group">
                         <div className="button-group">
                             <button className="btn secondary-btn" onClick={() => setDrawerOpen(true)}>
                                 🔎 Search YouTube
