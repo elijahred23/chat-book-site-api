@@ -3,7 +3,7 @@ const isLocalhost = true || ['localhost', '127.0.0.1'].includes(window.location.
 
 // Use HTTP and port 8080 for local dev, otherwise use HTTPS and default port
 const protocol = isLocalhost ? 'http' : 'https';
-const port = isLocalhost ? ':8080' : ''; // Only include port 8080 locally
+const port = isLocalhost ? ':8080' : ':8080'; // Only include port 8080 locally
 const hostname = `${protocol}://${window.location.hostname}${port}`;
 
 // Example usage:
