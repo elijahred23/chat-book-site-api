@@ -63,7 +63,7 @@ const logErrorToFile = (error) => {
   fs.appendFileSync('error.log', errorLog, 'utf8');
 };
 
-app.get('/supadata/transcript', async (req, res) => {
+app.get('/api/supadata/transcript', async (req, res) => {
 
   const { url } = req.query;
   if (!url) {
@@ -82,7 +82,7 @@ app.get('/api/check', (req, res) => {
   res.send({ message: messages[randomIndex] });
 });
 
-app.get('/geminiModelList', async (req, res) => {
+app.get('/api/geminiModelList', async (req, res) => {
   try {
     const models = await listGeminiModels();
     return res.send({ models });
@@ -93,7 +93,7 @@ app.get('/geminiModelList', async (req, res) => {
   }
 }
 );
-app.get('/geminiModel', (req, res) => {
+app.get('/api/geminiModel', (req, res) => {
   const currentModel = GeminiModel.currentModel;
   if (!currentModel) {
     return res.status(400).send({ error: 'Bad Request', message: 'Model parameter is missing' });
@@ -106,7 +106,8 @@ app.get('/geminiModel', (req, res) => {
     return res.status(500).send({ error: 'Server Error', message: error.message });
   }
 });
-app.post('/geminiModel', async (req, res) => {
+
+app.post('/api/geminiModel', async (req, res) => {
   const { model } = req.body;
   if (!model) {
     return res.status(400).send({ error: 'Bad Request', message: 'Model parameter is missing' });
@@ -122,7 +123,7 @@ app.post('/geminiModel', async (req, res) => {
   }
 });
 
-app.get('/youtube/transcript', async (req, res) => {
+app.get('/api/youtube/transcript', async (req, res) => {
   const { url } = req.query;
   if (!url) {
     return res.status(400).json({ error: 'Missing URL parameter' });
@@ -137,7 +138,7 @@ app.get('/youtube/transcript', async (req, res) => {
 });
 
 // GET /youtube/comments?video=VIDEO_URL_OR_ID&maxResults=20
-app.get('/youtube/comments', async (req, res) => {
+app.get('/api/youtube/comments', async (req, res) => {
   const videoParam = req.query.video;
   const maxResults = parseInt(req.query.maxResults) || 20;
 
@@ -155,7 +156,7 @@ app.get('/youtube/comments', async (req, res) => {
 });
 
 // GET /youtube/search?q=nodejs
-app.get('/youtube/search', async (req, res) => {
+app.get('/api/youtube/search', async (req, res) => {
   const query = req.query.q;
 
   if (!query) {
@@ -172,7 +173,7 @@ app.get('/youtube/search', async (req, res) => {
 });
 
 // GET trending youtube
-app.get('/youtube/trending', async (req, res) => {
+app.get('/api/youtube/trending', async (req, res) => {
     try {
       const results = await getTrendingVideos();
       res.json(results);
@@ -184,7 +185,7 @@ app.get('/youtube/trending', async (req, res) => {
 );
 
 // endpoint to get news
-app.get('/youtube/news', async (req, res) => {
+app.get('/api/youtube/news', async (req, res) => {
   try {
     const results = await getNewsVideos();
     res.json(results);
@@ -196,7 +197,7 @@ app.get('/youtube/news', async (req, res) => {
 });
 
 // GET /youtube/video/:id
-app.get('/youtube/video/:id', async (req, res) => {
+app.get('/api/youtube/video/:id', async (req, res) => {
   const videoId = req.params.id;
 
   try {
@@ -212,7 +213,7 @@ app.get('/youtube/video/:id', async (req, res) => {
     res.status(500).json({ error: 'Internal server error.' });
   }
 });
-app.get('/youtube/search/playlists', async (req, res) => {
+app.get('/api/youtube/search/playlists', async (req, res) => {
   const query = req.query.q;
   if (!query) return res.status(400).json({ message: 'Missing search query' });
 
@@ -224,7 +225,7 @@ app.get('/youtube/search/playlists', async (req, res) => {
   }
 });
 
-app.get('/youtube/playlist/:playlistId', async (req, res) => {
+app.get('/api/youtube/playlist/:playlistId', async (req, res) => {
   try {
     const playlistId = req.params.playlistId;
     const videos = await getPlaylistItems(playlistId);
@@ -235,7 +236,7 @@ app.get('/youtube/playlist/:playlistId', async (req, res) => {
 });
 
 
-app.post('/gpt/prompt', async (req, res) => {
+app.post('/api/gpt/prompt', async (req, res) => {
   const { prompt } = req.body;
 
   if (!prompt) {
@@ -259,7 +260,7 @@ app.post('/gpt/prompt', async (req, res) => {
 
 
 
-app.post('/generate-pdf', async (req, res) => {
+app.post('/api/generate-pdf', async (req, res) => {
   const { markdown, messagesToCombine, pdfFileName } = req.body;
   console.log({ markdown, messagesToCombine });
 
@@ -328,7 +329,7 @@ app.post('/generate-pdf', async (req, res) => {
     res.status(500).send('Error generating PDF');
   }
 });
-app.get('/gemini/prompt', async (req, res) => {
+app.get('/api/gemini/prompt', async (req, res) => {
   let prompt = req.query.prompt;
 
   if (!prompt) {

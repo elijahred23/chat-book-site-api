@@ -4,7 +4,6 @@ metadata:
   name: chat-book-site-api
   labels:
     app: chat-book-site-api
-
 spec:
   replicas: 2
   selector:
@@ -21,9 +20,9 @@ spec:
         - name: chat-book-site-api
           image: elijahred23/chat-book-site-api:latest
           imagePullPolicy: Always
+
           ports:
-            - containerPort: 3005
-            - containerPort: 8080
+            - containerPort: 8080   # The ONLY port you need
 
           envFrom:
             - secretRef:
@@ -38,6 +37,6 @@ spec:
   selector:
     app: chat-book-site-api
   ports:
-    - port: 80
+    - name: http
+      port: 80
       targetPort: 8080
-

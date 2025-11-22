@@ -1,7 +1,3 @@
 #!/bin/bash
-
-# Build the frontend
-npm run build
-
-# Start the unified Express server (which serves both frontend + API)
+echo "Starting unified server..."
 node api/server.js
