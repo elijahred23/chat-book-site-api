@@ -63,7 +63,7 @@ jobs:
       # Apply Deployment + Service manifest (make sure this path exists in your repo)
       - name: Apply Kubernetes manifests
         run: |
-          kubectl apply -f infra/k8s/chat-book-site-api.yaml
+          kubectl apply -f k8s/deployment.yaml
 
       # Update the image on the deployment to the new SHA tag
       - name: Set image on deployment
