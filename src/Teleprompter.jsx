@@ -423,7 +423,6 @@ const TeleprompterAdvanced = () => {
           ref={contentRef}
           style={{
             fontSize: `${fontSize}em`,
-            lineHeight: "1.5em",
             whiteSpace: "pre-wrap",
             wordWrap: "break-word",
             maxWidth: "100%",

@@ -249,16 +249,7 @@ function App() {
             </button>
           </div>
           <ChatBookApp />
-        </div>  
-        {/* Chat Book Drawer */}
-        <div className={`chat-drawer ${useAppState().isChatBookOpen ? 'open' : ''} ${isFullWidth ? 'full' : 'half'}`}>
-          <div className="chat-drawer-header">
-            <button className="width-toggle-btn" onClick={() => dispatch(actions.setIsChatBookOpen(false))}>
-              ✖ Close Chat Book
-            </button>
-          </div>
-          <ChatBookApp />
-        </div>  
+        </div>
       </BrowserRouter>
 
       <DownloadCopyTextFile />
