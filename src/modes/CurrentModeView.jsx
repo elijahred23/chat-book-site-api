@@ -329,7 +329,19 @@ function RecallMode({ cards, recallIndex, recallInput, recallScore, recallComple
   );
 }
 
-function MemoryMode({ cards, memoryItems, memorySelected, memoryMatched, onSelect, onReset, COLORS, isMobile }) {
+function MemoryMode({
+  cards,
+  memoryItems,
+  memorySelected,
+  memoryMatched,
+  memoryMoves,
+  memoryStreak,
+  memoryBestStreak,
+  onSelect,
+  onReset,
+  COLORS,
+  isMobile,
+}) {
   if (cards.length === 0) {
     return <p>No cards available for memory game.</p>;
   }
@@ -347,49 +359,90 @@ function MemoryMode({ cards, memoryItems, memorySelected, memoryMatched, onSelec
             borderRadius: "4px",
             color: COLORS.text,
             cursor: "pointer",
+          width: isMobile ? "100%" : "auto",
+        }}
+      >
+        Play Again
+      </button>
+      <div style={{ marginTop: "0.5rem", color: COLORS.text, fontSize: "0.9rem" }}>
+        Moves: {memoryMoves} | Best Combo: {memoryBestStreak}
+      </div>
+    </div>
+  );
+  }
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          gap: "0.75rem",
+          alignItems: "center",
+          justifyContent: "space-between",
+        }}
+      >
+        <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
+          <span>Matches: {memoryMatched.length} / {cards.length}</span>
+          <span>Moves: {memoryMoves}</span>
+          <span>Combo: {memoryStreak}</span>
+          <span>Best: {memoryBestStreak}</span>
+        </div>
+        <button
+          onClick={onReset}
+          style={{
+            padding: "0.5rem 1rem",
+            backgroundColor: COLORS.buttonBg,
+            border: `1px solid ${COLORS.border}`,
+            borderRadius: "6px",
+            color: COLORS.text,
+            cursor: "pointer",
             width: isMobile ? "100%" : "auto",
           }}
         >
-          Play Again
+          Shuffle & Restart
         </button>
       </div>
-    );
-  }
-  return (
-    <div
-      style={{
-        display: "grid",
-        gridTemplateColumns: isMobile ? "repeat(auto-fill, minmax(100px, 1fr))" : "repeat(auto-fill, minmax(120px, 1fr))",
-        gap: "0.5rem",
-      }}
-    >
-      {memoryItems.map((item, idx) => {
-        const matched = memoryMatched.includes(item.id);
-        const selected = memorySelected.includes(idx);
-        const disabled = matched || memorySelected.length === 2;
-        return (
-          <div
-            key={idx}
-            onClick={() => !disabled && onSelect(idx)}
-            style={{
-              padding: "1rem",
-              minHeight: "80px",
-              border: `1px solid ${COLORS.border}`,
-              borderRadius: "8px",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              backgroundColor: matched ? COLORS.matchedBg : selected ? COLORS.selectedBg : COLORS.buttonBg,
-              color: COLORS.text,
-              cursor: disabled ? "default" : "pointer",
-              userSelect: "none",
-              wordWrap: "break-word",
-            }}
-          >
-            {matched || selected ? <span>{item.text}</span> : <span style={{ fontSize: "1.5rem", fontWeight: "bold" }}>?</span>}
-          </div>
-        );
-      })}
+      {memoryStreak > 1 && (
+        <div style={{ color: COLORS.primary, fontWeight: 600 }}>Combo x{memoryStreak}! Keep it going.</div>
+      )}
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: isMobile ? "repeat(auto-fill, minmax(110px, 1fr))" : "repeat(auto-fill, minmax(140px, 1fr))",
+          gap: "0.6rem",
+        }}
+      >
+        {memoryItems.map((item, idx) => {
+          const matched = memoryMatched.includes(item.id);
+          const selected = memorySelected.includes(idx);
+          const disabled = matched || memorySelected.length === 2;
+          return (
+            <div
+              key={idx}
+              onClick={() => !disabled && onSelect(idx)}
+              style={{
+                padding: "1rem",
+                minHeight: "90px",
+                border: `2px solid ${selected ? COLORS.primary : COLORS.border}`,
+                borderRadius: "10px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                background: matched ? "linear-gradient(135deg, #d1fae5, #a7f3d0)" : selected ? COLORS.selectedBg : COLORS.buttonBg,
+                color: COLORS.text,
+                cursor: disabled ? "default" : "pointer",
+                userSelect: "none",
+                wordWrap: "break-word",
+                boxShadow: matched ? "0 4px 10px rgba(0,0,0,0.12)" : "none",
+                transition: "transform 120ms ease, box-shadow 120ms ease, border-color 120ms ease",
+                transform: selected ? "scale(1.02)" : "scale(1)",
+              }}
+            >
+              {matched || selected ? <span>{item.text}</span> : <span style={{ fontSize: "1.7rem", fontWeight: "bold" }}>?</span>}
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }
@@ -641,6 +694,9 @@ export default function CurrentModeView({
   memoryItems,
   memorySelected,
   memoryMatched,
+  memoryMoves,
+  memoryStreak,
+  memoryBestStreak,
   onSelectMemory,
   onResetMemory,
   survivalOrder,
@@ -732,6 +788,9 @@ export default function CurrentModeView({
           memoryItems={memoryItems}
           memorySelected={memorySelected}
           memoryMatched={memoryMatched}
+          memoryMoves={memoryMoves}
+          memoryStreak={memoryStreak}
+          memoryBestStreak={memoryBestStreak}
           onSelect={onSelectMemory}
           onReset={onResetMemory}
           COLORS={COLORS}

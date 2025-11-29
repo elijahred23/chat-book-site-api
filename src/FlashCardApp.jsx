@@ -412,6 +412,9 @@ export default function FlashCardApp() {
   const [memoryItems, setMemoryItems] = useState([]);
   const [memorySelected, setMemorySelected] = useState([]);
   const [memoryMatched, setMemoryMatched] = useState([]);
+  const [memoryMoves, setMemoryMoves] = useState(0);
+  const [memoryStreak, setMemoryStreak] = useState(0);
+  const [memoryBestStreak, setMemoryBestStreak] = useState(0);
 
   const createMemoryItems = () => {
     const items = [];
@@ -426,6 +429,9 @@ export default function FlashCardApp() {
     setMemoryItems(createMemoryItems());
     setMemorySelected([]);
     setMemoryMatched([]);
+    setMemoryMoves(0);
+    setMemoryStreak(0);
+    setMemoryBestStreak(0);
   };
 
   useEffect(() => {
@@ -449,6 +455,16 @@ export default function FlashCardApp() {
       const first = memoryItems[firstIndex];
       const second = memoryItems[index];
       const isMatch = first.id === second.id && first.type !== second.type;
+      setMemoryMoves((m) => m + 1);
+      if (isMatch) {
+        setMemoryStreak((streak) => {
+          const next = streak + 1;
+          setMemoryBestStreak((best) => Math.max(best, next));
+          return next;
+        });
+      } else {
+        setMemoryStreak(0);
+      }
       setMemorySelected([firstIndex, index]);
       setTimeout(() => {
         if (isMatch) {
@@ -897,6 +913,9 @@ export default function FlashCardApp() {
         memoryItems={memoryItems}
         memorySelected={memorySelected}
         memoryMatched={memoryMatched}
+        memoryMoves={memoryMoves}
+        memoryStreak={memoryStreak}
+        memoryBestStreak={memoryBestStreak}
         onSelectMemory={handleMemorySelect}
         onResetMemory={resetMemoryGame}
         survivalOrder={survivalOrder}
