@@ -19,6 +19,8 @@ const initialState = {
   podcastTTSPrompt: '',
   isJSGeneratorOpen: false,
   jsGeneratorPrompt: '',
+  isChatBookOpen: false,
+  chatBookSubject: '',
 };
 
 const actionTypes = {
@@ -39,6 +41,8 @@ const actionTypes = {
   SET_PODCAST_TTS_PROMPT: 'SET_PODCAST_TTS_PROMPT',
   SET_IS_JS_GENERATOR_OPEN: 'SET_IS_JS_GENERATOR_OPEN',
   SET_JS_GENERATOR_PROMPT: 'SET_JS_GENERATOR_PROMPT',
+  SET_IS_CHAT_BOOK_OPEN: 'SET_IS_CHAT_BOOK_OPEN',
+  SET_CHAT_BOOK_SUBJECT: 'SET_CHAT_BOOK_SUBJECT',
 };
 
 // ✅ closes all open UI panels
@@ -50,6 +54,7 @@ const closeAllPanels = (state) => ({
   isPlantUMLOpen: false,
   isPodcastTTSOpen: false,
   isJSGeneratorOpen: false,
+  isChatBookOpen: false,
 });
 
 function appReducer(state, action) {
@@ -114,6 +119,14 @@ function appReducer(state, action) {
     case actionTypes.SET_JS_GENERATOR_PROMPT:
       return { ...state, jsGeneratorPrompt: action.payload };
 
+    case actionTypes.SET_IS_CHAT_BOOK_OPEN:
+      return action.payload
+        ? { ...closeAllPanels(state), isChatBookOpen: true }
+        : { ...state, isChatBookOpen: false };
+
+    case actionTypes.SET_CHAT_BOOK_SUBJECT:
+      return { ...state, chatBookSubject: action.payload };
+
     case actionTypes.SET_PODCAST_TTS_PROMPT:
       return { ...state, podcastTTSPrompt: action.payload };
 
@@ -158,4 +171,6 @@ export const actions = {
   setPodcastTTSPrompt: (prompt) => ({ type: actionTypes.SET_PODCAST_TTS_PROMPT, payload: prompt }),
   setIsJSGeneratorOpen: (open) => ({ type: actionTypes.SET_IS_JS_GENERATOR_OPEN, payload: open }),
   setJSGeneratorPrompt: (prompt) => ({ type: actionTypes.SET_JS_GENERATOR_PROMPT, payload: prompt }),
+  setIsChatBookOpen: (open) => ({ type: actionTypes.SET_IS_CHAT_BOOK_OPEN, payload: open }),
+  setChatBookSubject: (subject) => ({ type: actionTypes.SET_CHAT_BOOK_SUBJECT, payload: subject }),
 };

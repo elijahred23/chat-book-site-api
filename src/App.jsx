@@ -1,6 +1,5 @@
 import { useEffect, useState, useRef } from 'react';
 import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
-import ChatBookApp from './ChatBookApp.jsx';
 import ApiCheck from './ApiCheck';
 import ProgressBar from './ui/ProgressBar';
 import ChatTemplate from './ChatTemplate';
@@ -20,6 +19,7 @@ import FlashCardApp from './FlashCardApp.jsx';
 import PlantUMLViewer from './PlantUML.jsx';
 import PodcastTTSPlayer from './PodcastTTSPlayer.jsx';
 import JSConsoleGenerator from './JSConsoleGenerator.jsx';
+import ChatBookApp from './ChatBookApp.jsx';
 
 function App() {
   const [isFullWidth, setIsFullWidth] = useState(true);
@@ -28,7 +28,7 @@ function App() {
   const [showFloatingBtns, setShowFloatingBtns] = useState(false);
   const floatingRef = useRef(null);
   const dispatch = useAppDispatch();
-  const { isChatOpen, isTeleprompterOpen, isTTSOpen, isPlantUMLOpen, isPodcastTTSOpen, isJSGeneratorOpen } = useAppState();
+  const { isChatOpen, isTeleprompterOpen, isTTSOpen, isPlantUMLOpen, isPodcastTTSOpen, isJSGeneratorOpen, isChatBookOpen } = useAppState();
 
   const toggleChat = () => dispatch(actions.setIsChatOpen(false));
   const toggleWidth = () => setIsFullWidth((p) => !p);
@@ -66,7 +66,6 @@ function App() {
         <div className="dropdown-nav">
           <button className="dropdown-toggle">Menu ▾</button>
           <div className="dropdown-menu">
-            <NavLink to="/chatBook">Chat Book</NavLink>
             <NavLink to="/youTubeTranscript">YouTube Transcript</NavLink>
             <NavLink to="/typingTest">Typing Test</NavLink>
             <NavLink to="/flashCards">Flash Cards</NavLink>
@@ -152,6 +151,9 @@ function App() {
               <button onClick={() => dispatch(actions.setIsJSGeneratorOpen(true))} className="fab-btn">
                 <span>💻</span>{isJSGeneratorOpen ? 'JS Generator' : 'Open JS Gen'}
               </button>
+              <button onClick={() => dispatch(actions.setIsChatBookOpen(true))} className="fab-btn">
+                <span>📓</span>{isChatBookOpen ? 'Chat Book' : 'Open Chat Book'}
+              </button>
             </div>
           )}
           <button onClick={() => setShowFloatingBtns((p) => !p)} className="fab-main">
@@ -231,13 +233,31 @@ function App() {
           <PodcastTTSPlayer />
         </div>
         {/* New JS Console Generator Drawer */}
-        <div className={`chat-drawer ${useAppState().isJSGeneratorOpen ? 'open' : ''} ${isFullWidth ? 'full' : 'half'}`}>
+        <div className={`chat-drawer ${isJSGeneratorOpen ? 'open' : ''} ${isFullWidth ? 'full' : 'half'}`}>
           <div className="chat-drawer-header">
             <button className="width-toggle-btn" onClick={() => dispatch(actions.setIsJSGeneratorOpen(false))}>
               ✖ Close JS Console Generator
             </button>
           </div>
           <JSConsoleGenerator />
+        </div>
+        {/* Chat Book Drawer */}
+        <div className={`chat-drawer ${isChatBookOpen ? 'open' : ''} ${isFullWidth ? 'full' : 'half'}`}>
+          <div className="chat-drawer-header">
+            <button className="width-toggle-btn" onClick={() => dispatch(actions.setIsChatBookOpen(false))}>
+              ✖ Close Chat Book
+            </button>
+          </div>
+          <ChatBookApp />
+        </div>  
+        {/* Chat Book Drawer */}
+        <div className={`chat-drawer ${useAppState().isChatBookOpen ? 'open' : ''} ${isFullWidth ? 'full' : 'half'}`}>
+          <div className="chat-drawer-header">
+            <button className="width-toggle-btn" onClick={() => dispatch(actions.setIsChatBookOpen(false))}>
+              ✖ Close Chat Book
+            </button>
+          </div>
+          <ChatBookApp />
         </div>  
       </BrowserRouter>
 

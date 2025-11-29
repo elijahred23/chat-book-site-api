@@ -8,7 +8,7 @@ import PasteButton from "./ui/PasteButton";
 import CopyButton from "./ui/CopyButton";
 import { useFlyout } from "./context/FlyoutContext"; // adjust path as needed
 import AutoScroller from "./ui/AutoScroller";
-import { actions, useAppDispatch } from "./context/AppContext";
+import { actions, useAppDispatch, useAppState } from "./context/AppContext";
 import ActionButtons from "./ui/ActionButtons";
 
 
@@ -53,6 +53,7 @@ export default function ChatBookApp() {
 
     const [mode, setMode] = useState(localStorageValues.mode);
     const [numSteps, setNumSteps] = useState(localStorageValues.numSteps);
+    const { chatBookSubject } = useAppState();
     const [subject, setSubject] = useState(localStorageValues.subject);
     const [initialInstruction, setInitialInstruction] = useState(localStorageValues.initialInstruction);
     const [subsequentInstructions, setSubsequentInstructions] = useState(localStorageValues.subsequentInstructions);
@@ -257,6 +258,12 @@ export default function ChatBookApp() {
         document.title = subject;
         setInitialInstruction(getInitialInstructionMessage());
     }, [subject]);
+
+    useEffect(() => {
+        if (chatBookSubject) {
+            setSubject(chatBookSubject);
+        }
+    }, [chatBookSubject]);
 
     useEffect(() => {
         setSlideIndex(0);

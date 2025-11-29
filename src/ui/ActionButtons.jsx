@@ -20,6 +20,7 @@ import { SiWikipedia } from "react-icons/si";
 import { GiGraduateCap } from "react-icons/gi";
 import { FaRedditAlien } from "react-icons/fa";
 import { useState } from "react";
+import { GiNotebook } from "react-icons/gi";
 
 function removeMarkdown(text) {
   return text
@@ -85,6 +86,16 @@ export default function ActionButtons({ promptText, limitButtons = false }) {
         e.stopPropagation();
         dispatch(actions.setPlantUMLPrompt(cleanText));
         dispatch(actions.setIsPlantUMLOpen(true));
+      },
+    },
+    {
+      icon: <GiNotebook />,
+      title: "Chat Book",
+      color: "var(--btn-orange)",
+      onClick: (e) => {
+        e.stopPropagation();
+        dispatch(actions.setChatBookSubject(cleanText));
+        dispatch(actions.setIsChatBookOpen(true));
       },
     },
     {
@@ -195,7 +206,7 @@ export default function ActionButtons({ promptText, limitButtons = false }) {
         await navigator.clipboard.writeText(cleanText);
         showMessage({ type: "success", message: "Text copied to clipboard!" });
       },
-    },
+    }
   ];
 
   const visibleButtons =
