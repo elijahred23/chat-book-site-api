@@ -24,10 +24,10 @@ import JSConsoleGenerator from './JSConsoleGenerator.jsx';
 function App() {
   const [isFullWidth, setIsFullWidth] = useState(true);
   const [isChatVisible, setIsChatVisible] = useState(true);
-  const [isChatFullscreen, setIsChatFullscreen] = useState(false);
+  const [isPromptVisible, setIsPromptVisible] = useState(true);
   const [showFloatingBtns, setShowFloatingBtns] = useState(false);
   const dispatch = useAppDispatch();
-  const { isChatOpen, isTeleprompterOpen, isTTSOpen, isPlantUMLOpen, isPodcastTTSOpen} = useAppState();
+  const { isChatOpen, isTeleprompterOpen, isTTSOpen, isPlantUMLOpen, isPodcastTTSOpen, isJSGeneratorOpen } = useAppState();
 
   const toggleChat = () => dispatch(actions.setIsChatOpen(false));
   const toggleWidth = () => setIsFullWidth((p) => !p);
@@ -60,49 +60,87 @@ function App() {
           </div>
         </div>
 
-        {/* Floating Buttons */}
-        <div className="floating-chat-container">
-          <button
-            onClick={() => setShowFloatingBtns((p) => !p)}
-            className="floating-toggle-btn"
-            style={{
-              position: 'fixed',
-              bottom: '20px',
-              right: '20px',
-              width: '40px',
-              height: '40px',
-              borderRadius: '50%',
-              background: '#444',
-              color: '#fff',
-              fontSize: '18px',
-              zIndex: 1000,
-            }}
-          >
+        <style>{`
+          .fab-container {
+            position: fixed;
+            bottom: 16px;
+            right: 16px;
+            z-index: 1100;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 8px;
+          }
+          .fab-main {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            border: none;
+            background: linear-gradient(135deg, #2563eb, #60a5fa);
+            color: #fff;
+            font-size: 22px;
+            box-shadow: 0 12px 30px rgba(37,99,235,0.35);
+            cursor: pointer;
+          }
+          .fab-menu {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            background: rgba(15,23,42,0.92);
+            padding: 8px;
+            border-radius: 14px;
+            box-shadow: 0 16px 40px rgba(0,0,0,0.35);
+            backdrop-filter: blur(8px);
+          }
+          .fab-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 10px;
+            border-radius: 12px;
+            border: 1px solid #1f2937;
+            background: #111827;
+            color: #e2e8f0;
+            cursor: pointer;
+            min-width: 140px;
+            font-size: 0.95rem;
+            justify-content: flex-start;
+          }
+          .fab-btn span {
+            font-size: 1.05rem;
+          }
+          @media (max-width: 540px) {
+            .fab-btn {
+              min-width: 120px;
+            }
+          }
+        `}</style>
+        <div className="fab-container">
+          {showFloatingBtns && (
+            <div className="fab-menu">
+              <button onClick={()=>dispatch(actions.setIsChatOpen(true))} className="fab-btn">
+                <span>💬</span>{isChatOpen ? 'Chat Open' : 'Open Chat'}
+              </button>
+              <button onClick={() => setIsTTSOpen(true)} className="fab-btn">
+                <span>🔊</span>{isTTSOpen ? 'TTS Open' : 'Open TTS'}
+              </button>
+              <button onClick={() => setIsTeleprompterOpen(true)} className="fab-btn">
+                <span>📜</span>{isTeleprompterOpen ? 'Teleprompter' : 'Open Teleprompter'}
+              </button>
+              <button onClick={() => setIsPlantUMLOpen(true)} className="fab-btn">
+                <span>🧩</span>{isPlantUMLOpen ? 'UML Viewer' : 'Open UML'}
+              </button>
+              <button onClick={() => setPodcastTTSOpen(true)} className="fab-btn">
+                <span>🎙️</span>{isPodcastTTSOpen ? 'Podcast TTS' : 'Open Podcast'}
+              </button>
+              <button onClick={() => dispatch(actions.setIsJSGeneratorOpen(true))} className="fab-btn">
+                <span>💻</span>{isJSGeneratorOpen ? 'JS Generator' : 'Open JS Gen'}
+              </button>
+            </div>
+          )}
+          <button onClick={() => setShowFloatingBtns((p) => !p)} className="fab-main">
             {showFloatingBtns ? '–' : '+'}
           </button>
-
-          {showFloatingBtns && (
-            <>
-              <button onClick={()=>dispatch(actions.setIsChatOpen(true))} className="chat-toggle-btn floating-chat-btn">
-                {isChatOpen ? '❌' : '💬 Ask AI'}
-              </button>
-              <button onClick={() => setIsTTSOpen(true)} className="chat-toggle-btn floating-chat-btn">
-                {isTTSOpen ? '❌' : '🔊 TTS'}
-              </button>
-              <button onClick={() => setIsTeleprompterOpen(true)} className="chat-toggle-btn floating-chat-btn">
-                {isTeleprompterOpen ? '❌' : '📜 Teleprompter'}
-              </button>
-              <button onClick={() => setIsPlantUMLOpen(true)} className="chat-toggle-btn floating-chat-btn">
-                {isPlantUMLOpen ? '❌' : '🧩 UML'}
-              </button>
-              <button onClick={() => setPodcastTTSOpen(true)} className="chat-toggle-btn floating-chat-btn">
-                {isPodcastTTSOpen ? '❌' : '🎙️ Podcast TTS'}
-              </button>
-              <button onClick={() => dispatch(actions.setIsJSGeneratorOpen(true))} className="chat-toggle-btn floating-chat-btn">
-                {useAppState().isJSGeneratorOpen ? '❌' : '💻 JS Generator'}
-              </button>
-            </>
-          )}
         </div>
 
         <div className="content">
@@ -129,10 +167,10 @@ function App() {
             </div>
             <GptPromptComponent
               isCollapsed={!isChatVisible}
-              isFullScreen={isChatFullscreen}
+              hidePrompt={!isPromptVisible}
               onClose={() => dispatch(actions.setIsChatOpen(false))}
               onToggleCollapse={() => setIsChatVisible((prev) => !prev)}
-              onToggleFullScreen={() => setIsChatFullscreen((prev) => !prev)}
+              onTogglePrompt={() => setIsPromptVisible((prev) => !prev)}
             />
           </div>
 

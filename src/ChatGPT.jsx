@@ -27,10 +27,10 @@ function useLocalStorageState(key, defaultValue) {
 
 export default function GptPromptComponent({
   isCollapsed = false,
-  isFullScreen = false,
+  hidePrompt = false,
   onClose = () => {},
   onToggleCollapse = () => {},
-  onToggleFullScreen = () => {},
+  onTogglePrompt = () => {},
 }) {
   const [messages, setMessages] = useLocalStorageState("messages", []);
   const [loading, setLoading] = useState(false);
@@ -197,35 +197,22 @@ export default function GptPromptComponent({
     <div>
       <style>{styles}</style>
       <div className="floating-controls">
-        <button className="btn btn-primary" onClick={onToggleFullScreen}>
-          {isFullScreen ? "Exit Fullscreen" : "Fullscreen"}
-        </button>
         <button className="btn" onClick={onToggleCollapse}>
-          {isCollapsed ? "Show Messages" : "Hide Messages"}
+          {isCollapsed ? "Show Chat" : "Hide Chat"}
         </button>
-        <button className="btn" onClick={onClose} style={{ color: "#fbbf24" }}>
-          Close Chat
+        <button className="btn" onClick={onTogglePrompt}>
+          {hidePrompt ? "Show Prompt" : "Hide Prompt"}
+        </button>
+        <button className="btn btn-primary" onClick={onClose}>
+          Close
         </button>
       </div>
 
-      <div
-        className={`gpt-shell ${isFullScreen ? "fullscreen" : ""}`}
-        style={{
-          position: isFullScreen ? "fixed" : "relative",
-          top: isFullScreen ? 0 : "auto",
-          left: isFullScreen ? 0 : "auto",
-          width: isFullScreen ? "100vw" : "100%",
-          height: isFullScreen ? "100vh" : "100%",
-          background: isFullScreen ? "#0b1220" : "transparent",
-          zIndex: isFullScreen ? 100000 : "auto",
-          overflow: "hidden",
-          padding: isFullScreen ? "70px 12px 12px 12px" : "0",
-        }}
-      >
-        <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem", height: isFullScreen ? "calc(100vh - 90px)" : "auto" }}>
+      <div className="gpt-shell">
+        <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
           {!isCollapsed && (
-            <div className="gpt-card" style={{ flex: isFullScreen ? "1 1 50%" : "0 0 auto" }}>
-              <div className="chat-window" ref={messagesEndRef} style={{ height: isFullScreen ? "100%" : "auto" }}>
+            <div className="gpt-card" style={{ flex: "1 1 auto" }}>
+              <div className="chat-window" ref={messagesEndRef} style={{ maxHeight: hidePrompt ? "70vh" : "60vh" }}>
                 {messages.map((m, i) => (
                   <div key={i} style={{ textAlign: m.sender === "user" ? "right" : "left", marginBottom: "0.75rem" }}>
                     <div className={`bubble ${m.sender === "user" ? "user" : "bot"}`}>
@@ -246,7 +233,8 @@ export default function GptPromptComponent({
             </div>
           )}
 
-          <div className="gpt-card" style={{ flex: isFullScreen ? "0 0 auto" : "unset" }}>
+          {!hidePrompt && (
+          <div className="gpt-card">
             <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", alignItems: "center", marginBottom: "0.5rem" }}>
               <select
                 value={selectedGroup}
@@ -324,6 +312,7 @@ export default function GptPromptComponent({
               </div>
             )}
           </div>
+          )}
         </div>
       </div>
     </div>

@@ -18,6 +18,7 @@ import { useFlyout } from "../context/FlyoutContext";
 import { FcGoogle } from "react-icons/fc";
 import { SiWikipedia } from "react-icons/si";
 import { GiGraduateCap } from "react-icons/gi";
+import { FaRedditAlien } from "react-icons/fa";
 import { useState } from "react";
 
 function removeMarkdown(text) {
@@ -173,6 +174,16 @@ export default function ActionButtons({ promptText, limitButtons = false }) {
           `https://www.google.com/search?tbm=isch&q=${query}`,
           "_blank"
         );
+      },
+    },
+    {
+      icon: <FaRedditAlien />,
+      title: "Ask Reddit",
+      color: "var(--reddit-orange)",
+      onClick: (e) => {
+        e.stopPropagation();
+        const query = encodeURIComponent(cleanText);
+        window.open(`https://www.reddit.com/search/?q=${query}`, "_blank");
       },
     },
     {
