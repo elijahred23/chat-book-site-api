@@ -254,147 +254,182 @@ export default function YouTubeTranscript() {
 
     // Internal styles scoped to this component. These override any external styles and ensure good mobile layout.
     const styles = `
-        .yt-container {
-            max-width: 640px;
-            margin: 0 auto;
-            padding: 1rem;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            font-family: Arial, sans-serif;
-        }
-        .tab-bar {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            border-bottom: 1px solid #ccc;
-            padding-bottom: 0.5rem;
-        }
+      .yt-container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+        background: radial-gradient(circle at 10% 20%, #ecfeff 0, #ffffff 25%), radial-gradient(circle at 90% 10%, #f0f4ff 0, #ffffff 25%);
+        border-radius: 16px;
+        box-shadow: 0 12px 36px rgba(15, 23, 42, 0.1);
+      }
+      .tab-bar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        padding: 0.5rem;
+        border-radius: 12px;
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+      }
+      .tab-btn {
+        flex: 1 1 120px;
+        padding: 0.6rem 0.85rem;
+        border: 1px solid #e2e8f0;
+        border-radius: 10px;
+        background: #ffffff;
+        cursor: pointer;
+        text-align: center;
+        font-size: 0.95rem;
+        color: #0f172a;
+        transition: all 0.2s ease;
+      }
+      .tab-btn.active {
+        background: linear-gradient(135deg, #2563eb, #60a5fa);
+        color: #fff;
+        border-color: #2563eb;
+        box-shadow: 0 6px 18px rgba(37, 99, 235, 0.25);
+      }
+      .btn {
+        padding: 0.55rem 0.9rem;
+        border: 1px solid #e2e8f0;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 0.95rem;
+        transition: all 0.2s ease;
+        background: #fff;
+        color: #0f172a;
+      }
+      .primary-btn {
+        background: linear-gradient(135deg, #2563eb, #60a5fa);
+        color: #fff;
+        border: none;
+        box-shadow: 0 10px 25px rgba(37, 99, 235, 0.25);
+      }
+      .secondary-btn {
+        background: #f8fafc;
+        color: #0f172a;
+      }
+      .primary-btn:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 12px 28px rgba(37, 99, 235, 0.3);
+      }
+      .secondary-btn:hover {
+        background: #e2e8f0;
+      }
+      .input-group,
+      .button-group,
+      .prompt-suggestions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+      .input {
+        flex: 1 1 auto;
+        padding: 0.7rem;
+        border: 1px solid #e2e8f0;
+        border-radius: 10px;
+        font-size: 0.95rem;
+        background: #fff;
+        color: #0f172a;
+      }
+      .input:focus,
+      .textarea:focus {
+        outline: 2px solid #bfdbfe;
+        border-color: #2563eb;
+      }
+      .textarea {
+        width: 100%;
+        min-height: 7rem;
+        padding: 0.7rem;
+        border: 1px solid #e2e8f0;
+        border-radius: 10px;
+        font-size: 0.95rem;
+        resize: vertical;
+        background: #fff;
+      }
+      .suggestion-btn {
+        padding: 0.45rem 0.75rem;
+        border: 1px solid #e2e8f0;
+        border-radius: 10px;
+        background: #f8fafc;
+        cursor: pointer;
+        font-size: 0.9rem;
+        color: #0f172a;
+      }
+      .suggestion-btn:hover {
+        background: #e2e8f0;
+      }
+      .scrollable-card {
+        max-height: 320px;
+        overflow-y: auto;
+        padding: 0.75rem;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        background: #f8fafc;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
+      }
+      .chunk {
+        margin-bottom: 0.85rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.35rem;
+        padding: 0.5rem;
+        border-radius: 10px;
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+      }
+      .progress-container {
+        margin-top: 0.5rem;
+      }
+      .progress-bar-wrapper {
+        width: 100%;
+        height: 12px;
+        background: #e2e8f0;
+        border-radius: 999px;
+        overflow: hidden;
+      }
+      .progress-bar {
+        height: 100%;
+        background: linear-gradient(135deg, #22c55e, #4ade80);
+        transition: width 0.4s ease-in-out;
+      }
+      .retry-box {
+        margin-top: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 0.6rem;
+        border: 1px solid #e2e8f0;
+        border-radius: 10px;
+        background: #f8fafc;
+      }
+      .iframe-container {
+        background: #0f172a;
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid #1e293b;
+        box-shadow: 0 10px 30px rgba(15,23,42,0.35);
+      }
+      @media (max-width: 480px) {
         .tab-btn {
-            flex: 1 1 auto;
-            padding: 0.5rem 0.75rem;
-            border: none;
-            border-radius: 4px;
-            background: #f0f0f0;
-            cursor: pointer;
-            text-align: center;
-            font-size: 0.9rem;
-        }
-        .tab-btn.active {
-            background: #4a7afe;
-            color: #fff;
-            font-weight: bold;
-        }
-        .btn {
-            padding: 0.5rem 0.75rem;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 0.9rem;
-        }
-        .primary-btn {
-            background: #4a7afe;
-            color: #fff;
-        }
-        .secondary-btn {
-            background: #e0e0e0;
-            color: #333;
-        }
-        .primary-btn:hover {
-            background: #3b64d8;
-        }
-        .secondary-btn:hover {
-            background: #d0d0d0;
+          flex-basis: 100%;
         }
         .input-group,
         .button-group,
         .prompt-suggestions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
+          flex-direction: column;
         }
-        .input {
-            flex: 1 1 auto;
-            padding: 0.5rem;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 0.9rem;
+        .btn,
+        .primary-btn,
+        .secondary-btn,
+        .tab-btn {
+          width: 100%;
         }
-        .textarea {
-            width: 100%;
-            min-height: 6rem;
-            padding: 0.5rem;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 0.9rem;
-            resize: vertical;
-        }
-        .suggestion-btn {
-            padding: 0.4rem 0.6rem;
-            border: none;
-            border-radius: 4px;
-            background: #f7f7f7;
-            cursor: pointer;
-            font-size: 0.85rem;
-        }
-        .suggestion-btn:hover {
-            background: #e0e0e0;
-        }
-        .scrollable-card {
-            max-height: 300px;
-            overflow-y: auto;
-            padding: 0.5rem;
-            border: 1px solid #eee;
-            border-radius: 4px;
-            background: #f9f9f9;
-        }
-        .chunk {
-            margin-bottom: 0.75rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.25rem;
-        }
-        .progress-container {
-            margin-top: 0.5rem;
-        }
-        .progress-bar-wrapper {
-            width: 100%;
-            height: 10px;
-            background: #ddd;
-            border-radius: 5px;
-            overflow: hidden;
-        }
-        .progress-bar {
-            height: 100%;
-            background: #4caf50;
-            transition: width 0.4s ease-in-out;
-        }
-        .retry-box {
-            margin-top: 0.5rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-            padding: 0.5rem;
-            border: 1px solid #eee;
-            border-radius: 4px;
-            background: #f9f9f9;
-        }
-        @media (max-width: 480px) {
-            .tab-btn {
-                flex-basis: 100%;
-            }
-            .input-group,
-            .button-group,
-            .prompt-suggestions {
-                flex-direction: column;
-            }
-            .btn,
-            .primary-btn,
-            .secondary-btn,
-            .tab-btn {
-                width: 100%;
-            }
-        }
+      }
     `;
 
     return (
@@ -431,11 +466,12 @@ export default function YouTubeTranscript() {
                         width: '320px',
                         height: '180px',
                         zIndex: 1000,
-                        boxShadow: '0 0 10px rgba(0,0,0,0.3)'
+                        boxShadow: '0 12px 30px rgba(0,0,0,0.35)'
                     } : {
                         width: '100%',
-                        height: '200px',
-                        marginBottom: '1rem'
+                        height: '220px',
+                        marginBottom: '1rem',
+                        boxShadow: '0 12px 30px rgba(0,0,0,0.25)'
                     }}
                 >
                     {validYoutubeUrl && (
