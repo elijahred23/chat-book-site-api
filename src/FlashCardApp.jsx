@@ -508,6 +508,15 @@ export default function FlashCardApp() {
   const [blitzSelected, setBlitzSelected] = useState(null);
   const [blitzRunning, setBlitzRunning] = useState(false);
   const [blitzComplete, setBlitzComplete] = useState(false);
+  const [typingOrder, setTypingOrder] = useState([]);
+  const [typingIndex, setTypingIndex] = useState(0);
+  const [typingInput, setTypingInput] = useState("");
+  const [typingScore, setTypingScore] = useState(0);
+  const [typingTimeLeft, setTypingTimeLeft] = useState(60);
+  const [typingRunning, setTypingRunning] = useState(false);
+  const [typingComplete, setTypingComplete] = useState(false);
+  const [typingCombo, setTypingCombo] = useState(0);
+  const [typingBestCombo, setTypingBestCombo] = useState(0);
 
   const resetSurvival = () => {
     const order = shuffleArray(cards.map((_, i) => i));
@@ -566,6 +575,11 @@ export default function FlashCardApp() {
   }, [cards]);
 
   useEffect(() => {
+    setTypingOrder(shuffleArray(cards.map((_, i) => i)));
+    setTypingIndex(0);
+  }, [cards]);
+
+  useEffect(() => {
     if (mode !== "blitz") {
       setBlitzRunning(false);
     }
@@ -614,6 +628,64 @@ export default function FlashCardApp() {
     }, 400);
   };
 
+  const resetTypingGame = () => {
+    if (!cards.length) return;
+    setTypingOrder(shuffleArray(cards.map((_, i) => i)));
+    setTypingIndex(0);
+    setTypingInput("");
+    setTypingScore(0);
+    setTypingTimeLeft(60);
+    setTypingRunning(true);
+    setTypingComplete(false);
+    setTypingCombo(0);
+    setTypingBestCombo(0);
+  };
+
+  useEffect(() => {
+    if (mode !== "typing") {
+      setTypingRunning(false);
+      return;
+    }
+    if (!typingRunning || typingComplete) return;
+    const timer = setInterval(() => {
+      setTypingTimeLeft((t) => {
+        if (t <= 1) {
+          setTypingRunning(false);
+          setTypingComplete(true);
+          return 0;
+        }
+        return t - 1;
+      });
+    }, 1000);
+    return () => clearInterval(timer);
+  }, [mode, typingRunning, typingComplete]);
+
+  const handleTypingSubmit = () => {
+    if (!typingRunning || typingComplete) return;
+    const cardIdx = typingOrder[typingIndex];
+    const expected = cards[cardIdx]?.answer?.trim().toLowerCase() || "";
+    const user = typingInput.trim().toLowerCase();
+    const isCorrect = expected && user === expected;
+    if (isCorrect) {
+      setTypingScore((s) => s + 10);
+      setTypingCombo((c) => {
+        const next = c + 1;
+        setTypingBestCombo((b) => Math.max(b, next));
+        return next;
+      });
+    } else {
+      setTypingCombo(0);
+    }
+    setTypingInput("");
+    const atEnd = typingIndex + 1 >= typingOrder.length;
+    if (atEnd) {
+      setTypingComplete(true);
+      setTypingRunning(false);
+    } else {
+      setTypingIndex((idx) => idx + 1);
+    }
+  };
+
   const renderNavigation = () => {
     const navContainerStyle = {
       marginBottom: "1rem",
@@ -631,6 +703,7 @@ export default function FlashCardApp() {
           { key: "recall", label: "Recall" },
       { key: "memory", label: "Memory Flip" },
       { key: "survival", label: "Survival" },
+      { key: "typing", label: "Typing" },
       { key: "blitz", label: "Blitz" },
       { key: "table", label: "Table" },
     ].map(({ key, label }) => (
@@ -956,6 +1029,18 @@ export default function FlashCardApp() {
     blitzComplete,
     resetBlitz,
     handleSelectBlitzOption,
+    typingOrder,
+    typingIndex,
+    typingInput,
+    typingScore,
+    typingTimeLeft,
+    typingRunning,
+    typingComplete,
+    typingCombo,
+    typingBestCombo,
+    resetTypingGame,
+    handleTypingSubmit,
+    setTypingInput,
   };
 
   return (
@@ -1040,6 +1125,18 @@ export default function FlashCardApp() {
           blitzComplete={blitzComplete}
           onStartBlitz={resetBlitz}
           onSelectBlitzOption={handleSelectBlitzOption}
+          typingOrder={typingOrder}
+          typingIndex={typingIndex}
+          typingInput={typingInput}
+          typingScore={typingScore}
+          typingTimeLeft={typingTimeLeft}
+          typingRunning={typingRunning}
+          typingComplete={typingComplete}
+          typingCombo={typingCombo}
+          typingBestCombo={typingBestCombo}
+          onStartTyping={resetTypingGame}
+          onTypingInput={setTypingInput}
+          onSubmitTyping={handleTypingSubmit}
         />
       </div>
     </FlashCardContext.Provider>

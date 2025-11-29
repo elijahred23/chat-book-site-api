@@ -761,6 +761,133 @@ function BlitzMode({
   );
 }
 
+function TypingMode({
+  cards,
+  typingOrder,
+  typingIndex,
+  typingInput,
+  typingScore,
+  typingTimeLeft,
+  typingRunning,
+  typingComplete,
+  typingCombo,
+  typingBestCombo,
+  onStartTyping,
+  onTypingInput,
+  onSubmitTyping,
+  COLORS,
+  isMobile,
+}) {
+  if (!cards.length) return <p>No cards available for typing mode.</p>;
+  if (!typingRunning && !typingComplete) {
+    return (
+      <div style={{ textAlign: "center" }}>
+        <h3>Typing Sprint</h3>
+        <p style={{ marginBottom: "0.5rem" }}>Type the answers as fast as you can. Combos boost your score.</p>
+        <button
+          onClick={onStartTyping}
+          style={{
+            padding: "0.75rem 1.25rem",
+            backgroundColor: COLORS.buttonBg,
+            border: `1px solid ${COLORS.border}`,
+            borderRadius: "6px",
+            color: COLORS.text,
+            cursor: "pointer",
+            width: isMobile ? "100%" : "auto",
+          }}
+        >
+          Start Typing
+        </button>
+      </div>
+    );
+  }
+  if (!typingOrder.length || typeof typingOrder[typingIndex] !== "number") {
+    return <p>No cards available for typing mode.</p>;
+  }
+  const cardIdx = typingOrder[typingIndex];
+  const card = cards[cardIdx];
+  if (typingComplete) {
+    return (
+      <div style={{ textAlign: "center" }}>
+        <h3>Time!</h3>
+        <p>Score: {typingScore}</p>
+        <p>Best combo: {typingBestCombo}</p>
+        <button
+          onClick={onStartTyping}
+          style={{
+            padding: "0.75rem 1.25rem",
+            backgroundColor: COLORS.buttonBg,
+            border: `1px solid ${COLORS.border}`,
+            borderRadius: "6px",
+            color: COLORS.text,
+            cursor: "pointer",
+            width: isMobile ? "100%" : "auto",
+          }}
+        >
+          Play Again
+        </button>
+      </div>
+    );
+  }
+  return (
+    <div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          gap: "0.5rem",
+          flexWrap: "wrap",
+          marginBottom: "0.5rem",
+        }}
+      >
+        <span>Time: {typingTimeLeft}s</span>
+        <span>Score: {typingScore}</span>
+        <span>Combo: {typingCombo}</span>
+        <span>Best: {typingBestCombo}</span>
+      </div>
+      <p style={{ marginBottom: "0.5rem" }}>Question: {card.question}</p>
+      <input
+        type="text"
+        value={typingInput}
+        onChange={(e) => onTypingInput(e.target.value)}
+        onKeyDown={(e) => {
+          if (e.key === "Enter") {
+            onSubmitTyping();
+          }
+        }}
+        placeholder="Type the answer and hit Enter"
+        style={{
+          width: "100%",
+          padding: "0.75rem",
+          backgroundColor: COLORS.buttonBg,
+          border: `1px solid ${COLORS.border}`,
+          borderRadius: "6px",
+          color: COLORS.text,
+        }}
+      />
+      <div style={{ marginTop: "0.5rem", display: "flex", gap: "0.5rem" }}>
+        <button
+          onClick={onSubmitTyping}
+          style={{
+            padding: "0.5rem 1rem",
+            backgroundColor: COLORS.buttonBg,
+            border: `1px solid ${COLORS.border}`,
+            borderRadius: "4px",
+            color: COLORS.text,
+            cursor: "pointer",
+            width: isMobile ? "100%" : "auto",
+          }}
+        >
+          Submit
+        </button>
+        <span style={{ color: COLORS.primary, fontWeight: 600 }}>
+          {typingCombo >= 3 ? `🔥 Combo x${typingCombo}!` : typingCombo > 0 ? `Streak ${typingCombo}` : "Warm up!"}
+        </span>
+      </div>
+    </div>
+  );
+}
+
 export default function CurrentModeView({
   mode,
   cards,
@@ -824,6 +951,18 @@ export default function CurrentModeView({
   blitzComplete,
   onStartBlitz,
   onSelectBlitzOption,
+  typingOrder,
+  typingIndex,
+  typingInput,
+  typingScore,
+  typingTimeLeft,
+  typingRunning,
+  typingComplete,
+  typingCombo,
+  typingBestCombo,
+  onStartTyping,
+  onTypingInput,
+  onSubmitTyping,
 }) {
   switch (mode) {
     case "study":
@@ -835,6 +974,26 @@ export default function CurrentModeView({
           onPrev={onPrevStudy}
           onNext={onNextStudy}
           onToggleAnswer={onToggleAnswer}
+          COLORS={COLORS}
+          isMobile={isMobile}
+        />
+      );
+    case "typing":
+      return (
+        <TypingMode
+          cards={cards}
+          typingOrder={typingOrder}
+          typingIndex={typingIndex}
+          typingInput={typingInput}
+          typingScore={typingScore}
+          typingTimeLeft={typingTimeLeft}
+          typingRunning={typingRunning}
+          typingComplete={typingComplete}
+          typingCombo={typingCombo}
+          typingBestCombo={typingBestCombo}
+          onStartTyping={onStartTyping}
+          onTypingInput={onTypingInput}
+          onSubmitTyping={onSubmitTyping}
           COLORS={COLORS}
           isMobile={isMobile}
         />
