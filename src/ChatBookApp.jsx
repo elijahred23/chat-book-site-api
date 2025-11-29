@@ -39,6 +39,11 @@ const getValuesInLocalStorage = () => {
 }
 
 const promptSuggestions = [
+    "Build a study guide for algorithms",
+    "Outline a workshop on AI safety",
+    "Draft a product brief for a mobile app",
+    "Summarize a research paper",
+    "Create a lesson plan for React basics",
 ];
 
 export default function ChatBookApp() {
@@ -66,51 +71,54 @@ export default function ChatBookApp() {
     const MODE_CONFIGS = useMemo(() => ({
         steps: {
             key: 'steps',
-            label: 'Step-by-Step Process',
-            getInitialInstruction: (steps, subject) => `Write a step-by-step process with ${steps} steps about ${subject}.`,
-            getExecutionInstruction: (currentStep, maxWords) => `Detail step ${currentStep} of the process in about ${maxWords} words.`,
+            label: 'Guided Steps',
+            getInitialInstruction: (steps, subject) => `Draft ${steps} clear, numbered steps to accomplish: ${subject}.`,
+            getExecutionInstruction: (currentStep, maxWords) => `Write step ${currentStep} with concise detail in ~${maxWords} words.`,
         },
-        splits: {
-            key: 'splits',
-            label: 'Split Paragraph',
-            getInitialInstruction: (sections, subject) => `Split the paragraph into ${sections} sections about ${subject}.`,
-            getExecutionInstruction: (currentSection, maxWords) => `Explain section ${currentSection} in detail, focusing on completeness in about ${maxWords} words.`,
+        outline: {
+            key: 'outline',
+            label: 'Crisp Outline',
+            getInitialInstruction: (sections, subject) => `Create an outline with ${sections} sections for: ${subject}.`,
+            getExecutionInstruction: (currentSection, maxWords) => `Expand section ${currentSection} with bullet points and a short paragraph (~${maxWords} words).`,
         },
         mind_map: {
             key: 'mind_map',
             label: 'Mind Map',
-            getInitialInstruction: (branches, subject) => `Create a mind map of ${branches} main branches for the topic '${subject}', with sub-branches under each if needed.`,
-            getExecutionInstruction: (currentBranch, maxWords) => `Expand on branch ${currentBranch} of the mind map. Add details to sub-branches as needed, aiming for about ${maxWords} words.`,
+            getInitialInstruction: (branches, subject) => `Create a mind map with ${branches} main branches for '${subject}'. Include sub-branches as needed.`,
+            getExecutionInstruction: (currentBranch, maxWords) => `Expand branch ${currentBranch} with sub-branches and notes (~${maxWords} words).`,
         },
         mind_map_key_points: {
             key: 'mind_map_key_points',
-            label: 'Detailed Mind Map with Explained Key Points',
-            
-            getInitialInstruction: (branches, subject) => 
-                `Create a detailed mind map on the topic: "${subject}". 
-                Include ${branches} main branches covering core aspects of the topic. 
-                For each main branch, add relevant sub-branches that represent major concepts, categories, or techniques. 
-                Each sub-branch should contain a list of key points or facts, 
-                and where applicable, include brief explanations, real-world examples, use cases, or code snippets to illustrate the concept.`,
-
-            getExecutionInstruction: (currentBranch, maxWords) => 
-                `Expand and elaborate on the branch "${currentBranch}" of the mind map. 
-                For each sub-branch, explain the meaning of each key point in simple terms. 
-                Include supporting details such as definitions, examples, analogies, or typical applications. 
-                Aim for at least ${maxWords} words, and exceed this limit if it improves clarity or completeness.`,
+            label: 'Mind Map + Examples',
+            getInitialInstruction: (branches, subject) =>
+                `Build a mind map on "${subject}" with ${branches} main branches. Add sub-branches, key points, and short examples or snippets where useful.`,
+            getExecutionInstruction: (currentBranch, maxWords) =>
+                `Elaborate on branch "${currentBranch}" with explained sub-points, analogies, and examples. Target ~${maxWords} words, exceed if clarity improves.`,
         },
         faq_generator: {
             key: 'faq_generator',
-            label: 'FAQ Generator',
-            getInitialInstruction: (numFAQs, subject) => `Generate a list of ${numFAQs} frequently asked questions (FAQs) about the topic '${subject}'. List only the questions, do not provide answers yet.`,
-            getExecutionInstruction: (questionNumber, maxWords, subject) => `Provide a comprehensive answer for question number ${questionNumber} from the previously generated list of FAQs about '${subject}'. Aim for approximately ${maxWords} words for this answer.`,
+            label: 'FAQ + Answers',
+            getInitialInstruction: (numFAQs, subject) => `List ${numFAQs} frequently asked questions about '${subject}' (questions only).`,
+            getExecutionInstruction: (questionNumber, maxWords, subject) => `Answer FAQ #${questionNumber} about '${subject}' in ~${maxWords} words with a helpful tone.`,
         },
         code_generator: {
             key: 'code_generator',
-            label: 'Code Generator',
-            getInitialInstruction: (numberOfComponents, subject) => `Generate a list of ${numberOfComponents} number of programming components for creating an application for '${subject}'`,
-            getExecutionInstruction: (questionNumber, maxWords, subject) => `Write code to implement logic for component number ${questionNumber} about application subject '${subject}'. Aim for approximately ${maxWords} words for this answer.`,
-        }
+            label: 'Component Blueprint',
+            getInitialInstruction: (numberOfComponents, subject) => `List ${numberOfComponents} components or modules needed to build '${subject}'.`,
+            getExecutionInstruction: (componentNumber, maxWords, subject) => `Write code or pseudocode for component #${componentNumber} of '${subject}' (~${maxWords} words).`,
+        },
+        study_guide: {
+            key: 'study_guide',
+            label: 'Study Guide',
+            getInitialInstruction: (sections, subject) => `Create a ${sections}-section study guide for '${subject}' with objectives and key facts.`,
+            getExecutionInstruction: (sectionNumber, maxWords, subject) => `Write section ${sectionNumber} of the study guide for '${subject}', include tips and examples (~${maxWords} words).`,
+        },
+        checklist: {
+            key: 'checklist',
+            label: 'Checklist',
+            getInitialInstruction: (items, subject) => `Create a checklist with ${items} items to accomplish '${subject}'.`,
+            getExecutionInstruction: (itemNumber, maxWords, subject) => `Expand checklist item ${itemNumber} for '${subject}' with a brief how-to (~${maxWords} words).`,
+        },
     }), []); 
 
     const modesForSelect = useMemo(() => Object.values(MODE_CONFIGS).map(config => ({
@@ -294,119 +302,230 @@ export default function ChatBookApp() {
         )
     }
 
+    const styles = `
+      .cb-shell {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+      }
+      .card {
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 16px;
+        padding: 1rem;
+        box-shadow: 0 10px 28px rgba(15,23,42,0.08);
+      }
+      .grid-2 {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 0.75rem;
+      }
+      .label {
+        display: block;
+        font-weight: 600;
+        color: #0f172a;
+        margin-bottom: 0.35rem;
+      }
+      .input,
+      .select {
+        width: 100%;
+        padding: 0.75rem;
+        border: 1px solid #e2e8f0;
+        border-radius: 10px;
+        font-size: 0.95rem;
+        background: #fff;
+      }
+      .input:focus,
+      .select:focus,
+      textarea:focus {
+        outline: 2px solid #bfdbfe;
+        border-color: #2563eb;
+      }
+      .btn {
+        padding: 0.65rem 0.95rem;
+        border-radius: 10px;
+        border: 1px solid #e2e8f0;
+        background: #fff;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        font-weight: 600;
+        color: #0f172a;
+      }
+      .btn-primary {
+        background: linear-gradient(135deg, #2563eb, #60a5fa);
+        color: #fff;
+        border: none;
+        box-shadow: 0 10px 25px rgba(37,99,235,0.2);
+      }
+      .btn-ghost {
+        background: #f8fafc;
+      }
+      .pill {
+        display: inline-flex;
+        padding: 0.35rem 0.7rem;
+        border-radius: 999px;
+        background: #e2e8f0;
+        color: #0f172a;
+        font-size: 0.85rem;
+        margin-right: 0.35rem;
+        margin-bottom: 0.35rem;
+      }
+      .section-title {
+        margin: 0 0 0.5rem 0;
+        font-size: 1.05rem;
+        color: #0f172a;
+      }
+      @media (max-width: 520px) {
+        .cb-shell {
+          padding: 0.75rem;
+        }
+      }
+    `;
+
     return (
-        <div>
-            <h2>Chat Book App</h2>
-            <select value={mode} onChange={(e) => setMode(e.target.value)}>
-                {modesForSelect.map((modConfig) => (
-                    <option key={modConfig.value} value={modConfig.value}>{modConfig.label}</option>
-                ))}
-            </select>
-
-            <p>Initial Instruction &nbsp;
-                <input readOnly value={initialInstruction} disabled />
-            </p>
-
-            <div className="mb-2 flex flex-wrap gap-2">
-                {promptSuggestions.map((s, i) => (
-                    <button
-                        key={i}
-                        className="bg-gray-200 px-2 py-1 rounded"
-                        onClick={() => setSubject(s)}
-                    >
-                        {s}
-                    </button>
-                ))}
-                <p>Subject &nbsp;
-                    <input
-                        disabled={loading}
-                        value={subject}
-                        onKeyDown={e => e.key === 'Enter' && subject && !executionStarted && executeInstructions()}
-                        onChange={e => setSubject(e.target.value)}
-                    />
+        <div className="cb-shell">
+            <style>{styles}</style>
+            <div className="card" style={{ background: "radial-gradient(circle at 10% 20%, #ecfeff 0, #ffffff 25%)", borderColor: "#bfdbfe" }}>
+                <h2 style={{ margin: 0, color: "#0f172a" }}>Chat Book</h2>
+                <p style={{ marginTop: "0.35rem", color: "#475569" }}>
+                    Generate structured content with guided modes. Great for study guides, outlines, FAQs, and code blueprints.
                 </p>
-
-                <ClipLoader color="blue" loading={loading} />
-
-                {!executionStarted && (
-                    <p>
+                <div className="grid-2">
+                    <div>
+                        <label className="label">Mode</label>
+                        <select className="select" value={mode} onChange={(e) => setMode(e.target.value)}>
+                            {modesForSelect.map((modConfig) => (
+                                <option key={modConfig.value} value={modConfig.value}>{modConfig.label}</option>
+                            ))}
+                        </select>
+                    </div>
+                    <div>
+                        <label className="label">Topic</label>
+                        <input
+                            className="input"
+                            disabled={loading}
+                            value={subject}
+                            placeholder="e.g. Intro to GraphQL"
+                            onKeyDown={e => e.key === 'Enter' && subject && !executionStarted && executeInstructions()}
+                            onChange={e => setSubject(e.target.value)}
+                        />
+                    </div>
+                </div>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem", marginTop: "0.35rem" }}>
+                    {promptSuggestions.map((s, i) => (
                         <button
-                            className={subject === '' || !canExecuteKey ? 'disabled' : ''}
-                            disabled={subject === '' || !canExecuteKey}
-                            onClick={executeInstructions}
+                            key={i}
+                            className="btn btn-ghost"
+                            onClick={() => setSubject(s)}
                         >
-                            Execute
+                            {s}
                         </button>
-                        <PasteButton setPasteText={setSubject} />
-                        <button onClick={clear}>Clear</button>
-                    </p>
-                )}
-
+                    ))}
+                </div>
+                <div className="grid-2" style={{ marginTop: "0.75rem" }}>
+                    <div>
+                        <label className="label">Steps / Sections</label>
+                        <input
+                            className="input"
+                            type="number"
+                            min="1"
+                            max="12"
+                            step="1"
+                            disabled={loading}
+                            onChange={e => setNumSteps(Number(e.target.value))}
+                            value={numSteps}
+                        />
+                    </div>
+                    <div>
+                        <label className="label">Target Words per Step</label>
+                        <input
+                            className="input"
+                            type="number"
+                            step="100"
+                            min="100"
+                            max="2000"
+                            disabled={loading}
+                            onChange={e => setMaxWords(Number(e.target.value))}
+                            value={maxWords}
+                        />
+                    </div>
+                </div>
+                <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", marginTop: "0.75rem" }}>
+                    <button
+                        className="btn btn-primary"
+                        disabled={subject === '' || !canExecuteKey || loading}
+                        onClick={executeInstructions}
+                    >
+                        {loading ? <ClipLoader size={14} color="#fff" /> : "Generate"}
+                    </button>
+                    <PasteButton setPasteText={setSubject} className="btn btn-ghost" />
+                    <button className="btn btn-ghost" onClick={clear}>Clear</button>
+                </div>
+                <div style={{ marginTop: "0.75rem" }}>
+                    <label className="label">Initial Instruction</label>
+                    <textarea className="input" style={{ minHeight: "80px" }} readOnly value={initialInstruction} />
+                </div>
             </div>
 
-            <ClipLoader color="blue" loading={loadingPDF} />
-            {!loadingPDF && initialInstructionResponse !== "" && (
-                <>
-                    <button onClick={generatePDF}>Generate PDF</button>
-                    <CopyButton buttonText="Copy all responses" text={allInstructionResponsesText} />
-                    <ActionButtons promptText={allInstructionResponsesText} />
-                </>
-            )}
+            <div className="card">
+                <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", alignItems: "center", marginBottom: "0.5rem" }}>
+                    <span className="pill">Steps: {numSteps}</span>
+                    <span className="pill">Words/step: {maxWords}</span>
+                    <span className="pill">Mode: {modesForSelect.find(m => m.value === mode)?.label}</span>
+                    <ProgressBar progress={progress} />
+                    <ClipLoader color="#2563eb" loading={loading} size={16} />
+                </div>
 
-            {(executionStarted || initialInstructionResponse != "") && (
-                <>
+                {!loadingPDF && initialInstructionResponse !== "" && (
+                    <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", marginBottom: "0.5rem" }}>
+                        <button className="btn btn-primary" onClick={generatePDF}>Export PDF</button>
+                        <CopyButton buttonText="Copy all" text={allInstructionResponsesText} className="btn btn-ghost" />
+                        <ActionButtons promptText={allInstructionResponsesText} />
+                    </div>
+                )}
+
+                {(executionStarted || initialInstructionResponse !== "") && (
                     <AutoScroller activeIndex={subsequentInstructionResponses.length}>
-                        <ProgressBar progress={progress} />
-
-                        <h3>Instructions:</h3>
-                        <div style={{ border: initialInstructionResponse ? "1px dotted blue" : "none", padding: "10px" }}>
+                        <h3 className="section-title">Initial Output</h3>
+                        <div className="card" style={{ borderColor: "#bfdbfe", background: "#f8fafc" }}>
                             <ReactMarkdown className="markdown-body">{initialInstructionResponse}</ReactMarkdown>
-                            <AskAIButton text={initialInstructionResponse} />
-                            <CopyButton text={initialInstructionResponse} />
+                            <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", marginTop: "0.5rem" }}>
+                                <ActionButtons promptText={initialInstructionResponse} />
+                                <CopyButton text={initialInstructionResponse} />
+                            </div>
                         </div>
 
-                        <h3>Executed Instructions:</h3>
-                        {subsequentInstructionResponses.map((res, idx) => (
-                            <div key={idx} style={{ border: "1px dotted red", padding: "10px" }}>
-                                <ReactMarkdown className="markdown-body">{res}</ReactMarkdown>
-                                <AskAIButton text={res} />
-                                <CopyButton text={res} />
-                            </div>
-                        ))}
+                        <h3 className="section-title" style={{ marginTop: "1rem" }}>Follow-up Steps</h3>
+                        <div className="grid-2">
+                            {subsequentInstructionResponses.map((res, idx) => (
+                                <div key={idx} className="card" style={{ background: "#fff" }}>
+                                    <div style={{ fontWeight: 600, marginBottom: "0.35rem" }}>Step {idx + 1}</div>
+                                    <ReactMarkdown className="markdown-body">{res}</ReactMarkdown>
+                                    <div style={{ display: "flex", gap: "0.35rem", flexWrap: "wrap", marginTop: "0.5rem" }}>
+                                        <ActionButtons promptText={res} />
+                                        <CopyButton text={res} />
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
                     </AutoScroller>
+                )}
+            </div>
 
-                </>
+            {subsequentInstructions.length > 0 && (
+                <div className="card">
+                    <h3 className="section-title">Planned Steps</h3>
+                    <div className="grid-2">
+                        {subsequentInstructions.map((instruction, index) => (
+                            <textarea key={index} className="input" readOnly value={instruction} style={{ minHeight: "90px" }} />
+                        ))}
+                    </div>
+                </div>
             )}
-
-            <p>Number of Steps &nbsp;
-                <input
-                    type="number"
-                    min="1"
-                    max="10"
-                    step="1"
-                    disabled={loading}
-                    onChange={e => setNumSteps(Number(e.target.value))}
-                    value={numSteps}
-                />
-            </p>
-
-            <p>Max Words &nbsp;
-                <input
-                    type="number"
-                    step="100"
-                    min="100"
-                    max="2000"
-                    disabled={loading}
-                    onChange={e => setMaxWords(Number(e.target.value))}
-                    value={maxWords}
-                />
-            </p>
-
-            {subsequentInstructions.map((instruction, index) => (
-                <p key={index}>
-                    <input disabled={loading} value={instruction} readOnly />
-                </p>
-            ))}
         </div>
     );
 }
