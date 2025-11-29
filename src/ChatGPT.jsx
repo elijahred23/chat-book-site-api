@@ -169,23 +169,38 @@ export default function GptPromptComponent({
       right: 14px;
       z-index: 100001;
       display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
+      gap: 0.45rem;
       background: rgba(15,23,42,0.9);
-      padding: 0.6rem 0.8rem;
-      border-radius: 14px;
+      padding: 0.4rem 0.5rem;
+      border-radius: 12px;
       box-shadow: 0 16px 40px rgba(0,0,0,0.25);
       backdrop-filter: blur(12px);
+    }
+    .pill-btn {
+      border: none;
+      border-radius: 999px;
+      padding: 7px 10px;
+      background: linear-gradient(135deg, #2563eb, #22d3ee);
+      color: #0b1220;
+      font-weight: 700;
+      font-size: 0.85rem;
+      cursor: pointer;
+      box-shadow: 0 8px 18px rgba(37,99,235,0.35);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
     }
     @media (max-width: 540px) {
       .floating-controls {
         left: 8px;
-        right: 8px;
+        right: auto;
         top: auto;
-        bottom: 8px;
+        bottom: 10px;
         transform: none;
-        width: auto;
-        justify-content: flex-start;
+      }
+      .pill-btn {
+        padding: 6px 9px;
+        font-size: 0.8rem;
       }
       .chat-window {
         max-height: 50vh;
@@ -196,15 +211,12 @@ export default function GptPromptComponent({
   return (
     <div>
       <style>{styles}</style>
-      <div className="floating-controls">
-        <button className="btn" onClick={onToggleCollapse}>
-          {isCollapsed ? "Show Chat" : "Hide Chat"}
+      <div className="floating-controls compact">
+        <button className="pill-btn" onClick={onToggleCollapse}>
+          {isCollapsed ? "💬 Show" : "💬 Hide"}
         </button>
-        <button className="btn" onClick={onTogglePrompt}>
-          {hidePrompt ? "Show Prompt" : "Hide Prompt"}
-        </button>
-        <button className="btn btn-primary" onClick={onClose}>
-          Close
+        <button className="pill-btn" onClick={onTogglePrompt}>
+          {hidePrompt ? "⌨️ Prompt" : "⌨️ Hide"}
         </button>
       </div>
 
