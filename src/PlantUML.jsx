@@ -264,99 +264,179 @@ export default function PlantUMLViewer() {
     if (f) setUml(await f.text());
   };
 
+  const styles = `
+    .uml-shell {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+    }
+    .uml-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 1rem;
+      box-shadow: 0 10px 24px rgba(15,23,42,0.08);
+    }
+    .uml-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 0.75rem;
+    }
+    .uml-actions {
+      display: grid;
+      gap: 0.5rem;
+    }
+    .uml-btn {
+      padding: 0.65rem 0.9rem;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      background: #f8fafc;
+      color: #0f172a;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+    .uml-btn.primary {
+      background: linear-gradient(135deg, #2563eb, #60a5fa);
+      color: #fff;
+      border: none;
+      box-shadow: 0 10px 24px rgba(37,99,235,0.25);
+    }
+    .uml-btn.danger {
+      background: linear-gradient(135deg, #f97316, #ea580c);
+      color: #fff;
+      border: none;
+    }
+    .uml-input {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      background: #ffffff;
+      color: #0f172a;
+      font-size: 0.95rem;
+    }
+    .uml-select {
+      padding: 0.65rem;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      background: #fff;
+      width: 100%;
+    }
+    .uml-stage {
+      min-height: 50vh;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      background: #ffffff;
+      display: grid;
+      place-items: center;
+      padding: 1rem;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
+    }
+    @media (max-width: 768px) {
+      .uml-grid {
+        grid-template-columns: 1fr;
+      }
+      .uml-actions {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      }
+    }
+  `;
+
   return (
-    <div
-      className={`${darkMode ? "dark" : ""} p-4 bg-gray-50 dark:bg-slate-900 min-h-screen`}
-    >
-      <div className="mx-auto max-w-screen-lg">
-        <h2 className="text-2xl font-bold mb-4 text-center text-indigo-600 dark:text-indigo-400">
-          🌿 PlantUML Class Diagram Viewer
-        </h2>
-        <div className="flex flex-col space-y-2 sm:flex-row sm:space-y-0 sm:gap-2 mb-4">
-          <textarea
-            value={prompt}
-            onChange={(e) => setPrompt(e.target.value)}
-            onKeyDown={(e) => {
-              if (e.key === "Enter" && !e.shiftKey) {
-                e.preventDefault();
-                handleGenerateFromPrompt();
-              }
-            }}
-            placeholder="Describe the class diagram you want to see..."
-            rows={3}
-            className="flex-1 p-3 border rounded dark:bg-slate-800 w-full"
-          />
-          <div className="flex flex-col sm:flex-row gap-2 mt-2 sm:mt-0 w-full sm:w-auto">
-            <button
-              onClick={handlePromptPaste}
-              disabled={loading}
-              className="flex-1 sm:flex-none bg-purple-600 text-white px-3 py-2 rounded shadow"
-            >
-              Paste
-            </button>
-            <button
-              onClick={handleGenerateFromPrompt}
-              disabled={loading}
-              className="flex-1 sm:flex-none bg-blue-600 text-white px-3 py-2 rounded shadow flex items-center justify-center"
-            >
-              {loading && (
-                <span className="animate-spin h-4 w-4 mr-2 border-2 border-white border-t-transparent rounded-full"></span>
-              )}
-              {loading ? "Generating..." : "Generate"}
-            </button>
-          </div>
+    <div className={`${darkMode ? "dark" : ""}`} style={{ background: darkMode ? "#0b1220" : "#f8fafc", minHeight: "100vh", padding: "0.75rem" }}>
+      <style>{styles}</style>
+      <div className="uml-shell">
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: "0.5rem", flexWrap: "wrap" }}>
+          <h2 style={{ margin: 0, color: darkMode ? "#e2e8f0" : "#0f172a" }}>🌿 PlantUML Class Diagram</h2>
+          <button
+            className="uml-btn"
+            onClick={() => setDarkMode((d) => !d)}
+          >
+            {darkMode ? "Light Mode" : "Dark Mode"}
+          </button>
         </div>
-        {error && <div className="text-red-600 mb-2">{error}</div>}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-          <textarea
-            value={uml}
-            onChange={(e) => setUml(e.target.value)}
-            className="w-full h-40 p-3 rounded border dark:bg-slate-800"
-          />
-          <div className="flex flex-col gap-2">
-            <button onClick={handleCopy} className="bg-purple-600 text-white px-3 py-2 rounded shadow">
-              Copy UML
-            </button>
-            <button onClick={handlePaste} className="bg-pink-600 text-white px-3 py-2 rounded shadow">
-              Paste UML
-            </button>
-            <button onClick={renderDiagram} className="bg-green-600 text-white px-3 py-2 rounded shadow">
-              Render
-            </button>
-            <button onClick={() => downloadAs("png")} className="bg-red-600 text-white px-3 py-2 rounded shadow">
-              Download PNG
-            </button>
-            <button onClick={() => downloadAs("puml")} className="bg-yellow-600 text-white px-3 py-2 rounded shadow">
-              Download UML
-            </button>
-            <button onClick={openPngInNewTab} className="bg-indigo-600 text-white px-3 py-2 rounded shadow">
-              Open PNG in New Tab
-            </button>
-            <label className="bg-teal-600 text-white px-3 py-2 rounded shadow cursor-pointer text-center">
-              Upload UML
-              <input
-                type="file"
-                accept=".puml,.txt"
-                className="hidden"
-                onChange={handleFileUpload}
+
+        <div className="uml-card">
+          <div className="uml-grid">
+            <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+              <textarea
+                value={prompt}
+                onChange={(e) => setPrompt(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" && !e.shiftKey) {
+                    e.preventDefault();
+                    handleGenerateFromPrompt();
+                  }
+                }}
+                placeholder="Describe the class diagram you want to see..."
+                rows={4}
+                className="uml-input"
+                style={{ minHeight: "120px" }}
               />
-            </label>
-          </div>
-          <div className="text-sm opacity-80">
-            <p>
-              <b>Tip:</b> If you see "not DEFLATE", switch encoding to <i>zlib deflate (~1)</i>.
-            </p>
-            <p className="mt-2">Pinch to zoom & drag to pan the diagram.</p>
-            <p className="mt-2">
-              The “Generate” button will always produce a class diagram from your description.
-            </p>
+              <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
+                <button className="uml-btn" onClick={handlePromptPaste} disabled={loading}>Paste Prompt</button>
+                <button className="uml-btn primary" onClick={handleGenerateFromPrompt} disabled={loading}>
+                  {loading ? "Generating..." : "Generate Diagram"}
+                </button>
+              </div>
+              {error && <div style={{ color: "#dc2626" }}>{error}</div>}
+            </div>
+
+            <div className="uml-actions">
+              <label style={{ fontWeight: 600 }}>PlantUML Code</label>
+              <textarea
+                value={uml}
+                onChange={(e) => setUml(e.target.value)}
+                className="uml-input"
+                style={{ minHeight: "140px" }}
+              />
+              <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
+                <select value={format} onChange={(e) => setFormat(e.target.value)} className="uml-select">
+                  <option value="svg">SVG</option>
+                  <option value="png">PNG</option>
+                </select>
+                <select value={encoding} onChange={(e) => setEncoding(e.target.value)} className="uml-select">
+                  <option value="raw">Raw deflate</option>
+                  <option value="zlib">Zlib (~1)</option>
+                </select>
+              </div>
+              <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
+                <button onClick={handleCopy} className="uml-btn">Copy UML</button>
+                <button onClick={handlePaste} className="uml-btn">Paste UML</button>
+                <button onClick={renderDiagram} className="uml-btn primary">Render</button>
+              </div>
+              <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
+                <button onClick={() => downloadAs("png")} className="uml-btn">Download PNG</button>
+                <button onClick={() => downloadAs("puml")} className="uml-btn">Download .puml</button>
+                <button onClick={openPngInNewTab} className="uml-btn">Open PNG</button>
+              </div>
+              <label className="uml-btn" style={{ textAlign: "center", cursor: "pointer" }}>
+                Upload UML
+                <input
+                  type="file"
+                  accept=".puml,.txt"
+                  className="hidden"
+                  onChange={handleFileUpload}
+                />
+              </label>
+            </div>
           </div>
         </div>
-        <div
-          ref={stageRef}
-          className="min-h-[45vh] rounded border mt-6 grid place-items-center p-4 bg-white dark:bg-slate-800"
-        >
-          <p className="opacity-60">Paste, upload, or generate UML and click Render.</p>
+
+        <div className="uml-card">
+          <div style={{ fontWeight: 600, marginBottom: "0.5rem" }}>Diagram</div>
+          <div
+            ref={stageRef}
+            className="uml-stage"
+            style={{ background: darkMode ? "#0f172a" : "#ffffff", borderColor: darkMode ? "#1e293b" : "#e2e8f0" }}
+          >
+            <p style={{ opacity: 0.6, color: darkMode ? "#cbd5e1" : "#475569" }}>Paste, upload, or generate UML and click Render.</p>
+          </div>
         </div>
       </div>
     </div>
