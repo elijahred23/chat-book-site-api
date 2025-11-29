@@ -48,8 +48,34 @@ export default function JSConsoleGenerator() {
     setPrompt(jsGeneratorPrompt);
   }, [jsGeneratorPrompt]);
 
-  const buildStrictPrompt = (userTopic) =>
-    `Return ONLY one ${language} code block (no fences) that solves:\n"${userTopic}"\nMake it runnable and concise.`;
+  const buildStrictPrompt = (userTopic) => {
+    const entryByLang = {
+      java: "Main.java",
+      csharp: "Program.cs",
+      c: "main.c",
+      cpp: "main.cpp",
+      python: "main.py",
+      javascript: "index.js",
+      typescript: "main.ts",
+      go: "main.go",
+      ruby: "main.rb",
+      php: "index.php",
+      swift: "main.swift",
+      kotlin: "Main.kt",
+      rust: "main.rs",
+      bash: "main.sh",
+      sql: "main.sql",
+      html: "index.html",
+      lua: "main.lua",
+    };
+    const entry = entryByLang[language] || `main.${language}`;
+    return [
+      `Return ONLY the contents of a single file named ${entry}.`,
+      `The code must be runnable as-is for language ${language}.`,
+      `Do not include backticks, fences, or extra text.`,
+      `Topic: "${userTopic}"`,
+    ].join("\n");
+  };
 
   const prismLanguage = language === "html" ? "markup" : language;
 

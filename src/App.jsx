@@ -26,6 +26,7 @@ function App() {
   const [isChatVisible, setIsChatVisible] = useState(true);
   const [isPromptVisible, setIsPromptVisible] = useState(true);
   const [showFloatingBtns, setShowFloatingBtns] = useState(false);
+  const floatingRef = useRef(null);
   const dispatch = useAppDispatch();
   const { isChatOpen, isTeleprompterOpen, isTTSOpen, isPlantUMLOpen, isPodcastTTSOpen, isJSGeneratorOpen } = useAppState();
 
@@ -40,6 +41,21 @@ function App() {
     const savedText = localStorage.getItem('selectedText');
     if (savedText) dispatch(actions.setSelectedText(savedText));
   }, []);
+
+  useEffect(() => {
+    if (!showFloatingBtns) return;
+    const handleClickOutside = (e) => {
+      if (floatingRef.current && !floatingRef.current.contains(e.target)) {
+        setShowFloatingBtns(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("touchstart", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("touchstart", handleClickOutside);
+    };
+  }, [showFloatingBtns]);
 
   return (
     <>
@@ -115,7 +131,7 @@ function App() {
             }
           }
         `}</style>
-        <div className="fab-container">
+        <div className="fab-container" ref={floatingRef}>
           {showFloatingBtns && (
             <div className="fab-menu">
               <button onClick={()=>dispatch(actions.setIsChatOpen(true))} className="fab-btn">
