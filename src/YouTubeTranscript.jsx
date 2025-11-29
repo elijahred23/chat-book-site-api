@@ -685,6 +685,46 @@ export default function YouTubeTranscript() {
                         <>
                             <CopyButton text={promptResponsesText} buttonText="Copy All Responses" className="btn copy-btn" />
                             <ActionButtons promptText={promptResponsesText} />
+                            <div
+                                style={{
+                                    display: "flex",
+                                    flexWrap: "wrap",
+                                    gap: "10px",
+                                    marginTop: "10px",
+                                }}
+                            >
+                                {promptResponses.map((res, i) => {
+                                    const isError = res?.startsWith("Error:") || res?.includes("❌");
+                                    return (
+                                        <div
+                                            key={`status-${i}`}
+                                            style={{
+                                                border: "1px solid #e2e8f0",
+                                                borderRadius: "10px",
+                                                padding: "8px",
+                                                minWidth: "140px",
+                                                background: isError ? "#ffe2e2" : "#e0ffe2",
+                                            }}
+                                        >
+                                            <div style={{ fontWeight: 700, marginBottom: 6 }}>Part {i + 1}</div>
+                                            <div style={{ fontSize: "0.85rem", color: "#334155", marginBottom: 6 }}>
+                                                {isError ? "❌ Failed" : "✅ Success"}
+                                            </div>
+                                            <button
+                                                className="btn secondary-btn"
+                                                disabled={retryLoadingIndex === i}
+                                                onClick={() => {
+                                                    setRetryIndex(i);
+                                                    setRetryPromptText(prompt);
+                                                }}
+                                                style={{ width: "100%" }}
+                                            >
+                                                {retryLoadingIndex === i ? "Retrying..." : "Retry"}
+                                            </button>
+                                        </div>
+                                    );
+                                })}
+                            </div>
                             <AutoScroller activeIndex={0}>
                                 {promptResponses.map((res, i) => (
                                     <div key={i} data-index={i} style={{ padding: "1rem 0", borderBottom: "1px solid #ddd" }}>
