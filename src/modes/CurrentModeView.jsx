@@ -151,6 +151,7 @@ function QuizMode({ cards, quizIndex, quizComplete, quizScore, selectedOption, o
 function MatchMode({ cards, matchTerms, matchDefs, matchedPairs, selectedTerm, selectedDef, onSelectTerm, onSelectDef, onReset, COLORS, isMobile }) {
   if (cards.length === 0) return <p>No cards available for matching.</p>;
   const allMatched = matchedPairs.length === cards.length;
+  const palette = ["#e0f2fe", "#e8f5e9", "#fff7ed", "#f3e8ff", "#fef9c3", "#ffe4e6"];
   return (
     <div>
       {allMatched ? (
@@ -184,6 +185,7 @@ function MatchMode({ cards, matchTerms, matchDefs, matchedPairs, selectedTerm, s
             {matchTerms.map(({ idx, text }) => {
               const matched = matchedPairs.includes(idx);
               const selected = selectedTerm === idx;
+              const bg = matched ? COLORS.matchedBg : palette[idx % palette.length];
               return (
                 <div
                   key={"term-" + idx}
@@ -195,7 +197,7 @@ function MatchMode({ cards, matchTerms, matchDefs, matchedPairs, selectedTerm, s
                     padding: "0.5rem",
                     marginBottom: "0.25rem",
                     border: matched ? `1px solid ${COLORS.border}` : selected ? `2px solid ${COLORS.primary}` : `1px solid ${COLORS.border}`,
-                    backgroundColor: matched ? COLORS.matchedBg : selected ? COLORS.selectedBg : COLORS.buttonBg,
+                    backgroundColor: selected ? COLORS.selectedBg : bg,
                     borderRadius: "4px",
                     cursor: matched ? "default" : "pointer",
                     color: COLORS.text,
@@ -216,6 +218,7 @@ function MatchMode({ cards, matchTerms, matchDefs, matchedPairs, selectedTerm, s
             {matchDefs.map(({ idx, text }) => {
               const matched = matchedPairs.includes(idx);
               const selected = selectedDef === idx;
+              const bg = matched ? COLORS.matchedBg : palette[idx % palette.length];
               return (
                 <div
                   key={"def-" + idx}
@@ -227,7 +230,7 @@ function MatchMode({ cards, matchTerms, matchDefs, matchedPairs, selectedTerm, s
                     padding: "0.5rem",
                     marginBottom: "0.25rem",
                     border: matched ? `1px solid ${COLORS.border}` : selected ? `2px solid ${COLORS.primary}` : `1px solid ${COLORS.border}`,
-                    backgroundColor: matched ? COLORS.matchedBg : selected ? COLORS.selectedBg : COLORS.buttonBg,
+                    backgroundColor: selected ? COLORS.selectedBg : bg,
                     borderRadius: "4px",
                     cursor: matched ? "default" : "pointer",
                     color: COLORS.text,
@@ -471,8 +474,26 @@ function MemoryMode({
       )}
       {(() => {
         const colCount = isMobile ? 3 : 4;
-        const colPalette = ["#eef2ff", "#e0f2fe", "#ecfeff", "#f1f5f9"];
-        const rowPalette = ["#fff7ed", "#fef9c3", "#fef2f2", "#f3e8ff"];
+        const colPalette = [
+          "#eef2ff",
+          "#e0f2fe",
+          "#ecfeff",
+          "#f1f5f9",
+          "#e0f7fa",
+          "#ede9fe",
+          "#e0f2f1",
+          "#fdf2f8",
+        ];
+        const rowPalette = [
+          "#fff7ed",
+          "#fef9c3",
+          "#fef2f2",
+          "#f3e8ff",
+          "#e2f3e0",
+          "#fde68a",
+          "#fce7f3",
+          "#fee2e2",
+        ];
         return (
       <div
         style={{
@@ -489,11 +510,12 @@ function MemoryMode({
           const rowIdx = colCount ? Math.floor(idx / colCount) : 0;
           const colColor = colPalette[colIdx % colPalette.length];
           const rowColor = rowPalette[rowIdx % rowPalette.length];
+          const accent = colPalette[(colIdx + rowIdx) % colPalette.length];
           const baseColor = matched
             ? "linear-gradient(135deg, #d1fae5, #a7f3d0)"
             : selected
             ? COLORS.selectedBg
-            : `linear-gradient(135deg, ${colColor}, ${rowColor})`;
+            : `linear-gradient(135deg, ${colColor}, ${rowColor}), radial-gradient(circle at 30% 30%, ${accent} 0%, transparent 60%)`;
           return (
             <div
               key={idx}
@@ -854,9 +876,12 @@ export default function CurrentModeView({
           recallScore={recallScore}
           recallComplete={recallComplete}
           showRecallFeedback={showRecallFeedback}
+          recallHintLevel={recallHintLevel}
           onInputChange={onChangeRecallInput}
           onSubmit={onSubmitRecall}
           onRestart={onRestartRecall}
+          onHint={onHint}
+          onSkip={onSkip}
           COLORS={COLORS}
           isMobile={isMobile}
         />
