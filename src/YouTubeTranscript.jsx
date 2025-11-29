@@ -148,6 +148,48 @@ export default function YouTubeTranscript() {
         }
     };
 
+    const retryPart = async (idx) => {
+        const retryPrompt = retryPromptText || prompt;
+        if (!retryPrompt) {
+            showMessage?.({ type: "error", message: "Please enter a retry prompt first." });
+            return;
+        }
+        const requestId = crypto.randomUUID();
+        latestRetryRef.current[idx] = requestId;
+        try {
+            setRetryLoadingIndex(idx);
+            setProgress(0);
+            const chunk = splitTranscript[idx] || splitComments[idx] || transcript;
+            const retryChunk = chunk ? [chunk] : [];
+            const retryResponse = await promptTranscript(
+                retryPrompt,
+                retryChunk,
+                setProgress,
+                showMessage
+            );
+            if (latestRetryRef.current[idx] === requestId) {
+                const updated = [...promptResponses];
+                updated[idx] = retryResponse[0];
+                setPromptResponses(updated);
+                showMessage?.({
+                    type: "success",
+                    message: `Retry successful for part ${idx + 1}`,
+                });
+            }
+        } catch (err) {
+            if (latestRetryRef.current[idx] === requestId) {
+                showMessage?.({
+                    type: "error",
+                    message: `Retry failed: ${err.message}`,
+                });
+            }
+        } finally {
+            if (latestRetryRef.current[idx] === requestId) {
+                setRetryLoadingIndex(null);
+            }
+        }
+    };
+
     const hasValidURL = useMemo(() => {
         return url && isValidYouTubeUrl(url);
     }, [url]);
@@ -685,6 +727,14 @@ export default function YouTubeTranscript() {
                         <>
                             <CopyButton text={promptResponsesText} buttonText="Copy All Responses" className="btn copy-btn" />
                             <ActionButtons promptText={promptResponsesText} />
+                            <div className="input-group" style={{ marginTop: "0.5rem" }}>
+                                <input
+                                    className="input"
+                                    value={retryPromptText}
+                                    placeholder="Retry prompt (defaults to main prompt)"
+                                    onChange={(e) => setRetryPromptText(e.target.value)}
+                                />
+                            </div>
                             <div
                                 style={{
                                     display: "flex",
@@ -715,7 +765,7 @@ export default function YouTubeTranscript() {
                                                 disabled={retryLoadingIndex === i}
                                                 onClick={() => {
                                                     setRetryIndex(i);
-                                                    setRetryPromptText(prompt);
+                                                    setRetryPromptText((prev) => prev || prompt);
                                                 }}
                                                 style={{ width: "100%" }}
                                             >
@@ -755,41 +805,9 @@ export default function YouTubeTranscript() {
                                                         className="btn primary-btn"
                                                         disabled={retryLoadingIndex === i}
                                                         onClick={async () => {
-                                                            const requestId = crypto.randomUUID();
-                                                            latestRetryRef.current[i] = requestId;
-                                                            try {
-                                                                setRetryLoadingIndex(i);
-                                                                setProgress(0);
-                                                                const retryChunk = [splitTranscript[i]];
-                                                                const retryResponse = await promptTranscript(
-                                                                    retryPromptText || prompt,
-                                                                    retryChunk,
-                                                                    setProgress,
-                                                                    showMessage
-                                                                );
-                                                                if (latestRetryRef.current[i] === requestId) {
-                                                                    const updated = [...promptResponses];
-                                                                    updated[i] = retryResponse[0];
-                                                                    setPromptResponses(updated);
-                                                                    showMessage?.({
-                                                                        type: "success",
-                                                                        message: `Retry successful for part ${i + 1}`,
-                                                                    });
-                                                                }
-                                                            } catch (err) {
-                                                                if (latestRetryRef.current[i] === requestId) {
-                                                                    showMessage?.({
-                                                                        type: "error",
-                                                                        message: `Retry failed: ${err.message}`,
-                                                                    });
-                                                                }
-                                                            } finally {
-                                                                if (latestRetryRef.current[i] === requestId) {
-                                                                    setRetryLoadingIndex(null);
-                                                                    setRetryIndex(null);
-                                                                    setRetryPromptText("");
-                                                                }
-                                                            }
+                                                            await retryPart(i);
+                                                            setRetryIndex(null);
+                                                            setRetryPromptText("");
                                                         }}
                                                     >
                                                         {retryLoadingIndex === i ? <ClipLoader size={12} color="white" /> : "Submit Retry"}
