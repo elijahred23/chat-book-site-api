@@ -89,14 +89,7 @@ export default function YouTubeTranscript() {
     const [drawerOpen, setDrawerOpen] = useState(false);
     const { showMessage } = useFlyout();
     const latestRetryRef = useRef({});
-    const [youtubeIframeShowing, setYoutubeIframeShowing] = useState(() => {
-        const storedValue = localStorage.getItem("yt_iframe_showing");
-        return storedValue !== null ? JSON.parse(storedValue) : false;
-    });
-    const [isMinimized, setIsMinimized] = useState(() => {
-        const storedValue = localStorage.getItem("yt_iframe_minimized");
-        return storedValue !== null ? JSON.parse(storedValue) : false;
-    });
+    const [isMinimized, setIsMinimized] = useState(false);
     const dispatch = useAppDispatch();
     const [loadingTranscript, setLoadingTranscript] = useState(false);
     const { youtubeSearchText } = useAppState();
@@ -250,9 +243,23 @@ export default function YouTubeTranscript() {
         setLoadingTranscript(false);
     };
 
-    const validYoutubeUrl = useMemo(() => {
-        return isValidYouTubeUrl(url);
-    }, [url]);
+    const validYoutubeUrl = useMemo(() => isValidYouTubeUrl(url), [url]);
+
+    const embedUrl = useMemo(() => {
+        if (!validYoutubeUrl) return "";
+        try {
+            const urlObj = new URL(url);
+            const idFromQuery = urlObj.searchParams.get("v");
+            if (idFromQuery) return `https://www.youtube.com/embed/${idFromQuery}`;
+            const pathParts = urlObj.pathname.split("/").filter(Boolean);
+            const maybeId = pathParts[pathParts.length - 1];
+            if (maybeId) return `https://www.youtube.com/embed/${maybeId}`;
+        } catch {
+            // fallback for raw IDs
+            if (url.length === 11) return `https://www.youtube.com/embed/${url}`;
+        }
+        return "";
+    }, [url, validYoutubeUrl]);
 
     useEffect(() => {
         if (youtubeSearchText) {
@@ -260,6 +267,10 @@ export default function YouTubeTranscript() {
             setExternalSearchText(youtubeSearchText);
         }
     }, [youtubeSearchText]);
+
+    useEffect(() => {
+        setActiveTab("transcript");
+    }, []);
 
     // Internal styles scoped to this component. These override any external styles and ensure good mobile layout.
     const styles = `
@@ -406,22 +417,26 @@ export default function YouTubeTranscript() {
         background: linear-gradient(135deg, #22c55e, #4ade80);
         transition: width 0.4s ease-in-out;
       }
-      .retry-box {
-        margin-top: 0.5rem;
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-        padding: 0.6rem;
-        border: 1px solid #e2e8f0;
-        border-radius: 10px;
-        background: #f8fafc;
-      }
       .iframe-container {
         background: #0f172a;
         border-radius: 12px;
         overflow: hidden;
         border: 1px solid #1e293b;
         box-shadow: 0 10px 30px rgba(15,23,42,0.35);
+      }
+      .video-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
+        margin-bottom: 0.65rem;
+      }
+      .eyebrow {
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-size: 0.75rem;
+        color: #64748b;
+        margin: 0;
       }
       @media (max-width: 480px) {
         .tab-btn {
@@ -446,71 +461,49 @@ export default function YouTubeTranscript() {
             <style>{styles}</style>
             {/* Tab navigation */}
             <div className="tab-bar">
-                <button className={`tab-btn ${activeTab === "transcript-iframes" ? "active" : ""}`} onClick={() => setActiveTab("transcript-iframes")}>Transcript Generator</button>
                 <button className={`tab-btn ${activeTab === "transcript" ? "active" : ""}`} onClick={() => setActiveTab("transcript")}>Transcript</button>
                 {validYoutubeUrl && (
                     <button className={`tab-btn ${activeTab === "comments" ? "active" : ""}`} onClick={() => setActiveTab("comments")}>Comments</button>
                 )}
-                <button className={`tab-btn ${activeTab === "responses" ? "active" : ""}`} onClick={() => setActiveTab("responses")}>Prompt Responses</button>
-                <button className="btn primary-btn" onClick={async () => {
-                    setYoutubeIframeShowing(!youtubeIframeShowing);
-                }}>
-                    {youtubeIframeShowing ? "Hide Iframe" : "Show Iframe"}
-                </button>
-                {youtubeIframeShowing && (
-                    <button className="btn secondary-btn" onClick={() => setIsMinimized((prev) => !prev)}>
-                        {isMinimized ? "Expand Video" : "Minimize Video"}
-                    </button>
-                )}
             </div>
 
             {/* Video iframe section */}
-            {youtubeIframeShowing && (
-                <div
-                    className={`iframe-container ${isMinimized ? "minimized-iframe" : ""}`}
-                    style={isMinimized ? {
+            {embedUrl && (
+                <div className="iframe-container" style={{ width: '100%', marginBottom: '1rem', position: 'relative' }}>
+                    <div className="video-bar">
+                        <div>
+                            <p className="eyebrow">Now playing</p>
+                            <strong style={{ color: '#e2e8f0' }}>{url}</strong>
+                        </div>
+                        <button className="btn secondary-btn" onClick={() => setIsMinimized((prev) => !prev)}>
+                            {isMinimized ? "Expand" : "Minimize"}
+                        </button>
+                    </div>
+                    <div style={isMinimized ? {
                         position: 'fixed',
-                        bottom: '10px',
-                        right: '10px',
+                        bottom: '12px',
+                        right: '12px',
                         width: '320px',
                         height: '180px',
                         zIndex: 1000,
-                        boxShadow: '0 12px 30px rgba(0,0,0,0.35)'
+                        boxShadow: '0 12px 30px rgba(0,0,0,0.35)',
+                        borderRadius: '12px',
+                        overflow: 'hidden',
                     } : {
                         width: '100%',
-                        height: '220px',
-                        marginBottom: '1rem',
-                        boxShadow: '0 12px 30px rgba(0,0,0,0.25)'
-                    }}
-                >
-                    {validYoutubeUrl && (
+                        height: '240px',
+                        borderRadius: '12px',
+                        overflow: 'hidden',
+                    }}>
                         <iframe
-                            src={`https://www.youtube.com/embed/${url.split('v=')[1]}`}
+                            src={embedUrl}
                             title="YouTube Video"
                             frameBorder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen
-                            style={{
-                                width: '100%',
-                                height: '100%',
-                                borderRadius: '8px'
-                            }}
+                            style={{ width: '100%', height: '100%', border: 'none' }}
                         ></iframe>
-                    )}
-                </div>
-            )}
-
-            {/* Iframe generator tab */}
-            {activeTab === 'transcript-iframes' && (
-                <div className="iframe-container">
-                    <iframe
-                        src={`https://kome.ai/tools/youtube-transcript-generator`}
-                        title="YouTube Transcript Generator"
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                        style={{ width: '100%', height: '300px' }}
-                    ></iframe>
+                    </div>
                 </div>
             )}
 
@@ -575,23 +568,6 @@ export default function YouTubeTranscript() {
                             />
                         </label>
                     </div>
-                    <div className="input-group">
-                        <input
-                            className="input"
-                            value={prompt}
-                            placeholder="Prompt (e.g. Summarize this)"
-                            onChange={(e) => setPrompt(e.target.value)}
-                        />
-                        <PasteButton setPasteText={setPrompt} className="btn paste-btn" />
-                    </div>
-                    <div className="prompt-suggestions">
-                        {promptSuggestions.map((item, index) => (
-                            <button key={index} onClick={() => setPrompt(item.value)} className="suggestion-btn">{item.label}</button>
-                        ))}
-                    </div>
-                    <button className="btn primary-btn" onClick={executePrompt} disabled={loadingPrompt || !prompt}>
-                        {loadingPrompt ? <ClipLoader size={12} color="white" /> : "Execute Prompt"}
-                    </button>
                     <YouTubeSearchDrawer
                         isOpen={drawerOpen}
                         onClose={() => setDrawerOpen(false)}
@@ -623,14 +599,6 @@ export default function YouTubeTranscript() {
                 <>
                     <h2>Comments Preview</h2>
                     <CopyButton text={comments} buttonText="📋 Copy All Comments" className="btn copy-btn" />
-                    <div className="prompt-suggestions">
-                        {promptSuggestions.map((item, index) => (
-                            <button key={index} onClick={() => setPrompt(item.value)} className="suggestion-btn">{item.label}</button>
-                        ))}
-                    </div>
-                    <button className="btn primary-btn" onClick={executePromptOnComments} disabled={loadingPrompt || !prompt}>
-                        {loadingPrompt ? <ClipLoader size={12} color="white" /> : "Execute Prompt on Comments"}
-                    </button>
                     <div className="scrollable-card">
                         {splitComments.map((chunk, i) => (
                             <div key={i} className="chunk">
@@ -642,227 +610,6 @@ export default function YouTubeTranscript() {
                 </>
             )}
 
-            {/* Responses tab */}
-            {activeTab === "responses" && (
-                <>
-                    <h2>Prompt Responses</h2>
-                    {promptResponses.length > 0 && (
-                        <>
-                            <CopyButton text={promptResponsesText} buttonText="Copy All" className="btn copy-btn" />
-                            <ActionButtons promptText={promptResponsesText} />
-                            <button className="btn secondary-btn" onClick={() => {
-                                setManuallyEnteredTranscript(promptResponsesText);
-                                setActiveTab("transcript");
-                            }}>Copy to Transcript</button>
-                        </>
-                    )}
-                    {/* --- Alternate Compact Retry View (Improved: Mobile + Race-Safe) --- */}
-<div
-    style={{
-        display: "flex",
-        flexWrap: "wrap",
-        gap: "8px",
-        marginBottom: "1rem",
-        padding: "0.75rem",
-        border: "1px solid #ddd",
-        borderRadius: "10px",
-        background: "#fafafa"
-    }}
->
-    {promptResponses.map((res, i) => {
-        const isError =
-            res?.startsWith("Error: Gemini failed on part") ||
-            res?.includes("❌");
-        const isSuccess = !isError;
-
-        return (
-            <div
-                key={i}
-                style={{
-                    border: "1px solid #ccc",
-                    borderRadius: "8px",
-                    padding: "6px",
-                    width: "120px",              // 👈 looks good on both mobile & desktop
-                    flexShrink: 0,
-                    background: isSuccess ? "#d6ffd6" : "#ffd6d6",
-                    display: "flex",
-                    flexDirection: "column"
-                }}
-            >
-                {/* Part label */}
-                <div
-                    style={{
-                        fontSize: "0.75rem",
-                        marginBottom: "4px",
-                        fontWeight: 600,
-                        textAlign: "center"
-                    }}
-                >
-                    Part {i + 1}
-                </div>
-
-                {/* Mini retry input */}
-                <input
-                    style={{
-                        width: "100%",
-                        fontSize: "0.7rem",
-                        padding: "4px",
-                        marginBottom: "6px",
-                        borderRadius: "4px",
-                        border: "1px solid #bbb"
-                    }}
-                    value={retryIndex === i ? retryPromptText : ""}
-                    placeholder="New text"
-                    onChange={(e) => {
-                        setRetryIndex(i);
-                        setRetryPromptText(e.target.value);
-                    }}
-                    onFocus={() => {
-                        setRetryIndex(i);
-                        setRetryPromptText(prompt);
-                    }}
-                />
-
-                {/* Mini Retry Button */}
-                <button
-                    style={{
-                        width: "100%",
-                        fontSize: "0.7rem",
-                        padding: "6px",
-                        background: retryLoadingIndex === i ? "#999" : "#007bff",
-                        color: "white",
-                        border: "none",
-                        borderRadius: "4px",
-                        cursor: retryLoadingIndex === i ? "default" : "pointer"
-                    }}
-                    disabled={retryLoadingIndex === i}
-                    onClick={async () => {
-                        // --- ✔️ Add race condition protection with request ID ---
-                        const requestId = crypto.randomUUID();
-                        latestRetryRef.current[i] = requestId;
-
-                        try {
-                            setRetryLoadingIndex(i);
-                            setProgress(0);
-
-                            const retryChunk = [splitTranscript[i]];
-                            const retryResponse = await promptTranscript(
-                                retryPromptText || prompt,
-                                retryChunk,
-                                setProgress,
-                                showMessage
-                            );
-
-                            // ---- ✔️ Only update if request is still latest for this index ----
-                            if (latestRetryRef.current[i] === requestId) {
-                                const updated = [...promptResponses];
-                                updated[i] = retryResponse[0];
-                                setPromptResponses(updated);
-
-                                showMessage?.({
-                                    type: "success",
-                                    message: `Retry successful for part ${i + 1}`,
-                                });
-                            }
-                        } catch (err) {
-                            // Ignore stale errors (race-safe)
-                            if (latestRetryRef.current[i] === requestId) {
-                                showMessage?.({
-                                    type: "error",
-                                    message: `Retry failed: ${err.message}`,
-                                });
-                            }
-                        } finally {
-                            if (latestRetryRef.current[i] === requestId) {
-                                setRetryLoadingIndex(null);
-                                setRetryIndex(null);
-                                setRetryPromptText("");
-                            }
-                        }
-                    }}
-                >
-                    {retryLoadingIndex === i ? "..." : "Retry"}
-                </button>
-            </div>
-        );
-    })}
-</div>
-
-
-                    <AutoScroller activeIndex={0}>
-                        {promptResponses.map((res, i) => (
-                            <div key={i} data-index={i} style={{ padding: "1rem 0", borderBottom: "1px solid #ddd" }}>
-                                <ReactMarkdown className="markdown-body">{res}</ReactMarkdown>
-                                <CopyButton text={res} className="btn copy-btn" />
-                                <button className="btn secondary-btn" onClick={() => {
-                                    setRetryIndex(i);
-                                    setRetryPromptText(prompt);
-                                }}>
-                                    🔁 Retry
-                                </button>
-                                <ActionButtons promptText={res} />
-                                {retryIndex === i && (
-                                    <div className="retry-box">
-                                        <input
-                                            className="input"
-                                            value={retryPromptText}
-                                            onChange={(e) => setRetryPromptText(e.target.value)}
-                                            placeholder="New prompt for retry"
-                                        />
-                                        <div className="button-group">
-                                            <button
-                                                className="btn primary-btn"
-                                                disabled={retryLoadingIndex === i}
-                                                onClick={async () => {
-                                                    try {
-                                                        setRetryLoadingIndex(i);
-                                                        setProgress(0);
-                                                        const retryChunk = [splitTranscript[i]];
-                                                        const retryResponse = await promptTranscript(
-                                                            retryPromptText,
-                                                            retryChunk,
-                                                            setProgress,
-                                                            showMessage
-                                                        );
-                                                        const updatedResponses = [...promptResponses];
-                                                        updatedResponses[i] = retryResponse[0];
-                                                        setPromptResponses(updatedResponses);
-                                                        showMessage?.({
-                                                            type: "success",
-                                                            message: `✅ Retry successful for part ${i + 1}`,
-                                                        });
-                                                    } catch (err) {
-                                                        showMessage?.({
-                                                            type: "error",
-                                                            message: `❌ Retry failed: ${err.message}`,
-                                                        });
-                                                    } finally {
-                                                        setRetryLoadingIndex(null);
-                                                        setRetryIndex(null);
-                                                        setRetryPromptText("");
-                                                    }
-                                                }}
-                                            >
-                                                {retryLoadingIndex === i ? <ClipLoader size={12} color="white" /> : "Submit Retry"}
-                                            </button>
-                                            <button
-                                                className="btn secondary-btn"
-                                                onClick={() => {
-                                                    setRetryIndex(null);
-                                                    setRetryPromptText("");
-                                                }}
-                                                disabled={retryLoadingIndex === i}
-                                            >
-                                                Cancel
-                                            </button>
-                                        </div>
-                                    </div>
-                                )}
-                            </div>
-                        ))}
-                    </AutoScroller>
-                </>
-            )}
 
             {/* Transcript preview in transcript tab */}
             {activeTab === "transcript" && (
