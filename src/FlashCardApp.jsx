@@ -465,6 +465,15 @@ export default function FlashCardApp() {
   const [survivalScore, setSurvivalScore] = useState(0);
   const [survivalSelected, setSurvivalSelected] = useState(null);
   const [survivalComplete, setSurvivalComplete] = useState(false);
+  const [blitzOrder, setBlitzOrder] = useState([]);
+  const [blitzIndex, setBlitzIndex] = useState(0);
+  const [blitzScore, setBlitzScore] = useState(0);
+  const [blitzStreak, setBlitzStreak] = useState(0);
+  const [blitzBestStreak, setBlitzBestStreak] = useState(0);
+  const [blitzTimeLeft, setBlitzTimeLeft] = useState(45);
+  const [blitzSelected, setBlitzSelected] = useState(null);
+  const [blitzRunning, setBlitzRunning] = useState(false);
+  const [blitzComplete, setBlitzComplete] = useState(false);
 
   const resetSurvival = () => {
     const order = shuffleArray(cards.map((_, i) => i));
@@ -506,6 +515,70 @@ export default function FlashCardApp() {
     }, 600);
   };
 
+  const resetBlitz = () => {
+    if (!cards.length) return;
+    setBlitzOrder(shuffleArray(cards.map((_, i) => i)));
+    setBlitzIndex(0);
+    setBlitzScore(0);
+    setBlitzStreak(0);
+    setBlitzBestStreak(0);
+    setBlitzTimeLeft(45);
+    setBlitzSelected(null);
+    setBlitzComplete(false);
+    setBlitzRunning(true);
+  };
+
+  useEffect(() => {
+    if (mode === "blitz" && cards.length) {
+      resetBlitz();
+    } else {
+      setBlitzRunning(false);
+    }
+  }, [cards, mode]);
+
+  useEffect(() => {
+    if (mode !== "blitz" || !blitzRunning) return;
+    const timer = setInterval(() => {
+      setBlitzTimeLeft((time) => {
+        if (time <= 1) {
+          setBlitzRunning(false);
+          setBlitzComplete(true);
+          return 0;
+        }
+        return time - 1;
+      });
+    }, 1000);
+    return () => clearInterval(timer);
+  }, [mode, blitzRunning]);
+
+  const handleSelectBlitzOption = (option) => {
+    if (!blitzRunning || blitzSelected !== null || blitzComplete) return;
+    const cardIdx = blitzOrder[blitzIndex];
+    const correctAnswer = cards[cardIdx]?.answer;
+    const isCorrect = option === correctAnswer;
+    setBlitzSelected(option);
+    if (isCorrect) {
+      setBlitzScore((score) => score + 1);
+    }
+    setBlitzStreak((streak) => {
+      const next = isCorrect ? streak + 1 : 0;
+      if (isCorrect) {
+        setBlitzBestStreak((best) => Math.max(best, next));
+      }
+      return next;
+    });
+    setTimeout(() => {
+      setBlitzSelected(null);
+      const atEnd = blitzIndex + 1 >= blitzOrder.length;
+      if (atEnd) {
+        setBlitzComplete(true);
+        setBlitzRunning(false);
+      } else {
+        setBlitzIndex((idx) => idx + 1);
+      }
+    }, 400);
+  };
+
   const renderNavigation = () => {
     const navContainerStyle = {
       marginBottom: "1rem",
@@ -521,10 +594,11 @@ export default function FlashCardApp() {
           { key: "quiz", label: "Quiz" },
           { key: "match", label: "Matching" },
           { key: "recall", label: "Recall" },
-          { key: "memory", label: "Memory Flip" },
-          { key: "survival", label: "Survival" },
-          { key: "table", label: "Table" },
-        ].map(({ key, label }) => (
+      { key: "memory", label: "Memory Flip" },
+      { key: "survival", label: "Survival" },
+      { key: "blitz", label: "Blitz" },
+      { key: "table", label: "Table" },
+    ].map(({ key, label }) => (
           <button
             key={key}
             onClick={() => setMode(key)}
@@ -834,6 +908,17 @@ export default function FlashCardApp() {
         onSelectSurvivalOption={handleSelectSurvivalOption}
         onRestartSurvival={resetSurvival}
         generateQuizOptions={generateQuizOptions}
+        blitzOrder={blitzOrder}
+        blitzIndex={blitzIndex}
+        blitzScore={blitzScore}
+        blitzStreak={blitzStreak}
+        blitzBestStreak={blitzBestStreak}
+        blitzTimeLeft={blitzTimeLeft}
+        blitzSelected={blitzSelected}
+        blitzRunning={blitzRunning}
+        blitzComplete={blitzComplete}
+        onStartBlitz={resetBlitz}
+        onSelectBlitzOption={handleSelectBlitzOption}
       />
     </div>
   );

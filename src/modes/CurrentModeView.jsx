@@ -483,6 +483,129 @@ function SurvivalMode({ cards, survivalOrder, survivalIndex, survivalLives, surv
   );
 }
 
+function BlitzMode({
+  cards,
+  blitzOrder,
+  blitzIndex,
+  blitzScore,
+  blitzStreak,
+  blitzBestStreak,
+  blitzTimeLeft,
+  blitzSelected,
+  blitzRunning,
+  blitzComplete,
+  onStart,
+  onSelectOption,
+  generateQuizOptions,
+  COLORS,
+  isMobile,
+}) {
+  if (!cards.length) return <p>No cards available for blitz mode.</p>;
+  if (!blitzRunning && !blitzComplete) {
+    return (
+      <div style={{ textAlign: "center" }}>
+        <h3>Blitz Mode</h3>
+        <p style={{ marginBottom: "0.5rem" }}>Answer as many as you can before time runs out. Streaks boost your best run.</p>
+        <button
+          onClick={onStart}
+          style={{
+            padding: "0.75rem 1.25rem",
+            backgroundColor: COLORS.buttonBg,
+            border: `1px solid ${COLORS.border}`,
+            borderRadius: "6px",
+            color: COLORS.text,
+            cursor: "pointer",
+            width: isMobile ? "100%" : "auto",
+          }}
+        >
+          Start Blitz
+        </button>
+      </div>
+    );
+  }
+  if (!blitzOrder.length || typeof blitzOrder[blitzIndex] !== "number") {
+    return <p>No cards available for blitz mode.</p>;
+  }
+  const cardIdx = blitzOrder[blitzIndex];
+  const card = cards[cardIdx];
+  const options = generateQuizOptions(cards, cardIdx);
+  if (blitzComplete) {
+    return (
+      <div style={{ textAlign: "center" }}>
+        <h3>Blitz Complete</h3>
+        <p>Score: {blitzScore}</p>
+        <p>Best streak: {blitzBestStreak}</p>
+        <button
+          onClick={onStart}
+          style={{
+            padding: "0.75rem 1.25rem",
+            backgroundColor: COLORS.buttonBg,
+            border: `1px solid ${COLORS.border}`,
+            borderRadius: "6px",
+            color: COLORS.text,
+            cursor: "pointer",
+            width: isMobile ? "100%" : "auto",
+          }}
+        >
+          Restart Blitz
+        </button>
+      </div>
+    );
+  }
+  return (
+    <div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          gap: "0.5rem",
+          flexWrap: "wrap",
+          marginBottom: "0.5rem",
+        }}
+      >
+        <span>Time: {blitzTimeLeft}s</span>
+        <span>Score: {blitzScore}</span>
+        <span>Streak: {blitzStreak}</span>
+        <span>Best: {blitzBestStreak}</span>
+      </div>
+      <p style={{ marginBottom: "0.5rem" }}>{card.question}</p>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "0.5rem",
+        }}
+      >
+        {options.map((option) => {
+          const isSelected = blitzSelected === option;
+          const isCorrect = option === card.answer;
+          const backgroundColor = isSelected ? (isCorrect ? COLORS.correctBg : COLORS.incorrectBg) : COLORS.buttonBg;
+          const borderColor = isSelected ? COLORS.primary : COLORS.border;
+          return (
+            <button
+              key={option}
+              onClick={() => onSelectOption(option)}
+              disabled={!!blitzSelected}
+              style={{
+                padding: "0.5rem",
+                backgroundColor,
+                border: `1px solid ${borderColor}`,
+                borderRadius: "4px",
+                cursor: blitzSelected ? "default" : "pointer",
+                textAlign: "left",
+                color: COLORS.text,
+                width: isMobile ? "100%" : "auto",
+              }}
+            >
+              {option}
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
 export default function CurrentModeView({
   mode,
   cards,
@@ -529,6 +652,17 @@ export default function CurrentModeView({
   onSelectSurvivalOption,
   onRestartSurvival,
   generateQuizOptions,
+  blitzOrder,
+  blitzIndex,
+  blitzScore,
+  blitzStreak,
+  blitzBestStreak,
+  blitzTimeLeft,
+  blitzSelected,
+  blitzRunning,
+  blitzComplete,
+  onStartBlitz,
+  onSelectBlitzOption,
 }) {
   switch (mode) {
     case "study":
@@ -616,6 +750,26 @@ export default function CurrentModeView({
           survivalComplete={survivalComplete}
           onSelectOption={onSelectSurvivalOption}
           onRestart={onRestartSurvival}
+          generateQuizOptions={generateQuizOptions}
+          COLORS={COLORS}
+          isMobile={isMobile}
+        />
+      );
+    case "blitz":
+      return (
+        <BlitzMode
+          cards={cards}
+          blitzOrder={blitzOrder}
+          blitzIndex={blitzIndex}
+          blitzScore={blitzScore}
+          blitzStreak={blitzStreak}
+          blitzBestStreak={blitzBestStreak}
+          blitzTimeLeft={blitzTimeLeft}
+          blitzSelected={blitzSelected}
+          blitzRunning={blitzRunning}
+          blitzComplete={blitzComplete}
+          onStart={onStartBlitz}
+          onSelectOption={onSelectBlitzOption}
           generateQuizOptions={generateQuizOptions}
           COLORS={COLORS}
           isMobile={isMobile}
