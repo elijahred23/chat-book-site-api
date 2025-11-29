@@ -159,7 +159,11 @@ export default function YouTubeTranscript() {
         try {
             setRetryLoadingIndex(idx);
             setProgress(0);
-            const chunk = splitTranscript[idx] || splitComments[idx] || transcript;
+            const chunk =
+                splitTranscript[idx] ||
+                splitComments[idx] ||
+                promptResponses[idx] ||
+                transcript;
             const retryChunk = chunk ? [chunk] : [];
             if (!retryChunk.length) {
                 showMessage?.({ type: "error", message: "Nothing to retry for this part yet." });
