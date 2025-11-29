@@ -78,191 +78,250 @@ export default function GptPromptComponent({
 
   const handleInputChange = (e) => dispatch(actions.setChatPrompt(e.target.value));
 
+  const groupOptions = Object.keys(SUGGESTION_GROUPS).map((key) => ({
+    value: key,
+    label: key.replace(/_/g, " ").replace(/\b\w/g, (l) => l.toUpperCase()),
+  }));
+
+  const styles = `
+    .gpt-shell {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+    }
+    .gpt-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 1rem;
+      box-shadow: 0 10px 24px rgba(15,23,42,0.08);
+    }
+    .chat-window {
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 0.75rem;
+      background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+      overflow-y: auto;
+      max-height: 60vh;
+    }
+    .bubble {
+      display: inline-block;
+      padding: 0.65rem 0.85rem;
+      border-radius: 14px;
+      max-width: 92vw;
+      word-break: break-word;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    .user {
+      background: #dbeafe;
+      color: #0f172a;
+    }
+    .bot {
+      background: #f1f5f9;
+      color: #0f172a;
+    }
+    .btn {
+      padding: 0.6rem 0.85rem;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      background: #fff;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.2s ease;
+      color: #0f172a;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #2563eb, #60a5fa);
+      color: #fff;
+      border: none;
+      box-shadow: 0 10px 24px rgba(37,99,235,0.25);
+    }
+    .btn-ghost {
+      background: #f8fafc;
+    }
+    .suggestion {
+      padding: 0.5rem 0.75rem;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      background: #ffffff;
+      cursor: pointer;
+      font-size: 0.92rem;
+      color: #0f172a;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    .prompt-input {
+      width: 100%;
+      padding: 0.8rem;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      font-size: 1rem;
+      min-height: 120px;
+      resize: vertical;
+    }
+    .floating-controls {
+      position: fixed;
+      top: 12px;
+      right: 12px;
+      z-index: 100001;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      background: rgba(255,255,255,0.95);
+      padding: 0.5rem 0.75rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+      backdrop-filter: blur(10px);
+    }
+    @media (max-width: 540px) {
+      .floating-controls {
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(100% - 24px);
+        justify-content: center;
+      }
+      .chat-window {
+        max-height: 50vh;
+      }
+    }
+  `;
+
   return (
-    <div
-      className={`gpt-container ${isFullScreen ? "fullscreen" : ""}`}
-      style={{
-        position: isFullScreen ? "fixed" : "relative",
-        top: isFullScreen ? 0 : "auto",
-        left: isFullScreen ? 0 : "auto",
-        width: isFullScreen ? "100vw" : "100%",
-        height: isFullScreen ? "100vh" : "100%",
-        background: isFullScreen ? "#fff" : "transparent",
-        zIndex: isFullScreen ? 100000 : "auto",
-        overflow: "hidden",
-        paddingTop: "60px",
-        display: "flex",
-        flexDirection: "column",
-      }}
-    >
-      <div
-        style={{
-          position: "fixed",
-          top: "10px",
-          right: "10px",
-          zIndex: 100001,
-          display: "flex",
-          flexWrap: "wrap",
-          gap: "0.5rem",
-          background: "rgba(255,255,255,0.95)",
-          padding: "0.5rem 0.75rem",
-          borderRadius: "8px",
-          boxShadow: "0 2px 8px rgba(0,0,0,0.25)",
-          backdropFilter: "blur(8px)",
-        }}
-      >
-        <button onClick={onToggleCollapse}>
+    <div>
+      <style>{styles}</style>
+      <div className="floating-controls">
+        <button className="btn" onClick={onToggleCollapse}>
           {isCollapsed ? "Show Chat" : "Hide Chat"}
         </button>
-        <button onClick={onToggleFullScreen}>
+        <button className="btn" onClick={onToggleFullScreen}>
           {isFullScreen ? "Exit Full Screen" : "Full Screen"}
         </button>
-        <button onClick={onClose} style={{ color: "#a00", fontWeight: "bold" }}>
+        <button className="btn" onClick={onClose} style={{ color: "#b91c1c" }}>
           ✖ Close
         </button>
       </div>
 
-      {!isCollapsed && (
-        <div
-          ref={messagesEndRef}
-          style={{
-            border: "1px solid #ccc",
-            borderRadius: "6px",
-            padding: "0.75rem",
-            background: "#f9f9f9",
-            overflowY: "auto",
-            flexGrow: 1,
-            marginBottom: isFullScreen ? "0" : "0.75rem",
-            height: isFullScreen ? "calc(100vh - 80px)" : "auto",
-          }}
-        >
-          {messages.map((m, i) => (
-            <div key={i} style={{ textAlign: m.sender === "user" ? "right" : "left", marginBottom: "0.75rem" }}>
-              <div
-                style={{
-                  display: "inline-block",
-                  background: m.sender === "user" ? "#DCF8C6" : "#F1F0F0",
-                  padding: "0.5rem 0.75rem",
-                  borderRadius: "12px",
-                  maxWidth: "95vw",
-                  wordBreak: "break-word",
-                }}
-              >
-                <strong>{m.sender === "user" ? "You: " : "Bot: "}</strong>
-                <ReactMarkdown className="markdown-body">{m.text}</ReactMarkdown>
-                <div style={{ textAlign: "right" }}>
-                  <ActionButtons promptText={m.text} />
+      <div
+        className={`gpt-shell ${isFullScreen ? "fullscreen" : ""}`}
+        style={{
+          position: isFullScreen ? "fixed" : "relative",
+          top: isFullScreen ? 0 : "auto",
+          left: isFullScreen ? 0 : "auto",
+          width: isFullScreen ? "100vw" : "100%",
+          height: isFullScreen ? "100vh" : "100%",
+          background: isFullScreen ? "#f8fafc" : "transparent",
+          zIndex: isFullScreen ? 100000 : "auto",
+          overflow: "hidden",
+          paddingTop: isFullScreen ? "60px" : "0",
+        }}
+      >
+        {!isCollapsed && (
+          <div className="gpt-card">
+            <div className="chat-window" ref={messagesEndRef}>
+              {messages.map((m, i) => (
+                <div key={i} style={{ textAlign: m.sender === "user" ? "right" : "left", marginBottom: "0.75rem" }}>
+                  <div className={`bubble ${m.sender === "user" ? "user" : "bot"}`}>
+                    <strong>{m.sender === "user" ? "You: " : "Bot: "}</strong>
+                    <ReactMarkdown className="markdown-body">{m.text}</ReactMarkdown>
+                    <div style={{ textAlign: "right", marginTop: "0.35rem" }}>
+                      <ActionButtons promptText={m.text} />
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      )}
-
-      {!isCollapsed && !isFullScreen && (
-        <div style={{ paddingBottom: "1rem" }}>
-          <div style={{ textAlign: "center", marginBottom: "0.5rem" }}>
-            <select
-              value={selectedGroup}
-              onChange={(e) => setSelectedGroup(e.target.value)}
-              style={{
-                padding: "0.4rem 0.6rem",
-                borderRadius: "6px",
-                border: "1px solid #999",
-                background: "#f1f1f1",
-                fontSize: "0.9rem",
-                cursor: "pointer",
-              }}
-            >
-              {Object.keys(SUGGESTION_GROUPS).map((key) => (
-                <option key={key} value={key}>
-                  {key.charAt(0).toUpperCase() + key.slice(1)}
-                </option>
               ))}
-            </select>
+              {messages.length === 0 && (
+                <div style={{ textAlign: "center", color: "#64748b" }}>
+                  Start a conversation or pick a suggestion below.
+                </div>
+              )}
+            </div>
           </div>
+        )}
 
-          <div
-            style={{
-              display: "flex",
-              flexWrap: "wrap",
-              gap: "0.5rem",
-              justifyContent: "center",
-              marginBottom: "0.75rem",
-            }}
-          >
-            {visibleSuggestions.map((s, i) => (
-              <button
-                key={i}
-                onClick={() => dispatch(actions.setChatPrompt(`${s.value}${chatPrompt ? `: ${chatPrompt}` : ""}`))}
-                style={{
-                  padding: "0.5rem 0.75rem",
-                  borderRadius: "4px",
-                  border: "1px solid #ccc",
-                  background: "#e0e0e0",
-                  fontSize: "0.85rem",
-                  cursor: "pointer",
-                }}
+        {!isCollapsed && !isFullScreen && (
+          <div className="gpt-card">
+            <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", alignItems: "center", marginBottom: "0.5rem" }}>
+              <select
+                value={selectedGroup}
+                onChange={(e) => setSelectedGroup(e.target.value)}
+                className="btn"
+                style={{ flex: "1 1 160px" }}
               >
-                {s.label}
+                {groupOptions.map((opt) => (
+                  <option key={opt.value} value={opt.value}>
+                    {opt.label}
+                  </option>
+                ))}
+              </select>
+              <button className="btn btn-ghost" onClick={() => setShowAllSuggestions((p) => !p)}>
+                {showAllSuggestions ? "Collapse Suggestions" : "Show More Suggestions"}
               </button>
-            ))}
-            <button
-              onClick={() => setShowAllSuggestions((p) => !p)}
+            </div>
+
+            <div
               style={{
-                padding: "0.5rem 0.75rem",
-                borderRadius: "4px",
-                border: "1px solid #ccc",
-                background: "#e0e0e0",
-                fontSize: "0.85rem",
-                cursor: "pointer",
+                display: "flex",
+                flexWrap: "wrap",
+                gap: "0.5rem",
+                justifyContent: "flex-start",
+                marginBottom: "0.75rem",
               }}
             >
-              {showAllSuggestions ? "Show Less ▲" : "Show All ▼"}
-            </button>
-          </div>
-
-          <textarea
-            rows={4}
-            value={chatPrompt}
-            onChange={handleInputChange}
-            onKeyDown={(e) => {
-              if (e.key === "Enter" && !e.shiftKey) {
-                e.preventDefault();
-                handleSubmit();
-              }
-            }}
-            placeholder="Type your prompt and press Enter..."
-            style={{
-              width: "100%",
-              padding: "0.75rem",
-              borderRadius: "8px",
-              border: "1px solid #ccc",
-              marginBottom: "0.5rem",
-              fontSize: "1rem",
-              resize: "vertical",
-            }}
-          />
-
-          <div style={{ display: "flex", gap: "0.5rem", justifyContent: "space-between" }}>
-            <div style={{ display: "flex", gap: "0.5rem" }}>
-              <PasteButton setPasteText={(text) => dispatch(actions.setChatPrompt(text))} />
-              <button onClick={clearMessages}>Clear Chat Log</button>
-              <button onClick={() => dispatch(actions.setChatPrompt(""))}>Clear Prompt</button>
+              {visibleSuggestions.map((s, i) => (
+                <button
+                  key={i}
+                  className="suggestion"
+                  onClick={() => dispatch(actions.setChatPrompt(`${s.value}${chatPrompt ? `: ${chatPrompt}` : ""}`))}
+                >
+                  {s.label}
+                </button>
+              ))}
+              <button
+                className="suggestion"
+                onClick={() => setShowAllSuggestions((p) => !p)}
+              >
+                {showAllSuggestions ? "Show Less ▲" : "Show All ▼"}
+              </button>
             </div>
-            <button onClick={handleSubmit} disabled={loading}>
-              {loading ? "Thinking..." : "Send"}
-            </button>
-          </div>
 
-          {loading && (
-            <div style={{ marginTop: "0.5rem", display: "flex", alignItems: "center", gap: "0.5rem" }}>
-              <ClipLoader color="blue" size={20} />
-              <span>Generating response...</span>
+            <textarea
+              rows={4}
+              value={chatPrompt}
+              onChange={handleInputChange}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" && !e.shiftKey) {
+                  e.preventDefault();
+                  handleSubmit();
+                }
+              }}
+              placeholder="Type your prompt and press Enter..."
+              className="prompt-input"
+              style={{ marginBottom: "0.75rem" }}
+            />
+
+            <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", justifyContent: "space-between" }}>
+              <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
+                <PasteButton setPasteText={(text) => dispatch(actions.setChatPrompt(text))} className="btn btn-ghost" />
+                <button className="btn btn-ghost" onClick={clearMessages}>Clear Chat</button>
+                <button className="btn btn-ghost" onClick={() => dispatch(actions.setChatPrompt(""))}>Clear Prompt</button>
+              </div>
+              <button className="btn btn-primary" onClick={handleSubmit} disabled={loading}>
+                {loading ? "Thinking..." : "Send"}
+              </button>
             </div>
-          )}
-        </div>
-      )}
+
+            {loading && (
+              <div style={{ marginTop: "0.5rem", display: "flex", alignItems: "center", gap: "0.5rem" }}>
+                <ClipLoader color="#2563eb" size={20} />
+                <span>Generating response...</span>
+              </div>
+            )}
+          </div>
+        )}
+      </div>
     </div>
   );
 }

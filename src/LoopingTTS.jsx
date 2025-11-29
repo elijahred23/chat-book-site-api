@@ -23,7 +23,7 @@ const LoopingTTSImproved = () => {
   const [status, setStatus] = useState("Idle");
   const [loop, setLoop] = useState(true);
   const [samOnly, setSamOnly] = useState(false);
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
   const [currentSentence, setCurrentSentence] = useState("");
   const [timeEstimate, setTimeEstimate] = useState("");
   const [progress, setProgress] = useState(0);
