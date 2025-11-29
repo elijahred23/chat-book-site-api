@@ -347,7 +347,7 @@ const LoopingTTSImproved = () => {
     .tts-container.dark {
       --card-bg: #0f172a;
       --card-border: #1e293b;
-      background: #0b1220;
+      background: radial-gradient(circle at 20% 20%, #0f172a, #0b1220 45%, #0b1220 100%);
       color: #e2e8f0;
     }
     .tts-heading {
@@ -440,6 +440,11 @@ const LoopingTTSImproved = () => {
     }
     .button.secondary {
       background: #f8fafc;
+      color: #0f172a;
+    }
+    .dark .button.secondary {
+      background: #111827;
+      color: #e2e8f0;
     }
     .button.danger {
       background: #fca5a5;
@@ -474,6 +479,10 @@ const LoopingTTSImproved = () => {
       height: 36px;
       font-size: 1.1rem;
       cursor: pointer;
+    }
+    .dark .repeat-btn {
+      background: #1f2937;
+      color: #e2e8f0;
     }
     .repeat-input {
       width: 70px;

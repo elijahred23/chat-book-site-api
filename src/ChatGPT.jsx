@@ -92,6 +92,7 @@ export default function GptPromptComponent({
       flex-direction: column;
       gap: 0.75rem;
       font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+      position: relative;
     }
     .gpt-card {
       background: #ffffff;
@@ -164,24 +165,27 @@ export default function GptPromptComponent({
     }
     .floating-controls {
       position: fixed;
-      top: 12px;
-      right: 12px;
+      top: 14px;
+      right: 14px;
       z-index: 100001;
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
-      background: rgba(255,255,255,0.95);
-      padding: 0.5rem 0.75rem;
-      border-radius: 12px;
-      box-shadow: 0 10px 24px rgba(0,0,0,0.12);
-      backdrop-filter: blur(10px);
+      background: rgba(15,23,42,0.9);
+      padding: 0.6rem 0.8rem;
+      border-radius: 14px;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.25);
+      backdrop-filter: blur(12px);
     }
     @media (max-width: 540px) {
       .floating-controls {
-        left: 50%;
-        transform: translateX(-50%);
-        width: calc(100% - 24px);
-        justify-content: center;
+        left: 8px;
+        right: 8px;
+        top: auto;
+        bottom: 8px;
+        transform: none;
+        width: auto;
+        justify-content: flex-start;
       }
       .chat-window {
         max-height: 50vh;
@@ -193,14 +197,14 @@ export default function GptPromptComponent({
     <div>
       <style>{styles}</style>
       <div className="floating-controls">
+        <button className="btn btn-primary" onClick={onToggleFullScreen}>
+          {isFullScreen ? "Exit Fullscreen" : "Fullscreen"}
+        </button>
         <button className="btn" onClick={onToggleCollapse}>
-          {isCollapsed ? "Show Chat" : "Hide Chat"}
+          {isCollapsed ? "Show Messages" : "Hide Messages"}
         </button>
-        <button className="btn" onClick={onToggleFullScreen}>
-          {isFullScreen ? "Exit Full Screen" : "Full Screen"}
-        </button>
-        <button className="btn" onClick={onClose} style={{ color: "#b91c1c" }}>
-          ✖ Close
+        <button className="btn" onClick={onClose} style={{ color: "#fbbf24" }}>
+          Close Chat
         </button>
       </div>
 
@@ -212,43 +216,43 @@ export default function GptPromptComponent({
           left: isFullScreen ? 0 : "auto",
           width: isFullScreen ? "100vw" : "100%",
           height: isFullScreen ? "100vh" : "100%",
-          background: isFullScreen ? "#f8fafc" : "transparent",
+          background: isFullScreen ? "#0b1220" : "transparent",
           zIndex: isFullScreen ? 100000 : "auto",
           overflow: "hidden",
-          paddingTop: isFullScreen ? "60px" : "0",
+          padding: isFullScreen ? "70px 12px 12px 12px" : "0",
         }}
       >
-        {!isCollapsed && (
-          <div className="gpt-card">
-            <div className="chat-window" ref={messagesEndRef}>
-              {messages.map((m, i) => (
-                <div key={i} style={{ textAlign: m.sender === "user" ? "right" : "left", marginBottom: "0.75rem" }}>
-                  <div className={`bubble ${m.sender === "user" ? "user" : "bot"}`}>
-                    <strong>{m.sender === "user" ? "You: " : "Bot: "}</strong>
-                    <ReactMarkdown className="markdown-body">{m.text}</ReactMarkdown>
-                    <div style={{ textAlign: "right", marginTop: "0.35rem" }}>
-                      <ActionButtons promptText={m.text} />
+        <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem", height: isFullScreen ? "calc(100vh - 90px)" : "auto" }}>
+          {!isCollapsed && (
+            <div className="gpt-card" style={{ flex: isFullScreen ? "1 1 50%" : "0 0 auto" }}>
+              <div className="chat-window" ref={messagesEndRef} style={{ height: isFullScreen ? "100%" : "auto" }}>
+                {messages.map((m, i) => (
+                  <div key={i} style={{ textAlign: m.sender === "user" ? "right" : "left", marginBottom: "0.75rem" }}>
+                    <div className={`bubble ${m.sender === "user" ? "user" : "bot"}`}>
+                      <strong>{m.sender === "user" ? "You: " : "Bot: "}</strong>
+                      <ReactMarkdown className="markdown-body">{m.text}</ReactMarkdown>
+                      <div style={{ textAlign: "right", marginTop: "0.35rem" }}>
+                        <ActionButtons promptText={m.text} />
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
-              {messages.length === 0 && (
-                <div style={{ textAlign: "center", color: "#64748b" }}>
-                  Start a conversation or pick a suggestion below.
-                </div>
-              )}
+                ))}
+                {messages.length === 0 && (
+                  <div style={{ textAlign: "center", color: "#64748b" }}>
+                    Start a conversation or pick a suggestion below.
+                  </div>
+                )}
+              </div>
             </div>
-          </div>
-        )}
+          )}
 
-        {!isCollapsed && !isFullScreen && (
-          <div className="gpt-card">
+          <div className="gpt-card" style={{ flex: isFullScreen ? "0 0 auto" : "unset" }}>
             <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", alignItems: "center", marginBottom: "0.5rem" }}>
               <select
                 value={selectedGroup}
                 onChange={(e) => setSelectedGroup(e.target.value)}
                 className="btn"
-                style={{ flex: "1 1 160px" }}
+                style={{ flex: "1 1 200px" }}
               >
                 {groupOptions.map((opt) => (
                   <option key={opt.value} value={opt.value}>
@@ -320,7 +324,7 @@ export default function GptPromptComponent({
               </div>
             )}
           </div>
-        )}
+        </div>
       </div>
     </div>
   );
