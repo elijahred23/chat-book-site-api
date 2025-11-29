@@ -1,59 +1,61 @@
 :root {
-  --btn-blue: linear-gradient(135deg, #3b82f6, #2563eb);
-  --btn-purple: linear-gradient(135deg, #9333ea, #7e22ce);
-  --btn-green: linear-gradient(135deg, #10b981, #059669);
-  --btn-orange: linear-gradient(135deg, #f97316, #ea580c);
-  --btn-podcast: linear-gradient(135deg, #ec4899, #db2777);
-  --btn-gray: linear-gradient(135deg, #94a3b8, #64748b);
-  --btn-code: linear-gradient(135deg, #06b6d4, #0e7490); /* Tailwind cyan range */
-  --btn-yellow: linear-gradient(135deg, #f59e0b, #d97706);
+  --btn-blue: linear-gradient(135deg, #4f46e5, #22d3ee);
+  --btn-purple: linear-gradient(135deg, #a855f7, #6b21a8);
+  --btn-green: linear-gradient(135deg, #22c55e, #16a34a);
+  --btn-orange: linear-gradient(135deg, #fb923c, #ea580c);
+  --btn-podcast: linear-gradient(135deg, #ec4899, #c026d3);
+  --btn-gray: linear-gradient(135deg, #94a3b8, #475569);
+  --btn-code: linear-gradient(135deg, #06b6d4, #0ea5e9);
+  --btn-yellow: linear-gradient(135deg, #fbbf24, #f59e0b);
   --google-blue: linear-gradient(135deg, #4285F4, #1a73e8);
-  --wiki-grey: linear-gradient(135deg, #545454, #2e2e2e);
-  --scholar-blue: linear-gradient(135deg, #3b5998, #2d4373);
-  --so-orange: linear-gradient(135deg, #f48024, #c46a1b);
-  --yt-red: linear-gradient(135deg, #ff0000, #cc0000);
-  --reddit-orange: linear-gradient(135deg, #ff4500, #e03e00);
-
-
-
-
+  --wiki-grey: linear-gradient(135deg, #6b7280, #111827);
+  --scholar-blue: linear-gradient(135deg, #2563eb, #0f172a);
+  --so-orange: linear-gradient(135deg, #f59e0b, #d97706);
+  --yt-red: linear-gradient(135deg, #ef4444, #b91c1c);
+  --reddit-orange: linear-gradient(135deg, #fb6a1a, #d9460f);
 }
 
 .action-buttons {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  gap: 4px;
+  gap: 8px;
   flex-wrap: wrap;
   margin: 0px 0;
 }
 
 .icon-btn {
-  border: none;
-  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 14px;
   color: white;
-  font-size: 10px;
-  padding: 8px;
-  width: 30px;
-  height: 30px;
+  font-size: 16px;
+  padding: 10px;
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: transform 0.2s ease, filter 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.25s ease, filter 0.3s ease;
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.25);
+  backdrop-filter: blur(6px);
 }
 
 .icon-btn:hover {
-  transform: scale(1.1);
-  filter: brightness(1.2);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.32);
+  filter: saturate(1.1);
+}
+
+.icon-btn:active {
+  transform: scale(0.97);
 }
 
 @media (max-width: 600px) {
   .icon-btn {
-    font-size: 18px;
-    width: 34px;
-    height: 34px;
-    padding: 6px;
+    font-size: 15px;
+    width: 40px;
+    height: 40px;
+    padding: 8px;
   }
 }

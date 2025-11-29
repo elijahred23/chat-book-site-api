@@ -49,9 +49,10 @@ export default function ActionButtons({ promptText, limitButtons = false }) {
 
   const buttons = [
     {
-      icon: <FaComments />,
+      icon: FaComments,
       title: "Ask AI",
       color: "var(--btn-blue)",
+      iconColor: "#0b1220",
       onClick: (e) => {
         e.stopPropagation();
         dispatch(actions.setChatPrompt(cleanText));
@@ -59,7 +60,7 @@ export default function ActionButtons({ promptText, limitButtons = false }) {
       },
     },
     {
-      icon: <FaVolumeUp />,
+      icon: FaVolumeUp,
       title: "TTS",
       color: "var(--btn-purple)",
       onClick: (e) => {
@@ -69,7 +70,7 @@ export default function ActionButtons({ promptText, limitButtons = false }) {
       },
     },
     {
-      icon: <FaScroll />,
+      icon: FaScroll,
       title: "Teleprompter",
       color: "var(--btn-green)",
       onClick: (e) => {
@@ -79,9 +80,10 @@ export default function ActionButtons({ promptText, limitButtons = false }) {
       },
     },
     {
-      icon: <FaProjectDiagram />,
+      icon: FaProjectDiagram,
       title: "PlantUML",
       color: "var(--btn-orange)",
+      iconColor: "#0f172a",
       onClick: (e) => {
         e.stopPropagation();
         dispatch(actions.setPlantUMLPrompt(cleanText));
@@ -89,9 +91,10 @@ export default function ActionButtons({ promptText, limitButtons = false }) {
       },
     },
     {
-      icon: <GiNotebook />,
+      icon: GiNotebook,
       title: "Chat Book",
       color: "var(--btn-orange)",
+      iconColor: "#0f172a",
       onClick: (e) => {
         e.stopPropagation();
         dispatch(actions.setChatBookSubject(cleanText));
@@ -99,7 +102,17 @@ export default function ActionButtons({ promptText, limitButtons = false }) {
       },
     },
     {
-      icon: <FaPodcast />,
+      icon: FaYoutube,
+      title: "Open YT Transcript",
+      color: "var(--yt-red)",
+      onClick: (e) => {
+        e.stopPropagation();
+        dispatch(actions.setYouTubeSearchText(cleanText));
+        dispatch(actions.setIsYouTubeOpen(true));
+      },
+    },
+    {
+      icon: FaPodcast,
       title: "Podcast TTS",
       color: "var(--btn-podcast)",
       onClick: (e) => {
@@ -109,7 +122,7 @@ export default function ActionButtons({ promptText, limitButtons = false }) {
       },
     },
     {
-      icon: <FaCode />,
+      icon: FaCode,
       title: "JS Generator",
       color: "var(--btn-code)",
       onClick: (e) => {
@@ -119,9 +132,10 @@ export default function ActionButtons({ promptText, limitButtons = false }) {
       },
     },
     {
-      icon: <FcGoogle />,
+      icon: FcGoogle,
       title: "Ask Google",
       color: "var(--google-blue)",
+      iconColor: "#0b1220",
       onClick: (e) => {
         e.stopPropagation();
         const query = encodeURIComponent(cleanText);
@@ -129,7 +143,7 @@ export default function ActionButtons({ promptText, limitButtons = false }) {
       },
     },
     {
-      icon: <SiWikipedia />,
+      icon: SiWikipedia,
       title: "Ask Wikipedia",
       color: "var(--wiki-grey)",
       onClick: (e) => {
@@ -142,22 +156,10 @@ export default function ActionButtons({ promptText, limitButtons = false }) {
       },
     },
     {
-      icon: <FaYoutube />,
-      title: "Ask YouTube",
-      color: "var(--yt-red)",
-      onClick: (e) => {
-        e.stopPropagation();
-        const query = encodeURIComponent(cleanText + " explanation");
-        window.open(
-          `https://www.youtube.com/results?search_query=${query}`,
-          "_blank"
-        );
-      },
-    },
-    {
-      icon: <FaBook />,
+      icon: FaBook,
       title: "Define Word",
       color: "var(--btn-gray)",
+      iconColor: "#0f172a",
       onClick: (e) => {
         e.stopPropagation();
         const query = encodeURIComponent(cleanText);
@@ -165,9 +167,10 @@ export default function ActionButtons({ promptText, limitButtons = false }) {
       },
     },
     {
-      icon: <GiGraduateCap />,
+      icon: GiGraduateCap,
       title: "Google Scholar",
       color: "var(--scholar-blue)",
+      iconColor: "#e2e8f0",
       onClick: (e) => {
         e.stopPropagation();
         const query = encodeURIComponent(cleanText);
@@ -175,9 +178,10 @@ export default function ActionButtons({ promptText, limitButtons = false }) {
       },
     },
     {
-      icon: <FaImage />,
+      icon: FaImage,
       title: "Image Search",
       color: "var(--google-blue)",
+      iconColor: "#0b1220",
       onClick: (e) => {
         e.stopPropagation();
         const query = encodeURIComponent(cleanText);
@@ -188,9 +192,24 @@ export default function ActionButtons({ promptText, limitButtons = false }) {
       },
     },
     {
-      icon: <FaRedditAlien />,
+      icon: FaYoutube,
+      title: "YouTube Results",
+      color: "var(--yt-red)",
+      iconColor: "#0b1220",
+      onClick: (e) => {
+        e.stopPropagation();
+        const query = encodeURIComponent(cleanText + " explanation");
+        window.open(
+          `https://www.youtube.com/results?search_query=${query}`,
+          "_blank"
+        );
+      },
+    },
+    {
+      icon: FaRedditAlien,
       title: "Ask Reddit",
       color: "var(--reddit-orange)",
+      iconColor: "#0f172a",
       onClick: (e) => {
         e.stopPropagation();
         const query = encodeURIComponent(cleanText);
@@ -198,9 +217,10 @@ export default function ActionButtons({ promptText, limitButtons = false }) {
       },
     },
     {
-      icon: <FaCopy />,
+      icon: FaCopy,
       title: "Copy Text",
       color: "var(--btn-gray)",
+      iconColor: "#0f172a",
       onClick: async (e) => {
         e.stopPropagation();
         await navigator.clipboard.writeText(cleanText);
@@ -220,9 +240,17 @@ export default function ActionButtons({ promptText, limitButtons = false }) {
           onClick={btn.onClick}
           className="icon-btn"
           title={btn.title}
-          style={{ background: btn.color }}
+          aria-label={btn.title}
+          style={{
+            background: btn.color,
+            color: btn.iconColor || "#ffffff",
+            boxShadow: "0 14px 30px rgba(15,23,42,0.25)"
+          }}
         >
-          {btn.icon}
+          {(() => {
+            const Icon = btn.icon;
+            return <Icon size={18} color={btn.iconColor || "#fff"} />;
+          })()}
         </button>
       ))}
 

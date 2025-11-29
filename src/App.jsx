@@ -28,7 +28,7 @@ function App() {
   const [showFloatingBtns, setShowFloatingBtns] = useState(false);
   const floatingRef = useRef(null);
   const dispatch = useAppDispatch();
-  const { isChatOpen, isTeleprompterOpen, isTTSOpen, isPlantUMLOpen, isPodcastTTSOpen, isJSGeneratorOpen, isChatBookOpen } = useAppState();
+  const { isChatOpen, isTeleprompterOpen, isTTSOpen, isPlantUMLOpen, isPodcastTTSOpen, isJSGeneratorOpen, isChatBookOpen, isYouTubeOpen } = useAppState();
 
   const toggleChat = () => dispatch(actions.setIsChatOpen(false));
   const toggleWidth = () => setIsFullWidth((p) => !p);
@@ -36,6 +36,7 @@ function App() {
   const setIsTTSOpen = (val) => dispatch(actions.setIsTTSOpen(val));
   const setIsPlantUMLOpen = (val) => dispatch(actions.setIsPlantUMLOpen(val)); // ✅ NEW
   const setPodcastTTSOpen = (val) => dispatch(actions.setIsPodcastTTSOpen(val)); // ✅ NEW
+  const setIsYouTubeOpen = (val) => dispatch(actions.setIsYouTubeOpen(val));
 
   useEffect(() => {
     const savedText = localStorage.getItem('selectedText');
@@ -66,7 +67,6 @@ function App() {
         <div className="dropdown-nav">
           <button className="dropdown-toggle">Menu ▾</button>
           <div className="dropdown-menu">
-            <NavLink to="/youTubeTranscript">YouTube Transcript</NavLink>
             <NavLink to="/typingTest">Typing Test</NavLink>
             <NavLink to="/flashCards">Flash Cards</NavLink>
             <NavLink to="/htmlBuilder">HTML Builder</NavLink>
@@ -151,6 +151,9 @@ function App() {
               <button onClick={() => dispatch(actions.setIsJSGeneratorOpen(true))} className="fab-btn">
                 <span>💻</span>{isJSGeneratorOpen ? 'JS Generator' : 'Open JS Gen'}
               </button>
+              <button onClick={() => setIsYouTubeOpen(true)} className="fab-btn">
+                <span>🎞️</span>{isYouTubeOpen ? 'YT Transcript' : 'Open YT'}
+              </button>
               <button onClick={() => dispatch(actions.setIsChatBookOpen(true))} className="fab-btn">
                 <span>📓</span>{isChatBookOpen ? 'Chat Book' : 'Open Chat Book'}
               </button>
@@ -176,6 +179,7 @@ function App() {
             <Route path="/flashCards" element={<FlashCardApp />} />
             <Route path="/plantUML" element={<PlantUMLViewer />} />
             <Route path="/jsGenerator" element={<JSConsoleGenerator />} />
+            <Route path="/youTubeTranscript" element={<YouTubeTranscript />} />
           </Routes>
         </div>
 
@@ -231,6 +235,15 @@ function App() {
             </button>
           </div>
           <PodcastTTSPlayer />
+        </div>
+        {/* YouTube Transcript Drawer */}
+        <div className={`chat-drawer ${isYouTubeOpen ? 'open' : ''} ${isFullWidth ? 'full' : 'half'}`}>
+          <div className="chat-drawer-header">
+            <button className="width-toggle-btn" onClick={() => setIsYouTubeOpen(false)}>
+              ✖ Close YouTube Transcript
+            </button>
+          </div>
+          <YouTubeTranscript />
         </div>
         {/* New JS Console Generator Drawer */}
         <div className={`chat-drawer ${isJSGeneratorOpen ? 'open' : ''} ${isFullWidth ? 'full' : 'half'}`}>

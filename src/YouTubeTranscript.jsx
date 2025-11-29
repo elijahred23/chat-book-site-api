@@ -99,6 +99,8 @@ export default function YouTubeTranscript() {
     });
     const dispatch = useAppDispatch();
     const [loadingTranscript, setLoadingTranscript] = useState(false);
+    const { youtubeSearchText } = useAppState();
+    const [externalSearchText, setExternalSearchText] = useState("");
 
     // Helpers to fetch transcript and comments based on selected provider
     const fetchYouTubeTranscript = async (video_url) => {
@@ -251,6 +253,13 @@ export default function YouTubeTranscript() {
     const validYoutubeUrl = useMemo(() => {
         return isValidYouTubeUrl(url);
     }, [url]);
+
+    useEffect(() => {
+        if (youtubeSearchText) {
+            setDrawerOpen(true);
+            setExternalSearchText(youtubeSearchText);
+        }
+    }, [youtubeSearchText]);
 
     // Internal styles scoped to this component. These override any external styles and ensure good mobile layout.
     const styles = `
@@ -590,6 +599,7 @@ export default function YouTubeTranscript() {
                             setUrl(selectedUrl);
                             setDrawerOpen(false);
                         }}
+                        externalQuery={externalSearchText}
                         setUrl={(url) => {
                             setUrl(url);
                             setDrawerOpen(false);

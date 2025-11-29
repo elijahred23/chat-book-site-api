@@ -1,7 +1,7 @@
 import { useRef, useEffect, useState } from 'react';
 import { getNewsVideos, getTrendingVideos, searchYouTubeVideos, searchYouTubePlaylists, getPlaylistVideos } from './utils/callYoutube';
 
-export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo }) {
+export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo, externalQuery }) {
     const [searchQuery, setSearchQuery] = useState(() => localStorage.getItem('yt_search_query') || '');
     const [searchType, setSearchType] = useState(() => localStorage.getItem('yt_search_type') || 'video');
     const [filterType, setFilterType] = useState(() => localStorage.getItem('yt_filter_type') || 'relevance');
@@ -240,6 +240,13 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo }) 
     useEffect(() => {
         if (isOpen) focusInput();
     }, [isOpen, searchType]);
+
+    useEffect(() => {
+        if (externalQuery) {
+            setSearchQuery(externalQuery);
+            setIsSearchVisible(true);
+        }
+    }, [externalQuery]);
 
     useEffect(() => {
         if (results.length && !results[0]?._url) {
