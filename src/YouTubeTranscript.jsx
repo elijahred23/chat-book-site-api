@@ -691,6 +691,82 @@ export default function YouTubeTranscript() {
                                         <ReactMarkdown className="markdown-body">{res}</ReactMarkdown>
                                         <CopyButton text={res} className="btn copy-btn" />
                                         <ActionButtons promptText={res} />
+                                        <button
+                                            className="btn secondary-btn"
+                                            style={{ marginTop: "0.5rem" }}
+                                            onClick={() => {
+                                                setRetryIndex(i);
+                                                setRetryPromptText(prompt);
+                                            }}
+                                            disabled={retryLoadingIndex === i}
+                                        >
+                                            {retryIndex === i ? "Editing retry…" : "Retry this part"}
+                                        </button>
+                                        {retryIndex === i && (
+                                            <div className="chunk" style={{ marginTop: "0.5rem" }}>
+                                                <input
+                                                    className="input"
+                                                    value={retryPromptText}
+                                                    onChange={(e) => setRetryPromptText(e.target.value)}
+                                                    placeholder="New prompt for this part"
+                                                />
+                                                <div className="button-group">
+                                                    <button
+                                                        className="btn primary-btn"
+                                                        disabled={retryLoadingIndex === i}
+                                                        onClick={async () => {
+                                                            const requestId = crypto.randomUUID();
+                                                            latestRetryRef.current[i] = requestId;
+                                                            try {
+                                                                setRetryLoadingIndex(i);
+                                                                setProgress(0);
+                                                                const retryChunk = [splitTranscript[i]];
+                                                                const retryResponse = await promptTranscript(
+                                                                    retryPromptText || prompt,
+                                                                    retryChunk,
+                                                                    setProgress,
+                                                                    showMessage
+                                                                );
+                                                                if (latestRetryRef.current[i] === requestId) {
+                                                                    const updated = [...promptResponses];
+                                                                    updated[i] = retryResponse[0];
+                                                                    setPromptResponses(updated);
+                                                                    showMessage?.({
+                                                                        type: "success",
+                                                                        message: `Retry successful for part ${i + 1}`,
+                                                                    });
+                                                                }
+                                                            } catch (err) {
+                                                                if (latestRetryRef.current[i] === requestId) {
+                                                                    showMessage?.({
+                                                                        type: "error",
+                                                                        message: `Retry failed: ${err.message}`,
+                                                                    });
+                                                                }
+                                                            } finally {
+                                                                if (latestRetryRef.current[i] === requestId) {
+                                                                    setRetryLoadingIndex(null);
+                                                                    setRetryIndex(null);
+                                                                    setRetryPromptText("");
+                                                                }
+                                                            }
+                                                        }}
+                                                    >
+                                                        {retryLoadingIndex === i ? <ClipLoader size={12} color="white" /> : "Submit Retry"}
+                                                    </button>
+                                                    <button
+                                                        className="btn secondary-btn"
+                                                        onClick={() => {
+                                                            setRetryIndex(null);
+                                                            setRetryPromptText("");
+                                                        }}
+                                                        disabled={retryLoadingIndex === i}
+                                                    >
+                                                        Cancel
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        )}
                                     </div>
                                 ))}
                             </AutoScroller>
