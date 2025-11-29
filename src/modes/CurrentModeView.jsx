@@ -905,6 +905,9 @@ function TypingMode({
       >
         <div style={{ fontWeight: 600, marginBottom: "0.25rem" }}>Definition</div>
         <div style={{ color: COLORS.text }}>{card.answer}</div>
+        <div style={{ fontSize: "0.85rem", color: COLORS.primary, marginTop: "0.25rem" }}>
+          Just retype this definition to score points.
+        </div>
       </div>
       <div
         style={{

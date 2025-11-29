@@ -663,8 +663,9 @@ export default function FlashCardApp() {
   const handleTypingSubmit = () => {
     if (!typingRunning || typingComplete) return;
     const cardIdx = typingOrder[typingIndex];
-    const expected = cards[cardIdx]?.answer?.trim().toLowerCase() || "";
-    const user = typingInput.trim().toLowerCase();
+    const normalize = (val) => val.trim().toLowerCase().replace(/\s+/g, " ");
+    const expected = normalize(cards[cardIdx]?.answer || "");
+    const user = normalize(typingInput);
     const isCorrect = expected && user === expected;
     if (isCorrect) {
       setTypingScore((s) => s + 10);
