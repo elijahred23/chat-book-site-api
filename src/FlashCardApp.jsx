@@ -1,6 +1,9 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, createContext, useContext } from "react";
 import { getGeminiResponse } from "./utils/callGemini.js";
 import CurrentModeView from "./modes/CurrentModeView.jsx";
+
+const FlashCardContext = createContext(null);
+export const useFlashCardContext = () => useContext(FlashCardContext);
 
 function extractJsonFromResponse(text) {
   if (!text || typeof text !== "string") return null;
@@ -307,13 +310,11 @@ export default function FlashCardApp() {
   const [quizComplete, setQuizComplete] = useState(false);
 
   useEffect(() => {
-    if (mode === "quiz") {
-      setQuizIndex(0);
-      setSelectedOption(null);
-      setQuizScore(0);
-      setQuizComplete(false);
-    }
-  }, [cards, mode]);
+    setQuizIndex(0);
+    setSelectedOption(null);
+    setQuizScore(0);
+    setQuizComplete(false);
+  }, [cards]);
 
   const restartQuiz = () => {
     setQuizIndex(0);
@@ -356,9 +357,8 @@ export default function FlashCardApp() {
   };
 
   useEffect(() => {
-    if (mode !== "match") return;
     resetMatch();
-  }, [cards, mode]);
+  }, [cards]);
 
   useEffect(() => {
     if (selectedTerm !== null && selectedDef !== null) {
@@ -387,10 +387,8 @@ export default function FlashCardApp() {
   };
 
   useEffect(() => {
-    if (mode === "recall") {
-      restartRecall();
-    }
-  }, [cards, mode]);
+    restartRecall();
+  }, [cards]);
 
   const handleRecallSubmit = () => {
     if (recallComplete) return;
@@ -457,10 +455,8 @@ export default function FlashCardApp() {
   };
 
   useEffect(() => {
-    if (mode === "memory") {
-      resetMemoryGame();
-    }
-  }, [cards, mode]);
+    resetMemoryGame();
+  }, [cards]);
 
   const handleMemorySelect = (index) => {
     if (
@@ -524,10 +520,8 @@ export default function FlashCardApp() {
   };
 
   useEffect(() => {
-    if (mode === "survival") {
-      resetSurvival();
-    }
-  }, [cards, mode]);
+    resetSurvival();
+  }, [cards]);
 
   const handleSelectSurvivalOption = (option) => {
     if (survivalComplete || survivalSelected !== null) return;
@@ -567,12 +561,15 @@ export default function FlashCardApp() {
   };
 
   useEffect(() => {
-    if (mode === "blitz" && cards.length) {
-      resetBlitz();
-    } else {
+    setBlitzOrder(shuffleArray(cards.map((_, i) => i)));
+    setBlitzIndex(0);
+  }, [cards]);
+
+  useEffect(() => {
+    if (mode !== "blitz") {
       setBlitzRunning(false);
     }
-  }, [cards, mode]);
+  }, [mode]);
 
   useEffect(() => {
     if (mode !== "blitz" || !blitzRunning) return;
@@ -882,88 +879,169 @@ export default function FlashCardApp() {
     </div>
   );
 
+  const contextValue = {
+    cards,
+    setCards,
+    prompt,
+    setPrompt,
+    mode,
+    setMode,
+    error,
+    loading,
+    isMobile,
+    COLORS,
+    handleGenerateFromPrompt,
+    handleFileUpload,
+    handleDownload,
+    handleCopyJson,
+    handlePasteJson,
+    readCurrentCard,
+    readAllCards,
+    stopTts,
+    studyIndex,
+    showAnswer,
+    prevStudyCard,
+    nextStudyCard,
+    setShowAnswer,
+    quizIndex,
+    quizComplete,
+    quizScore,
+    selectedOption,
+    handleSelectQuizOption,
+    restartQuiz,
+    matchTerms,
+    matchDefs,
+    matchedPairs,
+    selectedTerm,
+    selectedDef,
+    setSelectedTerm,
+    setSelectedDef,
+    resetMatch,
+    recallIndex,
+    recallInput,
+    recallScore,
+    recallComplete,
+    showRecallFeedback,
+    recallHintLevel,
+    setRecallInput,
+    handleRecallSubmit,
+    restartRecall,
+    handleRecallHint,
+    handleRecallSkip,
+    memoryItems,
+    memorySelected,
+    memoryMatched,
+    memoryMoves,
+    memoryStreak,
+    memoryBestStreak,
+    handleMemorySelect,
+    resetMemoryGame,
+    survivalOrder,
+    survivalIndex,
+    survivalLives,
+    survivalScore,
+    survivalSelected,
+    survivalComplete,
+    handleSelectSurvivalOption,
+    resetSurvival,
+    generateQuizOptions,
+    blitzOrder,
+    blitzIndex,
+    blitzScore,
+    blitzStreak,
+    blitzBestStreak,
+    blitzTimeLeft,
+    blitzSelected,
+    blitzRunning,
+    blitzComplete,
+    resetBlitz,
+    handleSelectBlitzOption,
+  };
+
   return (
-    <div
-      style={{
-        maxWidth: "800px",
-        margin: "0 auto",
-        padding: "1rem",
-        color: COLORS.text,
-        backgroundColor: COLORS.background,
-        border: `1px solid ${COLORS.border}`,
-        borderRadius: "8px",
-      }}
-    >
-      <h2 style={{ marginBottom: "1rem", color: COLORS.text }}>
-        Flash Card Study Tool
-      </h2>
-      {renderControls()}
-      {renderNavigation()}
-      {renderTtsControls()}
-      <CurrentModeView
-        mode={mode}
-        cards={cards}
-        COLORS={COLORS}
-        isMobile={isMobile}
-        studyIndex={studyIndex}
-        showAnswer={showAnswer}
-        onPrevStudy={prevStudyCard}
-        onNextStudy={nextStudyCard}
-        onToggleAnswer={() => setShowAnswer((v) => !v)}
-        quizIndex={quizIndex}
-        quizComplete={quizComplete}
-        quizScore={quizScore}
-        selectedOption={selectedOption}
-        onSelectQuizOption={handleSelectQuizOption}
-        onRestartQuiz={restartQuiz}
-        matchTerms={matchTerms}
-        matchDefs={matchDefs}
-        matchedPairs={matchedPairs}
-        selectedTerm={selectedTerm}
-        selectedDef={selectedDef}
-        onSelectTerm={setSelectedTerm}
-        onSelectDef={setSelectedDef}
-        onResetMatch={resetMatch}
-        recallIndex={recallIndex}
-        recallInput={recallInput}
-        recallScore={recallScore}
-        recallComplete={recallComplete}
-        showRecallFeedback={showRecallFeedback}
-        recallHintLevel={recallHintLevel}
-        onChangeRecallInput={setRecallInput}
-        onSubmitRecall={handleRecallSubmit}
-        onRestartRecall={restartRecall}
-        onHint={handleRecallHint}
-        onSkip={handleRecallSkip}
-        memoryItems={memoryItems}
-        memorySelected={memorySelected}
-        memoryMatched={memoryMatched}
-        memoryMoves={memoryMoves}
-        memoryStreak={memoryStreak}
-        memoryBestStreak={memoryBestStreak}
-        onSelectMemory={handleMemorySelect}
-        onResetMemory={resetMemoryGame}
-        survivalOrder={survivalOrder}
-        survivalIndex={survivalIndex}
-        survivalLives={survivalLives}
-        survivalScore={survivalScore}
-        survivalSelected={survivalSelected}
-        survivalComplete={survivalComplete}
-        onSelectSurvivalOption={handleSelectSurvivalOption}
-        onRestartSurvival={resetSurvival}
-        generateQuizOptions={generateQuizOptions}
-        blitzOrder={blitzOrder}
-        blitzIndex={blitzIndex}
-        blitzScore={blitzScore}
-        blitzStreak={blitzStreak}
-        blitzBestStreak={blitzBestStreak}
-        blitzTimeLeft={blitzTimeLeft}
-        blitzSelected={blitzSelected}
-        blitzRunning={blitzRunning}
-        blitzComplete={blitzComplete}
-        onStartBlitz={resetBlitz}
-        onSelectBlitzOption={handleSelectBlitzOption}
-      />
-    </div>
+    <FlashCardContext.Provider value={contextValue}>
+      <div
+        style={{
+          maxWidth: "800px",
+          margin: "0 auto",
+          padding: "1rem",
+          color: COLORS.text,
+          backgroundColor: COLORS.background,
+          border: `1px solid ${COLORS.border}`,
+          borderRadius: "8px",
+        }}
+      >
+        <h2 style={{ marginBottom: "1rem", color: COLORS.text }}>
+          Flash Card Study Tool
+        </h2>
+        {renderControls()}
+        {renderNavigation()}
+        {renderTtsControls()}
+        <CurrentModeView
+          mode={mode}
+          cards={cards}
+          COLORS={COLORS}
+          isMobile={isMobile}
+          studyIndex={studyIndex}
+          showAnswer={showAnswer}
+          onPrevStudy={prevStudyCard}
+          onNextStudy={nextStudyCard}
+          onToggleAnswer={() => setShowAnswer((v) => !v)}
+          quizIndex={quizIndex}
+          quizComplete={quizComplete}
+          quizScore={quizScore}
+          selectedOption={selectedOption}
+          onSelectQuizOption={handleSelectQuizOption}
+          onRestartQuiz={restartQuiz}
+          matchTerms={matchTerms}
+          matchDefs={matchDefs}
+          matchedPairs={matchedPairs}
+          selectedTerm={selectedTerm}
+          selectedDef={selectedDef}
+          onSelectTerm={setSelectedTerm}
+          onSelectDef={setSelectedDef}
+          onResetMatch={resetMatch}
+          recallIndex={recallIndex}
+          recallInput={recallInput}
+          recallScore={recallScore}
+          recallComplete={recallComplete}
+          showRecallFeedback={showRecallFeedback}
+          recallHintLevel={recallHintLevel}
+          onChangeRecallInput={setRecallInput}
+          onSubmitRecall={handleRecallSubmit}
+          onRestartRecall={restartRecall}
+          onHint={handleRecallHint}
+          onSkip={handleRecallSkip}
+          memoryItems={memoryItems}
+          memorySelected={memorySelected}
+          memoryMatched={memoryMatched}
+          memoryMoves={memoryMoves}
+          memoryStreak={memoryStreak}
+          memoryBestStreak={memoryBestStreak}
+          onSelectMemory={handleMemorySelect}
+          onResetMemory={resetMemoryGame}
+          survivalOrder={survivalOrder}
+          survivalIndex={survivalIndex}
+          survivalLives={survivalLives}
+          survivalScore={survivalScore}
+          survivalSelected={survivalSelected}
+          survivalComplete={survivalComplete}
+          onSelectSurvivalOption={handleSelectSurvivalOption}
+          onRestartSurvival={resetSurvival}
+          generateQuizOptions={generateQuizOptions}
+          blitzOrder={blitzOrder}
+          blitzIndex={blitzIndex}
+          blitzScore={blitzScore}
+          blitzStreak={blitzStreak}
+          blitzBestStreak={blitzBestStreak}
+          blitzTimeLeft={blitzTimeLeft}
+          blitzSelected={blitzSelected}
+          blitzRunning={blitzRunning}
+          blitzComplete={blitzComplete}
+          onStartBlitz={resetBlitz}
+          onSelectBlitzOption={handleSelectBlitzOption}
+        />
+      </div>
+    </FlashCardContext.Provider>
   );
 }
