@@ -389,6 +389,7 @@ const TeleprompterAdvanced = () => {
           }}
         />
       </div>
+      </div>
 
       {/* Keyframes for scrolling animations */}
       <style>
@@ -415,6 +416,7 @@ const TeleprompterAdvanced = () => {
           }
         `}
       </style>
+      </div>
     </div>
   );
 };
