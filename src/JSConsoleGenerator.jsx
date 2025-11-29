@@ -216,9 +216,6 @@ export default function JSConsoleGenerator() {
   }
 
   const availableCompilers = getAvailableCompilers(language);
-
-
-  return (
   return (
     <div className="jsgen-shell">
       <div className="jsgen-card">
