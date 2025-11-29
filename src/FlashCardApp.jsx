@@ -57,7 +57,7 @@ const COLORS = {
   text: "#1f2937",
   primary: "#2563eb",
   border: "#d1d5db",
-  background: "#f5f5f5",
+  background: "#f8fafc",
   buttonBg: "#f3f4f6",
   buttonBgActive: "#e5e7eb",
   correctBg: "#d1fae5",
@@ -201,7 +201,19 @@ export default function FlashCardApp() {
   const handleCopyJson = async () => {
     try {
       const jsonString = JSON.stringify(cards, null, 2);
-      await navigator.clipboard.writeText(jsonString);
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        await navigator.clipboard.writeText(jsonString);
+      } else {
+        const helper = document.createElement("textarea");
+        helper.value = jsonString;
+        helper.setAttribute("readonly", "");
+        helper.style.position = "absolute";
+        helper.style.left = "-9999px";
+        document.body.appendChild(helper);
+        helper.select();
+        document.execCommand("copy");
+        document.body.removeChild(helper);
+      }
       setError(null);
     } catch (err) {
       setError("Failed to copy to clipboard: " + err.message);
@@ -210,7 +222,12 @@ export default function FlashCardApp() {
 
   const handlePasteJson = async () => {
     try {
-      const text = await navigator.clipboard.readText();
+      let text = "";
+      if (navigator.clipboard && navigator.clipboard.readText) {
+        text = await navigator.clipboard.readText();
+      } else {
+        text = window.prompt("Paste your JSON here:") || "";
+      }
       const json = JSON.parse(text);
       const rawCards = Array.isArray(json) ? json : Array.isArray(json.cards) ? json.cards : null;
       if (rawCards) {
@@ -696,7 +713,7 @@ export default function FlashCardApp() {
       flexWrap: isMobile ? "nowrap" : "wrap",
     };
     return (
-      <div style={navContainerStyle}>
+      <div style={{ ...navContainerStyle, background: "#ffffff", borderRadius: "12px", padding: "0.5rem", boxShadow: "0 10px 24px rgba(15,23,42,0.08)", border: `1px solid ${COLORS.border}` }}>
         {[
           { key: "study", label: "Study" },
           { key: "quiz", label: "Quiz" },
@@ -712,18 +729,18 @@ export default function FlashCardApp() {
             key={key}
             onClick={() => setMode(key)}
             style={{
-              padding: isMobile ? "0.5rem" : "0.5rem 1rem",
+              padding: isMobile ? "0.75rem" : "0.65rem 1.2rem",
               border:
                 key === mode
                   ? `2px solid ${COLORS.primary}`
                   : `1px solid ${COLORS.border}`,
-              backgroundColor:
-                key === mode ? COLORS.buttonBgActive : COLORS.buttonBg,
-              borderRadius: "4px",
+              background: key === mode ? "linear-gradient(135deg, #2563eb, #60a5fa)" : COLORS.buttonBg,
+              color: key === mode ? "#fff" : COLORS.text,
+              borderRadius: "10px",
               cursor: "pointer",
-              color: COLORS.text,
               width: isMobile ? "100%" : "auto",
               textAlign: "center",
+              boxShadow: key === mode ? "0 10px 20px rgba(37,99,235,0.25)" : "none",
             }}
           >
             {label}
@@ -740,6 +757,11 @@ export default function FlashCardApp() {
       display: "flex",
       flexDirection: "column",
       gap: "0.5rem",
+      background: "#ffffff",
+      borderRadius: "12px",
+      padding: "0.75rem",
+      boxShadow: "0 10px 24px rgba(15,23,42,0.08)",
+      border: `1px solid ${COLORS.border}`,
     };
     const fileActionsStyle = {
       display: "flex",
@@ -908,7 +930,7 @@ export default function FlashCardApp() {
   };
 
   const renderTtsControls = () => (
-    <div style={{ marginBottom: "1rem", display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
+    <div style={{ marginBottom: "1rem", display: "flex", gap: "0.5rem", flexWrap: "wrap", background: "#ffffff", padding: "0.75rem", borderRadius: "12px", boxShadow: "0 10px 24px rgba(15,23,42,0.08)", border: `1px solid ${COLORS.border}` }}>
       <button
         onClick={readCurrentCard}
         style={{
@@ -1046,20 +1068,21 @@ export default function FlashCardApp() {
 
   return (
     <FlashCardContext.Provider value={contextValue}>
-      <div
-        style={{
-          maxWidth: "800px",
-          margin: "0 auto",
-          padding: "1rem",
-          color: COLORS.text,
-          backgroundColor: COLORS.background,
-          border: `1px solid ${COLORS.border}`,
-          borderRadius: "8px",
-        }}
-      >
-        <h2 style={{ marginBottom: "1rem", color: COLORS.text }}>
-          Flash Card Study Tool
-        </h2>
+    <div
+      style={{
+        maxWidth: "800px",
+        margin: "0 auto",
+        padding: "1rem",
+        color: COLORS.text,
+        background: "linear-gradient(180deg, #f8fafc 0%, #ffffff 100%)",
+        border: `1px solid ${COLORS.border}`,
+        borderRadius: "14px",
+        boxShadow: "0 16px 40px rgba(15,23,42,0.08)",
+      }}
+    >
+      <h2 style={{ marginBottom: "1rem", color: COLORS.text }}>
+        Flash Card Study Tool
+      </h2>
         {renderControls()}
         {renderNavigation()}
         {renderTtsControls()}
