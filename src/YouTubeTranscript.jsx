@@ -183,9 +183,8 @@ export default function YouTubeTranscript() {
         localStorage.setItem("yt_prompt", prompt);
         localStorage.setItem("yt_split_length", splitLength);
         localStorage.setItem("yt_promptResponses", JSON.stringify(promptResponses));
-        localStorage.setItem("yt_iframe_showing", JSON.stringify(youtubeIframeShowing));
         localStorage.setItem("yt_iframe_minimized", JSON.stringify(isMinimized));
-    }, [transcript, prompt, splitLength, promptResponses, youtubeIframeShowing, isMinimized]);
+    }, [transcript, prompt, splitLength, promptResponses, isMinimized]);
 
     // Update transcript and split length when manual transcript changes
     useEffect(() => {
