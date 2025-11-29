@@ -249,7 +249,22 @@ function MatchMode({ cards, matchTerms, matchDefs, matchedPairs, selectedTerm, s
   );
 }
 
-function RecallMode({ cards, recallIndex, recallInput, recallScore, recallComplete, showRecallFeedback, onInputChange, onSubmit, onRestart, COLORS, isMobile }) {
+function RecallMode({
+  cards,
+  recallIndex,
+  recallInput,
+  recallScore,
+  recallComplete,
+  showRecallFeedback,
+  recallHintLevel,
+  onInputChange,
+  onSubmit,
+  onRestart,
+  onHint,
+  onSkip,
+  COLORS,
+  isMobile,
+}) {
   if (cards.length === 0) return <p>No cards available for recall.</p>;
   if (recallComplete) {
     return (
@@ -276,15 +291,23 @@ function RecallMode({ cards, recallIndex, recallInput, recallScore, recallComple
     );
   }
   const card = cards[recallIndex];
-  const correct = card.answer?.trim().toLowerCase() || "";
+  const correct = card.question?.trim().toLowerCase() || "";
   const user = recallInput.trim().toLowerCase();
   const isCorrect = user && user === correct;
+  const hint =
+    recallHintLevel > 0
+      ? (card.question || "")
+          .split(/\s+/)
+          .filter(Boolean)
+          .slice(0, recallHintLevel)
+          .join(" ")
+      : "";
   return (
     <div>
       <h3>
         Question {recallIndex + 1} of {cards.length}
       </h3>
-      <p style={{ marginBottom: "0.5rem" }}>{card.question}</p>
+      <p style={{ marginBottom: "0.5rem" }}>Answer: {card.answer}</p>
       <div
         style={{
           display: "flex",
@@ -297,7 +320,7 @@ function RecallMode({ cards, recallIndex, recallInput, recallScore, recallComple
           type="text"
           value={recallInput}
           onChange={(e) => onInputChange(e.target.value)}
-          placeholder="Type your answer"
+          placeholder="Type the matching question"
           style={{
             flex: isMobile ? "none" : 1,
             width: isMobile ? "100%" : "auto",
@@ -305,11 +328,11 @@ function RecallMode({ cards, recallIndex, recallInput, recallScore, recallComple
             backgroundColor: COLORS.buttonBg,
             border: `1px solid ${COLORS.border}`,
             borderRadius: "4px",
-            color: COLORS.text,
-          }}
-        />
-        <button
-          onClick={onSubmit}
+          color: COLORS.text,
+        }}
+      />
+      <button
+        onClick={onSubmit}
           style={{
             padding: "0.5rem 1rem",
             backgroundColor: COLORS.buttonBg,
@@ -317,14 +340,48 @@ function RecallMode({ cards, recallIndex, recallInput, recallScore, recallComple
             borderRadius: "4px",
             color: COLORS.text,
             cursor: "pointer",
-            width: isMobile ? "100%" : "auto",
-          }}
-        >
-          Submit
-        </button>
+          width: isMobile ? "100%" : "auto",
+        }}
+      >
+        Submit
+      </button>
+      <button
+        onClick={onHint}
+        style={{
+          padding: "0.5rem 1rem",
+          backgroundColor: COLORS.buttonBg,
+          border: `1px solid ${COLORS.border}`,
+          borderRadius: "4px",
+          color: COLORS.text,
+          cursor: "pointer",
+          width: isMobile ? "100%" : "auto",
+        }}
+      >
+        Hint
+      </button>
+      <button
+        onClick={onSkip}
+        style={{
+          padding: "0.5rem 1rem",
+          backgroundColor: COLORS.buttonBg,
+          border: `1px solid ${COLORS.border}`,
+          borderRadius: "4px",
+          color: COLORS.text,
+          cursor: "pointer",
+          width: isMobile ? "100%" : "auto",
+        }}
+      >
+        Skip
+      </button>
       </div>
+      {hint && (
+        <div style={{ marginTop: "0.35rem", color: COLORS.primary }}>
+          Hint: {hint}
+          {(card.question || "").split(/\s+/).filter(Boolean).length > recallHintLevel ? " ..." : ""}
+        </div>
+      )}
       <p style={{ marginTop: "0.5rem" }}>Score: {recallScore}</p>
-      {showRecallFeedback && <p style={{ color: isCorrect ? "#16a34a" : "#dc2626" }}>{isCorrect ? "Correct!" : `Incorrect. The answer was: ${card.answer}`}</p>}
+      {showRecallFeedback && <p style={{ color: isCorrect ? "#16a34a" : "#dc2626" }}>{isCorrect ? "Correct!" : `Incorrect. The question was: ${card.question}`}</p>}
     </div>
   );
 }
@@ -405,6 +462,18 @@ function MemoryMode({
       {memoryStreak > 1 && (
         <div style={{ color: COLORS.primary, fontWeight: 600 }}>Combo x{memoryStreak}! Keep it going.</div>
       )}
+      {memoryItems.length > 0 && (
+        <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", fontSize: "0.9rem", color: COLORS.text }}>
+          <span style={{ fontWeight: 600 }}>Hint palette:</span>
+          <span>Columns = cool tones</span>
+          <span>Rows = warm tones</span>
+        </div>
+      )}
+      {(() => {
+        const colCount = isMobile ? 3 : 4;
+        const colPalette = ["#eef2ff", "#e0f2fe", "#ecfeff", "#f1f5f9"];
+        const rowPalette = ["#fff7ed", "#fef9c3", "#fef2f2", "#f3e8ff"];
+        return (
       <div
         style={{
           display: "grid",
@@ -416,6 +485,15 @@ function MemoryMode({
           const matched = memoryMatched.includes(item.id);
           const selected = memorySelected.includes(idx);
           const disabled = matched || memorySelected.length === 2;
+          const colIdx = colCount ? idx % colCount : 0;
+          const rowIdx = colCount ? Math.floor(idx / colCount) : 0;
+          const colColor = colPalette[colIdx % colPalette.length];
+          const rowColor = rowPalette[rowIdx % rowPalette.length];
+          const baseColor = matched
+            ? "linear-gradient(135deg, #d1fae5, #a7f3d0)"
+            : selected
+            ? COLORS.selectedBg
+            : `linear-gradient(135deg, ${colColor}, ${rowColor})`;
           return (
             <div
               key={idx}
@@ -428,7 +506,7 @@ function MemoryMode({
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                background: matched ? "linear-gradient(135deg, #d1fae5, #a7f3d0)" : selected ? COLORS.selectedBg : COLORS.buttonBg,
+                background: baseColor,
                 color: COLORS.text,
                 cursor: disabled ? "default" : "pointer",
                 userSelect: "none",
@@ -443,6 +521,8 @@ function MemoryMode({
           );
         })}
       </div>
+        );
+      })()}
     </div>
   );
 }

@@ -375,6 +375,7 @@ export default function FlashCardApp() {
   const [recallScore, setRecallScore] = useState(0);
   const [recallComplete, setRecallComplete] = useState(false);
   const [showRecallFeedback, setShowRecallFeedback] = useState(false);
+  const [recallHintLevel, setRecallHintLevel] = useState(0);
 
   const restartRecall = () => {
     setRecallIndex(0);
@@ -382,6 +383,7 @@ export default function FlashCardApp() {
     setRecallScore(0);
     setRecallComplete(false);
     setShowRecallFeedback(false);
+    setRecallHintLevel(0);
   };
 
   useEffect(() => {
@@ -392,7 +394,7 @@ export default function FlashCardApp() {
 
   const handleRecallSubmit = () => {
     if (recallComplete) return;
-    const correct = cards[recallIndex]?.answer?.trim().toLowerCase() || "";
+    const correct = cards[recallIndex]?.question?.trim().toLowerCase() || "";
     const user = recallInput.trim().toLowerCase();
     if (user && user === correct) {
       setRecallScore((score) => score + 1);
@@ -403,10 +405,30 @@ export default function FlashCardApp() {
       if (recallIndex + 1 < cards.length) {
         setRecallIndex((idx) => idx + 1);
         setRecallInput("");
+        setRecallHintLevel(0);
       } else {
         setRecallComplete(true);
       }
     }, 700);
+  };
+
+  const handleRecallHint = () => {
+    const question = cards[recallIndex]?.question || "";
+    const words = question.split(/\s+/).filter(Boolean);
+    if (!words.length) return;
+    setRecallHintLevel((lvl) => Math.min(words.length, lvl + 1));
+    setShowRecallFeedback(false);
+  };
+
+  const handleRecallSkip = () => {
+    if (recallIndex + 1 < cards.length) {
+      setRecallIndex((idx) => idx + 1);
+      setRecallInput("");
+      setRecallHintLevel(0);
+      setShowRecallFeedback(false);
+    } else {
+      setRecallComplete(true);
+    }
   };
 
   const [memoryItems, setMemoryItems] = useState([]);
@@ -907,9 +929,12 @@ export default function FlashCardApp() {
         recallScore={recallScore}
         recallComplete={recallComplete}
         showRecallFeedback={showRecallFeedback}
+        recallHintLevel={recallHintLevel}
         onChangeRecallInput={setRecallInput}
         onSubmitRecall={handleRecallSubmit}
         onRestartRecall={restartRecall}
+        onHint={handleRecallHint}
+        onSkip={handleRecallSkip}
         memoryItems={memoryItems}
         memorySelected={memorySelected}
         memoryMatched={memoryMatched}
