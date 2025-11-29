@@ -4,6 +4,8 @@ import { useAppState } from "./context/AppContext";
 const LoopingTTSImproved = () => {
   const synth = window.speechSynthesis;
   const { ttsText } = useAppState();
+  const sampleText =
+    "Learning happens best in small, repeatable loops. Speak this aloud, pause to reflect, then iterate until it sticks.";
 
   // Text area state; start with a helpful placeholder if nothing is set
   const [text, setText] = useState(
@@ -26,6 +28,7 @@ const LoopingTTSImproved = () => {
   const [timeEstimate, setTimeEstimate] = useState("");
   const [progress, setProgress] = useState(0);
   const [endTime, setEndTime] = useState("");
+  const [lastAction, setLastAction] = useState("Idle");
 
   // Refs to track voices and playback state without triggering renders
   const voicesRef = useRef([]);
@@ -225,6 +228,7 @@ const LoopingTTSImproved = () => {
     setLoopCount(0);
     updateProgress();
     speakNext();
+    setLastAction("Started");
   };
 
   /** Pause or resume playback depending on current state. */
@@ -232,9 +236,11 @@ const LoopingTTSImproved = () => {
     if (synth.speaking && !synth.paused) {
       synth.pause();
       setStatus("Paused");
+      setLastAction("Paused");
     } else if (synth.paused) {
       synth.resume();
       setStatus("Resumed");
+      setLastAction("Resumed");
     }
   };
 
@@ -246,6 +252,7 @@ const LoopingTTSImproved = () => {
     setCurrentSentence("");
     setProgress(0);
     setEndTime("");
+    setLastAction("Stopped");
   };
 
   /** Go back one sentence if possible. Note that we cannot go back
@@ -260,6 +267,7 @@ const LoopingTTSImproved = () => {
       playingRef.current = true;
       synth.cancel();
       speakNext();
+      setLastAction("Prev sentence");
     }
   };
 
@@ -272,6 +280,7 @@ const LoopingTTSImproved = () => {
     sentenceRepeatRef.current = 0;
     idxRef.current = Math.min(idxRef.current + 1, chunksRef.current.length);
     speakNext();
+    setLastAction("Next sentence");
   };
 
   /** Read a .txt file and append its contents to the text box. */
@@ -308,7 +317,11 @@ const LoopingTTSImproved = () => {
     setLoopCount(0);
     idxRef.current = 0;
     sentenceRepeatRef.current = 0;
+    setLastAction("Cleared");
   };
+
+  const wordCount = text.trim() ? text.trim().split(/\s+/).filter(Boolean).length : 0;
+  const sentenceCount = text.trim() ? splitText(text.trim()).length : 0;
 
   // CSS styles for the component. These are scoped to this component
   // thanks to JSX syntax. The layout is responsive so that controls
@@ -316,44 +329,62 @@ const LoopingTTSImproved = () => {
   // comfortable mobile usage.
   const styles = `
     .tts-container {
-      max-width: 600px;
+      max-width: 760px;
       margin: 0 auto;
-      padding: 0.75rem;
+      padding: 1rem;
       display: flex;
       flex-direction: column;
       gap: 0.75rem;
-      font-family: Arial, sans-serif;
+      font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+    }
+    .tts-card {
+      background: var(--card-bg, #ffffff);
+      border: 1px solid var(--card-border, #e2e8f0);
+      border-radius: 16px;
+      padding: 1rem;
+      box-shadow: 0 10px 28px rgba(15,23,42,0.08);
     }
     .tts-container.dark {
-      background-color: #1a1a1a;
-      color: #eaeaea;
+      --card-bg: #0f172a;
+      --card-border: #1e293b;
+      background: #0b1220;
+      color: #e2e8f0;
+    }
+    .tts-heading {
+      font-size: 1.4rem;
+      margin: 0 0 0.25rem 0;
+      color: inherit;
     }
     textarea {
       width: 100%;
-      min-height: 6rem;
-      padding: 0.5rem;
+      min-height: 7rem;
+      padding: 0.85rem;
       font-size: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      color: #000; /* always dark black text */
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      color: #0f172a;
       background-color: var(--textarea-bg, #fff);
       resize: vertical;
     }
     .dark textarea {
-      --textarea-bg: #2d2d2d;
+      --textarea-bg: #111827;
+      color: #e2e8f0;
+      border-color: #1f2937;
     }
     .controls,
     .sliders,
-    .options {
+    .options,
+    .action-row {
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
     }
     .controls button,
     .controls label,
-    .sliders label {
-      flex: 1 1 auto;
-      min-width: 80px;
+    .sliders label,
+    .options label {
+      flex: 1 1 140px;
+      min-width: 120px;
     }
     .sliders input[type="range"],
     .options input[type="number"] {
@@ -361,31 +392,114 @@ const LoopingTTSImproved = () => {
     }
     .progress-bar-container {
       width: 100%;
-      background: #e0e0e0;
-      border-radius: 8px;
+      background: #e2e8f0;
+      border-radius: 999px;
       height: 12px;
       overflow: hidden;
       margin: 0.25rem 0;
     }
     .progress-bar {
       height: 100%;
-      background: #4a7afe;
+      background: linear-gradient(90deg, #22c55e, #4ade80);
       transition: width 0.3s ease;
     }
     .status {
       text-align: center;
-      font-weight: bold;
+      font-weight: 700;
+      font-size: 1.05rem;
     }
-    .loop-count {
-      text-align: center;
+    .pill {
+      display: inline-flex;
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+      background: #e2e8f0;
+      color: #0f172a;
       font-size: 0.85rem;
+      margin-right: 0.35rem;
+      margin-bottom: 0.35rem;
     }
-    @media (max-width: 480px) {
+    .dark .pill {
+      background: #1f2937;
+      color: #e2e8f0;
+    }
+    .button {
+      padding: 0.65rem 0.95rem;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      background: #fff;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.2s ease;
+      color: #0f172a;
+    }
+    .button.primary {
+      background: linear-gradient(135deg, #2563eb, #60a5fa);
+      color: #fff;
+      border: none;
+      box-shadow: 0 10px 25px rgba(37,99,235,0.2);
+    }
+    .button.secondary {
+      background: #f8fafc;
+    }
+    .button.danger {
+      background: #fca5a5;
+      color: #0f172a;
+      border: none;
+    }
+    .button:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+    .repeat-label {
+      flex: 1 1 200px;
+    }
+    .repeat-input-container {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 0.35rem;
+    }
+    .dark .repeat-input-container {
+      background: #111827;
+      border-color: #1f2937;
+    }
+    .repeat-btn {
+      border: none;
+      background: #e2e8f0;
+      border-radius: 10px;
+      width: 36px;
+      height: 36px;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+    .repeat-input {
+      width: 70px;
+      border: none;
+      text-align: center;
+      background: transparent;
+      color: inherit;
+      font-size: 1rem;
+    }
+    .headline-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    @media (max-width: 540px) {
       .controls button,
       .controls label,
       .sliders label,
       .options label {
         flex-basis: 100%;
+      }
+      .headline-row {
+        flex-direction: column;
+        align-items: flex-start;
       }
     }
   `;
@@ -393,162 +507,179 @@ const LoopingTTSImproved = () => {
   return (
     <div className={`tts-container ${darkMode ? "dark" : ""}`}>
       <style>{styles}</style>
-      <h1 style={{ fontSize: "1.5rem", margin: 0 }}>
-        Looping Text‑to‑Speech (Samantha)
-      </h1>
-      <textarea
-        value={text}
-        onChange={(e) => {
-          setText(e.target.value);
-          setLoopCount(0);
-        }}
-        placeholder="Paste or type your text here..."
-      />
-      <div className="controls">
-        <label className="secondary">
-          📁 Upload .txt
-          <input
-            type="file"
-            accept=".txt"
-            hidden
-            onChange={handleUpload}
-          />
-        </label>
-        <button className="secondary" onClick={handlePaste}>
-          📋 Paste
-        </button>
-        <button className="danger" onClick={handleClear}>
-          🧹 Clear
-        </button>
+      <div className="tts-card" style={{ background: "var(--card-bg)" }}>
+        <div className="headline-row">
+          <h1 className="tts-heading">Looping Text‑to‑Speech</h1>
+          <div>
+            <label style={{ display: "inline-flex", alignItems: "center", gap: "0.35rem", cursor: "pointer" }}>
+              <input
+                type="checkbox"
+                checked={darkMode}
+                onChange={(e) => setDarkMode(e.target.checked)}
+              />
+              Dark mode
+            </label>
+          </div>
+        </div>
+        <p style={{ margin: "0 0 0.5rem 0", color: darkMode ? "#cbd5e1" : "#475569" }}>
+          Paste text, pick your voice options, and loop it with smooth controls. Great for rehearsing scripts or language practice.
+        </p>
+        <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", marginBottom: "0.5rem" }}>
+          <span className="pill">Words: {wordCount}</span>
+          <span className="pill">Sentences: {sentenceCount}</span>
+          <span className="pill">Loops: {loopCount}</span>
+          <span className="pill">Last: {lastAction}</span>
+        </div>
+        <textarea
+          value={text}
+          onChange={(e) => {
+            setText(e.target.value);
+            setLoopCount(0);
+          }}
+          placeholder="Paste or type your text here..."
+        />
+        <div className="controls">
+          <label className="button secondary">
+            📁 Upload .txt
+            <input
+              type="file"
+              accept=".txt"
+              hidden
+              onChange={handleUpload}
+            />
+          </label>
+          <button className="button secondary" onClick={handlePaste}>
+            📋 Paste
+          </button>
+          <button className="button secondary" onClick={() => { setText(sampleText); setLoopCount(0); }}>
+            🎯 Load Sample
+          </button>
+          <button className="button danger" onClick={handleClear}>
+            🧹 Clear
+          </button>
+        </div>
       </div>
-      <div className="sliders">
-        <label>
-          Rate
-          <input
-            type="range"
-            min="0.1"
-            max="2"
-            step="0.05"
-            value={rate}
-            onChange={(e) => setRate(parseFloat(e.target.value))}
-          />
-        </label>
-        <label>
-          Pitch
-          <input
-            type="range"
-            min="0"
-            max="2"
-            step="0.1"
-            value={pitch}
-            onChange={(e) => setPitch(parseFloat(e.target.value))}
-          />
-        </label>
-        <label>
-          Volume
-          <input
-            type="range"
-            min="0"
-            max="1"
-            step="0.1"
-            value={volume}
-            onChange={(e) => setVolume(parseFloat(e.target.value))}
-          />
-        </label>
-      </div>
-<div className="options">
-  <label className="repeat-label">
-    Repeat each sentence
-    <div className="repeat-input-container">
-      <button
-        type="button"
-        className="repeat-btn"
-        onClick={() => setSentenceRepeats(prev => Math.max(1, prev - 1))}
-      >
-        –
-      </button>
 
-      <input
-        type="number"
-        min="1"
-        value={sentenceRepeats}
-        onChange={(e) => {
-          const val = parseInt(e.target.value, 10);
-          setSentenceRepeats(isNaN(val) || val < 1 ? 1 : val);
-        }}
-        className="repeat-input"
-      />
+      <div className="tts-card">
+        <div className="sliders">
+          <label>
+            Rate
+            <input
+              type="range"
+              min="0.1"
+              max="2"
+              step="0.05"
+              value={rate}
+              onChange={(e) => setRate(parseFloat(e.target.value))}
+            />
+          </label>
+          <label>
+            Pitch
+            <input
+              type="range"
+              min="0"
+              max="2"
+              step="0.1"
+              value={pitch}
+              onChange={(e) => setPitch(parseFloat(e.target.value))}
+            />
+          </label>
+          <label>
+            Volume
+            <input
+              type="range"
+              min="0"
+              max="1"
+              step="0.1"
+              value={volume}
+              onChange={(e) => setVolume(parseFloat(e.target.value))}
+            />
+          </label>
+        </div>
+        <div className="options">
+          <label className="repeat-label">
+            Repeat each sentence
+            <div className="repeat-input-container">
+              <button
+                type="button"
+                className="repeat-btn"
+                onClick={() => setSentenceRepeats(prev => Math.max(1, prev - 1))}
+              >
+                –
+              </button>
 
-      <button
-        type="button"
-        className="repeat-btn"
-        onClick={() => setSentenceRepeats(prev => prev + 1)}
-      >
-        +
-      </button>
-    </div>
-  </label>
-</div>
+              <input
+                type="number"
+                min="1"
+                value={sentenceRepeats}
+                onChange={(e) => {
+                  const val = parseInt(e.target.value, 10);
+                  setSentenceRepeats(isNaN(val) || val < 1 ? 1 : val);
+                }}
+                className="repeat-input"
+              />
 
-      <div className="controls">
-        <button className="primary" onClick={handleStart}>
-          ▶ Start
-        </button>
-        <button className="secondary" onClick={handlePause}>
-          ⏸ Pause/Resume
-        </button>
-        <button className="secondary" onClick={handleStop}>
-          ⏹ Stop
-        </button>
-        <button className="secondary" onClick={handlePrev}>
-          ⏮ Previous
-        </button>
-        <button className="secondary" onClick={handleNext}>
-          ⏭ Next
-        </button>
-      </div>
-      <div className="status">{status}</div>
-      <div style={{ textAlign: "center", fontWeight: "bold", fontSize: "2em" }}>
-        {currentSentence}
-      </div>
-      <div className="progress-bar-container">
-        <div
-          className="progress-bar"
-          style={{ width: `${progress}%` }}
-        ></div>
-      </div>
-      <div style={{ textAlign: "center", fontSize: "0.85rem" }}>
-        {timeEstimate}
-      </div>
-      <div style={{ textAlign: "center", fontSize: "0.85rem" }}>
-        {endTime}
-      </div>
-      <div className="loop-count">Loops completed: {loopCount}</div>
-      <div className="options">
-        <label>
-          <input
-            type="checkbox"
-            checked={loop}
-            onChange={(e) => setLoop(e.target.checked)}
-          />
-          Loop playback
-        </label>
-        <label>
-          <input
-            type="checkbox"
-            checked={samOnly}
-            onChange={(e) => setSamOnly(e.target.checked)}
-          />
-          Use Samantha only
-        </label>
-        <label>
-          <input
-            type="checkbox"
-            checked={darkMode}
-            onChange={(e) => setDarkMode(e.target.checked)}
-          />
-          Dark mode
-        </label>
+              <button
+                type="button"
+                className="repeat-btn"
+                onClick={() => setSentenceRepeats(prev => prev + 1)}
+              >
+                +
+              </button>
+            </div>
+          </label>
+        </div>
+        <div className="action-row">
+          <button className="button primary" onClick={handleStart}>
+            ▶ Start
+          </button>
+          <button className="button secondary" onClick={handlePause}>
+            ⏸ Pause/Resume
+          </button>
+          <button className="button secondary" onClick={handleStop}>
+            ⏹ Stop
+          </button>
+          <button className="button secondary" onClick={handlePrev}>
+            ⏮ Previous
+          </button>
+          <button className="button secondary" onClick={handleNext}>
+            ⏭ Next
+          </button>
+        </div>
+        <div className="progress-bar-container">
+          <div
+            className="progress-bar"
+            style={{ width: `${progress}%` }}
+          ></div>
+        </div>
+        <div className="status">{status}</div>
+        <div style={{ textAlign: "center", fontWeight: "bold", fontSize: "1.4em", marginTop: "0.35rem" }}>
+          {currentSentence}
+        </div>
+        <div style={{ textAlign: "center", fontSize: "0.9rem", color: darkMode ? "#cbd5e1" : "#475569" }}>
+          {timeEstimate}
+        </div>
+        <div style={{ textAlign: "center", fontSize: "0.9rem", color: darkMode ? "#cbd5e1" : "#475569" }}>
+          {endTime}
+        </div>
+        <div className="options" style={{ marginTop: "0.35rem" }}>
+          <label>
+            <input
+              type="checkbox"
+              checked={loop}
+              onChange={(e) => setLoop(e.target.checked)}
+            />
+            Loop playback
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              checked={samOnly}
+              onChange={(e) => setSamOnly(e.target.checked)}
+            />
+            Prefer Samantha
+          </label>
+        </div>
       </div>
     </div>
   );
