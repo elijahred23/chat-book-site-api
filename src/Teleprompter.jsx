@@ -389,34 +389,31 @@ const TeleprompterAdvanced = () => {
           }}
         />
       </div>
-      </div>
 
       {/* Keyframes for scrolling animations */}
-      <style>
-        {`
-          @keyframes scrollUp {
-            from { transform: translateY(0%); }
-            to   { transform: translateY(-50%); }
-          }
-          @keyframes scrollDown {
-            from { transform: translateY(-50%); }
-            to   { transform: translateY(0%); }
-          }
-          button {
-            padding: 8px;
-            border: none;
-            border-radius: 5px;
-            font-size: 1em;
-            background: #333;
-            color: ${textColor};
-            cursor: pointer;
-          }
-          button:hover {
-            background: #444;
-          }
-        `}
-      </style>
-      </div>
+      <style>{`
+        @keyframes scrollUp {
+          from { transform: translateY(0%); }
+          to   { transform: translateY(-50%); }
+        }
+        @keyframes scrollDown {
+          from { transform: translateY(-50%); }
+          to   { transform: translateY(0%); }
+        }
+        button {
+          padding: 8px;
+          border: none;
+          border-radius: 5px;
+          font-size: 1em;
+          background: #333;
+          color: ${textColor};
+          cursor: pointer;
+        }
+        button:hover {
+          background: #444;
+        }
+      `}</style>
+      </div> {/* end tp-shell */}
     </div>
   );
 };
