@@ -464,6 +464,7 @@ export default function YouTubeTranscript() {
                 {validYoutubeUrl && (
                     <button className={`tab-btn ${activeTab === "comments" ? "active" : ""}`} onClick={() => setActiveTab("comments")}>Comments</button>
                 )}
+                <button className={`tab-btn ${activeTab === "responses" ? "active" : ""}`} onClick={() => setActiveTab("responses")}>Prompt Responses</button>
             </div>
 
             {/* Video iframe section */}
@@ -567,6 +568,28 @@ export default function YouTubeTranscript() {
                             />
                         </label>
                     </div>
+                    <div className="input-group">
+                        <input
+                            className="input"
+                            value={prompt}
+                            placeholder="Prompt (e.g. Summarize this transcript)"
+                            onChange={(e) => setPrompt(e.target.value)}
+                        />
+                        <PasteButton setPasteText={setPrompt} className="btn paste-btn" />
+                    </div>
+                    <div className="prompt-suggestions">
+                        {promptSuggestions.map((item, index) => (
+                            <button key={index} onClick={() => setPrompt(item.value)} className="suggestion-btn">{item.label}</button>
+                        ))}
+                    </div>
+                    <div className="button-group">
+                        <button className="btn primary-btn" onClick={executePrompt} disabled={loadingPrompt || !prompt || !splitTranscript.length}>
+                            {loadingPrompt ? <ClipLoader size={12} color="white" /> : "Execute Prompt on Transcript"}
+                        </button>
+                        <button className="btn secondary-btn" onClick={() => setActiveTab("responses")} disabled={!promptResponses.length}>
+                            View Responses
+                        </button>
+                    </div>
                     <YouTubeSearchDrawer
                         isOpen={drawerOpen}
                         onClose={() => setDrawerOpen(false)}
@@ -598,6 +621,20 @@ export default function YouTubeTranscript() {
                 <>
                     <h2>Comments Preview</h2>
                     <CopyButton text={comments} buttonText="📋 Copy All Comments" className="btn copy-btn" />
+                    <div className="input-group">
+                        <input
+                            className="input"
+                            value={prompt}
+                            placeholder="Prompt to run on comments"
+                            onChange={(e) => setPrompt(e.target.value)}
+                        />
+                        <PasteButton setPasteText={setPrompt} className="btn paste-btn" />
+                    </div>
+                    <div className="button-group">
+                        <button className="btn primary-btn" onClick={executePromptOnComments} disabled={loadingPrompt || !prompt || !splitComments.length}>
+                            {loadingPrompt ? <ClipLoader size={12} color="white" /> : "Execute Prompt on Comments"}
+                        </button>
+                    </div>
                     <div className="scrollable-card">
                         {splitComments.map((chunk, i) => (
                             <div key={i} className="chunk">
@@ -627,6 +664,40 @@ export default function YouTubeTranscript() {
                             </div>
                         ))}
                     </div>
+                </>
+            )}
+
+            {/* Prompt loading progress */}
+            {loadingPrompt && (
+                <div className="progress-container">
+                    <label style={{ fontWeight: 'bold' }}>Progress: {progress}/{splitTranscript.length}</label>
+                    <div className="progress-bar-wrapper">
+                        <div className="progress-bar" style={{ width: `${(progress / splitTranscript.length) * 100}%` }} />
+                    </div>
+                </div>
+            )}
+
+            {/* Responses tab */}
+            {activeTab === "responses" && (
+                <>
+                    <h2>Prompt Responses</h2>
+                    {promptResponses.length > 0 ? (
+                        <>
+                            <CopyButton text={promptResponsesText} buttonText="Copy All Responses" className="btn copy-btn" />
+                            <ActionButtons promptText={promptResponsesText} />
+                            <AutoScroller activeIndex={0}>
+                                {promptResponses.map((res, i) => (
+                                    <div key={i} data-index={i} style={{ padding: "1rem 0", borderBottom: "1px solid #ddd" }}>
+                                        <ReactMarkdown className="markdown-body">{res}</ReactMarkdown>
+                                        <CopyButton text={res} className="btn copy-btn" />
+                                        <ActionButtons promptText={res} />
+                                    </div>
+                                ))}
+                            </AutoScroller>
+                        </>
+                    ) : (
+                        <p style={{ color: '#475569' }}>Run a prompt on the transcript or comments to see responses here.</p>
+                    )}
                 </>
             )}
         </div>
