@@ -806,6 +806,24 @@ function TypingMode({
   }
   const cardIdx = typingOrder[typingIndex];
   const card = cards[cardIdx];
+  const timerPercent = Math.max(0, Math.min(100, (typingTimeLeft / 60) * 100));
+  const targetDefinition = card.answer || "";
+  const totalChars = targetDefinition.length || 1;
+  const typedChars = typingInput.length;
+  const progressPct = Math.max(0, Math.min(100, (typedChars / totalChars) * 100));
+  const matchPreview = (() => {
+    const correctPart = [];
+    const wrongPart = [];
+    for (let i = 0; i < typingInput.length; i++) {
+      const c = typingInput[i];
+      if (c === targetDefinition[i]) {
+        correctPart.push(c);
+      } else {
+        wrongPart.push(c);
+      }
+    }
+    return { correctPart: correctPart.join(""), wrongPart: wrongPart.join("") };
+  })();
   if (typingComplete) {
     return (
       <div style={{ textAlign: "center" }}>
@@ -845,7 +863,74 @@ function TypingMode({
         <span>Combo: {typingCombo}</span>
         <span>Best: {typingBestCombo}</span>
       </div>
-      <p style={{ marginBottom: "0.5rem" }}>Question: {card.question}</p>
+      <div
+        style={{
+          height: "10px",
+          backgroundColor: COLORS.buttonBg,
+          borderRadius: "999px",
+          overflow: "hidden",
+          marginBottom: "0.5rem",
+          border: `1px solid ${COLORS.border}`,
+        }}
+      >
+        <div
+          style={{
+            width: `${timerPercent}%`,
+            height: "100%",
+            background: "linear-gradient(90deg, #38bdf8, #22c55e)",
+            transition: "width 0.2s linear",
+          }}
+        />
+      </div>
+      <div
+        style={{
+          padding: "0.75rem",
+          border: `1px solid ${COLORS.border}`,
+          borderRadius: "8px",
+          backgroundColor: COLORS.buttonBg,
+          marginBottom: "0.5rem",
+        }}
+      >
+        <div style={{ fontWeight: 600, marginBottom: "0.25rem" }}>Question</div>
+        <div style={{ color: COLORS.text }}>{card.question}</div>
+      </div>
+      <div
+        style={{
+          padding: "0.75rem",
+          border: `1px solid ${COLORS.border}`,
+          borderRadius: "8px",
+          backgroundColor: COLORS.buttonBgActive,
+          marginBottom: "0.5rem",
+        }}
+      >
+        <div style={{ fontWeight: 600, marginBottom: "0.25rem" }}>Definition</div>
+        <div style={{ color: COLORS.text }}>{card.answer}</div>
+      </div>
+      <div
+        style={{
+          height: "8px",
+          backgroundColor: COLORS.buttonBg,
+          borderRadius: "999px",
+          overflow: "hidden",
+          marginBottom: "0.5rem",
+          border: `1px solid ${COLORS.border}`,
+        }}
+      >
+        <div
+          style={{
+            width: `${progressPct}%`,
+            height: "100%",
+            background: "linear-gradient(90deg, #f97316, #22c55e)",
+            transition: "width 0.1s linear",
+          }}
+        />
+      </div>
+      {typingInput.length > 0 && (
+        <div style={{ marginBottom: "0.5rem", fontSize: "0.9rem" }}>
+          <span style={{ color: "#16a34a" }}>{matchPreview.correctPart}</span>
+          <span style={{ color: "#dc2626" }}>{matchPreview.wrongPart}</span>
+        </div>
+      )}
       <input
         type="text"
         value={typingInput}
@@ -855,7 +940,7 @@ function TypingMode({
             onSubmitTyping();
           }
         }}
-        placeholder="Type the answer and hit Enter"
+        placeholder="Type the definition above and press Enter"
         style={{
           width: "100%",
           padding: "0.75rem",
