@@ -44,25 +44,25 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo }) 
 
     const radioStyle = {
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(120px, 1fr))',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
         gap: '0.5rem',
         marginBottom: '0.75rem',
         alignItems: 'center',
         padding: '0.75rem',
         border: '1px solid #e2e8f0',
-        borderRadius: '12px',
+        borderRadius: '16px',
         background: '#f8fafc',
     };
     const filterRadioStyle = {
         margin: '1rem 0',
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(120px, 1fr))',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
         gridGap: '0.5rem',
         marginBottom: '0.75rem',
         alignItems: 'center',
         padding: '0.75rem',
         border: '1px solid #e2e8f0',
-        borderRadius: '12px',
+        borderRadius: '16px',
         background: '#f8fafc',
     };
     const focusInput = () => {
@@ -239,6 +239,22 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo }) 
                     font-size: 0.75rem;
                     color: #0f172a;
                   }
+                  .check-pill {
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 6px;
+                    padding: 0.45rem 0.65rem;
+                    border-radius: 12px;
+                    border: 1px solid #e2e8f0;
+                    background: #ffffff;
+                    cursor: pointer;
+                    font-weight: 600;
+                  }
+                  .check-pill input {
+                    accent-color: #2563eb;
+                    width: 16px;
+                    height: 16px;
+                  }
                   @media (max-width: 520px) {
                     .result-card {
                       flex-direction: column;
@@ -264,7 +280,7 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo }) 
                         <h3 style={{ margin: 0 }}>YouTube Search</h3>
                         <button className="close-chat-btn" onClick={onClose}>×</button>
                     </div>
-                    <div style={{marginTop:"5px"}}>
+                <div style={{ marginTop: "5px" }}>
                         <button className="btn secondary-btn" onClick={() => setIsSearchVisible(!isSearchVisible)}>
                             {isSearchVisible ? 'Hide Search' : 'Show Search'}
                         </button>
@@ -288,7 +304,7 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo }) 
                     />
 
                     <div style={radioStyle}>
-                        <label>
+                        <label className="check-pill">
                             <input
                                 type="radio"
                                 name="searchType"
@@ -298,7 +314,7 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo }) 
                             />
                             Video
                         </label>
-                        <label>
+                        <label className="check-pill">
                             <input
                                 type="radio"
                                 name="searchType"
@@ -312,7 +328,7 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo }) 
 
                     <div style={filterRadioStyle}>
                         {filterOptions.map((option) => (
-                            <label key={option.value}>
+                            <label key={option.value} className="check-pill">
                                 <input
                                     type="radio"
                                     name="filterType"
@@ -325,7 +341,7 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo }) 
                         ))}
                     </div>
 
-                    <div style={{marginTop:"5px", display:'flex', gap:'0.5rem', flexWrap:'wrap'}}>
+                    <div style={{ marginTop: '5px', display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
                         <button className='btn primary-btn' onClick={getYoutubeTrending}>Trending</button>
                         <button className='btn primary-btn' onClick={getYoutubeNews}>News</button>
                         <button className='btn primary-btn' disabled={!searchQuery.trim()} onClick={handleSearch}>Search</button>
