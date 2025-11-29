@@ -111,8 +111,15 @@ export default function PodcastTTSPlayer() {
 
   const pasteFromClipboard = async () => {
     try {
-      const text = await navigator.clipboard.readText();
-      scriptInputRef.current.value = text;
+      let text = "";
+      if (navigator.clipboard?.readText) {
+        text = await navigator.clipboard.readText();
+      } else {
+        text = window.prompt("Paste script JSON here:") || "";
+      }
+      if (scriptInputRef.current) {
+        scriptInputRef.current.value = text;
+      }
       loadScript();
     } catch {
       setErrorMsg("Clipboard blocked.");
@@ -121,7 +128,12 @@ export default function PodcastTTSPlayer() {
 
   const pastePromptFromClipboard = async () => {
     try {
-      const text = await navigator.clipboard.readText();
+      let text = "";
+      if (navigator.clipboard?.readText) {
+        text = await navigator.clipboard.readText();
+      } else {
+        text = window.prompt("Paste prompt here:") || "";
+      }
       setPrompt(text);
     } catch {
       setErrorMsg("Clipboard blocked.");
