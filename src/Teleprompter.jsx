@@ -23,6 +23,11 @@ const TeleprompterAdvanced = () => {
   const [mirror, setMirror] = useState(false);
   const [scrollDirection, setScrollDirection] = useState("up");
   const wordCount = script.trim() ? script.trim().split(/\s+/).length : 0;
+  const [lineHeight, setLineHeight] = useState(1.5);
+  const [durationSec, setDurationSec] = useState(0);
+  const [remainingSec, setRemainingSec] = useState(0);
+  const [progress, setProgress] = useState(0);
+  const [isRunning, setIsRunning] = useState(false);
 
   // Refs for DOM elements
   const contentRef = useRef(null);
@@ -45,6 +50,9 @@ const TeleprompterAdvanced = () => {
     const scriptHeight = el.scrollHeight / 2;
     const duration = scriptHeight / speed;
     el.style.animationDuration = `${duration}s`;
+    setDurationSec(duration);
+    setRemainingSec(duration);
+    setProgress(0);
   }, [script, speed, fontSize]);
 
   // Adjust the teleprompter height when controls are shown/hidden or
@@ -85,6 +93,11 @@ const TeleprompterAdvanced = () => {
     // Resume scrolling
     el.style.animationPlayState = "running";
     setIsPaused(false);
+    setDurationSec(duration);
+    setRemainingSec(duration);
+    setProgress(0);
+    setIsRunning(true);
+    setShowControls(false);
   };
 
   // Pause or resume scrolling
@@ -94,6 +107,7 @@ const TeleprompterAdvanced = () => {
     setIsPaused((prev) => {
       const newPaused = !prev;
       el.style.animationPlayState = newPaused ? "paused" : "running";
+      setIsRunning(!newPaused);
       return newPaused;
     });
   };
@@ -153,7 +167,26 @@ const TeleprompterAdvanced = () => {
     el.style.animation = `${animationName} ${el.style.animationDuration} linear infinite`;
     el.style.animationPlayState = "running";
     setIsPaused(false);
+    setIsRunning(true);
+    setRemainingSec(durationSec);
+    setProgress(0);
   };
+
+  useEffect(() => {
+    if (!isRunning || durationSec <= 0) return;
+    const interval = setInterval(() => {
+      setRemainingSec((prev) => {
+        const next = prev - 0.1;
+        if (next <= 0) {
+          setProgress(100);
+          return durationSec;
+        }
+        setProgress(Math.max(0, Math.min(100, ((durationSec - next) / durationSec) * 100)));
+        return next;
+      });
+    }, 100);
+    return () => clearInterval(interval);
+  }, [isRunning, durationSec]);
 
   return (
     <div
@@ -224,18 +257,19 @@ const TeleprompterAdvanced = () => {
         }
       `}</style>
       <div className="tp-shell">
-      {/* Control panel */}
-      {showControls && (
-        <div ref={controlsRef} className="tp-card">
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem", marginBottom: "0.5rem" }}>
-            <span className="tp-stat">Words: {wordCount}</span>
-            <span className="tp-stat">Font: {fontSize.toFixed(1)}em</span>
-            <span className="tp-stat">Speed: {speed}px/s</span>
-          </div>
-          <textarea
-            value={script}
-            onChange={(e) => setScript(e.target.value)}
-            placeholder="Paste your script here..."
+        {/* Control panel */}
+        {showControls && (
+          <div ref={controlsRef} className="tp-card">
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem", marginBottom: "0.5rem" }}>
+              <span className="tp-stat">Words: {wordCount}</span>
+              <span className="tp-stat">Font: {fontSize.toFixed(1)}em</span>
+              <span className="tp-stat">Speed: {speed}px/s</span>
+              <span className="tp-stat">Cycle: {durationSec ? `${Math.round(durationSec)}s` : "–"}</span>
+            </div>
+            <textarea
+              value={script}
+              onChange={(e) => setScript(e.target.value)}
+              placeholder="Paste your script here..."
             style={{
               width: "100%",
               height: 120,
@@ -250,11 +284,11 @@ const TeleprompterAdvanced = () => {
               boxSizing: "border-box",
             }}
           />
-          <div className="tp-controls">
-            <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-              <button className="tp-btn primary" onClick={startTeleprompter}>Start</button>
-              <button className="tp-btn" onClick={restartFromTop}>Restart</button>
-              <button className="tp-btn" onClick={pasteFromClipboard}>Paste</button>
+            <div className="tp-controls">
+              <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+                <button className="tp-btn primary" onClick={startTeleprompter}>Start</button>
+                <button className="tp-btn" onClick={restartFromTop}>Restart</button>
+                <button className="tp-btn" onClick={pasteFromClipboard}>Paste</button>
               <button className="tp-btn" onClick={clearScript}>Clear</button>
               <button className="tp-btn" onClick={togglePause}>{isPaused ? "Resume" : "Pause"}</button>
               <label className="tp-btn" style={{ cursor: "pointer" }}>
@@ -325,6 +359,18 @@ const TeleprompterAdvanced = () => {
                   <option value="down">Down</option>
                 </select>
               </div>
+              <div style={{ flex: "1 1 140px" }}>
+                <label>Line Height</label>
+                <input
+                  type="range"
+                  min="1.1"
+                  max="2"
+                  step="0.05"
+                  value={lineHeight}
+                  onChange={(e) => setLineHeight(parseFloat(e.target.value))}
+                  style={{ width: "100%", marginTop: 6 }}
+                />
+              </div>
               <label style={{ display: "flex", alignItems: "center", gap: 6 }}>
                 <input
                   type="checkbox"
@@ -386,8 +432,35 @@ const TeleprompterAdvanced = () => {
             animationIterationCount: "infinite",
             animationPlayState: isPaused ? "paused" : "running",
             transform: mirror ? "scaleX(-1)" : "none",
+            lineHeight: `${lineHeight}em`,
           }}
         />
+      </div>
+
+      {/* Progress indicator */}
+      <div
+        style={{
+          position: "fixed",
+          left: 12,
+          right: 12,
+          bottom: showControls ? 60 : 12,
+          zIndex: 9,
+        }}
+      >
+        <div style={{ height: 10, borderRadius: 999, background: "#1e293b", border: "1px solid #0ea5e9", overflow: "hidden" }}>
+          <div
+            style={{
+              width: `${progress}%`,
+              height: "100%",
+              background: "linear-gradient(90deg, #22c55e, #60a5fa)",
+              transition: "width 0.1s linear",
+            }}
+          />
+        </div>
+        <div style={{ display: "flex", justifyContent: "space-between", color: "#e2e8f0", fontSize: "0.9rem", marginTop: 4 }}>
+          <span>{Math.max(0, Math.round(remainingSec))}s left</span>
+          <span>Cycle {durationSec ? `${Math.round(durationSec)}s` : "–"}</span>
+        </div>
       </div>
 
       {/* Keyframes for scrolling animations */}
