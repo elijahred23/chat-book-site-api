@@ -22,6 +22,7 @@ const TeleprompterAdvanced = () => {
   const [fontFamily, setFontFamily] = useState("monospace");
   const [mirror, setMirror] = useState(false);
   const [scrollDirection, setScrollDirection] = useState("up");
+  const wordCount = script.trim() ? script.trim().split(/\s+/).length : 0;
 
   // Refs for DOM elements
   const contentRef = useRef(null);
@@ -143,128 +144,196 @@ const TeleprompterAdvanced = () => {
   // Choose the appropriate animation name based on scroll direction
   const animationName = scrollDirection === "down" ? "scrollDown" : "scrollUp";
 
+  const restartFromTop = () => {
+    const el = contentRef.current;
+    if (!el) return;
+    // Reset animation to start position
+    el.style.animation = "none";
+    void el.offsetHeight;
+    el.style.animation = `${animationName} ${el.style.animationDuration} linear infinite`;
+    el.style.animationPlayState = "running";
+    setIsPaused(false);
+  };
+
   return (
     <div
       style={{
         margin: 0,
-        background: bgColor,
+        background: `radial-gradient(circle at 20% 20%, #0f172a 0, #0b1220 35%, ${bgColor} 70%)`,
         color: textColor,
         fontFamily,
         overflow: "hidden",
-        height: "100vh",
+        minHeight: "100vh",
       }}
     >
+      <style>{`
+        .tp-shell {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0.75rem;
+          display: flex;
+          flex-direction: column;
+          gap: 0.75rem;
+        }
+        .tp-card {
+          background: rgba(15,23,42,0.8);
+          border: 1px solid #1e293b;
+          border-radius: 14px;
+          padding: 0.75rem;
+          box-shadow: 0 12px 32px rgba(0,0,0,0.35);
+        }
+        .tp-controls {
+          display: grid;
+          gap: 0.6rem;
+        }
+        @media (min-width: 640px) {
+          .tp-controls {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+          }
+        }
+        .tp-btn {
+          padding: 0.6rem 0.85rem;
+          border-radius: 10px;
+          border: 1px solid #1e293b;
+          background: #111827;
+          color: #e2e8f0;
+          cursor: pointer;
+          font-weight: 600;
+        }
+        .tp-btn.primary {
+          background: linear-gradient(135deg, #2563eb, #60a5fa);
+          border: none;
+          color: #fff;
+        }
+        .tp-input {
+          width: 100%;
+          padding: 0.6rem;
+          border-radius: 10px;
+          border: 1px solid #1e293b;
+          background: #0b1628;
+          color: #e2e8f0;
+        }
+        .tp-stat {
+          display: inline-flex;
+          padding: 0.35rem 0.7rem;
+          border-radius: 999px;
+          background: #1e293b;
+          color: #e2e8f0;
+          font-size: 0.9rem;
+          margin-right: 0.35rem;
+        }
+      `}</style>
+      <div className="tp-shell">
       {/* Control panel */}
       {showControls && (
-        <div
-          ref={controlsRef}
-          style={{
-            position: "fixed",
-            top: 0,
-            width: "100%",
-            background: "rgba(0, 0, 0, 0.9)",
-            padding: 10,
-            boxSizing: "border-box",
-            zIndex: 10,
-          }}
-        >
+        <div ref={controlsRef} className="tp-card">
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem", marginBottom: "0.5rem" }}>
+            <span className="tp-stat">Words: {wordCount}</span>
+            <span className="tp-stat">Font: {fontSize.toFixed(1)}em</span>
+            <span className="tp-stat">Speed: {speed}px/s</span>
+          </div>
           <textarea
             value={script}
             onChange={(e) => setScript(e.target.value)}
-            placeholder="Paste your code or notes here..."
+            placeholder="Paste your script here..."
             style={{
               width: "100%",
-              height: 100,
+              height: 120,
               fontSize: "1em",
-              padding: 8,
-              border: "none",
-              borderRadius: 5,
-              resize: "none",
+              padding: 10,
+              border: "1px solid #1e293b",
+              borderRadius: 10,
+              resize: "vertical",
               fontFamily,
-              background: "#222",
+              background: "#0b1628",
               color: textColor,
+              boxSizing: "border-box",
             }}
           />
-          {/* First row: core actions */}
-          <div style={{ display: "flex", gap: 5, marginTop: 10, flexWrap: "wrap" }}>
-            <button onClick={startTeleprompter}>Start</button>
-            <button onClick={pasteFromClipboard}>Paste</button>
-            <button onClick={clearScript}>Clear</button>
-            <button onClick={togglePause}>{isPaused ? "Resume" : "Pause"}</button>
-            <label style={{ cursor: "pointer" }}>
-              Upload File
-              <input
-                type="file"
-                accept=".txt"
-                style={{ display: "none" }}
-                onChange={handleFileUpload}
-              />
-            </label>
-          </div>
-          {/* Second row: scroll speed */}
-          <div style={{ marginTop: 10 }}>
-            <label>Scroll Speed (pixels/sec)</label>
-            <input
-              type="range"
-              min="10"
-              max="200"
-              value={speed}
-              onChange={(e) => setSpeed(parseInt(e.target.value, 10))}
-              style={{ width: "100%" }}
-            />
-          </div>
-          {/* Third row: font size */}
-          <div style={{ marginTop: 10, display: "flex", gap: 5 }}>
-            <label style={{ flexBasis: "100%" }}>Font Size</label>
-            <button onClick={decreaseFont}>A-</button>
-            <button onClick={increaseFont}>A+</button>
-          </div>
-          {/* Advanced controls: colours and fonts */}
-          <div style={{ marginTop: 10, display: "flex", gap: 10, flexWrap: "wrap" }}>
-            <label style={{ flexBasis: "100%" }}>Text Colour</label>
-            <input
-              type="color"
-              value={textColor}
-              onChange={(e) => setTextColor(e.target.value)}
-              style={{ width: 40, height: 40, border: "none", padding: 0 }}
-            />
-            <label style={{ flexBasis: "100%" }}>Background Colour</label>
-            <input
-              type="color"
-              value={bgColor}
-              onChange={(e) => setBgColor(e.target.value)}
-              style={{ width: 40, height: 40, border: "none", padding: 0 }}
-            />
-            <label style={{ flexBasis: "100%" }}>Font Family</label>
-            <select
-              value={fontFamily}
-              onChange={(e) => setFontFamily(e.target.value)}
-              style={{ padding: 5, borderRadius: 5, border: "none" }}
-            >
-              <option value="monospace">Monospace</option>
-              <option value="sans-serif">Sans‑Serif</option>
-              <option value="serif">Serif</option>
-              <option value="cursive">Cursive</option>
-            </select>
-            <label style={{ flexBasis: "100%" }}>Scroll Direction</label>
-            <select
-              value={scrollDirection}
-              onChange={(e) => setScrollDirection(e.target.value)}
-              style={{ padding: 5, borderRadius: 5, border: "none" }}
-            >
-              <option value="up">Up</option>
-              <option value="down">Down</option>
-            </select>
-            <div style={{ display: "flex", alignItems: "center", gap: 5 }}>
-              <input
-                type="checkbox"
-                checked={mirror}
-                onChange={(e) => setMirror(e.target.checked)}
-                id="mirrorToggle"
-              />
-              <label htmlFor="mirrorToggle">Mirror Text</label>
+          <div className="tp-controls">
+            <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+              <button className="tp-btn primary" onClick={startTeleprompter}>Start</button>
+              <button className="tp-btn" onClick={restartFromTop}>Restart</button>
+              <button className="tp-btn" onClick={pasteFromClipboard}>Paste</button>
+              <button className="tp-btn" onClick={clearScript}>Clear</button>
+              <button className="tp-btn" onClick={togglePause}>{isPaused ? "Resume" : "Pause"}</button>
+              <label className="tp-btn" style={{ cursor: "pointer" }}>
+                Upload .txt
+                <input
+                  type="file"
+                  accept=".txt"
+                  style={{ display: "none" }}
+                  onChange={handleFileUpload}
+                />
+              </label>
             </div>
-            <button onClick={toggleFullscreen}>Toggle Fullscreen</button>
+            <div>
+              <label style={{ display: "block", marginBottom: 4 }}>Scroll Speed</label>
+              <input
+                type="range"
+                min="10"
+                max="200"
+                value={speed}
+                onChange={(e) => setSpeed(parseInt(e.target.value, 10))}
+                style={{ width: "100%" }}
+              />
+            </div>
+            <div style={{ display: "flex", gap: 8, flexWrap: "wrap", alignItems: "center" }}>
+              <label style={{ flexBasis: "100%" }}>Font Size</label>
+              <button className="tp-btn" onClick={decreaseFont}>A-</button>
+              <button className="tp-btn" onClick={increaseFont}>A+</button>
+              <label style={{ flexBasis: "100%" }}>Font</label>
+              <select
+                value={fontFamily}
+                onChange={(e) => setFontFamily(e.target.value)}
+                className="tp-input"
+              >
+                <option value="monospace">Monospace</option>
+                <option value="sans-serif">Sans‑Serif</option>
+                <option value="serif">Serif</option>
+                <option value="cursive">Cursive</option>
+              </select>
+            </div>
+            <div style={{ display: "flex", gap: 10, flexWrap: "wrap", alignItems: "center" }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+                <label>Text Colour</label>
+                <input
+                  type="color"
+                  value={textColor}
+                  onChange={(e) => setTextColor(e.target.value)}
+                  style={{ width: 44, height: 44, border: "none", padding: 0 }}
+                />
+              </div>
+              <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+                <label>Background</label>
+                <input
+                  type="color"
+                  value={bgColor}
+                  onChange={(e) => setBgColor(e.target.value)}
+                  style={{ width: 44, height: 44, border: "none", padding: 0 }}
+                />
+              </div>
+              <div style={{ flex: "1 1 140px" }}>
+                <label>Direction</label>
+                <select
+                  value={scrollDirection}
+                  onChange={(e) => setScrollDirection(e.target.value)}
+                  className="tp-input"
+                  style={{ marginTop: 6 }}
+                >
+                  <option value="up">Up</option>
+                  <option value="down">Down</option>
+                </select>
+              </div>
+              <label style={{ display: "flex", alignItems: "center", gap: 6 }}>
+                <input
+                  type="checkbox"
+                  checked={mirror}
+                  onChange={(e) => setMirror(e.target.checked)}
+                />
+                Mirror Text
+              </label>
+            </div>
           </div>
         </div>
       )}
@@ -293,14 +362,14 @@ const TeleprompterAdvanced = () => {
         style={{
           position: "relative",
           top: showControls ? undefined : "0",
-          height: showControls ? undefined : "100vh",
-          width: "100vw",
+          height: showControls ? undefined : "70vh",
+          width: "100%",
           overflow: "hidden",
           display: "flex",
           justifyContent: "flex-start",
           alignItems: "flex-start",
-          paddingLeft: 10,
-          paddingRight: 10,
+          paddingLeft: 12,
+          paddingRight: 12,
           boxSizing: "border-box",
         }}
       >
