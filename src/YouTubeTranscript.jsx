@@ -154,13 +154,17 @@ export default function YouTubeTranscript() {
             showMessage?.({ type: "error", message: "Please enter a retry prompt first." });
             return;
         }
-        const requestId = crypto.randomUUID();
+        const requestId = (crypto && crypto.randomUUID) ? crypto.randomUUID() : `retry-${Date.now()}-${idx}`;
         latestRetryRef.current[idx] = requestId;
         try {
             setRetryLoadingIndex(idx);
             setProgress(0);
             const chunk = splitTranscript[idx] || splitComments[idx] || transcript;
             const retryChunk = chunk ? [chunk] : [];
+            if (!retryChunk.length) {
+                showMessage?.({ type: "error", message: "Nothing to retry for this part yet." });
+                return;
+            }
             const retryResponse = await promptTranscript(
                 retryPrompt,
                 retryChunk,
@@ -186,6 +190,7 @@ export default function YouTubeTranscript() {
         } finally {
             if (latestRetryRef.current[idx] === requestId) {
                 setRetryLoadingIndex(null);
+                setRetryIndex(null);
             }
         }
     };
@@ -764,8 +769,8 @@ export default function YouTubeTranscript() {
                                                 className="btn secondary-btn"
                                                 disabled={retryLoadingIndex === i}
                                                 onClick={() => {
-                                                    setRetryIndex(i);
                                                     setRetryPromptText((prev) => prev || prompt);
+                                                    retryPart(i);
                                                 }}
                                                 style={{ width: "100%" }}
                                             >
@@ -786,7 +791,7 @@ export default function YouTubeTranscript() {
                                             style={{ marginTop: "0.5rem" }}
                                             onClick={() => {
                                                 setRetryIndex(i);
-                                                setRetryPromptText(prompt);
+                                                setRetryPromptText((prev) => prev || prompt);
                                             }}
                                             disabled={retryLoadingIndex === i}
                                         >
