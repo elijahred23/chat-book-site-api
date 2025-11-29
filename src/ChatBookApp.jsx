@@ -63,6 +63,8 @@ export default function ChatBookApp() {
     const [printWhenFinished, setPrintWhenFinished] = useState(false);
     const [stepsExecuted, setStepsExecuted] = useState(0);
     const [canExecuteKey, setCanExecuteKey] = useState(false);
+    const [followUpView, setFollowUpView] = useState("scroll"); // "scroll" | "slide"
+    const [slideIndex, setSlideIndex] = useState(0);
     const chatLogRef = useRef(null);
     const [initialInstructionResponse, setInitialInstructionResponse] = useState(localStorageValues.initialInstructionResponse);
     const [subsequentInstructionResponses, setSubsequentInstructionResponses] = useState(localStorageValues.subsequentInstructionResponses);
@@ -255,6 +257,10 @@ export default function ChatBookApp() {
         document.title = subject;
         setInitialInstruction(getInitialInstructionMessage());
     }, [subject]);
+
+    useEffect(() => {
+        setSlideIndex(0);
+    }, [followUpView, subsequentInstructionResponses.length]);
 
     useEffect(() => setCanExecuteKey(true), [initialInstruction]);
 
@@ -500,18 +506,67 @@ export default function ChatBookApp() {
                         </div>
 
                         <h3 className="section-title" style={{ marginTop: "1rem" }}>Follow-up Steps</h3>
-                        <div className="grid-2">
-                            {subsequentInstructionResponses.map((res, idx) => (
-                                <div key={idx} className="card" style={{ background: "#fff" }}>
-                                    <div style={{ fontWeight: 600, marginBottom: "0.35rem" }}>Step {idx + 1}</div>
-                                    <ReactMarkdown className="markdown-body">{res}</ReactMarkdown>
-                                    <div style={{ display: "flex", gap: "0.35rem", flexWrap: "wrap", marginTop: "0.5rem" }}>
-                                        <ActionButtons promptText={res} />
-                                        <CopyButton text={res} />
-                                    </div>
-                                </div>
-                            ))}
+                        <div style={{ display: "flex", gap: "0.5rem", marginBottom: "0.5rem", flexWrap: "wrap", alignItems: "center" }}>
+                            <span className="pill">View</span>
+                            <button
+                                className={`btn ${followUpView === "scroll" ? "btn-primary" : "btn-ghost"}`}
+                                onClick={() => setFollowUpView("scroll")}
+                            >
+                                Scroll
+                            </button>
+                            <button
+                                className={`btn ${followUpView === "slide" ? "btn-primary" : "btn-ghost"}`}
+                                onClick={() => setFollowUpView("slide")}
+                            >
+                                Slide
+                            </button>
                         </div>
+                        {followUpView === "scroll" ? (
+                            <div className="grid-2">
+                                {subsequentInstructionResponses.map((res, idx) => (
+                                    <div key={idx} className="card" style={{ background: "#fff" }}>
+                                        <div style={{ fontWeight: 600, marginBottom: "0.35rem" }}>Step {idx + 1}</div>
+                                        <ReactMarkdown className="markdown-body">{res}</ReactMarkdown>
+                                        <div style={{ display: "flex", gap: "0.35rem", flexWrap: "wrap", marginTop: "0.5rem" }}>
+                                            <ActionButtons promptText={res} />
+                                            <CopyButton text={res} />
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        ) : (
+                            <div className="card" style={{ background: "#f8fafc", borderColor: "#bfdbfe" }}>
+                                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "0.5rem", gap: "0.5rem", flexWrap: "wrap" }}>
+                                    <button
+                                        className="btn btn-ghost"
+                                        onClick={() => setSlideIndex((i) => Math.max(0, i - 1))}
+                                        disabled={slideIndex === 0}
+                                    >
+                                        ← Prev
+                                    </button>
+                                    <span className="pill">Step {slideIndex + 1} / {subsequentInstructionResponses.length}</span>
+                                    <button
+                                        className="btn btn-ghost"
+                                        onClick={() => setSlideIndex((i) => Math.min(subsequentInstructionResponses.length - 1, i + 1))}
+                                        disabled={slideIndex >= subsequentInstructionResponses.length - 1}
+                                    >
+                                        Next →
+                                    </button>
+                                </div>
+                                {subsequentInstructionResponses.length > 0 && (
+                                    <>
+                                        <div style={{ fontWeight: 700, marginBottom: "0.35rem" }}>Step {slideIndex + 1}</div>
+                                        <ReactMarkdown className="markdown-body">
+                                            {subsequentInstructionResponses[slideIndex]}
+                                        </ReactMarkdown>
+                                        <div style={{ display: "flex", gap: "0.35rem", flexWrap: "wrap", marginTop: "0.5rem" }}>
+                                            <ActionButtons promptText={subsequentInstructionResponses[slideIndex]} />
+                                            <CopyButton text={subsequentInstructionResponses[slideIndex]} />
+                                        </div>
+                                    </>
+                                )}
+                            </div>
+                        )}
                     </AutoScroller>
                 )}
             </div>
