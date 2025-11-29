@@ -48,23 +48,16 @@ export default function JSConsoleGenerator() {
     setPrompt(jsGeneratorPrompt);
   }, [jsGeneratorPrompt]);
 
-  function buildStrictPrompt(userTopic) {
-    return `
-Return ONLY one code block:
-\`\`\`${language}
-// A short ${language} program that prints output
-\`\`\`
-
-Topic: "${userTopic}"
-`.trim();
-  }
+  const buildStrictPrompt = (userTopic) =>
+    `Return ONLY one ${language} code block (no fences) that solves:\n"${userTopic}"\nMake it runnable and concise.`;
 
   const prismLanguage = language === "html" ? "markup" : language;
 
-  function extractSingleCodeBlock(text) {
-    const match = text.match(new RegExp("```" + language + "\\s*([\\s\\S]*?)```", "i"));
-    return match ? match[1].trim() : null;
-  }
+  const extractSingleCodeBlock = (text) => {
+    const fenced = text.match(/```[\w+-]*\s*([\s\S]*?)```/);
+    if (fenced && fenced[1]) return fenced[1].trim();
+    return text.trim();
+  };
 
   async function handleGenerate() {
     try {
@@ -87,11 +80,10 @@ Topic: "${userTopic}"
 
   function runCode() {
     if (language !== "javascript") return;
-    const captured = [];
-    const safeConsole = { log: (...args) => captured.push(args.join(" ")) };
     try {
-      new Function("console", `"use strict";\n${code}`)(safeConsole);
-      setLogs(captured);
+      // eslint-disable-next-line no-eval
+      const result = eval(code);
+      setLogs((prev) => [...prev, result !== undefined ? String(result) : ""]);
     } catch (err) {
       setError("Runtime error: " + err.message);
     }
@@ -204,7 +196,19 @@ Topic: "${userTopic}"
 
   async function openCompiler(url) {
     try {
-      await navigator.clipboard.writeText(code);
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(code);
+      } else {
+        const helper = document.createElement("textarea");
+        helper.value = code;
+        helper.setAttribute("readonly", "");
+        helper.style.position = "absolute";
+        helper.style.left = "-9999px";
+        document.body.appendChild(helper);
+        helper.select();
+        document.execCommand("copy");
+        document.body.removeChild(helper);
+      }
       window.open(url, "_blank");
     } catch {
       alert("Clipboard copy blocked by browser.");
@@ -215,189 +219,87 @@ Topic: "${userTopic}"
 
 
   return (
-  <div className="jsgen-wrapper">
-    <h2>🧪 Multi-Language Code Generator</h2>
+  return (
+    <div className="jsgen-shell">
+      <div className="jsgen-card">
+        <div className="jsgen-header">
+          <h2>🧪 Multi-Language Code Generator</h2>
+          <select
+            value={language}
+            onChange={(e) => setLanguage(e.target.value)}
+            className="jsgen-select"
+          >
+            {[
+              "javascript", "python", "java", "c", "cpp", "csharp", "go",
+              "rust", "php", "ruby", "swift", "kotlin", "typescript",
+              "r", "bash", "sql", "html", "lua"
+            ].map((lang) => (
+              <option key={lang} value={lang}>{lang.toUpperCase()}</option>
+            ))}
+          </select>
+        </div>
 
-    {/* Language Selector */}
-    <select
-      value={language}
-      onChange={(e) => setLanguage(e.target.value)}
-      className="jsgen-language-select"
-    >
-      {[
-        "javascript", "python", "java", "c", "cpp", "csharp", "go",
-        "rust", "php", "ruby", "swift", "kotlin", "typescript",
-        "r", "bash", "sql", "html", "lua"
-      ].map((lang) => (
-        <option key={lang} value={lang}>{lang.toUpperCase()}</option>
-      ))}
-    </select>
-
-    {/* Prompt Input */}
-    <textarea
-      value={prompt}
-      onChange={(e) => setPrompt(e.target.value)}
-      placeholder="Describe the program goal..."
-      className="jsgen-textarea"
-    />
-
-    {/* Generate / Clear Buttons */}
-    <div className="jsgen-button-row">
-      <button onClick={handleGenerate} disabled={loading}>
-        {loading ? "Generating…" : "Generate"}
-      </button>
-      <button onClick={() => setPrompt("")}>Clear</button>
-    </div>
-
-    {error && <div className="jsgen-error">{error}</div>}
-
-    {/* MAIN PANELS */}
-    <div
-      className="jsgen-panels"
-      style={{
-        marginTop: "1rem",
-        display: "flex",
-        gap: "1rem",
-        flexWrap: "wrap"
-      }}
-    >
-      {/* CODE PANEL */}
-      <div
-        className="jsgen-panel"
-        style={{
-          flex: "1 1 100%",
-          display: "flex",
-          flexDirection: "column",
-          border: "1px solid #ddd",
-          borderRadius: "6px",
-          overflow: "hidden",
-          background: "#ffffff",
-          color: "#222"
-        }}
-      >
-        <ActionButtons limitButtons promptText={code} />
-
-        <div
-          className="jsgen-panel-header"
-          style={{
-            padding: "0.6rem 0.75rem",
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            background: "#f5f5f5",
-            borderBottom: "1px solid #ddd",
-            fontWeight: 500
-          }}
-        >
-          <span style={{ color: "#333" }}>
-            Generated Code ({language})
-          </span>
-
-          {language === "javascript" && (
-            <button
-              onClick={runCode}
-              style={{
-                padding: "0.45rem 0.75rem",
-                borderRadius: "4px",
-                border: "1px solid #ccc",
-                background: "#e7fbe7",
-                color: "#2c6c2c",
-                cursor: "pointer"
-              }}
-            >
-              Run
-            </button>
-          )}
-
-          {availableCompilers.length > 0 && (
-            <div
-              className="compiler-buttons"
-              style={{
-                display: "flex",
-                gap: "0.5rem",
-                marginLeft: "1rem"
-              }}
-            >
-              {availableCompilers.map((cmp, index) => (
-                <button
-                  key={index}
-                  onClick={() => openCompiler(cmp.url)}
-                  style={{
-                    padding: "0.45rem 0.75rem",
-                    borderRadius: "4px",
-                    border: "1px solid #ccc",
-                    background: "#eaf3ff",
-                    color: "#1a4fa3",
-                    cursor: "pointer",
-                    whiteSpace: "nowrap"
-                  }}
-                >
-                  Copy & Open {cmp.label}
-                </button>
-              ))}
+        <div className="jsgen-grid">
+          <div className="jsgen-panel">
+            <label className="jsgen-label">Prompt</label>
+            <textarea
+              value={prompt}
+              onChange={(e) => setPrompt(e.target.value)}
+              placeholder="Describe the program goal..."
+              className="jsgen-textarea"
+            />
+            <div className="jsgen-button-row">
+              <button className="jsgen-btn primary" onClick={handleGenerate} disabled={loading}>
+                {loading ? "Generating…" : "Generate"}
+              </button>
+              <button className="jsgen-btn" onClick={() => setPrompt("")}>Clear</button>
             </div>
-          )}
+            {error && <div className="jsgen-error">{error}</div>}
+          </div>
+
+          <div className="jsgen-panel code-panel">
+            <div className="jsgen-panel-header">
+              <span>Generated Code ({language})</span>
+              <div className="jsgen-panel-actions">
+                {language === "javascript" && (
+                  <button className="jsgen-btn" onClick={runCode}>Run</button>
+                )}
+                {availableCompilers.map((cmp, idx) => (
+                  <button key={idx} className="jsgen-btn" onClick={() => openCompiler(cmp.url)}>
+                    Copy & Open {cmp.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+            <ActionButtons limitButtons promptText={code} />
+            <Editor
+              value={code}
+              onValueChange={setCode}
+              highlight={(c) =>
+                Prism.highlight(
+                  c,
+                  Prism.languages[prismLanguage] ?? Prism.languages.javascript,
+                  prismLanguage
+                )
+              }
+              padding={12}
+              className="code-editor"
+              spellCheck={false}
+            />
+          </div>
         </div>
 
-        {/* CODE EDITOR */}
-        <Editor
-          value={code}
-          onValueChange={setCode}
-          highlight={(c) =>
-            Prism.highlight(
-              c,
-              Prism.languages[prismLanguage] ?? Prism.languages.javascript,
-              prismLanguage
-            )
-          }
-          padding={12}
-          className="code-editor"
-          spellCheck={false}
-          style={{
-            background: "#fafafa",
-            borderTop: "1px solid #eee"
-          }}
-        />
+        {language === "javascript" && (
+          <div className="jsgen-panel">
+            <div className="jsgen-panel-header">Program Output</div>
+            <div className="jsgen-output" ref={outputRef}>
+              {logs.length > 0
+                ? logs.map((l, i) => <div key={i}>{l}</div>)
+                : <div className="jsgen-muted">No output yet</div>}
+            </div>
+          </div>
+        )}
       </div>
-
-      {/* PROGRAM OUTPUT (JS only) */}
-      {language === "javascript" && (
-        <div
-          className="jsgen-panel"
-          style={{
-            flex: "1 1 100%",
-            border: "1px solid #ddd",
-            borderRadius: "6px",
-            overflow: "hidden",
-            background: "#ffffff",
-            color: "#222"
-          }}
-        >
-          <div
-            className="jsgen-panel-header"
-            style={{
-              padding: "0.6rem 0.75rem",
-              background: "#f5f5f5",
-              borderBottom: "1px solid #ddd",
-              fontWeight: 500
-            }}
-          >
-            Program Output
-          </div>
-
-          <div
-            className="jsgen-output"
-            ref={outputRef}
-            style={{ padding: "0.75rem" }}
-          >
-            {logs.length > 0
-              ? logs.map((l, i) => <div key={i}>{l}</div>)
-              : <div className="jsgen-muted">No output yet</div>}
-          </div>
-        </div>
-      )}
     </div>
-  </div>
-);
-
+  );
 }

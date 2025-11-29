@@ -1,79 +1,124 @@
-/* Container layout */
-.jsgen-wrapper {
-  max-width: 900px;
+.jsgen-shell {
+  max-width: 1100px;
   margin: 0 auto;
   padding: 1rem;
-  font-family: system-ui, sans-serif;
+  font-family: "Inter", "Segoe UI", sans-serif;
 }
-
-/* Prompt textarea */
-.jsgen-textarea {
-  width: 100%;
-  min-height: 80px;
-  padding: 0.5rem;
-  resize: vertical;
-}
-
-/* Buttons row */
-.jsgen-button-row {
-  margin-top: 0.5rem;
-  display: flex;
-  gap: 0.5rem;
-}
-
-/* Simple buttons */
-.jsgen-button-row button,
-.jsgen-run {
-  padding: 0.4rem 0.8rem;
-  cursor: pointer;
-}
-
-/* Code + Output layout */
-.jsgen-panels {
-  margin-top: 1rem;
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.jsgen-panel {
-  flex: 1 1 45%;
+.jsgen-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 1rem;
+  box-shadow: 0 10px 24px rgba(15,23,42,0.08);
   display: flex;
   flex-direction: column;
-  min-height: 200px;
-  border: 1px solid #ddd;
+  gap: 0.75rem;
 }
-
-/* Panel header (for Run button placement) */
+.jsgen-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.jsgen-select {
+  padding: 0.65rem;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  background: #fff;
+  min-width: 180px;
+}
+.jsgen-grid {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+.jsgen-panel {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.code-panel {
+  grid-column: span 2;
+}
+.jsgen-label {
+  font-weight: 600;
+  color: #0f172a;
+}
+.jsgen-textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: 0.75rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 1rem;
+  resize: vertical;
+  background: #fff;
+}
+.jsgen-button-row {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.jsgen-btn {
+  padding: 0.65rem 0.9rem;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+  cursor: pointer;
+  font-weight: 600;
+}
+.jsgen-btn.primary {
+  background: linear-gradient(135deg, #2563eb, #60a5fa);
+  color: #fff;
+  border: none;
+  box-shadow: 0 10px 24px rgba(37,99,235,0.2);
+}
+.jsgen-error {
+  color: #b91c1c;
+  margin-top: 0.35rem;
+}
 .jsgen-panel-header {
-  padding: 0.5rem;
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid #ddd;
+  align-items: center;
+  font-weight: 600;
+  padding: 0.5rem 0;
 }
-
-/* Make output scrollable */
+.jsgen-panel-actions {
+  display: flex;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+}
 .jsgen-output {
-  flex-grow: 1;
-  padding: 0.5rem;
-  overflow-y: auto;
-  font-family: monospace;
+  min-height: 80px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 0.75rem;
 }
-
-/* Muted placeholder message */
 .jsgen-muted {
   opacity: 0.6;
 }
-
-/* Remove custom editor styling — Prism takes over */
 .code-editor {
-  min-height: 200px;
-  padding: 12px;
-  font-family: inherit;
-  background: transparent !important;
+  min-height: 260px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  font-family: "Fira Code", "JetBrains Mono", monospace;
 }
-
-.code-editor textarea {
-  outline: none !important;
-  background: transparent !important;
+.compiler-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+@media (max-width: 640px) {
+  .code-panel {
+    grid-column: span 1;
+  }
+  .jsgen-select {
+    min-width: 140px;
+  }
 }

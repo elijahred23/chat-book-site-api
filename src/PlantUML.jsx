@@ -68,7 +68,19 @@ export default function PlantUMLViewer() {
 
   const handleCopy = async () => {
     try {
-      await navigator.clipboard.writeText(uml);
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(uml);
+      } else {
+        const helper = document.createElement("textarea");
+        helper.value = uml;
+        helper.setAttribute("readonly", "");
+        helper.style.position = "absolute";
+        helper.style.left = "-9999px";
+        document.body.appendChild(helper);
+        helper.select();
+        document.execCommand("copy");
+        document.body.removeChild(helper);
+      }
     } catch {
       alert("Failed to copy UML");
     }
@@ -76,7 +88,12 @@ export default function PlantUMLViewer() {
 
   const handlePaste = async () => {
     try {
-      const text = await navigator.clipboard.readText();
+      let text = "";
+      if (navigator.clipboard?.readText) {
+        text = await navigator.clipboard.readText();
+      } else {
+        text = window.prompt("Paste UML here:") || "";
+      }
       if (text.includes("@startuml")) setUml(text);
       else alert("Clipboard does not contain valid PlantUML code");
     } catch {
@@ -86,7 +103,12 @@ export default function PlantUMLViewer() {
 
   const handlePromptPaste = async () => {
     try {
-      const text = await navigator.clipboard.readText();
+      let text = "";
+      if (navigator.clipboard?.readText) {
+        text = await navigator.clipboard.readText();
+      } else {
+        text = window.prompt("Paste prompt here:") || "";
+      }
       setPrompt(text);
     } catch {
       alert("Failed to paste into prompt");
