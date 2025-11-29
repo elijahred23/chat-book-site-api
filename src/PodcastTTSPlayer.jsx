@@ -18,6 +18,7 @@ export default function PodcastTTSPlayer() {
   const [pitch, setPitch] = useState(1);
   const [volume, setVolume] = useState(1);
   const [prompt, setPrompt] = useState("");
+  const [tone, setTone] = useState("neutral");
   const [errorMsg, setErrorMsg] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -163,6 +164,8 @@ export default function PodcastTTSPlayer() {
       Return ONLY a JSON array representing a podcast conversation (no markdown).
       Each item: { "speaker": "", "gender": "male|female", "text": "" }
       Topic: "${prompt}"
+      Desired tone: "${tone}"
+      Make the dialog feel natural and on-tone, but still concise.
     `);
 
     const parsed = extractJsonFromResponse(raw);
@@ -273,6 +276,21 @@ export default function PodcastTTSPlayer() {
         <div className="panel">
           <h2>Generate a Script</h2>
           <input type="text" placeholder="Conversation topic..." value={prompt} onChange={e => setPrompt(e.target.value)} />
+          <div className="controls" style={{ alignItems: "center", gap: "0.5rem" }}>
+            <label style={{ fontWeight: 600 }}>Tone</label>
+            <select value={tone} onChange={(e) => setTone(e.target.value)}>
+              <option value="neutral">Neutral / Informative</option>
+              <option value="funny">Funny / Playful</option>
+              <option value="dark humor">Dark Humor</option>
+              <option value="sarcastic">Sarcastic</option>
+              <option value="inspirational">Inspirational / Uplifting</option>
+              <option value="dramatic">Dramatic / Storytelling</option>
+              <option value="newsroom">Newsroom / Anchored</option>
+              <option value="documentary">Documentary / Narration</option>
+              <option value="interview">Interview / Q&A</option>
+              <option value="mystery">Mystery / Thriller vibe</option>
+            </select>
+          </div>
           <button onClick={handleGenerateScriptFromPrompt} disabled={loading}>
             {loading ? "Generating..." : "Generate"}
           </button>
