@@ -201,7 +201,7 @@ export default function FlashCardApp() {
   const handleCopyJson = async () => {
     try {
       const jsonString = JSON.stringify(cards, null, 2);
-      if (navigator.clipboard && navigator.clipboard.writeText) {
+      if (typeof navigator !== "undefined" && navigator.clipboard && navigator.clipboard.writeText) {
         await navigator.clipboard.writeText(jsonString);
       } else {
         const helper = document.createElement("textarea");
@@ -223,7 +223,7 @@ export default function FlashCardApp() {
   const handlePasteJson = async () => {
     try {
       let text = "";
-      if (navigator.clipboard && navigator.clipboard.readText) {
+      if (typeof navigator !== "undefined" && navigator.clipboard && navigator.clipboard.readText) {
         text = await navigator.clipboard.readText();
       } else {
         text = window.prompt("Paste your JSON here:") || "";
@@ -534,6 +534,7 @@ export default function FlashCardApp() {
   const [typingComplete, setTypingComplete] = useState(false);
   const [typingCombo, setTypingCombo] = useState(0);
   const [typingBestCombo, setTypingBestCombo] = useState(0);
+  const [showChrome, setShowChrome] = useState(true);
 
   const resetSurvival = () => {
     const order = shuffleArray(cards.map((_, i) => i));
@@ -929,52 +930,6 @@ export default function FlashCardApp() {
     );
   };
 
-  const renderTtsControls = () => (
-    <div style={{ marginBottom: "1rem", display: "flex", gap: "0.5rem", flexWrap: "wrap", background: "#ffffff", padding: "0.75rem", borderRadius: "12px", boxShadow: "0 10px 24px rgba(15,23,42,0.08)", border: `1px solid ${COLORS.border}` }}>
-      <button
-        onClick={readCurrentCard}
-        style={{
-          padding: "0.5rem 1rem",
-          backgroundColor: COLORS.buttonBg,
-          border: `1px solid ${COLORS.border}`,
-          borderRadius: "4px",
-          color: COLORS.text,
-          cursor: cards.length === 0 ? "default" : "pointer",
-        }}
-        disabled={cards.length === 0}
-      >
-        Read Current Card
-      </button>
-      <button
-        onClick={readAllCards}
-        style={{
-          padding: "0.5rem 1rem",
-          backgroundColor: COLORS.buttonBg,
-          border: `1px solid ${COLORS.border}`,
-          borderRadius: "4px",
-          color: COLORS.text,
-          cursor: cards.length === 0 ? "default" : "pointer",
-        }}
-        disabled={cards.length === 0}
-      >
-        Loop All Cards
-      </button>
-      <button
-        onClick={stopTts}
-        style={{
-          padding: "0.5rem 1rem",
-          backgroundColor: COLORS.buttonBg,
-          border: `1px solid ${COLORS.border}`,
-          borderRadius: "4px",
-          color: COLORS.text,
-          cursor: "pointer",
-        }}
-      >
-        Stop TTS
-      </button>
-    </div>
-  );
-
   const contextValue = {
     cards,
     setCards,
@@ -1080,12 +1035,26 @@ export default function FlashCardApp() {
         boxShadow: "0 16px 40px rgba(15,23,42,0.08)",
       }}
     >
-      <h2 style={{ marginBottom: "1rem", color: COLORS.text }}>
-        Flash Card Study Tool
-      </h2>
-        {renderControls()}
-        {renderNavigation()}
-        {renderTtsControls()}
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: "0.5rem", flexWrap: "wrap" }}>
+        <h2 style={{ margin: 0, color: COLORS.text }}>
+          Flash Card Study Tool
+        </h2>
+        <button
+          onClick={() => setShowChrome((v) => !v)}
+          style={{
+            padding: "0.5rem 0.85rem",
+            border: `1px solid ${COLORS.border}`,
+            borderRadius: "10px",
+            background: showChrome ? COLORS.buttonBgActive : COLORS.buttonBg,
+            cursor: "pointer",
+            color: COLORS.text,
+          }}
+        >
+          {showChrome ? "Hide Controls" : "Show Controls"}
+        </button>
+      </div>
+        {showChrome && renderControls()}
+        {showChrome && renderNavigation()}
         <CurrentModeView
           mode={mode}
           cards={cards}
