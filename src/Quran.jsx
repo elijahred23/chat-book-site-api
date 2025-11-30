@@ -7,26 +7,48 @@ import { actions, useAppDispatch } from './context/AppContext';
 import AutoScroller from './ui/AutoScroller';
 import ActionButtons from './ui/ActionButtons';
 const Quran = () => {
-  const [quranData, setQuranData] = useState(null);
+  const [quranData, setQuranData] = useState(() => {
+    try {
+      const cached = localStorage.getItem("quran_surahs");
+      return cached ? JSON.parse(cached) : null;
+    } catch {
+      return null;
+    }
+  });
   const [selectedSurah, setSelectedSurah] = useState(null);
+  const [selectedSurahNumber, setSelectedSurahNumber] = useState(() => {
+    const stored = localStorage.getItem("selectedSurahNumber");
+    return stored ? parseInt(stored, 10) : null;
+  });
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [prompt, setPrompt] = useState("");
   const [promptResponses, setPromptResponses] = useState([]);
   const [loadingPrompt, setLoadingPrompt] = useState(false);
+  const [progress, setProgress] = useState(0);
   const dispatch = useAppDispatch();
   const [activeTab, setActiveTab] = useState("read"); // "read" or "prompt"
+  const [showAllPrompts, setShowAllPrompts] = useState(false);
 
   const promptSuggestions = [
     { label: "Summary", value: "Summarize this Surah" },
     { label: "Key Points", value: "Extract key points from this Surah" },
     { label: "Simple", value: "Explain this Surah simply" },
     { label: "Elaborate", value: "Elaborate on this Surah" },
+    { label: "Historical Context", value: "Provide historical context for this Surah" },
+    { label: "Themes", value: "List the main themes in this Surah" },
+    { label: "Lessons", value: "Extract lessons and morals from this Surah" },
+    { label: "Connections", value: "Explain how this Surah connects to others" },
+    { label: "Keywords", value: "Identify key terms and concepts in this Surah" },
   ];
 
   const promptResponsesText = useMemo(() => promptResponses.join('\n\n'), [promptResponses]);
-  // Fetch Quran data on load
+  // Fetch Quran data on load (cache in localStorage)
   useEffect(() => {
+    if (quranData) {
+      setLoading(false);
+      return;
+    }
     fetch('https://api.alquran.cloud/v1/quran/en.asad')
       .then((res) => {
         if (!res.ok) {
@@ -36,14 +58,23 @@ const Quran = () => {
       })
       .then((data) => {
         setQuranData(data.data.surahs);
-        setSelectedSurah(data.data.surahs[0]); // default to first surah
+        localStorage.setItem("quran_surahs", JSON.stringify(data.data.surahs));
         setLoading(false);
       })
       .catch((err) => {
         setError(err.message);
         setLoading(false);
       });
-  }, []);
+  }, [quranData]);
+
+  // Set selected surah once data is available
+  useEffect(() => {
+    if (!quranData || selectedSurah) return;
+    const initial =
+      (selectedSurahNumber && quranData.find((s) => s.number === selectedSurahNumber)) ||
+      quranData[0];
+    setSelectedSurah(initial);
+  }, [quranData, selectedSurah, selectedSurahNumber]);
 
   const chunkIntoSentences = (text, maxWords = 5000) => {
     const sentences = text.match(/[^.!?]+[.!?]+|\S+/g) || [text];
@@ -69,12 +100,15 @@ const Quran = () => {
     if (!selectedSurah || !prompt) return;
     try {
       setLoadingPrompt(true);
+      setProgress(0);
       const content = selectedSurah.ayahs.map(ayah => `${ayah.numberInSurah}. ${ayah.text}`).join(' ');
       const chunks = chunkIntoSentences(content, 5000);
       const responses = [];
-      for (const chunk of chunks) {
+      for (let i = 0; i < chunks.length; i++) {
+        const chunk = chunks[i];
         const resp = await getGeminiResponse(`${prompt}\n\nContent:\n${chunk}`);
         responses.push(resp);
+        setProgress(Math.round(((i + 1) / chunks.length) * 100));
       }
       setPromptResponses(responses);
       setActiveTab("prompt");
@@ -91,6 +125,8 @@ const Quran = () => {
     const surahNumber = parseInt(e.target.value);
     const surah = quranData.find((s) => s.number === surahNumber);
     setSelectedSurah(surah);
+    setSelectedSurahNumber(surahNumber);
+    localStorage.setItem("selectedSurahNumber", surahNumber);
   };
 
   if (loading) return <ClipLoader color="#000" loading={loading} size={50} />;
@@ -100,17 +136,18 @@ const Quran = () => {
     <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '1rem' }}>
       <style>{`
         .q-shell {
-          background: radial-gradient(circle at 10% 20%, rgba(37,99,235,0.12), transparent 30%), radial-gradient(circle at 80% 0%, rgba(14,165,233,0.16), transparent 35%), #0b1220;
-          color: #e2e8f0;
+          background: linear-gradient(145deg, #f8fafc, #e2e8f0);
+          color: #0f172a;
           border-radius: 18px;
           padding: 1.25rem;
-          box-shadow: 0 20px 48px rgba(0,0,0,0.35);
+          box-shadow: 0 20px 48px rgba(15,23,42,0.15);
         }
         .card {
-          background: #0f172a;
-          border: 1px solid rgba(148,163,184,0.3);
+          background: #ffffff;
+          border: 1px solid rgba(148,163,184,0.35);
           border-radius: 14px;
           padding: 1rem;
+          color: #0f172a;
         }
         .tab-bar {
           display: flex;
@@ -122,8 +159,8 @@ const Quran = () => {
           padding: 0.55rem 0.75rem;
           border-radius: 12px;
           border: 1px solid rgba(148,163,184,0.35);
-          background: #0f172a;
-          color: #e2e8f0;
+          background: #f8fafc;
+          color: #0f172a;
           cursor: pointer;
         }
         .tab-btn.active {
@@ -136,17 +173,17 @@ const Quran = () => {
           width: 100%;
           padding: 12px;
           border-radius: 10px;
-          border: 1px solid #1f2937;
-          background: #0b1220;
-          color: #e2e8f0;
+          border: 1px solid #cbd5e1;
+          background: #ffffff;
+          color: #0f172a;
           box-sizing: border-box;
         }
         .btn {
           padding: 0.6rem 0.9rem;
           border-radius: 10px;
-          border: 1px solid #1f2937;
-          background: #111827;
-          color: #e2e8f0;
+          border: 1px solid #cbd5e1;
+          background: #f8fafc;
+          color: #0f172a;
           cursor: pointer;
         }
         .btn.primary {
@@ -157,9 +194,9 @@ const Quran = () => {
         .suggestion-btn {
           padding: 0.45rem 0.75rem;
           border-radius: 10px;
-          border: 1px solid #1f2937;
-          background: #111827;
-          color: #e2e8f0;
+          border: 1px solid #cbd5e1;
+          background: #f1f5f9;
+          color: #0f172a;
         }
       `}</style>
 
@@ -197,19 +234,45 @@ const Quran = () => {
                 onChange={(e) => setPrompt(e.target.value)}
               />
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
-                {promptSuggestions.map((text, index) => (
+                {(showAllPrompts ? promptSuggestions : promptSuggestions.slice(0, 4)).map((text, index) => (
                   <button key={index} onClick={() => setPrompt(text.value)} className="suggestion-btn">{text.label}</button>
                 ))}
+                <button
+                  className="suggestion-btn"
+                  onClick={() => setShowAllPrompts((v) => !v)}
+                  style={{ fontWeight: 700 }}
+                >
+                  {showAllPrompts ? "Show Less" : "Show More"}
+                </button>
               </div>
-              <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-                <button className="btn primary" onClick={executePrompt} disabled={loadingPrompt || !prompt}>
-                  {loadingPrompt ? <ClipLoader size={12} color="white" /> : "Execute Prompt"}
+              <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', alignItems: 'center' }}>
+                <button
+                  className="btn primary"
+                  onClick={executePrompt}
+                  disabled={loadingPrompt || !prompt}
+                  style={{ position: 'relative', overflow: 'hidden' }}
+                >
+                  {loadingPrompt ? (
+                    <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
+                      <ClipLoader size={12} color="#0b1220" /> Processing…
+                    </span>
+                  ) : (
+                    "Execute Prompt"
+                  )}
                 </button>
                 <ActionButtons promptText={selectedSurah.ayahs.map(a => a.text).join(' ')} />
               </div>
+              {loadingPrompt && (
+                <div style={{ marginTop: '8px' }}>
+                  <label style={{ fontWeight: 'bold' }}>Processing chunks... {progress}%</label>
+                  <div style={{ height: 10, borderRadius: 8, background: '#e2e8f0', overflow: 'hidden', marginTop: 4 }}>
+                    <div style={{ width: `${progress}%`, height: '100%', background: 'linear-gradient(135deg,#2563eb,#22d3ee)', transition: 'width 0.2s ease' }} />
+                  </div>
+                </div>
+              )}
             </div>
 
-            <div style={{ maxHeight: '420px', overflowY: 'auto', padding: '0.5rem', border: '1px solid #1f2937', borderRadius: '10px', background: '#0b1220' }}>
+            <div style={{ maxHeight: '420px', overflowY: 'auto', padding: '0.5rem', border: '1px solid #cbd5e1', borderRadius: '10px', background: '#ffffff' }}>
               {selectedSurah.ayahs.map((ayah) => (
                 <p key={ayah.number} style={{ margin: '0.4rem 0', lineHeight: 1.6 }}>
                   <strong>{ayah.numberInSurah}.</strong> {ayah.text}
@@ -221,7 +284,10 @@ const Quran = () => {
 
         {loadingPrompt && (
           <div style={{ marginTop: '10px' }}>
-            <label style={{ fontWeight: 'bold' }}>Loading...</label>
+            <label style={{ fontWeight: 'bold' }}>Processing chunks... {progress}%</label>
+            <div style={{ height: 10, borderRadius: 8, background: '#e2e8f0', overflow: 'hidden', marginTop: 6 }}>
+              <div style={{ width: `${progress}%`, height: '100%', background: 'linear-gradient(135deg,#2563eb,#22d3ee)' }} />
+            </div>
           </div>
         )}
 
