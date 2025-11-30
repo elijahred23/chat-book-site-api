@@ -223,8 +223,24 @@ export default function ActionButtons({ promptText, limitButtons = false }) {
       iconColor: "#0f172a",
       onClick: async (e) => {
         e.stopPropagation();
-        await navigator.clipboard.writeText(cleanText);
-        showMessage({ type: "success", message: "Text copied to clipboard!" });
+        try {
+          if (navigator.clipboard?.writeText) {
+            await navigator.clipboard.writeText(cleanText);
+          } else {
+            const helper = document.createElement("textarea");
+            helper.value = cleanText;
+            helper.setAttribute("readonly", "");
+            helper.style.position = "absolute";
+            helper.style.left = "-9999px";
+            document.body.appendChild(helper);
+            helper.select();
+            document.execCommand("copy");
+            document.body.removeChild(helper);
+          }
+          showMessage({ type: "success", message: "Text copied to clipboard!" });
+        } catch (err) {
+          showMessage({ type: "error", message: "Copy failed. Try copying manually." });
+        }
       },
     }
   ];
