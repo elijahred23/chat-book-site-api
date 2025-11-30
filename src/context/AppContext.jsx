@@ -23,6 +23,7 @@ const initialState = {
   chatBookSubject: '',
   isYouTubeOpen: false,
   youtubeSearchText: '',
+  isHtmlBuilderOpen: false,
 };
 
 const actionTypes = {
@@ -47,6 +48,7 @@ const actionTypes = {
   SET_CHAT_BOOK_SUBJECT: 'SET_CHAT_BOOK_SUBJECT',
   SET_IS_YOUTUBE_OPEN: 'SET_IS_YOUTUBE_OPEN',
   SET_YOUTUBE_SEARCH_TEXT: 'SET_YOUTUBE_SEARCH_TEXT',
+  SET_IS_HTML_BUILDER_OPEN: 'SET_IS_HTML_BUILDER_OPEN',
 };
 
 // ✅ closes all open UI panels
@@ -60,6 +62,7 @@ const closeAllPanels = (state) => ({
   isJSGeneratorOpen: false,
   isChatBookOpen: false,
   isYouTubeOpen: false,
+  isHtmlBuilderOpen: false,
 });
 
 function appReducer(state, action) {
@@ -143,6 +146,11 @@ function appReducer(state, action) {
     case actionTypes.SET_YOUTUBE_SEARCH_TEXT:
       return { ...state, youtubeSearchText: action.payload };
 
+    case actionTypes.SET_IS_HTML_BUILDER_OPEN:
+      return action.payload
+        ? { ...closeAllPanels(state), isHtmlBuilderOpen: true }
+        : { ...state, isHtmlBuilderOpen: false };
+
     default:
       console.warn(`Unhandled action type: ${action.type}`);
       return state;
@@ -188,4 +196,5 @@ export const actions = {
   setChatBookSubject: (subject) => ({ type: actionTypes.SET_CHAT_BOOK_SUBJECT, payload: subject }),
   setIsYouTubeOpen: (open) => ({ type: actionTypes.SET_IS_YOUTUBE_OPEN, payload: open }),
   setYouTubeSearchText: (text) => ({ type: actionTypes.SET_YOUTUBE_SEARCH_TEXT, payload: text }),
+  setIsHtmlBuilderOpen: (open) => ({ type: actionTypes.SET_IS_HTML_BUILDER_OPEN, payload: open }),
 };

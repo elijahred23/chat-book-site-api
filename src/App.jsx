@@ -28,7 +28,7 @@ function App() {
   const [showFloatingBtns, setShowFloatingBtns] = useState(false);
   const floatingRef = useRef(null);
   const dispatch = useAppDispatch();
-  const { isChatOpen, isTeleprompterOpen, isTTSOpen, isPlantUMLOpen, isPodcastTTSOpen, isJSGeneratorOpen, isChatBookOpen, isYouTubeOpen } = useAppState();
+  const { isChatOpen, isTeleprompterOpen, isTTSOpen, isPlantUMLOpen, isPodcastTTSOpen, isJSGeneratorOpen, isChatBookOpen, isYouTubeOpen, isHtmlBuilderOpen } = useAppState();
 
   const toggleChat = () => dispatch(actions.setIsChatOpen(false));
   const toggleWidth = () => setIsFullWidth((p) => !p);
@@ -37,6 +37,7 @@ function App() {
   const setIsPlantUMLOpen = (val) => dispatch(actions.setIsPlantUMLOpen(val)); // ✅ NEW
   const setPodcastTTSOpen = (val) => dispatch(actions.setIsPodcastTTSOpen(val)); // ✅ NEW
   const setIsYouTubeOpen = (val) => dispatch(actions.setIsYouTubeOpen(val));
+  const setIsHtmlBuilderOpen = (val) => dispatch(actions.setIsHtmlBuilderOpen(val));
 
   useEffect(() => {
     const savedText = localStorage.getItem('selectedText');
@@ -69,7 +70,6 @@ function App() {
           <div className="dropdown-menu">
             <NavLink to="/typingTest">Typing Test</NavLink>
             <NavLink to="/flashCards">Flash Cards</NavLink>
-            <NavLink to="/htmlBuilder">HTML Builder</NavLink>
             <NavLink to="/Quran">Quran</NavLink>
             <NavLink to="/apiCheck">Settings</NavLink>
           </div>
@@ -157,6 +157,9 @@ function App() {
               <button onClick={() => dispatch(actions.setIsChatBookOpen(true))} className="fab-btn">
                 <span>📓</span>{isChatBookOpen ? 'Chat Book' : 'Open Chat Book'}
               </button>
+              <button onClick={() => setIsHtmlBuilderOpen(true)} className="fab-btn">
+                <span>🌐</span>{isHtmlBuilderOpen ? 'HTML Builder' : 'Open HTML'}
+              </button>
             </div>
           )}
           <button onClick={() => setShowFloatingBtns((p) => !p)} className="fab-main">
@@ -235,6 +238,15 @@ function App() {
             </button>
           </div>
           <PodcastTTSPlayer />
+        </div>
+        {/* HTML Builder Drawer */}
+        <div className={`chat-drawer ${isHtmlBuilderOpen ? 'open' : ''} ${isFullWidth ? 'full' : 'half'}`}>
+          <div className="chat-drawer-header">
+            <button className="width-toggle-btn" onClick={() => setIsHtmlBuilderOpen(false)}>
+              ✖ Close HTML Builder
+            </button>
+          </div>
+          <HtmlBuilder />
         </div>
         {/* YouTube Transcript Drawer */}
         <div className={`chat-drawer ${isYouTubeOpen ? 'open' : ''} ${isFullWidth ? 'full' : 'half'}`}>

@@ -112,6 +112,17 @@ export default function ActionButtons({ promptText, limitButtons = false }) {
       },
     },
     {
+      icon: FaCode,
+      title: "HTML Builder",
+      color: "var(--btn-blue)",
+      iconColor: "#0b1220",
+      onClick: (e) => {
+        e.stopPropagation();
+        dispatch(actions.setHtmlInput(cleanText));
+        dispatch(actions.setIsHtmlBuilderOpen(true));
+      },
+    },
+    {
       icon: FaPodcast,
       title: "Podcast TTS",
       color: "var(--btn-podcast)",
