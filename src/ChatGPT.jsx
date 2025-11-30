@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { FiMessageSquare, FiType } from "react-icons/fi";
 import { ClipLoader } from "react-spinners";
 import ReactMarkdown from "react-markdown";
 import { getGeminiResponse } from "./utils/callGemini";
@@ -165,42 +166,40 @@ export default function GptPromptComponent({
     }
     .floating-controls {
       position: fixed;
-      top: 14px;
-      right: 14px;
+      top: 10px;
+      right: 10px;
       z-index: 100001;
       display: flex;
-      gap: 0.45rem;
-      background: rgba(15,23,42,0.9);
-      padding: 0.4rem 0.5rem;
+      gap: 6px;
+      background: rgba(15,23,42,0.8);
+      padding: 6px;
       border-radius: 12px;
-      box-shadow: 0 16px 40px rgba(0,0,0,0.25);
-      backdrop-filter: blur(12px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+      backdrop-filter: blur(10px);
     }
     .pill-btn {
       border: none;
-      border-radius: 999px;
-      padding: 7px 10px;
-      background: linear-gradient(135deg, #2563eb, #22d3ee);
-      color: #0b1220;
-      font-weight: 700;
-      font-size: 0.85rem;
-      cursor: pointer;
-      box-shadow: 0 8px 18px rgba(37,99,235,0.35);
+      border-radius: 10px;
+      width: 38px;
+      height: 38px;
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      justify-content: center;
+      background: #0ea5e9;
+      color: #0b1220;
+      cursor: pointer;
+      box-shadow: 0 8px 18px rgba(14,165,233,0.35);
     }
     @media (max-width: 540px) {
       .floating-controls {
         left: 8px;
-        right: auto;
-        top: auto;
-        bottom: 10px;
+        right: 8px;
+        top: 8px;
         transform: none;
       }
       .pill-btn {
-        padding: 6px 9px;
-        font-size: 0.8rem;
+        width: 34px;
+        height: 34px;
       }
       .chat-window {
         max-height: 50vh;
@@ -212,11 +211,11 @@ export default function GptPromptComponent({
     <div>
       <style>{styles}</style>
       <div className="floating-controls compact">
-        <button className="pill-btn" onClick={onToggleCollapse}>
-          {isCollapsed ? "💬 Show" : "💬 Hide"}
+        <button className="pill-btn" onClick={onToggleCollapse} aria-label="Toggle chat">
+          <FiMessageSquare size={18} />
         </button>
-        <button className="pill-btn" onClick={onTogglePrompt}>
-          {hidePrompt ? "⌨️ Prompt" : "⌨️ Hide"}
+        <button className="pill-btn" onClick={onTogglePrompt} aria-label="Toggle prompt">
+          <FiType size={18} />
         </button>
       </div>
 
