@@ -28,7 +28,7 @@ function App() {
   const [showFloatingBtns, setShowFloatingBtns] = useState(false);
   const floatingRef = useRef(null);
   const dispatch = useAppDispatch();
-  const { isChatOpen, isTeleprompterOpen, isTTSOpen, isPlantUMLOpen, isPodcastTTSOpen, isJSGeneratorOpen, isChatBookOpen, isYouTubeOpen, isHtmlBuilderOpen } = useAppState();
+  const { isChatOpen, isTeleprompterOpen, isTTSOpen, isPlantUMLOpen, isPodcastTTSOpen, isJSGeneratorOpen, isChatBookOpen, isYouTubeOpen, isHtmlBuilderOpen, isTypingOpen } = useAppState();
 
   const toggleChat = () => dispatch(actions.setIsChatOpen(false));
   const toggleWidth = () => setIsFullWidth((p) => !p);
@@ -38,6 +38,7 @@ function App() {
   const setPodcastTTSOpen = (val) => dispatch(actions.setIsPodcastTTSOpen(val)); // ✅ NEW
   const setIsYouTubeOpen = (val) => dispatch(actions.setIsYouTubeOpen(val));
   const setIsHtmlBuilderOpen = (val) => dispatch(actions.setIsHtmlBuilderOpen(val));
+  const setIsTypingOpen = (val) => dispatch(actions.setIsTypingOpen(val));
 
   useEffect(() => {
     const savedText = localStorage.getItem('selectedText');
@@ -68,7 +69,6 @@ function App() {
         <div className="dropdown-nav">
           <button className="dropdown-toggle">Menu ▾</button>
           <div className="dropdown-menu">
-            <NavLink to="/typingTest">Typing Test</NavLink>
             <NavLink to="/flashCards">Flash Cards</NavLink>
             <NavLink to="/Quran">Quran</NavLink>
             <NavLink to="/apiCheck">Settings</NavLink>
@@ -160,6 +160,9 @@ function App() {
               <button onClick={() => setIsHtmlBuilderOpen(true)} className="fab-btn">
                 <span>🌐</span>{isHtmlBuilderOpen ? 'HTML Builder' : 'Open HTML'}
               </button>
+              <button onClick={() => setIsTypingOpen(true)} className="fab-btn">
+                <span>⌨️</span>{isTypingOpen ? 'Typing Test' : 'Open Typing'}
+              </button>
             </div>
           )}
           <button onClick={() => setShowFloatingBtns((p) => !p)} className="fab-main">
@@ -247,6 +250,15 @@ function App() {
             </button>
           </div>
           <HtmlBuilder />
+        </div>
+        {/* Typing Test Drawer */}
+        <div className={`chat-drawer ${isTypingOpen ? 'open' : ''} ${isFullWidth ? 'full' : 'half'}`}>
+          <div className="chat-drawer-header">
+            <button className="width-toggle-btn" onClick={() => setIsTypingOpen(false)}>
+              ✖ Close Typing Test
+            </button>
+          </div>
+          <TypingTest />
         </div>
         {/* YouTube Transcript Drawer */}
         <div className={`chat-drawer ${isYouTubeOpen ? 'open' : ''} ${isFullWidth ? 'full' : 'half'}`}>

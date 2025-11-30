@@ -13,6 +13,7 @@ import {
   FaImage,
   FaEllipsisH,
   FaChevronUp,
+  FaKeyboard,
 } from "react-icons/fa";
 import { useFlyout } from "../context/FlyoutContext";
 import { FcGoogle } from "react-icons/fc";
@@ -99,6 +100,17 @@ export default function ActionButtons({ promptText, limitButtons = false }) {
         e.stopPropagation();
         dispatch(actions.setChatBookSubject(cleanText));
         dispatch(actions.setIsChatBookOpen(true));
+      },
+    },
+    {
+      icon: FaKeyboard,
+      title: "Typing Test",
+      color: "var(--btn-blue)",
+      iconColor: "#0b1220",
+      onClick: (e) => {
+        e.stopPropagation();
+        dispatch(actions.setTypingSource(cleanText));
+        dispatch(actions.setIsTypingOpen(true));
       },
     },
     {

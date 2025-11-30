@@ -69,12 +69,6 @@ export default function ApiCheck() {
     return (<><div>
         <h2>API Check</h2>
         <p style={{ color: success ? 'green' : 'red' }}>{apiMessage}</p>
-        <h3>Transcript Type</h3>
-        <select value={state.selectedTranscriptType} onChange={(e) => setSelectedTranscriptType(e.target.value)}>
-            {state.transcriptTypes.map((type) => (
-                <option key={type} value={type}>{type}</option>
-                ))}
-        </select>
         <h3>Gemini Model</h3>
         <p style={{ color: success ? 'green' : 'red' }}>{geminiModel}</p>
         <input placeholder='Update Gemini Model' type="text" value={geminiModelInput} onChange={(e) => setGeminiModelInput(e.target.value)} />

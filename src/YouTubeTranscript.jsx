@@ -100,7 +100,7 @@ export default function YouTubeTranscript() {
             return transcript;
     };
 
-    const promptSuggestions = [
+  const promptSuggestions = [
         { label: "Summary", value: "Summarize this transcript" },
         { label: "Key Points", value: "Extract key points from this content" },
         { label: "Simple", value: "Explain this content simply" },
@@ -123,7 +123,7 @@ export default function YouTubeTranscript() {
     };
 
     // Execute prompt on transcript
-    const executePrompt = async () => {
+  const executePrompt = async () => {
         try {
             setLoadingPrompt(true);
             setProgress(0);
@@ -248,6 +248,8 @@ export default function YouTubeTranscript() {
     useEffect(() => {
         if (splitLength > 0 && transcript?.length > 0) {
             setSplitTranscript(splitStringByWords(transcript, splitLength));
+        } else {
+            setSplitTranscript([]);
         }
     }, [splitLength, transcript]);
 
@@ -263,6 +265,7 @@ export default function YouTubeTranscript() {
                 setSplitLength(splits);
                 setLastFetchedUrl(url);
                 showMessage?.({ type: "success", message: "Transcript found." });
+                setActiveTab("prompt");
             }
 
         } catch (err) {
@@ -284,6 +287,7 @@ export default function YouTubeTranscript() {
                 setSplitLength(splits);
                 setLastFetchedUrl(url);
                 showMessage?.({ type: "success", message: "Transcript found." });
+                setActiveTab("prompt");
             } else {
                 showMessage?.({ type: "error", message: "Transcript not found." });
             }
@@ -509,13 +513,13 @@ export default function YouTubeTranscript() {
     return (
         <div className="yt-container">
             <style>{styles}</style>
-            {/* Tab navigation */}
-            <div className="tab-bar">
+            {/* Toolbar */}
+            <div className="tab-bar" style={{ alignItems: 'center' }}>
                 <button className={`tab-btn ${activeTab === "transcript" ? "active" : ""}`} onClick={() => setActiveTab("transcript")}>Transcript</button>
-                {validYoutubeUrl && (
-                    <button className={`tab-btn ${activeTab === "comments" ? "active" : ""}`} onClick={() => setActiveTab("comments")}>Comments</button>
-                )}
+                <button className={`tab-btn ${activeTab === "prompt" ? "active" : ""}`} onClick={() => setActiveTab("prompt")}>Prompt & Preview</button>
+                <button className={`tab-btn ${activeTab === "comments" ? "active" : ""}`} onClick={() => setActiveTab("comments")}>Comments</button>
                 <button className={`tab-btn ${activeTab === "responses" ? "active" : ""}`} onClick={() => setActiveTab("responses")}>Prompt Responses</button>
+                <button className="btn primary-btn" style={{ marginLeft: 'auto' }} onClick={() => setDrawerOpen(true)}>🔎 Search YouTube</button>
             </div>
 
             {/* Video iframe section */}
@@ -558,6 +562,20 @@ export default function YouTubeTranscript() {
                 </div>
             )}
 
+            {/* Keep drawer accessible across tabs */}
+            <YouTubeSearchDrawer
+                isOpen={drawerOpen}
+                onClose={() => setDrawerOpen(false)}
+                onSelectVideo={(selectedUrl) => {
+                    setUrl(selectedUrl);
+                    setDrawerOpen(false);
+                }}
+                externalQuery={externalSearchText}
+                setUrl={(url) => {
+                    setUrl(url);
+                    setDrawerOpen(false);
+                }}
+            />
             {/* Transcript tab */}
             {activeTab === "transcript" && (
                 <>
@@ -571,11 +589,6 @@ export default function YouTubeTranscript() {
                         </button>
                     </div>
                     <div className="input-group">
-                        <div className="button-group">
-                            <button className="btn secondary-btn" onClick={() => setDrawerOpen(true)}>
-                                🔎 Search YouTube
-                            </button>
-                        </div>
                         <PasteButton
                             setPasteText={async () => {
                                 try {
@@ -634,6 +647,12 @@ export default function YouTubeTranscript() {
                             />
                         </label>
                     </div>
+                </>
+            )}
+
+            {/* Prompt & Preview tab */}
+            {activeTab === "prompt" && (
+                <>
                     <div className="input-group">
                         <input
                             className="input"
@@ -671,30 +690,30 @@ export default function YouTubeTranscript() {
                             View Responses
                         </button>
                     </div>
-                    <YouTubeSearchDrawer
-                        isOpen={drawerOpen}
-                        onClose={() => setDrawerOpen(false)}
-                        onSelectVideo={(selectedUrl) => {
-                            setUrl(selectedUrl);
-                            setDrawerOpen(false);
-                        }}
-                        externalQuery={externalSearchText}
-                        setUrl={(url) => {
-                            setUrl(url);
-                            setDrawerOpen(false);
-                        }}
-                    />
-                </>
-            )}
+                    {loadingPrompt && (
+                        <div className="progress-container">
+                            <label style={{ fontWeight: 'bold' }}>Progress: {progress}/{splitTranscript.length}</label>
+                            <div className="progress-bar-wrapper">
+                                <div className="progress-bar" style={{ width: `${(progress / splitTranscript.length) * 100}%` }} />
+                            </div>
+                        </div>
+                    )}
 
-            {/* Prompt loading progress */}
-            {loadingPrompt && (
-                <div className="progress-container">
-                    <label style={{ fontWeight: 'bold' }}>Progress: {progress}/{splitTranscript.length}</label>
-                    <div className="progress-bar-wrapper">
-                        <div className="progress-bar" style={{ width: `${(progress / splitTranscript.length) * 100}%` }} />
+                    <h2>
+                        Transcript Preview <span style={{ fontSize: '0.9rem', color: '#666' }}>({transcriptWordCount} words)</span>
+                    </h2>
+                    <CopyButton text={transcript} buttonText="📋 Copy Complete Transcript" className="btn copy-btn" />
+                    <div className="scrollable-card">
+                        {splitTranscript.map((chunk, i) => (
+                            <div key={i} className="chunk">
+                                <textarea readOnly className="textarea">
+                                    {chunk}
+                                </textarea>
+                                <CopyButton text={chunk} className="btn copy-btn" />
+                            </div>
+                        ))}
                     </div>
-                </div>
+                </>
             )}
 
             {/* Comments tab */}
@@ -742,26 +761,6 @@ export default function YouTubeTranscript() {
                 </>
             )}
 
-
-            {/* Transcript preview in transcript tab */}
-            {activeTab === "transcript" && (
-                <>
-                    <h2>
-                        Transcript Preview <span style={{ fontSize: '0.9rem', color: '#666' }}>({transcriptWordCount} words)</span>
-                    </h2>
-                    <CopyButton text={transcript} buttonText="📋 Copy Complete Transcript" className="btn copy-btn" />
-                    <div className="scrollable-card">
-                        {splitTranscript.map((chunk, i) => (
-                            <div key={i} className="chunk">
-                                <textarea readOnly className="textarea">
-                                    {chunk}
-                                </textarea>
-                                <CopyButton text={chunk} className="btn copy-btn" />
-                            </div>
-                        ))}
-                    </div>
-                </>
-            )}
 
             {/* Prompt loading progress */}
             {loadingPrompt && (

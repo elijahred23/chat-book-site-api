@@ -88,9 +88,11 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo, ex
         const durationSeconds = item.durationSeconds ?? parseISODurationToSeconds(item.duration);
         return {
             ...item,
-            _thumb: item.thumbnails?.medium?.url || item.thumbnails?.high?.url || item.thumbnails?.default?.url,
+            _thumb: item.thumbnails?.medium?.url || item.thumbnails?.high?.url || item.thumbnails?.default?.url || item.thumbnail,
             _durationSeconds: durationSeconds,
-            _prettyDuration: item.duration || prettifyDuration(durationSeconds),
+            _prettyDuration: item.duration && /^PT/.test(item.duration)
+              ? prettifyDuration(durationSeconds)
+              : (item.duration || prettifyDuration(durationSeconds)),
             _playlistId: item.playlistId || item.id || item.url,
             _videoId: item.videoId || item.id || item.resourceId?.videoId,
             _publishedAt: item.publishedAt || item.publishTime,
@@ -344,25 +346,26 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo, ex
                   }
                   .result-grid {
                     display: grid;
-                    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-                    gap: 0.9rem;
+                    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                    gap: 1rem;
                   }
                   .result-card {
-                    background: linear-gradient(135deg, rgba(226,232,240,0.08), rgba(30,41,59,0.8));
-                    border: 1px solid rgba(148,163,184,0.3);
+                    background: #0f172a;
+                    border: 1px solid rgba(148,163,184,0.35);
                     border-radius: 14px;
-                    padding: 0.85rem;
-                    display: flex;
+                    padding: 0.9rem;
+                    display: grid;
+                    grid-template-columns: 120px 1fr;
                     gap: 0.75rem;
-                    align-items: flex-start;
+                    align-items: stretch;
+                    box-shadow: 0 14px 32px rgba(0,0,0,0.25);
                   }
                   .thumb {
-                    width: 120px;
-                    height: 72px;
+                    width: 100%;
+                    height: 100%;
                     border-radius: 12px;
                     object-fit: cover;
                     background: #1f2937;
-                    flex-shrink: 0;
                   }
                   .video-actions {
                     display: flex;
@@ -399,7 +402,7 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo, ex
                     border-bottom: none;
                   }
                   @media (max-width: 640px) {
-                    .result-card { flex-direction: column; }
+                    .result-card { grid-template-columns: 1fr; }
                     .thumb { width: 100%; height: auto; aspect-ratio: 16/9; }
                     .yt-shell { padding: 0.75rem; }
                   }
@@ -494,31 +497,35 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo, ex
 
                                 return (
                                     <div key={index} className="result-card">
-                                        {thumb && (
-                                            <img
-                                                src={thumb}
-                                                alt={item.title}
-                                                className="thumb"
-                                            />
-                                        )}
-                                        <div style={{ flex: 1, minWidth: 0 }}>
-                                            <h5 style={{ margin: '0 0 0.35rem 0', fontSize: '1rem', color: '#e2e8f0' }}>{item.title}</h5>
+                                        <div style={{ width: '100%', height: '100%' }}>
+                                            {thumb && (
+                                                <img
+                                                    src={thumb}
+                                                    alt={item.title}
+                                                    className="thumb"
+                                                />
+                                            )}
+                                        </div>
+                                        <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', minWidth: 0 }}>
+                                            <h5 style={{ margin: 0, fontSize: '1rem', color: '#e2e8f0', lineHeight: 1.3 }}>{item.title}</h5>
                                             <p style={{ margin: 0, fontSize: '0.9rem', color: '#cbd5e1' }}>{item.channelTitle}</p>
                                             <div className="video-actions">
                                                 {item._prettyDuration && <span className="pill">⏱ {item._prettyDuration}</span>}
                                                 {item._publishedAt && <span className="pill">📅 {new Date(item._publishedAt).toLocaleDateString()}</span>}
+                                                {item.viewCount && <span className="pill">👁️ {Number(item.viewCount).toLocaleString()}</span>}
+                                                {item.likeCount && <span className="pill">👍 {Number(item.likeCount).toLocaleString()}</span>}
                                             </div>
 
                                             {isPlaylist ? (
                                                 <button
                                                     className='btn secondary-btn'
-                                                    style={{ marginTop: '0.6rem' }}
+                                                    style={{ marginTop: '0.4rem' }}
                                                     onClick={() => togglePlaylist(item)}
                                                 >
                                                     {expandedPlaylists.includes(playlistId) ? 'Hide playlist videos' : 'Show playlist videos'}
                                                 </button>
                                             ) : (
-                                                <div style={{ marginTop: '0.6rem', display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+                                                <div style={{ marginTop: '0.4rem', display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
                                                     <button className='btn primary-btn' onClick={() => handleUseVideo(videoUrl)}>Use this video</button>
                                                     <button className='btn secondary-btn' onClick={() => handleCopy(videoUrl)}>
                                                         {copiedUrl === videoUrl ? 'Copied!' : 'Copy URL'}

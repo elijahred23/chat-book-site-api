@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import './TypingText.css'
 import PasteButton from './ui/PasteButton'
+import ActionButtons from './ui/ActionButtons'
+import { useAppState } from './context/AppContext'
 
 /**
  * WPM formula:
@@ -12,6 +14,7 @@ import PasteButton from './ui/PasteButton'
  */
 
 export default function TypingTest() {
+  const { typingSource } = useAppState();
   const [source, setSource] = useState(`// Paste code on the left, press "Load", then Start.
 // Type exactly. Backspace to fix mistakes.
 // Tip: Toggle "Tab ↹ as 2/4 spaces" if your snippet uses tabs.
@@ -159,7 +162,22 @@ greet("world");`)
     setNowTs(null)
   }
 
-    const handleKey = (e) => {
+  useEffect(() => {
+    if (typingSource) {
+      setSource(typingSource);
+      // auto load new snippet
+      setLoaded(removeMarkdown(typingSource));
+      setStarted(false);
+      setFinished(false);
+      setCaret(0);
+      setTyped('');
+      setErrors(0);
+      setStartTs(null);
+      setNowTs(null);
+    }
+  }, [typingSource]);
+
+  const handleKey = (e) => {
     if (!started || finished) return
     const key = e.key
 
@@ -171,11 +189,17 @@ greet("world");`)
     if (key === 'Escape') { stop(); return }
     if (key === 'Backspace') {
       if (caret > 0) {
-        // remove 1 char (we do not collapse on backspace; keeps behavior simple/predictable)
-        setCaret(caret - 1)
-        setTyped(typed.slice(0, -1))
+        // If deleting spaces, remove the entire contiguous space run
+        let removeCount = 1;
+        if (typed[caret - 1] === ' ') {
+          let j = caret - 1;
+          while (j >= 0 && typed[j] === ' ') j--;
+          removeCount = caret - (j + 1);
+        }
+        setCaret(caret - removeCount);
+        setTyped(typed.slice(0, caret - removeCount));
       }
-      return
+      return;
     }
 
     // normalize key to a single character (or newline)
@@ -211,7 +235,11 @@ greet("world");`)
     // --- END new behavior ---
 
     // regular single-character path
-    const isCorrect = ch === expected
+    // Allow any character when expected char is non-keyboard (e.g., unusual unicode)
+    const keyboardChars = /^[\x20-\x7E]$/; // printable ASCII
+    const isExpectedKeyboardChar = keyboardChars.test(expected) || expected === '\n' || expected === '\t' || expected === ' ';
+    const isCorrect = ch === expected || !isExpectedKeyboardChar;
+
     setTyped(typed + ch)
     setCaret(nextIndex + 1)
     if (!isCorrect) setErrors((e) => e + 1)
@@ -248,103 +276,112 @@ greet("world");`)
   const focusing = hiddenInputRef.current === document.activeElement;
 
   return (
-    <div className="container">
-      <h6 style={{ textAlign: 'center' }}>Programming Typing Test</h6>
+    <div className="typing-shell">
+      <div className="typing-hero">
+        <div>
+          <p className="eyebrow">Speed builder</p>
+          <h2>Programming Typing Test</h2>
+          <p className="muted">Paste code, load it, and race through the snippet with precision. Tabs, whitespace, and pacing all count.</p>
+          <div className="chip-row">
+            <div className="chip"><span>⚡</span> {Number.isFinite(wpm) ? wpm : 0} WPM</div>
+            <div className="chip"><span>🎯</span> {Math.round(accuracy * 100)}% accuracy</div>
+            <div className="chip"><span>📈</span> {Math.round(progress * 100)}% complete</div>
+          </div>
+        </div>
+      </div>
 
-      <div className="controls">
-        <textarea
-          value={source}
-          onChange={(e) => setSource(e.target.value)}
-          placeholder="Paste your code snippet here…"
-          spellCheck={false}
+      <div className="panel">
+        <div className="panel-head">
+          <h4 style={{color:"white"}}>Source Snippet</h4>
+          <div className="pill">Est. {predictedMinutesToComplete} mins</div>
+        </div>
+        <div className="controls">
+          <textarea
+            value={source}
+            onChange={(e) => setSource(e.target.value)}
+            placeholder="Paste your code snippet here…"
+            spellCheck={false}
+          />
+          <div className="row">
+            <button onClick={handleLoad}>Load</button>
+            <button className="btn primary" onClick={start} disabled={!normalized.length || (started && !finished)}>Start</button>
+            <button className="btn ghost" onClick={stop} disabled={!started}>Stop</button>
+            <button className="secondary" onClick={() => { setSource(''); }}>Clear</button>
+            <button className="secondary" onClick={focus}>Focus</button>
+            <label style={{color:"white"}} className="small">
+              Tab width:
+              <button
+                className="secondary"
+                style={{ marginLeft: 8 }}
+                onClick={() => setTabSize((t) => t === 2 ? 4 : 2)}
+              >
+                {tabSize} spaces
+              </button>
+            </label>
+            <label className="small" style={{ display: 'flex', alignItems: 'center', gap: 8, color:"white" }}>
+              <input type="checkbox" checked={showWhitespace} onChange={(e) => setShowWhitespace(e.target.checked)} />
+              Show whitespace
+            </label>
+            <span style={{color:"white"}}className="small">Shortcuts: <kbd>Esc</kbd> to stop, <kbd>Backspace</kbd> to correct</span>
+          </div>
+        </div>
+      </div>
+
+      <div className="panel">
+        <div className="panel-head">
+          <h4>Live Reader</h4>
+          <div className="pill">Errors: {errors}</div>
+        </div>
+        <div className="metrics">
+          <div className="metric">
+            <div className="label">WPM</div>
+            <div className="value">{Number.isFinite(wpm) ? wpm : 0}</div>
+          </div>
+          <div className="metric">
+            <div className="label">Accuracy</div>
+            <div className="value">{Math.round(accuracy * 100)}%</div>
+          </div>
+          <div className="metric">
+            <div className="label">Progress</div>
+            <div className="value">{Math.round(progress * 100)}%</div>
+          </div>
+          <div className="metric">
+            <div className="label">Elapsed</div>
+            <div className="value">{(elapsedMs/1000).toFixed(1)}s</div>
+          </div>
+        </div>
+
+        <div className="progress" aria-label="progress">
+          <div style={{ width: `${Math.round(progress * 100)}%` }} />
+        </div>
+
+        <div className="reader" style={{ tabSize }}>
+          {loaded ? renderHighlighted() : <span style={{color:"white"}} className="small">Load code to begin…</span>}
+        </div>
+
+        {/* Hidden input to capture keystrokes globally when started */}
+        <input
+          ref={hiddenInputRef}
+          style={{ position: 'absolute', opacity: 0, pointerEvents: 'none' }}
+          onKeyDown={handleKey}
         />
-        <div className="row">
-          <button onClick={handleLoad}>Load</button>
-          <button className="secondary" onClick={() => { setSource(''); }}>Clear</button>
-          <button onClick={start} disabled={!normalized.length || (started && !finished)}>Start</button>
-          <button className="secondary" onClick={stop} disabled={!started}>Stop</button>
-          <button className="secondary" onClick={focus}>Focus</button>
-          {source && 
-          <div style={{fontSize:"12px"}}>Completion Time (60wpm): {predictedMinutesToComplete} minutes</div>
-          }
-        </div>
 
-        <div className="row">
-          <label className="small">
-            Tab width:
-            <button
-              className="secondary"
-              style={{ marginLeft: 8 }}
-              onClick={() => setTabSize((t) => t === 2 ? 4 : 2)}
-            >
-              {tabSize} spaces
-            </button>
-          </label>
-          <label className="small" style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-            <input type="checkbox" checked={showWhitespace} onChange={(e) => setShowWhitespace(e.target.checked)} />
-            Show whitespace
-          </label>
-          <span className="small">Shortcuts: <kbd>Esc</kbd> to stop, <kbd>Backspace</kbd> to correct</span>
+        <div className="footer" style={{color:"white"}}>
+          <div>Loaded: {normalized.length} • Typed: {typed.length} • Correct: {correctChars}</div>
+          <div>Elapsed: {(elapsedMs/1000).toFixed(1)}s</div>
+          <div>Focus: {focusing ? 'capturing keys' : 'click Focus'}</div>
         </div>
       </div>
 
-      {focusing && 
-      <div className="metrics">
-        <div className="metric">
-          <div className="label">WPM</div>
-          <div className="value">{Number.isFinite(wpm) ? wpm : 0}</div>
-        </div>
-        <div className="metric">
-          <div className="label">Accuracy</div>
-          <div className="value">{Math.round(accuracy * 100)}%</div>
-        </div>
-        <div className="metric">
-          <div className="label">Errors</div>
-          <div className="value">{errors}</div>
-        </div>
-        <div className="metric">
-          <div className="label">Progress</div>
-          <div className="value">{Math.round(progress * 100)}%</div>
-        </div>
-      </div>
-      }
-
-      <div className="progress" aria-label="progress">
-        <div style={{ width: `${Math.round(progress * 100)}%` }} />
+      <div style={{ marginTop: '12px' }}>
+        <ActionButtons promptText={source} />
       </div>
 
-      <div className="reader" style={{ tabSize }}>
-        {loaded ? renderHighlighted() : <span className="small">Load code to begin…</span>}
-      </div>
-
-      {/* Hidden input to capture keystrokes globally when started */}
-      <input
-        ref={hiddenInputRef}
-        style={{ position: 'absolute', opacity: 0, pointerEvents: 'none' }}
-        onKeyDown={handleKey}
-      />
-
-      <div className="footer">
-        <div>Loaded characters: {normalized.length} • Typed: {typed.length} • Correct: {correctChars}</div>
-        <div>Elapsed: {(elapsedMs/1000).toFixed(1)}s</div>
-        <div>Elapsed Minutes: {((elapsedMs/1000)/60).toFixed(1)}m</div>
-        {/*
-        button that takes you to top of the screen
-        */}
-        <button
-            className="secondary"
-            type="button"
-            onMouseDown={(e) => e.preventDefault()}     // stop button from taking focus
-            onTouchStart={(e) => e.preventDefault()}    // same for touch
-            onClick={() => {
-                window.scrollTo({ top: 500, behavior: 'smooth' }); // you had (0, 500)
-                requestAnimationFrame(() => hiddenInputRef.current?.focus()); // re-focus just in case
-            }}
-            >
-            Top ↑
-        </button>
-
-      </div>
+      {finished && (
+        <div className="footer done">
+          Done! Press Start to retry.
+        </div>
+      )}
     </div>
   )
 }

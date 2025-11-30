@@ -24,6 +24,8 @@ const initialState = {
   isYouTubeOpen: false,
   youtubeSearchText: '',
   isHtmlBuilderOpen: false,
+  isTypingOpen: false,
+  typingSource: '',
 };
 
 const actionTypes = {
@@ -49,6 +51,8 @@ const actionTypes = {
   SET_IS_YOUTUBE_OPEN: 'SET_IS_YOUTUBE_OPEN',
   SET_YOUTUBE_SEARCH_TEXT: 'SET_YOUTUBE_SEARCH_TEXT',
   SET_IS_HTML_BUILDER_OPEN: 'SET_IS_HTML_BUILDER_OPEN',
+  SET_IS_TYPING_OPEN: 'SET_IS_TYPING_OPEN',
+  SET_TYPING_SOURCE: 'SET_TYPING_SOURCE',
 };
 
 // ✅ closes all open UI panels
@@ -63,6 +67,7 @@ const closeAllPanels = (state) => ({
   isChatBookOpen: false,
   isYouTubeOpen: false,
   isHtmlBuilderOpen: false,
+  isTypingOpen: false,
 });
 
 function appReducer(state, action) {
@@ -146,6 +151,14 @@ function appReducer(state, action) {
     case actionTypes.SET_YOUTUBE_SEARCH_TEXT:
       return { ...state, youtubeSearchText: action.payload };
 
+    case actionTypes.SET_IS_TYPING_OPEN:
+      return action.payload
+        ? { ...closeAllPanels(state), isTypingOpen: true }
+        : { ...state, isTypingOpen: false };
+
+    case actionTypes.SET_TYPING_SOURCE:
+      return { ...state, typingSource: action.payload };
+
     case actionTypes.SET_IS_HTML_BUILDER_OPEN:
       return action.payload
         ? { ...closeAllPanels(state), isHtmlBuilderOpen: true }
@@ -196,5 +209,7 @@ export const actions = {
   setChatBookSubject: (subject) => ({ type: actionTypes.SET_CHAT_BOOK_SUBJECT, payload: subject }),
   setIsYouTubeOpen: (open) => ({ type: actionTypes.SET_IS_YOUTUBE_OPEN, payload: open }),
   setYouTubeSearchText: (text) => ({ type: actionTypes.SET_YOUTUBE_SEARCH_TEXT, payload: text }),
+  setIsTypingOpen: (open) => ({ type: actionTypes.SET_IS_TYPING_OPEN, payload: open }),
+  setTypingSource: (text) => ({ type: actionTypes.SET_TYPING_SOURCE, payload: text }),
   setIsHtmlBuilderOpen: (open) => ({ type: actionTypes.SET_IS_HTML_BUILDER_OPEN, payload: open }),
 };
