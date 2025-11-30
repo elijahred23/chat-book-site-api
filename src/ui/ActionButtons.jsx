@@ -14,6 +14,8 @@ import {
   FaEllipsisH,
   FaChevronUp,
   FaKeyboard,
+  FaBullhorn,
+  FaMagic,
 } from "react-icons/fa";
 import { useFlyout } from "../context/FlyoutContext";
 import { FcGoogle } from "react-icons/fc";
@@ -94,7 +96,7 @@ export default function ActionButtons({ promptText, limitButtons = false }) {
     {
       icon: GiNotebook,
       title: "Chat Book",
-      color: "var(--btn-orange)",
+      color: "var(--btn-yellow)",
       iconColor: "#0f172a",
       onClick: (e) => {
         e.stopPropagation();
@@ -105,7 +107,7 @@ export default function ActionButtons({ promptText, limitButtons = false }) {
     {
       icon: FaKeyboard,
       title: "Typing Test",
-      color: "var(--btn-blue)",
+      color: "var(--btn-code)",
       iconColor: "#0b1220",
       onClick: (e) => {
         e.stopPropagation();
@@ -126,7 +128,7 @@ export default function ActionButtons({ promptText, limitButtons = false }) {
     {
       icon: FaCode,
       title: "HTML Builder",
-      color: "var(--btn-blue)",
+      color: "var(--btn-purple)",
       iconColor: "#0b1220",
       onClick: (e) => {
         e.stopPropagation();
@@ -145,9 +147,9 @@ export default function ActionButtons({ promptText, limitButtons = false }) {
       },
     },
     {
-      icon: FaCode,
+      icon: FaMagic,
       title: "JS Generator",
-      color: "var(--btn-code)",
+      color: "var(--btn-blue)",
       onClick: (e) => {
         e.stopPropagation();
         dispatch(actions.setIsJSGeneratorOpen(true));
