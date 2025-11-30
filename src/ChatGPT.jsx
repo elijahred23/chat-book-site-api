@@ -8,6 +8,7 @@ import CopyButton from "./ui/CopyButton";
 import { actions, useAppDispatch, useAppState } from "./context/AppContext";
 import { SUGGESTION_GROUPS } from "./utils/suggestions";
 import ActionButtons from "./ui/ActionButtons";
+import { AiFillCloseCircle } from "react-icons/ai";
 
 function useLocalStorageState(key, defaultValue) {
   const [state, setState] = useState(() => {
@@ -217,7 +218,10 @@ export default function GptPromptComponent({
         <button className="pill-btn" onClick={onTogglePrompt} aria-label="Toggle prompt">
           <FiType size={18} />
         </button>
-      </div>
+        <button className="pill-btn" onClick={onClose} aria-label="Close chat">
+          <AiFillCloseCircle size={18} />
+        </button>
+   </div>
 
       <div className="gpt-shell">
         <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>

@@ -576,7 +576,22 @@ export default function YouTubeTranscript() {
                                 🔎 Search YouTube
                             </button>
                         </div>
-                        <PasteButton setPasteText={setUrl} className="btn paste-btn" />
+                        <PasteButton
+                            setPasteText={async () => {
+                                try {
+                                    let text = "";
+                                    if (navigator.clipboard?.readText) {
+                                        text = await navigator.clipboard.readText();
+                                    } else {
+                                        text = window.prompt("Paste YouTube URL here:") || "";
+                                    }
+                                    setUrl(text);
+                                } catch {
+                                    showMessage?.({ type: "error", message: "Clipboard blocked." });
+                                }
+                            }}
+                            className="btn paste-btn"
+                        />
                     </div>
 
                     <textarea
@@ -626,7 +641,22 @@ export default function YouTubeTranscript() {
                             placeholder="Prompt (e.g. Summarize this transcript)"
                             onChange={(e) => setPrompt(e.target.value)}
                         />
-                        <PasteButton setPasteText={setPrompt} className="btn paste-btn" />
+                        <PasteButton
+                            setPasteText={async () => {
+                                try {
+                                    let text = "";
+                                    if (navigator.clipboard?.readText) {
+                                        text = await navigator.clipboard.readText();
+                                    } else {
+                                        text = window.prompt("Paste prompt here:") || "";
+                                    }
+                                    setPrompt(text);
+                                } catch {
+                                    showMessage?.({ type: "error", message: "Clipboard blocked." });
+                                }
+                            }}
+                            className="btn paste-btn"
+                        />
                     </div>
                     <div className="prompt-suggestions">
                         {promptSuggestions.map((item, index) => (
@@ -679,7 +709,22 @@ export default function YouTubeTranscript() {
                             placeholder="Prompt to run on comments"
                             onChange={(e) => setPrompt(e.target.value)}
                         />
-                        <PasteButton setPasteText={setPrompt} className="btn paste-btn" />
+                        <PasteButton
+                            setPasteText={async () => {
+                                try {
+                                    let text = "";
+                                    if (navigator.clipboard?.readText) {
+                                        text = await navigator.clipboard.readText();
+                                    } else {
+                                        text = window.prompt("Paste prompt here:") || "";
+                                    }
+                                    setPrompt(text);
+                                } catch {
+                                    showMessage?.({ type: "error", message: "Clipboard blocked." });
+                                }
+                            }}
+                            className="btn paste-btn"
+                        />
                     </div>
                     <div className="button-group">
                         <button className="btn primary-btn" onClick={executePromptOnComments} disabled={loadingPrompt || !prompt || !splitComments.length}>
