@@ -87,16 +87,17 @@ export default function YouTubeTranscript() {
     const [progress, setProgress] = useState(0);
     const [lastFetchedUrl, setLastFetchedUrl] = useState("");
     const [retryIndex, setRetryIndex] = useState(null);
-    const [retryPromptText, setRetryPromptText] = useState("");
-    const [retryLoadingIndex, setRetryLoadingIndex] = useState(null);
-    const [drawerOpen, setDrawerOpen] = useState(false);
-    const { showMessage } = useFlyout();
-    const latestRetryRef = useRef({});
-    const [isMinimized, setIsMinimized] = useState(false);
-    const dispatch = useAppDispatch();
-    const [loadingTranscript, setLoadingTranscript] = useState(false);
-    const { youtubeSearchText } = useAppState();
-    const [externalSearchText, setExternalSearchText] = useState("");
+  const [retryPromptText, setRetryPromptText] = useState("");
+  const [retryLoadingIndex, setRetryLoadingIndex] = useState(null);
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const { showMessage } = useFlyout();
+  const latestRetryRef = useRef({});
+  const [isMinimized, setIsMinimized] = useState(false);
+  const dispatch = useAppDispatch();
+  const [loadingTranscript, setLoadingTranscript] = useState(false);
+  const { youtubeSearchText } = useAppState();
+  const [externalSearchText, setExternalSearchText] = useState("");
+  const [showAllPrompts, setShowAllPrompts] = useState(false);
 
     // Helpers to fetch transcript and comments based on selected provider
     const fetchYouTubeTranscript = async (video_url) => {
@@ -109,9 +110,19 @@ export default function YouTubeTranscript() {
         { label: "Simple", value: "Explain this content simply" },
         { label: "Elaborate", value: "Elaborate on this transcript" },
         { label: "Code", value: "Show code examples" },
+        { label: "Sentiment", value: "Analyze the tone and sentiment" },
+        { label: "Chapters", value: "Create timestamped chapters" },
+        { label: "Action Items", value: "List action items and tasks" },
+        { label: "Definitions", value: "Extract key terms and definitions" },
+        { label: "Q&A", value: "Generate Q&A pairs from this content" },
+        { label: "Translate", value: "Translate and summarize in Spanish" },
+        { label: "Highlights", value: "List highlights and memorable quotes" },
+        { label: "Next Steps", value: "Suggest next steps and follow-ups" },
+        { label: "Compare", value: "Compare this with a related topic" },
+        { label: "Counterpoints", value: "Provide counterpoints or critiques" },
     ];
 
-    const promptResponsesText = useMemo(() => promptResponses.join('\n\n'), [promptResponses]);
+  const promptResponsesText = useMemo(() => promptResponses.join('\n\n'), [promptResponses]);
     const commentResponsesText = useMemo(() => commentResponses.join('\n\n'), [commentResponses]);
     const transcriptWordCount = useMemo(() => countWords(transcript), [transcript]);
 
@@ -761,9 +772,16 @@ export default function YouTubeTranscript() {
                         />
                     </div>
                     <div className="prompt-suggestions">
-                        {promptSuggestions.map((item, index) => (
+                        {(showAllPrompts ? promptSuggestions : promptSuggestions.slice(0, 4)).map((item, index) => (
                             <button key={index} onClick={() => setPrompt(item.value)} className="suggestion-btn">{item.label}</button>
                         ))}
+                        <button
+                            className="suggestion-btn"
+                            onClick={() => setShowAllPrompts((v) => !v)}
+                            style={{ fontWeight: 700 }}
+                        >
+                            {showAllPrompts ? "Show Less" : "Show More"}
+                        </button>
                     </div>
                     <div className="button-group">
                         <button className="btn primary-btn" onClick={executePrompt} disabled={loadingPrompt || !prompt || !splitTranscript.length}>
