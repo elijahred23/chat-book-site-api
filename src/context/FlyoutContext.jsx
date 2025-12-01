@@ -26,10 +26,17 @@ export const FlyoutProvider = ({ children }) => {
             key={msg.id}
             style={{
               ...styles.flyout,
-              backgroundColor: msg.type === "error" ? "#ff4d4f" : "#52c41a",
+              borderColor: msg.type === "error" ? "#fca5a5" : "#bbf7d0",
+              background: msg.type === "error"
+                ? "linear-gradient(135deg, rgba(248,113,113,0.96), rgba(239,68,68,0.9))"
+                : "linear-gradient(135deg, rgba(52,211,153,0.96), rgba(16,185,129,0.9))",
+              boxShadow: msg.type === "error"
+                ? "0 16px 32px rgba(239,68,68,0.3)"
+                : "0 16px 32px rgba(16,185,129,0.25)",
             }}
           >
-            {msg.message}
+            <div style={styles.flyoutTitle}>{msg.type === "error" ? "Error" : "Success"}</div>
+            <div style={styles.flyoutMsg}>{msg.message}</div>
           </div>
         ))}
       </div>
@@ -48,7 +55,7 @@ export const useFlyout = () => {
 const styles = {
   flyoutContainer: {
     position: "fixed",
-    top: "20px",
+    top: "16px",
     right: "20px",
     zIndex: 9999,
     display: "flex",
@@ -57,11 +64,25 @@ const styles = {
     maxWidth: "400px",
   },
   flyout: {
-    padding: "12px 20px",
-    color: "#fff",
-    borderRadius: "8px",
-    boxShadow: "0 4px 12px rgba(0, 0, 0, 0.2)",
-    fontSize: "16px",
-    animation: "fadeSlide 0.3s ease-in-out",
+    padding: "12px 16px",
+    color: "#0b1220",
+    borderRadius: "12px",
+    boxShadow: "0 12px 36px rgba(0, 0, 0, 0.25)",
+    fontSize: "15px",
+    animation: "fadeSlide 0.35s ease-in-out",
+    border: "1px solid",
+    backdropFilter: "blur(12px)",
+    display: "grid",
+    gap: "4px",
+  },
+  flyoutTitle: {
+    fontWeight: 800,
+    fontSize: "0.9rem",
+    letterSpacing: "0.02em",
+    marginBottom: "2px",
+  },
+  flyoutMsg: {
+    fontSize: "0.95rem",
+    color: "#0b1220",
   },
 };

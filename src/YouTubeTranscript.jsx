@@ -12,6 +12,8 @@ import { actions, useAppDispatch, useAppState } from './context/AppContext';
 import ActionButtons from './ui/ActionButtons';
 import { getSupadataTranscript } from './utils/callSupadata';
 import { getFlaskYoutubeTranscript } from './utils/callFlaskYoutubeTranscript';
+import { FaCloudDownloadAlt, FaDatabase, FaPaste, FaFileAlt, FaLightbulb, FaCommentDots, FaClipboardList, FaClipboardCheck, FaSearch } from "react-icons/fa";
+import { createPortal } from "react-dom";
 
 // Constants
 const wordSplitNumber = 5000;
@@ -79,6 +81,7 @@ export default function YouTubeTranscript() {
     const [splitLength, setSplitLength] = useState(() => localStorage.getItem("yt_split_length") || 1);
     const [splitTranscript, setSplitTranscript] = useState([]);
     const [promptResponses, setPromptResponses] = useState(() => JSON.parse(localStorage.getItem("yt_promptResponses")) || []);
+    const [commentResponses, setCommentResponses] = useState([]);
     const [loadingPrompt, setLoadingPrompt] = useState(false);
     const [manuallyEnteredTranscript, setManuallyEnteredTranscript] = useState("");
     const [progress, setProgress] = useState(0);
@@ -109,6 +112,7 @@ export default function YouTubeTranscript() {
     ];
 
     const promptResponsesText = useMemo(() => promptResponses.join('\n\n'), [promptResponses]);
+    const commentResponsesText = useMemo(() => commentResponses.join('\n\n'), [commentResponses]);
     const transcriptWordCount = useMemo(() => countWords(transcript), [transcript]);
 
     const fetchYouTubeComments = async (video_url) => {
@@ -129,7 +133,7 @@ export default function YouTubeTranscript() {
             setProgress(0);
             const responses = await promptTranscript(prompt, splitTranscript, setProgress, showMessage);
             setPromptResponses(responses);
-            setActiveTab("responses");
+            setActiveTab("transcriptResponses");
         } finally {
             setLoadingPrompt(false);
         }
@@ -141,8 +145,8 @@ export default function YouTubeTranscript() {
             setLoadingPrompt(true);
             setProgress(0);
             const responses = await promptTranscript(prompt, splitComments, setProgress, showMessage);
-            setPromptResponses(responses);
-            setActiveTab("responses");
+            setCommentResponses(responses);
+            setActiveTab("commentResponses");
         } finally {
             setLoadingPrompt(false);
         }
@@ -515,11 +519,55 @@ export default function YouTubeTranscript() {
             <style>{styles}</style>
             {/* Toolbar */}
             <div className="tab-bar" style={{ alignItems: 'center' }}>
-                <button className={`tab-btn ${activeTab === "transcript" ? "active" : ""}`} onClick={() => setActiveTab("transcript")}>Transcript</button>
-                <button className={`tab-btn ${activeTab === "prompt" ? "active" : ""}`} onClick={() => setActiveTab("prompt")}>Prompt & Preview</button>
-                <button className={`tab-btn ${activeTab === "comments" ? "active" : ""}`} onClick={() => setActiveTab("comments")}>Comments</button>
-                <button className={`tab-btn ${activeTab === "responses" ? "active" : ""}`} onClick={() => setActiveTab("responses")}>Prompt Responses</button>
-                <button className="btn primary-btn" style={{ marginLeft: 'auto' }} onClick={() => setDrawerOpen(true)}>🔎 Search YouTube</button>
+                <button
+                    className={`tab-btn ${activeTab === "transcript" ? "active" : ""} icon-only`}
+                    onClick={() => setActiveTab("transcript")}
+                    aria-label="Transcript"
+                    title="Transcript"
+                >
+                    <FaFileAlt />
+                </button>
+                <button
+                    className={`tab-btn ${activeTab === "prompt" ? "active" : ""} icon-only`}
+                    onClick={() => setActiveTab("prompt")}
+                    aria-label="Prompt & Preview"
+                    title="Prompt & Preview"
+                >
+                    <FaLightbulb />
+                </button>
+                <button
+                    className={`tab-btn ${activeTab === "comments" ? "active" : ""} icon-only`}
+                    onClick={() => setActiveTab("comments")}
+                    aria-label="Comments"
+                    title="Comments"
+                >
+                    <FaCommentDots />
+                </button>
+                <button
+                    className={`tab-btn ${activeTab === "transcriptResponses" ? "active" : ""} icon-only`}
+                    onClick={() => setActiveTab("transcriptResponses")}
+                    aria-label="Transcript Responses"
+                    title="Transcript Responses"
+                >
+                    <FaClipboardCheck />
+                </button>
+                <button
+                    className={`tab-btn ${activeTab === "commentResponses" ? "active" : ""} icon-only`}
+                    onClick={() => setActiveTab("commentResponses")}
+                    aria-label="Comment Responses"
+                    title="Comment Responses"
+                >
+                    <FaClipboardList />
+                </button>
+                <button
+                    className="btn primary-btn icon-only"
+                    style={{ marginLeft: 'auto' }}
+                    onClick={() => setDrawerOpen(true)}
+                    aria-label="Search YouTube"
+                    title="Search YouTube"
+                >
+                    <FaSearch />
+                </button>
             </div>
 
             {/* Video iframe section */}
@@ -534,32 +582,54 @@ export default function YouTubeTranscript() {
                             {isMinimized ? "Expand" : "Minimize"}
                         </button>
                     </div>
-                    <div style={isMinimized ? {
-                        position: 'fixed',
-                        bottom: '12px',
-                        right: '12px',
-                        width: '320px',
-                        height: '180px',
-                        zIndex: 1000,
-                        boxShadow: '0 12px 30px rgba(0,0,0,0.35)',
-                        borderRadius: '12px',
-                        overflow: 'hidden',
-                    } : {
-                        width: '100%',
-                        height: '240px',
-                        borderRadius: '12px',
-                        overflow: 'hidden',
-                    }}>
-                        <iframe
-                            src={embedUrl}
-                            title="YouTube Video"
-                            frameBorder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowFullScreen
-                            style={{ width: '100%', height: '100%', border: 'none' }}
-                        ></iframe>
-                    </div>
+                    {!isMinimized && (
+                        <div style={{
+                            width: '100%',
+                            height: '240px',
+                            borderRadius: '12px',
+                            overflow: 'hidden',
+                        }}>
+                            <iframe
+                                src={embedUrl}
+                                title="YouTube Video"
+                                frameBorder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                                style={{ width: '100%', height: '100%', border: 'none' }}
+                            ></iframe>
+                        </div>
+                    )}
                 </div>
+            )}
+
+            {/* Floating mini player */}
+            {isMinimized && embedUrl && createPortal(
+                <div
+                    style={{
+                        position: 'fixed',
+                        right: '12px',
+                        bottom: '12px',
+                        width: '240px',
+                        height: '135px',
+                        zIndex: 12000,
+                        boxShadow: '0 18px 38px rgba(0,0,0,0.35)',
+                        borderRadius: '14px',
+                        overflow: 'hidden',
+                        border: '1px solid rgba(255,255,255,0.08)',
+                        backdropFilter: 'blur(8px)',
+                        background: '#0b1220',
+                    }}
+                >
+                    <iframe
+                        src={embedUrl}
+                        title="YouTube Video Mini"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        style={{ width: '100%', height: '100%', border: 'none' }}
+                    ></iframe>
+                </div>,
+                document.body
             )}
 
             {/* Keep drawer accessible across tabs */}
@@ -581,11 +651,23 @@ export default function YouTubeTranscript() {
                 <>
                     <div className="input-group">
                         <input className="input" type="text" value={url} placeholder="YouTube URL" onChange={(e) => setUrl(e.target.value)} />
-                        <button disabled={!hasValidURL || loadingTranscript} className="btn primary-btn" onClick={loadFlaskYoutubeTranscript}>
-                            Load Flask Transcript
+                        <button
+                            disabled={!hasValidURL || loadingTranscript}
+                            className="btn primary-btn icon-only"
+                            onClick={loadFlaskYoutubeTranscript}
+                            aria-label="Load transcript (Flask)"
+                            title="Load transcript (Flask)"
+                        >
+                            <FaCloudDownloadAlt />
                         </button>
-                        <button disabled={!hasValidURL || loadingTranscript} className="btn primary-btn" onClick={loadTranscriptSupaData}>
-                            Load SupaData Transcript
+                        <button
+                            disabled={!hasValidURL || loadingTranscript}
+                            className="btn primary-btn icon-only"
+                            onClick={loadTranscriptSupaData}
+                            aria-label="Load transcript (SupaData)"
+                            title="Load transcript (SupaData)"
+                        >
+                            <FaDatabase />
                         </button>
                     </div>
                     <div className="input-group">
@@ -604,6 +686,7 @@ export default function YouTubeTranscript() {
                                 }
                             }}
                             className="btn paste-btn"
+                            aria-label="Paste URL"
                         />
                     </div>
 
@@ -686,8 +769,8 @@ export default function YouTubeTranscript() {
                         <button className="btn primary-btn" onClick={executePrompt} disabled={loadingPrompt || !prompt || !splitTranscript.length}>
                             {loadingPrompt ? <ClipLoader size={12} color="white" /> : "Execute Prompt on Transcript"}
                         </button>
-                        <button className="btn secondary-btn" onClick={() => setActiveTab("responses")} disabled={!promptResponses.length}>
-                            View Responses
+                        <button className="btn secondary-btn" onClick={() => setActiveTab("transcriptResponses")} disabled={!promptResponses.length}>
+                            View Transcript Responses
                         </button>
                     </div>
                     {loadingPrompt && (
@@ -749,6 +832,9 @@ export default function YouTubeTranscript() {
                         <button className="btn primary-btn" onClick={executePromptOnComments} disabled={loadingPrompt || !prompt || !splitComments.length}>
                             {loadingPrompt ? <ClipLoader size={12} color="white" /> : "Execute Prompt on Comments"}
                         </button>
+                        <button className="btn secondary-btn" onClick={() => setActiveTab("commentResponses")} disabled={!commentResponses.length}>
+                            View Comment Responses
+                        </button>
                     </div>
                     <div className="scrollable-card">
                         {splitComments.map((chunk, i) => (
@@ -773,12 +859,12 @@ export default function YouTubeTranscript() {
             )}
 
             {/* Responses tab */}
-            {activeTab === "responses" && (
+            {activeTab === "transcriptResponses" && (
                 <>
-                    <h2>Prompt Responses</h2>
-                    {promptResponses.length > 0 ? (
+                    <h2>Transcript Responses</h2>
+                    {promptResponses.length > 0 && (
                         <>
-                            <CopyButton text={promptResponsesText} buttonText="Copy All Responses" className="btn copy-btn" />
+                            <CopyButton text={promptResponsesText} buttonText="Copy All Transcript Responses" className="btn copy-btn" />
                             <ActionButtons promptText={promptResponsesText} />
                             <div className="input-group" style={{ marginTop: "0.5rem" }}>
                                 <input
@@ -878,6 +964,27 @@ export default function YouTubeTranscript() {
                                                 </div>
                                             </div>
                                         )}
+                                    </div>
+                                ))}
+                            </AutoScroller>
+                        </>
+                    )}
+                </>
+            )}
+
+            {activeTab === "commentResponses" && (
+                <>
+                    <h2>Comment Responses</h2>
+                    {commentResponses.length > 0 ? (
+                        <>
+                            <CopyButton text={commentResponsesText} buttonText="Copy All Comment Responses" className="btn copy-btn" />
+                            <ActionButtons promptText={commentResponsesText} />
+                            <AutoScroller activeIndex={0}>
+                                {commentResponses.map((res, i) => (
+                                    <div key={`c-${i}`} data-index={i} style={{ padding: "1rem 0", borderBottom: "1px solid #ddd" }}>
+                                        <ReactMarkdown className="markdown-body">{res}</ReactMarkdown>
+                                        <CopyButton text={res} className="btn copy-btn" />
+                                        <ActionButtons promptText={res} />
                                     </div>
                                 ))}
                             </AutoScroller>
