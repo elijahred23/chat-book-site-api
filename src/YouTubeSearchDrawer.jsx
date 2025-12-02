@@ -165,21 +165,26 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo, ex
         }
     };
 
-    const handleSearch = async (pageTokenOverride = '') => {
+    const handleSearch = async (pageTokenOverride = '', queryOverride) => {
         setLoading(true);
         try {
+            const queryToUse = (queryOverride ?? searchQuery).trim();
+            if (!queryToUse) {
+                setLoading(false);
+                return;
+            }
             if (searchType === 'video') {
-                const res = await searchYouTubeVideos(searchQuery, pageTokenOverride, PAGE_SIZE);
+                const res = await searchYouTubeVideos(queryToUse, pageTokenOverride, PAGE_SIZE);
                 setAndCacheResults(res.items);
                 setNextPageToken(res.nextPageToken || null);
                 setPrevPageToken(res.prevPageToken || null);
-                setLastQuery(searchQuery);
+                setLastQuery(queryToUse);
             } else {
-                const res = await searchYouTubePlaylists(searchQuery);
+                const res = await searchYouTubePlaylists(queryToUse);
                 setAndCacheResults(res);
                 setNextPageToken(null);
                 setPrevPageToken(null);
-                setLastQuery(searchQuery);
+                setLastQuery(queryToUse);
             }
         } catch (err) {
             console.error('Search failed:', err);
@@ -267,6 +272,7 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo, ex
         if (externalQuery) {
             setSearchQuery(externalQuery);
             setIsSearchVisible(true);
+            handleSearch('', externalQuery);
         }
     }, [externalQuery]);
 
@@ -281,6 +287,13 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo, ex
     useEffect(() => {
         if (!results.length) return;
         setResults((prev) => sortResults(prev));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [filterType]);
+
+    // Re-run search on filter change so results respect the filter selection
+    useEffect(() => {
+        if (!lastQuery) return;
+        handleSearch('', lastQuery);
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [filterType]);
 
@@ -490,7 +503,7 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo, ex
                                 </div>
 
                                 <div style={{ marginTop: '0.75rem', display: 'flex', gap: '0.5rem', flexWrap: 'wrap', alignItems: 'center' }}>
-                                    <button className='btn primary-btn' disabled={!searchQuery.trim() || loading} onClick={() => handleSearch('')}>
+                                    <button className='btn primary-btn' disabled={!searchQuery.trim() || loading} onClick={() => handleSearch('', searchQuery)}>
                                         {loading ? 'Searching...' : 'Search'}
                                     </button>
                                     {searchType === 'video' && (
@@ -498,14 +511,14 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo, ex
                                             <button
                                                 className='btn secondary-btn'
                                                 disabled={!prevPageToken || loading || !lastQuery}
-                                                onClick={() => handleSearch(prevPageToken)}
+                                                onClick={() => handleSearch(prevPageToken, lastQuery)}
                                             >
                                                 ◀ Prev
                                             </button>
                                             <button
                                                 className='btn secondary-btn'
                                                 disabled={!nextPageToken || loading || !lastQuery}
-                                                onClick={() => handleSearch(nextPageToken)}
+                                                onClick={() => handleSearch(nextPageToken, lastQuery)}
                                             >
                                                 Next ▶
                                             </button>

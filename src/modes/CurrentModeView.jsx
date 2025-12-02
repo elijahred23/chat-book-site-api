@@ -1086,6 +1086,7 @@ export default function CurrentModeView({
   onStartTyping,
   onTypingInput,
   onSubmitTyping,
+  setCards,
 }) {
   switch (mode) {
     case "study":
@@ -1225,7 +1226,7 @@ export default function CurrentModeView({
         />
       );
     case "table":
-      return <FlashCardTable cards={cards} COLORS={COLORS} />;
+      return <FlashCardTable cards={cards} setCards={setCards} COLORS={COLORS} />;
     default:
       return <div>Select a mode to begin.</div>;
   }

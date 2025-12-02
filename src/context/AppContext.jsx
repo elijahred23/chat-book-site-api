@@ -26,6 +26,7 @@ const initialState = {
   isHtmlBuilderOpen: false,
   isTypingOpen: false,
   typingSource: '',
+  flashcardPrompt: '',
 };
 
 const actionTypes = {
@@ -53,6 +54,7 @@ const actionTypes = {
   SET_IS_HTML_BUILDER_OPEN: 'SET_IS_HTML_BUILDER_OPEN',
   SET_IS_TYPING_OPEN: 'SET_IS_TYPING_OPEN',
   SET_TYPING_SOURCE: 'SET_TYPING_SOURCE',
+  SET_FLASHCARD_PROMPT: 'SET_FLASHCARD_PROMPT',
 };
 
 // ✅ closes all open UI panels
@@ -164,6 +166,9 @@ function appReducer(state, action) {
         ? { ...closeAllPanels(state), isHtmlBuilderOpen: true }
         : { ...state, isHtmlBuilderOpen: false };
 
+    case actionTypes.SET_FLASHCARD_PROMPT:
+      return { ...state, flashcardPrompt: action.payload };
+
     default:
       console.warn(`Unhandled action type: ${action.type}`);
       return state;
@@ -212,4 +217,5 @@ export const actions = {
   setIsTypingOpen: (open) => ({ type: actionTypes.SET_IS_TYPING_OPEN, payload: open }),
   setTypingSource: (text) => ({ type: actionTypes.SET_TYPING_SOURCE, payload: text }),
   setIsHtmlBuilderOpen: (open) => ({ type: actionTypes.SET_IS_HTML_BUILDER_OPEN, payload: open }),
+  setFlashcardPrompt: (text) => ({ type: actionTypes.SET_FLASHCARD_PROMPT, payload: text }),
 };

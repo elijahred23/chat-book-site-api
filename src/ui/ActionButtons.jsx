@@ -16,6 +16,7 @@ import {
   FaKeyboard,
   FaBullhorn,
   FaMagic,
+  FaListAlt,
 } from "react-icons/fa";
 import { useFlyout } from "../context/FlyoutContext";
 import { FcGoogle } from "react-icons/fc";
@@ -102,6 +103,29 @@ export default function ActionButtons({ promptText, limitButtons = false }) {
         e.stopPropagation();
         dispatch(actions.setChatBookSubject(cleanText));
         dispatch(actions.setIsChatBookOpen(true));
+      },
+    },
+    {
+      icon: FaListAlt,
+      title: "Flashcards Prompt",
+      color: "#10b981",
+      iconColor: "#0b172a",
+      onClick: (e) => {
+        e.stopPropagation();
+        const seeded = `Create flashcards based on this context. Return concise term-definition pairs in JSON.\n\nContext:\n${cleanText}`;
+        dispatch(actions.setFlashcardPrompt(seeded));
+        // Open flashcards and close any drawers/panels
+        dispatch(actions.setIsChatOpen(false));
+        dispatch(actions.setIsTeleprompterOpen(false));
+        dispatch(actions.setIsTTSOpen(false));
+        dispatch(actions.setIsPlantUMLOpen(false));
+        dispatch(actions.setIsPodcastTTSOpen(false));
+        dispatch(actions.setIsJSGeneratorOpen(false));
+        dispatch(actions.setIsChatBookOpen(false));
+        dispatch(actions.setIsYouTubeOpen(false));
+        dispatch(actions.setIsHtmlBuilderOpen(false));
+        dispatch(actions.setIsTypingOpen(false));
+        showMessage({ type: "success", message: "Prompt sent to Flashcards." });
       },
     },
     {

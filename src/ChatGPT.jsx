@@ -69,6 +69,7 @@ export default function GptPromptComponent({
   };
 
   const clearMessages = () => setMessages([]);
+  const promptRef = useRef(null);
 
   useEffect(() => {
     if (selectedText && selectedText !== chatPrompt) {
@@ -295,6 +296,7 @@ export default function GptPromptComponent({
             </div>
 
             <textarea
+              ref={promptRef}
               rows={4}
               value={chatPrompt}
               onChange={handleInputChange}
@@ -313,7 +315,15 @@ export default function GptPromptComponent({
               <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
                 <PasteButton setPasteText={(text) => dispatch(actions.setChatPrompt(text))} className="btn btn-ghost" />
                 <button className="btn btn-ghost" onClick={clearMessages}>Clear Chat</button>
-                <button className="btn btn-ghost" onClick={() => dispatch(actions.setChatPrompt(""))}>Clear Prompt</button>
+                <button
+                  className="btn btn-ghost"
+                  onClick={() => {
+                    dispatch(actions.setChatPrompt(""));
+                    requestAnimationFrame(() => promptRef.current?.focus());
+                  }}
+                >
+                  Clear Prompt
+                </button>
               </div>
               <button className="btn btn-primary" onClick={handleSubmit} disabled={loading}>
                 {loading ? "Thinking..." : "Send"}

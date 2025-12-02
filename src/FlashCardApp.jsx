@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef, createContext, useContext } from "react";
+import { useAppState, useAppDispatch, actions } from "./context/AppContext";
 import { getGeminiResponse } from "./utils/callGemini.js";
 import CurrentModeView from "./modes/CurrentModeView.jsx";
 
@@ -67,6 +68,8 @@ const COLORS = {
 };
 
 export default function FlashCardApp() {
+  const { flashcardPrompt } = useAppState();
+  const dispatch = useAppDispatch();
   const [cards, setCards] = useState(() => {
     try {
       const stored = localStorage.getItem("cards");
@@ -101,6 +104,8 @@ export default function FlashCardApp() {
   const handleGenerateFromPrompt = async () => {
     if (!prompt) return;
     try {
+      // Clear any existing cards before generating new ones
+      setCards([]);
       setLoading(true);
       const instruction = `\nGenerate vocabulary flash cards for the topic: "${prompt}".\nReturn ONLY valid JSON in the following format:\n[\n  { "question": "Term1", "answer": "Definition of term 1" },\n  { "question": "Term2", "answer": "Definition of term 2" }\n]\nDo not include any extra text, explanations, or formatting outside of the JSON.\nEnsure the JSON is valid and represents vocabulary terms with their definitions.\n`;
       const rawResponse = await getGeminiResponse(instruction);
@@ -126,6 +131,14 @@ export default function FlashCardApp() {
       setLoading(false);
     }
   };
+
+  // Seed the prompt from global action button selections
+  useEffect(() => {
+    if (flashcardPrompt) {
+      setPrompt(flashcardPrompt);
+      dispatch(actions.setFlashcardPrompt(""));
+    }
+  }, [flashcardPrompt, dispatch]);
 
   const handleFileUpload = (event) => {
     const file = event.target.files?.[0];
@@ -377,6 +390,22 @@ export default function FlashCardApp() {
     resetMatch();
   }, [cards]);
 
+  // Reset indices/selections when card count changes to avoid stale references
+  useEffect(() => {
+    setStudyIndex(0);
+    setQuizIndex(0);
+    setRecallIndex(0);
+    setSurvivalIndex(0);
+    setBlitzIndex(0);
+    setTypingIndex(0);
+    setSelectedOption(null);
+    setSelectedTerm(null);
+    setSelectedDef(null);
+    setSurvivalSelected(null);
+    setBlitzSelected(null);
+    setMemorySelected([]);
+  }, [cards.length]);
+
   useEffect(() => {
     if (selectedTerm !== null && selectedDef !== null) {
       if (selectedTerm === selectedDef) {
@@ -535,6 +564,13 @@ export default function FlashCardApp() {
   const [typingCombo, setTypingCombo] = useState(0);
   const [typingBestCombo, setTypingBestCombo] = useState(0);
   const [showChrome, setShowChrome] = useState(true);
+
+  // Ensure controls show when flashcards opened via action button
+  useEffect(() => {
+    if (flashcardPrompt) {
+      setShowChrome(true);
+    }
+  }, [flashcardPrompt]);
 
   const resetSurvival = () => {
     const order = shuffleArray(cards.map((_, i) => i));
@@ -846,77 +882,94 @@ export default function FlashCardApp() {
             Clear Cards
           </button>
         </div>
-        <div style={topicRowStyle}>
-          <label style={{ display: "flex", alignItems: "center", width: isMobile ? "100%" : "auto" }}>
-            Topic:
-            <input
-              type="text"
+        <div
+          style={{
+            background: "linear-gradient(135deg, #ecf5ff 0%, #f8fbff 100%)",
+            border: `1px solid ${COLORS.border}`,
+            borderRadius: "14px",
+            padding: "0.85rem",
+            boxShadow: "0 10px 30px rgba(15,23,42,0.08)",
+            display: "grid",
+            gap: "0.65rem",
+          }}
+        >
+          <label
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              gap: "0.4rem",
+              width: "100%",
+              fontWeight: 700,
+              color: COLORS.text,
+            }}
+          >
+            Flashcard Topic / Context
+            <textarea
               value={prompt}
               onChange={(e) => setPrompt(e.target.value)}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" && !loading) {
-                  e.preventDefault();
-                  handleGenerateFromPrompt();
-                }
-              }}
-              placeholder="Enter topic for vocabulary flash cards"
+              placeholder="Paste or type context to generate flashcards"
               style={{
-                marginLeft: isMobile ? "0" : "0.5rem",
-                flex: isMobile ? "none" : 1,
-                width: isMobile ? "100%" : "60%",
-                padding: "0.5rem",
-                backgroundColor: COLORS.buttonBg,
+                width: "100%",
+                minHeight: "160px",
+                padding: "0.85rem",
+                borderRadius: "12px",
                 border: `1px solid ${COLORS.border}`,
-                borderRadius: "4px",
+                fontSize: "1.05rem",
+                background: "#ffffff",
                 color: COLORS.text,
+                boxShadow: "inset 0 1px 3px rgba(15,23,42,0.08)",
+                lineHeight: 1.5,
               }}
             />
           </label>
-          <button
-            onClick={handleGenerateFromPrompt}
-            style={{
-              padding: "0.5rem 1rem",
-              backgroundColor: COLORS.buttonBg,
-              border: `1px solid ${COLORS.border}`,
-              borderRadius: "4px",
-              color: COLORS.text,
-              cursor: loading ? "default" : "pointer",
-              width: isMobile ? "100%" : "auto",
-            }}
-            disabled={loading}
-          >
-            {loading ? "Generating..." : "Generate"}
-          </button>
-          <button
-            onClick={() => setPrompt("")}
-            style={{
-              padding: "0.5rem 1rem",
-              backgroundColor: COLORS.buttonBg,
-              border: `1px solid ${COLORS.border}`,
-              borderRadius: "4px",
-              color: COLORS.text,
-              cursor: "pointer",
-              width: isMobile ? "100%" : "auto",
-            }}
-          >
-            Clear Prompt
-          </button>
-          <button
-            onClick={() => {
-              navigator.clipboard.readText().then((text) => setPrompt(text));
-            }}
-            style={{
-              padding: "0.5rem 1rem",
-              backgroundColor: COLORS.buttonBg,
-              border: `1px solid ${COLORS.border}`,
-              borderRadius: "4px",
-              color: COLORS.text,
-              cursor: "pointer",
-              width: isMobile ? "100%" : "auto",
-            }}
-          >
-            Paste Topic
-          </button>
+          <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
+            <button
+              onClick={handleGenerateFromPrompt}
+              style={{
+                padding: "0.65rem 1rem",
+                backgroundColor: COLORS.buttonBg,
+                border: `1px solid ${COLORS.border}`,
+                borderRadius: "8px",
+                color: COLORS.text,
+                cursor: loading ? "default" : "pointer",
+                width: isMobile ? "100%" : "auto",
+                fontWeight: 700,
+              }}
+              disabled={loading}
+            >
+              {loading ? "Generating..." : "Generate"}
+            </button>
+            <button
+              onClick={() => setPrompt("")}
+              style={{
+                padding: "0.65rem 1rem",
+                backgroundColor: COLORS.buttonBg,
+                border: `1px solid ${COLORS.border}`,
+                borderRadius: "8px",
+                color: COLORS.text,
+                cursor: "pointer",
+                width: isMobile ? "100%" : "auto",
+              }}
+            >
+              Clear Prompt
+            </button>
+            <button
+              onClick={() => {
+                navigator.clipboard.readText().then((text) => setPrompt(text));
+              }}
+              style={{
+                padding: "0.65rem 1rem",
+                backgroundColor: COLORS.buttonBg,
+                border: `1px solid ${COLORS.border}`,
+                borderRadius: "8px",
+                color: COLORS.text,
+                cursor: "pointer",
+                width: isMobile ? "100%" : "auto",
+              }}
+            >
+              Paste Topic
+            </button>
+          </div>
         </div>
         {loading && (
           <div style={{ marginTop: "0.5rem", color: "#2563eb" }}>
@@ -1130,6 +1183,7 @@ export default function FlashCardApp() {
           onStartTyping={resetTypingGame}
           onTypingInput={setTypingInput}
           onSubmitTyping={handleTypingSubmit}
+          setCards={setCards}
         />
       </div>
     </FlashCardContext.Provider>
