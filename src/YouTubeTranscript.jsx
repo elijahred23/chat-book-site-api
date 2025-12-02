@@ -345,6 +345,16 @@ export default function YouTubeTranscript() {
         setActiveTab("transcript");
     }, []);
 
+    // Auto-load transcript when a valid URL is entered
+    useEffect(() => {
+        if (!validYoutubeUrl) return;
+        if (loadingTranscript) return;
+        if (url && url !== lastFetchedUrl) {
+            loadFlaskYoutubeTranscript();
+        }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [validYoutubeUrl, url]);
+
     // Internal styles scoped to this component. These override any external styles and ensure good mobile layout.
     const styles = `
       .yt-container {
@@ -433,11 +443,11 @@ export default function YouTubeTranscript() {
       .input {
         flex: 1 1 auto;
         padding: 0.7rem;
-        border: 1px solid rgba(255,255,255,0.08);
+        border: 1px solid rgba(15,23,42,0.12);
         border-radius: 10px;
         font-size: 0.95rem;
-        background: rgba(255,255,255,0.04);
-        color: #e2e8f0;
+        background: #f8fafc;
+        color: #0f172a;
       }
       .input:focus,
       .textarea:focus {
@@ -448,24 +458,24 @@ export default function YouTubeTranscript() {
         width: 100%;
         min-height: 7rem;
         padding: 0.7rem;
-        border: 1px solid rgba(255,255,255,0.08);
+        border: 1px solid rgba(15,23,42,0.12);
         border-radius: 10px;
         font-size: 0.95rem;
         resize: vertical;
-        background: rgba(255,255,255,0.04);
-        color: #e2e8f0;
+        background: #f8fafc;
+        color: #0f172a;
       }
       .suggestion-btn {
         padding: 0.45rem 0.75rem;
-        border: 1px solid rgba(255,255,255,0.08);
+        border: 1px solid rgba(15,23,42,0.12);
         border-radius: 10px;
-        background: rgba(255,255,255,0.06);
+        background: #e2e8f0;
         cursor: pointer;
         font-size: 0.9rem;
-        color: #e2e8f0;
+        color: #0f172a;
       }
       .suggestion-btn:hover {
-        background: rgba(255,255,255,0.12);
+        background: #cbd5e1;
       }
       .scrollable-card {
         max-height: 320px;
@@ -634,7 +644,7 @@ export default function YouTubeTranscript() {
                 <div
                     style={{
                         position: 'fixed',
-                        right: '12px',
+                        left: '12px',
                         bottom: '12px',
                         width: '240px',
                         height: '135px',
