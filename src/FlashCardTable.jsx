@@ -15,6 +15,7 @@ const FlashCardTable = ({ cards, setCards, COLORS }) => {
   const [rowLoading, setRowLoading] = useState({});
   const [bulkLoading, setBulkLoading] = useState(null);
   const [bulkProgress, setBulkProgress] = useState({ done: 0, total: 0 });
+  const [bulkMode, setBulkMode] = useState("async"); // "async" or "sequential"
 
   const toggleCardSelection = (idx) => {
     setSelectedCards((prev) =>
@@ -109,19 +110,36 @@ const FlashCardTable = ({ cards, setCards, COLORS }) => {
     setBulkProgress({ done: 0, total: eligible.length });
 
     try {
-      const results = await Promise.allSettled(
-        eligible.map(({ card, idx }) =>
-          transformOnce(card, instruction)
-            .then((res) => ({ idx, res }))
-            .finally(() =>
-              setBulkProgress((p) => ({ ...p, done: p.done + 1 }))
-            )
-        )
-      );
+      let successes = [];
 
-      const successes = results
-        .filter((r) => r.status === "fulfilled" && r.value?.res)
-        .map((r) => r.value);
+      if (bulkMode === "sequential") {
+        for (let i = 0; i < eligible.length; i++) {
+          const { card, idx } = eligible[i];
+          try {
+            const res = await transformOnce(card, instruction);
+            if (res) {
+              successes.push({ idx, res });
+            }
+          } catch (err) {
+            console.error("Bulk sequential transform failed", err);
+          } finally {
+            setBulkProgress((p) => ({ ...p, done: p.done + 1 }));
+          }
+        }
+      } else {
+        const results = await Promise.allSettled(
+          eligible.map(({ card, idx }) =>
+            transformOnce(card, instruction)
+              .then((res) => ({ idx, res }))
+              .finally(() =>
+                setBulkProgress((p) => ({ ...p, done: p.done + 1 }))
+              )
+          )
+        );
+        successes = results
+          .filter((r) => r.status === "fulfilled" && r.value?.res)
+          .map((r) => r.value);
+      }
 
       if (successes.length) {
         setCards((prev) => {
@@ -215,7 +233,7 @@ const FlashCardTable = ({ cards, setCards, COLORS }) => {
                   whiteSpace: "nowrap",
                 }}
               >
-                {selectedCards.length} selected
+                {selectedCards.length} selected · {cards.length} flashcards
               </span>
             </div>
 
@@ -272,6 +290,28 @@ const FlashCardTable = ({ cards, setCards, COLORS }) => {
               </span>
             </div>
             <div style={{ display: "flex", gap: "8px", flexWrap: "wrap", marginTop: "0.4rem" }}>
+              <div style={{ display: "flex", gap: "8px", alignItems: "center", flexWrap: "wrap", padding: "6px 8px", background: "#f1f5f9", borderRadius: 10 }}>
+                <label style={{ display: "flex", alignItems: "center", gap: "4px", fontSize: "0.9rem", color: "#0f172a" }}>
+                  <input
+                    type="radio"
+                    name="bulkMode"
+                    value="async"
+                    checked={bulkMode === "async"}
+                    onChange={() => setBulkMode("async")}
+                  />
+                  Parallel
+                </label>
+                <label style={{ display: "flex", alignItems: "center", gap: "4px", fontSize: "0.9rem", color: "#0f172a" }}>
+                  <input
+                    type="radio"
+                    name="bulkMode"
+                    value="sequential"
+                    checked={bulkMode === "sequential"}
+                    onChange={() => setBulkMode("sequential")}
+                  />
+                  Sequential
+                </label>
+              </div>
               <button
                 disabled={!!bulkLoading}
                 onClick={() => applyAll("expand3")}
