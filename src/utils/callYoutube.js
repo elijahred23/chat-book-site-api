@@ -5,9 +5,14 @@ import { hostname } from "./hostname";
  * @param {string} query
  * @returns {Promise<Array>} Array of video objects with title, videoId, url, etc.
  */
-export const searchYouTubeVideos = async (query) => {
+export const searchYouTubeVideos = async (query, pageToken = '', pageSize = 50) => {
   try {
-    const response = await fetch(`${hostname}/youtube/search?q=${encodeURIComponent(query)}`);
+    const url = new URL(`${hostname}/youtube/search`);
+    url.searchParams.set('q', query);
+    if (pageToken) url.searchParams.set('pageToken', pageToken);
+    url.searchParams.set('pageSize', pageSize);
+
+    const response = await fetch(url.toString());
 
     if (!response.ok) {
       const errorData = await response.json().catch(() => ({}));
@@ -16,7 +21,8 @@ export const searchYouTubeVideos = async (query) => {
     }
 
     const data = await response.json();
-    if (!Array.isArray(data)) {
+    // Expect { items: [], nextPageToken, prevPageToken }
+    if (!data || !Array.isArray(data.items)) {
       throw new Error("Unexpected response format from YouTube search.");
     }
 

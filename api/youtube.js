@@ -45,45 +45,44 @@ export async function fetchTranscript(urlOrId) {
  * @param {number} maxResults
  * @returns {Promise<Array>} List of videos with title, videoId, and URL
  */
-export async function searchYouTube(query, maxResults = 100) {
+export async function searchYouTube(query, pageToken = '', pageSize = 50) {
+  const perPage = Math.min(Math.max(Number(pageSize) || 50, 1), 50); // clamp 1..50
   try {
     const searchResponse = await youtube.search.list({
       part: 'snippet',
       q: query,
-      maxResults,
-      type: 'video'
+      maxResults: perPage,
+      type: 'video',
+      pageToken: pageToken || undefined,
     });
 
-    if (!searchResponse.data.items || searchResponse.data.items.length === 0) {
-      return [];
-    }
+    const items = searchResponse.data.items || [];
+    if (items.length === 0) return { items: [], nextPageToken: null, prevPageToken: null };
 
-    const videoIds = searchResponse.data.items.map(item => item.id.videoId);
+    const videoIds = items.map(item => item.id.videoId).filter(Boolean);
 
-    // Fetch additional details (duration, likes) for these videos
-    let videoDetailsMap = new Map();
-    if (videoIds.length > 0) {
+    // Fetch additional details (duration, likes) in one call (<=50)
+    const videoDetailsMap = new Map();
+    if (videoIds.length) {
       try {
         const detailsResponse = await youtube.videos.list({
-          part: 'contentDetails,statistics', // Request contentDetails for duration, statistics for likes
-          id: videoIds.join(','),          // Comma-separated list of video IDs
+          part: 'contentDetails,statistics',
+          id: videoIds.join(','),
         });
 
         detailsResponse.data.items.forEach(video => {
           videoDetailsMap.set(video.id, {
             duration: video.contentDetails?.duration,
             likeCount: video.statistics?.likeCount,
-            viewCount: video.statistics?.viewCount, // Also available if needed
+            viewCount: video.statistics?.viewCount,
           });
         });
       } catch (detailsError) {
         console.error('YouTube Video Details Error (in searchYouTube):', detailsError);
-        // If fetching details fails, we'll proceed with the basic info from search results.
-        // Duration and likeCount will be undefined for the items.
       }
     }
 
-    return searchResponse.data.items.map(item => {
+    const mapped = items.map(item => {
       const details = videoDetailsMap.get(item.id.videoId) || {};
       return {
         title: item.snippet.title,
@@ -91,7 +90,7 @@ export async function searchYouTube(query, maxResults = 100) {
         url: `https://youtube.com/watch?v=${item.id.videoId}`,
         thumbnail: item.snippet.thumbnails.default.url,
         channelTitle: item.snippet.channelTitle,
-        duration: details.duration, // e.g., "PT5M30S"
+        duration: details.duration,
         likeCount: details.likeCount,
         viewCount: details.viewCount,
         publishedAt: item.snippet.publishedAt,
@@ -100,9 +99,15 @@ export async function searchYouTube(query, maxResults = 100) {
       };
     });
 
+    return {
+      items: mapped,
+      nextPageToken: searchResponse.data.nextPageToken || null,
+      prevPageToken: searchResponse.data.prevPageToken || null,
+    };
+
   } catch (searchError) {
     console.error('YouTube Search Error:', searchError);
-    return [];
+    return { items: [], nextPageToken: null, prevPageToken: null };
   }
 }
 

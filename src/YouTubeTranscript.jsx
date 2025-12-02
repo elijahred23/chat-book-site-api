@@ -98,6 +98,8 @@ export default function YouTubeTranscript() {
   const { youtubeSearchText } = useAppState();
   const [externalSearchText, setExternalSearchText] = useState("");
   const [showAllPrompts, setShowAllPrompts] = useState(false);
+  const [transcriptRespTab, setTranscriptRespTab] = useState("responses"); // "responses" | "retry"
+  const [commentRespTab, setCommentRespTab] = useState("responses"); // "responses" | "retry"
 
     // Helpers to fetch transcript and comments based on selected provider
     const fetchYouTubeTranscript = async (video_url) => {
@@ -145,19 +147,21 @@ export default function YouTubeTranscript() {
             const responses = await promptTranscript(prompt, splitTranscript, setProgress, showMessage);
             setPromptResponses(responses);
             setActiveTab("transcriptResponses");
+            setTranscriptRespTab("responses");
         } finally {
             setLoadingPrompt(false);
         }
     };
 
     // Execute prompt on comments
-    const executePromptOnComments = async () => {
+  const executePromptOnComments = async () => {
         try {
             setLoadingPrompt(true);
             setProgress(0);
             const responses = await promptTranscript(prompt, splitComments, setProgress, showMessage);
             setCommentResponses(responses);
             setActiveTab("commentResponses");
+            setCommentRespTab("responses");
         } finally {
             setLoadingPrompt(false);
         }
@@ -344,70 +348,80 @@ export default function YouTubeTranscript() {
     // Internal styles scoped to this component. These override any external styles and ensure good mobile layout.
     const styles = `
       .yt-container {
-        max-width: 900px;
+        max-width: 980px;
         margin: 0 auto;
         padding: 1rem;
         display: flex;
         flex-direction: column;
         gap: 1rem;
         font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
-        background: radial-gradient(circle at 10% 20%, #ecfeff 0, #ffffff 25%), radial-gradient(circle at 90% 10%, #f0f4ff 0, #ffffff 25%);
+      }
+      .surface {
+        background: linear-gradient(135deg, #0b1220 0%, #0f172a 60%, #111827 100%);
+        border: 1px solid rgba(255,255,255,0.06);
         border-radius: 16px;
-        box-shadow: 0 12px 36px rgba(15, 23, 42, 0.1);
+        padding: 1rem;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+        color: #e2e8f0;
       }
       .tab-bar {
         display: flex;
-        flex-wrap: wrap;
         gap: 0.5rem;
-        padding: 0.5rem;
-        border-radius: 12px;
-        background: #f8fafc;
-        border: 1px solid #e2e8f0;
+        padding: 0.6rem;
+        border-radius: 14px;
+        background: rgba(255,255,255,0.04);
+        border: 1px solid rgba(255,255,255,0.06);
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
       }
       .tab-btn {
-        flex: 1 1 120px;
-        padding: 0.6rem 0.85rem;
-        border: 1px solid #e2e8f0;
-        border-radius: 10px;
-        background: #ffffff;
+        flex: 1 1 80px;
+        padding: 0.5rem 0.65rem;
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 12px;
+        background: rgba(255,255,255,0.06);
         cursor: pointer;
         text-align: center;
         font-size: 0.95rem;
-        color: #0f172a;
+        color: #e2e8f0;
         transition: all 0.2s ease;
       }
       .tab-btn.active {
-        background: linear-gradient(135deg, #2563eb, #60a5fa);
-        color: #fff;
-        border-color: #2563eb;
-        box-shadow: 0 6px 18px rgba(37, 99, 235, 0.25);
+        background: linear-gradient(135deg, #2563eb, #22d3ee);
+        color: #0b1220;
+        border-color: transparent;
+        box-shadow: 0 10px 28px rgba(34,211,238,0.25);
+      }
+      .tab-btn.icon-only {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
       }
       .btn {
         padding: 0.55rem 0.9rem;
-        border: 1px solid #e2e8f0;
+        border: 1px solid rgba(255,255,255,0.08);
         border-radius: 10px;
         cursor: pointer;
         font-size: 0.95rem;
         transition: all 0.2s ease;
-        background: #fff;
-        color: #0f172a;
+        background: rgba(255,255,255,0.08);
+        color: #e2e8f0;
       }
       .primary-btn {
-        background: linear-gradient(135deg, #2563eb, #60a5fa);
-        color: #fff;
+        background: linear-gradient(135deg, #2563eb, #22d3ee);
+        color: #0b1220;
         border: none;
-        box-shadow: 0 10px 25px rgba(37, 99, 235, 0.25);
+        box-shadow: 0 12px 28px rgba(37, 99, 235, 0.35);
       }
       .secondary-btn {
-        background: #f8fafc;
-        color: #0f172a;
+        background: rgba(255,255,255,0.08);
+        color: #e2e8f0;
       }
       .primary-btn:hover {
         transform: translateY(-1px);
-        box-shadow: 0 12px 28px rgba(37, 99, 235, 0.3);
       }
       .secondary-btn:hover {
-        background: #e2e8f0;
+        background: rgba(255,255,255,0.12);
       }
       .input-group,
       .button-group,
@@ -419,47 +433,48 @@ export default function YouTubeTranscript() {
       .input {
         flex: 1 1 auto;
         padding: 0.7rem;
-        border: 1px solid #e2e8f0;
+        border: 1px solid rgba(255,255,255,0.08);
         border-radius: 10px;
         font-size: 0.95rem;
-        background: #fff;
-        color: #0f172a;
+        background: rgba(255,255,255,0.04);
+        color: #e2e8f0;
       }
       .input:focus,
       .textarea:focus {
-        outline: 2px solid #bfdbfe;
-        border-color: #2563eb;
+        outline: 2px solid #38bdf8;
+        border-color: #22d3ee;
       }
       .textarea {
         width: 100%;
         min-height: 7rem;
         padding: 0.7rem;
-        border: 1px solid #e2e8f0;
+        border: 1px solid rgba(255,255,255,0.08);
         border-radius: 10px;
         font-size: 0.95rem;
         resize: vertical;
-        background: #fff;
+        background: rgba(255,255,255,0.04);
+        color: #e2e8f0;
       }
       .suggestion-btn {
         padding: 0.45rem 0.75rem;
-        border: 1px solid #e2e8f0;
+        border: 1px solid rgba(255,255,255,0.08);
         border-radius: 10px;
-        background: #f8fafc;
+        background: rgba(255,255,255,0.06);
         cursor: pointer;
         font-size: 0.9rem;
-        color: #0f172a;
+        color: #e2e8f0;
       }
       .suggestion-btn:hover {
-        background: #e2e8f0;
+        background: rgba(255,255,255,0.12);
       }
       .scrollable-card {
         max-height: 320px;
         overflow-y: auto;
         padding: 0.75rem;
-        border: 1px solid #e2e8f0;
+        border: 1px solid rgba(255,255,255,0.08);
         border-radius: 12px;
-        background: #f8fafc;
-        box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
+        background: rgba(255,255,255,0.04);
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
       }
       .chunk {
         margin-bottom: 0.85rem;
@@ -468,8 +483,9 @@ export default function YouTubeTranscript() {
         gap: 0.35rem;
         padding: 0.5rem;
         border-radius: 10px;
-        background: #ffffff;
-        border: 1px solid #e2e8f0;
+        background: rgba(255,255,255,0.06);
+        border: 1px solid rgba(255,255,255,0.08);
+        color: #e2e8f0;
       }
       .progress-container {
         margin-top: 0.5rem;
@@ -477,7 +493,7 @@ export default function YouTubeTranscript() {
       .progress-bar-wrapper {
         width: 100%;
         height: 12px;
-        background: #e2e8f0;
+        background: rgba(255,255,255,0.08);
         border-radius: 999px;
         overflow: hidden;
       }
@@ -504,12 +520,12 @@ export default function YouTubeTranscript() {
         text-transform: uppercase;
         letter-spacing: 0.08em;
         font-size: 0.75rem;
-        color: #64748b;
+        color: #94a3b8;
         margin: 0;
       }
       @media (max-width: 480px) {
         .tab-btn {
-          flex-basis: 100%;
+          flex-basis: 22%;
         }
         .input-group,
         .button-group,
@@ -880,10 +896,41 @@ export default function YouTubeTranscript() {
             {activeTab === "transcriptResponses" && (
                 <>
                     <h2>Transcript Responses</h2>
-                    {promptResponses.length > 0 && (
+                    <div className="tab-bar" style={{ marginBottom: '0.75rem' }}>
+                        <button
+                            className={`tab-btn ${transcriptRespTab === "responses" ? "active" : ""}`}
+                            onClick={() => setTranscriptRespTab("responses")}
+                        >
+                            Responses
+                        </button>
+                        <button
+                            className={`tab-btn ${transcriptRespTab === "retry" ? "active" : ""}`}
+                            onClick={() => setTranscriptRespTab("retry")}
+                        >
+                            Retry
+                        </button>
+                    </div>
+                    {transcriptRespTab === "responses" && (
+                        promptResponses.length > 0 ? (
+                            <>
+                                <CopyButton text={promptResponsesText} buttonText="Copy All Transcript Responses" className="btn copy-btn" />
+                                <ActionButtons promptText={promptResponsesText} />
+                                <AutoScroller activeIndex={0}>
+                                    {promptResponses.map((res, i) => (
+                                        <div key={i} data-index={i} style={{ padding: "1rem 0", borderBottom: "1px solid #ddd" }}>
+                                            <ReactMarkdown className="markdown-body">{res}</ReactMarkdown>
+                                            <CopyButton text={res} className="btn copy-btn" />
+                                            <ActionButtons promptText={res} />
+                                        </div>
+                                    ))}
+                                </AutoScroller>
+                            </>
+                        ) : (
+                            <p style={{ color: '#475569' }}>Run a prompt on the transcript to see responses here.</p>
+                        )
+                    )}
+                    {transcriptRespTab === "retry" && promptResponses.length > 0 && (
                         <>
-                            <CopyButton text={promptResponsesText} buttonText="Copy All Transcript Responses" className="btn copy-btn" />
-                            <ActionButtons promptText={promptResponsesText} />
                             <div className="input-group" style={{ marginTop: "0.5rem" }}>
                                 <input
                                     className="input"
@@ -993,22 +1040,41 @@ export default function YouTubeTranscript() {
             {activeTab === "commentResponses" && (
                 <>
                     <h2>Comment Responses</h2>
-                    {commentResponses.length > 0 ? (
-                        <>
-                            <CopyButton text={commentResponsesText} buttonText="Copy All Comment Responses" className="btn copy-btn" />
-                            <ActionButtons promptText={commentResponsesText} />
-                            <AutoScroller activeIndex={0}>
-                                {commentResponses.map((res, i) => (
-                                    <div key={`c-${i}`} data-index={i} style={{ padding: "1rem 0", borderBottom: "1px solid #ddd" }}>
-                                        <ReactMarkdown className="markdown-body">{res}</ReactMarkdown>
-                                        <CopyButton text={res} className="btn copy-btn" />
-                                        <ActionButtons promptText={res} />
-                                    </div>
-                                ))}
-                            </AutoScroller>
-                        </>
-                    ) : (
-                        <p style={{ color: '#475569' }}>Run a prompt on the transcript or comments to see responses here.</p>
+                    <div className="tab-bar" style={{ marginBottom: '0.75rem' }}>
+                        <button
+                            className={`tab-btn ${commentRespTab === "responses" ? "active" : ""}`}
+                            onClick={() => setCommentRespTab("responses")}
+                        >
+                            Responses
+                        </button>
+                        <button
+                            className={`tab-btn ${commentRespTab === "retry" ? "active" : ""}`}
+                            onClick={() => setCommentRespTab("retry")}
+                        >
+                            Retry
+                        </button>
+                    </div>
+                    {commentRespTab === "responses" && (
+                        commentResponses.length > 0 ? (
+                            <>
+                                <CopyButton text={commentResponsesText} buttonText="Copy All Comment Responses" className="btn copy-btn" />
+                                <ActionButtons promptText={commentResponsesText} />
+                                <AutoScroller activeIndex={0}>
+                                    {commentResponses.map((res, i) => (
+                                        <div key={`c-${i}`} data-index={i} style={{ padding: "1rem 0", borderBottom: "1px solid #ddd" }}>
+                                            <ReactMarkdown className="markdown-body">{res}</ReactMarkdown>
+                                            <CopyButton text={res} className="btn copy-btn" />
+                                            <ActionButtons promptText={res} />
+                                        </div>
+                                    ))}
+                                </AutoScroller>
+                            </>
+                        ) : (
+                            <p style={{ color: '#475569' }}>Run a prompt on comments to see responses here.</p>
+                        )
+                    )}
+                    {commentRespTab === "retry" && (
+                        <p style={{ color: '#475569' }}>Retry logic is only available for transcript chunks.</p>
                     )}
                 </>
             )}

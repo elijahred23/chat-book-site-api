@@ -13,6 +13,10 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo, ex
             return {};
         }
     });
+    const [nextPageToken, setNextPageToken] = useState(null);
+    const [prevPageToken, setPrevPageToken] = useState(null);
+    const [lastQuery, setLastQuery] = useState('');
+    const PAGE_SIZE = 50;
 
     const [isSearchVisible, setIsSearchVisible] = useState(true);
     const [expandedPlaylists, setExpandedPlaylists] = useState(() => {
@@ -123,7 +127,7 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo, ex
         return sorted;
     };
 
-    const setAndCacheResults = (list) => {
+    const setAndCacheResults = (list = []) => {
         const decorated = decorateResults(list);
         const sorted = sortResults(decorated);
         setResults(sorted);
@@ -135,6 +139,8 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo, ex
 
     const getYoutubeTrending = async () => {
         setLoading(true);
+        setNextPageToken(null);
+        setPrevPageToken(null);
         try {
             const res = await getTrendingVideos();
             setAndCacheResults(res);
@@ -147,6 +153,8 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo, ex
 
     const getYoutubeNews = async () => {
         setLoading(true);
+        setNextPageToken(null);
+        setPrevPageToken(null);
         try {
             const res = await getNewsVideos();
             setAndCacheResults(res);
@@ -157,13 +165,22 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo, ex
         }
     };
 
-    const handleSearch = async () => {
+    const handleSearch = async (pageTokenOverride = '') => {
         setLoading(true);
         try {
-            const res = searchType === 'video'
-                ? await searchYouTubeVideos(searchQuery)
-                : await searchYouTubePlaylists(searchQuery);
-            setAndCacheResults(res);
+            if (searchType === 'video') {
+                const res = await searchYouTubeVideos(searchQuery, pageTokenOverride, PAGE_SIZE);
+                setAndCacheResults(res.items);
+                setNextPageToken(res.nextPageToken || null);
+                setPrevPageToken(res.prevPageToken || null);
+                setLastQuery(searchQuery);
+            } else {
+                const res = await searchYouTubePlaylists(searchQuery);
+                setAndCacheResults(res);
+                setNextPageToken(null);
+                setPrevPageToken(null);
+                setLastQuery(searchQuery);
+            }
         } catch (err) {
             console.error('Search failed:', err);
         } finally {
@@ -225,6 +242,9 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo, ex
 
     useEffect(() => {
         localStorage.setItem('yt_search_type', searchType);
+        setNextPageToken(null);
+        setPrevPageToken(null);
+        setLastQuery('');
     }, [searchType]);
 
     useEffect(() => {
@@ -469,10 +489,29 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo, ex
                                     ))}
                                 </div>
 
-                                <div style={{ marginTop: '0.75rem', display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
-                                    <button className='btn primary-btn' disabled={!searchQuery.trim() || loading} onClick={handleSearch}>
+                                <div style={{ marginTop: '0.75rem', display: 'flex', gap: '0.5rem', flexWrap: 'wrap', alignItems: 'center' }}>
+                                    <button className='btn primary-btn' disabled={!searchQuery.trim() || loading} onClick={() => handleSearch('')}>
                                         {loading ? 'Searching...' : 'Search'}
                                     </button>
+                                    {searchType === 'video' && (
+                                        <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap', alignItems: 'center' }}>
+                                            <button
+                                                className='btn secondary-btn'
+                                                disabled={!prevPageToken || loading || !lastQuery}
+                                                onClick={() => handleSearch(prevPageToken)}
+                                            >
+                                                ◀ Prev
+                                            </button>
+                                            <button
+                                                className='btn secondary-btn'
+                                                disabled={!nextPageToken || loading || !lastQuery}
+                                                onClick={() => handleSearch(nextPageToken)}
+                                            >
+                                                Next ▶
+                                            </button>
+                                            <small style={{ color: '#94a3b8' }}>50 per page</small>
+                                        </div>
+                                    )}
                                 </div>
                             </>
                         )}

@@ -143,13 +143,15 @@ app.get('/api/youtube/comments', async (req, res) => {
 // GET /youtube/search?q=nodejs
 app.get('/api/youtube/search', async (req, res) => {
   const query = req.query.q;
+  const pageToken = req.query.pageToken || '';
+  const pageSize = parseInt(req.query.pageSize, 10) || 50;
 
   if (!query) {
     return res.status(400).json({ error: 'Missing search query.' });
   }
 
   try {
-    const results = await searchYouTube(query);
+    const results = await searchYouTube(query, pageToken, pageSize);
     res.json(results);
   } catch (error) {
     console.error('Search API error:', error);
