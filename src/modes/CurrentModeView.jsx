@@ -177,74 +177,109 @@ function MatchMode({ cards, matchTerms, matchDefs, matchedPairs, selectedTerm, s
           style={{
             display: "flex",
             flexDirection: isMobile ? "column" : "row",
-            gap: isMobile ? "1rem" : "2rem",
+            gap: isMobile ? "0.75rem" : "1.25rem",
+            alignItems: "stretch",
           }}
         >
-          <div style={{ flex: 1 }}>
-            <h4 style={{ color: COLORS.text }}>Terms</h4>
-            {matchTerms.map(({ idx, text }) => {
-              const matched = matchedPairs.includes(idx);
-              const selected = selectedTerm === idx;
-              const bg = matched ? COLORS.matchedBg : palette[idx % palette.length];
-              return (
-                <div
-                  key={"term-" + idx}
-                  onClick={() => {
-                    if (matched) return;
-                    onSelectTerm(idx);
-                  }}
-                  style={{
-                    padding: "0.5rem",
-                    marginBottom: "0.25rem",
-                    border: matched ? `1px solid ${COLORS.border}` : selected ? `2px solid ${COLORS.primary}` : `1px solid ${COLORS.border}`,
-                    backgroundColor: selected ? COLORS.selectedBg : bg,
-                    borderRadius: "4px",
-                    cursor: matched ? "default" : "pointer",
-                    color: COLORS.text,
-                    display: "inline-block",
-                    width: "auto",
-                    maxWidth: "100%",
-                    whiteSpace: "normal",
-                    wordBreak: "break-word",
-                  }}
-                >
-                  {text}
-                </div>
-              );
-            })}
+          <div
+            style={{
+              flex: isMobile ? "0 0 auto" : "0 0 42%",
+              position: isMobile ? "relative" : "sticky",
+              top: isMobile ? 0 : 8,
+              alignSelf: "flex-start",
+              background: "#0b1220",
+              border: `1px solid ${COLORS.border}`,
+              borderRadius: "10px",
+              padding: "0.75rem",
+              boxShadow: "0 8px 24px rgba(0,0,0,0.14)",
+              maxHeight: isMobile ? "auto" : "75vh",
+              overflow: "hidden",
+            }}
+          >
+            <h4 style={{ color: COLORS.text, marginTop: 0, marginBottom: "0.6rem" }}>Terms</h4>
+            <div
+              style={{
+                display: "grid",
+                gap: "0.25rem",
+                gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
+              }}
+            >
+              {matchTerms.map(({ idx, text }) => {
+                const matched = matchedPairs.includes(idx);
+                const selected = selectedTerm === idx;
+                const bg = matched ? COLORS.matchedBg : palette[idx % palette.length];
+                return (
+                  <button
+                    key={"term-" + idx}
+                    onClick={() => {
+                      if (matched) return;
+                      onSelectTerm(idx);
+                    }}
+                    style={{
+                      textAlign: "left",
+                      padding: "0.4rem 0.45rem",
+                      border: matched ? `1px solid ${COLORS.border}` : selected ? `2px solid ${COLORS.primary}` : `1px solid ${COLORS.border}`,
+                      backgroundColor: selected ? COLORS.selectedBg : bg,
+                      borderRadius: "8px",
+                      cursor: matched ? "default" : "pointer",
+                      color: COLORS.text,
+                      fontWeight: 600,
+                      fontSize: "0.85rem",
+                      boxShadow: matched ? "none" : "0 4px 10px rgba(0,0,0,0.08)",
+                      opacity: matched ? 0.6 : 1,
+                      minHeight: "44px",
+                    }}
+                  >
+                    {text}
+                  </button>
+                );
+              })}
+            </div>
           </div>
-          <div style={{ flex: 1 }}>
-            <h4 style={{ color: COLORS.text }}>Definitions</h4>
-            {matchDefs.map(({ idx, text }) => {
-              const matched = matchedPairs.includes(idx);
-              const selected = selectedDef === idx;
-              const bg = matched ? COLORS.matchedBg : palette[idx % palette.length];
-              return (
-                <div
-                  key={"def-" + idx}
-                  onClick={() => {
-                    if (matched) return;
-                    onSelectDef(idx);
-                  }}
-                  style={{
-                    padding: "0.5rem",
-                    marginBottom: "0.25rem",
-                    border: matched ? `1px solid ${COLORS.border}` : selected ? `2px solid ${COLORS.primary}` : `1px solid ${COLORS.border}`,
-                    backgroundColor: selected ? COLORS.selectedBg : bg,
-                    borderRadius: "4px",
-                    cursor: matched ? "default" : "pointer",
-                    color: COLORS.text,
-                    display: "inline-block",
-                    width: "auto",
-                    maxWidth: "100%",
-                    whiteSpace: "normal",
-                    wordBreak: "break-word",
-                  }}
-                >
-                  {text}
-                </div>
-              );
-            })}
+
+          <div
+            style={{
+              flex: 1,
+              background: "#0f172a",
+              border: `1px solid ${COLORS.border}`,
+              borderRadius: "12px",
+              padding: "0.75rem",
+              boxShadow: "0 8px 24px rgba(0,0,0,0.12)",
+              maxHeight: isMobile ? "60vh" : "75vh",
+              overflowY: "auto",
+            }}
+          >
+            <h4 style={{ color: COLORS.text, marginTop: 0, marginBottom: "0.6rem" }}>Definitions</h4>
+            <div style={{ display: "grid", gap: "0.55rem" }}>
+              {matchDefs.map(({ idx, text }) => {
+                const matched = matchedPairs.includes(idx);
+                const selected = selectedDef === idx;
+                const bg = matched ? COLORS.matchedBg : palette[idx % palette.length];
+                return (
+                  <button
+                    key={"def-" + idx}
+                    onClick={() => {
+                      if (matched) return;
+                      onSelectDef(idx);
+                    }}
+                    style={{
+                      textAlign: "left",
+                      padding: "0.7rem 0.8rem",
+                      border: matched ? `1px solid ${COLORS.border}` : selected ? `2px solid ${COLORS.primary}` : `1px solid ${COLORS.border}`,
+                      backgroundColor: selected ? COLORS.selectedBg : bg,
+                      borderRadius: "10px",
+                      cursor: matched ? "default" : "pointer",
+                      color: COLORS.text,
+                      lineHeight: 1.5,
+                      boxShadow: matched ? "none" : "0 4px 12px rgba(0,0,0,0.1)",
+                      opacity: matched ? 0.7 : 1,
+                    }}
+                  >
+                    {text}
+                  </button>
+                );
+              })}
+            </div>
           </div>
         </div>
       )}
