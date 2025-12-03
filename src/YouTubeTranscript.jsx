@@ -93,6 +93,7 @@ export default function YouTubeTranscript() {
   const { showMessage } = useFlyout();
   const latestRetryRef = useRef({});
   const [isMinimized, setIsMinimized] = useState(false);
+  const [miniCollapsed, setMiniCollapsed] = useState(false);
   const dispatch = useAppDispatch();
   const [loadingTranscript, setLoadingTranscript] = useState(false);
   const { youtubeSearchText } = useAppState();
@@ -648,15 +649,43 @@ export default function YouTubeTranscript() {
                         bottom: '12px',
                         width: '240px',
                         height: '135px',
-                        zIndex: 12000,
+                        zIndex: 15000,
                         boxShadow: '0 18px 38px rgba(0,0,0,0.35)',
                         borderRadius: '14px',
                         overflow: 'hidden',
                         border: '1px solid rgba(255,255,255,0.08)',
                         backdropFilter: 'blur(8px)',
                         background: '#0b1220',
+                        transform: miniCollapsed ? 'translateX(-228px)' : 'translateX(0)',
+                        transition: 'transform 0.25s ease',
                     }}
                 >
+                    <button
+                        onClick={() => setMiniCollapsed((v) => !v)}
+                        style={{
+                            position: 'absolute',
+                            right: '-10px',
+                            top: '50%',
+                            transform: 'translateY(-50%)',
+                            width: '30px',
+                            height: '90px',
+                            borderRadius: '0 12px 12px 0',
+                            border: '1px solid rgba(255,255,255,0.25)',
+                            background: 'linear-gradient(135deg, #22d3ee, #0ea5e9)',
+                            color: '#0b1220',
+                            cursor: 'pointer',
+                            boxShadow: '0 8px 16px rgba(0,0,0,0.35)',
+                            fontWeight: 900,
+                            fontSize: '16px',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                        }}
+                        aria-label={miniCollapsed ? "Show mini player" : "Hide mini player"}
+                        title={miniCollapsed ? "Show mini player" : "Hide mini player"}
+                    >
+                        {miniCollapsed ? '▶' : '◀'}
+                    </button>
                     <iframe
                         src={embedUrl}
                         title="YouTube Video Mini"

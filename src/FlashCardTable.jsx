@@ -290,28 +290,27 @@ const FlashCardTable = ({ cards, setCards, COLORS }) => {
               </span>
             </div>
             <div style={{ display: "flex", gap: "8px", flexWrap: "wrap", marginTop: "0.4rem" }}>
-              <div style={{ display: "flex", gap: "8px", alignItems: "center", flexWrap: "wrap", padding: "6px 8px", background: "#f1f5f9", borderRadius: 10 }}>
-                <label style={{ display: "flex", alignItems: "center", gap: "4px", fontSize: "0.9rem", color: "#0f172a" }}>
-                  <input
-                    type="radio"
-                    name="bulkMode"
-                    value="async"
-                    checked={bulkMode === "async"}
-                    onChange={() => setBulkMode("async")}
-                  />
-                  Parallel
-                </label>
-                <label style={{ display: "flex", alignItems: "center", gap: "4px", fontSize: "0.9rem", color: "#0f172a" }}>
-                  <input
-                    type="radio"
-                    name="bulkMode"
-                    value="sequential"
-                    checked={bulkMode === "sequential"}
-                    onChange={() => setBulkMode("sequential")}
-                  />
-                  Sequential
-                </label>
-              </div>
+              <label
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "8px",
+                  padding: "6px 10px",
+                  background: "#f1f5f9",
+                  borderRadius: 10,
+                  fontSize: "0.9rem",
+                  color: "#0f172a",
+                  whiteSpace: "nowrap",
+                }}
+              >
+                <input
+                  type="checkbox"
+                  checked={bulkMode === "async"}
+                  onChange={(e) => setBulkMode(e.target.checked ? "async" : "sequential")}
+                  style={{ width: 16, height: 16 }}
+                />
+                Run in parallel (faster)
+              </label>
               <button
                 disabled={!!bulkLoading}
                 onClick={() => applyAll("expand3")}

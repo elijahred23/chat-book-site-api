@@ -38,6 +38,7 @@ export default function GptPromptComponent({
   const [loading, setLoading] = useState(false);
   const [showAllSuggestions, setShowAllSuggestions] = useState(false);
   const [selectedGroup, setSelectedGroup] = useLocalStorageState("suggestionGroup", "code");
+  const [activeTab, setActiveTab] = useState("prompt"); // prompt | chat
   const messagesEndRef = useRef(null);
   const dispatch = useAppDispatch();
   const { chatPrompt, selectedText } = useAppState();
@@ -61,6 +62,7 @@ export default function GptPromptComponent({
       const botMsg = { text: response, sender: "bot" };
       setMessages((prev) => [...prev, userMsg, botMsg]);
       dispatch(actions.setChatPrompt(""));
+      setActiveTab("chat");
     } catch {
       alert("Error fetching response.");
     } finally {
@@ -69,7 +71,6 @@ export default function GptPromptComponent({
   };
 
   const clearMessages = () => setMessages([]);
-  const promptRef = useRef(null);
 
   useEffect(() => {
     if (selectedText && selectedText !== chatPrompt) {
@@ -78,6 +79,13 @@ export default function GptPromptComponent({
   }, [selectedText]);
 
   useEffect(scrollToBottom, [messages]);
+
+  // When the drawer opens, default back to the prompt tab
+  useEffect(() => {
+    if (!isCollapsed) {
+      setActiveTab("prompt");
+    }
+  }, [isCollapsed]);
 
   const handleInputChange = (e) => dispatch(actions.setChatPrompt(e.target.value));
 
@@ -212,23 +220,25 @@ export default function GptPromptComponent({
   return (
     <div>
       <style>{styles}</style>
-      <div className="floating-controls compact">
-        <button className="pill-btn" onClick={onToggleCollapse} aria-label="Toggle chat">
-          <FiMessageSquare size={18} />
-        </button>
-        <button className="pill-btn" onClick={onTogglePrompt} aria-label="Toggle prompt">
-          <FiType size={18} />
-        </button>
-        <button className="pill-btn" onClick={onClose} aria-label="Close chat">
-          <AiFillCloseCircle size={18} />
-        </button>
-   </div>
-
       <div className="gpt-shell">
+        <div style={{ display: "flex", gap: "0.5rem", marginBottom: "0.5rem" }}>
+          <button
+            className={`btn ${activeTab === "prompt" ? "btn-primary" : "btn-ghost"}`}
+            onClick={() => setActiveTab("prompt")}
+          >
+            Prompt
+          </button>
+          <button
+            className={`btn ${activeTab === "chat" ? "btn-primary" : "btn-ghost"}`}
+            onClick={() => setActiveTab("chat")}
+          >
+            Chat
+          </button>
+        </div>
         <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
-          {!isCollapsed && (
+          {!isCollapsed && activeTab === "chat" && (
             <div className="gpt-card" style={{ flex: "1 1 auto" }}>
-              <div className="chat-window" ref={messagesEndRef} style={{ maxHeight: hidePrompt ? "70vh" : "60vh" }}>
+              <div className="chat-window" ref={messagesEndRef} style={{ maxHeight: hidePrompt ? "80vh" : "75vh" }}>
                 {messages.map((m, i) => (
                   <div key={i} style={{ textAlign: m.sender === "user" ? "right" : "left", marginBottom: "0.75rem" }}>
                     <div className={`bubble ${m.sender === "user" ? "user" : "bot"}`}>
@@ -249,7 +259,7 @@ export default function GptPromptComponent({
             </div>
           )}
 
-          {!hidePrompt && (
+          {!hidePrompt && activeTab === "prompt" && (
           <div className="gpt-card">
             <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", alignItems: "center", marginBottom: "0.5rem" }}>
               <select
@@ -296,7 +306,6 @@ export default function GptPromptComponent({
             </div>
 
             <textarea
-              ref={promptRef}
               rows={4}
               value={chatPrompt}
               onChange={handleInputChange}
@@ -315,15 +324,7 @@ export default function GptPromptComponent({
               <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
                 <PasteButton setPasteText={(text) => dispatch(actions.setChatPrompt(text))} className="btn btn-ghost" />
                 <button className="btn btn-ghost" onClick={clearMessages}>Clear Chat</button>
-                <button
-                  className="btn btn-ghost"
-                  onClick={() => {
-                    dispatch(actions.setChatPrompt(""));
-                    requestAnimationFrame(() => promptRef.current?.focus());
-                  }}
-                >
-                  Clear Prompt
-                </button>
+                <button className="btn btn-ghost" onClick={() => dispatch(actions.setChatPrompt(""))}>Clear Prompt</button>
               </div>
               <button className="btn btn-primary" onClick={handleSubmit} disabled={loading}>
                 {loading ? "Thinking..." : "Send"}
