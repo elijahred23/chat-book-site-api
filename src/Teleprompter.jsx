@@ -524,7 +524,7 @@ const TeleprompterAdvanced = () => {
         style={{
           position: "fixed",
           left: 12,
-          bottom: showControls ? 120 : 90,
+          bottom: showControls ? -999 : 90,
           display: "flex",
           flexDirection: "column",
           gap: 8,
@@ -548,7 +548,7 @@ const TeleprompterAdvanced = () => {
           title="Hold to double speed"
           aria-label="Hold to double speed"
         >
-          2×
+          <span style={{ userSelect: "none" }}>2×</span>
         </button>
         <button
           onPointerDown={() => { speedHoldRef.current = 4; }}
@@ -566,7 +566,7 @@ const TeleprompterAdvanced = () => {
           title="Hold to 4x speed"
           aria-label="Hold to 4x speed"
         >
-          4×
+          <span style={{ userSelect: "none" }}>4×</span>
         </button>
         <button
           onPointerDown={() => { dirHoldRef.current = -2 * (baseDirRef.current || 1); }}
@@ -584,7 +584,7 @@ const TeleprompterAdvanced = () => {
           title="Hold to reverse at 2x"
           aria-label="Hold to reverse at 2x"
         >
-          ↺2×
+          <span style={{ userSelect: "none" }}>↺2×</span>
         </button>
         <button
           onPointerDown={() => { dirHoldRef.current = -4 * (baseDirRef.current || 1); }}
@@ -602,7 +602,7 @@ const TeleprompterAdvanced = () => {
           title="Hold to reverse at 4x"
           aria-label="Hold to reverse at 4x"
         >
-          ↺4×
+          <span style={{ userSelect: "none" }}>↺4×</span>
         </button>
       </div>
 
