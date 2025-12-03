@@ -533,9 +533,9 @@ const TeleprompterAdvanced = () => {
         }}
       >
         <button
-          onPointerDown={handleSpeedHoldStart}
-          onPointerUp={handleSpeedHoldEnd}
-          onPointerLeave={handleSpeedHoldEnd}
+          onPointerDown={() => { speedHoldRef.current = 2; }}
+          onPointerUp={() => { speedHoldRef.current = 1; }}
+          onPointerLeave={() => { speedHoldRef.current = 1; }}
           style={{
             width: 46,
             height: 46,
@@ -551,22 +551,58 @@ const TeleprompterAdvanced = () => {
           2×
         </button>
         <button
-          onPointerDown={handleReverseHoldStart}
-          onPointerUp={handleReverseHoldEnd}
-          onPointerLeave={handleReverseHoldEnd}
+          onPointerDown={() => { speedHoldRef.current = 4; }}
+          onPointerUp={() => { speedHoldRef.current = 1; }}
+          onPointerLeave={() => { speedHoldRef.current = 1; }}
           style={{
             width: 46,
             height: 46,
             borderRadius: "50%",
-            background: "linear-gradient(135deg, #fb7185, #ef4444)",
+            background: "linear-gradient(135deg, #a855f7, #6366f1)",
             color: "#0b1220",
             fontWeight: 800,
             boxShadow: "0 10px 20px rgba(0,0,0,0.25)",
           }}
-          title="Hold to reverse scroll"
-          aria-label="Hold to reverse scroll"
+          title="Hold to 4x speed"
+          aria-label="Hold to 4x speed"
         >
-          ⇅
+          4×
+        </button>
+        <button
+          onPointerDown={() => { dirHoldRef.current = -2 * (baseDirRef.current || 1); }}
+          onPointerUp={() => { dirHoldRef.current = null; }}
+          onPointerLeave={() => { dirHoldRef.current = null; }}
+          style={{
+            width: 46,
+            height: 46,
+            borderRadius: "50%",
+            background: "linear-gradient(135deg, #f59e0b, #f97316)",
+            color: "#0b1220",
+            fontWeight: 800,
+            boxShadow: "0 10px 20px rgba(0,0,0,0.25)",
+          }}
+          title="Hold to reverse at 2x"
+          aria-label="Hold to reverse at 2x"
+        >
+          ↺2×
+        </button>
+        <button
+          onPointerDown={() => { dirHoldRef.current = -4 * (baseDirRef.current || 1); }}
+          onPointerUp={() => { dirHoldRef.current = null; }}
+          onPointerLeave={() => { dirHoldRef.current = null; }}
+          style={{
+            width: 46,
+            height: 46,
+            borderRadius: "50%",
+            background: "linear-gradient(135deg, #f472b6, #db2777)",
+            color: "#0b1220",
+            fontWeight: 800,
+            boxShadow: "0 10px 20px rgba(0,0,0,0.25)",
+          }}
+          title="Hold to reverse at 4x"
+          aria-label="Hold to reverse at 4x"
+        >
+          ↺4×
         </button>
       </div>
 
