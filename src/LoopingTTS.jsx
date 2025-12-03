@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
-import { useAppState } from "./context/AppContext";
+import ReactDOM from "react-dom";
+import { useAppState, useAppDispatch, actions } from "./context/AppContext";
 
 const LoopingTTSImproved = () => {
   const synth = window.speechSynthesis;
-  const { ttsText } = useAppState();
+  const { ttsText, ttsAutoPlay } = useAppState();
+  const dispatch = useAppDispatch();
   const sampleText =
     "Learning happens best in small, repeatable loops. Speak this aloud, pause to reflect, then iterate until it sticks.";
 
@@ -13,6 +15,7 @@ const LoopingTTSImproved = () => {
   );
   // Loop counter – counts how many times the entire text has repeated
   const [loopCount, setLoopCount] = useState(0);
+  const [activeTab, setActiveTab] = useState("input"); // input | controls
   // Number of times to repeat each individual sentence
   const [sentenceRepeats, setSentenceRepeats] = useState(1);
   // Speech synthesis settings
@@ -27,8 +30,10 @@ const LoopingTTSImproved = () => {
   const [currentSentence, setCurrentSentence] = useState("");
   const [timeEstimate, setTimeEstimate] = useState("");
   const [progress, setProgress] = useState(0);
+  const [currentSentenceProgress, setCurrentSentenceProgress] = useState(0);
   const [endTime, setEndTime] = useState("");
   const [lastAction, setLastAction] = useState("Idle");
+  const [isPlaying, setIsPlaying] = useState(false);
 
   // Refs to track voices and playback state without triggering renders
   const voicesRef = useRef([]);
@@ -103,6 +108,24 @@ const LoopingTTSImproved = () => {
     }
   }, [ttsText]);
 
+  // Auto-start when TTS text is pushed from an action button
+  useEffect(() => {
+    if (ttsText && ttsText.trim() && ttsAutoPlay) {
+      setLoopCount(0);
+      setActiveTab("controls");
+      handleStart(ttsText);
+      dispatch(actions.setTtsAutoplay(false));
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [ttsText, ttsAutoPlay]);
+
+  // If TTS is already playing when opening the drawer, show controls tab
+  useEffect(() => {
+    if (isPlaying) {
+      setActiveTab("controls");
+    }
+  }, [isPlaying]);
+
   /**
    * Break the provided text into chunks based on sentence boundaries.
    * This ensures the speech synthesiser reads natural pauses at
@@ -127,15 +150,19 @@ const LoopingTTSImproved = () => {
     const totalUtterances = totalSentences * repeats;
     if (!totalUtterances) {
       setProgress(0);
+      setCurrentSentenceProgress(0);
       return;
     }
     if (cycleComplete) {
       // When a cycle completes we set progress to 100%
       setProgress(100);
+      setCurrentSentenceProgress(100);
     } else {
       // Compute how many utterances have been spoken in the current cycle
       const spokenUtterances = idxRef.current * repeats + sentenceRepeatRef.current;
       setProgress((spokenUtterances / totalUtterances) * 100);
+      // Progress within the current sentence repeat
+      setCurrentSentenceProgress(((sentenceRepeatRef.current + 1) / repeats) * 100);
     }
     // Estimate remaining time (one cycle) based on remaining utterances
     const { mins, secs } = computeTimeEstimate();
@@ -178,6 +205,7 @@ const LoopingTTSImproved = () => {
       } else {
         setStatus("Finished");
         playingRef.current = false;
+        setIsPlaying(false);
         setCurrentSentence("");
         setProgress(100);
         setEndTime("Completed");
@@ -217,12 +245,18 @@ const LoopingTTSImproved = () => {
    * Start speaking. Resets progress, loop counter and loads the
    * necessary chunks. Cancels any ongoing speech before starting.
    */
-  const handleStart = () => {
+  const handleStart = (customText) => {
     synth.cancel();
-    chunksRef.current = splitText(text.trim());
+    const source = (customText ?? text).trim();
+    if (!source) return;
+    if (customText !== undefined) {
+      setText(source);
+    }
+    chunksRef.current = splitText(source);
     idxRef.current = 0;
     sentenceRepeatRef.current = 0;
     playingRef.current = true;
+    setIsPlaying(true);
     setCurrentSentence("");
     setProgress(0);
     setLoopCount(0);
@@ -237,10 +271,12 @@ const LoopingTTSImproved = () => {
       synth.pause();
       setStatus("Paused");
       setLastAction("Paused");
+      setIsPlaying(false);
     } else if (synth.paused) {
       synth.resume();
       setStatus("Resumed");
       setLastAction("Resumed");
+      setIsPlaying(true);
     }
   };
 
@@ -248,6 +284,7 @@ const LoopingTTSImproved = () => {
   const handleStop = () => {
     synth.cancel();
     playingRef.current = false;
+    setIsPlaying(false);
     setStatus("Stopped");
     setCurrentSentence("");
     setProgress(0);
@@ -380,15 +417,31 @@ const LoopingTTSImproved = () => {
       gap: 0.5rem;
     }
     .controls button,
-    .controls label,
-    .sliders label,
-    .options label {
+    .controls label {
       flex: 1 1 140px;
       min-width: 120px;
+    }
+    .sliders {
+      gap: 0.35rem;
+    }
+    .sliders label {
+      flex: 1 1 100px;
+      min-width: 90px;
+      display: flex;
+      flex-direction: column;
+      font-size: 0.85rem;
+      padding: 0.25rem 0.3rem;
+      border: 1px solid var(--card-border, #e2e8f0);
+      border-radius: 10px;
+      background: #f8fafc;
+    }
+    .dark .sliders label {
+      background: #111827;
     }
     .sliders input[type="range"],
     .options input[type="number"] {
       width: 100%;
+      accent-color: #2563eb;
     }
     .progress-bar-container {
       width: 100%;
@@ -456,16 +509,17 @@ const LoopingTTSImproved = () => {
       cursor: not-allowed;
     }
     .repeat-label {
-      flex: 1 1 200px;
+      flex: 1 1 140px;
+      min-width: 140px;
     }
     .repeat-input-container {
-      display: flex;
+      display: inline-flex;
       align-items: center;
       gap: 0.35rem;
       background: #f8fafc;
       border: 1px solid #e2e8f0;
       border-radius: 12px;
-      padding: 0.35rem;
+      padding: 0.25rem 0.35rem;
     }
     .dark .repeat-input-container {
       background: #111827;
@@ -475,9 +529,9 @@ const LoopingTTSImproved = () => {
       border: none;
       background: #e2e8f0;
       border-radius: 10px;
-      width: 36px;
-      height: 36px;
-      font-size: 1.1rem;
+      width: 32px;
+      height: 32px;
+      font-size: 1rem;
       cursor: pointer;
     }
     .dark .repeat-btn {
@@ -485,7 +539,7 @@ const LoopingTTSImproved = () => {
       color: #e2e8f0;
     }
     .repeat-input {
-      width: 70px;
+      width: 60px;
       border: none;
       text-align: center;
       background: transparent;
@@ -498,6 +552,27 @@ const LoopingTTSImproved = () => {
       justify-content: space-between;
       flex-wrap: wrap;
       gap: 0.5rem;
+    }
+    .tab-row {
+      display: inline-flex;
+      gap: 0.5rem;
+      margin: 0.5rem 0 0.75rem 0;
+      flex-wrap: wrap;
+    }
+    .tab-btn {
+      padding: 0.55rem 0.9rem;
+      border-radius: 12px;
+      border: 1px solid var(--card-border, #e2e8f0);
+      background: #f8fafc;
+      color: inherit;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .tab-btn.active {
+      background: linear-gradient(135deg, #2563eb, #60a5fa);
+      color: #fff;
+      border: none;
+      box-shadow: 0 10px 18px rgba(37,99,235,0.2);
     }
     @media (max-width: 540px) {
       .controls button,
@@ -519,57 +594,99 @@ const LoopingTTSImproved = () => {
       <div className="tts-card" style={{ background: "var(--card-bg)" }}>
         <div className="headline-row">
           <h1 className="tts-heading">Looping Text‑to‑Speech</h1>
-          <div>
-            <label style={{ display: "inline-flex", alignItems: "center", gap: "0.35rem", cursor: "pointer" }}>
-              <input
-                type="checkbox"
-                checked={darkMode}
-                onChange={(e) => setDarkMode(e.target.checked)}
-              />
-              Dark mode
-            </label>
-          </div>
         </div>
-        <p style={{ margin: "0 0 0.5rem 0", color: darkMode ? "#cbd5e1" : "#475569" }}>
-          Paste text, pick your voice options, and loop it with smooth controls. Great for rehearsing scripts or language practice.
-        </p>
         <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", marginBottom: "0.5rem" }}>
           <span className="pill">Words: {wordCount}</span>
           <span className="pill">Sentences: {sentenceCount}</span>
           <span className="pill">Loops: {loopCount}</span>
           <span className="pill">Last: {lastAction}</span>
         </div>
-        <textarea
-          value={text}
-          onChange={(e) => {
-            setText(e.target.value);
-            setLoopCount(0);
-          }}
-          placeholder="Paste or type your text here..."
-        />
-        <div className="controls">
-          <label className="button secondary">
-            📁 Upload .txt
-            <input
-              type="file"
-              accept=".txt"
-              hidden
-              onChange={handleUpload}
-            />
-          </label>
-          <button className="button secondary" onClick={handlePaste}>
-            📋 Paste
+        <div className="tab-row">
+          <button
+            className={`tab-btn ${activeTab === "input" ? "active" : ""}`}
+            onClick={() => setActiveTab("input")}
+          >
+            Input
           </button>
-          <button className="button secondary" onClick={() => { setText(sampleText); setLoopCount(0); }}>
-            🎯 Load Sample
-          </button>
-          <button className="button danger" onClick={handleClear}>
-            🧹 Clear
+          <button
+            className={`tab-btn ${activeTab === "controls" ? "active" : ""}`}
+            onClick={() => setActiveTab("controls")}
+          >
+            Controls & Playback
           </button>
         </div>
+
+        {activeTab === "input" && (
+          <>
+            <textarea
+              value={text}
+              onChange={(e) => {
+                setText(e.target.value);
+                setLoopCount(0);
+              }}
+              placeholder="Paste or type your text here..."
+            />
+            <div className="controls">
+              <label className="button secondary">
+                📁 Upload .txt
+                <input
+                  type="file"
+                  accept=".txt"
+                  hidden
+                  onChange={handleUpload}
+                />
+              </label>
+              <button className="button secondary" onClick={handlePaste}>
+                📋 Paste
+              </button>
+              <button className="button secondary" onClick={() => { setText(sampleText); setLoopCount(0); }}>
+                🎯 Load Sample
+              </button>
+              <button className="button danger" onClick={handleClear}>
+                🧹 Clear
+              </button>
+            </div>
+            <div style={{ display: "flex", gap: "0.5rem", marginTop: "0.5rem", flexWrap: "wrap" }}>
+              <button
+                className="button primary"
+                onClick={() => handleStart()}
+                disabled={!text.trim()}
+                title="Start speaking this text"
+              >
+                ▶ Start from this text
+              </button>
+            </div>
+          </>
+        )}
       </div>
 
+      {activeTab === "controls" && (
       <div className="tts-card">
+        <div style={{ marginBottom: "0.5rem", padding: "0.5rem 0.65rem", background: "rgba(226,232,240,0.5)", borderRadius: "10px", color: darkMode ? "#e2e8f0" : "#0f172a" }}>
+          <div style={{ fontSize: "0.85rem", opacity: 0.75, marginBottom: "0.15rem" }}>Now speaking</div>
+          <div style={{ fontWeight: 700, lineHeight: 1.3 }}>
+            {currentSentence || "Waiting to start..."}
+          </div>
+          {timeEstimate && (
+            <div style={{ fontSize: "0.85rem", color: darkMode ? "#cbd5e1" : "#475569", marginTop: "0.15rem" }}>
+              {timeEstimate}
+            </div>
+          )}
+          {sentenceRepeats > 1 && (
+            <div className="progress-bar-container" style={{ marginTop: "0.3rem", height: 8 }}>
+              <div
+                className="progress-bar"
+                style={{ width: `${currentSentenceProgress}%`, background: "linear-gradient(90deg, #a855f7, #6366f1)" }}
+              ></div>
+            </div>
+          )}
+          <div className="progress-bar-container" style={{ marginTop: "0.35rem" }}>
+            <div
+              className="progress-bar"
+              style={{ width: `${progress}%` }}
+            ></div>
+          </div>
+        </div>
         <div className="sliders">
           <label>
             Rate
@@ -639,7 +756,7 @@ const LoopingTTSImproved = () => {
           </label>
         </div>
         <div className="action-row">
-          <button className="button primary" onClick={handleStart}>
+          <button className="button primary" onClick={() => handleStart()}>
             ▶ Start
           </button>
           <button className="button secondary" onClick={handlePause}>
@@ -655,41 +772,75 @@ const LoopingTTSImproved = () => {
             ⏭ Next
           </button>
         </div>
-        <div className="progress-bar-container">
-          <div
-            className="progress-bar"
-            style={{ width: `${progress}%` }}
-          ></div>
-        </div>
-        <div className="status">{status}</div>
-        <div style={{ textAlign: "center", fontWeight: "bold", fontSize: "1.4em", marginTop: "0.35rem" }}>
-          {currentSentence}
-        </div>
-        <div style={{ textAlign: "center", fontSize: "0.9rem", color: darkMode ? "#cbd5e1" : "#475569" }}>
-          {timeEstimate}
-        </div>
         <div style={{ textAlign: "center", fontSize: "0.9rem", color: darkMode ? "#cbd5e1" : "#475569" }}>
           {endTime}
         </div>
         <div className="options" style={{ marginTop: "0.35rem" }}>
-          <label>
+          <p>
+            Loop playback
             <input
               type="checkbox"
               checked={loop}
               onChange={(e) => setLoop(e.target.checked)}
             />
-            Loop playback
-          </label>
-          <label>
-            <input
-              type="checkbox"
-              checked={samOnly}
-              onChange={(e) => setSamOnly(e.target.checked)}
-            />
-            Prefer Samantha
-          </label>
+          </p>
         </div>
       </div>
+      )}
+
+      {isPlaying &&
+        typeof document !== "undefined" &&
+        ReactDOM.createPortal(
+          <div
+            style={{
+              position: "fixed",
+              left: "18px",
+              bottom: "18px",
+              zIndex: 20000,
+              display: "flex",
+              alignItems: "center",
+              gap: "8px",
+              pointerEvents: "none",
+            }}
+          >
+            <button
+              onClick={handleStop}
+              aria-label="Stop TTS"
+              title="Stop TTS"
+              style={{
+                pointerEvents: "auto",
+                width: "64px",
+                height: "64px",
+                borderRadius: "50%",
+                border: "none",
+                padding: "6px",
+                background: `conic-gradient(#22d3ee ${progress}%, rgba(255,255,255,0.08) 0)`,
+                boxShadow: "0 12px 22px rgba(0,0,0,0.35)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <div
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  borderRadius: "50%",
+                background: "rgba(11,18,32,0.65)",
+                color: "#e2e8f0",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontWeight: 800,
+                fontSize: "18px",
+                }}
+              >
+                ⏹
+              </div>
+            </button>
+          </div>,
+          document.body
+        )}
     </div>
   );
 };

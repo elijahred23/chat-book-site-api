@@ -13,6 +13,7 @@ const initialState = {
   selectedTranscriptType: 'internal',
   isTeleprompterOpen: false,
   isTTSOpen: false,
+  ttsAutoPlay: false,
   isPlantUMLOpen: false,
   plantUMLPrompt: '',
   isPodcastTTSOpen: false,
@@ -41,6 +42,7 @@ const actionTypes = {
   SET_SELECTED_TRANSCRIPT_TYPE: 'SET_SELECTED_TRANSCRIPT_TYPE',
   SET_IS_TELEPROMPTER_OPEN: 'SET_IS_TELEPROMPTER_OPEN',
   SET_IS_TTS_OPEN: 'SET_IS_TTS_OPEN',
+  SET_TTS_AUTOPLAY: 'SET_TTS_AUTOPLAY',
   SET_IS_PLANTUML_OPEN: 'SET_IS_PLANTUML_OPEN',
   SET_PLANT_UML_PROMPT: 'SET_PLANT_UML_PROMPT',
   SET_IS_PODCAST_TTS_OPEN: 'SET_IS_PODCAST_TTS_OPEN',
@@ -112,6 +114,9 @@ function appReducer(state, action) {
       return action.payload
         ? { ...closeAllPanels(state), isTTSOpen: true }
         : { ...state, isTTSOpen: false };
+
+    case actionTypes.SET_TTS_AUTOPLAY:
+      return { ...state, ttsAutoPlay: action.payload };
 
     case actionTypes.SET_IS_PLANTUML_OPEN:
       return action.payload
@@ -200,6 +205,7 @@ export const actions = {
   setChatPrompt: (prompt) => ({ type: actionTypes.SET_CHAT_PROMPT, payload: prompt }),
   setSelectedText: (text) => ({ type: actionTypes.SET_SELECTED_TEXT, payload: text }),
   setTtsText: (text) => ({ type: actionTypes.SET_TTS_TEXT, payload: text }),
+  setTtsAutoplay: (val) => ({ type: actionTypes.SET_TTS_AUTOPLAY, payload: val }),
   setTeleprompterText: (text) => ({ type: actionTypes.SET_TELEPROMPTER_TEXT, payload: text }),
   setSelectedTranscriptType: (type) => ({ type: actionTypes.SET_SELECTED_TRANSCRIPT_TYPE, payload: type }),
   setIsTeleprompterOpen: (open) => ({ type: actionTypes.SET_IS_TELEPROMPTER_OPEN, payload: open }),
