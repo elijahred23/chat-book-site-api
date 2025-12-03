@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import { FaForward, FaFastForward, FaUndoAlt, FaBackward } from "react-icons/fa";
 import { useAppState } from "./context/AppContext";
 
 const TeleprompterAdvanced = () => {
@@ -489,6 +490,8 @@ const TeleprompterAdvanced = () => {
             animationPlayState: isPaused ? "paused" : "running",
             transform: mirror ? "scaleX(-1)" : "none",
             lineHeight: `${lineHeight}em`,
+            userSelect: "none",
+            WebkitUserSelect: "none",
           }}
         />
       </div>
@@ -544,11 +547,16 @@ const TeleprompterAdvanced = () => {
             color: "#0b1220",
             fontWeight: 800,
             boxShadow: "0 10px 20px rgba(0,0,0,0.25)",
+            WebkitUserSelect: "none",
+            userSelect: "none",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
           }}
           title="Hold to double speed"
           aria-label="Hold to double speed"
         >
-          <span style={{ userSelect: "none" }}>2×</span>
+          <FaForward />
         </button>
         <button
           onPointerDown={() => { speedHoldRef.current = 4; }}
@@ -562,11 +570,16 @@ const TeleprompterAdvanced = () => {
             color: "#0b1220",
             fontWeight: 800,
             boxShadow: "0 10px 20px rgba(0,0,0,0.25)",
+            WebkitUserSelect: "none",
+            userSelect: "none",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
           }}
           title="Hold to 4x speed"
           aria-label="Hold to 4x speed"
         >
-          <span style={{ userSelect: "none" }}>4×</span>
+          <FaFastForward />
         </button>
         <button
           onPointerDown={() => { dirHoldRef.current = -2 * (baseDirRef.current || 1); }}
@@ -580,11 +593,16 @@ const TeleprompterAdvanced = () => {
             color: "#0b1220",
             fontWeight: 800,
             boxShadow: "0 10px 20px rgba(0,0,0,0.25)",
+            WebkitUserSelect: "none",
+            userSelect: "none",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
           }}
           title="Hold to reverse at 2x"
           aria-label="Hold to reverse at 2x"
         >
-          <span style={{ userSelect: "none" }}>↺2×</span>
+          <FaUndoAlt />
         </button>
         <button
           onPointerDown={() => { dirHoldRef.current = -4 * (baseDirRef.current || 1); }}
@@ -598,11 +616,16 @@ const TeleprompterAdvanced = () => {
             color: "#0b1220",
             fontWeight: 800,
             boxShadow: "0 10px 20px rgba(0,0,0,0.25)",
+            WebkitUserSelect: "none",
+            userSelect: "none",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
           }}
           title="Hold to reverse at 4x"
           aria-label="Hold to reverse at 4x"
         >
-          <span style={{ userSelect: "none" }}>↺4×</span>
+          <FaBackward />
         </button>
       </div>
 
