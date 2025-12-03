@@ -38,18 +38,19 @@ const FlashCardTable = ({ cards, setCards, COLORS }) => {
   const allSelected = cards.length > 0 && selectedCards.length === cards.length;
   const hasSelection = selectedCards.length > 0;
 
-  const iconBtnStyle = (isLoading, bg, fg) => ({
+  const iconBtnStyle = (isLoading, bg, fg, disabled) => ({
     width: 30,
     height: 30,
     borderRadius: 8,
     border: "1px solid " + (COLORS?.border || "#ccc"),
-    background: isLoading ? "#e5e7eb" : bg,
+    background: disabled ? "#e5e7eb" : isLoading ? "#e5e7eb" : bg,
     display: "inline-flex",
     alignItems: "center",
     justifyContent: "center",
-    cursor: isLoading ? "not-allowed" : "pointer",
-    boxShadow: "0 4px 10px rgba(0,0,0,0.06)",
+    cursor: disabled || isLoading ? "not-allowed" : "pointer",
+    boxShadow: disabled ? "none" : "0 4px 10px rgba(0,0,0,0.06)",
     color: fg,
+    opacity: disabled ? 0.5 : 1,
   });
 
 
@@ -409,50 +410,50 @@ const FlashCardTable = ({ cards, setCards, COLORS }) => {
                     <button
                       title="3 sentences"
                       aria-label="3 sentences"
-                      disabled={!!rowLoading[idx]}
+                      disabled={!!rowLoading[idx] || sentenceCount(card.answer) === 3}
                       onClick={(e) => {
                         e.stopPropagation();
                         runTransform(idx, transformPresets.expand3);
                       }}
-                      style={iconBtnStyle(rowLoading[idx], "#e0f2fe", "#0b172a")}
+                      style={iconBtnStyle(rowLoading[idx], "#e0f2fe", "#0b172a", !!rowLoading[idx] || sentenceCount(card.answer) === 3)}
                     >
-                      {rowLoading[idx] ? <ClipLoader size={14} color="#0b1220" /> : <FaFeatherAlt size={14} color="#0b172a" /> }
+                      {rowLoading[idx] ? <ClipLoader size={14} color="#0b1220" cssOverride={{ borderWidth: "3px" }} /> : <FaFeatherAlt size={14} color="#0b172a" /> }
                     </button>
                     <button
                       title="5 sentences"
                       aria-label="5 sentences"
-                      disabled={!!rowLoading[idx]}
+                      disabled={!!rowLoading[idx] || sentenceCount(card.answer) === 5}
                       onClick={(e) => {
                         e.stopPropagation();
                         runTransform(idx, transformPresets.expand5);
                       }}
-                      style={iconBtnStyle(rowLoading[idx], "#c7d2fe", "#312e81")}
+                      style={iconBtnStyle(rowLoading[idx], "#c7d2fe", "#312e81", !!rowLoading[idx] || sentenceCount(card.answer) === 5)}
                     >
-                      {rowLoading[idx] ? <ClipLoader size={14} color="#0b1220" /> : <FaFeatherAlt size={14} color="#312e81" /> }
+                      {rowLoading[idx] ? <ClipLoader size={14} color="#0b1220" cssOverride={{ borderWidth: "3px" }} /> : <FaFeatherAlt size={14} color="#312e81" /> }
                     </button>
                     <button
                       title="10 sentences"
                       aria-label="10 sentences"
-                      disabled={!!rowLoading[idx]}
+                      disabled={!!rowLoading[idx] || sentenceCount(card.answer) === 10}
                       onClick={(e) => {
                         e.stopPropagation();
                         runTransform(idx, transformPresets.expand10);
                       }}
-                      style={iconBtnStyle(rowLoading[idx], "#fef3c7", "#92400e")}
+                      style={iconBtnStyle(rowLoading[idx], "#fef3c7", "#92400e", !!rowLoading[idx] || sentenceCount(card.answer) === 10)}
                     >
-                      {rowLoading[idx] ? <ClipLoader size={14} color="#0b1220" /> : <FaAlignLeft size={14} color="#92400e" /> }
+                      {rowLoading[idx] ? <ClipLoader size={14} color="#0b1220" cssOverride={{ borderWidth: "3px" }} /> : <FaAlignLeft size={14} color="#92400e" /> }
                     </button>
                     <button
                       title="15 sentences"
                       aria-label="15 sentences"
-                      disabled={!!rowLoading[idx]}
+                      disabled={!!rowLoading[idx] || sentenceCount(card.answer) === 15}
                       onClick={(e) => {
                         e.stopPropagation();
                         runTransform(idx, transformPresets.expand15);
                       }}
-                      style={iconBtnStyle(rowLoading[idx], "#e2e8f0", "#0f172a")}
+                      style={iconBtnStyle(rowLoading[idx], "#e2e8f0", "#0f172a", !!rowLoading[idx] || sentenceCount(card.answer) === 15)}
                     >
-                      {rowLoading[idx] ? <ClipLoader size={14} color="#0b1220" /> : <FaBookOpen size={14} color="#0f172a" /> }
+                      {rowLoading[idx] ? <ClipLoader size={14} color="#0b1220" cssOverride={{ borderWidth: "3px" }} /> : <FaBookOpen size={14} color="#0f172a" /> }
                     </button>
                   </div>
                 </td>
