@@ -83,12 +83,19 @@ export default function FlashCardApp() {
   useEffect(() => {
     localStorage.setItem("cards", JSON.stringify(cards));
   }, [cards]);
+  useEffect(() => {
+    setActiveTab(cards.length > 0 ? "view" : "controls");
+  }, [cards.length]);
 
   const [prompt, setPrompt] = useState("");
   const [mode, setMode] = useState("table");
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [activeTab, setActiveTab] = useState(() => {
+    if (cards.length > 0) return "view";
+    return "controls";
+  });
 
   useEffect(() => {
     const handleResize = () => {
@@ -563,14 +570,6 @@ export default function FlashCardApp() {
   const [typingComplete, setTypingComplete] = useState(false);
   const [typingCombo, setTypingCombo] = useState(0);
   const [typingBestCombo, setTypingBestCombo] = useState(0);
-  const [showChrome, setShowChrome] = useState(true);
-
-  // Ensure controls show when flashcards opened via action button
-  useEffect(() => {
-    if (flashcardPrompt) {
-      setShowChrome(true);
-    }
-  }, [flashcardPrompt]);
 
   const resetSurvival = () => {
     const order = shuffleArray(cards.map((_, i) => i));
@@ -1092,22 +1091,46 @@ export default function FlashCardApp() {
         <h2 style={{ margin: 0, color: COLORS.text }}>
           Flash Card Study Tool
         </h2>
+      </div>
+      <div style={{ display: "flex", gap: "0.5rem", margin: "0.75rem 0" }}>
         <button
-          onClick={() => setShowChrome((v) => !v)}
+          onClick={() => setActiveTab("view")}
           style={{
-            padding: "0.5rem 0.85rem",
-            border: `1px solid ${COLORS.border}`,
+            padding: "0.5rem 0.9rem",
             borderRadius: "10px",
-            background: showChrome ? COLORS.buttonBgActive : COLORS.buttonBg,
+            border: `1px solid ${COLORS.border}`,
+            background: activeTab === "view" ? COLORS.buttonBgActive : COLORS.buttonBg,
+            fontWeight: 700,
             cursor: "pointer",
             color: COLORS.text,
           }}
         >
-          {showChrome ? "Hide Controls" : "Show Controls"}
+          View / Play
+        </button>
+        <button
+          onClick={() => setActiveTab("controls")}
+          style={{
+            padding: "0.5rem 0.9rem",
+            borderRadius: "10px",
+            border: `1px solid ${COLORS.border}`,
+            background: activeTab === "controls" ? COLORS.buttonBgActive : COLORS.buttonBg,
+            fontWeight: 700,
+            cursor: "pointer",
+            color: COLORS.text,
+          }}
+        >
+          Controls & Data
         </button>
       </div>
-        {showChrome && renderControls()}
-        {showChrome && renderNavigation()}
+
+      {activeTab === "controls" && (
+        <>
+          {renderControls()}
+          {renderNavigation()}
+        </>
+      )}
+
+      {activeTab === "view" && (
         <CurrentModeView
           mode={mode}
           cards={cards}
@@ -1185,6 +1208,7 @@ export default function FlashCardApp() {
           onSubmitTyping={handleTypingSubmit}
           setCards={setCards}
         />
+      )}
       </div>
     </FlashCardContext.Provider>
   );
