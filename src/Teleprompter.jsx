@@ -28,6 +28,14 @@ const TeleprompterAdvanced = () => {
   const [remainingSec, setRemainingSec] = useState(0);
   const [progress, setProgress] = useState(0);
   const [isRunning, setIsRunning] = useState(false);
+  const speedHoldRef = useRef(1);
+  const dirHoldRef = useRef(null);
+  const heightRef = useRef(0);
+  const offsetRef = useRef(0);
+  const lastTsRef = useRef(null);
+  const rafRef = useRef(null);
+  const runningRef = useRef(false);
+  const baseDirRef = useRef(1);
 
   // Refs for DOM elements
   const contentRef = useRef(null);
@@ -46,12 +54,12 @@ const TeleprompterAdvanced = () => {
     // Duplicate the text for a continuous scrolling loop
     const text = script.trim();
     el.textContent = `${text}\n\n${text}`;
-    // Calculate duration based on content height and scroll speed
     const scriptHeight = el.scrollHeight / 2;
-    const duration = scriptHeight / speed;
-    el.style.animationDuration = `${duration}s`;
-    setDurationSec(duration);
-    setRemainingSec(duration);
+    heightRef.current = scriptHeight;
+    offsetRef.current = 0;
+    lastTsRef.current = null;
+    setDurationSec(scriptHeight / speed);
+    setRemainingSec(scriptHeight / speed);
     setProgress(0);
   }, [script, speed, fontSize]);
 
@@ -86,18 +94,49 @@ const TeleprompterAdvanced = () => {
     if (!el) return;
     const text = script.trim() || "Paste your code above and press Start.";
     el.textContent = `${text}\n\n${text}`;
-    // Compute duration based on content height and current speed
     const scriptHeight = el.scrollHeight / 2;
-    const duration = scriptHeight / speed;
-    el.style.animationDuration = `${duration}s`;
-    // Resume scrolling
-    el.style.animationPlayState = "running";
+    heightRef.current = scriptHeight;
+    offsetRef.current = 0;
+    lastTsRef.current = null;
     setIsPaused(false);
-    setDurationSec(duration);
-    setRemainingSec(duration);
+    setDurationSec(scriptHeight / speed);
+    setRemainingSec(scriptHeight / speed);
     setProgress(0);
     setIsRunning(true);
+    runningRef.current = true;
     setShowControls(false);
+    if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    const step = (ts) => {
+      if (!runningRef.current) {
+        rafRef.current = requestAnimationFrame(step);
+        return;
+      }
+      if (lastTsRef.current === null) lastTsRef.current = ts;
+      const dt = (ts - lastTsRef.current) / 1000;
+      lastTsRef.current = ts;
+      const baseDir = baseDirRef.current;
+      const dir = dirHoldRef.current ?? baseDir;
+      const mult = speedHoldRef.current || 1;
+      const distance = speed * mult * dt;
+      let nextOffset = offsetRef.current + dir * distance;
+      const h = heightRef.current || 1;
+      // Wrap seamlessly
+      if (nextOffset > h) nextOffset = nextOffset % h;
+      if (nextOffset < 0) nextOffset = h + (nextOffset % h);
+      offsetRef.current = nextOffset;
+      const translateY = -nextOffset;
+      el.style.transform = `${mirror ? "scaleX(-1) " : ""}translateY(${translateY}px)`;
+      // Progress and remaining time
+      const frac = h ? nextOffset / h : 0;
+      setProgress(frac * 100);
+      const currentSpeed = speed * mult;
+      if (currentSpeed > 0) {
+        const remaining = dir > 0 ? h - nextOffset : nextOffset;
+        setRemainingSec(remaining / currentSpeed);
+      }
+      rafRef.current = requestAnimationFrame(step);
+    };
+    rafRef.current = requestAnimationFrame(step);
   };
 
   // Pause or resume scrolling
@@ -106,7 +145,7 @@ const TeleprompterAdvanced = () => {
     if (!el || !el.textContent) return;
     setIsPaused((prev) => {
       const newPaused = !prev;
-      el.style.animationPlayState = newPaused ? "paused" : "running";
+      runningRef.current = !newPaused;
       setIsRunning(!newPaused);
       return newPaused;
     });
@@ -154,6 +193,24 @@ const TeleprompterAdvanced = () => {
       document.exitFullscreen();
     }
   };
+
+  const handleSpeedHoldStart = () => {
+    speedHoldRef.current = 2;
+  };
+  const handleSpeedHoldEnd = () => {
+    speedHoldRef.current = 1;
+  };
+
+  const handleReverseHoldStart = () => {
+    dirHoldRef.current = -1 * (baseDirRef.current || 1);
+  };
+  const handleReverseHoldEnd = () => {
+    dirHoldRef.current = null;
+  };
+
+  useEffect(() => {
+    baseDirRef.current = scrollDirection === "up" ? 1 : -1;
+  }, [scrollDirection]);
 
   // Choose the appropriate animation name based on scroll direction
   const animationName = scrollDirection === "down" ? "scrollDown" : "scrollUp";
@@ -460,6 +517,57 @@ const TeleprompterAdvanced = () => {
           <span>{Math.max(0, Math.round(remainingSec))}s left</span>
           <span>Cycle {durationSec ? `${Math.round(durationSec)}s` : "–"}</span>
         </div>
+      </div>
+
+      {/* Floating hold buttons for speed/reverse */}
+      <div
+        style={{
+          position: "fixed",
+          left: 12,
+          bottom: showControls ? 120 : 90,
+          display: "flex",
+          flexDirection: "column",
+          gap: 8,
+          zIndex: 20,
+          pointerEvents: "auto",
+        }}
+      >
+        <button
+          onPointerDown={handleSpeedHoldStart}
+          onPointerUp={handleSpeedHoldEnd}
+          onPointerLeave={handleSpeedHoldEnd}
+          style={{
+            width: 46,
+            height: 46,
+            borderRadius: "50%",
+            background: "linear-gradient(135deg, #22d3ee, #0ea5e9)",
+            color: "#0b1220",
+            fontWeight: 800,
+            boxShadow: "0 10px 20px rgba(0,0,0,0.25)",
+          }}
+          title="Hold to double speed"
+          aria-label="Hold to double speed"
+        >
+          2×
+        </button>
+        <button
+          onPointerDown={handleReverseHoldStart}
+          onPointerUp={handleReverseHoldEnd}
+          onPointerLeave={handleReverseHoldEnd}
+          style={{
+            width: 46,
+            height: 46,
+            borderRadius: "50%",
+            background: "linear-gradient(135deg, #fb7185, #ef4444)",
+            color: "#0b1220",
+            fontWeight: 800,
+            boxShadow: "0 10px 20px rgba(0,0,0,0.25)",
+          }}
+          title="Hold to reverse scroll"
+          aria-label="Hold to reverse scroll"
+        >
+          ⇅
+        </button>
       </div>
 
       {/* Keyframes for scrolling animations */}
