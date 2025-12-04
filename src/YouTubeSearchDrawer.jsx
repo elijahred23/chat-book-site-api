@@ -282,6 +282,12 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo, ex
     }, [externalQuery]);
 
     useEffect(() => {
+        if (isOpen) {
+            setActiveTab('search');
+        }
+    }, [isOpen]);
+
+    useEffect(() => {
         if (results.length && !results[0]?._url) {
             const decorated = decorateResults(results);
             setResults(sortResults(decorated));
