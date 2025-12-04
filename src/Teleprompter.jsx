@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { FaForward, FaFastForward, FaUndoAlt, FaBackward, FaPause, FaPlay } from "react-icons/fa";
+import { FaForward, FaFastForward, FaUndoAlt, FaBackward, FaPause, FaPlay, FaStepForward, FaStepBackward } from "react-icons/fa";
 import { useAppState } from "./context/AppContext";
 
 const TeleprompterAdvanced = () => {
@@ -212,6 +212,18 @@ const TeleprompterAdvanced = () => {
   useEffect(() => {
     baseDirRef.current = scrollDirection === "up" ? 1 : -1;
   }, [scrollDirection]);
+
+  const nudgeOffset = (multiplier = 1) => {
+    const el = contentRef.current;
+    if (!el || !heightRef.current) return;
+    const h = heightRef.current;
+    let nextOffset = offsetRef.current + multiplier * h * 0.05;
+    if (nextOffset > h) nextOffset = nextOffset % h;
+    if (nextOffset < 0) nextOffset = h + (nextOffset % h);
+    offsetRef.current = nextOffset;
+    const translateY = -nextOffset;
+    el.style.transform = `${mirror ? "scaleX(-1) " : ""}translateY(${translateY}px)`;
+  };
 
   // Choose the appropriate animation name based on scroll direction
   const animationName = scrollDirection === "down" ? "scrollDown" : "scrollUp";
@@ -601,6 +613,48 @@ const TeleprompterAdvanced = () => {
           aria-label="Hold to 4x speed"
         >
           <FaFastForward />
+        </button>
+        <button
+          onClick={() => nudgeOffset(-1)}
+          style={{
+            width: 46,
+            height: 46,
+            borderRadius: "50%",
+            background: "linear-gradient(135deg, #cbd5e1, #94a3b8)",
+            color: "#0b1220",
+            fontWeight: 800,
+            boxShadow: "0 10px 20px rgba(0,0,0,0.25)",
+            WebkitUserSelect: "none",
+            userSelect: "none",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+          title="Nudge back"
+          aria-label="Nudge back"
+        >
+          <FaStepBackward />
+        </button>
+        <button
+          onClick={() => nudgeOffset(1)}
+          style={{
+            width: 46,
+            height: 46,
+            borderRadius: "50%",
+            background: "linear-gradient(135deg, #c7f9cc, #6ee7b7)",
+            color: "#0b1220",
+            fontWeight: 800,
+            boxShadow: "0 10px 20px rgba(0,0,0,0.25)",
+            WebkitUserSelect: "none",
+            userSelect: "none",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+          title="Nudge forward"
+          aria-label="Nudge forward"
+        >
+          <FaStepForward />
         </button>
         <button
           onPointerDown={() => { dirHoldRef.current = -2 * (baseDirRef.current || 1); }}
