@@ -5,6 +5,7 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo, ex
     const [searchQuery, setSearchQuery] = useState(() => localStorage.getItem('yt_search_query') || '');
     const [searchType, setSearchType] = useState(() => localStorage.getItem('yt_search_type') || 'video');
     const [filterType, setFilterType] = useState(() => localStorage.getItem('yt_filter_type') || 'relevance');
+    const [activeTab, setActiveTab] = useState('search'); // search | results
     const [playlistVideos, setPlaylistVideos] = useState(() => {
         try {
             const stored = localStorage.getItem('yt_playlist_cache');
@@ -144,6 +145,7 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo, ex
         try {
             const res = await getTrendingVideos();
             setAndCacheResults(res);
+            setActiveTab('results');
         } catch (err) {
             console.error('Search failed:', err);
         } finally {
@@ -158,6 +160,7 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo, ex
         try {
             const res = await getNewsVideos();
             setAndCacheResults(res);
+            setActiveTab('results');
         } catch (err) {
             console.error('Search failed:', err);
         } finally {
@@ -179,12 +182,14 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo, ex
                 setNextPageToken(res.nextPageToken || null);
                 setPrevPageToken(res.prevPageToken || null);
                 setLastQuery(queryToUse);
+                setActiveTab('results');
             } else {
                 const res = await searchYouTubePlaylists(queryToUse);
                 setAndCacheResults(res);
                 setNextPageToken(null);
                 setPrevPageToken(null);
                 setLastQuery(queryToUse);
+                setActiveTab('results');
             }
         } catch (err) {
             console.error('Search failed:', err);
@@ -443,6 +448,22 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo, ex
 
                 <div className="yt-shell">
                     <div className="yt-search-card" style={{ position: 'sticky', top: 0, zIndex: 10 }}>
+                        <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.75rem' }}>
+                            <button
+                                className={`btn ${activeTab === 'search' ? 'primary-btn' : 'secondary-btn'}`}
+                                onClick={() => setActiveTab('search')}
+                                style={{ flex: '0 0 auto', minWidth: '120px' }}
+                            >
+                                Search
+                            </button>
+                            <button
+                                className={`btn ${activeTab === 'results' ? 'primary-btn' : 'secondary-btn'}`}
+                                onClick={() => setActiveTab('results')}
+                                style={{ flex: '0 0 auto', minWidth: '120px' }}
+                            >
+                                Results
+                            </button>
+                        </div>
                         <div className="yt-header">
                             <div>
                                 <p className="eyebrow">Smart search</p>
@@ -453,16 +474,13 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo, ex
 
                         <div style={{ marginTop: "10px", display: 'flex', justifyContent: 'space-between', gap: '0.5rem', flexWrap: 'wrap' }}>
                             <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
-                                <button className="btn secondary-btn" onClick={() => setIsSearchVisible((v) => !v)}>
-                                    {isSearchVisible ? 'Hide search' : 'Show search'}
-                                </button>
                                 <button className="btn secondary-btn" onClick={getYoutubeTrending}>🔥 Trending</button>
                                 <button className="btn secondary-btn" onClick={getYoutubeNews}>📰 News</button>
                             </div>
                             <small style={{ color: '#94a3b8' }}>{results.length} result{results.length === 1 ? '' : 's'}</small>
                         </div>
 
-                        {isSearchVisible && (
+                        {isSearchVisible && activeTab === 'search' && (
                             <>
                                 <input
                                     ref={inputRef}
@@ -531,99 +549,101 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo, ex
                     </div>
 
                     {/* Results */}
-                    <div className="yt-search-card" style={{ marginTop: '0.75rem' }}>
-                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
-                            <h4 style={{ margin: 0 }}>Results</h4>
-                            {loading && <span style={{ color: '#94a3b8' }}>Loading…</span>}
-                        </div>
-                        {results.length === 0 && !loading && (
-                            <div style={{ color: '#94a3b8', fontSize: '0.95rem' }}>Try searching for a topic or open Trending/News.</div>
-                        )}
-                        <div className="result-grid">
-                            {results.map((item, index) => {
-                                const isPlaylist = item._isPlaylist;
-                                const playlistId = item._playlistId;
-                                const thumb = item._thumb;
-                                const videoUrl = item._url;
-                                const playlistItems = playlistVideos[playlistId] || [];
+                    {activeTab === 'results' && (
+                      <div className="yt-search-card" style={{ marginTop: '0.75rem' }}>
+                          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
+                              <h4 style={{ margin: 0 }}>Results</h4>
+                              {loading && <span style={{ color: '#94a3b8' }}>Loading…</span>}
+                          </div>
+                          {results.length === 0 && !loading && (
+                              <div style={{ color: '#94a3b8', fontSize: '0.95rem' }}>Try searching for a topic or open Trending/News.</div>
+                          )}
+                          <div className="result-grid">
+                              {results.map((item, index) => {
+                                  const isPlaylist = item._isPlaylist;
+                                  const playlistId = item._playlistId;
+                                  const thumb = item._thumb;
+                                  const videoUrl = item._url;
+                                  const playlistItems = playlistVideos[playlistId] || [];
 
-                                return (
-                                    <div key={index} className="result-card">
-                                        <div style={{ width: '100%', height: '100%' }}>
-                                            {thumb && (
-                                                <img
-                                                    src={thumb}
-                                                    alt={item.title}
-                                                    className="thumb"
-                                                />
-                                            )}
-                                        </div>
-                                        <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', minWidth: 0 }}>
-                                            <h5 style={{ margin: 0, fontSize: '1rem', color: '#e2e8f0', lineHeight: 1.3 }}>{item.title}</h5>
-                                            <p style={{ margin: 0, fontSize: '0.9rem', color: '#cbd5e1' }}>{item.channelTitle}</p>
-                                            <div className="video-actions">
-                                                {item._prettyDuration && <span className="pill">⏱ {item._prettyDuration}</span>}
-                                                {item._publishedAt && <span className="pill">📅 {new Date(item._publishedAt).toLocaleDateString()}</span>}
-                                                {item.viewCount && <span className="pill">👁️ {Number(item.viewCount).toLocaleString()}</span>}
-                                                {item.likeCount && <span className="pill">👍 {Number(item.likeCount).toLocaleString()}</span>}
-                                            </div>
+                                  return (
+                                      <div key={index} className="result-card">
+                                          <div style={{ width: '100%', height: '100%' }}>
+                                              {thumb && (
+                                                  <img
+                                                      src={thumb}
+                                                      alt={item.title}
+                                                      className="thumb"
+                                                  />
+                                              )}
+                                          </div>
+                                          <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', minWidth: 0 }}>
+                                              <h5 style={{ margin: 0, fontSize: '1rem', color: '#e2e8f0', lineHeight: 1.3 }}>{item.title}</h5>
+                                              <p style={{ margin: 0, fontSize: '0.9rem', color: '#cbd5e1' }}>{item.channelTitle}</p>
+                                              <div className="video-actions">
+                                                  {item._prettyDuration && <span className="pill">⏱ {item._prettyDuration}</span>}
+                                                  {item._publishedAt && <span className="pill">📅 {new Date(item._publishedAt).toLocaleDateString()}</span>}
+                                                  {item.viewCount && <span className="pill">👁️ {Number(item.viewCount).toLocaleString()}</span>}
+                                                  {item.likeCount && <span className="pill">👍 {Number(item.likeCount).toLocaleString()}</span>}
+                                              </div>
 
-                                            {isPlaylist ? (
-                                                <button
-                                                    className='btn secondary-btn'
-                                                    style={{ marginTop: '0.4rem' }}
-                                                    onClick={() => togglePlaylist(item)}
-                                                >
-                                                    {expandedPlaylists.includes(playlistId) ? 'Hide playlist videos' : 'Show playlist videos'}
-                                                </button>
-                                            ) : (
-                                                <div style={{ marginTop: '0.4rem', display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
-                                                    <button className='btn primary-btn' onClick={() => handleUseVideo(videoUrl)}>Use this video</button>
-                                                    <button className='btn secondary-btn' onClick={() => handleCopy(videoUrl)}>
-                                                        {copiedUrl === videoUrl ? 'Copied!' : 'Copy URL'}
-                                                    </button>
-                                                </div>
-                                            )}
-                                        </div>
+                                              {isPlaylist ? (
+                                                  <button
+                                                      className='btn secondary-btn'
+                                                      style={{ marginTop: '0.4rem' }}
+                                                      onClick={() => togglePlaylist(item)}
+                                                  >
+                                                      {expandedPlaylists.includes(playlistId) ? 'Hide playlist videos' : 'Show playlist videos'}
+                                                  </button>
+                                              ) : (
+                                                  <div style={{ marginTop: '0.4rem', display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+                                                      <button className='btn primary-btn' onClick={() => handleUseVideo(videoUrl)}>Use this video</button>
+                                                      <button className='btn secondary-btn' onClick={() => handleCopy(videoUrl)}>
+                                                          {copiedUrl === videoUrl ? 'Copied!' : 'Copy URL'}
+                                                      </button>
+                                                  </div>
+                                              )}
+                                          </div>
 
-                                        {isPlaylist && expandedPlaylists.includes(playlistId) && (
-                                            <div className="playlist-items">
-                                                {playlistItems.length === 0 && (
-                                                    <div style={{ color: '#94a3b8', fontSize: '0.9rem' }}>Loading playlist videos…</div>
-                                                )}
-                                                {playlistItems.map((vid, idx) => {
-                                                    const vidThumb = vid?.thumbnails?.default?.url || vid?.thumbnails?.medium?.url;
-                                                    const vidUrl = videoUrlFromItem(vid);
-                                                    return (
-                                                        <div key={idx} className="playlist-item-row">
-                                                            {vidThumb && (
-                                                                <img
-                                                                    src={vidThumb}
-                                                                    alt={vid.title}
-                                                                    style={{ width: '64px', height: '40px', objectFit: 'cover', borderRadius: '8px' }}
-                                                                />
-                                                            )}
-                                                            <div style={{ flex: 1 }}>
-                                                                <div style={{ fontWeight: 700, color: '#e2e8f0', fontSize: '0.95rem' }}>{vid.title}</div>
-                                                                <div style={{ fontSize: '0.82rem', color: '#cbd5e1' }}>{vid.channelTitle}</div>
-                                                            </div>
-                                                            <button
-                                                                className='btn primary-btn'
-                                                                onClick={() => handleUseVideo(vidUrl)}
-                                                                style={{ whiteSpace: 'nowrap' }}
-                                                            >
-                                                                Use this video
-                                                            </button>
-                                                        </div>
-                                                    );
-                                                })}
-                                            </div>
-                                        )}
-                                    </div>
-                                );
-                            })}
-                        </div>
-                    </div>
+                                          {isPlaylist && expandedPlaylists.includes(playlistId) && (
+                                              <div className="playlist-items">
+                                                  {playlistItems.length === 0 && (
+                                                      <div style={{ color: '#94a3b8', fontSize: '0.9rem' }}>Loading playlist videos…</div>
+                                                  )}
+                                                  {playlistItems.map((vid, idx) => {
+                                                      const vidThumb = vid?.thumbnails?.default?.url || vid?.thumbnails?.medium?.url;
+                                                      const vidUrl = videoUrlFromItem(vid);
+                                                      return (
+                                                          <div key={idx} className="playlist-item-row">
+                                                              {vidThumb && (
+                                                                  <img
+                                                                      src={vidThumb}
+                                                                      alt={vid.title}
+                                                                      style={{ width: '64px', height: '40px', objectFit: 'cover', borderRadius: '8px' }}
+                                                                  />
+                                                              )}
+                                                              <div style={{ flex: 1 }}>
+                                                                  <div style={{ fontWeight: 700, color: '#e2e8f0', fontSize: '0.95rem' }}>{vid.title}</div>
+                                                                  <div style={{ fontSize: '0.82rem', color: '#cbd5e1' }}>{vid.channelTitle}</div>
+                                                              </div>
+                                                              <button
+                                                                  className='btn primary-btn'
+                                                                  onClick={() => handleUseVideo(vidUrl)}
+                                                                  style={{ whiteSpace: 'nowrap' }}
+                                                              >
+                                                                  Use this video
+                                                              </button>
+                                                          </div>
+                                                      );
+                                                  })}
+                                              </div>
+                                          )}
+                                      </div>
+                                  );
+                              })}
+                          </div>
+                      </div>
+                    )}
                 </div>
             </div>
         </div>
