@@ -276,22 +276,38 @@ export default function YouTubeTranscript() {
     const loadFlaskYoutubeTranscript = async () => {
         setLoadingTranscript(true);
         try {
-            let data = await getFlaskYoutubeTranscript(url);
-            if(data?.transcript?.length > 0){
-                const newTranscript = data.transcript;
-                const wordCount = countWords(newTranscript);
-                const splits = Math.ceil(wordCount / wordSplitNumber);
-                setTranscript(newTranscript);
-                setSplitLength(splits);
-                setLastFetchedUrl(url);
-                showMessage?.({ type: "success", message: "Transcript found." });
-                setActiveTab("prompt");
+            const maxAttempts = 4;
+            let attempt = 0;
+            let success = false;
+            while (attempt < maxAttempts && !success) {
+                try {
+                    const data = await getFlaskYoutubeTranscript(url);
+                    if (data?.transcript?.length > 0) {
+                        const newTranscript = data.transcript;
+                        const wordCount = countWords(newTranscript);
+                        const splits = Math.ceil(wordCount / wordSplitNumber);
+                        setTranscript(newTranscript);
+                        setSplitLength(splits);
+                        setLastFetchedUrl(url);
+                        showMessage?.({ type: "success", message: `Transcript found${attempt ? ` after retry ${attempt}` : ""}.` });
+                        setActiveTab("prompt");
+                        success = true;
+                        break;
+                    } else {
+                        throw new Error("Empty transcript");
+                    }
+                } catch (err) {
+                    attempt += 1;
+                    if (attempt < maxAttempts) {
+                        showMessage?.({ type: "error", message: `Transcript load failed (attempt ${attempt}). Retrying...` });
+                    } else {
+                        showMessage?.({ type: "error", message: "Failed to load transcript after retries." });
+                    }
+                }
             }
-
-        } catch (err) {
-            showMessage?.({ type: "error", message: "Failed to load transcript." });    
+        } finally {
+            setLoadingTranscript(false);
         }
-        setLoadingTranscript(false);
     };
 
     const loadTranscriptSupaData = async () => {
