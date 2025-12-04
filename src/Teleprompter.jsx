@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { FaForward, FaFastForward, FaUndoAlt, FaBackward } from "react-icons/fa";
+import { FaForward, FaFastForward, FaUndoAlt, FaBackward, FaPause, FaPlay } from "react-icons/fa";
 import { useAppState } from "./context/AppContext";
 
 const TeleprompterAdvanced = () => {
@@ -529,12 +529,33 @@ const TeleprompterAdvanced = () => {
           left: 12,
           bottom: showControls ? -999 : 90,
           display: "flex",
-          flexDirection: "column",
+          flexDirection: "row",
           gap: 8,
           zIndex: 20,
           pointerEvents: "auto",
         }}
       >
+        <button
+          onClick={togglePause}
+          style={{
+            width: 46,
+            height: 46,
+            borderRadius: "50%",
+            background: "linear-gradient(135deg, #34d399, #10b981)",
+            color: "#0b1220",
+            fontWeight: 800,
+            boxShadow: "0 10px 20px rgba(0,0,0,0.25)",
+            WebkitUserSelect: "none",
+            userSelect: "none",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+          title={isPaused ? "Play" : "Pause"}
+          aria-label={isPaused ? "Play" : "Pause"}
+        >
+          {isPaused ? <FaPlay /> : <FaPause />}
+        </button>
         <button
           onPointerDown={() => { speedHoldRef.current = 2; }}
           onPointerUp={() => { speedHoldRef.current = 1; }}
