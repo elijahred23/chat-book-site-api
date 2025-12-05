@@ -454,18 +454,18 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo, ex
 
                 <div className="yt-shell">
                     <div className="yt-search-card" style={{ position: 'sticky', top: 0, zIndex: 10 }}>
-                        <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.75rem' }}>
+                        <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.75rem', flexWrap: 'wrap' }}>
                             <button
                                 className={`btn ${activeTab === 'search' ? 'primary-btn' : 'secondary-btn'}`}
                                 onClick={() => setActiveTab('search')}
-                                style={{ flex: '0 0 auto', minWidth: '120px' }}
+                                style={{ flex: '1 1 110px', minWidth: '0', padding: '0.45rem 0.6rem' }}
                             >
                                 Search
                             </button>
                             <button
                                 className={`btn ${activeTab === 'results' ? 'primary-btn' : 'secondary-btn'}`}
                                 onClick={() => setActiveTab('results')}
-                                style={{ flex: '0 0 auto', minWidth: '120px' }}
+                                style={{ flex: '1 1 110px', minWidth: '0', padding: '0.45rem 0.6rem' }}
                             >
                                 Results
                             </button>
