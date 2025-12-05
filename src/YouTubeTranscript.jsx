@@ -808,20 +808,6 @@ export default function YouTubeTranscript() {
                         placeholder="Or manually enter transcript here..."
                     />
                     <div className="button-group">
-                        <PasteButton
-                            setPasteText={setManuallyEnteredTranscript}
-                            className="btn paste-btn"
-                        />
-                        <CopyButton
-                            text={manuallyEnteredTranscript}
-                            className="btn copy-btn"
-                        />
-                        <button
-                            className="btn secondary-btn"
-                            onClick={() => setManuallyEnteredTranscript("")}
-                        >
-                            Clear
-                        </button>
                         <label className="btn secondary-btn" style={{ cursor: 'pointer' }}>
                             Upload .txt
                             <input
@@ -836,9 +822,24 @@ export default function YouTubeTranscript() {
                                         setManuallyEnteredTranscript(event.target.result);
                                     };
                                     reader.readAsText(file);
+                                    setActiveTab("prompt")
                                 }}
                             />
                         </label>
+                        <PasteButton
+                            setPasteText={setManuallyEnteredTranscript}
+                            className="btn paste-btn"
+                        />
+                        <CopyButton
+                            text={manuallyEnteredTranscript}
+                            className="btn copy-btn"
+                        />
+                        <button
+                            className="btn secondary-btn"
+                            onClick={() => setManuallyEnteredTranscript("")}
+                        >
+                            Clear
+                        </button>
                     </div>
                 </>
             )}
