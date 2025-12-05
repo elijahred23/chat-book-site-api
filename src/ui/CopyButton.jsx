@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { actions, useAppDispatch } from '../context/AppContext';
+import { useFlyout } from '../context/FlyoutContext';
 
 // Utility function to remove basic Markdown syntax
 const stripMarkdown = (markdownText) => {
@@ -20,6 +21,7 @@ const stripMarkdown = (markdownText) => {
 const CopyButton = ({ text, buttonText = 'Copy', onCopy, className = '' }) => {
   const [copied, setCopied] = useState(false);
   const dispatch = useAppDispatch();
+  const { showMessage } = useFlyout();
 
   const handleCopy = async () => {
     const plainText = stripMarkdown(text);
@@ -28,9 +30,11 @@ const CopyButton = ({ text, buttonText = 'Copy', onCopy, className = '' }) => {
       await navigator.clipboard.writeText(plainText);
       setCopied(true);
       if (onCopy) onCopy(plainText);
+      showMessage?.({ type: 'success', message: 'Copied to clipboard.' });
       setTimeout(() => setCopied(false), 1500); // reset after 1.5s
     } catch (err) {
       console.error('Failed to copy:', err);
+      showMessage?.({ type: 'error', message: 'Copy failed. Try again.' });
     }
   };
 

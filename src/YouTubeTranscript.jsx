@@ -875,6 +875,7 @@ export default function YouTubeTranscript() {
                         Transcript Preview <span style={{ fontSize: '0.9rem', color: '#666' }}>({transcriptWordCount} words)</span>
                     </h2>
                     <CopyButton text={transcript} buttonText="📋 Copy Complete Transcript" className="btn copy-btn" />
+                    <ActionButtons promptText={transcript} />
                     <div className="scrollable-card">
                         {splitTranscript.map((chunk, i) => (
                             <div key={i} className="chunk">

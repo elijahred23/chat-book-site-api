@@ -17,6 +17,7 @@ import {
   FaBullhorn,
   FaMagic,
   FaListAlt,
+  FaDownload,
 } from "react-icons/fa";
 import { useFlyout } from "../context/FlyoutContext";
 import { FcGoogle } from "react-icons/fc";
@@ -202,6 +203,51 @@ export default function ActionButtons({ promptText, limitButtons = false }) {
           `https://en.wikipedia.org/wiki/Special:Search?search=${query}`,
           "_blank"
         );
+      },
+    },
+    {
+      icon: FaDownload,
+      title: "Download .txt",
+      color: "#e2e8f0",
+      iconColor: "#0f172a",
+      onClick: async (e) => {
+        e.stopPropagation();
+        try {
+          const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+          const supportsPicker = typeof window.showSaveFilePicker === "function";
+
+          if (supportsPicker && !isMobile) {
+            const handle = await window.showSaveFilePicker({
+              suggestedName: "content.txt",
+              types: [
+                {
+                  description: "Text file",
+                  accept: { "text/plain": [".txt"] },
+                },
+              ],
+            });
+            const writable = await handle.createWritable();
+            await writable.write(cleanText || "");
+            await writable.close();
+            showMessage?.({ type: "success", message: "File saved where you chose." });
+            return;
+          }
+
+          // Mobile or no file picker: simple download
+          const blob = new Blob([cleanText || ""], { type: "text/plain" });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement("a");
+          a.href = url;
+          a.download = "content.txt";
+          document.body.appendChild(a);
+          a.click();
+          a.remove();
+          URL.revokeObjectURL(url);
+          showMessage?.({ type: "success", message: "Downloaded content.txt" });
+        } catch (err) {
+          console.error("Download failed", err);
+          showMessage?.({ type: "error", message: "Download failed." });
+        }
       },
     },
     {
