@@ -233,17 +233,26 @@ export default function ActionButtons({ promptText, limitButtons = false }) {
             return;
           }
 
-          // Mobile or no file picker: simple download
+          // Mobile or no file picker: prompt for name on mobile, otherwise direct download
+          let filename = "content.txt";
+          if (isMobile) {
+            const inputName = window.prompt("Name your file", filename);
+            if (!inputName) {
+              showMessage?.({ type: "info", message: "Download canceled." });
+              return;
+            }
+            filename = inputName.endsWith(".txt") ? inputName : `${inputName}.txt`;
+          }
           const blob = new Blob([cleanText || ""], { type: "text/plain" });
           const url = URL.createObjectURL(blob);
           const a = document.createElement("a");
           a.href = url;
-          a.download = "content.txt";
+          a.download = filename;
           document.body.appendChild(a);
           a.click();
           a.remove();
           URL.revokeObjectURL(url);
-          showMessage?.({ type: "success", message: "Downloaded content.txt" });
+          showMessage?.({ type: "success", message: `Downloaded ${filename}` });
         } catch (err) {
           console.error("Download failed", err);
           showMessage?.({ type: "error", message: "Download failed." });
