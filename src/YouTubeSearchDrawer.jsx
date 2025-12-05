@@ -1,4 +1,5 @@
 import { useRef, useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { getNewsVideos, getTrendingVideos, searchYouTubeVideos, searchYouTubePlaylists, getPlaylistVideos } from './utils/callYoutube';
 
 export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo, externalQuery }) {
@@ -96,7 +97,7 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo, ex
         const durationSeconds = item.durationSeconds ?? parseISODurationToSeconds(item.duration);
         return {
             ...item,
-            _thumb: item.thumbnails?.medium?.url || item.thumbnails?.high?.url || item.thumbnails?.default?.url || item.thumbnail,
+            _thumb: item.thumbnails?.high?.url || item.thumbnails?.medium?.url || item.thumbnails?.standard?.url || item.thumbnails?.default?.url || item.thumbnail,
             _durationSeconds: durationSeconds,
             _prettyDuration: item.duration && /^PT/.test(item.duration)
               ? prettifyDuration(durationSeconds)
@@ -287,6 +288,15 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo, ex
     }, [playlistVideos]);
 
     useEffect(() => {
+        if (playlistModal.open) {
+            const prev = document.body.style.overflow;
+            document.body.style.overflow = 'hidden';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            return () => { document.body.style.overflow = prev; };
+        }
+    }, [playlistModal.open]);
+
+    useEffect(() => {
         if (isOpen) {
             focusInput();
             // restore cached results for current mode on open
@@ -356,7 +366,7 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo, ex
                 left: 0,
             }}
         >
-            {playlistModal.open && (
+            {playlistModal.open && createPortal(
                 <div
                     style={{
                         position: 'fixed',
@@ -364,9 +374,10 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo, ex
                         background: 'rgba(0,0,0,0.65)',
                         zIndex: 20000,
                         display: 'flex',
-                        alignItems: 'center',
+                        alignItems: 'flex-start',
                         justifyContent: 'center',
                         padding: '1rem',
+                        overflowY: 'auto',
                     }}
                     onClick={() => setPlaylistModal({ open: false, items: [], title: '', count: 0 })}
                 >
@@ -380,6 +391,8 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo, ex
                             padding: '1rem',
                             boxShadow: '0 24px 60px rgba(0,0,0,0.45)',
                             overflow: 'hidden',
+                            marginTop: '2rem',
+                            marginBottom: '2rem',
                         }}
                         onClick={(e) => e.stopPropagation()}
                     >
@@ -399,7 +412,7 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo, ex
                             )}
                             {playlistModal.items.map((vid, idx) => {
                                 const vUrl = videoUrlFromItem(vid);
-                                const vidThumb = vid?.thumbnails?.medium?.url || vid?.thumbnails?.default?.url;
+                                const vidThumb = vid?.thumbnails?.high?.url || vid?.thumbnails?.standard?.url || vid?.thumbnails?.medium?.url || vid?.thumbnails?.default?.url;
                                 return (
                                     <div key={idx} className="playlist-item-row">
                                         <img
@@ -421,7 +434,8 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo, ex
                             })}
                         </div>
                     </div>
-                </div>
+                </div>,
+                document.body
             )}
             <div className="drawer-body" style={{ padding: '0.75rem', display: 'flex', flexDirection: 'column', gap: '1rem', minHeight: '100vh' }}>
                 <style>{`
@@ -513,7 +527,8 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo, ex
                   }
                   .thumb {
                     width: 100%;
-                    height: 100%;
+                    height: auto;
+                    aspect-ratio: 16 / 9;
                     border-radius: 12px;
                     object-fit: cover;
                     background: #1f2937;
@@ -557,7 +572,8 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo, ex
                   }
                   .playlist-item-thumb {
                     width: 100%;
-                    height: 72px;
+                    height: 90px;
+                    aspect-ratio: 16 / 9;
                     border-radius: 10px;
                     object-fit: cover;
                     background: #0f172a;
