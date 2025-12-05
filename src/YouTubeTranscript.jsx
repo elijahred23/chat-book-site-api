@@ -571,6 +571,34 @@ export default function YouTubeTranscript() {
     return (
         <div className="yt-container">
             <style>{styles}</style>
+            {createPortal(
+                <button
+                    onClick={() => setDrawerOpen(true)}
+                    aria-label="Search YouTube"
+                    title="Search YouTube"
+                    style={{
+                        position: 'fixed',
+                        bottom: '18px',
+                        left: '18px',
+                        width: '56px',
+                        height: '56px',
+                        borderRadius: '50%',
+                        border: 'none',
+                        background: 'linear-gradient(135deg, #2563eb, #22d3ee)',
+                        color: '#0b1220',
+                        boxShadow: '0 14px 32px rgba(37,99,235,0.35)',
+                        zIndex: 15000,
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        fontSize: '1.3rem',
+                        cursor: 'pointer'
+                    }}
+                >
+                    <FaSearch />
+                </button>,
+                document.body
+            )}
             {/* Toolbar */}
             <div className="tab-bar" style={{ alignItems: 'center' }}>
                 <button
@@ -872,20 +900,17 @@ export default function YouTubeTranscript() {
                     )}
 
                     <h2>
-                        Transcript Preview <span style={{ fontSize: '0.9rem', color: '#666' }}>({transcriptWordCount} words)</span>
+                        Transcript Preview 
                     </h2>
                     <CopyButton text={transcript} buttonText="📋 Copy Complete Transcript" className="btn copy-btn" />
                     <ActionButtons promptText={transcript} />
-                    <div className="scrollable-card">
-                        {splitTranscript.map((chunk, i) => (
-                            <div key={i} className="chunk">
-                                <textarea readOnly className="textarea">
-                                    {chunk}
-                                </textarea>
-                                <CopyButton text={chunk} className="btn copy-btn" />
-                            </div>
-                        ))}
-                    </div>
+                    <p>
+                        <span style={{ fontSize: '0.9rem', color: '#666' }}>({transcriptWordCount} words)</span>
+                        &nbsp;Number of chunks: {splitTranscript.length}
+                    </p>
+                    <p>
+                        {transcript}
+                    </p>
                 </>
             )}
 

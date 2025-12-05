@@ -5,7 +5,21 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo, ex
     const [searchQuery, setSearchQuery] = useState(() => localStorage.getItem('yt_search_query') || '');
     const [searchType, setSearchType] = useState(() => localStorage.getItem('yt_search_type') || 'video');
     const [filterType, setFilterType] = useState(() => localStorage.getItem('yt_filter_type') || 'relevance');
-    const [activeTab, setActiveTab] = useState('search'); // search | results
+    const [activeTab, setActiveTab] = useState(() => localStorage.getItem('yt_active_tab') || 'search'); // search | results
+    const cacheKeyForType = (type) => type === 'playlist' ? 'yt_playlist_results' : 'yt_video_results';
+    const getCachedResults = (type) => {
+        try {
+            const stored = localStorage.getItem(cacheKeyForType(type));
+            if (stored) {
+                const parsed = JSON.parse(stored);
+                const MAX_AGE_MS = 10 * 60 * 1000; // 10 minutes
+                if (Date.now() - parsed.timestamp < MAX_AGE_MS) {
+                    return parsed.data || [];
+                }
+            }
+        } catch { }
+        return [];
+    };
     const [playlistVideos, setPlaylistVideos] = useState(() => {
         try {
             const stored = localStorage.getItem('yt_playlist_cache');
@@ -28,20 +42,9 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo, ex
             return [];
         }
     });
+    const [playlistModal, setPlaylistModal] = useState({ open: false, items: [], title: '', count: 0 });
 
-    const [results, setResults] = useState(() => {
-        try {
-            const stored = localStorage.getItem('yt_search_results');
-            if (stored) {
-                const parsed = JSON.parse(stored);
-                const MAX_AGE_MS = 10 * 60 * 1000; // 10 minutes
-                if (Date.now() - parsed.timestamp < MAX_AGE_MS) {
-                    return parsed.data;
-                }
-            }
-        } catch { }
-        return [];
-    });
+    const [results, setResults] = useState(() => getCachedResults(searchType));
 
     const [loading, setLoading] = useState(false);
     const [copiedUrl, setCopiedUrl] = useState(null);
@@ -128,12 +131,13 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo, ex
         return sorted;
     };
 
-    const setAndCacheResults = (list = []) => {
+    const setAndCacheResults = (list = [], typeOverride) => {
+        const key = cacheKeyForType(typeOverride || searchType);
         const decorated = decorateResults(list);
         const sorted = sortResults(decorated);
         setResults(sorted);
         localStorage.setItem(
-            'yt_search_results',
+            key,
             JSON.stringify({ timestamp: Date.now(), data: sorted })
         );
     };
@@ -178,14 +182,14 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo, ex
             }
             if (searchType === 'video') {
                 const res = await searchYouTubeVideos(queryToUse, pageTokenOverride, PAGE_SIZE);
-                setAndCacheResults(res.items);
+                setAndCacheResults(res.items, 'video');
                 setNextPageToken(res.nextPageToken || null);
                 setPrevPageToken(res.prevPageToken || null);
                 setLastQuery(queryToUse);
                 setActiveTab('results');
             } else {
                 const res = await searchYouTubePlaylists(queryToUse);
-                setAndCacheResults(res);
+                setAndCacheResults(res, 'playlist');
                 setNextPageToken(null);
                 setPrevPageToken(null);
                 setLastQuery(queryToUse);
@@ -228,21 +232,27 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo, ex
         const playlistId = item._playlistId;
         if (!playlistId) return;
 
-        const isExpanded = expandedPlaylists.includes(playlistId);
-        if (isExpanded) {
-            setExpandedPlaylists((prev) => prev.filter((id) => id !== playlistId));
+        const showModal = (items) => {
+            setPlaylistModal({
+                open: true,
+                items: items || [],
+                title: item.title || 'Playlist',
+                count: (items || []).length,
+            });
+        };
+
+        if (playlistVideos[playlistId]) {
+            showModal(playlistVideos[playlistId]);
             return;
         }
 
-        if (!playlistVideos[playlistId]) {
-            try {
-                const vids = await getPlaylistVideos(playlistId);
-                setPlaylistVideos((prev) => ({ ...prev, [playlistId]: vids }));
-            } catch (err) {
-                console.error('Failed to load playlist items', err);
-            }
+        try {
+            const vids = await getPlaylistVideos(playlistId);
+            setPlaylistVideos((prev) => ({ ...prev, [playlistId]: vids }));
+            showModal(vids);
+        } catch (err) {
+            console.error('Failed to load playlist items', err);
         }
-        setExpandedPlaylists((prev) => [...prev, playlistId]);
     };
 
     useEffect(() => {
@@ -255,6 +265,13 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo, ex
         setNextPageToken(null);
         setPrevPageToken(null);
         setLastQuery('');
+        // load cached results for this mode
+        const cached = getCachedResults(searchType);
+        if (cached.length) {
+            setResults(sortResults(cached));
+        } else {
+            setResults([]);
+        }
     }, [searchType]);
 
     useEffect(() => {
@@ -270,7 +287,14 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo, ex
     }, [playlistVideos]);
 
     useEffect(() => {
-        if (isOpen) focusInput();
+        if (isOpen) {
+            focusInput();
+            // restore cached results for current mode on open
+            const cached = getCachedResults(searchType);
+            if (cached.length) {
+                setResults(sortResults(cached));
+            }
+        }
     }, [isOpen, searchType]);
 
     useEffect(() => {
@@ -278,12 +302,17 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo, ex
             setSearchQuery(externalQuery);
             setIsSearchVisible(true);
             handleSearch('', externalQuery);
+            localStorage.setItem('yt_search_type', searchType);
         }
     }, [externalQuery]);
 
     useEffect(() => {
+        localStorage.setItem('yt_active_tab', activeTab);
+    }, [activeTab]);
+
+    useEffect(() => {
         if (isOpen) {
-            setActiveTab('search');
+            setActiveTab((prev) => prev || 'search');
         }
     }, [isOpen]);
 
@@ -317,21 +346,99 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo, ex
     ];
 
     return (
-        <div className={`chat-drawer full ${isOpen ? 'open' : ''}`} style={{ maxWidth: '780px', margin: '0 auto' }}>
-            <div className="drawer-body" style={{ padding: '1rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+        <div
+            className={`chat-drawer full ${isOpen ? 'open' : ''}`}
+            style={{
+                maxWidth: '100%',
+                margin: 0,
+                background: 'rgba(5,10,20,0.94)',
+                padding: 0,
+                left: 0,
+            }}
+        >
+            {playlistModal.open && (
+                <div
+                    style={{
+                        position: 'fixed',
+                        inset: 0,
+                        background: 'rgba(0,0,0,0.65)',
+                        zIndex: 20000,
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        padding: '1rem',
+                    }}
+                    onClick={() => setPlaylistModal({ open: false, items: [], title: '', count: 0 })}
+                >
+                    <div
+                        style={{
+                            width: 'min(900px, 100%)',
+                            maxHeight: '90vh',
+                            background: '#0b1220',
+                            border: '1px solid rgba(148,163,184,0.35)',
+                            borderRadius: '16px',
+                            padding: '1rem',
+                            boxShadow: '0 24px 60px rgba(0,0,0,0.45)',
+                            overflow: 'hidden',
+                        }}
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem', gap: '0.5rem' }}>
+                            <div>
+                                <p className="eyebrow" style={{ marginBottom: 4 }}>Playlist</p>
+                                <h3 style={{ margin: 0, color: '#e2e8f0' }}>{playlistModal.title}</h3>
+                                <small style={{ color: '#94a3b8' }}>{playlistModal.count} videos</small>
+                            </div>
+                            <button className="close-chat-btn" onClick={() => setPlaylistModal({ open: false, items: [], title: '', count: 0 })}>×</button>
+                        </div>
+                        <div className="playlist-items" style={{ maxHeight: '70vh', overflowY: 'auto' }}>
+                            {playlistModal.items.length === 0 && (
+                                <div style={{ color: '#94a3b8', fontSize: '0.95rem', textAlign: 'center', padding: '1rem' }}>
+                                    No videos found.
+                                </div>
+                            )}
+                            {playlistModal.items.map((vid, idx) => {
+                                const vUrl = videoUrlFromItem(vid);
+                                const vidThumb = vid?.thumbnails?.medium?.url || vid?.thumbnails?.default?.url;
+                                return (
+                                    <div key={idx} className="playlist-item-row">
+                                        <img
+                                            className="playlist-item-thumb"
+                                            src={vidThumb || ''}
+                                            alt={vid.title}
+                                            onError={(e) => { e.target.style.display = 'none'; }}
+                                        />
+                                        <div className="playlist-item-meta">
+                                            <div style={{ fontWeight: 700, lineHeight: 1.2 }}>{vid.title}</div>
+                                            <small>{vid.channelTitle}</small>
+                                            <div className="video-actions" style={{ marginTop: '0.15rem' }}>
+                                                <button className='btn primary-btn' onClick={() => { handleUseVideo(vUrl); setPlaylistModal({ open: false, items: [], title: '', count: 0 }); }} style={{ whiteSpace: 'nowrap' }}>Use</button>
+                                                <button className='btn secondary-btn' onClick={() => handleCopy(vUrl)}>{copiedUrl === vUrl ? 'Copied!' : 'Copy'}</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    </div>
+                </div>
+            )}
+            <div className="drawer-body" style={{ padding: '0.75rem', display: 'flex', flexDirection: 'column', gap: '1rem', minHeight: '100vh' }}>
                 <style>{`
                   .yt-shell {
-                    background: radial-gradient(circle at 10% 10%, rgba(79,70,229,0.12), transparent 30%), radial-gradient(circle at 90% 20%, rgba(14,165,233,0.18), transparent 32%), #0b1220;
+                    background: radial-gradient(circle at 10% 10%, rgba(79,70,229,0.12), transparent 30%), radial-gradient(circle at 90% 20%, rgba(14,165,233,0.18), transparent 32%), #060b16;
                     color: #e2e8f0;
                     border-radius: 18px;
                     padding: 1rem;
-                    box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+                    box-shadow: 0 28px 80px rgba(0,0,0,0.55);
+                    min-height: calc(100vh - 1.5rem);
                   }
                   .yt-search-card {
-                    background: #0f172a;
+                    background: #0b1220;
                     border: 1px solid rgba(148, 163, 184, 0.35);
                     border-radius: 16px;
                     padding: 1rem;
+                    box-shadow: 0 16px 48px rgba(0,0,0,0.35);
                   }
                   .yt-header {
                     display: flex;
@@ -394,7 +501,7 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo, ex
                     gap: 1rem;
                   }
                   .result-card {
-                    background: #0f172a;
+                    background: linear-gradient(145deg, rgba(15,23,42,0.9), rgba(10,14,26,0.9));
                     border: 1px solid rgba(148,163,184,0.35);
                     border-radius: 14px;
                     padding: 0.9rem;
@@ -432,28 +539,63 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo, ex
                     margin-top: 0.5rem;
                     padding: 0.65rem;
                     border-radius: 12px;
-                    background: rgba(15,23,42,0.7);
+                    background: rgba(15,23,42,0.9);
                     border: 1px dashed rgba(148,163,184,0.4);
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                    gap: 0.65rem;
                   }
                   .playlist-item-row {
-                    display: flex;
-                    align-items: center;
-                    gap: 0.6rem;
-                    padding: 0.4rem 0;
-                    border-bottom: 1px solid rgba(148,163,184,0.2);
+                    display: grid;
+                    grid-template-columns: 100px 1fr;
+                    gap: 0.55rem;
+                    padding: 0.55rem;
+                    background: rgba(255,255,255,0.02);
+                    border: 1px solid rgba(148,163,184,0.25);
+                    border-radius: 12px;
+                    box-shadow: 0 6px 20px rgba(0,0,0,0.18);
                   }
-                  .playlist-item-row:last-child {
-                    border-bottom: none;
+                  .playlist-item-thumb {
+                    width: 100%;
+                    height: 72px;
+                    border-radius: 10px;
+                    object-fit: cover;
+                    background: #0f172a;
+                  }
+                  .playlist-item-meta {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.25rem;
+                    color: #e2e8f0;
+                  }
+                  .playlist-item-meta small {
+                    color: #94a3b8;
+                  }
+                  .playlist-toggle {
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 8px;
+                    padding: 0.35rem 0.55rem;
+                    background: rgba(34,211,238,0.12);
+                    border: 1px solid rgba(34,211,238,0.3);
+                    border-radius: 10px;
+                    color: #cbd5e1;
+                    cursor: pointer;
                   }
                   @media (max-width: 640px) {
                     .result-card { grid-template-columns: 1fr; }
                     .thumb { width: 100%; height: auto; aspect-ratio: 16/9; }
-                    .yt-shell { padding: 0.75rem; }
+                    .yt-shell { padding: 0.75rem; min-height: 100vh; }
+                    .yt-search-card { position: static; }
+                    .yt-header h3 { font-size: 1rem; }
+                    .segmented { grid-template-columns: repeat(auto-fit,minmax(120px,1fr)); }
+                    .result-card { gap: 0.6rem; }
+                    .drawer-body { padding-bottom: 1.5rem; }
                   }
                 `}</style>
 
                 <div className="yt-shell">
-                    <div className="yt-search-card" style={{ position: 'sticky', top: 0, zIndex: 10 }}>
+                    <div className="yt-search-card" style={{ position: 'sticky', top: 0, zIndex: 10, backdropFilter: 'blur(6px)' }}>
                         <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.75rem', flexWrap: 'wrap' }}>
                             <button
                                 className={`btn ${activeTab === 'search' ? 'primary-btn' : 'secondary-btn'}`}
@@ -599,7 +741,8 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo, ex
                                                       style={{ marginTop: '0.4rem' }}
                                                       onClick={() => togglePlaylist(item)}
                                                   >
-                                                      {expandedPlaylists.includes(playlistId) ? 'Hide playlist videos' : 'Show playlist videos'}
+                                                      <span className="playlist-toggle">View playlist videos</span>
+                                                      <span className="pill">{(playlistItems?.length || 0)} videos</span>
                                                   </button>
                                               ) : (
                                                   <div style={{ marginTop: '0.4rem', display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
@@ -610,40 +753,6 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo, ex
                                                   </div>
                                               )}
                                           </div>
-
-                                          {isPlaylist && expandedPlaylists.includes(playlistId) && (
-                                              <div className="playlist-items">
-                                                  {playlistItems.length === 0 && (
-                                                      <div style={{ color: '#94a3b8', fontSize: '0.9rem' }}>Loading playlist videos…</div>
-                                                  )}
-                                                  {playlistItems.map((vid, idx) => {
-                                                      const vidThumb = vid?.thumbnails?.default?.url || vid?.thumbnails?.medium?.url;
-                                                      const vidUrl = videoUrlFromItem(vid);
-                                                      return (
-                                                          <div key={idx} className="playlist-item-row">
-                                                              {vidThumb && (
-                                                                  <img
-                                                                      src={vidThumb}
-                                                                      alt={vid.title}
-                                                                      style={{ width: '64px', height: '40px', objectFit: 'cover', borderRadius: '8px' }}
-                                                                  />
-                                                              )}
-                                                              <div style={{ flex: 1 }}>
-                                                                  <div style={{ fontWeight: 700, color: '#e2e8f0', fontSize: '0.95rem' }}>{vid.title}</div>
-                                                                  <div style={{ fontSize: '0.82rem', color: '#cbd5e1' }}>{vid.channelTitle}</div>
-                                                              </div>
-                                                              <button
-                                                                  className='btn primary-btn'
-                                                                  onClick={() => handleUseVideo(vidUrl)}
-                                                                  style={{ whiteSpace: 'nowrap' }}
-                                                              >
-                                                                  Use this video
-                                                              </button>
-                                                          </div>
-                                                      );
-                                                  })}
-                                              </div>
-                                          )}
                                       </div>
                                   );
                               })}

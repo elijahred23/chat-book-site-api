@@ -27,6 +27,7 @@ function App() {
   const [isPromptVisible, setIsPromptVisible] = useState(true);
   const [showFloatingBtns, setShowFloatingBtns] = useState(false);
   const floatingRef = useRef(null);
+  const closeFabMenu = () => setShowFloatingBtns(false);
   const dispatch = useAppDispatch();
   const { isChatOpen, isTeleprompterOpen, isTTSOpen, isPlantUMLOpen, isPodcastTTSOpen, isJSGeneratorOpen, isChatBookOpen, isYouTubeOpen, isHtmlBuilderOpen, isTypingOpen } = useAppState();
 
@@ -80,7 +81,7 @@ function App() {
             position: fixed;
             bottom: 16px;
             right: 16px;
-            z-index: 1100;
+            z-index: 12000;
             display: flex;
             flex-direction: column;
             align-items: flex-end;
@@ -133,34 +134,34 @@ function App() {
         <div className="fab-container" ref={floatingRef}>
           {showFloatingBtns && (
             <div className="fab-menu">
-              <button onClick={()=>dispatch(actions.setIsChatOpen(true))} className="fab-btn">
+              <button onClick={()=>{dispatch(actions.setIsChatOpen(true)); closeFabMenu();}} className="fab-btn">
                 <span>💬</span>{isChatOpen ? 'Chat Open' : 'Open Chat'}
               </button>
-              <button onClick={() => setIsTTSOpen(true)} className="fab-btn">
+              <button onClick={() => {setIsTTSOpen(true); closeFabMenu();}} className="fab-btn">
                 <span>🔊</span>{isTTSOpen ? 'TTS Open' : 'Open TTS'}
               </button>
-              <button onClick={() => setIsTeleprompterOpen(true)} className="fab-btn">
+              <button onClick={() => {setIsTeleprompterOpen(true); closeFabMenu();}} className="fab-btn">
                 <span>📜</span>{isTeleprompterOpen ? 'Teleprompter' : 'Open Teleprompter'}
               </button>
-              <button onClick={() => setIsPlantUMLOpen(true)} className="fab-btn">
+              <button onClick={() => {setIsPlantUMLOpen(true); closeFabMenu();}} className="fab-btn">
                 <span>🧩</span>{isPlantUMLOpen ? 'UML Viewer' : 'Open UML'}
               </button>
-              <button onClick={() => setPodcastTTSOpen(true)} className="fab-btn">
+              <button onClick={() => {setPodcastTTSOpen(true); closeFabMenu();}} className="fab-btn">
                 <span>🎙️</span>{isPodcastTTSOpen ? 'Podcast TTS' : 'Open Podcast'}
               </button>
-              <button onClick={() => dispatch(actions.setIsJSGeneratorOpen(true))} className="fab-btn">
+              <button onClick={() => {dispatch(actions.setIsJSGeneratorOpen(true)); closeFabMenu();}} className="fab-btn">
                 <span>💻</span>{isJSGeneratorOpen ? 'JS Generator' : 'Open JS Gen'}
               </button>
-              <button onClick={() => setIsYouTubeOpen(true)} className="fab-btn">
+              <button onClick={() => {setIsYouTubeOpen(true); closeFabMenu();}} className="fab-btn">
                 <span>🎞️</span>{isYouTubeOpen ? 'YT Transcript' : 'Open YT'}
               </button>
-              <button onClick={() => dispatch(actions.setIsChatBookOpen(true))} className="fab-btn">
+              <button onClick={() => {dispatch(actions.setIsChatBookOpen(true)); closeFabMenu();}} className="fab-btn">
                 <span>📓</span>{isChatBookOpen ? 'Chat Book' : 'Open Chat Book'}
               </button>
-              <button onClick={() => setIsHtmlBuilderOpen(true)} className="fab-btn">
+              <button onClick={() => {setIsHtmlBuilderOpen(true); closeFabMenu();}} className="fab-btn">
                 <span>🌐</span>{isHtmlBuilderOpen ? 'HTML Builder' : 'Open HTML'}
               </button>
-              <button onClick={() => setIsTypingOpen(true)} className="fab-btn">
+              <button onClick={() => {setIsTypingOpen(true); closeFabMenu();}} className="fab-btn">
                 <span>⌨️</span>{isTypingOpen ? 'Typing Test' : 'Open Typing'}
               </button>
             </div>
