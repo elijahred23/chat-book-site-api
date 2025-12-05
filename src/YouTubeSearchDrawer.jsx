@@ -44,6 +44,8 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo, ex
         }
     });
     const [playlistModal, setPlaylistModal] = useState({ open: false, items: [], title: '', count: 0 });
+    const [lastPlaylistSnapshot, setLastPlaylistSnapshot] = useState(null);
+    const [showPlaylistOnOpen, setShowPlaylistOnOpen] = useState(false);
 
     const [results, setResults] = useState(() => getCachedResults(searchType));
 
@@ -240,6 +242,8 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo, ex
                 title: item.title || 'Playlist',
                 count: (items || []).length,
             });
+            setLastPlaylistSnapshot({ items: items || [], title: item.title || 'Playlist', count: (items || []).length });
+            setShowPlaylistOnOpen(true);
         };
 
         if (playlistVideos[playlistId]) {
@@ -251,6 +255,8 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo, ex
             const vids = await getPlaylistVideos(playlistId);
             setPlaylistVideos((prev) => ({ ...prev, [playlistId]: vids }));
             showModal(vids);
+            setLastPlaylistSnapshot({ items: vids, title: item.title || 'Playlist', count: vids.length });
+            setShowPlaylistOnOpen(true);
         } catch (err) {
             console.error('Failed to load playlist items', err);
         }
@@ -304,6 +310,15 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo, ex
             if (cached.length) {
                 setResults(sortResults(cached));
             }
+        }
+        if (isOpen && showPlaylistOnOpen && lastPlaylistSnapshot && !playlistModal.open) {
+            setPlaylistModal({
+                open: true,
+                items: lastPlaylistSnapshot.items || [],
+                title: lastPlaylistSnapshot.title || 'Playlist',
+                count: lastPlaylistSnapshot.count || 0,
+            });
+            setShowPlaylistOnOpen(false);
         }
     }, [isOpen, searchType]);
 
@@ -425,7 +440,18 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo, ex
                                             <div style={{ fontWeight: 700, lineHeight: 1.2 }}>{vid.title}</div>
                                             <small>{vid.channelTitle}</small>
                                             <div className="video-actions" style={{ marginTop: '0.15rem' }}>
-                                                <button className='btn primary-btn' onClick={() => { handleUseVideo(vUrl); setPlaylistModal({ open: false, items: [], title: '', count: 0 }); }} style={{ whiteSpace: 'nowrap' }}>Use</button>
+                                                <button
+                                                  className='btn primary-btn'
+                                                  onClick={() => {
+                                                    handleUseVideo(vUrl);
+                                                    setLastPlaylistSnapshot({ items: playlistModal.items, title: playlistModal.title, count: playlistModal.count });
+                                                    setShowPlaylistOnOpen(true);
+                                                    setPlaylistModal({ open: false, items: [], title: '', count: 0 });
+                                                  }}
+                                                  style={{ whiteSpace: 'nowrap' }}
+                                                >
+                                                  Use
+                                                </button>
                                                 <button className='btn secondary-btn' onClick={() => handleCopy(vUrl)}>{copiedUrl === vUrl ? 'Copied!' : 'Copy'}</button>
                                             </div>
                                         </div>
