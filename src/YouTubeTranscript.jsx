@@ -98,9 +98,12 @@ export default function YouTubeTranscript() {
   const [loadingTranscript, setLoadingTranscript] = useState(false);
   const { youtubeSearchText } = useAppState();
   const [externalSearchText, setExternalSearchText] = useState("");
-  const [showAllPrompts, setShowAllPrompts] = useState(false);
-  const [transcriptRespTab, setTranscriptRespTab] = useState("responses"); // "responses" | "retry"
-  const [commentRespTab, setCommentRespTab] = useState("responses"); // "responses" | "retry"
+    const [showAllPrompts, setShowAllPrompts] = useState(false);
+    const [transcriptRespTab, setTranscriptRespTab] = useState("responses"); // "responses" | "retry"
+    const [commentRespTab, setCommentRespTab] = useState("responses"); // "responses" | "retry"
+    const [playlistTranscripts, setPlaylistTranscripts] = useState([]);
+    const [loadingPlaylistTranscripts, setLoadingPlaylistTranscripts] = useState(false);
+    const [playlistProgress, setPlaylistProgress] = useState({ done: 0, total: 0 });
 
     // Helpers to fetch transcript and comments based on selected provider
     const fetchYouTubeTranscript = async (video_url) => {
@@ -334,6 +337,54 @@ export default function YouTubeTranscript() {
     };
 
     const validYoutubeUrl = useMemo(() => isValidYouTubeUrl(url), [url]);
+
+    const fetchTranscriptWithRetry = async (videoUrl) => {
+        const maxAttempts = 4;
+        for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+            try {
+                const data = await getFlaskYoutubeTranscript(videoUrl);
+                if (data?.transcript?.length) {
+                    return data.transcript;
+                }
+                throw new Error("Empty transcript");
+            } catch (err) {
+                if (attempt === maxAttempts) {
+                    return null;
+                }
+            }
+        }
+        return null;
+    };
+
+    const handleFetchPlaylistTranscripts = async (items = []) => {
+        if (!items.length) return;
+        setLoadingPlaylistTranscripts(true);
+        setPlaylistProgress({ done: 0, total: items.length });
+        const tasks = items.map((item, idx) => (async () => {
+            const videoId = item.videoId || item.resourceId?.videoId || item.id;
+            const videoUrl = item._url || (videoId ? `https://www.youtube.com/watch?v=${videoId}` : "");
+            const transcriptText = await fetchTranscriptWithRetry(videoUrl);
+            setPlaylistProgress((prev) => ({ ...prev, done: prev.done + 1 }));
+            showMessage?.({
+                type: transcriptText ? "success" : "error",
+                message: transcriptText
+                    ? `Playlist transcript ${idx + 1} fetched`
+                    : `Playlist transcript ${idx + 1} failed after retries`,
+                duration: 2000,
+            });
+            return {
+                title: item.title || `Video ${idx + 1}`,
+                url: videoUrl,
+                success: Boolean(transcriptText),
+                transcript: transcriptText || "Failed to fetch transcript after 4 attempts.",
+                index: idx + 1,
+            };
+        })());
+        const results = await Promise.all(tasks);
+        setPlaylistTranscripts(results);
+        setLoadingPlaylistTranscripts(false);
+        setActiveTab("prompt");
+    };
 
     const embedUrl = useMemo(() => {
         if (!validYoutubeUrl) return "";
@@ -750,6 +801,10 @@ export default function YouTubeTranscript() {
                     setUrl(selectedUrl);
                     setDrawerOpen(false);
                 }}
+                onFetchPlaylist={(items) => {
+                    handleFetchPlaylistTranscripts(items);
+                    setDrawerOpen(false);
+                }}
                 externalQuery={externalSearchText}
                 setUrl={(url) => {
                     setUrl(url);
@@ -890,6 +945,11 @@ export default function YouTubeTranscript() {
                         <button className="btn secondary-btn" onClick={() => setActiveTab("transcriptResponses")} disabled={!promptResponses.length}>
                             View Transcript Responses
                         </button>
+                        {playlistTranscripts.length > 0 && (
+                            <button className="btn secondary-btn" onClick={() => setActiveTab("prompt")}>
+                                View Playlist Transcripts
+                            </button>
+                        )}
                     </div>
                     {loadingPrompt && (
                         <div className="progress-container">
@@ -909,9 +969,91 @@ export default function YouTubeTranscript() {
                         <span style={{ fontSize: '0.9rem', color: '#666' }}>({transcriptWordCount} words)</span>
                         &nbsp;Number of chunks: {splitTranscript.length}
                     </p>
-                    <p>
-                        {transcript}
-                    </p>
+                    <div className="scrollable-card">
+                        {splitTranscript.map((chunk, i) => (
+                            <div key={i} className="chunk">
+                                <textarea readOnly className="textarea">
+                                    {chunk}
+                                </textarea>
+                                <CopyButton text={chunk} className="btn copy-btn" />
+                            </div>
+                        ))}
+                    </div>
+                    {loadingPlaylistTranscripts && (
+                        <div className="progress-container" style={{ marginTop: '1rem' }}>
+                            <label style={{ fontWeight: 'bold' }}>
+                                Fetching playlist transcripts… ({playlistProgress.done}/{playlistProgress.total})
+                            </label>
+                            <div className="progress-bar-wrapper">
+                                <div
+                                    className="progress-bar"
+                                    style={{
+                                        width: playlistProgress.total
+                                            ? `${(playlistProgress.done / playlistProgress.total) * 100}%`
+                                            : '0%',
+                                        background: 'linear-gradient(135deg, #22d3ee, #3b82f6)',
+                                    }}
+                                />
+                            </div>
+                        </div>
+                    )}
+                    {playlistTranscripts.length > 0 && (
+                        <div className="scrollable-card" style={{ marginTop: '1rem' }}>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem', gap: '0.5rem', flexWrap: 'wrap' }}>
+                                <h3 style={{ margin: 0 }}>Playlist transcripts ({playlistTranscripts.length})</h3>
+                                <button
+                                    className="btn secondary-btn"
+                                    onClick={() => {
+                                        playlistTranscripts.forEach((pt, idx) => {
+                                            const filename = `${String(idx + 1).padStart(2, '0')}-${(pt.title || 'video').replace(/[^a-z0-9]+/gi, '_')}.txt`;
+                                            const blob = new Blob([pt.transcript || ""], { type: "text/plain" });
+                                            const url = URL.createObjectURL(blob);
+                                            const a = document.createElement("a");
+                                            a.href = url;
+                                            a.download = filename;
+                                            document.body.appendChild(a);
+                                            a.click();
+                                            a.remove();
+                                            URL.revokeObjectURL(url);
+                                        });
+                                    }}
+                                >
+                                    Download All (01-n)
+                                </button>
+                            </div>
+                            {playlistTranscripts.map((pt, idx) => (
+                                <div key={idx} className="chunk">
+                                    <strong>{String(idx + 1).padStart(2, '0')}. {pt.title}</strong>
+                                    <small style={{ color: pt.success ? '#22c55e' : '#f87171' }}>
+                                        {pt.success ? 'Fetched' : 'Failed after retries'}
+                                    </small>
+                                    <textarea readOnly className="textarea">
+                                        {pt.transcript}
+                                    </textarea>
+                                    <div className="button-group">
+                                        <CopyButton text={pt.transcript} className="btn copy-btn" />
+                                        <button
+                                            className="btn secondary-btn"
+                                            onClick={() => {
+                                                const filename = `${String(idx + 1).padStart(2, '0')}-${(pt.title || 'video').replace(/[^a-z0-9]+/gi, '_')}.txt`;
+                                                const blob = new Blob([pt.transcript || ""], { type: "text/plain" });
+                                                const url = URL.createObjectURL(blob);
+                                                const a = document.createElement("a");
+                                                a.href = url;
+                                                a.download = filename;
+                                                document.body.appendChild(a);
+                                                a.click();
+                                                a.remove();
+                                                URL.revokeObjectURL(url);
+                                            }}
+                                        >
+                                            Download
+                                        </button>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    )}
                 </>
             )}
 

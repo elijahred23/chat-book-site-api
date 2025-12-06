@@ -2,7 +2,7 @@ import { useRef, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { getNewsVideos, getTrendingVideos, searchYouTubeVideos, searchYouTubePlaylists, getPlaylistVideos } from './utils/callYoutube';
 
-export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo, externalQuery }) {
+export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo, externalQuery, onFetchPlaylist }) {
     const [searchQuery, setSearchQuery] = useState(() => localStorage.getItem('yt_search_query') || '');
     const [searchType, setSearchType] = useState(() => localStorage.getItem('yt_search_type') || 'video');
     const [filterType, setFilterType] = useState(() => localStorage.getItem('yt_filter_type') || 'relevance');
@@ -236,13 +236,17 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo, ex
         if (!playlistId) return;
 
         const showModal = (items) => {
+            const withUrls = (items || []).map((v) => ({
+                ...v,
+                _url: videoUrlFromItem(v),
+            }));
             setPlaylistModal({
                 open: true,
-                items: items || [],
+                items: withUrls,
                 title: item.title || 'Playlist',
-                count: (items || []).length,
+                count: withUrls.length,
             });
-            setLastPlaylistSnapshot({ items: items || [], title: item.title || 'Playlist', count: (items || []).length });
+            setLastPlaylistSnapshot({ items: withUrls, title: item.title || 'Playlist', count: withUrls.length });
             setShowPlaylistOnOpen(true);
         };
 
@@ -252,7 +256,8 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo, ex
         }
 
         try {
-            const vids = await getPlaylistVideos(playlistId);
+            const vidsRaw = await getPlaylistVideos(playlistId);
+            const vids = (vidsRaw || []).map((v) => ({ ...v, _url: videoUrlFromItem(v) }));
             setPlaylistVideos((prev) => ({ ...prev, [playlistId]: vids }));
             showModal(vids);
             setLastPlaylistSnapshot({ items: vids, title: item.title || 'Playlist', count: vids.length });
@@ -417,7 +422,21 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo, ex
                                 <h3 style={{ margin: 0, color: '#e2e8f0' }}>{playlistModal.title}</h3>
                                 <small style={{ color: '#94a3b8' }}>{playlistModal.count} videos</small>
                             </div>
-                            <button className="close-chat-btn" onClick={() => setPlaylistModal({ open: false, items: [], title: '', count: 0 })}>×</button>
+                            <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+                                {onFetchPlaylist && (
+                                    <button
+                                        className="btn primary-btn"
+                                        onClick={() => {
+                                            onFetchPlaylist(playlistModal.items || []);
+                                            setShowPlaylistOnOpen(true);
+                                        }}
+                                        style={{ whiteSpace: 'nowrap' }}
+                                    >
+                                        Fetch transcripts
+                                    </button>
+                                )}
+                                <button className="close-chat-btn" onClick={() => setPlaylistModal({ open: false, items: [], title: '', count: 0 })}>×</button>
+                            </div>
                         </div>
                         <div className="playlist-items" style={{ maxHeight: '70vh', overflowY: 'auto' }}>
                             {playlistModal.items.length === 0 && (
