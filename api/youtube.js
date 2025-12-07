@@ -112,7 +112,7 @@ export async function searchYouTube(query, pageToken = '', pageSize = 50) {
 }
 
 
-export async function getTrendingVideos(maxResults = 50) {
+export async function getTrendingVideos(maxResults = 200) {
   try {
     const response = await youtube.videos.list({
       part: 'snippet,statistics',
@@ -134,7 +134,7 @@ export async function getTrendingVideos(maxResults = 50) {
   }
 }
 
-export async function getNewsVideos(maxResults = 50){
+export async function getNewsVideos(maxResults = 200){
   let results = await searchYouTube('news', maxResults);
 
   return results;
@@ -168,7 +168,7 @@ export async function getVideoDetails(videoId) {
   }
 }
 
-export async function searchYouTubePlaylists(query, maxResults = 50) {
+export async function searchYouTubePlaylists(query, maxResults = 200) {
   try {
     const response = await youtube.search.list({
       part: 'snippet',
