@@ -23,3 +23,5 @@ api/.env
 *.njsproj
 *.sln
 *.sw?
+
+/k8s/secrets.yaml
