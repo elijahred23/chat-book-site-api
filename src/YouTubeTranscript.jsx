@@ -200,6 +200,7 @@ export default function YouTubeTranscript() {
     const [playlistTranscripts, setPlaylistTranscripts] = useState([]);
     const [loadingPlaylistTranscripts, setLoadingPlaylistTranscripts] = useState(false);
     const [playlistProgress, setPlaylistProgress] = useState({ done: 0, total: 0 });
+    const [playlistRetryingIndex, setPlaylistRetryingIndex] = useState(null);
 
     // Helpers to fetch transcript and comments based on selected provider
     const fetchYouTubeTranscript = async (video_url) => {
@@ -500,6 +501,29 @@ export default function YouTubeTranscript() {
         URL.revokeObjectURL(url);
     };
 
+    const retryPlaylistTranscript = async (idx) => {
+        const item = playlistTranscripts[idx];
+        if (!item) return;
+        setPlaylistRetryingIndex(idx);
+        try {
+            const transcriptText = await fetchTranscriptWithRetry(item.url);
+            const updated = [...playlistTranscripts];
+            updated[idx] = {
+                ...item,
+                success: Boolean(transcriptText),
+                transcript: transcriptText || "Failed to fetch transcript after 4 attempts.",
+            };
+            setPlaylistTranscripts(updated);
+            showMessage?.({
+                type: transcriptText ? "success" : "error",
+                message: transcriptText ? `Retried transcript ${idx + 1} succeeded` : `Transcript ${idx + 1} still failed after retries`,
+                duration: 2000,
+            });
+        } finally {
+            setPlaylistRetryingIndex(null);
+        }
+    };
+
     const embedUrl = useMemo(() => {
         if (!validYoutubeUrl) return "";
         try {
@@ -540,48 +564,48 @@ export default function YouTubeTranscript() {
     // Internal styles scoped to this component. These override any external styles and ensure good mobile layout.
     const styles = `
       .yt-container {
-        max-width: 980px;
+        max-width: 1100px;
         margin: 0 auto;
         padding: 1rem;
         display: flex;
         flex-direction: column;
         gap: 1rem;
         font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+        color: #0f172a;
       }
       .surface {
-        background: linear-gradient(135deg, #0b1220 0%, #0f172a 60%, #111827 100%);
-        border: 1px solid rgba(255,255,255,0.06);
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
         border-radius: 16px;
         padding: 1rem;
-        box-shadow: 0 20px 60px rgba(0,0,0,0.35);
-        color: #e2e8f0;
+        box-shadow: 0 18px 40px rgba(15,23,42,0.08);
       }
       .tab-bar {
         display: flex;
         gap: 0.5rem;
         padding: 0.6rem;
         border-radius: 14px;
-        background: rgba(255,255,255,0.04);
-        border: 1px solid rgba(255,255,255,0.06);
-        box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
+        background: #f1f5f9;
+        border: 1px solid #e2e8f0;
       }
       .tab-btn {
         flex: 1 1 80px;
         padding: 0.5rem 0.65rem;
-        border: 1px solid rgba(255,255,255,0.08);
+        border: 1px solid #e2e8f0;
         border-radius: 12px;
-        background: rgba(255,255,255,0.06);
+        background: #ffffff;
         cursor: pointer;
         text-align: center;
         font-size: 0.95rem;
-        color: #e2e8f0;
+        color: #0f172a;
         transition: all 0.2s ease;
+        box-shadow: 0 8px 18px rgba(15,23,42,0.06);
       }
       .tab-btn.active {
-        background: linear-gradient(135deg, #2563eb, #22d3ee);
-        color: #0b1220;
+        background: linear-gradient(135deg, #2563eb, #60a5fa);
+        color: #fff;
         border-color: transparent;
-        box-shadow: 0 10px 28px rgba(34,211,238,0.25);
+        box-shadow: 0 12px 26px rgba(37,99,235,0.22);
       }
       .tab-btn.icon-only {
         display: inline-flex;
@@ -591,29 +615,30 @@ export default function YouTubeTranscript() {
       }
       .btn {
         padding: 0.55rem 0.9rem;
-        border: 1px solid rgba(255,255,255,0.08);
+        border: 1px solid #e2e8f0;
         border-radius: 10px;
         cursor: pointer;
         font-size: 0.95rem;
         transition: all 0.2s ease;
-        background: rgba(255,255,255,0.08);
-        color: #e2e8f0;
+        background: #ffffff;
+        color: #0f172a;
+        box-shadow: 0 6px 16px rgba(15,23,42,0.06);
       }
       .primary-btn {
-        background: linear-gradient(135deg, #2563eb, #22d3ee);
-        color: #0b1220;
+        background: linear-gradient(135deg, #2563eb, #60a5fa);
+        color: #fff;
         border: none;
-        box-shadow: 0 12px 28px rgba(37, 99, 235, 0.35);
+        box-shadow: 0 12px 28px rgba(37, 99, 235, 0.25);
       }
       .secondary-btn {
-        background: rgba(255,255,255,0.08);
-        color: #e2e8f0;
+        background: #f8fafc;
+        color: #0f172a;
       }
       .primary-btn:hover {
         transform: translateY(-1px);
       }
       .secondary-btn:hover {
-        background: rgba(255,255,255,0.12);
+        background: #e2e8f0;
       }
       .input-group,
       .button-group,
@@ -625,48 +650,49 @@ export default function YouTubeTranscript() {
       .input {
         flex: 1 1 auto;
         padding: 0.7rem;
-        border: 1px solid rgba(15,23,42,0.12);
+        border: 1px solid #d7dde5;
         border-radius: 10px;
         font-size: 0.95rem;
-        background: #f8fafc;
+        background: #ffffff;
         color: #0f172a;
       }
       .input:focus,
       .textarea:focus {
-        outline: 2px solid #38bdf8;
-        border-color: #22d3ee;
+        outline: 2px solid #93c5fd;
+        border-color: #60a5fa;
       }
       .textarea {
         width: 100%;
         min-height: 7rem;
         padding: 0.7rem;
-        border: 1px solid rgba(15,23,42,0.12);
+        border: 1px solid #d7dde5;
         border-radius: 10px;
         font-size: 0.95rem;
         resize: vertical;
-        background: #f8fafc;
+        background: #ffffff;
         color: #0f172a;
       }
       .suggestion-btn {
         padding: 0.45rem 0.75rem;
-        border: 1px solid rgba(15,23,42,0.12);
+        border: 1px solid #d7dde5;
         border-radius: 10px;
-        background: #e2e8f0;
+        background: #f8fafc;
         cursor: pointer;
         font-size: 0.9rem;
         color: #0f172a;
+        box-shadow: 0 4px 12px rgba(15,23,42,0.06);
       }
       .suggestion-btn:hover {
-        background: #cbd5e1;
+        background: #e2e8f0;
       }
       .scrollable-card {
         max-height: 320px;
         overflow-y: auto;
         padding: 0.75rem;
-        border: 1px solid rgba(255,255,255,0.08);
+        border: 1px solid #e2e8f0;
         border-radius: 12px;
-        background: rgba(255,255,255,0.04);
-        box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
+        background: #ffffff;
+        box-shadow: inset 0 1px 0 rgba(15,23,42,0.05);
       }
       .chunk {
         margin-bottom: 0.85rem;
@@ -675,9 +701,9 @@ export default function YouTubeTranscript() {
         gap: 0.35rem;
         padding: 0.5rem;
         border-radius: 10px;
-        background: rgba(255,255,255,0.06);
-        border: 1px solid rgba(255,255,255,0.08);
-        color: #e2e8f0;
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        color: #0f172a;
       }
       .progress-container {
         margin-top: 0.5rem;
@@ -685,7 +711,7 @@ export default function YouTubeTranscript() {
       .progress-bar-wrapper {
         width: 100%;
         height: 12px;
-        background: rgba(255,255,255,0.08);
+        background: #e2e8f0;
         border-radius: 999px;
         overflow: hidden;
       }
@@ -695,11 +721,11 @@ export default function YouTubeTranscript() {
         transition: width 0.4s ease-in-out;
       }
       .iframe-container {
-        background: #0f172a;
+        background: #ffffff;
         border-radius: 12px;
         overflow: hidden;
-        border: 1px solid #1e293b;
-        box-shadow: 0 10px 30px rgba(15,23,42,0.35);
+        border: 1px solid #e2e8f0;
+        box-shadow: 0 10px 26px rgba(15,23,42,0.12);
       }
       .video-bar {
         display: flex;
@@ -707,12 +733,13 @@ export default function YouTubeTranscript() {
         justify-content: space-between;
         gap: 0.75rem;
         margin-bottom: 0.65rem;
+        color: #0f172a;
       }
       .eyebrow {
         text-transform: uppercase;
         letter-spacing: 0.08em;
         font-size: 0.75rem;
-        color: #94a3b8;
+        color: #64748b;
         margin: 0;
       }
       @media (max-width: 480px) {
@@ -1141,9 +1168,20 @@ export default function YouTubeTranscript() {
                             {playlistTranscripts.map((pt, idx) => (
                                 <div key={idx} className="chunk">
                                     <strong>{String(idx + 1).padStart(2, '0')}. {pt.title}</strong>
-                                    <small style={{ color: pt.success ? '#22c55e' : '#f87171' }}>
-                                        {pt.success ? 'Fetched' : 'Failed after retries'}
-                                    </small>
+                                    <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', flexWrap: 'wrap' }}>
+                                        <small style={{ color: pt.success ? '#22c55e' : '#f87171', fontWeight: 700 }}>
+                                            {pt.success ? 'Fetched' : 'Failed after 4 retries'}
+                                        </small>
+                                        {!pt.success && (
+                                            <button
+                                                className="btn secondary-btn"
+                                                onClick={() => retryPlaylistTranscript(idx)}
+                                                disabled={playlistRetryingIndex === idx}
+                                            >
+                                                {playlistRetryingIndex === idx ? 'Retrying…' : 'Retry'}
+                                            </button>
+                                        )}
+                                    </div>
                                     <textarea readOnly className="textarea">
                                         {pt.transcript}
                                     </textarea>
