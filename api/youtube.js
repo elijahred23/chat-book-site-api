@@ -190,7 +190,7 @@ export async function searchYouTubePlaylists(query, maxResults = 50) {
   }
 }
 
-export async function getPlaylistItems(playlistId, maxResults = 25) {
+export async function getPlaylistItems(playlistId, maxResults = 50) {
   try {
     const response = await youtube.playlistItems.list({
       part: 'snippet',
