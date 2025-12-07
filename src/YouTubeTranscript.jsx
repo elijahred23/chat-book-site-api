@@ -42,6 +42,102 @@ const splitStringByWords = (str, splitCount) => {
 // Generic sleep helper
 const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
+// Minimal ZIP builder (store only) for text files, mobile-safe.
+const crcTable = (() => {
+    let c; const table = [];
+    for (let n = 0; n < 256; n++) {
+        c = n;
+        for (let k = 0; k < 8; k++) {
+            c = (c & 1) ? (0xedb88320 ^ (c >>> 1)) : (c >>> 1);
+        }
+        table[n] = c >>> 0;
+    }
+    return table;
+})();
+const crc32 = (bytes) => {
+    let crc = 0 ^ -1;
+    for (let i = 0; i < bytes.length; i++) {
+        crc = (crc >>> 8) ^ crcTable[(crc ^ bytes[i]) & 0xff];
+    }
+    return (crc ^ -1) >>> 0;
+};
+const dosDateTime = (date = new Date()) => {
+    const time = ((date.getHours() & 0x1f) << 11) | ((date.getMinutes() & 0x3f) << 5) | ((date.getSeconds() / 2) & 0x1f);
+    const day = date.getDate();
+    const month = date.getMonth() + 1;
+    const year = date.getFullYear() - 1980;
+    const d = ((year & 0x7f) << 9) | ((month & 0xf) << 5) | (day & 0x1f);
+    return { time, date: d };
+};
+const createZipBlob = (files = []) => {
+    const enc = new TextEncoder();
+    const parts = [];
+    const central = [];
+    let offset = 0;
+    const { time, date } = dosDateTime();
+
+    files.forEach((file) => {
+        const nameBytes = enc.encode(file.name);
+        const dataBytes = enc.encode(file.content);
+        const crc = crc32(dataBytes);
+
+        const localHeader = new Uint8Array(30);
+        const dvL = new DataView(localHeader.buffer);
+        dvL.setUint32(0, 0x04034b50, true);
+        dvL.setUint16(4, 20, true); // version needed
+        dvL.setUint16(6, 0, true); // flags
+        dvL.setUint16(8, 0, true); // method: store
+        dvL.setUint16(10, time, true);
+        dvL.setUint16(12, date, true);
+        dvL.setUint32(14, crc, true);
+        dvL.setUint32(18, dataBytes.length, true);
+        dvL.setUint32(22, dataBytes.length, true);
+        dvL.setUint16(26, nameBytes.length, true);
+        dvL.setUint16(28, 0, true); // extra length
+
+        parts.push(localHeader, nameBytes, dataBytes);
+
+        const centralHeader = new Uint8Array(46);
+        const dvC = new DataView(centralHeader.buffer);
+        dvC.setUint32(0, 0x02014b50, true);
+        dvC.setUint16(4, 20, true); // version made by
+        dvC.setUint16(6, 20, true); // version needed
+        dvC.setUint16(8, 0, true);
+        dvC.setUint16(10, 0, true);
+        dvC.setUint16(12, time, true);
+        dvC.setUint16(14, date, true);
+        dvC.setUint32(16, crc, true);
+        dvC.setUint32(20, dataBytes.length, true);
+        dvC.setUint32(24, dataBytes.length, true);
+        dvC.setUint16(28, nameBytes.length, true);
+        dvC.setUint16(30, 0, true); // extra
+        dvC.setUint16(32, 0, true); // comment
+        dvC.setUint16(34, 0, true); // disk start
+        dvC.setUint16(36, 0, true); // internal attrs
+        dvC.setUint32(38, 0, true); // external attrs
+        dvC.setUint32(42, offset, true);
+
+        central.push(centralHeader, nameBytes);
+
+        offset += localHeader.length + nameBytes.length + dataBytes.length;
+    });
+
+    const centralSize = central.reduce((sum, arr) => sum + arr.length, 0);
+    const end = new Uint8Array(22);
+    const dvE = new DataView(end.buffer);
+    dvE.setUint32(0, 0x06054b50, true);
+    dvE.setUint16(4, 0, true); // disk
+    dvE.setUint16(6, 0, true); // start disk
+    dvE.setUint16(8, files.length, true);
+    dvE.setUint16(10, files.length, true);
+    dvE.setUint32(12, centralSize, true);
+    dvE.setUint32(16, offset, true);
+    dvE.setUint16(20, 0, true); // comment length
+
+    const blobParts = [...parts, ...central, end];
+    return new Blob(blobParts, { type: "application/zip" });
+};
+
 // Execute a prompt against each transcript chunk
 const promptTranscript = async (prompt, transcripts, setProgress, showMessage) => {
     const batchSize = 5;
@@ -384,6 +480,24 @@ export default function YouTubeTranscript() {
         setPlaylistTranscripts(results);
         setLoadingPlaylistTranscripts(false);
         setActiveTab("prompt");
+    };
+
+    const downloadPlaylistZip = () => {
+        if (!playlistTranscripts.length) return;
+        const files = playlistTranscripts.map((pt, idx) => {
+            const safeName = (pt.title || 'video').replace(/[^a-z0-9]+/gi, '_') || 'video';
+            const name = `${String(idx + 1).padStart(2, '0')}-${safeName}.txt`;
+            return { name, content: pt.transcript || "" };
+        });
+        const zipBlob = createZipBlob(files);
+        const url = URL.createObjectURL(zipBlob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "playlist-transcripts.zip";
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        URL.revokeObjectURL(url);
     };
 
     const embedUrl = useMemo(() => {
@@ -1020,6 +1134,9 @@ export default function YouTubeTranscript() {
                                 >
                                     Download All (01-n)
                                 </button>
+                                <button className="btn secondary-btn" onClick={downloadPlaylistZip}>
+                                    Download as ZIP
+                                </button>
                             </div>
                             {playlistTranscripts.map((pt, idx) => (
                                 <div key={idx} className="chunk">
@@ -1049,6 +1166,7 @@ export default function YouTubeTranscript() {
                                         >
                                             Download
                                         </button>
+                                        <ActionButtons promptText={pt.transcript} />
                                     </div>
                                 </div>
                             ))}
