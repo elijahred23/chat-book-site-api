@@ -1,14 +1,14 @@
-import { GoogleGenerativeAI } from "@google/generative-ai";
+import { GoogleGenAI } from "@google/genai";
 import dotenv from "dotenv";
 dotenv.config();
 const geminiApiKey = process.env.GEMINI_API_KEY || "";
 
-// Initialize the GoogleGenerativeAI instance
-const genAI = new GoogleGenerativeAI(geminiApiKey);
+// Initialize the Google GenAI client
+const ai = new GoogleGenAI({ apiKey: geminiApiKey });
 
 export class GeminiModel {
-    // static variable for current model
-    static currentModel = "gemini-2.0-flash"}
+    static currentModel = "gemini-2.0-flash";
+}
 
     
 async function listGeminiModels() {    
@@ -43,27 +43,14 @@ async function generateGeminiResponse(msg, gemini_model = null) {
         if (!gemini_model) {
             throw new Error("Model not specified");
         }
-        const model = genAI.getGenerativeModel({ model: gemini_model });
-
-        const chat = model.startChat({
-            history: [
-                {
-                    role: "user",
-                    parts: [{ text: "Hello, you are a helpful assistant." }],
-                },
-                {
-                    role: "model",
-                    parts: [{ text: "Great to meet you. What would you like to know?" }],
-                },
-            ],
-            generationConfig: {
+        const response = await ai.models.generateContent({
+            model: gemini_model,
+            contents: msg,
+            config: {
                 maxOutputTokens: 100000,
             },
         });
-
-        const result = await chat.sendMessage(msg);
-        const response = await result.response;
-        const text = await response.text();
+        const text = response?.text ?? "";
 
         return { success: true, text };
     } catch (error) {
