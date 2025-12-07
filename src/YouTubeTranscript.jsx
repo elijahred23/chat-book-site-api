@@ -168,6 +168,7 @@ const countWords = (s) => (s.match(/\b\w+\b/g) || []).length;
 
 export default function YouTubeTranscript() {
     const state = useAppState();
+    const {isYoutubeOpen} = useAppState();
     const [activeTab, setActiveTab] = useState("transcript");  // Options: transcript, comments, responses, transcript-iframes
     const [comments, setComments] = useState([]);
     const [splitComments, setSplitComments] = useState([]);
@@ -201,6 +202,7 @@ export default function YouTubeTranscript() {
     const [loadingPlaylistTranscripts, setLoadingPlaylistTranscripts] = useState(false);
     const [playlistProgress, setPlaylistProgress] = useState({ done: 0, total: 0 });
     const [playlistRetryingIndex, setPlaylistRetryingIndex] = useState(null);
+    const setIsYouTubeOpen = (val) => dispatch(actions.setIsYouTubeOpen(val));
 
     // Helpers to fetch transcript and comments based on selected provider
     const fetchYouTubeTranscript = async (video_url) => {
@@ -765,7 +767,10 @@ export default function YouTubeTranscript() {
             <style>{styles}</style>
             {createPortal(
                 <button
-                    onClick={() => setDrawerOpen(true)}
+                    onClick={() => {
+                        setDrawerOpen(true);
+                        setIsYouTubeOpen(true);
+                    }}
                     aria-label="Search YouTube"
                     title="Search YouTube"
                     style={{

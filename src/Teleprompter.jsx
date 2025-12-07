@@ -147,6 +147,9 @@ const TeleprompterAdvanced = () => {
     setIsPaused((prev) => {
       const newPaused = !prev;
       runningRef.current = !newPaused;
+      if (!newPaused) {
+        lastTsRef.current = null; // reset delta so we don’t jump
+      }
       setIsRunning(!newPaused);
       return newPaused;
     });
@@ -195,18 +198,20 @@ const TeleprompterAdvanced = () => {
     }
   };
 
-  const handleSpeedHoldStart = () => {
-    speedHoldRef.current = 2;
+  const handleSpeedHoldStart = (mult = 4) => {
+    speedHoldRef.current = mult;
   };
   const handleSpeedHoldEnd = () => {
     speedHoldRef.current = 1;
   };
 
-  const handleReverseHoldStart = () => {
+  const handleReverseHoldStart = (mult = 4) => {
     dirHoldRef.current = -1 * (baseDirRef.current || 1);
+    speedHoldRef.current = mult;
   };
   const handleReverseHoldEnd = () => {
     dirHoldRef.current = null;
+    speedHoldRef.current = 1;
   };
 
   useEffect(() => {
@@ -358,6 +363,21 @@ const TeleprompterAdvanced = () => {
               <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
                 <button className="tp-btn primary" onClick={startTeleprompter}>Start</button>
                 <button className="tp-btn" onClick={restartFromTop}>Restart</button>
+                <button
+                  className="tp-btn"
+                  onClick={() => {
+                    offsetRef.current = 0;
+                    lastTsRef.current = null;
+                    setProgress(0);
+                    setRemainingSec(durationSec);
+                    const el = contentRef.current;
+                    if (el) {
+                      el.style.transform = `${mirror ? "scaleX(-1) " : ""}translateY(0px)`;
+                    }
+                  }}
+                >
+                  Start Over
+                </button>
                 <button className="tp-btn" onClick={pasteFromClipboard}>Paste</button>
               <button className="tp-btn" onClick={clearScript}>Clear</button>
               <button className="tp-btn" onClick={togglePause}>{isPaused ? "Resume" : "Pause"}</button>
@@ -518,12 +538,12 @@ const TeleprompterAdvanced = () => {
           zIndex: 9,
         }}
       >
-        <div style={{ height: 10, borderRadius: 999, background: "#1e293b", border: "1px solid #0ea5e9", overflow: "hidden" }}>
+        <div style={{ height: 12, borderRadius: 999, background: "#e2e8f0", border: "1px solid #cbd5e1", overflow: "hidden", boxShadow: "0 6px 16px rgba(0,0,0,0.15)" }}>
           <div
             style={{
               width: `${progress}%`,
               height: "100%",
-              background: "linear-gradient(90deg, #22c55e, #60a5fa)",
+              background: "linear-gradient(135deg, #22c55e, #60a5fa)",
               transition: "width 0.1s linear",
             }}
           />
@@ -569,14 +589,21 @@ const TeleprompterAdvanced = () => {
           {isPaused ? <FaPlay /> : <FaPause />}
         </button>
         <button
-          onPointerDown={() => { speedHoldRef.current = 2; }}
-          onPointerUp={() => { speedHoldRef.current = 1; }}
-          onPointerLeave={() => { speedHoldRef.current = 1; }}
+          onClick={() => {
+            offsetRef.current = 0;
+            lastTsRef.current = null;
+            setProgress(0);
+            setRemainingSec(durationSec);
+            const el = contentRef.current;
+            if (el) {
+              el.style.transform = `${mirror ? "scaleX(-1) " : ""}translateY(0px)`;
+            }
+          }}
           style={{
             width: 46,
             height: 46,
             borderRadius: "50%",
-            background: "linear-gradient(135deg, #22d3ee, #0ea5e9)",
+            background: "linear-gradient(135deg, #f59e0b, #f97316)",
             color: "#0b1220",
             fontWeight: 800,
             boxShadow: "0 10px 20px rgba(0,0,0,0.25)",
@@ -586,10 +613,10 @@ const TeleprompterAdvanced = () => {
             alignItems: "center",
             justifyContent: "center",
           }}
-          title="Hold to double speed"
-          aria-label="Hold to double speed"
+          title="Start over"
+          aria-label="Start over"
         >
-          <FaForward />
+          <FaUndoAlt />
         </button>
         <button
           onPointerDown={() => { speedHoldRef.current = 4; }}
@@ -613,6 +640,29 @@ const TeleprompterAdvanced = () => {
           aria-label="Hold to 4x speed"
         >
           <FaFastForward />
+        </button>
+        <button
+          onPointerDown={() => handleSpeedHoldStart(6)}
+          onPointerUp={handleSpeedHoldEnd}
+          onPointerLeave={handleSpeedHoldEnd}
+          style={{
+            width: 46,
+            height: 46,
+            borderRadius: "50%",
+            background: "linear-gradient(135deg, #0ea5e9, #2563eb)",
+            color: "#0b1220",
+            fontWeight: 800,
+            boxShadow: "0 10px 20px rgba(0,0,0,0.25)",
+            WebkitUserSelect: "none",
+            userSelect: "none",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+          title="Hold to 6x speed"
+          aria-label="Hold to 6x speed"
+        >
+          <FaForward />
         </button>
         <button
           onClick={() => nudgeOffset(-1)}
@@ -657,32 +707,9 @@ const TeleprompterAdvanced = () => {
           <FaStepForward />
         </button>
         <button
-          onPointerDown={() => { dirHoldRef.current = -2 * (baseDirRef.current || 1); }}
-          onPointerUp={() => { dirHoldRef.current = null; }}
-          onPointerLeave={() => { dirHoldRef.current = null; }}
-          style={{
-            width: 46,
-            height: 46,
-            borderRadius: "50%",
-            background: "linear-gradient(135deg, #f59e0b, #f97316)",
-            color: "#0b1220",
-            fontWeight: 800,
-            boxShadow: "0 10px 20px rgba(0,0,0,0.25)",
-            WebkitUserSelect: "none",
-            userSelect: "none",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-          title="Hold to reverse at 2x"
-          aria-label="Hold to reverse at 2x"
-        >
-          <FaUndoAlt />
-        </button>
-        <button
-          onPointerDown={() => { dirHoldRef.current = -4 * (baseDirRef.current || 1); }}
-          onPointerUp={() => { dirHoldRef.current = null; }}
-          onPointerLeave={() => { dirHoldRef.current = null; }}
+          onPointerDown={() => handleReverseHoldStart(4)}
+          onPointerUp={handleReverseHoldEnd}
+          onPointerLeave={handleReverseHoldEnd}
           style={{
             width: 46,
             height: 46,
@@ -699,6 +726,29 @@ const TeleprompterAdvanced = () => {
           }}
           title="Hold to reverse at 4x"
           aria-label="Hold to reverse at 4x"
+        >
+          <FaBackward />
+        </button>
+        <button
+          onPointerDown={() => handleReverseHoldStart(6)}
+          onPointerUp={handleReverseHoldEnd}
+          onPointerLeave={handleReverseHoldEnd}
+          style={{
+            width: 46,
+            height: 46,
+            borderRadius: "50%",
+            background: "linear-gradient(135deg, #111827, #0f172a)",
+            color: "#f8fafc",
+            fontWeight: 800,
+            boxShadow: "0 10px 20px rgba(0,0,0,0.25)",
+            WebkitUserSelect: "none",
+            userSelect: "none",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+          title="Hold to reverse at 6x"
+          aria-label="Hold to reverse at 6x"
         >
           <FaBackward />
         </button>
