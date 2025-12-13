@@ -22,6 +22,8 @@ const initialState = {
   jsGeneratorPrompt: '',
   isChatBookOpen: false,
   chatBookSubject: '',
+  isArchitectureOpen: false,
+  architecturePrompt: '',
   isYouTubeOpen: false,
   youtubeSearchText: '',
   isHtmlBuilderOpen: false,
@@ -51,6 +53,8 @@ const actionTypes = {
   SET_JS_GENERATOR_PROMPT: 'SET_JS_GENERATOR_PROMPT',
   SET_IS_CHAT_BOOK_OPEN: 'SET_IS_CHAT_BOOK_OPEN',
   SET_CHAT_BOOK_SUBJECT: 'SET_CHAT_BOOK_SUBJECT',
+  SET_IS_ARCHITECTURE_OPEN: 'SET_IS_ARCHITECTURE_OPEN',
+  SET_ARCHITECTURE_PROMPT: 'SET_ARCHITECTURE_PROMPT',
   SET_IS_YOUTUBE_OPEN: 'SET_IS_YOUTUBE_OPEN',
   SET_YOUTUBE_SEARCH_TEXT: 'SET_YOUTUBE_SEARCH_TEXT',
   SET_IS_HTML_BUILDER_OPEN: 'SET_IS_HTML_BUILDER_OPEN',
@@ -69,6 +73,7 @@ const closeAllPanels = (state) => ({
   isPodcastTTSOpen: false,
   isJSGeneratorOpen: false,
   isChatBookOpen: false,
+  isArchitectureOpen: false,
   isYouTubeOpen: false,
   isHtmlBuilderOpen: false,
   isTypingOpen: false,
@@ -147,6 +152,14 @@ function appReducer(state, action) {
     case actionTypes.SET_CHAT_BOOK_SUBJECT:
       return { ...state, chatBookSubject: action.payload };
 
+    case actionTypes.SET_IS_ARCHITECTURE_OPEN:
+      return action.payload
+        ? { ...closeAllPanels(state), isArchitectureOpen: true }
+        : { ...state, isArchitectureOpen: false };
+
+    case actionTypes.SET_ARCHITECTURE_PROMPT:
+      return { ...state, architecturePrompt: action.payload };
+
     case actionTypes.SET_PODCAST_TTS_PROMPT:
       return { ...state, podcastTTSPrompt: action.payload };
 
@@ -218,6 +231,8 @@ export const actions = {
   setJSGeneratorPrompt: (prompt) => ({ type: actionTypes.SET_JS_GENERATOR_PROMPT, payload: prompt }),
   setIsChatBookOpen: (open) => ({ type: actionTypes.SET_IS_CHAT_BOOK_OPEN, payload: open }),
   setChatBookSubject: (subject) => ({ type: actionTypes.SET_CHAT_BOOK_SUBJECT, payload: subject }),
+  setIsArchitectureOpen: (open) => ({ type: actionTypes.SET_IS_ARCHITECTURE_OPEN, payload: open }),
+  setArchitecturePrompt: (prompt) => ({ type: actionTypes.SET_ARCHITECTURE_PROMPT, payload: prompt }),
   setIsYouTubeOpen: (open) => ({ type: actionTypes.SET_IS_YOUTUBE_OPEN, payload: open }),
   setYouTubeSearchText: (text) => ({ type: actionTypes.SET_YOUTUBE_SEARCH_TEXT, payload: text }),
   setIsTypingOpen: (open) => ({ type: actionTypes.SET_IS_TYPING_OPEN, payload: open }),

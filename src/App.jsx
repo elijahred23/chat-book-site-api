@@ -20,8 +20,9 @@ import PlantUMLViewer from './PlantUML.jsx';
 import PodcastTTSPlayer from './PodcastTTSPlayer.jsx';
 import JSConsoleGenerator from './JSConsoleGenerator.jsx';
 import ChatBookApp from './ChatBookApp.jsx';
+import ArchitectureDiagram from './ArchitectureDiagram.jsx';
 
-function App() {
+function AppContent() {
   const [isFullWidth, setIsFullWidth] = useState(true);
   const [isChatVisible, setIsChatVisible] = useState(true);
   const [isPromptVisible, setIsPromptVisible] = useState(true);
@@ -29,7 +30,7 @@ function App() {
   const floatingRef = useRef(null);
   const closeFabMenu = () => setShowFloatingBtns(false);
   const dispatch = useAppDispatch();
-  const { isChatOpen, isTeleprompterOpen, isTTSOpen, isPlantUMLOpen, isPodcastTTSOpen, isJSGeneratorOpen, isChatBookOpen, isYouTubeOpen, isHtmlBuilderOpen, isTypingOpen } = useAppState();
+  const { isChatOpen, isTeleprompterOpen, isTTSOpen, isPlantUMLOpen, isPodcastTTSOpen, isJSGeneratorOpen, isChatBookOpen, isArchitectureOpen, isYouTubeOpen, isHtmlBuilderOpen, isTypingOpen } = useAppState();
 
   const toggleChat = () => dispatch(actions.setIsChatOpen(false));
   const toggleWidth = () => setIsFullWidth((p) => !p);
@@ -37,6 +38,7 @@ function App() {
   const setIsTTSOpen = (val) => dispatch(actions.setIsTTSOpen(val));
   const setIsPlantUMLOpen = (val) => dispatch(actions.setIsPlantUMLOpen(val)); // ✅ NEW
   const setPodcastTTSOpen = (val) => dispatch(actions.setIsPodcastTTSOpen(val)); // ✅ NEW
+  const setIsArchitectureOpen = (val) => dispatch(actions.setIsArchitectureOpen(val));
   const setIsYouTubeOpen = (val) => dispatch(actions.setIsYouTubeOpen(val));
   const setIsHtmlBuilderOpen = (val) => dispatch(actions.setIsHtmlBuilderOpen(val));
   const setIsTypingOpen = (val) => dispatch(actions.setIsTypingOpen(val));
@@ -63,8 +65,7 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
-        <h1>Eli Himi GPT</h1>
+      <h1>Eli Himi GPT</h1>
 
         {/* Dropdown Menu */}
         <div className="dropdown-nav">
@@ -163,6 +164,9 @@ function App() {
               </button>
               <button onClick={() => {setIsTypingOpen(true); closeFabMenu();}} className="fab-btn">
                 <span>⌨️</span>{isTypingOpen ? 'Typing Test' : 'Open Typing'}
+              </button>
+              <button onClick={() => {setIsArchitectureOpen(true); closeFabMenu();}} className="fab-btn">
+                <span>🗺️</span>{isArchitectureOpen ? 'Diagram Open' : 'Open Diagram'}
               </button>
             </div>
           )}
@@ -288,7 +292,16 @@ function App() {
           </div>
           <ChatBookApp />
         </div>
-      </BrowserRouter>
+        {/* Architecture Diagram Drawer */}
+        <div className={`chat-drawer ${isArchitectureOpen ? 'open' : ''} ${isFullWidth ? 'full' : 'half'}`}>
+          <div className="chat-drawer-header">
+            <button className="width-toggle-btn" onClick={() => setIsArchitectureOpen(false)}>
+              ✖ Close Architecture Diagram
+            </button>
+          </div>
+          <ArchitectureDiagram />
+        </div>
+      
 
       <DownloadCopyTextFile />
       <TextSelectionTooltip
@@ -306,6 +319,14 @@ function App() {
         }}
       />
     </>
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <AppContent />
+    </BrowserRouter>
   );
 }
 

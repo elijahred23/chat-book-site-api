@@ -18,6 +18,7 @@ import {
   FaMagic,
   FaListAlt,
   FaDownload,
+  FaSitemap,
 } from "react-icons/fa";
 import { useFlyout } from "../context/FlyoutContext";
 import { FcGoogle } from "react-icons/fc";
@@ -104,6 +105,17 @@ export default function ActionButtons({ promptText, limitButtons = false }) {
         e.stopPropagation();
         dispatch(actions.setChatBookSubject(cleanText));
         dispatch(actions.setIsChatBookOpen(true));
+      },
+    },
+    {
+      icon: FaSitemap,
+      title: "Architecture Diagram",
+      color: "var(--btn-orange)",
+      iconColor: "#0f172a",
+      onClick: (e) => {
+        e.stopPropagation();
+        dispatch(actions.setArchitecturePrompt(cleanText));
+        dispatch(actions.setIsArchitectureOpen(true));
       },
     },
     {
