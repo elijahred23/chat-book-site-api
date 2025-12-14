@@ -4,6 +4,7 @@ import React, { createContext, useContext, useReducer } from 'react';
 const initialState = {
   copyText: '',
   htmlBuilder: { input: '', generatedHTML: '' },
+  drawerStack: [],
   isChatOpen: false,
   chatPrompt: '',
   selectedText: '',
@@ -63,7 +64,7 @@ const actionTypes = {
   SET_FLASHCARD_PROMPT: 'SET_FLASHCARD_PROMPT',
 };
 
-// ✅ closes all open UI panels
+// ✅ closes all open UI panels (stack managed separately)
 const closeAllPanels = (state) => ({
   ...state,
   isChatOpen: false,
@@ -79,6 +80,44 @@ const closeAllPanels = (state) => ({
   isTypingOpen: false,
 });
 
+const drawerKeyToState = {
+  chat: 'isChatOpen',
+  teleprompter: 'isTeleprompterOpen',
+  tts: 'isTTSOpen',
+  plantuml: 'isPlantUMLOpen',
+  podcast: 'isPodcastTTSOpen',
+  jsgen: 'isJSGeneratorOpen',
+  chatbook: 'isChatBookOpen',
+  architecture: 'isArchitectureOpen',
+  youtube: 'isYouTubeOpen',
+  html: 'isHtmlBuilderOpen',
+  typing: 'isTypingOpen',
+};
+
+const activateDrawer = (state, key) => {
+  const flag = drawerKeyToState[key];
+  if (!flag) return state;
+  const newStack = [...state.drawerStack.filter((k) => k !== key), key];
+  const cleared = closeAllPanels(state);
+  return { ...cleared, [flag]: true, drawerStack: newStack };
+};
+
+const deactivateDrawer = (state, key) => {
+  const flag = drawerKeyToState[key];
+  if (!flag) return state;
+  const newStack = state.drawerStack.filter((k) => k !== key);
+  const last = newStack[newStack.length - 1];
+  let nextState = { ...state, [flag]: false, drawerStack: newStack };
+  if (last) {
+    const reopenFlag = drawerKeyToState[last];
+    if (reopenFlag) {
+      const cleared = closeAllPanels(state);
+      nextState = { ...cleared, [reopenFlag]: true, drawerStack: newStack };
+    }
+  }
+  return nextState;
+};
+
 function appReducer(state, action) {
   switch (action.type) {
     case actionTypes.SET_COPY_TEXT:
@@ -91,9 +130,7 @@ function appReducer(state, action) {
       return { ...state, htmlBuilder: { ...state.htmlBuilder, generatedHTML: action.payload } };
 
     case actionTypes.SET_IS_CHAT_OPEN:
-      return action.payload
-        ? { ...closeAllPanels(state), isChatOpen: true }
-        : { ...state, isChatOpen: false };
+      return action.payload ? activateDrawer(state, 'chat') : deactivateDrawer(state, 'chat');
 
     case actionTypes.SET_CHAT_PROMPT:
       return { ...state, chatPrompt: action.payload };
@@ -111,51 +148,37 @@ function appReducer(state, action) {
       return { ...state, selectedTranscriptType: action.payload };
 
     case actionTypes.SET_IS_TELEPROMPTER_OPEN:
-      return action.payload
-        ? { ...closeAllPanels(state), isTeleprompterOpen: true }
-        : { ...state, isTeleprompterOpen: false };
+      return action.payload ? activateDrawer(state, 'teleprompter') : deactivateDrawer(state, 'teleprompter');
 
     case actionTypes.SET_IS_TTS_OPEN:
-      return action.payload
-        ? { ...closeAllPanels(state), isTTSOpen: true }
-        : { ...state, isTTSOpen: false };
+      return action.payload ? activateDrawer(state, 'tts') : deactivateDrawer(state, 'tts');
 
     case actionTypes.SET_TTS_AUTOPLAY:
       return { ...state, ttsAutoPlay: action.payload };
 
     case actionTypes.SET_IS_PLANTUML_OPEN:
-      return action.payload
-        ? { ...closeAllPanels(state), isPlantUMLOpen: true }
-        : { ...state, isPlantUMLOpen: false };
+      return action.payload ? activateDrawer(state, 'plantuml') : deactivateDrawer(state, 'plantuml');
 
     case actionTypes.SET_PLANT_UML_PROMPT:
       return { ...state, plantUMLPrompt: action.payload };
 
     case actionTypes.SET_IS_PODCAST_TTS_OPEN:
-      return action.payload
-        ? { ...closeAllPanels(state), isPodcastTTSOpen: true }
-        : { ...state, isPodcastTTSOpen: false };
+      return action.payload ? activateDrawer(state, 'podcast') : deactivateDrawer(state, 'podcast');
       
     case actionTypes.SET_IS_JS_GENERATOR_OPEN:
-      return action.payload
-        ? { ...closeAllPanels(state), isJSGeneratorOpen: true }
-        : { ...state, isJSGeneratorOpen: false };
+      return action.payload ? activateDrawer(state, 'jsgen') : deactivateDrawer(state, 'jsgen');
 
     case actionTypes.SET_JS_GENERATOR_PROMPT:
       return { ...state, jsGeneratorPrompt: action.payload };
 
     case actionTypes.SET_IS_CHAT_BOOK_OPEN:
-      return action.payload
-        ? { ...closeAllPanels(state), isChatBookOpen: true }
-        : { ...state, isChatBookOpen: false };
+      return action.payload ? activateDrawer(state, 'chatbook') : deactivateDrawer(state, 'chatbook');
 
     case actionTypes.SET_CHAT_BOOK_SUBJECT:
       return { ...state, chatBookSubject: action.payload };
 
     case actionTypes.SET_IS_ARCHITECTURE_OPEN:
-      return action.payload
-        ? { ...closeAllPanels(state), isArchitectureOpen: true }
-        : { ...state, isArchitectureOpen: false };
+      return action.payload ? activateDrawer(state, 'architecture') : deactivateDrawer(state, 'architecture');
 
     case actionTypes.SET_ARCHITECTURE_PROMPT:
       return { ...state, architecturePrompt: action.payload };
@@ -164,25 +187,19 @@ function appReducer(state, action) {
       return { ...state, podcastTTSPrompt: action.payload };
 
     case actionTypes.SET_IS_YOUTUBE_OPEN:
-      return action.payload
-        ? { ...closeAllPanels(state), isYouTubeOpen: true }
-        : { ...state, isYouTubeOpen: false };
+      return action.payload ? activateDrawer(state, 'youtube') : deactivateDrawer(state, 'youtube');
 
     case actionTypes.SET_YOUTUBE_SEARCH_TEXT:
       return { ...state, youtubeSearchText: action.payload };
 
     case actionTypes.SET_IS_TYPING_OPEN:
-      return action.payload
-        ? { ...closeAllPanels(state), isTypingOpen: true }
-        : { ...state, isTypingOpen: false };
+      return action.payload ? activateDrawer(state, 'typing') : deactivateDrawer(state, 'typing');
 
     case actionTypes.SET_TYPING_SOURCE:
       return { ...state, typingSource: action.payload };
 
     case actionTypes.SET_IS_HTML_BUILDER_OPEN:
-      return action.payload
-        ? { ...closeAllPanels(state), isHtmlBuilderOpen: true }
-        : { ...state, isHtmlBuilderOpen: false };
+      return action.payload ? activateDrawer(state, 'html') : deactivateDrawer(state, 'html');
 
     case actionTypes.SET_FLASHCARD_PROMPT:
       return { ...state, flashcardPrompt: action.payload };

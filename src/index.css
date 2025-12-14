@@ -220,7 +220,10 @@ option {
 .chat-drawer {
   position: fixed;
   top: 0;
-  right: 0;
+  right: 0 !important;
+  left: auto !important;
+  inset: 0 0 0 auto;
+  margin-left: auto;
   bottom: 0;
   width: 100%;
   max-width: 100%;
@@ -240,6 +243,9 @@ option {
 .chat-drawer.half {
   width: 50%;
   max-width: 600px;
+  left: auto !important;
+  right: 0 !important;
+  margin-left: auto;
 }
 
 .chat-drawer.open {

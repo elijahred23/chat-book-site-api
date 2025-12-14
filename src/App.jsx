@@ -31,7 +31,7 @@ function AppContent() {
   const floatingRef = useRef(null);
   const closeFabMenu = () => setShowFloatingBtns(false);
   const dispatch = useAppDispatch();
-  const { isChatOpen, isTeleprompterOpen, isTTSOpen, isPlantUMLOpen, isPodcastTTSOpen, isJSGeneratorOpen, isChatBookOpen, isArchitectureOpen, isYouTubeOpen, isHtmlBuilderOpen, isTypingOpen } = useAppState();
+  const { drawerStack, isChatOpen, isTeleprompterOpen, isTTSOpen, isPlantUMLOpen, isPodcastTTSOpen, isJSGeneratorOpen, isChatBookOpen, isArchitectureOpen, isYouTubeOpen, isHtmlBuilderOpen, isTypingOpen } = useAppState();
 
   const toggleChat = () => dispatch(actions.setIsChatOpen(false));
   const toggleWidth = () => setIsFullWidth((p) => !p);
@@ -198,6 +198,8 @@ function AppContent() {
         <SideDrawer
           isOpen={isChatOpen}
           isFullWidth={isFullWidth}
+          stack={drawerStack}
+          currentKey="chat"
           onClose={() => dispatch(actions.setIsChatOpen(false))}
           closeLabel="✖"
         >
@@ -213,6 +215,8 @@ function AppContent() {
         <SideDrawer
           isOpen={isTTSOpen}
           isFullWidth={isFullWidth}
+          stack={drawerStack}
+          currentKey="tts"
           onToggleWidth={toggleWidth}
           onClose={() => setIsTTSOpen(false)}
           closeLabel="✖"
@@ -223,6 +227,8 @@ function AppContent() {
         <SideDrawer
           isOpen={isTeleprompterOpen}
           isFullWidth={isFullWidth}
+          stack={drawerStack}
+          currentKey="teleprompter"
           onToggleWidth={toggleWidth}
           onClose={() => setIsTeleprompterOpen(false)}
           closeLabel="✖ Close Teleprompter"
@@ -233,6 +239,8 @@ function AppContent() {
         <SideDrawer
           isOpen={isPlantUMLOpen}
           isFullWidth={isFullWidth}
+          stack={drawerStack}
+          currentKey="plantuml"
           onToggleWidth={toggleWidth}
           onClose={() => setIsPlantUMLOpen(false)}
           closeLabel="✖ Close UML Viewer"
@@ -243,6 +251,8 @@ function AppContent() {
         <SideDrawer
           isOpen={isPodcastTTSOpen}
           isFullWidth={isFullWidth}
+          stack={drawerStack}
+          currentKey="podcast"
           onToggleWidth={toggleWidth}
           onClose={() => setPodcastTTSOpen(false)}
           closeLabel="✖ Close Podcast TTS Player"
@@ -253,6 +263,8 @@ function AppContent() {
         <SideDrawer
           isOpen={isHtmlBuilderOpen}
           isFullWidth={isFullWidth}
+          stack={drawerStack}
+          currentKey="html"
           onToggleWidth={toggleWidth}
           onClose={() => setIsHtmlBuilderOpen(false)}
           closeLabel="✖ Close HTML Builder"
@@ -263,6 +275,8 @@ function AppContent() {
         <SideDrawer
           isOpen={isTypingOpen}
           isFullWidth={isFullWidth}
+          stack={drawerStack}
+          currentKey="typing"
           onToggleWidth={toggleWidth}
           onClose={() => setIsTypingOpen(false)}
           closeLabel="✖ Close Typing Test"
@@ -273,6 +287,8 @@ function AppContent() {
         <SideDrawer
           isOpen={isYouTubeOpen}
           isFullWidth={isFullWidth}
+          stack={drawerStack}
+          currentKey="youtube"
           onToggleWidth={toggleWidth}
           onClose={() => setIsYouTubeOpen(false)}
           closeLabel="✖ Close YouTube Transcript"
@@ -283,6 +299,8 @@ function AppContent() {
         <SideDrawer
           isOpen={isJSGeneratorOpen}
           isFullWidth={isFullWidth}
+          stack={drawerStack}
+          currentKey="jsgen"
           onToggleWidth={toggleWidth}
           onClose={() => dispatch(actions.setIsJSGeneratorOpen(false))}
           closeLabel="✖ Close JS Console Generator"
@@ -293,6 +311,8 @@ function AppContent() {
         <SideDrawer
           isOpen={isChatBookOpen}
           isFullWidth={isFullWidth}
+          stack={drawerStack}
+          currentKey="chatbook"
           onToggleWidth={toggleWidth}
           onClose={() => dispatch(actions.setIsChatBookOpen(false))}
           closeLabel="✖ Close Chat Book"
@@ -303,6 +323,8 @@ function AppContent() {
         <SideDrawer
           isOpen={isArchitectureOpen}
           isFullWidth={isFullWidth}
+          stack={drawerStack}
+          currentKey="architecture"
           onToggleWidth={toggleWidth}
           onClose={() => setIsArchitectureOpen(false)}
           closeLabel="✖ Close Architecture Diagram"

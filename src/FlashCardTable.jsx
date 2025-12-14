@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import ActionButtons from "./ui/ActionButtons.jsx";
 import { getGeminiResponse } from "./utils/callGemini.js";
-import { FaFeatherAlt, FaAlignLeft, FaBookOpen } from "react-icons/fa";
+import { FaFeatherAlt, FaAlignLeft, FaBookOpen, FaChevronUp, FaChevronDown } from "react-icons/fa";
 import { ClipLoader } from "react-spinners";
 
 function ToolbarPortal({ children }) {
@@ -16,6 +16,7 @@ const FlashCardTable = ({ cards, setCards, COLORS }) => {
   const [bulkLoading, setBulkLoading] = useState(null);
   const [bulkProgress, setBulkProgress] = useState({ done: 0, total: 0 });
   const [bulkMode, setBulkMode] = useState("async"); // "async" or "sequential"
+  const [toolbarVisible, setToolbarVisible] = useState(true);
 
   const toggleCardSelection = (idx) => {
     setSelectedCards((prev) =>
@@ -182,6 +183,36 @@ const FlashCardTable = ({ cards, setCards, COLORS }) => {
           }}
         >
           <div
+            style={{
+              position: "absolute",
+              bottom: toolbarVisible ? "-18px" : undefined,
+              top: toolbarVisible ? undefined : "12px",
+              right: "18px",
+              zIndex: 1002,
+              pointerEvents: "auto",
+            }}
+          >
+            <button
+              onClick={() => setToolbarVisible((v) => !v)}
+              aria-label={toolbarVisible ? "Hide toolbar" : "Show toolbar"}
+              style={{
+                width: 40,
+                height: 40,
+                borderRadius: "12px",
+                border: `1px solid ${COLORS?.border || "#333"}`,
+                background: COLORS?.background || "#1e1e1e",
+                color: COLORS?.text || "#fff",
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center",
+                boxShadow: "0 6px 16px rgba(0,0,0,0.35)",
+                cursor: "pointer",
+              }}
+            >
+              {toolbarVisible ? <FaChevronUp size={16} /> : <FaChevronDown size={16} />}
+            </button>
+          </div>
+          <div
             // inner card is aligned to the right on desktops; full-width on mobile
             style={{
               margin: "8px",
@@ -199,6 +230,9 @@ const FlashCardTable = ({ cards, setCards, COLORS }) => {
               // Responsive: full-width on small screens, compact on wider
               width: "min(680px, 96vw)",
               marginLeft: "auto",
+              transform: toolbarVisible ? "translateY(0)" : "translateY(-130%)",
+              transition: "transform 0.3s ease",
+              position: "relative",
             }}
           >
             {/* Left cluster: Select All + count */}
