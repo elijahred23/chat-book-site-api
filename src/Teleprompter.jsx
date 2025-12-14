@@ -330,6 +330,11 @@ const TeleprompterAdvanced = () => {
           font-size: 0.9rem;
           margin-right: 0.35rem;
         }
+        .tp-no-select {
+          user-select: none;
+          -webkit-user-select: none;
+          -ms-user-select: none;
+        }
       `}</style>
       <div className="tp-shell">
         {/* Control panel */}
@@ -487,6 +492,8 @@ const TeleprompterAdvanced = () => {
           border: "none",
           borderRadius: 5,
           color: textColor,
+          userSelect: "none",
+          WebkitUserSelect: "none",
         }}
       >
         {showControls ? "Hide Controls" : "Show Controls"}
@@ -495,6 +502,7 @@ const TeleprompterAdvanced = () => {
       {/* Teleprompter reading area */}
       <div
         ref={teleprompterRef}
+        className="tp-no-select"
         style={{
           position: "relative",
           top: showControls ? undefined : "0",
@@ -548,7 +556,7 @@ const TeleprompterAdvanced = () => {
             }}
           />
         </div>
-        <div style={{ display: "flex", justifyContent: "space-between", color: "#e2e8f0", fontSize: "0.9rem", marginTop: 4 }}>
+        <div className="tp-no-select" style={{ display: "flex", justifyContent: "space-between", color: "#e2e8f0", fontSize: "0.9rem", marginTop: 4 }}>
           <span>{Math.max(0, Math.round(remainingSec))}s left</span>
           <span>Cycle {durationSec ? `${Math.round(durationSec)}s` : "–"}</span>
         </div>
