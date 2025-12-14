@@ -553,6 +553,8 @@ const TeleprompterAdvanced = () => {
               height: "100%",
               background: "linear-gradient(135deg, #22c55e, #60a5fa)",
               transition: "width 0.1s linear",
+              userSelect: "none",
+              WebkitUserSelect: "none",
             }}
           />
         </div>
