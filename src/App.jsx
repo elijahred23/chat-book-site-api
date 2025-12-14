@@ -21,6 +21,7 @@ import PodcastTTSPlayer from './PodcastTTSPlayer.jsx';
 import JSConsoleGenerator from './JSConsoleGenerator.jsx';
 import ChatBookApp from './ChatBookApp.jsx';
 import ArchitectureDiagram from './ArchitectureDiagram.jsx';
+import SideDrawer from './ui/SideDrawer.jsx';
 
 function AppContent() {
   const [isFullWidth, setIsFullWidth] = useState(true);
@@ -194,113 +195,120 @@ function AppContent() {
           </Routes>
         </div>
 
-        <div className={`chat-drawer ${isChatOpen ? 'open' : ''} ${isFullWidth ? 'full' : 'half'}`}>
-            <div className="chat-drawer-header">
-              <button className="close-chat-btn" onClick={() => dispatch(actions.setIsChatOpen(false))}>✖</button>
-            </div>
-            <GptPromptComponent
-              isCollapsed={!isChatVisible}
-              hidePrompt={!isPromptVisible}
-              onClose={() => dispatch(actions.setIsChatOpen(false))}
-              onToggleCollapse={() => setIsChatVisible((prev) => !prev)}
-              onTogglePrompt={() => setIsPromptVisible((prev) => !prev)}
-            />
-          </div>
+        <SideDrawer
+          isOpen={isChatOpen}
+          isFullWidth={isFullWidth}
+          onClose={() => dispatch(actions.setIsChatOpen(false))}
+          closeLabel="✖"
+        >
+          <GptPromptComponent
+            isCollapsed={!isChatVisible}
+            hidePrompt={!isPromptVisible}
+            onClose={() => dispatch(actions.setIsChatOpen(false))}
+            onToggleCollapse={() => setIsChatVisible((prev) => !prev)}
+            onTogglePrompt={() => setIsPromptVisible((prev) => !prev)}
+          />
+        </SideDrawer>
 
-        {/* TTS Drawer */}
-        <div className={`chat-drawer ${isTTSOpen ? 'open' : ''} ${isFullWidth ? 'full' : 'half'}`}>
-          <div className="chat-drawer-header">
-            <button className="width-toggle-btn" onClick={toggleWidth}>
-              {isFullWidth ? '↔ Half Width' : '↔ Full Width'}
-            </button>
-            <button className="close-chat-btn" onClick={() => setIsTTSOpen(false)}>✖</button>
-          </div>
+        <SideDrawer
+          isOpen={isTTSOpen}
+          isFullWidth={isFullWidth}
+          onToggleWidth={toggleWidth}
+          onClose={() => setIsTTSOpen(false)}
+          closeLabel="✖"
+        >
           <LoopingTTS />
-        </div>
+        </SideDrawer>
 
-        {/* Teleprompter Drawer */}
-        <div className={`chat-drawer ${isTeleprompterOpen ? 'open' : ''} ${isFullWidth ? 'full' : 'half'}`}>
-          <div className="chat-drawer-header">
-            <button className="width-toggle-btn" onClick={() => setIsTeleprompterOpen(false)}>
-              ✖ Close Teleprompter
-            </button>
-          </div>
+        <SideDrawer
+          isOpen={isTeleprompterOpen}
+          isFullWidth={isFullWidth}
+          onToggleWidth={toggleWidth}
+          onClose={() => setIsTeleprompterOpen(false)}
+          closeLabel="✖ Close Teleprompter"
+        >
           <Teleprompter />
-        </div>
+        </SideDrawer>
 
-        {/* ✅ NEW PlantUML Drawer */}
-        <div className={`chat-drawer ${isPlantUMLOpen ? 'open' : ''} ${isFullWidth ? 'full' : 'half'}`}>
-          <div className="chat-drawer-header">
-            <button className="width-toggle-btn" onClick={() => setIsPlantUMLOpen(false)}>
-              ✖ Close UML Viewer
-            </button>
-          </div>
+        <SideDrawer
+          isOpen={isPlantUMLOpen}
+          isFullWidth={isFullWidth}
+          onToggleWidth={toggleWidth}
+          onClose={() => setIsPlantUMLOpen(false)}
+          closeLabel="✖ Close UML Viewer"
+        >
           <PlantUMLViewer />
-        </div>
+        </SideDrawer>
 
-        {/* ✅ NEW Podcast TTS Drawer */}
-        <div className={`chat-drawer ${isPodcastTTSOpen ? 'open' : ''} ${isFullWidth ? 'full' : 'half'}`}>
-          <div className="chat-drawer-header">
-            <button className="width-toggle-btn" onClick={() => setPodcastTTSOpen(false)}>
-              ✖ Close Podcast TTS Player
-            </button>
-          </div>
+        <SideDrawer
+          isOpen={isPodcastTTSOpen}
+          isFullWidth={isFullWidth}
+          onToggleWidth={toggleWidth}
+          onClose={() => setPodcastTTSOpen(false)}
+          closeLabel="✖ Close Podcast TTS Player"
+        >
           <PodcastTTSPlayer />
-        </div>
-        {/* HTML Builder Drawer */}
-        <div className={`chat-drawer ${isHtmlBuilderOpen ? 'open' : ''} ${isFullWidth ? 'full' : 'half'}`}>
-          <div className="chat-drawer-header">
-            <button className="width-toggle-btn" onClick={() => setIsHtmlBuilderOpen(false)}>
-              ✖ Close HTML Builder
-            </button>
-          </div>
+        </SideDrawer>
+
+        <SideDrawer
+          isOpen={isHtmlBuilderOpen}
+          isFullWidth={isFullWidth}
+          onToggleWidth={toggleWidth}
+          onClose={() => setIsHtmlBuilderOpen(false)}
+          closeLabel="✖ Close HTML Builder"
+        >
           <HtmlBuilder />
-        </div>
-        {/* Typing Test Drawer */}
-        <div className={`chat-drawer ${isTypingOpen ? 'open' : ''} ${isFullWidth ? 'full' : 'half'}`}>
-          <div className="chat-drawer-header">
-            <button className="width-toggle-btn" onClick={() => setIsTypingOpen(false)}>
-              ✖ Close Typing Test
-            </button>
-          </div>
+        </SideDrawer>
+
+        <SideDrawer
+          isOpen={isTypingOpen}
+          isFullWidth={isFullWidth}
+          onToggleWidth={toggleWidth}
+          onClose={() => setIsTypingOpen(false)}
+          closeLabel="✖ Close Typing Test"
+        >
           <TypingTest />
-        </div>
-        {/* YouTube Transcript Drawer */}
-        <div className={`chat-drawer ${isYouTubeOpen ? 'open' : ''} ${isFullWidth ? 'full' : 'half'}`}>
-          <div className="chat-drawer-header">
-            <button className="width-toggle-btn" onClick={() => setIsYouTubeOpen(false)}>
-              ✖ Close YouTube Transcript
-            </button>
-          </div>
+        </SideDrawer>
+
+        <SideDrawer
+          isOpen={isYouTubeOpen}
+          isFullWidth={isFullWidth}
+          onToggleWidth={toggleWidth}
+          onClose={() => setIsYouTubeOpen(false)}
+          closeLabel="✖ Close YouTube Transcript"
+        >
           <YouTubeTranscript />
-        </div>
-        {/* New JS Console Generator Drawer */}
-        <div className={`chat-drawer ${isJSGeneratorOpen ? 'open' : ''} ${isFullWidth ? 'full' : 'half'}`}>
-          <div className="chat-drawer-header">
-            <button className="width-toggle-btn" onClick={() => dispatch(actions.setIsJSGeneratorOpen(false))}>
-              ✖ Close JS Console Generator
-            </button>
-          </div>
+        </SideDrawer>
+
+        <SideDrawer
+          isOpen={isJSGeneratorOpen}
+          isFullWidth={isFullWidth}
+          onToggleWidth={toggleWidth}
+          onClose={() => dispatch(actions.setIsJSGeneratorOpen(false))}
+          closeLabel="✖ Close JS Console Generator"
+        >
           <JSConsoleGenerator />
-        </div>
-        {/* Chat Book Drawer */}
-        <div className={`chat-drawer ${isChatBookOpen ? 'open' : ''} ${isFullWidth ? 'full' : 'half'}`}>
-          <div className="chat-drawer-header">
-            <button className="width-toggle-btn" onClick={() => dispatch(actions.setIsChatBookOpen(false))}>
-              ✖ Close Chat Book
-            </button>
-          </div>
+        </SideDrawer>
+
+        <SideDrawer
+          isOpen={isChatBookOpen}
+          isFullWidth={isFullWidth}
+          onToggleWidth={toggleWidth}
+          onClose={() => dispatch(actions.setIsChatBookOpen(false))}
+          closeLabel="✖ Close Chat Book"
+        >
           <ChatBookApp />
-        </div>
-        {/* Architecture Diagram Drawer */}
-        <div className={`chat-drawer ${isArchitectureOpen ? 'open' : ''} ${isFullWidth ? 'full' : 'half'}`}>
-          <div className="chat-drawer-header">
-            <button className="width-toggle-btn" onClick={() => setIsArchitectureOpen(false)}>
-              ✖ Close Architecture Diagram
-            </button>
-          </div>
+        </SideDrawer>
+
+        <SideDrawer
+          isOpen={isArchitectureOpen}
+          isFullWidth={isFullWidth}
+          onToggleWidth={toggleWidth}
+          onClose={() => setIsArchitectureOpen(false)}
+          closeLabel="✖ Close Architecture Diagram"
+        >
           <ArchitectureDiagram />
-        </div>
+        </SideDrawer>
       
 
       <DownloadCopyTextFile />
