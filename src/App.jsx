@@ -204,6 +204,7 @@ function AppContent() {
           closeLabel="✖"
         >
           <GptPromptComponent
+            isOpen={isChatOpen}
             isCollapsed={!isChatVisible}
             hidePrompt={!isPromptVisible}
             onClose={() => dispatch(actions.setIsChatOpen(false))}

@@ -30,6 +30,7 @@ function useLocalStorageState(key, defaultValue) {
 export default function GptPromptComponent({
   isCollapsed = false,
   hidePrompt = false,
+  isOpen = false,
   onClose = () => {},
   onToggleCollapse = () => {},
   onTogglePrompt = () => {},
@@ -82,10 +83,12 @@ export default function GptPromptComponent({
 
   // When the drawer opens, default back to the prompt tab
   useEffect(() => {
-    if (!isCollapsed) {
-      setActiveTab("prompt");
-    }
+    if (!isCollapsed) setActiveTab("prompt");
   }, [isCollapsed]);
+
+  useEffect(() => {
+    if (isOpen) setActiveTab("prompt");
+  }, [isOpen]);
 
   const handleInputChange = (e) => dispatch(actions.setChatPrompt(e.target.value));
 

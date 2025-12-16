@@ -55,6 +55,7 @@ export default function SideDrawer({
 }) {
   const drawerClass = `chat-drawer ${isOpen ? "open" : ""} ${isFullWidth ? "full" : "half"} ${className}`.trim();
   const IconFor = (key) => ICONS[key];
+  const hasToggle = Boolean(onToggleWidth);
 
   return (
     <div className={drawerClass}>
@@ -75,6 +76,7 @@ export default function SideDrawer({
               justifyContent: "center",
               gap: 6,
               minWidth: 44,
+              marginLeft: hasToggle ? undefined : "auto",
             }}
           >
             <FaTimes />

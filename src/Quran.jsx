@@ -26,6 +26,7 @@ const Quran = () => {
   const [promptResponses, setPromptResponses] = useState([]);
   const [loadingPrompt, setLoadingPrompt] = useState(false);
   const [progress, setProgress] = useState(0);
+  const [selectedSegments, setSelectedSegments] = useState([]);
   const dispatch = useAppDispatch();
   const [activeTab, setActiveTab] = useState("read"); // "read" or "prompt"
   const [showAllPrompts, setShowAllPrompts] = useState(false);
@@ -96,12 +97,60 @@ const Quran = () => {
     return chunks;
   };
 
+  const splitAyahSmart = (text, maxLen = 220) => {
+    if (!text) return [];
+    if (text.length <= maxLen) return [text];
+    const sentences = text.split(/(?<=[.!?])\s+/);
+    const chunks = [];
+    let buffer = "";
+    sentences.forEach((s) => {
+      if ((buffer + " " + s).trim().length > maxLen && buffer) {
+        chunks.push(buffer.trim());
+        buffer = s;
+      } else {
+        buffer = buffer ? `${buffer} ${s}` : s;
+      }
+    });
+    if (buffer.trim()) chunks.push(buffer.trim());
+    return chunks;
+  };
+
+  const allSegments = useMemo(() => {
+    if (!selectedSurah) return [];
+    return selectedSurah.ayahs.flatMap((ayah) =>
+      splitAyahSmart(ayah.text).map((chunk, idx) => ({
+        key: `${ayah.number}-${idx}`,
+        text: chunk,
+        start: ayah.numberInSurah,
+        idx,
+        label: `${ayah.numberInSurah}`,
+      }))
+    );
+  }, [selectedSurah]);
+
+  const groupsOfTen = useMemo(() => {
+    const groups = [];
+    for (let i = 0; i < allSegments.length; i += 10) {
+      groups.push(allSegments.slice(i, i + 10));
+    }
+    return groups;
+  }, [allSegments]);
+
+  const selectedText = useMemo(() => selectedSegments.map((s) => s.text).join(' '), [selectedSegments]);
+  const selectedPromptText = useMemo(() => {
+    if (!selectedSurah) return selectedText;
+    const header = selectedSegments.length ? `${selectedSurah.englishName} (Surah ${selectedSurah.number})\n` : "";
+    return header + selectedSegments.map((s) => `${s.label ? `${s.label}: ` : ""}${s.text}`).join(' ');
+  }, [selectedSegments, selectedSurah]);
+
   const executePrompt = async () => {
     if (!selectedSurah || !prompt) return;
     try {
       setLoadingPrompt(true);
       setProgress(0);
-      const content = selectedSurah.ayahs.map(ayah => `${ayah.numberInSurah}. ${ayah.text}`).join(' ');
+      const content = selectedSegments.length
+        ? selectedText
+        : selectedSurah.ayahs.map(ayah => `${ayah.numberInSurah}. ${ayah.text}`).join(' ');
       const chunks = chunkIntoSentences(content, 5000);
       const responses = [];
       for (let i = 0; i < chunks.length; i++) {
@@ -260,7 +309,61 @@ const Quran = () => {
                     "Execute Prompt"
                   )}
                 </button>
-                <ActionButtons promptText={selectedSurah.ayahs.map(a => a.text).join(' ')} />
+                <ActionButtons promptText={selectedSegments.length ? selectedPromptText : `${selectedSurah.englishName} (Surah ${selectedSurah.number}): ${selectedSurah.ayahs.map(a => `${a.numberInSurah}: ${a.text}`).join(' ')}`} />
+                <div style={{ fontSize: '0.9rem', color: '#334155', display: 'grid', gap: 8 }}>
+                  <span>{selectedSegments.length > 0 ? `${selectedSegments.length} segments selected` : 'No specific segments selected'}</span>
+                  <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', alignItems: 'center' }}>
+                    <button
+                      className="btn"
+                      onClick={() => {
+                        if (selectedSegments.length) {
+                          setSelectedSegments([]);
+                          return;
+                        }
+                        setSelectedSegments(allSegments);
+                      }}
+                    >
+                      {selectedSegments.length ? "Deselect All" : "Select All"}
+                    </button>
+                    {groupsOfTen.length > 0 && (
+                      <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', alignItems: 'center' }}>
+                        {groupsOfTen.map((group, idx) => {
+                          const labelStart = group[0]?.start || idx * 10 + 1;
+                          const labelEnd = labelStart + group.length - 1;
+                          const allSelected = group.every((g) => selectedSegments.some((s) => s.key === g.key));
+                          return (
+                            <button
+                              key={idx}
+                              className="btn"
+                              style={{
+                                background: allSelected ? 'linear-gradient(135deg,#2563eb,#60a5fa)' : '#f8fafc',
+                                color: allSelected ? '#fff' : '#0f172a',
+                                borderColor: allSelected ? '#2563eb' : '#cbd5e1',
+                              }}
+                              onClick={() => {
+                                setSelectedSegments((prev) => {
+                                  const prevKeys = new Set(prev.map((p) => p.key));
+                                  const groupKeys = new Set(group.map((g) => g.key));
+                                  const allIn = group.every((g) => prevKeys.has(g.key));
+                                  if (allIn) {
+                                    return prev.filter((p) => !groupKeys.has(p.key));
+                                  }
+                                  const merged = [...prev];
+                                  group.forEach((g) => {
+                                    if (!prevKeys.has(g.key)) merged.push(g);
+                                  });
+                                  return merged;
+                                });
+                              }}
+                            >
+                              {labelStart}-{labelEnd}
+                            </button>
+                          );
+                        })}
+                      </div>
+                    )}
+                  </div>
+                </div>
               </div>
               {loadingPrompt && (
                 <div style={{ marginTop: '8px' }}>
@@ -273,11 +376,56 @@ const Quran = () => {
             </div>
 
             <div style={{ maxHeight: '420px', overflowY: 'auto', padding: '0.5rem', border: '1px solid #cbd5e1', borderRadius: '10px', background: '#ffffff' }}>
-              {selectedSurah.ayahs.map((ayah) => (
-                <p key={ayah.number} style={{ margin: '0.4rem 0', lineHeight: 1.6 }}>
-                  <strong>{ayah.numberInSurah}.</strong> {ayah.text}
-                </p>
-              ))}
+              {selectedSurah.ayahs.map((ayah) => {
+                const chunks = splitAyahSmart(ayah.text);
+                return (
+                  <div key={ayah.number} style={{ margin: '0.6rem 0', lineHeight: 1.6, paddingBottom: '0.5rem', borderBottom: '1px solid #e2e8f0' }}>
+                    <div style={{ fontWeight: 700, color: '#0f172a', marginBottom: 4 }}>
+                      {ayah.numberInSurah}.
+                    </div>
+                    {chunks.map((chunk, idx) => {
+                      const key = `${ayah.number}-${idx}`;
+                      const isSelected = selectedSegments.some((s) => s.key === key);
+                      return (
+                        <div
+                          key={idx}
+                          onClick={() => {
+                            setSelectedSegments((prev) =>
+                              prev.some((s) => s.key === key)
+                                ? prev.filter((s) => s.key !== key)
+                                : [...prev, { key, text: chunk, label: `${ayah.numberInSurah}` }]
+                            );
+                          }}
+                          style={{
+                            display: 'grid',
+                            gap: 6,
+                            marginBottom: 10,
+                            padding: '10px 12px',
+                            borderRadius: 12,
+                            background: isSelected ? 'linear-gradient(135deg,#e0f2fe,#eef2ff)' : '#f8fafc',
+                            border: `1px solid ${isSelected ? '#93c5fd' : '#e2e8f0'}`,
+                            boxShadow: isSelected ? '0 6px 18px rgba(59,130,246,0.15)' : 'none',
+                            cursor: 'pointer',
+                            transition: 'all 0.2s ease',
+                          }}
+                        >
+                          <div style={{ color: '#0f172a' }}>
+                            {chunk}
+                          </div>
+                          <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', alignItems: 'center' }}>
+                            {isSelected && (
+                              <span style={{ padding: '4px 8px', borderRadius: 999, background: '#1d4ed8', color: '#fff', fontSize: '0.78rem', fontWeight: 700 }}>
+                                Selected
+                              </span>
+                            )}
+                            <ActionButtons limitButtons promptText={`${selectedSurah.englishName} (Surah ${selectedSurah.number}) - ${ayah.numberInSurah}: ${chunk}`} />
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                );
+              })}
             </div>
           </div>
         )}
