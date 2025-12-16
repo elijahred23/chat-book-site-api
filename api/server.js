@@ -11,6 +11,7 @@ import fs from 'fs';
 import { fetchTranscript, getNewsVideos, getVideoComments } from './youtube.js';
 import { searchYouTube, getVideoDetails, searchYouTubePlaylists, getPlaylistItems, getTrendingVideos } from './youtube.js';
 import { getTranscript } from './supadata.js';
+import textToSpeech from '@google-cloud/text-to-speech';
 GeminiModel.currentModel = process.env.GEMINI_MODEL || "gemini-2.0-flash";
 
 const app = express();
@@ -63,6 +64,15 @@ const logErrorToFile = (error) => {
   const errorLog = `${new Date().toISOString()} - ${error.message}\n${error.stack}\n\n`;
   fs.appendFileSync('error.log', errorLog, 'utf8');
 };
+
+// === Google TTS client ===
+let ttsClient = null;
+try {
+  ttsClient = new textToSpeech.TextToSpeechClient();
+  console.log("Google TTS client initialized");
+} catch (err) {
+  console.warn("Google TTS client not initialized (missing credentials?)", err.message);
+}
 
 app.get('/api/supadata/transcript', async (req, res) => {
 
@@ -172,6 +182,38 @@ app.get('/api/youtube/search', async (req, res) => {
   } catch (error) {
     console.error('Search API error:', error);
     res.status(500).json({ error: 'Internal server error.' });
+  }
+});
+
+// POST /api/tts - returns MP3 audio for given text (Bengali or English)
+app.post('/api/tts', async (req, res) => {
+  try {
+    const { text, lang = 'bn-IN' } = req.body || {};
+    if (!text || typeof text !== 'string') {
+      return res.status(400).json({ error: "Missing 'text' string." });
+    }
+    if (!ttsClient) {
+      return res.status(500).json({ error: "TTS client not initialized. Set GOOGLE_APPLICATION_CREDENTIALS." });
+    }
+    const request = {
+      input: { text },
+      voice: {
+        languageCode: lang,
+        ssmlGender: 'FEMALE',
+      },
+      audioConfig: {
+        audioEncoding: 'MP3',
+        speakingRate: 1.0,
+      },
+    };
+    const [response] = await ttsClient.synthesizeSpeech(request);
+    const audioContent = response.audioContent;
+    res.setHeader('Content-Type', 'audio/mpeg');
+    res.setHeader('Content-Disposition', 'inline; filename="speech.mp3"');
+    return res.send(audioContent);
+  } catch (err) {
+    console.error('TTS error', err);
+    return res.status(500).json({ error: 'TTS failed.' });
   }
 });
 

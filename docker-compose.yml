@@ -21,9 +21,13 @@ services:
     command: sh -c "npm install && node --watch server.js"
     env_file:
       - ./api/.env
+    environment:
+      - GOOGLE_APPLICATION_CREDENTIALS=/var/secrets/tts-sa.json
     ports:
       - "3005:3005"
       - "8080:8080"
     volumes:
       - ./:/app
+      # Mount your local service account key into the container; ensure this file exists locally.
+      - ./var/secrets/tts-sa.json:/var/secrets/tts-sa.json:ro
     restart: unless-stopped

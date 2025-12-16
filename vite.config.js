@@ -12,6 +12,12 @@ export default defineConfig(({ command }) => {
         host: 'localhost',
         strictPort: true,
         port: 3006,
+        proxy: {
+          '/api': {
+            target: 'http://localhost:8080',
+            changeOrigin: true,
+          },
+        },
         allowedHosts: ['localhost'],
       },
     }),

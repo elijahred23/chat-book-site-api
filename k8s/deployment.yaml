@@ -27,6 +27,17 @@ spec:
           envFrom:
             - secretRef:
                 name: chat-book-site-api-secret
+          env:
+            - name: GOOGLE_APPLICATION_CREDENTIALS
+              value: /var/secrets/tts-sa/tts-sa.json
+          volumeMounts:
+            - name: tts-sa
+              mountPath: /var/secrets/tts-sa
+              readOnly: true
+      volumes:
+        - name: tts-sa
+          secret:
+            secretName: tts-sa
 ---
 apiVersion: v1
 kind: Service
