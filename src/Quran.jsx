@@ -176,6 +176,7 @@ const Quran = () => {
     setSelectedSurah(surah);
     setSelectedSurahNumber(surahNumber);
     localStorage.setItem("selectedSurahNumber", surahNumber);
+    setSelectedSegments([]);
   };
 
   if (loading) return <ClipLoader color="#000" loading={loading} size={50} />;
