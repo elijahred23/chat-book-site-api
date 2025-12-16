@@ -4,6 +4,8 @@ import { getGeminiResponse } from "./utils/callGemini";
 import ActionButtons from "./ui/ActionButtons.jsx";
 
 const DEFAULT_PROMPT = "Everyday greetings at a coffee shop";
+const LESSON_CACHE_KEY = "bengali_lesson_cache";
+const INPUT_CACHE_KEY = "bengali_lesson_inputs";
 
 const buildPrompt = (topic, level, focus) => `
 You are a Bengali language tutor. Create a concise lesson as JSON (no extra text) with this shape:
@@ -69,14 +71,75 @@ const useVoices = () => {
 };
 
 export default function BengaliTutor() {
-  const [topic, setTopic] = useState(DEFAULT_PROMPT);
-  const [level, setLevel] = useState("beginner");
-  const [focus, setFocus] = useState("conversation");
-  const [lesson, setLesson] = useState(null);
+  const [topic, setTopic] = useState(() => {
+    try {
+      const saved = localStorage.getItem(INPUT_CACHE_KEY);
+      return saved ? JSON.parse(saved).topic || DEFAULT_PROMPT : DEFAULT_PROMPT;
+    } catch {
+      return DEFAULT_PROMPT;
+    }
+  });
+  const [level, setLevel] = useState(() => {
+    try {
+      const saved = localStorage.getItem(INPUT_CACHE_KEY);
+      return saved ? JSON.parse(saved).level || "beginner" : "beginner";
+    } catch {
+      return "beginner";
+    }
+  });
+  const [focus, setFocus] = useState(() => {
+    try {
+      const saved = localStorage.getItem(INPUT_CACHE_KEY);
+      return saved ? JSON.parse(saved).focus || "conversation" : "conversation";
+    } catch {
+      return "conversation";
+    }
+  });
+  const [lesson, setLesson] = useState(() => {
+    try {
+      const saved = localStorage.getItem(LESSON_CACHE_KEY);
+      return saved ? JSON.parse(saved) : null;
+    } catch {
+      return null;
+    }
+  });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const { voices, ready: voicesReady } = useVoices();
   const audioCacheRef = React.useRef(new Map()); // cache Bengali audio URLs by text+lang
+  const loopStateRef = React.useRef({ key: null, mode: null, abort: false, audio: null });
+  const [, forceRender] = useState(0); // quick rerender for loop status
+
+  const playAudioUrl = (url) =>
+    new Promise((resolve, reject) => {
+      const audio = new Audio(url);
+      loopStateRef.current.audio = audio;
+      audio.onended = () => resolve();
+      audio.onerror = (e) => reject(e);
+      audio.play().catch(reject);
+    });
+
+  const synthesizeAndPlay = async (text, lang) => {
+    const cacheKey = `${lang}::${text}`;
+    let url = audioCacheRef.current.get(cacheKey);
+    if (!url) {
+      const resp = await fetch("/api/tts", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ text, lang }),
+      });
+      if (!resp.ok) throw new Error("TTS failed");
+      const blob = await resp.blob();
+      url = URL.createObjectURL(blob);
+      // Cache Bengali heavily; cache English to smooth looping as well
+      audioCacheRef.current.set(cacheKey, url);
+    }
+    try {
+      await playAudioUrl(url);
+    } finally {
+      // keep cached URL for reuse; do not revoke
+    }
+  };
 
   const speak = async (text, langPref = "bn") => {
     if (!text) return;
@@ -84,32 +147,10 @@ export default function BengaliTutor() {
       // Bengali: force backend TTS only
       const langCandidates = ["bn-IN", "bn-BD", "bn"];
       for (const langCode of langCandidates) {
-        const cacheKey = `${langCode}::${text}`;
-        const cachedUrl = audioCacheRef.current.get(cacheKey);
-        if (cachedUrl) {
-          const audio = new Audio(cachedUrl);
-          try {
-            await audio.play();
-            return;
-          } catch (err) {
-            // if cached URL fails, purge and refetch
-            audioCacheRef.current.delete(cacheKey);
-          }
-        }
         try {
-          const resp = await fetch("/api/tts", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ text, lang: langCode }),
-          });
-          if (!resp.ok) continue;
-          const blob = await resp.blob();
-          const url = URL.createObjectURL(blob);
-          audioCacheRef.current.set(cacheKey, url);
-          const audio = new Audio(url);
-          await audio.play();
+          await synthesizeAndPlay(text, langCode);
           return;
-        } catch (err) {}
+        } catch {}
       }
       return;
     }
@@ -126,6 +167,7 @@ export default function BengaliTutor() {
       utter.lang = enVoice?.lang || "en-US";
       synth.cancel();
       synth.resume?.();
+      loopStateRef.current.audio = null;
       synth.speak(utter);
       return true;
     };
@@ -135,19 +177,35 @@ export default function BengaliTutor() {
 
     // Fallback to backend TTS for English if no local voice worked
     try {
-      const resp = await fetch("/api/tts", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ text, lang: "en-US" }),
-      });
-      if (resp.ok) {
-        const blob = await resp.blob();
-        const url = URL.createObjectURL(blob);
-        const audio = new Audio(url);
-        await audio.play();
-        URL.revokeObjectURL(url);
-      }
+      await synthesizeAndPlay(text, "en-US");
     } catch {}
+  };
+
+  const stopLoops = () => {
+    loopStateRef.current.abort = true;
+    loopStateRef.current.mode = null;
+    loopStateRef.current.key = null;
+    loopStateRef.current.audio?.pause?.();
+    loopStateRef.current.audio = null;
+    forceRender((x) => x + 1);
+  };
+
+  const loopSequence = async (key, mode, segments) => {
+    stopLoops();
+    loopStateRef.current.abort = false;
+    loopStateRef.current.mode = mode;
+    loopStateRef.current.key = key;
+    forceRender((x) => x + 1);
+    try {
+      while (!loopStateRef.current.abort) {
+        for (const seg of segments) {
+          if (loopStateRef.current.abort) break;
+          await speak(seg.text, seg.lang);
+        }
+      }
+    } finally {
+      stopLoops();
+    }
   };
 
   const fetchLesson = async () => {
@@ -158,6 +216,11 @@ export default function BengaliTutor() {
       const resp = await getGeminiResponse(promptText);
       const parsed = parseJson(resp);
       setLesson(parsed);
+      localStorage.setItem(LESSON_CACHE_KEY, JSON.stringify(parsed));
+      localStorage.setItem(
+        INPUT_CACHE_KEY,
+        JSON.stringify({ topic: topic || DEFAULT_PROMPT, level, focus })
+      );
     } catch (err) {
       setError(err?.message || "Failed to build lesson");
     } finally {
@@ -335,9 +398,25 @@ export default function BengaliTutor() {
                   <div key={idx} className="bn-section" style={{ background: "#fff" }}>
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
                       <div style={{ fontWeight: 800, color: "#0f172a" }}>{p.bn}</div>
-                      <div style={{ display: "flex", gap: 6 }}>
+                      <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
                         <button className="bn-btn secondary" onClick={() => speak(p.bn, "bn")}>🔈 Bengali</button>
                         <button className="bn-btn secondary" onClick={() => speak(p.en, "en")}>🔈 English</button>
+                        <button
+                          className="bn-btn secondary"
+                          onClick={() =>
+                            loopSequence(
+                              `phrase-${idx}`,
+                              "phrase",
+                              [
+                                { text: p.bn, lang: "bn" },
+                                { text: p.en, lang: "en" },
+                              ]
+                            )
+                          }
+                          style={{ background: loopStateRef.current.key === `phrase-${idx}` ? "#2563eb" : undefined, color: loopStateRef.current.key === `phrase-${idx}` ? "#fff" : undefined }}
+                        >
+                          🔁 Loop bn→en
+                        </button>
                       </div>
                     </div>
                     <div style={{ color: "#0f172a" }}>{p.pronunciation}</div>
@@ -348,6 +427,25 @@ export default function BengaliTutor() {
                     </div>
                   </div>
                 ))}
+                <div style={{ display: "flex", gap: 8, flexWrap: "wrap", alignItems: "center" }}>
+                  <button
+                    className="bn-btn"
+                    onClick={() =>
+                      loopSequence(
+                        "all-phrases",
+                        "all",
+                        lesson.phrases.flatMap((p) => [
+                          { text: p.bn, lang: "bn" },
+                          { text: p.en, lang: "en" },
+                        ])
+                      )
+                    }
+                    style={{ background: loopStateRef.current.key === "all-phrases" ? "#2563eb" : "#0f172a" }}
+                  >
+                    🔁 Loop all phrases (bn→en)
+                  </button>
+                  <button className="bn-btn secondary" onClick={stopLoops}>Stop Loop</button>
+                </div>
               </div>
             ) : null}
 
@@ -367,6 +465,25 @@ export default function BengaliTutor() {
                     </div>
                   </div>
                 ))}
+                <div style={{ display: "flex", gap: 8, flexWrap: "wrap", alignItems: "center", marginTop: 6 }}>
+                  <button
+                    className="bn-btn"
+                    onClick={() =>
+                      loopSequence(
+                        "all-vocab",
+                        "all",
+                        lesson.vocab.flatMap((v, i) => [
+                          { text: v.bn, lang: "bn" },
+                          { text: v.en, lang: "en" },
+                        ])
+                      )
+                    }
+                    style={{ background: loopStateRef.current.key === "all-vocab" ? "#2563eb" : "#0f172a" }}
+                  >
+                    🔁 Loop all vocab (bn→en)
+                  </button>
+                  <button className="bn-btn secondary" onClick={stopLoops}>Stop Loop</button>
+                </div>
               </div>
             ) : null}
 
