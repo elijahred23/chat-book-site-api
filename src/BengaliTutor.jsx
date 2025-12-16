@@ -105,8 +105,10 @@ export default function BengaliTutor() {
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [vocabMp3Loading, setVocabMp3Loading] = useState(false);
   const { voices, ready: voicesReady } = useVoices();
   const audioCacheRef = React.useRef(new Map()); // cache Bengali audio URLs by text+lang
+  const batchCacheRef = React.useRef(new Map()); // cache combined MP3 blobs for batch vocab
   const loopStateRef = React.useRef({ key: null, mode: null, abort: false, audio: null });
   const [, forceRender] = useState(0); // quick rerender for loop status
 
@@ -321,6 +323,40 @@ export default function BengaliTutor() {
     return `${lesson.title || "Bengali Lesson"}: ${phrases.join(" | ")}`;
   }, [lesson]);
 
+  const downloadCombinedVocabMp3 = async () => {
+    if (!lesson?.vocab?.length) return;
+    try {
+      setVocabMp3Loading(true);
+      const items = lesson.vocab.map((v) => ({ text: v.bn, lang: "bn-IN" }));
+      const cacheKey = JSON.stringify(items);
+      const cachedUrl = batchCacheRef.current.get(cacheKey);
+      if (cachedUrl) {
+        const link = document.createElement("a");
+        link.href = cachedUrl;
+        link.download = `${lesson.title || "bengali-vocab"}.mp3`;
+        link.click();
+        return;
+      }
+      const resp = await fetch("/api/tts/batch", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ items }),
+      });
+      if (!resp.ok) throw new Error("Failed to generate MP3");
+      const blob = await resp.blob();
+      const url = URL.createObjectURL(blob);
+      batchCacheRef.current.set(cacheKey, url);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = `${lesson.title || "bengali-vocab"}.mp3`;
+      link.click();
+    } catch (err) {
+      setError(err?.message || "Failed to download vocab MP3");
+    } finally {
+      setVocabMp3Loading(false);
+    }
+  };
+
   return (
     <div style={{ background: "#f8fafc", minHeight: "100vh" }}>
       <style>{shellStyles}</style>
@@ -352,6 +388,28 @@ export default function BengaliTutor() {
               <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
                 <button className="bn-btn" onClick={fetchLesson} disabled={loading}>{loading ? "Generating..." : "Generate Lesson"}</button>
                 <button className="bn-btn secondary" onClick={() => { setTopic(DEFAULT_PROMPT); setLesson(null); setError(""); }}>Reset</button>
+                <label className="bn-btn secondary" style={{ cursor: "pointer" }}>
+                  Upload Lesson JSON
+                  <input
+                    type="file"
+                    accept=".json,application/json"
+                    style={{ display: "none" }}
+                    onChange={async (e) => {
+                      const file = e.target.files?.[0];
+                      if (!file) return;
+                      try {
+                        const text = await file.text();
+                        const parsed = JSON.parse(text);
+                        setLesson(parsed);
+                        localStorage.setItem(LESSON_CACHE_KEY, text);
+                      } catch (err) {
+                        setError("Invalid lesson JSON");
+                      } finally {
+                        e.target.value = "";
+                      }
+                    }}
+                  />
+                </label>
               </div>
               {error && <div style={{ color: "#dc2626", fontWeight: 600 }}>{error}</div>}
             </div>
@@ -369,6 +427,15 @@ export default function BengaliTutor() {
                   <small style={{ color: "#475569" }}>Phrase list with pronunciations</small>
                 </div>
                 <button className="bn-btn secondary" onClick={downloadWords} disabled={!lesson?.vocab?.length}>Download</button>
+              </div>
+              <div className="bn-row">
+                <div>
+                  <div className="bn-pill">Download vocab MP3</div>
+                  <small style={{ color: "#475569" }}>Combined Bengali audio</small>
+                </div>
+                <button className="bn-btn secondary" onClick={downloadCombinedVocabMp3} disabled={!lesson?.vocab?.length || vocabMp3Loading}>
+                  {vocabMp3Loading ? "Building..." : "Download MP3"}
+                </button>
               </div>
             </div>
           </div>

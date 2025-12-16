@@ -217,6 +217,44 @@ app.post('/api/tts', async (req, res) => {
   }
 });
 
+// POST /api/tts/batch - combine multiple TTS outputs into a single MP3
+app.post('/api/tts/batch', async (req, res) => {
+  try {
+    const { items } = req.body || {};
+    if (!Array.isArray(items) || !items.length) {
+      return res.status(400).json({ error: "Missing 'items' array." });
+    }
+    if (!ttsClient) {
+      return res.status(500).json({ error: "TTS client not initialized. Set GOOGLE_APPLICATION_CREDENTIALS." });
+    }
+    const audioBuffers = [];
+    for (const item of items) {
+      const text = item?.text;
+      const lang = item?.lang || 'bn-IN';
+      if (!text || typeof text !== 'string') continue;
+      const request = {
+        input: { text },
+        voice: { languageCode: lang, ssmlGender: 'FEMALE' },
+        audioConfig: { audioEncoding: 'MP3', speakingRate: 1.0 },
+      };
+      const [response] = await ttsClient.synthesizeSpeech(request);
+      if (response?.audioContent) {
+        audioBuffers.push(response.audioContent);
+      }
+    }
+    if (!audioBuffers.length) {
+      return res.status(400).json({ error: "No audio generated for provided items." });
+    }
+    const combined = Buffer.concat(audioBuffers.map((b) => Buffer.from(b)));
+    res.setHeader('Content-Type', 'audio/mpeg');
+    res.setHeader('Content-Disposition', 'attachment; filename="lesson.mp3"');
+    return res.send(combined);
+  } catch (err) {
+    console.error('Batch TTS error', err);
+    return res.status(500).json({ error: 'Batch TTS failed.' });
+  }
+});
+
 // GET trending youtube
 app.get('/api/youtube/trending', async (req, res) => {
     try {
