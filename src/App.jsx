@@ -30,7 +30,9 @@ function AppContent() {
   const [isChatVisible, setIsChatVisible] = useState(true);
   const [isPromptVisible, setIsPromptVisible] = useState(true);
   const [showFloatingBtns, setShowFloatingBtns] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const floatingRef = useRef(null);
+  const menuRef = useRef(null);
   const closeFabMenu = () => setShowFloatingBtns(false);
   const dispatch = useAppDispatch();
   const { drawerStack, isChatOpen, isTeleprompterOpen, isTTSOpen, isPlantUMLOpen, isPodcastTTSOpen, isJSGeneratorOpen, isChatBookOpen, isArchitectureOpen, isYouTubeOpen, isHtmlBuilderOpen, isTypingOpen } = useAppState();
@@ -66,23 +68,147 @@ function AppContent() {
     };
   }, [showFloatingBtns]);
 
+  useEffect(() => {
+    if (!isMenuOpen) return;
+    const handleClickOutside = (e) => {
+      if (menuRef.current && !menuRef.current.contains(e.target)) {
+        setIsMenuOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("touchstart", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("touchstart", handleClickOutside);
+    };
+  }, [isMenuOpen]);
+
   return (
     <>
-      <h1>Eli Himi GPT</h1>
+      <div className="app-topbar">
+        <h1 className="app-title">Eli Himi GPT</h1>
 
         {/* Dropdown Menu */}
-        <div className="dropdown-nav">
-          <button className="dropdown-toggle">Menu ▾</button>
-          <div className="dropdown-menu">
-            <NavLink to="/flashCards">Flash Cards</NavLink>
-            <NavLink to="/Quran">Quran</NavLink>
-            <NavLink to="/bengali">Bengali Tutor</NavLink>
-            <NavLink to="/coding">Coding Problems</NavLink>
-            <NavLink to="/apiCheck">Settings</NavLink>
-          </div>
+        <div className="dropdown-nav" ref={menuRef}>
+          <button
+            className="dropdown-toggle"
+            type="button"
+            onClick={() => setIsMenuOpen((p) => !p)}
+            aria-haspopup="menu"
+            aria-expanded={isMenuOpen}
+          >
+            Menu <span className="dropdown-caret">▾</span>
+          </button>
+          {isMenuOpen && (
+            <div className="dropdown-menu" role="menu" aria-label="Main menu">
+              <NavLink to="/flashCards" role="menuitem" onClick={() => setIsMenuOpen(false)}>Flash Cards</NavLink>
+              <NavLink to="/Quran" role="menuitem" onClick={() => setIsMenuOpen(false)}>Quran</NavLink>
+              <NavLink to="/bengali" role="menuitem" onClick={() => setIsMenuOpen(false)}>Bengali Tutor</NavLink>
+              <NavLink to="/coding" role="menuitem" onClick={() => setIsMenuOpen(false)}>Coding Problems</NavLink>
+              <NavLink to="/apiCheck" role="menuitem" onClick={() => setIsMenuOpen(false)}>Settings</NavLink>
+            </div>
+          )}
         </div>
+      </div>
 
         <style>{`
+          .app-topbar {
+            position: sticky;
+            top: 0;
+            z-index: 15000;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 10px;
+            flex-wrap: nowrap;
+            padding: 10px 12px;
+            margin-bottom: 10px;
+            background: rgba(248, 250, 252, 0.88);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+          }
+          .app-title {
+            margin: 0;
+            font-size: 1.15rem;
+            letter-spacing: -0.02em;
+            color: #0f172a;
+            white-space: nowrap;
+            flex: 1;
+            min-width: 0;
+          }
+          .dropdown-nav {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: flex-end;
+            margin-left: auto;
+          }
+          .dropdown-toggle {
+            appearance: none;
+            border: 1px solid #e2e8f0;
+            background: #ffffff;
+            color: #0f172a;
+            font-weight: 800;
+            border-radius: 999px;
+            padding: 10px 12px;
+            min-height: 42px;
+            cursor: pointer;
+            box-shadow: 0 10px 22px rgba(15, 23, 42, 0.10);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            line-height: 1;
+          }
+          .dropdown-toggle:active {
+            transform: translateY(1px);
+          }
+          .dropdown-toggle:focus {
+            outline: 3px solid rgba(59, 130, 246, 0.35);
+            outline-offset: 2px;
+          }
+          .dropdown-caret {
+            opacity: 0.75;
+            transform: translateY(1px);
+          }
+          .dropdown-menu {
+            position: fixed;
+            left: auto;
+            right: 12px;
+            top: 58px;
+            width: min(360px, calc(100vw - 24px));
+            max-height: calc(100vh - 88px);
+            overflow: auto;
+            -webkit-overflow-scrolling: touch;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(226, 232, 240, 0.95);
+            border-radius: 16px;
+            padding: 8px;
+            box-shadow: 0 18px 44px rgba(15, 23, 42, 0.22);
+            display: grid;
+            gap: 6px;
+          }
+          .dropdown-menu a {
+            text-decoration: none;
+            color: #0f172a;
+            font-weight: 800;
+            padding: 10px 12px;
+            border-radius: 12px;
+            border: 1px solid transparent;
+            background: transparent;
+          }
+          .dropdown-menu a:hover {
+            background: #f8fafc;
+            border-color: #e2e8f0;
+          }
+          .dropdown-menu a.active {
+            background: linear-gradient(135deg, #e0f2fe, #eef2ff);
+            border-color: #93c5fd;
+            color: #0f172a;
+          }
+
           .fab-container {
             position: fixed;
             bottom: 16px;
@@ -134,6 +260,23 @@ function AppContent() {
           @media (max-width: 540px) {
             .fab-btn {
               min-width: 120px;
+            }
+            .app-topbar {
+              padding: 10px;
+            }
+            .app-title {
+              font-size: 1.05rem;
+              max-width: 55vw;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            }
+            .dropdown-toggle {
+              padding: 10px 12px;
+              min-height: 44px;
+            }
+            .dropdown-menu { left: 10px; right: 10px; width: auto; top: 60px; }
+            .dropdown-menu a {
+              padding: 12px 12px;
             }
           }
         `}</style>

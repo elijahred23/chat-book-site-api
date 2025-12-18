@@ -1,13 +1,13 @@
 FROM node:18-slim AS builder
 WORKDIR /app
-COPY package.json package-lock.json ./
+COPY package.json  ./
 RUN npm install --no-audit --progress=false
 COPY . .
 RUN npm run build
 
 FROM node:18-slim AS api_deps
 WORKDIR /app/api
-COPY api/package.json api/package-lock.json ./
+COPY api/package.json  ./
 RUN npm install --omit=dev --no-audit --progress=false
 
 FROM node:18-slim
