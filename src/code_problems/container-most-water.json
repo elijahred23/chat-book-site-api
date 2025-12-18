@@ -1,0 +1,42 @@
+{
+  "id": "container-most-water",
+  "title": "Container With Most Water",
+  "difficulty": "Medium",
+  "functionName": "maxArea",
+  "runner": "containerMostWater",
+  "prompt": "Given an array of positive integers height, where each integer represents the height of a vertical line, find two lines that together with the x-axis form a container that holds the most water.\n\nReturn the maximum area.\n\nArea formula:\narea = min(height[i], height[j]) * (j - i)\n\nIf the array has fewer than 2 lines, return 0.",
+  "constraintQuestions": [
+    "Are all heights positive integers (no zero/negative)?",
+    "Can the input be empty or have one value?",
+    "Should we return 0 when no container can be formed?",
+    "Do we care about the thickness of the lines? (assume no)"
+  ],
+  "starterCode": "// Write your solution in JavaScript.\n// Requirement: define a function named maxArea(height)\n// Return: a number (max area)\n\nfunction maxArea(height) {\n  // TODO: implement\n  return 0;\n}\n",
+  "walkthrough": [
+    {
+      "title": "Brute force idea",
+      "body": "This is a maximum-value question.\nCheck every pair (i, j), compute:\narea = min(height[i], height[j]) * (j - i)\nTrack maxArea.\nTime: O(n^2), Space: O(1)."
+    },
+    {
+      "title": "JavaScript (brute force implementation)",
+      "codeLanguage": "javascript",
+      "body": "function maxArea(height) {\n  let best = 0;\n  for (let i = 0; i < height.length; i++) {\n    for (let j = i + 1; j < height.length; j++) {\n      const h = Math.min(height[i], height[j]);\n      const w = j - i;\n      best = Math.max(best, h * w);\n    }\n  }\n  return best;\n}"
+    },
+    {
+      "title": "Optimized two-pointer insight",
+      "body": "Start with the widest container: left = 0, right = n-1.\nCurrent area uses the shorter of the two heights.\nMoving the taller pointer cannot increase the limiting height, but moving the shorter pointer might.\nSo:\n- compute area\n- update best\n- move the pointer with the smaller height inward\nTime: O(n), Space: O(1)."
+    },
+    {
+      "title": "JavaScript (two-pointer implementation)",
+      "codeLanguage": "javascript",
+      "body": "function maxArea(height) {\n  let left = 0;\n  let right = height.length - 1;\n  let best = 0;\n\n  while (left < right) {\n    const h = Math.min(height[left], height[right]);\n    const w = right - left;\n    best = Math.max(best, h * w);\n\n    if (height[left] <= height[right]) left++;\n    else right--;\n  }\n\n  return best;\n}"
+    }
+  ],
+  "tests": [
+    { "name": "Obvious", "height": [7, 1, 2, 3, 9], "expect": 28 },
+    { "name": "Empty array", "height": [], "expect": 0 },
+    { "name": "Single value", "height": [5], "expect": 0 },
+    { "name": "Less obvious", "height": [6, 9, 3, 4, 5, 8], "expect": 32 }
+  ]
+}
+

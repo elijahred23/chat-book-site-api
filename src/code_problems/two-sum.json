@@ -1,0 +1,48 @@
+{
+  "id": "two-sum",
+  "title": "Two Sum",
+  "difficulty": "Easy",
+  "functionName": "twoSum",
+  "runner": "twoSum",
+  "prompt": "Given an array of integers nums and an integer target, return the indices of the two numbers such that they add up to target.\n\nReturn null if no solution exists.\n\nYou may assume each input has at most one solution for the tests on this page.",
+  "constraintQuestions": [
+    "Can numbers be negative, or only positive?",
+    "Can the array contain duplicate values?",
+    "Will there always be a valid solution? If not, what should we return?",
+    "Can there be multiple pairs that add up to the target?",
+    "Are we allowed to use extra memory (hash map) to optimize time?"
+  ],
+  "starterCode": "// Write your solution in JavaScript.\n// Requirement: define a function named twoSum(nums, target)\n// Return: [i, j] indices or null\n\nfunction twoSum(nums, target) {\n  // TODO: implement\n  return null;\n}\n",
+  "walkthrough": [
+    {
+      "title": "Structured interview approach",
+      "body": "1) Clarify constraints (negatives? duplicates? always a solution? multiple answers?).\n2) Create test cases.\n3) Describe logic without code.\n4) Code carefully.\n5) Walk through with a test case.\n6) Analyze time & space complexity.\n7) Optimize (often using a hash map)."
+    },
+    {
+      "title": "Naive approach (two loops)",
+      "body": "Outer loop = pointer P1.\nCompute numberToFind = target - nums[P1].\nInner loop searches for numberToFind.\nReturn [P1, P2] when found.\nIf none found, return null.\nTime: O(n^2), Space: O(1)."
+    },
+    {
+      "title": "JavaScript (naive implementation)",
+      "codeLanguage": "javascript",
+      "body": "function twoSum(nums, target) {\n  for (let i = 0; i < nums.length; i++) {\n    const need = target - nums[i];\n    for (let j = i + 1; j < nums.length; j++) {\n      if (nums[j] === need) return [i, j];\n    }\n  }\n  return null;\n}"
+    },
+    {
+      "title": "Optimized approach (hash map)",
+      "body": "Use a map from value -> index.\nFor each element x at index i:\n- needed = target - x\n- if needed exists in map, return [map[needed], i]\n- else store map[x] = i\nTime: O(n), Space: O(n)."
+    },
+    {
+      "title": "JavaScript (optimized implementation)",
+      "codeLanguage": "javascript",
+      "body": "function twoSum(nums, target) {\n  const seen = new Map(); // value -> index\n  for (let i = 0; i < nums.length; i++) {\n    const need = target - nums[i];\n    if (seen.has(need)) return [seen.get(need), i];\n    seen.set(nums[i], i);\n  }\n  return null;\n}"
+    }
+  ],
+  "tests": [
+    { "name": "Example", "nums": [1, 3, 7, 9, 2], "target": 11, "expect": [3, 4] },
+    { "name": "Duplicates", "nums": [3, 3], "target": 6, "expect": [0, 1] },
+    { "name": "Negatives", "nums": [-1, -2, -3, -4, -5], "target": -8, "expect": [2, 4] },
+    { "name": "No solution", "nums": [1, 2, 3], "target": 7, "expect": null },
+    { "name": "Zeroes", "nums": [0, 4, 3, 0], "target": 0, "expect": [0, 3] }
+  ]
+}
+

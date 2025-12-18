@@ -1,0 +1,196 @@
+.cp-page {
+  background: #f8fafc;
+  min-height: 100vh;
+}
+
+.cp-shell {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.cp-header,
+.cp-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 1rem;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+}
+
+.cp-grid {
+  display: grid;
+  gap: 0.75rem;
+}
+
+@media (min-width: 980px) {
+  .cp-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.cp-pill {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+  color: #0f172a;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.cp-tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.cp-tab {
+  padding: 0.55rem 0.8rem;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+  cursor: pointer;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.cp-tab.active {
+  background: linear-gradient(135deg, #2563eb, #60a5fa);
+  border-color: transparent;
+  color: #fff;
+}
+
+.cp-btn {
+  padding: 0.65rem 0.9rem;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  background: #0f172a;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.cp-btn.secondary {
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+.cp-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.cp-list {
+  display: grid;
+  gap: 8px;
+}
+
+.cp-problem {
+  padding: 0.75rem;
+  border-radius: 14px;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+  cursor: pointer;
+}
+
+.cp-problem.active {
+  background: linear-gradient(135deg, #e0f2fe, #eef2ff);
+  border-color: #93c5fd;
+}
+
+.cp-editor {
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.cp-editor .prism-code {
+  font-family: "Fira Code", "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo,
+    Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 13px;
+}
+
+.cp-output {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 0.75rem;
+  color: #0f172a;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  font-size: 13px;
+}
+
+.cp-codeblock {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 0.75rem;
+  overflow: auto;
+}
+
+.cp-codeblock code {
+  font-family: "Fira Code", "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo,
+    Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 13px;
+  white-space: pre;
+}
+
+/* Remove any token-level background colors (fixes odd operator highlighting like '=' blocks) */
+.cp-shell pre[class*="language-"],
+.cp-shell code[class*="language-"] {
+  background: transparent !important;
+}
+
+.cp-shell .token {
+  background: transparent !important;
+}
+
+.cp-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cp-muted {
+  color: #475569;
+}
+
+.cp-kv {
+  display: grid;
+  gap: 6px;
+}
+
+.cp-q {
+  padding: 0.55rem 0.75rem;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  background: #fff;
+}
+
+.cp-select {
+  padding: 0.65rem 0.9rem;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  color: #0f172a;
+  font-weight: 800;
+  min-width: 220px;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+}
+
+@media (max-width: 520px) {
+  .cp-select {
+    width: 100%;
+    min-width: 0;
+  }
+}

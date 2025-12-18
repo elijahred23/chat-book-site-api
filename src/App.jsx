@@ -23,6 +23,7 @@ import ChatBookApp from './ChatBookApp.jsx';
 import ArchitectureDiagram from './ArchitectureDiagram.jsx';
 import SideDrawer from './ui/SideDrawer.jsx';
 import BengaliTutor from './BengaliTutor.jsx';
+import CodingProblems from './CodingProblems.jsx';
 
 function AppContent() {
   const [isFullWidth, setIsFullWidth] = useState(true);
@@ -76,6 +77,7 @@ function AppContent() {
             <NavLink to="/flashCards">Flash Cards</NavLink>
             <NavLink to="/Quran">Quran</NavLink>
             <NavLink to="/bengali">Bengali Tutor</NavLink>
+            <NavLink to="/coding">Coding Problems</NavLink>
             <NavLink to="/apiCheck">Settings</NavLink>
           </div>
         </div>
@@ -195,6 +197,7 @@ function AppContent() {
             <Route path="/jsGenerator" element={<JSConsoleGenerator />} />
             <Route path="/youTubeTranscript" element={<YouTubeTranscript />} />
             <Route path="/bengali" element={<BengaliTutor />} />
+            <Route path="/coding" element={<CodingProblems />} />
           </Routes>
         </div>
 
