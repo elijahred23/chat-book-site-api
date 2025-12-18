@@ -83,33 +83,49 @@ function AppContent() {
     };
   }, [isMenuOpen]);
 
+  const anyDrawerOpen =
+    Boolean(drawerStack?.length) ||
+    isChatOpen ||
+    isTTSOpen ||
+    isTeleprompterOpen ||
+    isPlantUMLOpen ||
+    isPodcastTTSOpen ||
+    isJSGeneratorOpen ||
+    isChatBookOpen ||
+    isArchitectureOpen ||
+    isYouTubeOpen ||
+    isHtmlBuilderOpen ||
+    isTypingOpen;
+
   return (
     <>
-      <div className="app-topbar">
-        <h1 className="app-title">Eli Himi GPT</h1>
+      {!anyDrawerOpen && (
+        <div className="app-topbar">
+          <h1 className="app-title">Eli Himi GPT</h1>
 
-        {/* Dropdown Menu */}
-        <div className="dropdown-nav" ref={menuRef}>
-          <button
-            className="dropdown-toggle"
-            type="button"
-            onClick={() => setIsMenuOpen((p) => !p)}
-            aria-haspopup="menu"
-            aria-expanded={isMenuOpen}
-          >
-            Menu <span className="dropdown-caret">▾</span>
-          </button>
-          {isMenuOpen && (
-            <div className="dropdown-menu" role="menu" aria-label="Main menu">
-              <NavLink to="/flashCards" role="menuitem" onClick={() => setIsMenuOpen(false)}>Flash Cards</NavLink>
-              <NavLink to="/Quran" role="menuitem" onClick={() => setIsMenuOpen(false)}>Quran</NavLink>
-              <NavLink to="/bengali" role="menuitem" onClick={() => setIsMenuOpen(false)}>Bengali Tutor</NavLink>
-              <NavLink to="/coding" role="menuitem" onClick={() => setIsMenuOpen(false)}>Coding Problems</NavLink>
-              <NavLink to="/apiCheck" role="menuitem" onClick={() => setIsMenuOpen(false)}>Settings</NavLink>
-            </div>
-          )}
+          {/* Dropdown Menu */}
+          <div className="dropdown-nav" ref={menuRef}>
+            <button
+              className="dropdown-toggle"
+              type="button"
+              onClick={() => setIsMenuOpen((p) => !p)}
+              aria-haspopup="menu"
+              aria-expanded={isMenuOpen}
+            >
+              Menu <span className="dropdown-caret">▾</span>
+            </button>
+            {isMenuOpen && (
+              <div className="dropdown-menu" role="menu" aria-label="Main menu">
+                <NavLink to="/flashCards" role="menuitem" onClick={() => setIsMenuOpen(false)}>Flash Cards</NavLink>
+                <NavLink to="/Quran" role="menuitem" onClick={() => setIsMenuOpen(false)}>Quran</NavLink>
+                <NavLink to="/bengali" role="menuitem" onClick={() => setIsMenuOpen(false)}>Bengali Tutor</NavLink>
+                <NavLink to="/coding" role="menuitem" onClick={() => setIsMenuOpen(false)}>Coding Problems</NavLink>
+                <NavLink to="/apiCheck" role="menuitem" onClick={() => setIsMenuOpen(false)}>Settings</NavLink>
+              </div>
+            )}
+          </div>
         </div>
-      </div>
+      )}
 
         <style>{`
           .app-topbar {

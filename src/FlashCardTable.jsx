@@ -4,6 +4,7 @@ import ActionButtons from "./ui/ActionButtons.jsx";
 import { getGeminiResponse } from "./utils/callGemini.js";
 import { FaFeatherAlt, FaAlignLeft, FaBookOpen, FaChevronUp, FaChevronDown } from "react-icons/fa";
 import { ClipLoader } from "react-spinners";
+import { useAppState } from "./context/AppContext";
 
 function ToolbarPortal({ children }) {
   if (typeof document === "undefined") return null;
@@ -17,6 +18,34 @@ const FlashCardTable = ({ cards, setCards, COLORS }) => {
   const [bulkProgress, setBulkProgress] = useState({ done: 0, total: 0 });
   const [bulkMode, setBulkMode] = useState("async"); // "async" or "sequential"
   const [toolbarVisible, setToolbarVisible] = useState(true);
+  const {
+    drawerStack,
+    isChatOpen,
+    isTeleprompterOpen,
+    isTTSOpen,
+    isPlantUMLOpen,
+    isPodcastTTSOpen,
+    isJSGeneratorOpen,
+    isChatBookOpen,
+    isArchitectureOpen,
+    isYouTubeOpen,
+    isHtmlBuilderOpen,
+    isTypingOpen,
+  } = useAppState();
+
+  const anyDrawerOpen =
+    Boolean(drawerStack?.length) ||
+    isChatOpen ||
+    isTTSOpen ||
+    isTeleprompterOpen ||
+    isPlantUMLOpen ||
+    isPodcastTTSOpen ||
+    isJSGeneratorOpen ||
+    isChatBookOpen ||
+    isArchitectureOpen ||
+    isYouTubeOpen ||
+    isHtmlBuilderOpen ||
+    isTypingOpen;
 
   const toggleCardSelection = (idx) => {
     setSelectedCards((prev) =>
@@ -165,74 +194,61 @@ const FlashCardTable = ({ cards, setCards, COLORS }) => {
       style={{
         position: "relative",
         overflowX: "auto",
-        paddingTop: "72px", // space so table doesn't hide under toolbar
+        // space so table doesn't hide under bottom toolbar
+        paddingBottom: !anyDrawerOpen && toolbarVisible ? "190px" : "24px",
       }}
     >
-      {/* Fixed, viewport-level toolbar via portal (works on mobile) */}
+      {/* Fixed, viewport-level bottom toolbar via portal (works on mobile) */}
+      {!anyDrawerOpen && (
       <ToolbarPortal>
-        <div
-          // outer wrapper gives full-width bar on phones, compact panel on larger screens
-          style={{
-            position: "fixed",
-            top: "0",
-            left: "0",
-            right: "0",
-            paddingTop: "calc(env(safe-area-inset-top, 0px))",
-            zIndex: 1000, // ensure top of everything
-            pointerEvents: "none", // allow clicks only on inner card
-          }}
-        >
-          <div
+        <>
+          {/* Always-visible toggle button (bottom-right) */}
+          <button
+            onClick={() => setToolbarVisible((v) => !v)}
+            aria-label={toolbarVisible ? "Hide toolbar" : "Show toolbar"}
             style={{
-              position: "absolute",
-              bottom: toolbarVisible ? "-18px" : undefined,
-              top: toolbarVisible ? undefined : "12px",
-              right: "18px",
-              zIndex: 1002,
-              pointerEvents: "auto",
+              position: "fixed",
+              right: 14,
+              bottom: "calc(14px + env(safe-area-inset-bottom, 0px))",
+              zIndex: 30002,
+              width: 44,
+              height: 44,
+              borderRadius: "14px",
+              border: `1px solid ${COLORS?.border || "#333"}`,
+              background: "#0f172a",
+              color: "#ffffff",
+              display: "inline-flex",
+              alignItems: "center",
+              justifyContent: "center",
+              boxShadow: "0 10px 22px rgba(0,0,0,0.35)",
+              cursor: "pointer",
+              touchAction: "manipulation",
             }}
           >
-            <button
-              onClick={() => setToolbarVisible((v) => !v)}
-              aria-label={toolbarVisible ? "Hide toolbar" : "Show toolbar"}
-              style={{
-                width: 40,
-                height: 40,
-                borderRadius: "12px",
-                border: `1px solid ${COLORS?.border || "#333"}`,
-                background: COLORS?.background || "#1e1e1e",
-                color: COLORS?.text || "#fff",
-                display: "inline-flex",
-                alignItems: "center",
-                justifyContent: "center",
-                boxShadow: "0 6px 16px rgba(0,0,0,0.35)",
-                cursor: "pointer",
-              }}
-            >
-              {toolbarVisible ? <FaChevronUp size={16} /> : <FaChevronDown size={16} />}
-            </button>
-          </div>
+            {toolbarVisible ? <FaChevronDown size={16} /> : <FaChevronUp size={16} />}
+          </button>
+
+          {/* Toolbar card (bottom, centered) */}
           <div
-            // inner card is aligned to the right on desktops; full-width on mobile
             style={{
-              margin: "8px",
-              marginTop: "calc(8px + env(safe-area-inset-top, 0px))",
-              backgroundColor: COLORS?.background || "#1e1e1e",
-              border: `1px solid ${COLORS?.border || "#333"}`,
-              borderRadius: "12px",
-              boxShadow: "0 6px 16px rgba(0,0,0,0.35)",
-              padding: "8px 10px",
+              position: "fixed",
+              left: "50%",
+              bottom: "calc(10px + env(safe-area-inset-bottom, 0px))",
+              transform: toolbarVisible ? "translateX(-50%)" : "translateX(-50%) translateY(80px)",
+              opacity: toolbarVisible ? 1 : 0,
+              pointerEvents: toolbarVisible ? "auto" : "none",
+              transition: "transform 0.25s ease, opacity 0.2s ease",
+              zIndex: 30000,
+              backgroundColor: "#0f172a",
+              border: "1px solid rgba(255,255,255,0.14)",
+              borderRadius: "14px",
+              boxShadow: "0 16px 40px rgba(0,0,0,0.35)",
+              padding: "10px 12px",
               display: "flex",
-              gap: "8px",
+              gap: "10px",
               alignItems: "center",
               justifyContent: "space-between",
-              pointerEvents: "auto",
-              // Responsive: full-width on small screens, compact on wider
-              width: "min(680px, 96vw)",
-              marginLeft: "auto",
-              transform: toolbarVisible ? "translateY(0)" : "translateY(-130%)",
-              transition: "transform 0.3s ease",
-              position: "relative",
+              width: "min(680px, calc(100vw - 20px))",
             }}
           >
             {/* Left cluster: Select All + count */}
@@ -255,6 +271,7 @@ const FlashCardTable = ({ cards, setCards, COLORS }) => {
                   padding: "8px 10px",
                   fontSize: "0.95rem",
                   fontWeight: 600,
+                  boxShadow: "0 10px 20px rgba(0,0,0,0.20)",
                 }}
               >
                 {allSelected ? "Clear All" : "Select All"}
@@ -262,7 +279,7 @@ const FlashCardTable = ({ cards, setCards, COLORS }) => {
 
               <span
                 style={{
-                  color: COLORS?.text || "#fff",
+                  color: "#e2e8f0",
                   fontSize: "0.9rem",
                   opacity: 0.9,
                   whiteSpace: "nowrap",
@@ -290,8 +307,9 @@ const FlashCardTable = ({ cards, setCards, COLORS }) => {
               </div>
             </div>
           </div>
-        </div>
+        </>
       </ToolbarPortal>
+      )}
 
       {/* Flashcard table */}
       {cards.length === 0 ? (
