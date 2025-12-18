@@ -1,0 +1,44 @@
+{
+  "id": "trapping-rainwater",
+  "title": "Trapping Rain Water",
+  "difficulty": "Hard",
+  "functionName": "trap",
+  "runner": "trappingRainwater",
+  "prompt": "Given an array height representing an elevation map where the width of each bar is 1, compute how much water can be trapped after raining.\n\nRules:\n- The sides of the graph do not count as walls.\n- Water at an index i is determined by:\n  min(maxLeft(i), maxRight(i)) - height[i] (clamped at 0)\n\nIf the array has fewer than 3 bars, return 0.",
+  "constraintQuestions": [
+    "Are heights always non-negative integers (can there be 0)?",
+    "Can the input be empty or have fewer than 3 values?",
+    "Do the array edges count as walls? (No, water leaks off the sides.)",
+    "Return 0 when no water can be trapped?"
+  ],
+  "starterCode": "// Write your solution in JavaScript.\n// Requirement: define a function named trap(height)\n// Return: a number (total trapped water)\n\nfunction trap(height) {\n  // TODO: implement\n  return 0;\n}\n",
+  "walkthrough": [
+    {
+      "title": "Brute force idea (maxLeft/maxRight per index)",
+      "body": "For each index i:\n- find maxLeft = max(height[0..i])\n- find maxRight = max(height[i..n-1])\n- waterAtI = min(maxLeft, maxRight) - height[i]\n- if waterAtI < 0, use 0\nSum across i.\nTime: O(n^2), Space: O(1)."
+    },
+    {
+      "title": "JavaScript (brute force implementation)",
+      "codeLanguage": "javascript",
+      "body": "function trap(height) {\n  let total = 0;\n  for (let i = 0; i < height.length; i++) {\n    let maxLeft = 0;\n    let maxRight = 0;\n\n    for (let l = 0; l <= i; l++) maxLeft = Math.max(maxLeft, height[l]);\n    for (let r = i; r < height.length; r++) maxRight = Math.max(maxRight, height[r]);\n\n    const water = Math.min(maxLeft, maxRight) - height[i];\n    if (water > 0) total += water;\n  }\n  return total;\n}"
+    },
+    {
+      "title": "Optimized two-pointer insight",
+      "body": "Use two pointers left and right starting at the ends.\nMaintain leftMax and rightMax.\nAlways move the pointer with the smaller height because it's the limiting wall.\nWhen moving a side:\n- if current height >= max on that side, update max\n- else add (max - current height) to total\nTime: O(n), Space: O(1)."
+    },
+    {
+      "title": "JavaScript (two-pointer implementation)",
+      "codeLanguage": "javascript",
+      "body": "function trap(height) {\n  let left = 0;\n  let right = height.length - 1;\n  let leftMax = 0;\n  let rightMax = 0;\n  let total = 0;\n\n  while (left < right) {\n    if (height[left] <= height[right]) {\n      if (height[left] >= leftMax) leftMax = height[left];\n      else total += leftMax - height[left];\n      left++;\n    } else {\n      if (height[right] >= rightMax) rightMax = height[right];\n      else total += rightMax - height[right];\n      right--;\n    }\n  }\n\n  return total;\n}"
+    }
+  ],
+  "tests": [
+    { "name": "Classic", "height": [0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1], "expect": 6 },
+    { "name": "Valleys", "height": [3, 0, 2, 0, 4], "expect": 7 },
+    { "name": "Empty array", "height": [], "expect": 0 },
+    { "name": "Single value", "height": [5], "expect": 0 },
+    { "name": "Increasing", "height": [1, 2, 3, 4], "expect": 0 },
+    { "name": "LeetCode sample", "height": [4, 2, 0, 3, 2, 5], "expect": 9 }
+  ]
+}
+

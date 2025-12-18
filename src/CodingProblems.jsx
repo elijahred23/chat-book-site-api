@@ -43,6 +43,14 @@ function validateMaxAreaResult({ height, result, expect }) {
   return { ok: true };
 }
 
+function validateTrapResult({ height, result, expect }) {
+  if (typeof result !== "number" || Number.isNaN(result)) return { ok: false, reason: "Expected a number" };
+  if (result !== expect) return { ok: false, reason: `Expected ${expect} but got ${result}` };
+  if (result < 0) return { ok: false, reason: "Water cannot be negative" };
+  if (height.length < 3 && result !== 0) return { ok: false, reason: "Expected 0 when fewer than 3 bars" };
+  return { ok: true };
+}
+
 function compileSolution(code, functionName) {
   const wrapped = `"use strict";\n${code}\n;return (typeof ${functionName} === "function" ? ${functionName} : null);`;
   // eslint-disable-next-line no-new-func
@@ -124,6 +132,8 @@ export default function CodingProblems() {
             result = solve([...t.nums], t.target);
           } else if (active.runner === "containerMostWater") {
             result = solve([...t.height]);
+          } else if (active.runner === "trappingRainwater") {
+            result = solve([...t.height]);
           } else {
             throw new Error("No runner configured for this problem yet.");
           }
@@ -142,6 +152,11 @@ export default function CodingProblems() {
 
         if (active.runner === "containerMostWater") {
           const validation = validateMaxAreaResult({ height: t.height, result, expect: t.expect });
+          return { name: t.name, ok: validation.ok, got: result, want: t.expect, error: validation.ok ? null : validation.reason };
+        }
+
+        if (active.runner === "trappingRainwater") {
+          const validation = validateTrapResult({ height: t.height, result, expect: t.expect });
           return { name: t.name, ok: validation.ok, got: result, want: t.expect, error: validation.ok ? null : validation.reason };
         }
 
@@ -203,7 +218,7 @@ export default function CodingProblems() {
                   {active.prompt}
                 </div>
               </div>
-              <ActionButtons promptText={`${active.title}\n\n${active.prompt}`} />
+            <ActionButtons limitButtons promptText={`${active.title}\n\n${active.prompt}`} />
             </div>
 
             {tab === "solve" ? (
@@ -263,7 +278,7 @@ export default function CodingProblems() {
                 <div className="cp-card" style={{ padding: 0, boxShadow: "none", border: "none", background: "transparent" }}>
                   <div className="cp-row">
                     <h4 style={{ margin: 0 }}>Constraint Verification (ask first)</h4>
-                    <ActionButtons promptText={combinedConstraints} />
+                    <ActionButtons limitButtons promptText={combinedConstraints} />
                   </div>
                   <div className="cp-kv" style={{ marginTop: 8 }}>
                     {active.constraintQuestions.map((q) => (
@@ -277,7 +292,7 @@ export default function CodingProblems() {
                 <div className="cp-card" style={{ padding: 0, boxShadow: "none", border: "none", background: "transparent" }}>
                   <div className="cp-row">
                     <h4 style={{ margin: 0 }}>Walkthrough + Complexity</h4>
-                    <ActionButtons promptText={combinedWalkthrough} />
+                    <ActionButtons limitButtons promptText={combinedWalkthrough} />
                   </div>
                   <div style={{ display: "grid", gap: 10, marginTop: 8 }}>
                     {active.walkthrough.map((w) => (
@@ -298,7 +313,7 @@ export default function CodingProblems() {
                 <div className="cp-card" style={{ padding: 0, boxShadow: "none", border: "none", background: "transparent" }}>
                   <div className="cp-row">
                     <h4 style={{ margin: 0 }}>Test Cases</h4>
-                    <ActionButtons promptText={stableStringify(active.tests)} />
+                    <ActionButtons limitButtons promptText={stableStringify(active.tests)} />
                   </div>
                   <div style={{ display: "grid", gap: 8, marginTop: 8 }}>
                     {active.tests.map((t) => (
@@ -310,7 +325,7 @@ export default function CodingProblems() {
                           </div>
                         ) : (
                           <div className="cp-muted">
-                            height: {stableStringify(t.height)} | expected area: {t.expect}
+                            height: {stableStringify(t.height)} | expected: {t.expect}
                           </div>
                         )}
                       </div>

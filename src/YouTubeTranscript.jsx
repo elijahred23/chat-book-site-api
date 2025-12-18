@@ -3,7 +3,6 @@ import { ClipLoader } from "react-spinners";
 import ReactMarkdown from 'react-markdown';
 import { getGeminiResponse } from "./utils/callGemini";
 import PasteButton from './ui/PasteButton';
-import CopyButton from './ui/CopyButton';
 import { hostname } from './utils/hostname';
 import { useFlyout } from './context/FlyoutContext';
 import AutoScroller from './ui/AutoScroller';
@@ -22,10 +21,6 @@ const isValidYouTubeUrl = (url) => {
     return regex.test(url);
 };
 
-// Fetch transcript from external API when selected
-const fetchYouTubeTranscriptExternal = async (video_url) => {
-    
-};
 
 // Split a string into roughly equal word chunks
 const splitStringByWords = (str, splitCount) => {
@@ -1031,10 +1026,6 @@ export default function YouTubeTranscript() {
                             setPasteText={setManuallyEnteredTranscript}
                             className="btn paste-btn"
                         />
-                        <CopyButton
-                            text={manuallyEnteredTranscript}
-                            className="btn copy-btn"
-                        />
                         <button
                             className="btn secondary-btn"
                             onClick={() => setManuallyEnteredTranscript("")}
@@ -1109,7 +1100,6 @@ export default function YouTubeTranscript() {
                     <h2>
                         Transcript Preview 
                     </h2>
-                    <CopyButton text={transcript} buttonText="📋 Copy Complete Transcript" className="btn copy-btn" />
                     <ActionButtons promptText={transcript} />
                     <p>
                         <span style={{ fontSize: '0.9rem', color: '#666' }}>({transcriptWordCount} words)</span>
@@ -1121,7 +1111,6 @@ export default function YouTubeTranscript() {
                                 <textarea readOnly className="textarea">
                                     {chunk}
                                 </textarea>
-                                <CopyButton text={chunk} className="btn copy-btn" />
                             </div>
                         ))}
                     </div>
@@ -1191,7 +1180,6 @@ export default function YouTubeTranscript() {
                                         {pt.transcript}
                                     </textarea>
                                     <div className="button-group">
-                                        <CopyButton text={pt.transcript} className="btn copy-btn" />
                                         <button
                                             className="btn secondary-btn"
                                             onClick={() => {
@@ -1222,7 +1210,6 @@ export default function YouTubeTranscript() {
             {activeTab === "comments" && (
                 <>
                     <h2>Comments Preview</h2>
-                    <CopyButton text={comments} buttonText="📋 Copy All Comments" className="btn copy-btn" />
                     <div className="input-group">
                         <input
                             className="input"
@@ -1259,7 +1246,6 @@ export default function YouTubeTranscript() {
                         {splitComments.map((chunk, i) => (
                             <div key={i} className="chunk">
                                 <ReactMarkdown className="markdown-body">{chunk}</ReactMarkdown>
-                                <CopyButton text={chunk} className="btn copy-btn" />
                             </div>
                         ))}
                     </div>
@@ -1298,13 +1284,11 @@ export default function YouTubeTranscript() {
                     {transcriptRespTab === "responses" && (
                         promptResponses.length > 0 ? (
                             <>
-                                <CopyButton text={promptResponsesText} buttonText="Copy All Transcript Responses" className="btn copy-btn" />
                                 <ActionButtons promptText={promptResponsesText} />
                                 <AutoScroller activeIndex={0}>
                                     {promptResponses.map((res, i) => (
                                         <div key={i} data-index={i} style={{ padding: "1rem 0", borderBottom: "1px solid #ddd" }}>
                                             <ReactMarkdown className="markdown-body">{res}</ReactMarkdown>
-                                            <CopyButton text={res} className="btn copy-btn" />
                                             <ActionButtons promptText={res} />
                                         </div>
                                     ))}
@@ -1368,7 +1352,6 @@ export default function YouTubeTranscript() {
                                 {promptResponses.map((res, i) => (
                                     <div key={i} data-index={i} style={{ padding: "1rem 0", borderBottom: "1px solid #ddd" }}>
                                         <ReactMarkdown className="markdown-body">{res}</ReactMarkdown>
-                                        <CopyButton text={res} className="btn copy-btn" />
                                         <ActionButtons promptText={res} />
                                         <button
                                             className="btn secondary-btn"
@@ -1442,13 +1425,11 @@ export default function YouTubeTranscript() {
                     {commentRespTab === "responses" && (
                         commentResponses.length > 0 ? (
                             <>
-                                <CopyButton text={commentResponsesText} buttonText="Copy All Comment Responses" className="btn copy-btn" />
                                 <ActionButtons promptText={commentResponsesText} />
                                 <AutoScroller activeIndex={0}>
                                     {commentResponses.map((res, i) => (
                                         <div key={`c-${i}`} data-index={i} style={{ padding: "1rem 0", borderBottom: "1px solid #ddd" }}>
                                             <ReactMarkdown className="markdown-body">{res}</ReactMarkdown>
-                                            <CopyButton text={res} className="btn copy-btn" />
                                             <ActionButtons promptText={res} />
                                         </div>
                                     ))}
