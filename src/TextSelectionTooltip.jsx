@@ -28,7 +28,7 @@ export default function TextSelectionTooltip() {
 
         setSelectedText(text);
         setPosition({
-          top: rect.top + window.scrollY - (isMobile ? 120 : 80),
+          top: rect.top + window.scrollY - (isMobile ? 200 : 160),
           left: Math.min(Math.max(calculatedLeft, 10), maxLeft),
         });
 
