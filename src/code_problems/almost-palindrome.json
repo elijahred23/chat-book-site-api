@@ -1,0 +1,38 @@
+{
+  "id": "almost-palindrome",
+  "title": "Almost Palindrome",
+  "difficulty": "Medium",
+  "functionName": "almostPalindrome",
+  "runner": "almostPalindrome",
+  "prompt": "Given a string s, return true if it can become a palindrome by removing at most one character.\n\nPalindrome rules for this problem:\n- Consider only alphanumeric characters (a–z, A–Z, 0–9).\n- Ignore case (treat 'A' and 'a' as equal).\n\nNotes:\n- Empty strings and single characters are palindromes.\n- You may remove 0 or 1 alphanumeric character; non-alphanumeric characters are ignored either way.\n\nReturn a boolean.",
+  "constraintQuestions": [
+    "Should we ignore non-alphanumeric characters (spaces/symbols)? (Yes.)",
+    "Is comparison case-insensitive? (Yes.)",
+    "Are empty strings valid inputs? (Yes.)",
+    "If the string is already a palindrome, should we return true? (Yes.)",
+    "Should we aim for O(n) time and O(1) extra space?"
+  ],
+  "starterCode": "// Write your solution in JavaScript.\n// Requirement: define a function named almostPalindrome(s)\n// Return: true/false\n\nfunction almostPalindrome(s) {\n  // TODO: implement\n  return false;\n}\n",
+  "walkthrough": [
+    {
+      "title": "Preprocessing (real-world palindrome rules)",
+      "body": "Because interviews often treat palindromes as 'alphanumeric only' and case-insensitive:\n1) Remove non-alphanumeric characters.\n2) Convert to lowercase.\nNow the string is safe to compare with two pointers."
+    },
+    {
+      "title": "Core idea (palindrome as a subproblem)",
+      "body": "Scan with two pointers from the outside in.\nIf characters match, move inward.\nIf a mismatch appears at (L, R), you have one allowed removal:\n- Either skip L (check substring L+1..R)\n- Or skip R (check substring L..R-1)\nIf either substring is a palindrome, the whole string is an almost-palindrome.\nTime: O(n)\nSpace: O(1)"
+    },
+    {
+      "title": "JavaScript (helper + two-pointer solution)",
+      "codeLanguage": "javascript",
+      "body": "function isPalRange(str, left, right) {\n  while (left < right) {\n    if (str[left] !== str[right]) return false;\n    left++;\n    right--;\n  }\n  return true;\n}\n\nfunction almostPalindrome(s) {\n  const cleaned = (s || \"\")\n    .replace(/[^a-zA-Z0-9]/g, \"\")\n    .toLowerCase();\n\n  let left = 0;\n  let right = cleaned.length - 1;\n\n  while (left < right) {\n    if (cleaned[left] === cleaned[right]) {\n      left++;\n      right--;\n      continue;\n    }\n\n    return (\n      isPalRange(cleaned, left + 1, right) ||\n      isPalRange(cleaned, left, right - 1)\n    );\n  }\n\n  return true;\n}"
+    }
+  ],
+  "tests": [
+    { "name": "Already palindrome (classic)", "s": "A man, a plan, a canal: Panama", "expect": true },
+    { "name": "One removal works", "s": "abca", "expect": true },
+    { "name": "Cannot be fixed with one removal", "s": "abc", "expect": false },
+    { "name": "Empty string", "s": "", "expect": true },
+    { "name": "Symbols + case", "s": "No 'x' in Nixon", "expect": true }
+  ]
+}

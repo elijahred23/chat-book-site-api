@@ -1,0 +1,43 @@
+{
+  "id": "longest-substring-without-repeating-characters",
+  "title": "Longest Substring Without Repeating Characters",
+  "difficulty": "Medium",
+  "functionName": "lengthOfLongestSubstring",
+  "runner": "longestSubstringNoRepeat",
+  "prompt": "Given a string s, return the length of the longest substring (contiguous) without repeating characters.\n\nNotes:\n- This is about substrings (contiguous), not subsequences.\n- Strings are case-sensitive unless stated otherwise.\n- Return 0 for an empty string.",
+  "constraintQuestions": [
+    "Is this a contiguous substring (no gaps), not a subsequence? (Yes.)",
+    "Is the comparison case-sensitive? (Assume yes unless told otherwise.)",
+    "What should we return for an empty string? (0.)",
+    "Can the input contain spaces or symbols, or only letters?",
+    "Do we want an optimized O(n) solution (sliding window)?"
+  ],
+  "starterCode": "// Write your solution in JavaScript.\n// Requirement: define a function named lengthOfLongestSubstring(s)\n// Return: number (length)\n\nfunction lengthOfLongestSubstring(s) {\n  // TODO: implement\n  return 0;\n}\n",
+  "walkthrough": [
+    {
+      "title": "Brute force idea (generate substrings)",
+      "body": "Use nested loops to start a substring at every index.\nTrack seen characters for the current start.\nStop the inner loop when a duplicate appears.\nUpdate longest each time.\nTime: O(n^2)\nSpace: O(n) (seen chars)"
+    },
+    {
+      "title": "JavaScript (brute force implementation)",
+      "codeLanguage": "javascript",
+      "body": "function lengthOfLongestSubstring(s) {\n  let longest = 0;\n\n  for (let left = 0; left < s.length; left++) {\n    const seen = new Set();\n    for (let right = left; right < s.length; right++) {\n      const ch = s[right];\n      if (seen.has(ch)) break;\n      seen.add(ch);\n      longest = Math.max(longest, right - left + 1);\n    }\n  }\n\n  return longest;\n}"
+    },
+    {
+      "title": "Sliding window insight (optimal)",
+      "body": "Keep a moving window [L..R] that always contains unique characters.\nUse a map lastSeen[char] = index.\nWhen you see a duplicate character that is inside the current window, move L to lastSeen[char] + 1.\nAlways update lastSeen[char] = R and update longest with (R - L + 1).\nTime: O(n)\nSpace: O(n)"
+    },
+    {
+      "title": "JavaScript (sliding window implementation)",
+      "codeLanguage": "javascript",
+      "body": "function lengthOfLongestSubstring(s) {\n  const lastSeen = new Map();\n  let left = 0;\n  let longest = 0;\n\n  for (let right = 0; right < s.length; right++) {\n    const ch = s[right];\n\n    if (lastSeen.has(ch) && lastSeen.get(ch) >= left) {\n      left = lastSeen.get(ch) + 1;\n    }\n\n    lastSeen.set(ch, right);\n    longest = Math.max(longest, right - left + 1);\n  }\n\n  return longest;\n}"
+    }
+  ],
+  "tests": [
+    { "name": "Best case", "s": "abccabb", "expect": 3 },
+    { "name": "All same characters", "s": "bbbbbb", "expect": 1 },
+    { "name": "Empty string", "s": "", "expect": 0 },
+    { "name": "Overlapping substrings", "s": "abcbda", "expect": 4 },
+    { "name": "Common tricky case", "s": "pwwkew", "expect": 3 }
+  ]
+}

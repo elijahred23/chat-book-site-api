@@ -1,0 +1,42 @@
+{
+  "id": "linked-list-cycle-start",
+  "title": "Linked List Cycle Start",
+  "difficulty": "Medium",
+  "functionName": "detectCycleStart",
+  "runner": "linkedListCycleStart",
+  "prompt": "Given the head of a singly linked list, return the node where the cycle begins. If there is no cycle, return null.\n\nNotes:\n- A cycle means some node's next pointer points back to a previously seen node.\n- You must not modify the list.\n- Try to use O(1) extra space.\n\nReturn the node object (not its value).",
+  "constraintQuestions": [
+    "Should we return the node where the cycle begins (not just true/false)? (Yes.)",
+    "If there is no cycle, should we return null? (Yes.)",
+    "Can we assume the list nodes are standard { value/val, next }? (Yes.)",
+    "Are we allowed to use extra memory (Set) for a naive solution? (Yes, but optimize to O(1) space.)",
+    "Should we avoid mutating the list? (Yes.)"
+  ],
+  "starterCode": "// Write your solution in JavaScript.\n// Requirement: define a function named detectCycleStart(head)\n// Return: the node where the cycle begins, or null\n\nfunction detectCycleStart(head) {\n  // TODO: implement\n  return null;\n}\n",
+  "walkthrough": [
+    {
+      "title": "Naive approach (Set of visited nodes)",
+      "body": "Traverse the list and store each node reference in a Set.\nIf you see a node already in the Set, that's the cycle start.\nTime: O(n)\nSpace: O(n)"
+    },
+    {
+      "title": "Floyd’s Tortoise and Hare (optimal detection)",
+      "body": "Use two pointers:\n- slow moves 1 step\n- fast moves 2 steps\nIf fast reaches null, there is no cycle.\nIf slow and fast meet, a cycle exists.\nTime: O(n)\nSpace: O(1)"
+    },
+    {
+      "title": "Finding the cycle start (phase 2)",
+      "body": "After slow/fast meet inside the cycle:\n- Put one pointer at head.\n- Keep the other at the meeting point.\nMove both 1 step at a time.\nThe node where they meet is the cycle start.\nTime: O(n)\nSpace: O(1)"
+    },
+    {
+      "title": "JavaScript (Floyd implementation)",
+      "codeLanguage": "javascript",
+      "body": "function detectCycleStart(head) {\n  let slow = head;\n  let fast = head;\n\n  while (fast && fast.next) {\n    slow = slow.next;\n    fast = fast.next.next;\n\n    if (slow === fast) {\n      let p1 = head;\n      let p2 = slow;\n      while (p1 !== p2) {\n        p1 = p1.next;\n        p2 = p2.next;\n      }\n      return p1;\n    }\n  }\n\n  return null;\n}"
+    }
+  ],
+  "tests": [
+    { "name": "No cycle", "list": [3, 2, 0, -4], "pos": -1, "expectPos": -1 },
+    { "name": "Cycle at index 1", "list": [3, 2, 0, -4], "pos": 1, "expectPos": 1 },
+    { "name": "Cycle at head", "list": [1, 2], "pos": 0, "expectPos": 0 },
+    { "name": "Single node no cycle", "list": [1], "pos": -1, "expectPos": -1 },
+    { "name": "Single node cycle", "list": [1], "pos": 0, "expectPos": 0 }
+  ]
+}

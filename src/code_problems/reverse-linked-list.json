@@ -1,0 +1,36 @@
+{
+  "id": "reverse-linked-list",
+  "title": "Reverse a Linked List",
+  "difficulty": "Easy",
+  "functionName": "reverseList",
+  "runner": "reverseLinkedList",
+  "prompt": "Given the head of a singly linked list, return the head of the list after reversing it.\n\nLinked list node shape:\n- value (or val): the node's value\n- next: reference to the next node (or null)\n\nEdge cases:\n- If head is null, return null.\n- If the list has one node, return the same node.",
+  "constraintQuestions": [
+    "Is this a singly linked list? (Yes.)",
+    "What should we return for null input? (null.)",
+    "Can we reverse in-place (mutating next pointers)? (Yes.)",
+    "Do we need an iterative solution without knowing the length? (Yes.)",
+    "Should we aim for O(n) time and O(1) extra space? (Yes.)"
+  ],
+  "starterCode": "// Write your solution in JavaScript.\n// Requirement: define a function named reverseList(head)\n// head is either null or a node with { value/val, next }\n// Return: the new head node\n\nfunction reverseList(head) {\n  // TODO: implement\n  return head;\n}\n",
+  "walkthrough": [
+    {
+      "title": "Iterative pattern (we only get the head)",
+      "body": "We don't know the list length, so we traverse node-by-node.\nUse a while loop that repeatedly operates on the current node, then moves forward:\ncurrent = current.next\nThe key is updating pointers without losing the rest of the list."
+    },
+    {
+      "title": "Pointer reversal technique (prev / current / next)",
+      "body": "Maintain:\n- prev: head of the reversed portion (starts null)\n- current: node we're processing (starts head)\n- next: temporary saved reference to current.next\nSteps:\n1) next = current.next\n2) current.next = prev\n3) prev = current\n4) current = next\nWhen current becomes null, prev is the new head.\nTime: O(n)\nSpace: O(1)"
+    },
+    {
+      "title": "JavaScript (iterative implementation)",
+      "codeLanguage": "javascript",
+      "body": "function reverseList(head) {\n  let prev = null;\n  let current = head;\n\n  while (current) {\n    const next = current.next;\n    current.next = prev;\n    prev = current;\n    current = next;\n  }\n\n  return prev;\n}"
+    }
+  ],
+  "tests": [
+    { "name": "Example", "list": [1, 2, 3, 4, 5], "expect": [5, 4, 3, 2, 1] },
+    { "name": "Single node", "list": [42], "expect": [42] },
+    { "name": "Null list", "list": [], "expect": [] }
+  ]
+}

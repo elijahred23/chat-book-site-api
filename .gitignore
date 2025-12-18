@@ -26,3 +26,4 @@ api/.env
 
 /k8s/secrets.yaml
 tts-sa.json
+package-lock.json

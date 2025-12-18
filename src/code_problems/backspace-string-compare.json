@@ -1,0 +1,44 @@
+{
+  "id": "backspace-string-compare",
+  "title": "Backspace String Compare",
+  "difficulty": "Easy",
+  "functionName": "backspaceCompare",
+  "runner": "backspaceStringCompare",
+  "prompt": "Given two strings s and t, return true if they are equal when typed into empty text editors.\n\nIn this problem, '#' acts as a backspace:\n- A '#' deletes the character immediately before it, if any.\n- Multiple consecutive '#' delete multiple characters.\n- If there is nothing to delete, '#' does nothing.\n\nStrings are case-sensitive.\n\nReturn a boolean.",
+  "constraintQuestions": [
+    "Can there be multiple consecutive '#' characters?",
+    "If a '#' appears when nothing exists to delete, should it do nothing? (Yes.)",
+    "Are empty strings allowed? (Yes.)",
+    "Is comparison case-sensitive? (Yes.)",
+    "Should we optimize for O(1) extra space?"
+  ],
+  "starterCode": "// Write your solution in JavaScript.\n// Requirement: define a function named backspaceCompare(s, t)\n// Return: true/false\n\nfunction backspaceCompare(s, t) {\n  // TODO: implement\n  return false;\n}\n",
+  "walkthrough": [
+    {
+      "title": "Brute force idea (build final strings)",
+      "body": "Simulate typing for each string using an array stack.\n- If char !== '#', push it.\n- Else pop if possible.\nCompare the final results.\nTime: O(A+B)\nSpace: O(A+B)"
+    },
+    {
+      "title": "JavaScript (brute force implementation)",
+      "codeLanguage": "javascript",
+      "body": "function build(str) {\n  const out = [];\n  for (const ch of str) {\n    if (ch === '#') out.pop();\n    else out.push(ch);\n  }\n  return out.join('');\n}\n\nfunction backspaceCompare(s, t) {\n  return build(s) === build(t);\n}"
+    },
+    {
+      "title": "Optimized two-pointer insight (scan from the end)",
+      "body": "Backspaces affect characters to their left, so scanning from right to left matches the direction of deletion.\nUse pointers i and j at the end of s and t.\nFor each pointer, skip over deleted characters using a backspace counter:\n- If you see '#', increment skip and move left.\n- If skip > 0, decrement skip and move left.\nWhen both pointers land on valid characters, compare them.\nTime: O(A+B)\nSpace: O(1)"
+    },
+    {
+      "title": "JavaScript (two-pointer implementation)",
+      "codeLanguage": "javascript",
+      "body": "function nextValidIndex(str, i) {\n  let skip = 0;\n  while (i >= 0) {\n    if (str[i] === '#') {\n      skip++;\n      i--;\n    } else if (skip > 0) {\n      skip--;\n      i--;\n    } else {\n      break;\n    }\n  }\n  return i;\n}\n\nfunction backspaceCompare(s, t) {\n  let i = s.length - 1;\n  let j = t.length - 1;\n\n  while (i >= 0 || j >= 0) {\n    i = nextValidIndex(s, i);\n    j = nextValidIndex(t, j);\n\n    const a = i >= 0 ? s[i] : null;\n    const b = j >= 0 ? t[j] : null;\n    if (a !== b) return false;\n\n    i--;\n    j--;\n  }\n\n  return true;\n}"
+    }
+  ],
+  "tests": [
+    { "name": "Best case", "s": "ab#c", "t": "ad#c", "expect": true },
+    { "name": "Negative case", "s": "a#c", "t": "b", "expect": false },
+    { "name": "Empty strings", "s": "####", "t": "#", "expect": true },
+    { "name": "Multiple hashes", "s": "a##c", "t": "#a#c", "expect": true },
+    { "name": "Case sensitive", "s": "a#A", "t": "A", "expect": true }
+  ]
+}
+

@@ -1,0 +1,38 @@
+{
+  "id": "reverse-between-m-n",
+  "title": "Reverse Between M and N",
+  "difficulty": "Medium",
+  "functionName": "reverseBetween",
+  "runner": "reverseBetweenMN",
+  "prompt": "Given the head of a singly linked list and two integers m and n, reverse the nodes of the list from position m to position n (inclusive), and return the head.\n\nRules / constraints:\n- Positions are 1-indexed (the first node is position 1).\n- Do the reversal in-place by changing next pointers (no new nodes).\n- 1 ≤ m ≤ n ≤ length of list.\n\nEdge cases:\n- If the list is null, return null.\n- If m === n, the list is unchanged.",
+  "constraintQuestions": [
+    "Are m and n 1-indexed positions? (Yes.)",
+    "Are m and n always within list bounds? (Assume yes.)",
+    "Do we need to do this in-place (mutate pointers, no new nodes)? (Yes.)",
+    "If m === n, should the list be unchanged? (Yes.)",
+    "Should we aim for O(n) time and O(1) extra space? (Yes.)"
+  ],
+  "starterCode": "// Write your solution in JavaScript.\n// Requirement: define a function named reverseBetween(head, m, n)\n// head is either null or a node with { value/val, next }\n// Return: the head node after reversing the sublist\n\nfunction reverseBetween(head, m, n) {\n  // TODO: implement\n  return head;\n}\n",
+  "walkthrough": [
+    {
+      "title": "Key idea: reverse linked list as a subproblem",
+      "body": "We can reuse the standard iterative reverse technique (prev/current/next), but only for nodes between m and n.\nThe main extra work is reconnecting the three regions:\n1) Before the reversed section (position m-1)\n2) The reversed section (m..n)\n3) After the reversed section (position n+1)"
+    },
+    {
+      "title": "Pointers to track (m-1, m, n+1)",
+      "body": "While traversing:\n- Keep a reference to the node at position m-1 (start).\n- Keep a reference to the node at position m (tail). This becomes the tail of the reversed section.\n- Reverse pointers while currentPosition is between m and n.\nAfter reversal:\n- start.next should point to the new head of the reversed section.\n- tail.next should point to the node after the reversed section (currentNode).\nEdge case: if m === 1, the overall head becomes the new head of the reversed section."
+    },
+    {
+      "title": "JavaScript (iterative in-place implementation)",
+      "codeLanguage": "javascript",
+      "body": "function reverseBetween(head, m, n) {\n  if (!head) return null;\n  if (m === n) return head;\n\n  let currentPosition = 1;\n  let currentNode = head;\n  let start = head; // node at (m-1) when m > 1\n\n  while (currentPosition < m) {\n    start = currentNode;\n    currentNode = currentNode.next;\n    currentPosition++;\n  }\n\n  // currentNode is at position m\n  const tail = currentNode;\n  let newList = null;\n\n  while (currentPosition >= m && currentPosition <= n) {\n    const next = currentNode.next;\n    currentNode.next = newList;\n    newList = currentNode;\n    currentNode = next;\n    currentPosition++;\n  }\n\n  // Connect the part before m to the reversed part\n  if (m > 1) start.next = newList;\n  // Connect the tail of reversed part to the remainder\n  tail.next = currentNode;\n\n  return m > 1 ? head : newList;\n}"
+    }
+  ],
+  "tests": [
+    { "name": "Best case", "list": [1, 2, 3, 4, 5], "m": 2, "n": 4, "expect": [1, 4, 3, 2, 5] },
+    { "name": "Full reversal", "list": [1, 2, 3, 4, 5], "m": 1, "n": 5, "expect": [5, 4, 3, 2, 1] },
+    { "name": "Single node sublist", "list": [1, 2, 3], "m": 2, "n": 2, "expect": [1, 2, 3] },
+    { "name": "Single node list", "list": [7], "m": 1, "n": 1, "expect": [7] },
+    { "name": "Null list", "list": [], "m": 1, "n": 1, "expect": [] }
+  ]
+}

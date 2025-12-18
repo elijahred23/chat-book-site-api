@@ -1,0 +1,38 @@
+{
+  "id": "flatten-multilevel-doubly-linked-list",
+  "title": "Flatten a Multi-Level Doubly Linked List",
+  "difficulty": "Medium",
+  "functionName": "flatten",
+  "runner": "flattenMultiLevelDoubly",
+  "prompt": "You are given the head of a multi-level doubly linked list.\n\nEach node has:\n- value (or val)\n- next\n- prev (or previous)\n- child (which can point to the head of another doubly linked list)\n\nFlatten the list so that all nodes appear in a single-level doubly linked list.\n\nRules:\n- If a node has a child, the child list should be inserted between that node and its original next node.\n- After flattening, every node's child pointer must be null.\n- Preserve correct next/prev pointers.\n\nReturn the head of the flattened list.\n\nEdge cases:\n- If head is null, return null.\n- If the list has no children, return the original head.",
+  "constraintQuestions": [
+    "Is this a doubly linked list (supports forward and backward traversal)? (Yes.)",
+    "Can any node at any level have a child list? (Yes.)",
+    "After flattening, should child pointers be null? (Yes.)",
+    "Should we do it in-place (no new nodes)? (Yes.)",
+    "What should we return for null input? (null.)"
+  ],
+  "starterCode": "// Write your solution in JavaScript.\n// Requirement: define a function named flatten(head)\n// head is either null or a doubly-linked node with { value/val, next, prev/previous, child }\n// Return: head of the flattened list\n\nfunction flatten(head) {\n  // TODO: implement\n  return head;\n}\n",
+  "walkthrough": [
+    {
+      "title": "Key idea: merge child list in-between two nodes",
+      "body": "When current has a child, you are merging one list into the 'gap' between:\n- current\n- current.next\nThe four key nodes are:\n1) current\n2) currentNext\n3) childHead\n4) childTail\nThe child list is inserted between current and currentNext."
+    },
+    {
+      "title": "Important merge order (tail first)",
+      "body": "To avoid losing pointers, connect the child tail first:\n1) childTail.next = currentNext\n2) if currentNext exists: currentNext.prev = childTail\nThen connect the child head:\n3) current.next = childHead\n4) childHead.prev = current\nFinally:\n5) current.child = null\nContinue traversal."
+    },
+    {
+      "title": "JavaScript (iterative solution using a stack)",
+      "codeLanguage": "javascript",
+      "body": "function flatten(head) {\n  if (!head) return null;\n\n  const stack = [];\n  let current = head;\n\n  while (current) {\n    if (current.child) {\n      if (current.next) stack.push(current.next);\n\n      const child = current.child;\n      current.next = child;\n      child.prev = current;\n      current.child = null;\n    } else if (!current.next && stack.length) {\n      const next = stack.pop();\n      current.next = next;\n      next.prev = current;\n    }\n\n    current = current.next;\n  }\n\n  return head;\n}"
+    }
+  ],
+  "tests": [
+    { "name": "Null", "list": [], "expect": [] },
+    { "name": "No children", "list": [1, 2, 3], "expect": [1, 2, 3] },
+    { "name": "Single child insertion", "list": [1, { "value": 2, "child": [7, 8] }, 3, 4], "expect": [1, 2, 7, 8, 3, 4] },
+    { "name": "Nested child", "list": [1, { "value": 2, "child": [7, { "value": 8, "child": [11] }] }, 3], "expect": [1, 2, 7, 8, 11, 3] },
+    { "name": "Multiple children", "list": [1, { "value": 2, "child": [7, 8] }, { "value": 3, "child": [9] }, 4], "expect": [1, 2, 7, 8, 3, 9, 4] }
+  ]
+}
