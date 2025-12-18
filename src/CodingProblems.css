@@ -134,6 +134,7 @@
   border-radius: 14px;
   padding: 0.75rem;
   overflow: auto;
+  max-width: 100%;
 }
 
 .cp-codeblock code {
@@ -196,9 +197,14 @@
   }
   .cp-codeblock {
     padding: 0.6rem;
+    overflow-x: hidden;
+    white-space: pre-wrap;
   }
   .cp-codeblock code {
     font-size: 12px;
+    white-space: pre-wrap;
+    word-break: break-word;
+    overflow-wrap: anywhere;
   }
 }
 
