@@ -1,7 +1,7 @@
 export const CODE_SUGGESTIONS = [
   // 🔍 Code Understanding
   { label: "Explain Code", value: "Explain what this code does step by step. Do NOT include any code in your response—only explanation in plain English." },
-  { label: "Explain Out Loud", value: "Explain this code in natural spoken language (as if reading it aloud to a human). Avoid jargon where possible, describe what each part is doing and why, and keep it easy to follow." },
+  { label: "Explain Out Loud", value: "Explain this code in natural spoken language (as if reading it aloud to a human). Avoid jargon where possible, describe what each part is doing and why, and keep it easy to follow. Do not return any programming code, just explanation" },
   { label: "Explain Algorithm", value: "Explain the algorithm or logic in simple terms" },
   { label: "Explain Output", value: "Explain what the output of this code will be and why" },
   { label: "Visualize Flow", value: "Describe how to visualize this logic in a flowchart or UML diagram" },
