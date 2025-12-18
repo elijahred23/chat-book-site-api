@@ -177,6 +177,31 @@
   background: #fff;
 }
 
+.cp-q,
+.cp-q * {
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 520px) {
+  .cp-shell {
+    padding: 0.75rem;
+  }
+  .cp-header,
+  .cp-card {
+    padding: 0.85rem;
+  }
+  .cp-row {
+    gap: 10px;
+  }
+  .cp-codeblock {
+    padding: 0.6rem;
+  }
+  .cp-codeblock code {
+    font-size: 12px;
+  }
+}
+
 .cp-select {
   padding: 0.65rem 0.9rem;
   border-radius: 12px;
