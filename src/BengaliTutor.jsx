@@ -143,10 +143,20 @@ export default function BengaliTutor() {
     }
   };
 
-  const speak = async (text, langPref = "bn") => {
+  const speak = async (text, langPref = "bn", opts = {}) => {
+    const forceApi = !!opts.forceApi;
     if (!text) return;
+
+    // If explicitly forcing API, honor the requested language directly.
+    if (forceApi) {
+      try {
+        await synthesizeAndPlay(text, langPref || "bn-IN");
+      } catch {}
+      return;
+    }
+
     if (langPref.startsWith("bn")) {
-      // Bengali: force backend TTS only
+      // Bengali: use backend TTS only
       const langCandidates = ["bn-IN", "bn-BD", "bn"];
       for (const langCode of langCandidates) {
         try {
@@ -157,7 +167,7 @@ export default function BengaliTutor() {
       return;
     }
 
-    // English: prefer Sarah or any English voice locally
+    // English: prefer Sarah or any English voice locally unless forcing API
     const trySpeechSynth = () => {
       if (typeof window === "undefined" || !window.speechSynthesis) return false;
       const synth = window.speechSynthesis;
@@ -174,10 +184,10 @@ export default function BengaliTutor() {
       return true;
     };
 
-    const synthWorked = trySpeechSynth();
+    const synthWorked = forceApi ? false : trySpeechSynth();
     if (synthWorked) return;
 
-    // Fallback to backend TTS for English if no local voice worked
+    // Backend TTS for English (forced or fallback)
     try {
       await synthesizeAndPlay(text, "en-US");
     } catch {}
@@ -202,7 +212,14 @@ export default function BengaliTutor() {
       while (!loopStateRef.current.abort) {
         for (const seg of segments) {
           if (loopStateRef.current.abort) break;
-          await speak(seg.text, seg.lang);
+          try {
+            await speak(seg.text, seg.lang, { forceApi: seg.forceApi });
+          } catch (err) {
+            console.warn("Loop speak failed", err);
+          }
+          if (loopStateRef.current.abort) break;
+          // small gap between clips to avoid overlap
+          await new Promise((res) => setTimeout(res, 120));
         }
       }
     } finally {
@@ -323,17 +340,26 @@ export default function BengaliTutor() {
     return `${lesson.title || "Bengali Lesson"}: ${phrases.join(" | ")}`;
   }, [lesson]);
 
-  const downloadCombinedVocabMp3 = async () => {
+  const downloadCombinedVocabMp3 = async (lang = "bn-IN") => {
     if (!lesson?.vocab?.length) return;
     try {
       setVocabMp3Loading(true);
-      const items = lesson.vocab.map((v) => ({ text: v.bn, lang: "bn-IN" }));
+      const items = lesson.vocab.flatMap((v) => {
+        if (lang.startsWith("bn")) {
+          return [{ text: v.bn, lang }];
+        }
+        // Combined download: Bengali first, then English (bn -> en)
+        return [
+          { text: v.bn, lang: "bn-IN" },
+          { text: v.en, lang: "en-US" },
+        ];
+      });
       const cacheKey = JSON.stringify(items);
       const cachedUrl = batchCacheRef.current.get(cacheKey);
       if (cachedUrl) {
         const link = document.createElement("a");
         link.href = cachedUrl;
-        link.download = `${lesson.title || "bengali-vocab"}.mp3`;
+        link.download = `${lesson.title || "bengali-vocab"}-${lang}.mp3`;
         link.click();
         return;
       }
@@ -348,10 +374,10 @@ export default function BengaliTutor() {
       batchCacheRef.current.set(cacheKey, url);
       const link = document.createElement("a");
       link.href = url;
-      link.download = `${lesson.title || "bengali-vocab"}.mp3`;
+      link.download = `${lesson.title || "bengali-vocab"}-${lang}.mp3`;
       link.click();
     } catch (err) {
-      setError(err?.message || "Failed to download vocab MP3");
+      setError(err?.message || "Failed to download vocab audio");
     } finally {
       setVocabMp3Loading(false);
     }
@@ -431,11 +457,16 @@ export default function BengaliTutor() {
               <div className="bn-row">
                 <div>
                   <div className="bn-pill">Download vocab MP3</div>
-                  <small style={{ color: "#475569" }}>Combined Bengali audio</small>
+                  <small style={{ color: "#475569" }}>Combined Bengali / English audio</small>
                 </div>
-                <button className="bn-btn secondary" onClick={downloadCombinedVocabMp3} disabled={!lesson?.vocab?.length || vocabMp3Loading}>
-                  {vocabMp3Loading ? "Building..." : "Download MP3"}
-                </button>
+                <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
+                  <button className="bn-btn secondary" onClick={() => downloadCombinedVocabMp3("bn-IN")} disabled={!lesson?.vocab?.length || vocabMp3Loading}>
+                    {vocabMp3Loading ? "Building..." : "Bengali MP3"}
+                  </button>
+                  <button className="bn-btn secondary" onClick={() => downloadCombinedVocabMp3("en-US")} disabled={!lesson?.vocab?.length || vocabMp3Loading}>
+                    {vocabMp3Loading ? "Building..." : "Bengali → English MP3"}
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -470,18 +501,18 @@ export default function BengaliTutor() {
                         <button className="bn-btn secondary" onClick={() => speak(p.en, "en")}>🔈 English</button>
                         <button
                           className="bn-btn secondary"
-                          onClick={() =>
-                            loopSequence(
-                              `phrase-${idx}`,
-                              "phrase",
-                              [
-                                { text: p.bn, lang: "bn" },
-                                { text: p.en, lang: "en" },
-                              ]
-                            )
-                          }
-                          style={{ background: loopStateRef.current.key === `phrase-${idx}` ? "#2563eb" : undefined, color: loopStateRef.current.key === `phrase-${idx}` ? "#fff" : undefined }}
-                        >
+                        onClick={() =>
+                          loopSequence(
+                            `phrase-${idx}`,
+                            "phrase",
+                            [
+                              { text: p.bn, lang: "bn", forceApi: true },
+                              { text: p.en, lang: "en", forceApi: true },
+                            ]
+                          )
+                        }
+                        style={{ background: loopStateRef.current.key === `phrase-${idx}` ? "#2563eb" : undefined, color: loopStateRef.current.key === `phrase-${idx}` ? "#fff" : undefined }}
+                      >
                           🔁 Loop bn→en
                         </button>
                       </div>
@@ -502,8 +533,8 @@ export default function BengaliTutor() {
                         "all-phrases",
                         "all",
                         lesson.phrases.flatMap((p) => [
-                          { text: p.bn, lang: "bn" },
-                          { text: p.en, lang: "en" },
+                          { text: p.bn, lang: "bn", forceApi: true },
+                          { text: p.en, lang: "en", forceApi: true },
                         ])
                       )
                     }
@@ -526,9 +557,33 @@ export default function BengaliTutor() {
                       <div style={{ color: "#475569" }}>{v.pronunciation}</div>
                       <div style={{ color: "#0f172a" }}>{v.en}</div>
                     </div>
-                    <div style={{ display: "flex", gap: 6 }}>
-                      <button className="bn-btn secondary" onClick={() => speak(v.bn, "bn")}>🔈</button>
-                      <button className="bn-btn secondary" onClick={() => speak(v.en, "en")}>🔈</button>
+                    <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
+                      <button className="bn-btn secondary" onClick={() => speak(v.bn, "bn", { forceApi: true })}>🔈 bn</button>
+                      <button className="bn-btn secondary" onClick={() => speak(v.en, "en", { forceApi: true })}>🔈 en</button>
+                      <button
+                        className="bn-btn secondary"
+                        onClick={() =>
+                          loopSequence(`vocab-${idx}`, "vocab", [
+                            { text: v.bn, lang: "bn", forceApi: true },
+                            { text: v.en, lang: "en", forceApi: true },
+                          ])
+                        }
+                        style={{ background: loopStateRef.current.key === `vocab-${idx}` ? "#2563eb" : undefined, color: loopStateRef.current.key === `vocab-${idx}` ? "#fff" : undefined }}
+                      >
+                        🔁 bn→en
+                      </button>
+                      <button
+                        className="bn-btn secondary"
+                        onClick={() =>
+                          loopSequence(`vocab-enbn-${idx}`, "vocab", [
+                            { text: v.en, lang: "en", forceApi: true },
+                            { text: v.bn, lang: "bn", forceApi: true },
+                          ])
+                        }
+                        style={{ background: loopStateRef.current.key === `vocab-enbn-${idx}` ? "#2563eb" : undefined, color: loopStateRef.current.key === `vocab-enbn-${idx}` ? "#fff" : undefined }}
+                      >
+                        🔁 en→bn
+                      </button>
                     </div>
                   </div>
                 ))}
@@ -540,14 +595,30 @@ export default function BengaliTutor() {
                         "all-vocab",
                         "all",
                         lesson.vocab.flatMap((v, i) => [
-                          { text: v.bn, lang: "bn" },
-                          { text: v.en, lang: "en" },
+                          { text: v.bn, lang: "bn", forceApi: true },
+                          { text: v.en, lang: "en", forceApi: true },
                         ])
                       )
                     }
                     style={{ background: loopStateRef.current.key === "all-vocab" ? "#2563eb" : "#0f172a" }}
                   >
                     🔁 Loop all vocab (bn→en)
+                  </button>
+                  <button
+                    className="bn-btn"
+                    onClick={() =>
+                      loopSequence(
+                        "all-vocab-enbn",
+                        "all",
+                        lesson.vocab.flatMap((v, i) => [
+                          { text: v.en, lang: "en", forceApi: true },
+                          { text: v.bn, lang: "bn", forceApi: true },
+                        ])
+                      )
+                    }
+                    style={{ background: loopStateRef.current.key === "all-vocab-enbn" ? "#2563eb" : "#0f172a" }}
+                  >
+                    🔁 Loop all vocab (en→bn)
                   </button>
                   <button className="bn-btn secondary" onClick={stopLoops}>Stop Loop</button>
                 </div>
