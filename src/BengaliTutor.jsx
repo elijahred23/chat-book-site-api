@@ -106,6 +106,13 @@ export default function BengaliTutor() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [vocabMp3Loading, setVocabMp3Loading] = useState(false);
+  const [gameQuestion, setGameQuestion] = useState(null);
+  const [gameResult, setGameResult] = useState(null);
+  const [gameChoice, setGameChoice] = useState(null);
+  const [gameScore, setGameScore] = useState({ correct: 0, total: 0, streak: 0, bestStreak: 0 });
+  const [tfQuestion, setTfQuestion] = useState(null);
+  const [tfResult, setTfResult] = useState(null);
+  const [tfScore, setTfScore] = useState({ correct: 0, total: 0, streak: 0, bestStreak: 0 });
   const { voices, ready: voicesReady } = useVoices();
   const audioCacheRef = React.useRef(new Map()); // cache Bengali audio URLs by text+lang
   const batchCacheRef = React.useRef(new Map()); // cache combined MP3 blobs for batch vocab
@@ -326,6 +333,36 @@ export default function BengaliTutor() {
       display: grid;
       gap: 6px;
     }
+    .bn-game-option {
+      border: 1px solid #cbd5f5;
+      background: #eef2ff;
+      color: #1e293b;
+      padding: 0.6rem 0.75rem;
+      border-radius: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: left;
+    }
+    .bn-game-option.correct {
+      background: #dcfce7;
+      border-color: #16a34a;
+      color: #14532d;
+    }
+    .bn-game-option.wrong {
+      background: #fee2e2;
+      border-color: #ef4444;
+      color: #7f1d1d;
+    }
+    .bn-true-btn {
+      background: #dcfce7;
+      border-color: #16a34a;
+      color: #14532d;
+    }
+    .bn-false-btn {
+      background: #fee2e2;
+      border-color: #ef4444;
+      color: #7f1d1d;
+    }
     @media (min-width: 640px) {
       .bn-row {
         grid-template-columns: 1fr auto;
@@ -382,6 +419,91 @@ export default function BengaliTutor() {
       setVocabMp3Loading(false);
     }
   };
+
+  const buildGameQuestion = (vocab) => {
+    if (!vocab?.length || vocab.length < 2) return null;
+    const correct = vocab[Math.floor(Math.random() * vocab.length)];
+    const distractors = vocab.filter((v) => v.en !== correct.en);
+    const shuffled = [...distractors].sort(() => Math.random() - 0.5);
+    const picks = shuffled.slice(0, Math.min(3, shuffled.length));
+    const options = [...picks.map((v) => v.en), correct.en].sort(() => Math.random() - 0.5);
+    return { bn: correct.bn, pronunciation: correct.pronunciation, en: correct.en, options };
+  };
+
+  const buildTrueFalseQuestion = (vocab) => {
+    if (!vocab?.length || vocab.length < 2) return null;
+    const correct = vocab[Math.floor(Math.random() * vocab.length)];
+    const shouldBeCorrect = Math.random() > 0.45;
+    if (shouldBeCorrect) {
+      return { bn: correct.bn, en: correct.en, isCorrect: true };
+    }
+    const wrongPool = vocab.filter((v) => v.en !== correct.en);
+    const wrong = wrongPool[Math.floor(Math.random() * wrongPool.length)];
+    return { bn: correct.bn, en: wrong.en, isCorrect: false };
+  };
+
+  const startNewGameRound = () => {
+    if (!lesson?.vocab?.length) return;
+    const clean = lesson.vocab.filter((v) => v?.bn && v?.en);
+    const question = buildGameQuestion(clean);
+    setGameQuestion(question);
+    setGameResult(null);
+    setGameChoice(null);
+  };
+
+  const startTrueFalseRound = () => {
+    if (!lesson?.vocab?.length) return;
+    const clean = lesson.vocab.filter((v) => v?.bn && v?.en);
+    const question = buildTrueFalseQuestion(clean);
+    setTfQuestion(question);
+    setTfResult(null);
+  };
+
+  const handleGamePick = (option) => {
+    if (!gameQuestion || gameResult) return;
+    const isCorrect = option === gameQuestion.en;
+    setGameChoice(option);
+    setGameResult(isCorrect ? "correct" : "wrong");
+    setGameScore((prev) => {
+      const nextStreak = isCorrect ? prev.streak + 1 : 0;
+      return {
+        correct: prev.correct + (isCorrect ? 1 : 0),
+        total: prev.total + 1,
+        streak: nextStreak,
+        bestStreak: Math.max(prev.bestStreak, nextStreak),
+      };
+    });
+  };
+
+  const handleTrueFalsePick = (pickedTrue) => {
+    if (!tfQuestion || tfResult) return;
+    const isCorrect = pickedTrue === tfQuestion.isCorrect;
+    setTfResult(isCorrect ? "correct" : "wrong");
+    setTfScore((prev) => {
+      const nextStreak = isCorrect ? prev.streak + 1 : 0;
+      return {
+        correct: prev.correct + (isCorrect ? 1 : 0),
+        total: prev.total + 1,
+        streak: nextStreak,
+        bestStreak: Math.max(prev.bestStreak, nextStreak),
+      };
+    });
+  };
+
+  useEffect(() => {
+    if (!lesson?.vocab?.length) {
+      setGameQuestion(null);
+      setGameResult(null);
+      setGameChoice(null);
+      setGameScore({ correct: 0, total: 0, streak: 0, bestStreak: 0 });
+      setTfQuestion(null);
+      setTfResult(null);
+      setTfScore({ correct: 0, total: 0, streak: 0, bestStreak: 0 });
+      return;
+    }
+    startNewGameRound();
+    startTrueFalseRound();
+  }, [lesson]);
 
   return (
     <div style={{ background: "#f8fafc", minHeight: "100vh" }}>
@@ -622,6 +744,96 @@ export default function BengaliTutor() {
                   </button>
                   <button className="bn-btn secondary" onClick={stopLoops}>Stop Loop</button>
                 </div>
+              </div>
+            ) : null}
+
+            {lesson.vocab?.length ? (
+              <div className="bn-section" style={{ display: "grid", gap: 10 }}>
+                <div style={{ display: "flex", justifyContent: "space-between", gap: 12, flexWrap: "wrap", alignItems: "center" }}>
+                  <h4 style={{ margin: 0 }}>Vocabulary Game</h4>
+                  <div className="bn-pill">Score {gameScore.correct}/{gameScore.total} • Streak {gameScore.streak} (Best {gameScore.bestStreak})</div>
+                </div>
+                {gameQuestion ? (
+                  <div className="bn-section" style={{ background: "#fff", display: "grid", gap: 8 }}>
+                    <div style={{ fontWeight: 800, fontSize: "1.2rem", color: "#0f172a" }}>{gameQuestion.bn}</div>
+                    {gameQuestion.pronunciation && (
+                      <div style={{ color: "#475569" }}>{gameQuestion.pronunciation}</div>
+                    )}
+                    <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+                      <button className="bn-btn secondary" onClick={() => speak(gameQuestion.bn, "bn", { forceApi: true })}>🔈 Hear Bengali</button>
+                      <button className="bn-btn secondary" onClick={startNewGameRound}>New card</button>
+                    </div>
+                    <div style={{ display: "grid", gap: 8 }}>
+                      {gameQuestion.options.map((option) => {
+                        const isCorrect = option === gameQuestion.en;
+                        const stateClass = gameResult
+                          ? isCorrect
+                            ? "correct"
+                            : option === gameChoice
+                              ? "wrong"
+                              : ""
+                          : "";
+                        return (
+                          <button
+                            key={option}
+                            className={`bn-game-option ${stateClass}`}
+                            onClick={() => handleGamePick(option)}
+                            disabled={!!gameResult}
+                          >
+                            {option}
+                          </button>
+                        );
+                      })}
+                    </div>
+                    {gameResult && (
+                      <div style={{ fontWeight: 700, color: gameResult === "correct" ? "#15803d" : "#b91c1c" }}>
+                        {gameResult === "correct" ? "Nice! You got it." : `Close! The answer is "${gameQuestion.en}".`}
+                      </div>
+                    )}
+                    {gameResult && (
+                      <button className="bn-btn" onClick={startNewGameRound}>Next word</button>
+                    )}
+                  </div>
+                ) : (
+                  <div style={{ color: "#475569" }}>Add at least two vocabulary words to start the game.</div>
+                )}
+              </div>
+            ) : null}
+
+            {lesson.vocab?.length ? (
+              <div className="bn-section" style={{ display: "grid", gap: 10 }}>
+                <div style={{ display: "flex", justifyContent: "space-between", gap: 12, flexWrap: "wrap", alignItems: "center" }}>
+                  <h4 style={{ margin: 0 }}>Quick Check</h4>
+                  <div className="bn-pill">Score {tfScore.correct}/{tfScore.total} • Streak {tfScore.streak} (Best {tfScore.bestStreak})</div>
+                </div>
+                {tfQuestion ? (
+                  <div className="bn-section" style={{ background: "#fff", display: "grid", gap: 8 }}>
+                    <div style={{ fontWeight: 800, fontSize: "1.1rem", color: "#0f172a" }}>{tfQuestion.bn}</div>
+                    <div style={{ color: "#475569" }}>Does this mean: <strong style={{ color: "#0f172a" }}>{tfQuestion.en}</strong>?</div>
+                    <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+                      <button className="bn-btn secondary" onClick={() => speak(tfQuestion.bn, "bn", { forceApi: true })}>🔈 Hear Bengali</button>
+                      <button className="bn-btn secondary" onClick={startTrueFalseRound}>New check</button>
+                    </div>
+                    <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+                      <button className="bn-btn secondary bn-true-btn" onClick={() => handleTrueFalsePick(true)} disabled={!!tfResult}>✅ True</button>
+                      <button className="bn-btn secondary bn-false-btn" onClick={() => handleTrueFalsePick(false)} disabled={!!tfResult}>❌ False</button>
+                    </div>
+                    {tfResult && (
+                      <div style={{ fontWeight: 700, color: tfResult === "correct" ? "#15803d" : "#b91c1c" }}>
+                        {tfResult === "correct"
+                          ? "Correct!"
+                          : tfQuestion.isCorrect
+                            ? "Not quite — it is correct."
+                            : "Nope — that translation is wrong."}
+                      </div>
+                    )}
+                    {tfResult && (
+                      <button className="bn-btn" onClick={startTrueFalseRound}>Next check</button>
+                    )}
+                  </div>
+                ) : (
+                  <div style={{ color: "#475569" }}>Add at least two vocabulary words to start the game.</div>
+                )}
               </div>
             ) : null}
 
