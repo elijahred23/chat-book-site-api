@@ -5,7 +5,6 @@ import { ClipLoader } from "react-spinners";
 import ProgressBar from "./ui/ProgressBar";
 import ReactMarkdown from 'react-markdown';
 import PasteButton from "./ui/PasteButton";
-import CopyButton from "./ui/CopyButton";
 import { useFlyout } from "./context/FlyoutContext"; // adjust path as needed
 import AutoScroller from "./ui/AutoScroller";
 import { actions, useAppDispatch, useAppState } from "./context/AppContext";
@@ -23,6 +22,7 @@ const getValuesInLocalStorage = () => {
     const localSubsequentInstructionResponses = localStorage.getItem('subsequentInstructionResponses');
     const localMaxWords = localStorage.getItem('maxWords');
     const localMode = localStorage.getItem('mode');
+    const localResponseFormat = localStorage.getItem('responseFormat');
     const localExecutionStarted = localStorage.getItem('executionStarted');
 
     return {
@@ -32,6 +32,7 @@ const getValuesInLocalStorage = () => {
         subsequentInstructions: localSubsequentInstructions ? JSON.parse(localSubsequentInstructions) : [],
         maxWords: localMaxWords ? JSON.parse(localMaxWords) : 500,
         mode: localMode ? JSON.parse(localMode) : "steps",
+        responseFormat: localResponseFormat ? JSON.parse(localResponseFormat) : "none",
         initialInstructionResponse: localInitialInstructionResponse ? JSON.parse(localInitialInstructionResponse) : "",
         subsequentInstructionResponses: localSubsequentInstructionResponses ? JSON.parse(localSubsequentInstructionResponses) : [],
         executionStarted: localExecutionStarted ? JSON.parse(localExecutionStarted) : false,
@@ -61,6 +62,7 @@ export default function ChatBookApp() {
     const [loadingPDF, setLoadingPDF] = useState(false);
     const [executionStarted, setExecutionStarted] = useState(localStorageValues.executionStarted);
     const [maxWords, setMaxWords] = useState(localStorageValues.maxWords);
+    const [responseFormat, setResponseFormat] = useState(localStorageValues.responseFormat);
     const [printWhenFinished, setPrintWhenFinished] = useState(false);
     const [stepsExecuted, setStepsExecuted] = useState(0);
     const [canExecuteKey, setCanExecuteKey] = useState(false);
@@ -128,6 +130,18 @@ export default function ChatBookApp() {
         value: config.key,
         label: config.label,
     })), [MODE_CONFIGS]);
+
+    const RESPONSE_FORMATS = useMemo(() => ([
+        { value: "none", label: "No formatting (default)", instruction: "" },
+        { value: "no_headers_no_lists", label: "No headers, no lists (paragraphs only)", instruction: "No headers. No lists. Use paragraph form only." },
+        { value: "short_paragraphs", label: "Short paragraphs only", instruction: "Use short paragraphs (2–3 sentences). No bullet points." },
+        { value: "bullets_only", label: "Bulleted list only", instruction: "Respond using bullet points only. No headings, no numbered lists." },
+        { value: "numbered_steps", label: "Numbered steps only", instruction: "Respond using a numbered list only. No headings, no bullets." },
+        { value: "headers_and_bullets", label: "Headings + bullets", instruction: "Use short headings with bullet points under each. No long paragraphs." },
+        { value: "qa_pairs", label: "Q&A pairs", instruction: "Format as Q: ... then A: ... for each point. No headings." },
+        { value: "table_like", label: "Table style (pipe rows)", instruction: "Use a markdown table with headers and pipe-delimited rows. No extra text." },
+        { value: "bold_terms", label: "Bold terms + brief explanations", instruction: "Start each line with a bolded term followed by a short explanation. No headings." },
+    ]), []);
 
     const getInitialInstructionMessage = (steps = null) => {
         if (steps === null) steps = numSteps;
@@ -220,8 +234,10 @@ export default function ChatBookApp() {
         setLoading(true);
 
         try {
+            const formatInstruction = RESPONSE_FORMATS.find((fmt) => fmt.value === responseFormat)?.instruction || "";
             const promises = subsequentInstructions.map((instruction, index) => {
-                const prompt = `Refer to previous instruction:\n${initialInstructionResponse}\nNow respond to:\n${instruction}`;
+                const formatBlock = formatInstruction ? `\nFormatting:\n${formatInstruction}\n` : "\n";
+                const prompt = `Refer to previous instruction:\n${initialInstructionResponse}\nNow respond to:\n${instruction}${formatBlock}`;
                 return getGeminiResponse(prompt).then(response => {
                     incrementStepsExecuted(); // still track progress
                     return response;
@@ -297,11 +313,12 @@ export default function ChatBookApp() {
             localStorage.setItem('subsequentInstructions', JSON.stringify(subsequentInstructions));
             localStorage.setItem('maxWords', JSON.stringify(maxWords));
             localStorage.setItem('mode', JSON.stringify(mode));
+            localStorage.setItem('responseFormat', JSON.stringify(responseFormat));
             localStorage.setItem('subsequentInstructionResponses', JSON.stringify(subsequentInstructionResponses));
             localStorage.setItem('initialInstructionResponse', JSON.stringify(initialInstructionResponse));
             localStorage.setItem('executionStarted', JSON.stringify(executionStarted));
         };
-    }, [numSteps, subject, initialInstruction, subsequentInstructions, maxWords, subsequentInstructionResponses, initialInstructionResponse, executionStarted]);
+    }, [numSteps, subject, initialInstruction, subsequentInstructions, maxWords, mode, responseFormat, subsequentInstructionResponses, initialInstructionResponse, executionStarted]);
 
     const progress = useMemo(() => {
         return (parseInt(stepsExecuted) / (parseInt(numSteps) + 1)) * 100;
@@ -466,6 +483,19 @@ export default function ChatBookApp() {
                             value={maxWords}
                         />
                     </div>
+                    <div>
+                        <label className="label">Subsequent Response Format</label>
+                        <select
+                            className="select"
+                            value={responseFormat}
+                            onChange={(e) => setResponseFormat(e.target.value)}
+                            disabled={loading}
+                        >
+                            {RESPONSE_FORMATS.map((fmt) => (
+                                <option key={fmt.value} value={fmt.value}>{fmt.label}</option>
+                            ))}
+                        </select>
+                    </div>
                 </div>
                 <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", marginTop: "0.75rem" }}>
                     <button
@@ -496,7 +526,6 @@ export default function ChatBookApp() {
                 {!loadingPDF && initialInstructionResponse !== "" && (
                     <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", marginBottom: "0.5rem" }}>
                         <button className="btn btn-primary" onClick={generatePDF}>Export PDF</button>
-                        <CopyButton buttonText="Copy all" text={allInstructionResponsesText} className="btn btn-ghost" />
                         <ActionButtons promptText={allInstructionResponsesText} />
                     </div>
                 )}
@@ -508,7 +537,6 @@ export default function ChatBookApp() {
                             <ReactMarkdown className="markdown-body">{initialInstructionResponse}</ReactMarkdown>
                             <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", marginTop: "0.5rem" }}>
                                 <ActionButtons promptText={initialInstructionResponse} />
-                                <CopyButton text={initialInstructionResponse} />
                             </div>
                         </div>
 
@@ -529,14 +557,13 @@ export default function ChatBookApp() {
                             </button>
                         </div>
                         {followUpView === "scroll" ? (
-                            <div className="grid-2">
+                            <div style={{ display: "grid", gap: "0.75rem" }}>
                                 {subsequentInstructionResponses.map((res, idx) => (
                                     <div key={idx} className="card" style={{ background: "#fff" }}>
                                         <div style={{ fontWeight: 600, marginBottom: "0.35rem" }}>Step {idx + 1}</div>
                                         <ReactMarkdown className="markdown-body">{res}</ReactMarkdown>
                                         <div style={{ display: "flex", gap: "0.35rem", flexWrap: "wrap", marginTop: "0.5rem" }}>
                                             <ActionButtons promptText={res} />
-                                            <CopyButton text={res} />
                                         </div>
                                     </div>
                                 ))}
@@ -568,7 +595,23 @@ export default function ChatBookApp() {
                                         </ReactMarkdown>
                                         <div style={{ display: "flex", gap: "0.35rem", flexWrap: "wrap", marginTop: "0.5rem" }}>
                                             <ActionButtons promptText={subsequentInstructionResponses[slideIndex]} />
-                                            <CopyButton text={subsequentInstructionResponses[slideIndex]} />
+                                        </div>
+                                        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "0.75rem", gap: "0.5rem", flexWrap: "wrap" }}>
+                                            <button
+                                                className="btn btn-ghost"
+                                                onClick={() => setSlideIndex((i) => Math.max(0, i - 1))}
+                                                disabled={slideIndex === 0}
+                                            >
+                                                ← Prev
+                                            </button>
+                                            <span className="pill">Step {slideIndex + 1} / {subsequentInstructionResponses.length}</span>
+                                            <button
+                                                className="btn btn-ghost"
+                                                onClick={() => setSlideIndex((i) => Math.min(subsequentInstructionResponses.length - 1, i + 1))}
+                                                disabled={slideIndex >= subsequentInstructionResponses.length - 1}
+                                            >
+                                                Next →
+                                            </button>
                                         </div>
                                     </>
                                 )}
