@@ -6,7 +6,11 @@ const TeleprompterAdvanced = () => {
   // Core state
   const [script, setScript] = useState("");
   const [isPaused, setIsPaused] = useState(false);
-  const [fontSize, setFontSize] = useState(3); // em
+  const [fontSize, setFontSize] = useState(() => {
+    const stored = localStorage.getItem("tp_font_size");
+    const parsed = stored ? Number(stored) : 3;
+    return Number.isFinite(parsed) ? parsed : 3;
+  }); // em
   const [speed, setSpeed] = useState(20); // pixels per second
   const [showControls, setShowControls] = useState(true);
   const { teleprompterText } = useAppState();
@@ -16,6 +20,10 @@ const TeleprompterAdvanced = () => {
       setScript(teleprompterText);
     }
   }, [teleprompterText]);
+
+  useEffect(() => {
+    localStorage.setItem("tp_font_size", JSON.stringify(fontSize));
+  }, [fontSize]);
 
   // Advanced state
   const [textColor, setTextColor] = useState("#ffffff");
@@ -580,13 +588,13 @@ const TeleprompterAdvanced = () => {
         <button
           onClick={togglePause}
           style={{
-            width: 46,
-            height: 46,
+            width: 36,
+            height: 36,
             borderRadius: "50%",
             background: "linear-gradient(135deg, #34d399, #10b981)",
             color: "#0b1220",
             fontWeight: 800,
-            boxShadow: "0 10px 20px rgba(0,0,0,0.25)",
+            boxShadow: "0 8px 16px rgba(0,0,0,0.25)",
             WebkitUserSelect: "none",
             userSelect: "none",
             display: "flex",
@@ -597,6 +605,50 @@ const TeleprompterAdvanced = () => {
           aria-label={isPaused ? "Play" : "Pause"}
         >
           {isPaused ? <FaPlay /> : <FaPause />}
+        </button>
+        <button
+          onClick={decreaseFont}
+          style={{
+            width: 36,
+            height: 36,
+            borderRadius: "50%",
+            background: "linear-gradient(135deg, #93c5fd, #38bdf8)",
+            color: "#0b1220",
+            fontWeight: 900,
+            boxShadow: "0 8px 16px rgba(0,0,0,0.25)",
+            WebkitUserSelect: "none",
+            userSelect: "none",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            fontSize: "0.95rem",
+          }}
+          title="Decrease font size"
+          aria-label="Decrease font size"
+        >
+          A-
+        </button>
+        <button
+          onClick={increaseFont}
+          style={{
+            width: 36,
+            height: 36,
+            borderRadius: "50%",
+            background: "linear-gradient(135deg, #7dd3fc, #0ea5e9)",
+            color: "#0b1220",
+            fontWeight: 900,
+            boxShadow: "0 8px 16px rgba(0,0,0,0.25)",
+            WebkitUserSelect: "none",
+            userSelect: "none",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            fontSize: "0.95rem",
+          }}
+          title="Increase font size"
+          aria-label="Increase font size"
+        >
+          A+
         </button>
         <button
           onClick={() => {
@@ -610,13 +662,13 @@ const TeleprompterAdvanced = () => {
             }
           }}
           style={{
-            width: 46,
-            height: 46,
+            width: 36,
+            height: 36,
             borderRadius: "50%",
             background: "linear-gradient(135deg, #f59e0b, #f97316)",
             color: "#0b1220",
             fontWeight: 800,
-            boxShadow: "0 10px 20px rgba(0,0,0,0.25)",
+            boxShadow: "0 8px 16px rgba(0,0,0,0.25)",
             WebkitUserSelect: "none",
             userSelect: "none",
             display: "flex",
@@ -633,13 +685,13 @@ const TeleprompterAdvanced = () => {
           onPointerUp={() => { speedHoldRef.current = 1; }}
           onPointerLeave={() => { speedHoldRef.current = 1; }}
           style={{
-            width: 46,
-            height: 46,
+            width: 36,
+            height: 36,
             borderRadius: "50%",
             background: "linear-gradient(135deg, #a855f7, #6366f1)",
             color: "#0b1220",
             fontWeight: 800,
-            boxShadow: "0 10px 20px rgba(0,0,0,0.25)",
+            boxShadow: "0 8px 16px rgba(0,0,0,0.25)",
             WebkitUserSelect: "none",
             userSelect: "none",
             display: "flex",
@@ -656,13 +708,13 @@ const TeleprompterAdvanced = () => {
           onPointerUp={handleSpeedHoldEnd}
           onPointerLeave={handleSpeedHoldEnd}
           style={{
-            width: 46,
-            height: 46,
+            width: 36,
+            height: 36,
             borderRadius: "50%",
             background: "linear-gradient(135deg, #0ea5e9, #2563eb)",
             color: "#0b1220",
             fontWeight: 800,
-            boxShadow: "0 10px 20px rgba(0,0,0,0.25)",
+            boxShadow: "0 8px 16px rgba(0,0,0,0.25)",
             WebkitUserSelect: "none",
             userSelect: "none",
             display: "flex",
@@ -677,13 +729,13 @@ const TeleprompterAdvanced = () => {
         <button
           onClick={() => nudgeOffset(-1)}
           style={{
-            width: 46,
-            height: 46,
+            width: 36,
+            height: 36,
             borderRadius: "50%",
             background: "linear-gradient(135deg, #cbd5e1, #94a3b8)",
             color: "#0b1220",
             fontWeight: 800,
-            boxShadow: "0 10px 20px rgba(0,0,0,0.25)",
+            boxShadow: "0 8px 16px rgba(0,0,0,0.25)",
             WebkitUserSelect: "none",
             userSelect: "none",
             display: "flex",
@@ -698,13 +750,13 @@ const TeleprompterAdvanced = () => {
         <button
           onClick={() => nudgeOffset(1)}
           style={{
-            width: 46,
-            height: 46,
+            width: 36,
+            height: 36,
             borderRadius: "50%",
             background: "linear-gradient(135deg, #c7f9cc, #6ee7b7)",
             color: "#0b1220",
             fontWeight: 800,
-            boxShadow: "0 10px 20px rgba(0,0,0,0.25)",
+            boxShadow: "0 8px 16px rgba(0,0,0,0.25)",
             WebkitUserSelect: "none",
             userSelect: "none",
             display: "flex",
@@ -717,48 +769,25 @@ const TeleprompterAdvanced = () => {
           <FaStepForward />
         </button>
         <button
-          onPointerDown={() => handleReverseHoldStart(4)}
+          onPointerDown={() => handleReverseHoldStart(8)}
           onPointerUp={handleReverseHoldEnd}
           onPointerLeave={handleReverseHoldEnd}
           style={{
-            width: 46,
-            height: 46,
+            width: 36,
+            height: 36,
             borderRadius: "50%",
             background: "linear-gradient(135deg, #f472b6, #db2777)",
             color: "#0b1220",
             fontWeight: 800,
-            boxShadow: "0 10px 20px rgba(0,0,0,0.25)",
+            boxShadow: "0 8px 16px rgba(0,0,0,0.25)",
             WebkitUserSelect: "none",
             userSelect: "none",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
           }}
-          title="Hold to reverse at 4x"
-          aria-label="Hold to reverse at 4x"
-        >
-          <FaBackward />
-        </button>
-        <button
-          onPointerDown={() => handleReverseHoldStart(6)}
-          onPointerUp={handleReverseHoldEnd}
-          onPointerLeave={handleReverseHoldEnd}
-          style={{
-            width: 46,
-            height: 46,
-            borderRadius: "50%",
-            background: "linear-gradient(135deg, #111827, #0f172a)",
-            color: "#f8fafc",
-            fontWeight: 800,
-            boxShadow: "0 10px 20px rgba(0,0,0,0.25)",
-            WebkitUserSelect: "none",
-            userSelect: "none",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-          title="Hold to reverse at 6x"
-          aria-label="Hold to reverse at 6x"
+          title="Hold to reverse at 8x"
+          aria-label="Hold to reverse at 8x"
         >
           <FaBackward />
         </button>
