@@ -27,6 +27,18 @@ function useLocalStorageState(key, defaultValue) {
   return [state, setState];
 }
 
+const RESPONSE_FORMATS = [
+  { value: "none", label: "No formatting (default)", instruction: "" },
+  { value: "no_headers_no_lists", label: "No headers, no lists (paragraphs only)", instruction: "No headers. No lists. Use paragraph form only." },
+  { value: "short_paragraphs", label: "Short paragraphs only", instruction: "Use short paragraphs (2–3 sentences). No bullet points." },
+  { value: "bullets_only", label: "Bulleted list only", instruction: "Respond using bullet points only. No headings, no numbered lists." },
+  { value: "numbered_steps", label: "Numbered steps only", instruction: "Respond using a numbered list only. No headings, no bullets." },
+  { value: "headers_and_bullets", label: "Headings + bullets", instruction: "Use short headings with bullet points under each. No long paragraphs." },
+  { value: "qa_pairs", label: "Q&A pairs", instruction: "Format as Q: ... then A: ... for each point. No headings." },
+  { value: "table_like", label: "Table style (pipe rows)", instruction: "Use a markdown table with headers and pipe-delimited rows. No extra text." },
+  { value: "bold_terms", label: "Bold terms + brief explanations", instruction: "Start each line with a bolded term followed by a short explanation. No headings." },
+];
+
 export default function GptPromptComponent({
   isCollapsed = false,
   hidePrompt = false,
@@ -40,6 +52,7 @@ export default function GptPromptComponent({
   const [showAllSuggestions, setShowAllSuggestions] = useState(false);
   const [selectedGroup, setSelectedGroup] = useLocalStorageState("suggestionGroup", "code");
   const [activeTab, setActiveTab] = useState("prompt"); // prompt | chat
+  const [responseFormat, setResponseFormat] = useLocalStorageState("chatResponseFormat", "none");
   const messagesEndRef = useRef(null);
   const dispatch = useAppDispatch();
   const { chatPrompt, selectedText } = useAppState();
@@ -58,7 +71,11 @@ export default function GptPromptComponent({
     if (!chatPrompt.trim()) return;
     try {
       setLoading(true);
-      const response = await getGeminiResponse(chatPrompt);
+      const formatInstruction = RESPONSE_FORMATS.find((fmt) => fmt.value === responseFormat)?.instruction || "";
+      const prompt = formatInstruction
+        ? `${chatPrompt}\n\nFormatting:\n${formatInstruction}`
+        : chatPrompt;
+      const response = await getGeminiResponse(prompt);
       const userMsg = { text: chatPrompt, sender: "user" };
       const botMsg = { text: response, sender: "bot" };
       setMessages((prev) => [...prev, userMsg, botMsg]);
@@ -80,6 +97,12 @@ export default function GptPromptComponent({
   }, [selectedText]);
 
   useEffect(scrollToBottom, [messages]);
+
+  useEffect(() => {
+    if (activeTab !== "chat") return;
+    const id = requestAnimationFrame(() => scrollToBottom());
+    return () => cancelAnimationFrame(id);
+  }, [activeTab]);
 
   // When the drawer opens, default back to the prompt tab
   useEffect(() => {
@@ -274,6 +297,18 @@ export default function GptPromptComponent({
                 {groupOptions.map((opt) => (
                   <option key={opt.value} value={opt.value}>
                     {opt.label}
+                  </option>
+                ))}
+              </select>
+              <select
+                value={responseFormat}
+                onChange={(e) => setResponseFormat(e.target.value)}
+                className="btn"
+                style={{ flex: "1 1 240px" }}
+              >
+                {RESPONSE_FORMATS.map((fmt) => (
+                  <option key={fmt.value} value={fmt.value}>
+                    {fmt.label}
                   </option>
                 ))}
               </select>

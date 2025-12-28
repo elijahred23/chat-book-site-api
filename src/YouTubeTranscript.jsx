@@ -169,6 +169,7 @@ export default function YouTubeTranscript() {
     const [splitComments, setSplitComments] = useState([]);
     const [url, setUrl] = useState("");
     const [prompt, setPrompt] = useState(() => localStorage.getItem("yt_prompt") || "");
+    const [responseFormat, setResponseFormat] = useState(() => localStorage.getItem("yt_prompt_format") || "none");
     const [transcript, setTranscript] = useState(() => localStorage.getItem("yt_transcript") || "");
     const [splitLength, setSplitLength] = useState(() => localStorage.getItem("yt_split_length") || 1);
     const [splitTranscript, setSplitTranscript] = useState([]);
@@ -221,6 +222,17 @@ export default function YouTubeTranscript() {
         { label: "Compare", value: "Compare this with a related topic" },
         { label: "Counterpoints", value: "Provide counterpoints or critiques" },
     ];
+    const RESPONSE_FORMATS = [
+        { value: "none", label: "No formatting (default)", instruction: "" },
+        { value: "no_headers_no_lists", label: "No headers, no lists (paragraphs only)", instruction: "No headers. No lists. Use paragraph form only." },
+        { value: "short_paragraphs", label: "Short paragraphs only", instruction: "Use short paragraphs (2–3 sentences). No bullet points." },
+        { value: "bullets_only", label: "Bulleted list only", instruction: "Respond using bullet points only. No headings, no numbered lists." },
+        { value: "numbered_steps", label: "Numbered steps only", instruction: "Respond using a numbered list only. No headings, no bullets." },
+        { value: "headers_and_bullets", label: "Headings + bullets", instruction: "Use short headings with bullet points under each. No long paragraphs." },
+        { value: "qa_pairs", label: "Q&A pairs", instruction: "Format as Q: ... then A: ... for each point. No headings." },
+        { value: "table_like", label: "Table style (pipe rows)", instruction: "Use a markdown table with headers and pipe-delimited rows. No extra text." },
+        { value: "bold_terms", label: "Bold terms + brief explanations", instruction: "Start each line with a bolded term followed by a short explanation. No headings." },
+    ];
 
   const promptResponsesText = useMemo(() => promptResponses.join('\n\n'), [promptResponses]);
     const commentResponsesText = useMemo(() => commentResponses.join('\n\n'), [commentResponses]);
@@ -242,7 +254,11 @@ export default function YouTubeTranscript() {
         try {
             setLoadingPrompt(true);
             setProgress(0);
-            const responses = await promptTranscript(prompt, splitTranscript, setProgress, showMessage);
+            const formatInstruction = RESPONSE_FORMATS.find((fmt) => fmt.value === responseFormat)?.instruction || "";
+            const promptText = formatInstruction
+                ? `${prompt}\n\nFormatting:\n${formatInstruction}`
+                : prompt;
+            const responses = await promptTranscript(promptText, splitTranscript, setProgress, showMessage);
             setPromptResponses(responses);
             setActiveTab("transcriptResponses");
             setTranscriptRespTab("responses");
@@ -349,10 +365,11 @@ export default function YouTubeTranscript() {
     useEffect(() => {
         localStorage.setItem("yt_transcript", transcript);
         localStorage.setItem("yt_prompt", prompt);
+        localStorage.setItem("yt_prompt_format", responseFormat);
         localStorage.setItem("yt_split_length", splitLength);
         localStorage.setItem("yt_promptResponses", JSON.stringify(promptResponses));
         localStorage.setItem("yt_iframe_minimized", JSON.stringify(isMinimized));
-    }, [transcript, prompt, splitLength, promptResponses, isMinimized]);
+    }, [transcript, prompt, responseFormat, splitLength, promptResponses, isMinimized]);
 
     // Update transcript and split length when manual transcript changes
     useEffect(() => {
@@ -1046,6 +1063,18 @@ export default function YouTubeTranscript() {
                             placeholder="Prompt (e.g. Summarize this transcript)"
                             onChange={(e) => setPrompt(e.target.value)}
                         />
+                        <select
+                            className="input"
+                            value={responseFormat}
+                            onChange={(e) => setResponseFormat(e.target.value)}
+                            style={{ maxWidth: "260px" }}
+                        >
+                            {RESPONSE_FORMATS.map((fmt) => (
+                                <option key={fmt.value} value={fmt.value}>
+                                    {fmt.label}
+                                </option>
+                            ))}
+                        </select>
                         <PasteButton
                             setPasteText={async () => {
                                 try {
