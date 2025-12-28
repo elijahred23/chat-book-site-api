@@ -188,6 +188,11 @@ export default function YouTubeTranscript() {
   const [isMinimized, setIsMinimized] = useState(false);
   const [miniCollapsed, setMiniCollapsed] = useState(false);
   const [miniSide, setMiniSide] = useState("left");
+    const [miniScale, setMiniScale] = useState(() => {
+        const stored = localStorage.getItem("yt_mini_scale");
+        const parsed = stored ? Number(stored) : 1;
+        return Number.isFinite(parsed) ? parsed : 1;
+    });
   const dispatch = useAppDispatch();
   const [loadingTranscript, setLoadingTranscript] = useState(false);
   const { youtubeSearchText } = useAppState();
@@ -370,6 +375,7 @@ export default function YouTubeTranscript() {
         localStorage.setItem("yt_split_length", splitLength);
         localStorage.setItem("yt_promptResponses", JSON.stringify(promptResponses));
         localStorage.setItem("yt_iframe_minimized", JSON.stringify(isMinimized));
+        localStorage.setItem("yt_mini_scale", JSON.stringify(miniScale));
     }, [transcript, prompt, responseFormat, splitLength, promptResponses, isMinimized]);
 
     // Update transcript and split length when manual transcript changes
@@ -775,6 +781,13 @@ export default function YouTubeTranscript() {
       }
     `;
 
+    const baseMiniWidth = 240;
+    const baseMiniHeight = 135;
+    const miniScaleClamped = Math.max(0.35, miniScale);
+    const miniWidth = Math.round(baseMiniWidth * miniScaleClamped);
+    const miniHeight = Math.round(baseMiniHeight * miniScaleClamped);
+    const miniSlideOffset = Math.max(120, miniWidth - 12);
+
     return (
         <div className="yt-container">
             <style>{styles}</style>
@@ -902,8 +915,8 @@ export default function YouTubeTranscript() {
                         left: miniSide === 'left' ? '12px' : 'auto',
                         right: miniSide === 'right' ? '12px' : 'auto',
                         bottom: '12px',
-                        width: '240px',
-                        height: '135px',
+                        width: `${miniWidth}px`,
+                        height: `${miniHeight}px`,
                         zIndex: 15000,
                         boxShadow: '0 18px 38px rgba(0,0,0,0.35)',
                         borderRadius: '14px',
@@ -912,7 +925,7 @@ export default function YouTubeTranscript() {
                         backdropFilter: 'blur(8px)',
                         background: '#0b1220',
                         transform: miniCollapsed
-                          ? (miniSide === 'left' ? 'translateX(-228px)' : 'translateX(228px)')
+                          ? (miniSide === 'left' ? `translateX(-${miniSlideOffset}px)` : `translateX(${miniSlideOffset}px)`)
                           : 'translateX(0)',
                         transition: 'transform 0.25s ease',
                     }}
@@ -974,6 +987,85 @@ export default function YouTubeTranscript() {
                             title="Move mini player"
                         >
                             ↔
+                        </button>
+                    </div>
+                    <div
+                        style={{
+                            position: 'absolute',
+                            top: '10px',
+                            left: miniSide === 'left' ? '-12px' : 'auto',
+                            right: miniSide === 'right' ? '-12px' : 'auto',
+                            display: 'flex',
+                            flexDirection: 'column',
+                            gap: '8px',
+                            zIndex: 1,
+                        }}
+                    >
+                        <button
+                            onClick={() => setMiniScale(1)}
+                            style={{
+                                width: '30px',
+                                height: '30px',
+                                borderRadius: miniSide === 'left' ? '12px 0 0 12px' : '0 12px 12px 0',
+                                border: '1px solid rgba(255,255,255,0.2)',
+                                background: 'transparent',
+                                color: '#e2e8f0',
+                                cursor: 'pointer',
+                                boxShadow: '0 6px 14px rgba(0,0,0,0.3)',
+                                fontWeight: 800,
+                                fontSize: '12px',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                            }}
+                            aria-label="Reset mini player size"
+                            title="Reset size"
+                        >
+                            100%
+                        </button>
+                        <button
+                            onClick={() => setMiniScale((prev) => prev - 0.25)}
+                            style={{
+                                width: '30px',
+                                height: '30px',
+                                borderRadius: miniSide === 'left' ? '12px 0 0 12px' : '0 12px 12px 0',
+                                border: '1px solid rgba(255,255,255,0.2)',
+                                background: 'transparent',
+                                color: '#e2e8f0',
+                                cursor: 'pointer',
+                                boxShadow: '0 6px 14px rgba(0,0,0,0.3)',
+                                fontWeight: 900,
+                                fontSize: '12px',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                            }}
+                            aria-label="Shrink mini player by a lot"
+                            title="Shrink a lot"
+                        >
+                            −
+                        </button>
+                        <button
+                            onClick={() => setMiniScale((prev) => prev + 0.25)}
+                            style={{
+                                width: '30px',
+                                height: '30px',
+                                borderRadius: miniSide === 'left' ? '12px 0 0 12px' : '0 12px 12px 0',
+                                border: '1px solid rgba(255,255,255,0.2)',
+                                background: 'transparent',
+                                color: '#e2e8f0',
+                                cursor: 'pointer',
+                                boxShadow: '0 6px 14px rgba(0,0,0,0.3)',
+                                fontWeight: 900,
+                                fontSize: '12px',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                            }}
+                            aria-label="Grow mini player by a lot"
+                            title="Grow a lot"
+                        >
+                            +
                         </button>
                     </div>
                     <iframe
