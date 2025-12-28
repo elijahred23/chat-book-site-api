@@ -188,6 +188,7 @@ export default function YouTubeTranscript() {
   const [isMinimized, setIsMinimized] = useState(false);
   const [miniCollapsed, setMiniCollapsed] = useState(false);
   const [miniSide, setMiniSide] = useState("left");
+  const [miniVertical, setMiniVertical] = useState("bottom");
     const [miniScale, setMiniScale] = useState(() => {
         const stored = localStorage.getItem("yt_mini_scale");
         const parsed = stored ? Number(stored) : 1;
@@ -914,7 +915,8 @@ export default function YouTubeTranscript() {
                         position: 'fixed',
                         left: miniSide === 'left' ? '12px' : 'auto',
                         right: miniSide === 'right' ? '12px' : 'auto',
-                        bottom: '12px',
+                        bottom: miniVertical === 'bottom' ? '12px' : 'auto',
+                        top: miniVertical === 'top' ? '12px' : 'auto',
                         width: `${miniWidth}px`,
                         height: `${miniHeight}px`,
                         zIndex: 15000,
@@ -1068,6 +1070,33 @@ export default function YouTubeTranscript() {
                             +
                         </button>
                     </div>
+                    <button
+                        onClick={() => setMiniVertical((pos) => (pos === 'bottom' ? 'top' : 'bottom'))}
+                        style={{
+                            position: 'absolute',
+                            left: '50%',
+                            transform: 'translateX(-50%)',
+                            top: miniVertical === 'bottom' ? '6px' : 'auto',
+                            bottom: miniVertical === 'top' ? '6px' : 'auto',
+                            width: '34px',
+                            height: '28px',
+                            borderRadius: '999px',
+                            border: '1px solid rgba(255,255,255,0.2)',
+                            background: 'transparent',
+                            color: '#e2e8f0',
+                            cursor: 'pointer',
+                            boxShadow: '0 6px 14px rgba(0,0,0,0.3)',
+                            fontWeight: 800,
+                            fontSize: '14px',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                        }}
+                        aria-label="Move mini player to top or bottom"
+                        title={miniVertical === 'bottom' ? "Move to top" : "Move to bottom"}
+                    >
+                        {miniVertical === 'bottom' ? '↑' : '↓'}
+                    </button>
                     <iframe
                         src={embedUrl}
                         title="YouTube Video Mini"
