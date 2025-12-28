@@ -187,6 +187,7 @@ export default function YouTubeTranscript() {
   const latestRetryRef = useRef({});
   const [isMinimized, setIsMinimized] = useState(false);
   const [miniCollapsed, setMiniCollapsed] = useState(false);
+  const [miniSide, setMiniSide] = useState("left");
   const dispatch = useAppDispatch();
   const [loadingTranscript, setLoadingTranscript] = useState(false);
   const { youtubeSearchText } = useAppState();
@@ -898,7 +899,8 @@ export default function YouTubeTranscript() {
                 <div
                     style={{
                         position: 'fixed',
-                        left: '12px',
+                        left: miniSide === 'left' ? '12px' : 'auto',
+                        right: miniSide === 'right' ? '12px' : 'auto',
                         bottom: '12px',
                         width: '240px',
                         height: '135px',
@@ -909,36 +911,71 @@ export default function YouTubeTranscript() {
                         border: '1px solid rgba(255,255,255,0.08)',
                         backdropFilter: 'blur(8px)',
                         background: '#0b1220',
-                        transform: miniCollapsed ? 'translateX(-228px)' : 'translateX(0)',
+                        transform: miniCollapsed
+                          ? (miniSide === 'left' ? 'translateX(-228px)' : 'translateX(228px)')
+                          : 'translateX(0)',
                         transition: 'transform 0.25s ease',
                     }}
                 >
-                    <button
-                        onClick={() => setMiniCollapsed((v) => !v)}
+                    <div
                         style={{
                             position: 'absolute',
-                            right: '-10px',
-                            top: '50%',
-                            transform: 'translateY(-50%)',
-                            width: '30px',
-                            height: '90px',
-                            borderRadius: '0 12px 12px 0',
-                            border: '1px solid rgba(255,255,255,0.25)',
-                            background: 'linear-gradient(135deg, #22d3ee, #0ea5e9)',
-                            color: '#0b1220',
-                            cursor: 'pointer',
-                            boxShadow: '0 8px 16px rgba(0,0,0,0.35)',
-                            fontWeight: 900,
-                            fontSize: '16px',
+                            top: '10px',
+                            right: miniSide === 'left' ? '-12px' : 'auto',
+                            left: miniSide === 'right' ? '-12px' : 'auto',
                             display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
+                            flexDirection: 'column',
+                            gap: '8px',
+                            zIndex: 1,
                         }}
-                        aria-label={miniCollapsed ? "Show mini player" : "Hide mini player"}
-                        title={miniCollapsed ? "Show mini player" : "Hide mini player"}
                     >
-                        {miniCollapsed ? '▶' : '◀'}
-                    </button>
+                        <button
+                            onClick={() => setMiniCollapsed((v) => !v)}
+                            style={{
+                                width: '30px',
+                                height: '44px',
+                                borderRadius: miniSide === 'left' ? '0 12px 12px 0' : '12px 0 0 12px',
+                                border: '1px solid rgba(255,255,255,0.25)',
+                                background: 'linear-gradient(135deg, #22d3ee, #0ea5e9)',
+                                color: '#0b1220',
+                                cursor: 'pointer',
+                                boxShadow: '0 8px 16px rgba(0,0,0,0.35)',
+                                fontWeight: 900,
+                                fontSize: '16px',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                            }}
+                            aria-label={miniCollapsed ? "Show mini player" : "Hide mini player"}
+                            title={miniCollapsed ? "Show mini player" : "Hide mini player"}
+                        >
+                            {miniSide === 'left'
+                              ? (miniCollapsed ? '▶' : '◀')
+                              : (miniCollapsed ? '◀' : '▶')}
+                        </button>
+                        <button
+                            onClick={() => setMiniSide((side) => (side === 'left' ? 'right' : 'left'))}
+                            style={{
+                                width: '30px',
+                                height: '36px',
+                                borderRadius: miniSide === 'left' ? '0 10px 10px 0' : '10px 0 0 10px',
+                                border: '1px solid rgba(255,255,255,0.2)',
+                                background: 'rgba(148,163,184,0.25)',
+                                color: '#e2e8f0',
+                                cursor: 'pointer',
+                                boxShadow: '0 6px 14px rgba(0,0,0,0.3)',
+                                fontWeight: 800,
+                                fontSize: '14px',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                            }}
+                            aria-label="Move mini player to the other side"
+                            title="Move mini player"
+                        >
+                            ↔
+                        </button>
+                    </div>
                     <iframe
                         src={embedUrl}
                         title="YouTube Video Mini"
