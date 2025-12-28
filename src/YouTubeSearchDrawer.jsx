@@ -236,10 +236,7 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo, ex
         if (!playlistId) return;
 
         const showModal = (items) => {
-            const withUrls = (items || []).map((v) => ({
-                ...v,
-                _url: videoUrlFromItem(v),
-            }));
+            const withUrls = decorateResults(items || []);
             setPlaylistModal({
                 open: true,
                 items: withUrls,
@@ -257,7 +254,7 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo, ex
 
         try {
             const vidsRaw = await getPlaylistVideos(playlistId);
-            const vids = (vidsRaw || []).map((v) => ({ ...v, _url: videoUrlFromItem(v) }));
+            const vids = decorateResults(vidsRaw || []);
             setPlaylistVideos((prev) => ({ ...prev, [playlistId]: vids }));
             showModal(vids);
             setLastPlaylistSnapshot({ items: vids, title: item.title || 'Playlist', count: vids.length });
@@ -458,6 +455,7 @@ export default function YouTubeSearchDrawer({ isOpen, onClose, onSelectVideo, ex
                                         <div className="playlist-item-meta">
                                             <div style={{ fontWeight: 700, lineHeight: 1.2 }}>{vid.title}</div>
                                             <small>{vid.channelTitle}</small>
+                                            {vid._prettyDuration ? <small>Duration: {vid._prettyDuration}</small> : null}
                                             <div className="video-actions" style={{ marginTop: '0.15rem' }}>
                                                 <button
                                                   className='btn primary-btn'
