@@ -1,0 +1,61 @@
+{
+  "id": "course-schedule",
+  "title": "Course Schedule (Detect Cycle)",
+  "difficulty": "Medium",
+  "functionName": "canFinish",
+  "runner": "courseSchedule",
+  "prompt": "Given numCourses courses labeled from 0 to numCourses - 1 and a list of prerequisite pairs, return true if you can finish all courses.\n\nEach pair [a, b] means you must take course b before course a.\n\nReturn false if there is a cycle in the prerequisite graph.",
+  "constraintQuestions": [
+    "Are all courses labeled 0 to numCourses - 1? (Yes.)",
+    "Can the graph be disconnected? (Yes.)",
+    "Are there cycles in the prerequisites? (Possibly.)",
+    "Should we return false if any cycle exists? (Yes.)",
+    "Can numCourses be 0? (Yes, return true.)"
+  ],
+  "starterCode": "// Write your solution in JavaScript.\n// Requirement: define a function named canFinish(numCourses, prerequisites)\n// Return: true/false\n\nfunction canFinish(numCourses, prerequisites) {\n  // TODO: implement\n  return true;\n}\n",
+  "walkthrough": [
+    {
+      "title": "Build graph + indegree",
+      "body": "Create an adjacency list of outgoing edges and an indegree array.\nFor each pair [a, b], add edge b -> a and increment indegree[a]."
+    },
+    {
+      "title": "Topological sort",
+      "body": "Push all nodes with indegree 0 into a stack/queue.\nPop nodes, count them as processed, and reduce indegree of neighbors.\nIf a neighbor reaches 0, push it.\nIf processed count equals numCourses, there is no cycle."
+    },
+    {
+      "title": "JavaScript (Kahn's algorithm)",
+      "codeLanguage": "javascript",
+      "body": "function canFinish(numCourses, prerequisites) {\n  const adj = Array.from({ length: numCourses }, () => []);\n  const indegree = Array(numCourses).fill(0);\n\n  for (const [course, pre] of prerequisites) {\n    adj[pre].push(course);\n    indegree[course] += 1;\n  }\n\n  const queue = [];\n  for (let i = 0; i < numCourses; i += 1) {\n    if (indegree[i] === 0) queue.push(i);\n  }\n\n  let processed = 0;\n  while (queue.length) {\n    const node = queue.pop();\n    processed += 1;\n    for (const next of adj[node]) {\n      indegree[next] -= 1;\n      if (indegree[next] === 0) queue.push(next);\n    }\n  }\n\n  return processed === numCourses;\n}\n"
+    },
+    {
+      "title": "Complexity",
+      "body": "Time: O(V + E) for vertices and edges.\nSpace: O(V + E) for adjacency list and indegree."
+    }
+  ],
+  "tests": [
+    {
+      "name": "Acyclic graph (from prompt)",
+      "n": 6,
+      "prerequisites": [[1, 0], [2, 1], [2, 5], [0, 3], [4, 3], [3, 5], [4, 5]],
+      "expect": true
+    },
+    {
+      "name": "Cycle created by flipping one edge",
+      "n": 6,
+      "prerequisites": [[1, 0], [2, 1], [5, 2], [0, 3], [4, 3], [3, 5], [4, 5]],
+      "expect": false
+    },
+    {
+      "name": "Simple cycle",
+      "n": 2,
+      "prerequisites": [[1, 0], [0, 1]],
+      "expect": false
+    },
+    {
+      "name": "No prerequisites",
+      "n": 4,
+      "prerequisites": [],
+      "expect": true
+    }
+  ]
+}

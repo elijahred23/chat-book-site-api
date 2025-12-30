@@ -1,0 +1,55 @@
+{
+  "id": "implement-trie",
+  "title": "Implement Trie (Prefix Tree)",
+  "difficulty": "Medium",
+  "functionName": "Trie",
+  "runner": "trieOps",
+  "prompt": "Implement a trie (prefix tree) with the following methods:\n- insert(word): insert the string word into the trie.\n- search(word): return true if the word has been inserted, else false.\n- startsWith(prefix): return true if any inserted word starts with prefix, else false.\n\nThe trie stores lowercase strings; assume inputs are well-formed.",
+  "constraintQuestions": [
+    "Are all inputs lowercase ASCII letters?",
+    "Should insert be idempotent if the same word is added twice?",
+    "Do we need to support empty strings?",
+    "Are search/startsWith case-sensitive?",
+    "Can we add helper classes for nodes?"
+  ],
+  "starterCode": "// Write your solution in JavaScript.\n// Requirement: define a class named Trie with methods insert, search, startsWith\n\nclass Trie {\n  constructor() {\n    // TODO: initialize root node\n  }\n\n  insert(word) {\n    // TODO: insert word into trie\n  }\n\n  search(word) {\n    // TODO: return true if word exists, else false\n    return false;\n  }\n\n  startsWith(prefix) {\n    // TODO: return true if any word has this prefix\n    return false;\n  }\n}\n",
+  "walkthrough": [
+    {
+      "title": "Node structure",
+      "body": "Use a TrieNode with:\n- children: map char -> TrieNode (object or Map)\n- isEnd: boolean flag for end-of-word"
+    },
+    {
+      "title": "Operations",
+      "body": "insert: walk characters, creating nodes as needed; mark last node isEnd = true.\nsearch: walk characters; return true only if every char exists and final node isEnd.\nstartsWith: same walk, but return true once all prefix chars are found (ignore isEnd)."
+    },
+    {
+      "title": "JavaScript sketch",
+      "codeLanguage": "javascript",
+      "body": "class TrieNode {\n  constructor() {\n    this.children = {};\n    this.isEnd = false;\n  }\n}\n\nclass Trie {\n  constructor() {\n    this.root = new TrieNode();\n  }\n\n  insert(word) {\n    let node = this.root;\n    for (const ch of word) {\n      if (!node.children[ch]) node.children[ch] = new TrieNode();\n      node = node.children[ch];\n    }\n    node.isEnd = true;\n  }\n\n  search(word) {\n    let node = this.root;\n    for (const ch of word) {\n      if (!node.children[ch]) return false;\n      node = node.children[ch];\n    }\n    return node.isEnd;\n  }\n\n  startsWith(prefix) {\n    let node = this.root;\n    for (const ch of prefix) {\n      if (!node.children[ch]) return false;\n      node = node.children[ch];\n    }\n    return true;\n  }\n}\n"
+    },
+    {
+      "title": "Complexity",
+      "body": "Let L be word length.\ninsert: O(L) time, O(1) extra beyond new nodes.\nsearch/startsWith: O(L) time, O(1) space.\nSpace: proportional to total characters stored."
+    }
+  ],
+  "tests": [
+    {
+      "name": "Insert and search flow",
+      "ops": ["Trie", "insert", "search", "insert", "search", "startsWith", "search", "insert", "search"],
+      "args": [[], ["apple"], ["dog"], ["dog"], ["dog"], ["app"], ["app"], ["app"], ["app"]],
+      "expect": [null, null, false, null, true, true, false, null, true]
+    },
+    {
+      "name": "Prefix without full word",
+      "ops": ["Trie", "insert", "startsWith", "search", "insert", "search"],
+      "args": [[], ["hello"], ["hel"], ["hel"], ["hel"], ["hel"]],
+      "expect": [null, null, true, false, null, true]
+    },
+    {
+      "name": "Branching and overlap",
+      "ops": ["Trie", "insert", "insert", "insert", "search", "startsWith", "search"],
+      "args": [[], ["car"], ["card"], ["care"], ["car"], ["ca"], ["cat"]],
+      "expect": [null, null, null, null, true, true, false]
+    }
+  ]
+}

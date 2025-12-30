@@ -1,0 +1,65 @@
+{
+  "id": "network-delay-time",
+  "title": "Network Delay Time (Dijkstra)",
+  "difficulty": "Hard",
+  "functionName": "networkDelayTime",
+  "runner": "networkDelayTime",
+  "prompt": "You are given a directed, weighted graph. There are n nodes labeled 1 to n.\n\nThe edges are given as times, where each entry [u, v, w] means a signal takes w time to travel from u to v.\n\nStarting from node k, return how long it takes for all nodes to receive the signal. If not all nodes are reachable, return -1.",
+  "constraintQuestions": [
+    "Are node labels 1 to n? (Yes.)",
+    "Is the graph directed? (Yes.)",
+    "Are edge weights positive? (Yes.)",
+    "Can the graph be disconnected? (Yes.)",
+    "What if n = 0 or there are no edges? (Return 0 if k exists, else -1.)"
+  ],
+  "starterCode": "// Write your solution in JavaScript.\n// Requirement: define a function named networkDelayTime(times, n, k)\n// times: array of [u, v, w] edges\n// Return: total time for all nodes to receive the signal, or -1\n\nfunction networkDelayTime(times, n, k) {\n  // TODO: implement\n  return -1;\n}\n",
+  "walkthrough": [
+    {
+      "title": "Model the graph",
+      "body": "Build an adjacency list: for each u, store [v, w] pairs. Track distances from k, initialized to Infinity."
+    },
+    {
+      "title": "Dijkstra (min-heap)",
+      "body": "Use a min-priority queue keyed by distance. Repeatedly pop the node with the smallest known distance and relax its outgoing edges."
+    },
+    {
+      "title": "JavaScript (Dijkstra with array-based heap)",
+      "codeLanguage": "javascript",
+      "body": "function networkDelayTime(times, n, k) {\n  const adj = Array.from({ length: n }, () => []);\n  for (const [u, v, w] of times) {\n    adj[u - 1].push([v - 1, w]);\n  }\n\n  const dist = Array(n).fill(Infinity);\n  dist[k - 1] = 0;\n\n  const heap = [];\n  const push = (node) => {\n    heap.push(node);\n    let i = heap.length - 1;\n    while (i > 0) {\n      const p = Math.floor((i - 1) / 2);\n      if (dist[heap[p]] <= dist[heap[i]]) break;\n      [heap[p], heap[i]] = [heap[i], heap[p]];\n      i = p;\n    }\n  };\n  const pop = () => {\n    const top = heap[0];\n    const last = heap.pop();\n    if (heap.length) {\n      heap[0] = last;\n      let i = 0;\n      while (true) {\n        const l = i * 2 + 1;\n        const r = i * 2 + 2;\n        let smallest = i;\n        if (l < heap.length && dist[heap[l]] < dist[heap[smallest]]) smallest = l;\n        if (r < heap.length && dist[heap[r]] < dist[heap[smallest]]) smallest = r;\n        if (smallest === i) break;\n        [heap[i], heap[smallest]] = [heap[smallest], heap[i]];\n        i = smallest;\n      }\n    }\n    return top;\n  };\n\n  push(k - 1);\n  const visited = new Set();\n  while (heap.length) {\n    const node = pop();\n    if (visited.has(node)) continue;\n    visited.add(node);\n    for (const [next, w] of adj[node]) {\n      if (dist[node] + w < dist[next]) {\n        dist[next] = dist[node] + w;\n        push(next);\n      }\n    }\n  }\n\n  const max = Math.max(...dist);\n  return max === Infinity ? -1 : max;\n}\n"
+    },
+    {
+      "title": "Complexity",
+      "body": "Time: O((V + E) log V) using a heap.\nSpace: O(V + E) for the graph, distances, and heap."
+    }
+  ],
+  "tests": [
+    {
+      "name": "Weighted example",
+      "n": 5,
+      "k": 1,
+      "times": [[1, 2, 9], [1, 4, 2], [2, 5, 1], [4, 2, 4], [4, 5, 6], [3, 2, 3], [5, 3, 7], [3, 1, 5]],
+      "expect": 14
+    },
+    {
+      "name": "Disconnected graph",
+      "n": 3,
+      "k": 1,
+      "times": [[2, 3, 4]],
+      "expect": -1
+    },
+    {
+      "name": "Single edge",
+      "n": 2,
+      "k": 1,
+      "times": [[1, 2, 1]],
+      "expect": 1
+    },
+    {
+      "name": "Single node",
+      "n": 1,
+      "k": 1,
+      "times": [],
+      "expect": 0
+    }
+  ]
+}

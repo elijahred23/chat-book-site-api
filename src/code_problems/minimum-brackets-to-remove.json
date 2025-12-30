@@ -1,0 +1,38 @@
+{
+  "id": "minimum-brackets-to-remove",
+  "title": "Minimum Brackets To Remove",
+  "difficulty": "Medium",
+  "functionName": "minRemoveToMakeValid",
+  "runner": "minRemoveBrackets",
+  "prompt": "Given a string s containing lowercase letters and parentheses '(' and ')', remove the minimum number of parentheses so that the resulting string is valid.\n\nA string is valid if:\n- It is empty, or\n- All parentheses are closed and properly nested.\n\nReturn any valid string with the minimum number of parentheses removed.",
+  "constraintQuestions": [
+    "Does the string contain only lowercase letters and parentheses? (Assume yes.)",
+    "Is an empty string considered valid? (Yes.)",
+    "Can we return any valid answer if multiple are possible? (Yes.)",
+    "Do we only remove parentheses (not letters)?",
+    "Should we aim for O(n) time?"
+  ],
+  "starterCode": "// Write your solution in JavaScript.\n// Requirement: define a function named minRemoveToMakeValid(s)\n// Return: string\n\nfunction minRemoveToMakeValid(s) {\n  // TODO: implement\n  return \"\";\n}\n",
+  "walkthrough": [
+    {
+      "title": "Stack + array approach",
+      "body": "Convert the string to an array so we can mark removals.\nUse a stack of indices for '('.\nTraverse left to right:\n- If you see '(', push its index.\n- If you see ')' and the stack is empty, mark it for removal.\n- If you see ')' and the stack has items, pop to match it.\nAfter the scan, any leftover indices in the stack are unmatched '(' so mark them for removal.\nFinally, join the array back into a string."
+    },
+    {
+      "title": "JavaScript (stack implementation)",
+      "codeLanguage": "javascript",
+      "body": "function minRemoveToMakeValid(s) {\n  const out = s.split(\"\");\n  const stack = [];\n\n  for (let i = 0; i < out.length; i++) {\n    const ch = out[i];\n    if (ch === \"(\") {\n      stack.push(i);\n    } else if (ch === \")\") {\n      if (stack.length) stack.pop();\n      else out[i] = \"\";\n    }\n  }\n\n  while (stack.length) {\n    const idx = stack.pop();\n    out[idx] = \"\";\n  }\n\n  return out.join(\"\");\n}"
+    },
+    {
+      "title": "Complexity",
+      "body": "Time: O(n) for the scan and final join.\nSpace: O(n) for the array and stack."
+    }
+  ],
+  "tests": [
+    { "name": "Extra closing bracket", "s": "a)b(c)d", "minRemoved": 1 },
+    { "name": "Extra opening bracket", "s": "(a(b)c(", "minRemoved": 1 },
+    { "name": "Multiple answers", "s": ")a(b)c(", "minRemoved": 2 },
+    { "name": "Only brackets", "s": "))((", "minRemoved": 4 },
+    { "name": "Already valid", "s": "ab(c)d", "minRemoved": 0 }
+  ]
+}

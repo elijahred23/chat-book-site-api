@@ -1,0 +1,53 @@
+{
+  "id": "matrix-bfs-traversal",
+  "title": "Matrix BFS Traversal (Up, Right, Down, Left)",
+  "difficulty": "Medium",
+  "functionName": "bfsTraversal",
+  "runner": "matrixBfsTraversal",
+  "prompt": "Given a 2D array (matrix), return the values visited by a breadth-first search starting at the top-left cell (0, 0).\n\nTraversal rules:\n- Visit a cell, then explore neighbors in this order: up, right, down, left.\n- Do not visit a cell more than once.\n- Stay within bounds.\n\nReturn an array of visited values in the order they are first visited.\nIf the matrix is empty, return an empty array.",
+  "constraintQuestions": [
+    "Do we always start at (0, 0)? (Yes.)",
+    "What if the matrix is empty? (Return []).",
+    "Should we visit each cell at most once? (Yes.)",
+    "What directions are allowed? (Up, right, down, left only.)",
+    "Does traversal order matter? (Yes, use the given direction order.)"
+  ],
+  "starterCode": "// Write your solution in JavaScript.\n// Requirement: define a function named bfsTraversal(matrix)\n// Return: array of values\n\nfunction bfsTraversal(matrix) {\n  // TODO: implement\n  return [];\n}\n",
+  "walkthrough": [
+    {
+      "title": "BFS with queue",
+      "body": "Use a queue of coordinates.\nMark visited when a cell is dequeued to avoid repeats.\nEnqueue neighbors in the given order.\nCollect values as you visit cells."
+    },
+    {
+      "title": "JavaScript (BFS implementation)",
+      "codeLanguage": "javascript",
+      "body": "function bfsTraversal(matrix) {\n  if (!matrix.length || !matrix[0].length) return [];\n  const rows = matrix.length;\n  const cols = matrix[0].length;\n  const visited = Array.from({ length: rows }, () => Array(cols).fill(false));\n  const output = [];\n  const queue = [[0, 0]];\n  const dirs = [\n    [-1, 0],\n    [0, 1],\n    [1, 0],\n    [0, -1],\n  ];\n\n  while (queue.length) {\n    const [r, c] = queue.shift();\n    if (r < 0 || r >= rows || c < 0 || c >= cols) continue;\n    if (visited[r][c]) continue;\n\n    visited[r][c] = true;\n    output.push(matrix[r][c]);\n\n    for (const [dr, dc] of dirs) {\n      queue.push([r + dr, c + dc]);\n    }\n  }\n\n  return output;\n}\n"
+    },
+    {
+      "title": "Complexity",
+      "body": "Time: O(r*c) because each cell is visited once.\nSpace: O(r*c) for the visited grid and queue."
+    }
+  ],
+  "tests": [
+    {
+      "name": "4x5 matrix",
+      "matrix": [
+        [1, 2, 3, 4, 5],
+        [6, 7, 8, 9, 10],
+        [11, 12, 13, 14, 15],
+        [16, 17, 18, 19, 20]
+      ],
+      "expect": [1, 2, 6, 3, 7, 11, 4, 8, 12, 16, 5, 9, 13, 17, 10, 14, 18, 15, 19, 20]
+    },
+    {
+      "name": "Single cell",
+      "matrix": [[42]],
+      "expect": [42]
+    },
+    {
+      "name": "Empty matrix",
+      "matrix": [],
+      "expect": []
+    }
+  ]
+}

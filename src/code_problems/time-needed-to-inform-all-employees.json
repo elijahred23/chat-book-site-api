@@ -1,0 +1,61 @@
+{
+  "id": "time-needed-to-inform-all-employees",
+  "title": "Time Needed to Inform All Employees",
+  "difficulty": "Medium",
+  "functionName": "numOfMinutes",
+  "runner": "informAllEmployees",
+  "prompt": "A company has n employees with IDs 0 to n - 1. The head of the company has ID headID.\n\nYou are given:\n- managers[i]: the ID of employee i's direct manager (or -1 for the head).\n- informTime[i]: the time it takes for employee i to inform all of their direct subordinates.\n\nReturn the total number of minutes needed for the head to inform all employees.\nThe subordination relationships form a tree (no cycles).",
+  "constraintQuestions": [
+    "Is the management structure always a tree? (Yes.)",
+    "Can an employee have multiple managers? (No.)",
+    "Is headID always valid? (Yes.)",
+    "Do employees without subordinates have informTime = 0? (Yes.)",
+    "Can the organization be a long chain? (Yes.)"
+  ],
+  "starterCode": "// Write your solution in JavaScript.\n// Requirement: define a function named numOfMinutes(n, headID, managers, informTime)\n// Return: number\n\nfunction numOfMinutes(n, headID, managers, informTime) {\n  // TODO: implement\n  return 0;\n}\n",
+  "walkthrough": [
+    {
+      "title": "Build adjacency list",
+      "body": "Use managers[] to build a list of subordinates for each employee.\nFor each employee i with manager m, push i into adj[m]."
+    },
+    {
+      "title": "DFS to compute max time",
+      "body": "Define dfs(id) to return the time to inform all subordinates of id.\nIf id has no subordinates, return 0.\nOtherwise return informTime[id] + max(dfs(child) for each child)."
+    },
+    {
+      "title": "JavaScript (DFS implementation)",
+      "codeLanguage": "javascript",
+      "body": "function numOfMinutes(n, headID, managers, informTime) {\n  const adj = Array.from({ length: n }, () => []);\n  for (let i = 0; i < n; i++) {\n    const m = managers[i];\n    if (m !== -1) adj[m].push(i);\n  }\n\n  function dfs(id) {\n    if (adj[id].length === 0) return 0;\n    let maxTime = 0;\n    for (const sub of adj[id]) {\n      maxTime = Math.max(maxTime, dfs(sub));\n    }\n    return informTime[id] + maxTime;\n  }\n\n  return dfs(headID);\n}\n"
+    },
+    {
+      "title": "Complexity",
+      "body": "Time: O(n) because each employee is visited once.\nSpace: O(n) for the adjacency list and recursion stack."
+    }
+  ],
+  "tests": [
+    {
+      "name": "Example tree",
+      "n": 8,
+      "headID": 4,
+      "managers": [2, 2, 4, 6, -1, 4, 4, 5],
+      "informTime": [0, 0, 4, 0, 7, 3, 6, 0],
+      "expect": 13
+    },
+    {
+      "name": "Single employee",
+      "n": 1,
+      "headID": 0,
+      "managers": [-1],
+      "informTime": [0],
+      "expect": 0
+    },
+    {
+      "name": "Long chain",
+      "n": 7,
+      "headID": 6,
+      "managers": [1, 2, 3, 4, 5, 6, -1],
+      "informTime": [0, 6, 5, 4, 3, 2, 1],
+      "expect": 21
+    }
+  ]
+}

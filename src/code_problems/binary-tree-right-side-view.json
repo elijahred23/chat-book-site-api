@@ -1,0 +1,51 @@
+{
+  "id": "binary-tree-right-side-view",
+  "title": "Binary Tree Right Side View",
+  "difficulty": "Medium",
+  "functionName": "rightSideView",
+  "runner": "rightSideView",
+  "prompt": "Given the root of a binary tree, imagine standing on the right side of it. Return the values of the nodes you can see from top to bottom.\n\nIf the tree is empty, return an empty array.",
+  "constraintQuestions": [
+    "What should we return for an empty tree? ([]).",
+    "Should we return values from top to bottom? (Yes.)",
+    "Are there duplicate values? (Possibly, but order still matters.)",
+    "Can we solve with BFS (last node each level) or DFS (right-first)?",
+    "Do we only return one value per level? (Yes.)"
+  ],
+  "starterCode": "// Write your solution in JavaScript.\n// Requirement: define a function named rightSideView(root)\n// Return: array of values\n\nfunction rightSideView(root) {\n  // TODO: implement\n  return [];\n}\n",
+  "walkthrough": [
+    {
+      "title": "BFS (last value per level)",
+      "body": "Use a queue to traverse level by level.\nFor each level, process all nodes and record the last node's value.\nPush that value into the result."
+    },
+    {
+      "title": "JavaScript (BFS implementation)",
+      "codeLanguage": "javascript",
+      "body": "function rightSideView(root) {\n  if (!root) return [];\n  const result = [];\n  const queue = [root];\n\n  while (queue.length) {\n    const levelSize = queue.length;\n    let lastValue = null;\n\n    for (let i = 0; i < levelSize; i++) {\n      const node = queue.shift();\n      lastValue = node.val ?? node.value;\n      if (node.left) queue.push(node.left);\n      if (node.right) queue.push(node.right);\n    }\n\n    result.push(lastValue);\n  }\n\n  return result;\n}\n"
+    },
+    {
+      "title": "DFS (right-first preorder)",
+      "body": "Traverse right-first so the first time you reach a level, it's the rightmost node.\nIf level === result.length, push the node value.\nThen recurse into right child, then left child."
+    },
+    {
+      "title": "JavaScript (DFS implementation)",
+      "codeLanguage": "javascript",
+      "body": "function rightSideView(root) {\n  const result = [];\n\n  function dfs(node, level) {\n    if (!node) return;\n    if (level === result.length) {\n      result.push(node.val ?? node.value);\n    }\n    dfs(node.right, level + 1);\n    dfs(node.left, level + 1);\n  }\n\n  dfs(root, 0);\n  return result;\n}\n"
+    },
+    {
+      "title": "Complexity",
+      "body": "Time: O(n) because each node is visited once.\nSpace: O(w) for BFS queue or O(h) for DFS recursion."
+    }
+  ],
+  "tests": [
+    {
+      "name": "Example tree",
+      "tree": [1, 2, 3, 4, 5, null, 6, null, null, 7, null, null, null, 8],
+      "expect": [1, 3, 6, 7, 8]
+    },
+    { "name": "Single node", "tree": [1], "expect": [1] },
+    { "name": "Empty tree", "tree": [], "expect": [] },
+    { "name": "Right skewed", "tree": [1, null, 2, null, 3, null, 4], "expect": [1, 2, 3, 4] },
+    { "name": "Left skewed", "tree": [1, 2, null, 3, null, 4], "expect": [1, 2, 3, 4] }
+  ]
+}

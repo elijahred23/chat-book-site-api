@@ -37,6 +37,7 @@ greet("world");`)
 
   const [tabSize, setTabSize] = useState(2)
   const [showWhitespace, setShowWhitespace] = useState(false)
+  const [autoStart, setAutoStart] = useState(false)
 
   const hiddenInputRef = useRef(null)
 
@@ -174,8 +175,16 @@ greet("world");`)
       setErrors(0);
       setStartTs(null);
       setNowTs(null);
+      setAutoStart(true);
     }
   }, [typingSource]);
+
+  useEffect(() => {
+    if (!autoStart) return;
+    // Wait for normalized to update from loaded before starting
+    start();
+    setAutoStart(false);
+  }, [autoStart, normalized]);
 
   const handleKey = (e) => {
     if (!started || finished) return

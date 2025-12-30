@@ -373,6 +373,7 @@ export default function ActionButtons({ promptText, limitButtons = false }) {
           className="icon-btn"
           title={btn.title}
           aria-label={btn.title}
+          data-tooltip={btn.title}
           style={{
             background: btn.color,
             color: btn.iconColor || "#ffffff",
@@ -394,6 +395,7 @@ export default function ActionButtons({ promptText, limitButtons = false }) {
             setShowAll(!showAll);
           }}
           title={showAll ? "Show Less" : "Show More"}
+          data-tooltip={showAll ? "Show Less" : "Show More"}
         >
           {showAll ? <FaChevronUp /> : <FaEllipsisH />}
         </button>

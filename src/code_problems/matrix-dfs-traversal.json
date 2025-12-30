@@ -1,0 +1,53 @@
+{
+  "id": "matrix-dfs-traversal",
+  "title": "Matrix DFS Traversal (Up, Right, Down, Left)",
+  "difficulty": "Medium",
+  "functionName": "dfsTraversal",
+  "runner": "matrixDfsTraversal",
+  "prompt": "Given a 2D array (matrix), return the values visited by a depth-first search starting at the top-left cell (0, 0).\n\nTraversal rules:\n- Visit a cell, then explore neighbors in this order: up, right, down, left.\n- Do not visit a cell more than once.\n- Stay within bounds.\n\nReturn an array of visited values in the order they are first visited.\nIf the matrix is empty, return an empty array.",
+  "constraintQuestions": [
+    "Do we always start at (0, 0)? (Yes.)",
+    "What if the matrix is empty? (Return []).",
+    "Should we visit each cell at most once? (Yes.)",
+    "What directions are allowed? (Up, right, down, left only.)",
+    "Does traversal order matter? (Yes, use the given direction order.)"
+  ],
+  "starterCode": "// Write your solution in JavaScript.\n// Requirement: define a function named dfsTraversal(matrix)\n// Return: array of values\n\nfunction dfsTraversal(matrix) {\n  // TODO: implement\n  return [];\n}\n",
+  "walkthrough": [
+    {
+      "title": "DFS with visited grid",
+      "body": "Create a visited matrix of the same size.\nUse a recursive DFS to visit a cell, mark it visited, then explore neighbors in the specified order.\nCollect values as you visit them."
+    },
+    {
+      "title": "JavaScript (DFS implementation)",
+      "codeLanguage": "javascript",
+      "body": "function dfsTraversal(matrix) {\n  if (!matrix.length || !matrix[0].length) return [];\n  const rows = matrix.length;\n  const cols = matrix[0].length;\n  const visited = Array.from({ length: rows }, () => Array(cols).fill(false));\n  const output = [];\n  const dirs = [\n    [-1, 0],\n    [0, 1],\n    [1, 0],\n    [0, -1],\n  ];\n\n  function dfs(r, c) {\n    if (r < 0 || r >= rows || c < 0 || c >= cols) return;\n    if (visited[r][c]) return;\n    visited[r][c] = true;\n    output.push(matrix[r][c]);\n    for (const [dr, dc] of dirs) {\n      dfs(r + dr, c + dc);\n    }\n  }\n\n  dfs(0, 0);\n  return output;\n}\n"
+    },
+    {
+      "title": "Complexity",
+      "body": "Time: O(r*c) because each cell is visited once.\nSpace: O(r*c) for the visited grid and recursion stack."
+    }
+  ],
+  "tests": [
+    {
+      "name": "4x5 matrix",
+      "matrix": [
+        [1, 2, 3, 4, 5],
+        [6, 7, 8, 9, 10],
+        [11, 12, 13, 14, 15],
+        [16, 17, 18, 19, 20]
+      ],
+      "expect": [1, 2, 3, 4, 5, 10, 15, 20, 19, 14, 9, 8, 13, 18, 17, 12, 7, 6, 11, 16]
+    },
+    {
+      "name": "Single cell",
+      "matrix": [[42]],
+      "expect": [42]
+    },
+    {
+      "name": "Empty matrix",
+      "matrix": [],
+      "expect": []
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "id": "binary-tree-level-order",
+  "title": "Binary Tree Level Order Traversal",
+  "difficulty": "Medium",
+  "functionName": "levelOrder",
+  "runner": "levelOrderTraversal",
+  "prompt": "Given the root of a binary tree, return the level order traversal of its nodes' values.\n\nLevel order traversal visits nodes level by level from left to right. Return an array of arrays, where each inner array contains the values for that level.\nIf the tree is empty, return an empty array.",
+  "constraintQuestions": [
+    "What should we return for an empty tree? ([]).",
+    "Do we need to preserve left-to-right order within each level? (Yes.)",
+    "Should we use breadth-first search with a queue?",
+    "Do we care about node values beyond collecting them? (No.)",
+    "Is the output an array of arrays? (Yes.)"
+  ],
+  "starterCode": "// Write your solution in JavaScript.\n// Requirement: define a function named levelOrder(root)\n// Return: array of arrays\n\nfunction levelOrder(root) {\n  // TODO: implement\n  return [];\n}\n",
+  "walkthrough": [
+    {
+      "title": "BFS with queue",
+      "body": "Use a queue to process nodes level by level.\nFor each level, capture the current queue size and process exactly that many nodes.\nCollect their values into a level array and push it into the result."
+    },
+    {
+      "title": "JavaScript (BFS implementation)",
+      "codeLanguage": "javascript",
+      "body": "function levelOrder(root) {\n  if (!root) return [];\n  const result = [];\n  const queue = [root];\n\n  while (queue.length) {\n    const levelSize = queue.length;\n    const level = [];\n\n    for (let i = 0; i < levelSize; i++) {\n      const node = queue.shift();\n      level.push(node.val ?? node.value);\n      if (node.left) queue.push(node.left);\n      if (node.right) queue.push(node.right);\n    }\n\n    result.push(level);\n  }\n\n  return result;\n}\n"
+    },
+    {
+      "title": "Complexity",
+      "body": "Time: O(n) because each node is visited once.\nSpace: O(n) for the queue and output."
+    }
+  ],
+  "tests": [
+    {
+      "name": "Example tree",
+      "tree": [3, 6, 1, 9, 2, null, 4, null, null, null, null, 5, null, null, 8],
+      "expect": [[3], [6, 1], [9, 2, 4], [5], [8]]
+    },
+    { "name": "Single node", "tree": [3], "expect": [[3]] },
+    { "name": "Empty tree", "tree": [], "expect": [] },
+    { "name": "Skewed left", "tree": [1, 2, null, 3, null, 4], "expect": [[1], [2], [3], [4]] },
+    { "name": "Skewed right", "tree": [1, null, 2, null, 3, null, 4], "expect": [[1], [2], [3], [4]] }
+  ]
+}

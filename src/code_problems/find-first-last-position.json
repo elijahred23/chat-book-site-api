@@ -1,0 +1,38 @@
+{
+  "id": "find-first-last-position",
+  "title": "Find First and Last Position of Target",
+  "difficulty": "Medium",
+  "functionName": "searchRange",
+  "runner": "searchRange",
+  "prompt": "Given a sorted array of integers nums (ascending order) and a target integer, return the starting and ending index of the target as [start, end].\n\nIf the target does not exist in the array, return [-1, -1].\nYour solution should run in O(log n) time.",
+  "constraintQuestions": [
+    "Is the array sorted in ascending order? (Yes.)",
+    "What should we return if the target is not found? ([-1, -1].)",
+    "Can the array contain duplicates? (Yes.)",
+    "Can the array be empty? (Yes.)",
+    "Do we need O(log n) time? (Yes.)"
+  ],
+  "starterCode": "// Write your solution in JavaScript.\n// Requirement: define a function named searchRange(nums, target)\n// Return: [startIndex, endIndex]\n\nfunction searchRange(nums, target) {\n  // TODO: implement\n  return [-1, -1];\n}\n",
+  "walkthrough": [
+    {
+      "title": "Two binary searches",
+      "body": "Use binary search twice: once to find the leftmost occurrence and once to find the rightmost occurrence.\nEach search keeps shrinking the range even after finding the target to ensure we reach the boundary."
+    },
+    {
+      "title": "JavaScript (binary search boundaries)",
+      "codeLanguage": "javascript",
+      "body": "function findLeft(nums, target) {\n  let left = 0;\n  let right = nums.length - 1;\n  let ans = -1;\n  while (left <= right) {\n    const mid = Math.floor((left + right) / 2);\n    if (nums[mid] === target) {\n      ans = mid;\n      right = mid - 1;\n    } else if (nums[mid] < target) {\n      left = mid + 1;\n    } else {\n      right = mid - 1;\n    }\n  }\n  return ans;\n}\n\nfunction findRight(nums, target) {\n  let left = 0;\n  let right = nums.length - 1;\n  let ans = -1;\n  while (left <= right) {\n    const mid = Math.floor((left + right) / 2);\n    if (nums[mid] === target) {\n      ans = mid;\n      left = mid + 1;\n    } else if (nums[mid] < target) {\n      left = mid + 1;\n    } else {\n      right = mid - 1;\n    }\n  }\n  return ans;\n}\n\nfunction searchRange(nums, target) {\n  return [findLeft(nums, target), findRight(nums, target)];\n}"
+    },
+    {
+      "title": "Complexity",
+      "body": "Time: O(log n) + O(log n) = O(log n).\nSpace: O(1)."
+    }
+  ],
+  "tests": [
+    { "name": "Multiple occurrences", "nums": [1, 3, 3, 5, 5, 5, 8, 9], "target": 5, "expect": [3, 5] },
+    { "name": "Single occurrence", "nums": [1, 2, 4, 6, 8], "target": 4, "expect": [2, 2] },
+    { "name": "Not found", "nums": [1, 2, 3, 4, 5], "target": 9, "expect": [-1, -1] },
+    { "name": "Empty array", "nums": [], "target": 7, "expect": [-1, -1] },
+    { "name": "All same", "nums": [2, 2, 2, 2], "target": 2, "expect": [0, 3] }
+  ]
+}

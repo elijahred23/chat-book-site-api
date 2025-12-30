@@ -1,0 +1,55 @@
+{
+  "id": "design-monarchy-interface",
+  "title": "Design Monarchy Interface",
+  "difficulty": "Medium",
+  "functionName": "Monarchy",
+  "runner": "monarchyInterface",
+  "prompt": "Design a Monarchy class to model royal succession.\n\nConstructor:\n- Monarchy(kingName): create the monarchy with the given king.\n\nMethods:\n- birth(childName, parentName): add the child to the end of the parent's children list (birth order).\n- death(name): mark the person as deceased; their children remain in the tree.\n- getOrderOfSuccession(): return an array of living names in the order they would inherit the throne.\n\nUse preorder traversal (parent, then children in birth order). Skip deceased people but include their descendants.\nAssume names are unique and births reference an existing parent.",
+  "constraintQuestions": [
+    "Are names guaranteed to be unique?",
+    "Will birth always be called with an existing parent?",
+    "Can the king die? If so, do we still traverse their children?",
+    "Should death be idempotent if called multiple times for the same person?",
+    "Should the methods return anything, or just mutate state?"
+  ],
+  "starterCode": "// Write your solution in JavaScript.\n// Requirement: define a class named Monarchy\n// Methods: birth(childName, parentName), death(name), getOrderOfSuccession()\n\nclass Monarchy {\n  constructor(kingName) {\n    // TODO: initialize the monarchy with the king\n  }\n\n  birth(childName, parentName) {\n    // TODO: add child to the parent's children list\n  }\n\n  death(name) {\n    // TODO: mark the person as deceased (do not remove their descendants)\n  }\n\n  getOrderOfSuccession() {\n    // TODO: return an array of living names in succession order\n    return [];\n  }\n}\n",
+  "walkthrough": [
+    {
+      "title": "Data model",
+      "body": "Use a Person node with: name, children array (in birth order), and an isAlive flag.\nKeep a hash map name -> Person for O(1) lookups and to avoid walking the tree to find parents."
+    },
+    {
+      "title": "Operations",
+      "body": "birth: lookup parent, create Person for child, push into parent's children array, store in map.\ndeath: lookup name and set isAlive = false.\ngetOrderOfSuccession: preorder DFS (node, then each child in order). Add node.name only if isAlive is true."
+    },
+    {
+      "title": "JavaScript sketch",
+      "codeLanguage": "javascript",
+      "body": "class Person {\n  constructor(name) {\n    this.name = name;\n    this.children = [];\n    this.isAlive = true;\n  }\n}\n\nclass Monarchy {\n  constructor(kingName) {\n    this.king = new Person(kingName);\n    this.people = { [kingName]: this.king };\n  }\n\n  birth(childName, parentName) {\n    const parent = this.people[parentName];\n    const child = new Person(childName);\n    parent.children.push(child);\n    this.people[childName] = child;\n  }\n\n  death(name) {\n    if (this.people[name]) this.people[name].isAlive = false;\n  }\n\n  getOrderOfSuccession() {\n    const order = [];\n    const dfs = (person) => {\n      if (!person) return;\n      if (person.isAlive) order.push(person.name);\n      for (const child of person.children) dfs(child);\n    };\n    dfs(this.king);\n    return order;\n  }\n}\n"
+    },
+    {
+      "title": "Complexity",
+      "body": "birth: O(1) time/space.\ndeath: O(1) time, O(1) extra space.\ngetOrderOfSuccession: O(n) time to traverse people, O(h) recursion stack."
+    }
+  ],
+  "tests": [
+    {
+      "name": "Full family order",
+      "ops": ["Monarchy", "birth", "birth", "birth", "birth", "birth", "birth", "birth", "getOrderOfSuccession"],
+      "args": [["Jake"], ["Catherine", "Jake"], ["Tom", "Jake"], ["Selene", "Jake"], ["Jane", "Catherine"], ["Peter", "Selene"], ["Farah", "Jane"], ["Mark", "Catherine"], []],
+      "expect": [null, null, null, null, null, null, null, null, ["Jake", "Catherine", "Jane", "Farah", "Mark", "Tom", "Selene", "Peter"]]
+    },
+    {
+      "name": "Skip deceased but keep descendants",
+      "ops": ["Monarchy", "birth", "birth", "birth", "birth", "birth", "birth", "birth", "death", "death", "getOrderOfSuccession"],
+      "args": [["Jake"], ["Catherine", "Jake"], ["Tom", "Jake"], ["Selene", "Jake"], ["Jane", "Catherine"], ["Peter", "Selene"], ["Farah", "Jane"], ["Mark", "Catherine"], ["Jake"], ["Jane"], []],
+      "expect": [null, null, null, null, null, null, null, null, null, null, ["Catherine", "Farah", "Mark", "Tom", "Selene", "Peter"]]
+    },
+    {
+      "name": "Later births stay in order",
+      "ops": ["Monarchy", "birth", "birth", "birth", "getOrderOfSuccession", "birth", "birth", "getOrderOfSuccession", "death", "getOrderOfSuccession"],
+      "args": [["Anna"], ["Ben", "Anna"], ["Clara", "Anna"], ["Derek", "Ben"], [], ["Eva", "Ben"], ["Finn", "Clara"], [], ["Ben"], []],
+      "expect": [null, null, null, null, ["Anna", "Ben", "Derek", "Clara"], null, null, ["Anna", "Ben", "Derek", "Eva", "Clara", "Finn"], null, ["Anna", "Derek", "Eva", "Clara", "Finn"]]
+    }
+  ]
+}

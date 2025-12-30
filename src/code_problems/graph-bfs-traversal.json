@@ -1,0 +1,60 @@
+{
+  "id": "graph-bfs-traversal",
+  "title": "Graph BFS Traversal (Adjacency List)",
+  "difficulty": "Medium",
+  "functionName": "bfsTraversal",
+  "runner": "graphBfsTraversal",
+  "prompt": "Given a graph as an adjacency list and a starting vertex, return the values visited by a breadth-first search.\n\nTraversal rules:\n- Visit neighbors in the order they appear in the adjacency list.\n- Do not visit a vertex more than once.\n\nReturn an array of visited vertices in order.",
+  "constraintQuestions": [
+    "Is the graph undirected or directed? (Undirected in examples.)",
+    "Should we start from the given vertex? (Yes.)",
+    "Should we visit neighbors in adjacency list order? (Yes.)",
+    "Do we need to avoid revisiting vertices? (Yes.)",
+    "Is the graph always connected? (No, visit only reachable nodes.)"
+  ],
+  "starterCode": "// Write your solution in JavaScript.\n// Requirement: define a function named bfsTraversal(graph, start)\n// graph is an adjacency list: array of arrays.\n// Return: array of visited vertices\n\nfunction bfsTraversal(graph, start) {\n  // TODO: implement\n  return [];\n}\n",
+  "walkthrough": [
+    {
+      "title": "Queue-based BFS",
+      "body": "Initialize a queue with the start node and a visited set.\nPop from the queue, record the node, then enqueue unvisited neighbors in order.\nContinue until the queue is empty."
+    },
+    {
+      "title": "JavaScript (BFS implementation)",
+      "codeLanguage": "javascript",
+      "body": "function bfsTraversal(graph, start) {\n  const visited = new Set();\n  const result = [];\n  const queue = [start];\n\n  while (queue.length) {\n    const node = queue.shift();\n    if (visited.has(node)) continue;\n    visited.add(node);\n    result.push(node);\n\n    const neighbors = graph[node] || [];\n    for (const next of neighbors) {\n      if (!visited.has(next)) queue.push(next);\n    }\n  }\n\n  return result;\n}\n"
+    },
+    {
+      "title": "Complexity",
+      "body": "Time: O(V + E) for vertices and edges.\nSpace: O(V) for the queue and visited set."
+    }
+  ],
+  "tests": [
+    {
+      "name": "Example graph",
+      "graph": [
+        [1, 3],
+        [0],
+        [3, 8],
+        [0, 4, 5, 2],
+        [3, 6],
+        [3],
+        [4, 7],
+        [6],
+        [2]
+      ],
+      "start": 0,
+      "expect": [0, 1, 3, 4, 5, 2, 6, 8, 7]
+    },
+    {
+      "name": "Disconnected graph",
+      "graph": [
+        [1],
+        [0],
+        [3],
+        [2]
+      ],
+      "start": 2,
+      "expect": [2, 3]
+    }
+  ]
+}

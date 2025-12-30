@@ -1,0 +1,40 @@
+{
+  "id": "validate-binary-search-tree",
+  "title": "Validate Binary Search Tree",
+  "difficulty": "Medium",
+  "functionName": "isValidBST",
+  "runner": "validateBST",
+  "prompt": "Given the root of a binary tree, determine if it is a valid binary search tree (BST).\n\nA BST is valid if:\n- All nodes in the left subtree of a node are strictly less than the node's value.\n- All nodes in the right subtree are strictly greater than the node's value.\n- Both subtrees are themselves valid BSTs.\n\nIf the tree is empty, return true. Duplicate values are not allowed.",
+  "constraintQuestions": [
+    "Are duplicates allowed in the BST? (No.)",
+    "What should we return for an empty tree? (true.)",
+    "Do all left subtree values need to be less than the node, not just the immediate child? (Yes.)",
+    "Do all right subtree values need to be greater than the node, not just the immediate child? (Yes.)",
+    "Can values be negative? (Yes.)"
+  ],
+  "starterCode": "// Write your solution in JavaScript.\n// Requirement: define a function named isValidBST(root)\n// Return: true/false\n\nfunction isValidBST(root) {\n  // TODO: implement\n  return true;\n}\n",
+  "walkthrough": [
+    {
+      "title": "DFS with min/max bounds",
+      "body": "Use depth-first search and carry a valid range for each node.\n- The root starts with (-Infinity, Infinity).\n- The left child must be in (min, node.val).\n- The right child must be in (node.val, max).\nIf any node violates its bounds, return false."
+    },
+    {
+      "title": "JavaScript (recursive bounds check)",
+      "codeLanguage": "javascript",
+      "body": "function isValidBST(root) {\n  function dfs(node, min, max) {\n    if (!node) return true;\n    const value = node.val ?? node.value;\n    if (value <= min || value >= max) return false;\n    return dfs(node.left, min, value) && dfs(node.right, value, max);\n  }\n\n  return dfs(root, -Infinity, Infinity);\n}\n"
+    },
+    {
+      "title": "Complexity",
+      "body": "Time: O(n) because each node is visited once.\nSpace: O(h) for recursion stack, where h is the tree height."
+    }
+  ],
+  "tests": [
+    { "name": "Valid BST", "tree": [12, 7, 18, 5, 9, 16, 25], "expect": true },
+    { "name": "Empty tree", "tree": [], "expect": true },
+    { "name": "Single node", "tree": [10], "expect": true },
+    { "name": "Left child too large", "tree": [12, 15, 18], "expect": false },
+    { "name": "Right child too small", "tree": [12, 7, 9], "expect": false },
+    { "name": "Deep violation (left subtree)", "tree": [12, 7, 18, 5, 16, null, 25], "expect": false },
+    { "name": "Deep violation (right subtree)", "tree": [12, 7, 18, 5, 9, 13, 25, null, null, null, null, 10], "expect": false }
+  ]
+}

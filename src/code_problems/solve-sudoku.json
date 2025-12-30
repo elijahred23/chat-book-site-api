@@ -1,0 +1,105 @@
+{
+  "id": "solve-sudoku",
+  "title": "Sudoku Solver (Backtracking)",
+  "difficulty": "Hard",
+  "functionName": "solveSudoku",
+  "runner": "solveSudoku",
+  "prompt": "Write a function solveSudoku(board) that solves a 9x9 Sudoku puzzle in-place using backtracking.\n- board is a 9x9 2D array; empty cells are '.'.\n- Modify board to contain one valid solution.\n- If no solution exists, leave board unchanged.\n\nRules: each row, column, and 3x3 sub-box must contain digits 1-9 exactly once.",
+  "constraintQuestions": [
+    "Will board always be 9x9?",
+    "Are inputs only digits '1'-'9' and '.'?",
+    "Should we return the board or mutate in-place?",
+    "What to do if no solution exists? (Leave board unchanged.)",
+    "Do we need to handle multiple solutions? (Any valid one is fine.)"
+  ],
+  "starterCode": "// Write your solution in JavaScript.\n// Requirement: define function solveSudoku(board)\n// Mutate board in-place to a valid solution; leave unchanged if unsolvable.\n\nfunction solveSudoku(board) {\n  // TODO: implement backtracking solver\n}\n",
+  "walkthrough": [
+    {
+      "title": "Backtracking template",
+      "body": "DFS over empty cells, trying digits 1-9.\n- Choose a cell, try a digit.\n- If digit keeps row/col/box valid, recurse to next cell.\n- If recursion fails, undo digit (backtrack) and try next.\n- Stop when all cells are filled (solution found)."
+    },
+    {
+      "title": "Fast validity checks",
+      "body": "Maintain three arrays of sets/maps:\n- rows[9], cols[9], boxes[9], each tracking used digits.\nBox id = Math.floor(r/3)*3 + Math.floor(c/3)."
+    },
+    {
+      "title": "JavaScript sketch",
+      "codeLanguage": "javascript",
+      "body": "function solveSudoku(board) {\n  const rows = Array.from({ length: 9 }, () => new Set());\n  const cols = Array.from({ length: 9 }, () => new Set());\n  const boxes = Array.from({ length: 9 }, () => new Set());\n\n  for (let r = 0; r < 9; r++) {\n    for (let c = 0; c < 9; c++) {\n      const v = board[r][c];\n      if (v === '.') continue;\n      rows[r].add(v); cols[c].add(v);\n      boxes[Math.floor(r/3)*3 + Math.floor(c/3)].add(v);\n    }\n  }\n\n  function backtrack(pos = 0) {\n    if (pos === 81) return true;\n    const r = Math.floor(pos / 9), c = pos % 9;\n    if (board[r][c] !== '.') return backtrack(pos + 1);\n\n    const boxId = Math.floor(r/3)*3 + Math.floor(c/3);\n    for (let d = 1; d <= 9; d++) {\n      const ch = String(d);\n      if (rows[r].has(ch) || cols[c].has(ch) || boxes[boxId].has(ch)) continue;\n      board[r][c] = ch;\n      rows[r].add(ch); cols[c].add(ch); boxes[boxId].add(ch);\n      if (backtrack(pos + 1)) return true;\n      board[r][c] = '.';\n      rows[r].delete(ch); cols[c].delete(ch); boxes[boxId].delete(ch);\n    }\n    return false;\n  }\n\n  backtrack();\n  return board;\n}\n"
+    },
+    {
+      "title": "Complexity",
+      "body": "Backtracking prunes invalid paths; worst-case ~9!^9 tried states.\nSpace: O(81) for recursion and tracking sets (constant for fixed 9x9)."
+    }
+  ],
+  "tests": [
+    {
+      "name": "Classic puzzle",
+      "board": [
+        ["5","3",".",".","7",".",".",".","."],
+        ["6",".",".","1","9","5",".",".","."],
+        [".","9","8",".",".",".",".","6","."],
+        ["8",".",".",".","6",".",".",".","3"],
+        ["4",".",".","8",".","3",".",".","1"],
+        ["7",".",".",".","2",".",".",".","6"],
+        [".","6",".",".",".",".","2","8","."],
+        [".",".",".","4","1","9",".",".","5"],
+        [".",".",".",".","8",".",".","7","9"]
+      ],
+      "expectBoard": [
+        ["5","3","4","6","7","8","9","1","2"],
+        ["6","7","2","1","9","5","3","4","8"],
+        ["1","9","8","3","4","2","5","6","7"],
+        ["8","5","9","7","6","1","4","2","3"],
+        ["4","2","6","8","5","3","7","9","1"],
+        ["7","1","3","9","2","4","8","5","6"],
+        ["9","6","1","5","3","7","2","8","4"],
+        ["2","8","7","4","1","9","6","3","5"],
+        ["3","4","5","2","8","6","1","7","9"]
+      ],
+      "solvable": true
+    },
+    {
+      "name": "Already solved",
+      "board": [
+        ["8","2","7","1","5","4","3","9","6"],
+        ["9","6","5","3","2","7","1","4","8"],
+        ["3","4","1","6","8","9","7","5","2"],
+        ["5","9","3","4","6","8","2","7","1"],
+        ["4","7","2","5","1","3","6","8","9"],
+        ["6","1","8","9","7","2","4","3","5"],
+        ["7","8","6","2","3","5","9","1","4"],
+        ["1","5","4","7","9","6","8","2","3"],
+        ["2","3","9","8","4","1","5","6","7"]
+      ],
+      "expectBoard": [
+        ["8","2","7","1","5","4","3","9","6"],
+        ["9","6","5","3","2","7","1","4","8"],
+        ["3","4","1","6","8","9","7","5","2"],
+        ["5","9","3","4","6","8","2","7","1"],
+        ["4","7","2","5","1","3","6","8","9"],
+        ["6","1","8","9","7","2","4","3","5"],
+        ["7","8","6","2","3","5","9","1","4"],
+        ["1","5","4","7","9","6","8","2","3"],
+        ["2","3","9","8","4","1","5","6","7"]
+      ],
+      "solvable": true
+    },
+    {
+      "name": "Unsolvable stays unchanged",
+      "board": [
+        ["5","5",".",".","7",".",".",".","."],
+        ["6",".",".","1","9","5",".",".","."],
+        [".","9","8",".",".",".",".","6","."],
+        ["8",".",".",".","6",".",".",".","3"],
+        ["4",".",".","8",".","3",".",".","1"],
+        ["7",".",".",".","2",".",".",".","6"],
+        [".","6",".",".",".",".","2","8","."],
+        [".",".",".","4","1","9",".",".","5"],
+        [".",".",".",".","8",".",".","7","9"]
+      ],
+      "expectBoard": null,
+      "solvable": false
+    }
+  ]
+}

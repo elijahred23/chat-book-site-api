@@ -1,0 +1,58 @@
+{
+  "id": "min-cost-climbing-stairs",
+  "title": "Minimum Cost Climbing Stairs",
+  "difficulty": "Medium",
+  "functionName": "minCostClimbingStairs",
+  "runner": "minCostClimbingStairs",
+  "prompt": "You are given a cost array where cost[i] is the cost of step i. Once you pay the cost, you can climb either one or two steps.\n\nReturn the minimum cost to reach the top of the floor. You can start from step 0 or step 1.",
+  "constraintQuestions": [
+    "Can costs be negative? (No, non-negative.)",
+    "Can the array be empty? (Yes, return 0.)",
+    "Can we start at step 0 or step 1? (Yes.)",
+    "Do we pay a cost for the top step? (No.)",
+    "Is the top one step past the last index? (Yes.)"
+  ],
+  "starterCode": "// Write your solution in JavaScript.\n// Requirement: define a function named minCostClimbingStairs(cost)\n// Return: minimum total cost\n\nfunction minCostClimbingStairs(cost) {\n  // TODO: implement\n  return 0;\n}\n",
+  "walkthrough": [
+    {
+      "title": "Recurrence",
+      "body": "Let dp[i] be the minimum cost to reach step i. Then dp[i] = cost[i] + min(dp[i-1], dp[i-2]).\nThe answer is min(dp[n-1], dp[n-2]) since you can finish from either of the last two steps."
+    },
+    {
+      "title": "JavaScript (bottom-up, O(1) space)",
+      "codeLanguage": "javascript",
+      "body": "function minCostClimbingStairs(cost) {\n  const n = cost.length;\n  if (n === 0) return 0;\n  if (n === 1) return 0;\n\n  let prev2 = cost[0];\n  let prev1 = cost[1];\n  for (let i = 2; i < n; i += 1) {\n    const cur = cost[i] + Math.min(prev1, prev2);\n    prev2 = prev1;\n    prev1 = cur;\n  }\n\n  return Math.min(prev1, prev2);\n}\n"
+    },
+    {
+      "title": "Complexity",
+      "body": "Time: O(n) for one pass.\nSpace: O(1) extra space."
+    }
+  ],
+  "tests": [
+    {
+      "name": "Small example",
+      "cost": [10, 15, 20],
+      "expect": 15
+    },
+    {
+      "name": "Classic example",
+      "cost": [1, 100, 1, 1, 1, 100, 1, 1, 100, 1],
+      "expect": 6
+    },
+    {
+      "name": "Zero costs",
+      "cost": [0, 0, 0],
+      "expect": 0
+    },
+    {
+      "name": "Single step",
+      "cost": [5],
+      "expect": 0
+    },
+    {
+      "name": "Empty array",
+      "cost": [],
+      "expect": 0
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "id": "maximum-depth-binary-tree",
+  "title": "Maximum Depth of Binary Tree",
+  "difficulty": "Easy",
+  "functionName": "maxDepth",
+  "runner": "maxDepthBinaryTree",
+  "prompt": "Given the root of a binary tree, return its maximum depth.\n\nThe maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.\nIf the tree is empty, return 0.",
+  "constraintQuestions": [
+    "What should we return for an empty tree? (0.)",
+    "What is the depth of a single-node tree? (1.)",
+    "Do we care about node values? (No.)",
+    "Should we solve it recursively with DFS?",
+    "Are we counting nodes, not edges? (Yes.)"
+  ],
+  "starterCode": "// Write your solution in JavaScript.\n// Requirement: define a function named maxDepth(root)\n// Return: number\n\nfunction maxDepth(root) {\n  // TODO: implement\n  return 0;\n}\n",
+  "walkthrough": [
+    {
+      "title": "DFS recursion",
+      "body": "The depth of a node is 1 + max(depth(left), depth(right)).\nBase case: if the node is null, its depth is 0.\nCompute recursively and return the max."
+    },
+    {
+      "title": "JavaScript (recursive implementation)",
+      "codeLanguage": "javascript",
+      "body": "function maxDepth(root) {\n  if (!root) return 0;\n  const leftDepth = maxDepth(root.left);\n  const rightDepth = maxDepth(root.right);\n  return Math.max(leftDepth, rightDepth) + 1;\n}"
+    },
+    {
+      "title": "Complexity",
+      "body": "Time: O(n) because every node is visited once.\nSpace: O(h) for recursion stack, where h is the tree height."
+    }
+  ],
+  "tests": [
+    { "name": "Balanced tree", "tree": [1, 2, 3, 4, 5, null, 6], "expect": 3 },
+    { "name": "Single node", "tree": [1], "expect": 1 },
+    { "name": "Empty tree", "tree": [], "expect": 0 },
+    { "name": "Skewed left", "tree": [1, 2, null, 3, null, 4], "expect": 4 },
+    { "name": "Skewed right", "tree": [1, null, 2, null, 3, null, 4], "expect": 4 }
+  ]
+}

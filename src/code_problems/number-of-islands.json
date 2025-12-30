@@ -1,0 +1,55 @@
+{
+  "id": "number-of-islands",
+  "title": "Number of Islands",
+  "difficulty": "Medium",
+  "functionName": "numIslands",
+  "runner": "countIslands",
+  "prompt": "Given a 2D grid of '1's (land) and '0's (water), return the number of islands.\n\nAn island is formed by connecting adjacent lands horizontally or vertically. Diagonal connections do not count.\nYou may mutate the grid while solving.\nIf the grid is empty, return 0.",
+  "constraintQuestions": [
+    "Are connections only horizontal/vertical? (Yes.)",
+    "Can we mutate the grid? (Assume yes.)",
+    "What should we return for an empty grid? (0.)",
+    "Are values strings or numbers? (Often strings, but either is fine if handled.)",
+    "Should we aim for O(r*c) time?"
+  ],
+  "starterCode": "// Write your solution in JavaScript.\n// Requirement: define a function named numIslands(grid)\n// Return: number\n\nfunction numIslands(grid) {\n  // TODO: implement\n  return 0;\n}\n",
+  "walkthrough": [
+    {
+      "title": "Sequential scan + BFS/DFS flood fill",
+      "body": "Scan every cell.\nWhen you see land, increment the island count and flood-fill to mark all connected land as water.\nThis prevents double counting."
+    },
+    {
+      "title": "JavaScript (BFS implementation)",
+      "codeLanguage": "javascript",
+      "body": "function numIslands(grid) {\n  if (!grid.length || !grid[0].length) return 0;\n  const rows = grid.length;\n  const cols = grid[0].length;\n  let count = 0;\n  const dirs = [\n    [-1, 0],\n    [0, 1],\n    [1, 0],\n    [0, -1],\n  ];\n\n  for (let r = 0; r < rows; r++) {\n    for (let c = 0; c < cols; c++) {\n      if (grid[r][c] !== 1 && grid[r][c] !== \"1\") continue;\n      count++;\n      grid[r][c] = 0;\n      const queue = [[r, c]];\n      while (queue.length) {\n        const [cr, cc] = queue.shift();\n        for (const [dr, dc] of dirs) {\n          const nr = cr + dr;\n          const nc = cc + dc;\n          if (nr < 0 || nr >= rows || nc < 0 || nc >= cols) continue;\n          if (grid[nr][nc] !== 1 && grid[nr][nc] !== \"1\") continue;\n          grid[nr][nc] = 0;\n          queue.push([nr, nc]);\n        }\n      }\n    }\n  }\n\n  return count;\n}\n"
+    },
+    {
+      "title": "Complexity",
+      "body": "Time: O(r*c) because each cell is visited once.\nSpace: O(max(r, c)) to O(r*c) depending on queue usage."
+    }
+  ],
+  "tests": [
+    {
+      "name": "Two islands",
+      "matrix": [
+        [1, 1, 0, 0, 0],
+        [1, 1, 0, 0, 1],
+        [0, 0, 0, 1, 1],
+        [0, 0, 0, 0, 0]
+      ],
+      "expect": 2
+    },
+    {
+      "name": "Diagonal islands",
+      "matrix": [
+        [1, 0, 1, 0],
+        [0, 1, 0, 1],
+        [1, 0, 1, 0]
+      ],
+      "expect": 6
+    },
+    { "name": "Empty grid", "matrix": [], "expect": 0 },
+    { "name": "All water", "matrix": [[0, 0], [0, 0]], "expect": 0 },
+    { "name": "Single island", "matrix": [[1, 1], [1, 1]], "expect": 1 }
+  ]
+}

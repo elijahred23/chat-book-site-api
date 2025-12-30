@@ -1,0 +1,42 @@
+{
+  "id": "kth-largest-element",
+  "title": "Kth Largest Element",
+  "difficulty": "Medium",
+  "functionName": "findKthLargest",
+  "runner": "kthLargestElement",
+  "prompt": "Given an unsorted array of numbers nums and an integer k, return the k-th largest element in the array.\n\nNotes:\n- The k-th largest element is the element at index (nums.length - k) in the array sorted in ascending order.\n- It is not the k-th distinct element.\n- You may return any value as long as it is the correct k-th largest element.",
+  "constraintQuestions": [
+    "Can k ever be larger than the array length? (Assume no.)",
+    "Are duplicate values allowed? (Yes.)",
+    "Is the k-th largest based on sorted order, not distinct values? (Yes.)",
+    "Should we aim for better than O(n log n)?",
+    "Are negative values possible?"
+  ],
+  "starterCode": "// Write your solution in JavaScript.\n// Requirement: define a function named findKthLargest(nums, k)\n// Return: number\n\nfunction findKthLargest(nums, k) {\n  // TODO: implement\n  return 0;\n}\n",
+  "walkthrough": [
+    {
+      "title": "Sorting approach (simple)",
+      "body": "Sort the array in ascending order and return the element at index nums.length - k.\nTime: O(n log n)\nSpace: O(1) to O(n) depending on sort implementation."
+    },
+    {
+      "title": "JavaScript (sorting implementation)",
+      "codeLanguage": "javascript",
+      "body": "function findKthLargest(nums, k) {\n  nums.sort((a, b) => a - b);\n  return nums[nums.length - k];\n}"
+    },
+    {
+      "title": "Quickselect insight (optimal average)",
+      "body": "Quickselect partitions the array like quicksort but only recurses into the side that contains the target index.\nAverage time: O(n)\nWorst time: O(n^2)\nSpace: O(1) or O(log n) depending on implementation."
+    },
+    {
+      "title": "JavaScript (quickselect implementation)",
+      "codeLanguage": "javascript",
+      "body": "function findKthLargest(nums, k) {\n  const target = nums.length - k;\n\n  function swap(i, j) {\n    const tmp = nums[i];\n    nums[i] = nums[j];\n    nums[j] = tmp;\n  }\n\n  function partition(left, right) {\n    const pivot = nums[right];\n    let i = left;\n    for (let j = left; j < right; j++) {\n      if (nums[j] < pivot) {\n        swap(i, j);\n        i++;\n      }\n    }\n    swap(i, right);\n    return i;\n  }\n\n  function quickselect(left, right) {\n    if (left > right) return null;\n    const pivotIndex = partition(left, right);\n    if (pivotIndex === target) return nums[pivotIndex];\n    if (target < pivotIndex) return quickselect(left, pivotIndex - 1);\n    return quickselect(pivotIndex + 1, right);\n  }\n\n  return quickselect(0, nums.length - 1);\n}"
+    }
+  ],
+  "tests": [
+    { "name": "Unique values", "nums": [3, 2, 1, 5, 6, 4], "k": 2, "expect": 5 },
+    { "name": "With duplicates", "nums": [3, 2, 3, 1, 2, 4, 5, 5, 6], "k": 4, "expect": 4 },
+    { "name": "Single element", "nums": [7], "k": 1, "expect": 7 },
+    { "name": "Negative values", "nums": [-1, -2, -3, -4], "k": 2, "expect": -2 }
+  ]
+}

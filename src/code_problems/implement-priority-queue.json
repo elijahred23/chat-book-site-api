@@ -1,0 +1,45 @@
+{
+  "id": "implement-priority-queue",
+  "title": "Implement Priority Queue (Max Heap)",
+  "difficulty": "Hard",
+  "functionName": "PriorityQueue",
+  "runner": "priorityQueueOps",
+  "prompt": "Implement a priority queue using a binary heap stored in an array.\n\nAPI:\n- constructor(comparator?) -> default should create a max heap.\n- size() -> number of elements.\n- isEmpty() -> boolean.\n- peek() -> top element (max for default).\n- push(value) -> insert value.\n- pop() -> remove and return top element.\n\nYou may assume all operations are valid (no pop/peek on empty).",
+  "constraintQuestions": [
+    "Should the default be a max heap? (Yes.)",
+    "Do we need to support custom comparators? (Yes, optional parameter.)",
+    "Is pop required to return the top value? (Yes.)",
+    "Should size and isEmpty be O(1)? (Yes.)",
+    "Can we use an array for the heap storage? (Yes.)"
+  ],
+  "starterCode": "// Write your solution in JavaScript.\n// Requirement: define a class named PriorityQueue\n// Methods: size(), isEmpty(), peek(), push(value), pop()\n\nclass PriorityQueue {\n  constructor(comparator = (a, b) => a > b) {\n    this._heap = [];\n    this._comparator = comparator;\n  }\n\n  size() {\n    // TODO: implement\n    return 0;\n  }\n\n  isEmpty() {\n    // TODO: implement\n    return true;\n  }\n\n  peek() {\n    // TODO: implement\n    return undefined;\n  }\n\n  push(value) {\n    // TODO: implement\n  }\n\n  pop() {\n    // TODO: implement\n    return undefined;\n  }\n}\n",
+  "walkthrough": [
+    {
+      "title": "Array-backed heap",
+      "body": "Use a binary heap stored in an array.\n- parent(i) = floor((i - 1) / 2)\n- left(i) = 2*i + 1\n- right(i) = 2*i + 2\nOn push, insert at end and sift up.\nOn pop, swap root with last, remove last, then sift down."
+    },
+    {
+      "title": "JavaScript (heap implementation)",
+      "codeLanguage": "javascript",
+      "body": "class PriorityQueue {\n  constructor(comparator = (a, b) => a > b) {\n    this._heap = [];\n    this._comparator = comparator;\n  }\n\n  size() {\n    return this._heap.length;\n  }\n\n  isEmpty() {\n    return this.size() === 0;\n  }\n\n  peek() {\n    return this._heap[0];\n  }\n\n  _parent(i) {\n    return Math.floor((i - 1) / 2);\n  }\n\n  _left(i) {\n    return i * 2 + 1;\n  }\n\n  _right(i) {\n    return i * 2 + 2;\n  }\n\n  _swap(i, j) {\n    const temp = this._heap[i];\n    this._heap[i] = this._heap[j];\n    this._heap[j] = temp;\n  }\n\n  _compare(i, j) {\n    return this._comparator(this._heap[i], this._heap[j]);\n  }\n\n  _siftUp() {\n    let i = this.size() - 1;\n    while (i > 0 && this._compare(i, this._parent(i))) {\n      const p = this._parent(i);\n      this._swap(i, p);\n      i = p;\n    }\n  }\n\n  _siftDown() {\n    let i = 0;\n    while (true) {\n      const left = this._left(i);\n      const right = this._right(i);\n      let best = i;\n\n      if (left < this.size() && this._compare(left, best)) best = left;\n      if (right < this.size() && this._compare(right, best)) best = right;\n      if (best === i) break;\n\n      this._swap(i, best);\n      i = best;\n    }\n  }\n\n  push(value) {\n    this._heap.push(value);\n    this._siftUp();\n  }\n\n  pop() {\n    if (this.size() === 1) return this._heap.pop();\n    this._swap(0, this.size() - 1);\n    const value = this._heap.pop();\n    this._siftDown();\n    return value;\n  }\n}\n"
+    },
+    {
+      "title": "Complexity",
+      "body": "push: O(log n), pop: O(log n), peek/size/isEmpty: O(1).\nSpace: O(n)."
+    }
+  ],
+  "tests": [
+    {
+      "name": "Basic max-heap behavior",
+      "ops": ["PriorityQueue", "push", "push", "push", "peek", "pop", "peek", "pop", "pop", "isEmpty"],
+      "args": [[], [40], [15], [50], [], [], [], [], [], []],
+      "expect": [null, null, null, null, 50, 50, 40, 40, 15, true]
+    },
+    {
+      "name": "Interleaved operations",
+      "ops": ["PriorityQueue", "push", "push", "pop", "push", "peek", "pop", "isEmpty"],
+      "args": [[], [10], [20], [], [15], [], [], []],
+      "expect": [null, null, null, 20, null, 15, 15, true]
+    }
+  ]
+}

@@ -76,6 +76,330 @@ function validateLengthResult({ s, result, expect }) {
   return { ok: true };
 }
 
+function validateNumberResult({ result, expect }) {
+  if (typeof result !== "number" || Number.isNaN(result)) return { ok: false, reason: "Expected a number" };
+  if (result !== expect) return { ok: false, reason: `Expected ${expect} but got ${result}` };
+  return { ok: true };
+}
+
+function validateRangeResult({ result, expect }) {
+  if (!Array.isArray(result) || result.length !== 2) {
+    return { ok: false, reason: "Expected an array of two indices" };
+  }
+  const [a, b] = result;
+  if (!Number.isInteger(a) || !Number.isInteger(b)) {
+    return { ok: false, reason: "Indices must be integers" };
+  }
+  if (!Array.isArray(expect) || expect.length !== 2) {
+    return { ok: false, reason: "Test expects an array of two indices" };
+  }
+  if (a !== expect[0] || b !== expect[1]) {
+    return { ok: false, reason: `Expected [${expect[0]}, ${expect[1]}] but got [${a}, ${b}]` };
+  }
+  return { ok: true };
+}
+
+function validateLevelOrderResult({ result, expect }) {
+  if (!Array.isArray(result)) return { ok: false, reason: "Expected an array of levels" };
+  if (!Array.isArray(expect)) return { ok: false, reason: "Test expects an array of levels" };
+  if (result.length !== expect.length) {
+    return { ok: false, reason: `Expected ${expect.length} levels but got ${result.length}` };
+  }
+  for (let i = 0; i < expect.length; i++) {
+    const level = result[i];
+    const expectedLevel = expect[i];
+    if (!Array.isArray(level) || !Array.isArray(expectedLevel)) {
+      return { ok: false, reason: `Expected level ${i} to be an array` };
+    }
+    if (level.length !== expectedLevel.length) {
+      return { ok: false, reason: `Level ${i} expected length ${expectedLevel.length} but got ${level.length}` };
+    }
+    for (let j = 0; j < expectedLevel.length; j++) {
+      if (level[j] !== expectedLevel[j]) {
+        return { ok: false, reason: `Level ${i} mismatch at index ${j}: expected ${expectedLevel[j]} but got ${level[j]}` };
+      }
+    }
+  }
+  return { ok: true };
+}
+
+function validateArrayResult({ result, expect }) {
+  if (!Array.isArray(result)) return { ok: false, reason: "Expected an array" };
+  if (!Array.isArray(expect)) return { ok: false, reason: "Test expects an array" };
+  if (result.length !== expect.length) {
+    return { ok: false, reason: `Expected length ${expect.length} but got ${result.length}` };
+  }
+  for (let i = 0; i < expect.length; i++) {
+    if (result[i] !== expect[i]) {
+      return { ok: false, reason: `Mismatch at index ${i}: expected ${expect[i]} but got ${result[i]}` };
+    }
+  }
+  return { ok: true };
+}
+
+function validateMatrixResult({ result, expect }) {
+  if (!Array.isArray(result)) return { ok: false, reason: "Expected a matrix (array of arrays)" };
+  if (!Array.isArray(expect)) return { ok: false, reason: "Test expects a matrix (array of arrays)" };
+  if (result.length !== expect.length) {
+    return { ok: false, reason: `Expected ${expect.length} rows but got ${result.length}` };
+  }
+  for (let r = 0; r < expect.length; r++) {
+    const row = result[r];
+    const expectedRow = expect[r];
+    if (!Array.isArray(row) || !Array.isArray(expectedRow)) {
+      return { ok: false, reason: `Row ${r} is not an array` };
+    }
+    if (row.length !== expectedRow.length) {
+      return { ok: false, reason: `Row ${r} expected length ${expectedRow.length} but got ${row.length}` };
+    }
+    for (let c = 0; c < expectedRow.length; c++) {
+      if (row[c] !== expectedRow[c]) {
+        return { ok: false, reason: `Mismatch at row ${r}, col ${c}: expected ${expectedRow[c]} but got ${row[c]}` };
+      }
+    }
+  }
+  return { ok: true };
+}
+
+function minParenthesesRemovals(s) {
+  let open = 0;
+  let remove = 0;
+  for (const ch of s) {
+    if (ch === "(") open++;
+    else if (ch === ")") {
+      if (open > 0) open--;
+      else remove++;
+    }
+  }
+  return remove + open;
+}
+
+function isValidParenthesesString(s) {
+  let open = 0;
+  for (const ch of s) {
+    if (ch === "(") open++;
+    else if (ch === ")") {
+      if (open === 0) return false;
+      open--;
+    }
+  }
+  return open === 0;
+}
+
+function isSubsequence(full, candidate) {
+  let i = 0;
+  let j = 0;
+  while (i < full.length && j < candidate.length) {
+    if (full[i] === candidate[j]) j++;
+    i++;
+  }
+  return j === candidate.length;
+}
+
+function validateMinRemoveResult({ s, result, minRemoved }) {
+  if (typeof result !== "string") return { ok: false, reason: "Expected a string" };
+  if (!isValidParenthesesString(result)) return { ok: false, reason: "Result has invalid parentheses" };
+  if (!isSubsequence(s, result)) return { ok: false, reason: "Result is not a subsequence of input" };
+  const lettersIn = s.replace(/[()]/g, "");
+  const lettersOut = result.replace(/[()]/g, "");
+  if (lettersIn !== lettersOut) return { ok: false, reason: "Result must keep all non-bracket characters" };
+  const minRemove = minParenthesesRemovals(s);
+  if (Number.isInteger(minRemoved) && minRemoved !== minRemove) {
+    return { ok: false, reason: `Test expects ${minRemoved} removals but input requires ${minRemove}` };
+  }
+  const parensIn = (s.match(/[()]/g) || []).length;
+  const parensOut = (result.match(/[()]/g) || []).length;
+  const removed = parensIn - parensOut;
+  if (removed !== minRemove) {
+    return { ok: false, reason: `Expected ${minRemove} bracket removals but got ${removed}` };
+  }
+  return { ok: true };
+}
+
+function normalizeQueueOutput(value) {
+  return value === undefined ? null : value;
+}
+
+function runQueueOps(QueueClass, ops = [], args = []) {
+  let instance = null;
+  const outputs = [];
+
+  ops.forEach((op, index) => {
+    const input = Array.isArray(args[index]) ? args[index] : [];
+    if (index === 0) {
+      instance = new QueueClass(...input);
+      outputs.push(null);
+      return;
+    }
+
+    if (!instance || typeof instance[op] !== "function") {
+      throw new Error(`Missing method "${op}" on queue instance`);
+    }
+    const result = instance[op](...input);
+    outputs.push(normalizeQueueOutput(result));
+  });
+
+  return outputs;
+}
+
+function runTrieOps(TrieClass, ops = [], args = []) {
+  let instance = null;
+  const outputs = [];
+
+  ops.forEach((op, index) => {
+    const input = Array.isArray(args[index]) ? args[index] : [];
+    if (index === 0) {
+      instance = new TrieClass(...input);
+      outputs.push(null);
+      return;
+    }
+
+    if (!instance || typeof instance[op] !== "function") {
+      throw new Error(`Missing method "${op}" on trie instance`);
+    }
+    const result = instance[op](...input);
+    outputs.push(normalizeQueueOutput(result));
+  });
+
+  return outputs;
+}
+
+function cloneBoard(board) {
+  if (!Array.isArray(board)) return [];
+  return board.map((row) => (Array.isArray(row) ? [...row] : []));
+}
+
+function validateQueueOpsResult({ result, expect }) {
+  if (!Array.isArray(result)) return { ok: false, reason: "Expected an array of outputs" };
+  if (!Array.isArray(expect)) return { ok: false, reason: "Expected test to provide an output array" };
+  if (result.length !== expect.length) {
+    return { ok: false, reason: `Expected ${expect.length} outputs but got ${result.length}` };
+  }
+  for (let i = 0; i < expect.length; i++) {
+    if (result[i] !== expect[i]) {
+      return { ok: false, reason: `Output mismatch at index ${i}: expected ${expect[i]} but got ${result[i]}` };
+    }
+  }
+  return { ok: true };
+}
+
+function validateTrieOpsResult({ result, expect }) {
+  if (!Array.isArray(result)) return { ok: false, reason: "Expected an array of outputs" };
+  if (!Array.isArray(expect)) return { ok: false, reason: "Expected test to provide an output array" };
+  if (result.length !== expect.length) {
+    return { ok: false, reason: `Expected ${expect.length} outputs but got ${result.length}` };
+  }
+  for (let i = 0; i < expect.length; i++) {
+    if (result[i] !== expect[i]) {
+      return { ok: false, reason: `Output mismatch at index ${i}: expected ${stableStringify(expect[i])} but got ${stableStringify(result[i])}` };
+    }
+  }
+  return { ok: true };
+}
+
+function boardsEqual(a, b) {
+  if (!Array.isArray(a) || !Array.isArray(b) || a.length !== b.length) return false;
+  for (let i = 0; i < a.length; i++) {
+    const rowA = a[i];
+    const rowB = b[i];
+    if (!Array.isArray(rowA) || !Array.isArray(rowB) || rowA.length !== rowB.length) return false;
+    for (let j = 0; j < rowA.length; j++) {
+      if (String(rowA[j]) !== String(rowB[j])) return false;
+    }
+  }
+  return true;
+}
+
+function boardHasDots(board) {
+  return board.some((row) => row.some((cell) => cell === "." || cell === null || cell === undefined));
+}
+
+function isSudokuValid(board) {
+  if (!Array.isArray(board) || board.length !== 9) return false;
+  const rows = Array.from({ length: 9 }, () => new Set());
+  const cols = Array.from({ length: 9 }, () => new Set());
+  const boxes = Array.from({ length: 9 }, () => new Set());
+
+  for (let r = 0; r < 9; r++) {
+    const row = board[r];
+    if (!Array.isArray(row) || row.length !== 9) return false;
+    for (let c = 0; c < 9; c++) {
+      const val = String(row[c]);
+      if (!/[1-9]/.test(val)) return false;
+      const boxId = Math.floor(r / 3) * 3 + Math.floor(c / 3);
+      if (rows[r].has(val) || cols[c].has(val) || boxes[boxId].has(val)) return false;
+      rows[r].add(val);
+      cols[c].add(val);
+      boxes[boxId].add(val);
+    }
+  }
+  return true;
+}
+
+function validateSudokuResult({ original, resultBoard, expect, solvable = true }) {
+  if (!Array.isArray(resultBoard)) return { ok: false, reason: "Expected board to be a 2D array" };
+
+  if (!solvable) {
+    const unchanged = boardsEqual(original, resultBoard);
+    return { ok: unchanged, reason: unchanged ? null : "Unsolvable board should remain unchanged" };
+  }
+
+  if (expect && !boardsEqual(resultBoard, expect)) {
+    return { ok: false, reason: "Solved board does not match expected solution" };
+  }
+
+  if (boardHasDots(resultBoard)) return { ok: false, reason: "Board still has empty cells" };
+  if (!isSudokuValid(resultBoard)) return { ok: false, reason: "Board violates Sudoku rules" };
+  return { ok: true };
+}
+
+function runMonarchyOps(MonarchyClass, ops = [], args = []) {
+  let instance = null;
+  const outputs = [];
+
+  ops.forEach((op, index) => {
+    const input = Array.isArray(args[index]) ? args[index] : [];
+    if (index === 0) {
+      instance = new MonarchyClass(...input);
+      outputs.push(null);
+      return;
+    }
+
+    if (!instance || typeof instance[op] !== "function") {
+      throw new Error(`Missing method "${op}" on monarchy instance`);
+    }
+    const result = instance[op](...input);
+    outputs.push(normalizeQueueOutput(result));
+  });
+
+  return outputs;
+}
+
+function valuesEqual(a, b) {
+  if (Array.isArray(a) && Array.isArray(b)) {
+    if (a.length !== b.length) return false;
+    for (let i = 0; i < a.length; i++) {
+      if (a[i] !== b[i]) return false;
+    }
+    return true;
+  }
+  return a === b;
+}
+
+function validateMonarchyOpsResult({ result, expect }) {
+  if (!Array.isArray(result)) return { ok: false, reason: "Expected an array of outputs" };
+  if (!Array.isArray(expect)) return { ok: false, reason: "Expected test to provide an output array" };
+  if (result.length !== expect.length) {
+    return { ok: false, reason: `Expected ${expect.length} outputs but got ${result.length}` };
+  }
+
+  for (let i = 0; i < expect.length; i++) {
+    if (valuesEqual(result[i], expect[i])) continue;
+    return { ok: false, reason: `Output mismatch at index ${i}: expected ${stableStringify(expect[i])} but got ${stableStringify(result[i])}` };
+  }
+  return { ok: true };
+}
+
 function makeListFromArray(values) {
   if (!Array.isArray(values) || values.length === 0) return null;
   const head = { value: values[0], val: values[0], next: null };
@@ -97,6 +421,23 @@ function makeListFromArrayWithCycle(values, pos) {
     nodes[nodes.length - 1].next = nodes[pos];
   }
   return { head, nodes };
+}
+
+function makeBinaryTree(values = []) {
+  if (!Array.isArray(values) || values.length === 0) return null;
+  const nodes = values.map((v) => (v === null ? null : { value: v, val: v, left: null, right: null }));
+  let childIndex = 1;
+  for (let i = 0; i < nodes.length && childIndex < nodes.length; i++) {
+    const node = nodes[i];
+    if (!node) continue;
+    node.left = nodes[childIndex] ?? null;
+    childIndex += 1;
+    if (childIndex < nodes.length) {
+      node.right = nodes[childIndex] ?? null;
+      childIndex += 1;
+    }
+  }
+  return nodes[0];
 }
 
 function listToArray(head, maxNodes = 1000) {
@@ -296,6 +637,67 @@ export default function CodingProblems() {
             result = solve([...t.height]);
           } else if (active.runner === "backspaceStringCompare") {
             result = solve(t.s, t.t);
+          } else if (active.runner === "validParentheses") {
+            result = solve(t.s);
+          } else if (active.runner === "minRemoveBrackets") {
+            result = solve(t.s);
+          } else if (active.runner === "queueWithStacks") {
+            result = runQueueOps(solve, t.ops, t.args);
+          } else if (active.runner === "trieOps") {
+            result = runTrieOps(solve, t.ops, t.args);
+          } else if (active.runner === "solveSudoku") {
+            const board = cloneBoard(t.board);
+            const ret = solve(board);
+            result = { board, ret };
+          } else if (active.runner === "monarchyInterface") {
+            result = runMonarchyOps(solve, t.ops, t.args);
+          } else if (active.runner === "kthLargestElement") {
+            result = solve([...t.nums], t.k);
+          } else if (active.runner === "binarySearch") {
+            result = solve(t.nums, t.target);
+          } else if (active.runner === "searchRange") {
+            result = solve(t.nums, t.target);
+          } else if (active.runner === "maxDepthBinaryTree") {
+            const root = makeBinaryTree(t.tree);
+            result = solve(root);
+          } else if (active.runner === "levelOrderTraversal") {
+            const root = makeBinaryTree(t.tree);
+            result = solve(root);
+          } else if (active.runner === "rightSideView") {
+            const root = makeBinaryTree(t.tree);
+            result = solve(root);
+          } else if (active.runner === "countCompleteTreeNodes") {
+            const root = makeBinaryTree(t.tree);
+            result = solve(root);
+          } else if (active.runner === "validateBST") {
+            const root = makeBinaryTree(t.tree);
+            result = solve(root);
+          } else if (active.runner === "priorityQueueOps") {
+            result = runQueueOps(solve, t.ops, t.args);
+          } else if (active.runner === "matrixDfsTraversal") {
+            result = solve(t.matrix);
+          } else if (active.runner === "matrixBfsTraversal") {
+            result = solve(t.matrix);
+          } else if (active.runner === "countIslands") {
+            result = solve(t.matrix);
+          } else if (active.runner === "rottingOranges") {
+            result = solve(t.matrix);
+          } else if (active.runner === "wallsAndGates") {
+            result = solve(t.matrix);
+          } else if (active.runner === "graphBfsTraversal") {
+            result = solve(t.graph, t.start);
+          } else if (active.runner === "graphDfsTraversal") {
+            result = solve(t.graph, t.start);
+          } else if (active.runner === "informAllEmployees") {
+            result = solve(t.n, t.headID, t.managers, t.informTime);
+          } else if (active.runner === "networkDelayTime") {
+            result = solve(t.times, t.n, t.k);
+          } else if (active.runner === "minCostClimbingStairs") {
+            result = solve(t.cost);
+          } else if (active.runner === "knightProbability") {
+            result = solve(t.n, t.k, t.row, t.col);
+          } else if (active.runner === "courseSchedule") {
+            result = solve(t.n, t.prerequisites);
           } else if (active.runner === "longestSubstringNoRepeat") {
             result = solve(t.s);
           } else if (active.runner === "almostPalindrome") {
@@ -340,6 +742,147 @@ export default function CodingProblems() {
         }
 
         if (active.runner === "backspaceStringCompare") {
+          const validation = validateBooleanResult({ result, expect: t.expect });
+          return { name: t.name, ok: validation.ok, got: result, want: t.expect, error: validation.ok ? null : validation.reason };
+        }
+
+        if (active.runner === "validParentheses") {
+          const validation = validateBooleanResult({ result, expect: t.expect });
+          return { name: t.name, ok: validation.ok, got: result, want: t.expect, error: validation.ok ? null : validation.reason };
+        }
+
+        if (active.runner === "minRemoveBrackets") {
+          const validation = validateMinRemoveResult({ s: t.s, result, minRemoved: t.minRemoved });
+          return { name: t.name, ok: validation.ok, got: result, want: "valid minimal removal", error: validation.ok ? null : validation.reason };
+        }
+
+        if (active.runner === "queueWithStacks") {
+          const validation = validateQueueOpsResult({ result, expect: t.expect });
+          return { name: t.name, ok: validation.ok, got: result, want: t.expect, error: validation.ok ? null : validation.reason };
+        }
+
+        if (active.runner === "trieOps") {
+          const validation = validateTrieOpsResult({ result, expect: t.expect });
+          return { name: t.name, ok: validation.ok, got: result, want: t.expect, error: validation.ok ? null : validation.reason };
+        }
+
+        if (active.runner === "solveSudoku") {
+          const boardResult = result?.board ?? null;
+          const validation = validateSudokuResult({
+            original: t.board,
+            resultBoard: boardResult,
+            expect: t.expectBoard,
+            solvable: t.solvable !== false,
+          });
+          return { name: t.name, ok: validation.ok, got: boardResult, want: t.expectBoard ?? "solved board", error: validation.ok ? null : validation.reason };
+        }
+
+        if (active.runner === "monarchyInterface") {
+          const validation = validateMonarchyOpsResult({ result, expect: t.expect });
+          return { name: t.name, ok: validation.ok, got: result, want: t.expect, error: validation.ok ? null : validation.reason };
+        }
+
+        if (active.runner === "kthLargestElement") {
+          const validation = validateNumberResult({ result, expect: t.expect });
+          return { name: t.name, ok: validation.ok, got: result, want: t.expect, error: validation.ok ? null : validation.reason };
+        }
+
+        if (active.runner === "binarySearch") {
+          const validation = validateNumberResult({ result, expect: t.expect });
+          return { name: t.name, ok: validation.ok, got: result, want: t.expect, error: validation.ok ? null : validation.reason };
+        }
+
+        if (active.runner === "searchRange") {
+          const validation = validateRangeResult({ result, expect: t.expect });
+          return { name: t.name, ok: validation.ok, got: result, want: t.expect, error: validation.ok ? null : validation.reason };
+        }
+
+        if (active.runner === "maxDepthBinaryTree") {
+          const validation = validateNumberResult({ result, expect: t.expect });
+          return { name: t.name, ok: validation.ok, got: result, want: t.expect, error: validation.ok ? null : validation.reason };
+        }
+
+        if (active.runner === "levelOrderTraversal") {
+          const validation = validateLevelOrderResult({ result, expect: t.expect });
+          return { name: t.name, ok: validation.ok, got: result, want: t.expect, error: validation.ok ? null : validation.reason };
+        }
+
+        if (active.runner === "rightSideView") {
+          const validation = validateArrayResult({ result, expect: t.expect });
+          return { name: t.name, ok: validation.ok, got: result, want: t.expect, error: validation.ok ? null : validation.reason };
+        }
+
+        if (active.runner === "countCompleteTreeNodes") {
+          const validation = validateNumberResult({ result, expect: t.expect });
+          return { name: t.name, ok: validation.ok, got: result, want: t.expect, error: validation.ok ? null : validation.reason };
+        }
+
+        if (active.runner === "validateBST") {
+          const validation = validateBooleanResult({ result, expect: t.expect });
+          return { name: t.name, ok: validation.ok, got: result, want: t.expect, error: validation.ok ? null : validation.reason };
+        }
+
+        if (active.runner === "priorityQueueOps") {
+          const validation = validateQueueOpsResult({ result, expect: t.expect });
+          return { name: t.name, ok: validation.ok, got: result, want: t.expect, error: validation.ok ? null : validation.reason };
+        }
+
+        if (active.runner === "matrixDfsTraversal") {
+          const validation = validateArrayResult({ result, expect: t.expect });
+          return { name: t.name, ok: validation.ok, got: result, want: t.expect, error: validation.ok ? null : validation.reason };
+        }
+
+        if (active.runner === "matrixBfsTraversal") {
+          const validation = validateArrayResult({ result, expect: t.expect });
+          return { name: t.name, ok: validation.ok, got: result, want: t.expect, error: validation.ok ? null : validation.reason };
+        }
+
+        if (active.runner === "countIslands") {
+          const validation = validateNumberResult({ result, expect: t.expect });
+          return { name: t.name, ok: validation.ok, got: result, want: t.expect, error: validation.ok ? null : validation.reason };
+        }
+
+        if (active.runner === "rottingOranges") {
+          const validation = validateNumberResult({ result, expect: t.expect });
+          return { name: t.name, ok: validation.ok, got: result, want: t.expect, error: validation.ok ? null : validation.reason };
+        }
+
+        if (active.runner === "wallsAndGates") {
+          const validation = validateMatrixResult({ result, expect: t.expect });
+          return { name: t.name, ok: validation.ok, got: result, want: t.expect, error: validation.ok ? null : validation.reason };
+        }
+
+        if (active.runner === "graphBfsTraversal") {
+          const validation = validateArrayResult({ result, expect: t.expect });
+          return { name: t.name, ok: validation.ok, got: result, want: t.expect, error: validation.ok ? null : validation.reason };
+        }
+
+        if (active.runner === "graphDfsTraversal") {
+          const validation = validateArrayResult({ result, expect: t.expect });
+          return { name: t.name, ok: validation.ok, got: result, want: t.expect, error: validation.ok ? null : validation.reason };
+        }
+
+        if (active.runner === "informAllEmployees") {
+          const validation = validateNumberResult({ result, expect: t.expect });
+          return { name: t.name, ok: validation.ok, got: result, want: t.expect, error: validation.ok ? null : validation.reason };
+        }
+
+        if (active.runner === "networkDelayTime") {
+          const validation = validateNumberResult({ result, expect: t.expect });
+          return { name: t.name, ok: validation.ok, got: result, want: t.expect, error: validation.ok ? null : validation.reason };
+        }
+
+        if (active.runner === "minCostClimbingStairs") {
+          const validation = validateNumberResult({ result, expect: t.expect });
+          return { name: t.name, ok: validation.ok, got: result, want: t.expect, error: validation.ok ? null : validation.reason };
+        }
+
+        if (active.runner === "knightProbability") {
+          const validation = validateNumberResult({ result, expect: t.expect });
+          return { name: t.name, ok: validation.ok, got: result, want: t.expect, error: validation.ok ? null : validation.reason };
+        }
+
+        if (active.runner === "courseSchedule") {
           const validation = validateBooleanResult({ result, expect: t.expect });
           return { name: t.name, ok: validation.ok, got: result, want: t.expect, error: validation.ok ? null : validation.reason };
         }
@@ -524,7 +1067,10 @@ export default function CodingProblems() {
                   <div style={{ display: "grid", gap: 10, marginTop: 8 }}>
                     {active.walkthrough.map((w) => (
                       <div key={w.title} className="cp-q" style={{ background: "#f8fafc" }}>
-                        <div style={{ fontWeight: 900, marginBottom: 6 }}>{w.title}</div>
+                        <div className="cp-row" style={{ alignItems: "flex-start", gap: 8 }}>
+                          <div style={{ fontWeight: 900, marginBottom: 6, marginTop: 2 }}>{w.title}</div>
+                          {w.codeLanguage && <ActionButtons  promptText={w.body} />}
+                        </div>
                         {w.codeLanguage ? (
                           <pre className="cp-codeblock">
                             <code className={`language-${w.codeLanguage}`}>{w.body}</code>
@@ -553,6 +1099,115 @@ export default function CodingProblems() {
                         ) : active.runner === "backspaceStringCompare" ? (
                           <div className="cp-muted">
                             s: {stableStringify(t.s)} | t: {stableStringify(t.t)} | expected: {stableStringify(t.expect)}
+                          </div>
+                        ) : active.runner === "validParentheses" ? (
+                          <div className="cp-muted">
+                            s: {stableStringify(t.s)} | expected: {stableStringify(t.expect)}
+                          </div>
+                        ) : active.runner === "minRemoveBrackets" ? (
+                          <div className="cp-muted">
+                            s: {stableStringify(t.s)} | minRemoved: {stableStringify(t.minRemoved)}
+                          </div>
+                        ) : active.runner === "queueWithStacks" ? (
+                          <div className="cp-muted">
+                            ops: {stableStringify(t.ops)} | args: {stableStringify(t.args)} | expected: {stableStringify(t.expect)}
+                          </div>
+                        ) : active.runner === "trieOps" ? (
+                          <div className="cp-muted">
+                            ops: {stableStringify(t.ops)} | args: {stableStringify(t.args)} | expected: {stableStringify(t.expect)}
+                          </div>
+                        ) : active.runner === "solveSudoku" ? (
+                          <div className="cp-muted">
+                            board: {stableStringify(t.board)} | expected: {t.solvable === false ? "unsolved" : "solved"}{" "}
+                            {t.expectBoard ? `| expectBoard: ${stableStringify(t.expectBoard)}` : ""}
+                          </div>
+                        ) : active.runner === "monarchyInterface" ? (
+                          <div className="cp-muted">
+                            ops: {stableStringify(t.ops)} | args: {stableStringify(t.args)} | expected: {stableStringify(t.expect)}
+                          </div>
+                        ) : active.runner === "kthLargestElement" ? (
+                          <div className="cp-muted">
+                            nums: {stableStringify(t.nums)} | k: {stableStringify(t.k)} | expected: {stableStringify(t.expect)}
+                          </div>
+                        ) : active.runner === "binarySearch" ? (
+                          <div className="cp-muted">
+                            nums: {stableStringify(t.nums)} | target: {stableStringify(t.target)} | expected: {stableStringify(t.expect)}
+                          </div>
+                        ) : active.runner === "searchRange" ? (
+                          <div className="cp-muted">
+                            nums: {stableStringify(t.nums)} | target: {stableStringify(t.target)} | expected: {stableStringify(t.expect)}
+                          </div>
+                        ) : active.runner === "maxDepthBinaryTree" ? (
+                          <div className="cp-muted">
+                            tree: {stableStringify(t.tree)} | expected: {stableStringify(t.expect)}
+                          </div>
+                        ) : active.runner === "levelOrderTraversal" ? (
+                          <div className="cp-muted">
+                            tree: {stableStringify(t.tree)} | expected: {stableStringify(t.expect)}
+                          </div>
+                        ) : active.runner === "rightSideView" ? (
+                          <div className="cp-muted">
+                            tree: {stableStringify(t.tree)} | expected: {stableStringify(t.expect)}
+                          </div>
+                        ) : active.runner === "countCompleteTreeNodes" ? (
+                          <div className="cp-muted">
+                            tree: {stableStringify(t.tree)} | expected: {stableStringify(t.expect)}
+                          </div>
+                        ) : active.runner === "validateBST" ? (
+                          <div className="cp-muted">
+                            tree: {stableStringify(t.tree)} | expected: {stableStringify(t.expect)}
+                          </div>
+                        ) : active.runner === "priorityQueueOps" ? (
+                          <div className="cp-muted">
+                            ops: {stableStringify(t.ops)} | args: {stableStringify(t.args)} | expected: {stableStringify(t.expect)}
+                          </div>
+                        ) : active.runner === "matrixDfsTraversal" ? (
+                          <div className="cp-muted">
+                            matrix: {stableStringify(t.matrix)} | expected: {stableStringify(t.expect)}
+                          </div>
+                        ) : active.runner === "matrixBfsTraversal" ? (
+                          <div className="cp-muted">
+                            matrix: {stableStringify(t.matrix)} | expected: {stableStringify(t.expect)}
+                          </div>
+                        ) : active.runner === "countIslands" ? (
+                          <div className="cp-muted">
+                            matrix: {stableStringify(t.matrix)} | expected: {stableStringify(t.expect)}
+                          </div>
+                        ) : active.runner === "rottingOranges" ? (
+                          <div className="cp-muted">
+                            matrix: {stableStringify(t.matrix)} | expected: {stableStringify(t.expect)}
+                          </div>
+                        ) : active.runner === "wallsAndGates" ? (
+                          <div className="cp-muted">
+                            matrix: {stableStringify(t.matrix)} | expected: {stableStringify(t.expect)}
+                          </div>
+                        ) : active.runner === "graphBfsTraversal" ? (
+                          <div className="cp-muted">
+                            graph: {stableStringify(t.graph)} | start: {stableStringify(t.start)} | expected: {stableStringify(t.expect)}
+                          </div>
+                        ) : active.runner === "graphDfsTraversal" ? (
+                          <div className="cp-muted">
+                            graph: {stableStringify(t.graph)} | start: {stableStringify(t.start)} | expected: {stableStringify(t.expect)}
+                          </div>
+                        ) : active.runner === "informAllEmployees" ? (
+                          <div className="cp-muted">
+                            n: {stableStringify(t.n)} | headID: {stableStringify(t.headID)} | managers: {stableStringify(t.managers)} | informTime: {stableStringify(t.informTime)} | expected: {stableStringify(t.expect)}
+                          </div>
+                        ) : active.runner === "networkDelayTime" ? (
+                          <div className="cp-muted">
+                            times: {stableStringify(t.times)} | n: {stableStringify(t.n)} | k: {stableStringify(t.k)} | expected: {stableStringify(t.expect)}
+                          </div>
+                        ) : active.runner === "minCostClimbingStairs" ? (
+                          <div className="cp-muted">
+                            cost: {stableStringify(t.cost)} | expected: {stableStringify(t.expect)}
+                          </div>
+                        ) : active.runner === "knightProbability" ? (
+                          <div className="cp-muted">
+                            n: {stableStringify(t.n)} | k: {stableStringify(t.k)} | row: {stableStringify(t.row)} | col: {stableStringify(t.col)} | expected: {stableStringify(t.expect)}
+                          </div>
+                        ) : active.runner === "courseSchedule" ? (
+                          <div className="cp-muted">
+                            n: {stableStringify(t.n)} | prerequisites: {stableStringify(t.prerequisites)} | expected: {stableStringify(t.expect)}
                           </div>
                         ) : active.runner === "longestSubstringNoRepeat" ? (
                           <div className="cp-muted">

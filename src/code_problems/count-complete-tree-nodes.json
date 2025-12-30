@@ -1,0 +1,38 @@
+{
+  "id": "count-complete-tree-nodes",
+  "title": "Count Complete Tree Nodes",
+  "difficulty": "Medium",
+  "functionName": "countNodes",
+  "runner": "countCompleteTreeNodes",
+  "prompt": "Given the root of a complete binary tree, return the number of nodes in the tree.\n\nA complete binary tree has all levels filled except possibly the last, and the last level is filled from left to right.\nIf the tree is empty, return 0.",
+  "constraintQuestions": [
+    "Is the tree guaranteed to be complete? (Yes.)",
+    "What should we return for an empty tree? (0.)",
+    "Should we aim for better than O(n)? (Yes, use the complete tree property.)",
+    "Are node values relevant? (No.)",
+    "Can we assume tree height fits in standard integer ranges?"
+  ],
+  "starterCode": "// Write your solution in JavaScript.\n// Requirement: define a function named countNodes(root)\n// Return: number\n\nfunction countNodes(root) {\n  // TODO: implement\n  return 0;\n}\n",
+  "walkthrough": [
+    {
+      "title": "Recursive height trick",
+      "body": "For a complete tree, if the leftmost height and rightmost height from the current node are equal, the subtree is a perfect tree.\nIf it's perfect, nodes = 2^h - 1.\nOtherwise, recurse into left and right and sum the counts."
+    },
+    {
+      "title": "JavaScript (height-based implementation)",
+      "codeLanguage": "javascript",
+      "body": "function countNodes(root) {\n  function leftHeight(node) {\n    let h = 0;\n    while (node) {\n      h++;\n      node = node.left;\n    }\n    return h;\n  }\n\n  function rightHeight(node) {\n    let h = 0;\n    while (node) {\n      h++;\n      node = node.right;\n    }\n    return h;\n  }\n\n  function count(node) {\n    if (!node) return 0;\n    const lh = leftHeight(node);\n    const rh = rightHeight(node);\n    if (lh === rh) return (1 << lh) - 1;\n    return 1 + count(node.left) + count(node.right);\n  }\n\n  return count(root);\n}\n"
+    },
+    {
+      "title": "Complexity",
+      "body": "Time: O((log n)^2) because height checks are O(log n) and we do them at most O(log n) times.\nSpace: O(log n) for recursion."
+    }
+  ],
+  "tests": [
+    { "name": "Full tree", "tree": [1, 2, 3, 4, 5, 6, 7], "expect": 7 },
+    { "name": "Complete with last level partial", "tree": [1, 2, 3, 4, 5, 6], "expect": 6 },
+    { "name": "Single node", "tree": [1], "expect": 1 },
+    { "name": "Empty tree", "tree": [], "expect": 0 },
+    { "name": "Larger complete tree", "tree": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], "expect": 12 }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "id": "valid-parentheses",
+  "title": "Valid Parentheses",
+  "difficulty": "Easy",
+  "functionName": "isValid",
+  "runner": "validParentheses",
+  "prompt": "Given a string s containing only the characters '(', ')', '{', '}', '[' and ']', return true if the input string is valid.\n\nA string is valid if:\n- Open brackets are closed by the same type of brackets.\n- Open brackets are closed in the correct order.\n- Every close bracket has a corresponding open bracket of the same type.\n\nReturn a boolean.",
+  "constraintQuestions": [
+    "Can the input be an empty string? (Yes, treat it as valid.)",
+    "Will the string contain only bracket characters? (Assume yes.)",
+    "Are there any other bracket types to consider beyond (), [], {}?",
+    "Do we need an O(n) time solution?",
+    "Should we use a stack to track the order of open brackets?"
+  ],
+  "starterCode": "// Write your solution in JavaScript.\n// Requirement: define a function named isValid(s)\n// Return: true/false\n\nfunction isValid(s) {\n  // TODO: implement\n  return false;\n}\n",
+  "walkthrough": [
+    {
+      "title": "Stack insight",
+      "body": "We need to compare each closing bracket with the most recent unmatched opening bracket.\nThat is a classic LIFO order, which is exactly what a stack provides.\nIf we ever see a closing bracket that does not match the top of the stack, the string is invalid.\nAt the end, the stack must be empty."
+    },
+    {
+      "title": "JavaScript (stack implementation)",
+      "codeLanguage": "javascript",
+      "body": "function isValid(s) {\n  const pairs = {\n    \"(\": \")\",\n    \"[\": \"]\",\n    \"{\": \"}\",\n  };\n\n  const stack = [];\n  for (const ch of s) {\n    if (pairs[ch]) {\n      stack.push(ch);\n      continue;\n    }\n\n    const left = stack.pop();\n    if (!left || pairs[left] !== ch) return false;\n  }\n\n  return stack.length === 0;\n}"
+    },
+    {
+      "title": "Complexity",
+      "body": "Time: O(n) because we scan the string once.\nSpace: O(n) in the worst case when all characters are opening brackets."
+    }
+  ],
+  "tests": [
+    { "name": "Empty string", "s": "", "expect": true },
+    { "name": "Simple valid", "s": "()", "expect": true },
+    { "name": "Mixed valid", "s": "()[]{}", "expect": true },
+    { "name": "Wrong closing bracket", "s": "(]", "expect": false },
+    { "name": "Wrong order", "s": "([)]", "expect": false },
+    { "name": "Nested valid", "s": "{[]}", "expect": true },
+    { "name": "Unclosed opening bracket", "s": "(((", "expect": false }
+  ]
+}
