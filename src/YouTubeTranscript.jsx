@@ -185,7 +185,7 @@ export default function YouTubeTranscript() {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const { showMessage } = useFlyout();
   const latestRetryRef = useRef({});
-  const [isMinimized, setIsMinimized] = useState(false);
+  const [isMinimized, setIsMinimized] = useState(true);
   const [miniCollapsed, setMiniCollapsed] = useState(false);
   const [miniSide, setMiniSide] = useState("left");
   const [miniVertical, setMiniVertical] = useState("bottom");
@@ -551,13 +551,13 @@ export default function YouTubeTranscript() {
         try {
             const urlObj = new URL(url);
             const idFromQuery = urlObj.searchParams.get("v");
-            if (idFromQuery) return `https://www.youtube.com/embed/${idFromQuery}`;
+            if (idFromQuery) return `https://www.youtube.com/embed/${idFromQuery}?autoplay=1&mute=1`;
             const pathParts = urlObj.pathname.split("/").filter(Boolean);
             const maybeId = pathParts[pathParts.length - 1];
-            if (maybeId) return `https://www.youtube.com/embed/${maybeId}`;
+            if (maybeId) return `https://www.youtube.com/embed/${maybeId}?autoplay=1&mute=1`;
         } catch {
             // fallback for raw IDs
-            if (url.length === 11) return `https://www.youtube.com/embed/${url}`;
+            if (url.length === 11) return `https://www.youtube.com/embed/${url}?autoplay=1&mute=1`;
         }
         return "";
     }, [url, validYoutubeUrl]);
