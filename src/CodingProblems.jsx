@@ -1460,6 +1460,12 @@ export default function CodingProblems() {
               </div>
             <ActionButtons limitButtons promptText={`${active.title}\n\n${active.prompt}`} />
             </div>
+            {active.prompt && (
+              <div style={{ marginTop: 10, display: "grid", gap: 8 }}>
+                <TextOrderGame text={active.prompt} gameKey={`${active.id}:prompt:order`} />
+                <TextBlankGame text={active.prompt} gameKey={`${active.id}:prompt:blank`} />
+              </div>
+            )}
 
             {tab === "solve" ? (
               <div style={{ marginTop: 12, display: "grid", gap: 10 }}>
