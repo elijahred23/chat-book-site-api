@@ -189,7 +189,9 @@ export default function YouTubeTranscript() {
   const [miniCollapsed, setMiniCollapsed] = useState(false);
   const [miniSide, setMiniSide] = useState("left");
   const [miniVertical, setMiniVertical] = useState("bottom");
-    const [miniScale, setMiniScale] = useState(() => {
+  const [miniLoop, setMiniLoop] = useState(true);
+  const [miniSpeed, setMiniSpeed] = useState(2);
+  const [miniScale, setMiniScale] = useState(() => {
         const stored = localStorage.getItem("yt_mini_scale");
         const parsed = stored ? Number(stored) : 1;
         return Number.isFinite(parsed) ? parsed : 1;
@@ -201,11 +203,12 @@ export default function YouTubeTranscript() {
     const [showAllPrompts, setShowAllPrompts] = useState(false);
     const [transcriptRespTab, setTranscriptRespTab] = useState("responses"); // "responses" | "retry"
     const [commentRespTab, setCommentRespTab] = useState("responses"); // "responses" | "retry"
-    const [playlistTranscripts, setPlaylistTranscripts] = useState([]);
-    const [loadingPlaylistTranscripts, setLoadingPlaylistTranscripts] = useState(false);
-    const [playlistProgress, setPlaylistProgress] = useState({ done: 0, total: 0 });
-    const [playlistRetryingIndex, setPlaylistRetryingIndex] = useState(null);
-    const setIsYouTubeOpen = (val) => dispatch(actions.setIsYouTubeOpen(val));
+  const [playlistTranscripts, setPlaylistTranscripts] = useState([]);
+  const [loadingPlaylistTranscripts, setLoadingPlaylistTranscripts] = useState(false);
+  const [playlistProgress, setPlaylistProgress] = useState({ done: 0, total: 0 });
+  const [playlistRetryingIndex, setPlaylistRetryingIndex] = useState(null);
+  const setIsYouTubeOpen = (val) => dispatch(actions.setIsYouTubeOpen(val));
+  const miniIframeRef = useRef(null);
 
     // Helpers to fetch transcript and comments based on selected provider
     const fetchYouTubeTranscript = async (video_url) => {
@@ -546,21 +549,42 @@ export default function YouTubeTranscript() {
         }
     };
 
-    const embedUrl = useMemo(() => {
+    const miniVideoId = useMemo(() => {
         if (!validYoutubeUrl) return "";
         try {
             const urlObj = new URL(url);
             const idFromQuery = urlObj.searchParams.get("v");
-            if (idFromQuery) return `https://www.youtube.com/embed/${idFromQuery}?autoplay=1&mute=1`;
+            if (idFromQuery) return idFromQuery;
             const pathParts = urlObj.pathname.split("/").filter(Boolean);
             const maybeId = pathParts[pathParts.length - 1];
-            if (maybeId) return `https://www.youtube.com/embed/${maybeId}?autoplay=1&mute=1`;
+            if (maybeId) return maybeId;
         } catch {
-            // fallback for raw IDs
-            if (url.length === 11) return `https://www.youtube.com/embed/${url}?autoplay=1&mute=1`;
+            if (url.length === 11) return url;
         }
         return "";
     }, [url, validYoutubeUrl]);
+
+    const embedUrl = useMemo(() => {
+        if (!miniVideoId) return "";
+        const loopParams = miniLoop ? `&loop=1&playlist=${miniVideoId}` : "";
+        return `https://www.youtube.com/embed/${miniVideoId}?autoplay=1&enablejsapi=1&rel=0${loopParams}`;
+    }, [miniVideoId, miniLoop]);
+
+    const applyMiniSpeed = () => {
+        try {
+            miniIframeRef.current?.contentWindow?.postMessage(
+                JSON.stringify({ event: "command", func: "setPlaybackRate", args: [miniSpeed] }),
+                "*"
+            );
+        } catch {
+            // ignore postMessage failures
+        }
+    };
+
+    useEffect(() => {
+        if (!miniVideoId) return;
+        applyMiniSpeed();
+    }, [miniSpeed, miniVideoId, embedUrl]);
 
     useEffect(() => {
         if (youtubeSearchText) {
@@ -1097,7 +1121,69 @@ export default function YouTubeTranscript() {
                     >
                         {miniVertical === 'bottom' ? '↑' : '↓'}
                     </button>
+                    <div
+                        style={{
+                            position: 'absolute',
+                            left: miniSide === 'left' ? '10px' : 'auto',
+                            right: miniSide === 'right' ? '10px' : 'auto',
+                            bottom: '10px',
+                            display: 'flex',
+                            gap: '8px',
+                            alignItems: 'center',
+                        }}
+                    >
+                        <button
+                            onClick={() => setMiniLoop((v) => !v)}
+                            style={{
+                                background: 'rgba(0,0,0,0.25)',
+                                color: '#e2e8f0',
+                                border: '1px solid rgba(255,255,255,0.2)',
+                                borderRadius: '10px',
+                                width: '32px',
+                                height: '32px',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                cursor: 'pointer',
+                                boxShadow: '0 8px 14px rgba(0,0,0,0.35)',
+                                backdropFilter: 'blur(4px)',
+                            }}
+                            aria-label={miniLoop ? "Disable loop" : "Enable loop"}
+                            title={miniLoop ? "Looping (click to stop)" : "Loop off (click to loop)"}
+                        >
+                            {miniLoop ? '🔁' : '↺'}
+                        </button>
+                        <button
+                            onClick={() => {
+                                const speeds = [0.75, 1, 1.25, 1.5, 1.75, 2];
+                                const idx = speeds.indexOf(miniSpeed);
+                                const next = speeds[(idx + 1) % speeds.length];
+                                setMiniSpeed(next);
+                            }}
+                            style={{
+                                background: 'rgba(0,0,0,0.25)',
+                                color: '#e2e8f0',
+                                border: '1px solid rgba(255,255,255,0.2)',
+                                borderRadius: '10px',
+                                minWidth: '42px',
+                                height: '32px',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                cursor: 'pointer',
+                                boxShadow: '0 8px 14px rgba(0,0,0,0.35)',
+                                backdropFilter: 'blur(4px)',
+                                fontWeight: 700,
+                            }}
+                            aria-label="Change playback speed"
+                            title="Change playback speed"
+                        >
+                            {miniSpeed}x
+                        </button>
+                    </div>
                     <iframe
+                        ref={miniIframeRef}
+                        onLoad={applyMiniSpeed}
                         src={embedUrl}
                         title="YouTube Video Mini"
                         frameBorder="0"
