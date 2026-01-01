@@ -6,6 +6,7 @@ import "prismjs/components/prism-clike";
 import "prismjs/components/prism-javascript";
 import "prismjs/themes/prism.css";
 import ActionButtons from "./ui/ActionButtons.jsx";
+import { useFlyout } from "./context/FlyoutContext";
 import "./CodingProblems.css";
 
 const problemModules = import.meta.glob("./code_problems/*.json", { eager: true });
@@ -556,6 +557,307 @@ function compileSolution(code, functionName) {
   return fn;
 }
 
+function shuffleLines(lines) {
+  const copy = [...lines];
+  for (let i = copy.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copy[i], copy[j]] = [copy[j], copy[i]];
+  }
+  return copy;
+}
+
+function CodeScramble({ code = "", scrambleKey }) {
+  const originalLines = useMemo(
+    () => code.split("\n").filter((line) => line.trim() !== ""),
+    [code]
+  );
+  const [playing, setPlaying] = useState(false);
+  const [lines, setLines] = useState([]);
+  const [feedback, setFeedback] = useState("");
+  const { showMessage } = useFlyout();
+
+  const startGame = () => {
+    const scrambled = shuffleLines(originalLines);
+    // If shuffle returns same order, shuffle again
+    if (scrambled.join("\n") === originalLines.join("\n")) {
+      setLines(shuffleLines(originalLines));
+    } else {
+      setLines(scrambled);
+    }
+    setPlaying(true);
+    setFeedback("");
+  };
+
+  const moveLine = (index, delta) => {
+    const nextIndex = index + delta;
+    if (nextIndex < 0 || nextIndex >= lines.length) return;
+    const updated = [...lines];
+    [updated[index], updated[nextIndex]] = [updated[nextIndex], updated[index]];
+    setLines(updated);
+  };
+
+  const checkAnswer = () => {
+    const success = lines.join("\n") === originalLines.join("\n");
+    setFeedback(success ? "✅ Nailed it!" : "❌ Keep shuffling!");
+    showMessage?.({
+      type: success ? "success" : "error",
+      message: success ? "Correct order! Nice job." : "Not yet—reorder the lines and try again.",
+      duration: 2000,
+    });
+  };
+
+  const resetGame = () => {
+    setPlaying(false);
+    setLines([]);
+    setFeedback("");
+  };
+
+  if (!originalLines.length) return null;
+
+  return (
+    <div className="cp-card" style={{ padding: "10px", background: "#f8fafc", border: "1px dashed #e2e8f0" }} key={scrambleKey}>
+      {!playing ? (
+        <button className="cp-btn" onClick={startGame} style={{ width: "100%", justifyContent: "center" }}>
+          Play Code Unscramble
+        </button>
+      ) : (
+        <div style={{ display: "grid", gap: 8 }}>
+          <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
+            <button className="cp-btn" onClick={checkAnswer}>Check</button>
+            <button className="cp-btn secondary" onClick={startGame}>Reshuffle</button>
+            <button className="cp-btn secondary" onClick={resetGame}>Close Game</button>
+          </div>
+          <div style={{ fontSize: 12, color: "#475569" }}>Tap arrows to reorder lines. Goal: match the original code.</div>
+          <div style={{ display: "grid", gap: 6 }}>
+            {lines.map((line, idx) => (
+              <div key={`${scrambleKey}-${idx}`} style={{ display: "flex", alignItems: "stretch", gap: 6 }}>
+                <div style={{ display: "flex", flexDirection: "column", gap: 4, paddingTop: 2 }}>
+                  <button
+                    className="cp-btn secondary"
+                    style={{ padding: "2px", width: 28, height: 24, lineHeight: 1 }}
+                    onClick={() => moveLine(idx, -1)}
+                    aria-label="Move line up"
+                  >
+                    ▲
+                  </button>
+                  <button
+                    className="cp-btn secondary"
+                    style={{ padding: "2px", width: 28, height: 24, lineHeight: 1 }}
+                    onClick={() => moveLine(idx, 1)}
+                    aria-label="Move line down"
+                  >
+                    ▼
+                  </button>
+                </div>
+                <pre style={{ margin: 0, flex: 1, background: "#0f172a", color: "#e2e8f0", padding: "6px 8px", borderRadius: 8, overflowX: "auto" }}>
+                  <code style={{ fontSize: 12, whiteSpace: "pre-wrap" }}>{line || "\u00A0"}</code>
+                </pre>
+              </div>
+            ))}
+          </div>
+          {feedback && <div style={{ fontWeight: 700, color: feedback.startsWith("✅") ? "#16a34a" : "#dc2626" }}>{feedback}</div>}
+        </div>
+      )}
+    </div>
+  );
+}
+
+function CodeLineGuess({ code = "", gameKey }) {
+  const lines = useMemo(() => code.split("\n").filter((l) => l.trim() !== ""), [code]);
+  const [playing, setPlaying] = useState(false);
+  const [missingIndex, setMissingIndex] = useState(null);
+  const [options, setOptions] = useState([]);
+  const [chosen, setChosen] = useState(null);
+  const [feedback, setFeedback] = useState("");
+  const { showMessage } = useFlyout();
+
+  if (lines.length < 3) return null;
+
+  const startRound = () => {
+    const idx = Math.floor(Math.random() * lines.length);
+    const answer = lines[idx];
+    const distractorsPool = lines.filter((_, i) => i !== idx);
+    const distractors = shuffleLines(distractorsPool).slice(0, Math.min(2, distractorsPool.length));
+    const opts = shuffleLines([answer, ...distractors]);
+    setMissingIndex(idx);
+    setOptions(opts);
+    setChosen(null);
+    setFeedback("");
+    setPlaying(true);
+  };
+
+  const checkChoice = (opt) => {
+    if (!playing || missingIndex === null) return;
+    setChosen(opt);
+    const correct = opt === lines[missingIndex];
+    setFeedback(correct ? "✅ Correct line!" : "❌ Try another line.");
+    showMessage?.({
+      type: correct ? "success" : "error",
+      message: correct ? "Nice! You picked the right line." : "Not quite—pick another or reshuffle.",
+      duration: 2000,
+    });
+  };
+
+  const renderWithBlank = () =>
+    lines.map((line, idx) =>
+      idx === missingIndex ? "/* ??? */" : line
+    ).join("\n");
+
+  return (
+    <div className="cp-card" style={{ padding: "10px", background: "#eef2ff", border: "1px dashed #cbd5f5" }} key={gameKey}>
+      {!playing ? (
+        <button className="cp-btn" onClick={startRound} style={{ width: "100%", justifyContent: "center" }}>
+          Play Missing Line
+        </button>
+      ) : (
+        <div style={{ display: "grid", gap: 8 }}>
+          <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
+            <button className="cp-btn" onClick={startRound}>New Round</button>
+            <button className="cp-btn secondary" onClick={() => setPlaying(false)}>Close Game</button>
+          </div>
+          <div className="cp-codeblock" style={{ margin: 0, background: "#0b122a", color: "#e2e8f0" }}>
+            <pre style={{ margin: 0 }}>
+              <code style={{ fontSize: 12, whiteSpace: "pre-wrap" }}>{renderWithBlank()}</code>
+            </pre>
+          </div>
+          <div style={{ display: "grid", gap: 6 }}>
+            {options.map((opt, idx) => {
+              const isChosen = chosen === opt;
+              const isCorrect = opt === lines[missingIndex];
+              const bg = !isChosen ? "#fff" : isCorrect ? "#dcfce7" : "#fee2e2";
+              const border = !isChosen ? "#e2e8f0" : isCorrect ? "#22c55e" : "#ef4444";
+              return (
+                <button
+                  key={`${gameKey}-opt-${idx}`}
+                  onClick={() => checkChoice(opt)}
+                  style={{
+                    textAlign: "left",
+                    padding: "8px 10px",
+                    borderRadius: 8,
+                    background: bg,
+                    border: `1px solid ${border}`,
+                    fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
+                    fontSize: 12,
+                    color: "#0f172a",
+                    cursor: "pointer",
+                    minHeight: 40,
+                  }}
+                >
+                  {opt}
+                </button>
+              );
+            })}
+          </div>
+          {feedback && <div style={{ fontWeight: 700, color: feedback.startsWith("✅") ? "#16a34a" : "#dc2626" }}>{feedback}</div>}
+        </div>
+      )}
+    </div>
+  );
+}
+
+function CodeWordFill({ code = "", gameKey }) {
+  const lines = useMemo(() => code.split("\n").filter((l) => l.trim() !== ""), [code]);
+  const [playing, setPlaying] = useState(false);
+  const [lineIndex, setLineIndex] = useState(null);
+  const [wordOptions, setWordOptions] = useState([]);
+  const [targetWord, setTargetWord] = useState("");
+  const [feedback, setFeedback] = useState("");
+  const { showMessage } = useFlyout();
+
+  const pickLineWithWord = () => {
+    const candidates = lines
+      .map((line, idx) => {
+        const tokens = line.trim().split(/\s+/).filter(Boolean);
+        return { line, idx, tokens };
+      })
+      .filter((entry) => entry.tokens.length > 1);
+    if (!candidates.length) return null;
+    return candidates[Math.floor(Math.random() * candidates.length)];
+  };
+
+  const start = () => {
+    const entry = pickLineWithWord();
+    if (!entry) return;
+    const { line, idx, tokens } = entry;
+    const target = tokens[Math.floor(Math.random() * tokens.length)];
+    const otherWords = lines
+      .join(" ")
+      .split(/\s+/)
+      .filter((w) => w && w !== target);
+    const distractors = shuffleLines(otherWords).filter((w, i, arr) => arr.indexOf(w) === i).slice(0, 2);
+    const opts = shuffleLines([target, ...distractors]);
+    setLineIndex(idx);
+    setTargetWord(target);
+    setWordOptions(opts);
+    setFeedback("");
+    setPlaying(true);
+  };
+
+  const check = (choice) => {
+    const correct = choice === targetWord;
+    setFeedback(correct ? "✅ Right word!" : "❌ Not that one.");
+    showMessage?.({
+      type: correct ? "success" : "error",
+      message: correct ? "Nice pick!" : "Try another option.",
+      duration: 2000,
+    });
+  };
+
+  if (lines.length < 2) return null;
+
+  const renderLine = () => {
+    if (lineIndex === null) return "";
+    const parts = lines[lineIndex].split(/\s+/);
+    return parts
+      .map((word) => (word === targetWord ? "____" : word))
+      .join(" ");
+  };
+
+  return (
+    <div className="cp-card" style={{ padding: "10px", background: "#ecfeff", border: "1px dashed #bae6fd" }} key={gameKey}>
+      {!playing ? (
+        <button className="cp-btn" onClick={start} style={{ width: "100%", justifyContent: "center" }}>
+          Play Word Fill
+        </button>
+      ) : (
+        <div style={{ display: "grid", gap: 8 }}>
+          <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
+            <button className="cp-btn" onClick={start}>New Word</button>
+            <button className="cp-btn secondary" onClick={() => setPlaying(false)}>Close Game</button>
+          </div>
+          <div className="cp-codeblock" style={{ margin: 0, background: "#0f172a", color: "#e2e8f0" }}>
+            <pre style={{ margin: 0 }}>
+              <code style={{ fontSize: 12, whiteSpace: "pre-wrap" }}>{renderLine()}</code>
+            </pre>
+          </div>
+          <div style={{ display: "grid", gap: 6 }}>
+            {wordOptions.map((opt, idx) => (
+              <button
+                key={`${gameKey}-word-${idx}`}
+                onClick={() => check(opt)}
+                style={{
+                  textAlign: "left",
+                  padding: "8px 10px",
+                  borderRadius: 8,
+                  background: "#fff",
+                  border: "1px solid #e2e8f0",
+                  fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
+                  fontSize: 12,
+                  color: "#0f172a",
+                  cursor: "pointer",
+                }}
+              >
+                {opt}
+              </button>
+            ))}
+          </div>
+          {feedback && <div style={{ fontWeight: 700, color: feedback.startsWith("✅") ? "#16a34a" : "#dc2626" }}>{feedback}</div>}
+        </div>
+      )}
+    </div>
+  );
+}
+
 export default function CodingProblems() {
   const hasProblems = PROBLEMS.length > 0;
   const [activeId, setActiveId] = useState(() => {
@@ -1087,12 +1389,17 @@ export default function CodingProblems() {
                       <div key={w.title} className="cp-q" style={{ background: "#f8fafc" }}>
                         <div className="cp-row" style={{ alignItems: "flex-start", gap: 8 }}>
                           <div style={{ fontWeight: 900, marginBottom: 6, marginTop: 2 }}>{w.title}</div>
-                          {w.codeLanguage && <ActionButtons  promptText={w.body} />}
+                          {w.codeLanguage && <ActionButtons promptText={w.body} />}
                         </div>
                         {w.codeLanguage ? (
-                          <pre className="cp-codeblock">
-                            <code className={`language-${w.codeLanguage}`}>{w.body}</code>
-                          </pre>
+                          <>
+                            <pre className="cp-codeblock">
+                              <code className={`language-${w.codeLanguage}`}>{w.body}</code>
+                            </pre>
+                            <CodeScramble code={w.body} scrambleKey={`${active.id}:${w.title}`} />
+                            <CodeLineGuess code={w.body} gameKey={`${active.id}:${w.title}:guess`} />
+                            <CodeWordFill code={w.body} gameKey={`${active.id}:${w.title}:fill`} />
+                          </>
                         ) : (
                           <div style={{ whiteSpace: "pre-wrap" }}>{w.body}</div>
                         )}
