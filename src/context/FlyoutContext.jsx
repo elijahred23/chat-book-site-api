@@ -57,7 +57,7 @@ const styles = {
     position: "fixed",
     top: "16px",
     right: "20px",
-    zIndex: 9999,
+    zIndex: 2147483647,
     display: "flex",
     flexDirection: "column",
     gap: "10px",

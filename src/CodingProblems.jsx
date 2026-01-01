@@ -858,6 +858,156 @@ function CodeWordFill({ code = "", gameKey }) {
   );
 }
 
+function TextOrderGame({ text = "", gameKey }) {
+  const sentences = useMemo(() => text.split("\n").map((l) => l.trim()).filter(Boolean), [text]);
+  const [playing, setPlaying] = useState(false);
+  const [items, setItems] = useState([]);
+  const [feedback, setFeedback] = useState("");
+  const { showMessage } = useFlyout();
+
+  if (sentences.length < 2) return null;
+
+  const start = () => {
+    const scrambled = shuffleLines(sentences);
+    setItems(scrambled.join("\n") === sentences.join("\n") ? shuffleLines(sentences) : scrambled);
+    setFeedback("");
+    setPlaying(true);
+  };
+
+  const move = (idx, delta) => {
+    const next = idx + delta;
+    if (next < 0 || next >= items.length) return;
+    const updated = [...items];
+    [updated[idx], updated[next]] = [updated[next], updated[idx]];
+    setItems(updated);
+  };
+
+  const check = () => {
+    const ok = items.join("\n") === sentences.join("\n");
+    setFeedback(ok ? "✅ Great order!" : "❌ Needs tweaking.");
+    showMessage?.({
+      type: ok ? "success" : "error",
+      message: ok ? "Perfect ordering!" : "Reorder the lines and try again.",
+      duration: 2000,
+    });
+  };
+
+  return (
+    <div className="cp-card" style={{ padding: 10, background: "#fff7ed", border: "1px dashed #fed7aa" }} key={gameKey}>
+      {!playing ? (
+        <button className="cp-btn" onClick={start} style={{ width: "100%", justifyContent: "center" }}>
+          Play Story Order
+        </button>
+      ) : (
+        <div style={{ display: "grid", gap: 8 }}>
+          <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
+            <button className="cp-btn" onClick={check}>Check</button>
+            <button className="cp-btn secondary" onClick={start}>Reshuffle</button>
+            <button className="cp-btn secondary" onClick={() => { setPlaying(false); setFeedback(""); }}>Close Game</button>
+          </div>
+          <div style={{ display: "grid", gap: 6 }}>
+            {items.map((line, idx) => (
+              <div key={`${gameKey}-text-${idx}`} style={{ display: "flex", alignItems: "stretch", gap: 6 }}>
+                <div style={{ display: "flex", flexDirection: "column", gap: 4, paddingTop: 2 }}>
+                  <button className="cp-btn secondary" style={{ padding: "2px", width: 26, height: 22, lineHeight: 1 }} onClick={() => move(idx, -1)} aria-label="Move up">▲</button>
+                  <button className="cp-btn secondary" style={{ padding: "2px", width: 26, height: 22, lineHeight: 1 }} onClick={() => move(idx, 1)} aria-label="Move down">▼</button>
+                </div>
+                <div style={{ background: "#fff", border: "1px solid #fed7aa", borderRadius: 8, padding: "8px 10px", flex: 1, fontSize: 13 }}>
+                  {line}
+                </div>
+              </div>
+            ))}
+          </div>
+          {feedback && <div style={{ fontWeight: 700, color: feedback.startsWith("✅") ? "#16a34a" : "#dc2626" }}>{feedback}</div>}
+        </div>
+      )}
+    </div>
+  );
+}
+
+function TextBlankGame({ text = "", gameKey }) {
+  const lines = useMemo(() => text.split("\n").map((l) => l.trim()).filter(Boolean), [text]);
+  const [playing, setPlaying] = useState(false);
+  const [targetWord, setTargetWord] = useState("");
+  const [line, setLine] = useState("");
+  const [options, setOptions] = useState([]);
+  const [feedback, setFeedback] = useState("");
+  const { showMessage } = useFlyout();
+
+  if (lines.length < 1) return null;
+
+  const start = () => {
+    const pick = lines[Math.floor(Math.random() * lines.length)];
+    const words = pick.split(/\s+/).filter(Boolean);
+    if (words.length < 2) {
+      setPlaying(false);
+      return;
+    }
+    const target = words[Math.floor(Math.random() * words.length)];
+    const pool = lines.join(" ").split(/\s+/).filter(Boolean).filter((w) => w !== target);
+    const distractors = shuffleLines(pool).filter((w, i, arr) => arr.indexOf(w) === i).slice(0, 2);
+    const opts = shuffleLines([target, ...distractors]);
+    setLine(pick);
+    setTargetWord(target);
+    setOptions(opts);
+    setFeedback("");
+    setPlaying(true);
+  };
+
+  const check = (choice) => {
+    const ok = choice === targetWord;
+    setFeedback(ok ? "✅ Nice!" : "❌ Nope.");
+    showMessage?.({
+      type: ok ? "success" : "error",
+      message: ok ? "Correct word!" : "Pick another option.",
+      duration: 2000,
+    });
+  };
+
+  const renderLine = () => line.split(/\s+/).map((w) => (w === targetWord ? "____" : w)).join(" ");
+
+  return (
+    <div className="cp-card" style={{ padding: 10, background: "#fefce8", border: "1px dashed #fde68a" }} key={gameKey}>
+      {!playing ? (
+        <button className="cp-btn" onClick={start} style={{ width: "100%", justifyContent: "center" }}>
+          Play Word Blank
+        </button>
+      ) : (
+        <div style={{ display: "grid", gap: 8 }}>
+          <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
+            <button className="cp-btn" onClick={start}>New Blank</button>
+            <button className="cp-btn secondary" onClick={() => setPlaying(false)}>Close Game</button>
+          </div>
+          <div style={{ background: "#fff", border: "1px solid #fde68a", borderRadius: 8, padding: "8px 10px" }}>
+            <div style={{ fontSize: 13 }}>{renderLine()}</div>
+          </div>
+          <div style={{ display: "grid", gap: 6 }}>
+            {options.map((opt, idx) => (
+              <button
+                key={`${gameKey}-textblank-${idx}`}
+                onClick={() => check(opt)}
+                style={{
+                  textAlign: "left",
+                  padding: "8px 10px",
+                  borderRadius: 8,
+                  background: "#fff",
+                  border: "1px solid #e2e8f0",
+                  fontSize: 13,
+                  color: "#0f172a",
+                  cursor: "pointer",
+                }}
+              >
+                {opt}
+              </button>
+            ))}
+          </div>
+          {feedback && <div style={{ fontWeight: 700, color: feedback.startsWith("✅") ? "#16a34a" : "#dc2626" }}>{feedback}</div>}
+        </div>
+      )}
+    </div>
+  );
+}
+
 export default function CodingProblems() {
   const hasProblems = PROBLEMS.length > 0;
   const [activeId, setActiveId] = useState(() => {
@@ -1401,7 +1551,11 @@ export default function CodingProblems() {
                             <CodeWordFill code={w.body} gameKey={`${active.id}:${w.title}:fill`} />
                           </>
                         ) : (
-                          <div style={{ whiteSpace: "pre-wrap" }}>{w.body}</div>
+                          <>
+                            <div style={{ whiteSpace: "pre-wrap" }}>{w.body}</div>
+                            <TextOrderGame text={w.body} gameKey={`${active.id}:${w.title}:textorder`} />
+                            <TextBlankGame text={w.body} gameKey={`${active.id}:${w.title}:textblank`} />
+                          </>
                         )}
                       </div>
                     ))}
