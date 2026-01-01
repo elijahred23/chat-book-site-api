@@ -558,11 +558,29 @@ function compileSolution(code, functionName) {
 
 export default function CodingProblems() {
   const hasProblems = PROBLEMS.length > 0;
-  const [activeId, setActiveId] = useState(PROBLEMS[0]?.id ?? "");
+  const [activeId, setActiveId] = useState(() => {
+    if (!hasProblems) return "";
+    try {
+      const saved = localStorage.getItem("coding_problem_active");
+      if (saved && PROBLEMS.some((p) => p.id === saved)) return saved;
+    } catch {
+      // ignore localStorage failures
+    }
+    return PROBLEMS[0]?.id ?? "";
+  });
   const active = useMemo(() => {
     if (!hasProblems) return null;
     return PROBLEMS.find((p) => p.id === activeId) || PROBLEMS[0];
   }, [activeId, hasProblems]);
+
+  useEffect(() => {
+    if (!activeId) return;
+    try {
+      localStorage.setItem("coding_problem_active", activeId);
+    } catch {
+      // ignore localStorage errors
+    }
+  }, [activeId]);
 
   const storageKey = active ? `coding_problem_solution:${active.id}` : "coding_problem_solution:none";
   const [code, setCode] = useState(() => {
