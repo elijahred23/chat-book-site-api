@@ -11,6 +11,7 @@ import {
   FaKeyboard,
   FaSitemap,
   FaTimes,
+  FaGlobe,
 } from "react-icons/fa";
 import { GiNotebook } from "react-icons/gi";
 
@@ -26,6 +27,7 @@ const ICONS = {
   html: FaCode,
   typing: FaKeyboard,
   architecture: FaSitemap,
+  iframe: FaGlobe,
 };
 
 const LABELS = {
@@ -40,6 +42,7 @@ const LABELS = {
   html: "HTML",
   typing: "Typing",
   architecture: "Diagram",
+  iframe: "Iframe",
 };
 
 export default function SideDrawer({

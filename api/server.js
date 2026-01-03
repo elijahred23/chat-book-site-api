@@ -65,6 +65,55 @@ const logErrorToFile = (error) => {
   fs.appendFileSync('error.log', errorLog, 'utf8');
 };
 
+// Helper: decode DuckDuckGo redirect URL (uddg param)
+const decodeDuckLink = (href = "") => {
+  try {
+    const urlObj = new URL(href.startsWith("//") ? `https:${href}` : href);
+    const uddg = urlObj.searchParams.get("uddg");
+    if (uddg) return decodeURIComponent(uddg);
+    return href;
+  } catch {
+    return href;
+  }
+};
+
+// GET /api/websearch?q=term
+app.get('/api/websearch', async (req, res) => {
+  const q = (req.query.q || "").trim();
+  if (!q) return res.status(400).json({ error: "Missing query" });
+  try {
+    const ddgUrl = `https://duckduckgo.com/html/?q=${encodeURIComponent(q)}`;
+    const response = await fetch(ddgUrl, {
+      headers: {
+        // mimic browser to avoid blocking
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Safari/537.36",
+      },
+    });
+    if (!response.ok) throw new Error(`DuckDuckGo request failed (${response.status})`);
+    const html = await response.text();
+    const results = [];
+    const anchorRegex = /<a[^>]*class="[^"]*result__a[^"]*"[^>]*href="([^"]+)"[^>]*>(.*?)<\/a>/gim;
+    let match;
+    while ((match = anchorRegex.exec(html)) !== null && results.length < 15) {
+      const href = match[1];
+      const titleHtml = match[2] || "";
+      const url = decodeDuckLink(href);
+      const title = titleHtml.replace(/<[^>]+>/g, "").trim();
+      if (url && title) {
+        results.push({ title, url });
+      }
+    }
+    if (!results.length) {
+      return res.json({ results: [], message: "No results parsed; site may have changed." });
+    }
+    return res.json({ results });
+  } catch (err) {
+    console.error("Web search error:", err);
+    logErrorToFile(err);
+    return res.status(500).json({ error: "Search failed", message: err.message });
+  }
+});
+
 // === Google TTS client ===
 let ttsClient = null;
 try {

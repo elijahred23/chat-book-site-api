@@ -25,6 +25,7 @@ import SideDrawer from './ui/SideDrawer.jsx';
 import BengaliTutor from './BengaliTutor.jsx';
 import CodingProblems from './CodingProblems.jsx';
 import SystemDesignPrep from './SystemDesignPrep.jsx';
+import IframeDrawer from './IframeDrawer.jsx';
 
 function AppContent() {
   const [isFullWidth, setIsFullWidth] = useState(true);
@@ -37,6 +38,7 @@ function AppContent() {
   const closeFabMenu = () => setShowFloatingBtns(false);
   const dispatch = useAppDispatch();
   const { drawerStack, isChatOpen, isTeleprompterOpen, isTTSOpen, isPlantUMLOpen, isPodcastTTSOpen, isJSGeneratorOpen, isChatBookOpen, isArchitectureOpen, isYouTubeOpen, isHtmlBuilderOpen, isTypingOpen } = useAppState();
+  const { isIframeOpen } = useAppState();
 
   const toggleChat = () => dispatch(actions.setIsChatOpen(false));
   const toggleWidth = () => setIsFullWidth((p) => !p);
@@ -48,6 +50,7 @@ function AppContent() {
   const setIsYouTubeOpen = (val) => dispatch(actions.setIsYouTubeOpen(val));
   const setIsHtmlBuilderOpen = (val) => dispatch(actions.setIsHtmlBuilderOpen(val));
   const setIsTypingOpen = (val) => dispatch(actions.setIsTypingOpen(val));
+  const setIsIframeOpen = (val) => dispatch(actions.setIsIframeOpen(val));
 
   useEffect(() => {
     const savedText = localStorage.getItem('selectedText');
@@ -96,7 +99,8 @@ function AppContent() {
     isArchitectureOpen ||
     isYouTubeOpen ||
     isHtmlBuilderOpen ||
-    isTypingOpen;
+    isTypingOpen ||
+    isIframeOpen;
 
   return (
     <>
@@ -334,6 +338,9 @@ function AppContent() {
               <button onClick={() => {setIsArchitectureOpen(true); closeFabMenu();}} className="fab-btn">
                 <span>🗺️</span>{isArchitectureOpen ? 'Diagram Open' : 'Open Diagram'}
               </button>
+              <button onClick={() => {setIsIframeOpen(true); closeFabMenu();}} className="fab-btn">
+                <span>🧭</span>{isIframeOpen ? 'Iframe Viewer' : 'Open Iframe'}
+              </button>
             </div>
           )}
           <button onClick={() => setShowFloatingBtns((p) => !p)} className="fab-main">
@@ -379,6 +386,18 @@ function AppContent() {
             onToggleCollapse={() => setIsChatVisible((prev) => !prev)}
             onTogglePrompt={() => setIsPromptVisible((prev) => !prev)}
           />
+        </SideDrawer>
+
+        <SideDrawer
+          isOpen={isIframeOpen}
+          isFullWidth={isFullWidth}
+          stack={drawerStack}
+          currentKey="iframe"
+          onToggleWidth={toggleWidth}
+          onClose={() => setIsIframeOpen(false)}
+          closeLabel="✖ Close Iframe Viewer"
+        >
+          <IframeDrawer />
         </SideDrawer>
 
         <SideDrawer

@@ -31,6 +31,7 @@ const initialState = {
   isTypingOpen: false,
   typingSource: '',
   flashcardPrompt: '',
+  isIframeOpen: false,
 };
 
 const actionTypes = {
@@ -62,6 +63,7 @@ const actionTypes = {
   SET_IS_TYPING_OPEN: 'SET_IS_TYPING_OPEN',
   SET_TYPING_SOURCE: 'SET_TYPING_SOURCE',
   SET_FLASHCARD_PROMPT: 'SET_FLASHCARD_PROMPT',
+  SET_IS_IFRAME_OPEN: 'SET_IS_IFRAME_OPEN',
 };
 
 // ✅ closes all open UI panels (stack managed separately)
@@ -78,6 +80,7 @@ const closeAllPanels = (state) => ({
   isYouTubeOpen: false,
   isHtmlBuilderOpen: false,
   isTypingOpen: false,
+  isIframeOpen: false,
 });
 
 const drawerKeyToState = {
@@ -92,6 +95,7 @@ const drawerKeyToState = {
   youtube: 'isYouTubeOpen',
   html: 'isHtmlBuilderOpen',
   typing: 'isTypingOpen',
+  iframe: 'isIframeOpen',
 };
 
 const activateDrawer = (state, key) => {
@@ -204,6 +208,9 @@ function appReducer(state, action) {
     case actionTypes.SET_FLASHCARD_PROMPT:
       return { ...state, flashcardPrompt: action.payload };
 
+    case actionTypes.SET_IS_IFRAME_OPEN:
+      return action.payload ? activateDrawer(state, 'iframe') : deactivateDrawer(state, 'iframe');
+
     default:
       console.warn(`Unhandled action type: ${action.type}`);
       return state;
@@ -256,4 +263,5 @@ export const actions = {
   setTypingSource: (text) => ({ type: actionTypes.SET_TYPING_SOURCE, payload: text }),
   setIsHtmlBuilderOpen: (open) => ({ type: actionTypes.SET_IS_HTML_BUILDER_OPEN, payload: open }),
   setFlashcardPrompt: (text) => ({ type: actionTypes.SET_FLASHCARD_PROMPT, payload: text }),
+  setIsIframeOpen: (open) => ({ type: actionTypes.SET_IS_IFRAME_OPEN, payload: open }),
 };
