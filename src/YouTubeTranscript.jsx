@@ -167,7 +167,8 @@ export default function YouTubeTranscript() {
     const [activeTab, setActiveTab] = useState("transcript");  // Options: transcript, comments, responses, transcript-iframes
     const [comments, setComments] = useState([]);
     const [splitComments, setSplitComments] = useState([]);
-    const [url, setUrl] = useState("");
+    const [url, setUrl] = useState(() => localStorage.getItem("yt_url") || "");
+    const [shouldMute, setShouldMute] = useState(() => Boolean(localStorage.getItem("yt_url")));
     const [prompt, setPrompt] = useState(() => localStorage.getItem("yt_prompt") || "");
     const [responseFormat, setResponseFormat] = useState(() => localStorage.getItem("yt_prompt_format") || "none");
     const [transcript, setTranscript] = useState(() => localStorage.getItem("yt_transcript") || "");
@@ -567,8 +568,9 @@ export default function YouTubeTranscript() {
     const embedUrl = useMemo(() => {
         if (!miniVideoId) return "";
         const loopParams = miniLoop ? `&loop=1&playlist=${miniVideoId}` : "";
-        return `https://www.youtube.com/embed/${miniVideoId}?autoplay=1&enablejsapi=1&rel=0${loopParams}`;
-    }, [miniVideoId, miniLoop]);
+        const muteParam = shouldMute ? "&mute=1" : "";
+        return `https://www.youtube.com/embed/${miniVideoId}?autoplay=1${muteParam}&enablejsapi=1&rel=0${loopParams}`;
+    }, [miniVideoId, miniLoop, shouldMute]);
 
     const applyMiniSpeed = () => {
         try {
@@ -592,6 +594,10 @@ export default function YouTubeTranscript() {
             setExternalSearchText(youtubeSearchText);
         }
     }, [youtubeSearchText]);
+
+    useEffect(() => {
+        localStorage.setItem("yt_url", url || "");
+    }, [url]);
 
     useEffect(() => {
         setActiveTab("transcript");
@@ -1201,6 +1207,7 @@ export default function YouTubeTranscript() {
                 onClose={() => setDrawerOpen(false)}
                 onSelectVideo={(selectedUrl) => {
                     setUrl(selectedUrl);
+                    setShouldMute(false);
                     setDrawerOpen(false);
                 }}
                 onFetchPlaylist={(items) => {
@@ -1210,6 +1217,7 @@ export default function YouTubeTranscript() {
                 externalQuery={externalSearchText}
                 setUrl={(url) => {
                     setUrl(url);
+                    setShouldMute(false);
                     setDrawerOpen(false);
                 }}
             />
@@ -1217,7 +1225,7 @@ export default function YouTubeTranscript() {
             {activeTab === "transcript" && (
                 <>
                     <div className="input-group">
-                        <input className="input" type="text" value={url} placeholder="YouTube URL" onChange={(e) => setUrl(e.target.value)} />
+                        <input className="input" type="text" value={url} placeholder="YouTube URL" onChange={(e) => { setUrl(e.target.value); setShouldMute(false); }} />
                         <button
                             disabled={!hasValidURL || loadingTranscript}
                             className="btn primary-btn icon-only"
@@ -1248,6 +1256,7 @@ export default function YouTubeTranscript() {
                                         text = window.prompt("Paste YouTube URL here:") || "";
                                     }
                                     setUrl(text);
+                                    setShouldMute(false);
                                 } catch {
                                     showMessage?.({ type: "error", message: "Clipboard blocked." });
                                 }
