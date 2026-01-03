@@ -15,10 +15,74 @@ const DIFFICULTY_RANK = {
   Medium: 1,
   Hard: 2,
 };
+const CATEGORY_ORDER = [
+  "String",
+  "Array / Two Pointers",
+  "Linked List",
+  "Stack / Queue",
+  "Heap / Priority",
+  "Tree / BST",
+  "Graph",
+  "Trie",
+  "Matrix / Grid",
+  "Dynamic Programming",
+  "Math / Misc",
+  "Other",
+];
+const CATEGORY_RANK = CATEGORY_ORDER.reduce((acc, cat, idx) => {
+  acc[cat] = idx;
+  return acc;
+}, {});
+const PROBLEM_CATEGORY = {
+  "almost-palindrome": "String",
+  "backspace-string-compare": "String",
+  "longest-substring-without-repeating-characters": "String",
+  "valid-parentheses": "Stack / Queue",
+  "minimum-brackets-to-remove": "String",
+  "two-sum": "Array / Two Pointers",
+  "container-most-water": "Array / Two Pointers",
+  "trapping-rainwater": "Array / Two Pointers",
+  "find-first-last-position": "Array / Two Pointers",
+  "binary-search": "Array / Two Pointers",
+  "kth-largest-element": "Heap / Priority",
+  "min-cost-climbing-stairs": "Dynamic Programming",
+  "implement-priority-queue": "Heap / Priority",
+  "implement-queue-with-stacks": "Stack / Queue",
+  "reverse-linked-list": "Linked List",
+  "reverse-between-m-n": "Linked List",
+  "linked-list-cycle-start": "Linked List",
+  "flatten-multilevel-doubly-linked-list": "Linked List",
+  "binary-tree-level-order": "Tree / BST",
+  "binary-tree-right-side-view": "Tree / BST",
+  "maximum-depth-binary-tree": "Tree / BST",
+  "count-complete-tree-nodes": "Tree / BST",
+  "validate-binary-search-tree": "Tree / BST",
+  "graph-bfs-traversal": "Graph",
+  "graph-dfs-traversal": "Graph",
+  "network-delay-time": "Graph",
+  "number-of-islands": "Matrix / Grid",
+  "matrix-bfs-traversal": "Matrix / Grid",
+  "matrix-dfs-traversal": "Matrix / Grid",
+  "rotting-oranges": "Matrix / Grid",
+  "walls-and-gates": "Matrix / Grid",
+  "knight-probability": "Dynamic Programming",
+  "time-needed-to-inform-all-employees": "Graph",
+  "course-schedule": "Graph",
+  "solve-sudoku": "Matrix / Grid",
+  "implement-trie": "Trie",
+  "design-monarchy-interface": "Math / Misc",
+};
 const PROBLEMS = Object.values(problemModules)
   .map((m) => m.default ?? m)
   .filter(Boolean)
+  .map((p) => ({
+    ...p,
+    category: PROBLEM_CATEGORY[p.id] || p.category || "Other",
+  }))
   .sort((a, b) => {
+    const ca = CATEGORY_RANK[a.category] ?? CATEGORY_RANK.Other;
+    const cb = CATEGORY_RANK[b.category] ?? CATEGORY_RANK.Other;
+    if (ca !== cb) return ca - cb;
     const ra = DIFFICULTY_RANK[a.difficulty] ?? 99;
     const rb = DIFFICULTY_RANK[b.difficulty] ?? 99;
     if (ra !== rb) return ra - rb;
@@ -1431,9 +1495,9 @@ export default function CodingProblems() {
                 value={active.id}
                 onChange={(e) => setActiveId(e.target.value)}
               >
-                {PROBLEMS.map((p) => (
+                {PROBLEMS.map((p, idx) => (
                   <option key={p.id} value={p.id}>
-                    {p.title} · {p.difficulty}
+                    {idx + 1}. [{p.category}] {p.title} · {p.difficulty}
                   </option>
                 ))}
               </select>
