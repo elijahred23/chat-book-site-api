@@ -74,6 +74,7 @@ export default function ActionButtons({ promptText, limitButtons = false }) {
         e.stopPropagation();
         dispatch(actions.setTtsText(cleanText));
         dispatch(actions.setTtsAutoplay(true));
+        dispatch(actions.setIsTTSOpen(true));
       },
     },
     {

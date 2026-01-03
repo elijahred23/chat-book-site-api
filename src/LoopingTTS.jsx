@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from "react";
-import ReactDOM from "react-dom";
 import { useAppState, useAppDispatch, actions } from "./context/AppContext";
 
 const LoopingTTSImproved = () => {
@@ -108,13 +107,20 @@ const LoopingTTSImproved = () => {
     }
   }, [ttsText]);
 
-  // Auto-start when TTS text is pushed from an action button
+  // Auto-start when TTS text is pushed or autoplay flag toggled (desktop/mobile unified)
   useEffect(() => {
-    if (ttsText && ttsText.trim() && ttsAutoPlay) {
+    const candidate = (ttsText && ttsText.trim()) || text.trim() || sampleText;
+    if (ttsAutoPlay && candidate) {
+      setLoopCount(0);
+      setActiveTab("controls");
+      handleStart(candidate);
+      dispatch(actions.setTtsAutoplay(false));
+      dispatch(actions.setIsTTSOpen(true));
+    } else if (ttsText && ttsText.trim()) {
       setLoopCount(0);
       setActiveTab("controls");
       handleStart(ttsText);
-      dispatch(actions.setTtsAutoplay(false));
+      dispatch(actions.setIsTTSOpen(true));
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ttsText, ttsAutoPlay]);
@@ -242,26 +248,58 @@ const LoopingTTSImproved = () => {
   };
 
   /**
-   * Start speaking. Resets progress, loop counter and loads the
-   * necessary chunks. Cancels any ongoing speech before starting.
+   * Pick a best-guess voice for stable playback.
+   */
+  const pickVoice = () => {
+    const voices = synth.getVoices();
+    if (!voices.length) return null;
+    const samantha = voices.find((v) => /samantha/i.test(v.name));
+    return samantha || voices.find((v) => /en[-_]US/i.test(v.lang)) || voices[0];
+  };
+
+  /**
+   * Simplified single-utterance playback. If loop is enabled, repeat on end.
+   */
+  const speakSimple = (phrase) => {
+    if (!phrase) return;
+    const utter = new SpeechSynthesisUtterance(phrase);
+    const voice = pickVoice();
+    if (voice) utter.voice = voice;
+    utter.rate = rate;
+    utter.pitch = pitch;
+    utter.volume = volume;
+    utter.onend = () => {
+      setStatus("Idle");
+      setIsPlaying(false);
+      if (loop && playingRef.current) {
+        speakSimple(phrase);
+      }
+    };
+    utter.onerror = () => {
+      setStatus("Error");
+      setIsPlaying(false);
+    };
+    setStatus("Speaking…");
+    setIsPlaying(true);
+    playingRef.current = true;
+    synth.speak(utter);
+  };
+
+  /**
+   * Start speaking. Cancels any ongoing speech before starting.
    */
   const handleStart = (customText) => {
     synth.cancel();
-    const source = (customText ?? text).trim();
+    playingRef.current = false;
+    const source = ((customText ?? text) || sampleText).trim();
     if (!source) return;
     if (customText !== undefined) {
       setText(source);
     }
-    chunksRef.current = splitText(source);
-    idxRef.current = 0;
-    sentenceRepeatRef.current = 0;
-    playingRef.current = true;
-    setIsPlaying(true);
-    setCurrentSentence("");
-    setProgress(0);
     setLoopCount(0);
-    updateProgress();
-    speakNext();
+    setProgress(0);
+    setCurrentSentence(source.slice(0, 60));
+    speakSimple(source);
     setLastAction("Started");
   };
 
@@ -296,27 +334,13 @@ const LoopingTTSImproved = () => {
    * within repeats; this jumps back one sentence and resets
    * repeats. */
   const handlePrev = () => {
-    if (!chunksRef.current.length) return;
-    // Ensure we step back at least one sentence
-    if (idxRef.current > 0) {
-      idxRef.current = Math.max(0, idxRef.current - 1);
-      sentenceRepeatRef.current = 0;
-      playingRef.current = true;
-      synth.cancel();
-      speakNext();
-      setLastAction("Prev sentence");
-    }
+    // Simplified: restart playback
+    handleStart();
   };
 
   /** Immediately jump to the next sentence. */
   const handleNext = () => {
-    if (!chunksRef.current.length) return;
-    playingRef.current = true;
-    synth.cancel();
-    // Skip remaining repeats for current sentence and move to next sentence
-    sentenceRepeatRef.current = 0;
-    idxRef.current = Math.min(idxRef.current + 1, chunksRef.current.length);
-    speakNext();
+    handleStart();
     setLastAction("Next sentence");
   };
 
@@ -788,59 +812,6 @@ const LoopingTTSImproved = () => {
       </div>
       )}
 
-      {isPlaying &&
-        typeof document !== "undefined" &&
-        ReactDOM.createPortal(
-          <div
-            style={{
-              position: "fixed",
-              left: "18px",
-              bottom: "18px",
-              zIndex: 20000,
-              display: "flex",
-              alignItems: "center",
-              gap: "8px",
-              pointerEvents: "none",
-            }}
-          >
-            <button
-              onClick={handleStop}
-              aria-label="Stop TTS"
-              title="Stop TTS"
-              style={{
-                pointerEvents: "auto",
-                width: "64px",
-                height: "64px",
-                borderRadius: "50%",
-                border: "none",
-                padding: "6px",
-                background: `conic-gradient(#22d3ee ${progress}%, rgba(255,255,255,0.08) 0)`,
-                boxShadow: "0 12px 22px rgba(0,0,0,0.35)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <div
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  borderRadius: "50%",
-                background: "rgba(11,18,32,0.65)",
-                color: "#e2e8f0",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontWeight: 800,
-                fontSize: "18px",
-                }}
-              >
-                ⏹
-              </div>
-            </button>
-          </div>,
-          document.body
-        )}
     </div>
   );
 };

@@ -1255,10 +1255,21 @@ export default function YouTubeTranscript() {
                                     } else {
                                         text = window.prompt("Paste YouTube URL here:") || "";
                                     }
-                                    setUrl(text);
-                                    setShouldMute(false);
+                                    if (!text) {
+                                        text = window.prompt("Paste YouTube URL here:") || "";
+                                    }
+                                    if (text) {
+                                        setUrl(text);
+                                        setShouldMute(false);
+                                    }
                                 } catch {
-                                    showMessage?.({ type: "error", message: "Clipboard blocked." });
+                                    const fallback = window.prompt("Clipboard blocked. Paste YouTube URL here:") || "";
+                                    if (fallback) {
+                                        setUrl(fallback);
+                                        setShouldMute(false);
+                                    } else {
+                                        showMessage?.({ type: "error", message: "Clipboard blocked and no URL provided." });
+                                    }
                                 }
                             }}
                             className="btn paste-btn"
