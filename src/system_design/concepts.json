@@ -1,0 +1,158 @@
+{
+  "meta": {
+    "version": 1,
+    "topic": "System Design Scaling Journey",
+    "notes": "Structured for future mini-games (scramble/order/fill)."
+  },
+  "concepts": [
+    {
+      "id": "scaling-to-millions",
+      "title": "Scaling From Hundreds to Millions",
+      "summary": "A step-by-step evolution from a single box to a globally resilient system, solving reliability, performance, and availability challenges in order.",
+      "sections": [
+        {
+          "name": "Baseline: Single Server",
+          "points": [
+            "One box does everything: web app, data storage, caching.",
+            "DNS returns a single IP; server handles all HTTP for web and mobile (JSON for mobile).",
+            "First bottleneck appears as soon as user traffic grows."
+          ],
+          "games": {
+            "order": [],
+            "fill": [],
+            "scramble": []
+          }
+        },
+        {
+          "name": "Split Web & Data Tiers",
+          "points": [
+            "Separate web tier and data tier so each can scale independently.",
+            "Choose DB model: SQL (strong consistency, joins) vs NoSQL (low latency, unstructured, massive volume, simple serialization).",
+            "Vertical scale (bigger box, single point of failure) vs horizontal scale (more boxes)."
+          ],
+          "games": {
+            "order": [],
+            "fill": [],
+            "scramble": []
+          }
+        },
+        {
+          "name": "Horizontal Web Tier",
+          "points": [
+            "Add a load balancer to distribute traffic across multiple web servers.",
+            "Public IP on LB; web servers use private IPs (hidden for security).",
+            "LB detects failures and routes to healthy servers; easily add more web servers."
+          ],
+          "games": {
+            "order": [],
+            "fill": [],
+            "scramble": []
+          }
+        },
+        {
+          "name": "Database Replication",
+          "points": [
+            "Master handles writes; slaves handle reads (read-heavy apps → more slaves).",
+            "Benefits: parallel reads (performance), data durability (reliability), site stays up if a DB node fails (availability).",
+            "Failover: easy on slave failure (redirect); master failure requires promoting a slave and recovery scripts."
+          ],
+          "games": {
+            "order": [],
+            "fill": [],
+            "scramble": []
+          }
+        },
+        {
+          "name": "Caching & CDN",
+          "points": [
+            "Cache tier: read-through pattern (hit → serve; miss → DB fetch → store → serve).",
+            "Trade-offs: TTL (freshness vs DB load), consistency, eviction (LRU, LFU, FIFO).",
+            "CDN for static assets; routes to nearest edge, huge latency win, mind cost and invalidation/versioning."
+          ],
+          "games": {
+            "order": [],
+            "fill": [],
+            "scramble": []
+          }
+        },
+        {
+          "name": "Stateless Web Tier",
+          "points": [
+            "Move sessions off web servers into shared store (DB/cache).",
+            "Enables easy auto-scaling and failure handling (no sticky sessions).",
+            "Any server can handle any request by pulling session from shared storage."
+          ],
+          "games": {
+            "order": [],
+            "fill": [],
+            "scramble": []
+          }
+        },
+        {
+          "name": "Multi-Region Expansion",
+          "points": [
+            "Deploy multiple data centers; route users via geo-aware DNS (GODNS) to nearest region.",
+            "Challenges: cross-DC data sync, automated testing/deployments, failover to healthy regions on outage."
+          ],
+          "games": {
+            "order": [],
+            "fill": [],
+            "scramble": []
+          }
+        },
+        {
+          "name": "Decouple With Queues",
+          "points": [
+            "Message queue as durable buffer for async work.",
+            "Producers publish (e.g., photo processing request); consumers process later.",
+            "Web tier responds immediately; processing tier scales independently."
+          ],
+          "games": {
+            "order": [],
+            "fill": [],
+            "scramble": []
+          }
+        },
+        {
+          "name": "Operational Foundations",
+          "points": [
+            "Centralized logging to observe errors across many services.",
+            "Metrics from host (CPU/mem) to business KPIs (signups, DAU).",
+            "Automation/CI/CD for builds, tests, and deploys across regions."
+          ],
+          "games": {
+            "order": [],
+            "fill": [],
+            "scramble": []
+          }
+        },
+        {
+          "name": "Sharding: Point of No Return",
+          "points": [
+            "Horizontal data scaling: split DB into shards with same schema, unique data ranges.",
+            "Route by sharding key + hash (e.g., user % N).",
+            "Complexities: resharding (move data live), hotspot/celebrity keys (dedicate capacity), cross-shard joins force denormalization."
+          ],
+          "games": {
+            "order": [],
+            "fill": [],
+            "scramble": []
+          }
+        },
+        {
+          "name": "Guiding Principle",
+          "points": [
+            "Introduce complexity only when forced by scale/availability needs.",
+            "Each decision carries trade-offs (cost, latency, consistency).",
+            "Beyond millions of users, expect a move toward microservices for further scale."
+          ],
+          "games": {
+            "order": [],
+            "fill": [],
+            "scramble": []
+          }
+        }
+      ]
+    }
+  ]
+}

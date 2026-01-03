@@ -1,0 +1,87 @@
+{
+  "meta": {
+    "id": "rate-limiting",
+    "order": 3,
+    "topic": "API Rate Limiting Deep Dive"
+  },
+  "concepts": [
+    {
+      "id": "rate-limit-core",
+      "title": "API Rate Limiting",
+      "summary": "Traffic controller for defense, cost, and stability; enforce flexible thresholds in a distributed, low-latency, fault-tolerant way.",
+      "sections": [
+        {
+          "name": "Why Rate Limit",
+          "points": [
+            "Defense: prevent resource starvation (DoS/bad clients).",
+            "Cost control: cap paid API calls (payments, AI) to protect budget.",
+            "Stability: ensure priority APIs stay responsive under floods."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Placement & Flow",
+          "points": [
+            "Server-side only; client-side limits are forgeable.",
+            "Commonly middleware/API gateway; intercept request, check limit, allow or return 429.",
+            "Response headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Retry-After to guide clients."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Build vs Buy",
+          "points": [
+            "Use gateway features when possible (fastest path).",
+            "Custom logic if you need bespoke priority rules (e.g., paid vs free), with higher maintenance cost."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Algorithms",
+          "points": [
+            "Token Bucket: bucket + refill rate; handles bursts; tuning capacity/refill is tricky; multiple buckets per user for different limits.",
+            "Leaky Bucket: fixed queue, constant outflow; smooths traffic but can delay/drop fresh requests (unfair under bursts).",
+            "Fixed Window Counter: simple but edge spikes allow double quota at window boundaries.",
+            "Sliding Window Log: stores timestamps for accuracy; memory heavy at high QPS.",
+            "Sliding Window Counter: hybrid of accuracy/efficiency; approximates overlap between windows (used by CDNs like Cloudflare)."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Data Store & Rules",
+          "points": [
+            "In-memory cache (Redis) for speed + TTL; use INCR + EXPIRE.",
+            "Rules by domain/endpoint/user/IP; keep in config/cache for quick updates.",
+            "429 handling must include retry guidance to avoid thundering herds."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Distributed Challenges",
+          "points": [
+            "Race conditions across servers → use atomic ops (e.g., Redis Lua scripts) to combine read/check/write.",
+            "Consistency across servers → central source of truth (cache) beats sticky sessions.",
+            "Global latency → deploy edge/geo rate limiters; accept eventual consistency for small drift vs speed."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Monitoring & Tuning",
+          "points": [
+            "Rule effectiveness: too many legit drops → relax rules.",
+            "Algorithm effectiveness: unexpected spikes → tune buckets or switch algorithms.",
+            "Consider hard vs soft limits; app vs IP layer throttling; client backoff/caching."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Thought Prompt",
+          "points": [
+            "For unpredictable spikes (e.g., ticket drops), which algorithm balance (accuracy vs memory vs speed) would you choose and why?"
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        }
+      ]
+    }
+  ]
+}

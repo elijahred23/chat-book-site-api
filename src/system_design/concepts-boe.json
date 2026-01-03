@@ -1,0 +1,78 @@
+{
+  "meta": {
+    "id": "boe-estimation",
+    "order": 1,
+    "topic": "Back-of-the-Envelope Estimation"
+  },
+  "concepts": [
+    {
+      "id": "boe-core",
+      "title": "Back-of-the-Envelope Estimation",
+      "summary": "Rapid feasibility checks grounded in common performance numbers—prove your design can handle the load in minutes.",
+      "sections": [
+        {
+          "name": "Why BOE Matters",
+          "points": [
+            "Foundational for builders/interviewees to validate feasibility in minutes.",
+            "Grounded in data and common perf numbers—not guesses."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Three Pillars",
+          "points": [
+            "Power of Two (volume): know KB/MB/GB/TB/PB; each TB→PB jump is ~1000x.",
+            "Critical Latencies (speed): memory is fast, disk is slow; avoid seeks; compress before network; distance adds latency.",
+            "Availability Nines (reliability): 99% vs 99.9% vs 99.999%—higher nines cost exponentially more; know downtime per year."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Example: Twitter-Like Estimate",
+          "points": [
+            "Assumptions: 300M MAU, 50% DAU, 2 tweets/day, 10% with media, 5-year retention.",
+            "Compute QPS: ~3.5k avg QPS, ~7k peak QPS (rule of 2x).",
+            "Storage: 30M media/day at ~1MB each → ~30TB/day → ~55PB over 5 years."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Practical Tips",
+          "points": [
+            "Round aggressively; magnitude over precision.",
+            "Write assumptions so they can be challenged/adjusted.",
+            "Label units to avoid MB/GB mix-ups.",
+            "Key estimates: QPS, peak QPS, total storage, cache size, server counts."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Latency Lessons",
+          "points": [
+            "Memory is fast; disk seeks are agonizingly slow.",
+            "Compress before sending over networks.",
+            "Cross-continent latency (~150ms) heavily affects consistency/failover strategies."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Availability (Nines)",
+          "points": [
+            "99% (~7.3h/month downtime) vs 99.9% (~44m) vs 99.999% (~26s).",
+            "Higher nines demand deep redundancy (hot spares, geo-replication) and cost."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Apply & Reflect",
+          "points": [
+            "BOE is a gut check grounded in common numbers—prevents wasted effort on infeasible designs.",
+            "Common targets: QPS/peak, storage (esp. media), cache sizing, server counts.",
+            "Trade-off: geo-redundancy for HA vs added latency and consistency constraints."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        }
+      ]
+    }
+  ]
+}

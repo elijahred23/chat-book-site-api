@@ -1,0 +1,83 @@
+{
+  "meta": {
+    "id": "consistent-hashing",
+    "order": 4,
+    "topic": "Consistent Hashing Deep Dive"
+  },
+  "concepts": [
+    {
+      "id": "consistent-hashing-core",
+      "title": "Consistent Hashing",
+      "summary": "Avoids massive rehashing storms by mapping servers/keys on a ring; adding/removing servers remaps only a small fraction of keys.",
+      "sections": [
+        {
+          "name": "Why Classic Hashing Fails",
+          "points": [
+            "Modulo hashing (server = hash(key) % N) reshuffles ~all keys when N changes (add/remove server).",
+            "Leads to cache-miss storms and system-wide failures; not viable for dynamic fleets."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Ring Model",
+          "points": [
+            "Hash space (e.g., SHA-1) turned into a ring from 0 to 2^160.",
+            "Hash servers and keys onto the ring; no modulo division.",
+            "Lookup rule: from key position, move clockwise to the first server = owner."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Minimal Remapping",
+          "points": [
+            "Adding a server: only keys in the segment immediately before the new server move to it.",
+            "Removing a server: its segment moves to the next clockwise server; other servers untouched.",
+            "On average, only ~1/N keys remap when resizing."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Load Balance Issues",
+          "points": [
+            "Few servers → uneven partitions; hotspots and empty gaps.",
+            "Non-uniform key distribution can overload neighbors if servers cluster by chance."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Virtual Nodes (Replicas)",
+          "points": [
+            "Map each physical server to many points on the ring (e.g., 100–200 vnodes).",
+            "Statistically smooths load; lowers std dev of key distribution (e.g., ~10% → ~5%).",
+            "Trade-off: more vnodes consume more memory; tune per system needs."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Operational Rules",
+          "points": [
+            "Add server: affected keys are the arc directly behind it (anticlockwise); move them from its predecessor.",
+            "Remove server: arc behind it is reassigned to next clockwise server; only one neighbor absorbs.",
+            "Hotspot keys mitigated by spreading load over many small partitions (via vnodes)."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Real-World Use",
+          "points": [
+            "Backbone of Dynamo, Cassandra, Akamai CDNs, Discord, Google Maglev, etc.",
+            "Core for horizontal scalability with minimal downtime."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Trade-off Prompt",
+          "points": [
+            "Choosing vnode count balances load smoothness vs memory. How would a low-latency chat app vs a high-durability DB tune vnodes?"
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        }
+      ]
+    }
+  ]
+}

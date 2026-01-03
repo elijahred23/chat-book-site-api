@@ -1,0 +1,88 @@
+{
+  "meta": {
+    "id": "sdi-framework",
+    "order": 2,
+    "topic": "System Design Interview Framework"
+  },
+  "concepts": [
+    {
+      "id": "sdi-mindset",
+      "title": "System Design Interview Mindset",
+      "summary": "Treat the interview as a collaboration simulation: clarify, communicate, and show trade-offs rather than aiming for a perfect final design.",
+      "sections": [
+        {
+          "name": "What Interviewers Look For",
+          "points": [
+            "Collaboration style, handling ambiguity, and ability to ask clarifying questions.",
+            "How you defend choices, respond to feedback, and manage time under pressure.",
+            "Avoid red flags: overengineering, narrow-mindedness, and silent problem solving."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Four-Step Framework",
+          "points": [
+            "Step 1: Understand & scope — clarify features, scale (DAU), growth, environment; write assumptions.",
+            "Step 2: High-level design — sketch components (clients, LB, web, DB/cache/CDN, MQ) and get buy-in.",
+            "Step 3: Deep dive — focus on hardest parts and bottlenecks; avoid low-value rabbit holes.",
+            "Step 4: Wrap-up — recap choices, call out bottlenecks/risks, monitoring, rollout, and next-scale changes."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Clarifying Questions",
+          "points": [
+            "Features: read-only vs read/write; platform (web, mobile, both).",
+            "Scale: DAU, friend count/limits, request volumes, content types.",
+            "Growth: speed to 10M/100M users; expected traffic ramp.",
+            "Environment: existing infra (cache, CDN, queue, DB) you can leverage."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "News Feed Example",
+          "points": [
+            "Agree on scope: mobile/web, reverse chronological, content types (text/images/video), friend max, DAU.",
+            "Fanout on write for typical users: push post IDs to each friend’s feed cache.",
+            "Hybrid for celebrities: fanout on read (merge from celeb cache) to avoid massive write storms.",
+            "Fast reads: personal feed cache + efficient batch fetch of post/user/media details."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Pitfalls & Trade-offs",
+          "points": [
+            "Overengineering vs practical constraints (cost/time).",
+            "Ignoring bottlenecks like fanout for heavy hitters or aggregation latency on read.",
+            "Failing to state assumptions or consider environment re-use."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Time Allocation (45 min)",
+          "points": [
+            "Step 1: 3–10 min; Step 2: 10–15 min; Step 3: 10–25 min; Step 4: 3–5 min.",
+            "Stay high-level first, then dive deep on critical components."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Cost-Aware Thought",
+          "points": [
+            "Be ready to drop non-essential components (e.g., CDN layer) for cost, accepting moderate latency.",
+            "Articulate why that trade-off is acceptable for an early-stage startup."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Dos and Don’ts",
+          "points": [
+            "Do: ask clarifying questions, talk through thinking, offer alternatives, collaborate.",
+            "Don’t: skip requirements, dive too deep too early, assume perfection or declare “done” prematurely."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        }
+      ]
+    }
+  ]
+}
