@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
+import { useFlyout } from "./context/FlyoutContext";
 
 const HISTORY_KEY = "iframe_history";
 const MAX_HISTORY = 10;
@@ -12,6 +13,7 @@ export default function IframeDrawer() {
   const [searching, setSearching] = useState(false);
   const [searchError, setSearchError] = useState("");
   const [tab, setTab] = useState("viewer"); // viewer | duck | urls
+  const { showMessage } = useFlyout();
   const copyForIncognito = async (url) => {
     const text = url || "";
     try {
@@ -72,16 +74,21 @@ export default function IframeDrawer() {
       const resp = await fetch(`/api/websearch?q=${encodeURIComponent(trimmed)}`);
       if (!resp.ok) throw new Error(`Search failed (${resp.status})`);
       const data = await resp.json();
-      const list = Array.isArray(data?.results) ? data.results.slice(0, 10) : [];
+      const list = Array.isArray(data?.results) ? data.results.slice(0, 20) : [];
       setResults(list);
-      if (list[0]?.url) {
-        setCurrentUrl(list[0].url);
-        setInput(list[0].url);
-        saveHistory(list[0].url);
+      const chosen = data?.preferredUrl || list[0]?.url || null;
+      if (chosen) {
+        setCurrentUrl(chosen);
+        setInput(chosen);
+        saveHistory(chosen);
         setTab("viewer");
+        showMessage?.({ type: "success", message: `Loaded ${chosen}`, duration: 2000 });
+      } else {
+        showMessage?.({ type: "error", message: "No reachable results found.", duration: 2000 });
       }
     } catch (err) {
       setSearchError(err?.message || "Search failed.");
+      showMessage?.({ type: "error", message: err?.message || "Search failed.", duration: 2000 });
     } finally {
       setSearching(false);
     }

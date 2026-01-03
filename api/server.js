@@ -65,6 +65,26 @@ const logErrorToFile = (error) => {
   fs.appendFileSync('error.log', errorLog, 'utf8');
 };
 
+// Quick reachability check (HTTP HEAD) with timeout
+const checkReachable = async (url) => {
+  try {
+    const controller = new AbortController();
+    const t = setTimeout(() => controller.abort(), 4000);
+    const resp = await fetch(url, { method: "HEAD", redirect: "follow", signal: controller.signal });
+    clearTimeout(t);
+    if (!resp.ok) return false;
+    const xfo = resp.headers.get("x-frame-options");
+    if (xfo && xfo.toLowerCase() !== "allowall") return false;
+    const csp = resp.headers.get("content-security-policy") || "";
+    if (csp.toLowerCase().includes("frame-ancestors 'none'") || csp.toLowerCase().includes("frame-ancestors 'self'")) {
+      return false;
+    }
+    return true;
+  } catch {
+    return false;
+  }
+};
+
 // Helper: decode DuckDuckGo redirect URL (uddg param)
 const decodeDuckLink = (href = "") => {
   try {
@@ -94,7 +114,7 @@ app.get('/api/websearch', async (req, res) => {
     const results = [];
     const anchorRegex = /<a[^>]*class="[^"]*result__a[^"]*"[^>]*href="([^"]+)"[^>]*>(.*?)<\/a>/gim;
     let match;
-    while ((match = anchorRegex.exec(html)) !== null && results.length < 15) {
+    while ((match = anchorRegex.exec(html)) !== null && results.length < 20) {
       const href = match[1];
       const titleHtml = match[2] || "";
       const url = decodeDuckLink(href);
@@ -103,10 +123,19 @@ app.get('/api/websearch', async (req, res) => {
         results.push({ title, url });
       }
     }
+    let preferredUrl = null;
+    // Try to find the first reachable URL (best-effort)
+    for (const r of results.slice(0, 8)) {
+      if (await checkReachable(r.url)) {
+        preferredUrl = r.url;
+        break;
+      }
+    }
+
     if (!results.length) {
       return res.json({ results: [], message: "No results parsed; site may have changed." });
     }
-    return res.json({ results });
+    return res.json({ results, preferredUrl });
   } catch (err) {
     console.error("Web search error:", err);
     logErrorToFile(err);
