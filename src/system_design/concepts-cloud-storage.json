@@ -1,0 +1,120 @@
+{
+  "meta": {
+    "id": "cloud-storage",
+    "order": 14,
+    "topic": "Cloud Storage & Sync"
+  },
+  "concepts": [
+    {
+      "id": "cloud-storage-deep-dive",
+      "title": "Designing Cloud Storage & Sync",
+      "summary": "Google Drive–style storage for 10M DAU: uploads/downloads, real-time sync/notifications, strong consistency, bandwidth-efficient delta sync, and zero data loss.",
+      "sections": [
+        {
+          "name": "Scope & Scale",
+          "points": [
+            "Supports upload, download, real-time sync, notifications on web/mobile; any file type up to 10GB.",
+            "10M DAU (50M registered) with mandatory at-rest encryption; reliability goal: zero data loss.",
+            "Fast sync, efficient bandwidth (mobile-friendly), high availability and massive scalability."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Back-of-Envelope",
+          "points": [
+            "50M users × 10GB free → ~500 PB provisioned capacity.",
+            "If each uploads 2 files/day → ~480 QPS at upload peak; demands distributed architecture from day one."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Evolution to Decoupled Storage",
+          "points": [
+            "Start: single server (web + DB + 1TB disk per-user folders) with simple/resumable uploads, download, revisions.",
+            "Shard disks to buy time → reliability risk (disk loss = user data loss).",
+            "Decouple to cloud object storage (e.g., S3) for durability/scale."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Replication Strategy",
+          "points": [
+            "Same-region replication: copies across DCs in-region for local failures.",
+            "Cross-region replication: geo redundancy for disasters; higher cost but required for DR."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Block Servers & Chunking",
+          "points": [
+            "Block servers split uploads into ~4MB blocks (balance metadata vs reupload cost).",
+            "Each block hashed; uploaded to cloud storage; servers handle compression and encryption before store.",
+            "API servers manage auth/metadata; metadata cache + DB store file info and block pointers."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Delta Sync & Bandwidth",
+          "points": [
+            "Delta sync uploads only changed blocks (by hash) instead of whole file (e.g., edited slide deck).",
+            "Greatly reduces bandwidth and speeds perceived sync for large files."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Metadata Consistency",
+          "points": [
+            "Use RDBMS for metadata to leverage ACID transactions (version, pointers, permissions updated atomically).",
+            "NoSQL would complicate isolation/consistency; strong consistency is mandatory for collaboration.",
+            "Conflict rule: first fully processed version wins; losing client saves conflicted copy for manual resolve."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Upload/Download Flows",
+          "points": [
+            "Upload: metadata path marks file pending + notifies; content path streams blocks to block servers/storage; callback flips status to uploaded and notifies.",
+            "Download: client pulls metadata, requests needed blocks from block servers, reassembles locally.",
+            "Resumable uploads prevent large-transfer restarts; revisions supported via metadata API."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Notifications",
+          "points": [
+            "Pub/sub service pushes change events; offline queue for disconnected clients.",
+            "Long polling favored over WebSockets (mostly server→client, infrequent events, lower server resource use).",
+            "Clients reconnect after each event; beware thundering herd on reconnect after failure."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Storage Efficiency",
+          "points": [
+            "Deduplication via block hashes: identical blocks stored once across users/files.",
+            "Version retention policy (e.g., daily/weekly cadences) to cap infinite history growth.",
+            "Cold storage (e.g., Glacier) for untouched data; offline backup queue for non-active users."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Resilience & Failover",
+          "points": [
+            "LBs with hot standby; block server failure → reassign upload; queued work buffers retries.",
+            "Metadata DB: master with replicas; auto-promote on failure.",
+            "Cloud storage relies on cross-region replicas; worker/resource manager restarts failed tasks mid-upload using saved chunks."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Future Evolution",
+          "points": [
+            "Centralized presence service to track online clients for push eligibility across products.",
+            "Alternative (client direct to storage) is faster but loses centralized control over chunking, dedup, encryption—higher risk."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        }
+      ]
+    }
+  ]
+}

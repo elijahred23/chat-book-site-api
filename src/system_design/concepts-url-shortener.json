@@ -1,0 +1,116 @@
+{
+  "meta": {
+    "id": "url-shortener",
+    "order": 7,
+    "topic": "URL Shortener at Scale"
+  },
+  "concepts": [
+    {
+      "id": "url-shortener-deep-dive",
+      "title": "Designing a URL Shortener",
+      "summary": "Read-heavy service that must generate collision-free short codes, redirect at low latency, and scale to billions of URLs with strong caching and sharding.",
+      "sections": [
+        {
+          "name": "Scope & Use Cases",
+          "points": [
+            "Write: shorten a long URL into a compact alias.",
+            "Read: redirect short alias → original URL at low latency.",
+            "Reliability: highly available, scalable, fault tolerant."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Back-of-Envelope Scale",
+          "points": [
+            "100M new URLs/day ≈ 1,160 writes/sec; 10:1 read:write → ~11,600 reads/sec.",
+            "~365B records in 10 years at ~100 bytes each ≈ 50.8 TB stored.",
+            "Single DB is infeasible; plan for sharding + heavy caching from the start."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "API & Redirect Codes",
+          "points": [
+            "Write: POST /shorten { longUrl } → returns short URL.",
+            "Read: GET /{code} returns HTTP redirect.",
+            "301 (permanent): browsers cache redirect → low server load but limited click analytics.",
+            "302 (temporary): every click hits service → richer analytics at higher load."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Short Code Space",
+          "points": [
+            "Charset 62 (0-9, a-z, A-Z).",
+            "62^6 ≈ 56B (<10-year need); 62^7 ≈ 3.5T → choose 7 chars for ample headroom.",
+            "Consistent length improves UX; future growth can extend to 8+ chars."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "ID Generation Options",
+          "points": [
+            "Hash+truncate (MD5/SHA1 → 7 chars): needs collision checks; Bloom filter can cut DB lookups but collisions still possible.",
+            "Base62 of unique ID: collision-free; length may grow as IDs increase; risk of predictable sequential codes if IDs are sequential.",
+            "Collision-free beats the operational complexity of collision resolution loops."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Chosen Design",
+          "points": [
+            "Use distributed UID generator (e.g., Snowflake: time + machine + sequence) to get global unique integers.",
+            "Convert integer → Base62 → 7-char code (within 10-year space).",
+            "Add randomization/non-sequential IDs if predictability is a concern."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Write Path",
+          "points": [
+            "Deduplicate: if long URL already shortened, return existing code.",
+            "Else request new UID (Snowflake), convert to Base62 code.",
+            "Store mapping (id, code, longUrl); return short URL."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Read Path & Caching",
+          "points": [
+            "Ingress through LB → stateless web servers.",
+            "Check distributed cache (e.g., Redis) for code → longUrl; hit returns redirect immediately.",
+            "On cache miss, fetch from DB, then populate cache (warm) before redirecting.",
+            "Read-heavy traffic depends on high cache hit rates for low latency."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Storage & Sharding",
+          "points": [
+            "Shard DB by hashing code to pick shard; avoids querying all shards.",
+            "Replicate shards for HA and read scaling; plan capacity for ~50+ TB over 10 years.",
+            "Schema: id (UID), code (Base62), longUrl, metadata (TTL, owner, createdAt)."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Resilience & Operations",
+          "points": [
+            "Rate limit writes to protect UID generator and DB.",
+            "Stateless web tier scales horizontally; stateful tiers scale via sharding/replication.",
+            "302 choice implies analytics pipeline for click logs; ensure durability and throughput.",
+            "Monitor cache hit rate, shard health, and UID generator availability."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "CAP Thought Prompt",
+          "points": [
+            "If a partition happens and you favor availability over perfect consistency, what’s the user impact? Examples: transient 404/timeout on a just-created link or brief redirect to stale/missing target until replicas converge."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        }
+      ]
+    }
+  ]
+}

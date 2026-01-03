@@ -1,0 +1,62 @@
+{
+  "meta": {
+    "id": "learning-roadmap",
+    "order": 15,
+    "topic": "System Design Learning Roadmap"
+  },
+  "concepts": [
+    {
+      "id": "learning-roadmap-deep-dive",
+      "title": "Shortcut to System Design Mastery",
+      "summary": "Three-part syllabus: study real-world blueprints, follow active engineering blogs, and ground yourself in core theory to connect principles to implementations.",
+      "sections": [
+        {
+          "name": "Scope & Goal",
+          "points": [
+            "Mission: build system design mastery efficiently by pairing universal principles with concrete tech implementations.",
+            "Audience: engineers targeting large-scale systems and interviews; focus on mapping concepts to real architectures."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Blueprints (Case Studies)",
+          "points": [
+            "Facebook: denormalized feeds; Haystack for immutable photos (fast seeks), TAO for social graph reads, massive memcache optimizations; Erlang for chat concurrency.",
+            "Amazon Dynamo: availability-first KV store; eventual consistency with vector clocks and app-level reconciliation.",
+            "Google Trinity: GFS (fault-tolerant file system), Bigtable (structured storage at PB scale), MapReduce; differential sync (OT) powering Google Docs.",
+            "Twitter: fanout challenges; Snowflake 64-bit time-sortable IDs for ordered writes without a central coordinator.",
+            "Other blueprints: Pinterest, LinkedIn, Flickr, Dropbox, WhatsApp highlight specialized solutions to common scale problems."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Current Insight (Engineering Blogs)",
+          "points": [
+            "Why: capture v2/v3 evolutions, ops maturity, incident learnings not in papers.",
+            "Examples: Netflix (resilience, microservices, A/B), Stripe/Shopify/PayPal (payments integrity), Amazon/eBay (e-commerce scale), GitHub/Slack/Docker/Asana (dev productivity).",
+            "Action: maintain a rotation of blogs across domains to see how systems change and fail in practice."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Foundational Theory",
+          "points": [
+            "Understanding Distributed Systems: networking stack, messaging, consensus (Paxos/Raft) as bedrock for reliability.",
+            "Designing Data-Intensive Applications: storage engines, isolation levels, replication/partitioning; bridges theory to implementation.",
+            "The Tech Resume Inside Out: translate architecture knowledge into recruiter-visible impact; career leverage for the technical depth."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Synthesis Pattern",
+          "points": [
+            "Map concept → tech: eventual consistency → Dynamo; time-sortable IDs → Snowflake; denormalization → Facebook timeline; immutable blob store → Haystack.",
+            "Active learning: connect principle, implementation, trade-offs (availability vs consistency, cost vs latency).",
+            "Philosophical prompt: which trade-off compels you more—strict consistency or high availability—when designing at scale?"
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        }
+      ]
+    }
+  ]
+}

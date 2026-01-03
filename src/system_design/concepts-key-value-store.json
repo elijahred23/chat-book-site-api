@@ -1,0 +1,115 @@
+{
+  "meta": {
+    "id": "distributed-kv-store",
+    "order": 5,
+    "topic": "Designing a Distributed Key-Value Store"
+  },
+  "concepts": [
+    {
+      "id": "kv-store-deep-dive",
+      "title": "Distributed Key-Value Store",
+      "summary": "Opaque key→value lookups that scale to petabytes and millions of requests while surviving partitions via tunable consistency and robust failure repair.",
+      "sections": [
+        {
+          "name": "Problem & Goals",
+          "points": [
+            "Simplest DB shape: map unique key to opaque value (string, JSON, blob); DB does not parse the value.",
+            "Targets: sub-10KB puts/gets at web-scale QPS, petabyte storage, low latency, and high availability.",
+            "Single-server hash table fails at scale (capacity, IO, memory); distribution is mandatory."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "CAP Trade-off",
+          "points": [
+            "In a distributed system, partition tolerance is non-negotiable; you must pick between consistency or availability under partitions.",
+            "CP choice (bank-like): block writes when replicas unreachable to avoid divergence; availability drops.",
+            "AP choice (Dynamo/Cassandra): always respond, accept temporary staleness, embrace eventual consistency."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Placement: Consistent Hashing",
+          "points": [
+            "Modulo hashing reshuffles nearly all keys when servers change; consistent hashing ring remaps only the preceding arc.",
+            "Key lands on ring by hash; owner is first server clockwise. Lost server hands its arc to next server with minimal movement.",
+            "Virtual nodes (multiple hashes per machine) smooth load and let bigger boxes carry more partitions."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Replication Layout",
+          "points": [
+            "Replication factor N (often 3); primary owner plus next N-1 distinct servers clockwise store copies.",
+            "Replica placement must span AZs/regions to survive rack/zone/DC loss.",
+            "Any server can act as coordinator to proxy client reads/writes to the replica set."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Tunable Consistency",
+          "points": [
+            "Write quorum W: acks needed before success; read quorum R: replicas queried before returning.",
+            "Rule of overlap: W + R > N guarantees at least one latest replica in every read (stronger consistency, higher latency).",
+            "W=1/R=1 is blazing fast but eventual; W=2/R=2 (N=3) slows to the second-slowest node but is strongly consistent."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Conflicts & Versioning",
+          "points": [
+            "Concurrent writes create siblings; vector clocks track causal history per replica to detect divergence.",
+            "If clocks do not dominate each other, replicas are conflicting; system surfaces all versions to clients to resolve (e.g., San Francisco vs New York).",
+            "Vector clocks can grow large with many updates; pruning/limits are operational considerations."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Failure Detection & Routing",
+          "points": [
+            "Gossip protocol shares heartbeat counters and membership without central coordination.",
+            "Sloppy quorum: if an owner replica is down, coordinator writes to next healthy nodes on the ring to stay available.",
+            "Hinted handoff: temporary holder stores a hint and replays data to the rightful owner when it returns."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Anti-Entropy Repair",
+          "points": [
+            "Merkle trees hash buckets of keys up to a root; replicas compare roots to detect drift with minimal data transfer.",
+            "On mismatch, descend the tree to isolate differing buckets and sync only those keys.",
+            "Multi-DC replication is required for region loss; anti-entropy keeps replicas converging after outages."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Node Responsibilities",
+          "points": [
+            "Symmetric nodes: handle client API, coordinate quorum, run gossip, manage vector clocks/conflicts, and perform repairs.",
+            "No single leader; any node can accept requests and route to the correct replicas.",
+            "Local storage engine, replication, and background repair all live on each node."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Write Path",
+          "points": [
+            "Durability first: append to commit log on disk before acknowledging.",
+            "Speed: write to in-memory table/cache; flush to sorted SSTable files on disk when memory fills.",
+            "Replicate to peers per N/W; commit log enables crash recovery."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Read Path",
+          "points": [
+            "Check memory table/cache first for lowest latency.",
+            "Bloom filters per SSTable quickly rule out files that cannot contain the key (no false negatives; possible false positives).",
+            "If needed, read sorted SSTables from disk, merge results, and return via quorum R."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        }
+      ]
+    }
+  ]
+}

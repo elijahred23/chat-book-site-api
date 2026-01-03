@@ -1,0 +1,97 @@
+{
+  "meta": {
+    "id": "search-autocomplete",
+    "order": 12,
+    "topic": "Search Autocomplete at Scale"
+  },
+  "concepts": [
+    {
+      "id": "search-autocomplete-deep-dive",
+      "title": "Designing Search Autocomplete",
+      "summary": "Prefix-only autocomplete for 10M DAU with K=5 suggestions sorted by historical frequency, sub-100ms latency, and weekly batch rebuilds of a memory-heavy trie.",
+      "sections": [
+        {
+          "name": "Scope & Requirements",
+          "points": [
+            "Prefix match only; return top 5 suggestions ranked by historical frequency; lowercase English for core design.",
+            "Target: <100ms latency; ~24k QPS avg, ~48k QPS peak from ~10M DAU (≈20 requests/typing session).",
+            "Two services: query (serve suggestions fast) and data gathering (collect/search logs)."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Why RDBMS Fails",
+          "points": [
+            "Naive SQL: SELECT ... WHERE query LIKE prefix% ORDER BY freq DESC LIMIT 5.",
+            "LIKE prefix% scans/index-walks explode at tens of thousands of requests/sec; blows past latency target.",
+            "Need a data structure purpose-built for prefix retrieval."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Trie Design",
+          "points": [
+            "Trie nodes per character; root is empty; path spells the prefix.",
+            "Store frequency at terminal nodes; cap prefix length (e.g., 50 chars) to bound lookup depth.",
+            "Optimize for speed by storing precomputed top-5 list at every node (trades memory for O(1) reads)."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Complexity Shift",
+          "points": [
+            "Without precompute: O(P) to find prefix + O(C log C) to sort children (too slow).",
+            "With precompute and capped P: O(1) to locate prefix node; O(1) to return stored top-5.",
+            "Speed is prioritized over memory; redundancy accepted."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Batch Build Pipeline",
+          "points": [
+            "Log every search (or sampled subset) to append-only analytics logs.",
+            "Aggregators batch-count frequencies (e.g., weekly) into a clean frequency table.",
+            "Workers build optimized trie with top-5 per node and snapshot to trie DB.",
+            "Query service loads latest snapshot into distributed in-memory trie cache (e.g., Redis)."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Serving Path",
+          "points": [
+            "User types → LB → API server → trie cache lookup for prefix node.",
+            "Cache hit: return stored top-5. Cache miss: fetch from trie DB, hydrate cache, return.",
+            "Ajax on web to avoid full page loads; browser caching of suggestions (short TTL) to cut load."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Maintenance & Safety",
+          "points": [
+            "Realtime updates are costly due to cascading top-5 changes; prefer full rebuilds on a schedule.",
+            "Immediate removals (abuse/hate/illegal): filter layer/blocklist in front of trie cache; physical removal in next rebuild.",
+            "Sampling (e.g., log 1/100 queries) cuts storage/processing with minimal impact on popularity accuracy."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Sharding",
+          "points": [
+            "Trie may not fit on one node; naive alpha split (A–M, N–Z) causes hotspots (e.g., S-heavy).",
+            "Smart sharding: choose boundaries using historical traffic so load is balanced (e.g., E alone; U–Z together).",
+            "Shard map manager tracks prefix → shard routing."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Extensions",
+          "points": [
+            "Unicode support for multi-language; country-specific tries served via CDN for locality.",
+            "Realtime trending requires a streaming pipeline (Kafka/Spark Streaming) vs weekly batch rebuilds."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        }
+      ]
+    }
+  ]
+}

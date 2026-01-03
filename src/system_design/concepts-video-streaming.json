@@ -1,0 +1,122 @@
+{
+  "meta": {
+    "id": "video-streaming",
+    "order": 13,
+    "topic": "Global Video Streaming Platform"
+  },
+  "concepts": [
+    {
+      "id": "video-streaming-deep-dive",
+      "title": "Designing a Video Platform",
+      "summary": "Upload + stream flows for a YouTube-scale service; cost-driven architecture with cloud CDN/blob storage, heavy parallelism, and adaptive encoding.",
+      "sections": [
+        {
+          "name": "Scope & Constraints",
+          "points": [
+            "Focus: upload and watch flows (skip comments/recs/playlists).",
+            "Clients: mobile/web/TV; global; high availability and scalability.",
+            "Must leverage cloud CDN + blob storage; cost is a primary driver."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Cost Reality",
+          "points": [
+            "Storage: even 5M users uploading 300MB daily → ~150 TB/day new storage.",
+            "Egress dominates: billions of views/day at ~$0.02/GB → ~$250k/day streaming.",
+            "Cost considerations must shape every decision (storage tiers, CDN use, formats)."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "High-Level Blocks",
+          "points": [
+            "Client apps ↔ CDN for delivery; API servers for brains (auth, metadata, presigned URLs, recs).",
+            "Caches + metadata DB hold titles, descriptions, view counts, locations.",
+            "Storage split: original blob store (raw uploads) and transcoded store (ready-to-serve renditions)."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Upload Flow",
+          "points": [
+            "User hits upload → LB → API servers for metadata; presigned URL grants temp upload permission to blob store.",
+            "Flow A (file): raw video uploaded to original storage; triggers transcoding pipeline.",
+            "Flow B (metadata): title/desc/tags stored in cache+DB immediately; user not blocked on encoding."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Streaming Basics",
+          "points": [
+            "Streaming delivers chunks continuously (not full downloads) to start playback fast.",
+            "Standard protocols (HLS/DASH) ensure device compatibility across iOS/Android/TV/web.",
+            "Playback pulls from nearest CDN edge for low latency."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Why Transcode",
+          "points": [
+            "Storage/cost: compress raw video to shrink bills.",
+            "Compatibility: multiple containers/codecs for device support.",
+            "Adaptive bitrate: multiple resolutions (e.g., 1080p/720p/480p) to match network and switch on the fly."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Encoding Architecture (DAG)",
+          "points": [
+            "Pre-processor splits video into GOP chunks; generates DAG of tasks (inspect, encode variants, thumbnails, watermark).",
+            "DAG scheduler assigns tasks; resource manager matches tasks to workers; workers use temp storage (memory/blob).",
+            "Retries are task-level (retry failed node only) using saved GOPs; completion events update DB with CDN URLs."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Speed & Efficiency",
+          "points": [
+            "Parallel uploads: client splits into chunks; resume/retry without restarting whole file.",
+            "Upload proximity: regional ingest/upload centers (often CDN-backed) to minimize latency.",
+            "Loose coupling with queues: upload, encode, and metadata flows decoupled for parallelism."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Security & Protection",
+          "points": [
+            "Presigned URLs grant short-lived, scoped upload rights (no broad credentials).",
+            "DRM (e.g., Widevine/FairPlay), AES encryption, and optional visual watermarks protect content.",
+            "Access control enforced before decrypt/serve."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Cost Controls (Long Tail)",
+          "points": [
+            "Hot videos: full renditions on premium CDN; long-tail served from cheaper internal/origin servers.",
+            "Long-tail encode sparingly: fewer renditions or on-demand encode for unpopular/short videos.",
+            "Regional placement: keep replicas where demand exists; avoid global replication for local-only content; at large scale, peering/own CDN to cut bandwidth costs."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Reliability & Errors",
+          "points": [
+            "API servers stateless behind LB; DB masters with replicas for failover.",
+            "Recoverable errors retried (failed encode task re-run); non-recoverable (corrupt upload) surfaced to user.",
+            "Workers dying mid-job: resource manager reassigns using saved GOP chunks; queues buffer work."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Thought Prompt",
+          "points": [
+            "How would you adapt this VOD architecture for live streaming, where latency is king and retries/parallelism are limited?"
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        }
+      ]
+    }
+  ]
+}

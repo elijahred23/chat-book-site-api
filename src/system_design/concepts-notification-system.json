@@ -1,0 +1,113 @@
+{
+  "meta": {
+    "id": "notification-system",
+    "order": 9,
+    "topic": "Massive Notification System"
+  },
+  "concepts": [
+    {
+      "id": "notification-system-deep-dive",
+      "title": "Scalable Notifications",
+      "summary": "Unified push/SMS/email pipeline that delivers billions of messages with decoupled queues, strong reliability, user controls, and vendor flexibility.",
+      "sections": [
+        {
+          "name": "Scale & Requirements",
+          "points": [
+            "Channels: mobile push, SMS, email.",
+            "Daily volume: 10M push, 1M SMS, 5M email; soft real-time (low latency, small delays acceptable on peak).",
+            "Must never lose messages; honor user opt-outs/preferences; support iOS/Android/web/desktop."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Delivery Basics",
+          "points": [
+            "Push: provider → APNS/FCM → device; needs device token (opaque, per-device, non-transferable) + payload (JSON with title/body/actions).",
+            "SMS/Email: delegate to specialized vendors (e.g., Twilio, SendGrid) for delivery, compliance, analytics.",
+            "Device tokens stored per device; losing token = cannot reach that device."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "User & Device Data",
+          "points": [
+            "User table stores static contact info (email/phone).",
+            "Device table stores every device token linked to user; enables targeting all devices for a user.",
+            "Collected at signup/install via API servers before any sends."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Monolith Pitfalls",
+          "points": [
+            "Single notification server = SPOF; outage halts all sends.",
+            "Tightly coupled DB/cache/logic blocks scaling; resource-heavy tasks (HTML email build, vendor waits) stall everything.",
+            "Cannot handle spikes; guarantees high latency and failures."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Decoupled Architecture",
+          "points": [
+            "Separate DB/cache tiers; multiple LB notification servers.",
+            "Message queues per channel (iOS, Android, SMS, Email) isolate failures; Kafka/RabbitMQ for throughput and buffering spikes.",
+            "Channel-specific workers pull from their queue and talk to the right vendor; other channels unaffected by one vendor outage."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "End-to-End Flow",
+          "points": [
+            "1) Internal service calls notification API (protected).",
+            "2) Notification server fetches metadata (user, device tokens, templates, settings), validates inputs.",
+            "3) Enqueue event to correct channel queue.",
+            "4) Channel workers consume; 5) send to APNS/FCM/Twilio/Email vendor; 6) vendor delivers to device/inbox."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Reliability & Deduplication",
+          "points": [
+            "Notification log DB records every request for auditing and retry safety.",
+            "Retries on vendor error/timeouts by re-enqueuing; alerts after repeated failure.",
+            "Dedup: cache (e.g., Redis) of recent event IDs (TTL ~24h); drop duplicates to avoid multi-send. Exactly-once across vendors is infeasible; aim for at-least-once with de-dupe."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Content & Efficiency",
+          "points": [
+            "Templates for common messages (HTML emails, push formats) with variable substitution; saves CPU and enforces consistency.",
+            "Pre-validated payloads reduce runtime errors and vendor rejects."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "User Respect: Settings & Limits",
+          "points": [
+            "Notification settings table: per-user, per-channel flags; often category-specific (transactional vs promotional).",
+            "Mandatory check before enqueue to honor opt-ins/outs.",
+            "Rate limiting to prevent fatigue (e.g., promos ≤1 per 24h); time-window counters in Redis/time-series DB."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Security & Monitoring",
+          "points": [
+            "App key/secret auth for push APIs; internal-only notification API surface.",
+            "Metrics: queued depth per channel (primary pulse), vendor error rates, delivery/open/click events via analytics service.",
+            "Auto-scale workers when queues grow unexpectedly."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Thought Prompt",
+          "points": [
+            "Beyond per-channel queues, how do you future-proof vendor integrations (e.g., FCM alternatives in China, new channels) while keeping reliability guarantees and avoiding vendor lock-in?"
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        }
+      ]
+    }
+  ]
+}

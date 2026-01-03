@@ -4,6 +4,17 @@ import boeData from "./system_design/concepts-boe.json";
 import sdiData from "./system_design/concepts-sdi-framework.json";
 import rateLimitingData from "./system_design/concepts-rate-limiting.json";
 import hashingData from "./system_design/concepts-consistent-hashing.json";
+import kvStoreData from "./system_design/concepts-key-value-store.json";
+import uidData from "./system_design/concepts-uid-generation.json";
+import urlShortenerData from "./system_design/concepts-url-shortener.json";
+import webCrawlerData from "./system_design/concepts-web-crawler.json";
+import notificationData from "./system_design/concepts-notification-system.json";
+import newsfeedData from "./system_design/concepts-newsfeed.json";
+import chatSystemData from "./system_design/concepts-chat-system.json";
+import searchAutocompleteData from "./system_design/concepts-search-autocomplete.json";
+import videoStreamingData from "./system_design/concepts-video-streaming.json";
+import cloudStorageData from "./system_design/concepts-cloud-storage.json";
+import learningRoadmapData from "./system_design/concepts-learning-roadmap.json";
 import ActionButtons from "./ui/ActionButtons.jsx";
 import { useFlyout } from "./context/FlyoutContext";
 
@@ -241,6 +252,81 @@ function SectionGuessGame({ sectionName = "", sectionPoints = [], allSectionName
   );
 }
 
+function GlobalPointGuessGame({ concepts = [], gameKey }) {
+  const [current, setCurrent] = useState(null);
+  const [options, setOptions] = useState([]);
+  const [feedback, setFeedback] = useState("");
+  const { showMessage } = useFlyout();
+
+  if (!concepts.length) return null;
+
+  const start = () => {
+    const entries = [];
+    concepts.forEach((c) => c.sections?.forEach((s) => (s.points || []).forEach((p) => entries.push({ point: p, concept: c.title, section: s.name }))));
+    if (!entries.length) return;
+    const pick = entries[Math.floor(Math.random() * entries.length)];
+    const distractors = shuffle(concepts.map((c) => c.title).filter((t) => t !== pick.concept)).slice(0, 2);
+    const opts = shuffle([pick.concept, ...distractors]);
+    setCurrent(pick);
+    setOptions(opts);
+    setFeedback("");
+  };
+
+  const check = (choice) => {
+    if (!current) return;
+    const ok = choice === current.concept;
+    setFeedback(ok ? "✅ Correct concept!" : `❌ Belongs to: ${current.concept}`);
+    showMessage?.({
+      type: ok ? "success" : "error",
+      message: ok ? "Nice recall!" : "Try another concept title.",
+      duration: 2000,
+    });
+  };
+
+  return (
+    <div className="cp-card" style={{ padding: 10, background: "#fff7ed", border: "1px dashed #fed7aa" }} key={gameKey}>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
+        <div style={{ fontWeight: 900 }}>Concept Guess</div>
+        <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
+          <button className="cp-btn" onClick={start}>New Prompt</button>
+          {current && <button className="cp-btn secondary" onClick={() => { setCurrent(null); setFeedback(""); }}>Clear</button>}
+        </div>
+      </div>
+      {current ? (
+        <div style={{ display: "grid", gap: 8, marginTop: 8 }}>
+          <div style={{ background: "#fff", border: "1px solid #fed7aa", borderRadius: 8, padding: "8px 10px" }}>
+            <div style={{ fontSize: 13 }}>{current.point}</div>
+            <div className="cp-muted" style={{ fontSize: 12, marginTop: 4 }}>Section: {current.section}</div>
+          </div>
+          <div style={{ display: "grid", gap: 6 }}>
+            {options.map((opt, idx) => (
+              <button
+                key={`${gameKey}-global-${idx}`}
+                onClick={() => check(opt)}
+                style={{
+                  textAlign: "left",
+                  padding: "8px 10px",
+                  borderRadius: 8,
+                  background: "#fff",
+                  border: "1px solid #e2e8f0",
+                  fontSize: 13,
+                  color: "#0f172a",
+                  cursor: "pointer",
+                }}
+              >
+                {opt}
+              </button>
+            ))}
+          </div>
+          {feedback && <div style={{ fontWeight: 700, color: feedback.startsWith("✅") ? "#16a34a" : "#dc2626" }}>{feedback}</div>}
+        </div>
+      ) : (
+        <div className="cp-muted" style={{ marginTop: 6 }}>Generate a prompt to guess which concept this point belongs to.</div>
+      )}
+    </div>
+  );
+}
+
 export default function SystemDesignPrep() {
   const dataSets = [
     conceptsData,
@@ -248,6 +334,17 @@ export default function SystemDesignPrep() {
     hashingData,
     sdiData,
     rateLimitingData,
+    kvStoreData,
+    uidData,
+    urlShortenerData,
+    webCrawlerData,
+    notificationData,
+    newsfeedData,
+    chatSystemData,
+    searchAutocompleteData,
+    videoStreamingData,
+    cloudStorageData,
+    learningRoadmapData,
   ]
     .filter(Boolean)
     .map((ds, idx) => ({
@@ -298,16 +395,18 @@ export default function SystemDesignPrep() {
               value={activeDatasetId}
               onChange={(e) => setActiveDatasetId(e.target.value)}
             >
-              {dataSets.map((d) => (
-                <option key={d.id} value={d.id}>
-                  {d.order + 1}. {d.title}
-                </option>
-              ))}
-            </select>
-            <ActionButtons promptText={`System Design Prep\n\n${flatSummary}`} limitButtons />
-          </div>
-        </div>
+      {dataSets.map((d) => (
+        <option key={d.id} value={d.id}>
+          {d.order + 1}. {d.title}
+        </option>
+      ))}
+    </select>
+    <ActionButtons promptText={`System Design Prep\n\n${flatSummary}`} limitButtons />
+  </div>
+</div>
       </div>
+
+      <GlobalPointGuessGame concepts={concepts} gameKey={`${activeDatasetId}:global-concept-guess`} />
 
       {concepts.map((concept) => (
         <div key={concept.id} className="cp-card" style={{ display: "grid", gap: 12 }}>

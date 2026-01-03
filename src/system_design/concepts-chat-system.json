@@ -1,0 +1,104 @@
+{
+  "meta": {
+    "id": "chat-system",
+    "order": 11,
+    "topic": "Massive Chat System"
+  },
+  "concepts": [
+    {
+      "id": "chat-system-deep-dive",
+      "title": "Designing Chat at Scale",
+      "summary": "50M DAU chat with 1:1 and groups up to 100, permanent history, real-time presence, multi-device sync, and sub-100KB messages over WebSockets.",
+      "sections": [
+        {
+          "name": "Scope & Constraints",
+          "points": [
+            "50M DAU; 1:1 chats and groups ≤100 members; store history forever.",
+            "Text messages <100KB; low latency delivery; multi-device support; real-time presence.",
+            "Clients never talk directly; all traffic goes through chat service."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Communication Patterns",
+          "points": [
+            "Sender uses HTTP (keep-alive) or WebSocket to push to server.",
+            "Polling wastes resources; long polling still needs stickiness and has timeouts; poor for disconnection detection.",
+            "WebSocket upgrade creates persistent bidirectional link over 80/443; single connection used for send + receive."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "High-Level Architecture",
+          "points": [
+            "Stateless services behind LB: auth/login, profiles, group management, service discovery.",
+            "Stateful chat servers maintain WebSockets; many small servers (avoid million-connection SPOF).",
+            "Presence servers track online/offline; push integration (APNS/FCM) for offline wakeups.",
+            "Storage: NoSQL KV (e.g., Cassandra/HBase) for chat history; relational for profiles/relationships."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Message IDs & Storage",
+          "points": [
+            "KV store optimized for key lookups and horizontal scale; handles long-tail cold history.",
+            "Use per-channel local sequence IDs (unique/sortable within chat); avoid global Snowflake/DB autoinc.",
+            "1:1 key = channelId + local msgId; group key = groupId + local msgId."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Send Flow (1:1)",
+          "points": [
+            "Client logs in → service discovery returns best chat server DNS → client opens WebSocket to that server (sticky).",
+            "On send: chat server assigns local msgId, writes to KV for durability, enqueues to recipient’s sync queue.",
+            "If recipient online (known server), forward over their WebSocket; if offline, trigger push notification."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Multi-Device Sync",
+          "points": [
+            "Each device tracks lastSeen msgId; sync request: “give me messages > lastSeen”.",
+            "Simple client-driven offset keeps server stateless per device while guaranteeing ordered catch-up."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Group Chats (≤100)",
+          "points": [
+            "Fanout on write: copy message into each member’s sync queue; simplifies clients (one inbox to poll).",
+            "Accept storage/write amplification for small groups; switch to fanout on read for massive groups.",
+            "Flow mirrors 1:1: write KV, push to member queues, deliver if online or via push if offline."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Presence",
+          "points": [
+            "Heartbeat from clients (e.g., every 5s) to presence servers; grace period (e.g., 30s) before marking offline.",
+            "Pub/Sub fanout for typical friend lists: presence server publishes status changes to per-friend channels over WebSockets.",
+            "Large groups avoid push fanout; clients fetch statuses on demand when opening member lists."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Reliability & Scaling",
+          "points": [
+            "Horizontal scale everywhere; many chat servers instead of giant nodes to avoid SPOF.",
+            "Consistent hashing/load-aware service discovery to place clients on chat servers and balance load.",
+            "KV replicas for durability; push vendors for offline delivery; monitor queue depth, presence heartbeat lag, and WebSocket errors."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Thought Prompt",
+          "points": [
+            "How would you extend this design to handle media (photos/videos)? Consider uploads, compression, object storage, CDN, and client-side caching without overloading chat servers."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "meta": {
+    "id": "web-crawler",
+    "order": 8,
+    "topic": "Massive Web Crawler"
+  },
+  "concepts": [
+    {
+      "id": "web-crawler-deep-dive",
+      "title": "Designing a Web Crawler",
+      "summary": "Google-scale crawler to fetch, dedupe, store, and recrawl billions of pages while balancing politeness, robustness, extensibility, and priority.",
+      "sections": [
+        {
+          "name": "Guiding Principles & Scale",
+          "points": [
+            "Goals: scalability (massive parallelism), robustness (hostile/failed pages), politeness (respect sites), extensibility (plug-in modules).",
+            "Target: 1B pages/month ≈ 400 pages/sec; avg page 500KB → ~500 TB/month, ~30 PB over 5 years.",
+            "Storage is a first-class bottleneck; design for sharding/archiving from day one."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "High-Level Pipeline",
+          "points": [
+            "Seed URLs → URL Frontier (priority + politeness) → Downloader → DNS Resolver → Content Parser.",
+            "Content Seen: hash/checksum to drop duplicates (~30% of web).",
+            "Unique content → Storage + URL Extractor → URL Filter → URL Seen → back to Frontier."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Traversal & Frontier Design",
+          "points": [
+            "Avoid DFS (unbounded depth); use BFS-like traversal with controlled queues.",
+            "Back queues (by host) enforce politeness: one-at-a-time per host + delays.",
+            "Front queues handle priority (PageRank, update freq); selector biases toward higher priority.",
+            "Frontier = front queues (priority) + back queues (politeness) with a queue router/selector."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Downloader Performance",
+          "points": [
+            "Respect robots.txt; cache robots per host.",
+            "Optimize DNS with aggressive caching; otherwise 10–200ms lookups bottleneck throughput.",
+            "Distributed crawl across regions/threads for parallelism; place crawlers near targets (latency).",
+            "Short timeouts (e.g., 10s) to avoid hanging on slow/dead hosts."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Robustness & Failure Recovery",
+          "points": [
+            "Consistent hashing to distribute URL space to downloader workers; balanced load and easy redistribution on failure.",
+            "Persist crawl state frequently so workers can restart with minimal loss.",
+            "Rigorous validation/exception handling to keep bad pages from cascading failures."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Traps, Filters, and Quality",
+          "points": [
+            "Spider traps: infinite calendars/deep dirs; mitigate with max URL length, heuristics, and manual filters.",
+            "Content quality/noise: drop ads/spam/binary junk; prioritize indexable value.",
+            "URL Seen tracking via Bloom filters/distributed hash to prevent infinite loops/repeats."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Storage & Freshness",
+          "points": [
+            "Hybrid storage: disk for archives, memory cache for hot content; heavy sharding + replication for tens of PB.",
+            "Recrawl scheduling driven by priority/change frequency; cannot recrawl entire corpus constantly.",
+            "Archive planning for 5+ years of data; design for incremental expansion."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Extensibility & Modern Challenges",
+          "points": [
+            "Plugin architecture: stable core with swap-in modules (e.g., images, PDFs, video transcripts).",
+            "Dynamic/JS-rendered pages require headless rendering; increases CPU/latency costs.",
+            "Personalization and dynamic content complicate priority/freshness signals."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Thought Prompt",
+          "points": [
+            "As content becomes personalized/JS-rendered, how must the frontier’s priority engine evolve? What does fresh/visible mean when the page depends on per-user rendering?"
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        }
+      ]
+    }
+  ]
+}

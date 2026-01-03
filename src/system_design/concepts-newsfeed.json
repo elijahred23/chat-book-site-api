@@ -1,0 +1,106 @@
+{
+  "meta": {
+    "id": "newsfeed",
+    "order": 10,
+    "topic": "News Feed at Scale"
+  },
+  "concepts": [
+    {
+      "id": "newsfeed-deep-dive",
+      "title": "Designing a News Feed",
+      "summary": "Reverse-chronological feed for 10M DAU with up to 5k friends each; hybrid fanout, aggressive caching, and sharding to keep reads fast and writes resilient.",
+      "sections": [
+        {
+          "name": "Scope & Scale",
+          "points": [
+            "Features: publish posts; view friends’ posts on mobile/web; reverse chronological ordering.",
+            "Scale targets: 10M DAU; each user up to 5k friends; rich media (text/images/video).",
+            "Two flows: feed publishing (writes) and feed retrieval (reads). APIs: POST /post, GET /v1/me/feed."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Architecture Overview",
+          "points": [
+            "Ingress via load balancer → stateless web servers (auth, validation, rate limit).",
+            "Publish path hits Post Service (store content/cache), Notification Service, and Fanout Service.",
+            "Read path hits Newsfeed Service to pull from feed caches and hydrate responses."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Fanout Strategies",
+          "points": [
+            "Fanout on write (push): precompute feeds; fastest reads but hotkey risk and wasted work on inactive users.",
+            "Fanout on read (pull): compute on demand; avoids hotkey/wasted work but slows reads drastically.",
+            "Hybrid: push for most users; pull for celebrities/hot keys; merge celeb posts at read time."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Fanout Implementation",
+          "points": [
+            "Fetch follower IDs from social graph; filter (mutes/privacy) via user cache.",
+            "Enqueue (message queue) list of target IDs + post ID; async distribution.",
+            "Fanout workers write to newsfeed cache using consistent hashing to spread load and limit remapping.",
+            "Newsfeed cache stores only post IDs per user to keep memory small."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Newsfeed Retrieval",
+          "points": [
+            "Newsfeed Service pulls post IDs from newsfeed cache for the user.",
+            "Hydration: fetch full post/user metadata/likes from specialized caches; media via CDN pointers.",
+            "Respond with fully hydrated feed JSON; designed for millisecond latency."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Five-Layer Cache Architecture",
+          "points": [
+            "Newsfeed cache: per-user ordered post IDs (core feed list).",
+            "Content cache: post bodies/metadata; hot cache for viral posts to protect DB.",
+            "Social graph cache: follows/blocks/mutes for fanout filtering.",
+            "Action cache: likes/replies/reactions.",
+            "Counters cache: tiny, volatile counts (likes/followers) with fast atomic updates."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Media Delivery",
+          "points": [
+            "Posts store pointers to media; media served via CDN near users for low latency.",
+            "Hydration stitches metadata with CDN URLs; clients fetch media directly."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Scaling & Resilience",
+          "points": [
+            "Stateless web tier; heavy use of queues to decouple services and absorb spikes.",
+            "Sharding by user for data affinity across feed/post storage to avoid cross-shard reads.",
+            "Multi-DC for geo/disaster recovery; consistent hashing to balance cache/fanout load.",
+            "Monitoring: QPS, feed refresh latency, fanout worker health/queue depth."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Hotkey Handling",
+          "points": [
+            "Hybrid push/pull to avoid celeb storms; detect sudden virality via metrics (fanout queue depth per poster, write amp per post, follower request spikes).",
+            "On hotkey detection, switch poster to pull model; merge their posts at read time."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Thought Prompt",
+          "points": [
+            "What metrics/thresholds would you track to auto-migrate a suddenly viral user from push to pull before fanout fails?"
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "meta": {
+    "id": "uid-generation",
+    "order": 6,
+    "topic": "Distributed UID Generation"
+  },
+  "concepts": [
+    {
+      "id": "uid-deep-dive",
+      "title": "64-bit UID Generation at Scale",
+      "summary": "Why classic auto-increment fails in distributed systems and how Snowflake-style 64-bit IDs embed time, location, and sequence to stay unique, ordered, numeric, and fast.",
+      "sections": [
+        {
+          "name": "Hard Requirements",
+          "points": [
+            "Uniqueness across the fleet forever.",
+            "Numeric only, constrained to 64-bit integers.",
+            "Chronologically sortable: later events must have larger IDs.",
+            "High scale: >10k IDs/sec cluster-wide (Snowflake yields far more)."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Rejected Approaches",
+          "points": [
+            "Multi-master auto-increment: sharded steps (e.g., A=1,4,7; B=2,5,8) keep uniqueness but break ordering across regions.",
+            "UUID (128-bit): great uniqueness but too long, not numeric-only, and not cleanly time-ordered for DB sorting.",
+            "Ticket server: single broker of sequential IDs; becomes SPOF, and adding a second reintroduces coordination/ordering problems."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Snowflake Layout (64-bit)",
+          "points": [
+            "1 sign bit fixed to 0 for positive integers (compat/stability).",
+            "41-bit timestamp in ms from a custom epoch (≈69 years of runway).",
+            "5-bit datacenter ID and 5-bit machine ID (up to 32 DCs × 32 nodes).",
+            "12-bit sequence per ms per machine (4096 IDs/ms → 4.096M/sec per node)."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Why It Wins",
+          "points": [
+            "Numeric, 64-bit, inherently time-ordered for fast DB/index scans.",
+            "Massive throughput headroom; even one node exceeds the 10k/sec requirement.",
+            "Embedded provenance (DC + machine) aids auditing/debugging; IDs set at startup and never change."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Operational Considerations",
+          "points": [
+            "Clock sync is existential: drift backward can duplicate timestamps; use NTP/chrony and pause generation if clock regress detected.",
+            "Bit-length tuning: trade sequence bits for more timestamp runway (longer lifespan) or vice versa for higher per-ms concurrency.",
+            "High availability: redundant generators, health checks, fast failover to avoid any ID outage.",
+            "Epoch rollover: 41-bit timestamp overflows ≈69 years after custom epoch; plan migration/versioning long before expiry."
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        },
+        {
+          "name": "Discussion Prompt",
+          "points": [
+            "If you set a new epoch today, what concrete migration plan (version bits, dual-writer, cutover window) will you ship now to survive the timestamp rollover decades later?"
+          ],
+          "games": { "order": [], "fill": [], "scramble": [] }
+        }
+      ]
+    }
+  ]
+}
