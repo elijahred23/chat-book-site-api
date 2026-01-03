@@ -19,6 +19,7 @@ import {
   FaListAlt,
   FaDownload,
   FaSitemap,
+  FaGlobe,
 } from "react-icons/fa";
 import { useFlyout } from "../context/FlyoutContext";
 import { FcGoogle } from "react-icons/fc";
@@ -116,6 +117,18 @@ export default function ActionButtons({ promptText, limitButtons = false }) {
         e.stopPropagation();
         dispatch(actions.setArchitecturePrompt(cleanText));
         dispatch(actions.setIsArchitectureOpen(true));
+      },
+    },
+    {
+      icon: FaGlobe,
+      title: "Open in Iframe (Search)",
+      color: "var(--btn-blue)",
+      onClick: (e) => {
+        e.stopPropagation();
+        console.log({cleanText});
+        dispatch(actions.setIframeSearchText(cleanText));
+        dispatch(actions.setIsIframeOpen(true));
+        showMessage?.({ type: "info", message: "Searching in iframe drawer...", duration: 1500 });
       },
     },
     {

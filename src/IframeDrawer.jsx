@@ -1,5 +1,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { useFlyout } from "./context/FlyoutContext";
+import { useAppDispatch, useAppState, actions } from "./context/AppContext";
+import { GiConsoleController } from "react-icons/gi";
 
 const HISTORY_KEY = "iframe_history";
 const MAX_HISTORY = 10;
@@ -14,6 +16,8 @@ export default function IframeDrawer() {
   const [searchError, setSearchError] = useState("");
   const [tab, setTab] = useState("viewer"); // viewer | duck | urls
   const { showMessage } = useFlyout();
+  const { iframeSearchText } = useAppState();
+  const dispatch = useAppDispatch();
   const copyForIncognito = async (url) => {
     const text = url || "";
     try {
@@ -95,6 +99,20 @@ export default function IframeDrawer() {
   };
 
   const hasUrl = useMemo(() => Boolean((currentUrl || "").trim()), [currentUrl]);
+
+  // Triggered when other parts of the app set iframeSearchText (e.g., ActionButtons)
+  useEffect(() => {
+    console.log({ iframeSearchText });
+    if (!iframeSearchText) return;
+    setTab("duck");
+    setQuery(iframeSearchText);
+    setTimeout(() => {
+      handleSearch();
+    }, 0);
+    // clear it so subsequent clicks re-seed correctly
+    dispatch(actions.setIframeSearchText(""));
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [iframeSearchText]);
 
   return (
     <div style={{ display: "grid", gap: 12 }}>

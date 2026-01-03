@@ -32,6 +32,7 @@ const initialState = {
   typingSource: '',
   flashcardPrompt: '',
   isIframeOpen: false,
+  iframeSearchText: '',
 };
 
 const actionTypes = {
@@ -64,6 +65,7 @@ const actionTypes = {
   SET_TYPING_SOURCE: 'SET_TYPING_SOURCE',
   SET_FLASHCARD_PROMPT: 'SET_FLASHCARD_PROMPT',
   SET_IS_IFRAME_OPEN: 'SET_IS_IFRAME_OPEN',
+  SET_IFRAME_SEARCH_TEXT: 'SET_IFRAME_SEARCH_TEXT',
 };
 
 // ✅ closes all open UI panels (stack managed separately)
@@ -211,6 +213,10 @@ function appReducer(state, action) {
     case actionTypes.SET_IS_IFRAME_OPEN:
       return action.payload ? activateDrawer(state, 'iframe') : deactivateDrawer(state, 'iframe');
 
+    case actionTypes.SET_IFRAME_SEARCH_TEXT:
+      console.log({action})
+      return { ...state, iframeSearchText: action.payload };
+
     default:
       console.warn(`Unhandled action type: ${action.type}`);
       return state;
@@ -264,4 +270,7 @@ export const actions = {
   setIsHtmlBuilderOpen: (open) => ({ type: actionTypes.SET_IS_HTML_BUILDER_OPEN, payload: open }),
   setFlashcardPrompt: (text) => ({ type: actionTypes.SET_FLASHCARD_PROMPT, payload: text }),
   setIsIframeOpen: (open) => ({ type: actionTypes.SET_IS_IFRAME_OPEN, payload: open }),
+  setIframeSearchText: (text) => { 
+    console.log({text})
+    return { type: actionTypes.SET_IFRAME_SEARCH_TEXT, payload: text }},
 };
