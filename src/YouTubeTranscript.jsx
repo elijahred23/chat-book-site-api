@@ -20,6 +20,11 @@ const isValidYouTubeUrl = (url) => {
     const regex = /^(https?:\/\/)?(www\.)?(youtube\.com\/(watch\?v=|embed\/|v\/|shorts\/|live\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})(\S*)?$/;
     return regex.test(url);
 };
+const isSafari = () => {
+    if (typeof navigator === "undefined") return false;
+    const ua = navigator.userAgent;
+    return /Safari/.test(ua) && !/Chrome|CriOS|EdgiOS|FxiOS/.test(ua);
+};
 
 
 // Split a string into roughly equal word chunks
@@ -704,6 +709,40 @@ export default function YouTubeTranscript() {
                     pipWindowRef.current = null;
                     setPipTarget(null);
                 }, { once: true });
+                setPipTarget(target);
+                return;
+            }
+            if (isSafari()) {
+                if (pipWindowRef.current && !pipWindowRef.current.closed) {
+                    pipWindowRef.current.close();
+                }
+                const win = window.open("", "yt-pip-fallback", "width=520,height=320,menubar=0,toolbar=0,status=0");
+                if (!win) {
+                    showMessage?.({ type: "error", message: "Safari blocked the PiP popup. Allow popups for this site." });
+                    return;
+                }
+                pipWindowRef.current = win;
+                win.document.title = "YouTube PiP";
+                win.document.body.style.margin = "0";
+                win.document.body.style.background = "#000";
+                win.document.body.innerHTML = "";
+                const container = win.document.createElement("div");
+                container.style.width = "100%";
+                container.style.height = "100vh";
+                container.style.background = "#000";
+                const frame = win.document.createElement("iframe");
+                frame.src = embedUrl;
+                frame.style.border = "none";
+                frame.style.width = "100%";
+                frame.style.height = "100%";
+                frame.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen";
+                frame.allowFullscreen = true;
+                container.appendChild(frame);
+                win.document.body.appendChild(container);
+                win.addEventListener("beforeunload", () => {
+                    pipWindowRef.current = null;
+                    setPipTarget(null);
+                });
                 setPipTarget(target);
                 return;
             }
@@ -1413,29 +1452,6 @@ export default function YouTubeTranscript() {
                             {miniVertical === 'bottom' ? '↑' : '↓'}
                         </button>
                         <button
-                            onClick={() => togglePictureInPicture(miniIframeRef, "mini")}
-                            style={{
-                                background: 'transparent',
-                                color: '#e2e8f0',
-                                border: 'none',
-                                borderRadius: '10px',
-                                width: '42px',
-                                height: '32px',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                cursor: 'pointer',
-                                boxShadow: '0 0 0 rgba(0,0,0,0)',
-                                backdropFilter: 'none',
-                                fontWeight: 700,
-                                fontSize: '12px',
-                            }}
-                            aria-label="Toggle picture-in-picture"
-                            title="Toggle picture-in-picture"
-                        >
-                            PIP
-                        </button>
-                        <button
                             onClick={() => {
                                 const speeds = [0.75, 1, 1.25, 1.5, 1.75, 2];
                                 const idx = speeds.indexOf(miniSpeed);
@@ -1462,6 +1478,29 @@ export default function YouTubeTranscript() {
                             title="Change playback speed"
                         >
                             {miniSpeed}x
+                        </button>
+                        <button
+                            onClick={() => togglePictureInPicture(miniIframeRef, "mini")}
+                            style={{
+                                background: 'transparent',
+                                color: '#e2e8f0',
+                                border: 'none',
+                                borderRadius: '10px',
+                                width: '42px',
+                                height: '32px',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                cursor: 'pointer',
+                                boxShadow: '0 0 0 rgba(0,0,0,0)',
+                                backdropFilter: 'none',
+                                fontWeight: 700,
+                                fontSize: '12px',
+                            }}
+                            aria-label="Toggle picture-in-picture"
+                            title="Toggle picture-in-picture"
+                        >
+                            PIP
                         </button>
                     </div>
                     <iframe
