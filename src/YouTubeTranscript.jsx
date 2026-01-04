@@ -11,7 +11,7 @@ import { actions, useAppDispatch, useAppState } from './context/AppContext';
 import ActionButtons from './ui/ActionButtons';
 import { getSupadataTranscript } from './utils/callSupadata';
 import { getFlaskYoutubeTranscript } from './utils/callFlaskYoutubeTranscript';
-import { FaCloudDownloadAlt, FaDatabase, FaPaste, FaFileAlt, FaLightbulb, FaCommentDots, FaClipboardList, FaClipboardCheck, FaSearch } from "react-icons/fa";
+import { FaCloudDownloadAlt, FaDatabase, FaPaste, FaFileAlt, FaLightbulb, FaCommentDots, FaClipboardList, FaClipboardCheck, FaSearch, FaRedoAlt } from "react-icons/fa";
 import { createPortal } from "react-dom";
 
 // Constants
@@ -220,6 +220,8 @@ export default function YouTubeTranscript() {
   const [isMiniPlaying, setIsMiniPlaying] = useState(!isUrlFromStorage);
   const [isMainPlaying, setIsMainPlaying] = useState(!isUrlFromStorage);
   const [pipTarget, setPipTarget] = useState(null); // "main" | "mini" | null
+  const [miniCurrentTime, setMiniCurrentTime] = useState(0);
+  const [mainCurrentTime, setMainCurrentTime] = useState(0);
 
     // Helpers to fetch transcript and comments based on selected provider
     const fetchYouTubeTranscript = async (video_url) => {
@@ -653,6 +655,18 @@ export default function YouTubeTranscript() {
         }
     };
 
+    const seekInIframe = (iframeRef, deltaSeconds, currentTime = 0) => {
+        try {
+            const nextTime = Math.max(0, (Number.isFinite(currentTime) ? currentTime : 0) + deltaSeconds);
+            iframeRef.current?.contentWindow?.postMessage(
+                JSON.stringify({ event: "command", func: "seekTo", args: [nextTime, true] }),
+                "*"
+            );
+        } catch {
+            // ignore postMessage failures
+        }
+    };
+
     const togglePictureInPicture = async (iframeRef, target) => {
         const iframeEl = iframeRef?.current;
         if (!iframeEl) return;
@@ -703,6 +717,43 @@ export default function YouTubeTranscript() {
         const handleLeavePiP = () => setPipTarget(null);
         document.addEventListener("leavepictureinpicture", handleLeavePiP);
         return () => document.removeEventListener("leavepictureinpicture", handleLeavePiP);
+    }, []);
+
+    useEffect(() => {
+        const registerIframeForInfo = (ref, id) => {
+            try {
+                ref.current?.contentWindow?.postMessage(JSON.stringify({ event: "listening", id }), "*");
+                ["onStateChange", "onPlaybackRateChange", "onPlaybackQualityChange", "onError"].forEach((evt) => {
+                    ref.current?.contentWindow?.postMessage(JSON.stringify({ event: "command", func: "addEventListener", args: [evt], id }), "*");
+                });
+            } catch {
+                // ignore
+            }
+        };
+
+        const handleMessage = (event) => {
+            if (!event?.data) return;
+            const data = typeof event.data === "string" ? (() => { try { return JSON.parse(event.data); } catch { return null; } })() : event.data;
+            if (!data || data.event !== "infoDelivery" || !data.info) return;
+            if (typeof data.info.currentTime === "number") {
+                if (data.id === "mini-yt-player") {
+                    setMiniCurrentTime(data.info.currentTime);
+                } else if (data.id === "main-yt-player") {
+                    setMainCurrentTime(data.info.currentTime);
+                }
+            }
+        };
+
+        const interval = setInterval(() => {
+            registerIframeForInfo(miniIframeRef, "mini-yt-player");
+            registerIframeForInfo(mainIframeRef, "main-yt-player");
+        }, 3000);
+
+        window.addEventListener("message", handleMessage);
+        return () => {
+            clearInterval(interval);
+            window.removeEventListener("message", handleMessage);
+        };
     }, []);
 
     useEffect(() => {
@@ -1066,6 +1117,7 @@ export default function YouTubeTranscript() {
                             <iframe
                                 ref={mainIframeRef}
                                 src={embedUrl}
+                                id="main-yt-player"
                                 title="YouTube Video"
                                 frameBorder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
@@ -1273,11 +1325,55 @@ export default function YouTubeTranscript() {
                             {isMiniPlaying ? '❚❚' : '▶'}
                         </button>
                         <button
+                            onClick={() => seekInIframe(miniIframeRef, -10, miniCurrentTime)}
+                            style={{
+                                background: 'transparent',
+                                color: '#e2e8f0',
+                                border: '1px solid rgba(255,255,255,0.35)',
+                                borderRadius: '10px',
+                                width: '36px',
+                                height: '32px',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                cursor: 'pointer',
+                                boxShadow: '0 4px 10px rgba(0,0,0,0.35)',
+                                fontWeight: 800,
+                                fontSize: '12px',
+                            }}
+                            aria-label="Rewind 10 seconds"
+                            title="Rewind 10s"
+                        >
+                            -10
+                        </button>
+                        <button
+                            onClick={() => seekInIframe(miniIframeRef, 10, miniCurrentTime)}
+                            style={{
+                                background: 'transparent',
+                                color: '#e2e8f0',
+                                border: '1px solid rgba(255,255,255,0.35)',
+                                borderRadius: '10px',
+                                width: '36px',
+                                height: '32px',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                cursor: 'pointer',
+                                boxShadow: '0 4px 10px rgba(0,0,0,0.35)',
+                                fontWeight: 800,
+                                fontSize: '12px',
+                            }}
+                            aria-label="Forward 10 seconds"
+                            title="Forward 10s"
+                        >
+                            +10
+                        </button>
+                        <button
                             onClick={() => setMiniLoop((v) => !v)}
                             style={{
-                                background: 'rgba(0,0,0,0.25)',
-                                color: '#e2e8f0',
-                                border: '1px solid rgba(255,255,255,0.2)',
+                                background: miniLoop ? 'rgba(34,197,94,0.14)' : 'transparent',
+                                color: miniLoop ? '#4ade80' : '#e2e8f0',
+                                border: miniLoop ? '1px solid rgba(74,222,128,0.7)' : '1px solid rgba(255,255,255,0.35)',
                                 borderRadius: '10px',
                                 width: '32px',
                                 height: '32px',
@@ -1285,13 +1381,15 @@ export default function YouTubeTranscript() {
                                 alignItems: 'center',
                                 justifyContent: 'center',
                                 cursor: 'pointer',
-                                boxShadow: '0 8px 14px rgba(0,0,0,0.35)',
-                                backdropFilter: 'blur(4px)',
+                                boxShadow: miniLoop ? '0 0 0 2px rgba(74,222,128,0.15), 0 4px 10px rgba(0,0,0,0.35)' : '0 4px 10px rgba(0,0,0,0.35)',
+                                fontWeight: 700,
+                                fontSize: '12px',
+                                transition: 'all 0.15s ease',
                             }}
                             aria-label={miniLoop ? "Disable loop" : "Enable loop"}
                             title={miniLoop ? "Looping (click to stop)" : "Loop off (click to loop)"}
                         >
-                            {miniLoop ? '🔁' : '↺'}
+                            <FaRedoAlt style={{ transform: miniLoop ? 'rotate(0deg)' : 'rotate(45deg)' }} />
                         </button>
                         <button
                             onClick={() => setMiniVertical((pos) => (pos === 'bottom' ? 'top' : 'bottom'))}
@@ -1349,8 +1447,8 @@ export default function YouTubeTranscript() {
                                 color: '#e2e8f0',
                                 border: '1px solid rgba(255,255,255,0.35)',
                                 borderRadius: '10px',
-                                minWidth: '42px',
-                                height: '32px',
+                                minWidth: '34px',
+                                height: '30px',
                                 display: 'flex',
                                 alignItems: 'center',
                                 justifyContent: 'center',
@@ -1358,6 +1456,7 @@ export default function YouTubeTranscript() {
                                 boxShadow: '0 4px 10px rgba(0,0,0,0.35)',
                                 fontWeight: 700,
                                 letterSpacing: '0.01em',
+                                fontSize: '12px',
                             }}
                             aria-label="Change playback speed"
                             title="Change playback speed"
@@ -1369,6 +1468,7 @@ export default function YouTubeTranscript() {
                         ref={miniIframeRef}
                         onLoad={applyMiniSpeed}
                         src={embedUrl}
+                        id="mini-yt-player"
                         title="YouTube Video Mini"
                         frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
