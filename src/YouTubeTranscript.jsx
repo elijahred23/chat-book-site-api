@@ -1207,33 +1207,6 @@ export default function YouTubeTranscript() {
                             +
                         </button>
                     </div>
-                    <button
-                        onClick={() => setMiniVertical((pos) => (pos === 'bottom' ? 'top' : 'bottom'))}
-                        style={{
-                            position: 'absolute',
-                            left: '50%',
-                            transform: 'translateX(-50%)',
-                            top: miniVertical === 'bottom' ? '6px' : 'auto',
-                            bottom: miniVertical === 'top' ? '6px' : 'auto',
-                            width: '34px',
-                            height: '28px',
-                            borderRadius: '999px',
-                            border: '1px solid rgba(255,255,255,0.2)',
-                            background: 'transparent',
-                            color: '#e2e8f0',
-                            cursor: 'pointer',
-                            boxShadow: '0 6px 14px rgba(0,0,0,0.3)',
-                            fontWeight: 800,
-                            fontSize: '14px',
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                        }}
-                        aria-label="Move mini player to top or bottom"
-                        title={miniVertical === 'bottom' ? "Move to top" : "Move to bottom"}
-                    >
-                        {miniVertical === 'bottom' ? '↑' : '↓'}
-                    </button>
                     <div
                         style={{
                             position: 'absolute',
@@ -1289,6 +1262,27 @@ export default function YouTubeTranscript() {
                             {miniLoop ? '🔁' : '↺'}
                         </button>
                         <button
+                            onClick={() => setMiniVertical((pos) => (pos === 'bottom' ? 'top' : 'bottom'))}
+                            style={{
+                                background: 'transparent',
+                                color: '#e2e8f0',
+                                border: '1px solid rgba(255,255,255,0.35)',
+                                borderRadius: '10px',
+                                width: '36px',
+                                height: '32px',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                cursor: 'pointer',
+                                boxShadow: '0 4px 10px rgba(0,0,0,0.35)',
+                                fontWeight: 800,
+                            }}
+                            aria-label="Move mini player to top or bottom"
+                            title={miniVertical === 'bottom' ? "Move to top" : "Move to bottom"}
+                        >
+                            {miniVertical === 'bottom' ? '↑' : '↓'}
+                        </button>
+                        <button
                             onClick={() => togglePictureInPicture(miniIframeRef, "mini")}
                             style={{
                                 background: 'transparent',
@@ -1319,9 +1313,9 @@ export default function YouTubeTranscript() {
                                 setMiniSpeed(next);
                             }}
                             style={{
-                                background: 'rgba(0,0,0,0.25)',
+                                background: 'transparent',
                                 color: '#e2e8f0',
-                                border: '1px solid rgba(255,255,255,0.2)',
+                                border: '1px solid rgba(255,255,255,0.35)',
                                 borderRadius: '10px',
                                 minWidth: '42px',
                                 height: '32px',
@@ -1329,9 +1323,9 @@ export default function YouTubeTranscript() {
                                 alignItems: 'center',
                                 justifyContent: 'center',
                                 cursor: 'pointer',
-                                boxShadow: '0 8px 14px rgba(0,0,0,0.35)',
-                                backdropFilter: 'blur(4px)',
+                                boxShadow: '0 4px 10px rgba(0,0,0,0.35)',
                                 fontWeight: 700,
+                                letterSpacing: '0.01em',
                             }}
                             aria-label="Change playback speed"
                             title="Change playback speed"
