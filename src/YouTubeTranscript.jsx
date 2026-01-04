@@ -219,12 +219,10 @@ export default function YouTubeTranscript() {
   const setIsYouTubeOpen = (val) => dispatch(actions.setIsYouTubeOpen(val));
   const miniIframeRef = useRef(null);
   const mainIframeRef = useRef(null);
-  const pipWindowRef = useRef(null);
   const initialTranscriptLoadDoneRef = useRef(false);
   const initialCommentsLoadDoneRef = useRef(false);
   const [isMiniPlaying, setIsMiniPlaying] = useState(!isUrlFromStorage);
   const [isMainPlaying, setIsMainPlaying] = useState(!isUrlFromStorage);
-  const [pipTarget, setPipTarget] = useState(null); // "main" | "mini" | null
   const [miniCurrentTime, setMiniCurrentTime] = useState(0);
   const [mainCurrentTime, setMainCurrentTime] = useState(0);
 
@@ -672,92 +670,6 @@ export default function YouTubeTranscript() {
         }
     };
 
-    const togglePictureInPicture = async (iframeRef, target) => {
-        const iframeEl = iframeRef?.current;
-        if (!iframeEl) return;
-        try {
-            if (document.pictureInPictureElement && pipTarget === target) {
-                await document.exitPictureInPicture();
-                setPipTarget(null);
-                return;
-            }
-            if (typeof iframeEl.requestPictureInPicture === "function" && document.pictureInPictureEnabled) {
-                await iframeEl.requestPictureInPicture();
-                setPipTarget(target);
-                return;
-            }
-            if (window.documentPictureInPicture?.requestWindow) {
-                if (pipWindowRef.current && !pipWindowRef.current.closed) {
-                    pipWindowRef.current.close();
-                }
-                const pipWin = await window.documentPictureInPicture.requestWindow({
-                    width: miniWidth,
-                    height: miniHeight,
-                });
-                pipWindowRef.current = pipWin;
-                pipWin.document.body.style.margin = "0";
-                pipWin.document.body.style.background = "#000";
-                const clone = pipWin.document.createElement("iframe");
-                clone.src = embedUrl;
-                clone.style.border = "none";
-                clone.style.width = "100%";
-                clone.style.height = "100%";
-                clone.allow = "autoplay; encrypted-media; clipboard-write; gyroscope; picture-in-picture; fullscreen";
-                clone.allowFullscreen = true;
-                pipWin.document.body.appendChild(clone);
-                pipWin.addEventListener("pagehide", () => {
-                    pipWindowRef.current = null;
-                    setPipTarget(null);
-                }, { once: true });
-                setPipTarget(target);
-                return;
-            }
-            if (isSafari()) {
-                if (pipWindowRef.current && !pipWindowRef.current.closed) {
-                    pipWindowRef.current.close();
-                }
-                const win = window.open("", "yt-pip-fallback", "width=520,height=320,menubar=0,toolbar=0,status=0");
-                if (!win) {
-                    showMessage?.({ type: "error", message: "Safari blocked the PiP popup. Allow popups for this site." });
-                    return;
-                }
-                pipWindowRef.current = win;
-                win.document.title = "YouTube PiP";
-                win.document.body.style.margin = "0";
-                win.document.body.style.background = "#000";
-                win.document.body.innerHTML = "";
-                const container = win.document.createElement("div");
-                container.style.width = "100%";
-                container.style.height = "100vh";
-                container.style.background = "#000";
-                const frame = win.document.createElement("iframe");
-                frame.src = embedUrl;
-                frame.style.border = "none";
-                frame.style.width = "100%";
-                frame.style.height = "100%";
-                frame.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen";
-                frame.allowFullscreen = true;
-                container.appendChild(frame);
-                win.document.body.appendChild(container);
-                win.addEventListener("beforeunload", () => {
-                    pipWindowRef.current = null;
-                    setPipTarget(null);
-                });
-                setPipTarget(target);
-                return;
-            }
-            showMessage?.({ type: "error", message: "Picture-in-picture not supported in this browser." });
-        } catch (err) {
-            showMessage?.({ type: "error", message: "Could not start picture-in-picture." });
-        }
-    };
-
-    useEffect(() => {
-        const handleLeavePiP = () => setPipTarget(null);
-        document.addEventListener("leavepictureinpicture", handleLeavePiP);
-        return () => document.removeEventListener("leavepictureinpicture", handleLeavePiP);
-    }, []);
-
     useEffect(() => {
         const registerIframeForInfo = (ref, id) => {
             try {
@@ -792,15 +704,6 @@ export default function YouTubeTranscript() {
         return () => {
             clearInterval(interval);
             window.removeEventListener("message", handleMessage);
-        };
-    }, []);
-
-    useEffect(() => {
-        return () => {
-            if (pipWindowRef.current && !pipWindowRef.current.closed) {
-                pipWindowRef.current.close();
-                pipWindowRef.current = null;
-            }
         };
     }, []);
 
@@ -1118,29 +1021,6 @@ export default function YouTubeTranscript() {
                             position: 'relative',
                         }}>
                             <button
-                                onClick={() => togglePictureInPicture(mainIframeRef, "main")}
-                                style={{
-                                    position: 'absolute',
-                                    top: '10px',
-                                    right: '10px',
-                                    zIndex: 3,
-                                    background: 'rgba(0,0,0,0.35)',
-                                    color: '#e2e8f0',
-                                    border: '1px solid rgba(255,255,255,0.25)',
-                                    borderRadius: '10px',
-                                    padding: '6px 10px',
-                                    cursor: 'pointer',
-                                    boxShadow: '0 8px 16px rgba(0,0,0,0.35)',
-                                    backdropFilter: 'blur(4px)',
-                                    fontWeight: 700,
-                                    fontSize: '12px',
-                                }}
-                                aria-label="Toggle picture-in-picture"
-                                title="Toggle picture-in-picture"
-                            >
-                                PIP
-                            </button>
-                            <button
                                 onClick={() => togglePlayback(mainIframeRef, isMainPlaying, setIsMainPlaying)}
                                 style={{
                                     position: 'absolute',
@@ -1159,7 +1039,7 @@ export default function YouTubeTranscript() {
                                 id="main-yt-player"
                                 title="YouTube Video"
                                 frameBorder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; fullscreen"
                                 allowFullScreen
                                 style={{ width: '100%', height: '100%', border: 'none' }}
                             ></iframe>
@@ -1479,29 +1359,6 @@ export default function YouTubeTranscript() {
                         >
                             {miniSpeed}x
                         </button>
-                        <button
-                            onClick={() => togglePictureInPicture(miniIframeRef, "mini")}
-                            style={{
-                                background: 'transparent',
-                                color: '#e2e8f0',
-                                border: 'none',
-                                borderRadius: '10px',
-                                width: '42px',
-                                height: '32px',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                cursor: 'pointer',
-                                boxShadow: '0 0 0 rgba(0,0,0,0)',
-                                backdropFilter: 'none',
-                                fontWeight: 700,
-                                fontSize: '12px',
-                            }}
-                            aria-label="Toggle picture-in-picture"
-                            title="Toggle picture-in-picture"
-                        >
-                            PIP
-                        </button>
                     </div>
                     <iframe
                         ref={miniIframeRef}
@@ -1510,7 +1367,7 @@ export default function YouTubeTranscript() {
                         id="mini-yt-player"
                         title="YouTube Video Mini"
                         frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; fullscreen"
                         allowFullScreen
                         style={{ width: '100%', height: '100%', border: 'none' }}
                     ></iframe>
