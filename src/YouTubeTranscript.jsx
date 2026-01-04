@@ -167,8 +167,10 @@ export default function YouTubeTranscript() {
     const [activeTab, setActiveTab] = useState("transcript");  // Options: transcript, comments, responses, transcript-iframes
     const [comments, setComments] = useState([]);
     const [splitComments, setSplitComments] = useState([]);
-    const [url, setUrl] = useState(() => localStorage.getItem("yt_url") || "");
-    const [shouldMute, setShouldMute] = useState(() => Boolean(localStorage.getItem("yt_url")));
+    const [initialStoredUrl] = useState(() => localStorage.getItem("yt_url") || "");
+    const [url, setUrl] = useState(initialStoredUrl);
+    const [isUrlFromStorage, setIsUrlFromStorage] = useState(() => Boolean(initialStoredUrl));
+    const [shouldMute, setShouldMute] = useState(false);
     const [prompt, setPrompt] = useState(() => localStorage.getItem("yt_prompt") || "");
     const [responseFormat, setResponseFormat] = useState(() => localStorage.getItem("yt_prompt_format") || "none");
     const [transcript, setTranscript] = useState(() => localStorage.getItem("yt_transcript") || "");
@@ -179,7 +181,8 @@ export default function YouTubeTranscript() {
     const [loadingPrompt, setLoadingPrompt] = useState(false);
     const [manuallyEnteredTranscript, setManuallyEnteredTranscript] = useState("");
     const [progress, setProgress] = useState(0);
-    const [lastFetchedUrl, setLastFetchedUrl] = useState("");
+    const [lastFetchedTranscriptUrl, setLastFetchedTranscriptUrl] = useState("");
+    const [lastFetchedCommentsUrl, setLastFetchedCommentsUrl] = useState("");
     const [retryIndex, setRetryIndex] = useState(null);
   const [retryPromptText, setRetryPromptText] = useState("");
   const [retryLoadingIndex, setRetryLoadingIndex] = useState(null);
@@ -210,6 +213,12 @@ export default function YouTubeTranscript() {
   const [playlistRetryingIndex, setPlaylistRetryingIndex] = useState(null);
   const setIsYouTubeOpen = (val) => dispatch(actions.setIsYouTubeOpen(val));
   const miniIframeRef = useRef(null);
+  const mainIframeRef = useRef(null);
+  const initialTranscriptLoadDoneRef = useRef(false);
+  const initialCommentsLoadDoneRef = useRef(false);
+  const [isMiniPlaying, setIsMiniPlaying] = useState(!isUrlFromStorage);
+  const [isMainPlaying, setIsMainPlaying] = useState(!isUrlFromStorage);
+  const [pipTarget, setPipTarget] = useState(null); // "main" | "mini" | null
 
     // Helpers to fetch transcript and comments based on selected provider
     const fetchYouTubeTranscript = async (video_url) => {
@@ -346,31 +355,36 @@ export default function YouTubeTranscript() {
     const hasValidURL = useMemo(() => {
         return url && isValidYouTubeUrl(url);
     }, [url]);
+    const validYoutubeUrl = useMemo(() => isValidYouTubeUrl(url), [url]);
 
     // Load comments when URL changes
     useEffect(() => {
         const loadComments = async () => {
-            if (url && validYoutubeUrl && url !== lastFetchedUrl) {
-                try {
-                    const data = await fetchYouTubeComments(url);
-                    if (data.length > 0) {
-                        const commentsText = data.map(c => `• ${c.author}: ${c.comment}`).join('\n\n');
-                        const wordCount = countWords(commentsText);
-                        const splits = Math.ceil(wordCount / wordSplitNumber);
-                        setComments(commentsText);
-                        setSplitComments(splitStringByWords(commentsText, splits));
-                        setLastFetchedUrl(url);
-                        showMessage?.({ type: "success", message: "Comments loaded." });
-                    } else {
-                        showMessage?.({ type: "error", message: "No comments found." });
-                    }
-                } catch (err) {
-                    showMessage?.({ type: "error", message: "Failed to load comments." });
+            if (!url || !validYoutubeUrl) return;
+            if (url === lastFetchedCommentsUrl) return;
+            if (isUrlFromStorage && initialCommentsLoadDoneRef.current) return;
+            if (isUrlFromStorage) {
+                initialCommentsLoadDoneRef.current = true;
+            }
+            try {
+                const data = await fetchYouTubeComments(url);
+                if (data.length > 0) {
+                    const commentsText = data.map(c => `• ${c.author}: ${c.comment}`).join('\n\n');
+                    const wordCount = countWords(commentsText);
+                    const splits = Math.ceil(wordCount / wordSplitNumber);
+                    setComments(commentsText);
+                    setSplitComments(splitStringByWords(commentsText, splits));
+                    setLastFetchedCommentsUrl(url);
+                    showMessage?.({ type: "success", message: "Comments loaded." });
+                } else {
+                    showMessage?.({ type: "error", message: "No comments found." });
                 }
+            } catch (err) {
+                showMessage?.({ type: "error", message: "Failed to load comments." });
             }
         };
         loadComments();
-    }, [url]);
+    }, [url, validYoutubeUrl, lastFetchedCommentsUrl, isUrlFromStorage]);
 
     // Persist settings to localStorage
     useEffect(() => {
@@ -411,14 +425,16 @@ export default function YouTubeTranscript() {
                     if (data?.transcript?.length > 0) {
                         const newTranscript = data.transcript;
                         const wordCount = countWords(newTranscript);
-                        const splits = Math.ceil(wordCount / wordSplitNumber);
-                        setTranscript(newTranscript);
-                        setSplitLength(splits);
-                        setLastFetchedUrl(url);
-                        showMessage?.({ type: "success", message: `Transcript found${attempt ? ` after retry ${attempt}` : ""}.` });
-                        setActiveTab("prompt");
-                        success = true;
-                        break;
+                    const splits = Math.ceil(wordCount / wordSplitNumber);
+                    setTranscript(newTranscript);
+                    setSplitLength(splits);
+                    setLastFetchedTranscriptUrl(url);
+                    showMessage?.({ type: "success", message: `Transcript found${attempt ? ` after retry ${attempt}` : ""}.` });
+                    setActiveTab("prompt");
+                    setIsMiniPlaying(!isUrlFromStorage);
+                    setIsMainPlaying(!isUrlFromStorage);
+                    success = true;
+                    break;
                     } else {
                         throw new Error("Empty transcript");
                     }
@@ -447,9 +463,11 @@ export default function YouTubeTranscript() {
                 const splits = Math.ceil(wordCount / wordSplitNumber);
                 setTranscript(newTranscript);
                 setSplitLength(splits);
-                setLastFetchedUrl(url);
+                setLastFetchedTranscriptUrl(url);
                 showMessage?.({ type: "success", message: "Transcript found." });
                 setActiveTab("prompt");
+                setIsMiniPlaying(!isUrlFromStorage);
+                setIsMainPlaying(!isUrlFromStorage);
             } else {
                 showMessage?.({ type: "error", message: "Transcript not found." });
             }
@@ -458,8 +476,6 @@ export default function YouTubeTranscript() {
         }
         setLoadingTranscript(false);
     };
-
-    const validYoutubeUrl = useMemo(() => isValidYouTubeUrl(url), [url]);
 
     const fetchTranscriptWithRetry = async (videoUrl) => {
         const maxAttempts = 4;
@@ -568,9 +584,10 @@ export default function YouTubeTranscript() {
     const embedUrl = useMemo(() => {
         if (!miniVideoId) return "";
         const loopParams = miniLoop ? `&loop=1&playlist=${miniVideoId}` : "";
-        const muteParam = shouldMute ? "&mute=1" : "";
-        return `https://www.youtube.com/embed/${miniVideoId}?autoplay=1${muteParam}&enablejsapi=1&rel=0${loopParams}`;
-    }, [miniVideoId, miniLoop, shouldMute]);
+        const autoplayParam = isUrlFromStorage ? "" : "&autoplay=1";
+        const muteParam = isUrlFromStorage ? "" : (shouldMute ? "&mute=1" : "");
+        return `https://www.youtube.com/embed/${miniVideoId}?enablejsapi=1&rel=0${autoplayParam}${muteParam}${loopParams}`;
+    }, [miniVideoId, miniLoop, shouldMute, isUrlFromStorage]);
 
     const applyMiniSpeed = () => {
         try {
@@ -600,6 +617,12 @@ export default function YouTubeTranscript() {
     }, [url]);
 
     useEffect(() => {
+        // Reset perceived playback state when URL origin changes
+        setIsMiniPlaying(!isUrlFromStorage);
+        setIsMainPlaying(!isUrlFromStorage);
+    }, [url, isUrlFromStorage]);
+
+    useEffect(() => {
         setActiveTab("transcript");
     }, []);
 
@@ -607,11 +630,57 @@ export default function YouTubeTranscript() {
     useEffect(() => {
         if (!validYoutubeUrl) return;
         if (loadingTranscript) return;
-        if (url && url !== lastFetchedUrl) {
+        if (url && url !== lastFetchedTranscriptUrl) {
+            if (isUrlFromStorage && initialTranscriptLoadDoneRef.current) return;
+            if (isUrlFromStorage) {
+                initialTranscriptLoadDoneRef.current = true;
+            }
             loadFlaskYoutubeTranscript();
         }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [validYoutubeUrl, url]);
+    }, [validYoutubeUrl, url, isUrlFromStorage, loadingTranscript, lastFetchedTranscriptUrl]);
+
+    const togglePlayback = (iframeRef, isPlaying, setPlaying) => {
+        try {
+            iframeRef.current?.contentWindow?.postMessage(
+                JSON.stringify({ event: "command", func: isPlaying ? "pauseVideo" : "playVideo" }),
+                "*"
+            );
+            setPlaying(!isPlaying);
+        } catch {
+            // ignore postMessage failures
+        }
+    };
+
+    const togglePictureInPicture = async (iframeRef, target) => {
+        const iframeEl = iframeRef?.current;
+        if (!iframeEl) return;
+        if (!document.pictureInPictureEnabled) {
+            showMessage?.({ type: "error", message: "Picture-in-picture not supported in this browser." });
+            return;
+        }
+        try {
+            if (document.pictureInPictureElement && pipTarget === target) {
+                await document.exitPictureInPicture();
+                setPipTarget(null);
+                return;
+            }
+            if (iframeEl.requestPictureInPicture) {
+                await iframeEl.requestPictureInPicture();
+                setPipTarget(target);
+            } else {
+                showMessage?.({ type: "error", message: "Picture-in-picture not available for this video." });
+            }
+        } catch (err) {
+            showMessage?.({ type: "error", message: "Could not start picture-in-picture." });
+        }
+    };
+
+    useEffect(() => {
+        const handleLeavePiP = () => setPipTarget(null);
+        document.addEventListener("leavepictureinpicture", handleLeavePiP);
+        return () => document.removeEventListener("leavepictureinpicture", handleLeavePiP);
+    }, []);
 
     // Internal styles scoped to this component. These override any external styles and ensure good mobile layout.
     const styles = `
@@ -924,8 +993,46 @@ export default function YouTubeTranscript() {
                             height: '240px',
                             borderRadius: '12px',
                             overflow: 'hidden',
+                            position: 'relative',
                         }}>
+                            <button
+                                onClick={() => togglePictureInPicture(mainIframeRef, "main")}
+                                style={{
+                                    position: 'absolute',
+                                    top: '10px',
+                                    right: '10px',
+                                    zIndex: 3,
+                                    background: 'rgba(0,0,0,0.35)',
+                                    color: '#e2e8f0',
+                                    border: '1px solid rgba(255,255,255,0.25)',
+                                    borderRadius: '10px',
+                                    padding: '6px 10px',
+                                    cursor: 'pointer',
+                                    boxShadow: '0 8px 16px rgba(0,0,0,0.35)',
+                                    backdropFilter: 'blur(4px)',
+                                    fontWeight: 700,
+                                    fontSize: '12px',
+                                }}
+                                aria-label="Toggle picture-in-picture"
+                                title="Toggle picture-in-picture"
+                            >
+                                PIP
+                            </button>
+                            <button
+                                onClick={() => togglePlayback(mainIframeRef, isMainPlaying, setIsMainPlaying)}
+                                style={{
+                                    position: 'absolute',
+                                    inset: 0,
+                                    background: 'transparent',
+                                    border: 'none',
+                                    cursor: 'pointer',
+                                    zIndex: 2,
+                                }}
+                                aria-label={isMainPlaying ? "Pause video" : "Play video"}
+                                title={isMainPlaying ? "Pause video" : "Play video"}
+                            />
                             <iframe
+                                ref={mainIframeRef}
                                 src={embedUrl}
                                 title="YouTube Video"
                                 frameBorder="0"
@@ -1139,6 +1246,28 @@ export default function YouTubeTranscript() {
                         }}
                     >
                         <button
+                            onClick={() => togglePlayback(miniIframeRef, isMiniPlaying, setIsMiniPlaying)}
+                            style={{
+                                background: 'transparent',
+                                color: '#e2e8f0',
+                                border: 'none',
+                                borderRadius: '10px',
+                                width: '32px',
+                                height: '32px',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                cursor: 'pointer',
+                                boxShadow: '0 0 0 rgba(0,0,0,0)',
+                                backdropFilter: 'none',
+                                fontWeight: 700,
+                            }}
+                            aria-label={isMiniPlaying ? "Pause video" : "Play video"}
+                            title={isMiniPlaying ? "Pause video" : "Play video"}
+                        >
+                            {isMiniPlaying ? '❚❚' : '▶'}
+                        </button>
+                        <button
                             onClick={() => setMiniLoop((v) => !v)}
                             style={{
                                 background: 'rgba(0,0,0,0.25)',
@@ -1158,6 +1287,29 @@ export default function YouTubeTranscript() {
                             title={miniLoop ? "Looping (click to stop)" : "Loop off (click to loop)"}
                         >
                             {miniLoop ? '🔁' : '↺'}
+                        </button>
+                        <button
+                            onClick={() => togglePictureInPicture(miniIframeRef, "mini")}
+                            style={{
+                                background: 'transparent',
+                                color: '#e2e8f0',
+                                border: 'none',
+                                borderRadius: '10px',
+                                width: '42px',
+                                height: '32px',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                cursor: 'pointer',
+                                boxShadow: '0 0 0 rgba(0,0,0,0)',
+                                backdropFilter: 'none',
+                                fontWeight: 700,
+                                fontSize: '12px',
+                            }}
+                            aria-label="Toggle picture-in-picture"
+                            title="Toggle picture-in-picture"
+                        >
+                            PIP
                         </button>
                         <button
                             onClick={() => {
@@ -1207,6 +1359,7 @@ export default function YouTubeTranscript() {
                 onClose={() => setDrawerOpen(false)}
                 onSelectVideo={(selectedUrl) => {
                     setUrl(selectedUrl);
+                    setIsUrlFromStorage(false);
                     setShouldMute(false);
                     setDrawerOpen(false);
                 }}
@@ -1217,6 +1370,7 @@ export default function YouTubeTranscript() {
                 externalQuery={externalSearchText}
                 setUrl={(url) => {
                     setUrl(url);
+                    setIsUrlFromStorage(false);
                     setShouldMute(false);
                     setDrawerOpen(false);
                 }}
@@ -1225,7 +1379,7 @@ export default function YouTubeTranscript() {
             {activeTab === "transcript" && (
                 <>
                     <div className="input-group">
-                        <input className="input" type="text" value={url} placeholder="YouTube URL" onChange={(e) => { setUrl(e.target.value); setShouldMute(false); }} />
+                        <input className="input" type="text" value={url} placeholder="YouTube URL" onChange={(e) => { setUrl(e.target.value); setIsUrlFromStorage(false); setShouldMute(false); }} />
                         <button
                             disabled={!hasValidURL || loadingTranscript}
                             className="btn primary-btn icon-only"
@@ -1260,12 +1414,14 @@ export default function YouTubeTranscript() {
                                     }
                                     if (text) {
                                         setUrl(text);
+                                        setIsUrlFromStorage(false);
                                         setShouldMute(false);
                                     }
                                 } catch {
                                     const fallback = window.prompt("Clipboard blocked. Paste YouTube URL here:") || "";
                                     if (fallback) {
                                         setUrl(fallback);
+                                        setIsUrlFromStorage(false);
                                         setShouldMute(false);
                                     } else {
                                         showMessage?.({ type: "error", message: "Clipboard blocked and no URL provided." });
