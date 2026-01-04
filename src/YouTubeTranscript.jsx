@@ -214,6 +214,7 @@ export default function YouTubeTranscript() {
   const setIsYouTubeOpen = (val) => dispatch(actions.setIsYouTubeOpen(val));
   const miniIframeRef = useRef(null);
   const mainIframeRef = useRef(null);
+  const pipWindowRef = useRef(null);
   const initialTranscriptLoadDoneRef = useRef(false);
   const initialCommentsLoadDoneRef = useRef(false);
   const [isMiniPlaying, setIsMiniPlaying] = useState(!isUrlFromStorage);
@@ -655,22 +656,44 @@ export default function YouTubeTranscript() {
     const togglePictureInPicture = async (iframeRef, target) => {
         const iframeEl = iframeRef?.current;
         if (!iframeEl) return;
-        if (!document.pictureInPictureEnabled) {
-            showMessage?.({ type: "error", message: "Picture-in-picture not supported in this browser." });
-            return;
-        }
         try {
             if (document.pictureInPictureElement && pipTarget === target) {
                 await document.exitPictureInPicture();
                 setPipTarget(null);
                 return;
             }
-            if (iframeEl.requestPictureInPicture) {
+            if (typeof iframeEl.requestPictureInPicture === "function" && document.pictureInPictureEnabled) {
                 await iframeEl.requestPictureInPicture();
                 setPipTarget(target);
-            } else {
-                showMessage?.({ type: "error", message: "Picture-in-picture not available for this video." });
+                return;
             }
+            if (window.documentPictureInPicture?.requestWindow) {
+                if (pipWindowRef.current && !pipWindowRef.current.closed) {
+                    pipWindowRef.current.close();
+                }
+                const pipWin = await window.documentPictureInPicture.requestWindow({
+                    width: miniWidth,
+                    height: miniHeight,
+                });
+                pipWindowRef.current = pipWin;
+                pipWin.document.body.style.margin = "0";
+                pipWin.document.body.style.background = "#000";
+                const clone = pipWin.document.createElement("iframe");
+                clone.src = embedUrl;
+                clone.style.border = "none";
+                clone.style.width = "100%";
+                clone.style.height = "100%";
+                clone.allow = "autoplay; encrypted-media; clipboard-write; gyroscope; picture-in-picture; fullscreen";
+                clone.allowFullscreen = true;
+                pipWin.document.body.appendChild(clone);
+                pipWin.addEventListener("pagehide", () => {
+                    pipWindowRef.current = null;
+                    setPipTarget(null);
+                }, { once: true });
+                setPipTarget(target);
+                return;
+            }
+            showMessage?.({ type: "error", message: "Picture-in-picture not supported in this browser." });
         } catch (err) {
             showMessage?.({ type: "error", message: "Could not start picture-in-picture." });
         }
@@ -680,6 +703,15 @@ export default function YouTubeTranscript() {
         const handleLeavePiP = () => setPipTarget(null);
         document.addEventListener("leavepictureinpicture", handleLeavePiP);
         return () => document.removeEventListener("leavepictureinpicture", handleLeavePiP);
+    }, []);
+
+    useEffect(() => {
+        return () => {
+            if (pipWindowRef.current && !pipWindowRef.current.closed) {
+                pipWindowRef.current.close();
+                pipWindowRef.current = null;
+            }
+        };
     }, []);
 
     // Internal styles scoped to this component. These override any external styles and ensure good mobile layout.
@@ -1036,7 +1068,7 @@ export default function YouTubeTranscript() {
                                 src={embedUrl}
                                 title="YouTube Video"
                                 frameBorder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
                                 allowFullScreen
                                 style={{ width: '100%', height: '100%', border: 'none' }}
                             ></iframe>
@@ -1339,7 +1371,7 @@ export default function YouTubeTranscript() {
                         src={embedUrl}
                         title="YouTube Video Mini"
                         frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
                         allowFullScreen
                         style={{ width: '100%', height: '100%', border: 'none' }}
                     ></iframe>
