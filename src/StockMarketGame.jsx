@@ -748,6 +748,21 @@ export default function StockMarketGame() {
               >
                 Reset Code
               </button>
+              <button
+                style={pillBtnStyle}
+                className="action-btn"
+                onClick={() => {
+                  setUserCode("");
+                  setAutomationError("");
+                  try {
+                    localStorage.removeItem("smg_user_code");
+                  } catch {
+                    // ignore storage errors
+                  }
+                }}
+              >
+                Clear Code
+              </button>
             </div>
           </div>
           <p style={{ color: "#475569", marginTop: "0.25rem" }}>
