@@ -753,6 +753,8 @@ export default function StockMarketGame() {
                 borderRadius: "12px",
                 padding: "0.5rem",
                 background: "#f8fafc",
+                wordBreak: "break-word",
+                whiteSpace: "pre-wrap",
               }}
             >
               {log.map((entry) => (
@@ -967,6 +969,8 @@ async function run(state, api) {
             max-height: 160px;
             padding: 0.4rem;
             font-size: 0.92rem;
+            word-break: break-word;
+            white-space: pre-wrap;
           }
           .pulse-dot {
             width: 10px !important;
