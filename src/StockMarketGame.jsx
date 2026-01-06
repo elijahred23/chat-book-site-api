@@ -36,12 +36,21 @@ const buildInitialStockList = () =>
   });
 
 const defaultScript = `async function run(state, api, utils) {
-  let toggle = false;
+  let toggle = 0;
   while (true) {
-    if (toggle && state.cash > state.price) api.buy(1, state.symbol);
-    if (!toggle && state.position > 0) api.sell(1, state.symbol);
-    toggle = !toggle;
-    await api.sleep(900);
+    const mod = toggle % 4;
+    if (mod === 0) {
+      api.buy(2, 0);
+    } else if (mod === 1) {
+      api.buy(2, 1);
+    } else if (mod === 2) {
+      api.sell(1, 1);
+    } else {
+      api.sell(1, 0);
+    }
+
+    toggle = (toggle % 100) + 1;
+    await api.sleep(1000);
   }
 }`;
 
@@ -193,8 +202,8 @@ export default function StockMarketGame() {
     });
   };
 
-  const buy = (qty) => trade("buy", qty);
-  const sell = (qty) => trade("sell", qty);
+  const buy = (qty, target) => trade("buy", qty, target);
+  const sell = (qty, target) => trade("sell", qty, target);
 
   const instrumentCode = (code) => {
     const hasRun = /function\s+run\s*\(/.test(code) || /async\s+function\s+run\s*\(/.test(code);
@@ -634,6 +643,7 @@ export default function StockMarketGame() {
                     <th style={{ textAlign: "left", padding: "8px", borderBottom: "1px solid rgba(255,255,255,0.08)" }}>Symbol</th>
                     <th style={{ textAlign: "left", padding: "8px", borderBottom: "1px solid rgba(255,255,255,0.08)" }}>Name</th>
                     <th style={{ textAlign: "right", padding: "8px", borderBottom: "1px solid rgba(255,255,255,0.08)" }}>Price</th>
+                    <th style={{ textAlign: "right", padding: "8px", borderBottom: "1px solid rgba(255,255,255,0.08)" }}>Shares</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -643,6 +653,9 @@ export default function StockMarketGame() {
                       <td style={{ padding: "8px", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>{s.name}</td>
                       <td style={{ padding: "8px", textAlign: "right", borderBottom: "1px solid rgba(255,255,255,0.05)", fontWeight: 700 }}>
                         {formatMoney(s.price)}
+                      </td>
+                      <td style={{ padding: "8px", textAlign: "right", borderBottom: "1px solid rgba(255,255,255,0.05)", fontWeight: 700 }}>
+                        {s.portfolio.position}
                       </td>
                     </tr>
                   ))}
