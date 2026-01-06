@@ -194,10 +194,22 @@ export default function YouTubeTranscript() {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const { showMessage } = useFlyout();
   const latestRetryRef = useRef({});
-  const [isMinimized, setIsMinimized] = useState(true);
-  const [miniCollapsed, setMiniCollapsed] = useState(false);
-  const [miniSide, setMiniSide] = useState("left");
-  const [miniVertical, setMiniVertical] = useState("bottom");
+  const [isMinimized, setIsMinimized] = useState(() => {
+        const stored = localStorage.getItem("yt_iframe_minimized");
+        return stored ? JSON.parse(stored) : true;
+    });
+  const [miniCollapsed, setMiniCollapsed] = useState(() => {
+        const stored = localStorage.getItem("yt_mini_collapsed");
+        return stored ? JSON.parse(stored) : false;
+    });
+  const [miniSide, setMiniSide] = useState(() => {
+        const stored = localStorage.getItem("yt_mini_side");
+        return stored === "right" ? "right" : "left";
+    });
+  const [miniVertical, setMiniVertical] = useState(() => {
+        const stored = localStorage.getItem("yt_mini_vertical");
+        return stored === "top" ? "top" : "bottom";
+    });
   const [miniLoop, setMiniLoop] = useState(true);
   const [miniSpeed, setMiniSpeed] = useState(2);
   const [miniScale, setMiniScale] = useState(() => {
@@ -401,7 +413,10 @@ export default function YouTubeTranscript() {
         localStorage.setItem("yt_promptResponses", JSON.stringify(promptResponses));
         localStorage.setItem("yt_iframe_minimized", JSON.stringify(isMinimized));
         localStorage.setItem("yt_mini_scale", JSON.stringify(miniScale));
-    }, [transcript, prompt, responseFormat, splitLength, promptResponses, isMinimized]);
+        localStorage.setItem("yt_mini_side", miniSide);
+        localStorage.setItem("yt_mini_vertical", miniVertical);
+        localStorage.setItem("yt_mini_collapsed", JSON.stringify(miniCollapsed));
+    }, [transcript, prompt, responseFormat, splitLength, promptResponses, isMinimized, miniScale, miniSide, miniVertical, miniCollapsed]);
 
     // Update transcript and split length when manual transcript changes
     useEffect(() => {
