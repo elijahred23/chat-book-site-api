@@ -20,8 +20,8 @@ const BASE_STOCKS = [
 const defaultScript = `async function run(state, api, utils) {
   let toggle = false;
   while (true) {
-    if (toggle && state.cash > state.price) api.buy(1);
-    if (!toggle && state.position > 0) api.sell(1);
+    if (toggle && state.cash > state.price) api.buy(1, state.symbol);
+    if (!toggle && state.position > 0) api.sell(1, state.symbol);
     toggle = !toggle;
     await api.sleep(900);
   }
@@ -106,13 +106,27 @@ export default function StockMarketGame() {
     });
   };
 
-  const trade = (type, qty) => {
+  const resolveIndex = (target) => {
+    if (typeof target === "number" && target >= 0 && target < stockList.length) return target;
+    if (typeof target === "string") {
+      const idx = stockList.findIndex((s) => s.symbol === target);
+      if (idx >= 0) return idx;
+    }
+    return null;
+  };
+
+  const trade = (type, qty, target) => {
     const q = Math.max(0, Math.floor(qty));
     if (!q) return;
+    const targetIndex = resolveIndex(target);
+    if (targetIndex === null) {
+      appendLog("Target stock required: pass an index (0-9) or symbol.");
+      return;
+    }
     setStockList((prev) => {
-      const current = prev[activeIndex];
+      const current = prev[targetIndex];
       if (!current) return prev;
-      const nowPrice = stateRef.current?.price ?? current.price;
+      const nowPrice = current.price;
       if (type === "buy") {
         const cost = nowPrice * q;
         if (cost > current.portfolio.cash) {
@@ -126,7 +140,7 @@ export default function StockMarketGame() {
             : (current.portfolio.avgCost * current.portfolio.position + cost) / newPosition;
         appendLog(`Bought ${q} ${current.symbol} @ ${formatMoney(nowPrice)}`);
         const updated = [...prev];
-        updated[activeIndex] = {
+        updated[targetIndex] = {
           ...current,
           portfolio: {
             cash: current.portfolio.cash - cost,
@@ -147,7 +161,7 @@ export default function StockMarketGame() {
         const newAvg = remaining === 0 ? 0 : current.portfolio.avgCost;
         appendLog(`Sold ${sellQty} ${current.symbol} @ ${formatMoney(nowPrice)}`);
         const updated = [...prev];
-        updated[activeIndex] = {
+        updated[targetIndex] = {
           ...current,
           portfolio: {
             cash: current.portfolio.cash + revenue,
@@ -280,13 +294,13 @@ export default function StockMarketGame() {
       },
     };
     const api = {
-      buy: (qty) => {
+      buy: (qty, target) => {
         if (programTokenRef.current !== token) return;
-        buy(qty);
+        buy(qty, target);
       },
-      sell: (qty) => {
+      sell: (qty, target) => {
         if (programTokenRef.current !== token) return;
-        sell(qty);
+        sell(qty, target);
       },
       log: (msg) => {
         if (programTokenRef.current !== token) return;
@@ -802,9 +816,85 @@ export default function StockMarketGame() {
                 <li>Define <code>async function run(state, api, utils)</code> and click <strong>Start Program</strong>.</li>
                 <li>You control the loop (e.g., <code>while(true)</code> + <code>await api.sleep(ms)</code>).</li>
                 <li><code>state</code>: <code>{`{ price, cash, position, avgCost, tick, history, stocks[] }`}</code></li>
-                <li><code>api</code>: <code>buy(qty)</code>, <code>sell(qty)</code>, <code>log(message)</code>, <code>sleep(ms)</code></li>
+                <li><code>api</code>: <code>buy(qty, target)</code>, <code>sell(qty, target)</code>, <code>log(message)</code>, <code>sleep(ms)</code> — target is required (index or symbol).</li>
                 <li><code>utils</code>: <code>trend</code> (short-term delta), <code>volatility</code> (0–1 scale)</li>
               </ul>
+            </div>
+            <div style={docCard}>
+              <div style={docPill}>Patterns</div>
+              <h4 style={docTitle}>Data & structure tips</h4>
+              <ul style={docList}>
+                <li>You can use full JavaScript: objects, arrays, Maps/Sets, and classes.</li>
+                <li>Maintain bot memory with module-level variables or closures inside <code>run</code>.</li>
+                <li>Example: keep per-symbol positions in a <code>Map</code> or class and consult <code>state.stocks</code>.</li>
+                <li><code>buy</code>/<code>sell</code> target a stock by index or symbol (required): <code>api.buy(1, 0)</code> or <code>api.buy(1, "ALPHA")</code>.</li>
+                <li>Track moving averages: push to an array, slice the last N, compute your metric.</li>
+                <li>Use classes to organize strategy: e.g., <code>class Trader {'{'} step(state) {'{'} ... {'}'} {'}'}</code> instantiated once.</li>
+              </ul>
+              <pre className="doc-code" style={docPre}>{`const memory = new Map();
+class Trader {
+  step(state, api) {
+    const stats = memory.get(state.symbol) || { seen: 0 };
+    stats.seen += 1;
+    memory.set(state.symbol, stats);
+    if (state.price < (state.history.at(-1) || state.price)) api.buy(1);
+  }
+}
+const trader = new Trader();
+async function run(state, api) {
+  while (true) {
+    trader.step(state, api);
+    await api.sleep(900);
+  }
+}`}</pre>
+            </div>
+            <div style={docCard}>
+              <div style={docPill}>Examples</div>
+              <h4 style={docTitle}>Quick recipes</h4>
+              <pre className="doc-code" style={docPre}>{`// Switch stocks by index
+async function run(state, api) {
+  let idx = 0;
+  while (true) {
+    const target = state.stocks[idx % state.stocks.length];
+    if (target.price < target.history.at(-1)) api.buy(1, idx);
+    idx++;
+    await api.sleep(800);
+  }
+}`}</pre>
+              <pre className="doc-code" style={docPre}>{`// Momentum on selected stock
+async function run(state, api, utils) {
+  while (true) {
+    if (utils.trend > 0 && state.cash > state.price) api.buy(1);
+    if (utils.trend < 0 && state.position > 0) api.sell(1);
+    await api.sleep(900);
+  }
+}`}</pre>
+              <pre className="doc-code" style={docPre}>{`// Hash map of caps and size adjustments
+const caps = new Map();
+caps.set("ALPHA", 5); caps.set("BETA", 2);
+async function run(state, api) {
+  const limit = caps.get(state.symbol) || 1;
+  while (true) {
+    if (state.position < limit && state.cash > state.price) api.buy(1, state.symbol);
+    if (state.position > limit) api.sell(state.position - limit, state.symbol);
+    await api.sleep(1000);
+  }
+}`}</pre>
+              <pre className="doc-code" style={docPre}>{`// Class-based risk manager
+class Risk {
+  constructor(maxDraw = 0.05) { this.maxDraw = maxDraw; }
+  shouldSell(state) {
+    const peak = Math.max(...state.history.slice(-30));
+    return state.price < peak * (1 - this.maxDraw) && state.position > 0;
+  }
+}
+const risk = new Risk(0.03);
+async function run(state, api) {
+  while (true) {
+    if (risk.shouldSell(state)) api.sell(state.position);
+    await api.sleep(1200);
+  }
+}`}</pre>
             </div>
             <div style={docCard}>
               <div style={docPill}>Notes</div>
@@ -836,6 +926,15 @@ export default function StockMarketGame() {
         .events-box { max-width: 100%; }
         .automation-actions { width: 100%; }
         .automation-actions .action-btn { flex: 1 1 0; min-width: 140px; }
+        .doc-code {
+          background: #0b1220;
+          color: #e2e8f0;
+          padding: 0.75rem;
+          border-radius: 10px;
+          border: 1px solid rgba(255,255,255,0.12);
+          box-shadow: inset 0 1px 0 rgba(255,255,255,0.06);
+          overflow-x: auto;
+        }
         @media (max-width: 900px) {
           .doc-grid { grid-template-columns: 1fr; gap: 0.85rem; }
         }
@@ -944,4 +1043,5 @@ const docPre = {
   boxShadow: "inset 0 1px 0 rgba(15,23,42,0.04)",
   whiteSpace: "pre-wrap",
   wordWrap: "break-word",
+  fontFamily: "SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace",
 };
