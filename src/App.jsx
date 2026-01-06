@@ -26,6 +26,7 @@ import BengaliTutor from './BengaliTutor.jsx';
 import CodingProblems from './CodingProblems.jsx';
 import SystemDesignPrep from './SystemDesignPrep.jsx';
 import IframeDrawer from './IframeDrawer.jsx';
+import StockMarketGame from './StockMarketGame.jsx';
 
 function AppContent() {
   const [isFullWidth, setIsFullWidth] = useState(true);
@@ -126,6 +127,7 @@ function AppContent() {
                 <NavLink to="/bengali" role="menuitem" onClick={() => setIsMenuOpen(false)}>Bengali Tutor</NavLink>
                 <NavLink to="/coding" role="menuitem" onClick={() => setIsMenuOpen(false)}>Coding Problems</NavLink>
                 <NavLink to="/system-design" role="menuitem" onClick={() => setIsMenuOpen(false)}>System Design Prep</NavLink>
+                <NavLink to="/market-sim" role="menuitem" onClick={() => setIsMenuOpen(false)}>Stock Market Game</NavLink>
                 <NavLink to="/apiCheck" role="menuitem" onClick={() => setIsMenuOpen(false)}>Settings</NavLink>
               </div>
             )}
@@ -367,6 +369,7 @@ function AppContent() {
             <Route path="/bengali" element={<BengaliTutor />} />
             <Route path="/coding" element={<CodingProblems />} />
             <Route path="/system-design" element={<SystemDesignPrep />} />
+            <Route path="/market-sim" element={<StockMarketGame />} />
           </Routes>
         </div>
 

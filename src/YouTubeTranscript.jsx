@@ -1579,9 +1579,7 @@ export default function YouTubeTranscript() {
                     <div className="scrollable-card">
                         {splitTranscript.map((chunk, i) => (
                             <div key={i} className="chunk">
-                                <textarea readOnly className="textarea">
-                                    {chunk}
-                                </textarea>
+                                <textarea readOnly className="textarea" value={chunk} onChange={() => {}} />
                             </div>
                         ))}
                     </div>
@@ -1647,9 +1645,7 @@ export default function YouTubeTranscript() {
                                             </button>
                                         )}
                                     </div>
-                                    <textarea readOnly className="textarea">
-                                        {pt.transcript}
-                                    </textarea>
+                                    <textarea readOnly className="textarea" value={pt.transcript} onChange={() => {}} />
                                     <div className="button-group">
                                         <button
                                             className="btn secondary-btn"
