@@ -17,6 +17,24 @@ const BASE_STOCKS = [
   { symbol: "KAPPA", name: "Kappa AI" },
 ];
 
+const HISTORY_LENGTH = 60;
+
+const buildInitialStockList = () =>
+  BASE_STOCKS.map((s) => {
+    const start = Math.round(80 + Math.random() * 120); // randomize roughly 80-200
+    return {
+      ...s,
+      price: start,
+      history: Array.from({ length: HISTORY_LENGTH }, () => start),
+      portfolio: { cash: 10000, position: 0, avgCost: 0 },
+      drift: (Math.random() - 0.2) * 0.25 + 0.1, // percent bias per tick
+      volatility: 1.5 + Math.random() * 3.5, // stronger noise to show movement
+      wavePhase: Math.random() * 50,
+      waveStrength: 0.4 + Math.random() * 1.6,
+      cycleSpeed: 6 + Math.random() * 10,
+    };
+  });
+
 const defaultScript = `async function run(state, api, utils) {
   let toggle = false;
   while (true) {
@@ -28,7 +46,8 @@ const defaultScript = `async function run(state, api, utils) {
 }`;
 
 function formatMoney(v) {
-  return `$${v.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+  const num = Number.isFinite(v) ? v : 0;
+  return `$${num.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
 }
 
 function clampPrice(p) {
@@ -43,15 +62,9 @@ export default function StockMarketGame() {
   const [activeTab, setActiveTab] = useState("market");
   const programTokenRef = useRef(0);
   const firstLineRef = useRef(0);
+  const docContentRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
-  const [stockList, setStockList] = useState(() =>
-    BASE_STOCKS.map((s) => ({
-      ...s,
-      price: 100,
-      history: Array.from({ length: 120 }, () => 100),
-      portfolio: { cash: 10000, position: 0, avgCost: 0 },
-    }))
-  );
+  const [stockList, setStockList] = useState(() => buildInitialStockList());
   const [tick, setTick] = useState(0);
   const [log, setLog] = useState([{ text: "Welcome to the market arena. Write a bot or trade manually.", ts: Date.now() }]);
   const [running, setRunning] = useState(true);
@@ -82,12 +95,17 @@ export default function StockMarketGame() {
       .join("");
 
   const activeStock = useMemo(
-    () =>
-      stockList[activeIndex] || {
+    () => {
+      const fallback = {
+        symbol: "",
         price: 0,
         history: [],
         portfolio: { cash: 0, position: 0, avgCost: 0 },
-      },
+      };
+      const found = stockList[activeIndex] || fallback;
+      if (!Number.isFinite(found.price)) return { ...found, price: 0 };
+      return found;
+    },
     [stockList, activeIndex]
   );
 
@@ -245,7 +263,7 @@ export default function StockMarketGame() {
   };
 
   const buildUtils = (snapshot) => {
-    const recent = snapshot.history ?? [];
+        const recent = snapshot.history ?? [];
     return {
       trend: recent.length > 5 ? recent[recent.length - 1] - recent[recent.length - 5] : 0,
       volatility: Math.min(
@@ -346,6 +364,20 @@ export default function StockMarketGame() {
     setTickPulse((v) => v + 1);
   };
 
+  const copyDocs = async () => {
+    const text = docContentRef.current?.innerText || "";
+    if (!text.trim()) {
+      appendLog("Docs are empty to copy.");
+      return;
+    }
+    try {
+      await navigator.clipboard.writeText(text);
+      appendLog("Docs copied to clipboard.");
+    } catch (err) {
+      appendLog("Could not copy docs.");
+    }
+  };
+
   useEffect(() => {
     setCurrentLine(null);
   }, [userCode]);
@@ -379,14 +411,18 @@ export default function StockMarketGame() {
         const nextTick = t + 1;
         setStockList((prev) =>
           prev.map((item, idx) => {
-            const wave = Math.sin((nextTick + idx) / 14) * 0.6;
-            const noise = (Math.random() - 0.5) * 2.1;
-            const drift = 0.15;
-            const nextPrice = clampPrice(item.price * (1 + (wave + noise + drift) / 100));
+            const basePrice = Number.isFinite(item.price) ? item.price : 100;
+            const wave = Math.sin((nextTick + item.wavePhase) / item.cycleSpeed) * item.waveStrength;
+            const noise = (Math.random() - 0.5) * item.volatility;
+            const drift = item.drift;
+            let nextPrice = clampPrice(basePrice * (1 + (wave + noise + drift) / 100));
+            if (Math.abs(nextPrice - basePrice) < 0.02) {
+              nextPrice = clampPrice(basePrice * (1 + ((Math.random() - 0.5) * 0.6) / 100));
+            }
             return {
               ...item,
               price: nextPrice,
-              history: [...item.history.slice(-119), nextPrice],
+              history: [...item.history.slice(-(HISTORY_LENGTH - 1)), nextPrice],
             };
           })
         );
@@ -556,16 +592,7 @@ export default function StockMarketGame() {
               </button>
               <button
                 onClick={() => {
-                  setStocks(
-                    STOCKS.reduce((acc, s) => {
-                      acc[s.symbol] = {
-                        price: 100,
-                        history: Array.from({ length: 120 }, () => 100),
-                        portfolio: { cash: 10000, position: 0, avgCost: 0 },
-                      };
-                      return acc;
-                    }, {})
-                  );
+                  setStockList(buildInitialStockList());
                   setTick(0);
                   setLog([{ text: "Reset market. Fresh start!", ts: Date.now() }]);
                   appendLog("Reset complete.");
@@ -599,8 +626,29 @@ export default function StockMarketGame() {
             />
             <small style={{ opacity: 0.85, fontWeight: 700, color: "#e2e8f0" }}>Execution pulses: {programSteps}</small>
           </div>
-          <div style={{ marginTop: "1rem" }} ref={canvasWrapRef}>
-            <canvas ref={canvasRef} />
+          <div style={{ marginTop: "1rem" }}>
+            <div style={{ overflowX: "auto" }}>
+              <table style={{ width: "100%", borderCollapse: "collapse", color: "#e2e8f0" }}>
+                <thead>
+                  <tr style={{ background: "rgba(255,255,255,0.04)" }}>
+                    <th style={{ textAlign: "left", padding: "8px", borderBottom: "1px solid rgba(255,255,255,0.08)" }}>Symbol</th>
+                    <th style={{ textAlign: "left", padding: "8px", borderBottom: "1px solid rgba(255,255,255,0.08)" }}>Name</th>
+                    <th style={{ textAlign: "right", padding: "8px", borderBottom: "1px solid rgba(255,255,255,0.08)" }}>Price</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {stockList.map((s, idx) => (
+                    <tr key={s.symbol} style={{ background: idx === activeIndex ? "rgba(34,197,94,0.08)" : "transparent" }}>
+                      <td style={{ padding: "8px", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>{s.symbol}</td>
+                      <td style={{ padding: "8px", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>{s.name}</td>
+                      <td style={{ padding: "8px", textAlign: "right", borderBottom: "1px solid rgba(255,255,255,0.05)", fontWeight: 700 }}>
+                        {formatMoney(s.price)}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
 
           <div
@@ -777,6 +825,7 @@ export default function StockMarketGame() {
       {activeTab === "docs" && (
         <div
           className="doc-wrapper"
+          ref={docContentRef}
           style={{
             background: "linear-gradient(135deg, #0b1220, #0f172a)",
             color: "#e2e8f0",
@@ -791,7 +840,15 @@ export default function StockMarketGame() {
         >
           <div className="doc-header" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: "0.5rem", flexWrap: "wrap" }}>
             <h2 style={{ margin: 0 }}>Stock Market Game Docs</h2>
-            <span style={{ color: "#cbd5e1", fontWeight: 700, fontSize: "0.95rem" }}>Built for small screens</span>
+            <div style={{ display: "flex", gap: "0.5rem", alignItems: "center", flexWrap: "wrap" }}>
+              <span style={{ color: "#cbd5e1", fontWeight: 700, fontSize: "0.95rem" }}>Built for small screens</span>
+              <button
+                style={{ ...pillBtnStyle, borderColor: "#22c55e", color: "#22c55e", background: "transparent" }}
+                onClick={copyDocs}
+              >
+                Copy Docs
+              </button>
+            </div>
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: "0.85rem" }}>
             <div style={docCard}>
