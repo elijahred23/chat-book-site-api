@@ -6,25 +6,20 @@ A lightweight stock-market simulator with an HTML canvas price board and a progr
 - Menu → **Stock Market Game** (`/market-sim`)
 
 ## Playing the game
+- Pick one of 10 stocks from the selector; each has its own price history and portfolio.
 - Price updates about once per second with gentle drift and noise.
-- Manual actions: Buy/Sell quick buttons (5 or 20 shares), Pause/Resume, Reset.
-- Dashboard shows cash, position, average cost, unrealized P&L, and total equity.
+- Manual actions: Pause/Resume the market, Reset (resets all stocks and portfolios).
+- Dashboard shows cash, position, average cost, unrealized P&L, and total equity for the selected stock.
 
 ## Writing a bot
-1. In the Automation panel, edit the code and click **Run Code**.
-2. Define `run(state, api, utils)`; it is called every tick.
+1. In the Automation panel, edit the code and click **Start Program**.
+2. Define `run(state, api, utils)`; you control the loop and pacing.
 3. Use the provided helpers:
-   - `state`: `{ price, cash, position, avgCost, tick, history }`
-   - `api`: `buy(qty)`, `sell(qty)`, `log(message)`
+   - `state`: `{ price, cash, position, avgCost, tick, history, stocks[] }` (the active stock and an array of all stocks)
+   - `api`: `buy(qty)`, `sell(qty)`, `log(message)`, `sleep(ms)`
    - `utils`: `trend` (short-term delta), `volatility` (`0-1` scale)
-4. Example starter:
-   ```js
-   function run(state, api, utils) {
-     const recentAvg = state.history.slice(-20).reduce((s, p) => s + p, 0) / Math.max(1, state.history.slice(-20).length);
-     if (state.price < recentAvg * 0.99 && state.cash > state.price * 3) api.buy(3);
-     if (state.price > recentAvg * 1.01 && state.position > 0) api.sell(Math.min(3, state.position));
-   }
-   ```
+4. Control flow: use `while` + `await api.sleep(ms)` to tick and act.
+5. Multi-stock access: use `state.stocks[index]` to inspect other symbols (price, cash, position, avgCost, history). Trades apply to the currently selected stock in the UI.
 
 ## Notes
 - Bots run inside `new Function` with a minimal API (not a full sandbox); keep code lightweight.

@@ -4,6 +4,19 @@ import Prism from "prismjs";
 import "prismjs/components/prism-javascript";
 import "prismjs/themes/prism.css";
 
+const BASE_STOCKS = [
+  { symbol: "ALPHA", name: "Alpha Labs" },
+  { symbol: "BETA", name: "Beta Motors" },
+  { symbol: "GAMMA", name: "Gamma Health" },
+  { symbol: "DELTA", name: "Delta Energy" },
+  { symbol: "EPS", name: "Epsilon Tech" },
+  { symbol: "ZETA", name: "Zeta Cloud" },
+  { symbol: "ETA", name: "Eta Retail" },
+  { symbol: "THETA", name: "Theta Media" },
+  { symbol: "IOTA", name: "Iota Finance" },
+  { symbol: "KAPPA", name: "Kappa AI" },
+];
+
 const defaultScript = `async function run(state, api, utils) {
   let toggle = false;
   while (true) {
@@ -30,10 +43,16 @@ export default function StockMarketGame() {
   const [activeTab, setActiveTab] = useState("market");
   const programTokenRef = useRef(0);
   const firstLineRef = useRef(0);
-  const [price, setPrice] = useState(100);
-  const [history, setHistory] = useState(() => Array.from({ length: 120 }, () => 100));
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [stockList, setStockList] = useState(() =>
+    BASE_STOCKS.map((s) => ({
+      ...s,
+      price: 100,
+      history: Array.from({ length: 120 }, () => 100),
+      portfolio: { cash: 10000, position: 0, avgCost: 0 },
+    }))
+  );
   const [tick, setTick] = useState(0);
-  const [portfolio, setPortfolio] = useState({ cash: 10000, position: 0, avgCost: 0 });
   const [log, setLog] = useState([{ text: "Welcome to the market arena. Write a bot or trade manually.", ts: Date.now() }]);
   const [running, setRunning] = useState(true);
   const [userCode, setUserCode] = useState(defaultScript);
@@ -50,6 +69,7 @@ export default function StockMarketGame() {
       // ignore
     }
   }, []);
+
   const highlightCode = (code) =>
     Prism.highlight(code, Prism.languages.javascript, "javascript")
       .split("\n")
@@ -61,12 +81,22 @@ export default function StockMarketGame() {
       )
       .join("");
 
-  const unrealized = useMemo(() => {
-    const pnl = (price - portfolio.avgCost) * portfolio.position;
-    return isFinite(pnl) ? pnl : 0;
-  }, [price, portfolio]);
+  const activeStock = useMemo(
+    () =>
+      stockList[activeIndex] || {
+        price: 0,
+        history: [],
+        portfolio: { cash: 0, position: 0, avgCost: 0 },
+      },
+    [stockList, activeIndex]
+  );
 
-  const totalEquity = useMemo(() => portfolio.cash + portfolio.position * price, [portfolio, price]);
+  const unrealized = useMemo(() => {
+    const pnl = (activeStock.price - activeStock.portfolio.avgCost) * activeStock.portfolio.position;
+    return isFinite(pnl) ? pnl : 0;
+  }, [activeStock]);
+
+  const totalEquity = useMemo(() => activeStock.portfolio.cash + activeStock.portfolio.position * activeStock.price, [activeStock]);
 
   const appendLog = (text) => {
     setLog((prev) => {
@@ -79,31 +109,53 @@ export default function StockMarketGame() {
   const trade = (type, qty) => {
     const q = Math.max(0, Math.floor(qty));
     if (!q) return;
-    setPortfolio((prev) => {
-      const nowPrice = stateRef.current?.price ?? price;
+    setStockList((prev) => {
+      const current = prev[activeIndex];
+      if (!current) return prev;
+      const nowPrice = stateRef.current?.price ?? current.price;
       if (type === "buy") {
         const cost = nowPrice * q;
-        if (cost > prev.cash) {
+        if (cost > current.portfolio.cash) {
           appendLog(`Not enough cash to buy ${q}`);
           return prev;
         }
-        const newPosition = prev.position + q;
+        const newPosition = current.portfolio.position + q;
         const newAvg =
-          newPosition === 0 ? 0 : (prev.avgCost * prev.position + cost) / newPosition;
-        appendLog(`Bought ${q} @ ${formatMoney(nowPrice)}`);
-        return { cash: prev.cash - cost, position: newPosition, avgCost: newAvg };
+          newPosition === 0
+            ? 0
+            : (current.portfolio.avgCost * current.portfolio.position + cost) / newPosition;
+        appendLog(`Bought ${q} ${current.symbol} @ ${formatMoney(nowPrice)}`);
+        const updated = [...prev];
+        updated[activeIndex] = {
+          ...current,
+          portfolio: {
+            cash: current.portfolio.cash - cost,
+            position: newPosition,
+            avgCost: newAvg,
+          },
+        };
+        return updated;
       }
       if (type === "sell") {
-        const sellQty = Math.min(q, prev.position);
+        const sellQty = Math.min(q, current.portfolio.position);
         if (sellQty <= 0) {
           appendLog("Nothing to sell");
           return prev;
         }
         const revenue = nowPrice * sellQty;
-        const remaining = prev.position - sellQty;
-        const newAvg = remaining === 0 ? 0 : prev.avgCost;
-        appendLog(`Sold ${sellQty} @ ${formatMoney(nowPrice)}`);
-        return { cash: prev.cash + revenue, position: remaining, avgCost: newAvg };
+        const remaining = current.portfolio.position - sellQty;
+        const newAvg = remaining === 0 ? 0 : current.portfolio.avgCost;
+        appendLog(`Sold ${sellQty} ${current.symbol} @ ${formatMoney(nowPrice)}`);
+        const updated = [...prev];
+        updated[activeIndex] = {
+          ...current,
+          portfolio: {
+            cash: current.portfolio.cash + revenue,
+            position: remaining,
+            avgCost: newAvg,
+          },
+        };
+        return updated;
       }
       return prev;
     });
@@ -286,22 +338,44 @@ export default function StockMarketGame() {
 
 
   useEffect(() => {
-    stateRef.current = { price, history, tick, ...portfolio };
-  }, [price, history, tick, portfolio]);
+    stateRef.current = {
+      price: activeStock.price,
+      history: activeStock.history,
+      tick,
+      cash: activeStock.portfolio.cash,
+      position: activeStock.portfolio.position,
+      avgCost: activeStock.portfolio.avgCost,
+      symbol: activeStock.symbol,
+      stocks: stockList.map((s) => ({
+        symbol: s.symbol,
+        name: s.name,
+        price: s.price,
+        cash: s.portfolio.cash,
+        position: s.portfolio.position,
+        avgCost: s.portfolio.avgCost,
+        history: s.history,
+      })),
+    };
+  }, [activeStock, tick, stockList]);
 
   useEffect(() => {
     if (!running) return undefined;
     const id = setInterval(() => {
       setTick((t) => {
         const nextTick = t + 1;
-        setPrice((prev) => {
-          const wave = Math.sin(nextTick / 14) * 0.6;
-          const noise = (Math.random() - 0.5) * 2.1;
-          const drift = 0.15;
-          const next = clampPrice(prev * (1 + (wave + noise + drift) / 100));
-          setHistory((h) => [...h.slice(-119), next]);
-          return next;
-        });
+        setStockList((prev) =>
+          prev.map((item, idx) => {
+            const wave = Math.sin((nextTick + idx) / 14) * 0.6;
+            const noise = (Math.random() - 0.5) * 2.1;
+            const drift = 0.15;
+            const nextPrice = clampPrice(item.price * (1 + (wave + noise + drift) / 100));
+            return {
+              ...item,
+              price: nextPrice,
+              history: [...item.history.slice(-119), nextPrice],
+            };
+          })
+        );
         return nextTick;
       });
     }, 950);
@@ -335,9 +409,9 @@ export default function StockMarketGame() {
     ctx.fillStyle = gradient;
     ctx.fillRect(0, 0, width, height);
 
-    const series = history.slice(-120);
-    const min = Math.min(...series, price) * 0.98;
-    const max = Math.max(...series, price) * 1.02;
+    const series = activeStock.history.slice(-120);
+    const min = Math.min(...series, activeStock.price || 0) * 0.98;
+    const max = Math.max(...series, activeStock.price || 0) * 1.02;
     const scaleY = (val) => height - ((val - min) / (max - min || 1)) * (height - 30) - 15;
 
     ctx.strokeStyle = "rgba(255,255,255,0.12)";
@@ -385,13 +459,13 @@ export default function StockMarketGame() {
 
     ctx.fillStyle = "#e2e8f0";
     ctx.font = "12px 'Inter', system-ui, -apple-system, sans-serif";
-    ctx.fillText(`Price: ${formatMoney(price)}`, 14, 20);
+    ctx.fillText(`Price: ${formatMoney(activeStock.price)}`, 14, 20);
     ctx.fillText(`Tick: ${tick}`, 14, 36);
-  }, [history, price, tick]);
+  }, [activeStock, tick]);
 
   return (
-    <div style={{ maxWidth: 1200, margin: "0 auto", padding: "1rem", color: "#0f172a" }}>
-      <div className="responsive-stack" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "0.75rem", flexWrap: "wrap", gap: "0.5rem" }}>
+    <div className="stock-game-root" style={{ maxWidth: 1200, margin: "0 auto", padding: "1rem", color: "#0f172a" }}>
+        <div className="responsive-stack" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "0.75rem", flexWrap: "wrap", gap: "0.5rem" }}>
         <div style={{ display: "inline-flex", background: "#0b1220", padding: "6px", borderRadius: "12px", boxShadow: "0 16px 36px rgba(15,23,42,0.25)" }}>
           {["market", "automation", "docs"].map((tab) => (
             <button
@@ -416,20 +490,6 @@ export default function StockMarketGame() {
           ))}
         </div>
         <div style={{ display: "flex", gap: "0.5rem", alignItems: "center", flexWrap: "wrap" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: "6px", background: "#0b1220", color: "#e2e8f0", padding: "8px 10px", borderRadius: "10px", border: "1px solid rgba(255,255,255,0.12)" }}>
-            <span
-              key={tickPulse}
-              style={{
-                width: "10px",
-                height: "10px",
-                borderRadius: "999px",
-                background: "#22c55e",
-                animation: "tickPulse 0.9s ease",
-                boxShadow: "0 0 0 rgba(34,197,94,0.4)",
-              }}
-            />
-            <small style={{ opacity: 0.85, fontWeight: 700 }}>Execution pulses: {programSteps}</small>
-          </div>
         </div>
       </div>
 
@@ -443,14 +503,29 @@ export default function StockMarketGame() {
             border: "1px solid rgba(255,255,255,0.08)",
           }}
         >
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-            <div>
-              <div style={{ fontSize: "0.85rem", color: "#94a3b8" }}>Synthetic Market</div>
-              <div style={{ fontSize: "1.6rem", color: "#e2e8f0", fontWeight: 800 }}>
-                {formatMoney(price)}
-              </div>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: "0.5rem", flexWrap: "wrap" }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: "0.35rem" }}>
+              <label style={{ color: "#94a3b8", fontSize: "0.85rem" }}>Select stock</label>
+              <select
+                value={activeIndex}
+                onChange={(e) => setActiveIndex(Number(e.target.value))}
+                style={{
+                  background: "#0f172a",
+                  color: "#e2e8f0",
+                  border: "1px solid rgba(255,255,255,0.15)",
+                  borderRadius: "10px",
+                  padding: "10px",
+                  minWidth: "200px",
+                  fontWeight: 700,
+                }}
+              >
+                {stockList.map((s, idx) => (
+                  <option key={s.symbol} value={idx}>{s.symbol} — {s.name}</option>
+                ))}
+              </select>
+              <div style={{ fontSize: "0.85rem", color: "#94a3b8" }}>Price: {formatMoney(activeStock.price)}</div>
             </div>
-            <div style={{ display: "flex", gap: "0.5rem" }}>
+            <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
               <button
                 onClick={() => setRunning((r) => !r)}
                 style={{
@@ -467,9 +542,16 @@ export default function StockMarketGame() {
               </button>
               <button
                 onClick={() => {
-                  setPrice(100);
-                  setHistory(Array.from({ length: 120 }, () => 100));
-                  setPortfolio({ cash: 10000, position: 0, avgCost: 0 });
+                  setStocks(
+                    STOCKS.reduce((acc, s) => {
+                      acc[s.symbol] = {
+                        price: 100,
+                        history: Array.from({ length: 120 }, () => 100),
+                        portfolio: { cash: 10000, position: 0, avgCost: 0 },
+                      };
+                      return acc;
+                    }, {})
+                  );
                   setTick(0);
                   setLog([{ text: "Reset market. Fresh start!", ts: Date.now() }]);
                   appendLog("Reset complete.");
@@ -488,7 +570,21 @@ export default function StockMarketGame() {
               </button>
             </div>
           </div>
-
+          <div style={{ display: "flex", alignItems: "center", gap: "8px", marginTop: "0.6rem" }}>
+            <span
+              className="pulse-dot"
+              key={tickPulse}
+              style={{
+                width: "12px",
+                height: "12px",
+                borderRadius: "999px",
+                background: "#22c55e",
+                animation: "tickPulse 0.9s ease",
+                boxShadow: "0 0 0 rgba(34,197,94,0.4)",
+              }}
+            />
+            <small style={{ opacity: 0.85, fontWeight: 700, color: "#e2e8f0" }}>Execution pulses: {programSteps}</small>
+          </div>
           <div style={{ marginTop: "1rem" }} ref={canvasWrapRef}>
             <canvas ref={canvasRef} />
           </div>
@@ -504,15 +600,15 @@ export default function StockMarketGame() {
           >
             <div style={statCardStyle}>
               <p style={statLabel}>Cash</p>
-              <p style={statValue}>{formatMoney(portfolio.cash)}</p>
+              <p style={statValue}>{formatMoney(activeStock.portfolio.cash)}</p>
             </div>
             <div style={statCardStyle}>
               <p style={statLabel}>Position</p>
-              <p style={statValue}>{portfolio.position} shares</p>
+              <p style={statValue}>{activeStock.portfolio.position} shares</p>
             </div>
             <div style={statCardStyle}>
               <p style={statLabel}>Avg Cost</p>
-              <p style={statValue}>{portfolio.position ? formatMoney(portfolio.avgCost) : "—"}</p>
+              <p style={statValue}>{activeStock.portfolio.position ? formatMoney(activeStock.portfolio.avgCost) : "—"}</p>
             </div>
             <div style={statCardStyle}>
               <p style={statLabel}>Unrealized P&L</p>
@@ -537,22 +633,25 @@ export default function StockMarketGame() {
             padding: "1rem",
             boxShadow: "0 12px 30px rgba(15,23,42,0.12)",
             border: "1px solid #e2e8f0",
+            maxWidth: "100%",
+            overflow: "hidden",
           }}
         >
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: "0.5rem", flexWrap: "wrap" }}>
             <h2 style={{ margin: 0 }}>Automation Sandbox</h2>
-            <div style={{ display: "flex", gap: "0.5rem" }}>
-              <button style={pillBtnStyle} onClick={startProgram}>
+            <div className="automation-actions" style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
+              <button style={pillBtnStyle} className="action-btn" onClick={startProgram}>
                 Start Program
               </button>
-              <button style={pillBtnStyle} onClick={stopProgram}>
+              <button style={pillBtnStyle} className="action-btn" onClick={stopProgram}>
                 Stop Program
               </button>
-              <button style={pillBtnStyle} onClick={compileAutomation}>
+              <button style={pillBtnStyle} className="action-btn" onClick={compileAutomation}>
                 Compile
               </button>
               <button
                 style={pillBtnStyle}
+                className="action-btn"
                 onClick={() => {
                   try {
                     localStorage.setItem("smg_user_code", userCode || "");
@@ -566,6 +665,7 @@ export default function StockMarketGame() {
               </button>
               <button
                 style={pillBtnStyle}
+                className="action-btn"
                 onClick={() => {
                   setUserCode(defaultScript);
                   compileAutomation();
@@ -596,11 +696,14 @@ export default function StockMarketGame() {
             </div>
           )}
           <div
+            className="code-editor-wrap"
             style={{
               border: "1px solid #e2e8f0",
               borderRadius: "12px",
-              overflow: "hidden",
+              overflowX: "auto",
+              overflowY: "hidden",
               boxShadow: "0 10px 24px rgba(15,23,42,0.08)",
+              maxWidth: "100%",
             }}
           >
             <Editor
@@ -619,14 +722,18 @@ export default function StockMarketGame() {
                 color: "#0f172a",
                 minHeight: "280px",
                 outline: "none",
+                minWidth: "320px",
+                width: "100%",
+                boxSizing: "border-box",
               }}
             />
           </div>
           <div style={{ marginTop: "1rem" }}>
             <h3 style={{ marginBottom: "0.35rem" }}>Recent Events</h3>
             <div
+              className="events-box"
               style={{
-                maxHeight: "180px",
+                maxHeight: "200px",
                 overflow: "auto",
                 border: "1px solid #e2e8f0",
                 borderRadius: "12px",
@@ -672,43 +779,41 @@ export default function StockMarketGame() {
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: "0.85rem" }}>
             <div style={docCard}>
-              <div style={docPill}>API</div>
-              <h4 style={docTitle}>Automation API</h4>
+              <div style={docPill}>Access</div>
+              <h4 style={docTitle}>How to get there</h4>
               <ul style={docList}>
-                <li><code>async function run(state, api, utils)</code> (click <strong>Start Program</strong>)</li>
-                <li>You control the loop (e.g., <code>while(true)</code> + <code>await api.sleep(ms)</code>)</li>
-                <li><code>state</code>: price, cash, position, avgCost, tick, history[]</li>
-                <li><code>api.buy(qty)</code>, <code>api.sell(qty)</code>, <code>api.log(msg)</code></li>
-                <li><code>utils.trend</code> (delta), <code>utils.volatility</code> (0–1)</li>
-              </ul>
-            </div>
-            <div style={docCard}>
-              <div style={docPill}>Starter</div>
-              <h4 style={docTitle}>How to write your bot</h4>
-              <ul style={docList}>
-                <li>Define <code>async function run(state, api, utils)</code>.</li>
-                <li>Use a loop you control (e.g., <code>while(true)</code>).</li>
-                <li>Call <code>await api.sleep(ms)</code> to pace ticks.</li>
-                <li>Use <code>api.buy(qty)</code> / <code>api.sell(qty)</code> for trades.</li>
-                <li>Log decisions with <code>api.log("message")</code>.</li>
+                <li>Menu → <strong>Stock Market Game</strong> (<code>/market-sim</code>)</li>
               </ul>
             </div>
             <div style={docCard}>
               <div style={docPill}>Play</div>
-              <h4 style={docTitle}>Gameplay</h4>
+              <h4 style={docTitle}>Playing the game</h4>
               <ul style={docList}>
-                <li>Canvas shows synthetic price with grid + area fill</li>
-                <li>Controls: Pause/Resume, Reset (trading is code-driven)</li>
-                <li>Stats: cash, position, avg cost, unrealized P&L, equity</li>
+                <li>Pick one of 10 stocks; each has its own price history and portfolio.</li>
+                <li>Price updates about once per second with gentle drift and noise.</li>
+                <li>Manual controls: Pause/Resume market, Reset (resets all stocks/portfolios).</li>
+                <li>Dashboard shows cash, position, avg cost, unrealized P&L, equity for the selected stock.</li>
               </ul>
             </div>
             <div style={docCard}>
-              <div style={docPill}>Tips</div>
-              <h4 style={docTitle}>Best Practices</h4>
+              <div style={docPill}>Bot</div>
+              <h4 style={docTitle}>Writing a bot</h4>
               <ul style={docList}>
-                <li>Keep bots light; code executes each step</li>
-                <li>Use <code>api.log</code> for decisions</li>
-                <li>Reset to clear portfolio and logs</li>
+                <li>Define <code>async function run(state, api, utils)</code> and click <strong>Start Program</strong>.</li>
+                <li>You control the loop (e.g., <code>while(true)</code> + <code>await api.sleep(ms)</code>).</li>
+                <li><code>state</code>: <code>{`{ price, cash, position, avgCost, tick, history, stocks[] }`}</code></li>
+                <li><code>api</code>: <code>buy(qty)</code>, <code>sell(qty)</code>, <code>log(message)</code>, <code>sleep(ms)</code></li>
+                <li><code>utils</code>: <code>trend</code> (short-term delta), <code>volatility</code> (0–1 scale)</li>
+              </ul>
+            </div>
+            <div style={docCard}>
+              <div style={docPill}>Notes</div>
+              <h4 style={docTitle}>Extra notes</h4>
+              <ul style={docList}>
+                <li>Bots run via <code>new Function</code> with a minimal API—keep code lightweight.</li>
+                <li>Logs show bot and system events for debugging.</li>
+                <li>Reset clears all portfolios, price history, and logs for quick iteration.</li>
+                <li>Inspect other stocks via <code>state.stocks[index]</code> (symbol, price, cash, position, avgCost, history).</li>
               </ul>
             </div>
           </div>
@@ -719,8 +824,18 @@ export default function StockMarketGame() {
         .code-line.active-line { background: #fce7f3; border-left: 3px solid #ec4899; }
         @keyframes linePulse { from { box-shadow: 0 0 0 0 rgba(236,72,153,0.35); } to { box-shadow: 0 0 0 16px rgba(236,72,153,0); } }
         @keyframes tickPulse { 0% { box-shadow: 0 0 0 0 rgba(34,197,94,0.45); transform: scale(1); } 60% { box-shadow: 0 0 0 12px rgba(34,197,94,0); transform: scale(1.08); } 100% { box-shadow: 0 0 0 0 rgba(34,197,94,0); transform: scale(1); } }
+        .stock-game-root { width: 100%; max-width: 1200px; margin: 0 auto; padding: 1rem; box-sizing: border-box; font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif; color: #0f172a; }
+        .stock-game-root * { box-sizing: border-box; }
+        .stock-game-root button,
+        .stock-game-root input,
+        .stock-game-root select,
+        .stock-game-root textarea { font-family: inherit; font-size: inherit; }
         .code-editor-textarea { outline: none; }
         .tab-toggle { width: 100%; }
+        .code-editor-wrap { max-width: 100%; }
+        .events-box { max-width: 100%; }
+        .automation-actions { width: 100%; }
+        .automation-actions .action-btn { flex: 1 1 0; min-width: 140px; }
         @media (max-width: 900px) {
           .doc-grid { grid-template-columns: 1fr; gap: 0.85rem; }
         }
@@ -743,6 +858,21 @@ export default function StockMarketGame() {
           .doc-header h2 { font-size: 1.1rem; }
           .doc-grid { gap: 0.75rem; }
           .doc-card { padding: 0.65rem; }
+          .automation-actions .action-btn {
+            flex: 1 1 100%;
+            width: 100%;
+            justify-content: center;
+            text-align: center;
+          }
+          .events-box {
+            max-height: 160px;
+            padding: 0.4rem;
+            font-size: 0.92rem;
+          }
+          .pulse-dot {
+            width: 10px !important;
+            height: 10px !important;
+          }
         }
       `}</style>
     </div>
