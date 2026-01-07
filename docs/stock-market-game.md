@@ -13,13 +13,13 @@ A lightweight stock-market simulator with an HTML canvas price board and a progr
 
 ## Writing a bot
 1. In the Automation panel, edit the code and click **Start Program**.
-2. Define `run(state, api, utils)`; you control the loop and pacing.
+2. Define `run(market, api, utils)`; you control the loop and pacing. The market view selection does **not** affect your bot; pick its target in the Automation panel (“Bot target”).
 3. Use the provided helpers:
-   - `state`: `{ price, cash, position, avgCost, tick, history, stocks[] }` (the active stock and an array of all stocks)
+   - `market`: `market.active()` (current stock snapshot), `market.stocks()` (all stocks), `market.pick(symbolOrIndex)` (one stock), plus quick getters `market.price`/`market.cash`/`market.position`.
    - `api`: `buy(qty, target)`, `sell(qty, target)`, `log(message)`, `sleep(ms)` (target is required: stock index or symbol)
    - `utils`: `trend` (short-term delta), `volatility` (`0-1` scale)
 4. Control flow: use `while` + `await api.sleep(ms)` to tick and act.
-5. Multi-stock access: use `state.stocks[index]` to inspect other symbols (price, cash, position, avgCost, history). Trades apply to the currently selected stock in the UI.
+5. Multi-stock access: use `market.stocks()[index]` to inspect other symbols (price, cash, position, avgCost, history). Trades apply to the currently selected stock in the UI.
 6. Targeted trades: you must pass a target to choose the stock programmatically:
    ```js
    api.buy(1, 0);        // buy 1 share of the stock at index 0
@@ -29,17 +29,17 @@ A lightweight stock-market simulator with an HTML canvas price board and a progr
    ```js
    const memory = new Map();
    class Trader {
-     step(state, api) {
-       const stats = memory.get(state.symbol) || { seen: 0 };
+     step(view, api) {
+       const stats = memory.get(view.symbol) || { seen: 0 };
        stats.seen += 1;
-       memory.set(state.symbol, stats);
-       if (state.price < (state.history.at(-1) || state.price)) api.buy(1);
+       memory.set(view.symbol, stats);
+       if (view.price < (view.history.at(-1) || view.price)) api.buy(1);
      }
    }
    const trader = new Trader();
-   async function run(state, api) {
+   async function run(market, api) {
      while (true) {
-       trader.step(state, api);
+       trader.step(market.active(), api);
        await api.sleep(900);
      }
    }
@@ -47,10 +47,11 @@ A lightweight stock-market simulator with an HTML canvas price board and a progr
 7. Sample recipes:
    ```js
    // Switch stocks by index
-   async function run(state, api) {
+   async function run(market, api) {
      let idx = 0;
      while (true) {
-       const target = state.stocks[idx % state.stocks.length];
+       const stocks = market.stocks();
+       const target = stocks[idx % stocks.length];
        if (target.price < target.history.at(-1)) api.buy(1, idx);
        idx++;
        await api.sleep(800);
@@ -59,10 +60,11 @@ A lightweight stock-market simulator with an HTML canvas price board and a progr
    ```
    ```js
    // Momentum on selected stock
-   async function run(state, api, utils) {
+   async function run(market, api, utils) {
      while (true) {
-       if (utils.trend > 0 && state.cash > state.price) api.buy(1); // active stock
-       if (utils.trend < 0 && state.position > 0) api.sell(1);
+       const view = market.active();
+       if (utils.trend > 0 && view.cash > view.price) api.buy(1); // active stock
+       if (utils.trend < 0 && view.position > 0) api.sell(1);
        await api.sleep(900);
      }
    }
@@ -71,11 +73,12 @@ A lightweight stock-market simulator with an HTML canvas price board and a progr
    // Hash map of caps and size adjustments
    const caps = new Map();
    caps.set("ALPHA", 5); caps.set("BETA", 2);
-   async function run(state, api) {
-     const limit = caps.get(state.symbol) || 1;
+   async function run(market, api) {
+     const limit = caps.get(market.active().symbol) || 1;
      while (true) {
-       if (state.position < limit && state.cash > state.price) api.buy(1, state.symbol);
-       if (state.position > limit) api.sell(state.position - limit, state.symbol);
+       const view = market.active();
+       if (view.position < limit && view.cash > view.price) api.buy(1, view.symbol);
+       if (view.position > limit) api.sell(view.position - limit, view.symbol);
        await api.sleep(1000);
      }
    }
@@ -84,19 +87,31 @@ A lightweight stock-market simulator with an HTML canvas price board and a progr
    // Class-based risk manager
    class Risk {
      constructor(maxDraw = 0.05) { this.maxDraw = maxDraw; }
-     shouldSell(state) {
-       const peak = Math.max(...state.history.slice(-30));
-       return state.price < peak * (1 - this.maxDraw) && state.position > 0;
+     shouldSell(view) {
+       const peak = Math.max(...view.history.slice(-30));
+       return view.price < peak * (1 - this.maxDraw) && view.position > 0;
      }
    }
    const risk = new Risk(0.03);
-   async function run(state, api) {
+   async function run(market, api) {
      while (true) {
-       if (risk.shouldSell(state)) api.sell(state.position);
+       const view = market.active();
+       if (risk.shouldSell(view)) api.sell(view.position);
        await api.sleep(1200);
      }
    }
    ```
+
+## Market API & utils reference
+- `market.active()` → copy of the bot target stock: `{ symbol, name, price, cash, position, avgCost, history[], tick, targetIndex }`.
+- `market.stocks()` → array of copies of all stocks with `{ symbol, name, price, cash, position, avgCost, history[] }`.
+- `market.pick(symbolOrIndex)` → one stock copy or `null` if not found.
+- Quick getters on `market`: `price`, `cash`, `position`, `avgCost`, `tick`, `history`, `symbol`, `name`, `targetIndex` mirror `market.active()`.
+- `api.buy(qty, target)` / `api.sell(qty, target)` → place trades on a stock by index or symbol (required target).
+- `api.log(message)` → append a bot log entry.
+- `api.sleep(ms)` → promise that resolves after at least 400ms; use in loops.
+- `utils.trend` → short-term price delta for the bot target (last vs 5 steps back).
+- `utils.volatility` → 0–1 scale of recent price noise for the bot target.
 
 ## Notes
 - Bots run inside `new Function` with a minimal API (not a full sandbox); keep code lightweight.

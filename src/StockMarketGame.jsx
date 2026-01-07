@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
+import { useFlyout } from "./context/FlyoutContext";
 import Editor from "react-simple-code-editor";
 import Prism from "prismjs";
 import "prismjs/components/prism-javascript";
@@ -35,22 +36,12 @@ const buildInitialStockList = () =>
     };
   });
 
-const defaultScript = `async function run(state, api, utils) {
-  let toggle = 0;
+const defaultScript = `async function run(market, api, utils) {
   while (true) {
-    const mod = toggle % 4;
-    if (mod === 0) {
-      api.buy(2, 0);
-    } else if (mod === 1) {
-      api.buy(2, 1);
-    } else if (mod === 2) {
-      api.sell(1, 1);
-    } else {
-      api.sell(1, 0);
-    }
-
-    toggle = (toggle % 100) + 1;
-    await api.sleep(1000);
+    const view = market.active();
+    if (utils.trend > 0 && view.cash > view.price) api.buy(1);
+    if (utils.trend < 0 && view.position > 0) api.sell(1);
+    await api.sleep(900);
   }
 }`;
 
@@ -68,6 +59,7 @@ export default function StockMarketGame() {
   const canvasWrapRef = useRef(null);
   const automationRef = useRef(null);
   const stateRef = useRef(null);
+  const { showMessage } = useFlyout();
   const [activeTab, setActiveTab] = useState("market");
   const programTokenRef = useRef(0);
   const firstLineRef = useRef(0);
@@ -83,6 +75,7 @@ export default function StockMarketGame() {
   const [linePulseId, setLinePulseId] = useState(0);
   const [programSteps, setProgramSteps] = useState(0);
   const [tickPulse, setTickPulse] = useState(0);
+  const [automationTargetIndex, setAutomationTargetIndex] = useState(0);
   useEffect(() => {
     try {
       const saved = localStorage.getItem("smg_user_code");
@@ -103,20 +96,30 @@ export default function StockMarketGame() {
       )
       .join("");
 
-  const activeStock = useMemo(
-    () => {
-      const fallback = {
-        symbol: "",
-        price: 0,
-        history: [],
-        portfolio: { cash: 0, position: 0, avgCost: 0 },
-      };
-      const found = stockList[activeIndex] || fallback;
-      if (!Number.isFinite(found.price)) return { ...found, price: 0 };
-      return found;
-    },
-    [stockList, activeIndex]
-  );
+  const activeStock = useMemo(() => {
+    const fallback = {
+      symbol: "",
+      price: 0,
+      history: [],
+      portfolio: { cash: 0, position: 0, avgCost: 0 },
+    };
+    const found = stockList[activeIndex] || fallback;
+    if (!Number.isFinite(found.price)) return { ...found, price: 0 };
+    return found;
+  }, [stockList, activeIndex]);
+
+  const automationStock = useMemo(() => {
+    const fallback = {
+      symbol: "",
+      price: 0,
+      history: [],
+      portfolio: { cash: 0, position: 0, avgCost: 0 },
+      name: "",
+    };
+    const found = stockList[automationTargetIndex] || fallback;
+    if (!Number.isFinite(found.price)) return { ...found, price: 0 };
+    return found;
+  }, [stockList, automationTargetIndex]);
 
   const unrealized = useMemo(() => {
     const pnl = (activeStock.price - activeStock.portfolio.avgCost) * activeStock.portfolio.position;
@@ -207,7 +210,7 @@ export default function StockMarketGame() {
 
   const instrumentCode = (code) => {
     const hasRun = /function\s+run\s*\(/.test(code) || /async\s+function\s+run\s*\(/.test(code);
-    const baseCode = hasRun ? code : `async function run(state, api, utils) {\n${code}\n}`;
+    const baseCode = hasRun ? code : `async function run(market, api, utils) {\n${code}\n}`;
     let codePrepared = baseCode;
     if (!/async\s+function\s+run\s*\(/.test(codePrepared)) {
       codePrepared = codePrepared.replace(/function\s+run\s*\(/, "async function run(");
@@ -242,7 +245,7 @@ export default function StockMarketGame() {
       return line;
     });
     if (!lines.some((l) => l.includes("function run"))) {
-      throw new Error("Define run(state, api, utils)");
+      throw new Error("Define run(market, api, utils)");
     }
     return { instrumented: instrumented.join("\n"), firstTrackedLine: firstTracked ?? 0 };
   };
@@ -252,12 +255,12 @@ export default function StockMarketGame() {
       const { instrumented, firstTrackedLine } = instrumentCode(userCode);
       firstLineRef.current = firstTrackedLine;
       const fn = new Function(
-        "state",
+        "market",
         "api",
         "utils",
         "__line",
         "__step",
-        `"use strict"; ${instrumented}; if (typeof run !== "function") { throw new Error("Define run(state, api, utils)"); } return run(state, api, utils, __line, __step);`
+        `"use strict"; ${instrumented}; if (typeof run !== "function") { throw new Error("Define run(market, api, utils)"); } return run(market, api, utils, __line, __step);`
       );
       automationRef.current = fn;
       setAutomationError("");
@@ -271,19 +274,26 @@ export default function StockMarketGame() {
     }
   };
 
-  const buildUtils = (snapshot) => {
-        const recent = snapshot.history ?? [];
+  const buildUtils = (fallbackSnapshot) => {
     return {
-      trend: recent.length > 5 ? recent[recent.length - 1] - recent[recent.length - 5] : 0,
-      volatility: Math.min(
-        1,
-        (recent.length > 10
-          ? recent
-              .slice(-10)
-              .map((p) => Math.abs(p - snapshot.price))
-              .reduce((s, d) => s + d, 0) / (10 * snapshot.price)
-          : 0)
-      ),
+      get trend() {
+        const recent = stateRef.current?.history ?? fallbackSnapshot.history ?? [];
+        const price = stateRef.current?.price ?? fallbackSnapshot.price ?? 1;
+        return recent.length > 5 ? recent[recent.length - 1] - recent[recent.length - 5] : 0;
+      },
+      get volatility() {
+        const recent = stateRef.current?.history ?? fallbackSnapshot.history ?? [];
+        const price = stateRef.current?.price ?? fallbackSnapshot.price ?? 1;
+        return Math.min(
+          1,
+          (recent.length > 10
+            ? recent
+                .slice(-10)
+                .map((p) => Math.abs(p - price))
+                .reduce((s, d) => s + d, 0) / (10 * price)
+            : 0)
+        );
+      },
     };
   };
 
@@ -300,7 +310,33 @@ export default function StockMarketGame() {
     setAutomationError("");
 
     const utils = buildUtils(snapshot);
-    const liveState = {
+    const cloneActive = (src) => ({
+      symbol: src.symbol,
+      name: src.name,
+      price: src.price,
+      cash: src.cash,
+      position: src.position,
+      avgCost: src.avgCost,
+      history: [...(src.history || [])],
+      tick: src.tick,
+    });
+    const cloneStock = (src) => ({
+      symbol: src.symbol,
+      name: src.name,
+      price: src.price,
+      cash: src.cash,
+      position: src.position,
+      avgCost: src.avgCost,
+      history: [...(src.history || [])],
+    });
+    const latestStocks = () => stateRef.current?.stocks ?? snapshot.stocks ?? [];
+    const pickTarget = (target) => {
+      const list = latestStocks();
+      if (typeof target === "number" && target >= 0 && target < list.length) return list[target];
+      if (typeof target === "string") return list.find((s) => s.symbol === target) || null;
+      return null;
+    };
+    const market = {
       get price() {
         return stateRef.current?.price ?? snapshot.price;
       },
@@ -318,6 +354,21 @@ export default function StockMarketGame() {
       },
       get history() {
         return stateRef.current?.history ?? snapshot.history;
+      },
+      get name() {
+        return stateRef.current?.name ?? snapshot.name;
+      },
+      get targetIndex() {
+        return stateRef.current?.targetIndex ?? snapshot.targetIndex ?? 0;
+      },
+      active: () => {
+        const live = stateRef.current ?? snapshot;
+        return cloneActive(live);
+      },
+      stocks: () => latestStocks().map(cloneStock),
+      pick: (target) => {
+        const found = pickTarget(target);
+        return found ? cloneStock(found) : null;
       },
     };
     const api = {
@@ -343,7 +394,7 @@ export default function StockMarketGame() {
 
     try {
       const res = automationRef.current(
-        liveState,
+        market,
         api,
         utils,
         () => {},
@@ -380,10 +431,24 @@ export default function StockMarketGame() {
       return;
     }
     try {
-      await navigator.clipboard.writeText(text);
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(text);
+      } else {
+        const helper = document.createElement("textarea");
+        helper.value = text;
+        helper.setAttribute("readonly", "");
+        helper.style.position = "absolute";
+        helper.style.left = "-9999px";
+        document.body.appendChild(helper);
+        helper.select();
+        document.execCommand("copy");
+        document.body.removeChild(helper);
+      }
       appendLog("Docs copied to clipboard.");
+      showMessage?.({ type: "success", message: "Docs copied to clipboard!" });
     } catch (err) {
       appendLog("Could not copy docs.");
+      showMessage?.({ type: "error", message: "Copy failed. Try copying manually." });
     }
   };
 
@@ -393,14 +458,16 @@ export default function StockMarketGame() {
 
 
   useEffect(() => {
+    const selected = automationStock;
     stateRef.current = {
-      price: activeStock.price,
-      history: activeStock.history,
+      price: selected.price,
+      history: selected.history,
       tick,
-      cash: activeStock.portfolio.cash,
-      position: activeStock.portfolio.position,
-      avgCost: activeStock.portfolio.avgCost,
-      symbol: activeStock.symbol,
+      cash: selected.portfolio.cash,
+      position: selected.portfolio.position,
+      avgCost: selected.portfolio.avgCost,
+      symbol: selected.symbol,
+      name: selected.name,
       stocks: stockList.map((s) => ({
         symbol: s.symbol,
         name: s.name,
@@ -410,8 +477,9 @@ export default function StockMarketGame() {
         avgCost: s.portfolio.avgCost,
         history: s.history,
       })),
+      targetIndex: automationTargetIndex,
     };
-  }, [activeStock, tick, stockList]);
+  }, [automationStock, tick, stockList, automationTargetIndex]);
 
   useEffect(() => {
     if (!running) return undefined;
@@ -763,13 +831,35 @@ export default function StockMarketGame() {
               >
                 Clear Code
               </button>
+              <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", flexWrap: "wrap" }}>
+                <label style={{ fontWeight: 700, color: "#0f172a" }}>Bot target</label>
+                <select
+                  value={automationTargetIndex}
+                  onChange={(e) => setAutomationTargetIndex(Number(e.target.value))}
+                  style={{
+                    border: "1px solid #e2e8f0",
+                    borderRadius: "10px",
+                    padding: "10px",
+                    minWidth: "180px",
+                    fontWeight: 700,
+                  }}
+                >
+                  {stockList.map((s, idx) => (
+                    <option key={`bot-${s.symbol}`} value={idx}>
+                      {s.symbol} — {s.name}
+                    </option>
+                  ))}
+                </select>
+              </div>
             </div>
           </div>
           <p style={{ color: "#475569", marginTop: "0.25rem" }}>
-            Define <code>async function run(state, api, utils)</code>. You control the loop—use{" "}
+            Define <code>async function run(market, api, utils)</code>. You control the loop—use{" "}
             <code>while</code> + <code>await api.sleep(ms)</code> to tick. Helpers:{" "}
             <code>api.buy</code>, <code>api.sell</code>, <code>api.log</code>,{" "}
-            <code>api.sleep</code>, and <code>utils.trend</code>/<code>utils.volatility</code>.
+            <code>api.sleep</code>, and <code>utils.trend</code>/<code>utils.volatility</code>.{" "}
+            Market info: <code>market.active()</code> returns the current stock snapshot,{" "}
+            <code>market.stocks()</code> lists all stocks, and <code>market.pick(symbolOrIndex)</code> fetches one.
           </p>
           {automationError && (
             <div
@@ -900,9 +990,9 @@ export default function StockMarketGame() {
               <div style={docPill}>Bot</div>
               <h4 style={docTitle}>Writing a bot</h4>
               <ul style={docList}>
-                <li>Define <code>async function run(state, api, utils)</code> and click <strong>Start Program</strong>.</li>
+                <li>Define <code>async function run(market, api, utils)</code> and click <strong>Start Program</strong>.</li>
                 <li>You control the loop (e.g., <code>while(true)</code> + <code>await api.sleep(ms)</code>).</li>
-                <li><code>state</code>: <code>{`{ price, cash, position, avgCost, tick, history, stocks[] }`}</code></li>
+                <li><code>market</code>: <code>market.active()</code> (current stock snapshot), <code>market.stocks()</code> (all stocks), <code>market.pick(symbolOrIndex)</code> (one stock), plus quick getters <code>market.price</code>/<code>market.cash</code>/<code>market.position</code>.</li>
                 <li><code>api</code>: <code>buy(qty, target)</code>, <code>sell(qty, target)</code>, <code>log(message)</code>, <code>sleep(ms)</code> — target is required (index or symbol).</li>
                 <li><code>utils</code>: <code>trend</code> (short-term delta), <code>volatility</code> (0–1 scale)</li>
               </ul>
@@ -913,24 +1003,24 @@ export default function StockMarketGame() {
               <ul style={docList}>
                 <li>You can use full JavaScript: objects, arrays, Maps/Sets, and classes.</li>
                 <li>Maintain bot memory with module-level variables or closures inside <code>run</code>.</li>
-                <li>Example: keep per-symbol positions in a <code>Map</code> or class and consult <code>state.stocks</code>.</li>
+                <li>Example: keep per-symbol positions in a <code>Map</code> or class and consult <code>market.stocks()</code>.</li>
                 <li><code>buy</code>/<code>sell</code> target a stock by index or symbol (required): <code>api.buy(1, 0)</code> or <code>api.buy(1, "ALPHA")</code>.</li>
                 <li>Track moving averages: push to an array, slice the last N, compute your metric.</li>
-                <li>Use classes to organize strategy: e.g., <code>class Trader {'{'} step(state) {'{'} ... {'}'} {'}'}</code> instantiated once.</li>
+                <li>Use classes to organize strategy: e.g., <code>class Trader {'{'} step(view) {'{'} ... {'}'} {'}'}</code> instantiated once.</li>
               </ul>
-              <pre className="doc-code" style={docPre}>{`const memory = new Map();
+<pre className="doc-code" style={docPre}>{`const memory = new Map();
 class Trader {
-  step(state, api) {
-    const stats = memory.get(state.symbol) || { seen: 0 };
+  step(view, api) {
+    const stats = memory.get(view.symbol) || { seen: 0 };
     stats.seen += 1;
-    memory.set(state.symbol, stats);
-    if (state.price < (state.history.at(-1) || state.price)) api.buy(1);
+    memory.set(view.symbol, stats);
+    if (view.price < (view.history.at(-1) || view.price)) api.buy(1);
   }
 }
 const trader = new Trader();
-async function run(state, api) {
+async function run(market, api) {
   while (true) {
-    trader.step(state, api);
+    trader.step(market.active(), api);
     await api.sleep(900);
   }
 }`}</pre>
@@ -938,47 +1028,52 @@ async function run(state, api) {
             <div style={docCard}>
               <div style={docPill}>Examples</div>
               <h4 style={docTitle}>Quick recipes</h4>
-              <pre className="doc-code" style={docPre}>{`// Switch stocks by index
-async function run(state, api) {
+<pre className="doc-code" style={docPre}>{`// Switch stocks by index
+async function run(market, api) {
   let idx = 0;
   while (true) {
-    const target = state.stocks[idx % state.stocks.length];
+    const stocks = market.stocks();
+    const target = stocks[idx % stocks.length];
     if (target.price < target.history.at(-1)) api.buy(1, idx);
     idx++;
     await api.sleep(800);
   }
 }`}</pre>
               <pre className="doc-code" style={docPre}>{`// Momentum on selected stock
-async function run(state, api, utils) {
+async function run(market, api, utils) {
   while (true) {
-    if (utils.trend > 0 && state.cash > state.price) api.buy(1);
-    if (utils.trend < 0 && state.position > 0) api.sell(1);
+    const view = market.active();
+    if (utils.trend > 0 && view.cash > view.price) api.buy(1);
+    if (utils.trend < 0 && view.position > 0) api.sell(1);
     await api.sleep(900);
   }
 }`}</pre>
               <pre className="doc-code" style={docPre}>{`// Hash map of caps and size adjustments
 const caps = new Map();
 caps.set("ALPHA", 5); caps.set("BETA", 2);
-async function run(state, api) {
-  const limit = caps.get(state.symbol) || 1;
+async function run(market, api) {
+  const view = market.active();
+  const limit = caps.get(view.symbol) || 1;
   while (true) {
-    if (state.position < limit && state.cash > state.price) api.buy(1, state.symbol);
-    if (state.position > limit) api.sell(state.position - limit, state.symbol);
+    const fresh = market.active();
+    if (fresh.position < limit && fresh.cash > fresh.price) api.buy(1, fresh.symbol);
+    if (fresh.position > limit) api.sell(fresh.position - limit, fresh.symbol);
     await api.sleep(1000);
   }
 }`}</pre>
               <pre className="doc-code" style={docPre}>{`// Class-based risk manager
 class Risk {
   constructor(maxDraw = 0.05) { this.maxDraw = maxDraw; }
-  shouldSell(state) {
-    const peak = Math.max(...state.history.slice(-30));
-    return state.price < peak * (1 - this.maxDraw) && state.position > 0;
+  shouldSell(view) {
+    const peak = Math.max(...view.history.slice(-30));
+    return view.price < peak * (1 - this.maxDraw) && view.position > 0;
   }
 }
 const risk = new Risk(0.03);
-async function run(state, api) {
+async function run(market, api) {
   while (true) {
-    if (risk.shouldSell(state)) api.sell(state.position);
+    const view = market.active();
+    if (risk.shouldSell(view)) api.sell(view.position);
     await api.sleep(1200);
   }
 }`}</pre>
@@ -990,7 +1085,7 @@ async function run(state, api) {
                 <li>Bots run via <code>new Function</code> with a minimal API—keep code lightweight.</li>
                 <li>Logs show bot and system events for debugging.</li>
                 <li>Reset clears all portfolios, price history, and logs for quick iteration.</li>
-                <li>Inspect other stocks via <code>state.stocks[index]</code> (symbol, price, cash, position, avgCost, history).</li>
+                <li>Inspect other stocks via <code>market.stocks()[index]</code> (symbol, price, cash, position, avgCost, history).</li>
               </ul>
             </div>
           </div>
