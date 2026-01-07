@@ -13,13 +13,13 @@ A lightweight stock-market simulator with an HTML canvas price board and a progr
 
 ## Writing a bot
 1. In the Automation panel, edit the code and click **Start Program**.
-2. Define `run(market, api, utils)`; you control the loop and pacing. The market view selection does **not** affect your bot; pick its target in the Automation panel (“Bot target”).
+2. Define `run(market, api, utils)`; you control the loop and pacing. The market view selection does **not** affect your bot; pick stocks programmatically inside your code.
 3. Use the provided helpers:
-   - `market`: `market.active()` (current stock snapshot), `market.stocks()` (all stocks), `market.pick(symbolOrIndex)` (one stock), plus quick getters `market.price`/`market.cash`/`market.position`.
+   - `market`: `market.stocks()` (all stocks), `market.pick(symbolOrIndex)` (one stock), `market.tick` (global tick).
    - `api`: `buy(qty, target)`, `sell(qty, target)`, `log(message)`, `sleep(ms)` (target is required: stock index or symbol)
-   - `utils`: `trend` (short-term delta), `volatility` (`0-1` scale)
+   - `utils`: `trend(target)` (short-term delta), `volatility(target)` (`0-1` scale)
 4. Control flow: use `while` + `await api.sleep(ms)` to tick and act.
-5. Multi-stock access: use `market.stocks()[index]` to inspect other symbols (price, cash, position, avgCost, history). Trades apply to the currently selected stock in the UI.
+5. Multi-stock access: use `market.stocks()[index]` to inspect symbols (price, cash, position, avgCost, history). Trades apply to whichever target you pass to `api.buy/sell`.
 6. Targeted trades: you must pass a target to choose the stock programmatically:
    ```js
    api.buy(1, 0);        // buy 1 share of the stock at index 0
@@ -39,7 +39,8 @@ A lightweight stock-market simulator with an HTML canvas price board and a progr
    const trader = new Trader();
    async function run(market, api) {
      while (true) {
-       trader.step(market.active(), api);
+       const view = market.pick("ALPHA") || market.stocks()[0];
+       trader.step(view, api);
        await api.sleep(900);
      }
    }
@@ -62,9 +63,9 @@ A lightweight stock-market simulator with an HTML canvas price board and a progr
    // Momentum on selected stock
    async function run(market, api, utils) {
      while (true) {
-       const view = market.active();
-       if (utils.trend > 0 && view.cash > view.price) api.buy(1); // active stock
-       if (utils.trend < 0 && view.position > 0) api.sell(1);
+       const view = market.pick("ALPHA") || market.stocks()[0];
+       if (utils.trend("ALPHA") > 0 && view.cash > view.price) api.buy(1, "ALPHA");
+       if (utils.trend("ALPHA") < 0 && view.position > 0) api.sell(1, "ALPHA");
        await api.sleep(900);
      }
    }
@@ -74,9 +75,9 @@ A lightweight stock-market simulator with an HTML canvas price board and a progr
    const caps = new Map();
    caps.set("ALPHA", 5); caps.set("BETA", 2);
    async function run(market, api) {
-     const limit = caps.get(market.active().symbol) || 1;
      while (true) {
-       const view = market.active();
+       const view = market.pick("ALPHA") || market.stocks()[0];
+       const limit = caps.get(view.symbol) || 1;
        if (view.position < limit && view.cash > view.price) api.buy(1, view.symbol);
        if (view.position > limit) api.sell(view.position - limit, view.symbol);
        await api.sleep(1000);
@@ -95,23 +96,22 @@ A lightweight stock-market simulator with an HTML canvas price board and a progr
    const risk = new Risk(0.03);
    async function run(market, api) {
      while (true) {
-       const view = market.active();
-       if (risk.shouldSell(view)) api.sell(view.position);
+       const view = market.pick("ALPHA") || market.stocks()[0];
+       if (risk.shouldSell(view)) api.sell(view.position, view.symbol);
        await api.sleep(1200);
      }
    }
    ```
 
 ## Market API & utils reference
-- `market.active()` → copy of the bot target stock: `{ symbol, name, price, cash, position, avgCost, history[], tick, targetIndex }`.
 - `market.stocks()` → array of copies of all stocks with `{ symbol, name, price, cash, position, avgCost, history[] }`.
 - `market.pick(symbolOrIndex)` → one stock copy or `null` if not found.
-- Quick getters on `market`: `price`, `cash`, `position`, `avgCost`, `tick`, `history`, `symbol`, `name`, `targetIndex` mirror `market.active()`.
+- `market.tick` → global tick counter.
 - `api.buy(qty, target)` / `api.sell(qty, target)` → place trades on a stock by index or symbol (required target).
 - `api.log(message)` → append a bot log entry.
 - `api.sleep(ms)` → promise that resolves after at least 400ms; use in loops.
-- `utils.trend` → short-term price delta for the bot target (last vs 5 steps back).
-- `utils.volatility` → 0–1 scale of recent price noise for the bot target.
+- `utils.trend(target)` → short-term price delta for a stock (last vs 5 steps back).
+- `utils.volatility(target)` → 0–1 scale of recent price noise for a stock.
 
 ## Notes
 - Bots run inside `new Function` with a minimal API (not a full sandbox); keep code lightweight.

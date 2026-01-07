@@ -38,9 +38,9 @@ const buildInitialStockList = () =>
 
 const defaultScript = `async function run(market, api, utils) {
   while (true) {
-    const view = market.active();
-    if (utils.trend > 0 && view.cash > view.price) api.buy(1);
-    if (utils.trend < 0 && view.position > 0) api.sell(1);
+    const view = market.pick("ALPHA") || market.stocks()[0];
+    if (utils.trend("ALPHA") > 0 && view.cash > view.price) api.buy(1, "ALPHA");
+    if (utils.trend("ALPHA") < 0 && view.position > 0) api.sell(1, "ALPHA");
     await api.sleep(900);
   }
 }`;
@@ -75,7 +75,6 @@ export default function StockMarketGame() {
   const [linePulseId, setLinePulseId] = useState(0);
   const [programSteps, setProgramSteps] = useState(0);
   const [tickPulse, setTickPulse] = useState(0);
-  const [automationTargetIndex, setAutomationTargetIndex] = useState(0);
   useEffect(() => {
     try {
       const saved = localStorage.getItem("smg_user_code");
@@ -107,19 +106,6 @@ export default function StockMarketGame() {
     if (!Number.isFinite(found.price)) return { ...found, price: 0 };
     return found;
   }, [stockList, activeIndex]);
-
-  const automationStock = useMemo(() => {
-    const fallback = {
-      symbol: "",
-      price: 0,
-      history: [],
-      portfolio: { cash: 0, position: 0, avgCost: 0 },
-      name: "",
-    };
-    const found = stockList[automationTargetIndex] || fallback;
-    if (!Number.isFinite(found.price)) return { ...found, price: 0 };
-    return found;
-  }, [stockList, automationTargetIndex]);
 
   const unrealized = useMemo(() => {
     const pnl = (activeStock.price - activeStock.portfolio.avgCost) * activeStock.portfolio.position;
@@ -275,15 +261,28 @@ export default function StockMarketGame() {
   };
 
   const buildUtils = (fallbackSnapshot) => {
+    const latestStocks = () => stateRef.current?.stocks ?? fallbackSnapshot.stocks ?? [];
+    const resolve = (target) => {
+      const list = latestStocks();
+      if (typeof target === "number" && target >= 0 && target < list.length) return list[target];
+      if (typeof target === "string") return list.find((s) => s.symbol === target) || null;
+      if (target && typeof target === "object" && target.symbol) {
+        return list.find((s) => s.symbol === target.symbol) || null;
+      }
+      return null;
+    };
     return {
-      get trend() {
-        const recent = stateRef.current?.history ?? fallbackSnapshot.history ?? [];
-        const price = stateRef.current?.price ?? fallbackSnapshot.price ?? 1;
+      trend: (target) => {
+        const stock = resolve(target) || latestStocks()[0];
+        if (!stock) return 0;
+        const recent = stock.history ?? [];
         return recent.length > 5 ? recent[recent.length - 1] - recent[recent.length - 5] : 0;
       },
-      get volatility() {
-        const recent = stateRef.current?.history ?? fallbackSnapshot.history ?? [];
-        const price = stateRef.current?.price ?? fallbackSnapshot.price ?? 1;
+      volatility: (target) => {
+        const stock = resolve(target) || latestStocks()[0];
+        if (!stock) return 0;
+        const recent = stock.history ?? [];
+        const price = stock.price || 1;
         return Math.min(
           1,
           (recent.length > 10
@@ -310,16 +309,6 @@ export default function StockMarketGame() {
     setAutomationError("");
 
     const utils = buildUtils(snapshot);
-    const cloneActive = (src) => ({
-      symbol: src.symbol,
-      name: src.name,
-      price: src.price,
-      cash: src.cash,
-      position: src.position,
-      avgCost: src.avgCost,
-      history: [...(src.history || [])],
-      tick: src.tick,
-    });
     const cloneStock = (src) => ({
       symbol: src.symbol,
       name: src.name,
@@ -334,36 +323,12 @@ export default function StockMarketGame() {
       const list = latestStocks();
       if (typeof target === "number" && target >= 0 && target < list.length) return list[target];
       if (typeof target === "string") return list.find((s) => s.symbol === target) || null;
+      if (target && typeof target === "object" && target.symbol) return list.find((s) => s.symbol === target.symbol) || null;
       return null;
     };
     const market = {
-      get price() {
-        return stateRef.current?.price ?? snapshot.price;
-      },
-      get cash() {
-        return stateRef.current?.cash ?? snapshot.cash;
-      },
-      get position() {
-        return stateRef.current?.position ?? snapshot.position;
-      },
-      get avgCost() {
-        return stateRef.current?.avgCost ?? snapshot.avgCost;
-      },
       get tick() {
         return stateRef.current?.tick ?? snapshot.tick;
-      },
-      get history() {
-        return stateRef.current?.history ?? snapshot.history;
-      },
-      get name() {
-        return stateRef.current?.name ?? snapshot.name;
-      },
-      get targetIndex() {
-        return stateRef.current?.targetIndex ?? snapshot.targetIndex ?? 0;
-      },
-      active: () => {
-        const live = stateRef.current ?? snapshot;
-        return cloneActive(live);
       },
       stocks: () => latestStocks().map(cloneStock),
       pick: (target) => {
@@ -458,16 +423,8 @@ export default function StockMarketGame() {
 
 
   useEffect(() => {
-    const selected = automationStock;
     stateRef.current = {
-      price: selected.price,
-      history: selected.history,
       tick,
-      cash: selected.portfolio.cash,
-      position: selected.portfolio.position,
-      avgCost: selected.portfolio.avgCost,
-      symbol: selected.symbol,
-      name: selected.name,
       stocks: stockList.map((s) => ({
         symbol: s.symbol,
         name: s.name,
@@ -477,9 +434,8 @@ export default function StockMarketGame() {
         avgCost: s.portfolio.avgCost,
         history: s.history,
       })),
-      targetIndex: automationTargetIndex,
     };
-  }, [automationStock, tick, stockList, automationTargetIndex]);
+  }, [tick, stockList]);
 
   useEffect(() => {
     if (!running) return undefined;
@@ -831,35 +787,14 @@ export default function StockMarketGame() {
               >
                 Clear Code
               </button>
-              <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", flexWrap: "wrap" }}>
-                <label style={{ fontWeight: 700, color: "#0f172a" }}>Bot target</label>
-                <select
-                  value={automationTargetIndex}
-                  onChange={(e) => setAutomationTargetIndex(Number(e.target.value))}
-                  style={{
-                    border: "1px solid #e2e8f0",
-                    borderRadius: "10px",
-                    padding: "10px",
-                    minWidth: "180px",
-                    fontWeight: 700,
-                  }}
-                >
-                  {stockList.map((s, idx) => (
-                    <option key={`bot-${s.symbol}`} value={idx}>
-                      {s.symbol} — {s.name}
-                    </option>
-                  ))}
-                </select>
-              </div>
             </div>
           </div>
           <p style={{ color: "#475569", marginTop: "0.25rem" }}>
             Define <code>async function run(market, api, utils)</code>. You control the loop—use{" "}
             <code>while</code> + <code>await api.sleep(ms)</code> to tick. Helpers:{" "}
             <code>api.buy</code>, <code>api.sell</code>, <code>api.log</code>,{" "}
-            <code>api.sleep</code>, and <code>utils.trend</code>/<code>utils.volatility</code>.{" "}
-            Market info: <code>market.active()</code> returns the current stock snapshot,{" "}
-            <code>market.stocks()</code> lists all stocks, and <code>market.pick(symbolOrIndex)</code> fetches one.
+            <code>api.sleep</code>, and <code>utils.trend</code>/<code>utils.volatility</code> (pass a symbol or index).{" "}
+            Market info: <code>market.stocks()</code> lists all stocks, and <code>market.pick(symbolOrIndex)</code> fetches one.
           </p>
           {automationError && (
             <div
@@ -992,9 +927,9 @@ export default function StockMarketGame() {
               <ul style={docList}>
                 <li>Define <code>async function run(market, api, utils)</code> and click <strong>Start Program</strong>.</li>
                 <li>You control the loop (e.g., <code>while(true)</code> + <code>await api.sleep(ms)</code>).</li>
-                <li><code>market</code>: <code>market.active()</code> (current stock snapshot), <code>market.stocks()</code> (all stocks), <code>market.pick(symbolOrIndex)</code> (one stock), plus quick getters <code>market.price</code>/<code>market.cash</code>/<code>market.position</code>.</li>
+                <li><code>market</code>: <code>market.stocks()</code> (all stocks), <code>market.pick(symbolOrIndex)</code> (one stock), <code>market.tick</code> (global tick).</li>
                 <li><code>api</code>: <code>buy(qty, target)</code>, <code>sell(qty, target)</code>, <code>log(message)</code>, <code>sleep(ms)</code> — target is required (index or symbol).</li>
-                <li><code>utils</code>: <code>trend</code> (short-term delta), <code>volatility</code> (0–1 scale)</li>
+                <li><code>utils</code>: <code>trend(target)</code> (short-term delta), <code>volatility(target)</code> (0–1 scale)</li>
               </ul>
             </div>
             <div style={docCard}>
@@ -1020,7 +955,8 @@ class Trader {
 const trader = new Trader();
 async function run(market, api) {
   while (true) {
-    trader.step(market.active(), api);
+    const view = market.pick("ALPHA") || market.stocks()[0];
+    trader.step(view, api);
     await api.sleep(900);
   }
 }`}</pre>
@@ -1039,29 +975,28 @@ async function run(market, api) {
     await api.sleep(800);
   }
 }`}</pre>
-              <pre className="doc-code" style={docPre}>{`// Momentum on selected stock
+<pre className="doc-code" style={docPre}>{`// Momentum on selected stock
 async function run(market, api, utils) {
   while (true) {
-    const view = market.active();
-    if (utils.trend > 0 && view.cash > view.price) api.buy(1);
-    if (utils.trend < 0 && view.position > 0) api.sell(1);
+    const view = market.pick("ALPHA") || market.stocks()[0];
+    if (utils.trend("ALPHA") > 0 && view.cash > view.price) api.buy(1, "ALPHA");
+    if (utils.trend("ALPHA") < 0 && view.position > 0) api.sell(1, "ALPHA");
     await api.sleep(900);
   }
 }`}</pre>
-              <pre className="doc-code" style={docPre}>{`// Hash map of caps and size adjustments
+<pre className="doc-code" style={docPre}>{`// Hash map of caps and size adjustments
 const caps = new Map();
 caps.set("ALPHA", 5); caps.set("BETA", 2);
 async function run(market, api) {
-  const view = market.active();
-  const limit = caps.get(view.symbol) || 1;
   while (true) {
-    const fresh = market.active();
-    if (fresh.position < limit && fresh.cash > fresh.price) api.buy(1, fresh.symbol);
-    if (fresh.position > limit) api.sell(fresh.position - limit, fresh.symbol);
+    const view = market.pick("ALPHA") || market.stocks()[0];
+    const limit = caps.get(view.symbol) || 1;
+    if (view.position < limit && view.cash > view.price) api.buy(1, view.symbol);
+    if (view.position > limit) api.sell(view.position - limit, view.symbol);
     await api.sleep(1000);
   }
 }`}</pre>
-              <pre className="doc-code" style={docPre}>{`// Class-based risk manager
+<pre className="doc-code" style={docPre}>{`// Class-based risk manager
 class Risk {
   constructor(maxDraw = 0.05) { this.maxDraw = maxDraw; }
   shouldSell(view) {
@@ -1072,8 +1007,8 @@ class Risk {
 const risk = new Risk(0.03);
 async function run(market, api) {
   while (true) {
-    const view = market.active();
-    if (risk.shouldSell(view)) api.sell(view.position);
+    const view = market.pick("ALPHA") || market.stocks()[0];
+    if (risk.shouldSell(view)) api.sell(view.position, view.symbol);
     await api.sleep(1200);
   }
 }`}</pre>
