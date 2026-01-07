@@ -54,6 +54,21 @@ function clampPrice(p) {
   return Math.max(1, Number(p.toFixed(2)));
 }
 
+const formatErrorWithLine = (err, fallbackLine = null) => {
+  const msg = err?.message || String(err || "Unknown error");
+  const stack = typeof err?.stack === "string" ? err.stack : "";
+  const match = stack.match(/<anonymous>:(\d+):(\d+)/);
+  if (match) {
+    const line = Number(match[1]);
+    const col = Number(match[2]);
+    return `Line ${line}${Number.isInteger(col) ? `:${col}` : ""}: ${msg}`;
+  }
+  if (Number.isInteger(fallbackLine)) {
+    return `Line ${fallbackLine + 1}: ${msg}`;
+  }
+  return msg;
+};
+
 export default function StockMarketGame() {
   const canvasRef = useRef(null);
   const canvasWrapRef = useRef(null);
@@ -75,6 +90,7 @@ export default function StockMarketGame() {
   const [linePulseId, setLinePulseId] = useState(0);
   const [programSteps, setProgramSteps] = useState(0);
   const [tickPulse, setTickPulse] = useState(0);
+  const lastLineRef = useRef(null);
   useEffect(() => {
     try {
       const saved = localStorage.getItem("smg_user_code");
@@ -240,6 +256,7 @@ export default function StockMarketGame() {
     try {
       const { instrumented, firstTrackedLine } = instrumentCode(userCode);
       firstLineRef.current = firstTrackedLine;
+      lastLineRef.current = null;
       const fn = new Function(
         "market",
         "api",
@@ -253,8 +270,10 @@ export default function StockMarketGame() {
       appendLog("Automation loaded.");
       return true;
     } catch (err) {
-      setAutomationError(err.message);
-      appendLog(`Automation error: ${err.message}`);
+      const formatted = formatErrorWithLine(err, lastLineRef.current ?? firstLineRef.current);
+      setAutomationError(formatted);
+      const stack = typeof err?.stack === "string" ? `\n${err.stack.split("\n").slice(0, 4).join("\n")}` : "";
+      appendLog(`Automation error: ${formatted}${stack}`);
       automationRef.current = null;
       return false;
     }
@@ -307,8 +326,14 @@ export default function StockMarketGame() {
     setProgramSteps(0);
     setTickPulse((v) => v + 1);
     setAutomationError("");
+    lastLineRef.current = null;
 
     const utils = buildUtils(snapshot);
+    const formatBotError = (err) => {
+      const formatted = formatErrorWithLine(err, lastLineRef.current);
+      const stack = typeof err?.stack === "string" ? err.stack.split("\n").slice(0, 4).join("\n") : "";
+      return stack ? `${formatted}\n${stack}` : formatted;
+    };
     const cloneStock = (src) => ({
       symbol: src.symbol,
       name: src.name,
@@ -365,6 +390,7 @@ export default function StockMarketGame() {
         () => {},
         async (line) => {
           if (programTokenRef.current !== token) return;
+          lastLineRef.current = line;
           setCurrentLine(line);
           setLinePulseId((p) => p + 1);
           setProgramSteps((s) => s + 1);
@@ -376,10 +402,16 @@ export default function StockMarketGame() {
         }
       );
       if (res && typeof res.then === "function") {
-        res.catch((err) => setAutomationError(err.message));
+        res.catch((err) => {
+          const msg = formatBotError(err);
+          setAutomationError(msg);
+          appendLog(`Automation error: ${msg}`);
+        });
       }
     } catch (err) {
-      setAutomationError(err.message);
+      const msg = formatBotError(err);
+      setAutomationError(msg);
+      appendLog(`Automation error: ${msg}`);
     }
   };
 
@@ -387,6 +419,7 @@ export default function StockMarketGame() {
     programTokenRef.current += 1;
     setCurrentLine(null);
     setTickPulse((v) => v + 1);
+    lastLineRef.current = null;
   };
 
   const copyDocs = async () => {
@@ -805,9 +838,43 @@ export default function StockMarketGame() {
                 background: "#fef2f2",
                 color: "#b91c1c",
                 border: "1px solid #fecdd3",
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                gap: "0.5rem",
+                flexWrap: "wrap",
               }}
             >
-              {automationError}
+              <div style={{ whiteSpace: "pre-wrap", wordBreak: "break-word", flex: "1 1 auto" }}>
+                {automationError}
+              </div>
+              <button
+                className="btn secondary-btn"
+                style={{ padding: "8px 10px", minWidth: "90px", flex: "0 0 auto" }}
+                onClick={async (e) => {
+                  e.stopPropagation();
+                  try {
+                    if (navigator.clipboard?.writeText) {
+                      await navigator.clipboard.writeText(automationError);
+                    } else {
+                      const helper = document.createElement("textarea");
+                      helper.value = automationError;
+                      helper.setAttribute("readonly", "");
+                      helper.style.position = "absolute";
+                      helper.style.left = "-9999px";
+                      document.body.appendChild(helper);
+                      helper.select();
+                      document.execCommand("copy");
+                      document.body.removeChild(helper);
+                    }
+                    showMessage?.({ type: "success", message: "Error copied to clipboard." });
+                  } catch {
+                    showMessage?.({ type: "error", message: "Copy failed. Try manually." });
+                  }
+                }}
+              >
+                Copy
+              </button>
             </div>
           )}
           <div
