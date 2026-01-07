@@ -4,6 +4,7 @@ import Editor from "react-simple-code-editor";
 import Prism from "prismjs";
 import "prismjs/components/prism-javascript";
 import "prismjs/themes/prism.css";
+import { FaPlay, FaStop, FaArrowUp, FaArrowDown } from "react-icons/fa";
 
 const BASE_STOCKS = [
   { symbol: "ALPHA", name: "Alpha Labs" },
@@ -74,6 +75,7 @@ export default function StockMarketGame() {
   const canvasWrapRef = useRef(null);
   const automationRef = useRef(null);
   const stateRef = useRef(null);
+  const automationTopRef = useRef(null);
   const { showMessage } = useFlyout();
   const [activeTab, setActiveTab] = useState("market");
   const programTokenRef = useRef(0);
@@ -221,6 +223,7 @@ export default function StockMarketGame() {
     let inRun = false;
     let braceDepth = 0;
     let firstTracked = null;
+    let nestedFunctionDepth = null;
     const instrumented = lines.map((line, idx) => {
       const trimmed = line.trim();
       if (!inRun && (trimmed.startsWith("function run") || trimmed.startsWith("async function run"))) {
@@ -229,9 +232,16 @@ export default function StockMarketGame() {
       if (inRun) {
         const open = (line.match(/{/g) || []).length;
         const close = (line.match(/}/g) || []).length;
-        braceDepth += open;
         const isRunSignature = trimmed.startsWith("function run") || trimmed.startsWith("async function run");
+        const isNestedFunctionDef =
+          !isRunSignature && nestedFunctionDepth === null && /\bfunction\b/.test(trimmed);
+        if (isNestedFunctionDef) {
+          // Capture depth where nested function body begins so we skip instrumenting inside it.
+          nestedFunctionDepth = braceDepth + open;
+        }
+        braceDepth += open;
         const shouldTrack =
+          nestedFunctionDepth === null &&
           braceDepth > 0 &&
           !(trimmed === "}" || trimmed === "" || isRunSignature || trimmed.startsWith("//"));
         const instrumentedLine = shouldTrack ? `await __step(${idx}); ${line}` : line;
@@ -239,6 +249,9 @@ export default function StockMarketGame() {
           firstTracked = idx;
         }
         braceDepth -= close;
+        if (nestedFunctionDepth !== null && braceDepth < nestedFunctionDepth) {
+          nestedFunctionDepth = null;
+        }
         if (braceDepth <= 0 && inRun) {
           inRun = false;
         }
@@ -268,12 +281,14 @@ export default function StockMarketGame() {
       automationRef.current = fn;
       setAutomationError("");
       appendLog("Automation loaded.");
+      showMessage?.({ type: "success", message: "Automation compiled successfully." });
       return true;
     } catch (err) {
       const formatted = formatErrorWithLine(err, lastLineRef.current ?? firstLineRef.current);
       setAutomationError(formatted);
       const stack = typeof err?.stack === "string" ? `\n${err.stack.split("\n").slice(0, 4).join("\n")}` : "";
       appendLog(`Automation error: ${formatted}${stack}`);
+      showMessage?.({ type: "error", message: formatted });
       automationRef.current = null;
       return false;
     }
@@ -406,12 +421,14 @@ export default function StockMarketGame() {
           const msg = formatBotError(err);
           setAutomationError(msg);
           appendLog(`Automation error: ${msg}`);
+          showMessage?.({ type: "error", message: msg });
         });
       }
     } catch (err) {
       const msg = formatBotError(err);
       setAutomationError(msg);
       appendLog(`Automation error: ${msg}`);
+      showMessage?.({ type: "error", message: msg });
     }
   };
 
@@ -621,24 +638,7 @@ export default function StockMarketGame() {
         >
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: "0.5rem", flexWrap: "wrap" }}>
             <div style={{ display: "flex", flexDirection: "column", gap: "0.35rem" }}>
-              <label style={{ color: "#94a3b8", fontSize: "0.85rem" }}>Select stock</label>
-              <select
-                value={activeIndex}
-                onChange={(e) => setActiveIndex(Number(e.target.value))}
-                style={{
-                  background: "#0f172a",
-                  color: "#e2e8f0",
-                  border: "1px solid rgba(255,255,255,0.15)",
-                  borderRadius: "10px",
-                  padding: "10px",
-                  minWidth: "200px",
-                  fontWeight: 700,
-                }}
-              >
-                {stockList.map((s, idx) => (
-                  <option key={s.symbol} value={idx}>{s.symbol} — {s.name}</option>
-                ))}
-              </select>
+              <label style={{ color: "#94a3b8", fontSize: "0.85rem" }}>Tap a stock row to select</label>
               <div style={{ fontSize: "0.85rem", color: "#94a3b8" }}>Price: {formatMoney(activeStock.price)}</div>
             </div>
             <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
@@ -705,13 +705,21 @@ export default function StockMarketGame() {
                 </thead>
                 <tbody>
                   {stockList.map((s, idx) => (
-                    <tr key={s.symbol} style={{ background: idx === activeIndex ? "rgba(34,197,94,0.08)" : "transparent" }}>
-                      <td style={{ padding: "8px", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>{s.symbol}</td>
-                      <td style={{ padding: "8px", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>{s.name}</td>
-                      <td style={{ padding: "8px", textAlign: "right", borderBottom: "1px solid rgba(255,255,255,0.05)", fontWeight: 700 }}>
+                    <tr
+                      key={s.symbol}
+                      onClick={() => setActiveIndex(idx)}
+                      style={{
+                        background: idx === activeIndex ? "rgba(34,197,94,0.12)" : "transparent",
+                        cursor: "pointer",
+                        touchAction: "manipulation"
+                      }}
+                    >
+                      <td style={{ padding: "10px 8px", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>{s.symbol}</td>
+                      <td style={{ padding: "10px 8px", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>{s.name}</td>
+                      <td style={{ padding: "10px 8px", textAlign: "right", borderBottom: "1px solid rgba(255,255,255,0.05)", fontWeight: 700 }}>
                         {formatMoney(s.price)}
                       </td>
-                      <td style={{ padding: "8px", textAlign: "right", borderBottom: "1px solid rgba(255,255,255,0.05)", fontWeight: 700 }}>
+                      <td style={{ padding: "10px 8px", textAlign: "right", borderBottom: "1px solid rgba(255,255,255,0.05)", fontWeight: 700 }}>
                         {s.portfolio.position}
                       </td>
                     </tr>
@@ -759,10 +767,12 @@ export default function StockMarketGame() {
 
       {activeTab === "automation" && (
         <div
+          ref={automationTopRef}
           style={{
             background: "#ffffff",
             borderRadius: "16px",
             padding: "1rem",
+            paddingBottom: "4.5rem",
             boxShadow: "0 12px 30px rgba(15,23,42,0.12)",
             border: "1px solid #e2e8f0",
             maxWidth: "100%",
@@ -928,17 +938,113 @@ export default function StockMarketGame() {
               {log.map((entry) => (
                 <div
                   key={entry.ts + entry.text}
-                  style={{ padding: "0.35rem 0.25rem", borderBottom: "1px solid #e2e8f0" }}
+                  style={{ padding: "0.35rem 0.25rem", borderBottom: "1px solid #e2e8f0", display: "flex", gap: "0.5rem", alignItems: "flex-start" }}
                 >
-                  <small style={{ color: "#64748b" }}>
-                    {new Date(entry.ts).toLocaleTimeString()}
-                  </small>
-                  <div style={{ color: "#0f172a" }}>{entry.text}</div>
+                  <div style={{ flex: "1 1 auto" }}>
+                    <small style={{ color: "#64748b" }}>
+                      {new Date(entry.ts).toLocaleTimeString()}
+                    </small>
+                    <div style={{ color: "#0f172a", whiteSpace: "pre-wrap" }}>{entry.text}</div>
+                  </div>
+                  {entry.text?.includes("\n") && entry.text?.toLowerCase().includes("error") && (
+                    <button
+                      className="btn secondary-btn"
+                      style={{ padding: "6px 10px", flex: "0 0 auto" }}
+                      onClick={async (e) => {
+                        e.stopPropagation();
+                        try {
+                          if (navigator.clipboard?.writeText) {
+                            await navigator.clipboard.writeText(entry.text);
+                          } else {
+                            const helper = document.createElement("textarea");
+                            helper.value = entry.text;
+                            helper.setAttribute("readonly", "");
+                            helper.style.position = "absolute";
+                            helper.style.left = "-9999px";
+                            document.body.appendChild(helper);
+                            helper.select();
+                            document.execCommand("copy");
+                            document.body.removeChild(helper);
+                          }
+                          showMessage?.({ type: "success", message: "Log copied." });
+                        } catch {
+                          showMessage?.({ type: "error", message: "Copy failed. Try manually." });
+                        }
+                      }}
+                    >
+                      Copy
+                    </button>
+                  )}
                 </div>
               ))}
               {!log.length && <div style={{ color: "#64748b" }}>No events yet.</div>}
             </div>
           </div>
+        </div>
+      )}
+      {activeTab === "automation" && (
+        <div
+          style={{
+            position: "fixed",
+            bottom: "12px",
+            left: "50%",
+            transform: "translateX(-50%)",
+            width: "min(96vw, 440px)",
+            display: "grid",
+            gridTemplateColumns: "repeat(3, 1fr)",
+            gridTemplateColumns: "repeat(4, 1fr)",
+            gap: "0.5rem",
+            alignItems: "center",
+            padding: "10px",
+            background: "rgba(15,23,42,0.95)",
+            border: "1px solid rgba(255,255,255,0.1)",
+            borderRadius: "14px",
+            boxShadow: "0 16px 40px rgba(0,0,0,0.35)",
+            zIndex: 3000,
+          }}
+        >
+          <button
+            style={{ ...pillBtnStyle, display: "inline-flex", alignItems: "center", justifyContent: "center" }}
+            className="action-btn"
+            onClick={startProgram}
+            aria-label="Start program"
+            title="Start program"
+          >
+            <FaPlay />
+          </button>
+          <button
+            style={{ ...pillBtnStyle, display: "inline-flex", alignItems: "center", justifyContent: "center" }}
+            className="action-btn"
+            onClick={stopProgram}
+            aria-label="Stop program"
+            title="Stop program"
+          >
+            <FaStop />
+          </button>
+          <button
+            style={{ ...pillBtnStyle, display: "inline-flex", alignItems: "center", justifyContent: "center" }}
+            className="action-btn"
+            onClick={() => {
+              if (automationTopRef.current) {
+                automationTopRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+              } else {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }
+            }}
+            aria-label="Scroll to top"
+            title="Scroll to top"
+          >
+            <FaArrowUp />
+          </button>
+          <button
+            style={{ ...pillBtnStyle, display: "inline-flex", alignItems: "center", justifyContent: "center" }}
+            className="action-btn"
+            onClick={() => window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" })}
+            aria-label="Scroll to bottom"
+            title="Scroll to bottom"
+          >
+            <FaArrowDown />
+          </button>
         </div>
       )}
 
@@ -1110,6 +1216,7 @@ async function run(market, api) {
         .events-box { max-width: 100%; }
         .automation-actions { width: 100%; }
         .automation-actions .action-btn { flex: 1 1 0; min-width: 140px; }
+        tr:hover { background: rgba(34,197,94,0.08); }
         .doc-code {
           background: #0b1220;
           color: #e2e8f0;
