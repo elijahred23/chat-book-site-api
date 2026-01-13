@@ -27,6 +27,8 @@ const LoopingTTSImproved = () => {
   const [samOnly, setSamOnly] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
   const [currentSentence, setCurrentSentence] = useState("");
+  const [prevSentence, setPrevSentence] = useState("");
+  const [nextSentence, setNextSentence] = useState("");
   const [timeEstimate, setTimeEstimate] = useState("");
   const [progress, setProgress] = useState(0);
   const [currentSentenceProgress, setCurrentSentenceProgress] = useState(0);
@@ -142,6 +144,22 @@ const LoopingTTSImproved = () => {
     return txt.match(/[^.!?]+[.!?]*/g) || [txt];
   };
 
+  const setSentenceContext = (idx) => {
+    const chunks = chunksRef.current || [];
+    if (!chunks.length) {
+      setPrevSentence("");
+      setCurrentSentence("");
+      setNextSentence("");
+      return;
+    }
+    const safeIdx = Math.min(Math.max(idx, 0), chunks.length - 1);
+    const prev = safeIdx > 0 ? chunks[safeIdx - 1]?.trim() : "";
+    const next = safeIdx + 1 < chunks.length ? chunks[safeIdx + 1]?.trim() : "";
+    setPrevSentence(prev);
+    setCurrentSentence(chunks[safeIdx]?.trim() || "");
+    setNextSentence(next);
+  };
+
   /**
    * Update progress and calculate an estimated end time. Progress is
    * measured as a percentage of utterances spoken relative to the
@@ -226,7 +244,7 @@ const LoopingTTSImproved = () => {
     utter.pitch = pitch;
     utter.volume = volume;
     // Update UI with the sentence we are about to speak
-    setCurrentSentence(utter.text.trim());
+    setSentenceContext(idxRef.current);
     utter.onend = () => {
       // After each utterance, update repeat counters
       if (sentenceRepeatRef.current < repeats - 1) {
@@ -289,17 +307,23 @@ const LoopingTTSImproved = () => {
    * Start speaking. Cancels any ongoing speech before starting.
    */
   const handleStart = (customText) => {
-    synth.cancel();
-    playingRef.current = false;
     const source = ((customText ?? text) || sampleText).trim();
+    playingRef.current = false;
+    synth.cancel();
     if (!source) return;
     if (customText !== undefined) {
       setText(source);
     }
+    // Prepare sentence chunks and reset indices so the UI can reflect the active sentence.
+    chunksRef.current = splitText(source);
+    idxRef.current = 0;
+    sentenceRepeatRef.current = 0;
+    playingRef.current = true;
     setLoopCount(0);
     setProgress(0);
-    setCurrentSentence(source.slice(0, 60));
-    speakSimple(source);
+    setSentenceContext(0);
+    setIsPlaying(true);
+    speakNext();
     setLastAction("Started");
   };
 
@@ -310,11 +334,13 @@ const LoopingTTSImproved = () => {
       setStatus("Paused");
       setLastAction("Paused");
       setIsPlaying(false);
+      playingRef.current = true; // keep loop state so resume continues properly
     } else if (synth.paused) {
       synth.resume();
       setStatus("Resumed");
       setLastAction("Resumed");
       setIsPlaying(true);
+      playingRef.current = true;
     }
   };
 
@@ -325,6 +351,10 @@ const LoopingTTSImproved = () => {
     setIsPlaying(false);
     setStatus("Stopped");
     setCurrentSentence("");
+    setPrevSentence("");
+    setNextSentence("");
+    idxRef.current = 0;
+    sentenceRepeatRef.current = 0;
     setProgress(0);
     setEndTime("");
     setLastAction("Stopped");
@@ -334,14 +364,30 @@ const LoopingTTSImproved = () => {
    * within repeats; this jumps back one sentence and resets
    * repeats. */
   const handlePrev = () => {
-    // Simplified: restart playback
-    handleStart();
+    if (!chunksRef.current.length) return handleStart();
+    synth.cancel();
+    // Move back one sentence and reset repeat counters
+    idxRef.current = Math.max(0, idxRef.current - 1);
+    sentenceRepeatRef.current = 0;
+    playingRef.current = true;
+    setIsPlaying(true);
+    setLastAction("Previous sentence");
+    setSentenceContext(idxRef.current);
+    speakNext();
   };
 
   /** Immediately jump to the next sentence. */
   const handleNext = () => {
-    handleStart();
+    if (!chunksRef.current.length) return handleStart();
+    synth.cancel();
+    // Advance to the next sentence
+    idxRef.current = Math.min(chunksRef.current.length - 1, idxRef.current + 1);
+    sentenceRepeatRef.current = 0;
+    playingRef.current = true;
+    setIsPlaying(true);
     setLastAction("Next sentence");
+    setSentenceContext(idxRef.current);
+    speakNext();
   };
 
   /** Read a .txt file and append its contents to the text box. */
@@ -373,6 +419,8 @@ const LoopingTTSImproved = () => {
     setText("");
     setStatus("Cleared");
     setCurrentSentence("");
+    setPrevSentence("");
+    setNextSentence("");
     setProgress(0);
     setEndTime("");
     setLoopCount(0);
@@ -439,6 +487,9 @@ const LoopingTTSImproved = () => {
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
+    }
+    .action-row {
+      margin: 0.4rem 0 0.7rem;
     }
     .controls button,
     .controls label {
@@ -577,6 +628,43 @@ const LoopingTTSImproved = () => {
       flex-wrap: wrap;
       gap: 0.5rem;
     }
+    .sentence-strip {
+      display: grid;
+      gap: 0.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      align-items: stretch;
+      margin: 0.35rem 0 0.75rem;
+    }
+    .sentence-card {
+      padding: 0.8rem 0.95rem;
+      border-radius: 12px;
+      border: 1px solid var(--card-border, #e2e8f0);
+      background: rgba(226,232,240,0.35);
+      color: inherit;
+      min-height: 90px;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .sentence-card.current {
+      background: linear-gradient(135deg, #2563eb, #60a5fa);
+      color: #fff;
+      border: none;
+      box-shadow: 0 12px 28px rgba(37,99,235,0.25);
+    }
+    .sentence-label {
+      font-size: 0.85rem;
+      opacity: 0.8;
+      letter-spacing: 0.01em;
+    }
+    .sentence-text {
+      font-weight: 700;
+      line-height: 1.3;
+      word-break: break-word;
+    }
+    .sentence-muted {
+      opacity: 0.7;
+    }
     .tab-row {
       display: inline-flex;
       gap: 0.5rem;
@@ -686,30 +774,61 @@ const LoopingTTSImproved = () => {
 
       {activeTab === "controls" && (
       <div className="tts-card">
-        <div style={{ marginBottom: "0.5rem", padding: "0.5rem 0.65rem", background: "rgba(226,232,240,0.5)", borderRadius: "10px", color: darkMode ? "#e2e8f0" : "#0f172a" }}>
-          <div style={{ fontSize: "0.85rem", opacity: 0.75, marginBottom: "0.15rem" }}>Now speaking</div>
-          <div style={{ fontWeight: 700, lineHeight: 1.3 }}>
-            {currentSentence || "Waiting to start..."}
-          </div>
-          {timeEstimate && (
-            <div style={{ fontSize: "0.85rem", color: darkMode ? "#cbd5e1" : "#475569", marginTop: "0.15rem" }}>
-              {timeEstimate}
+        <div className="sentence-strip">
+          <div className="sentence-card">
+            <div className="sentence-label">Previous</div>
+            <div className={`sentence-text ${prevSentence ? "" : "sentence-muted"}`}>
+              {prevSentence || "—"}
             </div>
-          )}
-          {sentenceRepeats > 1 && (
-            <div className="progress-bar-container" style={{ marginTop: "0.3rem", height: 8 }}>
+          </div>
+          <div className="sentence-card current">
+            <div className="sentence-label" style={{ color: "#e0e7ff" }}>Now speaking</div>
+            <div className="sentence-text">
+              {currentSentence || "Waiting to start..."}
+            </div>
+            {timeEstimate && (
+              <div style={{ fontSize: "0.85rem", opacity: 0.9, marginTop: "0.1rem" }}>
+                {timeEstimate}
+              </div>
+            )}
+            {sentenceRepeats > 1 && (
+              <div className="progress-bar-container" style={{ marginTop: "0.3rem", height: 8 }}>
+                <div
+                  className="progress-bar"
+                  style={{ width: `${currentSentenceProgress}%`, background: "linear-gradient(90deg, #e0f2fe, #bfdbfe)" }}
+                ></div>
+              </div>
+            )}
+            <div className="progress-bar-container" style={{ marginTop: "0.35rem" }}>
               <div
                 className="progress-bar"
-                style={{ width: `${currentSentenceProgress}%`, background: "linear-gradient(90deg, #a855f7, #6366f1)" }}
+                style={{ width: `${progress}%`, background: "linear-gradient(90deg, #22c55e, #4ade80)" }}
               ></div>
             </div>
-          )}
-          <div className="progress-bar-container" style={{ marginTop: "0.35rem" }}>
-            <div
-              className="progress-bar"
-              style={{ width: `${progress}%` }}
-            ></div>
           </div>
+          <div className="sentence-card">
+            <div className="sentence-label">Next</div>
+            <div className={`sentence-text ${nextSentence ? "" : "sentence-muted"}`}>
+              {nextSentence || "—"}
+            </div>
+          </div>
+        </div>
+        <div className="action-row">
+          <button className="button primary" onClick={() => handleStart()}>
+            ▶ Start
+          </button>
+          <button className="button secondary" onClick={handlePause}>
+            ⏸ Pause/Resume
+          </button>
+          <button className="button secondary" onClick={handleStop}>
+            ⏹ Stop
+          </button>
+          <button className="button secondary" onClick={handlePrev}>
+            ⏮ Previous
+          </button>
+          <button className="button secondary" onClick={handleNext}>
+            ⏭ Next
+          </button>
         </div>
         <div className="sliders">
           <label>
@@ -778,23 +897,6 @@ const LoopingTTSImproved = () => {
               </button>
             </div>
           </label>
-        </div>
-        <div className="action-row">
-          <button className="button primary" onClick={() => handleStart()}>
-            ▶ Start
-          </button>
-          <button className="button secondary" onClick={handlePause}>
-            ⏸ Pause/Resume
-          </button>
-          <button className="button secondary" onClick={handleStop}>
-            ⏹ Stop
-          </button>
-          <button className="button secondary" onClick={handlePrev}>
-            ⏮ Previous
-          </button>
-          <button className="button secondary" onClick={handleNext}>
-            ⏭ Next
-          </button>
         </div>
         <div style={{ textAlign: "center", fontSize: "0.9rem", color: darkMode ? "#cbd5e1" : "#475569" }}>
           {endTime}

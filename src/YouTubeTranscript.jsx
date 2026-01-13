@@ -178,7 +178,7 @@ export default function YouTubeTranscript() {
     const [shouldMute, setShouldMute] = useState(false);
     const [prompt, setPrompt] = useState(() => localStorage.getItem("yt_prompt") || "");
     const [responseFormat, setResponseFormat] = useState(() => localStorage.getItem("yt_prompt_format") || "none");
-    const [transcript, setTranscript] = useState(() => localStorage.getItem("yt_transcript") || "");
+    const [transcript, setTranscript] = useState("");
     const [splitLength, setSplitLength] = useState(() => localStorage.getItem("yt_split_length") || 1);
     const [splitTranscript, setSplitTranscript] = useState([]);
     const [promptResponses, setPromptResponses] = useState(() => JSON.parse(localStorage.getItem("yt_promptResponses")) || []);
@@ -406,7 +406,6 @@ export default function YouTubeTranscript() {
 
     // Persist settings to localStorage
     useEffect(() => {
-        localStorage.setItem("yt_transcript", transcript);
         localStorage.setItem("yt_prompt", prompt);
         localStorage.setItem("yt_prompt_format", responseFormat);
         localStorage.setItem("yt_split_length", splitLength);
