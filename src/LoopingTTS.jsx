@@ -774,6 +774,23 @@ const LoopingTTSImproved = () => {
 
       {activeTab === "controls" && (
       <div className="tts-card">
+        <div className="action-row">
+          <button className="button primary" onClick={() => handleStart()}>
+            ▶ Start
+          </button>
+          <button className="button secondary" onClick={handlePause}>
+            ⏸ Pause/Resume
+          </button>
+          <button className="button secondary" onClick={handleStop}>
+            ⏹ Stop
+          </button>
+          <button className="button secondary" onClick={handlePrev}>
+            ⏮ Previous
+          </button>
+          <button className="button secondary" onClick={handleNext}>
+            ⏭ Next
+          </button>
+        </div>
         <div className="sentence-strip">
           <div className="sentence-card">
             <div className="sentence-label">Previous</div>
@@ -812,23 +829,6 @@ const LoopingTTSImproved = () => {
               {nextSentence || "—"}
             </div>
           </div>
-        </div>
-        <div className="action-row">
-          <button className="button primary" onClick={() => handleStart()}>
-            ▶ Start
-          </button>
-          <button className="button secondary" onClick={handlePause}>
-            ⏸ Pause/Resume
-          </button>
-          <button className="button secondary" onClick={handleStop}>
-            ⏹ Stop
-          </button>
-          <button className="button secondary" onClick={handlePrev}>
-            ⏮ Previous
-          </button>
-          <button className="button secondary" onClick={handleNext}>
-            ⏭ Next
-          </button>
         </div>
         <div className="sliders">
           <label>
