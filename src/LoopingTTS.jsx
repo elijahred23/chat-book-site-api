@@ -39,10 +39,13 @@ const LoopingTTSImproved = () => {
   // Refs to track voices and playback state without triggering renders
   const voicesRef = useRef([]);
   const voiceRef = useRef(null);
+  const utterRef = useRef(null);
   const chunksRef = useRef([]);
   const idxRef = useRef(0); // index of the current sentence
   const playingRef = useRef(false);
   const sentenceRepeatRef = useRef(0); // how many times the current sentence has been repeated so far
+  const hasUserGestureRef = useRef(false);
+  const [hasUserGesture, setHasUserGesture] = useState(false);
 
   /**
    * Load available voices and select a default. When `samOnly` is true
@@ -51,20 +54,43 @@ const LoopingTTSImproved = () => {
    * available.
    */
   const loadVoices = () => {
-    voicesRef.current = synth.getVoices();
-    const samantha = voicesRef.current.find((v) => /samantha/i.test(v.name));
+    const voices = synth.getVoices();
+    if (!voices || !voices.length) {
+      voicesRef.current = [];
+      voiceRef.current = null;
+      return;
+    }
+    voicesRef.current = voices;
+    const samantha = voices.find((v) => /samantha/i.test(v.name));
     voiceRef.current = samOnly
       ? samantha || null
       : samantha ||
-        voicesRef.current.find((v) => /en[-_]US/i.test(v.lang)) ||
-        voicesRef.current[0];
+        voices.find((v) => /en[-_]US/i.test(v.lang)) ||
+        voices[0];
   };
 
   // Run once and whenever `samOnly` changes to refresh the voice list
   useEffect(() => {
     loadVoices();
-    synth.onvoiceschanged = loadVoices;
+    synth.addEventListener("voiceschanged", loadVoices);
+    return () => synth.removeEventListener("voiceschanged", loadVoices);
   }, [samOnly]);
+
+  // Capture the first user gesture so Chrome will allow speech playback
+  useEffect(() => {
+    const markGesture = () => {
+      if (!hasUserGestureRef.current) {
+        hasUserGestureRef.current = true;
+        setHasUserGesture(true);
+      }
+    };
+    window.addEventListener("pointerdown", markGesture, { once: true });
+    window.addEventListener("keydown", markGesture, { once: true });
+    return () => {
+      window.removeEventListener("pointerdown", markGesture);
+      window.removeEventListener("keydown", markGesture);
+    };
+  }, []);
 
   /**
    * Compute a rough time estimate for how long the current text will
@@ -112,6 +138,7 @@ const LoopingTTSImproved = () => {
   // Auto-start when TTS text is pushed or autoplay flag toggled (desktop/mobile unified)
   useEffect(() => {
     const candidate = (ttsText && ttsText.trim()) || text.trim() || sampleText;
+    if (!hasUserGesture) return;
     if (ttsAutoPlay && candidate) {
       setLoopCount(0);
       setActiveTab("controls");
@@ -125,7 +152,7 @@ const LoopingTTSImproved = () => {
       dispatch(actions.setIsTTSOpen(true));
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [ttsText, ttsAutoPlay]);
+  }, [ttsText, ttsAutoPlay, hasUserGesture]);
 
   // If TTS is already playing when opening the drawer, show controls tab
   useEffect(() => {
@@ -215,6 +242,10 @@ const LoopingTTSImproved = () => {
    */
   const speakNext = () => {
     if (!playingRef.current) return;
+    // Refresh voices if none are loaded yet (Chrome may populate asynchronously)
+    if (!voiceRef.current && (!voicesRef.current || !voicesRef.current.length)) {
+      loadVoices();
+    }
     const repeats = Math.max(sentenceRepeats, 1);
     // If we've gone past the last sentence in the list
     if (idxRef.current >= chunksRef.current.length) {
@@ -239,6 +270,7 @@ const LoopingTTSImproved = () => {
     // Determine the current sentence to speak
     const sentence = chunksRef.current[idxRef.current];
     const utter = new SpeechSynthesisUtterance(sentence);
+    utterRef.current = utter; // keep ref so Chrome/iOS do not GC the utterance mid-playback
     if (voiceRef.current) utter.voice = voiceRef.current;
     utter.rate = rate;
     utter.pitch = pitch;
@@ -269,10 +301,9 @@ const LoopingTTSImproved = () => {
    * Pick a best-guess voice for stable playback.
    */
   const pickVoice = () => {
-    const voices = synth.getVoices();
-    if (!voices.length) return null;
-    const samantha = voices.find((v) => /samantha/i.test(v.name));
-    return samantha || voices.find((v) => /en[-_]US/i.test(v.lang)) || voices[0];
+    if (voiceRef.current) return voiceRef.current;
+    loadVoices();
+    return voiceRef.current || voicesRef.current[0] || null;
   };
 
   /**
@@ -307,6 +338,10 @@ const LoopingTTSImproved = () => {
    * Start speaking. Cancels any ongoing speech before starting.
    */
   const handleStart = (customText) => {
+    if (!hasUserGestureRef.current) {
+      hasUserGestureRef.current = true;
+      setHasUserGesture(true);
+    }
     const source = ((customText ?? text) || sampleText).trim();
     playingRef.current = false;
     synth.cancel();
@@ -348,6 +383,7 @@ const LoopingTTSImproved = () => {
   const handleStop = () => {
     synth.cancel();
     playingRef.current = false;
+    utterRef.current = null;
     setIsPlaying(false);
     setStatus("Stopped");
     setCurrentSentence("");
