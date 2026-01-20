@@ -8,8 +8,9 @@ import { generateGeminiResponse, GeminiModel, listGeminiModels } from './gemini.
 import bodyParser from 'body-parser';
 import MarkdownIt from 'markdown-it';
 import fs from 'fs';
-import { fetchTranscript, getNewsVideos, getVideoComments } from './youtube.js';
+import { getNewsVideos, getVideoComments } from './youtube.js';
 import { searchYouTube, getVideoDetails, searchYouTubePlaylists, getPlaylistItems, getTrendingVideos } from './youtube.js';
+import { fetchTranscriptWithMetadata } from './transcriptService.js';
 import { getTranscript } from './supadata.js';
 import textToSpeech from '@google-cloud/text-to-speech';
 GeminiModel.currentModel = process.env.GEMINI_MODEL || "gemini-2.0-flash";
@@ -219,8 +220,11 @@ app.get('/api/youtube/transcript', async (req, res) => {
   }
 
   try {
-    const transcript = await fetchTranscript(url);
-    res.json({ transcript });
+    const result = await fetchTranscriptWithMetadata(url);
+    if (result?.error) {
+      return res.status(400).json(result);
+    }
+    res.json(result);
   } catch (err) {
     res.status(500).json({ error: 'Failed to fetch transcript' });
   }
