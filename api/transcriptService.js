@@ -1,4 +1,7 @@
 import { getSubtitles } from 'youtube-captions-scraper';
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
 const ILLEGAL_FILENAME_CHARS = /[\\/*?:"<>|]/g;
 const PREFERRED_LANGS = ['en', 'en-US', 'en-GB'];
@@ -6,6 +9,20 @@ const MAX_TRANSCRIPT_CACHE = 50;
 
 // In-memory LRU cache
 const transcriptCache = new Map();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const errorLogPath = path.join(__dirname, 'error.log');
+
+const logTranscriptError = (err, context = '') => {
+  const msg = err instanceof Error ? `${err.message}\n${err.stack || ''}` : String(err);
+  const entry = `[${new Date().toISOString()}] transcriptService${context ? ` ${context}` : ''}: ${msg}\n\n`;
+  try {
+    fs.appendFile(errorLogPath, entry, () => {});
+  } catch {
+    // ignore logging errors
+  }
+  console.error(entry);
+};
 
 function touchLocalCache(videoId, transcript) {
   if (transcriptCache.has(videoId)) {
@@ -70,6 +87,7 @@ export async function getVideoTitle(videoId) {
     const data = await resp.json();
     return data?.title || `Video_${videoId}`;
   } catch {
+    logTranscriptError(new Error(`Title lookup failed for ${videoId}`));
     return `Video_${videoId}`;
   }
 }
@@ -97,6 +115,7 @@ async function fetchTranscriptForVideo(videoId) {
       return await tryLanguage(lang);
     } catch (err) {
       lastError = err;
+      logTranscriptError(err, `fetchTranscriptForVideo lang=${lang} video=${videoId}`);
     }
   }
 
@@ -105,6 +124,7 @@ async function fetchTranscriptForVideo(videoId) {
     return await tryLanguage('en');
   } catch (err) {
     lastError = err;
+    logTranscriptError(err, `fetchTranscriptForVideo fallback video=${videoId}`);
   }
 
   throw lastError || new Error('Failed to fetch transcript');
@@ -145,11 +165,13 @@ export async function fetchTranscriptWithMetadata(urlOrId) {
       };
     } catch (err) {
       lastError = err;
+      logTranscriptError(err, `fetchTranscriptWithMetadata attempt=${attempt + 1} video=${videoId}`);
       if (attempt < 3) {
         await delay(500 * (attempt + 1));
       }
     }
   }
 
+  logTranscriptError(lastError, `fetchTranscriptWithMetadata finalFailure video=${videoId}`);
   return { error: lastError?.message || 'Failed to fetch transcript' };
 }

@@ -37,6 +37,8 @@ const RESPONSE_FORMATS = [
   { value: "qa_pairs", label: "Q&A pairs", instruction: "Format as Q: ... then A: ... for each point. No headings." },
   { value: "table_like", label: "Table style (pipe rows)", instruction: "Use a markdown table with headers and pipe-delimited rows. No extra text." },
   { value: "bold_terms", label: "Bold terms + brief explanations", instruction: "Start each line with a bolded term followed by a short explanation. No headings." },
+  { value: "code_blocks_only", label: "Code blocks only", instruction: "Respond using only code blocks where applicable. No explanations or other text." },
+  { value: "code_blocks_entry_point_files", label: "Code blocks for entry point files", instruction: "Provide code blocks only for the main entry point files of a project (e.g., index.js, main.py). No explanations or other text." },
 ];
 
 export default function GptPromptComponent({
