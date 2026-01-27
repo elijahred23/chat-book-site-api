@@ -66,6 +66,31 @@ const logErrorToFile = (error) => {
   fs.appendFileSync('error.log', errorLog, 'utf8');
 };
 
+// If the service-account JSON is provided via env, write it to disk so
+// Google TTS can read it from GOOGLE_APPLICATION_CREDENTIALS.
+const ensureTtsCredentialsFile = () => {
+  const rawJson = process.env.TTS_SA_JSON || process.env.GOOGLE_APPLICATION_CREDENTIALS_JSON;
+  if (!rawJson) return null;
+
+  try {
+    const parsed = JSON.parse(rawJson);
+    const credentialsPath = process.env.GOOGLE_APPLICATION_CREDENTIALS || path.join(__dirname, '../var/secrets/tts-sa.json');
+    fs.mkdirSync(path.dirname(credentialsPath), { recursive: true });
+    fs.writeFileSync(credentialsPath, JSON.stringify(parsed, null, 2));
+
+    if (!process.env.GOOGLE_APPLICATION_CREDENTIALS) {
+      process.env.GOOGLE_APPLICATION_CREDENTIALS = credentialsPath;
+    }
+
+    console.log(`TTS credentials file created at ${credentialsPath}`);
+    return credentialsPath;
+  } catch (err) {
+    console.error('Failed to parse TTS service account JSON from env', err.message);
+    logErrorToFile(err);
+    return null;
+  }
+};
+
 // Quick reachability check (HTTP HEAD) with timeout
 const checkReachable = async (url) => {
   try {
@@ -147,6 +172,8 @@ app.get('/api/websearch', async (req, res) => {
 // === Google TTS client ===
 let ttsClient = null;
 try {
+  // Allow service account JSON to be provided via env var (TTS_SA_JSON or GOOGLE_APPLICATION_CREDENTIALS_JSON)
+  ensureTtsCredentialsFile();
   ttsClient = new textToSpeech.TextToSpeechClient();
   console.log("Google TTS client initialized");
 } catch (err) {
