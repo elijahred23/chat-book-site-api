@@ -249,11 +249,15 @@ app.get('/api/youtube/transcript', async (req, res) => {
   try {
     const result = await fetchTranscriptWithMetadata(url);
     if (result?.error) {
-      return res.status(400).json(result);
+      const status = Number(result.status) || 400;
+      return res.status(status).json({
+        error: result.error,
+        stage: result.stage || 'unknown',
+      });
     }
     res.json(result);
   } catch (err) {
-    res.status(500).json({ error: 'Failed to fetch transcript' });
+    res.status(500).json({ error: err?.message || 'Failed to fetch transcript', stage: 'server' });
   }
 });
 

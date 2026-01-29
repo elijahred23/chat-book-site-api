@@ -460,10 +460,11 @@ export default function YouTubeTranscript() {
                     }
                 } catch (err) {
                     attempt += 1;
+                    const msg = err?.message || "Transcript load failed.";
                     if (attempt < maxAttempts) {
-                        showMessage?.({ type: "error", message: `Transcript load failed (attempt ${attempt}). Retrying...` });
+                        showMessage?.({ type: "error", message: `${msg} (attempt ${attempt}). Retrying...` });
                     } else {
-                        showMessage?.({ type: "error", message: "Failed to load transcript after retries." });
+                        showMessage?.({ type: "error", message: msg });
                     }
                 }
             }

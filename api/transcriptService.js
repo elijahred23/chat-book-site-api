@@ -93,7 +93,7 @@ async function fetchTranscriptForVideo(videoId) {
       .filter(Boolean)
       .join(' ')
       .trim();
-    if (!text) throw new Error('No transcript lines found');
+    if (!text) throw new Error(`No transcript lines found (lang=${lang})`);
     return text;
   };
 
@@ -122,13 +122,12 @@ const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 export async function fetchTranscriptWithMetadata(urlOrId) {
   const videoId = extractVideoId(urlOrId);
   if (!videoId) {
-    return { error: 'Invalid YouTube URL or video ID' };
+    return { error: 'Invalid YouTube URL or video ID', status: 400, stage: 'validation' };
   }
 
   let lastError = null;
   for (let attempt = 0; attempt < 4; attempt += 1) {
     try {
-      console.log({videoId, attempt})
       const transcript = await fetchTranscriptForVideo(videoId);
       const title = await getVideoTitle(videoId);
       return {
@@ -147,5 +146,9 @@ export async function fetchTranscriptWithMetadata(urlOrId) {
   }
 
   logTranscriptError(lastError, `fetchTranscriptWithMetadata finalFailure video=${videoId}`);
-  return { error: lastError?.message || 'Failed to fetch transcript' };
+  return {
+    error: lastError?.message || 'Failed to fetch transcript',
+    status: 502,
+    stage: 'transcript_fetch',
+  };
 }
