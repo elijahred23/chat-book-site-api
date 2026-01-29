@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "debug": "NODE_OPTIONS=--inspect=0.0.0.0:9229 node --watch server.js"
   },
   "author": "author",
   "license": "ISC",
@@ -23,6 +24,7 @@
     "openai": "^4.28.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "undici": "^6.19.6",
     "ws": "^8.18.0",
     "youtube-captions-scraper": "^2.0.3"
   }

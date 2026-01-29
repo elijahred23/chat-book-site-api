@@ -16,5 +16,5 @@ ENV NODE_ENV=production
 COPY --from=api_deps /app/api/node_modules ./api/node_modules
 COPY api ./api
 COPY --from=builder /app/dist ./dist
-EXPOSE 8080
+EXPOSE 8080 9229
 CMD ["node", "api/server.js"]

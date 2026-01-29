@@ -1,5 +1,3 @@
-version: "3.9"
-
 services:
   frontend:
     image: node:18-alpine
@@ -18,14 +16,16 @@ services:
   api:
     image: node:18-alpine
     working_dir: /app/api
-    command: sh -c "npm install && node --watch server.js"
+    command: sh -c "npm install && NODE_OPTIONS='--inspect=0.0.0.0:9229' node --watch server.js"
     env_file:
       - ./api/.env
     environment:
       - GOOGLE_APPLICATION_CREDENTIALS=/var/secrets/tts-sa.json
+      - NODE_OPTIONS=--inspect=0.0.0.0:9229
     ports:
       - "3005:3005"
       - "8080:8080"
+      - "9229:9229"
     volumes:
       - ./:/app
       # Mount your local service account key into the container; ensure this file exists locally.

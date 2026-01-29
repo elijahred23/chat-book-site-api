@@ -2,13 +2,24 @@ import { getSubtitles } from 'youtube-captions-scraper';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { ProxyAgent, setGlobalDispatcher } from 'undici';
+
+// ----------------------------
+//   Proxy setup (Webshare)
+// ----------------------------
+const WEBSHARE_PROXY_URL = 'http://mbrbdnsi:qlxjwi1vboda@p.webshare.io:80';
+if (!process.env.HTTPS_PROXY) process.env.HTTPS_PROXY = WEBSHARE_PROXY_URL;
+if (!process.env.HTTP_PROXY) process.env.HTTP_PROXY = WEBSHARE_PROXY_URL;
+try {
+  setGlobalDispatcher(new ProxyAgent(WEBSHARE_PROXY_URL));
+} catch (err) {
+  // If undici proxy configuration fails we still proceed without crashing.
+  console.error('Failed to set proxy dispatcher', err);
+}
 
 const ILLEGAL_FILENAME_CHARS = /[\\/*?:"<>|]/g;
 const PREFERRED_LANGS = ['en', 'en-US', 'en-GB'];
-const MAX_TRANSCRIPT_CACHE = 50;
 
-// In-memory LRU cache
-const transcriptCache = new Map();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const errorLogPath = path.join(__dirname, 'error.log');
@@ -23,30 +34,6 @@ const logTranscriptError = (err, context = '') => {
   }
   console.error(entry);
 };
-
-function touchLocalCache(videoId, transcript) {
-  if (transcriptCache.has(videoId)) {
-    transcriptCache.delete(videoId);
-  }
-  transcriptCache.set(videoId, transcript);
-  if (transcriptCache.size > MAX_TRANSCRIPT_CACHE) {
-    const oldestKey = transcriptCache.keys().next().value;
-    transcriptCache.delete(oldestKey);
-  }
-}
-
-function cacheTranscript(videoId, transcript) {
-  touchLocalCache(videoId, transcript);
-}
-
-function getCachedTranscript(videoId) {
-  if (transcriptCache.has(videoId)) {
-    const cached = transcriptCache.get(videoId);
-    touchLocalCache(videoId, cached);
-    return cached;
-  }
-  return null;
-}
 
 export function extractVideoId(input = '') {
   const trimmed = String(input || '').trim();
@@ -138,30 +125,17 @@ export async function fetchTranscriptWithMetadata(urlOrId) {
     return { error: 'Invalid YouTube URL or video ID' };
   }
 
-  const cached = await getCachedTranscript(videoId);
-  if (cached) {
-    const title = await getVideoTitle(videoId);
-    return {
-      videoId,
-      title,
-      filename: sanitizeFilename(title),
-      transcript: cached,
-      cached: true,
-    };
-  }
-
   let lastError = null;
   for (let attempt = 0; attempt < 4; attempt += 1) {
     try {
+      console.log({videoId, attempt})
       const transcript = await fetchTranscriptForVideo(videoId);
-      await cacheTranscript(videoId, transcript);
       const title = await getVideoTitle(videoId);
       return {
         videoId,
         title,
         filename: sanitizeFilename(title),
         transcript,
-        cached: false,
       };
     } catch (err) {
       lastError = err;
