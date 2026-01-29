@@ -14,7 +14,7 @@ services:
       - api
 
   api:
-    image: node:18-alpine
+    build: .
     working_dir: /app/api
     command: sh -c "npm install && NODE_OPTIONS='--inspect=0.0.0.0:9229' node --watch server.js"
     env_file:
