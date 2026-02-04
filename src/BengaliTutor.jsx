@@ -106,6 +106,7 @@ export default function BengaliTutor() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [vocabMp3Loading, setVocabMp3Loading] = useState(false);
+  const [phraseMp3Loading, setPhraseMp3Loading] = useState(false);
   const [gameQuestion, setGameQuestion] = useState(null);
   const [gameResult, setGameResult] = useState(null);
   const [gameChoice, setGameChoice] = useState(null);
@@ -457,6 +458,47 @@ export default function BengaliTutor() {
     }
   };
 
+  const downloadPhrasesMp3 = async (mode = "bn-only") => {
+    // mode: "bn-only" or "bn-en"
+    if (!lesson?.phrases?.length) return;
+    try {
+      setPhraseMp3Loading(true);
+      const items =
+        mode === "bn-en"
+          ? lesson.phrases.flatMap((p) => [
+              { text: p.bn, lang: "bn-IN" },
+              { text: p.en, lang: "en-US" },
+            ])
+          : lesson.phrases.map((p) => ({ text: p.bn, lang: "bn-IN" }));
+      const cacheKey = JSON.stringify({ type: "phrases", mode, items });
+      const cachedUrl = batchCacheRef.current.get(cacheKey);
+      if (cachedUrl) {
+        const link = document.createElement("a");
+        link.href = cachedUrl;
+        link.download = `${lesson.title || "bengali-phrases"}-${mode}.mp3`;
+        link.click();
+        return;
+      }
+      const resp = await fetch("/api/tts/batch", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ items }),
+      });
+      if (!resp.ok) throw new Error("Failed to generate MP3");
+      const blob = await resp.blob();
+      const url = URL.createObjectURL(blob);
+      batchCacheRef.current.set(cacheKey, url);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = `${lesson.title || "bengali-phrases"}-${mode}.mp3`;
+      link.click();
+    } catch (err) {
+      setError(err?.message || "Failed to download phrase audio");
+    } finally {
+      setPhraseMp3Loading(false);
+    }
+  };
+
   const buildGameQuestion = (vocab) => {
     if (!vocab?.length || vocab.length < 2) return null;
     const correct = vocab[Math.floor(Math.random() * vocab.length)];
@@ -745,6 +787,28 @@ export default function BengaliTutor() {
                   <small style={{ color: "#475569" }}>Phrase list with pronunciations</small>
                 </div>
                 <button className="bn-btn secondary" onClick={downloadWords} disabled={!lesson?.vocab?.length}>Download</button>
+              </div>
+              <div className="bn-row">
+                <div>
+                  <div className="bn-pill">Download phrases MP3</div>
+                  <small style={{ color: "#475569" }}>Spoken Bengali phrases</small>
+                </div>
+                <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
+                  <button
+                    className="bn-btn secondary"
+                    onClick={() => downloadPhrasesMp3("bn-only")}
+                    disabled={!lesson?.phrases?.length || phraseMp3Loading}
+                  >
+                    {phraseMp3Loading ? "Building..." : "Bengali MP3"}
+                  </button>
+                  <button
+                    className="bn-btn secondary"
+                    onClick={() => downloadPhrasesMp3("bn-en")}
+                    disabled={!lesson?.phrases?.length || phraseMp3Loading}
+                  >
+                    {phraseMp3Loading ? "Building..." : "Bengali → English MP3"}
+                  </button>
+                </div>
               </div>
               <div className="bn-row">
                 <div>
