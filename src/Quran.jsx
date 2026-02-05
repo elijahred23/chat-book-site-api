@@ -30,6 +30,14 @@ const Quran = () => {
   const dispatch = useAppDispatch();
   const [activeTab, setActiveTab] = useState("read"); // "read" or "prompt"
   const [showAllPrompts, setShowAllPrompts] = useState(false);
+  const [showAyahActions, setShowAyahActions] = useState(() => {
+    try {
+      const saved = localStorage.getItem("q_show_ayah_actions");
+      return saved ? JSON.parse(saved) : false;
+    } catch {
+      return false;
+    }
+  });
 
   const promptSuggestions = [
     { label: "Summary", value: "Summarize this Surah" },
@@ -76,6 +84,12 @@ const Quran = () => {
       quranData[0];
     setSelectedSurah(initial);
   }, [quranData, selectedSurah, selectedSurahNumber]);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem("q_show_ayah_actions", JSON.stringify(showAyahActions));
+    } catch {}
+  }, [showAyahActions]);
 
   const chunkIntoSentences = (text, maxWords = 5000) => {
     const sentences = text.match(/[^.!?]+[.!?]+|\S+/g) || [text];
@@ -366,6 +380,18 @@ const Quran = () => {
                   </div>
                 </div>
               </div>
+
+              <div style={{ display: 'flex', gap: 10, alignItems: 'center', flexWrap: 'wrap', padding: '10px 12px', borderRadius: 12, background: '#eef2ff', border: '1px solid #cbd5e1' }}>
+                <label style={{ display: 'inline-flex', alignItems: 'center', gap: 8, fontWeight: 700, color: '#0f172a' }}>
+                  <input
+                    type="checkbox"
+                    checked={showAyahActions}
+                    onChange={(e) => setShowAyahActions(e.target.checked)}
+                  />
+                  Show action buttons on each verse
+                </label>
+                <span style={{ fontSize: '0.9rem', color: '#475569' }}>(off by default to keep verses clean)</span>
+              </div>
               {loadingPrompt && (
                 <div style={{ marginTop: '8px' }}>
                   <label style={{ fontWeight: 'bold' }}>Processing chunks... {progress}%</label>
@@ -419,7 +445,9 @@ const Quran = () => {
                                 Selected
                               </span>
                             )}
-                            <ActionButtons limitButtons promptText={`${selectedSurah.englishName} (Surah ${selectedSurah.number}) - ${ayah.numberInSurah}: ${chunk}`} />
+                            {showAyahActions && (
+                              <ActionButtons limitButtons promptText={`${selectedSurah.englishName} (Surah ${selectedSurah.number}) - ${ayah.numberInSurah}: ${chunk}`} />
+                            )}
                           </div>
                         </div>
                       );

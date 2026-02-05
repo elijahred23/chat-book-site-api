@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState, useCallback } from "react";
 import { ClipLoader } from "react-spinners";
 import { getGeminiResponse } from "./utils/callGemini";
 import ActionButtons from "./ui/ActionButtons.jsx";
@@ -107,6 +107,14 @@ export default function BengaliTutor() {
   const [error, setError] = useState("");
   const [vocabMp3Loading, setVocabMp3Loading] = useState(false);
   const [phraseMp3Loading, setPhraseMp3Loading] = useState(false);
+  const [showPhraseActions, setShowPhraseActions] = useState(() => {
+    try {
+      const saved = localStorage.getItem("bn_show_phrase_actions");
+      return saved ? JSON.parse(saved) : false;
+    } catch {
+      return false;
+    }
+  });
   const [gameQuestion, setGameQuestion] = useState(null);
   const [gameResult, setGameResult] = useState(null);
   const [gameChoice, setGameChoice] = useState(null);
@@ -118,6 +126,8 @@ export default function BengaliTutor() {
   const [audioResult, setAudioResult] = useState(null);
   const [audioChoice, setAudioChoice] = useState(null);
   const [audioScore, setAudioScore] = useState({ correct: 0, total: 0, streak: 0, bestStreak: 0 });
+  const [contentTab, setContentTab] = useState("phrases"); // switch between phrases, vocab, games
+  const [gameDataset, setGameDataset] = useState("vocab"); // vocab | phrases
   const [masteryQueue, setMasteryQueue] = useState([]);
   const [masteryIndex, setMasteryIndex] = useState(0);
   const [masteryCorrectCount, setMasteryCorrectCount] = useState(0);
@@ -347,6 +357,25 @@ export default function BengaliTutor() {
       background: #0f172a;
       color: #fff;
     }
+    .bn-icon-btn {
+      width: 36px;
+      height: 36px;
+      padding: 0.35rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      line-height: 1;
+    }
+    .bn-stop-btn {
+      background: #ef4444;
+      border-color: #ef4444;
+      color: #fff;
+      box-shadow: 0 10px 24px rgba(239,68,68,0.18);
+    }
+    .bn-stop-btn:hover {
+      filter: brightness(0.95);
+    }
     .bn-row {
       display: grid;
       gap: 6px;
@@ -414,6 +443,17 @@ export default function BengaliTutor() {
     const phrases = lesson.phrases?.map((p) => `${p.bn} (${p.pronunciation || ""}) - ${p.en}`) || [];
     return `${lesson.title || "Bengali Lesson"}: ${phrases.join(" | ")}`;
   }, [lesson]);
+
+  const hasAnyGameContent = useMemo(
+    () => ((lesson?.vocab?.length || 0) + (lesson?.phrases?.length || 0)) > 0,
+    [lesson]
+  );
+
+  useEffect(() => {
+    try {
+      localStorage.setItem("bn_show_phrase_actions", JSON.stringify(showPhraseActions));
+    } catch {}
+  }, [showPhraseActions]);
 
   const downloadCombinedVocabMp3 = async (lang = "bn-IN") => {
     if (!lesson?.vocab?.length) return;
@@ -499,53 +539,53 @@ export default function BengaliTutor() {
     }
   };
 
-  const buildGameQuestion = (vocab) => {
-    if (!vocab?.length || vocab.length < 2) return null;
-    const correct = vocab[Math.floor(Math.random() * vocab.length)];
-    const distractors = vocab.filter((v) => v.en !== correct.en);
+  const buildGameQuestion = (items) => {
+    if (!items?.length || items.length < 2) return null;
+    const correct = items[Math.floor(Math.random() * items.length)];
+    const distractors = items.filter((v) => v.en !== correct.en);
     const shuffled = [...distractors].sort(() => Math.random() - 0.5);
     const picks = shuffled.slice(0, Math.min(3, shuffled.length));
     const options = [...picks.map((v) => v.en), correct.en].sort(() => Math.random() - 0.5);
     return { bn: correct.bn, pronunciation: correct.pronunciation, en: correct.en, options };
   };
 
-  const buildTrueFalseQuestion = (vocab) => {
-    if (!vocab?.length || vocab.length < 2) return null;
-    const correct = vocab[Math.floor(Math.random() * vocab.length)];
+  const buildTrueFalseQuestion = (items) => {
+    if (!items?.length || items.length < 2) return null;
+    const correct = items[Math.floor(Math.random() * items.length)];
     const shouldBeCorrect = Math.random() > 0.45;
     if (shouldBeCorrect) {
       return { bn: correct.bn, en: correct.en, isCorrect: true };
     }
-    const wrongPool = vocab.filter((v) => v.en !== correct.en);
+    const wrongPool = items.filter((v) => v.en !== correct.en);
     const wrong = wrongPool[Math.floor(Math.random() * wrongPool.length)];
     return { bn: correct.bn, en: wrong.en, isCorrect: false };
   };
 
-  const buildAudioHuntQuestion = (vocab) => {
-    if (!vocab?.length || vocab.length < 2) return null;
-    const correct = vocab[Math.floor(Math.random() * vocab.length)];
-    const distractors = vocab.filter((v) => v.en !== correct.en);
+  const buildAudioHuntQuestion = (items) => {
+    if (!items?.length || items.length < 2) return null;
+    const correct = items[Math.floor(Math.random() * items.length)];
+    const distractors = items.filter((v) => v.en !== correct.en);
     const shuffled = [...distractors].sort(() => Math.random() - 0.5);
     const picks = shuffled.slice(0, Math.min(3, shuffled.length));
     const options = [...picks.map((v) => v.en), correct.en].sort(() => Math.random() - 0.5);
     return { bn: correct.bn, en: correct.en, options };
   };
 
-  const buildMasteryQueue = (vocab) => {
-    const shuffled = [...vocab].sort(() => Math.random() - 0.5);
+  const buildMasteryQueue = (items) => {
+    const shuffled = [...items].sort(() => Math.random() - 0.5);
     return shuffled;
   };
 
-  const buildMasteryOptions = (vocab, current) => {
+  const buildMasteryOptions = (items, current) => {
     if (!current) return [];
-    const distractors = vocab.filter((v) => v.en !== current.en);
+    const distractors = items.filter((v) => v.en !== current.en);
     const picks = [...distractors].sort(() => Math.random() - 0.5).slice(0, Math.min(3, distractors.length));
     return [...picks.map((v) => v.en), current.en].sort(() => Math.random() - 0.5);
   };
 
   const startNewGameRound = () => {
-    if (!lesson?.vocab?.length) return;
-    const clean = lesson.vocab.filter((v) => v?.bn && v?.en);
+    const clean = getGameItems();
+    if (!clean.length) return;
     const question = buildGameQuestion(clean);
     setGameQuestion(question);
     setGameResult(null);
@@ -553,16 +593,16 @@ export default function BengaliTutor() {
   };
 
   const startTrueFalseRound = () => {
-    if (!lesson?.vocab?.length) return;
-    const clean = lesson.vocab.filter((v) => v?.bn && v?.en);
+    const clean = getGameItems();
+    if (!clean.length) return;
     const question = buildTrueFalseQuestion(clean);
     setTfQuestion(question);
     setTfResult(null);
   };
 
   const startAudioHuntRound = () => {
-    if (!lesson?.vocab?.length) return;
-    const clean = lesson.vocab.filter((v) => v?.bn && v?.en);
+    const clean = getGameItems();
+    if (!clean.length) return;
     const question = buildAudioHuntQuestion(clean);
     setAudioQuestion(question);
     setAudioResult(null);
@@ -662,8 +702,8 @@ export default function BengaliTutor() {
   };
 
   const reshuffleMastery = () => {
-    if (!lesson?.vocab?.length) return;
-    const clean = lesson.vocab.filter((v) => v?.bn && v?.en);
+    const clean = getGameItems();
+    if (!clean.length) return;
     const queue = buildMasteryQueue(clean);
     setMasteryQueue(queue);
     setMasteryIndex(0);
@@ -674,48 +714,67 @@ export default function BengaliTutor() {
   };
 
   useEffect(() => {
-    if (!lesson?.vocab?.length) {
-      setGameQuestion(null);
-      setGameResult(null);
-      setGameChoice(null);
-      setGameScore({ correct: 0, total: 0, streak: 0, bestStreak: 0 });
-      setTfQuestion(null);
-      setTfResult(null);
-      setTfScore({ correct: 0, total: 0, streak: 0, bestStreak: 0 });
-      setAudioQuestion(null);
-      setAudioResult(null);
-      setAudioChoice(null);
-      setAudioScore({ correct: 0, total: 0, streak: 0, bestStreak: 0 });
-      setMasteryQueue([]);
-      setMasteryIndex(0);
-      setMasteryCorrectCount(0);
-      setMasteryTarget(3);
-      setMasteryResult(null);
-      setMasteryChoice(null);
-      setMasteryOptions([]);
-      setMasteryScore({ correct: 0, total: 0, streak: 0, bestStreak: 0 });
+    const hasPhrases = lesson?.phrases?.length;
+    const hasVocab = lesson?.vocab?.length;
+    setContentTab(hasPhrases ? "phrases" : hasVocab ? "vocab" : "phrases");
+    setGameDataset(hasVocab ? "vocab" : hasPhrases ? "phrases" : "vocab");
+  }, [lesson]);
+
+  const resetGames = () => {
+    setGameQuestion(null);
+    setGameResult(null);
+    setGameChoice(null);
+    setGameScore({ correct: 0, total: 0, streak: 0, bestStreak: 0 });
+    setTfQuestion(null);
+    setTfResult(null);
+    setTfScore({ correct: 0, total: 0, streak: 0, bestStreak: 0 });
+    setAudioQuestion(null);
+    setAudioResult(null);
+    setAudioChoice(null);
+    setAudioScore({ correct: 0, total: 0, streak: 0, bestStreak: 0 });
+    setMasteryQueue([]);
+    setMasteryIndex(0);
+    setMasteryCorrectCount(0);
+    setMasteryTarget(3);
+    setMasteryResult(null);
+    setMasteryChoice(null);
+    setMasteryOptions([]);
+    setMasteryScore({ correct: 0, total: 0, streak: 0, bestStreak: 0 });
+  };
+
+  const getGameItems = useCallback(() => {
+    const source = gameDataset === "phrases" ? lesson?.phrases : lesson?.vocab;
+    if (!source?.length) return [];
+    return source.filter((v) => v?.bn && v?.en);
+  }, [lesson, gameDataset]);
+
+  const gameItems = useMemo(() => getGameItems(), [getGameItems]);
+
+  useEffect(() => {
+    if (!gameItems.length || gameItems.length < 2) {
+      resetGames();
       return;
     }
-    startNewGameRound();
-    startTrueFalseRound();
-    startAudioHuntRound();
-    const clean = lesson.vocab.filter((v) => v?.bn && v?.en);
-    const queue = buildMasteryQueue(clean);
+    resetGames();
+    const queue = buildMasteryQueue(gameItems);
     setMasteryQueue(queue);
     setMasteryIndex(0);
     setMasteryCorrectCount(0);
     setMasteryResult(null);
     setMasteryChoice(null);
     startMasteryRound(queue, 0);
-  }, [lesson]);
+    startNewGameRound();
+    startTrueFalseRound();
+    startAudioHuntRound();
+  }, [lesson, gameDataset, gameItems]);
 
   useEffect(() => {
-    if (!lesson?.vocab?.length) return;
+    if (!gameItems.length || gameItems.length < 2) return;
     setMasteryCorrectCount(0);
     setMasteryResult(null);
     setMasteryChoice(null);
     startMasteryRound(masteryQueue, masteryIndex);
-  }, [masteryTarget, lesson]);
+  }, [masteryTarget, lesson, gameItems, masteryQueue, masteryIndex]);
 
   return (
     <div style={{ background: "#f8fafc", minHeight: "100vh" }}>
@@ -845,7 +904,43 @@ export default function BengaliTutor() {
             <p style={{ margin: 0, color: "#475569" }}>{lesson.summary}</p>
             <ActionButtons promptText={combinedLessonPrompt} />
 
-            {lesson.phrases?.length ? (
+            <div className="bn-tabs">
+              <button
+                className={`bn-tab ${contentTab === "phrases" ? "active" : ""}`}
+                onClick={() => setContentTab("phrases")}
+                disabled={!lesson.phrases?.length}
+              >
+                Key Phrases
+              </button>
+              <button
+                className={`bn-tab ${contentTab === "vocab" ? "active" : ""}`}
+                onClick={() => setContentTab("vocab")}
+                disabled={!lesson.vocab?.length}
+              >
+                Vocabulary
+              </button>
+              <button
+                className={`bn-tab ${contentTab === "games" ? "active" : ""}`}
+                onClick={() => setContentTab("games")}
+                disabled={!((lesson.vocab?.length || 0) + (lesson.phrases?.length || 0))}
+              >
+                Games
+              </button>
+            </div>
+
+            <div style={{ display: "flex", gap: 10, alignItems: "center", flexWrap: "wrap", padding: "10px 12px", borderRadius: 12, background: "#eef2ff", border: "1px solid #e2e8f0" }}>
+              <label style={{ display: "inline-flex", alignItems: "center", gap: 8, fontWeight: 700, color: "#0f172a" }}>
+                <input
+                  type="checkbox"
+                  checked={showPhraseActions}
+                  onChange={(e) => setShowPhraseActions(e.target.checked)}
+                />
+                Show action buttons on phrases
+              </label>
+              <span style={{ fontSize: "0.9rem", color: "#475569" }}>(off by default for a cleaner view)</span>
+            </div>
+
+            {contentTab === "phrases" && lesson.phrases?.length ? (
               <div className="bn-section" style={{ display: "grid", gap: 10 }}>
                 <h4 style={{ margin: 0 }}>Key Phrases</h4>
                 {lesson.phrases.map((p, idx) => (
@@ -871,14 +966,26 @@ export default function BengaliTutor() {
                       >
                           🔁 Loop bn→en
                         </button>
+                        {loopStateRef.current.key === `phrase-${idx}` && (
+                          <button
+                            className="bn-btn bn-icon-btn bn-stop-btn"
+                            onClick={stopLoops}
+                            aria-label="Stop phrase loop"
+                            title="Stop loop"
+                          >
+                            ⏹
+                          </button>
+                        )}
                       </div>
                     </div>
                     <div style={{ color: "#0f172a" }}>{p.pronunciation}</div>
                     <div style={{ color: "#475569" }}>{p.en}</div>
                     {p.context && <div style={{ color: "#475569" }}>Context: {p.context}</div>}
-                    <div style={{ marginTop: 6 }}>
-                      <ActionButtons limitButtons promptText={`${lesson.title}: ${p.bn} (${p.pronunciation}) - ${p.en}`} />
-                    </div>
+                    {showPhraseActions && (
+                      <div style={{ marginTop: 6 }}>
+                        <ActionButtons limitButtons promptText={`${lesson.title}: ${p.bn} (${p.pronunciation}) - ${p.en}`} />
+                      </div>
+                    )}
                   </div>
                 ))}
                 <div style={{ display: "flex", gap: 8, flexWrap: "wrap", alignItems: "center" }}>
@@ -898,12 +1005,26 @@ export default function BengaliTutor() {
                   >
                     🔁 Loop all phrases (bn→en)
                   </button>
+                  {loopStateRef.current.key === "all-phrases" && (
+                    <button
+                      className="bn-btn bn-icon-btn bn-stop-btn"
+                      onClick={stopLoops}
+                      aria-label="Stop loop"
+                      title="Stop loop"
+                    >
+                      ⏹
+                    </button>
+                  )}
                   <button className="bn-btn secondary" onClick={stopLoops}>Stop Loop</button>
                 </div>
               </div>
             ) : null}
 
-            {lesson.vocab?.length ? (
+            {contentTab === "phrases" && !lesson.phrases?.length ? (
+              <div className="bn-section" style={{ color: "#475569" }}>No phrases yet — generate a lesson to view phrases.</div>
+            ) : null}
+
+            {contentTab === "vocab" && lesson.vocab?.length ? (
               <div className="bn-section" style={{ display: "grid", gap: 6 }}>
                 <h4 style={{ margin: 0 }}>Vocabulary</h4>
                 {lesson.vocab.map((v, idx) => (
@@ -928,6 +1049,16 @@ export default function BengaliTutor() {
                       >
                         🔁 bn→en
                       </button>
+                      {loopStateRef.current.key === `vocab-${idx}` && (
+                        <button
+                          className="bn-btn bn-icon-btn bn-stop-btn"
+                          onClick={stopLoops}
+                          aria-label="Stop vocab loop"
+                          title="Stop loop"
+                        >
+                          ⏹
+                        </button>
+                      )}
                       <button
                         className="bn-btn secondary"
                         onClick={() =>
@@ -940,6 +1071,16 @@ export default function BengaliTutor() {
                       >
                         🔁 en→bn
                       </button>
+                      {loopStateRef.current.key === `vocab-enbn-${idx}` && (
+                        <button
+                          className="bn-btn bn-icon-btn bn-stop-btn"
+                          onClick={stopLoops}
+                          aria-label="Stop vocab loop"
+                          title="Stop loop"
+                        >
+                          ⏹
+                        </button>
+                      )}
                     </div>
                   </div>
                 ))}
@@ -960,6 +1101,16 @@ export default function BengaliTutor() {
                   >
                     🔁 Loop all vocab (bn→en)
                   </button>
+                  {loopStateRef.current.key === "all-vocab" && (
+                    <button
+                      className="bn-btn bn-icon-btn bn-stop-btn"
+                      onClick={stopLoops}
+                      aria-label="Stop loop"
+                      title="Stop loop"
+                    >
+                      ⏹
+                    </button>
+                  )}
                   <button
                     className="bn-btn"
                     onClick={() =>
@@ -976,22 +1127,44 @@ export default function BengaliTutor() {
                   >
                     🔁 Loop all vocab (en→bn)
                   </button>
+                  {loopStateRef.current.key === "all-vocab-enbn" && (
+                    <button
+                      className="bn-btn bn-icon-btn bn-stop-btn"
+                      onClick={stopLoops}
+                      aria-label="Stop loop"
+                      title="Stop loop"
+                    >
+                      ⏹
+                    </button>
+                  )}
                   <button className="bn-btn secondary" onClick={stopLoops}>Stop Loop</button>
                 </div>
               </div>
             ) : null}
 
-            {lesson.vocab?.length ? (
+            {contentTab === "vocab" && !lesson.vocab?.length ? (
+              <div className="bn-section" style={{ color: "#475569" }}>No vocabulary yet — generate a lesson to view words.</div>
+            ) : null}
+
+            {contentTab === "games" && hasAnyGameContent ? (
               <div className="bn-section" style={{ display: "grid", gap: 10 }}>
                 <div style={{ display: "grid", gap: 8 }}>
                   <div style={{ display: "flex", justifyContent: "space-between", gap: 12, flexWrap: "wrap", alignItems: "center" }}>
-                    <h4 style={{ margin: 0 }}>Vocabulary Games</h4>
+                    <h4 style={{ margin: 0 }}>{gameDataset === "phrases" ? "Phrase Games" : "Vocabulary Games"}</h4>
                   <div className="bn-pill">
                       {activeGameTab === "match" && `Score ${gameScore.correct}/${gameScore.total} • Streak ${gameScore.streak} (Best ${gameScore.bestStreak})`}
                       {activeGameTab === "truefalse" && `Score ${tfScore.correct}/${tfScore.total} • Streak ${tfScore.streak} (Best ${tfScore.bestStreak})`}
                       {activeGameTab === "audio" && `Score ${audioScore.correct}/${audioScore.total} • Streak ${audioScore.streak} (Best ${audioScore.bestStreak})`}
                       {activeGameTab === "mastery" && `Score ${masteryScore.correct}/${masteryScore.total} • Streak ${masteryScore.streak} (Best ${masteryScore.bestStreak})`}
                     </div>
+                  </div>
+                  <div className="bn-tabs">
+                    <button className={`bn-tab ${gameDataset === "vocab" ? "active" : ""}`} onClick={() => setGameDataset("vocab")} disabled={!lesson.vocab?.length}>
+                      Vocab set
+                    </button>
+                    <button className={`bn-tab ${gameDataset === "phrases" ? "active" : ""}`} onClick={() => setGameDataset("phrases")} disabled={!lesson.phrases?.length}>
+                      Phrases set
+                    </button>
                   </div>
                   <div className="bn-tabs">
                     <button className={`bn-tab ${activeGameTab === "match" ? "active" : ""}`} onClick={() => setActiveGameTab("match")}>
@@ -1207,6 +1380,10 @@ export default function BengaliTutor() {
                   </>
                 )}
               </div>
+            ) : null}
+
+            {contentTab === "games" && (!gameItems.length || gameItems.length < 2) ? (
+              <div className="bn-section" style={{ color: "#475569" }}>Add at least two items in vocabulary or phrases to play games.</div>
             ) : null}
 
             {lesson.practice?.length ? (
