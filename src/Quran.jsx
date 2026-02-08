@@ -388,9 +388,8 @@ const Quran = () => {
                     checked={showAyahActions}
                     onChange={(e) => setShowAyahActions(e.target.checked)}
                   />
-                  Show action buttons on each verse
+                  Action Buttons
                 </label>
-                <span style={{ fontSize: '0.9rem', color: '#475569' }}>(off by default to keep verses clean)</span>
               </div>
               {loadingPrompt && (
                 <div style={{ marginTop: '8px' }}>

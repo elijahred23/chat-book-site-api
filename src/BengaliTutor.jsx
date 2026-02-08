@@ -935,9 +935,8 @@ export default function BengaliTutor() {
                   checked={showPhraseActions}
                   onChange={(e) => setShowPhraseActions(e.target.checked)}
                 />
-                Show action buttons on phrases
+                Action Buttons
               </label>
-              <span style={{ fontSize: "0.9rem", color: "#475569" }}>(off by default for a cleaner view)</span>
             </div>
 
             {contentTab === "phrases" && lesson.phrases?.length ? (

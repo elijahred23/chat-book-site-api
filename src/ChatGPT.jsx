@@ -55,6 +55,7 @@ export default function GptPromptComponent({
   const [selectedGroup, setSelectedGroup] = useLocalStorageState("suggestionGroup", "code");
   const [activeTab, setActiveTab] = useState("prompt"); // prompt | chat
   const [responseFormat, setResponseFormat] = useLocalStorageState("chatResponseFormat", "none");
+  const [selectedSuggestion, setSelectedSuggestion] = useState(null); // { label, value }
   const messagesEndRef = useRef(null);
   const dispatch = useAppDispatch();
   const { chatPrompt, selectedText } = useAppState();
@@ -70,18 +71,21 @@ export default function GptPromptComponent({
   };
 
   const handleSubmit = async () => {
-    if (!chatPrompt.trim()) return;
+    const suggestionText = selectedSuggestion?.value ? `\n\n${selectedSuggestion.value}` : "";
+    const finalPrompt = `${chatPrompt || ""}${suggestionText}`.trim();
+    if (!finalPrompt) return;
     try {
       setLoading(true);
       const formatInstruction = RESPONSE_FORMATS.find((fmt) => fmt.value === responseFormat)?.instruction || "";
       const prompt = formatInstruction
-        ? `${chatPrompt}\n\nFormatting:\n${formatInstruction}`
-        : chatPrompt;
+        ? `${finalPrompt}\n\nFormatting:\n${formatInstruction}`
+        : finalPrompt;
       const response = await getGeminiResponse(prompt);
-      const userMsg = { text: chatPrompt, sender: "user" };
+      const userMsg = { text: finalPrompt, sender: "user" };
       const botMsg = { text: response, sender: "bot" };
       setMessages((prev) => [...prev, userMsg, botMsg]);
       dispatch(actions.setChatPrompt(""));
+      setSelectedSuggestion(null);
       setActiveTab("chat");
     } catch {
       alert("Error fetching response.");
@@ -193,6 +197,12 @@ export default function GptPromptComponent({
       color: #0f172a;
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     }
+    .suggestion.selected {
+      border-color: #2563eb;
+      background: #e0f2fe;
+      box-shadow: 0 8px 20px rgba(37,99,235,0.18);
+      color: #0f172a;
+    }
     .prompt-input {
       width: 100%;
       padding: 0.8rem;
@@ -292,7 +302,10 @@ export default function GptPromptComponent({
             <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", alignItems: "center", marginBottom: "0.5rem" }}>
               <select
                 value={selectedGroup}
-                onChange={(e) => setSelectedGroup(e.target.value)}
+                onChange={(e) => {
+                  setSelectedGroup(e.target.value);
+                  setSelectedSuggestion(null);
+                }}
                 className="btn"
                 style={{ flex: "1 1 200px" }}
               >
@@ -328,15 +341,20 @@ export default function GptPromptComponent({
                 marginBottom: "0.75rem",
               }}
             >
-              {visibleSuggestions.map((s, i) => (
-                <button
-                  key={i}
-                  className="suggestion"
-                  onClick={() => dispatch(actions.setChatPrompt(`${s.value}${chatPrompt ? `: ${chatPrompt}` : ""}`))}
-                >
-                  {s.label}
-                </button>
-              ))}
+              {visibleSuggestions.map((s, i) => {
+                const isSelected = selectedSuggestion?.value === s.value;
+                return (
+                  <button
+                    key={i}
+                    className={`suggestion ${isSelected ? "selected" : ""}`}
+                    onClick={() =>
+                      setSelectedSuggestion((prev) => (prev?.value === s.value ? null : s))
+                    }
+                  >
+                    {s.label} {isSelected ? "✓" : ""}
+                  </button>
+                );
+              })}
               <button
                 className="suggestion"
                 onClick={() => setShowAllSuggestions((p) => !p)}

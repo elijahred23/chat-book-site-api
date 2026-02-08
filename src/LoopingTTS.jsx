@@ -14,7 +14,7 @@ const LoopingTTSImproved = () => {
   );
   // Loop counter – counts how many times the entire text has repeated
   const [loopCount, setLoopCount] = useState(0);
-  const [activeTab, setActiveTab] = useState("input"); // input | controls
+  const [activeTab, setActiveTab] = useState("input"); // input | controls | voice
   // Number of times to repeat each individual sentence
   const [sentenceRepeats, setSentenceRepeats] = useState(1);
   // Speech synthesis settings
@@ -29,16 +29,26 @@ const LoopingTTSImproved = () => {
   const [currentSentence, setCurrentSentence] = useState("");
   const [prevSentence, setPrevSentence] = useState("");
   const [nextSentence, setNextSentence] = useState("");
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [totalSentences, setTotalSentences] = useState(0);
   const [timeEstimate, setTimeEstimate] = useState("");
   const [progress, setProgress] = useState(0);
   const [currentSentenceProgress, setCurrentSentenceProgress] = useState(0);
   const [endTime, setEndTime] = useState("");
   const [lastAction, setLastAction] = useState("Idle");
   const [isPlaying, setIsPlaying] = useState(false);
+  const previewPhrase = "This is a quick voice preview.";
 
   // Refs to track voices and playback state without triggering renders
   const voicesRef = useRef([]);
   const voiceRef = useRef(null);
+  const [selectedVoiceKey, setSelectedVoiceKey] = useState(() => {
+    try {
+      return localStorage.getItem("tts_voice_key") || null;
+    } catch {
+      return null;
+    }
+  });
   const utterRef = useRef(null);
   const chunksRef = useRef([]);
   const idxRef = useRef(0); // index of the current sentence
@@ -53,6 +63,31 @@ const LoopingTTSImproved = () => {
    * fall back to the first American English voice or the first voice
    * available.
    */
+  const makeVoiceKey = (v) => `${v.name}__${v.lang}`;
+  const sortVoices = (list = []) => {
+    return [...list].sort((a, b) => {
+      const pri = (v) => {
+        if (/en[-_]US/i.test(v.lang)) return 0;
+        if (/en[-_]GB/i.test(v.lang)) return 1;
+        return 2;
+      };
+      const pa = pri(a);
+      const pb = pri(b);
+      if (pa !== pb) return pa - pb;
+      return (a.name || "").localeCompare(b.name || "");
+    });
+  };
+  const previewVoice = (voice) => {
+    if (!voice) return;
+    const utter = new SpeechSynthesisUtterance(previewPhrase);
+    utter.voice = voice;
+    utter.rate = rate;
+    utter.pitch = pitch;
+    utter.volume = volume;
+    synth.cancel();
+    synth.speak(utter);
+  };
+
   const loadVoices = () => {
     const voices = synth.getVoices();
     if (!voices || !voices.length) {
@@ -61,20 +96,34 @@ const LoopingTTSImproved = () => {
       return;
     }
     voicesRef.current = voices;
+    // Try to restore previously selected voice
+    if (selectedVoiceKey) {
+      const match = voices.find((v) => makeVoiceKey(v) === selectedVoiceKey);
+      if (match) {
+        voiceRef.current = match;
+        return;
+      }
+    }
     const samantha = voices.find((v) => /samantha/i.test(v.name));
-    voiceRef.current = samOnly
-      ? samantha || null
-      : samantha ||
-        voices.find((v) => /en[-_]US/i.test(v.lang)) ||
-        voices[0];
+    voiceRef.current =
+      samantha ||
+      voices.find((v) => /en[-_]US/i.test(v.lang)) ||
+      voices[0];
+    if (voiceRef.current) {
+      const key = makeVoiceKey(voiceRef.current);
+      setSelectedVoiceKey(key);
+      try {
+        localStorage.setItem("tts_voice_key", key);
+      } catch {}
+    }
   };
 
-  // Run once and whenever `samOnly` changes to refresh the voice list
+  // Run once to refresh the voice list
   useEffect(() => {
     loadVoices();
     synth.addEventListener("voiceschanged", loadVoices);
     return () => synth.removeEventListener("voiceschanged", loadVoices);
-  }, [samOnly]);
+  }, []);
 
   // Capture the first user gesture so Chrome will allow speech playback
   useEffect(() => {
@@ -168,7 +217,37 @@ const LoopingTTSImproved = () => {
    * returned as a single element.
    */
   const splitText = (txt) => {
-    return txt.match(/[^.!?]+[.!?]*/g) || [txt];
+    if (!txt) return [];
+    const normalized = txt.replace(/\r\n/g, "\n");
+    const blocks = normalized.split(/\n{2,}/); // paragraph breaks
+    const results = [];
+    const useIntl = (() => {
+      try {
+        return new Intl.Segmenter(undefined, { granularity: "sentence" });
+      } catch {
+        return null;
+      }
+    })();
+
+    const fallbackSplit = (block) => {
+      // Split on punctuation followed by whitespace/newline/EOF, keep trailing punctuation
+      const parts = block.match(/[^.!?]+[.!?]+(?=\s|$)|[^.!?]+$/g);
+      return parts || [block];
+    };
+
+    blocks.forEach((block) => {
+      const trimmed = block.trim();
+      if (!trimmed) return;
+      let sentences = [];
+      if (useIntl) {
+        sentences = [...useIntl.segment(trimmed)].map((s) => s.segment.trim()).filter(Boolean);
+      }
+      if (!sentences.length) {
+        sentences = fallbackSplit(trimmed).map((s) => s.trim()).filter(Boolean);
+      }
+      results.push(...sentences);
+    });
+    return results.length ? results : [txt];
   };
 
   const setSentenceContext = (idx) => {
@@ -177,6 +256,8 @@ const LoopingTTSImproved = () => {
       setPrevSentence("");
       setCurrentSentence("");
       setNextSentence("");
+      setCurrentIndex(0);
+      setTotalSentences(0);
       return;
     }
     const safeIdx = Math.min(Math.max(idx, 0), chunks.length - 1);
@@ -185,6 +266,8 @@ const LoopingTTSImproved = () => {
     setPrevSentence(prev);
     setCurrentSentence(chunks[safeIdx]?.trim() || "");
     setNextSentence(next);
+    setCurrentIndex(safeIdx);
+    setTotalSentences(chunks.length);
   };
 
   /**
@@ -351,6 +434,7 @@ const LoopingTTSImproved = () => {
     }
     // Prepare sentence chunks and reset indices so the UI can reflect the active sentence.
     chunksRef.current = splitText(source);
+    setTotalSentences(chunksRef.current.length);
     idxRef.current = 0;
     sentenceRepeatRef.current = 0;
     playingRef.current = true;
@@ -403,11 +487,28 @@ const LoopingTTSImproved = () => {
     if (!chunksRef.current.length) return handleStart();
     synth.cancel();
     // Move back one sentence and reset repeat counters
-    idxRef.current = Math.max(0, idxRef.current - 1);
+    if (idxRef.current <= 0) {
+      idxRef.current = chunksRef.current.length - 1; // wrap to last
+    } else {
+      idxRef.current = idxRef.current - 1;
+    }
     sentenceRepeatRef.current = 0;
     playingRef.current = true;
     setIsPlaying(true);
     setLastAction("Previous sentence");
+    setSentenceContext(idxRef.current);
+    speakNext();
+  };
+
+  const jumpBy = (delta) => {
+    const total = chunksRef.current.length;
+    if (!total) return;
+    synth.cancel();
+    idxRef.current = ((idxRef.current + delta) % total + total) % total; // safe modulo wrap
+    sentenceRepeatRef.current = 0;
+    playingRef.current = true;
+    setIsPlaying(true);
+    setLastAction(delta > 0 ? `Skip +${delta}` : `Skip ${delta}`);
     setSentenceContext(idxRef.current);
     speakNext();
   };
@@ -756,13 +857,19 @@ const LoopingTTSImproved = () => {
           >
             Input
           </button>
-          <button
-            className={`tab-btn ${activeTab === "controls" ? "active" : ""}`}
-            onClick={() => setActiveTab("controls")}
-          >
-            Controls & Playback
-          </button>
-        </div>
+      <button
+        className={`tab-btn ${activeTab === "controls" ? "active" : ""}`}
+        onClick={() => setActiveTab("controls")}
+      >
+        Controls & Playback
+      </button>
+      <button
+        className={`tab-btn ${activeTab === "voice" ? "active" : ""}`}
+        onClick={() => setActiveTab("voice")}
+      >
+        Voice
+      </button>
+    </div>
 
         {activeTab === "input" && (
           <>
@@ -826,6 +933,12 @@ const LoopingTTSImproved = () => {
           <button className="button secondary" onClick={handleNext}>
             ⏭ Next
           </button>
+          <button className="button secondary" onClick={() => jumpBy(-10)}>
+            ⏮ Prev 10
+          </button>
+          <button className="button secondary" onClick={() => jumpBy(10)}>
+            ⏭ Next 10
+          </button>
         </div>
         <div className="sentence-strip">
           <div className="sentence-card">
@@ -835,7 +948,9 @@ const LoopingTTSImproved = () => {
             </div>
           </div>
           <div className="sentence-card current">
-            <div className="sentence-label" style={{ color: "#e0e7ff" }}>Now speaking</div>
+            <div className="sentence-label" style={{ color: "#e0e7ff" }}>
+              Now speaking • {totalSentences ? `Sentence ${currentIndex + 1} of ${totalSentences}` : "—"}
+            </div>
             <div className="sentence-text">
               {currentSentence || "Waiting to start..."}
             </div>
@@ -865,6 +980,12 @@ const LoopingTTSImproved = () => {
               {nextSentence || "—"}
             </div>
           </div>
+        </div>
+        <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", marginBottom: "0.5rem" }}>
+          <span className="pill">Total sentences: {totalSentences}</span>
+          <span className="pill">
+            Sentences left: {totalSentences ? Math.max(totalSentences - currentIndex - 1, 0) : 0}
+          </span>
         </div>
         <div className="sliders">
           <label>
@@ -948,6 +1069,114 @@ const LoopingTTSImproved = () => {
           </p>
         </div>
       </div>
+      )}
+
+      {activeTab === "voice" && (
+        <div className="tts-card">
+          <h3 style={{ marginTop: 0 }}>Voice Selection</h3>
+          <p style={{ color: darkMode ? "#cbd5e1" : "#475569", marginTop: 0 }}>
+            Pick a voice for playback. The choice is saved for next time.
+          </p>
+          <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", marginBottom: "0.75rem" }}>
+            <button className="button secondary" onClick={loadVoices}>🔄 Reload voices</button>
+            <button
+              className="button secondary"
+              onClick={() => {
+                loadVoices();
+                const voice = voicesRef.current.find((v) => /samantha/i.test(v.name)) || voicesRef.current[0];
+                if (voice) {
+                  voiceRef.current = voice;
+                  const key = makeVoiceKey(voice);
+                  setSelectedVoiceKey(key);
+                  try {
+                    localStorage.setItem("tts_voice_key", key);
+                  } catch {}
+                }
+              }}
+            >
+              🎯 Prefer Samantha/First
+            </button>
+            <button
+              className="button secondary"
+              onClick={() => {
+                const voice = voicesRef.current.find((v) => /en[-_]US/i.test(v.lang)) || voicesRef.current[0];
+                if (voice) {
+                  voiceRef.current = voice;
+                  const key = makeVoiceKey(voice);
+                  setSelectedVoiceKey(key);
+                  try {
+                    localStorage.setItem("tts_voice_key", key);
+                  } catch {}
+                }
+              }}
+            >
+              🇺🇸 Pick English (US)
+            </button>
+            <button
+              className="button primary"
+              onClick={() => speakSimple(previewPhrase)}
+              disabled={!voicesRef.current.length}
+            >
+              🔊 Preview selected voice
+            </button>
+          </div>
+
+          <div style={{ display: "grid", gap: "0.35rem" }}>
+            {voicesRef.current.length === 0 && (
+              <div style={{ color: "#b91c1c" }}>No voices available yet. Click reload after the page allows audio.</div>
+            )}
+            {sortVoices(voicesRef.current).map((v) => {
+              const key = makeVoiceKey(v);
+              const selected = key === selectedVoiceKey;
+              return (
+                <label
+                  key={key}
+                  className="sentence-card"
+                  style={{
+                    borderColor: selected ? "#2563eb" : undefined,
+                    boxShadow: selected ? "0 8px 18px rgba(37,99,235,0.16)" : undefined,
+                    cursor: "pointer",
+                  }}
+                >
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                    <div>
+                      <div style={{ fontWeight: 700 }}>{v.name}</div>
+                      <div style={{ color: "#475569" }}>{v.lang}</div>
+                    </div>
+                    <div style={{ display: "flex", gap: 6, alignItems: "center" }}>
+                      <button
+                        className="button secondary"
+                        type="button"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          previewVoice(v);
+                        }}
+                        style={{ padding: "0.35rem 0.55rem" }}
+                      >
+                        🔊 Preview
+                      </button>
+                      <button
+                        className="button primary"
+                        type="button"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          voiceRef.current = v;
+                          setSelectedVoiceKey(key);
+                          try {
+                            localStorage.setItem("tts_voice_key", key);
+                          } catch {}
+                        }}
+                        style={{ padding: "0.35rem 0.55rem" }}
+                      >
+                        {selected ? "Selected" : "Select"}
+                      </button>
+                    </div>
+                  </div>
+                </label>
+              );
+            })}
+          </div>
+        </div>
       )}
 
     </div>
