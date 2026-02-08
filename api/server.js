@@ -8,6 +8,8 @@ import { generateGeminiResponse, GeminiModel, listGeminiModels } from './gemini.
 import bodyParser from 'body-parser';
 import MarkdownIt from 'markdown-it';
 import fs from 'fs';
+import multer from 'multer';
+import pdfParse from 'pdf-parse';
 import { getNewsVideos, getVideoComments } from './youtube.js';
 import { searchYouTube, getVideoDetails, searchYouTubePlaylists, getPlaylistItems, getTrendingVideos } from './youtube.js';
 import { fetchTranscriptWithMetadata } from './transcriptService.js';
@@ -29,6 +31,21 @@ const pushLog = (entry) => {
   if (recentLogs.length > 500) recentLogs.shift();
   fs.appendFile(logFile, entry + '\n', () => {});
 };
+const MAX_PDF_MB = Number(process.env.PDF_UPLOAD_MAX_MB || 1024); // default 1GB (sync with front-end hint)
+const upload = multer({
+  storage: multer.diskStorage({
+    destination: (req, file, cb) => {
+      const dest = path.join(__dirname, "../var/uploads");
+      fs.mkdirSync(dest, { recursive: true });
+      cb(null, dest);
+    },
+    filename: (req, file, cb) => {
+      const safeName = file.originalname?.replace(/[^a-zA-Z0-9._-]/g, "_") || "upload.pdf";
+      cb(null, `${Date.now()}-${safeName}`);
+    },
+  }),
+  limits: { fileSize: MAX_PDF_MB * 1024 * 1024 },
+}); // configurable size limit stored on disk
 
 app.use((req, res, next) => {
   const entry = `${new Date().toISOString()} ${req.method} ${req.originalUrl} ${req.ip}`;
@@ -469,6 +486,40 @@ app.get('/api/gemini/prompt', async (req, res) => {
     console.error(error);
     logErrorToFile(error);
     return res.status(500).send({ error: 'Server Error', message: error?.message ?? "Failed to generate chatGPT response." });
+  }
+});
+
+// POST /api/pdf-to-text - upload a PDF and return extracted plain text
+app.post('/api/pdf-to-text', (req, res, next) => {
+  upload.single('file')(req, res, function (err) {
+    if (err instanceof multer.MulterError) {
+      if (err.code === 'LIMIT_FILE_SIZE') {
+        return res.status(413).json({ error: `File too large. Max ${MAX_PDF_MB}MB.` });
+      }
+      return res.status(400).json({ error: err.message || 'Upload failed.' });
+    } else if (err) {
+      return res.status(400).json({ error: err.message || 'Upload failed.' });
+    }
+    next();
+  });
+}, async (req, res) => {
+  try {
+    if (!req.file) {
+      return res.status(400).json({ error: 'Missing file upload (field name: file).' });
+    }
+    if (req.file.mimetype !== 'application/pdf') {
+      return res.status(400).json({ error: 'Only PDF files are supported.' });
+    }
+    const buffer = await fs.promises.readFile(req.file.path);
+    const parsed = await pdfParse(buffer);
+    const text = parsed?.text || '';
+    // Clean up uploaded temp file
+    fs.promises.unlink(req.file.path).catch(() => {});
+    return res.json({ text });
+  } catch (err) {
+    console.error('PDF parse error', err);
+    logErrorToFile(err);
+    return res.status(500).json({ error: 'Failed to parse PDF.' });
   }
 });
 
