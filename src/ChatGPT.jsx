@@ -191,17 +191,17 @@ export default function GptPromptComponent({
       padding: 0.5rem 0.75rem;
       border-radius: 12px;
       border: 1px solid #e2e8f0;
-      background: #ffffff;
+      background: #f1f5f9;
       cursor: pointer;
       font-size: 0.92rem;
-      color: #0f172a;
+      color: #0b1220;
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     }
     .suggestion.selected {
       border-color: #2563eb;
       background: #e0f2fe;
       box-shadow: 0 8px 20px rgba(37,99,235,0.18);
-      color: #0f172a;
+      color: #0b1220;
     }
     .prompt-input {
       width: 100%;

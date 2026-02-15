@@ -28,6 +28,7 @@ import SystemDesignPrep from './SystemDesignPrep.jsx';
 import IframeDrawer from './IframeDrawer.jsx';
 import StockMarketGame from './StockMarketGame.jsx';
 import PdfToText from './PdfToText.jsx';
+import RegexTrainer from './RegexTrainer.jsx';
 
 function AppContent() {
   const [isFullWidth, setIsFullWidth] = useState(true);
@@ -130,6 +131,7 @@ function AppContent() {
                 <NavLink to="/system-design" role="menuitem" onClick={() => setIsMenuOpen(false)}>System Design Prep</NavLink>
                 <NavLink to="/market-sim" role="menuitem" onClick={() => setIsMenuOpen(false)}>Stock Market Game</NavLink>
                 <NavLink to="/pdf-to-text" role="menuitem" onClick={() => setIsMenuOpen(false)}>PDF to Text</NavLink>
+                <NavLink to="/regex" role="menuitem" onClick={() => setIsMenuOpen(false)}>Regex Trainer</NavLink>
                 <NavLink to="/apiCheck" role="menuitem" onClick={() => setIsMenuOpen(false)}>Settings</NavLink>
               </div>
             )}
@@ -373,6 +375,7 @@ function AppContent() {
             <Route path="/system-design" element={<SystemDesignPrep />} />
             <Route path="/market-sim" element={<StockMarketGame />} />
             <Route path="/pdf-to-text" element={<PdfToText />} />
+            <Route path="/regex" element={<RegexTrainer />} />
           </Routes>
         </div>
 
