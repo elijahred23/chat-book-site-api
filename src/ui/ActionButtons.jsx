@@ -124,17 +124,6 @@ export default function ActionButtons({ promptText, limitButtons = false }) {
       },
     },
     {
-      icon: FaSitemap,
-      title: "Architecture Diagram",
-      color: "var(--btn-orange)",
-      iconColor: "#0f172a",
-      onClick: (e) => {
-        e.stopPropagation();
-        dispatch(actions.setArchitecturePrompt(cleanText));
-        dispatch(actions.setIsArchitectureOpen(true));
-      },
-    },
-    {
       icon: FaGlobe,
       title: "Open in Iframe (Search)",
       color: "var(--btn-blue)",

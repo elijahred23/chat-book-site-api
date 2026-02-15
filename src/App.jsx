@@ -20,7 +20,6 @@ import PlantUMLViewer from './PlantUML.jsx';
 import PodcastTTSPlayer from './PodcastTTSPlayer.jsx';
 import JSConsoleGenerator from './JSConsoleGenerator.jsx';
 import ChatBookApp from './ChatBookApp.jsx';
-import ArchitectureDiagram from './ArchitectureDiagram.jsx';
 import SideDrawer from './ui/SideDrawer.jsx';
 import BengaliTutor from './BengaliTutor.jsx';
 import CodingProblems from './CodingProblems.jsx';
@@ -343,9 +342,6 @@ function AppContent() {
               <button onClick={() => {setIsTypingOpen(true); closeFabMenu();}} className="fab-btn">
                 <span>⌨️</span>{isTypingOpen ? 'Typing Test' : 'Open Typing'}
               </button>
-              <button onClick={() => {setIsArchitectureOpen(true); closeFabMenu();}} className="fab-btn">
-                <span>🗺️</span>{isArchitectureOpen ? 'Diagram Open' : 'Open Diagram'}
-              </button>
               <button onClick={() => {setIsIframeOpen(true); closeFabMenu();}} className="fab-btn">
                 <span>🧭</span>{isIframeOpen ? 'Iframe Viewer' : 'Open Iframe'}
               </button>
@@ -520,18 +516,6 @@ function AppContent() {
           closeLabel="✖ Close Chat Book"
         >
           <ChatBookApp />
-        </SideDrawer>
-
-        <SideDrawer
-          isOpen={isArchitectureOpen}
-          isFullWidth={isFullWidth}
-          stack={drawerStack}
-          currentKey="architecture"
-          onToggleWidth={toggleWidth}
-          onClose={() => setIsArchitectureOpen(false)}
-          closeLabel="✖ Close Architecture Diagram"
-        >
-          <ArchitectureDiagram />
         </SideDrawer>
 
         <SideDrawer
