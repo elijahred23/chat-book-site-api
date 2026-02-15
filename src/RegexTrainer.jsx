@@ -125,13 +125,29 @@ const highlightMatches = (text, pattern, flags) => {
 export default function RegexTrainer() {
   const [pattern, setPattern] = useState("\\b\\w+@\\w+\\.\\w+\\b");
   const [flags, setFlags] = useState("g");
-  const [sample, setSample] = useState(CHALLENGES[0].sample);
   const [challengeId, setChallengeId] = useState(CHALLENGES[0].id);
   const [customText, setCustomText] = useState("");
   const [error, setError] = useState("");
   const [sampleLoading, setSampleLoading] = useState(false);
   const [showCheats, setShowCheats] = useState(false);
-  const [activeTab, setActiveTab] = useState("practice"); // practice | syntax
+  const [activeTab, setActiveTab] = useState("practice"); // practice | syntax | custom
+  const [customSamplePrompt, setCustomSamplePrompt] = useState("Create diverse text that stresses regex features.");
+  const [customSample, setCustomSample] = useState("");
+  const [suggestedPatterns, setSuggestedPatterns] = useState([]);
+  const [syntaxPattern, setSyntaxPattern] = useState(SYNTAX_DRILLS[0].pattern);
+  const [syntaxFlags, setSyntaxFlags] = useState("g");
+  const promptPresets = [
+    "Generate tricky sample text to practice regex syntax.",
+    "Create a paragraph mixing emails, URLs, dates, and currency with edge cases.",
+    "Produce log-like lines with timestamps, IPs, levels (INFO/WARN/ERROR), and messages.",
+    "Create multilingual text containing Unicode letters, digits, emojis, and punctuation.",
+    "Generate HTML-like snippets with nested tags and attributes to test greedy vs lazy.",
+    "Produce CSV-like rows with quotes, escaped commas, empty fields, and numbers.",
+    "Create Markdown snippets with headings, code blocks, links, and emphasis.",
+    "Make chat transcripts with usernames, timestamps, and mixed emoji.",
+    "Generate filesystem paths (Windows and POSIX) with tricky characters.",
+    "Provide math expressions with parentheses, operators, decimals, and exponents."
+  ];
 
   const challenge = useMemo(() => CHALLENGES.find((c) => c.id === challengeId) || CHALLENGES[0], [challengeId]);
 
@@ -196,6 +212,25 @@ Create a fresh sample text for training a regex on "${challenge.title}". Include
     }
   };
 
+  const generateSyntaxSample = async () => {
+    try {
+      setSampleLoading(true);
+      setError("");
+      const prompt = `Return JSON only. Shape: { "sample": "text", "patterns": ["regex1","regex2","regex3","regex4","regex5"] }.
+Write challenging sample text to practice regex syntax. Use this regex as a guide: ${syntaxPattern}. ${customSamplePrompt}`;
+      const resp = await getGeminiResponse(prompt);
+      const parsed = parseJson(resp);
+      const newSample = parsed?.sample || "";
+      if (!newSample) throw new Error("No sample in response");
+      setCustomSample(newSample);
+      setSuggestedPatterns(Array.isArray(parsed?.patterns) ? parsed.patterns.slice(0, 5) : []);
+    } catch (err) {
+      setError(err?.message || "Failed to generate syntax sample");
+    } finally {
+      setSampleLoading(false);
+    }
+  };
+
   return (
     <div style={{ maxWidth: 1100, margin: "0 auto", padding: "1rem" }}>
       <style>{`
@@ -235,6 +270,9 @@ Create a fresh sample text for training a regex on "${challenge.title}". Include
           <button className={`btn ${activeTab === "syntax" ? "" : "secondary"}`} type="button" onClick={() => setActiveTab("syntax")}>
             Syntax Drills
           </button>
+          <button className={`btn ${activeTab === "custom" ? "" : "secondary"}`} type="button" onClick={() => setActiveTab("custom")}>
+            Custom Samples
+          </button>
         </div>
 
         {activeTab === "practice" && (
@@ -243,7 +281,12 @@ Create a fresh sample text for training a regex on "${challenge.title}". Include
             <h2 style={{ margin: 0 }}>Regex Trainer</h2>
             <div style={{ color: "#475569" }}>Write patterns, test against samples, and tackle curated challenges.</div>
           </div>
-          <ActionButtons promptText={pattern} limitButtons />
+          <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+            <ActionButtons promptText={pattern} limitButtons />
+            <button className="btn secondary" type="button" onClick={() => setShowCheats(true)}>
+              View syntax reference
+            </button>
+          </div>
         </div>
         )}
 
@@ -280,9 +323,6 @@ Create a fresh sample text for training a regex on "${challenge.title}". Include
                 placeholder="Paste or type text to test your regex"
               />
               <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-                <button className="btn secondary" type="button" onClick={generateSample} disabled={sampleLoading}>
-                  {sampleLoading ? "Generating…" : "Generate sample with Gemini"}
-                </button>
                 {customText && (
                   <button className="btn secondary" type="button" onClick={() => setCustomText("")}>
                     Reset to challenge sample
@@ -367,39 +407,145 @@ Create a fresh sample text for training a regex on "${challenge.title}". Include
                 View syntax reference
               </button>
             </div>
+            <div style={{ display: "grid", gap: 6 }}>
+              <label style={{ fontWeight: 700 }}>Regex for syntax drills</label>
+              <input
+                className="input"
+                value={syntaxPattern}
+                onChange={(e) => setSyntaxPattern(e.target.value)}
+                placeholder="Enter regex just for the Syntax tab"
+              />
+              <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+                {flagList.map((f) => (
+                  <button
+                    key={f.key}
+                    className={`flag ${syntaxFlags.includes(f.key) ? "active" : ""}`}
+                    onClick={() =>
+                      setSyntaxFlags((prev) => (prev.includes(f.key) ? prev.replace(f.key, "") : prev + f.key))
+                    }
+                    type="button"
+                  >
+                    {f.label}
+                  </button>
+                ))}
+              </div>
+            </div>
             <div className="cheat-grid">
               {SYNTAX_DRILLS.map((d) => (
                 <div key={d.name} className="cheat-item" style={{ background: "#f8fafc", color: "#0f172a", borderColor: "#e2e8f0" }}>
                   <div style={{ fontWeight: 800, marginBottom: 4 }}>{d.name}</div>
                   <div style={{ color: "#475569", marginBottom: 6 }}>{d.note}</div>
-                  <div style={{ fontFamily: "'SFMono-Regular', Menlo, Consolas, monospace", marginBottom: 6 }}>
-                    Pattern: <code style={{ color: "#0f172a" }}>{d.pattern}</code>
-                  </div>
-                  <div style={{ border: "1px solid #e2e8f0", borderRadius: 10, padding: 8, background: "#fff", minHeight: 80 }}>
-                    {highlightMatches(d.text, pattern === d.pattern ? pattern : d.pattern, flags)}
-                  </div>
-                  <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginTop: 8 }}>
-                    <button
-                      className="btn secondary"
-                      type="button"
-                      onClick={() => {
-                        handlePatternChange(d.pattern);
-                        setCustomText(d.text);
-                        setActiveTab("practice");
+                    <div style={{ fontFamily: "'SFMono-Regular', Menlo, Consolas, monospace", marginBottom: 6 }}>
+                      Pattern: <code style={{ color: "#0f172a" }}>{d.pattern}</code>
+                    </div>
+                    <div style={{ border: "1px solid #e2e8f0", borderRadius: 10, padding: 8, background: "#fff", minHeight: 80 }}>
+                    {highlightMatches(d.text, syntaxPattern || d.pattern, syntaxFlags)}
+                    </div>
+                    <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginTop: 8 }}>
+                      <button
+                        className="btn secondary"
+                        type="button"
+                        onClick={() => {
+                          setSyntaxPattern(d.pattern);
+                          setCustomSample(d.text);
                       }}
-                    >
-                      Load into editor
-                    </button>
-                    <button
-                      className="btn secondary"
-                      type="button"
-                      onClick={() => previewMatches(d)}
                     >
                       Preview here
                     </button>
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        )}
+
+        {activeTab === "custom" && (
+          <div style={{ display: "grid", gap: 10 }}>
+            <div>
+              <h2 style={{ margin: 0 }}>Custom Sample Builder</h2>
+              <div style={{ color: "#475569" }}>Use Gemini to create standalone regex practice text (separate from challenges/drills).</div>
+            </div>
+            <button className="btn secondary" type="button" onClick={() => setShowCheats(true)}>
+              View syntax reference
+            </button>
+            <label style={{ fontWeight: 700 }}>Prompt for sample generation</label>
+            <textarea
+              className="input"
+              style={{ minHeight: 90 }}
+              value={customSamplePrompt}
+              onChange={(e) => setCustomSamplePrompt(e.target.value)}
+              placeholder="Describe the kind of sample text you want (e.g., mixed emails, dates, tricky edge cases)"
+            />
+            <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+              <select
+                className="input"
+                style={{ maxWidth: 360, fontFamily: "Inter, system-ui" }}
+                value=""
+                onChange={(e) => {
+                  const val = e.target.value;
+                  if (val) setCustomSamplePrompt(val);
+                }}
+              >
+                <option value="">Select a recommended prompt…</option>
+                {promptPresets.map((p, idx) => (
+                  <option key={idx} value={p}>{p}</option>
+                ))}
+              </select>
+            </div>
+            <label style={{ fontWeight: 700 }}>Optional regex (context only)</label>
+            <input
+              className="input"
+              value={syntaxPattern}
+              onChange={(e) => setSyntaxPattern(e.target.value)}
+              placeholder="Regex to guide Gemini (not applied automatically)"
+            />
+            <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+              <button className="btn secondary" type="button" onClick={generateSyntaxSample} disabled={sampleLoading}>
+                {sampleLoading ? "Generating…" : "Generate sample with Gemini"}
+              </button>
+              {customSample && (
+                <span className="pill">Sample ready</span>
+              )}
+            </div>
+            <div>
+              <div style={{ fontWeight: 700, marginBottom: 6 }}>Live highlight (uses custom regex + flags)</div>
+              <div className="sample-box" style={{ minHeight: 100, marginBottom: 8 }}>
+                {highlightMatches(customSample || "", syntaxPattern, syntaxFlags)}
+              </div>
+              {suggestedPatterns?.length ? (
+                <div style={{ marginBottom: 10 }}>
+                  <div style={{ fontWeight: 700, marginBottom: 4 }}>Suggested patterns</div>
+                  <ul style={{ margin: 0, paddingLeft: 16, color: "#0f172a" }}>
+                    {suggestedPatterns.map((p, idx) => (
+                      <li key={idx} style={{ fontFamily: "'SFMono-Regular', Menlo, Consolas, monospace" }}>
+                        <code>{p}</code>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null}
+              <div style={{ fontWeight: 700, marginBottom: 6 }}>Generated sample</div>
+              <textarea
+                className="input"
+                style={{ minHeight: 160 }}
+                value={customSample}
+                onChange={(e) => setCustomSample(e.target.value)}
+                placeholder="Generated sample will appear here"
+              />
+              <div style={{ marginTop: 8, display: "flex", gap: 8, flexWrap: "wrap" }}>
+                <button
+                  className="btn secondary"
+                  type="button"
+                  onClick={() => {
+                    if (!customSample) return;
+                    setCustomText(customSample);
+                    setActiveTab("practice");
+                  }}
+                >
+                  Send to Practice tab
+                </button>
+                <ActionButtons promptText={customSample || ""} limitButtons />
+              </div>
             </div>
           </div>
         )}
