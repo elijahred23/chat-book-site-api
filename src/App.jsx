@@ -29,6 +29,7 @@ import IframeDrawer from './IframeDrawer.jsx';
 import StockMarketGame from './StockMarketGame.jsx';
 import PdfToText from './PdfToText.jsx';
 import RegexTrainer from './RegexTrainer.jsx';
+import LargeTextChunks from './LargeTextChunks.jsx';
 
 function AppContent() {
   const [isFullWidth, setIsFullWidth] = useState(true);
@@ -40,8 +41,7 @@ function AppContent() {
   const menuRef = useRef(null);
   const closeFabMenu = () => setShowFloatingBtns(false);
   const dispatch = useAppDispatch();
-  const { drawerStack, isChatOpen, isTeleprompterOpen, isTTSOpen, isPlantUMLOpen, isPodcastTTSOpen, isJSGeneratorOpen, isChatBookOpen, isArchitectureOpen, isYouTubeOpen, isHtmlBuilderOpen, isTypingOpen } = useAppState();
-  const { isIframeOpen } = useAppState();
+  const { drawerStack, isChatOpen, isTeleprompterOpen, isTTSOpen, isPlantUMLOpen, isPodcastTTSOpen, isJSGeneratorOpen, isChatBookOpen, isArchitectureOpen, isYouTubeOpen, isHtmlBuilderOpen, isTypingOpen, isIframeOpen, isLargeTextOpen } = useAppState();
 
   const toggleChat = () => dispatch(actions.setIsChatOpen(false));
   const toggleWidth = () => setIsFullWidth((p) => !p);
@@ -54,6 +54,7 @@ function AppContent() {
   const setIsHtmlBuilderOpen = (val) => dispatch(actions.setIsHtmlBuilderOpen(val));
   const setIsTypingOpen = (val) => dispatch(actions.setIsTypingOpen(val));
   const setIsIframeOpen = (val) => dispatch(actions.setIsIframeOpen(val));
+  const setIsLargeTextOpen = (val) => dispatch(actions.setIsLargeTextOpen(val));
 
   useEffect(() => {
     const savedText = localStorage.getItem('selectedText');
@@ -103,7 +104,8 @@ function AppContent() {
     isYouTubeOpen ||
     isHtmlBuilderOpen ||
     isTypingOpen ||
-    isIframeOpen;
+    isIframeOpen ||
+    isLargeTextOpen;
 
   return (
     <>
@@ -347,6 +349,9 @@ function AppContent() {
               <button onClick={() => {setIsIframeOpen(true); closeFabMenu();}} className="fab-btn">
                 <span>🧭</span>{isIframeOpen ? 'Iframe Viewer' : 'Open Iframe'}
               </button>
+              <button onClick={() => {setIsLargeTextOpen(true); closeFabMenu();}} className="fab-btn">
+                <span>📚</span>{isLargeTextOpen ? 'Text Chunker' : 'Open Chunker'}
+              </button>
             </div>
           )}
           <button onClick={() => setShowFloatingBtns((p) => !p)} className="fab-main">
@@ -527,6 +532,18 @@ function AppContent() {
           closeLabel="✖ Close Architecture Diagram"
         >
           <ArchitectureDiagram />
+        </SideDrawer>
+
+        <SideDrawer
+          isOpen={isLargeTextOpen}
+          isFullWidth={isFullWidth}
+          stack={drawerStack}
+          currentKey="large"
+          onToggleWidth={toggleWidth}
+          onClose={() => setIsLargeTextOpen(false)}
+          closeLabel="✖ Close ActionButton Chunker"
+        >
+          <LargeTextChunks />
         </SideDrawer>
       
 

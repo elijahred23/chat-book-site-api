@@ -33,6 +33,7 @@ const initialState = {
   flashcardPrompt: '',
   isIframeOpen: false,
   iframeSearchText: '',
+  isLargeTextOpen: false,
 };
 
 const actionTypes = {
@@ -66,6 +67,7 @@ const actionTypes = {
   SET_FLASHCARD_PROMPT: 'SET_FLASHCARD_PROMPT',
   SET_IS_IFRAME_OPEN: 'SET_IS_IFRAME_OPEN',
   SET_IFRAME_SEARCH_TEXT: 'SET_IFRAME_SEARCH_TEXT',
+  SET_IS_LARGE_TEXT_OPEN: 'SET_IS_LARGE_TEXT_OPEN',
 };
 
 // ✅ closes all open UI panels (stack managed separately)
@@ -83,6 +85,7 @@ const closeAllPanels = (state) => ({
   isHtmlBuilderOpen: false,
   isTypingOpen: false,
   isIframeOpen: false,
+  isLargeTextOpen: false,
 });
 
 const drawerKeyToState = {
@@ -98,6 +101,7 @@ const drawerKeyToState = {
   html: 'isHtmlBuilderOpen',
   typing: 'isTypingOpen',
   iframe: 'isIframeOpen',
+  large: 'isLargeTextOpen',
 };
 
 const activateDrawer = (state, key) => {
@@ -213,6 +217,9 @@ function appReducer(state, action) {
     case actionTypes.SET_IS_IFRAME_OPEN:
       return action.payload ? activateDrawer(state, 'iframe') : deactivateDrawer(state, 'iframe');
 
+    case actionTypes.SET_IS_LARGE_TEXT_OPEN:
+      return action.payload ? activateDrawer(state, 'large') : deactivateDrawer(state, 'large');
+
     case actionTypes.SET_IFRAME_SEARCH_TEXT:
       console.log({action})
       return { ...state, iframeSearchText: action.payload };
@@ -273,4 +280,6 @@ export const actions = {
   setIframeSearchText: (text) => { 
     console.log({text})
     return { type: actionTypes.SET_IFRAME_SEARCH_TEXT, payload: text }},
+  setIsLargeTextOpen: (open) => ({ type: actionTypes.SET_IS_LARGE_TEXT_OPEN, payload: open }),
+  setLargeTextBuffer: (text) => ({ type: actionTypes.SET_COPY_TEXT, payload: text }),
 };

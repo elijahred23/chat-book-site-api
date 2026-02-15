@@ -20,6 +20,7 @@ import {
   FaDownload,
   FaSitemap,
   FaGlobe,
+  FaBookReader,
 } from "react-icons/fa";
 import { useFlyout } from "../context/FlyoutContext";
 import { FcGoogle } from "react-icons/fc";
@@ -64,6 +65,19 @@ export default function ActionButtons({ promptText, limitButtons = false }) {
         e.stopPropagation();
         dispatch(actions.setChatPrompt(cleanText));
         dispatch(actions.setIsChatOpen(true));
+      },
+    },
+    {
+      icon: FaBookReader,
+      title: "Chunk Large Text",
+      color: "#8b5cf6",
+      iconColor: "#fff",
+      onClick: (e) => {
+        e.stopPropagation();
+        dispatch(actions.setCopyText(cleanText));
+        dispatch(actions.setLargeTextBuffer(cleanText));
+        dispatch(actions.setIsLargeTextOpen(true));
+        showMessage?.({ type: "info", message: "Opening chunker drawer...", duration: 1200 });
       },
     },
     {
