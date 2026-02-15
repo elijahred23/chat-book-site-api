@@ -134,6 +134,7 @@ export default function RegexTrainer() {
   const [customSamplePrompt, setCustomSamplePrompt] = useState("Create diverse text that stresses regex features.");
   const [customSample, setCustomSample] = useState("");
   const [suggestedPatterns, setSuggestedPatterns] = useState([]);
+  const [customView, setCustomView] = useState("highlight"); // highlight | patterns
   const [syntaxPattern, setSyntaxPattern] = useState(SYNTAX_DRILLS[0].pattern);
   const [syntaxFlags, setSyntaxFlags] = useState("g");
   const promptPresets = [
@@ -216,14 +217,14 @@ Create a fresh sample text for training a regex on "${challenge.title}". Include
     try {
       setSampleLoading(true);
       setError("");
-      const prompt = `Return JSON only. Shape: { "sample": "text", "patterns": ["regex1","regex2","regex3","regex4","regex5"] }.
+      const prompt = `Return JSON only. Shape: { "sample": "text", "patterns": ["regex1","regex2","regex3","regex4","regex5","regex6","regex7","regex8","regex9","regex10"] }.
 Write challenging sample text to practice regex syntax. Use this regex as a guide: ${syntaxPattern}. ${customSamplePrompt}`;
       const resp = await getGeminiResponse(prompt);
       const parsed = parseJson(resp);
       const newSample = parsed?.sample || "";
       if (!newSample) throw new Error("No sample in response");
       setCustomSample(newSample);
-      setSuggestedPatterns(Array.isArray(parsed?.patterns) ? parsed.patterns.slice(0, 5) : []);
+      setSuggestedPatterns(Array.isArray(parsed?.patterns) ? parsed.patterns.slice(0, 10) : []);
     } catch (err) {
       setError(err?.message || "Failed to generate syntax sample");
     } finally {
@@ -509,10 +510,28 @@ Write challenging sample text to practice regex syntax. Use this regex as a guid
             </div>
             <div>
               <div style={{ fontWeight: 700, marginBottom: 6 }}>Live highlight (uses custom regex + flags)</div>
-              <div className="sample-box" style={{ minHeight: 100, marginBottom: 8 }}>
-                {highlightMatches(customSample || "", syntaxPattern, syntaxFlags)}
+              <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 8 }}>
+                <button
+                  className={`btn ${customView === "highlight" ? "" : "secondary"}`}
+                  type="button"
+                  onClick={() => setCustomView("highlight")}
+                >
+                  Live Highlight
+                </button>
+                <button
+                  className={`btn ${customView === "patterns" ? "" : "secondary"}`}
+                  type="button"
+                  onClick={() => setCustomView("patterns")}
+                >
+                  Suggested Patterns
+                </button>
               </div>
-              {suggestedPatterns?.length ? (
+              {customView === "highlight" && (
+                <div className="sample-box" style={{ minHeight: 100, marginBottom: 8 }}>
+                  {highlightMatches(customSample || "", syntaxPattern, syntaxFlags)}
+                </div>
+              )}
+              {customView === "patterns" && suggestedPatterns?.length ? (
                 <div style={{ marginBottom: 10 }}>
                   <div style={{ fontWeight: 700, marginBottom: 4 }}>Suggested patterns</div>
                   <ul style={{ margin: 0, paddingLeft: 16, color: "#0f172a" }}>
