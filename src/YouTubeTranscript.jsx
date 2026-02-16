@@ -1788,12 +1788,21 @@ export default function YouTubeTranscript() {
                                                 <button
                                                     className="btn secondary-btn"
                                                     type="button"
-                                                    onClick={() => {
-                                                        navigator.clipboard?.readText().then((clip) => {
-                                                            setRetryChunkOverride(clip || "");
+                                                    onClick={async () => {
+                                                        try {
+                                                            const clip = (await navigator.clipboard?.readText()) || "";
                                                             setRetryIndex(i);
                                                             setRetryPromptText((prev) => prev || prompt);
-                                                        });
+                                                            const updated = [...promptResponses];
+                                                            updated[i] = clip || updated[i];
+                                                            setPromptResponses(updated);
+                                                            setTranscriptRespTab("retry");
+                                                            showMessage?.({ type: "success", message: "Pasted into response slot." });
+                                                        } catch (err) {
+                                                            setRetryIndex(i);
+                                                            setTranscriptRespTab("retry");
+                                                            showMessage?.({ type: "error", message: "Clipboard read blocked. Paste manually." });
+                                                        }
                                                     }}
                                                 >
                                                     Paste override
@@ -1900,8 +1909,14 @@ export default function YouTubeTranscript() {
                                                     <button
                                                         className="btn secondary-btn"
                                                         type="button"
-                                                        onClick={() => {
-                                                            navigator.clipboard?.readText().then((clip) => setRetryChunkOverride(clip || ""));
+                                                        onClick={async () => {
+                                                            try {
+                                                                const clip = (await navigator.clipboard?.readText()) || "";
+                                                                setRetryChunkOverride(clip);
+                                                                showMessage?.({ type: "success", message: "Pasted override from clipboard." });
+                                                            } catch (err) {
+                                                                showMessage?.({ type: "error", message: "Clipboard read blocked. Paste manually." });
+                                                            }
                                                         }}
                                                     >
                                                         Paste override
