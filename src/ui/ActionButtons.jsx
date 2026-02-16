@@ -81,6 +81,17 @@ export default function ActionButtons({ promptText, limitButtons = false }) {
       },
     },
     {
+      icon: FaComments,
+      title: "Open Chat Two",
+      color: "#22c55e",
+      iconColor: "#0b1220",
+      onClick: (e) => {
+        e.stopPropagation();
+        dispatch(actions.setChat2Prompt(cleanText));
+        dispatch(actions.setIsChat2Open(true));
+      },
+    },
+    {
       icon: FaVolumeUp,
       title: "TTS",
       color: "var(--btn-purple)",

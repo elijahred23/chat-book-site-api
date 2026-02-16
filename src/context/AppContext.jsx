@@ -6,7 +6,9 @@ const initialState = {
   htmlBuilder: { input: '', generatedHTML: '' },
   drawerStack: [],
   isChatOpen: false,
+  isChat2Open: false,
   chatPrompt: '',
+  chat2Prompt: '',
   selectedText: '',
   ttsText: '',
   teleprompterText: '',
@@ -41,7 +43,9 @@ const actionTypes = {
   SET_HTML_INPUT: 'SET_HTML_INPUT',
   SET_GENERATED_HTML: 'SET_GENERATED_HTML',
   SET_IS_CHAT_OPEN: 'SET_IS_CHAT_OPEN',
+  SET_IS_CHAT2_OPEN: 'SET_IS_CHAT2_OPEN',
   SET_CHAT_PROMPT: 'SET_CHAT_PROMPT',
+  SET_CHAT2_PROMPT: 'SET_CHAT2_PROMPT',
   SET_SELECTED_TEXT: 'SET_SELECTED_TEXT',
   SET_TTS_TEXT: 'SET_TTS_TEXT',
   SET_TELEPROMPTER_TEXT: 'SET_TELEPROMPTER_TEXT',
@@ -74,6 +78,7 @@ const actionTypes = {
 const closeAllPanels = (state) => ({
   ...state,
   isChatOpen: false,
+  isChat2Open: false,
   isTeleprompterOpen: false,
   isTTSOpen: false,
   isPlantUMLOpen: false,
@@ -90,6 +95,7 @@ const closeAllPanels = (state) => ({
 
 const drawerKeyToState = {
   chat: 'isChatOpen',
+  chat2: 'isChat2Open',
   teleprompter: 'isTeleprompterOpen',
   tts: 'isTTSOpen',
   plantuml: 'isPlantUMLOpen',
@@ -142,8 +148,14 @@ function appReducer(state, action) {
     case actionTypes.SET_IS_CHAT_OPEN:
       return action.payload ? activateDrawer(state, 'chat') : deactivateDrawer(state, 'chat');
 
+    case actionTypes.SET_IS_CHAT2_OPEN:
+      return action.payload ? activateDrawer(state, 'chat2') : deactivateDrawer(state, 'chat2');
+
     case actionTypes.SET_CHAT_PROMPT:
       return { ...state, chatPrompt: action.payload };
+
+    case actionTypes.SET_CHAT2_PROMPT:
+      return { ...state, chat2Prompt: action.payload };
 
     case actionTypes.SET_SELECTED_TEXT:
       return { ...state, selectedText: action.payload };
@@ -252,7 +264,9 @@ export const actions = {
   setHtmlInput: (input) => ({ type: actionTypes.SET_HTML_INPUT, payload: input }),
   setGeneratedHtml: (html) => ({ type: actionTypes.SET_GENERATED_HTML, payload: html }),
   setIsChatOpen: (open) => ({ type: actionTypes.SET_IS_CHAT_OPEN, payload: open }),
+  setIsChat2Open: (open) => ({ type: actionTypes.SET_IS_CHAT2_OPEN, payload: open }),
   setChatPrompt: (prompt) => ({ type: actionTypes.SET_CHAT_PROMPT, payload: prompt }),
+  setChat2Prompt: (prompt) => ({ type: actionTypes.SET_CHAT2_PROMPT, payload: prompt }),
   setSelectedText: (text) => ({ type: actionTypes.SET_SELECTED_TEXT, payload: text }),
   setTtsText: (text) => ({ type: actionTypes.SET_TTS_TEXT, payload: text }),
   setTtsAutoplay: (val) => ({ type: actionTypes.SET_TTS_AUTOPLAY, payload: val }),

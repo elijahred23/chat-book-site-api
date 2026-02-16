@@ -28,6 +28,7 @@ import IframeDrawer from './IframeDrawer.jsx';
 import StockMarketGame from './StockMarketGame.jsx';
 import PdfToText from './PdfToText.jsx';
 import RegexTrainer from './RegexTrainer.jsx';
+import ChatGPTDual from './ChatGPTDual.jsx';
 import LargeTextChunks from './LargeTextChunks.jsx';
 
 function AppContent() {
@@ -40,7 +41,7 @@ function AppContent() {
   const menuRef = useRef(null);
   const closeFabMenu = () => setShowFloatingBtns(false);
   const dispatch = useAppDispatch();
-  const { drawerStack, isChatOpen, isTeleprompterOpen, isTTSOpen, isPlantUMLOpen, isPodcastTTSOpen, isJSGeneratorOpen, isChatBookOpen, isArchitectureOpen, isYouTubeOpen, isHtmlBuilderOpen, isTypingOpen, isIframeOpen, isLargeTextOpen } = useAppState();
+  const { isChat2Open, drawerStack, isChatOpen, isTeleprompterOpen, isTTSOpen, isPlantUMLOpen, isPodcastTTSOpen, isJSGeneratorOpen, isChatBookOpen, isArchitectureOpen, isYouTubeOpen, isHtmlBuilderOpen, isTypingOpen, isIframeOpen, isLargeTextOpen } = useAppState();
 
   const toggleChat = () => dispatch(actions.setIsChatOpen(false));
   const toggleWidth = () => setIsFullWidth((p) => !p);
@@ -315,6 +316,9 @@ function AppContent() {
               <button onClick={()=>{dispatch(actions.setIsChatOpen(true)); closeFabMenu();}} className="fab-btn">
                 <span>💬</span>{isChatOpen ? 'Chat Open' : 'Open Chat'}
               </button>
+              <button onClick={()=>{dispatch(actions.setIsChat2Open(true)); closeFabMenu();}} className="fab-btn">
+                <span>💬</span>Open Chat Two
+              </button>
               <button onClick={() => {setIsTTSOpen(true); closeFabMenu();}} className="fab-btn">
                 <span>🔊</span>{isTTSOpen ? 'TTS Open' : 'Open TTS'}
               </button>
@@ -528,6 +532,18 @@ function AppContent() {
           closeLabel="✖ Close ActionButton Chunker"
         >
           <LargeTextChunks />
+        </SideDrawer>
+
+        <SideDrawer
+          isOpen={isChat2Open}
+          isFullWidth={isFullWidth}
+          stack={drawerStack}
+          currentKey="chat2"
+          onToggleWidth={toggleWidth}
+          onClose={() => dispatch(actions.setIsChat2Open(false))}
+          closeLabel="✖ Close Chat 2"
+        >
+          <ChatGPTDual isOpen={true} />
         </SideDrawer>
       
 

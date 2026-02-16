@@ -127,7 +127,7 @@ export default function GptPromptComponent({
   }));
 
   const styles = `
-    .gpt-shell {
+    .gpt-shell-primary {
       max-width: 980px;
       margin: 0 auto;
       padding: 1rem;
@@ -137,14 +137,14 @@ export default function GptPromptComponent({
       font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
       position: relative;
     }
-    .gpt-card {
+    .gpt-shell-primary .gpt-card {
       background: #ffffff;
       border: 1px solid #e2e8f0;
       border-radius: 16px;
       padding: 1rem;
       box-shadow: 0 10px 24px rgba(15,23,42,0.08);
     }
-    .chat-window {
+    .gpt-shell-primary .chat-window {
       border: 1px solid #e2e8f0;
       border-radius: 12px;
       padding: 0.75rem;
@@ -152,7 +152,7 @@ export default function GptPromptComponent({
       overflow-y: auto;
       max-height: 60vh;
     }
-    .bubble {
+    .gpt-shell-primary .bubble {
       display: inline-block;
       padding: 0.65rem 0.85rem;
       border-radius: 14px;
@@ -160,34 +160,36 @@ export default function GptPromptComponent({
       word-break: break-word;
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     }
-    .user {
+    .gpt-shell-primary .user {
       background: #dbeafe;
       color: #0f172a;
     }
-    .bot {
+    .gpt-shell-primary .bot {
       background: #f1f5f9;
       color: #0f172a;
     }
-    .btn {
+    .gpt-shell-primary .btn {
       padding: 0.6rem 0.85rem;
       border-radius: 12px;
-      border: 1px solid #e2e8f0;
-      background: #fff;
+      border: 1px solid #bfdbfe;
+      background: #e8f1ff;
       cursor: pointer;
       font-weight: 600;
       transition: all 0.2s ease;
       color: #0f172a;
     }
-    .btn-primary {
-      background: linear-gradient(135deg, #2563eb, #60a5fa);
+    .gpt-shell-primary .btn-primary {
+      background: linear-gradient(135deg, #1d4ed8, #3b82f6);
       color: #fff;
       border: none;
       box-shadow: 0 10px 24px rgba(37,99,235,0.25);
     }
-    .btn-ghost {
-      background: #f8fafc;
+    .gpt-shell-primary .btn-ghost {
+      background: #e0edff;
+      border-color: #bfdbfe;
+      color: #0f172a;
     }
-    .suggestion {
+    .gpt-shell-primary .suggestion {
       padding: 0.5rem 0.75rem;
       border-radius: 12px;
       border: 1px solid #e2e8f0;
@@ -197,13 +199,13 @@ export default function GptPromptComponent({
       color: #0b1220;
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     }
-    .suggestion.selected {
+    .gpt-shell-primary .suggestion.selected {
       border-color: #2563eb;
       background: #e0f2fe;
       box-shadow: 0 8px 20px rgba(37,99,235,0.18);
       color: #0b1220;
     }
-    .prompt-input {
+    .gpt-shell-primary .prompt-input {
       width: 100%;
       padding: 0.8rem;
       border-radius: 12px;
@@ -212,7 +214,7 @@ export default function GptPromptComponent({
       min-height: 120px;
       resize: vertical;
     }
-    .floating-controls {
+    .gpt-shell-primary .floating-controls {
       position: fixed;
       top: 10px;
       right: 10px;
@@ -225,7 +227,7 @@ export default function GptPromptComponent({
       box-shadow: 0 12px 28px rgba(0,0,0,0.25);
       backdrop-filter: blur(10px);
     }
-    .pill-btn {
+    .gpt-shell-primary .pill-btn {
       border: none;
       border-radius: 10px;
       width: 38px;
@@ -239,17 +241,17 @@ export default function GptPromptComponent({
       box-shadow: 0 8px 18px rgba(14,165,233,0.35);
     }
     @media (max-width: 540px) {
-      .floating-controls {
+      .gpt-shell-primary .floating-controls {
         left: 8px;
         right: 8px;
         top: 8px;
         transform: none;
       }
-      .pill-btn {
+      .gpt-shell-primary .pill-btn {
         width: 34px;
         height: 34px;
       }
-      .chat-window {
+      .gpt-shell-primary .chat-window {
         max-height: 50vh;
       }
     }
@@ -258,7 +260,7 @@ export default function GptPromptComponent({
   return (
     <div>
       <style>{styles}</style>
-      <div className="gpt-shell">
+      <div className="gpt-shell gpt-shell-primary">
         <div style={{ display: "flex", gap: "0.5rem", marginBottom: "0.5rem" }}>
           <button
             className={`btn ${activeTab === "prompt" ? "btn-primary" : "btn-ghost"}`}
