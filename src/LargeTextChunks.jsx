@@ -2,14 +2,22 @@ import React, { useMemo, useState, useEffect } from "react";
 import ActionButtons from "./ui/ActionButtons";
 import { useAppState } from "./context/AppContext";
 
-const CHUNK_WORDS = 5000;
-
-const splitIntoWordChunks = (text, maxWords = CHUNK_WORDS) => {
+const splitIntoWordChunks = (text, opts) => {
   const words = text.trim().split(/\s+/).filter(Boolean);
   if (!words.length) return [];
-  const chunks = [];
-  for (let i = 0; i < words.length; i += maxWords) {
-    chunks.push(words.slice(i, i + maxWords).join(" "));
+  const mode = opts.mode;
+  let chunks = [];
+  if (mode === "size") {
+    const maxWords = Math.max(50, Number(opts.size) || 5000);
+    for (let i = 0; i < words.length; i += maxWords) {
+      chunks.push(words.slice(i, i + maxWords).join(" "));
+    }
+  } else {
+    const count = Math.max(1, Number(opts.count) || 1);
+    const perChunk = Math.ceil(words.length / count);
+    for (let i = 0; i < words.length; i += perChunk) {
+      chunks.push(words.slice(i, i + perChunk).join(" "));
+    }
   }
   return chunks;
 };
@@ -17,12 +25,15 @@ const splitIntoWordChunks = (text, maxWords = CHUNK_WORDS) => {
 export default function LargeTextChunks() {
   const { copyText } = useAppState();
   const [text, setText] = useState("");
+  const [mode, setMode] = useState("size"); // size | count
+  const [size, setSize] = useState(5000);
+  const [count, setCount] = useState(3);
 
   useEffect(() => {
     if (copyText) setText(copyText);
   }, [copyText]);
 
-  const chunks = useMemo(() => splitIntoWordChunks(text), [text]);
+  const chunks = useMemo(() => splitIntoWordChunks(text, { mode, size, count }), [text, mode, size, count]);
 
   const handleUpload = async (file) => {
     if (!file) return;
@@ -45,7 +56,7 @@ export default function LargeTextChunks() {
       <div className="lt-card">
         <div style={{ display: "flex", justifyContent: "space-between", gap: 10, flexWrap: "wrap" }}>
           <div>
-            <h2 style={{ margin: 0 }}>ActionButton Text Chunker</h2>
+            <h2 style={{ margin: 0 }}>Text Chunker</h2>
             <div style={{ color: "#475569" }}>Paste or upload large text, auto-split into 5,000-word chunks, and run ActionButtons on each.</div>
           </div>
           <ActionButtons promptText={text} limitButtons />
@@ -69,6 +80,43 @@ export default function LargeTextChunks() {
             <button className="btn secondary" type="button" onClick={() => setText("")}>Clear</button>
             <span className="pill">Words: {text.trim() ? text.trim().split(/\s+/).filter(Boolean).length : 0}</span>
             <span className="pill">Chunks: {chunks.length}</span>
+            <div style={{ display: "flex", gap: 8, alignItems: "center", flexWrap: "wrap" }}>
+              <label style={{ fontWeight: 700 }}>Mode:</label>
+              <select
+                className="input"
+                style={{ maxWidth: 180 }}
+                value={mode}
+                onChange={(e) => setMode(e.target.value)}
+              >
+                <option value="size">By size (words)</option>
+                <option value="count">By number of chunks</option>
+              </select>
+              {mode === "size" ? (
+                <>
+                  <label style={{ fontWeight: 700 }}>Words/chunk</label>
+                  <input
+                    type="number"
+                    className="input"
+                    style={{ width: 120 }}
+                    value={size}
+                    onChange={(e) => setSize(Number(e.target.value) || 0)}
+                    min={50}
+                  />
+                </>
+              ) : (
+                <>
+                  <label style={{ fontWeight: 700 }}>Chunk count</label>
+                  <input
+                    type="number"
+                    className="input"
+                    style={{ width: 120 }}
+                    value={count}
+                    onChange={(e) => setCount(Number(e.target.value) || 1)}
+                    min={1}
+                  />
+                </>
+              )}
+            </div>
           </div>
 
           <textarea
