@@ -189,8 +189,9 @@ export default function YouTubeTranscript() {
     const [lastFetchedTranscriptUrl, setLastFetchedTranscriptUrl] = useState("");
     const [lastFetchedCommentsUrl, setLastFetchedCommentsUrl] = useState("");
     const [retryIndex, setRetryIndex] = useState(null);
-  const [retryPromptText, setRetryPromptText] = useState("");
-  const [retryLoadingIndex, setRetryLoadingIndex] = useState(null);
+    const [retryPromptText, setRetryPromptText] = useState("");
+    const [retryChunkOverride, setRetryChunkOverride] = useState("");
+    const [retryLoadingIndex, setRetryLoadingIndex] = useState(null);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const { showMessage } = useFlyout();
   const latestRetryRef = useRef({});
@@ -1772,6 +1773,32 @@ export default function YouTubeTranscript() {
                                         <div key={i} data-index={i} style={{ padding: "1rem 0", borderBottom: "1px solid #ddd" }}>
                                             <ReactMarkdown className="markdown-body">{res}</ReactMarkdown>
                                             <ActionButtons promptText={res} />
+                                            <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginTop: 6 }}>
+                                                <button
+                                                    className="btn secondary-btn"
+                                                    type="button"
+                                                    onClick={() => {
+                                                        const chunk = splitTranscript[i] || splitComments[i] || transcript;
+                                                        navigator.clipboard?.writeText(chunk);
+                                                        showMessage?.({ type: "success", message: "Copied transcript chunk." });
+                                                    }}
+                                                >
+                                                    Copy source chunk
+                                                </button>
+                                                <button
+                                                    className="btn secondary-btn"
+                                                    type="button"
+                                                    onClick={() => {
+                                                        navigator.clipboard?.readText().then((clip) => {
+                                                            setRetryChunkOverride(clip || "");
+                                                            setRetryIndex(i);
+                                                            setRetryPromptText((prev) => prev || prompt);
+                                                        });
+                                                    }}
+                                                >
+                                                    Paste override
+                                                </button>
+                                            </div>
                                         </div>
                                     ))}
                                 </AutoScroller>
@@ -1820,6 +1847,9 @@ export default function YouTubeTranscript() {
                                                 disabled={retryLoadingIndex === i}
                                                 onClick={() => {
                                                     setRetryPromptText((prev) => prev || prompt);
+                                                    navigator.clipboard?.writeText(splitTranscript[i] || splitComments[i] || "");
+                                                    showMessage?.({ type: "success", message: "Copied transcript chunk." });
+                                                    setRetryChunkOverride(splitTranscript[i] || splitComments[i] || "");
                                                     retryPart(i);
                                                 }}
                                                 style={{ width: "100%" }}
@@ -1847,21 +1877,59 @@ export default function YouTubeTranscript() {
                                             {retryIndex === i ? "Editing retry…" : "Retry this part"}
                                         </button>
                                         {retryIndex === i && (
-                                            <div className="chunk" style={{ marginTop: "0.5rem" }}>
+                                            <div className="chunk" style={{ marginTop: "0.5rem", display: "grid", gap: 8 }}>
                                                 <input
                                                     className="input"
                                                     value={retryPromptText}
                                                     onChange={(e) => setRetryPromptText(e.target.value)}
                                                     placeholder="New prompt for this part"
                                                 />
+                                                <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+                                                    <button
+                                                        className="btn secondary-btn"
+                                                        type="button"
+                                                        onClick={() => {
+                                                            const chunk = splitTranscript[i] || splitComments[i] || "";
+                                                            console.log({chunk})
+                                                            navigator.clipboard?.writeText(chunk);
+                                                            showMessage?.({ type: "success", message: "Copied transcript chunk." });
+                                                        }}
+                                                    >
+                                                        Copy source chunk
+                                                    </button>
+                                                    <button
+                                                        className="btn secondary-btn"
+                                                        type="button"
+                                                        onClick={() => {
+                                                            navigator.clipboard?.readText().then((clip) => setRetryChunkOverride(clip || ""));
+                                                        }}
+                                                    >
+                                                        Paste override
+                                                    </button>
+                                                    <button
+                                                        className="btn secondary-btn"
+                                                        type="button"
+                                                        onClick={() => setRetryChunkOverride(splitTranscript[i] || splitComments[i] || "")}
+                                                    >
+                                                        Reset override
+                                                    </button>
+                                                </div>
+                                                <textarea
+                                                    className="input"
+                                                    style={{ minHeight: 140 }}
+                                                    value={retryChunkOverride}
+                                                    onChange={(e) => setRetryChunkOverride(e.target.value)}
+                                                    placeholder="Paste or edit the source text for this retry"
+                                                />
                                                 <div className="button-group">
                                                     <button
                                                         className="btn primary-btn"
                                                         disabled={retryLoadingIndex === i}
                                                         onClick={async () => {
-                                                            await retryPart(i);
+                                                            await retryPart(i, retryChunkOverride);
                                                             setRetryIndex(null);
                                                             setRetryPromptText("");
+                                                            setRetryChunkOverride("");
                                                         }}
                                                     >
                                                         {retryLoadingIndex === i ? <ClipLoader size={12} color="white" /> : "Submit Retry"}
@@ -1871,6 +1939,7 @@ export default function YouTubeTranscript() {
                                                         onClick={() => {
                                                             setRetryIndex(null);
                                                             setRetryPromptText("");
+                                                            setRetryChunkOverride("");
                                                         }}
                                                         disabled={retryLoadingIndex === i}
                                                     >
