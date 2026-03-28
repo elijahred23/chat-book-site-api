@@ -12,7 +12,6 @@
     "Can there be multiple starting rotten oranges? (Yes.)",
     "Should we mutate the grid? (Allowed.)"
   ],
-  "starterCode": "// Write your solution in JavaScript.\n// Requirement: define a function named orangesRotting(grid)\n// Return: number of minutes\n\nfunction orangesRotting(grid) {\n  // TODO: implement\n  return 0;\n}\n",
   "walkthrough": [
     {
       "title": "Multi-source BFS",
@@ -20,8 +19,18 @@
     },
     {
       "title": "JavaScript (BFS implementation)",
-      "codeLanguage": "javascript",
-      "body": "function orangesRotting(grid) {\n  if (!grid.length || !grid[0].length) return 0;\n  const rows = grid.length;\n  const cols = grid[0].length;\n  const queue = [];\n  let fresh = 0;\n\n  for (let r = 0; r < rows; r++) {\n    for (let c = 0; c < cols; c++) {\n      if (grid[r][c] === 2) queue.push([r, c]);\n      else if (grid[r][c] === 1) fresh++;\n    }\n  }\n\n  const dirs = [\n    [-1, 0],\n    [0, 1],\n    [1, 0],\n    [0, -1],\n  ];\n\n  let minutes = 0;\n  let layer = queue.length;\n\n  while (queue.length) {\n    if (layer === 0) {\n      minutes++;\n      layer = queue.length;\n    }\n\n    const [r, c] = queue.shift();\n    layer--;\n\n    for (const [dr, dc] of dirs) {\n      const nr = r + dr;\n      const nc = c + dc;\n      if (nr < 0 || nr >= rows || nc < 0 || nc >= cols) continue;\n      if (grid[nr][nc] !== 1) continue;\n      grid[nr][nc] = 2;\n      fresh--;\n      queue.push([nr, nc]);\n    }\n  }\n\n  return fresh > 0 ? -1 : minutes;\n}\n"
+      "codeSnippets": [
+        {
+          "title": "JavaScript",
+          "language": "javascript",
+          "body": "function orangesRotting(grid) {\n  if (!grid.length || !grid[0].length) return 0;\n  const rows = grid.length;\n  const cols = grid[0].length;\n  const queue = [];\n  let fresh = 0;\n\n  for (let r = 0; r < rows; r++) {\n    for (let c = 0; c < cols; c++) {\n      if (grid[r][c] === 2) queue.push([r, c]);\n      else if (grid[r][c] === 1) fresh++;\n    }\n  }\n\n  const dirs = [\n    [-1, 0],\n    [0, 1],\n    [1, 0],\n    [0, -1],\n  ];\n\n  let minutes = 0;\n  let layer = queue.length;\n\n  while (queue.length) {\n    if (layer === 0) {\n      minutes++;\n      layer = queue.length;\n    }\n\n    const [r, c] = queue.shift();\n    layer--;\n\n    for (const [dr, dc] of dirs) {\n      const nr = r + dr;\n      const nc = c + dc;\n      if (nr < 0 || nr >= rows || nc < 0 || nc >= cols) continue;\n      if (grid[nr][nc] !== 1) continue;\n      grid[nr][nc] = 2;\n      fresh--;\n      queue.push([nr, nc]);\n    }\n  }\n\n  return fresh > 0 ? -1 : minutes;\n}\n"
+        },
+        {
+          "title": "C#",
+          "language": "csharp",
+          "body": "int OrangesRotting(int[][] grid)\n{\n    int rows = grid.Length, cols = grid[0].Length;\n    var q = new Queue<(int r, int c)>();\n    int fresh = 0;\n\n    for (int r = 0; r < rows; r++)\n    {\n        for (int c = 0; c < cols; c++)\n        {\n            if (grid[r][c] == 2) q.Enqueue((r, c));\n            else if (grid[r][c] == 1) fresh++;\n        }\n    }\n\n    if (fresh == 0) return 0;\n\n    int minutes = 0;\n    int[][] dirs = { new[] { 1, 0 }, new[] { -1, 0 }, new[] { 0, 1 }, new[] { 0, -1 } };\n\n    while (q.Count > 0 && fresh > 0)\n    {\n        int size = q.Count;\n        for (int i = 0; i < size; i++)\n        {\n            var (r, c) = q.Dequeue();\n            foreach (var d in dirs)\n            {\n                int nr = r + d[0], nc = c + d[1];\n                if (nr < 0 || nr >= rows || nc < 0 || nc >= cols || grid[nr][nc] != 1) continue;\n                grid[nr][nc] = 2;\n                fresh--;\n                q.Enqueue((nr, nc));\n            }\n        }\n        minutes++;\n    }\n\n    return fresh == 0 ? minutes : -1;\n}"
+        }
+      ]
     },
     {
       "title": "Complexity",
@@ -32,24 +41,97 @@
     {
       "name": "All rot in 7 minutes",
       "matrix": [
-        [2, 1, 1, 0, 0],
-        [1, 1, 1, 0, 2],
-        [0, 1, 0, 1, 1],
-        [0, 1, 1, 1, 0]
+        [
+          2,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          0,
+          2
+        ],
+        [
+          0,
+          1,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          1,
+          0
+        ]
       ],
       "expect": 7
     },
     {
       "name": "Unreachable fresh orange",
       "matrix": [
-        [2, 1, 1, 0, 2],
-        [1, 1, 0, 0, 1],
-        [0, 0, 0, 0, 1]
+        [
+          2,
+          1,
+          1,
+          0,
+          2
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
       ],
       "expect": -1
     },
-    { "name": "Empty grid", "matrix": [], "expect": 0 },
-    { "name": "No fresh oranges", "matrix": [[0, 2, 0]], "expect": 0 },
-    { "name": "All fresh but no rotten", "matrix": [[1, 1], [1, 1]], "expect": -1 }
-  ]
+    {
+      "name": "Empty grid",
+      "matrix": [],
+      "expect": 0
+    },
+    {
+      "name": "No fresh oranges",
+      "matrix": [
+        [
+          0,
+          2,
+          0
+        ]
+      ],
+      "expect": 0
+    },
+    {
+      "name": "All fresh but no rotten",
+      "matrix": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "expect": -1
+    }
+  ],
+  "starterCodeByLanguage": {
+    "javascript": "// Write your solution in JavaScript.\n// Requirement: define a function named orangesRotting(grid)\n// Return: number of minutes\n\nfunction orangesRotting(grid) {\n  // TODO: implement\n  return 0;\n}\n",
+    "csharp": "// Write your solution in C#.\n// Requirement: define a method named OrangesRotting\n\npublic static class Solution\n{\n    public static object OrangesRotting(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n"
+  }
 }

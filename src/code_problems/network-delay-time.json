@@ -12,7 +12,6 @@
     "Can the graph be disconnected? (Yes.)",
     "What if n = 0 or there are no edges? (Return 0 if k exists, else -1.)"
   ],
-  "starterCode": "// Write your solution in JavaScript.\n// Requirement: define a function named networkDelayTime(times, n, k)\n// times: array of [u, v, w] edges\n// Return: total time for all nodes to receive the signal, or -1\n\nfunction networkDelayTime(times, n, k) {\n  // TODO: implement\n  return -1;\n}\n",
   "walkthrough": [
     {
       "title": "Model the graph",
@@ -24,8 +23,18 @@
     },
     {
       "title": "JavaScript (Dijkstra with array-based heap)",
-      "codeLanguage": "javascript",
-      "body": "function networkDelayTime(times, n, k) {\n  const adj = Array.from({ length: n }, () => []);\n  for (const [u, v, w] of times) {\n    adj[u - 1].push([v - 1, w]);\n  }\n\n  const dist = Array(n).fill(Infinity);\n  dist[k - 1] = 0;\n\n  const heap = [];\n  const push = (node) => {\n    heap.push(node);\n    let i = heap.length - 1;\n    while (i > 0) {\n      const p = Math.floor((i - 1) / 2);\n      if (dist[heap[p]] <= dist[heap[i]]) break;\n      [heap[p], heap[i]] = [heap[i], heap[p]];\n      i = p;\n    }\n  };\n  const pop = () => {\n    const top = heap[0];\n    const last = heap.pop();\n    if (heap.length) {\n      heap[0] = last;\n      let i = 0;\n      while (true) {\n        const l = i * 2 + 1;\n        const r = i * 2 + 2;\n        let smallest = i;\n        if (l < heap.length && dist[heap[l]] < dist[heap[smallest]]) smallest = l;\n        if (r < heap.length && dist[heap[r]] < dist[heap[smallest]]) smallest = r;\n        if (smallest === i) break;\n        [heap[i], heap[smallest]] = [heap[smallest], heap[i]];\n        i = smallest;\n      }\n    }\n    return top;\n  };\n\n  push(k - 1);\n  const visited = new Set();\n  while (heap.length) {\n    const node = pop();\n    if (visited.has(node)) continue;\n    visited.add(node);\n    for (const [next, w] of adj[node]) {\n      if (dist[node] + w < dist[next]) {\n        dist[next] = dist[node] + w;\n        push(next);\n      }\n    }\n  }\n\n  const max = Math.max(...dist);\n  return max === Infinity ? -1 : max;\n}\n"
+      "codeSnippets": [
+        {
+          "title": "JavaScript",
+          "language": "javascript",
+          "body": "function networkDelayTime(times, n, k) {\n  const adj = Array.from({ length: n }, () => []);\n  for (const [u, v, w] of times) {\n    adj[u - 1].push([v - 1, w]);\n  }\n\n  const dist = Array(n).fill(Infinity);\n  dist[k - 1] = 0;\n\n  const heap = [];\n  const push = (node) => {\n    heap.push(node);\n    let i = heap.length - 1;\n    while (i > 0) {\n      const p = Math.floor((i - 1) / 2);\n      if (dist[heap[p]] <= dist[heap[i]]) break;\n      [heap[p], heap[i]] = [heap[i], heap[p]];\n      i = p;\n    }\n  };\n  const pop = () => {\n    const top = heap[0];\n    const last = heap.pop();\n    if (heap.length) {\n      heap[0] = last;\n      let i = 0;\n      while (true) {\n        const l = i * 2 + 1;\n        const r = i * 2 + 2;\n        let smallest = i;\n        if (l < heap.length && dist[heap[l]] < dist[heap[smallest]]) smallest = l;\n        if (r < heap.length && dist[heap[r]] < dist[heap[smallest]]) smallest = r;\n        if (smallest === i) break;\n        [heap[i], heap[smallest]] = [heap[smallest], heap[i]];\n        i = smallest;\n      }\n    }\n    return top;\n  };\n\n  push(k - 1);\n  const visited = new Set();\n  while (heap.length) {\n    const node = pop();\n    if (visited.has(node)) continue;\n    visited.add(node);\n    for (const [next, w] of adj[node]) {\n      if (dist[node] + w < dist[next]) {\n        dist[next] = dist[node] + w;\n        push(next);\n      }\n    }\n  }\n\n  const max = Math.max(...dist);\n  return max === Infinity ? -1 : max;\n}\n"
+        },
+        {
+          "title": "C#",
+          "language": "csharp",
+          "body": "int NetworkDelayTime(int[][] times, int n, int k)\n{\n    var graph = new List<(int to, int w)>[n + 1];\n    for (int i = 1; i <= n; i++) graph[i] = new List<(int, int)>();\n    foreach (var e in times) graph[e[0]].Add((e[1], e[2]));\n\n    var dist = Enumerable.Repeat(int.MaxValue, n + 1).ToArray();\n    dist[k] = 0;\n\n    var pq = new PriorityQueue<(int node, int d), int>();\n    pq.Enqueue((k, 0), 0);\n\n    while (pq.Count > 0)\n    {\n        var (node, d) = pq.Dequeue();\n        if (d > dist[node]) continue;\n\n        foreach (var (to, w) in graph[node])\n        {\n            int nd = d + w;\n            if (nd < dist[to])\n            {\n                dist[to] = nd;\n                pq.Enqueue((to, nd), nd);\n            }\n        }\n    }\n\n    int ans = 0;\n    for (int i = 1; i <= n; i++)\n    {\n        if (dist[i] == int.MaxValue) return -1;\n        ans = Math.Max(ans, dist[i]);\n    }\n    return ans;\n}"
+        }
+      ]
     },
     {
       "title": "Complexity",
@@ -37,21 +46,74 @@
       "name": "Weighted example",
       "n": 5,
       "k": 1,
-      "times": [[1, 2, 9], [1, 4, 2], [2, 5, 1], [4, 2, 4], [4, 5, 6], [3, 2, 3], [5, 3, 7], [3, 1, 5]],
+      "times": [
+        [
+          1,
+          2,
+          9
+        ],
+        [
+          1,
+          4,
+          2
+        ],
+        [
+          2,
+          5,
+          1
+        ],
+        [
+          4,
+          2,
+          4
+        ],
+        [
+          4,
+          5,
+          6
+        ],
+        [
+          3,
+          2,
+          3
+        ],
+        [
+          5,
+          3,
+          7
+        ],
+        [
+          3,
+          1,
+          5
+        ]
+      ],
       "expect": 14
     },
     {
       "name": "Disconnected graph",
       "n": 3,
       "k": 1,
-      "times": [[2, 3, 4]],
+      "times": [
+        [
+          2,
+          3,
+          4
+        ]
+      ],
       "expect": -1
     },
     {
       "name": "Single edge",
       "n": 2,
       "k": 1,
-      "times": [[1, 2, 1]],
+      "times": [
+        [
+          1,
+          2,
+          1
+        ]
+      ],
       "expect": 1
     },
     {
@@ -61,5 +123,9 @@
       "times": [],
       "expect": 0
     }
-  ]
+  ],
+  "starterCodeByLanguage": {
+    "javascript": "// Write your solution in JavaScript.\n// Requirement: define a function named networkDelayTime(times, n, k)\n// times: array of [u, v, w] edges\n// Return: total time for all nodes to receive the signal, or -1\n\nfunction networkDelayTime(times, n, k) {\n  // TODO: implement\n  return -1;\n}\n",
+    "csharp": "// Write your solution in C#.\n// Requirement: define a method named NetworkDelayTime\n\npublic static class Solution\n{\n    public static object NetworkDelayTime(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n"
+  }
 }

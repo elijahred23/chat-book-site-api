@@ -4,6 +4,7 @@ import Prism from "prismjs";
 import "prismjs/components/prism-core";
 import "prismjs/components/prism-clike";
 import "prismjs/components/prism-javascript";
+import "prismjs/components/prism-csharp";
 import "prismjs/themes/prism.css";
 import ActionButtons from "./ui/ActionButtons.jsx";
 import { useFlyout } from "./context/FlyoutContext";
@@ -88,6 +89,79 @@ const PROBLEMS = Object.values(problemModules)
     if (ra !== rb) return ra - rb;
     return (a.title || "").localeCompare(b.title || "");
   });
+
+function normalizeLanguageKey(language = "") {
+  const key = String(language).trim().toLowerCase();
+  if (key === "c#" || key === "cs") return "csharp";
+  return key || "javascript";
+}
+
+function normalizeLanguageLabel(language = "") {
+  const key = normalizeLanguageKey(language);
+  if (key === "javascript") return "JavaScript";
+  if (key === "typescript") return "TypeScript";
+  if (key === "csharp") return "C#";
+  if (key === "cpp") return "C++";
+  if (key === "c") return "C";
+  return key.charAt(0).toUpperCase() + key.slice(1);
+}
+
+function getStarterCodeByLanguage(problem) {
+  if (!problem) return { javascript: "" };
+  if (problem.starterCodeByLanguage && typeof problem.starterCodeByLanguage === "object") {
+    const entries = Object.entries(problem.starterCodeByLanguage)
+      .filter(([, snippet]) => typeof snippet === "string")
+      .map(([language, snippet]) => [normalizeLanguageKey(language), snippet]);
+    if (entries.length) return Object.fromEntries(entries);
+  }
+  if (typeof problem.starterCode === "string") {
+    return { javascript: problem.starterCode };
+  }
+  return { javascript: "" };
+}
+
+function getWalkthroughCodeSnippets(walkthroughItem) {
+  if (!walkthroughItem) return [];
+  if (Array.isArray(walkthroughItem.codeSnippets) && walkthroughItem.codeSnippets.length > 0) {
+    return walkthroughItem.codeSnippets
+      .filter((snippet) => snippet && typeof snippet.body === "string")
+      .map((snippet) => {
+        const language = normalizeLanguageKey(snippet.language);
+        return {
+          title: snippet.title || normalizeLanguageLabel(language),
+          language,
+          body: snippet.body,
+        };
+      });
+  }
+
+  if (walkthroughItem.codeLanguage && typeof walkthroughItem.body === "string") {
+    const language = normalizeLanguageKey(walkthroughItem.codeLanguage);
+    return [
+      {
+        title: normalizeLanguageLabel(language),
+        language,
+        body: walkthroughItem.body,
+      },
+    ];
+  }
+
+  return [];
+}
+
+function highlightCodeBlock(code = "", language = "javascript") {
+  try {
+    const prismLanguage = language === "csharp" ? "cs" : language;
+    const grammar = Prism.languages[prismLanguage] ?? Prism.languages[language] ?? Prism.languages.javascript;
+    return Prism.highlight(code, grammar, prismLanguage);
+  } catch {
+    return code;
+  }
+}
+
+function toPrismLanguage(language = "javascript") {
+  return language === "csharp" ? "cs" : language;
+}
 
 function stableStringify(value) {
   if (value === undefined) return "undefined";
@@ -1088,6 +1162,8 @@ export default function CodingProblems() {
     if (!hasProblems) return null;
     return PROBLEMS.find((p) => p.id === activeId) || PROBLEMS[0];
   }, [activeId, hasProblems]);
+  const starterCodeByLanguage = useMemo(() => getStarterCodeByLanguage(active), [active]);
+  const solveLanguage = "javascript";
 
   useEffect(() => {
     if (!activeId) return;
@@ -1098,33 +1174,42 @@ export default function CodingProblems() {
     }
   }, [activeId]);
 
-  const storageKey = active ? `coding_problem_solution:${active.id}` : "coding_problem_solution:none";
+  const activeStarterCode = starterCodeByLanguage[solveLanguage] ?? starterCodeByLanguage.javascript ?? "";
+  const storageKey = active
+    ? `coding_problem_solution:${active.id}:${solveLanguage}`
+    : "coding_problem_solution:none";
   const [code, setCode] = useState(() => {
     if (!active) return "";
     try {
       const saved = localStorage.getItem(storageKey);
-      return saved ?? active.starterCode;
+      return saved ?? activeStarterCode;
     } catch {
-      return active.starterCode;
+      return activeStarterCode;
     }
   });
   const [tab, setTab] = useState("solve"); // solve | info
   const [runOutput, setRunOutput] = useState([]);
   const [runError, setRunError] = useState("");
   const [running, setRunning] = useState(false);
-  const [notesContainerEl, setNotesContainerEl] = useState(null);
+  const [selectedNotesLanguage, setSelectedNotesLanguage] = useState(() => {
+    try {
+      return localStorage.getItem("coding_problem_notes_language") || "javascript";
+    } catch {
+      return "javascript";
+    }
+  });
 
   useEffect(() => {
     if (!active) return;
     try {
       const saved = localStorage.getItem(storageKey);
-      setCode(saved ?? active.starterCode);
+      setCode(saved ?? activeStarterCode);
     } catch {
-      setCode(active.starterCode);
+      setCode(activeStarterCode);
     }
     setRunOutput([]);
     setRunError("");
-  }, [active?.id]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [active?.id, storageKey, activeStarterCode]);
 
   useEffect(() => {
     try {
@@ -1144,14 +1229,12 @@ export default function CodingProblems() {
   }, [code]);
 
   useEffect(() => {
-    if (!notesContainerEl) return;
-    if (tab !== "info") return;
     try {
-      Prism.highlightAllUnder(notesContainerEl);
+      localStorage.setItem("coding_problem_notes_language", selectedNotesLanguage);
     } catch {
-      // ignore Prism errors
+      // ignore localStorage errors
     }
-  }, [notesContainerEl, tab, active?.id]);
+  }, [selectedNotesLanguage]);
 
   const runAllTests = async () => {
     setRunning(true);
@@ -1467,7 +1550,18 @@ export default function CodingProblems() {
   };
 
   const combinedConstraints = useMemo(() => (active ? active.constraintQuestions.join("\n") : ""), [active]);
-  const combinedWalkthrough = useMemo(() => (active ? active.walkthrough.map((w) => `${w.title}\n${w.body}`).join("\n\n") : ""), [active]);
+  const combinedWalkthrough = useMemo(
+    () =>
+      active
+        ? active.walkthrough
+            .map((w) => {
+              const snippetText = getWalkthroughCodeSnippets(w).map((snippet) => snippet.body).join("\n\n");
+              return `${w.title}\n${w.body || snippetText}`;
+            })
+            .join("\n\n")
+        : "",
+    [active]
+  );
 
   if (!active) {
     return (
@@ -1538,7 +1632,7 @@ export default function CodingProblems() {
                     <button className="cp-btn" onClick={runAllTests} disabled={running}>
                       {running ? "Running..." : "Run Tests"}
                     </button>
-                    <button className="cp-btn secondary" onClick={() => setCode(active.starterCode)}>
+                    <button className="cp-btn secondary" onClick={() => setCode(activeStarterCode)}>
                       Reset Code
                     </button>
                   </div>
@@ -1584,7 +1678,7 @@ export default function CodingProblems() {
                 )}
               </div>
             ) : (
-              <div ref={setNotesContainerEl} style={{ marginTop: 12, display: "grid", gap: 12 }}>
+              <div style={{ marginTop: 12, display: "grid", gap: 12 }}>
                 <div className="cp-card" style={{ padding: 0, boxShadow: "none", border: "none", background: "transparent" }}>
                   <div className="cp-row">
                     <h4 style={{ margin: 0 }}>Constraint Verification (ask first)</h4>
@@ -1605,20 +1699,56 @@ export default function CodingProblems() {
                     <ActionButtons limitButtons promptText={combinedWalkthrough} />
                   </div>
                   <div style={{ display: "grid", gap: 10, marginTop: 8 }}>
-                    {active.walkthrough.map((w) => (
+                    {active.walkthrough.map((w) => {
+                      const codeSnippets = getWalkthroughCodeSnippets(w);
+                      const activeSnippetForPrompt =
+                        codeSnippets.find((snippet) => snippet.language === selectedNotesLanguage) || codeSnippets[0] || null;
+                      const walkthroughText = w.body || activeSnippetForPrompt?.body || "";
+                      return (
                       <div key={w.title} className="cp-q" style={{ background: "#f8fafc" }}>
                         <div className="cp-row" style={{ alignItems: "flex-start", gap: 8 }}>
                           <div style={{ fontWeight: 900, marginBottom: 6, marginTop: 2 }}>{w.title}</div>
-                          {w.codeLanguage && <ActionButtons promptText={w.body} />}
+                          {codeSnippets.length > 0 && <ActionButtons promptText={walkthroughText} />}
                         </div>
-                        {w.codeLanguage ? (
+                        {codeSnippets.length > 0 ? (
                           <>
-                            <pre className="cp-codeblock">
-                              <code className={`language-${w.codeLanguage}`}>{w.body}</code>
-                            </pre>
-                            <CodeScramble code={w.body} scrambleKey={`${active.id}:${w.title}`} />
-                            <CodeLineGuess code={w.body} gameKey={`${active.id}:${w.title}:guess`} />
-                            <CodeWordFill code={w.body} gameKey={`${active.id}:${w.title}:fill`} />
+                            {(() => {
+                              const walkthroughKey = `${active.id}:${w.title}`;
+                              const activeSnippet =
+                                codeSnippets.find((snippet) => snippet.language === selectedNotesLanguage) || codeSnippets[0];
+
+                              if (!activeSnippet) return null;
+
+                              return (
+                                <div style={{ display: "grid", gap: 8 }}>
+                                  {codeSnippets.length > 1 && (
+                                    <div className="cp-tabs">
+                                      {codeSnippets.map((snippet) => (
+                                        <button
+                                          key={`${walkthroughKey}:tab:${snippet.language}`}
+                                          className={`cp-tab ${selectedNotesLanguage === snippet.language ? "active" : ""}`}
+                                          onClick={() => setSelectedNotesLanguage(snippet.language)}
+                                        >
+                                          {snippet.title}
+                                        </button>
+                                      ))}
+                                    </div>
+                                  )}
+
+                                  <pre className={`cp-codeblock language-${toPrismLanguage(activeSnippet.language)}`}>
+                                    <code
+                                      className={`language-${toPrismLanguage(activeSnippet.language)}`}
+                                      dangerouslySetInnerHTML={{
+                                        __html: highlightCodeBlock(activeSnippet.body, activeSnippet.language),
+                                      }}
+                                    />
+                                  </pre>
+                                  <CodeScramble code={activeSnippet.body} scrambleKey={`${walkthroughKey}:${activeSnippet.language}`} />
+                                  <CodeLineGuess code={activeSnippet.body} gameKey={`${walkthroughKey}:${activeSnippet.language}:guess`} />
+                                  <CodeWordFill code={activeSnippet.body} gameKey={`${walkthroughKey}:${activeSnippet.language}:fill`} />
+                                </div>
+                              );
+                            })()}
                           </>
                         ) : (
                           <>
@@ -1628,7 +1758,7 @@ export default function CodingProblems() {
                           </>
                         )}
                       </div>
-                    ))}
+                    )})}
                   </div>
                 </div>
 

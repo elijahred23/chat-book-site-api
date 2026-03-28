@@ -12,7 +12,6 @@
     "Do we need an O(n) time solution?",
     "Should we use a stack to track the order of open brackets?"
   ],
-  "starterCode": "// Write your solution in JavaScript.\n// Requirement: define a function named isValid(s)\n// Return: true/false\n\nfunction isValid(s) {\n  // TODO: implement\n  return false;\n}\n",
   "walkthrough": [
     {
       "title": "Stack insight",
@@ -20,8 +19,18 @@
     },
     {
       "title": "JavaScript (stack implementation)",
-      "codeLanguage": "javascript",
-      "body": "function isValid(s) {\n  const pairs = {\n    \"(\": \")\",\n    \"[\": \"]\",\n    \"{\": \"}\",\n  };\n\n  const stack = [];\n  for (const ch of s) {\n    if (pairs[ch]) {\n      stack.push(ch);\n      continue;\n    }\n\n    const left = stack.pop();\n    if (!left || pairs[left] !== ch) return false;\n  }\n\n  return stack.length === 0;\n}"
+      "codeSnippets": [
+        {
+          "title": "JavaScript",
+          "language": "javascript",
+          "body": "function isValid(s) {\n  const pairs = {\n    \"(\": \")\",\n    \"[\": \"]\",\n    \"{\": \"}\",\n  };\n\n  const stack = [];\n  for (const ch of s) {\n    if (pairs[ch]) {\n      stack.push(ch);\n      continue;\n    }\n\n    const left = stack.pop();\n    if (!left || pairs[left] !== ch) return false;\n  }\n\n  return stack.length === 0;\n}"
+        },
+        {
+          "title": "C#",
+          "language": "csharp",
+          "body": "bool IsValid(string s)\n{\n    var stack = new Stack<char>();\n    var pairs = new Dictionary<char, char>\n    {\n        [')'] = '(',\n        [']'] = '[',\n        ['}'] = '{'\n    };\n\n    foreach (char ch in s)\n    {\n        if (ch == '(' || ch == '[' || ch == '{')\n        {\n            stack.Push(ch);\n        }\n        else\n        {\n            if (stack.Count == 0 || stack.Pop() != pairs[ch]) return false;\n        }\n    }\n\n    return stack.Count == 0;\n}"
+        }
+      ]
     },
     {
       "title": "Complexity",
@@ -29,12 +38,44 @@
     }
   ],
   "tests": [
-    { "name": "Empty string", "s": "", "expect": true },
-    { "name": "Simple valid", "s": "()", "expect": true },
-    { "name": "Mixed valid", "s": "()[]{}", "expect": true },
-    { "name": "Wrong closing bracket", "s": "(]", "expect": false },
-    { "name": "Wrong order", "s": "([)]", "expect": false },
-    { "name": "Nested valid", "s": "{[]}", "expect": true },
-    { "name": "Unclosed opening bracket", "s": "(((", "expect": false }
-  ]
+    {
+      "name": "Empty string",
+      "s": "",
+      "expect": true
+    },
+    {
+      "name": "Simple valid",
+      "s": "()",
+      "expect": true
+    },
+    {
+      "name": "Mixed valid",
+      "s": "()[]{}",
+      "expect": true
+    },
+    {
+      "name": "Wrong closing bracket",
+      "s": "(]",
+      "expect": false
+    },
+    {
+      "name": "Wrong order",
+      "s": "([)]",
+      "expect": false
+    },
+    {
+      "name": "Nested valid",
+      "s": "{[]}",
+      "expect": true
+    },
+    {
+      "name": "Unclosed opening bracket",
+      "s": "(((",
+      "expect": false
+    }
+  ],
+  "starterCodeByLanguage": {
+    "javascript": "// Write your solution in JavaScript.\n// Requirement: define a function named isValid(s)\n// Return: true/false\n\nfunction isValid(s) {\n  // TODO: implement\n  return false;\n}\n",
+    "csharp": "// Write your solution in C#.\n// Requirement: define a method named IsValid\n\npublic static class Solution\n{\n    public static object IsValid(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n"
+  }
 }

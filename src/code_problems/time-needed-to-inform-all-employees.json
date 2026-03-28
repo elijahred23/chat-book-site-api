@@ -12,7 +12,6 @@
     "Do employees without subordinates have informTime = 0? (Yes.)",
     "Can the organization be a long chain? (Yes.)"
   ],
-  "starterCode": "// Write your solution in JavaScript.\n// Requirement: define a function named numOfMinutes(n, headID, managers, informTime)\n// Return: number\n\nfunction numOfMinutes(n, headID, managers, informTime) {\n  // TODO: implement\n  return 0;\n}\n",
   "walkthrough": [
     {
       "title": "Build adjacency list",
@@ -24,8 +23,18 @@
     },
     {
       "title": "JavaScript (DFS implementation)",
-      "codeLanguage": "javascript",
-      "body": "function numOfMinutes(n, headID, managers, informTime) {\n  const adj = Array.from({ length: n }, () => []);\n  for (let i = 0; i < n; i++) {\n    const m = managers[i];\n    if (m !== -1) adj[m].push(i);\n  }\n\n  function dfs(id) {\n    if (adj[id].length === 0) return 0;\n    let maxTime = 0;\n    for (const sub of adj[id]) {\n      maxTime = Math.max(maxTime, dfs(sub));\n    }\n    return informTime[id] + maxTime;\n  }\n\n  return dfs(headID);\n}\n"
+      "codeSnippets": [
+        {
+          "title": "JavaScript",
+          "language": "javascript",
+          "body": "function numOfMinutes(n, headID, managers, informTime) {\n  const adj = Array.from({ length: n }, () => []);\n  for (let i = 0; i < n; i++) {\n    const m = managers[i];\n    if (m !== -1) adj[m].push(i);\n  }\n\n  function dfs(id) {\n    if (adj[id].length === 0) return 0;\n    let maxTime = 0;\n    for (const sub of adj[id]) {\n      maxTime = Math.max(maxTime, dfs(sub));\n    }\n    return informTime[id] + maxTime;\n  }\n\n  return dfs(headID);\n}\n"
+        },
+        {
+          "title": "C#",
+          "language": "csharp",
+          "body": "int NumOfMinutes(int n, int headID, int[] managers, int[] informTime)\n{\n    var tree = new List<int>[n];\n    for (int i = 0; i < n; i++) tree[i] = new List<int>();\n\n    for (int emp = 0; emp < n; emp++)\n    {\n        int m = managers[emp];\n        if (m != -1) tree[m].Add(emp);\n    }\n\n    int Dfs(int id)\n    {\n        int maxChild = 0;\n        foreach (int child in tree[id])\n            maxChild = Math.Max(maxChild, Dfs(child));\n        return informTime[id] + maxChild;\n    }\n\n    return Dfs(headID);\n}"
+        }
+      ]
     },
     {
       "title": "Complexity",
@@ -37,25 +46,67 @@
       "name": "Example tree",
       "n": 8,
       "headID": 4,
-      "managers": [2, 2, 4, 6, -1, 4, 4, 5],
-      "informTime": [0, 0, 4, 0, 7, 3, 6, 0],
+      "managers": [
+        2,
+        2,
+        4,
+        6,
+        -1,
+        4,
+        4,
+        5
+      ],
+      "informTime": [
+        0,
+        0,
+        4,
+        0,
+        7,
+        3,
+        6,
+        0
+      ],
       "expect": 13
     },
     {
       "name": "Single employee",
       "n": 1,
       "headID": 0,
-      "managers": [-1],
-      "informTime": [0],
+      "managers": [
+        -1
+      ],
+      "informTime": [
+        0
+      ],
       "expect": 0
     },
     {
       "name": "Long chain",
       "n": 7,
       "headID": 6,
-      "managers": [1, 2, 3, 4, 5, 6, -1],
-      "informTime": [0, 6, 5, 4, 3, 2, 1],
+      "managers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        -1
+      ],
+      "informTime": [
+        0,
+        6,
+        5,
+        4,
+        3,
+        2,
+        1
+      ],
       "expect": 21
     }
-  ]
+  ],
+  "starterCodeByLanguage": {
+    "javascript": "// Write your solution in JavaScript.\n// Requirement: define a function named numOfMinutes(n, headID, managers, informTime)\n// Return: number\n\nfunction numOfMinutes(n, headID, managers, informTime) {\n  // TODO: implement\n  return 0;\n}\n",
+    "csharp": "// Write your solution in C#.\n// Requirement: define a method named NumOfMinutes\n\npublic static class Solution\n{\n    public static object NumOfMinutes(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n"
+  }
 }

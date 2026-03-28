@@ -12,7 +12,6 @@
     "Are search/startsWith case-sensitive?",
     "Can we add helper classes for nodes?"
   ],
-  "starterCode": "// Write your solution in JavaScript.\n// Requirement: define a class named Trie with methods insert, search, startsWith\n\nclass Trie {\n  constructor() {\n    // TODO: initialize root node\n  }\n\n  insert(word) {\n    // TODO: insert word into trie\n  }\n\n  search(word) {\n    // TODO: return true if word exists, else false\n    return false;\n  }\n\n  startsWith(prefix) {\n    // TODO: return true if any word has this prefix\n    return false;\n  }\n}\n",
   "walkthrough": [
     {
       "title": "Node structure",
@@ -24,8 +23,18 @@
     },
     {
       "title": "JavaScript sketch",
-      "codeLanguage": "javascript",
-      "body": "class TrieNode {\n  constructor() {\n    this.children = {};\n    this.isEnd = false;\n  }\n}\n\nclass Trie {\n  constructor() {\n    this.root = new TrieNode();\n  }\n\n  insert(word) {\n    let node = this.root;\n    for (const ch of word) {\n      if (!node.children[ch]) node.children[ch] = new TrieNode();\n      node = node.children[ch];\n    }\n    node.isEnd = true;\n  }\n\n  search(word) {\n    let node = this.root;\n    for (const ch of word) {\n      if (!node.children[ch]) return false;\n      node = node.children[ch];\n    }\n    return node.isEnd;\n  }\n\n  startsWith(prefix) {\n    let node = this.root;\n    for (const ch of prefix) {\n      if (!node.children[ch]) return false;\n      node = node.children[ch];\n    }\n    return true;\n  }\n}\n"
+      "codeSnippets": [
+        {
+          "title": "JavaScript",
+          "language": "javascript",
+          "body": "class TrieNode {\n  constructor() {\n    this.children = {};\n    this.isEnd = false;\n  }\n}\n\nclass Trie {\n  constructor() {\n    this.root = new TrieNode();\n  }\n\n  insert(word) {\n    let node = this.root;\n    for (const ch of word) {\n      if (!node.children[ch]) node.children[ch] = new TrieNode();\n      node = node.children[ch];\n    }\n    node.isEnd = true;\n  }\n\n  search(word) {\n    let node = this.root;\n    for (const ch of word) {\n      if (!node.children[ch]) return false;\n      node = node.children[ch];\n    }\n    return node.isEnd;\n  }\n\n  startsWith(prefix) {\n    let node = this.root;\n    for (const ch of prefix) {\n      if (!node.children[ch]) return false;\n      node = node.children[ch];\n    }\n    return true;\n  }\n}\n"
+        },
+        {
+          "title": "C#",
+          "language": "csharp",
+          "body": "public class Trie\n{\n    private class Node\n    {\n        public bool End;\n        public Dictionary<char, Node> Next = new Dictionary<char, Node>();\n    }\n\n    private readonly Node root;\n\n    public Trie()\n    {\n        root = new Node();\n    }\n\n    public void insert(string word)\n    {\n        var cur = root;\n        foreach (char ch in word)\n        {\n            if (!cur.Next.ContainsKey(ch)) cur.Next[ch] = new Node();\n            cur = cur.Next[ch];\n        }\n        cur.End = true;\n    }\n\n    public bool search(string word)\n    {\n        var node = FindNode(word);\n        return node != null && node.End;\n    }\n\n    public bool startsWith(string prefix)\n    {\n        return FindNode(prefix) != null;\n    }\n\n    private Node FindNode(string s)\n    {\n        var cur = root;\n        foreach (char ch in s)\n        {\n            if (!cur.Next.TryGetValue(ch, out cur)) return null;\n        }\n        return cur;\n    }\n}"
+        }
+      ]
     },
     {
       "title": "Complexity",
@@ -35,21 +44,138 @@
   "tests": [
     {
       "name": "Insert and search flow",
-      "ops": ["Trie", "insert", "search", "insert", "search", "startsWith", "search", "insert", "search"],
-      "args": [[], ["apple"], ["dog"], ["dog"], ["dog"], ["app"], ["app"], ["app"], ["app"]],
-      "expect": [null, null, false, null, true, true, false, null, true]
+      "ops": [
+        "Trie",
+        "insert",
+        "search",
+        "insert",
+        "search",
+        "startsWith",
+        "search",
+        "insert",
+        "search"
+      ],
+      "args": [
+        [],
+        [
+          "apple"
+        ],
+        [
+          "dog"
+        ],
+        [
+          "dog"
+        ],
+        [
+          "dog"
+        ],
+        [
+          "app"
+        ],
+        [
+          "app"
+        ],
+        [
+          "app"
+        ],
+        [
+          "app"
+        ]
+      ],
+      "expect": [
+        null,
+        null,
+        false,
+        null,
+        true,
+        true,
+        false,
+        null,
+        true
+      ]
     },
     {
       "name": "Prefix without full word",
-      "ops": ["Trie", "insert", "startsWith", "search", "insert", "search"],
-      "args": [[], ["hello"], ["hel"], ["hel"], ["hel"], ["hel"]],
-      "expect": [null, null, true, false, null, true]
+      "ops": [
+        "Trie",
+        "insert",
+        "startsWith",
+        "search",
+        "insert",
+        "search"
+      ],
+      "args": [
+        [],
+        [
+          "hello"
+        ],
+        [
+          "hel"
+        ],
+        [
+          "hel"
+        ],
+        [
+          "hel"
+        ],
+        [
+          "hel"
+        ]
+      ],
+      "expect": [
+        null,
+        null,
+        true,
+        false,
+        null,
+        true
+      ]
     },
     {
       "name": "Branching and overlap",
-      "ops": ["Trie", "insert", "insert", "insert", "search", "startsWith", "search"],
-      "args": [[], ["car"], ["card"], ["care"], ["car"], ["ca"], ["cat"]],
-      "expect": [null, null, null, null, true, true, false]
+      "ops": [
+        "Trie",
+        "insert",
+        "insert",
+        "insert",
+        "search",
+        "startsWith",
+        "search"
+      ],
+      "args": [
+        [],
+        [
+          "car"
+        ],
+        [
+          "card"
+        ],
+        [
+          "care"
+        ],
+        [
+          "car"
+        ],
+        [
+          "ca"
+        ],
+        [
+          "cat"
+        ]
+      ],
+      "expect": [
+        null,
+        null,
+        null,
+        null,
+        true,
+        true,
+        false
+      ]
     }
-  ]
+  ],
+  "starterCodeByLanguage": {
+    "javascript": "// Write your solution in JavaScript.\n// Requirement: define a class named Trie with methods insert, search, startsWith\n\nclass Trie {\n  constructor() {\n    // TODO: initialize root node\n  }\n\n  insert(word) {\n    // TODO: insert word into trie\n  }\n\n  search(word) {\n    // TODO: return true if word exists, else false\n    return false;\n  }\n\n  startsWith(prefix) {\n    // TODO: return true if any word has this prefix\n    return false;\n  }\n}\n",
+    "csharp": "// Write your solution in C#.\n// Requirement: define a class named Trie\n\npublic class Trie\n{\n    // TODO: implement\n}\n"
+  }
 }

@@ -12,7 +12,6 @@
     "Should we solve it recursively with DFS?",
     "Are we counting nodes, not edges? (Yes.)"
   ],
-  "starterCode": "// Write your solution in JavaScript.\n// Requirement: define a function named maxDepth(root)\n// Return: number\n\nfunction maxDepth(root) {\n  // TODO: implement\n  return 0;\n}\n",
   "walkthrough": [
     {
       "title": "DFS recursion",
@@ -20,8 +19,18 @@
     },
     {
       "title": "JavaScript (recursive implementation)",
-      "codeLanguage": "javascript",
-      "body": "function maxDepth(root) {\n  if (!root) return 0;\n  const leftDepth = maxDepth(root.left);\n  const rightDepth = maxDepth(root.right);\n  return Math.max(leftDepth, rightDepth) + 1;\n}"
+      "codeSnippets": [
+        {
+          "title": "JavaScript",
+          "language": "javascript",
+          "body": "function maxDepth(root) {\n  if (!root) return 0;\n  const leftDepth = maxDepth(root.left);\n  const rightDepth = maxDepth(root.right);\n  return Math.max(leftDepth, rightDepth) + 1;\n}"
+        },
+        {
+          "title": "C#",
+          "language": "csharp",
+          "body": "public class TreeNode\n{\n    public int val;\n    public TreeNode left;\n    public TreeNode right;\n}\n\nint MaxDepth(TreeNode root)\n{\n    if (root == null) return 0;\n    return 1 + Math.Max(MaxDepth(root.left), MaxDepth(root.right));\n}"
+        }
+      ]
     },
     {
       "title": "Complexity",
@@ -29,10 +38,59 @@
     }
   ],
   "tests": [
-    { "name": "Balanced tree", "tree": [1, 2, 3, 4, 5, null, 6], "expect": 3 },
-    { "name": "Single node", "tree": [1], "expect": 1 },
-    { "name": "Empty tree", "tree": [], "expect": 0 },
-    { "name": "Skewed left", "tree": [1, 2, null, 3, null, 4], "expect": 4 },
-    { "name": "Skewed right", "tree": [1, null, 2, null, 3, null, 4], "expect": 4 }
-  ]
+    {
+      "name": "Balanced tree",
+      "tree": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        null,
+        6
+      ],
+      "expect": 3
+    },
+    {
+      "name": "Single node",
+      "tree": [
+        1
+      ],
+      "expect": 1
+    },
+    {
+      "name": "Empty tree",
+      "tree": [],
+      "expect": 0
+    },
+    {
+      "name": "Skewed left",
+      "tree": [
+        1,
+        2,
+        null,
+        3,
+        null,
+        4
+      ],
+      "expect": 4
+    },
+    {
+      "name": "Skewed right",
+      "tree": [
+        1,
+        null,
+        2,
+        null,
+        3,
+        null,
+        4
+      ],
+      "expect": 4
+    }
+  ],
+  "starterCodeByLanguage": {
+    "javascript": "// Write your solution in JavaScript.\n// Requirement: define a function named maxDepth(root)\n// Return: number\n\nfunction maxDepth(root) {\n  // TODO: implement\n  return 0;\n}\n",
+    "csharp": "// Write your solution in C#.\n// Requirement: define a method named MaxDepth\n\npublic static class Solution\n{\n    public static object MaxDepth(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n"
+  }
 }

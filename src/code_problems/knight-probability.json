@@ -12,7 +12,6 @@
     "Should we return 0 if the knight starts off the board? (Yes.)",
     "Do we round the probability? (No.)"
   ],
-  "starterCode": "// Write your solution in JavaScript.\n// Requirement: define a function named knightProbability(n, k, row, col)\n// Return: probability that the knight stays on the board\n\nfunction knightProbability(n, k, row, col) {\n  // TODO: implement\n  return 0;\n}\n",
   "walkthrough": [
     {
       "title": "DP state",
@@ -24,8 +23,18 @@
     },
     {
       "title": "JavaScript (bottom-up, O(n^2) space)",
-      "codeLanguage": "javascript",
-      "body": "function knightProbability(n, k, row, col) {\n  const moves = [\n    [-2, -1], [-2, 1], [-1, 2], [1, 2],\n    [2, 1], [2, -1], [1, -2], [-1, -2]\n  ];\n\n  const prev = Array.from({ length: n }, () => Array(n).fill(0));\n  prev[row][col] = 1;\n\n  for (let step = 0; step < k; step += 1) {\n    const cur = Array.from({ length: n }, () => Array(n).fill(0));\n    for (let r = 0; r < n; r += 1) {\n      for (let c = 0; c < n; c += 1) {\n        if (prev[r][c] === 0) continue;\n        const share = prev[r][c] / 8;\n        for (const [dr, dc] of moves) {\n          const nr = r + dr;\n          const nc = c + dc;\n          if (nr >= 0 && nr < n && nc >= 0 && nc < n) {\n            cur[nr][nc] += share;\n          }\n        }\n      }\n    }\n    for (let r = 0; r < n; r += 1) {\n      for (let c = 0; c < n; c += 1) {\n        prev[r][c] = cur[r][c];\n      }\n    }\n  }\n\n  let total = 0;\n  for (let r = 0; r < n; r += 1) {\n    for (let c = 0; c < n; c += 1) {\n      total += prev[r][c];\n    }\n  }\n  return total;\n}\n"
+      "codeSnippets": [
+        {
+          "title": "JavaScript",
+          "language": "javascript",
+          "body": "function knightProbability(n, k, row, col) {\n  const moves = [\n    [-2, -1], [-2, 1], [-1, 2], [1, 2],\n    [2, 1], [2, -1], [1, -2], [-1, -2]\n  ];\n\n  const prev = Array.from({ length: n }, () => Array(n).fill(0));\n  prev[row][col] = 1;\n\n  for (let step = 0; step < k; step += 1) {\n    const cur = Array.from({ length: n }, () => Array(n).fill(0));\n    for (let r = 0; r < n; r += 1) {\n      for (let c = 0; c < n; c += 1) {\n        if (prev[r][c] === 0) continue;\n        const share = prev[r][c] / 8;\n        for (const [dr, dc] of moves) {\n          const nr = r + dr;\n          const nc = c + dc;\n          if (nr >= 0 && nr < n && nc >= 0 && nc < n) {\n            cur[nr][nc] += share;\n          }\n        }\n      }\n    }\n    for (let r = 0; r < n; r += 1) {\n      for (let c = 0; c < n; c += 1) {\n        prev[r][c] = cur[r][c];\n      }\n    }\n  }\n\n  let total = 0;\n  for (let r = 0; r < n; r += 1) {\n    for (let c = 0; c < n; c += 1) {\n      total += prev[r][c];\n    }\n  }\n  return total;\n}\n"
+        },
+        {
+          "title": "C#",
+          "language": "csharp",
+          "body": "double KnightProbability(int n, int k, int row, int col)\n{\n    int[][] dirs = new int[][] {\n        new[] { 1, 2 }, new[] { 2, 1 }, new[] { 2, -1 }, new[] { 1, -2 },\n        new[] { -1, -2 }, new[] { -2, -1 }, new[] { -2, 1 }, new[] { -1, 2 }\n    };\n\n    double[,] dp = new double[n, n];\n    dp[row, col] = 1.0;\n\n    for (int move = 0; move < k; move++)\n    {\n        double[,] next = new double[n, n];\n        for (int r = 0; r < n; r++)\n        {\n            for (int c = 0; c < n; c++)\n            {\n                if (dp[r, c] == 0) continue;\n                foreach (var d in dirs)\n                {\n                    int nr = r + d[0], nc = c + d[1];\n                    if (nr >= 0 && nr < n && nc >= 0 && nc < n)\n                        next[nr, nc] += dp[r, c] / 8.0;\n                }\n            }\n        }\n        dp = next;\n    }\n\n    double ans = 0;\n    for (int r = 0; r < n; r++)\n        for (int c = 0; c < n; c++)\n            ans += dp[r, c];\n\n    return ans;\n}"
+        }
+      ]
     },
     {
       "title": "Complexity",
@@ -65,5 +74,9 @@
       "col": 0,
       "expect": 0
     }
-  ]
+  ],
+  "starterCodeByLanguage": {
+    "javascript": "// Write your solution in JavaScript.\n// Requirement: define a function named knightProbability(n, k, row, col)\n// Return: probability that the knight stays on the board\n\nfunction knightProbability(n, k, row, col) {\n  // TODO: implement\n  return 0;\n}\n",
+    "csharp": "// Write your solution in C#.\n// Requirement: define a method named KnightProbability\n\npublic static class Solution\n{\n    public static object KnightProbability(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n"
+  }
 }

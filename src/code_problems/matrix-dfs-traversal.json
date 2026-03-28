@@ -12,7 +12,6 @@
     "What directions are allowed? (Up, right, down, left only.)",
     "Does traversal order matter? (Yes, use the given direction order.)"
   ],
-  "starterCode": "// Write your solution in JavaScript.\n// Requirement: define a function named dfsTraversal(matrix)\n// Return: array of values\n\nfunction dfsTraversal(matrix) {\n  // TODO: implement\n  return [];\n}\n",
   "walkthrough": [
     {
       "title": "DFS with visited grid",
@@ -20,8 +19,18 @@
     },
     {
       "title": "JavaScript (DFS implementation)",
-      "codeLanguage": "javascript",
-      "body": "function dfsTraversal(matrix) {\n  if (!matrix.length || !matrix[0].length) return [];\n  const rows = matrix.length;\n  const cols = matrix[0].length;\n  const visited = Array.from({ length: rows }, () => Array(cols).fill(false));\n  const output = [];\n  const dirs = [\n    [-1, 0],\n    [0, 1],\n    [1, 0],\n    [0, -1],\n  ];\n\n  function dfs(r, c) {\n    if (r < 0 || r >= rows || c < 0 || c >= cols) return;\n    if (visited[r][c]) return;\n    visited[r][c] = true;\n    output.push(matrix[r][c]);\n    for (const [dr, dc] of dirs) {\n      dfs(r + dr, c + dc);\n    }\n  }\n\n  dfs(0, 0);\n  return output;\n}\n"
+      "codeSnippets": [
+        {
+          "title": "JavaScript",
+          "language": "javascript",
+          "body": "function dfsTraversal(matrix) {\n  if (!matrix.length || !matrix[0].length) return [];\n  const rows = matrix.length;\n  const cols = matrix[0].length;\n  const visited = Array.from({ length: rows }, () => Array(cols).fill(false));\n  const output = [];\n  const dirs = [\n    [-1, 0],\n    [0, 1],\n    [1, 0],\n    [0, -1],\n  ];\n\n  function dfs(r, c) {\n    if (r < 0 || r >= rows || c < 0 || c >= cols) return;\n    if (visited[r][c]) return;\n    visited[r][c] = true;\n    output.push(matrix[r][c]);\n    for (const [dr, dc] of dirs) {\n      dfs(r + dr, c + dc);\n    }\n  }\n\n  dfs(0, 0);\n  return output;\n}\n"
+        },
+        {
+          "title": "C#",
+          "language": "csharp",
+          "body": "IList<int> DfsTraversal(int[][] matrix)\n{\n    var result = new List<int>();\n    if (matrix == null || matrix.Length == 0 || matrix[0].Length == 0) return result;\n\n    int rows = matrix.Length, cols = matrix[0].Length;\n    var seen = new bool[rows, cols];\n    int[][] dirs = { new[] { 1, 0 }, new[] { -1, 0 }, new[] { 0, 1 }, new[] { 0, -1 } };\n\n    void Dfs(int r, int c)\n    {\n        seen[r, c] = true;\n        result.Add(matrix[r][c]);\n\n        foreach (var d in dirs)\n        {\n            int nr = r + d[0], nc = c + d[1];\n            if (nr < 0 || nr >= rows || nc < 0 || nc >= cols || seen[nr, nc]) continue;\n            Dfs(nr, nc);\n        }\n    }\n\n    Dfs(0, 0);\n    return result;\n}"
+        }
+      ]
     },
     {
       "title": "Complexity",
@@ -32,22 +41,77 @@
     {
       "name": "4x5 matrix",
       "matrix": [
-        [1, 2, 3, 4, 5],
-        [6, 7, 8, 9, 10],
-        [11, 12, 13, 14, 15],
-        [16, 17, 18, 19, 20]
+        [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        [
+          16,
+          17,
+          18,
+          19,
+          20
+        ]
       ],
-      "expect": [1, 2, 3, 4, 5, 10, 15, 20, 19, 14, 9, 8, 13, 18, 17, 12, 7, 6, 11, 16]
+      "expect": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        10,
+        15,
+        20,
+        19,
+        14,
+        9,
+        8,
+        13,
+        18,
+        17,
+        12,
+        7,
+        6,
+        11,
+        16
+      ]
     },
     {
       "name": "Single cell",
-      "matrix": [[42]],
-      "expect": [42]
+      "matrix": [
+        [
+          42
+        ]
+      ],
+      "expect": [
+        42
+      ]
     },
     {
       "name": "Empty matrix",
       "matrix": [],
       "expect": []
     }
-  ]
+  ],
+  "starterCodeByLanguage": {
+    "javascript": "// Write your solution in JavaScript.\n// Requirement: define a function named dfsTraversal(matrix)\n// Return: array of values\n\nfunction dfsTraversal(matrix) {\n  // TODO: implement\n  return [];\n}\n",
+    "csharp": "// Write your solution in C#.\n// Requirement: define a method named DfsTraversal\n\npublic static class Solution\n{\n    public static object DfsTraversal(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n"
+  }
 }

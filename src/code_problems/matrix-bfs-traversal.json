@@ -12,7 +12,6 @@
     "What directions are allowed? (Up, right, down, left only.)",
     "Does traversal order matter? (Yes, use the given direction order.)"
   ],
-  "starterCode": "// Write your solution in JavaScript.\n// Requirement: define a function named bfsTraversal(matrix)\n// Return: array of values\n\nfunction bfsTraversal(matrix) {\n  // TODO: implement\n  return [];\n}\n",
   "walkthrough": [
     {
       "title": "BFS with queue",
@@ -20,8 +19,18 @@
     },
     {
       "title": "JavaScript (BFS implementation)",
-      "codeLanguage": "javascript",
-      "body": "function bfsTraversal(matrix) {\n  if (!matrix.length || !matrix[0].length) return [];\n  const rows = matrix.length;\n  const cols = matrix[0].length;\n  const visited = Array.from({ length: rows }, () => Array(cols).fill(false));\n  const output = [];\n  const queue = [[0, 0]];\n  const dirs = [\n    [-1, 0],\n    [0, 1],\n    [1, 0],\n    [0, -1],\n  ];\n\n  while (queue.length) {\n    const [r, c] = queue.shift();\n    if (r < 0 || r >= rows || c < 0 || c >= cols) continue;\n    if (visited[r][c]) continue;\n\n    visited[r][c] = true;\n    output.push(matrix[r][c]);\n\n    for (const [dr, dc] of dirs) {\n      queue.push([r + dr, c + dc]);\n    }\n  }\n\n  return output;\n}\n"
+      "codeSnippets": [
+        {
+          "title": "JavaScript",
+          "language": "javascript",
+          "body": "function bfsTraversal(matrix) {\n  if (!matrix.length || !matrix[0].length) return [];\n  const rows = matrix.length;\n  const cols = matrix[0].length;\n  const visited = Array.from({ length: rows }, () => Array(cols).fill(false));\n  const output = [];\n  const queue = [[0, 0]];\n  const dirs = [\n    [-1, 0],\n    [0, 1],\n    [1, 0],\n    [0, -1],\n  ];\n\n  while (queue.length) {\n    const [r, c] = queue.shift();\n    if (r < 0 || r >= rows || c < 0 || c >= cols) continue;\n    if (visited[r][c]) continue;\n\n    visited[r][c] = true;\n    output.push(matrix[r][c]);\n\n    for (const [dr, dc] of dirs) {\n      queue.push([r + dr, c + dc]);\n    }\n  }\n\n  return output;\n}\n"
+        },
+        {
+          "title": "C#",
+          "language": "csharp",
+          "body": "IList<int> BfsTraversal(int[][] matrix)\n{\n    var result = new List<int>();\n    if (matrix == null || matrix.Length == 0 || matrix[0].Length == 0) return result;\n\n    int rows = matrix.Length, cols = matrix[0].Length;\n    var seen = new bool[rows, cols];\n    var q = new Queue<(int r, int c)>();\n    q.Enqueue((0, 0));\n    seen[0, 0] = true;\n\n    int[][] dirs = { new[] { 1, 0 }, new[] { -1, 0 }, new[] { 0, 1 }, new[] { 0, -1 } };\n\n    while (q.Count > 0)\n    {\n        var (r, c) = q.Dequeue();\n        result.Add(matrix[r][c]);\n\n        foreach (var d in dirs)\n        {\n            int nr = r + d[0], nc = c + d[1];\n            if (nr < 0 || nr >= rows || nc < 0 || nc >= cols || seen[nr, nc]) continue;\n            seen[nr, nc] = true;\n            q.Enqueue((nr, nc));\n        }\n    }\n\n    return result;\n}"
+        }
+      ]
     },
     {
       "title": "Complexity",
@@ -32,22 +41,77 @@
     {
       "name": "4x5 matrix",
       "matrix": [
-        [1, 2, 3, 4, 5],
-        [6, 7, 8, 9, 10],
-        [11, 12, 13, 14, 15],
-        [16, 17, 18, 19, 20]
+        [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        [
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        [
+          16,
+          17,
+          18,
+          19,
+          20
+        ]
       ],
-      "expect": [1, 2, 6, 3, 7, 11, 4, 8, 12, 16, 5, 9, 13, 17, 10, 14, 18, 15, 19, 20]
+      "expect": [
+        1,
+        2,
+        6,
+        3,
+        7,
+        11,
+        4,
+        8,
+        12,
+        16,
+        5,
+        9,
+        13,
+        17,
+        10,
+        14,
+        18,
+        15,
+        19,
+        20
+      ]
     },
     {
       "name": "Single cell",
-      "matrix": [[42]],
-      "expect": [42]
+      "matrix": [
+        [
+          42
+        ]
+      ],
+      "expect": [
+        42
+      ]
     },
     {
       "name": "Empty matrix",
       "matrix": [],
       "expect": []
     }
-  ]
+  ],
+  "starterCodeByLanguage": {
+    "javascript": "// Write your solution in JavaScript.\n// Requirement: define a function named bfsTraversal(matrix)\n// Return: array of values\n\nfunction bfsTraversal(matrix) {\n  // TODO: implement\n  return [];\n}\n",
+    "csharp": "// Write your solution in C#.\n// Requirement: define a method named BfsTraversal\n\npublic static class Solution\n{\n    public static object BfsTraversal(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n"
+  }
 }

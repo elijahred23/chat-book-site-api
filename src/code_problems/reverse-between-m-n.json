@@ -12,7 +12,6 @@
     "If m === n, should the list be unchanged? (Yes.)",
     "Should we aim for O(n) time and O(1) extra space? (Yes.)"
   ],
-  "starterCode": "// Write your solution in JavaScript.\n// Requirement: define a function named reverseBetween(head, m, n)\n// head is either null or a node with { value/val, next }\n// Return: the head node after reversing the sublist\n\nfunction reverseBetween(head, m, n) {\n  // TODO: implement\n  return head;\n}\n",
   "walkthrough": [
     {
       "title": "Key idea: reverse linked list as a subproblem",
@@ -24,15 +23,95 @@
     },
     {
       "title": "JavaScript (iterative in-place implementation)",
-      "codeLanguage": "javascript",
-      "body": "function reverseBetween(head, m, n) {\n  if (!head) return null;\n  if (m === n) return head;\n\n  let currentPosition = 1;\n  let currentNode = head;\n  let start = head; // node at (m-1) when m > 1\n\n  while (currentPosition < m) {\n    start = currentNode;\n    currentNode = currentNode.next;\n    currentPosition++;\n  }\n\n  // currentNode is at position m\n  const tail = currentNode;\n  let newList = null;\n\n  while (currentPosition >= m && currentPosition <= n) {\n    const next = currentNode.next;\n    currentNode.next = newList;\n    newList = currentNode;\n    currentNode = next;\n    currentPosition++;\n  }\n\n  // Connect the part before m to the reversed part\n  if (m > 1) start.next = newList;\n  // Connect the tail of reversed part to the remainder\n  tail.next = currentNode;\n\n  return m > 1 ? head : newList;\n}"
+      "codeSnippets": [
+        {
+          "title": "JavaScript",
+          "language": "javascript",
+          "body": "function reverseBetween(head, m, n) {\n  if (!head) return null;\n  if (m === n) return head;\n\n  let currentPosition = 1;\n  let currentNode = head;\n  let start = head; // node at (m-1) when m > 1\n\n  while (currentPosition < m) {\n    start = currentNode;\n    currentNode = currentNode.next;\n    currentPosition++;\n  }\n\n  // currentNode is at position m\n  const tail = currentNode;\n  let newList = null;\n\n  while (currentPosition >= m && currentPosition <= n) {\n    const next = currentNode.next;\n    currentNode.next = newList;\n    newList = currentNode;\n    currentNode = next;\n    currentPosition++;\n  }\n\n  // Connect the part before m to the reversed part\n  if (m > 1) start.next = newList;\n  // Connect the tail of reversed part to the remainder\n  tail.next = currentNode;\n\n  return m > 1 ? head : newList;\n}"
+        },
+        {
+          "title": "C#",
+          "language": "csharp",
+          "body": "public class ListNode\n{\n    public int val;\n    public ListNode next;\n    public ListNode(int x = 0, ListNode n = null) { val = x; next = n; }\n}\n\nListNode ReverseBetween(ListNode head, int m, int n)\n{\n    if (head == null || m == n) return head;\n\n    var dummy = new ListNode(0, head);\n    var prev = dummy;\n    for (int i = 1; i < m; i++) prev = prev.next;\n\n    var cur = prev.next;\n    for (int i = 0; i < n - m; i++)\n    {\n        var move = cur.next;\n        cur.next = move.next;\n        move.next = prev.next;\n        prev.next = move;\n    }\n\n    return dummy.next;\n}"
+        }
+      ]
     }
   ],
   "tests": [
-    { "name": "Best case", "list": [1, 2, 3, 4, 5], "m": 2, "n": 4, "expect": [1, 4, 3, 2, 5] },
-    { "name": "Full reversal", "list": [1, 2, 3, 4, 5], "m": 1, "n": 5, "expect": [5, 4, 3, 2, 1] },
-    { "name": "Single node sublist", "list": [1, 2, 3], "m": 2, "n": 2, "expect": [1, 2, 3] },
-    { "name": "Single node list", "list": [7], "m": 1, "n": 1, "expect": [7] },
-    { "name": "Null list", "list": [], "m": 1, "n": 1, "expect": [] }
-  ]
+    {
+      "name": "Best case",
+      "list": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "m": 2,
+      "n": 4,
+      "expect": [
+        1,
+        4,
+        3,
+        2,
+        5
+      ]
+    },
+    {
+      "name": "Full reversal",
+      "list": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "m": 1,
+      "n": 5,
+      "expect": [
+        5,
+        4,
+        3,
+        2,
+        1
+      ]
+    },
+    {
+      "name": "Single node sublist",
+      "list": [
+        1,
+        2,
+        3
+      ],
+      "m": 2,
+      "n": 2,
+      "expect": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "name": "Single node list",
+      "list": [
+        7
+      ],
+      "m": 1,
+      "n": 1,
+      "expect": [
+        7
+      ]
+    },
+    {
+      "name": "Null list",
+      "list": [],
+      "m": 1,
+      "n": 1,
+      "expect": []
+    }
+  ],
+  "starterCodeByLanguage": {
+    "javascript": "// Write your solution in JavaScript.\n// Requirement: define a function named reverseBetween(head, m, n)\n// head is either null or a node with { value/val, next }\n// Return: the head node after reversing the sublist\n\nfunction reverseBetween(head, m, n) {\n  // TODO: implement\n  return head;\n}\n",
+    "csharp": "// Write your solution in C#.\n// Requirement: define a method named ReverseBetween\n\npublic static class Solution\n{\n    public static object ReverseBetween(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n"
+  }
 }

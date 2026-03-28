@@ -12,7 +12,6 @@
     "Should death be idempotent if called multiple times for the same person?",
     "Should the methods return anything, or just mutate state?"
   ],
-  "starterCode": "// Write your solution in JavaScript.\n// Requirement: define a class named Monarchy\n// Methods: birth(childName, parentName), death(name), getOrderOfSuccession()\n\nclass Monarchy {\n  constructor(kingName) {\n    // TODO: initialize the monarchy with the king\n  }\n\n  birth(childName, parentName) {\n    // TODO: add child to the parent's children list\n  }\n\n  death(name) {\n    // TODO: mark the person as deceased (do not remove their descendants)\n  }\n\n  getOrderOfSuccession() {\n    // TODO: return an array of living names in succession order\n    return [];\n  }\n}\n",
   "walkthrough": [
     {
       "title": "Data model",
@@ -24,8 +23,18 @@
     },
     {
       "title": "JavaScript sketch",
-      "codeLanguage": "javascript",
-      "body": "class Person {\n  constructor(name) {\n    this.name = name;\n    this.children = [];\n    this.isAlive = true;\n  }\n}\n\nclass Monarchy {\n  constructor(kingName) {\n    this.king = new Person(kingName);\n    this.people = { [kingName]: this.king };\n  }\n\n  birth(childName, parentName) {\n    const parent = this.people[parentName];\n    const child = new Person(childName);\n    parent.children.push(child);\n    this.people[childName] = child;\n  }\n\n  death(name) {\n    if (this.people[name]) this.people[name].isAlive = false;\n  }\n\n  getOrderOfSuccession() {\n    const order = [];\n    const dfs = (person) => {\n      if (!person) return;\n      if (person.isAlive) order.push(person.name);\n      for (const child of person.children) dfs(child);\n    };\n    dfs(this.king);\n    return order;\n  }\n}\n"
+      "codeSnippets": [
+        {
+          "title": "JavaScript",
+          "language": "javascript",
+          "body": "class Person {\n  constructor(name) {\n    this.name = name;\n    this.children = [];\n    this.isAlive = true;\n  }\n}\n\nclass Monarchy {\n  constructor(kingName) {\n    this.king = new Person(kingName);\n    this.people = { [kingName]: this.king };\n  }\n\n  birth(childName, parentName) {\n    const parent = this.people[parentName];\n    const child = new Person(childName);\n    parent.children.push(child);\n    this.people[childName] = child;\n  }\n\n  death(name) {\n    if (this.people[name]) this.people[name].isAlive = false;\n  }\n\n  getOrderOfSuccession() {\n    const order = [];\n    const dfs = (person) => {\n      if (!person) return;\n      if (person.isAlive) order.push(person.name);\n      for (const child of person.children) dfs(child);\n    };\n    dfs(this.king);\n    return order;\n  }\n}\n"
+        },
+        {
+          "title": "C#",
+          "language": "csharp",
+          "body": "public class Monarchy\n{\n    private class Person\n    {\n        public string Name;\n        public bool IsAlive = true;\n        public List<Person> Children = new List<Person>();\n        public Person(string name) { Name = name; }\n    }\n\n    private readonly Person king;\n    private readonly Dictionary<string, Person> people = new Dictionary<string, Person>();\n\n    public Monarchy(string kingName)\n    {\n        king = new Person(kingName);\n        people[kingName] = king;\n    }\n\n    public void birth(string childName, string parentName)\n    {\n        var parent = people[parentName];\n        var child = new Person(childName);\n        parent.Children.Add(child);\n        people[childName] = child;\n    }\n\n    public void death(string name)\n    {\n        if (people.TryGetValue(name, out var person)) person.IsAlive = false;\n    }\n\n    public IList<string> getOrderOfSuccession()\n    {\n        var order = new List<string>();\n\n        void Dfs(Person p)\n        {\n            if (p == null) return;\n            if (p.IsAlive) order.Add(p.Name);\n            foreach (var child in p.Children) Dfs(child);\n        }\n\n        Dfs(king);\n        return order;\n    }\n}"
+        }
+      ]
     },
     {
       "title": "Complexity",
@@ -35,21 +44,227 @@
   "tests": [
     {
       "name": "Full family order",
-      "ops": ["Monarchy", "birth", "birth", "birth", "birth", "birth", "birth", "birth", "getOrderOfSuccession"],
-      "args": [["Jake"], ["Catherine", "Jake"], ["Tom", "Jake"], ["Selene", "Jake"], ["Jane", "Catherine"], ["Peter", "Selene"], ["Farah", "Jane"], ["Mark", "Catherine"], []],
-      "expect": [null, null, null, null, null, null, null, null, ["Jake", "Catherine", "Jane", "Farah", "Mark", "Tom", "Selene", "Peter"]]
+      "ops": [
+        "Monarchy",
+        "birth",
+        "birth",
+        "birth",
+        "birth",
+        "birth",
+        "birth",
+        "birth",
+        "getOrderOfSuccession"
+      ],
+      "args": [
+        [
+          "Jake"
+        ],
+        [
+          "Catherine",
+          "Jake"
+        ],
+        [
+          "Tom",
+          "Jake"
+        ],
+        [
+          "Selene",
+          "Jake"
+        ],
+        [
+          "Jane",
+          "Catherine"
+        ],
+        [
+          "Peter",
+          "Selene"
+        ],
+        [
+          "Farah",
+          "Jane"
+        ],
+        [
+          "Mark",
+          "Catherine"
+        ],
+        []
+      ],
+      "expect": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        [
+          "Jake",
+          "Catherine",
+          "Jane",
+          "Farah",
+          "Mark",
+          "Tom",
+          "Selene",
+          "Peter"
+        ]
+      ]
     },
     {
       "name": "Skip deceased but keep descendants",
-      "ops": ["Monarchy", "birth", "birth", "birth", "birth", "birth", "birth", "birth", "death", "death", "getOrderOfSuccession"],
-      "args": [["Jake"], ["Catherine", "Jake"], ["Tom", "Jake"], ["Selene", "Jake"], ["Jane", "Catherine"], ["Peter", "Selene"], ["Farah", "Jane"], ["Mark", "Catherine"], ["Jake"], ["Jane"], []],
-      "expect": [null, null, null, null, null, null, null, null, null, null, ["Catherine", "Farah", "Mark", "Tom", "Selene", "Peter"]]
+      "ops": [
+        "Monarchy",
+        "birth",
+        "birth",
+        "birth",
+        "birth",
+        "birth",
+        "birth",
+        "birth",
+        "death",
+        "death",
+        "getOrderOfSuccession"
+      ],
+      "args": [
+        [
+          "Jake"
+        ],
+        [
+          "Catherine",
+          "Jake"
+        ],
+        [
+          "Tom",
+          "Jake"
+        ],
+        [
+          "Selene",
+          "Jake"
+        ],
+        [
+          "Jane",
+          "Catherine"
+        ],
+        [
+          "Peter",
+          "Selene"
+        ],
+        [
+          "Farah",
+          "Jane"
+        ],
+        [
+          "Mark",
+          "Catherine"
+        ],
+        [
+          "Jake"
+        ],
+        [
+          "Jane"
+        ],
+        []
+      ],
+      "expect": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        [
+          "Catherine",
+          "Farah",
+          "Mark",
+          "Tom",
+          "Selene",
+          "Peter"
+        ]
+      ]
     },
     {
       "name": "Later births stay in order",
-      "ops": ["Monarchy", "birth", "birth", "birth", "getOrderOfSuccession", "birth", "birth", "getOrderOfSuccession", "death", "getOrderOfSuccession"],
-      "args": [["Anna"], ["Ben", "Anna"], ["Clara", "Anna"], ["Derek", "Ben"], [], ["Eva", "Ben"], ["Finn", "Clara"], [], ["Ben"], []],
-      "expect": [null, null, null, null, ["Anna", "Ben", "Derek", "Clara"], null, null, ["Anna", "Ben", "Derek", "Eva", "Clara", "Finn"], null, ["Anna", "Derek", "Eva", "Clara", "Finn"]]
+      "ops": [
+        "Monarchy",
+        "birth",
+        "birth",
+        "birth",
+        "getOrderOfSuccession",
+        "birth",
+        "birth",
+        "getOrderOfSuccession",
+        "death",
+        "getOrderOfSuccession"
+      ],
+      "args": [
+        [
+          "Anna"
+        ],
+        [
+          "Ben",
+          "Anna"
+        ],
+        [
+          "Clara",
+          "Anna"
+        ],
+        [
+          "Derek",
+          "Ben"
+        ],
+        [],
+        [
+          "Eva",
+          "Ben"
+        ],
+        [
+          "Finn",
+          "Clara"
+        ],
+        [],
+        [
+          "Ben"
+        ],
+        []
+      ],
+      "expect": [
+        null,
+        null,
+        null,
+        null,
+        [
+          "Anna",
+          "Ben",
+          "Derek",
+          "Clara"
+        ],
+        null,
+        null,
+        [
+          "Anna",
+          "Ben",
+          "Derek",
+          "Eva",
+          "Clara",
+          "Finn"
+        ],
+        null,
+        [
+          "Anna",
+          "Derek",
+          "Eva",
+          "Clara",
+          "Finn"
+        ]
+      ]
     }
-  ]
+  ],
+  "starterCodeByLanguage": {
+    "javascript": "// Write your solution in JavaScript.\n// Requirement: define a class named Monarchy\n// Methods: birth(childName, parentName), death(name), getOrderOfSuccession()\n\nclass Monarchy {\n  constructor(kingName) {\n    // TODO: initialize the monarchy with the king\n  }\n\n  birth(childName, parentName) {\n    // TODO: add child to the parent's children list\n  }\n\n  death(name) {\n    // TODO: mark the person as deceased (do not remove their descendants)\n  }\n\n  getOrderOfSuccession() {\n    // TODO: return an array of living names in succession order\n    return [];\n  }\n}\n",
+    "csharp": "// Write your solution in C#.\n// Requirement: define a class named Monarchy\n\npublic class Monarchy\n{\n    // TODO: implement\n}\n"
+  }
 }

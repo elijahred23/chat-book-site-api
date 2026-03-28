@@ -12,7 +12,6 @@
     "Should enqueue be O(1) and dequeue/peek amortized O(1)?",
     "Do we need to implement as a class?"
   ],
-  "starterCode": "// Write your solution in JavaScript.\n// Requirement: define a class named QueueWithStacks\n// Methods: enqueue(x), dequeue(), peek(), empty()\n\nclass QueueWithStacks {\n  constructor() {\n    // TODO: initialize stacks\n  }\n\n  enqueue(x) {\n    // TODO: implement\n  }\n\n  dequeue() {\n    // TODO: implement\n  }\n\n  peek() {\n    // TODO: implement\n  }\n\n  empty() {\n    // TODO: implement\n  }\n}\n",
   "walkthrough": [
     {
       "title": "Two-stack insight",
@@ -20,8 +19,18 @@
     },
     {
       "title": "JavaScript (class implementation)",
-      "codeLanguage": "javascript",
-      "body": "class QueueWithStacks {\n  constructor() {\n    this.inStack = [];\n    this.outStack = [];\n  }\n\n  enqueue(x) {\n    this.inStack.push(x);\n  }\n\n  _shift() {\n    if (this.outStack.length) return;\n    while (this.inStack.length) {\n      this.outStack.push(this.inStack.pop());\n    }\n  }\n\n  dequeue() {\n    this._shift();\n    return this.outStack.pop();\n  }\n\n  peek() {\n    this._shift();\n    return this.outStack[this.outStack.length - 1];\n  }\n\n  empty() {\n    return this.inStack.length === 0 && this.outStack.length === 0;\n  }\n}\n"
+      "codeSnippets": [
+        {
+          "title": "JavaScript",
+          "language": "javascript",
+          "body": "class QueueWithStacks {\n  constructor() {\n    this.inStack = [];\n    this.outStack = [];\n  }\n\n  enqueue(x) {\n    this.inStack.push(x);\n  }\n\n  _shift() {\n    if (this.outStack.length) return;\n    while (this.inStack.length) {\n      this.outStack.push(this.inStack.pop());\n    }\n  }\n\n  dequeue() {\n    this._shift();\n    return this.outStack.pop();\n  }\n\n  peek() {\n    this._shift();\n    return this.outStack[this.outStack.length - 1];\n  }\n\n  empty() {\n    return this.inStack.length === 0 && this.outStack.length === 0;\n  }\n}\n"
+        },
+        {
+          "title": "C#",
+          "language": "csharp",
+          "body": "public class QueueWithStacks\n{\n    private readonly Stack<int> inStack = new Stack<int>();\n    private readonly Stack<int> outStack = new Stack<int>();\n\n    public void enqueue(int x)\n    {\n        inStack.Push(x);\n    }\n\n    public int? dequeue()\n    {\n        Shift();\n        return outStack.Count > 0 ? outStack.Pop() : (int?)null;\n    }\n\n    public int? peek()\n    {\n        Shift();\n        return outStack.Count > 0 ? outStack.Peek() : (int?)null;\n    }\n\n    public bool empty()\n    {\n        return inStack.Count == 0 && outStack.Count == 0;\n    }\n\n    private void Shift()\n    {\n        if (outStack.Count > 0) return;\n        while (inStack.Count > 0) outStack.Push(inStack.Pop());\n    }\n}"
+        }
+      ]
     },
     {
       "title": "Complexity",
@@ -31,21 +40,114 @@
   "tests": [
     {
       "name": "Basic operations",
-      "ops": ["QueueWithStacks", "enqueue", "enqueue", "peek", "dequeue", "empty"],
-      "args": [[], [1], [2], [], [], []],
-      "expect": [null, null, null, 1, 1, false]
+      "ops": [
+        "QueueWithStacks",
+        "enqueue",
+        "enqueue",
+        "peek",
+        "dequeue",
+        "empty"
+      ],
+      "args": [
+        [],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [],
+        [],
+        []
+      ],
+      "expect": [
+        null,
+        null,
+        null,
+        1,
+        1,
+        false
+      ]
     },
     {
       "name": "Interleaved enqueue/dequeue",
-      "ops": ["QueueWithStacks", "enqueue", "enqueue", "dequeue", "enqueue", "peek", "dequeue", "dequeue", "empty"],
-      "args": [[], [10], [20], [], [30], [], [], [], []],
-      "expect": [null, null, null, 10, null, 20, 20, 30, true]
+      "ops": [
+        "QueueWithStacks",
+        "enqueue",
+        "enqueue",
+        "dequeue",
+        "enqueue",
+        "peek",
+        "dequeue",
+        "dequeue",
+        "empty"
+      ],
+      "args": [
+        [],
+        [
+          10
+        ],
+        [
+          20
+        ],
+        [],
+        [
+          30
+        ],
+        [],
+        [],
+        [],
+        []
+      ],
+      "expect": [
+        null,
+        null,
+        null,
+        10,
+        null,
+        20,
+        20,
+        30,
+        true
+      ]
     },
     {
       "name": "Peek without removal",
-      "ops": ["QueueWithStacks", "enqueue", "enqueue", "peek", "peek", "dequeue", "peek"],
-      "args": [[], [5], [7], [], [], [], []],
-      "expect": [null, null, null, 5, 5, 5, 7]
+      "ops": [
+        "QueueWithStacks",
+        "enqueue",
+        "enqueue",
+        "peek",
+        "peek",
+        "dequeue",
+        "peek"
+      ],
+      "args": [
+        [],
+        [
+          5
+        ],
+        [
+          7
+        ],
+        [],
+        [],
+        [],
+        []
+      ],
+      "expect": [
+        null,
+        null,
+        null,
+        5,
+        5,
+        5,
+        7
+      ]
     }
-  ]
+  ],
+  "starterCodeByLanguage": {
+    "javascript": "// Write your solution in JavaScript.\n// Requirement: define a class named QueueWithStacks\n// Methods: enqueue(x), dequeue(), peek(), empty()\n\nclass QueueWithStacks {\n  constructor() {\n    // TODO: initialize stacks\n  }\n\n  enqueue(x) {\n    // TODO: implement\n  }\n\n  dequeue() {\n    // TODO: implement\n  }\n\n  peek() {\n    // TODO: implement\n  }\n\n  empty() {\n    // TODO: implement\n  }\n}\n",
+    "csharp": "// Write your solution in C#.\n// Requirement: define a class named QueueWithStacks\n\npublic class QueueWithStacks\n{\n    // TODO: implement\n}\n"
+  }
 }

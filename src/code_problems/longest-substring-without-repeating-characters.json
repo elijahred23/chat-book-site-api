@@ -12,7 +12,6 @@
     "Can the input contain spaces or symbols, or only letters?",
     "Do we want an optimized O(n) solution (sliding window)?"
   ],
-  "starterCode": "// Write your solution in JavaScript.\n// Requirement: define a function named lengthOfLongestSubstring(s)\n// Return: number (length)\n\nfunction lengthOfLongestSubstring(s) {\n  // TODO: implement\n  return 0;\n}\n",
   "walkthrough": [
     {
       "title": "Brute force idea (generate substrings)",
@@ -20,8 +19,18 @@
     },
     {
       "title": "JavaScript (brute force implementation)",
-      "codeLanguage": "javascript",
-      "body": "function lengthOfLongestSubstring(s) {\n  let longest = 0;\n\n  for (let left = 0; left < s.length; left++) {\n    const seen = new Set();\n    for (let right = left; right < s.length; right++) {\n      const ch = s[right];\n      if (seen.has(ch)) break;\n      seen.add(ch);\n      longest = Math.max(longest, right - left + 1);\n    }\n  }\n\n  return longest;\n}"
+      "codeSnippets": [
+        {
+          "title": "JavaScript",
+          "language": "javascript",
+          "body": "function lengthOfLongestSubstring(s) {\n  let longest = 0;\n\n  for (let left = 0; left < s.length; left++) {\n    const seen = new Set();\n    for (let right = left; right < s.length; right++) {\n      const ch = s[right];\n      if (seen.has(ch)) break;\n      seen.add(ch);\n      longest = Math.max(longest, right - left + 1);\n    }\n  }\n\n  return longest;\n}"
+        },
+        {
+          "title": "C#",
+          "language": "csharp",
+          "body": "int LengthOfLongestSubstring(string s)\n{\n    int best = 0;\n    for (int i = 0; i < s.Length; i++)\n    {\n        var seen = new HashSet<char>();\n        for (int j = i; j < s.Length; j++)\n        {\n            if (seen.Contains(s[j])) break;\n            seen.Add(s[j]);\n            best = Math.Max(best, j - i + 1);\n        }\n    }\n    return best;\n}"
+        }
+      ]
     },
     {
       "title": "Sliding window insight (optimal)",
@@ -29,15 +38,49 @@
     },
     {
       "title": "JavaScript (sliding window implementation)",
-      "codeLanguage": "javascript",
-      "body": "function lengthOfLongestSubstring(s) {\n  const lastSeen = new Map();\n  let left = 0;\n  let longest = 0;\n\n  for (let right = 0; right < s.length; right++) {\n    const ch = s[right];\n\n    if (lastSeen.has(ch) && lastSeen.get(ch) >= left) {\n      left = lastSeen.get(ch) + 1;\n    }\n\n    lastSeen.set(ch, right);\n    longest = Math.max(longest, right - left + 1);\n  }\n\n  return longest;\n}"
+      "codeSnippets": [
+        {
+          "title": "JavaScript",
+          "language": "javascript",
+          "body": "function lengthOfLongestSubstring(s) {\n  const lastSeen = new Map();\n  let left = 0;\n  let longest = 0;\n\n  for (let right = 0; right < s.length; right++) {\n    const ch = s[right];\n\n    if (lastSeen.has(ch) && lastSeen.get(ch) >= left) {\n      left = lastSeen.get(ch) + 1;\n    }\n\n    lastSeen.set(ch, right);\n    longest = Math.max(longest, right - left + 1);\n  }\n\n  return longest;\n}"
+        },
+        {
+          "title": "C#",
+          "language": "csharp",
+          "body": "int LengthOfLongestSubstring(string s)\n{\n    var last = new Dictionary<char, int>();\n    int left = 0, best = 0;\n\n    for (int right = 0; right < s.Length; right++)\n    {\n        char ch = s[right];\n        if (last.TryGetValue(ch, out int idx) && idx >= left)\n            left = idx + 1;\n\n        last[ch] = right;\n        best = Math.Max(best, right - left + 1);\n    }\n\n    return best;\n}"
+        }
+      ]
     }
   ],
   "tests": [
-    { "name": "Best case", "s": "abccabb", "expect": 3 },
-    { "name": "All same characters", "s": "bbbbbb", "expect": 1 },
-    { "name": "Empty string", "s": "", "expect": 0 },
-    { "name": "Overlapping substrings", "s": "abcbda", "expect": 4 },
-    { "name": "Common tricky case", "s": "pwwkew", "expect": 3 }
-  ]
+    {
+      "name": "Best case",
+      "s": "abccabb",
+      "expect": 3
+    },
+    {
+      "name": "All same characters",
+      "s": "bbbbbb",
+      "expect": 1
+    },
+    {
+      "name": "Empty string",
+      "s": "",
+      "expect": 0
+    },
+    {
+      "name": "Overlapping substrings",
+      "s": "abcbda",
+      "expect": 4
+    },
+    {
+      "name": "Common tricky case",
+      "s": "pwwkew",
+      "expect": 3
+    }
+  ],
+  "starterCodeByLanguage": {
+    "javascript": "// Write your solution in JavaScript.\n// Requirement: define a function named lengthOfLongestSubstring(s)\n// Return: number (length)\n\nfunction lengthOfLongestSubstring(s) {\n  // TODO: implement\n  return 0;\n}\n",
+    "csharp": "// Write your solution in C#.\n// Requirement: define a method named LengthOfLongestSubstring\n\npublic static class Solution\n{\n    public static object LengthOfLongestSubstring(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n"
+  }
 }

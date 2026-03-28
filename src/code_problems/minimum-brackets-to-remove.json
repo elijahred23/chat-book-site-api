@@ -12,7 +12,6 @@
     "Do we only remove parentheses (not letters)?",
     "Should we aim for O(n) time?"
   ],
-  "starterCode": "// Write your solution in JavaScript.\n// Requirement: define a function named minRemoveToMakeValid(s)\n// Return: string\n\nfunction minRemoveToMakeValid(s) {\n  // TODO: implement\n  return \"\";\n}\n",
   "walkthrough": [
     {
       "title": "Stack + array approach",
@@ -20,8 +19,18 @@
     },
     {
       "title": "JavaScript (stack implementation)",
-      "codeLanguage": "javascript",
-      "body": "function minRemoveToMakeValid(s) {\n  const out = s.split(\"\");\n  const stack = [];\n\n  for (let i = 0; i < out.length; i++) {\n    const ch = out[i];\n    if (ch === \"(\") {\n      stack.push(i);\n    } else if (ch === \")\") {\n      if (stack.length) stack.pop();\n      else out[i] = \"\";\n    }\n  }\n\n  while (stack.length) {\n    const idx = stack.pop();\n    out[idx] = \"\";\n  }\n\n  return out.join(\"\");\n}"
+      "codeSnippets": [
+        {
+          "title": "JavaScript",
+          "language": "javascript",
+          "body": "function minRemoveToMakeValid(s) {\n  const out = s.split(\"\");\n  const stack = [];\n\n  for (let i = 0; i < out.length; i++) {\n    const ch = out[i];\n    if (ch === \"(\") {\n      stack.push(i);\n    } else if (ch === \")\") {\n      if (stack.length) stack.pop();\n      else out[i] = \"\";\n    }\n  }\n\n  while (stack.length) {\n    const idx = stack.pop();\n    out[idx] = \"\";\n  }\n\n  return out.join(\"\");\n}"
+        },
+        {
+          "title": "C#",
+          "language": "csharp",
+          "body": "string MinRemoveToMakeValid(string s)\n{\n    var chars = s.ToCharArray();\n    var stack = new Stack<int>();\n\n    for (int i = 0; i < chars.Length; i++)\n    {\n        if (chars[i] == '(') stack.Push(i);\n        else if (chars[i] == ')')\n        {\n            if (stack.Count > 0) stack.Pop();\n            else chars[i] = '\\0';\n        }\n    }\n\n    while (stack.Count > 0) chars[stack.Pop()] = '\\0';\n\n    var sb = new System.Text.StringBuilder();\n    foreach (char ch in chars) if (ch != '\\0') sb.Append(ch);\n    return sb.ToString();\n}"
+        }
+      ]
     },
     {
       "title": "Complexity",
@@ -29,10 +38,34 @@
     }
   ],
   "tests": [
-    { "name": "Extra closing bracket", "s": "a)b(c)d", "minRemoved": 1 },
-    { "name": "Extra opening bracket", "s": "(a(b)c(", "minRemoved": 1 },
-    { "name": "Multiple answers", "s": ")a(b)c(", "minRemoved": 2 },
-    { "name": "Only brackets", "s": "))((", "minRemoved": 4 },
-    { "name": "Already valid", "s": "ab(c)d", "minRemoved": 0 }
-  ]
+    {
+      "name": "Extra closing bracket",
+      "s": "a)b(c)d",
+      "minRemoved": 1
+    },
+    {
+      "name": "Extra opening bracket",
+      "s": "(a(b)c(",
+      "minRemoved": 1
+    },
+    {
+      "name": "Multiple answers",
+      "s": ")a(b)c(",
+      "minRemoved": 2
+    },
+    {
+      "name": "Only brackets",
+      "s": "))((",
+      "minRemoved": 4
+    },
+    {
+      "name": "Already valid",
+      "s": "ab(c)d",
+      "minRemoved": 0
+    }
+  ],
+  "starterCodeByLanguage": {
+    "javascript": "// Write your solution in JavaScript.\n// Requirement: define a function named minRemoveToMakeValid(s)\n// Return: string\n\nfunction minRemoveToMakeValid(s) {\n  // TODO: implement\n  return \"\";\n}\n",
+    "csharp": "// Write your solution in C#.\n// Requirement: define a method named MinRemoveToMakeValid\n\npublic static class Solution\n{\n    public static object MinRemoveToMakeValid(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n"
+  }
 }

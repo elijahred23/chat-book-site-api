@@ -12,7 +12,6 @@
     "Are values strings or numbers? (Often strings, but either is fine if handled.)",
     "Should we aim for O(r*c) time?"
   ],
-  "starterCode": "// Write your solution in JavaScript.\n// Requirement: define a function named numIslands(grid)\n// Return: number\n\nfunction numIslands(grid) {\n  // TODO: implement\n  return 0;\n}\n",
   "walkthrough": [
     {
       "title": "Sequential scan + BFS/DFS flood fill",
@@ -20,8 +19,18 @@
     },
     {
       "title": "JavaScript (BFS implementation)",
-      "codeLanguage": "javascript",
-      "body": "function numIslands(grid) {\n  if (!grid.length || !grid[0].length) return 0;\n  const rows = grid.length;\n  const cols = grid[0].length;\n  let count = 0;\n  const dirs = [\n    [-1, 0],\n    [0, 1],\n    [1, 0],\n    [0, -1],\n  ];\n\n  for (let r = 0; r < rows; r++) {\n    for (let c = 0; c < cols; c++) {\n      if (grid[r][c] !== 1 && grid[r][c] !== \"1\") continue;\n      count++;\n      grid[r][c] = 0;\n      const queue = [[r, c]];\n      while (queue.length) {\n        const [cr, cc] = queue.shift();\n        for (const [dr, dc] of dirs) {\n          const nr = cr + dr;\n          const nc = cc + dc;\n          if (nr < 0 || nr >= rows || nc < 0 || nc >= cols) continue;\n          if (grid[nr][nc] !== 1 && grid[nr][nc] !== \"1\") continue;\n          grid[nr][nc] = 0;\n          queue.push([nr, nc]);\n        }\n      }\n    }\n  }\n\n  return count;\n}\n"
+      "codeSnippets": [
+        {
+          "title": "JavaScript",
+          "language": "javascript",
+          "body": "function numIslands(grid) {\n  if (!grid.length || !grid[0].length) return 0;\n  const rows = grid.length;\n  const cols = grid[0].length;\n  let count = 0;\n  const dirs = [\n    [-1, 0],\n    [0, 1],\n    [1, 0],\n    [0, -1],\n  ];\n\n  for (let r = 0; r < rows; r++) {\n    for (let c = 0; c < cols; c++) {\n      if (grid[r][c] !== 1 && grid[r][c] !== \"1\") continue;\n      count++;\n      grid[r][c] = 0;\n      const queue = [[r, c]];\n      while (queue.length) {\n        const [cr, cc] = queue.shift();\n        for (const [dr, dc] of dirs) {\n          const nr = cr + dr;\n          const nc = cc + dc;\n          if (nr < 0 || nr >= rows || nc < 0 || nc >= cols) continue;\n          if (grid[nr][nc] !== 1 && grid[nr][nc] !== \"1\") continue;\n          grid[nr][nc] = 0;\n          queue.push([nr, nc]);\n        }\n      }\n    }\n  }\n\n  return count;\n}\n"
+        },
+        {
+          "title": "C#",
+          "language": "csharp",
+          "body": "int NumIslands(char[][] grid)\n{\n    if (grid == null || grid.Length == 0) return 0;\n    int rows = grid.Length, cols = grid[0].Length;\n    int islands = 0;\n\n    int[][] dirs = { new[] { 1, 0 }, new[] { -1, 0 }, new[] { 0, 1 }, new[] { 0, -1 } };\n\n    for (int r = 0; r < rows; r++)\n    {\n        for (int c = 0; c < cols; c++)\n        {\n            if (grid[r][c] != '1') continue;\n            islands++;\n\n            var q = new Queue<(int, int)>();\n            q.Enqueue((r, c));\n            grid[r][c] = '0';\n\n            while (q.Count > 0)\n            {\n                var (cr, cc) = q.Dequeue();\n                foreach (var d in dirs)\n                {\n                    int nr = cr + d[0], nc = cc + d[1];\n                    if (nr < 0 || nr >= rows || nc < 0 || nc >= cols || grid[nr][nc] != '1') continue;\n                    grid[nr][nc] = '0';\n                    q.Enqueue((nr, nc));\n                }\n            }\n        }\n    }\n\n    return islands;\n}"
+        }
+      ]
     },
     {
       "title": "Complexity",
@@ -32,24 +41,97 @@
     {
       "name": "Two islands",
       "matrix": [
-        [1, 1, 0, 0, 0],
-        [1, 1, 0, 0, 1],
-        [0, 0, 0, 1, 1],
-        [0, 0, 0, 0, 0]
+        [
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
       ],
       "expect": 2
     },
     {
       "name": "Diagonal islands",
       "matrix": [
-        [1, 0, 1, 0],
-        [0, 1, 0, 1],
-        [1, 0, 1, 0]
+        [
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          1,
+          0
+        ]
       ],
       "expect": 6
     },
-    { "name": "Empty grid", "matrix": [], "expect": 0 },
-    { "name": "All water", "matrix": [[0, 0], [0, 0]], "expect": 0 },
-    { "name": "Single island", "matrix": [[1, 1], [1, 1]], "expect": 1 }
-  ]
+    {
+      "name": "Empty grid",
+      "matrix": [],
+      "expect": 0
+    },
+    {
+      "name": "All water",
+      "matrix": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "expect": 0
+    },
+    {
+      "name": "Single island",
+      "matrix": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "expect": 1
+    }
+  ],
+  "starterCodeByLanguage": {
+    "javascript": "// Write your solution in JavaScript.\n// Requirement: define a function named numIslands(grid)\n// Return: number\n\nfunction numIslands(grid) {\n  // TODO: implement\n  return 0;\n}\n",
+    "csharp": "// Write your solution in C#.\n// Requirement: define a method named NumIslands\n\npublic static class Solution\n{\n    public static object NumIslands(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n"
+  }
 }

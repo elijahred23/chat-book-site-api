@@ -12,7 +12,6 @@
     "Do we need an iterative solution without knowing the length? (Yes.)",
     "Should we aim for O(n) time and O(1) extra space? (Yes.)"
   ],
-  "starterCode": "// Write your solution in JavaScript.\n// Requirement: define a function named reverseList(head)\n// head is either null or a node with { value/val, next }\n// Return: the new head node\n\nfunction reverseList(head) {\n  // TODO: implement\n  return head;\n}\n",
   "walkthrough": [
     {
       "title": "Iterative pattern (we only get the head)",
@@ -24,13 +23,55 @@
     },
     {
       "title": "JavaScript (iterative implementation)",
-      "codeLanguage": "javascript",
-      "body": "function reverseList(head) {\n  let prev = null;\n  let current = head;\n\n  while (current) {\n    const next = current.next;\n    current.next = prev;\n    prev = current;\n    current = next;\n  }\n\n  return prev;\n}"
+      "codeSnippets": [
+        {
+          "title": "JavaScript",
+          "language": "javascript",
+          "body": "function reverseList(head) {\n  let prev = null;\n  let current = head;\n\n  while (current) {\n    const next = current.next;\n    current.next = prev;\n    prev = current;\n    current = next;\n  }\n\n  return prev;\n}"
+        },
+        {
+          "title": "C#",
+          "language": "csharp",
+          "body": "public class ListNode\n{\n    public int val;\n    public ListNode next;\n    public ListNode(int x = 0, ListNode n = null) { val = x; next = n; }\n}\n\nListNode ReverseList(ListNode head)\n{\n    ListNode prev = null, cur = head;\n    while (cur != null)\n    {\n        var next = cur.next;\n        cur.next = prev;\n        prev = cur;\n        cur = next;\n    }\n    return prev;\n}"
+        }
+      ]
     }
   ],
   "tests": [
-    { "name": "Example", "list": [1, 2, 3, 4, 5], "expect": [5, 4, 3, 2, 1] },
-    { "name": "Single node", "list": [42], "expect": [42] },
-    { "name": "Null list", "list": [], "expect": [] }
-  ]
+    {
+      "name": "Example",
+      "list": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "expect": [
+        5,
+        4,
+        3,
+        2,
+        1
+      ]
+    },
+    {
+      "name": "Single node",
+      "list": [
+        42
+      ],
+      "expect": [
+        42
+      ]
+    },
+    {
+      "name": "Null list",
+      "list": [],
+      "expect": []
+    }
+  ],
+  "starterCodeByLanguage": {
+    "javascript": "// Write your solution in JavaScript.\n// Requirement: define a function named reverseList(head)\n// head is either null or a node with { value/val, next }\n// Return: the new head node\n\nfunction reverseList(head) {\n  // TODO: implement\n  return head;\n}\n",
+    "csharp": "// Write your solution in C#.\n// Requirement: define a method named ReverseList\n\npublic static class Solution\n{\n    public static object ReverseList(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n"
+  }
 }

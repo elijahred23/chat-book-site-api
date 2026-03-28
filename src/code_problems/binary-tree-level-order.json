@@ -12,7 +12,6 @@
     "Do we care about node values beyond collecting them? (No.)",
     "Is the output an array of arrays? (Yes.)"
   ],
-  "starterCode": "// Write your solution in JavaScript.\n// Requirement: define a function named levelOrder(root)\n// Return: array of arrays\n\nfunction levelOrder(root) {\n  // TODO: implement\n  return [];\n}\n",
   "walkthrough": [
     {
       "title": "BFS with queue",
@@ -20,8 +19,18 @@
     },
     {
       "title": "JavaScript (BFS implementation)",
-      "codeLanguage": "javascript",
-      "body": "function levelOrder(root) {\n  if (!root) return [];\n  const result = [];\n  const queue = [root];\n\n  while (queue.length) {\n    const levelSize = queue.length;\n    const level = [];\n\n    for (let i = 0; i < levelSize; i++) {\n      const node = queue.shift();\n      level.push(node.val ?? node.value);\n      if (node.left) queue.push(node.left);\n      if (node.right) queue.push(node.right);\n    }\n\n    result.push(level);\n  }\n\n  return result;\n}\n"
+      "codeSnippets": [
+        {
+          "title": "JavaScript",
+          "language": "javascript",
+          "body": "function levelOrder(root) {\n  if (!root) return [];\n  const result = [];\n  const queue = [root];\n\n  while (queue.length) {\n    const levelSize = queue.length;\n    const level = [];\n\n    for (let i = 0; i < levelSize; i++) {\n      const node = queue.shift();\n      level.push(node.val ?? node.value);\n      if (node.left) queue.push(node.left);\n      if (node.right) queue.push(node.right);\n    }\n\n    result.push(level);\n  }\n\n  return result;\n}\n"
+        },
+        {
+          "title": "C#",
+          "language": "csharp",
+          "body": "public class TreeNode\n{\n    public int val;\n    public TreeNode left;\n    public TreeNode right;\n    public TreeNode(int x = 0, TreeNode l = null, TreeNode r = null)\n    {\n        val = x; left = l; right = r;\n    }\n}\n\nIList<IList<int>> LevelOrder(TreeNode root)\n{\n    var result = new List<IList<int>>();\n    if (root == null) return result;\n\n    var q = new Queue<TreeNode>();\n    q.Enqueue(root);\n\n    while (q.Count > 0)\n    {\n        int size = q.Count;\n        var level = new List<int>(size);\n        for (int i = 0; i < size; i++)\n        {\n            var node = q.Dequeue();\n            level.Add(node.val);\n            if (node.left != null) q.Enqueue(node.left);\n            if (node.right != null) q.Enqueue(node.right);\n        }\n        result.Add(level);\n    }\n\n    return result;\n}"
+        }
+      ]
     },
     {
       "title": "Complexity",
@@ -31,12 +40,114 @@
   "tests": [
     {
       "name": "Example tree",
-      "tree": [3, 6, 1, 9, 2, null, 4, null, null, null, null, 5, null, null, 8],
-      "expect": [[3], [6, 1], [9, 2, 4], [5], [8]]
+      "tree": [
+        3,
+        6,
+        1,
+        9,
+        2,
+        null,
+        4,
+        null,
+        null,
+        null,
+        null,
+        5,
+        null,
+        null,
+        8
+      ],
+      "expect": [
+        [
+          3
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          9,
+          2,
+          4
+        ],
+        [
+          5
+        ],
+        [
+          8
+        ]
+      ]
     },
-    { "name": "Single node", "tree": [3], "expect": [[3]] },
-    { "name": "Empty tree", "tree": [], "expect": [] },
-    { "name": "Skewed left", "tree": [1, 2, null, 3, null, 4], "expect": [[1], [2], [3], [4]] },
-    { "name": "Skewed right", "tree": [1, null, 2, null, 3, null, 4], "expect": [[1], [2], [3], [4]] }
-  ]
+    {
+      "name": "Single node",
+      "tree": [
+        3
+      ],
+      "expect": [
+        [
+          3
+        ]
+      ]
+    },
+    {
+      "name": "Empty tree",
+      "tree": [],
+      "expect": []
+    },
+    {
+      "name": "Skewed left",
+      "tree": [
+        1,
+        2,
+        null,
+        3,
+        null,
+        4
+      ],
+      "expect": [
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ]
+      ]
+    },
+    {
+      "name": "Skewed right",
+      "tree": [
+        1,
+        null,
+        2,
+        null,
+        3,
+        null,
+        4
+      ],
+      "expect": [
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ]
+      ]
+    }
+  ],
+  "starterCodeByLanguage": {
+    "javascript": "// Write your solution in JavaScript.\n// Requirement: define a function named levelOrder(root)\n// Return: array of arrays\n\nfunction levelOrder(root) {\n  // TODO: implement\n  return [];\n}\n",
+    "csharp": "// Write your solution in C#.\n// Requirement: define a method named LevelOrder\n\npublic static class Solution\n{\n    public static object LevelOrder(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n"
+  }
 }
