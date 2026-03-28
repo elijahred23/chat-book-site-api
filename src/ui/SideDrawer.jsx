@@ -28,6 +28,7 @@ const ICONS = {
   typing: FaKeyboard,
   architecture: FaSitemap,
   iframe: FaGlobe,
+  asmr: FaKeyboard,
 };
 
 const LABELS = {
@@ -43,6 +44,7 @@ const LABELS = {
   typing: "Typing",
   architecture: "Diagram",
   iframe: "Iframe",
+  asmr: "ASMR",
 };
 
 export default function SideDrawer({

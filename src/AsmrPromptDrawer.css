@@ -1,0 +1,107 @@
+.asmr-shell {
+  padding: 14px;
+  height: calc(100% - 8px);
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  gap: 10px;
+  background:
+    radial-gradient(1200px 500px at 10% -10%, rgba(103, 232, 249, 0.16), transparent),
+    radial-gradient(1200px 500px at 100% 120%, rgba(147, 197, 253, 0.18), transparent),
+    linear-gradient(180deg, #0f172a, #111827);
+  color: #e2e8f0;
+}
+
+.asmr-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.asmr-sub {
+  color: #cbd5e1;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.asmr-controls {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.asmr-chip {
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  background: rgba(15, 23, 42, 0.55);
+  color: #e2e8f0;
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.asmr-chip.active {
+  background: linear-gradient(135deg, #2563eb, #0891b2);
+  border-color: transparent;
+}
+
+.asmr-progress-wrap {
+  height: 7px;
+  border-radius: 999px;
+  background: rgba(148, 163, 184, 0.25);
+  overflow: hidden;
+}
+
+.asmr-progress {
+  height: 100%;
+  background: linear-gradient(90deg, #22d3ee, #60a5fa);
+  transition: width 120ms linear;
+}
+
+.asmr-viewport {
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: 12px;
+  background: rgba(15, 23, 42, 0.42);
+  padding: 12px;
+  overflow: auto;
+}
+
+.asmr-pre {
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  line-height: 1.6;
+  font-size: 13px;
+  color: #e5e7eb;
+  font-family: "JetBrains Mono", "Fira Code", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.asmr-caret {
+  color: #67e8f9;
+  animation: asmrBlink 1s steps(2, start) infinite;
+}
+
+@keyframes asmrBlink {
+  to {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 680px) {
+  .asmr-shell {
+    padding: 10px;
+    gap: 8px;
+  }
+
+  .asmr-pre {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .asmr-chip {
+    padding: 6px 9px;
+    font-size: 11px;
+  }
+}

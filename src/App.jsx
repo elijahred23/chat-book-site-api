@@ -31,6 +31,7 @@ import RegexTrainer from './RegexTrainer.jsx';
 import ChatGPTDual from './ChatGPTDual.jsx';
 import LargeTextChunks from './LargeTextChunks.jsx';
 import GuitarTabs from './GuitarTabs.jsx';
+import AsmrPromptDrawer from './AsmrPromptDrawer.jsx';
 
 function AppContent() {
   const [isFullWidth, setIsFullWidth] = useState(true);
@@ -42,7 +43,7 @@ function AppContent() {
   const menuRef = useRef(null);
   const closeFabMenu = () => setShowFloatingBtns(false);
   const dispatch = useAppDispatch();
-  const { isChat2Open, drawerStack, isChatOpen, isTeleprompterOpen, isTTSOpen, isPlantUMLOpen, isPodcastTTSOpen, isJSGeneratorOpen, isChatBookOpen, isArchitectureOpen, isYouTubeOpen, isHtmlBuilderOpen, isTypingOpen, isIframeOpen, isLargeTextOpen } = useAppState();
+  const { isChat2Open, drawerStack, isChatOpen, isTeleprompterOpen, isTTSOpen, isPlantUMLOpen, isPodcastTTSOpen, isJSGeneratorOpen, isChatBookOpen, isArchitectureOpen, isYouTubeOpen, isHtmlBuilderOpen, isTypingOpen, isIframeOpen, isLargeTextOpen, isAsmrOpen } = useAppState();
 
   const toggleChat = () => dispatch(actions.setIsChatOpen(false));
   const toggleWidth = () => setIsFullWidth((p) => !p);
@@ -56,6 +57,7 @@ function AppContent() {
   const setIsTypingOpen = (val) => dispatch(actions.setIsTypingOpen(val));
   const setIsIframeOpen = (val) => dispatch(actions.setIsIframeOpen(val));
   const setIsLargeTextOpen = (val) => dispatch(actions.setIsLargeTextOpen(val));
+  const setIsAsmrOpen = (val) => dispatch(actions.setIsAsmrOpen(val));
 
   useEffect(() => {
     const savedText = localStorage.getItem('selectedText');
@@ -106,7 +108,8 @@ function AppContent() {
     isHtmlBuilderOpen ||
     isTypingOpen ||
     isIframeOpen ||
-    isLargeTextOpen;
+    isLargeTextOpen ||
+    isAsmrOpen;
 
   return (
     <>
@@ -535,6 +538,18 @@ function AppContent() {
           closeLabel="✖ Close ActionButton Chunker"
         >
           <LargeTextChunks />
+        </SideDrawer>
+
+        <SideDrawer
+          isOpen={isAsmrOpen}
+          isFullWidth={isFullWidth}
+          stack={drawerStack}
+          currentKey="asmr"
+          onToggleWidth={toggleWidth}
+          onClose={() => setIsAsmrOpen(false)}
+          closeLabel="✖ Close ASMR Typeout"
+        >
+          <AsmrPromptDrawer />
         </SideDrawer>
 
         <SideDrawer

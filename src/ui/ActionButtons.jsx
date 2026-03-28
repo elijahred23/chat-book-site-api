@@ -81,6 +81,17 @@ export default function ActionButtons({ promptText, limitButtons = false }) {
       },
     },
     {
+      icon: FaBullhorn,
+      title: "ASMR Typeout",
+      color: "#0f172a",
+      iconColor: "#e2e8f0",
+      onClick: (e) => {
+        e.stopPropagation();
+        dispatch(actions.setAsmrPromptText(cleanText));
+        dispatch(actions.setIsAsmrOpen(true));
+      },
+    },
+    {
       icon: FaComments,
       title: "Open Chat Two",
       color: "#22c55e",
