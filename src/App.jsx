@@ -30,6 +30,7 @@ import PdfToText from './PdfToText.jsx';
 import RegexTrainer from './RegexTrainer.jsx';
 import ChatGPTDual from './ChatGPTDual.jsx';
 import LargeTextChunks from './LargeTextChunks.jsx';
+import GuitarTabs from './GuitarTabs.jsx';
 
 function AppContent() {
   const [isFullWidth, setIsFullWidth] = useState(true);
@@ -131,6 +132,7 @@ function AppContent() {
                 <NavLink to="/bengali" role="menuitem" onClick={() => setIsMenuOpen(false)}>Bengali Tutor</NavLink>
                 <NavLink to="/coding" role="menuitem" onClick={() => setIsMenuOpen(false)}>Coding Problems</NavLink>
                 <NavLink to="/system-design" role="menuitem" onClick={() => setIsMenuOpen(false)}>System Design Prep</NavLink>
+                <NavLink to="/guitar-tabs" role="menuitem" onClick={() => setIsMenuOpen(false)}>Guitar Tabs</NavLink>
                 <NavLink to="/market-sim" role="menuitem" onClick={() => setIsMenuOpen(false)}>Stock Market Game</NavLink>
                 <NavLink to="/pdf-to-text" role="menuitem" onClick={() => setIsMenuOpen(false)}>PDF to Text</NavLink>
                 <NavLink to="/regex" role="menuitem" onClick={() => setIsMenuOpen(false)}>Regex Trainer</NavLink>
@@ -378,6 +380,7 @@ function AppContent() {
             <Route path="/bengali" element={<BengaliTutor />} />
             <Route path="/coding" element={<CodingProblems />} />
             <Route path="/system-design" element={<SystemDesignPrep />} />
+            <Route path="/guitar-tabs" element={<GuitarTabs />} />
             <Route path="/market-sim" element={<StockMarketGame />} />
             <Route path="/pdf-to-text" element={<PdfToText />} />
             <Route path="/regex" element={<RegexTrainer />} />
