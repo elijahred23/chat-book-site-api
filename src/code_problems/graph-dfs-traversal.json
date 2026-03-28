@@ -29,6 +29,11 @@
           "title": "C#",
           "language": "csharp",
           "body": "IList<int> DfsTraversal(IList<IList<int>> graph, int start)\n{\n    var result = new List<int>();\n    if (graph == null || start < 0 || start >= graph.Count) return result;\n\n    var seen = new bool[graph.Count];\n    var stack = new Stack<int>();\n    stack.Push(start);\n\n    while (stack.Count > 0)\n    {\n        int node = stack.Pop();\n        if (node < 0 || node >= graph.Count || seen[node]) continue;\n\n        seen[node] = true;\n        result.Add(node);\n\n        for (int i = graph[node].Count - 1; i >= 0; i--)\n        {\n            int nei = graph[node][i];\n            if (nei >= 0 && nei < graph.Count && !seen[nei]) stack.Push(nei);\n        }\n    }\n\n    return result;\n}"
+        },
+        {
+          "title": "Python",
+          "language": "python",
+          "body": "def dfsTraversal(graph, start):\n    if start < 0 or start >= len(graph):\n        return []\n\n    result = []\n    seen = [False] * len(graph)\n    stack = [start]\n\n    while stack:\n        node = stack.pop()\n        if node < 0 or node >= len(graph) or seen[node]:\n            continue\n\n        seen[node] = True\n        result.append(node)\n\n        for nei in reversed(graph[node]):\n            if 0 <= nei < len(graph) and not seen[nei]:\n                stack.append(nei)\n\n    return result"
         }
       ]
     },
@@ -114,6 +119,7 @@
   ],
   "starterCodeByLanguage": {
     "javascript": "// Write your solution in JavaScript.\n// Requirement: define a function named dfsTraversal(graph, start)\n// graph is an adjacency list: array of arrays.\n// Return: array of visited vertices\n\nfunction dfsTraversal(graph, start) {\n  // TODO: implement\n  return [];\n}\n",
-    "csharp": "// Write your solution in C#.\n// Requirement: define a method named DfsTraversal\n\npublic static class Solution\n{\n    public static object DfsTraversal(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n"
+    "csharp": "// Write your solution in C#.\n// Requirement: define a method named DfsTraversal\n\npublic static class Solution\n{\n    public static object DfsTraversal(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n",
+    "python": "# Write your solution in Python.\n# Requirement: define a function named dfs_traversal\n\ndef dfs_traversal(*args):\n    # TODO: implement\n    return None\n"
   }
 }

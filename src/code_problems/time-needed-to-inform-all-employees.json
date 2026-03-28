@@ -33,6 +33,11 @@
           "title": "C#",
           "language": "csharp",
           "body": "int NumOfMinutes(int n, int headID, int[] managers, int[] informTime)\n{\n    var tree = new List<int>[n];\n    for (int i = 0; i < n; i++) tree[i] = new List<int>();\n\n    for (int emp = 0; emp < n; emp++)\n    {\n        int m = managers[emp];\n        if (m != -1) tree[m].Add(emp);\n    }\n\n    int Dfs(int id)\n    {\n        int maxChild = 0;\n        foreach (int child in tree[id])\n            maxChild = Math.Max(maxChild, Dfs(child));\n        return informTime[id] + maxChild;\n    }\n\n    return Dfs(headID);\n}"
+        },
+        {
+          "title": "Python",
+          "language": "python",
+          "body": "def numOfMinutes(n, headID, managers, informTime):\n    tree = [[] for _ in range(n)]\n    for emp, m in enumerate(managers):\n        if m != -1:\n            tree[m].append(emp)\n\n    def dfs(node):\n        max_child = 0\n        for child in tree[node]:\n            max_child = max(max_child, dfs(child))\n        return informTime[node] + max_child\n\n    return dfs(headID)"
         }
       ]
     },
@@ -107,6 +112,7 @@
   ],
   "starterCodeByLanguage": {
     "javascript": "// Write your solution in JavaScript.\n// Requirement: define a function named numOfMinutes(n, headID, managers, informTime)\n// Return: number\n\nfunction numOfMinutes(n, headID, managers, informTime) {\n  // TODO: implement\n  return 0;\n}\n",
-    "csharp": "// Write your solution in C#.\n// Requirement: define a method named NumOfMinutes\n\npublic static class Solution\n{\n    public static object NumOfMinutes(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n"
+    "csharp": "// Write your solution in C#.\n// Requirement: define a method named NumOfMinutes\n\npublic static class Solution\n{\n    public static object NumOfMinutes(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n",
+    "python": "# Write your solution in Python.\n# Requirement: define a function named num_of_minutes\n\ndef num_of_minutes(*args):\n    # TODO: implement\n    return None\n"
   }
 }

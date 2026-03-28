@@ -29,6 +29,11 @@
           "title": "C#",
           "language": "csharp",
           "body": "int FindKthLargest(int[] nums, int k)\n{\n    Array.Sort(nums);\n    return nums[nums.Length - k];\n}"
+        },
+        {
+          "title": "Python",
+          "language": "python",
+          "body": "def findKthLargest(nums, k):\n    nums = sorted(nums)\n    return nums[-k]"
         }
       ]
     },
@@ -48,6 +53,11 @@
           "title": "C#",
           "language": "csharp",
           "body": "int FindKthLargest(int[] nums, int k)\n{\n    int left = 0, right = nums.Length - 1;\n    int target = nums.Length - k;\n\n    while (left <= right)\n    {\n        int p = Partition(nums, left, right);\n        if (p == target) return nums[p];\n        if (p < target) left = p + 1;\n        else right = p - 1;\n    }\n    return -1;\n}\n\nint Partition(int[] nums, int left, int right)\n{\n    int pivot = nums[right];\n    int i = left;\n    for (int j = left; j < right; j++)\n    {\n        if (nums[j] <= pivot)\n        {\n            (nums[i], nums[j]) = (nums[j], nums[i]);\n            i++;\n        }\n    }\n    (nums[i], nums[right]) = (nums[right], nums[i]);\n    return i;\n}"
+        },
+        {
+          "title": "Python",
+          "language": "python",
+          "body": "def findKthLargest(nums, k):\n    target = len(nums) - k\n\n    def partition(left, right):\n        pivot = nums[right]\n        i = left\n        for j in range(left, right):\n            if nums[j] <= pivot:\n                nums[i], nums[j] = nums[j], nums[i]\n                i += 1\n        nums[i], nums[right] = nums[right], nums[i]\n        return i\n\n    left, right = 0, len(nums) - 1\n    while left <= right:\n        p = partition(left, right)\n        if p == target:\n            return nums[p]\n        if p < target:\n            left = p + 1\n        else:\n            right = p - 1"
         }
       ]
     }
@@ -104,6 +114,7 @@
   ],
   "starterCodeByLanguage": {
     "javascript": "// Write your solution in JavaScript.\n// Requirement: define a function named findKthLargest(nums, k)\n// Return: number\n\nfunction findKthLargest(nums, k) {\n  // TODO: implement\n  return 0;\n}\n",
-    "csharp": "// Write your solution in C#.\n// Requirement: define a method named FindKthLargest\n\npublic static class Solution\n{\n    public static object FindKthLargest(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n"
+    "csharp": "// Write your solution in C#.\n// Requirement: define a method named FindKthLargest\n\npublic static class Solution\n{\n    public static object FindKthLargest(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n",
+    "python": "# Write your solution in Python.\n# Requirement: define a function named find_kth_largest\n\ndef find_kth_largest(*args):\n    # TODO: implement\n    return None\n"
   }
 }

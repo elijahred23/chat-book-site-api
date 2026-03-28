@@ -29,6 +29,11 @@
           "title": "C#",
           "language": "csharp",
           "body": "string Build(string str)\n{\n    var sb = new System.Text.StringBuilder();\n    foreach (char ch in str)\n    {\n        if (ch == '#')\n        {\n            if (sb.Length > 0) sb.Length--;\n        }\n        else\n        {\n            sb.Append(ch);\n        }\n    }\n    return sb.ToString();\n}\n\nbool BackspaceCompare(string s, string t)\n{\n    return Build(s) == Build(t);\n}"
+        },
+        {
+          "title": "Python",
+          "language": "python",
+          "body": "def build(s):\n    out = []\n    for ch in s:\n        if ch == '#':\n            if out:\n                out.pop()\n        else:\n            out.append(ch)\n    return ''.join(out)\n\n\ndef backspaceCompare(s, t):\n    return build(s) == build(t)"
         }
       ]
     },
@@ -48,6 +53,11 @@
           "title": "C#",
           "language": "csharp",
           "body": "int NextValidIndex(string str, int i)\n{\n    int skip = 0;\n    while (i >= 0)\n    {\n        if (str[i] == '#') { skip++; i--; }\n        else if (skip > 0) { skip--; i--; }\n        else break;\n    }\n    return i;\n}\n\nbool BackspaceCompare(string s, string t)\n{\n    int i = s.Length - 1;\n    int j = t.Length - 1;\n\n    while (i >= 0 || j >= 0)\n    {\n        i = NextValidIndex(s, i);\n        j = NextValidIndex(t, j);\n\n        char? a = i >= 0 ? s[i] : null;\n        char? b = j >= 0 ? t[j] : null;\n        if (a != b) return false;\n\n        i--; j--;\n    }\n\n    return true;\n}"
+        },
+        {
+          "title": "Python",
+          "language": "python",
+          "body": "def next_valid_index(s, i):\n    skip = 0\n    while i >= 0:\n        if s[i] == '#':\n            skip += 1\n            i -= 1\n        elif skip > 0:\n            skip -= 1\n            i -= 1\n        else:\n            break\n    return i\n\n\ndef backspaceCompare(s, t):\n    i, j = len(s) - 1, len(t) - 1\n\n    while i >= 0 or j >= 0:\n        i = next_valid_index(s, i)\n        j = next_valid_index(t, j)\n\n        a = s[i] if i >= 0 else None\n        b = t[j] if j >= 0 else None\n        if a != b:\n            return False\n\n        i -= 1\n        j -= 1\n\n    return True"
         }
       ]
     }
@@ -86,6 +96,7 @@
   ],
   "starterCodeByLanguage": {
     "javascript": "// Write your solution in JavaScript.\n// Requirement: define a function named backspaceCompare(s, t)\n// Return: true/false\n\nfunction backspaceCompare(s, t) {\n  // TODO: implement\n  return false;\n}\n",
-    "csharp": "// Write your solution in C#.\n// Requirement: define a method named BackspaceCompare\n\npublic static class Solution\n{\n    public static object BackspaceCompare(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n"
+    "csharp": "// Write your solution in C#.\n// Requirement: define a method named BackspaceCompare\n\npublic static class Solution\n{\n    public static object BackspaceCompare(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n",
+    "python": "# Write your solution in Python.\n# Requirement: define a function named backspace_compare\n\ndef backspace_compare(*args):\n    # TODO: implement\n    return None\n"
   }
 }

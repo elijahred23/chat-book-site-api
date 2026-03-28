@@ -33,6 +33,11 @@
           "title": "C#",
           "language": "csharp",
           "body": "public class ListNode\n{\n    public int val;\n    public ListNode next;\n    public ListNode(int x = 0, ListNode n = null) { val = x; next = n; }\n}\n\nListNode ReverseList(ListNode head)\n{\n    ListNode prev = null, cur = head;\n    while (cur != null)\n    {\n        var next = cur.next;\n        cur.next = prev;\n        prev = cur;\n        cur = next;\n    }\n    return prev;\n}"
+        },
+        {
+          "title": "Python",
+          "language": "python",
+          "body": "def reverseList(head):\n    prev, cur = None, head\n    while cur:\n        nxt = cur.next\n        cur.next = prev\n        prev = cur\n        cur = nxt\n    return prev"
         }
       ]
     }
@@ -72,6 +77,7 @@
   ],
   "starterCodeByLanguage": {
     "javascript": "// Write your solution in JavaScript.\n// Requirement: define a function named reverseList(head)\n// head is either null or a node with { value/val, next }\n// Return: the new head node\n\nfunction reverseList(head) {\n  // TODO: implement\n  return head;\n}\n",
-    "csharp": "// Write your solution in C#.\n// Requirement: define a method named ReverseList\n\npublic static class Solution\n{\n    public static object ReverseList(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n"
+    "csharp": "// Write your solution in C#.\n// Requirement: define a method named ReverseList\n\npublic static class Solution\n{\n    public static object ReverseList(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n",
+    "python": "# Write your solution in Python.\n# Requirement: define a function named reverse_list\n\ndef reverse_list(*args):\n    # TODO: implement\n    return None\n"
   }
 }

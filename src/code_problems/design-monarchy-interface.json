@@ -33,6 +33,11 @@
           "title": "C#",
           "language": "csharp",
           "body": "public class Monarchy\n{\n    private class Person\n    {\n        public string Name;\n        public bool IsAlive = true;\n        public List<Person> Children = new List<Person>();\n        public Person(string name) { Name = name; }\n    }\n\n    private readonly Person king;\n    private readonly Dictionary<string, Person> people = new Dictionary<string, Person>();\n\n    public Monarchy(string kingName)\n    {\n        king = new Person(kingName);\n        people[kingName] = king;\n    }\n\n    public void birth(string childName, string parentName)\n    {\n        var parent = people[parentName];\n        var child = new Person(childName);\n        parent.Children.Add(child);\n        people[childName] = child;\n    }\n\n    public void death(string name)\n    {\n        if (people.TryGetValue(name, out var person)) person.IsAlive = false;\n    }\n\n    public IList<string> getOrderOfSuccession()\n    {\n        var order = new List<string>();\n\n        void Dfs(Person p)\n        {\n            if (p == null) return;\n            if (p.IsAlive) order.Add(p.Name);\n            foreach (var child in p.Children) Dfs(child);\n        }\n\n        Dfs(king);\n        return order;\n    }\n}"
+        },
+        {
+          "title": "Python",
+          "language": "python",
+          "body": "class Person:\n    def __init__(self, name):\n        self.name = name\n        self.children = []\n        self.is_alive = True\n\n\nclass Monarchy:\n    def __init__(self, kingName):\n        self.king = Person(kingName)\n        self.people = {kingName: self.king}\n\n    def birth(self, childName, parentName):\n        parent = self.people[parentName]\n        child = Person(childName)\n        parent.children.append(child)\n        self.people[childName] = child\n\n    def death(self, name):\n        if name in self.people:\n            self.people[name].is_alive = False\n\n    def getOrderOfSuccession(self):\n        order = []\n\n        def dfs(person):\n            if not person:\n                return\n            if person.is_alive:\n                order.append(person.name)\n            for child in person.children:\n                dfs(child)\n\n        dfs(self.king)\n        return order"
         }
       ]
     },
@@ -265,6 +270,7 @@
   ],
   "starterCodeByLanguage": {
     "javascript": "// Write your solution in JavaScript.\n// Requirement: define a class named Monarchy\n// Methods: birth(childName, parentName), death(name), getOrderOfSuccession()\n\nclass Monarchy {\n  constructor(kingName) {\n    // TODO: initialize the monarchy with the king\n  }\n\n  birth(childName, parentName) {\n    // TODO: add child to the parent's children list\n  }\n\n  death(name) {\n    // TODO: mark the person as deceased (do not remove their descendants)\n  }\n\n  getOrderOfSuccession() {\n    // TODO: return an array of living names in succession order\n    return [];\n  }\n}\n",
-    "csharp": "// Write your solution in C#.\n// Requirement: define a class named Monarchy\n\npublic class Monarchy\n{\n    // TODO: implement\n}\n"
+    "csharp": "// Write your solution in C#.\n// Requirement: define a class named Monarchy\n\npublic class Monarchy\n{\n    // TODO: implement\n}\n",
+    "python": "# Write your solution in Python.\n# Requirement: define a class named Monarchy\n\nclass Monarchy:\n    def __init__(self, *args, **kwargs):\n        # TODO: implement\n        pass\n"
   }
 }

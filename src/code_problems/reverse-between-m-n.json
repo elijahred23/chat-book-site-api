@@ -33,6 +33,11 @@
           "title": "C#",
           "language": "csharp",
           "body": "public class ListNode\n{\n    public int val;\n    public ListNode next;\n    public ListNode(int x = 0, ListNode n = null) { val = x; next = n; }\n}\n\nListNode ReverseBetween(ListNode head, int m, int n)\n{\n    if (head == null || m == n) return head;\n\n    var dummy = new ListNode(0, head);\n    var prev = dummy;\n    for (int i = 1; i < m; i++) prev = prev.next;\n\n    var cur = prev.next;\n    for (int i = 0; i < n - m; i++)\n    {\n        var move = cur.next;\n        cur.next = move.next;\n        move.next = prev.next;\n        prev.next = move;\n    }\n\n    return dummy.next;\n}"
+        },
+        {
+          "title": "Python",
+          "language": "python",
+          "body": "def reverseBetween(head, m, n):\n    if not head or m == n:\n        return head\n\n    class Node:\n        def __init__(self, val=0, nxt=None):\n            self.val = val\n            self.next = nxt\n\n    dummy = Node(0, head)\n    prev = dummy\n\n    for _ in range(1, m):\n        prev = prev.next\n\n    cur = prev.next\n    for _ in range(n - m):\n        move = cur.next\n        cur.next = move.next\n        move.next = prev.next\n        prev.next = move\n\n    return dummy.next"
         }
       ]
     }
@@ -112,6 +117,7 @@
   ],
   "starterCodeByLanguage": {
     "javascript": "// Write your solution in JavaScript.\n// Requirement: define a function named reverseBetween(head, m, n)\n// head is either null or a node with { value/val, next }\n// Return: the head node after reversing the sublist\n\nfunction reverseBetween(head, m, n) {\n  // TODO: implement\n  return head;\n}\n",
-    "csharp": "// Write your solution in C#.\n// Requirement: define a method named ReverseBetween\n\npublic static class Solution\n{\n    public static object ReverseBetween(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n"
+    "csharp": "// Write your solution in C#.\n// Requirement: define a method named ReverseBetween\n\npublic static class Solution\n{\n    public static object ReverseBetween(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n",
+    "python": "# Write your solution in Python.\n# Requirement: define a function named reverse_between\n\ndef reverse_between(*args):\n    # TODO: implement\n    return None\n"
   }
 }

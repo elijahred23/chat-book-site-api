@@ -29,6 +29,11 @@
           "title": "C#",
           "language": "csharp",
           "body": "int OrangesRotting(int[][] grid)\n{\n    int rows = grid.Length, cols = grid[0].Length;\n    var q = new Queue<(int r, int c)>();\n    int fresh = 0;\n\n    for (int r = 0; r < rows; r++)\n    {\n        for (int c = 0; c < cols; c++)\n        {\n            if (grid[r][c] == 2) q.Enqueue((r, c));\n            else if (grid[r][c] == 1) fresh++;\n        }\n    }\n\n    if (fresh == 0) return 0;\n\n    int minutes = 0;\n    int[][] dirs = { new[] { 1, 0 }, new[] { -1, 0 }, new[] { 0, 1 }, new[] { 0, -1 } };\n\n    while (q.Count > 0 && fresh > 0)\n    {\n        int size = q.Count;\n        for (int i = 0; i < size; i++)\n        {\n            var (r, c) = q.Dequeue();\n            foreach (var d in dirs)\n            {\n                int nr = r + d[0], nc = c + d[1];\n                if (nr < 0 || nr >= rows || nc < 0 || nc >= cols || grid[nr][nc] != 1) continue;\n                grid[nr][nc] = 2;\n                fresh--;\n                q.Enqueue((nr, nc));\n            }\n        }\n        minutes++;\n    }\n\n    return fresh == 0 ? minutes : -1;\n}"
+        },
+        {
+          "title": "Python",
+          "language": "python",
+          "body": "from collections import deque\n\n\ndef orangesRotting(grid):\n    rows, cols = len(grid), len(grid[0])\n    q = deque()\n    fresh = 0\n\n    for r in range(rows):\n        for c in range(cols):\n            if grid[r][c] == 2:\n                q.append((r, c))\n            elif grid[r][c] == 1:\n                fresh += 1\n\n    if fresh == 0:\n        return 0\n\n    minutes = 0\n    dirs = [(1, 0), (-1, 0), (0, 1), (0, -1)]\n\n    while q and fresh > 0:\n        for _ in range(len(q)):\n            r, c = q.popleft()\n            for dr, dc in dirs:\n                nr, nc = r + dr, c + dc\n                if 0 <= nr < rows and 0 <= nc < cols and grid[nr][nc] == 1:\n                    grid[nr][nc] = 2\n                    fresh -= 1\n                    q.append((nr, nc))\n        minutes += 1\n\n    return minutes if fresh == 0 else -1"
         }
       ]
     },
@@ -132,6 +137,7 @@
   ],
   "starterCodeByLanguage": {
     "javascript": "// Write your solution in JavaScript.\n// Requirement: define a function named orangesRotting(grid)\n// Return: number of minutes\n\nfunction orangesRotting(grid) {\n  // TODO: implement\n  return 0;\n}\n",
-    "csharp": "// Write your solution in C#.\n// Requirement: define a method named OrangesRotting\n\npublic static class Solution\n{\n    public static object OrangesRotting(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n"
+    "csharp": "// Write your solution in C#.\n// Requirement: define a method named OrangesRotting\n\npublic static class Solution\n{\n    public static object OrangesRotting(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n",
+    "python": "# Write your solution in Python.\n# Requirement: define a function named oranges_rotting\n\ndef oranges_rotting(*args):\n    # TODO: implement\n    return None\n"
   }
 }

@@ -29,6 +29,11 @@
           "title": "C#",
           "language": "csharp",
           "body": "int[][] WallsAndGates(int[][] rooms)\n{\n    int rows = rooms.Length, cols = rooms[0].Length;\n    var q = new Queue<(int r, int c)>();\n\n    for (int r = 0; r < rows; r++)\n    {\n        for (int c = 0; c < cols; c++)\n        {\n            if (rooms[r][c] == 0) q.Enqueue((r, c));\n        }\n    }\n\n    int[][] dirs = { new[] { 1, 0 }, new[] { -1, 0 }, new[] { 0, 1 }, new[] { 0, -1 } };\n\n    while (q.Count > 0)\n    {\n        var (r, c) = q.Dequeue();\n        foreach (var d in dirs)\n        {\n            int nr = r + d[0], nc = c + d[1];\n            if (nr < 0 || nr >= rows || nc < 0 || nc >= cols) continue;\n            if (rooms[nr][nc] != int.MaxValue) continue;\n\n            rooms[nr][nc] = rooms[r][c] + 1;\n            q.Enqueue((nr, nc));\n        }\n    }\n\n    return rooms;\n}"
+        },
+        {
+          "title": "Python",
+          "language": "python",
+          "body": "from collections import deque\n\n\ndef wallsAndGates(rooms):\n    if not rooms or not rooms[0]:\n        return rooms\n\n    rows, cols = len(rooms), len(rooms[0])\n    q = deque()\n\n    for r in range(rows):\n        for c in range(cols):\n            if rooms[r][c] == 0:\n                q.append((r, c))\n\n    dirs = [(1, 0), (-1, 0), (0, 1), (0, -1)]\n\n    while q:\n        r, c = q.popleft()\n        for dr, dc in dirs:\n            nr, nc = r + dr, c + dc\n            if nr < 0 or nr >= rows or nc < 0 or nc >= cols:\n                continue\n            if rooms[nr][nc] != 2147483647:\n                continue\n            rooms[nr][nc] = rooms[r][c] + 1\n            q.append((nr, nc))\n\n    return rooms"
         }
       ]
     },
@@ -138,6 +143,7 @@
   ],
   "starterCodeByLanguage": {
     "javascript": "// Write your solution in JavaScript.\n// Requirement: define a function named wallsAndGates(rooms)\n// Return: modified matrix\n\nfunction wallsAndGates(rooms) {\n  // TODO: implement\n  return rooms;\n}\n",
-    "csharp": "// Write your solution in C#.\n// Requirement: define a method named WallsAndGates\n\npublic static class Solution\n{\n    public static object WallsAndGates(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n"
+    "csharp": "// Write your solution in C#.\n// Requirement: define a method named WallsAndGates\n\npublic static class Solution\n{\n    public static object WallsAndGates(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n",
+    "python": "# Write your solution in Python.\n# Requirement: define a function named walls_and_gates\n\ndef walls_and_gates(*args):\n    # TODO: implement\n    return None\n"
   }
 }

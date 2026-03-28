@@ -33,6 +33,11 @@
           "title": "C#",
           "language": "csharp",
           "body": "double KnightProbability(int n, int k, int row, int col)\n{\n    int[][] dirs = new int[][] {\n        new[] { 1, 2 }, new[] { 2, 1 }, new[] { 2, -1 }, new[] { 1, -2 },\n        new[] { -1, -2 }, new[] { -2, -1 }, new[] { -2, 1 }, new[] { -1, 2 }\n    };\n\n    double[,] dp = new double[n, n];\n    dp[row, col] = 1.0;\n\n    for (int move = 0; move < k; move++)\n    {\n        double[,] next = new double[n, n];\n        for (int r = 0; r < n; r++)\n        {\n            for (int c = 0; c < n; c++)\n            {\n                if (dp[r, c] == 0) continue;\n                foreach (var d in dirs)\n                {\n                    int nr = r + d[0], nc = c + d[1];\n                    if (nr >= 0 && nr < n && nc >= 0 && nc < n)\n                        next[nr, nc] += dp[r, c] / 8.0;\n                }\n            }\n        }\n        dp = next;\n    }\n\n    double ans = 0;\n    for (int r = 0; r < n; r++)\n        for (int c = 0; c < n; c++)\n            ans += dp[r, c];\n\n    return ans;\n}"
+        },
+        {
+          "title": "Python",
+          "language": "python",
+          "body": "def knightProbability(n, k, row, col):\n    dirs = [(1, 2), (2, 1), (2, -1), (1, -2), (-1, -2), (-2, -1), (-2, 1), (-1, 2)]\n    dp = [[0.0] * n for _ in range(n)]\n    dp[row][col] = 1.0\n\n    for _ in range(k):\n        nxt = [[0.0] * n for _ in range(n)]\n        for r in range(n):\n            for c in range(n):\n                if dp[r][c] == 0:\n                    continue\n                for dr, dc in dirs:\n                    nr, nc = r + dr, c + dc\n                    if 0 <= nr < n and 0 <= nc < n:\n                        nxt[nr][nc] += dp[r][c] / 8.0\n        dp = nxt\n\n    return sum(sum(row_vals) for row_vals in dp)"
         }
       ]
     },
@@ -77,6 +82,7 @@
   ],
   "starterCodeByLanguage": {
     "javascript": "// Write your solution in JavaScript.\n// Requirement: define a function named knightProbability(n, k, row, col)\n// Return: probability that the knight stays on the board\n\nfunction knightProbability(n, k, row, col) {\n  // TODO: implement\n  return 0;\n}\n",
-    "csharp": "// Write your solution in C#.\n// Requirement: define a method named KnightProbability\n\npublic static class Solution\n{\n    public static object KnightProbability(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n"
+    "csharp": "// Write your solution in C#.\n// Requirement: define a method named KnightProbability\n\npublic static class Solution\n{\n    public static object KnightProbability(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n",
+    "python": "# Write your solution in Python.\n# Requirement: define a function named knight_probability\n\ndef knight_probability(*args):\n    # TODO: implement\n    return None\n"
   }
 }

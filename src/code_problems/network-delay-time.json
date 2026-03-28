@@ -33,6 +33,11 @@
           "title": "C#",
           "language": "csharp",
           "body": "int NetworkDelayTime(int[][] times, int n, int k)\n{\n    var graph = new List<(int to, int w)>[n + 1];\n    for (int i = 1; i <= n; i++) graph[i] = new List<(int, int)>();\n    foreach (var e in times) graph[e[0]].Add((e[1], e[2]));\n\n    var dist = Enumerable.Repeat(int.MaxValue, n + 1).ToArray();\n    dist[k] = 0;\n\n    var pq = new PriorityQueue<(int node, int d), int>();\n    pq.Enqueue((k, 0), 0);\n\n    while (pq.Count > 0)\n    {\n        var (node, d) = pq.Dequeue();\n        if (d > dist[node]) continue;\n\n        foreach (var (to, w) in graph[node])\n        {\n            int nd = d + w;\n            if (nd < dist[to])\n            {\n                dist[to] = nd;\n                pq.Enqueue((to, nd), nd);\n            }\n        }\n    }\n\n    int ans = 0;\n    for (int i = 1; i <= n; i++)\n    {\n        if (dist[i] == int.MaxValue) return -1;\n        ans = Math.Max(ans, dist[i]);\n    }\n    return ans;\n}"
+        },
+        {
+          "title": "Python",
+          "language": "python",
+          "body": "import heapq\nfrom collections import defaultdict\n\n\ndef networkDelayTime(times, n, k):\n    graph = defaultdict(list)\n    for u, v, w in times:\n        graph[u].append((v, w))\n\n    dist = {i: float('inf') for i in range(1, n + 1)}\n    dist[k] = 0\n    pq = [(0, k)]\n\n    while pq:\n        d, node = heapq.heappop(pq)\n        if d > dist[node]:\n            continue\n\n        for nxt, w in graph[node]:\n            nd = d + w\n            if nd < dist[nxt]:\n                dist[nxt] = nd\n                heapq.heappush(pq, (nd, nxt))\n\n    ans = max(dist.values())\n    return -1 if ans == float('inf') else ans"
         }
       ]
     },
@@ -126,6 +131,7 @@
   ],
   "starterCodeByLanguage": {
     "javascript": "// Write your solution in JavaScript.\n// Requirement: define a function named networkDelayTime(times, n, k)\n// times: array of [u, v, w] edges\n// Return: total time for all nodes to receive the signal, or -1\n\nfunction networkDelayTime(times, n, k) {\n  // TODO: implement\n  return -1;\n}\n",
-    "csharp": "// Write your solution in C#.\n// Requirement: define a method named NetworkDelayTime\n\npublic static class Solution\n{\n    public static object NetworkDelayTime(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n"
+    "csharp": "// Write your solution in C#.\n// Requirement: define a method named NetworkDelayTime\n\npublic static class Solution\n{\n    public static object NetworkDelayTime(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n",
+    "python": "# Write your solution in Python.\n# Requirement: define a function named network_delay_time\n\ndef network_delay_time(*args):\n    # TODO: implement\n    return None\n"
   }
 }

@@ -29,6 +29,11 @@
           "title": "C#",
           "language": "csharp",
           "body": "public class TreeNode\n{\n    public int val;\n    public TreeNode left;\n    public TreeNode right;\n    public TreeNode(int x = 0, TreeNode l = null, TreeNode r = null)\n    {\n        val = x; left = l; right = r;\n    }\n}\n\nIList<IList<int>> LevelOrder(TreeNode root)\n{\n    var result = new List<IList<int>>();\n    if (root == null) return result;\n\n    var q = new Queue<TreeNode>();\n    q.Enqueue(root);\n\n    while (q.Count > 0)\n    {\n        int size = q.Count;\n        var level = new List<int>(size);\n        for (int i = 0; i < size; i++)\n        {\n            var node = q.Dequeue();\n            level.Add(node.val);\n            if (node.left != null) q.Enqueue(node.left);\n            if (node.right != null) q.Enqueue(node.right);\n        }\n        result.Add(level);\n    }\n\n    return result;\n}"
+        },
+        {
+          "title": "Python",
+          "language": "python",
+          "body": "from collections import deque\n\n\ndef levelOrder(root):\n    if not root:\n        return []\n\n    result = []\n    q = deque([root])\n\n    while q:\n        level = []\n        for _ in range(len(q)):\n            node = q.popleft()\n            level.append(getattr(node, 'val', getattr(node, 'value', None)))\n            if node.left:\n                q.append(node.left)\n            if node.right:\n                q.append(node.right)\n        result.append(level)\n\n    return result"
         }
       ]
     },
@@ -148,6 +153,7 @@
   ],
   "starterCodeByLanguage": {
     "javascript": "// Write your solution in JavaScript.\n// Requirement: define a function named levelOrder(root)\n// Return: array of arrays\n\nfunction levelOrder(root) {\n  // TODO: implement\n  return [];\n}\n",
-    "csharp": "// Write your solution in C#.\n// Requirement: define a method named LevelOrder\n\npublic static class Solution\n{\n    public static object LevelOrder(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n"
+    "csharp": "// Write your solution in C#.\n// Requirement: define a method named LevelOrder\n\npublic static class Solution\n{\n    public static object LevelOrder(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n",
+    "python": "# Write your solution in Python.\n# Requirement: define a function named level_order\n\ndef level_order(*args):\n    # TODO: implement\n    return None\n"
   }
 }

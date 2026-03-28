@@ -29,6 +29,11 @@
           "title": "C#",
           "language": "csharp",
           "body": "public class TreeNode\n{\n    public int val;\n    public TreeNode left;\n    public TreeNode right;\n    public TreeNode(int x = 0, TreeNode l = null, TreeNode r = null)\n    {\n        val = x; left = l; right = r;\n    }\n}\n\nIList<int> RightSideView(TreeNode root)\n{\n    var result = new List<int>();\n    if (root == null) return result;\n\n    var q = new Queue<TreeNode>();\n    q.Enqueue(root);\n\n    while (q.Count > 0)\n    {\n        int size = q.Count;\n        for (int i = 0; i < size; i++)\n        {\n            var node = q.Dequeue();\n            if (i == size - 1) result.Add(node.val);\n            if (node.left != null) q.Enqueue(node.left);\n            if (node.right != null) q.Enqueue(node.right);\n        }\n    }\n\n    return result;\n}"
+        },
+        {
+          "title": "Python",
+          "language": "python",
+          "body": "from collections import deque\n\n\ndef rightSideView(root):\n    if not root:\n        return []\n\n    result = []\n    q = deque([root])\n\n    while q:\n        last = None\n        for _ in range(len(q)):\n            node = q.popleft()\n            last = getattr(node, 'val', getattr(node, 'value', None))\n            if node.left:\n                q.append(node.left)\n            if node.right:\n                q.append(node.right)\n        result.append(last)\n\n    return result"
         }
       ]
     },
@@ -48,6 +53,11 @@
           "title": "C#",
           "language": "csharp",
           "body": "public class TreeNode\n{\n    public int val;\n    public TreeNode left;\n    public TreeNode right;\n    public TreeNode(int x = 0, TreeNode l = null, TreeNode r = null)\n    {\n        val = x; left = l; right = r;\n    }\n}\n\nIList<int> RightSideView(TreeNode root)\n{\n    var result = new List<int>();\n\n    void Dfs(TreeNode node, int depth)\n    {\n        if (node == null) return;\n        if (depth == result.Count) result.Add(node.val);\n        Dfs(node.right, depth + 1);\n        Dfs(node.left, depth + 1);\n    }\n\n    Dfs(root, 0);\n    return result;\n}"
+        },
+        {
+          "title": "Python",
+          "language": "python",
+          "body": "def rightSideView(root):\n    result = []\n\n    def dfs(node, level):\n        if not node:\n            return\n        if level == len(result):\n            result.append(getattr(node, 'val', getattr(node, 'value', None)))\n        dfs(node.right, level + 1)\n        dfs(node.left, level + 1)\n\n    dfs(root, 0)\n    return result"
         }
       ]
     },
@@ -135,6 +145,7 @@
   ],
   "starterCodeByLanguage": {
     "javascript": "// Write your solution in JavaScript.\n// Requirement: define a function named rightSideView(root)\n// Return: array of values\n\nfunction rightSideView(root) {\n  // TODO: implement\n  return [];\n}\n",
-    "csharp": "// Write your solution in C#.\n// Requirement: define a method named RightSideView\n\npublic static class Solution\n{\n    public static object RightSideView(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n"
+    "csharp": "// Write your solution in C#.\n// Requirement: define a method named RightSideView\n\npublic static class Solution\n{\n    public static object RightSideView(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n",
+    "python": "# Write your solution in Python.\n# Requirement: define a function named right_side_view\n\ndef right_side_view(*args):\n    # TODO: implement\n    return None\n"
   }
 }

@@ -29,6 +29,11 @@
           "title": "C#",
           "language": "csharp",
           "body": "int LengthOfLongestSubstring(string s)\n{\n    int best = 0;\n    for (int i = 0; i < s.Length; i++)\n    {\n        var seen = new HashSet<char>();\n        for (int j = i; j < s.Length; j++)\n        {\n            if (seen.Contains(s[j])) break;\n            seen.Add(s[j]);\n            best = Math.Max(best, j - i + 1);\n        }\n    }\n    return best;\n}"
+        },
+        {
+          "title": "Python",
+          "language": "python",
+          "body": "def lengthOfLongestSubstring(s):\n    best = 0\n    for i in range(len(s)):\n        seen = set()\n        for j in range(i, len(s)):\n            if s[j] in seen:\n                break\n            seen.add(s[j])\n            best = max(best, j - i + 1)\n    return best"
         }
       ]
     },
@@ -48,6 +53,11 @@
           "title": "C#",
           "language": "csharp",
           "body": "int LengthOfLongestSubstring(string s)\n{\n    var last = new Dictionary<char, int>();\n    int left = 0, best = 0;\n\n    for (int right = 0; right < s.Length; right++)\n    {\n        char ch = s[right];\n        if (last.TryGetValue(ch, out int idx) && idx >= left)\n            left = idx + 1;\n\n        last[ch] = right;\n        best = Math.Max(best, right - left + 1);\n    }\n\n    return best;\n}"
+        },
+        {
+          "title": "Python",
+          "language": "python",
+          "body": "def lengthOfLongestSubstring(s):\n    last = {}\n    left = 0\n    best = 0\n\n    for right, ch in enumerate(s):\n        if ch in last and last[ch] >= left:\n            left = last[ch] + 1\n        last[ch] = right\n        best = max(best, right - left + 1)\n\n    return best"
         }
       ]
     }
@@ -81,6 +91,7 @@
   ],
   "starterCodeByLanguage": {
     "javascript": "// Write your solution in JavaScript.\n// Requirement: define a function named lengthOfLongestSubstring(s)\n// Return: number (length)\n\nfunction lengthOfLongestSubstring(s) {\n  // TODO: implement\n  return 0;\n}\n",
-    "csharp": "// Write your solution in C#.\n// Requirement: define a method named LengthOfLongestSubstring\n\npublic static class Solution\n{\n    public static object LengthOfLongestSubstring(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n"
+    "csharp": "// Write your solution in C#.\n// Requirement: define a method named LengthOfLongestSubstring\n\npublic static class Solution\n{\n    public static object LengthOfLongestSubstring(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n",
+    "python": "# Write your solution in Python.\n# Requirement: define a function named length_of_longest_substring\n\ndef length_of_longest_substring(*args):\n    # TODO: implement\n    return None\n"
   }
 }

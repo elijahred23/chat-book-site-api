@@ -29,6 +29,11 @@
           "title": "C#",
           "language": "csharp",
           "body": "IList<int> BfsTraversal(IList<IList<int>> graph, int start)\n{\n    var result = new List<int>();\n    if (graph == null || start < 0 || start >= graph.Count) return result;\n\n    var seen = new bool[graph.Count];\n    var q = new Queue<int>();\n    q.Enqueue(start);\n    seen[start] = true;\n\n    while (q.Count > 0)\n    {\n        int node = q.Dequeue();\n        result.Add(node);\n\n        foreach (int nei in graph[node])\n        {\n            if (nei < 0 || nei >= graph.Count || seen[nei]) continue;\n            seen[nei] = true;\n            q.Enqueue(nei);\n        }\n    }\n\n    return result;\n}"
+        },
+        {
+          "title": "Python",
+          "language": "python",
+          "body": "from collections import deque\n\n\ndef bfsTraversal(graph, start):\n    if start < 0 or start >= len(graph):\n        return []\n\n    result = []\n    seen = [False] * len(graph)\n    q = deque([start])\n    seen[start] = True\n\n    while q:\n        node = q.popleft()\n        result.append(node)\n\n        for nei in graph[node]:\n            if 0 <= nei < len(graph) and not seen[nei]:\n                seen[nei] = True\n                q.append(nei)\n\n    return result"
         }
       ]
     },
@@ -114,6 +119,7 @@
   ],
   "starterCodeByLanguage": {
     "javascript": "// Write your solution in JavaScript.\n// Requirement: define a function named bfsTraversal(graph, start)\n// graph is an adjacency list: array of arrays.\n// Return: array of visited vertices\n\nfunction bfsTraversal(graph, start) {\n  // TODO: implement\n  return [];\n}\n",
-    "csharp": "// Write your solution in C#.\n// Requirement: define a method named BfsTraversal\n\npublic static class Solution\n{\n    public static object BfsTraversal(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n"
+    "csharp": "// Write your solution in C#.\n// Requirement: define a method named BfsTraversal\n\npublic static class Solution\n{\n    public static object BfsTraversal(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n",
+    "python": "# Write your solution in Python.\n# Requirement: define a function named bfs_traversal\n\ndef bfs_traversal(*args):\n    # TODO: implement\n    return None\n"
   }
 }

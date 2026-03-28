@@ -29,6 +29,11 @@
           "title": "C#",
           "language": "csharp",
           "body": "public class TreeNode\n{\n    public int val;\n    public TreeNode left;\n    public TreeNode right;\n}\n\nbool IsValidBST(TreeNode root)\n{\n    bool Dfs(TreeNode node, long low, long high)\n    {\n        if (node == null) return true;\n        if (node.val <= low || node.val >= high) return false;\n        return Dfs(node.left, low, node.val) && Dfs(node.right, node.val, high);\n    }\n\n    return Dfs(root, long.MinValue, long.MaxValue);\n}"
+        },
+        {
+          "title": "Python",
+          "language": "python",
+          "body": "def isValidBST(root):\n    def dfs(node, low, high):\n        if not node:\n            return True\n        val = getattr(node, 'val', getattr(node, 'value', None))\n        if val <= low or val >= high:\n            return False\n        return dfs(node.left, low, val) and dfs(node.right, val, high)\n\n    return dfs(root, float('-inf'), float('inf'))"
         }
       ]
     },
@@ -115,6 +120,7 @@
   ],
   "starterCodeByLanguage": {
     "javascript": "// Write your solution in JavaScript.\n// Requirement: define a function named isValidBST(root)\n// Return: true/false\n\nfunction isValidBST(root) {\n  // TODO: implement\n  return true;\n}\n",
-    "csharp": "// Write your solution in C#.\n// Requirement: define a method named IsValidBST\n\npublic static class Solution\n{\n    public static object IsValidBST(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n"
+    "csharp": "// Write your solution in C#.\n// Requirement: define a method named IsValidBST\n\npublic static class Solution\n{\n    public static object IsValidBST(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n",
+    "python": "# Write your solution in Python.\n# Requirement: define a function named is_valid_bst\n\ndef is_valid_bst(*args):\n    # TODO: implement\n    return None\n"
   }
 }

@@ -29,6 +29,11 @@
           "title": "C#",
           "language": "csharp",
           "body": "IList<int> DfsTraversal(int[][] matrix)\n{\n    var result = new List<int>();\n    if (matrix == null || matrix.Length == 0 || matrix[0].Length == 0) return result;\n\n    int rows = matrix.Length, cols = matrix[0].Length;\n    var seen = new bool[rows, cols];\n    int[][] dirs = { new[] { 1, 0 }, new[] { -1, 0 }, new[] { 0, 1 }, new[] { 0, -1 } };\n\n    void Dfs(int r, int c)\n    {\n        seen[r, c] = true;\n        result.Add(matrix[r][c]);\n\n        foreach (var d in dirs)\n        {\n            int nr = r + d[0], nc = c + d[1];\n            if (nr < 0 || nr >= rows || nc < 0 || nc >= cols || seen[nr, nc]) continue;\n            Dfs(nr, nc);\n        }\n    }\n\n    Dfs(0, 0);\n    return result;\n}"
+        },
+        {
+          "title": "Python",
+          "language": "python",
+          "body": "def dfsTraversal(matrix):\n    if not matrix or not matrix[0]:\n        return []\n\n    rows, cols = len(matrix), len(matrix[0])\n    seen = [[False] * cols for _ in range(rows)]\n    result = []\n    dirs = [(1, 0), (-1, 0), (0, 1), (0, -1)]\n\n    def dfs(r, c):\n        seen[r][c] = True\n        result.append(matrix[r][c])\n        for dr, dc in dirs:\n            nr, nc = r + dr, c + dc\n            if 0 <= nr < rows and 0 <= nc < cols and not seen[nr][nc]:\n                dfs(nr, nc)\n\n    dfs(0, 0)\n    return result"
         }
       ]
     },
@@ -112,6 +117,7 @@
   ],
   "starterCodeByLanguage": {
     "javascript": "// Write your solution in JavaScript.\n// Requirement: define a function named dfsTraversal(matrix)\n// Return: array of values\n\nfunction dfsTraversal(matrix) {\n  // TODO: implement\n  return [];\n}\n",
-    "csharp": "// Write your solution in C#.\n// Requirement: define a method named DfsTraversal\n\npublic static class Solution\n{\n    public static object DfsTraversal(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n"
+    "csharp": "// Write your solution in C#.\n// Requirement: define a method named DfsTraversal\n\npublic static class Solution\n{\n    public static object DfsTraversal(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n",
+    "python": "# Write your solution in Python.\n# Requirement: define a function named dfs_traversal\n\ndef dfs_traversal(*args):\n    # TODO: implement\n    return None\n"
   }
 }

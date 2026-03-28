@@ -33,6 +33,11 @@
           "title": "C#",
           "language": "csharp",
           "body": "bool CanFinish(int numCourses, int[][] prerequisites)\n{\n    var graph = new List<int>[numCourses];\n    for (int i = 0; i < numCourses; i++) graph[i] = new List<int>();\n\n    var indegree = new int[numCourses];\n    foreach (var edge in prerequisites)\n    {\n        int course = edge[0], pre = edge[1];\n        graph[pre].Add(course);\n        indegree[course]++;\n    }\n\n    var q = new Queue<int>();\n    for (int i = 0; i < numCourses; i++)\n        if (indegree[i] == 0) q.Enqueue(i);\n\n    int taken = 0;\n    while (q.Count > 0)\n    {\n        int cur = q.Dequeue();\n        taken++;\n\n        foreach (int next in graph[cur])\n        {\n            indegree[next]--;\n            if (indegree[next] == 0) q.Enqueue(next);\n        }\n    }\n\n    return taken == numCourses;\n}"
+        },
+        {
+          "title": "Python",
+          "language": "python",
+          "body": "from collections import deque\n\n\ndef canFinish(numCourses, prerequisites):\n    graph = [[] for _ in range(numCourses)]\n    indegree = [0] * numCourses\n\n    for course, pre in prerequisites:\n        graph[pre].append(course)\n        indegree[course] += 1\n\n    q = deque(i for i in range(numCourses) if indegree[i] == 0)\n    taken = 0\n\n    while q:\n        cur = q.popleft()\n        taken += 1\n        for nxt in graph[cur]:\n            indegree[nxt] -= 1\n            if indegree[nxt] == 0:\n                q.append(nxt)\n\n    return taken == numCourses"
         }
       ]
     },
@@ -136,6 +141,7 @@
   ],
   "starterCodeByLanguage": {
     "javascript": "// Write your solution in JavaScript.\n// Requirement: define a function named canFinish(numCourses, prerequisites)\n// Return: true/false\n\nfunction canFinish(numCourses, prerequisites) {\n  // TODO: implement\n  return true;\n}\n",
-    "csharp": "// Write your solution in C#.\n// Requirement: define a method named CanFinish\n\npublic static class Solution\n{\n    public static object CanFinish(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n"
+    "csharp": "// Write your solution in C#.\n// Requirement: define a method named CanFinish\n\npublic static class Solution\n{\n    public static object CanFinish(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n",
+    "python": "# Write your solution in Python.\n# Requirement: define a function named can_finish\n\ndef can_finish(*args):\n    # TODO: implement\n    return None\n"
   }
 }

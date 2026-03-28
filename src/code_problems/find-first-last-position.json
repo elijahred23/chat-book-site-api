@@ -29,6 +29,11 @@
           "title": "C#",
           "language": "csharp",
           "body": "int LowerBound(int[] nums, int target)\n{\n    int left = 0, right = nums.Length;\n    while (left < right)\n    {\n        int mid = left + (right - left) / 2;\n        if (nums[mid] < target) left = mid + 1;\n        else right = mid;\n    }\n    return left;\n}\n\nint[] SearchRange(int[] nums, int target)\n{\n    int first = LowerBound(nums, target);\n    if (first == nums.Length || nums[first] != target) return new[] { -1, -1 };\n\n    int last = LowerBound(nums, target + 1) - 1;\n    return new[] { first, last };\n}"
+        },
+        {
+          "title": "Python",
+          "language": "python",
+          "body": "def lower_bound(nums, target):\n    left, right = 0, len(nums)\n    while left < right:\n        mid = left + (right - left) // 2\n        if nums[mid] < target:\n            left = mid + 1\n        else:\n            right = mid\n    return left\n\n\ndef searchRange(nums, target):\n    first = lower_bound(nums, target)\n    if first == len(nums) or nums[first] != target:\n        return [-1, -1]\n\n    last = lower_bound(nums, target + 1) - 1\n    return [first, last]"
         }
       ]
     },
@@ -112,6 +117,7 @@
   ],
   "starterCodeByLanguage": {
     "javascript": "// Write your solution in JavaScript.\n// Requirement: define a function named searchRange(nums, target)\n// Return: [startIndex, endIndex]\n\nfunction searchRange(nums, target) {\n  // TODO: implement\n  return [-1, -1];\n}\n",
-    "csharp": "// Write your solution in C#.\n// Requirement: define a method named SearchRange\n\npublic static class Solution\n{\n    public static object SearchRange(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n"
+    "csharp": "// Write your solution in C#.\n// Requirement: define a method named SearchRange\n\npublic static class Solution\n{\n    public static object SearchRange(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n",
+    "python": "# Write your solution in Python.\n# Requirement: define a function named search_range\n\ndef search_range(*args):\n    # TODO: implement\n    return None\n"
   }
 }

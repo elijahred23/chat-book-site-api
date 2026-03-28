@@ -28,6 +28,11 @@
           "title": "C#",
           "language": "csharp",
           "body": "int Trap(int[] height)\n{\n    int n = height.Length;\n    int water = 0;\n\n    for (int i = 1; i < n - 1; i++)\n    {\n        int leftMax = 0, rightMax = 0;\n        for (int l = 0; l <= i; l++) leftMax = Math.Max(leftMax, height[l]);\n        for (int r = i; r < n; r++) rightMax = Math.Max(rightMax, height[r]);\n\n        water += Math.Min(leftMax, rightMax) - height[i];\n    }\n\n    return water;\n}"
+        },
+        {
+          "title": "Python",
+          "language": "python",
+          "body": "def trap(height):\n    n = len(height)\n    water = 0\n\n    for i in range(1, n - 1):\n        left_max = max(height[: i + 1])\n        right_max = max(height[i:])\n        water += min(left_max, right_max) - height[i]\n\n    return water"
         }
       ]
     },
@@ -47,6 +52,11 @@
           "title": "C#",
           "language": "csharp",
           "body": "int Trap(int[] height)\n{\n    int left = 0, right = height.Length - 1;\n    int leftMax = 0, rightMax = 0, water = 0;\n\n    while (left < right)\n    {\n        if (height[left] <= height[right])\n        {\n            if (height[left] >= leftMax) leftMax = height[left];\n            else water += leftMax - height[left];\n            left++;\n        }\n        else\n        {\n            if (height[right] >= rightMax) rightMax = height[right];\n            else water += rightMax - height[right];\n            right--;\n        }\n    }\n\n    return water;\n}"
+        },
+        {
+          "title": "Python",
+          "language": "python",
+          "body": "def trap(height):\n    left, right = 0, len(height) - 1\n    left_max = right_max = 0\n    water = 0\n\n    while left < right:\n        if height[left] <= height[right]:\n            if height[left] >= left_max:\n                left_max = height[left]\n            else:\n                water += left_max - height[left]\n            left += 1\n        else:\n            if height[right] >= right_max:\n                right_max = height[right]\n            else:\n                water += right_max - height[right]\n            right -= 1\n\n    return water"
         }
       ]
     }
@@ -118,6 +128,7 @@
   ],
   "starterCodeByLanguage": {
     "javascript": "// Write your solution in JavaScript.\n// Requirement: define a function named trap(height)\n// Return: a number (total trapped water)\n\nfunction trap(height) {\n  // TODO: implement\n  return 0;\n}\n",
-    "csharp": "// Write your solution in C#.\n// Requirement: define a method named Trap\n\npublic static class Solution\n{\n    public static object Trap(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n"
+    "csharp": "// Write your solution in C#.\n// Requirement: define a method named Trap\n\npublic static class Solution\n{\n    public static object Trap(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n",
+    "python": "# Write your solution in Python.\n# Requirement: define a function named trap\n\ndef trap(*args):\n    # TODO: implement\n    return None\n"
   }
 }

@@ -33,6 +33,11 @@
           "title": "C#",
           "language": "csharp",
           "body": "public class Node\n{\n    public int val;\n    public Node prev;\n    public Node next;\n    public Node child;\n}\n\nNode Flatten(Node head)\n{\n    if (head == null) return null;\n\n    var stack = new Stack<Node>();\n    stack.Push(head);\n    Node prev = null;\n\n    while (stack.Count > 0)\n    {\n        Node cur = stack.Pop();\n\n        if (prev != null)\n        {\n            prev.next = cur;\n            cur.prev = prev;\n        }\n\n        if (cur.next != null) stack.Push(cur.next);\n        if (cur.child != null)\n        {\n            stack.Push(cur.child);\n            cur.child = null;\n        }\n\n        prev = cur;\n    }\n\n    head.prev = null;\n    return head;\n}"
+        },
+        {
+          "title": "Python",
+          "language": "python",
+          "body": "def flatten(head):\n    if not head:\n        return None\n\n    stack = [head]\n    prev = None\n\n    while stack:\n        cur = stack.pop()\n\n        if prev:\n            prev.next = cur\n            cur.prev = prev\n            if hasattr(cur, 'previous'):\n                cur.previous = prev\n\n        if cur.next:\n            stack.append(cur.next)\n        if cur.child:\n            stack.append(cur.child)\n            cur.child = None\n\n        prev = cur\n\n    if head:\n        head.prev = None\n        if hasattr(head, 'previous'):\n            head.previous = None\n    return head"
         }
       ]
     }
@@ -138,6 +143,7 @@
   ],
   "starterCodeByLanguage": {
     "javascript": "// Write your solution in JavaScript.\n// Requirement: define a function named flatten(head)\n// head is either null or a doubly-linked node with { value/val, next, prev/previous, child }\n// Return: head of the flattened list\n\nfunction flatten(head) {\n  // TODO: implement\n  return head;\n}\n",
-    "csharp": "// Write your solution in C#.\n// Requirement: define a method named Flatten\n\npublic static class Solution\n{\n    public static object Flatten(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n"
+    "csharp": "// Write your solution in C#.\n// Requirement: define a method named Flatten\n\npublic static class Solution\n{\n    public static object Flatten(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n",
+    "python": "# Write your solution in Python.\n# Requirement: define a function named flatten\n\ndef flatten(*args):\n    # TODO: implement\n    return None\n"
   }
 }

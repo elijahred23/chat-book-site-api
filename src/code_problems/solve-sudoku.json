@@ -33,6 +33,11 @@
           "title": "C#",
           "language": "csharp",
           "body": "void SolveSudoku(char[][] board)\n{\n    var rows = new HashSet<char>[9];\n    var cols = new HashSet<char>[9];\n    var boxes = new HashSet<char>[9];\n    for (int i = 0; i < 9; i++)\n    {\n        rows[i] = new HashSet<char>();\n        cols[i] = new HashSet<char>();\n        boxes[i] = new HashSet<char>();\n    }\n\n    var empties = new List<(int r, int c)>();\n\n    for (int r = 0; r < 9; r++)\n    {\n        for (int c = 0; c < 9; c++)\n        {\n            char ch = board[r][c];\n            if (ch == '.') empties.Add((r, c));\n            else\n            {\n                rows[r].Add(ch);\n                cols[c].Add(ch);\n                boxes[(r / 3) * 3 + (c / 3)].Add(ch);\n            }\n        }\n    }\n\n    bool Backtrack(int idx)\n    {\n        if (idx == empties.Count) return true;\n        var (r, c) = empties[idx];\n        int b = (r / 3) * 3 + (c / 3);\n\n        for (char d = '1'; d <= '9'; d++)\n        {\n            if (rows[r].Contains(d) || cols[c].Contains(d) || boxes[b].Contains(d)) continue;\n\n            board[r][c] = d;\n            rows[r].Add(d);\n            cols[c].Add(d);\n            boxes[b].Add(d);\n\n            if (Backtrack(idx + 1)) return true;\n\n            board[r][c] = '.';\n            rows[r].Remove(d);\n            cols[c].Remove(d);\n            boxes[b].Remove(d);\n        }\n\n        return false;\n    }\n\n    Backtrack(0);\n}"
+        },
+        {
+          "title": "Python",
+          "language": "python",
+          "body": "def solveSudoku(board):\n    rows = [set() for _ in range(9)]\n    cols = [set() for _ in range(9)]\n    boxes = [set() for _ in range(9)]\n    empties = []\n\n    for r in range(9):\n        for c in range(9):\n            ch = board[r][c]\n            if ch == '.':\n                empties.append((r, c))\n            else:\n                rows[r].add(ch)\n                cols[c].add(ch)\n                boxes[(r // 3) * 3 + (c // 3)].add(ch)\n\n    def backtrack(i=0):\n        if i == len(empties):\n            return True\n\n        r, c = empties[i]\n        b = (r // 3) * 3 + (c // 3)\n\n        for d in '123456789':\n            if d in rows[r] or d in cols[c] or d in boxes[b]:\n                continue\n\n            board[r][c] = d\n            rows[r].add(d)\n            cols[c].add(d)\n            boxes[b].add(d)\n\n            if backtrack(i + 1):\n                return True\n\n            board[r][c] = '.'\n            rows[r].remove(d)\n            cols[c].remove(d)\n            boxes[b].remove(d)\n\n        return False\n\n    backtrack()\n    return board"
         }
       ]
     },
@@ -563,6 +568,7 @@
   ],
   "starterCodeByLanguage": {
     "javascript": "// Write your solution in JavaScript.\n// Requirement: define function solveSudoku(board)\n// Mutate board in-place to a valid solution; leave unchanged if unsolvable.\n\nfunction solveSudoku(board) {\n  // TODO: implement backtracking solver\n}\n",
-    "csharp": "// Write your solution in C#.\n// Requirement: define a method named SolveSudoku\n\npublic static class Solution\n{\n    public static object SolveSudoku(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n"
+    "csharp": "// Write your solution in C#.\n// Requirement: define a method named SolveSudoku\n\npublic static class Solution\n{\n    public static object SolveSudoku(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n",
+    "python": "# Write your solution in Python.\n# Requirement: define a function named solve_sudoku\n\ndef solve_sudoku(*args):\n    # TODO: implement\n    return None\n"
   }
 }

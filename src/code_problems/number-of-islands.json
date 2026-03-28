@@ -29,6 +29,11 @@
           "title": "C#",
           "language": "csharp",
           "body": "int NumIslands(char[][] grid)\n{\n    if (grid == null || grid.Length == 0) return 0;\n    int rows = grid.Length, cols = grid[0].Length;\n    int islands = 0;\n\n    int[][] dirs = { new[] { 1, 0 }, new[] { -1, 0 }, new[] { 0, 1 }, new[] { 0, -1 } };\n\n    for (int r = 0; r < rows; r++)\n    {\n        for (int c = 0; c < cols; c++)\n        {\n            if (grid[r][c] != '1') continue;\n            islands++;\n\n            var q = new Queue<(int, int)>();\n            q.Enqueue((r, c));\n            grid[r][c] = '0';\n\n            while (q.Count > 0)\n            {\n                var (cr, cc) = q.Dequeue();\n                foreach (var d in dirs)\n                {\n                    int nr = cr + d[0], nc = cc + d[1];\n                    if (nr < 0 || nr >= rows || nc < 0 || nc >= cols || grid[nr][nc] != '1') continue;\n                    grid[nr][nc] = '0';\n                    q.Enqueue((nr, nc));\n                }\n            }\n        }\n    }\n\n    return islands;\n}"
+        },
+        {
+          "title": "Python",
+          "language": "python",
+          "body": "from collections import deque\n\n\ndef numIslands(grid):\n    if not grid or not grid[0]:\n        return 0\n\n    rows, cols = len(grid), len(grid[0])\n    islands = 0\n    dirs = [(1, 0), (-1, 0), (0, 1), (0, -1)]\n\n    for r in range(rows):\n        for c in range(cols):\n            if grid[r][c] != '1':\n                continue\n\n            islands += 1\n            q = deque([(r, c)])\n            grid[r][c] = '0'\n\n            while q:\n                cr, cc = q.popleft()\n                for dr, dc in dirs:\n                    nr, nc = cr + dr, cc + dc\n                    if 0 <= nr < rows and 0 <= nc < cols and grid[nr][nc] == '1':\n                        grid[nr][nc] = '0'\n                        q.append((nr, nc))\n\n    return islands"
         }
       ]
     },
@@ -132,6 +137,7 @@
   ],
   "starterCodeByLanguage": {
     "javascript": "// Write your solution in JavaScript.\n// Requirement: define a function named numIslands(grid)\n// Return: number\n\nfunction numIslands(grid) {\n  // TODO: implement\n  return 0;\n}\n",
-    "csharp": "// Write your solution in C#.\n// Requirement: define a method named NumIslands\n\npublic static class Solution\n{\n    public static object NumIslands(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n"
+    "csharp": "// Write your solution in C#.\n// Requirement: define a method named NumIslands\n\npublic static class Solution\n{\n    public static object NumIslands(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n",
+    "python": "# Write your solution in Python.\n# Requirement: define a function named num_islands\n\ndef num_islands(*args):\n    # TODO: implement\n    return None\n"
   }
 }

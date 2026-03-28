@@ -37,6 +37,11 @@
           "title": "C#",
           "language": "csharp",
           "body": "public class ListNode\n{\n    public int val;\n    public ListNode next;\n    public ListNode(int x = 0, ListNode n = null) { val = x; next = n; }\n}\n\nListNode DetectCycleStart(ListNode head)\n{\n    ListNode slow = head, fast = head;\n\n    while (fast != null && fast.next != null)\n    {\n        slow = slow.next;\n        fast = fast.next.next;\n        if (slow == fast)\n        {\n            ListNode p = head;\n            while (p != slow)\n            {\n                p = p.next;\n                slow = slow.next;\n            }\n            return p;\n        }\n    }\n\n    return null;\n}"
+        },
+        {
+          "title": "Python",
+          "language": "python",
+          "body": "def detectCycleStart(head):\n    slow = fast = head\n\n    while fast and fast.next:\n        slow = slow.next\n        fast = fast.next.next\n        if slow is fast:\n            p = head\n            while p is not slow:\n                p = p.next\n                slow = slow.next\n            return p\n\n    return None"
         }
       ]
     }
@@ -92,6 +97,7 @@
   ],
   "starterCodeByLanguage": {
     "javascript": "// Write your solution in JavaScript.\n// Requirement: define a function named detectCycleStart(head)\n// Return: the node where the cycle begins, or null\n\nfunction detectCycleStart(head) {\n  // TODO: implement\n  return null;\n}\n",
-    "csharp": "// Write your solution in C#.\n// Requirement: define a method named DetectCycleStart\n\npublic static class Solution\n{\n    public static object DetectCycleStart(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n"
+    "csharp": "// Write your solution in C#.\n// Requirement: define a method named DetectCycleStart\n\npublic static class Solution\n{\n    public static object DetectCycleStart(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n",
+    "python": "# Write your solution in Python.\n# Requirement: define a function named detect_cycle_start\n\ndef detect_cycle_start(*args):\n    # TODO: implement\n    return None\n"
   }
 }

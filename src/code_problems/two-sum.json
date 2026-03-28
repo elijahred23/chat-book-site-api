@@ -33,6 +33,11 @@
           "title": "C#",
           "language": "csharp",
           "body": "int[] TwoSum(int[] nums, int target)\n{\n    for (int i = 0; i < nums.Length; i++)\n    {\n        for (int j = i + 1; j < nums.Length; j++)\n        {\n            if (nums[i] + nums[j] == target) return new[] { i, j };\n        }\n    }\n    return null;\n}"
+        },
+        {
+          "title": "Python",
+          "language": "python",
+          "body": "def twoSum(nums, target):\n    for i in range(len(nums)):\n        for j in range(i + 1, len(nums)):\n            if nums[i] + nums[j] == target:\n                return [i, j]\n    return None"
         }
       ]
     },
@@ -52,6 +57,11 @@
           "title": "C#",
           "language": "csharp",
           "body": "int[] TwoSum(int[] nums, int target)\n{\n    var seen = new Dictionary<int, int>();\n\n    for (int i = 0; i < nums.Length; i++)\n    {\n        int need = target - nums[i];\n        if (seen.TryGetValue(need, out int j)) return new[] { j, i };\n        seen[nums[i]] = i;\n    }\n\n    return null;\n}"
+        },
+        {
+          "title": "Python",
+          "language": "python",
+          "body": "def twoSum(nums, target):\n    seen = {}\n    for i, x in enumerate(nums):\n        need = target - x\n        if need in seen:\n            return [seen[need], i]\n        seen[x] = i\n    return None"
         }
       ]
     }
@@ -126,6 +136,7 @@
   ],
   "starterCodeByLanguage": {
     "javascript": "// Write your solution in JavaScript.\n// Requirement: define a function named twoSum(nums, target)\n// Return: [i, j] indices or null\n\nfunction twoSum(nums, target) {\n  // TODO: implement\n  return null;\n}\n",
-    "csharp": "// Write your solution in C#.\n// Requirement: define a method named TwoSum\n\npublic static class Solution\n{\n    public static object TwoSum(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n"
+    "csharp": "// Write your solution in C#.\n// Requirement: define a method named TwoSum\n\npublic static class Solution\n{\n    public static object TwoSum(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n",
+    "python": "# Write your solution in Python.\n# Requirement: define a function named two_sum\n\ndef two_sum(*args):\n    # TODO: implement\n    return None\n"
   }
 }

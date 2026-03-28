@@ -29,6 +29,11 @@
           "title": "C#",
           "language": "csharp",
           "body": "public class TreeNode\n{\n    public int val;\n    public TreeNode left;\n    public TreeNode right;\n}\n\nint LeftHeight(TreeNode node)\n{\n    int h = 0;\n    while (node != null) { h++; node = node.left; }\n    return h;\n}\n\nint RightHeight(TreeNode node)\n{\n    int h = 0;\n    while (node != null) { h++; node = node.right; }\n    return h;\n}\n\nint CountNodes(TreeNode root)\n{\n    if (root == null) return 0;\n\n    int lh = LeftHeight(root);\n    int rh = RightHeight(root);\n\n    if (lh == rh) return (1 << lh) - 1;\n    return 1 + CountNodes(root.left) + CountNodes(root.right);\n}"
+        },
+        {
+          "title": "Python",
+          "language": "python",
+          "body": "def left_height(node):\n    h = 0\n    while node:\n        h += 1\n        node = node.left\n    return h\n\n\ndef right_height(node):\n    h = 0\n    while node:\n        h += 1\n        node = node.right\n    return h\n\n\ndef countNodes(root):\n    if not root:\n        return 0\n\n    lh = left_height(root)\n    rh = right_height(root)\n\n    if lh == rh:\n        return (1 << lh) - 1\n\n    return 1 + countNodes(root.left) + countNodes(root.right)"
         }
       ]
     },
@@ -96,6 +101,7 @@
   ],
   "starterCodeByLanguage": {
     "javascript": "// Write your solution in JavaScript.\n// Requirement: define a function named countNodes(root)\n// Return: number\n\nfunction countNodes(root) {\n  // TODO: implement\n  return 0;\n}\n",
-    "csharp": "// Write your solution in C#.\n// Requirement: define a method named CountNodes\n\npublic static class Solution\n{\n    public static object CountNodes(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n"
+    "csharp": "// Write your solution in C#.\n// Requirement: define a method named CountNodes\n\npublic static class Solution\n{\n    public static object CountNodes(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n",
+    "python": "# Write your solution in Python.\n# Requirement: define a function named count_nodes\n\ndef count_nodes(*args):\n    # TODO: implement\n    return None\n"
   }
 }

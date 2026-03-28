@@ -29,6 +29,11 @@
           "title": "C#",
           "language": "csharp",
           "body": "string MinRemoveToMakeValid(string s)\n{\n    var chars = s.ToCharArray();\n    var stack = new Stack<int>();\n\n    for (int i = 0; i < chars.Length; i++)\n    {\n        if (chars[i] == '(') stack.Push(i);\n        else if (chars[i] == ')')\n        {\n            if (stack.Count > 0) stack.Pop();\n            else chars[i] = '\\0';\n        }\n    }\n\n    while (stack.Count > 0) chars[stack.Pop()] = '\\0';\n\n    var sb = new System.Text.StringBuilder();\n    foreach (char ch in chars) if (ch != '\\0') sb.Append(ch);\n    return sb.ToString();\n}"
+        },
+        {
+          "title": "Python",
+          "language": "python",
+          "body": "def minRemoveToMakeValid(s):\n    chars = list(s)\n    stack = []\n\n    for i, ch in enumerate(chars):\n        if ch == '(':\n            stack.append(i)\n        elif ch == ')':\n            if stack:\n                stack.pop()\n            else:\n                chars[i] = ''\n\n    for i in stack:\n        chars[i] = ''\n\n    return ''.join(chars)"
         }
       ]
     },
@@ -66,6 +71,7 @@
   ],
   "starterCodeByLanguage": {
     "javascript": "// Write your solution in JavaScript.\n// Requirement: define a function named minRemoveToMakeValid(s)\n// Return: string\n\nfunction minRemoveToMakeValid(s) {\n  // TODO: implement\n  return \"\";\n}\n",
-    "csharp": "// Write your solution in C#.\n// Requirement: define a method named MinRemoveToMakeValid\n\npublic static class Solution\n{\n    public static object MinRemoveToMakeValid(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n"
+    "csharp": "// Write your solution in C#.\n// Requirement: define a method named MinRemoveToMakeValid\n\npublic static class Solution\n{\n    public static object MinRemoveToMakeValid(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n",
+    "python": "# Write your solution in Python.\n# Requirement: define a function named min_remove_to_make_valid\n\ndef min_remove_to_make_valid(*args):\n    # TODO: implement\n    return None\n"
   }
 }

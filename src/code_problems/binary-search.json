@@ -29,6 +29,11 @@
           "title": "C#",
           "language": "csharp",
           "body": "int BinarySearch(int[] nums, int target)\n{\n    int left = 0, right = nums.Length - 1;\n    while (left <= right)\n    {\n        int mid = left + (right - left) / 2;\n        if (nums[mid] == target) return mid;\n        if (nums[mid] < target) left = mid + 1;\n        else right = mid - 1;\n    }\n    return -1;\n}"
+        },
+        {
+          "title": "Python",
+          "language": "python",
+          "body": "def binarySearch(nums, target):\n    left, right = 0, len(nums) - 1\n\n    while left <= right:\n        mid = left + (right - left) // 2\n        if nums[mid] == target:\n            return mid\n        if nums[mid] < target:\n            left = mid + 1\n        else:\n            right = mid - 1\n\n    return -1"
         }
       ]
     },
@@ -96,6 +101,7 @@
   ],
   "starterCodeByLanguage": {
     "javascript": "// Write your solution in JavaScript.\n// Requirement: define a function named binarySearch(nums, target)\n// Return: index (number) or -1\n\nfunction binarySearch(nums, target) {\n  // TODO: implement\n  return -1;\n}\n",
-    "csharp": "// Write your solution in C#.\n// Requirement: define a method named BinarySearch\n\npublic static class Solution\n{\n    public static object BinarySearch(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n"
+    "csharp": "// Write your solution in C#.\n// Requirement: define a method named BinarySearch\n\npublic static class Solution\n{\n    public static object BinarySearch(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n",
+    "python": "# Write your solution in Python.\n# Requirement: define a function named binary_search\n\ndef binary_search(*args):\n    # TODO: implement\n    return None\n"
   }
 }

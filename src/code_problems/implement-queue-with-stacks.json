@@ -29,6 +29,11 @@
           "title": "C#",
           "language": "csharp",
           "body": "public class QueueWithStacks\n{\n    private readonly Stack<int> inStack = new Stack<int>();\n    private readonly Stack<int> outStack = new Stack<int>();\n\n    public void enqueue(int x)\n    {\n        inStack.Push(x);\n    }\n\n    public int? dequeue()\n    {\n        Shift();\n        return outStack.Count > 0 ? outStack.Pop() : (int?)null;\n    }\n\n    public int? peek()\n    {\n        Shift();\n        return outStack.Count > 0 ? outStack.Peek() : (int?)null;\n    }\n\n    public bool empty()\n    {\n        return inStack.Count == 0 && outStack.Count == 0;\n    }\n\n    private void Shift()\n    {\n        if (outStack.Count > 0) return;\n        while (inStack.Count > 0) outStack.Push(inStack.Pop());\n    }\n}"
+        },
+        {
+          "title": "Python",
+          "language": "python",
+          "body": "class QueueWithStacks:\n    def __init__(self):\n        self._in = []\n        self._out = []\n\n    def enqueue(self, x):\n        self._in.append(x)\n\n    def _shift(self):\n        if self._out:\n            return\n        while self._in:\n            self._out.append(self._in.pop())\n\n    def dequeue(self):\n        self._shift()\n        return self._out.pop() if self._out else None\n\n    def peek(self):\n        self._shift()\n        return self._out[-1] if self._out else None\n\n    def empty(self):\n        return not self._in and not self._out"
         }
       ]
     },
@@ -148,6 +153,7 @@
   ],
   "starterCodeByLanguage": {
     "javascript": "// Write your solution in JavaScript.\n// Requirement: define a class named QueueWithStacks\n// Methods: enqueue(x), dequeue(), peek(), empty()\n\nclass QueueWithStacks {\n  constructor() {\n    // TODO: initialize stacks\n  }\n\n  enqueue(x) {\n    // TODO: implement\n  }\n\n  dequeue() {\n    // TODO: implement\n  }\n\n  peek() {\n    // TODO: implement\n  }\n\n  empty() {\n    // TODO: implement\n  }\n}\n",
-    "csharp": "// Write your solution in C#.\n// Requirement: define a class named QueueWithStacks\n\npublic class QueueWithStacks\n{\n    // TODO: implement\n}\n"
+    "csharp": "// Write your solution in C#.\n// Requirement: define a class named QueueWithStacks\n\npublic class QueueWithStacks\n{\n    // TODO: implement\n}\n",
+    "python": "# Write your solution in Python.\n# Requirement: define a class named QueueWithStacks\n\nclass QueueWithStacks:\n    def __init__(self, *args, **kwargs):\n        # TODO: implement\n        pass\n"
   }
 }

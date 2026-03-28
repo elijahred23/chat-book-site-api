@@ -28,6 +28,11 @@
           "title": "C#",
           "language": "csharp",
           "body": "int MaxArea(int[] height)\n{\n    int best = 0;\n    for (int i = 0; i < height.Length; i++)\n    {\n        for (int j = i + 1; j < height.Length; j++)\n        {\n            int area = Math.Min(height[i], height[j]) * (j - i);\n            if (area > best) best = area;\n        }\n    }\n    return best;\n}"
+        },
+        {
+          "title": "Python",
+          "language": "python",
+          "body": "def maxArea(height):\n    best = 0\n    n = len(height)\n\n    for i in range(n):\n        for j in range(i + 1, n):\n            area = min(height[i], height[j]) * (j - i)\n            best = max(best, area)\n\n    return best"
         }
       ]
     },
@@ -47,6 +52,11 @@
           "title": "C#",
           "language": "csharp",
           "body": "int MaxArea(int[] height)\n{\n    int left = 0, right = height.Length - 1, best = 0;\n    while (left < right)\n    {\n        int area = Math.Min(height[left], height[right]) * (right - left);\n        if (area > best) best = area;\n\n        if (height[left] < height[right]) left++;\n        else right--;\n    }\n    return best;\n}"
+        },
+        {
+          "title": "Python",
+          "language": "python",
+          "body": "def maxArea(height):\n    left, right = 0, len(height) - 1\n    best = 0\n\n    while left < right:\n        area = min(height[left], height[right]) * (right - left)\n        best = max(best, area)\n\n        if height[left] < height[right]:\n            left += 1\n        else:\n            right -= 1\n\n    return best"
         }
       ]
     }
@@ -90,6 +100,7 @@
   ],
   "starterCodeByLanguage": {
     "javascript": "// Write your solution in JavaScript.\n// Requirement: define a function named maxArea(height)\n// Return: a number (max area)\n\nfunction maxArea(height) {\n  // TODO: implement\n  return 0;\n}\n",
-    "csharp": "// Write your solution in C#.\n// Requirement: define a method named MaxArea\n\npublic static class Solution\n{\n    public static object MaxArea(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n"
+    "csharp": "// Write your solution in C#.\n// Requirement: define a method named MaxArea\n\npublic static class Solution\n{\n    public static object MaxArea(/* TODO: parameters */)\n    {\n        // TODO: implement\n        return null;\n    }\n}\n",
+    "python": "# Write your solution in Python.\n# Requirement: define a function named max_area\n\ndef max_area(*args):\n    # TODO: implement\n    return None\n"
   }
 }
