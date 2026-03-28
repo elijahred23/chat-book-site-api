@@ -2,12 +2,20 @@ import { spawn } from 'child_process';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import * as youtubeTranscriptModule from 'youtube-transcript';
+import { createRequire } from 'module';
 
-const YoutubeTranscript =
-  youtubeTranscriptModule.YoutubeTranscript ||
-  youtubeTranscriptModule.default?.YoutubeTranscript ||
-  youtubeTranscriptModule.default;
+const require = createRequire(import.meta.url);
+let YoutubeTranscript = null;
+try {
+  const youtubeTranscriptModule = require('youtube-transcript');
+  YoutubeTranscript =
+    youtubeTranscriptModule?.YoutubeTranscript ||
+    youtubeTranscriptModule?.default?.YoutubeTranscript ||
+    youtubeTranscriptModule?.default ||
+    youtubeTranscriptModule;
+} catch {
+  YoutubeTranscript = null;
+}
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -119,26 +127,30 @@ export const fetchTranscriptForVideo = async (videoIdOrUrl) => {
   }
 
   // 2) Fallback: youtube-transcript npm package
-  for (const lang of DEFAULT_LANGS) {
+  if (YoutubeTranscript && typeof YoutubeTranscript.fetchTranscript === 'function') {
+    for (const lang of DEFAULT_LANGS) {
+      try {
+        const items = await YoutubeTranscript.fetchTranscript(videoIdOrUrl, { lang });
+        const text = joinTranscript(items);
+        if (text) return text;
+        throw new Error(`empty transcript lang=${lang}`);
+      } catch (err) {
+        lastErr = err;
+        logError(err, `fetchTranscript npm lang=${lang}`);
+      }
+    }
+
+    // 3) Package default language choice
     try {
-      const items = await YoutubeTranscript.fetchTranscript(videoIdOrUrl, { lang });
+      const items = await YoutubeTranscript.fetchTranscript(videoIdOrUrl);
       const text = joinTranscript(items);
       if (text) return text;
-      throw new Error(`empty transcript lang=${lang}`);
     } catch (err) {
       lastErr = err;
-      logError(err, `fetchTranscript npm lang=${lang}`);
+      logError(err, 'fetchTranscript npm default');
     }
-  }
-
-  // 3) Package default language choice
-  try {
-    const items = await YoutubeTranscript.fetchTranscript(videoIdOrUrl);
-    const text = joinTranscript(items);
-    if (text) return text;
-  } catch (err) {
-    lastErr = err;
-    logError(err, 'fetchTranscript npm default');
+  } else {
+    logError(new Error('youtube-transcript package unavailable in runtime'), 'fetchTranscript npm unavailable');
   }
 
   throw lastErr || new Error('Failed to fetch transcript');
