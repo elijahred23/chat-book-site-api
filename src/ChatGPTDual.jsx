@@ -40,6 +40,7 @@ const RESPONSE_FORMATS = [
   { value: "bold_terms", label: "Bold terms + brief explanations", instruction: "Start each line with a bolded term followed by a short explanation. No headings." },
   { value: "code_blocks_only", label: "Code blocks only", instruction: "Respond using only code blocks where applicable. No explanations or other text." },
   { value: "code_blocks_only_no_comments", label: "Code blocks only (no comments)", instruction: "Respond using only code blocks where applicable. No explanations, comments within the code what so ever, or other text." },
+  { value: "code_blocks_only_files_and_console_commands", label: "Code blocks only (files + console commands)", instruction: "Respond using only code blocks. Only comments should be when giving codeblocks a file name. (//Program.cs). Show command line commands if applicable. No explanations or other text." },
 ];
 
 export default function ChatGPTDual({ isCollapsed = false, hidePrompt = false, isOpen = false, onClose = () => {}, onToggleCollapse = () => {}, onTogglePrompt = () => {} }) {

@@ -378,6 +378,7 @@ greet("world");`)
         <div className="footer" style={{color:"white"}}>
           <div>Loaded: {normalized.length} • Typed: {typed.length} • Correct: {correctChars}</div>
           <div>Elapsed: {(elapsedMs/1000).toFixed(1)}s</div>
+          <div>Elapsed: {(elapsedMs / 60000).toFixed(2)} min</div>
           <div>Focus: {focusing ? 'capturing keys' : 'click Focus'}</div>
         </div>
       </div>

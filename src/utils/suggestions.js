@@ -3,6 +3,7 @@ export const CODE_SUGGESTIONS = [
   { label: "Explain Code", value: "Explain what this code does step by step. Do NOT include any code in your response—only explanation in plain English." },
   { label: "Code Example", value: "Provide an example of this text in practice"},
   { label: "Explain Out Loud", value: "Explain this code in natural spoken language (as if reading it aloud to a human). Avoid jargon where possible, describe what each part is doing and why, and keep it easy to follow. Do not return any programming code, just explanation" },
+  { label: "One Example", value: "Provide one example, if multiple subjects try to provide one example for each subject, if not able to then one example for each subject"},
 
   // 🧠 Debugging and Troubleshooting
   { label: "Fix Bugs", value: "Find and fix potential bugs or logic errors in this code" },
