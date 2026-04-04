@@ -38,6 +38,7 @@ greet("world");`)
   const [tabSize, setTabSize] = useState(2)
   const [showWhitespace, setShowWhitespace] = useState(false)
   const [autoStart, setAutoStart] = useState(false)
+  const [ignoreCaseSensitivity, setIgnoreCaseSensitivity] = useState(false)
 
   const hiddenInputRef = useRef(null)
 
@@ -247,7 +248,12 @@ greet("world");`)
     // Allow any character when expected char is non-keyboard (e.g., unusual unicode)
     const keyboardChars = /^[\x20-\x7E]$/; // printable ASCII
     const isExpectedKeyboardChar = keyboardChars.test(expected) || expected === '\n' || expected === '\t' || expected === ' ';
-    const isCorrect = ch === expected || !isExpectedKeyboardChar;
+    const normalizeChar = (c) =>
+    ignoreCaseSensitivity ? c.toLowerCase() : c;
+
+    const isCorrect =
+      (!isExpectedKeyboardChar) ||
+      (normalizeChar(ch) === normalizeChar(expected));
 
     setTyped(typed + ch)
     setCaret(nextIndex + 1)
@@ -268,7 +274,12 @@ greet("world");`)
       const exp = normalized[i]
       const got = typed[i]
       let cls = ''
-      if (i < typed.length) cls = (got === exp) ? 'ok' : 'bad'
+      const normalizeChar = (c) =>
+      ignoreCaseSensitivity ? c.toLowerCase() : c;
+
+      if (i < typed.length) {
+        cls = normalizeChar(got) === normalizeChar(exp) ? 'ok' : 'bad';
+      }
       else if (i === typed.length && started && !finished) cls = 'current'
       const charToShow = showWhitespace ? visualize(exp) : exp
       parts.push(<span key={i} className={cls}>{charToShow}</span>)
@@ -283,6 +294,10 @@ greet("world");`)
     return ch
   }
   const focusing = hiddenInputRef.current === document.activeElement;
+
+  useEffect(()=>{
+    console.log({ignoreCaseSensitivity})
+  }, [ignoreCaseSensitivity])
 
   return (
     <div className="typing-shell">
@@ -330,6 +345,10 @@ greet("world");`)
             <label className="small" style={{ display: 'flex', alignItems: 'center', gap: 8, color:"white" }}>
               <input type="checkbox" checked={showWhitespace} onChange={(e) => setShowWhitespace(e.target.checked)} />
               Show whitespace
+            </label>
+            <label className="small" style={{ display: 'flex', alignItems: 'center', gap: 8, color:"white" }}>
+              <input type="checkbox" checked={ignoreCaseSensitivity} onChange={(e) => setIgnoreCaseSensitivity(e.target.checked)} />
+              Ignore case sensitivity
             </label>
             <span style={{color:"white"}}className="small">Shortcuts: <kbd>Esc</kbd> to stop, <kbd>Backspace</kbd> to correct</span>
           </div>
