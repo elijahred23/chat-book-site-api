@@ -149,6 +149,8 @@ greet("world");`)
     // Collapse multiple newlines
     text = text.replace(/\n{3,}/g, '\n\n');
 
+    text = text.replace(/\n (?! )/g, '\n');
+
     return text.trim();
   }
 
