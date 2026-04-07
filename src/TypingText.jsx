@@ -48,6 +48,36 @@ greet("world");`)
     return loaded.replaceAll('\t', tab)
   }, [loaded, tabSize])
 
+  const SHIFT_TO_UNSHIFTED = useMemo(() => ({
+    '~': '`',
+    '!': '1',
+    '@': '2',
+    '#': '3',
+    '$': '4',
+    '%': '5',
+    '^': '6',
+    '&': '7',
+    '*': '8',
+    '(': '9',
+    ')': '0',
+    '_': '-',
+    '+': '=',
+    '{': '[',
+    '}': ']',
+    '|': '\\',
+    ':': ';',
+    '"': '\'',
+    '<': ',',
+    '>': '.',
+    '?': '/',
+  }), [])
+
+  const normalizeForComparison = (c) => {
+    if (!ignoreCaseSensitivity) return c
+    const lower = c.toLowerCase()
+    return SHIFT_TO_UNSHIFTED[lower] ?? lower
+  }
+
   // Focus the hidden input when started so we capture keystrokes anywhere
   useEffect(() => {
     if (started && !finished) hiddenInputRef.current?.focus()
@@ -73,10 +103,10 @@ greet("world");`)
     // count from 0..caret how many are correct vs normalized
     let ok = 0
     for (let i = 0; i < Math.min(caret, normalized.length); i++) {
-      if (typed[i] === normalized[i]) ok++
+      if (normalizeForComparison(typed[i]) === normalizeForComparison(normalized[i])) ok++
     }
     return ok
-  }, [typed, caret, normalized])
+  }, [typed, caret, normalized, ignoreCaseSensitivity, SHIFT_TO_UNSHIFTED])
 
   const typedChars = typed.length
   const minutes = Math.max(elapsedMs / 60000, 1e-6)
@@ -250,12 +280,9 @@ greet("world");`)
     // Allow any character when expected char is non-keyboard (e.g., unusual unicode)
     const keyboardChars = /^[\x20-\x7E]$/; // printable ASCII
     const isExpectedKeyboardChar = keyboardChars.test(expected) || expected === '\n' || expected === '\t' || expected === ' ';
-    const normalizeChar = (c) =>
-    ignoreCaseSensitivity ? c.toLowerCase() : c;
-
     const isCorrect =
       (!isExpectedKeyboardChar) ||
-      (normalizeChar(ch) === normalizeChar(expected));
+      (normalizeForComparison(ch) === normalizeForComparison(expected));
 
     setTyped(typed + ch)
     setCaret(nextIndex + 1)
@@ -276,11 +303,9 @@ greet("world");`)
       const exp = normalized[i]
       const got = typed[i]
       let cls = ''
-      const normalizeChar = (c) =>
-      ignoreCaseSensitivity ? c.toLowerCase() : c;
 
       if (i < typed.length) {
-        cls = normalizeChar(got) === normalizeChar(exp) ? 'ok' : 'bad';
+        cls = normalizeForComparison(got) === normalizeForComparison(exp) ? 'ok' : 'bad';
       }
       else if (i === typed.length && started && !finished) cls = 'current'
       const charToShow = showWhitespace ? visualize(exp) : exp
@@ -296,10 +321,6 @@ greet("world");`)
     return ch
   }
   const focusing = hiddenInputRef.current === document.activeElement;
-
-  useEffect(()=>{
-    console.log({ignoreCaseSensitivity})
-  }, [ignoreCaseSensitivity])
 
   return (
     <div className="typing-shell">
