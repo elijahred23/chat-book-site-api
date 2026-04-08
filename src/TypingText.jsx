@@ -40,9 +40,11 @@ greet("world");`)
   const [autoStart, setAutoStart] = useState(false)
   const [ignoreCaseSensitivity, setIgnoreCaseSensitivity] = useState(true)
   const [skipSpaces, setSkipSpaces] = useState(true)
+  const [skipNonAlphanumeric, setSkipNonAlphanumeric] = useState(false)
 
   const hiddenInputRef = useRef(null)
   const currentCharRef = useRef(null)
+  const CHECKBOX_PREFS_KEY = 'typing-test-checkbox-prefs-v1'
 
   // Replace tabs according to UI setting for a consistent target text
   const normalized = useMemo(() => {
@@ -80,10 +82,82 @@ greet("world");`)
     return SHIFT_TO_UNSHIFTED[lower] ?? lower
   }
 
+  const isAlphaNumeric = (c) => /[a-z0-9]/i.test(c)
+
+  const applyAutoSkips = (startIndex, startTyped, { skipLineBreaks = false } = {}) => {
+    let idx = startIndex
+    let txt = startTyped
+
+    while (idx < normalized.length) {
+      if (skipLineBreaks && normalized[idx] === '\n') {
+        let j = idx
+        while (j < normalized.length && normalized[j] === '\n') j++
+        txt += '\n'.repeat(j - idx)
+        idx = j
+        continue
+      }
+
+      const atLineStart = idx === 0 || normalized[idx - 1] === '\n'
+      if (atLineStart && normalized[idx] === ' ') {
+        let j = idx
+        while (j < normalized.length && normalized[j] === ' ') j++
+        txt += ' '.repeat(j - idx)
+        idx = j
+        continue
+      }
+
+      if (skipSpaces && normalized[idx] === ' ') {
+        let j = idx
+        while (j < normalized.length && normalized[j] === ' ') j++
+        txt += ' '.repeat(j - idx)
+        idx = j
+        continue
+      }
+
+      if (skipNonAlphanumeric && !isAlphaNumeric(normalized[idx])) {
+        let j = idx
+        while (j < normalized.length && !isAlphaNumeric(normalized[j])) j++
+        txt += normalized.slice(idx, j)
+        idx = j
+        continue
+      }
+
+      break
+    }
+
+    return { nextIndex: idx, nextTyped: txt }
+  }
+
   // Focus the hidden input when started so we capture keystrokes anywhere
   useEffect(() => {
     if (started && !finished) hiddenInputRef.current?.focus()
   }, [started, finished])
+
+  useEffect(() => {
+    try {
+      const raw = localStorage.getItem(CHECKBOX_PREFS_KEY)
+      if (!raw) return
+      const prefs = JSON.parse(raw)
+      if (typeof prefs.showWhitespace === 'boolean') setShowWhitespace(prefs.showWhitespace)
+      if (typeof prefs.ignoreCaseSensitivity === 'boolean') setIgnoreCaseSensitivity(prefs.ignoreCaseSensitivity)
+      if (typeof prefs.skipSpaces === 'boolean') setSkipSpaces(prefs.skipSpaces)
+      if (typeof prefs.skipNonAlphanumeric === 'boolean') setSkipNonAlphanumeric(prefs.skipNonAlphanumeric)
+    } catch {
+      // Ignore invalid localStorage payload
+    }
+  }, [])
+
+  useEffect(() => {
+    localStorage.setItem(
+      CHECKBOX_PREFS_KEY,
+      JSON.stringify({
+        showWhitespace,
+        ignoreCaseSensitivity,
+        skipSpaces,
+        skipNonAlphanumeric,
+      })
+    )
+  }, [showWhitespace, ignoreCaseSensitivity, skipSpaces, skipNonAlphanumeric])
 
   useEffect(() => {
     if (!started || finished) return
@@ -255,28 +329,7 @@ greet("world");`)
     const ch = key === 'Enter' ? '\n' : key.length === 1 ? key : ''
     if (!ch) return
 
-    let nextIndex = caret
-    let nextTyped = typed
-
-    // Auto-skip indentation at the start of any line (including file start).
-    const atLineStart =
-      nextIndex === 0 || normalized[nextIndex - 1] === '\n'
-    if (atLineStart && normalized[nextIndex] === ' ') {
-      let j = nextIndex
-      while (j < normalized.length && normalized[j] === ' ') j++
-      const indentLen = j - nextIndex
-      nextTyped += ' '.repeat(indentLen)
-      nextIndex = j
-    }
-
-    // Optional mode: auto-skip spaces anywhere.
-    if (skipSpaces && normalized[nextIndex] === ' ') {
-      let j = nextIndex
-      while (j < normalized.length && normalized[j] === ' ') j++
-      const runLen = j - nextIndex
-      nextTyped += ' '.repeat(runLen)
-      nextIndex = j
-    }
+    let { nextIndex, nextTyped } = applyAutoSkips(caret, typed)
 
     const expected = normalized[nextIndex] ?? ''
 
@@ -311,9 +364,14 @@ greet("world");`)
       const runLen = j - nextIndex
       const totalAdvance = runLen + indentLen
 
-      setTyped(nextTyped + '\n'.repeat(runLen) + ' '.repeat(indentLen))
-      setCaret(nextIndex + totalAdvance)
-      if (nextIndex + totalAdvance >= normalized.length) { setFinished(true); setStarted(false) }
+      const afterEnter = applyAutoSkips(
+        nextIndex + totalAdvance,
+        nextTyped + '\n'.repeat(runLen) + ' '.repeat(indentLen)
+      )
+
+      setTyped(afterEnter.nextTyped)
+      setCaret(afterEnter.nextIndex)
+      if (afterEnter.nextIndex >= normalized.length) { setFinished(true); setStarted(false) }
       return
     }
     // --- END new behavior ---
@@ -330,34 +388,11 @@ greet("world");`)
     let finalCaret = nextIndex + 1
 
     // If a correct character ends a line, auto-advance through newline(s)
-    // and any leading spaces of the next line.
+    // and any configured skippable chars.
     if (isCorrect) {
-      let j = finalCaret
-      while (j < normalized.length && normalized[j] === '\n') j++
-      const newlineRunLen = j - finalCaret
-      if (newlineRunLen > 0) {
-        finalTyped += '\n'.repeat(newlineRunLen)
-        finalCaret = j
-
-        let indentLen = 0
-        while (finalCaret + indentLen < normalized.length && normalized[finalCaret + indentLen] === ' ') {
-          indentLen++
-        }
-        if (indentLen > 0) {
-          finalTyped += ' '.repeat(indentLen)
-          finalCaret += indentLen
-        }
-      }
-
-      if (skipSpaces) {
-        let k = finalCaret
-        while (k < normalized.length && normalized[k] === ' ') k++
-        const spaceRunLen = k - finalCaret
-        if (spaceRunLen > 0) {
-          finalTyped += ' '.repeat(spaceRunLen)
-          finalCaret = k
-        }
-      }
+      const afterCorrect = applyAutoSkips(finalCaret, finalTyped, { skipLineBreaks: true })
+      finalCaret = afterCorrect.nextIndex
+      finalTyped = afterCorrect.nextTyped
     }
 
     setTyped(finalTyped)
@@ -460,6 +495,10 @@ greet("world");`)
             <label className="small" style={{ display: 'flex', alignItems: 'center', gap: 8, color:"white" }}>
               <input type="checkbox" checked={skipSpaces} onChange={(e) => setSkipSpaces(e.target.checked)} />
               Auto-skip spaces
+            </label>
+            <label className="small" style={{ display: 'flex', alignItems: 'center', gap: 8, color:"white" }}>
+              <input type="checkbox" checked={skipNonAlphanumeric} onChange={(e) => setSkipNonAlphanumeric(e.target.checked)} />
+              Skip non-letters/numbers
             </label>
             <span style={{color:"white"}}className="small">Shortcuts: <kbd>Esc</kbd> to stop, <kbd>Backspace</kbd> to correct</span>
           </div>
