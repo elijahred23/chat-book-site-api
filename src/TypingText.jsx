@@ -42,6 +42,7 @@ greet("world");`)
   const [skipSpaces, setSkipSpaces] = useState(true)
 
   const hiddenInputRef = useRef(null)
+  const currentCharRef = useRef(null)
 
   // Replace tabs according to UI setting for a consistent target text
   const normalized = useMemo(() => {
@@ -83,6 +84,11 @@ greet("world");`)
   useEffect(() => {
     if (started && !finished) hiddenInputRef.current?.focus()
   }, [started, finished])
+
+  useEffect(() => {
+    if (!started || finished) return
+    currentCharRef.current?.scrollIntoView({ block: 'center', inline: 'nearest' })
+  }, [typed, started, finished, caret])
 
   const focus = () => {
     hiddenInputRef.current?.focus()
@@ -379,7 +385,15 @@ greet("world");`)
       }
       else if (i === typed.length && started && !finished) cls = 'current'
       const charToShow = showWhitespace ? visualize(exp) : exp
-      parts.push(<span key={i} className={cls}>{charToShow}</span>)
+      parts.push(
+        <span
+          key={i}
+          className={cls}
+          ref={i === typed.length && started && !finished ? currentCharRef : null}
+        >
+          {charToShow}
+        </span>
+      )
     }
     return parts
   }
