@@ -38,7 +38,8 @@ greet("world");`)
   const [tabSize, setTabSize] = useState(2)
   const [showWhitespace, setShowWhitespace] = useState(false)
   const [autoStart, setAutoStart] = useState(false)
-  const [ignoreCaseSensitivity, setIgnoreCaseSensitivity] = useState(false)
+  const [ignoreCaseSensitivity, setIgnoreCaseSensitivity] = useState(true)
+  const [skipSpaces, setSkipSpaces] = useState(true)
 
   const hiddenInputRef = useRef(null)
 
@@ -248,7 +249,29 @@ greet("world");`)
     const ch = key === 'Enter' ? '\n' : key.length === 1 ? key : ''
     if (!ch) return
 
-    const nextIndex = caret
+    let nextIndex = caret
+    let nextTyped = typed
+
+    // Auto-skip indentation at the start of any line (including file start).
+    const atLineStart =
+      nextIndex === 0 || normalized[nextIndex - 1] === '\n'
+    if (atLineStart && normalized[nextIndex] === ' ') {
+      let j = nextIndex
+      while (j < normalized.length && normalized[j] === ' ') j++
+      const indentLen = j - nextIndex
+      nextTyped += ' '.repeat(indentLen)
+      nextIndex = j
+    }
+
+    // Optional mode: auto-skip spaces anywhere.
+    if (skipSpaces && normalized[nextIndex] === ' ') {
+      let j = nextIndex
+      while (j < normalized.length && normalized[j] === ' ') j++
+      const runLen = j - nextIndex
+      nextTyped += ' '.repeat(runLen)
+      nextIndex = j
+    }
+
     const expected = normalized[nextIndex] ?? ''
 
     // --- NEW BEHAVIOR: whitespace collapsing ---
@@ -258,20 +281,33 @@ greet("world");`)
       let j = nextIndex
       while (j < normalized.length && normalized[j] === ' ') j++
       const runLen = j - nextIndex
-      setTyped(typed + ' '.repeat(runLen))
+      setTyped(nextTyped + ' '.repeat(runLen))
       setCaret(nextIndex + runLen)
       if (nextIndex + runLen >= normalized.length) { setFinished(true); setStarted(false) }
       return
     }
 
     // If user presses Enter and we're at a run of newlines, advance across the whole run.
+    // Also skip leading indentation on the next line so users can jump straight
+    // to the first non-space character.
     if (ch === '\n' && expected === '\n') {
       let j = nextIndex
       while (j < normalized.length && normalized[j] === '\n') j++
+
+      let indentLen = 0
+      while (
+        j + indentLen < normalized.length &&
+        normalized[j + indentLen] === ' '
+      ) {
+        indentLen++
+      }
+
       const runLen = j - nextIndex
-      setTyped(typed + '\n'.repeat(runLen))
-      setCaret(nextIndex + runLen)
-      if (nextIndex + runLen >= normalized.length) { setFinished(true); setStarted(false) }
+      const totalAdvance = runLen + indentLen
+
+      setTyped(nextTyped + '\n'.repeat(runLen) + ' '.repeat(indentLen))
+      setCaret(nextIndex + totalAdvance)
+      if (nextIndex + totalAdvance >= normalized.length) { setFinished(true); setStarted(false) }
       return
     }
     // --- END new behavior ---
@@ -284,11 +320,45 @@ greet("world");`)
       (!isExpectedKeyboardChar) ||
       (normalizeForComparison(ch) === normalizeForComparison(expected));
 
-    setTyped(typed + ch)
-    setCaret(nextIndex + 1)
+    let finalTyped = nextTyped + ch
+    let finalCaret = nextIndex + 1
+
+    // If a correct character ends a line, auto-advance through newline(s)
+    // and any leading spaces of the next line.
+    if (isCorrect) {
+      let j = finalCaret
+      while (j < normalized.length && normalized[j] === '\n') j++
+      const newlineRunLen = j - finalCaret
+      if (newlineRunLen > 0) {
+        finalTyped += '\n'.repeat(newlineRunLen)
+        finalCaret = j
+
+        let indentLen = 0
+        while (finalCaret + indentLen < normalized.length && normalized[finalCaret + indentLen] === ' ') {
+          indentLen++
+        }
+        if (indentLen > 0) {
+          finalTyped += ' '.repeat(indentLen)
+          finalCaret += indentLen
+        }
+      }
+
+      if (skipSpaces) {
+        let k = finalCaret
+        while (k < normalized.length && normalized[k] === ' ') k++
+        const spaceRunLen = k - finalCaret
+        if (spaceRunLen > 0) {
+          finalTyped += ' '.repeat(spaceRunLen)
+          finalCaret = k
+        }
+      }
+    }
+
+    setTyped(finalTyped)
+    setCaret(finalCaret)
     if (!isCorrect) setErrors((e) => e + 1)
 
-    if (nextIndex + 1 >= normalized.length) {
+    if (finalCaret >= normalized.length) {
       setFinished(true)
       setStarted(false)
     }
@@ -372,6 +442,10 @@ greet("world");`)
             <label className="small" style={{ display: 'flex', alignItems: 'center', gap: 8, color:"white" }}>
               <input type="checkbox" checked={ignoreCaseSensitivity} onChange={(e) => setIgnoreCaseSensitivity(e.target.checked)} />
               Ignore case sensitivity
+            </label>
+            <label className="small" style={{ display: 'flex', alignItems: 'center', gap: 8, color:"white" }}>
+              <input type="checkbox" checked={skipSpaces} onChange={(e) => setSkipSpaces(e.target.checked)} />
+              Auto-skip spaces
             </label>
             <span style={{color:"white"}}className="small">Shortcuts: <kbd>Esc</kbd> to stop, <kbd>Backspace</kbd> to correct</span>
           </div>
