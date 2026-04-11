@@ -56,6 +56,7 @@ export default function GptPromptComponent({
   const [selectedGroup, setSelectedGroup] = useLocalStorageState("suggestionGroup", "code");
   const [activeTab, setActiveTab] = useState("prompt"); // prompt | chat
   const [responseFormat, setResponseFormat] = useLocalStorageState("chatResponseFormat", "none");
+  const [persistentContext, setPersistentContext] = useLocalStorageState("chatPersistentContext", "");
   const [selectedSuggestion, setSelectedSuggestion] = useState(null); // { label, value }
   const messagesEndRef = useRef(null);
   const dispatch = useAppDispatch();
@@ -73,16 +74,20 @@ export default function GptPromptComponent({
 
   const handleSubmit = async () => {
     const suggestionText = selectedSuggestion?.value ? `\n\n${selectedSuggestion.value}` : "";
-    const finalPrompt = `${chatPrompt || ""}${suggestionText}`.trim();
-    if (!finalPrompt) return;
+    const promptWithSuggestion = `${chatPrompt || ""}${suggestionText}`.trim();
+    const contextText = (persistentContext || "").trim();
+    const basePrompt = contextText
+      ? `${contextText}\n\n${promptWithSuggestion}`.trim()
+      : promptWithSuggestion;
+    if (!basePrompt) return;
     try {
       setLoading(true);
       const formatInstruction = RESPONSE_FORMATS.find((fmt) => fmt.value === responseFormat)?.instruction || "";
       const prompt = formatInstruction
-        ? `${finalPrompt}\n\nFormatting:\n${formatInstruction}`
-        : finalPrompt;
+        ? `${basePrompt}\n\nFormatting:\n${formatInstruction}`
+        : basePrompt;
       const response = await getGeminiResponse(prompt);
-      const userMsg = { text: finalPrompt, sender: "user" };
+      const userMsg = { text: basePrompt, sender: "user" };
       const botMsg = { text: response, sender: "bot" };
       setMessages((prev) => [...prev, userMsg, botMsg]);
       dispatch(actions.setChatPrompt(""));
@@ -365,6 +370,15 @@ export default function GptPromptComponent({
                 {showAllSuggestions ? "Show Less ▲" : "Show All ▼"}
               </button>
             </div>
+
+            <textarea
+              rows={3}
+              value={persistentContext}
+              onChange={(e) => setPersistentContext(e.target.value)}
+              placeholder="Persistent context (prepended to every prompt and saved locally)..."
+              className="prompt-input"
+              style={{ marginBottom: "0.75rem" }}
+            />
 
             <textarea
               rows={4}

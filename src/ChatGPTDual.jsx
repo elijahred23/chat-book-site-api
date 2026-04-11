@@ -49,6 +49,7 @@ export default function ChatGPTDual({ isCollapsed = false, hidePrompt = false, i
   const [showAllSuggestions, setShowAllSuggestions] = useState(false);
   const [selectedGroup, setSelectedGroup] = useLocalStorageState(`${STORAGE_PREFIX}suggestionGroup`, "code");
   const [responseFormat, setResponseFormat] = useLocalStorageState(`${STORAGE_PREFIX}responseFormat`, "none");
+  const [persistentContext, setPersistentContext] = useLocalStorageState(`${STORAGE_PREFIX}persistentContext`, "");
   const [selectedSuggestion, setSelectedSuggestion] = useState(null); // { label, value }
   const [activeTab, setActiveTab] = useState("prompt");
   const messagesEndRef = useRef(null);
@@ -73,14 +74,18 @@ export default function ChatGPTDual({ isCollapsed = false, hidePrompt = false, i
 
   const handleSubmit = async () => {
     const suggestionText = selectedSuggestion?.value ? `\n\n${selectedSuggestion.value}` : "";
-    const text = `${promptText || ""}${suggestionText}`.trim();
-    if (!text) return;
+    const promptWithSuggestion = `${promptText || ""}${suggestionText}`.trim();
+    const contextText = (persistentContext || "").trim();
+    const basePrompt = contextText
+      ? `${contextText}\n\n${promptWithSuggestion}`.trim()
+      : promptWithSuggestion;
+    if (!basePrompt) return;
     try {
       setLoading(true);
       const formatInstruction = RESPONSE_FORMATS.find((fmt) => fmt.value === responseFormat)?.instruction || "";
-      const prompt = formatInstruction ? `${text}\n\nFormatting:\n${formatInstruction}` : text;
+      const prompt = formatInstruction ? `${basePrompt}\n\nFormatting:\n${formatInstruction}` : basePrompt;
       const response = await getGeminiResponse(prompt);
-      const userMsg = { text, sender: "user" };
+      const userMsg = { text: basePrompt, sender: "user" };
       const botMsg = { text: response, sender: "bot" };
       setMessages((prev) => [...prev, userMsg, botMsg]);
       setPromptText("");
@@ -355,6 +360,14 @@ export default function ChatGPTDual({ isCollapsed = false, hidePrompt = false, i
                   {showAllSuggestions ? "Show Less ▲" : "Show All ▼"}
                 </button>
               </div>
+              <textarea
+                rows={3}
+                value={persistentContext}
+                onChange={(e) => setPersistentContext(e.target.value)}
+                placeholder="Persistent context (prepended to every prompt and saved locally)..."
+                className="prompt-input"
+                style={{ marginBottom: "0.75rem" }}
+              />
               <textarea
                 rows={4}
                 value={promptText}

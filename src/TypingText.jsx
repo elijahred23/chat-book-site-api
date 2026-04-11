@@ -41,6 +41,8 @@ greet("world");`)
   const [ignoreCaseSensitivity, setIgnoreCaseSensitivity] = useState(true)
   const [skipSpaces, setSkipSpaces] = useState(true)
   const [skipNonAlphanumeric, setSkipNonAlphanumeric] = useState(false)
+  const [autoTypeMode, setAutoTypeMode] = useState(false)
+  const [autoTypeWpm, setAutoTypeWpm] = useState(80)
 
   const hiddenInputRef = useRef(null)
   const currentCharRef = useRef(null)
@@ -142,6 +144,10 @@ greet("world");`)
       if (typeof prefs.ignoreCaseSensitivity === 'boolean') setIgnoreCaseSensitivity(prefs.ignoreCaseSensitivity)
       if (typeof prefs.skipSpaces === 'boolean') setSkipSpaces(prefs.skipSpaces)
       if (typeof prefs.skipNonAlphanumeric === 'boolean') setSkipNonAlphanumeric(prefs.skipNonAlphanumeric)
+      if (typeof prefs.autoTypeMode === 'boolean') setAutoTypeMode(prefs.autoTypeMode)
+      if (typeof prefs.autoTypeWpm === 'number' && Number.isFinite(prefs.autoTypeWpm)) {
+        setAutoTypeWpm(Math.max(1, Math.round(prefs.autoTypeWpm)))
+      }
     } catch {
       // Ignore invalid localStorage payload
     }
@@ -155,9 +161,11 @@ greet("world");`)
         ignoreCaseSensitivity,
         skipSpaces,
         skipNonAlphanumeric,
+        autoTypeMode,
+        autoTypeWpm,
       })
     )
-  }, [showWhitespace, ignoreCaseSensitivity, skipSpaces, skipNonAlphanumeric])
+  }, [showWhitespace, ignoreCaseSensitivity, skipSpaces, skipNonAlphanumeric, autoTypeMode, autoTypeWpm])
 
   useEffect(() => {
     if (!started || finished) return
@@ -174,6 +182,39 @@ greet("world");`)
     const id = setInterval(() => setNowTs(Date.now()), 100)
     return () => clearInterval(id)
   }, [started, finished])
+
+  useEffect(() => {
+    if (!started || finished || !autoTypeMode) return
+    const initial = applyAutoSkips(caret, typed)
+    if (initial.nextIndex >= normalized.length) {
+      setFinished(true)
+      setStarted(false)
+      return
+    }
+
+    const safeWpm = Math.max(1, Number(autoTypeWpm) || 80)
+    const msPerChar = 60000 / (safeWpm * 5)
+
+    const id = setTimeout(() => {
+      const idx = initial.nextIndex
+      const nextChar = normalized[idx] ?? ''
+      let nextTyped = initial.nextTyped + nextChar
+      let nextCaret = idx + 1
+
+      const afterCorrect = applyAutoSkips(nextCaret, nextTyped, { skipLineBreaks: true })
+      nextTyped = afterCorrect.nextTyped
+      nextCaret = afterCorrect.nextIndex
+
+      setTyped(nextTyped)
+      setCaret(nextCaret)
+      if (nextCaret >= normalized.length) {
+        setFinished(true)
+        setStarted(false)
+      }
+    }, msPerChar)
+
+    return () => clearTimeout(id)
+  }, [started, finished, autoTypeMode, autoTypeWpm, caret, typed, normalized, skipSpaces, skipNonAlphanumeric])
 
   const elapsedMs = useMemo(() => {
     if (!startTs) return 0
@@ -303,6 +344,14 @@ greet("world");`)
   const handleKey = (e) => {
     if (!started || finished) return
     const key = e.key
+
+    if (autoTypeMode) {
+      if (key === ' ') {
+        e.preventDefault()
+        setAutoTypeMode(false)
+      }
+      return
+    }
 
     // allow copy/select shortcuts to pass through
     if ((e.ctrlKey || e.metaKey) && ['c','x','a'].includes(key.toLowerCase())) return
@@ -499,6 +548,28 @@ greet("world");`)
             <label className="small" style={{ display: 'flex', alignItems: 'center', gap: 8, color:"white" }}>
               <input type="checkbox" checked={skipNonAlphanumeric} onChange={(e) => setSkipNonAlphanumeric(e.target.checked)} />
               Skip non-letters/numbers
+            </label>
+            <label className="small" style={{ display: 'flex', alignItems: 'center', gap: 8, color:"white" }}>
+              <input type="checkbox" checked={autoTypeMode} onChange={(e) => setAutoTypeMode(e.target.checked)} />
+              Auto-type mode
+            </label>
+            <label className="small" style={{ display: 'flex', alignItems: 'center', gap: 8, color:"white" }}>
+              Auto WPM:
+              <input
+                type="number"
+                min={1}
+                step={1}
+                value={autoTypeWpm}
+                onChange={(e) => {
+                  const parsed = Number.parseInt(e.target.value, 10)
+                  if (Number.isNaN(parsed)) {
+                    setAutoTypeWpm(80)
+                    return
+                  }
+                  setAutoTypeWpm(Math.max(1, parsed))
+                }}
+                style={{ width: 72 }}
+              />
             </label>
             <span style={{color:"white"}}className="small">Shortcuts: <kbd>Esc</kbd> to stop, <kbd>Backspace</kbd> to correct</span>
           </div>
