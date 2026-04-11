@@ -54,6 +54,35 @@
   overflow: hidden;
 }
 
+.asmr-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+  align-items: center;
+}
+
+.asmr-option-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #e2e8f0;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.asmr-option-inline input[type="range"] {
+  width: 180px;
+}
+
+.asmr-option-inline input[type="number"] {
+  width: 72px;
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  background: rgba(15, 23, 42, 0.55);
+  color: #e2e8f0;
+  border-radius: 8px;
+  padding: 4px 6px;
+}
+
 .asmr-progress {
   height: 100%;
   background: linear-gradient(90deg, #22d3ee, #60a5fa);
@@ -103,5 +132,9 @@
   .asmr-chip {
     padding: 6px 9px;
     font-size: 11px;
+  }
+
+  .asmr-option-inline input[type="range"] {
+    width: 130px;
   }
 }
