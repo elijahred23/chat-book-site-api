@@ -932,7 +932,7 @@ export default function YouTubeTranscript() {
     return (
         <div className="yt-container">
             <style>{styles}</style>
-            {createPortal(
+            {isYoutubeOpen && createPortal(
                 <button
                     onClick={() => {
                         setDrawerOpen(true);

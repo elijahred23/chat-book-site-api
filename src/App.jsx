@@ -359,11 +359,17 @@ function AppContent() {
               <button onClick={() => {setIsLargeTextOpen(true); closeFabMenu();}} className="fab-btn">
                 <span>📚</span>{isLargeTextOpen ? 'Text Chunker' : 'Open Chunker'}
               </button>
+              <button onClick={() => {setIsAsmrOpen(true); closeFabMenu();}} className="fab-btn">
+                <span>🎧</span>{isAsmrOpen ? 'ASMR Typeout' : 'Open ASMR'}
+              </button>
             </div>
           )}
+          {
+            !isAsmrOpen && 
           <button onClick={() => setShowFloatingBtns((p) => !p)} className="fab-main">
             {showFloatingBtns ? '–' : '+'}
           </button>
+          }
         </div>
 
         <div className="content">

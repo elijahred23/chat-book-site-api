@@ -3,10 +3,16 @@ import { useAppState } from "./context/AppContext.jsx";
 import "./AsmrPromptDrawer.css";
 
 const SPEED_PRESETS = [
+  { label: "Very Slow", cps: 10 },
   { label: "Slow", cps: 18 },
+  { label: "Leisurely", cps: 26 },
   { label: "Calm", cps: 34 },
+  { label: "Steady", cps: 44 },
   { label: "Flow", cps: 54 },
+  { label: "Swift", cps: 66 },
   { label: "Fast", cps: 78 },
+  { label: "Rapid", cps: 92 },
+  { label: "Lightning", cps: 110 },
 ];
 
 function withMarkdownHint(text = "") {
