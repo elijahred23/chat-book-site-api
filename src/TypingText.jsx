@@ -343,6 +343,7 @@ greet("world");`)
 
 const handleKey = (e) => {
   if (!started || finished) return
+
   const key = e.key
 
   if (autoTypeMode) {
@@ -353,128 +354,109 @@ const handleKey = (e) => {
     return
   }
 
-  // allow copy/select shortcuts to pass through
+  // allow copy/select shortcuts
   if ((e.ctrlKey || e.metaKey) && ['c','x','a'].includes(key.toLowerCase())) return
 
   e.preventDefault()
 
-  if (key === 'Escape') { stop(); return }
+  if (key === 'Escape') {
+    stop()
+    return
+  }
 
   if (key === 'Backspace') {
     if (caret > 0) {
       let removeCount = 1
+
       if (typed[caret - 1] === ' ') {
         let j = caret - 1
         while (j >= 0 && typed[j] === ' ') j--
         removeCount = caret - (j + 1)
       }
-      setCaret(caret - removeCount)
-      setTyped(typed.slice(0, caret - removeCount))
+
+      const newCaret = caret - removeCount
+      setCaret(newCaret)
+      setTyped(typed.slice(0, newCaret))
     }
     return
   }
 
-  // normalize key to a single character (or newline)
-  const ch = key === 'Enter' ? '\n' : key.length === 1 ? key : ''
+  const ch = key === 'Enter' ? '\n' : (key.length === 1 ? key : '')
   if (!ch) return
 
   let { nextIndex, nextTyped } = applyAutoSkips(caret, typed)
 
-  // 🚀 NEW: skip whole word on Space
+  const text = normalized
+  const len = text.length
+
+  const finishIfDone = (idx) => {
+    if (idx >= len) {
+      setFinished(true)
+      setStarted(false)
+      return true
+    }
+    return false
+  }
+
+  // 🚀 skip word
   if (skipSpaces && ch === ' ') {
     let j = nextIndex
 
-    // skip current word
-    while (
-      j < normalized.length &&
-      normalized[j] !== ' ' &&
-      normalized[j] !== '\n'
-    ) {
-      j++
+    while (j < len && text[j] !== ' ' && text[j] !== '\n') j++
+    while (j < len && text[j] === ' ') j++
+
+    if (j !== nextIndex) {
+      setTyped(nextTyped + text.slice(nextIndex, j))
+      setCaret(j)
+      finishIfDone(j)
+      return
     }
-
-    // skip trailing spaces
-    while (j < normalized.length && normalized[j] === ' ') {
-      j++
-    }
-
-    const skippedText = normalized.slice(nextIndex, j)
-
-    setTyped(nextTyped + skippedText)
-    setCaret(j)
-
-    if (j >= normalized.length) {
-      setFinished(true)
-      setStarted(false)
-    }
-    return
   }
 
-  // 🚀 NEW: skip whole line on Enter
+  // 🚀 skip line
   if (skipSpaces && ch === '\n') {
     let j = nextIndex
 
-    // skip until newline
-    while (j < normalized.length && normalized[j] !== '\n') {
-      j++
+    while (j < len && text[j] !== '\n') j++
+    if (j < len) j++ // include newline
+    while (j < len && text[j] === ' ') j++
+
+    if (j !== nextIndex) {
+      setTyped(nextTyped + text.slice(nextIndex, j))
+      setCaret(j)
+      finishIfDone(j)
+      return
     }
-
-    // include newline
-    if (j < normalized.length && normalized[j] === '\n') {
-      j++
-    }
-
-    // skip indentation on next line
-    while (j < normalized.length && normalized[j] === ' ') {
-      j++
-    }
-
-    const skippedText = normalized.slice(nextIndex, j)
-
-    setTyped(nextTyped + skippedText)
-    setCaret(j)
-
-    if (j >= normalized.length) {
-      setFinished(true)
-      setStarted(false)
-    }
-    return
   }
 
-  // 👇 normal typing logic continues
-  const expected = normalized[nextIndex] ?? ''
+  // 👇 normal typing
+  const expected = text[nextIndex] ?? ''
 
-  const keyboardChars = /^[\x20-\x7E]$/
   const isExpectedKeyboardChar =
-    keyboardChars.test(expected) ||
+    (expected >= ' ' && expected <= '~') ||
     expected === '\n' ||
-    expected === '\t' ||
-    expected === ' '
+    expected === '\t'
 
   const isCorrect =
     (!isExpectedKeyboardChar) ||
     (normalizeForComparison(ch) === normalizeForComparison(expected))
 
-  let finalTyped = nextTyped + ch
   let finalCaret = nextIndex + 1
+  let finalTyped = nextTyped + ch
 
   if (isCorrect) {
-    const afterCorrect = applyAutoSkips(finalCaret, finalTyped, { skipLineBreaks: true })
-    finalCaret = afterCorrect.nextIndex
-    finalTyped = afterCorrect.nextTyped
+    const after = applyAutoSkips(finalCaret, finalTyped, { skipLineBreaks: true })
+    finalCaret = after.nextIndex
+    finalTyped = after.nextTyped
   }
 
   setTyped(finalTyped)
   setCaret(finalCaret)
 
-  if (!isCorrect) setErrors((e) => e + 1)
+  if (!isCorrect) setErrors(e => e + 1)
 
-  if (finalCaret >= normalized.length) {
-    setFinished(true)
-    setStarted(false)
-  }
+  finishIfDone(finalCaret)
 }
-
 
   // Render code with three buckets: correct, incorrect, current, and upcoming
   const renderHighlighted = () => {
