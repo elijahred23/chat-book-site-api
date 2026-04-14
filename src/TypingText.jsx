@@ -43,6 +43,8 @@ greet("world");`)
   const [skipNonAlphanumeric, setSkipNonAlphanumeric] = useState(true)
   const [autoTypeMode, setAutoTypeMode] = useState(false)
   const [autoTypeWpm, setAutoTypeWpm] = useState(80)
+  const [autoRestart, setAutoRestart] = useState(false)
+  const [loopCount, setLoopCount] = useState(0)
 
   const hiddenInputRef = useRef(null)
   const currentCharRef = useRef(null)
@@ -85,6 +87,21 @@ greet("world");`)
   }
 
   const isAlphaNumeric = (c) => /[a-z0-9]/i.test(c)
+  const finishTest = () => {
+    if (autoRestart) {
+      setLoopCount((c) => c + 1)
+
+      // small delay so UI can breathe (optional but feels nicer)
+      setTimeout(() => {
+        start()
+      }, 300)
+
+      return
+    }
+
+    setFinished(true)
+    setStarted(false)
+  }
 
   const applyAutoSkips = (startIndex, startTyped, { skipLineBreaks = false } = {}) => {
     let idx = startIndex
@@ -187,8 +204,7 @@ greet("world");`)
     if (!started || finished || !autoTypeMode) return
     const initial = applyAutoSkips(caret, typed)
     if (initial.nextIndex >= normalized.length) {
-      setFinished(true)
-      setStarted(false)
+      finishTest();
       return
     }
 
@@ -208,8 +224,7 @@ greet("world");`)
       setTyped(nextTyped)
       setCaret(nextCaret)
       if (nextCaret >= normalized.length) {
-        setFinished(true)
-        setStarted(false)
+        finishTest();
       }
     }, msPerChar)
 
@@ -308,6 +323,7 @@ greet("world");`)
 
 
   const handleLoad = () => {
+    setLoopCount(0);
     setLoaded(removeMarkdown(source))
     setStarted(false)
     setFinished(false)
@@ -321,6 +337,7 @@ greet("world");`)
   useEffect(() => {
     if (typingSource) {
       setSource(typingSource);
+      setLoopCount(0);
       // auto load new snippet
       setLoaded(removeMarkdown(typingSource));
       setStarted(false);
@@ -391,8 +408,7 @@ const handleKey = (e) => {
 
   const finishIfDone = (idx) => {
     if (idx >= len) {
-      setFinished(true)
-      setStarted(false)
+      finishTest();
       return true
     }
     return false
@@ -504,6 +520,7 @@ const handleKey = (e) => {
             <div className="chip"><span>⚡</span> {Number.isFinite(wpm) ? wpm : 0} WPM</div>
             <div className="chip"><span>🎯</span> {Math.round(accuracy * 100)}% accuracy</div>
             <div className="chip"><span>📈</span> {Math.round(progress * 100)}% complete</div>
+            <div className="chip"><span>🔁</span> {loopCount} loops</div>
           </div>
         </div>
       </div>
@@ -556,6 +573,14 @@ const handleKey = (e) => {
               <input type="checkbox" checked={autoTypeMode} onChange={(e) => setAutoTypeMode(e.target.checked)} />
               Auto-type mode
             </label>
+            <label className="small" style={{ display: 'flex', alignItems: 'center', gap: 8, color:"white" }}>
+  <input
+    type="checkbox"
+    checked={autoRestart}
+    onChange={(e) => setAutoRestart(e.target.checked)}
+  />
+  Auto-restart on finish
+</label>
             <label className="small" style={{ display: 'flex', alignItems: 'center', gap: 8, color:"white" }}>
               Auto WPM:
               <input
@@ -622,6 +647,7 @@ const handleKey = (e) => {
           <div>Loaded: {normalized.length} • Typed: {typed.length} • Correct: {correctChars}</div>
           <div>Elapsed: {(elapsedMs/1000).toFixed(1)}s</div>
           <div>Elapsed: {(elapsedMs / 60000).toFixed(2)} min</div>
+          <div>Loops: {loopCount}</div>
         </div>
       </div>
 
