@@ -1712,6 +1712,7 @@ export default function CodingProblems() {
                           {codeSnippets.length > 0 && <ActionButtons promptText={walkthroughText} />}
                           {codeSnippets.length > 0 && (
                             <>
+                            <div style={{ display: "flex", gap: 6, flexWrap: "wrap", alignItems: "center", marginRight: "auto", margin: "10px 0" }}>
                             <button onClick={
                               () => {
                                 //go to the previous code problem in the dropdown
@@ -1722,6 +1723,7 @@ export default function CodingProblems() {
                                 }
                               }
                             }>Previous Coding Problem</button>
+                            <span>{PROBLEMS.findIndex((p) => p.id === active.id) + 1} of {PROBLEMS.length}</span>
                             <button onClick={
                               () => {
                                 //go to the next code problem in the dropdown
@@ -1732,6 +1734,7 @@ export default function CodingProblems() {
                                 }
                               }
                             }>Next Coding Problem</button>
+                            </div>
                             </>
                           )}
                         </div>
