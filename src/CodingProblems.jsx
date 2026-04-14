@@ -1710,6 +1710,30 @@ export default function CodingProblems() {
                         <div className="cp-row" style={{ alignItems: "flex-start", gap: 8 }}>
                           <div style={{ fontWeight: 900, marginBottom: 6, marginTop: 2 }}>{w.title}</div>
                           {codeSnippets.length > 0 && <ActionButtons promptText={walkthroughText} />}
+                          {codeSnippets.length > 0 && (
+                            <>
+                            <button onClick={
+                              () => {
+                                //go to the previous code problem in the dropdown
+                                const currentIndex = PROBLEMS.findIndex((p) => p.id === active.id);
+                                if (currentIndex > 0) {
+                                  const prevProblem = PROBLEMS[currentIndex - 1];
+                                  setActiveId(prevProblem.id);
+                                }
+                              }
+                            }>Previous Coding Problem</button>
+                            <button onClick={
+                              () => {
+                                //go to the next code problem in the dropdown
+                                const currentIndex = PROBLEMS.findIndex((p) => p.id === active.id);
+                                if (currentIndex < PROBLEMS.length - 1) {
+                                  const nextProblem = PROBLEMS[currentIndex + 1];
+                                  setActiveId(nextProblem.id);
+                                }
+                              }
+                            }>Next Coding Problem</button>
+                            </>
+                          )}
                         </div>
                         {codeSnippets.length > 0 ? (
                           <>
