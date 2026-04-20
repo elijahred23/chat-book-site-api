@@ -383,15 +383,45 @@ const handleKey = (e) => {
 
   if (key === 'Backspace') {
     if (caret > 0) {
-      let removeCount = 1
+      let newCaret = caret - 1
 
-      if (typed[caret - 1] === ' ') {
-        let j = caret - 1
-        while (j >= 0 && typed[j] === ' ') j--
-        removeCount = caret - (j + 1)
+      if (skipSpaces) {
+        // Undo "skip line": [line chars][\n][indent spaces] -> jump back to prior line start.
+        let j = caret
+        while (j > 0 && normalized[j - 1] === ' ') j--
+        if (j > 0 && normalized[j - 1] === '\n') {
+          j--
+          while (j > 0 && normalized[j - 1] !== '\n') j--
+          newCaret = j
+          setCaret(newCaret)
+          setTyped(typed.slice(0, newCaret))
+          return
+        }
+
+        // Undo "skip word": [word][spaces] -> jump back to word start.
+        // A "word" is strictly an alphanumeric run.
+        j = caret
+        while (j > 0 && normalized[j - 1] === ' ') j--
+        if (j > 0 && isAlphaNumeric(normalized[j - 1])) {
+          while (j > 0 && isAlphaNumeric(normalized[j - 1])) j--
+          newCaret = j
+          setCaret(newCaret)
+          setTyped(typed.slice(0, newCaret))
+          return
+        }
       }
 
-      const newCaret = caret - removeCount
+      if (skipNonAlphanumeric) {
+        let j = caret
+        while (j > 0 && !isAlphaNumeric(normalized[j - 1])) j--
+        if (j !== caret) {
+          newCaret = j
+          setCaret(newCaret)
+          setTyped(typed.slice(0, newCaret))
+          return
+        }
+      }
+
       setCaret(newCaret)
       setTyped(typed.slice(0, newCaret))
     }
@@ -415,11 +445,14 @@ const handleKey = (e) => {
   }
 
   // 🚀 skip word
+  // A "word" is strictly an alphanumeric run.
   if (skipSpaces && ch === ' ') {
     let j = nextIndex
 
-    while (j < len && text[j] !== ' ' && text[j] !== '\n') j++
-    while (j < len && text[j] === ' ') j++
+    if (j < len && isAlphaNumeric(text[j])) {
+      while (j < len && isAlphaNumeric(text[j])) j++
+      while (j < len && text[j] === ' ') j++
+    }
 
     if (j !== nextIndex) {
       setTyped(nextTyped + text.slice(nextIndex, j))
