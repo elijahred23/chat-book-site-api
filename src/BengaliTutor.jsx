@@ -104,6 +104,7 @@ export default function BengaliTutor() {
     }
   });
   const [loading, setLoading] = useState(false);
+  const [matchOptionsCount, setMatchOptionsCount] = useState(4);
   const [error, setError] = useState("");
   const [vocabMp3Loading, setVocabMp3Loading] = useState(false);
   const [phraseMp3Loading, setPhraseMp3Loading] = useState(false);
@@ -544,7 +545,7 @@ export default function BengaliTutor() {
     const correct = items[Math.floor(Math.random() * items.length)];
     const distractors = items.filter((v) => v.en !== correct.en);
     const shuffled = [...distractors].sort(() => Math.random() - 0.5);
-    const picks = shuffled.slice(0, Math.min(3, shuffled.length));
+    const picks = shuffled.slice(0, Math.min(matchOptionsCount - 1, shuffled.length));
     const options = [...picks.map((v) => v.en), correct.en].sort(() => Math.random() - 0.5);
     return { bn: correct.bn, pronunciation: correct.pronunciation, en: correct.en, options };
   };
@@ -558,7 +559,7 @@ export default function BengaliTutor() {
     }
     const wrongPool = items.filter((v) => v.en !== correct.en);
     const wrong = wrongPool[Math.floor(Math.random() * wrongPool.length)];
-    return { bn: correct.bn, en: wrong.en, isCorrect: false };
+    return { bn: correct.bn, en: wrong.en, isCorrect: false, pronunciation: correct.pronunciation };
   };
 
   const buildAudioHuntQuestion = (items) => {
@@ -634,6 +635,9 @@ export default function BengaliTutor() {
         bestStreak: Math.max(prev.bestStreak, nextStreak),
       };
     });
+    setTimeout(() => {
+      startNewGameRound();
+    }, 500);
   };
 
   const handleTrueFalsePick = (pickedTrue) => {
@@ -649,6 +653,9 @@ export default function BengaliTutor() {
         bestStreak: Math.max(prev.bestStreak, nextStreak),
       };
     });
+    setTimeout(() => {
+      startTrueFalseRound();
+    }, 500);
   };
 
   const handleAudioPick = (option) => {
@@ -665,6 +672,9 @@ export default function BengaliTutor() {
         bestStreak: Math.max(prev.bestStreak, nextStreak),
       };
     });
+    setTimeout(() => {
+      startAudioHuntRound();
+    }, 500);
   };
 
   const handleMasteryPick = (option) => {
@@ -687,6 +697,9 @@ export default function BengaliTutor() {
     } else {
       setMasteryCorrectCount(0);
     }
+    setTimeout(() => {
+      advanceMastery();
+    }, 500);
   };
 
   const advanceMastery = () => {
@@ -767,6 +780,12 @@ export default function BengaliTutor() {
     startTrueFalseRound();
     startAudioHuntRound();
   }, [lesson, gameDataset, gameItems]);
+
+  useEffect(() => {
+    if (activeGameTab === "match" && gameItems.length >= 2) {
+      startNewGameRound();
+    }
+  }, [matchOptionsCount]);
 
   useEffect(() => {
     if (!gameItems.length || gameItems.length < 2) return;
@@ -1150,11 +1169,12 @@ export default function BengaliTutor() {
                 <div style={{ display: "grid", gap: 8 }}>
                   <div style={{ display: "flex", justifyContent: "space-between", gap: 12, flexWrap: "wrap", alignItems: "center" }}>
                     <h4 style={{ margin: 0 }}>{gameDataset === "phrases" ? "Phrase Games" : "Vocabulary Games"}</h4>
-                  <div className="bn-pill">
-                      {activeGameTab === "match" && `Score ${gameScore.correct}/${gameScore.total} • Streak ${gameScore.streak} (Best ${gameScore.bestStreak})`}
-                      {activeGameTab === "truefalse" && `Score ${tfScore.correct}/${tfScore.total} • Streak ${tfScore.streak} (Best ${tfScore.bestStreak})`}
-                      {activeGameTab === "audio" && `Score ${audioScore.correct}/${audioScore.total} • Streak ${audioScore.streak} (Best ${audioScore.bestStreak})`}
-                      {activeGameTab === "mastery" && `Score ${masteryScore.correct}/${masteryScore.total} • Streak ${masteryScore.streak} (Best ${masteryScore.bestStreak})`}
+                    <div className="bn-pill">
+                      {(() => {
+                        const s = activeGameTab === "match" ? gameScore : activeGameTab === "truefalse" ? tfScore : activeGameTab === "audio" ? audioScore : masteryScore;
+                        const pct = s.total > 0 ? ((s.correct / s.total) * 100).toFixed(1) : "0.0";
+                        return `Score ${s.correct}/${s.total} (${pct}%) • Streak ${s.streak} (Best ${s.bestStreak})`;
+                      })()}
                     </div>
                   </div>
                   <div className="bn-tabs">
@@ -1184,7 +1204,21 @@ export default function BengaliTutor() {
                   <>
                     {gameQuestion ? (
                       <div className="bn-section" style={{ background: "#fff", display: "grid", gap: 8 }}>
-                        <div style={{ fontWeight: 800, fontSize: "1.2rem", color: "#0f172a" }}>{gameQuestion.bn}</div>
+                        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
+                          <div style={{ fontWeight: 800, fontSize: "1.2rem", color: "#0f172a" }}>{gameQuestion.bn}</div>
+                          <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
+                            <label style={{ fontSize: "0.85rem", fontWeight: 700, color: "#475569" }}>Options:</label>
+                            <select
+                              value={matchOptionsCount}
+                              onChange={(e) => setMatchOptionsCount(Number(e.target.value))}
+                              style={{ padding: "4px 8px", borderRadius: "8px", border: "1px solid #e2e8f0", fontSize: "0.9rem" }}
+                            >
+                              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(n => (
+                                <option key={n} value={n}>{n}</option>
+                              ))}
+                            </select>
+                          </div>
+                        </div>
                         {gameQuestion.pronunciation && (
                           <div style={{ color: "#475569" }}>{gameQuestion.pronunciation}</div>
                         )}
@@ -1296,6 +1330,10 @@ export default function BengaliTutor() {
                         <div style={{ fontWeight: 800, fontSize: "1.2rem", color: "#0f172a" }}>
                           {masteryQueue[masteryIndex]?.bn}
                         </div>
+                        <div style={{ fontWeight: 800, fontSize: "1.2rem", color: "#0f172a" }}>
+                          {masteryQueue[masteryIndex]?.pronunciation}
+                        </div>
+
                         <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
                           <button
                             className="bn-btn"
@@ -1350,7 +1388,7 @@ export default function BengaliTutor() {
                   <>
                     {tfQuestion ? (
                       <div className="bn-section" style={{ background: "#fff", display: "grid", gap: 8 }}>
-                        <div style={{ fontWeight: 800, fontSize: "1.1rem", color: "#0f172a" }}>{tfQuestion.bn}</div>
+                        <div style={{ fontWeight: 800, fontSize: "1.1rem", color: "#0f172a" }}>{tfQuestion.bn} {tfQuestion.pronunciation}</div>
                         <div style={{ color: "#475569" }}>Does this mean: <strong style={{ color: "#0f172a" }}>{tfQuestion.en}</strong>?</div>
                         <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
                           <button className="bn-btn secondary" onClick={() => speak(tfQuestion.bn, "bn", { forceApi: true })}>🔈 Hear Bengali</button>
