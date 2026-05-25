@@ -104,6 +104,14 @@ export default function BengaliTutor() {
     }
   });
   const [loading, setLoading] = useState(false);
+  const [selectedGroups, setSelectedGroups] = useState(() => {
+    try {
+      const saved = localStorage.getItem("bn_selected_groups");
+      return saved ? JSON.parse(saved) : { vocab: [], phrases: [] };
+    } catch {
+      return { vocab: [], phrases: [] };
+    }
+  });
   const [matchOptionsCount, setMatchOptionsCount] = useState(4);
   const [error, setError] = useState("");
   const [vocabMp3Loading, setVocabMp3Loading] = useState(false);
@@ -143,6 +151,45 @@ export default function BengaliTutor() {
   const batchCacheRef = React.useRef(new Map()); // cache combined MP3 blobs for batch vocab
   const loopStateRef = React.useRef({ key: null, mode: null, abort: false, audio: null });
   const [, forceRender] = useState(0); // quick rerender for loop status
+
+  useEffect(() => {
+    if (!lesson) return;
+    const currentRef = lesson.title || lesson.topic || "";
+    const storedRef = localStorage.getItem("bn_selected_groups_ref");
+    if (storedRef !== currentRef) {
+      const vCount = Math.ceil((lesson.vocab?.length || 0) / 10);
+      const pCount = Math.ceil((lesson.phrases?.length || 0) / 10);
+      const defaultState = {
+        vocab: Array.from({ length: vCount }, (_, i) => i),
+        phrases: Array.from({ length: pCount }, (_, i) => i),
+      };
+      setSelectedGroups(defaultState);
+      localStorage.setItem("bn_selected_groups_ref", currentRef);
+    }
+  }, [lesson]);
+
+  useEffect(() => {
+    localStorage.setItem("bn_selected_groups", JSON.stringify(selectedGroups));
+  }, [selectedGroups]);
+
+  const filteredPhrases = useMemo(() => {
+    if (!lesson?.phrases) return [];
+    if (!selectedGroups.phrases) return lesson.phrases;
+    return lesson.phrases.filter((_, idx) => selectedGroups.phrases.includes(Math.floor(idx / 10)));
+  }, [lesson, selectedGroups.phrases]);
+
+  const filteredVocab = useMemo(() => {
+    if (!lesson?.vocab) return [];
+    if (!selectedGroups.vocab) return lesson.vocab;
+    return lesson.vocab.filter((_, idx) => selectedGroups.vocab.includes(Math.floor(idx / 10)));
+  }, [lesson, selectedGroups.vocab]);
+
+  const toggleGroupSelection = (type, idx) => {
+    setSelectedGroups(prev => ({
+      ...prev,
+      [type]: prev[type].includes(idx) ? prev[type].filter(i => i !== idx) : [...prev[type], idx]
+    }));
+  };
 
   const playAudioUrl = (url) =>
     new Promise((resolve, reject) => {
@@ -281,7 +328,12 @@ export default function BengaliTutor() {
 
   const downloadJson = () => {
     if (!lesson) return;
-    const blob = new Blob([JSON.stringify(lesson, null, 2)], { type: "application/json" });
+    const filteredData = {
+      ...lesson,
+      phrases: filteredPhrases,
+      vocab: filteredVocab,
+    };
+    const blob = new Blob([JSON.stringify(filteredData, null, 2)], { type: "application/json" });
     const link = document.createElement("a");
     link.href = URL.createObjectURL(blob);
     link.download = `${lesson.title || "bengali-lesson"}.json`;
@@ -290,8 +342,8 @@ export default function BengaliTutor() {
   };
 
   const downloadWords = () => {
-    if (!lesson?.vocab?.length) return;
-    const lines = lesson.vocab.map((w) => `${w.bn} (${w.pronunciation || ""}) - ${w.en}`).join("\\n");
+    if (!filteredVocab.length) return;
+    const lines = filteredVocab.map((w) => `${w.bn} (${w.pronunciation || ""}) - ${w.en}`).join("\n");
     const blob = new Blob([lines], { type: "text/plain" });
     const link = document.createElement("a");
     link.href = URL.createObjectURL(blob);
@@ -441,9 +493,9 @@ export default function BengaliTutor() {
 
   const combinedLessonPrompt = useMemo(() => {
     if (!lesson) return "";
-    const phrases = lesson.phrases?.map((p) => `${p.bn} (${p.pronunciation || ""}) - ${p.en}`) || [];
+    const phrases = filteredPhrases.map((p) => `${p.bn} (${p.pronunciation || ""}) - ${p.en}`);
     return `${lesson.title || "Bengali Lesson"}: ${phrases.join(" | ")}`;
-  }, [lesson]);
+  }, [lesson, filteredPhrases]);
 
   const hasAnyGameContent = useMemo(
     () => ((lesson?.vocab?.length || 0) + (lesson?.phrases?.length || 0)) > 0,
@@ -457,10 +509,10 @@ export default function BengaliTutor() {
   }, [showPhraseActions]);
 
   const downloadCombinedVocabMp3 = async (lang = "bn-IN") => {
-    if (!lesson?.vocab?.length) return;
+    if (!filteredVocab.length) return;
     try {
       setVocabMp3Loading(true);
-      const items = lesson.vocab.flatMap((v) => {
+      const items = filteredVocab.flatMap((v) => {
         if (lang.startsWith("bn")) {
           return [{ text: v.bn, lang }];
         }
@@ -501,16 +553,16 @@ export default function BengaliTutor() {
 
   const downloadPhrasesMp3 = async (mode = "bn-only") => {
     // mode: "bn-only" or "bn-en"
-    if (!lesson?.phrases?.length) return;
+    if (!filteredPhrases.length) return;
     try {
       setPhraseMp3Loading(true);
       const items =
         mode === "bn-en"
-          ? lesson.phrases.flatMap((p) => [
+          ? filteredPhrases.flatMap((p) => [
               { text: p.bn, lang: "bn-IN" },
               { text: p.en, lang: "en-US" },
             ])
-          : lesson.phrases.map((p) => ({ text: p.bn, lang: "bn-IN" }));
+          : filteredPhrases.map((p) => ({ text: p.bn, lang: "bn-IN" }));
       const cacheKey = JSON.stringify({ type: "phrases", mode, items });
       const cachedUrl = batchCacheRef.current.get(cacheKey);
       if (cachedUrl) {
@@ -756,10 +808,10 @@ export default function BengaliTutor() {
   };
 
   const getGameItems = useCallback(() => {
-    const source = gameDataset === "phrases" ? lesson?.phrases : lesson?.vocab;
+    const source = gameDataset === "phrases" ? filteredPhrases : filteredVocab;
     if (!source?.length) return [];
     return source.filter((v) => v?.bn && v?.en);
-  }, [lesson, gameDataset]);
+  }, [filteredPhrases, filteredVocab, gameDataset]);
 
   const gameItems = useMemo(() => getGameItems(), [getGameItems]);
 
@@ -923,6 +975,24 @@ export default function BengaliTutor() {
             <p style={{ margin: 0, color: "#475569" }}>{lesson.summary}</p>
             <ActionButtons promptText={combinedLessonPrompt} />
 
+            {/* Group Filters */}
+            <div className="bn-section" style={{ display: "grid", gap: 10 }}>
+              <h4 style={{ margin: 0 }}>Item Filters (Groups of 10)</h4>
+              <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+                {(() => {
+                  const type = contentTab === "games" ? gameDataset : contentTab;
+                  const total = (type === "phrases" ? lesson.phrases : lesson.vocab)?.length || 0;
+                  const count = Math.ceil(total / 10);
+                  return Array.from({ length: count }).map((_, i) => (
+                    <label key={i} style={{ display: "flex", alignItems: "center", gap: 6, background: "#fff", padding: "6px 10px", borderRadius: 10, border: "1px solid #e2e8f0", fontSize: "0.85rem", cursor: "pointer", fontWeight: 700 }}>
+                      <input type="checkbox" checked={selectedGroups[type]?.includes(i)} onChange={() => toggleGroupSelection(type, i)} />
+                      {i * 10 + 1}-{Math.min((i + 1) * 10, total)}
+                    </label>
+                  ));
+                })()}
+              </div>
+            </div>
+
             <div className="bn-tabs">
               <button
                 className={`bn-tab ${contentTab === "phrases" ? "active" : ""}`}
@@ -961,7 +1031,7 @@ export default function BengaliTutor() {
             {contentTab === "phrases" && lesson.phrases?.length ? (
               <div className="bn-section" style={{ display: "grid", gap: 10 }}>
                 <h4 style={{ margin: 0 }}>Key Phrases</h4>
-                {lesson.phrases.map((p, idx) => (
+                {filteredPhrases.map((p, idx) => (
                   <div key={idx} className="bn-section" style={{ background: "#fff" }}>
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
                       <div style={{ fontWeight: 800, color: "#0f172a" }}>{p.bn}</div>
@@ -1013,7 +1083,7 @@ export default function BengaliTutor() {
                       loopSequence(
                         "all-phrases",
                         "all",
-                        lesson.phrases.flatMap((p) => [
+                        filteredPhrases.flatMap((p) => [
                           { text: p.bn, lang: "bn", forceApi: true },
                           { text: p.en, lang: "en", forceApi: true },
                         ])
@@ -1045,7 +1115,7 @@ export default function BengaliTutor() {
             {contentTab === "vocab" && lesson.vocab?.length ? (
               <div className="bn-section" style={{ display: "grid", gap: 6 }}>
                 <h4 style={{ margin: 0 }}>Vocabulary</h4>
-                {lesson.vocab.map((v, idx) => (
+                {filteredVocab.map((v, idx) => (
                   <div key={idx} style={{ display: "flex", justifyContent: "space-between", gap: 8, flexWrap: "wrap", padding: "6px 0", borderBottom: "1px solid #e2e8f0" }}>
                     <div>
                       <div style={{ fontWeight: 700 }}>{v.bn}</div>
@@ -1109,7 +1179,7 @@ export default function BengaliTutor() {
                       loopSequence(
                         "all-vocab",
                         "all",
-                        lesson.vocab.flatMap((v, i) => [
+                        filteredVocab.flatMap((v, i) => [
                           { text: v.bn, lang: "bn", forceApi: true },
                           { text: v.en, lang: "en", forceApi: true },
                         ])
@@ -1135,7 +1205,7 @@ export default function BengaliTutor() {
                       loopSequence(
                         "all-vocab-enbn",
                         "all",
-                        lesson.vocab.flatMap((v, i) => [
+                        filteredVocab.flatMap((v, i) => [
                           { text: v.en, lang: "en", forceApi: true },
                           { text: v.bn, lang: "bn", forceApi: true },
                         ])
