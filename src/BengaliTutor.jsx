@@ -113,6 +113,7 @@ export default function BengaliTutor() {
     }
   });
   const [matchOptionsCount, setMatchOptionsCount] = useState(4);
+  const [filtersExpanded, setFiltersExpanded] = useState(false);
   const [error, setError] = useState("");
   const [vocabMp3Loading, setVocabMp3Loading] = useState(false);
   const [phraseMp3Loading, setPhraseMp3Loading] = useState(false);
@@ -188,6 +189,22 @@ export default function BengaliTutor() {
     setSelectedGroups(prev => ({
       ...prev,
       [type]: prev[type].includes(idx) ? prev[type].filter(i => i !== idx) : [...prev[type], idx]
+    }));
+  };
+
+  const selectAllGroups = (type) => {
+    const total = (type === "phrases" ? lesson.phrases : lesson.vocab)?.length || 0;
+    const count = Math.ceil(total / 10);
+    setSelectedGroups(prev => ({
+      ...prev,
+      [type]: Array.from({ length: count }, (_, i) => i)
+    }));
+  };
+
+  const clearAllGroups = (type) => {
+    setSelectedGroups(prev => ({
+      ...prev,
+      [type]: []
     }));
   };
 
@@ -400,11 +417,18 @@ export default function BengaliTutor() {
       cursor: pointer;
       font-weight: 700;
       box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+      transition: none;
+    }
+    .bn-btn:hover {
+      background: #0f172a;
     }
     .bn-btn.secondary {
       background: #f8fafc;
       color: #0f172a;
       border-color: #e2e8f0;
+    }
+    .bn-btn.secondary:hover {
+      background: #f8fafc;
     }
     .bn-btn.active {
       background: #0f172a;
@@ -440,28 +464,43 @@ export default function BengaliTutor() {
       padding: 0.6rem 0.75rem;
       border-radius: 12px;
       font-weight: 700;
-      cursor: pointer;
       text-align: left;
+      transition: none;
+    }
+    .bn-game-option:hover {
+      background: #eef2ff;
     }
     .bn-game-option.correct {
       background: #dcfce7;
       border-color: #16a34a;
       color: #14532d;
     }
+    .bn-game-option.correct:hover {
+      background: #dcfce7 !important;
+    }
     .bn-game-option.wrong {
       background: #fee2e2;
       border-color: #ef4444;
       color: #7f1d1d;
+    }
+    .bn-game-option.wrong:hover {
+      background: #fee2e2 !important;
     }
     .bn-true-btn {
       background: #dcfce7;
       border-color: #16a34a;
       color: #14532d;
     }
+    .bn-true-btn:hover {
+      background: #dcfce7;
+    }
     .bn-false-btn {
       background: #fee2e2;
       border-color: #ef4444;
       color: #7f1d1d;
+    }
+    .bn-false-btn:hover {
+      background: #fee2e2;
     }
     .bn-tabs {
       display: grid;
@@ -488,6 +527,14 @@ export default function BengaliTutor() {
         grid-template-columns: 1fr auto;
         align-items: center;
       }
+    }
+    /* Disable tooltips and hover scaling for action buttons on this page */
+    .action-buttons .icon-btn:hover {
+      transform: none !important;
+      filter: none !important;
+    }
+    [data-tooltip]:hover::before, [data-tooltip]:hover::after {
+      display: none !important;
     }
   `;
 
@@ -675,6 +722,7 @@ export default function BengaliTutor() {
 
   const handleGamePick = (option) => {
     if (!gameQuestion || gameResult) return;
+    document.activeElement?.blur();
     const isCorrect = option === gameQuestion.en;
     setGameChoice(option);
     setGameResult(isCorrect ? "correct" : "wrong");
@@ -694,6 +742,7 @@ export default function BengaliTutor() {
 
   const handleTrueFalsePick = (pickedTrue) => {
     if (!tfQuestion || tfResult) return;
+    document.activeElement?.blur();
     const isCorrect = pickedTrue === tfQuestion.isCorrect;
     setTfResult(isCorrect ? "correct" : "wrong");
     setTfScore((prev) => {
@@ -712,6 +761,7 @@ export default function BengaliTutor() {
 
   const handleAudioPick = (option) => {
     if (!audioQuestion || audioResult) return;
+    document.activeElement?.blur();
     const isCorrect = option === audioQuestion.en;
     setAudioChoice(option);
     setAudioResult(isCorrect ? "correct" : "wrong");
@@ -732,6 +782,7 @@ export default function BengaliTutor() {
   const handleMasteryPick = (option) => {
     const current = masteryQueue[masteryIndex];
     if (!current || masteryResult) return;
+    document.activeElement?.blur();
     const isCorrect = option === current.en;
     setMasteryChoice(option);
     setMasteryResult(isCorrect ? "correct" : "wrong");
@@ -975,22 +1026,67 @@ export default function BengaliTutor() {
             <p style={{ margin: 0, color: "#475569" }}>{lesson.summary}</p>
             <ActionButtons promptText={combinedLessonPrompt} />
 
-            {/* Group Filters */}
-            <div className="bn-section" style={{ display: "grid", gap: 10 }}>
-              <h4 style={{ margin: 0 }}>Item Filters (Groups of 10)</h4>
-              <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-                {(() => {
-                  const type = contentTab === "games" ? gameDataset : contentTab;
-                  const total = (type === "phrases" ? lesson.phrases : lesson.vocab)?.length || 0;
-                  const count = Math.ceil(total / 10);
-                  return Array.from({ length: count }).map((_, i) => (
-                    <label key={i} style={{ display: "flex", alignItems: "center", gap: 6, background: "#fff", padding: "6px 10px", borderRadius: 10, border: "1px solid #e2e8f0", fontSize: "0.85rem", cursor: "pointer", fontWeight: 700 }}>
-                      <input type="checkbox" checked={selectedGroups[type]?.includes(i)} onChange={() => toggleGroupSelection(type, i)} />
-                      {i * 10 + 1}-{Math.min((i + 1) * 10, total)}
-                    </label>
-                  ));
-                })()}
+            {/* Collapsible Group Filters */}
+            <div className="bn-section" style={{ display: "grid", gap: 10, background: "#f1f5f9" }}>
+              <div 
+                onClick={() => setFiltersExpanded(!filtersExpanded)}
+                style={{ display: "flex", justifyContent: "space-between", alignItems: "center", cursor: "pointer" }}
+              >
+                <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                  <h4 style={{ margin: 0 }}>Content Filters</h4>
+                  <span className="bn-pill" style={{ background: "#fff", fontSize: "0.75rem", fontWeight: 800 }}>
+                    {(() => {
+                      const type = contentTab === "games" ? gameDataset : contentTab;
+                      const items = type === "phrases" ? filteredPhrases : filteredVocab;
+                      const total = (type === "phrases" ? lesson.phrases : lesson.vocab)?.length || 0;
+                      return `Showing ${items.length} / ${total}`;
+                    })()}
+                  </span>
+                </div>
+                <span style={{ fontWeight: 800, fontSize: "1.2rem", color: "#64748b" }}>
+                  {filtersExpanded ? "▴" : "▾"}
+                </span>
               </div>
+
+              {filtersExpanded && (
+                <div style={{ display: "grid", gap: 12, paddingTop: 10, borderTop: "1px solid #e2e8f0" }}>
+                  <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+                    {(() => {
+                      const type = contentTab === "games" ? gameDataset : contentTab;
+                      return (
+                        <>
+                          <button className="bn-btn secondary" style={{ padding: "4px 10px", fontSize: "0.75rem" }} onClick={() => selectAllGroups(type)}>Select All</button>
+                          <button className="bn-btn secondary" style={{ padding: "4px 10px", fontSize: "0.75rem" }} onClick={() => clearAllGroups(type)}>Clear All</button>
+                        </>
+                      );
+                    })()}
+                  </div>
+                  <div style={{ 
+                    display: "grid", 
+                    gridTemplateColumns: "repeat(auto-fill, minmax(85px, 1fr))", 
+                    gap: 6 
+                  }}>
+                    {(() => {
+                      const type = contentTab === "games" ? gameDataset : contentTab;
+                      const total = (type === "phrases" ? lesson.phrases : lesson.vocab)?.length || 0;
+                      const count = Math.ceil(total / 10);
+                      return Array.from({ length: count }).map((_, i) => {
+                        const isSelected = selectedGroups[type]?.includes(i);
+                        return (
+                          <button 
+                            key={i} 
+                            className={`bn-btn ${isSelected ? "" : "secondary"}`}
+                            style={{ padding: "8px 4px", fontSize: "0.8rem", textAlign: "center", border: isSelected ? "none" : "1px solid #cbd5e1" }}
+                            onClick={() => toggleGroupSelection(type, i)}
+                          >
+                            {i * 10 + 1}-{Math.min((i + 1) * 10, total)}
+                          </button>
+                        );
+                      });
+                    })()}
+                  </div>
+                </div>
+              )}
             </div>
 
             <div className="bn-tabs">
