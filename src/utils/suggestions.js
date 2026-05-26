@@ -34,6 +34,7 @@ export const IDEA_SUGGESTIONS = [
 export const LEARNING_SUGGESTIONS = [
   { label: "Teach Me Like I'm 5", value: "Explain this concept in very simple terms" },
   { label: "Teach Me Like I'm Expert", value: "Explain this topic using advanced terminology" },
+  { label: "Memory Mnemonics", value: "Provide creative mnemonics or memory triggers to help me memorize this information." },
   { label: "Memory Metaphor", value: "Use a metaphor or analogy to help remember this" },
   { label: "Flashcards", value: "Generate flashcards to study this material" },
   { label: "Memorize Sentence", value: "Help me memorize this sentence/phrase with spaced-repetition prompts and quick recall questions" },
@@ -73,6 +74,17 @@ export const WRITING_SUGGESTIONS = [
   { label: "Rewrite as Story", value: "Convert this content into a narrative story format" },
 ];
 
+export const BENGALI_SUGGESTIONS = [
+  { label: "Create Lesson", value: "Use these Bengali words/phrases to create a structured lesson including grammar tips, common usage, and simple practice exercises." },
+  { label: "Memorization Mnemonics", value: "Provide creative mnemonics or memory triggers to help me memorize these specific Bengali words or phrases." },
+  { label: "Grammar Deep-Dive", value: "Break down the grammar of these Bengali phrases. Explain sentence structure, verb conjugations, and word roots." },
+  { label: "Formal vs Informal", value: "Explain the formal (Apni), semi-formal (Tumi), and informal (Tui) variations for these phrases, and when to use each." },
+  { label: "Contextual Story", value: "Write a very short story (3-5 sentences) in Bengali using these words, with an English translation, to show them in context." },
+  { label: "Pronunciation Guide", value: "Provide a detailed phonetic breakdown for these Bengali words to help with native-like pronunciation." },
+  { label: "Idiom Comparison", value: "Compare these phrases with their English equivalents. Highlight literal meanings vs. idiomatic meanings." },
+  { label: "Quick Quiz", value: "Generate a 5-question quiz based on these Bengali words to test my recall and grammar." },
+];
+
 
 export const SUGGESTION_GROUPS = {
   code: CODE_SUGGESTIONS,
@@ -80,4 +92,5 @@ export const SUGGESTION_GROUPS = {
   research: RESEARCH_SUGGESTIONS,
   learning: LEARNING_SUGGESTIONS,
   ideas: IDEA_SUGGESTIONS,
+  bengali: BENGALI_SUGGESTIONS,
 };
