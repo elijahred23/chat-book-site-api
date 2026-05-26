@@ -540,9 +540,11 @@ export default function BengaliTutor() {
 
   const combinedLessonPrompt = useMemo(() => {
     if (!lesson) return "";
-    const phrases = filteredPhrases.map((p) => `${p.bn} (${p.pronunciation || ""}) - ${p.en}`);
-    return `${lesson.title || "Bengali Lesson"}: ${phrases.join(" | ")}`;
-  }, [lesson, filteredPhrases]);
+    const isVocab = contentTab === "vocab" || (contentTab === "games" && gameDataset === "vocab");
+    const source = isVocab ? filteredVocab : filteredPhrases;
+    const items = source.map((p) => `${p.bn} (${p.pronunciation || ""}) - ${p.en}`);
+    return `(${isVocab ? "Vocab" : "Phrases"}): ${items.join(" | ")}`;
+  }, [lesson, filteredPhrases, filteredVocab, contentTab, gameDataset]);
 
   const hasAnyGameContent = useMemo(
     () => ((lesson?.vocab?.length || 0) + (lesson?.phrases?.length || 0)) > 0,
