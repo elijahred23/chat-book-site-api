@@ -117,6 +117,13 @@ export default function BengaliTutor() {
   const [error, setError] = useState("");
   const [vocabMp3Loading, setVocabMp3Loading] = useState(false);
   const [phraseMp3Loading, setPhraseMp3Loading] = useState(false);
+  const [gameDirection, setGameDirection] = useState(() => {
+    try {
+      return localStorage.getItem("bn_game_direction") || "bn-en";
+    } catch {
+      return "bn-en";
+    }
+  });
   const [showPhraseActions, setShowPhraseActions] = useState(() => {
     try {
       const saved = localStorage.getItem("bn_show_phrase_actions");
@@ -168,6 +175,10 @@ export default function BengaliTutor() {
       localStorage.setItem("bn_selected_groups_ref", currentRef);
     }
   }, [lesson]);
+
+  useEffect(() => {
+    localStorage.setItem("bn_game_direction", gameDirection);
+  }, [gameDirection]);
 
   useEffect(() => {
     localStorage.setItem("bn_selected_groups", JSON.stringify(selectedGroups));
@@ -641,36 +652,76 @@ export default function BengaliTutor() {
     }
   };
 
-  const buildGameQuestion = (items) => {
+  const buildGameQuestion = (items, dir) => {
     if (!items?.length || items.length < 2) return null;
     const correct = items[Math.floor(Math.random() * items.length)];
     const distractors = items.filter((v) => v.en !== correct.en);
     const shuffled = [...distractors].sort(() => Math.random() - 0.5);
     const picks = shuffled.slice(0, Math.min(matchOptionsCount - 1, shuffled.length));
-    const options = [...picks.map((v) => v.en), correct.en].sort(() => Math.random() - 0.5);
-    return { bn: correct.bn, pronunciation: correct.pronunciation, en: correct.en, options };
+    
+    const isEnBn = dir === "en-bn";
+    const options = isEnBn
+      ? [...picks.map((v) => `${v.bn} (${v.pronunciation || ""})`), `${correct.bn} (${correct.pronunciation || ""})`]
+      : [...picks.map((v) => v.en), correct.en];
+
+    return { 
+      bn: correct.bn, 
+      pronunciation: correct.pronunciation, 
+      en: correct.en, 
+      options: options.sort(() => Math.random() - 0.5), 
+      correctAnswer: isEnBn ? `${correct.bn} (${correct.pronunciation || ""})` : correct.en,
+      displayQuestion: isEnBn ? correct.en : correct.bn
+    };
   };
 
-  const buildTrueFalseQuestion = (items) => {
+  const buildTrueFalseQuestion = (items, dir) => {
     if (!items?.length || items.length < 2) return null;
     const correct = items[Math.floor(Math.random() * items.length)];
     const shouldBeCorrect = Math.random() > 0.45;
+    const isEnBn = dir === "en-bn";
+
     if (shouldBeCorrect) {
-      return { bn: correct.bn, en: correct.en, isCorrect: true };
+      return { 
+        bn: correct.bn, 
+        en: correct.en, 
+        isCorrect: true, 
+        pronunciation: correct.pronunciation || "",
+        displayQuestion: isEnBn ? correct.en : `${correct.bn} (${correct.pronunciation || ""})`,
+        displayAnswer: isEnBn ? `${correct.bn} (${correct.pronunciation})` : correct.en
+      };
     }
     const wrongPool = items.filter((v) => v.en !== correct.en);
     const wrong = wrongPool[Math.floor(Math.random() * wrongPool.length)];
-    return { bn: correct.bn, en: wrong.en, isCorrect: false, pronunciation: correct.pronunciation };
+    return { 
+      bn: correct.bn, 
+      en: wrong.en, 
+      isCorrect: false, 
+      pronunciation: correct.pronunciation || "",
+      displayQuestion: isEnBn ? correct.en : `${correct.bn} (${correct.pronunciation || ""})`,
+      displayAnswer: isEnBn ? `${wrong.bn} (${wrong.pronunciation})` : wrong.en
+    };
   };
 
-  const buildAudioHuntQuestion = (items) => {
+  const buildAudioHuntQuestion = (items, dir) => {
     if (!items?.length || items.length < 2) return null;
     const correct = items[Math.floor(Math.random() * items.length)];
     const distractors = items.filter((v) => v.en !== correct.en);
     const shuffled = [...distractors].sort(() => Math.random() - 0.5);
     const picks = shuffled.slice(0, Math.min(3, shuffled.length));
-    const options = [...picks.map((v) => v.en), correct.en].sort(() => Math.random() - 0.5);
-    return { bn: correct.bn, en: correct.en, options };
+    
+    const isEnBn = dir === "en-bn";
+    const options = isEnBn
+      ? [...picks.map((v) => `${v.bn} (${v.pronunciation || ""})`), `${correct.bn} (${correct.pronunciation || ""})`]
+      : [...picks.map((v) => v.en), correct.en];
+
+    return { 
+      bn: correct.bn, 
+      en: correct.en, 
+      options: options.sort(() => Math.random() - 0.5),
+      correctAnswer: isEnBn ? `${correct.bn} (${correct.pronunciation || ""})` : correct.en,
+      audioText: isEnBn ? correct.en : correct.bn,
+      audioLang: isEnBn ? "en" : "bn"
+    };
   };
 
   const buildMasteryQueue = (items) => {
@@ -678,17 +729,21 @@ export default function BengaliTutor() {
     return shuffled;
   };
 
-  const buildMasteryOptions = (items, current) => {
+  const buildMasteryOptions = (items, current, dir) => {
     if (!current) return [];
     const distractors = items.filter((v) => v.en !== current.en);
     const picks = [...distractors].sort(() => Math.random() - 0.5).slice(0, Math.min(3, distractors.length));
-    return [...picks.map((v) => v.en), current.en].sort(() => Math.random() - 0.5);
+    const isEnBn = dir === "en-bn";
+    const options = isEnBn
+      ? [...picks.map((v) => `${v.bn} (${v.pronunciation || ""})`), `${current.bn} (${current.pronunciation || ""})`]
+      : [...picks.map((v) => v.en), current.en];
+    return options.sort(() => Math.random() - 0.5);
   };
 
-  const startNewGameRound = () => {
+  const startNewGameRound = (dir = gameDirection) => {
     const clean = getGameItems();
     if (!clean.length) return;
-    const question = buildGameQuestion(clean);
+    const question = buildGameQuestion(clean, dir);
     setGameQuestion(question);
     setGameResult(null);
     setGameChoice(null);
@@ -711,13 +766,13 @@ export default function BengaliTutor() {
     setAudioChoice(null);
   };
 
-  const startMasteryRound = (nextQueue, nextIndex) => {
+  const startMasteryRound = (nextQueue, nextIndex, dir = gameDirection) => {
     const queue = nextQueue || masteryQueue;
     if (!queue?.length) return;
     let idx = typeof nextIndex === "number" ? nextIndex : masteryIndex;
     if (idx >= queue.length) idx = 0;
     setMasteryIndex(idx);
-    setMasteryOptions(buildMasteryOptions(queue, queue[idx]));
+    setMasteryOptions(buildMasteryOptions(queue, queue[idx], dir));
     setMasteryResult(null);
     setMasteryChoice(null);
   };
@@ -725,7 +780,7 @@ export default function BengaliTutor() {
   const handleGamePick = (option) => {
     if (!gameQuestion || gameResult) return;
     document.activeElement?.blur();
-    const isCorrect = option === gameQuestion.en;
+    const isCorrect = option === gameQuestion.correctAnswer;
     setGameChoice(option);
     setGameResult(isCorrect ? "correct" : "wrong");
     setGameScore((prev) => {
@@ -764,7 +819,7 @@ export default function BengaliTutor() {
   const handleAudioPick = (option) => {
     if (!audioQuestion || audioResult) return;
     document.activeElement?.blur();
-    const isCorrect = option === audioQuestion.en;
+    const isCorrect = option === audioQuestion.correctAnswer;
     setAudioChoice(option);
     setAudioResult(isCorrect ? "correct" : "wrong");
     setAudioScore((prev) => {
@@ -785,7 +840,8 @@ export default function BengaliTutor() {
     const current = masteryQueue[masteryIndex];
     if (!current || masteryResult) return;
     document.activeElement?.blur();
-    const isCorrect = option === current.en;
+    const targetAnswer = gameDirection === "en-bn" ? `${current.bn} (${current.pronunciation || ""})` : current.en;
+    const isCorrect = option === targetAnswer;
     setMasteryChoice(option);
     setMasteryResult(isCorrect ? "correct" : "wrong");
     setMasteryScore((prev) => {
@@ -797,14 +853,20 @@ export default function BengaliTutor() {
         bestStreak: Math.max(prev.bestStreak, nextStreak),
       };
     });
+    
+    const nextCount = isCorrect ? masteryCorrectCount + 1 : 0;
     if (isCorrect) {
-      setMasteryCorrectCount((prev) => prev + 1);
+      setMasteryCorrectCount(nextCount);
     } else {
       setMasteryCorrectCount(0);
     }
-    setTimeout(() => {
-      advanceMastery();
-    }, 500);
+
+    // Auto-advance for intermediate steps, but stay on final step so user can see feedback
+    if (isCorrect && nextCount < masteryTarget) {
+      setTimeout(() => {
+        advanceMastery(nextCount);
+      }, 500);
+    }
   };
 
   const advanceMastery = () => {
@@ -816,7 +878,7 @@ export default function BengaliTutor() {
       if (nextIndex >= masteryQueue.length) nextIndex = 0;
       setMasteryCorrectCount(0);
     }
-    startMasteryRound(masteryQueue, nextIndex);
+    startMasteryRound(masteryQueue, nextIndex, gameDirection);
   };
 
   const reshuffleMastery = () => {
@@ -828,7 +890,7 @@ export default function BengaliTutor() {
     setMasteryCorrectCount(0);
     setMasteryResult(null);
     setMasteryChoice(null);
-    setMasteryOptions(buildMasteryOptions(queue, queue[0]));
+    setMasteryOptions(buildMasteryOptions(queue, queue[0], gameDirection));
   };
 
   useEffect(() => {
@@ -880,15 +942,15 @@ export default function BengaliTutor() {
     setMasteryCorrectCount(0);
     setMasteryResult(null);
     setMasteryChoice(null);
-    startMasteryRound(queue, 0);
-    startNewGameRound();
+    startMasteryRound(queue, 0, gameDirection);
+    startNewGameRound(gameDirection);
     startTrueFalseRound();
     startAudioHuntRound();
-  }, [lesson, gameDataset, gameItems]);
+  }, [lesson, gameDataset, gameItems, gameDirection]);
 
   useEffect(() => {
     if (activeGameTab === "match" && gameItems.length >= 2) {
-      startNewGameRound();
+      startNewGameRound(gameDirection);
     }
   }, [matchOptionsCount]);
 
@@ -897,8 +959,8 @@ export default function BengaliTutor() {
     setMasteryCorrectCount(0);
     setMasteryResult(null);
     setMasteryChoice(null);
-    startMasteryRound(masteryQueue, masteryIndex);
-  }, [masteryTarget, lesson, gameItems, masteryQueue, masteryIndex]);
+    startMasteryRound(masteryQueue, masteryIndex, gameDirection);
+  }, [masteryTarget, lesson, gameItems, masteryQueue, masteryIndex, gameDirection]);
 
   return (
     <div style={{ background: "#f8fafc", minHeight: "100vh" }}>
@@ -1353,6 +1415,14 @@ export default function BengaliTutor() {
                       Phrases set
                     </button>
                   </div>
+                  <div className="bn-tabs" style={{ background: "#e0f2fe", padding: "4px", borderRadius: "14px" }}>
+                    <button className={`bn-tab ${gameDirection === "bn-en" ? "active" : ""}`} onClick={() => setGameDirection("bn-en")}>
+                      Bengali → English
+                    </button>
+                    <button className={`bn-tab ${gameDirection === "en-bn" ? "active" : ""}`} onClick={() => setGameDirection("en-bn")}>
+                      English → Bengali
+                    </button>
+                  </div>
                   <div className="bn-tabs">
                     <button className={`bn-tab ${activeGameTab === "match" ? "active" : ""}`} onClick={() => setActiveGameTab("match")}>
                       Match It
@@ -1373,8 +1443,11 @@ export default function BengaliTutor() {
                     {gameQuestion ? (
                       <div className="bn-section" style={{ background: "#fff", display: "grid", gap: 8 }}>
                         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
-                          <div style={{ fontWeight: 800, fontSize: "1.2rem", color: "#0f172a" }}>{gameQuestion.bn}</div>
+                          <div style={{ fontWeight: 800, fontSize: "1.2rem", color: "#0f172a" }}>{gameQuestion.displayQuestion}</div>
                           <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
+                        {gameDirection === "bn-en" && gameQuestion.pronunciation && (
+                          <div style={{ color: "#475569", fontSize: "1rem" }}>{gameQuestion.pronunciation}</div>
+                        )}
                             <label style={{ fontSize: "0.85rem", fontWeight: 700, color: "#475569" }}>Options:</label>
                             <select
                               value={matchOptionsCount}
@@ -1387,16 +1460,13 @@ export default function BengaliTutor() {
                             </select>
                           </div>
                         </div>
-                        {gameQuestion.pronunciation && (
-                          <div style={{ color: "#475569" }}>{gameQuestion.pronunciation}</div>
-                        )}
                         <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-                          <button className="bn-btn secondary" onClick={() => speak(gameQuestion.bn, "bn", { forceApi: true })}>🔈 Hear Bengali</button>
+                          <button className="bn-btn secondary" onClick={() => speak(gameQuestion.bn, "bn", { forceApi: true })}>🔈 Hear Target Bengali</button>
                           <button className="bn-btn secondary" onClick={startNewGameRound}>New card</button>
                         </div>
                         <div style={{ display: "grid", gap: 8 }}>
                           {gameQuestion.options.map((option) => {
-                            const isCorrect = option === gameQuestion.en;
+                            const isCorrect = option === gameQuestion.correctAnswer;
                             const stateClass = gameResult
                               ? isCorrect
                                 ? "correct"
@@ -1418,11 +1488,11 @@ export default function BengaliTutor() {
                         </div>
                         {gameResult && (
                           <div style={{ fontWeight: 700, color: gameResult === "correct" ? "#15803d" : "#b91c1c" }}>
-                            {gameResult === "correct" ? "Nice! You got it." : `Close! The answer is "${gameQuestion.en}".`}
+                            {gameResult === "correct" ? "Nice! You got it." : `Close! The answer is "${gameQuestion.correctAnswer}".`}
                           </div>
                         )}
                         {gameResult && (
-                          <button className="bn-btn" onClick={startNewGameRound}>Next word</button>
+                          <button className="bn-btn" onClick={() => startNewGameRound()}>Next word</button>
                         )}
                       </div>
                     ) : (
@@ -1436,12 +1506,12 @@ export default function BengaliTutor() {
                       <div className="bn-section" style={{ background: "#fff", display: "grid", gap: 8 }}>
                         <div style={{ fontWeight: 800, fontSize: "1.1rem", color: "#0f172a" }}>Listen and pick the English meaning</div>
                         <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-                          <button className="bn-btn" onClick={() => speak(audioQuestion.bn, "bn", { forceApi: true })}>▶️ Play Bengali</button>
+                          <button className="bn-btn" onClick={() => speak(audioQuestion.audioText, audioQuestion.audioLang, { forceApi: true })}>▶️ Play Audio</button>
                           <button className="bn-btn secondary" onClick={startAudioHuntRound}>New clip</button>
                         </div>
                         <div style={{ display: "grid", gap: 8 }}>
                           {audioQuestion.options.map((option) => {
-                            const isCorrect = option === audioQuestion.en;
+                            const isCorrect = option === audioQuestion.correctAnswer;
                             const stateClass = audioResult
                               ? isCorrect
                                 ? "correct"
@@ -1463,7 +1533,7 @@ export default function BengaliTutor() {
                         </div>
                         {audioResult && (
                           <div style={{ fontWeight: 700, color: audioResult === "correct" ? "#15803d" : "#b91c1c" }}>
-                            {audioResult === "correct" ? "Correct!" : `Not quite — it was "${audioQuestion.en}".`}
+                            {audioResult === "correct" ? "Correct!" : `Not quite — it was "${audioQuestion.correctAnswer}".`}
                           </div>
                         )}
                         {audioResult && (
@@ -1496,10 +1566,7 @@ export default function BengaliTutor() {
                           <button className="bn-btn secondary" onClick={reshuffleMastery}>Shuffle list</button>
                         </div>
                         <div style={{ fontWeight: 800, fontSize: "1.2rem", color: "#0f172a" }}>
-                          {masteryQueue[masteryIndex]?.bn}
-                        </div>
-                        <div style={{ fontWeight: 800, fontSize: "1.2rem", color: "#0f172a" }}>
-                          {masteryQueue[masteryIndex]?.pronunciation}
+                          {gameDirection === "en-bn" ? masteryQueue[masteryIndex]?.en : `${masteryQueue[masteryIndex]?.bn} (${masteryQueue[masteryIndex]?.pronunciation || ""})`}
                         </div>
 
                         <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
@@ -1507,13 +1574,14 @@ export default function BengaliTutor() {
                             className="bn-btn"
                             onClick={() => speak(masteryQueue[masteryIndex]?.bn, "bn", { forceApi: true })}
                           >
-                            ▶️ Play Bengali
+                            ▶️ Play Spoken Bengali
                           </button>
                           <button className="bn-btn secondary" onClick={startMasteryRound}>New options</button>
                         </div>
                         <div style={{ display: "grid", gap: 8 }}>
                           {masteryOptions.map((option) => {
-                            const isCorrect = option === masteryQueue[masteryIndex]?.en;
+                            const targetAnswer = gameDirection === "en-bn" ? `${masteryQueue[masteryIndex]?.bn} (${masteryQueue[masteryIndex]?.pronunciation || ""})` : masteryQueue[masteryIndex]?.en;
+                            const isCorrect = option === targetAnswer;
                             const stateClass = masteryResult
                               ? isCorrect
                                 ? "correct"
@@ -1537,7 +1605,7 @@ export default function BengaliTutor() {
                           <div style={{ fontWeight: 700, color: masteryResult === "correct" ? "#15803d" : "#b91c1c" }}>
                             {masteryResult === "correct"
                               ? "Correct! Keep it going."
-                              : `Missed it — try again. The answer is "${masteryQueue[masteryIndex]?.en}".`}
+                              : `Missed it — try again. The answer is "${gameDirection === "en-bn" ? `${masteryQueue[masteryIndex]?.bn} (${masteryQueue[masteryIndex]?.pronunciation || ""})` : masteryQueue[masteryIndex]?.en}".`}
                           </div>
                         )}
                         {masteryResult && (
@@ -1556,8 +1624,8 @@ export default function BengaliTutor() {
                   <>
                     {tfQuestion ? (
                       <div className="bn-section" style={{ background: "#fff", display: "grid", gap: 8 }}>
-                        <div style={{ fontWeight: 800, fontSize: "1.1rem", color: "#0f172a" }}>{tfQuestion.bn} {tfQuestion.pronunciation}</div>
-                        <div style={{ color: "#475569" }}>Does this mean: <strong style={{ color: "#0f172a" }}>{tfQuestion.en}</strong>?</div>
+                        <div style={{ fontWeight: 800, fontSize: "1.1rem", color: "#0f172a" }}>{tfQuestion.displayQuestion}</div>
+                        <div style={{ color: "#475569" }}>Does this mean: <strong style={{ color: "#0f172a" }}>{tfQuestion.displayAnswer}</strong>?</div>
                         <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
                           <button className="bn-btn secondary" onClick={() => speak(tfQuestion.bn, "bn", { forceApi: true })}>🔈 Hear Bengali</button>
                           <button className="bn-btn secondary" onClick={startTrueFalseRound}>New check</button>
