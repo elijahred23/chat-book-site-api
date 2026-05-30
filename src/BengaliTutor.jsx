@@ -866,7 +866,7 @@ export default function BengaliTutor() {
       setTimeout(() => {
         advanceMastery(nextCount);
       }, 500);
-    } else {
+    } else if (nextCount >= masteryTarget) { 
       setTimeout(() => {
         reshuffleMastery();
       }, 500);
