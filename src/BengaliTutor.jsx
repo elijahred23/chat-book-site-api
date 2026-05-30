@@ -870,6 +870,10 @@ export default function BengaliTutor() {
       setTimeout(() => {
         reshuffleMastery();
       }, 500);
+    } else if (!isCorrect){
+      setTimeout(() => {
+        advanceMastery(nextCount);
+      }, 500);
     }
   };
 
