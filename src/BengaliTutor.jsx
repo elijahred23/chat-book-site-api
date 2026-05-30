@@ -866,6 +866,10 @@ export default function BengaliTutor() {
       setTimeout(() => {
         advanceMastery(nextCount);
       }, 500);
+    } else {
+      setTimeout(() => {
+        reshuffleMastery();
+      }, 500);
     }
   };
 
