@@ -154,7 +154,7 @@ export default function BengaliTutor() {
   const [masteryResult, setMasteryResult] = useState(null);
   const [masteryChoice, setMasteryChoice] = useState(null);
   const [masteryOptions, setMasteryOptions] = useState([]);
-  const [masteryScore, setMasteryScore] = useState({ correct: 0, total: 0, streak: 0, bestStreak: 0 });
+  const [masteryScore, setMasteryScore] = useState({ correct: 0, total: 0, streak: 0, bestStreak: 0, finishedStreakSum: 0, finishedStreakCount: 0 });
   const [activeGameTab, setActiveGameTab] = useState("match");
   const { voices, ready: voicesReady } = useVoices();
   const audioCacheRef = React.useRef(new Map()); // cache Bengali audio URLs by text+lang
@@ -794,12 +794,20 @@ export default function BengaliTutor() {
     setGameChoice(option);
     setGameResult(isCorrect ? "correct" : "wrong");
     setGameScore((prev) => {
+      let { finishedStreakSum, finishedStreakCount } = prev;
+      // If the current streak was just broken, add it to the historical average stats
+      if (!isCorrect && prev.streak > 0) {
+        finishedStreakSum += prev.streak;
+        finishedStreakCount += 1;
+      }
       const nextStreak = isCorrect ? prev.streak + 1 : 0;
       return {
         correct: prev.correct + (isCorrect ? 1 : 0),
         total: prev.total + 1,
         streak: nextStreak,
         bestStreak: Math.max(prev.bestStreak, nextStreak),
+        finishedStreakSum,
+        finishedStreakCount,
       };
     });
     setTimeout(() => {
@@ -813,12 +821,19 @@ export default function BengaliTutor() {
     const isCorrect = pickedTrue === tfQuestion.isCorrect;
     setTfResult(isCorrect ? "correct" : "wrong");
     setTfScore((prev) => {
+      let { finishedStreakSum, finishedStreakCount } = prev;
+      if (!isCorrect && prev.streak > 0) {
+        finishedStreakSum += prev.streak;
+        finishedStreakCount += 1;
+      }
       const nextStreak = isCorrect ? prev.streak + 1 : 0;
       return {
         correct: prev.correct + (isCorrect ? 1 : 0),
         total: prev.total + 1,
         streak: nextStreak,
         bestStreak: Math.max(prev.bestStreak, nextStreak),
+        finishedStreakSum,
+        finishedStreakCount,
       };
     });
     setTimeout(() => {
@@ -833,12 +848,19 @@ export default function BengaliTutor() {
     setAudioChoice(option);
     setAudioResult(isCorrect ? "correct" : "wrong");
     setAudioScore((prev) => {
+      let { finishedStreakSum, finishedStreakCount } = prev;
+      if (!isCorrect && prev.streak > 0) {
+        finishedStreakSum += prev.streak;
+        finishedStreakCount += 1;
+      }
       const nextStreak = isCorrect ? prev.streak + 1 : 0;
       return {
         correct: prev.correct + (isCorrect ? 1 : 0),
         total: prev.total + 1,
         streak: nextStreak,
         bestStreak: Math.max(prev.bestStreak, nextStreak),
+        finishedStreakSum,
+        finishedStreakCount,
       };
     });
     setTimeout(() => {
@@ -855,12 +877,19 @@ export default function BengaliTutor() {
     setMasteryChoice(option);
     setMasteryResult(isCorrect ? "correct" : "wrong");
     setMasteryScore((prev) => {
+      let { finishedStreakSum, finishedStreakCount } = prev;
+      if (!isCorrect && prev.streak > 0) {
+        finishedStreakSum += prev.streak;
+        finishedStreakCount += 1;
+      }
       const nextStreak = isCorrect ? prev.streak + 1 : 0;
       return {
         correct: prev.correct + (isCorrect ? 1 : 0),
         total: prev.total + 1,
         streak: nextStreak,
         bestStreak: Math.max(prev.bestStreak, nextStreak),
+        finishedStreakSum,
+        finishedStreakCount,
       };
     });
     
@@ -974,14 +1003,14 @@ export default function BengaliTutor() {
     setGameQuestion(null);
     setGameResult(null);
     setGameChoice(null);
-    setGameScore({ correct: 0, total: 0, streak: 0, bestStreak: 0 });
+    setGameScore({ correct: 0, total: 0, streak: 0, bestStreak: 0, finishedStreakSum: 0, finishedStreakCount: 0 });
     setTfQuestion(null);
     setTfResult(null);
-    setTfScore({ correct: 0, total: 0, streak: 0, bestStreak: 0 });
+    setTfScore({ correct: 0, total: 0, streak: 0, bestStreak: 0, finishedStreakSum: 0, finishedStreakCount: 0 });
     setAudioQuestion(null);
     setAudioResult(null);
     setAudioChoice(null);
-    setAudioScore({ correct: 0, total: 0, streak: 0, bestStreak: 0 });
+    setAudioScore({ correct: 0, total: 0, streak: 0, bestStreak: 0, finishedStreakSum: 0, finishedStreakCount: 0 });
     setMasteryQueue([]);
     setMasteryIndex(0);
     setMasteryCorrectCount(0);
@@ -989,7 +1018,7 @@ export default function BengaliTutor() {
     setMasteryResult(null);
     setMasteryChoice(null);
     setMasteryOptions([]);
-    setMasteryScore({ correct: 0, total: 0, streak: 0, bestStreak: 0 });
+    setMasteryScore({ correct: 0, total: 0, streak: 0, bestStreak: 0, finishedStreakSum: 0, finishedStreakCount: 0 });
   };
 
   const getGameItems = useCallback(() => {
@@ -1514,8 +1543,8 @@ export default function BengaliTutor() {
                 <div className="bn-pill">
                   {(() => {
                     const s = activeGameTab === "match" ? gameScore : activeGameTab === "truefalse" ? tfScore : activeGameTab === "audio" ? audioScore : masteryScore;
-                    const pct = s.total > 0 ? ((s.correct / s.total) * 100).toFixed(1) : "0.0";
-                    return `Score ${s.correct}/${s.total} (${pct}%) • Streak ${s.streak} (Best ${s.bestStreak})`;
+                    const avg = s.finishedStreakCount > 0 ? (s.finishedStreakSum / s.finishedStreakCount).toFixed(1) : "0.0";
+                    return `Streak ${s.streak} (Avg ${avg}, Best ${s.bestStreak})`;
                   })()}
                 </div>
                 {activeGameTab === "match" && (
@@ -1696,7 +1725,12 @@ export default function BengaliTutor() {
                             {masteryCorrectCount >= masteryTarget ? "Next word" : "Try again"}
                           </button>
                         )}
-                        <div className="bn-pill">Score {masteryScore.correct}/{masteryScore.total} • Streak {masteryScore.streak} (Best {masteryScore.bestStreak})</div>
+                        <div className="bn-pill">
+                          {(() => {
+                            const avg = masteryScore.finishedStreakCount > 0 ? (masteryScore.finishedStreakSum / masteryScore.finishedStreakCount).toFixed(1) : "0.0";
+                            return `Streak ${masteryScore.streak} (Avg ${avg}, Best ${masteryScore.bestStreak})`;
+                          })()}
+                        </div>
                       </div>
                     ) : (
                       <div style={{ color: "#475569" }}>Add at least two vocabulary words to start the game.</div>
