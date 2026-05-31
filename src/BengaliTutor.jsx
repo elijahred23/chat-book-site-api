@@ -570,15 +570,18 @@ export default function BengaliTutor() {
     } catch {}
   }, [showPhraseActions]);
 
-  const downloadCombinedVocabMp3 = async (lang = "bn-IN") => {
+  const downloadCombinedVocabMp3 = async (mode = "bn-only") => {
     if (!filteredVocab.length) return;
     try {
       setVocabMp3Loading(true);
       const items = filteredVocab.flatMap((v) => {
-        if (lang.startsWith("bn")) {
-          return [{ text: v.bn, lang }];
+        if (mode === "bn-only") {
+          return [{ text: v.bn, lang: "bn-IN" }];
         }
-        // Combined download: Bengali first, then English (bn -> en)
+        if (mode === "en-bn") {
+          return [{ text: v.en, lang: "en-US" }, { text: v.bn, lang: "bn-IN" }];
+        }
+        // Default: bn-en (Bengali first, then English)
         return [
           { text: v.bn, lang: "bn-IN" },
           { text: v.en, lang: "en-US" },
@@ -589,7 +592,7 @@ export default function BengaliTutor() {
       if (cachedUrl) {
         const link = document.createElement("a");
         link.href = cachedUrl;
-        link.download = `${lesson.title || "bengali-vocab"}-${lang}.mp3`;
+        link.download = `${lesson.title || "bengali-vocab"}-${mode}.mp3`;
         link.click();
         return;
       }
@@ -604,7 +607,7 @@ export default function BengaliTutor() {
       batchCacheRef.current.set(cacheKey, url);
       const link = document.createElement("a");
       link.href = url;
-      link.download = `${lesson.title || "bengali-vocab"}-${lang}.mp3`;
+      link.download = `${lesson.title || "bengali-vocab"}-${mode}.mp3`;
       link.click();
     } catch (err) {
       setError(err?.message || "Failed to download vocab audio");
@@ -614,7 +617,7 @@ export default function BengaliTutor() {
   };
 
   const downloadPhrasesMp3 = async (mode = "bn-only") => {
-    // mode: "bn-only" or "bn-en"
+    // mode: "bn-only", "bn-en", or "en-bn"
     if (!filteredPhrases.length) return;
     try {
       setPhraseMp3Loading(true);
@@ -623,6 +626,11 @@ export default function BengaliTutor() {
           ? filteredPhrases.flatMap((p) => [
               { text: p.bn, lang: "bn-IN" },
               { text: p.en, lang: "en-US" },
+            ])
+          : mode === "en-bn"
+          ? filteredPhrases.flatMap((p) => [
+              { text: p.en, lang: "en-US" },
+              { text: p.bn, lang: "bn-IN" },
             ])
           : filteredPhrases.map((p) => ({ text: p.bn, lang: "bn-IN" }));
       const cacheKey = JSON.stringify({ type: "phrases", mode, items });
@@ -1115,6 +1123,13 @@ export default function BengaliTutor() {
                   >
                     {phraseMp3Loading ? "Building..." : "Bengali → English MP3"}
                   </button>
+                  <button
+                    className="bn-btn secondary"
+                    onClick={() => downloadPhrasesMp3("en-bn")}
+                    disabled={!lesson?.phrases?.length || phraseMp3Loading}
+                  >
+                    {phraseMp3Loading ? "Building..." : "English → Bengali MP3"}
+                  </button>
                 </div>
               </div>
               <div className="bn-row">
@@ -1123,11 +1138,14 @@ export default function BengaliTutor() {
                   <small style={{ color: "#475569" }}>Combined Bengali / English audio</small>
                 </div>
                 <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
-                  <button className="bn-btn secondary" onClick={() => downloadCombinedVocabMp3("bn-IN")} disabled={!lesson?.vocab?.length || vocabMp3Loading}>
+                  <button className="bn-btn secondary" onClick={() => downloadCombinedVocabMp3("bn-only")} disabled={!lesson?.vocab?.length || vocabMp3Loading}>
                     {vocabMp3Loading ? "Building..." : "Bengali MP3"}
                   </button>
-                  <button className="bn-btn secondary" onClick={() => downloadCombinedVocabMp3("en-US")} disabled={!lesson?.vocab?.length || vocabMp3Loading}>
+                  <button className="bn-btn secondary" onClick={() => downloadCombinedVocabMp3("bn-en")} disabled={!lesson?.vocab?.length || vocabMp3Loading}>
                     {vocabMp3Loading ? "Building..." : "Bengali → English MP3"}
+                  </button>
+                  <button className="bn-btn secondary" onClick={() => downloadCombinedVocabMp3("en-bn")} disabled={!lesson?.vocab?.length || vocabMp3Loading}>
+                    {vocabMp3Loading ? "Building..." : "English → Bengali MP3"}
                   </button>
                 </div>
               </div>
