@@ -33,6 +33,7 @@ import LargeTextChunks from './LargeTextChunks.jsx';
 import GuitarTabs from './GuitarTabs.jsx';
 import AsmrPromptDrawer from './AsmrPromptDrawer.jsx';
 import ActionButtonStudio from './ActionButtonStudio.jsx';
+import MediaPlayer from './MediaPlayer.jsx';
 
 function AppContent() {
   const [isFullWidth, setIsFullWidth] = useState(true);
@@ -140,6 +141,7 @@ function AppContent() {
                 <NavLink to="/market-sim" role="menuitem" onClick={() => setIsMenuOpen(false)}>Stock Market Game</NavLink>
                 <NavLink to="/pdf-to-text" role="menuitem" onClick={() => setIsMenuOpen(false)}>PDF to Text</NavLink>
                 <NavLink to="/regex" role="menuitem" onClick={() => setIsMenuOpen(false)}>Regex Trainer</NavLink>
+                <NavLink to="/media-player" role="menuitem" onClick={() => setIsMenuOpen(false)}>Media Player</NavLink>
                 <NavLink to="/action-buttons-studio" role="menuitem" onClick={() => setIsMenuOpen(false)}>Action Button Studio</NavLink>
                 <NavLink to="/apiCheck" role="menuitem" onClick={() => setIsMenuOpen(false)}>Settings</NavLink>
               </div>
@@ -395,6 +397,7 @@ function AppContent() {
             <Route path="/market-sim" element={<StockMarketGame />} />
             <Route path="/pdf-to-text" element={<PdfToText />} />
             <Route path="/regex" element={<RegexTrainer />} />
+            <Route path="/media-player" element={<MediaPlayer />} />
             <Route path="/action-buttons-studio" element={<ActionButtonStudio />} />
           </Routes>
         </div>
