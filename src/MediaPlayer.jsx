@@ -15,6 +15,7 @@ const MediaPlayer = () => {
       const url = URL.createObjectURL(file);
       setFileUrl(url);
       setFileName(file.name);
+      e.target.value = '';
     }
   };
 
@@ -114,11 +115,12 @@ const MediaPlayer = () => {
           Upload an audio or video file to play it with custom speed and looping.
         </p>
 
-        <label style={styles.uploadBtn}>
+        <label htmlFor="media-upload" style={styles.uploadBtn}>
           Upload File
           <input
+            id="media-upload"
             type="file"
-            accept="audio/*,video/*"
+            accept="audio/*,video/*,.mp3,.wav,.m4a,.ogg,.mp4,.mov,.webm"
             onChange={handleFileUpload}
             style={{ display: 'none' }}
           />
@@ -131,6 +133,7 @@ const MediaPlayer = () => {
               ref={mediaRef}
               src={fileUrl}
               controls
+              playsInline
               onLoadedMetadata={(e) => {
                 if (mediaRef.current) {
                   mediaRef.current.playbackRate = speed;
