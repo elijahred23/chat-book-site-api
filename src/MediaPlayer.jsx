@@ -4,7 +4,8 @@ const MediaPlayer = () => {
   const [fileUrl, setFileUrl] = useState(null);
   const [fileName, setFileName] = useState('');
   const [speed, setSpeed] = useState(1);
-  const [loop, setLoop] = useState(false);
+  const [loop, setLoop] = useState(true);
+  const [duration, setDuration] = useState(0);
   const mediaRef = useRef(null);
 
   const handleFileUpload = (e) => {
@@ -28,6 +29,16 @@ const MediaPlayer = () => {
       mediaRef.current.loop = loop;
     }
   }, [loop]);
+
+  const formatTime = (seconds) => {
+    if (!seconds || isNaN(seconds)) return '0:00';
+    const h = Math.floor(seconds / 3600);
+    const m = Math.floor((seconds % 3600) / 60);
+    const s = Math.floor(seconds % 60);
+    return h > 0
+      ? `${h}:${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`
+      : `${m}:${s.toString().padStart(2, '0')}`;
+  };
 
   const styles = {
     container: {
@@ -120,8 +131,11 @@ const MediaPlayer = () => {
               ref={mediaRef}
               src={fileUrl}
               controls
-              onLoadedMetadata={() => {
-                if (mediaRef.current) mediaRef.current.playbackRate = speed;
+              onLoadedMetadata={(e) => {
+                if (mediaRef.current) {
+                  mediaRef.current.playbackRate = speed;
+                  setDuration(e.target.duration);
+                }
               }}
               style={{ width: '100%', borderRadius: '12px', background: '#0f172a', maxHeight: '500px', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }}
             />
@@ -137,6 +151,9 @@ const MediaPlayer = () => {
                   onChange={(e) => setSpeed(parseFloat(e.target.value))}
                   style={styles.inputRange}
                 />
+              </div>
+              <div style={{ color: '#0f172a', fontWeight: '700', fontSize: '0.9rem', textAlign: 'center', minWidth: '160px' }}>
+                Estimated Length: <span style={{ color: '#2563eb' }}>{formatTime(duration / speed)}</span>
               </div>
               <label style={styles.checkboxWrap}>
                 <input
