@@ -29,7 +29,7 @@ const MediaPlayer = () => {
     if (mediaRef.current) {
       mediaRef.current.loop = loop;
     }
-  }, [loop]);
+  }, [loop, fileUrl]);
 
   const formatTime = (seconds) => {
     if (!seconds || isNaN(seconds)) return '0:00';
@@ -134,9 +134,11 @@ const MediaPlayer = () => {
               src={fileUrl}
               controls
               playsInline
+              loop={loop}
               onLoadedMetadata={(e) => {
                 if (mediaRef.current) {
                   mediaRef.current.playbackRate = speed;
+                  mediaRef.current.loop = loop;
                   setDuration(e.target.duration);
                 }
               }}
