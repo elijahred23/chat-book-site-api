@@ -1479,13 +1479,6 @@ export default function BengaliTutor() {
                 <div style={{ display: "grid", gap: 8 }}>
                   <div style={{ display: "flex", justifyContent: "space-between", gap: 12, flexWrap: "wrap", alignItems: "center" }}>
                     <h4 style={{ margin: 0 }}>{gameDataset === "phrases" ? "Phrase Games" : "Vocabulary Games"}</h4>
-                    <div className="bn-pill">
-                      {(() => {
-                        const s = activeGameTab === "match" ? gameScore : activeGameTab === "truefalse" ? tfScore : activeGameTab === "audio" ? audioScore : masteryScore;
-                        const pct = s.total > 0 ? ((s.correct / s.total) * 100).toFixed(1) : "0.0";
-                        return `Score ${s.correct}/${s.total} (${pct}%) • Streak ${s.streak} (Best ${s.bestStreak})`;
-                      })()}
-                    </div>
                   </div>
                   <div className="bn-tabs">
                     <button className={`bn-tab ${gameDataset === "vocab" ? "active" : ""}`} onClick={() => setGameDataset("vocab")} disabled={!lesson.vocab?.length}>
@@ -1517,6 +1510,13 @@ export default function BengaliTutor() {
                       Quick Check
                     </button>
                   </div>
+                </div>
+                <div className="bn-pill">
+                  {(() => {
+                    const s = activeGameTab === "match" ? gameScore : activeGameTab === "truefalse" ? tfScore : activeGameTab === "audio" ? audioScore : masteryScore;
+                    const pct = s.total > 0 ? ((s.correct / s.total) * 100).toFixed(1) : "0.0";
+                    return `Score ${s.correct}/${s.total} (${pct}%) • Streak ${s.streak} (Best ${s.bestStreak})`;
+                  })()}
                 </div>
                 {activeGameTab === "match" && (
                   <>
