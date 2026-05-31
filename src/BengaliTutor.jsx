@@ -6,6 +6,8 @@ import ActionButtons from "./ui/ActionButtons.jsx";
 const DEFAULT_PROMPT = "Everyday greetings at a coffee shop";
 const LESSON_CACHE_KEY = "bengali_lesson_cache";
 const INPUT_CACHE_KEY = "bengali_lesson_inputs";
+const CORRECT_TIME = 0;
+const INCORRECT_TIME = 500;
 
 const buildPrompt = (topic, level, focus) => `
 You are a Bengali language tutor. Create a concise lesson as JSON (no extra text) with this shape:
@@ -794,7 +796,7 @@ export default function BengaliTutor() {
     });
     setTimeout(() => {
       startNewGameRound();
-    }, 500);
+    }, isCorrect ? CORRECT_TIME: INCORRECT_TIME);
   };
 
   const handleTrueFalsePick = (pickedTrue) => {
@@ -813,7 +815,7 @@ export default function BengaliTutor() {
     });
     setTimeout(() => {
       startTrueFalseRound();
-    }, 500);
+    }, isCorrect ? CORRECT_TIME : INCORRECT_TIME);
   };
 
   const handleAudioPick = (option) => {
@@ -833,7 +835,7 @@ export default function BengaliTutor() {
     });
     setTimeout(() => {
       startAudioHuntRound();
-    }, 500);
+    }, isCorrect ? CORRECT_TIME : INCORRECT_TIME);
   };
 
   const handleMasteryPick = (option) => {
@@ -865,15 +867,15 @@ export default function BengaliTutor() {
     if (isCorrect && nextCount < masteryTarget) {
       setTimeout(() => {
         advanceMastery(nextCount);
-      }, 500);
-    } else if (nextCount >= masteryTarget) { 
+      }, CORRECT_TIME);
+    } else if (nextCount >= masteryTarget) {
       setTimeout(() => {
         reshuffleMastery();
-      }, 500);
-    } else if (!isCorrect){
+      }, CORRECT_TIME);
+    } else if (!isCorrect) {
       setTimeout(() => {
         advanceMastery(nextCount);
-      }, 500);
+      }, INCORRECT_TIME);
     }
   };
 
@@ -900,6 +902,58 @@ export default function BengaliTutor() {
     setMasteryChoice(null);
     setMasteryOptions(buildMasteryOptions(queue, queue[0], gameDirection));
   };
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (contentTab !== "games") return;
+      if (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA") return;
+
+      const key = e.key;
+      if (key === "Enter") {
+        if (activeGameTab === "match" && gameResult) startNewGameRound();
+        else if (activeGameTab === "audio" && audioResult) startAudioHuntRound();
+        else if (activeGameTab === "mastery" && masteryResult) advanceMastery();
+        else if (activeGameTab === "truefalse" && tfResult) startTrueFalseRound();
+        return;
+      }
+
+      if (key.toLowerCase() === "r") {
+        if (activeGameTab === "match" && gameQuestion) {
+          speak(gameQuestion.bn, "bn", { forceApi: true });
+        } else if (activeGameTab === "audio" && audioQuestion) {
+          speak(audioQuestion.audioText, audioQuestion.audioLang, { forceApi: true });
+        } else if (activeGameTab === "mastery" && masteryQueue.length) {
+          speak(masteryQueue[masteryIndex]?.bn, "bn", { forceApi: true });
+        } else if (activeGameTab === "truefalse" && tfQuestion) {
+          speak(tfQuestion.bn, "bn", { forceApi: true });
+        }
+        return;
+      }
+
+      let index = -1;
+      if (key >= "1" && key <= "9") {
+        index = parseInt(key) - 1;
+      } else if (key === "0") {
+        index = 9;
+      }
+
+      if (index === -1) return;
+
+      if (activeGameTab === "match" && gameQuestion && !gameResult) {
+        if (gameQuestion.options[index]) handleGamePick(gameQuestion.options[index]);
+      } else if (activeGameTab === "audio" && audioQuestion && !audioResult) {
+        if (audioQuestion.options[index]) handleAudioPick(audioQuestion.options[index]);
+      } else if (activeGameTab === "mastery" && masteryQueue.length && !masteryResult) {
+        if (masteryOptions[index]) handleMasteryPick(masteryOptions[index]);
+      } else if (activeGameTab === "truefalse" && tfQuestion && !tfResult) {
+        if (index === 0) handleTrueFalsePick(true);
+        else if (index === 1) handleTrueFalsePick(false);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [contentTab, activeGameTab, gameQuestion, gameResult, audioQuestion, audioResult, masteryQueue, masteryIndex, masteryResult, masteryOptions, tfQuestion, tfResult, handleGamePick, handleAudioPick, handleMasteryPick, handleTrueFalsePick, startNewGameRound, startAudioHuntRound, advanceMastery, startTrueFalseRound, speak]);
 
   useEffect(() => {
     const hasPhrases = lesson?.phrases?.length;
@@ -1473,7 +1527,7 @@ export default function BengaliTutor() {
                           <button className="bn-btn secondary" onClick={startNewGameRound}>New card</button>
                         </div>
                         <div style={{ display: "grid", gap: 8 }}>
-                          {gameQuestion.options.map((option) => {
+                          {gameQuestion.options.map((option, idx) => {
                             const isCorrect = option === gameQuestion.correctAnswer;
                             const stateClass = gameResult
                               ? isCorrect
@@ -1489,6 +1543,7 @@ export default function BengaliTutor() {
                                 onClick={() => handleGamePick(option)}
                                 disabled={!!gameResult}
                               >
+                                <span style={{ opacity: 0.5, marginRight: 8 }}>{idx === 9 ? 0 : idx + 1}.</span>
                                 {option}
                               </button>
                             );
@@ -1518,7 +1573,7 @@ export default function BengaliTutor() {
                           <button className="bn-btn secondary" onClick={startAudioHuntRound}>New clip</button>
                         </div>
                         <div style={{ display: "grid", gap: 8 }}>
-                          {audioQuestion.options.map((option) => {
+                          {audioQuestion.options.map((option, idx) => {
                             const isCorrect = option === audioQuestion.correctAnswer;
                             const stateClass = audioResult
                               ? isCorrect
@@ -1534,6 +1589,7 @@ export default function BengaliTutor() {
                                 onClick={() => handleAudioPick(option)}
                                 disabled={!!audioResult}
                               >
+                                <span style={{ opacity: 0.5, marginRight: 8 }}>{idx === 9 ? 0 : idx + 1}.</span>
                                 {option}
                               </button>
                             );
@@ -1587,7 +1643,7 @@ export default function BengaliTutor() {
                           <button className="bn-btn secondary" onClick={startMasteryRound}>New options</button>
                         </div>
                         <div style={{ display: "grid", gap: 8 }}>
-                          {masteryOptions.map((option) => {
+                          {masteryOptions.map((option, idx) => {
                             const targetAnswer = gameDirection === "en-bn" ? `${masteryQueue[masteryIndex]?.bn} (${masteryQueue[masteryIndex]?.pronunciation || ""})` : masteryQueue[masteryIndex]?.en;
                             const isCorrect = option === targetAnswer;
                             const stateClass = masteryResult
@@ -1604,6 +1660,7 @@ export default function BengaliTutor() {
                                 onClick={() => handleMasteryPick(option)}
                                 disabled={!!masteryResult}
                               >
+                                <span style={{ opacity: 0.5, marginRight: 8 }}>{idx === 9 ? 0 : idx + 1}.</span>
                                 {option}
                               </button>
                             );
@@ -1639,8 +1696,8 @@ export default function BengaliTutor() {
                           <button className="bn-btn secondary" onClick={startTrueFalseRound}>New check</button>
                         </div>
                         <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-                          <button className="bn-btn secondary bn-true-btn" onClick={() => handleTrueFalsePick(true)} disabled={!!tfResult}>✅ True</button>
-                          <button className="bn-btn secondary bn-false-btn" onClick={() => handleTrueFalsePick(false)} disabled={!!tfResult}>❌ False</button>
+                          <button className="bn-btn secondary bn-true-btn" onClick={() => handleTrueFalsePick(true)} disabled={!!tfResult}><span style={{ opacity: 0.7, marginRight: 6 }}>1.</span> ✅ True</button>
+                          <button className="bn-btn secondary bn-false-btn" onClick={() => handleTrueFalsePick(false)} disabled={!!tfResult}><span style={{ opacity: 0.7, marginRight: 6 }}>2.</span> ❌ False</button>
                         </div>
                         {tfResult && (
                           <div style={{ fontWeight: 700, color: tfResult === "correct" ? "#15803d" : "#b91c1c" }}>
