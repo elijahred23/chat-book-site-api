@@ -28,6 +28,12 @@ export default function MediaPlayer() {
   const handleFileUpload = (e) => {
     const file = e.target.files?.[0];
     if (!file) return;
+
+    // Clean up the previous URL to prevent memory leaks
+    if (fileUrl) {
+      URL.revokeObjectURL(fileUrl);
+    }
+
     const url = URL.createObjectURL(file);
     setFileUrl(url);
     setFileName(file.name);
@@ -150,10 +156,10 @@ export default function MediaPlayer() {
         <h2 className="mp-title">Media Player</h2>
 
         <div className="mp-section">
-          <label className="mp-label">Select Media File</label>
+          <label className="mp-label" htmlFor="media-upload">Select Media File</label>
           <input
             type="file"
-            accept="audio/*,video/*"
+            accept="audio/*,video/*,.mp3,.m4a,.wav,.mp4,.mov"
             onChange={handleFileUpload}
             className="mp-meta"
           />
