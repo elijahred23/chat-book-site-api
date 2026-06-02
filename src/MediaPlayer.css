@@ -1,0 +1,115 @@
+.mp-shell {
+  max-width: 800px;
+  margin: 1.5rem auto;
+  padding: 1rem;
+  font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  box-sizing: border-box;
+}
+
+.mp-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.1);
+  display: grid;
+  gap: 1.5rem;
+}
+
+.mp-title {
+  margin: 0;
+  color: #0f172a;
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.mp-section {
+  padding: 1.25rem;
+  border: 1px solid #f1f5f9;
+  border-radius: 16px;
+  background: #f8fafc;
+  transition: border-color 0.2s ease;
+}
+
+.mp-section:hover {
+  border-color: #e2e8f0;
+}
+
+.mp-label {
+  display: block;
+  font-weight: 700;
+  font-size: 0.75rem;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.75rem;
+}
+
+.mp-meta {
+  font-size: 0.95rem;
+  color: #475569;
+  margin: 0;
+}
+
+.mp-video {
+  width: 100%;
+  border-radius: 14px;
+  background: #000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  display: block;
+}
+
+.mp-btn {
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  color: #0f172a;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+.mp-btn:hover {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+  transform: translateY(-1px);
+}
+
+.mp-btn:active {
+  transform: translateY(0);
+}
+
+.mp-seek-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+}
+
+.mp-range {
+  width: 100%;
+  accent-color: #2563eb;
+  cursor: pointer;
+  height: 6px;
+  border-radius: 5px;
+}
+
+@media (max-width: 640px) {
+  .mp-shell {
+    padding: 0.75rem;
+    margin: 0.5rem auto;
+  }
+  .mp-card {
+    padding: 1.25rem 1rem;
+    gap: 1.25rem;
+  }
+  .mp-seek-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

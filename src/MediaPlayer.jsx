@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import "./MediaPlayer.css";
 
 export default function MediaPlayer() {
   const [fileUrl, setFileUrl] = useState(null);
@@ -38,6 +39,13 @@ export default function MediaPlayer() {
     if (mediaRef.current) {
       mediaRef.current.pause();
       mediaRef.current.currentTime = 0;
+    }
+  };
+
+  // Seek helper
+  const seek = (seconds) => {
+    if (mediaRef.current) {
+      mediaRef.current.currentTime += seconds;
     }
   };
 
@@ -137,15 +145,24 @@ export default function MediaPlayer() {
   };
 
   return (
-    <div style={{ maxWidth: 600, margin: "2rem auto", fontFamily: "Arial, sans-serif" }}>
-      <h2>Media Player</h2>
+    <div className="mp-shell">
+      <div className="mp-card">
+        <h2 className="mp-title">Media Player</h2>
 
-      <input
-        type="file"
-        accept="audio/*,video/*"
-        onChange={handleFileUpload}
-      />
-      {fileName && <p><strong>Playing:</strong> {fileName}</p>}
+        <div className="mp-section">
+          <label className="mp-label">Select Media File</label>
+          <input
+            type="file"
+            accept="audio/*,video/*"
+            onChange={handleFileUpload}
+            className="mp-meta"
+          />
+          {fileName && (
+            <p className="mp-meta" style={{ marginTop: "0.5rem" }}>
+              <strong>Now Playing:</strong> {fileName}
+            </p>
+          )}
+        </div>
 
       {fileUrl && (
         <>
@@ -155,64 +172,83 @@ export default function MediaPlayer() {
             controls
             loop={!intervalLoop && loopFile}
             onSeeked={handleSeeked}
-            style={{ width: "100%", marginBottom: "1rem" }}
+            className="mp-video"
           />
 
-          <div style={{ margin: "1rem 0" }}>
-            <label>Speed: {speed.toFixed(2)}x</label>
-            <br/>
+          <div className="mp-section">
+            <label className="mp-label">Quick Seek</label>
+            <div className="mp-seek-grid">
+              <button className="mp-btn" onClick={() => seek(-60)}>-1m</button>
+              <button className="mp-btn" onClick={() => seek(-30)}>-30s</button>
+              <button className="mp-btn" onClick={() => seek(-10)}>-10s</button>
+              <button className="mp-btn" onClick={() => seek(-5)}>-5s</button>
+              <button className="mp-btn" onClick={() => seek(5)}>+5s</button>
+              <button className="mp-btn" onClick={() => seek(10)}>+10s</button>
+              <button className="mp-btn" onClick={() => seek(30)}>+30s</button>
+              <button className="mp-btn" onClick={() => seek(60)}>+1m</button>
+            </div>
+          </div>
+
+          <div className="mp-section">
+            <label className="mp-label">Speed: {speed.toFixed(2)}x</label>
             <input
               type="range"
               min="0.25"
               max="3"
               step="0.05"
               value={speed}
+              className="mp-range"
               onChange={(e) => setSpeed(Number(e.target.value))}
             />
           </div>
 
-          <div>
-            <label>
+          <div className="mp-section" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+            <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 700, cursor: 'pointer' }}>
               <input
                 type="checkbox"
                 checked={loopFile}
                 onChange={(e) => setLoopFile(e.target.checked)}
               />
-              Loop Entire File
+              <span>Loop Entire File</span>
             </label>
           </div>
 
-          <div style={{ padding: "1rem", border: "1px solid #ccc", marginTop: "1rem" }}>
-            <label>
+          <div className="mp-section">
+            <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 700, cursor: 'pointer', marginBottom: intervalLoop ? '1rem' : 0 }}>
               <input
                 type="checkbox"
                 checked={intervalLoop}
                 onChange={(e) => setIntervalLoop(e.target.checked)}
               />
-              Enable Interval Loop
+              <span>Enable Interval Loop</span>
             </label>
 
             {intervalLoop && (
-              <>
-                <div style={{ marginTop: "0.5rem" }}>
-                  <label>Interval: {intervalSec}s</label><br/>
+              <div style={{ display: 'grid', gap: '1rem', borderTop: '1px solid #e2e8f0', paddingTop: '1rem' }}>
+                <div>
+                  <label className="mp-label">Interval: {intervalSec}s</label>
                   <input
                     type="range"
                     min="1"
                     max="60"
                     value={intervalSec}
+                    className="mp-range"
                     onChange={(e) => setIntervalSec(Number(e.target.value))}
                   />
                 </div>
-                <div style={{ marginTop: "0.5rem" }}>
-                  <label>Total Plays:
-                    {targetRepeats === 0 ? " ∞" : ` ${targetRepeats}`}
-                  </label><br/>
+                <div>
+                  <label className="mp-label">
+                    Total Plays:
+                    <span style={{ fontSize: '1.1rem', marginLeft: '4px' }}>
+                      {targetRepeats === 0 ? "∞" : targetRepeats}
+                    </span>
+                  </label>
                   <input
                     type="range"
                     min="0"
                     max="10"
                     value={targetRepeats}
+                    className="mp-range"
                     onChange={(e) => setTargetRepeats(Number(e.target.value))}
                   />
                 </div>
@@ -221,11 +257,12 @@ export default function MediaPlayer() {
                     ? `${currentPlayCount} / ∞` 
                     : `${currentPlayCount} / ${targetRepeats}`}
                 </p>
-              </>
+              </div>
             )}
           </div>
         </>
       )}
+      </div>
     </div>
   );
 }
