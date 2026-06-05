@@ -52,7 +52,7 @@ export default function CustomPromptsDrawer() {
   };
 
   const handleAppend = (val) => {
-    setAccumulatedText((prev) => (prev ? prev + " | " + val : val));
+    setAccumulatedText((prev) => (prev ? prev + ", " + val : val));
     showMessage?.({ type: "success", message: "Value appended", duration: 1000 });
   };
 
