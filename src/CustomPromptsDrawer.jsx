@@ -20,6 +20,7 @@ export default function CustomPromptsDrawer() {
   const [newCategory, setNewCategory] = useState("General");
   const [activeCategory, setActiveCategory] = useState("All");
   const [accumulatedText, setAccumulatedText] = useState("");
+  const [delimiter, setDelimiter] = useState(", ");
   const [isVisible, setIsVisible] = useState(false);
   const { showMessage } = useFlyout();
 
@@ -52,7 +53,7 @@ export default function CustomPromptsDrawer() {
   };
 
   const handleAppend = (val) => {
-    setAccumulatedText((prev) => (prev ? prev + ", " + val : val));
+    setAccumulatedText((prev) => (prev ? prev + delimiter + val : val));
     showMessage?.({ type: "success", message: "Value appended", duration: 1000 });
   };
 
@@ -284,6 +285,26 @@ export default function CustomPromptsDrawer() {
 
       <div className="cp-accumulated">
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "10px" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+            <label className="cp-label-small" style={{ marginBottom: 0 }}>Join By</label>
+            <select 
+              className="cp-input" 
+              style={{ width: "auto", padding: "4px 8px", height: "32px", fontSize: "0.8rem", fontWeight: 700 }}
+              value={delimiter}
+              onChange={(e) => setDelimiter(e.target.value)}
+            >
+              <option value=", ">, (Comma)</option>
+              <option value=" + ">+ (Plus)</option>
+              <option value=" | ">| (Pipe)</option>
+              <option value=" ">Space</option>
+              <option value="\n">New Line</option>
+              <option value="; ">; (Semicolon)</option>
+              <option value=" - ">- (Dash)</option>
+              <option value=" AND ">AND</option>
+              <option value=" OR ">OR</option>
+              <option value="/">/ (Slash)</option>
+            </select>
+          </div>
           <label style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "0.9rem", fontWeight: 600, cursor: "pointer" }}>
             <input
               type="checkbox"
