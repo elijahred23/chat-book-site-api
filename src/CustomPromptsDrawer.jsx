@@ -48,7 +48,7 @@ export default function CustomPromptsDrawer() {
     setNewKey("");
     setNewValue("");
     setNewCategory("General");
-    showMessage?.({ type: "success", message: `Added shortcut: ${newKey}` });
+        showMessage?.({ type: "success", message: `Added shortcut: ${newKey}` });
   };
 
   const handleAppend = (val) => {
@@ -239,7 +239,7 @@ export default function CustomPromptsDrawer() {
         </div>
       </div>
 
-      {allCategories.length > 2 ? (
+      {allCategories.length > 0 ? (
         <div style={{ marginBottom: "0.75rem" }}>
           <select
             className="cp-input"
