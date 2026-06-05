@@ -34,6 +34,7 @@ import GuitarTabs from './GuitarTabs.jsx';
 import AsmrPromptDrawer from './AsmrPromptDrawer.jsx';
 import ActionButtonStudio from './ActionButtonStudio.jsx';
 import MediaPlayer from './MediaPlayer.jsx';
+import CustomPromptsDrawer from './CustomPromptsDrawer.jsx';
 
 function AppContent() {
   const [isFullWidth, setIsFullWidth] = useState(true);
@@ -41,6 +42,7 @@ function AppContent() {
   const [isPromptVisible, setIsPromptVisible] = useState(true);
   const [showFloatingBtns, setShowFloatingBtns] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isCustomPromptsOpen, setIsCustomPromptsOpen] = useState(false);
   const floatingRef = useRef(null);
   const menuRef = useRef(null);
   const closeFabMenu = () => setShowFloatingBtns(false);
@@ -143,6 +145,14 @@ function AppContent() {
                 <NavLink to="/regex" role="menuitem" onClick={() => setIsMenuOpen(false)}>Regex Trainer</NavLink>
                 <NavLink to="/media-player" role="menuitem" onClick={() => setIsMenuOpen(false)}>Media Player</NavLink>
                 <NavLink to="/action-buttons-studio" role="menuitem" onClick={() => setIsMenuOpen(false)}>Action Button Studio</NavLink>
+                <button 
+                  onClick={() => { setIsCustomPromptsOpen(true); setIsMenuOpen(false); }}
+                  style={{ textAlign: 'left', background: 'none', border: 'none', font: 'inherit', cursor: 'pointer', padding: '10px 12px', fontWeight: 800, color: '#0f172a', width: '100%', borderRadius: '12px' }}
+                  onMouseEnter={(e) => e.target.style.backgroundColor = '#f1f5f9'}
+                  onMouseLeave={(e) => e.target.style.backgroundColor = 'transparent'}
+                >
+                  Shortcut Manager
+                </button>
                 <NavLink to="/apiCheck" role="menuitem" onClick={() => setIsMenuOpen(false)}>Settings</NavLink>
               </div>
             )}
@@ -364,6 +374,9 @@ function AppContent() {
               <button onClick={() => {setIsAsmrOpen(true); closeFabMenu();}} className="fab-btn">
                 <span>🎧</span>{isAsmrOpen ? 'ASMR Typeout' : 'Open ASMR'}
               </button>
+              <button onClick={() => {setIsCustomPromptsOpen(true); closeFabMenu();}} className="fab-btn">
+                <span>⌨️</span>{isCustomPromptsOpen ? 'Shortcuts' : 'Open Shortcuts'}
+              </button>
             </div>
           )}
           {
@@ -574,6 +587,18 @@ function AppContent() {
           closeLabel="✖ Close Chat 2"
         >
           <ChatGPTDual isOpen={true} />
+        </SideDrawer>
+
+        <SideDrawer
+          isOpen={isCustomPromptsOpen}
+          isFullWidth={isFullWidth}
+          stack={drawerStack}
+          currentKey="custom_prompts"
+          onToggleWidth={toggleWidth}
+          onClose={() => setIsCustomPromptsOpen(false)}
+          closeLabel="✖ Close Shortcut Manager"
+        >
+          <CustomPromptsDrawer />
         </SideDrawer>
       
 
