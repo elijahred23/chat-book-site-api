@@ -38,6 +38,7 @@ const initialState = {
   isLargeTextOpen: false,
   isAsmrOpen: false,
   asmrPromptText: '',
+  isCustomPromptsOpen: false,
 };
 
 const actionTypes = {
@@ -76,6 +77,7 @@ const actionTypes = {
   SET_IS_LARGE_TEXT_OPEN: 'SET_IS_LARGE_TEXT_OPEN',
   SET_IS_ASMR_OPEN: 'SET_IS_ASMR_OPEN',
   SET_ASMR_PROMPT_TEXT: 'SET_ASMR_PROMPT_TEXT',
+  SET_IS_CUSTOM_PROMPT_OPEN: 'SET_IS_CUSTOM_PROMPT_OPEN', 
 };
 
 // ✅ closes all open UI panels (stack managed separately)
@@ -96,6 +98,7 @@ const closeAllPanels = (state) => ({
   isIframeOpen: false,
   isLargeTextOpen: false,
   isAsmrOpen: false,
+  isCustomPromptsOpen: false,
 });
 
 const drawerKeyToState = {
@@ -114,6 +117,7 @@ const drawerKeyToState = {
   iframe: 'isIframeOpen',
   large: 'isLargeTextOpen',
   asmr: 'isAsmrOpen',
+  custom: 'isCustomPromptsOpen',
 };
 
 const activateDrawer = (state, key) => {
@@ -247,6 +251,9 @@ function appReducer(state, action) {
 
     case actionTypes.SET_ASMR_PROMPT_TEXT:
       return { ...state, asmrPromptText: action.payload };
+    
+    case actionTypes.SET_IS_CUSTOM_PROMPT_OPEN:
+      return action.payload ? activateDrawer(state, 'custom') : deactivateDrawer(state, 'custom');
 
     default:
       console.warn(`Unhandled action type: ${action.type}`);
@@ -310,4 +317,5 @@ export const actions = {
   setLargeTextBuffer: (text) => ({ type: actionTypes.SET_COPY_TEXT, payload: text }),
   setIsAsmrOpen: (open) => ({ type: actionTypes.SET_IS_ASMR_OPEN, payload: open }),
   setAsmrPromptText: (text) => ({ type: actionTypes.SET_ASMR_PROMPT_TEXT, payload: text }),
+  setIsCustomPromptsOpen: (open) => ({ type: actionTypes.SET_IS_CUSTOM_PROMPT_OPEN, payload: open }),
 };

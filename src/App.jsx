@@ -42,12 +42,11 @@ function AppContent() {
   const [isPromptVisible, setIsPromptVisible] = useState(true);
   const [showFloatingBtns, setShowFloatingBtns] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isCustomPromptsOpen, setIsCustomPromptsOpen] = useState(false);
   const floatingRef = useRef(null);
   const menuRef = useRef(null);
   const closeFabMenu = () => setShowFloatingBtns(false);
   const dispatch = useAppDispatch();
-  const { isChat2Open, drawerStack, isChatOpen, isTeleprompterOpen, isTTSOpen, isPlantUMLOpen, isPodcastTTSOpen, isJSGeneratorOpen, isChatBookOpen, isArchitectureOpen, isYouTubeOpen, isHtmlBuilderOpen, isTypingOpen, isIframeOpen, isLargeTextOpen, isAsmrOpen } = useAppState();
+  const { isChat2Open, drawerStack, isChatOpen, isTeleprompterOpen, isTTSOpen, isPlantUMLOpen, isPodcastTTSOpen, isJSGeneratorOpen, isChatBookOpen, isArchitectureOpen, isYouTubeOpen, isHtmlBuilderOpen, isTypingOpen, isIframeOpen, isLargeTextOpen, isAsmrOpen, isCustomPromptsOpen} = useAppState();
 
   const toggleChat = () => dispatch(actions.setIsChatOpen(false));
   const toggleWidth = () => setIsFullWidth((p) => !p);
@@ -62,6 +61,8 @@ function AppContent() {
   const setIsIframeOpen = (val) => dispatch(actions.setIsIframeOpen(val));
   const setIsLargeTextOpen = (val) => dispatch(actions.setIsLargeTextOpen(val));
   const setIsAsmrOpen = (val) => dispatch(actions.setIsAsmrOpen(val));
+  const setIsCustomPromptsOpen = (val) => dispatch(actions.setIsCustomPromptsOpen(val));
+
 
   useEffect(() => {
     const savedText = localStorage.getItem('selectedText');

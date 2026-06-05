@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { useFlyout } from "./context/FlyoutContext";
 import { FaCopy, FaTrash, FaPlus, FaDownload, FaUpload } from "react-icons/fa";
 import ActionButtons from "./ui/ActionButtons";
@@ -17,6 +17,8 @@ export default function CustomPromptsDrawer() {
 
   const [newKey, setNewKey] = useState("");
   const [newValue, setNewValue] = useState("");
+  const [newCategory, setNewCategory] = useState("General");
+  const [activeCategory, setActiveCategory] = useState("All");
   const [accumulatedText, setAccumulatedText] = useState("");
   const [isVisible, setIsVisible] = useState(false);
   const { showMessage } = useFlyout();
@@ -42,9 +44,10 @@ export default function CustomPromptsDrawer() {
       return;
     }
 
-    setPrompts([...prompts, { key: newKey, value: newValue }]);
+    setPrompts([...prompts, { key: newKey, value: newValue, category: newCategory.trim() || "General" }]);
     setNewKey("");
     setNewValue("");
+    setNewCategory("General");
     showMessage?.({ type: "success", message: `Added shortcut: ${newKey}` });
   };
 
@@ -106,7 +109,11 @@ export default function CustomPromptsDrawer() {
         if (!item || typeof item !== "object") throw new Error(`Item at index ${idx} is not an object.`);
         if (typeof item.key !== "string" || !validateKey(item.key)) throw new Error(`Invalid key at index ${idx}: "${item.key}"`);
         if (typeof item.value !== "string") throw new Error(`Invalid value at index ${idx}: Expected string.`);
-        return { key: item.key, value: item.value };
+        return { 
+          key: item.key, 
+          value: item.value, 
+          category: typeof item.category === "string" ? item.category : "General" 
+        };
       });
 
       setPrompts((prev) => {
@@ -121,6 +128,16 @@ export default function CustomPromptsDrawer() {
       e.target.value = "";
     }
   };
+
+  const allCategories = useMemo(() => {
+    const cats = new Set(prompts.map((p) => p.category));
+    return ["All", ...Array.from(cats).sort()];
+  }, [prompts]);
+
+  const filteredPrompts = useMemo(() => {
+    if (activeCategory === "All") return prompts;
+    return prompts.filter((p) => p.category === activeCategory);
+  }, [prompts, activeCategory]);
 
   return (
     <div className="cp-drawer-container">
@@ -145,12 +162,30 @@ export default function CustomPromptsDrawer() {
         .cp-accumulated { margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem; }
         .cp-textarea { width: 100%; min-height: 140px; padding: 0.75rem; border-radius: 8px; border: 1px solid #cbd5e1; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.85rem; resize: vertical; box-sizing: border-box; outline: none; }
         .cp-label-small { fontSize: 0.75rem; fontWeight: 700; textTransform: uppercase; color: #64748b; marginBottom: 2px; }
+        .cp-tabs { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 0.5rem; }
+        .cp-tab { padding: 4px 10px; border-radius: 999px; border: 1px solid #e2e8f0; background: #fff; font-size: 0.75rem; font-weight: 700; cursor: pointer; color: #64748b; }
+        .cp-tab.active { background: #0f172a; color: #fff; border-color: #0f172a; }
       `}</style>
 
       <div className="cp-card">
         <h3 style={{ margin: "0 0 1rem 0", fontSize: "1.1rem" }}>Shortcut Manager</h3>
         <div className="cp-input-group">
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 2fr", gap: "0.5rem" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1.5fr", gap: "0.5rem" }}>
+            <div>
+              <label className="cp-label-small">Category</label>
+              <input
+                className="cp-input"
+                placeholder="e.g. Code"
+                value={newCategory}
+                list="category-options"
+                onChange={(e) => setNewCategory(e.target.value)}
+              />
+              <datalist id="category-options">
+                {allCategories.filter(c => c !== "All").map(cat => (
+                  <option key={cat} value={cat} />
+                ))}
+              </datalist>
+            </div>
             <div>
               <label className="cp-label-small">Key</label>
               <input
@@ -203,8 +238,38 @@ export default function CustomPromptsDrawer() {
           )}
         </div>
       </div>
+
+      {allCategories.length > 2 ? (
+        <div style={{ marginBottom: "0.75rem" }}>
+          <select
+            className="cp-input"
+            style={{ fontWeight: 700, color: "#64748b", background: "#f8fafc" }}
+            value={activeCategory}
+            onChange={(e) => setActiveCategory(e.target.value)}
+          >
+            {allCategories.map((cat) => (
+              <option key={cat} value={cat}>
+                Viewing: {cat}
+              </option>
+            ))}
+          </select>
+        </div>
+      ) : allCategories.length === 2 && (
+        <div className="cp-tabs">
+          {allCategories.map((cat) => (
+            <button
+              key={cat}
+              className={`cp-tab ${activeCategory === cat ? "active" : ""}`}
+              onClick={() => setActiveCategory(cat)}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+      )}
+
       <div className="cp-shortcuts">
-        {prompts.map((p) => (
+        {filteredPrompts.map((p) => (
           <div key={p.key} className="cp-shortcut-item">
             <button className="cp-shortcut-btn" onClick={() => handleAppend(p.value)}>
               {p.key}
@@ -214,7 +279,7 @@ export default function CustomPromptsDrawer() {
             </button>
           </div>
         ))}
-        {prompts.length === 0 && <div style={{ color: "#94a3b8", fontSize: "0.9rem", fontStyle: "italic", padding: "0.5rem" }}>No shortcuts saved.</div>}
+        {filteredPrompts.length === 0 && <div style={{ color: "#94a3b8", fontSize: "0.9rem", fontStyle: "italic", padding: "0.5rem" }}>No shortcuts found.</div>}
       </div>
 
       <div className="cp-accumulated">
