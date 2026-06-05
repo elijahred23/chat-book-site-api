@@ -28,6 +28,10 @@ export default function CustomPromptsDrawer() {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(prompts));
   }, [prompts]);
 
+  useEffect(() => {
+    setNewCategory(activeCategory);
+  }, [activeCategory]);
+
   const validateKey = (key) => /^[a-zA-Z0-9_]+$/.test(key);
   const isKeyValid = validateKey(newKey) || newKey === "";
 
@@ -48,7 +52,6 @@ export default function CustomPromptsDrawer() {
     setPrompts([...prompts, { key: newKey, value: newValue, category: newCategory.trim() || "General" }]);
     setNewKey("");
     setNewValue("");
-    setNewCategory("General");
         showMessage?.({ type: "success", message: `Added shortcut: ${newKey}` });
   };
 
