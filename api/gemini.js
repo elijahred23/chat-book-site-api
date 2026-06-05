@@ -7,7 +7,7 @@ const geminiApiKey = process.env.GEMINI_API_KEY || "";
 const ai = new GoogleGenAI({ apiKey: geminiApiKey });
 
 export class GeminiModel {
-    static currentModel = "gemini-2.0-flash";
+    static currentModel = "gemini-2.5-pro";
 }
 
     
