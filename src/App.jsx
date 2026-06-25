@@ -1,5 +1,24 @@
 import { useEffect, useState, useRef } from 'react';
 import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
+import {
+  FaBookReader,
+  FaCode,
+  FaComments,
+  FaGlobe,
+  FaHeadphones,
+  FaKeyboard,
+  FaLayerGroup,
+  FaMagic,
+  FaMicrophoneAlt,
+  FaPlus,
+  FaProjectDiagram,
+  FaScroll,
+  FaTimes,
+  FaVolumeUp,
+  FaYoutube,
+} from 'react-icons/fa';
+import { GiNotebook } from 'react-icons/gi';
+import { SiMarkdown } from 'react-icons/si';
 import ApiCheck from './ApiCheck';
 import ProgressBar from './ui/ProgressBar';
 import ChatTemplate from './ChatTemplate';
@@ -35,6 +54,7 @@ import AsmrPromptDrawer from './AsmrPromptDrawer.jsx';
 import ActionButtonStudio from './ActionButtonStudio.jsx';
 import MediaPlayer from './MediaPlayer.jsx';
 import CustomPromptsDrawer from './CustomPromptsDrawer.jsx';
+import MarkdownViewer from './MarkdownViewer.jsx';
 
 function AppContent() {
   const [isFullWidth, setIsFullWidth] = useState(true);
@@ -46,7 +66,7 @@ function AppContent() {
   const menuRef = useRef(null);
   const closeFabMenu = () => setShowFloatingBtns(false);
   const dispatch = useAppDispatch();
-  const { isChat2Open, drawerStack, isChatOpen, isTeleprompterOpen, isTTSOpen, isPlantUMLOpen, isPodcastTTSOpen, isJSGeneratorOpen, isChatBookOpen, isArchitectureOpen, isYouTubeOpen, isHtmlBuilderOpen, isTypingOpen, isIframeOpen, isLargeTextOpen, isAsmrOpen, isCustomPromptsOpen} = useAppState();
+  const { isChat2Open, drawerStack, isChatOpen, isTeleprompterOpen, isTTSOpen, isPlantUMLOpen, isPodcastTTSOpen, isJSGeneratorOpen, isChatBookOpen, isArchitectureOpen, isYouTubeOpen, isHtmlBuilderOpen, isTypingOpen, isIframeOpen, isLargeTextOpen, isAsmrOpen, isCustomPromptsOpen, isMarkdownViewerOpen} = useAppState();
 
   const toggleChat = () => dispatch(actions.setIsChatOpen(false));
   const toggleWidth = () => setIsFullWidth((p) => !p);
@@ -62,6 +82,7 @@ function AppContent() {
   const setIsLargeTextOpen = (val) => dispatch(actions.setIsLargeTextOpen(val));
   const setIsAsmrOpen = (val) => dispatch(actions.setIsAsmrOpen(val));
   const setIsCustomPromptsOpen = (val) => dispatch(actions.setIsCustomPromptsOpen(val));
+  const setIsMarkdownViewerOpen = (val) => dispatch(actions.setIsMarkdownViewerOpen(val));
 
 
   useEffect(() => {
@@ -114,7 +135,108 @@ function AppContent() {
     isTypingOpen ||
     isIframeOpen ||
     isLargeTextOpen ||
-    isAsmrOpen;
+    isAsmrOpen ||
+    isCustomPromptsOpen ||
+    isMarkdownViewerOpen;
+
+  const floatingTools = [
+    {
+      label: isChatOpen ? 'Chat Open' : 'Open Chat',
+      icon: FaComments,
+      active: isChatOpen,
+      action: () => dispatch(actions.setIsChatOpen(true)),
+    },
+    {
+      label: 'Open Chat Two',
+      icon: FaComments,
+      active: isChat2Open,
+      action: () => dispatch(actions.setIsChat2Open(true)),
+    },
+    {
+      label: isTTSOpen ? 'TTS Open' : 'Open TTS',
+      icon: FaVolumeUp,
+      active: isTTSOpen,
+      action: () => setIsTTSOpen(true),
+    },
+    {
+      label: isTeleprompterOpen ? 'Teleprompter' : 'Open Teleprompter',
+      icon: FaScroll,
+      active: isTeleprompterOpen,
+      action: () => setIsTeleprompterOpen(true),
+    },
+    {
+      label: isPlantUMLOpen ? 'UML Viewer' : 'Open UML',
+      icon: FaProjectDiagram,
+      active: isPlantUMLOpen,
+      action: () => setIsPlantUMLOpen(true),
+    },
+    {
+      label: isPodcastTTSOpen ? 'Podcast TTS' : 'Open Podcast',
+      icon: FaMicrophoneAlt,
+      active: isPodcastTTSOpen,
+      action: () => setPodcastTTSOpen(true),
+    },
+    {
+      label: isJSGeneratorOpen ? 'JS Generator' : 'Open JS Gen',
+      icon: FaMagic,
+      active: isJSGeneratorOpen,
+      action: () => dispatch(actions.setIsJSGeneratorOpen(true)),
+    },
+    {
+      label: isYouTubeOpen ? 'YT Transcript' : 'Open YT',
+      icon: FaYoutube,
+      active: isYouTubeOpen,
+      action: () => setIsYouTubeOpen(true),
+    },
+    {
+      label: isChatBookOpen ? 'Chat Book' : 'Open Chat Book',
+      icon: GiNotebook,
+      active: isChatBookOpen,
+      action: () => dispatch(actions.setIsChatBookOpen(true)),
+    },
+    {
+      label: isHtmlBuilderOpen ? 'HTML Builder' : 'Open HTML',
+      icon: FaCode,
+      active: isHtmlBuilderOpen,
+      action: () => setIsHtmlBuilderOpen(true),
+    },
+    {
+      label: isTypingOpen ? 'Typing Test' : 'Open Typing',
+      icon: FaKeyboard,
+      active: isTypingOpen,
+      action: () => setIsTypingOpen(true),
+    },
+    {
+      label: isIframeOpen ? 'Iframe Viewer' : 'Open Iframe',
+      icon: FaGlobe,
+      active: isIframeOpen,
+      action: () => setIsIframeOpen(true),
+    },
+    {
+      label: isLargeTextOpen ? 'Text Chunker' : 'Open Chunker',
+      icon: FaBookReader,
+      active: isLargeTextOpen,
+      action: () => setIsLargeTextOpen(true),
+    },
+    {
+      label: isAsmrOpen ? 'ASMR Typeout' : 'Open ASMR',
+      icon: FaHeadphones,
+      active: isAsmrOpen,
+      action: () => setIsAsmrOpen(true),
+    },
+    {
+      label: isMarkdownViewerOpen ? 'Markdown Viewer' : 'Open Markdown',
+      icon: SiMarkdown,
+      active: isMarkdownViewerOpen,
+      action: () => setIsMarkdownViewerOpen(true),
+    },
+    {
+      label: isCustomPromptsOpen ? 'Shortcuts' : 'Open Shortcuts',
+      icon: FaLayerGroup,
+      active: isCustomPromptsOpen,
+      action: () => setIsCustomPromptsOpen(true),
+    },
+  ];
 
   return (
     <>
@@ -146,6 +268,14 @@ function AppContent() {
                 <NavLink to="/regex" role="menuitem" onClick={() => setIsMenuOpen(false)}>Regex Trainer</NavLink>
                 <NavLink to="/media-player" role="menuitem" onClick={() => setIsMenuOpen(false)}>Media Player</NavLink>
                 <NavLink to="/action-buttons-studio" role="menuitem" onClick={() => setIsMenuOpen(false)}>Action Button Studio</NavLink>
+                <button 
+                  onClick={() => { setIsMarkdownViewerOpen(true); setIsMenuOpen(false); }}
+                  style={{ textAlign: 'left', background: 'none', border: 'none', font: 'inherit', cursor: 'pointer', padding: '10px 12px', fontWeight: 800, color: '#0f172a', width: '100%', borderRadius: '12px' }}
+                  onMouseEnter={(e) => e.target.style.backgroundColor = '#f1f5f9'}
+                  onMouseLeave={(e) => e.target.style.backgroundColor = 'transparent'}
+                >
+                  Markdown Viewer
+                </button>
                 <button 
                   onClick={() => { setIsCustomPromptsOpen(true); setIsMenuOpen(false); }}
                   style={{ textAlign: 'left', background: 'none', border: 'none', font: 'inherit', cursor: 'pointer', padding: '10px 12px', fontWeight: 800, color: '#0f172a', width: '100%', borderRadius: '12px' }}
@@ -261,56 +391,129 @@ function AppContent() {
 
           .fab-container {
             position: fixed;
-            bottom: 16px;
-            right: 16px;
+            right: max(16px, env(safe-area-inset-right));
+            bottom: max(16px, env(safe-area-inset-bottom));
             z-index: 12000;
             display: flex;
             flex-direction: column;
             align-items: flex-end;
-            gap: 8px;
+            gap: 10px;
+            pointer-events: none;
           }
           .fab-main {
-            width: 56px;
-            height: 56px;
+            pointer-events: auto;
+            width: 58px;
+            height: 58px;
             border-radius: 50%;
-            border: none;
-            background: linear-gradient(135deg, #2563eb, #60a5fa);
+            border: 1px solid rgba(255, 255, 255, 0.72);
+            background:
+              radial-gradient(circle at 30% 20%, rgba(255,255,255,0.38), transparent 32%),
+              linear-gradient(135deg, #0f172a, #2563eb 52%, #0f766e);
             color: #fff;
-            font-size: 22px;
-            box-shadow: 0 12px 30px rgba(37,99,235,0.35);
+            font-size: 18px;
+            box-shadow: 0 18px 42px rgba(15, 23, 42, 0.34);
             cursor: pointer;
-          }
-          .fab-menu {
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-            background: rgba(15,23,42,0.92);
-            padding: 8px;
-            border-radius: 14px;
-            box-shadow: 0 16px 40px rgba(0,0,0,0.35);
-            backdrop-filter: blur(8px);
-          }
-          .fab-btn {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            padding: 8px 10px;
-            border-radius: 12px;
-            border: 1px solid #1f2937;
-            background: #111827;
-            color: #e2e8f0;
-            cursor: pointer;
-            min-width: 140px;
-            font-size: 0.95rem;
-            justify-content: flex-start;
+            justify-content: center;
+            transition: transform 160ms ease, box-shadow 160ms ease, filter 160ms ease;
           }
-          .fab-btn span {
-            font-size: 1.05rem;
+          .fab-main:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 22px 50px rgba(15, 23, 42, 0.4);
+            filter: saturate(1.08);
+          }
+          .fab-main:active {
+            transform: translateY(0) scale(0.98);
+          }
+          .fab-main:focus-visible,
+          .fab-btn:focus-visible {
+            outline: 3px solid rgba(14, 165, 233, 0.34);
+            outline-offset: 3px;
+          }
+          .fab-menu {
+            pointer-events: auto;
+            width: min(360px, calc(100vw - 32px));
+            max-height: min(560px, calc(100vh - 112px));
+            overflow-y: auto;
+            overscroll-behavior: contain;
+            -webkit-overflow-scrolling: touch;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.88);
+            border: 1px solid rgba(226, 232, 240, 0.95);
+            padding: 10px;
+            border-radius: 18px;
+            box-shadow: 0 22px 60px rgba(15, 23, 42, 0.26);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            scrollbar-width: thin;
+            scrollbar-color: #94a3b8 transparent;
+          }
+          .fab-menu::-webkit-scrollbar {
+            width: 9px;
+          }
+          .fab-menu::-webkit-scrollbar-thumb {
+            background: #94a3b8;
+            border: 3px solid transparent;
+            border-radius: 999px;
+            background-clip: padding-box;
+          }
+          .fab-menu::-webkit-scrollbar-track {
+            background: transparent;
+          }
+          .fab-btn {
+            min-width: 0;
+            min-height: 54px;
+            display: grid;
+            grid-template-columns: 34px minmax(0, 1fr);
+            align-items: center;
+            gap: 10px;
+            padding: 9px 10px;
+            border-radius: 14px;
+            border: 1px solid rgba(203, 213, 225, 0.95);
+            background: rgba(248, 250, 252, 0.9);
+            color: #0f172a;
+            cursor: pointer;
+            font: inherit;
+            font-size: 0.88rem;
+            font-weight: 850;
+            line-height: 1.12;
+            text-align: left;
+            box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08);
+            transition: transform 140ms ease, border-color 140ms ease, background 140ms ease, box-shadow 140ms ease;
+          }
+          .fab-btn:hover {
+            transform: translateY(-1px);
+            background: #ffffff;
+            border-color: #38bdf8;
+            box-shadow: 0 12px 26px rgba(15, 23, 42, 0.14);
+          }
+          .fab-btn.active {
+            background: #0f172a;
+            border-color: #0f172a;
+            color: #ffffff;
+          }
+          .fab-btn-icon {
+            width: 34px;
+            height: 34px;
+            border-radius: 12px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #e0f2fe, #ccfbf1);
+            color: #0f172a;
+          }
+          .fab-btn.active .fab-btn-icon {
+            background: rgba(255, 255, 255, 0.14);
+            color: #ffffff;
+          }
+          .fab-btn-label {
+            min-width: 0;
+            overflow-wrap: anywhere;
           }
           @media (max-width: 540px) {
-            .fab-btn {
-              min-width: 120px;
-            }
             .app-topbar {
               padding: 10px;
             }
@@ -328,62 +531,68 @@ function AppContent() {
             .dropdown-menu a {
               padding: 12px 12px;
             }
+            .fab-container {
+              left: max(10px, env(safe-area-inset-left));
+              right: max(10px, env(safe-area-inset-right));
+              bottom: max(12px, env(safe-area-inset-bottom));
+              align-items: stretch;
+            }
+            .fab-menu {
+              width: auto;
+              max-height: min(62vh, 520px);
+              grid-template-columns: minmax(0, 1fr);
+              padding: 8px;
+              border-radius: 16px;
+            }
+            .fab-btn {
+              min-height: 50px;
+              grid-template-columns: 32px minmax(0, 1fr);
+              padding: 8px 10px;
+            }
+            .fab-btn-icon {
+              width: 32px;
+              height: 32px;
+              border-radius: 10px;
+            }
+            .fab-main {
+              align-self: flex-end;
+              width: 56px;
+              height: 56px;
+            }
           }
         `}</style>
         <div className="fab-container" ref={floatingRef}>
           {showFloatingBtns && (
-            <div className="fab-menu">
-              <button onClick={()=>{dispatch(actions.setIsChatOpen(true)); closeFabMenu();}} className="fab-btn">
-                <span>💬</span>{isChatOpen ? 'Chat Open' : 'Open Chat'}
-              </button>
-              <button onClick={()=>{dispatch(actions.setIsChat2Open(true)); closeFabMenu();}} className="fab-btn">
-                <span>💬</span>Open Chat Two
-              </button>
-              <button onClick={() => {setIsTTSOpen(true); closeFabMenu();}} className="fab-btn">
-                <span>🔊</span>{isTTSOpen ? 'TTS Open' : 'Open TTS'}
-              </button>
-              <button onClick={() => {setIsTeleprompterOpen(true); closeFabMenu();}} className="fab-btn">
-                <span>📜</span>{isTeleprompterOpen ? 'Teleprompter' : 'Open Teleprompter'}
-              </button>
-              <button onClick={() => {setIsPlantUMLOpen(true); closeFabMenu();}} className="fab-btn">
-                <span>🧩</span>{isPlantUMLOpen ? 'UML Viewer' : 'Open UML'}
-              </button>
-              <button onClick={() => {setPodcastTTSOpen(true); closeFabMenu();}} className="fab-btn">
-                <span>🎙️</span>{isPodcastTTSOpen ? 'Podcast TTS' : 'Open Podcast'}
-              </button>
-              <button onClick={() => {dispatch(actions.setIsJSGeneratorOpen(true)); closeFabMenu();}} className="fab-btn">
-                <span>💻</span>{isJSGeneratorOpen ? 'JS Generator' : 'Open JS Gen'}
-              </button>
-              <button onClick={() => {setIsYouTubeOpen(true); closeFabMenu();}} className="fab-btn">
-                <span>🎞️</span>{isYouTubeOpen ? 'YT Transcript' : 'Open YT'}
-              </button>
-              <button onClick={() => {dispatch(actions.setIsChatBookOpen(true)); closeFabMenu();}} className="fab-btn">
-                <span>📓</span>{isChatBookOpen ? 'Chat Book' : 'Open Chat Book'}
-              </button>
-              <button onClick={() => {setIsHtmlBuilderOpen(true); closeFabMenu();}} className="fab-btn">
-                <span>🌐</span>{isHtmlBuilderOpen ? 'HTML Builder' : 'Open HTML'}
-              </button>
-              <button onClick={() => {setIsTypingOpen(true); closeFabMenu();}} className="fab-btn">
-                <span>⌨️</span>{isTypingOpen ? 'Typing Test' : 'Open Typing'}
-              </button>
-              <button onClick={() => {setIsIframeOpen(true); closeFabMenu();}} className="fab-btn">
-                <span>🧭</span>{isIframeOpen ? 'Iframe Viewer' : 'Open Iframe'}
-              </button>
-              <button onClick={() => {setIsLargeTextOpen(true); closeFabMenu();}} className="fab-btn">
-                <span>📚</span>{isLargeTextOpen ? 'Text Chunker' : 'Open Chunker'}
-              </button>
-              <button onClick={() => {setIsAsmrOpen(true); closeFabMenu();}} className="fab-btn">
-                <span>🎧</span>{isAsmrOpen ? 'ASMR Typeout' : 'Open ASMR'}
-              </button>
-              <button onClick={() => {setIsCustomPromptsOpen(true); closeFabMenu();}} className="fab-btn">
-                <span>⌨️</span>{isCustomPromptsOpen ? 'Shortcuts' : 'Open Shortcuts'}
-              </button>
+            <div className="fab-menu" role="menu" aria-label="Quick tools">
+              {floatingTools.map(({ label, icon: Icon, active, action }) => (
+                <button
+                  key={label}
+                  onClick={() => {
+                    action();
+                    closeFabMenu();
+                  }}
+                  className={`fab-btn ${active ? "active" : ""}`}
+                  type="button"
+                  role="menuitem"
+                >
+                  <span className="fab-btn-icon" aria-hidden="true">
+                    <Icon size={15} />
+                  </span>
+                  <span className="fab-btn-label">{label}</span>
+                </button>
+              ))}
             </div>
           )}
           {
             !isAsmrOpen && 
-          <button onClick={() => setShowFloatingBtns((p) => !p)} className="fab-main">
-            {showFloatingBtns ? '–' : '+'}
+          <button
+            onClick={() => setShowFloatingBtns((p) => !p)}
+            className="fab-main"
+            type="button"
+            aria-label={showFloatingBtns ? "Close quick tools" : "Open quick tools"}
+            aria-expanded={showFloatingBtns}
+          >
+            {showFloatingBtns ? <FaTimes size={18} /> : <FaPlus size={18} />}
           </button>
           }
         </div>
@@ -413,6 +622,7 @@ function AppContent() {
             <Route path="/regex" element={<RegexTrainer />} />
             <Route path="/media-player" element={<MediaPlayer />} />
             <Route path="/action-buttons-studio" element={<ActionButtonStudio />} />
+            <Route path="/markdown-viewer" element={<MarkdownViewer />} />
           </Routes>
         </div>
 
@@ -591,10 +801,22 @@ function AppContent() {
         </SideDrawer>
 
         <SideDrawer
+          isOpen={isMarkdownViewerOpen}
+          isFullWidth={isFullWidth}
+          stack={drawerStack}
+          currentKey="markdown"
+          onToggleWidth={toggleWidth}
+          onClose={() => setIsMarkdownViewerOpen(false)}
+          closeLabel="✖ Close Markdown Viewer"
+        >
+          <MarkdownViewer />
+        </SideDrawer>
+
+        <SideDrawer
           isOpen={isCustomPromptsOpen}
           isFullWidth={isFullWidth}
           stack={drawerStack}
-          currentKey="custom_prompts"
+          currentKey="custom"
           onToggleWidth={toggleWidth}
           onClose={() => setIsCustomPromptsOpen(false)}
           closeLabel="✖ Close Shortcut Manager"

@@ -13,6 +13,7 @@ import {
   FaTimes,
   FaGlobe,
 } from "react-icons/fa";
+import { SiMarkdown } from "react-icons/si";
 import { GiNotebook } from "react-icons/gi";
 
 const ICONS = {
@@ -29,6 +30,8 @@ const ICONS = {
   architecture: FaSitemap,
   iframe: FaGlobe,
   asmr: FaKeyboard,
+  markdown: SiMarkdown,
+  custom: FaKeyboard,
 };
 
 const LABELS = {
@@ -45,6 +48,8 @@ const LABELS = {
   architecture: "Diagram",
   iframe: "Iframe",
   asmr: "ASMR",
+  markdown: "Markdown",
+  custom: "Shortcuts",
 };
 
 export default function SideDrawer({

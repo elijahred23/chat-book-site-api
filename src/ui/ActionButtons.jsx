@@ -24,7 +24,7 @@ import {
 } from "react-icons/fa";
 import { useFlyout } from "../context/FlyoutContext";
 import { FcGoogle } from "react-icons/fc";
-import { SiWikipedia } from "react-icons/si";
+import { SiMarkdown, SiWikipedia } from "react-icons/si";
 import { GiGraduateCap } from "react-icons/gi";
 import { FaRedditAlien } from "react-icons/fa";
 import { useState } from "react";
@@ -51,6 +51,7 @@ function removeMarkdown(text) {
 export default function ActionButtons({ promptText, limitButtons = false }) {
   const dispatch = useAppDispatch();
   const { isChatOpen, isTTSOpen, isTeleprompterOpen } = useAppState();
+  const rawText = promptText || "";
   const cleanText = removeMarkdown(promptText || "");
   const { showMessage } = useFlyout();
   const [showAll, setShowAll] = useState(false);
@@ -65,6 +66,18 @@ export default function ActionButtons({ promptText, limitButtons = false }) {
         e.stopPropagation();
         dispatch(actions.setChatPrompt(cleanText));
         dispatch(actions.setIsChatOpen(true));
+      },
+    },
+    {
+      icon: SiMarkdown,
+      title: "Markdown Viewer",
+      color: "#0f766e",
+      iconColor: "#fff",
+      onClick: (e) => {
+        e.stopPropagation();
+        dispatch(actions.setMarkdownViewerText(rawText));
+        dispatch(actions.setIsMarkdownViewerOpen(true));
+        showMessage?.({ type: "info", message: "Opening markdown viewer...", duration: 1200 });
       },
     },
     {

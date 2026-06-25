@@ -39,6 +39,8 @@ const initialState = {
   isAsmrOpen: false,
   asmrPromptText: '',
   isCustomPromptsOpen: false,
+  isMarkdownViewerOpen: false,
+  markdownViewerText: '',
 };
 
 const actionTypes = {
@@ -78,6 +80,8 @@ const actionTypes = {
   SET_IS_ASMR_OPEN: 'SET_IS_ASMR_OPEN',
   SET_ASMR_PROMPT_TEXT: 'SET_ASMR_PROMPT_TEXT',
   SET_IS_CUSTOM_PROMPT_OPEN: 'SET_IS_CUSTOM_PROMPT_OPEN', 
+  SET_IS_MARKDOWN_VIEWER_OPEN: 'SET_IS_MARKDOWN_VIEWER_OPEN',
+  SET_MARKDOWN_VIEWER_TEXT: 'SET_MARKDOWN_VIEWER_TEXT',
 };
 
 // ✅ closes all open UI panels (stack managed separately)
@@ -99,6 +103,7 @@ const closeAllPanels = (state) => ({
   isLargeTextOpen: false,
   isAsmrOpen: false,
   isCustomPromptsOpen: false,
+  isMarkdownViewerOpen: false,
 });
 
 const drawerKeyToState = {
@@ -118,6 +123,7 @@ const drawerKeyToState = {
   large: 'isLargeTextOpen',
   asmr: 'isAsmrOpen',
   custom: 'isCustomPromptsOpen',
+  markdown: 'isMarkdownViewerOpen',
 };
 
 const activateDrawer = (state, key) => {
@@ -255,6 +261,12 @@ function appReducer(state, action) {
     case actionTypes.SET_IS_CUSTOM_PROMPT_OPEN:
       return action.payload ? activateDrawer(state, 'custom') : deactivateDrawer(state, 'custom');
 
+    case actionTypes.SET_IS_MARKDOWN_VIEWER_OPEN:
+      return action.payload ? activateDrawer(state, 'markdown') : deactivateDrawer(state, 'markdown');
+
+    case actionTypes.SET_MARKDOWN_VIEWER_TEXT:
+      return { ...state, markdownViewerText: action.payload };
+
     default:
       console.warn(`Unhandled action type: ${action.type}`);
       return state;
@@ -318,4 +330,6 @@ export const actions = {
   setIsAsmrOpen: (open) => ({ type: actionTypes.SET_IS_ASMR_OPEN, payload: open }),
   setAsmrPromptText: (text) => ({ type: actionTypes.SET_ASMR_PROMPT_TEXT, payload: text }),
   setIsCustomPromptsOpen: (open) => ({ type: actionTypes.SET_IS_CUSTOM_PROMPT_OPEN, payload: open }),
+  setIsMarkdownViewerOpen: (open) => ({ type: actionTypes.SET_IS_MARKDOWN_VIEWER_OPEN, payload: open }),
+  setMarkdownViewerText: (text) => ({ type: actionTypes.SET_MARKDOWN_VIEWER_TEXT, payload: text }),
 };
