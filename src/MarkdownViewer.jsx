@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import { useAppState } from "./context/AppContext";
 import { useFlyout } from "./context/FlyoutContext";
@@ -24,6 +24,7 @@ export default function MarkdownViewer() {
   const [markdown, setMarkdown] = useState(SAMPLE_MARKDOWN);
   const [filename, setFilename] = useState("markdown-viewer.md");
   const [view, setView] = useState("split");
+  const printContentRef = useRef(null);
 
   useEffect(() => {
     if (markdownViewerText !== undefined && markdownViewerText !== markdown) {
@@ -65,6 +66,78 @@ export default function MarkdownViewer() {
       console.error("Markdown download failed", err);
       showMessage?.({ type: "error", message: "Download failed." });
     }
+  };
+
+  const printMarkdown = () => {
+    const printContent = printContentRef.current?.innerHTML || "";
+    const printFrame = document.createElement("iframe");
+
+    printFrame.title = "Print Markdown";
+    printFrame.style.position = "fixed";
+    printFrame.style.right = "0";
+    printFrame.style.bottom = "0";
+    printFrame.style.width = "0";
+    printFrame.style.height = "0";
+    printFrame.style.border = "0";
+    document.body.appendChild(printFrame);
+
+    const frameDoc = printFrame.contentDocument || printFrame.contentWindow?.document;
+    if (!frameDoc) {
+      printFrame.remove();
+      showMessage?.({ type: "error", message: "Print failed." });
+      return;
+    }
+
+    frameDoc.open();
+    frameDoc.write(`<!doctype html>
+      <html>
+        <head>
+          <title>Markdown Print</title>
+          <style>
+            body {
+              margin: 32px;
+              color: #000;
+              font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+              line-height: 1.5;
+            }
+            pre {
+              background: #f6f8fa;
+              border-radius: 6px;
+              padding: 1rem;
+              white-space: pre-wrap;
+              overflow-wrap: break-word;
+              break-inside: avoid;
+            }
+            code {
+              font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+              white-space: pre-wrap;
+              overflow-wrap: break-word;
+            }
+            img, table, blockquote {
+              max-width: 100%;
+            }
+            h1, h2, h3, h4, h5, h6 {
+              break-after: avoid;
+            }
+            @page {
+              margin: 0.6in;
+            }
+          </style>
+        </head>
+        <body>${printContent}</body>
+      </html>`);
+    frameDoc.close();
+
+    const cleanup = () => {
+      setTimeout(() => printFrame.remove(), 100);
+    };
+
+    printFrame.contentWindow?.addEventListener("afterprint", cleanup, { once: true });
+    setTimeout(() => {
+      printFrame.contentWindow?.focus();
+      printFrame.contentWindow?.print();
+      cleanup();
+    }, 100);
   };
 
   const showEditor = view === "split" || view === "edit";
@@ -239,6 +312,9 @@ export default function MarkdownViewer() {
           color: #64748b;
           font-weight: 700;
         }
+        .mv-print-content {
+          display: none;
+        }
         @media (max-width: 760px) {
           .markdown-viewer-page {
             padding: 8px;
@@ -299,6 +375,9 @@ export default function MarkdownViewer() {
           <button className="mv-btn" type="button" onClick={() => setMarkdown("")}>
             Clear
           </button>
+          <button className="mv-btn" type="button" onClick={printMarkdown}>
+            Print Markdown
+          </button>
           <input
             className="mv-filename"
             value={filename}
@@ -338,6 +417,10 @@ export default function MarkdownViewer() {
             </div>
           </div>
         )}
+      </section>
+
+      <section className="mv-print-content markdown-body" aria-hidden="true" ref={printContentRef}>
+        {markdown.trim() ? <ReactMarkdown>{markdown}</ReactMarkdown> : <div>No markdown to print.</div>}
       </section>
     </div>
   );
