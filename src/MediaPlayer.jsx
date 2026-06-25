@@ -1,16 +1,52 @@
-import React, { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import "./MediaPlayer.css";
 
+const SETTINGS_KEY = "media-player-settings-v1";
+
+const defaultSettings = {
+  speed: 1,
+  loopFile: true,
+  intervalLoop: false,
+  intervalSec: 10,
+  targetRepeats: 3,
+};
+
+function clamp(value, min, max) {
+  return Math.min(Math.max(value, min), max);
+}
+
+function getSavedSettings() {
+  if (typeof window === "undefined") {
+    return defaultSettings;
+  }
+
+  try {
+    const saved = JSON.parse(window.localStorage.getItem(SETTINGS_KEY));
+
+    return {
+      speed: Number.isFinite(saved?.speed) ? clamp(saved.speed, 0.25, 3) : defaultSettings.speed,
+      loopFile: typeof saved?.loopFile === "boolean" ? saved.loopFile : defaultSettings.loopFile,
+      intervalLoop: typeof saved?.intervalLoop === "boolean" ? saved.intervalLoop : defaultSettings.intervalLoop,
+      intervalSec: Number.isFinite(saved?.intervalSec) ? clamp(saved.intervalSec, 1, 60) : defaultSettings.intervalSec,
+      targetRepeats: Number.isFinite(saved?.targetRepeats) ? clamp(saved.targetRepeats, 0, 10) : defaultSettings.targetRepeats,
+    };
+  } catch {
+    return defaultSettings;
+  }
+}
+
 export default function MediaPlayer() {
+  const [savedSettings] = useState(getSavedSettings);
   const [fileUrl, setFileUrl] = useState(null);
   const [fileName, setFileName] = useState("");
-  const [speed, setSpeed] = useState(1);
-  const [loopFile, setLoopFile] = useState(true);
-  const [intervalLoop, setIntervalLoop] = useState(false);
-  const [intervalSec, setIntervalSec] = useState(10);
+  const [speed, setSpeed] = useState(savedSettings.speed);
+  const [loopFile, setLoopFile] = useState(savedSettings.loopFile);
+  const [intervalLoop, setIntervalLoop] = useState(savedSettings.intervalLoop);
+  const [intervalSec, setIntervalSec] = useState(savedSettings.intervalSec);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   // Total plays (play + repeats). e.g., 3 means 1 play + 2 repeats.
-  const [targetRepeats, setTargetRepeats] = useState(3);
+  const [targetRepeats, setTargetRepeats] = useState(savedSettings.targetRepeats);
   const [currentPlayCount, setCurrentPlayCount] = useState(1);
 
   const mediaRef = useRef(null);
@@ -23,6 +59,13 @@ export default function MediaPlayer() {
   const isProgrammaticSeek = useRef(false);
 
   const timerRef = useRef(null);
+
+  useEffect(() => {
+    window.localStorage.setItem(
+      SETTINGS_KEY,
+      JSON.stringify({ speed, loopFile, intervalLoop, intervalSec, targetRepeats })
+    );
+  }, [speed, loopFile, intervalLoop, intervalSec, targetRepeats]);
 
   // Handle file upload
   const handleFileUpload = (e) => {
@@ -46,6 +89,7 @@ export default function MediaPlayer() {
       mediaRef.current.pause();
       mediaRef.current.currentTime = 0;
     }
+    setIsPlaying(false);
   };
 
   // Seek helper
@@ -55,12 +99,51 @@ export default function MediaPlayer() {
     }
   };
 
+  const playMedia = async () => {
+    if (!mediaRef.current) return;
+
+    try {
+      await mediaRef.current.play();
+    } catch {
+      setIsPlaying(false);
+    }
+  };
+
+  const pauseMedia = () => {
+    if (!mediaRef.current) return;
+
+    mediaRef.current.pause();
+  };
+
+  const restartMedia = async () => {
+    if (!mediaRef.current) return;
+
+    isProgrammaticSeek.current = true;
+    mediaRef.current.currentTime = 0;
+    segmentStartRef.current = 0;
+    playCountRef.current = 1;
+    setCurrentPlayCount(1);
+    boundaryLockRef.current = false;
+
+    try {
+      await mediaRef.current.play();
+    } catch {
+      setIsPlaying(false);
+    }
+  };
+
   // Update playback rate
   useEffect(() => {
     if (mediaRef.current) {
       mediaRef.current.playbackRate = speed;
     }
   }, [speed]);
+
+  const handleLoadedMetadata = () => {
+    if (mediaRef.current) {
+      mediaRef.current.playbackRate = speed;
+    }
+  };
 
   // Manage interval looping logic
   useEffect(() => {
@@ -158,10 +241,11 @@ export default function MediaPlayer() {
         <div className="mp-section">
           <label className="mp-label" htmlFor="media-upload">Select Media File</label>
           <input
+            id="media-upload"
             type="file"
             accept="audio/*,video/*,.mp3,.m4a,.wav,.mp4,.mov"
             onChange={handleFileUpload}
-            className="mp-meta"
+            className="mp-file-input"
           />
           {fileName && (
             <p className="mp-meta" style={{ marginTop: "0.5rem" }}>
@@ -177,21 +261,26 @@ export default function MediaPlayer() {
             src={fileUrl}
             controls
             loop={!intervalLoop && loopFile}
+            onPlay={() => setIsPlaying(true)}
+            onPause={() => setIsPlaying(false)}
+            onEnded={() => setIsPlaying(false)}
             onSeeked={handleSeeked}
+            onLoadedMetadata={handleLoadedMetadata}
             className="mp-video"
           />
 
           <div className="mp-section">
             <label className="mp-label">Quick Seek</label>
+            <div className="mp-transport-grid">
+              <button className="mp-btn mp-btn-primary" onClick={playMedia} disabled={isPlaying}>Play</button>
+              <button className="mp-btn" onClick={pauseMedia} disabled={!isPlaying}>Pause</button>
+              <button className="mp-btn" onClick={restartMedia}>Restart</button>
+            </div>
             <div className="mp-seek-grid">
-              <button className="mp-btn" onClick={() => seek(-60)}>-1m</button>
               <button className="mp-btn" onClick={() => seek(-30)}>-30s</button>
               <button className="mp-btn" onClick={() => seek(-10)}>-10s</button>
-              <button className="mp-btn" onClick={() => seek(-5)}>-5s</button>
-              <button className="mp-btn" onClick={() => seek(5)}>+5s</button>
               <button className="mp-btn" onClick={() => seek(10)}>+10s</button>
               <button className="mp-btn" onClick={() => seek(30)}>+30s</button>
-              <button className="mp-btn" onClick={() => seek(60)}>+1m</button>
             </div>
           </div>
 
@@ -208,29 +297,29 @@ export default function MediaPlayer() {
             />
           </div>
 
-          <div className="mp-section" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-            <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 700, cursor: 'pointer' }}>
-              <input
-                type="checkbox"
-                checked={loopFile}
-                onChange={(e) => setLoopFile(e.target.checked)}
-              />
-              <span>Loop Entire File</span>
-            </label>
-          </div>
-
           <div className="mp-section">
-            <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 700, cursor: 'pointer', marginBottom: intervalLoop ? '1rem' : 0 }}>
-              <input
-                type="checkbox"
-                checked={intervalLoop}
-                onChange={(e) => setIntervalLoop(e.target.checked)}
-              />
-              <span>Enable Interval Loop</span>
-            </label>
+            <label className="mp-label">Playback Options</label>
+            <div className="mp-toggle-grid">
+              <button
+                type="button"
+                className={loopFile ? "mp-toggle is-on" : "mp-toggle"}
+                aria-pressed={loopFile}
+                onClick={() => setLoopFile((value) => !value)}
+              >
+                <span>Loop File</span>
+              </button>
+              <button
+                type="button"
+                className={intervalLoop ? "mp-toggle is-on" : "mp-toggle"}
+                aria-pressed={intervalLoop}
+                onClick={() => setIntervalLoop((value) => !value)}
+              >
+                <span>Interval Loop</span>
+              </button>
+            </div>
 
             {intervalLoop && (
-              <div style={{ display: 'grid', gap: '1rem', borderTop: '1px solid #e2e8f0', paddingTop: '1rem' }}>
+              <div className="mp-loop-panel">
                 <div>
                   <label className="mp-label">Interval: {intervalSec}s</label>
                   <input
@@ -245,7 +334,7 @@ export default function MediaPlayer() {
                 <div>
                   <label className="mp-label">
                     Total Plays:
-                    <span style={{ fontSize: '1.1rem', marginLeft: '4px' }}>
+                    <span className="mp-label-value">
                       {targetRepeats === 0 ? "∞" : targetRepeats}
                     </span>
                   </label>
@@ -258,7 +347,7 @@ export default function MediaPlayer() {
                     onChange={(e) => setTargetRepeats(Number(e.target.value))}
                   />
                 </div>
-                <p>
+                <p className="mp-progress">
                   Progress: {targetRepeats === 0 
                     ? `${currentPlayCount} / ∞` 
                     : `${currentPlayCount} / ${targetRepeats}`}
