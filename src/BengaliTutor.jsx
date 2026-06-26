@@ -106,6 +106,7 @@ export default function BengaliTutor() {
     }
   });
   const [loading, setLoading] = useState(false);
+  const [setupTab, setSetupTab] = useState("generate");
   const [selectedGroups, setSelectedGroups] = useState(() => {
     try {
       const saved = localStorage.getItem("bn_selected_groups");
@@ -344,6 +345,7 @@ export default function BengaliTutor() {
       const resp = await getGeminiResponse(promptText);
       const parsed = parseJson(resp);
       setLesson(parsed);
+      setSetupTab("lesson");
       localStorage.setItem(LESSON_CACHE_KEY, JSON.stringify(parsed));
       localStorage.setItem(
         INPUT_CACHE_KEY,
@@ -470,23 +472,133 @@ export default function BengaliTutor() {
       display: grid;
       gap: 6px;
     }
-    .bn-game-option {
-      border: 1px solid #cbd5f5;
-      background: #eef2ff;
-      color: #1e293b;
-      padding: 0.6rem 0.75rem;
-      border-radius: 12px;
+    .bn-game-shell {
+      display: grid;
+      gap: 14px;
+      padding: 1rem;
+      border: 1px solid #dbe3ef;
+      border-radius: 16px;
+      background:
+        radial-gradient(circle at top left, rgba(14,165,233,0.10), transparent 32%),
+        linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+      box-shadow: 0 18px 40px rgba(15,23,42,0.08);
+    }
+    .bn-game-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .bn-game-title {
+      display: grid;
+      gap: 2px;
+    }
+    .bn-game-title h4 {
+      margin: 0;
+      color: #0f172a;
+      font-size: 1.05rem;
+      letter-spacing: 0;
+    }
+    .bn-game-title span {
+      color: #64748b;
+      font-size: 0.86rem;
       font-weight: 700;
+    }
+    .bn-game-controls {
+      display: grid;
+      gap: 8px;
+    }
+    .bn-game-scoreboard {
+      display: grid;
+      gap: 8px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .bn-stat {
+      min-width: 0;
+      padding: 0.65rem 0.75rem;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.86);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.85);
+    }
+    .bn-stat-label {
+      color: #64748b;
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+    .bn-stat-value {
+      margin-top: 2px;
+      color: #0f172a;
+      font-size: 1rem;
+      font-weight: 900;
+    }
+    .bn-game-card {
+      display: grid;
+      gap: 12px;
+      padding: 1rem;
+      border: 1px solid #dbe3ef;
+      border-radius: 16px;
+      background: #ffffff;
+      box-shadow: 0 14px 34px rgba(15,23,42,0.08);
+    }
+    .bn-game-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .bn-game-prompt {
+      color: #0f172a;
+      font-size: 1.25rem;
+      font-weight: 900;
+      line-height: 1.25;
+    }
+    .bn-game-subtext {
+      color: #64748b;
+      font-size: 0.95rem;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+    .bn-game-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .bn-game-options {
+      display: grid;
+      gap: 8px;
+    }
+    .bn-game-option {
+      width: 100%;
+      border: 1px solid #dbe3ef;
+      background: #ffffff;
+      color: #1e293b;
+      padding: 0.75rem 0.85rem;
+      border-radius: 12px;
+      font-weight: 800;
       text-align: left;
-      transition: none;
+      cursor: pointer;
+      box-shadow: 0 8px 18px rgba(15,23,42,0.05);
+      transition: background 120ms ease, border-color 120ms ease, box-shadow 120ms ease, transform 120ms ease;
     }
     .bn-game-option:hover {
-      background: #eef2ff;
+      background: #f8fafc;
+      border-color: #94a3b8;
+      transform: translateY(-1px);
+      box-shadow: 0 12px 24px rgba(15,23,42,0.08);
+    }
+    .bn-game-option:disabled {
+      cursor: default;
+      transform: none;
     }
     .bn-game-option.correct {
       background: #dcfce7;
       border-color: #16a34a;
       color: #14532d;
+      box-shadow: 0 10px 24px rgba(22,163,74,0.14);
     }
     .bn-game-option.correct:hover {
       background: #dcfce7 !important;
@@ -495,9 +607,38 @@ export default function BengaliTutor() {
       background: #fee2e2;
       border-color: #ef4444;
       color: #7f1d1d;
+      box-shadow: 0 10px 24px rgba(239,68,68,0.14);
     }
     .bn-game-option.wrong:hover {
       background: #fee2e2 !important;
+    }
+    .bn-option-index {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.45rem;
+      height: 1.45rem;
+      margin-right: 0.65rem;
+      border-radius: 999px;
+      background: #f1f5f9;
+      color: #475569;
+      font-size: 0.76rem;
+      font-weight: 900;
+    }
+    .bn-game-feedback {
+      padding: 0.75rem 0.85rem;
+      border-radius: 12px;
+      font-weight: 800;
+    }
+    .bn-game-feedback.correct {
+      background: #f0fdf4;
+      color: #15803d;
+      border: 1px solid #bbf7d0;
+    }
+    .bn-game-feedback.wrong {
+      background: #fef2f2;
+      color: #b91c1c;
+      border: 1px solid #fecaca;
     }
     .bn-true-btn {
       background: #dcfce7;
@@ -520,20 +661,46 @@ export default function BengaliTutor() {
       gap: 8px;
       grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     }
+    .bn-tabs-soft {
+      padding: 4px;
+      border: 1px solid #dbe3ef;
+      border-radius: 14px;
+      background: #eef6ff;
+    }
     .bn-tab {
       border: 1px solid #e2e8f0;
-      background: #f8fafc;
+      background: rgba(255,255,255,0.78);
       color: #0f172a;
       border-radius: 999px;
       padding: 0.45rem 0.7rem;
       font-weight: 700;
       cursor: pointer;
       text-align: center;
+      box-shadow: 0 1px 0 rgba(255,255,255,0.9);
     }
     .bn-tab.active {
-      background: #0f172a;
+      background: #111827;
       color: #fff;
-      border-color: #0f172a;
+      border-color: #111827;
+      box-shadow: 0 8px 20px rgba(17,24,39,0.16);
+    }
+    .bn-tab:disabled {
+      cursor: not-allowed;
+      opacity: 0.48;
+    }
+    .bn-select {
+      padding: 0.45rem 0.65rem;
+      border-radius: 10px;
+      border: 1px solid #dbe3ef;
+      background: #ffffff;
+      color: #0f172a;
+      font-weight: 800;
+      font-size: 0.9rem;
+    }
+    @media (min-width: 760px) {
+      .bn-game-scoreboard {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
     }
     @media (min-width: 640px) {
       .bn-row {
@@ -1068,7 +1235,19 @@ export default function BengaliTutor() {
         <div className="bn-card">
           <h2 style={{ margin: 0 }}>বাংলা Tutor</h2>
           <p style={{ margin: "4px 0", color: "#475569" }}>Generate concise Bengali lessons with pronunciations and practice.</p>
-          <div className="bn-grid">
+          <div style={{ display: "grid", gap: 10 }}>
+            <div className="bn-tabs bn-tabs-soft">
+              <button className={`bn-tab ${setupTab === "lesson" ? "active" : ""}`} onClick={() => setSetupTab("lesson")} disabled={!lesson}>
+                Lesson
+              </button>
+              <button className={`bn-tab ${setupTab === "generate" ? "active" : ""}`} onClick={() => setSetupTab("generate")}>
+                Generate Lesson
+              </button>
+              <button className={`bn-tab ${setupTab === "downloads" ? "active" : ""}`} onClick={() => setSetupTab("downloads")}>
+                Downloads
+              </button>
+            </div>
+            {setupTab === "generate" ? (
             <div className="bn-section" style={{ display: "grid", gap: 8 }}>
               <label style={{ fontWeight: 700, color: "#0f172a" }}>Topic</label>
               <input
@@ -1105,6 +1284,7 @@ export default function BengaliTutor() {
                         const text = await file.text();
                         const parsed = JSON.parse(text);
                         setLesson(parsed);
+                        setSetupTab("lesson");
                         localStorage.setItem(LESSON_CACHE_KEY, text);
                       } catch (err) {
                         setError("Invalid lesson JSON");
@@ -1115,8 +1295,9 @@ export default function BengaliTutor() {
                   />
                 </label>
               </div>
-              {error && <div style={{ color: "#dc2626", fontWeight: 600 }}>{error}</div>}
             </div>
+            ) : null}
+            {setupTab === "downloads" ? (
             <div className="bn-section" style={{ display: "grid", gap: 8 }}>
               <div className="bn-row">
                 <div>
@@ -1179,6 +1360,8 @@ export default function BengaliTutor() {
                 </div>
               </div>
             </div>
+            ) : null}
+            {error && <div style={{ color: "#dc2626", fontWeight: 600 }}>{error}</div>}
           </div>
         </div>
 
@@ -1189,7 +1372,7 @@ export default function BengaliTutor() {
           </div>
         )}
 
-        {lesson && !loading && (
+        {lesson && !loading && setupTab === "lesson" && (
           <div className="bn-card" style={{ display: "grid", gap: 10 }}>
             <div style={{ display: "flex", gap: 8, alignItems: "center", flexWrap: "wrap" }}>
               <h3 style={{ margin: 0 }}>{lesson.title}</h3>
@@ -1504,11 +1687,14 @@ export default function BengaliTutor() {
             ) : null}
 
             {contentTab === "games" && hasAnyGameContent ? (
-              <div className="bn-section" style={{ display: "grid", gap: 10 }}>
-                <div style={{ display: "grid", gap: 8 }}>
-                  <div style={{ display: "flex", justifyContent: "space-between", gap: 12, flexWrap: "wrap", alignItems: "center" }}>
-                    <h4 style={{ margin: 0 }}>{gameDataset === "phrases" ? "Phrase Games" : "Vocabulary Games"}</h4>
+              <div className="bn-game-shell">
+                <div className="bn-game-header">
+                  <div className="bn-game-title">
+                    <h4>{gameDataset === "phrases" ? "Phrase Games" : "Vocabulary Games"}</h4>
+                    <span>{gameDirection === "bn-en" ? "Bengali to English" : "English to Bengali"}</span>
                   </div>
+                </div>
+                <div className="bn-game-controls">
                   <div className="bn-tabs">
                     <button className={`bn-tab ${gameDataset === "vocab" ? "active" : ""}`} onClick={() => setGameDataset("vocab")} disabled={!lesson.vocab?.length}>
                       Vocab set
@@ -1517,7 +1703,7 @@ export default function BengaliTutor() {
                       Phrases set
                     </button>
                   </div>
-                  <div className="bn-tabs" style={{ background: "#e0f2fe", padding: "4px", borderRadius: "14px" }}>
+                  <div className="bn-tabs bn-tabs-soft">
                     <button className={`bn-tab ${gameDirection === "bn-en" ? "active" : ""}`} onClick={() => setGameDirection("bn-en")}>
                       Bengali → English
                     </button>
@@ -1540,28 +1726,50 @@ export default function BengaliTutor() {
                     </button>
                   </div>
                 </div>
-                <div className="bn-pill">
-                  {(() => {
-                    const s = activeGameTab === "match" ? gameScore : activeGameTab === "truefalse" ? tfScore : activeGameTab === "audio" ? audioScore : masteryScore;
-                    const avg = s.finishedStreakCount > 0 ? (s.finishedStreakSum / s.finishedStreakCount).toFixed(1) : "0.0";
-                    return `Streak ${s.streak} (Avg ${avg}, Best ${s.bestStreak})`;
-                  })()}
-                </div>
+                {(() => {
+                  const s = activeGameTab === "match" ? gameScore : activeGameTab === "truefalse" ? tfScore : activeGameTab === "audio" ? audioScore : masteryScore;
+                  const total = s.total || 0;
+                  const correct = s.correct || 0;
+                  const missed = Math.max(total - correct, 0);
+                  const percent = total > 0 ? Math.round((correct / total) * 100) : 0;
+                  return (
+                    <div className="bn-game-scoreboard">
+                      <div className="bn-stat">
+                        <div className="bn-stat-label">Score</div>
+                        <div className="bn-stat-value">{correct}/{total}</div>
+                      </div>
+                      <div className="bn-stat">
+                        <div className="bn-stat-label">Accuracy</div>
+                        <div className="bn-stat-value">{percent}%</div>
+                      </div>
+                      <div className="bn-stat">
+                        <div className="bn-stat-label">Missed</div>
+                        <div className="bn-stat-value">{missed}</div>
+                      </div>
+                      <div className="bn-stat">
+                        <div className="bn-stat-label">Streak</div>
+                        <div className="bn-stat-value">{s.streak} / {s.bestStreak}</div>
+                      </div>
+                    </div>
+                  );
+                })()}
                 {activeGameTab === "match" && (
                   <>
                     {gameQuestion ? (
-                      <div className="bn-section" style={{ background: "#fff", display: "grid", gap: 8 }}>
-                        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
-                          <div style={{ fontWeight: 800, fontSize: "1.2rem", color: "#0f172a" }}>{gameQuestion.displayQuestion}</div>
+                      <div className="bn-game-card">
+                        <div className="bn-game-card-top">
+                          <div>
+                            <div className="bn-game-prompt">{gameQuestion.displayQuestion}</div>
+                            {gameDirection === "bn-en" && gameQuestion.pronunciation && (
+                              <div className="bn-game-subtext">{gameQuestion.pronunciation}</div>
+                            )}
+                          </div>
                           <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
-                        {gameDirection === "bn-en" && gameQuestion.pronunciation && (
-                          <div style={{ color: "#475569", fontSize: "1rem" }}>{gameQuestion.pronunciation}</div>
-                        )}
                             <label style={{ fontSize: "0.85rem", fontWeight: 700, color: "#475569" }}>Options:</label>
                             <select
                               value={matchOptionsCount}
                               onChange={(e) => setMatchOptionsCount(Number(e.target.value))}
-                              style={{ padding: "4px 8px", borderRadius: "8px", border: "1px solid #e2e8f0", fontSize: "0.9rem" }}
+                              className="bn-select"
                             >
                               {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(n => (
                                 <option key={n} value={n}>{n}</option>
@@ -1569,11 +1777,11 @@ export default function BengaliTutor() {
                             </select>
                           </div>
                         </div>
-                        <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+                        <div className="bn-game-actions">
                           <button className="bn-btn secondary" onClick={() => speak(gameQuestion.bn, "bn", { forceApi: true })}>🔈 Hear Target Bengali</button>
                           <button className="bn-btn secondary" onClick={startNewGameRound}>New card</button>
                         </div>
-                        <div style={{ display: "grid", gap: 8 }}>
+                        <div className="bn-game-options">
                           {gameQuestion.options.map((option, idx) => {
                             const isCorrect = option === gameQuestion.correctAnswer;
                             const stateClass = gameResult
@@ -1590,14 +1798,14 @@ export default function BengaliTutor() {
                                 onClick={() => handleGamePick(option)}
                                 disabled={!!gameResult}
                               >
-                                <span style={{ opacity: 0.5, marginRight: 8 }}>{idx === 9 ? 0 : idx + 1}.</span>
+                                <span className="bn-option-index">{idx === 9 ? 0 : idx + 1}</span>
                                 {option}
                               </button>
                             );
                           })}
                         </div>
                         {gameResult && (
-                          <div style={{ fontWeight: 700, color: gameResult === "correct" ? "#15803d" : "#b91c1c" }}>
+                          <div className={`bn-game-feedback ${gameResult}`}>
                             {gameResult === "correct" ? "Nice! You got it." : `Close! The answer is "${gameQuestion.correctAnswer}".`}
                           </div>
                         )}
@@ -1613,13 +1821,16 @@ export default function BengaliTutor() {
                 {activeGameTab === "audio" && (
                   <>
                     {audioQuestion ? (
-                      <div className="bn-section" style={{ background: "#fff", display: "grid", gap: 8 }}>
-                        <div style={{ fontWeight: 800, fontSize: "1.1rem", color: "#0f172a" }}>Listen and pick the English meaning</div>
-                        <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+                      <div className="bn-game-card">
+                        <div>
+                          <div className="bn-game-prompt">Listen and pick the English meaning</div>
+                          <div className="bn-game-subtext">Play the clip, then choose the matching answer.</div>
+                        </div>
+                        <div className="bn-game-actions">
                           <button className="bn-btn" onClick={() => speak(audioQuestion.audioText, audioQuestion.audioLang, { forceApi: true })}>▶️ Play Audio</button>
                           <button className="bn-btn secondary" onClick={startAudioHuntRound}>New clip</button>
                         </div>
-                        <div style={{ display: "grid", gap: 8 }}>
+                        <div className="bn-game-options">
                           {audioQuestion.options.map((option, idx) => {
                             const isCorrect = option === audioQuestion.correctAnswer;
                             const stateClass = audioResult
@@ -1636,14 +1847,14 @@ export default function BengaliTutor() {
                                 onClick={() => handleAudioPick(option)}
                                 disabled={!!audioResult}
                               >
-                                <span style={{ opacity: 0.5, marginRight: 8 }}>{idx === 9 ? 0 : idx + 1}.</span>
+                                <span className="bn-option-index">{idx === 9 ? 0 : idx + 1}</span>
                                 {option}
                               </button>
                             );
                           })}
                         </div>
                         {audioResult && (
-                          <div style={{ fontWeight: 700, color: audioResult === "correct" ? "#15803d" : "#b91c1c" }}>
+                          <div className={`bn-game-feedback ${audioResult}`}>
                             {audioResult === "correct" ? "Correct!" : `Not quite — it was "${audioQuestion.correctAnswer}".`}
                           </div>
                         )}
@@ -1659,15 +1870,17 @@ export default function BengaliTutor() {
                 {activeGameTab === "mastery" && (
                   <>
                     {masteryQueue.length ? (
-                      <div className="bn-section" style={{ background: "#fff", display: "grid", gap: 8 }}>
-                        <div style={{ display: "flex", justifyContent: "space-between", gap: 10, flexWrap: "wrap", alignItems: "center" }}>
-                          <div style={{ fontWeight: 800, fontSize: "1.1rem", color: "#0f172a" }}>Mastery Ladder</div>
+                      <div className="bn-game-card">
+                        <div className="bn-game-card-top">
+                          <div>
+                            <div className="bn-game-prompt">Mastery Ladder</div>
+                            <div className="bn-game-subtext">Answer correctly {masteryTarget} times before moving to the next word.</div>
+                          </div>
                           <div className="bn-pill">
                             Target {masteryTarget} • Progress {masteryCorrectCount}/{masteryTarget}
                           </div>
                         </div>
-                        <div style={{ color: "#475569" }}>Answer correctly {masteryTarget} times before moving to the next word.</div>
-                        <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+                        <div className="bn-game-actions">
                           <button className={`bn-btn secondary ${masteryTarget === 3 ? "active" : ""}`} onClick={() => setMasteryTarget(3)}>
                             Target 3
                           </button>
@@ -1676,11 +1889,11 @@ export default function BengaliTutor() {
                           </button>
                           <button className="bn-btn secondary" onClick={reshuffleMastery}>Shuffle list</button>
                         </div>
-                        <div style={{ fontWeight: 800, fontSize: "1.2rem", color: "#0f172a" }}>
+                        <div className="bn-game-prompt">
                           {gameDirection === "en-bn" ? masteryQueue[masteryIndex]?.en : `${masteryQueue[masteryIndex]?.bn} (${masteryQueue[masteryIndex]?.pronunciation || ""})`}
                         </div>
 
-                        <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+                        <div className="bn-game-actions">
                           <button
                             className="bn-btn"
                             onClick={() => speak(masteryQueue[masteryIndex]?.bn, "bn", { forceApi: true })}
@@ -1689,7 +1902,7 @@ export default function BengaliTutor() {
                           </button>
                           <button className="bn-btn secondary" onClick={startMasteryRound}>New options</button>
                         </div>
-                        <div style={{ display: "grid", gap: 8 }}>
+                        <div className="bn-game-options">
                           {masteryOptions.map((option, idx) => {
                             const targetAnswer = gameDirection === "en-bn" ? `${masteryQueue[masteryIndex]?.bn} (${masteryQueue[masteryIndex]?.pronunciation || ""})` : masteryQueue[masteryIndex]?.en;
                             const isCorrect = option === targetAnswer;
@@ -1707,14 +1920,14 @@ export default function BengaliTutor() {
                                 onClick={() => handleMasteryPick(option)}
                                 disabled={!!masteryResult}
                               >
-                                <span style={{ opacity: 0.5, marginRight: 8 }}>{idx === 9 ? 0 : idx + 1}.</span>
+                                <span className="bn-option-index">{idx === 9 ? 0 : idx + 1}</span>
                                 {option}
                               </button>
                             );
                           })}
                         </div>
                         {masteryResult && (
-                          <div style={{ fontWeight: 700, color: masteryResult === "correct" ? "#15803d" : "#b91c1c" }}>
+                          <div className={`bn-game-feedback ${masteryResult}`}>
                             {masteryResult === "correct"
                               ? "Correct! Keep it going."
                               : `Missed it — try again. The answer is "${gameDirection === "en-bn" ? `${masteryQueue[masteryIndex]?.bn} (${masteryQueue[masteryIndex]?.pronunciation || ""})` : masteryQueue[masteryIndex]?.en}".`}
@@ -1725,12 +1938,6 @@ export default function BengaliTutor() {
                             {masteryCorrectCount >= masteryTarget ? "Next word" : "Try again"}
                           </button>
                         )}
-                        <div className="bn-pill">
-                          {(() => {
-                            const avg = masteryScore.finishedStreakCount > 0 ? (masteryScore.finishedStreakSum / masteryScore.finishedStreakCount).toFixed(1) : "0.0";
-                            return `Streak ${masteryScore.streak} (Avg ${avg}, Best ${masteryScore.bestStreak})`;
-                          })()}
-                        </div>
                       </div>
                     ) : (
                       <div style={{ color: "#475569" }}>Add at least two vocabulary words to start the game.</div>
@@ -1740,19 +1947,21 @@ export default function BengaliTutor() {
                 {activeGameTab === "truefalse" && (
                   <>
                     {tfQuestion ? (
-                      <div className="bn-section" style={{ background: "#fff", display: "grid", gap: 8 }}>
-                        <div style={{ fontWeight: 800, fontSize: "1.1rem", color: "#0f172a" }}>{tfQuestion.displayQuestion}</div>
-                        <div style={{ color: "#475569" }}>Does this mean: <strong style={{ color: "#0f172a" }}>{tfQuestion.displayAnswer}</strong>?</div>
-                        <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+                      <div className="bn-game-card">
+                        <div>
+                          <div className="bn-game-prompt">{tfQuestion.displayQuestion}</div>
+                          <div className="bn-game-subtext">Does this mean: <strong style={{ color: "#0f172a" }}>{tfQuestion.displayAnswer}</strong>?</div>
+                        </div>
+                        <div className="bn-game-actions">
                           <button className="bn-btn secondary" onClick={() => speak(tfQuestion.bn, "bn", { forceApi: true })}>🔈 Hear Bengali</button>
                           <button className="bn-btn secondary" onClick={startTrueFalseRound}>New check</button>
                         </div>
-                        <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-                          <button className="bn-btn secondary bn-true-btn" onClick={() => handleTrueFalsePick(true)} disabled={!!tfResult}><span style={{ opacity: 0.7, marginRight: 6 }}>1.</span> ✅ True</button>
-                          <button className="bn-btn secondary bn-false-btn" onClick={() => handleTrueFalsePick(false)} disabled={!!tfResult}><span style={{ opacity: 0.7, marginRight: 6 }}>2.</span> ❌ False</button>
+                        <div className="bn-game-actions">
+                          <button className="bn-btn secondary bn-true-btn" onClick={() => handleTrueFalsePick(true)} disabled={!!tfResult}><span className="bn-option-index">1</span> ✅ True</button>
+                          <button className="bn-btn secondary bn-false-btn" onClick={() => handleTrueFalsePick(false)} disabled={!!tfResult}><span className="bn-option-index">2</span> ❌ False</button>
                         </div>
                         {tfResult && (
-                          <div style={{ fontWeight: 700, color: tfResult === "correct" ? "#15803d" : "#b91c1c" }}>
+                          <div className={`bn-game-feedback ${tfResult}`}>
                             {tfResult === "correct"
                               ? "Correct!"
                               : tfQuestion.isCorrect
