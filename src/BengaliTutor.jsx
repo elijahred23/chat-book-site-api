@@ -106,7 +106,7 @@ export default function BengaliTutor() {
     }
   });
   const [loading, setLoading] = useState(false);
-  const [setupTab, setSetupTab] = useState("generate");
+  const [setupTab, setSetupTab] = useState("lesson");
   const [selectedGroups, setSelectedGroups] = useState(() => {
     try {
       const saved = localStorage.getItem("bn_selected_groups");
