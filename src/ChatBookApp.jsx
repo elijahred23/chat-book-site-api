@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useMemo, useState } from "react";
+import { createPortal } from "react-dom";
 import ReactMarkdown from "react-markdown";
 import { ClipLoader } from "react-spinners";
 import { FaBookOpen, FaMagic, FaPrint, FaRegLightbulb, FaTrashAlt } from "react-icons/fa";
@@ -127,6 +128,17 @@ Topics to cover: ${section.topics.join(", ") || "Choose the most useful subtopic
 Make the section self-contained, accurate, practical, and easy to learn from. Explain unfamiliar ideas before using them, include examples where useful, and avoid repeating content that belongs in other sections.${formatBlock}`;
 }
 
+function formatSectionMarkdown(section, index, content) {
+    const sectionParts = [
+        `## ${index + 1}. ${section.title}`,
+        section.objective ? `> **Learning objective:** ${section.objective}` : "",
+        section.topics.length ? `**Topics:** ${section.topics.join(", ")}` : "",
+        content || "",
+    ];
+
+    return sectionParts.filter(Boolean).join("\n\n");
+}
+
 async function mapWithConcurrency(items, limit, worker) {
     const results = new Array(items.length);
     let nextIndex = 0;
@@ -183,10 +195,23 @@ export default function ChatBookApp() {
     const sectionCount = bookOutline?.sections.length || 0;
     const totalRequests = sectionCount + (bookOutline ? 1 : 0);
     const progress = totalRequests ? (completedRequests / totalRequests) * 100 : 0;
-    const allInstructionResponsesText = useMemo(
-        () => [initialInstructionResponse, ...subsequentInstructionResponses].filter(Boolean).join("\n\n"),
-        [initialInstructionResponse, subsequentInstructionResponses],
-    );
+    const bookMarkdown = useMemo(() => {
+        if (!bookOutline) return "";
+
+        const learningPath = bookOutline.sections
+            .map((section, index) => `${index + 1}. **${section.title}**${section.objective ? ` — ${section.objective}` : ""}`)
+            .join("\n");
+        const sections = bookOutline.sections
+            .map((section, index) => formatSectionMarkdown(section, index, subsequentInstructionResponses[index]))
+            .join("\n\n---\n\n");
+
+        return [
+            `# ${bookOutline.title}`,
+            bookOutline.summary,
+            `## Learning path\n\n${learningPath}`,
+            sections,
+        ].filter(Boolean).join("\n\n");
+    }, [bookOutline, subsequentInstructionResponses]);
 
     const executeInstructions = async () => {
         const requestedSubject = subject.trim();
@@ -276,10 +301,7 @@ export default function ChatBookApp() {
     };
 
     const printBook = () => {
-        setFollowUpView("scroll");
-        requestAnimationFrame(() => {
-            requestAnimationFrame(() => window.print());
-        });
+        window.print();
     };
 
     useEffect(() => {
@@ -376,12 +398,12 @@ export default function ChatBookApp() {
                     <ClipLoader color="#7557d5" loading={loading} size={16} />
                 </div>
 
-                {initialInstructionResponse && (
+                {bookOutline && !loading && (
                     <div className="cb-book-actions">
                         <button className="cb-btn cb-btn--primary" onClick={printBook} disabled={loading}>
                             <FaPrint aria-hidden="true" /> Print book
                         </button>
-                        <ActionButtons promptText={allInstructionResponsesText} />
+                        <ActionButtons promptText={bookMarkdown} />
                     </div>
                 )}
 
@@ -420,7 +442,9 @@ export default function ChatBookApp() {
                                                 <ReactMarkdown className="cb-markdown">
                                                     {subsequentInstructionResponses[index]}
                                                 </ReactMarkdown>
-                                                <div className="cb-section-actions"><ActionButtons promptText={subsequentInstructionResponses[index]} /></div>
+                                                <div className="cb-section-actions">
+                                                    <ActionButtons promptText={formatSectionMarkdown(section, index, subsequentInstructionResponses[index])} />
+                                                </div>
                                             </>
                                         ) : (
                                             <div className="cb-section-loading"><ClipLoader size={14} color="#7557d5" /> Writing section…</div>
@@ -448,7 +472,15 @@ export default function ChatBookApp() {
                                             <ReactMarkdown className="cb-markdown">
                                                 {subsequentInstructionResponses[slideIndex]}
                                             </ReactMarkdown>
-                                            <div className="cb-section-actions"><ActionButtons promptText={subsequentInstructionResponses[slideIndex]} /></div>
+                                            <div className="cb-section-actions">
+                                                <ActionButtons
+                                                    promptText={formatSectionMarkdown(
+                                                        bookOutline.sections[slideIndex],
+                                                        slideIndex,
+                                                        subsequentInstructionResponses[slideIndex],
+                                                    )}
+                                                />
+                                            </div>
                                         </>
                                     ) : (
                                         <div className="cb-section-loading"><ClipLoader size={14} color="#7557d5" /> Writing section…</div>
@@ -468,6 +500,31 @@ export default function ChatBookApp() {
                     </div>
                 )}
             </div>
+
+            {bookOutline && createPortal(
+                <div className="cb-print-book" aria-hidden="true">
+                    <header className="cb-print-title">
+                        <span>Learning Book</span>
+                        <h1>{bookOutline.title}</h1>
+                        {bookOutline.summary && <p>{bookOutline.summary}</p>}
+                    </header>
+                    {bookOutline.sections.map((section, index) => (
+                        <article key={section.id} className="cb-print-section">
+                            <div className="cb-print-section__heading">
+                                <span>Section {index + 1}</span>
+                                <h2>{section.title}</h2>
+                                {section.objective && <p>{section.objective}</p>}
+                            </div>
+                            {subsequentInstructionResponses[index] && (
+                                <ReactMarkdown className="cb-markdown">
+                                    {subsequentInstructionResponses[index]}
+                                </ReactMarkdown>
+                            )}
+                        </article>
+                    ))}
+                </div>,
+                document.body,
+            )}
         </div>
     );
 }
