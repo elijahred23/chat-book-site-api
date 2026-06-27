@@ -7,7 +7,6 @@ import {
   FaGlobe,
   FaHeadphones,
   FaKeyboard,
-  FaLayerGroup,
   FaMagic,
   FaMicrophoneAlt,
   FaPlus,
@@ -44,16 +43,12 @@ import BengaliTutor from './BengaliTutor.jsx';
 import CodingProblems from './CodingProblems.jsx';
 import SystemDesignPrep from './SystemDesignPrep.jsx';
 import IframeDrawer from './IframeDrawer.jsx';
-import StockMarketGame from './StockMarketGame.jsx';
 import PdfToText from './PdfToText.jsx';
-import RegexTrainer from './RegexTrainer.jsx';
 import ChatGPTDual from './ChatGPTDual.jsx';
 import LargeTextChunks from './LargeTextChunks.jsx';
-import GuitarTabs from './GuitarTabs.jsx';
 import AsmrPromptDrawer from './AsmrPromptDrawer.jsx';
 import ActionButtonStudio from './ActionButtonStudio.jsx';
 import MediaPlayer from './MediaPlayer.jsx';
-import CustomPromptsDrawer from './CustomPromptsDrawer.jsx';
 import MarkdownViewer from './MarkdownViewer.jsx';
 
 function AppContent() {
@@ -66,7 +61,7 @@ function AppContent() {
   const menuRef = useRef(null);
   const closeFabMenu = () => setShowFloatingBtns(false);
   const dispatch = useAppDispatch();
-  const { isChat2Open, drawerStack, isChatOpen, isTeleprompterOpen, isTTSOpen, isPlantUMLOpen, isPodcastTTSOpen, isJSGeneratorOpen, isChatBookOpen, isArchitectureOpen, isYouTubeOpen, isHtmlBuilderOpen, isTypingOpen, isIframeOpen, isLargeTextOpen, isAsmrOpen, isCustomPromptsOpen, isMarkdownViewerOpen} = useAppState();
+  const { isChat2Open, drawerStack, isChatOpen, isTeleprompterOpen, isTTSOpen, isPlantUMLOpen, isPodcastTTSOpen, isJSGeneratorOpen, isChatBookOpen, isArchitectureOpen, isYouTubeOpen, isHtmlBuilderOpen, isTypingOpen, isIframeOpen, isLargeTextOpen, isAsmrOpen, isMarkdownViewerOpen} = useAppState();
 
   const toggleChat = () => dispatch(actions.setIsChatOpen(false));
   const toggleWidth = () => setIsFullWidth((p) => !p);
@@ -81,7 +76,6 @@ function AppContent() {
   const setIsIframeOpen = (val) => dispatch(actions.setIsIframeOpen(val));
   const setIsLargeTextOpen = (val) => dispatch(actions.setIsLargeTextOpen(val));
   const setIsAsmrOpen = (val) => dispatch(actions.setIsAsmrOpen(val));
-  const setIsCustomPromptsOpen = (val) => dispatch(actions.setIsCustomPromptsOpen(val));
   const setIsMarkdownViewerOpen = (val) => dispatch(actions.setIsMarkdownViewerOpen(val));
 
 
@@ -136,7 +130,6 @@ function AppContent() {
     isIframeOpen ||
     isLargeTextOpen ||
     isAsmrOpen ||
-    isCustomPromptsOpen ||
     isMarkdownViewerOpen;
 
   const floatingTools = [
@@ -230,12 +223,6 @@ function AppContent() {
       active: isMarkdownViewerOpen,
       action: () => setIsMarkdownViewerOpen(true),
     },
-    {
-      label: isCustomPromptsOpen ? 'Shortcuts' : 'Open Shortcuts',
-      icon: FaLayerGroup,
-      active: isCustomPromptsOpen,
-      action: () => setIsCustomPromptsOpen(true),
-    },
   ];
 
   return (
@@ -262,10 +249,7 @@ function AppContent() {
                 <NavLink to="/bengali" role="menuitem" onClick={() => setIsMenuOpen(false)}>Bengali Tutor</NavLink>
                 <NavLink to="/coding" role="menuitem" onClick={() => setIsMenuOpen(false)}>Coding Problems</NavLink>
                 <NavLink to="/system-design" role="menuitem" onClick={() => setIsMenuOpen(false)}>System Design Prep</NavLink>
-                <NavLink to="/guitar-tabs" role="menuitem" onClick={() => setIsMenuOpen(false)}>Guitar Tabs</NavLink>
-                <NavLink to="/market-sim" role="menuitem" onClick={() => setIsMenuOpen(false)}>Stock Market Game</NavLink>
                 <NavLink to="/pdf-to-text" role="menuitem" onClick={() => setIsMenuOpen(false)}>PDF to Text</NavLink>
-                <NavLink to="/regex" role="menuitem" onClick={() => setIsMenuOpen(false)}>Regex Trainer</NavLink>
                 <NavLink to="/media-player" role="menuitem" onClick={() => setIsMenuOpen(false)}>Media Player</NavLink>
                 <NavLink to="/action-buttons-studio" role="menuitem" onClick={() => setIsMenuOpen(false)}>Action Button Studio</NavLink>
                 <button 
@@ -275,14 +259,6 @@ function AppContent() {
                   onMouseLeave={(e) => e.target.style.backgroundColor = 'transparent'}
                 >
                   Markdown Viewer
-                </button>
-                <button 
-                  onClick={() => { setIsCustomPromptsOpen(true); setIsMenuOpen(false); }}
-                  style={{ textAlign: 'left', background: 'none', border: 'none', font: 'inherit', cursor: 'pointer', padding: '10px 12px', fontWeight: 800, color: '#0f172a', width: '100%', borderRadius: '12px' }}
-                  onMouseEnter={(e) => e.target.style.backgroundColor = '#f1f5f9'}
-                  onMouseLeave={(e) => e.target.style.backgroundColor = 'transparent'}
-                >
-                  Shortcut Manager
                 </button>
                 <NavLink to="/apiCheck" role="menuitem" onClick={() => setIsMenuOpen(false)}>Settings</NavLink>
               </div>
@@ -616,10 +592,7 @@ function AppContent() {
             <Route path="/bengali" element={<BengaliTutor />} />
             <Route path="/coding" element={<CodingProblems />} />
             <Route path="/system-design" element={<SystemDesignPrep />} />
-            <Route path="/guitar-tabs" element={<GuitarTabs />} />
-            <Route path="/market-sim" element={<StockMarketGame />} />
             <Route path="/pdf-to-text" element={<PdfToText />} />
-            <Route path="/regex" element={<RegexTrainer />} />
             <Route path="/media-player" element={<MediaPlayer />} />
             <Route path="/action-buttons-studio" element={<ActionButtonStudio />} />
             <Route path="/markdown-viewer" element={<MarkdownViewer />} />
@@ -811,19 +784,6 @@ function AppContent() {
         >
           <MarkdownViewer />
         </SideDrawer>
-
-        <SideDrawer
-          isOpen={isCustomPromptsOpen}
-          isFullWidth={isFullWidth}
-          stack={drawerStack}
-          currentKey="custom"
-          onToggleWidth={toggleWidth}
-          onClose={() => setIsCustomPromptsOpen(false)}
-          closeLabel="✖ Close Shortcut Manager"
-        >
-          <CustomPromptsDrawer />
-        </SideDrawer>
-      
 
       <DownloadCopyTextFile />
       <TextSelectionTooltip

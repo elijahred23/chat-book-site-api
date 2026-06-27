@@ -38,7 +38,6 @@ const initialState = {
   isLargeTextOpen: false,
   isAsmrOpen: false,
   asmrPromptText: '',
-  isCustomPromptsOpen: false,
   isMarkdownViewerOpen: false,
   markdownViewerText: '',
 };
@@ -79,7 +78,6 @@ const actionTypes = {
   SET_IS_LARGE_TEXT_OPEN: 'SET_IS_LARGE_TEXT_OPEN',
   SET_IS_ASMR_OPEN: 'SET_IS_ASMR_OPEN',
   SET_ASMR_PROMPT_TEXT: 'SET_ASMR_PROMPT_TEXT',
-  SET_IS_CUSTOM_PROMPT_OPEN: 'SET_IS_CUSTOM_PROMPT_OPEN', 
   SET_IS_MARKDOWN_VIEWER_OPEN: 'SET_IS_MARKDOWN_VIEWER_OPEN',
   SET_MARKDOWN_VIEWER_TEXT: 'SET_MARKDOWN_VIEWER_TEXT',
 };
@@ -102,7 +100,6 @@ const closeAllPanels = (state) => ({
   isIframeOpen: false,
   isLargeTextOpen: false,
   isAsmrOpen: false,
-  isCustomPromptsOpen: false,
   isMarkdownViewerOpen: false,
 });
 
@@ -122,7 +119,6 @@ const drawerKeyToState = {
   iframe: 'isIframeOpen',
   large: 'isLargeTextOpen',
   asmr: 'isAsmrOpen',
-  custom: 'isCustomPromptsOpen',
   markdown: 'isMarkdownViewerOpen',
 };
 
@@ -258,9 +254,6 @@ function appReducer(state, action) {
     case actionTypes.SET_ASMR_PROMPT_TEXT:
       return { ...state, asmrPromptText: action.payload };
     
-    case actionTypes.SET_IS_CUSTOM_PROMPT_OPEN:
-      return action.payload ? activateDrawer(state, 'custom') : deactivateDrawer(state, 'custom');
-
     case actionTypes.SET_IS_MARKDOWN_VIEWER_OPEN:
       return action.payload ? activateDrawer(state, 'markdown') : deactivateDrawer(state, 'markdown');
 
@@ -329,7 +322,6 @@ export const actions = {
   setLargeTextBuffer: (text) => ({ type: actionTypes.SET_COPY_TEXT, payload: text }),
   setIsAsmrOpen: (open) => ({ type: actionTypes.SET_IS_ASMR_OPEN, payload: open }),
   setAsmrPromptText: (text) => ({ type: actionTypes.SET_ASMR_PROMPT_TEXT, payload: text }),
-  setIsCustomPromptsOpen: (open) => ({ type: actionTypes.SET_IS_CUSTOM_PROMPT_OPEN, payload: open }),
   setIsMarkdownViewerOpen: (open) => ({ type: actionTypes.SET_IS_MARKDOWN_VIEWER_OPEN, payload: open }),
   setMarkdownViewerText: (text) => ({ type: actionTypes.SET_MARKDOWN_VIEWER_TEXT, payload: text }),
 };
