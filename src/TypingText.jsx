@@ -560,7 +560,7 @@ const handleKey = (e) => {
 
       <div className="panel">
         <div className="panel-head">
-          <h4 style={{color:"white"}}>Source Snippet</h4>
+          <h4>Source Snippet</h4>
           <div className="pill">Est. {predictedMinutesToComplete} mins</div>
         </div>
         <div className="controls">
@@ -576,7 +576,7 @@ const handleKey = (e) => {
             <button className="btn ghost" onClick={stop} disabled={!started}>Stop</button>
             <button className="secondary" onClick={() => { setSource(''); }}>Clear</button>
             <button className="secondary" onClick={focus}>Focus</button>
-            <label style={{color:"white"}} className="small">
+            <label className="small typing-setting">
               Tab width:
               <button
                 className="secondary"
@@ -586,35 +586,35 @@ const handleKey = (e) => {
                 {tabSize} spaces
               </button>
             </label>
-            <label className="small" style={{ display: 'flex', alignItems: 'center', gap: 8, color:"white" }}>
+            <label className="small typing-option">
               <input type="checkbox" checked={showWhitespace} onChange={(e) => setShowWhitespace(e.target.checked)} />
               Show whitespace
             </label>
-            <label className="small" style={{ display: 'flex', alignItems: 'center', gap: 8, color:"white" }}>
+            <label className="small typing-option">
               <input type="checkbox" checked={ignoreCaseSensitivity} onChange={(e) => setIgnoreCaseSensitivity(e.target.checked)} />
               Ignore case sensitivity
             </label>
-            <label className="small" style={{ display: 'flex', alignItems: 'center', gap: 8, color:"white" }}>
+            <label className="small typing-option">
               <input type="checkbox" checked={skipSpaces} onChange={(e) => setSkipSpaces(e.target.checked)} />
               Auto-skip spaces
             </label>
-            <label className="small" style={{ display: 'flex', alignItems: 'center', gap: 8, color:"white" }}>
+            <label className="small typing-option">
               <input type="checkbox" checked={skipNonAlphanumeric} onChange={(e) => setSkipNonAlphanumeric(e.target.checked)} />
               Skip non-letters/numbers
             </label>
-            <label className="small" style={{ display: 'flex', alignItems: 'center', gap: 8, color:"white" }}>
+            <label className="small typing-option">
               <input type="checkbox" checked={autoTypeMode} onChange={(e) => setAutoTypeMode(e.target.checked)} />
               Auto-type mode
             </label>
-            <label className="small" style={{ display: 'flex', alignItems: 'center', gap: 8, color:"white" }}>
-  <input
-    type="checkbox"
-    checked={autoRestart}
-    onChange={(e) => setAutoRestart(e.target.checked)}
-  />
-  Auto-restart on finish
-</label>
-            <label className="small" style={{ display: 'flex', alignItems: 'center', gap: 8, color:"white" }}>
+            <label className="small typing-option">
+              <input
+                type="checkbox"
+                checked={autoRestart}
+                onChange={(e) => setAutoRestart(e.target.checked)}
+              />
+              Auto-restart on finish
+            </label>
+            <label className="small typing-setting">
               Auto WPM:
               <input
                 type="number"
@@ -632,7 +632,7 @@ const handleKey = (e) => {
                 style={{ width: 72 }}
               />
             </label>
-            <span style={{color:"white"}}className="small">Shortcuts: <kbd>Esc</kbd> to stop, <kbd>Backspace</kbd> to correct</span>
+            <span className="small typing-shortcuts">Shortcuts: <kbd>Esc</kbd> to stop, <kbd>Backspace</kbd> to correct</span>
           </div>
         </div>
       </div>
@@ -676,7 +676,7 @@ const handleKey = (e) => {
           onKeyDown={handleKey}
         />
 
-        <div className="footer" style={{color:"white"}}>
+        <div className="footer">
           <div>Loaded: {normalized.length} • Typed: {typed.length} • Correct: {correctChars}</div>
           <div>Elapsed: {(elapsedMs/1000).toFixed(1)}s</div>
           <div>Elapsed: {(elapsedMs / 60000).toFixed(2)} min</div>

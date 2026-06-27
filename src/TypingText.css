@@ -153,6 +153,90 @@
   color: #334155;
 }
 
+.typing-option,
+.typing-setting {
+  min-height: 42px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #d7e0ec;
+  border-radius: 10px;
+  padding: 7px 10px;
+  background: #f8fafc;
+  color: #24344a;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.typing-option:hover,
+.typing-option:focus-within {
+  border-color: #93b4ef;
+  background: #eef4ff;
+}
+
+.typing-option input[type="checkbox"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  flex: 0 0 20px;
+  display: grid;
+  place-content: center;
+  margin: 0;
+  border: 2px solid #8090a6;
+  border-radius: 5px;
+  padding: 0;
+  background: #fff;
+  cursor: pointer;
+}
+
+.typing-option input[type="checkbox"]::before {
+  width: 10px;
+  height: 6px;
+  border-bottom: 2px solid #fff;
+  border-left: 2px solid #fff;
+  content: "";
+  transform: rotate(-45deg) scale(0);
+  transition: transform 120ms ease;
+}
+
+.typing-option input[type="checkbox"]:checked {
+  border-color: #2563eb;
+  background: #2563eb;
+}
+
+.typing-option input[type="checkbox"]:checked::before {
+  transform: rotate(-45deg) scale(1);
+}
+
+.typing-option input[type="checkbox"]:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, 0.28);
+  outline-offset: 2px;
+}
+
+.typing-setting input[type="number"] {
+  width: 72px;
+  min-height: 34px;
+  margin: 0;
+  border-color: #bdc9d9;
+  background: #fff;
+  color: #142033;
+}
+
+.typing-shortcuts {
+  color: #475569;
+}
+
+.typing-shortcuts kbd {
+  border: 1px solid #cbd5e1;
+  border-bottom-width: 2px;
+  border-radius: 5px;
+  padding: 2px 5px;
+  background: #fff;
+  color: #1e293b;
+  font-family: inherit;
+  font-size: 0.76rem;
+}
+
 .metrics {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
@@ -232,4 +316,6 @@
   .typing-hero { flex-direction: column; align-items: flex-start; }
   .hero-actions { width: 100%; justify-content: flex-start; }
   .reader { max-height: 260px; }
+  .typing-option,
+  .typing-setting { width: 100%; }
 }
