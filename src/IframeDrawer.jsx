@@ -9,6 +9,7 @@ import {
   FaExternalLinkAlt,
   FaGlobe,
   FaHistory,
+  FaLink,
   FaMobileAlt,
   FaRedoAlt,
   FaSearch,
@@ -74,6 +75,8 @@ export default function IframeDrawer() {
   const [frameKey, setFrameKey] = useState(0);
   const [frameLoading, setFrameLoading] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [copyingPageUrls, setCopyingPageUrls] = useState(false);
+  const [pageUrlsCopied, setPageUrlsCopied] = useState(false);
   const copyTimerRef = useRef(null);
   const { showMessage } = useFlyout();
   const { iframeSearchText } = useAppState();
@@ -209,6 +212,48 @@ export default function IframeDrawer() {
     }
   };
 
+  const copyText = async (text) => {
+    try {
+      await navigator.clipboard.writeText(text);
+    } catch {
+      const textArea = document.createElement("textarea");
+      textArea.value = text;
+      textArea.setAttribute("readonly", "");
+      textArea.style.position = "fixed";
+      textArea.style.opacity = "0";
+      document.body.appendChild(textArea);
+      textArea.select();
+      const copiedWithFallback = document.execCommand("copy");
+      textArea.remove();
+      if (!copiedWithFallback) throw new Error("Clipboard access was denied.");
+    }
+  };
+
+  const copyPageUrls = async () => {
+    if (!currentUrl || copyingPageUrls) return;
+    setCopyingPageUrls(true);
+    setPageUrlsCopied(false);
+    try {
+      const response = await fetch(`/api/page-urls?url=${encodeURIComponent(currentUrl)}`);
+      const data = await response.json().catch(() => ({}));
+      if (!response.ok) throw new Error(data?.error || `Could not inspect the page (${response.status}).`);
+      const urls = Array.isArray(data?.urls) ? data.urls : [];
+      await copyText(JSON.stringify(urls, null, 2));
+      setPageUrlsCopied(true);
+      window.clearTimeout(copyTimerRef.current);
+      copyTimerRef.current = window.setTimeout(() => setPageUrlsCopied(false), 1800);
+      showMessage?.({
+        type: "success",
+        message: `Copied ${urls.length} page URL${urls.length === 1 ? "" : "s"} as JSON.`,
+        duration: 2200,
+      });
+    } catch (error) {
+      showMessage?.({ type: "error", message: error?.message || "Could not copy page URLs.", duration: 3000 });
+    } finally {
+      setCopyingPageUrls(false);
+    }
+  };
+
   const removeFromHistory = (urlToRemove) => {
     setHistory((previous) => {
       const next = previous.filter((url) => url !== urlToRemove);
@@ -323,6 +368,15 @@ export default function IframeDrawer() {
                 </div>
 
                 <div className="iframe-viewer__page-actions">
+                  <button
+                    type="button"
+                    onClick={copyPageUrls}
+                    disabled={copyingPageUrls}
+                    aria-label="Copy all page URLs as JSON"
+                    title="Copy all page URLs as JSON"
+                  >
+                    {pageUrlsCopied ? <FaCheck className="is-success" /> : copyingPageUrls ? <span className="iframe-viewer__spinner iframe-viewer__spinner--small" /> : <FaLink />}
+                  </button>
                   <button type="button" onClick={copyUrl} aria-label="Copy address" title="Copy address">
                     {copied ? <FaCheck className="is-success" /> : <FaCopy />}
                   </button>
