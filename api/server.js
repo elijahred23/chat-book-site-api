@@ -15,7 +15,6 @@ import { searchYouTube, getVideoDetails, searchYouTubePlaylists, getPlaylistItem
 import { fetchTranscriptWithMetadata } from './transcriptService.js';
 import { getTranscript } from './supadata.js';
 import textToSpeech from '@google-cloud/text-to-speech';
-GeminiModel.currentModel = process.env.GEMINI_MODEL || "gemini-2.0-flash";
 
 const app = express();
 const __filename = fileURLToPath(import.meta.url);

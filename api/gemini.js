@@ -2,12 +2,13 @@ import { GoogleGenAI } from "@google/genai";
 import dotenv from "dotenv";
 dotenv.config();
 const geminiApiKey = process.env.GEMINI_API_KEY || "";
+const defaultGeminiModel = "gemini-2.5-pro";
 
 // Initialize the Google GenAI client
 const ai = new GoogleGenAI({ apiKey: geminiApiKey });
 
 export class GeminiModel {
-    static currentModel = "gemini-2.5-pro";
+    static currentModel = process.env.GEMINI_MODEL?.trim() || defaultGeminiModel;
 }
 
     
