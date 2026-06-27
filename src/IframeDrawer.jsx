@@ -66,6 +66,7 @@ export default function IframeDrawer() {
   const [sessionIndex, setSessionIndex] = useState(-1);
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
+  const [activeResultIndex, setActiveResultIndex] = useState(-1);
   const [searching, setSearching] = useState(false);
   const [searchError, setSearchError] = useState("");
   const [tab, setTab] = useState("viewer");
@@ -126,7 +127,10 @@ export default function IframeDrawer() {
 
   const submitAddress = (event) => {
     event?.preventDefault();
-    if (navigate(input)) setTab("viewer");
+    if (navigate(input)) {
+      setActiveResultIndex(-1);
+      setTab("viewer");
+    }
   };
 
   const handleSearch = useCallback(async (searchValue) => {
@@ -136,6 +140,7 @@ export default function IframeDrawer() {
     setSearching(true);
     setSearchError("");
     setResults([]);
+    setActiveResultIndex(-1);
 
     try {
       const response = await fetch(`/api/websearch?q=${encodeURIComponent(trimmed)}`);
@@ -163,7 +168,18 @@ export default function IframeDrawer() {
     dispatch(actions.setIframeSearchText(""));
   }, [dispatch, handleSearch, iframeSearchText]);
 
+  const navigateToResult = useCallback((index) => {
+    const result = results[index];
+    if (!result || !navigate(result.url)) return;
+    setActiveResultIndex(index);
+    setTab("viewer");
+  }, [navigate, results]);
+
   const goBack = () => {
+    if (activeResultIndex >= 0) {
+      navigateToResult(activeResultIndex - 1);
+      return;
+    }
     if (sessionIndex <= 0) return;
     const nextIndex = sessionIndex - 1;
     setSessionIndex(nextIndex);
@@ -171,6 +187,10 @@ export default function IframeDrawer() {
   };
 
   const goForward = () => {
+    if (activeResultIndex >= 0) {
+      navigateToResult(activeResultIndex + 1);
+      return;
+    }
     if (sessionIndex >= sessionHistory.length - 1) return;
     const nextIndex = sessionIndex + 1;
     setSessionIndex(nextIndex);
@@ -212,6 +232,11 @@ export default function IframeDrawer() {
 
   const hasUrl = Boolean(currentUrl);
   const currentMeta = useMemo(() => getUrlMeta(currentUrl), [currentUrl]);
+  const isViewingSearchResult = activeResultIndex >= 0 && activeResultIndex < results.length;
+  const canGoBack = isViewingSearchResult ? activeResultIndex > 0 : sessionIndex > 0;
+  const canGoForward = isViewingSearchResult
+    ? activeResultIndex < results.length - 1
+    : sessionIndex < sessionHistory.length - 1;
 
   return (
     <section className="iframe-viewer">
@@ -269,8 +294,13 @@ export default function IframeDrawer() {
             <>
               <div className="iframe-viewer__toolbar">
                 <div className="iframe-viewer__nav-actions">
-                  <button type="button" onClick={goBack} disabled={sessionIndex <= 0} aria-label="Previous page" title="Previous page"><FaArrowLeft /></button>
-                  <button type="button" onClick={goForward} disabled={sessionIndex >= sessionHistory.length - 1} aria-label="Next page" title="Next page"><FaArrowRight /></button>
+                  <button type="button" onClick={goBack} disabled={!canGoBack} aria-label={isViewingSearchResult ? "Previous search result" : "Previous page"} title={isViewingSearchResult ? "Previous search result" : "Previous page"}><FaArrowLeft /></button>
+                  {isViewingSearchResult && (
+                    <span className="iframe-viewer__result-position" aria-live="polite">
+                      {activeResultIndex + 1} / {results.length}
+                    </span>
+                  )}
+                  <button type="button" onClick={goForward} disabled={!canGoForward} aria-label={isViewingSearchResult ? "Next search result" : "Next page"} title={isViewingSearchResult ? "Next search result" : "Next page"}><FaArrowRight /></button>
                   <button type="button" onClick={() => { setFrameLoading(true); setFrameKey((key) => key + 1); }} aria-label="Reload page" title="Reload page"><FaRedoAlt /></button>
                 </div>
 
@@ -359,7 +389,7 @@ export default function IframeDrawer() {
                 return (
                   <article className="iframe-viewer__result" key={`${result.url}-${index}`}>
                     <span className="iframe-viewer__site-icon">{meta.initial}</span>
-                    <button type="button" onClick={() => { if (navigate(result.url)) setTab("viewer"); }}>
+                    <button type="button" onClick={() => navigateToResult(index)}>
                       <span className="iframe-viewer__result-host">{meta.hostname}</span>
                       <strong>{result.title || meta.hostname}</strong>
                       {result.snippet && <span className="iframe-viewer__result-snippet">{result.snippet}</span>}
@@ -390,7 +420,7 @@ export default function IframeDrawer() {
                 return (
                   <article className="iframe-viewer__history-item" key={url}>
                     <span className="iframe-viewer__site-icon">{meta.initial}</span>
-                    <button type="button" onClick={() => { navigate(url); setTab("viewer"); }}>
+                    <button type="button" onClick={() => { setActiveResultIndex(-1); navigate(url); setTab("viewer"); }}>
                       <strong>{meta.hostname}</strong><span>{url}</span>
                     </button>
                     <a href={url} target="_blank" rel="noreferrer" aria-label={`Open ${meta.hostname} in a new tab`}><FaExternalLinkAlt /></a>

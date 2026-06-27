@@ -131,6 +131,15 @@
   .iframe-viewer__page-actions,
   .iframe-viewer__viewport-switcher { display: flex; align-items: center; gap: 0.15rem; }
   .iframe-viewer__viewport-switcher { justify-self: center; border-radius: 0.6rem; padding: 0.15rem; background: var(--color-surface-muted); }
+  .iframe-viewer__result-position {
+    min-width: 3.25rem;
+    color: var(--color-text-subtle);
+    font-size: 0.72rem;
+    font-variant-numeric: tabular-nums;
+    font-weight: 750;
+    text-align: center;
+    white-space: nowrap;
+  }
 
   .iframe-viewer__toolbar button,
   .iframe-viewer__toolbar a {
