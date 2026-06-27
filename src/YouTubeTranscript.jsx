@@ -11,7 +11,7 @@ import { actions, useAppDispatch, useAppState } from './context/AppContext';
 import ActionButtons from './ui/ActionButtons';
 import { getSupadataTranscript } from './utils/callSupadata';
 import { getFlaskYoutubeTranscript } from './utils/callFlaskYoutubeTranscript';
-import { FaCloudDownloadAlt, FaDatabase, FaPaste, FaFileAlt, FaLightbulb, FaCommentDots, FaClipboardList, FaClipboardCheck, FaSearch, FaRedoAlt } from "react-icons/fa";
+import { FaCloudDownloadAlt, FaDatabase, FaPaste, FaFileAlt, FaLightbulb, FaCommentDots, FaClipboardList, FaClipboardCheck, FaSearch, FaRedoAlt, FaTimes } from "react-icons/fa";
 import { createPortal } from "react-dom";
 
 // Constants
@@ -1418,6 +1418,20 @@ export default function YouTubeTranscript() {
                 <>
                     <div className="input-group">
                         <input className="input" type="text" value={url} placeholder="YouTube URL" onChange={(e) => { setUrl(e.target.value); setIsUrlFromStorage(false); setShouldMute(false); }} />
+                        <button
+                            type="button"
+                            disabled={!url}
+                            className="btn secondary-btn icon-only"
+                            onClick={() => {
+                                setUrl("");
+                                setIsUrlFromStorage(false);
+                                setShouldMute(false);
+                            }}
+                            aria-label="Clear YouTube URL"
+                            title="Clear YouTube URL"
+                        >
+                            <FaTimes />
+                        </button>
                         <button
                             disabled={!hasValidURL || loadingTranscript}
                             className="btn primary-btn icon-only"

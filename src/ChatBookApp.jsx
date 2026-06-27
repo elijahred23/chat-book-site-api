@@ -1,552 +1,473 @@
-import { useState, useEffect, useRef, useMemo } from "react";
-import { getGeminiResponse } from "./utils/callGemini";
-import { hostname } from "./utils/hostname";
+/* eslint-disable react/prop-types */
+import { useEffect, useMemo, useState } from "react";
+import ReactMarkdown from "react-markdown";
 import { ClipLoader } from "react-spinners";
-import ProgressBar from "./ui/ProgressBar";
-import ReactMarkdown from 'react-markdown';
-import PasteButton from "./ui/PasteButton";
-import { useFlyout } from "./context/FlyoutContext"; // adjust path as needed
-import AutoScroller from "./ui/AutoScroller";
-import { actions, useAppDispatch, useAppState } from "./context/AppContext";
+import { FaBookOpen, FaMagic, FaPrint, FaRegLightbulb, FaTrashAlt } from "react-icons/fa";
+import { getGeminiResponse } from "./utils/callGemini";
+import { RESPONSE_FORMATS } from "./utils/responseFormats";
+import { useFlyout } from "./context/FlyoutContext";
+import { useAppState } from "./context/AppContext";
 import ActionButtons from "./ui/ActionButtons";
+import AutoScroller from "./ui/AutoScroller";
+import PasteButton from "./ui/PasteButton";
+import ProgressBar from "./ui/ProgressBar";
 import "./ChatBookApp.css";
 
+const MAX_SECTIONS = 12;
+const SECTION_REQUEST_CONCURRENCY = 3;
 
-const baseURL = hostname;
+const promptSuggestions = [
+    "Learn how modern databases work",
+    "Understand system design from first principles",
+    "Learn React by building practical projects",
+    "Understand personal finance and investing",
+    "Learn the fundamentals of machine learning",
+];
 
-const getValuesInLocalStorage = () => {
-    const localNumSteps = localStorage.getItem('numSteps');
-    const localSubject = localStorage.getItem('subject');
-    const localInitialInstruction = localStorage.getItem('initialInstruction');
-    const localInitialInstructionResponse = localStorage.getItem('initialInstructionResponse');
-    const localSubsequentInstructions = localStorage.getItem('subsequentInstructions');
-    const localSubsequentInstructionResponses = localStorage.getItem('subsequentInstructionResponses');
-    const localMaxWords = localStorage.getItem('maxWords');
-    const localMode = localStorage.getItem('mode');
-    const localResponseFormat = localStorage.getItem('responseFormat');
-    const localExecutionStarted = localStorage.getItem('executionStarted');
-
-    return {
-        numSteps: localNumSteps ? JSON.parse(localNumSteps) : 5,
-        subject: localSubject ? JSON.parse(localSubject) : "",
-        initialInstruction: localInitialInstruction ? JSON.parse(localInitialInstruction) : "",
-        subsequentInstructions: localSubsequentInstructions ? JSON.parse(localSubsequentInstructions) : [],
-        maxWords: localMaxWords ? JSON.parse(localMaxWords) : 500,
-        mode: localMode ? JSON.parse(localMode) : "steps",
-        responseFormat: localResponseFormat ? JSON.parse(localResponseFormat) : "none",
-        initialInstructionResponse: localInitialInstructionResponse ? JSON.parse(localInitialInstructionResponse) : "",
-        subsequentInstructionResponses: localSubsequentInstructionResponses ? JSON.parse(localSubsequentInstructionResponses) : [],
-        executionStarted: localExecutionStarted ? JSON.parse(localExecutionStarted) : false,
+function readStoredValue(key, fallback) {
+    try {
+        const value = localStorage.getItem(key);
+        return value === null ? fallback : JSON.parse(value);
+    } catch {
+        return fallback;
     }
 }
 
-const promptSuggestions = [
-    "Build a study guide for algorithms",
-    "Outline a workshop on AI safety",
-    "Draft a product brief for a mobile app",
-    "Summarize a research paper",
-    "Create a lesson plan for React basics",
-];
+function parseBookOutline(response) {
+    const text = String(response || "").trim();
+    const withoutFence = text
+        .replace(/^```(?:json)?\s*/i, "")
+        .replace(/\s*```$/i, "")
+        .trim();
+    const firstBrace = withoutFence.indexOf("{");
+    const lastBrace = withoutFence.lastIndexOf("}");
+
+    if (firstBrace === -1 || lastBrace <= firstBrace) {
+        throw new Error("The learning plan did not contain a JSON object.");
+    }
+
+    const parsed = JSON.parse(withoutFence.slice(firstBrace, lastBrace + 1));
+    if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) {
+        throw new Error("The learning plan must be a JSON object.");
+    }
+    if (typeof parsed.title !== "string" || !parsed.title.trim()) {
+        throw new Error("The learning plan is missing a title.");
+    }
+    if (!Array.isArray(parsed.sections) || parsed.sections.length === 0) {
+        throw new Error("The learning plan must contain at least one section.");
+    }
+
+    const sections = parsed.sections.slice(0, MAX_SECTIONS).map((section, index) => {
+        if (!section || typeof section !== "object" || typeof section.title !== "string" || !section.title.trim()) {
+            throw new Error(`Section ${index + 1} is missing a title.`);
+        }
+
+        return {
+            id: `section-${index + 1}`,
+            title: section.title.trim(),
+            objective: typeof section.objective === "string" ? section.objective.trim() : "",
+            topics: Array.isArray(section.topics)
+                ? section.topics.filter((topic) => typeof topic === "string" && topic.trim()).map((topic) => topic.trim())
+                : [],
+        };
+    });
+
+    return {
+        title: parsed.title.trim(),
+        summary: typeof parsed.summary === "string" ? parsed.summary.trim() : "",
+        sections,
+    };
+}
+
+function getOutlinePrompt(subject) {
+    return `You are a curriculum architect. Create the best learning path for the topic below.
+
+Topic: ${subject}
+
+Decide how many sections are appropriate for the topic's complexity. Use between 3 and ${MAX_SECTIONS} sections. Order them so each section builds on prior knowledge.
+
+Return ONLY valid JSON. Do not use markdown fences, commentary, or trailing commas. Use exactly this schema:
+{
+  "title": "string",
+  "summary": "string",
+  "sections": [
+    {
+      "id": "section-1",
+      "title": "string",
+      "objective": "string",
+      "topics": ["string"]
+    }
+  ]
+}`;
+}
+
+function getRepairPrompt(response) {
+    return `Convert the content below into valid JSON only. Do not add markdown fences or commentary.
+
+Required schema:
+{"title":"string","summary":"string","sections":[{"id":"section-1","title":"string","objective":"string","topics":["string"]}]}
+
+Every section must have a title. Preserve the intended learning plan and return between 3 and ${MAX_SECTIONS} sections.
+
+Content to repair:
+${response}`;
+}
+
+function getSectionPrompt({ outline, section, index, responseFormat }) {
+    const formatInstruction = RESPONSE_FORMATS.find(({ value }) => value === responseFormat)?.instruction || "";
+    const formatBlock = formatInstruction ? `\n\nFormatting requirements:\n${formatInstruction}` : "";
+
+    return `Write section ${index + 1} of a learning book titled "${outline.title}".
+
+Book summary: ${outline.summary}
+Section title: ${section.title}
+Learning objective: ${section.objective}
+Topics to cover: ${section.topics.join(", ") || "Choose the most useful subtopics for this objective."}
+
+Make the section self-contained, accurate, practical, and easy to learn from. Explain unfamiliar ideas before using them, include examples where useful, and avoid repeating content that belongs in other sections.${formatBlock}`;
+}
+
+async function mapWithConcurrency(items, limit, worker) {
+    const results = new Array(items.length);
+    let nextIndex = 0;
+
+    async function runWorker() {
+        while (nextIndex < items.length) {
+            const index = nextIndex;
+            nextIndex += 1;
+            results[index] = await worker(items[index], index);
+        }
+    }
+
+    const workerCount = Math.min(limit, items.length);
+    await Promise.all(Array.from({ length: workerCount }, () => runWorker()));
+    return results;
+}
 
 export default function ChatBookApp() {
     const { showMessage } = useFlyout();
-    const localStorageValues = getValuesInLocalStorage();
-
-
-    const [mode, setMode] = useState(localStorageValues.mode);
-    const [numSteps, setNumSteps] = useState(localStorageValues.numSteps);
     const { chatBookSubject } = useAppState();
-    const [subject, setSubject] = useState(localStorageValues.subject);
-    const [initialInstruction, setInitialInstruction] = useState(localStorageValues.initialInstruction);
-    const [subsequentInstructions, setSubsequentInstructions] = useState(localStorageValues.subsequentInstructions);
+    const savedData = useMemo(() => {
+        const initialResponse = readStoredValue("initialInstructionResponse", "");
+        let outline = null;
+        try {
+            if (initialResponse) outline = parseBookOutline(initialResponse);
+        } catch {
+            outline = null;
+        }
+
+        const storedSectionResponses = readStoredValue("subsequentInstructionResponses", []);
+
+        return {
+            subject: readStoredValue("subject", ""),
+            responseFormat: readStoredValue("responseFormat", "none"),
+            initialResponse: outline ? JSON.stringify(outline, null, 2) : "",
+            sectionResponses: outline && Array.isArray(storedSectionResponses)
+                ? outline.sections.map((_, index) => storedSectionResponses[index] || "")
+                : [],
+            outline,
+        };
+    }, []);
+
+    const [subject, setSubject] = useState(savedData.subject);
+    const [responseFormat, setResponseFormat] = useState(savedData.responseFormat);
+    const [bookOutline, setBookOutline] = useState(savedData.outline);
+    const [initialInstructionResponse, setInitialInstructionResponse] = useState(savedData.initialResponse);
+    const [subsequentInstructionResponses, setSubsequentInstructionResponses] = useState(savedData.sectionResponses);
     const [loading, setLoading] = useState(false);
-    const [loadingPDF, setLoadingPDF] = useState(false);
-    const [executionStarted, setExecutionStarted] = useState(localStorageValues.executionStarted);
-    const [maxWords, setMaxWords] = useState(localStorageValues.maxWords);
-    const [responseFormat, setResponseFormat] = useState(localStorageValues.responseFormat);
-    const [printWhenFinished, setPrintWhenFinished] = useState(false);
-    const [stepsExecuted, setStepsExecuted] = useState(0);
-    const [canExecuteKey, setCanExecuteKey] = useState(false);
-    const [followUpView, setFollowUpView] = useState("scroll"); // "scroll" | "slide"
+    const [executionStarted, setExecutionStarted] = useState(false);
+    const [completedRequests, setCompletedRequests] = useState(0);
+    const [followUpView, setFollowUpView] = useState("scroll");
     const [slideIndex, setSlideIndex] = useState(0);
-    const chatLogRef = useRef(null);
-    const [initialInstructionResponse, setInitialInstructionResponse] = useState(localStorageValues.initialInstructionResponse);
-    const [subsequentInstructionResponses, setSubsequentInstructionResponses] = useState(localStorageValues.subsequentInstructionResponses);
-    const dispatch = useAppDispatch();
 
-    const MODE_CONFIGS = useMemo(() => ({
-        steps: {
-            key: 'steps',
-            label: 'Guided Steps',
-            getInitialInstruction: (steps, subject) => `Draft ${steps} clear, numbered steps to accomplish: ${subject}.`,
-            getExecutionInstruction: (currentStep, maxWords) => `Write step ${currentStep} with concise detail in ~${maxWords} words.`,
-        },
-        outline: {
-            key: 'outline',
-            label: 'Crisp Outline',
-            getInitialInstruction: (sections, subject) => `Create an outline with ${sections} sections for: ${subject}.`,
-            getExecutionInstruction: (currentSection, maxWords) => `Expand section ${currentSection} with bullet points and a short paragraph (~${maxWords} words).`,
-        },
-        mind_map: {
-            key: 'mind_map',
-            label: 'Mind Map',
-            getInitialInstruction: (branches, subject) => `Create a mind map with ${branches} main branches for '${subject}'. Include sub-branches as needed.`,
-            getExecutionInstruction: (currentBranch, maxWords) => `Expand branch ${currentBranch} with sub-branches and notes (~${maxWords} words).`,
-        },
-        mind_map_key_points: {
-            key: 'mind_map_key_points',
-            label: 'Mind Map + Examples',
-            getInitialInstruction: (branches, subject) =>
-                `Build a mind map on "${subject}" with ${branches} main branches. Add sub-branches, key points, and short examples or snippets where useful.`,
-            getExecutionInstruction: (currentBranch, maxWords) =>
-                `Elaborate on branch "${currentBranch}" with explained sub-points, analogies, and examples. Target ~${maxWords} words, exceed if clarity improves.`,
-        },
-        faq_generator: {
-            key: 'faq_generator',
-            label: 'FAQ + Answers',
-            getInitialInstruction: (numFAQs, subject) => `List ${numFAQs} frequently asked questions about '${subject}' (questions only).`,
-            getExecutionInstruction: (questionNumber, maxWords, subject) => `Answer FAQ #${questionNumber} about '${subject}' in ~${maxWords} words with a helpful tone.`,
-        },
-        code_generator: {
-            key: 'code_generator',
-            label: 'Component Blueprint',
-            getInitialInstruction: (numberOfComponents, subject) => `List ${numberOfComponents} components or modules needed to build '${subject}'.`,
-            getExecutionInstruction: (componentNumber, maxWords, subject) => `Write code or pseudocode for component #${componentNumber} of '${subject}' (~${maxWords} words).`,
-        },
-        study_guide: {
-            key: 'study_guide',
-            label: 'Study Guide',
-            getInitialInstruction: (sections, subject) => `Create a ${sections}-section study guide for '${subject}' with objectives and key facts.`,
-            getExecutionInstruction: (sectionNumber, maxWords, subject) => `Write section ${sectionNumber} of the study guide for '${subject}', include tips and examples (~${maxWords} words).`,
-        },
-        checklist: {
-            key: 'checklist',
-            label: 'Checklist',
-            getInitialInstruction: (items, subject) => `Create a checklist with ${items} items to accomplish '${subject}'.`,
-            getExecutionInstruction: (itemNumber, maxWords, subject) => `Expand checklist item ${itemNumber} for '${subject}' with a brief how-to (~${maxWords} words).`,
-        },
-    }), []); 
-
-    const modesForSelect = useMemo(() => Object.values(MODE_CONFIGS).map(config => ({
-        value: config.key,
-        label: config.label,
-    })), [MODE_CONFIGS]);
-
-    const RESPONSE_FORMATS = useMemo(() => ([
-        { value: "none", label: "No formatting (default)", instruction: "" },
-        { value: "no_headers_no_lists", label: "No headers, no lists (paragraphs only)", instruction: "No headers. No lists. Use paragraph form only." },
-        { value: "short_paragraphs", label: "Short paragraphs only", instruction: "Use short paragraphs (2–3 sentences). No bullet points." },
-        { value: "bullets_only", label: "Bulleted list only", instruction: "Respond using bullet points only. No headings, no numbered lists." },
-        { value: "numbered_steps", label: "Numbered steps only", instruction: "Respond using a numbered list only. No headings, no bullets." },
-        { value: "headers_and_bullets", label: "Headings + bullets", instruction: "Use short headings with bullet points under each. No long paragraphs." },
-        { value: "qa_pairs", label: "Q&A pairs", instruction: "Format as Q: ... then A: ... for each point. No headings." },
-        { value: "table_like", label: "Table style (pipe rows)", instruction: "Use a markdown table with headers and pipe-delimited rows. No extra text." },
-        { value: "bold_terms", label: "Bold terms + brief explanations", instruction: "Start each line with a bolded term followed by a short explanation. No headings." },
-    ]), []);
-
-    const getInitialInstructionMessage = (steps = null) => {
-        if (steps === null) steps = numSteps;
-        const currentModeConfig = MODE_CONFIGS[mode];
-        if (currentModeConfig && currentModeConfig.getInitialInstruction) {
-            return currentModeConfig.getInitialInstruction(steps, subject);
-        }
-        console.warn(`[ChatBookApp] Unknown mode or missing getInitialInstruction for mode: ${mode}`);
-        return "";
-    };
-
-    const getExecutionInstructionMessage = (currentStep, numPointsForModeDetail) => {
-        const currentModeConfig = MODE_CONFIGS[mode];
-        if (currentModeConfig && currentModeConfig.getExecutionInstruction) {
-            return currentModeConfig.getExecutionInstruction(currentStep, maxWords, subject, numPointsForModeDetail);
-        }
-        console.warn(`[ChatBookApp] Unknown mode or missing getExecutionInstruction for mode: ${mode}`);
-        return "";
-    };
-
-    const initializeSubsequentInstructions = () => {
-        const newInstructions = Array.from({ length: numSteps }, (_, i) => getExecutionInstructionMessage(i + 1));
-        setSubsequentInstructions(newInstructions);
-    };
-
-    const incrementStepsExecuted = () => setStepsExecuted(prev => prev + 1);
-
-    const executeInitialInstruction = async () => {
-        if (!canExecuteKey) return;
-
-        const prompt = `### Instruction Start ###\n${initialInstruction}\n### End ###`;
-        const geminiResponse = await getGeminiResponse(prompt);
-
-        incrementStepsExecuted();
-        setInitialInstructionResponse(geminiResponse);
-        showMessage({ type: "success", message: "Initial instruction completed!" });
-    };
-
+    const sectionCount = bookOutline?.sections.length || 0;
+    const totalRequests = sectionCount + (bookOutline ? 1 : 0);
+    const progress = totalRequests ? (completedRequests / totalRequests) * 100 : 0;
+    const allInstructionResponsesText = useMemo(
+        () => [initialInstructionResponse, ...subsequentInstructionResponses].filter(Boolean).join("\n\n"),
+        [initialInstructionResponse, subsequentInstructionResponses],
+    );
 
     const executeInstructions = async () => {
-        if (canExecuteKey) {
-            setLoading(true);
-            setExecutionStarted(true);
-            await executeInitialInstruction();
+        const requestedSubject = subject.trim();
+        if (!requestedSubject || loading) return;
+
+        setLoading(true);
+        setExecutionStarted(true);
+        setCompletedRequests(0);
+        setBookOutline(null);
+        setInitialInstructionResponse("");
+        setSubsequentInstructionResponses([]);
+        setSlideIndex(0);
+
+        try {
+            const rawOutline = await getGeminiResponse(getOutlinePrompt(requestedSubject));
+            let outline;
+
+            try {
+                outline = parseBookOutline(rawOutline);
+            } catch {
+                const repairedOutline = await getGeminiResponse(getRepairPrompt(rawOutline));
+                outline = parseBookOutline(repairedOutline);
+            }
+
+            const canonicalOutline = JSON.stringify(outline, null, 2);
+            setBookOutline(outline);
+            setInitialInstructionResponse(canonicalOutline);
+            setCompletedRequests(1);
+            setSubsequentInstructionResponses(new Array(outline.sections.length).fill(""));
+
+            let failedSections = 0;
+            const responses = await mapWithConcurrency(
+                outline.sections,
+                SECTION_REQUEST_CONCURRENCY,
+                async (section, index) => {
+                    try {
+                        const response = await getGeminiResponse(getSectionPrompt({
+                            outline,
+                            section,
+                            index,
+                            responseFormat,
+                        }));
+                        setSubsequentInstructionResponses((current) => {
+                            const next = [...current];
+                            next[index] = response;
+                            return next;
+                        });
+                        return response;
+                    } catch (error) {
+                        failedSections += 1;
+                        const failureMessage = `Unable to generate this section: ${error.message || "Unknown error"}`;
+                        setSubsequentInstructionResponses((current) => {
+                            const next = [...current];
+                            next[index] = failureMessage;
+                            return next;
+                        });
+                        return failureMessage;
+                    } finally {
+                        setCompletedRequests((current) => current + 1);
+                    }
+                },
+            );
+
+            setSubsequentInstructionResponses(responses);
+            showMessage({
+                type: failedSections ? "error" : "success",
+                message: failedSections
+                    ? `Book created with ${failedSections} section${failedSections === 1 ? "" : "s"} unable to generate.`
+                    : `Book created with ${outline.sections.length} sections.`,
+            });
+        } catch (error) {
+            console.error("Error generating chat book:", error);
+            showMessage({ type: "error", message: error.message || "Unable to create the book." });
+        } finally {
             setLoading(false);
             setExecutionStarted(false);
-        }
-    };
-
-    const print = () => window.print();
-
-    const generatePDF = async () => {
-        if (!initialInstructionResponse) return;
-        try {
-            setLoadingPDF(true);
-            const response = await fetch(`${baseURL}/generate-pdf`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    markdown: initialInstructionResponse,
-                    messagesToCombine: subsequentInstructionResponses,
-                    pdfFileName: document.title
-                })
-            });
-            if (!response.ok) throw new Error('Failed to generate PDF');
-
-            const blob = await response.blob();
-            const url = window.URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = `${subject}.pdf`;
-            document.body.appendChild(a);
-            a.click();
-            a.remove();
-        } catch (error) {
-            console.error('Error generating PDF:', error);
-        } finally {
-            setLoadingPDF(false);
         }
     };
 
     const clear = () => {
         setSubject("");
+        setBookOutline(null);
         setInitialInstructionResponse("");
-        setSubsequentInstructionResponses([])
+        setSubsequentInstructionResponses([]);
+        setCompletedRequests(0);
+        setSlideIndex(0);
     };
 
-    const executeSubsequentInstructions = async () => {
-        if (!canExecuteKey) return;
-        setLoading(true);
-
-        try {
-            const formatInstruction = RESPONSE_FORMATS.find((fmt) => fmt.value === responseFormat)?.instruction || "";
-            const promises = subsequentInstructions.map((instruction, index) => {
-                const formatBlock = formatInstruction ? `\nFormatting:\n${formatInstruction}\n` : "\n";
-                const prompt = `Refer to previous instruction:\n${initialInstructionResponse}\nNow respond to:\n${instruction}${formatBlock}`;
-                return getGeminiResponse(prompt).then(response => {
-                    incrementStepsExecuted(); // still track progress
-                    return response;
-                });
-            });
-
-            const newResponses = await Promise.all(promises);
-            setSubsequentInstructionResponses(newResponses);
-            showMessage({ type: "success", message: "Subsequent Instructions completed!" });
-
-        } catch (error) {
-            console.error("Error executing subsequent instructions:", error);
-            showMessage({ type: "error", message: error.message || "Error during execution" });
-        } finally {
-            setLoading(false);
-        }
+    const printBook = () => {
+        setFollowUpView("scroll");
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => window.print());
+        });
     };
 
-
     useEffect(() => {
-        if (subsequentInstructionResponses?.length > 0 && printWhenFinished) print();
-    }, [subsequentInstructionResponses]);
-
-    useEffect(() => {
-        if (initialInstructionResponse !== '') executeSubsequentInstructions();
-    }, [initialInstructionResponse]);
-
-    useEffect(() => {
-        setInitialInstruction(getInitialInstructionMessage(numSteps));
-        initializeSubsequentInstructions();
-    }, [numSteps, maxWords, mode]);
-
-    useEffect(() => {
-        document.title = subject;
-        setInitialInstruction(getInitialInstructionMessage());
-    }, [subject]);
-
-    useEffect(() => {
-        if (chatBookSubject) {
-            setSubject(chatBookSubject);
-        }
+        if (chatBookSubject) setSubject(chatBookSubject);
     }, [chatBookSubject]);
 
     useEffect(() => {
+        document.title = subject || "Chat Book";
+    }, [subject]);
+
+    useEffect(() => {
         setSlideIndex(0);
-    }, [followUpView, subsequentInstructionResponses.length]);
-
-    useEffect(() => setCanExecuteKey(true), [initialInstruction]);
+    }, [followUpView, sectionCount]);
 
     useEffect(() => {
-        setCanExecuteKey(false);
-        setExecutionStarted(false);
-        return () => {
-            setExecutionStarted(false);
-            setPrintWhenFinished(false);
-            setCanExecuteKey(false);
-        };
-    }, []);
-
-
-    let allInstructionResponsesText = useMemo(() => {
-        let responses = [initialInstructionResponse, ...subsequentInstructionResponses];
-
-        let responseText = responses.join(' ');
-        return responseText;
-    }, [initialInstructionResponse, subsequentInstructionResponses])
-
-    useEffect(() => {
-        return () => {
-            localStorage.setItem('numSteps', JSON.stringify(numSteps));
-            localStorage.setItem('subject', JSON.stringify(subject));
-            localStorage.setItem('initialInstruction', JSON.stringify(initialInstruction));
-            localStorage.setItem('subsequentInstructions', JSON.stringify(subsequentInstructions));
-            localStorage.setItem('maxWords', JSON.stringify(maxWords));
-            localStorage.setItem('mode', JSON.stringify(mode));
-            localStorage.setItem('responseFormat', JSON.stringify(responseFormat));
-            localStorage.setItem('subsequentInstructionResponses', JSON.stringify(subsequentInstructionResponses));
-            localStorage.setItem('initialInstructionResponse', JSON.stringify(initialInstructionResponse));
-            localStorage.setItem('executionStarted', JSON.stringify(executionStarted));
-        };
-    }, [numSteps, subject, initialInstruction, subsequentInstructions, maxWords, mode, responseFormat, subsequentInstructionResponses, initialInstructionResponse, executionStarted]);
-
-    const progress = useMemo(() => {
-        return (parseInt(stepsExecuted) / (parseInt(numSteps) + 1)) * 100;
-    }, [stepsExecuted, numSteps]);
-
-    const AskAIButton = ({text}) => {
-        return (
-            <>
-            <ActionButtons promptText={text} />
-            </>
-        )
-    }
+        localStorage.setItem("subject", JSON.stringify(subject));
+        localStorage.setItem("responseFormat", JSON.stringify(responseFormat));
+        localStorage.removeItem("chatBookSyntaxHighlighting");
+        localStorage.setItem("initialInstructionResponse", JSON.stringify(initialInstructionResponse));
+        localStorage.setItem("subsequentInstructionResponses", JSON.stringify(subsequentInstructionResponses));
+        localStorage.removeItem("numSteps");
+        localStorage.removeItem("maxWords");
+        localStorage.removeItem("mode");
+        localStorage.removeItem("initialInstruction");
+        localStorage.removeItem("subsequentInstructions");
+        localStorage.removeItem("executionStarted");
+    }, [subject, responseFormat, initialInstructionResponse, subsequentInstructionResponses]);
 
     return (
         <div className="cb-shell">
             <div className="cb-card cb-card--hero">
-                <h2 style={{ margin: 0, color: "#0f172a" }}>Chat Book</h2>
-                <p style={{ marginTop: "0.35rem", color: "#475569" }}>
-                    Generate structured content with guided modes. Great for study guides, outlines, FAQs, and code blueprints.
-                </p>
-                <div className="cb-grid">
+                <header className="cb-hero-heading">
+                    <div className="cb-hero-icon"><FaBookOpen aria-hidden="true" /></div>
                     <div>
-                        <label className="cb-label">Mode</label>
-                        <select className="cb-input" value={mode} onChange={(e) => setMode(e.target.value)}>
-                            {modesForSelect.map((modConfig) => (
-                                <option key={modConfig.value} value={modConfig.value}>{modConfig.label}</option>
-                            ))}
-                        </select>
+                        <span className="cb-eyebrow">Adaptive learning workspace</span>
+                        <h1>What do you want to learn?</h1>
+                        <p>Give Chat Book a topic. It will design the learning path and write every section automatically.</p>
                     </div>
+                    <span className="cb-ready"><i /> Ready to learn</span>
+                </header>
+
+                <div className="cb-grid cb-grid--topic">
                     <div>
-                        <label className="cb-label">Topic</label>
+                        <label className="cb-label">Learning topic</label>
                         <input
                             className="cb-input"
                             disabled={loading}
                             value={subject}
-                            placeholder="e.g. Intro to GraphQL"
-                            onKeyDown={e => e.key === 'Enter' && subject && !executionStarted && executeInstructions()}
-                            onChange={e => setSubject(e.target.value)}
-                        />
-                    </div>
-                </div>
-                <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem", marginTop: "0.35rem" }}>
-                    {promptSuggestions.map((s, i) => (
-                        <button
-                            key={i}
-                            className="cb-btn cb-btn--ghost"
-                            onClick={() => setSubject(s)}
-                        >
-                            {s}
-                        </button>
-                    ))}
-                </div>
-                <div className="cb-grid cb-grid--spaced">
-                    <div>
-                        <label className="cb-label">Steps / Sections</label>
-                        <input
-                            className="cb-input"
-                            type="number"
-                            min="1"
-                            max="12"
-                            step="1"
-                            disabled={loading}
-                            onChange={e => setNumSteps(Number(e.target.value))}
-                            value={numSteps}
+                            placeholder="Try “Teach me how distributed systems work”"
+                            onKeyDown={(event) => event.key === "Enter" && executeInstructions()}
+                            onChange={(event) => setSubject(event.target.value)}
                         />
                     </div>
                     <div>
-                        <label className="cb-label">Target Words per Step</label>
-                        <input
-                            className="cb-input"
-                            type="number"
-                            step="100"
-                            min="100"
-                            max="2000"
-                            disabled={loading}
-                            onChange={e => setMaxWords(Number(e.target.value))}
-                            value={maxWords}
-                        />
-                    </div>
-                    <div>
-                        <label className="cb-label">Subsequent Response Format</label>
+                        <label className="cb-label">Response style</label>
                         <select
                             className="cb-input"
                             value={responseFormat}
-                            onChange={(e) => setResponseFormat(e.target.value)}
+                            onChange={(event) => setResponseFormat(event.target.value)}
                             disabled={loading}
                         >
-                            {RESPONSE_FORMATS.map((fmt) => (
-                                <option key={fmt.value} value={fmt.value}>{fmt.label}</option>
+                            {RESPONSE_FORMATS.map((format) => (
+                                <option key={format.value} value={format.value}>{format.label}</option>
                             ))}
                         </select>
                     </div>
                 </div>
-                <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", marginTop: "0.75rem" }}>
-                    <button
-                        className="cb-btn cb-btn--primary"
-                        disabled={subject === '' || !canExecuteKey || loading}
-                        onClick={executeInstructions}
-                    >
-                        {loading ? <ClipLoader size={14} color="#fff" /> : "Generate"}
+
+                <div className="cb-suggestions">
+                    <span><FaRegLightbulb aria-hidden="true" /> Try an idea</span>
+                    {promptSuggestions.map((suggestion) => (
+                        <button key={suggestion} className="cb-suggestion" onClick={() => setSubject(suggestion)}>
+                            {suggestion}
+                        </button>
+                    ))}
+                </div>
+
+                <div className="cb-primary-actions">
+                    <button className="cb-btn cb-btn--primary" disabled={!subject.trim() || loading} onClick={executeInstructions}>
+                        {loading ? <ClipLoader size={14} color="#fff" /> : <FaMagic aria-hidden="true" />}
+                        {loading ? "Building your learning path…" : "Create learning book"}
                     </button>
                     <PasteButton setPasteText={setSubject} className="cb-btn cb-btn--ghost" />
-                    <button className="cb-btn cb-btn--ghost" onClick={clear}>Clear</button>
-                </div>
-                <div style={{ marginTop: "0.75rem" }}>
-                    <label className="cb-label">Initial Instruction</label>
-                    <textarea className="cb-input" style={{ minHeight: "80px" }} readOnly value={initialInstruction} />
+                    <button className="cb-btn cb-btn--ghost" onClick={clear}><FaTrashAlt aria-hidden="true" /> Clear</button>
                 </div>
             </div>
 
             <div className="cb-card">
-                <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", alignItems: "center", marginBottom: "0.5rem" }}>
-                    <span className="cb-pill">Steps: {numSteps}</span>
-                    <span className="cb-pill">Words/step: {maxWords}</span>
-                    <span className="cb-pill">Mode: {modesForSelect.find(m => m.value === mode)?.label}</span>
+                <div className="cb-book-status">
+                    <span className="cb-pill">
+                        {bookOutline ? `${sectionCount} sections selected by AI` : "Section count chosen automatically"}
+                    </span>
                     <ProgressBar progress={progress} />
-                    <ClipLoader color="#2563eb" loading={loading} size={16} />
+                    <ClipLoader color="#7557d5" loading={loading} size={16} />
                 </div>
 
-                {!loadingPDF && initialInstructionResponse !== "" && (
-                    <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", marginBottom: "0.5rem" }}>
-                        <button className="cb-btn cb-btn--primary" onClick={generatePDF}>Export PDF</button>
+                {initialInstructionResponse && (
+                    <div className="cb-book-actions">
+                        <button className="cb-btn cb-btn--primary" onClick={printBook} disabled={loading}>
+                            <FaPrint aria-hidden="true" /> Print book
+                        </button>
                         <ActionButtons promptText={allInstructionResponsesText} />
                     </div>
                 )}
 
-                {(executionStarted || initialInstructionResponse !== "") && (
-                    <AutoScroller activeIndex={subsequentInstructionResponses.length}>
-                        <h3 className="cb-section-title">Initial Output</h3>
-                        <div className="cb-card cb-card--nested">
-                            <ReactMarkdown className="markdown-body">{initialInstructionResponse}</ReactMarkdown>
-                            <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", marginTop: "0.5rem" }}>
-                                <ActionButtons promptText={initialInstructionResponse} />
+                {(executionStarted || bookOutline) && (
+                    <div className="cb-output">
+                      <AutoScroller activeIndex={subsequentInstructionResponses.filter(Boolean).length}>
+                        {bookOutline && (
+                            <>
+                                <h2 className="cb-section-title">{bookOutline.title}</h2>
+                                {bookOutline.summary && <p className="cb-book-summary">{bookOutline.summary}</p>}
+                                <details className="cb-json-plan">
+                                    <summary>View parsed JSON learning plan</summary>
+                                    <pre>{initialInstructionResponse}</pre>
+                                </details>
+                            </>
+                        )}
+
+                        <div className="cb-section-toolbar">
+                            <h3 className="cb-section-title">Learning sections</h3>
+                            <div>
+                                <button className={`cb-btn ${followUpView === "scroll" ? "cb-btn--primary" : "cb-btn--ghost"}`} onClick={() => setFollowUpView("scroll")}>Scroll</button>
+                                <button className={`cb-btn ${followUpView === "slide" ? "cb-btn--primary" : "cb-btn--ghost"}`} onClick={() => setFollowUpView("slide")}>Focus</button>
                             </div>
                         </div>
 
-                        <h3 className="cb-section-title" style={{ marginTop: "1rem" }}>Follow-up Steps</h3>
-                        <div style={{ display: "flex", gap: "0.5rem", marginBottom: "0.5rem", flexWrap: "wrap", alignItems: "center" }}>
-                            <span className="cb-pill">View</span>
-                            <button
-                                className={`cb-btn ${followUpView === "scroll" ? "cb-btn--primary" : "cb-btn--ghost"}`}
-                                onClick={() => setFollowUpView("scroll")}
-                            >
-                                Scroll
-                            </button>
-                            <button
-                                className={`cb-btn ${followUpView === "slide" ? "cb-btn--primary" : "cb-btn--ghost"}`}
-                                onClick={() => setFollowUpView("slide")}
-                            >
-                                Slide
-                            </button>
-                        </div>
                         {followUpView === "scroll" ? (
-                            <div style={{ display: "grid", gap: "0.75rem" }}>
-                                {subsequentInstructionResponses.map((res, idx) => (
-                                    <div key={idx} className="cb-card cb-card--nested">
-                                        <div style={{ fontWeight: 600, marginBottom: "0.35rem" }}>Step {idx + 1}</div>
-                                        <ReactMarkdown className="markdown-body">{res}</ReactMarkdown>
-                                        <div style={{ display: "flex", gap: "0.35rem", flexWrap: "wrap", marginTop: "0.5rem" }}>
-                                            <ActionButtons promptText={res} />
+                            <div className="cb-section-list">
+                                {bookOutline?.sections.map((section, index) => (
+                                    <article key={section.id} className="cb-card cb-card--nested">
+                                        <div className="cb-section-heading">
+                                            <span>{String(index + 1).padStart(2, "0")}</span>
+                                            <div><h3>{section.title}</h3><p>{section.objective}</p></div>
                                         </div>
-                                    </div>
+                                        {subsequentInstructionResponses[index] ? (
+                                            <>
+                                                <ReactMarkdown className="cb-markdown">
+                                                    {subsequentInstructionResponses[index]}
+                                                </ReactMarkdown>
+                                                <div className="cb-section-actions"><ActionButtons promptText={subsequentInstructionResponses[index]} /></div>
+                                            </>
+                                        ) : (
+                                            <div className="cb-section-loading"><ClipLoader size={14} color="#7557d5" /> Writing section…</div>
+                                        )}
+                                    </article>
                                 ))}
                             </div>
                         ) : (
-                            <div className="cb-card cb-card--nested">
-                                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "0.5rem", gap: "0.5rem", flexWrap: "wrap" }}>
-                                    <button
-                                        className="cb-btn cb-btn--ghost"
-                                        onClick={() => setSlideIndex((i) => Math.max(0, i - 1))}
-                                        disabled={slideIndex === 0}
-                                    >
-                                        ← Prev
-                                    </button>
-                                    <span className="cb-pill">Step {slideIndex + 1} / {subsequentInstructionResponses.length}</span>
-                                    <button
-                                        className="cb-btn cb-btn--ghost"
-                                        onClick={() => setSlideIndex((i) => Math.min(subsequentInstructionResponses.length - 1, i + 1))}
-                                        disabled={slideIndex >= subsequentInstructionResponses.length - 1}
-                                    >
-                                        Next →
-                                    </button>
-                                </div>
-                                {subsequentInstructionResponses.length > 0 && (
-                                    <>
-                                        <div style={{ fontWeight: 700, marginBottom: "0.35rem" }}>Step {slideIndex + 1}</div>
-                                        <ReactMarkdown className="markdown-body">
-                                            {subsequentInstructionResponses[slideIndex]}
-                                        </ReactMarkdown>
-                                        <div style={{ display: "flex", gap: "0.35rem", flexWrap: "wrap", marginTop: "0.5rem" }}>
-                                            <ActionButtons promptText={subsequentInstructionResponses[slideIndex]} />
+                            bookOutline && sectionCount > 0 && (
+                                <article className="cb-card cb-card--nested">
+                                    <div className="cb-slide-nav">
+                                        <button className="cb-btn cb-btn--ghost" onClick={() => setSlideIndex((index) => Math.max(0, index - 1))} disabled={slideIndex === 0}>← Prev</button>
+                                        <span className="cb-pill">Section {slideIndex + 1} / {sectionCount}</span>
+                                        <button className="cb-btn cb-btn--ghost" onClick={() => setSlideIndex((index) => Math.min(sectionCount - 1, index + 1))} disabled={slideIndex >= sectionCount - 1}>Next →</button>
+                                    </div>
+                                    <div className="cb-section-heading">
+                                        <span>{String(slideIndex + 1).padStart(2, "0")}</span>
+                                        <div>
+                                            <h3>{bookOutline.sections[slideIndex].title}</h3>
+                                            <p>{bookOutline.sections[slideIndex].objective}</p>
                                         </div>
-                                        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "0.75rem", gap: "0.5rem", flexWrap: "wrap" }}>
-                                            <button
-                                                className="cb-btn cb-btn--ghost"
-                                                onClick={() => setSlideIndex((i) => Math.max(0, i - 1))}
-                                                disabled={slideIndex === 0}
-                                            >
-                                                ← Prev
-                                            </button>
-                                            <span className="cb-pill">Step {slideIndex + 1} / {subsequentInstructionResponses.length}</span>
-                                            <button
-                                                className="cb-btn cb-btn--ghost"
-                                                onClick={() => setSlideIndex((i) => Math.min(subsequentInstructionResponses.length - 1, i + 1))}
-                                                disabled={slideIndex >= subsequentInstructionResponses.length - 1}
-                                            >
-                                                Next →
-                                            </button>
-                                        </div>
-                                    </>
-                                )}
-                            </div>
+                                    </div>
+                                    {subsequentInstructionResponses[slideIndex] ? (
+                                        <>
+                                            <ReactMarkdown className="cb-markdown">
+                                                {subsequentInstructionResponses[slideIndex]}
+                                            </ReactMarkdown>
+                                            <div className="cb-section-actions"><ActionButtons promptText={subsequentInstructionResponses[slideIndex]} /></div>
+                                        </>
+                                    ) : (
+                                        <div className="cb-section-loading"><ClipLoader size={14} color="#7557d5" /> Writing section…</div>
+                                    )}
+                                </article>
+                            )
                         )}
-                    </AutoScroller>
+                      </AutoScroller>
+                    </div>
+                )}
+
+                {!executionStarted && !bookOutline && (
+                    <div className="cb-empty-state">
+                        <FaBookOpen aria-hidden="true" />
+                        <h3>Your learning path will appear here</h3>
+                        <p>Chat Book chooses the right number of sections based on the topic and expands each one automatically.</p>
+                    </div>
                 )}
             </div>
-
-            {subsequentInstructions.length > 0 && (
-                <div className="cb-card">
-                    <h3 className="cb-section-title">Planned Steps</h3>
-                    <div className="cb-grid">
-                        {subsequentInstructions.map((instruction, index) => (
-                            <textarea key={index} className="cb-input" readOnly value={instruction} style={{ minHeight: "90px" }} />
-                        ))}
-                    </div>
-                </div>
-            )}
         </div>
     );
 }
