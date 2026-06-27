@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import ReactMarkdown from "react-markdown";
-import { FaBackward, FaForward, FaPause, FaPlay, FaPlus, FaMinus, FaStepBackward, FaStepForward, FaUndoAlt } from "react-icons/fa";
+import { FaBackward, FaForward, FaPause, FaPlay, FaPlus, FaMinus, FaStepBackward, FaStepForward, FaUndoAlt, FaRedoAlt } from "react-icons/fa";
 import { useAppState } from "./context/AppContext";
 import { useFlyout } from "./context/FlyoutContext";
 import ActionButtons from "./ui/ActionButtons";
@@ -20,6 +20,7 @@ console.log("Markdown stays raw when opened from ActionButtons");
 
 const getWordCount = (text) => text.trim().split(/\s+/).filter(Boolean).length;
 const SCROLL_SPEED_STORAGE_KEY = "markdown-viewer-scroll-speed";
+const LOOP_STORAGE_KEY = "markdown-viewer-scroll-loop";
 
 const readStoredScrollSpeed = () => {
   if (typeof window === "undefined") return 30;
@@ -34,6 +35,16 @@ const readStoredScrollSpeed = () => {
   }
 };
 
+const readStoredLoopEnabled = () => {
+  if (typeof window === "undefined") return false;
+
+  try {
+    return window.localStorage.getItem(LOOP_STORAGE_KEY) === "true";
+  } catch {
+    return false;
+  }
+};
+
 export default function MarkdownViewer() {
   const { markdownViewerText } = useAppState();
   const { showMessage } = useFlyout();
@@ -41,6 +52,7 @@ export default function MarkdownViewer() {
   const [filename, setFilename] = useState("markdown-viewer.md");
   const [view, setView] = useState("split");
   const [isAutoScrolling, setIsAutoScrolling] = useState(false);
+  const [isLooping, setIsLooping] = useState(() => readStoredLoopEnabled());
   const [scrollSpeed, setScrollSpeed] = useState(() => readStoredScrollSpeed());
   const [scrollDirection, setScrollDirection] = useState(1);
   const printContentRef = useRef(null);
@@ -48,8 +60,15 @@ export default function MarkdownViewer() {
   const scrollSpeedRef = useRef(scrollSpeed);
   const scrollDirectionRef = useRef(scrollDirection);
   const holdMultiplierRef = useRef(1);
+  const loopTimeoutRef = useRef(null);
   const showEditor = view === "split" || view === "edit";
   const showPreview = view === "split" || view === "preview";
+
+  const clearLoopTimeout = () => {
+    if (!loopTimeoutRef.current) return;
+    clearTimeout(loopTimeoutRef.current);
+    loopTimeoutRef.current = null;
+  };
 
   useEffect(() => {
     if (markdownViewerText !== undefined) {
@@ -69,6 +88,18 @@ export default function MarkdownViewer() {
   useEffect(() => {
     scrollDirectionRef.current = scrollDirection;
   }, [scrollDirection]);
+
+  useEffect(() => {
+    try {
+      window.localStorage.setItem(LOOP_STORAGE_KEY, String(isLooping));
+    } catch {
+      // Ignore storage failures and keep the in-memory value.
+    }
+  }, [isLooping]);
+
+  useEffect(() => () => {
+    clearLoopTimeout();
+  }, []);
 
   useEffect(() => {
     if (!isAutoScrolling || !showPreview) return undefined;
@@ -100,6 +131,17 @@ export default function MarkdownViewer() {
 
         if (reachedEnd) {
           holdMultiplierRef.current = 1;
+          if (isLooping && preview) {
+            setIsAutoScrolling(false);
+            loopTimeoutRef.current = setTimeout(() => {
+              const nextPreview = previewRef.current;
+              if (!nextPreview) return;
+              nextPreview.scrollTop = 0;
+              setIsAutoScrolling(true);
+            }, 3000);
+            return;
+          }
+
           setIsAutoScrolling(false);
           return;
         }
@@ -110,7 +152,12 @@ export default function MarkdownViewer() {
 
     animationFrame = requestAnimationFrame(scroll);
     return () => cancelAnimationFrame(animationFrame);
-  }, [isAutoScrolling, showPreview]);
+  }, [isAutoScrolling, isLooping, showPreview]);
+
+  useEffect(() => {
+    if (isLooping) return undefined;
+    clearLoopTimeout();
+  }, [isLooping]);
 
   const stats = useMemo(
     () => ({
@@ -225,6 +272,7 @@ export default function MarkdownViewer() {
   };
 
   const activateDirection = (direction) => {
+    clearLoopTimeout();
     scrollDirectionRef.current = direction;
     setScrollDirection(direction);
     setIsAutoScrolling(true);
@@ -247,6 +295,7 @@ export default function MarkdownViewer() {
     const preview = previewRef.current;
     if (!preview) return;
 
+    clearLoopTimeout();
     setIsAutoScrolling(false);
     holdMultiplierRef.current = 1;
 
@@ -278,6 +327,7 @@ export default function MarkdownViewer() {
   };
 
   const resetScroll = () => {
+    clearLoopTimeout();
     if (previewRef.current) previewRef.current.scrollTop = 0;
     holdMultiplierRef.current = 1;
     setIsAutoScrolling(false);
@@ -659,6 +709,15 @@ export default function MarkdownViewer() {
                   aria-label={isAutoScrolling ? "Pause automatic scrolling" : "Start automatic scrolling"}
                 >
                   {isAutoScrolling ? <FaPause /> : <FaPlay />}
+                </button>
+                <button
+                  className={`mv-scroll-btn mv-icon-btn ${isLooping ? "active" : ""}`}
+                  type="button"
+                  onClick={() => setIsLooping((running) => !running)}
+                  title="Toggle looping"
+                  aria-label={isLooping ? "Disable looping" : "Enable looping"}
+                >
+                  <FaRedoAlt />
                 </button>
                 <button
                   className={`mv-scroll-btn mv-icon-btn ${scrollDirection > 0 ? "active" : ""}`}
