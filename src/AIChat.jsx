@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import { ClipLoader } from "react-spinners";
+import Prism from "./utils/prism";
 import { getGeminiResponse } from "./utils/callGemini";
 import { SUGGESTION_GROUPS } from "./utils/suggestions";
 import ActionButtons from "./ui/ActionButtons";
@@ -24,6 +25,34 @@ const RESPONSE_FORMATS = [
   { value: "code_blocks_only_no_comments", label: "Code blocks only (no comments)", instruction: "Respond using only code blocks where applicable. No explanations, comments within the code what so ever, or other text." },
   { value: "code_blocks_only_files_and_console_commands", label: "Code blocks only (files + console commands)", instruction: "Respond using only code blocks. Only comments should be when giving codeblocks a file name. (//Program.cs). Show command line commands if applicable. No explanations or other text." },
 ];
+
+const LANGUAGE_ALIASES = {
+  cs: "csharp",
+  html: "markup",
+  sh: "bash",
+  shell: "bash",
+  yml: "yaml",
+};
+
+function HighlightedCode({ children, className = "" }) {
+  const languageMatch = /language-([\w-]+)/.exec(className);
+  if (!languageMatch) return <code className={className}>{children}</code>;
+
+  const requestedLanguage = languageMatch[1].toLowerCase();
+  const language = LANGUAGE_ALIASES[requestedLanguage] ?? requestedLanguage;
+  const grammar = Prism.languages[language];
+  if (!grammar) return <code className={className}>{children}</code>;
+
+  const code = String(children).replace(/\n$/, "");
+  const highlightedCode = Prism.highlight(code, grammar, language);
+
+  return (
+    <code
+      className={`language-${language}`}
+      dangerouslySetInnerHTML={{ __html: highlightedCode }}
+    />
+  );
+}
 
 export default function AIChat({
   promptText,
@@ -116,7 +145,12 @@ export default function AIChat({
               <div key={index} style={{ textAlign: message.sender === "user" ? "right" : "left", marginBottom: "0.75rem" }}>
                 <div className={`bubble ${message.sender === "user" ? "user" : "bot"}`}>
                   <strong>{message.sender === "user" ? "You: " : "Bot: "}</strong>
-                  <ReactMarkdown className="markdown-body">{message.text}</ReactMarkdown>
+                  <ReactMarkdown
+                    className="markdown-body"
+                    components={{ code: HighlightedCode }}
+                  >
+                    {message.text}
+                  </ReactMarkdown>
                   <div style={{ textAlign: "right", marginTop: "0.35rem" }}>
                     <ActionButtons promptText={message.text} />
                   </div>

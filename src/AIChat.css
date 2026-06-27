@@ -123,6 +123,104 @@
   resize: vertical;
 }
 
+.ai-chat .markdown-body :not(pre) > code {
+  padding: 0.12rem 0.35rem;
+  border-radius: 5px;
+  background: #e2e8f0;
+  color: #9f1239;
+  font-size: 0.9em;
+}
+
+.ai-chat .markdown-body pre {
+  margin: 0.75rem 0;
+  padding: 1rem;
+  border: 1px solid #334155;
+  border-radius: 10px;
+  background: #0f172a;
+  color: #e2e8f0;
+  overflow-x: auto;
+  text-align: left;
+}
+
+.ai-chat .markdown-body pre code {
+  display: block;
+  min-width: max-content;
+  padding: 0;
+  background: transparent;
+  color: inherit;
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  white-space: pre;
+  word-break: normal;
+  overflow-wrap: normal;
+  tab-size: 2;
+}
+
+.ai-chat .token.comment,
+.ai-chat .token.prolog,
+.ai-chat .token.doctype,
+.ai-chat .token.cdata {
+  color: #94a3b8;
+}
+
+.ai-chat .token.punctuation {
+  color: #cbd5e1;
+}
+
+.ai-chat .token.property,
+.ai-chat .token.tag,
+.ai-chat .token.boolean,
+.ai-chat .token.number,
+.ai-chat .token.constant,
+.ai-chat .token.symbol,
+.ai-chat .token.deleted {
+  color: #f472b6;
+}
+
+.ai-chat .token.selector,
+.ai-chat .token.attr-name,
+.ai-chat .token.string,
+.ai-chat .token.char,
+.ai-chat .token.builtin,
+.ai-chat .token.inserted {
+  color: #a7f3d0;
+}
+
+.ai-chat .token.operator,
+.ai-chat .token.entity,
+.ai-chat .token.url,
+.ai-chat .language-css .token.string,
+.ai-chat .style .token.string {
+  color: #67e8f9;
+}
+
+.ai-chat .token.atrule,
+.ai-chat .token.attr-value,
+.ai-chat .token.keyword {
+  color: #c4b5fd;
+}
+
+.ai-chat .token.function,
+.ai-chat .token.class-name {
+  color: #fde68a;
+}
+
+.ai-chat .token.regex,
+.ai-chat .token.important,
+.ai-chat .token.variable {
+  color: #fdba74;
+}
+
+.ai-chat .token.bold,
+.ai-chat .token.important {
+  font-weight: 700;
+}
+
+.ai-chat .token.italic {
+  font-style: italic;
+}
+
 @media (max-width: 540px) {
   .ai-chat .chat-window {
     max-height: 50vh;
