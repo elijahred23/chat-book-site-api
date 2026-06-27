@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useFlyout } from '../context/FlyoutContext';
 
 const PasteButton = ({
@@ -33,15 +33,10 @@ const PasteButton = ({
   return (
     <button
       onClick={handlePaste}
-      className={className}
+      className={`${className || 'ui-btn'} clipboard-btn`.trim()}
       aria-label="Paste from clipboard"
-      style={{
-        minWidth: '100px', // fixed width based on max content (adjust as needed)
-        textAlign: 'center',
-        whiteSpace: 'nowrap'
-      }}
     >
-      <span style={{ display: 'inline-block', width: '100%' }}>
+      <span>
         {pasted ? 'Done!' : children}
       </span>
     </button>

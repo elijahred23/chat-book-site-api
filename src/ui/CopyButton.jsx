@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { actions, useAppDispatch } from '../context/AppContext';
 import { useFlyout } from '../context/FlyoutContext';
 
@@ -41,14 +41,10 @@ const CopyButton = ({ text, buttonText = 'Copy', onCopy, className = '' }) => {
   return (
     <button
       onClick={handleCopy}
-      className={className}
-      style={{
-        minWidth: '100px', // ensure consistent width
-        textAlign: 'center',
-        whiteSpace: 'nowrap'
-      }}
+      className={`${className || 'ui-btn'} clipboard-btn`.trim()}
+      aria-label={copied ? 'Copied to clipboard' : buttonText}
     >
-      <span style={{ display: 'inline-block', width: '100%' }}>
+      <span>
         {copied ? 'Done' : buttonText}
       </span>
     </button>

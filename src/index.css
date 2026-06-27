@@ -1,3 +1,4 @@
+@layer legacy {
 :root {
   font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   font-weight: 400;
@@ -731,4 +732,5 @@ textarea {
     font-size: 18px;
     border-radius: 8px;
   }
+}
 }

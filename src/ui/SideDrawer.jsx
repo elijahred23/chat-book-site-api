@@ -1,55 +1,40 @@
-import React from "react";
+import { useEffect, useId, useRef } from "react";
 import {
-  FaComments,
-  FaVolumeUp,
-  FaScroll,
-  FaProjectDiagram,
-  FaPodcast,
-  FaMagic,
-  FaYoutube,
+  FaBookReader,
   FaCode,
-  FaKeyboard,
-  FaSitemap,
-  FaTimes,
+  FaComments,
+  FaExpandAlt,
   FaGlobe,
+  FaKeyboard,
+  FaMagic,
+  FaPodcast,
+  FaProjectDiagram,
+  FaScroll,
+  FaTimes,
+  FaVolumeUp,
+  FaYoutube,
 } from "react-icons/fa";
-import { SiMarkdown } from "react-icons/si";
 import { GiNotebook } from "react-icons/gi";
+import { SiMarkdown } from "react-icons/si";
+import Button from "./Button";
 
-const ICONS = {
-  chat: FaComments,
-  teleprompter: FaScroll,
-  tts: FaVolumeUp,
-  plantuml: FaProjectDiagram,
-  podcast: FaPodcast,
-  jsgen: FaMagic,
-  chatbook: GiNotebook,
-  youtube: FaYoutube,
-  html: FaCode,
-  typing: FaKeyboard,
-  architecture: FaSitemap,
-  iframe: FaGlobe,
-  asmr: FaKeyboard,
-  markdown: SiMarkdown,
-  custom: FaKeyboard,
-};
-
-const LABELS = {
-  chat: "Chat",
-  teleprompter: "Teleprompter",
-  tts: "TTS",
-  plantuml: "PlantUML",
-  podcast: "Podcast",
-  jsgen: "JS Gen",
-  chatbook: "Chat Book",
-  youtube: "YouTube",
-  html: "HTML",
-  typing: "Typing",
-  architecture: "Diagram",
-  iframe: "Iframe",
-  asmr: "ASMR",
-  markdown: "Markdown",
-  custom: "Shortcuts",
+const drawerMeta = {
+  chat: { icon: FaComments, label: "AI Chat" },
+  chat2: { icon: FaComments, label: "Dual Chat" },
+  teleprompter: { icon: FaScroll, label: "Teleprompter" },
+  tts: { icon: FaVolumeUp, label: "Text to Speech" },
+  plantuml: { icon: FaProjectDiagram, label: "PlantUML" },
+  podcast: { icon: FaPodcast, label: "Podcast TTS" },
+  jsgen: { icon: FaMagic, label: "JS Generator" },
+  chatbook: { icon: GiNotebook, label: "Chat Book" },
+  youtube: { icon: FaYoutube, label: "YouTube" },
+  html: { icon: FaCode, label: "HTML Builder" },
+  typing: { icon: FaKeyboard, label: "Typing Test" },
+  architecture: { icon: FaProjectDiagram, label: "Diagram" },
+  iframe: { icon: FaGlobe, label: "Iframe" },
+  large: { icon: FaBookReader, label: "Text Chunker" },
+  asmr: { icon: FaKeyboard, label: "ASMR" },
+  markdown: { icon: SiMarkdown, label: "Markdown" },
 };
 
 export default function SideDrawer({
@@ -57,82 +42,111 @@ export default function SideDrawer({
   isFullWidth,
   onClose,
   onToggleWidth,
-  closeLabel = "✖",
+  title,
   children,
   className = "",
   stack = [],
   currentKey,
 }) {
-  const drawerClass = `chat-drawer ${isOpen ? "open" : ""} ${isFullWidth ? "full" : "half"} ${className}`.trim();
-  const IconFor = (key) => ICONS[key];
-  const hasToggle = Boolean(onToggleWidth);
+  const titleId = useId();
+  const drawerRef = useRef(null);
+  const closeRef = useRef(null);
+  const previousFocusRef = useRef(null);
+  const onCloseRef = useRef(onClose);
+  onCloseRef.current = onClose;
+  const meta = drawerMeta[currentKey] || { label: title || "Tool" };
+  const displayTitle = title || meta.label;
+
+  useEffect(() => {
+    if (!isOpen) return undefined;
+    previousFocusRef.current = document.activeElement;
+    document.body.classList.add("ui-scroll-locked");
+    const focusTimer = window.setTimeout(() => closeRef.current?.focus(), 0);
+
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        event.preventDefault();
+        onCloseRef.current();
+        return;
+      }
+      if (event.key !== "Tab" || !drawerRef.current) return;
+      const focusable = [...drawerRef.current.querySelectorAll(
+        'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+      )];
+      if (!focusable.length) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.clearTimeout(focusTimer);
+      document.removeEventListener("keydown", handleKeyDown);
+      document.body.classList.remove("ui-scroll-locked");
+      previousFocusRef.current?.focus?.();
+    };
+  }, [isOpen]);
+
+  const drawerClass = [
+    "chat-drawer",
+    "ui-drawer",
+    isOpen ? "open" : "",
+    isFullWidth ? "full ui-drawer--full" : "half ui-drawer--standard",
+    className,
+  ].filter(Boolean).join(" ");
 
   return (
-    <div className={drawerClass}>
-      <div className="chat-drawer-header" style={{ flexDirection: "column", alignItems: "stretch", gap: 6 }}>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
-          {onToggleWidth && (
-            <button className="width-toggle-btn" onClick={onToggleWidth}>
-              {isFullWidth ? "↔ Half Width" : "↔ Full Width"}
-            </button>
-          )}
-          <button
-            className="close-chat-btn"
-            onClick={onClose}
-            aria-label={closeLabel || "Close"}
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: 6,
-              minWidth: 44,
-              marginLeft: hasToggle ? undefined : "auto",
-            }}
-          >
-            <FaTimes />
-          </button>
-        </div>
-        {stack.length > 0 && (
-          <div
-            style={{
-              display: "flex",
-              gap: 8,
-              flexWrap: "wrap",
-              alignItems: "center",
-              background: "#f1f5f9",
-              border: "1px solid #e2e8f0",
-              borderRadius: 10,
-              padding: "6px 8px",
-            }}
-          >
-            {stack.map((key, idx) => {
-              const Icon = IconFor(key);
-              const isActive = key === currentKey;
-              return (
-                <span
-                  key={`${key}-${idx}`}
-                  style={{
-                    display: "inline-flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    width: 32,
-                    height: 32,
-                    borderRadius: "999px",
-                    background: isActive ? "linear-gradient(135deg, #2563eb, #60a5fa)" : "#e2e8f0",
-                    color: isActive ? "#fff" : "#0f172a",
-                    fontSize: 12,
-                    fontWeight: 700,
-                  }}
-                  title={LABELS[key] || key}
-                >
-                  {Icon ? <Icon size={14} /> : null}
-                </span>
-              );
-            })}
+    <>
+      {isOpen && <button className="ui-drawer__backdrop" type="button" onClick={onClose} aria-label={`Close ${displayTitle}`} />}
+      <aside
+        ref={drawerRef}
+        className={drawerClass}
+        role="dialog"
+        aria-modal="true"
+        aria-hidden={!isOpen}
+        aria-labelledby={titleId}
+      >
+        <header className="ui-drawer__header">
+          <div className="ui-drawer__heading">
+            {meta.icon && <span className="ui-drawer__title-icon"><meta.icon aria-hidden="true" /></span>}
+            <div>
+              <span className="ui-drawer__eyebrow">Quick tool</span>
+              <h2 id={titleId}>{displayTitle}</h2>
+            </div>
           </div>
-        )}
-      </div>
-      {children}
-    </div>
+          <div className="ui-drawer__actions">
+            {onToggleWidth && (
+              <Button className="ui-drawer__size-button" variant="ghost" onClick={onToggleWidth} aria-label={isFullWidth ? "Use standard drawer width" : "Use full screen width"}>
+                <FaExpandAlt aria-hidden="true" />
+                <span>{isFullWidth ? "Standard" : "Full screen"}</span>
+              </Button>
+            )}
+            <Button ref={closeRef} iconOnly variant="ghost" onClick={onClose} aria-label={`Close ${displayTitle}`}><FaTimes /></Button>
+          </div>
+          {stack.length > 1 && (
+            <div className="ui-drawer__history" aria-label="Open tool history">
+              {stack.map((key, index) => {
+                const item = drawerMeta[key];
+                if (!item) return null;
+                const Icon = item.icon;
+                return (
+                  <span className={key === currentKey ? "is-active" : ""} key={`${key}-${index}`} title={item.label}>
+                    <Icon aria-hidden="true" /><span className="ui-sr-only">{item.label}</span>
+                  </span>
+                );
+              })}
+            </div>
+          )}
+        </header>
+        <div className="ui-drawer__content">{children}</div>
+      </aside>
+    </>
   );
 }

@@ -32,8 +32,8 @@
   color: white;
   font-size: 14px;
   padding: 8px;
-  width: 38px;
-  height: 38px;
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -73,7 +73,8 @@
   z-index: 5;
 }
 
-.icon-btn[data-tooltip]:hover::after {
+.icon-btn[data-tooltip]:hover::after,
+.icon-btn[data-tooltip]:focus-visible::after {
   opacity: 1;
   transform: translate(-50%, -2px);
 }
@@ -81,8 +82,8 @@
 @media (max-width: 600px) {
   .icon-btn {
     font-size: 13px;
-    width: 36px;
-    height: 36px;
-    padding: 7px;
+    width: 44px;
+    height: 44px;
+    padding: 8px;
   }
 }

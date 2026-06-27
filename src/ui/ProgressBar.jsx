@@ -1,13 +1,20 @@
-import React, { useState, useEffect } from 'react';
-import './ProgressBar.css'; // CSS file for styling
+import './ProgressBar.css';
 
-const ProgressBar = ({ progress = 0 }) => { // Set default progress to 0
+const ProgressBar = ({ progress = 0, label = 'Progress' }) => {
+  const value = Math.max(0, Math.min(Number(progress) || 0, 100));
 
   return (
-    <div className="progress-container">
+    <div
+      className="progress-container"
+      role="progressbar"
+      aria-label={label}
+      aria-valuemin="0"
+      aria-valuemax="100"
+      aria-valuenow={Math.round(value)}
+    >
       <div
         className="progress-bar"
-        style={{ width: `${Math.min(progress, 100)}%` }} // Clamp progress between 0 and 100
+        style={{ width: `${value}%` }}
       />
     </div>
   );

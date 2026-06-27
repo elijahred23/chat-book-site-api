@@ -9,6 +9,7 @@ import { useFlyout } from "./context/FlyoutContext"; // adjust path as needed
 import AutoScroller from "./ui/AutoScroller";
 import { actions, useAppDispatch, useAppState } from "./context/AppContext";
 import ActionButtons from "./ui/ActionButtons";
+import "./ChatBookApp.css";
 
 
 const baseURL = hostname;
@@ -332,111 +333,26 @@ export default function ChatBookApp() {
         )
     }
 
-    const styles = `
-      .cb-shell {
-        max-width: 980px;
-        margin: 0 auto;
-        padding: 1rem;
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
-      }
-      .card {
-        background: #ffffff;
-        border: 1px solid #e2e8f0;
-        border-radius: 16px;
-        padding: 1rem;
-        box-shadow: 0 10px 28px rgba(15,23,42,0.08);
-      }
-      .grid-2 {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 0.75rem;
-      }
-      .label {
-        display: block;
-        font-weight: 600;
-        color: #0f172a;
-        margin-bottom: 0.35rem;
-      }
-      .input,
-      .select {
-        width: 100%;
-        padding: 0.75rem;
-        border: 1px solid #e2e8f0;
-        border-radius: 10px;
-        font-size: 0.95rem;
-        background: #fff;
-      }
-      .input:focus,
-      .select:focus,
-      textarea:focus {
-        outline: 2px solid #bfdbfe;
-        border-color: #2563eb;
-      }
-      .btn {
-        padding: 0.65rem 0.95rem;
-        border-radius: 10px;
-        border: 1px solid #e2e8f0;
-        background: #fff;
-        cursor: pointer;
-        transition: all 0.2s ease;
-        font-weight: 600;
-        color: #0f172a;
-      }
-      .btn-primary {
-        background: linear-gradient(135deg, #2563eb, #60a5fa);
-        color: #fff;
-        border: none;
-        box-shadow: 0 10px 25px rgba(37,99,235,0.2);
-      }
-      .btn-ghost {
-        background: #f8fafc;
-      }
-      .pill {
-        display: inline-flex;
-        padding: 0.35rem 0.7rem;
-        border-radius: 999px;
-        background: #e2e8f0;
-        color: #0f172a;
-        font-size: 0.85rem;
-        margin-right: 0.35rem;
-        margin-bottom: 0.35rem;
-      }
-      .section-title {
-        margin: 0 0 0.5rem 0;
-        font-size: 1.05rem;
-        color: #0f172a;
-      }
-      @media (max-width: 520px) {
-        .cb-shell {
-          padding: 0.75rem;
-        }
-      }
-    `;
-
     return (
         <div className="cb-shell">
-            <style>{styles}</style>
-            <div className="card" style={{ background: "radial-gradient(circle at 10% 20%, #ecfeff 0, #ffffff 25%)", borderColor: "#bfdbfe" }}>
+            <div className="cb-card cb-card--hero">
                 <h2 style={{ margin: 0, color: "#0f172a" }}>Chat Book</h2>
                 <p style={{ marginTop: "0.35rem", color: "#475569" }}>
                     Generate structured content with guided modes. Great for study guides, outlines, FAQs, and code blueprints.
                 </p>
-                <div className="grid-2">
+                <div className="cb-grid">
                     <div>
-                        <label className="label">Mode</label>
-                        <select className="select" value={mode} onChange={(e) => setMode(e.target.value)}>
+                        <label className="cb-label">Mode</label>
+                        <select className="cb-input" value={mode} onChange={(e) => setMode(e.target.value)}>
                             {modesForSelect.map((modConfig) => (
                                 <option key={modConfig.value} value={modConfig.value}>{modConfig.label}</option>
                             ))}
                         </select>
                     </div>
                     <div>
-                        <label className="label">Topic</label>
+                        <label className="cb-label">Topic</label>
                         <input
-                            className="input"
+                            className="cb-input"
                             disabled={loading}
                             value={subject}
                             placeholder="e.g. Intro to GraphQL"
@@ -449,18 +365,18 @@ export default function ChatBookApp() {
                     {promptSuggestions.map((s, i) => (
                         <button
                             key={i}
-                            className="btn btn-ghost"
+                            className="cb-btn cb-btn--ghost"
                             onClick={() => setSubject(s)}
                         >
                             {s}
                         </button>
                     ))}
                 </div>
-                <div className="grid-2" style={{ marginTop: "0.75rem" }}>
+                <div className="cb-grid cb-grid--spaced">
                     <div>
-                        <label className="label">Steps / Sections</label>
+                        <label className="cb-label">Steps / Sections</label>
                         <input
-                            className="input"
+                            className="cb-input"
                             type="number"
                             min="1"
                             max="12"
@@ -471,9 +387,9 @@ export default function ChatBookApp() {
                         />
                     </div>
                     <div>
-                        <label className="label">Target Words per Step</label>
+                        <label className="cb-label">Target Words per Step</label>
                         <input
-                            className="input"
+                            className="cb-input"
                             type="number"
                             step="100"
                             min="100"
@@ -484,9 +400,9 @@ export default function ChatBookApp() {
                         />
                     </div>
                     <div>
-                        <label className="label">Subsequent Response Format</label>
+                        <label className="cb-label">Subsequent Response Format</label>
                         <select
-                            className="select"
+                            className="cb-input"
                             value={responseFormat}
                             onChange={(e) => setResponseFormat(e.target.value)}
                             disabled={loading}
@@ -499,58 +415,58 @@ export default function ChatBookApp() {
                 </div>
                 <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", marginTop: "0.75rem" }}>
                     <button
-                        className="btn btn-primary"
+                        className="cb-btn cb-btn--primary"
                         disabled={subject === '' || !canExecuteKey || loading}
                         onClick={executeInstructions}
                     >
                         {loading ? <ClipLoader size={14} color="#fff" /> : "Generate"}
                     </button>
-                    <PasteButton setPasteText={setSubject} className="btn btn-ghost" />
-                    <button className="btn btn-ghost" onClick={clear}>Clear</button>
+                    <PasteButton setPasteText={setSubject} className="cb-btn cb-btn--ghost" />
+                    <button className="cb-btn cb-btn--ghost" onClick={clear}>Clear</button>
                 </div>
                 <div style={{ marginTop: "0.75rem" }}>
-                    <label className="label">Initial Instruction</label>
-                    <textarea className="input" style={{ minHeight: "80px" }} readOnly value={initialInstruction} />
+                    <label className="cb-label">Initial Instruction</label>
+                    <textarea className="cb-input" style={{ minHeight: "80px" }} readOnly value={initialInstruction} />
                 </div>
             </div>
 
-            <div className="card">
+            <div className="cb-card">
                 <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", alignItems: "center", marginBottom: "0.5rem" }}>
-                    <span className="pill">Steps: {numSteps}</span>
-                    <span className="pill">Words/step: {maxWords}</span>
-                    <span className="pill">Mode: {modesForSelect.find(m => m.value === mode)?.label}</span>
+                    <span className="cb-pill">Steps: {numSteps}</span>
+                    <span className="cb-pill">Words/step: {maxWords}</span>
+                    <span className="cb-pill">Mode: {modesForSelect.find(m => m.value === mode)?.label}</span>
                     <ProgressBar progress={progress} />
                     <ClipLoader color="#2563eb" loading={loading} size={16} />
                 </div>
 
                 {!loadingPDF && initialInstructionResponse !== "" && (
                     <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", marginBottom: "0.5rem" }}>
-                        <button className="btn btn-primary" onClick={generatePDF}>Export PDF</button>
+                        <button className="cb-btn cb-btn--primary" onClick={generatePDF}>Export PDF</button>
                         <ActionButtons promptText={allInstructionResponsesText} />
                     </div>
                 )}
 
                 {(executionStarted || initialInstructionResponse !== "") && (
                     <AutoScroller activeIndex={subsequentInstructionResponses.length}>
-                        <h3 className="section-title">Initial Output</h3>
-                        <div className="card" style={{ borderColor: "#bfdbfe", background: "#f8fafc" }}>
+                        <h3 className="cb-section-title">Initial Output</h3>
+                        <div className="cb-card cb-card--nested">
                             <ReactMarkdown className="markdown-body">{initialInstructionResponse}</ReactMarkdown>
                             <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", marginTop: "0.5rem" }}>
                                 <ActionButtons promptText={initialInstructionResponse} />
                             </div>
                         </div>
 
-                        <h3 className="section-title" style={{ marginTop: "1rem" }}>Follow-up Steps</h3>
+                        <h3 className="cb-section-title" style={{ marginTop: "1rem" }}>Follow-up Steps</h3>
                         <div style={{ display: "flex", gap: "0.5rem", marginBottom: "0.5rem", flexWrap: "wrap", alignItems: "center" }}>
-                            <span className="pill">View</span>
+                            <span className="cb-pill">View</span>
                             <button
-                                className={`btn ${followUpView === "scroll" ? "btn-primary" : "btn-ghost"}`}
+                                className={`cb-btn ${followUpView === "scroll" ? "cb-btn--primary" : "cb-btn--ghost"}`}
                                 onClick={() => setFollowUpView("scroll")}
                             >
                                 Scroll
                             </button>
                             <button
-                                className={`btn ${followUpView === "slide" ? "btn-primary" : "btn-ghost"}`}
+                                className={`cb-btn ${followUpView === "slide" ? "cb-btn--primary" : "cb-btn--ghost"}`}
                                 onClick={() => setFollowUpView("slide")}
                             >
                                 Slide
@@ -559,7 +475,7 @@ export default function ChatBookApp() {
                         {followUpView === "scroll" ? (
                             <div style={{ display: "grid", gap: "0.75rem" }}>
                                 {subsequentInstructionResponses.map((res, idx) => (
-                                    <div key={idx} className="card" style={{ background: "#fff" }}>
+                                    <div key={idx} className="cb-card cb-card--nested">
                                         <div style={{ fontWeight: 600, marginBottom: "0.35rem" }}>Step {idx + 1}</div>
                                         <ReactMarkdown className="markdown-body">{res}</ReactMarkdown>
                                         <div style={{ display: "flex", gap: "0.35rem", flexWrap: "wrap", marginTop: "0.5rem" }}>
@@ -569,18 +485,18 @@ export default function ChatBookApp() {
                                 ))}
                             </div>
                         ) : (
-                            <div className="card" style={{ background: "#f8fafc", borderColor: "#bfdbfe" }}>
+                            <div className="cb-card cb-card--nested">
                                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "0.5rem", gap: "0.5rem", flexWrap: "wrap" }}>
                                     <button
-                                        className="btn btn-ghost"
+                                        className="cb-btn cb-btn--ghost"
                                         onClick={() => setSlideIndex((i) => Math.max(0, i - 1))}
                                         disabled={slideIndex === 0}
                                     >
                                         ← Prev
                                     </button>
-                                    <span className="pill">Step {slideIndex + 1} / {subsequentInstructionResponses.length}</span>
+                                    <span className="cb-pill">Step {slideIndex + 1} / {subsequentInstructionResponses.length}</span>
                                     <button
-                                        className="btn btn-ghost"
+                                        className="cb-btn cb-btn--ghost"
                                         onClick={() => setSlideIndex((i) => Math.min(subsequentInstructionResponses.length - 1, i + 1))}
                                         disabled={slideIndex >= subsequentInstructionResponses.length - 1}
                                     >
@@ -598,15 +514,15 @@ export default function ChatBookApp() {
                                         </div>
                                         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "0.75rem", gap: "0.5rem", flexWrap: "wrap" }}>
                                             <button
-                                                className="btn btn-ghost"
+                                                className="cb-btn cb-btn--ghost"
                                                 onClick={() => setSlideIndex((i) => Math.max(0, i - 1))}
                                                 disabled={slideIndex === 0}
                                             >
                                                 ← Prev
                                             </button>
-                                            <span className="pill">Step {slideIndex + 1} / {subsequentInstructionResponses.length}</span>
+                                            <span className="cb-pill">Step {slideIndex + 1} / {subsequentInstructionResponses.length}</span>
                                             <button
-                                                className="btn btn-ghost"
+                                                className="cb-btn cb-btn--ghost"
                                                 onClick={() => setSlideIndex((i) => Math.min(subsequentInstructionResponses.length - 1, i + 1))}
                                                 disabled={slideIndex >= subsequentInstructionResponses.length - 1}
                                             >
@@ -622,11 +538,11 @@ export default function ChatBookApp() {
             </div>
 
             {subsequentInstructions.length > 0 && (
-                <div className="card">
-                    <h3 className="section-title">Planned Steps</h3>
-                    <div className="grid-2">
+                <div className="cb-card">
+                    <h3 className="cb-section-title">Planned Steps</h3>
+                    <div className="cb-grid">
                         {subsequentInstructions.map((instruction, index) => (
-                            <textarea key={index} className="input" readOnly value={instruction} style={{ minHeight: "90px" }} />
+                            <textarea key={index} className="cb-input" readOnly value={instruction} style={{ minHeight: "90px" }} />
                         ))}
                     </div>
                 </div>
