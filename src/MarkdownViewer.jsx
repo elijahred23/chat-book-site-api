@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import ReactMarkdown from "react-markdown";
+import { FaBackward, FaForward, FaPause, FaPlay, FaPlus, FaMinus, FaStepBackward, FaStepForward, FaUndoAlt } from "react-icons/fa";
 import { useAppState } from "./context/AppContext";
 import { useFlyout } from "./context/FlyoutContext";
 import ActionButtons from "./ui/ActionButtons";
@@ -18,6 +19,20 @@ console.log("Markdown stays raw when opened from ActionButtons");
 `;
 
 const getWordCount = (text) => text.trim().split(/\s+/).filter(Boolean).length;
+const SCROLL_SPEED_STORAGE_KEY = "markdown-viewer-scroll-speed";
+
+const readStoredScrollSpeed = () => {
+  if (typeof window === "undefined") return 30;
+
+  try {
+    const rawValue = window.localStorage.getItem(SCROLL_SPEED_STORAGE_KEY);
+    const parsedValue = Number(rawValue);
+    if (!Number.isFinite(parsedValue)) return 30;
+    return Math.max(5, Math.min(200, parsedValue));
+  } catch {
+    return 30;
+  }
+};
 
 export default function MarkdownViewer() {
   const { markdownViewerText } = useAppState();
@@ -26,7 +41,7 @@ export default function MarkdownViewer() {
   const [filename, setFilename] = useState("markdown-viewer.md");
   const [view, setView] = useState("split");
   const [isAutoScrolling, setIsAutoScrolling] = useState(false);
-  const [scrollSpeed, setScrollSpeed] = useState(30);
+  const [scrollSpeed, setScrollSpeed] = useState(() => readStoredScrollSpeed());
   const [scrollDirection, setScrollDirection] = useState(1);
   const printContentRef = useRef(null);
   const previewRef = useRef(null);
@@ -44,6 +59,11 @@ export default function MarkdownViewer() {
 
   useEffect(() => {
     scrollSpeedRef.current = scrollSpeed;
+    try {
+      window.localStorage.setItem(SCROLL_SPEED_STORAGE_KEY, String(scrollSpeed));
+    } catch {
+      // Ignore storage failures and keep the in-memory value.
+    }
   }, [scrollSpeed]);
 
   useEffect(() => {
@@ -221,6 +241,40 @@ export default function MarkdownViewer() {
       event.currentTarget.releasePointerCapture(event.pointerId);
     }
     holdMultiplierRef.current = 1;
+  };
+
+  const jumpToSection = (direction) => {
+    const preview = previewRef.current;
+    if (!preview) return;
+
+    setIsAutoScrolling(false);
+    holdMultiplierRef.current = 1;
+
+    const headings = Array.from(preview.querySelectorAll("h1, h2, h3, h4, h5, h6"));
+    const currentScrollTop = preview.scrollTop;
+    const viewportHeight = preview.clientHeight;
+    const previewTop = preview.getBoundingClientRect().top;
+    const getHeadingTop = (heading) => heading.getBoundingClientRect().top - previewTop + preview.scrollTop;
+    const targetOffset = currentScrollTop + (direction > 0 ? viewportHeight * 0.1 : -1);
+
+    let targetHeading = null;
+
+    if (direction > 0) {
+      targetHeading = headings.find((heading) => getHeadingTop(heading) > targetOffset);
+    } else {
+      const reversed = [...headings].reverse();
+      targetHeading = reversed.find((heading) => getHeadingTop(heading) < currentScrollTop - viewportHeight * 0.1);
+    }
+
+    if (targetHeading) {
+      preview.scrollTo({ top: getHeadingTop(targetHeading), behavior: "smooth" });
+      return;
+    }
+
+    preview.scrollTo({
+      top: Math.max(0, currentScrollTop + direction * Math.max(180, viewportHeight * 0.8)),
+      behavior: "smooth",
+    });
   };
 
   const resetScroll = () => {
@@ -424,6 +478,15 @@ export default function MarkdownViewer() {
           touch-action: none;
           user-select: none;
         }
+        .mv-scroll-btn svg {
+          width: 14px;
+          height: 14px;
+          pointer-events: none;
+        }
+        .mv-icon-btn {
+          min-width: 34px;
+          padding: 7px;
+        }
         .mv-scroll-btn.active,
         .mv-scroll-btn.primary {
           border-color: #0f766e;
@@ -578,61 +641,85 @@ export default function MarkdownViewer() {
             <div className="mv-scroll-controls" aria-label="Automatic scroll controls">
               <div className="mv-scroll-buttons">
                 <button
-                  className={`mv-scroll-btn ${scrollDirection < 0 ? "active" : ""}`}
+                  className={`mv-scroll-btn mv-icon-btn ${scrollDirection < 0 ? "active" : ""}`}
                   type="button"
                   onPointerDown={(event) => startDirectionHold(event, -1)}
                   onPointerUp={endDirectionHold}
                   onPointerCancel={endDirectionHold}
                   onClick={() => activateDirection(-1)}
-                  title="Scroll backward; hold for 4× speed"
+                  title="Scroll backward; hold for 4x speed"
                   aria-label="Scroll backward; hold for four times speed"
                 >
-                  ◀ Back
+                  <FaBackward />
                 </button>
                 <button
-                  className="mv-scroll-btn primary"
+                  className="mv-scroll-btn mv-icon-btn primary"
                   type="button"
                   onClick={() => setIsAutoScrolling((running) => !running)}
                   aria-label={isAutoScrolling ? "Pause automatic scrolling" : "Start automatic scrolling"}
                 >
-                  {isAutoScrolling ? "Pause" : "Play"}
+                  {isAutoScrolling ? <FaPause /> : <FaPlay />}
                 </button>
                 <button
-                  className={`mv-scroll-btn ${scrollDirection > 0 ? "active" : ""}`}
+                  className={`mv-scroll-btn mv-icon-btn ${scrollDirection > 0 ? "active" : ""}`}
                   type="button"
                   onPointerDown={(event) => startDirectionHold(event, 1)}
                   onPointerUp={endDirectionHold}
                   onPointerCancel={endDirectionHold}
                   onClick={() => activateDirection(1)}
-                  title="Scroll forward; hold for 4× speed"
+                  title="Scroll forward; hold for 4x speed"
                   aria-label="Scroll forward; hold for four times speed"
                 >
-                  Forward ▶
+                  <FaForward />
                 </button>
-                <button className="mv-scroll-btn" type="button" onClick={resetScroll} title="Return to top">
-                  Top
+                <button
+                  className="mv-scroll-btn mv-icon-btn"
+                  type="button"
+                  onClick={resetScroll}
+                  title="Return to top"
+                  aria-label="Return to top"
+                >
+                  <FaUndoAlt />
+                </button>
+                <button
+                  className="mv-scroll-btn mv-icon-btn"
+                  type="button"
+                  onClick={() => jumpToSection(-1)}
+                  title="Previous section"
+                  aria-label="Previous section"
+                >
+                  <FaStepBackward />
+                </button>
+                <button
+                  className="mv-scroll-btn mv-icon-btn"
+                  type="button"
+                  onClick={() => jumpToSection(1)}
+                  title="Next section"
+                  aria-label="Next section"
+                >
+                  <FaStepForward />
                 </button>
               </div>
               <div className="mv-scroll-buttons">
-                <span className="mv-speed-label">{scrollSpeed} px/s</span>
                 <button
-                  className="mv-scroll-btn"
+                  className="mv-scroll-btn mv-icon-btn"
                   type="button"
                   onClick={() => changeScrollSpeed(-5)}
                   aria-label="Decrease scroll speed"
                   title="Decrease scroll speed"
                 >
-                  −
+                  <FaMinus />
                 </button>
                 <button
-                  className="mv-scroll-btn"
+                  className="mv-scroll-btn mv-icon-btn"
                   type="button"
                   onClick={() => changeScrollSpeed(5)}
                   aria-label="Increase scroll speed"
                   title="Increase scroll speed"
                 >
-                  +
+                  <FaPlus />
                 </button>
+                <span className="mv-speed-label">{scrollSpeed} px/s</span>
               </div>
             </div>
             <div className="mv-preview markdown-body" ref={previewRef}>
