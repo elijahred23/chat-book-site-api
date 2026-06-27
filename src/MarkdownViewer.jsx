@@ -25,13 +25,72 @@ export default function MarkdownViewer() {
   const [markdown, setMarkdown] = useState(SAMPLE_MARKDOWN);
   const [filename, setFilename] = useState("markdown-viewer.md");
   const [view, setView] = useState("split");
+  const [isAutoScrolling, setIsAutoScrolling] = useState(false);
+  const [scrollSpeed, setScrollSpeed] = useState(30);
+  const [scrollDirection, setScrollDirection] = useState(1);
   const printContentRef = useRef(null);
+  const previewRef = useRef(null);
+  const scrollSpeedRef = useRef(scrollSpeed);
+  const scrollDirectionRef = useRef(scrollDirection);
+  const holdMultiplierRef = useRef(1);
+  const showEditor = view === "split" || view === "edit";
+  const showPreview = view === "split" || view === "preview";
 
   useEffect(() => {
-    if (markdownViewerText !== undefined && markdownViewerText !== markdown) {
+    if (markdownViewerText !== undefined) {
       setMarkdown(markdownViewerText);
     }
   }, [markdownViewerText]);
+
+  useEffect(() => {
+    scrollSpeedRef.current = scrollSpeed;
+  }, [scrollSpeed]);
+
+  useEffect(() => {
+    scrollDirectionRef.current = scrollDirection;
+  }, [scrollDirection]);
+
+  useEffect(() => {
+    if (!isAutoScrolling || !showPreview) return undefined;
+
+    let animationFrame;
+    let previousTime = null;
+
+    const scroll = (timestamp) => {
+      const preview = previewRef.current;
+
+      if (previousTime === null) previousTime = timestamp;
+      const elapsedSeconds = Math.min((timestamp - previousTime) / 1000, 0.1);
+      previousTime = timestamp;
+
+      if (preview) {
+        const maxScrollTop = Math.max(0, preview.scrollHeight - preview.clientHeight);
+        const distance =
+          scrollDirectionRef.current *
+          scrollSpeedRef.current *
+          holdMultiplierRef.current *
+          elapsedSeconds;
+        const nextScrollTop = Math.max(0, Math.min(maxScrollTop, preview.scrollTop + distance));
+
+        preview.scrollTop = nextScrollTop;
+
+        const reachedEnd =
+          (scrollDirectionRef.current > 0 && nextScrollTop >= maxScrollTop) ||
+          (scrollDirectionRef.current < 0 && nextScrollTop <= 0);
+
+        if (reachedEnd) {
+          holdMultiplierRef.current = 1;
+          setIsAutoScrolling(false);
+          return;
+        }
+      }
+
+      animationFrame = requestAnimationFrame(scroll);
+    };
+
+    animationFrame = requestAnimationFrame(scroll);
+    return () => cancelAnimationFrame(animationFrame);
+  }, [isAutoScrolling, showPreview]);
 
   const stats = useMemo(
     () => ({
@@ -141,8 +200,34 @@ export default function MarkdownViewer() {
     }, 100);
   };
 
-  const showEditor = view === "split" || view === "edit";
-  const showPreview = view === "split" || view === "preview";
+  const changeScrollSpeed = (change) => {
+    setScrollSpeed((current) => Math.max(5, Math.min(200, current + change)));
+  };
+
+  const activateDirection = (direction) => {
+    scrollDirectionRef.current = direction;
+    setScrollDirection(direction);
+    setIsAutoScrolling(true);
+  };
+
+  const startDirectionHold = (event, direction) => {
+    event.currentTarget.setPointerCapture?.(event.pointerId);
+    holdMultiplierRef.current = 4;
+    activateDirection(direction);
+  };
+
+  const endDirectionHold = (event) => {
+    if (event.currentTarget.hasPointerCapture?.(event.pointerId)) {
+      event.currentTarget.releasePointerCapture(event.pointerId);
+    }
+    holdMultiplierRef.current = 1;
+  };
+
+  const resetScroll = () => {
+    if (previewRef.current) previewRef.current.scrollTop = 0;
+    holdMultiplierRef.current = 1;
+    setIsAutoScrolling(false);
+  };
 
   return (
     <div className="markdown-viewer-page">
@@ -153,6 +238,7 @@ export default function MarkdownViewer() {
           max-width: 1200px;
           margin: 0 auto;
           padding: 12px;
+          min-height: 100vh;
           color: #0f172a;
         }
         .mv-toolbar {
@@ -275,6 +361,7 @@ export default function MarkdownViewer() {
           grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
           gap: 12px;
           min-height: 68vh;
+          align-items: stretch;
         }
         .mv-grid.single {
           grid-template-columns: minmax(0, 1fr);
@@ -282,7 +369,8 @@ export default function MarkdownViewer() {
         .mv-panel {
           display: flex;
           min-width: 0;
-          min-height: 420px;
+          min-height: 0;
+          max-height: min(72vh, 760px);
           flex-direction: column;
           border: 1px solid #e2e8f0;
           border-radius: 8px;
@@ -304,6 +392,54 @@ export default function MarkdownViewer() {
           text-transform: uppercase;
           letter-spacing: 0;
         }
+        .mv-scroll-controls {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 8px;
+          flex-wrap: wrap;
+          padding: 8px 10px;
+          border-bottom: 1px solid #e2e8f0;
+          background: #f8fafc;
+        }
+        .mv-scroll-buttons {
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          flex-wrap: wrap;
+        }
+        .mv-scroll-btn {
+          appearance: none;
+          min-width: 36px;
+          min-height: 34px;
+          padding: 7px 10px;
+          border: 1px solid #cbd5e1;
+          border-radius: 7px;
+          background: #ffffff;
+          color: #0f172a;
+          cursor: pointer;
+          font: inherit;
+          font-weight: 800;
+          line-height: 1;
+          touch-action: none;
+          user-select: none;
+        }
+        .mv-scroll-btn.active,
+        .mv-scroll-btn.primary {
+          border-color: #0f766e;
+          background: #0f766e;
+          color: #ffffff;
+        }
+        .mv-scroll-btn:focus-visible {
+          outline: 3px solid rgba(20, 184, 166, 0.3);
+          outline-offset: 1px;
+        }
+        .mv-speed-label {
+          color: #475569;
+          font-size: 0.8rem;
+          font-weight: 900;
+          white-space: nowrap;
+        }
         .mv-editor {
           flex: 1;
           width: 100%;
@@ -320,6 +456,7 @@ export default function MarkdownViewer() {
         }
         .mv-preview {
           flex: 1;
+          min-height: 0;
           overflow: auto;
           padding: 16px;
           background: #ffffff;
@@ -438,7 +575,67 @@ export default function MarkdownViewer() {
         {showPreview && (
           <div className="mv-panel">
             <div className="mv-panel-header">Preview</div>
-            <div className="mv-preview markdown-body">
+            <div className="mv-scroll-controls" aria-label="Automatic scroll controls">
+              <div className="mv-scroll-buttons">
+                <button
+                  className={`mv-scroll-btn ${scrollDirection < 0 ? "active" : ""}`}
+                  type="button"
+                  onPointerDown={(event) => startDirectionHold(event, -1)}
+                  onPointerUp={endDirectionHold}
+                  onPointerCancel={endDirectionHold}
+                  onClick={() => activateDirection(-1)}
+                  title="Scroll backward; hold for 4× speed"
+                  aria-label="Scroll backward; hold for four times speed"
+                >
+                  ◀ Back
+                </button>
+                <button
+                  className="mv-scroll-btn primary"
+                  type="button"
+                  onClick={() => setIsAutoScrolling((running) => !running)}
+                  aria-label={isAutoScrolling ? "Pause automatic scrolling" : "Start automatic scrolling"}
+                >
+                  {isAutoScrolling ? "Pause" : "Play"}
+                </button>
+                <button
+                  className={`mv-scroll-btn ${scrollDirection > 0 ? "active" : ""}`}
+                  type="button"
+                  onPointerDown={(event) => startDirectionHold(event, 1)}
+                  onPointerUp={endDirectionHold}
+                  onPointerCancel={endDirectionHold}
+                  onClick={() => activateDirection(1)}
+                  title="Scroll forward; hold for 4× speed"
+                  aria-label="Scroll forward; hold for four times speed"
+                >
+                  Forward ▶
+                </button>
+                <button className="mv-scroll-btn" type="button" onClick={resetScroll} title="Return to top">
+                  Top
+                </button>
+              </div>
+              <div className="mv-scroll-buttons">
+                <span className="mv-speed-label">{scrollSpeed} px/s</span>
+                <button
+                  className="mv-scroll-btn"
+                  type="button"
+                  onClick={() => changeScrollSpeed(-5)}
+                  aria-label="Decrease scroll speed"
+                  title="Decrease scroll speed"
+                >
+                  −
+                </button>
+                <button
+                  className="mv-scroll-btn"
+                  type="button"
+                  onClick={() => changeScrollSpeed(5)}
+                  aria-label="Increase scroll speed"
+                  title="Increase scroll speed"
+                >
+                  +
+                </button>
+              </div>
+            </div>
+            <div className="mv-preview markdown-body" ref={previewRef}>
               {markdown.trim() ? <ReactMarkdown>{markdown}</ReactMarkdown> : <div className="mv-empty">No markdown to preview.</div>}
             </div>
           </div>
