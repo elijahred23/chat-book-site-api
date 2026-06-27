@@ -1,295 +1,412 @@
-import React, { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import {
+  FaArrowLeft,
+  FaArrowRight,
+  FaCheck,
+  FaClock,
+  FaCopy,
+  FaDesktop,
+  FaExternalLinkAlt,
+  FaGlobe,
+  FaHistory,
+  FaMobileAlt,
+  FaRedoAlt,
+  FaSearch,
+  FaTabletAlt,
+  FaTimes,
+  FaTrashAlt,
+} from "react-icons/fa";
 import { useFlyout } from "./context/FlyoutContext";
 import { useAppDispatch, useAppState, actions } from "./context/AppContext";
-import { GiConsoleController } from "react-icons/gi";
+import "./IframeDrawer.css";
 
 const HISTORY_KEY = "iframe_history";
-const MAX_HISTORY = 10;
+const MAX_HISTORY = 12;
+
+const VIEWPORTS = {
+  responsive: { label: "Fit", icon: FaDesktop },
+  tablet: { label: "Tablet", icon: FaTabletAlt },
+  mobile: { label: "Mobile", icon: FaMobileAlt },
+};
+
+function normalizeUrl(value) {
+  const trimmed = (value || "").trim();
+  if (!trimmed) return "";
+  const explicitScheme = trimmed.match(/^([a-z][a-z\d+.-]*):\/\//i);
+  if (explicitScheme && !/^https?:\/\//i.test(trimmed)) return "";
+  const candidate = /^https?:\/\//i.test(trimmed) ? trimmed : `https://${trimmed}`;
+
+  try {
+    const parsed = new URL(candidate);
+    if (!['http:', 'https:'].includes(parsed.protocol)) return "";
+    return parsed.href;
+  } catch {
+    return "";
+  }
+}
+
+function getUrlMeta(value) {
+  try {
+    const parsed = new URL(value);
+    return {
+      hostname: parsed.hostname.replace(/^www\./, ""),
+      initial: parsed.hostname.replace(/^www\./, "").charAt(0).toUpperCase(),
+    };
+  } catch {
+    return { hostname: value, initial: "W" };
+  }
+}
 
 export default function IframeDrawer() {
   const [input, setInput] = useState("");
+  const [inputError, setInputError] = useState("");
   const [currentUrl, setCurrentUrl] = useState("");
   const [history, setHistory] = useState([]);
+  const [sessionHistory, setSessionHistory] = useState([]);
+  const [sessionIndex, setSessionIndex] = useState(-1);
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
   const [searching, setSearching] = useState(false);
   const [searchError, setSearchError] = useState("");
-  const [tab, setTab] = useState("viewer"); // viewer | duck | urls
+  const [tab, setTab] = useState("viewer");
+  const [viewport, setViewport] = useState("responsive");
+  const [frameKey, setFrameKey] = useState(0);
+  const [frameLoading, setFrameLoading] = useState(false);
+  const [copied, setCopied] = useState(false);
+  const copyTimerRef = useRef(null);
   const { showMessage } = useFlyout();
   const { iframeSearchText } = useAppState();
   const dispatch = useAppDispatch();
-  const copyForIncognito = async (url) => {
-    const text = url || "";
-    try {
-      if (navigator.clipboard?.writeText) {
-        await navigator.clipboard.writeText(text);
-        alert("URL copied. Open Chrome Incognito and paste it manually.");
-        return;
-      }
-    } catch {
-      // fall through to prompt
-    }
-    window.prompt("Copy this URL for Incognito:", text);
-  };
 
   useEffect(() => {
     try {
       const saved = JSON.parse(localStorage.getItem(HISTORY_KEY) || "[]");
-      if (Array.isArray(saved)) {
-        setHistory(saved.slice(0, MAX_HISTORY));
-        if (saved[0]) {
-          setCurrentUrl(saved[0]);
-          setInput(saved[0]);
-        }
-      }
+      if (Array.isArray(saved)) setHistory(saved.filter(normalizeUrl).slice(0, MAX_HISTORY));
     } catch {
       setHistory([]);
     }
+    return () => window.clearTimeout(copyTimerRef.current);
   }, []);
 
-  const saveHistory = (nextUrl) => {
-    const trimmed = (nextUrl || "").trim();
-    if (!trimmed) return;
-    const nextHistory = [trimmed, ...history.filter((u) => u !== trimmed)].slice(0, MAX_HISTORY);
-    setHistory(nextHistory);
-    localStorage.setItem(HISTORY_KEY, JSON.stringify(nextHistory));
+  const saveHistory = useCallback((nextUrl) => {
+    setHistory((previous) => {
+      const next = [nextUrl, ...previous.filter((url) => url !== nextUrl)].slice(0, MAX_HISTORY);
+      try {
+        localStorage.setItem(HISTORY_KEY, JSON.stringify(next));
+      } catch {
+        // The in-memory history still works when storage is unavailable.
+      }
+      return next;
+    });
+  }, []);
+
+  const navigate = useCallback((rawUrl, { addToSession = true } = {}) => {
+    const nextUrl = normalizeUrl(rawUrl);
+    if (!nextUrl) {
+      setInputError("Enter a valid http or https web address.");
+      return false;
+    }
+
+    setInputError("");
+    setInput(nextUrl);
+    setCurrentUrl(nextUrl);
+    setFrameLoading(true);
+    setFrameKey((key) => key + 1);
+    saveHistory(nextUrl);
+
+    if (addToSession) {
+      setSessionHistory((previous) => {
+        const next = [...previous.slice(0, sessionIndex + 1), nextUrl];
+        setSessionIndex(next.length - 1);
+        return next;
+      });
+    }
+    return true;
+  }, [saveHistory, sessionIndex]);
+
+  const submitAddress = (event) => {
+    event?.preventDefault();
+    if (navigate(input)) setTab("viewer");
   };
 
-  const removeFromHistory = (urlToRemove) => {
-    const nextHistory = history.filter((u) => u !== urlToRemove);
-    setHistory(nextHistory);
-    localStorage.setItem(HISTORY_KEY, JSON.stringify(nextHistory));
-  };
-
-  const handleLoad = () => {
-    const trimmed = (input || "").trim();
+  const handleSearch = useCallback(async (searchValue) => {
+    const trimmed = (searchValue ?? query).trim();
     if (!trimmed) return;
-    setCurrentUrl(trimmed);
-    saveHistory(trimmed);
-  };
-
-  const handleSearch = async () => {
-    const trimmed = (query || "").trim();
-    if (!trimmed) return;
+    setQuery(trimmed);
     setSearching(true);
     setSearchError("");
     setResults([]);
+
     try {
-      const resp = await fetch(`/api/websearch?q=${encodeURIComponent(trimmed)}`);
-      if (!resp.ok) throw new Error(`Search failed (${resp.status})`);
-      const data = await resp.json();
-      const list = Array.isArray(data?.results) ? data.results.slice(0, 20) : [];
+      const response = await fetch(`/api/websearch?q=${encodeURIComponent(trimmed)}`);
+      if (!response.ok) throw new Error(`Search failed (${response.status})`);
+      const data = await response.json();
+      const list = Array.isArray(data?.results)
+        ? data.results.filter((result) => normalizeUrl(result?.url)).slice(0, 20)
+        : [];
       setResults(list);
-      const chosen = data?.preferredUrl || list[0]?.url || null;
-      if (chosen) {
-        setCurrentUrl(chosen);
-        setInput(chosen);
-        saveHistory(chosen);
-        setTab("viewer");
-        showMessage?.({ type: "success", message: `Loaded ${chosen}`, duration: 2000 });
-      } else {
-        showMessage?.({ type: "error", message: "No reachable results found.", duration: 2000 });
-      }
-    } catch (err) {
-      setSearchError(err?.message || "Search failed.");
-      showMessage?.({ type: "error", message: err?.message || "Search failed.", duration: 2000 });
+      if (!list.length) setSearchError("No web results found. Try a different phrase.");
+    } catch (error) {
+      const message = error?.message || "Search failed. Please try again.";
+      setSearchError(message);
+      showMessage?.({ type: "error", message, duration: 2500 });
     } finally {
       setSearching(false);
     }
+  }, [query, showMessage]);
+
+  useEffect(() => {
+    if (!iframeSearchText) return;
+    setTab("search");
+    setQuery(iframeSearchText);
+    handleSearch(iframeSearchText);
+    dispatch(actions.setIframeSearchText(""));
+  }, [dispatch, handleSearch, iframeSearchText]);
+
+  const goBack = () => {
+    if (sessionIndex <= 0) return;
+    const nextIndex = sessionIndex - 1;
+    setSessionIndex(nextIndex);
+    navigate(sessionHistory[nextIndex], { addToSession: false });
   };
 
-  const hasUrl = useMemo(() => Boolean((currentUrl || "").trim()), [currentUrl]);
+  const goForward = () => {
+    if (sessionIndex >= sessionHistory.length - 1) return;
+    const nextIndex = sessionIndex + 1;
+    setSessionIndex(nextIndex);
+    navigate(sessionHistory[nextIndex], { addToSession: false });
+  };
 
-  // Triggered when other parts of the app set iframeSearchText (e.g., ActionButtons)
-  useEffect(() => {
-    console.log({ iframeSearchText });
-    if (!iframeSearchText) return;
-    setTab("duck");
-    setQuery(iframeSearchText);
-    setTimeout(() => {
-      handleSearch();
-    }, 0);
-    // clear it so subsequent clicks re-seed correctly
-    dispatch(actions.setIframeSearchText(""));
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [iframeSearchText]);
+  const copyUrl = async () => {
+    if (!currentUrl) return;
+    try {
+      await navigator.clipboard.writeText(currentUrl);
+      setCopied(true);
+      window.clearTimeout(copyTimerRef.current);
+      copyTimerRef.current = window.setTimeout(() => setCopied(false), 1800);
+    } catch {
+      window.prompt("Copy this URL:", currentUrl);
+    }
+  };
+
+  const removeFromHistory = (urlToRemove) => {
+    setHistory((previous) => {
+      const next = previous.filter((url) => url !== urlToRemove);
+      try {
+        localStorage.setItem(HISTORY_KEY, JSON.stringify(next));
+      } catch {
+        // The in-memory history still works when storage is unavailable.
+      }
+      return next;
+    });
+  };
+
+  const clearHistory = () => {
+    setHistory([]);
+    try {
+      localStorage.removeItem(HISTORY_KEY);
+    } catch {
+      // The in-memory history is already cleared.
+    }
+  };
+
+  const hasUrl = Boolean(currentUrl);
+  const currentMeta = useMemo(() => getUrlMeta(currentUrl), [currentUrl]);
 
   return (
-    <div style={{ display: "grid", gap: 12 }}>
-      <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-        <button className={`btn ${tab === "viewer" ? "primary-btn" : "secondary-btn"}`} onClick={() => setTab("viewer")}>
-          Viewer
-        </button>
-        <button className={`btn ${tab === "urls" ? "primary-btn" : "secondary-btn"}`} onClick={() => setTab("urls")}>
-          URLs
-        </button>
-        <button className={`btn ${tab === "duck" ? "primary-btn" : "secondary-btn"}`} onClick={() => setTab("duck")}>
-          DuckDuckGo
-        </button>
-      </div>
-
-      {tab === "duck" && (
-        <>
-          <div style={{ display: "grid", gap: 8 }}>
-            <label style={{ fontWeight: 800, color: "#0f172a" }}>Search (DuckDuckGo)</label>
-            <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-              <input
-                className="input"
-                style={{ flex: "1 1 260px" }}
-                placeholder="Search the web..."
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter") handleSearch();
-                }}
-              />
-              <button className="btn primary-btn" onClick={handleSearch} disabled={searching || !query.trim()}>
-                {searching ? "Searching..." : "Search"}
-              </button>
-            </div>
-            {searchError && <div style={{ color: "#dc2626", fontSize: 13 }}>{searchError}</div>}
-          </div>
-          {results.length > 0 && (
-            <div style={{ display: "grid", gap: 6 }}>
-              <div className="cp-muted" style={{ fontSize: 13 }}>Click a result to open it in the viewer tab.</div>
-              {results.map((r, idx) => (
-                <button
-                  key={`${r.url}-${idx}`}
-                  className="btn secondary-btn"
-                  style={{
-                    justifyContent: "flex-start",
-                    textAlign: "left",
-                    whiteSpace: "nowrap",
-                    overflow: "hidden",
-                    textOverflow: "ellipsis",
-                  }}
-                  onClick={() => {
-                    setCurrentUrl(r.url);
-                    setInput(r.url);
-                    saveHistory(r.url);
-                    setTab("viewer");
-                  }}
-                >
-                  {idx + 1}. {r.title}
-                </button>
-              ))}
-            </div>
-          )}
-        </>
-      )}
+    <section className="iframe-viewer">
+      <nav className="iframe-viewer__tabs" aria-label="Iframe viewer sections">
+        {[
+          { key: "viewer", label: "Viewer", icon: FaGlobe },
+          { key: "search", label: "Web search", icon: FaSearch },
+          { key: "history", label: "Recent", icon: FaHistory, count: history.length },
+        ].map(({ key, label, icon: Icon, count }) => (
+          <button
+            className={tab === key ? "is-active" : ""}
+            type="button"
+            key={key}
+            onClick={() => setTab(key)}
+            aria-current={tab === key ? "page" : undefined}
+          >
+            <Icon aria-hidden="true" />
+            <span>{label}</span>
+            {count > 0 && <span className="iframe-viewer__tab-count">{count}</span>}
+          </button>
+        ))}
+      </nav>
 
       {tab === "viewer" && (
-        <>
-          {hasUrl ? (
-            <div style={{ display: "grid", gap: 8 }}>
-              <div className="cp-muted" style={{ fontSize: 12 }}>
-                Note: many sites block embedding via Content-Security-Policy. If the iframe is blank, use “Open in new tab”.
-              </div>
-              <div style={{ border: "1px solid #e2e8f0", borderRadius: 12, overflow: "hidden", minHeight: 360 }}>
-                <iframe
-                  src={currentUrl}
-                  title="Iframe Viewer"
-                  style={{ width: "100%", height: "420px", border: "none" }}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
-                />
-              </div>
-              <div>
-                <a className="btn secondary-btn" href={currentUrl} target="_blank" rel="noreferrer">
-                  Open in new tab
-                </a>
-              </div>
+        <div className="iframe-viewer__viewer">
+          <form className="iframe-viewer__address" onSubmit={submitAddress}>
+            <div className={`iframe-viewer__address-field ${inputError ? "has-error" : ""}`}>
+              <FaGlobe aria-hidden="true" />
+              <label className="ui-sr-only" htmlFor="iframe-address">Web address</label>
+              <input
+                id="iframe-address"
+                type="text"
+                inputMode="url"
+                autoCapitalize="none"
+                autoCorrect="off"
+                spellCheck="false"
+                placeholder="Paste a web address"
+                value={input}
+                onChange={(event) => {
+                  setInput(event.target.value);
+                  if (inputError) setInputError("");
+                }}
+              />
+              {input && (
+                <button type="button" onClick={() => setInput("")} aria-label="Clear address">
+                  <FaTimes aria-hidden="true" />
+                </button>
+              )}
             </div>
+            <button className="iframe-viewer__go" type="submit" disabled={!input.trim()}>Go</button>
+          </form>
+          {inputError && <p className="iframe-viewer__error" role="alert">{inputError}</p>}
+
+          {hasUrl ? (
+            <>
+              <div className="iframe-viewer__toolbar">
+                <div className="iframe-viewer__nav-actions">
+                  <button type="button" onClick={goBack} disabled={sessionIndex <= 0} aria-label="Previous page" title="Previous page"><FaArrowLeft /></button>
+                  <button type="button" onClick={goForward} disabled={sessionIndex >= sessionHistory.length - 1} aria-label="Next page" title="Next page"><FaArrowRight /></button>
+                  <button type="button" onClick={() => { setFrameLoading(true); setFrameKey((key) => key + 1); }} aria-label="Reload page" title="Reload page"><FaRedoAlt /></button>
+                </div>
+
+                <div className="iframe-viewer__viewport-switcher" aria-label="Preview size">
+                  {Object.entries(VIEWPORTS).map(([key, item]) => {
+                    const Icon = item.icon;
+                    return (
+                      <button
+                        type="button"
+                        key={key}
+                        className={viewport === key ? "is-active" : ""}
+                        onClick={() => setViewport(key)}
+                        aria-label={`${item.label} preview`}
+                        title={`${item.label} preview`}
+                      >
+                        <Icon aria-hidden="true" /><span>{item.label}</span>
+                      </button>
+                    );
+                  })}
+                </div>
+
+                <div className="iframe-viewer__page-actions">
+                  <button type="button" onClick={copyUrl} aria-label="Copy address" title="Copy address">
+                    {copied ? <FaCheck className="is-success" /> : <FaCopy />}
+                  </button>
+                  <a href={currentUrl} target="_blank" rel="noreferrer" aria-label="Open in new tab" title="Open in new tab"><FaExternalLinkAlt /></a>
+                </div>
+              </div>
+
+              <div className={`iframe-viewer__stage iframe-viewer__stage--${viewport}`}>
+                <div className="iframe-viewer__frame-shell">
+                  {frameLoading && (
+                    <div className="iframe-viewer__loading" role="status">
+                      <span className="iframe-viewer__spinner" />
+                      <span>Loading {currentMeta.hostname}…</span>
+                    </div>
+                  )}
+                  <iframe
+                    key={frameKey}
+                    src={currentUrl}
+                    title={`Viewing ${currentMeta.hostname}`}
+                    onLoad={() => setFrameLoading(false)}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                  />
+                </div>
+              </div>
+
+              <div className="iframe-viewer__embed-note">
+                <span aria-hidden="true">i</span>
+                <p><strong>Nothing showing?</strong> Some websites block embedded viewing. <a href={currentUrl} target="_blank" rel="noreferrer">Open this page in a new tab</a> instead.</p>
+              </div>
+            </>
           ) : (
-            <div className="cp-muted">Enter a URL to load it here.</div>
+            <div className="iframe-viewer__empty">
+              <span className="iframe-viewer__empty-icon"><FaGlobe aria-hidden="true" /></span>
+              <h3>Browse without leaving your workspace</h3>
+              <p>Enter a website above, choose a recent page, or search the web.</p>
+              <button type="button" onClick={() => setTab("search")}><FaSearch /> Search the web</button>
+            </div>
           )}
-        </>
+        </div>
       )}
 
-      {tab === "urls" && (
-        <>
-          <div style={{ display: "grid", gap: 8 }}>
-            <label style={{ fontWeight: 800, color: "#0f172a" }}>Iframe URL</label>
-            <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-              <input
-                className="input"
-                style={{ flex: "1 1 260px" }}
-                placeholder="https://example.com"
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
-              />
-              <button className="btn primary-btn" onClick={() => { handleLoad(); setTab("viewer"); }} disabled={!input.trim()}>
-                Open in Viewer
-              </button>
+      {tab === "search" && (
+        <div className="iframe-viewer__panel">
+          <div className="iframe-viewer__panel-heading">
+            <span className="iframe-viewer__panel-icon"><FaSearch /></span>
+            <div><h3>Search the web</h3><p>Find a page, then open it directly in the viewer.</p></div>
+          </div>
+          <form className="iframe-viewer__search" onSubmit={(event) => { event.preventDefault(); handleSearch(query); }}>
+            <FaSearch aria-hidden="true" />
+            <label className="ui-sr-only" htmlFor="iframe-search">Search the web</label>
+            <input id="iframe-search" placeholder="What do you want to find?" value={query} onChange={(event) => setQuery(event.target.value)} />
+            <button type="submit" disabled={searching || !query.trim()}>{searching ? "Searching…" : "Search"}</button>
+          </form>
+          {searchError && <p className="iframe-viewer__error" role="alert">{searchError}</p>}
+          {searching && (
+            <div className="iframe-viewer__searching" role="status"><span className="iframe-viewer__spinner" />Searching the web…</div>
+          )}
+          {!searching && results.length > 0 && (
+            <div className="iframe-viewer__results">
+              <div className="iframe-viewer__result-summary"><span>Results for “{query}”</span><span>{results.length} pages</span></div>
+              {results.map((result, index) => {
+                const meta = getUrlMeta(result.url);
+                return (
+                  <article className="iframe-viewer__result" key={`${result.url}-${index}`}>
+                    <span className="iframe-viewer__site-icon">{meta.initial}</span>
+                    <button type="button" onClick={() => { if (navigate(result.url)) setTab("viewer"); }}>
+                      <span className="iframe-viewer__result-host">{meta.hostname}</span>
+                      <strong>{result.title || meta.hostname}</strong>
+                      {result.snippet && <span className="iframe-viewer__result-snippet">{result.snippet}</span>}
+                    </button>
+                    <a href={normalizeUrl(result.url)} target="_blank" rel="noreferrer" aria-label={`Open ${result.title || meta.hostname} in a new tab`}><FaExternalLinkAlt /></a>
+                  </article>
+                );
+              })}
             </div>
+          )}
+        </div>
+      )}
+
+      {tab === "history" && (
+        <div className="iframe-viewer__panel">
+          <div className="iframe-viewer__history-heading">
+            <div className="iframe-viewer__panel-heading">
+              <span className="iframe-viewer__panel-icon"><FaClock /></span>
+              <div><h3>Recently viewed</h3><p>Your last {MAX_HISTORY} pages are stored on this device.</p></div>
+            </div>
+            {history.length > 0 && <button className="iframe-viewer__clear" type="button" onClick={clearHistory}><FaTrashAlt /> Clear all</button>}
           </div>
 
-          {history.length > 0 && (
-            <div style={{ display: "grid", gap: 6 }}>
-              <div style={{ fontWeight: 800, color: "#0f172a" }}>Recent URLs (last {MAX_HISTORY})</div>
-              <div style={{ display: "grid", gap: 6 }}>
-                {history.map((u, idx) => (
-                  <div
-                    key={u}
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: 8,
-                      justifyContent: "space-between",
-                      border: "1px solid #e2e8f0",
-                      borderRadius: 10,
-                      padding: "6px 8px",
-                      background: "#fff",
-                    }}
-                  >
-                    <button
-                      className="btn secondary-btn"
-                      style={{
-                        justifyContent: "flex-start",
-                        textAlign: "left",
-                        whiteSpace: "nowrap",
-                        overflow: "hidden",
-                        textOverflow: "ellipsis",
-                        fontSize: 12,
-                        flex: 1,
-                        minWidth: 0,
-                      }}
-                      title={u}
-                      onClick={() => {
-                        setCurrentUrl(u);
-                        setInput(u);
-                        setTab("viewer");
-                      }}
-                    >
-                      {idx + 1}. {u.length > 36 ? `${u.slice(0, 36)}…` : u}
+          {history.length > 0 ? (
+            <div className="iframe-viewer__history-list">
+              {history.map((url) => {
+                const meta = getUrlMeta(url);
+                return (
+                  <article className="iframe-viewer__history-item" key={url}>
+                    <span className="iframe-viewer__site-icon">{meta.initial}</span>
+                    <button type="button" onClick={() => { navigate(url); setTab("viewer"); }}>
+                      <strong>{meta.hostname}</strong><span>{url}</span>
                     </button>
-                    <div style={{ display: "flex", gap: 6, alignItems: "center" }}>
-                      <a
-                        className="btn secondary-btn"
-                        style={{ minWidth: 38 }}
-                        href={u}
-                        target="_blank"
-                        rel="noreferrer"
-                        title="Open in new tab"
-                      >
-                        ↗
-                      </a>
-                      <button
-                        className="btn"
-                        style={{ minWidth: 38 }}
-                        onClick={() => removeFromHistory(u)}
-                        aria-label={`Remove ${u}`}
-                        title="Remove from history"
-                      >
-                        ✕
-                      </button>
-                    </div>
-                  </div>
-                ))}
-              </div>
+                    <a href={url} target="_blank" rel="noreferrer" aria-label={`Open ${meta.hostname} in a new tab`}><FaExternalLinkAlt /></a>
+                    <button type="button" onClick={() => removeFromHistory(url)} aria-label={`Remove ${meta.hostname} from history`}><FaTimes /></button>
+                  </article>
+                );
+              })}
+            </div>
+          ) : (
+            <div className="iframe-viewer__empty iframe-viewer__empty--compact">
+              <span className="iframe-viewer__empty-icon"><FaHistory /></span>
+              <h3>No recent pages yet</h3><p>Pages you view will appear here for quick access.</p>
             </div>
           )}
-        </>
+        </div>
       )}
-    </div>
+    </section>
   );
 }
