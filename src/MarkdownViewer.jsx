@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import { useAppState } from "./context/AppContext";
 import { useFlyout } from "./context/FlyoutContext";
+import ActionButtons from "./ui/ActionButtons";
 
 const SAMPLE_MARKDOWN = `# Markdown Viewer
 
@@ -239,6 +240,24 @@ export default function MarkdownViewer() {
           gap: 8px;
           flex-wrap: wrap;
         }
+        .mv-actions {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          flex-wrap: wrap;
+          border: 1px solid #e2e8f0;
+          border-radius: 8px;
+          padding: 10px;
+          background: #ffffff;
+          box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+        }
+        .mv-actions-label {
+          color: #475569;
+          font-size: 0.78rem;
+          font-weight: 900;
+          letter-spacing: 0.06em;
+          text-transform: uppercase;
+        }
         .mv-pill {
           display: inline-flex;
           align-items: center;
@@ -394,6 +413,13 @@ export default function MarkdownViewer() {
           <span className="mv-pill">{stats.chars} chars</span>
         </div>
       </section>
+
+      {markdown.trim() && (
+        <section className="mv-actions" aria-label="Markdown actions">
+          <span className="mv-actions-label">Use this markdown</span>
+          <ActionButtons promptText={markdown} limitButtons />
+        </section>
+      )}
 
       <section className={`mv-grid ${view === "split" ? "" : "single"}`}>
         {showEditor && (
