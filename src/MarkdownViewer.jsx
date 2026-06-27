@@ -63,6 +63,7 @@ export default function MarkdownViewer() {
   const loopTimeoutRef = useRef(null);
   const showEditor = view === "split" || view === "edit";
   const showPreview = view === "split" || view === "preview";
+  const preventSelection = (event) => event.preventDefault();
 
   const clearLoopTimeout = () => {
     if (!loopTimeoutRef.current) return;
@@ -73,6 +74,7 @@ export default function MarkdownViewer() {
   useEffect(() => {
     if (markdownViewerText !== undefined) {
       setMarkdown(markdownViewerText);
+      setView("preview");
     }
   }, [markdownViewerText]);
 
@@ -693,6 +695,8 @@ export default function MarkdownViewer() {
                 <button
                   className={`mv-scroll-btn mv-icon-btn ${scrollDirection < 0 ? "active" : ""}`}
                   type="button"
+                  onMouseDown={preventSelection}
+                  onSelectStart={preventSelection}
                   onPointerDown={(event) => startDirectionHold(event, -1)}
                   onPointerUp={endDirectionHold}
                   onPointerCancel={endDirectionHold}
@@ -705,6 +709,8 @@ export default function MarkdownViewer() {
                 <button
                   className="mv-scroll-btn mv-icon-btn primary"
                   type="button"
+                  onMouseDown={preventSelection}
+                  onSelectStart={preventSelection}
                   onClick={() => setIsAutoScrolling((running) => !running)}
                   aria-label={isAutoScrolling ? "Pause automatic scrolling" : "Start automatic scrolling"}
                 >
@@ -713,6 +719,8 @@ export default function MarkdownViewer() {
                 <button
                   className={`mv-scroll-btn mv-icon-btn ${isLooping ? "active" : ""}`}
                   type="button"
+                  onMouseDown={preventSelection}
+                  onSelectStart={preventSelection}
                   onClick={() => setIsLooping((running) => !running)}
                   title="Toggle looping"
                   aria-label={isLooping ? "Disable looping" : "Enable looping"}
@@ -722,6 +730,8 @@ export default function MarkdownViewer() {
                 <button
                   className={`mv-scroll-btn mv-icon-btn ${scrollDirection > 0 ? "active" : ""}`}
                   type="button"
+                  onMouseDown={preventSelection}
+                  onSelectStart={preventSelection}
                   onPointerDown={(event) => startDirectionHold(event, 1)}
                   onPointerUp={endDirectionHold}
                   onPointerCancel={endDirectionHold}
@@ -734,6 +744,8 @@ export default function MarkdownViewer() {
                 <button
                   className="mv-scroll-btn mv-icon-btn"
                   type="button"
+                  onMouseDown={preventSelection}
+                  onSelectStart={preventSelection}
                   onClick={resetScroll}
                   title="Return to top"
                   aria-label="Return to top"
@@ -743,6 +755,8 @@ export default function MarkdownViewer() {
                 <button
                   className="mv-scroll-btn mv-icon-btn"
                   type="button"
+                  onMouseDown={preventSelection}
+                  onSelectStart={preventSelection}
                   onClick={() => jumpToSection(-1)}
                   title="Previous section"
                   aria-label="Previous section"
@@ -752,6 +766,8 @@ export default function MarkdownViewer() {
                 <button
                   className="mv-scroll-btn mv-icon-btn"
                   type="button"
+                  onMouseDown={preventSelection}
+                  onSelectStart={preventSelection}
                   onClick={() => jumpToSection(1)}
                   title="Next section"
                   aria-label="Next section"
@@ -763,6 +779,8 @@ export default function MarkdownViewer() {
                 <button
                   className="mv-scroll-btn mv-icon-btn"
                   type="button"
+                  onMouseDown={preventSelection}
+                  onSelectStart={preventSelection}
                   onClick={() => changeScrollSpeed(-5)}
                   aria-label="Decrease scroll speed"
                   title="Decrease scroll speed"
@@ -772,6 +790,8 @@ export default function MarkdownViewer() {
                 <button
                   className="mv-scroll-btn mv-icon-btn"
                   type="button"
+                  onMouseDown={preventSelection}
+                  onSelectStart={preventSelection}
                   onClick={() => changeScrollSpeed(5)}
                   aria-label="Increase scroll speed"
                   title="Increase scroll speed"
