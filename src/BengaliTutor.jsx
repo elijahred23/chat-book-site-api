@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useState, useCallback } from "react";
 import { ClipLoader } from "react-spinners";
 import { getGeminiResponse } from "./utils/callGemini";
 import ActionButtons from "./ui/ActionButtons.jsx";
+import "./BengaliTutor.css";
 
 const DEFAULT_PROMPT = "Everyday greetings at a coffee shop";
 const LESSON_CACHE_KEY = "bengali_lesson_cache";
@@ -157,7 +158,7 @@ export default function BengaliTutor() {
   const [masteryOptions, setMasteryOptions] = useState([]);
   const [masteryScore, setMasteryScore] = useState({ correct: 0, total: 0, streak: 0, bestStreak: 0, finishedStreakSum: 0, finishedStreakCount: 0 });
   const [activeGameTab, setActiveGameTab] = useState("match");
-  const { voices, ready: voicesReady } = useVoices();
+  const { voices } = useVoices();
   const audioCacheRef = React.useRef(new Map()); // cache Bengali audio URLs by text+lang
   const batchCacheRef = React.useRef(new Map()); // cache combined MP3 blobs for batch vocab
   const loopStateRef = React.useRef({ key: null, mode: null, abort: false, audio: null });
@@ -1229,14 +1230,23 @@ export default function BengaliTutor() {
   }, [masteryTarget, lesson, gameItems, masteryQueue, masteryIndex, gameDirection]);
 
   return (
-    <div style={{ background: "#f8fafc", minHeight: "100vh" }}>
+    <main className="bn-page">
       <style>{shellStyles}</style>
       <div className="bn-shell">
-        <div className="bn-card">
-          <h2 style={{ margin: 0 }}>বাংলা Tutor</h2>
-          <p style={{ margin: "4px 0", color: "#475569" }}>Generate concise Bengali lessons with pronunciations and practice.</p>
+        <header className="bn-card bn-header-card">
+          <div className="bn-hero-copy">
+            <span className="bn-kicker">Learn naturally</span>
+            <h1><span lang="bn">বাংলা</span> Tutor</h1>
+            <p>Build practical lessons, hear native pronunciation, and strengthen recall through focused games.</p>
+          </div>
+          {lesson && (
+            <div className="bn-lesson-count" aria-label="Current lesson content">
+              <strong>{(lesson.phrases?.length || 0) + (lesson.vocab?.length || 0)}</strong>
+              <span>items</span>
+            </div>
+          )}
           <div style={{ display: "grid", gap: 10 }}>
-            <div className="bn-tabs bn-tabs-soft">
+            <div className="bn-tabs bn-tabs-soft bn-primary-tabs">
               <button className={`bn-tab ${setupTab === "lesson" ? "active" : ""}`} onClick={() => setSetupTab("lesson")} disabled={!lesson}>
                 Lesson
               </button>
@@ -1363,7 +1373,7 @@ export default function BengaliTutor() {
             ) : null}
             {error && <div style={{ color: "#dc2626", fontWeight: 600 }}>{error}</div>}
           </div>
-        </div>
+        </header>
 
         {loading && (
           <div className="bn-card" style={{ display: "flex", alignItems: "center", gap: 10 }}>
@@ -1373,17 +1383,17 @@ export default function BengaliTutor() {
         )}
 
         {lesson && !loading && setupTab === "lesson" && (
-          <div className="bn-card" style={{ display: "grid", gap: 10 }}>
-            <div style={{ display: "flex", gap: 8, alignItems: "center", flexWrap: "wrap" }}>
-              <h3 style={{ margin: 0 }}>{lesson.title}</h3>
+          <article className="bn-card bn-lesson-card" style={{ display: "grid", gap: 10 }}>
+            <div className="bn-lesson-heading">
+              <h2>{lesson.title}</h2>
               <span className="bn-pill">{lesson.level}</span>
               <span className="bn-pill">{lesson.focus}</span>
             </div>
-            <p style={{ margin: 0, color: "#475569" }}>{lesson.summary}</p>
+            <p className="bn-lesson-summary">{lesson.summary}</p>
             <ActionButtons promptText={combinedLessonPrompt} />
 
             {/* Collapsible Group Filters */}
-            <div className="bn-section" style={{ display: "grid", gap: 10, background: "#f1f5f9" }}>
+            <div className="bn-section bn-filter-panel" style={{ display: "grid", gap: 10, background: "#f1f5f9" }}>
               <div 
                 onClick={() => setFiltersExpanded(!filtersExpanded)}
                 style={{ display: "flex", justifyContent: "space-between", alignItems: "center", cursor: "pointer" }}
@@ -1445,7 +1455,7 @@ export default function BengaliTutor() {
               )}
             </div>
 
-            <div className="bn-tabs">
+            <div className="bn-tabs bn-content-tabs">
               <button
                 className={`bn-tab ${contentTab === "phrases" ? "active" : ""}`}
                 onClick={() => setContentTab("phrases")}
@@ -1469,7 +1479,7 @@ export default function BengaliTutor() {
               </button>
             </div>
 
-            <div style={{ display: "flex", gap: 10, alignItems: "center", flexWrap: "wrap", padding: "10px 12px", borderRadius: 12, background: "#eef2ff", border: "1px solid #e2e8f0" }}>
+            <div className="bn-action-toggle" style={{ display: "flex", gap: 10, alignItems: "center", flexWrap: "wrap", padding: "10px 12px", borderRadius: 12, background: "#eef2ff", border: "1px solid #e2e8f0" }}>
               <label style={{ display: "inline-flex", alignItems: "center", gap: 8, fontWeight: 700, color: "#0f172a" }}>
                 <input
                   type="checkbox"
@@ -1481,13 +1491,13 @@ export default function BengaliTutor() {
             </div>
 
             {contentTab === "phrases" && lesson.phrases?.length ? (
-              <div className="bn-section" style={{ display: "grid", gap: 10 }}>
-                <h4 style={{ margin: 0 }}>Key Phrases</h4>
+              <section className="bn-section bn-phrase-list" style={{ display: "grid", gap: 10 }}>
+                <div className="bn-content-heading"><span>Conversation</span><h3>Key phrases</h3></div>
                 {filteredPhrases.map((p, idx) => (
-                  <div key={idx} className="bn-section" style={{ background: "#fff" }}>
+                  <article key={idx} className="bn-section bn-phrase-card" style={{ background: "#fff" }}>
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
-                      <div style={{ fontWeight: 800, color: "#0f172a" }}>{p.bn}</div>
-                      <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
+                      <div className="bn-script" lang="bn" style={{ fontWeight: 800, color: "#0f172a" }}>{p.bn}</div>
+                      <div className="bn-audio-actions" style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
                         <button className="bn-btn secondary" onClick={() => speak(p.bn, "bn")}>🔈 Bengali</button>
                         <button className="bn-btn secondary" onClick={() => speak(p.en, "en")}>🔈 English</button>
                         <button
@@ -1518,17 +1528,17 @@ export default function BengaliTutor() {
                         )}
                       </div>
                     </div>
-                    <div style={{ color: "#0f172a" }}>{p.pronunciation}</div>
-                    <div style={{ color: "#475569" }}>{p.en}</div>
-                    {p.context && <div style={{ color: "#475569" }}>Context: {p.context}</div>}
+                    <div className="bn-pronunciation">{p.pronunciation}</div>
+                    <div className="bn-translation">{p.en}</div>
+                    {p.context && <div className="bn-context"><span>Use it when</span>{p.context}</div>}
                     {showPhraseActions && (
                       <div style={{ marginTop: 6 }}>
                         <ActionButtons limitButtons promptText={`${lesson.title}: ${p.bn} (${p.pronunciation}) - ${p.en}`} />
                       </div>
                     )}
-                  </div>
+                  </article>
                 ))}
-                <div style={{ display: "flex", gap: 8, flexWrap: "wrap", alignItems: "center" }}>
+                <div className="bn-bulk-actions" style={{ display: "flex", gap: 8, flexWrap: "wrap", alignItems: "center" }}>
                   <button
                     className="bn-btn"
                     onClick={() =>
@@ -1557,7 +1567,7 @@ export default function BengaliTutor() {
                   )}
                   <button className="bn-btn secondary" onClick={stopLoops}>Stop Loop</button>
                 </div>
-              </div>
+              </section>
             ) : null}
 
             {contentTab === "phrases" && !lesson.phrases?.length ? (
@@ -1565,16 +1575,16 @@ export default function BengaliTutor() {
             ) : null}
 
             {contentTab === "vocab" && lesson.vocab?.length ? (
-              <div className="bn-section" style={{ display: "grid", gap: 6 }}>
-                <h4 style={{ margin: 0 }}>Vocabulary</h4>
+              <section className="bn-section bn-vocab-list" style={{ display: "grid", gap: 6 }}>
+                <div className="bn-content-heading"><span>Word bank</span><h3>Vocabulary</h3></div>
                 {filteredVocab.map((v, idx) => (
-                  <div key={idx} style={{ display: "flex", justifyContent: "space-between", gap: 8, flexWrap: "wrap", padding: "6px 0", borderBottom: "1px solid #e2e8f0" }}>
+                  <article className="bn-vocab-card" key={idx} style={{ display: "flex", justifyContent: "space-between", gap: 8, flexWrap: "wrap", padding: "6px 0", borderBottom: "1px solid #e2e8f0" }}>
                     <div>
-                      <div style={{ fontWeight: 700 }}>{v.bn}</div>
-                      <div style={{ color: "#475569" }}>{v.pronunciation}</div>
-                      <div style={{ color: "#0f172a" }}>{v.en}</div>
+                      <div className="bn-script" lang="bn" style={{ fontWeight: 700 }}>{v.bn}</div>
+                      <div className="bn-pronunciation">{v.pronunciation}</div>
+                      <div className="bn-translation">{v.en}</div>
                     </div>
-                    <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
+                    <div className="bn-audio-actions" style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
                       <button className="bn-btn secondary" onClick={() => speak(v.bn, "bn", { forceApi: true })}>🔈 bn</button>
                       <button className="bn-btn secondary" onClick={() => speak(v.en, "en", { forceApi: true })}>🔈 en</button>
                       <button
@@ -1622,7 +1632,7 @@ export default function BengaliTutor() {
                         </button>
                       )}
                     </div>
-                  </div>
+                  </article>
                 ))}
                 <div style={{ display: "flex", gap: 8, flexWrap: "wrap", alignItems: "center", marginTop: 6 }}>
                   <button
@@ -1631,7 +1641,7 @@ export default function BengaliTutor() {
                       loopSequence(
                         "all-vocab",
                         "all",
-                        filteredVocab.flatMap((v, i) => [
+                        filteredVocab.flatMap((v) => [
                           { text: v.bn, lang: "bn", forceApi: true },
                           { text: v.en, lang: "en", forceApi: true },
                         ])
@@ -1657,7 +1667,7 @@ export default function BengaliTutor() {
                       loopSequence(
                         "all-vocab-enbn",
                         "all",
-                        filteredVocab.flatMap((v, i) => [
+                        filteredVocab.flatMap((v) => [
                           { text: v.en, lang: "en", forceApi: true },
                           { text: v.bn, lang: "bn", forceApi: true },
                         ])
@@ -1679,7 +1689,7 @@ export default function BengaliTutor() {
                   )}
                   <button className="bn-btn secondary" onClick={stopLoops}>Stop Loop</button>
                 </div>
-              </div>
+              </section>
             ) : null}
 
             {contentTab === "vocab" && !lesson.vocab?.length ? (
@@ -2006,9 +2016,9 @@ export default function BengaliTutor() {
                 ))}
               </div>
             ) : null}
-          </div>
+          </article>
         )}
       </div>
-    </div>
+    </main>
   );
 }
