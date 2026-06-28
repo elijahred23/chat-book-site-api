@@ -1,86 +1,56 @@
-import React from "react";
 import FlashCardTable from "../FlashCardTable.jsx";
 
-function StudyMode({ cards, studyIndex, showAnswer, onPrev, onNext, onToggleAnswer, COLORS, isMobile }) {
-  if (cards.length === 0) return <p>No cards loaded.</p>;
+function StudyMode({ cards, studyIndex, showAnswer, onPrev, onNext, onToggleAnswer, isMobile }) {
+  if (cards.length === 0) return (
+    <div className="flash-empty-state">
+      <div className="flash-empty-icon" aria-hidden="true">＋</div>
+      <h2>Your deck is empty</h2>
+      <p>Open Deck setup to add a card, import JSON, or generate a deck from a topic.</p>
+    </div>
+  );
   const card = cards[studyIndex];
+  const progress = ((studyIndex + 1) / cards.length) * 100;
   return (
-    <div style={{ textAlign: "center" }}>
-      <div
-        style={{
-          border: `1px solid ${COLORS.border}`,
-          padding: "1rem",
-          borderRadius: "8px",
-          minHeight: "120px",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          backgroundColor: COLORS.background,
-          color: COLORS.text,
-        }}
-      >
-        <h3 style={{ marginBottom: "0.5rem" }}>
-          Card {studyIndex + 1} of {cards.length}
-        </h3>
-        <p style={{ fontSize: "1.1rem", fontWeight: 500 }}>
-          {showAnswer ? card.answer : card.question}
-        </p>
+    <section className="flash-study-session">
+      <div className="flash-progress-row">
+        <span>Card {studyIndex + 1} of {cards.length}</span>
+        <span>{Math.round(progress)}% complete</span>
       </div>
-      <div
-        style={{
-          marginTop: "1rem",
-          display: "flex",
-          gap: "0.5rem",
-          justifyContent: "center",
-          flexDirection: isMobile ? "column" : "row",
-          alignItems: isMobile ? "stretch" : "center",
-        }}
+      <div className="flash-progress-track" aria-hidden="true"><span style={{ width: `${progress}%` }} /></div>
+      <button
+        type="button"
+        className={`flash-study-card ${showAnswer ? "is-flipped" : ""}`}
+        onClick={onToggleAnswer}
+        aria-label={showAnswer ? "Show question" : "Show answer"}
       >
+        <span className="flash-card-side-label">{showAnswer ? "Answer" : "Question"}</span>
+        <span className="flash-card-content">{showAnswer ? card.answer : card.question}</span>
+        <span className="flash-card-hint">Tap to {showAnswer ? "see the question" : "reveal the answer"}</span>
+      </button>
+      <div className="flash-study-actions">
         <button
           onClick={onPrev}
-          style={{
-            padding: "0.5rem 1rem",
-            backgroundColor: COLORS.buttonBg,
-            border: `1px solid ${COLORS.border}`,
-            borderRadius: "4px",
-            color: COLORS.text,
-            cursor: "pointer",
-            width: isMobile ? "100%" : "auto",
-          }}
+          className="flash-icon-action"
+          aria-label="Previous card"
         >
-          Previous
+          <span aria-hidden="true">←</span> Previous
         </button>
         <button
           onClick={onToggleAnswer}
-          style={{
-            padding: "0.5rem 1rem",
-            backgroundColor: COLORS.buttonBg,
-            border: `1px solid ${COLORS.border}`,
-            borderRadius: "4px",
-            color: COLORS.text,
-            cursor: "pointer",
-            width: isMobile ? "100%" : "auto",
-          }}
+          className="flash-reveal-action"
         >
-          {showAnswer ? "Show Question" : "Show Answer"}
+          {showAnswer ? "Show question" : "Reveal answer"}
         </button>
         <button
           onClick={onNext}
-          style={{
-            padding: "0.5rem 1rem",
-            backgroundColor: COLORS.buttonBg,
-            border: `1px solid ${COLORS.border}`,
-            borderRadius: "4px",
-            color: COLORS.text,
-            cursor: "pointer",
-            width: isMobile ? "100%" : "auto",
-          }}
+          className="flash-icon-action"
+          aria-label="Next card"
         >
-          Next
+          Next <span aria-hidden="true">→</span>
         </button>
       </div>
-    </div>
+      {!isMobile && <p className="flash-keyboard-hint">Use ← → to move · Space to flip</p>}
+    </section>
   );
 }
 

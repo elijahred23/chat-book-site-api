@@ -1,7 +1,8 @@
-import React, { useState, useEffect, useRef, createContext, useContext } from "react";
+import { useState, useEffect, useRef, createContext, useContext } from "react";
 import { useAppState, useAppDispatch, actions } from "./context/AppContext";
 import { getGeminiResponse } from "./utils/callGemini.js";
 import CurrentModeView from "./modes/CurrentModeView.jsx";
+import "./FlashCardApp.css";
 
 const FlashCardContext = createContext(null);
 export const useFlashCardContext = () => useContext(FlashCardContext);
@@ -67,6 +68,27 @@ const COLORS = {
   selectedBg: "#e0f2fe",
 };
 
+const MODE_OPTIONS = [
+  { key: "study", label: "Study" },
+  { key: "quiz", label: "Quiz" },
+  { key: "recall", label: "Recall" },
+  { key: "match", label: "Match" },
+  { key: "memory", label: "Memory" },
+  { key: "survival", label: "Survival" },
+  { key: "typing", label: "Typing" },
+  { key: "blitz", label: "Blitz" },
+  { key: "table", label: "Manage" },
+];
+
+function normalizeCards(rawCards) {
+  return rawCards
+    .map((card) => ({
+      question: (card?.question || card?.word || card?.term || card?.prompt || "").toString().trim(),
+      answer: (card?.answer || card?.definition || card?.meaning || card?.response || "").toString().trim(),
+    }))
+    .filter((card) => card.question && card.answer);
+}
+
 export default function FlashCardApp() {
   const { flashcardPrompt } = useAppState();
   const dispatch = useAppDispatch();
@@ -88,7 +110,9 @@ export default function FlashCardApp() {
   }, [cards.length]);
 
   const [prompt, setPrompt] = useState("");
-  const [mode, setMode] = useState("table");
+  const [mode, setMode] = useState("study");
+  const [newQuestion, setNewQuestion] = useState("");
+  const [newAnswer, setNewAnswer] = useState("");
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -111,8 +135,6 @@ export default function FlashCardApp() {
   const handleGenerateFromPrompt = async () => {
     if (!prompt) return;
     try {
-      // Clear any existing cards before generating new ones
-      setCards([]);
       setLoading(true);
       const instruction = `\nGenerate vocabulary flash cards for the topic: "${prompt}".\nReturn ONLY valid JSON in the following format:\n[\n  { "question": "Term1", "answer": "Definition of term 1" },\n  { "question": "Term2", "answer": "Definition of term 2" }\n]\nDo not include any extra text, explanations, or formatting outside of the JSON.\nEnsure the JSON is valid and represents vocabulary terms with their definitions.\n`;
       const rawResponse = await getGeminiResponse(instruction);
@@ -126,11 +148,10 @@ export default function FlashCardApp() {
       if (!Array.isArray(list)) {
         throw new Error("Extracted JSON does not appear to be an array of flashcards.");
       }
-      const normalised = list.map((card) => ({
-        question: (card.question || card.word || card.term || card.prompt || "").toString(),
-        answer: (card.answer || card.definition || card.meaning || card.response || "").toString(),
-      }));
-      setCards((prev) => [...prev, ...normalised]);
+      const normalised = normalizeCards(list);
+      if (!normalised.length) throw new Error("No complete flash cards were returned.");
+      setCards(normalised);
+      setActiveTab("view");
       setError(null);
     } catch (err) {
       setError(err.message);
@@ -157,11 +178,10 @@ export default function FlashCardApp() {
         const json = JSON.parse(text);
         const rawCards = Array.isArray(json) ? json : Array.isArray(json.cards) ? json.cards : null;
         if (rawCards) {
-          const imported = rawCards.map((card) => ({
-            question: (card.question || card.word || card.term || "").toString(),
-            answer: (card.answer || card.definition || card.meaning || "").toString(),
-          }));
+          const imported = normalizeCards(rawCards);
+          if (!imported.length) throw new Error("No complete flash cards were found.");
           setCards(imported);
+          setActiveTab("view");
           setError(null);
         } else {
           setError("Uploaded file does not contain a valid array of flash cards.");
@@ -251,11 +271,10 @@ export default function FlashCardApp() {
       const json = JSON.parse(text);
       const rawCards = Array.isArray(json) ? json : Array.isArray(json.cards) ? json.cards : null;
       if (rawCards) {
-        const imported = rawCards.map((card) => ({
-          question: (card.question || card.word || card.term || "").toString(),
-          answer: (card.answer || card.definition || card.meaning || "").toString(),
-        }));
+        const imported = normalizeCards(rawCards);
+        if (!imported.length) throw new Error("No complete flash cards were found.");
         setCards(imported);
+        setActiveTab("view");
         setError(null);
       } else {
         setError("Clipboard does not contain a valid array of flash cards.");
@@ -340,6 +359,27 @@ export default function FlashCardApp() {
     setStudyIndex((idx) => (idx - 1 + cards.length) % cards.length);
     setShowAnswer(false);
   };
+
+  useEffect(() => {
+    if (activeTab !== "view" || mode !== "study") return undefined;
+    const handleKeyDown = (event) => {
+      if (["INPUT", "TEXTAREA", "SELECT"].includes(event.target?.tagName)) return;
+      if (event.key === "ArrowRight") {
+        setStudyIndex((index) => cards.length ? (index + 1) % cards.length : 0);
+        setShowAnswer(false);
+      }
+      if (event.key === "ArrowLeft") {
+        setStudyIndex((index) => cards.length ? (index - 1 + cards.length) % cards.length : 0);
+        setShowAnswer(false);
+      }
+      if (event.key === " " || event.key === "Enter") {
+        event.preventDefault();
+        setShowAnswer((visible) => !visible);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [activeTab, mode, cards.length]);
 
   const [quizIndex, setQuizIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
@@ -740,49 +780,41 @@ export default function FlashCardApp() {
     }
   };
 
+  const handleAddCard = (event) => {
+    event.preventDefault();
+    const question = newQuestion.trim();
+    const answer = newAnswer.trim();
+    if (!question || !answer) {
+      setError("Add both a term and an answer.");
+      return;
+    }
+    setCards((current) => [...current, { question, answer }]);
+    setNewQuestion("");
+    setNewAnswer("");
+    setError(null);
+    setMode("study");
+    setActiveTab("view");
+  };
+
+  const handleShuffle = () => {
+    setCards((current) => shuffleArray(current));
+    setMode("study");
+  };
+
   const renderNavigation = () => {
-    const navContainerStyle = {
-      marginBottom: "1rem",
-      display: "flex",
-      flexDirection: isMobile ? "column" : "row",
-      gap: "0.5rem",
-      flexWrap: isMobile ? "nowrap" : "wrap",
-    };
     return (
-      <div style={{ ...navContainerStyle, background: "#ffffff", borderRadius: "12px", padding: "0.5rem", boxShadow: "0 10px 24px rgba(15,23,42,0.08)", border: `1px solid ${COLORS.border}` }}>
-        {[
-          { key: "study", label: "Study" },
-          { key: "quiz", label: "Quiz" },
-          { key: "match", label: "Matching" },
-          { key: "recall", label: "Recall" },
-      { key: "memory", label: "Memory Flip" },
-      { key: "survival", label: "Survival" },
-      { key: "typing", label: "Typing" },
-      { key: "blitz", label: "Blitz" },
-      { key: "table", label: "Table" },
-    ].map(({ key, label }) => (
+      <nav className="flash-mode-nav" aria-label="Study modes">
+        {MODE_OPTIONS.map(({ key, label }) => (
           <button
             key={key}
-            onClick={() => setMode(key)}
-            style={{
-              padding: isMobile ? "0.75rem" : "0.65rem 1.2rem",
-              border:
-                key === mode
-                  ? `2px solid ${COLORS.primary}`
-                  : `1px solid ${COLORS.border}`,
-              background: key === mode ? "linear-gradient(135deg, #2563eb, #60a5fa)" : COLORS.buttonBg,
-              color: key === mode ? "#fff" : COLORS.text,
-              borderRadius: "10px",
-              cursor: "pointer",
-              width: isMobile ? "100%" : "auto",
-              textAlign: "center",
-              boxShadow: key === mode ? "0 10px 20px rgba(37,99,235,0.25)" : "none",
-            }}
+            onClick={() => { setMode(key); setActiveTab("view"); }}
+            className={key === mode && activeTab === "view" ? "is-active" : ""}
+            aria-current={key === mode && activeTab === "view" ? "page" : undefined}
           >
             {label}
           </button>
         ))}
-      </div>
+      </nav>
     );
   };
 
@@ -806,14 +838,28 @@ export default function FlashCardApp() {
       gap: "0.5rem",
       flexWrap: isMobile ? "nowrap" : "wrap",
     };
-    const topicRowStyle = {
-      display: "flex",
-      flexDirection: isMobile ? "column" : "row",
-      alignItems: isMobile ? "stretch" : "center",
-      gap: "0.5rem",
-    };
     return (
       <div style={containerStyle}>
+        <form className="flash-add-card" onSubmit={handleAddCard}>
+          <div className="flash-section-heading">
+            <div>
+              <span className="flash-eyebrow">Build your deck</span>
+              <h3>Add a card</h3>
+            </div>
+            <span className="flash-count-badge">{cards.length} {cards.length === 1 ? "card" : "cards"}</span>
+          </div>
+          <div className="flash-add-fields">
+            <label>
+              Term or question
+              <input value={newQuestion} onChange={(event) => setNewQuestion(event.target.value)} placeholder="e.g. What is a closure?" />
+            </label>
+            <label>
+              Answer
+              <input value={newAnswer} onChange={(event) => setNewAnswer(event.target.value)} placeholder="A function bundled with its lexical scope" />
+            </label>
+            <button type="submit" className="flash-primary-button">Add card</button>
+          </div>
+        </form>
         <div style={fileActionsStyle}>
           <label style={{ display: "flex", alignItems: "center" }}>
             Upload JSON:
@@ -879,6 +925,13 @@ export default function FlashCardApp() {
             }}
           >
             Clear Cards
+          </button>
+          <button
+            onClick={handleShuffle}
+            disabled={cards.length < 2}
+            style={{ padding: "0.5rem 1rem", backgroundColor: COLORS.buttonBg, border: `1px solid ${COLORS.border}`, borderRadius: "4px", color: COLORS.text }}
+          >
+            Shuffle deck
           </button>
         </div>
         <div
@@ -1075,59 +1128,42 @@ export default function FlashCardApp() {
 
   return (
     <FlashCardContext.Provider value={contextValue}>
-    <div
-      style={{
-        maxWidth: "800px",
-        margin: "0 auto",
-        padding: "1rem",
-        color: COLORS.text,
-        background: "linear-gradient(180deg, #f8fafc 0%, #ffffff 100%)",
-        border: `1px solid ${COLORS.border}`,
-        borderRadius: "14px",
-        boxShadow: "0 16px 40px rgba(15,23,42,0.08)",
-      }}
-    >
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: "0.5rem", flexWrap: "wrap" }}>
-        <h2 style={{ margin: 0, color: COLORS.text }}>
-          Flash Card Study Tool
-        </h2>
-      </div>
-      <div style={{ display: "flex", gap: "0.5rem", margin: "0.75rem 0" }}>
+    <main className="flash-study-app">
+      <header className="flash-hero">
+        <div>
+          <span className="flash-eyebrow">Focused learning</span>
+          <h1>Flashcards</h1>
+          <p>Learn actively with study sessions, recall drills, and quick games.</p>
+        </div>
+        <div className="flash-deck-summary" aria-label={`${cards.length} cards in this deck`}>
+          <strong>{cards.length}</strong>
+          <span>{cards.length === 1 ? "card" : "cards"}</span>
+        </div>
+      </header>
+
+      <div className="flash-top-tabs" role="tablist" aria-label="Flashcard sections">
         <button
           onClick={() => setActiveTab("view")}
-          style={{
-            padding: "0.5rem 0.9rem",
-            borderRadius: "10px",
-            border: `1px solid ${COLORS.border}`,
-            background: activeTab === "view" ? COLORS.buttonBgActive : COLORS.buttonBg,
-            fontWeight: 700,
-            cursor: "pointer",
-            color: COLORS.text,
-          }}
+          className={activeTab === "view" ? "is-active" : ""}
+          role="tab"
+          aria-selected={activeTab === "view"}
         >
-          View / Play
+          Study
         </button>
         <button
           onClick={() => setActiveTab("controls")}
-          style={{
-            padding: "0.5rem 0.9rem",
-            borderRadius: "10px",
-            border: `1px solid ${COLORS.border}`,
-            background: activeTab === "controls" ? COLORS.buttonBgActive : COLORS.buttonBg,
-            fontWeight: 700,
-            cursor: "pointer",
-            color: COLORS.text,
-          }}
+          className={activeTab === "controls" ? "is-active" : ""}
+          role="tab"
+          aria-selected={activeTab === "controls"}
         >
-          Controls & Data
+          Deck setup
         </button>
       </div>
 
+      {renderNavigation()}
+
       {activeTab === "controls" && (
-        <>
-          {renderControls()}
-          {renderNavigation()}
-        </>
+        renderControls()
       )}
 
       {activeTab === "view" && (
@@ -1209,7 +1245,7 @@ export default function FlashCardApp() {
           setCards={setCards}
         />
       )}
-      </div>
+    </main>
     </FlashCardContext.Provider>
   );
 }

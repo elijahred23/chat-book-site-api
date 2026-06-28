@@ -1,9 +1,26 @@
-import React, { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Editor from "react-simple-code-editor";
 import Prism from "./utils/prism";
 import "prismjs/themes/prism.css";
 import ActionButtons from "./ui/ActionButtons.jsx";
 import { useFlyout } from "./context/FlyoutContext";
+import {
+  FaArrowLeft,
+  FaArrowRight,
+  FaBookOpen,
+  FaCheck,
+  FaChevronDown,
+  FaChevronRight,
+  FaCode,
+  FaFlask,
+  FaLightbulb,
+  FaList,
+  FaPlay,
+  FaQuestionCircle,
+  FaSearch,
+  FaTimes,
+  FaUndo,
+} from "react-icons/fa";
 import "./CodingProblems.css";
 
 const problemModules = import.meta.glob("./code_problems/*.json", { eager: true });
@@ -165,6 +182,24 @@ function stableStringify(value) {
   if (typeof value !== "object") return JSON.stringify(value);
   if (Array.isArray(value)) return JSON.stringify(value, null, 2);
   return JSON.stringify(value, Object.keys(value).sort(), 2);
+}
+
+function formatTestFieldLabel(key = "") {
+  const labels = {
+    expect: "Expected",
+    expectBoard: "Expected board",
+    expectPos: "Expected position",
+    minRemoved: "Minimum removed",
+    headID: "Head ID",
+  };
+  if (labels[key]) return labels[key];
+  return key
+    .replace(/([a-z])([A-Z])/g, "$1 $2")
+    .replace(/^./, (letter) => letter.toUpperCase());
+}
+
+function isExpectedTestField(key = "") {
+  return key.startsWith("expect") || key === "minRemoved" || key === "solvable";
 }
 
 function validateTwoSumResult({ nums, target, result }) {
@@ -1187,6 +1222,18 @@ export default function CodingProblems() {
   const [runOutput, setRunOutput] = useState([]);
   const [runError, setRunError] = useState("");
   const [running, setRunning] = useState(false);
+  const [search, setSearch] = useState("");
+  const [categoryFilter, setCategoryFilter] = useState("All");
+  const [difficultyFilter, setDifficultyFilter] = useState("All");
+  const [pickerOpen, setPickerOpen] = useState(false);
+  const [expandedWalkthroughSteps, setExpandedWalkthroughSteps] = useState(() => new Set([0]));
+  const [completedIds, setCompletedIds] = useState(() => {
+    try {
+      return new Set(JSON.parse(localStorage.getItem("coding_problem_completed") || "[]"));
+    } catch {
+      return new Set();
+    }
+  });
   const [selectedNotesLanguage, setSelectedNotesLanguage] = useState(() => {
     try {
       return localStorage.getItem("coding_problem_notes_language") || "javascript";
@@ -1231,6 +1278,27 @@ export default function CodingProblems() {
       // ignore localStorage errors
     }
   }, [selectedNotesLanguage]);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem("coding_problem_completed", JSON.stringify([...completedIds]));
+    } catch {
+      // ignore localStorage errors
+    }
+  }, [completedIds]);
+
+  useEffect(() => {
+    if (!pickerOpen) return undefined;
+    const closeOnEscape = (event) => {
+      if (event.key === "Escape") setPickerOpen(false);
+    };
+    document.addEventListener("keydown", closeOnEscape);
+    return () => document.removeEventListener("keydown", closeOnEscape);
+  }, [pickerOpen]);
+
+  useEffect(() => {
+    setExpandedWalkthroughSteps(new Set([0]));
+  }, [active?.id]);
 
   const runAllTests = async () => {
     setRunning(true);
@@ -1538,6 +1606,9 @@ export default function CodingProblems() {
         return { name: t.name, ok: false, got: result, want: t.expect, error: "Unknown problem validator" };
       });
       setRunOutput(results);
+      if (results.length > 0 && results.every((result) => result.ok)) {
+        setCompletedIds((current) => new Set(current).add(active.id));
+      }
     } catch (err) {
       setRunError(err.message);
     } finally {
@@ -1558,81 +1629,199 @@ export default function CodingProblems() {
         : "",
     [active]
   );
+  const categories = useMemo(
+    () => ["All", ...CATEGORY_ORDER.filter((category) => PROBLEMS.some((problem) => problem.category === category))],
+    []
+  );
+  const filteredProblems = useMemo(() => {
+    const query = search.trim().toLowerCase();
+    return PROBLEMS.filter((problem) => {
+      const matchesQuery = !query || `${problem.title} ${problem.category}`.toLowerCase().includes(query);
+      const matchesCategory = categoryFilter === "All" || problem.category === categoryFilter;
+      const matchesDifficulty = difficultyFilter === "All" || problem.difficulty === difficultyFilter;
+      return matchesQuery && matchesCategory && matchesDifficulty;
+    });
+  }, [search, categoryFilter, difficultyFilter]);
 
   if (!active) {
     return (
-      <div style={{ padding: 20 }}>
-        No problems found. Add JSON files to <code>src/code_problems/</code>.
+      <div className="cp-page">
+        <div className="cp-empty">No problems found. Add JSON files to <code>src/code_problems/</code>.</div>
       </div>
     );
   }
 
+  const activeIndex = PROBLEMS.findIndex((problem) => problem.id === active.id);
+  const passedTests = runOutput.filter((result) => result.ok).length;
+  const allTestsPassed = runOutput.length > 0 && passedTests === runOutput.length;
+
+  const chooseProblem = (problemId) => {
+    setActiveId(problemId);
+    setPickerOpen(false);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const goToProblem = (offset) => {
+    const nextProblem = PROBLEMS[activeIndex + offset];
+    if (nextProblem) chooseProblem(nextProblem.id);
+  };
+
+  const toggleCompleted = () => {
+    setCompletedIds((current) => {
+      const next = new Set(current);
+      if (next.has(active.id)) next.delete(active.id);
+      else next.add(active.id);
+      return next;
+    });
+  };
+
+  const toggleWalkthroughStep = (stepIndex) => {
+    setExpandedWalkthroughSteps((current) => {
+      const next = new Set(current);
+      if (next.has(stepIndex)) next.delete(stepIndex);
+      else next.add(stepIndex);
+      return next;
+    });
+  };
+
+  const allWalkthroughStepsExpanded = expandedWalkthroughSteps.size === active.walkthrough.length;
+  const toggleAllWalkthroughSteps = () => {
+    setExpandedWalkthroughSteps(
+      allWalkthroughStepsExpanded
+        ? new Set()
+        : new Set(active.walkthrough.map((_, index) => index))
+    );
+  };
+
+  const problemNavigator = (
+    <aside className={`cp-navigator ${pickerOpen ? "is-open" : ""}`} aria-label="Problem navigator">
+      <div className="cp-navigator__header">
+        <div>
+          <span className="cp-eyebrow">Problem library</span>
+          <strong>{PROBLEMS.length} challenges</strong>
+        </div>
+        <button className="cp-icon-btn cp-navigator__close" type="button" onClick={() => setPickerOpen(false)} aria-label="Close problem list">
+          <FaTimes aria-hidden="true" />
+        </button>
+      </div>
+      <label className="cp-search">
+        <FaSearch aria-hidden="true" />
+        <span className="ui-sr-only">Search problems</span>
+        <input value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Search problems..." />
+      </label>
+      <div className="cp-filters">
+        <select value={categoryFilter} onChange={(event) => setCategoryFilter(event.target.value)} aria-label="Filter by category">
+          {categories.map((category) => <option key={category}>{category}</option>)}
+        </select>
+        <select value={difficultyFilter} onChange={(event) => setDifficultyFilter(event.target.value)} aria-label="Filter by difficulty">
+          {['All', 'Easy', 'Medium', 'Hard'].map((difficulty) => <option key={difficulty}>{difficulty}</option>)}
+        </select>
+      </div>
+      <div className="cp-problem-list">
+        {filteredProblems.map((problem) => (
+          <button
+            className={`cp-problem ${problem.id === active.id ? "active" : ""}`}
+            key={problem.id}
+            type="button"
+            onClick={() => chooseProblem(problem.id)}
+            aria-current={problem.id === active.id ? "true" : undefined}
+          >
+            <span className={`cp-status-dot ${completedIds.has(problem.id) ? "is-complete" : ""}`} aria-hidden="true">
+              {completedIds.has(problem.id) && <FaCheck />}
+            </span>
+            <span className="cp-problem__copy">
+              <strong>{problem.title}</strong>
+              <span>{problem.category} · <em className={`cp-difficulty cp-difficulty--${problem.difficulty.toLowerCase()}`}>{problem.difficulty}</em></span>
+            </span>
+            <FaChevronRight className="cp-problem__chevron" aria-hidden="true" />
+          </button>
+        ))}
+        {filteredProblems.length === 0 && (
+          <div className="cp-empty">No problems match those filters.</div>
+        )}
+      </div>
+      <div className="cp-progress">
+        <div><span>Progress</span><strong>{completedIds.size}/{PROBLEMS.length}</strong></div>
+        <div className="cp-progress__track"><span style={{ width: `${(completedIds.size / PROBLEMS.length) * 100}%` }} /></div>
+      </div>
+    </aside>
+  );
+
   return (
     <div className="cp-page">
       <div className="cp-shell">
-        <div className="cp-header">
-          <div className="cp-row">
-            <div>
-              <h2 style={{ margin: 0 }}>Coding Problems</h2>
-              <div className="cp-muted" style={{ marginTop: 4 }}>
-                Practice a structured interview approach: constraints → tests → logic → code → walkthrough → complexity.
-              </div>
-            </div>
-            <div style={{ display: "flex", gap: 8, flexWrap: "wrap", alignItems: "center" }}>
-              <label className="cp-muted" style={{ fontWeight: 800 }}>Problem</label>
-              <select
-                className="cp-select"
-                value={active.id}
-                onChange={(e) => setActiveId(e.target.value)}
-              >
-                {PROBLEMS.map((p, idx) => (
-                  <option key={p.id} value={p.id}>
-                    {idx + 1}. [{p.category}] {p.title} · {p.difficulty}
-                  </option>
-                ))}
-              </select>
-            </div>
-            <div className="cp-tabs">
-              <button className={`cp-tab ${tab === "solve" ? "active" : ""}`} onClick={() => setTab("solve")}>
-                Solve
-              </button>
-              <button className={`cp-tab ${tab === "info" ? "active" : ""}`} onClick={() => setTab("info")}>
-                Notes
-              </button>
-            </div>
+        <header className="cp-header">
+          <div>
+            <span className="cp-eyebrow"><FaCode aria-hidden="true" /> Interview practice</span>
+            <h1>Coding problems</h1>
+            <p>Build the habit: understand, plan, implement, and verify.</p>
           </div>
-        </div>
+          <div className="cp-header__progress">
+            <strong>{Math.round((completedIds.size / PROBLEMS.length) * 100)}%</strong>
+            <span>completed</span>
+          </div>
+        </header>
 
-        <div className="cp-grid">
-          <div className="cp-card">
-            <div className="cp-row">
-              <div>
-                <h3 style={{ margin: 0 }}>{active.title}</h3>
-                <div className="cp-muted" style={{ marginTop: 4, whiteSpace: "pre-wrap" }}>
-                  {active.prompt}
+        {pickerOpen && <button className="cp-navigator-backdrop" type="button" onClick={() => setPickerOpen(false)} aria-label="Close problem list" />}
+
+        <div className="cp-layout">
+          {problemNavigator}
+          <main className="cp-workspace">
+            <button className="cp-mobile-picker" type="button" onClick={() => setPickerOpen(true)}>
+              <FaList aria-hidden="true" /> Browse problems <span>{activeIndex + 1} of {PROBLEMS.length}</span>
+            </button>
+
+            <section className="cp-card cp-problem-card">
+              <div className="cp-problem-heading">
+                <div>
+                  <div className="cp-meta">
+                    <span>{active.category}</span>
+                    <span className={`cp-difficulty cp-difficulty--${active.difficulty.toLowerCase()}`}>{active.difficulty}</span>
+                    <span>Problem {activeIndex + 1} of {PROBLEMS.length}</span>
+                  </div>
+                  <h2>{active.title}</h2>
+                </div>
+                <ActionButtons limitButtons promptText={`${active.title}\n\n${active.prompt}`} />
+              </div>
+
+              <div className="cp-prompt">{active.prompt}</div>
+
+              <div className="cp-problem-actions">
+                <button className={`cp-complete-btn ${completedIds.has(active.id) ? "is-complete" : ""}`} type="button" onClick={toggleCompleted}>
+                  <FaCheck aria-hidden="true" /> {completedIds.has(active.id) ? "Completed" : "Mark complete"}
+                </button>
+                <div className="cp-step-nav" aria-label="Problem navigation">
+                  <button type="button" onClick={() => goToProblem(-1)} disabled={activeIndex === 0} aria-label="Previous problem"><FaArrowLeft /></button>
+                  <button type="button" onClick={() => goToProblem(1)} disabled={activeIndex === PROBLEMS.length - 1} aria-label="Next problem"><FaArrowRight /></button>
                 </div>
               </div>
-            <ActionButtons limitButtons promptText={`${active.title}\n\n${active.prompt}`} />
-            </div>
-            {active.prompt && (
-              <div style={{ marginTop: 10, display: "grid", gap: 8 }}>
-                <TextOrderGame text={active.prompt} gameKey={`${active.id}:prompt:order`} />
-                <TextBlankGame text={active.prompt} gameKey={`${active.id}:prompt:blank`} />
+
+              <div className="cp-tabs" role="tablist" aria-label="Problem sections">
+                <button className={`cp-tab ${tab === "solve" ? "active" : ""}`} type="button" role="tab" aria-selected={tab === "solve"} onClick={() => setTab("solve")}>
+                  <FaCode aria-hidden="true" /> Solve
+                </button>
+                <button className={`cp-tab ${tab === "info" ? "active" : ""}`} type="button" role="tab" aria-selected={tab === "info"} onClick={() => setTab("info")}>
+                  Notes & walkthrough
+                </button>
               </div>
-            )}
 
             {tab === "solve" ? (
-              <div style={{ marginTop: 12, display: "grid", gap: 10 }}>
-                <div className="cp-row">
-                  <div style={{ display: "flex", gap: 8, flexWrap: "wrap", alignItems: "center" }}>
-                    <button className="cp-btn" onClick={runAllTests} disabled={running}>
-                      {running ? "Running..." : "Run Tests"}
+              <div className="cp-solve-panel" role="tabpanel">
+                <div className="cp-editor-toolbar">
+                  <div>
+                    <span className="cp-editor-toolbar__dot" />
+                    <strong>solution.js</strong>
+                    <span>JavaScript</span>
+                  </div>
+                  <div>
+                    <span className="cp-autosave">Changes saved locally</span>
+                    <button className="cp-btn secondary" type="button" onClick={() => setCode(activeStarterCode)}>
+                      <FaUndo aria-hidden="true" /> Reset
                     </button>
-                    <button className="cp-btn secondary" onClick={() => setCode(activeStarterCode)}>
-                      Reset Code
+                    <button className="cp-btn" type="button" onClick={runAllTests} disabled={running}>
+                      <FaPlay aria-hidden="true" /> {running ? "Running…" : "Run tests"}
                     </button>
                   </div>
-                  <span className="cp-muted">Saved automatically to localStorage</span>
                 </div>
 
                 <div className="cp-editor">
@@ -1644,95 +1833,119 @@ export default function CodingProblems() {
                     textareaId="coding-editor"
                     className="prism-code"
                     style={{
-                      minHeight: 320,
+                      minHeight: 430,
                       fontFamily:
                         'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
-                      fontSize: 13,
-                      background: "#ffffff",
-                      color: "#0f172a",
+                      fontSize: 14,
+                      background: "#0b1220",
+                      color: "#e2e8f0",
                     }}
                   />
                 </div>
 
                 {(runError || runOutput.length > 0) && (
-                  <div className="cp-output">
-                    {runError && <div style={{ color: "#fecaca" }}>Error: {runError}</div>}
+                  <div className={`cp-output ${allTestsPassed ? "is-success" : "is-failure"}`} aria-live="polite">
+                    <div className="cp-output__header">
+                      <strong>{runError ? "Could not run tests" : allTestsPassed ? "All tests passed" : `${passedTests} of ${runOutput.length} tests passed`}</strong>
+                      {!runError && <span>{passedTests}/{runOutput.length}</span>}
+                    </div>
+                    {runError && <div className="cp-output__error">{runError}</div>}
                     {runOutput.map((r, idx) => (
-                      <div key={idx} style={{ marginTop: idx ? 10 : 0 }}>
-                        <div style={{ fontWeight: 900 }}>
-                          {r.ok ? "✅" : "❌"} {r.name}
-                        </div>
-                        {r.error && <div style={{ color: "#fecaca" }}>{r.error}</div>}
-                        {"got" in r && (
-                          <div style={{ opacity: 0.95 }}>
-                            got: {stableStringify(r.got)} | expected: {stableStringify(r.want)}
+                      <div className="cp-test-result" key={idx}>
+                        <span className={`cp-test-result__icon ${r.ok ? "is-pass" : "is-fail"}`}>{r.ok ? <FaCheck /> : <FaTimes />}</span>
+                        <div>
+                          <strong>{r.name}</strong>
+                          {r.error && <div className="cp-output__error">{r.error}</div>}
+                          {"got" in r && (
+                            <div className="cp-test-result__values">
+                              <span>Got <code>{stableStringify(r.got)}</code></span>
+                              <span>Expected <code>{stableStringify(r.want)}</code></span>
+                            </div>
+                          )}
                           </div>
-                        )}
                       </div>
                     ))}
                   </div>
                 )}
+
+                {active.prompt && (
+                  <details className="cp-practice-tools">
+                    <summary>Practice understanding the prompt</summary>
+                    <div>
+                      <TextOrderGame text={active.prompt} gameKey={`${active.id}:prompt:order`} />
+                      <TextBlankGame text={active.prompt} gameKey={`${active.id}:prompt:blank`} />
+                    </div>
+                  </details>
+                )}
               </div>
             ) : (
-              <div style={{ marginTop: 12, display: "grid", gap: 12 }}>
-                <div className="cp-card" style={{ padding: 0, boxShadow: "none", border: "none", background: "transparent" }}>
-                  <div className="cp-row">
-                    <h4 style={{ margin: 0 }}>Constraint Verification (ask first)</h4>
-                    <ActionButtons limitButtons promptText={combinedConstraints} />
+              <div className="cp-notes-panel" role="tabpanel">
+                <div className="cp-notes-overview">
+                  <div>
+                    <span className="cp-eyebrow"><FaBookOpen aria-hidden="true" /> Study guide</span>
+                    <h3>Understand the solution, step by step</h3>
+                    <p>Start with the questions, follow the reasoning, then verify it against the examples.</p>
                   </div>
-                  <div className="cp-kv" style={{ marginTop: 8 }}>
-                    {active.constraintQuestions.map((q) => (
-                      <div key={q} className="cp-q">
-                        {q}
-                      </div>
-                    ))}
+                  <div className="cp-notes-stats" aria-label="Study guide contents">
+                    <a href="#cp-constraints"><strong>{active.constraintQuestions.length}</strong><span>Questions</span></a>
+                    <a href="#cp-walkthrough"><strong>{active.walkthrough.length}</strong><span>Steps</span></a>
+                    <a href="#cp-examples"><strong>{active.tests.length}</strong><span>Examples</span></a>
                   </div>
                 </div>
 
-                <div className="cp-card" style={{ padding: 0, boxShadow: "none", border: "none", background: "transparent" }}>
-                  <div className="cp-row">
-                    <h4 style={{ margin: 0 }}>Walkthrough + Complexity</h4>
+                <section className="cp-notes-section" id="cp-constraints">
+                  <div className="cp-notes-section__header">
+                    <span className="cp-section-icon cp-section-icon--question"><FaQuestionCircle aria-hidden="true" /></span>
+                    <div>
+                      <span className="cp-eyebrow">Before coding</span>
+                      <h4>Clarify the constraints</h4>
+                      <p>Ask these questions before choosing an approach.</p>
+                    </div>
+                    <ActionButtons limitButtons promptText={combinedConstraints} />
+                  </div>
+                  <ol className="cp-constraint-list">
+                    {active.constraintQuestions.map((question, index) => (
+                      <li key={question}>
+                        <span>{index + 1}</span>
+                        <p>{question}</p>
+                      </li>
+                    ))}
+                  </ol>
+                </section>
+
+                <section className="cp-notes-section" id="cp-walkthrough">
+                  <div className="cp-notes-section__header">
+                    <span className="cp-section-icon cp-section-icon--idea"><FaLightbulb aria-hidden="true" /></span>
+                    <div>
+                      <span className="cp-eyebrow">Solution path</span>
+                      <h4>Walkthrough and complexity</h4>
+                      <p>Open each step when you are ready to reveal it.</p>
+                    </div>
+                    <button className="cp-text-btn" type="button" onClick={toggleAllWalkthroughSteps}>
+                      {allWalkthroughStepsExpanded ? "Collapse all" : "Expand all"}
+                    </button>
                     <ActionButtons limitButtons promptText={combinedWalkthrough} />
                   </div>
-                  <div style={{ display: "grid", gap: 10, marginTop: 8 }}>
-                    {active.walkthrough.map((w) => {
+                  <div className="cp-walkthrough-list">
+                    {active.walkthrough.map((w, stepIndex) => {
                       const codeSnippets = getWalkthroughCodeSnippets(w);
                       const activeSnippetForPrompt =
                         codeSnippets.find((snippet) => snippet.language === selectedNotesLanguage) || codeSnippets[0] || null;
                       const walkthroughText = w.body || activeSnippetForPrompt?.body || "";
                       return (
-                      <div key={w.title} className="cp-q" style={{ background: "#f8fafc" }}>
-                        <div className="cp-row" style={{ alignItems: "flex-start", gap: 8 }}>
-                          <div style={{ fontWeight: 900, marginBottom: 6, marginTop: 2 }}>{w.title}</div>
-                          {codeSnippets.length > 0 && <ActionButtons promptText={walkthroughText} />}
-                          {codeSnippets.length > 0 && (
-                            <>
-                            <div style={{ display: "flex", gap: 6, flexWrap: "wrap", alignItems: "center", marginRight: "auto", margin: "10px 0" }}>
-                            <button onClick={
-                              () => {
-                                //go to the previous code problem in the dropdown
-                                const currentIndex = PROBLEMS.findIndex((p) => p.id === active.id);
-                                if (currentIndex > 0) {
-                                  const prevProblem = PROBLEMS[currentIndex - 1];
-                                  setActiveId(prevProblem.id);
-                                }
-                              }
-                            }>Previous Coding Problem</button>
-                            <span>{PROBLEMS.findIndex((p) => p.id === active.id) + 1} of {PROBLEMS.length}</span>
-                            <button onClick={
-                              () => {
-                                //go to the next code problem in the dropdown
-                                const currentIndex = PROBLEMS.findIndex((p) => p.id === active.id);
-                                if (currentIndex < PROBLEMS.length - 1) {
-                                  const nextProblem = PROBLEMS[currentIndex + 1];
-                                  setActiveId(nextProblem.id);
-                                }
-                              }
-                            }>Next Coding Problem</button>
-                            </div>
-                            </>
-                          )}
-                        </div>
+                      <article key={w.title} className={`cp-walkthrough-step ${expandedWalkthroughSteps.has(stepIndex) ? "is-open" : ""}`}>
+                        <button className="cp-walkthrough-step__summary" type="button" onClick={() => toggleWalkthroughStep(stepIndex)} aria-expanded={expandedWalkthroughSteps.has(stepIndex)}>
+                          <span className="cp-step-number">{String(stepIndex + 1).padStart(2, "0")}</span>
+                          <span className="cp-step-title">{w.title}</span>
+                          <span className={`cp-step-type ${codeSnippets.length > 0 ? "is-code" : ""}`}>{codeSnippets.length > 0 ? "Code" : "Concept"}</span>
+                          <FaChevronDown className="cp-step-chevron" aria-hidden="true" />
+                        </button>
+                        {expandedWalkthroughSteps.has(stepIndex) && (
+                        <div className="cp-walkthrough-step__body">
+                          <div className="cp-walkthrough-step__tools">
+                            <span>{codeSnippets.length > 0 ? "Review the implementation" : "Key reasoning"}</span>
+                            <ActionButtons promptText={walkthroughText} />
+                          </div>
                         {codeSnippets.length > 0 ? (
                           <>
                             {(() => {
@@ -1743,13 +1956,16 @@ export default function CodingProblems() {
                               if (!activeSnippet) return null;
 
                               return (
-                                <div style={{ display: "grid", gap: 8 }}>
+                                <div className="cp-code-study">
                                   {codeSnippets.length > 1 && (
-                                    <div className="cp-tabs">
+                                    <div className="cp-language-tabs" role="tablist" aria-label="Code language">
                                       {codeSnippets.map((snippet) => (
                                         <button
                                           key={`${walkthroughKey}:tab:${snippet.language}`}
-                                          className={`cp-tab ${selectedNotesLanguage === snippet.language ? "active" : ""}`}
+                                          className={selectedNotesLanguage === snippet.language ? "active" : ""}
+                                          type="button"
+                                          role="tab"
+                                          aria-selected={selectedNotesLanguage === snippet.language}
                                           onClick={() => setSelectedNotesLanguage(snippet.language)}
                                         >
                                           {snippet.title}
@@ -1766,34 +1982,63 @@ export default function CodingProblems() {
                                       }}
                                     />
                                   </pre>
-                                  <CodeScramble code={activeSnippet.body} scrambleKey={`${walkthroughKey}:${activeSnippet.language}`} />
-                                  <CodeLineGuess code={activeSnippet.body} gameKey={`${walkthroughKey}:${activeSnippet.language}:guess`} />
-                                  <CodeWordFill code={activeSnippet.body} gameKey={`${walkthroughKey}:${activeSnippet.language}:fill`} />
+                                  <details className="cp-study-lab">
+                                    <summary>Practice this solution</summary>
+                                    <div>
+                                      <CodeScramble code={activeSnippet.body} scrambleKey={`${walkthroughKey}:${activeSnippet.language}`} />
+                                      <CodeLineGuess code={activeSnippet.body} gameKey={`${walkthroughKey}:${activeSnippet.language}:guess`} />
+                                      <CodeWordFill code={activeSnippet.body} gameKey={`${walkthroughKey}:${activeSnippet.language}:fill`} />
+                                    </div>
+                                  </details>
                                 </div>
                               );
                             })()}
                           </>
                         ) : (
                           <>
-                            <div style={{ whiteSpace: "pre-wrap" }}>{w.body}</div>
-                            <TextOrderGame text={w.body} gameKey={`${active.id}:${w.title}:textorder`} />
-                            <TextBlankGame text={w.body} gameKey={`${active.id}:${w.title}:textblank`} />
+                            <div className="cp-walkthrough-copy">{w.body}</div>
+                            <details className="cp-study-lab">
+                              <summary>Practice recalling this step</summary>
+                              <div>
+                                <TextOrderGame text={w.body} gameKey={`${active.id}:${w.title}:textorder`} />
+                                <TextBlankGame text={w.body} gameKey={`${active.id}:${w.title}:textblank`} />
+                              </div>
+                            </details>
                           </>
                         )}
-                      </div>
+                        </div>
+                        )}
+                      </article>
                     )})}
                   </div>
-                </div>
+                </section>
 
-                <div className="cp-card" style={{ padding: 0, boxShadow: "none", border: "none", background: "transparent" }}>
-                  <div className="cp-row">
-                    <h4 style={{ margin: 0 }}>Test Cases</h4>
+                <section className="cp-notes-section" id="cp-examples">
+                  <div className="cp-notes-section__header">
+                    <span className="cp-section-icon cp-section-icon--test"><FaFlask aria-hidden="true" /></span>
+                    <div>
+                      <span className="cp-eyebrow">Verify the logic</span>
+                      <h4>Examples and edge cases</h4>
+                      <p>Trace the solution against each input before submitting.</p>
+                    </div>
                     <ActionButtons limitButtons promptText={stableStringify(active.tests)} />
                   </div>
-                  <div style={{ display: "grid", gap: 8, marginTop: 8 }}>
-                    {active.tests.map((t) => (
-                      <div key={t.name} className="cp-q" style={{ background: "#fff" }}>
-                        <div style={{ fontWeight: 900 }}>{t.name}</div>
+                  <div className="cp-example-grid">
+                    {active.tests.map((t, testIndex) => (
+                      <article key={t.name} className="cp-example-card">
+                        <div className="cp-example-card__header">
+                          <span>{String(testIndex + 1).padStart(2, "0")}</span>
+                          <strong>{t.name}</strong>
+                        </div>
+                        <div className="cp-example-fields">
+                          {Object.entries(t).filter(([key]) => key !== "name").map(([key, value]) => (
+                            <div className={isExpectedTestField(key) ? "is-expected" : ""} key={key}>
+                              <span>{formatTestFieldLabel(key)}</span>
+                              <code>{stableStringify(value)}</code>
+                            </div>
+                          ))}
+                        </div>
+                        <div className="cp-example-card__legacy" aria-hidden="true">
                         {active.runner === "twoSum" ? (
                           <div className="cp-muted">
                             nums: {stableStringify(t.nums)} | target: {t.target}
@@ -1940,13 +2185,15 @@ export default function CodingProblems() {
                             height: {stableStringify(t.height)} | expected: {t.expect}
                           </div>
                         )}
-                      </div>
+                        </div>
+                      </article>
                     ))}
                   </div>
-                </div>
+                </section>
               </div>
             )}
-          </div>
+            </section>
+          </main>
         </div>
       </div>
     </div>
