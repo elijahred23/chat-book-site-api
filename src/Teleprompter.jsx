@@ -316,9 +316,9 @@ export default function Teleprompter() {
                 <strong>{speed} pixels / second</strong>
               </div>
               <div className="tp-range-row">
-                <button type="button" onClick={() => changeSpeed(speed - 1)} aria-label="Decrease speed by one pixel per second">−</button>
+                <button type="button" onClick={() => changeSpeed(speed - 5)} aria-label="Decrease speed by one pixel per second">−</button>
                 <input type="range" min="1" max="300" step="1" value={speed} onChange={(event) => changeSpeed(event.target.value)} aria-label="Scroll speed in pixels per second" />
-                <button type="button" onClick={() => changeSpeed(speed + 1)} aria-label="Increase speed by one pixel per second">+</button>
+                <button type="button" onClick={() => changeSpeed(speed + 5)} aria-label="Increase speed by one pixel per second">+</button>
                 <div className="tp-number-input">
                   <input type="number" min="1" max="300" value={speed} onChange={(event) => changeSpeed(event.target.value)} aria-label="Exact scroll speed" />
                   <span>px/s</span>
