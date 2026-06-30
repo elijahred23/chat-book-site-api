@@ -382,12 +382,12 @@ export default function Teleprompter() {
           </button>
           <button type="button" className="tp-runtime__icon" onClick={restart} disabled={!script.trim()} aria-label="Restart script"><FaRedoAlt /></button>
           <div className="tp-speed-control" aria-label="Live scroll speed">
-            <button type="button" onClick={() => changeSpeed(speed - 1)} aria-label="Decrease pixels per second">−</button>
+            <button type="button" onClick={() => changeSpeed(speed - 5)} aria-label="Decrease pixels per second">−</button>
             <label>
               <input type="number" inputMode="numeric" min="1" max="300" value={speed} onChange={(event) => changeSpeed(event.target.value)} />
               <span>px/s</span>
             </label>
-            <button type="button" onClick={() => changeSpeed(speed + 1)} aria-label="Increase pixels per second">+</button>
+            <button type="button" onClick={() => changeSpeed(speed + 5)} aria-label="Increase pixels per second">+</button>
           </div>
           <button type="button" className="tp-runtime__icon" onClick={() => setShowControls((shown) => !shown)} aria-label={showControls ? "Hide settings" : "Show settings"}><FaSlidersH /></button>
           <button type="button" className="tp-runtime__icon tp-runtime__fullscreen" onClick={toggleFullscreen} aria-label={isFullscreen ? "Exit full screen" : "Enter full screen"}>
