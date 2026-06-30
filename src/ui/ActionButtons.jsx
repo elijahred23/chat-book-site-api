@@ -291,12 +291,11 @@ export default function ActionButtons({ promptText, limitButtons = false }) {
           style={{
             background: btn.color,
             color: btn.iconColor || "#ffffff",
-            boxShadow: "0 14px 30px rgba(15,23,42,0.25)"
           }}
         >
           {(() => {
             const Icon = btn.icon;
-            return <Icon size={18} color={btn.iconColor || "#fff"} />;
+            return <Icon size={15} color={btn.iconColor || "#fff"} />;
           })()}
         </button>
       ))}

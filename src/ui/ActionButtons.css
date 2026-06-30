@@ -21,32 +21,32 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 6px;
+  gap: 4px;
   flex-wrap: wrap;
   margin: 0px 0;
 }
 
 .icon-btn {
   border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 10px;
+  border-radius: 8px;
   color: white;
-  font-size: 14px;
-  padding: 8px;
-  width: 44px;
-  height: 44px;
+  font-size: 13px;
+  padding: 6px;
+  width: 34px;
+  height: 34px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.25s ease, filter 0.3s ease;
-  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.25);
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.18);
   backdrop-filter: blur(6px);
   position: relative;
 }
 
 .icon-btn:hover {
-  transform: translateY(-1px) scale(1.03);
-  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.28);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(15, 23, 42, 0.22);
   filter: saturate(1.08);
 }
 
@@ -82,8 +82,8 @@
 @media (max-width: 600px) {
   .icon-btn {
     font-size: 13px;
-    width: 44px;
-    height: 44px;
-    padding: 8px;
+    width: 36px;
+    height: 36px;
+    padding: 6px;
   }
 }
