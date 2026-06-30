@@ -1,824 +1,405 @@
-import React, { useState, useRef, useEffect } from "react";
-import { FaForward, FaFastForward, FaUndoAlt, FaBackward, FaPause, FaPlay, FaStepForward, FaStepBackward } from "react-icons/fa";
+import { useCallback, useEffect, useRef, useState } from "react";
+import {
+  FaCompress,
+  FaExpand,
+  FaPause,
+  FaPlay,
+  FaRedoAlt,
+  FaSlidersH,
+  FaTrash,
+  FaUpload,
+} from "react-icons/fa";
 import { useAppState } from "./context/AppContext";
+import "./Teleprompter.css";
 
-const TeleprompterAdvanced = () => {
-  // Core state
-  const [script, setScript] = useState("");
-  const [isPaused, setIsPaused] = useState(false);
-  const [fontSize, setFontSize] = useState(() => {
-    const stored = localStorage.getItem("tp_font_size");
-    const parsed = stored ? Number(stored) : 3;
-    return Number.isFinite(parsed) ? parsed : 3;
-  }); // em
-  const [speed, setSpeed] = useState(20); // pixels per second
-  const [showControls, setShowControls] = useState(true);
+const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
+
+const STORAGE_KEY = "teleprompter_settings_v2";
+const DEFAULT_SETTINGS = {
+  script: "",
+  speed: 30,
+  fontSize: 3,
+  lineHeight: 1.45,
+  fontFamily: "Inter, system-ui, sans-serif",
+  textColor: "#f8fafc",
+  bgColor: "#070b14",
+  direction: "up",
+  mirror: false,
+};
+
+const getStoredNumber = (key, fallback) => {
+  const stored = localStorage.getItem(key);
+  if (stored === null) return fallback;
+  const parsed = Number(stored);
+  return Number.isFinite(parsed) ? parsed : fallback;
+};
+
+const loadSettings = () => {
+  try {
+    const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "null");
+    const settings = saved && typeof saved === "object" ? saved : {};
+    return {
+      ...DEFAULT_SETTINGS,
+      ...settings,
+      script: typeof settings.script === "string" ? settings.script : "",
+      speed: clamp(Number(settings.speed ?? getStoredNumber("tp_speed", DEFAULT_SETTINGS.speed)), 1, 300),
+      fontSize: clamp(Number(settings.fontSize ?? getStoredNumber("tp_font_size", DEFAULT_SETTINGS.fontSize)), 0.8, 6),
+      lineHeight: clamp(Number(settings.lineHeight ?? DEFAULT_SETTINGS.lineHeight), 1.1, 2),
+      direction: settings.direction === "down" ? "down" : "up",
+      mirror: settings.mirror === true,
+    };
+  } catch {
+    return DEFAULT_SETTINGS;
+  }
+};
+
+const formatTime = (seconds) => {
+  if (!Number.isFinite(seconds) || seconds <= 0) return "0:00";
+  const rounded = Math.ceil(seconds);
+  return `${Math.floor(rounded / 60)}:${String(rounded % 60).padStart(2, "0")}`;
+};
+
+export default function Teleprompter() {
   const { teleprompterText } = useAppState();
+  const [initialSettings] = useState(loadSettings);
+  const [script, setScript] = useState(initialSettings.script);
+  const [speed, setSpeed] = useState(initialSettings.speed);
+  const [fontSize, setFontSize] = useState(initialSettings.fontSize);
+  const [lineHeight, setLineHeight] = useState(initialSettings.lineHeight);
+  const [fontFamily, setFontFamily] = useState(initialSettings.fontFamily);
+  const [textColor, setTextColor] = useState(initialSettings.textColor);
+  const [bgColor, setBgColor] = useState(initialSettings.bgColor);
+  const [direction, setDirection] = useState(initialSettings.direction);
+  const [mirror, setMirror] = useState(initialSettings.mirror);
+  const [showControls, setShowControls] = useState(true);
+  const [isRunning, setIsRunning] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const [remaining, setRemaining] = useState(0);
+  const [isFullscreen, setIsFullscreen] = useState(false);
+
+  const appRef = useRef(null);
+  const contentRef = useRef(null);
+  const fileInputRef = useRef(null);
+  const animationRef = useRef(null);
+  const heightRef = useRef(0);
+  const offsetRef = useRef(0);
+  const lastFrameRef = useRef(null);
+  const lastUiUpdateRef = useRef(0);
+  const runningRef = useRef(false);
+  const speedRef = useRef(speed);
+  const directionRef = useRef(direction);
+  const mirrorRef = useRef(mirror);
+
+  const wordCount = script.trim() ? script.trim().split(/\s+/).length : 0;
+  const cycleDuration = heightRef.current > 0 ? heightRef.current / speed : 0;
+
+  const paintPosition = useCallback(() => {
+    if (!contentRef.current) return;
+    contentRef.current.style.transform = `${mirrorRef.current ? "scaleX(-1) " : ""}translate3d(0, ${-offsetRef.current}px, 0)`;
+  }, []);
+
+  const updateReadout = useCallback(() => {
+    const height = heightRef.current;
+    if (!height) return;
+    const rawFraction = clamp(offsetRef.current / height, 0, 1);
+    const fraction = directionRef.current === "up" ? rawFraction : 1 - rawFraction;
+    setProgress(fraction * 100);
+    const distance = directionRef.current === "up"
+      ? height - offsetRef.current
+      : offsetRef.current;
+    setRemaining(distance / speedRef.current);
+  }, []);
+
+  const measureContent = useCallback(() => {
+    const element = contentRef.current;
+    if (!element || !script.trim()) {
+      heightRef.current = 0;
+      setProgress(0);
+      setRemaining(0);
+      return;
+    }
+    heightRef.current = element.scrollHeight / 2;
+    offsetRef.current = clamp(offsetRef.current, 0, heightRef.current);
+    paintPosition();
+    updateReadout();
+  }, [paintPosition, script, updateReadout]);
 
   useEffect(() => {
-    if (teleprompterText) {
-      setScript(teleprompterText);
-    }
+    if (teleprompterText) setScript(teleprompterText);
   }, [teleprompterText]);
 
   useEffect(() => {
-    localStorage.setItem("tp_font_size", JSON.stringify(fontSize));
-  }, [fontSize]);
+    speedRef.current = speed;
+    updateReadout();
+  }, [speed, updateReadout]);
 
-  // Advanced state
-  const [textColor, setTextColor] = useState("#ffffff");
-  const [bgColor, setBgColor] = useState("#111111");
-  const [fontFamily, setFontFamily] = useState("monospace");
-  const [mirror, setMirror] = useState(false);
-  const [scrollDirection, setScrollDirection] = useState("up");
-  const wordCount = script.trim() ? script.trim().split(/\s+/).length : 0;
-  const [lineHeight, setLineHeight] = useState(1.5);
-  const [durationSec, setDurationSec] = useState(0);
-  const [remainingSec, setRemainingSec] = useState(0);
-  const [progress, setProgress] = useState(0);
-  const [isRunning, setIsRunning] = useState(false);
-  const speedHoldRef = useRef(1);
-  const dirHoldRef = useRef(null);
-  const heightRef = useRef(0);
-  const offsetRef = useRef(0);
-  const lastTsRef = useRef(null);
-  const rafRef = useRef(null);
-  const runningRef = useRef(false);
-  const baseDirRef = useRef(1);
-
-  // Refs for DOM elements
-  const contentRef = useRef(null);
-  const teleprompterRef = useRef(null);
-  const controlsRef = useRef(null);
-
-  // Adjust the animation duration whenever script, speed or font size
-  // changes. Duplicate the script to create a seamless loop.
   useEffect(() => {
-    const el = contentRef.current;
-    if (!el) return;
-    if (!script.trim()) {
-      el.textContent = "";
+    const saveTimer = window.setTimeout(() => {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({
+        script,
+        speed,
+        fontSize,
+        lineHeight,
+        fontFamily,
+        textColor,
+        bgColor,
+        direction,
+        mirror,
+      }));
+    }, 150);
+    return () => window.clearTimeout(saveTimer);
+  }, [script, speed, fontSize, lineHeight, fontFamily, textColor, bgColor, direction, mirror]);
+
+  useEffect(() => {
+    directionRef.current = direction;
+    updateReadout();
+  }, [direction, updateReadout]);
+
+  useEffect(() => {
+    mirrorRef.current = mirror;
+    paintPosition();
+  }, [mirror, paintPosition]);
+
+  useEffect(() => {
+    const frame = requestAnimationFrame(measureContent);
+    return () => cancelAnimationFrame(frame);
+  }, [measureContent, fontSize, lineHeight, fontFamily]);
+
+  useEffect(() => {
+    const element = contentRef.current;
+    if (!element || typeof ResizeObserver === "undefined") return undefined;
+    const observer = new ResizeObserver(measureContent);
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, [measureContent]);
+
+  useEffect(() => {
+    const animate = (timestamp) => {
+      if (runningRef.current && heightRef.current > 0) {
+        if (lastFrameRef.current === null) lastFrameRef.current = timestamp;
+        const elapsed = Math.min((timestamp - lastFrameRef.current) / 1000, 0.1);
+        const signedDistance = speedRef.current * elapsed * (directionRef.current === "up" ? 1 : -1);
+        const height = heightRef.current;
+        let next = offsetRef.current + signedDistance;
+        next = ((next % height) + height) % height;
+        offsetRef.current = next;
+        paintPosition();
+
+        if (timestamp - lastUiUpdateRef.current > 100) {
+          lastUiUpdateRef.current = timestamp;
+          updateReadout();
+        }
+      }
+      lastFrameRef.current = timestamp;
+      animationRef.current = requestAnimationFrame(animate);
+    };
+    animationRef.current = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(animationRef.current);
+  }, [paintPosition, updateReadout]);
+
+  useEffect(() => {
+    const handleFullscreen = () => setIsFullscreen(document.fullscreenElement === appRef.current);
+    document.addEventListener("fullscreenchange", handleFullscreen);
+    return () => document.removeEventListener("fullscreenchange", handleFullscreen);
+  }, []);
+
+  const changeSpeed = (nextSpeed) => setSpeed(clamp(Number(nextSpeed) || 1, 1, 300));
+  const changeFontSize = (nextSize) => setFontSize(Number(clamp(Number(nextSize), 0.8, 6).toFixed(1)));
+
+  const start = () => {
+    if (!script.trim()) return;
+    measureContent();
+    offsetRef.current = direction === "up" ? 0 : Math.max(0, heightRef.current - 0.01);
+    runningRef.current = true;
+    lastFrameRef.current = null;
+    setIsRunning(true);
+    setIsPaused(false);
+    setShowControls(false);
+    paintPosition();
+    updateReadout();
+  };
+
+  const togglePause = () => {
+    if (!isRunning && !isPaused) {
+      start();
       return;
     }
-    // Duplicate the text for a continuous scrolling loop
-    const text = script.trim();
-    el.textContent = `${text}\n\n${text}`;
-    const scriptHeight = el.scrollHeight / 2;
-    heightRef.current = scriptHeight;
-    offsetRef.current = 0;
-    lastTsRef.current = null;
-    setDurationSec(scriptHeight / speed);
-    setRemainingSec(scriptHeight / speed);
-    setProgress(0);
-  }, [script, speed, fontSize]);
-
-  // Adjust the teleprompter height when controls are shown/hidden or
-  // when the window resizes. This replicates the behaviour of the
-  // original HTML version where the reading area automatically shrinks
-  // to accommodate the control panel.
-  useEffect(() => {
-    const adjustTeleprompter = () => {
-      const teleEl = teleprompterRef.current;
-      const ctrlEl = controlsRef.current;
-      if (!teleEl || !ctrlEl) return;
-      if (showControls) {
-        const ctrlHeight = ctrlEl.offsetHeight;
-        teleEl.style.top = `${ctrlHeight}px`;
-        teleEl.style.height = `calc(100vh - ${ctrlHeight}px)`;
-      } else {
-        teleEl.style.top = "0";
-        teleEl.style.height = "100vh";
-      }
-    };
-    adjustTeleprompter();
-    window.addEventListener("resize", adjustTeleprompter);
-    return () => {
-      window.removeEventListener("resize", adjustTeleprompter);
-    };
-  }, [showControls]);
-
-  // Start the teleprompter: ensure duplicated text and start the animation
-  const startTeleprompter = () => {
-    const el = contentRef.current;
-    if (!el) return;
-    const text = script.trim() || "Paste your code above and press Start.";
-    el.textContent = `${text}\n\n${text}`;
-    const scriptHeight = el.scrollHeight / 2;
-    heightRef.current = scriptHeight;
-    offsetRef.current = 0;
-    lastTsRef.current = null;
-    setIsPaused(false);
-    setDurationSec(scriptHeight / speed);
-    setRemainingSec(scriptHeight / speed);
-    setProgress(0);
-    setIsRunning(true);
-    runningRef.current = true;
-    setShowControls(false);
-    if (rafRef.current) cancelAnimationFrame(rafRef.current);
-    const step = (ts) => {
-      if (!runningRef.current) {
-        rafRef.current = requestAnimationFrame(step);
-        return;
-      }
-      if (lastTsRef.current === null) lastTsRef.current = ts;
-      const dt = (ts - lastTsRef.current) / 1000;
-      lastTsRef.current = ts;
-      const baseDir = baseDirRef.current;
-      const dir = dirHoldRef.current ?? baseDir;
-      const mult = speedHoldRef.current || 1;
-      const distance = speed * mult * dt;
-      let nextOffset = offsetRef.current + dir * distance;
-      const h = heightRef.current || 1;
-      // Wrap seamlessly
-      if (nextOffset > h) nextOffset = nextOffset % h;
-      if (nextOffset < 0) nextOffset = h + (nextOffset % h);
-      offsetRef.current = nextOffset;
-      const translateY = -nextOffset;
-      el.style.transform = `${mirror ? "scaleX(-1) " : ""}translateY(${translateY}px)`;
-      // Progress and remaining time
-      const frac = h ? nextOffset / h : 0;
-      setProgress(frac * 100);
-      const currentSpeed = speed * mult;
-      if (currentSpeed > 0) {
-        const remaining = dir > 0 ? h - nextOffset : nextOffset;
-        setRemainingSec(remaining / currentSpeed);
-      }
-      rafRef.current = requestAnimationFrame(step);
-    };
-    rafRef.current = requestAnimationFrame(step);
+    const nextPaused = !isPaused;
+    runningRef.current = !nextPaused;
+    lastFrameRef.current = null;
+    setIsPaused(nextPaused);
+    setIsRunning(!nextPaused);
   };
 
-  // Pause or resume scrolling
-  const togglePause = () => {
-    const el = contentRef.current;
-    if (!el || !el.textContent) return;
-    setIsPaused((prev) => {
-      const newPaused = !prev;
-      runningRef.current = !newPaused;
-      if (!newPaused) {
-        lastTsRef.current = null; // reset delta so we don’t jump
-      }
-      setIsRunning(!newPaused);
-      return newPaused;
-    });
+  const restart = () => {
+    offsetRef.current = direction === "up" ? 0 : Math.max(0, heightRef.current - 0.01);
+    lastFrameRef.current = null;
+    paintPosition();
+    updateReadout();
   };
 
-  // Read a text file uploaded via the hidden input
-  const handleFileUpload = (e) => {
-    const file = e.target.files && e.target.files[0];
-    if (!file) return;
-    const reader = new FileReader();
-    reader.onload = (ev) => setScript(ev.target.result || "");
-    reader.onerror = (err) => alert("Failed to read file: " + err);
-    reader.readAsText(file);
-  };
-
-  // Paste text from the clipboard
   const pasteFromClipboard = async () => {
     try {
-      const text = await navigator.clipboard.readText();
-      setScript(text);
-    } catch (err) {
-      alert("Failed to read from clipboard: " + err);
+      setScript(await navigator.clipboard.readText());
+    } catch {
+      fileInputRef.current?.focus();
     }
   };
 
-  // Clear the script and content
-  const clearScript = () => {
-    setScript("");
-    if (contentRef.current) {
-      contentRef.current.textContent = "";
-    }
+  const handleFileUpload = (event) => {
+    const file = event.target.files?.[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = () => setScript(String(reader.result || ""));
+    reader.readAsText(file);
+    event.target.value = "";
   };
 
-  // Adjust font size
-  const increaseFont = () => setFontSize((f) => f + 0.1);
-  const decreaseFont = () => setFontSize((f) => (f > 0.6 ? f - 0.1 : f));
-
-  // Fullscreen toggle: request or exit fullscreen on the document
-  const toggleFullscreen = () => {
-    if (!document.fullscreenElement) {
-      document.documentElement.requestFullscreen().catch(() => {
-        alert("Fullscreen mode is not supported by this browser.");
-      });
+  const toggleFullscreen = async () => {
+    if (document.fullscreenElement) {
+      await document.exitFullscreen();
     } else {
-      document.exitFullscreen();
+      await appRef.current?.requestFullscreen();
     }
   };
 
-  const handleSpeedHoldStart = (mult = 4) => {
-    speedHoldRef.current = mult;
-  };
-  const handleSpeedHoldEnd = () => {
-    speedHoldRef.current = 1;
-  };
-
-  const handleReverseHoldStart = (mult = 4) => {
-    dirHoldRef.current = -1 * (baseDirRef.current || 1);
-    speedHoldRef.current = mult;
-  };
-  const handleReverseHoldEnd = () => {
-    dirHoldRef.current = null;
-    speedHoldRef.current = 1;
-  };
-
-  useEffect(() => {
-    baseDirRef.current = scrollDirection === "up" ? 1 : -1;
-  }, [scrollDirection]);
-
-  const nudgeOffset = (multiplier = 1) => {
-    const el = contentRef.current;
-    if (!el || !heightRef.current) return;
-    const h = heightRef.current;
-    let nextOffset = offsetRef.current + multiplier * h * 0.05;
-    if (nextOffset > h) nextOffset = nextOffset % h;
-    if (nextOffset < 0) nextOffset = h + (nextOffset % h);
-    offsetRef.current = nextOffset;
-    const translateY = -nextOffset;
-    el.style.transform = `${mirror ? "scaleX(-1) " : ""}translateY(${translateY}px)`;
-  };
-
-  // Choose the appropriate animation name based on scroll direction
-  const animationName = scrollDirection === "down" ? "scrollDown" : "scrollUp";
-
-  const restartFromTop = () => {
-    const el = contentRef.current;
-    if (!el) return;
-    // Reset animation to start position
-    el.style.animation = "none";
-    void el.offsetHeight;
-    el.style.animation = `${animationName} ${el.style.animationDuration} linear infinite`;
-    el.style.animationPlayState = "running";
-    setIsPaused(false);
-    setIsRunning(true);
-    setRemainingSec(durationSec);
-    setProgress(0);
-  };
-
-  useEffect(() => {
-    if (!isRunning || durationSec <= 0) return;
-    const interval = setInterval(() => {
-      setRemainingSec((prev) => {
-        const next = prev - 0.1;
-        if (next <= 0) {
-          setProgress(100);
-          return durationSec;
-        }
-        setProgress(Math.max(0, Math.min(100, ((durationSec - next) / durationSec) * 100)));
-        return next;
-      });
-    }, 100);
-    return () => clearInterval(interval);
-  }, [isRunning, durationSec]);
+  const duplicatedScript = script.trim() ? `${script.trim()}\n\n${script.trim()}\n\n` : "";
 
   return (
-    <div
-      style={{
-        margin: 0,
-        background: `radial-gradient(circle at 20% 20%, #0f172a 0, #0b1220 35%, ${bgColor} 70%)`,
-        color: textColor,
-        fontFamily,
-        overflow: "hidden",
-        minHeight: "100vh",
-      }}
+    <section
+      ref={appRef}
+      className={`tp-app ${showControls ? "is-editing" : "is-reading"}`}
+      style={{ "--tp-background": bgColor, "--tp-text": textColor, "--tp-font": fontFamily }}
     >
-      <style>{`
-        .tp-shell {
-          max-width: 1200px;
-          margin: 0 auto;
-          padding: 0.75rem;
-          display: flex;
-          flex-direction: column;
-          gap: 0.75rem;
-        }
-        .tp-card {
-          background: rgba(15,23,42,0.8);
-          border: 1px solid #1e293b;
-          border-radius: 14px;
-          padding: 0.75rem;
-          box-shadow: 0 12px 32px rgba(0,0,0,0.35);
-        }
-        .tp-controls {
-          display: grid;
-          gap: 0.6rem;
-        }
-        @media (min-width: 640px) {
-          .tp-controls {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-          }
-        }
-        .tp-btn {
-          padding: 0.6rem 0.85rem;
-          border-radius: 10px;
-          border: 1px solid #1e293b;
-          background: #111827;
-          color: #e2e8f0;
-          cursor: pointer;
-          font-weight: 600;
-        }
-        .tp-btn.primary {
-          background: linear-gradient(135deg, #2563eb, #60a5fa);
-          border: none;
-          color: #fff;
-        }
-        .tp-input {
-          width: 100%;
-          padding: 0.6rem;
-          border-radius: 10px;
-          border: 1px solid #1e293b;
-          background: #0b1628;
-          color: #e2e8f0;
-        }
-        .tp-stat {
-          display: inline-flex;
-          padding: 0.35rem 0.7rem;
-          border-radius: 999px;
-          background: #1e293b;
-          color: #e2e8f0;
-          font-size: 0.9rem;
-          margin-right: 0.35rem;
-        }
-        .tp-no-select {
-          user-select: none;
-          -webkit-user-select: none;
-          -ms-user-select: none;
-        }
-      `}</style>
-      <div className="tp-shell">
-        {/* Control panel */}
-        {showControls && (
-          <div ref={controlsRef} className="tp-card">
-            <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem", marginBottom: "0.5rem" }}>
-              <span className="tp-stat">Words: {wordCount}</span>
-              <span className="tp-stat">Font: {fontSize.toFixed(1)}em</span>
-              <span className="tp-stat">Speed: {speed}px/s</span>
-              <span className="tp-stat">Cycle: {durationSec ? `${Math.round(durationSec)}s` : "–"}</span>
+      {showControls && (
+        <div className="tp-setup">
+          <header className="tp-setup__header">
+            <div>
+              <span className="tp-kicker">Script setup</span>
+              <h3>Ready your script</h3>
             </div>
+            <div className="tp-stats" aria-label="Script statistics">
+              <span>{wordCount} words</span>
+              <span>{speed} px/s</span>
+              <span>{formatTime(cycleDuration)} cycle</span>
+            </div>
+          </header>
+
+          <label className="tp-script-field">
+            <span>Script</span>
             <textarea
               value={script}
-              onChange={(e) => setScript(e.target.value)}
-              placeholder="Paste your script here..."
-            style={{
-              width: "100%",
-              height: 120,
-              fontSize: "1em",
-              padding: 10,
-              border: "1px solid #1e293b",
-              borderRadius: 10,
-              resize: "vertical",
-              fontFamily,
-              background: "#0b1628",
-              color: textColor,
-              boxSizing: "border-box",
-            }}
-          />
-            <div className="tp-controls">
-              <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-                <button className="tp-btn primary" onClick={startTeleprompter}>Start</button>
-                <button className="tp-btn" onClick={restartFromTop}>Restart</button>
-                <button
-                  className="tp-btn"
-                  onClick={() => {
-                    offsetRef.current = 0;
-                    lastTsRef.current = null;
-                    setProgress(0);
-                    setRemainingSec(durationSec);
-                    const el = contentRef.current;
-                    if (el) {
-                      el.style.transform = `${mirror ? "scaleX(-1) " : ""}translateY(0px)`;
-                    }
-                  }}
-                >
-                  Start Over
-                </button>
-                <button className="tp-btn" onClick={pasteFromClipboard}>Paste</button>
-              <button className="tp-btn" onClick={clearScript}>Clear</button>
-              <button className="tp-btn" onClick={togglePause}>{isPaused ? "Resume" : "Pause"}</button>
-              <label className="tp-btn" style={{ cursor: "pointer" }}>
-                Upload .txt
-                <input
-                  type="file"
-                  accept=".txt"
-                  style={{ display: "none" }}
-                  onChange={handleFileUpload}
-                />
-              </label>
+              onChange={(event) => setScript(event.target.value)}
+              placeholder="Paste or type your script here…"
+            />
+          </label>
+
+          <div className="tp-script-actions">
+            <button type="button" className="tp-button tp-button--primary" onClick={start} disabled={!script.trim()}>
+              <FaPlay aria-hidden="true" /> Start prompting
+            </button>
+            <button type="button" className="tp-button" onClick={pasteFromClipboard}>Paste</button>
+            <button type="button" className="tp-button" onClick={() => fileInputRef.current?.click()}>
+              <FaUpload aria-hidden="true" /> Upload
+            </button>
+            <button type="button" className="tp-button tp-button--danger" onClick={() => setScript("")} disabled={!script}>
+              <FaTrash aria-hidden="true" /> Clear
+            </button>
+            <input ref={fileInputRef} className="tp-file-input" type="file" accept=".txt,text/plain" onChange={handleFileUpload} />
+          </div>
+
+          <div className="tp-settings">
+            <div className="tp-setting tp-setting--speed">
+              <div className="tp-setting__label">
+                <span>Scroll speed</span>
+                <strong>{speed} pixels / second</strong>
+              </div>
+              <div className="tp-range-row">
+                <button type="button" onClick={() => changeSpeed(speed - 1)} aria-label="Decrease speed by one pixel per second">−</button>
+                <input type="range" min="1" max="300" step="1" value={speed} onChange={(event) => changeSpeed(event.target.value)} aria-label="Scroll speed in pixels per second" />
+                <button type="button" onClick={() => changeSpeed(speed + 1)} aria-label="Increase speed by one pixel per second">+</button>
+                <div className="tp-number-input">
+                  <input type="number" min="1" max="300" value={speed} onChange={(event) => changeSpeed(event.target.value)} aria-label="Exact scroll speed" />
+                  <span>px/s</span>
+                </div>
+              </div>
             </div>
-            <div>
-              <label style={{ display: "block", marginBottom: 4 }}>Scroll Speed</label>
-              <input
-                type="range"
-                min="10"
-                max="200"
-                value={speed}
-                onChange={(e) => setSpeed(parseInt(e.target.value, 10))}
-                style={{ width: "100%" }}
-              />
-            </div>
-            <div style={{ display: "flex", gap: 8, flexWrap: "wrap", alignItems: "center" }}>
-              <label style={{ flexBasis: "100%" }}>Font Size</label>
-              <button className="tp-btn" onClick={decreaseFont}>A-</button>
-              <button className="tp-btn" onClick={increaseFont}>A+</button>
-              <label style={{ flexBasis: "100%" }}>Font</label>
-              <select
-                value={fontFamily}
-                onChange={(e) => setFontFamily(e.target.value)}
-                className="tp-input"
-              >
-                <option value="monospace">Monospace</option>
-                <option value="sans-serif">Sans‑Serif</option>
-                <option value="serif">Serif</option>
-                <option value="cursive">Cursive</option>
+
+            <label className="tp-setting">
+              <span>Text size <strong>{fontSize.toFixed(1)}×</strong></span>
+              <input type="range" min="0.8" max="6" step="0.1" value={fontSize} onChange={(event) => setFontSize(Number(event.target.value))} />
+            </label>
+            <label className="tp-setting">
+              <span>Line spacing <strong>{lineHeight.toFixed(2)}</strong></span>
+              <input type="range" min="1.1" max="2" step="0.05" value={lineHeight} onChange={(event) => setLineHeight(Number(event.target.value))} />
+            </label>
+            <label className="tp-setting">
+              <span>Typeface</span>
+              <select value={fontFamily} onChange={(event) => setFontFamily(event.target.value)}>
+                <option value="Inter, system-ui, sans-serif">Modern sans</option>
+                <option value="Georgia, serif">Serif</option>
+                <option value="ui-monospace, SFMono-Regular, monospace">Monospace</option>
               </select>
-            </div>
-            <div style={{ display: "flex", gap: 10, flexWrap: "wrap", alignItems: "center" }}>
-              <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-                <label>Text Colour</label>
-                <input
-                  type="color"
-                  value={textColor}
-                  onChange={(e) => setTextColor(e.target.value)}
-                  style={{ width: 44, height: 44, border: "none", padding: 0 }}
-                />
-              </div>
-              <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-                <label>Background</label>
-                <input
-                  type="color"
-                  value={bgColor}
-                  onChange={(e) => setBgColor(e.target.value)}
-                  style={{ width: 44, height: 44, border: "none", padding: 0 }}
-                />
-              </div>
-              <div style={{ flex: "1 1 140px" }}>
-                <label>Direction</label>
-                <select
-                  value={scrollDirection}
-                  onChange={(e) => setScrollDirection(e.target.value)}
-                  className="tp-input"
-                  style={{ marginTop: 6 }}
-                >
-                  <option value="up">Up</option>
-                  <option value="down">Down</option>
-                </select>
-              </div>
-              <div style={{ flex: "1 1 140px" }}>
-                <label>Line Height</label>
-                <input
-                  type="range"
-                  min="1.1"
-                  max="2"
-                  step="0.05"
-                  value={lineHeight}
-                  onChange={(e) => setLineHeight(parseFloat(e.target.value))}
-                  style={{ width: "100%", marginTop: 6 }}
-                />
-              </div>
-              <label style={{ display: "flex", alignItems: "center", gap: 6 }}>
-                <input
-                  type="checkbox"
-                  checked={mirror}
-                  onChange={(e) => setMirror(e.target.checked)}
-                />
-                Mirror Text
-              </label>
+            </label>
+            <label className="tp-setting">
+              <span>Direction</span>
+              <select value={direction} onChange={(event) => setDirection(event.target.value)}>
+                <option value="up">Scroll up</option>
+                <option value="down">Scroll down</option>
+              </select>
+            </label>
+            <div className="tp-color-settings">
+              <label><input type="color" value={textColor} onChange={(event) => setTextColor(event.target.value)} /><span>Text</span></label>
+              <label><input type="color" value={bgColor} onChange={(event) => setBgColor(event.target.value)} /><span>Backdrop</span></label>
+              <label className="tp-toggle"><input type="checkbox" checked={mirror} onChange={(event) => setMirror(event.target.checked)} /><span>Mirror</span></label>
             </div>
           </div>
         </div>
       )}
 
-      {/* Toggle button for control panel */}
-      <button
-        onClick={() => setShowControls((s) => !s)}
-        style={{
-          position: "fixed",
-          bottom: 10,
-          right: 10,
-          zIndex: 11,
-          padding: "10px 15px",
-          background: "rgba(0,0,0,0.8)",
-          border: "none",
-          borderRadius: 5,
-          color: textColor,
-          userSelect: "none",
-          WebkitUserSelect: "none",
-        }}
-      >
-        {showControls ? "Hide Controls" : "Show Controls"}
-      </button>
-
-      {/* Teleprompter reading area */}
-      <div
-        ref={teleprompterRef}
-        className="tp-no-select"
-        style={{
-          position: "relative",
-          top: showControls ? undefined : "0",
-          height: showControls ? undefined : "70vh",
-          width: "100%",
-          overflow: "hidden",
-          display: "flex",
-          justifyContent: "flex-start",
-          alignItems: "flex-start",
-          paddingLeft: 12,
-          paddingRight: 12,
-          boxSizing: "border-box",
-        }}
-      >
+      <div className="tp-stage" aria-label="Teleprompter preview">
+        <div className="tp-stage__focus" aria-hidden="true" />
+        {!script.trim() && <div className="tp-empty">Your script preview will appear here.</div>}
         <div
           ref={contentRef}
-          style={{
-            fontSize: `${fontSize}em`,
-            whiteSpace: "pre-wrap",
-            wordWrap: "break-word",
-            maxWidth: "100%",
-            animationName: animationName,
-            animationTimingFunction: "linear",
-            animationIterationCount: "infinite",
-            animationPlayState: isPaused ? "paused" : "running",
-            transform: mirror ? "scaleX(-1)" : "none",
-            lineHeight: `${lineHeight}em`,
-            userSelect: "none",
-            WebkitUserSelect: "none",
-          }}
-        />
-      </div>
-
-      {/* Progress indicator */}
-      <div
-        style={{
-          position: "fixed",
-          left: 12,
-          right: 12,
-          bottom: showControls ? 60 : 12,
-          zIndex: 9,
-        }}
-      >
-        <div style={{ height: 12, borderRadius: 999, background: "#e2e8f0", border: "1px solid #cbd5e1", overflow: "hidden", boxShadow: "0 6px 16px rgba(0,0,0,0.15)" }}>
-          <div
-            style={{
-              width: `${progress}%`,
-              height: "100%",
-              background: "linear-gradient(135deg, #22c55e, #60a5fa)",
-              transition: "width 0.1s linear",
-              userSelect: "none",
-              WebkitUserSelect: "none",
-            }}
-          />
+          className="tp-content"
+          style={{ fontSize: `${fontSize}em`, lineHeight }}
+          aria-live="off"
+        >
+          {duplicatedScript}
         </div>
-        <div className="tp-no-select" style={{ display: "flex", justifyContent: "space-between", color: "#e2e8f0", fontSize: "0.9rem", marginTop: 4 }}>
-          <span>{Math.max(0, Math.round(remainingSec))}s left</span>
-          <span>Cycle {durationSec ? `${Math.round(durationSec)}s` : "–"}</span>
+
+        <div className="tp-text-size-control" aria-label="Live text size">
+          <button type="button" onClick={() => changeFontSize(fontSize - 0.1)} disabled={fontSize <= 0.8} aria-label="Decrease text size">A−</button>
+          <span>{fontSize.toFixed(1)}×</span>
+          <button type="button" onClick={() => changeFontSize(fontSize + 0.1)} disabled={fontSize >= 6} aria-label="Increase text size">A+</button>
+        </div>
+
+        <div className="tp-runtime" aria-label="Playback controls">
+          <button type="button" className="tp-runtime__icon tp-runtime__play" onClick={togglePause} disabled={!script.trim()} aria-label={isPaused || !isRunning ? "Play" : "Pause"}>
+            {isPaused || !isRunning ? <FaPlay /> : <FaPause />}
+          </button>
+          <button type="button" className="tp-runtime__icon" onClick={restart} disabled={!script.trim()} aria-label="Restart script"><FaRedoAlt /></button>
+          <div className="tp-speed-control" aria-label="Live scroll speed">
+            <button type="button" onClick={() => changeSpeed(speed - 1)} aria-label="Decrease pixels per second">−</button>
+            <label>
+              <input type="number" inputMode="numeric" min="1" max="300" value={speed} onChange={(event) => changeSpeed(event.target.value)} />
+              <span>px/s</span>
+            </label>
+            <button type="button" onClick={() => changeSpeed(speed + 1)} aria-label="Increase pixels per second">+</button>
+          </div>
+          <button type="button" className="tp-runtime__icon" onClick={() => setShowControls((shown) => !shown)} aria-label={showControls ? "Hide settings" : "Show settings"}><FaSlidersH /></button>
+          <button type="button" className="tp-runtime__icon tp-runtime__fullscreen" onClick={toggleFullscreen} aria-label={isFullscreen ? "Exit full screen" : "Enter full screen"}>
+            {isFullscreen ? <FaCompress /> : <FaExpand />}
+          </button>
+        </div>
+
+        <div className="tp-progress" aria-label={`${Math.round(progress)} percent through the script`}>
+          <div><span style={{ width: `${progress}%` }} /></div>
+          <p><span>{formatTime(remaining)} remaining</span><span>{speed} px/s</span></p>
         </div>
       </div>
-
-      {/* Floating hold buttons for speed/reverse */}
-      <div
-        style={{
-          position: "fixed",
-          left: 12,
-          bottom: showControls ? -999 : 90,
-          display: "flex",
-          flexDirection: "row",
-          gap: 8,
-          zIndex: 20,
-          pointerEvents: "auto",
-        }}
-      >
-        <button
-          onClick={togglePause}
-          style={{
-            width: 36,
-            height: 36,
-            borderRadius: "50%",
-            background: "linear-gradient(135deg, #34d399, #10b981)",
-            color: "#0b1220",
-            fontWeight: 800,
-            boxShadow: "0 8px 16px rgba(0,0,0,0.25)",
-            WebkitUserSelect: "none",
-            userSelect: "none",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-          title={isPaused ? "Play" : "Pause"}
-          aria-label={isPaused ? "Play" : "Pause"}
-        >
-          {isPaused ? <FaPlay /> : <FaPause />}
-        </button>
-        <button
-          onClick={decreaseFont}
-          style={{
-            width: 36,
-            height: 36,
-            borderRadius: "50%",
-            background: "linear-gradient(135deg, #93c5fd, #38bdf8)",
-            color: "#0b1220",
-            fontWeight: 900,
-            boxShadow: "0 8px 16px rgba(0,0,0,0.25)",
-            WebkitUserSelect: "none",
-            userSelect: "none",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            fontSize: "0.95rem",
-          }}
-          title="Decrease font size"
-          aria-label="Decrease font size"
-        >
-          A-
-        </button>
-        <button
-          onClick={increaseFont}
-          style={{
-            width: 36,
-            height: 36,
-            borderRadius: "50%",
-            background: "linear-gradient(135deg, #7dd3fc, #0ea5e9)",
-            color: "#0b1220",
-            fontWeight: 900,
-            boxShadow: "0 8px 16px rgba(0,0,0,0.25)",
-            WebkitUserSelect: "none",
-            userSelect: "none",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            fontSize: "0.95rem",
-          }}
-          title="Increase font size"
-          aria-label="Increase font size"
-        >
-          A+
-        </button>
-        <button
-          onClick={() => {
-            offsetRef.current = 0;
-            lastTsRef.current = null;
-            setProgress(0);
-            setRemainingSec(durationSec);
-            const el = contentRef.current;
-            if (el) {
-              el.style.transform = `${mirror ? "scaleX(-1) " : ""}translateY(0px)`;
-            }
-          }}
-          style={{
-            width: 36,
-            height: 36,
-            borderRadius: "50%",
-            background: "linear-gradient(135deg, #f59e0b, #f97316)",
-            color: "#0b1220",
-            fontWeight: 800,
-            boxShadow: "0 8px 16px rgba(0,0,0,0.25)",
-            WebkitUserSelect: "none",
-            userSelect: "none",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-          title="Start over"
-          aria-label="Start over"
-        >
-          <FaUndoAlt />
-        </button>
-        <button
-          onPointerDown={() => { speedHoldRef.current = 4; }}
-          onPointerUp={() => { speedHoldRef.current = 1; }}
-          onPointerLeave={() => { speedHoldRef.current = 1; }}
-          style={{
-            width: 36,
-            height: 36,
-            borderRadius: "50%",
-            background: "linear-gradient(135deg, #a855f7, #6366f1)",
-            color: "#0b1220",
-            fontWeight: 800,
-            boxShadow: "0 8px 16px rgba(0,0,0,0.25)",
-            WebkitUserSelect: "none",
-            userSelect: "none",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-          title="Hold to 4x speed"
-          aria-label="Hold to 4x speed"
-        >
-          <FaFastForward />
-        </button>
-        <button
-          onPointerDown={() => handleSpeedHoldStart(6)}
-          onPointerUp={handleSpeedHoldEnd}
-          onPointerLeave={handleSpeedHoldEnd}
-          style={{
-            width: 36,
-            height: 36,
-            borderRadius: "50%",
-            background: "linear-gradient(135deg, #0ea5e9, #2563eb)",
-            color: "#0b1220",
-            fontWeight: 800,
-            boxShadow: "0 8px 16px rgba(0,0,0,0.25)",
-            WebkitUserSelect: "none",
-            userSelect: "none",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-          title="Hold to 6x speed"
-          aria-label="Hold to 6x speed"
-        >
-          <FaForward />
-        </button>
-        <button
-          onClick={() => nudgeOffset(-1)}
-          style={{
-            width: 36,
-            height: 36,
-            borderRadius: "50%",
-            background: "linear-gradient(135deg, #cbd5e1, #94a3b8)",
-            color: "#0b1220",
-            fontWeight: 800,
-            boxShadow: "0 8px 16px rgba(0,0,0,0.25)",
-            WebkitUserSelect: "none",
-            userSelect: "none",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-          title="Nudge back"
-          aria-label="Nudge back"
-        >
-          <FaStepBackward />
-        </button>
-        <button
-          onClick={() => nudgeOffset(1)}
-          style={{
-            width: 36,
-            height: 36,
-            borderRadius: "50%",
-            background: "linear-gradient(135deg, #c7f9cc, #6ee7b7)",
-            color: "#0b1220",
-            fontWeight: 800,
-            boxShadow: "0 8px 16px rgba(0,0,0,0.25)",
-            WebkitUserSelect: "none",
-            userSelect: "none",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-          title="Nudge forward"
-          aria-label="Nudge forward"
-        >
-          <FaStepForward />
-        </button>
-        <button
-          onPointerDown={() => handleReverseHoldStart(8)}
-          onPointerUp={handleReverseHoldEnd}
-          onPointerLeave={handleReverseHoldEnd}
-          style={{
-            width: 36,
-            height: 36,
-            borderRadius: "50%",
-            background: "linear-gradient(135deg, #f472b6, #db2777)",
-            color: "#0b1220",
-            fontWeight: 800,
-            boxShadow: "0 8px 16px rgba(0,0,0,0.25)",
-            WebkitUserSelect: "none",
-            userSelect: "none",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-          title="Hold to reverse at 8x"
-          aria-label="Hold to reverse at 8x"
-        >
-          <FaBackward />
-        </button>
-      </div>
-
-      {/* Keyframes for scrolling animations */}
-      <style>{`
-        @keyframes scrollUp {
-          from { transform: translateY(0%); }
-          to   { transform: translateY(-50%); }
-        }
-        @keyframes scrollDown {
-          from { transform: translateY(-50%); }
-          to   { transform: translateY(0%); }
-        }
-        button {
-          padding: 8px;
-          border: none;
-          border-radius: 5px;
-          font-size: 1em;
-          background: #333;
-          color: ${textColor};
-          cursor: pointer;
-        }
-        button:hover {
-          background: #444;
-        }
-      `}</style>
-      </div> {/* end tp-shell */}
-    </div>
+    </section>
   );
-};
-
-export default TeleprompterAdvanced;
+}

@@ -148,16 +148,6 @@ export default function ActionButtons({ promptText, limitButtons = false }) {
       },
     },
     {
-      icon: FaYoutube,
-      title: "Open YT Transcript",
-      color: "var(--yt-red)",
-      onClick: (e) => {
-        e.stopPropagation();
-        dispatch(actions.setYouTubeSearchText(cleanText));
-        dispatch(actions.setIsYouTubeOpen(true));
-      },
-    },
-    {
       icon: FaCode,
       title: "HTML Builder",
       color: "var(--btn-purple)",
@@ -276,7 +266,7 @@ export default function ActionButtons({ promptText, limitButtons = false }) {
   ];
 
   const visibleButtons =
-    limitButtons && !showAll ? buttons.slice(0, 5) : buttons;
+    limitButtons && !showAll ? buttons.slice(0, 8) : buttons;
 
   return (
     <div className="action-buttons" onClick={(e) => e.stopPropagation()}>
