@@ -290,6 +290,26 @@
   overflow-y: auto;
   max-height: 320px;
   border: 1px solid #1f2937;
+  outline: none;
+  cursor: text;
+  transition: border-color 120ms ease, box-shadow 120ms ease;
+}
+
+.reader.is-focused {
+  border-color: #60a5fa;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.32);
+}
+
+.typing-focus-prompt {
+  width: 100%;
+  margin-top: 8px;
+  border: 1px dashed #93b4ef;
+  border-radius: 8px;
+  padding: 8px 12px;
+  background: #eef4ff;
+  color: #1d4ed8;
+  cursor: pointer;
+  font-weight: 700;
 }
 
 .reader span.ok { color: var(--ok); }

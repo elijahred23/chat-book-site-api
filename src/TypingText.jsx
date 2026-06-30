@@ -1,6 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import './TypingText.css'
-import PasteButton from './ui/PasteButton'
 import ActionButtons from './ui/ActionButtons'
 import { useAppState } from './context/AppContext'
 
@@ -46,8 +45,9 @@ greet("world");`)
   const [autoRestart, setAutoRestart] = useState(false)
   const [loopCount, setLoopCount] = useState(0)
 
-  const hiddenInputRef = useRef(null)
+  const readerRef = useRef(null)
   const currentCharRef = useRef(null)
+  const [isReaderFocused, setIsReaderFocused] = useState(false)
   const CHECKBOX_PREFS_KEY = 'typing-test-checkbox-prefs-v1'
 
   // Replace tabs according to UI setting for a consistent target text
@@ -147,9 +147,14 @@ greet("world");`)
     return { nextIndex: idx, nextTyped: txt }
   }
 
-  // Focus the hidden input when started so we capture keystrokes anywhere
+  // The reader is the keyboard target. Keeping the target visible makes focus
+  // reliable and gives keyboard users a clear indication of where input goes.
   useEffect(() => {
-    if (started && !finished) hiddenInputRef.current?.focus()
+    if (started && !finished) {
+      readerRef.current?.focus()
+    } else if (readerRef.current === document.activeElement) {
+      readerRef.current.blur()
+    }
   }, [started, finished])
 
   useEffect(() => {
@@ -189,8 +194,8 @@ greet("world");`)
     currentCharRef.current?.scrollIntoView({ block: 'center', inline: 'nearest' })
   }, [typed, started, finished, caret])
 
-  const focus = () => {
-    hiddenInputRef.current?.focus()
+  const focusReader = () => {
+    readerRef.current?.focus()
   }
 
   // Timer tick
@@ -273,7 +278,6 @@ greet("world");`)
     setErrors(0)
     setStartTs(Date.now())
     setNowTs(Date.now())
-    //setTimeout(() => hiddenInputRef.current?.focus(), 0)
   }
 
   const stop = () => {
@@ -307,7 +311,7 @@ greet("world");`)
     text = text.replace(/^>\s?/gm, '');
 
     // Remove list markers
-    text = text.replace(/^\s*[\*\-\+]\s+/gm, '');
+    text = text.replace(/^\s*[-*+]\s+/gm, '');
     text = text.replace(/^\s*\d+\.\s+/gm, '');
 
     // Remove horizontal rules (***, ---)
@@ -377,6 +381,8 @@ const handleKey = (e) => {
   e.preventDefault()
 
   if (key === 'Escape') {
+    // A typing test opened in the tool drawer owns Escape while it is running.
+    e.stopPropagation()
     stop()
     return
   }
@@ -540,8 +546,6 @@ const handleKey = (e) => {
     if (ch === '\n') return '⏎\n'
     return ch
   }
-  const focusing = hiddenInputRef.current === document.activeElement;
-
   return (
     <div className="typing-shell">
       <div className="typing-hero">
@@ -575,7 +579,9 @@ const handleKey = (e) => {
             <button className="btn primary" onClick={start} disabled={!normalized.length || (started && !finished)}>Start</button>
             <button className="btn ghost" onClick={stop} disabled={!started}>Stop</button>
             <button className="secondary" onClick={() => { setSource(''); }}>Clear</button>
-            <button className="secondary" onClick={focus}>Focus</button>
+            <button className="secondary" onClick={focusReader} disabled={!started || finished}>
+              {isReaderFocused ? 'Focused' : 'Focus'}
+            </button>
             <label className="small typing-setting">
               Tab width:
               <button
@@ -665,16 +671,24 @@ const handleKey = (e) => {
           <div style={{ width: `${Math.round(progress * 100)}%` }} />
         </div>
 
-        <div className="reader" style={{ tabSize }}>
+        <div
+          ref={readerRef}
+          className={`reader${isReaderFocused ? ' is-focused' : ''}`}
+          style={{ tabSize }}
+          tabIndex={started && !finished ? 0 : -1}
+          onKeyDown={handleKey}
+          onFocus={() => setIsReaderFocused(true)}
+          onBlur={() => setIsReaderFocused(false)}
+          aria-label={started && !finished ? 'Typing test input' : 'Typing test text'}
+        >
           {loaded ? renderHighlighted() : <span style={{color:"white"}} className="small">Load code to begin…</span>}
         </div>
 
-        {/* Hidden input to capture keystrokes globally when started */}
-        <input
-          ref={hiddenInputRef}
-          style={{ position: 'absolute', opacity: 0, pointerEvents: 'none' }}
-          onKeyDown={handleKey}
-        />
+        {started && !finished && !isReaderFocused && (
+          <button className="typing-focus-prompt" type="button" onClick={focusReader}>
+            Click here to resume typing
+          </button>
+        )}
 
         <div className="footer">
           <div>Loaded: {normalized.length} • Typed: {typed.length} • Correct: {correctChars}</div>
