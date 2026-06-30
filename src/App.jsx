@@ -110,18 +110,14 @@ function AppContent() {
     { key: "chat", label: "AI Chat", icon: FaComments, active: isChatOpen, action: () => setPanel(actions.setIsChatOpen, true) },
     { key: "chat2", label: "Dual Chat", icon: FaComments, active: isChat2Open, action: () => setPanel(actions.setIsChat2Open, true) },
     { key: "tts", label: "Text to Speech", icon: FaVolumeUp, active: isTTSOpen, action: () => setPanel(actions.setIsTTSOpen, true) },
+    { key: "markdown", label: "Markdown Viewer", icon: SiMarkdown, active: isMarkdownViewerOpen, action: () => setPanel(actions.setIsMarkdownViewerOpen, true) },
     { key: "teleprompter", label: "Teleprompter", icon: FaScroll, active: isTeleprompterOpen, action: () => setPanel(actions.setIsTeleprompterOpen, true) },
-    { key: "plantuml", label: "UML Viewer", icon: FaProjectDiagram, active: isPlantUMLOpen, action: () => setPanel(actions.setIsPlantUMLOpen, true) },
-    { key: "podcast", label: "Podcast TTS", icon: FaMicrophoneAlt, active: isPodcastTTSOpen, action: () => setPanel(actions.setIsPodcastTTSOpen, true) },
-    { key: "jsgen", label: "JS Generator", icon: FaMagic, active: isJSGeneratorOpen, action: () => setPanel(actions.setIsJSGeneratorOpen, true) },
-    { key: "youtube", label: "YouTube Transcript", icon: FaYoutube, active: isYouTubeOpen, action: () => setPanel(actions.setIsYouTubeOpen, true) },
     { key: "chatbook", label: "Chat Book", icon: GiNotebook, active: isChatBookOpen, action: () => setPanel(actions.setIsChatBookOpen, true) },
+    { key: "iframe", label: "Iframe Viewer", icon: FaGlobe, active: isIframeOpen, action: () => setPanel(actions.setIsIframeOpen, true) },
+    { key: "youtube", label: "YouTube Transcript", icon: FaYoutube, active: isYouTubeOpen, action: () => setPanel(actions.setIsYouTubeOpen, true) },
+    { key: "large", label: "Text Chunker", icon: FaBookReader, active: isLargeTextOpen, action: () => setPanel(actions.setIsLargeTextOpen, true) },
     { key: "html", label: "HTML Builder", icon: FaCode, active: isHtmlBuilderOpen, action: () => setPanel(actions.setIsHtmlBuilderOpen, true) },
     { key: "typing", label: "Typing Test", icon: FaKeyboard, active: isTypingOpen, action: () => setPanel(actions.setIsTypingOpen, true) },
-    { key: "iframe", label: "Iframe Viewer", icon: FaGlobe, active: isIframeOpen, action: () => setPanel(actions.setIsIframeOpen, true) },
-    { key: "large", label: "Text Chunker", icon: FaBookReader, active: isLargeTextOpen, action: () => setPanel(actions.setIsLargeTextOpen, true) },
-    { key: "asmr", label: "ASMR Typeout", icon: FaHeadphones, active: isAsmrOpen, action: () => setPanel(actions.setIsAsmrOpen, true) },
-    { key: "markdown", label: "Markdown Viewer", icon: SiMarkdown, active: isMarkdownViewerOpen, action: () => setPanel(actions.setIsMarkdownViewerOpen, true) },
   ];
 
   return (
