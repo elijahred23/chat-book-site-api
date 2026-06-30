@@ -21,12 +21,14 @@ console.log("Markdown stays raw when opened from ActionButtons");
 const getWordCount = (text) => text.trim().split(/\s+/).filter(Boolean).length;
 const SCROLL_SPEED_STORAGE_KEY = "markdown-viewer-scroll-speed";
 const LOOP_STORAGE_KEY = "markdown-viewer-scroll-loop";
+const RESTART_DELAY_STORAGE_KEY = "markdown-viewer-restart-delay";
 
 const readStoredScrollSpeed = () => {
   if (typeof window === "undefined") return 30;
 
   try {
     const rawValue = window.localStorage.getItem(SCROLL_SPEED_STORAGE_KEY);
+    if (rawValue === null || rawValue.trim() === "") return 30;
     const parsedValue = Number(rawValue);
     if (!Number.isFinite(parsedValue)) return 30;
     return Math.max(5, Math.min(200, parsedValue));
@@ -45,6 +47,20 @@ const readStoredLoopEnabled = () => {
   }
 };
 
+const readStoredRestartDelay = () => {
+  if (typeof window === "undefined") return 3;
+
+  try {
+    const rawValue = window.localStorage.getItem(RESTART_DELAY_STORAGE_KEY);
+    if (rawValue === null || rawValue.trim() === "") return 3;
+    const parsedValue = Number(rawValue);
+    if (!Number.isFinite(parsedValue)) return 3;
+    return Math.max(0, Math.min(60, parsedValue));
+  } catch {
+    return 3;
+  }
+};
+
 export default function MarkdownViewer() {
   const { markdownViewerText } = useAppState();
   const { showMessage } = useFlyout();
@@ -54,10 +70,12 @@ export default function MarkdownViewer() {
   const [isAutoScrolling, setIsAutoScrolling] = useState(false);
   const [isLooping, setIsLooping] = useState(() => readStoredLoopEnabled());
   const [scrollSpeed, setScrollSpeed] = useState(() => readStoredScrollSpeed());
+  const [restartDelay, setRestartDelay] = useState(() => readStoredRestartDelay());
   const [scrollDirection, setScrollDirection] = useState(1);
   const printContentRef = useRef(null);
   const previewRef = useRef(null);
   const scrollSpeedRef = useRef(scrollSpeed);
+  const restartDelayRef = useRef(restartDelay);
   const scrollDirectionRef = useRef(scrollDirection);
   const holdMultiplierRef = useRef(1);
   const loopTimeoutRef = useRef(null);
@@ -92,6 +110,15 @@ export default function MarkdownViewer() {
   }, [scrollDirection]);
 
   useEffect(() => {
+    restartDelayRef.current = restartDelay;
+    try {
+      window.localStorage.setItem(RESTART_DELAY_STORAGE_KEY, String(restartDelay));
+    } catch {
+      // Ignore storage failures and keep the in-memory value.
+    }
+  }, [restartDelay]);
+
+  useEffect(() => {
     try {
       window.localStorage.setItem(LOOP_STORAGE_KEY, String(isLooping));
     } catch {
@@ -108,6 +135,7 @@ export default function MarkdownViewer() {
 
     let animationFrame;
     let previousTime = null;
+    let preciseScrollTop = previewRef.current?.scrollTop ?? 0;
 
     const scroll = (timestamp) => {
       const preview = previewRef.current;
@@ -118,13 +146,17 @@ export default function MarkdownViewer() {
 
       if (preview) {
         const maxScrollTop = Math.max(0, preview.scrollHeight - preview.clientHeight);
+        if (Math.abs(preview.scrollTop - preciseScrollTop) > 1) {
+          preciseScrollTop = preview.scrollTop;
+        }
         const distance =
           scrollDirectionRef.current *
           scrollSpeedRef.current *
           holdMultiplierRef.current *
           elapsedSeconds;
-        const nextScrollTop = Math.max(0, Math.min(maxScrollTop, preview.scrollTop + distance));
+        const nextScrollTop = Math.max(0, Math.min(maxScrollTop, preciseScrollTop + distance));
 
+        preciseScrollTop = nextScrollTop;
         preview.scrollTop = nextScrollTop;
 
         const reachedEnd =
@@ -140,7 +172,7 @@ export default function MarkdownViewer() {
               if (!nextPreview) return;
               nextPreview.scrollTop = 0;
               setIsAutoScrolling(true);
-            }, 3000);
+            }, restartDelayRef.current * 1000);
             return;
           }
 
@@ -555,6 +587,27 @@ export default function MarkdownViewer() {
           font-weight: 900;
           white-space: nowrap;
         }
+        .mv-delay-control {
+          display: inline-flex;
+          align-items: center;
+          gap: 5px;
+          color: #475569;
+          font-size: 0.8rem;
+          font-weight: 900;
+          white-space: nowrap;
+        }
+        .mv-delay-input {
+          width: 62px;
+          min-height: 34px;
+          margin: 0;
+          border: 1px solid #cbd5e1;
+          border-radius: 7px;
+          padding: 5px 7px;
+          color: #0f172a;
+          background: #ffffff;
+          font: inherit;
+          font-weight: 800;
+        }
         .mv-editor {
           flex: 1;
           width: 100%;
@@ -696,7 +749,6 @@ export default function MarkdownViewer() {
                   className={`mv-scroll-btn mv-icon-btn ${scrollDirection < 0 ? "active" : ""}`}
                   type="button"
                   onMouseDown={preventSelection}
-                  onSelectStart={preventSelection}
                   onPointerDown={(event) => startDirectionHold(event, -1)}
                   onPointerUp={endDirectionHold}
                   onPointerCancel={endDirectionHold}
@@ -710,7 +762,6 @@ export default function MarkdownViewer() {
                   className="mv-scroll-btn mv-icon-btn primary"
                   type="button"
                   onMouseDown={preventSelection}
-                  onSelectStart={preventSelection}
                   onClick={() => setIsAutoScrolling((running) => !running)}
                   aria-label={isAutoScrolling ? "Pause automatic scrolling" : "Start automatic scrolling"}
                 >
@@ -720,7 +771,6 @@ export default function MarkdownViewer() {
                   className={`mv-scroll-btn mv-icon-btn ${isLooping ? "active" : ""}`}
                   type="button"
                   onMouseDown={preventSelection}
-                  onSelectStart={preventSelection}
                   onClick={() => setIsLooping((running) => !running)}
                   title="Toggle looping"
                   aria-label={isLooping ? "Disable looping" : "Enable looping"}
@@ -731,7 +781,6 @@ export default function MarkdownViewer() {
                   className={`mv-scroll-btn mv-icon-btn ${scrollDirection > 0 ? "active" : ""}`}
                   type="button"
                   onMouseDown={preventSelection}
-                  onSelectStart={preventSelection}
                   onPointerDown={(event) => startDirectionHold(event, 1)}
                   onPointerUp={endDirectionHold}
                   onPointerCancel={endDirectionHold}
@@ -745,7 +794,6 @@ export default function MarkdownViewer() {
                   className="mv-scroll-btn mv-icon-btn"
                   type="button"
                   onMouseDown={preventSelection}
-                  onSelectStart={preventSelection}
                   onClick={resetScroll}
                   title="Return to top"
                   aria-label="Return to top"
@@ -756,7 +804,6 @@ export default function MarkdownViewer() {
                   className="mv-scroll-btn mv-icon-btn"
                   type="button"
                   onMouseDown={preventSelection}
-                  onSelectStart={preventSelection}
                   onClick={() => jumpToSection(-1)}
                   title="Previous section"
                   aria-label="Previous section"
@@ -767,7 +814,6 @@ export default function MarkdownViewer() {
                   className="mv-scroll-btn mv-icon-btn"
                   type="button"
                   onMouseDown={preventSelection}
-                  onSelectStart={preventSelection}
                   onClick={() => jumpToSection(1)}
                   title="Next section"
                   aria-label="Next section"
@@ -780,7 +826,6 @@ export default function MarkdownViewer() {
                   className="mv-scroll-btn mv-icon-btn"
                   type="button"
                   onMouseDown={preventSelection}
-                  onSelectStart={preventSelection}
                   onClick={() => changeScrollSpeed(-5)}
                   aria-label="Decrease scroll speed"
                   title="Decrease scroll speed"
@@ -791,7 +836,6 @@ export default function MarkdownViewer() {
                   className="mv-scroll-btn mv-icon-btn"
                   type="button"
                   onMouseDown={preventSelection}
-                  onSelectStart={preventSelection}
                   onClick={() => changeScrollSpeed(5)}
                   aria-label="Increase scroll speed"
                   title="Increase scroll speed"
@@ -799,6 +843,25 @@ export default function MarkdownViewer() {
                   <FaPlus />
                 </button>
                 <span className="mv-speed-label">{scrollSpeed} px/s</span>
+                <label className="mv-delay-control">
+                  Restart after
+                  <input
+                    className="mv-delay-input"
+                    type="number"
+                    min="0"
+                    max="60"
+                    step="0.5"
+                    value={restartDelay}
+                    onChange={(event) => {
+                      const nextDelay = Number(event.target.value);
+                      if (Number.isFinite(nextDelay)) {
+                        setRestartDelay(Math.max(0, Math.min(60, nextDelay)));
+                      }
+                    }}
+                    aria-label="Loop restart delay in seconds"
+                  />
+                  sec
+                </label>
               </div>
             </div>
             <div className="mv-preview markdown-body" ref={previewRef}>

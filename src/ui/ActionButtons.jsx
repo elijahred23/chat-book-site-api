@@ -94,17 +94,6 @@ export default function ActionButtons({ promptText, limitButtons = false }) {
       },
     },
     {
-      icon: FaBullhorn,
-      title: "ASMR Typeout",
-      color: "#0f172a",
-      iconColor: "#e2e8f0",
-      onClick: (e) => {
-        e.stopPropagation();
-        dispatch(actions.setAsmrPromptText(cleanText));
-        dispatch(actions.setIsAsmrOpen(true));
-      },
-    },
-    {
       icon: FaComments,
       title: "Open Chat Two",
       color: "#22c55e",
@@ -137,17 +126,6 @@ export default function ActionButtons({ promptText, limitButtons = false }) {
       },
     },
     {
-      icon: FaProjectDiagram,
-      title: "PlantUML",
-      color: "var(--btn-orange)",
-      iconColor: "#0f172a",
-      onClick: (e) => {
-        e.stopPropagation();
-        dispatch(actions.setPlantUMLPrompt(cleanText));
-        dispatch(actions.setIsPlantUMLOpen(true));
-      },
-    },
-    {
       icon: GiNotebook,
       title: "Chat Book",
       color: "var(--btn-yellow)",
@@ -156,41 +134,6 @@ export default function ActionButtons({ promptText, limitButtons = false }) {
         e.stopPropagation();
         dispatch(actions.setChatBookSubject(cleanText));
         dispatch(actions.setIsChatBookOpen(true));
-      },
-    },
-    {
-      icon: FaGlobe,
-      title: "Open in Iframe (Search)",
-      color: "var(--btn-blue)",
-      onClick: (e) => {
-        e.stopPropagation();
-        console.log({cleanText});
-        dispatch(actions.setIframeSearchText(cleanText));
-        dispatch(actions.setIsIframeOpen(true));
-        showMessage?.({ type: "info", message: "Searching in iframe drawer...", duration: 1500 });
-      },
-    },
-    {
-      icon: FaListAlt,
-      title: "Flashcards Prompt",
-      color: "#10b981",
-      iconColor: "#0b172a",
-      onClick: (e) => {
-        e.stopPropagation();
-        const seeded = `Create flashcards based on this context. Return concise term-definition pairs in JSON.\n\nContext:\n${cleanText}`;
-        dispatch(actions.setFlashcardPrompt(seeded));
-        // Open flashcards and close any drawers/panels
-        dispatch(actions.setIsChatOpen(false));
-        dispatch(actions.setIsTeleprompterOpen(false));
-        dispatch(actions.setIsTTSOpen(false));
-        dispatch(actions.setIsPlantUMLOpen(false));
-        dispatch(actions.setIsPodcastTTSOpen(false));
-        dispatch(actions.setIsJSGeneratorOpen(false));
-        dispatch(actions.setIsChatBookOpen(false));
-        dispatch(actions.setIsYouTubeOpen(false));
-        dispatch(actions.setIsHtmlBuilderOpen(false));
-        dispatch(actions.setIsTypingOpen(false));
-        showMessage({ type: "success", message: "Prompt sent to Flashcards." });
       },
     },
     {
@@ -223,26 +166,6 @@ export default function ActionButtons({ promptText, limitButtons = false }) {
         e.stopPropagation();
         dispatch(actions.setHtmlInput(cleanText));
         dispatch(actions.setIsHtmlBuilderOpen(true));
-      },
-    },
-    {
-      icon: FaPodcast,
-      title: "Podcast TTS",
-      color: "var(--btn-podcast)",
-      onClick: (e) => {
-        e.stopPropagation();
-        dispatch(actions.setPodcastTTSPrompt(cleanText));
-        dispatch(actions.setIsPodcastTTSOpen(true));
-      },
-    },
-    {
-      icon: FaMagic,
-      title: "JS Generator",
-      color: "var(--btn-blue)",
-      onClick: (e) => {
-        e.stopPropagation();
-        dispatch(actions.setIsJSGeneratorOpen(true));
-        dispatch(actions.setJSGeneratorPrompt(cleanText));
       },
     },
     {
@@ -321,67 +244,6 @@ export default function ActionButtons({ promptText, limitButtons = false }) {
           console.error("Download failed", err);
           showMessage?.({ type: "error", message: "Download failed." });
         }
-      },
-    },
-    {
-      icon: FaBook,
-      title: "Define Word",
-      color: "var(--btn-gray)",
-      iconColor: "#0f172a",
-      onClick: (e) => {
-        e.stopPropagation();
-        const query = encodeURIComponent(cleanText);
-        window.open(`https://www.dictionary.com/browse/${query}`, "_blank");
-      },
-    },
-    {
-      icon: GiGraduateCap,
-      title: "Google Scholar",
-      color: "var(--scholar-blue)",
-      iconColor: "#e2e8f0",
-      onClick: (e) => {
-        e.stopPropagation();
-        const query = encodeURIComponent(cleanText);
-        window.open(`https://scholar.google.com/scholar?q=${query}`, "_blank");
-      },
-    },
-    {
-      icon: FaImage,
-      title: "Image Search",
-      color: "var(--google-blue)",
-      iconColor: "#0b1220",
-      onClick: (e) => {
-        e.stopPropagation();
-        const query = encodeURIComponent(cleanText);
-        window.open(
-          `https://www.google.com/search?tbm=isch&q=${query}`,
-          "_blank"
-        );
-      },
-    },
-    {
-      icon: FaYoutube,
-      title: "YouTube Results",
-      color: "var(--yt-red)",
-      iconColor: "#0b1220",
-      onClick: (e) => {
-        e.stopPropagation();
-        const query = encodeURIComponent(cleanText + " explanation");
-        window.open(
-          `https://www.youtube.com/results?search_query=${query}`,
-          "_blank"
-        );
-      },
-    },
-    {
-      icon: FaRedditAlien,
-      title: "Ask Reddit",
-      color: "var(--reddit-orange)",
-      iconColor: "#0f172a",
-      onClick: (e) => {
-        e.stopPropagation();
-        const query = encodeURIComponent(cleanText);
-        window.open(`https://www.reddit.com/search/?q=${query}`, "_blank");
       },
     },
     {
