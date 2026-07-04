@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import ReactMarkdown from "react-markdown";
-import { FaBackward, FaForward, FaPause, FaPlay, FaPlus, FaMinus, FaStepBackward, FaStepForward, FaUndoAlt, FaRedoAlt } from "react-icons/fa";
+import { FaBackward, FaCompressAlt, FaExpandAlt, FaForward, FaPause, FaPlay, FaPlus, FaMinus, FaStepBackward, FaStepForward, FaUndoAlt, FaRedoAlt } from "react-icons/fa";
 import { useAppState } from "./context/AppContext";
 import { useFlyout } from "./context/FlyoutContext";
 import ActionButtons from "./ui/ActionButtons";
@@ -72,6 +72,7 @@ export default function MarkdownViewer() {
   const [scrollSpeed, setScrollSpeed] = useState(() => readStoredScrollSpeed());
   const [restartDelay, setRestartDelay] = useState(() => readStoredRestartDelay());
   const [scrollDirection, setScrollDirection] = useState(1);
+  const [isWindowView, setIsWindowView] = useState(false);
   const printContentRef = useRef(null);
   const previewRef = useRef(null);
   const scrollSpeedRef = useRef(scrollSpeed);
@@ -129,6 +130,24 @@ export default function MarkdownViewer() {
   useEffect(() => () => {
     clearLoopTimeout();
   }, []);
+
+  useEffect(() => {
+    if (!isWindowView) return undefined;
+
+    document.body.classList.add("mv-window-view-open");
+    const closeWindowView = (event) => {
+      if (event.key !== "Escape") return;
+      event.preventDefault();
+      event.stopPropagation();
+      setIsWindowView(false);
+    };
+
+    window.addEventListener("keydown", closeWindowView, true);
+    return () => {
+      window.removeEventListener("keydown", closeWindowView, true);
+      document.body.classList.remove("mv-window-view-open");
+    };
+  }, [isWindowView]);
 
   useEffect(() => {
     if (!isAutoScrolling || !showPreview) return undefined;
@@ -530,6 +549,41 @@ export default function MarkdownViewer() {
           text-transform: uppercase;
           letter-spacing: 0;
         }
+        .mv-panel-header-title {
+          display: inline-flex;
+          align-items: center;
+          min-width: 0;
+        }
+        .mv-window-button {
+          appearance: none;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          gap: 7px;
+          min-height: 34px;
+          border: 1px solid #cbd5e1;
+          border-radius: 7px;
+          padding: 7px 10px;
+          background: #ffffff;
+          color: #0f172a;
+          cursor: pointer;
+          font: inherit;
+          font-weight: 900;
+          line-height: 1;
+          text-transform: none;
+          box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06);
+        }
+        .mv-window-button:hover {
+          border-color: #0f766e;
+          color: #0f766e;
+        }
+        .mv-window-button:focus-visible {
+          outline: 3px solid rgba(20, 184, 166, 0.3);
+          outline-offset: 1px;
+        }
+        .mv-window-button svg {
+          flex: 0 0 auto;
+        }
         .mv-scroll-controls {
           display: flex;
           align-items: center;
@@ -629,6 +683,43 @@ export default function MarkdownViewer() {
           padding: 16px;
           background: #ffffff;
         }
+        .mv-panel.mv-window-view {
+          position: fixed;
+          z-index: 4500;
+          inset: 0;
+          width: 100vw;
+          height: 100vh;
+          height: 100dvh;
+          max-width: none;
+          max-height: none;
+          border: 0;
+          border-radius: 0;
+          box-shadow: none;
+        }
+        .mv-panel.mv-window-view .mv-panel-header {
+          flex: 0 0 auto;
+          min-height: 54px;
+          padding-top: max(9px, env(safe-area-inset-top));
+          padding-right: max(11px, env(safe-area-inset-right));
+          padding-left: max(11px, env(safe-area-inset-left));
+          background: rgba(248, 250, 252, 0.96);
+          backdrop-filter: blur(14px);
+        }
+        .mv-panel.mv-window-view .mv-scroll-controls {
+          flex: 0 0 auto;
+          padding-right: max(10px, env(safe-area-inset-right));
+          padding-left: max(10px, env(safe-area-inset-left));
+        }
+        .mv-panel.mv-window-view .mv-preview {
+          padding: 24px max(20px, calc((100vw - 900px) / 2));
+          padding-bottom: max(24px, env(safe-area-inset-bottom));
+          font-size: clamp(1rem, 0.95rem + 0.2vw, 1.12rem);
+          line-height: 1.7;
+          overscroll-behavior: contain;
+        }
+        body.mv-window-view-open {
+          overflow: hidden;
+        }
         .mv-preview.markdown-body pre {
           white-space: pre;
         }
@@ -661,6 +752,29 @@ export default function MarkdownViewer() {
           }
           .mv-filename {
             width: 100%;
+          }
+          .mv-panel.mv-window-view .mv-panel-header {
+            min-height: 50px;
+          }
+          .mv-panel.mv-window-view .mv-scroll-controls {
+            align-items: flex-start;
+            max-height: 42dvh;
+            overflow-y: auto;
+            padding-top: 7px;
+            padding-bottom: 7px;
+          }
+          .mv-panel.mv-window-view .mv-scroll-buttons {
+            gap: 5px;
+          }
+          .mv-panel.mv-window-view .mv-scroll-btn {
+            min-width: 38px;
+            min-height: 38px;
+          }
+          .mv-panel.mv-window-view .mv-preview {
+            padding: 18px max(16px, env(safe-area-inset-right)) max(22px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
+          }
+          .mv-window-button span {
+            display: none;
           }
         }
       `}</style>
@@ -741,8 +855,21 @@ export default function MarkdownViewer() {
         )}
 
         {showPreview && (
-          <div className="mv-panel">
-            <div className="mv-panel-header">Preview</div>
+          <div className={`mv-panel ${isWindowView ? "mv-window-view" : ""}`}>
+            <div className="mv-panel-header">
+              <span className="mv-panel-header-title">Preview</span>
+              <button
+                className="mv-window-button"
+                type="button"
+                onClick={() => setIsWindowView((expanded) => !expanded)}
+                aria-label={isWindowView ? "Exit full window view" : "Open preview in full window view"}
+                aria-pressed={isWindowView}
+                title={isWindowView ? "Exit full window view (Esc)" : "Fill this browser window"}
+              >
+                {isWindowView ? <FaCompressAlt aria-hidden="true" /> : <FaExpandAlt aria-hidden="true" />}
+                <span>{isWindowView ? "Exit full window" : "Full window"}</span>
+              </button>
+            </div>
             <div className="mv-scroll-controls" aria-label="Automatic scroll controls">
               <div className="mv-scroll-buttons">
                 <button
