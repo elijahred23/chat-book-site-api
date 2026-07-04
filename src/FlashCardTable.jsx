@@ -518,7 +518,6 @@ const FlashCardTable = ({ cards, setCards, COLORS }) => {
                   }}
                 >
                   <div style={{ marginBottom: "0.4rem" }}>{card.answer}</div>
-                  <ActionButtons limitButtons promptText={`${card.question} - ${card.answer}`} />
                 </td>
               </tr>
             ))}

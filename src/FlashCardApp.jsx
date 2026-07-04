@@ -70,14 +70,14 @@ const COLORS = {
 
 const MODE_OPTIONS = [
   { key: "study", label: "Study" },
+  { key: "table", label: "Manage" },
   { key: "quiz", label: "Quiz" },
   { key: "recall", label: "Recall" },
   { key: "match", label: "Match" },
   { key: "memory", label: "Memory" },
   { key: "survival", label: "Survival" },
   { key: "typing", label: "Typing" },
-  { key: "blitz", label: "Blitz" },
-  { key: "table", label: "Manage" },
+  { key: "blitz", label: "Blitz" }
 ];
 
 function normalizeCards(rawCards) {
