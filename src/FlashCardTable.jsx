@@ -1,88 +1,133 @@
-import React, { useState } from "react";
+/* eslint-disable react/prop-types */
+import { useMemo, useState } from "react";
 import ReactDOM from "react-dom";
-import ActionButtons from "./ui/ActionButtons.jsx";
-import { getGeminiResponse } from "./utils/callGemini.js";
-import { FaFeatherAlt, FaAlignLeft, FaBookOpen, FaChevronUp, FaChevronDown } from "react-icons/fa";
+import {
+  FaAlignLeft,
+  FaBookOpen,
+  FaCheck,
+  FaChevronDown,
+  FaChevronUp,
+  FaEdit,
+  FaFeatherAlt,
+  FaSearch,
+  FaTimes,
+  FaTrashAlt,
+} from "react-icons/fa";
 import { ClipLoader } from "react-spinners";
+import ActionButtons from "./ui/ActionButtons.jsx";
 import { useAppState } from "./context/AppContext";
+import { getGeminiResponse } from "./utils/callGemini.js";
+
+const TRANSFORM_PRESETS = {
+  expand3: "Rewrite this answer as roughly three concise sentences that cover the essentials.",
+  expand5: "Expand this answer into roughly five concise sentences with key details and nuance.",
+  expand10: "Expand this answer into roughly ten concise sentences with clear structure and detail.",
+  expand15: "Expand this answer into roughly fifteen concise sentences, covering context, examples, and nuance.",
+};
+
+const TARGET_SENTENCES = { expand3: 3, expand5: 5, expand10: 10, expand15: 15 };
+
+const EXPANSION_OPTIONS = [
+  { key: "expand3", label: "3", title: "Rewrite as 3 sentences", icon: FaFeatherAlt },
+  { key: "expand5", label: "5", title: "Rewrite as 5 sentences", icon: FaFeatherAlt },
+  { key: "expand10", label: "10", title: "Rewrite as 10 sentences", icon: FaAlignLeft },
+  { key: "expand15", label: "15", title: "Rewrite as 15 sentences", icon: FaBookOpen },
+];
 
 function ToolbarPortal({ children }) {
   if (typeof document === "undefined") return null;
   return ReactDOM.createPortal(children, document.body);
 }
 
-const FlashCardTable = ({ cards, setCards, COLORS }) => {
+function sentenceCount(text = "") {
+  return (text.match(/[^.!?]+[.!?]+/g) || []).length || (text.trim() ? 1 : 0);
+}
+
+export default function FlashCardTable({ cards, setCards, COLORS }) {
   const [selectedCards, setSelectedCards] = useState([]);
   const [rowLoading, setRowLoading] = useState({});
   const [bulkLoading, setBulkLoading] = useState(null);
   const [bulkProgress, setBulkProgress] = useState({ done: 0, total: 0 });
-  const [bulkMode, setBulkMode] = useState("async"); // "async" or "sequential"
+  const [bulkMode, setBulkMode] = useState("async");
   const [toolbarVisible, setToolbarVisible] = useState(true);
-  const {
-    drawerStack,
-    isChatOpen,
-    isTeleprompterOpen,
-    isTTSOpen,
-    isPlantUMLOpen,
-    isPodcastTTSOpen,
-    isJSGeneratorOpen,
-    isChatBookOpen,
-    isArchitectureOpen,
-    isYouTubeOpen,
-    isHtmlBuilderOpen,
-    isTypingOpen,
-  } = useAppState();
+  const [query, setQuery] = useState("");
+  const [editingIndex, setEditingIndex] = useState(null);
+  const [draft, setDraft] = useState({ question: "", answer: "" });
+  const appState = useAppState();
 
   const anyDrawerOpen =
-    Boolean(drawerStack?.length) ||
-    isChatOpen ||
-    isTTSOpen ||
-    isTeleprompterOpen ||
-    isPlantUMLOpen ||
-    isPodcastTTSOpen ||
-    isJSGeneratorOpen ||
-    isChatBookOpen ||
-    isArchitectureOpen ||
-    isYouTubeOpen ||
-    isHtmlBuilderOpen ||
-    isTypingOpen;
+    Boolean(appState.drawerStack?.length) ||
+    [
+      "isChatOpen",
+      "isTeleprompterOpen",
+      "isTTSOpen",
+      "isPlantUMLOpen",
+      "isPodcastTTSOpen",
+      "isJSGeneratorOpen",
+      "isChatBookOpen",
+      "isArchitectureOpen",
+      "isYouTubeOpen",
+      "isHtmlBuilderOpen",
+      "isTypingOpen",
+    ].some((key) => appState[key]);
 
-  const toggleCardSelection = (idx) => {
-    setSelectedCards((prev) =>
-      prev.includes(idx) ? prev.filter((i) => i !== idx) : [...prev, idx]
+  const visibleCards = useMemo(() => {
+    const search = query.trim().toLowerCase();
+    return cards
+      .map((card, index) => ({ card, index }))
+      .filter(({ card }) =>
+        !search || `${card.question} ${card.answer}`.toLowerCase().includes(search)
+      );
+  }, [cards, query]);
+
+  const selectedSet = useMemo(() => new Set(selectedCards), [selectedCards]);
+  const selectedVisibleCount = visibleCards.filter(({ index }) => selectedSet.has(index)).length;
+  const allVisibleSelected = visibleCards.length > 0 && selectedVisibleCount === visibleCards.length;
+  const hasSelection = selectedCards.length > 0;
+  const combinedPrompt = selectedCards
+    .filter((index) => cards[index])
+    .map((index) => `${cards[index].question} - ${cards[index].answer}`)
+    .join("\n");
+
+  const toggleCardSelection = (index) => {
+    setSelectedCards((current) =>
+      current.includes(index) ? current.filter((item) => item !== index) : [...current, index]
     );
   };
 
-  const toggleSelectAll = () => {
-    if (selectedCards.length === cards.length) {
-      setSelectedCards([]);
-    } else {
-      setSelectedCards(cards.map((_, idx) => idx));
-    }
+  const toggleSelectVisible = () => {
+    const visibleIndexes = visibleCards.map(({ index }) => index);
+    setSelectedCards((current) => {
+      if (allVisibleSelected) return current.filter((index) => !visibleIndexes.includes(index));
+      return [...new Set([...current, ...visibleIndexes])];
+    });
   };
 
-  const combinedPrompt = selectedCards
-    .map((idx) => `${cards[idx].question} - ${cards[idx].answer}`)
-    .join("\n");
+  const startEditing = (index) => {
+    setEditingIndex(index);
+    setDraft({ question: cards[index].question, answer: cards[index].answer });
+  };
 
-  const allSelected = cards.length > 0 && selectedCards.length === cards.length;
-  const hasSelection = selectedCards.length > 0;
+  const saveEditing = () => {
+    const question = draft.question.trim();
+    const answer = draft.answer.trim();
+    if (!question || !answer || editingIndex === null) return;
+    setCards((current) =>
+      current.map((card, index) =>
+        index === editingIndex ? { ...card, question, answer } : card
+      )
+    );
+    setEditingIndex(null);
+  };
 
-  const iconBtnStyle = (isLoading, bg, fg, disabled) => ({
-    width: 30,
-    height: 30,
-    borderRadius: 8,
-    border: "1px solid " + (COLORS?.border || "#ccc"),
-    background: disabled ? "#e5e7eb" : isLoading ? "#e5e7eb" : bg,
-    display: "inline-flex",
-    alignItems: "center",
-    justifyContent: "center",
-    cursor: disabled || isLoading ? "not-allowed" : "pointer",
-    boxShadow: disabled ? "none" : "0 4px 10px rgba(0,0,0,0.06)",
-    color: fg,
-    opacity: disabled ? 0.5 : 1,
-  });
-
+  const deleteSelected = () => {
+    if (!selectedCards.length) return;
+    const noun = selectedCards.length === 1 ? "card" : "cards";
+    if (!window.confirm(`Delete ${selectedCards.length} selected ${noun}?`)) return;
+    setCards((current) => current.filter((_, index) => !selectedSet.has(index)));
+    setSelectedCards([]);
+    setEditingIndex(null);
+  };
 
   const transformOnce = async (card, instruction) => {
     const prompt = `${instruction}\n\nQuestion: ${card.question}\nCurrent answer: ${card.answer}\nReturn only the revised answer text.`;
@@ -90,98 +135,70 @@ const FlashCardTable = ({ cards, setCards, COLORS }) => {
     return (response || "").trim();
   };
 
-  const runTransform = async (idx, instruction) => {
-    if (!cards[idx]) return;
-    setRowLoading((prev) => ({ ...prev, [idx]: true }));
+  const runTransform = async (index, presetKey) => {
+    if (!cards[index] || !TRANSFORM_PRESETS[presetKey]) return;
+    setRowLoading((current) => ({ ...current, [index]: presetKey }));
     try {
-      const updatedAnswer = await transformOnce(cards[idx], instruction);
-      if (!updatedAnswer) return;
-      setCards((prev) =>
-        prev.map((c, i) => (i === idx ? { ...c, answer: updatedAnswer } : c))
-      );
-    } catch (err) {
-      console.error("Transform failed", err);
+      const answer = await transformOnce(cards[index], TRANSFORM_PRESETS[presetKey]);
+      if (answer) {
+        setCards((current) =>
+          current.map((card, cardIndex) =>
+            cardIndex === index ? { ...card, answer } : card
+          )
+        );
+      }
+    } catch (error) {
+      console.error("Transform failed", error);
     } finally {
-      setRowLoading((prev) => ({ ...prev, [idx]: false }));
+      setRowLoading((current) => ({ ...current, [index]: false }));
     }
   };
 
-  const transformPresets = {
-    expand3: "Rewrite this answer as roughly three concise sentences that cover the essentials.",
-    expand5: "Expand this answer into roughly five concise sentences with key details and nuance.",
-    expand10: "Expand this answer into roughly ten concise sentences with clear structure and detail.",
-    expand15: "Expand this answer into roughly fifteen concise sentences, covering context, examples, and nuance.",
-  };
-
-  const targetSentences = {
-    expand3: 3,
-    expand5: 5,
-    expand10: 10,
-    expand15: 15,
-  };
-
-  const sentenceCount = (text = "") => {
-    return (text.match(/[^.!?]+[.!?]+/g) || []).length || (text.trim() ? 1 : 0);
-  };
-
   const applyAll = async (presetKey) => {
-    const instruction = transformPresets[presetKey];
+    const instruction = TRANSFORM_PRESETS[presetKey];
     if (!instruction || !cards.length) return;
+    const target = TARGET_SENTENCES[presetKey];
     const eligible = cards
-      .map((card, idx) => ({ card, idx }))
-      .filter(({ card }) => {
-        const target = targetSentences[presetKey] || 0;
-        const currentCount = sentenceCount(card?.answer);
-        return !(target && currentCount >= target);
-      });
-
+      .map((card, index) => ({ card, index }))
+      .filter(({ card }) => sentenceCount(card.answer) < target);
     if (!eligible.length) return;
 
     setBulkLoading(presetKey);
     setBulkProgress({ done: 0, total: eligible.length });
-
     try {
       let successes = [];
-
       if (bulkMode === "sequential") {
-        for (let i = 0; i < eligible.length; i++) {
-          const { card, idx } = eligible[i];
+        for (const { card, index } of eligible) {
           try {
-            const res = await transformOnce(card, instruction);
-            if (res) {
-              successes.push({ idx, res });
-            }
-          } catch (err) {
-            console.error("Bulk sequential transform failed", err);
+            const answer = await transformOnce(card, instruction);
+            if (answer) successes.push({ index, answer });
+          } catch (error) {
+            console.error("Bulk sequential transform failed", error);
           } finally {
-            setBulkProgress((p) => ({ ...p, done: p.done + 1 }));
+            setBulkProgress((current) => ({ ...current, done: current.done + 1 }));
           }
         }
       } else {
         const results = await Promise.allSettled(
-          eligible.map(({ card, idx }) =>
+          eligible.map(({ card, index }) =>
             transformOnce(card, instruction)
-              .then((res) => ({ idx, res }))
+              .then((answer) => ({ index, answer }))
               .finally(() =>
-                setBulkProgress((p) => ({ ...p, done: p.done + 1 }))
+                setBulkProgress((current) => ({ ...current, done: current.done + 1 }))
               )
           )
         );
         successes = results
-          .filter((r) => r.status === "fulfilled" && r.value?.res)
-          .map((r) => r.value);
+          .filter((result) => result.status === "fulfilled" && result.value.answer)
+          .map((result) => result.value);
       }
-
       if (successes.length) {
-        setCards((prev) => {
-          const updated = [...prev];
-          successes.forEach(({ idx, res }) => {
-            if (updated[idx]) {
-              updated[idx] = { ...updated[idx], answer: res.trim() };
-            }
-          });
-          return updated;
-        });
+        const updates = new Map(successes.map(({ index, answer }) => [index, answer]));
+        setCards((current) =>
+          current.map((card, index) =>
+            updates.has(index) ? { ...card, answer: updates.get(index) } : card
+          )
+        );
       }
     } finally {
       setBulkLoading(null);
@@ -189,343 +206,220 @@ const FlashCardTable = ({ cards, setCards, COLORS }) => {
     }
   };
 
-  return (
-    <div
-      style={{
-        position: "relative",
-        overflowX: "auto",
-        // space so table doesn't hide under bottom toolbar
-        paddingBottom: !anyDrawerOpen && toolbarVisible ? "190px" : "24px",
-      }}
-    >
-      {/* Fixed, viewport-level bottom toolbar via portal (works on mobile) */}
-      {!anyDrawerOpen && (
-      <ToolbarPortal>
-        <>
-          {/* Always-visible toggle button (bottom-right) */}
+  const renderExpansionButtons = (index, answer, isBulk = false) => (
+    <div className={`flash-manage-expand ${isBulk ? "is-bulk" : ""}`}>
+      {EXPANSION_OPTIONS.map(({ key, label, title, icon: Icon }) => {
+        const loading = isBulk ? bulkLoading === key : rowLoading[index] === key;
+        const disabled = isBulk
+          ? Boolean(bulkLoading)
+          : Boolean(rowLoading[index]) || sentenceCount(answer) === TARGET_SENTENCES[key];
+        return (
           <button
-            onClick={() => setToolbarVisible((v) => !v)}
-            aria-label={toolbarVisible ? "Hide toolbar" : "Show toolbar"}
-            style={{
-              position: "fixed",
-              right: 14,
-              bottom: "calc(14px + env(safe-area-inset-bottom, 0px))",
-              zIndex: 30002,
-              width: 44,
-              height: 44,
-              borderRadius: "14px",
-              border: `1px solid ${COLORS?.border || "#333"}`,
-              background: "#0f172a",
-              color: "#ffffff",
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
-              boxShadow: "0 10px 22px rgba(0,0,0,0.35)",
-              cursor: "pointer",
-              touchAction: "manipulation",
+            className={`flash-expand-button is-${TARGET_SENTENCES[key]}`}
+            key={key}
+            type="button"
+            disabled={disabled}
+            onClick={(event) => {
+              event.stopPropagation();
+              if (isBulk) applyAll(key);
+              else runTransform(index, key);
             }}
+            title={isBulk ? `${title} for every shorter answer` : title}
+            aria-label={isBulk ? `${title} for all cards` : title}
           >
-            {toolbarVisible ? <FaChevronDown size={16} /> : <FaChevronUp size={16} />}
+            {loading ? <ClipLoader size={12} color="currentColor" /> : <Icon aria-hidden="true" />}
+            <span>{label}</span>
           </button>
-
-          {/* Toolbar card (bottom, centered) */}
-          <div
-            style={{
-              position: "fixed",
-              left: "50%",
-              bottom: "calc(10px + env(safe-area-inset-bottom, 0px))",
-              transform: toolbarVisible ? "translateX(-50%)" : "translateX(-50%) translateY(80px)",
-              opacity: toolbarVisible ? 1 : 0,
-              pointerEvents: toolbarVisible ? "auto" : "none",
-              transition: "transform 0.25s ease, opacity 0.2s ease",
-              zIndex: 30000,
-              backgroundColor: "#0f172a",
-              border: "1px solid rgba(255,255,255,0.14)",
-              borderRadius: "14px",
-              boxShadow: "0 16px 40px rgba(0,0,0,0.35)",
-              padding: "10px 12px",
-              display: "flex",
-              gap: "10px",
-              alignItems: "center",
-              justifyContent: "space-between",
-              width: "min(680px, calc(100vw - 20px))",
-            }}
-          >
-            {/* Left cluster: Select All + count */}
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "8px",
-                flex: "1 1 auto",
-                minWidth: 0,
-              }}
-            >
-              <button
-                onClick={toggleSelectAll}
-                style={{
-                  backgroundColor: allSelected ? "#b33a3a" : "#0078d7",
-                  color: "#fff",
-                  border: "none",
-                  borderRadius: "10px",
-                  padding: "8px 10px",
-                  fontSize: "0.95rem",
-                  fontWeight: 600,
-                  boxShadow: "0 10px 20px rgba(0,0,0,0.20)",
-                }}
-              >
-                {allSelected ? "Clear All" : "Select All"}
-              </button>
-
-              <span
-                style={{
-                  color: "#e2e8f0",
-                  fontSize: "0.9rem",
-                  opacity: 0.9,
-                  whiteSpace: "nowrap",
-                }}
-              >
-                {selectedCards.length} selected · {cards.length} flashcards
-              </span>
-            </div>
-
-            {/* Right cluster: your ActionButtons (wraps on small screens) */}
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "8px",
-                flexWrap: "wrap",
-                justifyContent: "flex-end",
-                flex: "0 1 auto",
-                minWidth: 0,
-              }}
-            >
-              {/* Disable ActionButtons when nothing is selected to avoid empty prompts */}
-              <div style={{ opacity: hasSelection ? 1 : 0.55 }}>
-                <ActionButtons limitButtons promptText={hasSelection ? combinedPrompt : ""} />
-              </div>
-            </div>
-          </div>
-        </>
-      </ToolbarPortal>
-      )}
-
-      {/* Flashcard table */}
-      {cards.length === 0 ? (
-        <p>No cards available to display.</p>
-      ) : (
-        <table
-          style={{
-            width: "100%",
-            borderCollapse: "collapse",
-            color: COLORS?.text || "#eaeaea",
-            fontSize: "0.95rem",
-          }}
-        >
-          <caption style={{ textAlign: "left", marginBottom: "0.5rem", color: COLORS?.text || "#fff" }}>
-            <div style={{ display: "flex", gap: "10px", flexWrap: "wrap", alignItems: "center", fontSize: "0.9rem" }}>
-              <span style={{ display: "inline-flex", alignItems: "center", gap: "6px" }}>
-                <span style={{ width: 14, height: 14, borderRadius: 4, background: "#e0f2fe", display: "inline-block" }}></span>
-                3 sentences
-              </span>
-              <span style={{ display: "inline-flex", alignItems: "center", gap: "6px" }}>
-                <span style={{ width: 14, height: 14, borderRadius: 4, background: "#c7d2fe", display: "inline-block" }}></span>
-                5 sentences
-              </span>
-              <span style={{ display: "inline-flex", alignItems: "center", gap: "6px" }}>
-                <span style={{ width: 14, height: 14, borderRadius: 4, background: "#fef3c7", display: "inline-block" }}></span>
-                10 sentences
-              </span>
-              <span style={{ display: "inline-flex", alignItems: "center", gap: "6px" }}>
-                <span style={{ width: 14, height: 14, borderRadius: 4, background: "#e2e8f0", display: "inline-block" }}></span>
-                15 sentences
-              </span>
-            </div>
-            <div style={{ display: "flex", gap: "8px", flexWrap: "wrap", marginTop: "0.4rem" }}>
-              <label
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "8px",
-                  padding: "6px 10px",
-                  background: "#f1f5f9",
-                  borderRadius: 10,
-                  fontSize: "0.9rem",
-                  color: "#0f172a",
-                  whiteSpace: "nowrap",
-                }}
-              >
-                <input
-                  type="checkbox"
-                  checked={bulkMode === "async"}
-                  onChange={(e) => setBulkMode(e.target.checked ? "async" : "sequential")}
-                  style={{ width: 16, height: 16 }}
-                />
-                Run in parallel (faster)
-              </label>
-              <button
-                disabled={!!bulkLoading}
-                onClick={() => applyAll("expand3")}
-                style={iconBtnStyle(!!bulkLoading, "#e0f2fe", "#0b172a")}
-                title="Apply 3 sentences to all"
-              >
-                {bulkLoading === "expand3" ? <ClipLoader size={14} color="#0b1220" /> : <FaFeatherAlt size={14} color="#0b172a" />}
-              </button>
-              <button
-                disabled={!!bulkLoading}
-                onClick={() => applyAll("expand5")}
-                style={iconBtnStyle(!!bulkLoading, "#c7d2fe", "#312e81")}
-                title="Apply 5 sentences to all"
-              >
-                {bulkLoading === "expand5" ? <ClipLoader size={14} color="#0b1220" /> : <FaFeatherAlt size={14} color="#312e81" />}
-              </button>
-              <button
-                disabled={!!bulkLoading}
-                onClick={() => applyAll("expand10")}
-                style={iconBtnStyle(!!bulkLoading, "#fef3c7", "#92400e")}
-                title="Apply 10 sentences to all"
-              >
-                {bulkLoading === "expand10" ? <ClipLoader size={14} color="#0b1220" /> : <FaAlignLeft size={14} color="#92400e" />}
-              </button>
-              <button
-                disabled={!!bulkLoading}
-                onClick={() => applyAll("expand15")}
-                style={iconBtnStyle(!!bulkLoading, "#e2e8f0", "#0f172a")}
-                title="Apply 15 sentences to all"
-              >
-                {bulkLoading === "expand15" ? <ClipLoader size={14} color="#0b1220" /> : <FaBookOpen size={14} color="#0f172a" />}
-              </button>
-              {bulkLoading && bulkProgress.total > 0 && (
-                <div style={{ minWidth: 160, marginLeft: "6px" }}>
-                  <div style={{ fontSize: "0.8rem", color: COLORS?.text || "#fff", marginBottom: "4px" }}>
-                    {bulkProgress.done}/{bulkProgress.total} processed
-                  </div>
-                  <div style={{ width: "100%", height: 8, background: "#e5e7eb", borderRadius: 10, overflow: "hidden" }}>
-                    <div
-                      style={{
-                        width: `${(bulkProgress.done / bulkProgress.total) * 100}%`,
-                        height: "100%",
-                        background: "#0ea5e9",
-                        transition: "width 0.2s ease",
-                      }}
-                    />
-                  </div>
-                </div>
-              )}
-            </div>
-          </caption>
-          <thead>
-            <tr>
-              <th
-                style={{
-                  borderBottom: `2px solid ${COLORS?.border || "#444"}`,
-                  textAlign: "left",
-                  padding: "0.5rem",
-                }}
-              >
-                Question
-              </th>
-              <th
-                style={{
-                  borderBottom: `2px solid ${COLORS?.border || "#444"}`,
-                  textAlign: "left",
-                  padding: "0.5rem",
-                }}
-              >
-                Answer
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {cards.map((card, idx) => (
-              <tr
-                key={idx}
-                style={{
-                  backgroundColor: selectedCards.includes(idx)
-                    ? "rgba(100,149,237,0.15)"
-                    : "transparent",
-                  cursor: "pointer",
-                }}
-                onClick={() => toggleCardSelection(idx)}
-              >
-                <td
-                  style={{
-                    borderBottom: `1px solid ${COLORS?.border || "#444"}`,
-                    padding: "0.5rem",
-                    verticalAlign: "top",
-                    wordWrap: "break-word",
-                  }}
-                >
-                  {card.question}
-                  <div style={{ display: "flex", gap: "6px", alignItems: "center", flexWrap: "wrap", marginTop: "0.4rem" }}>
-                    <button
-                      title="3 sentences"
-                      aria-label="3 sentences"
-                      disabled={!!rowLoading[idx] || sentenceCount(card.answer) === 3}
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        runTransform(idx, transformPresets.expand3);
-                      }}
-                      style={iconBtnStyle(rowLoading[idx], "#e0f2fe", "#0b172a", !!rowLoading[idx] || sentenceCount(card.answer) === 3)}
-                    >
-                      {rowLoading[idx] ? <ClipLoader size={14} color="#0b1220" cssOverride={{ borderWidth: "3px" }} /> : <FaFeatherAlt size={14} color="#0b172a" /> }
-                    </button>
-                    <button
-                      title="5 sentences"
-                      aria-label="5 sentences"
-                      disabled={!!rowLoading[idx] || sentenceCount(card.answer) === 5}
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        runTransform(idx, transformPresets.expand5);
-                      }}
-                      style={iconBtnStyle(rowLoading[idx], "#c7d2fe", "#312e81", !!rowLoading[idx] || sentenceCount(card.answer) === 5)}
-                    >
-                      {rowLoading[idx] ? <ClipLoader size={14} color="#0b1220" cssOverride={{ borderWidth: "3px" }} /> : <FaFeatherAlt size={14} color="#312e81" /> }
-                    </button>
-                    <button
-                      title="10 sentences"
-                      aria-label="10 sentences"
-                      disabled={!!rowLoading[idx] || sentenceCount(card.answer) === 10}
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        runTransform(idx, transformPresets.expand10);
-                      }}
-                      style={iconBtnStyle(rowLoading[idx], "#fef3c7", "#92400e", !!rowLoading[idx] || sentenceCount(card.answer) === 10)}
-                    >
-                      {rowLoading[idx] ? <ClipLoader size={14} color="#0b1220" cssOverride={{ borderWidth: "3px" }} /> : <FaAlignLeft size={14} color="#92400e" /> }
-                    </button>
-                    <button
-                      title="15 sentences"
-                      aria-label="15 sentences"
-                      disabled={!!rowLoading[idx] || sentenceCount(card.answer) === 15}
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        runTransform(idx, transformPresets.expand15);
-                      }}
-                      style={iconBtnStyle(rowLoading[idx], "#e2e8f0", "#0f172a", !!rowLoading[idx] || sentenceCount(card.answer) === 15)}
-                    >
-                      {rowLoading[idx] ? <ClipLoader size={14} color="#0b1220" cssOverride={{ borderWidth: "3px" }} /> : <FaBookOpen size={14} color="#0f172a" /> }
-                    </button>
-                  </div>
-                </td>
-                <td
-                  style={{
-                    borderBottom: `1px solid ${COLORS?.border || "#444"}`,
-                    padding: "0.5rem",
-                    verticalAlign: "top",
-                    wordWrap: "break-word",
-                  }}
-                >
-                  <div style={{ marginBottom: "0.4rem" }}>{card.answer}</div>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      )}
+        );
+      })}
     </div>
   );
-};
 
-export default FlashCardTable;
+  return (
+    <section
+      className="flash-manage"
+      style={{
+        "--manage-text": COLORS?.text || "#172033",
+        "--manage-border": COLORS?.border || "#dfe3eb",
+        paddingBottom: !anyDrawerOpen && toolbarVisible ? "7.5rem" : "1.5rem",
+      }}
+    >
+      <header className="flash-manage-header">
+        <div>
+          <span className="flash-manage-eyebrow">Deck manager</span>
+          <h2>Review and refine</h2>
+          <p>Edit cards, improve answers with AI, or select cards to use elsewhere.</p>
+        </div>
+        <span className="flash-manage-count">{cards.length} {cards.length === 1 ? "card" : "cards"}</span>
+      </header>
+
+      {cards.length > 0 && (
+        <div className="flash-manage-tools">
+          <label className="flash-manage-search">
+            <FaSearch aria-hidden="true" />
+            <span className="ui-sr-only">Search cards</span>
+            <input
+              type="search"
+              value={query}
+              onChange={(event) => setQuery(event.target.value)}
+              placeholder="Search questions and answers"
+            />
+            {query && (
+              <button type="button" onClick={() => setQuery("")} aria-label="Clear search">
+                <FaTimes />
+              </button>
+            )}
+          </label>
+          <button className="flash-manage-select" type="button" onClick={toggleSelectVisible}>
+            {allVisibleSelected ? "Clear visible" : "Select visible"}
+          </button>
+        </div>
+      )}
+
+      {cards.length === 0 ? (
+        <div className="flash-manage-empty">
+          <FaBookOpen aria-hidden="true" />
+          <h3>No cards in this deck</h3>
+          <p>Add or generate cards to start managing them here.</p>
+        </div>
+      ) : visibleCards.length === 0 ? (
+        <div className="flash-manage-empty is-compact">
+          <FaSearch aria-hidden="true" />
+          <h3>No matching cards</h3>
+          <button type="button" onClick={() => setQuery("")}>Clear search</button>
+        </div>
+      ) : (
+        <div className="flash-manage-list">
+          <div className="flash-manage-list-head" aria-hidden="true">
+            <span>Question</span><span>Answer</span><span>Actions</span>
+          </div>
+          {visibleCards.map(({ card, index }) => {
+            const selected = selectedSet.has(index);
+            const editing = editingIndex === index;
+            return (
+              <article className={`flash-manage-card ${selected ? "is-selected" : ""}`} key={index}>
+                <label className="flash-card-selector" title={selected ? "Deselect card" : "Select card"}>
+                  <input
+                    type="checkbox"
+                    checked={selected}
+                    onChange={() => toggleCardSelection(index)}
+                    aria-label={`${selected ? "Deselect" : "Select"} card ${index + 1}`}
+                  />
+                  <span>{index + 1}</span>
+                </label>
+
+                {editing ? (
+                  <div className="flash-manage-edit-fields">
+                    <label>
+                      <span>Question</span>
+                      <textarea
+                        value={draft.question}
+                        onChange={(event) => setDraft((current) => ({ ...current, question: event.target.value }))}
+                        rows={3}
+                      />
+                    </label>
+                    <label>
+                      <span>Answer</span>
+                      <textarea
+                        value={draft.answer}
+                        onChange={(event) => setDraft((current) => ({ ...current, answer: event.target.value }))}
+                        rows={5}
+                      />
+                    </label>
+                  </div>
+                ) : (
+                  <>
+                    <div className="flash-manage-copy">
+                      <span className="flash-mobile-label">Question</span>
+                      <p>{card.question}</p>
+                    </div>
+                    <div className="flash-manage-copy is-answer">
+                      <span className="flash-mobile-label">Answer</span>
+                      <p>{card.answer}</p>
+                      <span className="flash-sentence-count">{sentenceCount(card.answer)} {sentenceCount(card.answer) === 1 ? "sentence" : "sentences"}</span>
+                    </div>
+                  </>
+                )}
+
+                <div className="flash-manage-card-actions">
+                  {editing ? (
+                    <>
+                      <button
+                        className="flash-card-action is-save"
+                        type="button"
+                        onClick={saveEditing}
+                        disabled={!draft.question.trim() || !draft.answer.trim()}
+                      ><FaCheck /> Save</button>
+                      <button className="flash-card-action" type="button" onClick={() => setEditingIndex(null)}>
+                        <FaTimes /> Cancel
+                      </button>
+                    </>
+                  ) : (
+                    <>
+                      <button className="flash-card-action" type="button" onClick={() => startEditing(index)}>
+                        <FaEdit /> Edit
+                      </button>
+                      {renderExpansionButtons(index, card.answer)}
+                    </>
+                  )}
+                </div>
+              </article>
+            );
+          })}
+        </div>
+      )}
+
+      {cards.length > 0 && (
+        <aside className="flash-manage-ai-panel">
+          <div className="flash-manage-ai-copy">
+            <strong>Improve every answer</strong>
+            <span>Only answers shorter than the target are updated.</span>
+          </div>
+          <label className="flash-manage-mode">
+            <input
+              type="checkbox"
+              checked={bulkMode === "async"}
+              onChange={(event) => setBulkMode(event.target.checked ? "async" : "sequential")}
+            />
+            <span>Faster parallel mode</span>
+          </label>
+          {renderExpansionButtons(null, "", true)}
+          {bulkLoading && bulkProgress.total > 0 && (
+            <div className="flash-manage-progress" role="status">
+              <span>{bulkProgress.done} of {bulkProgress.total}</span>
+              <div><i style={{ width: `${(bulkProgress.done / bulkProgress.total) * 100}%` }} /></div>
+            </div>
+          )}
+        </aside>
+      )}
+
+      {!anyDrawerOpen && (
+        <ToolbarPortal>
+          <button
+            className="flash-selection-toggle"
+            type="button"
+            onClick={() => setToolbarVisible((visible) => !visible)}
+            aria-label={toolbarVisible ? "Hide selection toolbar" : "Show selection toolbar"}
+          >
+            {toolbarVisible ? <FaChevronDown /> : <FaChevronUp />}
+          </button>
+          <div className={`flash-selection-bar ${toolbarVisible ? "is-visible" : ""}`}>
+            <div className="flash-selection-summary">
+              <strong>{selectedCards.length}</strong>
+              <span>{selectedCards.length === 1 ? "card selected" : "cards selected"}</span>
+            </div>
+            <div className={`flash-selection-actions ${hasSelection ? "" : "is-disabled"}`}>
+              <ActionButtons limitButtons promptText={hasSelection ? combinedPrompt : ""} />
+            </div>
+            <button
+              className="flash-selection-delete"
+              type="button"
+              disabled={!hasSelection}
+              onClick={deleteSelected}
+            ><FaTrashAlt /> <span>Delete</span></button>
+          </div>
+        </ToolbarPortal>
+      )}
+    </section>
+  );
+}
