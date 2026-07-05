@@ -28,6 +28,119 @@ const languageHelp = {
   simple: "MiniScript is strongly typed and supports fixed arrays, u16/bool values, classes, methods, and control flow.",
 };
 
+const syntaxGuideSections = [
+  {
+    title: "Binary",
+    summary: "Raw 16-bit machine words for direct loading.",
+    highlights: [
+      "Every token must be exactly 16 binary digits.",
+      "You can put multiple words on one line separated by spaces or commas.",
+      "Comments use #, ;, or //.",
+      "The simulator accepts up to 64 words.",
+      "Binary mode has no labels, mnemonics, or hex literals.",
+    ],
+    examples: [
+      "0000100000000011",
+      "1011000000000000",
+      "1110100000000000",
+    ],
+  },
+  {
+    title: "Assembly",
+    summary: "Mnemonic source that assembles into the same 16-bit words.",
+    highlights: [
+      "Registers are A, B, C, and D.",
+      "Supported number formats: decimal, 0x hex, or $ hex.",
+      "Labels use a trailing colon, like loop: or done:.",
+      ".word and DW emit raw 16-bit values.",
+      "Instruction shapes are none, one register, two registers, register + address, register + immediate, or register + byte.",
+    ],
+    examples: [
+      "start:\nLDI A, 10\nOUT A\nHLT",
+      "loop:\nADDI A, 1\nJNZ loop",
+      ".word 0x1234",
+    ],
+  },
+  {
+    title: "MiniScript",
+    summary: "A strongly typed, JavaScript-like layer that compiles to assembly.",
+    highlights: [
+      "Declarations must be typed: let count: u16 = 3; or const limit: u16 = 10;",
+      "Methods are typed and currently return void only.",
+      "Class fields, constructors, methods, and this are supported.",
+      "Array types are fixed-size: u16[N] and bool[N].",
+      "Built-ins: output(value), print(value), halt(), stop(), push(value), pop(target), and nop().",
+    ],
+    examples: [
+      "let count: u16 = 5;\nwhile (count !== 0) {\n  output(count);\n  count--;\n}",
+      "class Counter {\n  value: u16;\n  constructor(start: u16) { this.value = start; }\n}",
+      "let values: u16[3] = [10, 20, 30];\nvalues[1]++;",
+    ],
+  },
+  {
+    title: "Types and expressions",
+    summary: "The value system and operators supported by the compiler.",
+    highlights: [
+      "Primitive types: u16, bool, and void for methods.",
+      "Boolean literals: true and false.",
+      "Numeric literals can be decimal or hex, and compile-time constants may be used where a constant is required.",
+      "Arithmetic and bitwise operators: +, -, *, %, &, |, ^.",
+      "Boolean operators: !, &&, ||.",
+      "Comparison operators: ==, ===, !=, !==.",
+      "Compound assignments are supported for variables, object fields, memory, and array elements where the type allows it.",
+      "Update operators ++ and -- are supported on variables, fields, memory cells, and array elements.",
+    ],
+    examples: [
+      "let mask: u16 = 0x00FF;\nlet flag: bool = true;\nif (!flag || mask === 0) { halt(); }",
+      "count += 1;\nvalue ^= mask;\nvalue &= 0x0FFF;",
+      "if (left === right) { output(1); } else { output(0); }",
+    ],
+  },
+  {
+    title: "Objects, arrays, memory",
+    summary: "Stateful data features that sit on top of the register machine.",
+    highlights: [
+      "Classes can define typed fields, a single constructor, and methods.",
+      "Methods are inlined during compilation and can access this.",
+      "Arrays are fixed-size, live in high memory, and support .length.",
+      "Array indexing must use a named array and a compile-time constant index.",
+      "memory[address] reads or writes RAM at a compile-time address.",
+      "Arrays and push/pop share high memory, so the compiler rejects programs that combine them.",
+    ],
+    examples: [
+      "class Counter {\n  value: u16;\n  constructor(start: u16) { this.value = start; }\n  method add(amount: u16): void { this.value += amount; }\n}",
+      "let values: u16[4] = [7, 11, 13, 17];\nvalues[2]++;\noutput(values.length);",
+      "const slot: u16 = 48;\nmemory[slot] = 1234;\noutput(memory[slot]);",
+    ],
+  },
+  {
+    title: "Instruction set",
+    summary: "Every opcode the binary and assembly front-ends can emit.",
+    highlights: [
+      "Binary and assembly both target the same 32 opcodes.",
+      "Conditional branches depend on the CPU zero, carry, or negative flags.",
+      "PUSH, POP, CALL, and RET use the hardware stack.",
+      "LUI and ADDI/SUBI support compact immediate forms.",
+      "HLT stops the clock until reset or reload.",
+    ],
+    instructions: instructionRows,
+  },
+];
+
+const syntaxGuideText = syntaxGuideSections.map((section) => {
+  const blocks = [
+    section.title,
+    section.summary,
+    "",
+    ...(section.highlights || []).map((line) => `- ${line}`),
+  ];
+  if (section.instructions) {
+    blocks.push("", "Opcode reference", ...section.instructions.map(([opcode, name, description]) => `${opcode} ${name} - ${description}`));
+  }
+  if (section.examples?.length) blocks.push("", "Examples", ...section.examples);
+  return blocks.join("\n");
+}).join("\n\n");
+
 const hex = (value) => `0x${value.toString(16).toUpperCase().padStart(4, "0")}`;
 const hexAddress = (value) => `0x${value.toString(16).toUpperCase().padStart(2, "0")}`;
 const hexOpcode = (value) => `0x${Number.parseInt(value, 2).toString(16).toUpperCase().padStart(2, "0")}`;
@@ -83,6 +196,34 @@ function EventCard({ event }) {
       <div className="cpu-event-topline"><span className={`cpu-phase cpu-phase--${event.phase.toLowerCase()}`}>{event.phase}</span><span>Clock {event.cycle}</span></div>
       <h3>{event.title}</h3><p>{event.detail}</p>
       {event.signals.length > 0 && <div className="cpu-signals" aria-label="Active control signals">{event.signals.map((signal) => <span key={signal}>{signal}</span>)}</div>}
+    </article>
+  );
+}
+
+function SyntaxCard({ section }) {
+  const highlights = section.highlights ?? section.notes ?? [];
+  const examples = section.examples ?? [];
+  return (
+    <article className="cpu-syntax-card">
+      <span>{section.title}</span>
+      <p>{section.summary}</p>
+      <ul>
+        {highlights.map((note) => <li key={note}>{note}</li>)}
+      </ul>
+      {section.instructions ? (
+        <div className="cpu-syntax-instruction-grid">
+          {section.instructions.map(([opcode, name, description]) => (
+            <div key={opcode}>
+              <code>{hexOpcode(opcode)}</code>
+              <b>{name}</b>
+              <span>{description}</span>
+            </div>
+          ))}
+        </div>
+      ) : null}
+      <div className="cpu-syntax-examples">
+        {examples.map((example) => <pre key={example}>{example}</pre>)}
+      </div>
     </article>
   );
 }
@@ -234,6 +375,63 @@ function CpuExecutionModal({ state, running, busy, canStepBack, onClose, onStep,
   );
 }
 
+function CpuSyntaxModal({ onClose }) {
+  const dialogRef = useRef(null);
+  const [copied, setCopied] = useState(false);
+
+  useEffect(() => {
+    const dialog = dialogRef.current;
+    if (dialog && !dialog.open) dialog.showModal();
+  }, []);
+
+  useEffect(() => {
+    if (!copied) return undefined;
+    const timer = window.setTimeout(() => setCopied(false), 1800);
+    return () => window.clearTimeout(timer);
+  }, [copied]);
+
+  const copyAll = async () => {
+    try {
+      await navigator.clipboard.writeText(syntaxGuideText);
+      setCopied(true);
+    } catch {
+      const textarea = document.createElement("textarea");
+      textarea.value = syntaxGuideText;
+      textarea.setAttribute("readonly", "readonly");
+      textarea.style.position = "absolute";
+      textarea.style.left = "-9999px";
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand("copy");
+      document.body.removeChild(textarea);
+      setCopied(true);
+    }
+  };
+
+  return (
+    <dialog ref={dialogRef} className="cpu-syntax-modal" onClose={onClose} onCancel={onClose} aria-labelledby="cpu-syntax-title">
+      <div className="cpu-syntax-shell">
+        <header className="cpu-syntax-header">
+          <div>
+            <span className="cpu-eyebrow">Language reference</span>
+            <h2 id="cpu-syntax-title">Binary, assembly, and MiniScript syntax</h2>
+            <p>Use this as the quick reference for what the simulator accepts.</p>
+          </div>
+          <button type="button" className="cpu-syntax-copy" onClick={copyAll}>{copied ? "Copied" : "Copy all"}</button>
+          <button type="button" className="cpu-modal-close" onClick={() => dialogRef.current?.close()} aria-label="Close syntax reference">×</button>
+        </header>
+        <div className="cpu-syntax-grid">
+          {syntaxGuideSections.map((section) => <SyntaxCard key={section.title} section={section} />)}
+        </div>
+        <footer className="cpu-syntax-footer">
+          <span>Comments: binary uses #, ;, or //. MiniScript also accepts /* */.</span>
+          <button type="button" onClick={() => dialogRef.current?.close()}>Close</button>
+        </footer>
+      </div>
+    </dialog>
+  );
+}
+
 export default function CpuSimulator() {
   const [programs] = useState(samplePrograms);
   const [source, setSource] = useState(samplePrograms[0]?.source ?? "");
@@ -249,6 +447,7 @@ export default function CpuSimulator() {
   const [error, setError] = useState("");
   const [timerVersion, setTimerVersion] = useState(0);
   const [showCpuModal, setShowCpuModal] = useState(false);
+  const [showSyntaxModal, setShowSyntaxModal] = useState(false);
   const [generationPrompt, setGenerationPrompt] = useState("");
   const [generating, setGenerating] = useState(false);
   const simulatorRef = useRef(null);
@@ -343,7 +542,7 @@ export default function CpuSimulator() {
   const currentExample = programs.find((item) => item.id === selectedProgram);
 
   return (
-    <div className={`cpu-sim ${showCpuModal ? "circuit-open" : ""}`}>
+    <div className={`cpu-sim ${showCpuModal || showSyntaxModal ? "circuit-open" : ""}`}>
       <header className="cpu-topbar">
         <div className="cpu-brand"><span className="cpu-brand__mark">16</span><div><b>Clockwork</b><small>16-bit CPU laboratory</small></div></div>
         <div className="cpu-status-strip"><span className={`cpu-status-light ${running ? "live" : ""}`} /><span>{state?.halted ? "Halted" : running ? "Clock running" : state ? "Clock paused" : "Program not loaded"}</span><b>{state?.cycle ?? 0} cycles</b><ElapsedTime key={timerVersion} running={running} /></div>
@@ -366,6 +565,9 @@ export default function CpuSimulator() {
             <label className="cpu-field-label" htmlFor="cpu-source">{language === "binary" ? "Binary memory image" : language === "assembly" ? "Assembly source" : "MiniScript source"}</label>
             <div className="cpu-editor-wrap"><div className="cpu-line-numbers" aria-hidden="true">{source.split("\n").map((_, index) => <span key={index}>{index + 1}</span>)}</div><textarea id="cpu-source" spellCheck="false" value={source} onChange={(event) => { setSource(event.target.value); setSelectedProgram(""); setCompiled(null); }} /></div>
             <p className="cpu-format-hint">{languageHelp[language]} Comments use <code>{language === "simple" ? "//, /* */, or #" : "#, ;, or //"}</code>.</p>
+            <div className="cpu-language-actions">
+              <button type="button" className="cpu-syntax-button" onClick={() => setShowSyntaxModal(true)}>Open syntax guide</button>
+            </div>
             {language === "simple" && <details className="cpu-language-guide"><summary>MiniScript syntax</summary><code>let count: u16 = 300;</code><code>let values: u16[3] = [10, 20, 30];</code><code>values[1]++; // constant index</code><code>class Counter {"{ value: u16; … }"}</code><code>let counter: Counter = new Counter(0);</code><code>counter.increment(1);</code></details>}
             <button className="cpu-load-button" type="button" onClick={load} disabled={busy}>{busy ? "Compiling…" : state ? "Compile & load again" : "Compile & load"}</button>
             {compiled && <details className="cpu-compiled"><summary>View compiled output</summary>{language === "simple" && <><label>Assembly</label><pre>{compiled.assembly}</pre></>}<label>Machine code</label><pre>{compiled.machine}</pre></details>}
@@ -400,6 +602,7 @@ export default function CpuSimulator() {
         </section></>}
       </main>
       {showCpuModal && state && <CpuExecutionModal state={state} running={running} busy={busy} canStepBack={undoCount > 0} onClose={() => setShowCpuModal(false)} onStep={step} onStepBack={stepBack} onToggleRunning={() => setRunning((value) => !value)} />}
+      {showSyntaxModal && <CpuSyntaxModal onClose={() => setShowSyntaxModal(false)} />}
       <footer className="cpu-footer"><span>Clockwork CPU Lab</span><p>A 16-bit architecture with 64 words of memory. Values wrap at 65,535.</p></footer>
     </div>
   );

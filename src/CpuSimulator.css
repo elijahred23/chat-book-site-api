@@ -74,6 +74,9 @@
 .cpu-language-guide { margin-top: 10px; color: #77838e; font: 8px var(--cpu-mono); }
 .cpu-language-guide summary, .cpu-compiled summary { cursor: pointer; color: #aeb7c0; }
 .cpu-language-guide code { display: block; color: #8ea36e; padding: 2px 0; }
+.cpu-language-actions { display: flex; justify-content: flex-end; margin-top: 10px; }
+.cpu-syntax-button { border: 1px solid #39424b; border-radius: 2px; padding: 9px 11px; background: #151b22; color: var(--cpu-cyan); font: 8px var(--cpu-mono); letter-spacing: 0.09em; text-transform: uppercase; }
+.cpu-syntax-button:hover:not(:disabled) { border-color: #4f7a72; background: #192128; }
 .cpu-compiled { border-top: 1px solid var(--cpu-line); margin-top: 14px; padding-top: 12px; }
 .cpu-compiled summary { font: 9px var(--cpu-mono); }
 .cpu-compiled label { display: block; color: var(--cpu-lime); font: 7px var(--cpu-mono); margin: 12px 0 5px; text-transform: uppercase; }
@@ -211,6 +214,30 @@
 .cpu-modal-controls button.clock { border-color: #708a28; color: var(--cpu-lime); }
 .cpu-modal-controls button.running { background: var(--cpu-lime); color: #101408; }
 
+.cpu-syntax-modal { --cpu-ink: #e9edf2; --cpu-muted: #84909c; --cpu-line: #252c34; --cpu-lime: #c8f04a; --cpu-cyan: #43d9c1; --cpu-orange: #ff9b54; --cpu-red: #ff6773; --cpu-mono: "SFMono-Regular", Consolas, monospace; width: min(1180px, calc(100vw - 32px)); max-width: none; padding: 0; border: 1px solid #38434d; background: #0b0f14; color: var(--cpu-ink); box-shadow: 0 24px 90px rgba(0, 0, 0, 0.75); }
+.cpu-syntax-modal::backdrop { background: rgba(2, 4, 7, 0.82); backdrop-filter: blur(6px); }
+.cpu-syntax-shell { display: grid; grid-template-rows: auto minmax(0, 1fr) auto; height: min(820px, calc(100dvh - 32px)); }
+.cpu-syntax-header { display: grid; grid-template-columns: 1fr auto auto; gap: 14px; align-items: center; padding: 19px 22px; border-bottom: 1px solid var(--cpu-line); background: #10161c; }
+.cpu-syntax-header h2 { color: var(--cpu-ink); margin: 5px 0 3px; font-size: 21px; }
+.cpu-syntax-header p { margin: 0; color: var(--cpu-muted); font-size: 10px; }
+.cpu-syntax-copy { min-height: 40px; border: 1px solid #28665d; border-radius: 2px; padding: 0 14px; background: #151b21; color: var(--cpu-cyan); font: 9px var(--cpu-mono); white-space: nowrap; text-transform: uppercase; }
+.cpu-syntax-copy:hover:not(:disabled) { background: #192128; }
+.cpu-syntax-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; overflow: auto; padding: 16px 22px; background: #080b0f; }
+.cpu-syntax-card { border: 1px solid #25303a; background: linear-gradient(180deg, rgba(16, 22, 28, 0.95), rgba(11, 15, 20, 0.98)); padding: 16px; min-width: 0; }
+.cpu-syntax-card > span { display: block; color: var(--cpu-lime); font: 10px var(--cpu-mono); letter-spacing: 0.1em; text-transform: uppercase; }
+.cpu-syntax-card > p { margin: 10px 0 14px; color: #9aa4ae; font-size: 11px; line-height: 1.6; }
+.cpu-syntax-card ul { margin: 0; padding-left: 16px; color: #c0c8d0; font-size: 10px; line-height: 1.6; }
+.cpu-syntax-card li + li { margin-top: 6px; }
+.cpu-syntax-instruction-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 14px; border-top: 1px solid #222b33; border-left: 1px solid #222b33; }
+.cpu-syntax-instruction-grid > div { display: grid; grid-template-columns: 44px 1fr; grid-template-areas: "opcode name" "opcode desc"; gap: 2px 7px; align-items: start; border-right: 1px solid #222b33; border-bottom: 1px solid #222b33; padding: 8px 9px; min-width: 0; }
+.cpu-syntax-instruction-grid code { grid-area: opcode; color: var(--cpu-lime); font: 8px var(--cpu-mono); }
+.cpu-syntax-instruction-grid b { grid-area: name; color: #cbd3db; font: 8px var(--cpu-mono); }
+.cpu-syntax-instruction-grid span { grid-area: desc; color: #73808b; font-size: 7px; line-height: 1.45; }
+.cpu-syntax-examples { display: grid; gap: 10px; margin-top: 14px; }
+.cpu-syntax-examples pre { margin: 0; padding: 10px; background: #080b10; border: 1px solid #252d34; color: #a8b5be; font: 8px/1.6 var(--cpu-mono); white-space: pre-wrap; overflow: auto; }
+.cpu-syntax-footer { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 22px; border-top: 1px solid var(--cpu-line); background: #10161c; color: var(--cpu-muted); font: 8px var(--cpu-mono); }
+.cpu-syntax-footer button { min-height: 38px; border: 1px solid #39424b; border-radius: 2px; background: #151b22; color: #aab4bd; padding: 0 12px; font-size: 9px; font-weight: 700; white-space: nowrap; }
+
 @keyframes cpu-circuit-flow { to { stroke-dashoffset: -17; } }
 @keyframes cpu-pulse { 50% { opacity: 0.45; } }
 @keyframes cpu-flow { from { left: 0; } to { left: 70%; } }
@@ -232,6 +259,10 @@
   .cpu-reference { grid-template-columns: 1fr; gap: 35px; } .cpu-instruction-grid { grid-template-columns: 1fr; } .cpu-instruction-grid > div:nth-child(odd) { border-right: 0; padding-right: 0; } .cpu-instruction-grid > div:nth-child(even) { padding-left: 0; }
   .cpu-modal-header { grid-template-columns: minmax(0, 1fr) auto auto; } .cpu-modal-status { display: none; }
   .cpu-modal-footer { grid-template-columns: minmax(0, 1fr) 270px; } .cpu-modal-signals { display: none; }
+  .cpu-syntax-header { grid-template-columns: minmax(0, 1fr) auto auto; } .cpu-syntax-header p, .cpu-syntax-header .cpu-eyebrow { display: none; }
+  .cpu-syntax-grid { grid-template-columns: 1fr; }
+  .cpu-syntax-instruction-grid { grid-template-columns: 1fr; }
+  .cpu-syntax-footer { flex-direction: column; align-items: stretch; } .cpu-syntax-footer button { width: 100%; }
 }
 
 @media (max-width: 500px) {
@@ -277,6 +308,14 @@
   .cpu-circuit-wires path.active, .cpu-circuit-node.active rect, .cpu-node-led { filter: none; animation: none; }
   .cpu-status-light.live, .cpu-data-bus div.flowing::after { animation: none; box-shadow: none; }
   .circuit-open .cpu-topbar { backdrop-filter: none; }
+  .cpu-syntax-modal { width: 100vw; height: 100dvh; max-height: none; border: 0; } .cpu-syntax-shell { grid-template-rows: auto minmax(0, 1fr) auto; height: 100dvh; }
+  .cpu-syntax-modal::backdrop { background: rgba(2, 4, 7, 0.92); backdrop-filter: none; }
+  .cpu-syntax-header { padding: max(10px, env(safe-area-inset-top)) 10px 10px; gap: 7px; } .cpu-syntax-header h2 { margin: 0; font-size: 16px; }
+  .cpu-syntax-copy { min-height: 44px; }
+  .cpu-syntax-grid { padding: 12px; }
+  .cpu-syntax-card { padding: 14px; }
+  .cpu-syntax-instruction-grid > div { padding: 7px 8px; }
+  .cpu-syntax-footer { padding: 10px 12px max(10px, env(safe-area-inset-bottom)); }
 }
 
 @media (prefers-reduced-motion: reduce) {
