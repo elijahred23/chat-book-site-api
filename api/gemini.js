@@ -163,6 +163,7 @@ MINISCRIPT SYNTAX (language "simple")
 - MiniScript is strongly typed. Every declaration uses let name: Type = expression; or const name: Type = constantExpression; There are no implicit conversions.
 - Primitive types are u16 and bool. Methods return void. u16 values are unsigned integers 0..65535; decimal and 0x hexadecimal literals are supported.
 - A maximum of four runtime primitive values or object fields may exist because they map to registers A-D. Constants do not consume registers.
+- Fixed arrays use let values: u16[3] = [10, 20, 30]; or bool[N]. They live in reserved high memory, expose values.length, and support indexed reads, assignments, compound assignments, ++, and --. Indices must be compile-time constants. Arrays cannot be combined with push/pop.
 - Classes support typed fields, one typed constructor, and typed methods: class Counter { value: u16; constructor(start: u16) { this.value = start; } method add(step: u16): void { this.value += step; } }
 - Construct objects with let counter: Counter = new Counter(0);. Access fields with counter.value and call methods with counter.add(1);. Methods are inlined, cannot return values, and cannot declare local variables.
 - Assignments: x = value; x = memory[constantAddress]; memory[constantAddress] = x;

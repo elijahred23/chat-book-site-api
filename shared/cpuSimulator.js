@@ -243,7 +243,7 @@ class MiniParser {
     }
     const start = this.current;
     const target = this.parsePostfix();
-    if ((target.type === 'name' || target.type === 'member') && (this.match('++') || this.match('--'))) {
+    if ((target.type === 'name' || target.type === 'member' || target.type === 'index') && (this.match('++') || this.match('--'))) {
       const operator = this.previous.text; this.endStatement();
       return { type: 'update', target, operator, line: start.line };
     }
@@ -267,10 +267,18 @@ class MiniParser {
   parseDeclaration(keyword) {
     const name = this.identifier('expected a name after the declaration keyword.');
     this.consume(':', "strongly typed declarations require ': Type'.");
-    const valueType = this.identifier('expected a type after the colon.');
+    const valueType = this.parseValueType();
     this.consume('=', 'declarations require an initializer.');
     const value = this.parseExpression(); this.endStatement();
     return { type: 'declaration', kind: keyword.text.toLowerCase(), name: name.text, valueType: valueType.text, value, line: keyword.line };
+  }
+  parseValueType() {
+    const type = this.identifier('expected a type after the colon.');
+    if (!this.match('[')) return type;
+    const length = this.advance();
+    if (length.kind !== 'number' || /^0x/i.test(length.text)) throw tokenError(length, 'array length must be a decimal integer.');
+    this.consume(']', "expected ']' after the array length.");
+    return { ...type, text: { elementType: type.text, length: Number.parseInt(length.text, 10) } };
   }
   parseClass(keyword) {
     const name = this.identifier('expected a class name.');
@@ -348,6 +356,10 @@ class MiniParser {
         if (!this.check(')')) do { args.push(this.parseExpression()); } while (this.match(','));
         this.consume(')', "expected ')' after the arguments.");
         expression = { type: 'call', callee: expression, arguments: args, line: expression.line };
+      } else if (this.match('[')) {
+        const index = this.parseExpression();
+        this.consume(']', "expected ']' after the array index.");
+        expression = { type: 'index', object: expression, index, line: expression.line };
       } else break;
     }
     return expression;
@@ -373,6 +385,12 @@ class MiniParser {
     if (token.text === '(') {
       const expression = this.parseExpression(); this.consume(')', "expected ')' after the expression."); return expression;
     }
+    if (token.text === '[') {
+      const elements = [];
+      if (!this.check(']')) do { elements.push(this.parseExpression()); } while (this.match(','));
+      this.consume(']', "expected ']' after the array literal.");
+      return { type: 'arrayLiteral', elements, line: token.line };
+    }
     throw tokenError(token, 'expected a value or variable name.');
   }
   precedence(operator) { return ({ '||': 1, '&&': 2, '==': 3, '===': 3, '!=': 3, '!==': 3, '|': 4, '^': 5, '&': 6, '+': 7, '-': 7, '*': 8, '%': 8 })[operator] ?? -1; }
@@ -380,14 +398,21 @@ class MiniParser {
 
 class MiniCompiler {
   constructor() {
-    this.code = []; this.variables = new Map(); this.constants = new Map(); this.objects = new Map(); this.classes = new Map();
-    this.loops = []; this.contexts = []; this.nextRegister = 0; this.nextLabel = 0; this.inlineDepth = 0;
+    this.code = []; this.variables = new Map(); this.constants = new Map(); this.objects = new Map(); this.classes = new Map(); this.arrays = new Map();
+    this.loops = []; this.contexts = []; this.nextRegister = 0; this.nextLabel = 0; this.inlineDepth = 0; this.nextDataAddress = MEMORY_SIZE - 1; this.firstArrayLine = null; this.stackUseLine = null; this.memoryUses = [];
   }
   compile(program) {
     program.statements.filter((statement) => statement.type === 'class').forEach((statement) => this.defineClass(statement));
     this.compileStatement(program);
     const lastInstruction = [...this.code].reverse().find((line) => !line.endsWith(':'));
     if (lastInstruction?.toUpperCase() !== 'HLT') this.emit('HLT');
+    const instructionCount = this.code.filter((line) => !line.endsWith(':')).length;
+    if (this.arrays.size && instructionCount > this.nextDataAddress + 1) {
+      throw parseError(this.firstArrayLine, `program instructions overlap array storage; reduce the program or array data to fit ${MEMORY_SIZE} words.`);
+    }
+    if (this.arrays.size && this.stackUseLine) throw parseError(this.stackUseLine, 'push and pop cannot be combined with arrays because both use high memory.');
+    const conflictingMemoryUse = this.memoryUses.find(({ address }) => address > this.nextDataAddress);
+    if (this.arrays.size && conflictingMemoryUse) throw parseError(conflictingMemoryUse.line, `memory address ${conflictingMemoryUse.address} is reserved for array storage.`);
     return this.code.join('\n');
   }
   compileStatement(statement) {
@@ -438,7 +463,8 @@ class MiniCompiler {
   compileDeclaration(declaration) {
     const key = declaration.name.toLowerCase();
     if (this.contexts.length) throw parseError(declaration.line, 'methods cannot declare local variables; use typed fields or parameters.');
-    if (this.variables.has(key) || this.constants.has(key) || this.objects.has(key)) throw parseError(declaration.line, `'${declaration.name}' has already been declared.`);
+    if (this.variables.has(key) || this.constants.has(key) || this.objects.has(key) || this.arrays.has(key)) throw parseError(declaration.line, `'${declaration.name}' has already been declared.`);
+    if (typeof declaration.valueType === 'object') { this.compileArrayDeclaration(declaration, key); return; }
     const valueType = this.normalizeType(declaration.valueType, declaration.line, false, true);
     const classDefinition = this.classes.get(valueType.toLowerCase());
     if (classDefinition) { this.compileObjectDeclaration(declaration, key, classDefinition); return; }
@@ -451,6 +477,25 @@ class MiniCompiler {
     const register = this.allocateRegister(declaration.line);
     this.variables.set(key, { register, valueType });
     this.compileAssignment({ type: 'name', value: declaration.name, line: declaration.line }, '=', declaration.value, declaration.line);
+  }
+  compileArrayDeclaration(declaration, key) {
+    if (declaration.kind === 'const') throw parseError(declaration.line, 'arrays are mutable values and must be declared with let.');
+    const elementType = this.normalizeType(declaration.valueType.elementType, declaration.line, false);
+    const length = declaration.valueType.length;
+    if (!Number.isInteger(length) || length < 1 || length > MEMORY_SIZE) throw parseError(declaration.line, `array length must be between 1 and ${MEMORY_SIZE}.`);
+    if (declaration.value.type !== 'arrayLiteral') throw parseError(declaration.line, 'array declarations require an array literal initializer.');
+    if (declaration.value.elements.length !== length) throw parseError(declaration.line, `array '${declaration.name}' requires ${length} initializer values, but received ${declaration.value.elements.length}.`);
+    const base = this.nextDataAddress - length + 1;
+    if (base < 0) throw parseError(declaration.line, `array data exceeds the ${MEMORY_SIZE}-word memory.`);
+    const array = { name: declaration.name, elementType, length, base, line: declaration.line };
+    this.arrays.set(key, array); this.nextDataAddress = base - 1; this.firstArrayLine ??= declaration.line;
+    declaration.value.elements.forEach((element, index) => {
+      this.requireType(element, elementType, element.line, `initializer ${index} for '${declaration.name}'`);
+      const constant = this.tryConstant(element);
+      if (constant.known && constant.value === 0) return;
+      const source = this.valueRegister(element, null, element.line);
+      this.emit(`STR ${source}, ${base + index}`);
+    });
   }
   compileObjectDeclaration(declaration, key, classDefinition) {
     if (declaration.kind === 'const') throw parseError(declaration.line, 'objects must be declared with let.');
@@ -474,10 +519,16 @@ class MiniCompiler {
   }
   compileAssignment(target, operator, value, line) {
     target = this.resolve(target); value = this.resolve(value);
-    if (target.type === 'memory') {
-      if (operator !== '=') throw parseError(line, "memory supports direct '=' assignment only.");
-      this.requireType(value, 'u16', line, 'memory assignment');
-      const address = this.address(target.address); const source = this.register(value);
+    if (target.type === 'memory' || target.type === 'arrayElement') {
+      const targetType = this.typeOf(target);
+      this.requireType(value, targetType, line, target.type === 'memory' ? 'memory assignment' : 'array assignment');
+      const address = target.type === 'memory' ? this.address(target.address) : target.address;
+      if (operator !== '=') {
+        if (targetType !== 'u16') throw parseError(line, `operator '${operator}' requires u16 operands.`);
+        const destination = this.scratch(null, line);
+        this.emit(`LDR ${destination}, ${address}`); this.emitOperation(destination, operator[0], value, line); this.emit(`STR ${destination}, ${address}`); return;
+      }
+      const source = this.valueRegister(value, null, line);
       this.emit(`STR ${source}, ${address}`);
       return;
     }
@@ -487,8 +538,8 @@ class MiniCompiler {
     if (targetType !== 'u16' && operator !== '=') throw parseError(line, `operator '${operator}' requires u16 operands.`);
     const destination = this.register(target); const immediate = this.tryConstant(value);
     if (operator === '=' && immediate.known) { this.emitConstant(destination, immediate.value, value.line); return; }
-    if (operator === '=' && value.type === 'memory') {
-      this.emit(`LDR ${destination}, ${this.address(value.address)}`); return;
+    if (operator === '=' && (value.type === 'memory' || value.type === 'arrayElement')) {
+      this.emit(`LDR ${destination}, ${value.type === 'memory' ? this.address(value.address) : value.address}`); return;
     }
     if (operator === '=' && value.type === 'name') {
       this.emit(`MOV ${destination}, ${this.register(value)}`); return;
@@ -505,6 +556,10 @@ class MiniCompiler {
   }
   compileUpdate(update) {
     const target = this.resolve(update.target); this.requireType(target, 'u16', update.line, `operator '${update.operator}'`);
+    if (target.type === 'arrayElement') {
+      const destination = this.scratch(null, update.line);
+      this.emit(`LDR ${destination}, ${target.address}`); this.emit(`${update.operator === '++' ? 'INC' : 'DEC'} ${destination}`); this.emit(`STR ${destination}, ${target.address}`); return;
+    }
     const destination = this.register(target);
     this.emit(`${update.operator === '++' ? 'INC' : 'DEC'} ${destination}`);
   }
@@ -516,7 +571,7 @@ class MiniCompiler {
     let source;
     if (immediate.known) {
       source = this.scratch(destination, line); this.emitConstant(source, immediate.value, right.line);
-    } else source = this.register(right);
+    } else source = this.valueRegister(right, destination, line);
     const instruction = ({ '+': 'ADD', '-': 'SUB', '*': 'MUL', '%': 'MOD', '&': 'AND', '|': 'OR', '^': 'XOR' })[operator];
     if (!instruction) throw parseError(line, `operator '${operator}' is not supported.`);
     this.emit(`${instruction} ${destination}, ${source}`);
@@ -531,10 +586,10 @@ class MiniCompiler {
     if (call.callee.type !== 'name') throw parseError(call.line, 'expected a function or method call.');
     const name = call.callee.value.toLowerCase();
     if (name === 'output' || name === 'print') {
-      this.requireArguments(call, 1); this.requireType(call.arguments[0], 'u16', call.line, name); this.emit(`OUT ${this.register(call.arguments[0])}`);
+      this.requireArguments(call, 1); this.requireType(call.arguments[0], 'u16', call.line, name); this.emit(`OUT ${this.valueRegister(call.arguments[0], null, call.line)}`);
     } else if (name === 'halt' || name === 'stop') { this.requireArguments(call, 0); this.emit('HLT'); }
-    else if (name === 'push') { this.requireArguments(call, 1); this.requireType(call.arguments[0], 'u16', call.line, name); this.emit(`PUSH ${this.register(call.arguments[0])}`); }
-    else if (name === 'pop') { this.requireArguments(call, 1); this.requireType(call.arguments[0], 'u16', call.line, name); this.emit(`POP ${this.register(call.arguments[0])}`); }
+    else if (name === 'push') { this.requireArguments(call, 1); this.requireType(call.arguments[0], 'u16', call.line, name); this.stackUseLine ??= call.line; this.emit(`PUSH ${this.valueRegister(call.arguments[0], null, call.line)}`); }
+    else if (name === 'pop') { this.requireArguments(call, 1); this.requireType(call.arguments[0], 'u16', call.line, name); this.stackUseLine ??= call.line; this.emit(`POP ${this.register(call.arguments[0])}`); }
     else if (name === 'nop') { this.requireArguments(call, 0); this.emit('NOP'); }
     else throw parseError(call.line, `unknown function '${call.callee.value}'. Available functions: output, halt, push, pop, and nop.`);
   }
@@ -577,10 +632,10 @@ class MiniCompiler {
     let truth = true; let test = condition;
     if (condition.type === 'binary' && ['==', '===', '!=', '!=='].includes(condition.operator)) {
       test = condition.left; truth = condition.operator === '==' || condition.operator === '===';
-      const left = this.register(test); const rightConstant = this.tryConstant(condition.right);
+      const left = this.valueRegister(test, null, condition.line); const rightConstant = this.tryConstant(condition.right);
       if (rightConstant.known && rightConstant.value === 0) this.emit(`ADDI ${left}, 0`);
       else {
-        const right = rightConstant.known ? this.scratch(left, condition.line) : this.register(condition.right);
+        const right = rightConstant.known ? this.scratch(left, condition.line) : this.valueRegister(condition.right, left, condition.line);
         if (rightConstant.known) this.emitConstant(right, rightConstant.value, condition.line);
         this.emit(`CMP ${left}, ${right}`);
       }
@@ -590,7 +645,7 @@ class MiniCompiler {
       const jump = ({ carry: 'JC', zero: 'JZ', negative: 'JN' })[test.value.toLowerCase()];
       this.emit(`${jump} ${truth ? whenTrue : whenFalse}`); this.emit(`JMP ${truth ? whenFalse : whenTrue}`); return;
     }
-    const register = this.register(test);
+    const register = this.valueRegister(test, null, condition.line);
     this.emit(`ADDI ${register}, 0`); this.emit(`JNZ ${whenTrue}`); this.emit(`JMP ${whenFalse}`);
   }
   register(expression) {
@@ -599,7 +654,23 @@ class MiniCompiler {
     if (!key || !this.variables.has(key)) throw parseError(expression.line, 'expected a declared runtime u16 or bool value.');
     return this.variables.get(key).register;
   }
-  address(expression) { const value = this.constant(expression); this.requireNibble(value, expression.line, 'memory address'); return value; }
+  valueRegister(expression, excluded, line) {
+    expression = this.resolve(expression);
+    if (expression.type === 'memory' || expression.type === 'arrayElement') {
+      const register = this.scratch(excluded, line);
+      const address = expression.type === 'memory' ? this.address(expression.address) : expression.address;
+      this.emit(`LDR ${register}, ${address}`); return register;
+    }
+    const constant = this.tryConstant(expression);
+    if (constant.known) {
+      const register = this.scratch(excluded, line); this.emitConstant(register, constant.value, expression.line); return register;
+    }
+    return this.register(expression);
+  }
+  address(expression) {
+    const value = this.constant(expression); this.requireNibble(value, expression.line, 'memory address');
+    this.memoryUses.push({ address: value, line: expression.line }); return value;
+  }
   constant(expression) { const result = this.tryConstant(expression); if (result.known) return result.value; throw parseError(expression.line, 'expected a compile-time constant.'); }
   tryConstant(expression) {
     expression = this.resolve(expression);
@@ -657,6 +728,7 @@ class MiniCompiler {
   typeOf(expression) {
     expression = this.resolve(expression);
     if (expression.type === 'number' || expression.type === 'memory') return 'u16';
+    if (expression.type === 'arrayElement') return expression.elementType;
     if (expression.type === 'new') {
       const definition = this.classes.get(expression.className.toLowerCase());
       if (!definition) throw parseError(expression.line, `unknown class '${expression.className}'.`);
@@ -669,6 +741,9 @@ class MiniCompiler {
       if (this.variables.has(key)) return this.variables.get(key).valueType;
       if (this.constants.has(key)) return this.constants.get(key).valueType;
       if (this.objects.has(key)) return this.objects.get(key).classDefinition.name;
+      if (this.arrays.has(key)) {
+        const array = this.arrays.get(key); return `${array.elementType}[${array.length}]`;
+      }
       throw parseError(expression.line, `unknown name '${expression.value}'.`);
     }
     if (expression.type === 'unary') {
@@ -701,10 +776,25 @@ class MiniCompiler {
     const context = this.contexts.at(-1);
     if (expression.type === 'name' && context?.aliases.has(expression.value.toLowerCase())) return this.resolve(context.aliases.get(expression.value.toLowerCase()), depth + 1);
     if (expression.type === 'member') {
+      if (expression.object.type === 'name') {
+        const array = this.arrays.get(expression.object.value.toLowerCase());
+        if (array) {
+          if (expression.property.toLowerCase() !== 'length') throw parseError(expression.line, `arrays only expose the 'length' property.`);
+          return { type: 'number', value: array.length, line: expression.line };
+        }
+      }
       const object = this.getObject(expression.object, expression.line);
       const key = object.fields.get(expression.property.toLowerCase());
       if (!key) throw parseError(expression.line, `class '${object.classDefinition.name}' has no field '${expression.property}'.`);
       return { type: 'bound', key, line: expression.line };
+    }
+    if (expression.type === 'index') {
+      if (expression.object.type !== 'name') throw parseError(expression.line, 'array indexing requires a named array.');
+      const array = this.arrays.get(expression.object.value.toLowerCase());
+      if (!array) throw parseError(expression.line, `unknown array '${expression.object.value}'.`);
+      const index = this.constant(expression.index);
+      if (index < 0 || index >= array.length) throw parseError(expression.line, `array index ${index} is outside '${array.name}' bounds 0..${array.length - 1}.`);
+      return { type: 'arrayElement', address: array.base + index, elementType: array.elementType, line: expression.line };
     }
     if (expression.type === 'binary') return { ...expression, left: this.resolve(expression.left, depth + 1), right: this.resolve(expression.right, depth + 1) };
     if (expression.type === 'unary') return { ...expression, value: this.resolve(expression.value, depth + 1) };
@@ -931,6 +1021,7 @@ export const samplePrograms = [
   makeSample('memory', 'Memory and modulo', 'Stores a 16-bit product in RAM, reloads it, and computes its remainder modulo 97.', 'LDI A, 300\nLDI B, 200\nMUL A, B\nSTR A, 48\nLDI A, 0\nLDR A, 48\nLDI C, 97\nMOD A, C\nOUT A\nHLT', 'const slot: u16 = 48;\nlet value: u16 = 300;\nlet multiplier: u16 = 200;\nlet divisor: u16 = 97;\nvalue *= multiplier;\nmemory[slot] = value;\nvalue = memory[slot];\nvalue %= divisor;\noutput(value);\nhalt();'),
   makeSample('counter-class', 'Typed counter class', 'Constructs a Counter object, then inlines a typed method while looping over an object field.', 'LDI A, 2\nLDI B, 4\nloop:\nADDI A, 3\nOUT A\nDEC B\nJNZ loop\nHLT', 'class Counter {\n  value: u16;\n\n  constructor(start: u16) {\n    this.value = start;\n  }\n\n  method add(amount: u16): void {\n    this.value += amount;\n  }\n\n  method emit(): void {\n    output(this.value);\n  }\n}\n\nlet counter: Counter = new Counter(2);\nlet steps: u16 = 4;\nwhile (steps !== 0) {\n  counter.add(3);\n  counter.emit();\n  steps--;\n}\nhalt();'),
   makeSample('cipher-class', 'Encapsulated bit mixer', 'Uses a two-field object and typed methods to apply repeated XOR/add rounds to a 16-bit word.', 'LDI A, 52\nLUI A, 18\nLDI B, 255\nXOR A, B\nADDI A, 17\nXOR A, B\nADDI A, 17\nOUT A\nHLT', 'class BitMixer {\n  value: u16;\n  key: u16;\n\n  constructor(seed: u16, secret: u16) {\n    this.value = seed;\n    this.key = secret;\n  }\n\n  method round(): void {\n    this.value ^= this.key;\n    this.value += 17;\n  }\n\n  method emit(): void {\n    output(this.value);\n  }\n}\n\nlet mixer: BitMixer = new BitMixer(0x1234, 0x00FF);\nmixer.round();\nmixer.round();\nmixer.emit();\nhalt();'),
+  makeSample('array-aggregation', 'Typed array aggregation', 'Stores a fixed-size typed array in RAM, mutates an element, and aggregates indexed values.', 'LDI A, 7\nSTR A, 60\nLDI A, 11\nSTR A, 61\nLDI A, 13\nSTR A, 62\nLDI A, 17\nSTR A, 63\nLDI A, 0\nLDR B, 60\nADD A, B\nLDR B, 61\nADD A, B\nLDR B, 62\nINC B\nSTR B, 62\nLDR B, 62\nADD A, B\nLDR B, 63\nADD A, B\nOUT A\nHLT', 'let values: u16[4] = [7, 11, 13, 17];\nconst last: u16 = values.length - 1;\nlet total: u16 = 0;\n\ntotal += values[0];\ntotal += values[1];\nvalues[2]++;\ntotal += values[2];\ntotal += values[last];\n\noutput(total);\nhalt();'),
 ];
 
 const sessions = new Map();
