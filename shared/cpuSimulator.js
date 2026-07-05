@@ -1,5 +1,3 @@
-import { randomUUID } from 'crypto';
-
 const MEMORY_SIZE = 64;
 const WORD_MASK = 0xffff;
 
@@ -510,7 +508,61 @@ export function compileSource(source, language = 'binary') {
   return { words, assemblySource: assemblySource ?? disassembly, machineCode };
 }
 
-class CpuSimulator {
+function datapathFor(phase, signals) {
+  if (phase === 'FETCH') return {
+    transfers: [
+      { from: 'PC', to: 'MAR', bus: 'address' },
+      { from: 'RAM', to: 'IR', bus: 'data' },
+    ],
+    activeComponents: ['PC', 'MAR', 'RAM', 'IR'],
+  };
+  if (phase === 'DECODE') return {
+    transfers: [{ from: 'IR', to: 'CONTROL', bus: 'control' }],
+    activeComponents: ['IR', 'CONTROL'],
+  };
+
+  const transfers = [];
+  const add = (from, to, bus = 'data') => {
+    if (from && to && !transfers.some((item) => item.from === from && item.to === to && item.bus === bus)) transfers.push({ from, to, bus });
+  };
+  const outputs = signals.filter((signal) => signal.endsWith(' OUT')).map((signal) => signal.slice(0, -4));
+  const inputs = signals.filter((signal) => signal.endsWith(' IN')).map((signal) => signal.slice(0, -3));
+  const aluSignal = signals.find((signal) => signal.startsWith('ALU'));
+  const registerOutputs = outputs.filter((name) => registers.includes(name));
+  const registerInputs = inputs.filter((name) => registers.includes(name));
+
+  if (inputs.includes('MAR')) add(outputs.find((name) => ['PC', 'SP', 'ADDRESS', 'OPERAND'].includes(name)) ?? 'ADDRESS', 'MAR', 'address');
+  if (signals.includes('RAM OUT')) {
+    const targets = inputs.filter((name) => name !== 'MAR' && name !== 'FLAGS');
+    targets.forEach((target) => add('RAM', target));
+  }
+  if (signals.includes('RAM IN')) add(registerOutputs[0] ?? (outputs.includes('PC') ? 'PC' : 'CONTROL'), 'RAM');
+  if (inputs.includes('OUTPUT')) add(registerOutputs[0] ?? 'CONTROL', 'OUT');
+
+  if (aluSignal) {
+    const sources = [...registerOutputs, ...outputs.filter((name) => ['IMMEDIATE', 'OPERAND'].includes(name))];
+    (sources.length ? sources : registerInputs).forEach((source) => add(source, 'ALU'));
+    registerInputs.forEach((target) => add('ALU', target));
+    if (inputs.includes('FLAGS')) add('ALU', 'FLAGS', 'control');
+  } else {
+    const source = signals.includes('RAM OUT') ? 'RAM' : registerOutputs[0] ?? outputs.find((name) => ['IMMEDIATE', 'ADDRESS'].includes(name));
+    registerInputs.forEach((target) => add(source, target));
+    if (inputs.includes('FLAGS') && source) add(source, 'FLAGS', 'control');
+  }
+
+  if (inputs.includes('PC')) add(outputs.includes('ADDRESS') ? 'ADDRESS' : signals.includes('RAM OUT') ? 'RAM' : 'CONTROL', 'PC', 'control');
+  if (signals.some((signal) => signal.endsWith(' TEST'))) add('FLAGS', 'CONTROL', 'control');
+
+  const activeComponents = new Set(['HALT', 'NOP', 'RESET'].some((signal) => signals.includes(signal)) ? ['CONTROL'] : []);
+  transfers.forEach(({ from, to }) => { activeComponents.add(from); activeComponents.add(to); });
+  signals.forEach((signal) => {
+    const component = signal.split(' ')[0];
+    if ([...registers, 'PC', 'SP', 'IR', 'MAR', 'RAM', 'ALU', 'FLAGS', 'OUTPUT', 'CONTROL'].includes(component)) activeComponents.add(component === 'OUTPUT' ? 'OUT' : component);
+  });
+  return { transfers, activeComponents: [...activeComponents] };
+}
+
+export class CpuSimulator {
   constructor(compilation) {
     this.programSize = compilation.words.length;
     this.initialMemory = [...compilation.words, ...Array(MEMORY_SIZE - compilation.words.length).fill(0)];
@@ -522,7 +574,8 @@ class CpuSimulator {
     this.zeroFlag = false; this.carryFlag = false; this.negativeFlag = false; this.overflowFlag = false;
     this.cycle = 0; this.phase = 'Fetch'; this.halted = false;
     this.currentInstructionAddress = 0; this.instruction = null;
-    this.lastEvent = { cycle: 0, phase: 'Ready', title: isReset ? 'CPU reset' : 'Program loaded', detail: isReset ? 'Registers and memory were restored to their loaded values.' : 'Press Clock to begin the fetch cycle.', signals: isReset ? ['RESET'] : [] };
+    const signals = isReset ? ['RESET'] : [];
+    this.lastEvent = { cycle: 0, phase: 'Ready', title: isReset ? 'CPU reset' : 'Program loaded', detail: isReset ? 'Registers and memory were restored to their loaded values.' : 'Press Clock to begin the fetch cycle.', signals, ...datapathFor('READY', signals) };
     return this.snapshot();
   }
   snapshot() {
@@ -530,7 +583,7 @@ class CpuSimulator {
       programCounter: this.programCounter, stackPointer: this.stackPointer, instructionRegister: this.instructionRegister,
       memoryAddressRegister: this.memoryAddressRegister, outputRegister: this.outputRegister, zeroFlag: this.zeroFlag, carryFlag: this.carryFlag, negativeFlag: this.negativeFlag, overflowFlag: this.overflowFlag,
       cycle: this.cycle, phase: this.phase, halted: this.halted, currentInstructionAddress: this.currentInstructionAddress,
-      programSize: this.programSize, instruction: this.instruction ? { ...this.instruction } : null, memory: [...this.memory], lastEvent: { ...this.lastEvent, signals: [...this.lastEvent.signals] } };
+      programSize: this.programSize, instruction: this.instruction ? { ...this.instruction } : null, memory: [...this.memory], lastEvent: { ...this.lastEvent, signals: [...this.lastEvent.signals], transfers: this.lastEvent.transfers.map((transfer) => ({ ...transfer })), activeComponents: [...this.lastEvent.activeComponents] } };
   }
   step() {
     if (this.halted) return this.snapshot();
@@ -542,11 +595,13 @@ class CpuSimulator {
     this.currentInstructionAddress = this.programCounter; this.memoryAddressRegister = this.programCounter;
     this.instructionRegister = this.memory[this.memoryAddressRegister]; this.programCounter = (this.programCounter + 1) % MEMORY_SIZE;
     this.instruction = null; this.phase = 'Decode';
-    this.lastEvent = { cycle: this.cycle, phase: 'FETCH', title: 'Instruction fetched', detail: `MAR ← ${hex(this.memoryAddressRegister)}, IR ← RAM[${hex(this.memoryAddressRegister)}] (${bits(this.instructionRegister)}), PC ← ${hex(this.programCounter)}`, signals: ['PC OUT', 'MAR IN', 'RAM OUT', 'IR IN', 'PC INC'] };
+    const signals = ['PC OUT', 'MAR IN', 'RAM OUT', 'IR IN', 'PC INC'];
+    this.lastEvent = { cycle: this.cycle, phase: 'FETCH', title: 'Instruction fetched', detail: `MAR ← ${hex(this.memoryAddressRegister)}, IR ← RAM[${hex(this.memoryAddressRegister)}] (${bits(this.instructionRegister)}), PC ← ${hex(this.programCounter)}`, signals, ...datapathFor('FETCH', signals) };
   }
   decode() {
     this.instruction = decodeInstruction(this.instructionRegister); this.phase = 'Execute';
-    this.lastEvent = { cycle: this.cycle, phase: 'DECODE', title: `Decoded ${this.instruction.mnemonic}`, detail: `Control unit reads the 5-bit opcode and register/address fields. ${this.instruction.description}`, signals: ['IR OUT', 'CONTROL DECODE'] };
+    const signals = ['IR OUT', 'CONTROL DECODE'];
+    this.lastEvent = { cycle: this.cycle, phase: 'DECODE', title: `Decoded ${this.instruction.mnemonic}`, detail: `Control unit reads the 5-bit opcode and register/address fields. ${this.instruction.description}`, signals, ...datapathFor('DECODE', signals) };
   }
   execute() {
     const instruction = this.instruction ?? decodeInstruction(this.instructionRegister);
@@ -613,7 +668,18 @@ class CpuSimulator {
       default: break;
     }
     if (!this.halted) this.phase = 'Fetch';
-    this.lastEvent = { cycle: this.cycle, phase: 'EXECUTE', title: `Executed ${instruction.mnemonic}`, detail, signals };
+    this.lastEvent = { cycle: this.cycle, phase: 'EXECUTE', title: `Executed ${instruction.mnemonic}`, detail, signals, ...datapathFor('EXECUTE', signals) };
+  }
+
+  restore(snapshot) {
+    this.memory = [...snapshot.memory]; this.registers = [...snapshot.registers];
+    this.programCounter = snapshot.programCounter; this.stackPointer = snapshot.stackPointer;
+    this.instructionRegister = snapshot.instructionRegister; this.memoryAddressRegister = snapshot.memoryAddressRegister; this.outputRegister = snapshot.outputRegister;
+    this.zeroFlag = snapshot.zeroFlag; this.carryFlag = snapshot.carryFlag; this.negativeFlag = snapshot.negativeFlag; this.overflowFlag = snapshot.overflowFlag;
+    this.cycle = snapshot.cycle; this.phase = snapshot.phase; this.halted = snapshot.halted; this.currentInstructionAddress = snapshot.currentInstructionAddress;
+    this.instruction = snapshot.instruction ? { ...snapshot.instruction } : null;
+    this.lastEvent = { ...snapshot.lastEvent, signals: [...snapshot.lastEvent.signals], transfers: snapshot.lastEvent.transfers.map((transfer) => ({ ...transfer })), activeComponents: [...snapshot.lastEvent.activeComponents] };
+    return this.snapshot();
   }
 }
 
@@ -631,8 +697,12 @@ export const samplePrograms = [
 ];
 
 const sessions = new Map();
+export function createLocalSimulation(source, language) {
+  const compilation = compileSource(source, language);
+  return { simulator: new CpuSimulator(compilation), assemblySource: compilation.assemblySource, machineCode: compilation.machineCode };
+}
 export function createSimulation(source, language) {
-  const compilation = compileSource(source, language); const simulator = new CpuSimulator(compilation); const sessionId = randomUUID();
+  const compilation = compileSource(source, language); const simulator = new CpuSimulator(compilation); const sessionId = globalThis.crypto.randomUUID();
   sessions.set(sessionId, simulator);
   return { sessionId, state: simulator.snapshot(), assemblySource: compilation.assemblySource, machineCode: compilation.machineCode };
 }

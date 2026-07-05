@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import {
   FaBookReader,
@@ -25,7 +25,6 @@ import ChatGPTDual from "./ChatGPTDual.jsx";
 import GptPromptComponent from "./ChatGPT.jsx";
 import ChatTemplate from "./ChatTemplate.jsx";
 import CodingProblems from "./CodingProblems.jsx";
-import CpuSimulator from "./CpuSimulator.jsx";
 import DownloadCopyTextFile from "./DownloadCopyTextFile.jsx";
 import FlashCardApp from "./FlashCardApp.jsx";
 import Home from "./Home.jsx";
@@ -52,6 +51,8 @@ import { actions, useAppDispatch, useAppState } from "./context/AppContext.jsx";
 import AppHeader from "./ui/AppHeader.jsx";
 import SideDrawer from "./ui/SideDrawer.jsx";
 import ToolLauncher from "./ui/ToolLauncher.jsx";
+
+const CpuSimulator = lazy(() => import("./CpuSimulator.jsx"));
 
 function AppContent() {
   const [isFullWidth, setIsFullWidth] = useState(true);
@@ -149,7 +150,7 @@ function AppContent() {
           <Route path="/jsGenerator" element={<JSConsoleGenerator />} />
           <Route path="/bengali" element={<BengaliTutor />} />
           <Route path="/coding" element={<CodingProblems />} />
-          <Route path="/cpu-simulator" element={<CpuSimulator />} />
+          <Route path="/cpu-simulator" element={<Suspense fallback={null}><CpuSimulator /></Suspense>} />
           <Route path="/system-design" element={<SystemDesignPrep />} />
           <Route path="/pdf-to-text" element={<PdfToText />} />
           <Route path="/media-player" element={<MediaPlayer />} />

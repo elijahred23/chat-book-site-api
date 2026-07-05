@@ -19,6 +19,7 @@ RUN apt-get update && \
 ENV PIP_BREAK_SYSTEM_PACKAGES=1
 COPY --from=api_deps /app/api/node_modules ./api/node_modules
 COPY api ./api
+COPY shared ./shared
 COPY --from=builder /app/dist ./dist
 RUN pip3 install --no-cache-dir -r api/requirements.txt
 EXPOSE 8080 9229

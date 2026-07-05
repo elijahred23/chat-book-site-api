@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useCallback, useEffect, useRef, useState } from "react";
+import { createLocalSimulation, samplePrograms } from "../shared/cpuSimulator.js";
 import "./CpuSimulator.css";
 
 const instructionRows = [
@@ -38,11 +39,7 @@ async function request(path, options) {
 }
 
 const api = {
-  programs: () => request("/programs"),
   generate: (prompt) => request("/simulator/generate", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ prompt }) }),
-  load: (source, language) => request("/simulator", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ source, language }) }),
-  step: (sessionId) => request(`/simulator/${sessionId}/step`, { method: "POST" }),
-  reset: (sessionId) => request(`/simulator/${sessionId}/reset`, { method: "POST" }),
 };
 
 function programSource(program, language) {
@@ -103,6 +100,37 @@ function Timeline({ events }) {
   );
 }
 
+function ElapsedTime({ running }) {
+  const [elapsedMs, setElapsedMs] = useState(0);
+  const accumulated = useRef(0);
+
+  useEffect(() => {
+    if (!running) { setElapsedMs(accumulated.current); return undefined; }
+    const startedAt = performance.now();
+    const update = () => setElapsedMs(accumulated.current + performance.now() - startedAt);
+    const timer = window.setInterval(update, 250);
+    return () => {
+      accumulated.current += performance.now() - startedAt;
+      window.clearInterval(timer);
+    };
+  }, [running]);
+
+  return <b>{(elapsedMs / 1000).toFixed(2)}s</b>;
+}
+
+function MobileDatapath({ event }) {
+  return (
+    <div className="cpu-mobile-datapath" aria-label="Active CPU datapath">
+      <div className="cpu-mobile-phase"><span>{event.phase}</span><b>{event.title}</b></div>
+      {event.transfers.length ? event.transfers.map((transfer, index) => (
+        <div className={`cpu-mobile-transfer cpu-mobile-transfer--${transfer.bus}`} key={`${transfer.from}-${transfer.to}-${index}`}>
+          <span>{transfer.from}</span><i><small>{transfer.bus}</small>↓</i><span>{transfer.to}</span>
+        </div>
+      )) : <div className="cpu-mobile-components">{event.activeComponents.map((component) => <span key={component}>{component}</span>)}</div>}
+    </div>
+  );
+}
+
 function CircuitNode({ x, y, width = 150, height = 90, label, value, detail, active, accent = "cyan" }) {
   return (
     <g className={`cpu-circuit-node cpu-circuit-node--${accent} ${active ? "active" : ""}`} transform={`translate(${x} ${y})`}>
@@ -115,29 +143,48 @@ function CircuitNode({ x, y, width = 150, height = 90, label, value, detail, act
   );
 }
 
-function CpuExecutionModal({ state, running, busy, onClose, onStep, onToggleRunning }) {
+function CpuExecutionModal({ state, running, busy, canStepBack, onClose, onStep, onStepBack, onToggleRunning }) {
   const dialogRef = useRef(null);
+  const touchStart = useRef(null);
+  const [showFullCircuit, setShowFullCircuit] = useState(false);
   const signals = state.lastEvent.signals;
-  const has = (...required) => required.every((signal) => signals.includes(signal));
-  const hasPrefix = (prefix) => signals.some((signal) => signal.startsWith(prefix));
-  const aluActive = hasPrefix("ALU");
-  const memoryActive = signals.includes("RAM OUT") || signals.includes("RAM IN");
-  const controlActive = signals.includes("CONTROL DECODE") || signals.some((signal) => signal.endsWith("TEST"));
+  const transfers = state.lastEvent.transfers;
+  const activeComponents = state.lastEvent.activeComponents;
+  const transferActive = (from, to) => transfers.some((transfer) => {
+    const matches = (actual, expected) => Array.isArray(expected) ? expected.includes(actual) : actual === expected;
+    return matches(transfer.from, from) && matches(transfer.to, to);
+  });
+  const componentActive = (name) => activeComponents.includes(name);
+  const aluActive = componentActive("ALU");
+  const memoryActive = componentActive("RAM");
+  const controlActive = componentActive("CONTROL");
 
   useEffect(() => {
     const dialog = dialogRef.current;
     if (dialog && !dialog.open) dialog.showModal();
   }, []);
 
+  const handleTouchEnd = (event) => {
+    if (showFullCircuit) { touchStart.current = null; return; }
+    if (touchStart.current === null || event.changedTouches.length !== 1) return;
+    const distance = event.changedTouches[0].clientX - touchStart.current;
+    touchStart.current = null;
+    if (Math.abs(distance) < 60) return;
+    if (distance < 0 && !state.halted && !busy) onStep();
+    if (distance > 0 && canStepBack && !busy) onStepBack();
+  };
+
   return (
     <dialog ref={dialogRef} className="cpu-circuit-modal" onClose={onClose} onCancel={onClose} aria-labelledby="cpu-modal-title">
       <div className="cpu-modal-shell">
         <header className="cpu-modal-header">
-          <div><span className="cpu-eyebrow">Live signal view</span><h2 id="cpu-modal-title">CPU execution circuit</h2><p>Glowing paths show the signals used by the last clock pulse.</p></div>
+          <div><span className="cpu-eyebrow">Live signal view</span><h2 id="cpu-modal-title">CPU execution circuit</h2><p>Highlighted paths show the transfers used by the last clock pulse.</p></div>
           <div className="cpu-modal-status"><span className={`cpu-status-light ${running ? "live" : ""}`} /><b>{state.halted ? "HALTED" : running ? "RUNNING" : "PAUSED"}</b><span>Clock {state.cycle}</span></div>
+          <button className="cpu-circuit-view-toggle" type="button" onClick={() => setShowFullCircuit((value) => !value)}>{showFullCircuit ? "Active path" : "Full schematic"}</button>
           <button className="cpu-modal-close" type="button" onClick={() => dialogRef.current?.close()} aria-label="Close CPU visualization">×</button>
         </header>
-        <div className="cpu-circuit-scroll" aria-label={`CPU circuit after ${state.lastEvent.phase.toLowerCase()} phase`}>
+        <div className={`cpu-circuit-scroll ${showFullCircuit ? "show-full" : ""}`} aria-label={`CPU circuit after ${state.lastEvent.phase.toLowerCase()} phase`} onTouchStart={(event) => { if (event.touches.length === 1) touchStart.current = event.touches[0].clientX; }} onTouchEnd={handleTouchEnd}>
+          <MobileDatapath event={state.lastEvent} />
           <svg className="cpu-circuit-board" viewBox="0 0 1000 610" role="img" aria-labelledby="cpu-circuit-title cpu-circuit-description">
             <title id="cpu-circuit-title">Live CPU component and wire diagram</title>
             <desc id="cpu-circuit-description">Active control signals: {signals.join(", ") || "none"}.</desc>
@@ -147,37 +194,39 @@ function CpuExecutionModal({ state, running, busy, onClose, onStep, onToggleRunn
             </defs>
             <rect className="cpu-board-background" width="1000" height="610" rx="8" /><rect width="1000" height="610" rx="8" fill="url(#cpu-board-grid)" />
             <g className="cpu-circuit-wires">
-              <path className={has("PC OUT", "MAR IN") ? "active" : ""} d="M190 105 H250" />
-              <path className={memoryActive && (signals.includes("MAR IN") || signals.includes("OPERAND OUT")) ? "active" : ""} d="M400 105 H455" />
-              <path className={has("RAM OUT", "IR IN") ? "active" : ""} d="M545 190 V215 H325 V240" />
-              <path className={has("IR OUT", "CONTROL DECODE") ? "active control" : "control"} d="M400 285 H455" />
-              <path className={signals.includes("PC IN") || signals.includes("PC INC") ? "active control" : "control"} d="M455 270 H215 V85 H190" />
-              <path className={signals.includes("OPERAND OUT") && signals.includes("MAR IN") ? "active control" : "control"} d="M545 330 V355 H325 V150" />
-              <path className={hasPrefix("A ") && aluActive ? "active alu" : "alu"} d="M190 435 H455" />
-              <path className={hasPrefix("B ") && aluActive ? "active alu" : "alu"} d="M400 485 H430 V460 H455" />
-              <path className={aluActive && signals.includes("FLAGS IN") ? "active alu" : "alu"} d="M640 435 H700" />
-              <path className={has("RAM OUT", "A IN") || has("A OUT", "RAM IN") ? "active" : ""} d="M115 390 V350 H545 V190" />
-              <path className={has("A OUT", "OUTPUT IN") ? "active" : ""} d="M115 480 V550 H875 V160" />
-              <path className={signals.some((signal) => signal.endsWith("TEST")) ? "active control" : "control"} d="M780 435 H820 V315 H640" />
-              <path className={has("A OUT", "B OUT", "A IN", "B IN") ? "active" : ""} d="M190 460 H225 V510 H250" />
+              <path className={transferActive("PC", "MAR") ? "active" : ""} d="M190 105 H250" />
+              <path className={memoryActive && componentActive("MAR") ? "active" : ""} d="M400 105 H455" />
+              <path className={transferActive("RAM", "IR") ? "active" : ""} d="M545 190 V215 H325 V240" />
+              <path className={transferActive("IR", "CONTROL") ? "active control" : "control"} d="M400 285 H455" />
+              <path className={transferActive(["CONTROL", "ADDRESS", "RAM"], "PC") ? "active control" : "control"} d="M455 270 H215 V85 H190" />
+              <path className={transferActive(["ADDRESS", "OPERAND", "SP"], "MAR") ? "active control" : "control"} d="M545 330 V355 H325 V150" />
+              <path className={transferActive("A", "ALU") || transferActive("ALU", "A") ? "active alu" : "alu"} d="M190 435 H455" />
+              <path className={transferActive(["B", "C", "D"], "ALU") || transferActive("ALU", ["B", "C", "D"]) ? "active alu" : "alu"} d="M400 485 H430 V460 H455" />
+              <path className={transferActive("ALU", "FLAGS") ? "active alu" : "alu"} d="M640 435 H700" />
+              <path className={transferActive("RAM", "A") || transferActive("A", "RAM") ? "active" : ""} d="M115 390 V350 H545 V190" />
+              <path className={transferActive("RAM", ["B", "C", "D"]) || transferActive(["B", "C", "D"], "RAM") ? "active" : ""} d="M545 190 V365 H325 V440" />
+              <path className={transferActive("A", "OUT") ? "active" : ""} d="M115 480 V550 H875 V160" />
+              <path className={transferActive(["B", "C", "D"], "OUT") ? "active" : ""} d="M400 485 V550 H875 V160" />
+              <path className={transferActive("FLAGS", "CONTROL") ? "active control" : "control"} d="M780 435 H820 V315 H640" />
+              <path className={transferActive("A", ["B", "C", "D"]) || transferActive(["B", "C", "D"], "A") ? "active" : ""} d="M190 460 H225 V510 H250" />
             </g>
-            <CircuitNode x={40} y={60} label="PC" value={hex(state.programCounter)} detail="PROGRAM COUNTER" active={hasPrefix("PC ")} accent="lime" />
-            <CircuitNode x={250} y={60} label="MAR" value={hex(state.memoryAddressRegister)} detail="MEMORY ADDRESS" active={hasPrefix("MAR ")} />
+            <CircuitNode x={40} y={60} label="PC" value={hex(state.programCounter)} detail="PROGRAM COUNTER" active={componentActive("PC")} accent="lime" />
+            <CircuitNode x={250} y={60} label="MAR" value={hex(state.memoryAddressRegister)} detail="MEMORY ADDRESS" active={componentActive("MAR")} />
             <CircuitNode x={455} y={35} width={180} height={155} label="RAM · 64 WORDS" value={`[${state.memoryAddressRegister.toString(16).toUpperCase()}] ${hex(state.memory[state.memoryAddressRegister])}`} detail="16-BIT PROGRAM / DATA" active={memoryActive} accent="lime" />
-            <CircuitNode x={800} y={60} label="OUT" value={`${state.outputRegister} · ${hex(state.outputRegister)}`} detail="VISIBLE OUTPUT" active={signals.includes("OUTPUT IN")} accent="lime" />
-            <CircuitNode x={250} y={240} label="IR" value={bits(state.instructionRegister)} detail={state.instruction?.mnemonic ?? "INSTRUCTION REGISTER"} active={hasPrefix("IR ")} />
+            <CircuitNode x={800} y={60} label="OUT" value={`${state.outputRegister} · ${hex(state.outputRegister)}`} detail="VISIBLE OUTPUT" active={componentActive("OUT")} accent="lime" />
+            <CircuitNode x={250} y={240} label="IR" value={bits(state.instructionRegister)} detail={state.instruction?.mnemonic ?? "INSTRUCTION REGISTER"} active={componentActive("IR")} />
             <CircuitNode x={455} y={240} width={185} label="CONTROL UNIT" value={state.lastEvent.phase} detail={state.instruction?.mnemonic ?? "AWAITING FETCH"} active={controlActive} accent="lime" />
-            <CircuitNode x={40} y={390} label="REGISTER A" value={`${bits(state.registerA)} · ${state.registerA}`} detail="ACCUMULATOR" active={hasPrefix("A ")} />
-            <CircuitNode x={250} y={440} label="REGISTERS B–D" value={`${hex(state.registerB)} · ${hex(state.registerC)} · ${hex(state.registerD)}`} detail="GENERAL REGISTERS" active={["B ", "C ", "D "].some(hasPrefix)} />
+            <CircuitNode x={40} y={390} label="REGISTER A" value={`${bits(state.registerA)} · ${state.registerA}`} detail="ACCUMULATOR" active={componentActive("A")} />
+            <CircuitNode x={250} y={440} label="REGISTERS B–D" value={`${hex(state.registerB)} · ${hex(state.registerC)} · ${hex(state.registerD)}`} detail="GENERAL REGISTERS" active={["B", "C", "D"].some(componentActive)} />
             <CircuitNode x={455} y={390} width={185} label="ALU" value={aluActive ? state.lastEvent.title.replace("Executed ", "") : "IDLE"} detail="ARITHMETIC / LOGIC" active={aluActive} accent="orange" />
-            <CircuitNode x={700} y={390} width={160} label="FLAGS" value={`Z${Number(state.zeroFlag)} C${Number(state.carryFlag)} N${Number(state.negativeFlag)} V${Number(state.overflowFlag)}`} detail="ZERO / CARRY / NEG / OVERFLOW" active={signals.includes("FLAGS IN") || signals.some((signal) => signal.endsWith("TEST"))} accent="orange" />
+            <CircuitNode x={700} y={390} width={160} label="FLAGS" value={`Z${Number(state.zeroFlag)} C${Number(state.carryFlag)} N${Number(state.negativeFlag)} V${Number(state.overflowFlag)}`} detail="ZERO / CARRY / NEG / OVERFLOW" active={componentActive("FLAGS")} accent="orange" />
             <text className="cpu-wire-label" x="205" y="96">ADDRESS</text><text className="cpu-wire-label" x="342" y="342">16-BIT DATA BUS</text><text className="cpu-wire-label" x="662" y="542">OUTPUT BUS</text>
           </svg>
         </div>
         <footer className="cpu-modal-footer">
           <div className="cpu-modal-event"><span className={`cpu-phase cpu-phase--${state.lastEvent.phase.toLowerCase()}`}>{state.lastEvent.phase}</span><div><b>{state.lastEvent.title}</b><p>{state.lastEvent.detail}</p></div></div>
           <div className="cpu-modal-signals" aria-label="Active control signals">{signals.length ? signals.map((signal) => <span key={signal}>{signal}</span>) : <span>No active signals</span>}</div>
-          <div className="cpu-modal-controls"><button type="button" onClick={onStep} disabled={state.halted || busy}>▸ Clock</button><button type="button" className={running ? "running" : ""} onClick={onToggleRunning} disabled={state.halted || busy}>{running ? "■ Pause" : "▶ Auto run"}</button></div>
+          <div className="cpu-modal-controls"><button type="button" onClick={onStepBack} disabled={!canStepBack || busy} aria-label="Previous clock step">← Previous</button><button type="button" className="clock" onClick={onStep} disabled={state.halted || busy}>▸ Clock</button><button type="button" className={running ? "running" : ""} onClick={onToggleRunning} disabled={state.halted || busy}>{running ? "■ Pause" : "▶ Auto"}</button></div>
         </footer>
       </div>
     </dialog>
@@ -185,40 +234,32 @@ function CpuExecutionModal({ state, running, busy, onClose, onStep, onToggleRunn
 }
 
 export default function CpuSimulator() {
-  const [programs, setPrograms] = useState([]);
-  const [source, setSource] = useState("");
+  const [programs] = useState(samplePrograms);
+  const [source, setSource] = useState(samplePrograms[0]?.source ?? "");
   const [language, setLanguage] = useState("binary");
   const [compiled, setCompiled] = useState(null);
-  const [selectedProgram, setSelectedProgram] = useState("");
-  const [sessionId, setSessionId] = useState(null);
+  const [selectedProgram, setSelectedProgram] = useState(samplePrograms[0]?.id ?? "");
   const [state, setState] = useState(null);
   const [history, setHistory] = useState([]);
+  const [undoCount, setUndoCount] = useState(0);
   const [running, setRunning] = useState(false);
   const [speed, setSpeed] = useState(2);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
-  const [elapsedMs, setElapsedMs] = useState(0);
+  const [timerVersion, setTimerVersion] = useState(0);
   const [showCpuModal, setShowCpuModal] = useState(false);
   const [generationPrompt, setGenerationPrompt] = useState("");
   const [generating, setGenerating] = useState(false);
-  const elapsedMsRef = useRef(0);
-  const startedAt = useRef(null);
-  const stepping = useRef(false);
+  const simulatorRef = useRef(null);
+  const undoRef = useRef([]);
 
-  useEffect(() => {
-    api.programs().then((items) => {
-      setPrograms(items);
-      if (items[0]) { setSelectedProgram(items[0].id); setSource(items[0].source); }
-    }).catch((requestError) => setError(requestError.message));
-  }, []);
-
-  const loadProgram = useCallback(async (programSource, programLanguage) => {
+  const loadProgram = useCallback((programSource, programLanguage) => {
     setBusy(true); setRunning(false); setError("");
     try {
-      const response = await api.load(programSource, programLanguage);
-      setSessionId(response.sessionId); setState(response.state); setHistory([]); setElapsedMs(0);
-      elapsedMsRef.current = 0; startedAt.current = null;
-      setCompiled(response.machineCode ? { assembly: response.assemblySource ?? "", machine: response.machineCode } : null);
+      const result = createLocalSimulation(programSource, programLanguage);
+      simulatorRef.current = result.simulator; undoRef.current = [];
+      setState(result.simulator.snapshot()); setHistory([]); setUndoCount(0); setTimerVersion((value) => value + 1);
+      setCompiled(result.machineCode ? { assembly: result.assemblySource ?? "", machine: result.machineCode } : null);
       return true;
     } catch (requestError) { setError(requestError instanceof Error ? requestError.message : "Could not load the program."); }
     finally { setBusy(false); }
@@ -238,37 +279,50 @@ export default function CpuSimulator() {
     finally { setGenerating(false); }
   };
 
-  const step = useCallback(async () => {
-    if (!sessionId || stepping.current) return;
-    stepping.current = true;
+  const step = useCallback(() => {
+    const simulator = simulatorRef.current;
+    if (!simulator) return;
     try {
-      const response = await api.step(sessionId);
-      setState(response.state);
-      setHistory((previous) => response.state.lastEvent.cycle > 0 && previous.at(-1)?.cycle !== response.state.lastEvent.cycle ? [...previous.slice(-39), response.state.lastEvent] : previous);
-      if (response.state.halted) setRunning(false);
+      undoRef.current.push(simulator.snapshot());
+      if (undoRef.current.length > 100) undoRef.current.shift();
+      const nextState = simulator.step();
+      setUndoCount(undoRef.current.length); setState(nextState);
+      setHistory((previous) => nextState.lastEvent.cycle > 0 && previous.at(-1)?.cycle !== nextState.lastEvent.cycle ? [...previous.slice(-39), nextState.lastEvent] : previous);
+      if (nextState.halted) setRunning(false);
     } catch (requestError) { setRunning(false); setError(requestError instanceof Error ? requestError.message : "The clock step failed."); }
-    finally { stepping.current = false; }
-  }, [sessionId]);
+  }, []);
 
-  const reset = async () => {
-    if (!sessionId) return;
+  const stepBack = useCallback(() => {
+    const previous = undoRef.current.pop();
+    if (!previous || !simulatorRef.current) return;
+    setRunning(false);
+    const restored = simulatorRef.current.restore(previous);
+    setState(restored); setUndoCount(undoRef.current.length);
+    setHistory((events) => events.filter((event) => event.cycle <= restored.cycle));
+  }, []);
+
+  const reset = () => {
+    if (!simulatorRef.current) return;
     setRunning(false); setBusy(true); setError("");
     try {
-      const response = await api.reset(sessionId);
-      setState(response.state); setHistory([]); setElapsedMs(0); elapsedMsRef.current = 0; startedAt.current = null;
+      undoRef.current = [];
+      setState(simulatorRef.current.reset()); setHistory([]); setUndoCount(0); setTimerVersion((value) => value + 1);
     } catch (requestError) { setError(requestError instanceof Error ? requestError.message : "Reset failed."); }
     finally { setBusy(false); }
   };
 
   useEffect(() => {
-    if (!running) { startedAt.current = null; return undefined; }
-    startedAt.current = performance.now() - elapsedMsRef.current;
+    if (!running) return undefined;
     const timer = window.setInterval(step, 1000 / speed);
-    const displayTimer = window.setInterval(() => {
-      if (startedAt.current !== null) { elapsedMsRef.current = performance.now() - startedAt.current; setElapsedMs(elapsedMsRef.current); }
-    }, 50);
-    return () => { window.clearInterval(timer); window.clearInterval(displayTimer); };
+    return () => window.clearInterval(timer);
   }, [running, speed, step]);
+
+  useEffect(() => {
+    const pauseWhenHidden = () => { if (document.hidden) setRunning(false); };
+    document.addEventListener("visibilitychange", pauseWhenHidden);
+    window.addEventListener("pagehide", pauseWhenHidden);
+    return () => { document.removeEventListener("visibilitychange", pauseWhenHidden); window.removeEventListener("pagehide", pauseWhenHidden); };
+  }, []);
 
   const selectExample = (id) => {
     setSelectedProgram(id);
@@ -288,15 +342,15 @@ export default function CpuSimulator() {
   const currentExample = programs.find((item) => item.id === selectedProgram);
 
   return (
-    <div className="cpu-sim">
+    <div className={`cpu-sim ${showCpuModal ? "circuit-open" : ""}`}>
       <header className="cpu-topbar">
         <div className="cpu-brand"><span className="cpu-brand__mark">16</span><div><b>Clockwork</b><small>16-bit CPU laboratory</small></div></div>
-        <div className="cpu-status-strip"><span className={`cpu-status-light ${running ? "live" : ""}`} /><span>{state?.halted ? "Halted" : running ? "Clock running" : state ? "Clock paused" : "Program not loaded"}</span><b>{state?.cycle ?? 0} cycles</b><b>{(elapsedMs / 1000).toFixed(2)}s</b></div>
+        <div className="cpu-status-strip"><span className={`cpu-status-light ${running ? "live" : ""}`} /><span>{state?.halted ? "Halted" : running ? "Clock running" : state ? "Clock paused" : "Program not loaded"}</span><b>{state?.cycle ?? 0} cycles</b><ElapsedTime key={timerVersion} running={running} /></div>
       </header>
       <main className="cpu-main">
         <section className="cpu-intro"><div><span className="cpu-eyebrow">Interactive computer architecture</span><h1>See what happens<br /><em>inside every clock.</em></h1></div><p>Write binary, assembly, or JavaScript-like MiniScript. Inspect every generated instruction and CPU state one pulse at a time.</p></section>
         {error && <div className="cpu-error" role="alert"><b>Could not continue</b><span>{error}</span><button type="button" onClick={() => setError("")} aria-label="Dismiss error">×</button></div>}
-        <div className="cpu-workbench">
+        {!showCpuModal && <><div className="cpu-workbench">
           <aside className="cpu-program-panel cpu-panel">
             <div className="cpu-panel-title"><span>01</span><div><h2>Program</h2><p>64 words maximum</p></div></div>
             <label className="cpu-field-label" htmlFor="cpu-generation-prompt">Build with Gemini</label>
@@ -319,7 +373,7 @@ export default function CpuSimulator() {
           <section className="cpu-area">
             <div className="cpu-control-deck cpu-panel">
               <div className="cpu-clock-readout"><small>Next micro-step</small><b>{state?.halted ? "HALTED" : state?.phase?.toUpperCase() ?? "FETCH"}</b><span>Cycle {(state?.cycle ?? 0) + (state?.halted ? 0 : 1)}</span></div>
-              <div className="cpu-transport"><button className="cpu-reset-button" type="button" onClick={reset} disabled={!state || busy} aria-label="Reset CPU">↺</button><button className="cpu-clock-button" type="button" onClick={step} disabled={!state || state.halted || busy}>▸ Clock</button><button className={`cpu-auto-button ${running ? "running" : ""}`} type="button" onClick={() => setRunning((value) => !value)} disabled={!state || state.halted || busy}>{running ? "■ Pause" : "▶ Auto run"}</button><button className="cpu-visualize-button" type="button" onClick={() => setShowCpuModal(true)} disabled={!state}>⌁ Visualize</button></div>
+              <div className="cpu-transport"><button className="cpu-reset-button" type="button" onClick={reset} disabled={!state || busy} aria-label="Reset CPU">↺</button><button className="cpu-back-button" type="button" onClick={stepBack} disabled={!undoCount || busy} aria-label="Previous clock step">←</button><button className="cpu-clock-button" type="button" onClick={step} disabled={!state || state.halted || busy}>▸ Clock</button><button className={`cpu-auto-button ${running ? "running" : ""}`} type="button" onClick={() => setRunning((value) => !value)} disabled={!state || state.halted || busy}>{running ? "■ Pause" : "▶ Auto run"}</button><button className="cpu-visualize-button" type="button" onClick={() => setShowCpuModal(true)} disabled={!state}>⌁ Visualize</button></div>
               <div className="cpu-speed"><label htmlFor="cpu-speed">Clock speed <b>{speed} Hz</b></label><input id="cpu-speed" type="range" min="1" max="10" value={speed} onChange={(event) => setSpeed(Number(event.target.value))} /></div>
             </div>
             {state ? <>
@@ -342,9 +396,9 @@ export default function CpuSimulator() {
         <section className="cpu-reference cpu-panel">
           <div className="cpu-reference-copy"><span className="cpu-eyebrow">The clock cycle</span><h2>Three pulses make<br />one instruction.</h2><p>The CPU repeats the same rhythm until it encounters <b>HLT</b>. Clock manually to isolate each transition.</p><div className="cpu-cycle-steps"><span><b>1</b>FETCH<small>RAM → IR</small></span><i>→</i><span><b>2</b>DECODE<small>IR → Control</small></span><i>→</i><span><b>3</b>EXECUTE<small>Control → CPU</small></span></div></div>
           <div className="cpu-instructions"><h3>Instruction set</h3><p>5-bit opcode · register and immediate/address fields</p><div className="cpu-instruction-grid">{instructionRows.map(([opcode, name, description]) => <div key={opcode}><code>{opcode}</code><b>{name}</b><span>{description}</span></div>)}</div></div>
-        </section>
+        </section></>}
       </main>
-      {showCpuModal && state && <CpuExecutionModal state={state} running={running} busy={busy} onClose={() => setShowCpuModal(false)} onStep={step} onToggleRunning={() => setRunning((value) => !value)} />}
+      {showCpuModal && state && <CpuExecutionModal state={state} running={running} busy={busy} canStepBack={undoCount > 0} onClose={() => setShowCpuModal(false)} onStep={step} onStepBack={stepBack} onToggleRunning={() => setRunning((value) => !value)} />}
       <footer className="cpu-footer"><span>Clockwork CPU Lab</span><p>A 16-bit architecture with 64 words of memory. Values wrap at 65,535.</p></footer>
     </div>
   );

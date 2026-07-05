@@ -17,7 +17,7 @@ import { searchYouTube, getVideoDetails, searchYouTubePlaylists, getPlaylistItem
 import { fetchTranscriptWithMetadata } from './transcriptService.js';
 import { getTranscript } from './supadata.js';
 import textToSpeech from '@google-cloud/text-to-speech';
-import { compileSource, createSimulation, getSimulation, ProgramParseError, samplePrograms } from './cpuSimulator.js';
+import { compileSource, createSimulation, getSimulation, ProgramParseError, samplePrograms } from '../shared/cpuSimulator.js';
 
 const app = express();
 const __filename = fileURLToPath(import.meta.url);

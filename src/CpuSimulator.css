@@ -89,6 +89,7 @@
 .cpu-transport button { min-height: 42px; border: 1px solid #39424b; border-radius: 2px; color: #c5cdd5; background: #151b22; font-size: 10px; font-weight: 700; padding: 0 13px; white-space: nowrap; }
 .cpu-transport button:hover:not(:disabled) { border-color: #697580; background: #1b232c; transform: none; }
 .cpu-transport .cpu-reset-button { width: 42px; padding: 0; font-size: 18px; }
+.cpu-transport .cpu-back-button { width: 42px; padding: 0; font-size: 16px; }
 .cpu-transport .cpu-clock-button { border-color: #708a28; color: var(--cpu-lime); }
 .cpu-transport .cpu-auto-button.running { color: #101408; background: var(--cpu-lime); }
 .cpu-transport .cpu-visualize-button { border-color: #28665d; color: var(--cpu-cyan); }
@@ -168,7 +169,7 @@
 .cpu-error { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 12px; align-items: center; border: 1px solid #71353c; background: rgba(255, 103, 115, 0.08); color: #eabfc3; padding: 11px 14px; margin-top: 18px; font-size: 11px; }
 .cpu-error b { color: var(--cpu-red); } .cpu-error button { border: 0; background: none; color: #d6959d; font-size: 18px; padding: 4px 8px; }
 
-.cpu-reference { margin: 24px 0; padding: 35px; display: grid; grid-template-columns: 0.75fr 1.25fr; gap: 55px; }
+.cpu-reference { margin: 24px 0; padding: 35px; display: grid; grid-template-columns: 0.75fr 1.25fr; gap: 55px; content-visibility: auto; contain-intrinsic-size: 620px; }
 .cpu-reference-copy h2 { font-size: 31px; letter-spacing: -0.04em; margin: 13px 0; }
 .cpu-reference-copy > p { color: var(--cpu-muted); font-size: 11px; line-height: 1.7; max-width: 380px; }
 .cpu-cycle-steps { display: flex; align-items: center; margin-top: 26px; gap: 8px; }
@@ -185,12 +186,14 @@
 .cpu-circuit-modal { --cpu-ink: #e9edf2; --cpu-muted: #84909c; --cpu-line: #252c34; --cpu-lime: #c8f04a; --cpu-cyan: #43d9c1; --cpu-orange: #ff9b54; --cpu-red: #ff6773; --cpu-mono: "SFMono-Regular", Consolas, monospace; width: min(1180px, calc(100vw - 32px)); max-width: none; padding: 0; border: 1px solid #38434d; background: #0b0f14; color: var(--cpu-ink); box-shadow: 0 24px 90px rgba(0, 0, 0, 0.75); }
 .cpu-circuit-modal::backdrop { background: rgba(2, 4, 7, 0.82); backdrop-filter: blur(6px); }
 .cpu-modal-shell { display: grid; grid-template-rows: auto minmax(0, 1fr) 100px; height: min(820px, calc(100dvh - 32px)); }
-.cpu-modal-header { display: grid; grid-template-columns: 1fr auto auto; gap: 24px; align-items: center; padding: 19px 22px; border-bottom: 1px solid var(--cpu-line); background: #10161c; }
+.cpu-modal-header { display: grid; grid-template-columns: 1fr auto auto auto; gap: 16px; align-items: center; padding: 19px 22px; border-bottom: 1px solid var(--cpu-line); background: #10161c; }
 .cpu-modal-header h2 { color: var(--cpu-ink); margin: 5px 0 3px; font-size: 21px; } .cpu-modal-header p { margin: 0; color: var(--cpu-muted); font-size: 10px; }
 .cpu-modal-status { display: flex; align-items: center; gap: 9px; color: #8e9aa5; font: 9px var(--cpu-mono); } .cpu-modal-status b { color: var(--cpu-lime); }
 .cpu-modal-close { width: 40px; height: 40px; padding: 0; border: 1px solid #37414a; border-radius: 2px; background: #151b21; color: #9ca6af; font-size: 22px; line-height: 1; }
+.cpu-circuit-view-toggle { display: none; min-height: 44px; border: 1px solid #28665d; border-radius: 2px; padding: 0 10px; background: #151b21; color: var(--cpu-cyan); font: 8px var(--cpu-mono); white-space: nowrap; }
 .cpu-circuit-scroll { overflow: auto; padding: 16px; background: #080b0f; overscroll-behavior: contain; }
 .cpu-circuit-board { display: block; min-width: 850px; width: 100%; height: auto; font-family: var(--cpu-mono); }
+.cpu-mobile-datapath { display: none; }
 .cpu-board-background { fill: #0b1116; stroke: #25303a; } .cpu-board-grid-line { fill: none; stroke: #182129; stroke-width: 1; }
 .cpu-circuit-wires path { fill: none; stroke: #2b3942; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
 .cpu-circuit-wires path.control { stroke-dasharray: 6 6; } .cpu-circuit-wires path.alu { stroke: #42362e; }
@@ -204,7 +207,8 @@
 .cpu-modal-event { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 13px; align-items: start; min-width: 0; } .cpu-modal-event .cpu-phase { border: 1px solid #3c4c2f; padding: 5px 7px; font: 8px var(--cpu-mono); }
 .cpu-modal-event b { display: block; font-size: 11px; margin-bottom: 3px; } .cpu-modal-event p { display: -webkit-box; margin: 0; overflow: hidden; color: #77838d; font: 8px/1.45 var(--cpu-mono); -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
 .cpu-modal-signals { display: flex; flex-wrap: wrap; gap: 4px; } .cpu-modal-signals span { color: var(--cpu-cyan); border: 1px solid #245248; padding: 3px 5px; font: 7px var(--cpu-mono); text-transform: uppercase; }
-.cpu-modal-controls { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; width: 180px; } .cpu-modal-controls button { height: 40px; border: 1px solid #708a28; border-radius: 2px; background: #151b22; color: var(--cpu-lime); padding: 0 10px; font-size: 9px; font-weight: 700; white-space: nowrap; }
+.cpu-modal-controls { display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px; width: 270px; } .cpu-modal-controls button { min-height: 44px; border: 1px solid #39424b; border-radius: 2px; background: #151b22; color: #aab4bd; padding: 0 8px; font-size: 9px; font-weight: 700; white-space: nowrap; }
+.cpu-modal-controls button.clock { border-color: #708a28; color: var(--cpu-lime); }
 .cpu-modal-controls button.running { background: var(--cpu-lime); color: #101408; }
 
 @keyframes cpu-circuit-flow { to { stroke-dashoffset: -17; } }
@@ -226,8 +230,8 @@
   .cpu-memory-panel { grid-column: auto; } .cpu-memory-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .cpu-control-deck { grid-template-columns: minmax(0, 1fr); } .cpu-speed { justify-self: stretch; } .cpu-transport { grid-row: 1; } .cpu-clock-readout { grid-row: 2; }
   .cpu-reference { grid-template-columns: 1fr; gap: 35px; } .cpu-instruction-grid { grid-template-columns: 1fr; } .cpu-instruction-grid > div:nth-child(odd) { border-right: 0; padding-right: 0; } .cpu-instruction-grid > div:nth-child(even) { padding-left: 0; }
-  .cpu-modal-header { grid-template-columns: minmax(0, 1fr) auto; } .cpu-modal-status { display: none; }
-  .cpu-modal-footer { grid-template-columns: minmax(0, 1fr) 180px; } .cpu-modal-signals { display: none; }
+  .cpu-modal-header { grid-template-columns: minmax(0, 1fr) auto auto; } .cpu-modal-status { display: none; }
+  .cpu-modal-footer { grid-template-columns: minmax(0, 1fr) 270px; } .cpu-modal-signals { display: none; }
 }
 
 @media (max-width: 500px) {
@@ -235,7 +239,7 @@
   .cpu-intro { min-height: auto; padding: 38px 0 34px; } .cpu-intro h1 { font-size: clamp(34px, 11vw, 42px); }
   .cpu-program-panel, .cpu-memory-panel, .cpu-board { padding: 14px; }
   .cpu-editor-wrap { height: 270px; }
-  .cpu-transport { display: grid; grid-template-columns: 42px 1fr 1fr; width: 100%; }
+  .cpu-transport { display: grid; grid-template-columns: 44px 44px 1fr 1fr; width: 100%; }
   .cpu-transport .cpu-visualize-button { grid-column: 1 / -1; width: 100%; }
   .cpu-grid { grid-template-columns: 1fr; } .cpu-alu { min-height: 130px; } .cpu-register > strong { font-size: 11px; }
   .cpu-data-bus { grid-template-columns: auto 1fr; } .cpu-data-bus b { grid-column: 1 / -1; padding-bottom: 8px; }
@@ -243,9 +247,36 @@
   .cpu-cycle-steps { align-items: stretch; flex-direction: column; } .cpu-cycle-steps i { align-self: center; transform: rotate(90deg); }
   .cpu-reference { padding: 22px 16px; } .cpu-reference-copy h2 { font-size: 27px; }
   .cpu-footer { padding: 20px 16px; } .cpu-footer p { display: none; }
-  .cpu-circuit-modal { width: calc(100vw - 16px); } .cpu-modal-shell { grid-template-rows: auto minmax(0, 1fr) 142px; height: calc(100dvh - 16px); }
-  .cpu-modal-header { padding: 14px; } .cpu-modal-header p { display: none; } .cpu-modal-header h2 { font-size: 17px; }
-  .cpu-modal-footer { grid-template-columns: 1fr; padding: 12px; } .cpu-modal-controls { width: 100%; }
+}
+
+@media (max-width: 800px) {
+  .cpu-circuit-modal { width: 100vw; height: 100dvh; max-height: none; border: 0; } .cpu-modal-shell { grid-template-rows: auto minmax(0, 1fr) auto; height: 100dvh; }
+  .cpu-circuit-modal::backdrop { background: rgba(2, 4, 7, 0.92); backdrop-filter: none; }
+  .cpu-modal-header { padding: max(10px, env(safe-area-inset-top)) 10px 10px; gap: 7px; } .cpu-modal-header p, .cpu-modal-header .cpu-eyebrow { display: none; } .cpu-modal-header h2 { margin: 0; font-size: 16px; }
+  .cpu-modal-close { width: 44px; height: 44px; }
+  .cpu-circuit-view-toggle { display: block; }
+  .cpu-circuit-scroll { padding: 12px; overflow: hidden auto; touch-action: pan-y; }
+  .cpu-circuit-board { display: none; }
+  .cpu-circuit-scroll.show-full { overflow: auto; touch-action: pan-x pan-y; }
+  .cpu-circuit-scroll.show-full .cpu-circuit-board { display: block; min-width: 760px; }
+  .cpu-circuit-scroll.show-full .cpu-mobile-datapath { display: none; }
+  .cpu-mobile-datapath { display: flex; min-height: 100%; flex-direction: column; justify-content: center; gap: 9px; max-width: 420px; margin: auto; padding: 8px 0 18px; }
+  .cpu-mobile-phase { display: flex; flex-direction: column; align-items: center; gap: 5px; margin-bottom: 4px; text-align: center; }
+  .cpu-mobile-phase span { color: var(--cpu-lime); font: 8px var(--cpu-mono); letter-spacing: 0.12em; }
+  .cpu-mobile-phase b { font-size: 13px; }
+  .cpu-mobile-transfer { display: grid; grid-template-columns: minmax(0, 1fr) 58px minmax(0, 1fr); align-items: center; min-height: 58px; }
+  .cpu-mobile-transfer > span { min-height: 48px; display: grid; place-items: center; border: 1px solid #356068; background: #102027; color: var(--cpu-cyan); font: 700 12px var(--cpu-mono); }
+  .cpu-mobile-transfer i { display: flex; flex-direction: column; align-items: center; color: var(--cpu-cyan); font: normal 20px/1 var(--cpu-mono); transform: rotate(-90deg); }
+  .cpu-mobile-transfer i small { color: #71808b; font-size: 6px; letter-spacing: 0.08em; text-transform: uppercase; transform: rotate(90deg); }
+  .cpu-mobile-transfer--control > span { border-color: #667a32; color: var(--cpu-lime); } .cpu-mobile-transfer--control i { color: var(--cpu-lime); }
+  .cpu-mobile-transfer--address > span { border-color: #7b542f; color: var(--cpu-orange); } .cpu-mobile-transfer--address i { color: var(--cpu-orange); }
+  .cpu-mobile-components { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; }
+  .cpu-mobile-components span { border: 1px solid #667a32; padding: 14px; color: var(--cpu-lime); font: 11px var(--cpu-mono); }
+  .cpu-modal-footer { grid-template-columns: 1fr; padding: 10px 12px max(10px, env(safe-area-inset-bottom)); gap: 8px; } .cpu-modal-controls { width: 100%; position: sticky; bottom: 0; }
+  .cpu-modal-event { min-height: 38px; }
+  .cpu-circuit-wires path.active, .cpu-circuit-node.active rect, .cpu-node-led { filter: none; animation: none; }
+  .cpu-status-light.live, .cpu-data-bus div.flowing::after { animation: none; box-shadow: none; }
+  .circuit-open .cpu-topbar { backdrop-filter: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
