@@ -202,7 +202,7 @@ function scanMiniScript(source) {
       tokens.push({ kind: 'symbol', text: symbol, line: tokenLine, column: tokenColumn });
       index += symbol.length; column += symbol.length; continue;
     }
-    if ('{}()[];,=+-*%&|^!'.includes(ch)) {
+    if ('{}()[];,:.=+-*%&|^!'.includes(ch)) {
       tokens.push({ kind: 'symbol', text: ch, line: tokenLine, column: tokenColumn });
       index += 1; column += 1; continue;
     }
@@ -233,6 +233,7 @@ class MiniParser {
   }
   parseStatement() {
     if (this.match('{')) return this.parseBlock(this.previous.line);
+    if (this.matchWord('class')) return this.parseClass(this.previous);
     if (this.matchWord('let') || this.matchWord('const')) return this.parseDeclaration(this.previous);
     if (this.matchWord('if')) return this.parseIf(this.previous.line);
     if (this.matchWord('while')) return this.parseWhile(this.previous.line);
@@ -241,21 +242,19 @@ class MiniParser {
       return { type: 'loopControl', isBreak: keyword.text.toLowerCase() === 'break', line: keyword.line };
     }
     const start = this.current;
-    const target = this.parsePrimary();
-    if (target.type === 'name' && (this.match('++') || this.match('--'))) {
+    const target = this.parsePostfix();
+    if ((target.type === 'name' || target.type === 'member') && (this.match('++') || this.match('--'))) {
       const operator = this.previous.text; this.endStatement();
-      return { type: 'update', name: target.value, operator, line: start.line };
+      return { type: 'update', target, operator, line: start.line };
     }
     if (['=', '+=', '-=', '*=', '%=', '&=', '|=', '^='].some((operator) => this.match(operator))) {
       const operator = this.previous.text;
       const value = this.parseExpression(); this.endStatement();
       return { type: 'assignment', target, operator, value, line: start.line };
     }
-    if (target.type === 'name' && this.match('(')) {
-      const args = [];
-      if (!this.check(')')) do { args.push(this.parseExpression()); } while (this.match(','));
-      this.consume(')', "expected ')' after function arguments."); this.endStatement();
-      return { type: 'call', name: target.value, arguments: args, line: start.line };
+    if (target.type === 'call') {
+      this.endStatement();
+      return { type: 'callStatement', call: target, line: start.line };
     }
     throw tokenError(start, 'expected an assignment, update, or function call.');
   }
@@ -267,9 +266,50 @@ class MiniParser {
   }
   parseDeclaration(keyword) {
     const name = this.identifier('expected a name after the declaration keyword.');
+    this.consume(':', "strongly typed declarations require ': Type'.");
+    const valueType = this.identifier('expected a type after the colon.');
     this.consume('=', 'declarations require an initializer.');
     const value = this.parseExpression(); this.endStatement();
-    return { type: 'declaration', kind: keyword.text.toLowerCase(), name: name.text, value, line: keyword.line };
+    return { type: 'declaration', kind: keyword.text.toLowerCase(), name: name.text, valueType: valueType.text, value, line: keyword.line };
+  }
+  parseClass(keyword) {
+    const name = this.identifier('expected a class name.');
+    this.consume('{', "expected '{' after the class name.");
+    const members = [];
+    while (!this.check('}') && this.current.kind !== 'end') {
+      if (this.matchWord('constructor')) members.push(this.parseMethod(this.previous, true));
+      else if (this.matchWord('method')) members.push(this.parseMethod(this.previous, false));
+      else {
+        const field = this.identifier('expected a typed field, constructor, or method.');
+        this.consume(':', "expected ':' after the field name.");
+        const fieldType = this.identifier('expected a field type.');
+        const value = this.match('=') ? this.parseExpression() : null;
+        this.endStatement();
+        members.push({ type: 'field', name: field.text, valueType: fieldType.text, value, line: field.line });
+      }
+    }
+    this.consume('}', "expected '}' to close the class.");
+    return { type: 'class', name: name.text, members, line: keyword.line };
+  }
+  parseMethod(keyword, constructor) {
+    const name = constructor ? { text: 'constructor', line: keyword.line } : this.identifier('expected a method name.');
+    this.consume('(', "expected '(' after the method name.");
+    const parameters = [];
+    if (!this.check(')')) do {
+      const parameter = this.identifier('expected a parameter name.');
+      this.consume(':', "expected ':' after the parameter name.");
+      const parameterType = this.identifier('expected a parameter type.');
+      parameters.push({ name: parameter.text, valueType: parameterType.text, line: parameter.line });
+    } while (this.match(','));
+    this.consume(')', "expected ')' after the parameters.");
+    let returnType = 'void';
+    if (!constructor) {
+      this.consume(':', "strongly typed methods require a return type.");
+      returnType = this.identifier('expected a return type.').text;
+    }
+    this.consume('{', "expected '{' before the method body.");
+    const body = this.parseBlock(this.previous.line);
+    return { type: 'method', name: name.text, parameters, returnType, body, constructor, line: keyword.line };
   }
   parseIf(line) {
     this.consume('(', "expected '(' after if.");
@@ -295,12 +335,35 @@ class MiniParser {
   }
   parseUnary() {
     if (this.match('!')) return { type: 'unary', operator: '!', value: this.parseUnary(), line: this.previous.line };
-    return this.parsePrimary();
+    return this.parsePostfix();
+  }
+  parsePostfix() {
+    let expression = this.parsePrimary();
+    for (;;) {
+      if (this.match('.')) {
+        const property = this.identifier("expected a member name after '.'.");
+        expression = { type: 'member', object: expression, property: property.text, line: property.line };
+      } else if (this.match('(')) {
+        const args = [];
+        if (!this.check(')')) do { args.push(this.parseExpression()); } while (this.match(','));
+        this.consume(')', "expected ')' after the arguments.");
+        expression = { type: 'call', callee: expression, arguments: args, line: expression.line };
+      } else break;
+    }
+    return expression;
   }
   parsePrimary() {
     const token = this.advance();
     if (token.kind === 'number') return { type: 'number', value: Number.parseInt(token.text, token.text.toLowerCase().startsWith('0x') ? 16 : 10), line: token.line };
     if (token.kind === 'identifier') {
+      if (token.text.toLowerCase() === 'new') {
+        const className = this.identifier('expected a class name after new.');
+        this.consume('(', "expected '(' after the class name.");
+        const args = [];
+        if (!this.check(')')) do { args.push(this.parseExpression()); } while (this.match(','));
+        this.consume(')', "expected ')' after constructor arguments.");
+        return { type: 'new', className: className.text, arguments: args, line: token.line };
+      }
       if (token.text.toLowerCase() === 'memory' && this.match('[')) {
         const address = this.parseExpression(); this.consume(']', "expected ']' after the memory address.");
         return { type: 'memory', address, line: token.line };
@@ -317,10 +380,11 @@ class MiniParser {
 
 class MiniCompiler {
   constructor() {
-    this.code = []; this.variables = new Map(); this.constants = new Map();
-    this.loops = []; this.nextRegister = 0; this.nextLabel = 0;
+    this.code = []; this.variables = new Map(); this.constants = new Map(); this.objects = new Map(); this.classes = new Map();
+    this.loops = []; this.contexts = []; this.nextRegister = 0; this.nextLabel = 0; this.inlineDepth = 0;
   }
   compile(program) {
+    program.statements.filter((statement) => statement.type === 'class').forEach((statement) => this.defineClass(statement));
     this.compileStatement(program);
     const lastInstruction = [...this.code].reverse().find((line) => !line.endsWith(':'));
     if (lastInstruction?.toUpperCase() !== 'HLT') this.emit('HLT');
@@ -328,10 +392,11 @@ class MiniCompiler {
   }
   compileStatement(statement) {
     if (statement.type === 'block') statement.statements.forEach((child) => this.compileStatement(child));
+    else if (statement.type === 'class') return;
     else if (statement.type === 'declaration') this.compileDeclaration(statement);
     else if (statement.type === 'assignment') this.compileAssignment(statement.target, statement.operator, statement.value, statement.line);
     else if (statement.type === 'update') this.compileUpdate(statement);
-    else if (statement.type === 'call') this.compileCall(statement);
+    else if (statement.type === 'callStatement') this.compileCall(statement.call);
     else if (statement.type === 'if') this.compileIf(statement);
     else if (statement.type === 'while') this.compileWhile(statement);
     else if (statement.type === 'loopControl') {
@@ -339,23 +404,87 @@ class MiniCompiler {
       const loop = this.loops.at(-1); this.emit(`JMP ${statement.isBreak ? loop.breakLabel : loop.continueLabel}`);
     }
   }
+  defineClass(statement) {
+    const key = statement.name.toLowerCase();
+    if (this.classes.has(key)) throw parseError(statement.line, `class '${statement.name}' has already been declared.`);
+    const fields = new Map(); const methods = new Map(); let constructor = null;
+    statement.members.forEach((member) => {
+      const memberKey = member.name.toLowerCase();
+      if (member.type === 'field') {
+        const valueType = this.normalizeType(member.valueType, member.line, false);
+        if (fields.has(memberKey) || methods.has(memberKey)) throw parseError(member.line, `member '${member.name}' is declared more than once.`);
+        fields.set(memberKey, { ...member, valueType });
+      } else {
+        member.parameters = member.parameters.map((parameter) => ({ ...parameter, valueType: this.normalizeType(parameter.valueType, parameter.line, false) }));
+        const parameterNames = new Set();
+        member.parameters.forEach((parameter) => {
+          const parameterKey = parameter.name.toLowerCase();
+          if (parameterNames.has(parameterKey)) throw parseError(parameter.line, `parameter '${parameter.name}' is declared more than once.`);
+          parameterNames.add(parameterKey);
+        });
+        member.returnType = this.normalizeType(member.returnType, member.line, true);
+        if (member.returnType !== 'void') throw parseError(member.line, 'MiniScript methods currently return void; mutate typed fields or call output instead.');
+        if (member.constructor) {
+          if (constructor) throw parseError(member.line, 'a class can only declare one constructor.');
+          constructor = member;
+        } else {
+          if (fields.has(memberKey) || methods.has(memberKey)) throw parseError(member.line, `member '${member.name}' is declared more than once.`);
+          methods.set(memberKey, member);
+        }
+      }
+    });
+    this.classes.set(key, { name: statement.name, fields, methods, constructor, line: statement.line });
+  }
   compileDeclaration(declaration) {
     const key = declaration.name.toLowerCase();
-    if (this.variables.has(key) || this.constants.has(key)) throw parseError(declaration.line, `'${declaration.name}' has already been declared.`);
-    if (declaration.kind === 'const') { this.constants.set(key, this.constant(declaration.value)); return; }
-    if (this.nextRegister >= registers.length) throw parseError(declaration.line, 'MiniScript can keep four runtime variables in registers A through D. Use const or memory for additional values.');
-    const register = registers[this.nextRegister++];
-    this.variables.set(key, register);
+    if (this.contexts.length) throw parseError(declaration.line, 'methods cannot declare local variables; use typed fields or parameters.');
+    if (this.variables.has(key) || this.constants.has(key) || this.objects.has(key)) throw parseError(declaration.line, `'${declaration.name}' has already been declared.`);
+    const valueType = this.normalizeType(declaration.valueType, declaration.line, false, true);
+    const classDefinition = this.classes.get(valueType.toLowerCase());
+    if (classDefinition) { this.compileObjectDeclaration(declaration, key, classDefinition); return; }
+    this.requireType(declaration.value, valueType, declaration.line, `initializer for '${declaration.name}'`);
+    if (declaration.kind === 'const') {
+      const value = this.constant(declaration.value);
+      if (!Number.isInteger(value) || value < 0 || value > WORD_MASK) throw parseError(declaration.line, `value ${value} must fit in an unsigned 16-bit word.`);
+      this.constants.set(key, { value, valueType }); return;
+    }
+    const register = this.allocateRegister(declaration.line);
+    this.variables.set(key, { register, valueType });
     this.compileAssignment({ type: 'name', value: declaration.name, line: declaration.line }, '=', declaration.value, declaration.line);
   }
+  compileObjectDeclaration(declaration, key, classDefinition) {
+    if (declaration.kind === 'const') throw parseError(declaration.line, 'objects must be declared with let.');
+    if (declaration.value.type !== 'new' || declaration.value.className.toLowerCase() !== classDefinition.name.toLowerCase()) {
+      throw parseError(declaration.line, `objects of type ${classDefinition.name} must be initialized with new ${classDefinition.name}(...).`);
+    }
+    const object = { name: declaration.name, classDefinition, fields: new Map() };
+    this.objects.set(key, object);
+    classDefinition.fields.forEach((field, fieldKey) => {
+      const bindingKey = `${key}.${fieldKey}`;
+      this.variables.set(bindingKey, { register: this.allocateRegister(field.line), valueType: field.valueType });
+      object.fields.set(fieldKey, bindingKey);
+      const initializer = field.value ?? (field.valueType === 'bool'
+        ? { type: 'name', value: 'false', line: field.line }
+        : { type: 'number', value: 0, line: field.line });
+      this.requireType(initializer, field.valueType, field.line, `initializer for field '${field.name}'`);
+      this.compileAssignment({ type: 'bound', key: bindingKey, line: field.line }, '=', initializer, field.line);
+    });
+    if (classDefinition.constructor) this.inlineMethod(object, classDefinition.constructor, declaration.value.arguments, declaration.line);
+    else if (declaration.value.arguments.length) throw parseError(declaration.line, `${classDefinition.name} does not declare a constructor.`);
+  }
   compileAssignment(target, operator, value, line) {
+    target = this.resolve(target); value = this.resolve(value);
     if (target.type === 'memory') {
       if (operator !== '=') throw parseError(line, "memory supports direct '=' assignment only.");
+      this.requireType(value, 'u16', line, 'memory assignment');
       const address = this.address(target.address); const source = this.register(value);
       this.emit(`STR ${source}, ${address}`);
       return;
     }
-    if (target.type !== 'name') throw parseError(line, 'the assignment target must be a variable or memory address.');
+    if (target.type !== 'name' && target.type !== 'bound') throw parseError(line, 'the assignment target must be a variable, field, or memory address.');
+    const targetType = this.typeOf(target);
+    this.requireType(value, targetType, line, 'assignment');
+    if (targetType !== 'u16' && operator !== '=') throw parseError(line, `operator '${operator}' requires u16 operands.`);
     const destination = this.register(target); const immediate = this.tryConstant(value);
     if (operator === '=' && immediate.known) { this.emitConstant(destination, immediate.value, value.line); return; }
     if (operator === '=' && value.type === 'memory') {
@@ -375,7 +504,8 @@ class MiniCompiler {
     this.emitOperation(destination, operation, right, line);
   }
   compileUpdate(update) {
-    const destination = this.register({ type: 'name', value: update.name, line: update.line });
+    const target = this.resolve(update.target); this.requireType(target, 'u16', update.line, `operator '${update.operator}'`);
+    const destination = this.register(target);
     this.emit(`${update.operator === '++' ? 'INC' : 'DEC'} ${destination}`);
   }
   emitOperation(destination, operator, right, line) {
@@ -392,14 +522,32 @@ class MiniCompiler {
     this.emit(`${instruction} ${destination}, ${source}`);
   }
   compileCall(call) {
-    const name = call.name.toLowerCase();
+    if (call.callee.type === 'member') {
+      const object = this.getObject(call.callee.object, call.line);
+      const method = object.classDefinition.methods.get(call.callee.property.toLowerCase());
+      if (!method) throw parseError(call.line, `class '${object.classDefinition.name}' has no method '${call.callee.property}'.`);
+      this.inlineMethod(object, method, call.arguments, call.line); return;
+    }
+    if (call.callee.type !== 'name') throw parseError(call.line, 'expected a function or method call.');
+    const name = call.callee.value.toLowerCase();
     if (name === 'output' || name === 'print') {
-      this.requireArguments(call, 1); this.emit(`OUT ${this.register(call.arguments[0])}`);
+      this.requireArguments(call, 1); this.requireType(call.arguments[0], 'u16', call.line, name); this.emit(`OUT ${this.register(call.arguments[0])}`);
     } else if (name === 'halt' || name === 'stop') { this.requireArguments(call, 0); this.emit('HLT'); }
-    else if (name === 'push') { this.requireArguments(call, 1); this.emit(`PUSH ${this.register(call.arguments[0])}`); }
-    else if (name === 'pop') { this.requireArguments(call, 1); this.emit(`POP ${this.register(call.arguments[0])}`); }
+    else if (name === 'push') { this.requireArguments(call, 1); this.requireType(call.arguments[0], 'u16', call.line, name); this.emit(`PUSH ${this.register(call.arguments[0])}`); }
+    else if (name === 'pop') { this.requireArguments(call, 1); this.requireType(call.arguments[0], 'u16', call.line, name); this.emit(`POP ${this.register(call.arguments[0])}`); }
     else if (name === 'nop') { this.requireArguments(call, 0); this.emit('NOP'); }
-    else throw parseError(call.line, `unknown function '${call.name}'. Available functions: output, halt, push, pop, and nop.`);
+    else throw parseError(call.line, `unknown function '${call.callee.value}'. Available functions: output, halt, push, pop, and nop.`);
+  }
+  inlineMethod(object, method, args, line) {
+    if (this.inlineDepth >= 8) throw parseError(line, 'method call nesting cannot exceed eight levels.');
+    if (args.length !== method.parameters.length) throw parseError(line, `${method.name} expects ${method.parameters.length} argument${method.parameters.length === 1 ? '' : 's'}.`);
+    const aliases = new Map();
+    method.parameters.forEach((parameter, index) => {
+      this.requireType(args[index], parameter.valueType, line, `argument '${parameter.name}'`);
+      aliases.set(parameter.name.toLowerCase(), this.resolve(args[index]));
+    });
+    this.contexts.push({ object, aliases }); this.inlineDepth += 1;
+    try { this.compileStatement(method.body); } finally { this.inlineDepth -= 1; this.contexts.pop(); }
   }
   compileIf(statement) {
     const thenLabel = this.label('if'); const elseLabel = this.label('else'); const endLabel = this.label('endif');
@@ -415,6 +563,8 @@ class MiniCompiler {
     this.emit(`JMP ${condition}`); this.mark(end);
   }
   compileBranch(condition, whenTrue, whenFalse) {
+    this.requireType(condition, 'bool', condition.line, 'condition');
+    condition = this.resolve(condition);
     const constant = this.tryConstant(condition);
     if (constant.known) { this.emit(`JMP ${constant.value !== 0 ? whenTrue : whenFalse}`); return; }
     if (condition.type === 'unary' && condition.operator === '!') { this.compileBranch(condition.value, whenFalse, whenTrue); return; }
@@ -444,17 +594,20 @@ class MiniCompiler {
     this.emit(`ADDI ${register}, 0`); this.emit(`JNZ ${whenTrue}`); this.emit(`JMP ${whenFalse}`);
   }
   register(expression) {
-    if (expression.type !== 'name' || !this.variables.has(expression.value.toLowerCase())) throw parseError(expression.line, 'expected a declared runtime variable.');
-    return this.variables.get(expression.value.toLowerCase());
+    expression = this.resolve(expression);
+    const key = expression.type === 'bound' ? expression.key : expression.type === 'name' ? expression.value.toLowerCase() : null;
+    if (!key || !this.variables.has(key)) throw parseError(expression.line, 'expected a declared runtime u16 or bool value.');
+    return this.variables.get(key).register;
   }
   address(expression) { const value = this.constant(expression); this.requireNibble(value, expression.line, 'memory address'); return value; }
   constant(expression) { const result = this.tryConstant(expression); if (result.known) return result.value; throw parseError(expression.line, 'expected a compile-time constant.'); }
   tryConstant(expression) {
+    expression = this.resolve(expression);
     if (expression.type === 'number') return { known: true, value: expression.value };
     if (expression.type === 'name') {
       const key = expression.value.toLowerCase();
       if (key === 'true') return { known: true, value: 1 }; if (key === 'false') return { known: true, value: 0 };
-      if (this.constants.has(key)) return { known: true, value: this.constants.get(key) };
+      if (this.constants.has(key)) return { known: true, value: this.constants.get(key).value };
     }
     if (expression.type === 'unary' && expression.operator === '!') {
       const value = this.tryConstant(expression.value); if (value.known) return { known: true, value: value.value === 0 ? 1 : 0 };
@@ -476,7 +629,7 @@ class MiniCompiler {
     return { known: false, value: 0 };
   }
   scratch(excluded, line) {
-    const used = new Set(this.variables.values());
+    const used = new Set([...this.variables.values()].map((variable) => variable.register));
     const register = registers.find((candidate) => candidate !== excluded && !used.has(candidate));
     if (!register) throw parseError(line, 'this operation needs one free register for a constant. Declare fewer runtime variables or place a value in memory.');
     return register;
@@ -487,7 +640,89 @@ class MiniCompiler {
     if (value > 0x1ff) this.emit(`LUI ${register}, ${(value >>> 8) & 0xff}`);
   }
   requireNibble(value, line, role) { if (value < 0 || value >= MEMORY_SIZE) throw parseError(line, `${role} ${value} must be between 0 and ${MEMORY_SIZE - 1}.`); }
-  requireArguments(call, count) { if (call.arguments.length !== count) throw parseError(call.line, `${call.name} expects ${count} argument${count === 1 ? '' : 's'}.`); }
+  requireArguments(call, count) {
+    const name = call.callee.type === 'name' ? call.callee.value : 'method';
+    if (call.arguments.length !== count) throw parseError(call.line, `${name} expects ${count} argument${count === 1 ? '' : 's'}.`);
+  }
+  allocateRegister(line) {
+    if (this.nextRegister >= registers.length) throw parseError(line, 'MiniScript can keep four runtime values or object fields in registers A through D. Use const or memory for additional values.');
+    return registers[this.nextRegister++];
+  }
+  normalizeType(type, line, allowVoid = false, allowClass = false) {
+    const key = String(type).toLowerCase();
+    if (key === 'u16' || key === 'bool' || (allowVoid && key === 'void')) return key;
+    if (allowClass && this.classes.has(key)) return this.classes.get(key).name;
+    throw parseError(line, `unknown type '${type}'. Use u16, bool${allowVoid ? ', void' : ''}${allowClass ? ', or a declared class' : ''}.`);
+  }
+  typeOf(expression) {
+    expression = this.resolve(expression);
+    if (expression.type === 'number' || expression.type === 'memory') return 'u16';
+    if (expression.type === 'new') {
+      const definition = this.classes.get(expression.className.toLowerCase());
+      if (!definition) throw parseError(expression.line, `unknown class '${expression.className}'.`);
+      return definition.name;
+    }
+    if (expression.type === 'bound') return this.variables.get(expression.key)?.valueType ?? null;
+    if (expression.type === 'name') {
+      const key = expression.value.toLowerCase();
+      if (key === 'true' || key === 'false' || ['carry', 'zero', 'negative'].includes(key)) return 'bool';
+      if (this.variables.has(key)) return this.variables.get(key).valueType;
+      if (this.constants.has(key)) return this.constants.get(key).valueType;
+      if (this.objects.has(key)) return this.objects.get(key).classDefinition.name;
+      throw parseError(expression.line, `unknown name '${expression.value}'.`);
+    }
+    if (expression.type === 'unary') {
+      this.requireType(expression.value, 'bool', expression.line, "operator '!'"); return 'bool';
+    }
+    if (expression.type === 'binary') {
+      if (['+', '-', '*', '%', '&', '|', '^'].includes(expression.operator)) {
+        this.requireType(expression.left, 'u16', expression.line, `operator '${expression.operator}'`);
+        this.requireType(expression.right, 'u16', expression.line, `operator '${expression.operator}'`); return 'u16';
+      }
+      if (['&&', '||'].includes(expression.operator)) {
+        this.requireType(expression.left, 'bool', expression.line, `operator '${expression.operator}'`);
+        this.requireType(expression.right, 'bool', expression.line, `operator '${expression.operator}'`); return 'bool';
+      }
+      if (['==', '===', '!=', '!=='].includes(expression.operator)) {
+        const left = this.typeOf(expression.left); const right = this.typeOf(expression.right);
+        if (left !== right) throw parseError(expression.line, `cannot compare ${left} with ${right}.`);
+        if (left !== 'u16' && left !== 'bool') throw parseError(expression.line, `objects of type ${left} cannot be compared.`);
+        return 'bool';
+      }
+    }
+    throw parseError(expression.line, 'expression does not produce a typed value.');
+  }
+  requireType(expression, expected, line, role) {
+    const actual = this.typeOf(expression);
+    if (actual !== expected) throw parseError(line, `${role} requires ${expected}, but received ${actual}.`);
+  }
+  resolve(expression, depth = 0) {
+    if (!expression || depth > 12) return expression;
+    const context = this.contexts.at(-1);
+    if (expression.type === 'name' && context?.aliases.has(expression.value.toLowerCase())) return this.resolve(context.aliases.get(expression.value.toLowerCase()), depth + 1);
+    if (expression.type === 'member') {
+      const object = this.getObject(expression.object, expression.line);
+      const key = object.fields.get(expression.property.toLowerCase());
+      if (!key) throw parseError(expression.line, `class '${object.classDefinition.name}' has no field '${expression.property}'.`);
+      return { type: 'bound', key, line: expression.line };
+    }
+    if (expression.type === 'binary') return { ...expression, left: this.resolve(expression.left, depth + 1), right: this.resolve(expression.right, depth + 1) };
+    if (expression.type === 'unary') return { ...expression, value: this.resolve(expression.value, depth + 1) };
+    if (expression.type === 'memory') return { ...expression, address: this.resolve(expression.address, depth + 1) };
+    return expression;
+  }
+  getObject(expression, line) {
+    if (expression.type !== 'name') throw parseError(line, 'method and field access require a named object.');
+    const key = expression.value.toLowerCase();
+    if (key === 'this') {
+      const object = this.contexts.at(-1)?.object;
+      if (!object) throw parseError(line, "'this' can only be used inside a method or constructor.");
+      return object;
+    }
+    const object = this.objects.get(key);
+    if (!object) throw parseError(line, `unknown object '${expression.value}'.`);
+    return object;
+  }
   emit(instruction) { this.code.push(instruction); }
   mark(label) { this.code.push(`${label}:`); }
   label(prefix) { const label = `__${prefix}_${this.nextLabel}`; this.nextLabel += 1; return label; }
@@ -689,11 +924,13 @@ const makeSample = (id, name, description, assemblySource, simpleSource) => ({
 });
 
 export const samplePrograms = [
-  makeSample('fibonacci', 'Fibonacci sequence', 'Outputs the first eight Fibonacci numbers using four general-purpose registers and a loop.', 'LDI A, 0\nLDI B, 1\nLDI C, 8\nloop:\nOUT A\nMOV D, A\nADD D, B\nMOV A, B\nMOV B, D\nDEC C\nJNZ loop\nHLT', 'let current = 0;\nlet following = 1;\nlet count = 8;\nlet next = 0;\n\nwhile (count !== 0) {\n  output(current);\n  next = current;\n  next += following;\n  current = following;\n  following = next;\n  count--;\n}\n\nhalt();'),
-  makeSample('factorial', '16-bit factorial', 'Calculates 8! = 40320 with MUL, demonstrating a result far beyond an 8-bit CPU.', 'LDI A, 1\nLDI B, 8\nloop:\nMUL A, B\nDEC B\nJNZ loop\nOUT A\nHLT', 'let result = 1;\nlet factor = 8;\n\nwhile (factor !== 0) {\n  result *= factor;\n  factor--;\n}\n\noutput(result);\nhalt();'),
-  makeSample('subroutine', 'Stack and subroutine', 'Calls a reusable sum subroutine while preserving a register on the hardware stack.', 'LDI A, 120\nLDI B, 75\nLDI C, 7\nCALL sum\nOUT A\nHLT\nsum:\nPUSH C\nMOV C, B\nADD A, C\nPOP C\nRET', 'let total = 120;\nlet addend = 75;\ntotal += addend;\noutput(total);\nhalt();'),
-  makeSample('bitfield', 'Bitfield transform', 'Builds 0xABCD with LUI, then uses masks, shifts, and XOR to transform it.', 'LDI A, 205\nLUI A, 171\nLDI B, 255\nAND A, B\nSHL A\nLDI C, 90\nXOR A, C\nOUT A\nHLT', 'let value = 205;\nlet mask = 255;\nlet key = 90;\nvalue &= mask;\nvalue += value;\nvalue ^= key;\noutput(value);\nhalt();'),
-  makeSample('memory', 'Memory and modulo', 'Stores a 16-bit product in RAM, reloads it, and computes its remainder modulo 97.', 'LDI A, 300\nLDI B, 200\nMUL A, B\nSTR A, 48\nLDI A, 0\nLDR A, 48\nLDI C, 97\nMOD A, C\nOUT A\nHLT', 'const slot = 48;\nlet value = 300;\nlet multiplier = 200;\nlet divisor = 97;\nvalue *= multiplier;\nmemory[slot] = value;\nvalue = memory[slot];\nvalue %= divisor;\noutput(value);\nhalt();'),
+  makeSample('fibonacci', 'Fibonacci sequence', 'Outputs the first eight Fibonacci numbers using four general-purpose registers and a loop.', 'LDI A, 0\nLDI B, 1\nLDI C, 8\nloop:\nOUT A\nMOV D, A\nADD D, B\nMOV A, B\nMOV B, D\nDEC C\nJNZ loop\nHLT', 'let current: u16 = 0;\nlet following: u16 = 1;\nlet count: u16 = 8;\nlet next: u16 = 0;\n\nwhile (count !== 0) {\n  output(current);\n  next = current;\n  next += following;\n  current = following;\n  following = next;\n  count--;\n}\n\nhalt();'),
+  makeSample('factorial', '16-bit factorial', 'Calculates 8! = 40320 with MUL, demonstrating a result far beyond an 8-bit CPU.', 'LDI A, 1\nLDI B, 8\nloop:\nMUL A, B\nDEC B\nJNZ loop\nOUT A\nHLT', 'let result: u16 = 1;\nlet factor: u16 = 8;\n\nwhile (factor !== 0) {\n  result *= factor;\n  factor--;\n}\n\noutput(result);\nhalt();'),
+  makeSample('subroutine', 'Stack and subroutine', 'Calls a reusable sum subroutine while preserving a register on the hardware stack.', 'LDI A, 120\nLDI B, 75\nLDI C, 7\nCALL sum\nOUT A\nHLT\nsum:\nPUSH C\nMOV C, B\nADD A, C\nPOP C\nRET', 'let total: u16 = 120;\nlet addend: u16 = 75;\ntotal += addend;\noutput(total);\nhalt();'),
+  makeSample('bitfield', 'Bitfield transform', 'Builds 0xABCD with LUI, then uses masks, shifts, and XOR to transform it.', 'LDI A, 205\nLUI A, 171\nLDI B, 255\nAND A, B\nSHL A\nLDI C, 90\nXOR A, C\nOUT A\nHLT', 'let value: u16 = 205;\nlet mask: u16 = 255;\nlet key: u16 = 90;\nvalue &= mask;\nvalue += value;\nvalue ^= key;\noutput(value);\nhalt();'),
+  makeSample('memory', 'Memory and modulo', 'Stores a 16-bit product in RAM, reloads it, and computes its remainder modulo 97.', 'LDI A, 300\nLDI B, 200\nMUL A, B\nSTR A, 48\nLDI A, 0\nLDR A, 48\nLDI C, 97\nMOD A, C\nOUT A\nHLT', 'const slot: u16 = 48;\nlet value: u16 = 300;\nlet multiplier: u16 = 200;\nlet divisor: u16 = 97;\nvalue *= multiplier;\nmemory[slot] = value;\nvalue = memory[slot];\nvalue %= divisor;\noutput(value);\nhalt();'),
+  makeSample('counter-class', 'Typed counter class', 'Constructs a Counter object, then inlines a typed method while looping over an object field.', 'LDI A, 2\nLDI B, 4\nloop:\nADDI A, 3\nOUT A\nDEC B\nJNZ loop\nHLT', 'class Counter {\n  value: u16;\n\n  constructor(start: u16) {\n    this.value = start;\n  }\n\n  method add(amount: u16): void {\n    this.value += amount;\n  }\n\n  method emit(): void {\n    output(this.value);\n  }\n}\n\nlet counter: Counter = new Counter(2);\nlet steps: u16 = 4;\nwhile (steps !== 0) {\n  counter.add(3);\n  counter.emit();\n  steps--;\n}\nhalt();'),
+  makeSample('cipher-class', 'Encapsulated bit mixer', 'Uses a two-field object and typed methods to apply repeated XOR/add rounds to a 16-bit word.', 'LDI A, 52\nLUI A, 18\nLDI B, 255\nXOR A, B\nADDI A, 17\nXOR A, B\nADDI A, 17\nOUT A\nHLT', 'class BitMixer {\n  value: u16;\n  key: u16;\n\n  constructor(seed: u16, secret: u16) {\n    this.value = seed;\n    this.key = secret;\n  }\n\n  method round(): void {\n    this.value ^= this.key;\n    this.value += 17;\n  }\n\n  method emit(): void {\n    output(this.value);\n  }\n}\n\nlet mixer: BitMixer = new BitMixer(0x1234, 0x00FF);\nmixer.round();\nmixer.round();\nmixer.emit();\nhalt();'),
 ];
 
 const sessions = new Map();

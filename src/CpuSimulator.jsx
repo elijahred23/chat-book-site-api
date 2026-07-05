@@ -25,7 +25,7 @@ const instructionRows = [
 const languageHelp = {
   binary: "Enter one or more 16-bit instruction words per line.",
   assembly: "Use mnemonics, decimal or hex operands, and labels such as loop: or done:.",
-  simple: "MiniScript supports let/const, blocks, if/else, while, break/continue, and built-in functions.",
+  simple: "MiniScript is strongly typed and supports u16/bool values, classes, constructors, fields, methods, and control flow.",
 };
 
 const bits = (value, width = 16) => value.toString(2).padStart(width, "0");
@@ -365,7 +365,7 @@ export default function CpuSimulator() {
             <label className="cpu-field-label" htmlFor="cpu-source">{language === "binary" ? "Binary memory image" : language === "assembly" ? "Assembly source" : "MiniScript source"}</label>
             <div className="cpu-editor-wrap"><div className="cpu-line-numbers" aria-hidden="true">{source.split("\n").map((_, index) => <span key={index}>{index + 1}</span>)}</div><textarea id="cpu-source" spellCheck="false" value={source} onChange={(event) => { setSource(event.target.value); setSelectedProgram(""); setCompiled(null); }} /></div>
             <p className="cpu-format-hint">{languageHelp[language]} Comments use <code>{language === "simple" ? "//, /* */, or #" : "#, ;, or //"}</code>.</p>
-            {language === "simple" && <details className="cpu-language-guide"><summary>MiniScript syntax</summary><code>let count = 300;</code><code>const slot = 48;</code><code>total *= factor;</code><code>while (count !== 0) {"{ … }"}</code><code>push(total);</code><code>output(total);</code></details>}
+            {language === "simple" && <details className="cpu-language-guide"><summary>MiniScript syntax</summary><code>let count: u16 = 300;</code><code>const ready: bool = true;</code><code>class Counter {"{ value: u16; … }"}</code><code>let counter: Counter = new Counter(0);</code><code>counter.increment(1);</code><code>while (count !== 0) {"{ … }"}</code></details>}
             <button className="cpu-load-button" type="button" onClick={load} disabled={busy}>{busy ? "Compiling…" : state ? "Compile & load again" : "Compile & load"}</button>
             {compiled && <details className="cpu-compiled"><summary>View compiled output</summary>{language === "simple" && <><label>Assembly</label><pre>{compiled.assembly}</pre></>}<label>Machine code</label><pre>{compiled.machine}</pre></details>}
           </aside>
