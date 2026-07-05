@@ -28,8 +28,9 @@ const languageHelp = {
   simple: "MiniScript is strongly typed and supports fixed arrays, u16/bool values, classes, methods, and control flow.",
 };
 
-const bits = (value, width = 16) => value.toString(2).padStart(width, "0");
 const hex = (value) => `0x${value.toString(16).toUpperCase().padStart(4, "0")}`;
+const hexAddress = (value) => `0x${value.toString(16).toUpperCase().padStart(2, "0")}`;
+const hexOpcode = (value) => `0x${Number.parseInt(value, 2).toString(16).toUpperCase().padStart(2, "0")}`;
 
 async function request(path, options) {
   const response = await fetch(`/api${path}`, options);
@@ -52,8 +53,8 @@ function Register({ label, value, active, hint }) {
   return (
     <div className={`cpu-register ${active ? "active" : ""}`}>
       <div className="cpu-register__heading"><span>{label}</span><small>{hint}</small></div>
-      <strong>{bits(value)}</strong>
-      <div className="cpu-register__values"><span>{hex(value)}</span><span>{value}</span></div>
+      <strong>{hex(value)}</strong>
+      <div className="cpu-register__values"><span>16-bit hex</span><span>{value} decimal</span></div>
     </div>
   );
 }
@@ -67,8 +68,8 @@ function MemoryGrid({ state }) {
         const isInstruction = address === state.currentInstructionAddress && state.cycle > 0;
         return (
           <div className={`cpu-memory-cell ${isInstruction ? "instruction" : ""} ${isMar ? "addressed" : ""}`} key={address}>
-            <div className="cpu-memory-address"><span>{address.toString(16).toUpperCase()}</span><span>{isPc && <em>PC</em>}{isMar && <em>MAR</em>}</span></div>
-            <b>{bits(value)}</b><small>{hex(value)}</small>
+            <div className="cpu-memory-address"><span>{hexAddress(address)}</span><span>{isPc && <em>PC</em>}{isMar && <em>MAR</em>}</span></div>
+            <b>{hex(value)}</b><small>{value} decimal</small>
           </div>
         );
       })}
@@ -212,11 +213,11 @@ function CpuExecutionModal({ state, running, busy, canStepBack, onClose, onStep,
             </g>
             <CircuitNode x={40} y={60} label="PC" value={hex(state.programCounter)} detail="PROGRAM COUNTER" active={componentActive("PC")} accent="lime" />
             <CircuitNode x={250} y={60} label="MAR" value={hex(state.memoryAddressRegister)} detail="MEMORY ADDRESS" active={componentActive("MAR")} />
-            <CircuitNode x={455} y={35} width={180} height={155} label="RAM · 64 WORDS" value={`[${state.memoryAddressRegister.toString(16).toUpperCase()}] ${hex(state.memory[state.memoryAddressRegister])}`} detail="16-BIT PROGRAM / DATA" active={memoryActive} accent="lime" />
-            <CircuitNode x={800} y={60} label="OUT" value={`${state.outputRegister} · ${hex(state.outputRegister)}`} detail="VISIBLE OUTPUT" active={componentActive("OUT")} accent="lime" />
-            <CircuitNode x={250} y={240} label="IR" value={bits(state.instructionRegister)} detail={state.instruction?.mnemonic ?? "INSTRUCTION REGISTER"} active={componentActive("IR")} />
+            <CircuitNode x={455} y={35} width={180} height={155} label="RAM · 64 WORDS" value={`[${hexAddress(state.memoryAddressRegister)}] ${hex(state.memory[state.memoryAddressRegister])}`} detail="16-BIT PROGRAM / DATA" active={memoryActive} accent="lime" />
+            <CircuitNode x={800} y={60} label="OUT" value={hex(state.outputRegister)} detail="VISIBLE OUTPUT" active={componentActive("OUT")} accent="lime" />
+            <CircuitNode x={250} y={240} label="IR" value={hex(state.instructionRegister)} detail={state.instruction?.mnemonic ?? "INSTRUCTION REGISTER"} active={componentActive("IR")} />
             <CircuitNode x={455} y={240} width={185} label="CONTROL UNIT" value={state.lastEvent.phase} detail={state.instruction?.mnemonic ?? "AWAITING FETCH"} active={controlActive} accent="lime" />
-            <CircuitNode x={40} y={390} label="REGISTER A" value={`${bits(state.registerA)} · ${state.registerA}`} detail="ACCUMULATOR" active={componentActive("A")} />
+            <CircuitNode x={40} y={390} label="REGISTER A" value={hex(state.registerA)} detail="ACCUMULATOR" active={componentActive("A")} />
             <CircuitNode x={250} y={440} label="REGISTERS B–D" value={`${hex(state.registerB)} · ${hex(state.registerC)} · ${hex(state.registerD)}`} detail="GENERAL REGISTERS" active={["B", "C", "D"].some(componentActive)} />
             <CircuitNode x={455} y={390} width={185} label="ALU" value={aluActive ? state.lastEvent.title.replace("Executed ", "") : "IDLE"} detail="ARITHMETIC / LOGIC" active={aluActive} accent="orange" />
             <CircuitNode x={700} y={390} width={160} label="FLAGS" value={`Z${Number(state.zeroFlag)} C${Number(state.carryFlag)} N${Number(state.negativeFlag)} V${Number(state.overflowFlag)}`} detail="ZERO / CARRY / NEG / OVERFLOW" active={componentActive("FLAGS")} accent="orange" />
@@ -380,14 +381,14 @@ export default function CpuSimulator() {
               <div className="cpu-board cpu-panel">
                 <div className="cpu-board-head"><div><span className="cpu-chip-icon">CPU</span><div><h2>16-bit processing unit</h2><p>Four registers · 16-bit data bus · hardware stack</p></div></div><div className="cpu-flags"><span className={state.zeroFlag ? "set" : ""}>Z <b>{Number(state.zeroFlag)}</b></span><span className={state.carryFlag ? "set" : ""}>C <b>{Number(state.carryFlag)}</b></span><span className={state.negativeFlag ? "set" : ""}>N <b>{Number(state.negativeFlag)}</b></span><span className={state.overflowFlag ? "set" : ""}>V <b>{Number(state.overflowFlag)}</b></span></div></div>
                 <div className="cpu-grid"><div className="cpu-register-bank">{state.registers.map((value, index) => <Register label={["A", "B", "C", "D"][index]} hint="GENERAL" value={value} active={activeSignals.some((signal) => signal.startsWith(`${["A", "B", "C", "D"][index]} `))} key={index} />)}<Register label="PC" hint="PROGRAM COUNTER" value={state.programCounter} active={activeSignals.some((signal) => signal.startsWith("PC "))} /><Register label="SP" hint="STACK POINTER" value={state.stackPointer} active={activeSignals.some((signal) => signal.startsWith("SP "))} /><Register label="IR" hint="INSTRUCTION" value={state.instructionRegister} active={activeSignals.some((signal) => signal.startsWith("IR "))} /><Register label="MAR" hint="MEMORY ADDRESS" value={state.memoryAddressRegister} active={activeSignals.some((signal) => signal.startsWith("MAR "))} /><Register label="OUT" hint="VISIBLE OUTPUT" value={state.outputRegister} active={activeSignals.includes("OUTPUT IN")} /></div><div className={`cpu-alu ${activeSignals.some((signal) => signal.startsWith("ALU")) ? "active" : ""}`}><small>Arithmetic logic unit</small><b>{state.instruction?.mnemonic ?? "ALU"}</b><div><span>A {hex(state.registerA)}</span><i>⇄</i><span>B {hex(state.registerB)}</span></div></div></div>
-                <div className="cpu-data-bus"><span>16-bit data bus</span><div className={activeSignals.length ? "flowing" : ""} /><b>{bits(state.instructionRegister)}</b></div>
+                <div className="cpu-data-bus"><span>16-bit data bus</span><div className={activeSignals.length ? "flowing" : ""} /><b>{hex(state.instructionRegister)}</b></div>
               </div><EventCard event={state.lastEvent} />
-            </> : <div className="cpu-empty cpu-panel"><span>0101</span><h2>Load a program to power the CPU</h2><p>Choose an example or write your own program, then compile it into memory.</p><button type="button" onClick={load}>Compile example</button></div>}
+            </> : <div className="cpu-empty cpu-panel"><span>0x16</span><h2>Load a program to power the CPU</h2><p>Choose an example or write your own program, then compile it into memory.</p><button type="button" onClick={load}>Compile example</button></div>}
           </section>
 
           <aside className="cpu-memory-panel cpu-panel">
             <div className="cpu-panel-title"><span>02</span><div><h2>Memory</h2><p>64 × 16-bit words</p></div></div>
-            {state ? <MemoryGrid state={state} /> : <div className="cpu-memory-grid disabled">{Array.from({ length: 64 }, (_, address) => <div className="cpu-memory-cell" key={address}><div className="cpu-memory-address"><span>{address.toString(16).toUpperCase().padStart(2, "0")}</span></div><b>0000000000000000</b><small>0x0000</small></div>)}</div>}
+            {state ? <MemoryGrid state={state} /> : <div className="cpu-memory-grid disabled">{Array.from({ length: 64 }, (_, address) => <div className="cpu-memory-cell" key={address}><div className="cpu-memory-address"><span>{hexAddress(address)}</span></div><b>0x0000</b><small>0 decimal</small></div>)}</div>}
             <div className="cpu-memory-legend"><span><i className="pc" />Next PC</span><span><i className="mar" />MAR selected</span></div>
             <div className="cpu-history"><h3>Clock history</h3><Timeline events={history} /></div>
           </aside>
@@ -395,7 +396,7 @@ export default function CpuSimulator() {
 
         <section className="cpu-reference cpu-panel">
           <div className="cpu-reference-copy"><span className="cpu-eyebrow">The clock cycle</span><h2>Three pulses make<br />one instruction.</h2><p>The CPU repeats the same rhythm until it encounters <b>HLT</b>. Clock manually to isolate each transition.</p><div className="cpu-cycle-steps"><span><b>1</b>FETCH<small>RAM → IR</small></span><i>→</i><span><b>2</b>DECODE<small>IR → Control</small></span><i>→</i><span><b>3</b>EXECUTE<small>Control → CPU</small></span></div></div>
-          <div className="cpu-instructions"><h3>Instruction set</h3><p>5-bit opcode · register and immediate/address fields</p><div className="cpu-instruction-grid">{instructionRows.map(([opcode, name, description]) => <div key={opcode}><code>{opcode}</code><b>{name}</b><span>{description}</span></div>)}</div></div>
+          <div className="cpu-instructions"><h3>Instruction set</h3><p>Hex opcode · register and immediate/address fields</p><div className="cpu-instruction-grid">{instructionRows.map(([opcode, name, description]) => <div key={opcode}><code>{hexOpcode(opcode)}</code><b>{name}</b><span>{description}</span></div>)}</div></div>
         </section></>}
       </main>
       {showCpuModal && state && <CpuExecutionModal state={state} running={running} busy={busy} canStepBack={undoCount > 0} onClose={() => setShowCpuModal(false)} onStep={step} onStepBack={stepBack} onToggleRunning={() => setRunning((value) => !value)} />}

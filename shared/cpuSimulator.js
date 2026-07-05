@@ -921,7 +921,7 @@ export class CpuSimulator {
     this.instructionRegister = this.memory[this.memoryAddressRegister]; this.programCounter = (this.programCounter + 1) % MEMORY_SIZE;
     this.instruction = null; this.phase = 'Decode';
     const signals = ['PC OUT', 'MAR IN', 'RAM OUT', 'IR IN', 'PC INC'];
-    this.lastEvent = { cycle: this.cycle, phase: 'FETCH', title: 'Instruction fetched', detail: `MAR ← ${hex(this.memoryAddressRegister)}, IR ← RAM[${hex(this.memoryAddressRegister)}] (${bits(this.instructionRegister)}), PC ← ${hex(this.programCounter)}`, signals, ...datapathFor('FETCH', signals) };
+    this.lastEvent = { cycle: this.cycle, phase: 'FETCH', title: 'Instruction fetched', detail: `MAR ← ${hex(this.memoryAddressRegister)}, IR ← RAM[${hex(this.memoryAddressRegister)}] (${hex(this.instructionRegister)}), PC ← ${hex(this.programCounter)}`, signals, ...datapathFor('FETCH', signals) };
   }
   decode() {
     this.instruction = decodeInstruction(this.instructionRegister); this.phase = 'Execute';
