@@ -39,6 +39,7 @@ async function request(path, options) {
 
 const api = {
   programs: () => request("/programs"),
+  generate: (prompt) => request("/simulator/generate", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ prompt }) }),
   load: (source, language) => request("/simulator", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ source, language }) }),
   step: (sessionId) => request(`/simulator/${sessionId}/step`, { method: "POST" }),
   reset: (sessionId) => request(`/simulator/${sessionId}/reset`, { method: "POST" }),
@@ -198,6 +199,8 @@ export default function CpuSimulator() {
   const [error, setError] = useState("");
   const [elapsedMs, setElapsedMs] = useState(0);
   const [showCpuModal, setShowCpuModal] = useState(false);
+  const [generationPrompt, setGenerationPrompt] = useState("");
+  const [generating, setGenerating] = useState(false);
   const elapsedMsRef = useRef(0);
   const startedAt = useRef(null);
   const stepping = useRef(false);
@@ -209,16 +212,31 @@ export default function CpuSimulator() {
     }).catch((requestError) => setError(requestError.message));
   }, []);
 
-  const load = useCallback(async () => {
+  const loadProgram = useCallback(async (programSource, programLanguage) => {
     setBusy(true); setRunning(false); setError("");
     try {
-      const response = await api.load(source, language);
+      const response = await api.load(programSource, programLanguage);
       setSessionId(response.sessionId); setState(response.state); setHistory([]); setElapsedMs(0);
       elapsedMsRef.current = 0; startedAt.current = null;
       setCompiled(response.machineCode ? { assembly: response.assemblySource ?? "", machine: response.machineCode } : null);
+      return true;
     } catch (requestError) { setError(requestError instanceof Error ? requestError.message : "Could not load the program."); }
     finally { setBusy(false); }
-  }, [source, language]);
+    return false;
+  }, []);
+
+  const load = useCallback(() => loadProgram(source, language), [source, language, loadProgram]);
+
+  const generate = async () => {
+    if (!generationPrompt.trim()) { setError("Describe the program you want Gemini to create."); return; }
+    setGenerating(true); setRunning(false); setError("");
+    try {
+      const program = await api.generate(generationPrompt.trim());
+      setSource(program.code); setLanguage(program.language); setSelectedProgram(""); setCompiled(null);
+      await loadProgram(program.code, program.language);
+    } catch (requestError) { setError(requestError instanceof Error ? requestError.message : "Could not generate the program."); }
+    finally { setGenerating(false); }
+  };
 
   const step = useCallback(async () => {
     if (!sessionId || stepping.current) return;
@@ -281,6 +299,10 @@ export default function CpuSimulator() {
         <div className="cpu-workbench">
           <aside className="cpu-program-panel cpu-panel">
             <div className="cpu-panel-title"><span>01</span><div><h2>Program</h2><p>64 words maximum</p></div></div>
+            <label className="cpu-field-label" htmlFor="cpu-generation-prompt">Build with Gemini</label>
+            <textarea className="cpu-prompt-input" id="cpu-generation-prompt" maxLength="2000" placeholder="Example: Count down from 10 and output each value" value={generationPrompt} onChange={(event) => setGenerationPrompt(event.target.value)} />
+            <button className="cpu-generate-button" type="button" onClick={generate} disabled={generating || busy}>{generating ? "Generating & loading…" : "Generate & load"}</button>
+            <p className="cpu-generate-hint">Gemini chooses binary, assembly, or MiniScript and the simulator validates it before loading.</p>
             <label className="cpu-field-label" htmlFor="cpu-example">Example programs</label>
             <select id="cpu-example" value={selectedProgram} onChange={(event) => selectExample(event.target.value)}><option value="" disabled>Custom program</option>{programs.map((program) => <option value={program.id} key={program.id}>{program.name}</option>)}</select>
             {currentExample && <p className="cpu-example-note">{currentExample.description}</p>}

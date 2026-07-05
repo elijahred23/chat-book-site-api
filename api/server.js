@@ -4,7 +4,7 @@ dotenv.config();
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { generateResponse, safeGenerateResponse } from './chatGPT.js';
-import { generateGeminiResponse, GeminiModel, listGeminiModels } from './gemini.js';
+import { generateCpuProgram, generateGeminiResponse, GeminiModel, listGeminiModels } from './gemini.js';
 import bodyParser from 'body-parser';
 import MarkdownIt from 'markdown-it';
 import fs from 'fs';
@@ -17,7 +17,7 @@ import { searchYouTube, getVideoDetails, searchYouTubePlaylists, getPlaylistItem
 import { fetchTranscriptWithMetadata } from './transcriptService.js';
 import { getTranscript } from './supadata.js';
 import textToSpeech from '@google-cloud/text-to-speech';
-import { createSimulation, getSimulation, ProgramParseError, samplePrograms } from './cpuSimulator.js';
+import { compileSource, createSimulation, getSimulation, ProgramParseError, samplePrograms } from './cpuSimulator.js';
 
 const app = express();
 const __filename = fileURLToPath(import.meta.url);
@@ -82,6 +82,36 @@ const messages = [
 
 app.get('/api/programs', (req, res) => {
   res.json(samplePrograms);
+});
+
+app.post('/api/simulator/generate', async (req, res) => {
+  const { prompt } = req.body || {};
+  if (typeof prompt !== 'string' || !prompt.trim()) return res.status(400).json({ error: 'Describe the program you want Gemini to create.' });
+  if (prompt.length > 2000) return res.status(400).json({ error: 'The program description must be 2,000 characters or fewer.' });
+
+  try {
+    let generationPrompt = prompt.trim();
+    let lastParseError = null;
+    for (let attempt = 0; attempt < 2; attempt += 1) {
+      const program = await generateCpuProgram(generationPrompt);
+      try {
+        compileSource(program.code, program.language);
+        return res.json(program);
+      } catch (error) {
+        if (!(error instanceof ProgramParseError)) throw error;
+        lastParseError = error;
+        generationPrompt = `${prompt.trim()}\n\nYour previous program failed the Clockwork compiler with this error: ${error.message}\nReturn a corrected complete program.`;
+      }
+    }
+    throw lastParseError;
+  } catch (error) {
+    if (error instanceof ProgramParseError) {
+      console.error('Gemini generated invalid CPU code:', error.message);
+      return res.status(502).json({ error: `Gemini generated code that did not compile: ${error.message}` });
+    }
+    console.error('CPU program generation error:', error?.message || String(error));
+    return res.status(502).json({ error: 'Gemini could not generate a CPU program. Try a more specific description.' });
+  }
 });
 
 app.post('/api/simulator', (req, res) => {

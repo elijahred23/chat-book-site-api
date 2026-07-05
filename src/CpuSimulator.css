@@ -58,6 +58,10 @@
 .cpu-sim select:focus, .cpu-sim textarea:focus { border-color: #6c7c39; }
 .cpu-example-note, .cpu-format-hint { color: var(--cpu-muted); font-size: 10px; line-height: 1.5; margin: 8px 0 0; }
 .cpu-format-hint code { color: #bdc6cf; }
+.cpu-sim textarea.cpu-prompt-input { height: 78px; resize: vertical; border: 1px solid #303842; border-radius: 2px; padding: 10px 11px; background: #0a0e13; color: var(--cpu-ink); font: 11px/1.45 var(--font-sans); white-space: pre-wrap; }
+.cpu-generate-button { width: 100%; margin-top: 8px; border: 1px solid #28665d; border-radius: 2px; padding: 10px; background: rgba(67, 217, 193, 0.08); color: var(--cpu-cyan); font-size: 10px; font-weight: 800; }
+.cpu-generate-button:hover:not(:disabled) { background: rgba(67, 217, 193, 0.15); transform: none; }
+.cpu-generate-hint { margin: 7px 0 0; color: var(--cpu-muted); font-size: 9px; line-height: 1.5; }
 .cpu-language-tabs { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid #303842; }
 .cpu-language-tabs button { min-height: 38px; border: 0; border-right: 1px solid #303842; border-radius: 0; background: #0a0e13; color: #737e88; padding: 8px 3px; font: 8px var(--cpu-mono); text-transform: uppercase; }
 .cpu-language-tabs button:last-child { border-right: 0; }
