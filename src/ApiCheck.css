@@ -1,0 +1,216 @@
+.api-settings {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.api-settings__status {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.api-settings__status h2,
+.api-settings__models h2 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.api-settings__status p,
+.api-settings__models p {
+  margin: 0.25rem 0 0;
+  color: var(--color-text-muted);
+}
+
+.api-settings__status-icon {
+  display: grid;
+  width: 3rem;
+  height: 3rem;
+  place-items: center;
+  border-radius: var(--radius-md);
+  background: #fff3f3;
+  color: var(--color-danger);
+  font-size: 1.2rem;
+}
+
+.api-settings__status-icon.is-online {
+  background: #eaf8ee;
+  color: var(--color-success);
+}
+
+.api-settings__status-label {
+  color: var(--color-text) !important;
+  font-weight: 800;
+}
+
+.api-settings__models {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.api-settings__models-header,
+.api-settings__actions,
+.api-settings__current,
+.api-settings__model-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.api-settings__current {
+  justify-content: flex-start;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-surface-subtle);
+}
+
+.api-settings__current > span:first-child {
+  color: var(--color-text-muted);
+  font-size: 0.82rem;
+  font-weight: 750;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.api-settings code {
+  overflow-wrap: anywhere;
+  color: var(--color-text);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+}
+
+.api-settings__warning,
+.api-settings__error,
+.api-settings__notice {
+  border-radius: var(--radius-md);
+  padding: 0.8rem 0.9rem;
+}
+
+.api-settings__warning {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  background: #fff7e8;
+  color: var(--color-warning) !important;
+}
+
+.api-settings__error {
+  background: #fff1f2;
+  color: var(--color-danger) !important;
+}
+
+.api-settings__notice {
+  background: var(--color-accent-soft);
+  color: #0f766e !important;
+}
+
+.api-settings__messages:empty {
+  display: none;
+}
+
+.api-settings__search {
+  max-width: 38rem;
+}
+
+.api-settings__model-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 24rem), 1fr));
+  gap: var(--space-3);
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.api-settings__model {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+  gap: var(--space-3);
+  min-width: 0;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  background: var(--color-surface);
+  cursor: pointer;
+  transition: border-color var(--transition-fast), background var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.api-settings__model:hover {
+  border-color: var(--color-border-strong);
+  background: var(--color-surface-subtle);
+}
+
+.api-settings__model.is-selected {
+  border-color: var(--color-primary);
+  background: var(--color-primary-soft);
+  box-shadow: 0 0 0 2px var(--color-focus);
+}
+
+.api-settings__model input {
+  width: 1.1rem;
+  height: 1.1rem;
+  margin: 0.15rem 0 0;
+  accent-color: var(--color-primary);
+}
+
+.api-settings__model-content {
+  display: grid;
+  gap: 0.35rem;
+  min-width: 0;
+}
+
+.api-settings__model-title {
+  justify-content: flex-start;
+  gap: var(--space-2);
+}
+
+.api-settings__model-content > span:not(.api-settings__model-title) {
+  color: var(--color-text-muted);
+  font-size: 0.88rem;
+}
+
+.api-settings__model-content small {
+  color: var(--color-text-subtle);
+  font-size: 0.78rem;
+}
+
+.api-settings__empty {
+  grid-column: 1 / -1;
+  padding: var(--space-5);
+  text-align: center;
+}
+
+.api-settings__actions {
+  position: sticky;
+  bottom: var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-3);
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: var(--shadow-md);
+  backdrop-filter: blur(12px);
+}
+
+.api-settings__actions p {
+  min-width: 0;
+}
+
+@media (max-width: 42rem) {
+  .api-settings__status {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .api-settings__status .ui-btn,
+  .api-settings__actions .ui-btn {
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+
+  .api-settings__actions {
+    display: grid;
+  }
+}

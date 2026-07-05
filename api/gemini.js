@@ -2,7 +2,11 @@ import { GoogleGenAI, Type } from "@google/genai";
 import dotenv from "dotenv";
 dotenv.config();
 const geminiApiKey = process.env.GEMINI_API_KEY || "";
-const defaultGeminiModel = "gemini-2.5-pro";
+const defaultGeminiModel = "gemini-flash-latest";
+const modelListUrl = "https://generativelanguage.googleapis.com/v1beta/models";
+const modelListCacheTtlMs = 5 * 60 * 1000;
+const maxModelListResponseChars = 1_000_000;
+let modelListCache = { models: null, expiresAt: 0 };
 
 // Initialize the Google GenAI client
 const ai = new GoogleGenAI({ apiKey: geminiApiKey });
@@ -12,25 +16,93 @@ export class GeminiModel {
 }
 
     
-async function listGeminiModels() {    
-    return [
-        { name: "Gemini 2.5 Flash Preview 05-20", id: "gemini-2.5-flash-preview-05-20", input: "Audio, images, videos, and text", output: "Text", description: "Adaptive thinking, cost efficiency" },
-        { name: "Gemini 2.5 Flash Native Audio", id: "gemini-2.5-flash-preview-native-audio-dialog", input: "Audio, videos, and text", output: "Text and audio, interleaved", description: "High quality, natural conversational audio outputs, with or without thinking" },
-        { name: "Gemini 2.5 Flash Native Audio (Thinking)", id: "gemini-2.5-flash-exp-native-audio-thinking-dialog", input: "Audio, videos, and text", output: "Text and audio, interleaved", description: "High quality, natural conversational audio outputs, with or without thinking" },
-        { name: "Gemini 2.5 Flash Preview TTS", id: "gemini-2.5-flash-preview-tts", input: "Text", output: "Audio", description: "Low latency, controllable, single- and multi-speaker text-to-speech audio generation" },
-        { name: "Gemini 2.5 Pro Preview", id: "gemini-2.5-pro-preview-05-06", input: "Audio, images, videos, and text", output: "Text", description: "Enhanced thinking and reasoning, multimodal understanding, advanced coding, and more" },
-        { name: "Gemini 2.5 Pro Preview TTS", id: "gemini-2.5-pro-preview-tts", input: "Text", output: "Audio", description: "Low latency, controllable, single- and multi-speaker text-to-speech audio generation" },
-        { name: "Gemini 2.0 Flash", id: "gemini-2.0-flash", input: "Audio, images, videos, and text", output: "Text", description: "Next generation features, speed, thinking, and realtime streaming." },
-        { name: "Gemini 2.0 Flash Preview Image Generation", id: "gemini-2.0-flash-preview-image-generation", input: "Audio, images, videos, and text", output: "Text, images", description: "Conversational image generation and editing" },
-        { name: "Gemini 2.0 Flash-Lite", id: "gemini-2.0-flash-lite", input: "Audio, images, videos, and text", output: "Text", description: "Cost efficiency and low latency" },
-        { name: "Gemini 1.5 Flash", id: "gemini-1.5-flash", input: "Audio, images, videos, and text", output: "Text", description: "Fast and versatile performance across a diverse variety of tasks" },
-        { name: "Gemini 1.5 Flash-8B", id: "gemini-1.5-flash-8b", input: "Audio, images, videos, and text", output: "Text", description: "High volume and lower intelligence tasks" },
-        { name: "Gemini 1.5 Pro", id: "gemini-1.5-pro", input: "Audio, images, videos, and text", output: "Text", description: "Complex reasoning tasks requiring more intelligence" },
-        { name: "Gemini Embedding", id: "gemini-embedding-exp", input: "Text", output: "Text embeddings", description: "Measuring the relatedness of text strings" },
-        { name: "Imagen 3", id: "imagen-3.0-generate-002", input: "Text", output: "Images", description: "Our most advanced image generation model" },
-        { name: "Veo 2", id: "veo-2.0-generate-001", input: "Text, images", output: "Video", description: "High quality video generation" },
-        { name: "Gemini 2.0 Flash Live", id: "gemini-2.0-flash-live-001", input: "Audio, video, and text", output: "Text, audio", description: "Realtime interaction" }
-    ];
+function normalizeGeminiModel(model) {
+    return typeof model === "string" ? model.trim().replace(/^models\//, "") : "";
+}
+
+function isTextGenerationModel(model) {
+    const id = normalizeGeminiModel(model.name || model.baseModelId);
+    const methods = model.supportedGenerationMethods || [];
+    return id.startsWith("gemini-")
+        && methods.includes("generateContent")
+        && !/(?:embedding|image|audio|tts|live)/i.test(id);
+}
+
+function formatGeminiModel(model) {
+    const id = normalizeGeminiModel(model.name || model.baseModelId);
+    return {
+        id,
+        name: model.displayName || id,
+        description: model.description || "General-purpose Gemini text generation model.",
+        inputTokenLimit: model.inputTokenLimit || null,
+        outputTokenLimit: model.outputTokenLimit || null,
+        thinking: Boolean(model.thinking),
+    };
+}
+
+async function readModelListResponse(response) {
+    const contentLength = Number(response.headers.get("content-length") || 0);
+    if (contentLength > maxModelListResponseChars) {
+        throw new Error("Gemini model discovery returned an unexpectedly large response.");
+    }
+
+    const reader = response.body?.getReader();
+    if (!reader) throw new Error("Gemini model discovery returned an empty response.");
+    const decoder = new TextDecoder();
+    let responseSize = 0;
+    let responseText = "";
+    while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        responseSize += value.byteLength;
+        if (responseSize > maxModelListResponseChars) {
+            await reader.cancel();
+            throw new Error("Gemini model discovery returned an unexpectedly large response.");
+        }
+        responseText += decoder.decode(value, { stream: true });
+    }
+    responseText += decoder.decode();
+
+    try {
+        return JSON.parse(responseText);
+    } catch {
+        throw new Error("Gemini model discovery returned an invalid response.");
+    }
+}
+
+async function listGeminiModels({ forceRefresh = false } = {}) {
+    if (!geminiApiKey) throw new Error("Gemini model discovery requires GEMINI_API_KEY.");
+    if (!forceRefresh && modelListCache.models && Date.now() < modelListCache.expiresAt) {
+        return modelListCache.models;
+    }
+
+    const models = [];
+    let pageToken = "";
+    let pageCount = 0;
+    do {
+        pageCount += 1;
+        if (pageCount > 10) throw new Error("Gemini model discovery returned too many pages.");
+        const url = new URL(modelListUrl);
+        url.searchParams.set("pageSize", "1000");
+        if (pageToken) url.searchParams.set("pageToken", pageToken);
+        const response = await fetch(url, {
+            headers: { "x-goog-api-key": geminiApiKey },
+            signal: AbortSignal.timeout(10000),
+        });
+        if (!response.ok) throw new Error(`Gemini model discovery failed with status ${response.status}.`);
+        const data = await readModelListResponse(response);
+        models.push(...(Array.isArray(data.models) ? data.models : []));
+        pageToken = data.nextPageToken || "";
+    } while (pageToken);
+
+    const availableModels = models
+        .filter(isTextGenerationModel)
+        .map(formatGeminiModel)
+        .sort((left, right) => left.name.localeCompare(right.name) || left.id.localeCompare(right.id));
+    if (!availableModels.length) throw new Error("Gemini returned no compatible text-generation models.");
+
+    modelListCache = { models: availableModels, expiresAt: Date.now() + modelListCacheTtlMs };
+    return availableModels;
 }
 
 
@@ -143,4 +215,4 @@ async function generateCpuProgram(prompt, gemini_model = null) {
 }
 
 
-export { generateCpuProgram, generateGeminiResponse, listGeminiModels };
+export { generateCpuProgram, generateGeminiResponse, listGeminiModels, normalizeGeminiModel };

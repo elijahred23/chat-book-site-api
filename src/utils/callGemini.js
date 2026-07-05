@@ -1,21 +1,21 @@
 import { hostname } from "./hostname";
 
 
-export const getGeminiModelList = async () => {
-  const response = await fetch(`${hostname}/geminiModelList`);
-  if (response.ok) {
-    const data = await response.json();
-    return data.models;
-  }
-  return [];
+const readResponse = async (response, fallbackMessage) => {
+  const data = await response.json().catch(() => ({}));
+  if (!response.ok) throw new Error(data.message || fallbackMessage);
+  return data;
+}
+
+export const getGeminiModelList = async ({ refresh = false } = {}) => {
+  const response = await fetch(`${hostname}/geminiModelList${refresh ? '?refresh=1' : ''}`);
+  const data = await readResponse(response, "Could not load Gemini models.");
+  return Array.isArray(data.models) ? data.models : [];
 }
 export const getGeminiModel = async () => {
   const response = await fetch(`${hostname}/geminiModel`);
-  if (response.ok) {
-    const data = await response.json();
-    return data.model;
-  }
-  return null;
+  const data = await readResponse(response, "Could not load the current Gemini model.");
+  return data.model || null;
 }
 export const updateGeminiModel = async (model) => {
   const response = await fetch(`${hostname}/geminiModel`, {
@@ -25,9 +25,8 @@ export const updateGeminiModel = async (model) => {
     },
     body: JSON.stringify({ model })
   });
-  if (response.ok) {
-    localStorage.setItem("geminiModel", model);
-  }
+  const data = await readResponse(response, "Could not update the Gemini model.");
+  return data.model;
 }
 export const getGeminiResponse = async (prompt) => {
   try {

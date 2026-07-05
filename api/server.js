@@ -4,7 +4,7 @@ dotenv.config();
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { generateResponse, safeGenerateResponse } from './chatGPT.js';
-import { generateCpuProgram, generateGeminiResponse, GeminiModel, listGeminiModels } from './gemini.js';
+import { generateCpuProgram, generateGeminiResponse, GeminiModel, listGeminiModels, normalizeGeminiModel } from './gemini.js';
 import bodyParser from 'body-parser';
 import MarkdownIt from 'markdown-it';
 import fs from 'fs';
@@ -470,12 +470,12 @@ app.get('/api/check', (req, res) => {
 
 app.get('/api/geminiModelList', async (req, res) => {
   try {
-    const models = await listGeminiModels();
+    const models = await listGeminiModels({ forceRefresh: req.query.refresh === '1' });
     return res.send({ models });
   } catch (error) {
-    console.error(error);
+    console.error('Gemini model discovery error:', error?.message || String(error));
     logErrorToFile(error);
-    return res.status(500).send({ error: 'Server Error', message: error.message });
+    return res.status(502).send({ error: 'Model discovery failed', message: error.message });
   }
 }
 );
@@ -494,18 +494,25 @@ app.get('/api/geminiModel', (req, res) => {
 });
 
 app.post('/api/geminiModel', async (req, res) => {
-  const { model } = req.body;
+  const model = normalizeGeminiModel(req.body?.model);
   if (!model) {
     return res.status(400).send({ error: 'Bad Request', message: 'Model parameter is missing' });
   }
+  if (model.length > 200 || !/^[a-zA-Z0-9._:/-]+$/.test(model)) {
+    return res.status(400).send({ error: 'Bad Request', message: 'Model identifier is invalid' });
+  }
 
   try {
+    const models = await listGeminiModels();
+    if (!models.some((availableModel) => availableModel.id === model)) {
+      return res.status(400).send({ error: 'Bad Request', message: 'Choose an available Gemini text-generation model' });
+    }
     GeminiModel.currentModel = model;
-    return res.send({ message: `Model set to ${model}` });
+    return res.send({ model, message: `Model set to ${model}` });
   } catch (error) {
-    console.error(error);
+    console.error('Gemini model update error:', error?.message || String(error));
     logErrorToFile(error);
-    return res.status(500).send({ error: 'Server Error', message: error.message });
+    return res.status(502).send({ error: 'Model update failed', message: error.message });
   }
 });
 
