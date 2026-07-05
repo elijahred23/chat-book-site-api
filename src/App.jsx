@@ -25,6 +25,7 @@ import ChatGPTDual from "./ChatGPTDual.jsx";
 import GptPromptComponent from "./ChatGPT.jsx";
 import ChatTemplate from "./ChatTemplate.jsx";
 import CodingProblems from "./CodingProblems.jsx";
+import CpuSimulator from "./CpuSimulator.jsx";
 import DownloadCopyTextFile from "./DownloadCopyTextFile.jsx";
 import FlashCardApp from "./FlashCardApp.jsx";
 import Home from "./Home.jsx";
@@ -148,6 +149,7 @@ function AppContent() {
           <Route path="/jsGenerator" element={<JSConsoleGenerator />} />
           <Route path="/bengali" element={<BengaliTutor />} />
           <Route path="/coding" element={<CodingProblems />} />
+          <Route path="/cpu-simulator" element={<CpuSimulator />} />
           <Route path="/system-design" element={<SystemDesignPrep />} />
           <Route path="/pdf-to-text" element={<PdfToText />} />
           <Route path="/media-player" element={<MediaPlayer />} />

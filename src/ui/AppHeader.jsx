@@ -20,6 +20,7 @@ const navigationGroups = [
     icon: FaCode,
     items: [
       { to: "/coding", label: "Coding Problems" },
+      { to: "/cpu-simulator", label: "CPU Simulator" },
       { to: "/system-design", label: "System Design" },
       { to: "/typingTest", label: "Typing Test" },
     ],

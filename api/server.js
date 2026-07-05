@@ -17,6 +17,7 @@ import { searchYouTube, getVideoDetails, searchYouTubePlaylists, getPlaylistItem
 import { fetchTranscriptWithMetadata } from './transcriptService.js';
 import { getTranscript } from './supadata.js';
 import textToSpeech from '@google-cloud/text-to-speech';
+import { createSimulation, getSimulation, ProgramParseError, samplePrograms } from './cpuSimulator.js';
 
 const app = express();
 const __filename = fileURLToPath(import.meta.url);
@@ -78,6 +79,35 @@ const messages = [
   "Hey there! Eli GPT here to lend a hand.",
   "Hello everyone! Eli GPT ready to assist you."
 ];
+
+app.get('/api/programs', (req, res) => {
+  res.json(samplePrograms);
+});
+
+app.post('/api/simulator', (req, res) => {
+  const { source, language = 'binary' } = req.body || {};
+  if (typeof source !== 'string') return res.status(400).json({ error: 'Source must be a string.' });
+
+  try {
+    return res.json(createSimulation(source, language));
+  } catch (error) {
+    if (error instanceof ProgramParseError) return res.status(400).json({ error: error.message });
+    console.error('CPU simulator load error:', error);
+    return res.status(500).json({ error: 'Could not load the CPU program.' });
+  }
+});
+
+app.post('/api/simulator/:id/step', (req, res) => {
+  const simulator = getSimulation(req.params.id);
+  if (!simulator) return res.status(404).json({ error: 'Simulation not found. Load the program again.' });
+  return res.json({ sessionId: req.params.id, state: simulator.step(), assemblySource: null, machineCode: null });
+});
+
+app.post('/api/simulator/:id/reset', (req, res) => {
+  const simulator = getSimulation(req.params.id);
+  if (!simulator) return res.status(404).json({ error: 'Simulation not found. Load the program again.' });
+  return res.json({ sessionId: req.params.id, state: simulator.reset(), assemblySource: null, machineCode: null });
+});
 
 const logErrorToFile = (error) => {
   const errorLog = `${new Date().toISOString()} - ${error.message}\n${error.stack}\n\n`;
