@@ -102,7 +102,7 @@
 .cpu-flags span.set { border-color: var(--cpu-orange); color: var(--cpu-orange); box-shadow: inset 0 0 12px rgba(255, 155, 84, 0.08); }
 .cpu-flags b { margin-left: 5px; }
 .cpu-grid { display: grid; grid-template-columns: 1.4fr 0.6fr; align-items: stretch; gap: 16px; padding: 22px 0; position: relative; }
-.cpu-register-bank { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; }
+.cpu-register-bank { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 9px; }
 .cpu-register { border: 1px solid #303a43; background: rgba(8, 12, 16, 0.86); padding: 9px 10px; min-width: 0; position: relative; transition: 0.15s ease; }
 .cpu-register.active { border-color: var(--cpu-cyan); box-shadow: 0 0 18px rgba(67, 217, 193, 0.1), inset 0 0 16px rgba(67, 217, 193, 0.04); }
 .cpu-register.active::after { content: ""; position: absolute; width: 4px; height: 4px; background: var(--cpu-cyan); right: 5px; top: 5px; box-shadow: 0 0 8px var(--cpu-cyan); }
@@ -136,7 +136,7 @@
 .cpu-empty p { color: var(--cpu-muted); font-size: 12px; max-width: 340px; line-height: 1.6; }
 .cpu-empty button { width: auto; padding: 11px 24px; }
 
-.cpu-memory-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 5px; }
+.cpu-memory-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 5px; max-height: 720px; overflow-y: auto; padding-right: 3px; }
 .cpu-memory-grid.disabled { opacity: 0.4; }
 .cpu-memory-cell { border: 1px solid #2b333b; background: #0b0f14; padding: 7px 8px; min-width: 0; position: relative; }
 .cpu-memory-cell.instruction { background: rgba(200, 240, 74, 0.045); }

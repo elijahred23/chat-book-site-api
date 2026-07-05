@@ -1,64 +1,87 @@
 import { randomUUID } from 'crypto';
 
-const MEMORY_SIZE = 16;
+const MEMORY_SIZE = 64;
+const WORD_MASK = 0xffff;
 
 export class ProgramParseError extends Error {}
 
+const registers = ['A', 'B', 'C', 'D'];
 const instructionInfo = [
-  ['NOP', 'Do nothing for one instruction.', false],
-  ['LDI A', 'Load the 4-bit operand directly into register A.', true],
-  ['LDI B', 'Load the 4-bit operand directly into register B.', true],
-  ['LDA', 'Load register A from the addressed memory byte.', true],
-  ['STA', 'Store register A into the addressed memory byte.', true],
-  ['ADD', 'Add register B to register A.', false],
-  ['SUB', 'Subtract register B from register A.', false],
-  ['AND', 'Bitwise AND register A with B.', false],
-  ['OR', 'Bitwise OR register A with B.', false],
-  ['XOR', 'Bitwise XOR register A with B.', false],
-  ['JMP', 'Jump to the addressed program byte.', true],
-  ['JZ', 'Jump when the zero flag is set.', true],
-  ['JC', 'Jump when the carry flag is set.', true],
-  ['OUT', 'Copy register A into the output register.', false],
-  ['SWP', 'Exchange registers A and B.', false],
-  ['HLT', 'Stop the CPU clock.', false],
+  ['NOP', 'none', 'Do nothing for one instruction.'],
+  ['LDI', 'regImm', 'Load a 9-bit immediate into a register.'],
+  ['LDR', 'regAddr', 'Load a register from memory.'],
+  ['STR', 'regAddr', 'Store a register into memory.'],
+  ['MOV', 'twoReg', 'Copy one register into another.'],
+  ['ADD', 'twoReg', 'Add the source register to the destination.'],
+  ['SUB', 'twoReg', 'Subtract the source register from the destination.'],
+  ['MUL', 'twoReg', 'Multiply the destination by the source.'],
+  ['AND', 'twoReg', 'Bitwise AND two registers.'],
+  ['OR', 'twoReg', 'Bitwise OR two registers.'],
+  ['XOR', 'twoReg', 'Bitwise XOR two registers.'],
+  ['NOT', 'oneReg', 'Invert every bit in a register.'],
+  ['SHL', 'oneReg', 'Shift left and move the outgoing bit into carry.'],
+  ['SHR', 'oneReg', 'Shift right and move the outgoing bit into carry.'],
+  ['INC', 'oneReg', 'Increment a register.'],
+  ['DEC', 'oneReg', 'Decrement a register.'],
+  ['CMP', 'twoReg', 'Compare two registers and update flags.'],
+  ['JMP', 'address', 'Jump to an address.'],
+  ['JZ', 'address', 'Jump when the zero flag is set.'],
+  ['JNZ', 'address', 'Jump when the zero flag is clear.'],
+  ['JC', 'address', 'Jump when the carry flag is set.'],
+  ['JN', 'address', 'Jump when the negative flag is set.'],
+  ['OUT', 'oneReg', 'Copy a register into the output register.'],
+  ['PUSH', 'oneReg', 'Push a register onto the stack.'],
+  ['POP', 'oneReg', 'Pop the stack into a register.'],
+  ['CALL', 'address', 'Push the return address and call a subroutine.'],
+  ['RET', 'none', 'Return from a subroutine.'],
+  ['HLT', 'none', 'Stop the CPU clock.'],
+  ['MOD', 'twoReg', 'Store the remainder of an unsigned division.'],
+  ['LUI', 'regByte', 'Load the upper byte of a register.'],
+  ['ADDI', 'regImm', 'Add a 9-bit immediate to a register.'],
+  ['SUBI', 'regImm', 'Subtract a 9-bit immediate from a register.'],
 ];
 
 export function decodeInstruction(value) {
-  const opcode = value >> 4;
-  const operand = value & 0x0f;
-  const [name, description, usesOperand] = instructionInfo[opcode];
-  return { mnemonic: usesOperand ? `${name} ${operand.toString(16).toUpperCase()}` : name, description, opcode, operand };
+  const opcode = (value >>> 11) & 0x1f;
+  const destination = (value >>> 9) & 0x03;
+  const source = (value >>> 7) & 0x03;
+  const immediate = value & 0x01ff;
+  const address = value & 0x003f;
+  const [name, format, description] = instructionInfo[opcode];
+  const operands = {
+    none: '', oneReg: registers[destination], twoReg: `${registers[destination]}, ${registers[source]}`,
+    regImm: `${registers[destination]}, ${immediate}`, regByte: `${registers[destination]}, ${value & 0xff}`,
+    regAddr: `${registers[destination]}, ${address}`, address: `${address}`,
+  }[format];
+  return { mnemonic: `${name}${operands ? ` ${operands}` : ''}`, description, opcode, destination, source, immediate, address };
 }
 
-const bits = (value, width = 8) => value.toString(2).padStart(width, '0');
+const bits = (value, width = 16) => value.toString(2).padStart(width, '0');
 const hex = (value) => `0x${value.toString(16).toUpperCase()}`;
 const stripComment = (line) => line.replace(/(\/\/|#|;).*$/, '');
 const parseError = (line, message) => new ProgramParseError(`Line ${line}: ${message}`);
 
 function ensureSize(count, line) {
-  if (count > MEMORY_SIZE) throw parseError(line, `programs can contain at most ${MEMORY_SIZE} bytes.`);
+  if (count > MEMORY_SIZE) throw parseError(line, `programs can contain at most ${MEMORY_SIZE} words.`);
 }
 
 function parseBinary(source) {
-  if (!source?.trim()) throw new ProgramParseError('Enter at least one 8-bit binary instruction.');
-  const bytes = [];
+  if (!source?.trim()) throw new ProgramParseError('Enter at least one 16-bit binary instruction.');
+  const words = [];
   source.replace(/\r/g, '').split('\n').forEach((raw, index) => {
     const line = stripComment(raw).trim();
     if (!line) return;
     line.split(/[\s,]+/).forEach((token) => {
-      if (!/^[01]{8}$/.test(token)) throw parseError(index + 1, `'${token}' must be exactly 8 binary digits.`);
-      bytes.push(Number.parseInt(token, 2));
-      ensureSize(bytes.length, index + 1);
+      if (!/^[01]{16}$/.test(token)) throw parseError(index + 1, `'${token}' must be exactly 16 binary digits.`);
+      words.push(Number.parseInt(token, 2));
+      ensureSize(words.length, index + 1);
     });
   });
-  if (!bytes.length) throw new ProgramParseError('Enter at least one 8-bit binary instruction.');
-  return bytes;
+  if (!words.length) throw new ProgramParseError('Enter at least one 16-bit binary instruction.');
+  return words;
 }
 
-const opcodes = new Map(Object.entries({
-  NOP: 0x0, LDA: 0x3, STA: 0x4, ADD: 0x5, SUB: 0x6, AND: 0x7, OR: 0x8,
-  XOR: 0x9, JMP: 0xa, JZ: 0xb, JC: 0xc, OUT: 0xd, SWP: 0xe, HLT: 0xf,
-}));
+const opcodes = new Map(instructionInfo.map(([name], opcode) => [name, opcode]));
 
 function parseNumber(text, labels, line, maximum) {
   const token = text.trim();
@@ -95,20 +118,38 @@ function assemble(source) {
     const match = text.trim().match(/^(\S+)(?:\s+(.*))?$/);
     const mnemonic = match[1].toUpperCase();
     const operandText = (match[2] || '').trim();
-    if (mnemonic === '.BYTE' || mnemonic === 'DB') return parseNumber(operandText, labels, line, 255);
-    if (mnemonic === 'LDI') {
-      const operands = operandText.split(',').map((part) => part.trim()).filter(Boolean);
-      if (operands.length !== 2 || !/^[AB]$/i.test(operands[0])) {
-        throw parseError(line, "LDI syntax is 'LDI A, value' or 'LDI B, value'.");
-      }
-      return ((operands[0].toUpperCase() === 'A' ? 0x1 : 0x2) << 4) | parseNumber(operands[1], labels, line, 15);
-    }
+    if (mnemonic === '.WORD' || mnemonic === 'DW') return parseNumber(operandText, labels, line, WORD_MASK);
     if (!opcodes.has(mnemonic)) throw parseError(line, `unknown instruction '${match[1]}'.`);
     const opcode = opcodes.get(mnemonic);
-    const needsOperand = [0x3, 0x4, 0xa, 0xb, 0xc].includes(opcode);
-    if (needsOperand && !operandText) throw parseError(line, `${mnemonic} requires an address.`);
-    if (!needsOperand && operandText) throw parseError(line, `${mnemonic} does not take an operand.`);
-    return (opcode << 4) | (needsOperand ? parseNumber(operandText, labels, line, 15) : 0);
+    const format = instructionInfo[opcode][1];
+    const operands = operandText.split(',').map((part) => part.trim()).filter(Boolean);
+    const register = (text) => {
+      const index = registers.indexOf(String(text).toUpperCase());
+      if (index < 0) throw parseError(line, `'${text || ''}' must be a register from A to D.`);
+      return index;
+    };
+    if (format === 'none') {
+      if (operandText) throw parseError(line, `${mnemonic} does not take an operand.`);
+      return opcode << 11;
+    }
+    if (format === 'oneReg') {
+      if (operands.length !== 1) throw parseError(line, `${mnemonic} expects one register.`);
+      return (opcode << 11) | (register(operands[0]) << 9);
+    }
+    if (format === 'twoReg') {
+      if (operands.length !== 2) throw parseError(line, `${mnemonic} expects two registers.`);
+      return (opcode << 11) | (register(operands[0]) << 9) | (register(operands[1]) << 7);
+    }
+    if (format === 'address') {
+      if (operands.length !== 1) throw parseError(line, `${mnemonic} expects one address.`);
+      return (opcode << 11) | parseNumber(operands[0], labels, line, MEMORY_SIZE - 1);
+    }
+    if (format === 'regAddr' || format === 'regImm' || format === 'regByte') {
+      if (operands.length !== 2) throw parseError(line, `${mnemonic} expects a register and a value.`);
+      const maximum = format === 'regAddr' ? MEMORY_SIZE - 1 : format === 'regByte' ? 255 : 511;
+      return (opcode << 11) | (register(operands[0]) << 9) | parseNumber(operands[1], labels, line, maximum);
+    }
+    throw parseError(line, `cannot encode '${mnemonic}'.`);
   });
 }
 
@@ -116,7 +157,7 @@ const tokenError = (token, message) => parseError(token.line, `column ${token.co
 
 function scanMiniScript(source) {
   const tokens = [];
-  const symbols = ['===', '!==', '==', '!=', '+=', '-=', '&=', '|=', '^=', '++', '--', '&&', '||'];
+  const symbols = ['===', '!==', '==', '!=', '+=', '-=', '*=', '%=', '&=', '|=', '^=', '++', '--', '&&', '||'];
   let index = 0;
   let line = 1;
   let column = 1;
@@ -163,7 +204,7 @@ function scanMiniScript(source) {
       tokens.push({ kind: 'symbol', text: symbol, line: tokenLine, column: tokenColumn });
       index += symbol.length; column += symbol.length; continue;
     }
-    if ('{}()[];,=+-&|^!'.includes(ch)) {
+    if ('{}()[];,=+-*%&|^!'.includes(ch)) {
       tokens.push({ kind: 'symbol', text: ch, line: tokenLine, column: tokenColumn });
       index += 1; column += 1; continue;
     }
@@ -207,7 +248,7 @@ class MiniParser {
       const operator = this.previous.text; this.endStatement();
       return { type: 'update', name: target.value, operator, line: start.line };
     }
-    if (['=', '+=', '-=', '&=', '|=', '^='].some((operator) => this.match(operator))) {
+    if (['=', '+=', '-=', '*=', '%=', '&=', '|=', '^='].some((operator) => this.match(operator))) {
       const operator = this.previous.text;
       const value = this.parseExpression(); this.endStatement();
       return { type: 'assignment', target, operator, value, line: start.line };
@@ -273,12 +314,12 @@ class MiniParser {
     }
     throw tokenError(token, 'expected a value or variable name.');
   }
-  precedence(operator) { return ({ '||': 1, '&&': 2, '==': 3, '===': 3, '!=': 3, '!==': 3, '|': 4, '^': 5, '&': 6, '+': 7, '-': 7 })[operator] ?? -1; }
+  precedence(operator) { return ({ '||': 1, '&&': 2, '==': 3, '===': 3, '!=': 3, '!==': 3, '|': 4, '^': 5, '&': 6, '+': 7, '-': 7, '*': 8, '%': 8 })[operator] ?? -1; }
 }
 
 class MiniCompiler {
   constructor() {
-    this.code = []; this.variables = new Map(); this.declaredRegisters = new Set(); this.constants = new Map();
+    this.code = []; this.variables = new Map(); this.constants = new Map();
     this.loops = []; this.nextRegister = 0; this.nextLabel = 0;
   }
   compile(program) {
@@ -304,28 +345,30 @@ class MiniCompiler {
     const key = declaration.name.toLowerCase();
     if (this.variables.has(key) || this.constants.has(key)) throw parseError(declaration.line, `'${declaration.name}' has already been declared.`);
     if (declaration.kind === 'const') { this.constants.set(key, this.constant(declaration.value)); return; }
-    if (this.nextRegister >= 2) throw parseError(declaration.line, 'this CPU has only two runtime variables. Use const for compile-time values.');
-    const register = this.nextRegister++ === 0 ? 'A' : 'B';
-    this.variables.set(key, register); this.declaredRegisters.add(register);
+    if (this.nextRegister >= registers.length) throw parseError(declaration.line, 'MiniScript can keep four runtime variables in registers A through D. Use const or memory for additional values.');
+    const register = registers[this.nextRegister++];
+    this.variables.set(key, register);
     this.compileAssignment({ type: 'name', value: declaration.name, line: declaration.line }, '=', declaration.value, declaration.line);
   }
   compileAssignment(target, operator, value, line) {
     if (target.type === 'memory') {
       if (operator !== '=') throw parseError(line, "memory supports direct '=' assignment only.");
       const address = this.address(target.address); const source = this.register(value);
-      if (source === 'A') this.emit(`STA ${address}`); else { this.emit('SWP'); this.emit(`STA ${address}`); this.emit('SWP'); }
+      this.emit(`STR ${source}, ${address}`);
       return;
     }
     if (target.type !== 'name') throw parseError(line, 'the assignment target must be a variable or memory address.');
     const destination = this.register(target); const immediate = this.tryConstant(value);
-    if (operator === '=' && immediate.known) { this.requireNibble(immediate.value, value.line, 'immediate value'); this.emit(`LDI ${destination}, ${immediate.value}`); return; }
+    if (operator === '=' && immediate.known) { this.emitConstant(destination, immediate.value, value.line); return; }
     if (operator === '=' && value.type === 'memory') {
-      if (destination !== 'A') throw parseError(line, 'loading memory into the second variable would overwrite the first variable on this CPU.');
-      this.emit(`LDA ${this.address(value.address)}`); return;
+      this.emit(`LDR ${destination}, ${this.address(value.address)}`); return;
+    }
+    if (operator === '=' && value.type === 'name') {
+      this.emit(`MOV ${destination}, ${this.register(value)}`); return;
     }
     let operation; let right;
     if (operator === '=') {
-      if (value.type !== 'binary' || !['+', '-', '&', '|', '^'].includes(value.operator)) {
+      if (value.type !== 'binary' || !['+', '-', '*', '%', '&', '|', '^'].includes(value.operator)) {
         throw parseError(line, 'runtime assignments must be a supported binary expression such as total = total + step.');
       }
       if (this.register(value.left) !== destination) throw parseError(line, 'the left side of the expression must match the assigned variable.');
@@ -335,26 +378,30 @@ class MiniCompiler {
   }
   compileUpdate(update) {
     const destination = this.register({ type: 'name', value: update.name, line: update.line });
-    const scratch = destination === 'A' ? 'B' : 'A'; this.ensureScratch(scratch, update.line);
-    this.emit(`LDI ${scratch}, 1`); const instruction = update.operator === '++' ? 'ADD' : 'SUB';
-    if (destination === 'A') this.emit(instruction); else { this.emit('SWP'); this.emit(instruction); this.emit('SWP'); }
+    this.emit(`${update.operator === '++' ? 'INC' : 'DEC'} ${destination}`);
   }
   emitOperation(destination, operator, right, line) {
-    const other = destination === 'A' ? 'B' : 'A'; const immediate = this.tryConstant(right);
-    if (immediate.known) { this.requireNibble(immediate.value, right.line, 'immediate operand'); this.ensureScratch(other, line); this.emit(`LDI ${other}, ${immediate.value}`); }
-    else if (this.register(right) !== other) throw parseError(line, 'a runtime operation must use the other CPU variable as its right operand.');
-    const instruction = ({ '+': 'ADD', '-': 'SUB', '&': 'AND', '|': 'OR', '^': 'XOR' })[operator];
+    const immediate = this.tryConstant(right);
+    if (immediate.known && ['+', '-'].includes(operator) && immediate.value <= 511) {
+      this.emit(`${operator === '+' ? 'ADDI' : 'SUBI'} ${destination}, ${immediate.value}`); return;
+    }
+    let source;
+    if (immediate.known) {
+      source = this.scratch(destination, line); this.emitConstant(source, immediate.value, right.line);
+    } else source = this.register(right);
+    const instruction = ({ '+': 'ADD', '-': 'SUB', '*': 'MUL', '%': 'MOD', '&': 'AND', '|': 'OR', '^': 'XOR' })[operator];
     if (!instruction) throw parseError(line, `operator '${operator}' is not supported.`);
-    if (destination === 'A') this.emit(instruction); else { this.emit('SWP'); this.emit(instruction); this.emit('SWP'); }
+    this.emit(`${instruction} ${destination}, ${source}`);
   }
   compileCall(call) {
     const name = call.name.toLowerCase();
     if (name === 'output' || name === 'print') {
-      this.requireArguments(call, 1); if (this.register(call.arguments[0]) === 'A') this.emit('OUT'); else { this.emit('SWP'); this.emit('OUT'); this.emit('SWP'); }
+      this.requireArguments(call, 1); this.emit(`OUT ${this.register(call.arguments[0])}`);
     } else if (name === 'halt' || name === 'stop') { this.requireArguments(call, 0); this.emit('HLT'); }
-    else if (name === 'swap') { this.requireArguments(call, 2); if (this.register(call.arguments[0]) === this.register(call.arguments[1])) throw parseError(call.line, 'swap expects two different runtime variables.'); this.emit('SWP'); }
+    else if (name === 'push') { this.requireArguments(call, 1); this.emit(`PUSH ${this.register(call.arguments[0])}`); }
+    else if (name === 'pop') { this.requireArguments(call, 1); this.emit(`POP ${this.register(call.arguments[0])}`); }
     else if (name === 'nop') { this.requireArguments(call, 0); this.emit('NOP'); }
-    else throw parseError(call.line, `unknown function '${call.name}'. Available functions: output, halt, swap, and nop.`);
+    else throw parseError(call.line, `unknown function '${call.name}'. Available functions: output, halt, push, pop, and nop.`);
   }
   compileIf(statement) {
     const thenLabel = this.label('if'); const elseLabel = this.label('else'); const endLabel = this.label('endif');
@@ -381,22 +428,22 @@ class MiniCompiler {
     }
     let truth = true; let test = condition;
     if (condition.type === 'binary' && ['==', '===', '!=', '!=='].includes(condition.operator)) {
-      if (this.constant(condition.right) !== 0) throw parseError(condition.line, 'conditions can compare a variable only with zero on this CPU.');
       test = condition.left; truth = condition.operator === '==' || condition.operator === '===';
+      const left = this.register(test); const rightConstant = this.tryConstant(condition.right);
+      if (rightConstant.known && rightConstant.value === 0) this.emit(`ADDI ${left}, 0`);
+      else {
+        const right = rightConstant.known ? this.scratch(left, condition.line) : this.register(condition.right);
+        if (rightConstant.known) this.emitConstant(right, rightConstant.value, condition.line);
+        this.emit(`CMP ${left}, ${right}`);
+      }
+      this.emit(`${truth ? 'JZ' : 'JNZ'} ${whenTrue}`); this.emit(`JMP ${whenFalse}`); return;
     }
-    if (test.type === 'name' && ['carry', 'zero'].includes(test.value.toLowerCase())) {
-      const jump = test.value.toLowerCase() === 'carry' ? 'JC' : 'JZ';
+    if (test.type === 'name' && ['carry', 'zero', 'negative'].includes(test.value.toLowerCase())) {
+      const jump = ({ carry: 'JC', zero: 'JZ', negative: 'JN' })[test.value.toLowerCase()];
       this.emit(`${jump} ${truth ? whenTrue : whenFalse}`); this.emit(`JMP ${truth ? whenFalse : whenTrue}`); return;
     }
     const register = this.register(test);
-    if (condition.type !== 'binary') truth = false;
-    if (register === 'A') {
-      this.emit('SWP'); this.emit('SWP'); this.emit(`JZ ${truth ? whenTrue : whenFalse}`); this.emit(`JMP ${truth ? whenFalse : whenTrue}`); return;
-    }
-    const zeroPath = this.label('zero'); const nonzeroPath = this.label('nonzero');
-    this.emit('SWP'); this.emit(`JZ ${zeroPath}`); this.emit(`JMP ${nonzeroPath}`);
-    this.mark(zeroPath); this.emit('SWP'); this.emit(`JMP ${truth ? whenTrue : whenFalse}`);
-    this.mark(nonzeroPath); this.emit('SWP'); this.emit(`JMP ${truth ? whenFalse : whenTrue}`);
+    this.emit(`ADDI ${register}, 0`); this.emit(`JNZ ${whenTrue}`); this.emit(`JMP ${whenFalse}`);
   }
   register(expression) {
     if (expression.type !== 'name' || !this.variables.has(expression.value.toLowerCase())) throw parseError(expression.line, 'expected a declared runtime variable.');
@@ -419,6 +466,7 @@ class MiniCompiler {
       if (left.known && right.known) {
         const operations = {
           '+': () => left.value + right.value, '-': () => left.value - right.value, '&': () => left.value & right.value,
+          '*': () => left.value * right.value, '%': () => left.value % right.value,
           '|': () => left.value | right.value, '^': () => left.value ^ right.value,
           '==': () => Number(left.value === right.value), '===': () => Number(left.value === right.value),
           '!=': () => Number(left.value !== right.value), '!==': () => Number(left.value !== right.value),
@@ -429,8 +477,18 @@ class MiniCompiler {
     }
     return { known: false, value: 0 };
   }
-  ensureScratch(register, line) { if (this.declaredRegisters.has(register)) throw parseError(line, 'this operation needs the other register as scratch space, but that register holds another variable.'); }
-  requireNibble(value, line, role) { if (value < 0 || value > 15) throw parseError(line, `${role} ${value} must be between 0 and 15.`); }
+  scratch(excluded, line) {
+    const used = new Set(this.variables.values());
+    const register = registers.find((candidate) => candidate !== excluded && !used.has(candidate));
+    if (!register) throw parseError(line, 'this operation needs one free register for a constant. Declare fewer runtime variables or place a value in memory.');
+    return register;
+  }
+  emitConstant(register, value, line) {
+    if (!Number.isInteger(value) || value < 0 || value > WORD_MASK) throw parseError(line, `value ${value} must fit in an unsigned 16-bit word.`);
+    this.emit(`LDI ${register}, ${value & 0x1ff}`);
+    if (value > 0x1ff) this.emit(`LUI ${register}, ${(value >>> 8) & 0xff}`);
+  }
+  requireNibble(value, line, role) { if (value < 0 || value >= MEMORY_SIZE) throw parseError(line, `${role} ${value} must be between 0 and ${MEMORY_SIZE - 1}.`); }
   requireArguments(call, count) { if (call.arguments.length !== count) throw parseError(call.line, `${call.name} expects ${count} argument${count === 1 ? '' : 's'}.`); }
   emit(instruction) { this.code.push(instruction); }
   mark(label) { this.code.push(`${label}:`); }
@@ -446,27 +504,33 @@ export function compileSource(source, language = 'binary') {
   const normalized = String(language || 'binary').trim().toLowerCase();
   if (!['binary', 'assembly', 'simple'].includes(normalized)) throw new ProgramParseError('Language must be binary, assembly, or simple.');
   const assemblySource = normalized === 'simple' ? compileMiniScript(source) : normalized === 'assembly' ? source : null;
-  const bytes = normalized === 'binary' ? parseBinary(source) : assemble(assemblySource);
-  const machineCode = bytes.map((value, address) => `${bits(value)}  # ${address.toString(16).toUpperCase()}: ${decodeInstruction(value).mnemonic}`).join('\n');
-  const disassembly = bytes.map((value, address) => `${address.toString(16).toUpperCase()}: ${decodeInstruction(value).mnemonic}`).join('\n');
-  return { bytes, assemblySource: assemblySource ?? disassembly, machineCode };
+  const words = normalized === 'binary' ? parseBinary(source) : assemble(assemblySource);
+  const machineCode = words.map((value, address) => `${bits(value)}  # ${address.toString(16).toUpperCase().padStart(2, '0')}: ${decodeInstruction(value).mnemonic}`).join('\n');
+  const disassembly = words.map((value, address) => `${address.toString(16).toUpperCase().padStart(2, '0')}: ${decodeInstruction(value).mnemonic}`).join('\n');
+  return { words, assemblySource: assemblySource ?? disassembly, machineCode };
 }
 
 class CpuSimulator {
-  constructor(compilation) { this.initialMemory = [...compilation.bytes, ...Array(MEMORY_SIZE - compilation.bytes.length).fill(0)]; this.reset(false); }
+  constructor(compilation) {
+    this.programSize = compilation.words.length;
+    this.initialMemory = [...compilation.words, ...Array(MEMORY_SIZE - compilation.words.length).fill(0)];
+    this.reset(false);
+  }
   reset(isReset = true) {
-    this.memory = [...this.initialMemory]; this.registerA = 0; this.registerB = 0; this.programCounter = 0;
+    this.memory = [...this.initialMemory]; this.registers = [0, 0, 0, 0]; this.programCounter = 0; this.stackPointer = MEMORY_SIZE - 1;
     this.instructionRegister = 0; this.memoryAddressRegister = 0; this.outputRegister = 0;
-    this.zeroFlag = false; this.carryFlag = false; this.cycle = 0; this.phase = 'Fetch'; this.halted = false;
+    this.zeroFlag = false; this.carryFlag = false; this.negativeFlag = false; this.overflowFlag = false;
+    this.cycle = 0; this.phase = 'Fetch'; this.halted = false;
     this.currentInstructionAddress = 0; this.instruction = null;
     this.lastEvent = { cycle: 0, phase: 'Ready', title: isReset ? 'CPU reset' : 'Program loaded', detail: isReset ? 'Registers and memory were restored to their loaded values.' : 'Press Clock to begin the fetch cycle.', signals: isReset ? ['RESET'] : [] };
     return this.snapshot();
   }
   snapshot() {
-    return { registerA: this.registerA, registerB: this.registerB, programCounter: this.programCounter, instructionRegister: this.instructionRegister,
-      memoryAddressRegister: this.memoryAddressRegister, outputRegister: this.outputRegister, zeroFlag: this.zeroFlag, carryFlag: this.carryFlag,
+    return { registers: [...this.registers], registerA: this.registers[0], registerB: this.registers[1], registerC: this.registers[2], registerD: this.registers[3],
+      programCounter: this.programCounter, stackPointer: this.stackPointer, instructionRegister: this.instructionRegister,
+      memoryAddressRegister: this.memoryAddressRegister, outputRegister: this.outputRegister, zeroFlag: this.zeroFlag, carryFlag: this.carryFlag, negativeFlag: this.negativeFlag, overflowFlag: this.overflowFlag,
       cycle: this.cycle, phase: this.phase, halted: this.halted, currentInstructionAddress: this.currentInstructionAddress,
-      instruction: this.instruction ? { ...this.instruction } : null, memory: [...this.memory], lastEvent: { ...this.lastEvent, signals: [...this.lastEvent.signals] } };
+      programSize: this.programSize, instruction: this.instruction ? { ...this.instruction } : null, memory: [...this.memory], lastEvent: { ...this.lastEvent, signals: [...this.lastEvent.signals] } };
   }
   step() {
     if (this.halted) return this.snapshot();
@@ -476,35 +540,76 @@ class CpuSimulator {
   }
   fetch() {
     this.currentInstructionAddress = this.programCounter; this.memoryAddressRegister = this.programCounter;
-    this.instructionRegister = this.memory[this.memoryAddressRegister]; this.programCounter = (this.programCounter + 1) & 0x0f;
+    this.instructionRegister = this.memory[this.memoryAddressRegister]; this.programCounter = (this.programCounter + 1) % MEMORY_SIZE;
     this.instruction = null; this.phase = 'Decode';
     this.lastEvent = { cycle: this.cycle, phase: 'FETCH', title: 'Instruction fetched', detail: `MAR ← ${hex(this.memoryAddressRegister)}, IR ← RAM[${hex(this.memoryAddressRegister)}] (${bits(this.instructionRegister)}), PC ← ${hex(this.programCounter)}`, signals: ['PC OUT', 'MAR IN', 'RAM OUT', 'IR IN', 'PC INC'] };
   }
   decode() {
     this.instruction = decodeInstruction(this.instructionRegister); this.phase = 'Execute';
-    this.lastEvent = { cycle: this.cycle, phase: 'DECODE', title: `Decoded ${this.instruction.mnemonic}`, detail: `Control unit reads opcode ${bits(this.instruction.opcode, 4)} and operand ${bits(this.instruction.operand, 4)}. ${this.instruction.description}`, signals: ['IR OUT', 'CONTROL DECODE'] };
+    this.lastEvent = { cycle: this.cycle, phase: 'DECODE', title: `Decoded ${this.instruction.mnemonic}`, detail: `Control unit reads the 5-bit opcode and register/address fields. ${this.instruction.description}`, signals: ['IR OUT', 'CONTROL DECODE'] };
   }
   execute() {
-    const instruction = this.instruction ?? decodeInstruction(this.instructionRegister); const operand = instruction.operand;
+    const instruction = this.instruction ?? decodeInstruction(this.instructionRegister);
+    const destination = instruction.destination; const source = instruction.source;
     let detail = ''; let signals = [];
-    const setZero = () => { this.zeroFlag = this.registerA === 0; };
+    const name = (index) => registers[index];
+    const setFlags = (value, carry = false, overflow = false) => {
+      const word = value & WORD_MASK;
+      this.zeroFlag = word === 0; this.negativeFlag = Boolean(word & 0x8000); this.carryFlag = carry; this.overflowFlag = overflow;
+      return word;
+    };
+    const binary = (operation, calculate) => {
+      const left = this.registers[destination]; const right = this.registers[source]; const result = calculate(left, right);
+      this.registers[destination] = setFlags(result.value, result.carry, result.overflow);
+      detail = `${name(destination)} ← ${left} ${operation} ${right} = ${this.registers[destination]}.`;
+      signals = [`${name(destination)} OUT`, `${name(source)} OUT`, `ALU ${operation}`, `${name(destination)} IN`, 'FLAGS IN'];
+    };
+    const branch = (condition, flagName) => {
+      if (condition) this.programCounter = instruction.address;
+      detail = condition ? `${flagName} condition is true, so PC ← ${hex(this.programCounter)}.` : `${flagName} condition is false, so execution continues.`;
+      signals = [`${flagName.toUpperCase()} TEST`, condition ? 'PC IN' : 'NO BRANCH'];
+    };
+    const push = (value) => {
+      this.memoryAddressRegister = this.stackPointer; this.memory[this.stackPointer] = value & WORD_MASK;
+      this.stackPointer = (this.stackPointer - 1 + MEMORY_SIZE) % MEMORY_SIZE;
+    };
+    const pop = () => {
+      this.stackPointer = (this.stackPointer + 1) % MEMORY_SIZE; this.memoryAddressRegister = this.stackPointer;
+      return this.memory[this.stackPointer];
+    };
     switch (instruction.opcode) {
       case 0x0: detail = 'No state changed.'; signals = ['NOP']; break;
-      case 0x1: this.registerA = operand; setZero(); detail = `A ← immediate value ${operand}.`; signals = ['OPERAND OUT', 'A IN', 'FLAGS IN']; break;
-      case 0x2: this.registerB = operand; this.zeroFlag = this.registerB === 0; detail = `B ← immediate value ${operand}.`; signals = ['OPERAND OUT', 'B IN', 'FLAGS IN']; break;
-      case 0x3: this.memoryAddressRegister = operand; this.registerA = this.memory[operand]; setZero(); detail = `MAR ← ${hex(operand)}, A ← RAM[${hex(operand)}] (${this.registerA}).`; signals = ['OPERAND OUT', 'MAR IN', 'RAM OUT', 'A IN', 'FLAGS IN']; break;
-      case 0x4: this.memoryAddressRegister = operand; this.memory[operand] = this.registerA; detail = `MAR ← ${hex(operand)}, RAM[${hex(operand)}] ← A (${this.registerA}).`; signals = ['OPERAND OUT', 'MAR IN', 'A OUT', 'RAM IN']; break;
-      case 0x5: { const result = this.registerA + this.registerB; this.carryFlag = result > 255; this.registerA = result & 0xff; setZero(); detail = `ALU added B to A. A ← ${this.registerA}; carry ← ${Number(this.carryFlag)}.`; signals = ['A OUT', 'B OUT', 'ALU ADD', 'A IN', 'FLAGS IN']; break; }
-      case 0x6: { const before = this.registerA; this.registerA = (before - this.registerB) & 0xff; this.carryFlag = before >= this.registerB; setZero(); detail = `ALU subtracted B from A. A ← ${this.registerA}; no-borrow/carry ← ${Number(this.carryFlag)}.`; signals = ['A OUT', 'B OUT', 'ALU SUB', 'A IN', 'FLAGS IN']; break; }
-      case 0x7: this.registerA &= this.registerB; this.carryFlag = false; setZero(); detail = `A ← A AND B = ${this.registerA}.`; signals = ['A OUT', 'B OUT', 'ALU AND', 'A IN', 'FLAGS IN']; break;
-      case 0x8: this.registerA |= this.registerB; this.carryFlag = false; setZero(); detail = `A ← A OR B = ${this.registerA}.`; signals = ['A OUT', 'B OUT', 'ALU OR', 'A IN', 'FLAGS IN']; break;
-      case 0x9: this.registerA ^= this.registerB; this.carryFlag = false; setZero(); detail = `A ← A XOR B = ${this.registerA}.`; signals = ['A OUT', 'B OUT', 'ALU XOR', 'A IN', 'FLAGS IN']; break;
-      case 0xa: this.programCounter = operand; detail = `PC ← ${hex(operand)}. The next fetch comes from this address.`; signals = ['OPERAND OUT', 'PC IN']; break;
-      case 0xb: if (this.zeroFlag) this.programCounter = operand; detail = this.zeroFlag ? `Zero flag is set, so PC ← ${hex(this.programCounter)}.` : 'Zero flag is clear, so execution continues.'; signals = ['ZERO TEST', this.zeroFlag ? 'PC IN' : 'NO BRANCH']; break;
-      case 0xc: if (this.carryFlag) this.programCounter = operand; detail = this.carryFlag ? `Carry flag is set, so PC ← ${hex(this.programCounter)}.` : 'Carry flag is clear, so execution continues.'; signals = ['CARRY TEST', this.carryFlag ? 'PC IN' : 'NO BRANCH']; break;
-      case 0xd: this.outputRegister = this.registerA; detail = `OUT ← A (${this.registerA}).`; signals = ['A OUT', 'OUTPUT IN']; break;
-      case 0xe: [this.registerA, this.registerB] = [this.registerB, this.registerA]; setZero(); detail = `A and B exchanged values. A = ${this.registerA}, B = ${this.registerB}.`; signals = ['A OUT', 'B OUT', 'A IN', 'B IN']; break;
-      case 0xf: this.halted = true; this.phase = 'Halted'; detail = 'The clock is disabled. Reset or load a program to run again.'; signals = ['HALT']; break;
+      case 0x1: this.registers[destination] = setFlags(instruction.immediate); detail = `${name(destination)} ← ${instruction.immediate}.`; signals = ['IMMEDIATE OUT', `${name(destination)} IN`, 'FLAGS IN']; break;
+      case 0x2: this.memoryAddressRegister = instruction.address; this.registers[destination] = setFlags(this.memory[instruction.address]); detail = `${name(destination)} ← RAM[${hex(instruction.address)}] (${this.registers[destination]}).`; signals = ['ADDRESS OUT', 'MAR IN', 'RAM OUT', `${name(destination)} IN`, 'FLAGS IN']; break;
+      case 0x3: this.memoryAddressRegister = instruction.address; this.memory[instruction.address] = this.registers[destination]; detail = `RAM[${hex(instruction.address)}] ← ${name(destination)} (${this.registers[destination]}).`; signals = ['ADDRESS OUT', 'MAR IN', `${name(destination)} OUT`, 'RAM IN']; break;
+      case 0x4: this.registers[destination] = setFlags(this.registers[source]); detail = `${name(destination)} ← ${name(source)} (${this.registers[destination]}).`; signals = [`${name(source)} OUT`, `${name(destination)} IN`, 'FLAGS IN']; break;
+      case 0x5: binary('+', (a, b) => { const value = a + b; return { value, carry: value > WORD_MASK, overflow: Boolean((~(a ^ b) & (a ^ value)) & 0x8000) }; }); break;
+      case 0x6: binary('−', (a, b) => { const value = a - b; return { value, carry: a >= b, overflow: Boolean(((a ^ b) & (a ^ value)) & 0x8000) }; }); break;
+      case 0x7: binary('×', (a, b) => { const value = a * b; return { value, carry: value > WORD_MASK }; }); break;
+      case 0x8: binary('AND', (a, b) => ({ value: a & b })); break;
+      case 0x9: binary('OR', (a, b) => ({ value: a | b })); break;
+      case 0xa: binary('XOR', (a, b) => ({ value: a ^ b })); break;
+      case 0xb: this.registers[destination] = setFlags(~this.registers[destination]); detail = `${name(destination)} ← NOT ${name(destination)} = ${this.registers[destination]}.`; signals = [`${name(destination)} OUT`, 'ALU NOT', `${name(destination)} IN`, 'FLAGS IN']; break;
+      case 0xc: { const value = this.registers[destination]; this.registers[destination] = setFlags(value << 1, Boolean(value & 0x8000)); detail = `${name(destination)} shifted left to ${this.registers[destination]}.`; signals = [`${name(destination)} OUT`, 'ALU SHL', `${name(destination)} IN`, 'FLAGS IN']; break; }
+      case 0xd: { const value = this.registers[destination]; this.registers[destination] = setFlags(value >>> 1, Boolean(value & 1)); detail = `${name(destination)} shifted right to ${this.registers[destination]}.`; signals = [`${name(destination)} OUT`, 'ALU SHR', `${name(destination)} IN`, 'FLAGS IN']; break; }
+      case 0xe: { const value = this.registers[destination] + 1; this.registers[destination] = setFlags(value, value > WORD_MASK); detail = `${name(destination)} incremented to ${this.registers[destination]}.`; signals = ['ALU INC', `${name(destination)} IN`, 'FLAGS IN']; break; }
+      case 0xf: { const before = this.registers[destination]; this.registers[destination] = setFlags(before - 1, before > 0); detail = `${name(destination)} decremented to ${this.registers[destination]}.`; signals = ['ALU DEC', `${name(destination)} IN`, 'FLAGS IN']; break; }
+      case 0x10: { const a = this.registers[destination]; const b = this.registers[source]; setFlags(a - b, a >= b, Boolean(((a ^ b) & (a ^ (a - b))) & 0x8000)); detail = `Compared ${name(destination)} (${a}) with ${name(source)} (${b}).`; signals = [`${name(destination)} OUT`, `${name(source)} OUT`, 'ALU CMP', 'FLAGS IN']; break; }
+      case 0x11: this.programCounter = instruction.address; detail = `PC ← ${hex(instruction.address)}.`; signals = ['ADDRESS OUT', 'PC IN']; break;
+      case 0x12: branch(this.zeroFlag, 'zero'); break;
+      case 0x13: branch(!this.zeroFlag, 'not zero'); break;
+      case 0x14: branch(this.carryFlag, 'carry'); break;
+      case 0x15: branch(this.negativeFlag, 'negative'); break;
+      case 0x16: this.outputRegister = this.registers[destination]; detail = `OUT ← ${name(destination)} (${this.outputRegister}).`; signals = [`${name(destination)} OUT`, 'OUTPUT IN']; break;
+      case 0x17: push(this.registers[destination]); detail = `Pushed ${name(destination)}; SP ← ${hex(this.stackPointer)}.`; signals = [`${name(destination)} OUT`, 'SP OUT', 'MAR IN', 'RAM IN', 'SP DEC']; break;
+      case 0x18: this.registers[destination] = setFlags(pop()); detail = `Popped ${this.registers[destination]} into ${name(destination)}; SP ← ${hex(this.stackPointer)}.`; signals = ['SP INC', 'SP OUT', 'MAR IN', 'RAM OUT', `${name(destination)} IN`, 'FLAGS IN']; break;
+      case 0x19: push(this.programCounter); this.programCounter = instruction.address; detail = `Pushed return address and called ${hex(instruction.address)}.`; signals = ['PC OUT', 'RAM IN', 'SP DEC', 'ADDRESS OUT', 'PC IN']; break;
+      case 0x1a: this.programCounter = pop() % MEMORY_SIZE; detail = `Returned to ${hex(this.programCounter)}.`; signals = ['SP INC', 'RAM OUT', 'PC IN']; break;
+      case 0x1b: this.halted = true; this.phase = 'Halted'; detail = 'The clock is disabled. Reset or load a program to run again.'; signals = ['HALT']; break;
+      case 0x1c: binary('MOD', (a, b) => ({ value: b === 0 ? 0 : a % b, carry: b === 0 })); break;
+      case 0x1d: this.registers[destination] = setFlags(((instruction.immediate & 0xff) << 8) | (this.registers[destination] & 0xff)); detail = `${name(destination)} upper byte ← ${instruction.immediate & 0xff}.`; signals = ['IMMEDIATE OUT', `${name(destination)} IN`, 'FLAGS IN']; break;
+      case 0x1e: { const before = this.registers[destination]; const value = before + instruction.immediate; this.registers[destination] = setFlags(value, value > WORD_MASK, Boolean((~(before ^ instruction.immediate) & (before ^ value)) & 0x8000)); detail = `${name(destination)} += ${instruction.immediate}; result ${this.registers[destination]}.`; signals = ['IMMEDIATE OUT', 'ALU ADD', `${name(destination)} IN`, 'FLAGS IN']; break; }
+      case 0x1f: { const before = this.registers[destination]; const value = before - instruction.immediate; this.registers[destination] = setFlags(value, before >= instruction.immediate, Boolean(((before ^ instruction.immediate) & (before ^ value)) & 0x8000)); detail = `${name(destination)} -= ${instruction.immediate}; result ${this.registers[destination]}.`; signals = ['IMMEDIATE OUT', 'ALU SUB', `${name(destination)} IN`, 'FLAGS IN']; break; }
       default: break;
     }
     if (!this.halted) this.phase = 'Fetch';
@@ -512,11 +617,17 @@ class CpuSimulator {
   }
 }
 
+const makeSample = (id, name, description, assemblySource, simpleSource) => ({
+  id, name, description, assemblySource, simpleSource,
+  source: assemble(assemblySource).map((value, address) => `${bits(value)}  # ${address.toString(16).toUpperCase().padStart(2, '0')}: ${decodeInstruction(value).mnemonic}`).join('\n'),
+});
+
 export const samplePrograms = [
-  { id: 'add', name: 'Add 5 + 3', description: 'Loads two values, adds them, and sends 8 to the output register.', source: '00010101  # LDI A, 5\n00100011  # LDI B, 3\n01010000  # ADD\n11010000  # OUT\n11110000  # HLT', assemblySource: 'LDI A, 5\nLDI B, 3\nADD\nOUT\nHLT', simpleSource: 'let left = 5;\nlet right = 3;\nleft += right;\noutput(left);\nhalt();' },
-  { id: 'countdown', name: 'Countdown loop', description: 'Outputs 3, 2, 1, then halts when A reaches zero.', source: '00010011  # LDI A, 3\n11010000  # OUT\n00100001  # LDI B, 1\n01100000  # SUB\n10110110  # JZ 6\n10100001  # JMP 1\n11110000  # HLT', assemblySource: 'LDI A, 3\nloop:\nOUT\nLDI B, 1\nSUB\nJZ done\nJMP loop\ndone:\nHLT', simpleSource: 'let counter = 3;\n\nwhile (counter !== 0) {\n  output(counter);\n  counter--;\n}\n\nhalt();' },
-  { id: 'memory', name: 'Memory round trip', description: 'Stores 9 in RAM address F, clears A, then loads the value back.', source: '00011001  # LDI A, 9\n01001111  # STA F\n00010000  # LDI A, 0\n00111111  # LDA F\n11010000  # OUT\n11110000  # HLT', assemblySource: 'LDI A, 9\nSTA 15\nLDI A, 0\nLDA 15\nOUT\nHLT', simpleSource: 'const slot = 15;\nlet value = 9;\n\nmemory[slot] = value;\nvalue = 0;\nvalue = memory[slot];\noutput(value);\nhalt();' },
-  { id: 'logic', name: 'Bitwise XOR', description: 'Computes 12 XOR 10 and outputs 6.', source: '00011100  # LDI A, 12\n00101010  # LDI B, 10\n10010000  # XOR\n11010000  # OUT\n11110000  # HLT', assemblySource: 'LDI A, 12\nLDI B, 10\nXOR\nOUT\nHLT', simpleSource: 'let value = 12;\nlet mask = 10;\nvalue ^= mask;\noutput(value);\nhalt();' },
+  makeSample('fibonacci', 'Fibonacci sequence', 'Outputs the first eight Fibonacci numbers using four general-purpose registers and a loop.', 'LDI A, 0\nLDI B, 1\nLDI C, 8\nloop:\nOUT A\nMOV D, A\nADD D, B\nMOV A, B\nMOV B, D\nDEC C\nJNZ loop\nHLT', 'let current = 0;\nlet following = 1;\nlet count = 8;\nlet next = 0;\n\nwhile (count !== 0) {\n  output(current);\n  next = current;\n  next += following;\n  current = following;\n  following = next;\n  count--;\n}\n\nhalt();'),
+  makeSample('factorial', '16-bit factorial', 'Calculates 8! = 40320 with MUL, demonstrating a result far beyond an 8-bit CPU.', 'LDI A, 1\nLDI B, 8\nloop:\nMUL A, B\nDEC B\nJNZ loop\nOUT A\nHLT', 'let result = 1;\nlet factor = 8;\n\nwhile (factor !== 0) {\n  result *= factor;\n  factor--;\n}\n\noutput(result);\nhalt();'),
+  makeSample('subroutine', 'Stack and subroutine', 'Calls a reusable sum subroutine while preserving a register on the hardware stack.', 'LDI A, 120\nLDI B, 75\nLDI C, 7\nCALL sum\nOUT A\nHLT\nsum:\nPUSH C\nMOV C, B\nADD A, C\nPOP C\nRET', 'let total = 120;\nlet addend = 75;\ntotal += addend;\noutput(total);\nhalt();'),
+  makeSample('bitfield', 'Bitfield transform', 'Builds 0xABCD with LUI, then uses masks, shifts, and XOR to transform it.', 'LDI A, 205\nLUI A, 171\nLDI B, 255\nAND A, B\nSHL A\nLDI C, 90\nXOR A, C\nOUT A\nHLT', 'let value = 205;\nlet mask = 255;\nlet key = 90;\nvalue &= mask;\nvalue += value;\nvalue ^= key;\noutput(value);\nhalt();'),
+  makeSample('memory', 'Memory and modulo', 'Stores a 16-bit product in RAM, reloads it, and computes its remainder modulo 97.', 'LDI A, 300\nLDI B, 200\nMUL A, B\nSTR A, 48\nLDI A, 0\nLDR A, 48\nLDI C, 97\nMOD A, C\nOUT A\nHLT', 'const slot = 48;\nlet value = 300;\nlet multiplier = 200;\nlet divisor = 97;\nvalue *= multiplier;\nmemory[slot] = value;\nvalue = memory[slot];\nvalue %= divisor;\noutput(value);\nhalt();'),
 ];
 
 const sessions = new Map();
