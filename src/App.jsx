@@ -14,7 +14,6 @@ import { GiNotebook } from "react-icons/gi";
 import { SiMarkdown } from "react-icons/si";
 import ActionButtonStudio from "./ActionButtonStudio.jsx";
 import ApiCheck from "./ApiCheck.jsx";
-import AsmrPromptDrawer from "./AsmrPromptDrawer.jsx";
 import BengaliTutor from "./BengaliTutor.jsx";
 import ChatBookApp from "./ChatBookApp.jsx";
 import ChatGPTDual from "./ChatGPTDual.jsx";
@@ -26,7 +25,6 @@ import FlashCardApp from "./FlashCardApp.jsx";
 import Home from "./Home.jsx";
 import HtmlBuilder from "./HtmlBuilder.jsx";
 import IframeDrawer from "./IframeDrawer.jsx";
-import JSConsoleGenerator from "./JSConsoleGenerator.jsx";
 import LargeTextChunks from "./LargeTextChunks.jsx";
 import LoopingTTS from "./LoopingTTS.jsx";
 import MarkdownViewer from "./MarkdownViewer.jsx";
@@ -41,7 +39,6 @@ import Teleprompter from "./Teleprompter.jsx";
 import TextSelectionTooltip from "./TextSelectionTooltip.jsx";
 import TypingTest from "./TypingText.jsx";
 import WebBrowser from "./WebBrowser.jsx";
-import Wiki from "./Wiki.jsx";
 import YouTubeTranscript from "./YouTubeTranscript.jsx";
 import { actions, useAppDispatch, useAppState } from "./context/AppContext.jsx";
 import AppHeader from "./ui/AppHeader.jsx";
@@ -60,13 +57,11 @@ function AppContent() {
   const state = useAppState();
   const {
     drawerStack,
-    isAsmrOpen,
     isChat2Open,
     isChatBookOpen,
     isChatOpen,
     isHtmlBuilderOpen,
     isIframeOpen,
-    isJSGeneratorOpen,
     isLargeTextOpen,
     isMarkdownViewerOpen,
     isPlantUMLOpen,
@@ -93,14 +88,12 @@ function AppContent() {
     isTeleprompterOpen ||
     isPlantUMLOpen ||
     isPodcastTTSOpen ||
-    isJSGeneratorOpen ||
     isChatBookOpen ||
     isYouTubeOpen ||
     isHtmlBuilderOpen ||
     isTypingOpen ||
     isIframeOpen ||
     isLargeTextOpen ||
-    isAsmrOpen ||
     isMarkdownViewerOpen
   );
 
@@ -136,14 +129,12 @@ function AppContent() {
           <Route path="/progressBar" element={<ProgressBar progress={100} />} />
           <Route path="/chatTemplate" element={<ChatTemplate />} />
           <Route path="/youTubeTranscript" element={<YouTubeTranscript />} />
-          <Route path="/wiki" element={<Wiki />} />
           <Route path="/htmlBuilder" element={<HtmlBuilder />} />
           <Route path="/webBrowser" element={<WebBrowser />} />
           <Route path="/Quran" element={<Quran />} />
           <Route path="/typingTest" element={<TypingTest />} />
           <Route path="/flashCards" element={<FlashCardApp />} />
           <Route path="/plantUML" element={<PlantUMLViewer />} />
-          <Route path="/jsGenerator" element={<JSConsoleGenerator />} />
           <Route path="/bengali" element={<BengaliTutor />} />
           <Route path="/coding" element={<CodingProblems />} />
           <Route path="/cpu-simulator" element={<Suspense fallback={null}><CpuSimulatorWithOutputHistory /></Suspense>} />
@@ -160,7 +151,7 @@ function AppContent() {
         isOpen={isToolLauncherOpen}
         onToggle={() => setIsToolLauncherOpen((current) => !current)}
         onClose={() => setIsToolLauncherOpen(false)}
-        hidden={anyDrawerOpen || isAsmrOpen}
+        hidden={anyDrawerOpen}
       />
 
       <SideDrawer isOpen={isChatOpen} isFullWidth={isFullWidth} stack={drawerStack} currentKey="chat" title="AI Chat" onClose={() => setPanel(actions.setIsChatOpen, false)}>
@@ -182,10 +173,8 @@ function AppContent() {
       <SideDrawer isOpen={isHtmlBuilderOpen} isFullWidth={isFullWidth} stack={drawerStack} currentKey="html" title="HTML Builder" onToggleWidth={toggleWidth} onClose={() => setPanel(actions.setIsHtmlBuilderOpen, false)}><HtmlBuilder /></SideDrawer>
       <SideDrawer isOpen={isTypingOpen} isFullWidth={isFullWidth} stack={drawerStack} currentKey="typing" title="Typing Test" onToggleWidth={toggleWidth} onClose={() => setPanel(actions.setIsTypingOpen, false)}><TypingTest /></SideDrawer>
       <SideDrawer isOpen={isYouTubeOpen} isFullWidth={isFullWidth} stack={drawerStack} currentKey="youtube" title="YouTube Transcript" onToggleWidth={toggleWidth} onClose={() => setPanel(actions.setIsYouTubeOpen, false)}><YouTubeTranscript /></SideDrawer>
-      <SideDrawer isOpen={isJSGeneratorOpen} isFullWidth={isFullWidth} stack={drawerStack} currentKey="jsgen" title="JavaScript Generator" onToggleWidth={toggleWidth} onClose={() => setPanel(actions.setIsJSGeneratorOpen, false)}><JSConsoleGenerator /></SideDrawer>
       <SideDrawer isOpen={isChatBookOpen} isFullWidth={isFullWidth} stack={drawerStack} currentKey="chatbook" title="Chat Book" onToggleWidth={toggleWidth} onClose={() => setPanel(actions.setIsChatBookOpen, false)}><ChatBookApp /></SideDrawer>
       <SideDrawer isOpen={isLargeTextOpen} isFullWidth={isFullWidth} stack={drawerStack} currentKey="large" title="Text Chunker" onToggleWidth={toggleWidth} onClose={() => setPanel(actions.setIsLargeTextOpen, false)}><LargeTextChunks /></SideDrawer>
-      <SideDrawer isOpen={isAsmrOpen} isFullWidth={isFullWidth} stack={drawerStack} currentKey="asmr" title="ASMR Typeout" onToggleWidth={toggleWidth} onClose={() => setPanel(actions.setIsAsmrOpen, false)}><AsmrPromptDrawer /></SideDrawer>
       <SideDrawer isOpen={isChat2Open} isFullWidth={isFullWidth} stack={drawerStack} currentKey="chat2" title="Dual Chat" onToggleWidth={toggleWidth} onClose={() => setPanel(actions.setIsChat2Open, false)}><ChatGPTDual isOpen /></SideDrawer>
       <SideDrawer isOpen={isMarkdownViewerOpen} isFullWidth={isFullWidth} stack={drawerStack} currentKey="markdown" title="Markdown Viewer" onToggleWidth={toggleWidth} onClose={() => setPanel(actions.setIsMarkdownViewerOpen, false)}><MarkdownViewer /></SideDrawer>
 
