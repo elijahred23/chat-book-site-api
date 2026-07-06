@@ -31,7 +31,6 @@ import MarkdownViewer from "./MarkdownViewer.jsx";
 import MediaPlayer from "./MediaPlayer.jsx";
 import PdfToText from "./PdfToText.jsx";
 import PlantUMLViewer from "./PlantUML.jsx";
-import PodcastTTSPlayer from "./PodcastTTSPlayer.jsx";
 import ProgressBar from "./ui/ProgressBar.jsx";
 import Quran from "./Quran.jsx";
 import SystemDesignPrep from "./SystemDesignPrep.jsx";
@@ -65,7 +64,6 @@ function AppContent() {
     isLargeTextOpen,
     isMarkdownViewerOpen,
     isPlantUMLOpen,
-    isPodcastTTSOpen,
     isTTSOpen,
     isTeleprompterOpen,
     isTypingOpen,
@@ -87,7 +85,6 @@ function AppContent() {
     isTTSOpen ||
     isTeleprompterOpen ||
     isPlantUMLOpen ||
-    isPodcastTTSOpen ||
     isChatBookOpen ||
     isYouTubeOpen ||
     isHtmlBuilderOpen ||
@@ -169,7 +166,6 @@ function AppContent() {
       <SideDrawer isOpen={isTTSOpen} isFullWidth={isFullWidth} stack={drawerStack} currentKey="tts" title="Text to Speech" onToggleWidth={toggleWidth} onClose={() => setPanel(actions.setIsTTSOpen, false)}><LoopingTTS /></SideDrawer>
       <SideDrawer isOpen={isTeleprompterOpen} isFullWidth={isFullWidth} stack={drawerStack} currentKey="teleprompter" title="Teleprompter" onToggleWidth={toggleWidth} onClose={() => setPanel(actions.setIsTeleprompterOpen, false)}><Teleprompter /></SideDrawer>
       <SideDrawer isOpen={isPlantUMLOpen} isFullWidth={isFullWidth} stack={drawerStack} currentKey="plantuml" title="PlantUML Viewer" onToggleWidth={toggleWidth} onClose={() => setPanel(actions.setIsPlantUMLOpen, false)}><PlantUMLViewer /></SideDrawer>
-      <SideDrawer isOpen={isPodcastTTSOpen} isFullWidth={isFullWidth} stack={drawerStack} currentKey="podcast" title="Podcast TTS" onToggleWidth={toggleWidth} onClose={() => setPanel(actions.setIsPodcastTTSOpen, false)}><PodcastTTSPlayer /></SideDrawer>
       <SideDrawer isOpen={isHtmlBuilderOpen} isFullWidth={isFullWidth} stack={drawerStack} currentKey="html" title="HTML Builder" onToggleWidth={toggleWidth} onClose={() => setPanel(actions.setIsHtmlBuilderOpen, false)}><HtmlBuilder /></SideDrawer>
       <SideDrawer isOpen={isTypingOpen} isFullWidth={isFullWidth} stack={drawerStack} currentKey="typing" title="Typing Test" onToggleWidth={toggleWidth} onClose={() => setPanel(actions.setIsTypingOpen, false)}><TypingTest /></SideDrawer>
       <SideDrawer isOpen={isYouTubeOpen} isFullWidth={isFullWidth} stack={drawerStack} currentKey="youtube" title="YouTube Transcript" onToggleWidth={toggleWidth} onClose={() => setPanel(actions.setIsYouTubeOpen, false)}><YouTubeTranscript /></SideDrawer>
