@@ -9,6 +9,12 @@ module.exports = {
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
   parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
+  overrides: [
+    {
+      files: ['api/**/*.js'],
+      env: { node: true, es2022: true },
+    },
+  ],
   settings: { react: { version: '18.2' } },
   plugins: ['react-refresh'],
   rules: {
