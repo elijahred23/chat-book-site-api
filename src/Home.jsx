@@ -7,7 +7,7 @@ import { Page, PageHeader } from "./ui/Page";
 const destinations = [
   { to: "/flashCards", icon: FaLayerGroup, title: "Flash cards", text: "Build, refine, and review study cards." },
   { to: "/coding", icon: FaCode, title: "Coding practice", text: "Work through guided programming problems." },
-  { to: "/cpu-simulator", icon: FaMicrochip, title: "CPU simulator", text: "Step through a 16-bit processor one clock pulse at a time." },
+  { to: "/cpu-simulator", icon: FaMicrochip, title: "CPU simulator", text: "Step through a 32-bit processor one clock pulse at a time." },
   { to: "/system-design", icon: FaBookOpen, title: "System design", text: "Study concepts and structured design exercises." },
   { to: "/media-player", icon: FaPlay, title: "Media player", text: "Practice with focused playback controls." },
 ];

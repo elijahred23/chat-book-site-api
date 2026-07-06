@@ -1,59 +1,62 @@
 /* eslint-disable react/prop-types */
 import { useCallback, useEffect, useRef, useState } from "react";
-import { createLocalSimulation, samplePrograms } from "../shared/cpuSimulator.js";
+import { createLocalSimulation, LED_DISPLAY_COLUMNS, LED_DISPLAY_ROWS, LED_DISPLAY_START, MEMORY_SIZE, samplePrograms } from "../shared/cpuSimulator.js";
 import "./CpuSimulator.css";
 
 const instructionRows = [
-  ["00000", "NOP", "No operation"], ["00001", "LDI r,n", "Load 9-bit immediate"],
-  ["00010", "LDR r,a", "r ← RAM[a]"], ["00011", "STR r,a", "RAM[a] ← r"],
-  ["00100", "MOV r,s", "Copy register"], ["00101", "ADD r,s", "r ← r + s"],
-  ["00110", "SUB r,s", "r ← r − s"], ["00111", "MUL r,s", "r ← r × s"],
-  ["01000", "AND r,s", "Bitwise AND"], ["01001", "OR r,s", "Bitwise OR"],
-  ["01010", "XOR r,s", "Bitwise XOR"], ["01011", "NOT r", "Invert 16 bits"],
-  ["01100", "SHL r", "Shift left"], ["01101", "SHR r", "Shift right"],
-  ["01110", "INC r", "Increment"], ["01111", "DEC r", "Decrement"],
-  ["10000", "CMP r,s", "Compare and set flags"], ["10001", "JMP a", "Unconditional jump"],
-  ["10010", "JZ a", "Jump if zero"], ["10011", "JNZ a", "Jump if not zero"],
-  ["10100", "JC a", "Jump if carry"], ["10101", "JN a", "Jump if negative"],
-  ["10110", "OUT r", "Output register"], ["10111", "PUSH r", "Push onto stack"],
-  ["11000", "POP r", "Pop from stack"], ["11001", "CALL a", "Call subroutine"],
-  ["11010", "RET", "Return from call"], ["11011", "HLT", "Stop clock"],
-  ["11100", "MOD r,s", "Unsigned remainder"], ["11101", "LUI r,n", "Load upper byte"],
-  ["11110", "ADDI r,n", "Add immediate"], ["11111", "SUBI r,n", "Subtract immediate"],
+  ["000000", "NOP", "No operation"], ["000001", "LDI r,n", "Load 22-bit immediate"],
+  ["000010", "LDR r,a", "r ← RAM[a]"], ["000011", "STR r,a", "RAM[a] ← r"],
+  ["000100", "MOV r,s", "Copy register"], ["000101", "ADD r,s", "r ← r + s"],
+  ["000110", "SUB r,s", "r ← r − s"], ["000111", "MUL r,s", "r ← r × s"],
+  ["001000", "AND r,s", "Bitwise AND"], ["001001", "OR r,s", "Bitwise OR"],
+  ["001010", "XOR r,s", "Bitwise XOR"], ["001011", "NOT r", "Invert 32 bits"],
+  ["001100", "SHL r", "Shift left"], ["001101", "SHR r", "Shift right"],
+  ["001110", "INC r", "Increment"], ["001111", "DEC r", "Decrement"],
+  ["010000", "CMP r,s", "Compare and set flags"], ["010001", "JMP a", "Unconditional jump"],
+  ["010010", "JZ a", "Jump if zero"], ["010011", "JNZ a", "Jump if not zero"],
+  ["010100", "JC a", "Jump if carry"], ["010101", "JN a", "Jump if negative"],
+  ["010110", "OUT r", "Output register"], ["010111", "PUSH r", "Push onto stack"],
+  ["011000", "POP r", "Pop from stack"], ["011001", "CALL a", "Call subroutine"],
+  ["011010", "RET", "Return from call"], ["011011", "HLT", "Stop clock"],
+  ["011100", "MOD r,s", "Unsigned remainder"], ["011101", "LUI r,n", "Load upper 16 bits"],
+  ["011110", "ADDI r,n", "Add immediate"], ["011111", "SUBI r,n", "Subtract immediate"],
+  ["100000", "DIV r,s", "Unsigned division"], ["100001", "ROL r", "Rotate left"],
+  ["100010", "ROR r", "Rotate right"], ["100011", "NEG r", "Two's-complement negate"],
+  ["100100", "LDRI r,s", "r ← RAM[s & 0xFF]"], ["100101", "STRI r,s", "RAM[s & 0xFF] ← r"],
 ];
 
 const languageHelp = {
-  binary: "Enter one or more 16-bit instruction words per line.",
+  binary: "Enter one or more 32-bit instruction words per line.",
   assembly: "Use mnemonics, decimal or hex operands, and labels such as loop: or done:.",
-  simple: "MiniScript is strongly typed and supports fixed arrays, u16/bool values, classes, methods, and control flow.",
+  simple: "MiniScript is strongly typed and supports fixed arrays, u32/bool values, classes, methods, and control flow.",
 };
 
 const syntaxGuideSections = [
   {
     title: "Binary",
-    summary: "Raw 16-bit machine words for direct loading.",
+    summary: "Raw 32-bit machine words for direct loading.",
     highlights: [
-      "Every token must be exactly 16 binary digits.",
+      "Every token must be exactly 32 binary digits.",
       "You can put multiple words on one line separated by spaces or commas.",
       "Comments use #, ;, or //.",
-      "The simulator accepts up to 64 words.",
+      "The simulator accepts up to 256 words.",
       "Binary mode has no labels, mnemonics, or hex literals.",
     ],
     examples: [
-      "0000100000000011",
-      "1011000000000000",
-      "1110100000000000",
+      "00000100000000000000000000000011",
+      "01011000000000000000000000000000",
+      "01101100000000000000000000000000",
     ],
   },
   {
     title: "Assembly",
-    summary: "Mnemonic source that assembles into the same 16-bit words.",
+    summary: "Mnemonic source that assembles into the same 32-bit words.",
     highlights: [
       "Registers are A, B, C, and D.",
       "Supported number formats: decimal, 0x hex, or $ hex.",
       "Labels use a trailing colon, like loop: or done:.",
-      ".word and DW emit raw 16-bit values.",
-      "Instruction shapes are none, one register, two registers, register + address, register + immediate, or register + byte.",
+      ".word and DW emit raw 32-bit values.",
+      "Instruction shapes are none, one register, two registers, register + address, register + immediate, or register + upper half.",
     ],
     examples: [
       "start:\nLDI A, 10\nOUT A\nHLT",
@@ -65,33 +68,33 @@ const syntaxGuideSections = [
     title: "MiniScript",
     summary: "A strongly typed, JavaScript-like layer that compiles to assembly.",
     highlights: [
-      "Declarations must be typed: let count: u16 = 3; or const limit: u16 = 10;",
+      "Declarations must be typed: let count: u32 = 3; or const limit: u32 = 10;",
       "Methods are typed and currently return void only.",
       "Class fields, constructors, methods, and this are supported.",
-      "Array types are fixed-size: u16[N] and bool[N].",
-      "Built-ins: output(value), print(value), halt(), stop(), push(value), pop(target), and nop().",
+      "Array types are fixed-size: u32[N] and bool[N].",
+      "Built-ins include output, halt, push/pop, nop, rol/ror, and neg.",
     ],
     examples: [
-      "let count: u16 = 5;\nwhile (count !== 0) {\n  output(count);\n  count--;\n}",
-      "class Counter {\n  value: u16;\n  constructor(start: u16) { this.value = start; }\n}",
-      "let values: u16[3] = [10, 20, 30];\nvalues[1]++;",
+      "let count: u32 = 5;\nwhile (count !== 0) {\n  output(count);\n  count--;\n}",
+      "class Counter {\n  value: u32;\n  constructor(start: u32) { this.value = start; }\n}",
+      "let values: u32[3] = [10, 20, 30];\nvalues[1]++;",
     ],
   },
   {
     title: "Types and expressions",
     summary: "The value system and operators supported by the compiler.",
     highlights: [
-      "Primitive types: u16, bool, and void for methods.",
+      "Primitive types: u32, bool, and void for methods.",
       "Boolean literals: true and false.",
       "Numeric literals can be decimal or hex, and compile-time constants may be used where a constant is required.",
-      "Arithmetic and bitwise operators: +, -, *, %, &, |, ^.",
+      "Arithmetic and bitwise operators: +, -, *, /, %, &, |, ^.",
       "Boolean operators: !, &&, ||.",
       "Comparison operators: ==, ===, !=, !==.",
       "Compound assignments are supported for variables, object fields, memory, and array elements where the type allows it.",
       "Update operators ++ and -- are supported on variables, fields, memory cells, and array elements.",
     ],
     examples: [
-      "let mask: u16 = 0x00FF;\nlet flag: bool = true;\nif (!flag || mask === 0) { halt(); }",
+      "let mask: u32 = 0x00FF;\nlet flag: bool = true;\nif (!flag || mask === 0) { halt(); }",
       "count += 1;\nvalue ^= mask;\nvalue &= 0x0FFF;",
       "if (left === right) { output(1); } else { output(0); }",
     ],
@@ -104,22 +107,27 @@ const syntaxGuideSections = [
       "Methods are inlined during compilation and can access this.",
       "Arrays are fixed-size, live in high memory, and support .length.",
       "Array indexing must use a named array and a compile-time constant index.",
-      "memory[address] reads or writes RAM at a compile-time address.",
+      "memory[address] accepts a constant or a u32 variable; runtime addresses use their low 8 bits.",
+      "The 32×32 LED display uses addresses 224–255 as rows; bit 31 is the left pixel and bit 0 is the right pixel.",
+      "Storing a word in an LED address also writes normal RAM, while reset clears the display.",
       "Arrays and push/pop share high memory, so the compiler rejects programs that combine them.",
     ],
     examples: [
-      "class Counter {\n  value: u16;\n  constructor(start: u16) { this.value = start; }\n  method add(amount: u16): void { this.value += amount; }\n}",
-      "let values: u16[4] = [7, 11, 13, 17];\nvalues[2]++;\noutput(values.length);",
-      "const slot: u16 = 48;\nmemory[slot] = 1234;\noutput(memory[slot]);",
+      "class Counter {\n  value: u32;\n  constructor(start: u32) { this.value = start; }\n  method add(amount: u32): void { this.value += amount; }\n}",
+      "let values: u32[4] = [7, 11, 13, 17];\nvalues[2]++;\noutput(values.length);",
+      "const slot: u32 = 128;\nmemory[slot] = 1234;\noutput(memory[slot]);",
+      "let row: u32 = 224;\nmemory[row] = 0xAAAAAAAA;\nrow++;\nmemory[row] = 0x55555555;",
+      "memory[224] = 0xFFFFFFFF; // light row 0\nmemory[225] = 0x80000001; // light both edges of row 1",
     ],
   },
   {
     title: "Instruction set",
     summary: "Every opcode the binary and assembly front-ends can emit.",
     highlights: [
-      "Binary and assembly both target the same 32 opcodes.",
+      "The 6-bit opcode field currently defines 38 instructions and leaves room for 26 more.",
       "Conditional branches depend on the CPU zero, carry, or negative flags.",
       "PUSH, POP, CALL, and RET use the hardware stack.",
+      "LDRI and STRI use a register as a dynamic memory address.",
       "LUI and ADDI/SUBI support compact immediate forms.",
       "HLT stops the clock until reset or reload.",
     ],
@@ -141,7 +149,7 @@ const syntaxGuideText = syntaxGuideSections.map((section) => {
   return blocks.join("\n");
 }).join("\n\n");
 
-const hex = (value) => `0x${value.toString(16).toUpperCase().padStart(4, "0")}`;
+const hex = (value) => `0x${(value >>> 0).toString(16).toUpperCase().padStart(8, "0")}`;
 const hexAddress = (value) => `0x${value.toString(16).toUpperCase().padStart(2, "0")}`;
 const hexOpcode = (value) => `0x${Number.parseInt(value, 2).toString(16).toUpperCase().padStart(2, "0")}`;
 
@@ -167,7 +175,7 @@ function Register({ label, value, active, hint }) {
     <div className={`cpu-register ${active ? "active" : ""}`}>
       <div className="cpu-register__heading"><span>{label}</span><small>{hint}</small></div>
       <strong>{hex(value)}</strong>
-      <div className="cpu-register__values"><span>16-bit hex</span><span>{value} decimal</span></div>
+      <div className="cpu-register__values"><span>32-bit hex</span><span>{value} decimal</span></div>
     </div>
   );
 }
@@ -197,6 +205,29 @@ function EventCard({ event }) {
       <h3>{event.title}</h3><p>{event.detail}</p>
       {event.signals.length > 0 && <div className="cpu-signals" aria-label="Active control signals">{event.signals.map((signal) => <span key={signal}>{signal}</span>)}</div>}
     </article>
+  );
+}
+
+function LedDisplay({ state }) {
+  const activeRow = state.lastEvent.signals.includes("LED IN") ? state.memoryAddressRegister - LED_DISPLAY_START : -1;
+  const litCount = state.ledDisplay.reduce((total, word) => total + word.toString(2).replaceAll("0", "").length, 0);
+  return (
+    <section className="cpu-led-panel cpu-panel" aria-labelledby="cpu-led-title">
+      <div className="cpu-led-heading">
+        <div><span className="cpu-chip-icon">LED</span><div><h2 id="cpu-led-title">32×32 LED display</h2><p>Write rows to memory 0xE0–0xFF</p></div></div>
+        <span className="cpu-led-count">{litCount} / {LED_DISPLAY_ROWS * LED_DISPLAY_COLUMNS} lit</span>
+      </div>
+      <div className="cpu-led-screen" role="img" aria-label={`32 by 32 LED display with ${litCount} pixels lit`}>
+        {state.ledDisplay.map((word, row) => (
+          <div className={`cpu-led-row ${row === activeRow ? "active" : ""}`} key={row}>
+            <span>{hexAddress(LED_DISPLAY_START + row)}</span>
+            {Array.from({ length: LED_DISPLAY_COLUMNS }, (_, column) => (
+              <i className={word & (1 << (LED_DISPLAY_COLUMNS - column - 1)) ? "lit" : ""} key={column} />
+            ))}
+          </div>
+        ))}
+      </div>
+    </section>
   );
 }
 
@@ -354,7 +385,7 @@ function CpuExecutionModal({ state, running, busy, canStepBack, onClose, onStep,
             </g>
             <CircuitNode x={40} y={60} label="PC" value={hex(state.programCounter)} detail="PROGRAM COUNTER" active={componentActive("PC")} accent="lime" />
             <CircuitNode x={250} y={60} label="MAR" value={hex(state.memoryAddressRegister)} detail="MEMORY ADDRESS" active={componentActive("MAR")} />
-            <CircuitNode x={455} y={35} width={180} height={155} label="RAM · 64 WORDS" value={`[${hexAddress(state.memoryAddressRegister)}] ${hex(state.memory[state.memoryAddressRegister])}`} detail="16-BIT PROGRAM / DATA" active={memoryActive} accent="lime" />
+            <CircuitNode x={455} y={35} width={180} height={155} label="RAM · 256 WORDS" value={`[${hexAddress(state.memoryAddressRegister)}] ${hex(state.memory[state.memoryAddressRegister])}`} detail="32-BIT PROGRAM / DATA" active={memoryActive} accent="lime" />
             <CircuitNode x={800} y={60} label="OUT" value={hex(state.outputRegister)} detail="VISIBLE OUTPUT" active={componentActive("OUT")} accent="lime" />
             <CircuitNode x={250} y={240} label="IR" value={hex(state.instructionRegister)} detail={state.instruction?.mnemonic ?? "INSTRUCTION REGISTER"} active={componentActive("IR")} />
             <CircuitNode x={455} y={240} width={185} label="CONTROL UNIT" value={state.lastEvent.phase} detail={state.instruction?.mnemonic ?? "AWAITING FETCH"} active={controlActive} accent="lime" />
@@ -362,7 +393,7 @@ function CpuExecutionModal({ state, running, busy, canStepBack, onClose, onStep,
             <CircuitNode x={250} y={440} label="REGISTERS B–D" value={`${hex(state.registerB)} · ${hex(state.registerC)} · ${hex(state.registerD)}`} detail="GENERAL REGISTERS" active={["B", "C", "D"].some(componentActive)} />
             <CircuitNode x={455} y={390} width={185} label="ALU" value={aluActive ? state.lastEvent.title.replace("Executed ", "") : "IDLE"} detail="ARITHMETIC / LOGIC" active={aluActive} accent="orange" />
             <CircuitNode x={700} y={390} width={160} label="FLAGS" value={`Z${Number(state.zeroFlag)} C${Number(state.carryFlag)} N${Number(state.negativeFlag)} V${Number(state.overflowFlag)}`} detail="ZERO / CARRY / NEG / OVERFLOW" active={componentActive("FLAGS")} accent="orange" />
-            <text className="cpu-wire-label" x="205" y="96">ADDRESS</text><text className="cpu-wire-label" x="342" y="342">16-BIT DATA BUS</text><text className="cpu-wire-label" x="662" y="542">OUTPUT BUS</text>
+            <text className="cpu-wire-label" x="205" y="96">ADDRESS</text><text className="cpu-wire-label" x="342" y="342">32-BIT DATA BUS</text><text className="cpu-wire-label" x="662" y="542">OUTPUT BUS</text>
           </svg>
         </div>
         <footer className="cpu-modal-footer">
@@ -544,7 +575,7 @@ export default function CpuSimulator() {
   return (
     <div className={`cpu-sim ${showCpuModal || showSyntaxModal ? "circuit-open" : ""}`}>
       <header className="cpu-topbar">
-        <div className="cpu-brand"><span className="cpu-brand__mark">16</span><div><b>Clockwork</b><small>16-bit CPU laboratory</small></div></div>
+        <div className="cpu-brand"><span className="cpu-brand__mark">32</span><div><b>Clockwork</b><small>32-bit CPU laboratory</small></div></div>
         <div className="cpu-status-strip"><span className={`cpu-status-light ${running ? "live" : ""}`} /><span>{state?.halted ? "Halted" : running ? "Clock running" : state ? "Clock paused" : "Program not loaded"}</span><b>{state?.cycle ?? 0} cycles</b><ElapsedTime key={timerVersion} running={running} /></div>
       </header>
       <main className="cpu-main">
@@ -552,7 +583,7 @@ export default function CpuSimulator() {
         {error && <div className="cpu-error" role="alert"><b>Could not continue</b><span>{error}</span><button type="button" onClick={() => setError("")} aria-label="Dismiss error">×</button></div>}
         {!showCpuModal && <><div className="cpu-workbench">
           <aside className="cpu-program-panel cpu-panel">
-            <div className="cpu-panel-title"><span>01</span><div><h2>Program</h2><p>64 words maximum</p></div></div>
+            <div className="cpu-panel-title"><span>01</span><div><h2>Program</h2><p>256 words maximum</p></div></div>
             <label className="cpu-field-label" htmlFor="cpu-generation-prompt">Build with Gemini</label>
             <textarea className="cpu-prompt-input" id="cpu-generation-prompt" maxLength="2000" placeholder="Example: Count down from 10 and output each value" value={generationPrompt} onChange={(event) => setGenerationPrompt(event.target.value)} />
             <button className="cpu-generate-button" type="button" onClick={generate} disabled={generating || busy}>{generating ? "Generating & loading…" : "Generate & load"}</button>
@@ -568,7 +599,7 @@ export default function CpuSimulator() {
             <div className="cpu-language-actions">
               <button type="button" className="cpu-syntax-button" onClick={() => setShowSyntaxModal(true)}>Open syntax guide</button>
             </div>
-            {language === "simple" && <details className="cpu-language-guide"><summary>MiniScript syntax</summary><code>let count: u16 = 300;</code><code>let values: u16[3] = [10, 20, 30];</code><code>values[1]++; // constant index</code><code>class Counter {"{ value: u16; … }"}</code><code>let counter: Counter = new Counter(0);</code><code>counter.increment(1);</code></details>}
+            {language === "simple" && <details className="cpu-language-guide"><summary>MiniScript syntax</summary><code>let count: u32 = 300;</code><code>let values: u32[3] = [10, 20, 30];</code><code>values[1]++; // constant index</code><code>class Counter {"{ value: u32; … }"}</code><code>let counter: Counter = new Counter(0);</code><code>counter.increment(1);</code></details>}
             <button className="cpu-load-button" type="button" onClick={load} disabled={busy}>{busy ? "Compiling…" : state ? "Compile & load again" : "Compile & load"}</button>
             {compiled && <details className="cpu-compiled"><summary>View compiled output</summary>{language === "simple" && <><label>Assembly</label><pre>{compiled.assembly}</pre></>}<label>Machine code</label><pre>{compiled.machine}</pre></details>}
           </aside>
@@ -581,16 +612,16 @@ export default function CpuSimulator() {
             </div>
             {state ? <>
               <div className="cpu-board cpu-panel">
-                <div className="cpu-board-head"><div><span className="cpu-chip-icon">CPU</span><div><h2>16-bit processing unit</h2><p>Four registers · 16-bit data bus · hardware stack</p></div></div><div className="cpu-flags"><span className={state.zeroFlag ? "set" : ""}>Z <b>{Number(state.zeroFlag)}</b></span><span className={state.carryFlag ? "set" : ""}>C <b>{Number(state.carryFlag)}</b></span><span className={state.negativeFlag ? "set" : ""}>N <b>{Number(state.negativeFlag)}</b></span><span className={state.overflowFlag ? "set" : ""}>V <b>{Number(state.overflowFlag)}</b></span></div></div>
+                <div className="cpu-board-head"><div><span className="cpu-chip-icon">CPU</span><div><h2>32-bit processing unit</h2><p>Four registers · 32-bit data bus · hardware stack</p></div></div><div className="cpu-flags"><span className={state.zeroFlag ? "set" : ""}>Z <b>{Number(state.zeroFlag)}</b></span><span className={state.carryFlag ? "set" : ""}>C <b>{Number(state.carryFlag)}</b></span><span className={state.negativeFlag ? "set" : ""}>N <b>{Number(state.negativeFlag)}</b></span><span className={state.overflowFlag ? "set" : ""}>V <b>{Number(state.overflowFlag)}</b></span></div></div>
                 <div className="cpu-grid"><div className="cpu-register-bank">{state.registers.map((value, index) => <Register label={["A", "B", "C", "D"][index]} hint="GENERAL" value={value} active={activeSignals.some((signal) => signal.startsWith(`${["A", "B", "C", "D"][index]} `))} key={index} />)}<Register label="PC" hint="PROGRAM COUNTER" value={state.programCounter} active={activeSignals.some((signal) => signal.startsWith("PC "))} /><Register label="SP" hint="STACK POINTER" value={state.stackPointer} active={activeSignals.some((signal) => signal.startsWith("SP "))} /><Register label="IR" hint="INSTRUCTION" value={state.instructionRegister} active={activeSignals.some((signal) => signal.startsWith("IR "))} /><Register label="MAR" hint="MEMORY ADDRESS" value={state.memoryAddressRegister} active={activeSignals.some((signal) => signal.startsWith("MAR "))} /><Register label="OUT" hint="VISIBLE OUTPUT" value={state.outputRegister} active={activeSignals.includes("OUTPUT IN")} /></div><div className={`cpu-alu ${activeSignals.some((signal) => signal.startsWith("ALU")) ? "active" : ""}`}><small>Arithmetic logic unit</small><b>{state.instruction?.mnemonic ?? "ALU"}</b><div><span>A {hex(state.registerA)}</span><i>⇄</i><span>B {hex(state.registerB)}</span></div></div></div>
-                <div className="cpu-data-bus"><span>16-bit data bus</span><div className={activeSignals.length ? "flowing" : ""} /><b>{hex(state.instructionRegister)}</b></div>
-              </div><EventCard event={state.lastEvent} />
+                <div className="cpu-data-bus"><span>32-bit data bus</span><div className={activeSignals.length ? "flowing" : ""} /><b>{hex(state.instructionRegister)}</b></div>
+              </div><LedDisplay state={state} /><EventCard event={state.lastEvent} />
             </> : <div className="cpu-empty cpu-panel"><span>0x16</span><h2>Load a program to power the CPU</h2><p>Choose an example or write your own program, then compile it into memory.</p><button type="button" onClick={load}>Compile example</button></div>}
           </section>
 
           <aside className="cpu-memory-panel cpu-panel">
-            <div className="cpu-panel-title"><span>02</span><div><h2>Memory</h2><p>64 × 16-bit words</p></div></div>
-            {state ? <MemoryGrid state={state} /> : <div className="cpu-memory-grid disabled">{Array.from({ length: 64 }, (_, address) => <div className="cpu-memory-cell" key={address}><div className="cpu-memory-address"><span>{hexAddress(address)}</span></div><b>0x0000</b><small>0 decimal</small></div>)}</div>}
+            <div className="cpu-panel-title"><span>02</span><div><h2>Memory</h2><p>256 × 32-bit words</p></div></div>
+            {state ? <MemoryGrid state={state} /> : <div className="cpu-memory-grid disabled">{Array.from({ length: MEMORY_SIZE }, (_, address) => <div className="cpu-memory-cell" key={address}><div className="cpu-memory-address"><span>{hexAddress(address)}</span></div><b>0x00000000</b><small>0 decimal</small></div>)}</div>}
             <div className="cpu-memory-legend"><span><i className="pc" />Next PC</span><span><i className="mar" />MAR selected</span></div>
             <div className="cpu-history"><h3>Clock history</h3><Timeline events={history} /></div>
           </aside>
@@ -603,7 +634,7 @@ export default function CpuSimulator() {
       </main>
       {showCpuModal && state && <CpuExecutionModal state={state} running={running} busy={busy} canStepBack={undoCount > 0} onClose={() => setShowCpuModal(false)} onStep={step} onStepBack={stepBack} onToggleRunning={() => setRunning((value) => !value)} />}
       {showSyntaxModal && <CpuSyntaxModal onClose={() => setShowSyntaxModal(false)} />}
-      <footer className="cpu-footer"><span>Clockwork CPU Lab</span><p>A 16-bit architecture with 64 words of memory. Values wrap at 65,535.</p></footer>
+      <footer className="cpu-footer"><span>Clockwork CPU Lab</span><p>A 32-bit architecture with 256 words of memory. Values wrap at 4,294,967,295.</p></footer>
     </div>
   );
 }

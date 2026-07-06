@@ -138,45 +138,48 @@ async function generateGeminiResponse(msg, gemini_model = null) {
     }
 }
 
-const cpuProgramSystemInstruction = `You write programs for Clockwork, a small 16-bit educational CPU with 64 words of memory. Convert the user's request into one complete runnable program.
+const cpuProgramSystemInstruction = `You write programs for Clockwork, a small 32-bit educational CPU with 256 words of memory. Convert the user's request into one complete runnable program.
 
 Return JSON matching the supplied schema. The language must be binary, assembly, or simple, and code must contain only source code for that language (no Markdown fences or explanation). Prefer MiniScript (simple) for straightforward high-level requests and assembly when instruction-level control is useful. Use binary only when the user explicitly requests binary.
 
 ASSEMBLY SYNTAX
 - One instruction per line. Comments start with #, ;, or //. Labels use name: and may be jump/call operands.
-- Registers: A, B, C, D. The program may contain at most 64 encoded words.
+- Registers: A, B, C, D. The program may contain at most 256 encoded words.
 - Numbers are unsigned decimal, 0x-prefixed hexadecimal, or $-prefixed hexadecimal.
 - Instructions:
   NOP; HLT; RET
-  LDI reg, immediate (0..511); LUI reg, byte (0..255)
-  LDR reg, address; STR reg, address (addresses 0..63)
+  LDI reg, immediate (0..4194303); LUI reg, upperHalf (0..65535)
+  LDR reg, address; STR reg, address (addresses 0..255)
   MOV reg, reg
-  ADD/SUB/MUL/MOD/AND/OR/XOR/CMP reg, reg
-  ADDI/SUBI reg, immediate (0..511)
-  NOT/SHL/SHR/INC/DEC/OUT/PUSH/POP reg
+  ADD/SUB/MUL/DIV/MOD/AND/OR/XOR/CMP reg, reg
+  LDRI destinationReg, addressReg; STRI sourceReg, addressReg (uses the low 8 address bits)
+  ADDI/SUBI reg, immediate (0..4194303)
+  NOT/SHL/SHR/ROL/ROR/NEG/INC/DEC/OUT/PUSH/POP reg
   JMP/JZ/JNZ/JC/JN/CALL address-or-label
-  .WORD value or DW value (0..65535)
-- OUT copies a register to the visible output. End with HLT. Values wrap to unsigned 16 bits.
+  .WORD value or DW value (0..4294967295)
+- OUT copies a register to the visible output. End with HLT. Values wrap to unsigned 32 bits.
+- A 32×32 monochrome LED display is write-mapped to addresses 224..255. STR to address 224 updates row 0, address 225 updates row 1, and so on. Bit 31 controls the left pixel and bit 0 controls the right pixel. Load a 32-bit row with LDI/LUI, then STR it to the row address.
 
 MINISCRIPT SYNTAX (language "simple")
 - JavaScript-like statements. End statements with semicolons. Comments use //, /* */, or #.
 - MiniScript is strongly typed. Every declaration uses let name: Type = expression; or const name: Type = constantExpression; There are no implicit conversions.
-- Primitive types are u16 and bool. Methods return void. u16 values are unsigned integers 0..65535; decimal and 0x hexadecimal literals are supported.
+- Primitive types are u32 and bool. Methods return void. u32 values are unsigned integers 0..4294967295; decimal and 0x hexadecimal literals are supported.
 - A maximum of four runtime primitive values or object fields may exist because they map to registers A-D. Constants do not consume registers.
-- Fixed arrays use let values: u16[3] = [10, 20, 30]; or bool[N]. They live in reserved high memory, expose values.length, and support indexed reads, assignments, compound assignments, ++, and --. Indices must be compile-time constants. Arrays cannot be combined with push/pop.
-- Classes support typed fields, one typed constructor, and typed methods: class Counter { value: u16; constructor(start: u16) { this.value = start; } method add(step: u16): void { this.value += step; } }
+- Fixed arrays use let values: u32[3] = [10, 20, 30]; or bool[N]. They live in reserved high memory, expose values.length, and support indexed reads, assignments, compound assignments, ++, and --. Indices must be compile-time constants. Arrays cannot be combined with push/pop.
+- Classes support typed fields, one typed constructor, and typed methods: class Counter { value: u32; constructor(start: u32) { this.value = start; } method add(step: u32): void { this.value += step; } }
 - Construct objects with let counter: Counter = new Counter(0);. Access fields with counter.value and call methods with counter.add(1);. Methods are inlined, cannot return values, and cannot declare local variables.
-- Assignments: x = value; x = memory[constantAddress]; memory[constantAddress] = x;
-- Updates: x++; x--; x += value; x -= value; x *= value; x %= value; x &= value; x |= value; x ^= value.
-- Runtime binary assignment must keep the destination on the left, for example x = x + y. Supported operators are +, -, *, %, &, |, ^.
+- Assignments can target variables or memory, for example x = memory[address]; or memory[address] = x;. A memory address may be a constant or u32 variable; runtime addresses use their low 8 bits and compile to LDRI/STRI.
+- Updates: x++; x--; x += value; x -= value; x *= value; x /= value; x %= value; x &= value; x |= value; x ^= value.
+- Runtime binary assignment must keep the destination on the left, for example x = x + y. Supported operators are +, -, *, /, %, &, |, ^.
 - Control flow: if (condition) { ... } else { ... }; while (condition) { ... }; break; continue.
 - Conditions must be bool and support !, &&, ||, ==, ===, !=, !==. Runtime comparisons are equality/inequality only. The built-in flag names carry, zero, and negative are bool.
-- Functions: output(variable), halt(), push(variable), pop(variable), nop(). print and stop are aliases for output and halt.
-- Memory addresses must be compile-time constants from 0..63. Add halt() at the end.
+- Functions: output(variable), halt(), push(variable), pop(variable), nop(), rol(variable), ror(variable), and neg(variable). rotateLeft and rotateRight alias rol and ror; print and stop alias output and halt.
+- Constant memory addresses must be in 0..255; runtime address variables use their low 8 bits. Add halt() at the end.
+- The LED display uses memory[224] through memory[255] as rows 0 through 31. Assign a 32-bit row pattern to those addresses; bit 31 is leftmost and bit 0 is rightmost. Do not declare arrays in LED programs because arrays also reserve high memory.
 
 BINARY SYNTAX
-- Each non-comment token must be exactly 16 binary digits. Use one word per line and no address prefixes.
-- Binary programs must encode the same instruction set and fit in 64 words.
+- Each non-comment token must be exactly 32 binary digits. Use one word per line and no address prefixes.
+- Binary programs must encode the same instruction set and fit in 256 words.
 
 Make the smallest program that clearly fulfills the request. Ensure every referenced variable or label is declared, every loop can terminate when requested, and the program compiles under the syntax above.`;
 
