@@ -62,8 +62,6 @@ export default function FlashCardTable({ cards, setCards, COLORS }) {
       "isTeleprompterOpen",
       "isTTSOpen",
       "isPlantUMLOpen",
-      "isPodcastTTSOpen",
-      "isJSGeneratorOpen",
       "isChatBookOpen",
       "isArchitectureOpen",
       "isYouTubeOpen",
@@ -219,15 +217,10 @@ export default function FlashCardTable({ cards, setCards, COLORS }) {
             key={key}
             type="button"
             disabled={disabled}
-            onClick={(event) => {
-              event.stopPropagation();
-              if (isBulk) applyAll(key);
-              else runTransform(index, key);
-            }}
-            title={isBulk ? `${title} for every shorter answer` : title}
-            aria-label={isBulk ? `${title} for all cards` : title}
+            onClick={() => (isBulk ? applyAll(key) : runTransform(index, key))}
+            title={title}
           >
-            {loading ? <ClipLoader size={12} color="currentColor" /> : <Icon aria-hidden="true" />}
+            {loading ? <ClipLoader size={14} /> : <Icon />}
             <span>{label}</span>
           </button>
         );
@@ -236,190 +229,121 @@ export default function FlashCardTable({ cards, setCards, COLORS }) {
   );
 
   return (
-    <section
-      className="flash-manage"
-      style={{
-        "--manage-text": COLORS?.text || "#172033",
-        "--manage-border": COLORS?.border || "#dfe3eb",
-        paddingBottom: !anyDrawerOpen && toolbarVisible ? "7.5rem" : "1.5rem",
-      }}
-    >
-      <header className="flash-manage-header">
-        <div>
-          <span className="flash-manage-eyebrow">Deck manager</span>
-          <h2>Review and refine</h2>
-          <p>Edit cards, improve answers with AI, or select cards to use elsewhere.</p>
-        </div>
-        <span className="flash-manage-count">{cards.length} {cards.length === 1 ? "card" : "cards"}</span>
-      </header>
-
-      {cards.length > 0 && (
-        <div className="flash-manage-tools">
-          <label className="flash-manage-search">
-            <FaSearch aria-hidden="true" />
-            <span className="ui-sr-only">Search cards</span>
-            <input
-              type="search"
-              value={query}
-              onChange={(event) => setQuery(event.target.value)}
-              placeholder="Search questions and answers"
-            />
-            {query && (
-              <button type="button" onClick={() => setQuery("")} aria-label="Clear search">
-                <FaTimes />
-              </button>
-            )}
-          </label>
-          <button className="flash-manage-select" type="button" onClick={toggleSelectVisible}>
-            {allVisibleSelected ? "Clear visible" : "Select visible"}
-          </button>
-        </div>
-      )}
-
-      {cards.length === 0 ? (
-        <div className="flash-manage-empty">
-          <FaBookOpen aria-hidden="true" />
-          <h3>No cards in this deck</h3>
-          <p>Add or generate cards to start managing them here.</p>
-        </div>
-      ) : visibleCards.length === 0 ? (
-        <div className="flash-manage-empty is-compact">
-          <FaSearch aria-hidden="true" />
-          <h3>No matching cards</h3>
-          <button type="button" onClick={() => setQuery("")}>Clear search</button>
-        </div>
-      ) : (
-        <div className="flash-manage-list">
-          <div className="flash-manage-list-head" aria-hidden="true">
-            <span>Question</span><span>Answer</span><span>Actions</span>
-          </div>
-          {visibleCards.map(({ card, index }) => {
-            const selected = selectedSet.has(index);
-            const editing = editingIndex === index;
-            return (
-              <article className={`flash-manage-card ${selected ? "is-selected" : ""}`} key={index}>
-                <label className="flash-card-selector" title={selected ? "Deselect card" : "Select card"}>
-                  <input
-                    type="checkbox"
-                    checked={selected}
-                    onChange={() => toggleCardSelection(index)}
-                    aria-label={`${selected ? "Deselect" : "Select"} card ${index + 1}`}
-                  />
-                  <span>{index + 1}</span>
-                </label>
-
-                {editing ? (
-                  <div className="flash-manage-edit-fields">
-                    <label>
-                      <span>Question</span>
-                      <textarea
-                        value={draft.question}
-                        onChange={(event) => setDraft((current) => ({ ...current, question: event.target.value }))}
-                        rows={3}
-                      />
-                    </label>
-                    <label>
-                      <span>Answer</span>
-                      <textarea
-                        value={draft.answer}
-                        onChange={(event) => setDraft((current) => ({ ...current, answer: event.target.value }))}
-                        rows={5}
-                      />
-                    </label>
-                  </div>
-                ) : (
-                  <>
-                    <div className="flash-manage-copy">
-                      <span className="flash-mobile-label">Question</span>
-                      <p>{card.question}</p>
-                    </div>
-                    <div className="flash-manage-copy is-answer">
-                      <span className="flash-mobile-label">Answer</span>
-                      <p>{card.answer}</p>
-                      <span className="flash-sentence-count">{sentenceCount(card.answer)} {sentenceCount(card.answer) === 1 ? "sentence" : "sentences"}</span>
-                    </div>
-                  </>
-                )}
-
-                <div className="flash-manage-card-actions">
-                  {editing ? (
-                    <>
-                      <button
-                        className="flash-card-action is-save"
-                        type="button"
-                        onClick={saveEditing}
-                        disabled={!draft.question.trim() || !draft.answer.trim()}
-                      ><FaCheck /> Save</button>
-                      <button className="flash-card-action" type="button" onClick={() => setEditingIndex(null)}>
-                        <FaTimes /> Cancel
-                      </button>
-                    </>
-                  ) : (
-                    <>
-                      <button className="flash-card-action" type="button" onClick={() => startEditing(index)}>
-                        <FaEdit /> Edit
-                      </button>
-                      {renderExpansionButtons(index, card.answer)}
-                    </>
-                  )}
-                </div>
-              </article>
-            );
-          })}
-        </div>
-      )}
-
-      {cards.length > 0 && (
-        <aside className="flash-manage-ai-panel">
-          <div className="flash-manage-ai-copy">
-            <strong>Improve every answer</strong>
-            <span>Only answers shorter than the target are updated.</span>
-          </div>
-          <label className="flash-manage-mode">
-            <input
-              type="checkbox"
-              checked={bulkMode === "async"}
-              onChange={(event) => setBulkMode(event.target.checked ? "async" : "sequential")}
-            />
-            <span>Faster parallel mode</span>
-          </label>
-          {renderExpansionButtons(null, "", true)}
-          {bulkLoading && bulkProgress.total > 0 && (
-            <div className="flash-manage-progress" role="status">
-              <span>{bulkProgress.done} of {bulkProgress.total}</span>
-              <div><i style={{ width: `${(bulkProgress.done / bulkProgress.total) * 100}%` }} /></div>
-            </div>
-          )}
-        </aside>
-      )}
-
-      {!anyDrawerOpen && (
+    <>
+      {hasSelection && !anyDrawerOpen && (
         <ToolbarPortal>
-          <button
-            className="flash-selection-toggle"
-            type="button"
-            onClick={() => setToolbarVisible((visible) => !visible)}
-            aria-label={toolbarVisible ? "Hide selection toolbar" : "Show selection toolbar"}
-          >
-            {toolbarVisible ? <FaChevronDown /> : <FaChevronUp />}
-          </button>
-          <div className={`flash-selection-bar ${toolbarVisible ? "is-visible" : ""}`}>
-            <div className="flash-selection-summary">
-              <strong>{selectedCards.length}</strong>
-              <span>{selectedCards.length === 1 ? "card selected" : "cards selected"}</span>
+          <div className="flash-manage-toolbar">
+            <div className="flash-manage-toolbar__summary">
+              <strong>{selectedCards.length}</strong> selected
             </div>
-            <div className={`flash-selection-actions ${hasSelection ? "" : "is-disabled"}`}>
-              <ActionButtons limitButtons promptText={hasSelection ? combinedPrompt : ""} />
-            </div>
-            <button
-              className="flash-selection-delete"
-              type="button"
-              disabled={!hasSelection}
-              onClick={deleteSelected}
-            ><FaTrashAlt /> <span>Delete</span></button>
+            <ActionButtons promptText={combinedPrompt} limitButtons />
+            <button className="flash-manage-delete" onClick={deleteSelected} title="Delete selected cards">
+              <FaTrashAlt />
+              <span>Delete</span>
+            </button>
+            <button className="flash-manage-close" onClick={() => setSelectedCards([])} title="Clear selection">
+              <FaTimes />
+            </button>
           </div>
         </ToolbarPortal>
       )}
-    </section>
+
+      <div className="flash-table-tools">
+        <button className="flash-select-all" onClick={toggleSelectVisible}>
+          {allVisibleSelected ? <FaCheck /> : null}
+          <span>{allVisibleSelected ? "Clear visible" : "Select visible"}</span>
+        </button>
+        <label className="flash-bulk-mode">
+          <span>Bulk AI</span>
+          <select value={bulkMode} onChange={(event) => setBulkMode(event.target.value)}>
+            <option value="async">Async</option>
+            <option value="sequential">Sequential</option>
+          </select>
+        </label>
+        <button
+          className="flash-toolbar-toggle"
+          onClick={() => setToolbarVisible((current) => !current)}
+          title={toolbarVisible ? "Hide row actions" : "Show row actions"}
+        >
+          {toolbarVisible ? <FaChevronUp /> : <FaChevronDown />}
+          <span>{toolbarVisible ? "Hide actions" : "Show actions"}</span>
+        </button>
+        {toolbarVisible && renderExpansionButtons(null, "", true)}
+        <div className="flash-search">
+          <FaSearch />
+          <input
+            type="search"
+            value={query}
+            onChange={(event) => setQuery(event.target.value)}
+            placeholder="Search cards..."
+          />
+        </div>
+      </div>
+
+      <table className="flash-card-table">
+        <thead>
+          <tr>
+            <th style={{ width: "44px" }}>Pick</th>
+            <th>Question</th>
+            <th>Answer</th>
+            <th style={{ width: "240px" }}>Manage</th>
+          </tr>
+        </thead>
+        <tbody>
+          {visibleCards.map(({ card, index }) => {
+            const isSelected = selectedSet.has(index);
+            const isEditing = editingIndex === index;
+            return (
+              <tr key={index} className={isSelected ? "is-selected" : ""}>
+                <td>
+                  <button
+                    className={`flash-row-select ${isSelected ? "is-active" : ""}`}
+                    onClick={() => toggleCardSelection(index)}
+                    aria-label={isSelected ? "Deselect card" : "Select card"}
+                  >
+                    {isSelected ? <FaCheck /> : null}
+                  </button>
+                </td>
+                <td>
+                  {isEditing ? (
+                    <textarea
+                      value={draft.question}
+                      onChange={(event) => setDraft((current) => ({ ...current, question: event.target.value }))}
+                    />
+                  ) : (
+                    card.question
+                  )}
+                </td>
+                <td>
+                  {isEditing ? (
+                    <textarea
+                      value={draft.answer}
+                      onChange={(event) => setDraft((current) => ({ ...current, answer: event.target.value }))}
+                    />
+                  ) : (
+                    card.answer
+                  )}
+                </td>
+                <td>
+                  {isEditing ? (
+                    <div className="flash-row-actions">
+                      <button onClick={saveEditing}>Save</button>
+                      <button onClick={() => setEditingIndex(null)}>Cancel</button>
+                    </div>
+                  ) : (
+                    <div className="flash-row-actions">
+                      {toolbarVisible && renderExpansionButtons(index, card.answer)}
+                      <button className="flash-edit-button" onClick={() => startEditing(index)} title="Edit card">
+                        <FaEdit />
+                      </button>
+                    </div>
+                  )}
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </>
   );
 }
