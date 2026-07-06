@@ -131,10 +131,10 @@ export default function AppHeader({ isOpen, onToggle, onClose }) {
   return (
     <>
       <header className="app-header">
-        <NavLink className="app-brand" to="/" aria-label="Eli Himi workspace home" onClick={onClose}>
-          <span className="app-brand__mark" aria-hidden="true">EH</span>
+        <NavLink className="app-brand" to="/" aria-label="Learning Hub workspace home" onClick={onClose}>
+          <span className="app-brand__mark" aria-hidden="true">LH</span>
           <span className="app-brand__copy">
-            <strong>Eli Himi</strong>
+            <strong>Learning Hub</strong>
             <span>Learning workspace</span>
           </span>
         </NavLink>
