@@ -52,7 +52,7 @@ import AppHeader from "./ui/AppHeader.jsx";
 import SideDrawer from "./ui/SideDrawer.jsx";
 import ToolLauncher from "./ui/ToolLauncher.jsx";
 
-const CpuSimulator = lazy(() => import("./CpuSimulator.jsx"));
+const CpuSimulatorWithOutputHistory = lazy(() => import("./CpuSimulatorWithOutputHistory.jsx"));
 
 function AppContent() {
   const [isFullWidth, setIsFullWidth] = useState(true);
@@ -150,7 +150,7 @@ function AppContent() {
           <Route path="/jsGenerator" element={<JSConsoleGenerator />} />
           <Route path="/bengali" element={<BengaliTutor />} />
           <Route path="/coding" element={<CodingProblems />} />
-          <Route path="/cpu-simulator" element={<Suspense fallback={null}><CpuSimulator /></Suspense>} />
+          <Route path="/cpu-simulator" element={<Suspense fallback={null}><CpuSimulatorWithOutputHistory /></Suspense>} />
           <Route path="/system-design" element={<SystemDesignPrep />} />
           <Route path="/pdf-to-text" element={<PdfToText />} />
           <Route path="/media-player" element={<MediaPlayer />} />
