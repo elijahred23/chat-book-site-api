@@ -1,14 +1,15 @@
 FROM node:18-slim AS builder
 WORKDIR /app
-COPY package.json  ./
-RUN npm install --no-audit --progress=false
-COPY . .
-RUN npm run build
+COPY frontend/package*.json ./frontend/
+RUN npm ci --prefix frontend --no-audit --progress=false
+COPY frontend ./frontend
+COPY shared ./shared
+RUN npm --prefix frontend run build
 
 FROM node:18-slim AS api_deps
 WORKDIR /app/api
-COPY api/package.json  ./
-RUN npm install --omit=dev --no-audit --progress=false
+COPY api/package*.json  ./
+RUN npm ci --omit=dev --no-audit --progress=false
 
 FROM node:18-slim
 WORKDIR /app
@@ -21,7 +22,7 @@ COPY package.json ./
 COPY --from=api_deps /app/api/node_modules ./api/node_modules
 COPY api ./api
 COPY shared ./shared
-COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/frontend/dist ./frontend/dist
 RUN pip3 install --no-cache-dir -r api/requirements.txt
 EXPOSE 8080 9229
 CMD ["node", "api/server.js"]

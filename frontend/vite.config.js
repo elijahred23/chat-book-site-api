@@ -9,6 +9,7 @@ export default defineConfig(({ command }) => {
     ...(command === 'serve' && {
       server: {
         watch: { usePolling: true },
+        fs: { allow: ['..'] },
         host: 'localhost',
         strictPort: true,
         port: 3006,

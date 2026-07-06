@@ -4,7 +4,7 @@
 
 - The API is an Express 4 ES-module application. `server.js` defines middleware, HTTP routes, static frontend serving, and startup on `PORT` (default 8080).
 - Keep provider-specific logic in the existing modules (`chatGPT.js`, `gemini.js`, `youtube.js`, `supadata.js`, and `transcriptService.js`) instead of expanding `server.js` with SDK details.
-- All application endpoints must remain under `/api`. The final non-API catch-all serves `../dist/index.html` for React Router, so add API routes before that catch-all.
+- All application endpoints must remain under `/api`. The final non-API catch-all serves `../frontend/dist/index.html` for React Router, so add API routes before that catch-all.
 - `youtube_service.py` and `requirements.txt` support the Python-side service/tooling. Do not introduce a Python dependency for a Node route unless the deployment and invocation path are updated too.
 
 ## API behavior and security

@@ -8,10 +8,18 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
+frontend/node_modules
+api/node_modules
 dist
+frontend/dist
 dist-ssr
 *.local
 api/.env
+frontend/.env
+var/uploads/
+var/secrets/
+api/logs/
+api/error.log
 
 # Editor directories and files
 .vscode/*
@@ -26,4 +34,3 @@ api/.env
 
 /k8s/secrets.yaml
 tts-sa.json
-package-lock.json

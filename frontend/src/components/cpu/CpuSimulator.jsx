@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useCallback, useEffect, useRef, useState } from "react";
-import { createLocalSimulation, LED_DISPLAY_COLUMNS, LED_DISPLAY_ROWS, LED_DISPLAY_START, REGISTER_NAMES, samplePrograms } from "../../../shared/cpuSimulator.js";
+import { createLocalSimulation, LED_DISPLAY_COLUMNS, LED_DISPLAY_ROWS, LED_DISPLAY_START, REGISTER_NAMES, samplePrograms } from "../../../../shared/cpuSimulator.js";
 import "./CpuSimulator.css";
 
 const instructionRows = [

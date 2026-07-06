@@ -2,7 +2,7 @@
 
 Chat Book Site API is a React/Vite web app with an Express backend. It powers a personal AI tool site that includes chat prompts, Gemini responses, YouTube search and transcript tools, text-to-speech, PDF-to-text extraction, a simple web search helper, URL extraction from public pages, and a small CPU simulator.
 
-The project is designed as one deployable app: Vite builds the frontend into `dist`, and the Express server serves both the API routes and the built React app.
+The project is designed as one deployable app: Vite builds the frontend into `frontend/dist`, and the Express server serves both the API routes and the built React app.
 
 ## Features
 
@@ -52,14 +52,18 @@ The project is designed as one deployable app: Vite builds the frontend into `di
 │   ├── transcriptService.js   # Legacy re-export for service module
 │   ├── supadata.js            # Legacy re-export for service module
 │   └── logs/                  # Runtime API logs
+├── frontend/
+│   ├── src/
+│   │   ├── App.jsx            # React routes and drawer layout
+│   │   └── ...                # Tool components
+│   ├── index.html
+│   ├── package.json           # Frontend dependencies/scripts
+│   ├── vite.config.js         # Vite config and local API proxy
+│   └── dist/                  # Built frontend output
 ├── shared/
 │   └── cpuSimulator.js        # CPU simulator/compiler logic
-├── src/
-│   ├── App.jsx                # React routes and drawer layout
-│   └── ...                    # Tool components
-├── dist/                      # Built frontend output
-├── package.json               # Root frontend/server scripts
-└── vite.config.js             # Vite config and local API proxy
+├── package.json               # Root orchestration scripts
+└── docs/
 ```
 
 ## Requirements
@@ -105,17 +109,18 @@ Do not commit real API keys, service account JSON, or secrets.
 
 ## Install
 
-Install dependencies from the root:
+Install root, frontend, and API dependencies from the root:
 
 ```bash
-npm install
+npm run install:all
 ```
 
-The API folder also has its own package file. If you are running the API directly from `api/`, install those dependencies too:
+Or install each package directly:
 
 ```bash
-cd api
-npm install
+npm ci
+npm --prefix frontend ci
+npm --prefix api ci
 ```
 
 ## Development
@@ -137,7 +142,7 @@ During development, Vite proxies `/api` requests to the Express server on port `
 In a second terminal, start the API:
 
 ```bash
-npm start
+npm run dev:api
 ```
 
 Or from the `api` folder:
@@ -161,7 +166,7 @@ Build the React app:
 npm run build
 ```
 
-This creates the production frontend in `dist`.
+This creates the production frontend in `frontend/dist`.
 
 ## Production Start
 
@@ -174,7 +179,7 @@ npm start
 The server will:
 
 1. Serve API routes from `/api/...`
-2. Serve static frontend files from `dist`
+2. Serve static frontend files from `frontend/dist`
 3. Fall back to `index.html` for React Router routes
 
 Default production URL:
@@ -367,11 +372,14 @@ GET /logs
 Root `package.json`:
 
 ```bash
-npm run dev      # Start Vite dev server
-npm run build    # Build frontend
-npm run start    # Start Express server from api/src/server.js
-npm run preview  # Preview built Vite app
-npm run lint     # Run ESLint
+npm run dev          # Start frontend Vite dev server
+npm run dev:frontend # Start frontend Vite dev server
+npm run dev:api      # Start API with Node inspector and watch mode
+npm run build        # Build frontend
+npm run start        # Start Express server from api/src/server.js
+npm run preview      # Preview built Vite app
+npm run lint         # Run frontend ESLint
+npm run install:all  # Install root, frontend, and API dependencies
 ```
 
 API `package.json`:
@@ -396,7 +404,7 @@ Add new backend behavior in the same dependency direction as the existing module
 A basic deployment flow is:
 
 ```bash
-npm install
+npm run install:all
 npm run build
 npm start
 ```

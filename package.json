@@ -4,37 +4,13 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "dev": "npm --prefix frontend run dev",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "dev:api": "npm --prefix api run debug",
+    "build": "npm --prefix frontend run build",
+    "lint": "npm --prefix frontend run lint",
     "start": "node api/src/server.js",
-    "preview": "vite preview"
-  },
-  "proxy": "http://localhost:3005",
-  "dependencies": {
-    "@panzoom/panzoom": "^4.6.0",
-    "@tanstack/react-query": "^5.49.2",
-    "@google-cloud/text-to-speech": "^5.7.0",
-    "body-parser": "^1.20.2",
-    "pako": "^2.1.0",
-    "prismjs": "^1.30.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-icons": "^5.5.0",
-    "react-markdown": "^9.0.1",
-    "react-router-dom": "^6.22.0",
-    "react-simple-code-editor": "^0.14.1",
-    "react-spinners": "^0.13.8",
-    "uuid": "^11.1.0"
-  },
-  "devDependencies": {
-    "@types/react": "^18.2.55",
-    "@types/react-dom": "^18.2.19",
-    "@vitejs/plugin-react": "^4.2.1",
-    "eslint": "^8.56.0",
-    "eslint-plugin-react": "^7.33.2",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.4.5",
-    "vite": "^5.1.0"
+    "preview": "npm --prefix frontend run preview",
+    "install:all": "npm ci && npm --prefix frontend ci && npm --prefix api ci"
   }
 }
