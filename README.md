@@ -2,7 +2,7 @@
 
 Chat Book Site API is a React/Vite web app with an Express backend. It powers a personal AI tool site that includes chat prompts, Gemini responses, YouTube search and transcript tools, text-to-speech, PDF-to-text extraction, a simple web search helper, URL extraction from public pages, and a small CPU simulator.
 
-The project is designed as one deployable app: Vite builds the frontend into `dist`, and the Express server serves both the API routes and the built React app.
+The project is designed as one deployable app: Vite builds the frontend into `frontend/dist`, and the Express server serves both the API routes and the built React app.
 
 ## Features
 
@@ -35,22 +35,35 @@ The project is designed as one deployable app: Vite builds the frontend into `di
 ```text
 .
 ├── api/
-│   ├── server.js              # Express server and API routes
+│   ├── server.js              # Compatibility wrapper for api/src/server.js
+│   ├── src/
+│   │   ├── app.js             # Express app, middleware, static hosting, route registration
+│   │   ├── server.js          # HTTP server startup
+│   │   ├── config/            # Environment and path configuration
+│   │   ├── controllers/       # HTTP request/response handlers
+│   │   ├── middleware/        # Logging, uploads, and error handling
+│   │   ├── routes/            # Endpoint definitions
+│   │   ├── services/          # Provider integrations and feature logic
+│   │   └── utils/             # Shared backend utilities
 │   ├── package.json           # API-specific dependencies/scripts
-│   ├── chatGPT.js             # AI response helpers
-│   ├── gemini.js              # Gemini model and prompt helpers
-│   ├── youtube.js             # YouTube API helpers
-│   ├── transcriptService.js   # YouTube transcript helper
-│   ├── supadata.js            # Supadata transcript helper
+│   ├── chatGPT.js             # Legacy re-export for service module
+│   ├── gemini.js              # Legacy re-export for service module
+│   ├── youtube.js             # Legacy re-export for service module
+│   ├── transcriptService.js   # Legacy re-export for service module
+│   ├── supadata.js            # Legacy re-export for service module
 │   └── logs/                  # Runtime API logs
+├── frontend/
+│   ├── src/
+│   │   ├── App.jsx            # React routes and drawer layout
+│   │   └── ...                # Tool components
+│   ├── index.html
+│   ├── package.json           # Frontend dependencies/scripts
+│   ├── vite.config.js         # Vite config and local API proxy
+│   └── dist/                  # Built frontend output
 ├── shared/
 │   └── cpuSimulator.js        # CPU simulator/compiler logic
-├── src/
-│   ├── App.jsx                # React routes and drawer layout
-│   └── ...                    # Tool components
-├── dist/                      # Built frontend output
-├── package.json               # Root frontend/server scripts
-└── vite.config.js             # Vite config and local API proxy
+├── package.json               # Root orchestration scripts
+└── docs/
 ```
 
 ## Requirements
@@ -74,13 +87,13 @@ PORT=8080
 GEMINI_API_KEY=your_gemini_api_key
 
 # OpenAI, if used by helper modules
-OPENAI_API_KEY=your_openai_api_key
+CHAT_GPT_API_KEY=your_openai_api_key
 
 # YouTube API
 YOUTUBE_API_KEY=your_youtube_api_key
 
 # Supadata
-SUPADATA_API_KEY=your_supadata_api_key
+SUPA_DATA_API_KEY=your_supadata_api_key
 
 # Google Cloud Text-to-Speech
 GOOGLE_APPLICATION_CREDENTIALS=/path/to/service-account.json
@@ -96,17 +109,18 @@ Do not commit real API keys, service account JSON, or secrets.
 
 ## Install
 
-Install dependencies from the root:
+Install root, frontend, and API dependencies from the root:
 
 ```bash
-npm install
+npm run install:all
 ```
 
-The API folder also has its own package file. If you are running the API directly from `api/`, install those dependencies too:
+Or install each package directly:
 
 ```bash
-cd api
-npm install
+npm ci
+npm --prefix frontend ci
+npm --prefix api ci
 ```
 
 ## Development
@@ -128,7 +142,7 @@ During development, Vite proxies `/api` requests to the Express server on port `
 In a second terminal, start the API:
 
 ```bash
-npm start
+npm run dev:api
 ```
 
 Or from the `api` folder:
@@ -152,7 +166,7 @@ Build the React app:
 npm run build
 ```
 
-This creates the production frontend in `dist`.
+This creates the production frontend in `frontend/dist`.
 
 ## Production Start
 
@@ -165,7 +179,7 @@ npm start
 The server will:
 
 1. Serve API routes from `/api/...`
-2. Serve static frontend files from `dist`
+2. Serve static frontend files from `frontend/dist`
 3. Fall back to `index.html` for React Router routes
 
 Default production URL:
@@ -358,26 +372,39 @@ GET /logs
 Root `package.json`:
 
 ```bash
-npm run dev      # Start Vite dev server
-npm run build    # Build frontend
-npm run start    # Start Express server from api/server.js
-npm run preview  # Preview built Vite app
-npm run lint     # Run ESLint
+npm run dev          # Start frontend Vite dev server
+npm run dev:frontend # Start frontend Vite dev server
+npm run dev:api      # Start API with Node inspector and watch mode
+npm run build        # Build frontend
+npm run start        # Start Express server from api/src/server.js
+npm run preview      # Preview built Vite app
+npm run lint         # Run frontend ESLint
+npm run install:all  # Install root, frontend, and API dependencies
 ```
 
 API `package.json`:
 
 ```bash
-npm start        # Start api/server.js
+npm start        # Start api/src/server.js
 npm run debug    # Start API with Node inspector and watch mode
 ```
+
+## Adding Backend Features
+
+Add new backend behavior in the same dependency direction as the existing modules:
+
+1. Add the URL and HTTP method in `api/src/routes/<feature>.routes.js`.
+2. Put request parsing and response shaping in `api/src/controllers/<feature>.controller.js`.
+3. Put external API calls or feature logic in `api/src/services/<feature>.service.js`.
+4. Register the route module in `api/src/routes/index.js`.
+5. Add new configuration names to `api/src/config/env.js` and document blank values in `api/.env-template`.
 
 ## Deployment
 
 A basic deployment flow is:
 
 ```bash
-npm install
+npm run install:all
 npm run build
 npm start
 ```

@@ -6,8 +6,8 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "debug": "NODE_OPTIONS=--inspect=0.0.0.0:9229 node --watch server.js"
+    "start": "node src/server.js",
+    "debug": "NODE_OPTIONS=--inspect=0.0.0.0:9229 node --watch src/server.js"
   },
   "author": "author",
   "license": "ISC",
