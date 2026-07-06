@@ -12,44 +12,34 @@ import {
 } from "react-icons/fa";
 import { GiNotebook } from "react-icons/gi";
 import { SiMarkdown } from "react-icons/si";
-import ActionButtonStudio from "./ActionButtonStudio.jsx";
-import ApiCheck from "./ApiCheck.jsx";
-import BengaliTutor from "./BengaliTutor.jsx";
-import ChatBookApp from "./ChatBookApp.jsx";
-import ChatGPTDual from "./ChatGPTDual.jsx";
-import GptPromptComponent from "./ChatGPT.jsx";
-import ChatTemplate from "./ChatTemplate.jsx";
-import CodingProblems from "./CodingProblems.jsx";
-import DownloadCopyTextFile from "./DownloadCopyTextFile.jsx";
-import FlashCardApp from "./FlashCardApp.jsx";
-import Home from "./Home.jsx";
-import HtmlBuilder from "./HtmlBuilder.jsx";
-import IframeDrawer from "./IframeDrawer.jsx";
-import LargeTextChunks from "./LargeTextChunks.jsx";
-import LoopingTTS from "./LoopingTTS.jsx";
-import MarkdownViewer from "./MarkdownViewer.jsx";
-import MediaPlayer from "./MediaPlayer.jsx";
-import PdfToText from "./PdfToText.jsx";
-import PlantUMLViewer from "./PlantUML.jsx";
+import ChatBookApp from "./components/chat/ChatBookApp.jsx";
+import FlashCardApp from "./components/flashcards/FlashCardApp.jsx";
+import HtmlBuilder from "./components/html/HtmlBuilder.jsx";
+import WebBrowser from "./components/iframe/WebBrowser.jsx";
+import MarkdownViewer from "./components/markdown/MarkdownViewer.jsx";
+import MediaPlayer from "./components/media/MediaPlayer.jsx";
+import PdfToText from "./components/media/PdfToText.jsx";
+import PlantUMLViewer from "./components/plantuml/PlantUML.jsx";
+import TypingTest from "./components/text/TypingText.jsx";
+import YouTubeTranscript from "./components/youtube/YouTubeTranscript.jsx";
+import AppDrawers from "./layouts/AppDrawers.jsx";
+import ActionButtonStudio from "./pages/ActionButtonStudio.jsx";
+import ApiCheck from "./pages/ApiCheck.jsx";
+import BengaliTutor from "./pages/BengaliTutor.jsx";
+import ChatTemplate from "./pages/ChatTemplate.jsx";
+import CodingProblems from "./pages/CodingProblems.jsx";
+import Home from "./pages/Home.jsx";
 import ProgressBar from "./ui/ProgressBar.jsx";
-import Quran from "./Quran.jsx";
-import SystemDesignPrep from "./SystemDesignPrep.jsx";
-import Teleprompter from "./Teleprompter.jsx";
-import TextSelectionTooltip from "./TextSelectionTooltip.jsx";
-import TypingTest from "./TypingText.jsx";
-import WebBrowser from "./WebBrowser.jsx";
-import YouTubeTranscript from "./YouTubeTranscript.jsx";
+import Quran from "./pages/Quran.jsx";
+import SystemDesignPrep from "./pages/SystemDesignPrep.jsx";
 import { actions, useAppDispatch, useAppState } from "./context/AppContext.jsx";
 import AppHeader from "./ui/AppHeader.jsx";
-import SideDrawer from "./ui/SideDrawer.jsx";
 import ToolLauncher from "./ui/ToolLauncher.jsx";
 
-const CpuSimulatorWithOutputHistory = lazy(() => import("./CpuSimulatorWithOutputHistory.jsx"));
+const CpuSimulatorWithOutputHistory = lazy(() => import("./components/cpu/CpuSimulatorWithOutputHistory.jsx"));
 
 function AppContent() {
   const [isFullWidth, setIsFullWidth] = useState(true);
-  const [isChatVisible, setIsChatVisible] = useState(true);
-  const [isPromptVisible, setIsPromptVisible] = useState(true);
   const [isToolLauncherOpen, setIsToolLauncherOpen] = useState(false);
   const [isNavigationOpen, setIsNavigationOpen] = useState(false);
   const dispatch = useAppDispatch();
@@ -151,44 +141,7 @@ function AppContent() {
         hidden={anyDrawerOpen}
       />
 
-      <SideDrawer isOpen={isChatOpen} isFullWidth={isFullWidth} stack={drawerStack} currentKey="chat" title="AI Chat" onClose={() => setPanel(actions.setIsChatOpen, false)}>
-        <GptPromptComponent
-          isOpen={isChatOpen}
-          isCollapsed={!isChatVisible}
-          hidePrompt={!isPromptVisible}
-          onClose={() => setPanel(actions.setIsChatOpen, false)}
-          onToggleCollapse={() => setIsChatVisible((current) => !current)}
-          onTogglePrompt={() => setIsPromptVisible((current) => !current)}
-        />
-      </SideDrawer>
-
-      <SideDrawer isOpen={isIframeOpen} isFullWidth={isFullWidth} stack={drawerStack} currentKey="iframe" title="Iframe Viewer" onToggleWidth={toggleWidth} onClose={() => setPanel(actions.setIsIframeOpen, false)}><IframeDrawer /></SideDrawer>
-      <SideDrawer isOpen={isTTSOpen} isFullWidth={isFullWidth} stack={drawerStack} currentKey="tts" title="Text to Speech" onToggleWidth={toggleWidth} onClose={() => setPanel(actions.setIsTTSOpen, false)}><LoopingTTS /></SideDrawer>
-      <SideDrawer isOpen={isTeleprompterOpen} isFullWidth={isFullWidth} stack={drawerStack} currentKey="teleprompter" title="Teleprompter" onToggleWidth={toggleWidth} onClose={() => setPanel(actions.setIsTeleprompterOpen, false)}><Teleprompter /></SideDrawer>
-      <SideDrawer isOpen={isPlantUMLOpen} isFullWidth={isFullWidth} stack={drawerStack} currentKey="plantuml" title="PlantUML Viewer" onToggleWidth={toggleWidth} onClose={() => setPanel(actions.setIsPlantUMLOpen, false)}><PlantUMLViewer /></SideDrawer>
-      <SideDrawer isOpen={isHtmlBuilderOpen} isFullWidth={isFullWidth} stack={drawerStack} currentKey="html" title="HTML Builder" onToggleWidth={toggleWidth} onClose={() => setPanel(actions.setIsHtmlBuilderOpen, false)}><HtmlBuilder /></SideDrawer>
-      <SideDrawer isOpen={isTypingOpen} isFullWidth={isFullWidth} stack={drawerStack} currentKey="typing" title="Typing Test" onToggleWidth={toggleWidth} onClose={() => setPanel(actions.setIsTypingOpen, false)}><TypingTest /></SideDrawer>
-      <SideDrawer isOpen={isYouTubeOpen} isFullWidth={isFullWidth} stack={drawerStack} currentKey="youtube" title="YouTube Transcript" onToggleWidth={toggleWidth} onClose={() => setPanel(actions.setIsYouTubeOpen, false)}><YouTubeTranscript /></SideDrawer>
-      <SideDrawer isOpen={isChatBookOpen} isFullWidth={isFullWidth} stack={drawerStack} currentKey="chatbook" title="Chat Book" onToggleWidth={toggleWidth} onClose={() => setPanel(actions.setIsChatBookOpen, false)}><ChatBookApp /></SideDrawer>
-      <SideDrawer isOpen={isLargeTextOpen} isFullWidth={isFullWidth} stack={drawerStack} currentKey="large" title="Text Chunker" onToggleWidth={toggleWidth} onClose={() => setPanel(actions.setIsLargeTextOpen, false)}><LargeTextChunks /></SideDrawer>
-      <SideDrawer isOpen={isChat2Open} isFullWidth={isFullWidth} stack={drawerStack} currentKey="chat2" title="Dual Chat" onToggleWidth={toggleWidth} onClose={() => setPanel(actions.setIsChat2Open, false)}><ChatGPTDual isOpen /></SideDrawer>
-      <SideDrawer isOpen={isMarkdownViewerOpen} isFullWidth={isFullWidth} stack={drawerStack} currentKey="markdown" title="Markdown Viewer" onToggleWidth={toggleWidth} onClose={() => setPanel(actions.setIsMarkdownViewerOpen, false)}><MarkdownViewer /></SideDrawer>
-
-      <DownloadCopyTextFile />
-      <TextSelectionTooltip
-        onAskAI={(text) => {
-          setPanel(actions.setIsChatOpen, true);
-          dispatch(actions.setSelectedText(text));
-        }}
-        onSendToTTS={(text) => {
-          dispatch(actions.setTtsText(text));
-          setPanel(actions.setIsTTSOpen, true);
-        }}
-        onSendToTeleprompter={(text) => {
-          dispatch(actions.setTeleprompterText(text));
-          setPanel(actions.setIsTeleprompterOpen, true);
-        }}
-      />
+      <AppDrawers state={state} isFullWidth={isFullWidth} onToggleWidth={toggleWidth} setPanel={setPanel} />
     </div>
   );
 }
