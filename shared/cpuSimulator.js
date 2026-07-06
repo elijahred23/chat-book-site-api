@@ -1,17 +1,18 @@
-export const MEMORY_SIZE = 256;
+export const MEMORY_SIZE = 4096;
 export const WORD_MASK = 0xffffffff;
 const SIGN_BIT = 0x80000000;
-const IMMEDIATE_MASK = 0x003fffff;
-export const LED_DISPLAY_START = 224;
+const IMMEDIATE_MASK = 0x0003ffff;
+export const LED_DISPLAY_START = MEMORY_SIZE - 32;
 export const LED_DISPLAY_ROWS = 32;
 export const LED_DISPLAY_COLUMNS = 32;
 
 export class ProgramParseError extends Error {}
 
-const registers = ['A', 'B', 'C', 'D'];
+export const REGISTER_NAMES = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P'];
+const registers = REGISTER_NAMES;
 const instructionInfo = [
   ['NOP', 'none', 'Do nothing for one instruction.'],
-  ['LDI', 'regImm', 'Load a 22-bit immediate into a register.'],
+  ['LDI', 'regImm', 'Load an 18-bit immediate into a register.'],
   ['LDR', 'regAddr', 'Load a register from memory.'],
   ['STR', 'regAddr', 'Store a register into memory.'],
   ['MOV', 'twoReg', 'Copy one register into another.'],
@@ -40,8 +41,8 @@ const instructionInfo = [
   ['HLT', 'none', 'Stop the CPU clock.'],
   ['MOD', 'twoReg', 'Store the remainder of an unsigned division.'],
   ['LUI', 'regHalf', 'Load the upper 16 bits of a register.'],
-  ['ADDI', 'regImm', 'Add a 22-bit immediate to a register.'],
-  ['SUBI', 'regImm', 'Subtract a 22-bit immediate from a register.'],
+  ['ADDI', 'regImm', 'Add an 18-bit immediate to a register.'],
+  ['SUBI', 'regImm', 'Subtract an 18-bit immediate from a register.'],
   ['DIV', 'twoReg', 'Unsigned division of the destination by the source.'],
   ['ROL', 'oneReg', 'Rotate a register left by one bit.'],
   ['ROR', 'oneReg', 'Rotate a register right by one bit.'],
@@ -52,10 +53,10 @@ const instructionInfo = [
 
 export function decodeInstruction(value) {
   const opcode = (value >>> 26) & 0x3f;
-  const destination = (value >>> 24) & 0x03;
-  const source = (value >>> 22) & 0x03;
+  const destination = (value >>> 22) & 0x0f;
+  const source = (value >>> 18) & 0x0f;
   const immediate = value & IMMEDIATE_MASK;
-  const address = value & 0x00ff;
+  const address = value & 0x0fff;
   const [name, format, description] = instructionInfo[opcode] ?? ['ILL', 'none', 'Illegal or unassigned opcode.'];
   const operands = {
     none: '', oneReg: registers[destination], twoReg: `${registers[destination]}, ${registers[source]}`,
@@ -143,11 +144,11 @@ function assemble(source) {
     }
     if (format === 'oneReg') {
       if (operands.length !== 1) throw parseError(line, `${mnemonic} expects one register.`);
-      return ((opcode << 26) | (register(operands[0]) << 24)) >>> 0;
+      return ((opcode << 26) | (register(operands[0]) << 22)) >>> 0;
     }
     if (format === 'twoReg') {
       if (operands.length !== 2) throw parseError(line, `${mnemonic} expects two registers.`);
-      return ((opcode << 26) | (register(operands[0]) << 24) | (register(operands[1]) << 22)) >>> 0;
+      return ((opcode << 26) | (register(operands[0]) << 22) | (register(operands[1]) << 18)) >>> 0;
     }
     if (format === 'address') {
       if (operands.length !== 1) throw parseError(line, `${mnemonic} expects one address.`);
@@ -156,7 +157,7 @@ function assemble(source) {
     if (format === 'regAddr' || format === 'regImm' || format === 'regHalf') {
       if (operands.length !== 2) throw parseError(line, `${mnemonic} expects a register and a value.`);
       const maximum = format === 'regAddr' ? MEMORY_SIZE - 1 : format === 'regHalf' ? 0xffff : IMMEDIATE_MASK;
-      return ((opcode << 26) | (register(operands[0]) << 24) | parseNumber(operands[1], labels, line, maximum)) >>> 0;
+      return ((opcode << 26) | (register(operands[0]) << 22) | parseNumber(operands[1], labels, line, maximum)) >>> 0;
     }
     throw parseError(line, `cannot encode '${mnemonic}'.`);
   });
@@ -739,7 +740,7 @@ class MiniCompiler {
     if (call.arguments.length !== count) throw parseError(call.line, `${name} expects ${count} argument${count === 1 ? '' : 's'}.`);
   }
   allocateRegister(line) {
-    if (this.nextRegister >= registers.length) throw parseError(line, 'MiniScript can keep four runtime values or object fields in registers A through D. Use const or memory for additional values.');
+    if (this.nextRegister >= registers.length) throw parseError(line, 'MiniScript can keep sixteen runtime values or object fields in registers A through P. Use const or memory for additional values.');
     return registers[this.nextRegister++];
   }
   normalizeType(type, line, allowVoid = false, allowClass = false) {
@@ -887,6 +888,7 @@ function datapathFor(phase, signals) {
   }
   if (signals.includes('RAM IN')) add(registerOutputs.at(-1) ?? (outputs.includes('PC') ? 'PC' : 'CONTROL'), 'RAM');
   if (inputs.includes('OUTPUT')) add(registerOutputs[0] ?? 'CONTROL', 'OUT');
+  if (inputs.includes('LED')) add(registerOutputs.at(-1) ?? 'RAM', 'LED');
 
   if (aluSignal) {
     const sources = [...registerOutputs, ...outputs.filter((name) => ['IMMEDIATE', 'OPERAND'].includes(name))];
@@ -906,7 +908,7 @@ function datapathFor(phase, signals) {
   transfers.forEach(({ from, to }) => { activeComponents.add(from); activeComponents.add(to); });
   signals.forEach((signal) => {
     const component = signal.split(' ')[0];
-    if ([...registers, 'PC', 'SP', 'IR', 'MAR', 'RAM', 'ALU', 'FLAGS', 'OUTPUT', 'CONTROL'].includes(component)) activeComponents.add(component === 'OUTPUT' ? 'OUT' : component);
+    if ([...registers, 'PC', 'SP', 'IR', 'MAR', 'RAM', 'ALU', 'FLAGS', 'LED', 'OUTPUT', 'CONTROL'].includes(component)) activeComponents.add(component === 'OUTPUT' ? 'OUT' : component);
   });
   return { transfers, activeComponents: [...activeComponents] };
 }
@@ -918,7 +920,7 @@ export class CpuSimulator {
     this.reset(false);
   }
   reset(isReset = true) {
-    this.memory = [...this.initialMemory]; this.registers = [0, 0, 0, 0]; this.programCounter = 0; this.stackPointer = MEMORY_SIZE - 1;
+    this.memory = [...this.initialMemory]; this.registers = Array(registers.length).fill(0); this.programCounter = 0; this.stackPointer = MEMORY_SIZE - 1;
     this.instructionRegister = 0; this.memoryAddressRegister = 0; this.outputRegister = 0; this.ledDisplay = Array(LED_DISPLAY_ROWS).fill(0);
     this.zeroFlag = false; this.carryFlag = false; this.negativeFlag = false; this.overflowFlag = false;
     this.cycle = 0; this.phase = 'Fetch'; this.halted = false;
@@ -934,10 +936,15 @@ export class CpuSimulator {
       cycle: this.cycle, phase: this.phase, halted: this.halted, currentInstructionAddress: this.currentInstructionAddress,
       programSize: this.programSize, instruction: this.instruction ? { ...this.instruction } : null, memory: [...this.memory], ledDisplay: [...this.ledDisplay], lastEvent: { ...this.lastEvent, signals: [...this.lastEvent.signals], transfers: this.lastEvent.transfers.map((transfer) => ({ ...transfer })), activeComponents: [...this.lastEvent.activeComponents] } };
   }
-  step() {
-    if (this.halted) return this.snapshot();
+  step(withSnapshot = true) {
+    if (this.halted) return withSnapshot ? this.snapshot() : null;
     this.cycle += 1;
     if (this.phase === 'Fetch') this.fetch(); else if (this.phase === 'Decode') this.decode(); else this.execute();
+    return withSnapshot ? this.snapshot() : null;
+  }
+  runSteps(maxSteps = 10000) {
+    let steps = 0;
+    while (!this.halted && steps < maxSteps) { this.step(false); steps += 1; }
     return this.snapshot();
   }
   fetch() {
@@ -1034,8 +1041,8 @@ export class CpuSimulator {
       case 0x21: { const value = this.registers[destination]; this.registers[destination] = setFlags(((value << 1) | (value >>> 31)) >>> 0, Boolean(value & SIGN_BIT)); detail = `${name(destination)} rotated left to ${this.registers[destination]}.`; signals = [`${name(destination)} OUT`, 'ALU ROL', `${name(destination)} IN`, 'FLAGS IN']; break; }
       case 0x22: { const value = this.registers[destination]; this.registers[destination] = setFlags(((value >>> 1) | ((value & 1) << 31)) >>> 0, Boolean(value & 1)); detail = `${name(destination)} rotated right to ${this.registers[destination]}.`; signals = [`${name(destination)} OUT`, 'ALU ROR', `${name(destination)} IN`, 'FLAGS IN']; break; }
       case 0x23: { const value = this.registers[destination]; this.registers[destination] = setFlags(-value, value !== 0, value === SIGN_BIT); detail = `${name(destination)} negated to ${this.registers[destination]}.`; signals = [`${name(destination)} OUT`, 'ALU NEG', `${name(destination)} IN`, 'FLAGS IN']; break; }
-      case 0x24: { const address = this.registers[source] & 0xff; this.memoryAddressRegister = address; this.registers[destination] = setFlags(this.memory[address]); detail = `${name(destination)} ← RAM[${name(source)} & 0xFF] (${this.registers[destination]}).`; signals = [`${name(source)} OUT`, 'MAR IN', 'RAM OUT', `${name(destination)} IN`, 'FLAGS IN']; break; }
-      case 0x25: { const address = this.registers[source] & 0xff; const displayRow = storeMemory(address, this.registers[destination]); detail = `RAM[${name(source)} & 0xFF] ← ${name(destination)} (${this.registers[destination]})${displayRow === null ? '.' : `, updating LED row ${displayRow}.`}`; signals = [`${name(source)} OUT`, 'MAR IN', `${name(destination)} OUT`, 'RAM IN', ...(displayRow === null ? [] : ['LED IN'])]; break; }
+      case 0x24: { const address = this.registers[source] & (MEMORY_SIZE - 1); this.memoryAddressRegister = address; this.registers[destination] = setFlags(this.memory[address]); detail = `${name(destination)} ← RAM[${name(source)} & 0xFFF] (${this.registers[destination]}).`; signals = [`${name(source)} OUT`, 'MAR IN', 'RAM OUT', `${name(destination)} IN`, 'FLAGS IN']; break; }
+      case 0x25: { const address = this.registers[source] & (MEMORY_SIZE - 1); const displayRow = storeMemory(address, this.registers[destination]); detail = `RAM[${name(source)} & 0xFFF] ← ${name(destination)} (${this.registers[destination]})${displayRow === null ? '.' : `, updating LED row ${displayRow}.`}`; signals = [`${name(source)} OUT`, 'MAR IN', `${name(destination)} OUT`, 'RAM IN', ...(displayRow === null ? [] : ['LED IN'])]; break; }
       default: this.halted = true; this.phase = 'Halted'; detail = `Illegal opcode ${instruction.opcode}; the CPU trapped and stopped.`; signals = ['CONTROL TRAP', 'HALT']; break;
     }
     if (!this.halted) this.phase = 'Fetch';
@@ -1137,7 +1144,8 @@ halt();`;
 const randomSequenceAssembly = `LDI A, 22136
 LUI A, 4660
 LDI B, 6
-LDI C, 1664525
+LDI C, 26125
+LUI C, 25
 LDI D, 62303
 LUI D, 15470
 random_loop:
@@ -1208,7 +1216,7 @@ halt();`;
 
 const ledXAssembly = `LDI A, 0
 LUI A, 32768
-LDI B, 224
+LDI B, 4064
 LDI C, 32
 first_diagonal:
 STRI A, B
@@ -1217,7 +1225,7 @@ INC B
 DEC C
 JNZ first_diagonal
 LDI A, 1
-LDI B, 224
+LDI B, 4064
 LDI C, 32
 second_diagonal:
 LDRI D, B
@@ -1230,7 +1238,7 @@ JNZ second_diagonal
 HLT`;
 
 const ledXSimple = `let pixel: u32 = 0x80000000;
-let row: u32 = 224;
+let row: u32 = 4064;
 let remaining: u32 = 32;
 let combined: u32 = 0;
 
@@ -1242,7 +1250,7 @@ while (remaining !== 0) {
 }
 
 pixel = 1;
-row = 224;
+row = 4064;
 remaining = 32;
 
 while (remaining !== 0) {
@@ -1256,6 +1264,150 @@ while (remaining !== 0) {
 
 halt();`;
 
+const conwaySimple = `// Two 32×32 cell buffers live at memory 1024 and 2048.
+// The final packed rows are copied to the LED framebuffer at 4064.
+memory[1296] = 1;
+memory[1297] = 1;
+memory[1327] = 1;
+memory[1328] = 1;
+memory[1360] = 1;
+memory[1675] = 1;
+memory[1709] = 1;
+memory[1738] = 1;
+memory[1739] = 1;
+memory[1742] = 1;
+memory[1743] = 1;
+memory[1744] = 1;
+
+let generations: u32 = 6;
+let row: u32 = 0;
+let rowsRemaining: u32 = 0;
+let column: u32 = 0;
+let columnsRemaining: u32 = 0;
+let neighborRow: u32 = 0;
+let neighborRowsRemaining: u32 = 0;
+let neighborColumn: u32 = 0;
+let neighborColumnsRemaining: u32 = 0;
+let neighbors: u32 = 0;
+let address: u32 = 0;
+let cell: u32 = 0;
+let nextCell: u32 = 0;
+let pixels: u32 = 0;
+
+while (generations !== 0) {
+  row = 0;
+  rowsRemaining = 32;
+
+  while (rowsRemaining !== 0) {
+    column = 0;
+    columnsRemaining = 32;
+
+    while (columnsRemaining !== 0) {
+      neighbors = 0;
+      neighborRow = row;
+      if (neighborRow === 0) {
+        neighborRow = 31;
+      } else {
+        neighborRow--;
+      }
+      neighborRowsRemaining = 3;
+
+      while (neighborRowsRemaining !== 0) {
+        neighborColumn = column;
+        if (neighborColumn === 0) {
+          neighborColumn = 31;
+        } else {
+          neighborColumn--;
+        }
+        neighborColumnsRemaining = 3;
+
+        while (neighborColumnsRemaining !== 0) {
+          if (neighborRow !== row || neighborColumn !== column) {
+            address = neighborRow;
+            address *= 32;
+            address += neighborColumn;
+            address += 1024;
+            cell = memory[address];
+            neighbors += cell;
+          }
+
+          neighborColumn++;
+          if (neighborColumn === 32) {
+            neighborColumn = 0;
+          }
+          neighborColumnsRemaining--;
+        }
+
+        neighborRow++;
+        if (neighborRow === 32) {
+          neighborRow = 0;
+        }
+        neighborRowsRemaining--;
+      }
+
+      address = row;
+      address *= 32;
+      address += column;
+      address += 1024;
+      cell = memory[address];
+      nextCell = 0;
+
+      if (cell !== 0) {
+        if (neighbors === 2 || neighbors === 3) {
+          nextCell = 1;
+        }
+      } else {
+        if (neighbors === 3) {
+          nextCell = 1;
+        }
+      }
+
+      address += 1024;
+      memory[address] = nextCell;
+      column++;
+      columnsRemaining--;
+    }
+
+    row++;
+    rowsRemaining--;
+  }
+
+  // Copy the next generation back while packing each row for the LED display.
+  row = 0;
+  rowsRemaining = 32;
+  while (rowsRemaining !== 0) {
+    pixels = 0;
+    column = 0;
+    columnsRemaining = 32;
+
+    while (columnsRemaining !== 0) {
+      address = row;
+      address *= 32;
+      address += column;
+      address += 2048;
+      cell = memory[address];
+      address -= 1024;
+      memory[address] = cell;
+      pixels += pixels;
+      pixels |= cell;
+      column++;
+      columnsRemaining--;
+    }
+
+    address = 4064;
+    address += row;
+    memory[address] = pixels;
+    row++;
+    rowsRemaining--;
+  }
+
+  generations--;
+}
+
+halt();`;
+
+const conwayAssembly = compileMiniScript(conwaySimple);
+
 export const samplePrograms = [
   makeSample('fibonacci', 'Fibonacci sequence', 'Outputs the first eight Fibonacci numbers using four general-purpose registers and a loop.', 'LDI A, 0\nLDI B, 1\nLDI C, 8\nloop:\nOUT A\nMOV D, A\nADD D, B\nMOV A, B\nMOV B, D\nDEC C\nJNZ loop\nHLT', 'let current: u32 = 0;\nlet following: u32 = 1;\nlet count: u32 = 8;\nlet next: u32 = 0;\n\nwhile (count !== 0) {\n  output(current);\n  next = current;\n  next += following;\n  current = following;\n  following = next;\n  count--;\n}\n\nhalt();'),
   makeSample('factorial', '32-bit factorial', 'Calculates 12! = 479001600 with MUL, demonstrating a result far beyond a 16-bit CPU.', 'LDI A, 1\nLDI B, 12\nloop:\nMUL A, B\nDEC B\nJNZ loop\nOUT A\nHLT', 'let result: u32 = 1;\nlet factor: u32 = 12;\n\nwhile (factor !== 0) {\n  result *= factor;\n  factor--;\n}\n\noutput(result);\nhalt();'),
@@ -1265,12 +1417,13 @@ export const samplePrograms = [
   makeSample('counter-class', 'Typed counter class', 'Constructs a Counter object, then inlines a typed method while looping over an object field.', 'LDI A, 2\nLDI B, 4\nloop:\nADDI A, 3\nOUT A\nDEC B\nJNZ loop\nHLT', 'class Counter {\n  value: u32;\n\n  constructor(start: u32) {\n    this.value = start;\n  }\n\n  method add(amount: u32): void {\n    this.value += amount;\n  }\n\n  method emit(): void {\n    output(this.value);\n  }\n}\n\nlet counter: Counter = new Counter(2);\nlet steps: u32 = 4;\nwhile (steps !== 0) {\n  counter.add(3);\n  counter.emit();\n  steps--;\n}\nhalt();'),
   makeSample('cipher-class', 'Encapsulated bit mixer', 'Uses a two-field object and typed methods to apply repeated XOR/add rounds to a 32-bit word.', 'LDI A, 4660\nLDI B, 255\nXOR A, B\nADDI A, 17\nXOR A, B\nADDI A, 17\nOUT A\nHLT', 'class BitMixer {\n  value: u32;\n  key: u32;\n\n  constructor(seed: u32, secret: u32) {\n    this.value = seed;\n    this.key = secret;\n  }\n\n  method round(): void {\n    this.value ^= this.key;\n    this.value += 17;\n  }\n\n  method emit(): void {\n    output(this.value);\n  }\n}\n\nlet mixer: BitMixer = new BitMixer(0x1234, 0x00FF);\nmixer.round();\nmixer.round();\nmixer.emit();\nhalt();'),
   makeSample('array-aggregation', 'Typed array aggregation', 'Stores a fixed-size typed array in RAM, mutates an element, and aggregates indexed values.', 'LDI A, 7\nSTR A, 60\nLDI A, 11\nSTR A, 61\nLDI A, 13\nSTR A, 62\nLDI A, 17\nSTR A, 63\nLDI A, 0\nLDR B, 60\nADD A, B\nLDR B, 61\nADD A, B\nLDR B, 62\nINC B\nSTR B, 62\nLDR B, 62\nADD A, B\nLDR B, 63\nADD A, B\nOUT A\nHLT', 'let values: u32[4] = [7, 11, 13, 17];\nconst last: u32 = values.length - 1;\nlet total: u32 = 0;\n\ntotal += values[0];\ntotal += values[1];\nvalues[2]++;\ntotal += values[2];\ntotal += values[last];\n\noutput(total);\nhalt();'),
-  makeSample('led-scanlines', 'Dynamic LED scanlines', 'Uses STRI in a loop to address all 32 LED rows and alternate two pixel patterns.', 'LDI A, 43690\nLUI A, 43690\nLDI B, 224\nLDI C, 32\nloop:\nSTRI A, B\nNOT A\nINC B\nDEC C\nJNZ loop\nHLT', 'let pixels: u32 = 0xAAAAAAAA;\nlet row: u32 = 224;\nlet remaining: u32 = 32;\n\nwhile (remaining !== 0) {\n  memory[row] = pixels;\n  pixels ^= 0xFFFFFFFF;\n  row++;\n  remaining--;\n}\n\nhalt();'),
-  makeSample('led-heart', 'LED heart', 'Programs the 32×32 LED display by storing one 32-bit pixel row at each address from 224 through 255.', ledHeartAssembly, ledHeartSimple),
+  makeSample('led-scanlines', 'Dynamic LED scanlines', 'Uses STRI in a loop to address all 32 LED rows and alternate two pixel patterns.', 'LDI A, 43690\nLUI A, 43690\nLDI B, 4064\nLDI C, 32\nloop:\nSTRI A, B\nNOT A\nINC B\nDEC C\nJNZ loop\nHLT', 'let pixels: u32 = 0xAAAAAAAA;\nlet row: u32 = 4064;\nlet remaining: u32 = 32;\n\nwhile (remaining !== 0) {\n  memory[row] = pixels;\n  pixels ^= 0xFFFFFFFF;\n  row++;\n  remaining--;\n}\n\nhalt();'),
+  makeSample('led-heart', 'LED heart', 'Programs the 32×32 LED display by storing one 32-bit pixel row at each address from 4064 through 4095.', ledHeartAssembly, ledHeartSimple),
   makeSample('memory-reverse', 'Indirect memory reversal', 'Initializes eight 32-bit words, then uses LDRI and STRI to copy them into a reversed destination range.', memoryReverseAssembly, memoryReverseSimple),
   makeSample('lcg-sequence', 'Class-based random sequence', 'Runs a 32-bit linear congruential generator with overflow arithmetic and emits six deterministic values.', randomSequenceAssembly, randomSequenceSimple),
   makeSample('euclidean-gcd', 'Euclidean GCD', 'Computes gcd(1071, 462) with repeated remainder operations and outputs 21.', gcdAssembly, gcdSimple),
   makeSample('led-x-animation', 'Animated LED X', 'Draws one diagonal with indirect stores, then reads each row back and merges a second diagonal.', ledXAssembly, ledXSimple),
+  makeSample('conways-life', "Conway's Game of Life", 'Evolves two seeded 32×32 patterns for six toroidal generations with double buffering, then renders the cells on the LED display.', conwayAssembly, conwaySimple),
 ];
 
 const sessions = new Map();
