@@ -1,4 +1,3 @@
-// context/AppContext.js
 import React, { createContext, useContext, useReducer } from 'react';
 
 const initialState = {
@@ -19,8 +18,6 @@ const initialState = {
   ttsAutoPlay: false,
   isPlantUMLOpen: false,
   plantUMLPrompt: '',
-  isPodcastTTSOpen: false,
-  podcastTTSPrompt: '',
   isChatBookOpen: false,
   chatBookSubject: '',
   isArchitectureOpen: false,
@@ -55,8 +52,6 @@ const actionTypes = {
   SET_TTS_AUTOPLAY: 'SET_TTS_AUTOPLAY',
   SET_IS_PLANTUML_OPEN: 'SET_IS_PLANTUML_OPEN',
   SET_PLANT_UML_PROMPT: 'SET_PLANT_UML_PROMPT',
-  SET_IS_PODCAST_TTS_OPEN: 'SET_IS_PODCAST_TTS_OPEN',
-  SET_PODCAST_TTS_PROMPT: 'SET_PODCAST_TTS_PROMPT',
   SET_IS_CHAT_BOOK_OPEN: 'SET_IS_CHAT_BOOK_OPEN',
   SET_CHAT_BOOK_SUBJECT: 'SET_CHAT_BOOK_SUBJECT',
   SET_IS_ARCHITECTURE_OPEN: 'SET_IS_ARCHITECTURE_OPEN',
@@ -74,7 +69,6 @@ const actionTypes = {
   SET_MARKDOWN_VIEWER_TEXT: 'SET_MARKDOWN_VIEWER_TEXT',
 };
 
-// ✅ closes all open UI panels (stack managed separately)
 const closeAllPanels = (state) => ({
   ...state,
   isChatOpen: false,
@@ -82,7 +76,6 @@ const closeAllPanels = (state) => ({
   isTeleprompterOpen: false,
   isTTSOpen: false,
   isPlantUMLOpen: false,
-  isPodcastTTSOpen: false,
   isChatBookOpen: false,
   isArchitectureOpen: false,
   isYouTubeOpen: false,
@@ -99,7 +92,6 @@ const drawerKeyToState = {
   teleprompter: 'isTeleprompterOpen',
   tts: 'isTTSOpen',
   plantuml: 'isPlantUMLOpen',
-  podcast: 'isPodcastTTSOpen',
   chatbook: 'isChatBookOpen',
   architecture: 'isArchitectureOpen',
   youtube: 'isYouTubeOpen',
@@ -138,104 +130,66 @@ function appReducer(state, action) {
   switch (action.type) {
     case actionTypes.SET_COPY_TEXT:
       return { ...state, copyText: action.payload };
-
     case actionTypes.SET_HTML_INPUT:
       return { ...state, htmlBuilder: { ...state.htmlBuilder, input: action.payload } };
-
     case actionTypes.SET_GENERATED_HTML:
       return { ...state, htmlBuilder: { ...state.htmlBuilder, generatedHTML: action.payload } };
-
     case actionTypes.SET_IS_CHAT_OPEN:
       return action.payload ? activateDrawer(state, 'chat') : deactivateDrawer(state, 'chat');
-
     case actionTypes.SET_IS_CHAT2_OPEN:
       return action.payload ? activateDrawer(state, 'chat2') : deactivateDrawer(state, 'chat2');
-
     case actionTypes.SET_CHAT_PROMPT:
       return { ...state, chatPrompt: action.payload };
-
     case actionTypes.SET_CHAT2_PROMPT:
       return { ...state, chat2Prompt: action.payload };
-
     case actionTypes.SET_SELECTED_TEXT:
       return { ...state, selectedText: action.payload };
-
     case actionTypes.SET_TTS_TEXT:
       return { ...state, ttsText: action.payload };
-
     case actionTypes.SET_TELEPROMPTER_TEXT:
       return { ...state, teleprompterText: action.payload };
-
     case actionTypes.SET_SELECTED_TRANSCRIPT_TYPE:
       return { ...state, selectedTranscriptType: action.payload };
-
     case actionTypes.SET_IS_TELEPROMPTER_OPEN:
       return action.payload ? activateDrawer(state, 'teleprompter') : deactivateDrawer(state, 'teleprompter');
-
     case actionTypes.SET_IS_TTS_OPEN:
       return action.payload ? activateDrawer(state, 'tts') : deactivateDrawer(state, 'tts');
-
     case actionTypes.SET_TTS_AUTOPLAY:
       return { ...state, ttsAutoPlay: action.payload };
-
     case actionTypes.SET_IS_PLANTUML_OPEN:
       return action.payload ? activateDrawer(state, 'plantuml') : deactivateDrawer(state, 'plantuml');
-
     case actionTypes.SET_PLANT_UML_PROMPT:
       return { ...state, plantUMLPrompt: action.payload };
-
-    case actionTypes.SET_IS_PODCAST_TTS_OPEN:
-      return action.payload ? activateDrawer(state, 'podcast') : deactivateDrawer(state, 'podcast');
-
     case actionTypes.SET_IS_CHAT_BOOK_OPEN:
       return action.payload ? activateDrawer(state, 'chatbook') : deactivateDrawer(state, 'chatbook');
-
     case actionTypes.SET_CHAT_BOOK_SUBJECT:
       return { ...state, chatBookSubject: action.payload };
-
     case actionTypes.SET_IS_ARCHITECTURE_OPEN:
       return action.payload ? activateDrawer(state, 'architecture') : deactivateDrawer(state, 'architecture');
-
     case actionTypes.SET_ARCHITECTURE_PROMPT:
       return { ...state, architecturePrompt: action.payload };
-
-    case actionTypes.SET_PODCAST_TTS_PROMPT:
-      return { ...state, podcastTTSPrompt: action.payload };
-
     case actionTypes.SET_IS_YOUTUBE_OPEN:
       return action.payload ? activateDrawer(state, 'youtube') : deactivateDrawer(state, 'youtube');
-
     case actionTypes.SET_YOUTUBE_SEARCH_TEXT:
       return { ...state, youtubeSearchText: action.payload };
-
     case actionTypes.SET_IS_TYPING_OPEN:
       return action.payload ? activateDrawer(state, 'typing') : deactivateDrawer(state, 'typing');
-
     case actionTypes.SET_TYPING_SOURCE:
       return { ...state, typingSource: action.payload };
-
     case actionTypes.SET_IS_HTML_BUILDER_OPEN:
       return action.payload ? activateDrawer(state, 'html') : deactivateDrawer(state, 'html');
-
     case actionTypes.SET_FLASHCARD_PROMPT:
       return { ...state, flashcardPrompt: action.payload };
-
     case actionTypes.SET_IS_IFRAME_OPEN:
       return action.payload ? activateDrawer(state, 'iframe') : deactivateDrawer(state, 'iframe');
-
     case actionTypes.SET_IS_LARGE_TEXT_OPEN:
       return action.payload ? activateDrawer(state, 'large') : deactivateDrawer(state, 'large');
-
     case actionTypes.SET_IFRAME_SEARCH_TEXT:
-      console.log({action})
       return { ...state, iframeSearchText: action.payload };
-    
     case actionTypes.SET_IS_MARKDOWN_VIEWER_OPEN:
       return action.payload ? activateDrawer(state, 'markdown') : deactivateDrawer(state, 'markdown');
-
     case actionTypes.SET_MARKDOWN_VIEWER_TEXT:
       return { ...state, markdownViewerText: action.payload };
-
     default:
       console.warn(`Unhandled action type: ${action.type}`);
       return state;
@@ -276,8 +230,6 @@ export const actions = {
   setIsTTSOpen: (open) => ({ type: actionTypes.SET_IS_TTS_OPEN, payload: open }),
   setIsPlantUMLOpen: (open) => ({ type: actionTypes.SET_IS_PLANTUML_OPEN, payload: open }),
   setPlantUMLPrompt: (prompt) => ({ type: actionTypes.SET_PLANT_UML_PROMPT, payload: prompt }),
-  setIsPodcastTTSOpen: (open) => ({ type: actionTypes.SET_IS_PODCAST_TTS_OPEN, payload: open }),
-  setPodcastTTSPrompt: (prompt) => ({ type: actionTypes.SET_PODCAST_TTS_PROMPT, payload: prompt }),
   setIsChatBookOpen: (open) => ({ type: actionTypes.SET_IS_CHAT_BOOK_OPEN, payload: open }),
   setChatBookSubject: (subject) => ({ type: actionTypes.SET_CHAT_BOOK_SUBJECT, payload: subject }),
   setIsArchitectureOpen: (open) => ({ type: actionTypes.SET_IS_ARCHITECTURE_OPEN, payload: open }),
@@ -289,9 +241,7 @@ export const actions = {
   setIsHtmlBuilderOpen: (open) => ({ type: actionTypes.SET_IS_HTML_BUILDER_OPEN, payload: open }),
   setFlashcardPrompt: (text) => ({ type: actionTypes.SET_FLASHCARD_PROMPT, payload: text }),
   setIsIframeOpen: (open) => ({ type: actionTypes.SET_IS_IFRAME_OPEN, payload: open }),
-  setIframeSearchText: (text) => { 
-    console.log({text})
-    return { type: actionTypes.SET_IFRAME_SEARCH_TEXT, payload: text }},
+  setIframeSearchText: (text) => ({ type: actionTypes.SET_IFRAME_SEARCH_TEXT, payload: text }),
   setIsLargeTextOpen: (open) => ({ type: actionTypes.SET_IS_LARGE_TEXT_OPEN, payload: open }),
   setLargeTextBuffer: (text) => ({ type: actionTypes.SET_COPY_TEXT, payload: text }),
   setIsMarkdownViewerOpen: (open) => ({ type: actionTypes.SET_IS_MARKDOWN_VIEWER_OPEN, payload: open }),
