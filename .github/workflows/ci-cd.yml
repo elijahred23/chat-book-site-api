@@ -21,6 +21,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build and push Docker image
+        id: push
         uses: docker/build-push-action@v6
         with:
           context: .
@@ -29,3 +30,11 @@ jobs:
           tags: |
             ${{ secrets.DOCKERHUB_USERNAME }}/chat-book-site-api:latest
             ${{ secrets.DOCKERHUB_USERNAME }}/chat-book-site-api:${{ github.sha }}
+
+      - name: Deploy the app
+        uses: digitalocean/app_action/deploy@v2
+        env:
+          SAMPLE_DIGEST: ${{ steps.push.outputs.digest }}
+        with:
+          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+          app_id: ${{ secrets.DIGITALOCEAN_APP_ID }}
