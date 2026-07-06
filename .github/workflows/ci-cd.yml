@@ -37,4 +37,6 @@ jobs:
           SAMPLE_DIGEST: ${{ steps.push.outputs.digest }}
         with:
           token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
-          app_id: ${{ secrets.DIGITALOCEAN_APP_ID }}
+          app_name: ${{ secrets.DIGITALOCEAN_APP_NAME }}
+          print_build_logs: true
+          print_deploy_logs: true
