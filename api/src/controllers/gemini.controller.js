@@ -45,7 +45,7 @@ export const promptGemini = async (req, res) => {
 
   try {
     const geminiResponse = await generateGeminiResponse(prompt);
-    if (geminiResponse?.text?.includes('Sorry, something went wrong.')) throw new Error(geminiResponse?.text);
+    if (!geminiResponse.success) throw new Error(geminiResponse.error || geminiResponse.text);
     return res.send({ geminiResponse, message: 'success' });
   } catch (error) {
     console.error(error);
@@ -60,7 +60,7 @@ export const promptGpt = async (req, res) => {
 
   try {
     const gptResponse = await generateGeminiResponse(prompt);
-    if (!gptResponse.success) throw new Error(gptResponse.text);
+    if (!gptResponse.success) throw new Error(gptResponse.error || gptResponse.text);
     return res.send({ gptResponse: gptResponse.text, message: 'success', success: 1 });
   } catch (error) {
     console.error(error);

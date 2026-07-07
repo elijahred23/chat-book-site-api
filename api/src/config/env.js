@@ -1,5 +1,11 @@
 import dotenv from 'dotenv';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
+const configDir = path.dirname(fileURLToPath(import.meta.url));
+const apiRoot = path.resolve(configDir, '../..');
+
+dotenv.config({ path: path.join(apiRoot, '.env') });
 dotenv.config();
 
 export const env = {

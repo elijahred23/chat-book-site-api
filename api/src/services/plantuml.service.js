@@ -1,7 +1,13 @@
 import { deflateRawSync } from 'zlib';
+import { createHash } from 'crypto';
 import { fetch } from 'undici';
 import { env } from '../config/env.js';
 import { getCorrespondentBankingDiagram } from '../data/correspondentBankingDiagrams.js';
+
+const renderCache = new Map();
+const renderCacheTtlMs = 10 * 60 * 1000;
+const renderCacheMaxEntries = 100;
+const allowedFormats = new Set(['svg', 'png']);
 
 const encode6bit = (value) => {
   if (value < 10) return String.fromCharCode(48 + value);
@@ -37,9 +43,31 @@ function encodePlantUml(source) {
   return encoded;
 }
 
-function buildPlantUmlUrl(source, format = 'svg') {
+export function buildPlantUmlUrl(source, format = 'svg') {
   const serverUrl = env.plantUmlServerUrl.replace(/\/+$/, '');
   return `${serverUrl}/${format}/${encodePlantUml(source)}`;
+}
+
+function normalizeRenderFormat(format = 'svg') {
+  const normalized = String(format || 'svg').trim().toLowerCase();
+  if (!allowedFormats.has(normalized)) {
+    const error = new Error('PlantUML render format must be svg or png.');
+    error.status = 400;
+    throw error;
+  }
+  return normalized;
+}
+
+function getCacheKey(source, format) {
+  return `${format}:${createHash('sha256').update(source).digest('hex')}`;
+}
+
+function rememberRender(cacheKey, value) {
+  if (renderCache.size >= renderCacheMaxEntries) {
+    const oldestKey = renderCache.keys().next().value;
+    if (oldestKey) renderCache.delete(oldestKey);
+  }
+  renderCache.set(cacheKey, { ...value, expiresAt: Date.now() + renderCacheTtlMs });
 }
 
 export function getDiagramSource(diagramId) {
@@ -55,8 +83,34 @@ export function getDiagramSource(diagramId) {
 
 export async function renderDiagramSvg(diagramId) {
   const source = getDiagramSource(diagramId);
-  const response = await fetch(buildPlantUmlUrl(source, 'svg'), {
-    headers: { Accept: 'image/svg+xml' },
+  const rendered = await renderPlantUmlSource(source, 'svg');
+  return rendered.body;
+}
+
+export async function renderPlantUmlSource(source, format = 'svg') {
+  if (typeof source !== 'string' || !source.trim()) {
+    const error = new Error('PlantUML source is required.');
+    error.status = 400;
+    throw error;
+  }
+  if (source.length > 100000) {
+    const error = new Error('PlantUML source is too large.');
+    error.status = 413;
+    throw error;
+  }
+
+  const normalizedFormat = normalizeRenderFormat(format);
+  const cacheKey = getCacheKey(source, normalizedFormat);
+  const cached = renderCache.get(cacheKey);
+  if (cached && Date.now() < cached.expiresAt) {
+    return { body: cached.body, contentType: cached.contentType };
+  }
+  if (cached) renderCache.delete(cacheKey);
+
+  const accept = normalizedFormat === 'svg' ? 'image/svg+xml' : 'image/png';
+  const response = await fetch(buildPlantUmlUrl(source, normalizedFormat), {
+    headers: { Accept: accept },
+    signal: AbortSignal.timeout(15000),
   });
 
   if (!response.ok) {
@@ -65,5 +119,9 @@ export async function renderDiagramSvg(diagramId) {
     throw error;
   }
 
-  return response.text();
+  const body = normalizedFormat === 'svg' ? await response.text() : Buffer.from(await response.arrayBuffer());
+  const contentType = response.headers.get('content-type') || accept;
+  const rendered = { body, contentType };
+  rememberRender(cacheKey, rendered);
+  return rendered;
 }

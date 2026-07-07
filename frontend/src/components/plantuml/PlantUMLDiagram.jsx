@@ -8,6 +8,20 @@ export default function PlantUMLDiagram({ diagramId, title, description, classNa
   const [error, setError] = useState("");
   const imageUrl = `/api/plantuml/diagrams/${diagramId}.svg`;
 
+  const downloadBlob = (blob, filename) => {
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = filename;
+    link.click();
+    window.setTimeout(() => URL.revokeObjectURL(url), 0);
+  };
+
+  const filenameBase = (title || diagramId)
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "") || "diagram";
+
   const loadSource = async () => {
     if (source) return source;
     setIsLoadingSource(true);
@@ -43,6 +57,23 @@ export default function PlantUMLDiagram({ diagramId, title, description, classNa
     }
   };
 
+  const handleDownloadSource = async () => {
+    const text = await loadSource();
+    if (!text) return;
+    downloadBlob(new Blob([text], { type: "text/plain" }), `${filenameBase}.puml`);
+  };
+
+  const handleDownloadSvg = async () => {
+    try {
+      setError("");
+      const response = await fetch(imageUrl);
+      if (!response.ok) throw new Error("Could not download the rendered SVG.");
+      downloadBlob(await response.blob(), `${filenameBase}.svg`);
+    } catch (err) {
+      setError(err.message);
+    }
+  };
+
   return (
     <figure className={`plantuml-diagram ${className}`.trim()}>
       <figcaption>
@@ -54,6 +85,8 @@ export default function PlantUMLDiagram({ diagramId, title, description, classNa
         <div className="plantuml-diagram__actions">
           <a href={imageUrl} rel="noreferrer" target="_blank">Open in new tab</a>
           <button type="button" onClick={handleCopySource}>Copy source</button>
+          <button type="button" onClick={handleDownloadSource}>Download .puml</button>
+          <button type="button" onClick={handleDownloadSvg}>Download SVG</button>
           <button type="button" onClick={handleToggleSource}>
             {isSourceVisible ? "Hide source" : "Show source"}
           </button>

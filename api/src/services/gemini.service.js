@@ -1,15 +1,22 @@
 import { GoogleGenAI, Type } from "@google/genai";
 import { env } from "../config/env.js";
 
-const geminiApiKey = env.geminiApiKey;
 const defaultGeminiModel = "gemini-flash-latest";
 const modelListUrl = "https://generativelanguage.googleapis.com/v1beta/models";
 const modelListCacheTtlMs = 5 * 60 * 1000;
 const maxModelListResponseChars = 1_000_000;
 let modelListCache = { models: null, expiresAt: 0 };
 
-// Initialize the Google GenAI client
-const ai = new GoogleGenAI({ apiKey: geminiApiKey });
+function requireGeminiApiKey() {
+    if (!env.geminiApiKey) {
+        throw new Error("Gemini generation requires GEMINI_API_KEY in api/.env or the process environment.");
+    }
+    return env.geminiApiKey;
+}
+
+function getGeminiClient() {
+    return new GoogleGenAI({ apiKey: requireGeminiApiKey() });
+}
 
 export class GeminiModel {
     static currentModel = env.geminiModel || defaultGeminiModel;
@@ -71,7 +78,7 @@ async function readModelListResponse(response) {
 }
 
 async function listGeminiModels({ forceRefresh = false } = {}) {
-    if (!geminiApiKey) throw new Error("Gemini model discovery requires GEMINI_API_KEY.");
+    const geminiApiKey = requireGeminiApiKey();
     if (!forceRefresh && modelListCache.models && Date.now() < modelListCache.expiresAt) {
         return modelListCache.models;
     }
@@ -116,7 +123,7 @@ async function generateGeminiResponse(msg, gemini_model = null) {
         if (!gemini_model) {
             throw new Error("Model not specified");
         }
-        const response = await ai.models.generateContent({
+        const response = await getGeminiClient().models.generateContent({
             model: gemini_model,
             contents: msg,
             config: {
@@ -136,6 +143,78 @@ async function generateGeminiResponse(msg, gemini_model = null) {
             error: errorMessage
         };
     }
+}
+
+const plantUmlSystemInstruction = `You create clear, valid PlantUML diagrams from user requests.
+
+Return JSON only. The source field must contain one complete PlantUML document and no Markdown fences.
+Choose the best diagram type for the request unless the user asks for a specific type. Prefer readable labels, useful aliases, and a compact layout.`;
+
+function normalizePlantUmlSource(source) {
+    if (typeof source !== "string") return "";
+    let text = source.trim();
+    const fenced = text.match(/```(?:plantuml|puml|uml)?\s*([\s\S]*?)```/i);
+    if (fenced?.[1]) text = fenced[1].trim();
+    const block = text.match(/(@start(?:uml|mindmap|wbs|gantt|json|yaml|salt|ditaa|dot)[\s\S]*?@end(?:uml|mindmap|wbs|gantt|json|yaml|salt|ditaa|dot))/i);
+    return (block ? block[1] : text).trim();
+}
+
+function isPlantUmlSource(source) {
+    return /^@start(?:uml|mindmap|wbs|gantt|json|yaml|salt|ditaa|dot)\b/i.test(source)
+        && /@end(?:uml|mindmap|wbs|gantt|json|yaml|salt|ditaa|dot)\s*$/i.test(source);
+}
+
+async function generatePlantUmlDiagram(prompt, gemini_model = null) {
+    const model = gemini_model || GeminiModel.currentModel;
+    if (!model) throw new Error("Model not specified");
+
+    const response = await getGeminiClient().models.generateContent({
+        model,
+        contents: prompt,
+        config: {
+            systemInstruction: plantUmlSystemInstruction,
+            temperature: 0.2,
+            maxOutputTokens: 8192,
+            responseMimeType: "application/json",
+            responseSchema: {
+                type: Type.OBJECT,
+                properties: {
+                    title: {
+                        type: Type.STRING,
+                        description: "Short descriptive title for the diagram.",
+                    },
+                    diagramType: {
+                        type: Type.STRING,
+                        description: "PlantUML diagram type, such as sequence, class, component, activity, state, mindmap, or object.",
+                    },
+                    source: {
+                        type: Type.STRING,
+                        description: "Complete PlantUML source with @start... and @end... markers.",
+                    },
+                },
+                required: ["source"],
+            },
+        },
+    });
+
+    let parsed;
+    try {
+        parsed = JSON.parse(response?.text || "{}");
+    } catch {
+        const source = normalizePlantUmlSource(response?.text || "");
+        parsed = { source };
+    }
+
+    const source = normalizePlantUmlSource(parsed.source || response?.text || "");
+    if (!isPlantUmlSource(source)) {
+        throw new Error("Gemini returned a response without a complete PlantUML document.");
+    }
+
+    return {
+        title: typeof parsed.title === "string" ? parsed.title.trim() : "",
+        diagramType: typeof parsed.diagramType === "string" ? parsed.diagramType.trim() : "",
+        source,
+    };
 }
 
 const cpuProgramSystemInstruction = `You write programs for Clockwork, a 32-bit educational CPU with 16 registers and 4,096 words of memory. Convert the user's request into one complete runnable program.
@@ -187,7 +266,7 @@ async function generateCpuProgram(prompt, gemini_model = null) {
     const model = gemini_model || GeminiModel.currentModel;
     if (!model) throw new Error("Model not specified");
 
-    const response = await ai.models.generateContent({
+    const response = await getGeminiClient().models.generateContent({
         model,
         contents: prompt,
         config: {
@@ -221,4 +300,4 @@ async function generateCpuProgram(prompt, gemini_model = null) {
 }
 
 
-export { generateCpuProgram, generateGeminiResponse, listGeminiModels, normalizeGeminiModel };
+export { generateCpuProgram, generateGeminiResponse, generatePlantUmlDiagram, listGeminiModels, normalizeGeminiModel };
