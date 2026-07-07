@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Card from "../ui/Card";
 import { Page, PageHeader } from "../ui/Page";
+import CorrespondentBankingDiagrams from "./CorrespondentBankingDiagrams";
 
 const roles = [
   ["Respondent bank", "A community bank or credit union that uses a correspondent for rail access, settlement, item processing, liquidity, or operations support."],
@@ -194,7 +195,7 @@ export default function CorrespondentBankingGuide() {
       <section className="banking-overview-strip" aria-label="Correspondent banking highlights">
         <div><span>Scope</span><strong>Rails, standards, vendors, exceptions</strong></div>
         <div><span>ISO messages</span><strong>{totalMessageCount} decoder cards</strong></div>
-        <div><span>Best mental model</span><strong>Lifecycle, not one status</strong></div>
+        <div><span>Visual models</span><strong>4 deep-dive diagrams</strong></div>
       </section>
 
       <PageHeader eyebrow="Mental model" title="Who is doing what?" description="Correspondent banking is a relay race with compliance checkpoints, ledger footprints, and carefully labeled envelopes." />
@@ -212,6 +213,8 @@ export default function CorrespondentBankingGuide() {
           ))}
         </div>
       </section>
+
+      <CorrespondentBankingDiagrams />
 
       <PageHeader eyebrow="Standards map" title="The correspondent-banking standards cabinet" description="The useful shelf: Fed operating rules, ISO schemas, Nacha rules, X9 check-image standards, ECCHO rules, and vendor implementation layers." />
       <div className="banking-standard-list">
