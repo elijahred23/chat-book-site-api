@@ -41,6 +41,19 @@ function sourceFilename(title, extension) {
   return `${base}.${extension}`;
 }
 
+function writePopupStatus(popup, message) {
+  if (!popup || popup.closed) return;
+
+  try {
+    popup.document.title = "PlantUML diagram";
+    popup.document.body.style.fontFamily = "system-ui, sans-serif";
+    popup.document.body.style.padding = "1rem";
+    popup.document.body.textContent = message;
+  } catch {
+    // Some browsers may restrict access after the popup begins navigating.
+  }
+}
+
 export default function PlantUMLViewer() {
   const { plantUMLPrompt } = useAppState();
   const [uml, setUml] = useState(starterUml);
@@ -199,13 +212,27 @@ export default function PlantUMLViewer() {
   };
 
   const openRendered = async () => {
+    const popup = window.open("", "_blank");
+    writePopupStatus(popup, "Rendering PlantUML PNG...");
+
     try {
       setError("");
       const blob = await renderPlantUmlSource(uml, "png");
       const url = URL.createObjectURL(blob);
-      window.open(url, "_blank", "noopener,noreferrer");
+
+      if (popup && !popup.closed) {
+        popup.location.href = url;
+      } else {
+        const fallbackPopup = window.open(url, "_blank", "noopener,noreferrer");
+        if (!fallbackPopup) {
+          downloadBlob(blob, sourceFilename(diagramTitle, "png"));
+          setError("The browser blocked the new tab, so the PNG was downloaded instead.");
+        }
+      }
+
       window.setTimeout(() => URL.revokeObjectURL(url), 60000);
     } catch (err) {
+      writePopupStatus(popup, "Could not render the PlantUML PNG.");
       setError(err.message || "Could not open rendered diagram.");
     }
   };
