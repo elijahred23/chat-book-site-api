@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { FaArrowRight, FaBookOpen, FaCode, FaLayerGroup, FaMicrochip, FaPlay } from "react-icons/fa";
+import { FaArrowRight, FaBookOpen, FaCode, FaLayerGroup, FaMicrochip, FaPlay, FaUniversity } from "react-icons/fa";
 import Button from "../ui/Button";
 import Card from "../ui/Card";
 import { Page, PageHeader } from "../ui/Page";
@@ -9,6 +9,7 @@ const destinations = [
   { to: "/coding", icon: FaCode, title: "Coding practice", text: "Work through guided programming problems." },
   { to: "/cpu-simulator", icon: FaMicrochip, title: "CPU simulator", text: "Step through a 32-bit processor one clock pulse at a time." },
   { to: "/system-design", icon: FaBookOpen, title: "System design", text: "Study concepts and structured design exercises." },
+  { to: "/correspondent-banking", icon: FaUniversity, title: "Correspondent banking", text: "Learn Fedwire, ACH, ISO 20022, Fiserv, and check image standards." },
   { to: "/media-player", icon: FaPlay, title: "Media player", text: "Practice with focused playback controls." },
 ];
 
