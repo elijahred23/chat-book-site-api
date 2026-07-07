@@ -1,0 +1,244 @@
+@layer pages {
+  .banking-diagram-zone {
+    position: relative;
+    display: grid;
+    gap: var(--space-4);
+    overflow: hidden;
+    border: 1px solid rgba(148, 163, 184, 0.24);
+    border-radius: clamp(1.25rem, 3vw, 2rem);
+    padding: clamp(1rem, 4vw, 2rem);
+    background:
+      radial-gradient(circle at 12% 18%, rgba(59, 130, 246, 0.26), transparent 28%),
+      radial-gradient(circle at 90% 8%, rgba(20, 184, 166, 0.24), transparent 26%),
+      linear-gradient(145deg, #08111f 0%, #10213d 50%, #063d3a 100%);
+    box-shadow: var(--shadow-md);
+  }
+
+  .banking-dark-heading {
+    max-width: 58rem;
+  }
+
+  .banking-dark-heading span,
+  .banking-modal-header span,
+  .banking-diagram-card > span {
+    display: inline-flex;
+    width: fit-content;
+    border: 1px solid rgba(191, 219, 254, 0.28);
+    border-radius: var(--radius-pill);
+    padding: 0.36rem 0.7rem;
+    background: rgba(255, 255, 255, 0.08);
+    color: #bfdbfe;
+    font-size: 0.72rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .banking-dark-heading h2,
+  .banking-modal-header h2 {
+    max-width: 16ch;
+    margin: 0.8rem 0 0;
+    color: #f8fbff;
+    font-size: clamp(1.8rem, 4vw, 3.4rem);
+    line-height: 1;
+  }
+
+  .banking-dark-heading p,
+  .banking-modal-header p {
+    max-width: 46rem;
+    margin: 0.9rem 0 0;
+    color: #dbeafe;
+    font-size: clamp(0.98rem, 1.6vw, 1.12rem);
+  }
+
+  .banking-diagram-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+    gap: var(--space-4);
+  }
+
+  .banking-diagram-card {
+    appearance: none;
+    cursor: pointer;
+    display: grid;
+    gap: 0.75rem;
+    min-height: 21rem;
+    border: 1px solid rgba(219, 234, 254, 0.22);
+    border-radius: var(--radius-xl);
+    padding: 1.1rem;
+    background:
+      radial-gradient(circle at 100% 0%, rgba(255, 255, 255, 0.14), transparent 30%),
+      rgba(255, 255, 255, 0.08);
+    color: #eaf2ff;
+    text-align: left;
+    box-shadow: 0 22px 50px rgba(0, 0, 0, 0.18);
+    transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+  }
+
+  .banking-diagram-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(191, 219, 254, 0.55);
+    background:
+      radial-gradient(circle at 100% 0%, rgba(255, 255, 255, 0.18), transparent 30%),
+      rgba(255, 255, 255, 0.12);
+  }
+
+  .banking-diagram-card strong {
+    width: fit-content;
+    border-radius: var(--radius-pill);
+    padding: 0.35rem 0.7rem;
+    background: rgba(20, 184, 166, 0.18);
+    color: #ccfbf1;
+    font-size: 0.82rem;
+  }
+
+  .banking-diagram-card h3 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 1.25rem;
+    line-height: 1.1;
+  }
+
+  .banking-diagram-card p {
+    margin: 0;
+    color: #dbeafe;
+    font-size: 0.94rem;
+  }
+
+  .banking-diagram-card em {
+    align-self: end;
+    color: #bfdbfe;
+    font-style: normal;
+    font-weight: 900;
+  }
+
+  .banking-mini-flow {
+    display: grid;
+    gap: 0.45rem;
+  }
+
+  .banking-mini-flow i {
+    position: relative;
+    display: block;
+    border: 1px solid rgba(191, 219, 254, 0.2);
+    border-radius: 0.9rem;
+    padding: 0.5rem 0.65rem;
+    background: rgba(15, 23, 42, 0.36);
+    color: #f8fbff;
+    font-size: 0.82rem;
+    font-style: normal;
+    font-weight: 800;
+  }
+
+  .banking-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 80;
+    display: grid;
+    place-items: center;
+    padding: clamp(1rem, 4vw, 2rem);
+    background: rgba(2, 6, 23, 0.72);
+    backdrop-filter: blur(12px);
+  }
+
+  .banking-diagram-modal {
+    position: relative;
+    width: min(72rem, 100%);
+    max-height: min(90vh, 58rem);
+    overflow: auto;
+    border: 1px solid rgba(191, 219, 254, 0.22);
+    border-radius: clamp(1rem, 3vw, 1.75rem);
+    padding: clamp(1rem, 4vw, 2rem);
+    background:
+      radial-gradient(circle at 8% 8%, rgba(37, 99, 235, 0.24), transparent 28%),
+      linear-gradient(145deg, #08111f 0%, #101f39 58%, #0d3735 100%);
+    box-shadow: 0 34px 100px rgba(0, 0, 0, 0.42);
+  }
+
+  .banking-modal-close {
+    position: sticky;
+    top: 0;
+    margin-left: auto;
+    display: block;
+    cursor: pointer;
+    border: 1px solid rgba(191, 219, 254, 0.36);
+    border-radius: var(--radius-pill);
+    padding: 0.5rem 0.9rem;
+    background: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+    font: inherit;
+    font-weight: 900;
+  }
+
+  .banking-modal-flow {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 9rem), 1fr));
+    gap: 0.75rem;
+    margin-top: var(--space-5);
+  }
+
+  .banking-modal-node {
+    position: relative;
+    display: grid;
+    gap: 0.5rem;
+    min-height: 6.6rem;
+    border: 1px solid rgba(191, 219, 254, 0.22);
+    border-radius: var(--radius-lg);
+    padding: 0.9rem;
+    background: rgba(255, 255, 255, 0.09);
+  }
+
+  .banking-modal-node span {
+    color: #93c5fd;
+    font-size: 0.76rem;
+    font-weight: 900;
+  }
+
+  .banking-modal-node strong {
+    color: #f8fbff;
+    font-size: 1rem;
+  }
+
+  .banking-modal-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-4);
+    margin-top: var(--space-5);
+  }
+
+  .banking-modal-detail-grid div {
+    border: 1px solid rgba(191, 219, 254, 0.18);
+    border-radius: var(--radius-lg);
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .banking-modal-detail-grid h3 {
+    margin: 0 0 0.8rem;
+    color: #ffffff;
+    font-size: 1rem;
+  }
+
+  .banking-modal-detail-grid ul {
+    display: grid;
+    gap: 0.65rem;
+    margin: 0;
+    padding-left: 1.1rem;
+    color: #dbeafe;
+  }
+
+  @media (max-width: 700px) {
+    .banking-dark-heading h2,
+    .banking-modal-header h2 {
+      max-width: 100%;
+    }
+
+    .banking-diagram-card {
+      min-height: 0;
+    }
+
+    .banking-modal-detail-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}
