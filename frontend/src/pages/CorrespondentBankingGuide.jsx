@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Card from "../ui/Card";
 import { Page, PageHeader } from "../ui/Page";
 
@@ -49,15 +50,94 @@ const standards = [
   },
 ];
 
-const messages = [
-  ["pacs.008", "Customer credit transfer", "Send money for a customer."],
-  ["pacs.009", "Financial institution credit transfer", "Move money bank-to-bank."],
-  ["pacs.002", "Payment status report", "Accepted, rejected, pending, completed, or another network status."],
-  ["pacs.004", "Payment return", "Return money after the original payment cannot remain completed."],
-  ["camt.056", "Recall request", "Ask to cancel, recall, or investigate a payment."],
-  ["camt.029", "Investigation response", "Answer a recall or investigation request."],
-  ["pain.001", "Customer initiation", "Customer-to-bank instruction that may become an interbank payment."],
-  ["camt.053", "Statement", "End-of-day cash-management statement for reconciliation."],
+const messageFamilies = [
+  {
+    id: "pacs",
+    label: "pacs",
+    title: "Payment clearing and settlement",
+    description: "The interbank money-movement family. These messages carry wires, settlement transfers, returns, reversals, and status reports.",
+    color: "blue",
+    messages: [
+      ["pacs.002", "Payment status report", "Status update for a payment message. Received, accepted, rejected, settled, or pending."],
+      ["pacs.003", "Direct debit instruction", "Direct debit payment instruction between banks."],
+      ["pacs.004", "Payment return", "Return previously received funds back to the sender."],
+      ["pacs.007", "Payment reversal", "Reverse or undo a previously settled payment."],
+      ["pacs.008", "Customer credit transfer", "Send money for a customer payment. This is the standard customer wire transfer message."],
+      ["pacs.009", "Financial institution credit transfer", "Send money for a bank-to-bank payment or settlement transfer."],
+      ["pacs.010", "Direct debit received notice", "Notify another institution that a direct debit has been received."],
+      ["pacs.028", "Payment status request", "Ask for the status of an existing payment."],
+    ],
+  },
+  {
+    id: "pain",
+    label: "pain",
+    title: "Customer initiated requests",
+    description: "The customer-to-bank instruction family. A pain message often starts the story before the bank converts it into an interbank pacs message.",
+    color: "purple",
+    messages: [
+      ["pain.001", "Customer credit transfer initiation", "Customer asks their bank to send money."],
+      ["pain.002", "Customer payment status report", "Bank responds with the status of the customer's payment request."],
+      ["pain.007", "Customer reversal request", "Customer requests a payment reversal."],
+      ["pain.008", "Customer direct debit initiation", "Customer initiates a direct debit collection request."],
+      ["pain.009", "Customer payment status request", "Customer requests the status of a payment."],
+      ["pain.012", "Customer cancellation request", "Customer requests a payment cancellation."],
+      ["pain.013", "Customer investigation request", "Customer requests a payment investigation or inquiry."],
+      ["pain.014", "Investigation response", "Bank responds to a payment investigation request."],
+    ],
+  },
+  {
+    id: "camt",
+    label: "camt",
+    title: "Cash management and investigations",
+    description: "The reporting, notification, recall, and case-management family. This is where balances, statements, credits, debits, and investigations live.",
+    color: "teal",
+    messages: [
+      ["camt.026", "Investigation request", "Request investigation of a payment or account issue."],
+      ["camt.029", "Resolution or recall response", "Response to an investigation, recall, or cancellation request."],
+      ["camt.030", "Case status request", "Request a case status update."],
+      ["camt.052", "Intraday account report", "Intraday account reporting and balance updates."],
+      ["camt.053", "Bank statement", "End-of-day account statement."],
+      ["camt.054", "Debit or credit notification", "Notification that money was credited or debited from an account."],
+      ["camt.055", "Cancellation request", "Request cancellation of a payment."],
+      ["camt.056", "Recall request", "Recall or cancellation request for a payment already sent."],
+      ["camt.057", "Case assignment notice", "Notification that an investigation case has been assigned or modified."],
+      ["camt.058", "Investigation status update", "Resolution or status update for an investigation case."],
+      ["camt.087", "Additional information request", "Request additional information about a payment or investigation case."],
+    ],
+  },
+  {
+    id: "admin",
+    label: "admin",
+    title: "Headers and technical acknowledgements",
+    description: "The technical envelope and plumbing family. These messages help the network route, acknowledge, or reject the package before business logic takes over.",
+    color: "amber",
+    messages: [
+      ["head.001", "Business application header", "Business application header containing sender, receiver, and routing information."],
+      ["admi.002", "Technical acknowledgement", "Technical acknowledgement that a message was received."],
+      ["admi.004", "Technical rejection", "Technical rejection or error response for a message."],
+    ],
+  },
+];
+
+const railMessageTabs = [
+  {
+    id: "fednow",
+    label: "FedNow",
+    summary: "Instant payment rail where one outgoing payment may generate multiple status reports as it moves through validation and final posting.",
+    messages: ["pacs.008", "pacs.002", "camt.056", "camt.029", "pacs.004"],
+  },
+  {
+    id: "fedwire",
+    label: "Fedwire ISO 20022",
+    summary: "High-value domestic wire rail focused on final settlement, status, account reporting, and debit or credit notifications.",
+    messages: ["pacs.008", "pacs.009", "pacs.002", "camt.052", "camt.053", "camt.054"],
+  },
+  {
+    id: "swift",
+    label: "SWIFT CBPR+",
+    summary: "Cross-border correspondent banking messages for customer wires, bank transfers, status, recalls, responses, and returns.",
+    messages: ["pacs.008", "pacs.009", "pacs.002", "camt.056", "camt.029", "pacs.004"],
+  },
 ];
 
 const rails = [
@@ -84,6 +164,13 @@ const fieldNotes = [
 ];
 
 export default function CorrespondentBankingGuide() {
+  const [activeFamily, setActiveFamily] = useState(messageFamilies[0].id);
+  const [activeRail, setActiveRail] = useState(railMessageTabs[0].id);
+
+  const selectedFamily = messageFamilies.find((family) => family.id === activeFamily) ?? messageFamilies[0];
+  const selectedRail = railMessageTabs.find((rail) => rail.id === activeRail) ?? railMessageTabs[0];
+  const totalMessageCount = messageFamilies.reduce((count, family) => count + family.messages.length, 0);
+
   return (
     <Page className="banking-guide-page">
       <section className="banking-hero">
@@ -102,6 +189,12 @@ export default function CorrespondentBankingGuide() {
           <div className="banking-pulse banking-pulse--one" />
           <div className="banking-pulse banking-pulse--two" />
         </div>
+      </section>
+
+      <section className="banking-overview-strip" aria-label="Correspondent banking highlights">
+        <div><span>Scope</span><strong>Rails, standards, vendors, exceptions</strong></div>
+        <div><span>ISO messages</span><strong>{totalMessageCount} decoder cards</strong></div>
+        <div><span>Best mental model</span><strong>Lifecycle, not one status</strong></div>
       </section>
 
       <PageHeader eyebrow="Mental model" title="Who is doing what?" description="Correspondent banking is a relay race with compliance checkpoints, ledger footprints, and carefully labeled envelopes." />
@@ -133,17 +226,101 @@ export default function CorrespondentBankingGuide() {
         ))}
       </div>
 
-      <section className="banking-reference-section">
-        <div>
-          <PageHeader eyebrow="ISO 20022 decoder" title="Message names that stop looking like license plates" description="The first word tells you the family: pacs is clearing and settlement, camt is cash management, and pain is initiation." />
-          <div className="banking-message-table" role="table" aria-label="ISO 20022 message reference">
-            {messages.map(([message, name, meaning]) => (<div className="banking-message-row" role="row" key={message}><code>{message}</code><strong>{name}</strong><span>{meaning}</span></div>))}
+      <section className="banking-iso-lab">
+        <div className="banking-iso-lab__intro">
+          <PageHeader eyebrow="ISO 20022 decoder" title="Message types, grouped like a clean control room" description="Tabs keep the license-plate names readable: customer requests, interbank movement, cash management, and technical acknowledgements." />
+          <div className="banking-memory-grid" aria-label="ISO 20022 memory trick">
+            <div><code>pain</code><span>Customer asks</span></div>
+            <div><code>pacs</code><span>Money moves</span></div>
+            <div><code>camt</code><span>Accounts and cases</span></div>
+            <div><code>admi/head</code><span>Technical envelope</span></div>
           </div>
         </div>
+
+        <Card className={`banking-message-panel banking-message-panel--${selectedFamily.color}`}>
+          <div className="banking-tabs" role="tablist" aria-label="ISO 20022 message families">
+            {messageFamilies.map((family) => (
+              <button
+                aria-controls={`message-panel-${family.id}`}
+                aria-selected={selectedFamily.id === family.id}
+                className="banking-tab"
+                id={`message-tab-${family.id}`}
+                key={family.id}
+                onClick={() => setActiveFamily(family.id)}
+                role="tab"
+                type="button"
+              >
+                <span>{family.label}</span>
+                <strong>{family.messages.length}</strong>
+              </button>
+            ))}
+          </div>
+
+          <div
+            aria-labelledby={`message-tab-${selectedFamily.id}`}
+            className="banking-tab-panel"
+            id={`message-panel-${selectedFamily.id}`}
+            role="tabpanel"
+          >
+            <div className="banking-tab-panel__header">
+              <div>
+                <span>{selectedFamily.label} messages</span>
+                <h2>{selectedFamily.title}</h2>
+              </div>
+              <p>{selectedFamily.description}</p>
+            </div>
+            <div className="banking-message-card-grid">
+              {selectedFamily.messages.map(([message, name, meaning]) => (
+                <article className="banking-message-card" key={message}>
+                  <code>{message}</code>
+                  <h3>{name}</h3>
+                  <p>{meaning}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </Card>
+
+        <Card className="banking-rail-message-panel">
+          <div className="banking-rail-message-panel__copy">
+            <span>Common by rail</span>
+            <h2>Which ISO messages show up together?</h2>
+            <p>Use this as the operator cheat sheet when reading FedNow, Fedwire ISO 20022, or SWIFT CBPR+ lifecycle logs.</p>
+          </div>
+          <div className="banking-rail-tabs" role="tablist" aria-label="Common ISO messages by payment rail">
+            {railMessageTabs.map((rail) => (
+              <button
+                aria-controls={`rail-panel-${rail.id}`}
+                aria-selected={selectedRail.id === rail.id}
+                className="banking-rail-tab"
+                id={`rail-tab-${rail.id}`}
+                key={rail.id}
+                onClick={() => setActiveRail(rail.id)}
+                role="tab"
+                type="button"
+              >
+                {rail.label}
+              </button>
+            ))}
+          </div>
+          <div aria-labelledby={`rail-tab-${selectedRail.id}`} className="banking-rail-tab-panel" id={`rail-panel-${selectedRail.id}`} role="tabpanel">
+            <p>{selectedRail.summary}</p>
+            <div className="banking-token-row">
+              {selectedRail.messages.map((message) => <code key={message}>{message}</code>)}
+            </div>
+          </div>
+        </Card>
+      </section>
+
+      <section className="banking-reference-section">
         <Card className="banking-note-card">
           <h2>Developer lens</h2>
           <p>Build payments as lifecycles, not one status field. A wire can be created, approved, serialized, queued, delivered, accepted, settled, posted, returned, or investigated.</p>
           <pre><code>{`instruction -> validation -> envelope -> rail delivery -> status report -> settlement journal -> core posting -> exception handling`}</code></pre>
+        </Card>
+        <Card className="banking-note-card banking-note-card--blueprint">
+          <h2>UI idea for your lab</h2>
+          <p>Keep queue delivery, network response, settlement journal, and core posting in separate timeline lanes. That prevents a green transport checkmark from pretending the money fully settled.</p>
         </Card>
       </section>
 
