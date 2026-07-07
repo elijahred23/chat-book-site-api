@@ -6,6 +6,7 @@ import {
   FaComments,
   FaGlobe,
   FaKeyboard,
+  FaProjectDiagram,
   FaScroll,
   FaVolumeUp,
   FaYoutube,
@@ -29,6 +30,8 @@ import BengaliTutor from "./pages/BengaliTutor.jsx";
 import ChatTemplate from "./pages/ChatTemplate.jsx";
 import CodingProblems from "./pages/CodingProblems.jsx";
 import CorrespondentBankingGuide from "./pages/CorrespondentBankingGuide.jsx";
+import CorrespondentBankingDiagrams from "./pages/CorrespondentBankingDiagrams.jsx";
+import CorrespondentBankingModule from "./pages/CorrespondentBankingModule.jsx";
 import Home from "./pages/Home.jsx";
 import ProgressBar from "./ui/ProgressBar.jsx";
 import Quran from "./pages/Quran.jsx";
@@ -89,6 +92,7 @@ function AppContent() {
     { key: "chat", label: "AI Chat", icon: FaComments, active: isChatOpen, action: () => setPanel(actions.setIsChatOpen, true) },
     { key: "chat2", label: "Dual Chat", icon: FaComments, active: isChat2Open, action: () => setPanel(actions.setIsChat2Open, true) },
     { key: "tts", label: "Text to Speech", icon: FaVolumeUp, active: isTTSOpen, action: () => setPanel(actions.setIsTTSOpen, true) },
+    { key: "plantuml", label: "PlantUML", icon: FaProjectDiagram, active: isPlantUMLOpen, action: () => setPanel(actions.setIsPlantUMLOpen, true) },
     { key: "markdown", label: "Markdown Viewer", icon: SiMarkdown, active: isMarkdownViewerOpen, action: () => setPanel(actions.setIsMarkdownViewerOpen, true) },
     { key: "teleprompter", label: "Teleprompter", icon: FaScroll, active: isTeleprompterOpen, action: () => setPanel(actions.setIsTeleprompterOpen, true) },
     { key: "chatbook", label: "Chat Book", icon: GiNotebook, active: isChatBookOpen, action: () => setPanel(actions.setIsChatBookOpen, true) },
@@ -128,6 +132,8 @@ function AppContent() {
           <Route path="/cpu-simulator" element={<Suspense fallback={null}><CpuSimulatorWithOutputHistory /></Suspense>} />
           <Route path="/system-design" element={<SystemDesignPrep />} />
           <Route path="/correspondent-banking" element={<CorrespondentBankingGuide />} />
+          <Route path="/correspondent-banking/diagrams" element={<CorrespondentBankingDiagrams />} />
+          <Route path="/correspondent-banking/:moduleId" element={<CorrespondentBankingModule />} />
           <Route path="/pdf-to-text" element={<PdfToText />} />
           <Route path="/media-player" element={<MediaPlayer />} />
           <Route path="/action-buttons-studio" element={<ActionButtonStudio />} />

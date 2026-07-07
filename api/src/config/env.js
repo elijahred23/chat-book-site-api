@@ -12,4 +12,5 @@ export const env = {
   pdfUploadMaxMb: Number(process.env.PDF_UPLOAD_MAX_MB || 1024),
   ttsServiceAccountJson: process.env.TTS_SA_JSON || process.env.GOOGLE_APPLICATION_CREDENTIALS_JSON || '',
   googleApplicationCredentials: process.env.GOOGLE_APPLICATION_CREDENTIALS || '',
+  plantUmlServerUrl: process.env.PLANTUML_SERVER_URL?.trim() || 'https://www.plantuml.com/plantuml',
 };

@@ -1,657 +1,367 @@
 @layer pages {
   .banking-guide-page {
+    --banking-border: rgba(148, 163, 184, 0.28);
     --banking-ink: #0f172a;
-    --banking-blue: #2563eb;
-    --banking-teal: #0f766e;
-    --banking-purple: #7c3aed;
-    --banking-amber: #b45309;
+    --banking-muted: #475569;
+    --banking-panel: rgba(255, 255, 255, 0.94);
+    margin: calc(clamp(0.75rem, 2.5vw, 2rem) * -1);
+    min-height: calc(100vh - 4rem);
+    padding: clamp(0.85rem, 2.5vw, 1.5rem);
+    background:
+      radial-gradient(circle at 8% 4%, rgba(219, 234, 254, 0.9), transparent 28rem),
+      radial-gradient(circle at 96% 10%, rgba(204, 251, 241, 0.76), transparent 26rem),
+      linear-gradient(180deg, #f8fbff 0%, #f5f9ff 44%, #ffffff 100%);
+    color: var(--banking-ink);
+  }
+
+  .banking-learning-shell {
     display: grid;
-    gap: clamp(2rem, 5vw, 4.5rem);
-    padding-bottom: 5rem;
+    grid-template-columns: minmax(12rem, 16rem) minmax(0, 1fr);
+    gap: clamp(1rem, 3vw, 1.75rem);
+    align-items: start;
+    max-width: 92rem;
+    margin: 0 auto;
+  }
+
+  .banking-learning-main {
+    display: grid;
+    gap: clamp(1rem, 3vw, 1.5rem);
+    min-width: 0;
+  }
+
+  .banking-module-nav {
+    position: sticky;
+    top: 1rem;
+    display: grid;
+    gap: 0.35rem;
+    border: 1px solid var(--banking-border);
+    border-radius: 0.75rem;
+    padding: 0.65rem;
+    background: var(--banking-panel);
+    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.07);
+  }
+
+  .banking-module-nav__link {
+    border-radius: 0.55rem;
+    padding: 0.58rem 0.7rem;
+    color: var(--banking-muted);
+    font-size: 0.88rem;
+    font-weight: 800;
+    text-decoration: none;
+  }
+
+  .banking-module-nav__link:hover,
+  .banking-module-nav__link:focus {
+    background: #eff6ff;
+    color: #1d4ed8;
+    outline: none;
+  }
+
+  .banking-module-nav__link--active {
+    background: #1d4ed8;
+    color: #ffffff;
+  }
+
+  .banking-hero,
+  .banking-module-header,
+  .banking-filter-card,
+  .plantuml-diagram {
+    border: 1px solid var(--banking-border);
+    border-radius: 0.85rem;
+    background: var(--banking-panel);
+    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.07);
   }
 
   .banking-hero {
-    position: relative;
-    min-height: min(36rem, calc(100vh - 7rem));
     display: grid;
-    grid-template-columns: minmax(0, 1.05fr) minmax(17rem, 0.95fr);
-    align-items: center;
-    gap: clamp(2rem, 6vw, 5rem);
-    overflow: hidden;
-    border: 1px solid rgba(186, 207, 229, 0.85);
-    border-radius: clamp(1.25rem, 3vw, 2rem);
-    padding: clamp(1.35rem, 5vw, 4.5rem);
-    background:
-      radial-gradient(circle at 82% 15%, rgba(14, 165, 233, 0.22), transparent 28%),
-      radial-gradient(circle at 7% 92%, rgba(20, 184, 166, 0.2), transparent 26%),
-      linear-gradient(140deg, #ffffff 0%, #eef5ff 48%, #ecfdf8 100%);
-    box-shadow: var(--shadow-md);
-  }
-
-  .banking-hero::before {
-    content: "";
-    position: absolute;
-    inset: 1rem;
-    border: 1px solid rgba(255, 255, 255, 0.7);
-    border-radius: inherit;
-    pointer-events: none;
-  }
-
-  .banking-hero__copy {
-    min-width: 0;
-    position: relative;
-    z-index: 1;
-  }
-
-  .banking-kicker {
-    display: inline-flex;
-    border: 1px solid #bfdbfe;
-    border-radius: var(--radius-pill);
-    padding: 0.36rem 0.75rem;
-    background: rgba(255, 255, 255, 0.76);
-    color: var(--color-primary);
-    font-size: 0.74rem;
-    font-weight: 850;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-  }
-
-  .banking-hero h1 {
-    max-width: 12ch;
-    margin: 1rem 0;
-    font-size: clamp(2.25rem, 6vw, 5rem);
-    line-height: 0.96;
-    text-align: left;
-  }
-
-  .banking-hero p {
-    max-width: 46rem;
-    margin: 0;
-    color: var(--color-text-muted);
-    font-size: clamp(1rem, 1.5vw, 1.18rem);
-  }
-
-  .banking-hero__chips {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.6rem;
-    margin-top: var(--space-5);
-  }
-
-  .banking-hero__chips span {
-    border: 1px solid rgba(148, 163, 184, 0.45);
-    border-radius: var(--radius-pill);
-    padding: 0.45rem 0.7rem;
-    background: rgba(255, 255, 255, 0.72);
-    color: var(--color-text);
-    font-size: 0.8rem;
-    font-weight: 800;
-  }
-
-  .banking-hero__diagram {
-    position: relative;
-    min-height: 24rem;
-    display: grid;
-    place-items: center;
-  }
-
-  .banking-node,
-  .banking-rail {
-    position: absolute;
-    border: 1px solid rgba(255, 255, 255, 0.72);
-    background: rgba(255, 255, 255, 0.82);
-    box-shadow: 0 24px 60px rgba(30, 64, 175, 0.17);
-    backdrop-filter: blur(18px);
-  }
-
-  .banking-node {
-    display: grid;
-    place-items: center;
-    color: var(--color-text);
-    font-weight: 850;
-    text-align: center;
-  }
-
-  .banking-node--small {
-    top: 3rem;
-    left: 0.5rem;
-    width: 9.5rem;
-    min-height: 5.5rem;
-    border-radius: 1.15rem;
-    transform: rotate(-5deg);
-  }
-
-  .banking-node--large {
-    right: 0;
-    bottom: 2rem;
-    width: min(21rem, 88%);
-    min-height: 8.5rem;
-    border-radius: 1.5rem;
-    padding: 1.25rem;
-    color: #12377b;
-    font-size: clamp(1.25rem, 3vw, 1.75rem);
-    transform: rotate(3deg);
-  }
-
-  .banking-rail {
-    width: min(22rem, 86%);
-    height: 4.6rem;
-    display: grid;
-    place-items: center;
-    border-radius: var(--radius-pill);
-    background: linear-gradient(135deg, rgba(37, 99, 235, 0.95), rgba(20, 184, 166, 0.88));
-    color: #fff;
-    font-weight: 900;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-  }
-
-  .banking-pulse {
-    position: absolute;
-    border: 1px solid rgba(37, 99, 235, 0.22);
-    border-radius: 50%;
-  }
-
-  .banking-pulse--one { width: 23rem; height: 23rem; }
-  .banking-pulse--two { width: 15rem; height: 15rem; border-color: rgba(20, 184, 166, 0.28); }
-
-  .banking-overview-strip {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    overflow: hidden;
-    border: 1px solid rgba(148, 163, 184, 0.28);
-    border-radius: var(--radius-xl);
-    background: linear-gradient(135deg, #0f172a, #1e3a8a 50%, #0f766e);
-    box-shadow: var(--shadow-sm);
-  }
-
-  .banking-overview-strip div {
-    display: grid;
-    gap: 0.35rem;
-    border-left: 1px solid rgba(255, 255, 255, 0.16);
-    padding: 1rem 1.1rem;
-    color: #fff;
-  }
-
-  .banking-overview-strip div:first-child { border-left: 0; }
-
-  .banking-overview-strip span {
-    color: rgba(219, 234, 254, 0.78);
-    font-size: 0.72rem;
-    font-weight: 900;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-  }
-
-  .banking-overview-strip strong {
-    font-size: clamp(1rem, 2vw, 1.2rem);
-  }
-
-  .banking-role-grid,
-  .banking-flow-grid,
-  .banking-note-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
-    gap: var(--space-4);
-  }
-
-  .banking-role-card {
-    position: relative;
-    overflow: hidden;
-  }
-
-  .banking-role-card::before {
-    content: "";
-    position: absolute;
-    inset: 0 auto 0 0;
-    width: 0.32rem;
-    background: linear-gradient(#2563eb, #14b8a6);
-  }
-
-  .banking-role-card h2,
-  .banking-path-card h2,
-  .banking-standard-card h2,
-  .banking-note-card h2,
-  .banking-rail-message-panel h2 {
-    margin: 0;
-    font-size: 1.08rem;
-  }
-
-  .banking-role-card p,
-  .banking-path-card p,
-  .banking-standard-card p,
-  .banking-note-card p,
-  .banking-sticky-note p,
-  .banking-flow-step p,
-  .banking-rail-message-panel p {
-    margin: 0.6rem 0 0;
-    color: var(--color-text-muted);
-  }
-
-  .banking-flow-section,
-  .banking-field-notes,
-  .banking-iso-lab {
-    display: grid;
-    gap: var(--space-4);
-  }
-
-  .banking-flow-step {
-    position: relative;
-    min-width: 0;
-    border: 1px solid rgba(148, 163, 184, 0.28);
-    border-radius: var(--radius-lg);
-    padding: 1.1rem;
-    background:
-      radial-gradient(circle at 100% 0%, rgba(37, 99, 235, 0.08), transparent 28%),
-      var(--color-surface);
-    box-shadow: var(--shadow-sm);
-  }
-
-  .banking-flow-step span,
-  .banking-sticky-note span,
-  .banking-standard-card__header span,
-  .banking-rail-message-panel__copy span,
-  .banking-tab-panel__header span {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: var(--radius-pill);
-    color: var(--color-primary);
-    font-size: 0.72rem;
-    font-weight: 900;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-  }
-
-  .banking-flow-step span {
-    width: 2rem;
-    height: 2rem;
-    background: var(--color-primary-soft);
-  }
-
-  .banking-flow-step h3 {
-    margin: 0.8rem 0 0;
-    font-size: 1rem;
-  }
-
-  .banking-standard-list {
-    display: grid;
-    gap: var(--space-4);
-  }
-
-  .banking-standard-card {
-    display: grid;
-    gap: var(--space-4);
-  }
-
-  .banking-standard-card__header,
-  .banking-standard-card__body,
-  .banking-reference-section {
-    display: grid;
-    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
-    gap: var(--space-4);
-  }
-
-  .banking-standard-card__header {
-    align-items: start;
-    border-bottom: 1px solid var(--color-border);
-    padding-bottom: var(--space-4);
-  }
-
-  .banking-standard-card__header span {
-    margin-bottom: 0.45rem;
-    color: var(--color-accent);
-  }
-
-  .banking-standard-card__body h3 {
-    margin: 0 0 0.65rem;
-    color: var(--color-text);
-    font-size: 0.88rem;
-  }
-
-  .banking-standard-card ul {
-    display: grid;
-    gap: 0.45rem;
-    margin: 0;
-    padding-left: 1.1rem;
-    color: var(--color-text-muted);
-  }
-
-  .banking-iso-lab__intro {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(16rem, 0.8fr);
+    grid-template-columns: minmax(0, 1fr) minmax(16rem, 0.42fr);
+    gap: clamp(1rem, 3vw, 1.5rem);
     align-items: end;
-    gap: var(--space-4);
+    padding: clamp(1rem, 4vw, 2rem);
+    background:
+      radial-gradient(circle at 100% 0%, rgba(20, 184, 166, 0.14), transparent 22rem),
+      linear-gradient(135deg, #ffffff 0%, #edf5ff 58%, #f0fdfa 100%);
   }
 
-  .banking-memory-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.75rem;
-  }
-
-  .banking-memory-grid div {
-    display: grid;
-    gap: 0.35rem;
-    border: 1px solid rgba(148, 163, 184, 0.26);
-    border-radius: var(--radius-lg);
-    padding: 0.85rem;
-    background: rgba(255, 255, 255, 0.78);
-    box-shadow: var(--shadow-sm);
-  }
-
-  .banking-memory-grid code,
-  .banking-token-row code,
-  .banking-message-card code {
+  .banking-kicker,
+  .banking-module-header span,
+  .banking-index-card span,
+  .banking-filter-card > span,
+  .plantuml-diagram figcaption span {
+    display: inline-flex;
     width: fit-content;
-    border-radius: 0.7rem;
-    padding: 0.36rem 0.55rem;
+    border-radius: 999px;
+    padding: 0.32rem 0.62rem;
     background: #eff6ff;
     color: #1d4ed8;
-    font-weight: 900;
-  }
-
-  .banking-memory-grid span {
-    color: var(--color-text-muted);
-    font-size: 0.86rem;
-    font-weight: 750;
-  }
-
-  .banking-message-panel {
-    overflow: hidden;
-    padding: 0;
-    background:
-      radial-gradient(circle at 100% 0%, rgba(37, 99, 235, 0.11), transparent 26%),
-      var(--color-surface);
-  }
-
-  .banking-message-panel--purple {
-    background:
-      radial-gradient(circle at 100% 0%, rgba(124, 58, 237, 0.12), transparent 26%),
-      var(--color-surface);
-  }
-
-  .banking-message-panel--teal {
-    background:
-      radial-gradient(circle at 100% 0%, rgba(15, 118, 110, 0.12), transparent 26%),
-      var(--color-surface);
-  }
-
-  .banking-message-panel--amber {
-    background:
-      radial-gradient(circle at 100% 0%, rgba(180, 83, 9, 0.12), transparent 26%),
-      var(--color-surface);
-  }
-
-  .banking-tabs,
-  .banking-rail-tabs {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    border-bottom: 1px solid rgba(148, 163, 184, 0.28);
-    padding: 0.85rem;
-    background: rgba(248, 250, 252, 0.9);
-  }
-
-  .banking-tab,
-  .banking-rail-tab {
-    appearance: none;
-    cursor: pointer;
-    border: 1px solid rgba(148, 163, 184, 0.36);
-    border-radius: var(--radius-pill);
-    padding: 0.55rem 0.85rem;
-    background: #fff;
-    color: var(--color-text-muted);
-    font: inherit;
-    font-size: 0.86rem;
-    font-weight: 900;
-    transition: transform 160ms ease, border-color 160ms ease, background 160ms ease, color 160ms ease, box-shadow 160ms ease;
-  }
-
-  .banking-tab {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.55rem;
-    text-transform: uppercase;
-  }
-
-  .banking-tab strong {
-    display: inline-grid;
-    min-width: 1.45rem;
-    height: 1.45rem;
-    place-items: center;
-    border-radius: 999px;
-    background: var(--color-surface-subtle);
-    color: var(--color-text);
     font-size: 0.72rem;
-  }
-
-  .banking-tab:hover,
-  .banking-rail-tab:hover {
-    transform: translateY(-1px);
-    border-color: rgba(37, 99, 235, 0.42);
-    color: var(--color-text);
-    box-shadow: var(--shadow-sm);
-  }
-
-  .banking-tab[aria-selected="true"],
-  .banking-rail-tab[aria-selected="true"] {
-    border-color: transparent;
-    background: linear-gradient(135deg, #1d4ed8, #0f766e);
-    color: #fff;
-    box-shadow: 0 16px 36px rgba(37, 99, 235, 0.24);
-  }
-
-  .banking-tab[aria-selected="true"] strong {
-    background: rgba(255, 255, 255, 0.22);
-    color: #fff;
-  }
-
-  .banking-tab-panel {
-    display: grid;
-    gap: var(--space-4);
-    padding: clamp(1rem, 3vw, 1.5rem);
-  }
-
-  .banking-tab-panel__header {
-    display: grid;
-    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
-    gap: var(--space-4);
-    align-items: start;
-  }
-
-  .banking-tab-panel__header h2 {
-    margin: 0.35rem 0 0;
-    font-size: clamp(1.25rem, 2.6vw, 2rem);
-  }
-
-  .banking-tab-panel__header p {
-    margin: 0;
-    color: var(--color-text-muted);
-  }
-
-  .banking-message-card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
-    gap: var(--space-3);
-  }
-
-  .banking-message-card {
-    min-width: 0;
-    border: 1px solid rgba(148, 163, 184, 0.26);
-    border-radius: var(--radius-lg);
-    padding: 1rem;
-    background: rgba(255, 255, 255, 0.86);
-    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.05);
-  }
-
-  .banking-message-card h3 {
-    margin: 0.8rem 0 0;
-    font-size: 1rem;
-  }
-
-  .banking-message-card p {
-    margin: 0.45rem 0 0;
-    color: var(--color-text-muted);
-    font-size: 0.92rem;
-  }
-
-  .banking-rail-message-panel {
-    display: grid;
-    grid-template-columns: minmax(15rem, 0.72fr) minmax(0, 1.28fr);
-    gap: var(--space-4);
-    align-items: start;
-    background:
-      radial-gradient(circle at 7% 12%, rgba(14, 165, 233, 0.13), transparent 24%),
-      linear-gradient(135deg, #ffffff, #f8fbff);
-  }
-
-  .banking-rail-message-panel__copy span {
-    color: var(--color-accent);
-  }
-
-  .banking-rail-tabs {
-    border: 0;
-    padding: 0;
-    background: transparent;
-  }
-
-  .banking-rail-tab-panel {
-    grid-column: 2;
-    display: grid;
-    gap: 0.9rem;
-    border: 1px solid rgba(148, 163, 184, 0.26);
-    border-radius: var(--radius-lg);
-    padding: 1rem;
-    background: #fff;
-  }
-
-  .banking-rail-tab-panel p {
-    margin: 0;
-    color: var(--color-text-muted);
-  }
-
-  .banking-token-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.55rem;
-  }
-
-  .banking-token-row code {
-    background: #ecfdf5;
-    color: #047857;
-  }
-
-  .banking-reference-section {
-    align-items: start;
-  }
-
-  .banking-note-card {
-    align-self: start;
-    background:
-      radial-gradient(circle at 94% 8%, rgba(20, 184, 166, 0.13), transparent 22%),
-      var(--color-surface);
-  }
-
-  .banking-note-card--blueprint {
-    background:
-      radial-gradient(circle at 94% 8%, rgba(37, 99, 235, 0.14), transparent 24%),
-      linear-gradient(145deg, #ffffff, #f8fbff);
-  }
-
-  .banking-note-card pre {
-    overflow-x: auto;
-    border-radius: var(--radius-md);
-    padding: 1rem;
-    background: #0f172a;
-    color: #dbeafe;
-    font-size: 0.84rem;
-    line-height: 1.7;
-  }
-
-  .banking-rail-table {
-    overflow: hidden;
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
-    background: var(--color-surface);
-    box-shadow: var(--shadow-sm);
-  }
-
-  .banking-rail-row {
-    display: grid;
-    grid-template-columns: 0.7fr 1fr 0.85fr 1.1fr;
-    align-items: center;
-    gap: var(--space-3);
-    border-top: 1px solid var(--color-border);
-    padding: 0.85rem 1rem;
-  }
-
-  .banking-rail-row:first-child {
-    border-top: 0;
-  }
-
-  .banking-rail-row span {
-    color: var(--color-text-muted);
-  }
-
-  .banking-rail-row--head {
-    background: linear-gradient(135deg, #f8fafc, #eff6ff);
-    color: var(--color-text);
-    font-size: 0.78rem;
     font-weight: 900;
     letter-spacing: 0.07em;
     text-transform: uppercase;
   }
 
-  .banking-sticky-note {
-    border-color: #fde68a;
-    background: linear-gradient(145deg, #fffdf2, #ffffff);
+  .banking-hero h1,
+  .banking-module-header h1 {
+    max-width: 15ch;
+    margin: 0.85rem 0 0;
+    color: var(--banking-ink);
+    font-size: clamp(2rem, 5vw, 4.5rem);
+    line-height: 0.98;
+    text-align: left;
   }
 
-  .banking-sticky-note span {
-    color: #b45309;
+  .banking-hero p,
+  .banking-module-header p {
+    max-width: 58rem;
+    margin: 1rem 0 0;
+    color: var(--banking-muted);
+    font-size: clamp(1rem, 1.5vw, 1.14rem);
+  }
+
+  .banking-hero__summary {
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .banking-hero__summary div {
+    display: grid;
+    gap: 0.15rem;
+    border: 1px solid rgba(148, 163, 184, 0.24);
+    border-radius: 0.7rem;
+    padding: 0.9rem;
+    background: rgba(255, 255, 255, 0.78);
+  }
+
+  .banking-hero__summary strong {
+    color: #0f766e;
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+
+  .banking-hero__summary span {
+    color: var(--banking-muted);
+    font-size: 0.82rem;
+    font-weight: 800;
+  }
+
+  .banking-index-grid,
+  .banking-concept-grid,
+  .banking-module-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+    gap: 1rem;
+  }
+
+  .banking-index-card,
+  .banking-concept-card,
+  .banking-list-panel {
+    border-color: var(--banking-border);
+    background: var(--banking-panel);
+    box-shadow: 0 14px 34px rgba(15, 23, 42, 0.055);
+  }
+
+  .banking-index-card h2,
+  .banking-concept-card h2,
+  .banking-list-panel h2 {
+    margin: 0.75rem 0 0;
+    color: var(--banking-ink);
+    font-size: 1.08rem;
+  }
+
+  .banking-index-card p,
+  .banking-concept-card p {
+    margin: 0.55rem 0 0;
+    color: var(--banking-muted);
+  }
+
+  .banking-index-card a,
+  .banking-module-pager a {
+    width: fit-content;
+    border-radius: 999px;
+    padding: 0.5rem 0.78rem;
+    background: #1d4ed8;
+    color: #ffffff;
+    font-size: 0.86rem;
+    font-weight: 900;
+    text-decoration: none;
+  }
+
+  .banking-index-card a {
+    display: inline-flex;
+    margin-top: 1rem;
+  }
+
+  .banking-module-header {
+    padding: clamp(1rem, 4vw, 2rem);
+  }
+
+  .banking-list-panel ul {
+    display: grid;
+    gap: 0.62rem;
+    margin: 0.9rem 0 0;
+    padding-left: 1.15rem;
+    color: var(--banking-muted);
+  }
+
+  .banking-list-panel li::marker {
+    color: #1d4ed8;
+  }
+
+  .banking-diagram-stack {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .plantuml-diagram {
+    display: grid;
+    gap: 1rem;
+    margin: 0;
+    padding: 1rem;
+  }
+
+  .plantuml-diagram figcaption {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 1rem;
+    align-items: start;
+  }
+
+  .plantuml-diagram h3 {
+    margin: 0.65rem 0 0;
+    color: var(--banking-ink);
+    font-size: 1.12rem;
+  }
+
+  .plantuml-diagram p {
+    margin: 0.45rem 0 0;
+    color: var(--banking-muted);
+  }
+
+  .plantuml-diagram__actions,
+  .banking-filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: flex-end;
+  }
+
+  .plantuml-diagram button,
+  .plantuml-diagram__actions a,
+  .banking-filter-row button {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid rgba(37, 99, 235, 0.2);
+    border-radius: 999px;
+    padding: 0.48rem 0.72rem;
+    background: #ffffff;
+    color: #1d4ed8;
+    font: inherit;
+    font-size: 0.82rem;
+    font-weight: 900;
+  }
+
+  .banking-filter-row button[aria-selected="true"] {
+    border-color: transparent;
+    background: #1d4ed8;
+    color: #ffffff;
+  }
+
+  .plantuml-diagram__stage {
+    min-height: 20rem;
+    max-height: 42rem;
+    overflow: auto;
+    border: 1px solid rgba(148, 163, 184, 0.24);
+    border-radius: 0.7rem;
+    padding: 1rem;
+    background: #ffffff;
+  }
+
+  .plantuml-diagram__stage img {
+    display: block;
+    width: 100%;
+    min-width: 32rem;
+    height: auto;
+  }
+
+  .plantuml-diagram__source {
+    overflow-x: auto;
+    border: 1px solid rgba(148, 163, 184, 0.28);
+    border-radius: 0.7rem;
+    padding: 1rem;
+    background: #0f172a;
+    color: #dbeafe;
+    font-size: 0.82rem;
+    line-height: 1.6;
+  }
+
+  .plantuml-diagram__error {
+    border-radius: 0.6rem;
+    padding: 0.75rem;
+    background: #fef2f2;
+    color: #b91c1c;
+    font-weight: 800;
+  }
+
+  .banking-filter-card {
+    display: grid;
+    gap: 0.85rem;
+    padding: 1rem;
+  }
+
+  .banking-filter-row {
+    justify-content: flex-start;
+  }
+
+  .banking-module-pager {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
   }
 
   @media (max-width: 900px) {
+    .banking-learning-shell,
     .banking-hero,
-    .banking-standard-card__header,
-    .banking-standard-card__body,
-    .banking-reference-section,
-    .banking-iso-lab__intro,
-    .banking-tab-panel__header,
-    .banking-rail-message-panel {
+    .plantuml-diagram figcaption {
       grid-template-columns: 1fr;
     }
 
-    .banking-hero { min-height: 0; }
-    .banking-hero__diagram { min-height: 19rem; }
-    .banking-pulse--one { width: 18rem; height: 18rem; }
-    .banking-pulse--two { width: 11rem; height: 11rem; }
-    .banking-rail-tab-panel { grid-column: auto; }
+    .banking-module-nav {
+      position: static;
+      display: flex;
+      overflow-x: auto;
+    }
+
+    .banking-module-nav__link {
+      white-space: nowrap;
+    }
+
+    .plantuml-diagram__actions {
+      justify-content: flex-start;
+    }
   }
 
   @media (max-width: 640px) {
-    .banking-guide-page { gap: 2.25rem; padding-bottom: 5rem; }
-    .banking-hero { border-radius: 1.25rem; padding: 1.25rem; }
-    .banking-hero::before { inset: 0.45rem; }
-    .banking-hero h1 { max-width: 100%; font-size: clamp(2rem, 11vw, 3.25rem); }
-    .banking-hero__diagram { min-height: 16rem; }
-    .banking-node--small { top: 1.5rem; width: 8rem; min-height: 4.5rem; }
-    .banking-node--large { bottom: 1rem; width: 88%; min-height: 7rem; font-size: 1.15rem; }
-    .banking-rail { width: 88%; height: 4rem; font-size: 0.72rem; }
-    .banking-overview-strip { grid-template-columns: 1fr; }
-    .banking-overview-strip div { border-left: 0; border-top: 1px solid rgba(255, 255, 255, 0.16); }
-    .banking-overview-strip div:first-child { border-top: 0; }
-    .banking-memory-grid { grid-template-columns: 1fr; }
-    .banking-tabs,
-    .banking-rail-tabs { align-items: stretch; }
-    .banking-tab,
-    .banking-rail-tab { width: 100%; justify-content: space-between; }
-    .banking-rail-row,
-    .banking-rail-row--head {
-      grid-template-columns: 1fr;
-      align-items: start;
+    .banking-guide-page {
+      margin: -0.75rem;
+      padding: 0.75rem;
     }
-    .banking-rail-row--head { display: none; }
+
+    .banking-hero h1,
+    .banking-module-header h1 {
+      max-width: 100%;
+      font-size: clamp(2rem, 11vw, 3rem);
+    }
+
+    .plantuml-diagram__stage {
+      min-height: 16rem;
+    }
+
+    .plantuml-diagram__stage img {
+      min-width: 42rem;
+    }
+
+    .banking-module-pager {
+      flex-direction: column;
+    }
   }
 }
