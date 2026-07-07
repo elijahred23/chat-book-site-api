@@ -22,6 +22,7 @@ const navigationGroups = [
       { to: "/coding", label: "Coding Problems" },
       { to: "/cpu-simulator", label: "CPU Simulator" },
       { to: "/system-design", label: "System Design" },
+      { to: "/correspondent-banking", label: "Correspondent Banking" },
       { to: "/typingTest", label: "Typing Test" },
     ],
   },
@@ -66,7 +67,6 @@ export default function AppHeader({ isOpen, onToggle, onClose }) {
         return;
       }
       if (event.key !== "Tab" || !panelRef.current) return;
-
       const focusable = [...panelRef.current.querySelectorAll(
         'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
       )];
@@ -143,6 +143,7 @@ export default function AppHeader({ isOpen, onToggle, onClose }) {
           <NavLink to="/flashCards">Flash cards</NavLink>
           <NavLink to="/coding">Coding</NavLink>
           <NavLink to="/system-design">System design</NavLink>
+          <NavLink to="/correspondent-banking">Banking</NavLink>
         </nav>
 
         <Button
