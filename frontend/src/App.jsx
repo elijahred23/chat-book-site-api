@@ -28,6 +28,7 @@ import ApiCheck from "./pages/ApiCheck.jsx";
 import BengaliTutor from "./pages/BengaliTutor.jsx";
 import ChatTemplate from "./pages/ChatTemplate.jsx";
 import CodingProblems from "./pages/CodingProblems.jsx";
+import CorrespondentBankingGuide from "./pages/CorrespondentBankingGuide.jsx";
 import Home from "./pages/Home.jsx";
 import ProgressBar from "./ui/ProgressBar.jsx";
 import Quran from "./pages/Quran.jsx";
@@ -126,6 +127,7 @@ function AppContent() {
           <Route path="/coding" element={<CodingProblems />} />
           <Route path="/cpu-simulator" element={<Suspense fallback={null}><CpuSimulatorWithOutputHistory /></Suspense>} />
           <Route path="/system-design" element={<SystemDesignPrep />} />
+          <Route path="/correspondent-banking" element={<CorrespondentBankingGuide />} />
           <Route path="/pdf-to-text" element={<PdfToText />} />
           <Route path="/media-player" element={<MediaPlayer />} />
           <Route path="/action-buttons-studio" element={<ActionButtonStudio />} />
