@@ -53,7 +53,7 @@ const statusForWord = (stats, key) => {
   return record.last === "wrong" ? "wrong" : "correct";
 };
 
-const statusClassForItem = (stats, item) => `match-${statusForWord(stats, wordKey(item))}`;
+const statusClassForKey = (stats, key) => `match-${statusForWord(stats, key)}`;
 
 const pickWeightedItem = (items, stats) => {
   const weighted = items.flatMap((item) => {
@@ -283,7 +283,10 @@ export default function BengaliTutor() {
     .bn-stat-value { margin-top: 2px; color: #0f172a; font-size: 1rem; font-weight: 900; }
     .bn-game-card { display: grid; gap: 12px; padding: 1rem; border: 1px solid #dbe3ef; border-radius: 16px; background: #fff; box-shadow: 0 14px 34px rgba(15,23,42,0.08); }
     .bn-game-card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; flex-wrap: wrap; }
-    .bn-game-prompt { color: #0f172a; font-size: 1.25rem; font-weight: 900; line-height: 1.25; }
+    .bn-game-prompt { display: inline-block; color: #0f172a; font-size: 1.25rem; font-weight: 900; line-height: 1.25; border-radius: 10px; padding: 0.12rem 0.45rem; }
+    .bn-game-prompt.match-correct { background: #dcfce7; color: #14532d; border: 1px solid #16a34a; }
+    .bn-game-prompt.match-wrong { background: #fee2e2; color: #7f1d1d; border: 1px solid #ef4444; }
+    .bn-game-prompt.match-new { background: #fef9c3; color: #713f12; border: 1px solid #eab308; }
     .bn-game-subtext { color: #64748b; font-size: 0.95rem; font-weight: 700; line-height: 1.35; }
     .bn-game-actions { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
     .bn-game-options { display: grid; gap: 8px; }
@@ -294,14 +297,9 @@ export default function BengaliTutor() {
     .bn-game-feedback { padding: 0.75rem 0.85rem; border-radius: 12px; font-weight: 800; }
     .bn-game-feedback.correct { background: #f0fdf4; color: #15803d; border: 1px solid #bbf7d0; }
     .bn-game-feedback.wrong { background: #fef2f2; color: #b91c1c; border: 1px solid #fecaca; }
-    .bn-match-word-bank { display: flex; flex-wrap: wrap; gap: 8px; }
-    .bn-match-word-chip { border: 1px solid #e2e8f0; border-radius: 999px; padding: 0.35rem 0.65rem; font-weight: 900; color: #0f172a; }
     .bn-script { display: inline-block; font-size: 1.12rem; font-weight: 800; color: #0f172a; border-radius: 10px; padding: 0.08rem 0.35rem; }
     .bn-pronunciation { color: #475569; font-weight: 700; }
     .bn-translation { color: #0f172a; }
-    .bn-script.match-correct, .bn-match-word-chip.match-correct { background: #dcfce7; color: #14532d; border-color: #16a34a; }
-    .bn-script.match-wrong, .bn-match-word-chip.match-wrong { background: #fee2e2; color: #7f1d1d; border-color: #ef4444; }
-    .bn-script.match-new, .bn-match-word-chip.match-new { background: #fef9c3; color: #713f12; border-color: #eab308; }
   `;
 
   return (
@@ -399,7 +397,7 @@ export default function BengaliTutor() {
                 <h3>Key phrases</h3>
                 {filteredPhrases.map((phrase, idx) => (
                   <article key={`${phrase.bn}-${idx}`} className="bn-section" style={{ background: "#fff" }}>
-                    <div className={`bn-script ${statusClassForItem(matchStats, phrase)}`} lang="bn">{phrase.bn}</div>
+                    <div className="bn-script" lang="bn">{phrase.bn}</div>
                     <div className="bn-pronunciation">{phrase.pronunciation}</div>
                     <div className="bn-translation">{phrase.en}</div>
                     {phrase.context && <div style={{ color: "#475569" }}>{phrase.context}</div>}
@@ -417,7 +415,7 @@ export default function BengaliTutor() {
                 <h3>Vocabulary</h3>
                 {filteredVocab.map((word, idx) => (
                   <article key={`${word.bn}-${idx}`} className="bn-section" style={{ background: "#fff" }}>
-                    <div className={`bn-script ${statusClassForItem(matchStats, word)}`} lang="bn">{word.bn}</div>
+                    <div className="bn-script" lang="bn">{word.bn}</div>
                     <div className="bn-pronunciation">{word.pronunciation}</div>
                     <div className="bn-translation">{word.en}</div>
                     <div className="bn-game-actions" style={{ marginTop: 8 }}>
@@ -443,26 +441,15 @@ export default function BengaliTutor() {
                 <div className="bn-game-scoreboard">
                   <div className="bn-stat"><div className="bn-stat-label">Score</div><div className="bn-stat-value">{gameScore.correct}/{gameScore.total}</div></div>
                   <div className="bn-stat"><div className="bn-stat-label">Accuracy</div><div className="bn-stat-value">{accuracy}%</div></div>
-                  <div className="bn-stat"><div className="bn-stat-label">Words</div><div className="bn-stat-value">{statsSummary.correct}/{gameItems.length}</div></div>
+                  <div className="bn-stat"><div className="bn-stat-value">{statsSummary.correct}/{gameItems.length}</div></div>
                   <div className="bn-stat"><div className="bn-stat-label">Streak</div><div className="bn-stat-value">{gameScore.streak} / {gameScore.bestStreak}</div></div>
-                </div>
-
-                <div className="bn-section" style={{ background: "#fff", display: "grid", gap: 8 }}>
-                  <strong>{gameDataset === "phrases" ? "Phrase set" : "Word set"}</strong>
-                  <div className="bn-match-word-bank">
-                    {gameItems.map((item) => (
-                      <span key={wordKey(item)} className={`bn-match-word-chip ${statusClassForItem(matchStats, item)}`} lang="bn">
-                        {item.bn}
-                      </span>
-                    ))}
-                  </div>
                 </div>
 
                 {gameQuestion ? (
                   <div className="bn-game-card">
                     <div className="bn-game-card-top">
                       <div>
-                        <div className="bn-game-prompt">{gameQuestion.displayQuestion}</div>
+                        <div className={`bn-game-prompt ${statusClassForKey(matchStats, gameQuestion.key)}`}>{gameQuestion.displayQuestion}</div>
                         {gameDirection === "bn-en" && gameQuestion.pronunciation && <div className="bn-game-subtext">{gameQuestion.pronunciation}</div>}
                       </div>
                       <label className="bn-row" style={{ width: 130 }}>
