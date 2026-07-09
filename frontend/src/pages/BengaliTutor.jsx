@@ -19,12 +19,7 @@ You are a Bengali language tutor. Create a concise lesson as JSON (no extra text
   "topic": "...",
   "focus": "${focus}",
   "phrases": [
-    {
-      "bn": "Bengali phrase",
-      "pronunciation": "Latin-script pronunciation",
-      "en": "English meaning",
-      "context": "When to use it"
-    }
+    { "bn": "Bengali phrase", "pronunciation": "Latin-script pronunciation", "en": "English meaning", "context": "When to use it" }
   ],
   "vocab": [
     { "bn": "word", "pronunciation": "...", "en": "meaning" }
@@ -48,13 +43,15 @@ const parseJson = (text) => {
 };
 
 const wordKey = (item) => JSON.stringify([item?.bn || "", item?.en || ""]);
-
-const optionLabel = (item, direction) =>
-  direction === "en-bn" ? `${item.bn} (${item.pronunciation || ""})` : item.en;
-
 const promptLabel = (item, direction) => (direction === "en-bn" ? item.en : item.bn);
-
+const optionLabel = (item, direction) => direction === "en-bn" ? `${item.bn} (${item.pronunciation || ""})` : item.en;
 const shuffle = (items) => [...items].sort(() => Math.random() - 0.5);
+
+const statusForWord = (stats, key) => {
+  const record = stats[key];
+  if (!record) return "new";
+  return record.last === "wrong" ? "wrong" : "correct";
+};
 
 const pickWeightedItem = (items, stats) => {
   const weighted = items.flatMap((item) => {
@@ -62,14 +59,11 @@ const pickWeightedItem = (items, stats) => {
     const weight = !record ? 5 : record.last === "wrong" ? 8 : record.correct > 0 ? 1 : 6;
     return Array.from({ length: weight }, () => item);
   });
+
   return weighted[Math.floor(Math.random() * weighted.length)] || items[0];
 };
 
-const statusForWord = (stats, key) => {
-  const record = stats[key];
-  if (!record) return "new";
-  return record.last === "wrong" ? "wrong" : "correct";
-};
+const initialScore = { correct: 0, total: 0, streak: 0, bestStreak: 0 };
 
 export default function BengaliTutor() {
   const [topic, setTopic] = useState(() => {
@@ -120,7 +114,8 @@ export default function BengaliTutor() {
   const [gameChoice, setGameChoice] = useState(null);
   const [gameResult, setGameResult] = useState(null);
   const [matchStats, setMatchStats] = useState({});
-  const [gameScore, setGameScore] = useState({ correct: 0, total: 0, streak: 0, bestStreak: 0 });
+  const [gameScore, setGameScore] = useState(initialScore);
+  const matchStatsRef = React.useRef({});
 
   useEffect(() => {
     try {
@@ -130,30 +125,24 @@ export default function BengaliTutor() {
 
   const filteredVocab = useMemo(() => lesson?.vocab?.filter((v) => v?.bn && v?.en) || [], [lesson]);
   const filteredPhrases = useMemo(() => lesson?.phrases?.filter((p) => p?.bn && p?.en) || [], [lesson]);
-
-  const gameItems = useMemo(
-    () => (gameDataset === "phrases" ? filteredPhrases : filteredVocab),
-    [filteredPhrases, filteredVocab, gameDataset]
-  );
+  const gameItems = useMemo(() => gameDataset === "phrases" ? filteredPhrases : filteredVocab, [filteredPhrases, filteredVocab, gameDataset]);
 
   const combinedLessonPrompt = useMemo(() => {
     if (!lesson) return "";
-    const source = contentTab === "vocab" || contentTab === "games" && gameDataset === "vocab" ? filteredVocab : filteredPhrases;
+    const isVocab = contentTab === "vocab" || (contentTab === "games" && gameDataset === "vocab");
+    const source = isVocab ? filteredVocab : filteredPhrases;
     const items = source.map((p) => `${p.bn} (${p.pronunciation || ""}) - ${p.en}`);
-    return `(${contentTab === "vocab" ? "Vocab" : "Phrases"}): ${items.join(" | ")}`;
+    return `(${isVocab ? "Vocab" : "Phrases"}): ${items.join(" | ")}`;
   }, [lesson, filteredPhrases, filteredVocab, contentTab, gameDataset]);
 
-  const buildGameQuestion = useCallback((items, direction = gameDirection) => {
+  const buildGameQuestion = useCallback((items, direction = gameDirection, stats = matchStatsRef.current) => {
     if (!items?.length || items.length < 2) return null;
-    const correct = pickWeightedItem(items, matchStats);
+    const correct = pickWeightedItem(items, stats);
     const distractors = shuffle(items.filter((item) => wordKey(item) !== wordKey(correct))).slice(
       0,
       Math.min(matchOptionsCount - 1, items.length - 1)
     );
-    const options = shuffle([...distractors, correct]).map((item) => ({
-      key: wordKey(item),
-      label: optionLabel(item, direction),
-    }));
+    const options = shuffle([...distractors, correct]).map((item) => ({ key: wordKey(item), label: optionLabel(item, direction) }));
 
     return {
       key: wordKey(correct),
@@ -164,10 +153,10 @@ export default function BengaliTutor() {
       correctAnswer: optionLabel(correct, direction),
       options,
     };
-  }, [gameDirection, matchOptionsCount, matchStats]);
+  }, [gameDirection, matchOptionsCount]);
 
-  const startNewGameRound = useCallback((direction = gameDirection) => {
-    const question = buildGameQuestion(gameItems, direction);
+  const startNewGameRound = useCallback((direction = gameDirection, stats = matchStatsRef.current) => {
+    const question = buildGameQuestion(gameItems, direction, stats);
     if (!question) return;
     setGameQuestion(question);
     setGameChoice(null);
@@ -175,20 +164,23 @@ export default function BengaliTutor() {
   }, [buildGameQuestion, gameDirection, gameItems]);
 
   useEffect(() => {
-    setMatchStats({});
-    setGameScore({ correct: 0, total: 0, streak: 0, bestStreak: 0 });
+    const nextStats = {};
+    matchStatsRef.current = nextStats;
+    setMatchStats(nextStats);
+    setGameScore(initialScore);
     setGameQuestion(null);
     setGameChoice(null);
     setGameResult(null);
+
     if (gameItems.length >= 2) {
-      const id = setTimeout(() => startNewGameRound(gameDirection), 0);
+      const id = setTimeout(() => startNewGameRound(gameDirection, nextStats), 0);
       return () => clearTimeout(id);
     }
   }, [gameDataset, lesson, gameDirection, gameItems.length, startNewGameRound]);
 
   useEffect(() => {
     if (gameItems.length >= 2) startNewGameRound(gameDirection);
-  }, [matchOptionsCount]);
+  }, [matchOptionsCount, gameDirection, gameItems.length, startNewGameRound]);
 
   const fetchLesson = async () => {
     try {
@@ -232,17 +224,19 @@ export default function BengaliTutor() {
     const isCorrect = option.label === gameQuestion.correctAnswer;
     setGameChoice(option.label);
     setGameResult(isCorrect ? "correct" : "wrong");
-    setMatchStats((prev) => {
-      const current = prev[gameQuestion.key] || { correct: 0, wrong: 0, last: null };
-      return {
-        ...prev,
-        [gameQuestion.key]: {
-          correct: current.correct + (isCorrect ? 1 : 0),
-          wrong: current.wrong + (isCorrect ? 0 : 1),
-          last: isCorrect ? "correct" : "wrong",
-        },
-      };
-    });
+
+    const current = matchStatsRef.current[gameQuestion.key] || { correct: 0, wrong: 0, last: null };
+    const nextStats = {
+      ...matchStatsRef.current,
+      [gameQuestion.key]: {
+        correct: current.correct + (isCorrect ? 1 : 0),
+        wrong: current.wrong + (isCorrect ? 0 : 1),
+        last: isCorrect ? "correct" : "wrong",
+      },
+    };
+    matchStatsRef.current = nextStats;
+    setMatchStats(nextStats);
+
     setGameScore((prev) => {
       const nextStreak = isCorrect ? prev.streak + 1 : 0;
       return {
@@ -252,19 +246,14 @@ export default function BengaliTutor() {
         bestStreak: Math.max(prev.bestStreak, nextStreak),
       };
     });
-    setTimeout(() => startNewGameRound(), isCorrect ? CORRECT_TIME : INCORRECT_TIME);
+    setTimeout(() => startNewGameRound(gameDirection, nextStats), isCorrect ? CORRECT_TIME : INCORRECT_TIME);
   };
 
   const statsSummary = useMemo(() => {
-    const keys = gameItems.map(wordKey);
-    return keys.reduce(
-      (acc, key) => {
-        const status = statusForWord(matchStats, key);
-        acc[status] += 1;
-        return acc;
-      },
-      { correct: 0, wrong: 0, new: 0 }
-    );
+    return gameItems.map(wordKey).reduce((acc, key) => {
+      acc[statusForWord(matchStats, key)] += 1;
+      return acc;
+    }, { correct: 0, wrong: 0, new: 0 });
   }, [gameItems, matchStats]);
 
   const accuracy = gameScore.total ? Math.round((gameScore.correct / gameScore.total) * 100) : 0;
