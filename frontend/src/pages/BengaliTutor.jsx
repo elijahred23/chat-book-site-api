@@ -53,6 +53,8 @@ const statusForWord = (stats, key) => {
   return record.last === "wrong" ? "wrong" : "correct";
 };
 
+const statusClassForItem = (stats, item) => `match-${statusForWord(stats, wordKey(item))}`;
+
 const pickWeightedItem = (items, stats) => {
   const weighted = items.flatMap((item) => {
     const record = stats[wordKey(item)];
@@ -292,14 +294,14 @@ export default function BengaliTutor() {
     .bn-game-feedback { padding: 0.75rem 0.85rem; border-radius: 12px; font-weight: 800; }
     .bn-game-feedback.correct { background: #f0fdf4; color: #15803d; border: 1px solid #bbf7d0; }
     .bn-game-feedback.wrong { background: #fef2f2; color: #b91c1c; border: 1px solid #fecaca; }
-    .bn-match-status-strip { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
-    .bn-match-status-dot { width: 13px; height: 13px; border-radius: 999px; border: 1px solid rgba(15,23,42,0.18); display: inline-block; }
-    .bn-match-status-dot.correct { background: #22c55e; }
-    .bn-match-status-dot.wrong { background: #ef4444; }
-    .bn-match-status-dot.new { background: #eab308; }
-    .bn-script { font-size: 1.12rem; font-weight: 800; color: #0f172a; }
+    .bn-match-word-bank { display: flex; flex-wrap: wrap; gap: 8px; }
+    .bn-match-word-chip { border: 1px solid #e2e8f0; border-radius: 999px; padding: 0.35rem 0.65rem; font-weight: 900; color: #0f172a; }
+    .bn-script { display: inline-block; font-size: 1.12rem; font-weight: 800; color: #0f172a; border-radius: 10px; padding: 0.08rem 0.35rem; }
     .bn-pronunciation { color: #475569; font-weight: 700; }
     .bn-translation { color: #0f172a; }
+    .bn-script.match-correct, .bn-match-word-chip.match-correct { background: #dcfce7; color: #14532d; border-color: #16a34a; }
+    .bn-script.match-wrong, .bn-match-word-chip.match-wrong { background: #fee2e2; color: #7f1d1d; border-color: #ef4444; }
+    .bn-script.match-new, .bn-match-word-chip.match-new { background: #fef9c3; color: #713f12; border-color: #eab308; }
   `;
 
   return (
@@ -397,7 +399,7 @@ export default function BengaliTutor() {
                 <h3>Key phrases</h3>
                 {filteredPhrases.map((phrase, idx) => (
                   <article key={`${phrase.bn}-${idx}`} className="bn-section" style={{ background: "#fff" }}>
-                    <div className="bn-script" lang="bn">{phrase.bn}</div>
+                    <div className={`bn-script ${statusClassForItem(matchStats, phrase)}`} lang="bn">{phrase.bn}</div>
                     <div className="bn-pronunciation">{phrase.pronunciation}</div>
                     <div className="bn-translation">{phrase.en}</div>
                     {phrase.context && <div style={{ color: "#475569" }}>{phrase.context}</div>}
@@ -415,7 +417,7 @@ export default function BengaliTutor() {
                 <h3>Vocabulary</h3>
                 {filteredVocab.map((word, idx) => (
                   <article key={`${word.bn}-${idx}`} className="bn-section" style={{ background: "#fff" }}>
-                    <div className="bn-script" lang="bn">{word.bn}</div>
+                    <div className={`bn-script ${statusClassForItem(matchStats, word)}`} lang="bn">{word.bn}</div>
                     <div className="bn-pronunciation">{word.pronunciation}</div>
                     <div className="bn-translation">{word.en}</div>
                     <div className="bn-game-actions" style={{ marginTop: 8 }}>
@@ -441,18 +443,18 @@ export default function BengaliTutor() {
                 <div className="bn-game-scoreboard">
                   <div className="bn-stat"><div className="bn-stat-label">Score</div><div className="bn-stat-value">{gameScore.correct}/{gameScore.total}</div></div>
                   <div className="bn-stat"><div className="bn-stat-label">Accuracy</div><div className="bn-stat-value">{accuracy}%</div></div>
+                  <div className="bn-stat"><div className="bn-stat-label">Words</div><div className="bn-stat-value">{statsSummary.correct}/{gameItems.length}</div></div>
                   <div className="bn-stat"><div className="bn-stat-label">Streak</div><div className="bn-stat-value">{gameScore.streak} / {gameScore.bestStreak}</div></div>
-                  <div className="bn-stat">
-                    <div className="bn-stat-label">Status</div>
-                    <div className="bn-stat-value" aria-label={`${statsSummary.correct} correct, ${statsSummary.wrong} wrong, ${statsSummary.new} unseen`}>
-                      <span className="bn-match-status-strip">
-                        {gameItems.map((item) => {
-                          const key = wordKey(item);
-                          const status = statusForWord(matchStats, key);
-                          return <span key={key} className={`bn-match-status-dot ${status}`} aria-label={status} title={item.en} />;
-                        })}
+                </div>
+
+                <div className="bn-section" style={{ background: "#fff", display: "grid", gap: 8 }}>
+                  <strong>{gameDataset === "phrases" ? "Phrase set" : "Word set"}</strong>
+                  <div className="bn-match-word-bank">
+                    {gameItems.map((item) => (
+                      <span key={wordKey(item)} className={`bn-match-word-chip ${statusClassForItem(matchStats, item)}`} lang="bn">
+                        {item.bn}
                       </span>
-                    </div>
+                    ))}
                   </div>
                 </div>
 
