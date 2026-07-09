@@ -140,6 +140,7 @@ export default function BengaliTutor() {
   const [gameResult, setGameResult] = useState(null);
   const [gameChoice, setGameChoice] = useState(null);
   const [gameScore, setGameScore] = useState({ correct: 0, total: 0, streak: 0, bestStreak: 0 });
+  const [matchSeenWords, setMatchSeenWords] = useState(() => new Set());
   const [tfQuestion, setTfQuestion] = useState(null);
   const [tfResult, setTfResult] = useState(null);
   const [tfScore, setTfScore] = useState({ correct: 0, total: 0, streak: 0, bestStreak: 0 });
@@ -846,6 +847,7 @@ export default function BengaliTutor() {
       bn: correct.bn, 
       pronunciation: correct.pronunciation, 
       en: correct.en, 
+      wordKey: JSON.stringify([correct.bn, correct.en]),
       options: options.sort(() => Math.random() - 0.5), 
       correctAnswer: isEnBn ? `${correct.bn} (${correct.pronunciation || ""})` : correct.en,
       displayQuestion: isEnBn ? correct.en : correct.bn
@@ -922,6 +924,7 @@ export default function BengaliTutor() {
     const clean = getGameItems();
     if (!clean.length) return;
     const question = buildGameQuestion(clean, dir);
+    if (!question) return;
     setGameQuestion(question);
     setGameResult(null);
     setGameChoice(null);
@@ -961,6 +964,14 @@ export default function BengaliTutor() {
     const isCorrect = option === gameQuestion.correctAnswer;
     setGameChoice(option);
     setGameResult(isCorrect ? "correct" : "wrong");
+    if (isCorrect) {
+      setMatchSeenWords((prev) => {
+        if (prev.has(gameQuestion.wordKey)) return prev;
+        const next = new Set(prev);
+        next.add(gameQuestion.wordKey);
+        return next;
+      });
+    }
     setGameScore((prev) => {
       let { finishedStreakSum, finishedStreakCount } = prev;
       // If the current streak was just broken, add it to the historical average stats
@@ -1172,6 +1183,7 @@ export default function BengaliTutor() {
     setGameResult(null);
     setGameChoice(null);
     setGameScore({ correct: 0, total: 0, streak: 0, bestStreak: 0, finishedStreakSum: 0, finishedStreakCount: 0 });
+    setMatchSeenWords(new Set());
     setTfQuestion(null);
     setTfResult(null);
     setTfScore({ correct: 0, total: 0, streak: 0, bestStreak: 0, finishedStreakSum: 0, finishedStreakCount: 0 });
@@ -1742,6 +1754,7 @@ export default function BengaliTutor() {
                   const correct = s.correct || 0;
                   const missed = Math.max(total - correct, 0);
                   const percent = total > 0 ? Math.round((correct / total) * 100) : 0;
+                  const matchWordsTotal = new Set(gameItems.map((item) => JSON.stringify([item.bn, item.en]))).size;
                   return (
                     <div className="bn-game-scoreboard">
                       <div className="bn-stat">
@@ -1753,8 +1766,8 @@ export default function BengaliTutor() {
                         <div className="bn-stat-value">{percent}%</div>
                       </div>
                       <div className="bn-stat">
-                        <div className="bn-stat-label">Missed</div>
-                        <div className="bn-stat-value">{missed}</div>
+                        <div className="bn-stat-label">{activeGameTab === "match" ? "Words Down" : "Missed"}</div>
+                        <div className="bn-stat-value">{activeGameTab === "match" ? `${matchSeenWords.size}/${matchWordsTotal}` : missed}</div>
                       </div>
                       <div className="bn-stat">
                         <div className="bn-stat-label">Streak</div>
