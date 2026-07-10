@@ -113,6 +113,27 @@
   .bn-page .bn-section select { min-height: 46px; }
 }
 
+@media (hover: none), (pointer: coarse) {
+  .bn-page .bn-game-option:not(.correct):not(.wrong):hover {
+    border-color: var(--bn-line);
+    background: #fff;
+    box-shadow: 0 8px 18px rgba(15,23,42,.05);
+    transform: none;
+  }
+
+  .bn-page .bn-true-btn:hover {
+    border-color: #16a34a;
+    background: #dcfce7;
+    transform: none;
+  }
+
+  .bn-page .bn-false-btn:hover {
+    border-color: #ef4444;
+    background: #fee2e2;
+    transform: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .bn-page .bn-btn { transition: none; }
 }
