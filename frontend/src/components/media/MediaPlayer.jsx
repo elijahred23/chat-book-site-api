@@ -165,7 +165,7 @@ export default function MediaPlayer() {
     timerRef.current = setInterval(() => {
       if (!media) return;
       const start = segmentStartRef.current;
-      const end = start + intervalSec;
+      const end = Math.min(start + intervalSec, media.duration);
       const now = media.currentTime;
 
       // Unlock if playhead is inside the interval
@@ -212,6 +212,44 @@ export default function MediaPlayer() {
 
     return () => clearInterval(timerRef.current);
   }, [intervalLoop, intervalSec, targetRepeats, loopFile]);
+
+  const handleEnded = async () => {
+    const media = mediaRef.current;
+    if (!media || !intervalLoop) {
+      setIsPlaying(false);
+      return;
+    }
+
+    const start = segmentStartRef.current;
+    const shouldRepeatSegment =
+      targetRepeats === 0 || playCountRef.current < targetRepeats;
+
+    if (shouldRepeatSegment) {
+      if (targetRepeats !== 0) {
+        playCountRef.current += 1;
+        setCurrentPlayCount(playCountRef.current);
+      }
+      isProgrammaticSeek.current = true;
+      boundaryLockRef.current = false;
+      media.currentTime = start;
+    } else if (loopFile) {
+      segmentStartRef.current = 0;
+      playCountRef.current = 1;
+      setCurrentPlayCount(1);
+      isProgrammaticSeek.current = true;
+      boundaryLockRef.current = false;
+      media.currentTime = 0;
+    } else {
+      setIsPlaying(false);
+      return;
+    }
+
+    try {
+      await media.play();
+    } catch {
+      setIsPlaying(false);
+    }
+  };
 
   // Handle user seek (dragging the playhead)
   const handleSeeked = () => {
@@ -263,7 +301,7 @@ export default function MediaPlayer() {
             loop={!intervalLoop && loopFile}
             onPlay={() => setIsPlaying(true)}
             onPause={() => setIsPlaying(false)}
-            onEnded={() => setIsPlaying(false)}
+            onEnded={handleEnded}
             onSeeked={handleSeeked}
             onLoadedMetadata={handleLoadedMetadata}
             className="mp-video"
