@@ -15,6 +15,10 @@ function clamp(value, min, max) {
   return Math.min(Math.max(value, min), max);
 }
 
+function normalizeInterval(value) {
+  return clamp(Math.round(value / 5) * 5, 5, 60);
+}
+
 function getSavedSettings() {
   if (typeof window === "undefined") {
     return defaultSettings;
@@ -27,7 +31,7 @@ function getSavedSettings() {
       speed: Number.isFinite(saved?.speed) ? clamp(saved.speed, 0.25, 3) : defaultSettings.speed,
       loopFile: typeof saved?.loopFile === "boolean" ? saved.loopFile : defaultSettings.loopFile,
       intervalLoop: typeof saved?.intervalLoop === "boolean" ? saved.intervalLoop : defaultSettings.intervalLoop,
-      intervalSec: Number.isFinite(saved?.intervalSec) ? clamp(saved.intervalSec, 1, 60) : defaultSettings.intervalSec,
+      intervalSec: Number.isFinite(saved?.intervalSec) ? normalizeInterval(saved.intervalSec) : defaultSettings.intervalSec,
       targetRepeats: Number.isFinite(saved?.targetRepeats) ? clamp(saved.targetRepeats, 0, 10) : defaultSettings.targetRepeats,
     };
   } catch {
@@ -362,8 +366,9 @@ export default function MediaPlayer() {
                   <label className="mp-label">Interval: {intervalSec}s</label>
                   <input
                     type="range"
-                    min="1"
+                    min="5"
                     max="60"
+                    step="5"
                     value={intervalSec}
                     className="mp-range"
                     onChange={(e) => setIntervalSec(Number(e.target.value))}
