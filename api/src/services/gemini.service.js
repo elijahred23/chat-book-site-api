@@ -199,6 +199,27 @@ function isPlantUmlSource(source) {
     return endMarker.test(source);
 }
 
+function describePlantUmlResponse(rawResponse, parsed, parsedAsJson, source) {
+    const trimmedResponse = rawResponse.trim();
+    const responseFormat = parsedAsJson
+        ? "JSON object"
+        : /^```/i.test(trimmedResponse)
+            ? "Markdown code fence"
+            : "plain text or malformed JSON";
+    const keys = parsed && typeof parsed === "object" && !Array.isArray(parsed)
+        ? Object.keys(parsed)
+        : [];
+    const startMarker = source.match(/@start[a-z]+\b/i)?.[0] || "missing";
+    const endMarkers = [...source.matchAll(/@end[a-z]+\b/gi)].map((match) => match[0]);
+    const endMarker = endMarkers[endMarkers.length - 1] || "missing";
+    const details = [
+        `response format: ${responseFormat}`,
+        `JSON keys: ${keys.length ? keys.join(", ") : "none"}`,
+        `PlantUML markers: ${startMarker} -> ${endMarker}`,
+    ];
+    return details.join("; ");
+}
+
 async function generatePlantUmlDiagram(prompt, gemini_model = null) {
     const model = gemini_model || GeminiModel.currentModel;
     if (!model) throw new Error("Model not specified");
@@ -233,23 +254,27 @@ async function generatePlantUmlDiagram(prompt, gemini_model = null) {
         },
     });
 
+    const rawResponse = response?.text || "";
     let parsed;
+    let parsedAsJson = false;
     try {
-        parsed = JSON.parse(response?.text || "{}");
+        parsed = JSON.parse(rawResponse || "{}");
+        parsedAsJson = true;
     } catch {
-        const source = normalizePlantUmlSource(response?.text || "");
+        const source = normalizePlantUmlSource(rawResponse);
         parsed = { source };
     }
 
-    const source = normalizePlantUmlSource(parsed.source || response?.text || "");
+    const source = normalizePlantUmlSource(parsed?.source || rawResponse);
+    const responseDescription = describePlantUmlResponse(rawResponse, parsed, parsedAsJson, source);
     if (!isPlantUmlSource(source)) {
-        throw new Error("Gemini returned a response without a complete PlantUML document.");
+        throw new Error(`Gemini returned a response without a complete PlantUML document (${responseDescription}).`);
     }
 
-    const title = typeof parsed.title === "string" ? parsed.title.trim() : "";
-    const diagramType = typeof parsed.diagramType === "string" ? parsed.diagramType.trim() : "";
+    const title = typeof parsed?.title === "string" ? parsed.title.trim() : "";
+    const diagramType = typeof parsed?.diagramType === "string" ? parsed.diagramType.trim() : "";
     if (!title || !plantUmlDiagramTypes.includes(diagramType)) {
-        throw new Error("Gemini returned invalid PlantUML response metadata.");
+        throw new Error(`Gemini returned invalid PlantUML response metadata (${responseDescription}; title: ${title ? "present" : "missing"}; diagramType: ${diagramType || "missing"}).`);
     }
 
     return { title, diagramType, source };
