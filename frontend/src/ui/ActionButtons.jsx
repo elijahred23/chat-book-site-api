@@ -1,39 +1,33 @@
-import "./ActionButtons.css";
-import { useAppDispatch, useAppState, actions } from "../context/AppContext";
-import {
-  FaComments,
-  FaVolumeUp,
-  FaScroll,
-  FaProjectDiagram,
-  FaPodcast,
-  FaCopy,
-  FaCode,
-  FaBook,
-  FaYoutube,
-  FaImage,
-  FaEllipsisH,
-  FaChevronUp,
-  FaKeyboard,
-  FaBullhorn,
-  FaMagic,
-  FaListAlt,
-  FaDownload,
-  FaSitemap,
-  FaGlobe,
-  FaBookReader,
-} from "react-icons/fa";
-import { useFlyout } from "../context/FlyoutContext";
-import { FcGoogle } from "react-icons/fc";
-import { SiMarkdown, SiWikipedia } from "react-icons/si";
-import { GiGraduateCap } from "react-icons/gi";
-import { FaRedditAlien } from "react-icons/fa";
 import { useState } from "react";
-import { GiNotebook } from "react-icons/gi";
+import PropTypes from "prop-types";
+import { useNavigate } from "react-router-dom";
+import {
+  FaBookReader,
+  FaChevronUp,
+  FaComments,
+  FaCopy,
+  FaDownload,
+  FaEllipsisH,
+  FaKeyboard,
+  FaLightbulb,
+  FaListAlt,
+  FaProjectDiagram,
+  FaQuestionCircle,
+  FaScroll,
+  FaVolumeUp,
+  FaYoutube,
+} from "react-icons/fa";
+import { FcGoogle } from "react-icons/fc";
+import { GiGraduateCap, GiNotebook } from "react-icons/gi";
+import { SiMarkdown, SiWikipedia } from "react-icons/si";
+import { actions, useAppDispatch, useAppState } from "../context/AppContext";
+import { useFlyout } from "../context/FlyoutContext";
+import "./ActionButtons.css";
 
 function removeMarkdown(text) {
   return text
-    .replace(/```[\s\S]*?```/g, (m) =>
-      m.replace(/```[a-zA-Z]*\n?/, "").replace(/```$/, "")
+    .replace(/```[\s\S]*?```/g, (match) =>
+      match.replace(/```[a-zA-Z]*\n?/, "").replace(/```$/, "")
     )
     .replace(/`([^`]*)`/g, "$1")
     .replace(/(\*\*|__)(.*?)\1/g, "$2")
@@ -41,268 +35,178 @@ function removeMarkdown(text) {
     .replace(/~~(.*?)~~/g, "$1")
     .replace(/^\s{0,3}#{1,6}\s*/gm, "")
     .replace(/^>\s?/gm, "")
-    .replace(/^\s*[\*\-\+]\s+/gm, "")
+    .replace(/^\s*[*+-]\s+/gm, "")
     .replace(/^\s*\d+\.\s+/gm, "")
     .replace(/^([-*_] *){3,}$/gm, "")
     .replace(/\n{3,}/g, "\n\n")
     .trim();
 }
 
+function downloadText(text, extension, mimeType, showMessage) {
+  const filename = `content.${extension}`;
+  const blob = new Blob([text || ""], { type: mimeType });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = filename;
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+  URL.revokeObjectURL(url);
+  showMessage?.({ type: "success", message: `Downloaded ${filename}` });
+}
+
+const AI_INSTRUCTIONS = {
+  summarize: "Summarize the following text. Preserve the most important facts and return a concise, well-structured summary:\n\n",
+  explain: "Explain the following text in simple language for a beginner. Define unfamiliar terms and use a short example where helpful:\n\n",
+  quiz: "Create a quiz from the following text. Include a mix of multiple-choice and short-answer questions, then provide a clearly separated answer key:\n\n",
+};
+
 export default function ActionButtons({ promptText, limitButtons = false }) {
   const dispatch = useAppDispatch();
-  const { isChatOpen, isTTSOpen, isTeleprompterOpen } = useAppState();
-  const rawText = promptText || "";
-  const cleanText = removeMarkdown(promptText || "");
+  const state = useAppState();
+  const navigate = useNavigate();
   const { showMessage } = useFlyout();
   const [showAll, setShowAll] = useState(false);
+  const rawText = promptText || "";
+  const cleanText = removeMarkdown(rawText);
 
-  const buttons = [
-    {
-      icon: FaComments,
-      title: "Ask AI",
-      color: "var(--btn-blue)",
-      iconColor: "#0b1220",
-      onClick: (e) => {
-        e.stopPropagation();
-        dispatch(actions.setChatPrompt(cleanText));
-        dispatch(actions.setIsChatOpen(true));
-      },
-    },
-    {
-      icon: SiMarkdown,
-      title: "Markdown Viewer",
-      color: "#0f766e",
-      iconColor: "#fff",
-      onClick: (e) => {
-        e.stopPropagation();
-        dispatch(actions.setMarkdownViewerText(rawText));
-        dispatch(actions.setIsMarkdownViewerOpen(true));
-        showMessage?.({ type: "info", message: "Opening markdown viewer...", duration: 1200 });
-      },
-    },
-    {
-      icon: FaBookReader,
-      title: "Chunk Large Text",
-      color: "#8b5cf6",
-      iconColor: "#fff",
-      onClick: (e) => {
-        e.stopPropagation();
-        dispatch(actions.setCopyText(cleanText));
-        dispatch(actions.setLargeTextBuffer(cleanText));
-        dispatch(actions.setIsLargeTextOpen(true));
-        showMessage?.({ type: "info", message: "Opening chunker drawer...", duration: 1200 });
-      },
-    },
-    {
-      icon: FaComments,
-      title: "Open Chat Two",
-      color: "#22c55e",
-      iconColor: "#0b1220",
-      onClick: (e) => {
-        e.stopPropagation();
-        dispatch(actions.setChat2Prompt(cleanText));
-        dispatch(actions.setIsChat2Open(true));
-      },
-    },
-    {
-      icon: FaVolumeUp,
-      title: "TTS",
-      color: "var(--btn-purple)",
-      onClick: (e) => {
-        e.stopPropagation();
-        dispatch(actions.setTtsText(cleanText));
-        dispatch(actions.setTtsAutoplay(true));
-        dispatch(actions.setIsTTSOpen(true));
-      },
-    },
-    {
-      icon: FaScroll,
-      title: "Teleprompter",
-      color: "var(--btn-green)",
-      onClick: (e) => {
-        e.stopPropagation();
-        dispatch(actions.setTeleprompterText(cleanText));
-        dispatch(actions.setIsTeleprompterOpen(!isTeleprompterOpen));
-      },
-    },
-    {
-      icon: GiNotebook,
-      title: "Chat Book",
-      color: "var(--btn-yellow)",
-      iconColor: "#0f172a",
-      onClick: (e) => {
-        e.stopPropagation();
-        dispatch(actions.setChatBookSubject(cleanText));
-        dispatch(actions.setIsChatBookOpen(true));
-      },
-    },
-    {
-      icon: FaKeyboard,
-      title: "Typing Test",
-      color: "var(--btn-code)",
-      iconColor: "#0b1220",
-      onClick: (e) => {
-        e.stopPropagation();
-        dispatch(actions.setTypingSource(cleanText));
-        dispatch(actions.setIsTypingOpen(true));
-      },
-    },
-    {
-      icon: FaCode,
-      title: "HTML Builder",
-      color: "var(--btn-purple)",
-      iconColor: "#0b1220",
-      onClick: (e) => {
-        e.stopPropagation();
-        dispatch(actions.setHtmlInput(cleanText));
-        dispatch(actions.setIsHtmlBuilderOpen(true));
-      },
-    },
-    {
-      icon: FcGoogle,
-      title: "Ask Google",
-      color: "var(--google-blue)",
-      iconColor: "#0b1220",
-      onClick: (e) => {
-        e.stopPropagation();
-        const query = encodeURIComponent(cleanText);
-        window.open(`https://www.google.com/search?q=${query}`, "_blank");
-      },
-    },
-    {
-      icon: SiWikipedia,
-      title: "Ask Wikipedia",
-      color: "var(--wiki-grey)",
-      onClick: (e) => {
-        e.stopPropagation();
-        const query = encodeURIComponent(cleanText);
-        window.open(
-          `https://en.wikipedia.org/wiki/Special:Search?search=${query}`,
-          "_blank"
-        );
-      },
-    },
-    {
-      icon: FaDownload,
-      title: "Download .txt",
-      color: "#e2e8f0",
-      iconColor: "#0f172a",
-      onClick: async (e) => {
-        e.stopPropagation();
-        try {
-          const isMobile = /Mobi|Android/i.test(navigator.userAgent);
-          const supportsPicker = typeof window.showSaveFilePicker === "function";
+  const openChat = (prompt) => {
+    dispatch(actions.setChatPrompt(prompt));
+    dispatch(actions.setIsChatOpen(true));
+  };
 
-          if (supportsPicker && !isMobile) {
-            const handle = await window.showSaveFilePicker({
-              suggestedName: "content.txt",
-              types: [
-                {
-                  description: "Text file",
-                  accept: { "text/plain": [".txt"] },
-                },
-              ],
-            });
-            const writable = await handle.createWritable();
-            await writable.write(cleanText || "");
-            await writable.close();
-            showMessage?.({ type: "success", message: "File saved where you chose." });
-            return;
-          }
-
-          // Mobile or no file picker: prompt for name on mobile, otherwise direct download
-          let filename = "content.txt";
-          if (isMobile) {
-            const inputName = window.prompt("Name your file", filename);
-            if (!inputName) {
-              showMessage?.({ type: "info", message: "Download canceled." });
-              return;
-            }
-            filename = inputName.endsWith(".txt") ? inputName : `${inputName}.txt`;
-          }
-          const blob = new Blob([cleanText || ""], { type: "text/plain" });
-          const url = URL.createObjectURL(blob);
-          const a = document.createElement("a");
-          a.href = url;
-          a.download = filename;
-          document.body.appendChild(a);
-          a.click();
-          a.remove();
-          URL.revokeObjectURL(url);
-          showMessage?.({ type: "success", message: `Downloaded ${filename}` });
-        } catch (err) {
-          console.error("Download failed", err);
-          showMessage?.({ type: "error", message: "Download failed." });
-        }
-      },
-    },
-    {
-      icon: FaCopy,
-      title: "Copy Text",
-      color: "var(--btn-gray)",
-      iconColor: "#0f172a",
-      onClick: async (e) => {
-        e.stopPropagation();
-        try {
-          if (navigator.clipboard?.writeText) {
-            await navigator.clipboard.writeText(cleanText);
-          } else {
-            const helper = document.createElement("textarea");
-            helper.value = cleanText;
-            helper.setAttribute("readonly", "");
-            helper.style.position = "absolute";
-            helper.style.left = "-9999px";
-            document.body.appendChild(helper);
-            helper.select();
-            document.execCommand("copy");
-            document.body.removeChild(helper);
-          }
-          showMessage({ type: "success", message: "Text copied to clipboard!" });
-        } catch (err) {
-          showMessage({ type: "error", message: "Copy failed. Try copying manually." });
-        }
-      },
+  const copyText = async (text, label) => {
+    try {
+      await navigator.clipboard.writeText(text);
+      showMessage?.({ type: "success", message: `${label} copied to clipboard!` });
+    } catch {
+      showMessage?.({ type: "error", message: "Copy failed. Try copying manually." });
     }
+  };
+
+  const groups = [
+    {
+      label: "AI",
+      buttons: [
+        { icon: FaComments, title: "Ask AI", drawer: "chat", color: "var(--btn-blue)", onClick: () => openChat(cleanText) },
+        { icon: FaListAlt, title: "Summarize", drawer: "chat", color: "var(--btn-purple)", onClick: () => openChat(AI_INSTRUCTIONS.summarize + cleanText) },
+        { icon: FaLightbulb, title: "Explain Simply", drawer: "chat", color: "var(--btn-orange)", onClick: () => openChat(AI_INSTRUCTIONS.explain + cleanText) },
+        { icon: FaQuestionCircle, title: "Create Quiz", drawer: "chat", color: "var(--btn-pink)", onClick: () => openChat(AI_INSTRUCTIONS.quiz + cleanText) },
+      ],
+    },
+    {
+      label: "Learn",
+      buttons: [
+        {
+          icon: GiGraduateCap,
+          title: "Create Flashcards",
+          color: "var(--scholar-blue)",
+          onClick: () => {
+            dispatch(actions.setFlashcardPrompt(cleanText));
+            navigate("/flashCards");
+          },
+        },
+        { icon: GiNotebook, title: "Chat Book", drawer: "chatbook", color: "var(--btn-yellow)", iconColor: "#0f172a", onClick: () => { dispatch(actions.setChatBookSubject(cleanText)); dispatch(actions.setIsChatBookOpen(true)); } },
+        { icon: FaKeyboard, title: "Typing Test", drawer: "typing", color: "var(--btn-code)", iconColor: "#0b1220", onClick: () => { dispatch(actions.setTypingSource(cleanText)); dispatch(actions.setIsTypingOpen(true)); } },
+        { icon: FaProjectDiagram, title: "PlantUML Diagram", drawer: "plantuml", color: "var(--btn-slate)", onClick: () => { dispatch(actions.setPlantUMLPrompt(cleanText)); dispatch(actions.setIsPlantUMLOpen(true)); } },
+      ],
+    },
+    {
+      label: "Read",
+      buttons: [
+        { icon: FaVolumeUp, title: "Text to Speech", drawer: "tts", color: "var(--btn-purple)", onClick: () => { dispatch(actions.setTtsText(cleanText)); dispatch(actions.setTtsAutoplay(true)); dispatch(actions.setIsTTSOpen(true)); } },
+        { icon: FaScroll, title: "Teleprompter", drawer: "teleprompter", color: "var(--btn-green)", onClick: () => { dispatch(actions.setTeleprompterText(cleanText)); dispatch(actions.setIsTeleprompterOpen(true)); } },
+        { icon: SiMarkdown, title: "Markdown Viewer", drawer: "markdown", color: "#0f766e", onClick: () => { dispatch(actions.setMarkdownViewerText(rawText)); dispatch(actions.setIsMarkdownViewerOpen(true)); } },
+        { icon: FaBookReader, title: "Chunk Text", drawer: "large", color: "#8b5cf6", onClick: () => { dispatch(actions.setCopyText(cleanText)); dispatch(actions.setLargeTextBuffer(cleanText)); dispatch(actions.setIsLargeTextOpen(true)); } },
+      ],
+    },
+    {
+      label: "Search",
+      buttons: [
+        { icon: FcGoogle, title: "Search Google", color: "var(--google-blue)", iconColor: "#0b1220", onClick: () => window.open(`https://www.google.com/search?q=${encodeURIComponent(cleanText)}`, "_blank", "noopener,noreferrer") },
+        { icon: SiWikipedia, title: "Search Wikipedia", color: "var(--wiki-grey)", onClick: () => window.open(`https://en.wikipedia.org/wiki/Special:Search?search=${encodeURIComponent(cleanText)}`, "_blank", "noopener,noreferrer") },
+        { icon: FaYoutube, title: "Search YouTube", drawer: "youtube", color: "var(--yt-red)", onClick: () => { dispatch(actions.setYouTubeSearchText(cleanText)); dispatch(actions.setIsYouTubeOpen(true)); } },
+      ],
+    },
+    {
+      label: "Export",
+      buttons: [
+        { icon: FaCopy, title: "Copy Text", color: "var(--btn-gray)", onClick: () => copyText(cleanText, "Text") },
+        { icon: FaDownload, title: "Download Text", color: "#e2e8f0", iconColor: "#0f172a", onClick: () => downloadText(cleanText, "txt", "text/plain", showMessage) },
+        { icon: SiMarkdown, title: "Copy Markdown", color: "#0f766e", onClick: () => copyText(rawText, "Markdown") },
+      ],
+    },
   ];
 
-  const visibleButtons =
-    limitButtons && !showAll ? buttons.slice(0, 8) : buttons;
+  const openDrawer = state.drawerStack?.[state.drawerStack.length - 1];
+  const drawerLabels = {
+    chat: "AI Chat", chatbook: "Chat Book", typing: "Typing Test", plantuml: "PlantUML",
+    tts: "Text to Speech", teleprompter: "Teleprompter", markdown: "Markdown Viewer",
+    large: "Text Chunker", youtube: "YouTube Transcript",
+  };
+  let remaining = limitButtons && !showAll ? 8 : Number.POSITIVE_INFINITY;
 
   return (
-    <div className="action-buttons" onClick={(e) => e.stopPropagation()}>
-      {visibleButtons.map((btn, idx) => (
-        <button
-          key={idx}
-          onClick={btn.onClick}
-          className="icon-btn"
-          title={btn.title}
-          aria-label={btn.title}
-          data-tooltip={btn.title}
-          style={{
-            background: btn.color,
-            color: btn.iconColor || "#ffffff",
-          }}
-        >
-          {(() => {
-            const Icon = btn.icon;
-            return <Icon size={15} color={btn.iconColor || "#fff"} />;
-          })()}
-        </button>
-      ))}
+    <div className="action-buttons-panel" onClick={(event) => event.stopPropagation()}>
+      {openDrawer && drawerLabels[openDrawer] ? (
+        <div className="action-drawer-status" role="status">
+          <span aria-hidden="true" /> Open drawer: {drawerLabels[openDrawer]}
+        </div>
+      ) : null}
 
-      {limitButtons && (
-        <button
-          className="icon-btn more-btn"
-          onClick={(e) => {
-            e.stopPropagation();
-            setShowAll(!showAll);
-          }}
-          title={showAll ? "Show Less" : "Show More"}
-          data-tooltip={showAll ? "Show Less" : "Show More"}
-        >
-          {showAll ? <FaChevronUp /> : <FaEllipsisH />}
-        </button>
-      )}
+      <div className="action-button-groups">
+        {groups.map((group) => {
+          const visible = group.buttons.slice(0, Math.max(remaining, 0));
+          remaining -= visible.length;
+          if (!visible.length) return null;
+          return (
+            <section className="action-button-group" aria-label={`${group.label} actions`} key={group.label}>
+              <span className="action-group-label">{group.label}</span>
+              <div className="action-buttons">
+                {visible.map((button) => {
+                  const Icon = button.icon;
+                  const isActive = Boolean(button.drawer && button.drawer === openDrawer);
+                  return (
+                    <button
+                      key={button.title}
+                      type="button"
+                      onClick={button.onClick}
+                      className={`icon-btn${isActive ? " is-active" : ""}`}
+                      title={button.title}
+                      aria-label={button.title}
+                      aria-pressed={button.drawer ? isActive : undefined}
+                      data-tooltip={button.title}
+                      style={{ background: button.color, color: button.iconColor || "#fff" }}
+                    >
+                      <Icon size={15} color={button.iconColor || "#fff"} />
+                    </button>
+                  );
+                })}
+              </div>
+            </section>
+          );
+        })}
+
+        {limitButtons ? (
+          <button
+            type="button"
+            className="icon-btn more-btn"
+            onClick={() => setShowAll((current) => !current)}
+            title={showAll ? "Show Less" : "Show More"}
+            aria-label={showAll ? "Show fewer actions" : "Show all actions"}
+            aria-expanded={showAll}
+            data-tooltip={showAll ? "Show Less" : "Show More"}
+          >
+            {showAll ? <FaChevronUp /> : <FaEllipsisH />}
+          </button>
+        ) : null}
+      </div>
     </div>
   );
 }
+
+ActionButtons.propTypes = {
+  promptText: PropTypes.string,
+  limitButtons: PropTypes.bool,
+};
