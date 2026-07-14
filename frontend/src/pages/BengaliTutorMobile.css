@@ -1,0 +1,124 @@
+@media (max-width: 700px) {
+  main:has(section[aria-label="Word filters"]) {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  main:has(section[aria-label="Word filters"]) > nav,
+  main:has(section[aria-label="Word filters"]) > section {
+    width: calc(100% - 1rem) !important;
+    max-width: calc(100% - 1rem) !important;
+    box-sizing: border-box;
+  }
+
+  main:has(section[aria-label="Word filters"]) > nav {
+    margin-top: 0.5rem !important;
+  }
+
+  main:has(section[aria-label="Word filters"]) > section {
+    margin-top: 0.5rem !important;
+    padding: 0.75rem !important;
+    gap: 0.75rem !important;
+    border-radius: 14px !important;
+  }
+
+  main:has(section[aria-label="Word filters"]) h1 {
+    font-size: clamp(2rem, 11vw, 3rem) !important;
+    line-height: 1.05 !important;
+    overflow-wrap: anywhere;
+  }
+
+  section[aria-label="Word filters"] {
+    padding: 0.75rem !important;
+    gap: 0.7rem !important;
+    min-width: 0;
+  }
+
+  section[aria-label="Word filters"] > div:first-child,
+  main:has(section[aria-label="Word filters"]) > section > div[style*="grid-template-columns"] {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  section[aria-label="Word filters"] > div:nth-of-type(2) {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+    grid-template-areas:
+      "previous next"
+      "chunk chunk";
+    align-items: stretch !important;
+    gap: 0.55rem !important;
+  }
+
+  section[aria-label="Word filters"] > div:nth-of-type(2) > button:first-child {
+    grid-area: previous;
+  }
+
+  section[aria-label="Word filters"] > div:nth-of-type(2) > label {
+    grid-area: chunk;
+    min-width: 0;
+  }
+
+  section[aria-label="Word filters"] > div:nth-of-type(2) > button:last-child {
+    grid-area: next;
+  }
+
+  main:has(section[aria-label="Word filters"]) label,
+  main:has(section[aria-label="Word filters"]) select,
+  main:has(section[aria-label="Word filters"]) input {
+    min-width: 0 !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  main:has(section[aria-label="Word filters"]) select,
+  main:has(section[aria-label="Word filters"]) input {
+    width: 100% !important;
+    font-size: 16px !important;
+  }
+
+  main:has(section[aria-label="Word filters"]) button {
+    min-width: 0;
+    min-height: 46px !important;
+    padding: 0.65rem 0.7rem !important;
+    white-space: normal;
+    line-height: 1.15;
+  }
+
+  main:has(section[aria-label="Word filters"]) div[style*="display: flex"][style*="flex-wrap"] {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    width: 100%;
+  }
+
+  main:has(section[aria-label="Word filters"]) div[style*="linear-gradient"] {
+    min-height: 155px !important;
+    padding: 1rem 0.75rem !important;
+  }
+
+  main:has(section[aria-label="Word filters"]) div[style*="linear-gradient"] small {
+    max-width: 100%;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+  }
+
+  section[aria-label="Word filters"] > div:last-child {
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (max-width: 390px) {
+  main:has(section[aria-label="Word filters"]) > section {
+    width: calc(100% - 0.6rem) !important;
+    max-width: calc(100% - 0.6rem) !important;
+    padding: 0.65rem !important;
+  }
+
+  section[aria-label="Word filters"] {
+    padding: 0.65rem !important;
+  }
+
+  main:has(section[aria-label="Word filters"]) div[style*="display: flex"][style*="flex-wrap"] {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+}
