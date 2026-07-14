@@ -26,7 +26,7 @@ import YouTubeTranscript from "./components/youtube/YouTubeTranscript.jsx";
 import AppDrawers from "./layouts/AppDrawers.jsx";
 import ActionButtonStudio from "./pages/ActionButtonStudio.jsx";
 import ApiCheck from "./pages/ApiCheck.jsx";
-import BengaliTutor from "./pages/BengaliTutor.jsx";
+import BengaliTutorWithVoice from "./pages/BengaliTutorWithVoice.jsx";
 import ChatTemplate from "./pages/ChatTemplate.jsx";
 import CodingProblems from "./pages/CodingProblems.jsx";
 import CorrespondentBankingGuide from "./pages/CorrespondentBankingGuide.jsx";
@@ -127,7 +127,7 @@ function AppContent() {
           <Route path="/typingTest" element={<TypingTest />} />
           <Route path="/flashCards" element={<FlashCardApp />} />
           <Route path="/plantUML" element={<PlantUMLViewer />} />
-          <Route path="/bengali" element={<BengaliTutor />} />
+          <Route path="/bengali" element={<BengaliTutorWithVoice />} />
           <Route path="/coding" element={<CodingProblems />} />
           <Route path="/cpu-simulator" element={<Suspense fallback={null}><CpuSimulatorWithOutputHistory /></Suspense>} />
           <Route path="/system-design" element={<SystemDesignPrep />} />
