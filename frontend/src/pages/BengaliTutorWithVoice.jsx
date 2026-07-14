@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import BengaliTutor from "./BengaliTutor.jsx";
 
 const VOICE_STORAGE_KEY = "bengali_tutor_voice";
@@ -14,6 +14,7 @@ const getSavedVoice = () => {
 export default function BengaliTutorWithVoice() {
   const [voices, setVoices] = useState([]);
   const [selectedVoiceName, setSelectedVoiceName] = useState(getSavedVoice);
+  const selectedVoiceRef = useRef(selectedVoiceName);
 
   useEffect(() => {
     if (typeof window === "undefined" || !window.speechSynthesis) return undefined;
@@ -34,10 +35,12 @@ export default function BengaliTutorWithVoice() {
 
   useEffect(() => {
     if (!selectedVoiceName || bengaliVoices.some((voice) => voice.name === selectedVoiceName)) return;
+    selectedVoiceRef.current = "";
     setSelectedVoiceName("");
   }, [bengaliVoices, selectedVoiceName]);
 
   useEffect(() => {
+    selectedVoiceRef.current = selectedVoiceName;
     try {
       if (selectedVoiceName) localStorage.setItem(VOICE_STORAGE_KEY, selectedVoiceName);
       else localStorage.removeItem(VOICE_STORAGE_KEY);
@@ -53,9 +56,10 @@ export default function BengaliTutorWithVoice() {
     const originalSpeak = synth.speak.bind(synth);
 
     const speakWithSelectedVoice = (utterance) => {
+      const voiceName = selectedVoiceRef.current;
       const isBengali = utterance?.lang?.toLowerCase().startsWith("bn");
-      if (isBengali && selectedVoiceName) {
-        const selectedVoice = synth.getVoices().find((voice) => voice.name === selectedVoiceName);
+      if (isBengali && voiceName) {
+        const selectedVoice = synth.getVoices().find((voice) => voice.name === voiceName);
         if (selectedVoice) voiceUtterance(utterance, selectedVoice);
       }
       originalSpeak(utterance);
@@ -74,10 +78,11 @@ export default function BengaliTutorWithVoice() {
         // The browser may expose speechSynthesis.speak as read-only.
       }
     };
-  }, [selectedVoiceName]);
+  }, []);
 
   const handleVoiceChange = (event) => {
     const voiceName = event.target.value;
+    selectedVoiceRef.current = voiceName;
     setSelectedVoiceName(voiceName);
 
     if (!voiceName || typeof window === "undefined" || !window.speechSynthesis) return;
