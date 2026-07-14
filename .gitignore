@@ -18,6 +18,7 @@ api/.env
 frontend/.env
 var/uploads/
 var/secrets/
+var/cache/
 api/logs/
 api/error.log
 
