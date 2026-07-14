@@ -1,1 +1,1 @@
-export { default } from "./BengaliTutorPersistent.jsx";
+export { default } from "./BengaliTutorWordJump.jsx";
