@@ -27,6 +27,7 @@ const storedSettings = () => {
     chunkIndex: 0,
     showImages: true,
     wordDelay: 0,
+    bengaliSpeechSource: "pronunciation",
   };
   try { return { ...defaults, ...JSON.parse(localStorage.getItem(SETTINGS_KEY) || "{}") }; } catch { return defaults; }
 };
@@ -104,6 +105,7 @@ function WordLoop({ voices, bnVoices, enVoices, bnVoice, enVoice, setBnVoice, se
   const [chunkIndex, setChunkIndex] = useState(initial.chunkIndex);
   const [showImages, setShowImages] = useState(initial.showImages);
   const [wordDelay, setWordDelay] = useState(initial.wordDelay);
+  const [bengaliSpeechSource, setBengaliSpeechSource] = useState(initial.bengaliSpeechSource);
   const [playing, setPlaying] = useState(false);
   const [paused, setPaused] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -159,9 +161,9 @@ function WordLoop({ voices, bnVoices, enVoices, bnVoice, enVoice, setBnVoice, se
 
   useEffect(() => {
     try {
-      localStorage.setItem(SETTINGS_KEY, JSON.stringify({ dataset, mode, intervalSize: size, intervalRepeats: repeats, loopForever, search, facet, chunkSize: safeChunkSize, chunkIndex: safeChunkIndex, showImages, wordDelay: delaySeconds }));
+      localStorage.setItem(SETTINGS_KEY, JSON.stringify({ dataset, mode, intervalSize: size, intervalRepeats: repeats, loopForever, search, facet, chunkSize: safeChunkSize, chunkIndex: safeChunkIndex, showImages, wordDelay: delaySeconds, bengaliSpeechSource }));
     } catch {}
-  }, [dataset, mode, size, repeats, loopForever, search, facet, safeChunkSize, safeChunkIndex, showImages, delaySeconds]);
+  }, [dataset, mode, size, repeats, loopForever, search, facet, safeChunkSize, safeChunkIndex, showImages, delaySeconds, bengaliSpeechSource]);
 
   useEffect(() => () => stop(), [stop]);
   useEffect(() => {
@@ -170,7 +172,7 @@ function WordLoop({ voices, bnVoices, enVoices, bnVoice, enVoice, setBnVoice, se
     passRef.current = 1;
     setCurrentIndex(0);
     setPass(1);
-  }, [dataset, mode, intervalSize, intervalRepeats, search, facet, safeChunkSize, safeChunkIndex, stop]);
+  }, [dataset, mode, intervalSize, intervalRepeats, loopForever, search, facet, safeChunkSize, safeChunkIndex, showImages, delaySeconds, bengaliSpeechSource, stop]);
 
   const jumpToWord = (event) => {
     const nextIndex = Math.min(Math.max(Number(event.target.value) || 0, 0), Math.max(items.length - 1, 0));
@@ -248,14 +250,17 @@ function WordLoop({ voices, bnVoices, enVoices, bnVoice, enVoice, setBnVoice, se
     await requestPhoto(item.en);
     const isActive = () => playingRef.current && !pausedRef.current && playbackGenerationRef.current === generation;
     if (!isActive()) return;
+    const bengaliSpeechText = bengaliSpeechSource === "pronunciation" && item.pronunciation?.trim()
+      ? item.pronunciation.trim()
+      : item.bn;
     if (mode === "english-bengali") {
       await speak(item.en, "en-US", enVoice);
-      if (isActive()) await speak(item.bn, "bn-IN", bnVoice);
+      if (isActive()) await speak(bengaliSpeechText, "bn-IN", bnVoice);
       return;
     }
-    await speak(item.bn, "bn-IN", bnVoice);
+    await speak(bengaliSpeechText, "bn-IN", bnVoice);
     if (mode === "bengali-english" && isActive()) await speak(item.en, "en-US", enVoice);
-  }, [mode, speak, bnVoice, enVoice, requestPhoto]);
+  }, [mode, speak, bnVoice, enVoice, requestPhoto, bengaliSpeechSource]);
 
   const waitBeforeNextWord = useCallback((generation) => new Promise((resolve) => {
     if (!delaySeconds) return resolve(playingRef.current && !pausedRef.current && playbackGenerationRef.current === generation);
@@ -403,7 +408,10 @@ function WordLoop({ voices, bnVoices, enVoices, bnVoice, enVoice, setBnVoice, se
       </div>
       {items.length > 0 && <Field label="Skip to word in active chunk"><select style={ui.input} value={currentIndex} onChange={jumpToWord}>{items.map((word, index) => <option key={`${word.bn}-${word.en}-${index}`} value={index}>{chunkStart + index + 1}. {word.bn} · {word.en}</option>)}</select></Field>}
       <div style={ui.grid}>
-        <VoiceSelect compact label="Bengali voice" value={bnVoice} voices={bnVoices} onChange={(value) => { setBnVoice(value); if (value) preview(value, "স্বাগতম", "bn-IN"); }} />
+        <div style={ui.voiceStack}>
+          <VoiceSelect compact label="Bengali voice" value={bnVoice} voices={bnVoices} onChange={(value) => { setBnVoice(value); if (value) preview(value, "স্বাগতম", "bn-IN"); }} />
+          <Field label="Bengali speech source"><select style={ui.input} value={bengaliSpeechSource} onChange={(event) => setBengaliSpeechSource(event.target.value)}><option value="pronunciation">Pronunciation (fallback to Bengali script)</option><option value="bengali">Bengali script</option></select></Field>
+        </div>
         <VoiceSelect compact label="English voice" value={enVoice} voices={enVoices} onChange={(value) => { setEnVoice(value); if (value) preview(value, "Welcome to Bengali practice", "en-US"); }} />
       </div>
       <div className="bn-word-loop__toggles" style={ui.toggles}>
@@ -460,6 +468,7 @@ const ui = {
   active: { minHeight: 44, border: "1px solid #cbd5e1", borderRadius: 10, background: "#fff", color: "#0f172a", fontWeight: 900 },
   voice: { width: "min(100% - 2rem, 1100px)", margin: ".75rem auto 0", padding: "1rem", border: "1px solid #dbe3ef", borderRadius: 14, background: "#fff" },
   voiceCompact: { padding: ".85rem", border: "1px solid #dbe3ef", borderRadius: 12, background: "#f8fafc" },
+  voiceStack: { display: "grid", alignContent: "start", gap: ".65rem" },
   card: { width: "min(100% - 2rem, 1100px)", margin: ".75rem auto 1.5rem", padding: "1rem", display: "grid", gap: "1rem", border: "1px solid #dbe3ef", borderRadius: 16, background: "#fff" },
   filterPanel: { display: "grid", gap: ".8rem", padding: "1rem", border: "1px solid #bfdbfe", borderRadius: 14, background: "#f8fbff" },
   grid: { display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(210px,1fr))", gap: ".75rem" },
