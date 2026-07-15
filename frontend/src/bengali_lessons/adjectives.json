@@ -1,0 +1,38 @@
+{
+  "id": "adjectives",
+  "title": "Essential Bengali Adjectives",
+  "summary": "Describe size, quality, age, color, and condition.",
+  "level": "beginner",
+  "topic": "Adjectives",
+  "focus": "vocabulary",
+  "phrases": [
+    { "bn": "এই খাবারটি খুব ভালো।", "pronunciation": "ei khabarti khub bhalo", "en": "This food is very good.", "context": "Using ভালো (good)", "category": "adjectives" },
+    { "bn": "আজ আবহাওয়া খারাপ।", "pronunciation": "aj abohawa kharap", "en": "The weather is bad today.", "context": "Using খারাপ (bad)", "category": "adjectives" },
+    { "bn": "ওই বাড়িটি অনেক বড়।", "pronunciation": "oi bariti onek boro", "en": "That house is very big.", "context": "Using বড় (big)", "category": "adjectives" },
+    { "bn": "আমার একটি ছোট ব্যাগ আছে।", "pronunciation": "amar ekti chhoto bag achhe", "en": "I have a small bag.", "context": "Using ছোট (small)", "category": "adjectives" },
+    { "bn": "আমি একটি নতুন বই কিনেছি।", "pronunciation": "ami ekti notun boi kinechhi", "en": "I bought a new book.", "context": "Using নতুন (new)", "category": "adjectives" },
+    { "bn": "এটি একটি পুরোনো ছবি।", "pronunciation": "eti ekti purono chhobi", "en": "This is an old photograph.", "context": "Using পুরোনো (old)", "category": "adjectives" },
+    { "bn": "এটা একটি সুন্দর বাড়ি।", "pronunciation": "eta ekti shundor bari", "en": "This is a beautiful house.", "context": "Using সুন্দর (beautiful)", "category": "adjectives" },
+    { "bn": "এই প্রশ্নটি খুব সহজ।", "pronunciation": "ei proshnoti khub shohaj", "en": "This question is very easy.", "context": "Using সহজ (easy)", "category": "adjectives" },
+    { "bn": "এই কাজটি বেশ কঠিন।", "pronunciation": "ei kajti besh kothin", "en": "This task is quite difficult.", "context": "Using কঠিন (difficult / hard)", "category": "adjectives" },
+    { "bn": "চা এখনো গরম।", "pronunciation": "cha ekhono gorom", "en": "The tea is still hot.", "context": "Using গরম (hot)", "category": "adjectives" },
+    { "bn": "আজ পানি ঠান্ডা।", "pronunciation": "aj pani thanda", "en": "The water is cold today.", "context": "Using ঠান্ডা (cold)", "category": "adjectives" },
+    { "bn": "আমার ব্যাগটি লাল।", "pronunciation": "amar bagti lal", "en": "My bag is red.", "context": "Using লাল (red)", "category": "adjectives" }
+  ],
+  "vocab": [
+    { "bn": "ভালো", "pronunciation": "bhalo", "en": "good", "category": "adjectives" },
+    { "bn": "খারাপ", "pronunciation": "kharap", "en": "bad", "category": "adjectives" },
+    { "bn": "বড়", "pronunciation": "boro", "en": "big", "category": "adjectives" },
+    { "bn": "ছোট", "pronunciation": "chhoto", "en": "small", "category": "adjectives" },
+    { "bn": "নতুন", "pronunciation": "notun", "en": "new", "category": "adjectives" },
+    { "bn": "পুরোনো", "pronunciation": "purono", "en": "old", "category": "adjectives" },
+    { "bn": "সুন্দর", "pronunciation": "shundor", "en": "beautiful", "category": "adjectives" },
+    { "bn": "সহজ", "pronunciation": "shohaj", "en": "easy", "category": "adjectives" },
+    { "bn": "কঠিন", "pronunciation": "kothin", "en": "difficult / hard", "category": "adjectives" },
+    { "bn": "গরম", "pronunciation": "gorom", "en": "hot", "category": "adjectives" },
+    { "bn": "ঠান্ডা", "pronunciation": "thanda", "en": "cold", "category": "adjectives" },
+    { "bn": "লাল", "pronunciation": "lal", "en": "red", "category": "adjectives" }
+  ],
+  "practice": [],
+  "notes": ["Bengali adjectives generally do not change for gender or number."]
+}

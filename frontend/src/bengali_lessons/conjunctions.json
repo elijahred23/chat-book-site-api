@@ -1,0 +1,38 @@
+{
+  "id": "conjunctions",
+  "title": "Bengali Conjunctions",
+  "summary": "Connect words, choices, reasons, and contrasting ideas.",
+  "level": "beginner",
+  "topic": "Conjunctions",
+  "focus": "grammar",
+  "phrases": [
+    { "bn": "আমি চা এবং কফি পছন্দ করি।", "pronunciation": "ami cha ebong kofi pochhondo kori", "en": "I like tea and coffee.", "context": "Using এবং (and)", "category": "conjunctions" },
+    { "bn": "মা আর বাবা বাড়িতে আছেন।", "pronunciation": "ma ar baba barite achhen", "en": "Mother and father are at home.", "context": "Using আর (and / also)", "category": "conjunctions" },
+    { "bn": "তুমি চা অথবা কফি নিতে পারো।", "pronunciation": "tumi cha othoba kofi nite paro", "en": "You can have tea or coffee.", "context": "Using অথবা (or)", "category": "conjunctions" },
+    { "bn": "আমি যাব, কিন্তু এখন নয়।", "pronunciation": "ami jabo, kintu ekhon noy", "en": "I will go, but not now.", "context": "Using কিন্তু (but)", "category": "conjunctions" },
+    { "bn": "আমি থাকব, কারণ বৃষ্টি হচ্ছে।", "pronunciation": "ami thakbo, karon brishti hochchhe", "en": "I will stay because it is raining.", "context": "Using কারণ (because)", "category": "conjunctions" },
+    { "bn": "বৃষ্টি হচ্ছে, তাই আমি বাড়িতে আছি।", "pronunciation": "brishti hochchhe, tai ami barite achhi", "en": "It is raining, so I am at home.", "context": "Using তাই (so / therefore)", "category": "conjunctions" },
+    { "bn": "যদি সময় থাকে, আমি আসব।", "pronunciation": "jodi shomoy thake, ami ashbo", "en": "If I have time, I will come.", "context": "Using যদি (if)", "category": "conjunctions" },
+    { "bn": "তুমি এলে, তবে আমরা যাব।", "pronunciation": "tumi ele, tobe amra jabo", "en": "If you come, then we will go.", "context": "Using তবে (then)", "category": "conjunctions" },
+    { "bn": "যদিও কাজটি কঠিন, আমি চেষ্টা করব।", "pronunciation": "jodio kajti kothin, ami cheshta korbo", "en": "Although the task is difficult, I will try.", "context": "Using যদিও (although)", "category": "conjunctions" },
+    { "bn": "যখন বৃষ্টি হয়, আমি বই পড়ি।", "pronunciation": "jokhon brishti hoy, ami boi pori", "en": "When it rains, I read a book.", "context": "Using যখন (when)", "category": "conjunctions" },
+    { "bn": "যতক্ষণ কাজ শেষ না হয়, আমি থাকব।", "pronunciation": "jotokkhon kaj shesh na hoy, ami thakbo", "en": "I will stay as long as the work is not finished.", "context": "Using যতক্ষণ (as long as)", "category": "conjunctions" },
+    { "bn": "এখন চলো, নইলে দেরি হবে।", "pronunciation": "ekhon cholo, noile deri hobe", "en": "Let us go now, otherwise we will be late.", "context": "Using নইলে (otherwise)", "category": "conjunctions" }
+  ],
+  "vocab": [
+    { "bn": "এবং", "pronunciation": "ebong", "en": "and", "category": "conjunctions" },
+    { "bn": "আর", "pronunciation": "ar", "en": "and / also", "category": "conjunctions" },
+    { "bn": "অথবা", "pronunciation": "othoba", "en": "or", "category": "conjunctions" },
+    { "bn": "কিন্তু", "pronunciation": "kintu", "en": "but", "category": "conjunctions" },
+    { "bn": "কারণ", "pronunciation": "karon", "en": "because", "category": "conjunctions" },
+    { "bn": "তাই", "pronunciation": "tai", "en": "so / therefore", "category": "conjunctions" },
+    { "bn": "যদি", "pronunciation": "jodi", "en": "if", "category": "conjunctions" },
+    { "bn": "তবে", "pronunciation": "tobe", "en": "then / however", "category": "conjunctions" },
+    { "bn": "যদিও", "pronunciation": "jodio", "en": "although", "category": "conjunctions" },
+    { "bn": "যখন", "pronunciation": "jokhon", "en": "when", "category": "conjunctions" },
+    { "bn": "যতক্ষণ", "pronunciation": "jotokkhon", "en": "as long as", "category": "conjunctions" },
+    { "bn": "নইলে", "pronunciation": "noile", "en": "otherwise", "category": "conjunctions" }
+  ],
+  "practice": [],
+  "notes": ["আর is common in conversation; এবং is slightly more formal."]
+}

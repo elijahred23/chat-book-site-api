@@ -1,0 +1,38 @@
+{
+  "id": "nouns",
+  "title": "Essential Bengali Nouns",
+  "summary": "Common nouns for people, places, objects, and everyday life.",
+  "level": "beginner",
+  "topic": "Nouns",
+  "focus": "vocabulary",
+  "phrases": [
+    { "bn": "ওই মানুষটি খুব ভালো।", "pronunciation": "oi manush-ti khub bhalo", "en": "That person is very kind.", "context": "Using মানুষ (person)", "category": "nouns" },
+    { "bn": "রাহিম আমার বন্ধু।", "pronunciation": "Rahim amar bondhu", "en": "Rahim is my friend.", "context": "Using বন্ধু (friend)", "category": "nouns" },
+    { "bn": "আমার পরিবার ঢাকায় থাকে।", "pronunciation": "amar poribar Dhakay thake", "en": "My family lives in Dhaka.", "context": "Using পরিবার (family)", "category": "nouns" },
+    { "bn": "আমাদের বাড়ি ছোট।", "pronunciation": "amader bari chhoto", "en": "Our house is small.", "context": "Using বাড়ি (house)", "category": "nouns" },
+    { "bn": "স্কুল সকাল আটটায় শুরু হয়।", "pronunciation": "skul shokal at-tay shuru hoy", "en": "School starts at eight in the morning.", "context": "Using স্কুল (school)", "category": "nouns" },
+    { "bn": "এটা আমার প্রিয় বই।", "pronunciation": "eta amar priyo boi", "en": "This is my favorite book.", "context": "Using বই (book)", "category": "nouns" },
+    { "bn": "দয়া করে আমাকে পানি দিন।", "pronunciation": "doya kore amake pani din", "en": "Please give me water.", "context": "Using পানি (water)", "category": "nouns" },
+    { "bn": "খাবার টেবিলে রাখা আছে।", "pronunciation": "khabar tebile rakha achhe", "en": "The food is on the table.", "context": "Using খাবার (food)", "category": "nouns" },
+    { "bn": "আজ একটি সুন্দর দিন।", "pronunciation": "aj ekti shundor din", "en": "Today is a beautiful day.", "context": "Using দিন (day)", "category": "nouns" },
+    { "bn": "আমার এখন সময় নেই।", "pronunciation": "amar ekhon shomoy nei", "en": "I do not have time now.", "context": "Using সময় (time)", "category": "nouns" },
+    { "bn": "এই রাস্তা স্টেশনে যায়।", "pronunciation": "ei rasta steshone jay", "en": "This road goes to the station.", "context": "Using রাস্তা (road)", "category": "nouns" },
+    { "bn": "এই শহর অনেক বড়।", "pronunciation": "ei shohor onek boro", "en": "This city is very large.", "context": "Using শহর (city)", "category": "nouns" }
+  ],
+  "vocab": [
+    { "bn": "মানুষ", "pronunciation": "manush", "en": "person", "category": "nouns" },
+    { "bn": "বন্ধু", "pronunciation": "bondhu", "en": "friend", "category": "nouns" },
+    { "bn": "পরিবার", "pronunciation": "poribar", "en": "family", "category": "nouns" },
+    { "bn": "বাড়ি", "pronunciation": "bari", "en": "house", "category": "nouns" },
+    { "bn": "স্কুল", "pronunciation": "skul", "en": "school", "category": "nouns" },
+    { "bn": "বই", "pronunciation": "boi", "en": "book", "category": "nouns" },
+    { "bn": "পানি", "pronunciation": "pani", "en": "water", "category": "nouns" },
+    { "bn": "খাবার", "pronunciation": "khabar", "en": "food", "category": "nouns" },
+    { "bn": "দিন", "pronunciation": "din", "en": "day", "category": "nouns" },
+    { "bn": "সময়", "pronunciation": "shomoy", "en": "time", "category": "nouns" },
+    { "bn": "রাস্তা", "pronunciation": "rasta", "en": "road", "category": "nouns" },
+    { "bn": "শহর", "pronunciation": "shohor", "en": "city", "category": "nouns" }
+  ],
+  "practice": [],
+  "notes": ["Bengali nouns do not have grammatical gender."]
+}

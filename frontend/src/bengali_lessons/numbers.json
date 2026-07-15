@@ -1,0 +1,40 @@
+{
+  "id": "numbers",
+  "title": "Bengali Numbers",
+  "summary": "The numbers zero through twelve in Bengali.",
+  "level": "beginner",
+  "topic": "Numbers",
+  "focus": "vocabulary",
+  "phrases": [
+    { "bn": "আমার ভুলের সংখ্যা শূন্য।", "pronunciation": "amar bhuler shongkhya shunno", "en": "My number of mistakes is zero.", "context": "Using শূন্য (zero)", "category": "numbers" },
+    { "bn": "আমার একটি বই আছে।", "pronunciation": "amar ekti boi achhe", "en": "I have one book.", "context": "Using এক (one)", "category": "numbers" },
+    { "bn": "টেবিলে দুই কাপ চা আছে।", "pronunciation": "tebile dui kap cha achhe", "en": "There are two cups of tea on the table.", "context": "Using দুই (two)", "category": "numbers" },
+    { "bn": "আমরা তিনজন বন্ধু।", "pronunciation": "amra tinjon bondhu", "en": "We are three friends.", "context": "Using তিন (three)", "category": "numbers" },
+    { "bn": "এই ঘরে চারটি জানালা আছে।", "pronunciation": "ei ghore charti janala achhe", "en": "This room has four windows.", "context": "Using চার (four)", "category": "numbers" },
+    { "bn": "ঝুড়িতে পাঁচটি আম আছে।", "pronunciation": "jhurite panchti am achhe", "en": "There are five mangoes in the basket.", "context": "Using পাঁচ (five)", "category": "numbers" },
+    { "bn": "আমাদের দলে ছয়জন খেলোয়াড় আছে।", "pronunciation": "amader dole chhoyjon khelowar achhe", "en": "Our team has six players.", "context": "Using ছয় (six)", "category": "numbers" },
+    { "bn": "সপ্তাহে সাত দিন।", "pronunciation": "shoptah-e shat din", "en": "There are seven days in a week.", "context": "Using সাত (seven)", "category": "numbers" },
+    { "bn": "স্কুল সকাল আটটায় শুরু হয়।", "pronunciation": "skul shokal at-tay shuru hoy", "en": "School starts at eight in the morning.", "context": "Using আট (eight)", "category": "numbers" },
+    { "bn": "বাসটি নয়টায় আসে।", "pronunciation": "bas-ti noy-tay ashe", "en": "The bus comes at nine.", "context": "Using নয় (nine)", "category": "numbers" },
+    { "bn": "দশ মিনিট অপেক্ষা করুন।", "pronunciation": "dosh minit opekkha korun", "en": "Please wait ten minutes.", "context": "Using দশ (ten)", "category": "numbers" },
+    { "bn": "ক্লাসে এগারোজন ছাত্র আছে।", "pronunciation": "klashe egarojon chhatro achhe", "en": "There are eleven students in the class.", "context": "Using এগারো (eleven)", "category": "numbers" },
+    { "bn": "এক বছরে বারো মাস।", "pronunciation": "ek bochhore baro mash", "en": "There are twelve months in a year.", "context": "Using বারো (twelve)", "category": "numbers" }
+  ],
+  "vocab": [
+    { "bn": "শূন্য", "pronunciation": "shunno", "en": "zero (0)", "category": "numbers" },
+    { "bn": "এক", "pronunciation": "ek", "en": "one (1)", "category": "numbers" },
+    { "bn": "দুই", "pronunciation": "dui", "en": "two (2)", "category": "numbers" },
+    { "bn": "তিন", "pronunciation": "tin", "en": "three (3)", "category": "numbers" },
+    { "bn": "চার", "pronunciation": "char", "en": "four (4)", "category": "numbers" },
+    { "bn": "পাঁচ", "pronunciation": "panch", "en": "five (5)", "category": "numbers" },
+    { "bn": "ছয়", "pronunciation": "chhoy", "en": "six (6)", "category": "numbers" },
+    { "bn": "সাত", "pronunciation": "shat", "en": "seven (7)", "category": "numbers" },
+    { "bn": "আট", "pronunciation": "at", "en": "eight (8)", "category": "numbers" },
+    { "bn": "নয়", "pronunciation": "noy", "en": "nine (9)", "category": "numbers" },
+    { "bn": "দশ", "pronunciation": "dosh", "en": "ten (10)", "category": "numbers" },
+    { "bn": "এগারো", "pronunciation": "egaro", "en": "eleven (11)", "category": "numbers" },
+    { "bn": "বারো", "pronunciation": "baro", "en": "twelve (12)", "category": "numbers" }
+  ],
+  "practice": [],
+  "notes": ["Bengali also has its own digits: ০ ১ ২ ৩ ৪ ৫ ৬ ৭ ৮ ৯."]
+}

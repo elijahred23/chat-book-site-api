@@ -2,6 +2,14 @@ import React, { useEffect, useMemo, useState, useCallback } from "react";
 import { ClipLoader } from "react-spinners";
 import { getGeminiResponse } from "../services/callGemini";
 import ActionButtons from "../ui/ActionButtons.jsx";
+import adjectivesLesson from "../bengali_lessons/adjectives.json";
+import adverbsLesson from "../bengali_lessons/adverbs.json";
+import conjunctionsLesson from "../bengali_lessons/conjunctions.json";
+import nounsLesson from "../bengali_lessons/nouns.json";
+import numbersLesson from "../bengali_lessons/numbers.json";
+import prepositionsLesson from "../bengali_lessons/prepositions.json";
+import pronounsLesson from "../bengali_lessons/pronouns.json";
+import verbsLesson from "../bengali_lessons/verbs.json";
 import "./BengaliTutor.css";
 
 const DEFAULT_PROMPT = "Everyday greetings at a coffee shop";
@@ -9,6 +17,17 @@ const LESSON_CACHE_KEY = "bengali_lesson_cache";
 const INPUT_CACHE_KEY = "bengali_lesson_inputs";
 const CORRECT_TIME = 250;
 const INCORRECT_TIME = 700;
+
+const SAVED_LESSONS = [
+  adjectivesLesson,
+  adverbsLesson,
+  conjunctionsLesson,
+  nounsLesson,
+  numbersLesson,
+  prepositionsLesson,
+  pronounsLesson,
+  verbsLesson,
+].sort((a, b) => a.topic.localeCompare(b.topic));
 
 const buildPrompt = (topic, level, focus) => `
 You are a Bengali language tutor. Create a concise lesson as JSON (no extra text) with this shape:
@@ -112,6 +131,13 @@ export default function BengaliTutor() {
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [savedLessonId, setSavedLessonId] = useState(() => {
+    try {
+      return JSON.parse(localStorage.getItem(LESSON_CACHE_KEY) || "null")?.id || "";
+    } catch {
+      return "";
+    }
+  });
   const [contentTab, setContentTab] = useState("phrases");
   const [gameDataset, setGameDataset] = useState("vocab");
   const [gameDirection, setGameDirection] = useState(() => {
@@ -318,6 +344,7 @@ export default function BengaliTutor() {
       const resp = await getGeminiResponse(promptText);
       const parsed = parseJson(resp);
       setLesson(parsed);
+      setSavedLessonId("");
       setContentTab("phrases");
       setGameDataset(parsed.vocab?.length ? "vocab" : "phrases");
       localStorage.setItem(LESSON_CACHE_KEY, JSON.stringify(parsed));
@@ -327,6 +354,28 @@ export default function BengaliTutor() {
     } finally {
       setLoading(false);
     }
+  };
+
+  const loadSavedLesson = (lessonId) => {
+    setSavedLessonId(lessonId);
+    if (!lessonId) return;
+
+    const selectedLesson = SAVED_LESSONS.find((item) => item.id === lessonId);
+    if (!selectedLesson) return;
+
+    setLesson(selectedLesson);
+    setTopic(selectedLesson.topic);
+    setLevel(selectedLesson.level);
+    setFocus(selectedLesson.focus);
+    setContentTab(selectedLesson.phrases?.length ? "phrases" : "vocab");
+    setGameDataset(selectedLesson.vocab?.length ? "vocab" : "phrases");
+    setError("");
+    localStorage.setItem(LESSON_CACHE_KEY, JSON.stringify(selectedLesson));
+    localStorage.setItem(INPUT_CACHE_KEY, JSON.stringify({
+      topic: selectedLesson.topic,
+      level: selectedLesson.level,
+      focus: selectedLesson.focus,
+    }));
   };
 
   const downloadJson = () => {
@@ -574,6 +623,15 @@ export default function BengaliTutor() {
           {lesson && <ActionButtons promptText={combinedLessonPrompt} />}
           <div className="bn-grid">
             <label className="bn-row">
+              <strong>Saved lesson category</strong>
+              <select className="bn-select" value={savedLessonId} onChange={(e) => loadSavedLesson(e.target.value)}>
+                <option value="">Choose a saved lesson</option>
+                {SAVED_LESSONS.map((savedLesson) => (
+                  <option key={savedLesson.id} value={savedLesson.id}>{savedLesson.topic}</option>
+                ))}
+              </select>
+            </label>
+            <label className="bn-row">
               <strong>Topic</strong>
               <input className="bn-input" value={topic} onChange={(e) => setTopic(e.target.value)} />
             </label>
@@ -610,6 +668,7 @@ export default function BengaliTutor() {
                     const text = await file.text();
                     const parsed = JSON.parse(text);
                     setLesson(parsed);
+                    setSavedLessonId("");
                     setContentTab("phrases");
                     setGameDataset(parsed.vocab?.length ? "vocab" : "phrases");
                     localStorage.setItem(LESSON_CACHE_KEY, text);

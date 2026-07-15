@@ -1,0 +1,38 @@
+{
+  "id": "adverbs",
+  "title": "Essential Bengali Adverbs",
+  "summary": "Describe when, where, how often, and how an action happens.",
+  "level": "beginner",
+  "topic": "Adverbs",
+  "focus": "vocabulary",
+  "phrases": [
+    { "bn": "আমি এখন ব্যস্ত।", "pronunciation": "ami ekhon byasto", "en": "I am busy now.", "context": "Using এখন (now)", "category": "adverbs" },
+    { "bn": "আজ আবহাওয়া সুন্দর।", "pronunciation": "aj abohawa shundor", "en": "The weather is beautiful today.", "context": "Using আজ (today)", "category": "adverbs" },
+    { "bn": "আমি কাল ঢাকায় যাব।", "pronunciation": "ami kal Dhakay jabo", "en": "I will go to Dhaka tomorrow.", "context": "Using কাল (yesterday / tomorrow)", "category": "adverbs" },
+    { "bn": "আমি এখানে থাকি।", "pronunciation": "ami ekhane thaki", "en": "I live here.", "context": "Using এখানে (here)", "category": "adverbs" },
+    { "bn": "আমার বন্ধু সেখানে থাকে।", "pronunciation": "amar bondhu shekhane thake", "en": "My friend lives there.", "context": "Using সেখানে (there)", "category": "adverbs" },
+    { "bn": "সে সবসময় সময়মতো আসে।", "pronunciation": "shey shobshomoy shomoymoto ashe", "en": "He or she always arrives on time.", "context": "Using সবসময় (always)", "category": "adverbs" },
+    { "bn": "আমি কখনো এখানে খেতে আসি।", "pronunciation": "ami kokhono ekhane khete ashi", "en": "I sometimes come here to eat.", "context": "Using কখনো (sometimes / ever)", "category": "adverbs" },
+    { "bn": "আমি কখনোই মিথ্যা বলি না।", "pronunciation": "ami kokhonoi mithya boli na", "en": "I never tell lies.", "context": "Using কখনোই না (never)", "category": "adverbs" },
+    { "bn": "সে খুব দ্রুত হাঁটে।", "pronunciation": "shey khub druto hate", "en": "He or she walks very quickly.", "context": "Using দ্রুত (quickly)", "category": "adverbs" },
+    { "bn": "দয়া করে ধীরে কথা বলুন।", "pronunciation": "doya kore dhire kotha bolun", "en": "Please speak slowly.", "context": "Using ধীরে (slowly)", "category": "adverbs" },
+    { "bn": "আমি খুব ক্লান্ত।", "pronunciation": "ami khub klanto", "en": "I am very tired.", "context": "Using খুব (very)", "category": "adverbs" },
+    { "bn": "দয়া করে আবার বলুন।", "pronunciation": "doya kore abar bolun", "en": "Please say it again.", "context": "Using আবার (again)", "category": "adverbs" }
+  ],
+  "vocab": [
+    { "bn": "এখন", "pronunciation": "ekhon", "en": "now", "category": "adverbs" },
+    { "bn": "আজ", "pronunciation": "aj", "en": "today", "category": "adverbs" },
+    { "bn": "কাল", "pronunciation": "kal", "en": "yesterday / tomorrow", "category": "adverbs" },
+    { "bn": "এখানে", "pronunciation": "ekhane", "en": "here", "category": "adverbs" },
+    { "bn": "সেখানে", "pronunciation": "shekhane", "en": "there", "category": "adverbs" },
+    { "bn": "সবসময়", "pronunciation": "shobshomoy", "en": "always", "category": "adverbs" },
+    { "bn": "কখনো", "pronunciation": "kokhono", "en": "sometimes / ever", "category": "adverbs" },
+    { "bn": "কখনোই না", "pronunciation": "kokhonoi na", "en": "never", "category": "adverbs" },
+    { "bn": "দ্রুত", "pronunciation": "druto", "en": "quickly", "category": "adverbs" },
+    { "bn": "ধীরে", "pronunciation": "dhire", "en": "slowly", "category": "adverbs" },
+    { "bn": "খুব", "pronunciation": "khub", "en": "very", "category": "adverbs" },
+    { "bn": "আবার", "pronunciation": "abar", "en": "again", "category": "adverbs" }
+  ],
+  "practice": [],
+  "notes": ["কাল can mean either yesterday or tomorrow; context identifies which one."]
+}

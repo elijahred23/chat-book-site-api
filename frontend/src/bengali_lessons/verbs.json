@@ -1,0 +1,38 @@
+{
+  "id": "verbs",
+  "title": "Essential Bengali Verbs",
+  "summary": "Useful dictionary-form verbs for everyday actions.",
+  "level": "beginner",
+  "topic": "Verbs",
+  "focus": "vocabulary",
+  "phrases": [
+    { "bn": "আমি প্রতিদিন ব্যায়াম করি।", "pronunciation": "ami protidin byayam kori", "en": "I exercise every day.", "context": "Using করা (to do)", "category": "verbs" },
+    { "bn": "আমি ডাক্তার হতে চাই।", "pronunciation": "ami daktar hote chai", "en": "I want to become a doctor.", "context": "Using হওয়া (to be / become)", "category": "verbs" },
+    { "bn": "আমরা সকালে স্কুলে যাই।", "pronunciation": "amra shokale skule jai", "en": "We go to school in the morning.", "context": "Using যাওয়া (to go)", "category": "verbs" },
+    { "bn": "সে প্রতিদিন এখানে আসে।", "pronunciation": "shey protidin ekhane ashe", "en": "He or she comes here every day.", "context": "Using আসা (to come)", "category": "verbs" },
+    { "bn": "আমি দুপুরে ভাত খাই।", "pronunciation": "ami dupure bhat khai", "en": "I eat rice at noon.", "context": "Using খাওয়া (to eat)", "category": "verbs" },
+    { "bn": "আমি জানালা দিয়ে আকাশ দেখি।", "pronunciation": "ami janala diye akash dekhi", "en": "I see the sky through the window.", "context": "Using দেখা (to see)", "category": "verbs" },
+    { "bn": "তিনি ধীরে কথা বলেন।", "pronunciation": "tini dhire kotha bolen", "en": "He or she speaks slowly.", "context": "Using বলা (to say)", "category": "verbs" },
+    { "bn": "আমি সকালে গান শুনি।", "pronunciation": "ami shokale gan shuni", "en": "I listen to music in the morning.", "context": "Using শোনা (to hear / listen)", "category": "verbs" },
+    { "bn": "আমি রাতে বই পড়ি।", "pronunciation": "ami rate boi pori", "en": "I read a book at night.", "context": "Using পড়া (to read / study)", "category": "verbs" },
+    { "bn": "সে বাংলায় চিঠি লেখে।", "pronunciation": "shey Banglay chithi lekhe", "en": "He or she writes a letter in Bengali.", "context": "Using লেখা (to write)", "category": "verbs" },
+    { "bn": "আমি দোকান থেকে ফল নিই।", "pronunciation": "ami dokan theke fol nii", "en": "I take fruit from the shop.", "context": "Using নেওয়া (to take)", "category": "verbs" },
+    { "bn": "মা আমাকে একটি বই দেন।", "pronunciation": "ma amake ekti boi den", "en": "Mother gives me a book.", "context": "Using দেওয়া (to give)", "category": "verbs" }
+  ],
+  "vocab": [
+    { "bn": "করা", "pronunciation": "kora", "en": "to do", "category": "verbs" },
+    { "bn": "হওয়া", "pronunciation": "howa", "en": "to be / become", "category": "verbs" },
+    { "bn": "যাওয়া", "pronunciation": "jaowa", "en": "to go", "category": "verbs" },
+    { "bn": "আসা", "pronunciation": "asha", "en": "to come", "category": "verbs" },
+    { "bn": "খাওয়া", "pronunciation": "khaowa", "en": "to eat", "category": "verbs" },
+    { "bn": "দেখা", "pronunciation": "dekha", "en": "to see", "category": "verbs" },
+    { "bn": "বলা", "pronunciation": "bola", "en": "to say", "category": "verbs" },
+    { "bn": "শোনা", "pronunciation": "shona", "en": "to hear / listen", "category": "verbs" },
+    { "bn": "পড়া", "pronunciation": "pora", "en": "to read / study", "category": "verbs" },
+    { "bn": "লেখা", "pronunciation": "lekha", "en": "to write", "category": "verbs" },
+    { "bn": "নেওয়া", "pronunciation": "neowa", "en": "to take", "category": "verbs" },
+    { "bn": "দেওয়া", "pronunciation": "deowa", "en": "to give", "category": "verbs" }
+  ],
+  "practice": [],
+  "notes": ["These are dictionary forms; Bengali verbs change for tense and politeness."]
+}

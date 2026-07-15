@@ -1,0 +1,38 @@
+{
+  "id": "pronouns",
+  "title": "Bengali Pronouns",
+  "summary": "Personal and demonstrative pronouns across common politeness levels.",
+  "level": "beginner",
+  "topic": "Pronouns",
+  "focus": "grammar",
+  "phrases": [
+    { "bn": "আমি বাংলা শিখছি।", "pronunciation": "ami Bangla shikhchhi", "en": "I am learning Bengali.", "context": "Using আমি (I)", "category": "pronouns" },
+    { "bn": "আমরা একসঙ্গে কাজ করি।", "pronunciation": "amra ekshonge kaj kori", "en": "We work together.", "context": "Using আমরা (we)", "category": "pronouns" },
+    { "bn": "তুমি কোথায় যাচ্ছ?", "pronunciation": "tumi kothay jacchho", "en": "Where are you going?", "context": "Using তুমি (you, familiar)", "category": "pronouns" },
+    { "bn": "তোমরা কি প্রস্তুত?", "pronunciation": "tomra ki prostut", "en": "Are you all ready?", "context": "Using তোমরা (you all, familiar)", "category": "pronouns" },
+    { "bn": "আপনি কেমন আছেন?", "pronunciation": "apni kemon achhen", "en": "How are you?", "context": "Using আপনি (you, polite)", "category": "pronouns" },
+    { "bn": "আপনারা কোথা থেকে এসেছেন?", "pronunciation": "apnara kotha theke eshechhen", "en": "Where have you all come from?", "context": "Using আপনারা (you all, polite)", "category": "pronouns" },
+    { "bn": "সে প্রতিদিন স্কুলে যায়।", "pronunciation": "shey protidin skule jay", "en": "He or she goes to school every day.", "context": "Using সে (he / she)", "category": "pronouns" },
+    { "bn": "তারা আমাদের বন্ধু।", "pronunciation": "tara amader bondhu", "en": "They are our friends.", "context": "Using তারা (they)", "category": "pronouns" },
+    { "bn": "তিনি একজন শিক্ষক।", "pronunciation": "tini ekjon shikkhok", "en": "He or she is a teacher.", "context": "Using তিনি (he / she, respectful)", "category": "pronouns" },
+    { "bn": "এটা আমার কলম।", "pronunciation": "eta amar kolom", "en": "This is my pen.", "context": "Using এটা (this / it)", "category": "pronouns" },
+    { "bn": "ওটা তোমার ব্যাগ।", "pronunciation": "ota tomar bag", "en": "That is your bag.", "context": "Using ওটা (that / it)", "category": "pronouns" },
+    { "bn": "দরজায় কে আছে?", "pronunciation": "dorjay ke achhe", "en": "Who is at the door?", "context": "Using কে (who)", "category": "pronouns" }
+  ],
+  "vocab": [
+    { "bn": "আমি", "pronunciation": "ami", "en": "I", "category": "pronouns" },
+    { "bn": "আমরা", "pronunciation": "amra", "en": "we", "category": "pronouns" },
+    { "bn": "তুমি", "pronunciation": "tumi", "en": "you (familiar)", "category": "pronouns" },
+    { "bn": "তোমরা", "pronunciation": "tomra", "en": "you all (familiar)", "category": "pronouns" },
+    { "bn": "আপনি", "pronunciation": "apni", "en": "you (polite)", "category": "pronouns" },
+    { "bn": "আপনারা", "pronunciation": "apnara", "en": "you all (polite)", "category": "pronouns" },
+    { "bn": "সে", "pronunciation": "shey", "en": "he / she", "category": "pronouns" },
+    { "bn": "তারা", "pronunciation": "tara", "en": "they", "category": "pronouns" },
+    { "bn": "তিনি", "pronunciation": "tini", "en": "he / she (respectful)", "category": "pronouns" },
+    { "bn": "এটা", "pronunciation": "eta", "en": "this / it", "category": "pronouns" },
+    { "bn": "ওটা", "pronunciation": "ota", "en": "that / it", "category": "pronouns" },
+    { "bn": "কে", "pronunciation": "ke", "en": "who", "category": "pronouns" }
+  ],
+  "practice": [],
+  "notes": ["Use আপনি in polite situations and তুমি with familiar people."]
+}
