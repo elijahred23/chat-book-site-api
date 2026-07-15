@@ -75,4 +75,5 @@ export const withPhraseWords = (lesson) => {
 export const phraseBreakdownItems = (lesson) => (lesson?.phrases || []).map((phrase) => ({
   ...phrase,
   words: buildPhraseWords(phrase),
+  breakdownEnglish: buildPhraseWords(phrase).map((word) => word.en).join(" "),
 }));

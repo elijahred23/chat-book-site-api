@@ -256,16 +256,17 @@ function WordLoop({ voices, bnVoices, enVoices, bnVoice, enVoice, setBnVoice, se
     await requestPhoto(item.en);
     const isActive = () => playingRef.current && !pausedRef.current && playbackGenerationRef.current === generation;
     if (!isActive()) return;
+    const englishSpeechText = item.breakdownEnglish || item.en;
     const bengaliSpeechText = bengaliSpeechSource === "pronunciation" && item.pronunciation?.trim()
       ? item.pronunciation.trim()
       : item.bn;
     if (mode === "english-bengali") {
-      await speak(item.en, "en-US", enVoice);
+      await speak(englishSpeechText, "en-US", enVoice);
       if (isActive()) await speak(bengaliSpeechText, "bn-IN", bnVoice);
       return;
     }
     await speak(bengaliSpeechText, "bn-IN", bnVoice);
-    if (mode === "bengali-english" && isActive()) await speak(item.en, "en-US", enVoice);
+    if (mode === "bengali-english" && isActive()) await speak(englishSpeechText, "en-US", enVoice);
   }, [mode, speak, bnVoice, enVoice, requestPhoto, bengaliSpeechSource]);
 
   const waitBeforeNextWord = useCallback((generation) => new Promise((resolve) => {
@@ -425,7 +426,7 @@ function WordLoop({ voices, bnVoices, enVoices, bnVoice, enVoice, setBnVoice, se
         <label className="bn-word-loop__toggle" style={ui.check}><input type="checkbox" checked={showImages} onChange={(event) => setShowImages(event.target.checked)} /><span>Show stock photos for vocabulary words</span></label>
       </div>
       {!lesson ? <div style={ui.notice}>Generate or upload a lesson in the Tutor tab first.</div> : !items.length ? <div style={ui.notice}>No items match the active filters.</div> : <>
-        <div style={ui.flash}><small>Chunk {safeChunkIndex + 1}/{chunkCount} · {currentIndex + 1}/{items.length} · Overall filtered position {chunkStart + currentIndex + 1}/{matchingItems.length} · Pass {pass}/{repeats}</small><strong lang="bn" style={ui.bn}>{item?.bn}</strong>{item?.pronunciation && <strong style={ui.activePronunciation}>{item.pronunciation}</strong>}<span style={ui.en}>{item?.en}</span>{dataset === "breakdowns" && <section className="bn-loop-breakdown" aria-label="Complete phrase breakdown"><strong className="bn-loop-breakdown__title">Phrase breakdown</strong><div className="bn-loop-breakdown__grid">{item?.words?.map((word, wordIndex) => <article className="bn-loop-breakdown__word" key={`${item.bn}-${word.bn}-${wordIndex}`}><span lang="bn">{word.bn}</span><strong>{word.pronunciation}</strong><small>{word.en}</small></article>)}</div></section>}
+        <div style={ui.flash}><small>Chunk {safeChunkIndex + 1}/{chunkCount} · {currentIndex + 1}/{items.length} · Overall filtered position {chunkStart + currentIndex + 1}/{matchingItems.length} · Pass {pass}/{repeats}</small><strong lang="bn" style={ui.bn}>{item?.bn}</strong>{item?.pronunciation && <strong style={ui.activePronunciation}>{item.pronunciation}</strong>}<span style={ui.en}>{item?.en}</span>{dataset === "breakdowns" && <section className="bn-loop-breakdown" aria-label="Complete phrase breakdown"><strong className="bn-loop-breakdown__title">Phrase breakdown</strong><div className="bn-loop-breakdown__literal"><small>Literal Bengali order</small><span>{item?.breakdownEnglish}</span></div><div className="bn-loop-breakdown__grid">{item?.words?.map((word, wordIndex) => <article className="bn-loop-breakdown__word" key={`${item.bn}-${word.bn}-${wordIndex}`}><span lang="bn">{word.bn}</span><strong>{word.pronunciation}</strong><small>{word.en}</small></article>)}</div></section>}
           {showImages && <div style={ui.photoFrame} aria-live="polite">
             {photoStatus === "loading" && <span style={ui.muted}>Finding a photo…</span>}
             {photoStatus === "empty" && <span style={ui.muted}>No photo found for this item.</span>}

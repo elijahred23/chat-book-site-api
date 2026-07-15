@@ -210,6 +210,27 @@
   color: #1e3a8a;
 }
 
+.bn-loop-breakdown__literal {
+  margin-bottom: 0.65rem;
+  padding: 0.65rem;
+  display: grid;
+  gap: 0.2rem;
+  border-radius: 10px;
+  background: #eff6ff;
+  color: #1e3a8a;
+}
+
+.bn-loop-breakdown__literal small {
+  color: #64748b;
+  font-weight: 700;
+}
+
+.bn-loop-breakdown__literal span {
+  font-size: 1.05rem;
+  font-weight: 850;
+  line-height: 1.4;
+}
+
 .bn-loop-breakdown__grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));

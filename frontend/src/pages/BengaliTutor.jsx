@@ -1,6 +1,4 @@
 import React, { useEffect, useMemo, useState, useCallback } from "react";
-import { ClipLoader } from "react-spinners";
-import { getGeminiResponse } from "../services/callGemini";
 import ActionButtons from "../ui/ActionButtons.jsx";
 import { withPhraseWords } from "../utils/bengaliPhraseBreakdown.js";
 import adjectivesLesson from "../bengali_lessons/adjectives.json";
@@ -13,9 +11,7 @@ import pronounsLesson from "../bengali_lessons/pronouns.json";
 import verbsLesson from "../bengali_lessons/verbs.json";
 import "./BengaliTutor.css";
 
-const DEFAULT_PROMPT = "Everyday greetings at a coffee shop";
 const LESSON_CACHE_KEY = "bengali_lesson_cache";
-const INPUT_CACHE_KEY = "bengali_lesson_inputs";
 const CORRECT_TIME = 250;
 const INCORRECT_TIME = 700;
 
@@ -30,36 +26,13 @@ const SAVED_LESSONS = [
   verbsLesson,
 ].map(withPhraseWords).sort((a, b) => a.topic.localeCompare(b.topic));
 
-const buildPrompt = (topic, level, focus) => `
-You are a Bengali language tutor. Create a concise lesson as JSON (no extra text) with this shape:
-{
-  "title": "...",
-  "summary": "...",
-  "level": "beginner|intermediate|advanced",
-  "topic": "...",
-  "focus": "${focus}",
-  "phrases": [
-    { "bn": "Bengali phrase", "pronunciation": "Latin-script pronunciation", "en": "English meaning", "context": "When to use it" }
-  ],
-  "vocab": [
-    { "bn": "word", "pronunciation": "...", "en": "meaning" }
-  ],
-  "practice": [
-    { "type": "translation", "prompt": "English prompt", "answer": "Bengali answer" },
-    { "type": "fill_blank", "prompt": "Sentence with ____", "answer": "Correct Bengali" }
-  ],
-  "notes": ["short tip", "short tip"]
-}
-Rules: Keep Bengali accurate, add pronunciations, keep JSON valid and parseable. Topic: ${topic}. Level: ${level}.`;
-
-const parseJson = (text) => {
-  if (!text) throw new Error("Empty response");
-  const codeMatch = text.match(/```json\s*([\s\S]*?)```/i);
-  const raw = codeMatch?.[1] ?? text;
-  const firstBrace = raw.indexOf("{");
-  const lastBrace = raw.lastIndexOf("}");
-  if (firstBrace === -1 || lastBrace === -1) throw new Error("No JSON found");
-  return JSON.parse(raw.slice(firstBrace, lastBrace + 1));
+const initialSavedLesson = () => {
+  try {
+    const savedId = JSON.parse(localStorage.getItem(LESSON_CACHE_KEY) || "null")?.id;
+    return SAVED_LESSONS.find((lesson) => lesson.id === savedId) || SAVED_LESSONS[0];
+  } catch {
+    return SAVED_LESSONS[0];
+  }
 };
 
 const wordKey = (item) => JSON.stringify([item?.bn || "", item?.en || ""]);
@@ -98,47 +71,8 @@ const speak = (text, lang = "bn") => {
 };
 
 export default function BengaliTutor() {
-  const [topic, setTopic] = useState(() => {
-    try {
-      const saved = localStorage.getItem(INPUT_CACHE_KEY);
-      return saved ? JSON.parse(saved).topic || DEFAULT_PROMPT : DEFAULT_PROMPT;
-    } catch {
-      return DEFAULT_PROMPT;
-    }
-  });
-  const [level, setLevel] = useState(() => {
-    try {
-      const saved = localStorage.getItem(INPUT_CACHE_KEY);
-      return saved ? JSON.parse(saved).level || "beginner" : "beginner";
-    } catch {
-      return "beginner";
-    }
-  });
-  const [focus, setFocus] = useState(() => {
-    try {
-      const saved = localStorage.getItem(INPUT_CACHE_KEY);
-      return saved ? JSON.parse(saved).focus || "conversation" : "conversation";
-    } catch {
-      return "conversation";
-    }
-  });
-  const [lesson, setLesson] = useState(() => {
-    try {
-      const saved = localStorage.getItem(LESSON_CACHE_KEY);
-      return saved ? withPhraseWords(JSON.parse(saved)) : null;
-    } catch {
-      return null;
-    }
-  });
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
-  const [savedLessonId, setSavedLessonId] = useState(() => {
-    try {
-      return JSON.parse(localStorage.getItem(LESSON_CACHE_KEY) || "null")?.id || "";
-    } catch {
-      return "";
-    }
-  });
+  const [lesson, setLesson] = useState(initialSavedLesson);
+  const [savedLessonId, setSavedLessonId] = useState(() => initialSavedLesson().id);
   const [contentTab, setContentTab] = useState("phrases");
   const [gameDataset, setGameDataset] = useState("vocab");
   const [gameDirection, setGameDirection] = useState(() => {
@@ -177,6 +111,14 @@ export default function BengaliTutor() {
   const [pronunciationChoice, setPronunciationChoice] = useState(null);
   const matchStatsRef = React.useRef({});
   const memoryTimerRef = React.useRef(null);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem(LESSON_CACHE_KEY, JSON.stringify(lesson));
+    } catch {
+      // Local storage can be unavailable in private browsing contexts.
+    }
+  }, [lesson]);
 
   useEffect(() => {
     try {
@@ -337,26 +279,6 @@ export default function BengaliTutor() {
     return undefined;
   }, [bingoTarget, gameMode]);
 
-  const fetchLesson = async () => {
-    try {
-      setLoading(true);
-      setError("");
-      const promptText = buildPrompt(topic || DEFAULT_PROMPT, level, focus);
-      const resp = await getGeminiResponse(promptText);
-      const parsed = withPhraseWords(parseJson(resp));
-      setLesson(parsed);
-      setSavedLessonId("");
-      setContentTab("phrases");
-      setGameDataset(parsed.vocab?.length ? "vocab" : "phrases");
-      localStorage.setItem(LESSON_CACHE_KEY, JSON.stringify(parsed));
-      localStorage.setItem(INPUT_CACHE_KEY, JSON.stringify({ topic: topic || DEFAULT_PROMPT, level, focus }));
-    } catch (err) {
-      setError(err?.message || "Failed to build lesson");
-    } finally {
-      setLoading(false);
-    }
-  };
-
   const loadSavedLesson = (lessonId) => {
     setSavedLessonId(lessonId);
     if (!lessonId) return;
@@ -365,28 +287,9 @@ export default function BengaliTutor() {
     if (!selectedLesson) return;
 
     setLesson(selectedLesson);
-    setTopic(selectedLesson.topic);
-    setLevel(selectedLesson.level);
-    setFocus(selectedLesson.focus);
     setContentTab(selectedLesson.phrases?.length ? "phrases" : "vocab");
     setGameDataset(selectedLesson.vocab?.length ? "vocab" : "phrases");
-    setError("");
     localStorage.setItem(LESSON_CACHE_KEY, JSON.stringify(selectedLesson));
-    localStorage.setItem(INPUT_CACHE_KEY, JSON.stringify({
-      topic: selectedLesson.topic,
-      level: selectedLesson.level,
-      focus: selectedLesson.focus,
-    }));
-  };
-
-  const downloadJson = () => {
-    if (!lesson) return;
-    const blob = new Blob([JSON.stringify(lesson, null, 2)], { type: "application/json" });
-    const link = document.createElement("a");
-    link.href = URL.createObjectURL(blob);
-    link.download = `${lesson.title || "bengali-lesson"}.json`;
-    link.click();
-    URL.revokeObjectURL(link.href);
   };
 
   const handleGamePick = (option) => {
@@ -623,81 +526,22 @@ export default function BengaliTutor() {
           <div>
             <span className="bn-pill">Learn naturally</span>
             <h1><span lang="bn">বাংলা</span> Tutor</h1>
-            <p>Build practical lessons, hear pronunciation, and strengthen recall through focused games.</p>
+            <p>Choose a saved lesson, hear pronunciation, and strengthen recall through focused games.</p>
           </div>
           {lesson && <ActionButtons promptText={combinedLessonPrompt} />}
           <div className="bn-grid">
             <label className="bn-row">
               <strong>Saved lesson category</strong>
               <select className="bn-select" value={savedLessonId} onChange={(e) => loadSavedLesson(e.target.value)}>
-                <option value="">Choose a saved lesson</option>
                 {SAVED_LESSONS.map((savedLesson) => (
                   <option key={savedLesson.id} value={savedLesson.id}>{savedLesson.topic}</option>
                 ))}
               </select>
             </label>
-            <label className="bn-row">
-              <strong>Topic</strong>
-              <input className="bn-input" value={topic} onChange={(e) => setTopic(e.target.value)} />
-            </label>
-            <label className="bn-row">
-              <strong>Level</strong>
-              <select className="bn-select" value={level} onChange={(e) => setLevel(e.target.value)}>
-                <option value="beginner">Beginner</option>
-                <option value="intermediate">Intermediate</option>
-                <option value="advanced">Advanced</option>
-              </select>
-            </label>
-            <label className="bn-row">
-              <strong>Focus</strong>
-              <select className="bn-select" value={focus} onChange={(e) => setFocus(e.target.value)}>
-                <option value="conversation">Conversation</option>
-                <option value="vocabulary">Vocabulary</option>
-                <option value="grammar">Grammar</option>
-              </select>
-            </label>
           </div>
-          <div className="bn-game-actions">
-            <button className="bn-btn" onClick={fetchLesson} disabled={loading}>{loading ? "Generating..." : "Generate Lesson"}</button>
-            <button className="bn-btn secondary" onClick={downloadJson} disabled={!lesson}>Download JSON</button>
-            <label className="bn-btn secondary">
-              Upload JSON
-              <input
-                type="file"
-                accept=".json,application/json"
-                style={{ display: "none" }}
-                onChange={async (e) => {
-                  const file = e.target.files?.[0];
-                  if (!file) return;
-                  try {
-                    const text = await file.text();
-                    const parsed = withPhraseWords(JSON.parse(text));
-                    setLesson(parsed);
-                    setSavedLessonId("");
-                    setContentTab("phrases");
-                    setGameDataset(parsed.vocab?.length ? "vocab" : "phrases");
-                    localStorage.setItem(LESSON_CACHE_KEY, JSON.stringify(parsed));
-                    setError("");
-                  } catch {
-                    setError("Invalid lesson JSON");
-                  } finally {
-                    e.target.value = "";
-                  }
-                }}
-              />
-            </label>
-          </div>
-          {error && <div style={{ color: "#dc2626", fontWeight: 700 }}>{error}</div>}
         </header>
 
-        {loading && (
-          <div className="bn-card" style={{ display: "flex", alignItems: "center", gap: 10 }}>
-            <ClipLoader size={22} color="#2563eb" />
-            <span>Building your Bengali lesson...</span>
-          </div>
-        )}
-
-        {lesson && !loading && (
+        {lesson && (
           <article className="bn-card" style={{ display: "grid", gap: 12 }}>
             <div>
               <h2>{lesson.title}</h2>
