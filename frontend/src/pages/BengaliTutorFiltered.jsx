@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { FaAngleDoubleLeft, FaAngleDoubleRight, FaFastBackward, FaFastForward, FaPause, FaPlay, FaRedoAlt, FaStepBackward, FaStepForward, FaStop } from "react-icons/fa";
 import BengaliTutor from "./BengaliTutor.jsx";
+import { phraseBreakdownItems, withPhraseWords } from "../utils/bengaliPhraseBreakdown.js";
 
 const LESSON_KEY = "bengali_lesson_cache";
 const SETTINGS_KEY = "bengali_word_loop_settings";
@@ -12,7 +13,10 @@ const storedString = (key) => {
   try { return localStorage.getItem(key) || ""; } catch { return ""; }
 };
 const storedLesson = () => {
-  try { return JSON.parse(localStorage.getItem(LESSON_KEY) || "null"); } catch { return null; }
+  try {
+    const lesson = JSON.parse(localStorage.getItem(LESSON_KEY) || "null");
+    return lesson ? withPhraseWords(lesson) : null;
+  } catch { return null; }
 };
 const storedSettings = () => {
   const defaults = {
@@ -121,7 +125,9 @@ function WordLoop({ voices, bnVoices, enVoices, bnVoice, enVoice, setBnVoice, se
   const photoRequestRef = useRef(null);
 
   const sourceItems = useMemo(() => {
-    const source = dataset === "phrases" ? lesson?.phrases : lesson?.vocab;
+    const source = dataset === "breakdowns"
+      ? phraseBreakdownItems(lesson)
+      : dataset === "phrases" ? lesson?.phrases : lesson?.vocab;
     return (source || []).filter((item) => item?.bn && item?.en);
   }, [dataset, lesson]);
 
@@ -391,7 +397,7 @@ function WordLoop({ voices, bnVoices, enVoices, bnVoice, enVoice, setBnVoice, se
 
       <section style={ui.filterPanel} aria-label="Word filters">
         <div style={ui.grid}>
-          <Field label="Items"><select style={ui.input} value={dataset} onChange={(event) => { setDataset(event.target.value); setChunkIndex(0); }}><option value="vocab">Vocabulary words</option><option value="phrases">Lesson phrases</option></select></Field>
+          <Field label="Items"><select style={ui.input} value={dataset} onChange={(event) => { setDataset(event.target.value); setChunkIndex(0); }}><option value="vocab">Vocabulary words</option><option value="phrases">Lesson phrases</option><option value="breakdowns">Phrase breakdowns</option></select></Field>
           <Field label="Words per study chunk"><select style={ui.input} value={safeChunkSize} onChange={(event) => { setChunkSize(Number(event.target.value)); setChunkIndex(0); }}><option value="10">10</option><option value="20">20</option><option value="25">25</option><option value="50">50</option><option value="100">100</option><option value="150">150</option><option value="200">200</option><option value="250">250</option><option value="300">300</option></select></Field>
         </div>
         <div style={ui.chunkRow}>
@@ -419,7 +425,7 @@ function WordLoop({ voices, bnVoices, enVoices, bnVoice, enVoice, setBnVoice, se
         <label className="bn-word-loop__toggle" style={ui.check}><input type="checkbox" checked={showImages} onChange={(event) => setShowImages(event.target.checked)} /><span>Show stock photos for vocabulary words</span></label>
       </div>
       {!lesson ? <div style={ui.notice}>Generate or upload a lesson in the Tutor tab first.</div> : !items.length ? <div style={ui.notice}>No items match the active filters.</div> : <>
-        <div style={ui.flash}><small>Chunk {safeChunkIndex + 1}/{chunkCount} · {currentIndex + 1}/{items.length} · Overall filtered position {chunkStart + currentIndex + 1}/{matchingItems.length} · Pass {pass}/{repeats}</small><strong lang="bn" style={ui.bn}>{item?.bn}</strong><span style={ui.en}>{item?.en}</span>{item?.pronunciation && <span style={ui.muted}>{item.pronunciation}</span>}
+        <div style={ui.flash}><small>Chunk {safeChunkIndex + 1}/{chunkCount} · {currentIndex + 1}/{items.length} · Overall filtered position {chunkStart + currentIndex + 1}/{matchingItems.length} · Pass {pass}/{repeats}</small>{dataset === "breakdowns" && <div style={ui.breakdownSource}><small>Full phrase</small><span lang="bn">{item?.phrase}</span><strong>{item?.phrasePronunciation}</strong><span>{item?.phraseTranslation}</span></div>}<strong lang="bn" style={ui.bn}>{item?.bn}</strong>{item?.pronunciation && <strong style={ui.activePronunciation}>{item.pronunciation}</strong>}<span style={ui.en}>{item?.en}</span>
           {showImages && <div style={ui.photoFrame} aria-live="polite">
             {photoStatus === "loading" && <span style={ui.muted}>Finding a photo…</span>}
             {photoStatus === "empty" && <span style={ui.muted}>No photo found for this item.</span>}
@@ -479,6 +485,8 @@ const ui = {
   toggles: { display: "grid", gap: ".55rem" },
   summary: { color: "#475569", fontSize: ".9rem", fontWeight: 700 },
   flash: { minHeight: 180, padding: "1.25rem", display: "grid", placeItems: "center", alignContent: "center", gap: ".45rem", border: "1px solid #bfdbfe", borderRadius: 16, background: "linear-gradient(145deg,#eff6ff,#f0fdf4)", textAlign: "center" },
+  breakdownSource: { width: "min(100%, 680px)", margin: ".35rem 0 .75rem", padding: ".75rem", display: "grid", gap: ".2rem", border: "1px solid #cbd5e1", borderRadius: 12, background: "rgba(255,255,255,.8)", color: "#334155" },
+  activePronunciation: { color: "#1d4ed8", fontSize: "clamp(1.35rem,4vw,2rem)", lineHeight: 1.25 },
   photoFrame: { width: "min(100%, 560px)", minHeight: 80, marginTop: ".5rem", display: "grid", placeItems: "center", gap: ".35rem" },
   photo: { width: "100%", maxHeight: 320, display: "block", objectFit: "cover", borderRadius: 14, background: "#e2e8f0" },
   credit: { color: "#475569" },

@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useState, useCallback } from "react";
 import { ClipLoader } from "react-spinners";
 import { getGeminiResponse } from "../services/callGemini";
 import ActionButtons from "../ui/ActionButtons.jsx";
+import { withPhraseWords } from "../utils/bengaliPhraseBreakdown.js";
 import adjectivesLesson from "../bengali_lessons/adjectives.json";
 import adverbsLesson from "../bengali_lessons/adverbs.json";
 import conjunctionsLesson from "../bengali_lessons/conjunctions.json";
@@ -27,7 +28,7 @@ const SAVED_LESSONS = [
   prepositionsLesson,
   pronounsLesson,
   verbsLesson,
-].sort((a, b) => a.topic.localeCompare(b.topic));
+].map(withPhraseWords).sort((a, b) => a.topic.localeCompare(b.topic));
 
 const buildPrompt = (topic, level, focus) => `
 You are a Bengali language tutor. Create a concise lesson as JSON (no extra text) with this shape:
@@ -124,7 +125,7 @@ export default function BengaliTutor() {
   const [lesson, setLesson] = useState(() => {
     try {
       const saved = localStorage.getItem(LESSON_CACHE_KEY);
-      return saved ? JSON.parse(saved) : null;
+      return saved ? withPhraseWords(JSON.parse(saved)) : null;
     } catch {
       return null;
     }
@@ -342,7 +343,7 @@ export default function BengaliTutor() {
       setError("");
       const promptText = buildPrompt(topic || DEFAULT_PROMPT, level, focus);
       const resp = await getGeminiResponse(promptText);
-      const parsed = parseJson(resp);
+      const parsed = withPhraseWords(parseJson(resp));
       setLesson(parsed);
       setSavedLessonId("");
       setContentTab("phrases");
@@ -608,6 +609,10 @@ export default function BengaliTutor() {
     .bn-script { display: inline-block; font-size: 1.12rem; font-weight: 800; color: #0f172a; border-radius: 10px; padding: 0.08rem 0.35rem; }
     .bn-pronunciation { color: #475569; font-weight: 700; }
     .bn-translation { color: #0f172a; }
+    .bn-breakdown { display: grid; gap: 8px; margin-top: 12px; padding-top: 12px; border-top: 1px solid #e2e8f0; }
+    .bn-breakdown-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 8px; }
+    .bn-breakdown-word { display: grid; gap: 3px; padding: 0.65rem; border: 1px solid #dbe3ef; border-radius: 10px; background: #f8fafc; }
+    .bn-breakdown-word .bn-pronunciation { color: #1d4ed8; }
   `;
 
   return (
@@ -666,12 +671,12 @@ export default function BengaliTutor() {
                   if (!file) return;
                   try {
                     const text = await file.text();
-                    const parsed = JSON.parse(text);
+                    const parsed = withPhraseWords(JSON.parse(text));
                     setLesson(parsed);
                     setSavedLessonId("");
                     setContentTab("phrases");
                     setGameDataset(parsed.vocab?.length ? "vocab" : "phrases");
-                    localStorage.setItem(LESSON_CACHE_KEY, text);
+                    localStorage.setItem(LESSON_CACHE_KEY, JSON.stringify(parsed));
                     setError("");
                   } catch {
                     setError("Invalid lesson JSON");
@@ -719,6 +724,18 @@ export default function BengaliTutor() {
                     <div className="bn-pronunciation">{phrase.pronunciation}</div>
                     <div className="bn-translation">{phrase.en}</div>
                     {phrase.context && <div style={{ color: "#475569" }}>{phrase.context}</div>}
+                    <div className="bn-breakdown">
+                      <strong>Phrase breakdown</strong>
+                      <div className="bn-breakdown-list">
+                        {phrase.words.map((word, wordIndex) => (
+                          <div className="bn-breakdown-word" key={`${phrase.bn}-${word.bn}-${wordIndex}`}>
+                            <span className="bn-script" lang="bn">{word.bn}</span>
+                            <span className="bn-pronunciation">{word.pronunciation}</span>
+                            <span className="bn-translation">{word.en}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
                     <div className="bn-game-actions" style={{ marginTop: 8 }}>
                       <button className="bn-btn secondary" onClick={() => speak(phrase.bn, "bn")}>Hear Bengali</button>
                       <button className="bn-btn secondary" onClick={() => speak(phrase.en, "en")}>Hear English</button>
