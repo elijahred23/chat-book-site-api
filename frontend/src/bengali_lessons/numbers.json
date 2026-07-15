@@ -6,35 +6,673 @@
   "topic": "Numbers",
   "focus": "vocabulary",
   "phrases": [
-    { "bn": "আমার ভুলের সংখ্যা শূন্য।", "pronunciation": "amar bhuler shongkhya shunno", "en": "My number of mistakes is zero.", "context": "Using শূন্য (zero)", "category": "numbers" },
-    { "bn": "আমার একটি বই আছে।", "pronunciation": "amar ekti boi achhe", "en": "I have one book.", "context": "Using এক (one)", "category": "numbers" },
-    { "bn": "টেবিলে দুই কাপ চা আছে।", "pronunciation": "tebile dui kap cha achhe", "en": "There are two cups of tea on the table.", "context": "Using দুই (two)", "category": "numbers" },
-    { "bn": "আমরা তিনজন বন্ধু।", "pronunciation": "amra tinjon bondhu", "en": "We are three friends.", "context": "Using তিন (three)", "category": "numbers" },
-    { "bn": "এই ঘরে চারটি জানালা আছে।", "pronunciation": "ei ghore charti janala achhe", "en": "This room has four windows.", "context": "Using চার (four)", "category": "numbers" },
-    { "bn": "ঝুড়িতে পাঁচটি আম আছে।", "pronunciation": "jhurite panchti am achhe", "en": "There are five mangoes in the basket.", "context": "Using পাঁচ (five)", "category": "numbers" },
-    { "bn": "আমাদের দলে ছয়জন খেলোয়াড় আছে।", "pronunciation": "amader dole chhoyjon khelowar achhe", "en": "Our team has six players.", "context": "Using ছয় (six)", "category": "numbers" },
-    { "bn": "সপ্তাহে সাত দিন।", "pronunciation": "shoptah-e shat din", "en": "There are seven days in a week.", "context": "Using সাত (seven)", "category": "numbers" },
-    { "bn": "স্কুল সকাল আটটায় শুরু হয়।", "pronunciation": "skul shokal at-tay shuru hoy", "en": "School starts at eight in the morning.", "context": "Using আট (eight)", "category": "numbers" },
-    { "bn": "বাসটি নয়টায় আসে।", "pronunciation": "bas-ti noy-tay ashe", "en": "The bus comes at nine.", "context": "Using নয় (nine)", "category": "numbers" },
-    { "bn": "দশ মিনিট অপেক্ষা করুন।", "pronunciation": "dosh minit opekkha korun", "en": "Please wait ten minutes.", "context": "Using দশ (ten)", "category": "numbers" },
-    { "bn": "ক্লাসে এগারোজন ছাত্র আছে।", "pronunciation": "klashe egarojon chhatro achhe", "en": "There are eleven students in the class.", "context": "Using এগারো (eleven)", "category": "numbers" },
-    { "bn": "এক বছরে বারো মাস।", "pronunciation": "ek bochhore baro mash", "en": "There are twelve months in a year.", "context": "Using বারো (twelve)", "category": "numbers" }
+    {
+      "bn": "আমার ভুলের সংখ্যা শূন্য।",
+      "pronunciation": "amar bhuler shongkhya shunno",
+      "en": "My number of mistakes is zero.",
+      "context": "Using শূন্য (zero)",
+      "category": "numbers",
+      "words": [
+        {
+          "bn": "আমার",
+          "pronunciation": "amar",
+          "en": "my"
+        },
+        {
+          "bn": "ভুলের",
+          "pronunciation": "bhuler",
+          "en": "of mistakes"
+        },
+        {
+          "bn": "সংখ্যা",
+          "pronunciation": "shongkhya",
+          "en": "number"
+        },
+        {
+          "bn": "শূন্য",
+          "pronunciation": "shunno",
+          "en": "zero"
+        }
+      ]
+    },
+    {
+      "bn": "আমার একটি বই আছে।",
+      "pronunciation": "amar ekti boi achhe",
+      "en": "I have one book.",
+      "context": "Using এক (one)",
+      "category": "numbers",
+      "words": [
+        {
+          "bn": "আমার",
+          "pronunciation": "amar",
+          "en": "my"
+        },
+        {
+          "bn": "একটি",
+          "pronunciation": "ekti",
+          "en": "one / a"
+        },
+        {
+          "bn": "বই",
+          "pronunciation": "boi",
+          "en": "book"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is / has"
+        }
+      ]
+    },
+    {
+      "bn": "টেবিলে দুই কাপ চা আছে।",
+      "pronunciation": "tebile dui kap cha achhe",
+      "en": "There are two cups of tea on the table.",
+      "context": "Using দুই (two)",
+      "category": "numbers",
+      "words": [
+        {
+          "bn": "টেবিলে",
+          "pronunciation": "tebile",
+          "en": "on the table"
+        },
+        {
+          "bn": "দুই",
+          "pronunciation": "dui",
+          "en": "two"
+        },
+        {
+          "bn": "কাপ",
+          "pronunciation": "kap",
+          "en": "cup"
+        },
+        {
+          "bn": "চা",
+          "pronunciation": "cha",
+          "en": "tea"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is / has"
+        }
+      ]
+    },
+    {
+      "bn": "আমরা তিনজন বন্ধু।",
+      "pronunciation": "amra tinjon bondhu",
+      "en": "We are three friends.",
+      "context": "Using তিন (three)",
+      "category": "numbers",
+      "words": [
+        {
+          "bn": "আমরা",
+          "pronunciation": "amra",
+          "en": "we"
+        },
+        {
+          "bn": "তিনজন",
+          "pronunciation": "tinjon",
+          "en": "three people"
+        },
+        {
+          "bn": "বন্ধু",
+          "pronunciation": "bondhu",
+          "en": "friend"
+        }
+      ]
+    },
+    {
+      "bn": "এই ঘরে চারটি জানালা আছে।",
+      "pronunciation": "ei ghore charti janala achhe",
+      "en": "This room has four windows.",
+      "context": "Using চার (four)",
+      "category": "numbers",
+      "words": [
+        {
+          "bn": "এই",
+          "pronunciation": "ei",
+          "en": "this"
+        },
+        {
+          "bn": "ঘরে",
+          "pronunciation": "ghore",
+          "en": "in the room"
+        },
+        {
+          "bn": "চারটি",
+          "pronunciation": "charti",
+          "en": "four"
+        },
+        {
+          "bn": "জানালা",
+          "pronunciation": "janala",
+          "en": "window"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is / has"
+        }
+      ]
+    },
+    {
+      "bn": "ঝুড়িতে পাঁচটি আম আছে।",
+      "pronunciation": "jhurite panchti am achhe",
+      "en": "There are five mangoes in the basket.",
+      "context": "Using পাঁচ (five)",
+      "category": "numbers",
+      "words": [
+        {
+          "bn": "ঝুড়িতে",
+          "pronunciation": "jhurite",
+          "en": "in the basket"
+        },
+        {
+          "bn": "পাঁচটি",
+          "pronunciation": "panchti",
+          "en": "five"
+        },
+        {
+          "bn": "আম",
+          "pronunciation": "am",
+          "en": "mango"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is / has"
+        }
+      ]
+    },
+    {
+      "bn": "আমাদের দলে ছয়জন খেলোয়াড় আছে।",
+      "pronunciation": "amader dole chhoyjon khelowar achhe",
+      "en": "Our team has six players.",
+      "context": "Using ছয় (six)",
+      "category": "numbers",
+      "words": [
+        {
+          "bn": "আমাদের",
+          "pronunciation": "amader",
+          "en": "our"
+        },
+        {
+          "bn": "দলে",
+          "pronunciation": "dole",
+          "en": "on the team"
+        },
+        {
+          "bn": "ছয়জন",
+          "pronunciation": "chhoyjon",
+          "en": "six people"
+        },
+        {
+          "bn": "খেলোয়াড়",
+          "pronunciation": "khelowar",
+          "en": "player"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is / has"
+        }
+      ]
+    },
+    {
+      "bn": "সপ্তাহে সাত দিন।",
+      "pronunciation": "shoptah-e shat din",
+      "en": "There are seven days in a week.",
+      "context": "Using সাত (seven)",
+      "category": "numbers",
+      "words": [
+        {
+          "bn": "সপ্তাহে",
+          "pronunciation": "shoptah-e",
+          "en": "in a week"
+        },
+        {
+          "bn": "সাত",
+          "pronunciation": "shat",
+          "en": "seven"
+        },
+        {
+          "bn": "দিন",
+          "pronunciation": "din",
+          "en": "day"
+        }
+      ]
+    },
+    {
+      "bn": "স্কুল সকাল আটটায় শুরু হয়।",
+      "pronunciation": "skul shokal at-tay shuru hoy",
+      "en": "School starts at eight in the morning.",
+      "context": "Using আট (eight)",
+      "category": "numbers",
+      "words": [
+        {
+          "bn": "স্কুল",
+          "pronunciation": "skul",
+          "en": "school"
+        },
+        {
+          "bn": "সকাল",
+          "pronunciation": "shokal",
+          "en": "morning"
+        },
+        {
+          "bn": "আটটায়",
+          "pronunciation": "at-tay",
+          "en": "at eight"
+        },
+        {
+          "bn": "শুরু",
+          "pronunciation": "shuru",
+          "en": "start"
+        },
+        {
+          "bn": "হয়",
+          "pronunciation": "hoy",
+          "en": "is / happens"
+        }
+      ]
+    },
+    {
+      "bn": "বাসটি নয়টায় আসে।",
+      "pronunciation": "bas-ti noy-tay ashe",
+      "en": "The bus comes at nine.",
+      "context": "Using নয় (nine)",
+      "category": "numbers",
+      "words": [
+        {
+          "bn": "বাসটি",
+          "pronunciation": "bas-ti",
+          "en": "the bus"
+        },
+        {
+          "bn": "নয়টায়",
+          "pronunciation": "noy-tay",
+          "en": "at nine"
+        },
+        {
+          "bn": "আসে",
+          "pronunciation": "ashe",
+          "en": "comes"
+        }
+      ]
+    },
+    {
+      "bn": "দশ মিনিট অপেক্ষা করুন।",
+      "pronunciation": "dosh minit opekkha korun",
+      "en": "Please wait ten minutes.",
+      "context": "Using দশ (ten)",
+      "category": "numbers",
+      "words": [
+        {
+          "bn": "দশ",
+          "pronunciation": "dosh",
+          "en": "ten"
+        },
+        {
+          "bn": "মিনিট",
+          "pronunciation": "minit",
+          "en": "minute"
+        },
+        {
+          "bn": "অপেক্ষা",
+          "pronunciation": "opekkha",
+          "en": "wait"
+        },
+        {
+          "bn": "করুন",
+          "pronunciation": "korun",
+          "en": "please do"
+        }
+      ]
+    },
+    {
+      "bn": "ক্লাসে এগারোজন ছাত্র আছে।",
+      "pronunciation": "klashe egarojon chhatro achhe",
+      "en": "There are eleven students in the class.",
+      "context": "Using এগারো (eleven)",
+      "category": "numbers",
+      "words": [
+        {
+          "bn": "ক্লাসে",
+          "pronunciation": "klashe",
+          "en": "in the class"
+        },
+        {
+          "bn": "এগারোজন",
+          "pronunciation": "egarojon",
+          "en": "eleven people"
+        },
+        {
+          "bn": "ছাত্র",
+          "pronunciation": "chhatro",
+          "en": "student"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is / has"
+        }
+      ]
+    },
+    {
+      "bn": "এক বছরে বারো মাস।",
+      "pronunciation": "ek bochhore baro mash",
+      "en": "There are twelve months in a year.",
+      "context": "Using বারো (twelve)",
+      "category": "numbers",
+      "words": [
+        {
+          "bn": "এক",
+          "pronunciation": "ek",
+          "en": "one"
+        },
+        {
+          "bn": "বছরে",
+          "pronunciation": "bochhore",
+          "en": "in a year"
+        },
+        {
+          "bn": "বারো",
+          "pronunciation": "baro",
+          "en": "twelve"
+        },
+        {
+          "bn": "মাস",
+          "pronunciation": "mash",
+          "en": "month"
+        }
+      ]
+    }
   ],
   "vocab": [
-    { "bn": "শূন্য", "pronunciation": "shunno", "en": "zero (0)", "category": "numbers" },
-    { "bn": "এক", "pronunciation": "ek", "en": "one (1)", "category": "numbers" },
-    { "bn": "দুই", "pronunciation": "dui", "en": "two (2)", "category": "numbers" },
-    { "bn": "তিন", "pronunciation": "tin", "en": "three (3)", "category": "numbers" },
-    { "bn": "চার", "pronunciation": "char", "en": "four (4)", "category": "numbers" },
-    { "bn": "পাঁচ", "pronunciation": "panch", "en": "five (5)", "category": "numbers" },
-    { "bn": "ছয়", "pronunciation": "chhoy", "en": "six (6)", "category": "numbers" },
-    { "bn": "সাত", "pronunciation": "shat", "en": "seven (7)", "category": "numbers" },
-    { "bn": "আট", "pronunciation": "at", "en": "eight (8)", "category": "numbers" },
-    { "bn": "নয়", "pronunciation": "noy", "en": "nine (9)", "category": "numbers" },
-    { "bn": "দশ", "pronunciation": "dosh", "en": "ten (10)", "category": "numbers" },
-    { "bn": "এগারো", "pronunciation": "egaro", "en": "eleven (11)", "category": "numbers" },
-    { "bn": "বারো", "pronunciation": "baro", "en": "twelve (12)", "category": "numbers" }
+    {
+      "bn": "শূন্য",
+      "pronunciation": "shunno",
+      "en": "zero (0)",
+      "category": "numbers",
+      "sourcePhrase": "আমার ভুলের সংখ্যা শূন্য।"
+    },
+    {
+      "bn": "এক",
+      "pronunciation": "ek",
+      "en": "one (1)",
+      "category": "numbers",
+      "sourcePhrase": "আমার একটি বই আছে।"
+    },
+    {
+      "bn": "দুই",
+      "pronunciation": "dui",
+      "en": "two (2)",
+      "category": "numbers",
+      "sourcePhrase": "টেবিলে দুই কাপ চা আছে।"
+    },
+    {
+      "bn": "তিন",
+      "pronunciation": "tin",
+      "en": "three (3)",
+      "category": "numbers",
+      "sourcePhrase": "আমরা তিনজন বন্ধু।"
+    },
+    {
+      "bn": "চার",
+      "pronunciation": "char",
+      "en": "four (4)",
+      "category": "numbers",
+      "sourcePhrase": "এই ঘরে চারটি জানালা আছে।"
+    },
+    {
+      "bn": "পাঁচ",
+      "pronunciation": "panch",
+      "en": "five (5)",
+      "category": "numbers",
+      "sourcePhrase": "ঝুড়িতে পাঁচটি আম আছে।"
+    },
+    {
+      "bn": "ছয়",
+      "pronunciation": "chhoy",
+      "en": "six (6)",
+      "category": "numbers",
+      "sourcePhrase": "আমাদের দলে ছয়জন খেলোয়াড় আছে।"
+    },
+    {
+      "bn": "সাত",
+      "pronunciation": "shat",
+      "en": "seven (7)",
+      "category": "numbers",
+      "sourcePhrase": "সপ্তাহে সাত দিন।"
+    },
+    {
+      "bn": "আট",
+      "pronunciation": "at",
+      "en": "eight (8)",
+      "category": "numbers",
+      "sourcePhrase": "স্কুল সকাল আটটায় শুরু হয়।"
+    },
+    {
+      "bn": "নয়",
+      "pronunciation": "noy",
+      "en": "nine (9)",
+      "category": "numbers",
+      "sourcePhrase": "বাসটি নয়টায় আসে।"
+    },
+    {
+      "bn": "দশ",
+      "pronunciation": "dosh",
+      "en": "ten (10)",
+      "category": "numbers",
+      "sourcePhrase": "দশ মিনিট অপেক্ষা করুন।"
+    },
+    {
+      "bn": "এগারো",
+      "pronunciation": "egaro",
+      "en": "eleven (11)",
+      "category": "numbers",
+      "sourcePhrase": "ক্লাসে এগারোজন ছাত্র আছে।"
+    },
+    {
+      "bn": "বারো",
+      "pronunciation": "baro",
+      "en": "twelve (12)",
+      "category": "numbers",
+      "sourcePhrase": "এক বছরে বারো মাস।"
+    },
+    {
+      "bn": "আমার",
+      "pronunciation": "amar",
+      "en": "my",
+      "category": "numbers",
+      "sourcePhrase": "আমার ভুলের সংখ্যা শূন্য।"
+    },
+    {
+      "bn": "ভুলের",
+      "pronunciation": "bhuler",
+      "en": "of mistakes",
+      "category": "numbers",
+      "sourcePhrase": "আমার ভুলের সংখ্যা শূন্য।"
+    },
+    {
+      "bn": "সংখ্যা",
+      "pronunciation": "shongkhya",
+      "en": "number",
+      "category": "numbers",
+      "sourcePhrase": "আমার ভুলের সংখ্যা শূন্য।"
+    },
+    {
+      "bn": "একটি",
+      "pronunciation": "ekti",
+      "en": "one / a",
+      "category": "numbers",
+      "sourcePhrase": "আমার একটি বই আছে।"
+    },
+    {
+      "bn": "বই",
+      "pronunciation": "boi",
+      "en": "book",
+      "category": "numbers",
+      "sourcePhrase": "আমার একটি বই আছে।"
+    },
+    {
+      "bn": "আছে",
+      "pronunciation": "achhe",
+      "en": "is / has",
+      "category": "numbers",
+      "sourcePhrase": "আমার একটি বই আছে।"
+    },
+    {
+      "bn": "টেবিলে",
+      "pronunciation": "tebile",
+      "en": "on the table",
+      "category": "numbers",
+      "sourcePhrase": "টেবিলে দুই কাপ চা আছে।"
+    },
+    {
+      "bn": "কাপ",
+      "pronunciation": "kap",
+      "en": "cup",
+      "category": "numbers",
+      "sourcePhrase": "টেবিলে দুই কাপ চা আছে।"
+    },
+    {
+      "bn": "চা",
+      "pronunciation": "cha",
+      "en": "tea",
+      "category": "numbers",
+      "sourcePhrase": "টেবিলে দুই কাপ চা আছে।"
+    },
+    {
+      "bn": "আমরা",
+      "pronunciation": "amra",
+      "en": "we",
+      "category": "numbers",
+      "sourcePhrase": "আমরা তিনজন বন্ধু।"
+    },
+    {
+      "bn": "তিনজন",
+      "pronunciation": "tinjon",
+      "en": "three people",
+      "category": "numbers",
+      "sourcePhrase": "আমরা তিনজন বন্ধু।"
+    },
+    {
+      "bn": "বন্ধু",
+      "pronunciation": "bondhu",
+      "en": "friend",
+      "category": "numbers",
+      "sourcePhrase": "আমরা তিনজন বন্ধু।"
+    },
+    {
+      "bn": "এই",
+      "pronunciation": "ei",
+      "en": "this",
+      "category": "numbers",
+      "sourcePhrase": "এই ঘরে চারটি জানালা আছে।"
+    },
+    {
+      "bn": "ঘরে",
+      "pronunciation": "ghore",
+      "en": "in the room",
+      "category": "numbers",
+      "sourcePhrase": "এই ঘরে চারটি জানালা আছে।"
+    },
+    {
+      "bn": "চারটি",
+      "pronunciation": "charti",
+      "en": "four",
+      "category": "numbers",
+      "sourcePhrase": "এই ঘরে চারটি জানালা আছে।"
+    },
+    {
+      "bn": "জানালা",
+      "pronunciation": "janala",
+      "en": "window",
+      "category": "numbers",
+      "sourcePhrase": "এই ঘরে চারটি জানালা আছে।"
+    },
+    {
+      "bn": "ঝুড়িতে",
+      "pronunciation": "jhurite",
+      "en": "in the basket",
+      "category": "numbers",
+      "sourcePhrase": "ঝুড়িতে পাঁচটি আম আছে।"
+    },
+    {
+      "bn": "পাঁচটি",
+      "pronunciation": "panchti",
+      "en": "five",
+      "category": "numbers",
+      "sourcePhrase": "ঝুড়িতে পাঁচটি আম আছে।"
+    },
+    {
+      "bn": "আম",
+      "pronunciation": "am",
+      "en": "mango",
+      "category": "numbers",
+      "sourcePhrase": "ঝুড়িতে পাঁচটি আম আছে।"
+    },
+    {
+      "bn": "আমাদের",
+      "pronunciation": "amader",
+      "en": "our",
+      "category": "numbers",
+      "sourcePhrase": "আমাদের দলে ছয়জন খেলোয়াড় আছে।"
+    },
+    {
+      "bn": "দলে",
+      "pronunciation": "dole",
+      "en": "on the team",
+      "category": "numbers",
+      "sourcePhrase": "আমাদের দলে ছয়জন খেলোয়াড় আছে।"
+    },
+    {
+      "bn": "ছয়জন",
+      "pronunciation": "chhoyjon",
+      "en": "six people",
+      "category": "numbers",
+      "sourcePhrase": "আমাদের দলে ছয়জন খেলোয়াড় আছে।"
+    },
+    {
+      "bn": "খেলোয়াড়",
+      "pronunciation": "khelowar",
+      "en": "player",
+      "category": "numbers",
+      "sourcePhrase": "আমাদের দলে ছয়জন খেলোয়াড় আছে।"
+    },
+    {
+      "bn": "সপ্তাহে",
+      "pronunciation": "shoptah-e",
+      "en": "in a week",
+      "category": "numbers",
+      "sourcePhrase": "সপ্তাহে সাত দিন।"
+    },
+    {
+      "bn": "দিন",
+      "pronunciation": "din",
+      "en": "day",
+      "category": "numbers",
+      "sourcePhrase": "সপ্তাহে সাত দিন।"
+    },
+    {
+      "bn": "স্কুল",
+      "pronunciation": "skul",
+      "en": "school",
+      "category": "numbers",
+      "sourcePhrase": "স্কুল সকাল আটটায় শুরু হয়।"
+    },
+    {
+      "bn": "সকাল",
+      "pronunciation": "shokal",
+      "en": "morning",
+      "category": "numbers",
+      "sourcePhrase": "স্কুল সকাল আটটায় শুরু হয়।"
+    }
   ],
   "practice": [],
-  "notes": ["Bengali also has its own digits: ০ ১ ২ ৩ ৪ ৫ ৬ ৭ ৮ ৯."]
+  "notes": [
+    "Bengali also has its own digits: ০ ১ ২ ৩ ৪ ৫ ৬ ৭ ৮ ৯."
+  ]
 }

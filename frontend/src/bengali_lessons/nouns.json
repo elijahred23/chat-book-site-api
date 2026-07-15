@@ -6,33 +6,1381 @@
   "topic": "Nouns",
   "focus": "vocabulary",
   "phrases": [
-    { "bn": "ওই মানুষটি খুব ভালো।", "pronunciation": "oi manush-ti khub bhalo", "en": "That person is very kind.", "context": "Using মানুষ (person)", "category": "nouns" },
-    { "bn": "রাহিম আমার বন্ধু।", "pronunciation": "Rahim amar bondhu", "en": "Rahim is my friend.", "context": "Using বন্ধু (friend)", "category": "nouns" },
-    { "bn": "আমার পরিবার ঢাকায় থাকে।", "pronunciation": "amar poribar Dhakay thake", "en": "My family lives in Dhaka.", "context": "Using পরিবার (family)", "category": "nouns" },
-    { "bn": "আমাদের বাড়ি ছোট।", "pronunciation": "amader bari chhoto", "en": "Our house is small.", "context": "Using বাড়ি (house)", "category": "nouns" },
-    { "bn": "স্কুল সকাল আটটায় শুরু হয়।", "pronunciation": "skul shokal at-tay shuru hoy", "en": "School starts at eight in the morning.", "context": "Using স্কুল (school)", "category": "nouns" },
-    { "bn": "এটা আমার প্রিয় বই।", "pronunciation": "eta amar priyo boi", "en": "This is my favorite book.", "context": "Using বই (book)", "category": "nouns" },
-    { "bn": "দয়া করে আমাকে পানি দিন।", "pronunciation": "doya kore amake pani din", "en": "Please give me water.", "context": "Using পানি (water)", "category": "nouns" },
-    { "bn": "খাবার টেবিলে রাখা আছে।", "pronunciation": "khabar tebile rakha achhe", "en": "The food is on the table.", "context": "Using খাবার (food)", "category": "nouns" },
-    { "bn": "আজ একটি সুন্দর দিন।", "pronunciation": "aj ekti shundor din", "en": "Today is a beautiful day.", "context": "Using দিন (day)", "category": "nouns" },
-    { "bn": "আমার এখন সময় নেই।", "pronunciation": "amar ekhon shomoy nei", "en": "I do not have time now.", "context": "Using সময় (time)", "category": "nouns" },
-    { "bn": "এই রাস্তা স্টেশনে যায়।", "pronunciation": "ei rasta steshone jay", "en": "This road goes to the station.", "context": "Using রাস্তা (road)", "category": "nouns" },
-    { "bn": "এই শহর অনেক বড়।", "pronunciation": "ei shohor onek boro", "en": "This city is very large.", "context": "Using শহর (city)", "category": "nouns" }
+    {
+      "bn": "ওই মানুষটি খুব ভালো।",
+      "pronunciation": "oi manush-ti khub bhalo",
+      "en": "That person is very kind.",
+      "context": "Using মানুষ (person)",
+      "category": "nouns",
+      "words": [
+        {
+          "bn": "ওই",
+          "pronunciation": "oi",
+          "en": "that"
+        },
+        {
+          "bn": "মানুষটি",
+          "pronunciation": "manush-ti",
+          "en": "the person"
+        },
+        {
+          "bn": "খুব",
+          "pronunciation": "khub",
+          "en": "very"
+        },
+        {
+          "bn": "ভালো",
+          "pronunciation": "bhalo",
+          "en": "good"
+        }
+      ]
+    },
+    {
+      "bn": "রাহিম আমার বন্ধু।",
+      "pronunciation": "Rahim amar bondhu",
+      "en": "Rahim is my friend.",
+      "context": "Using বন্ধু (friend)",
+      "category": "nouns",
+      "words": [
+        {
+          "bn": "রাহিম",
+          "pronunciation": "Rahim",
+          "en": "Rahim"
+        },
+        {
+          "bn": "আমার",
+          "pronunciation": "amar",
+          "en": "my"
+        },
+        {
+          "bn": "বন্ধু",
+          "pronunciation": "bondhu",
+          "en": "friend"
+        }
+      ]
+    },
+    {
+      "bn": "আমার পরিবার ঢাকায় থাকে।",
+      "pronunciation": "amar poribar Dhakay thake",
+      "en": "My family lives in Dhaka.",
+      "context": "Using পরিবার (family)",
+      "category": "nouns",
+      "words": [
+        {
+          "bn": "আমার",
+          "pronunciation": "amar",
+          "en": "my"
+        },
+        {
+          "bn": "পরিবার",
+          "pronunciation": "poribar",
+          "en": "family"
+        },
+        {
+          "bn": "ঢাকায়",
+          "pronunciation": "Dhakay",
+          "en": "in / to Dhaka"
+        },
+        {
+          "bn": "থাকে",
+          "pronunciation": "thake",
+          "en": "lives / stays"
+        }
+      ]
+    },
+    {
+      "bn": "আমাদের বাড়ি ছোট।",
+      "pronunciation": "amader bari chhoto",
+      "en": "Our house is small.",
+      "context": "Using বাড়ি (house)",
+      "category": "nouns",
+      "words": [
+        {
+          "bn": "আমাদের",
+          "pronunciation": "amader",
+          "en": "our"
+        },
+        {
+          "bn": "বাড়ি",
+          "pronunciation": "bari",
+          "en": "house / home"
+        },
+        {
+          "bn": "ছোট",
+          "pronunciation": "chhoto",
+          "en": "small"
+        }
+      ]
+    },
+    {
+      "bn": "স্কুল সকাল আটটায় শুরু হয়।",
+      "pronunciation": "skul shokal at-tay shuru hoy",
+      "en": "School starts at eight in the morning.",
+      "context": "Using স্কুল (school)",
+      "category": "nouns",
+      "words": [
+        {
+          "bn": "স্কুল",
+          "pronunciation": "skul",
+          "en": "school"
+        },
+        {
+          "bn": "সকাল",
+          "pronunciation": "shokal",
+          "en": "morning"
+        },
+        {
+          "bn": "আটটায়",
+          "pronunciation": "at-tay",
+          "en": "at eight"
+        },
+        {
+          "bn": "শুরু",
+          "pronunciation": "shuru",
+          "en": "start"
+        },
+        {
+          "bn": "হয়",
+          "pronunciation": "hoy",
+          "en": "is / happens"
+        }
+      ]
+    },
+    {
+      "bn": "এটা আমার প্রিয় বই।",
+      "pronunciation": "eta amar priyo boi",
+      "en": "This is my favorite book.",
+      "context": "Using বই (book)",
+      "category": "nouns",
+      "words": [
+        {
+          "bn": "এটা",
+          "pronunciation": "eta",
+          "en": "this"
+        },
+        {
+          "bn": "আমার",
+          "pronunciation": "amar",
+          "en": "my"
+        },
+        {
+          "bn": "প্রিয়",
+          "pronunciation": "priyo",
+          "en": "favorite"
+        },
+        {
+          "bn": "বই",
+          "pronunciation": "boi",
+          "en": "book"
+        }
+      ]
+    },
+    {
+      "bn": "দয়া করে আমাকে পানি দিন।",
+      "pronunciation": "doya kore amake pani din",
+      "en": "Please give me water.",
+      "context": "Using পানি (water)",
+      "category": "nouns",
+      "words": [
+        {
+          "bn": "দয়া",
+          "pronunciation": "doya",
+          "en": "kindness / please"
+        },
+        {
+          "bn": "করে",
+          "pronunciation": "kore",
+          "en": "does"
+        },
+        {
+          "bn": "আমাকে",
+          "pronunciation": "amake",
+          "en": "me"
+        },
+        {
+          "bn": "পানি",
+          "pronunciation": "pani",
+          "en": "water"
+        },
+        {
+          "bn": "দিন",
+          "pronunciation": "din",
+          "en": "day"
+        }
+      ]
+    },
+    {
+      "bn": "খাবার টেবিলে রাখা আছে।",
+      "pronunciation": "khabar tebile rakha achhe",
+      "en": "The food is on the table.",
+      "context": "Using খাবার (food)",
+      "category": "nouns",
+      "words": [
+        {
+          "bn": "খাবার",
+          "pronunciation": "khabar",
+          "en": "food"
+        },
+        {
+          "bn": "টেবিলে",
+          "pronunciation": "tebile",
+          "en": "on the table"
+        },
+        {
+          "bn": "রাখা",
+          "pronunciation": "rakha",
+          "en": "placed"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is / has"
+        }
+      ]
+    },
+    {
+      "bn": "আজ একটি সুন্দর দিন।",
+      "pronunciation": "aj ekti shundor din",
+      "en": "Today is a beautiful day.",
+      "context": "Using দিন (day)",
+      "category": "nouns",
+      "words": [
+        {
+          "bn": "আজ",
+          "pronunciation": "aj",
+          "en": "today"
+        },
+        {
+          "bn": "একটি",
+          "pronunciation": "ekti",
+          "en": "one / a"
+        },
+        {
+          "bn": "সুন্দর",
+          "pronunciation": "shundor",
+          "en": "beautiful"
+        },
+        {
+          "bn": "দিন",
+          "pronunciation": "din",
+          "en": "day"
+        }
+      ]
+    },
+    {
+      "bn": "আমার এখন সময় নেই।",
+      "pronunciation": "amar ekhon shomoy nei",
+      "en": "I do not have time now.",
+      "context": "Using সময় (time)",
+      "category": "nouns",
+      "words": [
+        {
+          "bn": "আমার",
+          "pronunciation": "amar",
+          "en": "my"
+        },
+        {
+          "bn": "এখন",
+          "pronunciation": "ekhon",
+          "en": "now"
+        },
+        {
+          "bn": "সময়",
+          "pronunciation": "shomoy",
+          "en": "time"
+        },
+        {
+          "bn": "নেই",
+          "pronunciation": "nei",
+          "en": "does not have"
+        }
+      ]
+    },
+    {
+      "bn": "এই রাস্তা স্টেশনে যায়।",
+      "pronunciation": "ei rasta steshone jay",
+      "en": "This road goes to the station.",
+      "context": "Using রাস্তা (road)",
+      "category": "nouns",
+      "words": [
+        {
+          "bn": "এই",
+          "pronunciation": "ei",
+          "en": "this"
+        },
+        {
+          "bn": "রাস্তা",
+          "pronunciation": "rasta",
+          "en": "road"
+        },
+        {
+          "bn": "স্টেশনে",
+          "pronunciation": "steshone",
+          "en": "to the station"
+        },
+        {
+          "bn": "যায়",
+          "pronunciation": "jay",
+          "en": "goes"
+        }
+      ]
+    },
+    {
+      "bn": "এই শহর অনেক বড়।",
+      "pronunciation": "ei shohor onek boro",
+      "en": "This city is very large.",
+      "context": "Using শহর (city)",
+      "category": "nouns",
+      "words": [
+        {
+          "bn": "এই",
+          "pronunciation": "ei",
+          "en": "this"
+        },
+        {
+          "bn": "শহর",
+          "pronunciation": "shohor",
+          "en": "city"
+        },
+        {
+          "bn": "অনেক",
+          "pronunciation": "onek",
+          "en": "very / many"
+        },
+        {
+          "bn": "বড়",
+          "pronunciation": "boro",
+          "en": "big"
+        }
+      ]
+    },
+    {
+      "bn": "ঘরের দরজা খোলা।",
+      "pronunciation": "ghorer dorja khola",
+      "en": "The room's door is open.",
+      "context": "Using দরজা (door)",
+      "category": "nouns",
+      "words": [
+        {
+          "bn": "ঘরের",
+          "pronunciation": "ghorer",
+          "en": "of the room"
+        },
+        {
+          "bn": "দরজা",
+          "pronunciation": "dorja",
+          "en": "door"
+        },
+        {
+          "bn": "খোলা",
+          "pronunciation": "khola",
+          "en": "open"
+        }
+      ]
+    },
+    {
+      "bn": "জানালা দিয়ে আলো আসছে।",
+      "pronunciation": "janala diye alo ashchhe",
+      "en": "Light is coming through the window.",
+      "context": "Using জানালা (window)",
+      "category": "nouns",
+      "words": [
+        {
+          "bn": "জানালা",
+          "pronunciation": "janala",
+          "en": "window"
+        },
+        {
+          "bn": "দিয়ে",
+          "pronunciation": "diye",
+          "en": "through / with"
+        },
+        {
+          "bn": "আলো",
+          "pronunciation": "alo",
+          "en": "light"
+        },
+        {
+          "bn": "আসছে",
+          "pronunciation": "ashchhe",
+          "en": "is coming"
+        }
+      ]
+    },
+    {
+      "bn": "চাবি টেবিলের উপরে আছে।",
+      "pronunciation": "chabi tebiler upore achhe",
+      "en": "The key is on the table.",
+      "context": "Using চাবি (key)",
+      "category": "nouns",
+      "words": [
+        {
+          "bn": "চাবি",
+          "pronunciation": "chabi",
+          "en": "key"
+        },
+        {
+          "bn": "টেবিলের",
+          "pronunciation": "tebiler",
+          "en": "of the table"
+        },
+        {
+          "bn": "উপরে",
+          "pronunciation": "upore",
+          "en": "on / above"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is / has"
+        }
+      ]
+    },
+    {
+      "bn": "আমার ফোন ব্যাগে আছে।",
+      "pronunciation": "amar phone bage achhe",
+      "en": "My phone is in the bag.",
+      "context": "Using ফোন (phone)",
+      "category": "nouns",
+      "words": [
+        {
+          "bn": "আমার",
+          "pronunciation": "amar",
+          "en": "my"
+        },
+        {
+          "bn": "ফোন",
+          "pronunciation": "phone",
+          "en": "phone"
+        },
+        {
+          "bn": "ব্যাগে",
+          "pronunciation": "bage",
+          "en": "in the bag"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is / has"
+        }
+      ]
+    },
+    {
+      "bn": "কম্পিউটারটি খুব দ্রুত।",
+      "pronunciation": "kompiutar-ti khub druto",
+      "en": "The computer is very fast.",
+      "context": "Using কম্পিউটার (computer)",
+      "category": "nouns",
+      "words": [
+        {
+          "bn": "কম্পিউটারটি",
+          "pronunciation": "kompiutar-ti",
+          "en": "the computer"
+        },
+        {
+          "bn": "খুব",
+          "pronunciation": "khub",
+          "en": "very"
+        },
+        {
+          "bn": "দ্রুত",
+          "pronunciation": "druto",
+          "en": "quickly"
+        }
+      ]
+    },
+    {
+      "bn": "টেবিলটি জানালার পাশে।",
+      "pronunciation": "tebil-ti janalar pashe",
+      "en": "The table is beside the window.",
+      "context": "Using টেবিল (table)",
+      "category": "nouns",
+      "words": [
+        {
+          "bn": "টেবিলটি",
+          "pronunciation": "tebil-ti",
+          "en": "the table"
+        },
+        {
+          "bn": "জানালার",
+          "pronunciation": "janalar",
+          "en": "of the window"
+        },
+        {
+          "bn": "পাশে",
+          "pronunciation": "pashe",
+          "en": "beside"
+        }
+      ]
+    },
+    {
+      "bn": "চেয়ারটি টেবিলের সামনে।",
+      "pronunciation": "cheyar-ti tebiler shamne",
+      "en": "The chair is in front of the table.",
+      "context": "Using চেয়ার (chair)",
+      "category": "nouns",
+      "words": [
+        {
+          "bn": "চেয়ারটি",
+          "pronunciation": "cheyar-ti",
+          "en": "the chair"
+        },
+        {
+          "bn": "টেবিলের",
+          "pronunciation": "tebiler",
+          "en": "of the table"
+        },
+        {
+          "bn": "সামনে",
+          "pronunciation": "shamne",
+          "en": "in front of"
+        }
+      ]
+    },
+    {
+      "bn": "ঘড়িতে এখন দশটা।",
+      "pronunciation": "ghorite ekhon doshta",
+      "en": "It is ten o'clock on the clock.",
+      "context": "Using ঘড়ি (clock / watch)",
+      "category": "nouns",
+      "words": [
+        {
+          "bn": "ঘড়িতে",
+          "pronunciation": "ghorite",
+          "en": "on the clock"
+        },
+        {
+          "bn": "এখন",
+          "pronunciation": "ekhon",
+          "en": "now"
+        },
+        {
+          "bn": "দশটা",
+          "pronunciation": "doshta",
+          "en": "ten o'clock"
+        }
+      ]
+    },
+    {
+      "bn": "আমার ব্যাগটি নীল।",
+      "pronunciation": "amar bagti nil",
+      "en": "My bag is blue.",
+      "context": "Using ব্যাগ (bag)",
+      "category": "nouns",
+      "words": [
+        {
+          "bn": "আমার",
+          "pronunciation": "amar",
+          "en": "my"
+        },
+        {
+          "bn": "ব্যাগটি",
+          "pronunciation": "bagti",
+          "en": "the bag"
+        },
+        {
+          "bn": "নীল",
+          "pronunciation": "nil",
+          "en": "blue"
+        }
+      ]
+    },
+    {
+      "bn": "আমি একটি কলম কিনেছি।",
+      "pronunciation": "ami ekti kolom kinechhi",
+      "en": "I bought a pen.",
+      "context": "Using কলম (pen)",
+      "category": "nouns",
+      "words": [
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "একটি",
+          "pronunciation": "ekti",
+          "en": "one / a"
+        },
+        {
+          "bn": "কলম",
+          "pronunciation": "kolom",
+          "en": "pen"
+        },
+        {
+          "bn": "কিনেছি",
+          "pronunciation": "kinechhi",
+          "en": "bought"
+        }
+      ]
+    },
+    {
+      "bn": "কাগজটি টেবিলে রাখুন।",
+      "pronunciation": "kagoj-ti tebile rakhun",
+      "en": "Put the paper on the table.",
+      "context": "Using কাগজ (paper)",
+      "category": "nouns",
+      "words": [
+        {
+          "bn": "কাগজটি",
+          "pronunciation": "kagoj-ti",
+          "en": "the paper"
+        },
+        {
+          "bn": "টেবিলে",
+          "pronunciation": "tebile",
+          "en": "on the table"
+        },
+        {
+          "bn": "রাখুন",
+          "pronunciation": "rakhun",
+          "en": "please put"
+        }
+      ]
+    },
+    {
+      "bn": "শিশুটি ঘুমাচ্ছে।",
+      "pronunciation": "shishu-ti ghumachchhe",
+      "en": "The child is sleeping.",
+      "context": "Using শিশু (child)",
+      "category": "nouns",
+      "words": [
+        {
+          "bn": "শিশুটি",
+          "pronunciation": "shishu-ti",
+          "en": "the child"
+        },
+        {
+          "bn": "ঘুমাচ্ছে",
+          "pronunciation": "ghumachchhe",
+          "en": "is sleeping"
+        }
+      ]
+    },
+    {
+      "bn": "শিক্ষক ক্লাসে পড়াচ্ছেন।",
+      "pronunciation": "shikkhok klashe porachchhen",
+      "en": "The teacher is teaching in class.",
+      "context": "Using শিক্ষক (teacher)",
+      "category": "nouns",
+      "words": [
+        {
+          "bn": "শিক্ষক",
+          "pronunciation": "shikkhok",
+          "en": "teacher"
+        },
+        {
+          "bn": "ক্লাসে",
+          "pronunciation": "klashe",
+          "en": "in the class"
+        },
+        {
+          "bn": "পড়াচ্ছেন",
+          "pronunciation": "porachchhen",
+          "en": "is teaching"
+        }
+      ]
+    },
+    {
+      "bn": "ছাত্র বই পড়ছে।",
+      "pronunciation": "chhatro boi porchhe",
+      "en": "The student is reading a book.",
+      "context": "Using ছাত্র (student)",
+      "category": "nouns",
+      "words": [
+        {
+          "bn": "ছাত্র",
+          "pronunciation": "chhatro",
+          "en": "student"
+        },
+        {
+          "bn": "বই",
+          "pronunciation": "boi",
+          "en": "book"
+        },
+        {
+          "bn": "পড়ছে",
+          "pronunciation": "porchhe",
+          "en": "is reading"
+        }
+      ]
+    },
+    {
+      "bn": "ডাক্তার হাসপাতালে আছেন।",
+      "pronunciation": "daktar hashpatale achhen",
+      "en": "The doctor is at the hospital.",
+      "context": "Using ডাক্তার (doctor)",
+      "category": "nouns",
+      "words": [
+        {
+          "bn": "ডাক্তার",
+          "pronunciation": "daktar",
+          "en": "doctor"
+        },
+        {
+          "bn": "হাসপাতালে",
+          "pronunciation": "hashpatale",
+          "en": "at the hospital"
+        },
+        {
+          "bn": "আছেন",
+          "pronunciation": "achhen",
+          "en": "are (respectful)"
+        }
+      ]
+    },
+    {
+      "bn": "বাজার আজ বন্ধ।",
+      "pronunciation": "bajar aj bondho",
+      "en": "The market is closed today.",
+      "context": "Using বাজার (market)",
+      "category": "nouns",
+      "words": [
+        {
+          "bn": "বাজার",
+          "pronunciation": "bajar",
+          "en": "market"
+        },
+        {
+          "bn": "আজ",
+          "pronunciation": "aj",
+          "en": "today"
+        },
+        {
+          "bn": "বন্ধ",
+          "pronunciation": "bondho",
+          "en": "closed"
+        }
+      ]
+    },
+    {
+      "bn": "দোকানটি সকাল নয়টায় খোলে।",
+      "pronunciation": "dokan-ti shokal noy-tay khole",
+      "en": "The shop opens at nine in the morning.",
+      "context": "Using দোকান (shop)",
+      "category": "nouns",
+      "words": [
+        {
+          "bn": "দোকানটি",
+          "pronunciation": "dokan-ti",
+          "en": "the shop"
+        },
+        {
+          "bn": "সকাল",
+          "pronunciation": "shokal",
+          "en": "morning"
+        },
+        {
+          "bn": "নয়টায়",
+          "pronunciation": "noy-tay",
+          "en": "at nine"
+        },
+        {
+          "bn": "খোলে",
+          "pronunciation": "khole",
+          "en": "opens"
+        }
+      ]
+    },
+    {
+      "bn": "হাসপাতালটি শহরের কাছে।",
+      "pronunciation": "hashpatal-ti shohorer kachhe",
+      "en": "The hospital is near the city.",
+      "context": "Using হাসপাতাল (hospital)",
+      "category": "nouns",
+      "words": [
+        {
+          "bn": "হাসপাতালটি",
+          "pronunciation": "hashpatal-ti",
+          "en": "the hospital"
+        },
+        {
+          "bn": "শহরের",
+          "pronunciation": "shohorer",
+          "en": "of the city"
+        },
+        {
+          "bn": "কাছে",
+          "pronunciation": "kachhe",
+          "en": "near / with"
+        }
+      ]
+    },
+    {
+      "bn": "বাস স্টেশনে দাঁড়িয়ে আছে।",
+      "pronunciation": "bas steshone dariye achhe",
+      "en": "The bus is standing at the station.",
+      "context": "Using বাস (bus)",
+      "category": "nouns",
+      "words": [
+        {
+          "bn": "বাস",
+          "pronunciation": "bas",
+          "en": "bus"
+        },
+        {
+          "bn": "স্টেশনে",
+          "pronunciation": "steshone",
+          "en": "to the station"
+        },
+        {
+          "bn": "দাঁড়িয়ে",
+          "pronunciation": "dariye",
+          "en": "standing"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is / has"
+        }
+      ]
+    },
+    {
+      "bn": "ট্রেনটি সকালে আসে।",
+      "pronunciation": "tren-ti shokale ashe",
+      "en": "The train comes in the morning.",
+      "context": "Using ট্রেন (train)",
+      "category": "nouns",
+      "words": [
+        {
+          "bn": "ট্রেনটি",
+          "pronunciation": "tren-ti",
+          "en": "the train"
+        },
+        {
+          "bn": "সকালে",
+          "pronunciation": "shokale",
+          "en": "in the morning"
+        },
+        {
+          "bn": "আসে",
+          "pronunciation": "ashe",
+          "en": "comes"
+        }
+      ]
+    },
+    {
+      "bn": "গাড়িটি বাড়ির সামনে আছে।",
+      "pronunciation": "gari-ti barir shamne achhe",
+      "en": "The car is in front of the house.",
+      "context": "Using গাড়ি (car)",
+      "category": "nouns",
+      "words": [
+        {
+          "bn": "গাড়িটি",
+          "pronunciation": "gari-ti",
+          "en": "the car"
+        },
+        {
+          "bn": "বাড়ির",
+          "pronunciation": "barir",
+          "en": "of the house"
+        },
+        {
+          "bn": "সামনে",
+          "pronunciation": "shamne",
+          "en": "in front of"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is / has"
+        }
+      ]
+    },
+    {
+      "bn": "বিড়ালটি চেয়ারের নিচে আছে।",
+      "pronunciation": "biral-ti cheyarer niche achhe",
+      "en": "The cat is under the chair.",
+      "context": "Using বিড়াল (cat)",
+      "category": "nouns",
+      "words": [
+        {
+          "bn": "বিড়ালটি",
+          "pronunciation": "biral-ti",
+          "en": "the cat"
+        },
+        {
+          "bn": "চেয়ারের",
+          "pronunciation": "cheyarer",
+          "en": "of the chair"
+        },
+        {
+          "bn": "নিচে",
+          "pronunciation": "niche",
+          "en": "under / below"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is / has"
+        }
+      ]
+    },
+    {
+      "bn": "কুকুরটি বাগানে খেলছে।",
+      "pronunciation": "kukur-ti bagane khelchhe",
+      "en": "The dog is playing in the garden.",
+      "context": "Using কুকুর (dog)",
+      "category": "nouns",
+      "words": [
+        {
+          "bn": "কুকুরটি",
+          "pronunciation": "kukur-ti",
+          "en": "the dog"
+        },
+        {
+          "bn": "বাগানে",
+          "pronunciation": "bagane",
+          "en": "in the garden"
+        },
+        {
+          "bn": "খেলছে",
+          "pronunciation": "khelchhe",
+          "en": "is playing"
+        }
+      ]
+    },
+    {
+      "bn": "গাছে একটি পাখি আছে।",
+      "pronunciation": "gachhe ekti pakhi achhe",
+      "en": "There is a bird in the tree.",
+      "context": "Using পাখি (bird)",
+      "category": "nouns",
+      "words": [
+        {
+          "bn": "গাছে",
+          "pronunciation": "gachhe",
+          "en": "in the tree"
+        },
+        {
+          "bn": "একটি",
+          "pronunciation": "ekti",
+          "en": "one / a"
+        },
+        {
+          "bn": "পাখি",
+          "pronunciation": "pakhi",
+          "en": "bird"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is / has"
+        }
+      ]
+    },
+    {
+      "bn": "বাগানে একটি বড় গাছ আছে।",
+      "pronunciation": "bagane ekti boro gachh achhe",
+      "en": "There is a big tree in the garden.",
+      "context": "Using গাছ (tree)",
+      "category": "nouns",
+      "words": [
+        {
+          "bn": "বাগানে",
+          "pronunciation": "bagane",
+          "en": "in the garden"
+        },
+        {
+          "bn": "একটি",
+          "pronunciation": "ekti",
+          "en": "one / a"
+        },
+        {
+          "bn": "বড়",
+          "pronunciation": "boro",
+          "en": "big"
+        },
+        {
+          "bn": "গাছ",
+          "pronunciation": "gachh",
+          "en": "tree"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is / has"
+        }
+      ]
+    },
+    {
+      "bn": "এই ফুলটি খুব সুন্দর।",
+      "pronunciation": "ei phul-ti khub shundor",
+      "en": "This flower is very beautiful.",
+      "context": "Using ফুল (flower)",
+      "category": "nouns",
+      "words": [
+        {
+          "bn": "এই",
+          "pronunciation": "ei",
+          "en": "this"
+        },
+        {
+          "bn": "ফুলটি",
+          "pronunciation": "phul-ti",
+          "en": "the flower"
+        },
+        {
+          "bn": "খুব",
+          "pronunciation": "khub",
+          "en": "very"
+        },
+        {
+          "bn": "সুন্দর",
+          "pronunciation": "shundor",
+          "en": "beautiful"
+        }
+      ]
+    },
+    {
+      "bn": "আকাশে আজ সূর্য দেখা যাচ্ছে।",
+      "pronunciation": "akashe aj shurjo dekha jacchhe",
+      "en": "The sun can be seen in the sky today.",
+      "context": "Using সূর্য (sun)",
+      "category": "nouns",
+      "words": [
+        {
+          "bn": "আকাশে",
+          "pronunciation": "akashe",
+          "en": "in the sky"
+        },
+        {
+          "bn": "আজ",
+          "pronunciation": "aj",
+          "en": "today"
+        },
+        {
+          "bn": "সূর্য",
+          "pronunciation": "shurjo",
+          "en": "sun"
+        },
+        {
+          "bn": "দেখা",
+          "pronunciation": "dekha",
+          "en": "seen"
+        },
+        {
+          "bn": "যাচ্ছে",
+          "pronunciation": "jacchhe",
+          "en": "is going"
+        }
+      ]
+    },
+    {
+      "bn": "রাতে চাঁদ খুব উজ্জ্বল।",
+      "pronunciation": "rate chand khub ujjol",
+      "en": "The moon is very bright at night.",
+      "context": "Using চাঁদ (moon)",
+      "category": "nouns",
+      "words": [
+        {
+          "bn": "রাতে",
+          "pronunciation": "rate",
+          "en": "at night"
+        },
+        {
+          "bn": "চাঁদ",
+          "pronunciation": "chand",
+          "en": "moon"
+        },
+        {
+          "bn": "খুব",
+          "pronunciation": "khub",
+          "en": "very"
+        },
+        {
+          "bn": "উজ্জ্বল",
+          "pronunciation": "ujjol",
+          "en": "bright"
+        }
+      ]
+    }
   ],
   "vocab": [
-    { "bn": "মানুষ", "pronunciation": "manush", "en": "person", "category": "nouns" },
-    { "bn": "বন্ধু", "pronunciation": "bondhu", "en": "friend", "category": "nouns" },
-    { "bn": "পরিবার", "pronunciation": "poribar", "en": "family", "category": "nouns" },
-    { "bn": "বাড়ি", "pronunciation": "bari", "en": "house", "category": "nouns" },
-    { "bn": "স্কুল", "pronunciation": "skul", "en": "school", "category": "nouns" },
-    { "bn": "বই", "pronunciation": "boi", "en": "book", "category": "nouns" },
-    { "bn": "পানি", "pronunciation": "pani", "en": "water", "category": "nouns" },
-    { "bn": "খাবার", "pronunciation": "khabar", "en": "food", "category": "nouns" },
-    { "bn": "দিন", "pronunciation": "din", "en": "day", "category": "nouns" },
-    { "bn": "সময়", "pronunciation": "shomoy", "en": "time", "category": "nouns" },
-    { "bn": "রাস্তা", "pronunciation": "rasta", "en": "road", "category": "nouns" },
-    { "bn": "শহর", "pronunciation": "shohor", "en": "city", "category": "nouns" }
+    {
+      "bn": "মানুষ",
+      "pronunciation": "manush",
+      "en": "person",
+      "category": "nouns",
+      "sourcePhrase": "ওই মানুষটি খুব ভালো।"
+    },
+    {
+      "bn": "বন্ধু",
+      "pronunciation": "bondhu",
+      "en": "friend",
+      "category": "nouns",
+      "sourcePhrase": "রাহিম আমার বন্ধু।"
+    },
+    {
+      "bn": "পরিবার",
+      "pronunciation": "poribar",
+      "en": "family",
+      "category": "nouns",
+      "sourcePhrase": "আমার পরিবার ঢাকায় থাকে।"
+    },
+    {
+      "bn": "বাড়ি",
+      "pronunciation": "bari",
+      "en": "house",
+      "category": "nouns",
+      "sourcePhrase": "আমাদের বাড়ি ছোট।"
+    },
+    {
+      "bn": "স্কুল",
+      "pronunciation": "skul",
+      "en": "school",
+      "category": "nouns",
+      "sourcePhrase": "স্কুল সকাল আটটায় শুরু হয়।"
+    },
+    {
+      "bn": "বই",
+      "pronunciation": "boi",
+      "en": "book",
+      "category": "nouns",
+      "sourcePhrase": "এটা আমার প্রিয় বই।"
+    },
+    {
+      "bn": "পানি",
+      "pronunciation": "pani",
+      "en": "water",
+      "category": "nouns",
+      "sourcePhrase": "দয়া করে আমাকে পানি দিন।"
+    },
+    {
+      "bn": "খাবার",
+      "pronunciation": "khabar",
+      "en": "food",
+      "category": "nouns",
+      "sourcePhrase": "খাবার টেবিলে রাখা আছে।"
+    },
+    {
+      "bn": "দিন",
+      "pronunciation": "din",
+      "en": "day",
+      "category": "nouns",
+      "sourcePhrase": "দয়া করে আমাকে পানি দিন।"
+    },
+    {
+      "bn": "সময়",
+      "pronunciation": "shomoy",
+      "en": "time",
+      "category": "nouns",
+      "sourcePhrase": "আমার এখন সময় নেই।"
+    },
+    {
+      "bn": "রাস্তা",
+      "pronunciation": "rasta",
+      "en": "road",
+      "category": "nouns",
+      "sourcePhrase": "এই রাস্তা স্টেশনে যায়।"
+    },
+    {
+      "bn": "শহর",
+      "pronunciation": "shohor",
+      "en": "city",
+      "category": "nouns",
+      "sourcePhrase": "এই শহর অনেক বড়।"
+    },
+    {
+      "bn": "দরজা",
+      "pronunciation": "dorja",
+      "en": "door",
+      "category": "nouns",
+      "sourcePhrase": "ঘরের দরজা খোলা।"
+    },
+    {
+      "bn": "জানালা",
+      "pronunciation": "janala",
+      "en": "window",
+      "category": "nouns",
+      "sourcePhrase": "জানালা দিয়ে আলো আসছে।"
+    },
+    {
+      "bn": "চাবি",
+      "pronunciation": "chabi",
+      "en": "key",
+      "category": "nouns",
+      "sourcePhrase": "চাবি টেবিলের উপরে আছে।"
+    },
+    {
+      "bn": "ফোন",
+      "pronunciation": "phone",
+      "en": "phone",
+      "category": "nouns",
+      "sourcePhrase": "আমার ফোন ব্যাগে আছে।"
+    },
+    {
+      "bn": "কম্পিউটার",
+      "pronunciation": "kompiutar",
+      "en": "computer",
+      "category": "nouns",
+      "sourcePhrase": "কম্পিউটারটি খুব দ্রুত।"
+    },
+    {
+      "bn": "টেবিল",
+      "pronunciation": "tebil",
+      "en": "table",
+      "category": "nouns",
+      "sourcePhrase": "খাবার টেবিলে রাখা আছে।"
+    },
+    {
+      "bn": "চেয়ার",
+      "pronunciation": "cheyar",
+      "en": "chair",
+      "category": "nouns",
+      "sourcePhrase": "চেয়ারটি টেবিলের সামনে।"
+    },
+    {
+      "bn": "ঘড়ি",
+      "pronunciation": "ghori",
+      "en": "clock / watch",
+      "category": "nouns",
+      "sourcePhrase": "ঘড়িতে এখন দশটা।"
+    },
+    {
+      "bn": "ব্যাগ",
+      "pronunciation": "bag",
+      "en": "bag",
+      "category": "nouns",
+      "sourcePhrase": "আমার ফোন ব্যাগে আছে।"
+    },
+    {
+      "bn": "কলম",
+      "pronunciation": "kolom",
+      "en": "pen",
+      "category": "nouns",
+      "sourcePhrase": "আমি একটি কলম কিনেছি।"
+    },
+    {
+      "bn": "কাগজ",
+      "pronunciation": "kagoj",
+      "en": "paper",
+      "category": "nouns",
+      "sourcePhrase": "কাগজটি টেবিলে রাখুন।"
+    },
+    {
+      "bn": "শিশু",
+      "pronunciation": "shishu",
+      "en": "child",
+      "category": "nouns",
+      "sourcePhrase": "শিশুটি ঘুমাচ্ছে।"
+    },
+    {
+      "bn": "শিক্ষক",
+      "pronunciation": "shikkhok",
+      "en": "teacher",
+      "category": "nouns",
+      "sourcePhrase": "শিক্ষক ক্লাসে পড়াচ্ছেন।"
+    },
+    {
+      "bn": "ছাত্র",
+      "pronunciation": "chhatro",
+      "en": "student",
+      "category": "nouns",
+      "sourcePhrase": "ছাত্র বই পড়ছে।"
+    },
+    {
+      "bn": "ডাক্তার",
+      "pronunciation": "daktar",
+      "en": "doctor",
+      "category": "nouns",
+      "sourcePhrase": "ডাক্তার হাসপাতালে আছেন।"
+    },
+    {
+      "bn": "বাজার",
+      "pronunciation": "bajar",
+      "en": "market",
+      "category": "nouns",
+      "sourcePhrase": "বাজার আজ বন্ধ।"
+    },
+    {
+      "bn": "দোকান",
+      "pronunciation": "dokan",
+      "en": "shop",
+      "category": "nouns",
+      "sourcePhrase": "দোকানটি সকাল নয়টায় খোলে।"
+    },
+    {
+      "bn": "হাসপাতাল",
+      "pronunciation": "hashpatal",
+      "en": "hospital",
+      "category": "nouns",
+      "sourcePhrase": "ডাক্তার হাসপাতালে আছেন।"
+    },
+    {
+      "bn": "বাস",
+      "pronunciation": "bas",
+      "en": "bus",
+      "category": "nouns",
+      "sourcePhrase": "বাস স্টেশনে দাঁড়িয়ে আছে।"
+    },
+    {
+      "bn": "ট্রেন",
+      "pronunciation": "tren",
+      "en": "train",
+      "category": "nouns",
+      "sourcePhrase": "ট্রেনটি সকালে আসে।"
+    },
+    {
+      "bn": "গাড়ি",
+      "pronunciation": "gari",
+      "en": "car",
+      "category": "nouns",
+      "sourcePhrase": "গাড়িটি বাড়ির সামনে আছে।"
+    },
+    {
+      "bn": "বিড়াল",
+      "pronunciation": "biral",
+      "en": "cat",
+      "category": "nouns",
+      "sourcePhrase": "বিড়ালটি চেয়ারের নিচে আছে।"
+    },
+    {
+      "bn": "কুকুর",
+      "pronunciation": "kukur",
+      "en": "dog",
+      "category": "nouns",
+      "sourcePhrase": "কুকুরটি বাগানে খেলছে।"
+    },
+    {
+      "bn": "পাখি",
+      "pronunciation": "pakhi",
+      "en": "bird",
+      "category": "nouns",
+      "sourcePhrase": "গাছে একটি পাখি আছে।"
+    },
+    {
+      "bn": "গাছ",
+      "pronunciation": "gachh",
+      "en": "tree",
+      "category": "nouns",
+      "sourcePhrase": "গাছে একটি পাখি আছে।"
+    },
+    {
+      "bn": "ফুল",
+      "pronunciation": "phul",
+      "en": "flower",
+      "category": "nouns",
+      "sourcePhrase": "এই ফুলটি খুব সুন্দর।"
+    },
+    {
+      "bn": "সূর্য",
+      "pronunciation": "shurjo",
+      "en": "sun",
+      "category": "nouns",
+      "sourcePhrase": "আকাশে আজ সূর্য দেখা যাচ্ছে।"
+    },
+    {
+      "bn": "চাঁদ",
+      "pronunciation": "chand",
+      "en": "moon",
+      "category": "nouns",
+      "sourcePhrase": "রাতে চাঁদ খুব উজ্জ্বল।"
+    }
   ],
   "practice": [],
-  "notes": ["Bengali nouns do not have grammatical gender."]
+  "notes": [
+    "Bengali nouns do not have grammatical gender."
+  ]
 }

@@ -6,33 +6,654 @@
   "topic": "Prepositions",
   "focus": "grammar",
   "phrases": [
-    { "bn": "বাক্সের মধ্যে একটি বই আছে।", "pronunciation": "baksher moddhe ekti boi achhe", "en": "There is a book inside the box.", "context": "Using মধ্যে (in / among)", "category": "prepositions" },
-    { "bn": "বইটি টেবিলের উপরে আছে।", "pronunciation": "boiti tebiler upore achhe", "en": "The book is on the table.", "context": "Using উপরে (on / above)", "category": "prepositions" },
-    { "bn": "বিড়ালটি টেবিলের নিচে আছে।", "pronunciation": "biralti tebiler niche achhe", "en": "The cat is under the table.", "context": "Using নিচে (under / below)", "category": "prepositions" },
-    { "bn": "গাড়িটি বাড়ির সামনে আছে।", "pronunciation": "gariti barir shamne achhe", "en": "The car is in front of the house.", "context": "Using সামনে (in front of)", "category": "prepositions" },
-    { "bn": "বাগানটি বাড়ির পিছনে।", "pronunciation": "baganti barir pichhone", "en": "The garden is behind the house.", "context": "Using পিছনে (behind)", "category": "prepositions" },
-    { "bn": "স্কুলটি বাড়ির পাশে।", "pronunciation": "skulti barir pashe", "en": "The school is beside the house.", "context": "Using পাশে (beside)", "category": "prepositions" },
-    { "bn": "আমার কাছে একটি কলম আছে।", "pronunciation": "amar kachhe ekti kolom achhe", "en": "I have a pen with me.", "context": "Using কাছে (near / with)", "category": "prepositions" },
-    { "bn": "আমি ঢাকা থেকে এসেছি।", "pronunciation": "ami Dhaka theke eshechhi", "en": "I have come from Dhaka.", "context": "Using থেকে (from)", "category": "prepositions" },
-    { "bn": "দোকানটি রাত দশটা পর্যন্ত খোলা।", "pronunciation": "dokanti rat doshta porjonto khola", "en": "The shop is open until ten at night.", "context": "Using পর্যন্ত (until / up to)", "category": "prepositions" },
-    { "bn": "এই উপহারটি তোমার জন্য।", "pronunciation": "ei upoharti tomar jonno", "en": "This gift is for you.", "context": "Using জন্য (for)", "category": "prepositions" },
-    { "bn": "আমি বন্ধুর সঙ্গে যাচ্ছি।", "pronunciation": "ami bondhur shonge jacchhi", "en": "I am going with a friend.", "context": "Using সঙ্গে (with)", "category": "prepositions" },
-    { "bn": "পানি ছাড়া আমরা বাঁচতে পারি না।", "pronunciation": "pani chhara amra bachte pari na", "en": "We cannot live without water.", "context": "Using ছাড়া (without / except)", "category": "prepositions" }
+    {
+      "bn": "বাক্সের মধ্যে একটি বই আছে।",
+      "pronunciation": "baksher moddhe ekti boi achhe",
+      "en": "There is a book inside the box.",
+      "context": "Using মধ্যে (in / among)",
+      "category": "prepositions",
+      "words": [
+        {
+          "bn": "বাক্সের",
+          "pronunciation": "baksher",
+          "en": "of the box"
+        },
+        {
+          "bn": "মধ্যে",
+          "pronunciation": "moddhe",
+          "en": "inside / among"
+        },
+        {
+          "bn": "একটি",
+          "pronunciation": "ekti",
+          "en": "one / a"
+        },
+        {
+          "bn": "বই",
+          "pronunciation": "boi",
+          "en": "book"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is / has"
+        }
+      ]
+    },
+    {
+      "bn": "বইটি টেবিলের উপরে আছে।",
+      "pronunciation": "boiti tebiler upore achhe",
+      "en": "The book is on the table.",
+      "context": "Using উপরে (on / above)",
+      "category": "prepositions",
+      "words": [
+        {
+          "bn": "বইটি",
+          "pronunciation": "boiti",
+          "en": "the book"
+        },
+        {
+          "bn": "টেবিলের",
+          "pronunciation": "tebiler",
+          "en": "of the table"
+        },
+        {
+          "bn": "উপরে",
+          "pronunciation": "upore",
+          "en": "on / above"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is / has"
+        }
+      ]
+    },
+    {
+      "bn": "বিড়ালটি টেবিলের নিচে আছে।",
+      "pronunciation": "biralti tebiler niche achhe",
+      "en": "The cat is under the table.",
+      "context": "Using নিচে (under / below)",
+      "category": "prepositions",
+      "words": [
+        {
+          "bn": "বিড়ালটি",
+          "pronunciation": "biralti",
+          "en": "the cat"
+        },
+        {
+          "bn": "টেবিলের",
+          "pronunciation": "tebiler",
+          "en": "of the table"
+        },
+        {
+          "bn": "নিচে",
+          "pronunciation": "niche",
+          "en": "under / below"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is / has"
+        }
+      ]
+    },
+    {
+      "bn": "গাড়িটি বাড়ির সামনে আছে।",
+      "pronunciation": "gariti barir shamne achhe",
+      "en": "The car is in front of the house.",
+      "context": "Using সামনে (in front of)",
+      "category": "prepositions",
+      "words": [
+        {
+          "bn": "গাড়িটি",
+          "pronunciation": "gariti",
+          "en": "the car"
+        },
+        {
+          "bn": "বাড়ির",
+          "pronunciation": "barir",
+          "en": "of the house"
+        },
+        {
+          "bn": "সামনে",
+          "pronunciation": "shamne",
+          "en": "in front of"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is / has"
+        }
+      ]
+    },
+    {
+      "bn": "বাগানটি বাড়ির পিছনে।",
+      "pronunciation": "baganti barir pichhone",
+      "en": "The garden is behind the house.",
+      "context": "Using পিছনে (behind)",
+      "category": "prepositions",
+      "words": [
+        {
+          "bn": "বাগানটি",
+          "pronunciation": "baganti",
+          "en": "the garden"
+        },
+        {
+          "bn": "বাড়ির",
+          "pronunciation": "barir",
+          "en": "of the house"
+        },
+        {
+          "bn": "পিছনে",
+          "pronunciation": "pichhone",
+          "en": "behind"
+        }
+      ]
+    },
+    {
+      "bn": "স্কুলটি বাড়ির পাশে।",
+      "pronunciation": "skulti barir pashe",
+      "en": "The school is beside the house.",
+      "context": "Using পাশে (beside)",
+      "category": "prepositions",
+      "words": [
+        {
+          "bn": "স্কুলটি",
+          "pronunciation": "skulti",
+          "en": "the school"
+        },
+        {
+          "bn": "বাড়ির",
+          "pronunciation": "barir",
+          "en": "of the house"
+        },
+        {
+          "bn": "পাশে",
+          "pronunciation": "pashe",
+          "en": "beside"
+        }
+      ]
+    },
+    {
+      "bn": "আমার কাছে একটি কলম আছে।",
+      "pronunciation": "amar kachhe ekti kolom achhe",
+      "en": "I have a pen with me.",
+      "context": "Using কাছে (near / with)",
+      "category": "prepositions",
+      "words": [
+        {
+          "bn": "আমার",
+          "pronunciation": "amar",
+          "en": "my"
+        },
+        {
+          "bn": "কাছে",
+          "pronunciation": "kachhe",
+          "en": "near / with"
+        },
+        {
+          "bn": "একটি",
+          "pronunciation": "ekti",
+          "en": "one / a"
+        },
+        {
+          "bn": "কলম",
+          "pronunciation": "kolom",
+          "en": "pen"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is / has"
+        }
+      ]
+    },
+    {
+      "bn": "আমি ঢাকা থেকে এসেছি।",
+      "pronunciation": "ami Dhaka theke eshechhi",
+      "en": "I have come from Dhaka.",
+      "context": "Using থেকে (from)",
+      "category": "prepositions",
+      "words": [
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "ঢাকা",
+          "pronunciation": "Dhaka",
+          "en": "Dhaka"
+        },
+        {
+          "bn": "থেকে",
+          "pronunciation": "theke",
+          "en": "from"
+        },
+        {
+          "bn": "এসেছি",
+          "pronunciation": "eshechhi",
+          "en": "have come"
+        }
+      ]
+    },
+    {
+      "bn": "দোকানটি রাত দশটা পর্যন্ত খোলা।",
+      "pronunciation": "dokanti rat doshta porjonto khola",
+      "en": "The shop is open until ten at night.",
+      "context": "Using পর্যন্ত (until / up to)",
+      "category": "prepositions",
+      "words": [
+        {
+          "bn": "দোকানটি",
+          "pronunciation": "dokanti",
+          "en": "the shop"
+        },
+        {
+          "bn": "রাত",
+          "pronunciation": "rat",
+          "en": "night"
+        },
+        {
+          "bn": "দশটা",
+          "pronunciation": "doshta",
+          "en": "ten o'clock"
+        },
+        {
+          "bn": "পর্যন্ত",
+          "pronunciation": "porjonto",
+          "en": "until"
+        },
+        {
+          "bn": "খোলা",
+          "pronunciation": "khola",
+          "en": "open"
+        }
+      ]
+    },
+    {
+      "bn": "এই উপহারটি তোমার জন্য।",
+      "pronunciation": "ei upoharti tomar jonno",
+      "en": "This gift is for you.",
+      "context": "Using জন্য (for)",
+      "category": "prepositions",
+      "words": [
+        {
+          "bn": "এই",
+          "pronunciation": "ei",
+          "en": "this"
+        },
+        {
+          "bn": "উপহারটি",
+          "pronunciation": "upoharti",
+          "en": "the gift"
+        },
+        {
+          "bn": "তোমার",
+          "pronunciation": "tomar",
+          "en": "your"
+        },
+        {
+          "bn": "জন্য",
+          "pronunciation": "jonno",
+          "en": "for"
+        }
+      ]
+    },
+    {
+      "bn": "আমি বন্ধুর সঙ্গে যাচ্ছি।",
+      "pronunciation": "ami bondhur shonge jacchhi",
+      "en": "I am going with a friend.",
+      "context": "Using সঙ্গে (with)",
+      "category": "prepositions",
+      "words": [
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "বন্ধুর",
+          "pronunciation": "bondhur",
+          "en": "friend's"
+        },
+        {
+          "bn": "সঙ্গে",
+          "pronunciation": "shonge",
+          "en": "with"
+        },
+        {
+          "bn": "যাচ্ছি",
+          "pronunciation": "jacchhi",
+          "en": "am going"
+        }
+      ]
+    },
+    {
+      "bn": "পানি ছাড়া আমরা বাঁচতে পারি না।",
+      "pronunciation": "pani chhara amra bachte pari na",
+      "en": "We cannot live without water.",
+      "context": "Using ছাড়া (without / except)",
+      "category": "prepositions",
+      "words": [
+        {
+          "bn": "পানি",
+          "pronunciation": "pani",
+          "en": "water"
+        },
+        {
+          "bn": "ছাড়া",
+          "pronunciation": "chhara",
+          "en": "without"
+        },
+        {
+          "bn": "আমরা",
+          "pronunciation": "amra",
+          "en": "we"
+        },
+        {
+          "bn": "বাঁচতে",
+          "pronunciation": "bachte",
+          "en": "to live"
+        },
+        {
+          "bn": "পারি",
+          "pronunciation": "pari",
+          "en": "can"
+        },
+        {
+          "bn": "না",
+          "pronunciation": "na",
+          "en": "not"
+        }
+      ]
+    }
   ],
   "vocab": [
-    { "bn": "মধ্যে", "pronunciation": "moddhe", "en": "in / among", "category": "prepositions" },
-    { "bn": "উপরে", "pronunciation": "upore", "en": "on / above", "category": "prepositions" },
-    { "bn": "নিচে", "pronunciation": "niche", "en": "under / below", "category": "prepositions" },
-    { "bn": "সামনে", "pronunciation": "shamne", "en": "in front of", "category": "prepositions" },
-    { "bn": "পিছনে", "pronunciation": "pichhone", "en": "behind", "category": "prepositions" },
-    { "bn": "পাশে", "pronunciation": "pashe", "en": "beside", "category": "prepositions" },
-    { "bn": "কাছে", "pronunciation": "kachhe", "en": "near / with", "category": "prepositions" },
-    { "bn": "থেকে", "pronunciation": "theke", "en": "from", "category": "prepositions" },
-    { "bn": "পর্যন্ত", "pronunciation": "porjonto", "en": "until / up to", "category": "prepositions" },
-    { "bn": "জন্য", "pronunciation": "jonno", "en": "for", "category": "prepositions" },
-    { "bn": "সঙ্গে", "pronunciation": "shonge", "en": "with", "category": "prepositions" },
-    { "bn": "ছাড়া", "pronunciation": "chhara", "en": "without / except", "category": "prepositions" }
+    {
+      "bn": "মধ্যে",
+      "pronunciation": "moddhe",
+      "en": "in / among",
+      "category": "prepositions",
+      "sourcePhrase": "বাক্সের মধ্যে একটি বই আছে।"
+    },
+    {
+      "bn": "উপরে",
+      "pronunciation": "upore",
+      "en": "on / above",
+      "category": "prepositions",
+      "sourcePhrase": "বইটি টেবিলের উপরে আছে।"
+    },
+    {
+      "bn": "নিচে",
+      "pronunciation": "niche",
+      "en": "under / below",
+      "category": "prepositions",
+      "sourcePhrase": "বিড়ালটি টেবিলের নিচে আছে।"
+    },
+    {
+      "bn": "সামনে",
+      "pronunciation": "shamne",
+      "en": "in front of",
+      "category": "prepositions",
+      "sourcePhrase": "গাড়িটি বাড়ির সামনে আছে।"
+    },
+    {
+      "bn": "পিছনে",
+      "pronunciation": "pichhone",
+      "en": "behind",
+      "category": "prepositions",
+      "sourcePhrase": "বাগানটি বাড়ির পিছনে।"
+    },
+    {
+      "bn": "পাশে",
+      "pronunciation": "pashe",
+      "en": "beside",
+      "category": "prepositions",
+      "sourcePhrase": "স্কুলটি বাড়ির পাশে।"
+    },
+    {
+      "bn": "কাছে",
+      "pronunciation": "kachhe",
+      "en": "near / with",
+      "category": "prepositions",
+      "sourcePhrase": "আমার কাছে একটি কলম আছে।"
+    },
+    {
+      "bn": "থেকে",
+      "pronunciation": "theke",
+      "en": "from",
+      "category": "prepositions",
+      "sourcePhrase": "আমি ঢাকা থেকে এসেছি।"
+    },
+    {
+      "bn": "পর্যন্ত",
+      "pronunciation": "porjonto",
+      "en": "until / up to",
+      "category": "prepositions",
+      "sourcePhrase": "দোকানটি রাত দশটা পর্যন্ত খোলা।"
+    },
+    {
+      "bn": "জন্য",
+      "pronunciation": "jonno",
+      "en": "for",
+      "category": "prepositions",
+      "sourcePhrase": "এই উপহারটি তোমার জন্য।"
+    },
+    {
+      "bn": "সঙ্গে",
+      "pronunciation": "shonge",
+      "en": "with",
+      "category": "prepositions",
+      "sourcePhrase": "আমি বন্ধুর সঙ্গে যাচ্ছি।"
+    },
+    {
+      "bn": "ছাড়া",
+      "pronunciation": "chhara",
+      "en": "without / except",
+      "category": "prepositions",
+      "sourcePhrase": "পানি ছাড়া আমরা বাঁচতে পারি না।"
+    },
+    {
+      "bn": "বাক্সের",
+      "pronunciation": "baksher",
+      "en": "of the box",
+      "category": "prepositions",
+      "sourcePhrase": "বাক্সের মধ্যে একটি বই আছে।"
+    },
+    {
+      "bn": "একটি",
+      "pronunciation": "ekti",
+      "en": "one / a",
+      "category": "prepositions",
+      "sourcePhrase": "বাক্সের মধ্যে একটি বই আছে।"
+    },
+    {
+      "bn": "বই",
+      "pronunciation": "boi",
+      "en": "book",
+      "category": "prepositions",
+      "sourcePhrase": "বাক্সের মধ্যে একটি বই আছে।"
+    },
+    {
+      "bn": "আছে",
+      "pronunciation": "achhe",
+      "en": "is / has",
+      "category": "prepositions",
+      "sourcePhrase": "বাক্সের মধ্যে একটি বই আছে।"
+    },
+    {
+      "bn": "বইটি",
+      "pronunciation": "boiti",
+      "en": "the book",
+      "category": "prepositions",
+      "sourcePhrase": "বইটি টেবিলের উপরে আছে।"
+    },
+    {
+      "bn": "টেবিলের",
+      "pronunciation": "tebiler",
+      "en": "of the table",
+      "category": "prepositions",
+      "sourcePhrase": "বইটি টেবিলের উপরে আছে।"
+    },
+    {
+      "bn": "বিড়ালটি",
+      "pronunciation": "biralti",
+      "en": "the cat",
+      "category": "prepositions",
+      "sourcePhrase": "বিড়ালটি টেবিলের নিচে আছে।"
+    },
+    {
+      "bn": "গাড়িটি",
+      "pronunciation": "gariti",
+      "en": "the car",
+      "category": "prepositions",
+      "sourcePhrase": "গাড়িটি বাড়ির সামনে আছে।"
+    },
+    {
+      "bn": "বাড়ির",
+      "pronunciation": "barir",
+      "en": "of the house",
+      "category": "prepositions",
+      "sourcePhrase": "গাড়িটি বাড়ির সামনে আছে।"
+    },
+    {
+      "bn": "বাগানটি",
+      "pronunciation": "baganti",
+      "en": "the garden",
+      "category": "prepositions",
+      "sourcePhrase": "বাগানটি বাড়ির পিছনে।"
+    },
+    {
+      "bn": "স্কুলটি",
+      "pronunciation": "skulti",
+      "en": "the school",
+      "category": "prepositions",
+      "sourcePhrase": "স্কুলটি বাড়ির পাশে।"
+    },
+    {
+      "bn": "আমার",
+      "pronunciation": "amar",
+      "en": "my",
+      "category": "prepositions",
+      "sourcePhrase": "আমার কাছে একটি কলম আছে।"
+    },
+    {
+      "bn": "কলম",
+      "pronunciation": "kolom",
+      "en": "pen",
+      "category": "prepositions",
+      "sourcePhrase": "আমার কাছে একটি কলম আছে।"
+    },
+    {
+      "bn": "আমি",
+      "pronunciation": "ami",
+      "en": "I",
+      "category": "prepositions",
+      "sourcePhrase": "আমি ঢাকা থেকে এসেছি।"
+    },
+    {
+      "bn": "ঢাকা",
+      "pronunciation": "Dhaka",
+      "en": "Dhaka",
+      "category": "prepositions",
+      "sourcePhrase": "আমি ঢাকা থেকে এসেছি।"
+    },
+    {
+      "bn": "এসেছি",
+      "pronunciation": "eshechhi",
+      "en": "have come",
+      "category": "prepositions",
+      "sourcePhrase": "আমি ঢাকা থেকে এসেছি।"
+    },
+    {
+      "bn": "দোকানটি",
+      "pronunciation": "dokanti",
+      "en": "the shop",
+      "category": "prepositions",
+      "sourcePhrase": "দোকানটি রাত দশটা পর্যন্ত খোলা।"
+    },
+    {
+      "bn": "রাত",
+      "pronunciation": "rat",
+      "en": "night",
+      "category": "prepositions",
+      "sourcePhrase": "দোকানটি রাত দশটা পর্যন্ত খোলা।"
+    },
+    {
+      "bn": "দশটা",
+      "pronunciation": "doshta",
+      "en": "ten o'clock",
+      "category": "prepositions",
+      "sourcePhrase": "দোকানটি রাত দশটা পর্যন্ত খোলা।"
+    },
+    {
+      "bn": "খোলা",
+      "pronunciation": "khola",
+      "en": "open",
+      "category": "prepositions",
+      "sourcePhrase": "দোকানটি রাত দশটা পর্যন্ত খোলা।"
+    },
+    {
+      "bn": "এই",
+      "pronunciation": "ei",
+      "en": "this",
+      "category": "prepositions",
+      "sourcePhrase": "এই উপহারটি তোমার জন্য।"
+    },
+    {
+      "bn": "উপহারটি",
+      "pronunciation": "upoharti",
+      "en": "the gift",
+      "category": "prepositions",
+      "sourcePhrase": "এই উপহারটি তোমার জন্য।"
+    },
+    {
+      "bn": "তোমার",
+      "pronunciation": "tomar",
+      "en": "your",
+      "category": "prepositions",
+      "sourcePhrase": "এই উপহারটি তোমার জন্য।"
+    },
+    {
+      "bn": "বন্ধুর",
+      "pronunciation": "bondhur",
+      "en": "friend's",
+      "category": "prepositions",
+      "sourcePhrase": "আমি বন্ধুর সঙ্গে যাচ্ছি।"
+    },
+    {
+      "bn": "যাচ্ছি",
+      "pronunciation": "jacchhi",
+      "en": "am going",
+      "category": "prepositions",
+      "sourcePhrase": "আমি বন্ধুর সঙ্গে যাচ্ছি।"
+    },
+    {
+      "bn": "পানি",
+      "pronunciation": "pani",
+      "en": "water",
+      "category": "prepositions",
+      "sourcePhrase": "পানি ছাড়া আমরা বাঁচতে পারি না।"
+    },
+    {
+      "bn": "আমরা",
+      "pronunciation": "amra",
+      "en": "we",
+      "category": "prepositions",
+      "sourcePhrase": "পানি ছাড়া আমরা বাঁচতে পারি না।"
+    },
+    {
+      "bn": "বাঁচতে",
+      "pronunciation": "bachte",
+      "en": "to live",
+      "category": "prepositions",
+      "sourcePhrase": "পানি ছাড়া আমরা বাঁচতে পারি না।"
+    }
   ],
   "practice": [],
-  "notes": ["Most Bengali equivalents of English prepositions follow the noun, so they are postpositions."]
+  "notes": [
+    "Most Bengali equivalents of English prepositions follow the noun, so they are postpositions."
+  ]
 }

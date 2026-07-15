@@ -34,6 +34,15 @@ const GLOSSES = {
   "বাসটি": "the bus", "বিড়ালটি": "the cat", "ব্যায়াম": "exercise", "ভুলের": "of mistakes", "মাস": "month",
   "মিথ্যা": "lie / falsehood", "মিনিট": "minute", "রাহিম": "Rahim", "শিক্ষক": "teacher", "শুরু": "start",
   "শেষ": "finished / end", "সংখ্যা": "number", "সপ্তাহে": "in a week", "স্টেশনে": "to the station",
+  "আকাশে": "in the sky", "আলো": "light", "আসছে": "is coming", "উজ্জ্বল": "bright", "কম্পিউটারটি": "the computer",
+  "কাগজটি": "the paper", "কুকুরটি": "the dog", "খেলছে": "is playing", "খোলে": "opens", "গাছ": "tree",
+  "গাছে": "in the tree", "ঘড়িতে": "on the clock", "ঘরের": "of the room", "ঘুমাচ্ছে": "is sleeping", "চাঁদ": "moon",
+  "চাবি": "key", "চেয়ারটি": "the chair", "চেয়ারের": "of the chair", "জানালার": "of the window", "টেবিলটি": "the table",
+  "ট্রেনটি": "the train", "দরজা": "door", "দাঁড়িয়ে": "standing", "দেখা": "seen", "নীল": "blue",
+  "পড়ছে": "is reading", "পড়াচ্ছেন": "is teaching", "পাখি": "bird", "ফুলটি": "the flower", "ফোন": "phone",
+  "বন্ধ": "closed", "বাগানে": "in the garden", "বাজার": "market", "বাস": "bus", "ব্যাগে": "in the bag",
+  "যাচ্ছে": "is going", "রাখুন": "please put", "শহরের": "of the city", "শিশুটি": "the child", "সূর্য": "sun",
+  "হাসপাতালটি": "the hospital", "হাসপাতালে": "at the hospital",
   "আছি": "am", "আছে": "is / has", "আছেন": "are (respectful)", "থাকি": "live / stay", "থাকে": "lives / stays",
   "থাকব": "will stay", "হয়": "is / happens", "হতে": "to become", "হবে": "will be", "হচ্ছে": "is happening",
   "করি": "do", "করব": "will do", "করে": "does", "করুন": "please do", "যাই": "go", "যায়": "goes",
@@ -58,10 +67,10 @@ export const buildPhraseWords = (phrase) => {
   }));
 };
 
-export const withPhraseWords = (lesson) => ({
-  ...lesson,
-  phrases: (lesson?.phrases || []).map((phrase) => ({ ...phrase, words: buildPhraseWords(phrase) })),
-});
+export const withPhraseWords = (lesson) => {
+  const phrases = (lesson?.phrases || []).map((phrase) => ({ ...phrase, words: buildPhraseWords(phrase) }));
+  return { ...lesson, phrases };
+};
 
 export const phraseBreakdownItems = (lesson) => (lesson?.phrases || []).map((phrase) => ({
   ...phrase,
