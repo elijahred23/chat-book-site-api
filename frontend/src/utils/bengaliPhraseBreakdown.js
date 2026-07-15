@@ -63,14 +63,7 @@ export const withPhraseWords = (lesson) => ({
   phrases: (lesson?.phrases || []).map((phrase) => ({ ...phrase, words: buildPhraseWords(phrase) })),
 });
 
-export const phraseBreakdownItems = (lesson) => (lesson?.phrases || []).flatMap((phrase, phraseIndex) =>
-  buildPhraseWords(phrase).map((word, wordIndex) => ({
-    ...word,
-    category: phrase.category,
-    phrase: phrase.bn,
-    phrasePronunciation: phrase.pronunciation,
-    phraseTranslation: phrase.en,
-    phraseIndex,
-    wordIndex,
-  }))
-);
+export const phraseBreakdownItems = (lesson) => (lesson?.phrases || []).map((phrase) => ({
+  ...phrase,
+  words: buildPhraseWords(phrase),
+}));
