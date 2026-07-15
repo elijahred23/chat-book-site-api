@@ -308,6 +308,3124 @@
           "en": "is / has"
         }
       ]
+    },
+    {
+      "bn": "বলুন: “আমি বাংলা শিখছি।”",
+      "pronunciation": "bolun: ami Bangla shikhchhi",
+      "en": "Say: “I am learning Bengali.”",
+      "context": "Say the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "আমি বাংলা শিখছি।",
+      "words": [
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "বাংলা",
+          "pronunciation": "Bangla",
+          "en": "Bengali"
+        },
+        {
+          "bn": "শিখছি",
+          "pronunciation": "shikhchhi",
+          "en": "am learning"
+        }
+      ]
+    },
+    {
+      "bn": "বলুন: “আমরা একসঙ্গে কাজ করি।”",
+      "pronunciation": "bolun: amra ekshonge kaj kori",
+      "en": "Say: “We work together.”",
+      "context": "Say the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "আমরা একসঙ্গে কাজ করি।",
+      "words": [
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "আমরা",
+          "pronunciation": "amra",
+          "en": "we"
+        },
+        {
+          "bn": "একসঙ্গে",
+          "pronunciation": "ekshonge",
+          "en": "together"
+        },
+        {
+          "bn": "কাজ",
+          "pronunciation": "kaj",
+          "en": "work"
+        },
+        {
+          "bn": "করি",
+          "pronunciation": "kori",
+          "en": "do"
+        }
+      ]
+    },
+    {
+      "bn": "বলুন: “তুমি কোথায় যাচ্ছ?”",
+      "pronunciation": "bolun: tumi kothay jacchho",
+      "en": "Say: “Where are you going?”",
+      "context": "Say the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "তুমি কোথায় যাচ্ছ?",
+      "words": [
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "তুমি",
+          "pronunciation": "tumi",
+          "en": "you (familiar)"
+        },
+        {
+          "bn": "কোথায়",
+          "pronunciation": "kothay",
+          "en": "where"
+        },
+        {
+          "bn": "যাচ্ছ",
+          "pronunciation": "jacchho",
+          "en": "are going"
+        }
+      ]
+    },
+    {
+      "bn": "বলুন: “তোমরা কি প্রস্তুত?”",
+      "pronunciation": "bolun: tomra ki prostut",
+      "en": "Say: “Are you all ready?”",
+      "context": "Say the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "তোমরা কি প্রস্তুত?",
+      "words": [
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "তোমরা",
+          "pronunciation": "tomra",
+          "en": "you all"
+        },
+        {
+          "bn": "কি",
+          "pronunciation": "ki",
+          "en": "what / question marker"
+        },
+        {
+          "bn": "প্রস্তুত",
+          "pronunciation": "prostut",
+          "en": "ready"
+        }
+      ]
+    },
+    {
+      "bn": "বলুন: “আপনি কেমন আছেন?”",
+      "pronunciation": "bolun: apni kemon achhen",
+      "en": "Say: “How are you?”",
+      "context": "Say the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "আপনি কেমন আছেন?",
+      "words": [
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "আপনি",
+          "pronunciation": "apni",
+          "en": "you (polite)"
+        },
+        {
+          "bn": "কেমন",
+          "pronunciation": "kemon",
+          "en": "how"
+        },
+        {
+          "bn": "আছেন",
+          "pronunciation": "achhen",
+          "en": "are (respectful)"
+        }
+      ]
+    },
+    {
+      "bn": "বলুন: “আপনারা কোথা থেকে এসেছেন?”",
+      "pronunciation": "bolun: apnara kotha theke eshechhen",
+      "en": "Say: “Where have you all come from?”",
+      "context": "Say the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "আপনারা কোথা থেকে এসেছেন?",
+      "words": [
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "আপনারা",
+          "pronunciation": "apnara",
+          "en": "you all (polite)"
+        },
+        {
+          "bn": "কোথা",
+          "pronunciation": "kotha",
+          "en": "where"
+        },
+        {
+          "bn": "থেকে",
+          "pronunciation": "theke",
+          "en": "from"
+        },
+        {
+          "bn": "এসেছেন",
+          "pronunciation": "eshechhen",
+          "en": "have come (respectful)"
+        }
+      ]
+    },
+    {
+      "bn": "বলুন: “সে প্রতিদিন স্কুলে যায়।”",
+      "pronunciation": "bolun: shey protidin skule jay",
+      "en": "Say: “He or she goes to school every day.”",
+      "context": "Say the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "সে প্রতিদিন স্কুলে যায়।",
+      "words": [
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "সে",
+          "pronunciation": "shey",
+          "en": "he / she"
+        },
+        {
+          "bn": "প্রতিদিন",
+          "pronunciation": "protidin",
+          "en": "every day"
+        },
+        {
+          "bn": "স্কুলে",
+          "pronunciation": "skule",
+          "en": "to school"
+        },
+        {
+          "bn": "যায়",
+          "pronunciation": "jay",
+          "en": "goes"
+        }
+      ]
+    },
+    {
+      "bn": "বলুন: “তারা আমাদের বন্ধু।”",
+      "pronunciation": "bolun: tara amader bondhu",
+      "en": "Say: “They are our friends.”",
+      "context": "Say the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "তারা আমাদের বন্ধু।",
+      "words": [
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "তারা",
+          "pronunciation": "tara",
+          "en": "they"
+        },
+        {
+          "bn": "আমাদের",
+          "pronunciation": "amader",
+          "en": "our"
+        },
+        {
+          "bn": "বন্ধু",
+          "pronunciation": "bondhu",
+          "en": "friend"
+        }
+      ]
+    },
+    {
+      "bn": "বলুন: “তিনি একজন শিক্ষক।”",
+      "pronunciation": "bolun: tini ekjon shikkhok",
+      "en": "Say: “He or she is a teacher.”",
+      "context": "Say the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "তিনি একজন শিক্ষক।",
+      "words": [
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "তিনি",
+          "pronunciation": "tini",
+          "en": "he / she (respectful)"
+        },
+        {
+          "bn": "একজন",
+          "pronunciation": "ekjon",
+          "en": "one person"
+        },
+        {
+          "bn": "শিক্ষক",
+          "pronunciation": "shikkhok",
+          "en": "teacher"
+        }
+      ]
+    },
+    {
+      "bn": "বলুন: “এটা আমার কলম।”",
+      "pronunciation": "bolun: eta amar kolom",
+      "en": "Say: “This is my pen.”",
+      "context": "Say the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "এটা আমার কলম।",
+      "words": [
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "এটা",
+          "pronunciation": "eta",
+          "en": "this"
+        },
+        {
+          "bn": "আমার",
+          "pronunciation": "amar",
+          "en": "my"
+        },
+        {
+          "bn": "কলম",
+          "pronunciation": "kolom",
+          "en": "pen"
+        }
+      ]
+    },
+    {
+      "bn": "বলুন: “ওটা তোমার ব্যাগ।”",
+      "pronunciation": "bolun: ota tomar bag",
+      "en": "Say: “That is your bag.”",
+      "context": "Say the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "ওটা তোমার ব্যাগ।",
+      "words": [
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "ওটা",
+          "pronunciation": "ota",
+          "en": "that"
+        },
+        {
+          "bn": "তোমার",
+          "pronunciation": "tomar",
+          "en": "your"
+        },
+        {
+          "bn": "ব্যাগ",
+          "pronunciation": "bag",
+          "en": "bag"
+        }
+      ]
+    },
+    {
+      "bn": "বলুন: “দরজায় কে আছে?”",
+      "pronunciation": "bolun: dorjay ke achhe",
+      "en": "Say: “Who is at the door?”",
+      "context": "Say the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "দরজায় কে আছে?",
+      "words": [
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "দরজায়",
+          "pronunciation": "dorjay",
+          "en": "at the door"
+        },
+        {
+          "bn": "কে",
+          "pronunciation": "ke",
+          "en": "who"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is / has"
+        }
+      ]
+    },
+    {
+      "bn": "পড়ুন: “আমি বাংলা শিখছি।”",
+      "pronunciation": "porun: ami Bangla shikhchhi",
+      "en": "Read: “I am learning Bengali.”",
+      "context": "Read the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "আমি বাংলা শিখছি।",
+      "words": [
+        {
+          "bn": "পড়ুন",
+          "pronunciation": "porun",
+          "en": "read"
+        },
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "বাংলা",
+          "pronunciation": "Bangla",
+          "en": "Bengali"
+        },
+        {
+          "bn": "শিখছি",
+          "pronunciation": "shikhchhi",
+          "en": "am learning"
+        }
+      ]
+    },
+    {
+      "bn": "পড়ুন: “আমরা একসঙ্গে কাজ করি।”",
+      "pronunciation": "porun: amra ekshonge kaj kori",
+      "en": "Read: “We work together.”",
+      "context": "Read the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "আমরা একসঙ্গে কাজ করি।",
+      "words": [
+        {
+          "bn": "পড়ুন",
+          "pronunciation": "porun",
+          "en": "read"
+        },
+        {
+          "bn": "আমরা",
+          "pronunciation": "amra",
+          "en": "we"
+        },
+        {
+          "bn": "একসঙ্গে",
+          "pronunciation": "ekshonge",
+          "en": "together"
+        },
+        {
+          "bn": "কাজ",
+          "pronunciation": "kaj",
+          "en": "work"
+        },
+        {
+          "bn": "করি",
+          "pronunciation": "kori",
+          "en": "do"
+        }
+      ]
+    },
+    {
+      "bn": "পড়ুন: “তুমি কোথায় যাচ্ছ?”",
+      "pronunciation": "porun: tumi kothay jacchho",
+      "en": "Read: “Where are you going?”",
+      "context": "Read the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "তুমি কোথায় যাচ্ছ?",
+      "words": [
+        {
+          "bn": "পড়ুন",
+          "pronunciation": "porun",
+          "en": "read"
+        },
+        {
+          "bn": "তুমি",
+          "pronunciation": "tumi",
+          "en": "you (familiar)"
+        },
+        {
+          "bn": "কোথায়",
+          "pronunciation": "kothay",
+          "en": "where"
+        },
+        {
+          "bn": "যাচ্ছ",
+          "pronunciation": "jacchho",
+          "en": "are going"
+        }
+      ]
+    },
+    {
+      "bn": "পড়ুন: “তোমরা কি প্রস্তুত?”",
+      "pronunciation": "porun: tomra ki prostut",
+      "en": "Read: “Are you all ready?”",
+      "context": "Read the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "তোমরা কি প্রস্তুত?",
+      "words": [
+        {
+          "bn": "পড়ুন",
+          "pronunciation": "porun",
+          "en": "read"
+        },
+        {
+          "bn": "তোমরা",
+          "pronunciation": "tomra",
+          "en": "you all"
+        },
+        {
+          "bn": "কি",
+          "pronunciation": "ki",
+          "en": "what / question marker"
+        },
+        {
+          "bn": "প্রস্তুত",
+          "pronunciation": "prostut",
+          "en": "ready"
+        }
+      ]
+    },
+    {
+      "bn": "পড়ুন: “আপনি কেমন আছেন?”",
+      "pronunciation": "porun: apni kemon achhen",
+      "en": "Read: “How are you?”",
+      "context": "Read the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "আপনি কেমন আছেন?",
+      "words": [
+        {
+          "bn": "পড়ুন",
+          "pronunciation": "porun",
+          "en": "read"
+        },
+        {
+          "bn": "আপনি",
+          "pronunciation": "apni",
+          "en": "you (polite)"
+        },
+        {
+          "bn": "কেমন",
+          "pronunciation": "kemon",
+          "en": "how"
+        },
+        {
+          "bn": "আছেন",
+          "pronunciation": "achhen",
+          "en": "are (respectful)"
+        }
+      ]
+    },
+    {
+      "bn": "পড়ুন: “আপনারা কোথা থেকে এসেছেন?”",
+      "pronunciation": "porun: apnara kotha theke eshechhen",
+      "en": "Read: “Where have you all come from?”",
+      "context": "Read the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "আপনারা কোথা থেকে এসেছেন?",
+      "words": [
+        {
+          "bn": "পড়ুন",
+          "pronunciation": "porun",
+          "en": "read"
+        },
+        {
+          "bn": "আপনারা",
+          "pronunciation": "apnara",
+          "en": "you all (polite)"
+        },
+        {
+          "bn": "কোথা",
+          "pronunciation": "kotha",
+          "en": "where"
+        },
+        {
+          "bn": "থেকে",
+          "pronunciation": "theke",
+          "en": "from"
+        },
+        {
+          "bn": "এসেছেন",
+          "pronunciation": "eshechhen",
+          "en": "have come (respectful)"
+        }
+      ]
+    },
+    {
+      "bn": "পড়ুন: “সে প্রতিদিন স্কুলে যায়।”",
+      "pronunciation": "porun: shey protidin skule jay",
+      "en": "Read: “He or she goes to school every day.”",
+      "context": "Read the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "সে প্রতিদিন স্কুলে যায়।",
+      "words": [
+        {
+          "bn": "পড়ুন",
+          "pronunciation": "porun",
+          "en": "read"
+        },
+        {
+          "bn": "সে",
+          "pronunciation": "shey",
+          "en": "he / she"
+        },
+        {
+          "bn": "প্রতিদিন",
+          "pronunciation": "protidin",
+          "en": "every day"
+        },
+        {
+          "bn": "স্কুলে",
+          "pronunciation": "skule",
+          "en": "to school"
+        },
+        {
+          "bn": "যায়",
+          "pronunciation": "jay",
+          "en": "goes"
+        }
+      ]
+    },
+    {
+      "bn": "পড়ুন: “তারা আমাদের বন্ধু।”",
+      "pronunciation": "porun: tara amader bondhu",
+      "en": "Read: “They are our friends.”",
+      "context": "Read the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "তারা আমাদের বন্ধু।",
+      "words": [
+        {
+          "bn": "পড়ুন",
+          "pronunciation": "porun",
+          "en": "read"
+        },
+        {
+          "bn": "তারা",
+          "pronunciation": "tara",
+          "en": "they"
+        },
+        {
+          "bn": "আমাদের",
+          "pronunciation": "amader",
+          "en": "our"
+        },
+        {
+          "bn": "বন্ধু",
+          "pronunciation": "bondhu",
+          "en": "friend"
+        }
+      ]
+    },
+    {
+      "bn": "পড়ুন: “তিনি একজন শিক্ষক।”",
+      "pronunciation": "porun: tini ekjon shikkhok",
+      "en": "Read: “He or she is a teacher.”",
+      "context": "Read the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "তিনি একজন শিক্ষক।",
+      "words": [
+        {
+          "bn": "পড়ুন",
+          "pronunciation": "porun",
+          "en": "read"
+        },
+        {
+          "bn": "তিনি",
+          "pronunciation": "tini",
+          "en": "he / she (respectful)"
+        },
+        {
+          "bn": "একজন",
+          "pronunciation": "ekjon",
+          "en": "one person"
+        },
+        {
+          "bn": "শিক্ষক",
+          "pronunciation": "shikkhok",
+          "en": "teacher"
+        }
+      ]
+    },
+    {
+      "bn": "পড়ুন: “এটা আমার কলম।”",
+      "pronunciation": "porun: eta amar kolom",
+      "en": "Read: “This is my pen.”",
+      "context": "Read the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "এটা আমার কলম।",
+      "words": [
+        {
+          "bn": "পড়ুন",
+          "pronunciation": "porun",
+          "en": "read"
+        },
+        {
+          "bn": "এটা",
+          "pronunciation": "eta",
+          "en": "this"
+        },
+        {
+          "bn": "আমার",
+          "pronunciation": "amar",
+          "en": "my"
+        },
+        {
+          "bn": "কলম",
+          "pronunciation": "kolom",
+          "en": "pen"
+        }
+      ]
+    },
+    {
+      "bn": "পড়ুন: “ওটা তোমার ব্যাগ।”",
+      "pronunciation": "porun: ota tomar bag",
+      "en": "Read: “That is your bag.”",
+      "context": "Read the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "ওটা তোমার ব্যাগ।",
+      "words": [
+        {
+          "bn": "পড়ুন",
+          "pronunciation": "porun",
+          "en": "read"
+        },
+        {
+          "bn": "ওটা",
+          "pronunciation": "ota",
+          "en": "that"
+        },
+        {
+          "bn": "তোমার",
+          "pronunciation": "tomar",
+          "en": "your"
+        },
+        {
+          "bn": "ব্যাগ",
+          "pronunciation": "bag",
+          "en": "bag"
+        }
+      ]
+    },
+    {
+      "bn": "পড়ুন: “দরজায় কে আছে?”",
+      "pronunciation": "porun: dorjay ke achhe",
+      "en": "Read: “Who is at the door?”",
+      "context": "Read the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "দরজায় কে আছে?",
+      "words": [
+        {
+          "bn": "পড়ুন",
+          "pronunciation": "porun",
+          "en": "read"
+        },
+        {
+          "bn": "দরজায়",
+          "pronunciation": "dorjay",
+          "en": "at the door"
+        },
+        {
+          "bn": "কে",
+          "pronunciation": "ke",
+          "en": "who"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is / has"
+        }
+      ]
+    },
+    {
+      "bn": "লিখুন: “আমি বাংলা শিখছি।”",
+      "pronunciation": "likhun: ami Bangla shikhchhi",
+      "en": "Write: “I am learning Bengali.”",
+      "context": "Write the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "আমি বাংলা শিখছি।",
+      "words": [
+        {
+          "bn": "লিখুন",
+          "pronunciation": "likhun",
+          "en": "write"
+        },
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "বাংলা",
+          "pronunciation": "Bangla",
+          "en": "Bengali"
+        },
+        {
+          "bn": "শিখছি",
+          "pronunciation": "shikhchhi",
+          "en": "am learning"
+        }
+      ]
+    },
+    {
+      "bn": "লিখুন: “আমরা একসঙ্গে কাজ করি।”",
+      "pronunciation": "likhun: amra ekshonge kaj kori",
+      "en": "Write: “We work together.”",
+      "context": "Write the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "আমরা একসঙ্গে কাজ করি।",
+      "words": [
+        {
+          "bn": "লিখুন",
+          "pronunciation": "likhun",
+          "en": "write"
+        },
+        {
+          "bn": "আমরা",
+          "pronunciation": "amra",
+          "en": "we"
+        },
+        {
+          "bn": "একসঙ্গে",
+          "pronunciation": "ekshonge",
+          "en": "together"
+        },
+        {
+          "bn": "কাজ",
+          "pronunciation": "kaj",
+          "en": "work"
+        },
+        {
+          "bn": "করি",
+          "pronunciation": "kori",
+          "en": "do"
+        }
+      ]
+    },
+    {
+      "bn": "লিখুন: “তুমি কোথায় যাচ্ছ?”",
+      "pronunciation": "likhun: tumi kothay jacchho",
+      "en": "Write: “Where are you going?”",
+      "context": "Write the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "তুমি কোথায় যাচ্ছ?",
+      "words": [
+        {
+          "bn": "লিখুন",
+          "pronunciation": "likhun",
+          "en": "write"
+        },
+        {
+          "bn": "তুমি",
+          "pronunciation": "tumi",
+          "en": "you (familiar)"
+        },
+        {
+          "bn": "কোথায়",
+          "pronunciation": "kothay",
+          "en": "where"
+        },
+        {
+          "bn": "যাচ্ছ",
+          "pronunciation": "jacchho",
+          "en": "are going"
+        }
+      ]
+    },
+    {
+      "bn": "লিখুন: “তোমরা কি প্রস্তুত?”",
+      "pronunciation": "likhun: tomra ki prostut",
+      "en": "Write: “Are you all ready?”",
+      "context": "Write the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "তোমরা কি প্রস্তুত?",
+      "words": [
+        {
+          "bn": "লিখুন",
+          "pronunciation": "likhun",
+          "en": "write"
+        },
+        {
+          "bn": "তোমরা",
+          "pronunciation": "tomra",
+          "en": "you all"
+        },
+        {
+          "bn": "কি",
+          "pronunciation": "ki",
+          "en": "what / question marker"
+        },
+        {
+          "bn": "প্রস্তুত",
+          "pronunciation": "prostut",
+          "en": "ready"
+        }
+      ]
+    },
+    {
+      "bn": "লিখুন: “আপনি কেমন আছেন?”",
+      "pronunciation": "likhun: apni kemon achhen",
+      "en": "Write: “How are you?”",
+      "context": "Write the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "আপনি কেমন আছেন?",
+      "words": [
+        {
+          "bn": "লিখুন",
+          "pronunciation": "likhun",
+          "en": "write"
+        },
+        {
+          "bn": "আপনি",
+          "pronunciation": "apni",
+          "en": "you (polite)"
+        },
+        {
+          "bn": "কেমন",
+          "pronunciation": "kemon",
+          "en": "how"
+        },
+        {
+          "bn": "আছেন",
+          "pronunciation": "achhen",
+          "en": "are (respectful)"
+        }
+      ]
+    },
+    {
+      "bn": "লিখুন: “আপনারা কোথা থেকে এসেছেন?”",
+      "pronunciation": "likhun: apnara kotha theke eshechhen",
+      "en": "Write: “Where have you all come from?”",
+      "context": "Write the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "আপনারা কোথা থেকে এসেছেন?",
+      "words": [
+        {
+          "bn": "লিখুন",
+          "pronunciation": "likhun",
+          "en": "write"
+        },
+        {
+          "bn": "আপনারা",
+          "pronunciation": "apnara",
+          "en": "you all (polite)"
+        },
+        {
+          "bn": "কোথা",
+          "pronunciation": "kotha",
+          "en": "where"
+        },
+        {
+          "bn": "থেকে",
+          "pronunciation": "theke",
+          "en": "from"
+        },
+        {
+          "bn": "এসেছেন",
+          "pronunciation": "eshechhen",
+          "en": "have come (respectful)"
+        }
+      ]
+    },
+    {
+      "bn": "লিখুন: “সে প্রতিদিন স্কুলে যায়।”",
+      "pronunciation": "likhun: shey protidin skule jay",
+      "en": "Write: “He or she goes to school every day.”",
+      "context": "Write the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "সে প্রতিদিন স্কুলে যায়।",
+      "words": [
+        {
+          "bn": "লিখুন",
+          "pronunciation": "likhun",
+          "en": "write"
+        },
+        {
+          "bn": "সে",
+          "pronunciation": "shey",
+          "en": "he / she"
+        },
+        {
+          "bn": "প্রতিদিন",
+          "pronunciation": "protidin",
+          "en": "every day"
+        },
+        {
+          "bn": "স্কুলে",
+          "pronunciation": "skule",
+          "en": "to school"
+        },
+        {
+          "bn": "যায়",
+          "pronunciation": "jay",
+          "en": "goes"
+        }
+      ]
+    },
+    {
+      "bn": "লিখুন: “তারা আমাদের বন্ধু।”",
+      "pronunciation": "likhun: tara amader bondhu",
+      "en": "Write: “They are our friends.”",
+      "context": "Write the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "তারা আমাদের বন্ধু।",
+      "words": [
+        {
+          "bn": "লিখুন",
+          "pronunciation": "likhun",
+          "en": "write"
+        },
+        {
+          "bn": "তারা",
+          "pronunciation": "tara",
+          "en": "they"
+        },
+        {
+          "bn": "আমাদের",
+          "pronunciation": "amader",
+          "en": "our"
+        },
+        {
+          "bn": "বন্ধু",
+          "pronunciation": "bondhu",
+          "en": "friend"
+        }
+      ]
+    },
+    {
+      "bn": "লিখুন: “তিনি একজন শিক্ষক।”",
+      "pronunciation": "likhun: tini ekjon shikkhok",
+      "en": "Write: “He or she is a teacher.”",
+      "context": "Write the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "তিনি একজন শিক্ষক।",
+      "words": [
+        {
+          "bn": "লিখুন",
+          "pronunciation": "likhun",
+          "en": "write"
+        },
+        {
+          "bn": "তিনি",
+          "pronunciation": "tini",
+          "en": "he / she (respectful)"
+        },
+        {
+          "bn": "একজন",
+          "pronunciation": "ekjon",
+          "en": "one person"
+        },
+        {
+          "bn": "শিক্ষক",
+          "pronunciation": "shikkhok",
+          "en": "teacher"
+        }
+      ]
+    },
+    {
+      "bn": "লিখুন: “এটা আমার কলম।”",
+      "pronunciation": "likhun: eta amar kolom",
+      "en": "Write: “This is my pen.”",
+      "context": "Write the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "এটা আমার কলম।",
+      "words": [
+        {
+          "bn": "লিখুন",
+          "pronunciation": "likhun",
+          "en": "write"
+        },
+        {
+          "bn": "এটা",
+          "pronunciation": "eta",
+          "en": "this"
+        },
+        {
+          "bn": "আমার",
+          "pronunciation": "amar",
+          "en": "my"
+        },
+        {
+          "bn": "কলম",
+          "pronunciation": "kolom",
+          "en": "pen"
+        }
+      ]
+    },
+    {
+      "bn": "লিখুন: “ওটা তোমার ব্যাগ।”",
+      "pronunciation": "likhun: ota tomar bag",
+      "en": "Write: “That is your bag.”",
+      "context": "Write the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "ওটা তোমার ব্যাগ।",
+      "words": [
+        {
+          "bn": "লিখুন",
+          "pronunciation": "likhun",
+          "en": "write"
+        },
+        {
+          "bn": "ওটা",
+          "pronunciation": "ota",
+          "en": "that"
+        },
+        {
+          "bn": "তোমার",
+          "pronunciation": "tomar",
+          "en": "your"
+        },
+        {
+          "bn": "ব্যাগ",
+          "pronunciation": "bag",
+          "en": "bag"
+        }
+      ]
+    },
+    {
+      "bn": "লিখুন: “দরজায় কে আছে?”",
+      "pronunciation": "likhun: dorjay ke achhe",
+      "en": "Write: “Who is at the door?”",
+      "context": "Write the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "দরজায় কে আছে?",
+      "words": [
+        {
+          "bn": "লিখুন",
+          "pronunciation": "likhun",
+          "en": "write"
+        },
+        {
+          "bn": "দরজায়",
+          "pronunciation": "dorjay",
+          "en": "at the door"
+        },
+        {
+          "bn": "কে",
+          "pronunciation": "ke",
+          "en": "who"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is / has"
+        }
+      ]
+    },
+    {
+      "bn": "অনুবাদ করুন: “আমি বাংলা শিখছি।”",
+      "pronunciation": "onubad korun: ami Bangla shikhchhi",
+      "en": "Translate: “I am learning Bengali.”",
+      "context": "Translate the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "আমি বাংলা শিখছি।",
+      "words": [
+        {
+          "bn": "অনুবাদ",
+          "pronunciation": "onubad",
+          "en": "translation"
+        },
+        {
+          "bn": "করুন",
+          "pronunciation": "korun",
+          "en": "please do"
+        },
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "বাংলা",
+          "pronunciation": "Bangla",
+          "en": "Bengali"
+        },
+        {
+          "bn": "শিখছি",
+          "pronunciation": "shikhchhi",
+          "en": "am learning"
+        }
+      ]
+    },
+    {
+      "bn": "অনুবাদ করুন: “আমরা একসঙ্গে কাজ করি।”",
+      "pronunciation": "onubad korun: amra ekshonge kaj kori",
+      "en": "Translate: “We work together.”",
+      "context": "Translate the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "আমরা একসঙ্গে কাজ করি।",
+      "words": [
+        {
+          "bn": "অনুবাদ",
+          "pronunciation": "onubad",
+          "en": "translation"
+        },
+        {
+          "bn": "করুন",
+          "pronunciation": "korun",
+          "en": "please do"
+        },
+        {
+          "bn": "আমরা",
+          "pronunciation": "amra",
+          "en": "we"
+        },
+        {
+          "bn": "একসঙ্গে",
+          "pronunciation": "ekshonge",
+          "en": "together"
+        },
+        {
+          "bn": "কাজ",
+          "pronunciation": "kaj",
+          "en": "work"
+        },
+        {
+          "bn": "করি",
+          "pronunciation": "kori",
+          "en": "do"
+        }
+      ]
+    },
+    {
+      "bn": "অনুবাদ করুন: “তুমি কোথায় যাচ্ছ?”",
+      "pronunciation": "onubad korun: tumi kothay jacchho",
+      "en": "Translate: “Where are you going?”",
+      "context": "Translate the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "তুমি কোথায় যাচ্ছ?",
+      "words": [
+        {
+          "bn": "অনুবাদ",
+          "pronunciation": "onubad",
+          "en": "translation"
+        },
+        {
+          "bn": "করুন",
+          "pronunciation": "korun",
+          "en": "please do"
+        },
+        {
+          "bn": "তুমি",
+          "pronunciation": "tumi",
+          "en": "you (familiar)"
+        },
+        {
+          "bn": "কোথায়",
+          "pronunciation": "kothay",
+          "en": "where"
+        },
+        {
+          "bn": "যাচ্ছ",
+          "pronunciation": "jacchho",
+          "en": "are going"
+        }
+      ]
+    },
+    {
+      "bn": "অনুবাদ করুন: “তোমরা কি প্রস্তুত?”",
+      "pronunciation": "onubad korun: tomra ki prostut",
+      "en": "Translate: “Are you all ready?”",
+      "context": "Translate the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "তোমরা কি প্রস্তুত?",
+      "words": [
+        {
+          "bn": "অনুবাদ",
+          "pronunciation": "onubad",
+          "en": "translation"
+        },
+        {
+          "bn": "করুন",
+          "pronunciation": "korun",
+          "en": "please do"
+        },
+        {
+          "bn": "তোমরা",
+          "pronunciation": "tomra",
+          "en": "you all"
+        },
+        {
+          "bn": "কি",
+          "pronunciation": "ki",
+          "en": "what / question marker"
+        },
+        {
+          "bn": "প্রস্তুত",
+          "pronunciation": "prostut",
+          "en": "ready"
+        }
+      ]
+    },
+    {
+      "bn": "অনুবাদ করুন: “আপনি কেমন আছেন?”",
+      "pronunciation": "onubad korun: apni kemon achhen",
+      "en": "Translate: “How are you?”",
+      "context": "Translate the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "আপনি কেমন আছেন?",
+      "words": [
+        {
+          "bn": "অনুবাদ",
+          "pronunciation": "onubad",
+          "en": "translation"
+        },
+        {
+          "bn": "করুন",
+          "pronunciation": "korun",
+          "en": "please do"
+        },
+        {
+          "bn": "আপনি",
+          "pronunciation": "apni",
+          "en": "you (polite)"
+        },
+        {
+          "bn": "কেমন",
+          "pronunciation": "kemon",
+          "en": "how"
+        },
+        {
+          "bn": "আছেন",
+          "pronunciation": "achhen",
+          "en": "are (respectful)"
+        }
+      ]
+    },
+    {
+      "bn": "অনুবাদ করুন: “আপনারা কোথা থেকে এসেছেন?”",
+      "pronunciation": "onubad korun: apnara kotha theke eshechhen",
+      "en": "Translate: “Where have you all come from?”",
+      "context": "Translate the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "আপনারা কোথা থেকে এসেছেন?",
+      "words": [
+        {
+          "bn": "অনুবাদ",
+          "pronunciation": "onubad",
+          "en": "translation"
+        },
+        {
+          "bn": "করুন",
+          "pronunciation": "korun",
+          "en": "please do"
+        },
+        {
+          "bn": "আপনারা",
+          "pronunciation": "apnara",
+          "en": "you all (polite)"
+        },
+        {
+          "bn": "কোথা",
+          "pronunciation": "kotha",
+          "en": "where"
+        },
+        {
+          "bn": "থেকে",
+          "pronunciation": "theke",
+          "en": "from"
+        },
+        {
+          "bn": "এসেছেন",
+          "pronunciation": "eshechhen",
+          "en": "have come (respectful)"
+        }
+      ]
+    },
+    {
+      "bn": "অনুবাদ করুন: “সে প্রতিদিন স্কুলে যায়।”",
+      "pronunciation": "onubad korun: shey protidin skule jay",
+      "en": "Translate: “He or she goes to school every day.”",
+      "context": "Translate the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "সে প্রতিদিন স্কুলে যায়।",
+      "words": [
+        {
+          "bn": "অনুবাদ",
+          "pronunciation": "onubad",
+          "en": "translation"
+        },
+        {
+          "bn": "করুন",
+          "pronunciation": "korun",
+          "en": "please do"
+        },
+        {
+          "bn": "সে",
+          "pronunciation": "shey",
+          "en": "he / she"
+        },
+        {
+          "bn": "প্রতিদিন",
+          "pronunciation": "protidin",
+          "en": "every day"
+        },
+        {
+          "bn": "স্কুলে",
+          "pronunciation": "skule",
+          "en": "to school"
+        },
+        {
+          "bn": "যায়",
+          "pronunciation": "jay",
+          "en": "goes"
+        }
+      ]
+    },
+    {
+      "bn": "অনুবাদ করুন: “তারা আমাদের বন্ধু।”",
+      "pronunciation": "onubad korun: tara amader bondhu",
+      "en": "Translate: “They are our friends.”",
+      "context": "Translate the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "তারা আমাদের বন্ধু।",
+      "words": [
+        {
+          "bn": "অনুবাদ",
+          "pronunciation": "onubad",
+          "en": "translation"
+        },
+        {
+          "bn": "করুন",
+          "pronunciation": "korun",
+          "en": "please do"
+        },
+        {
+          "bn": "তারা",
+          "pronunciation": "tara",
+          "en": "they"
+        },
+        {
+          "bn": "আমাদের",
+          "pronunciation": "amader",
+          "en": "our"
+        },
+        {
+          "bn": "বন্ধু",
+          "pronunciation": "bondhu",
+          "en": "friend"
+        }
+      ]
+    },
+    {
+      "bn": "অনুবাদ করুন: “তিনি একজন শিক্ষক।”",
+      "pronunciation": "onubad korun: tini ekjon shikkhok",
+      "en": "Translate: “He or she is a teacher.”",
+      "context": "Translate the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "তিনি একজন শিক্ষক।",
+      "words": [
+        {
+          "bn": "অনুবাদ",
+          "pronunciation": "onubad",
+          "en": "translation"
+        },
+        {
+          "bn": "করুন",
+          "pronunciation": "korun",
+          "en": "please do"
+        },
+        {
+          "bn": "তিনি",
+          "pronunciation": "tini",
+          "en": "he / she (respectful)"
+        },
+        {
+          "bn": "একজন",
+          "pronunciation": "ekjon",
+          "en": "one person"
+        },
+        {
+          "bn": "শিক্ষক",
+          "pronunciation": "shikkhok",
+          "en": "teacher"
+        }
+      ]
+    },
+    {
+      "bn": "অনুবাদ করুন: “এটা আমার কলম।”",
+      "pronunciation": "onubad korun: eta amar kolom",
+      "en": "Translate: “This is my pen.”",
+      "context": "Translate the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "এটা আমার কলম।",
+      "words": [
+        {
+          "bn": "অনুবাদ",
+          "pronunciation": "onubad",
+          "en": "translation"
+        },
+        {
+          "bn": "করুন",
+          "pronunciation": "korun",
+          "en": "please do"
+        },
+        {
+          "bn": "এটা",
+          "pronunciation": "eta",
+          "en": "this"
+        },
+        {
+          "bn": "আমার",
+          "pronunciation": "amar",
+          "en": "my"
+        },
+        {
+          "bn": "কলম",
+          "pronunciation": "kolom",
+          "en": "pen"
+        }
+      ]
+    },
+    {
+      "bn": "অনুবাদ করুন: “ওটা তোমার ব্যাগ।”",
+      "pronunciation": "onubad korun: ota tomar bag",
+      "en": "Translate: “That is your bag.”",
+      "context": "Translate the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "ওটা তোমার ব্যাগ।",
+      "words": [
+        {
+          "bn": "অনুবাদ",
+          "pronunciation": "onubad",
+          "en": "translation"
+        },
+        {
+          "bn": "করুন",
+          "pronunciation": "korun",
+          "en": "please do"
+        },
+        {
+          "bn": "ওটা",
+          "pronunciation": "ota",
+          "en": "that"
+        },
+        {
+          "bn": "তোমার",
+          "pronunciation": "tomar",
+          "en": "your"
+        },
+        {
+          "bn": "ব্যাগ",
+          "pronunciation": "bag",
+          "en": "bag"
+        }
+      ]
+    },
+    {
+      "bn": "অনুবাদ করুন: “দরজায় কে আছে?”",
+      "pronunciation": "onubad korun: dorjay ke achhe",
+      "en": "Translate: “Who is at the door?”",
+      "context": "Translate the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "দরজায় কে আছে?",
+      "words": [
+        {
+          "bn": "অনুবাদ",
+          "pronunciation": "onubad",
+          "en": "translation"
+        },
+        {
+          "bn": "করুন",
+          "pronunciation": "korun",
+          "en": "please do"
+        },
+        {
+          "bn": "দরজায়",
+          "pronunciation": "dorjay",
+          "en": "at the door"
+        },
+        {
+          "bn": "কে",
+          "pronunciation": "ke",
+          "en": "who"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is / has"
+        }
+      ]
+    },
+    {
+      "bn": "মনে রাখুন: “আমি বাংলা শিখছি।”",
+      "pronunciation": "mone rakhun: ami Bangla shikhchhi",
+      "en": "Remember: “I am learning Bengali.”",
+      "context": "Remember the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "আমি বাংলা শিখছি।",
+      "words": [
+        {
+          "bn": "মনে",
+          "pronunciation": "mone",
+          "en": "in mind"
+        },
+        {
+          "bn": "রাখুন",
+          "pronunciation": "rakhun",
+          "en": "remember"
+        },
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "বাংলা",
+          "pronunciation": "Bangla",
+          "en": "Bengali"
+        },
+        {
+          "bn": "শিখছি",
+          "pronunciation": "shikhchhi",
+          "en": "am learning"
+        }
+      ]
+    },
+    {
+      "bn": "মনে রাখুন: “আমরা একসঙ্গে কাজ করি।”",
+      "pronunciation": "mone rakhun: amra ekshonge kaj kori",
+      "en": "Remember: “We work together.”",
+      "context": "Remember the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "আমরা একসঙ্গে কাজ করি।",
+      "words": [
+        {
+          "bn": "মনে",
+          "pronunciation": "mone",
+          "en": "in mind"
+        },
+        {
+          "bn": "রাখুন",
+          "pronunciation": "rakhun",
+          "en": "remember"
+        },
+        {
+          "bn": "আমরা",
+          "pronunciation": "amra",
+          "en": "we"
+        },
+        {
+          "bn": "একসঙ্গে",
+          "pronunciation": "ekshonge",
+          "en": "together"
+        },
+        {
+          "bn": "কাজ",
+          "pronunciation": "kaj",
+          "en": "work"
+        },
+        {
+          "bn": "করি",
+          "pronunciation": "kori",
+          "en": "do"
+        }
+      ]
+    },
+    {
+      "bn": "মনে রাখুন: “তুমি কোথায় যাচ্ছ?”",
+      "pronunciation": "mone rakhun: tumi kothay jacchho",
+      "en": "Remember: “Where are you going?”",
+      "context": "Remember the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "তুমি কোথায় যাচ্ছ?",
+      "words": [
+        {
+          "bn": "মনে",
+          "pronunciation": "mone",
+          "en": "in mind"
+        },
+        {
+          "bn": "রাখুন",
+          "pronunciation": "rakhun",
+          "en": "remember"
+        },
+        {
+          "bn": "তুমি",
+          "pronunciation": "tumi",
+          "en": "you (familiar)"
+        },
+        {
+          "bn": "কোথায়",
+          "pronunciation": "kothay",
+          "en": "where"
+        },
+        {
+          "bn": "যাচ্ছ",
+          "pronunciation": "jacchho",
+          "en": "are going"
+        }
+      ]
+    },
+    {
+      "bn": "মনে রাখুন: “তোমরা কি প্রস্তুত?”",
+      "pronunciation": "mone rakhun: tomra ki prostut",
+      "en": "Remember: “Are you all ready?”",
+      "context": "Remember the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "তোমরা কি প্রস্তুত?",
+      "words": [
+        {
+          "bn": "মনে",
+          "pronunciation": "mone",
+          "en": "in mind"
+        },
+        {
+          "bn": "রাখুন",
+          "pronunciation": "rakhun",
+          "en": "remember"
+        },
+        {
+          "bn": "তোমরা",
+          "pronunciation": "tomra",
+          "en": "you all"
+        },
+        {
+          "bn": "কি",
+          "pronunciation": "ki",
+          "en": "what / question marker"
+        },
+        {
+          "bn": "প্রস্তুত",
+          "pronunciation": "prostut",
+          "en": "ready"
+        }
+      ]
+    },
+    {
+      "bn": "মনে রাখুন: “আপনি কেমন আছেন?”",
+      "pronunciation": "mone rakhun: apni kemon achhen",
+      "en": "Remember: “How are you?”",
+      "context": "Remember the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "আপনি কেমন আছেন?",
+      "words": [
+        {
+          "bn": "মনে",
+          "pronunciation": "mone",
+          "en": "in mind"
+        },
+        {
+          "bn": "রাখুন",
+          "pronunciation": "rakhun",
+          "en": "remember"
+        },
+        {
+          "bn": "আপনি",
+          "pronunciation": "apni",
+          "en": "you (polite)"
+        },
+        {
+          "bn": "কেমন",
+          "pronunciation": "kemon",
+          "en": "how"
+        },
+        {
+          "bn": "আছেন",
+          "pronunciation": "achhen",
+          "en": "are (respectful)"
+        }
+      ]
+    },
+    {
+      "bn": "মনে রাখুন: “আপনারা কোথা থেকে এসেছেন?”",
+      "pronunciation": "mone rakhun: apnara kotha theke eshechhen",
+      "en": "Remember: “Where have you all come from?”",
+      "context": "Remember the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "আপনারা কোথা থেকে এসেছেন?",
+      "words": [
+        {
+          "bn": "মনে",
+          "pronunciation": "mone",
+          "en": "in mind"
+        },
+        {
+          "bn": "রাখুন",
+          "pronunciation": "rakhun",
+          "en": "remember"
+        },
+        {
+          "bn": "আপনারা",
+          "pronunciation": "apnara",
+          "en": "you all (polite)"
+        },
+        {
+          "bn": "কোথা",
+          "pronunciation": "kotha",
+          "en": "where"
+        },
+        {
+          "bn": "থেকে",
+          "pronunciation": "theke",
+          "en": "from"
+        },
+        {
+          "bn": "এসেছেন",
+          "pronunciation": "eshechhen",
+          "en": "have come (respectful)"
+        }
+      ]
+    },
+    {
+      "bn": "মনে রাখুন: “সে প্রতিদিন স্কুলে যায়।”",
+      "pronunciation": "mone rakhun: shey protidin skule jay",
+      "en": "Remember: “He or she goes to school every day.”",
+      "context": "Remember the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "সে প্রতিদিন স্কুলে যায়।",
+      "words": [
+        {
+          "bn": "মনে",
+          "pronunciation": "mone",
+          "en": "in mind"
+        },
+        {
+          "bn": "রাখুন",
+          "pronunciation": "rakhun",
+          "en": "remember"
+        },
+        {
+          "bn": "সে",
+          "pronunciation": "shey",
+          "en": "he / she"
+        },
+        {
+          "bn": "প্রতিদিন",
+          "pronunciation": "protidin",
+          "en": "every day"
+        },
+        {
+          "bn": "স্কুলে",
+          "pronunciation": "skule",
+          "en": "to school"
+        },
+        {
+          "bn": "যায়",
+          "pronunciation": "jay",
+          "en": "goes"
+        }
+      ]
+    },
+    {
+      "bn": "মনে রাখুন: “তারা আমাদের বন্ধু।”",
+      "pronunciation": "mone rakhun: tara amader bondhu",
+      "en": "Remember: “They are our friends.”",
+      "context": "Remember the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "তারা আমাদের বন্ধু।",
+      "words": [
+        {
+          "bn": "মনে",
+          "pronunciation": "mone",
+          "en": "in mind"
+        },
+        {
+          "bn": "রাখুন",
+          "pronunciation": "rakhun",
+          "en": "remember"
+        },
+        {
+          "bn": "তারা",
+          "pronunciation": "tara",
+          "en": "they"
+        },
+        {
+          "bn": "আমাদের",
+          "pronunciation": "amader",
+          "en": "our"
+        },
+        {
+          "bn": "বন্ধু",
+          "pronunciation": "bondhu",
+          "en": "friend"
+        }
+      ]
+    },
+    {
+      "bn": "মনে রাখুন: “তিনি একজন শিক্ষক।”",
+      "pronunciation": "mone rakhun: tini ekjon shikkhok",
+      "en": "Remember: “He or she is a teacher.”",
+      "context": "Remember the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "তিনি একজন শিক্ষক।",
+      "words": [
+        {
+          "bn": "মনে",
+          "pronunciation": "mone",
+          "en": "in mind"
+        },
+        {
+          "bn": "রাখুন",
+          "pronunciation": "rakhun",
+          "en": "remember"
+        },
+        {
+          "bn": "তিনি",
+          "pronunciation": "tini",
+          "en": "he / she (respectful)"
+        },
+        {
+          "bn": "একজন",
+          "pronunciation": "ekjon",
+          "en": "one person"
+        },
+        {
+          "bn": "শিক্ষক",
+          "pronunciation": "shikkhok",
+          "en": "teacher"
+        }
+      ]
+    },
+    {
+      "bn": "মনে রাখুন: “এটা আমার কলম।”",
+      "pronunciation": "mone rakhun: eta amar kolom",
+      "en": "Remember: “This is my pen.”",
+      "context": "Remember the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "এটা আমার কলম।",
+      "words": [
+        {
+          "bn": "মনে",
+          "pronunciation": "mone",
+          "en": "in mind"
+        },
+        {
+          "bn": "রাখুন",
+          "pronunciation": "rakhun",
+          "en": "remember"
+        },
+        {
+          "bn": "এটা",
+          "pronunciation": "eta",
+          "en": "this"
+        },
+        {
+          "bn": "আমার",
+          "pronunciation": "amar",
+          "en": "my"
+        },
+        {
+          "bn": "কলম",
+          "pronunciation": "kolom",
+          "en": "pen"
+        }
+      ]
+    },
+    {
+      "bn": "মনে রাখুন: “ওটা তোমার ব্যাগ।”",
+      "pronunciation": "mone rakhun: ota tomar bag",
+      "en": "Remember: “That is your bag.”",
+      "context": "Remember the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "ওটা তোমার ব্যাগ।",
+      "words": [
+        {
+          "bn": "মনে",
+          "pronunciation": "mone",
+          "en": "in mind"
+        },
+        {
+          "bn": "রাখুন",
+          "pronunciation": "rakhun",
+          "en": "remember"
+        },
+        {
+          "bn": "ওটা",
+          "pronunciation": "ota",
+          "en": "that"
+        },
+        {
+          "bn": "তোমার",
+          "pronunciation": "tomar",
+          "en": "your"
+        },
+        {
+          "bn": "ব্যাগ",
+          "pronunciation": "bag",
+          "en": "bag"
+        }
+      ]
+    },
+    {
+      "bn": "মনে রাখুন: “দরজায় কে আছে?”",
+      "pronunciation": "mone rakhun: dorjay ke achhe",
+      "en": "Remember: “Who is at the door?”",
+      "context": "Remember the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "দরজায় কে আছে?",
+      "words": [
+        {
+          "bn": "মনে",
+          "pronunciation": "mone",
+          "en": "in mind"
+        },
+        {
+          "bn": "রাখুন",
+          "pronunciation": "rakhun",
+          "en": "remember"
+        },
+        {
+          "bn": "দরজায়",
+          "pronunciation": "dorjay",
+          "en": "at the door"
+        },
+        {
+          "bn": "কে",
+          "pronunciation": "ke",
+          "en": "who"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is / has"
+        }
+      ]
+    },
+    {
+      "bn": "আবার বলুন: “আমি বাংলা শিখছি।”",
+      "pronunciation": "abar bolun: ami Bangla shikhchhi",
+      "en": "Say again: “I am learning Bengali.”",
+      "context": "Say again the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "আমি বাংলা শিখছি।",
+      "words": [
+        {
+          "bn": "আবার",
+          "pronunciation": "abar",
+          "en": "again"
+        },
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "বাংলা",
+          "pronunciation": "Bangla",
+          "en": "Bengali"
+        },
+        {
+          "bn": "শিখছি",
+          "pronunciation": "shikhchhi",
+          "en": "am learning"
+        }
+      ]
+    },
+    {
+      "bn": "আবার বলুন: “আমরা একসঙ্গে কাজ করি।”",
+      "pronunciation": "abar bolun: amra ekshonge kaj kori",
+      "en": "Say again: “We work together.”",
+      "context": "Say again the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "আমরা একসঙ্গে কাজ করি।",
+      "words": [
+        {
+          "bn": "আবার",
+          "pronunciation": "abar",
+          "en": "again"
+        },
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "আমরা",
+          "pronunciation": "amra",
+          "en": "we"
+        },
+        {
+          "bn": "একসঙ্গে",
+          "pronunciation": "ekshonge",
+          "en": "together"
+        },
+        {
+          "bn": "কাজ",
+          "pronunciation": "kaj",
+          "en": "work"
+        },
+        {
+          "bn": "করি",
+          "pronunciation": "kori",
+          "en": "do"
+        }
+      ]
+    },
+    {
+      "bn": "আবার বলুন: “তুমি কোথায় যাচ্ছ?”",
+      "pronunciation": "abar bolun: tumi kothay jacchho",
+      "en": "Say again: “Where are you going?”",
+      "context": "Say again the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "তুমি কোথায় যাচ্ছ?",
+      "words": [
+        {
+          "bn": "আবার",
+          "pronunciation": "abar",
+          "en": "again"
+        },
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "তুমি",
+          "pronunciation": "tumi",
+          "en": "you (familiar)"
+        },
+        {
+          "bn": "কোথায়",
+          "pronunciation": "kothay",
+          "en": "where"
+        },
+        {
+          "bn": "যাচ্ছ",
+          "pronunciation": "jacchho",
+          "en": "are going"
+        }
+      ]
+    },
+    {
+      "bn": "আবার বলুন: “তোমরা কি প্রস্তুত?”",
+      "pronunciation": "abar bolun: tomra ki prostut",
+      "en": "Say again: “Are you all ready?”",
+      "context": "Say again the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "তোমরা কি প্রস্তুত?",
+      "words": [
+        {
+          "bn": "আবার",
+          "pronunciation": "abar",
+          "en": "again"
+        },
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "তোমরা",
+          "pronunciation": "tomra",
+          "en": "you all"
+        },
+        {
+          "bn": "কি",
+          "pronunciation": "ki",
+          "en": "what / question marker"
+        },
+        {
+          "bn": "প্রস্তুত",
+          "pronunciation": "prostut",
+          "en": "ready"
+        }
+      ]
+    },
+    {
+      "bn": "আবার বলুন: “আপনি কেমন আছেন?”",
+      "pronunciation": "abar bolun: apni kemon achhen",
+      "en": "Say again: “How are you?”",
+      "context": "Say again the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "আপনি কেমন আছেন?",
+      "words": [
+        {
+          "bn": "আবার",
+          "pronunciation": "abar",
+          "en": "again"
+        },
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "আপনি",
+          "pronunciation": "apni",
+          "en": "you (polite)"
+        },
+        {
+          "bn": "কেমন",
+          "pronunciation": "kemon",
+          "en": "how"
+        },
+        {
+          "bn": "আছেন",
+          "pronunciation": "achhen",
+          "en": "are (respectful)"
+        }
+      ]
+    },
+    {
+      "bn": "আবার বলুন: “আপনারা কোথা থেকে এসেছেন?”",
+      "pronunciation": "abar bolun: apnara kotha theke eshechhen",
+      "en": "Say again: “Where have you all come from?”",
+      "context": "Say again the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "আপনারা কোথা থেকে এসেছেন?",
+      "words": [
+        {
+          "bn": "আবার",
+          "pronunciation": "abar",
+          "en": "again"
+        },
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "আপনারা",
+          "pronunciation": "apnara",
+          "en": "you all (polite)"
+        },
+        {
+          "bn": "কোথা",
+          "pronunciation": "kotha",
+          "en": "where"
+        },
+        {
+          "bn": "থেকে",
+          "pronunciation": "theke",
+          "en": "from"
+        },
+        {
+          "bn": "এসেছেন",
+          "pronunciation": "eshechhen",
+          "en": "have come (respectful)"
+        }
+      ]
+    },
+    {
+      "bn": "আবার বলুন: “সে প্রতিদিন স্কুলে যায়।”",
+      "pronunciation": "abar bolun: shey protidin skule jay",
+      "en": "Say again: “He or she goes to school every day.”",
+      "context": "Say again the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "সে প্রতিদিন স্কুলে যায়।",
+      "words": [
+        {
+          "bn": "আবার",
+          "pronunciation": "abar",
+          "en": "again"
+        },
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "সে",
+          "pronunciation": "shey",
+          "en": "he / she"
+        },
+        {
+          "bn": "প্রতিদিন",
+          "pronunciation": "protidin",
+          "en": "every day"
+        },
+        {
+          "bn": "স্কুলে",
+          "pronunciation": "skule",
+          "en": "to school"
+        },
+        {
+          "bn": "যায়",
+          "pronunciation": "jay",
+          "en": "goes"
+        }
+      ]
+    },
+    {
+      "bn": "আবার বলুন: “তারা আমাদের বন্ধু।”",
+      "pronunciation": "abar bolun: tara amader bondhu",
+      "en": "Say again: “They are our friends.”",
+      "context": "Say again the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "তারা আমাদের বন্ধু।",
+      "words": [
+        {
+          "bn": "আবার",
+          "pronunciation": "abar",
+          "en": "again"
+        },
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "তারা",
+          "pronunciation": "tara",
+          "en": "they"
+        },
+        {
+          "bn": "আমাদের",
+          "pronunciation": "amader",
+          "en": "our"
+        },
+        {
+          "bn": "বন্ধু",
+          "pronunciation": "bondhu",
+          "en": "friend"
+        }
+      ]
+    },
+    {
+      "bn": "আবার বলুন: “তিনি একজন শিক্ষক।”",
+      "pronunciation": "abar bolun: tini ekjon shikkhok",
+      "en": "Say again: “He or she is a teacher.”",
+      "context": "Say again the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "তিনি একজন শিক্ষক।",
+      "words": [
+        {
+          "bn": "আবার",
+          "pronunciation": "abar",
+          "en": "again"
+        },
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "তিনি",
+          "pronunciation": "tini",
+          "en": "he / she (respectful)"
+        },
+        {
+          "bn": "একজন",
+          "pronunciation": "ekjon",
+          "en": "one person"
+        },
+        {
+          "bn": "শিক্ষক",
+          "pronunciation": "shikkhok",
+          "en": "teacher"
+        }
+      ]
+    },
+    {
+      "bn": "আবার বলুন: “এটা আমার কলম।”",
+      "pronunciation": "abar bolun: eta amar kolom",
+      "en": "Say again: “This is my pen.”",
+      "context": "Say again the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "এটা আমার কলম।",
+      "words": [
+        {
+          "bn": "আবার",
+          "pronunciation": "abar",
+          "en": "again"
+        },
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "এটা",
+          "pronunciation": "eta",
+          "en": "this"
+        },
+        {
+          "bn": "আমার",
+          "pronunciation": "amar",
+          "en": "my"
+        },
+        {
+          "bn": "কলম",
+          "pronunciation": "kolom",
+          "en": "pen"
+        }
+      ]
+    },
+    {
+      "bn": "আবার বলুন: “ওটা তোমার ব্যাগ।”",
+      "pronunciation": "abar bolun: ota tomar bag",
+      "en": "Say again: “That is your bag.”",
+      "context": "Say again the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "ওটা তোমার ব্যাগ।",
+      "words": [
+        {
+          "bn": "আবার",
+          "pronunciation": "abar",
+          "en": "again"
+        },
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "ওটা",
+          "pronunciation": "ota",
+          "en": "that"
+        },
+        {
+          "bn": "তোমার",
+          "pronunciation": "tomar",
+          "en": "your"
+        },
+        {
+          "bn": "ব্যাগ",
+          "pronunciation": "bag",
+          "en": "bag"
+        }
+      ]
+    },
+    {
+      "bn": "আবার বলুন: “দরজায় কে আছে?”",
+      "pronunciation": "abar bolun: dorjay ke achhe",
+      "en": "Say again: “Who is at the door?”",
+      "context": "Say again the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "দরজায় কে আছে?",
+      "words": [
+        {
+          "bn": "আবার",
+          "pronunciation": "abar",
+          "en": "again"
+        },
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "দরজায়",
+          "pronunciation": "dorjay",
+          "en": "at the door"
+        },
+        {
+          "bn": "কে",
+          "pronunciation": "ke",
+          "en": "who"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is / has"
+        }
+      ]
+    },
+    {
+      "bn": "ধীরে বলুন: “আমি বাংলা শিখছি।”",
+      "pronunciation": "dhire bolun: ami Bangla shikhchhi",
+      "en": "Say slowly: “I am learning Bengali.”",
+      "context": "Say slowly the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "আমি বাংলা শিখছি।",
+      "words": [
+        {
+          "bn": "ধীরে",
+          "pronunciation": "dhire",
+          "en": "slowly"
+        },
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "বাংলা",
+          "pronunciation": "Bangla",
+          "en": "Bengali"
+        },
+        {
+          "bn": "শিখছি",
+          "pronunciation": "shikhchhi",
+          "en": "am learning"
+        }
+      ]
+    },
+    {
+      "bn": "ধীরে বলুন: “আমরা একসঙ্গে কাজ করি।”",
+      "pronunciation": "dhire bolun: amra ekshonge kaj kori",
+      "en": "Say slowly: “We work together.”",
+      "context": "Say slowly the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "আমরা একসঙ্গে কাজ করি।",
+      "words": [
+        {
+          "bn": "ধীরে",
+          "pronunciation": "dhire",
+          "en": "slowly"
+        },
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "আমরা",
+          "pronunciation": "amra",
+          "en": "we"
+        },
+        {
+          "bn": "একসঙ্গে",
+          "pronunciation": "ekshonge",
+          "en": "together"
+        },
+        {
+          "bn": "কাজ",
+          "pronunciation": "kaj",
+          "en": "work"
+        },
+        {
+          "bn": "করি",
+          "pronunciation": "kori",
+          "en": "do"
+        }
+      ]
+    },
+    {
+      "bn": "ধীরে বলুন: “তুমি কোথায় যাচ্ছ?”",
+      "pronunciation": "dhire bolun: tumi kothay jacchho",
+      "en": "Say slowly: “Where are you going?”",
+      "context": "Say slowly the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "তুমি কোথায় যাচ্ছ?",
+      "words": [
+        {
+          "bn": "ধীরে",
+          "pronunciation": "dhire",
+          "en": "slowly"
+        },
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "তুমি",
+          "pronunciation": "tumi",
+          "en": "you (familiar)"
+        },
+        {
+          "bn": "কোথায়",
+          "pronunciation": "kothay",
+          "en": "where"
+        },
+        {
+          "bn": "যাচ্ছ",
+          "pronunciation": "jacchho",
+          "en": "are going"
+        }
+      ]
+    },
+    {
+      "bn": "ধীরে বলুন: “তোমরা কি প্রস্তুত?”",
+      "pronunciation": "dhire bolun: tomra ki prostut",
+      "en": "Say slowly: “Are you all ready?”",
+      "context": "Say slowly the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "তোমরা কি প্রস্তুত?",
+      "words": [
+        {
+          "bn": "ধীরে",
+          "pronunciation": "dhire",
+          "en": "slowly"
+        },
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "তোমরা",
+          "pronunciation": "tomra",
+          "en": "you all"
+        },
+        {
+          "bn": "কি",
+          "pronunciation": "ki",
+          "en": "what / question marker"
+        },
+        {
+          "bn": "প্রস্তুত",
+          "pronunciation": "prostut",
+          "en": "ready"
+        }
+      ]
+    },
+    {
+      "bn": "ধীরে বলুন: “আপনি কেমন আছেন?”",
+      "pronunciation": "dhire bolun: apni kemon achhen",
+      "en": "Say slowly: “How are you?”",
+      "context": "Say slowly the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "আপনি কেমন আছেন?",
+      "words": [
+        {
+          "bn": "ধীরে",
+          "pronunciation": "dhire",
+          "en": "slowly"
+        },
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "আপনি",
+          "pronunciation": "apni",
+          "en": "you (polite)"
+        },
+        {
+          "bn": "কেমন",
+          "pronunciation": "kemon",
+          "en": "how"
+        },
+        {
+          "bn": "আছেন",
+          "pronunciation": "achhen",
+          "en": "are (respectful)"
+        }
+      ]
+    },
+    {
+      "bn": "ধীরে বলুন: “আপনারা কোথা থেকে এসেছেন?”",
+      "pronunciation": "dhire bolun: apnara kotha theke eshechhen",
+      "en": "Say slowly: “Where have you all come from?”",
+      "context": "Say slowly the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "আপনারা কোথা থেকে এসেছেন?",
+      "words": [
+        {
+          "bn": "ধীরে",
+          "pronunciation": "dhire",
+          "en": "slowly"
+        },
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "আপনারা",
+          "pronunciation": "apnara",
+          "en": "you all (polite)"
+        },
+        {
+          "bn": "কোথা",
+          "pronunciation": "kotha",
+          "en": "where"
+        },
+        {
+          "bn": "থেকে",
+          "pronunciation": "theke",
+          "en": "from"
+        },
+        {
+          "bn": "এসেছেন",
+          "pronunciation": "eshechhen",
+          "en": "have come (respectful)"
+        }
+      ]
+    },
+    {
+      "bn": "ধীরে বলুন: “সে প্রতিদিন স্কুলে যায়।”",
+      "pronunciation": "dhire bolun: shey protidin skule jay",
+      "en": "Say slowly: “He or she goes to school every day.”",
+      "context": "Say slowly the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "সে প্রতিদিন স্কুলে যায়।",
+      "words": [
+        {
+          "bn": "ধীরে",
+          "pronunciation": "dhire",
+          "en": "slowly"
+        },
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "সে",
+          "pronunciation": "shey",
+          "en": "he / she"
+        },
+        {
+          "bn": "প্রতিদিন",
+          "pronunciation": "protidin",
+          "en": "every day"
+        },
+        {
+          "bn": "স্কুলে",
+          "pronunciation": "skule",
+          "en": "to school"
+        },
+        {
+          "bn": "যায়",
+          "pronunciation": "jay",
+          "en": "goes"
+        }
+      ]
+    },
+    {
+      "bn": "ধীরে বলুন: “তারা আমাদের বন্ধু।”",
+      "pronunciation": "dhire bolun: tara amader bondhu",
+      "en": "Say slowly: “They are our friends.”",
+      "context": "Say slowly the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "তারা আমাদের বন্ধু।",
+      "words": [
+        {
+          "bn": "ধীরে",
+          "pronunciation": "dhire",
+          "en": "slowly"
+        },
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "তারা",
+          "pronunciation": "tara",
+          "en": "they"
+        },
+        {
+          "bn": "আমাদের",
+          "pronunciation": "amader",
+          "en": "our"
+        },
+        {
+          "bn": "বন্ধু",
+          "pronunciation": "bondhu",
+          "en": "friend"
+        }
+      ]
+    },
+    {
+      "bn": "ধীরে বলুন: “তিনি একজন শিক্ষক।”",
+      "pronunciation": "dhire bolun: tini ekjon shikkhok",
+      "en": "Say slowly: “He or she is a teacher.”",
+      "context": "Say slowly the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "তিনি একজন শিক্ষক।",
+      "words": [
+        {
+          "bn": "ধীরে",
+          "pronunciation": "dhire",
+          "en": "slowly"
+        },
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "তিনি",
+          "pronunciation": "tini",
+          "en": "he / she (respectful)"
+        },
+        {
+          "bn": "একজন",
+          "pronunciation": "ekjon",
+          "en": "one person"
+        },
+        {
+          "bn": "শিক্ষক",
+          "pronunciation": "shikkhok",
+          "en": "teacher"
+        }
+      ]
+    },
+    {
+      "bn": "ধীরে বলুন: “এটা আমার কলম।”",
+      "pronunciation": "dhire bolun: eta amar kolom",
+      "en": "Say slowly: “This is my pen.”",
+      "context": "Say slowly the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "এটা আমার কলম।",
+      "words": [
+        {
+          "bn": "ধীরে",
+          "pronunciation": "dhire",
+          "en": "slowly"
+        },
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "এটা",
+          "pronunciation": "eta",
+          "en": "this"
+        },
+        {
+          "bn": "আমার",
+          "pronunciation": "amar",
+          "en": "my"
+        },
+        {
+          "bn": "কলম",
+          "pronunciation": "kolom",
+          "en": "pen"
+        }
+      ]
+    },
+    {
+      "bn": "ধীরে বলুন: “ওটা তোমার ব্যাগ।”",
+      "pronunciation": "dhire bolun: ota tomar bag",
+      "en": "Say slowly: “That is your bag.”",
+      "context": "Say slowly the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "ওটা তোমার ব্যাগ।",
+      "words": [
+        {
+          "bn": "ধীরে",
+          "pronunciation": "dhire",
+          "en": "slowly"
+        },
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "ওটা",
+          "pronunciation": "ota",
+          "en": "that"
+        },
+        {
+          "bn": "তোমার",
+          "pronunciation": "tomar",
+          "en": "your"
+        },
+        {
+          "bn": "ব্যাগ",
+          "pronunciation": "bag",
+          "en": "bag"
+        }
+      ]
+    },
+    {
+      "bn": "ধীরে বলুন: “দরজায় কে আছে?”",
+      "pronunciation": "dhire bolun: dorjay ke achhe",
+      "en": "Say slowly: “Who is at the door?”",
+      "context": "Say slowly the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "দরজায় কে আছে?",
+      "words": [
+        {
+          "bn": "ধীরে",
+          "pronunciation": "dhire",
+          "en": "slowly"
+        },
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "দরজায়",
+          "pronunciation": "dorjay",
+          "en": "at the door"
+        },
+        {
+          "bn": "কে",
+          "pronunciation": "ke",
+          "en": "who"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is / has"
+        }
+      ]
+    },
+    {
+      "bn": "মন দিয়ে পড়ুন: “আমি বাংলা শিখছি।”",
+      "pronunciation": "mon diye porun: ami Bangla shikhchhi",
+      "en": "Read carefully: “I am learning Bengali.”",
+      "context": "Read carefully the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "আমি বাংলা শিখছি।",
+      "words": [
+        {
+          "bn": "মন",
+          "pronunciation": "mon",
+          "en": "attention"
+        },
+        {
+          "bn": "দিয়ে",
+          "pronunciation": "diye",
+          "en": "with"
+        },
+        {
+          "bn": "পড়ুন",
+          "pronunciation": "porun",
+          "en": "read"
+        },
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "বাংলা",
+          "pronunciation": "Bangla",
+          "en": "Bengali"
+        },
+        {
+          "bn": "শিখছি",
+          "pronunciation": "shikhchhi",
+          "en": "am learning"
+        }
+      ]
+    },
+    {
+      "bn": "মন দিয়ে পড়ুন: “আমরা একসঙ্গে কাজ করি।”",
+      "pronunciation": "mon diye porun: amra ekshonge kaj kori",
+      "en": "Read carefully: “We work together.”",
+      "context": "Read carefully the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "আমরা একসঙ্গে কাজ করি।",
+      "words": [
+        {
+          "bn": "মন",
+          "pronunciation": "mon",
+          "en": "attention"
+        },
+        {
+          "bn": "দিয়ে",
+          "pronunciation": "diye",
+          "en": "with"
+        },
+        {
+          "bn": "পড়ুন",
+          "pronunciation": "porun",
+          "en": "read"
+        },
+        {
+          "bn": "আমরা",
+          "pronunciation": "amra",
+          "en": "we"
+        },
+        {
+          "bn": "একসঙ্গে",
+          "pronunciation": "ekshonge",
+          "en": "together"
+        },
+        {
+          "bn": "কাজ",
+          "pronunciation": "kaj",
+          "en": "work"
+        },
+        {
+          "bn": "করি",
+          "pronunciation": "kori",
+          "en": "do"
+        }
+      ]
+    },
+    {
+      "bn": "মন দিয়ে পড়ুন: “তুমি কোথায় যাচ্ছ?”",
+      "pronunciation": "mon diye porun: tumi kothay jacchho",
+      "en": "Read carefully: “Where are you going?”",
+      "context": "Read carefully the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "তুমি কোথায় যাচ্ছ?",
+      "words": [
+        {
+          "bn": "মন",
+          "pronunciation": "mon",
+          "en": "attention"
+        },
+        {
+          "bn": "দিয়ে",
+          "pronunciation": "diye",
+          "en": "with"
+        },
+        {
+          "bn": "পড়ুন",
+          "pronunciation": "porun",
+          "en": "read"
+        },
+        {
+          "bn": "তুমি",
+          "pronunciation": "tumi",
+          "en": "you (familiar)"
+        },
+        {
+          "bn": "কোথায়",
+          "pronunciation": "kothay",
+          "en": "where"
+        },
+        {
+          "bn": "যাচ্ছ",
+          "pronunciation": "jacchho",
+          "en": "are going"
+        }
+      ]
+    },
+    {
+      "bn": "মন দিয়ে পড়ুন: “তোমরা কি প্রস্তুত?”",
+      "pronunciation": "mon diye porun: tomra ki prostut",
+      "en": "Read carefully: “Are you all ready?”",
+      "context": "Read carefully the pronouns example aloud",
+      "category": "pronouns",
+      "exercise": true,
+      "sourcePhrase": "তোমরা কি প্রস্তুত?",
+      "words": [
+        {
+          "bn": "মন",
+          "pronunciation": "mon",
+          "en": "attention"
+        },
+        {
+          "bn": "দিয়ে",
+          "pronunciation": "diye",
+          "en": "with"
+        },
+        {
+          "bn": "পড়ুন",
+          "pronunciation": "porun",
+          "en": "read"
+        },
+        {
+          "bn": "তোমরা",
+          "pronunciation": "tomra",
+          "en": "you all"
+        },
+        {
+          "bn": "কি",
+          "pronunciation": "ki",
+          "en": "what / question marker"
+        },
+        {
+          "bn": "প্রস্তুত",
+          "pronunciation": "prostut",
+          "en": "ready"
+        }
+      ]
     }
   ],
   "vocab": [
@@ -590,6 +3708,426 @@
       "en": "I Bengali",
       "category": "pronouns",
       "sourcePhrase": "আমি বাংলা শিখছি।"
+    },
+    {
+      "bn": "বলুন",
+      "pronunciation": "bolun",
+      "en": "say",
+      "category": "pronouns",
+      "sourcePhrase": "বলুন: “আমি বাংলা শিখছি।”"
+    },
+    {
+      "bn": "পড়ুন",
+      "pronunciation": "porun",
+      "en": "read",
+      "category": "pronouns",
+      "sourcePhrase": "পড়ুন: “আমি বাংলা শিখছি।”"
+    },
+    {
+      "bn": "লিখুন",
+      "pronunciation": "likhun",
+      "en": "write",
+      "category": "pronouns",
+      "sourcePhrase": "লিখুন: “আমি বাংলা শিখছি।”"
+    },
+    {
+      "bn": "অনুবাদ",
+      "pronunciation": "onubad",
+      "en": "translation",
+      "category": "pronouns",
+      "sourcePhrase": "অনুবাদ করুন: “আমি বাংলা শিখছি।”"
+    },
+    {
+      "bn": "করুন",
+      "pronunciation": "korun",
+      "en": "please do",
+      "category": "pronouns",
+      "sourcePhrase": "অনুবাদ করুন: “আমি বাংলা শিখছি।”"
+    },
+    {
+      "bn": "মনে",
+      "pronunciation": "mone",
+      "en": "in mind",
+      "category": "pronouns",
+      "sourcePhrase": "মনে রাখুন: “আমি বাংলা শিখছি।”"
+    },
+    {
+      "bn": "রাখুন",
+      "pronunciation": "rakhun",
+      "en": "remember",
+      "category": "pronouns",
+      "sourcePhrase": "মনে রাখুন: “আমি বাংলা শিখছি।”"
+    },
+    {
+      "bn": "আবার",
+      "pronunciation": "abar",
+      "en": "again",
+      "category": "pronouns",
+      "sourcePhrase": "আবার বলুন: “আমি বাংলা শিখছি।”"
+    },
+    {
+      "bn": "ধীরে",
+      "pronunciation": "dhire",
+      "en": "slowly",
+      "category": "pronouns",
+      "sourcePhrase": "ধীরে বলুন: “আমি বাংলা শিখছি।”"
+    },
+    {
+      "bn": "মন",
+      "pronunciation": "mon",
+      "en": "attention",
+      "category": "pronouns",
+      "sourcePhrase": "মন দিয়ে পড়ুন: “আমি বাংলা শিখছি।”"
+    },
+    {
+      "bn": "দিয়ে",
+      "pronunciation": "diye",
+      "en": "with",
+      "category": "pronouns",
+      "sourcePhrase": "মন দিয়ে পড়ুন: “আমি বাংলা শিখছি।”"
+    },
+    {
+      "bn": "বাংলা শিখছি",
+      "pronunciation": "Bangla shikhchhi",
+      "en": "Bengali am learning",
+      "category": "pronouns",
+      "sourcePhrase": "আমি বাংলা শিখছি।"
+    },
+    {
+      "bn": "আমরা একসঙ্গে",
+      "pronunciation": "amra ekshonge",
+      "en": "we together",
+      "category": "pronouns",
+      "sourcePhrase": "আমরা একসঙ্গে কাজ করি।"
+    },
+    {
+      "bn": "একসঙ্গে কাজ",
+      "pronunciation": "ekshonge kaj",
+      "en": "together work",
+      "category": "pronouns",
+      "sourcePhrase": "আমরা একসঙ্গে কাজ করি।"
+    },
+    {
+      "bn": "কাজ করি",
+      "pronunciation": "kaj kori",
+      "en": "work do",
+      "category": "pronouns",
+      "sourcePhrase": "আমরা একসঙ্গে কাজ করি।"
+    },
+    {
+      "bn": "তুমি কোথায়",
+      "pronunciation": "tumi kothay",
+      "en": "you (familiar) where",
+      "category": "pronouns",
+      "sourcePhrase": "তুমি কোথায় যাচ্ছ?"
+    },
+    {
+      "bn": "কোথায় যাচ্ছ",
+      "pronunciation": "kothay jacchho",
+      "en": "where are going",
+      "category": "pronouns",
+      "sourcePhrase": "তুমি কোথায় যাচ্ছ?"
+    },
+    {
+      "bn": "তোমরা কি",
+      "pronunciation": "tomra ki",
+      "en": "you all what / question marker",
+      "category": "pronouns",
+      "sourcePhrase": "তোমরা কি প্রস্তুত?"
+    },
+    {
+      "bn": "কি প্রস্তুত",
+      "pronunciation": "ki prostut",
+      "en": "what / question marker ready",
+      "category": "pronouns",
+      "sourcePhrase": "তোমরা কি প্রস্তুত?"
+    },
+    {
+      "bn": "আপনি কেমন",
+      "pronunciation": "apni kemon",
+      "en": "you (polite) how",
+      "category": "pronouns",
+      "sourcePhrase": "আপনি কেমন আছেন?"
+    },
+    {
+      "bn": "কেমন আছেন",
+      "pronunciation": "kemon achhen",
+      "en": "how are (respectful)",
+      "category": "pronouns",
+      "sourcePhrase": "আপনি কেমন আছেন?"
+    },
+    {
+      "bn": "আপনারা কোথা",
+      "pronunciation": "apnara kotha",
+      "en": "you all (polite) where",
+      "category": "pronouns",
+      "sourcePhrase": "আপনারা কোথা থেকে এসেছেন?"
+    },
+    {
+      "bn": "কোথা থেকে",
+      "pronunciation": "kotha theke",
+      "en": "where from",
+      "category": "pronouns",
+      "sourcePhrase": "আপনারা কোথা থেকে এসেছেন?"
+    },
+    {
+      "bn": "থেকে এসেছেন",
+      "pronunciation": "theke eshechhen",
+      "en": "from have come (respectful)",
+      "category": "pronouns",
+      "sourcePhrase": "আপনারা কোথা থেকে এসেছেন?"
+    },
+    {
+      "bn": "সে প্রতিদিন",
+      "pronunciation": "shey protidin",
+      "en": "he / she every day",
+      "category": "pronouns",
+      "sourcePhrase": "সে প্রতিদিন স্কুলে যায়।"
+    },
+    {
+      "bn": "প্রতিদিন স্কুলে",
+      "pronunciation": "protidin skule",
+      "en": "every day to school",
+      "category": "pronouns",
+      "sourcePhrase": "সে প্রতিদিন স্কুলে যায়।"
+    },
+    {
+      "bn": "স্কুলে যায়",
+      "pronunciation": "skule jay",
+      "en": "to school goes",
+      "category": "pronouns",
+      "sourcePhrase": "সে প্রতিদিন স্কুলে যায়।"
+    },
+    {
+      "bn": "তারা আমাদের",
+      "pronunciation": "tara amader",
+      "en": "they our",
+      "category": "pronouns",
+      "sourcePhrase": "তারা আমাদের বন্ধু।"
+    },
+    {
+      "bn": "আমাদের বন্ধু",
+      "pronunciation": "amader bondhu",
+      "en": "our friend",
+      "category": "pronouns",
+      "sourcePhrase": "তারা আমাদের বন্ধু।"
+    },
+    {
+      "bn": "তিনি একজন",
+      "pronunciation": "tini ekjon",
+      "en": "he / she (respectful) one person",
+      "category": "pronouns",
+      "sourcePhrase": "তিনি একজন শিক্ষক।"
+    },
+    {
+      "bn": "একজন শিক্ষক",
+      "pronunciation": "ekjon shikkhok",
+      "en": "one person teacher",
+      "category": "pronouns",
+      "sourcePhrase": "তিনি একজন শিক্ষক।"
+    },
+    {
+      "bn": "এটা আমার",
+      "pronunciation": "eta amar",
+      "en": "this my",
+      "category": "pronouns",
+      "sourcePhrase": "এটা আমার কলম।"
+    },
+    {
+      "bn": "আমার কলম",
+      "pronunciation": "amar kolom",
+      "en": "my pen",
+      "category": "pronouns",
+      "sourcePhrase": "এটা আমার কলম।"
+    },
+    {
+      "bn": "ওটা তোমার",
+      "pronunciation": "ota tomar",
+      "en": "that your",
+      "category": "pronouns",
+      "sourcePhrase": "ওটা তোমার ব্যাগ।"
+    },
+    {
+      "bn": "তোমার ব্যাগ",
+      "pronunciation": "tomar bag",
+      "en": "your bag",
+      "category": "pronouns",
+      "sourcePhrase": "ওটা তোমার ব্যাগ।"
+    },
+    {
+      "bn": "দরজায় কে",
+      "pronunciation": "dorjay ke",
+      "en": "at the door who",
+      "category": "pronouns",
+      "sourcePhrase": "দরজায় কে আছে?"
+    },
+    {
+      "bn": "কে আছে",
+      "pronunciation": "ke achhe",
+      "en": "who is / has",
+      "category": "pronouns",
+      "sourcePhrase": "দরজায় কে আছে?"
+    },
+    {
+      "bn": "বলুন আমি",
+      "pronunciation": "bolun ami",
+      "en": "say I",
+      "category": "pronouns",
+      "sourcePhrase": "বলুন: “আমি বাংলা শিখছি।”"
+    },
+    {
+      "bn": "বলুন আমরা",
+      "pronunciation": "bolun amra",
+      "en": "say we",
+      "category": "pronouns",
+      "sourcePhrase": "বলুন: “আমরা একসঙ্গে কাজ করি।”"
+    },
+    {
+      "bn": "বলুন তুমি",
+      "pronunciation": "bolun tumi",
+      "en": "say you (familiar)",
+      "category": "pronouns",
+      "sourcePhrase": "বলুন: “তুমি কোথায় যাচ্ছ?”"
+    },
+    {
+      "bn": "বলুন তোমরা",
+      "pronunciation": "bolun tomra",
+      "en": "say you all",
+      "category": "pronouns",
+      "sourcePhrase": "বলুন: “তোমরা কি প্রস্তুত?”"
+    },
+    {
+      "bn": "বলুন আপনি",
+      "pronunciation": "bolun apni",
+      "en": "say you (polite)",
+      "category": "pronouns",
+      "sourcePhrase": "বলুন: “আপনি কেমন আছেন?”"
+    },
+    {
+      "bn": "বলুন আপনারা",
+      "pronunciation": "bolun apnara",
+      "en": "say you all (polite)",
+      "category": "pronouns",
+      "sourcePhrase": "বলুন: “আপনারা কোথা থেকে এসেছেন?”"
+    },
+    {
+      "bn": "বলুন সে",
+      "pronunciation": "bolun shey",
+      "en": "say he / she",
+      "category": "pronouns",
+      "sourcePhrase": "বলুন: “সে প্রতিদিন স্কুলে যায়।”"
+    },
+    {
+      "bn": "বলুন তারা",
+      "pronunciation": "bolun tara",
+      "en": "say they",
+      "category": "pronouns",
+      "sourcePhrase": "বলুন: “তারা আমাদের বন্ধু।”"
+    },
+    {
+      "bn": "বলুন তিনি",
+      "pronunciation": "bolun tini",
+      "en": "say he / she (respectful)",
+      "category": "pronouns",
+      "sourcePhrase": "বলুন: “তিনি একজন শিক্ষক।”"
+    },
+    {
+      "bn": "বলুন এটা",
+      "pronunciation": "bolun eta",
+      "en": "say this",
+      "category": "pronouns",
+      "sourcePhrase": "বলুন: “এটা আমার কলম।”"
+    },
+    {
+      "bn": "বলুন ওটা",
+      "pronunciation": "bolun ota",
+      "en": "say that",
+      "category": "pronouns",
+      "sourcePhrase": "বলুন: “ওটা তোমার ব্যাগ।”"
+    },
+    {
+      "bn": "বলুন দরজায়",
+      "pronunciation": "bolun dorjay",
+      "en": "say at the door",
+      "category": "pronouns",
+      "sourcePhrase": "বলুন: “দরজায় কে আছে?”"
+    },
+    {
+      "bn": "পড়ুন আমি",
+      "pronunciation": "porun ami",
+      "en": "read I",
+      "category": "pronouns",
+      "sourcePhrase": "পড়ুন: “আমি বাংলা শিখছি।”"
+    },
+    {
+      "bn": "পড়ুন আমরা",
+      "pronunciation": "porun amra",
+      "en": "read we",
+      "category": "pronouns",
+      "sourcePhrase": "পড়ুন: “আমরা একসঙ্গে কাজ করি।”"
+    },
+    {
+      "bn": "পড়ুন তুমি",
+      "pronunciation": "porun tumi",
+      "en": "read you (familiar)",
+      "category": "pronouns",
+      "sourcePhrase": "পড়ুন: “তুমি কোথায় যাচ্ছ?”"
+    },
+    {
+      "bn": "পড়ুন তোমরা",
+      "pronunciation": "porun tomra",
+      "en": "read you all",
+      "category": "pronouns",
+      "sourcePhrase": "পড়ুন: “তোমরা কি প্রস্তুত?”"
+    },
+    {
+      "bn": "পড়ুন আপনি",
+      "pronunciation": "porun apni",
+      "en": "read you (polite)",
+      "category": "pronouns",
+      "sourcePhrase": "পড়ুন: “আপনি কেমন আছেন?”"
+    },
+    {
+      "bn": "পড়ুন আপনারা",
+      "pronunciation": "porun apnara",
+      "en": "read you all (polite)",
+      "category": "pronouns",
+      "sourcePhrase": "পড়ুন: “আপনারা কোথা থেকে এসেছেন?”"
+    },
+    {
+      "bn": "পড়ুন সে",
+      "pronunciation": "porun shey",
+      "en": "read he / she",
+      "category": "pronouns",
+      "sourcePhrase": "পড়ুন: “সে প্রতিদিন স্কুলে যায়।”"
+    },
+    {
+      "bn": "পড়ুন তারা",
+      "pronunciation": "porun tara",
+      "en": "read they",
+      "category": "pronouns",
+      "sourcePhrase": "পড়ুন: “তারা আমাদের বন্ধু।”"
+    },
+    {
+      "bn": "পড়ুন তিনি",
+      "pronunciation": "porun tini",
+      "en": "read he / she (respectful)",
+      "category": "pronouns",
+      "sourcePhrase": "পড়ুন: “তিনি একজন শিক্ষক।”"
+    },
+    {
+      "bn": "পড়ুন এটা",
+      "pronunciation": "porun eta",
+      "en": "read this",
+      "category": "pronouns",
+      "sourcePhrase": "পড়ুন: “এটা আমার কলম।”"
+    },
+    {
+      "bn": "পড়ুন ওটা",
+      "pronunciation": "porun ota",
+      "en": "read that",
+      "category": "pronouns",
+      "sourcePhrase": "পড়ুন: “ওটা তোমার ব্যাগ।”"
     }
   ],
   "practice": [],

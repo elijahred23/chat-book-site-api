@@ -368,6 +368,3559 @@
           "en": "gives"
         }
       ]
+    },
+    {
+      "bn": "বলুন: “আমি প্রতিদিন ব্যায়াম করি।”",
+      "pronunciation": "bolun: ami protidin byayam kori",
+      "en": "Say: “I exercise every day.”",
+      "context": "Say the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "আমি প্রতিদিন ব্যায়াম করি।",
+      "words": [
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "প্রতিদিন",
+          "pronunciation": "protidin",
+          "en": "every day"
+        },
+        {
+          "bn": "ব্যায়াম",
+          "pronunciation": "byayam",
+          "en": "exercise"
+        },
+        {
+          "bn": "করি",
+          "pronunciation": "kori",
+          "en": "do"
+        }
+      ]
+    },
+    {
+      "bn": "বলুন: “আমি ডাক্তার হতে চাই।”",
+      "pronunciation": "bolun: ami daktar hote chai",
+      "en": "Say: “I want to become a doctor.”",
+      "context": "Say the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "আমি ডাক্তার হতে চাই।",
+      "words": [
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "ডাক্তার",
+          "pronunciation": "daktar",
+          "en": "doctor"
+        },
+        {
+          "bn": "হতে",
+          "pronunciation": "hote",
+          "en": "to become"
+        },
+        {
+          "bn": "চাই",
+          "pronunciation": "chai",
+          "en": "want"
+        }
+      ]
+    },
+    {
+      "bn": "বলুন: “আমরা সকালে স্কুলে যাই।”",
+      "pronunciation": "bolun: amra shokale skule jai",
+      "en": "Say: “We go to school in the morning.”",
+      "context": "Say the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "আমরা সকালে স্কুলে যাই।",
+      "words": [
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "আমরা",
+          "pronunciation": "amra",
+          "en": "we"
+        },
+        {
+          "bn": "সকালে",
+          "pronunciation": "shokale",
+          "en": "in the morning"
+        },
+        {
+          "bn": "স্কুলে",
+          "pronunciation": "skule",
+          "en": "to school"
+        },
+        {
+          "bn": "যাই",
+          "pronunciation": "jai",
+          "en": "go"
+        }
+      ]
+    },
+    {
+      "bn": "বলুন: “সে প্রতিদিন এখানে আসে।”",
+      "pronunciation": "bolun: shey protidin ekhane ashe",
+      "en": "Say: “He or she comes here every day.”",
+      "context": "Say the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "সে প্রতিদিন এখানে আসে।",
+      "words": [
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "সে",
+          "pronunciation": "shey",
+          "en": "he / she"
+        },
+        {
+          "bn": "প্রতিদিন",
+          "pronunciation": "protidin",
+          "en": "every day"
+        },
+        {
+          "bn": "এখানে",
+          "pronunciation": "ekhane",
+          "en": "here"
+        },
+        {
+          "bn": "আসে",
+          "pronunciation": "ashe",
+          "en": "comes"
+        }
+      ]
+    },
+    {
+      "bn": "বলুন: “আমি দুপুরে ভাত খাই।”",
+      "pronunciation": "bolun: ami dupure bhat khai",
+      "en": "Say: “I eat rice at noon.”",
+      "context": "Say the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "আমি দুপুরে ভাত খাই।",
+      "words": [
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "দুপুরে",
+          "pronunciation": "dupure",
+          "en": "at noon"
+        },
+        {
+          "bn": "ভাত",
+          "pronunciation": "bhat",
+          "en": "rice"
+        },
+        {
+          "bn": "খাই",
+          "pronunciation": "khai",
+          "en": "eat"
+        }
+      ]
+    },
+    {
+      "bn": "বলুন: “আমি জানালা দিয়ে আকাশ দেখি।”",
+      "pronunciation": "bolun: ami janala diye akash dekhi",
+      "en": "Say: “I see the sky through the window.”",
+      "context": "Say the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "আমি জানালা দিয়ে আকাশ দেখি।",
+      "words": [
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "জানালা",
+          "pronunciation": "janala",
+          "en": "window"
+        },
+        {
+          "bn": "দিয়ে",
+          "pronunciation": "diye",
+          "en": "through / with"
+        },
+        {
+          "bn": "আকাশ",
+          "pronunciation": "akash",
+          "en": "sky"
+        },
+        {
+          "bn": "দেখি",
+          "pronunciation": "dekhi",
+          "en": "see"
+        }
+      ]
+    },
+    {
+      "bn": "বলুন: “তিনি ধীরে কথা বলেন।”",
+      "pronunciation": "bolun: tini dhire kotha bolen",
+      "en": "Say: “He or she speaks slowly.”",
+      "context": "Say the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "তিনি ধীরে কথা বলেন।",
+      "words": [
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "তিনি",
+          "pronunciation": "tini",
+          "en": "he / she (respectful)"
+        },
+        {
+          "bn": "ধীরে",
+          "pronunciation": "dhire",
+          "en": "slowly"
+        },
+        {
+          "bn": "কথা",
+          "pronunciation": "kotha",
+          "en": "speech / words"
+        },
+        {
+          "bn": "বলেন",
+          "pronunciation": "bolen",
+          "en": "says (respectful)"
+        }
+      ]
+    },
+    {
+      "bn": "বলুন: “আমি সকালে গান শুনি।”",
+      "pronunciation": "bolun: ami shokale gan shuni",
+      "en": "Say: “I listen to music in the morning.”",
+      "context": "Say the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "আমি সকালে গান শুনি।",
+      "words": [
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "সকালে",
+          "pronunciation": "shokale",
+          "en": "in the morning"
+        },
+        {
+          "bn": "গান",
+          "pronunciation": "gan",
+          "en": "song / music"
+        },
+        {
+          "bn": "শুনি",
+          "pronunciation": "shuni",
+          "en": "listen"
+        }
+      ]
+    },
+    {
+      "bn": "বলুন: “আমি রাতে বই পড়ি।”",
+      "pronunciation": "bolun: ami rate boi pori",
+      "en": "Say: “I read a book at night.”",
+      "context": "Say the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "আমি রাতে বই পড়ি।",
+      "words": [
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "রাতে",
+          "pronunciation": "rate",
+          "en": "at night"
+        },
+        {
+          "bn": "বই",
+          "pronunciation": "boi",
+          "en": "book"
+        },
+        {
+          "bn": "পড়ি",
+          "pronunciation": "pori",
+          "en": "read"
+        }
+      ]
+    },
+    {
+      "bn": "বলুন: “সে বাংলায় চিঠি লেখে।”",
+      "pronunciation": "bolun: shey Banglay chithi lekhe",
+      "en": "Say: “He or she writes a letter in Bengali.”",
+      "context": "Say the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "সে বাংলায় চিঠি লেখে।",
+      "words": [
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "সে",
+          "pronunciation": "shey",
+          "en": "he / she"
+        },
+        {
+          "bn": "বাংলায়",
+          "pronunciation": "Banglay",
+          "en": "in Bengali"
+        },
+        {
+          "bn": "চিঠি",
+          "pronunciation": "chithi",
+          "en": "letter"
+        },
+        {
+          "bn": "লেখে",
+          "pronunciation": "lekhe",
+          "en": "writes"
+        }
+      ]
+    },
+    {
+      "bn": "বলুন: “আমি দোকান থেকে ফল নিই।”",
+      "pronunciation": "bolun: ami dokan theke fol nii",
+      "en": "Say: “I take fruit from the shop.”",
+      "context": "Say the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "আমি দোকান থেকে ফল নিই।",
+      "words": [
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "দোকান",
+          "pronunciation": "dokan",
+          "en": "shop"
+        },
+        {
+          "bn": "থেকে",
+          "pronunciation": "theke",
+          "en": "from"
+        },
+        {
+          "bn": "ফল",
+          "pronunciation": "fol",
+          "en": "fruit"
+        },
+        {
+          "bn": "নিই",
+          "pronunciation": "nii",
+          "en": "take"
+        }
+      ]
+    },
+    {
+      "bn": "বলুন: “মা আমাকে একটি বই দেন।”",
+      "pronunciation": "bolun: ma amake ekti boi den",
+      "en": "Say: “Mother gives me a book.”",
+      "context": "Say the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "মা আমাকে একটি বই দেন।",
+      "words": [
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "মা",
+          "pronunciation": "ma",
+          "en": "mother"
+        },
+        {
+          "bn": "আমাকে",
+          "pronunciation": "amake",
+          "en": "me"
+        },
+        {
+          "bn": "একটি",
+          "pronunciation": "ekti",
+          "en": "one / a"
+        },
+        {
+          "bn": "বই",
+          "pronunciation": "boi",
+          "en": "book"
+        },
+        {
+          "bn": "দেন",
+          "pronunciation": "den",
+          "en": "gives"
+        }
+      ]
+    },
+    {
+      "bn": "পড়ুন: “আমি প্রতিদিন ব্যায়াম করি।”",
+      "pronunciation": "porun: ami protidin byayam kori",
+      "en": "Read: “I exercise every day.”",
+      "context": "Read the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "আমি প্রতিদিন ব্যায়াম করি।",
+      "words": [
+        {
+          "bn": "পড়ুন",
+          "pronunciation": "porun",
+          "en": "read"
+        },
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "প্রতিদিন",
+          "pronunciation": "protidin",
+          "en": "every day"
+        },
+        {
+          "bn": "ব্যায়াম",
+          "pronunciation": "byayam",
+          "en": "exercise"
+        },
+        {
+          "bn": "করি",
+          "pronunciation": "kori",
+          "en": "do"
+        }
+      ]
+    },
+    {
+      "bn": "পড়ুন: “আমি ডাক্তার হতে চাই।”",
+      "pronunciation": "porun: ami daktar hote chai",
+      "en": "Read: “I want to become a doctor.”",
+      "context": "Read the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "আমি ডাক্তার হতে চাই।",
+      "words": [
+        {
+          "bn": "পড়ুন",
+          "pronunciation": "porun",
+          "en": "read"
+        },
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "ডাক্তার",
+          "pronunciation": "daktar",
+          "en": "doctor"
+        },
+        {
+          "bn": "হতে",
+          "pronunciation": "hote",
+          "en": "to become"
+        },
+        {
+          "bn": "চাই",
+          "pronunciation": "chai",
+          "en": "want"
+        }
+      ]
+    },
+    {
+      "bn": "পড়ুন: “আমরা সকালে স্কুলে যাই।”",
+      "pronunciation": "porun: amra shokale skule jai",
+      "en": "Read: “We go to school in the morning.”",
+      "context": "Read the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "আমরা সকালে স্কুলে যাই।",
+      "words": [
+        {
+          "bn": "পড়ুন",
+          "pronunciation": "porun",
+          "en": "read"
+        },
+        {
+          "bn": "আমরা",
+          "pronunciation": "amra",
+          "en": "we"
+        },
+        {
+          "bn": "সকালে",
+          "pronunciation": "shokale",
+          "en": "in the morning"
+        },
+        {
+          "bn": "স্কুলে",
+          "pronunciation": "skule",
+          "en": "to school"
+        },
+        {
+          "bn": "যাই",
+          "pronunciation": "jai",
+          "en": "go"
+        }
+      ]
+    },
+    {
+      "bn": "পড়ুন: “সে প্রতিদিন এখানে আসে।”",
+      "pronunciation": "porun: shey protidin ekhane ashe",
+      "en": "Read: “He or she comes here every day.”",
+      "context": "Read the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "সে প্রতিদিন এখানে আসে।",
+      "words": [
+        {
+          "bn": "পড়ুন",
+          "pronunciation": "porun",
+          "en": "read"
+        },
+        {
+          "bn": "সে",
+          "pronunciation": "shey",
+          "en": "he / she"
+        },
+        {
+          "bn": "প্রতিদিন",
+          "pronunciation": "protidin",
+          "en": "every day"
+        },
+        {
+          "bn": "এখানে",
+          "pronunciation": "ekhane",
+          "en": "here"
+        },
+        {
+          "bn": "আসে",
+          "pronunciation": "ashe",
+          "en": "comes"
+        }
+      ]
+    },
+    {
+      "bn": "পড়ুন: “আমি দুপুরে ভাত খাই।”",
+      "pronunciation": "porun: ami dupure bhat khai",
+      "en": "Read: “I eat rice at noon.”",
+      "context": "Read the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "আমি দুপুরে ভাত খাই।",
+      "words": [
+        {
+          "bn": "পড়ুন",
+          "pronunciation": "porun",
+          "en": "read"
+        },
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "দুপুরে",
+          "pronunciation": "dupure",
+          "en": "at noon"
+        },
+        {
+          "bn": "ভাত",
+          "pronunciation": "bhat",
+          "en": "rice"
+        },
+        {
+          "bn": "খাই",
+          "pronunciation": "khai",
+          "en": "eat"
+        }
+      ]
+    },
+    {
+      "bn": "পড়ুন: “আমি জানালা দিয়ে আকাশ দেখি।”",
+      "pronunciation": "porun: ami janala diye akash dekhi",
+      "en": "Read: “I see the sky through the window.”",
+      "context": "Read the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "আমি জানালা দিয়ে আকাশ দেখি।",
+      "words": [
+        {
+          "bn": "পড়ুন",
+          "pronunciation": "porun",
+          "en": "read"
+        },
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "জানালা",
+          "pronunciation": "janala",
+          "en": "window"
+        },
+        {
+          "bn": "দিয়ে",
+          "pronunciation": "diye",
+          "en": "through / with"
+        },
+        {
+          "bn": "আকাশ",
+          "pronunciation": "akash",
+          "en": "sky"
+        },
+        {
+          "bn": "দেখি",
+          "pronunciation": "dekhi",
+          "en": "see"
+        }
+      ]
+    },
+    {
+      "bn": "পড়ুন: “তিনি ধীরে কথা বলেন।”",
+      "pronunciation": "porun: tini dhire kotha bolen",
+      "en": "Read: “He or she speaks slowly.”",
+      "context": "Read the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "তিনি ধীরে কথা বলেন।",
+      "words": [
+        {
+          "bn": "পড়ুন",
+          "pronunciation": "porun",
+          "en": "read"
+        },
+        {
+          "bn": "তিনি",
+          "pronunciation": "tini",
+          "en": "he / she (respectful)"
+        },
+        {
+          "bn": "ধীরে",
+          "pronunciation": "dhire",
+          "en": "slowly"
+        },
+        {
+          "bn": "কথা",
+          "pronunciation": "kotha",
+          "en": "speech / words"
+        },
+        {
+          "bn": "বলেন",
+          "pronunciation": "bolen",
+          "en": "says (respectful)"
+        }
+      ]
+    },
+    {
+      "bn": "পড়ুন: “আমি সকালে গান শুনি।”",
+      "pronunciation": "porun: ami shokale gan shuni",
+      "en": "Read: “I listen to music in the morning.”",
+      "context": "Read the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "আমি সকালে গান শুনি।",
+      "words": [
+        {
+          "bn": "পড়ুন",
+          "pronunciation": "porun",
+          "en": "read"
+        },
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "সকালে",
+          "pronunciation": "shokale",
+          "en": "in the morning"
+        },
+        {
+          "bn": "গান",
+          "pronunciation": "gan",
+          "en": "song / music"
+        },
+        {
+          "bn": "শুনি",
+          "pronunciation": "shuni",
+          "en": "listen"
+        }
+      ]
+    },
+    {
+      "bn": "পড়ুন: “আমি রাতে বই পড়ি।”",
+      "pronunciation": "porun: ami rate boi pori",
+      "en": "Read: “I read a book at night.”",
+      "context": "Read the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "আমি রাতে বই পড়ি।",
+      "words": [
+        {
+          "bn": "পড়ুন",
+          "pronunciation": "porun",
+          "en": "read"
+        },
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "রাতে",
+          "pronunciation": "rate",
+          "en": "at night"
+        },
+        {
+          "bn": "বই",
+          "pronunciation": "boi",
+          "en": "book"
+        },
+        {
+          "bn": "পড়ি",
+          "pronunciation": "pori",
+          "en": "read"
+        }
+      ]
+    },
+    {
+      "bn": "পড়ুন: “সে বাংলায় চিঠি লেখে।”",
+      "pronunciation": "porun: shey Banglay chithi lekhe",
+      "en": "Read: “He or she writes a letter in Bengali.”",
+      "context": "Read the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "সে বাংলায় চিঠি লেখে।",
+      "words": [
+        {
+          "bn": "পড়ুন",
+          "pronunciation": "porun",
+          "en": "read"
+        },
+        {
+          "bn": "সে",
+          "pronunciation": "shey",
+          "en": "he / she"
+        },
+        {
+          "bn": "বাংলায়",
+          "pronunciation": "Banglay",
+          "en": "in Bengali"
+        },
+        {
+          "bn": "চিঠি",
+          "pronunciation": "chithi",
+          "en": "letter"
+        },
+        {
+          "bn": "লেখে",
+          "pronunciation": "lekhe",
+          "en": "writes"
+        }
+      ]
+    },
+    {
+      "bn": "পড়ুন: “আমি দোকান থেকে ফল নিই।”",
+      "pronunciation": "porun: ami dokan theke fol nii",
+      "en": "Read: “I take fruit from the shop.”",
+      "context": "Read the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "আমি দোকান থেকে ফল নিই।",
+      "words": [
+        {
+          "bn": "পড়ুন",
+          "pronunciation": "porun",
+          "en": "read"
+        },
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "দোকান",
+          "pronunciation": "dokan",
+          "en": "shop"
+        },
+        {
+          "bn": "থেকে",
+          "pronunciation": "theke",
+          "en": "from"
+        },
+        {
+          "bn": "ফল",
+          "pronunciation": "fol",
+          "en": "fruit"
+        },
+        {
+          "bn": "নিই",
+          "pronunciation": "nii",
+          "en": "take"
+        }
+      ]
+    },
+    {
+      "bn": "পড়ুন: “মা আমাকে একটি বই দেন।”",
+      "pronunciation": "porun: ma amake ekti boi den",
+      "en": "Read: “Mother gives me a book.”",
+      "context": "Read the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "মা আমাকে একটি বই দেন।",
+      "words": [
+        {
+          "bn": "পড়ুন",
+          "pronunciation": "porun",
+          "en": "read"
+        },
+        {
+          "bn": "মা",
+          "pronunciation": "ma",
+          "en": "mother"
+        },
+        {
+          "bn": "আমাকে",
+          "pronunciation": "amake",
+          "en": "me"
+        },
+        {
+          "bn": "একটি",
+          "pronunciation": "ekti",
+          "en": "one / a"
+        },
+        {
+          "bn": "বই",
+          "pronunciation": "boi",
+          "en": "book"
+        },
+        {
+          "bn": "দেন",
+          "pronunciation": "den",
+          "en": "gives"
+        }
+      ]
+    },
+    {
+      "bn": "লিখুন: “আমি প্রতিদিন ব্যায়াম করি।”",
+      "pronunciation": "likhun: ami protidin byayam kori",
+      "en": "Write: “I exercise every day.”",
+      "context": "Write the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "আমি প্রতিদিন ব্যায়াম করি।",
+      "words": [
+        {
+          "bn": "লিখুন",
+          "pronunciation": "likhun",
+          "en": "write"
+        },
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "প্রতিদিন",
+          "pronunciation": "protidin",
+          "en": "every day"
+        },
+        {
+          "bn": "ব্যায়াম",
+          "pronunciation": "byayam",
+          "en": "exercise"
+        },
+        {
+          "bn": "করি",
+          "pronunciation": "kori",
+          "en": "do"
+        }
+      ]
+    },
+    {
+      "bn": "লিখুন: “আমি ডাক্তার হতে চাই।”",
+      "pronunciation": "likhun: ami daktar hote chai",
+      "en": "Write: “I want to become a doctor.”",
+      "context": "Write the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "আমি ডাক্তার হতে চাই।",
+      "words": [
+        {
+          "bn": "লিখুন",
+          "pronunciation": "likhun",
+          "en": "write"
+        },
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "ডাক্তার",
+          "pronunciation": "daktar",
+          "en": "doctor"
+        },
+        {
+          "bn": "হতে",
+          "pronunciation": "hote",
+          "en": "to become"
+        },
+        {
+          "bn": "চাই",
+          "pronunciation": "chai",
+          "en": "want"
+        }
+      ]
+    },
+    {
+      "bn": "লিখুন: “আমরা সকালে স্কুলে যাই।”",
+      "pronunciation": "likhun: amra shokale skule jai",
+      "en": "Write: “We go to school in the morning.”",
+      "context": "Write the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "আমরা সকালে স্কুলে যাই।",
+      "words": [
+        {
+          "bn": "লিখুন",
+          "pronunciation": "likhun",
+          "en": "write"
+        },
+        {
+          "bn": "আমরা",
+          "pronunciation": "amra",
+          "en": "we"
+        },
+        {
+          "bn": "সকালে",
+          "pronunciation": "shokale",
+          "en": "in the morning"
+        },
+        {
+          "bn": "স্কুলে",
+          "pronunciation": "skule",
+          "en": "to school"
+        },
+        {
+          "bn": "যাই",
+          "pronunciation": "jai",
+          "en": "go"
+        }
+      ]
+    },
+    {
+      "bn": "লিখুন: “সে প্রতিদিন এখানে আসে।”",
+      "pronunciation": "likhun: shey protidin ekhane ashe",
+      "en": "Write: “He or she comes here every day.”",
+      "context": "Write the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "সে প্রতিদিন এখানে আসে।",
+      "words": [
+        {
+          "bn": "লিখুন",
+          "pronunciation": "likhun",
+          "en": "write"
+        },
+        {
+          "bn": "সে",
+          "pronunciation": "shey",
+          "en": "he / she"
+        },
+        {
+          "bn": "প্রতিদিন",
+          "pronunciation": "protidin",
+          "en": "every day"
+        },
+        {
+          "bn": "এখানে",
+          "pronunciation": "ekhane",
+          "en": "here"
+        },
+        {
+          "bn": "আসে",
+          "pronunciation": "ashe",
+          "en": "comes"
+        }
+      ]
+    },
+    {
+      "bn": "লিখুন: “আমি দুপুরে ভাত খাই।”",
+      "pronunciation": "likhun: ami dupure bhat khai",
+      "en": "Write: “I eat rice at noon.”",
+      "context": "Write the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "আমি দুপুরে ভাত খাই।",
+      "words": [
+        {
+          "bn": "লিখুন",
+          "pronunciation": "likhun",
+          "en": "write"
+        },
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "দুপুরে",
+          "pronunciation": "dupure",
+          "en": "at noon"
+        },
+        {
+          "bn": "ভাত",
+          "pronunciation": "bhat",
+          "en": "rice"
+        },
+        {
+          "bn": "খাই",
+          "pronunciation": "khai",
+          "en": "eat"
+        }
+      ]
+    },
+    {
+      "bn": "লিখুন: “আমি জানালা দিয়ে আকাশ দেখি।”",
+      "pronunciation": "likhun: ami janala diye akash dekhi",
+      "en": "Write: “I see the sky through the window.”",
+      "context": "Write the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "আমি জানালা দিয়ে আকাশ দেখি।",
+      "words": [
+        {
+          "bn": "লিখুন",
+          "pronunciation": "likhun",
+          "en": "write"
+        },
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "জানালা",
+          "pronunciation": "janala",
+          "en": "window"
+        },
+        {
+          "bn": "দিয়ে",
+          "pronunciation": "diye",
+          "en": "through / with"
+        },
+        {
+          "bn": "আকাশ",
+          "pronunciation": "akash",
+          "en": "sky"
+        },
+        {
+          "bn": "দেখি",
+          "pronunciation": "dekhi",
+          "en": "see"
+        }
+      ]
+    },
+    {
+      "bn": "লিখুন: “তিনি ধীরে কথা বলেন।”",
+      "pronunciation": "likhun: tini dhire kotha bolen",
+      "en": "Write: “He or she speaks slowly.”",
+      "context": "Write the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "তিনি ধীরে কথা বলেন।",
+      "words": [
+        {
+          "bn": "লিখুন",
+          "pronunciation": "likhun",
+          "en": "write"
+        },
+        {
+          "bn": "তিনি",
+          "pronunciation": "tini",
+          "en": "he / she (respectful)"
+        },
+        {
+          "bn": "ধীরে",
+          "pronunciation": "dhire",
+          "en": "slowly"
+        },
+        {
+          "bn": "কথা",
+          "pronunciation": "kotha",
+          "en": "speech / words"
+        },
+        {
+          "bn": "বলেন",
+          "pronunciation": "bolen",
+          "en": "says (respectful)"
+        }
+      ]
+    },
+    {
+      "bn": "লিখুন: “আমি সকালে গান শুনি।”",
+      "pronunciation": "likhun: ami shokale gan shuni",
+      "en": "Write: “I listen to music in the morning.”",
+      "context": "Write the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "আমি সকালে গান শুনি।",
+      "words": [
+        {
+          "bn": "লিখুন",
+          "pronunciation": "likhun",
+          "en": "write"
+        },
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "সকালে",
+          "pronunciation": "shokale",
+          "en": "in the morning"
+        },
+        {
+          "bn": "গান",
+          "pronunciation": "gan",
+          "en": "song / music"
+        },
+        {
+          "bn": "শুনি",
+          "pronunciation": "shuni",
+          "en": "listen"
+        }
+      ]
+    },
+    {
+      "bn": "লিখুন: “আমি রাতে বই পড়ি।”",
+      "pronunciation": "likhun: ami rate boi pori",
+      "en": "Write: “I read a book at night.”",
+      "context": "Write the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "আমি রাতে বই পড়ি।",
+      "words": [
+        {
+          "bn": "লিখুন",
+          "pronunciation": "likhun",
+          "en": "write"
+        },
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "রাতে",
+          "pronunciation": "rate",
+          "en": "at night"
+        },
+        {
+          "bn": "বই",
+          "pronunciation": "boi",
+          "en": "book"
+        },
+        {
+          "bn": "পড়ি",
+          "pronunciation": "pori",
+          "en": "read"
+        }
+      ]
+    },
+    {
+      "bn": "লিখুন: “সে বাংলায় চিঠি লেখে।”",
+      "pronunciation": "likhun: shey Banglay chithi lekhe",
+      "en": "Write: “He or she writes a letter in Bengali.”",
+      "context": "Write the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "সে বাংলায় চিঠি লেখে।",
+      "words": [
+        {
+          "bn": "লিখুন",
+          "pronunciation": "likhun",
+          "en": "write"
+        },
+        {
+          "bn": "সে",
+          "pronunciation": "shey",
+          "en": "he / she"
+        },
+        {
+          "bn": "বাংলায়",
+          "pronunciation": "Banglay",
+          "en": "in Bengali"
+        },
+        {
+          "bn": "চিঠি",
+          "pronunciation": "chithi",
+          "en": "letter"
+        },
+        {
+          "bn": "লেখে",
+          "pronunciation": "lekhe",
+          "en": "writes"
+        }
+      ]
+    },
+    {
+      "bn": "লিখুন: “আমি দোকান থেকে ফল নিই।”",
+      "pronunciation": "likhun: ami dokan theke fol nii",
+      "en": "Write: “I take fruit from the shop.”",
+      "context": "Write the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "আমি দোকান থেকে ফল নিই।",
+      "words": [
+        {
+          "bn": "লিখুন",
+          "pronunciation": "likhun",
+          "en": "write"
+        },
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "দোকান",
+          "pronunciation": "dokan",
+          "en": "shop"
+        },
+        {
+          "bn": "থেকে",
+          "pronunciation": "theke",
+          "en": "from"
+        },
+        {
+          "bn": "ফল",
+          "pronunciation": "fol",
+          "en": "fruit"
+        },
+        {
+          "bn": "নিই",
+          "pronunciation": "nii",
+          "en": "take"
+        }
+      ]
+    },
+    {
+      "bn": "লিখুন: “মা আমাকে একটি বই দেন।”",
+      "pronunciation": "likhun: ma amake ekti boi den",
+      "en": "Write: “Mother gives me a book.”",
+      "context": "Write the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "মা আমাকে একটি বই দেন।",
+      "words": [
+        {
+          "bn": "লিখুন",
+          "pronunciation": "likhun",
+          "en": "write"
+        },
+        {
+          "bn": "মা",
+          "pronunciation": "ma",
+          "en": "mother"
+        },
+        {
+          "bn": "আমাকে",
+          "pronunciation": "amake",
+          "en": "me"
+        },
+        {
+          "bn": "একটি",
+          "pronunciation": "ekti",
+          "en": "one / a"
+        },
+        {
+          "bn": "বই",
+          "pronunciation": "boi",
+          "en": "book"
+        },
+        {
+          "bn": "দেন",
+          "pronunciation": "den",
+          "en": "gives"
+        }
+      ]
+    },
+    {
+      "bn": "অনুবাদ করুন: “আমি প্রতিদিন ব্যায়াম করি।”",
+      "pronunciation": "onubad korun: ami protidin byayam kori",
+      "en": "Translate: “I exercise every day.”",
+      "context": "Translate the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "আমি প্রতিদিন ব্যায়াম করি।",
+      "words": [
+        {
+          "bn": "অনুবাদ",
+          "pronunciation": "onubad",
+          "en": "translation"
+        },
+        {
+          "bn": "করুন",
+          "pronunciation": "korun",
+          "en": "please do"
+        },
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "প্রতিদিন",
+          "pronunciation": "protidin",
+          "en": "every day"
+        },
+        {
+          "bn": "ব্যায়াম",
+          "pronunciation": "byayam",
+          "en": "exercise"
+        },
+        {
+          "bn": "করি",
+          "pronunciation": "kori",
+          "en": "do"
+        }
+      ]
+    },
+    {
+      "bn": "অনুবাদ করুন: “আমি ডাক্তার হতে চাই।”",
+      "pronunciation": "onubad korun: ami daktar hote chai",
+      "en": "Translate: “I want to become a doctor.”",
+      "context": "Translate the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "আমি ডাক্তার হতে চাই।",
+      "words": [
+        {
+          "bn": "অনুবাদ",
+          "pronunciation": "onubad",
+          "en": "translation"
+        },
+        {
+          "bn": "করুন",
+          "pronunciation": "korun",
+          "en": "please do"
+        },
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "ডাক্তার",
+          "pronunciation": "daktar",
+          "en": "doctor"
+        },
+        {
+          "bn": "হতে",
+          "pronunciation": "hote",
+          "en": "to become"
+        },
+        {
+          "bn": "চাই",
+          "pronunciation": "chai",
+          "en": "want"
+        }
+      ]
+    },
+    {
+      "bn": "অনুবাদ করুন: “আমরা সকালে স্কুলে যাই।”",
+      "pronunciation": "onubad korun: amra shokale skule jai",
+      "en": "Translate: “We go to school in the morning.”",
+      "context": "Translate the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "আমরা সকালে স্কুলে যাই।",
+      "words": [
+        {
+          "bn": "অনুবাদ",
+          "pronunciation": "onubad",
+          "en": "translation"
+        },
+        {
+          "bn": "করুন",
+          "pronunciation": "korun",
+          "en": "please do"
+        },
+        {
+          "bn": "আমরা",
+          "pronunciation": "amra",
+          "en": "we"
+        },
+        {
+          "bn": "সকালে",
+          "pronunciation": "shokale",
+          "en": "in the morning"
+        },
+        {
+          "bn": "স্কুলে",
+          "pronunciation": "skule",
+          "en": "to school"
+        },
+        {
+          "bn": "যাই",
+          "pronunciation": "jai",
+          "en": "go"
+        }
+      ]
+    },
+    {
+      "bn": "অনুবাদ করুন: “সে প্রতিদিন এখানে আসে।”",
+      "pronunciation": "onubad korun: shey protidin ekhane ashe",
+      "en": "Translate: “He or she comes here every day.”",
+      "context": "Translate the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "সে প্রতিদিন এখানে আসে।",
+      "words": [
+        {
+          "bn": "অনুবাদ",
+          "pronunciation": "onubad",
+          "en": "translation"
+        },
+        {
+          "bn": "করুন",
+          "pronunciation": "korun",
+          "en": "please do"
+        },
+        {
+          "bn": "সে",
+          "pronunciation": "shey",
+          "en": "he / she"
+        },
+        {
+          "bn": "প্রতিদিন",
+          "pronunciation": "protidin",
+          "en": "every day"
+        },
+        {
+          "bn": "এখানে",
+          "pronunciation": "ekhane",
+          "en": "here"
+        },
+        {
+          "bn": "আসে",
+          "pronunciation": "ashe",
+          "en": "comes"
+        }
+      ]
+    },
+    {
+      "bn": "অনুবাদ করুন: “আমি দুপুরে ভাত খাই।”",
+      "pronunciation": "onubad korun: ami dupure bhat khai",
+      "en": "Translate: “I eat rice at noon.”",
+      "context": "Translate the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "আমি দুপুরে ভাত খাই।",
+      "words": [
+        {
+          "bn": "অনুবাদ",
+          "pronunciation": "onubad",
+          "en": "translation"
+        },
+        {
+          "bn": "করুন",
+          "pronunciation": "korun",
+          "en": "please do"
+        },
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "দুপুরে",
+          "pronunciation": "dupure",
+          "en": "at noon"
+        },
+        {
+          "bn": "ভাত",
+          "pronunciation": "bhat",
+          "en": "rice"
+        },
+        {
+          "bn": "খাই",
+          "pronunciation": "khai",
+          "en": "eat"
+        }
+      ]
+    },
+    {
+      "bn": "অনুবাদ করুন: “আমি জানালা দিয়ে আকাশ দেখি।”",
+      "pronunciation": "onubad korun: ami janala diye akash dekhi",
+      "en": "Translate: “I see the sky through the window.”",
+      "context": "Translate the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "আমি জানালা দিয়ে আকাশ দেখি।",
+      "words": [
+        {
+          "bn": "অনুবাদ",
+          "pronunciation": "onubad",
+          "en": "translation"
+        },
+        {
+          "bn": "করুন",
+          "pronunciation": "korun",
+          "en": "please do"
+        },
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "জানালা",
+          "pronunciation": "janala",
+          "en": "window"
+        },
+        {
+          "bn": "দিয়ে",
+          "pronunciation": "diye",
+          "en": "through / with"
+        },
+        {
+          "bn": "আকাশ",
+          "pronunciation": "akash",
+          "en": "sky"
+        },
+        {
+          "bn": "দেখি",
+          "pronunciation": "dekhi",
+          "en": "see"
+        }
+      ]
+    },
+    {
+      "bn": "অনুবাদ করুন: “তিনি ধীরে কথা বলেন।”",
+      "pronunciation": "onubad korun: tini dhire kotha bolen",
+      "en": "Translate: “He or she speaks slowly.”",
+      "context": "Translate the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "তিনি ধীরে কথা বলেন।",
+      "words": [
+        {
+          "bn": "অনুবাদ",
+          "pronunciation": "onubad",
+          "en": "translation"
+        },
+        {
+          "bn": "করুন",
+          "pronunciation": "korun",
+          "en": "please do"
+        },
+        {
+          "bn": "তিনি",
+          "pronunciation": "tini",
+          "en": "he / she (respectful)"
+        },
+        {
+          "bn": "ধীরে",
+          "pronunciation": "dhire",
+          "en": "slowly"
+        },
+        {
+          "bn": "কথা",
+          "pronunciation": "kotha",
+          "en": "speech / words"
+        },
+        {
+          "bn": "বলেন",
+          "pronunciation": "bolen",
+          "en": "says (respectful)"
+        }
+      ]
+    },
+    {
+      "bn": "অনুবাদ করুন: “আমি সকালে গান শুনি।”",
+      "pronunciation": "onubad korun: ami shokale gan shuni",
+      "en": "Translate: “I listen to music in the morning.”",
+      "context": "Translate the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "আমি সকালে গান শুনি।",
+      "words": [
+        {
+          "bn": "অনুবাদ",
+          "pronunciation": "onubad",
+          "en": "translation"
+        },
+        {
+          "bn": "করুন",
+          "pronunciation": "korun",
+          "en": "please do"
+        },
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "সকালে",
+          "pronunciation": "shokale",
+          "en": "in the morning"
+        },
+        {
+          "bn": "গান",
+          "pronunciation": "gan",
+          "en": "song / music"
+        },
+        {
+          "bn": "শুনি",
+          "pronunciation": "shuni",
+          "en": "listen"
+        }
+      ]
+    },
+    {
+      "bn": "অনুবাদ করুন: “আমি রাতে বই পড়ি।”",
+      "pronunciation": "onubad korun: ami rate boi pori",
+      "en": "Translate: “I read a book at night.”",
+      "context": "Translate the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "আমি রাতে বই পড়ি।",
+      "words": [
+        {
+          "bn": "অনুবাদ",
+          "pronunciation": "onubad",
+          "en": "translation"
+        },
+        {
+          "bn": "করুন",
+          "pronunciation": "korun",
+          "en": "please do"
+        },
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "রাতে",
+          "pronunciation": "rate",
+          "en": "at night"
+        },
+        {
+          "bn": "বই",
+          "pronunciation": "boi",
+          "en": "book"
+        },
+        {
+          "bn": "পড়ি",
+          "pronunciation": "pori",
+          "en": "read"
+        }
+      ]
+    },
+    {
+      "bn": "অনুবাদ করুন: “সে বাংলায় চিঠি লেখে।”",
+      "pronunciation": "onubad korun: shey Banglay chithi lekhe",
+      "en": "Translate: “He or she writes a letter in Bengali.”",
+      "context": "Translate the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "সে বাংলায় চিঠি লেখে।",
+      "words": [
+        {
+          "bn": "অনুবাদ",
+          "pronunciation": "onubad",
+          "en": "translation"
+        },
+        {
+          "bn": "করুন",
+          "pronunciation": "korun",
+          "en": "please do"
+        },
+        {
+          "bn": "সে",
+          "pronunciation": "shey",
+          "en": "he / she"
+        },
+        {
+          "bn": "বাংলায়",
+          "pronunciation": "Banglay",
+          "en": "in Bengali"
+        },
+        {
+          "bn": "চিঠি",
+          "pronunciation": "chithi",
+          "en": "letter"
+        },
+        {
+          "bn": "লেখে",
+          "pronunciation": "lekhe",
+          "en": "writes"
+        }
+      ]
+    },
+    {
+      "bn": "অনুবাদ করুন: “আমি দোকান থেকে ফল নিই।”",
+      "pronunciation": "onubad korun: ami dokan theke fol nii",
+      "en": "Translate: “I take fruit from the shop.”",
+      "context": "Translate the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "আমি দোকান থেকে ফল নিই।",
+      "words": [
+        {
+          "bn": "অনুবাদ",
+          "pronunciation": "onubad",
+          "en": "translation"
+        },
+        {
+          "bn": "করুন",
+          "pronunciation": "korun",
+          "en": "please do"
+        },
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "দোকান",
+          "pronunciation": "dokan",
+          "en": "shop"
+        },
+        {
+          "bn": "থেকে",
+          "pronunciation": "theke",
+          "en": "from"
+        },
+        {
+          "bn": "ফল",
+          "pronunciation": "fol",
+          "en": "fruit"
+        },
+        {
+          "bn": "নিই",
+          "pronunciation": "nii",
+          "en": "take"
+        }
+      ]
+    },
+    {
+      "bn": "অনুবাদ করুন: “মা আমাকে একটি বই দেন।”",
+      "pronunciation": "onubad korun: ma amake ekti boi den",
+      "en": "Translate: “Mother gives me a book.”",
+      "context": "Translate the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "মা আমাকে একটি বই দেন।",
+      "words": [
+        {
+          "bn": "অনুবাদ",
+          "pronunciation": "onubad",
+          "en": "translation"
+        },
+        {
+          "bn": "করুন",
+          "pronunciation": "korun",
+          "en": "please do"
+        },
+        {
+          "bn": "মা",
+          "pronunciation": "ma",
+          "en": "mother"
+        },
+        {
+          "bn": "আমাকে",
+          "pronunciation": "amake",
+          "en": "me"
+        },
+        {
+          "bn": "একটি",
+          "pronunciation": "ekti",
+          "en": "one / a"
+        },
+        {
+          "bn": "বই",
+          "pronunciation": "boi",
+          "en": "book"
+        },
+        {
+          "bn": "দেন",
+          "pronunciation": "den",
+          "en": "gives"
+        }
+      ]
+    },
+    {
+      "bn": "মনে রাখুন: “আমি প্রতিদিন ব্যায়াম করি।”",
+      "pronunciation": "mone rakhun: ami protidin byayam kori",
+      "en": "Remember: “I exercise every day.”",
+      "context": "Remember the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "আমি প্রতিদিন ব্যায়াম করি।",
+      "words": [
+        {
+          "bn": "মনে",
+          "pronunciation": "mone",
+          "en": "in mind"
+        },
+        {
+          "bn": "রাখুন",
+          "pronunciation": "rakhun",
+          "en": "remember"
+        },
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "প্রতিদিন",
+          "pronunciation": "protidin",
+          "en": "every day"
+        },
+        {
+          "bn": "ব্যায়াম",
+          "pronunciation": "byayam",
+          "en": "exercise"
+        },
+        {
+          "bn": "করি",
+          "pronunciation": "kori",
+          "en": "do"
+        }
+      ]
+    },
+    {
+      "bn": "মনে রাখুন: “আমি ডাক্তার হতে চাই।”",
+      "pronunciation": "mone rakhun: ami daktar hote chai",
+      "en": "Remember: “I want to become a doctor.”",
+      "context": "Remember the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "আমি ডাক্তার হতে চাই।",
+      "words": [
+        {
+          "bn": "মনে",
+          "pronunciation": "mone",
+          "en": "in mind"
+        },
+        {
+          "bn": "রাখুন",
+          "pronunciation": "rakhun",
+          "en": "remember"
+        },
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "ডাক্তার",
+          "pronunciation": "daktar",
+          "en": "doctor"
+        },
+        {
+          "bn": "হতে",
+          "pronunciation": "hote",
+          "en": "to become"
+        },
+        {
+          "bn": "চাই",
+          "pronunciation": "chai",
+          "en": "want"
+        }
+      ]
+    },
+    {
+      "bn": "মনে রাখুন: “আমরা সকালে স্কুলে যাই।”",
+      "pronunciation": "mone rakhun: amra shokale skule jai",
+      "en": "Remember: “We go to school in the morning.”",
+      "context": "Remember the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "আমরা সকালে স্কুলে যাই।",
+      "words": [
+        {
+          "bn": "মনে",
+          "pronunciation": "mone",
+          "en": "in mind"
+        },
+        {
+          "bn": "রাখুন",
+          "pronunciation": "rakhun",
+          "en": "remember"
+        },
+        {
+          "bn": "আমরা",
+          "pronunciation": "amra",
+          "en": "we"
+        },
+        {
+          "bn": "সকালে",
+          "pronunciation": "shokale",
+          "en": "in the morning"
+        },
+        {
+          "bn": "স্কুলে",
+          "pronunciation": "skule",
+          "en": "to school"
+        },
+        {
+          "bn": "যাই",
+          "pronunciation": "jai",
+          "en": "go"
+        }
+      ]
+    },
+    {
+      "bn": "মনে রাখুন: “সে প্রতিদিন এখানে আসে।”",
+      "pronunciation": "mone rakhun: shey protidin ekhane ashe",
+      "en": "Remember: “He or she comes here every day.”",
+      "context": "Remember the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "সে প্রতিদিন এখানে আসে।",
+      "words": [
+        {
+          "bn": "মনে",
+          "pronunciation": "mone",
+          "en": "in mind"
+        },
+        {
+          "bn": "রাখুন",
+          "pronunciation": "rakhun",
+          "en": "remember"
+        },
+        {
+          "bn": "সে",
+          "pronunciation": "shey",
+          "en": "he / she"
+        },
+        {
+          "bn": "প্রতিদিন",
+          "pronunciation": "protidin",
+          "en": "every day"
+        },
+        {
+          "bn": "এখানে",
+          "pronunciation": "ekhane",
+          "en": "here"
+        },
+        {
+          "bn": "আসে",
+          "pronunciation": "ashe",
+          "en": "comes"
+        }
+      ]
+    },
+    {
+      "bn": "মনে রাখুন: “আমি দুপুরে ভাত খাই।”",
+      "pronunciation": "mone rakhun: ami dupure bhat khai",
+      "en": "Remember: “I eat rice at noon.”",
+      "context": "Remember the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "আমি দুপুরে ভাত খাই।",
+      "words": [
+        {
+          "bn": "মনে",
+          "pronunciation": "mone",
+          "en": "in mind"
+        },
+        {
+          "bn": "রাখুন",
+          "pronunciation": "rakhun",
+          "en": "remember"
+        },
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "দুপুরে",
+          "pronunciation": "dupure",
+          "en": "at noon"
+        },
+        {
+          "bn": "ভাত",
+          "pronunciation": "bhat",
+          "en": "rice"
+        },
+        {
+          "bn": "খাই",
+          "pronunciation": "khai",
+          "en": "eat"
+        }
+      ]
+    },
+    {
+      "bn": "মনে রাখুন: “আমি জানালা দিয়ে আকাশ দেখি।”",
+      "pronunciation": "mone rakhun: ami janala diye akash dekhi",
+      "en": "Remember: “I see the sky through the window.”",
+      "context": "Remember the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "আমি জানালা দিয়ে আকাশ দেখি।",
+      "words": [
+        {
+          "bn": "মনে",
+          "pronunciation": "mone",
+          "en": "in mind"
+        },
+        {
+          "bn": "রাখুন",
+          "pronunciation": "rakhun",
+          "en": "remember"
+        },
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "জানালা",
+          "pronunciation": "janala",
+          "en": "window"
+        },
+        {
+          "bn": "দিয়ে",
+          "pronunciation": "diye",
+          "en": "through / with"
+        },
+        {
+          "bn": "আকাশ",
+          "pronunciation": "akash",
+          "en": "sky"
+        },
+        {
+          "bn": "দেখি",
+          "pronunciation": "dekhi",
+          "en": "see"
+        }
+      ]
+    },
+    {
+      "bn": "মনে রাখুন: “তিনি ধীরে কথা বলেন।”",
+      "pronunciation": "mone rakhun: tini dhire kotha bolen",
+      "en": "Remember: “He or she speaks slowly.”",
+      "context": "Remember the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "তিনি ধীরে কথা বলেন।",
+      "words": [
+        {
+          "bn": "মনে",
+          "pronunciation": "mone",
+          "en": "in mind"
+        },
+        {
+          "bn": "রাখুন",
+          "pronunciation": "rakhun",
+          "en": "remember"
+        },
+        {
+          "bn": "তিনি",
+          "pronunciation": "tini",
+          "en": "he / she (respectful)"
+        },
+        {
+          "bn": "ধীরে",
+          "pronunciation": "dhire",
+          "en": "slowly"
+        },
+        {
+          "bn": "কথা",
+          "pronunciation": "kotha",
+          "en": "speech / words"
+        },
+        {
+          "bn": "বলেন",
+          "pronunciation": "bolen",
+          "en": "says (respectful)"
+        }
+      ]
+    },
+    {
+      "bn": "মনে রাখুন: “আমি সকালে গান শুনি।”",
+      "pronunciation": "mone rakhun: ami shokale gan shuni",
+      "en": "Remember: “I listen to music in the morning.”",
+      "context": "Remember the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "আমি সকালে গান শুনি।",
+      "words": [
+        {
+          "bn": "মনে",
+          "pronunciation": "mone",
+          "en": "in mind"
+        },
+        {
+          "bn": "রাখুন",
+          "pronunciation": "rakhun",
+          "en": "remember"
+        },
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "সকালে",
+          "pronunciation": "shokale",
+          "en": "in the morning"
+        },
+        {
+          "bn": "গান",
+          "pronunciation": "gan",
+          "en": "song / music"
+        },
+        {
+          "bn": "শুনি",
+          "pronunciation": "shuni",
+          "en": "listen"
+        }
+      ]
+    },
+    {
+      "bn": "মনে রাখুন: “আমি রাতে বই পড়ি।”",
+      "pronunciation": "mone rakhun: ami rate boi pori",
+      "en": "Remember: “I read a book at night.”",
+      "context": "Remember the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "আমি রাতে বই পড়ি।",
+      "words": [
+        {
+          "bn": "মনে",
+          "pronunciation": "mone",
+          "en": "in mind"
+        },
+        {
+          "bn": "রাখুন",
+          "pronunciation": "rakhun",
+          "en": "remember"
+        },
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "রাতে",
+          "pronunciation": "rate",
+          "en": "at night"
+        },
+        {
+          "bn": "বই",
+          "pronunciation": "boi",
+          "en": "book"
+        },
+        {
+          "bn": "পড়ি",
+          "pronunciation": "pori",
+          "en": "read"
+        }
+      ]
+    },
+    {
+      "bn": "মনে রাখুন: “সে বাংলায় চিঠি লেখে।”",
+      "pronunciation": "mone rakhun: shey Banglay chithi lekhe",
+      "en": "Remember: “He or she writes a letter in Bengali.”",
+      "context": "Remember the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "সে বাংলায় চিঠি লেখে।",
+      "words": [
+        {
+          "bn": "মনে",
+          "pronunciation": "mone",
+          "en": "in mind"
+        },
+        {
+          "bn": "রাখুন",
+          "pronunciation": "rakhun",
+          "en": "remember"
+        },
+        {
+          "bn": "সে",
+          "pronunciation": "shey",
+          "en": "he / she"
+        },
+        {
+          "bn": "বাংলায়",
+          "pronunciation": "Banglay",
+          "en": "in Bengali"
+        },
+        {
+          "bn": "চিঠি",
+          "pronunciation": "chithi",
+          "en": "letter"
+        },
+        {
+          "bn": "লেখে",
+          "pronunciation": "lekhe",
+          "en": "writes"
+        }
+      ]
+    },
+    {
+      "bn": "মনে রাখুন: “আমি দোকান থেকে ফল নিই।”",
+      "pronunciation": "mone rakhun: ami dokan theke fol nii",
+      "en": "Remember: “I take fruit from the shop.”",
+      "context": "Remember the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "আমি দোকান থেকে ফল নিই।",
+      "words": [
+        {
+          "bn": "মনে",
+          "pronunciation": "mone",
+          "en": "in mind"
+        },
+        {
+          "bn": "রাখুন",
+          "pronunciation": "rakhun",
+          "en": "remember"
+        },
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "দোকান",
+          "pronunciation": "dokan",
+          "en": "shop"
+        },
+        {
+          "bn": "থেকে",
+          "pronunciation": "theke",
+          "en": "from"
+        },
+        {
+          "bn": "ফল",
+          "pronunciation": "fol",
+          "en": "fruit"
+        },
+        {
+          "bn": "নিই",
+          "pronunciation": "nii",
+          "en": "take"
+        }
+      ]
+    },
+    {
+      "bn": "মনে রাখুন: “মা আমাকে একটি বই দেন।”",
+      "pronunciation": "mone rakhun: ma amake ekti boi den",
+      "en": "Remember: “Mother gives me a book.”",
+      "context": "Remember the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "মা আমাকে একটি বই দেন।",
+      "words": [
+        {
+          "bn": "মনে",
+          "pronunciation": "mone",
+          "en": "in mind"
+        },
+        {
+          "bn": "রাখুন",
+          "pronunciation": "rakhun",
+          "en": "remember"
+        },
+        {
+          "bn": "মা",
+          "pronunciation": "ma",
+          "en": "mother"
+        },
+        {
+          "bn": "আমাকে",
+          "pronunciation": "amake",
+          "en": "me"
+        },
+        {
+          "bn": "একটি",
+          "pronunciation": "ekti",
+          "en": "one / a"
+        },
+        {
+          "bn": "বই",
+          "pronunciation": "boi",
+          "en": "book"
+        },
+        {
+          "bn": "দেন",
+          "pronunciation": "den",
+          "en": "gives"
+        }
+      ]
+    },
+    {
+      "bn": "আবার বলুন: “আমি প্রতিদিন ব্যায়াম করি।”",
+      "pronunciation": "abar bolun: ami protidin byayam kori",
+      "en": "Say again: “I exercise every day.”",
+      "context": "Say again the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "আমি প্রতিদিন ব্যায়াম করি।",
+      "words": [
+        {
+          "bn": "আবার",
+          "pronunciation": "abar",
+          "en": "again"
+        },
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "প্রতিদিন",
+          "pronunciation": "protidin",
+          "en": "every day"
+        },
+        {
+          "bn": "ব্যায়াম",
+          "pronunciation": "byayam",
+          "en": "exercise"
+        },
+        {
+          "bn": "করি",
+          "pronunciation": "kori",
+          "en": "do"
+        }
+      ]
+    },
+    {
+      "bn": "আবার বলুন: “আমি ডাক্তার হতে চাই।”",
+      "pronunciation": "abar bolun: ami daktar hote chai",
+      "en": "Say again: “I want to become a doctor.”",
+      "context": "Say again the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "আমি ডাক্তার হতে চাই।",
+      "words": [
+        {
+          "bn": "আবার",
+          "pronunciation": "abar",
+          "en": "again"
+        },
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "ডাক্তার",
+          "pronunciation": "daktar",
+          "en": "doctor"
+        },
+        {
+          "bn": "হতে",
+          "pronunciation": "hote",
+          "en": "to become"
+        },
+        {
+          "bn": "চাই",
+          "pronunciation": "chai",
+          "en": "want"
+        }
+      ]
+    },
+    {
+      "bn": "আবার বলুন: “আমরা সকালে স্কুলে যাই।”",
+      "pronunciation": "abar bolun: amra shokale skule jai",
+      "en": "Say again: “We go to school in the morning.”",
+      "context": "Say again the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "আমরা সকালে স্কুলে যাই।",
+      "words": [
+        {
+          "bn": "আবার",
+          "pronunciation": "abar",
+          "en": "again"
+        },
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "আমরা",
+          "pronunciation": "amra",
+          "en": "we"
+        },
+        {
+          "bn": "সকালে",
+          "pronunciation": "shokale",
+          "en": "in the morning"
+        },
+        {
+          "bn": "স্কুলে",
+          "pronunciation": "skule",
+          "en": "to school"
+        },
+        {
+          "bn": "যাই",
+          "pronunciation": "jai",
+          "en": "go"
+        }
+      ]
+    },
+    {
+      "bn": "আবার বলুন: “সে প্রতিদিন এখানে আসে।”",
+      "pronunciation": "abar bolun: shey protidin ekhane ashe",
+      "en": "Say again: “He or she comes here every day.”",
+      "context": "Say again the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "সে প্রতিদিন এখানে আসে।",
+      "words": [
+        {
+          "bn": "আবার",
+          "pronunciation": "abar",
+          "en": "again"
+        },
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "সে",
+          "pronunciation": "shey",
+          "en": "he / she"
+        },
+        {
+          "bn": "প্রতিদিন",
+          "pronunciation": "protidin",
+          "en": "every day"
+        },
+        {
+          "bn": "এখানে",
+          "pronunciation": "ekhane",
+          "en": "here"
+        },
+        {
+          "bn": "আসে",
+          "pronunciation": "ashe",
+          "en": "comes"
+        }
+      ]
+    },
+    {
+      "bn": "আবার বলুন: “আমি দুপুরে ভাত খাই।”",
+      "pronunciation": "abar bolun: ami dupure bhat khai",
+      "en": "Say again: “I eat rice at noon.”",
+      "context": "Say again the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "আমি দুপুরে ভাত খাই।",
+      "words": [
+        {
+          "bn": "আবার",
+          "pronunciation": "abar",
+          "en": "again"
+        },
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "দুপুরে",
+          "pronunciation": "dupure",
+          "en": "at noon"
+        },
+        {
+          "bn": "ভাত",
+          "pronunciation": "bhat",
+          "en": "rice"
+        },
+        {
+          "bn": "খাই",
+          "pronunciation": "khai",
+          "en": "eat"
+        }
+      ]
+    },
+    {
+      "bn": "আবার বলুন: “আমি জানালা দিয়ে আকাশ দেখি।”",
+      "pronunciation": "abar bolun: ami janala diye akash dekhi",
+      "en": "Say again: “I see the sky through the window.”",
+      "context": "Say again the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "আমি জানালা দিয়ে আকাশ দেখি।",
+      "words": [
+        {
+          "bn": "আবার",
+          "pronunciation": "abar",
+          "en": "again"
+        },
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "জানালা",
+          "pronunciation": "janala",
+          "en": "window"
+        },
+        {
+          "bn": "দিয়ে",
+          "pronunciation": "diye",
+          "en": "through / with"
+        },
+        {
+          "bn": "আকাশ",
+          "pronunciation": "akash",
+          "en": "sky"
+        },
+        {
+          "bn": "দেখি",
+          "pronunciation": "dekhi",
+          "en": "see"
+        }
+      ]
+    },
+    {
+      "bn": "আবার বলুন: “তিনি ধীরে কথা বলেন।”",
+      "pronunciation": "abar bolun: tini dhire kotha bolen",
+      "en": "Say again: “He or she speaks slowly.”",
+      "context": "Say again the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "তিনি ধীরে কথা বলেন।",
+      "words": [
+        {
+          "bn": "আবার",
+          "pronunciation": "abar",
+          "en": "again"
+        },
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "তিনি",
+          "pronunciation": "tini",
+          "en": "he / she (respectful)"
+        },
+        {
+          "bn": "ধীরে",
+          "pronunciation": "dhire",
+          "en": "slowly"
+        },
+        {
+          "bn": "কথা",
+          "pronunciation": "kotha",
+          "en": "speech / words"
+        },
+        {
+          "bn": "বলেন",
+          "pronunciation": "bolen",
+          "en": "says (respectful)"
+        }
+      ]
+    },
+    {
+      "bn": "আবার বলুন: “আমি সকালে গান শুনি।”",
+      "pronunciation": "abar bolun: ami shokale gan shuni",
+      "en": "Say again: “I listen to music in the morning.”",
+      "context": "Say again the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "আমি সকালে গান শুনি।",
+      "words": [
+        {
+          "bn": "আবার",
+          "pronunciation": "abar",
+          "en": "again"
+        },
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "সকালে",
+          "pronunciation": "shokale",
+          "en": "in the morning"
+        },
+        {
+          "bn": "গান",
+          "pronunciation": "gan",
+          "en": "song / music"
+        },
+        {
+          "bn": "শুনি",
+          "pronunciation": "shuni",
+          "en": "listen"
+        }
+      ]
+    },
+    {
+      "bn": "আবার বলুন: “আমি রাতে বই পড়ি।”",
+      "pronunciation": "abar bolun: ami rate boi pori",
+      "en": "Say again: “I read a book at night.”",
+      "context": "Say again the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "আমি রাতে বই পড়ি।",
+      "words": [
+        {
+          "bn": "আবার",
+          "pronunciation": "abar",
+          "en": "again"
+        },
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "রাতে",
+          "pronunciation": "rate",
+          "en": "at night"
+        },
+        {
+          "bn": "বই",
+          "pronunciation": "boi",
+          "en": "book"
+        },
+        {
+          "bn": "পড়ি",
+          "pronunciation": "pori",
+          "en": "read"
+        }
+      ]
+    },
+    {
+      "bn": "আবার বলুন: “সে বাংলায় চিঠি লেখে।”",
+      "pronunciation": "abar bolun: shey Banglay chithi lekhe",
+      "en": "Say again: “He or she writes a letter in Bengali.”",
+      "context": "Say again the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "সে বাংলায় চিঠি লেখে।",
+      "words": [
+        {
+          "bn": "আবার",
+          "pronunciation": "abar",
+          "en": "again"
+        },
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "সে",
+          "pronunciation": "shey",
+          "en": "he / she"
+        },
+        {
+          "bn": "বাংলায়",
+          "pronunciation": "Banglay",
+          "en": "in Bengali"
+        },
+        {
+          "bn": "চিঠি",
+          "pronunciation": "chithi",
+          "en": "letter"
+        },
+        {
+          "bn": "লেখে",
+          "pronunciation": "lekhe",
+          "en": "writes"
+        }
+      ]
+    },
+    {
+      "bn": "আবার বলুন: “আমি দোকান থেকে ফল নিই।”",
+      "pronunciation": "abar bolun: ami dokan theke fol nii",
+      "en": "Say again: “I take fruit from the shop.”",
+      "context": "Say again the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "আমি দোকান থেকে ফল নিই।",
+      "words": [
+        {
+          "bn": "আবার",
+          "pronunciation": "abar",
+          "en": "again"
+        },
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "দোকান",
+          "pronunciation": "dokan",
+          "en": "shop"
+        },
+        {
+          "bn": "থেকে",
+          "pronunciation": "theke",
+          "en": "from"
+        },
+        {
+          "bn": "ফল",
+          "pronunciation": "fol",
+          "en": "fruit"
+        },
+        {
+          "bn": "নিই",
+          "pronunciation": "nii",
+          "en": "take"
+        }
+      ]
+    },
+    {
+      "bn": "আবার বলুন: “মা আমাকে একটি বই দেন।”",
+      "pronunciation": "abar bolun: ma amake ekti boi den",
+      "en": "Say again: “Mother gives me a book.”",
+      "context": "Say again the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "মা আমাকে একটি বই দেন।",
+      "words": [
+        {
+          "bn": "আবার",
+          "pronunciation": "abar",
+          "en": "again"
+        },
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "মা",
+          "pronunciation": "ma",
+          "en": "mother"
+        },
+        {
+          "bn": "আমাকে",
+          "pronunciation": "amake",
+          "en": "me"
+        },
+        {
+          "bn": "একটি",
+          "pronunciation": "ekti",
+          "en": "one / a"
+        },
+        {
+          "bn": "বই",
+          "pronunciation": "boi",
+          "en": "book"
+        },
+        {
+          "bn": "দেন",
+          "pronunciation": "den",
+          "en": "gives"
+        }
+      ]
+    },
+    {
+      "bn": "ধীরে বলুন: “আমি প্রতিদিন ব্যায়াম করি।”",
+      "pronunciation": "dhire bolun: ami protidin byayam kori",
+      "en": "Say slowly: “I exercise every day.”",
+      "context": "Say slowly the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "আমি প্রতিদিন ব্যায়াম করি।",
+      "words": [
+        {
+          "bn": "ধীরে",
+          "pronunciation": "dhire",
+          "en": "slowly"
+        },
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "প্রতিদিন",
+          "pronunciation": "protidin",
+          "en": "every day"
+        },
+        {
+          "bn": "ব্যায়াম",
+          "pronunciation": "byayam",
+          "en": "exercise"
+        },
+        {
+          "bn": "করি",
+          "pronunciation": "kori",
+          "en": "do"
+        }
+      ]
+    },
+    {
+      "bn": "ধীরে বলুন: “আমি ডাক্তার হতে চাই।”",
+      "pronunciation": "dhire bolun: ami daktar hote chai",
+      "en": "Say slowly: “I want to become a doctor.”",
+      "context": "Say slowly the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "আমি ডাক্তার হতে চাই।",
+      "words": [
+        {
+          "bn": "ধীরে",
+          "pronunciation": "dhire",
+          "en": "slowly"
+        },
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "ডাক্তার",
+          "pronunciation": "daktar",
+          "en": "doctor"
+        },
+        {
+          "bn": "হতে",
+          "pronunciation": "hote",
+          "en": "to become"
+        },
+        {
+          "bn": "চাই",
+          "pronunciation": "chai",
+          "en": "want"
+        }
+      ]
+    },
+    {
+      "bn": "ধীরে বলুন: “আমরা সকালে স্কুলে যাই।”",
+      "pronunciation": "dhire bolun: amra shokale skule jai",
+      "en": "Say slowly: “We go to school in the morning.”",
+      "context": "Say slowly the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "আমরা সকালে স্কুলে যাই।",
+      "words": [
+        {
+          "bn": "ধীরে",
+          "pronunciation": "dhire",
+          "en": "slowly"
+        },
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "আমরা",
+          "pronunciation": "amra",
+          "en": "we"
+        },
+        {
+          "bn": "সকালে",
+          "pronunciation": "shokale",
+          "en": "in the morning"
+        },
+        {
+          "bn": "স্কুলে",
+          "pronunciation": "skule",
+          "en": "to school"
+        },
+        {
+          "bn": "যাই",
+          "pronunciation": "jai",
+          "en": "go"
+        }
+      ]
+    },
+    {
+      "bn": "ধীরে বলুন: “সে প্রতিদিন এখানে আসে।”",
+      "pronunciation": "dhire bolun: shey protidin ekhane ashe",
+      "en": "Say slowly: “He or she comes here every day.”",
+      "context": "Say slowly the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "সে প্রতিদিন এখানে আসে।",
+      "words": [
+        {
+          "bn": "ধীরে",
+          "pronunciation": "dhire",
+          "en": "slowly"
+        },
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "সে",
+          "pronunciation": "shey",
+          "en": "he / she"
+        },
+        {
+          "bn": "প্রতিদিন",
+          "pronunciation": "protidin",
+          "en": "every day"
+        },
+        {
+          "bn": "এখানে",
+          "pronunciation": "ekhane",
+          "en": "here"
+        },
+        {
+          "bn": "আসে",
+          "pronunciation": "ashe",
+          "en": "comes"
+        }
+      ]
+    },
+    {
+      "bn": "ধীরে বলুন: “আমি দুপুরে ভাত খাই।”",
+      "pronunciation": "dhire bolun: ami dupure bhat khai",
+      "en": "Say slowly: “I eat rice at noon.”",
+      "context": "Say slowly the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "আমি দুপুরে ভাত খাই।",
+      "words": [
+        {
+          "bn": "ধীরে",
+          "pronunciation": "dhire",
+          "en": "slowly"
+        },
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "দুপুরে",
+          "pronunciation": "dupure",
+          "en": "at noon"
+        },
+        {
+          "bn": "ভাত",
+          "pronunciation": "bhat",
+          "en": "rice"
+        },
+        {
+          "bn": "খাই",
+          "pronunciation": "khai",
+          "en": "eat"
+        }
+      ]
+    },
+    {
+      "bn": "ধীরে বলুন: “আমি জানালা দিয়ে আকাশ দেখি।”",
+      "pronunciation": "dhire bolun: ami janala diye akash dekhi",
+      "en": "Say slowly: “I see the sky through the window.”",
+      "context": "Say slowly the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "আমি জানালা দিয়ে আকাশ দেখি।",
+      "words": [
+        {
+          "bn": "ধীরে",
+          "pronunciation": "dhire",
+          "en": "slowly"
+        },
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "জানালা",
+          "pronunciation": "janala",
+          "en": "window"
+        },
+        {
+          "bn": "দিয়ে",
+          "pronunciation": "diye",
+          "en": "through / with"
+        },
+        {
+          "bn": "আকাশ",
+          "pronunciation": "akash",
+          "en": "sky"
+        },
+        {
+          "bn": "দেখি",
+          "pronunciation": "dekhi",
+          "en": "see"
+        }
+      ]
+    },
+    {
+      "bn": "ধীরে বলুন: “তিনি ধীরে কথা বলেন।”",
+      "pronunciation": "dhire bolun: tini dhire kotha bolen",
+      "en": "Say slowly: “He or she speaks slowly.”",
+      "context": "Say slowly the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "তিনি ধীরে কথা বলেন।",
+      "words": [
+        {
+          "bn": "ধীরে",
+          "pronunciation": "dhire",
+          "en": "slowly"
+        },
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "তিনি",
+          "pronunciation": "tini",
+          "en": "he / she (respectful)"
+        },
+        {
+          "bn": "ধীরে",
+          "pronunciation": "dhire",
+          "en": "slowly"
+        },
+        {
+          "bn": "কথা",
+          "pronunciation": "kotha",
+          "en": "speech / words"
+        },
+        {
+          "bn": "বলেন",
+          "pronunciation": "bolen",
+          "en": "says (respectful)"
+        }
+      ]
+    },
+    {
+      "bn": "ধীরে বলুন: “আমি সকালে গান শুনি।”",
+      "pronunciation": "dhire bolun: ami shokale gan shuni",
+      "en": "Say slowly: “I listen to music in the morning.”",
+      "context": "Say slowly the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "আমি সকালে গান শুনি।",
+      "words": [
+        {
+          "bn": "ধীরে",
+          "pronunciation": "dhire",
+          "en": "slowly"
+        },
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "সকালে",
+          "pronunciation": "shokale",
+          "en": "in the morning"
+        },
+        {
+          "bn": "গান",
+          "pronunciation": "gan",
+          "en": "song / music"
+        },
+        {
+          "bn": "শুনি",
+          "pronunciation": "shuni",
+          "en": "listen"
+        }
+      ]
+    },
+    {
+      "bn": "ধীরে বলুন: “আমি রাতে বই পড়ি।”",
+      "pronunciation": "dhire bolun: ami rate boi pori",
+      "en": "Say slowly: “I read a book at night.”",
+      "context": "Say slowly the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "আমি রাতে বই পড়ি।",
+      "words": [
+        {
+          "bn": "ধীরে",
+          "pronunciation": "dhire",
+          "en": "slowly"
+        },
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "রাতে",
+          "pronunciation": "rate",
+          "en": "at night"
+        },
+        {
+          "bn": "বই",
+          "pronunciation": "boi",
+          "en": "book"
+        },
+        {
+          "bn": "পড়ি",
+          "pronunciation": "pori",
+          "en": "read"
+        }
+      ]
+    },
+    {
+      "bn": "ধীরে বলুন: “সে বাংলায় চিঠি লেখে।”",
+      "pronunciation": "dhire bolun: shey Banglay chithi lekhe",
+      "en": "Say slowly: “He or she writes a letter in Bengali.”",
+      "context": "Say slowly the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "সে বাংলায় চিঠি লেখে।",
+      "words": [
+        {
+          "bn": "ধীরে",
+          "pronunciation": "dhire",
+          "en": "slowly"
+        },
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "সে",
+          "pronunciation": "shey",
+          "en": "he / she"
+        },
+        {
+          "bn": "বাংলায়",
+          "pronunciation": "Banglay",
+          "en": "in Bengali"
+        },
+        {
+          "bn": "চিঠি",
+          "pronunciation": "chithi",
+          "en": "letter"
+        },
+        {
+          "bn": "লেখে",
+          "pronunciation": "lekhe",
+          "en": "writes"
+        }
+      ]
+    },
+    {
+      "bn": "ধীরে বলুন: “আমি দোকান থেকে ফল নিই।”",
+      "pronunciation": "dhire bolun: ami dokan theke fol nii",
+      "en": "Say slowly: “I take fruit from the shop.”",
+      "context": "Say slowly the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "আমি দোকান থেকে ফল নিই।",
+      "words": [
+        {
+          "bn": "ধীরে",
+          "pronunciation": "dhire",
+          "en": "slowly"
+        },
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "দোকান",
+          "pronunciation": "dokan",
+          "en": "shop"
+        },
+        {
+          "bn": "থেকে",
+          "pronunciation": "theke",
+          "en": "from"
+        },
+        {
+          "bn": "ফল",
+          "pronunciation": "fol",
+          "en": "fruit"
+        },
+        {
+          "bn": "নিই",
+          "pronunciation": "nii",
+          "en": "take"
+        }
+      ]
+    },
+    {
+      "bn": "ধীরে বলুন: “মা আমাকে একটি বই দেন।”",
+      "pronunciation": "dhire bolun: ma amake ekti boi den",
+      "en": "Say slowly: “Mother gives me a book.”",
+      "context": "Say slowly the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "মা আমাকে একটি বই দেন।",
+      "words": [
+        {
+          "bn": "ধীরে",
+          "pronunciation": "dhire",
+          "en": "slowly"
+        },
+        {
+          "bn": "বলুন",
+          "pronunciation": "bolun",
+          "en": "say"
+        },
+        {
+          "bn": "মা",
+          "pronunciation": "ma",
+          "en": "mother"
+        },
+        {
+          "bn": "আমাকে",
+          "pronunciation": "amake",
+          "en": "me"
+        },
+        {
+          "bn": "একটি",
+          "pronunciation": "ekti",
+          "en": "one / a"
+        },
+        {
+          "bn": "বই",
+          "pronunciation": "boi",
+          "en": "book"
+        },
+        {
+          "bn": "দেন",
+          "pronunciation": "den",
+          "en": "gives"
+        }
+      ]
+    },
+    {
+      "bn": "মন দিয়ে পড়ুন: “আমি প্রতিদিন ব্যায়াম করি।”",
+      "pronunciation": "mon diye porun: ami protidin byayam kori",
+      "en": "Read carefully: “I exercise every day.”",
+      "context": "Read carefully the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "আমি প্রতিদিন ব্যায়াম করি।",
+      "words": [
+        {
+          "bn": "মন",
+          "pronunciation": "mon",
+          "en": "attention"
+        },
+        {
+          "bn": "দিয়ে",
+          "pronunciation": "diye",
+          "en": "with"
+        },
+        {
+          "bn": "পড়ুন",
+          "pronunciation": "porun",
+          "en": "read"
+        },
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "প্রতিদিন",
+          "pronunciation": "protidin",
+          "en": "every day"
+        },
+        {
+          "bn": "ব্যায়াম",
+          "pronunciation": "byayam",
+          "en": "exercise"
+        },
+        {
+          "bn": "করি",
+          "pronunciation": "kori",
+          "en": "do"
+        }
+      ]
+    },
+    {
+      "bn": "মন দিয়ে পড়ুন: “আমি ডাক্তার হতে চাই।”",
+      "pronunciation": "mon diye porun: ami daktar hote chai",
+      "en": "Read carefully: “I want to become a doctor.”",
+      "context": "Read carefully the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "আমি ডাক্তার হতে চাই।",
+      "words": [
+        {
+          "bn": "মন",
+          "pronunciation": "mon",
+          "en": "attention"
+        },
+        {
+          "bn": "দিয়ে",
+          "pronunciation": "diye",
+          "en": "with"
+        },
+        {
+          "bn": "পড়ুন",
+          "pronunciation": "porun",
+          "en": "read"
+        },
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "ডাক্তার",
+          "pronunciation": "daktar",
+          "en": "doctor"
+        },
+        {
+          "bn": "হতে",
+          "pronunciation": "hote",
+          "en": "to become"
+        },
+        {
+          "bn": "চাই",
+          "pronunciation": "chai",
+          "en": "want"
+        }
+      ]
+    },
+    {
+      "bn": "মন দিয়ে পড়ুন: “আমরা সকালে স্কুলে যাই।”",
+      "pronunciation": "mon diye porun: amra shokale skule jai",
+      "en": "Read carefully: “We go to school in the morning.”",
+      "context": "Read carefully the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "আমরা সকালে স্কুলে যাই।",
+      "words": [
+        {
+          "bn": "মন",
+          "pronunciation": "mon",
+          "en": "attention"
+        },
+        {
+          "bn": "দিয়ে",
+          "pronunciation": "diye",
+          "en": "with"
+        },
+        {
+          "bn": "পড়ুন",
+          "pronunciation": "porun",
+          "en": "read"
+        },
+        {
+          "bn": "আমরা",
+          "pronunciation": "amra",
+          "en": "we"
+        },
+        {
+          "bn": "সকালে",
+          "pronunciation": "shokale",
+          "en": "in the morning"
+        },
+        {
+          "bn": "স্কুলে",
+          "pronunciation": "skule",
+          "en": "to school"
+        },
+        {
+          "bn": "যাই",
+          "pronunciation": "jai",
+          "en": "go"
+        }
+      ]
+    },
+    {
+      "bn": "মন দিয়ে পড়ুন: “সে প্রতিদিন এখানে আসে।”",
+      "pronunciation": "mon diye porun: shey protidin ekhane ashe",
+      "en": "Read carefully: “He or she comes here every day.”",
+      "context": "Read carefully the verbs example aloud",
+      "category": "verbs",
+      "exercise": true,
+      "sourcePhrase": "সে প্রতিদিন এখানে আসে।",
+      "words": [
+        {
+          "bn": "মন",
+          "pronunciation": "mon",
+          "en": "attention"
+        },
+        {
+          "bn": "দিয়ে",
+          "pronunciation": "diye",
+          "en": "with"
+        },
+        {
+          "bn": "পড়ুন",
+          "pronunciation": "porun",
+          "en": "read"
+        },
+        {
+          "bn": "সে",
+          "pronunciation": "shey",
+          "en": "he / she"
+        },
+        {
+          "bn": "প্রতিদিন",
+          "pronunciation": "protidin",
+          "en": "every day"
+        },
+        {
+          "bn": "এখানে",
+          "pronunciation": "ekhane",
+          "en": "here"
+        },
+        {
+          "bn": "আসে",
+          "pronunciation": "ashe",
+          "en": "comes"
+        }
+      ]
     }
   ],
   "vocab": [
@@ -650,6 +4203,426 @@
       "en": "at night",
       "category": "verbs",
       "sourcePhrase": "আমি রাতে বই পড়ি।"
+    },
+    {
+      "bn": "বই",
+      "pronunciation": "boi",
+      "en": "book",
+      "category": "verbs",
+      "sourcePhrase": "আমি রাতে বই পড়ি।"
+    },
+    {
+      "bn": "পড়ি",
+      "pronunciation": "pori",
+      "en": "read",
+      "category": "verbs",
+      "sourcePhrase": "আমি রাতে বই পড়ি।"
+    },
+    {
+      "bn": "বাংলায়",
+      "pronunciation": "Banglay",
+      "en": "in Bengali",
+      "category": "verbs",
+      "sourcePhrase": "সে বাংলায় চিঠি লেখে।"
+    },
+    {
+      "bn": "চিঠি",
+      "pronunciation": "chithi",
+      "en": "letter",
+      "category": "verbs",
+      "sourcePhrase": "সে বাংলায় চিঠি লেখে।"
+    },
+    {
+      "bn": "লেখে",
+      "pronunciation": "lekhe",
+      "en": "writes",
+      "category": "verbs",
+      "sourcePhrase": "সে বাংলায় চিঠি লেখে।"
+    },
+    {
+      "bn": "দোকান",
+      "pronunciation": "dokan",
+      "en": "shop",
+      "category": "verbs",
+      "sourcePhrase": "আমি দোকান থেকে ফল নিই।"
+    },
+    {
+      "bn": "থেকে",
+      "pronunciation": "theke",
+      "en": "from",
+      "category": "verbs",
+      "sourcePhrase": "আমি দোকান থেকে ফল নিই।"
+    },
+    {
+      "bn": "ফল",
+      "pronunciation": "fol",
+      "en": "fruit",
+      "category": "verbs",
+      "sourcePhrase": "আমি দোকান থেকে ফল নিই।"
+    },
+    {
+      "bn": "নিই",
+      "pronunciation": "nii",
+      "en": "take",
+      "category": "verbs",
+      "sourcePhrase": "আমি দোকান থেকে ফল নিই।"
+    },
+    {
+      "bn": "মা",
+      "pronunciation": "ma",
+      "en": "mother",
+      "category": "verbs",
+      "sourcePhrase": "মা আমাকে একটি বই দেন।"
+    },
+    {
+      "bn": "আমাকে",
+      "pronunciation": "amake",
+      "en": "me",
+      "category": "verbs",
+      "sourcePhrase": "মা আমাকে একটি বই দেন।"
+    },
+    {
+      "bn": "একটি",
+      "pronunciation": "ekti",
+      "en": "one / a",
+      "category": "verbs",
+      "sourcePhrase": "মা আমাকে একটি বই দেন।"
+    },
+    {
+      "bn": "দেন",
+      "pronunciation": "den",
+      "en": "gives",
+      "category": "verbs",
+      "sourcePhrase": "মা আমাকে একটি বই দেন।"
+    },
+    {
+      "bn": "বলুন",
+      "pronunciation": "bolun",
+      "en": "say",
+      "category": "verbs",
+      "sourcePhrase": "বলুন: “আমি প্রতিদিন ব্যায়াম করি।”"
+    },
+    {
+      "bn": "পড়ুন",
+      "pronunciation": "porun",
+      "en": "read",
+      "category": "verbs",
+      "sourcePhrase": "পড়ুন: “আমি প্রতিদিন ব্যায়াম করি।”"
+    },
+    {
+      "bn": "লিখুন",
+      "pronunciation": "likhun",
+      "en": "write",
+      "category": "verbs",
+      "sourcePhrase": "লিখুন: “আমি প্রতিদিন ব্যায়াম করি।”"
+    },
+    {
+      "bn": "অনুবাদ",
+      "pronunciation": "onubad",
+      "en": "translation",
+      "category": "verbs",
+      "sourcePhrase": "অনুবাদ করুন: “আমি প্রতিদিন ব্যায়াম করি।”"
+    },
+    {
+      "bn": "করুন",
+      "pronunciation": "korun",
+      "en": "please do",
+      "category": "verbs",
+      "sourcePhrase": "অনুবাদ করুন: “আমি প্রতিদিন ব্যায়াম করি।”"
+    },
+    {
+      "bn": "মনে",
+      "pronunciation": "mone",
+      "en": "in mind",
+      "category": "verbs",
+      "sourcePhrase": "মনে রাখুন: “আমি প্রতিদিন ব্যায়াম করি।”"
+    },
+    {
+      "bn": "রাখুন",
+      "pronunciation": "rakhun",
+      "en": "remember",
+      "category": "verbs",
+      "sourcePhrase": "মনে রাখুন: “আমি প্রতিদিন ব্যায়াম করি।”"
+    },
+    {
+      "bn": "আবার",
+      "pronunciation": "abar",
+      "en": "again",
+      "category": "verbs",
+      "sourcePhrase": "আবার বলুন: “আমি প্রতিদিন ব্যায়াম করি।”"
+    },
+    {
+      "bn": "মন",
+      "pronunciation": "mon",
+      "en": "attention",
+      "category": "verbs",
+      "sourcePhrase": "মন দিয়ে পড়ুন: “আমি প্রতিদিন ব্যায়াম করি।”"
+    },
+    {
+      "bn": "আমি প্রতিদিন",
+      "pronunciation": "ami protidin",
+      "en": "I every day",
+      "category": "verbs",
+      "sourcePhrase": "আমি প্রতিদিন ব্যায়াম করি।"
+    },
+    {
+      "bn": "প্রতিদিন ব্যায়াম",
+      "pronunciation": "protidin byayam",
+      "en": "every day exercise",
+      "category": "verbs",
+      "sourcePhrase": "আমি প্রতিদিন ব্যায়াম করি।"
+    },
+    {
+      "bn": "ব্যায়াম করি",
+      "pronunciation": "byayam kori",
+      "en": "exercise do",
+      "category": "verbs",
+      "sourcePhrase": "আমি প্রতিদিন ব্যায়াম করি।"
+    },
+    {
+      "bn": "আমি ডাক্তার",
+      "pronunciation": "ami daktar",
+      "en": "I doctor",
+      "category": "verbs",
+      "sourcePhrase": "আমি ডাক্তার হতে চাই।"
+    },
+    {
+      "bn": "ডাক্তার হতে",
+      "pronunciation": "daktar hote",
+      "en": "doctor to become",
+      "category": "verbs",
+      "sourcePhrase": "আমি ডাক্তার হতে চাই।"
+    },
+    {
+      "bn": "হতে চাই",
+      "pronunciation": "hote chai",
+      "en": "to become want",
+      "category": "verbs",
+      "sourcePhrase": "আমি ডাক্তার হতে চাই।"
+    },
+    {
+      "bn": "আমরা সকালে",
+      "pronunciation": "amra shokale",
+      "en": "we in the morning",
+      "category": "verbs",
+      "sourcePhrase": "আমরা সকালে স্কুলে যাই।"
+    },
+    {
+      "bn": "সকালে স্কুলে",
+      "pronunciation": "shokale skule",
+      "en": "in the morning to school",
+      "category": "verbs",
+      "sourcePhrase": "আমরা সকালে স্কুলে যাই।"
+    },
+    {
+      "bn": "স্কুলে যাই",
+      "pronunciation": "skule jai",
+      "en": "to school go",
+      "category": "verbs",
+      "sourcePhrase": "আমরা সকালে স্কুলে যাই।"
+    },
+    {
+      "bn": "সে প্রতিদিন",
+      "pronunciation": "shey protidin",
+      "en": "he / she every day",
+      "category": "verbs",
+      "sourcePhrase": "সে প্রতিদিন এখানে আসে।"
+    },
+    {
+      "bn": "প্রতিদিন এখানে",
+      "pronunciation": "protidin ekhane",
+      "en": "every day here",
+      "category": "verbs",
+      "sourcePhrase": "সে প্রতিদিন এখানে আসে।"
+    },
+    {
+      "bn": "এখানে আসে",
+      "pronunciation": "ekhane ashe",
+      "en": "here comes",
+      "category": "verbs",
+      "sourcePhrase": "সে প্রতিদিন এখানে আসে।"
+    },
+    {
+      "bn": "আমি দুপুরে",
+      "pronunciation": "ami dupure",
+      "en": "I at noon",
+      "category": "verbs",
+      "sourcePhrase": "আমি দুপুরে ভাত খাই।"
+    },
+    {
+      "bn": "দুপুরে ভাত",
+      "pronunciation": "dupure bhat",
+      "en": "at noon rice",
+      "category": "verbs",
+      "sourcePhrase": "আমি দুপুরে ভাত খাই।"
+    },
+    {
+      "bn": "ভাত খাই",
+      "pronunciation": "bhat khai",
+      "en": "rice eat",
+      "category": "verbs",
+      "sourcePhrase": "আমি দুপুরে ভাত খাই।"
+    },
+    {
+      "bn": "আমি জানালা",
+      "pronunciation": "ami janala",
+      "en": "I window",
+      "category": "verbs",
+      "sourcePhrase": "আমি জানালা দিয়ে আকাশ দেখি।"
+    },
+    {
+      "bn": "জানালা দিয়ে",
+      "pronunciation": "janala diye",
+      "en": "window through / with",
+      "category": "verbs",
+      "sourcePhrase": "আমি জানালা দিয়ে আকাশ দেখি।"
+    },
+    {
+      "bn": "দিয়ে আকাশ",
+      "pronunciation": "diye akash",
+      "en": "through / with sky",
+      "category": "verbs",
+      "sourcePhrase": "আমি জানালা দিয়ে আকাশ দেখি।"
+    },
+    {
+      "bn": "আকাশ দেখি",
+      "pronunciation": "akash dekhi",
+      "en": "sky see",
+      "category": "verbs",
+      "sourcePhrase": "আমি জানালা দিয়ে আকাশ দেখি।"
+    },
+    {
+      "bn": "তিনি ধীরে",
+      "pronunciation": "tini dhire",
+      "en": "he / she (respectful) slowly",
+      "category": "verbs",
+      "sourcePhrase": "তিনি ধীরে কথা বলেন।"
+    },
+    {
+      "bn": "ধীরে কথা",
+      "pronunciation": "dhire kotha",
+      "en": "slowly speech / words",
+      "category": "verbs",
+      "sourcePhrase": "তিনি ধীরে কথা বলেন।"
+    },
+    {
+      "bn": "কথা বলেন",
+      "pronunciation": "kotha bolen",
+      "en": "speech / words says (respectful)",
+      "category": "verbs",
+      "sourcePhrase": "তিনি ধীরে কথা বলেন।"
+    },
+    {
+      "bn": "আমি সকালে",
+      "pronunciation": "ami shokale",
+      "en": "I in the morning",
+      "category": "verbs",
+      "sourcePhrase": "আমি সকালে গান শুনি।"
+    },
+    {
+      "bn": "সকালে গান",
+      "pronunciation": "shokale gan",
+      "en": "in the morning song / music",
+      "category": "verbs",
+      "sourcePhrase": "আমি সকালে গান শুনি।"
+    },
+    {
+      "bn": "গান শুনি",
+      "pronunciation": "gan shuni",
+      "en": "song / music listen",
+      "category": "verbs",
+      "sourcePhrase": "আমি সকালে গান শুনি।"
+    },
+    {
+      "bn": "আমি রাতে",
+      "pronunciation": "ami rate",
+      "en": "I at night",
+      "category": "verbs",
+      "sourcePhrase": "আমি রাতে বই পড়ি।"
+    },
+    {
+      "bn": "রাতে বই",
+      "pronunciation": "rate boi",
+      "en": "at night book",
+      "category": "verbs",
+      "sourcePhrase": "আমি রাতে বই পড়ি।"
+    },
+    {
+      "bn": "বই পড়ি",
+      "pronunciation": "boi pori",
+      "en": "book read",
+      "category": "verbs",
+      "sourcePhrase": "আমি রাতে বই পড়ি।"
+    },
+    {
+      "bn": "সে বাংলায়",
+      "pronunciation": "shey Banglay",
+      "en": "he / she in Bengali",
+      "category": "verbs",
+      "sourcePhrase": "সে বাংলায় চিঠি লেখে।"
+    },
+    {
+      "bn": "বাংলায় চিঠি",
+      "pronunciation": "Banglay chithi",
+      "en": "in Bengali letter",
+      "category": "verbs",
+      "sourcePhrase": "সে বাংলায় চিঠি লেখে।"
+    },
+    {
+      "bn": "চিঠি লেখে",
+      "pronunciation": "chithi lekhe",
+      "en": "letter writes",
+      "category": "verbs",
+      "sourcePhrase": "সে বাংলায় চিঠি লেখে।"
+    },
+    {
+      "bn": "আমি দোকান",
+      "pronunciation": "ami dokan",
+      "en": "I shop",
+      "category": "verbs",
+      "sourcePhrase": "আমি দোকান থেকে ফল নিই।"
+    },
+    {
+      "bn": "দোকান থেকে",
+      "pronunciation": "dokan theke",
+      "en": "shop from",
+      "category": "verbs",
+      "sourcePhrase": "আমি দোকান থেকে ফল নিই।"
+    },
+    {
+      "bn": "থেকে ফল",
+      "pronunciation": "theke fol",
+      "en": "from fruit",
+      "category": "verbs",
+      "sourcePhrase": "আমি দোকান থেকে ফল নিই।"
+    },
+    {
+      "bn": "ফল নিই",
+      "pronunciation": "fol nii",
+      "en": "fruit take",
+      "category": "verbs",
+      "sourcePhrase": "আমি দোকান থেকে ফল নিই।"
+    },
+    {
+      "bn": "মা আমাকে",
+      "pronunciation": "ma amake",
+      "en": "mother me",
+      "category": "verbs",
+      "sourcePhrase": "মা আমাকে একটি বই দেন।"
+    },
+    {
+      "bn": "আমাকে একটি",
+      "pronunciation": "amake ekti",
+      "en": "me one / a",
+      "category": "verbs",
+      "sourcePhrase": "মা আমাকে একটি বই দেন।"
+    },
+    {
+      "bn": "একটি বই",
+      "pronunciation": "ekti boi",
+      "en": "one / a book",
+      "category": "verbs",
+      "sourcePhrase": "মা আমাকে একটি বই দেন।"
     }
   ],
   "practice": [],
