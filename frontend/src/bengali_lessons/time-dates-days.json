@@ -1,0 +1,713 @@
+{
+  "id": "time-dates-days",
+  "title": "Time, Dates, and Days of the Week",
+  "summary": "Ask and answer questions about clocks, calendars, and schedules.",
+  "level": "beginner",
+  "topic": "Time, Dates, and Days of the Week",
+  "focus": "conversation",
+  "vocab": [
+    {
+      "bn": "সময়",
+      "pronunciation": "shomoy",
+      "en": "time",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "আজ",
+      "pronunciation": "aj",
+      "en": "today",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "আগামীকাল",
+      "pronunciation": "agamikal",
+      "en": "tomorrow",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "গতকাল",
+      "pronunciation": "gotokal",
+      "en": "yesterday",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "সোমবার",
+      "pronunciation": "shombar",
+      "en": "Monday",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "শুক্রবার",
+      "pronunciation": "shukrobar",
+      "en": "Friday",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "তারিখ",
+      "pronunciation": "tarikh",
+      "en": "date",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "বাজে",
+      "pronunciation": "baje",
+      "en": "o’clock",
+      "category": "time-dates-days"
+    }
+  ],
+  "phrases": [
+    {
+      "bn": "এখন কয়টা বাজে?",
+      "pronunciation": "ekhon koyta baje?",
+      "en": "What time is it now?",
+      "context": "Asking the time",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "এখন সাড়ে তিনটা বাজে।",
+      "pronunciation": "ekhon share tinta baje.",
+      "en": "It is half past three.",
+      "context": "Telling the time",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "আজ কী বার?",
+      "pronunciation": "aj ki bar?",
+      "en": "What day is today?",
+      "context": "Asking the day",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "সভাটা আগামীকাল সকাল দশটায়।",
+      "pronunciation": "shobhata agamikal shokal doshtay.",
+      "en": "The meeting is tomorrow at ten in the morning.",
+      "context": "Giving a schedule",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "আজকের শব্দ “সময়”।",
+      "pronunciation": "ajker shobdo “shomoy”.",
+      "en": "Today’s word is “time.”",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "আজকের শব্দ “আজ”।",
+      "pronunciation": "ajker shobdo “aj”.",
+      "en": "Today’s word is “today.”",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "আজকের শব্দ “আগামীকাল”।",
+      "pronunciation": "ajker shobdo “agamikal”.",
+      "en": "Today’s word is “tomorrow.”",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "আজকের শব্দ “গতকাল”।",
+      "pronunciation": "ajker shobdo “gotokal”.",
+      "en": "Today’s word is “yesterday.”",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "আজকের শব্দ “সোমবার”।",
+      "pronunciation": "ajker shobdo “shombar”.",
+      "en": "Today’s word is “Monday.”",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "আজকের শব্দ “শুক্রবার”।",
+      "pronunciation": "ajker shobdo “shukrobar”.",
+      "en": "Today’s word is “Friday.”",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "আজকের শব্দ “তারিখ”।",
+      "pronunciation": "ajker shobdo “tarikh”.",
+      "en": "Today’s word is “date.”",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "আজকের শব্দ “বাজে”।",
+      "pronunciation": "ajker shobdo “baje”.",
+      "en": "Today’s word is “o’clock.”",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "“সময়” শব্দটি বলুন।",
+      "pronunciation": "“shomoy” shobdoti bolun.",
+      "en": "Say the word “time.”",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "“আজ” শব্দটি বলুন।",
+      "pronunciation": "“aj” shobdoti bolun.",
+      "en": "Say the word “today.”",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "“আগামীকাল” শব্দটি বলুন।",
+      "pronunciation": "“agamikal” shobdoti bolun.",
+      "en": "Say the word “tomorrow.”",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "“গতকাল” শব্দটি বলুন।",
+      "pronunciation": "“gotokal” shobdoti bolun.",
+      "en": "Say the word “yesterday.”",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "“সোমবার” শব্দটি বলুন।",
+      "pronunciation": "“shombar” shobdoti bolun.",
+      "en": "Say the word “Monday.”",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "“শুক্রবার” শব্দটি বলুন।",
+      "pronunciation": "“shukrobar” shobdoti bolun.",
+      "en": "Say the word “Friday.”",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "“তারিখ” শব্দটি বলুন।",
+      "pronunciation": "“tarikh” shobdoti bolun.",
+      "en": "Say the word “date.”",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "“বাজে” শব্দটি বলুন।",
+      "pronunciation": "“baje” shobdoti bolun.",
+      "en": "Say the word “o’clock.”",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "“সময়” আবার বলুন।",
+      "pronunciation": "“shomoy” abar bolun.",
+      "en": "Say “time” again.",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "“আজ” আবার বলুন।",
+      "pronunciation": "“aj” abar bolun.",
+      "en": "Say “today” again.",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "“আগামীকাল” আবার বলুন।",
+      "pronunciation": "“agamikal” abar bolun.",
+      "en": "Say “tomorrow” again.",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "“গতকাল” আবার বলুন।",
+      "pronunciation": "“gotokal” abar bolun.",
+      "en": "Say “yesterday” again.",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "“সোমবার” আবার বলুন।",
+      "pronunciation": "“shombar” abar bolun.",
+      "en": "Say “Monday” again.",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "“শুক্রবার” আবার বলুন।",
+      "pronunciation": "“shukrobar” abar bolun.",
+      "en": "Say “Friday” again.",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "“তারিখ” আবার বলুন।",
+      "pronunciation": "“tarikh” abar bolun.",
+      "en": "Say “date” again.",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "“বাজে” আবার বলুন।",
+      "pronunciation": "“baje” abar bolun.",
+      "en": "Say “o’clock” again.",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "“সময়” শব্দটি লিখুন।",
+      "pronunciation": "“shomoy” shobdoti likhun.",
+      "en": "Write the word “time.”",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "“আজ” শব্দটি লিখুন।",
+      "pronunciation": "“aj” shobdoti likhun.",
+      "en": "Write the word “today.”",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "“আগামীকাল” শব্দটি লিখুন।",
+      "pronunciation": "“agamikal” shobdoti likhun.",
+      "en": "Write the word “tomorrow.”",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "“গতকাল” শব্দটি লিখুন।",
+      "pronunciation": "“gotokal” shobdoti likhun.",
+      "en": "Write the word “yesterday.”",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "“সোমবার” শব্দটি লিখুন।",
+      "pronunciation": "“shombar” shobdoti likhun.",
+      "en": "Write the word “Monday.”",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "“শুক্রবার” শব্দটি লিখুন।",
+      "pronunciation": "“shukrobar” shobdoti likhun.",
+      "en": "Write the word “Friday.”",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "“তারিখ” শব্দটি লিখুন।",
+      "pronunciation": "“tarikh” shobdoti likhun.",
+      "en": "Write the word “date.”",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "“বাজে” শব্দটি লিখুন।",
+      "pronunciation": "“baje” shobdoti likhun.",
+      "en": "Write the word “o’clock.”",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "“সময়” শব্দটি পড়ুন।",
+      "pronunciation": "“shomoy” shobdoti porun.",
+      "en": "Read the word “time.”",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "“আজ” শব্দটি পড়ুন।",
+      "pronunciation": "“aj” shobdoti porun.",
+      "en": "Read the word “today.”",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "“আগামীকাল” শব্দটি পড়ুন।",
+      "pronunciation": "“agamikal” shobdoti porun.",
+      "en": "Read the word “tomorrow.”",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "“গতকাল” শব্দটি পড়ুন।",
+      "pronunciation": "“gotokal” shobdoti porun.",
+      "en": "Read the word “yesterday.”",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "“সোমবার” শব্দটি পড়ুন।",
+      "pronunciation": "“shombar” shobdoti porun.",
+      "en": "Read the word “Monday.”",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "“শুক্রবার” শব্দটি পড়ুন।",
+      "pronunciation": "“shukrobar” shobdoti porun.",
+      "en": "Read the word “Friday.”",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "“তারিখ” শব্দটি পড়ুন।",
+      "pronunciation": "“tarikh” shobdoti porun.",
+      "en": "Read the word “date.”",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "“বাজে” শব্দটি পড়ুন।",
+      "pronunciation": "“baje” shobdoti porun.",
+      "en": "Read the word “o’clock.”",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "“সময়” শব্দটি মনে রাখুন।",
+      "pronunciation": "“shomoy” shobdoti mone rakhun.",
+      "en": "Remember the word “time.”",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "“আজ” শব্দটি মনে রাখুন।",
+      "pronunciation": "“aj” shobdoti mone rakhun.",
+      "en": "Remember the word “today.”",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "“আগামীকাল” শব্দটি মনে রাখুন।",
+      "pronunciation": "“agamikal” shobdoti mone rakhun.",
+      "en": "Remember the word “tomorrow.”",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "“গতকাল” শব্দটি মনে রাখুন।",
+      "pronunciation": "“gotokal” shobdoti mone rakhun.",
+      "en": "Remember the word “yesterday.”",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "“সোমবার” শব্দটি মনে রাখুন।",
+      "pronunciation": "“shombar” shobdoti mone rakhun.",
+      "en": "Remember the word “Monday.”",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "“শুক্রবার” শব্দটি মনে রাখুন।",
+      "pronunciation": "“shukrobar” shobdoti mone rakhun.",
+      "en": "Remember the word “Friday.”",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "“তারিখ” শব্দটি মনে রাখুন।",
+      "pronunciation": "“tarikh” shobdoti mone rakhun.",
+      "en": "Remember the word “date.”",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "“বাজে” শব্দটি মনে রাখুন।",
+      "pronunciation": "“baje” shobdoti mone rakhun.",
+      "en": "Remember the word “o’clock.”",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "“সময়” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“shomoy” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “time.”",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "“আজ” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“aj” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “today.”",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "“আগামীকাল” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“agamikal” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “tomorrow.”",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "“গতকাল” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“gotokal” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “yesterday.”",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "“সোমবার” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“shombar” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “Monday.”",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "“শুক্রবার” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“shukrobar” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “Friday.”",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "“তারিখ” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“tarikh” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “date.”",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "“বাজে” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“baje” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “o’clock.”",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "“সময়” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“shomoy” kibhabe uccharon korben?",
+      "en": "How do you pronounce “time”?",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "“আজ” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“aj” kibhabe uccharon korben?",
+      "en": "How do you pronounce “today”?",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "“আগামীকাল” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“agamikal” kibhabe uccharon korben?",
+      "en": "How do you pronounce “tomorrow”?",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "“গতকাল” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“gotokal” kibhabe uccharon korben?",
+      "en": "How do you pronounce “yesterday”?",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "“সোমবার” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“shombar” kibhabe uccharon korben?",
+      "en": "How do you pronounce “Monday”?",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "“শুক্রবার” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“shukrobar” kibhabe uccharon korben?",
+      "en": "How do you pronounce “Friday”?",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "“তারিখ” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“tarikh” kibhabe uccharon korben?",
+      "en": "How do you pronounce “date”?",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "“বাজে” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“baje” kibhabe uccharon korben?",
+      "en": "How do you pronounce “o’clock”?",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "“সময়” এর অর্থ কী?",
+      "pronunciation": "“shomoy” er ortho ki?",
+      "en": "What does “time” mean?",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "“আজ” এর অর্থ কী?",
+      "pronunciation": "“aj” er ortho ki?",
+      "en": "What does “today” mean?",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "“আগামীকাল” এর অর্থ কী?",
+      "pronunciation": "“agamikal” er ortho ki?",
+      "en": "What does “tomorrow” mean?",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "“গতকাল” এর অর্থ কী?",
+      "pronunciation": "“gotokal” er ortho ki?",
+      "en": "What does “yesterday” mean?",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "“সোমবার” এর অর্থ কী?",
+      "pronunciation": "“shombar” er ortho ki?",
+      "en": "What does “Monday” mean?",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "“শুক্রবার” এর অর্থ কী?",
+      "pronunciation": "“shukrobar” er ortho ki?",
+      "en": "What does “Friday” mean?",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "“তারিখ” এর অর্থ কী?",
+      "pronunciation": "“tarikh” er ortho ki?",
+      "en": "What does “date” mean?",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "“বাজে” এর অর্থ কী?",
+      "pronunciation": "“baje” er ortho ki?",
+      "en": "What does “o’clock” mean?",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "আমি “সময়” শব্দটি শিখছি।",
+      "pronunciation": "ami “shomoy” shobdoti shikhchhi.",
+      "en": "I am learning the word “time.”",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "আমি “আজ” শব্দটি শিখছি।",
+      "pronunciation": "ami “aj” shobdoti shikhchhi.",
+      "en": "I am learning the word “today.”",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "আমি “আগামীকাল” শব্দটি শিখছি।",
+      "pronunciation": "ami “agamikal” shobdoti shikhchhi.",
+      "en": "I am learning the word “tomorrow.”",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "আমি “গতকাল” শব্দটি শিখছি।",
+      "pronunciation": "ami “gotokal” shobdoti shikhchhi.",
+      "en": "I am learning the word “yesterday.”",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "আমি “সোমবার” শব্দটি শিখছি।",
+      "pronunciation": "ami “shombar” shobdoti shikhchhi.",
+      "en": "I am learning the word “Monday.”",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "আমি “শুক্রবার” শব্দটি শিখছি।",
+      "pronunciation": "ami “shukrobar” shobdoti shikhchhi.",
+      "en": "I am learning the word “Friday.”",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "আমি “তারিখ” শব্দটি শিখছি।",
+      "pronunciation": "ami “tarikh” shobdoti shikhchhi.",
+      "en": "I am learning the word “date.”",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "আমি “বাজে” শব্দটি শিখছি।",
+      "pronunciation": "ami “baje” shobdoti shikhchhi.",
+      "en": "I am learning the word “o’clock.”",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "আপনি কি “সময়” বলতে পারেন?",
+      "pronunciation": "apni ki “shomoy” bolte paren?",
+      "en": "Can you say “time”?",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "আপনি কি “আজ” বলতে পারেন?",
+      "pronunciation": "apni ki “aj” bolte paren?",
+      "en": "Can you say “today”?",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "আপনি কি “আগামীকাল” বলতে পারেন?",
+      "pronunciation": "apni ki “agamikal” bolte paren?",
+      "en": "Can you say “tomorrow”?",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "আপনি কি “গতকাল” বলতে পারেন?",
+      "pronunciation": "apni ki “gotokal” bolte paren?",
+      "en": "Can you say “yesterday”?",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "আপনি কি “সোমবার” বলতে পারেন?",
+      "pronunciation": "apni ki “shombar” bolte paren?",
+      "en": "Can you say “Monday”?",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "আপনি কি “শুক্রবার” বলতে পারেন?",
+      "pronunciation": "apni ki “shukrobar” bolte paren?",
+      "en": "Can you say “Friday”?",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "আপনি কি “তারিখ” বলতে পারেন?",
+      "pronunciation": "apni ki “tarikh” bolte paren?",
+      "en": "Can you say “date”?",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    },
+    {
+      "bn": "আপনি কি “বাজে” বলতে পারেন?",
+      "pronunciation": "apni ki “baje” bolte paren?",
+      "en": "Can you say “o’clock”?",
+      "context": "Guided time, dates, and days of the week vocabulary drill",
+      "category": "time-dates-days"
+    }
+  ],
+  "practice": [
+    "Say the Bengali words for three items from time, dates, and days of the week.",
+    "Read each phrase aloud, then repeat it without looking at the transliteration.",
+    "Create a new sentence by replacing one word in a lesson phrase."
+  ],
+  "notes": [
+    "সাড়ে তিনটা means 3:30; আড়াইটা means 2:30.",
+    "Days of the week end in বার."
+  ]
+}

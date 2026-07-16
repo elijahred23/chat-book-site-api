@@ -1,0 +1,712 @@
+{
+  "id": "travel-hotels-airports",
+  "title": "Travel, Hotels, and Airports",
+  "summary": "Navigate airports, check into hotels, and discuss travel plans.",
+  "level": "beginner",
+  "topic": "Travel, Hotels, and Airports",
+  "focus": "conversation",
+  "vocab": [
+    {
+      "bn": "বিমানবন্দর",
+      "pronunciation": "bimanbondor",
+      "en": "airport",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "পাসপোর্ট",
+      "pronunciation": "passport",
+      "en": "passport",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "টিকিট",
+      "pronunciation": "tikit",
+      "en": "ticket",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "লাগেজ",
+      "pronunciation": "lagej",
+      "en": "luggage",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "হোটেল",
+      "pronunciation": "hotel",
+      "en": "hotel",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "কক্ষ",
+      "pronunciation": "kokkho",
+      "en": "room",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "সংরক্ষণ",
+      "pronunciation": "shongrokkhon",
+      "en": "reservation",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "ফ্লাইট",
+      "pronunciation": "flight",
+      "en": "flight",
+      "category": "travel-hotels-airports"
+    }
+  ],
+  "phrases": [
+    {
+      "bn": "আমার ঢাকার একটি টিকিট আছে।",
+      "pronunciation": "amar Dhakar ekti tikit achhe.",
+      "en": "I have a ticket to Dhaka.",
+      "context": "Discussing a ticket",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "ফ্লাইটটি কখন ছাড়বে?",
+      "pronunciation": "flightti kokhon chharbe?",
+      "en": "When will the flight depart?",
+      "context": "Checking departure",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "আমার নামে একটি কক্ষ সংরক্ষণ করা আছে।",
+      "pronunciation": "amar name ekti kokkho shongrokkhon kora achhe.",
+      "en": "A room is reserved in my name.",
+      "context": "Checking into a hotel",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "আমার লাগেজ হারিয়ে গেছে।",
+      "pronunciation": "amar lagej hariye gechhe.",
+      "en": "My luggage is lost.",
+      "context": "Reporting a problem",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "আজকের শব্দ “বিমানবন্দর”।",
+      "pronunciation": "ajker shobdo “bimanbondor”.",
+      "en": "Today’s word is “airport.”",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "আজকের শব্দ “পাসপোর্ট”।",
+      "pronunciation": "ajker shobdo “passport”.",
+      "en": "Today’s word is “passport.”",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "আজকের শব্দ “টিকিট”।",
+      "pronunciation": "ajker shobdo “tikit”.",
+      "en": "Today’s word is “ticket.”",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "আজকের শব্দ “লাগেজ”।",
+      "pronunciation": "ajker shobdo “lagej”.",
+      "en": "Today’s word is “luggage.”",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "আজকের শব্দ “হোটেল”।",
+      "pronunciation": "ajker shobdo “hotel”.",
+      "en": "Today’s word is “hotel.”",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "আজকের শব্দ “কক্ষ”।",
+      "pronunciation": "ajker shobdo “kokkho”.",
+      "en": "Today’s word is “room.”",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "আজকের শব্দ “সংরক্ষণ”।",
+      "pronunciation": "ajker shobdo “shongrokkhon”.",
+      "en": "Today’s word is “reservation.”",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "আজকের শব্দ “ফ্লাইট”।",
+      "pronunciation": "ajker shobdo “flight”.",
+      "en": "Today’s word is “flight.”",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "“বিমানবন্দর” শব্দটি বলুন।",
+      "pronunciation": "“bimanbondor” shobdoti bolun.",
+      "en": "Say the word “airport.”",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "“পাসপোর্ট” শব্দটি বলুন।",
+      "pronunciation": "“passport” shobdoti bolun.",
+      "en": "Say the word “passport.”",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "“টিকিট” শব্দটি বলুন।",
+      "pronunciation": "“tikit” shobdoti bolun.",
+      "en": "Say the word “ticket.”",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "“লাগেজ” শব্দটি বলুন।",
+      "pronunciation": "“lagej” shobdoti bolun.",
+      "en": "Say the word “luggage.”",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "“হোটেল” শব্দটি বলুন।",
+      "pronunciation": "“hotel” shobdoti bolun.",
+      "en": "Say the word “hotel.”",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "“কক্ষ” শব্দটি বলুন।",
+      "pronunciation": "“kokkho” shobdoti bolun.",
+      "en": "Say the word “room.”",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "“সংরক্ষণ” শব্দটি বলুন।",
+      "pronunciation": "“shongrokkhon” shobdoti bolun.",
+      "en": "Say the word “reservation.”",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "“ফ্লাইট” শব্দটি বলুন।",
+      "pronunciation": "“flight” shobdoti bolun.",
+      "en": "Say the word “flight.”",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "“বিমানবন্দর” আবার বলুন।",
+      "pronunciation": "“bimanbondor” abar bolun.",
+      "en": "Say “airport” again.",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "“পাসপোর্ট” আবার বলুন।",
+      "pronunciation": "“passport” abar bolun.",
+      "en": "Say “passport” again.",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "“টিকিট” আবার বলুন।",
+      "pronunciation": "“tikit” abar bolun.",
+      "en": "Say “ticket” again.",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "“লাগেজ” আবার বলুন।",
+      "pronunciation": "“lagej” abar bolun.",
+      "en": "Say “luggage” again.",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "“হোটেল” আবার বলুন।",
+      "pronunciation": "“hotel” abar bolun.",
+      "en": "Say “hotel” again.",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "“কক্ষ” আবার বলুন।",
+      "pronunciation": "“kokkho” abar bolun.",
+      "en": "Say “room” again.",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "“সংরক্ষণ” আবার বলুন।",
+      "pronunciation": "“shongrokkhon” abar bolun.",
+      "en": "Say “reservation” again.",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "“ফ্লাইট” আবার বলুন।",
+      "pronunciation": "“flight” abar bolun.",
+      "en": "Say “flight” again.",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "“বিমানবন্দর” শব্দটি লিখুন।",
+      "pronunciation": "“bimanbondor” shobdoti likhun.",
+      "en": "Write the word “airport.”",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "“পাসপোর্ট” শব্দটি লিখুন।",
+      "pronunciation": "“passport” shobdoti likhun.",
+      "en": "Write the word “passport.”",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "“টিকিট” শব্দটি লিখুন।",
+      "pronunciation": "“tikit” shobdoti likhun.",
+      "en": "Write the word “ticket.”",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "“লাগেজ” শব্দটি লিখুন।",
+      "pronunciation": "“lagej” shobdoti likhun.",
+      "en": "Write the word “luggage.”",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "“হোটেল” শব্দটি লিখুন।",
+      "pronunciation": "“hotel” shobdoti likhun.",
+      "en": "Write the word “hotel.”",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "“কক্ষ” শব্দটি লিখুন।",
+      "pronunciation": "“kokkho” shobdoti likhun.",
+      "en": "Write the word “room.”",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "“সংরক্ষণ” শব্দটি লিখুন।",
+      "pronunciation": "“shongrokkhon” shobdoti likhun.",
+      "en": "Write the word “reservation.”",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "“ফ্লাইট” শব্দটি লিখুন।",
+      "pronunciation": "“flight” shobdoti likhun.",
+      "en": "Write the word “flight.”",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "“বিমানবন্দর” শব্দটি পড়ুন।",
+      "pronunciation": "“bimanbondor” shobdoti porun.",
+      "en": "Read the word “airport.”",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "“পাসপোর্ট” শব্দটি পড়ুন।",
+      "pronunciation": "“passport” shobdoti porun.",
+      "en": "Read the word “passport.”",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "“টিকিট” শব্দটি পড়ুন।",
+      "pronunciation": "“tikit” shobdoti porun.",
+      "en": "Read the word “ticket.”",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "“লাগেজ” শব্দটি পড়ুন।",
+      "pronunciation": "“lagej” shobdoti porun.",
+      "en": "Read the word “luggage.”",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "“হোটেল” শব্দটি পড়ুন।",
+      "pronunciation": "“hotel” shobdoti porun.",
+      "en": "Read the word “hotel.”",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "“কক্ষ” শব্দটি পড়ুন।",
+      "pronunciation": "“kokkho” shobdoti porun.",
+      "en": "Read the word “room.”",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "“সংরক্ষণ” শব্দটি পড়ুন।",
+      "pronunciation": "“shongrokkhon” shobdoti porun.",
+      "en": "Read the word “reservation.”",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "“ফ্লাইট” শব্দটি পড়ুন।",
+      "pronunciation": "“flight” shobdoti porun.",
+      "en": "Read the word “flight.”",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "“বিমানবন্দর” শব্দটি মনে রাখুন।",
+      "pronunciation": "“bimanbondor” shobdoti mone rakhun.",
+      "en": "Remember the word “airport.”",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "“পাসপোর্ট” শব্দটি মনে রাখুন।",
+      "pronunciation": "“passport” shobdoti mone rakhun.",
+      "en": "Remember the word “passport.”",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "“টিকিট” শব্দটি মনে রাখুন।",
+      "pronunciation": "“tikit” shobdoti mone rakhun.",
+      "en": "Remember the word “ticket.”",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "“লাগেজ” শব্দটি মনে রাখুন।",
+      "pronunciation": "“lagej” shobdoti mone rakhun.",
+      "en": "Remember the word “luggage.”",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "“হোটেল” শব্দটি মনে রাখুন।",
+      "pronunciation": "“hotel” shobdoti mone rakhun.",
+      "en": "Remember the word “hotel.”",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "“কক্ষ” শব্দটি মনে রাখুন।",
+      "pronunciation": "“kokkho” shobdoti mone rakhun.",
+      "en": "Remember the word “room.”",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "“সংরক্ষণ” শব্দটি মনে রাখুন।",
+      "pronunciation": "“shongrokkhon” shobdoti mone rakhun.",
+      "en": "Remember the word “reservation.”",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "“ফ্লাইট” শব্দটি মনে রাখুন।",
+      "pronunciation": "“flight” shobdoti mone rakhun.",
+      "en": "Remember the word “flight.”",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "“বিমানবন্দর” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“bimanbondor” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “airport.”",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "“পাসপোর্ট” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“passport” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “passport.”",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "“টিকিট” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“tikit” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “ticket.”",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "“লাগেজ” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“lagej” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “luggage.”",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "“হোটেল” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“hotel” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “hotel.”",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "“কক্ষ” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“kokkho” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “room.”",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "“সংরক্ষণ” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“shongrokkhon” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “reservation.”",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "“ফ্লাইট” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“flight” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “flight.”",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "“বিমানবন্দর” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“bimanbondor” kibhabe uccharon korben?",
+      "en": "How do you pronounce “airport”?",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "“পাসপোর্ট” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“passport” kibhabe uccharon korben?",
+      "en": "How do you pronounce “passport”?",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "“টিকিট” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“tikit” kibhabe uccharon korben?",
+      "en": "How do you pronounce “ticket”?",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "“লাগেজ” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“lagej” kibhabe uccharon korben?",
+      "en": "How do you pronounce “luggage”?",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "“হোটেল” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“hotel” kibhabe uccharon korben?",
+      "en": "How do you pronounce “hotel”?",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "“কক্ষ” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“kokkho” kibhabe uccharon korben?",
+      "en": "How do you pronounce “room”?",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "“সংরক্ষণ” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“shongrokkhon” kibhabe uccharon korben?",
+      "en": "How do you pronounce “reservation”?",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "“ফ্লাইট” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“flight” kibhabe uccharon korben?",
+      "en": "How do you pronounce “flight”?",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "“বিমানবন্দর” এর অর্থ কী?",
+      "pronunciation": "“bimanbondor” er ortho ki?",
+      "en": "What does “airport” mean?",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "“পাসপোর্ট” এর অর্থ কী?",
+      "pronunciation": "“passport” er ortho ki?",
+      "en": "What does “passport” mean?",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "“টিকিট” এর অর্থ কী?",
+      "pronunciation": "“tikit” er ortho ki?",
+      "en": "What does “ticket” mean?",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "“লাগেজ” এর অর্থ কী?",
+      "pronunciation": "“lagej” er ortho ki?",
+      "en": "What does “luggage” mean?",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "“হোটেল” এর অর্থ কী?",
+      "pronunciation": "“hotel” er ortho ki?",
+      "en": "What does “hotel” mean?",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "“কক্ষ” এর অর্থ কী?",
+      "pronunciation": "“kokkho” er ortho ki?",
+      "en": "What does “room” mean?",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "“সংরক্ষণ” এর অর্থ কী?",
+      "pronunciation": "“shongrokkhon” er ortho ki?",
+      "en": "What does “reservation” mean?",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "“ফ্লাইট” এর অর্থ কী?",
+      "pronunciation": "“flight” er ortho ki?",
+      "en": "What does “flight” mean?",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "আমি “বিমানবন্দর” শব্দটি শিখছি।",
+      "pronunciation": "ami “bimanbondor” shobdoti shikhchhi.",
+      "en": "I am learning the word “airport.”",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "আমি “পাসপোর্ট” শব্দটি শিখছি।",
+      "pronunciation": "ami “passport” shobdoti shikhchhi.",
+      "en": "I am learning the word “passport.”",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "আমি “টিকিট” শব্দটি শিখছি।",
+      "pronunciation": "ami “tikit” shobdoti shikhchhi.",
+      "en": "I am learning the word “ticket.”",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "আমি “লাগেজ” শব্দটি শিখছি।",
+      "pronunciation": "ami “lagej” shobdoti shikhchhi.",
+      "en": "I am learning the word “luggage.”",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "আমি “হোটেল” শব্দটি শিখছি।",
+      "pronunciation": "ami “hotel” shobdoti shikhchhi.",
+      "en": "I am learning the word “hotel.”",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "আমি “কক্ষ” শব্দটি শিখছি।",
+      "pronunciation": "ami “kokkho” shobdoti shikhchhi.",
+      "en": "I am learning the word “room.”",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "আমি “সংরক্ষণ” শব্দটি শিখছি।",
+      "pronunciation": "ami “shongrokkhon” shobdoti shikhchhi.",
+      "en": "I am learning the word “reservation.”",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "আমি “ফ্লাইট” শব্দটি শিখছি।",
+      "pronunciation": "ami “flight” shobdoti shikhchhi.",
+      "en": "I am learning the word “flight.”",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "আপনি কি “বিমানবন্দর” বলতে পারেন?",
+      "pronunciation": "apni ki “bimanbondor” bolte paren?",
+      "en": "Can you say “airport”?",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "আপনি কি “পাসপোর্ট” বলতে পারেন?",
+      "pronunciation": "apni ki “passport” bolte paren?",
+      "en": "Can you say “passport”?",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "আপনি কি “টিকিট” বলতে পারেন?",
+      "pronunciation": "apni ki “tikit” bolte paren?",
+      "en": "Can you say “ticket”?",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "আপনি কি “লাগেজ” বলতে পারেন?",
+      "pronunciation": "apni ki “lagej” bolte paren?",
+      "en": "Can you say “luggage”?",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "আপনি কি “হোটেল” বলতে পারেন?",
+      "pronunciation": "apni ki “hotel” bolte paren?",
+      "en": "Can you say “hotel”?",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "আপনি কি “কক্ষ” বলতে পারেন?",
+      "pronunciation": "apni ki “kokkho” bolte paren?",
+      "en": "Can you say “room”?",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "আপনি কি “সংরক্ষণ” বলতে পারেন?",
+      "pronunciation": "apni ki “shongrokkhon” bolte paren?",
+      "en": "Can you say “reservation”?",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    },
+    {
+      "bn": "আপনি কি “ফ্লাইট” বলতে পারেন?",
+      "pronunciation": "apni ki “flight” bolte paren?",
+      "en": "Can you say “flight”?",
+      "context": "Guided travel, hotels, and airports vocabulary drill",
+      "category": "travel-hotels-airports"
+    }
+  ],
+  "practice": [
+    "Say the Bengali words for three items from travel, hotels, and airports.",
+    "Read each phrase aloud, then repeat it without looking at the transliteration.",
+    "Create a new sentence by replacing one word in a lesson phrase."
+  ],
+  "notes": [
+    "Many international travel terms are common Bengali loanwords."
+  ]
+}

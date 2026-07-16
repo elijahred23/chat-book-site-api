@@ -1,0 +1,293 @@
+{
+  "id": "present-tense",
+  "title": "Present-Tense Sentences",
+  "summary": "Describe habits, facts, and actions happening now.",
+  "level": "beginner",
+  "topic": "Present-Tense Sentences",
+  "focus": "grammar",
+  "vocab": [
+    {
+      "bn": "করি",
+      "pronunciation": "kori",
+      "en": "I do",
+      "category": "present-tense"
+    },
+    {
+      "bn": "করো",
+      "pronunciation": "koro",
+      "en": "you do",
+      "category": "present-tense"
+    },
+    {
+      "bn": "করেন",
+      "pronunciation": "koren",
+      "en": "you do (polite)",
+      "category": "present-tense"
+    },
+    {
+      "bn": "করে",
+      "pronunciation": "kore",
+      "en": "he / she does",
+      "category": "present-tense"
+    },
+    {
+      "bn": "যাই",
+      "pronunciation": "jai",
+      "en": "I go",
+      "category": "present-tense"
+    },
+    {
+      "bn": "খাই",
+      "pronunciation": "khai",
+      "en": "I eat",
+      "category": "present-tense"
+    },
+    {
+      "bn": "পড়ছি",
+      "pronunciation": "porchhi",
+      "en": "am reading",
+      "category": "present-tense"
+    },
+    {
+      "bn": "করছে",
+      "pronunciation": "korchhe",
+      "en": "is doing",
+      "category": "present-tense"
+    }
+  ],
+  "phrases": [
+    {
+      "bn": "আমি প্রতিদিন বাংলা পড়ি।",
+      "pronunciation": "ami protidin Bangla pori.",
+      "en": "I study Bengali every day.",
+      "context": "A habitual action",
+      "category": "present-tense"
+    },
+    {
+      "bn": "সে অফিসে কাজ করে।",
+      "pronunciation": "she ofise kaj kore.",
+      "en": "He or she works in an office.",
+      "context": "A regular activity",
+      "category": "present-tense"
+    },
+    {
+      "bn": "আমি এখন বই পড়ছি।",
+      "pronunciation": "ami ekhon boi porchhi.",
+      "en": "I am reading a book now.",
+      "context": "An action in progress",
+      "category": "present-tense"
+    },
+    {
+      "bn": "আপনি কি চা খান?",
+      "pronunciation": "apni ki cha khan?",
+      "en": "Do you drink tea?",
+      "context": "A polite present-tense question",
+      "category": "present-tense"
+    },
+    {
+      "bn": "আজকের শব্দ “করি”।",
+      "pronunciation": "ajker shobdo “kori”.",
+      "en": "Today’s word is “I do.”",
+      "context": "Guided present-tense sentences vocabulary drill",
+      "category": "present-tense"
+    },
+    {
+      "bn": "আজকের শব্দ “করো”।",
+      "pronunciation": "ajker shobdo “koro”.",
+      "en": "Today’s word is “you do.”",
+      "context": "Guided present-tense sentences vocabulary drill",
+      "category": "present-tense"
+    },
+    {
+      "bn": "আজকের শব্দ “করেন”।",
+      "pronunciation": "ajker shobdo “koren”.",
+      "en": "Today’s word is “you do (polite).”",
+      "context": "Guided present-tense sentences vocabulary drill",
+      "category": "present-tense"
+    },
+    {
+      "bn": "আজকের শব্দ “করে”।",
+      "pronunciation": "ajker shobdo “kore”.",
+      "en": "Today’s word is “he / she does.”",
+      "context": "Guided present-tense sentences vocabulary drill",
+      "category": "present-tense"
+    },
+    {
+      "bn": "আজকের শব্দ “যাই”।",
+      "pronunciation": "ajker shobdo “jai”.",
+      "en": "Today’s word is “I go.”",
+      "context": "Guided present-tense sentences vocabulary drill",
+      "category": "present-tense"
+    },
+    {
+      "bn": "আজকের শব্দ “খাই”।",
+      "pronunciation": "ajker shobdo “khai”.",
+      "en": "Today’s word is “I eat.”",
+      "context": "Guided present-tense sentences vocabulary drill",
+      "category": "present-tense"
+    },
+    {
+      "bn": "আজকের শব্দ “পড়ছি”।",
+      "pronunciation": "ajker shobdo “porchhi”.",
+      "en": "Today’s word is “am reading.”",
+      "context": "Guided present-tense sentences vocabulary drill",
+      "category": "present-tense"
+    },
+    {
+      "bn": "আজকের শব্দ “করছে”।",
+      "pronunciation": "ajker shobdo “korchhe”.",
+      "en": "Today’s word is “is doing.”",
+      "context": "Guided present-tense sentences vocabulary drill",
+      "category": "present-tense"
+    },
+    {
+      "bn": "“করি” শব্দটি বলুন।",
+      "pronunciation": "“kori” shobdoti bolun.",
+      "en": "Say the word “I do.”",
+      "context": "Guided present-tense sentences vocabulary drill",
+      "category": "present-tense"
+    },
+    {
+      "bn": "“করো” শব্দটি বলুন।",
+      "pronunciation": "“koro” shobdoti bolun.",
+      "en": "Say the word “you do.”",
+      "context": "Guided present-tense sentences vocabulary drill",
+      "category": "present-tense"
+    },
+    {
+      "bn": "“করেন” শব্দটি বলুন।",
+      "pronunciation": "“koren” shobdoti bolun.",
+      "en": "Say the word “you do (polite).”",
+      "context": "Guided present-tense sentences vocabulary drill",
+      "category": "present-tense"
+    },
+    {
+      "bn": "“করে” শব্দটি বলুন।",
+      "pronunciation": "“kore” shobdoti bolun.",
+      "en": "Say the word “he / she does.”",
+      "context": "Guided present-tense sentences vocabulary drill",
+      "category": "present-tense"
+    },
+    {
+      "bn": "“যাই” শব্দটি বলুন।",
+      "pronunciation": "“jai” shobdoti bolun.",
+      "en": "Say the word “I go.”",
+      "context": "Guided present-tense sentences vocabulary drill",
+      "category": "present-tense"
+    },
+    {
+      "bn": "“খাই” শব্দটি বলুন।",
+      "pronunciation": "“khai” shobdoti bolun.",
+      "en": "Say the word “I eat.”",
+      "context": "Guided present-tense sentences vocabulary drill",
+      "category": "present-tense"
+    },
+    {
+      "bn": "“পড়ছি” শব্দটি বলুন।",
+      "pronunciation": "“porchhi” shobdoti bolun.",
+      "en": "Say the word “am reading.”",
+      "context": "Guided present-tense sentences vocabulary drill",
+      "category": "present-tense"
+    },
+    {
+      "bn": "“করছে” শব্দটি বলুন।",
+      "pronunciation": "“korchhe” shobdoti bolun.",
+      "en": "Say the word “is doing.”",
+      "context": "Guided present-tense sentences vocabulary drill",
+      "category": "present-tense"
+    },
+    {
+      "bn": "“করি” আবার বলুন।",
+      "pronunciation": "“kori” abar bolun.",
+      "en": "Say “I do” again.",
+      "context": "Guided present-tense sentences vocabulary drill",
+      "category": "present-tense"
+    },
+    {
+      "bn": "“করো” আবার বলুন।",
+      "pronunciation": "“koro” abar bolun.",
+      "en": "Say “you do” again.",
+      "context": "Guided present-tense sentences vocabulary drill",
+      "category": "present-tense"
+    },
+    {
+      "bn": "“করেন” আবার বলুন।",
+      "pronunciation": "“koren” abar bolun.",
+      "en": "Say “you do (polite)” again.",
+      "context": "Guided present-tense sentences vocabulary drill",
+      "category": "present-tense"
+    },
+    {
+      "bn": "“করে” আবার বলুন।",
+      "pronunciation": "“kore” abar bolun.",
+      "en": "Say “he / she does” again.",
+      "context": "Guided present-tense sentences vocabulary drill",
+      "category": "present-tense"
+    },
+    {
+      "bn": "“যাই” আবার বলুন।",
+      "pronunciation": "“jai” abar bolun.",
+      "en": "Say “I go” again.",
+      "context": "Guided present-tense sentences vocabulary drill",
+      "category": "present-tense"
+    },
+    {
+      "bn": "“খাই” আবার বলুন।",
+      "pronunciation": "“khai” abar bolun.",
+      "en": "Say “I eat” again.",
+      "context": "Guided present-tense sentences vocabulary drill",
+      "category": "present-tense"
+    },
+    {
+      "bn": "“পড়ছি” আবার বলুন।",
+      "pronunciation": "“porchhi” abar bolun.",
+      "en": "Say “am reading” again.",
+      "context": "Guided present-tense sentences vocabulary drill",
+      "category": "present-tense"
+    },
+    {
+      "bn": "“করছে” আবার বলুন।",
+      "pronunciation": "“korchhe” abar bolun.",
+      "en": "Say “is doing” again.",
+      "context": "Guided present-tense sentences vocabulary drill",
+      "category": "present-tense"
+    },
+    {
+      "bn": "“করি” শব্দটি লিখুন।",
+      "pronunciation": "“kori” shobdoti likhun.",
+      "en": "Write the word “I do.”",
+      "context": "Guided present-tense sentences vocabulary drill",
+      "category": "present-tense"
+    },
+    {
+      "bn": "“করো” শব্দটি লিখুন।",
+      "pronunciation": "“koro” shobdoti likhun.",
+      "en": "Write the word “you do.”",
+      "context": "Guided present-tense sentences vocabulary drill",
+      "category": "present-tense"
+    },
+    {
+      "bn": "“করেন” শব্দটি লিখুন।",
+      "pronunciation": "“koren” shobdoti likhun.",
+      "en": "Write the word “you do (polite).”",
+      "context": "Guided present-tense sentences vocabulary drill",
+      "category": "present-tense"
+    },
+    {
+      "bn": "“করে” শব্দটি লিখুন।",
+      "pronunciation": "“kore” shobdoti likhun.",
+      "en": "Write the word “he / she does.”",
+      "context": "Guided present-tense sentences vocabulary drill",
+      "category": "present-tense"
+    }
+  ],
+  "practice": [
+    "Say the Bengali words for three items from present-tense sentences.",
+    "Read each phrase aloud, then repeat it without looking at the transliteration.",
+    "Create a new sentence by replacing one word in a lesson phrase."
+  ],
+  "notes": [
+    "Simple present commonly describes habits; the -ছি form describes an action in progress.",
+    "Verb endings change with the subject’s familiarity or respect level."
+  ]
+}

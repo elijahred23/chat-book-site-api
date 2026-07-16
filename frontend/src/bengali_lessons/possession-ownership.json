@@ -1,0 +1,293 @@
+{
+  "id": "possession-ownership",
+  "title": "Possession and Ownership",
+  "summary": "Express who owns something and describe relationships between nouns.",
+  "level": "beginner",
+  "topic": "Possession and Ownership",
+  "focus": "grammar",
+  "vocab": [
+    {
+      "bn": "আমার",
+      "pronunciation": "amar",
+      "en": "my / mine",
+      "category": "possession-ownership"
+    },
+    {
+      "bn": "তোমার",
+      "pronunciation": "tomar",
+      "en": "your / yours (familiar)",
+      "category": "possession-ownership"
+    },
+    {
+      "bn": "আপনার",
+      "pronunciation": "apnar",
+      "en": "your / yours (polite)",
+      "category": "possession-ownership"
+    },
+    {
+      "bn": "তার",
+      "pronunciation": "tar",
+      "en": "his / her",
+      "category": "possession-ownership"
+    },
+    {
+      "bn": "আমাদের",
+      "pronunciation": "amader",
+      "en": "our / ours",
+      "category": "possession-ownership"
+    },
+    {
+      "bn": "তাদের",
+      "pronunciation": "tader",
+      "en": "their / theirs",
+      "category": "possession-ownership"
+    },
+    {
+      "bn": "কার",
+      "pronunciation": "kar",
+      "en": "whose",
+      "category": "possession-ownership"
+    },
+    {
+      "bn": "নিজের",
+      "pronunciation": "nijer",
+      "en": "one’s own",
+      "category": "possession-ownership"
+    }
+  ],
+  "phrases": [
+    {
+      "bn": "এই বইটা আমার।",
+      "pronunciation": "ei boita amar.",
+      "en": "This book is mine.",
+      "context": "Claiming ownership",
+      "category": "possession-ownership"
+    },
+    {
+      "bn": "ওটা কার ব্যাগ?",
+      "pronunciation": "ota kar bag?",
+      "en": "Whose bag is that?",
+      "context": "Asking about ownership",
+      "category": "possession-ownership"
+    },
+    {
+      "bn": "রিমার গাড়ি নতুন।",
+      "pronunciation": "Rimar gari notun.",
+      "en": "Rima’s car is new.",
+      "context": "Possessor before an object",
+      "category": "possession-ownership"
+    },
+    {
+      "bn": "আমাদের বাড়ির সামনে একটি গাছ আছে।",
+      "pronunciation": "amader barir shamne ekti gachh achhe.",
+      "en": "There is a tree in front of our house.",
+      "context": "A possessive chain",
+      "category": "possession-ownership"
+    },
+    {
+      "bn": "আজকের শব্দ “আমার”।",
+      "pronunciation": "ajker shobdo “amar”.",
+      "en": "Today’s word is “my / mine.”",
+      "context": "Guided possession and ownership vocabulary drill",
+      "category": "possession-ownership"
+    },
+    {
+      "bn": "আজকের শব্দ “তোমার”।",
+      "pronunciation": "ajker shobdo “tomar”.",
+      "en": "Today’s word is “your / yours (familiar).”",
+      "context": "Guided possession and ownership vocabulary drill",
+      "category": "possession-ownership"
+    },
+    {
+      "bn": "আজকের শব্দ “আপনার”।",
+      "pronunciation": "ajker shobdo “apnar”.",
+      "en": "Today’s word is “your / yours (polite).”",
+      "context": "Guided possession and ownership vocabulary drill",
+      "category": "possession-ownership"
+    },
+    {
+      "bn": "আজকের শব্দ “তার”।",
+      "pronunciation": "ajker shobdo “tar”.",
+      "en": "Today’s word is “his / her.”",
+      "context": "Guided possession and ownership vocabulary drill",
+      "category": "possession-ownership"
+    },
+    {
+      "bn": "আজকের শব্দ “আমাদের”।",
+      "pronunciation": "ajker shobdo “amader”.",
+      "en": "Today’s word is “our / ours.”",
+      "context": "Guided possession and ownership vocabulary drill",
+      "category": "possession-ownership"
+    },
+    {
+      "bn": "আজকের শব্দ “তাদের”।",
+      "pronunciation": "ajker shobdo “tader”.",
+      "en": "Today’s word is “their / theirs.”",
+      "context": "Guided possession and ownership vocabulary drill",
+      "category": "possession-ownership"
+    },
+    {
+      "bn": "আজকের শব্দ “কার”।",
+      "pronunciation": "ajker shobdo “kar”.",
+      "en": "Today’s word is “whose.”",
+      "context": "Guided possession and ownership vocabulary drill",
+      "category": "possession-ownership"
+    },
+    {
+      "bn": "আজকের শব্দ “নিজের”।",
+      "pronunciation": "ajker shobdo “nijer”.",
+      "en": "Today’s word is “one’s own.”",
+      "context": "Guided possession and ownership vocabulary drill",
+      "category": "possession-ownership"
+    },
+    {
+      "bn": "“আমার” শব্দটি বলুন।",
+      "pronunciation": "“amar” shobdoti bolun.",
+      "en": "Say the word “my / mine.”",
+      "context": "Guided possession and ownership vocabulary drill",
+      "category": "possession-ownership"
+    },
+    {
+      "bn": "“তোমার” শব্দটি বলুন।",
+      "pronunciation": "“tomar” shobdoti bolun.",
+      "en": "Say the word “your / yours (familiar).”",
+      "context": "Guided possession and ownership vocabulary drill",
+      "category": "possession-ownership"
+    },
+    {
+      "bn": "“আপনার” শব্দটি বলুন।",
+      "pronunciation": "“apnar” shobdoti bolun.",
+      "en": "Say the word “your / yours (polite).”",
+      "context": "Guided possession and ownership vocabulary drill",
+      "category": "possession-ownership"
+    },
+    {
+      "bn": "“তার” শব্দটি বলুন।",
+      "pronunciation": "“tar” shobdoti bolun.",
+      "en": "Say the word “his / her.”",
+      "context": "Guided possession and ownership vocabulary drill",
+      "category": "possession-ownership"
+    },
+    {
+      "bn": "“আমাদের” শব্দটি বলুন।",
+      "pronunciation": "“amader” shobdoti bolun.",
+      "en": "Say the word “our / ours.”",
+      "context": "Guided possession and ownership vocabulary drill",
+      "category": "possession-ownership"
+    },
+    {
+      "bn": "“তাদের” শব্দটি বলুন।",
+      "pronunciation": "“tader” shobdoti bolun.",
+      "en": "Say the word “their / theirs.”",
+      "context": "Guided possession and ownership vocabulary drill",
+      "category": "possession-ownership"
+    },
+    {
+      "bn": "“কার” শব্দটি বলুন।",
+      "pronunciation": "“kar” shobdoti bolun.",
+      "en": "Say the word “whose.”",
+      "context": "Guided possession and ownership vocabulary drill",
+      "category": "possession-ownership"
+    },
+    {
+      "bn": "“নিজের” শব্দটি বলুন।",
+      "pronunciation": "“nijer” shobdoti bolun.",
+      "en": "Say the word “one’s own.”",
+      "context": "Guided possession and ownership vocabulary drill",
+      "category": "possession-ownership"
+    },
+    {
+      "bn": "“আমার” আবার বলুন।",
+      "pronunciation": "“amar” abar bolun.",
+      "en": "Say “my / mine” again.",
+      "context": "Guided possession and ownership vocabulary drill",
+      "category": "possession-ownership"
+    },
+    {
+      "bn": "“তোমার” আবার বলুন।",
+      "pronunciation": "“tomar” abar bolun.",
+      "en": "Say “your / yours (familiar)” again.",
+      "context": "Guided possession and ownership vocabulary drill",
+      "category": "possession-ownership"
+    },
+    {
+      "bn": "“আপনার” আবার বলুন।",
+      "pronunciation": "“apnar” abar bolun.",
+      "en": "Say “your / yours (polite)” again.",
+      "context": "Guided possession and ownership vocabulary drill",
+      "category": "possession-ownership"
+    },
+    {
+      "bn": "“তার” আবার বলুন।",
+      "pronunciation": "“tar” abar bolun.",
+      "en": "Say “his / her” again.",
+      "context": "Guided possession and ownership vocabulary drill",
+      "category": "possession-ownership"
+    },
+    {
+      "bn": "“আমাদের” আবার বলুন।",
+      "pronunciation": "“amader” abar bolun.",
+      "en": "Say “our / ours” again.",
+      "context": "Guided possession and ownership vocabulary drill",
+      "category": "possession-ownership"
+    },
+    {
+      "bn": "“তাদের” আবার বলুন।",
+      "pronunciation": "“tader” abar bolun.",
+      "en": "Say “their / theirs” again.",
+      "context": "Guided possession and ownership vocabulary drill",
+      "category": "possession-ownership"
+    },
+    {
+      "bn": "“কার” আবার বলুন।",
+      "pronunciation": "“kar” abar bolun.",
+      "en": "Say “whose” again.",
+      "context": "Guided possession and ownership vocabulary drill",
+      "category": "possession-ownership"
+    },
+    {
+      "bn": "“নিজের” আবার বলুন।",
+      "pronunciation": "“nijer” abar bolun.",
+      "en": "Say “one’s own” again.",
+      "context": "Guided possession and ownership vocabulary drill",
+      "category": "possession-ownership"
+    },
+    {
+      "bn": "“আমার” শব্দটি লিখুন।",
+      "pronunciation": "“amar” shobdoti likhun.",
+      "en": "Write the word “my / mine.”",
+      "context": "Guided possession and ownership vocabulary drill",
+      "category": "possession-ownership"
+    },
+    {
+      "bn": "“তোমার” শব্দটি লিখুন।",
+      "pronunciation": "“tomar” shobdoti likhun.",
+      "en": "Write the word “your / yours (familiar).”",
+      "context": "Guided possession and ownership vocabulary drill",
+      "category": "possession-ownership"
+    },
+    {
+      "bn": "“আপনার” শব্দটি লিখুন।",
+      "pronunciation": "“apnar” shobdoti likhun.",
+      "en": "Write the word “your / yours (polite).”",
+      "context": "Guided possession and ownership vocabulary drill",
+      "category": "possession-ownership"
+    },
+    {
+      "bn": "“তার” শব্দটি লিখুন।",
+      "pronunciation": "“tar” shobdoti likhun.",
+      "en": "Write the word “his / her.”",
+      "context": "Guided possession and ownership vocabulary drill",
+      "category": "possession-ownership"
+    }
+  ],
+  "practice": [
+    "Say the Bengali words for three items from possession and ownership.",
+    "Read each phrase aloud, then repeat it without looking at the transliteration.",
+    "Create a new sentence by replacing one word in a lesson phrase."
+  ],
+  "notes": [
+    "Possessors generally come before what they possess.",
+    "The endings -র and -এর often mark possession."
+  ]
+}

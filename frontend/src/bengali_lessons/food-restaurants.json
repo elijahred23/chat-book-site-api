@@ -1,0 +1,713 @@
+{
+  "id": "food-restaurants",
+  "title": "Food, Drinks, and Restaurants",
+  "summary": "Order food, discuss tastes, and handle a simple restaurant visit.",
+  "level": "beginner",
+  "topic": "Food, Drinks, and Restaurants",
+  "focus": "conversation",
+  "vocab": [
+    {
+      "bn": "ভাত",
+      "pronunciation": "bhat",
+      "en": "rice",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "ডাল",
+      "pronunciation": "dal",
+      "en": "lentils",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "মাছ",
+      "pronunciation": "machh",
+      "en": "fish",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "সবজি",
+      "pronunciation": "shobji",
+      "en": "vegetables",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "পানি",
+      "pronunciation": "pani",
+      "en": "water",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "মেনু",
+      "pronunciation": "menu",
+      "en": "menu",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "ঝাল",
+      "pronunciation": "jhal",
+      "en": "spicy",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "বিল",
+      "pronunciation": "bil",
+      "en": "bill",
+      "category": "food-restaurants"
+    }
+  ],
+  "phrases": [
+    {
+      "bn": "দয়া করে মেনুটা দিন।",
+      "pronunciation": "doya kore menuta din.",
+      "en": "Please give me the menu.",
+      "context": "Requesting a menu",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "আমি ভাত আর মাছ নেব।",
+      "pronunciation": "ami bhat ar machh nebo.",
+      "en": "I’ll have rice and fish.",
+      "context": "Ordering a meal",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "খাবারটা কম ঝাল করবেন।",
+      "pronunciation": "khabarta kom jhal korben.",
+      "en": "Please make the food less spicy.",
+      "context": "Stating a preference",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "বিলটা দিন, দয়া করে।",
+      "pronunciation": "bilta din, doya kore.",
+      "en": "Please bring the bill.",
+      "context": "Finishing the meal",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "আজকের শব্দ “ভাত”।",
+      "pronunciation": "ajker shobdo “bhat”.",
+      "en": "Today’s word is “rice.”",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "আজকের শব্দ “ডাল”।",
+      "pronunciation": "ajker shobdo “dal”.",
+      "en": "Today’s word is “lentils.”",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "আজকের শব্দ “মাছ”।",
+      "pronunciation": "ajker shobdo “machh”.",
+      "en": "Today’s word is “fish.”",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "আজকের শব্দ “সবজি”।",
+      "pronunciation": "ajker shobdo “shobji”.",
+      "en": "Today’s word is “vegetables.”",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "আজকের শব্দ “পানি”।",
+      "pronunciation": "ajker shobdo “pani”.",
+      "en": "Today’s word is “water.”",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "আজকের শব্দ “মেনু”।",
+      "pronunciation": "ajker shobdo “menu”.",
+      "en": "Today’s word is “menu.”",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "আজকের শব্দ “ঝাল”।",
+      "pronunciation": "ajker shobdo “jhal”.",
+      "en": "Today’s word is “spicy.”",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "আজকের শব্দ “বিল”।",
+      "pronunciation": "ajker shobdo “bil”.",
+      "en": "Today’s word is “bill.”",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "“ভাত” শব্দটি বলুন।",
+      "pronunciation": "“bhat” shobdoti bolun.",
+      "en": "Say the word “rice.”",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "“ডাল” শব্দটি বলুন।",
+      "pronunciation": "“dal” shobdoti bolun.",
+      "en": "Say the word “lentils.”",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "“মাছ” শব্দটি বলুন।",
+      "pronunciation": "“machh” shobdoti bolun.",
+      "en": "Say the word “fish.”",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "“সবজি” শব্দটি বলুন।",
+      "pronunciation": "“shobji” shobdoti bolun.",
+      "en": "Say the word “vegetables.”",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "“পানি” শব্দটি বলুন।",
+      "pronunciation": "“pani” shobdoti bolun.",
+      "en": "Say the word “water.”",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "“মেনু” শব্দটি বলুন।",
+      "pronunciation": "“menu” shobdoti bolun.",
+      "en": "Say the word “menu.”",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "“ঝাল” শব্দটি বলুন।",
+      "pronunciation": "“jhal” shobdoti bolun.",
+      "en": "Say the word “spicy.”",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "“বিল” শব্দটি বলুন।",
+      "pronunciation": "“bil” shobdoti bolun.",
+      "en": "Say the word “bill.”",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "“ভাত” আবার বলুন।",
+      "pronunciation": "“bhat” abar bolun.",
+      "en": "Say “rice” again.",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "“ডাল” আবার বলুন।",
+      "pronunciation": "“dal” abar bolun.",
+      "en": "Say “lentils” again.",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "“মাছ” আবার বলুন।",
+      "pronunciation": "“machh” abar bolun.",
+      "en": "Say “fish” again.",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "“সবজি” আবার বলুন।",
+      "pronunciation": "“shobji” abar bolun.",
+      "en": "Say “vegetables” again.",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "“পানি” আবার বলুন।",
+      "pronunciation": "“pani” abar bolun.",
+      "en": "Say “water” again.",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "“মেনু” আবার বলুন।",
+      "pronunciation": "“menu” abar bolun.",
+      "en": "Say “menu” again.",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "“ঝাল” আবার বলুন।",
+      "pronunciation": "“jhal” abar bolun.",
+      "en": "Say “spicy” again.",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "“বিল” আবার বলুন।",
+      "pronunciation": "“bil” abar bolun.",
+      "en": "Say “bill” again.",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "“ভাত” শব্দটি লিখুন।",
+      "pronunciation": "“bhat” shobdoti likhun.",
+      "en": "Write the word “rice.”",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "“ডাল” শব্দটি লিখুন।",
+      "pronunciation": "“dal” shobdoti likhun.",
+      "en": "Write the word “lentils.”",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "“মাছ” শব্দটি লিখুন।",
+      "pronunciation": "“machh” shobdoti likhun.",
+      "en": "Write the word “fish.”",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "“সবজি” শব্দটি লিখুন।",
+      "pronunciation": "“shobji” shobdoti likhun.",
+      "en": "Write the word “vegetables.”",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "“পানি” শব্দটি লিখুন।",
+      "pronunciation": "“pani” shobdoti likhun.",
+      "en": "Write the word “water.”",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "“মেনু” শব্দটি লিখুন।",
+      "pronunciation": "“menu” shobdoti likhun.",
+      "en": "Write the word “menu.”",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "“ঝাল” শব্দটি লিখুন।",
+      "pronunciation": "“jhal” shobdoti likhun.",
+      "en": "Write the word “spicy.”",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "“বিল” শব্দটি লিখুন।",
+      "pronunciation": "“bil” shobdoti likhun.",
+      "en": "Write the word “bill.”",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "“ভাত” শব্দটি পড়ুন।",
+      "pronunciation": "“bhat” shobdoti porun.",
+      "en": "Read the word “rice.”",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "“ডাল” শব্দটি পড়ুন।",
+      "pronunciation": "“dal” shobdoti porun.",
+      "en": "Read the word “lentils.”",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "“মাছ” শব্দটি পড়ুন।",
+      "pronunciation": "“machh” shobdoti porun.",
+      "en": "Read the word “fish.”",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "“সবজি” শব্দটি পড়ুন।",
+      "pronunciation": "“shobji” shobdoti porun.",
+      "en": "Read the word “vegetables.”",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "“পানি” শব্দটি পড়ুন।",
+      "pronunciation": "“pani” shobdoti porun.",
+      "en": "Read the word “water.”",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "“মেনু” শব্দটি পড়ুন।",
+      "pronunciation": "“menu” shobdoti porun.",
+      "en": "Read the word “menu.”",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "“ঝাল” শব্দটি পড়ুন।",
+      "pronunciation": "“jhal” shobdoti porun.",
+      "en": "Read the word “spicy.”",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "“বিল” শব্দটি পড়ুন।",
+      "pronunciation": "“bil” shobdoti porun.",
+      "en": "Read the word “bill.”",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "“ভাত” শব্দটি মনে রাখুন।",
+      "pronunciation": "“bhat” shobdoti mone rakhun.",
+      "en": "Remember the word “rice.”",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "“ডাল” শব্দটি মনে রাখুন।",
+      "pronunciation": "“dal” shobdoti mone rakhun.",
+      "en": "Remember the word “lentils.”",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "“মাছ” শব্দটি মনে রাখুন।",
+      "pronunciation": "“machh” shobdoti mone rakhun.",
+      "en": "Remember the word “fish.”",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "“সবজি” শব্দটি মনে রাখুন।",
+      "pronunciation": "“shobji” shobdoti mone rakhun.",
+      "en": "Remember the word “vegetables.”",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "“পানি” শব্দটি মনে রাখুন।",
+      "pronunciation": "“pani” shobdoti mone rakhun.",
+      "en": "Remember the word “water.”",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "“মেনু” শব্দটি মনে রাখুন।",
+      "pronunciation": "“menu” shobdoti mone rakhun.",
+      "en": "Remember the word “menu.”",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "“ঝাল” শব্দটি মনে রাখুন।",
+      "pronunciation": "“jhal” shobdoti mone rakhun.",
+      "en": "Remember the word “spicy.”",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "“বিল” শব্দটি মনে রাখুন।",
+      "pronunciation": "“bil” shobdoti mone rakhun.",
+      "en": "Remember the word “bill.”",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "“ভাত” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“bhat” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “rice.”",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "“ডাল” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“dal” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “lentils.”",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "“মাছ” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“machh” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “fish.”",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "“সবজি” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“shobji” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “vegetables.”",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "“পানি” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“pani” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “water.”",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "“মেনু” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“menu” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “menu.”",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "“ঝাল” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“jhal” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “spicy.”",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "“বিল” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“bil” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “bill.”",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "“ভাত” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“bhat” kibhabe uccharon korben?",
+      "en": "How do you pronounce “rice”?",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "“ডাল” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“dal” kibhabe uccharon korben?",
+      "en": "How do you pronounce “lentils”?",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "“মাছ” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“machh” kibhabe uccharon korben?",
+      "en": "How do you pronounce “fish”?",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "“সবজি” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“shobji” kibhabe uccharon korben?",
+      "en": "How do you pronounce “vegetables”?",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "“পানি” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“pani” kibhabe uccharon korben?",
+      "en": "How do you pronounce “water”?",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "“মেনু” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“menu” kibhabe uccharon korben?",
+      "en": "How do you pronounce “menu”?",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "“ঝাল” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“jhal” kibhabe uccharon korben?",
+      "en": "How do you pronounce “spicy”?",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "“বিল” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“bil” kibhabe uccharon korben?",
+      "en": "How do you pronounce “bill”?",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "“ভাত” এর অর্থ কী?",
+      "pronunciation": "“bhat” er ortho ki?",
+      "en": "What does “rice” mean?",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "“ডাল” এর অর্থ কী?",
+      "pronunciation": "“dal” er ortho ki?",
+      "en": "What does “lentils” mean?",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "“মাছ” এর অর্থ কী?",
+      "pronunciation": "“machh” er ortho ki?",
+      "en": "What does “fish” mean?",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "“সবজি” এর অর্থ কী?",
+      "pronunciation": "“shobji” er ortho ki?",
+      "en": "What does “vegetables” mean?",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "“পানি” এর অর্থ কী?",
+      "pronunciation": "“pani” er ortho ki?",
+      "en": "What does “water” mean?",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "“মেনু” এর অর্থ কী?",
+      "pronunciation": "“menu” er ortho ki?",
+      "en": "What does “menu” mean?",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "“ঝাল” এর অর্থ কী?",
+      "pronunciation": "“jhal” er ortho ki?",
+      "en": "What does “spicy” mean?",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "“বিল” এর অর্থ কী?",
+      "pronunciation": "“bil” er ortho ki?",
+      "en": "What does “bill” mean?",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "আমি “ভাত” শব্দটি শিখছি।",
+      "pronunciation": "ami “bhat” shobdoti shikhchhi.",
+      "en": "I am learning the word “rice.”",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "আমি “ডাল” শব্দটি শিখছি।",
+      "pronunciation": "ami “dal” shobdoti shikhchhi.",
+      "en": "I am learning the word “lentils.”",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "আমি “মাছ” শব্দটি শিখছি।",
+      "pronunciation": "ami “machh” shobdoti shikhchhi.",
+      "en": "I am learning the word “fish.”",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "আমি “সবজি” শব্দটি শিখছি।",
+      "pronunciation": "ami “shobji” shobdoti shikhchhi.",
+      "en": "I am learning the word “vegetables.”",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "আমি “পানি” শব্দটি শিখছি।",
+      "pronunciation": "ami “pani” shobdoti shikhchhi.",
+      "en": "I am learning the word “water.”",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "আমি “মেনু” শব্দটি শিখছি।",
+      "pronunciation": "ami “menu” shobdoti shikhchhi.",
+      "en": "I am learning the word “menu.”",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "আমি “ঝাল” শব্দটি শিখছি।",
+      "pronunciation": "ami “jhal” shobdoti shikhchhi.",
+      "en": "I am learning the word “spicy.”",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "আমি “বিল” শব্দটি শিখছি।",
+      "pronunciation": "ami “bil” shobdoti shikhchhi.",
+      "en": "I am learning the word “bill.”",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "আপনি কি “ভাত” বলতে পারেন?",
+      "pronunciation": "apni ki “bhat” bolte paren?",
+      "en": "Can you say “rice”?",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "আপনি কি “ডাল” বলতে পারেন?",
+      "pronunciation": "apni ki “dal” bolte paren?",
+      "en": "Can you say “lentils”?",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "আপনি কি “মাছ” বলতে পারেন?",
+      "pronunciation": "apni ki “machh” bolte paren?",
+      "en": "Can you say “fish”?",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "আপনি কি “সবজি” বলতে পারেন?",
+      "pronunciation": "apni ki “shobji” bolte paren?",
+      "en": "Can you say “vegetables”?",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "আপনি কি “পানি” বলতে পারেন?",
+      "pronunciation": "apni ki “pani” bolte paren?",
+      "en": "Can you say “water”?",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "আপনি কি “মেনু” বলতে পারেন?",
+      "pronunciation": "apni ki “menu” bolte paren?",
+      "en": "Can you say “menu”?",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "আপনি কি “ঝাল” বলতে পারেন?",
+      "pronunciation": "apni ki “jhal” bolte paren?",
+      "en": "Can you say “spicy”?",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    },
+    {
+      "bn": "আপনি কি “বিল” বলতে পারেন?",
+      "pronunciation": "apni ki “bil” bolte paren?",
+      "en": "Can you say “bill”?",
+      "context": "Guided food, drinks, and restaurants vocabulary drill",
+      "category": "food-restaurants"
+    }
+  ],
+  "practice": [
+    "Say the Bengali words for three items from food, drinks, and restaurants.",
+    "Read each phrase aloud, then repeat it without looking at the transliteration.",
+    "Create a new sentence by replacing one word in a lesson phrase."
+  ],
+  "notes": [
+    "নেব literally means ‘will take’ and is natural when ordering.",
+    "টা marks a specific item in casual speech."
+  ]
+}

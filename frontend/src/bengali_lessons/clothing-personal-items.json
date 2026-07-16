@@ -1,0 +1,712 @@
+{
+  "id": "clothing-personal-items",
+  "title": "Clothing and Personal Items",
+  "summary": "Identify clothes, accessories, and personal belongings.",
+  "level": "beginner",
+  "topic": "Clothing and Personal Items",
+  "focus": "vocabulary",
+  "vocab": [
+    {
+      "bn": "জামা",
+      "pronunciation": "jama",
+      "en": "shirt / clothing",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "প্যান্ট",
+      "pronunciation": "pant",
+      "en": "pants",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "শাড়ি",
+      "pronunciation": "shari",
+      "en": "sari",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "জুতা",
+      "pronunciation": "juta",
+      "en": "shoes",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "চশমা",
+      "pronunciation": "choshma",
+      "en": "glasses",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "ঘড়ি",
+      "pronunciation": "ghori",
+      "en": "watch / clock",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "ছাতা",
+      "pronunciation": "chhata",
+      "en": "umbrella",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "মানিব্যাগ",
+      "pronunciation": "manibag",
+      "en": "wallet",
+      "category": "clothing-personal-items"
+    }
+  ],
+  "phrases": [
+    {
+      "bn": "এই জামাটা আমার।",
+      "pronunciation": "ei jamata amar.",
+      "en": "This shirt is mine.",
+      "context": "Identifying ownership",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "আপনার জুতার মাপ কত?",
+      "pronunciation": "apnar jutar map koto?",
+      "en": "What is your shoe size?",
+      "context": "Asking about size",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "আমি ছাতাটা খুঁজে পাচ্ছি না।",
+      "pronunciation": "ami chhatata khuje pachchhi na.",
+      "en": "I cannot find the umbrella.",
+      "context": "Looking for an item",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "আজকের শব্দ “জামা”।",
+      "pronunciation": "ajker shobdo “jama”.",
+      "en": "Today’s word is “shirt / clothing.”",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "আজকের শব্দ “প্যান্ট”।",
+      "pronunciation": "ajker shobdo “pant”.",
+      "en": "Today’s word is “pants.”",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "আজকের শব্দ “শাড়ি”।",
+      "pronunciation": "ajker shobdo “shari”.",
+      "en": "Today’s word is “sari.”",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "আজকের শব্দ “জুতা”।",
+      "pronunciation": "ajker shobdo “juta”.",
+      "en": "Today’s word is “shoes.”",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "আজকের শব্দ “চশমা”।",
+      "pronunciation": "ajker shobdo “choshma”.",
+      "en": "Today’s word is “glasses.”",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "আজকের শব্দ “ঘড়ি”।",
+      "pronunciation": "ajker shobdo “ghori”.",
+      "en": "Today’s word is “watch / clock.”",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "আজকের শব্দ “ছাতা”।",
+      "pronunciation": "ajker shobdo “chhata”.",
+      "en": "Today’s word is “umbrella.”",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "আজকের শব্দ “মানিব্যাগ”।",
+      "pronunciation": "ajker shobdo “manibag”.",
+      "en": "Today’s word is “wallet.”",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "“জামা” শব্দটি বলুন।",
+      "pronunciation": "“jama” shobdoti bolun.",
+      "en": "Say the word “shirt / clothing.”",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "“প্যান্ট” শব্দটি বলুন।",
+      "pronunciation": "“pant” shobdoti bolun.",
+      "en": "Say the word “pants.”",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "“শাড়ি” শব্দটি বলুন।",
+      "pronunciation": "“shari” shobdoti bolun.",
+      "en": "Say the word “sari.”",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "“জুতা” শব্দটি বলুন।",
+      "pronunciation": "“juta” shobdoti bolun.",
+      "en": "Say the word “shoes.”",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "“চশমা” শব্দটি বলুন।",
+      "pronunciation": "“choshma” shobdoti bolun.",
+      "en": "Say the word “glasses.”",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "“ঘড়ি” শব্দটি বলুন।",
+      "pronunciation": "“ghori” shobdoti bolun.",
+      "en": "Say the word “watch / clock.”",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "“ছাতা” শব্দটি বলুন।",
+      "pronunciation": "“chhata” shobdoti bolun.",
+      "en": "Say the word “umbrella.”",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "“মানিব্যাগ” শব্দটি বলুন।",
+      "pronunciation": "“manibag” shobdoti bolun.",
+      "en": "Say the word “wallet.”",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "“জামা” আবার বলুন।",
+      "pronunciation": "“jama” abar bolun.",
+      "en": "Say “shirt / clothing” again.",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "“প্যান্ট” আবার বলুন।",
+      "pronunciation": "“pant” abar bolun.",
+      "en": "Say “pants” again.",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "“শাড়ি” আবার বলুন।",
+      "pronunciation": "“shari” abar bolun.",
+      "en": "Say “sari” again.",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "“জুতা” আবার বলুন।",
+      "pronunciation": "“juta” abar bolun.",
+      "en": "Say “shoes” again.",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "“চশমা” আবার বলুন।",
+      "pronunciation": "“choshma” abar bolun.",
+      "en": "Say “glasses” again.",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "“ঘড়ি” আবার বলুন।",
+      "pronunciation": "“ghori” abar bolun.",
+      "en": "Say “watch / clock” again.",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "“ছাতা” আবার বলুন।",
+      "pronunciation": "“chhata” abar bolun.",
+      "en": "Say “umbrella” again.",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "“মানিব্যাগ” আবার বলুন।",
+      "pronunciation": "“manibag” abar bolun.",
+      "en": "Say “wallet” again.",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "“জামা” শব্দটি লিখুন।",
+      "pronunciation": "“jama” shobdoti likhun.",
+      "en": "Write the word “shirt / clothing.”",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "“প্যান্ট” শব্দটি লিখুন।",
+      "pronunciation": "“pant” shobdoti likhun.",
+      "en": "Write the word “pants.”",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "“শাড়ি” শব্দটি লিখুন।",
+      "pronunciation": "“shari” shobdoti likhun.",
+      "en": "Write the word “sari.”",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "“জুতা” শব্দটি লিখুন।",
+      "pronunciation": "“juta” shobdoti likhun.",
+      "en": "Write the word “shoes.”",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "“চশমা” শব্দটি লিখুন।",
+      "pronunciation": "“choshma” shobdoti likhun.",
+      "en": "Write the word “glasses.”",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "“ঘড়ি” শব্দটি লিখুন।",
+      "pronunciation": "“ghori” shobdoti likhun.",
+      "en": "Write the word “watch / clock.”",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "“ছাতা” শব্দটি লিখুন।",
+      "pronunciation": "“chhata” shobdoti likhun.",
+      "en": "Write the word “umbrella.”",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "“মানিব্যাগ” শব্দটি লিখুন।",
+      "pronunciation": "“manibag” shobdoti likhun.",
+      "en": "Write the word “wallet.”",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "“জামা” শব্দটি পড়ুন।",
+      "pronunciation": "“jama” shobdoti porun.",
+      "en": "Read the word “shirt / clothing.”",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "“প্যান্ট” শব্দটি পড়ুন।",
+      "pronunciation": "“pant” shobdoti porun.",
+      "en": "Read the word “pants.”",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "“শাড়ি” শব্দটি পড়ুন।",
+      "pronunciation": "“shari” shobdoti porun.",
+      "en": "Read the word “sari.”",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "“জুতা” শব্দটি পড়ুন।",
+      "pronunciation": "“juta” shobdoti porun.",
+      "en": "Read the word “shoes.”",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "“চশমা” শব্দটি পড়ুন।",
+      "pronunciation": "“choshma” shobdoti porun.",
+      "en": "Read the word “glasses.”",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "“ঘড়ি” শব্দটি পড়ুন।",
+      "pronunciation": "“ghori” shobdoti porun.",
+      "en": "Read the word “watch / clock.”",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "“ছাতা” শব্দটি পড়ুন।",
+      "pronunciation": "“chhata” shobdoti porun.",
+      "en": "Read the word “umbrella.”",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "“মানিব্যাগ” শব্দটি পড়ুন।",
+      "pronunciation": "“manibag” shobdoti porun.",
+      "en": "Read the word “wallet.”",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "“জামা” শব্দটি মনে রাখুন।",
+      "pronunciation": "“jama” shobdoti mone rakhun.",
+      "en": "Remember the word “shirt / clothing.”",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "“প্যান্ট” শব্দটি মনে রাখুন।",
+      "pronunciation": "“pant” shobdoti mone rakhun.",
+      "en": "Remember the word “pants.”",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "“শাড়ি” শব্দটি মনে রাখুন।",
+      "pronunciation": "“shari” shobdoti mone rakhun.",
+      "en": "Remember the word “sari.”",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "“জুতা” শব্দটি মনে রাখুন।",
+      "pronunciation": "“juta” shobdoti mone rakhun.",
+      "en": "Remember the word “shoes.”",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "“চশমা” শব্দটি মনে রাখুন।",
+      "pronunciation": "“choshma” shobdoti mone rakhun.",
+      "en": "Remember the word “glasses.”",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "“ঘড়ি” শব্দটি মনে রাখুন।",
+      "pronunciation": "“ghori” shobdoti mone rakhun.",
+      "en": "Remember the word “watch / clock.”",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "“ছাতা” শব্দটি মনে রাখুন।",
+      "pronunciation": "“chhata” shobdoti mone rakhun.",
+      "en": "Remember the word “umbrella.”",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "“মানিব্যাগ” শব্দটি মনে রাখুন।",
+      "pronunciation": "“manibag” shobdoti mone rakhun.",
+      "en": "Remember the word “wallet.”",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "“জামা” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“jama” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “shirt / clothing.”",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "“প্যান্ট” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“pant” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “pants.”",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "“শাড়ি” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“shari” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “sari.”",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "“জুতা” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“juta” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “shoes.”",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "“চশমা” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“choshma” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “glasses.”",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "“ঘড়ি” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“ghori” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “watch / clock.”",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "“ছাতা” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“chhata” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “umbrella.”",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "“মানিব্যাগ” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“manibag” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “wallet.”",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "“জামা” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“jama” kibhabe uccharon korben?",
+      "en": "How do you pronounce “shirt / clothing”?",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "“প্যান্ট” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“pant” kibhabe uccharon korben?",
+      "en": "How do you pronounce “pants”?",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "“শাড়ি” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“shari” kibhabe uccharon korben?",
+      "en": "How do you pronounce “sari”?",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "“জুতা” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“juta” kibhabe uccharon korben?",
+      "en": "How do you pronounce “shoes”?",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "“চশমা” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“choshma” kibhabe uccharon korben?",
+      "en": "How do you pronounce “glasses”?",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "“ঘড়ি” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“ghori” kibhabe uccharon korben?",
+      "en": "How do you pronounce “watch / clock”?",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "“ছাতা” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“chhata” kibhabe uccharon korben?",
+      "en": "How do you pronounce “umbrella”?",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "“মানিব্যাগ” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“manibag” kibhabe uccharon korben?",
+      "en": "How do you pronounce “wallet”?",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "“জামা” এর অর্থ কী?",
+      "pronunciation": "“jama” er ortho ki?",
+      "en": "What does “shirt / clothing” mean?",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "“প্যান্ট” এর অর্থ কী?",
+      "pronunciation": "“pant” er ortho ki?",
+      "en": "What does “pants” mean?",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "“শাড়ি” এর অর্থ কী?",
+      "pronunciation": "“shari” er ortho ki?",
+      "en": "What does “sari” mean?",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "“জুতা” এর অর্থ কী?",
+      "pronunciation": "“juta” er ortho ki?",
+      "en": "What does “shoes” mean?",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "“চশমা” এর অর্থ কী?",
+      "pronunciation": "“choshma” er ortho ki?",
+      "en": "What does “glasses” mean?",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "“ঘড়ি” এর অর্থ কী?",
+      "pronunciation": "“ghori” er ortho ki?",
+      "en": "What does “watch / clock” mean?",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "“ছাতা” এর অর্থ কী?",
+      "pronunciation": "“chhata” er ortho ki?",
+      "en": "What does “umbrella” mean?",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "“মানিব্যাগ” এর অর্থ কী?",
+      "pronunciation": "“manibag” er ortho ki?",
+      "en": "What does “wallet” mean?",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "আমি “জামা” শব্দটি শিখছি।",
+      "pronunciation": "ami “jama” shobdoti shikhchhi.",
+      "en": "I am learning the word “shirt / clothing.”",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "আমি “প্যান্ট” শব্দটি শিখছি।",
+      "pronunciation": "ami “pant” shobdoti shikhchhi.",
+      "en": "I am learning the word “pants.”",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "আমি “শাড়ি” শব্দটি শিখছি।",
+      "pronunciation": "ami “shari” shobdoti shikhchhi.",
+      "en": "I am learning the word “sari.”",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "আমি “জুতা” শব্দটি শিখছি।",
+      "pronunciation": "ami “juta” shobdoti shikhchhi.",
+      "en": "I am learning the word “shoes.”",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "আমি “চশমা” শব্দটি শিখছি।",
+      "pronunciation": "ami “choshma” shobdoti shikhchhi.",
+      "en": "I am learning the word “glasses.”",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "আমি “ঘড়ি” শব্দটি শিখছি।",
+      "pronunciation": "ami “ghori” shobdoti shikhchhi.",
+      "en": "I am learning the word “watch / clock.”",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "আমি “ছাতা” শব্দটি শিখছি।",
+      "pronunciation": "ami “chhata” shobdoti shikhchhi.",
+      "en": "I am learning the word “umbrella.”",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "আমি “মানিব্যাগ” শব্দটি শিখছি।",
+      "pronunciation": "ami “manibag” shobdoti shikhchhi.",
+      "en": "I am learning the word “wallet.”",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "আপনি কি “জামা” বলতে পারেন?",
+      "pronunciation": "apni ki “jama” bolte paren?",
+      "en": "Can you say “shirt / clothing”?",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "আপনি কি “প্যান্ট” বলতে পারেন?",
+      "pronunciation": "apni ki “pant” bolte paren?",
+      "en": "Can you say “pants”?",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "আপনি কি “শাড়ি” বলতে পারেন?",
+      "pronunciation": "apni ki “shari” bolte paren?",
+      "en": "Can you say “sari”?",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "আপনি কি “জুতা” বলতে পারেন?",
+      "pronunciation": "apni ki “juta” bolte paren?",
+      "en": "Can you say “shoes”?",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "আপনি কি “চশমা” বলতে পারেন?",
+      "pronunciation": "apni ki “choshma” bolte paren?",
+      "en": "Can you say “glasses”?",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "আপনি কি “ঘড়ি” বলতে পারেন?",
+      "pronunciation": "apni ki “ghori” bolte paren?",
+      "en": "Can you say “watch / clock”?",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "আপনি কি “ছাতা” বলতে পারেন?",
+      "pronunciation": "apni ki “chhata” bolte paren?",
+      "en": "Can you say “umbrella”?",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "আপনি কি “মানিব্যাগ” বলতে পারেন?",
+      "pronunciation": "apni ki “manibag” bolte paren?",
+      "en": "Can you say “wallet”?",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    },
+    {
+      "bn": "“জামা” একটি দরকারি শব্দ।",
+      "pronunciation": "“jama” ekti dorkari shobdo.",
+      "en": "“shirt / clothing” is a useful word.",
+      "context": "Guided clothing and personal items vocabulary drill",
+      "category": "clothing-personal-items"
+    }
+  ],
+  "practice": [
+    "Say the Bengali words for three items from clothing and personal items.",
+    "Read each phrase aloud, then repeat it without looking at the transliteration.",
+    "Create a new sentence by replacing one word in a lesson phrase."
+  ],
+  "notes": [
+    "জামা can refer broadly to clothing or specifically to a shirt depending on context."
+  ]
+}

@@ -1,0 +1,712 @@
+{
+  "id": "home-household",
+  "title": "The Home and Household Objects",
+  "summary": "Name rooms, furniture, and useful objects around the home.",
+  "level": "beginner",
+  "topic": "The Home and Household Objects",
+  "focus": "vocabulary",
+  "vocab": [
+    {
+      "bn": "ঘর",
+      "pronunciation": "ghor",
+      "en": "room",
+      "category": "home-household"
+    },
+    {
+      "bn": "রান্নাঘর",
+      "pronunciation": "rannaghor",
+      "en": "kitchen",
+      "category": "home-household"
+    },
+    {
+      "bn": "দরজা",
+      "pronunciation": "dorja",
+      "en": "door",
+      "category": "home-household"
+    },
+    {
+      "bn": "জানালা",
+      "pronunciation": "janala",
+      "en": "window",
+      "category": "home-household"
+    },
+    {
+      "bn": "টেবিল",
+      "pronunciation": "tebil",
+      "en": "table",
+      "category": "home-household"
+    },
+    {
+      "bn": "চেয়ার",
+      "pronunciation": "cheyar",
+      "en": "chair",
+      "category": "home-household"
+    },
+    {
+      "bn": "বিছানা",
+      "pronunciation": "bichhana",
+      "en": "bed",
+      "category": "home-household"
+    },
+    {
+      "bn": "বাতি",
+      "pronunciation": "bati",
+      "en": "light / lamp",
+      "category": "home-household"
+    }
+  ],
+  "phrases": [
+    {
+      "bn": "বইটা টেবিলের ওপর আছে।",
+      "pronunciation": "boita tebiler opor achhe.",
+      "en": "The book is on the table.",
+      "context": "Locating an object",
+      "category": "home-household"
+    },
+    {
+      "bn": "দয়া করে দরজাটা বন্ধ করুন।",
+      "pronunciation": "doya kore dorjata bondho korun.",
+      "en": "Please close the door.",
+      "context": "A household request",
+      "category": "home-household"
+    },
+    {
+      "bn": "রান্নাঘরে কে আছে?",
+      "pronunciation": "rannaghore ke achhe?",
+      "en": "Who is in the kitchen?",
+      "context": "Asking about a room",
+      "category": "home-household"
+    },
+    {
+      "bn": "আজকের শব্দ “ঘর”।",
+      "pronunciation": "ajker shobdo “ghor”.",
+      "en": "Today’s word is “room.”",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "আজকের শব্দ “রান্নাঘর”।",
+      "pronunciation": "ajker shobdo “rannaghor”.",
+      "en": "Today’s word is “kitchen.”",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "আজকের শব্দ “দরজা”।",
+      "pronunciation": "ajker shobdo “dorja”.",
+      "en": "Today’s word is “door.”",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "আজকের শব্দ “জানালা”।",
+      "pronunciation": "ajker shobdo “janala”.",
+      "en": "Today’s word is “window.”",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "আজকের শব্দ “টেবিল”।",
+      "pronunciation": "ajker shobdo “tebil”.",
+      "en": "Today’s word is “table.”",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "আজকের শব্দ “চেয়ার”।",
+      "pronunciation": "ajker shobdo “cheyar”.",
+      "en": "Today’s word is “chair.”",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "আজকের শব্দ “বিছানা”।",
+      "pronunciation": "ajker shobdo “bichhana”.",
+      "en": "Today’s word is “bed.”",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "আজকের শব্দ “বাতি”।",
+      "pronunciation": "ajker shobdo “bati”.",
+      "en": "Today’s word is “light / lamp.”",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "“ঘর” শব্দটি বলুন।",
+      "pronunciation": "“ghor” shobdoti bolun.",
+      "en": "Say the word “room.”",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "“রান্নাঘর” শব্দটি বলুন।",
+      "pronunciation": "“rannaghor” shobdoti bolun.",
+      "en": "Say the word “kitchen.”",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "“দরজা” শব্দটি বলুন।",
+      "pronunciation": "“dorja” shobdoti bolun.",
+      "en": "Say the word “door.”",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "“জানালা” শব্দটি বলুন।",
+      "pronunciation": "“janala” shobdoti bolun.",
+      "en": "Say the word “window.”",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "“টেবিল” শব্দটি বলুন।",
+      "pronunciation": "“tebil” shobdoti bolun.",
+      "en": "Say the word “table.”",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "“চেয়ার” শব্দটি বলুন।",
+      "pronunciation": "“cheyar” shobdoti bolun.",
+      "en": "Say the word “chair.”",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "“বিছানা” শব্দটি বলুন।",
+      "pronunciation": "“bichhana” shobdoti bolun.",
+      "en": "Say the word “bed.”",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "“বাতি” শব্দটি বলুন।",
+      "pronunciation": "“bati” shobdoti bolun.",
+      "en": "Say the word “light / lamp.”",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "“ঘর” আবার বলুন।",
+      "pronunciation": "“ghor” abar bolun.",
+      "en": "Say “room” again.",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "“রান্নাঘর” আবার বলুন।",
+      "pronunciation": "“rannaghor” abar bolun.",
+      "en": "Say “kitchen” again.",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "“দরজা” আবার বলুন।",
+      "pronunciation": "“dorja” abar bolun.",
+      "en": "Say “door” again.",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "“জানালা” আবার বলুন।",
+      "pronunciation": "“janala” abar bolun.",
+      "en": "Say “window” again.",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "“টেবিল” আবার বলুন।",
+      "pronunciation": "“tebil” abar bolun.",
+      "en": "Say “table” again.",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "“চেয়ার” আবার বলুন।",
+      "pronunciation": "“cheyar” abar bolun.",
+      "en": "Say “chair” again.",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "“বিছানা” আবার বলুন।",
+      "pronunciation": "“bichhana” abar bolun.",
+      "en": "Say “bed” again.",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "“বাতি” আবার বলুন।",
+      "pronunciation": "“bati” abar bolun.",
+      "en": "Say “light / lamp” again.",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "“ঘর” শব্দটি লিখুন।",
+      "pronunciation": "“ghor” shobdoti likhun.",
+      "en": "Write the word “room.”",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "“রান্নাঘর” শব্দটি লিখুন।",
+      "pronunciation": "“rannaghor” shobdoti likhun.",
+      "en": "Write the word “kitchen.”",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "“দরজা” শব্দটি লিখুন।",
+      "pronunciation": "“dorja” shobdoti likhun.",
+      "en": "Write the word “door.”",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "“জানালা” শব্দটি লিখুন।",
+      "pronunciation": "“janala” shobdoti likhun.",
+      "en": "Write the word “window.”",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "“টেবিল” শব্দটি লিখুন।",
+      "pronunciation": "“tebil” shobdoti likhun.",
+      "en": "Write the word “table.”",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "“চেয়ার” শব্দটি লিখুন।",
+      "pronunciation": "“cheyar” shobdoti likhun.",
+      "en": "Write the word “chair.”",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "“বিছানা” শব্দটি লিখুন।",
+      "pronunciation": "“bichhana” shobdoti likhun.",
+      "en": "Write the word “bed.”",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "“বাতি” শব্দটি লিখুন।",
+      "pronunciation": "“bati” shobdoti likhun.",
+      "en": "Write the word “light / lamp.”",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "“ঘর” শব্দটি পড়ুন।",
+      "pronunciation": "“ghor” shobdoti porun.",
+      "en": "Read the word “room.”",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "“রান্নাঘর” শব্দটি পড়ুন।",
+      "pronunciation": "“rannaghor” shobdoti porun.",
+      "en": "Read the word “kitchen.”",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "“দরজা” শব্দটি পড়ুন।",
+      "pronunciation": "“dorja” shobdoti porun.",
+      "en": "Read the word “door.”",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "“জানালা” শব্দটি পড়ুন।",
+      "pronunciation": "“janala” shobdoti porun.",
+      "en": "Read the word “window.”",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "“টেবিল” শব্দটি পড়ুন।",
+      "pronunciation": "“tebil” shobdoti porun.",
+      "en": "Read the word “table.”",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "“চেয়ার” শব্দটি পড়ুন।",
+      "pronunciation": "“cheyar” shobdoti porun.",
+      "en": "Read the word “chair.”",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "“বিছানা” শব্দটি পড়ুন।",
+      "pronunciation": "“bichhana” shobdoti porun.",
+      "en": "Read the word “bed.”",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "“বাতি” শব্দটি পড়ুন।",
+      "pronunciation": "“bati” shobdoti porun.",
+      "en": "Read the word “light / lamp.”",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "“ঘর” শব্দটি মনে রাখুন।",
+      "pronunciation": "“ghor” shobdoti mone rakhun.",
+      "en": "Remember the word “room.”",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "“রান্নাঘর” শব্দটি মনে রাখুন।",
+      "pronunciation": "“rannaghor” shobdoti mone rakhun.",
+      "en": "Remember the word “kitchen.”",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "“দরজা” শব্দটি মনে রাখুন।",
+      "pronunciation": "“dorja” shobdoti mone rakhun.",
+      "en": "Remember the word “door.”",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "“জানালা” শব্দটি মনে রাখুন।",
+      "pronunciation": "“janala” shobdoti mone rakhun.",
+      "en": "Remember the word “window.”",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "“টেবিল” শব্দটি মনে রাখুন।",
+      "pronunciation": "“tebil” shobdoti mone rakhun.",
+      "en": "Remember the word “table.”",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "“চেয়ার” শব্দটি মনে রাখুন।",
+      "pronunciation": "“cheyar” shobdoti mone rakhun.",
+      "en": "Remember the word “chair.”",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "“বিছানা” শব্দটি মনে রাখুন।",
+      "pronunciation": "“bichhana” shobdoti mone rakhun.",
+      "en": "Remember the word “bed.”",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "“বাতি” শব্দটি মনে রাখুন।",
+      "pronunciation": "“bati” shobdoti mone rakhun.",
+      "en": "Remember the word “light / lamp.”",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "“ঘর” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“ghor” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “room.”",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "“রান্নাঘর” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“rannaghor” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “kitchen.”",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "“দরজা” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“dorja” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “door.”",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "“জানালা” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“janala” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “window.”",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "“টেবিল” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“tebil” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “table.”",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "“চেয়ার” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“cheyar” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “chair.”",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "“বিছানা” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“bichhana” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “bed.”",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "“বাতি” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“bati” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “light / lamp.”",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "“ঘর” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“ghor” kibhabe uccharon korben?",
+      "en": "How do you pronounce “room”?",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "“রান্নাঘর” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“rannaghor” kibhabe uccharon korben?",
+      "en": "How do you pronounce “kitchen”?",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "“দরজা” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“dorja” kibhabe uccharon korben?",
+      "en": "How do you pronounce “door”?",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "“জানালা” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“janala” kibhabe uccharon korben?",
+      "en": "How do you pronounce “window”?",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "“টেবিল” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“tebil” kibhabe uccharon korben?",
+      "en": "How do you pronounce “table”?",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "“চেয়ার” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“cheyar” kibhabe uccharon korben?",
+      "en": "How do you pronounce “chair”?",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "“বিছানা” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“bichhana” kibhabe uccharon korben?",
+      "en": "How do you pronounce “bed”?",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "“বাতি” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“bati” kibhabe uccharon korben?",
+      "en": "How do you pronounce “light / lamp”?",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "“ঘর” এর অর্থ কী?",
+      "pronunciation": "“ghor” er ortho ki?",
+      "en": "What does “room” mean?",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "“রান্নাঘর” এর অর্থ কী?",
+      "pronunciation": "“rannaghor” er ortho ki?",
+      "en": "What does “kitchen” mean?",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "“দরজা” এর অর্থ কী?",
+      "pronunciation": "“dorja” er ortho ki?",
+      "en": "What does “door” mean?",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "“জানালা” এর অর্থ কী?",
+      "pronunciation": "“janala” er ortho ki?",
+      "en": "What does “window” mean?",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "“টেবিল” এর অর্থ কী?",
+      "pronunciation": "“tebil” er ortho ki?",
+      "en": "What does “table” mean?",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "“চেয়ার” এর অর্থ কী?",
+      "pronunciation": "“cheyar” er ortho ki?",
+      "en": "What does “chair” mean?",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "“বিছানা” এর অর্থ কী?",
+      "pronunciation": "“bichhana” er ortho ki?",
+      "en": "What does “bed” mean?",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "“বাতি” এর অর্থ কী?",
+      "pronunciation": "“bati” er ortho ki?",
+      "en": "What does “light / lamp” mean?",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "আমি “ঘর” শব্দটি শিখছি।",
+      "pronunciation": "ami “ghor” shobdoti shikhchhi.",
+      "en": "I am learning the word “room.”",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "আমি “রান্নাঘর” শব্দটি শিখছি।",
+      "pronunciation": "ami “rannaghor” shobdoti shikhchhi.",
+      "en": "I am learning the word “kitchen.”",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "আমি “দরজা” শব্দটি শিখছি।",
+      "pronunciation": "ami “dorja” shobdoti shikhchhi.",
+      "en": "I am learning the word “door.”",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "আমি “জানালা” শব্দটি শিখছি।",
+      "pronunciation": "ami “janala” shobdoti shikhchhi.",
+      "en": "I am learning the word “window.”",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "আমি “টেবিল” শব্দটি শিখছি।",
+      "pronunciation": "ami “tebil” shobdoti shikhchhi.",
+      "en": "I am learning the word “table.”",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "আমি “চেয়ার” শব্দটি শিখছি।",
+      "pronunciation": "ami “cheyar” shobdoti shikhchhi.",
+      "en": "I am learning the word “chair.”",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "আমি “বিছানা” শব্দটি শিখছি।",
+      "pronunciation": "ami “bichhana” shobdoti shikhchhi.",
+      "en": "I am learning the word “bed.”",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "আমি “বাতি” শব্দটি শিখছি।",
+      "pronunciation": "ami “bati” shobdoti shikhchhi.",
+      "en": "I am learning the word “light / lamp.”",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "আপনি কি “ঘর” বলতে পারেন?",
+      "pronunciation": "apni ki “ghor” bolte paren?",
+      "en": "Can you say “room”?",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "আপনি কি “রান্নাঘর” বলতে পারেন?",
+      "pronunciation": "apni ki “rannaghor” bolte paren?",
+      "en": "Can you say “kitchen”?",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "আপনি কি “দরজা” বলতে পারেন?",
+      "pronunciation": "apni ki “dorja” bolte paren?",
+      "en": "Can you say “door”?",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "আপনি কি “জানালা” বলতে পারেন?",
+      "pronunciation": "apni ki “janala” bolte paren?",
+      "en": "Can you say “window”?",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "আপনি কি “টেবিল” বলতে পারেন?",
+      "pronunciation": "apni ki “tebil” bolte paren?",
+      "en": "Can you say “table”?",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "আপনি কি “চেয়ার” বলতে পারেন?",
+      "pronunciation": "apni ki “cheyar” bolte paren?",
+      "en": "Can you say “chair”?",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "আপনি কি “বিছানা” বলতে পারেন?",
+      "pronunciation": "apni ki “bichhana” bolte paren?",
+      "en": "Can you say “bed”?",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "আপনি কি “বাতি” বলতে পারেন?",
+      "pronunciation": "apni ki “bati” bolte paren?",
+      "en": "Can you say “light / lamp”?",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    },
+    {
+      "bn": "“ঘর” একটি দরকারি শব্দ।",
+      "pronunciation": "“ghor” ekti dorkari shobdo.",
+      "en": "“room” is a useful word.",
+      "context": "Guided the home and household objects vocabulary drill",
+      "category": "home-household"
+    }
+  ],
+  "practice": [
+    "Say the Bengali words for three items from the home and household objects.",
+    "Read each phrase aloud, then repeat it without looking at the transliteration.",
+    "Create a new sentence by replacing one word in a lesson phrase."
+  ],
+  "notes": [
+    "Adding -এ to many place nouns means ‘in’ or ‘at’: ঘরে, রান্নাঘরে."
+  ]
+}

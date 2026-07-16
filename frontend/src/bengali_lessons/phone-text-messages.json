@@ -1,0 +1,712 @@
+{
+  "id": "phone-text-messages",
+  "title": "Phone Calls and Text Messages",
+  "summary": "Make calls, leave messages, and handle common connection problems.",
+  "level": "beginner",
+  "topic": "Phone Calls and Text Messages",
+  "focus": "conversation",
+  "vocab": [
+    {
+      "bn": "ফোন",
+      "pronunciation": "phone",
+      "en": "phone",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "কল",
+      "pronunciation": "call",
+      "en": "call",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "বার্তা",
+      "pronunciation": "barta",
+      "en": "message",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "নম্বর",
+      "pronunciation": "nombor",
+      "en": "number",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "নেটওয়ার্ক",
+      "pronunciation": "network",
+      "en": "network",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "চার্জ",
+      "pronunciation": "charge",
+      "en": "charge",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "ধরুন",
+      "pronunciation": "dhorun",
+      "en": "please answer / hold",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "পাঠান",
+      "pronunciation": "pathan",
+      "en": "please send",
+      "category": "phone-text-messages"
+    }
+  ],
+  "phrases": [
+    {
+      "bn": "হ্যালো, কে বলছেন?",
+      "pronunciation": "hello, ke bolchhen?",
+      "en": "Hello, who is speaking?",
+      "context": "Answering a call",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "একটু অপেক্ষা করুন।",
+      "pronunciation": "ektu opekkha korun.",
+      "en": "Please wait a moment.",
+      "context": "Putting someone on hold",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "আমি পরে ফোন করব।",
+      "pronunciation": "ami pore phone korbo.",
+      "en": "I will call later.",
+      "context": "Ending a call",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "আমাকে ঠিকানাটা মেসেজ করুন।",
+      "pronunciation": "amake thikanata message korun.",
+      "en": "Please text me the address.",
+      "context": "Requesting a text",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "আজকের শব্দ “ফোন”।",
+      "pronunciation": "ajker shobdo “phone”.",
+      "en": "Today’s word is “phone.”",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "আজকের শব্দ “কল”।",
+      "pronunciation": "ajker shobdo “call”.",
+      "en": "Today’s word is “call.”",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "আজকের শব্দ “বার্তা”।",
+      "pronunciation": "ajker shobdo “barta”.",
+      "en": "Today’s word is “message.”",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "আজকের শব্দ “নম্বর”।",
+      "pronunciation": "ajker shobdo “nombor”.",
+      "en": "Today’s word is “number.”",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "আজকের শব্দ “নেটওয়ার্ক”।",
+      "pronunciation": "ajker shobdo “network”.",
+      "en": "Today’s word is “network.”",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "আজকের শব্দ “চার্জ”।",
+      "pronunciation": "ajker shobdo “charge”.",
+      "en": "Today’s word is “charge.”",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "আজকের শব্দ “ধরুন”।",
+      "pronunciation": "ajker shobdo “dhorun”.",
+      "en": "Today’s word is “please answer / hold.”",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "আজকের শব্দ “পাঠান”।",
+      "pronunciation": "ajker shobdo “pathan”.",
+      "en": "Today’s word is “please send.”",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "“ফোন” শব্দটি বলুন।",
+      "pronunciation": "“phone” shobdoti bolun.",
+      "en": "Say the word “phone.”",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "“কল” শব্দটি বলুন।",
+      "pronunciation": "“call” shobdoti bolun.",
+      "en": "Say the word “call.”",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "“বার্তা” শব্দটি বলুন।",
+      "pronunciation": "“barta” shobdoti bolun.",
+      "en": "Say the word “message.”",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "“নম্বর” শব্দটি বলুন।",
+      "pronunciation": "“nombor” shobdoti bolun.",
+      "en": "Say the word “number.”",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "“নেটওয়ার্ক” শব্দটি বলুন।",
+      "pronunciation": "“network” shobdoti bolun.",
+      "en": "Say the word “network.”",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "“চার্জ” শব্দটি বলুন।",
+      "pronunciation": "“charge” shobdoti bolun.",
+      "en": "Say the word “charge.”",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "“ধরুন” শব্দটি বলুন।",
+      "pronunciation": "“dhorun” shobdoti bolun.",
+      "en": "Say the word “please answer / hold.”",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "“পাঠান” শব্দটি বলুন।",
+      "pronunciation": "“pathan” shobdoti bolun.",
+      "en": "Say the word “please send.”",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "“ফোন” আবার বলুন।",
+      "pronunciation": "“phone” abar bolun.",
+      "en": "Say “phone” again.",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "“কল” আবার বলুন।",
+      "pronunciation": "“call” abar bolun.",
+      "en": "Say “call” again.",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "“বার্তা” আবার বলুন।",
+      "pronunciation": "“barta” abar bolun.",
+      "en": "Say “message” again.",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "“নম্বর” আবার বলুন।",
+      "pronunciation": "“nombor” abar bolun.",
+      "en": "Say “number” again.",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "“নেটওয়ার্ক” আবার বলুন।",
+      "pronunciation": "“network” abar bolun.",
+      "en": "Say “network” again.",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "“চার্জ” আবার বলুন।",
+      "pronunciation": "“charge” abar bolun.",
+      "en": "Say “charge” again.",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "“ধরুন” আবার বলুন।",
+      "pronunciation": "“dhorun” abar bolun.",
+      "en": "Say “please answer / hold” again.",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "“পাঠান” আবার বলুন।",
+      "pronunciation": "“pathan” abar bolun.",
+      "en": "Say “please send” again.",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "“ফোন” শব্দটি লিখুন।",
+      "pronunciation": "“phone” shobdoti likhun.",
+      "en": "Write the word “phone.”",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "“কল” শব্দটি লিখুন।",
+      "pronunciation": "“call” shobdoti likhun.",
+      "en": "Write the word “call.”",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "“বার্তা” শব্দটি লিখুন।",
+      "pronunciation": "“barta” shobdoti likhun.",
+      "en": "Write the word “message.”",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "“নম্বর” শব্দটি লিখুন।",
+      "pronunciation": "“nombor” shobdoti likhun.",
+      "en": "Write the word “number.”",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "“নেটওয়ার্ক” শব্দটি লিখুন।",
+      "pronunciation": "“network” shobdoti likhun.",
+      "en": "Write the word “network.”",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "“চার্জ” শব্দটি লিখুন।",
+      "pronunciation": "“charge” shobdoti likhun.",
+      "en": "Write the word “charge.”",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "“ধরুন” শব্দটি লিখুন।",
+      "pronunciation": "“dhorun” shobdoti likhun.",
+      "en": "Write the word “please answer / hold.”",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "“পাঠান” শব্দটি লিখুন।",
+      "pronunciation": "“pathan” shobdoti likhun.",
+      "en": "Write the word “please send.”",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "“ফোন” শব্দটি পড়ুন।",
+      "pronunciation": "“phone” shobdoti porun.",
+      "en": "Read the word “phone.”",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "“কল” শব্দটি পড়ুন।",
+      "pronunciation": "“call” shobdoti porun.",
+      "en": "Read the word “call.”",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "“বার্তা” শব্দটি পড়ুন।",
+      "pronunciation": "“barta” shobdoti porun.",
+      "en": "Read the word “message.”",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "“নম্বর” শব্দটি পড়ুন।",
+      "pronunciation": "“nombor” shobdoti porun.",
+      "en": "Read the word “number.”",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "“নেটওয়ার্ক” শব্দটি পড়ুন।",
+      "pronunciation": "“network” shobdoti porun.",
+      "en": "Read the word “network.”",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "“চার্জ” শব্দটি পড়ুন।",
+      "pronunciation": "“charge” shobdoti porun.",
+      "en": "Read the word “charge.”",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "“ধরুন” শব্দটি পড়ুন।",
+      "pronunciation": "“dhorun” shobdoti porun.",
+      "en": "Read the word “please answer / hold.”",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "“পাঠান” শব্দটি পড়ুন।",
+      "pronunciation": "“pathan” shobdoti porun.",
+      "en": "Read the word “please send.”",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "“ফোন” শব্দটি মনে রাখুন।",
+      "pronunciation": "“phone” shobdoti mone rakhun.",
+      "en": "Remember the word “phone.”",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "“কল” শব্দটি মনে রাখুন।",
+      "pronunciation": "“call” shobdoti mone rakhun.",
+      "en": "Remember the word “call.”",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "“বার্তা” শব্দটি মনে রাখুন।",
+      "pronunciation": "“barta” shobdoti mone rakhun.",
+      "en": "Remember the word “message.”",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "“নম্বর” শব্দটি মনে রাখুন।",
+      "pronunciation": "“nombor” shobdoti mone rakhun.",
+      "en": "Remember the word “number.”",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "“নেটওয়ার্ক” শব্দটি মনে রাখুন।",
+      "pronunciation": "“network” shobdoti mone rakhun.",
+      "en": "Remember the word “network.”",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "“চার্জ” শব্দটি মনে রাখুন।",
+      "pronunciation": "“charge” shobdoti mone rakhun.",
+      "en": "Remember the word “charge.”",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "“ধরুন” শব্দটি মনে রাখুন।",
+      "pronunciation": "“dhorun” shobdoti mone rakhun.",
+      "en": "Remember the word “please answer / hold.”",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "“পাঠান” শব্দটি মনে রাখুন।",
+      "pronunciation": "“pathan” shobdoti mone rakhun.",
+      "en": "Remember the word “please send.”",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "“ফোন” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“phone” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “phone.”",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "“কল” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“call” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “call.”",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "“বার্তা” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“barta” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “message.”",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "“নম্বর” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“nombor” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “number.”",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "“নেটওয়ার্ক” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“network” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “network.”",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "“চার্জ” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“charge” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “charge.”",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "“ধরুন” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“dhorun” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “please answer / hold.”",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "“পাঠান” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“pathan” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “please send.”",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "“ফোন” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“phone” kibhabe uccharon korben?",
+      "en": "How do you pronounce “phone”?",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "“কল” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“call” kibhabe uccharon korben?",
+      "en": "How do you pronounce “call”?",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "“বার্তা” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“barta” kibhabe uccharon korben?",
+      "en": "How do you pronounce “message”?",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "“নম্বর” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“nombor” kibhabe uccharon korben?",
+      "en": "How do you pronounce “number”?",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "“নেটওয়ার্ক” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“network” kibhabe uccharon korben?",
+      "en": "How do you pronounce “network”?",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "“চার্জ” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“charge” kibhabe uccharon korben?",
+      "en": "How do you pronounce “charge”?",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "“ধরুন” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“dhorun” kibhabe uccharon korben?",
+      "en": "How do you pronounce “please answer / hold”?",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "“পাঠান” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“pathan” kibhabe uccharon korben?",
+      "en": "How do you pronounce “please send”?",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "“ফোন” এর অর্থ কী?",
+      "pronunciation": "“phone” er ortho ki?",
+      "en": "What does “phone” mean?",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "“কল” এর অর্থ কী?",
+      "pronunciation": "“call” er ortho ki?",
+      "en": "What does “call” mean?",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "“বার্তা” এর অর্থ কী?",
+      "pronunciation": "“barta” er ortho ki?",
+      "en": "What does “message” mean?",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "“নম্বর” এর অর্থ কী?",
+      "pronunciation": "“nombor” er ortho ki?",
+      "en": "What does “number” mean?",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "“নেটওয়ার্ক” এর অর্থ কী?",
+      "pronunciation": "“network” er ortho ki?",
+      "en": "What does “network” mean?",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "“চার্জ” এর অর্থ কী?",
+      "pronunciation": "“charge” er ortho ki?",
+      "en": "What does “charge” mean?",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "“ধরুন” এর অর্থ কী?",
+      "pronunciation": "“dhorun” er ortho ki?",
+      "en": "What does “please answer / hold” mean?",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "“পাঠান” এর অর্থ কী?",
+      "pronunciation": "“pathan” er ortho ki?",
+      "en": "What does “please send” mean?",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "আমি “ফোন” শব্দটি শিখছি।",
+      "pronunciation": "ami “phone” shobdoti shikhchhi.",
+      "en": "I am learning the word “phone.”",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "আমি “কল” শব্দটি শিখছি।",
+      "pronunciation": "ami “call” shobdoti shikhchhi.",
+      "en": "I am learning the word “call.”",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "আমি “বার্তা” শব্দটি শিখছি।",
+      "pronunciation": "ami “barta” shobdoti shikhchhi.",
+      "en": "I am learning the word “message.”",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "আমি “নম্বর” শব্দটি শিখছি।",
+      "pronunciation": "ami “nombor” shobdoti shikhchhi.",
+      "en": "I am learning the word “number.”",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "আমি “নেটওয়ার্ক” শব্দটি শিখছি।",
+      "pronunciation": "ami “network” shobdoti shikhchhi.",
+      "en": "I am learning the word “network.”",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "আমি “চার্জ” শব্দটি শিখছি।",
+      "pronunciation": "ami “charge” shobdoti shikhchhi.",
+      "en": "I am learning the word “charge.”",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "আমি “ধরুন” শব্দটি শিখছি।",
+      "pronunciation": "ami “dhorun” shobdoti shikhchhi.",
+      "en": "I am learning the word “please answer / hold.”",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "আমি “পাঠান” শব্দটি শিখছি।",
+      "pronunciation": "ami “pathan” shobdoti shikhchhi.",
+      "en": "I am learning the word “please send.”",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "আপনি কি “ফোন” বলতে পারেন?",
+      "pronunciation": "apni ki “phone” bolte paren?",
+      "en": "Can you say “phone”?",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "আপনি কি “কল” বলতে পারেন?",
+      "pronunciation": "apni ki “call” bolte paren?",
+      "en": "Can you say “call”?",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "আপনি কি “বার্তা” বলতে পারেন?",
+      "pronunciation": "apni ki “barta” bolte paren?",
+      "en": "Can you say “message”?",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "আপনি কি “নম্বর” বলতে পারেন?",
+      "pronunciation": "apni ki “nombor” bolte paren?",
+      "en": "Can you say “number”?",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "আপনি কি “নেটওয়ার্ক” বলতে পারেন?",
+      "pronunciation": "apni ki “network” bolte paren?",
+      "en": "Can you say “network”?",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "আপনি কি “চার্জ” বলতে পারেন?",
+      "pronunciation": "apni ki “charge” bolte paren?",
+      "en": "Can you say “charge”?",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "আপনি কি “ধরুন” বলতে পারেন?",
+      "pronunciation": "apni ki “dhorun” bolte paren?",
+      "en": "Can you say “please answer / hold”?",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    },
+    {
+      "bn": "আপনি কি “পাঠান” বলতে পারেন?",
+      "pronunciation": "apni ki “pathan” bolte paren?",
+      "en": "Can you say “please send”?",
+      "context": "Guided phone calls and text messages vocabulary drill",
+      "category": "phone-text-messages"
+    }
+  ],
+  "practice": [
+    "Say the Bengali words for three items from phone calls and text messages.",
+    "Read each phrase aloud, then repeat it without looking at the transliteration.",
+    "Create a new sentence by replacing one word in a lesson phrase."
+  ],
+  "notes": [
+    "কে বলছেন? is the polite phone equivalent of ‘Who is speaking?’."
+  ]
+}

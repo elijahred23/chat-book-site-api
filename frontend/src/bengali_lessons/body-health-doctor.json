@@ -1,0 +1,713 @@
+{
+  "id": "body-health-doctor",
+  "title": "Body, Health, and the Doctor",
+  "summary": "Describe body parts, common symptoms, and basic medical needs.",
+  "level": "beginner",
+  "topic": "Body, Health, and the Doctor",
+  "focus": "conversation",
+  "vocab": [
+    {
+      "bn": "মাথা",
+      "pronunciation": "matha",
+      "en": "head",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "চোখ",
+      "pronunciation": "chokh",
+      "en": "eye",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "হাত",
+      "pronunciation": "hat",
+      "en": "hand / arm",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "পা",
+      "pronunciation": "pa",
+      "en": "foot / leg",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "ব্যথা",
+      "pronunciation": "byatha",
+      "en": "pain",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "জ্বর",
+      "pronunciation": "jor",
+      "en": "fever",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "ওষুধ",
+      "pronunciation": "oshudh",
+      "en": "medicine",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "ডাক্তার",
+      "pronunciation": "daktar",
+      "en": "doctor",
+      "category": "body-health-doctor"
+    }
+  ],
+  "phrases": [
+    {
+      "bn": "আমার মাথা ব্যথা করছে।",
+      "pronunciation": "amar matha byatha korchhe.",
+      "en": "My head hurts.",
+      "context": "Describing pain",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "আমার দুই দিন ধরে জ্বর।",
+      "pronunciation": "amar dui din dhore jor.",
+      "en": "I have had a fever for two days.",
+      "context": "Describing duration",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "আমাকে একজন ডাক্তার দেখাতে হবে।",
+      "pronunciation": "amake ekjon daktar dekhate hobe.",
+      "en": "I need to see a doctor.",
+      "context": "Seeking medical care",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "এই ওষুধ কখন খাব?",
+      "pronunciation": "ei oshudh kokhon khabo?",
+      "en": "When should I take this medicine?",
+      "context": "Asking about medicine",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "আজকের শব্দ “মাথা”।",
+      "pronunciation": "ajker shobdo “matha”.",
+      "en": "Today’s word is “head.”",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "আজকের শব্দ “চোখ”।",
+      "pronunciation": "ajker shobdo “chokh”.",
+      "en": "Today’s word is “eye.”",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "আজকের শব্দ “হাত”।",
+      "pronunciation": "ajker shobdo “hat”.",
+      "en": "Today’s word is “hand / arm.”",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "আজকের শব্দ “পা”।",
+      "pronunciation": "ajker shobdo “pa”.",
+      "en": "Today’s word is “foot / leg.”",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "আজকের শব্দ “ব্যথা”।",
+      "pronunciation": "ajker shobdo “byatha”.",
+      "en": "Today’s word is “pain.”",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "আজকের শব্দ “জ্বর”।",
+      "pronunciation": "ajker shobdo “jor”.",
+      "en": "Today’s word is “fever.”",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "আজকের শব্দ “ওষুধ”।",
+      "pronunciation": "ajker shobdo “oshudh”.",
+      "en": "Today’s word is “medicine.”",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "আজকের শব্দ “ডাক্তার”।",
+      "pronunciation": "ajker shobdo “daktar”.",
+      "en": "Today’s word is “doctor.”",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "“মাথা” শব্দটি বলুন।",
+      "pronunciation": "“matha” shobdoti bolun.",
+      "en": "Say the word “head.”",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "“চোখ” শব্দটি বলুন।",
+      "pronunciation": "“chokh” shobdoti bolun.",
+      "en": "Say the word “eye.”",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "“হাত” শব্দটি বলুন।",
+      "pronunciation": "“hat” shobdoti bolun.",
+      "en": "Say the word “hand / arm.”",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "“পা” শব্দটি বলুন।",
+      "pronunciation": "“pa” shobdoti bolun.",
+      "en": "Say the word “foot / leg.”",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "“ব্যথা” শব্দটি বলুন।",
+      "pronunciation": "“byatha” shobdoti bolun.",
+      "en": "Say the word “pain.”",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "“জ্বর” শব্দটি বলুন।",
+      "pronunciation": "“jor” shobdoti bolun.",
+      "en": "Say the word “fever.”",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "“ওষুধ” শব্দটি বলুন।",
+      "pronunciation": "“oshudh” shobdoti bolun.",
+      "en": "Say the word “medicine.”",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "“ডাক্তার” শব্দটি বলুন।",
+      "pronunciation": "“daktar” shobdoti bolun.",
+      "en": "Say the word “doctor.”",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "“মাথা” আবার বলুন।",
+      "pronunciation": "“matha” abar bolun.",
+      "en": "Say “head” again.",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "“চোখ” আবার বলুন।",
+      "pronunciation": "“chokh” abar bolun.",
+      "en": "Say “eye” again.",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "“হাত” আবার বলুন।",
+      "pronunciation": "“hat” abar bolun.",
+      "en": "Say “hand / arm” again.",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "“পা” আবার বলুন।",
+      "pronunciation": "“pa” abar bolun.",
+      "en": "Say “foot / leg” again.",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "“ব্যথা” আবার বলুন।",
+      "pronunciation": "“byatha” abar bolun.",
+      "en": "Say “pain” again.",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "“জ্বর” আবার বলুন।",
+      "pronunciation": "“jor” abar bolun.",
+      "en": "Say “fever” again.",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "“ওষুধ” আবার বলুন।",
+      "pronunciation": "“oshudh” abar bolun.",
+      "en": "Say “medicine” again.",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "“ডাক্তার” আবার বলুন।",
+      "pronunciation": "“daktar” abar bolun.",
+      "en": "Say “doctor” again.",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "“মাথা” শব্দটি লিখুন।",
+      "pronunciation": "“matha” shobdoti likhun.",
+      "en": "Write the word “head.”",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "“চোখ” শব্দটি লিখুন।",
+      "pronunciation": "“chokh” shobdoti likhun.",
+      "en": "Write the word “eye.”",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "“হাত” শব্দটি লিখুন।",
+      "pronunciation": "“hat” shobdoti likhun.",
+      "en": "Write the word “hand / arm.”",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "“পা” শব্দটি লিখুন।",
+      "pronunciation": "“pa” shobdoti likhun.",
+      "en": "Write the word “foot / leg.”",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "“ব্যথা” শব্দটি লিখুন।",
+      "pronunciation": "“byatha” shobdoti likhun.",
+      "en": "Write the word “pain.”",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "“জ্বর” শব্দটি লিখুন।",
+      "pronunciation": "“jor” shobdoti likhun.",
+      "en": "Write the word “fever.”",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "“ওষুধ” শব্দটি লিখুন।",
+      "pronunciation": "“oshudh” shobdoti likhun.",
+      "en": "Write the word “medicine.”",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "“ডাক্তার” শব্দটি লিখুন।",
+      "pronunciation": "“daktar” shobdoti likhun.",
+      "en": "Write the word “doctor.”",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "“মাথা” শব্দটি পড়ুন।",
+      "pronunciation": "“matha” shobdoti porun.",
+      "en": "Read the word “head.”",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "“চোখ” শব্দটি পড়ুন।",
+      "pronunciation": "“chokh” shobdoti porun.",
+      "en": "Read the word “eye.”",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "“হাত” শব্দটি পড়ুন।",
+      "pronunciation": "“hat” shobdoti porun.",
+      "en": "Read the word “hand / arm.”",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "“পা” শব্দটি পড়ুন।",
+      "pronunciation": "“pa” shobdoti porun.",
+      "en": "Read the word “foot / leg.”",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "“ব্যথা” শব্দটি পড়ুন।",
+      "pronunciation": "“byatha” shobdoti porun.",
+      "en": "Read the word “pain.”",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "“জ্বর” শব্দটি পড়ুন।",
+      "pronunciation": "“jor” shobdoti porun.",
+      "en": "Read the word “fever.”",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "“ওষুধ” শব্দটি পড়ুন।",
+      "pronunciation": "“oshudh” shobdoti porun.",
+      "en": "Read the word “medicine.”",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "“ডাক্তার” শব্দটি পড়ুন।",
+      "pronunciation": "“daktar” shobdoti porun.",
+      "en": "Read the word “doctor.”",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "“মাথা” শব্দটি মনে রাখুন।",
+      "pronunciation": "“matha” shobdoti mone rakhun.",
+      "en": "Remember the word “head.”",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "“চোখ” শব্দটি মনে রাখুন।",
+      "pronunciation": "“chokh” shobdoti mone rakhun.",
+      "en": "Remember the word “eye.”",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "“হাত” শব্দটি মনে রাখুন।",
+      "pronunciation": "“hat” shobdoti mone rakhun.",
+      "en": "Remember the word “hand / arm.”",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "“পা” শব্দটি মনে রাখুন।",
+      "pronunciation": "“pa” shobdoti mone rakhun.",
+      "en": "Remember the word “foot / leg.”",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "“ব্যথা” শব্দটি মনে রাখুন।",
+      "pronunciation": "“byatha” shobdoti mone rakhun.",
+      "en": "Remember the word “pain.”",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "“জ্বর” শব্দটি মনে রাখুন।",
+      "pronunciation": "“jor” shobdoti mone rakhun.",
+      "en": "Remember the word “fever.”",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "“ওষুধ” শব্দটি মনে রাখুন।",
+      "pronunciation": "“oshudh” shobdoti mone rakhun.",
+      "en": "Remember the word “medicine.”",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "“ডাক্তার” শব্দটি মনে রাখুন।",
+      "pronunciation": "“daktar” shobdoti mone rakhun.",
+      "en": "Remember the word “doctor.”",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "“মাথা” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“matha” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “head.”",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "“চোখ” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“chokh” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “eye.”",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "“হাত” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“hat” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “hand / arm.”",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "“পা” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“pa” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “foot / leg.”",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "“ব্যথা” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“byatha” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “pain.”",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "“জ্বর” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“jor” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “fever.”",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "“ওষুধ” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“oshudh” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “medicine.”",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "“ডাক্তার” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“daktar” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “doctor.”",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "“মাথা” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“matha” kibhabe uccharon korben?",
+      "en": "How do you pronounce “head”?",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "“চোখ” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“chokh” kibhabe uccharon korben?",
+      "en": "How do you pronounce “eye”?",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "“হাত” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“hat” kibhabe uccharon korben?",
+      "en": "How do you pronounce “hand / arm”?",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "“পা” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“pa” kibhabe uccharon korben?",
+      "en": "How do you pronounce “foot / leg”?",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "“ব্যথা” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“byatha” kibhabe uccharon korben?",
+      "en": "How do you pronounce “pain”?",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "“জ্বর” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“jor” kibhabe uccharon korben?",
+      "en": "How do you pronounce “fever”?",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "“ওষুধ” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“oshudh” kibhabe uccharon korben?",
+      "en": "How do you pronounce “medicine”?",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "“ডাক্তার” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“daktar” kibhabe uccharon korben?",
+      "en": "How do you pronounce “doctor”?",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "“মাথা” এর অর্থ কী?",
+      "pronunciation": "“matha” er ortho ki?",
+      "en": "What does “head” mean?",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "“চোখ” এর অর্থ কী?",
+      "pronunciation": "“chokh” er ortho ki?",
+      "en": "What does “eye” mean?",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "“হাত” এর অর্থ কী?",
+      "pronunciation": "“hat” er ortho ki?",
+      "en": "What does “hand / arm” mean?",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "“পা” এর অর্থ কী?",
+      "pronunciation": "“pa” er ortho ki?",
+      "en": "What does “foot / leg” mean?",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "“ব্যথা” এর অর্থ কী?",
+      "pronunciation": "“byatha” er ortho ki?",
+      "en": "What does “pain” mean?",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "“জ্বর” এর অর্থ কী?",
+      "pronunciation": "“jor” er ortho ki?",
+      "en": "What does “fever” mean?",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "“ওষুধ” এর অর্থ কী?",
+      "pronunciation": "“oshudh” er ortho ki?",
+      "en": "What does “medicine” mean?",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "“ডাক্তার” এর অর্থ কী?",
+      "pronunciation": "“daktar” er ortho ki?",
+      "en": "What does “doctor” mean?",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "আমি “মাথা” শব্দটি শিখছি।",
+      "pronunciation": "ami “matha” shobdoti shikhchhi.",
+      "en": "I am learning the word “head.”",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "আমি “চোখ” শব্দটি শিখছি।",
+      "pronunciation": "ami “chokh” shobdoti shikhchhi.",
+      "en": "I am learning the word “eye.”",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "আমি “হাত” শব্দটি শিখছি।",
+      "pronunciation": "ami “hat” shobdoti shikhchhi.",
+      "en": "I am learning the word “hand / arm.”",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "আমি “পা” শব্দটি শিখছি।",
+      "pronunciation": "ami “pa” shobdoti shikhchhi.",
+      "en": "I am learning the word “foot / leg.”",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "আমি “ব্যথা” শব্দটি শিখছি।",
+      "pronunciation": "ami “byatha” shobdoti shikhchhi.",
+      "en": "I am learning the word “pain.”",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "আমি “জ্বর” শব্দটি শিখছি।",
+      "pronunciation": "ami “jor” shobdoti shikhchhi.",
+      "en": "I am learning the word “fever.”",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "আমি “ওষুধ” শব্দটি শিখছি।",
+      "pronunciation": "ami “oshudh” shobdoti shikhchhi.",
+      "en": "I am learning the word “medicine.”",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "আমি “ডাক্তার” শব্দটি শিখছি।",
+      "pronunciation": "ami “daktar” shobdoti shikhchhi.",
+      "en": "I am learning the word “doctor.”",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "আপনি কি “মাথা” বলতে পারেন?",
+      "pronunciation": "apni ki “matha” bolte paren?",
+      "en": "Can you say “head”?",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "আপনি কি “চোখ” বলতে পারেন?",
+      "pronunciation": "apni ki “chokh” bolte paren?",
+      "en": "Can you say “eye”?",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "আপনি কি “হাত” বলতে পারেন?",
+      "pronunciation": "apni ki “hat” bolte paren?",
+      "en": "Can you say “hand / arm”?",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "আপনি কি “পা” বলতে পারেন?",
+      "pronunciation": "apni ki “pa” bolte paren?",
+      "en": "Can you say “foot / leg”?",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "আপনি কি “ব্যথা” বলতে পারেন?",
+      "pronunciation": "apni ki “byatha” bolte paren?",
+      "en": "Can you say “pain”?",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "আপনি কি “জ্বর” বলতে পারেন?",
+      "pronunciation": "apni ki “jor” bolte paren?",
+      "en": "Can you say “fever”?",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "আপনি কি “ওষুধ” বলতে পারেন?",
+      "pronunciation": "apni ki “oshudh” bolte paren?",
+      "en": "Can you say “medicine”?",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    },
+    {
+      "bn": "আপনি কি “ডাক্তার” বলতে পারেন?",
+      "pronunciation": "apni ki “daktar” bolte paren?",
+      "en": "Can you say “doctor”?",
+      "context": "Guided body, health, and the doctor vocabulary drill",
+      "category": "body-health-doctor"
+    }
+  ],
+  "practice": [
+    "Say the Bengali words for three items from body, health, and the doctor.",
+    "Read each phrase aloud, then repeat it without looking at the transliteration.",
+    "Create a new sentence by replacing one word in a lesson phrase."
+  ],
+  "notes": [
+    "ব্যথা করছে is a common pattern for saying a body part hurts.",
+    "For urgent or serious symptoms, seek professional medical care."
+  ]
+}

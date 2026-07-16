@@ -1,0 +1,292 @@
+{
+  "id": "negatives-saying-no",
+  "title": "Negatives and Saying No",
+  "summary": "Negate actions, states, possession, ability, and desire.",
+  "level": "beginner",
+  "topic": "Negatives and Saying No",
+  "focus": "grammar",
+  "vocab": [
+    {
+      "bn": "না",
+      "pronunciation": "na",
+      "en": "no / not",
+      "category": "negatives-saying-no"
+    },
+    {
+      "bn": "নয়",
+      "pronunciation": "noy",
+      "en": "is not",
+      "category": "negatives-saying-no"
+    },
+    {
+      "bn": "নেই",
+      "pronunciation": "nei",
+      "en": "is not present / do not have",
+      "category": "negatives-saying-no"
+    },
+    {
+      "bn": "পারি না",
+      "pronunciation": "pari na",
+      "en": "cannot",
+      "category": "negatives-saying-no"
+    },
+    {
+      "bn": "চাই না",
+      "pronunciation": "chai na",
+      "en": "do not want",
+      "category": "negatives-saying-no"
+    },
+    {
+      "bn": "করি না",
+      "pronunciation": "kori na",
+      "en": "do not do",
+      "category": "negatives-saying-no"
+    },
+    {
+      "bn": "কখনো না",
+      "pronunciation": "kokhono na",
+      "en": "never",
+      "category": "negatives-saying-no"
+    },
+    {
+      "bn": "এখনো না",
+      "pronunciation": "ekhono na",
+      "en": "not yet",
+      "category": "negatives-saying-no"
+    }
+  ],
+  "phrases": [
+    {
+      "bn": "না, আমি চা খাব না।",
+      "pronunciation": "na, ami cha khabo na.",
+      "en": "No, I will not drink tea.",
+      "context": "Declining something",
+      "category": "negatives-saying-no"
+    },
+    {
+      "bn": "এটা আমার বই নয়।",
+      "pronunciation": "eta amar boi noy.",
+      "en": "This is not my book.",
+      "context": "Negating identity",
+      "category": "negatives-saying-no"
+    },
+    {
+      "bn": "আমার কাছে টাকা নেই।",
+      "pronunciation": "amar kachhe taka nei.",
+      "en": "I do not have money with me.",
+      "context": "Negating possession",
+      "category": "negatives-saying-no"
+    },
+    {
+      "bn": "আমি বাংলা ভালো বলতে পারি না।",
+      "pronunciation": "ami Bangla bhalo bolte pari na.",
+      "en": "I cannot speak Bengali well.",
+      "context": "Negating ability",
+      "category": "negatives-saying-no"
+    },
+    {
+      "bn": "আজকের শব্দ “না”।",
+      "pronunciation": "ajker shobdo “na”.",
+      "en": "Today’s word is “no / not.”",
+      "context": "Guided negatives and saying no vocabulary drill",
+      "category": "negatives-saying-no"
+    },
+    {
+      "bn": "আজকের শব্দ “নয়”।",
+      "pronunciation": "ajker shobdo “noy”.",
+      "en": "Today’s word is “is not.”",
+      "context": "Guided negatives and saying no vocabulary drill",
+      "category": "negatives-saying-no"
+    },
+    {
+      "bn": "আজকের শব্দ “নেই”।",
+      "pronunciation": "ajker shobdo “nei”.",
+      "en": "Today’s word is “is not present / do not have.”",
+      "context": "Guided negatives and saying no vocabulary drill",
+      "category": "negatives-saying-no"
+    },
+    {
+      "bn": "আজকের শব্দ “পারি না”।",
+      "pronunciation": "ajker shobdo “pari na”.",
+      "en": "Today’s word is “cannot.”",
+      "context": "Guided negatives and saying no vocabulary drill",
+      "category": "negatives-saying-no"
+    },
+    {
+      "bn": "আজকের শব্দ “চাই না”।",
+      "pronunciation": "ajker shobdo “chai na”.",
+      "en": "Today’s word is “do not want.”",
+      "context": "Guided negatives and saying no vocabulary drill",
+      "category": "negatives-saying-no"
+    },
+    {
+      "bn": "আজকের শব্দ “করি না”।",
+      "pronunciation": "ajker shobdo “kori na”.",
+      "en": "Today’s word is “do not do.”",
+      "context": "Guided negatives and saying no vocabulary drill",
+      "category": "negatives-saying-no"
+    },
+    {
+      "bn": "আজকের শব্দ “কখনো না”।",
+      "pronunciation": "ajker shobdo “kokhono na”.",
+      "en": "Today’s word is “never.”",
+      "context": "Guided negatives and saying no vocabulary drill",
+      "category": "negatives-saying-no"
+    },
+    {
+      "bn": "আজকের শব্দ “এখনো না”।",
+      "pronunciation": "ajker shobdo “ekhono na”.",
+      "en": "Today’s word is “not yet.”",
+      "context": "Guided negatives and saying no vocabulary drill",
+      "category": "negatives-saying-no"
+    },
+    {
+      "bn": "“না” শব্দটি বলুন।",
+      "pronunciation": "“na” shobdoti bolun.",
+      "en": "Say the word “no / not.”",
+      "context": "Guided negatives and saying no vocabulary drill",
+      "category": "negatives-saying-no"
+    },
+    {
+      "bn": "“নয়” শব্দটি বলুন।",
+      "pronunciation": "“noy” shobdoti bolun.",
+      "en": "Say the word “is not.”",
+      "context": "Guided negatives and saying no vocabulary drill",
+      "category": "negatives-saying-no"
+    },
+    {
+      "bn": "“নেই” শব্দটি বলুন।",
+      "pronunciation": "“nei” shobdoti bolun.",
+      "en": "Say the word “is not present / do not have.”",
+      "context": "Guided negatives and saying no vocabulary drill",
+      "category": "negatives-saying-no"
+    },
+    {
+      "bn": "“পারি না” শব্দটি বলুন।",
+      "pronunciation": "“pari na” shobdoti bolun.",
+      "en": "Say the word “cannot.”",
+      "context": "Guided negatives and saying no vocabulary drill",
+      "category": "negatives-saying-no"
+    },
+    {
+      "bn": "“চাই না” শব্দটি বলুন।",
+      "pronunciation": "“chai na” shobdoti bolun.",
+      "en": "Say the word “do not want.”",
+      "context": "Guided negatives and saying no vocabulary drill",
+      "category": "negatives-saying-no"
+    },
+    {
+      "bn": "“করি না” শব্দটি বলুন।",
+      "pronunciation": "“kori na” shobdoti bolun.",
+      "en": "Say the word “do not do.”",
+      "context": "Guided negatives and saying no vocabulary drill",
+      "category": "negatives-saying-no"
+    },
+    {
+      "bn": "“কখনো না” শব্দটি বলুন।",
+      "pronunciation": "“kokhono na” shobdoti bolun.",
+      "en": "Say the word “never.”",
+      "context": "Guided negatives and saying no vocabulary drill",
+      "category": "negatives-saying-no"
+    },
+    {
+      "bn": "“এখনো না” শব্দটি বলুন।",
+      "pronunciation": "“ekhono na” shobdoti bolun.",
+      "en": "Say the word “not yet.”",
+      "context": "Guided negatives and saying no vocabulary drill",
+      "category": "negatives-saying-no"
+    },
+    {
+      "bn": "“না” আবার বলুন।",
+      "pronunciation": "“na” abar bolun.",
+      "en": "Say “no / not” again.",
+      "context": "Guided negatives and saying no vocabulary drill",
+      "category": "negatives-saying-no"
+    },
+    {
+      "bn": "“নয়” আবার বলুন।",
+      "pronunciation": "“noy” abar bolun.",
+      "en": "Say “is not” again.",
+      "context": "Guided negatives and saying no vocabulary drill",
+      "category": "negatives-saying-no"
+    },
+    {
+      "bn": "“নেই” আবার বলুন।",
+      "pronunciation": "“nei” abar bolun.",
+      "en": "Say “is not present / do not have” again.",
+      "context": "Guided negatives and saying no vocabulary drill",
+      "category": "negatives-saying-no"
+    },
+    {
+      "bn": "“পারি না” আবার বলুন।",
+      "pronunciation": "“pari na” abar bolun.",
+      "en": "Say “cannot” again.",
+      "context": "Guided negatives and saying no vocabulary drill",
+      "category": "negatives-saying-no"
+    },
+    {
+      "bn": "“চাই না” আবার বলুন।",
+      "pronunciation": "“chai na” abar bolun.",
+      "en": "Say “do not want” again.",
+      "context": "Guided negatives and saying no vocabulary drill",
+      "category": "negatives-saying-no"
+    },
+    {
+      "bn": "“করি না” আবার বলুন।",
+      "pronunciation": "“kori na” abar bolun.",
+      "en": "Say “do not do” again.",
+      "context": "Guided negatives and saying no vocabulary drill",
+      "category": "negatives-saying-no"
+    },
+    {
+      "bn": "“কখনো না” আবার বলুন।",
+      "pronunciation": "“kokhono na” abar bolun.",
+      "en": "Say “never” again.",
+      "context": "Guided negatives and saying no vocabulary drill",
+      "category": "negatives-saying-no"
+    },
+    {
+      "bn": "“এখনো না” আবার বলুন।",
+      "pronunciation": "“ekhono na” abar bolun.",
+      "en": "Say “not yet” again.",
+      "context": "Guided negatives and saying no vocabulary drill",
+      "category": "negatives-saying-no"
+    },
+    {
+      "bn": "“না” শব্দটি লিখুন।",
+      "pronunciation": "“na” shobdoti likhun.",
+      "en": "Write the word “no / not.”",
+      "context": "Guided negatives and saying no vocabulary drill",
+      "category": "negatives-saying-no"
+    },
+    {
+      "bn": "“নয়” শব্দটি লিখুন।",
+      "pronunciation": "“noy” shobdoti likhun.",
+      "en": "Write the word “is not.”",
+      "context": "Guided negatives and saying no vocabulary drill",
+      "category": "negatives-saying-no"
+    },
+    {
+      "bn": "“নেই” শব্দটি লিখুন।",
+      "pronunciation": "“nei” shobdoti likhun.",
+      "en": "Write the word “is not present / do not have.”",
+      "context": "Guided negatives and saying no vocabulary drill",
+      "category": "negatives-saying-no"
+    },
+    {
+      "bn": "“পারি না” শব্দটি লিখুন।",
+      "pronunciation": "“pari na” shobdoti likhun.",
+      "en": "Write the word “cannot.”",
+      "context": "Guided negatives and saying no vocabulary drill",
+      "category": "negatives-saying-no"
+    }
+  ],
+  "practice": [
+    "Say the Bengali words for three items from negatives and saying no.",
+    "Read each phrase aloud, then repeat it without looking at the transliteration.",
+    "Create a new sentence by replacing one word in a lesson phrase."
+  ],
+  "notes": [
+    "না usually follows the verb phrase, while নয় negates identity and নেই negates existence or possession."
+  ]
+}

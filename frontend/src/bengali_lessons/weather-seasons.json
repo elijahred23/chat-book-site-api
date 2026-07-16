@@ -1,0 +1,712 @@
+{
+  "id": "weather-seasons",
+  "title": "Weather and Seasons",
+  "summary": "Describe daily weather, temperature, rain, and seasons.",
+  "level": "beginner",
+  "topic": "Weather and Seasons",
+  "focus": "vocabulary",
+  "vocab": [
+    {
+      "bn": "আবহাওয়া",
+      "pronunciation": "abohawa",
+      "en": "weather",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "রোদ",
+      "pronunciation": "rod",
+      "en": "sunshine",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "বৃষ্টি",
+      "pronunciation": "brishti",
+      "en": "rain",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "মেঘ",
+      "pronunciation": "megh",
+      "en": "cloud",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "গরম",
+      "pronunciation": "gorom",
+      "en": "hot",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "ঠান্ডা",
+      "pronunciation": "thanda",
+      "en": "cold",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "গ্রীষ্ম",
+      "pronunciation": "grishsho",
+      "en": "summer",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "শীত",
+      "pronunciation": "shit",
+      "en": "winter",
+      "category": "weather-seasons"
+    }
+  ],
+  "phrases": [
+    {
+      "bn": "আজ আবহাওয়া কেমন?",
+      "pronunciation": "aj abohawa kemon?",
+      "en": "How is the weather today?",
+      "context": "Asking about weather",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "আজ খুব গরম পড়েছে।",
+      "pronunciation": "aj khub gorom porechhe.",
+      "en": "It is very hot today.",
+      "context": "Describing heat",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "বাইরে বৃষ্টি হচ্ছে।",
+      "pronunciation": "baire brishti hochchhe.",
+      "en": "It is raining outside.",
+      "context": "Describing rain",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "শীতকালে সকাল ঠান্ডা থাকে।",
+      "pronunciation": "shitkale shokal thanda thake.",
+      "en": "Mornings are cold in winter.",
+      "context": "Talking about a season",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "আজকের শব্দ “আবহাওয়া”।",
+      "pronunciation": "ajker shobdo “abohawa”.",
+      "en": "Today’s word is “weather.”",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "আজকের শব্দ “রোদ”।",
+      "pronunciation": "ajker shobdo “rod”.",
+      "en": "Today’s word is “sunshine.”",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "আজকের শব্দ “বৃষ্টি”।",
+      "pronunciation": "ajker shobdo “brishti”.",
+      "en": "Today’s word is “rain.”",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "আজকের শব্দ “মেঘ”।",
+      "pronunciation": "ajker shobdo “megh”.",
+      "en": "Today’s word is “cloud.”",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "আজকের শব্দ “গরম”।",
+      "pronunciation": "ajker shobdo “gorom”.",
+      "en": "Today’s word is “hot.”",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "আজকের শব্দ “ঠান্ডা”।",
+      "pronunciation": "ajker shobdo “thanda”.",
+      "en": "Today’s word is “cold.”",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "আজকের শব্দ “গ্রীষ্ম”।",
+      "pronunciation": "ajker shobdo “grishsho”.",
+      "en": "Today’s word is “summer.”",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "আজকের শব্দ “শীত”।",
+      "pronunciation": "ajker shobdo “shit”.",
+      "en": "Today’s word is “winter.”",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "“আবহাওয়া” শব্দটি বলুন।",
+      "pronunciation": "“abohawa” shobdoti bolun.",
+      "en": "Say the word “weather.”",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "“রোদ” শব্দটি বলুন।",
+      "pronunciation": "“rod” shobdoti bolun.",
+      "en": "Say the word “sunshine.”",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "“বৃষ্টি” শব্দটি বলুন।",
+      "pronunciation": "“brishti” shobdoti bolun.",
+      "en": "Say the word “rain.”",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "“মেঘ” শব্দটি বলুন।",
+      "pronunciation": "“megh” shobdoti bolun.",
+      "en": "Say the word “cloud.”",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "“গরম” শব্দটি বলুন।",
+      "pronunciation": "“gorom” shobdoti bolun.",
+      "en": "Say the word “hot.”",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "“ঠান্ডা” শব্দটি বলুন।",
+      "pronunciation": "“thanda” shobdoti bolun.",
+      "en": "Say the word “cold.”",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "“গ্রীষ্ম” শব্দটি বলুন।",
+      "pronunciation": "“grishsho” shobdoti bolun.",
+      "en": "Say the word “summer.”",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "“শীত” শব্দটি বলুন।",
+      "pronunciation": "“shit” shobdoti bolun.",
+      "en": "Say the word “winter.”",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "“আবহাওয়া” আবার বলুন।",
+      "pronunciation": "“abohawa” abar bolun.",
+      "en": "Say “weather” again.",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "“রোদ” আবার বলুন।",
+      "pronunciation": "“rod” abar bolun.",
+      "en": "Say “sunshine” again.",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "“বৃষ্টি” আবার বলুন।",
+      "pronunciation": "“brishti” abar bolun.",
+      "en": "Say “rain” again.",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "“মেঘ” আবার বলুন।",
+      "pronunciation": "“megh” abar bolun.",
+      "en": "Say “cloud” again.",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "“গরম” আবার বলুন।",
+      "pronunciation": "“gorom” abar bolun.",
+      "en": "Say “hot” again.",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "“ঠান্ডা” আবার বলুন।",
+      "pronunciation": "“thanda” abar bolun.",
+      "en": "Say “cold” again.",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "“গ্রীষ্ম” আবার বলুন।",
+      "pronunciation": "“grishsho” abar bolun.",
+      "en": "Say “summer” again.",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "“শীত” আবার বলুন।",
+      "pronunciation": "“shit” abar bolun.",
+      "en": "Say “winter” again.",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "“আবহাওয়া” শব্দটি লিখুন।",
+      "pronunciation": "“abohawa” shobdoti likhun.",
+      "en": "Write the word “weather.”",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "“রোদ” শব্দটি লিখুন।",
+      "pronunciation": "“rod” shobdoti likhun.",
+      "en": "Write the word “sunshine.”",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "“বৃষ্টি” শব্দটি লিখুন।",
+      "pronunciation": "“brishti” shobdoti likhun.",
+      "en": "Write the word “rain.”",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "“মেঘ” শব্দটি লিখুন।",
+      "pronunciation": "“megh” shobdoti likhun.",
+      "en": "Write the word “cloud.”",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "“গরম” শব্দটি লিখুন।",
+      "pronunciation": "“gorom” shobdoti likhun.",
+      "en": "Write the word “hot.”",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "“ঠান্ডা” শব্দটি লিখুন।",
+      "pronunciation": "“thanda” shobdoti likhun.",
+      "en": "Write the word “cold.”",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "“গ্রীষ্ম” শব্দটি লিখুন।",
+      "pronunciation": "“grishsho” shobdoti likhun.",
+      "en": "Write the word “summer.”",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "“শীত” শব্দটি লিখুন।",
+      "pronunciation": "“shit” shobdoti likhun.",
+      "en": "Write the word “winter.”",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "“আবহাওয়া” শব্দটি পড়ুন।",
+      "pronunciation": "“abohawa” shobdoti porun.",
+      "en": "Read the word “weather.”",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "“রোদ” শব্দটি পড়ুন।",
+      "pronunciation": "“rod” shobdoti porun.",
+      "en": "Read the word “sunshine.”",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "“বৃষ্টি” শব্দটি পড়ুন।",
+      "pronunciation": "“brishti” shobdoti porun.",
+      "en": "Read the word “rain.”",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "“মেঘ” শব্দটি পড়ুন।",
+      "pronunciation": "“megh” shobdoti porun.",
+      "en": "Read the word “cloud.”",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "“গরম” শব্দটি পড়ুন।",
+      "pronunciation": "“gorom” shobdoti porun.",
+      "en": "Read the word “hot.”",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "“ঠান্ডা” শব্দটি পড়ুন।",
+      "pronunciation": "“thanda” shobdoti porun.",
+      "en": "Read the word “cold.”",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "“গ্রীষ্ম” শব্দটি পড়ুন।",
+      "pronunciation": "“grishsho” shobdoti porun.",
+      "en": "Read the word “summer.”",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "“শীত” শব্দটি পড়ুন।",
+      "pronunciation": "“shit” shobdoti porun.",
+      "en": "Read the word “winter.”",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "“আবহাওয়া” শব্দটি মনে রাখুন।",
+      "pronunciation": "“abohawa” shobdoti mone rakhun.",
+      "en": "Remember the word “weather.”",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "“রোদ” শব্দটি মনে রাখুন।",
+      "pronunciation": "“rod” shobdoti mone rakhun.",
+      "en": "Remember the word “sunshine.”",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "“বৃষ্টি” শব্দটি মনে রাখুন।",
+      "pronunciation": "“brishti” shobdoti mone rakhun.",
+      "en": "Remember the word “rain.”",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "“মেঘ” শব্দটি মনে রাখুন।",
+      "pronunciation": "“megh” shobdoti mone rakhun.",
+      "en": "Remember the word “cloud.”",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "“গরম” শব্দটি মনে রাখুন।",
+      "pronunciation": "“gorom” shobdoti mone rakhun.",
+      "en": "Remember the word “hot.”",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "“ঠান্ডা” শব্দটি মনে রাখুন।",
+      "pronunciation": "“thanda” shobdoti mone rakhun.",
+      "en": "Remember the word “cold.”",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "“গ্রীষ্ম” শব্দটি মনে রাখুন।",
+      "pronunciation": "“grishsho” shobdoti mone rakhun.",
+      "en": "Remember the word “summer.”",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "“শীত” শব্দটি মনে রাখুন।",
+      "pronunciation": "“shit” shobdoti mone rakhun.",
+      "en": "Remember the word “winter.”",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "“আবহাওয়া” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“abohawa” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “weather.”",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "“রোদ” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“rod” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “sunshine.”",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "“বৃষ্টি” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“brishti” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “rain.”",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "“মেঘ” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“megh” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “cloud.”",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "“গরম” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“gorom” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “hot.”",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "“ঠান্ডা” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“thanda” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “cold.”",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "“গ্রীষ্ম” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“grishsho” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “summer.”",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "“শীত” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“shit” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “winter.”",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "“আবহাওয়া” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“abohawa” kibhabe uccharon korben?",
+      "en": "How do you pronounce “weather”?",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "“রোদ” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“rod” kibhabe uccharon korben?",
+      "en": "How do you pronounce “sunshine”?",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "“বৃষ্টি” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“brishti” kibhabe uccharon korben?",
+      "en": "How do you pronounce “rain”?",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "“মেঘ” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“megh” kibhabe uccharon korben?",
+      "en": "How do you pronounce “cloud”?",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "“গরম” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“gorom” kibhabe uccharon korben?",
+      "en": "How do you pronounce “hot”?",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "“ঠান্ডা” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“thanda” kibhabe uccharon korben?",
+      "en": "How do you pronounce “cold”?",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "“গ্রীষ্ম” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“grishsho” kibhabe uccharon korben?",
+      "en": "How do you pronounce “summer”?",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "“শীত” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“shit” kibhabe uccharon korben?",
+      "en": "How do you pronounce “winter”?",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "“আবহাওয়া” এর অর্থ কী?",
+      "pronunciation": "“abohawa” er ortho ki?",
+      "en": "What does “weather” mean?",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "“রোদ” এর অর্থ কী?",
+      "pronunciation": "“rod” er ortho ki?",
+      "en": "What does “sunshine” mean?",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "“বৃষ্টি” এর অর্থ কী?",
+      "pronunciation": "“brishti” er ortho ki?",
+      "en": "What does “rain” mean?",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "“মেঘ” এর অর্থ কী?",
+      "pronunciation": "“megh” er ortho ki?",
+      "en": "What does “cloud” mean?",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "“গরম” এর অর্থ কী?",
+      "pronunciation": "“gorom” er ortho ki?",
+      "en": "What does “hot” mean?",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "“ঠান্ডা” এর অর্থ কী?",
+      "pronunciation": "“thanda” er ortho ki?",
+      "en": "What does “cold” mean?",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "“গ্রীষ্ম” এর অর্থ কী?",
+      "pronunciation": "“grishsho” er ortho ki?",
+      "en": "What does “summer” mean?",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "“শীত” এর অর্থ কী?",
+      "pronunciation": "“shit” er ortho ki?",
+      "en": "What does “winter” mean?",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "আমি “আবহাওয়া” শব্দটি শিখছি।",
+      "pronunciation": "ami “abohawa” shobdoti shikhchhi.",
+      "en": "I am learning the word “weather.”",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "আমি “রোদ” শব্দটি শিখছি।",
+      "pronunciation": "ami “rod” shobdoti shikhchhi.",
+      "en": "I am learning the word “sunshine.”",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "আমি “বৃষ্টি” শব্দটি শিখছি।",
+      "pronunciation": "ami “brishti” shobdoti shikhchhi.",
+      "en": "I am learning the word “rain.”",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "আমি “মেঘ” শব্দটি শিখছি।",
+      "pronunciation": "ami “megh” shobdoti shikhchhi.",
+      "en": "I am learning the word “cloud.”",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "আমি “গরম” শব্দটি শিখছি।",
+      "pronunciation": "ami “gorom” shobdoti shikhchhi.",
+      "en": "I am learning the word “hot.”",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "আমি “ঠান্ডা” শব্দটি শিখছি।",
+      "pronunciation": "ami “thanda” shobdoti shikhchhi.",
+      "en": "I am learning the word “cold.”",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "আমি “গ্রীষ্ম” শব্দটি শিখছি।",
+      "pronunciation": "ami “grishsho” shobdoti shikhchhi.",
+      "en": "I am learning the word “summer.”",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "আমি “শীত” শব্দটি শিখছি।",
+      "pronunciation": "ami “shit” shobdoti shikhchhi.",
+      "en": "I am learning the word “winter.”",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "আপনি কি “আবহাওয়া” বলতে পারেন?",
+      "pronunciation": "apni ki “abohawa” bolte paren?",
+      "en": "Can you say “weather”?",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "আপনি কি “রোদ” বলতে পারেন?",
+      "pronunciation": "apni ki “rod” bolte paren?",
+      "en": "Can you say “sunshine”?",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "আপনি কি “বৃষ্টি” বলতে পারেন?",
+      "pronunciation": "apni ki “brishti” bolte paren?",
+      "en": "Can you say “rain”?",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "আপনি কি “মেঘ” বলতে পারেন?",
+      "pronunciation": "apni ki “megh” bolte paren?",
+      "en": "Can you say “cloud”?",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "আপনি কি “গরম” বলতে পারেন?",
+      "pronunciation": "apni ki “gorom” bolte paren?",
+      "en": "Can you say “hot”?",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "আপনি কি “ঠান্ডা” বলতে পারেন?",
+      "pronunciation": "apni ki “thanda” bolte paren?",
+      "en": "Can you say “cold”?",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "আপনি কি “গ্রীষ্ম” বলতে পারেন?",
+      "pronunciation": "apni ki “grishsho” bolte paren?",
+      "en": "Can you say “summer”?",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    },
+    {
+      "bn": "আপনি কি “শীত” বলতে পারেন?",
+      "pronunciation": "apni ki “shit” bolte paren?",
+      "en": "Can you say “winter”?",
+      "context": "Guided weather and seasons vocabulary drill",
+      "category": "weather-seasons"
+    }
+  ],
+  "practice": [
+    "Say the Bengali words for three items from weather and seasons.",
+    "Read each phrase aloud, then repeat it without looking at the transliteration.",
+    "Create a new sentence by replacing one word in a lesson phrase."
+  ],
+  "notes": [
+    "Bengali tradition recognizes six seasons, though everyday conversation often emphasizes summer, monsoon, and winter."
+  ]
+}

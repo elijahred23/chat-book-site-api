@@ -1,0 +1,712 @@
+{
+  "id": "colors-shapes-sizes",
+  "title": "Colors, Shapes, and Sizes",
+  "summary": "Describe the color, shape, and size of everyday objects.",
+  "level": "beginner",
+  "topic": "Colors, Shapes, and Sizes",
+  "focus": "vocabulary",
+  "vocab": [
+    {
+      "bn": "লাল",
+      "pronunciation": "lal",
+      "en": "red",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "নীল",
+      "pronunciation": "nil",
+      "en": "blue",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "সবুজ",
+      "pronunciation": "shobuj",
+      "en": "green",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "গোল",
+      "pronunciation": "gol",
+      "en": "round",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "চৌকো",
+      "pronunciation": "chouko",
+      "en": "square",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "লম্বা",
+      "pronunciation": "lomba",
+      "en": "long / tall",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "বড়",
+      "pronunciation": "boro",
+      "en": "big",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "ছোট",
+      "pronunciation": "chhoto",
+      "en": "small",
+      "category": "colors-shapes-sizes"
+    }
+  ],
+  "phrases": [
+    {
+      "bn": "আমার নীল রং পছন্দ।",
+      "pronunciation": "amar nil rong pochhondo.",
+      "en": "I like the color blue.",
+      "context": "Naming a favorite color",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "টেবিলটা গোল।",
+      "pronunciation": "tebilta gol.",
+      "en": "The table is round.",
+      "context": "Describing shape",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "আমাকে একটা ছোট ব্যাগ দিন।",
+      "pronunciation": "amake ekta chhoto bag din.",
+      "en": "Please give me a small bag.",
+      "context": "Requesting a size",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "আজকের শব্দ “লাল”।",
+      "pronunciation": "ajker shobdo “lal”.",
+      "en": "Today’s word is “red.”",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "আজকের শব্দ “নীল”।",
+      "pronunciation": "ajker shobdo “nil”.",
+      "en": "Today’s word is “blue.”",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "আজকের শব্দ “সবুজ”।",
+      "pronunciation": "ajker shobdo “shobuj”.",
+      "en": "Today’s word is “green.”",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "আজকের শব্দ “গোল”।",
+      "pronunciation": "ajker shobdo “gol”.",
+      "en": "Today’s word is “round.”",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "আজকের শব্দ “চৌকো”।",
+      "pronunciation": "ajker shobdo “chouko”.",
+      "en": "Today’s word is “square.”",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "আজকের শব্দ “লম্বা”।",
+      "pronunciation": "ajker shobdo “lomba”.",
+      "en": "Today’s word is “long / tall.”",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "আজকের শব্দ “বড়”।",
+      "pronunciation": "ajker shobdo “boro”.",
+      "en": "Today’s word is “big.”",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "আজকের শব্দ “ছোট”।",
+      "pronunciation": "ajker shobdo “chhoto”.",
+      "en": "Today’s word is “small.”",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "“লাল” শব্দটি বলুন।",
+      "pronunciation": "“lal” shobdoti bolun.",
+      "en": "Say the word “red.”",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "“নীল” শব্দটি বলুন।",
+      "pronunciation": "“nil” shobdoti bolun.",
+      "en": "Say the word “blue.”",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "“সবুজ” শব্দটি বলুন।",
+      "pronunciation": "“shobuj” shobdoti bolun.",
+      "en": "Say the word “green.”",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "“গোল” শব্দটি বলুন।",
+      "pronunciation": "“gol” shobdoti bolun.",
+      "en": "Say the word “round.”",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "“চৌকো” শব্দটি বলুন।",
+      "pronunciation": "“chouko” shobdoti bolun.",
+      "en": "Say the word “square.”",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "“লম্বা” শব্দটি বলুন।",
+      "pronunciation": "“lomba” shobdoti bolun.",
+      "en": "Say the word “long / tall.”",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "“বড়” শব্দটি বলুন।",
+      "pronunciation": "“boro” shobdoti bolun.",
+      "en": "Say the word “big.”",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "“ছোট” শব্দটি বলুন।",
+      "pronunciation": "“chhoto” shobdoti bolun.",
+      "en": "Say the word “small.”",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "“লাল” আবার বলুন।",
+      "pronunciation": "“lal” abar bolun.",
+      "en": "Say “red” again.",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "“নীল” আবার বলুন।",
+      "pronunciation": "“nil” abar bolun.",
+      "en": "Say “blue” again.",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "“সবুজ” আবার বলুন।",
+      "pronunciation": "“shobuj” abar bolun.",
+      "en": "Say “green” again.",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "“গোল” আবার বলুন।",
+      "pronunciation": "“gol” abar bolun.",
+      "en": "Say “round” again.",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "“চৌকো” আবার বলুন।",
+      "pronunciation": "“chouko” abar bolun.",
+      "en": "Say “square” again.",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "“লম্বা” আবার বলুন।",
+      "pronunciation": "“lomba” abar bolun.",
+      "en": "Say “long / tall” again.",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "“বড়” আবার বলুন।",
+      "pronunciation": "“boro” abar bolun.",
+      "en": "Say “big” again.",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "“ছোট” আবার বলুন।",
+      "pronunciation": "“chhoto” abar bolun.",
+      "en": "Say “small” again.",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "“লাল” শব্দটি লিখুন।",
+      "pronunciation": "“lal” shobdoti likhun.",
+      "en": "Write the word “red.”",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "“নীল” শব্দটি লিখুন।",
+      "pronunciation": "“nil” shobdoti likhun.",
+      "en": "Write the word “blue.”",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "“সবুজ” শব্দটি লিখুন।",
+      "pronunciation": "“shobuj” shobdoti likhun.",
+      "en": "Write the word “green.”",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "“গোল” শব্দটি লিখুন।",
+      "pronunciation": "“gol” shobdoti likhun.",
+      "en": "Write the word “round.”",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "“চৌকো” শব্দটি লিখুন।",
+      "pronunciation": "“chouko” shobdoti likhun.",
+      "en": "Write the word “square.”",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "“লম্বা” শব্দটি লিখুন।",
+      "pronunciation": "“lomba” shobdoti likhun.",
+      "en": "Write the word “long / tall.”",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "“বড়” শব্দটি লিখুন।",
+      "pronunciation": "“boro” shobdoti likhun.",
+      "en": "Write the word “big.”",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "“ছোট” শব্দটি লিখুন।",
+      "pronunciation": "“chhoto” shobdoti likhun.",
+      "en": "Write the word “small.”",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "“লাল” শব্দটি পড়ুন।",
+      "pronunciation": "“lal” shobdoti porun.",
+      "en": "Read the word “red.”",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "“নীল” শব্দটি পড়ুন।",
+      "pronunciation": "“nil” shobdoti porun.",
+      "en": "Read the word “blue.”",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "“সবুজ” শব্দটি পড়ুন।",
+      "pronunciation": "“shobuj” shobdoti porun.",
+      "en": "Read the word “green.”",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "“গোল” শব্দটি পড়ুন।",
+      "pronunciation": "“gol” shobdoti porun.",
+      "en": "Read the word “round.”",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "“চৌকো” শব্দটি পড়ুন।",
+      "pronunciation": "“chouko” shobdoti porun.",
+      "en": "Read the word “square.”",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "“লম্বা” শব্দটি পড়ুন।",
+      "pronunciation": "“lomba” shobdoti porun.",
+      "en": "Read the word “long / tall.”",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "“বড়” শব্দটি পড়ুন।",
+      "pronunciation": "“boro” shobdoti porun.",
+      "en": "Read the word “big.”",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "“ছোট” শব্দটি পড়ুন।",
+      "pronunciation": "“chhoto” shobdoti porun.",
+      "en": "Read the word “small.”",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "“লাল” শব্দটি মনে রাখুন।",
+      "pronunciation": "“lal” shobdoti mone rakhun.",
+      "en": "Remember the word “red.”",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "“নীল” শব্দটি মনে রাখুন।",
+      "pronunciation": "“nil” shobdoti mone rakhun.",
+      "en": "Remember the word “blue.”",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "“সবুজ” শব্দটি মনে রাখুন।",
+      "pronunciation": "“shobuj” shobdoti mone rakhun.",
+      "en": "Remember the word “green.”",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "“গোল” শব্দটি মনে রাখুন।",
+      "pronunciation": "“gol” shobdoti mone rakhun.",
+      "en": "Remember the word “round.”",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "“চৌকো” শব্দটি মনে রাখুন।",
+      "pronunciation": "“chouko” shobdoti mone rakhun.",
+      "en": "Remember the word “square.”",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "“লম্বা” শব্দটি মনে রাখুন।",
+      "pronunciation": "“lomba” shobdoti mone rakhun.",
+      "en": "Remember the word “long / tall.”",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "“বড়” শব্দটি মনে রাখুন।",
+      "pronunciation": "“boro” shobdoti mone rakhun.",
+      "en": "Remember the word “big.”",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "“ছোট” শব্দটি মনে রাখুন।",
+      "pronunciation": "“chhoto” shobdoti mone rakhun.",
+      "en": "Remember the word “small.”",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "“লাল” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“lal” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “red.”",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "“নীল” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“nil” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “blue.”",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "“সবুজ” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“shobuj” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “green.”",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "“গোল” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“gol” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “round.”",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "“চৌকো” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“chouko” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “square.”",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "“লম্বা” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“lomba” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “long / tall.”",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "“বড়” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“boro” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “big.”",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "“ছোট” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“chhoto” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “small.”",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "“লাল” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“lal” kibhabe uccharon korben?",
+      "en": "How do you pronounce “red”?",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "“নীল” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“nil” kibhabe uccharon korben?",
+      "en": "How do you pronounce “blue”?",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "“সবুজ” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“shobuj” kibhabe uccharon korben?",
+      "en": "How do you pronounce “green”?",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "“গোল” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“gol” kibhabe uccharon korben?",
+      "en": "How do you pronounce “round”?",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "“চৌকো” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“chouko” kibhabe uccharon korben?",
+      "en": "How do you pronounce “square”?",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "“লম্বা” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“lomba” kibhabe uccharon korben?",
+      "en": "How do you pronounce “long / tall”?",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "“বড়” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“boro” kibhabe uccharon korben?",
+      "en": "How do you pronounce “big”?",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "“ছোট” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“chhoto” kibhabe uccharon korben?",
+      "en": "How do you pronounce “small”?",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "“লাল” এর অর্থ কী?",
+      "pronunciation": "“lal” er ortho ki?",
+      "en": "What does “red” mean?",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "“নীল” এর অর্থ কী?",
+      "pronunciation": "“nil” er ortho ki?",
+      "en": "What does “blue” mean?",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "“সবুজ” এর অর্থ কী?",
+      "pronunciation": "“shobuj” er ortho ki?",
+      "en": "What does “green” mean?",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "“গোল” এর অর্থ কী?",
+      "pronunciation": "“gol” er ortho ki?",
+      "en": "What does “round” mean?",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "“চৌকো” এর অর্থ কী?",
+      "pronunciation": "“chouko” er ortho ki?",
+      "en": "What does “square” mean?",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "“লম্বা” এর অর্থ কী?",
+      "pronunciation": "“lomba” er ortho ki?",
+      "en": "What does “long / tall” mean?",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "“বড়” এর অর্থ কী?",
+      "pronunciation": "“boro” er ortho ki?",
+      "en": "What does “big” mean?",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "“ছোট” এর অর্থ কী?",
+      "pronunciation": "“chhoto” er ortho ki?",
+      "en": "What does “small” mean?",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "আমি “লাল” শব্দটি শিখছি।",
+      "pronunciation": "ami “lal” shobdoti shikhchhi.",
+      "en": "I am learning the word “red.”",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "আমি “নীল” শব্দটি শিখছি।",
+      "pronunciation": "ami “nil” shobdoti shikhchhi.",
+      "en": "I am learning the word “blue.”",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "আমি “সবুজ” শব্দটি শিখছি।",
+      "pronunciation": "ami “shobuj” shobdoti shikhchhi.",
+      "en": "I am learning the word “green.”",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "আমি “গোল” শব্দটি শিখছি।",
+      "pronunciation": "ami “gol” shobdoti shikhchhi.",
+      "en": "I am learning the word “round.”",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "আমি “চৌকো” শব্দটি শিখছি।",
+      "pronunciation": "ami “chouko” shobdoti shikhchhi.",
+      "en": "I am learning the word “square.”",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "আমি “লম্বা” শব্দটি শিখছি।",
+      "pronunciation": "ami “lomba” shobdoti shikhchhi.",
+      "en": "I am learning the word “long / tall.”",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "আমি “বড়” শব্দটি শিখছি।",
+      "pronunciation": "ami “boro” shobdoti shikhchhi.",
+      "en": "I am learning the word “big.”",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "আমি “ছোট” শব্দটি শিখছি।",
+      "pronunciation": "ami “chhoto” shobdoti shikhchhi.",
+      "en": "I am learning the word “small.”",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "আপনি কি “লাল” বলতে পারেন?",
+      "pronunciation": "apni ki “lal” bolte paren?",
+      "en": "Can you say “red”?",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "আপনি কি “নীল” বলতে পারেন?",
+      "pronunciation": "apni ki “nil” bolte paren?",
+      "en": "Can you say “blue”?",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "আপনি কি “সবুজ” বলতে পারেন?",
+      "pronunciation": "apni ki “shobuj” bolte paren?",
+      "en": "Can you say “green”?",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "আপনি কি “গোল” বলতে পারেন?",
+      "pronunciation": "apni ki “gol” bolte paren?",
+      "en": "Can you say “round”?",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "আপনি কি “চৌকো” বলতে পারেন?",
+      "pronunciation": "apni ki “chouko” bolte paren?",
+      "en": "Can you say “square”?",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "আপনি কি “লম্বা” বলতে পারেন?",
+      "pronunciation": "apni ki “lomba” bolte paren?",
+      "en": "Can you say “long / tall”?",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "আপনি কি “বড়” বলতে পারেন?",
+      "pronunciation": "apni ki “boro” bolte paren?",
+      "en": "Can you say “big”?",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "আপনি কি “ছোট” বলতে পারেন?",
+      "pronunciation": "apni ki “chhoto” bolte paren?",
+      "en": "Can you say “small”?",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    },
+    {
+      "bn": "“লাল” একটি দরকারি শব্দ।",
+      "pronunciation": "“lal” ekti dorkari shobdo.",
+      "en": "“red” is a useful word.",
+      "context": "Guided colors, shapes, and sizes vocabulary drill",
+      "category": "colors-shapes-sizes"
+    }
+  ],
+  "practice": [
+    "Say the Bengali words for three items from colors, shapes, and sizes.",
+    "Read each phrase aloud, then repeat it without looking at the transliteration.",
+    "Create a new sentence by replacing one word in a lesson phrase."
+  ],
+  "notes": [
+    "Describing words usually come before the noun: লাল ফুল, ‘red flower’."
+  ]
+}

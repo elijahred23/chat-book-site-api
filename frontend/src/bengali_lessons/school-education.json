@@ -1,0 +1,712 @@
+{
+  "id": "school-education",
+  "title": "School and Education",
+  "summary": "Discuss classes, subjects, studying, and school activities.",
+  "level": "beginner",
+  "topic": "School and Education",
+  "focus": "vocabulary",
+  "vocab": [
+    {
+      "bn": "বিদ্যালয়",
+      "pronunciation": "biddaloy",
+      "en": "school",
+      "category": "school-education"
+    },
+    {
+      "bn": "শিক্ষক",
+      "pronunciation": "shikkhok",
+      "en": "teacher",
+      "category": "school-education"
+    },
+    {
+      "bn": "ছাত্র",
+      "pronunciation": "chhatro",
+      "en": "student",
+      "category": "school-education"
+    },
+    {
+      "bn": "বই",
+      "pronunciation": "boi",
+      "en": "book",
+      "category": "school-education"
+    },
+    {
+      "bn": "খাতা",
+      "pronunciation": "khata",
+      "en": "notebook",
+      "category": "school-education"
+    },
+    {
+      "bn": "পরীক্ষা",
+      "pronunciation": "porikkha",
+      "en": "exam",
+      "category": "school-education"
+    },
+    {
+      "bn": "পাঠ",
+      "pronunciation": "path",
+      "en": "lesson",
+      "category": "school-education"
+    },
+    {
+      "bn": "গণিত",
+      "pronunciation": "gonit",
+      "en": "mathematics",
+      "category": "school-education"
+    }
+  ],
+  "phrases": [
+    {
+      "bn": "আমি বাংলা পড়ছি।",
+      "pronunciation": "ami Bangla porchhi.",
+      "en": "I am studying Bengali.",
+      "context": "Naming a subject",
+      "category": "school-education"
+    },
+    {
+      "bn": "পরীক্ষা কবে হবে?",
+      "pronunciation": "porikkha kobe hobe?",
+      "en": "When will the exam be?",
+      "context": "Asking about an exam",
+      "category": "school-education"
+    },
+    {
+      "bn": "শিক্ষক পাঠটি বুঝিয়ে দিলেন।",
+      "pronunciation": "shikkhok pathti bujhiye dilen.",
+      "en": "The teacher explained the lesson.",
+      "context": "Describing class",
+      "category": "school-education"
+    },
+    {
+      "bn": "আজকের শব্দ “বিদ্যালয়”।",
+      "pronunciation": "ajker shobdo “biddaloy”.",
+      "en": "Today’s word is “school.”",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "আজকের শব্দ “শিক্ষক”।",
+      "pronunciation": "ajker shobdo “shikkhok”.",
+      "en": "Today’s word is “teacher.”",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "আজকের শব্দ “ছাত্র”।",
+      "pronunciation": "ajker shobdo “chhatro”.",
+      "en": "Today’s word is “student.”",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "আজকের শব্দ “বই”।",
+      "pronunciation": "ajker shobdo “boi”.",
+      "en": "Today’s word is “book.”",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "আজকের শব্দ “খাতা”।",
+      "pronunciation": "ajker shobdo “khata”.",
+      "en": "Today’s word is “notebook.”",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "আজকের শব্দ “পরীক্ষা”।",
+      "pronunciation": "ajker shobdo “porikkha”.",
+      "en": "Today’s word is “exam.”",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "আজকের শব্দ “পাঠ”।",
+      "pronunciation": "ajker shobdo “path”.",
+      "en": "Today’s word is “lesson.”",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "আজকের শব্দ “গণিত”।",
+      "pronunciation": "ajker shobdo “gonit”.",
+      "en": "Today’s word is “mathematics.”",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "“বিদ্যালয়” শব্দটি বলুন।",
+      "pronunciation": "“biddaloy” shobdoti bolun.",
+      "en": "Say the word “school.”",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "“শিক্ষক” শব্দটি বলুন।",
+      "pronunciation": "“shikkhok” shobdoti bolun.",
+      "en": "Say the word “teacher.”",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "“ছাত্র” শব্দটি বলুন।",
+      "pronunciation": "“chhatro” shobdoti bolun.",
+      "en": "Say the word “student.”",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "“বই” শব্দটি বলুন।",
+      "pronunciation": "“boi” shobdoti bolun.",
+      "en": "Say the word “book.”",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "“খাতা” শব্দটি বলুন।",
+      "pronunciation": "“khata” shobdoti bolun.",
+      "en": "Say the word “notebook.”",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "“পরীক্ষা” শব্দটি বলুন।",
+      "pronunciation": "“porikkha” shobdoti bolun.",
+      "en": "Say the word “exam.”",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "“পাঠ” শব্দটি বলুন।",
+      "pronunciation": "“path” shobdoti bolun.",
+      "en": "Say the word “lesson.”",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "“গণিত” শব্দটি বলুন।",
+      "pronunciation": "“gonit” shobdoti bolun.",
+      "en": "Say the word “mathematics.”",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "“বিদ্যালয়” আবার বলুন।",
+      "pronunciation": "“biddaloy” abar bolun.",
+      "en": "Say “school” again.",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "“শিক্ষক” আবার বলুন।",
+      "pronunciation": "“shikkhok” abar bolun.",
+      "en": "Say “teacher” again.",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "“ছাত্র” আবার বলুন।",
+      "pronunciation": "“chhatro” abar bolun.",
+      "en": "Say “student” again.",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "“বই” আবার বলুন।",
+      "pronunciation": "“boi” abar bolun.",
+      "en": "Say “book” again.",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "“খাতা” আবার বলুন।",
+      "pronunciation": "“khata” abar bolun.",
+      "en": "Say “notebook” again.",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "“পরীক্ষা” আবার বলুন।",
+      "pronunciation": "“porikkha” abar bolun.",
+      "en": "Say “exam” again.",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "“পাঠ” আবার বলুন।",
+      "pronunciation": "“path” abar bolun.",
+      "en": "Say “lesson” again.",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "“গণিত” আবার বলুন।",
+      "pronunciation": "“gonit” abar bolun.",
+      "en": "Say “mathematics” again.",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "“বিদ্যালয়” শব্দটি লিখুন।",
+      "pronunciation": "“biddaloy” shobdoti likhun.",
+      "en": "Write the word “school.”",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "“শিক্ষক” শব্দটি লিখুন।",
+      "pronunciation": "“shikkhok” shobdoti likhun.",
+      "en": "Write the word “teacher.”",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "“ছাত্র” শব্দটি লিখুন।",
+      "pronunciation": "“chhatro” shobdoti likhun.",
+      "en": "Write the word “student.”",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "“বই” শব্দটি লিখুন।",
+      "pronunciation": "“boi” shobdoti likhun.",
+      "en": "Write the word “book.”",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "“খাতা” শব্দটি লিখুন।",
+      "pronunciation": "“khata” shobdoti likhun.",
+      "en": "Write the word “notebook.”",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "“পরীক্ষা” শব্দটি লিখুন।",
+      "pronunciation": "“porikkha” shobdoti likhun.",
+      "en": "Write the word “exam.”",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "“পাঠ” শব্দটি লিখুন।",
+      "pronunciation": "“path” shobdoti likhun.",
+      "en": "Write the word “lesson.”",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "“গণিত” শব্দটি লিখুন।",
+      "pronunciation": "“gonit” shobdoti likhun.",
+      "en": "Write the word “mathematics.”",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "“বিদ্যালয়” শব্দটি পড়ুন।",
+      "pronunciation": "“biddaloy” shobdoti porun.",
+      "en": "Read the word “school.”",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "“শিক্ষক” শব্দটি পড়ুন।",
+      "pronunciation": "“shikkhok” shobdoti porun.",
+      "en": "Read the word “teacher.”",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "“ছাত্র” শব্দটি পড়ুন।",
+      "pronunciation": "“chhatro” shobdoti porun.",
+      "en": "Read the word “student.”",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "“বই” শব্দটি পড়ুন।",
+      "pronunciation": "“boi” shobdoti porun.",
+      "en": "Read the word “book.”",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "“খাতা” শব্দটি পড়ুন।",
+      "pronunciation": "“khata” shobdoti porun.",
+      "en": "Read the word “notebook.”",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "“পরীক্ষা” শব্দটি পড়ুন।",
+      "pronunciation": "“porikkha” shobdoti porun.",
+      "en": "Read the word “exam.”",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "“পাঠ” শব্দটি পড়ুন।",
+      "pronunciation": "“path” shobdoti porun.",
+      "en": "Read the word “lesson.”",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "“গণিত” শব্দটি পড়ুন।",
+      "pronunciation": "“gonit” shobdoti porun.",
+      "en": "Read the word “mathematics.”",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "“বিদ্যালয়” শব্দটি মনে রাখুন।",
+      "pronunciation": "“biddaloy” shobdoti mone rakhun.",
+      "en": "Remember the word “school.”",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "“শিক্ষক” শব্দটি মনে রাখুন।",
+      "pronunciation": "“shikkhok” shobdoti mone rakhun.",
+      "en": "Remember the word “teacher.”",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "“ছাত্র” শব্দটি মনে রাখুন।",
+      "pronunciation": "“chhatro” shobdoti mone rakhun.",
+      "en": "Remember the word “student.”",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "“বই” শব্দটি মনে রাখুন।",
+      "pronunciation": "“boi” shobdoti mone rakhun.",
+      "en": "Remember the word “book.”",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "“খাতা” শব্দটি মনে রাখুন।",
+      "pronunciation": "“khata” shobdoti mone rakhun.",
+      "en": "Remember the word “notebook.”",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "“পরীক্ষা” শব্দটি মনে রাখুন।",
+      "pronunciation": "“porikkha” shobdoti mone rakhun.",
+      "en": "Remember the word “exam.”",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "“পাঠ” শব্দটি মনে রাখুন।",
+      "pronunciation": "“path” shobdoti mone rakhun.",
+      "en": "Remember the word “lesson.”",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "“গণিত” শব্দটি মনে রাখুন।",
+      "pronunciation": "“gonit” shobdoti mone rakhun.",
+      "en": "Remember the word “mathematics.”",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "“বিদ্যালয়” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“biddaloy” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “school.”",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "“শিক্ষক” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“shikkhok” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “teacher.”",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "“ছাত্র” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“chhatro” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “student.”",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "“বই” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“boi” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “book.”",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "“খাতা” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“khata” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “notebook.”",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "“পরীক্ষা” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“porikkha” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “exam.”",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "“পাঠ” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“path” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “lesson.”",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "“গণিত” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“gonit” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “mathematics.”",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "“বিদ্যালয়” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“biddaloy” kibhabe uccharon korben?",
+      "en": "How do you pronounce “school”?",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "“শিক্ষক” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“shikkhok” kibhabe uccharon korben?",
+      "en": "How do you pronounce “teacher”?",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "“ছাত্র” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“chhatro” kibhabe uccharon korben?",
+      "en": "How do you pronounce “student”?",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "“বই” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“boi” kibhabe uccharon korben?",
+      "en": "How do you pronounce “book”?",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "“খাতা” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“khata” kibhabe uccharon korben?",
+      "en": "How do you pronounce “notebook”?",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "“পরীক্ষা” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“porikkha” kibhabe uccharon korben?",
+      "en": "How do you pronounce “exam”?",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "“পাঠ” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“path” kibhabe uccharon korben?",
+      "en": "How do you pronounce “lesson”?",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "“গণিত” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“gonit” kibhabe uccharon korben?",
+      "en": "How do you pronounce “mathematics”?",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "“বিদ্যালয়” এর অর্থ কী?",
+      "pronunciation": "“biddaloy” er ortho ki?",
+      "en": "What does “school” mean?",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "“শিক্ষক” এর অর্থ কী?",
+      "pronunciation": "“shikkhok” er ortho ki?",
+      "en": "What does “teacher” mean?",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "“ছাত্র” এর অর্থ কী?",
+      "pronunciation": "“chhatro” er ortho ki?",
+      "en": "What does “student” mean?",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "“বই” এর অর্থ কী?",
+      "pronunciation": "“boi” er ortho ki?",
+      "en": "What does “book” mean?",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "“খাতা” এর অর্থ কী?",
+      "pronunciation": "“khata” er ortho ki?",
+      "en": "What does “notebook” mean?",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "“পরীক্ষা” এর অর্থ কী?",
+      "pronunciation": "“porikkha” er ortho ki?",
+      "en": "What does “exam” mean?",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "“পাঠ” এর অর্থ কী?",
+      "pronunciation": "“path” er ortho ki?",
+      "en": "What does “lesson” mean?",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "“গণিত” এর অর্থ কী?",
+      "pronunciation": "“gonit” er ortho ki?",
+      "en": "What does “mathematics” mean?",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "আমি “বিদ্যালয়” শব্দটি শিখছি।",
+      "pronunciation": "ami “biddaloy” shobdoti shikhchhi.",
+      "en": "I am learning the word “school.”",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "আমি “শিক্ষক” শব্দটি শিখছি।",
+      "pronunciation": "ami “shikkhok” shobdoti shikhchhi.",
+      "en": "I am learning the word “teacher.”",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "আমি “ছাত্র” শব্দটি শিখছি।",
+      "pronunciation": "ami “chhatro” shobdoti shikhchhi.",
+      "en": "I am learning the word “student.”",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "আমি “বই” শব্দটি শিখছি।",
+      "pronunciation": "ami “boi” shobdoti shikhchhi.",
+      "en": "I am learning the word “book.”",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "আমি “খাতা” শব্দটি শিখছি।",
+      "pronunciation": "ami “khata” shobdoti shikhchhi.",
+      "en": "I am learning the word “notebook.”",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "আমি “পরীক্ষা” শব্দটি শিখছি।",
+      "pronunciation": "ami “porikkha” shobdoti shikhchhi.",
+      "en": "I am learning the word “exam.”",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "আমি “পাঠ” শব্দটি শিখছি।",
+      "pronunciation": "ami “path” shobdoti shikhchhi.",
+      "en": "I am learning the word “lesson.”",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "আমি “গণিত” শব্দটি শিখছি।",
+      "pronunciation": "ami “gonit” shobdoti shikhchhi.",
+      "en": "I am learning the word “mathematics.”",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "আপনি কি “বিদ্যালয়” বলতে পারেন?",
+      "pronunciation": "apni ki “biddaloy” bolte paren?",
+      "en": "Can you say “school”?",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "আপনি কি “শিক্ষক” বলতে পারেন?",
+      "pronunciation": "apni ki “shikkhok” bolte paren?",
+      "en": "Can you say “teacher”?",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "আপনি কি “ছাত্র” বলতে পারেন?",
+      "pronunciation": "apni ki “chhatro” bolte paren?",
+      "en": "Can you say “student”?",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "আপনি কি “বই” বলতে পারেন?",
+      "pronunciation": "apni ki “boi” bolte paren?",
+      "en": "Can you say “book”?",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "আপনি কি “খাতা” বলতে পারেন?",
+      "pronunciation": "apni ki “khata” bolte paren?",
+      "en": "Can you say “notebook”?",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "আপনি কি “পরীক্ষা” বলতে পারেন?",
+      "pronunciation": "apni ki “porikkha” bolte paren?",
+      "en": "Can you say “exam”?",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "আপনি কি “পাঠ” বলতে পারেন?",
+      "pronunciation": "apni ki “path” bolte paren?",
+      "en": "Can you say “lesson”?",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "আপনি কি “গণিত” বলতে পারেন?",
+      "pronunciation": "apni ki “gonit” bolte paren?",
+      "en": "Can you say “mathematics”?",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    },
+    {
+      "bn": "“বিদ্যালয়” একটি দরকারি শব্দ।",
+      "pronunciation": "“biddaloy” ekti dorkari shobdo.",
+      "en": "“school” is a useful word.",
+      "context": "Guided school and education vocabulary drill",
+      "category": "school-education"
+    }
+  ],
+  "practice": [
+    "Say the Bengali words for three items from school and education.",
+    "Read each phrase aloud, then repeat it without looking at the transliteration.",
+    "Create a new sentence by replacing one word in a lesson phrase."
+  ],
+  "notes": [
+    "পড়া can mean to read or to study; context supplies the intended meaning."
+  ]
+}

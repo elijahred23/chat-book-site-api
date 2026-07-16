@@ -1,0 +1,293 @@
+{
+  "id": "plurals-classifiers",
+  "title": "Singular, Plural, and Classifiers",
+  "summary": "Count people and objects with common Bengali classifiers and plural markers.",
+  "level": "beginner",
+  "topic": "Singular, Plural, and Classifiers",
+  "focus": "grammar",
+  "vocab": [
+    {
+      "bn": "একটা",
+      "pronunciation": "ekta",
+      "en": "one / a (general)",
+      "category": "plurals-classifiers"
+    },
+    {
+      "bn": "একটি",
+      "pronunciation": "ekti",
+      "en": "one / a (formal)",
+      "category": "plurals-classifiers"
+    },
+    {
+      "bn": "একজন",
+      "pronunciation": "ekjon",
+      "en": "one person",
+      "category": "plurals-classifiers"
+    },
+    {
+      "bn": "দুইজন",
+      "pronunciation": "duijon",
+      "en": "two people",
+      "category": "plurals-classifiers"
+    },
+    {
+      "bn": "তিনটি",
+      "pronunciation": "tinti",
+      "en": "three items",
+      "category": "plurals-classifiers"
+    },
+    {
+      "bn": "গুলো",
+      "pronunciation": "gulo",
+      "en": "plural marker",
+      "category": "plurals-classifiers"
+    },
+    {
+      "bn": "রা",
+      "pronunciation": "ra",
+      "en": "human plural marker",
+      "category": "plurals-classifiers"
+    },
+    {
+      "bn": "সব",
+      "pronunciation": "shob",
+      "en": "all",
+      "category": "plurals-classifiers"
+    }
+  ],
+  "phrases": [
+    {
+      "bn": "টেবিলে একটা বই আছে।",
+      "pronunciation": "tebile ekta boi achhe.",
+      "en": "There is a book on the table.",
+      "context": "Using the general classifier",
+      "category": "plurals-classifiers"
+    },
+    {
+      "bn": "ঘরে তিনজন ছাত্র আছে।",
+      "pronunciation": "ghore tinjon chhatro achhe.",
+      "en": "There are three students in the room.",
+      "context": "Counting people",
+      "category": "plurals-classifiers"
+    },
+    {
+      "bn": "ফুলগুলো সুন্দর।",
+      "pronunciation": "phulgulo shundor.",
+      "en": "The flowers are beautiful.",
+      "context": "Marking a definite plural",
+      "category": "plurals-classifiers"
+    },
+    {
+      "bn": "ছাত্ররা মাঠে খেলছে।",
+      "pronunciation": "chhatrora mathe khelchhe.",
+      "en": "The students are playing in the field.",
+      "context": "A human plural",
+      "category": "plurals-classifiers"
+    },
+    {
+      "bn": "আজকের শব্দ “একটা”।",
+      "pronunciation": "ajker shobdo “ekta”.",
+      "en": "Today’s word is “one / a (general).”",
+      "context": "Guided singular, plural, and classifiers vocabulary drill",
+      "category": "plurals-classifiers"
+    },
+    {
+      "bn": "আজকের শব্দ “একটি”।",
+      "pronunciation": "ajker shobdo “ekti”.",
+      "en": "Today’s word is “one / a (formal).”",
+      "context": "Guided singular, plural, and classifiers vocabulary drill",
+      "category": "plurals-classifiers"
+    },
+    {
+      "bn": "আজকের শব্দ “একজন”।",
+      "pronunciation": "ajker shobdo “ekjon”.",
+      "en": "Today’s word is “one person.”",
+      "context": "Guided singular, plural, and classifiers vocabulary drill",
+      "category": "plurals-classifiers"
+    },
+    {
+      "bn": "আজকের শব্দ “দুইজন”।",
+      "pronunciation": "ajker shobdo “duijon”.",
+      "en": "Today’s word is “two people.”",
+      "context": "Guided singular, plural, and classifiers vocabulary drill",
+      "category": "plurals-classifiers"
+    },
+    {
+      "bn": "আজকের শব্দ “তিনটি”।",
+      "pronunciation": "ajker shobdo “tinti”.",
+      "en": "Today’s word is “three items.”",
+      "context": "Guided singular, plural, and classifiers vocabulary drill",
+      "category": "plurals-classifiers"
+    },
+    {
+      "bn": "আজকের শব্দ “গুলো”।",
+      "pronunciation": "ajker shobdo “gulo”.",
+      "en": "Today’s word is “plural marker.”",
+      "context": "Guided singular, plural, and classifiers vocabulary drill",
+      "category": "plurals-classifiers"
+    },
+    {
+      "bn": "আজকের শব্দ “রা”।",
+      "pronunciation": "ajker shobdo “ra”.",
+      "en": "Today’s word is “human plural marker.”",
+      "context": "Guided singular, plural, and classifiers vocabulary drill",
+      "category": "plurals-classifiers"
+    },
+    {
+      "bn": "আজকের শব্দ “সব”।",
+      "pronunciation": "ajker shobdo “shob”.",
+      "en": "Today’s word is “all.”",
+      "context": "Guided singular, plural, and classifiers vocabulary drill",
+      "category": "plurals-classifiers"
+    },
+    {
+      "bn": "“একটা” শব্দটি বলুন।",
+      "pronunciation": "“ekta” shobdoti bolun.",
+      "en": "Say the word “one / a (general).”",
+      "context": "Guided singular, plural, and classifiers vocabulary drill",
+      "category": "plurals-classifiers"
+    },
+    {
+      "bn": "“একটি” শব্দটি বলুন।",
+      "pronunciation": "“ekti” shobdoti bolun.",
+      "en": "Say the word “one / a (formal).”",
+      "context": "Guided singular, plural, and classifiers vocabulary drill",
+      "category": "plurals-classifiers"
+    },
+    {
+      "bn": "“একজন” শব্দটি বলুন।",
+      "pronunciation": "“ekjon” shobdoti bolun.",
+      "en": "Say the word “one person.”",
+      "context": "Guided singular, plural, and classifiers vocabulary drill",
+      "category": "plurals-classifiers"
+    },
+    {
+      "bn": "“দুইজন” শব্দটি বলুন।",
+      "pronunciation": "“duijon” shobdoti bolun.",
+      "en": "Say the word “two people.”",
+      "context": "Guided singular, plural, and classifiers vocabulary drill",
+      "category": "plurals-classifiers"
+    },
+    {
+      "bn": "“তিনটি” শব্দটি বলুন।",
+      "pronunciation": "“tinti” shobdoti bolun.",
+      "en": "Say the word “three items.”",
+      "context": "Guided singular, plural, and classifiers vocabulary drill",
+      "category": "plurals-classifiers"
+    },
+    {
+      "bn": "“গুলো” শব্দটি বলুন।",
+      "pronunciation": "“gulo” shobdoti bolun.",
+      "en": "Say the word “plural marker.”",
+      "context": "Guided singular, plural, and classifiers vocabulary drill",
+      "category": "plurals-classifiers"
+    },
+    {
+      "bn": "“রা” শব্দটি বলুন।",
+      "pronunciation": "“ra” shobdoti bolun.",
+      "en": "Say the word “human plural marker.”",
+      "context": "Guided singular, plural, and classifiers vocabulary drill",
+      "category": "plurals-classifiers"
+    },
+    {
+      "bn": "“সব” শব্দটি বলুন।",
+      "pronunciation": "“shob” shobdoti bolun.",
+      "en": "Say the word “all.”",
+      "context": "Guided singular, plural, and classifiers vocabulary drill",
+      "category": "plurals-classifiers"
+    },
+    {
+      "bn": "“একটা” আবার বলুন।",
+      "pronunciation": "“ekta” abar bolun.",
+      "en": "Say “one / a (general)” again.",
+      "context": "Guided singular, plural, and classifiers vocabulary drill",
+      "category": "plurals-classifiers"
+    },
+    {
+      "bn": "“একটি” আবার বলুন।",
+      "pronunciation": "“ekti” abar bolun.",
+      "en": "Say “one / a (formal)” again.",
+      "context": "Guided singular, plural, and classifiers vocabulary drill",
+      "category": "plurals-classifiers"
+    },
+    {
+      "bn": "“একজন” আবার বলুন।",
+      "pronunciation": "“ekjon” abar bolun.",
+      "en": "Say “one person” again.",
+      "context": "Guided singular, plural, and classifiers vocabulary drill",
+      "category": "plurals-classifiers"
+    },
+    {
+      "bn": "“দুইজন” আবার বলুন।",
+      "pronunciation": "“duijon” abar bolun.",
+      "en": "Say “two people” again.",
+      "context": "Guided singular, plural, and classifiers vocabulary drill",
+      "category": "plurals-classifiers"
+    },
+    {
+      "bn": "“তিনটি” আবার বলুন।",
+      "pronunciation": "“tinti” abar bolun.",
+      "en": "Say “three items” again.",
+      "context": "Guided singular, plural, and classifiers vocabulary drill",
+      "category": "plurals-classifiers"
+    },
+    {
+      "bn": "“গুলো” আবার বলুন।",
+      "pronunciation": "“gulo” abar bolun.",
+      "en": "Say “plural marker” again.",
+      "context": "Guided singular, plural, and classifiers vocabulary drill",
+      "category": "plurals-classifiers"
+    },
+    {
+      "bn": "“রা” আবার বলুন।",
+      "pronunciation": "“ra” abar bolun.",
+      "en": "Say “human plural marker” again.",
+      "context": "Guided singular, plural, and classifiers vocabulary drill",
+      "category": "plurals-classifiers"
+    },
+    {
+      "bn": "“সব” আবার বলুন।",
+      "pronunciation": "“shob” abar bolun.",
+      "en": "Say “all” again.",
+      "context": "Guided singular, plural, and classifiers vocabulary drill",
+      "category": "plurals-classifiers"
+    },
+    {
+      "bn": "“একটা” শব্দটি লিখুন।",
+      "pronunciation": "“ekta” shobdoti likhun.",
+      "en": "Write the word “one / a (general).”",
+      "context": "Guided singular, plural, and classifiers vocabulary drill",
+      "category": "plurals-classifiers"
+    },
+    {
+      "bn": "“একটি” শব্দটি লিখুন।",
+      "pronunciation": "“ekti” shobdoti likhun.",
+      "en": "Write the word “one / a (formal).”",
+      "context": "Guided singular, plural, and classifiers vocabulary drill",
+      "category": "plurals-classifiers"
+    },
+    {
+      "bn": "“একজন” শব্দটি লিখুন।",
+      "pronunciation": "“ekjon” shobdoti likhun.",
+      "en": "Write the word “one person.”",
+      "context": "Guided singular, plural, and classifiers vocabulary drill",
+      "category": "plurals-classifiers"
+    },
+    {
+      "bn": "“দুইজন” শব্দটি লিখুন।",
+      "pronunciation": "“duijon” shobdoti likhun.",
+      "en": "Write the word “two people.”",
+      "context": "Guided singular, plural, and classifiers vocabulary drill",
+      "category": "plurals-classifiers"
+    }
+  ],
+  "practice": [
+    "Say the Bengali words for three items from singular, plural, and classifiers.",
+    "Read each phrase aloud, then repeat it without looking at the transliteration.",
+    "Create a new sentence by replacing one word in a lesson phrase."
+  ],
+  "notes": [
+    "Use জন for people and টা or টি for many general objects.",
+    "A bare noun may be singular or plural when context is clear."
+  ]
+}

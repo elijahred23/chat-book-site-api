@@ -1,0 +1,293 @@
+{
+  "id": "asking-questions",
+  "title": "Asking Questions",
+  "summary": "Build useful questions with who, what, where, when, why, and how.",
+  "level": "beginner",
+  "topic": "Asking Questions",
+  "focus": "grammar",
+  "vocab": [
+    {
+      "bn": "কে",
+      "pronunciation": "ke",
+      "en": "who",
+      "category": "asking-questions"
+    },
+    {
+      "bn": "কী",
+      "pronunciation": "ki",
+      "en": "what",
+      "category": "asking-questions"
+    },
+    {
+      "bn": "কোথায়",
+      "pronunciation": "kothay",
+      "en": "where",
+      "category": "asking-questions"
+    },
+    {
+      "bn": "কখন",
+      "pronunciation": "kokhon",
+      "en": "when",
+      "category": "asking-questions"
+    },
+    {
+      "bn": "কেন",
+      "pronunciation": "keno",
+      "en": "why",
+      "category": "asking-questions"
+    },
+    {
+      "bn": "কীভাবে",
+      "pronunciation": "kibhabe",
+      "en": "how",
+      "category": "asking-questions"
+    },
+    {
+      "bn": "কত",
+      "pronunciation": "koto",
+      "en": "how much / many",
+      "category": "asking-questions"
+    },
+    {
+      "bn": "কোন",
+      "pronunciation": "kon",
+      "en": "which",
+      "category": "asking-questions"
+    }
+  ],
+  "phrases": [
+    {
+      "bn": "আপনার নাম কী?",
+      "pronunciation": "apnar nam ki?",
+      "en": "What is your name?",
+      "context": "Asking for information",
+      "category": "asking-questions"
+    },
+    {
+      "bn": "আপনি কোথায় থাকেন?",
+      "pronunciation": "apni kothay thaken?",
+      "en": "Where do you live?",
+      "context": "Asking about a place",
+      "category": "asking-questions"
+    },
+    {
+      "bn": "ট্রেন কখন আসবে?",
+      "pronunciation": "train kokhon ashbe?",
+      "en": "When will the train arrive?",
+      "context": "Asking about time",
+      "category": "asking-questions"
+    },
+    {
+      "bn": "এটার দাম কত?",
+      "pronunciation": "etar dam koto?",
+      "en": "How much does this cost?",
+      "context": "Asking a price",
+      "category": "asking-questions"
+    },
+    {
+      "bn": "আজকের শব্দ “কে”।",
+      "pronunciation": "ajker shobdo “ke”.",
+      "en": "Today’s word is “who.”",
+      "context": "Guided asking questions vocabulary drill",
+      "category": "asking-questions"
+    },
+    {
+      "bn": "আজকের শব্দ “কী”।",
+      "pronunciation": "ajker shobdo “ki”.",
+      "en": "Today’s word is “what.”",
+      "context": "Guided asking questions vocabulary drill",
+      "category": "asking-questions"
+    },
+    {
+      "bn": "আজকের শব্দ “কোথায়”।",
+      "pronunciation": "ajker shobdo “kothay”.",
+      "en": "Today’s word is “where.”",
+      "context": "Guided asking questions vocabulary drill",
+      "category": "asking-questions"
+    },
+    {
+      "bn": "আজকের শব্দ “কখন”।",
+      "pronunciation": "ajker shobdo “kokhon”.",
+      "en": "Today’s word is “when.”",
+      "context": "Guided asking questions vocabulary drill",
+      "category": "asking-questions"
+    },
+    {
+      "bn": "আজকের শব্দ “কেন”।",
+      "pronunciation": "ajker shobdo “keno”.",
+      "en": "Today’s word is “why.”",
+      "context": "Guided asking questions vocabulary drill",
+      "category": "asking-questions"
+    },
+    {
+      "bn": "আজকের শব্দ “কীভাবে”।",
+      "pronunciation": "ajker shobdo “kibhabe”.",
+      "en": "Today’s word is “how.”",
+      "context": "Guided asking questions vocabulary drill",
+      "category": "asking-questions"
+    },
+    {
+      "bn": "আজকের শব্দ “কত”।",
+      "pronunciation": "ajker shobdo “koto”.",
+      "en": "Today’s word is “how much / many.”",
+      "context": "Guided asking questions vocabulary drill",
+      "category": "asking-questions"
+    },
+    {
+      "bn": "আজকের শব্দ “কোন”।",
+      "pronunciation": "ajker shobdo “kon”.",
+      "en": "Today’s word is “which.”",
+      "context": "Guided asking questions vocabulary drill",
+      "category": "asking-questions"
+    },
+    {
+      "bn": "“কে” শব্দটি বলুন।",
+      "pronunciation": "“ke” shobdoti bolun.",
+      "en": "Say the word “who.”",
+      "context": "Guided asking questions vocabulary drill",
+      "category": "asking-questions"
+    },
+    {
+      "bn": "“কী” শব্দটি বলুন।",
+      "pronunciation": "“ki” shobdoti bolun.",
+      "en": "Say the word “what.”",
+      "context": "Guided asking questions vocabulary drill",
+      "category": "asking-questions"
+    },
+    {
+      "bn": "“কোথায়” শব্দটি বলুন।",
+      "pronunciation": "“kothay” shobdoti bolun.",
+      "en": "Say the word “where.”",
+      "context": "Guided asking questions vocabulary drill",
+      "category": "asking-questions"
+    },
+    {
+      "bn": "“কখন” শব্দটি বলুন।",
+      "pronunciation": "“kokhon” shobdoti bolun.",
+      "en": "Say the word “when.”",
+      "context": "Guided asking questions vocabulary drill",
+      "category": "asking-questions"
+    },
+    {
+      "bn": "“কেন” শব্দটি বলুন।",
+      "pronunciation": "“keno” shobdoti bolun.",
+      "en": "Say the word “why.”",
+      "context": "Guided asking questions vocabulary drill",
+      "category": "asking-questions"
+    },
+    {
+      "bn": "“কীভাবে” শব্দটি বলুন।",
+      "pronunciation": "“kibhabe” shobdoti bolun.",
+      "en": "Say the word “how.”",
+      "context": "Guided asking questions vocabulary drill",
+      "category": "asking-questions"
+    },
+    {
+      "bn": "“কত” শব্দটি বলুন।",
+      "pronunciation": "“koto” shobdoti bolun.",
+      "en": "Say the word “how much / many.”",
+      "context": "Guided asking questions vocabulary drill",
+      "category": "asking-questions"
+    },
+    {
+      "bn": "“কোন” শব্দটি বলুন।",
+      "pronunciation": "“kon” shobdoti bolun.",
+      "en": "Say the word “which.”",
+      "context": "Guided asking questions vocabulary drill",
+      "category": "asking-questions"
+    },
+    {
+      "bn": "“কে” আবার বলুন।",
+      "pronunciation": "“ke” abar bolun.",
+      "en": "Say “who” again.",
+      "context": "Guided asking questions vocabulary drill",
+      "category": "asking-questions"
+    },
+    {
+      "bn": "“কী” আবার বলুন।",
+      "pronunciation": "“ki” abar bolun.",
+      "en": "Say “what” again.",
+      "context": "Guided asking questions vocabulary drill",
+      "category": "asking-questions"
+    },
+    {
+      "bn": "“কোথায়” আবার বলুন।",
+      "pronunciation": "“kothay” abar bolun.",
+      "en": "Say “where” again.",
+      "context": "Guided asking questions vocabulary drill",
+      "category": "asking-questions"
+    },
+    {
+      "bn": "“কখন” আবার বলুন।",
+      "pronunciation": "“kokhon” abar bolun.",
+      "en": "Say “when” again.",
+      "context": "Guided asking questions vocabulary drill",
+      "category": "asking-questions"
+    },
+    {
+      "bn": "“কেন” আবার বলুন।",
+      "pronunciation": "“keno” abar bolun.",
+      "en": "Say “why” again.",
+      "context": "Guided asking questions vocabulary drill",
+      "category": "asking-questions"
+    },
+    {
+      "bn": "“কীভাবে” আবার বলুন।",
+      "pronunciation": "“kibhabe” abar bolun.",
+      "en": "Say “how” again.",
+      "context": "Guided asking questions vocabulary drill",
+      "category": "asking-questions"
+    },
+    {
+      "bn": "“কত” আবার বলুন।",
+      "pronunciation": "“koto” abar bolun.",
+      "en": "Say “how much / many” again.",
+      "context": "Guided asking questions vocabulary drill",
+      "category": "asking-questions"
+    },
+    {
+      "bn": "“কোন” আবার বলুন।",
+      "pronunciation": "“kon” abar bolun.",
+      "en": "Say “which” again.",
+      "context": "Guided asking questions vocabulary drill",
+      "category": "asking-questions"
+    },
+    {
+      "bn": "“কে” শব্দটি লিখুন।",
+      "pronunciation": "“ke” shobdoti likhun.",
+      "en": "Write the word “who.”",
+      "context": "Guided asking questions vocabulary drill",
+      "category": "asking-questions"
+    },
+    {
+      "bn": "“কী” শব্দটি লিখুন।",
+      "pronunciation": "“ki” shobdoti likhun.",
+      "en": "Write the word “what.”",
+      "context": "Guided asking questions vocabulary drill",
+      "category": "asking-questions"
+    },
+    {
+      "bn": "“কোথায়” শব্দটি লিখুন।",
+      "pronunciation": "“kothay” shobdoti likhun.",
+      "en": "Write the word “where.”",
+      "context": "Guided asking questions vocabulary drill",
+      "category": "asking-questions"
+    },
+    {
+      "bn": "“কখন” শব্দটি লিখুন।",
+      "pronunciation": "“kokhon” shobdoti likhun.",
+      "en": "Write the word “when.”",
+      "context": "Guided asking questions vocabulary drill",
+      "category": "asking-questions"
+    }
+  ],
+  "practice": [
+    "Say the Bengali words for three items from asking questions.",
+    "Read each phrase aloud, then repeat it without looking at the transliteration.",
+    "Create a new sentence by replacing one word in a lesson phrase."
+  ],
+  "notes": [
+    "Bengali usually keeps the question word where the requested information would appear.",
+    "কি can also mark a yes/no question."
+  ]
+}

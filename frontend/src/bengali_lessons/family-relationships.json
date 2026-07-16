@@ -1,0 +1,713 @@
+{
+  "id": "family-relationships",
+  "title": "Family and Relationships",
+  "summary": "Talk about relatives, friends, and family relationships.",
+  "level": "beginner",
+  "topic": "Family and Relationships",
+  "focus": "vocabulary",
+  "vocab": [
+    {
+      "bn": "মা",
+      "pronunciation": "ma",
+      "en": "mother",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "বাবা",
+      "pronunciation": "baba",
+      "en": "father",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "ভাই",
+      "pronunciation": "bhai",
+      "en": "brother",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "বোন",
+      "pronunciation": "bon",
+      "en": "sister",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "স্বামী",
+      "pronunciation": "shami",
+      "en": "husband",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "স্ত্রী",
+      "pronunciation": "stri",
+      "en": "wife",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "সন্তান",
+      "pronunciation": "shontan",
+      "en": "child",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "আত্মীয়",
+      "pronunciation": "attiyo",
+      "en": "relative",
+      "category": "family-relationships"
+    }
+  ],
+  "phrases": [
+    {
+      "bn": "আমার পরিবার ঢাকায় থাকে।",
+      "pronunciation": "amar poribar Dhakay thake.",
+      "en": "My family lives in Dhaka.",
+      "context": "Describing family",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "তোমার কয়জন ভাইবোন আছে?",
+      "pronunciation": "tomar koyjon bhaibon achhe?",
+      "en": "How many siblings do you have?",
+      "context": "Asking about siblings",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "তিনি আমার বড় বোন।",
+      "pronunciation": "tini amar boro bon.",
+      "en": "She is my older sister.",
+      "context": "Identifying a relative respectfully",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "আজকের শব্দ “মা”।",
+      "pronunciation": "ajker shobdo “ma”.",
+      "en": "Today’s word is “mother.”",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "আজকের শব্দ “বাবা”।",
+      "pronunciation": "ajker shobdo “baba”.",
+      "en": "Today’s word is “father.”",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "আজকের শব্দ “ভাই”।",
+      "pronunciation": "ajker shobdo “bhai”.",
+      "en": "Today’s word is “brother.”",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "আজকের শব্দ “বোন”।",
+      "pronunciation": "ajker shobdo “bon”.",
+      "en": "Today’s word is “sister.”",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "আজকের শব্দ “স্বামী”।",
+      "pronunciation": "ajker shobdo “shami”.",
+      "en": "Today’s word is “husband.”",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "আজকের শব্দ “স্ত্রী”।",
+      "pronunciation": "ajker shobdo “stri”.",
+      "en": "Today’s word is “wife.”",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "আজকের শব্দ “সন্তান”।",
+      "pronunciation": "ajker shobdo “shontan”.",
+      "en": "Today’s word is “child.”",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "আজকের শব্দ “আত্মীয়”।",
+      "pronunciation": "ajker shobdo “attiyo”.",
+      "en": "Today’s word is “relative.”",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "“মা” শব্দটি বলুন।",
+      "pronunciation": "“ma” shobdoti bolun.",
+      "en": "Say the word “mother.”",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "“বাবা” শব্দটি বলুন।",
+      "pronunciation": "“baba” shobdoti bolun.",
+      "en": "Say the word “father.”",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "“ভাই” শব্দটি বলুন।",
+      "pronunciation": "“bhai” shobdoti bolun.",
+      "en": "Say the word “brother.”",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "“বোন” শব্দটি বলুন।",
+      "pronunciation": "“bon” shobdoti bolun.",
+      "en": "Say the word “sister.”",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "“স্বামী” শব্দটি বলুন।",
+      "pronunciation": "“shami” shobdoti bolun.",
+      "en": "Say the word “husband.”",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "“স্ত্রী” শব্দটি বলুন।",
+      "pronunciation": "“stri” shobdoti bolun.",
+      "en": "Say the word “wife.”",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "“সন্তান” শব্দটি বলুন।",
+      "pronunciation": "“shontan” shobdoti bolun.",
+      "en": "Say the word “child.”",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "“আত্মীয়” শব্দটি বলুন।",
+      "pronunciation": "“attiyo” shobdoti bolun.",
+      "en": "Say the word “relative.”",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "“মা” আবার বলুন।",
+      "pronunciation": "“ma” abar bolun.",
+      "en": "Say “mother” again.",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "“বাবা” আবার বলুন।",
+      "pronunciation": "“baba” abar bolun.",
+      "en": "Say “father” again.",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "“ভাই” আবার বলুন।",
+      "pronunciation": "“bhai” abar bolun.",
+      "en": "Say “brother” again.",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "“বোন” আবার বলুন।",
+      "pronunciation": "“bon” abar bolun.",
+      "en": "Say “sister” again.",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "“স্বামী” আবার বলুন।",
+      "pronunciation": "“shami” abar bolun.",
+      "en": "Say “husband” again.",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "“স্ত্রী” আবার বলুন।",
+      "pronunciation": "“stri” abar bolun.",
+      "en": "Say “wife” again.",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "“সন্তান” আবার বলুন।",
+      "pronunciation": "“shontan” abar bolun.",
+      "en": "Say “child” again.",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "“আত্মীয়” আবার বলুন।",
+      "pronunciation": "“attiyo” abar bolun.",
+      "en": "Say “relative” again.",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "“মা” শব্দটি লিখুন।",
+      "pronunciation": "“ma” shobdoti likhun.",
+      "en": "Write the word “mother.”",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "“বাবা” শব্দটি লিখুন।",
+      "pronunciation": "“baba” shobdoti likhun.",
+      "en": "Write the word “father.”",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "“ভাই” শব্দটি লিখুন।",
+      "pronunciation": "“bhai” shobdoti likhun.",
+      "en": "Write the word “brother.”",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "“বোন” শব্দটি লিখুন।",
+      "pronunciation": "“bon” shobdoti likhun.",
+      "en": "Write the word “sister.”",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "“স্বামী” শব্দটি লিখুন।",
+      "pronunciation": "“shami” shobdoti likhun.",
+      "en": "Write the word “husband.”",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "“স্ত্রী” শব্দটি লিখুন।",
+      "pronunciation": "“stri” shobdoti likhun.",
+      "en": "Write the word “wife.”",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "“সন্তান” শব্দটি লিখুন।",
+      "pronunciation": "“shontan” shobdoti likhun.",
+      "en": "Write the word “child.”",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "“আত্মীয়” শব্দটি লিখুন।",
+      "pronunciation": "“attiyo” shobdoti likhun.",
+      "en": "Write the word “relative.”",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "“মা” শব্দটি পড়ুন।",
+      "pronunciation": "“ma” shobdoti porun.",
+      "en": "Read the word “mother.”",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "“বাবা” শব্দটি পড়ুন।",
+      "pronunciation": "“baba” shobdoti porun.",
+      "en": "Read the word “father.”",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "“ভাই” শব্দটি পড়ুন।",
+      "pronunciation": "“bhai” shobdoti porun.",
+      "en": "Read the word “brother.”",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "“বোন” শব্দটি পড়ুন।",
+      "pronunciation": "“bon” shobdoti porun.",
+      "en": "Read the word “sister.”",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "“স্বামী” শব্দটি পড়ুন।",
+      "pronunciation": "“shami” shobdoti porun.",
+      "en": "Read the word “husband.”",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "“স্ত্রী” শব্দটি পড়ুন।",
+      "pronunciation": "“stri” shobdoti porun.",
+      "en": "Read the word “wife.”",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "“সন্তান” শব্দটি পড়ুন।",
+      "pronunciation": "“shontan” shobdoti porun.",
+      "en": "Read the word “child.”",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "“আত্মীয়” শব্দটি পড়ুন।",
+      "pronunciation": "“attiyo” shobdoti porun.",
+      "en": "Read the word “relative.”",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "“মা” শব্দটি মনে রাখুন।",
+      "pronunciation": "“ma” shobdoti mone rakhun.",
+      "en": "Remember the word “mother.”",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "“বাবা” শব্দটি মনে রাখুন।",
+      "pronunciation": "“baba” shobdoti mone rakhun.",
+      "en": "Remember the word “father.”",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "“ভাই” শব্দটি মনে রাখুন।",
+      "pronunciation": "“bhai” shobdoti mone rakhun.",
+      "en": "Remember the word “brother.”",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "“বোন” শব্দটি মনে রাখুন।",
+      "pronunciation": "“bon” shobdoti mone rakhun.",
+      "en": "Remember the word “sister.”",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "“স্বামী” শব্দটি মনে রাখুন।",
+      "pronunciation": "“shami” shobdoti mone rakhun.",
+      "en": "Remember the word “husband.”",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "“স্ত্রী” শব্দটি মনে রাখুন।",
+      "pronunciation": "“stri” shobdoti mone rakhun.",
+      "en": "Remember the word “wife.”",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "“সন্তান” শব্দটি মনে রাখুন।",
+      "pronunciation": "“shontan” shobdoti mone rakhun.",
+      "en": "Remember the word “child.”",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "“আত্মীয়” শব্দটি মনে রাখুন।",
+      "pronunciation": "“attiyo” shobdoti mone rakhun.",
+      "en": "Remember the word “relative.”",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "“মা” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“ma” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “mother.”",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "“বাবা” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“baba” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “father.”",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "“ভাই” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“bhai” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “brother.”",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "“বোন” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“bon” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “sister.”",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "“স্বামী” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“shami” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “husband.”",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "“স্ত্রী” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“stri” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “wife.”",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "“সন্তান” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“shontan” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “child.”",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "“আত্মীয়” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“attiyo” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “relative.”",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "“মা” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“ma” kibhabe uccharon korben?",
+      "en": "How do you pronounce “mother”?",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "“বাবা” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“baba” kibhabe uccharon korben?",
+      "en": "How do you pronounce “father”?",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "“ভাই” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“bhai” kibhabe uccharon korben?",
+      "en": "How do you pronounce “brother”?",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "“বোন” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“bon” kibhabe uccharon korben?",
+      "en": "How do you pronounce “sister”?",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "“স্বামী” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“shami” kibhabe uccharon korben?",
+      "en": "How do you pronounce “husband”?",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "“স্ত্রী” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“stri” kibhabe uccharon korben?",
+      "en": "How do you pronounce “wife”?",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "“সন্তান” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“shontan” kibhabe uccharon korben?",
+      "en": "How do you pronounce “child”?",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "“আত্মীয়” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“attiyo” kibhabe uccharon korben?",
+      "en": "How do you pronounce “relative”?",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "“মা” এর অর্থ কী?",
+      "pronunciation": "“ma” er ortho ki?",
+      "en": "What does “mother” mean?",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "“বাবা” এর অর্থ কী?",
+      "pronunciation": "“baba” er ortho ki?",
+      "en": "What does “father” mean?",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "“ভাই” এর অর্থ কী?",
+      "pronunciation": "“bhai” er ortho ki?",
+      "en": "What does “brother” mean?",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "“বোন” এর অর্থ কী?",
+      "pronunciation": "“bon” er ortho ki?",
+      "en": "What does “sister” mean?",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "“স্বামী” এর অর্থ কী?",
+      "pronunciation": "“shami” er ortho ki?",
+      "en": "What does “husband” mean?",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "“স্ত্রী” এর অর্থ কী?",
+      "pronunciation": "“stri” er ortho ki?",
+      "en": "What does “wife” mean?",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "“সন্তান” এর অর্থ কী?",
+      "pronunciation": "“shontan” er ortho ki?",
+      "en": "What does “child” mean?",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "“আত্মীয়” এর অর্থ কী?",
+      "pronunciation": "“attiyo” er ortho ki?",
+      "en": "What does “relative” mean?",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "আমি “মা” শব্দটি শিখছি।",
+      "pronunciation": "ami “ma” shobdoti shikhchhi.",
+      "en": "I am learning the word “mother.”",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "আমি “বাবা” শব্দটি শিখছি।",
+      "pronunciation": "ami “baba” shobdoti shikhchhi.",
+      "en": "I am learning the word “father.”",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "আমি “ভাই” শব্দটি শিখছি।",
+      "pronunciation": "ami “bhai” shobdoti shikhchhi.",
+      "en": "I am learning the word “brother.”",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "আমি “বোন” শব্দটি শিখছি।",
+      "pronunciation": "ami “bon” shobdoti shikhchhi.",
+      "en": "I am learning the word “sister.”",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "আমি “স্বামী” শব্দটি শিখছি।",
+      "pronunciation": "ami “shami” shobdoti shikhchhi.",
+      "en": "I am learning the word “husband.”",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "আমি “স্ত্রী” শব্দটি শিখছি।",
+      "pronunciation": "ami “stri” shobdoti shikhchhi.",
+      "en": "I am learning the word “wife.”",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "আমি “সন্তান” শব্দটি শিখছি।",
+      "pronunciation": "ami “shontan” shobdoti shikhchhi.",
+      "en": "I am learning the word “child.”",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "আমি “আত্মীয়” শব্দটি শিখছি।",
+      "pronunciation": "ami “attiyo” shobdoti shikhchhi.",
+      "en": "I am learning the word “relative.”",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "আপনি কি “মা” বলতে পারেন?",
+      "pronunciation": "apni ki “ma” bolte paren?",
+      "en": "Can you say “mother”?",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "আপনি কি “বাবা” বলতে পারেন?",
+      "pronunciation": "apni ki “baba” bolte paren?",
+      "en": "Can you say “father”?",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "আপনি কি “ভাই” বলতে পারেন?",
+      "pronunciation": "apni ki “bhai” bolte paren?",
+      "en": "Can you say “brother”?",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "আপনি কি “বোন” বলতে পারেন?",
+      "pronunciation": "apni ki “bon” bolte paren?",
+      "en": "Can you say “sister”?",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "আপনি কি “স্বামী” বলতে পারেন?",
+      "pronunciation": "apni ki “shami” bolte paren?",
+      "en": "Can you say “husband”?",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "আপনি কি “স্ত্রী” বলতে পারেন?",
+      "pronunciation": "apni ki “stri” bolte paren?",
+      "en": "Can you say “wife”?",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "আপনি কি “সন্তান” বলতে পারেন?",
+      "pronunciation": "apni ki “shontan” bolte paren?",
+      "en": "Can you say “child”?",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "আপনি কি “আত্মীয়” বলতে পারেন?",
+      "pronunciation": "apni ki “attiyo” bolte paren?",
+      "en": "Can you say “relative”?",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    },
+    {
+      "bn": "“মা” একটি দরকারি শব্দ।",
+      "pronunciation": "“ma” ekti dorkari shobdo.",
+      "en": "“mother” is a useful word.",
+      "context": "Guided family and relationships vocabulary drill",
+      "category": "family-relationships"
+    }
+  ],
+  "practice": [
+    "Say the Bengali words for three items from family and relationships.",
+    "Read each phrase aloud, then repeat it without looking at the transliteration.",
+    "Create a new sentence by replacing one word in a lesson phrase."
+  ],
+  "notes": [
+    "ভাইবোন means siblings collectively.",
+    "Add বড় or ছোট before a sibling term to mean older or younger."
+  ]
+}

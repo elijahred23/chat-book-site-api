@@ -1,0 +1,295 @@
+{
+  "id": "greetings-introductions",
+  "title": "Greetings and Introductions",
+  "summary": "Meet someone, exchange greetings, and introduce yourself politely.",
+  "level": "beginner",
+  "topic": "Greetings and Introductions",
+  "focus": "conversation",
+  "vocab": [
+    {
+      "bn": "নমস্কার",
+      "pronunciation": "nomoshkar",
+      "en": "hello",
+      "category": "greetings-introductions"
+    },
+    {
+      "bn": "স্বাগতম",
+      "pronunciation": "shagotom",
+      "en": "welcome",
+      "category": "greetings-introductions"
+    },
+    {
+      "bn": "নাম",
+      "pronunciation": "nam",
+      "en": "name",
+      "category": "greetings-introductions"
+    },
+    {
+      "bn": "পরিচয়",
+      "pronunciation": "porichoy",
+      "en": "introduction",
+      "category": "greetings-introductions"
+    },
+    {
+      "bn": "ধন্যবাদ",
+      "pronunciation": "dhonnobad",
+      "en": "thank you",
+      "category": "greetings-introductions"
+    },
+    {
+      "bn": "বিদায়",
+      "pronunciation": "biday",
+      "en": "goodbye",
+      "category": "greetings-introductions"
+    }
+  ],
+  "phrases": [
+    {
+      "bn": "নমস্কার, আপনি কেমন আছেন?",
+      "pronunciation": "nomoshkar, apni kemon achhen?",
+      "en": "Hello, how are you?",
+      "context": "A polite greeting",
+      "category": "greetings-introductions"
+    },
+    {
+      "bn": "আমার নাম মায়া।",
+      "pronunciation": "amar nam Maya.",
+      "en": "My name is Maya.",
+      "context": "Introducing yourself",
+      "category": "greetings-introductions"
+    },
+    {
+      "bn": "আপনার সঙ্গে পরিচিত হয়ে ভালো লাগল।",
+      "pronunciation": "apnar shonge porichito hoye bhalo laglo.",
+      "en": "Nice to meet you.",
+      "context": "Meeting someone politely",
+      "category": "greetings-introductions"
+    },
+    {
+      "bn": "আবার দেখা হবে।",
+      "pronunciation": "abar dekha hobe.",
+      "en": "See you again.",
+      "context": "Saying goodbye",
+      "category": "greetings-introductions"
+    },
+    {
+      "bn": "আজকের শব্দ “নমস্কার”।",
+      "pronunciation": "ajker shobdo “nomoshkar”.",
+      "en": "Today’s word is “hello.”",
+      "context": "Guided greetings and introductions vocabulary drill",
+      "category": "greetings-introductions"
+    },
+    {
+      "bn": "আজকের শব্দ “স্বাগতম”।",
+      "pronunciation": "ajker shobdo “shagotom”.",
+      "en": "Today’s word is “welcome.”",
+      "context": "Guided greetings and introductions vocabulary drill",
+      "category": "greetings-introductions"
+    },
+    {
+      "bn": "আজকের শব্দ “নাম”।",
+      "pronunciation": "ajker shobdo “nam”.",
+      "en": "Today’s word is “name.”",
+      "context": "Guided greetings and introductions vocabulary drill",
+      "category": "greetings-introductions"
+    },
+    {
+      "bn": "আজকের শব্দ “পরিচয়”।",
+      "pronunciation": "ajker shobdo “porichoy”.",
+      "en": "Today’s word is “introduction.”",
+      "context": "Guided greetings and introductions vocabulary drill",
+      "category": "greetings-introductions"
+    },
+    {
+      "bn": "আজকের শব্দ “ধন্যবাদ”।",
+      "pronunciation": "ajker shobdo “dhonnobad”.",
+      "en": "Today’s word is “thank you.”",
+      "context": "Guided greetings and introductions vocabulary drill",
+      "category": "greetings-introductions"
+    },
+    {
+      "bn": "আজকের শব্দ “বিদায়”।",
+      "pronunciation": "ajker shobdo “biday”.",
+      "en": "Today’s word is “goodbye.”",
+      "context": "Guided greetings and introductions vocabulary drill",
+      "category": "greetings-introductions"
+    },
+    {
+      "bn": "“নমস্কার” শব্দটি বলুন।",
+      "pronunciation": "“nomoshkar” shobdoti bolun.",
+      "en": "Say the word “hello.”",
+      "context": "Guided greetings and introductions vocabulary drill",
+      "category": "greetings-introductions"
+    },
+    {
+      "bn": "“স্বাগতম” শব্দটি বলুন।",
+      "pronunciation": "“shagotom” shobdoti bolun.",
+      "en": "Say the word “welcome.”",
+      "context": "Guided greetings and introductions vocabulary drill",
+      "category": "greetings-introductions"
+    },
+    {
+      "bn": "“নাম” শব্দটি বলুন।",
+      "pronunciation": "“nam” shobdoti bolun.",
+      "en": "Say the word “name.”",
+      "context": "Guided greetings and introductions vocabulary drill",
+      "category": "greetings-introductions"
+    },
+    {
+      "bn": "“পরিচয়” শব্দটি বলুন।",
+      "pronunciation": "“porichoy” shobdoti bolun.",
+      "en": "Say the word “introduction.”",
+      "context": "Guided greetings and introductions vocabulary drill",
+      "category": "greetings-introductions"
+    },
+    {
+      "bn": "“ধন্যবাদ” শব্দটি বলুন।",
+      "pronunciation": "“dhonnobad” shobdoti bolun.",
+      "en": "Say the word “thank you.”",
+      "context": "Guided greetings and introductions vocabulary drill",
+      "category": "greetings-introductions"
+    },
+    {
+      "bn": "“বিদায়” শব্দটি বলুন।",
+      "pronunciation": "“biday” shobdoti bolun.",
+      "en": "Say the word “goodbye.”",
+      "context": "Guided greetings and introductions vocabulary drill",
+      "category": "greetings-introductions"
+    },
+    {
+      "bn": "“নমস্কার” আবার বলুন।",
+      "pronunciation": "“nomoshkar” abar bolun.",
+      "en": "Say “hello” again.",
+      "context": "Guided greetings and introductions vocabulary drill",
+      "category": "greetings-introductions"
+    },
+    {
+      "bn": "“স্বাগতম” আবার বলুন।",
+      "pronunciation": "“shagotom” abar bolun.",
+      "en": "Say “welcome” again.",
+      "context": "Guided greetings and introductions vocabulary drill",
+      "category": "greetings-introductions"
+    },
+    {
+      "bn": "“নাম” আবার বলুন।",
+      "pronunciation": "“nam” abar bolun.",
+      "en": "Say “name” again.",
+      "context": "Guided greetings and introductions vocabulary drill",
+      "category": "greetings-introductions"
+    },
+    {
+      "bn": "“পরিচয়” আবার বলুন।",
+      "pronunciation": "“porichoy” abar bolun.",
+      "en": "Say “introduction” again.",
+      "context": "Guided greetings and introductions vocabulary drill",
+      "category": "greetings-introductions"
+    },
+    {
+      "bn": "“ধন্যবাদ” আবার বলুন।",
+      "pronunciation": "“dhonnobad” abar bolun.",
+      "en": "Say “thank you” again.",
+      "context": "Guided greetings and introductions vocabulary drill",
+      "category": "greetings-introductions"
+    },
+    {
+      "bn": "“বিদায়” আবার বলুন।",
+      "pronunciation": "“biday” abar bolun.",
+      "en": "Say “goodbye” again.",
+      "context": "Guided greetings and introductions vocabulary drill",
+      "category": "greetings-introductions"
+    },
+    {
+      "bn": "“নমস্কার” শব্দটি লিখুন।",
+      "pronunciation": "“nomoshkar” shobdoti likhun.",
+      "en": "Write the word “hello.”",
+      "context": "Guided greetings and introductions vocabulary drill",
+      "category": "greetings-introductions"
+    },
+    {
+      "bn": "“স্বাগতম” শব্দটি লিখুন।",
+      "pronunciation": "“shagotom” shobdoti likhun.",
+      "en": "Write the word “welcome.”",
+      "context": "Guided greetings and introductions vocabulary drill",
+      "category": "greetings-introductions"
+    },
+    {
+      "bn": "“নাম” শব্দটি লিখুন।",
+      "pronunciation": "“nam” shobdoti likhun.",
+      "en": "Write the word “name.”",
+      "context": "Guided greetings and introductions vocabulary drill",
+      "category": "greetings-introductions"
+    },
+    {
+      "bn": "“পরিচয়” শব্দটি লিখুন।",
+      "pronunciation": "“porichoy” shobdoti likhun.",
+      "en": "Write the word “introduction.”",
+      "context": "Guided greetings and introductions vocabulary drill",
+      "category": "greetings-introductions"
+    },
+    {
+      "bn": "“ধন্যবাদ” শব্দটি লিখুন।",
+      "pronunciation": "“dhonnobad” shobdoti likhun.",
+      "en": "Write the word “thank you.”",
+      "context": "Guided greetings and introductions vocabulary drill",
+      "category": "greetings-introductions"
+    },
+    {
+      "bn": "“বিদায়” শব্দটি লিখুন।",
+      "pronunciation": "“biday” shobdoti likhun.",
+      "en": "Write the word “goodbye.”",
+      "context": "Guided greetings and introductions vocabulary drill",
+      "category": "greetings-introductions"
+    },
+    {
+      "bn": "“নমস্কার” শব্দটি পড়ুন।",
+      "pronunciation": "“nomoshkar” shobdoti porun.",
+      "en": "Read the word “hello.”",
+      "context": "Guided greetings and introductions vocabulary drill",
+      "category": "greetings-introductions"
+    },
+    {
+      "bn": "“স্বাগতম” শব্দটি পড়ুন।",
+      "pronunciation": "“shagotom” shobdoti porun.",
+      "en": "Read the word “welcome.”",
+      "context": "Guided greetings and introductions vocabulary drill",
+      "category": "greetings-introductions"
+    },
+    {
+      "bn": "“নাম” শব্দটি পড়ুন।",
+      "pronunciation": "“nam” shobdoti porun.",
+      "en": "Read the word “name.”",
+      "context": "Guided greetings and introductions vocabulary drill",
+      "category": "greetings-introductions"
+    },
+    {
+      "bn": "“পরিচয়” শব্দটি পড়ুন।",
+      "pronunciation": "“porichoy” shobdoti porun.",
+      "en": "Read the word “introduction.”",
+      "context": "Guided greetings and introductions vocabulary drill",
+      "category": "greetings-introductions"
+    },
+    {
+      "bn": "“ধন্যবাদ” শব্দটি পড়ুন।",
+      "pronunciation": "“dhonnobad” shobdoti porun.",
+      "en": "Read the word “thank you.”",
+      "context": "Guided greetings and introductions vocabulary drill",
+      "category": "greetings-introductions"
+    },
+    {
+      "bn": "“বিদায়” শব্দটি পড়ুন।",
+      "pronunciation": "“biday” shobdoti porun.",
+      "en": "Read the word “goodbye.”",
+      "context": "Guided greetings and introductions vocabulary drill",
+      "category": "greetings-introductions"
+    }
+  ],
+  "practice": [
+    "Say the Bengali words for three items from greetings and introductions.",
+    "Read each phrase aloud, then repeat it without looking at the transliteration.",
+    "Create a new sentence by replacing one word in a lesson phrase."
+  ],
+  "notes": [
+    "Use নমস্কার in broadly polite settings; সালাম is also common among Bengali Muslims.",
+    "আপনি is the respectful form of ‘you’."
+  ]
+}

@@ -1,0 +1,293 @@
+{
+  "id": "formal-informal",
+  "title": "Formal vs. Informal Bengali",
+  "summary": "Choose respectful, familiar, and intimate forms appropriate to the relationship.",
+  "level": "beginner",
+  "topic": "Formal vs. Informal Bengali",
+  "focus": "grammar",
+  "vocab": [
+    {
+      "bn": "আপনি",
+      "pronunciation": "apni",
+      "en": "you (respectful)",
+      "category": "formal-informal"
+    },
+    {
+      "bn": "তুমি",
+      "pronunciation": "tumi",
+      "en": "you (familiar)",
+      "category": "formal-informal"
+    },
+    {
+      "bn": "তুই",
+      "pronunciation": "tui",
+      "en": "you (very intimate)",
+      "category": "formal-informal"
+    },
+    {
+      "bn": "আসুন",
+      "pronunciation": "ashun",
+      "en": "please come (respectful)",
+      "category": "formal-informal"
+    },
+    {
+      "bn": "এসো",
+      "pronunciation": "esho",
+      "en": "come (familiar)",
+      "category": "formal-informal"
+    },
+    {
+      "bn": "আয়",
+      "pronunciation": "ay",
+      "en": "come (intimate)",
+      "category": "formal-informal"
+    },
+    {
+      "bn": "বলুন",
+      "pronunciation": "bolun",
+      "en": "please speak (respectful)",
+      "category": "formal-informal"
+    },
+    {
+      "bn": "বলো",
+      "pronunciation": "bolo",
+      "en": "speak (familiar)",
+      "category": "formal-informal"
+    }
+  ],
+  "phrases": [
+    {
+      "bn": "আপনি কোথায় যাচ্ছেন?",
+      "pronunciation": "apni kothay jachchhen?",
+      "en": "Where are you going? (respectful)",
+      "context": "Speaking respectfully",
+      "category": "formal-informal"
+    },
+    {
+      "bn": "তুমি কোথায় যাচ্ছ?",
+      "pronunciation": "tumi kothay jachchho?",
+      "en": "Where are you going? (familiar)",
+      "context": "Speaking to a friend",
+      "category": "formal-informal"
+    },
+    {
+      "bn": "দয়া করে ভেতরে আসুন।",
+      "pronunciation": "doya kore bhetore ashun.",
+      "en": "Please come inside.",
+      "context": "A formal invitation",
+      "category": "formal-informal"
+    },
+    {
+      "bn": "এসো, আমরা চা খাই।",
+      "pronunciation": "esho, amra cha khai.",
+      "en": "Come, let’s have tea.",
+      "context": "A friendly invitation",
+      "category": "formal-informal"
+    },
+    {
+      "bn": "আজকের শব্দ “আপনি”।",
+      "pronunciation": "ajker shobdo “apni”.",
+      "en": "Today’s word is “you (respectful).”",
+      "context": "Guided formal vs. informal bengali vocabulary drill",
+      "category": "formal-informal"
+    },
+    {
+      "bn": "আজকের শব্দ “তুমি”।",
+      "pronunciation": "ajker shobdo “tumi”.",
+      "en": "Today’s word is “you (familiar).”",
+      "context": "Guided formal vs. informal bengali vocabulary drill",
+      "category": "formal-informal"
+    },
+    {
+      "bn": "আজকের শব্দ “তুই”।",
+      "pronunciation": "ajker shobdo “tui”.",
+      "en": "Today’s word is “you (very intimate).”",
+      "context": "Guided formal vs. informal bengali vocabulary drill",
+      "category": "formal-informal"
+    },
+    {
+      "bn": "আজকের শব্দ “আসুন”।",
+      "pronunciation": "ajker shobdo “ashun”.",
+      "en": "Today’s word is “please come (respectful).”",
+      "context": "Guided formal vs. informal bengali vocabulary drill",
+      "category": "formal-informal"
+    },
+    {
+      "bn": "আজকের শব্দ “এসো”।",
+      "pronunciation": "ajker shobdo “esho”.",
+      "en": "Today’s word is “come (familiar).”",
+      "context": "Guided formal vs. informal bengali vocabulary drill",
+      "category": "formal-informal"
+    },
+    {
+      "bn": "আজকের শব্দ “আয়”।",
+      "pronunciation": "ajker shobdo “ay”.",
+      "en": "Today’s word is “come (intimate).”",
+      "context": "Guided formal vs. informal bengali vocabulary drill",
+      "category": "formal-informal"
+    },
+    {
+      "bn": "আজকের শব্দ “বলুন”।",
+      "pronunciation": "ajker shobdo “bolun”.",
+      "en": "Today’s word is “please speak (respectful).”",
+      "context": "Guided formal vs. informal bengali vocabulary drill",
+      "category": "formal-informal"
+    },
+    {
+      "bn": "আজকের শব্দ “বলো”।",
+      "pronunciation": "ajker shobdo “bolo”.",
+      "en": "Today’s word is “speak (familiar).”",
+      "context": "Guided formal vs. informal bengali vocabulary drill",
+      "category": "formal-informal"
+    },
+    {
+      "bn": "“আপনি” শব্দটি বলুন।",
+      "pronunciation": "“apni” shobdoti bolun.",
+      "en": "Say the word “you (respectful).”",
+      "context": "Guided formal vs. informal bengali vocabulary drill",
+      "category": "formal-informal"
+    },
+    {
+      "bn": "“তুমি” শব্দটি বলুন।",
+      "pronunciation": "“tumi” shobdoti bolun.",
+      "en": "Say the word “you (familiar).”",
+      "context": "Guided formal vs. informal bengali vocabulary drill",
+      "category": "formal-informal"
+    },
+    {
+      "bn": "“তুই” শব্দটি বলুন।",
+      "pronunciation": "“tui” shobdoti bolun.",
+      "en": "Say the word “you (very intimate).”",
+      "context": "Guided formal vs. informal bengali vocabulary drill",
+      "category": "formal-informal"
+    },
+    {
+      "bn": "“আসুন” শব্দটি বলুন।",
+      "pronunciation": "“ashun” shobdoti bolun.",
+      "en": "Say the word “please come (respectful).”",
+      "context": "Guided formal vs. informal bengali vocabulary drill",
+      "category": "formal-informal"
+    },
+    {
+      "bn": "“এসো” শব্দটি বলুন।",
+      "pronunciation": "“esho” shobdoti bolun.",
+      "en": "Say the word “come (familiar).”",
+      "context": "Guided formal vs. informal bengali vocabulary drill",
+      "category": "formal-informal"
+    },
+    {
+      "bn": "“আয়” শব্দটি বলুন।",
+      "pronunciation": "“ay” shobdoti bolun.",
+      "en": "Say the word “come (intimate).”",
+      "context": "Guided formal vs. informal bengali vocabulary drill",
+      "category": "formal-informal"
+    },
+    {
+      "bn": "“বলুন” শব্দটি বলুন।",
+      "pronunciation": "“bolun” shobdoti bolun.",
+      "en": "Say the word “please speak (respectful).”",
+      "context": "Guided formal vs. informal bengali vocabulary drill",
+      "category": "formal-informal"
+    },
+    {
+      "bn": "“বলো” শব্দটি বলুন।",
+      "pronunciation": "“bolo” shobdoti bolun.",
+      "en": "Say the word “speak (familiar).”",
+      "context": "Guided formal vs. informal bengali vocabulary drill",
+      "category": "formal-informal"
+    },
+    {
+      "bn": "“আপনি” আবার বলুন।",
+      "pronunciation": "“apni” abar bolun.",
+      "en": "Say “you (respectful)” again.",
+      "context": "Guided formal vs. informal bengali vocabulary drill",
+      "category": "formal-informal"
+    },
+    {
+      "bn": "“তুমি” আবার বলুন।",
+      "pronunciation": "“tumi” abar bolun.",
+      "en": "Say “you (familiar)” again.",
+      "context": "Guided formal vs. informal bengali vocabulary drill",
+      "category": "formal-informal"
+    },
+    {
+      "bn": "“তুই” আবার বলুন।",
+      "pronunciation": "“tui” abar bolun.",
+      "en": "Say “you (very intimate)” again.",
+      "context": "Guided formal vs. informal bengali vocabulary drill",
+      "category": "formal-informal"
+    },
+    {
+      "bn": "“আসুন” আবার বলুন।",
+      "pronunciation": "“ashun” abar bolun.",
+      "en": "Say “please come (respectful)” again.",
+      "context": "Guided formal vs. informal bengali vocabulary drill",
+      "category": "formal-informal"
+    },
+    {
+      "bn": "“এসো” আবার বলুন।",
+      "pronunciation": "“esho” abar bolun.",
+      "en": "Say “come (familiar)” again.",
+      "context": "Guided formal vs. informal bengali vocabulary drill",
+      "category": "formal-informal"
+    },
+    {
+      "bn": "“আয়” আবার বলুন।",
+      "pronunciation": "“ay” abar bolun.",
+      "en": "Say “come (intimate)” again.",
+      "context": "Guided formal vs. informal bengali vocabulary drill",
+      "category": "formal-informal"
+    },
+    {
+      "bn": "“বলুন” আবার বলুন।",
+      "pronunciation": "“bolun” abar bolun.",
+      "en": "Say “please speak (respectful)” again.",
+      "context": "Guided formal vs. informal bengali vocabulary drill",
+      "category": "formal-informal"
+    },
+    {
+      "bn": "“বলো” আবার বলুন।",
+      "pronunciation": "“bolo” abar bolun.",
+      "en": "Say “speak (familiar)” again.",
+      "context": "Guided formal vs. informal bengali vocabulary drill",
+      "category": "formal-informal"
+    },
+    {
+      "bn": "“আপনি” শব্দটি লিখুন।",
+      "pronunciation": "“apni” shobdoti likhun.",
+      "en": "Write the word “you (respectful).”",
+      "context": "Guided formal vs. informal bengali vocabulary drill",
+      "category": "formal-informal"
+    },
+    {
+      "bn": "“তুমি” শব্দটি লিখুন।",
+      "pronunciation": "“tumi” shobdoti likhun.",
+      "en": "Write the word “you (familiar).”",
+      "context": "Guided formal vs. informal bengali vocabulary drill",
+      "category": "formal-informal"
+    },
+    {
+      "bn": "“তুই” শব্দটি লিখুন।",
+      "pronunciation": "“tui” shobdoti likhun.",
+      "en": "Write the word “you (very intimate).”",
+      "context": "Guided formal vs. informal bengali vocabulary drill",
+      "category": "formal-informal"
+    },
+    {
+      "bn": "“আসুন” শব্দটি লিখুন।",
+      "pronunciation": "“ashun” shobdoti likhun.",
+      "en": "Write the word “please come (respectful).”",
+      "context": "Guided formal vs. informal bengali vocabulary drill",
+      "category": "formal-informal"
+    }
+  ],
+  "practice": [
+    "Say the Bengali words for three items from formal vs. informal bengali.",
+    "Read each phrase aloud, then repeat it without looking at the transliteration.",
+    "Create a new sentence by replacing one word in a lesson phrase."
+  ],
+  "notes": [
+    "আপনি is safest with strangers, elders, and professional contacts.",
+    "তুই can signal deep intimacy or disrespect; avoid it until the relationship clearly supports it."
+  ]
+}

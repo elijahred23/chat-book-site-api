@@ -14,6 +14,12 @@ import top250WordsLesson from "../bengali_lessons/top-250-words.json";
 import verbsLesson from "../bengali_lessons/verbs.json";
 import "./BengaliTutor.css";
 
+const expandedLessonModules = import.meta.glob("../bengali_lessons/{greetings-introductions,family-relationships,food-restaurants,time-dates-days,weather-seasons,colors-shapes-sizes,home-household,clothing-personal-items,body-health-doctor,school-education,work-workplace,hobbies-sports-entertainment,travel-hotels-airports,phone-text-messages,asking-questions,commands-polite-requests,possession-ownership,plurals-classifiers,present-tense,past-tense,future-tense,negatives-saying-no,formal-informal}.json", {
+  eager: true,
+  import: "default",
+});
+const expandedLessons = Object.values(expandedLessonModules);
+
 const LESSON_CACHE_KEY = "bengali_lesson_cache";
 const CORRECT_TIME = 250;
 const INCORRECT_TIME = 700;
@@ -30,6 +36,7 @@ const SAVED_LESSONS = [
   top150SentencesLesson,
   top250WordsLesson,
   verbsLesson,
+  ...expandedLessons,
 ].map(withPhraseWords).sort((a, b) => a.topic.localeCompare(b.topic));
 
 const initialSavedLesson = () => {

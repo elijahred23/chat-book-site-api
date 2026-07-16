@@ -1,0 +1,712 @@
+{
+  "id": "work-workplace",
+  "title": "Work and the Workplace",
+  "summary": "Talk about jobs, colleagues, meetings, and everyday office tasks.",
+  "level": "beginner",
+  "topic": "Work and the Workplace",
+  "focus": "conversation",
+  "vocab": [
+    {
+      "bn": "কাজ",
+      "pronunciation": "kaj",
+      "en": "work",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "চাকরি",
+      "pronunciation": "chakri",
+      "en": "job",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "অফিস",
+      "pronunciation": "ofis",
+      "en": "office",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "সহকর্মী",
+      "pronunciation": "shohokormi",
+      "en": "colleague",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "সভা",
+      "pronunciation": "shobha",
+      "en": "meeting",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "ইমেইল",
+      "pronunciation": "imeil",
+      "en": "email",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "ছুটি",
+      "pronunciation": "chhuti",
+      "en": "leave / holiday",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "বেতন",
+      "pronunciation": "beton",
+      "en": "salary",
+      "category": "work-workplace"
+    }
+  ],
+  "phrases": [
+    {
+      "bn": "আমি একটি ব্যাংকে কাজ করি।",
+      "pronunciation": "ami ekti banke kaj kori.",
+      "en": "I work at a bank.",
+      "context": "Describing employment",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "আজ দুপুরে একটি সভা আছে।",
+      "pronunciation": "aj dupure ekti shobha achhe.",
+      "en": "There is a meeting this afternoon.",
+      "context": "Discussing a schedule",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "আমি আপনাকে ইমেইল পাঠিয়েছি।",
+      "pronunciation": "ami apnake imeil pathiyechhi.",
+      "en": "I sent you an email.",
+      "context": "Workplace communication",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "আজকের শব্দ “কাজ”।",
+      "pronunciation": "ajker shobdo “kaj”.",
+      "en": "Today’s word is “work.”",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "আজকের শব্দ “চাকরি”।",
+      "pronunciation": "ajker shobdo “chakri”.",
+      "en": "Today’s word is “job.”",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "আজকের শব্দ “অফিস”।",
+      "pronunciation": "ajker shobdo “ofis”.",
+      "en": "Today’s word is “office.”",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "আজকের শব্দ “সহকর্মী”।",
+      "pronunciation": "ajker shobdo “shohokormi”.",
+      "en": "Today’s word is “colleague.”",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "আজকের শব্দ “সভা”।",
+      "pronunciation": "ajker shobdo “shobha”.",
+      "en": "Today’s word is “meeting.”",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "আজকের শব্দ “ইমেইল”।",
+      "pronunciation": "ajker shobdo “imeil”.",
+      "en": "Today’s word is “email.”",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "আজকের শব্দ “ছুটি”।",
+      "pronunciation": "ajker shobdo “chhuti”.",
+      "en": "Today’s word is “leave / holiday.”",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "আজকের শব্দ “বেতন”।",
+      "pronunciation": "ajker shobdo “beton”.",
+      "en": "Today’s word is “salary.”",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "“কাজ” শব্দটি বলুন।",
+      "pronunciation": "“kaj” shobdoti bolun.",
+      "en": "Say the word “work.”",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "“চাকরি” শব্দটি বলুন।",
+      "pronunciation": "“chakri” shobdoti bolun.",
+      "en": "Say the word “job.”",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "“অফিস” শব্দটি বলুন।",
+      "pronunciation": "“ofis” shobdoti bolun.",
+      "en": "Say the word “office.”",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "“সহকর্মী” শব্দটি বলুন।",
+      "pronunciation": "“shohokormi” shobdoti bolun.",
+      "en": "Say the word “colleague.”",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "“সভা” শব্দটি বলুন।",
+      "pronunciation": "“shobha” shobdoti bolun.",
+      "en": "Say the word “meeting.”",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "“ইমেইল” শব্দটি বলুন।",
+      "pronunciation": "“imeil” shobdoti bolun.",
+      "en": "Say the word “email.”",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "“ছুটি” শব্দটি বলুন।",
+      "pronunciation": "“chhuti” shobdoti bolun.",
+      "en": "Say the word “leave / holiday.”",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "“বেতন” শব্দটি বলুন।",
+      "pronunciation": "“beton” shobdoti bolun.",
+      "en": "Say the word “salary.”",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "“কাজ” আবার বলুন।",
+      "pronunciation": "“kaj” abar bolun.",
+      "en": "Say “work” again.",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "“চাকরি” আবার বলুন।",
+      "pronunciation": "“chakri” abar bolun.",
+      "en": "Say “job” again.",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "“অফিস” আবার বলুন।",
+      "pronunciation": "“ofis” abar bolun.",
+      "en": "Say “office” again.",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "“সহকর্মী” আবার বলুন।",
+      "pronunciation": "“shohokormi” abar bolun.",
+      "en": "Say “colleague” again.",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "“সভা” আবার বলুন।",
+      "pronunciation": "“shobha” abar bolun.",
+      "en": "Say “meeting” again.",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "“ইমেইল” আবার বলুন।",
+      "pronunciation": "“imeil” abar bolun.",
+      "en": "Say “email” again.",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "“ছুটি” আবার বলুন।",
+      "pronunciation": "“chhuti” abar bolun.",
+      "en": "Say “leave / holiday” again.",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "“বেতন” আবার বলুন।",
+      "pronunciation": "“beton” abar bolun.",
+      "en": "Say “salary” again.",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "“কাজ” শব্দটি লিখুন।",
+      "pronunciation": "“kaj” shobdoti likhun.",
+      "en": "Write the word “work.”",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "“চাকরি” শব্দটি লিখুন।",
+      "pronunciation": "“chakri” shobdoti likhun.",
+      "en": "Write the word “job.”",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "“অফিস” শব্দটি লিখুন।",
+      "pronunciation": "“ofis” shobdoti likhun.",
+      "en": "Write the word “office.”",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "“সহকর্মী” শব্দটি লিখুন।",
+      "pronunciation": "“shohokormi” shobdoti likhun.",
+      "en": "Write the word “colleague.”",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "“সভা” শব্দটি লিখুন।",
+      "pronunciation": "“shobha” shobdoti likhun.",
+      "en": "Write the word “meeting.”",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "“ইমেইল” শব্দটি লিখুন।",
+      "pronunciation": "“imeil” shobdoti likhun.",
+      "en": "Write the word “email.”",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "“ছুটি” শব্দটি লিখুন।",
+      "pronunciation": "“chhuti” shobdoti likhun.",
+      "en": "Write the word “leave / holiday.”",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "“বেতন” শব্দটি লিখুন।",
+      "pronunciation": "“beton” shobdoti likhun.",
+      "en": "Write the word “salary.”",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "“কাজ” শব্দটি পড়ুন।",
+      "pronunciation": "“kaj” shobdoti porun.",
+      "en": "Read the word “work.”",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "“চাকরি” শব্দটি পড়ুন।",
+      "pronunciation": "“chakri” shobdoti porun.",
+      "en": "Read the word “job.”",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "“অফিস” শব্দটি পড়ুন।",
+      "pronunciation": "“ofis” shobdoti porun.",
+      "en": "Read the word “office.”",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "“সহকর্মী” শব্দটি পড়ুন।",
+      "pronunciation": "“shohokormi” shobdoti porun.",
+      "en": "Read the word “colleague.”",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "“সভা” শব্দটি পড়ুন।",
+      "pronunciation": "“shobha” shobdoti porun.",
+      "en": "Read the word “meeting.”",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "“ইমেইল” শব্দটি পড়ুন।",
+      "pronunciation": "“imeil” shobdoti porun.",
+      "en": "Read the word “email.”",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "“ছুটি” শব্দটি পড়ুন।",
+      "pronunciation": "“chhuti” shobdoti porun.",
+      "en": "Read the word “leave / holiday.”",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "“বেতন” শব্দটি পড়ুন।",
+      "pronunciation": "“beton” shobdoti porun.",
+      "en": "Read the word “salary.”",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "“কাজ” শব্দটি মনে রাখুন।",
+      "pronunciation": "“kaj” shobdoti mone rakhun.",
+      "en": "Remember the word “work.”",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "“চাকরি” শব্দটি মনে রাখুন।",
+      "pronunciation": "“chakri” shobdoti mone rakhun.",
+      "en": "Remember the word “job.”",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "“অফিস” শব্দটি মনে রাখুন।",
+      "pronunciation": "“ofis” shobdoti mone rakhun.",
+      "en": "Remember the word “office.”",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "“সহকর্মী” শব্দটি মনে রাখুন।",
+      "pronunciation": "“shohokormi” shobdoti mone rakhun.",
+      "en": "Remember the word “colleague.”",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "“সভা” শব্দটি মনে রাখুন।",
+      "pronunciation": "“shobha” shobdoti mone rakhun.",
+      "en": "Remember the word “meeting.”",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "“ইমেইল” শব্দটি মনে রাখুন।",
+      "pronunciation": "“imeil” shobdoti mone rakhun.",
+      "en": "Remember the word “email.”",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "“ছুটি” শব্দটি মনে রাখুন।",
+      "pronunciation": "“chhuti” shobdoti mone rakhun.",
+      "en": "Remember the word “leave / holiday.”",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "“বেতন” শব্দটি মনে রাখুন।",
+      "pronunciation": "“beton” shobdoti mone rakhun.",
+      "en": "Remember the word “salary.”",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "“কাজ” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“kaj” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “work.”",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "“চাকরি” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“chakri” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “job.”",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "“অফিস” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“ofis” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “office.”",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "“সহকর্মী” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“shohokormi” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “colleague.”",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "“সভা” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“shobha” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “meeting.”",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "“ইমেইল” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“imeil” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “email.”",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "“ছুটি” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“chhuti” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “leave / holiday.”",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "“বেতন” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“beton” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “salary.”",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "“কাজ” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“kaj” kibhabe uccharon korben?",
+      "en": "How do you pronounce “work”?",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "“চাকরি” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“chakri” kibhabe uccharon korben?",
+      "en": "How do you pronounce “job”?",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "“অফিস” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“ofis” kibhabe uccharon korben?",
+      "en": "How do you pronounce “office”?",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "“সহকর্মী” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“shohokormi” kibhabe uccharon korben?",
+      "en": "How do you pronounce “colleague”?",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "“সভা” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“shobha” kibhabe uccharon korben?",
+      "en": "How do you pronounce “meeting”?",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "“ইমেইল” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“imeil” kibhabe uccharon korben?",
+      "en": "How do you pronounce “email”?",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "“ছুটি” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“chhuti” kibhabe uccharon korben?",
+      "en": "How do you pronounce “leave / holiday”?",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "“বেতন” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“beton” kibhabe uccharon korben?",
+      "en": "How do you pronounce “salary”?",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "“কাজ” এর অর্থ কী?",
+      "pronunciation": "“kaj” er ortho ki?",
+      "en": "What does “work” mean?",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "“চাকরি” এর অর্থ কী?",
+      "pronunciation": "“chakri” er ortho ki?",
+      "en": "What does “job” mean?",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "“অফিস” এর অর্থ কী?",
+      "pronunciation": "“ofis” er ortho ki?",
+      "en": "What does “office” mean?",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "“সহকর্মী” এর অর্থ কী?",
+      "pronunciation": "“shohokormi” er ortho ki?",
+      "en": "What does “colleague” mean?",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "“সভা” এর অর্থ কী?",
+      "pronunciation": "“shobha” er ortho ki?",
+      "en": "What does “meeting” mean?",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "“ইমেইল” এর অর্থ কী?",
+      "pronunciation": "“imeil” er ortho ki?",
+      "en": "What does “email” mean?",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "“ছুটি” এর অর্থ কী?",
+      "pronunciation": "“chhuti” er ortho ki?",
+      "en": "What does “leave / holiday” mean?",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "“বেতন” এর অর্থ কী?",
+      "pronunciation": "“beton” er ortho ki?",
+      "en": "What does “salary” mean?",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "আমি “কাজ” শব্দটি শিখছি।",
+      "pronunciation": "ami “kaj” shobdoti shikhchhi.",
+      "en": "I am learning the word “work.”",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "আমি “চাকরি” শব্দটি শিখছি।",
+      "pronunciation": "ami “chakri” shobdoti shikhchhi.",
+      "en": "I am learning the word “job.”",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "আমি “অফিস” শব্দটি শিখছি।",
+      "pronunciation": "ami “ofis” shobdoti shikhchhi.",
+      "en": "I am learning the word “office.”",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "আমি “সহকর্মী” শব্দটি শিখছি।",
+      "pronunciation": "ami “shohokormi” shobdoti shikhchhi.",
+      "en": "I am learning the word “colleague.”",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "আমি “সভা” শব্দটি শিখছি।",
+      "pronunciation": "ami “shobha” shobdoti shikhchhi.",
+      "en": "I am learning the word “meeting.”",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "আমি “ইমেইল” শব্দটি শিখছি।",
+      "pronunciation": "ami “imeil” shobdoti shikhchhi.",
+      "en": "I am learning the word “email.”",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "আমি “ছুটি” শব্দটি শিখছি।",
+      "pronunciation": "ami “chhuti” shobdoti shikhchhi.",
+      "en": "I am learning the word “leave / holiday.”",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "আমি “বেতন” শব্দটি শিখছি।",
+      "pronunciation": "ami “beton” shobdoti shikhchhi.",
+      "en": "I am learning the word “salary.”",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "আপনি কি “কাজ” বলতে পারেন?",
+      "pronunciation": "apni ki “kaj” bolte paren?",
+      "en": "Can you say “work”?",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "আপনি কি “চাকরি” বলতে পারেন?",
+      "pronunciation": "apni ki “chakri” bolte paren?",
+      "en": "Can you say “job”?",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "আপনি কি “অফিস” বলতে পারেন?",
+      "pronunciation": "apni ki “ofis” bolte paren?",
+      "en": "Can you say “office”?",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "আপনি কি “সহকর্মী” বলতে পারেন?",
+      "pronunciation": "apni ki “shohokormi” bolte paren?",
+      "en": "Can you say “colleague”?",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "আপনি কি “সভা” বলতে পারেন?",
+      "pronunciation": "apni ki “shobha” bolte paren?",
+      "en": "Can you say “meeting”?",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "আপনি কি “ইমেইল” বলতে পারেন?",
+      "pronunciation": "apni ki “imeil” bolte paren?",
+      "en": "Can you say “email”?",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "আপনি কি “ছুটি” বলতে পারেন?",
+      "pronunciation": "apni ki “chhuti” bolte paren?",
+      "en": "Can you say “leave / holiday”?",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "আপনি কি “বেতন” বলতে পারেন?",
+      "pronunciation": "apni ki “beton” bolte paren?",
+      "en": "Can you say “salary”?",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    },
+    {
+      "bn": "“কাজ” একটি দরকারি শব্দ।",
+      "pronunciation": "“kaj” ekti dorkari shobdo.",
+      "en": "“work” is a useful word.",
+      "context": "Guided work and the workplace vocabulary drill",
+      "category": "work-workplace"
+    }
+  ],
+  "practice": [
+    "Say the Bengali words for three items from work and the workplace.",
+    "Read each phrase aloud, then repeat it without looking at the transliteration.",
+    "Create a new sentence by replacing one word in a lesson phrase."
+  ],
+  "notes": [
+    "চাকরি refers to a job or employment; কাজ is the broader word for work or a task."
+  ]
+}

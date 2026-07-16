@@ -1,0 +1,712 @@
+{
+  "id": "hobbies-sports-entertainment",
+  "title": "Hobbies, Sports, and Entertainment",
+  "summary": "Share interests and talk about free-time activities.",
+  "level": "beginner",
+  "topic": "Hobbies, Sports, and Entertainment",
+  "focus": "conversation",
+  "vocab": [
+    {
+      "bn": "শখ",
+      "pronunciation": "shokh",
+      "en": "hobby",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "খেলা",
+      "pronunciation": "khela",
+      "en": "game / sport",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "ফুটবল",
+      "pronunciation": "football",
+      "en": "football / soccer",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "ক্রিকেট",
+      "pronunciation": "cricket",
+      "en": "cricket",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "গান",
+      "pronunciation": "gan",
+      "en": "song",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "সিনেমা",
+      "pronunciation": "cinema",
+      "en": "movie",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "বই পড়া",
+      "pronunciation": "boi pora",
+      "en": "reading books",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "ভ্রমণ",
+      "pronunciation": "bhromon",
+      "en": "travel",
+      "category": "hobbies-sports-entertainment"
+    }
+  ],
+  "phrases": [
+    {
+      "bn": "অবসর সময়ে তুমি কী করো?",
+      "pronunciation": "oboshore tumi ki koro?",
+      "en": "What do you do in your free time?",
+      "context": "Asking about hobbies",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "আমি গান শুনতে ভালোবাসি।",
+      "pronunciation": "ami gan shunte bhalobashi.",
+      "en": "I love listening to music.",
+      "context": "Sharing an interest",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "আমরা বিকেলে ক্রিকেট খেলি।",
+      "pronunciation": "amra bikele cricket kheli.",
+      "en": "We play cricket in the afternoon.",
+      "context": "Describing a sport",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "আজকের শব্দ “শখ”।",
+      "pronunciation": "ajker shobdo “shokh”.",
+      "en": "Today’s word is “hobby.”",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "আজকের শব্দ “খেলা”।",
+      "pronunciation": "ajker shobdo “khela”.",
+      "en": "Today’s word is “game / sport.”",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "আজকের শব্দ “ফুটবল”।",
+      "pronunciation": "ajker shobdo “football”.",
+      "en": "Today’s word is “football / soccer.”",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "আজকের শব্দ “ক্রিকেট”।",
+      "pronunciation": "ajker shobdo “cricket”.",
+      "en": "Today’s word is “cricket.”",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "আজকের শব্দ “গান”।",
+      "pronunciation": "ajker shobdo “gan”.",
+      "en": "Today’s word is “song.”",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "আজকের শব্দ “সিনেমা”।",
+      "pronunciation": "ajker shobdo “cinema”.",
+      "en": "Today’s word is “movie.”",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "আজকের শব্দ “বই পড়া”।",
+      "pronunciation": "ajker shobdo “boi pora”.",
+      "en": "Today’s word is “reading books.”",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "আজকের শব্দ “ভ্রমণ”।",
+      "pronunciation": "ajker shobdo “bhromon”.",
+      "en": "Today’s word is “travel.”",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "“শখ” শব্দটি বলুন।",
+      "pronunciation": "“shokh” shobdoti bolun.",
+      "en": "Say the word “hobby.”",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "“খেলা” শব্দটি বলুন।",
+      "pronunciation": "“khela” shobdoti bolun.",
+      "en": "Say the word “game / sport.”",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "“ফুটবল” শব্দটি বলুন।",
+      "pronunciation": "“football” shobdoti bolun.",
+      "en": "Say the word “football / soccer.”",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "“ক্রিকেট” শব্দটি বলুন।",
+      "pronunciation": "“cricket” shobdoti bolun.",
+      "en": "Say the word “cricket.”",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "“গান” শব্দটি বলুন।",
+      "pronunciation": "“gan” shobdoti bolun.",
+      "en": "Say the word “song.”",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "“সিনেমা” শব্দটি বলুন।",
+      "pronunciation": "“cinema” shobdoti bolun.",
+      "en": "Say the word “movie.”",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "“বই পড়া” শব্দটি বলুন।",
+      "pronunciation": "“boi pora” shobdoti bolun.",
+      "en": "Say the word “reading books.”",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "“ভ্রমণ” শব্দটি বলুন।",
+      "pronunciation": "“bhromon” shobdoti bolun.",
+      "en": "Say the word “travel.”",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "“শখ” আবার বলুন।",
+      "pronunciation": "“shokh” abar bolun.",
+      "en": "Say “hobby” again.",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "“খেলা” আবার বলুন।",
+      "pronunciation": "“khela” abar bolun.",
+      "en": "Say “game / sport” again.",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "“ফুটবল” আবার বলুন।",
+      "pronunciation": "“football” abar bolun.",
+      "en": "Say “football / soccer” again.",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "“ক্রিকেট” আবার বলুন।",
+      "pronunciation": "“cricket” abar bolun.",
+      "en": "Say “cricket” again.",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "“গান” আবার বলুন।",
+      "pronunciation": "“gan” abar bolun.",
+      "en": "Say “song” again.",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "“সিনেমা” আবার বলুন।",
+      "pronunciation": "“cinema” abar bolun.",
+      "en": "Say “movie” again.",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "“বই পড়া” আবার বলুন।",
+      "pronunciation": "“boi pora” abar bolun.",
+      "en": "Say “reading books” again.",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "“ভ্রমণ” আবার বলুন।",
+      "pronunciation": "“bhromon” abar bolun.",
+      "en": "Say “travel” again.",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "“শখ” শব্দটি লিখুন।",
+      "pronunciation": "“shokh” shobdoti likhun.",
+      "en": "Write the word “hobby.”",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "“খেলা” শব্দটি লিখুন।",
+      "pronunciation": "“khela” shobdoti likhun.",
+      "en": "Write the word “game / sport.”",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "“ফুটবল” শব্দটি লিখুন।",
+      "pronunciation": "“football” shobdoti likhun.",
+      "en": "Write the word “football / soccer.”",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "“ক্রিকেট” শব্দটি লিখুন।",
+      "pronunciation": "“cricket” shobdoti likhun.",
+      "en": "Write the word “cricket.”",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "“গান” শব্দটি লিখুন।",
+      "pronunciation": "“gan” shobdoti likhun.",
+      "en": "Write the word “song.”",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "“সিনেমা” শব্দটি লিখুন।",
+      "pronunciation": "“cinema” shobdoti likhun.",
+      "en": "Write the word “movie.”",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "“বই পড়া” শব্দটি লিখুন।",
+      "pronunciation": "“boi pora” shobdoti likhun.",
+      "en": "Write the word “reading books.”",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "“ভ্রমণ” শব্দটি লিখুন।",
+      "pronunciation": "“bhromon” shobdoti likhun.",
+      "en": "Write the word “travel.”",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "“শখ” শব্দটি পড়ুন।",
+      "pronunciation": "“shokh” shobdoti porun.",
+      "en": "Read the word “hobby.”",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "“খেলা” শব্দটি পড়ুন।",
+      "pronunciation": "“khela” shobdoti porun.",
+      "en": "Read the word “game / sport.”",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "“ফুটবল” শব্দটি পড়ুন।",
+      "pronunciation": "“football” shobdoti porun.",
+      "en": "Read the word “football / soccer.”",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "“ক্রিকেট” শব্দটি পড়ুন।",
+      "pronunciation": "“cricket” shobdoti porun.",
+      "en": "Read the word “cricket.”",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "“গান” শব্দটি পড়ুন।",
+      "pronunciation": "“gan” shobdoti porun.",
+      "en": "Read the word “song.”",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "“সিনেমা” শব্দটি পড়ুন।",
+      "pronunciation": "“cinema” shobdoti porun.",
+      "en": "Read the word “movie.”",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "“বই পড়া” শব্দটি পড়ুন।",
+      "pronunciation": "“boi pora” shobdoti porun.",
+      "en": "Read the word “reading books.”",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "“ভ্রমণ” শব্দটি পড়ুন।",
+      "pronunciation": "“bhromon” shobdoti porun.",
+      "en": "Read the word “travel.”",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "“শখ” শব্দটি মনে রাখুন।",
+      "pronunciation": "“shokh” shobdoti mone rakhun.",
+      "en": "Remember the word “hobby.”",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "“খেলা” শব্দটি মনে রাখুন।",
+      "pronunciation": "“khela” shobdoti mone rakhun.",
+      "en": "Remember the word “game / sport.”",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "“ফুটবল” শব্দটি মনে রাখুন।",
+      "pronunciation": "“football” shobdoti mone rakhun.",
+      "en": "Remember the word “football / soccer.”",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "“ক্রিকেট” শব্দটি মনে রাখুন।",
+      "pronunciation": "“cricket” shobdoti mone rakhun.",
+      "en": "Remember the word “cricket.”",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "“গান” শব্দটি মনে রাখুন।",
+      "pronunciation": "“gan” shobdoti mone rakhun.",
+      "en": "Remember the word “song.”",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "“সিনেমা” শব্দটি মনে রাখুন।",
+      "pronunciation": "“cinema” shobdoti mone rakhun.",
+      "en": "Remember the word “movie.”",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "“বই পড়া” শব্দটি মনে রাখুন।",
+      "pronunciation": "“boi pora” shobdoti mone rakhun.",
+      "en": "Remember the word “reading books.”",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "“ভ্রমণ” শব্দটি মনে রাখুন।",
+      "pronunciation": "“bhromon” shobdoti mone rakhun.",
+      "en": "Remember the word “travel.”",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "“শখ” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“shokh” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “hobby.”",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "“খেলা” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“khela” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “game / sport.”",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "“ফুটবল” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“football” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “football / soccer.”",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "“ক্রিকেট” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“cricket” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “cricket.”",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "“গান” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“gan” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “song.”",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "“সিনেমা” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“cinema” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “movie.”",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "“বই পড়া” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“boi pora” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “reading books.”",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "“ভ্রমণ” দিয়ে একটি বাক্য তৈরি করুন।",
+      "pronunciation": "“bhromon” diye ekti bakko toiri korun.",
+      "en": "Make a sentence with “travel.”",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "“শখ” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“shokh” kibhabe uccharon korben?",
+      "en": "How do you pronounce “hobby”?",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "“খেলা” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“khela” kibhabe uccharon korben?",
+      "en": "How do you pronounce “game / sport”?",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "“ফুটবল” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“football” kibhabe uccharon korben?",
+      "en": "How do you pronounce “football / soccer”?",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "“ক্রিকেট” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“cricket” kibhabe uccharon korben?",
+      "en": "How do you pronounce “cricket”?",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "“গান” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“gan” kibhabe uccharon korben?",
+      "en": "How do you pronounce “song”?",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "“সিনেমা” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“cinema” kibhabe uccharon korben?",
+      "en": "How do you pronounce “movie”?",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "“বই পড়া” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“boi pora” kibhabe uccharon korben?",
+      "en": "How do you pronounce “reading books”?",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "“ভ্রমণ” কীভাবে উচ্চারণ করবেন?",
+      "pronunciation": "“bhromon” kibhabe uccharon korben?",
+      "en": "How do you pronounce “travel”?",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "“শখ” এর অর্থ কী?",
+      "pronunciation": "“shokh” er ortho ki?",
+      "en": "What does “hobby” mean?",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "“খেলা” এর অর্থ কী?",
+      "pronunciation": "“khela” er ortho ki?",
+      "en": "What does “game / sport” mean?",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "“ফুটবল” এর অর্থ কী?",
+      "pronunciation": "“football” er ortho ki?",
+      "en": "What does “football / soccer” mean?",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "“ক্রিকেট” এর অর্থ কী?",
+      "pronunciation": "“cricket” er ortho ki?",
+      "en": "What does “cricket” mean?",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "“গান” এর অর্থ কী?",
+      "pronunciation": "“gan” er ortho ki?",
+      "en": "What does “song” mean?",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "“সিনেমা” এর অর্থ কী?",
+      "pronunciation": "“cinema” er ortho ki?",
+      "en": "What does “movie” mean?",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "“বই পড়া” এর অর্থ কী?",
+      "pronunciation": "“boi pora” er ortho ki?",
+      "en": "What does “reading books” mean?",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "“ভ্রমণ” এর অর্থ কী?",
+      "pronunciation": "“bhromon” er ortho ki?",
+      "en": "What does “travel” mean?",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "আমি “শখ” শব্দটি শিখছি।",
+      "pronunciation": "ami “shokh” shobdoti shikhchhi.",
+      "en": "I am learning the word “hobby.”",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "আমি “খেলা” শব্দটি শিখছি।",
+      "pronunciation": "ami “khela” shobdoti shikhchhi.",
+      "en": "I am learning the word “game / sport.”",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "আমি “ফুটবল” শব্দটি শিখছি।",
+      "pronunciation": "ami “football” shobdoti shikhchhi.",
+      "en": "I am learning the word “football / soccer.”",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "আমি “ক্রিকেট” শব্দটি শিখছি।",
+      "pronunciation": "ami “cricket” shobdoti shikhchhi.",
+      "en": "I am learning the word “cricket.”",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "আমি “গান” শব্দটি শিখছি।",
+      "pronunciation": "ami “gan” shobdoti shikhchhi.",
+      "en": "I am learning the word “song.”",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "আমি “সিনেমা” শব্দটি শিখছি।",
+      "pronunciation": "ami “cinema” shobdoti shikhchhi.",
+      "en": "I am learning the word “movie.”",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "আমি “বই পড়া” শব্দটি শিখছি।",
+      "pronunciation": "ami “boi pora” shobdoti shikhchhi.",
+      "en": "I am learning the word “reading books.”",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "আমি “ভ্রমণ” শব্দটি শিখছি।",
+      "pronunciation": "ami “bhromon” shobdoti shikhchhi.",
+      "en": "I am learning the word “travel.”",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "আপনি কি “শখ” বলতে পারেন?",
+      "pronunciation": "apni ki “shokh” bolte paren?",
+      "en": "Can you say “hobby”?",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "আপনি কি “খেলা” বলতে পারেন?",
+      "pronunciation": "apni ki “khela” bolte paren?",
+      "en": "Can you say “game / sport”?",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "আপনি কি “ফুটবল” বলতে পারেন?",
+      "pronunciation": "apni ki “football” bolte paren?",
+      "en": "Can you say “football / soccer”?",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "আপনি কি “ক্রিকেট” বলতে পারেন?",
+      "pronunciation": "apni ki “cricket” bolte paren?",
+      "en": "Can you say “cricket”?",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "আপনি কি “গান” বলতে পারেন?",
+      "pronunciation": "apni ki “gan” bolte paren?",
+      "en": "Can you say “song”?",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "আপনি কি “সিনেমা” বলতে পারেন?",
+      "pronunciation": "apni ki “cinema” bolte paren?",
+      "en": "Can you say “movie”?",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "আপনি কি “বই পড়া” বলতে পারেন?",
+      "pronunciation": "apni ki “boi pora” bolte paren?",
+      "en": "Can you say “reading books”?",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "আপনি কি “ভ্রমণ” বলতে পারেন?",
+      "pronunciation": "apni ki “bhromon” bolte paren?",
+      "en": "Can you say “travel”?",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    },
+    {
+      "bn": "“শখ” একটি দরকারি শব্দ।",
+      "pronunciation": "“shokh” ekti dorkari shobdo.",
+      "en": "“hobby” is a useful word.",
+      "context": "Guided hobbies, sports, and entertainment vocabulary drill",
+      "category": "hobbies-sports-entertainment"
+    }
+  ],
+  "practice": [
+    "Say the Bengali words for three items from hobbies, sports, and entertainment.",
+    "Read each phrase aloud, then repeat it without looking at the transliteration.",
+    "Create a new sentence by replacing one word in a lesson phrase."
+  ],
+  "notes": [
+    "ভালোবাসি expresses love; পছন্দ করি is a milder ‘like’."
+  ]
+}

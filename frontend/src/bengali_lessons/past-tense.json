@@ -1,0 +1,293 @@
+{
+  "id": "past-tense",
+  "title": "Past-Tense Sentences",
+  "summary": "Talk about completed actions and past experiences.",
+  "level": "beginner",
+  "topic": "Past-Tense Sentences",
+  "focus": "grammar",
+  "vocab": [
+    {
+      "bn": "করলাম",
+      "pronunciation": "korlam",
+      "en": "I did",
+      "category": "past-tense"
+    },
+    {
+      "bn": "গেলাম",
+      "pronunciation": "gelam",
+      "en": "I went",
+      "category": "past-tense"
+    },
+    {
+      "bn": "খেলাম",
+      "pronunciation": "khelam",
+      "en": "I ate",
+      "category": "past-tense"
+    },
+    {
+      "bn": "দেখলাম",
+      "pronunciation": "dekhlam",
+      "en": "I saw",
+      "category": "past-tense"
+    },
+    {
+      "bn": "বলল",
+      "pronunciation": "bollo",
+      "en": "he / she said",
+      "category": "past-tense"
+    },
+    {
+      "bn": "ছিল",
+      "pronunciation": "chhilo",
+      "en": "was",
+      "category": "past-tense"
+    },
+    {
+      "bn": "করেছিলাম",
+      "pronunciation": "korechhilam",
+      "en": "I had done",
+      "category": "past-tense"
+    },
+    {
+      "bn": "গতকাল",
+      "pronunciation": "gotokal",
+      "en": "yesterday",
+      "category": "past-tense"
+    }
+  ],
+  "phrases": [
+    {
+      "bn": "আমি গতকাল বাজারে গেলাম।",
+      "pronunciation": "ami gotokal bajare gelam.",
+      "en": "I went to the market yesterday.",
+      "context": "A completed action",
+      "category": "past-tense"
+    },
+    {
+      "bn": "সে সকালে নাশতা খেল।",
+      "pronunciation": "she shokale nashta khelo.",
+      "en": "He or she ate breakfast in the morning.",
+      "context": "A past event",
+      "category": "past-tense"
+    },
+    {
+      "bn": "বাড়িটা আগে ছোট ছিল।",
+      "pronunciation": "barita age chhoto chhilo.",
+      "en": "The house used to be small.",
+      "context": "A past state",
+      "category": "past-tense"
+    },
+    {
+      "bn": "আপনি কি সিনেমাটা দেখেছিলেন?",
+      "pronunciation": "apni ki cinemata dekhechhilen?",
+      "en": "Had you seen the movie?",
+      "context": "A respectful past question",
+      "category": "past-tense"
+    },
+    {
+      "bn": "আজকের শব্দ “করলাম”।",
+      "pronunciation": "ajker shobdo “korlam”.",
+      "en": "Today’s word is “I did.”",
+      "context": "Guided past-tense sentences vocabulary drill",
+      "category": "past-tense"
+    },
+    {
+      "bn": "আজকের শব্দ “গেলাম”।",
+      "pronunciation": "ajker shobdo “gelam”.",
+      "en": "Today’s word is “I went.”",
+      "context": "Guided past-tense sentences vocabulary drill",
+      "category": "past-tense"
+    },
+    {
+      "bn": "আজকের শব্দ “খেলাম”।",
+      "pronunciation": "ajker shobdo “khelam”.",
+      "en": "Today’s word is “I ate.”",
+      "context": "Guided past-tense sentences vocabulary drill",
+      "category": "past-tense"
+    },
+    {
+      "bn": "আজকের শব্দ “দেখলাম”।",
+      "pronunciation": "ajker shobdo “dekhlam”.",
+      "en": "Today’s word is “I saw.”",
+      "context": "Guided past-tense sentences vocabulary drill",
+      "category": "past-tense"
+    },
+    {
+      "bn": "আজকের শব্দ “বলল”।",
+      "pronunciation": "ajker shobdo “bollo”.",
+      "en": "Today’s word is “he / she said.”",
+      "context": "Guided past-tense sentences vocabulary drill",
+      "category": "past-tense"
+    },
+    {
+      "bn": "আজকের শব্দ “ছিল”।",
+      "pronunciation": "ajker shobdo “chhilo”.",
+      "en": "Today’s word is “was.”",
+      "context": "Guided past-tense sentences vocabulary drill",
+      "category": "past-tense"
+    },
+    {
+      "bn": "আজকের শব্দ “করেছিলাম”।",
+      "pronunciation": "ajker shobdo “korechhilam”.",
+      "en": "Today’s word is “I had done.”",
+      "context": "Guided past-tense sentences vocabulary drill",
+      "category": "past-tense"
+    },
+    {
+      "bn": "আজকের শব্দ “গতকাল”।",
+      "pronunciation": "ajker shobdo “gotokal”.",
+      "en": "Today’s word is “yesterday.”",
+      "context": "Guided past-tense sentences vocabulary drill",
+      "category": "past-tense"
+    },
+    {
+      "bn": "“করলাম” শব্দটি বলুন।",
+      "pronunciation": "“korlam” shobdoti bolun.",
+      "en": "Say the word “I did.”",
+      "context": "Guided past-tense sentences vocabulary drill",
+      "category": "past-tense"
+    },
+    {
+      "bn": "“গেলাম” শব্দটি বলুন।",
+      "pronunciation": "“gelam” shobdoti bolun.",
+      "en": "Say the word “I went.”",
+      "context": "Guided past-tense sentences vocabulary drill",
+      "category": "past-tense"
+    },
+    {
+      "bn": "“খেলাম” শব্দটি বলুন।",
+      "pronunciation": "“khelam” shobdoti bolun.",
+      "en": "Say the word “I ate.”",
+      "context": "Guided past-tense sentences vocabulary drill",
+      "category": "past-tense"
+    },
+    {
+      "bn": "“দেখলাম” শব্দটি বলুন।",
+      "pronunciation": "“dekhlam” shobdoti bolun.",
+      "en": "Say the word “I saw.”",
+      "context": "Guided past-tense sentences vocabulary drill",
+      "category": "past-tense"
+    },
+    {
+      "bn": "“বলল” শব্দটি বলুন।",
+      "pronunciation": "“bollo” shobdoti bolun.",
+      "en": "Say the word “he / she said.”",
+      "context": "Guided past-tense sentences vocabulary drill",
+      "category": "past-tense"
+    },
+    {
+      "bn": "“ছিল” শব্দটি বলুন।",
+      "pronunciation": "“chhilo” shobdoti bolun.",
+      "en": "Say the word “was.”",
+      "context": "Guided past-tense sentences vocabulary drill",
+      "category": "past-tense"
+    },
+    {
+      "bn": "“করেছিলাম” শব্দটি বলুন।",
+      "pronunciation": "“korechhilam” shobdoti bolun.",
+      "en": "Say the word “I had done.”",
+      "context": "Guided past-tense sentences vocabulary drill",
+      "category": "past-tense"
+    },
+    {
+      "bn": "“গতকাল” শব্দটি বলুন।",
+      "pronunciation": "“gotokal” shobdoti bolun.",
+      "en": "Say the word “yesterday.”",
+      "context": "Guided past-tense sentences vocabulary drill",
+      "category": "past-tense"
+    },
+    {
+      "bn": "“করলাম” আবার বলুন।",
+      "pronunciation": "“korlam” abar bolun.",
+      "en": "Say “I did” again.",
+      "context": "Guided past-tense sentences vocabulary drill",
+      "category": "past-tense"
+    },
+    {
+      "bn": "“গেলাম” আবার বলুন।",
+      "pronunciation": "“gelam” abar bolun.",
+      "en": "Say “I went” again.",
+      "context": "Guided past-tense sentences vocabulary drill",
+      "category": "past-tense"
+    },
+    {
+      "bn": "“খেলাম” আবার বলুন।",
+      "pronunciation": "“khelam” abar bolun.",
+      "en": "Say “I ate” again.",
+      "context": "Guided past-tense sentences vocabulary drill",
+      "category": "past-tense"
+    },
+    {
+      "bn": "“দেখলাম” আবার বলুন।",
+      "pronunciation": "“dekhlam” abar bolun.",
+      "en": "Say “I saw” again.",
+      "context": "Guided past-tense sentences vocabulary drill",
+      "category": "past-tense"
+    },
+    {
+      "bn": "“বলল” আবার বলুন।",
+      "pronunciation": "“bollo” abar bolun.",
+      "en": "Say “he / she said” again.",
+      "context": "Guided past-tense sentences vocabulary drill",
+      "category": "past-tense"
+    },
+    {
+      "bn": "“ছিল” আবার বলুন।",
+      "pronunciation": "“chhilo” abar bolun.",
+      "en": "Say “was” again.",
+      "context": "Guided past-tense sentences vocabulary drill",
+      "category": "past-tense"
+    },
+    {
+      "bn": "“করেছিলাম” আবার বলুন।",
+      "pronunciation": "“korechhilam” abar bolun.",
+      "en": "Say “I had done” again.",
+      "context": "Guided past-tense sentences vocabulary drill",
+      "category": "past-tense"
+    },
+    {
+      "bn": "“গতকাল” আবার বলুন।",
+      "pronunciation": "“gotokal” abar bolun.",
+      "en": "Say “yesterday” again.",
+      "context": "Guided past-tense sentences vocabulary drill",
+      "category": "past-tense"
+    },
+    {
+      "bn": "“করলাম” শব্দটি লিখুন।",
+      "pronunciation": "“korlam” shobdoti likhun.",
+      "en": "Write the word “I did.”",
+      "context": "Guided past-tense sentences vocabulary drill",
+      "category": "past-tense"
+    },
+    {
+      "bn": "“গেলাম” শব্দটি লিখুন।",
+      "pronunciation": "“gelam” shobdoti likhun.",
+      "en": "Write the word “I went.”",
+      "context": "Guided past-tense sentences vocabulary drill",
+      "category": "past-tense"
+    },
+    {
+      "bn": "“খেলাম” শব্দটি লিখুন।",
+      "pronunciation": "“khelam” shobdoti likhun.",
+      "en": "Write the word “I ate.”",
+      "context": "Guided past-tense sentences vocabulary drill",
+      "category": "past-tense"
+    },
+    {
+      "bn": "“দেখলাম” শব্দটি লিখুন।",
+      "pronunciation": "“dekhlam” shobdoti likhun.",
+      "en": "Write the word “I saw.”",
+      "context": "Guided past-tense sentences vocabulary drill",
+      "category": "past-tense"
+    }
+  ],
+  "practice": [
+    "Say the Bengali words for three items from past-tense sentences.",
+    "Read each phrase aloud, then repeat it without looking at the transliteration.",
+    "Create a new sentence by replacing one word in a lesson phrase."
+  ],
+  "notes": [
+    "The -লাম ending commonly marks first-person completed past actions.",
+    "ছিল expresses ‘was’ or ‘used to be’."
+  ]
+}

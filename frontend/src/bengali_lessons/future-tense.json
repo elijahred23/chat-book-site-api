@@ -1,0 +1,292 @@
+{
+  "id": "future-tense",
+  "title": "Future-Tense Sentences",
+  "summary": "Discuss plans, predictions, promises, and future events.",
+  "level": "beginner",
+  "topic": "Future-Tense Sentences",
+  "focus": "grammar",
+  "vocab": [
+    {
+      "bn": "করব",
+      "pronunciation": "korbo",
+      "en": "I will do",
+      "category": "future-tense"
+    },
+    {
+      "bn": "যাব",
+      "pronunciation": "jabo",
+      "en": "I will go",
+      "category": "future-tense"
+    },
+    {
+      "bn": "আসব",
+      "pronunciation": "ashbo",
+      "en": "I will come",
+      "category": "future-tense"
+    },
+    {
+      "bn": "খাব",
+      "pronunciation": "khabo",
+      "en": "I will eat",
+      "category": "future-tense"
+    },
+    {
+      "bn": "হবে",
+      "pronunciation": "hobe",
+      "en": "will be / happen",
+      "category": "future-tense"
+    },
+    {
+      "bn": "করবে",
+      "pronunciation": "korbe",
+      "en": "will do",
+      "category": "future-tense"
+    },
+    {
+      "bn": "করবেন",
+      "pronunciation": "korben",
+      "en": "will do (polite)",
+      "category": "future-tense"
+    },
+    {
+      "bn": "পরে",
+      "pronunciation": "pore",
+      "en": "later",
+      "category": "future-tense"
+    }
+  ],
+  "phrases": [
+    {
+      "bn": "আমি আগামীকাল আসব।",
+      "pronunciation": "ami agamikal ashbo.",
+      "en": "I will come tomorrow.",
+      "context": "A future plan",
+      "category": "future-tense"
+    },
+    {
+      "bn": "আমরা সন্ধ্যায় খেতে যাব।",
+      "pronunciation": "amra shondhay khete jabo.",
+      "en": "We will go out to eat in the evening.",
+      "context": "A group plan",
+      "category": "future-tense"
+    },
+    {
+      "bn": "সভা কখন শুরু হবে?",
+      "pronunciation": "shobha kokhon shuru hobe?",
+      "en": "When will the meeting start?",
+      "context": "A future question",
+      "category": "future-tense"
+    },
+    {
+      "bn": "আপনি কি আমাদের সঙ্গে যাবেন?",
+      "pronunciation": "apni ki amader shonge jaben?",
+      "en": "Will you go with us?",
+      "context": "A polite invitation",
+      "category": "future-tense"
+    },
+    {
+      "bn": "আজকের শব্দ “করব”।",
+      "pronunciation": "ajker shobdo “korbo”.",
+      "en": "Today’s word is “I will do.”",
+      "context": "Guided future-tense sentences vocabulary drill",
+      "category": "future-tense"
+    },
+    {
+      "bn": "আজকের শব্দ “যাব”।",
+      "pronunciation": "ajker shobdo “jabo”.",
+      "en": "Today’s word is “I will go.”",
+      "context": "Guided future-tense sentences vocabulary drill",
+      "category": "future-tense"
+    },
+    {
+      "bn": "আজকের শব্দ “আসব”।",
+      "pronunciation": "ajker shobdo “ashbo”.",
+      "en": "Today’s word is “I will come.”",
+      "context": "Guided future-tense sentences vocabulary drill",
+      "category": "future-tense"
+    },
+    {
+      "bn": "আজকের শব্দ “খাব”।",
+      "pronunciation": "ajker shobdo “khabo”.",
+      "en": "Today’s word is “I will eat.”",
+      "context": "Guided future-tense sentences vocabulary drill",
+      "category": "future-tense"
+    },
+    {
+      "bn": "আজকের শব্দ “হবে”।",
+      "pronunciation": "ajker shobdo “hobe”.",
+      "en": "Today’s word is “will be / happen.”",
+      "context": "Guided future-tense sentences vocabulary drill",
+      "category": "future-tense"
+    },
+    {
+      "bn": "আজকের শব্দ “করবে”।",
+      "pronunciation": "ajker shobdo “korbe”.",
+      "en": "Today’s word is “will do.”",
+      "context": "Guided future-tense sentences vocabulary drill",
+      "category": "future-tense"
+    },
+    {
+      "bn": "আজকের শব্দ “করবেন”।",
+      "pronunciation": "ajker shobdo “korben”.",
+      "en": "Today’s word is “will do (polite).”",
+      "context": "Guided future-tense sentences vocabulary drill",
+      "category": "future-tense"
+    },
+    {
+      "bn": "আজকের শব্দ “পরে”।",
+      "pronunciation": "ajker shobdo “pore”.",
+      "en": "Today’s word is “later.”",
+      "context": "Guided future-tense sentences vocabulary drill",
+      "category": "future-tense"
+    },
+    {
+      "bn": "“করব” শব্দটি বলুন।",
+      "pronunciation": "“korbo” shobdoti bolun.",
+      "en": "Say the word “I will do.”",
+      "context": "Guided future-tense sentences vocabulary drill",
+      "category": "future-tense"
+    },
+    {
+      "bn": "“যাব” শব্দটি বলুন।",
+      "pronunciation": "“jabo” shobdoti bolun.",
+      "en": "Say the word “I will go.”",
+      "context": "Guided future-tense sentences vocabulary drill",
+      "category": "future-tense"
+    },
+    {
+      "bn": "“আসব” শব্দটি বলুন।",
+      "pronunciation": "“ashbo” shobdoti bolun.",
+      "en": "Say the word “I will come.”",
+      "context": "Guided future-tense sentences vocabulary drill",
+      "category": "future-tense"
+    },
+    {
+      "bn": "“খাব” শব্দটি বলুন।",
+      "pronunciation": "“khabo” shobdoti bolun.",
+      "en": "Say the word “I will eat.”",
+      "context": "Guided future-tense sentences vocabulary drill",
+      "category": "future-tense"
+    },
+    {
+      "bn": "“হবে” শব্দটি বলুন।",
+      "pronunciation": "“hobe” shobdoti bolun.",
+      "en": "Say the word “will be / happen.”",
+      "context": "Guided future-tense sentences vocabulary drill",
+      "category": "future-tense"
+    },
+    {
+      "bn": "“করবে” শব্দটি বলুন।",
+      "pronunciation": "“korbe” shobdoti bolun.",
+      "en": "Say the word “will do.”",
+      "context": "Guided future-tense sentences vocabulary drill",
+      "category": "future-tense"
+    },
+    {
+      "bn": "“করবেন” শব্দটি বলুন।",
+      "pronunciation": "“korben” shobdoti bolun.",
+      "en": "Say the word “will do (polite).”",
+      "context": "Guided future-tense sentences vocabulary drill",
+      "category": "future-tense"
+    },
+    {
+      "bn": "“পরে” শব্দটি বলুন।",
+      "pronunciation": "“pore” shobdoti bolun.",
+      "en": "Say the word “later.”",
+      "context": "Guided future-tense sentences vocabulary drill",
+      "category": "future-tense"
+    },
+    {
+      "bn": "“করব” আবার বলুন।",
+      "pronunciation": "“korbo” abar bolun.",
+      "en": "Say “I will do” again.",
+      "context": "Guided future-tense sentences vocabulary drill",
+      "category": "future-tense"
+    },
+    {
+      "bn": "“যাব” আবার বলুন।",
+      "pronunciation": "“jabo” abar bolun.",
+      "en": "Say “I will go” again.",
+      "context": "Guided future-tense sentences vocabulary drill",
+      "category": "future-tense"
+    },
+    {
+      "bn": "“আসব” আবার বলুন।",
+      "pronunciation": "“ashbo” abar bolun.",
+      "en": "Say “I will come” again.",
+      "context": "Guided future-tense sentences vocabulary drill",
+      "category": "future-tense"
+    },
+    {
+      "bn": "“খাব” আবার বলুন।",
+      "pronunciation": "“khabo” abar bolun.",
+      "en": "Say “I will eat” again.",
+      "context": "Guided future-tense sentences vocabulary drill",
+      "category": "future-tense"
+    },
+    {
+      "bn": "“হবে” আবার বলুন।",
+      "pronunciation": "“hobe” abar bolun.",
+      "en": "Say “will be / happen” again.",
+      "context": "Guided future-tense sentences vocabulary drill",
+      "category": "future-tense"
+    },
+    {
+      "bn": "“করবে” আবার বলুন।",
+      "pronunciation": "“korbe” abar bolun.",
+      "en": "Say “will do” again.",
+      "context": "Guided future-tense sentences vocabulary drill",
+      "category": "future-tense"
+    },
+    {
+      "bn": "“করবেন” আবার বলুন।",
+      "pronunciation": "“korben” abar bolun.",
+      "en": "Say “will do (polite)” again.",
+      "context": "Guided future-tense sentences vocabulary drill",
+      "category": "future-tense"
+    },
+    {
+      "bn": "“পরে” আবার বলুন।",
+      "pronunciation": "“pore” abar bolun.",
+      "en": "Say “later” again.",
+      "context": "Guided future-tense sentences vocabulary drill",
+      "category": "future-tense"
+    },
+    {
+      "bn": "“করব” শব্দটি লিখুন।",
+      "pronunciation": "“korbo” shobdoti likhun.",
+      "en": "Write the word “I will do.”",
+      "context": "Guided future-tense sentences vocabulary drill",
+      "category": "future-tense"
+    },
+    {
+      "bn": "“যাব” শব্দটি লিখুন।",
+      "pronunciation": "“jabo” shobdoti likhun.",
+      "en": "Write the word “I will go.”",
+      "context": "Guided future-tense sentences vocabulary drill",
+      "category": "future-tense"
+    },
+    {
+      "bn": "“আসব” শব্দটি লিখুন।",
+      "pronunciation": "“ashbo” shobdoti likhun.",
+      "en": "Write the word “I will come.”",
+      "context": "Guided future-tense sentences vocabulary drill",
+      "category": "future-tense"
+    },
+    {
+      "bn": "“খাব” শব্দটি লিখুন।",
+      "pronunciation": "“khabo” shobdoti likhun.",
+      "en": "Write the word “I will eat.”",
+      "context": "Guided future-tense sentences vocabulary drill",
+      "category": "future-tense"
+    }
+  ],
+  "practice": [
+    "Say the Bengali words for three items from future-tense sentences.",
+    "Read each phrase aloud, then repeat it without looking at the transliteration.",
+    "Create a new sentence by replacing one word in a lesson phrase."
+  ],
+  "notes": [
+    "The future often uses -ব in the first person, -বে in familiar third person, and -বেন for respect."
+  ]
+}

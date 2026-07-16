@@ -1,0 +1,293 @@
+{
+  "id": "commands-polite-requests",
+  "title": "Commands and Polite Requests",
+  "summary": "Give instructions and make requests at familiar and respectful levels.",
+  "level": "beginner",
+  "topic": "Commands and Polite Requests",
+  "focus": "grammar",
+  "vocab": [
+    {
+      "bn": "করুন",
+      "pronunciation": "korun",
+      "en": "please do",
+      "category": "commands-polite-requests"
+    },
+    {
+      "bn": "দিন",
+      "pronunciation": "din",
+      "en": "please give",
+      "category": "commands-polite-requests"
+    },
+    {
+      "bn": "বলুন",
+      "pronunciation": "bolun",
+      "en": "please say",
+      "category": "commands-polite-requests"
+    },
+    {
+      "bn": "আসুন",
+      "pronunciation": "ashun",
+      "en": "please come",
+      "category": "commands-polite-requests"
+    },
+    {
+      "bn": "বসুন",
+      "pronunciation": "boshun",
+      "en": "please sit",
+      "category": "commands-polite-requests"
+    },
+    {
+      "bn": "শুনুন",
+      "pronunciation": "shunun",
+      "en": "please listen",
+      "category": "commands-polite-requests"
+    },
+    {
+      "bn": "দয়া করে",
+      "pronunciation": "doya kore",
+      "en": "please",
+      "category": "commands-polite-requests"
+    },
+    {
+      "bn": "একটু",
+      "pronunciation": "ektu",
+      "en": "a little / a moment",
+      "category": "commands-polite-requests"
+    }
+  ],
+  "phrases": [
+    {
+      "bn": "দয়া করে এখানে বসুন।",
+      "pronunciation": "doya kore ekhane boshun.",
+      "en": "Please sit here.",
+      "context": "A respectful request",
+      "category": "commands-polite-requests"
+    },
+    {
+      "bn": "একটু ধীরে বলুন।",
+      "pronunciation": "ektu dhire bolun.",
+      "en": "Please speak a little slowly.",
+      "context": "Requesting clarification",
+      "category": "commands-polite-requests"
+    },
+    {
+      "bn": "দরজাটা খুলে দাও।",
+      "pronunciation": "dorjata khule dao.",
+      "en": "Open the door, please.",
+      "context": "A familiar request",
+      "category": "commands-polite-requests"
+    },
+    {
+      "bn": "চলো বাড়ি যাই।",
+      "pronunciation": "cholo bari jai.",
+      "en": "Let’s go home.",
+      "context": "Making a suggestion",
+      "category": "commands-polite-requests"
+    },
+    {
+      "bn": "আজকের শব্দ “করুন”।",
+      "pronunciation": "ajker shobdo “korun”.",
+      "en": "Today’s word is “please do.”",
+      "context": "Guided commands and polite requests vocabulary drill",
+      "category": "commands-polite-requests"
+    },
+    {
+      "bn": "আজকের শব্দ “দিন”।",
+      "pronunciation": "ajker shobdo “din”.",
+      "en": "Today’s word is “please give.”",
+      "context": "Guided commands and polite requests vocabulary drill",
+      "category": "commands-polite-requests"
+    },
+    {
+      "bn": "আজকের শব্দ “বলুন”।",
+      "pronunciation": "ajker shobdo “bolun”.",
+      "en": "Today’s word is “please say.”",
+      "context": "Guided commands and polite requests vocabulary drill",
+      "category": "commands-polite-requests"
+    },
+    {
+      "bn": "আজকের শব্দ “আসুন”।",
+      "pronunciation": "ajker shobdo “ashun”.",
+      "en": "Today’s word is “please come.”",
+      "context": "Guided commands and polite requests vocabulary drill",
+      "category": "commands-polite-requests"
+    },
+    {
+      "bn": "আজকের শব্দ “বসুন”।",
+      "pronunciation": "ajker shobdo “boshun”.",
+      "en": "Today’s word is “please sit.”",
+      "context": "Guided commands and polite requests vocabulary drill",
+      "category": "commands-polite-requests"
+    },
+    {
+      "bn": "আজকের শব্দ “শুনুন”।",
+      "pronunciation": "ajker shobdo “shunun”.",
+      "en": "Today’s word is “please listen.”",
+      "context": "Guided commands and polite requests vocabulary drill",
+      "category": "commands-polite-requests"
+    },
+    {
+      "bn": "আজকের শব্দ “দয়া করে”।",
+      "pronunciation": "ajker shobdo “doya kore”.",
+      "en": "Today’s word is “please.”",
+      "context": "Guided commands and polite requests vocabulary drill",
+      "category": "commands-polite-requests"
+    },
+    {
+      "bn": "আজকের শব্দ “একটু”।",
+      "pronunciation": "ajker shobdo “ektu”.",
+      "en": "Today’s word is “a little / a moment.”",
+      "context": "Guided commands and polite requests vocabulary drill",
+      "category": "commands-polite-requests"
+    },
+    {
+      "bn": "“করুন” শব্দটি বলুন।",
+      "pronunciation": "“korun” shobdoti bolun.",
+      "en": "Say the word “please do.”",
+      "context": "Guided commands and polite requests vocabulary drill",
+      "category": "commands-polite-requests"
+    },
+    {
+      "bn": "“দিন” শব্দটি বলুন।",
+      "pronunciation": "“din” shobdoti bolun.",
+      "en": "Say the word “please give.”",
+      "context": "Guided commands and polite requests vocabulary drill",
+      "category": "commands-polite-requests"
+    },
+    {
+      "bn": "“বলুন” শব্দটি বলুন।",
+      "pronunciation": "“bolun” shobdoti bolun.",
+      "en": "Say the word “please say.”",
+      "context": "Guided commands and polite requests vocabulary drill",
+      "category": "commands-polite-requests"
+    },
+    {
+      "bn": "“আসুন” শব্দটি বলুন।",
+      "pronunciation": "“ashun” shobdoti bolun.",
+      "en": "Say the word “please come.”",
+      "context": "Guided commands and polite requests vocabulary drill",
+      "category": "commands-polite-requests"
+    },
+    {
+      "bn": "“বসুন” শব্দটি বলুন।",
+      "pronunciation": "“boshun” shobdoti bolun.",
+      "en": "Say the word “please sit.”",
+      "context": "Guided commands and polite requests vocabulary drill",
+      "category": "commands-polite-requests"
+    },
+    {
+      "bn": "“শুনুন” শব্দটি বলুন।",
+      "pronunciation": "“shunun” shobdoti bolun.",
+      "en": "Say the word “please listen.”",
+      "context": "Guided commands and polite requests vocabulary drill",
+      "category": "commands-polite-requests"
+    },
+    {
+      "bn": "“দয়া করে” শব্দটি বলুন।",
+      "pronunciation": "“doya kore” shobdoti bolun.",
+      "en": "Say the word “please.”",
+      "context": "Guided commands and polite requests vocabulary drill",
+      "category": "commands-polite-requests"
+    },
+    {
+      "bn": "“একটু” শব্দটি বলুন।",
+      "pronunciation": "“ektu” shobdoti bolun.",
+      "en": "Say the word “a little / a moment.”",
+      "context": "Guided commands and polite requests vocabulary drill",
+      "category": "commands-polite-requests"
+    },
+    {
+      "bn": "“করুন” আবার বলুন।",
+      "pronunciation": "“korun” abar bolun.",
+      "en": "Say “please do” again.",
+      "context": "Guided commands and polite requests vocabulary drill",
+      "category": "commands-polite-requests"
+    },
+    {
+      "bn": "“দিন” আবার বলুন।",
+      "pronunciation": "“din” abar bolun.",
+      "en": "Say “please give” again.",
+      "context": "Guided commands and polite requests vocabulary drill",
+      "category": "commands-polite-requests"
+    },
+    {
+      "bn": "“বলুন” আবার বলুন।",
+      "pronunciation": "“bolun” abar bolun.",
+      "en": "Say “please say” again.",
+      "context": "Guided commands and polite requests vocabulary drill",
+      "category": "commands-polite-requests"
+    },
+    {
+      "bn": "“আসুন” আবার বলুন।",
+      "pronunciation": "“ashun” abar bolun.",
+      "en": "Say “please come” again.",
+      "context": "Guided commands and polite requests vocabulary drill",
+      "category": "commands-polite-requests"
+    },
+    {
+      "bn": "“বসুন” আবার বলুন।",
+      "pronunciation": "“boshun” abar bolun.",
+      "en": "Say “please sit” again.",
+      "context": "Guided commands and polite requests vocabulary drill",
+      "category": "commands-polite-requests"
+    },
+    {
+      "bn": "“শুনুন” আবার বলুন।",
+      "pronunciation": "“shunun” abar bolun.",
+      "en": "Say “please listen” again.",
+      "context": "Guided commands and polite requests vocabulary drill",
+      "category": "commands-polite-requests"
+    },
+    {
+      "bn": "“দয়া করে” আবার বলুন।",
+      "pronunciation": "“doya kore” abar bolun.",
+      "en": "Say “please” again.",
+      "context": "Guided commands and polite requests vocabulary drill",
+      "category": "commands-polite-requests"
+    },
+    {
+      "bn": "“একটু” আবার বলুন।",
+      "pronunciation": "“ektu” abar bolun.",
+      "en": "Say “a little / a moment” again.",
+      "context": "Guided commands and polite requests vocabulary drill",
+      "category": "commands-polite-requests"
+    },
+    {
+      "bn": "“করুন” শব্দটি লিখুন।",
+      "pronunciation": "“korun” shobdoti likhun.",
+      "en": "Write the word “please do.”",
+      "context": "Guided commands and polite requests vocabulary drill",
+      "category": "commands-polite-requests"
+    },
+    {
+      "bn": "“দিন” শব্দটি লিখুন।",
+      "pronunciation": "“din” shobdoti likhun.",
+      "en": "Write the word “please give.”",
+      "context": "Guided commands and polite requests vocabulary drill",
+      "category": "commands-polite-requests"
+    },
+    {
+      "bn": "“বলুন” শব্দটি লিখুন।",
+      "pronunciation": "“bolun” shobdoti likhun.",
+      "en": "Write the word “please say.”",
+      "context": "Guided commands and polite requests vocabulary drill",
+      "category": "commands-polite-requests"
+    },
+    {
+      "bn": "“আসুন” শব্দটি লিখুন।",
+      "pronunciation": "“ashun” shobdoti likhun.",
+      "en": "Write the word “please come.”",
+      "context": "Guided commands and polite requests vocabulary drill",
+      "category": "commands-polite-requests"
+    }
+  ],
+  "practice": [
+    "Say the Bengali words for three items from commands and polite requests.",
+    "Read each phrase aloud, then repeat it without looking at the transliteration.",
+    "Create a new sentence by replacing one word in a lesson phrase."
+  ],
+  "notes": [
+    "Verbs ending in -ুন are typically respectful commands.",
+    "দাও is familiar; দিন is its respectful counterpart."
+  ]
+}
