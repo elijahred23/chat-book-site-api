@@ -18,6 +18,7 @@ The instructions in this section apply only to `BengaliTutor*.jsx`, `BengaliTuto
 - Every vocabulary item must include non-empty `bn`, `pronunciation`, and `en` values. Include `category` and a `sourcePhrase` containing or demonstrating that vocabulary item.
 - Every phrase must include non-empty `bn`, `pronunciation`, `en`, and `context` values. Include `category` and an ordered `words` array when materializing breakdown data in JSON.
 - Each phrase breakdown word uses `{ "bn": "...", "pronunciation": "...", "en": "..." }`. Keep entries in Bengali spoken order and provide a meaningful English gloss for every entry.
+- Whenever adding a Bengali lesson JSON file or adding words or phrases to an existing lesson, add every new Bengali token and inflected form to `../data/bengali-glosses.json`. Include common context-dependent meanings separated by slashes so phrase breakdowns never display the `part of “…”` fallback.
 - Keep natural English sentence translations in `phrase.en`. Build literal breakdown English by joining the ordered word glosses; do not rewrite the natural translation into Bengali word order.
 - Retain intentional repeated headwords only when they teach distinct meanings or usages. Remove accidental duplicate phrases when a named collection promises a fixed unique count.
 - Prefer accurate, natural Bengali and consistent Latin-script pronunciation over mechanically padded content. Do not claim a count that the saved JSON does not contain.
@@ -35,6 +36,7 @@ The instructions in this section apply only to `BengaliTutor*.jsx`, `BengaliTuto
 
 - Validate changed lesson JSON with `jq` and verify promised vocabulary and phrase counts from the saved files.
 - Confirm every required string is non-empty and every saved breakdown has at least one word.
+- Audit all changed phrases against `../data/bengali-glosses.json` and confirm that every token resolves to a real gloss with zero `part of “…”` fallbacks.
 - Run targeted ESLint on changed Bengali Tutor JavaScript/JSX files.
 - Run `npm run build` from `frontend/` after lesson imports, Tutor UI changes, or Word Loop changes.
 - The repository-wide lint command has existing unrelated failures. Report those separately rather than attributing them to Bengali Tutor changes.
