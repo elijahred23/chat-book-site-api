@@ -350,3402 +350,620 @@
       ]
     },
     {
-      "bn": "বলুন: “আমি এখন ব্যস্ত।”",
-      "pronunciation": "bolun: ami ekhon byasto",
-      "en": "Say: “I am busy now.”",
-      "context": "Say the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "আমি এখন ব্যস্ত।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "এখন",
-          "pronunciation": "ekhon",
-          "en": "now"
-        },
-        {
-          "bn": "ব্যস্ত",
-          "pronunciation": "byasto",
-          "en": "busy"
-        }
-      ]
-    },
-    {
-      "bn": "বলুন: “আজ আবহাওয়া সুন্দর।”",
-      "pronunciation": "bolun: aj abohawa shundor",
-      "en": "Say: “The weather is beautiful today.”",
-      "context": "Say the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "আজ আবহাওয়া সুন্দর।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "আজ",
-          "pronunciation": "aj",
-          "en": "today"
-        },
-        {
-          "bn": "আবহাওয়া",
-          "pronunciation": "abohawa",
-          "en": "weather"
-        },
-        {
-          "bn": "সুন্দর",
-          "pronunciation": "shundor",
-          "en": "beautiful"
-        }
-      ]
-    },
-    {
-      "bn": "বলুন: “আমি কাল ঢাকায় যাব।”",
-      "pronunciation": "bolun: ami kal Dhakay jabo",
-      "en": "Say: “I will go to Dhaka tomorrow.”",
-      "context": "Say the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "আমি কাল ঢাকায় যাব।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "কাল",
-          "pronunciation": "kal",
-          "en": "tomorrow / yesterday"
-        },
-        {
-          "bn": "ঢাকায়",
-          "pronunciation": "Dhakay",
-          "en": "in / to Dhaka"
-        },
-        {
-          "bn": "যাব",
-          "pronunciation": "jabo",
-          "en": "will go"
-        }
-      ]
-    },
-    {
-      "bn": "বলুন: “আমি এখানে থাকি।”",
-      "pronunciation": "bolun: ami ekhane thaki",
-      "en": "Say: “I live here.”",
-      "context": "Say the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "আমি এখানে থাকি।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "এখানে",
-          "pronunciation": "ekhane",
-          "en": "here"
-        },
-        {
-          "bn": "থাকি",
-          "pronunciation": "thaki",
-          "en": "live / stay"
-        }
-      ]
-    },
-    {
-      "bn": "বলুন: “আমার বন্ধু সেখানে থাকে।”",
-      "pronunciation": "bolun: amar bondhu shekhane thake",
-      "en": "Say: “My friend lives there.”",
-      "context": "Say the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "আমার বন্ধু সেখানে থাকে।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "আমার",
-          "pronunciation": "amar",
-          "en": "my"
-        },
-        {
-          "bn": "বন্ধু",
-          "pronunciation": "bondhu",
-          "en": "friend"
-        },
-        {
-          "bn": "সেখানে",
-          "pronunciation": "shekhane",
-          "en": "there"
-        },
-        {
-          "bn": "থাকে",
-          "pronunciation": "thake",
-          "en": "lives / stays"
-        }
-      ]
-    },
-    {
-      "bn": "বলুন: “সে সবসময় সময়মতো আসে।”",
-      "pronunciation": "bolun: shey shobshomoy shomoymoto ashe",
-      "en": "Say: “He or she always arrives on time.”",
-      "context": "Say the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "সে সবসময় সময়মতো আসে।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "সে",
-          "pronunciation": "shey",
-          "en": "he / she"
-        },
-        {
-          "bn": "সবসময়",
-          "pronunciation": "shobshomoy",
-          "en": "always"
-        },
-        {
-          "bn": "সময়মতো",
-          "pronunciation": "shomoymoto",
-          "en": "on time"
-        },
-        {
-          "bn": "আসে",
-          "pronunciation": "ashe",
-          "en": "comes"
-        }
-      ]
-    },
-    {
-      "bn": "বলুন: “আমি কখনো এখানে খেতে আসি।”",
-      "pronunciation": "bolun: ami kokhono ekhane khete ashi",
-      "en": "Say: “I sometimes come here to eat.”",
-      "context": "Say the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "আমি কখনো এখানে খেতে আসি।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "কখনো",
-          "pronunciation": "kokhono",
-          "en": "sometimes / ever"
-        },
-        {
-          "bn": "এখানে",
-          "pronunciation": "ekhane",
-          "en": "here"
-        },
-        {
-          "bn": "খেতে",
-          "pronunciation": "khete",
-          "en": "to eat"
-        },
-        {
-          "bn": "আসি",
-          "pronunciation": "ashi",
-          "en": "come"
-        }
-      ]
-    },
-    {
-      "bn": "বলুন: “আমি কখনোই মিথ্যা বলি না।”",
-      "pronunciation": "bolun: ami kokhonoi mithya boli na",
-      "en": "Say: “I never tell lies.”",
-      "context": "Say the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "আমি কখনোই মিথ্যা বলি না।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "কখনোই",
-          "pronunciation": "kokhonoi",
-          "en": "ever"
-        },
-        {
-          "bn": "মিথ্যা",
-          "pronunciation": "mithya",
-          "en": "lie / falsehood"
-        },
-        {
-          "bn": "বলি",
-          "pronunciation": "boli",
-          "en": "say"
-        },
-        {
-          "bn": "না",
-          "pronunciation": "na",
-          "en": "not"
-        }
-      ]
-    },
-    {
-      "bn": "বলুন: “সে খুব দ্রুত হাঁটে।”",
-      "pronunciation": "bolun: shey khub druto hate",
-      "en": "Say: “He or she walks very quickly.”",
-      "context": "Say the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "সে খুব দ্রুত হাঁটে।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "সে",
-          "pronunciation": "shey",
-          "en": "he / she"
-        },
-        {
-          "bn": "খুব",
-          "pronunciation": "khub",
-          "en": "very"
-        },
-        {
-          "bn": "দ্রুত",
-          "pronunciation": "druto",
-          "en": "quickly"
-        },
-        {
-          "bn": "হাঁটে",
-          "pronunciation": "hate",
-          "en": "walks"
-        }
-      ]
-    },
-    {
-      "bn": "বলুন: “দয়া করে ধীরে কথা বলুন।”",
-      "pronunciation": "bolun: doya kore dhire kotha bolun",
-      "en": "Say: “Please speak slowly.”",
-      "context": "Say the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "দয়া করে ধীরে কথা বলুন।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "দয়া",
-          "pronunciation": "doya",
-          "en": "kindness / please"
-        },
-        {
-          "bn": "করে",
-          "pronunciation": "kore",
-          "en": "does"
-        },
-        {
-          "bn": "ধীরে",
-          "pronunciation": "dhire",
-          "en": "slowly"
-        },
-        {
-          "bn": "কথা",
-          "pronunciation": "kotha",
-          "en": "speech / words"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "please say"
-        }
-      ]
-    },
-    {
-      "bn": "বলুন: “আমি খুব ক্লান্ত।”",
-      "pronunciation": "bolun: ami khub klanto",
-      "en": "Say: “I am very tired.”",
-      "context": "Say the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "আমি খুব ক্লান্ত।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "খুব",
-          "pronunciation": "khub",
-          "en": "very"
-        },
-        {
-          "bn": "ক্লান্ত",
-          "pronunciation": "klanto",
-          "en": "tired"
-        }
-      ]
-    },
-    {
-      "bn": "বলুন: “দয়া করে আবার বলুন।”",
-      "pronunciation": "bolun: doya kore abar bolun",
-      "en": "Say: “Please say it again.”",
-      "context": "Say the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "দয়া করে আবার বলুন।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "দয়া",
-          "pronunciation": "doya",
-          "en": "kindness / please"
-        },
-        {
-          "bn": "করে",
-          "pronunciation": "kore",
-          "en": "does"
-        },
-        {
-          "bn": "আবার",
-          "pronunciation": "abar",
-          "en": "again"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "please say"
-        }
-      ]
-    },
-    {
-      "bn": "পড়ুন: “আমি এখন ব্যস্ত।”",
-      "pronunciation": "porun: ami ekhon byasto",
-      "en": "Read: “I am busy now.”",
-      "context": "Read the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "আমি এখন ব্যস্ত।",
-      "words": [
-        {
-          "bn": "পড়ুন",
-          "pronunciation": "porun",
-          "en": "read"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "এখন",
-          "pronunciation": "ekhon",
-          "en": "now"
-        },
-        {
-          "bn": "ব্যস্ত",
-          "pronunciation": "byasto",
-          "en": "busy"
-        }
-      ]
-    },
-    {
-      "bn": "পড়ুন: “আজ আবহাওয়া সুন্দর।”",
-      "pronunciation": "porun: aj abohawa shundor",
-      "en": "Read: “The weather is beautiful today.”",
-      "context": "Read the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "আজ আবহাওয়া সুন্দর।",
-      "words": [
-        {
-          "bn": "পড়ুন",
-          "pronunciation": "porun",
-          "en": "read"
-        },
-        {
-          "bn": "আজ",
-          "pronunciation": "aj",
-          "en": "today"
-        },
-        {
-          "bn": "আবহাওয়া",
-          "pronunciation": "abohawa",
-          "en": "weather"
-        },
-        {
-          "bn": "সুন্দর",
-          "pronunciation": "shundor",
-          "en": "beautiful"
-        }
-      ]
-    },
-    {
-      "bn": "পড়ুন: “আমি কাল ঢাকায় যাব।”",
-      "pronunciation": "porun: ami kal Dhakay jabo",
-      "en": "Read: “I will go to Dhaka tomorrow.”",
-      "context": "Read the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "আমি কাল ঢাকায় যাব।",
-      "words": [
-        {
-          "bn": "পড়ুন",
-          "pronunciation": "porun",
-          "en": "read"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "কাল",
-          "pronunciation": "kal",
-          "en": "tomorrow / yesterday"
-        },
-        {
-          "bn": "ঢাকায়",
-          "pronunciation": "Dhakay",
-          "en": "in / to Dhaka"
-        },
-        {
-          "bn": "যাব",
-          "pronunciation": "jabo",
-          "en": "will go"
-        }
-      ]
-    },
-    {
-      "bn": "পড়ুন: “আমি এখানে থাকি।”",
-      "pronunciation": "porun: ami ekhane thaki",
-      "en": "Read: “I live here.”",
-      "context": "Read the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "আমি এখানে থাকি।",
-      "words": [
-        {
-          "bn": "পড়ুন",
-          "pronunciation": "porun",
-          "en": "read"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "এখানে",
-          "pronunciation": "ekhane",
-          "en": "here"
-        },
-        {
-          "bn": "থাকি",
-          "pronunciation": "thaki",
-          "en": "live / stay"
-        }
-      ]
-    },
-    {
-      "bn": "পড়ুন: “আমার বন্ধু সেখানে থাকে।”",
-      "pronunciation": "porun: amar bondhu shekhane thake",
-      "en": "Read: “My friend lives there.”",
-      "context": "Read the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "আমার বন্ধু সেখানে থাকে।",
-      "words": [
-        {
-          "bn": "পড়ুন",
-          "pronunciation": "porun",
-          "en": "read"
-        },
-        {
-          "bn": "আমার",
-          "pronunciation": "amar",
-          "en": "my"
-        },
-        {
-          "bn": "বন্ধু",
-          "pronunciation": "bondhu",
-          "en": "friend"
-        },
-        {
-          "bn": "সেখানে",
-          "pronunciation": "shekhane",
-          "en": "there"
-        },
-        {
-          "bn": "থাকে",
-          "pronunciation": "thake",
-          "en": "lives / stays"
-        }
-      ]
-    },
-    {
-      "bn": "পড়ুন: “সে সবসময় সময়মতো আসে।”",
-      "pronunciation": "porun: shey shobshomoy shomoymoto ashe",
-      "en": "Read: “He or she always arrives on time.”",
-      "context": "Read the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "সে সবসময় সময়মতো আসে।",
-      "words": [
-        {
-          "bn": "পড়ুন",
-          "pronunciation": "porun",
-          "en": "read"
-        },
-        {
-          "bn": "সে",
-          "pronunciation": "shey",
-          "en": "he / she"
-        },
-        {
-          "bn": "সবসময়",
-          "pronunciation": "shobshomoy",
-          "en": "always"
-        },
-        {
-          "bn": "সময়মতো",
-          "pronunciation": "shomoymoto",
-          "en": "on time"
-        },
-        {
-          "bn": "আসে",
-          "pronunciation": "ashe",
-          "en": "comes"
-        }
-      ]
-    },
-    {
-      "bn": "পড়ুন: “আমি কখনো এখানে খেতে আসি।”",
-      "pronunciation": "porun: ami kokhono ekhane khete ashi",
-      "en": "Read: “I sometimes come here to eat.”",
-      "context": "Read the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "আমি কখনো এখানে খেতে আসি।",
-      "words": [
-        {
-          "bn": "পড়ুন",
-          "pronunciation": "porun",
-          "en": "read"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "কখনো",
-          "pronunciation": "kokhono",
-          "en": "sometimes / ever"
-        },
-        {
-          "bn": "এখানে",
-          "pronunciation": "ekhane",
-          "en": "here"
-        },
-        {
-          "bn": "খেতে",
-          "pronunciation": "khete",
-          "en": "to eat"
-        },
-        {
-          "bn": "আসি",
-          "pronunciation": "ashi",
-          "en": "come"
-        }
-      ]
-    },
-    {
-      "bn": "পড়ুন: “আমি কখনোই মিথ্যা বলি না।”",
-      "pronunciation": "porun: ami kokhonoi mithya boli na",
-      "en": "Read: “I never tell lies.”",
-      "context": "Read the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "আমি কখনোই মিথ্যা বলি না।",
-      "words": [
-        {
-          "bn": "পড়ুন",
-          "pronunciation": "porun",
-          "en": "read"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "কখনোই",
-          "pronunciation": "kokhonoi",
-          "en": "ever"
-        },
-        {
-          "bn": "মিথ্যা",
-          "pronunciation": "mithya",
-          "en": "lie / falsehood"
-        },
-        {
-          "bn": "বলি",
-          "pronunciation": "boli",
-          "en": "say"
-        },
-        {
-          "bn": "না",
-          "pronunciation": "na",
-          "en": "not"
-        }
-      ]
-    },
-    {
-      "bn": "পড়ুন: “সে খুব দ্রুত হাঁটে।”",
-      "pronunciation": "porun: shey khub druto hate",
-      "en": "Read: “He or she walks very quickly.”",
-      "context": "Read the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "সে খুব দ্রুত হাঁটে।",
-      "words": [
-        {
-          "bn": "পড়ুন",
-          "pronunciation": "porun",
-          "en": "read"
-        },
-        {
-          "bn": "সে",
-          "pronunciation": "shey",
-          "en": "he / she"
-        },
-        {
-          "bn": "খুব",
-          "pronunciation": "khub",
-          "en": "very"
-        },
-        {
-          "bn": "দ্রুত",
-          "pronunciation": "druto",
-          "en": "quickly"
-        },
-        {
-          "bn": "হাঁটে",
-          "pronunciation": "hate",
-          "en": "walks"
-        }
-      ]
-    },
-    {
-      "bn": "পড়ুন: “দয়া করে ধীরে কথা বলুন।”",
-      "pronunciation": "porun: doya kore dhire kotha bolun",
-      "en": "Read: “Please speak slowly.”",
-      "context": "Read the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "দয়া করে ধীরে কথা বলুন।",
-      "words": [
-        {
-          "bn": "পড়ুন",
-          "pronunciation": "porun",
-          "en": "read"
-        },
-        {
-          "bn": "দয়া",
-          "pronunciation": "doya",
-          "en": "kindness / please"
-        },
-        {
-          "bn": "করে",
-          "pronunciation": "kore",
-          "en": "does"
-        },
-        {
-          "bn": "ধীরে",
-          "pronunciation": "dhire",
-          "en": "slowly"
-        },
-        {
-          "bn": "কথা",
-          "pronunciation": "kotha",
-          "en": "speech / words"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "please say"
-        }
-      ]
-    },
-    {
-      "bn": "পড়ুন: “আমি খুব ক্লান্ত।”",
-      "pronunciation": "porun: ami khub klanto",
-      "en": "Read: “I am very tired.”",
-      "context": "Read the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "আমি খুব ক্লান্ত।",
-      "words": [
-        {
-          "bn": "পড়ুন",
-          "pronunciation": "porun",
-          "en": "read"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "খুব",
-          "pronunciation": "khub",
-          "en": "very"
-        },
-        {
-          "bn": "ক্লান্ত",
-          "pronunciation": "klanto",
-          "en": "tired"
-        }
-      ]
-    },
-    {
-      "bn": "পড়ুন: “দয়া করে আবার বলুন।”",
-      "pronunciation": "porun: doya kore abar bolun",
-      "en": "Read: “Please say it again.”",
-      "context": "Read the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "দয়া করে আবার বলুন।",
-      "words": [
-        {
-          "bn": "পড়ুন",
-          "pronunciation": "porun",
-          "en": "read"
-        },
-        {
-          "bn": "দয়া",
-          "pronunciation": "doya",
-          "en": "kindness / please"
-        },
-        {
-          "bn": "করে",
-          "pronunciation": "kore",
-          "en": "does"
-        },
-        {
-          "bn": "আবার",
-          "pronunciation": "abar",
-          "en": "again"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "please say"
-        }
-      ]
-    },
-    {
-      "bn": "লিখুন: “আমি এখন ব্যস্ত।”",
-      "pronunciation": "likhun: ami ekhon byasto",
-      "en": "Write: “I am busy now.”",
-      "context": "Write the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "আমি এখন ব্যস্ত।",
-      "words": [
-        {
-          "bn": "লিখুন",
-          "pronunciation": "likhun",
-          "en": "write"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "এখন",
-          "pronunciation": "ekhon",
-          "en": "now"
-        },
-        {
-          "bn": "ব্যস্ত",
-          "pronunciation": "byasto",
-          "en": "busy"
-        }
-      ]
-    },
-    {
-      "bn": "লিখুন: “আজ আবহাওয়া সুন্দর।”",
-      "pronunciation": "likhun: aj abohawa shundor",
-      "en": "Write: “The weather is beautiful today.”",
-      "context": "Write the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "আজ আবহাওয়া সুন্দর।",
-      "words": [
-        {
-          "bn": "লিখুন",
-          "pronunciation": "likhun",
-          "en": "write"
-        },
-        {
-          "bn": "আজ",
-          "pronunciation": "aj",
-          "en": "today"
-        },
-        {
-          "bn": "আবহাওয়া",
-          "pronunciation": "abohawa",
-          "en": "weather"
-        },
-        {
-          "bn": "সুন্দর",
-          "pronunciation": "shundor",
-          "en": "beautiful"
-        }
-      ]
-    },
-    {
-      "bn": "লিখুন: “আমি কাল ঢাকায় যাব।”",
-      "pronunciation": "likhun: ami kal Dhakay jabo",
-      "en": "Write: “I will go to Dhaka tomorrow.”",
-      "context": "Write the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "আমি কাল ঢাকায় যাব।",
-      "words": [
-        {
-          "bn": "লিখুন",
-          "pronunciation": "likhun",
-          "en": "write"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "কাল",
-          "pronunciation": "kal",
-          "en": "tomorrow / yesterday"
-        },
-        {
-          "bn": "ঢাকায়",
-          "pronunciation": "Dhakay",
-          "en": "in / to Dhaka"
-        },
-        {
-          "bn": "যাব",
-          "pronunciation": "jabo",
-          "en": "will go"
-        }
-      ]
-    },
-    {
-      "bn": "লিখুন: “আমি এখানে থাকি।”",
-      "pronunciation": "likhun: ami ekhane thaki",
-      "en": "Write: “I live here.”",
-      "context": "Write the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "আমি এখানে থাকি।",
-      "words": [
-        {
-          "bn": "লিখুন",
-          "pronunciation": "likhun",
-          "en": "write"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "এখানে",
-          "pronunciation": "ekhane",
-          "en": "here"
-        },
-        {
-          "bn": "থাকি",
-          "pronunciation": "thaki",
-          "en": "live / stay"
-        }
-      ]
-    },
-    {
-      "bn": "লিখুন: “আমার বন্ধু সেখানে থাকে।”",
-      "pronunciation": "likhun: amar bondhu shekhane thake",
-      "en": "Write: “My friend lives there.”",
-      "context": "Write the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "আমার বন্ধু সেখানে থাকে।",
-      "words": [
-        {
-          "bn": "লিখুন",
-          "pronunciation": "likhun",
-          "en": "write"
-        },
-        {
-          "bn": "আমার",
-          "pronunciation": "amar",
-          "en": "my"
-        },
-        {
-          "bn": "বন্ধু",
-          "pronunciation": "bondhu",
-          "en": "friend"
-        },
-        {
-          "bn": "সেখানে",
-          "pronunciation": "shekhane",
-          "en": "there"
-        },
-        {
-          "bn": "থাকে",
-          "pronunciation": "thake",
-          "en": "lives / stays"
-        }
-      ]
-    },
-    {
-      "bn": "লিখুন: “সে সবসময় সময়মতো আসে।”",
-      "pronunciation": "likhun: shey shobshomoy shomoymoto ashe",
-      "en": "Write: “He or she always arrives on time.”",
-      "context": "Write the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "সে সবসময় সময়মতো আসে।",
-      "words": [
-        {
-          "bn": "লিখুন",
-          "pronunciation": "likhun",
-          "en": "write"
-        },
-        {
-          "bn": "সে",
-          "pronunciation": "shey",
-          "en": "he / she"
-        },
-        {
-          "bn": "সবসময়",
-          "pronunciation": "shobshomoy",
-          "en": "always"
-        },
-        {
-          "bn": "সময়মতো",
-          "pronunciation": "shomoymoto",
-          "en": "on time"
-        },
-        {
-          "bn": "আসে",
-          "pronunciation": "ashe",
-          "en": "comes"
-        }
-      ]
-    },
-    {
-      "bn": "লিখুন: “আমি কখনো এখানে খেতে আসি।”",
-      "pronunciation": "likhun: ami kokhono ekhane khete ashi",
-      "en": "Write: “I sometimes come here to eat.”",
-      "context": "Write the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "আমি কখনো এখানে খেতে আসি।",
-      "words": [
-        {
-          "bn": "লিখুন",
-          "pronunciation": "likhun",
-          "en": "write"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "কখনো",
-          "pronunciation": "kokhono",
-          "en": "sometimes / ever"
-        },
-        {
-          "bn": "এখানে",
-          "pronunciation": "ekhane",
-          "en": "here"
-        },
-        {
-          "bn": "খেতে",
-          "pronunciation": "khete",
-          "en": "to eat"
-        },
-        {
-          "bn": "আসি",
-          "pronunciation": "ashi",
-          "en": "come"
-        }
-      ]
-    },
-    {
-      "bn": "লিখুন: “আমি কখনোই মিথ্যা বলি না।”",
-      "pronunciation": "likhun: ami kokhonoi mithya boli na",
-      "en": "Write: “I never tell lies.”",
-      "context": "Write the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "আমি কখনোই মিথ্যা বলি না।",
-      "words": [
-        {
-          "bn": "লিখুন",
-          "pronunciation": "likhun",
-          "en": "write"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "কখনোই",
-          "pronunciation": "kokhonoi",
-          "en": "ever"
-        },
-        {
-          "bn": "মিথ্যা",
-          "pronunciation": "mithya",
-          "en": "lie / falsehood"
-        },
-        {
-          "bn": "বলি",
-          "pronunciation": "boli",
-          "en": "say"
-        },
-        {
-          "bn": "না",
-          "pronunciation": "na",
-          "en": "not"
-        }
-      ]
-    },
-    {
-      "bn": "লিখুন: “সে খুব দ্রুত হাঁটে।”",
-      "pronunciation": "likhun: shey khub druto hate",
-      "en": "Write: “He or she walks very quickly.”",
-      "context": "Write the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "সে খুব দ্রুত হাঁটে।",
-      "words": [
-        {
-          "bn": "লিখুন",
-          "pronunciation": "likhun",
-          "en": "write"
-        },
-        {
-          "bn": "সে",
-          "pronunciation": "shey",
-          "en": "he / she"
-        },
-        {
-          "bn": "খুব",
-          "pronunciation": "khub",
-          "en": "very"
-        },
-        {
-          "bn": "দ্রুত",
-          "pronunciation": "druto",
-          "en": "quickly"
-        },
-        {
-          "bn": "হাঁটে",
-          "pronunciation": "hate",
-          "en": "walks"
-        }
-      ]
-    },
-    {
-      "bn": "লিখুন: “দয়া করে ধীরে কথা বলুন।”",
-      "pronunciation": "likhun: doya kore dhire kotha bolun",
-      "en": "Write: “Please speak slowly.”",
-      "context": "Write the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "দয়া করে ধীরে কথা বলুন।",
-      "words": [
-        {
-          "bn": "লিখুন",
-          "pronunciation": "likhun",
-          "en": "write"
-        },
-        {
-          "bn": "দয়া",
-          "pronunciation": "doya",
-          "en": "kindness / please"
-        },
-        {
-          "bn": "করে",
-          "pronunciation": "kore",
-          "en": "does"
-        },
-        {
-          "bn": "ধীরে",
-          "pronunciation": "dhire",
-          "en": "slowly"
-        },
-        {
-          "bn": "কথা",
-          "pronunciation": "kotha",
-          "en": "speech / words"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "please say"
-        }
-      ]
-    },
-    {
-      "bn": "লিখুন: “আমি খুব ক্লান্ত।”",
-      "pronunciation": "likhun: ami khub klanto",
-      "en": "Write: “I am very tired.”",
-      "context": "Write the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "আমি খুব ক্লান্ত।",
-      "words": [
-        {
-          "bn": "লিখুন",
-          "pronunciation": "likhun",
-          "en": "write"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "খুব",
-          "pronunciation": "khub",
-          "en": "very"
-        },
-        {
-          "bn": "ক্লান্ত",
-          "pronunciation": "klanto",
-          "en": "tired"
-        }
-      ]
-    },
-    {
-      "bn": "লিখুন: “দয়া করে আবার বলুন।”",
-      "pronunciation": "likhun: doya kore abar bolun",
-      "en": "Write: “Please say it again.”",
-      "context": "Write the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "দয়া করে আবার বলুন।",
-      "words": [
-        {
-          "bn": "লিখুন",
-          "pronunciation": "likhun",
-          "en": "write"
-        },
-        {
-          "bn": "দয়া",
-          "pronunciation": "doya",
-          "en": "kindness / please"
-        },
-        {
-          "bn": "করে",
-          "pronunciation": "kore",
-          "en": "does"
-        },
-        {
-          "bn": "আবার",
-          "pronunciation": "abar",
-          "en": "again"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "please say"
-        }
-      ]
-    },
-    {
-      "bn": "অনুবাদ করুন: “আমি এখন ব্যস্ত।”",
-      "pronunciation": "onubad korun: ami ekhon byasto",
-      "en": "Translate: “I am busy now.”",
-      "context": "Translate the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "আমি এখন ব্যস্ত।",
-      "words": [
-        {
-          "bn": "অনুবাদ",
-          "pronunciation": "onubad",
-          "en": "translation"
-        },
-        {
-          "bn": "করুন",
-          "pronunciation": "korun",
-          "en": "please do"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "এখন",
-          "pronunciation": "ekhon",
-          "en": "now"
-        },
-        {
-          "bn": "ব্যস্ত",
-          "pronunciation": "byasto",
-          "en": "busy"
-        }
-      ]
-    },
-    {
-      "bn": "অনুবাদ করুন: “আজ আবহাওয়া সুন্দর।”",
-      "pronunciation": "onubad korun: aj abohawa shundor",
-      "en": "Translate: “The weather is beautiful today.”",
-      "context": "Translate the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "আজ আবহাওয়া সুন্দর।",
-      "words": [
-        {
-          "bn": "অনুবাদ",
-          "pronunciation": "onubad",
-          "en": "translation"
-        },
-        {
-          "bn": "করুন",
-          "pronunciation": "korun",
-          "en": "please do"
-        },
-        {
-          "bn": "আজ",
-          "pronunciation": "aj",
-          "en": "today"
-        },
-        {
-          "bn": "আবহাওয়া",
-          "pronunciation": "abohawa",
-          "en": "weather"
-        },
-        {
-          "bn": "সুন্দর",
-          "pronunciation": "shundor",
-          "en": "beautiful"
-        }
-      ]
-    },
-    {
-      "bn": "অনুবাদ করুন: “আমি কাল ঢাকায় যাব।”",
-      "pronunciation": "onubad korun: ami kal Dhakay jabo",
-      "en": "Translate: “I will go to Dhaka tomorrow.”",
-      "context": "Translate the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "আমি কাল ঢাকায় যাব।",
-      "words": [
-        {
-          "bn": "অনুবাদ",
-          "pronunciation": "onubad",
-          "en": "translation"
-        },
-        {
-          "bn": "করুন",
-          "pronunciation": "korun",
-          "en": "please do"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "কাল",
-          "pronunciation": "kal",
-          "en": "tomorrow / yesterday"
-        },
-        {
-          "bn": "ঢাকায়",
-          "pronunciation": "Dhakay",
-          "en": "in / to Dhaka"
-        },
-        {
-          "bn": "যাব",
-          "pronunciation": "jabo",
-          "en": "will go"
-        }
-      ]
-    },
-    {
-      "bn": "অনুবাদ করুন: “আমি এখানে থাকি।”",
-      "pronunciation": "onubad korun: ami ekhane thaki",
-      "en": "Translate: “I live here.”",
-      "context": "Translate the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "আমি এখানে থাকি।",
-      "words": [
-        {
-          "bn": "অনুবাদ",
-          "pronunciation": "onubad",
-          "en": "translation"
-        },
-        {
-          "bn": "করুন",
-          "pronunciation": "korun",
-          "en": "please do"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "এখানে",
-          "pronunciation": "ekhane",
-          "en": "here"
-        },
-        {
-          "bn": "থাকি",
-          "pronunciation": "thaki",
-          "en": "live / stay"
-        }
-      ]
-    },
-    {
-      "bn": "অনুবাদ করুন: “আমার বন্ধু সেখানে থাকে।”",
-      "pronunciation": "onubad korun: amar bondhu shekhane thake",
-      "en": "Translate: “My friend lives there.”",
-      "context": "Translate the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "আমার বন্ধু সেখানে থাকে।",
-      "words": [
-        {
-          "bn": "অনুবাদ",
-          "pronunciation": "onubad",
-          "en": "translation"
-        },
-        {
-          "bn": "করুন",
-          "pronunciation": "korun",
-          "en": "please do"
-        },
-        {
-          "bn": "আমার",
-          "pronunciation": "amar",
-          "en": "my"
-        },
-        {
-          "bn": "বন্ধু",
-          "pronunciation": "bondhu",
-          "en": "friend"
-        },
-        {
-          "bn": "সেখানে",
-          "pronunciation": "shekhane",
-          "en": "there"
-        },
-        {
-          "bn": "থাকে",
-          "pronunciation": "thake",
-          "en": "lives / stays"
-        }
-      ]
-    },
-    {
-      "bn": "অনুবাদ করুন: “সে সবসময় সময়মতো আসে।”",
-      "pronunciation": "onubad korun: shey shobshomoy shomoymoto ashe",
-      "en": "Translate: “He or she always arrives on time.”",
-      "context": "Translate the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "সে সবসময় সময়মতো আসে।",
-      "words": [
-        {
-          "bn": "অনুবাদ",
-          "pronunciation": "onubad",
-          "en": "translation"
-        },
-        {
-          "bn": "করুন",
-          "pronunciation": "korun",
-          "en": "please do"
-        },
-        {
-          "bn": "সে",
-          "pronunciation": "shey",
-          "en": "he / she"
-        },
-        {
-          "bn": "সবসময়",
-          "pronunciation": "shobshomoy",
-          "en": "always"
-        },
-        {
-          "bn": "সময়মতো",
-          "pronunciation": "shomoymoto",
-          "en": "on time"
-        },
-        {
-          "bn": "আসে",
-          "pronunciation": "ashe",
-          "en": "comes"
-        }
-      ]
-    },
-    {
-      "bn": "অনুবাদ করুন: “আমি কখনো এখানে খেতে আসি।”",
-      "pronunciation": "onubad korun: ami kokhono ekhane khete ashi",
-      "en": "Translate: “I sometimes come here to eat.”",
-      "context": "Translate the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "আমি কখনো এখানে খেতে আসি।",
-      "words": [
-        {
-          "bn": "অনুবাদ",
-          "pronunciation": "onubad",
-          "en": "translation"
-        },
-        {
-          "bn": "করুন",
-          "pronunciation": "korun",
-          "en": "please do"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "কখনো",
-          "pronunciation": "kokhono",
-          "en": "sometimes / ever"
-        },
-        {
-          "bn": "এখানে",
-          "pronunciation": "ekhane",
-          "en": "here"
-        },
-        {
-          "bn": "খেতে",
-          "pronunciation": "khete",
-          "en": "to eat"
-        },
-        {
-          "bn": "আসি",
-          "pronunciation": "ashi",
-          "en": "come"
-        }
-      ]
-    },
-    {
-      "bn": "অনুবাদ করুন: “আমি কখনোই মিথ্যা বলি না।”",
-      "pronunciation": "onubad korun: ami kokhonoi mithya boli na",
-      "en": "Translate: “I never tell lies.”",
-      "context": "Translate the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "আমি কখনোই মিথ্যা বলি না।",
-      "words": [
-        {
-          "bn": "অনুবাদ",
-          "pronunciation": "onubad",
-          "en": "translation"
-        },
-        {
-          "bn": "করুন",
-          "pronunciation": "korun",
-          "en": "please do"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "কখনোই",
-          "pronunciation": "kokhonoi",
-          "en": "ever"
-        },
-        {
-          "bn": "মিথ্যা",
-          "pronunciation": "mithya",
-          "en": "lie / falsehood"
-        },
-        {
-          "bn": "বলি",
-          "pronunciation": "boli",
-          "en": "say"
-        },
-        {
-          "bn": "না",
-          "pronunciation": "na",
-          "en": "not"
-        }
-      ]
-    },
-    {
-      "bn": "অনুবাদ করুন: “সে খুব দ্রুত হাঁটে।”",
-      "pronunciation": "onubad korun: shey khub druto hate",
-      "en": "Translate: “He or she walks very quickly.”",
-      "context": "Translate the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "সে খুব দ্রুত হাঁটে।",
-      "words": [
-        {
-          "bn": "অনুবাদ",
-          "pronunciation": "onubad",
-          "en": "translation"
-        },
-        {
-          "bn": "করুন",
-          "pronunciation": "korun",
-          "en": "please do"
-        },
-        {
-          "bn": "সে",
-          "pronunciation": "shey",
-          "en": "he / she"
-        },
-        {
-          "bn": "খুব",
-          "pronunciation": "khub",
-          "en": "very"
-        },
-        {
-          "bn": "দ্রুত",
-          "pronunciation": "druto",
-          "en": "quickly"
-        },
-        {
-          "bn": "হাঁটে",
-          "pronunciation": "hate",
-          "en": "walks"
-        }
-      ]
-    },
-    {
-      "bn": "অনুবাদ করুন: “দয়া করে ধীরে কথা বলুন।”",
-      "pronunciation": "onubad korun: doya kore dhire kotha bolun",
-      "en": "Translate: “Please speak slowly.”",
-      "context": "Translate the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "দয়া করে ধীরে কথা বলুন।",
-      "words": [
-        {
-          "bn": "অনুবাদ",
-          "pronunciation": "onubad",
-          "en": "translation"
-        },
-        {
-          "bn": "করুন",
-          "pronunciation": "korun",
-          "en": "please do"
-        },
-        {
-          "bn": "দয়া",
-          "pronunciation": "doya",
-          "en": "kindness / please"
-        },
-        {
-          "bn": "করে",
-          "pronunciation": "kore",
-          "en": "does"
-        },
-        {
-          "bn": "ধীরে",
-          "pronunciation": "dhire",
-          "en": "slowly"
-        },
-        {
-          "bn": "কথা",
-          "pronunciation": "kotha",
-          "en": "speech / words"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "please say"
-        }
-      ]
-    },
-    {
-      "bn": "অনুবাদ করুন: “আমি খুব ক্লান্ত।”",
-      "pronunciation": "onubad korun: ami khub klanto",
-      "en": "Translate: “I am very tired.”",
-      "context": "Translate the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "আমি খুব ক্লান্ত।",
-      "words": [
-        {
-          "bn": "অনুবাদ",
-          "pronunciation": "onubad",
-          "en": "translation"
-        },
-        {
-          "bn": "করুন",
-          "pronunciation": "korun",
-          "en": "please do"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "খুব",
-          "pronunciation": "khub",
-          "en": "very"
-        },
-        {
-          "bn": "ক্লান্ত",
-          "pronunciation": "klanto",
-          "en": "tired"
-        }
-      ]
-    },
-    {
-      "bn": "অনুবাদ করুন: “দয়া করে আবার বলুন।”",
-      "pronunciation": "onubad korun: doya kore abar bolun",
-      "en": "Translate: “Please say it again.”",
-      "context": "Translate the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "দয়া করে আবার বলুন।",
-      "words": [
-        {
-          "bn": "অনুবাদ",
-          "pronunciation": "onubad",
-          "en": "translation"
-        },
-        {
-          "bn": "করুন",
-          "pronunciation": "korun",
-          "en": "please do"
-        },
-        {
-          "bn": "দয়া",
-          "pronunciation": "doya",
-          "en": "kindness / please"
-        },
-        {
-          "bn": "করে",
-          "pronunciation": "kore",
-          "en": "does"
-        },
-        {
-          "bn": "আবার",
-          "pronunciation": "abar",
-          "en": "again"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "please say"
-        }
-      ]
-    },
-    {
-      "bn": "মনে রাখুন: “আমি এখন ব্যস্ত।”",
-      "pronunciation": "mone rakhun: ami ekhon byasto",
-      "en": "Remember: “I am busy now.”",
-      "context": "Remember the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "আমি এখন ব্যস্ত।",
-      "words": [
-        {
-          "bn": "মনে",
-          "pronunciation": "mone",
-          "en": "in mind"
-        },
-        {
-          "bn": "রাখুন",
-          "pronunciation": "rakhun",
-          "en": "remember"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "এখন",
-          "pronunciation": "ekhon",
-          "en": "now"
-        },
-        {
-          "bn": "ব্যস্ত",
-          "pronunciation": "byasto",
-          "en": "busy"
-        }
-      ]
-    },
-    {
-      "bn": "মনে রাখুন: “আজ আবহাওয়া সুন্দর।”",
-      "pronunciation": "mone rakhun: aj abohawa shundor",
-      "en": "Remember: “The weather is beautiful today.”",
-      "context": "Remember the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "আজ আবহাওয়া সুন্দর।",
-      "words": [
-        {
-          "bn": "মনে",
-          "pronunciation": "mone",
-          "en": "in mind"
-        },
-        {
-          "bn": "রাখুন",
-          "pronunciation": "rakhun",
-          "en": "remember"
-        },
-        {
-          "bn": "আজ",
-          "pronunciation": "aj",
-          "en": "today"
-        },
-        {
-          "bn": "আবহাওয়া",
-          "pronunciation": "abohawa",
-          "en": "weather"
-        },
-        {
-          "bn": "সুন্দর",
-          "pronunciation": "shundor",
-          "en": "beautiful"
-        }
-      ]
-    },
-    {
-      "bn": "মনে রাখুন: “আমি কাল ঢাকায় যাব।”",
-      "pronunciation": "mone rakhun: ami kal Dhakay jabo",
-      "en": "Remember: “I will go to Dhaka tomorrow.”",
-      "context": "Remember the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "আমি কাল ঢাকায় যাব।",
-      "words": [
-        {
-          "bn": "মনে",
-          "pronunciation": "mone",
-          "en": "in mind"
-        },
-        {
-          "bn": "রাখুন",
-          "pronunciation": "rakhun",
-          "en": "remember"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "কাল",
-          "pronunciation": "kal",
-          "en": "tomorrow / yesterday"
-        },
-        {
-          "bn": "ঢাকায়",
-          "pronunciation": "Dhakay",
-          "en": "in / to Dhaka"
-        },
-        {
-          "bn": "যাব",
-          "pronunciation": "jabo",
-          "en": "will go"
-        }
-      ]
-    },
-    {
-      "bn": "মনে রাখুন: “আমি এখানে থাকি।”",
-      "pronunciation": "mone rakhun: ami ekhane thaki",
-      "en": "Remember: “I live here.”",
-      "context": "Remember the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "আমি এখানে থাকি।",
-      "words": [
-        {
-          "bn": "মনে",
-          "pronunciation": "mone",
-          "en": "in mind"
-        },
-        {
-          "bn": "রাখুন",
-          "pronunciation": "rakhun",
-          "en": "remember"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "এখানে",
-          "pronunciation": "ekhane",
-          "en": "here"
-        },
-        {
-          "bn": "থাকি",
-          "pronunciation": "thaki",
-          "en": "live / stay"
-        }
-      ]
-    },
-    {
-      "bn": "মনে রাখুন: “আমার বন্ধু সেখানে থাকে।”",
-      "pronunciation": "mone rakhun: amar bondhu shekhane thake",
-      "en": "Remember: “My friend lives there.”",
-      "context": "Remember the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "আমার বন্ধু সেখানে থাকে।",
-      "words": [
-        {
-          "bn": "মনে",
-          "pronunciation": "mone",
-          "en": "in mind"
-        },
-        {
-          "bn": "রাখুন",
-          "pronunciation": "rakhun",
-          "en": "remember"
-        },
-        {
-          "bn": "আমার",
-          "pronunciation": "amar",
-          "en": "my"
-        },
-        {
-          "bn": "বন্ধু",
-          "pronunciation": "bondhu",
-          "en": "friend"
-        },
-        {
-          "bn": "সেখানে",
-          "pronunciation": "shekhane",
-          "en": "there"
-        },
-        {
-          "bn": "থাকে",
-          "pronunciation": "thake",
-          "en": "lives / stays"
-        }
-      ]
-    },
-    {
-      "bn": "মনে রাখুন: “সে সবসময় সময়মতো আসে।”",
-      "pronunciation": "mone rakhun: shey shobshomoy shomoymoto ashe",
-      "en": "Remember: “He or she always arrives on time.”",
-      "context": "Remember the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "সে সবসময় সময়মতো আসে।",
-      "words": [
-        {
-          "bn": "মনে",
-          "pronunciation": "mone",
-          "en": "in mind"
-        },
-        {
-          "bn": "রাখুন",
-          "pronunciation": "rakhun",
-          "en": "remember"
-        },
-        {
-          "bn": "সে",
-          "pronunciation": "shey",
-          "en": "he / she"
-        },
-        {
-          "bn": "সবসময়",
-          "pronunciation": "shobshomoy",
-          "en": "always"
-        },
-        {
-          "bn": "সময়মতো",
-          "pronunciation": "shomoymoto",
-          "en": "on time"
-        },
-        {
-          "bn": "আসে",
-          "pronunciation": "ashe",
-          "en": "comes"
-        }
-      ]
-    },
-    {
-      "bn": "মনে রাখুন: “আমি কখনো এখানে খেতে আসি।”",
-      "pronunciation": "mone rakhun: ami kokhono ekhane khete ashi",
-      "en": "Remember: “I sometimes come here to eat.”",
-      "context": "Remember the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "আমি কখনো এখানে খেতে আসি।",
-      "words": [
-        {
-          "bn": "মনে",
-          "pronunciation": "mone",
-          "en": "in mind"
-        },
-        {
-          "bn": "রাখুন",
-          "pronunciation": "rakhun",
-          "en": "remember"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "কখনো",
-          "pronunciation": "kokhono",
-          "en": "sometimes / ever"
-        },
-        {
-          "bn": "এখানে",
-          "pronunciation": "ekhane",
-          "en": "here"
-        },
-        {
-          "bn": "খেতে",
-          "pronunciation": "khete",
-          "en": "to eat"
-        },
-        {
-          "bn": "আসি",
-          "pronunciation": "ashi",
-          "en": "come"
-        }
-      ]
-    },
-    {
-      "bn": "মনে রাখুন: “আমি কখনোই মিথ্যা বলি না।”",
-      "pronunciation": "mone rakhun: ami kokhonoi mithya boli na",
-      "en": "Remember: “I never tell lies.”",
-      "context": "Remember the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "আমি কখনোই মিথ্যা বলি না।",
-      "words": [
-        {
-          "bn": "মনে",
-          "pronunciation": "mone",
-          "en": "in mind"
-        },
-        {
-          "bn": "রাখুন",
-          "pronunciation": "rakhun",
-          "en": "remember"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "কখনোই",
-          "pronunciation": "kokhonoi",
-          "en": "ever"
-        },
-        {
-          "bn": "মিথ্যা",
-          "pronunciation": "mithya",
-          "en": "lie / falsehood"
-        },
-        {
-          "bn": "বলি",
-          "pronunciation": "boli",
-          "en": "say"
-        },
-        {
-          "bn": "না",
-          "pronunciation": "na",
-          "en": "not"
-        }
-      ]
-    },
-    {
-      "bn": "মনে রাখুন: “সে খুব দ্রুত হাঁটে।”",
-      "pronunciation": "mone rakhun: shey khub druto hate",
-      "en": "Remember: “He or she walks very quickly.”",
-      "context": "Remember the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "সে খুব দ্রুত হাঁটে।",
-      "words": [
-        {
-          "bn": "মনে",
-          "pronunciation": "mone",
-          "en": "in mind"
-        },
-        {
-          "bn": "রাখুন",
-          "pronunciation": "rakhun",
-          "en": "remember"
-        },
-        {
-          "bn": "সে",
-          "pronunciation": "shey",
-          "en": "he / she"
-        },
-        {
-          "bn": "খুব",
-          "pronunciation": "khub",
-          "en": "very"
-        },
-        {
-          "bn": "দ্রুত",
-          "pronunciation": "druto",
-          "en": "quickly"
-        },
-        {
-          "bn": "হাঁটে",
-          "pronunciation": "hate",
-          "en": "walks"
-        }
-      ]
-    },
-    {
-      "bn": "মনে রাখুন: “দয়া করে ধীরে কথা বলুন।”",
-      "pronunciation": "mone rakhun: doya kore dhire kotha bolun",
-      "en": "Remember: “Please speak slowly.”",
-      "context": "Remember the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "দয়া করে ধীরে কথা বলুন।",
-      "words": [
-        {
-          "bn": "মনে",
-          "pronunciation": "mone",
-          "en": "in mind"
-        },
-        {
-          "bn": "রাখুন",
-          "pronunciation": "rakhun",
-          "en": "remember"
-        },
-        {
-          "bn": "দয়া",
-          "pronunciation": "doya",
-          "en": "kindness / please"
-        },
-        {
-          "bn": "করে",
-          "pronunciation": "kore",
-          "en": "does"
-        },
-        {
-          "bn": "ধীরে",
-          "pronunciation": "dhire",
-          "en": "slowly"
-        },
-        {
-          "bn": "কথা",
-          "pronunciation": "kotha",
-          "en": "speech / words"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "please say"
-        }
-      ]
-    },
-    {
-      "bn": "মনে রাখুন: “আমি খুব ক্লান্ত।”",
-      "pronunciation": "mone rakhun: ami khub klanto",
-      "en": "Remember: “I am very tired.”",
-      "context": "Remember the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "আমি খুব ক্লান্ত।",
-      "words": [
-        {
-          "bn": "মনে",
-          "pronunciation": "mone",
-          "en": "in mind"
-        },
-        {
-          "bn": "রাখুন",
-          "pronunciation": "rakhun",
-          "en": "remember"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "খুব",
-          "pronunciation": "khub",
-          "en": "very"
-        },
-        {
-          "bn": "ক্লান্ত",
-          "pronunciation": "klanto",
-          "en": "tired"
-        }
-      ]
-    },
-    {
-      "bn": "মনে রাখুন: “দয়া করে আবার বলুন।”",
-      "pronunciation": "mone rakhun: doya kore abar bolun",
-      "en": "Remember: “Please say it again.”",
-      "context": "Remember the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "দয়া করে আবার বলুন।",
-      "words": [
-        {
-          "bn": "মনে",
-          "pronunciation": "mone",
-          "en": "in mind"
-        },
-        {
-          "bn": "রাখুন",
-          "pronunciation": "rakhun",
-          "en": "remember"
-        },
-        {
-          "bn": "দয়া",
-          "pronunciation": "doya",
-          "en": "kindness / please"
-        },
-        {
-          "bn": "করে",
-          "pronunciation": "kore",
-          "en": "does"
-        },
-        {
-          "bn": "আবার",
-          "pronunciation": "abar",
-          "en": "again"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "please say"
-        }
-      ]
-    },
-    {
-      "bn": "আবার বলুন: “আমি এখন ব্যস্ত।”",
-      "pronunciation": "abar bolun: ami ekhon byasto",
-      "en": "Say again: “I am busy now.”",
-      "context": "Say again the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "আমি এখন ব্যস্ত।",
-      "words": [
-        {
-          "bn": "আবার",
-          "pronunciation": "abar",
-          "en": "again"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "এখন",
-          "pronunciation": "ekhon",
-          "en": "now"
-        },
-        {
-          "bn": "ব্যস্ত",
-          "pronunciation": "byasto",
-          "en": "busy"
-        }
-      ]
-    },
-    {
-      "bn": "আবার বলুন: “আজ আবহাওয়া সুন্দর।”",
-      "pronunciation": "abar bolun: aj abohawa shundor",
-      "en": "Say again: “The weather is beautiful today.”",
-      "context": "Say again the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "আজ আবহাওয়া সুন্দর।",
-      "words": [
-        {
-          "bn": "আবার",
-          "pronunciation": "abar",
-          "en": "again"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "আজ",
-          "pronunciation": "aj",
-          "en": "today"
-        },
-        {
-          "bn": "আবহাওয়া",
-          "pronunciation": "abohawa",
-          "en": "weather"
-        },
-        {
-          "bn": "সুন্দর",
-          "pronunciation": "shundor",
-          "en": "beautiful"
-        }
-      ]
-    },
-    {
-      "bn": "আবার বলুন: “আমি কাল ঢাকায় যাব।”",
-      "pronunciation": "abar bolun: ami kal Dhakay jabo",
-      "en": "Say again: “I will go to Dhaka tomorrow.”",
-      "context": "Say again the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "আমি কাল ঢাকায় যাব।",
-      "words": [
-        {
-          "bn": "আবার",
-          "pronunciation": "abar",
-          "en": "again"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "কাল",
-          "pronunciation": "kal",
-          "en": "tomorrow / yesterday"
-        },
-        {
-          "bn": "ঢাকায়",
-          "pronunciation": "Dhakay",
-          "en": "in / to Dhaka"
-        },
-        {
-          "bn": "যাব",
-          "pronunciation": "jabo",
-          "en": "will go"
-        }
-      ]
-    },
-    {
-      "bn": "আবার বলুন: “আমি এখানে থাকি।”",
-      "pronunciation": "abar bolun: ami ekhane thaki",
-      "en": "Say again: “I live here.”",
-      "context": "Say again the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "আমি এখানে থাকি।",
-      "words": [
-        {
-          "bn": "আবার",
-          "pronunciation": "abar",
-          "en": "again"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "এখানে",
-          "pronunciation": "ekhane",
-          "en": "here"
-        },
-        {
-          "bn": "থাকি",
-          "pronunciation": "thaki",
-          "en": "live / stay"
-        }
-      ]
-    },
-    {
-      "bn": "আবার বলুন: “আমার বন্ধু সেখানে থাকে।”",
-      "pronunciation": "abar bolun: amar bondhu shekhane thake",
-      "en": "Say again: “My friend lives there.”",
-      "context": "Say again the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "আমার বন্ধু সেখানে থাকে।",
-      "words": [
-        {
-          "bn": "আবার",
-          "pronunciation": "abar",
-          "en": "again"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "আমার",
-          "pronunciation": "amar",
-          "en": "my"
-        },
-        {
-          "bn": "বন্ধু",
-          "pronunciation": "bondhu",
-          "en": "friend"
-        },
-        {
-          "bn": "সেখানে",
-          "pronunciation": "shekhane",
-          "en": "there"
-        },
-        {
-          "bn": "থাকে",
-          "pronunciation": "thake",
-          "en": "lives / stays"
-        }
-      ]
-    },
-    {
-      "bn": "আবার বলুন: “সে সবসময় সময়মতো আসে।”",
-      "pronunciation": "abar bolun: shey shobshomoy shomoymoto ashe",
-      "en": "Say again: “He or she always arrives on time.”",
-      "context": "Say again the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "সে সবসময় সময়মতো আসে।",
-      "words": [
-        {
-          "bn": "আবার",
-          "pronunciation": "abar",
-          "en": "again"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "সে",
-          "pronunciation": "shey",
-          "en": "he / she"
-        },
-        {
-          "bn": "সবসময়",
-          "pronunciation": "shobshomoy",
-          "en": "always"
-        },
-        {
-          "bn": "সময়মতো",
-          "pronunciation": "shomoymoto",
-          "en": "on time"
-        },
-        {
-          "bn": "আসে",
-          "pronunciation": "ashe",
-          "en": "comes"
-        }
-      ]
-    },
-    {
-      "bn": "আবার বলুন: “আমি কখনো এখানে খেতে আসি।”",
-      "pronunciation": "abar bolun: ami kokhono ekhane khete ashi",
-      "en": "Say again: “I sometimes come here to eat.”",
-      "context": "Say again the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "আমি কখনো এখানে খেতে আসি।",
-      "words": [
-        {
-          "bn": "আবার",
-          "pronunciation": "abar",
-          "en": "again"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "কখনো",
-          "pronunciation": "kokhono",
-          "en": "sometimes / ever"
-        },
-        {
-          "bn": "এখানে",
-          "pronunciation": "ekhane",
-          "en": "here"
-        },
-        {
-          "bn": "খেতে",
-          "pronunciation": "khete",
-          "en": "to eat"
-        },
-        {
-          "bn": "আসি",
-          "pronunciation": "ashi",
-          "en": "come"
-        }
-      ]
-    },
-    {
-      "bn": "আবার বলুন: “আমি কখনোই মিথ্যা বলি না।”",
-      "pronunciation": "abar bolun: ami kokhonoi mithya boli na",
-      "en": "Say again: “I never tell lies.”",
-      "context": "Say again the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "আমি কখনোই মিথ্যা বলি না।",
-      "words": [
-        {
-          "bn": "আবার",
-          "pronunciation": "abar",
-          "en": "again"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "কখনোই",
-          "pronunciation": "kokhonoi",
-          "en": "ever"
-        },
-        {
-          "bn": "মিথ্যা",
-          "pronunciation": "mithya",
-          "en": "lie / falsehood"
-        },
-        {
-          "bn": "বলি",
-          "pronunciation": "boli",
-          "en": "say"
-        },
-        {
-          "bn": "না",
-          "pronunciation": "na",
-          "en": "not"
-        }
-      ]
-    },
-    {
-      "bn": "আবার বলুন: “সে খুব দ্রুত হাঁটে।”",
-      "pronunciation": "abar bolun: shey khub druto hate",
-      "en": "Say again: “He or she walks very quickly.”",
-      "context": "Say again the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "সে খুব দ্রুত হাঁটে।",
-      "words": [
-        {
-          "bn": "আবার",
-          "pronunciation": "abar",
-          "en": "again"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "সে",
-          "pronunciation": "shey",
-          "en": "he / she"
-        },
-        {
-          "bn": "খুব",
-          "pronunciation": "khub",
-          "en": "very"
-        },
-        {
-          "bn": "দ্রুত",
-          "pronunciation": "druto",
-          "en": "quickly"
-        },
-        {
-          "bn": "হাঁটে",
-          "pronunciation": "hate",
-          "en": "walks"
-        }
-      ]
-    },
-    {
-      "bn": "আবার বলুন: “দয়া করে ধীরে কথা বলুন।”",
-      "pronunciation": "abar bolun: doya kore dhire kotha bolun",
-      "en": "Say again: “Please speak slowly.”",
-      "context": "Say again the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "দয়া করে ধীরে কথা বলুন।",
-      "words": [
-        {
-          "bn": "আবার",
-          "pronunciation": "abar",
-          "en": "again"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "দয়া",
-          "pronunciation": "doya",
-          "en": "kindness / please"
-        },
-        {
-          "bn": "করে",
-          "pronunciation": "kore",
-          "en": "does"
-        },
-        {
-          "bn": "ধীরে",
-          "pronunciation": "dhire",
-          "en": "slowly"
-        },
-        {
-          "bn": "কথা",
-          "pronunciation": "kotha",
-          "en": "speech / words"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "please say"
-        }
-      ]
-    },
-    {
-      "bn": "আবার বলুন: “আমি খুব ক্লান্ত।”",
-      "pronunciation": "abar bolun: ami khub klanto",
-      "en": "Say again: “I am very tired.”",
-      "context": "Say again the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "আমি খুব ক্লান্ত।",
-      "words": [
-        {
-          "bn": "আবার",
-          "pronunciation": "abar",
-          "en": "again"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "খুব",
-          "pronunciation": "khub",
-          "en": "very"
-        },
-        {
-          "bn": "ক্লান্ত",
-          "pronunciation": "klanto",
-          "en": "tired"
-        }
-      ]
-    },
-    {
-      "bn": "আবার বলুন: “দয়া করে আবার বলুন।”",
-      "pronunciation": "abar bolun: doya kore abar bolun",
-      "en": "Say again: “Please say it again.”",
-      "context": "Say again the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "দয়া করে আবার বলুন।",
-      "words": [
-        {
-          "bn": "আবার",
-          "pronunciation": "abar",
-          "en": "again"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "দয়া",
-          "pronunciation": "doya",
-          "en": "kindness / please"
-        },
-        {
-          "bn": "করে",
-          "pronunciation": "kore",
-          "en": "does"
-        },
-        {
-          "bn": "আবার",
-          "pronunciation": "abar",
-          "en": "again"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "please say"
-        }
-      ]
-    },
-    {
-      "bn": "ধীরে বলুন: “আমি এখন ব্যস্ত।”",
-      "pronunciation": "dhire bolun: ami ekhon byasto",
-      "en": "Say slowly: “I am busy now.”",
-      "context": "Say slowly the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "আমি এখন ব্যস্ত।",
-      "words": [
-        {
-          "bn": "ধীরে",
-          "pronunciation": "dhire",
-          "en": "slowly"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "এখন",
-          "pronunciation": "ekhon",
-          "en": "now"
-        },
-        {
-          "bn": "ব্যস্ত",
-          "pronunciation": "byasto",
-          "en": "busy"
-        }
-      ]
-    },
-    {
-      "bn": "ধীরে বলুন: “আজ আবহাওয়া সুন্দর।”",
-      "pronunciation": "dhire bolun: aj abohawa shundor",
-      "en": "Say slowly: “The weather is beautiful today.”",
-      "context": "Say slowly the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "আজ আবহাওয়া সুন্দর।",
-      "words": [
-        {
-          "bn": "ধীরে",
-          "pronunciation": "dhire",
-          "en": "slowly"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "আজ",
-          "pronunciation": "aj",
-          "en": "today"
-        },
-        {
-          "bn": "আবহাওয়া",
-          "pronunciation": "abohawa",
-          "en": "weather"
-        },
-        {
-          "bn": "সুন্দর",
-          "pronunciation": "shundor",
-          "en": "beautiful"
-        }
-      ]
-    },
-    {
-      "bn": "ধীরে বলুন: “আমি কাল ঢাকায় যাব।”",
-      "pronunciation": "dhire bolun: ami kal Dhakay jabo",
-      "en": "Say slowly: “I will go to Dhaka tomorrow.”",
-      "context": "Say slowly the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "আমি কাল ঢাকায় যাব।",
-      "words": [
-        {
-          "bn": "ধীরে",
-          "pronunciation": "dhire",
-          "en": "slowly"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "কাল",
-          "pronunciation": "kal",
-          "en": "tomorrow / yesterday"
-        },
-        {
-          "bn": "ঢাকায়",
-          "pronunciation": "Dhakay",
-          "en": "in / to Dhaka"
-        },
-        {
-          "bn": "যাব",
-          "pronunciation": "jabo",
-          "en": "will go"
-        }
-      ]
-    },
-    {
-      "bn": "ধীরে বলুন: “আমি এখানে থাকি।”",
-      "pronunciation": "dhire bolun: ami ekhane thaki",
-      "en": "Say slowly: “I live here.”",
-      "context": "Say slowly the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "আমি এখানে থাকি।",
-      "words": [
-        {
-          "bn": "ধীরে",
-          "pronunciation": "dhire",
-          "en": "slowly"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "এখানে",
-          "pronunciation": "ekhane",
-          "en": "here"
-        },
-        {
-          "bn": "থাকি",
-          "pronunciation": "thaki",
-          "en": "live / stay"
-        }
-      ]
-    },
-    {
-      "bn": "ধীরে বলুন: “আমার বন্ধু সেখানে থাকে।”",
-      "pronunciation": "dhire bolun: amar bondhu shekhane thake",
-      "en": "Say slowly: “My friend lives there.”",
-      "context": "Say slowly the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "আমার বন্ধু সেখানে থাকে।",
-      "words": [
-        {
-          "bn": "ধীরে",
-          "pronunciation": "dhire",
-          "en": "slowly"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "আমার",
-          "pronunciation": "amar",
-          "en": "my"
-        },
-        {
-          "bn": "বন্ধু",
-          "pronunciation": "bondhu",
-          "en": "friend"
-        },
-        {
-          "bn": "সেখানে",
-          "pronunciation": "shekhane",
-          "en": "there"
-        },
-        {
-          "bn": "থাকে",
-          "pronunciation": "thake",
-          "en": "lives / stays"
-        }
-      ]
-    },
-    {
-      "bn": "ধীরে বলুন: “সে সবসময় সময়মতো আসে।”",
-      "pronunciation": "dhire bolun: shey shobshomoy shomoymoto ashe",
-      "en": "Say slowly: “He or she always arrives on time.”",
-      "context": "Say slowly the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "সে সবসময় সময়মতো আসে।",
-      "words": [
-        {
-          "bn": "ধীরে",
-          "pronunciation": "dhire",
-          "en": "slowly"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "সে",
-          "pronunciation": "shey",
-          "en": "he / she"
-        },
-        {
-          "bn": "সবসময়",
-          "pronunciation": "shobshomoy",
-          "en": "always"
-        },
-        {
-          "bn": "সময়মতো",
-          "pronunciation": "shomoymoto",
-          "en": "on time"
-        },
-        {
-          "bn": "আসে",
-          "pronunciation": "ashe",
-          "en": "comes"
-        }
-      ]
-    },
-    {
-      "bn": "ধীরে বলুন: “আমি কখনো এখানে খেতে আসি।”",
-      "pronunciation": "dhire bolun: ami kokhono ekhane khete ashi",
-      "en": "Say slowly: “I sometimes come here to eat.”",
-      "context": "Say slowly the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "আমি কখনো এখানে খেতে আসি।",
-      "words": [
-        {
-          "bn": "ধীরে",
-          "pronunciation": "dhire",
-          "en": "slowly"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "কখনো",
-          "pronunciation": "kokhono",
-          "en": "sometimes / ever"
-        },
-        {
-          "bn": "এখানে",
-          "pronunciation": "ekhane",
-          "en": "here"
-        },
-        {
-          "bn": "খেতে",
-          "pronunciation": "khete",
-          "en": "to eat"
-        },
-        {
-          "bn": "আসি",
-          "pronunciation": "ashi",
-          "en": "come"
-        }
-      ]
-    },
-    {
-      "bn": "ধীরে বলুন: “আমি কখনোই মিথ্যা বলি না।”",
-      "pronunciation": "dhire bolun: ami kokhonoi mithya boli na",
-      "en": "Say slowly: “I never tell lies.”",
-      "context": "Say slowly the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "আমি কখনোই মিথ্যা বলি না।",
-      "words": [
-        {
-          "bn": "ধীরে",
-          "pronunciation": "dhire",
-          "en": "slowly"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "কখনোই",
-          "pronunciation": "kokhonoi",
-          "en": "ever"
-        },
-        {
-          "bn": "মিথ্যা",
-          "pronunciation": "mithya",
-          "en": "lie / falsehood"
-        },
-        {
-          "bn": "বলি",
-          "pronunciation": "boli",
-          "en": "say"
-        },
-        {
-          "bn": "না",
-          "pronunciation": "na",
-          "en": "not"
-        }
-      ]
-    },
-    {
-      "bn": "ধীরে বলুন: “সে খুব দ্রুত হাঁটে।”",
-      "pronunciation": "dhire bolun: shey khub druto hate",
-      "en": "Say slowly: “He or she walks very quickly.”",
-      "context": "Say slowly the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "সে খুব দ্রুত হাঁটে।",
-      "words": [
-        {
-          "bn": "ধীরে",
-          "pronunciation": "dhire",
-          "en": "slowly"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "সে",
-          "pronunciation": "shey",
-          "en": "he / she"
-        },
-        {
-          "bn": "খুব",
-          "pronunciation": "khub",
-          "en": "very"
-        },
-        {
-          "bn": "দ্রুত",
-          "pronunciation": "druto",
-          "en": "quickly"
-        },
-        {
-          "bn": "হাঁটে",
-          "pronunciation": "hate",
-          "en": "walks"
-        }
-      ]
-    },
-    {
-      "bn": "ধীরে বলুন: “দয়া করে ধীরে কথা বলুন।”",
-      "pronunciation": "dhire bolun: doya kore dhire kotha bolun",
-      "en": "Say slowly: “Please speak slowly.”",
-      "context": "Say slowly the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "দয়া করে ধীরে কথা বলুন।",
-      "words": [
-        {
-          "bn": "ধীরে",
-          "pronunciation": "dhire",
-          "en": "slowly"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "দয়া",
-          "pronunciation": "doya",
-          "en": "kindness / please"
-        },
-        {
-          "bn": "করে",
-          "pronunciation": "kore",
-          "en": "does"
-        },
-        {
-          "bn": "ধীরে",
-          "pronunciation": "dhire",
-          "en": "slowly"
-        },
-        {
-          "bn": "কথা",
-          "pronunciation": "kotha",
-          "en": "speech / words"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "please say"
-        }
-      ]
-    },
-    {
-      "bn": "ধীরে বলুন: “আমি খুব ক্লান্ত।”",
-      "pronunciation": "dhire bolun: ami khub klanto",
-      "en": "Say slowly: “I am very tired.”",
-      "context": "Say slowly the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "আমি খুব ক্লান্ত।",
-      "words": [
-        {
-          "bn": "ধীরে",
-          "pronunciation": "dhire",
-          "en": "slowly"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "খুব",
-          "pronunciation": "khub",
-          "en": "very"
-        },
-        {
-          "bn": "ক্লান্ত",
-          "pronunciation": "klanto",
-          "en": "tired"
-        }
-      ]
-    },
-    {
-      "bn": "ধীরে বলুন: “দয়া করে আবার বলুন।”",
-      "pronunciation": "dhire bolun: doya kore abar bolun",
-      "en": "Say slowly: “Please say it again.”",
-      "context": "Say slowly the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "দয়া করে আবার বলুন।",
-      "words": [
-        {
-          "bn": "ধীরে",
-          "pronunciation": "dhire",
-          "en": "slowly"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "দয়া",
-          "pronunciation": "doya",
-          "en": "kindness / please"
-        },
-        {
-          "bn": "করে",
-          "pronunciation": "kore",
-          "en": "does"
-        },
-        {
-          "bn": "আবার",
-          "pronunciation": "abar",
-          "en": "again"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "please say"
-        }
-      ]
-    },
-    {
-      "bn": "মন দিয়ে পড়ুন: “আমি এখন ব্যস্ত।”",
-      "pronunciation": "mon diye porun: ami ekhon byasto",
-      "en": "Read carefully: “I am busy now.”",
-      "context": "Read carefully the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "আমি এখন ব্যস্ত।",
-      "words": [
-        {
-          "bn": "মন",
-          "pronunciation": "mon",
-          "en": "attention"
-        },
-        {
-          "bn": "দিয়ে",
-          "pronunciation": "diye",
-          "en": "with"
-        },
-        {
-          "bn": "পড়ুন",
-          "pronunciation": "porun",
-          "en": "read"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "এখন",
-          "pronunciation": "ekhon",
-          "en": "now"
-        },
-        {
-          "bn": "ব্যস্ত",
-          "pronunciation": "byasto",
-          "en": "busy"
-        }
-      ]
-    },
-    {
-      "bn": "মন দিয়ে পড়ুন: “আজ আবহাওয়া সুন্দর।”",
-      "pronunciation": "mon diye porun: aj abohawa shundor",
-      "en": "Read carefully: “The weather is beautiful today.”",
-      "context": "Read carefully the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "আজ আবহাওয়া সুন্দর।",
-      "words": [
-        {
-          "bn": "মন",
-          "pronunciation": "mon",
-          "en": "attention"
-        },
-        {
-          "bn": "দিয়ে",
-          "pronunciation": "diye",
-          "en": "with"
-        },
-        {
-          "bn": "পড়ুন",
-          "pronunciation": "porun",
-          "en": "read"
-        },
-        {
-          "bn": "আজ",
-          "pronunciation": "aj",
-          "en": "today"
-        },
-        {
-          "bn": "আবহাওয়া",
-          "pronunciation": "abohawa",
-          "en": "weather"
-        },
-        {
-          "bn": "সুন্দর",
-          "pronunciation": "shundor",
-          "en": "beautiful"
-        }
-      ]
-    },
-    {
-      "bn": "মন দিয়ে পড়ুন: “আমি কাল ঢাকায় যাব।”",
-      "pronunciation": "mon diye porun: ami kal Dhakay jabo",
-      "en": "Read carefully: “I will go to Dhaka tomorrow.”",
-      "context": "Read carefully the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "আমি কাল ঢাকায় যাব।",
-      "words": [
-        {
-          "bn": "মন",
-          "pronunciation": "mon",
-          "en": "attention"
-        },
-        {
-          "bn": "দিয়ে",
-          "pronunciation": "diye",
-          "en": "with"
-        },
-        {
-          "bn": "পড়ুন",
-          "pronunciation": "porun",
-          "en": "read"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "কাল",
-          "pronunciation": "kal",
-          "en": "tomorrow / yesterday"
-        },
-        {
-          "bn": "ঢাকায়",
-          "pronunciation": "Dhakay",
-          "en": "in / to Dhaka"
-        },
-        {
-          "bn": "যাব",
-          "pronunciation": "jabo",
-          "en": "will go"
-        }
-      ]
-    },
-    {
-      "bn": "মন দিয়ে পড়ুন: “আমি এখানে থাকি।”",
-      "pronunciation": "mon diye porun: ami ekhane thaki",
-      "en": "Read carefully: “I live here.”",
-      "context": "Read carefully the adverbs example aloud",
-      "category": "adverbs",
-      "exercise": true,
-      "sourcePhrase": "আমি এখানে থাকি।",
-      "words": [
-        {
-          "bn": "মন",
-          "pronunciation": "mon",
-          "en": "attention"
-        },
-        {
-          "bn": "দিয়ে",
-          "pronunciation": "diye",
-          "en": "with"
-        },
-        {
-          "bn": "পড়ুন",
-          "pronunciation": "porun",
-          "en": "read"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "এখানে",
-          "pronunciation": "ekhane",
-          "en": "here"
-        },
-        {
-          "bn": "থাকি",
-          "pronunciation": "thaki",
-          "en": "live / stay"
-        }
-      ]
+      "bn": "আমার বন্ধুরা খুব ভালো।",
+      "pronunciation": "Amar bondhura khub bhalo.",
+      "en": "My friends are very good.",
+      "context": "Sharing personal information.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "সে খুব সুন্দর।",
+      "pronunciation": "She khoob shundor.",
+      "en": "She is very beautiful.",
+      "context": "Complimenting a female.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "মিথ্যা কথা বোলো না।",
+      "pronunciation": "Mithya kotha bolo na.",
+      "en": "Do not tell lies.",
+      "context": "Advising honesty.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "আমার বন্ধু আমাকে সাহায্য করে।",
+      "pronunciation": "Amar bondhu amake sahajjo kore.",
+      "en": "My friend helps me.",
+      "context": "Talking about help from a friend.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "আজ সময় খুবই কম।",
+      "pronunciation": "Aj shomoy khubi kom.",
+      "en": "Today there is very little time.",
+      "context": "Talking about limited time.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "এ আমার বন্ধু!",
+      "pronunciation": "E' amar bondhu",
+      "en": "This is my friend!",
+      "context": "Introducing a friend.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "সবাই একসাথে নাচছে।",
+      "pronunciation": "Shobai ekshathe nachchhe.",
+      "en": "Everyone is dancing together.",
+      "context": "Describing a group activity.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "সবাই একসাথে বসে খেলছে।",
+      "pronunciation": "Shobai ekshathe boshe khelchhe.",
+      "en": "Everyone is sitting and playing together.",
+      "context": "Describing a group activity.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "আমার মতো কোনো বন্ধু নেই।",
+      "pronunciation": "Amar moto kono bondhu nei.",
+      "en": "There is no friend like me.",
+      "context": "Personal statement.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "আপনি আমার বন্ধু।",
+      "pronunciation": "Aapni amar bondhu.",
+      "en": "You are my friend.",
+      "context": "Stating friendship status.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "সব কিছু ঠিক আছে",
+      "pronunciation": "Shob kichu thik ache",
+      "en": "Everything is fine.",
+      "context": "Reassurance.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "বসে কথা বলুন",
+      "pronunciation": "Boshe kotha bolun",
+      "en": "Sit down and talk.",
+      "context": "Inviting a seated conversation.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "আজ অনেক কাজ আছে",
+      "pronunciation": "Aaj onek kaj ache",
+      "en": "There’s a lot of work today.",
+      "context": "Stating workload.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "এই কাজটা খুব তাড়াতাড়ি করো।",
+      "pronunciation": "Ei kaj ta khub taratari koro.",
+      "en": "Do this work very quickly.",
+      "context": "Giving an urgent instruction.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "সবাই বসুন।",
+      "pronunciation": "Shobai boshun.",
+      "en": "Everyone sit down.",
+      "context": "Instruction for a group.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "সে এই কাছে থাকে।",
+      "pronunciation": "Shey ei kachhe thake.",
+      "en": "He lives nearby.",
+      "context": "Giving location information.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "প্রত্যেক দিন খেলা ভালো লাগে।",
+      "pronunciation": "Protyek din khela bhalo lage.",
+      "en": "Playing every day feels good.",
+      "context": "Sharing a habit's benefit.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "নদীটা খুব সুন্দর।",
+      "pronunciation": "Nodi ta khub shundor.",
+      "en": "The river is very beautiful.",
+      "context": "Description of scenery.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "মা বাড়িতে আসেন।",
+      "pronunciation": "Ma bari te ashen.",
+      "en": "Mother comes home.",
+      "context": "Describing arrival.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "আজ দিন খুবই ভালো।",
+      "pronunciation": "Aj din khubi bhalo.",
+      "en": "Today is very good.",
+      "context": "Describing the day positively.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "আমার ভয় করে না।",
+      "pronunciation": "Amar bhoy kore naa.",
+      "en": "I am not afraid.",
+      "context": "Expressing lack of fear.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "আজ একটি সুন্দর দিন।",
+      "pronunciation": "Aj ekti sundor din.",
+      "en": "Today is a beautiful day.",
+      "context": "Describing the day.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "গোলাপ ফুল খুব সুন্দর।",
+      "pronunciation": "Golap ful khub sundor.",
+      "en": "The rose is very beautiful.",
+      "context": "Describing beauty.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "আজ দিন খুব গরম।",
+      "pronunciation": "Aj din khub gorom.",
+      "en": "Today is very hot.",
+      "context": "Talking about the weather.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "পৃথিবী খুবই সুন্দর।",
+      "pronunciation": "Prithibi khubi sundor.",
+      "en": "The world is very beautiful.",
+      "context": "Expressing admiration for the world.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "সেখানে যাও।",
+      "pronunciation": "Shekhane jao.",
+      "en": "Go there.",
+      "context": "Giving a directional instruction.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "সব ঠিক আছে।",
+      "pronunciation": "Shob theek ache.",
+      "en": "Everything is alright.",
+      "context": "Reassuring or confirming well-being.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "কোথায় থাকেন?",
+      "pronunciation": "Kothay thaken?",
+      "en": "Where do you live?",
+      "context": "Asking about residence formally.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "আজ অনেক গরম",
+      "pronunciation": "Aaj onek gorom",
+      "en": "It’s very hot today",
+      "context": "Commenting on the weather.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "আজ অনেক ঠান্ডা",
+      "pronunciation": "Aaj onek thanda",
+      "en": "It’s very cold today",
+      "context": "Commenting on the weather.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "আমি চিন্তা করছি না",
+      "pronunciation": "Ami chinta korchi na",
+      "en": "I am not worried",
+      "context": "Expressing lack of concern.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "আমি ভাবছি না",
+      "pronunciation": "Ami bhabchi na",
+      "en": "I am not thinking.",
+      "context": "Stating mental state.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "আমার সাথে আসবেন না!",
+      "pronunciation": "Amar shathe ashben na!",
+      "en": "Don’t come with me!",
+      "context": "Forbidding someone from following.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "আজ আমি ভালো আছি!",
+      "pronunciation": "Aaj ami bhalo achhi!",
+      "en": "Today I am good!",
+      "context": "Stating current mood/health.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "আমাদের সাথী থাকো",
+      "pronunciation": "Amader sathi thako",
+      "en": "Stay with us",
+      "context": "Requesting company.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "আমি আপনাকে ভুলবো না",
+      "pronunciation": "Ami aapnake bhulbo na",
+      "en": "I will not forget you",
+      "context": "A promise of remembrance.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "আমি তোমার বন্ধু হতে চাই!",
+      "pronunciation": "Ami tomar bondhu hote chai!",
+      "en": "I want to be your friend!",
+      "context": "Expressing desire for friendship.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "সময় চলে যায়",
+      "pronunciation": "Samoy chole jae",
+      "en": "Time flies away",
+      "context": "Comment on the passage of time.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "সে স্কুলে যায় না।",
+      "pronunciation": "Shey school e jaay na.",
+      "en": "He doesn't go to school.",
+      "context": "Stating a fact about someone.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "উনি খুব সুন্দর।",
+      "pronunciation": "Uni khub shundor.",
+      "en": "He is very handsome.",
+      "context": "Complimenting someone.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "আমি আপনার সাথে কথা বলতে চাই।",
+      "pronunciation": "Ami Aapnar sathe kotha bolte chai.",
+      "en": "I want to talk to you.",
+      "context": "Requesting a conversation.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "আমি যাব।",
+      "pronunciation": "Ami jabo.",
+      "en": "I will go.",
+      "context": "Stating intent to leave.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "আমার পেট খুব ব্যথা করছে।",
+      "pronunciation": "Amar pet khub byatha korchhe.",
+      "en": "My stomach is hurting very much.",
+      "context": "Expressing physical pain.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "আমার সঙ্গে কেউ আসেনি।",
+      "pronunciation": "Amar shonge keu aseni.",
+      "en": "No one came with me.",
+      "context": "Clarifying arrival status.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "আমার বাড়ির পাশে একটা নদী আছে।",
+      "pronunciation": "Amar barir pashe ekta nodi ache.",
+      "en": "There is a river near my house.",
+      "context": "Location information.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "এই বাড়িতে কে থাকে?",
+      "pronunciation": "Ei bari te ke thake?",
+      "en": "Who lives in this house?",
+      "context": "Curiosity about neighbors.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "আমি গাড়ি চালাতে পারি না।",
+      "pronunciation": "Ami gaari chalate pari na.",
+      "en": "I cannot drive a car.",
+      "context": "Talking about ability.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "আপনার জামা সুন্দর।",
+      "pronunciation": "Apnar jaama sundor.",
+      "en": "Your dress is beautiful.",
+      "context": "Giving a compliment.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "আমার মা খুব ভালো মানুষ।",
+      "pronunciation": "Amar Maa khub bhalo manush.",
+      "en": "My mother is a very good person.",
+      "context": "Describing a family member.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "সকালবেলা খুবই শান্ত।",
+      "pronunciation": "Shokal-bela khubi shanto.",
+      "en": "Morning time is very peaceful.",
+      "context": "Describing the calm of morning.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "সুস্থ থাকুন।",
+      "pronunciation": "Shustho thakun.",
+      "en": "Stay healthy.",
+      "context": "Wishing good health politely.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "সুন্দরী মেয়ে নাচছে।",
+      "pronunciation": "Sundori meye nachchhe.",
+      "en": "The beautiful girl is dancing.",
+      "context": "Describing an ongoing action.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "আমি উত্তর দিকে যাবো।",
+      "pronunciation": "Ami uttor dike jabo.",
+      "en": "I will go in the north direction.",
+      "context": "Talking about direction.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "আমি বুঝতে পারছি না",
+      "pronunciation": "Ami bujhte parchi na",
+      "en": "I can't understand",
+      "context": "Expressing lack of comprehension.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "আমার নাম...",
+      "pronunciation": "Amar naam...",
+      "en": "My name is...",
+      "context": "Introducing yourself.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "আমি খাই নি",
+      "pronunciation": "Ami khai ni",
+      "en": "I did not eat",
+      "context": "Stating you haven't eaten.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "আজ কি দিন?",
+      "pronunciation": "Aaj ki din?",
+      "en": "What day is it today?",
+      "context": "Asking for the day of the week.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "সুন্দর",
+      "pronunciation": "Shundor",
+      "en": "Beautiful",
+      "context": "Describing something aesthetically pleasing.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "কিছু না",
+      "pronunciation": "Kichu na",
+      "en": "Nothing",
+      "context": "Response to 'what happened' or 'what is it'.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "আজ বৃষ্টি হবে",
+      "pronunciation": "Aaj brishti hobe",
+      "en": "It will rain today",
+      "context": "Predicting weather.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "আমার কাছে এসো",
+      "pronunciation": "Amar kache esho",
+      "en": "Come to me",
+      "context": "Calling someone near.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "এখন কি করবে?",
+      "pronunciation": "Ekhon ki korbe?",
+      "en": "What will you do now?",
+      "context": "Asking about future plans.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "এখন বাজে...",
+      "pronunciation": "Ekhon baje...",
+      "en": "It’s now...",
+      "context": "Starting to tell the time.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "কি সুন্দর!",
+      "pronunciation": "Ki sundor!",
+      "en": "How beautiful!",
+      "context": "Exclaiming about beauty.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "কি সুন্দর গল্প!",
+      "pronunciation": "Ki shundor golpo!",
+      "en": "What a beautiful story!",
+      "context": "Praising a story.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "আমার সাথে আসুন",
+      "pronunciation": "Amar shathe aashun",
+      "en": "Come with me.",
+      "context": "Requesting someone to follow you.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "সুন্দর দিন!",
+      "pronunciation": "Shundor din!",
+      "en": "Beautiful day!",
+      "context": "Exclaiming about the day.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "এখন একটু পরিষ্কার করো",
+      "pronunciation": "Ekhon ektu porishkar koro",
+      "en": "Clean up a bit now.",
+      "context": "Instruction to clean.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "কিছু বলতে পারবে না!",
+      "pronunciation": "Kichu bolte parbe na!",
+      "en": "You can’t say anything!",
+      "context": "Restricting speech.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "কি সুন্দর রাত!",
+      "pronunciation": "Ki sundor raat!",
+      "en": "What a beautiful night!",
+      "context": "Exclaiming about the night.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "আমরা একসাথে যাবো",
+      "pronunciation": "Aamra ekshathe jabo",
+      "en": "We will go together.",
+      "context": "Planning group movement.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "আপনার জন্য আমি খুশি!",
+      "pronunciation": "Aapnar jonno ami khushi!",
+      "en": "I am happy for you!",
+      "context": "Expressing joy for someone else.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "আমি তোমার সাথে আসতে চাই!",
+      "pronunciation": "Ami tomar shathe ashte chai!",
+      "en": "I want to come with you!",
+      "context": "Expressing desire to join someone.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "বিকাল বেলাতে আসুন",
+      "pronunciation": "Bikal belate ashun",
+      "en": "Come in the afternoon",
+      "context": "Setting a time for an appointment.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "খুব ভালো",
+      "pronunciation": "Khub bhalo",
+      "en": "Very good",
+      "context": "Strongly positive adjective.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "কি সুন্দর ছবি!",
+      "pronunciation": "Ki sundor chhobi!",
+      "en": "What a beautiful picture!",
+      "context": "Praising an image.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "কোথায় পাবো আপনাকে?",
+      "pronunciation": "Kothai pabo aapnake?",
+      "en": "Where can I find you?",
+      "context": "Asking for someone's location or contact.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "বন্ধু",
+      "pronunciation": "Bondhu",
+      "en": "Friend",
+      "context": "The word for friend.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "ভুলে যাবেন না",
+      "pronunciation": "Bhule jaaben naa",
+      "en": "Don’t forget it",
+      "context": "Reminder.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "তুমি কি আমার সাথে আসবে?",
+      "pronunciation": "Tumi ki amar shathe asbe?",
+      "en": "Will you come with me?",
+      "context": "Asking for company informally.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "সে আমার পাশে বসেছে।",
+      "pronunciation": "She amar pashe bosheche.",
+      "en": "He sat beside me.",
+      "context": "Describing a past action.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "সে আমার ওপর হাসছিল।",
+      "pronunciation": "Shey amar upor hashchhilo.",
+      "en": "He was laughing at me.",
+      "context": "Describing past behavior.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "উনার চুল কালো।",
+      "pronunciation": "Unaar chul kalo.",
+      "en": "His/her hair is black.",
+      "context": "Describing physical appearance.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "আমি আপনার জন্য অনেক দিন ধরে অপেক্ষা করছি।",
+      "pronunciation": "Ami Aapnar jonno anek din dhore opekkha korchi.",
+      "en": "I have been waiting for you for a long time.",
+      "context": "Expressing patience/waiting.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "আমার আপনার কাছে একটা সাহায্য চাই।",
+      "pronunciation": "Amar Aapnar kache ekta sahajyo chai.",
+      "en": "I need some help from you.",
+      "context": "Requesting assistance politely.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "আমি রান্না করব।",
+      "pronunciation": "Ami ranna korbo.",
+      "en": "I will cook.",
+      "context": "Stating future plan.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "প্রতীক খুব ভালো ছেলে।",
+      "pronunciation": "Protik khub bhalo chhele.",
+      "en": "Protik is a very good boy.",
+      "context": "Praising a specific person.",
+      "category": "adverbs"
+    },
+    {
+      "bn": "সে দোকানে যাচ্ছে।",
+      "pronunciation": "She dokane jachhe.",
+      "en": "She is going to the shop.",
+      "context": "Describing someone's movement.",
+      "category": "adverbs"
     }
   ],
   "vocab": [

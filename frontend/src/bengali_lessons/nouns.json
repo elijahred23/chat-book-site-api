@@ -1097,2069 +1097,424 @@
       ]
     },
     {
-      "bn": "বলুন: “ওই মানুষটি খুব ভালো।”",
-      "pronunciation": "bolun: oi manush-ti khub bhalo",
-      "en": "Say: “That person is very kind.”",
-      "context": "Say the nouns example aloud",
-      "category": "nouns",
-      "exercise": true,
-      "sourcePhrase": "ওই মানুষটি খুব ভালো।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "ওই",
-          "pronunciation": "oi",
-          "en": "that"
-        },
-        {
-          "bn": "মানুষটি",
-          "pronunciation": "manush-ti",
-          "en": "the person"
-        },
-        {
-          "bn": "খুব",
-          "pronunciation": "khub",
-          "en": "very"
-        },
-        {
-          "bn": "ভালো",
-          "pronunciation": "bhalo",
-          "en": "good"
-        }
-      ]
+      "bn": "আজ দিন খুবই ভালো।",
+      "pronunciation": "Aj din khubi bhalo.",
+      "en": "Today is very good.",
+      "context": "Describing the day positively.",
+      "category": "nouns"
     },
     {
-      "bn": "বলুন: “রাহিম আমার বন্ধু।”",
-      "pronunciation": "bolun: Rahim amar bondhu",
-      "en": "Say: “Rahim is my friend.”",
-      "context": "Say the nouns example aloud",
-      "category": "nouns",
-      "exercise": true,
-      "sourcePhrase": "রাহিম আমার বন্ধু।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "রাহিম",
-          "pronunciation": "Rahim",
-          "en": "Rahim"
-        },
-        {
-          "bn": "আমার",
-          "pronunciation": "amar",
-          "en": "my"
-        },
-        {
-          "bn": "বন্ধু",
-          "pronunciation": "bondhu",
-          "en": "friend"
-        }
-      ]
+      "bn": "এই বইটা অনেক দিন পর দেখলাম।",
+      "pronunciation": "Ei boi ta onek din por dekhlam.",
+      "en": "I saw this book after many days.",
+      "context": "Commenting on an old possession.",
+      "category": "nouns"
     },
     {
-      "bn": "বলুন: “আমার পরিবার ঢাকায় থাকে।”",
-      "pronunciation": "bolun: amar poribar Dhakay thake",
-      "en": "Say: “My family lives in Dhaka.”",
-      "context": "Say the nouns example aloud",
-      "category": "nouns",
-      "exercise": true,
-      "sourcePhrase": "আমার পরিবার ঢাকায় থাকে।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "আমার",
-          "pronunciation": "amar",
-          "en": "my"
-        },
-        {
-          "bn": "পরিবার",
-          "pronunciation": "poribar",
-          "en": "family"
-        },
-        {
-          "bn": "ঢাকায়",
-          "pronunciation": "Dhakay",
-          "en": "in / to Dhaka"
-        },
-        {
-          "bn": "থাকে",
-          "pronunciation": "thake",
-          "en": "lives / stays"
-        }
-      ]
+      "bn": "এই দিনটা অনেক ভালো গেল।",
+      "pronunciation": "Ei din ta onek bhalo gelo.",
+      "en": "This day went very well.",
+      "context": "Reflecting on the day.",
+      "category": "nouns"
     },
     {
-      "bn": "বলুন: “আমাদের বাড়ি ছোট।”",
-      "pronunciation": "bolun: amader bari chhoto",
-      "en": "Say: “Our house is small.”",
-      "context": "Say the nouns example aloud",
-      "category": "nouns",
-      "exercise": true,
-      "sourcePhrase": "আমাদের বাড়ি ছোট।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "আমাদের",
-          "pronunciation": "amader",
-          "en": "our"
-        },
-        {
-          "bn": "বাড়ি",
-          "pronunciation": "bari",
-          "en": "house / home"
-        },
-        {
-          "bn": "ছোট",
-          "pronunciation": "chhoto",
-          "en": "small"
-        }
-      ]
+      "bn": "এই রাস্তা খুবই মসৃণ।",
+      "pronunciation": "Ei raasta khubi mosreen.",
+      "en": "This road is very smooth.",
+      "context": "Describing road condition.",
+      "category": "nouns"
     },
     {
-      "bn": "বলুন: “স্কুল সকাল আটটায় শুরু হয়।”",
-      "pronunciation": "bolun: skul shokal at-tay shuru hoy",
-      "en": "Say: “School starts at eight in the morning.”",
-      "context": "Say the nouns example aloud",
-      "category": "nouns",
-      "exercise": true,
-      "sourcePhrase": "স্কুল সকাল আটটায় শুরু হয়।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "স্কুল",
-          "pronunciation": "skul",
-          "en": "school"
-        },
-        {
-          "bn": "সকাল",
-          "pronunciation": "shokal",
-          "en": "morning"
-        },
-        {
-          "bn": "আটটায়",
-          "pronunciation": "at-tay",
-          "en": "at eight"
-        },
-        {
-          "bn": "শুরু",
-          "pronunciation": "shuru",
-          "en": "start"
-        },
-        {
-          "bn": "হয়",
-          "pronunciation": "hoy",
-          "en": "is / happens"
-        }
-      ]
+      "bn": "আজ সময় খুবই কম।",
+      "pronunciation": "Aj shomoy khubi kom.",
+      "en": "Today there is very little time.",
+      "context": "Talking about limited time.",
+      "category": "nouns"
     },
     {
-      "bn": "বলুন: “এটা আমার প্রিয় বই।”",
-      "pronunciation": "bolun: eta amar priyo boi",
-      "en": "Say: “This is my favorite book.”",
-      "context": "Say the nouns example aloud",
-      "category": "nouns",
-      "exercise": true,
-      "sourcePhrase": "এটা আমার প্রিয় বই।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "এটা",
-          "pronunciation": "eta",
-          "en": "this"
-        },
-        {
-          "bn": "আমার",
-          "pronunciation": "amar",
-          "en": "my"
-        },
-        {
-          "bn": "প্রিয়",
-          "pronunciation": "priyo",
-          "en": "favorite"
-        },
-        {
-          "bn": "বই",
-          "pronunciation": "boi",
-          "en": "book"
-        }
-      ]
+      "bn": "টেবিলের ওপর বই আছে।",
+      "pronunciation": "Table-er upor boi ache.",
+      "en": "There is a book on the table.",
+      "context": "Describing position.",
+      "category": "nouns"
     },
     {
-      "bn": "বলুন: “দয়া করে আমাকে পানি দিন।”",
-      "pronunciation": "bolun: doya kore amake pani din",
-      "en": "Say: “Please give me water.”",
-      "context": "Say the nouns example aloud",
-      "category": "nouns",
-      "exercise": true,
-      "sourcePhrase": "দয়া করে আমাকে পানি দিন।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "দয়া",
-          "pronunciation": "doya",
-          "en": "kindness / please"
-        },
-        {
-          "bn": "করে",
-          "pronunciation": "kore",
-          "en": "does"
-        },
-        {
-          "bn": "আমাকে",
-          "pronunciation": "amake",
-          "en": "me"
-        },
-        {
-          "bn": "পানি",
-          "pronunciation": "pani",
-          "en": "water"
-        },
-        {
-          "bn": "দিন",
-          "pronunciation": "din",
-          "en": "day"
-        }
-      ]
+      "bn": "আমার বন্ধুরা খুব ভালো।",
+      "pronunciation": "Amar bondhura khub bhalo.",
+      "en": "My friends are very good.",
+      "context": "Sharing personal information.",
+      "category": "nouns"
     },
     {
-      "bn": "বলুন: “খাবার টেবিলে রাখা আছে।”",
-      "pronunciation": "bolun: khabar tebile rakha achhe",
-      "en": "Say: “The food is on the table.”",
-      "context": "Say the nouns example aloud",
-      "category": "nouns",
-      "exercise": true,
-      "sourcePhrase": "খাবার টেবিলে রাখা আছে।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "খাবার",
-          "pronunciation": "khabar",
-          "en": "food"
-        },
-        {
-          "bn": "টেবিলে",
-          "pronunciation": "tebile",
-          "en": "on the table"
-        },
-        {
-          "bn": "রাখা",
-          "pronunciation": "rakha",
-          "en": "placed"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is / has"
-        }
-      ]
+      "bn": "এই দিনটা খুব ভালোবাসার।",
+      "pronunciation": "Ei din ta khub bhalobashar.",
+      "en": "This day is full of love.",
+      "context": "Sentiment about the day.",
+      "category": "nouns"
     },
     {
-      "bn": "বলুন: “আজ একটি সুন্দর দিন।”",
-      "pronunciation": "bolun: aj ekti shundor din",
-      "en": "Say: “Today is a beautiful day.”",
-      "context": "Say the nouns example aloud",
-      "category": "nouns",
-      "exercise": true,
-      "sourcePhrase": "আজ একটি সুন্দর দিন।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "আজ",
-          "pronunciation": "aj",
-          "en": "today"
-        },
-        {
-          "bn": "একটি",
-          "pronunciation": "ekti",
-          "en": "one / a"
-        },
-        {
-          "bn": "সুন্দর",
-          "pronunciation": "shundor",
-          "en": "beautiful"
-        },
-        {
-          "bn": "দিন",
-          "pronunciation": "din",
-          "en": "day"
-        }
-      ]
+      "bn": "এই খাবারটা খুব মজা।",
+      "pronunciation": "Ei khabar ta khub moja.",
+      "en": "This food is very tasty.",
+      "context": "Reviewing a meal.",
+      "category": "nouns"
     },
     {
-      "bn": "বলুন: “আমার এখন সময় নেই।”",
-      "pronunciation": "bolun: amar ekhon shomoy nei",
-      "en": "Say: “I do not have time now.”",
-      "context": "Say the nouns example aloud",
-      "category": "nouns",
-      "exercise": true,
-      "sourcePhrase": "আমার এখন সময় নেই।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "আমার",
-          "pronunciation": "amar",
-          "en": "my"
-        },
-        {
-          "bn": "এখন",
-          "pronunciation": "ekhon",
-          "en": "now"
-        },
-        {
-          "bn": "সময়",
-          "pronunciation": "shomoy",
-          "en": "time"
-        },
-        {
-          "bn": "নেই",
-          "pronunciation": "nei",
-          "en": "does not have"
-        }
-      ]
+      "bn": "আমার মা খুব ভালো মানুষ।",
+      "pronunciation": "Amar Maa khub bhalo manush.",
+      "en": "My mother is a very good person.",
+      "context": "Describing a family member.",
+      "category": "nouns"
     },
     {
-      "bn": "বলুন: “এই রাস্তা স্টেশনে যায়।”",
-      "pronunciation": "bolun: ei rasta steshone jay",
-      "en": "Say: “This road goes to the station.”",
-      "context": "Say the nouns example aloud",
-      "category": "nouns",
-      "exercise": true,
-      "sourcePhrase": "এই রাস্তা স্টেশনে যায়।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "এই",
-          "pronunciation": "ei",
-          "en": "this"
-        },
-        {
-          "bn": "রাস্তা",
-          "pronunciation": "rasta",
-          "en": "road"
-        },
-        {
-          "bn": "স্টেশনে",
-          "pronunciation": "steshone",
-          "en": "to the station"
-        },
-        {
-          "bn": "যায়",
-          "pronunciation": "jay",
-          "en": "goes"
-        }
-      ]
+      "bn": "এইটা আমার প্রিয় বই",
+      "pronunciation": "Eita amar priyo boi",
+      "en": "This is my favorite book",
+      "context": "Sharing a favorite item.",
+      "category": "nouns"
     },
     {
-      "bn": "বলুন: “এই শহর অনেক বড়।”",
-      "pronunciation": "bolun: ei shohor onek boro",
-      "en": "Say: “This city is very large.”",
-      "context": "Say the nouns example aloud",
-      "category": "nouns",
-      "exercise": true,
-      "sourcePhrase": "এই শহর অনেক বড়।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "এই",
-          "pronunciation": "ei",
-          "en": "this"
-        },
-        {
-          "bn": "শহর",
-          "pronunciation": "shohor",
-          "en": "city"
-        },
-        {
-          "bn": "অনেক",
-          "pronunciation": "onek",
-          "en": "very / many"
-        },
-        {
-          "bn": "বড়",
-          "pronunciation": "boro",
-          "en": "big"
-        }
-      ]
+      "bn": "এই কাজটা খুব তাড়াতাড়ি করো।",
+      "pronunciation": "Ei kaj ta khub taratari koro.",
+      "en": "Do this work very quickly.",
+      "context": "Giving an urgent instruction.",
+      "category": "nouns"
     },
     {
-      "bn": "বলুন: “ঘরের দরজা খোলা।”",
-      "pronunciation": "bolun: ghorer dorja khola",
-      "en": "Say: “The room's door is open.”",
-      "context": "Say the nouns example aloud",
-      "category": "nouns",
-      "exercise": true,
-      "sourcePhrase": "ঘরের দরজা খোলা।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "ঘরের",
-          "pronunciation": "ghorer",
-          "en": "of the room"
-        },
-        {
-          "bn": "দরজা",
-          "pronunciation": "dorja",
-          "en": "door"
-        },
-        {
-          "bn": "খোলা",
-          "pronunciation": "khola",
-          "en": "open"
-        }
-      ]
+      "bn": "আমাদের বাড়িতে পাখির বাসা আছে।",
+      "pronunciation": "Amader bari te pakhir basa ache.",
+      "en": "There is a bird's nest in our house.",
+      "context": "Fact about home.",
+      "category": "nouns"
     },
     {
-      "bn": "বলুন: “জানালা দিয়ে আলো আসছে।”",
-      "pronunciation": "bolun: janala diye alo ashchhe",
-      "en": "Say: “Light is coming through the window.”",
-      "context": "Say the nouns example aloud",
-      "category": "nouns",
-      "exercise": true,
-      "sourcePhrase": "জানালা দিয়ে আলো আসছে।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "জানালা",
-          "pronunciation": "janala",
-          "en": "window"
-        },
-        {
-          "bn": "দিয়ে",
-          "pronunciation": "diye",
-          "en": "through / with"
-        },
-        {
-          "bn": "আলো",
-          "pronunciation": "alo",
-          "en": "light"
-        },
-        {
-          "bn": "আসছে",
-          "pronunciation": "ashchhe",
-          "en": "is coming"
-        }
-      ]
+      "bn": "এই ছেলেটা ভালো কাজ করে।",
+      "pronunciation": "Ei chhele ta bhalo kaj kore.",
+      "en": "This boy does good work.",
+      "context": "Praising someone's effort.",
+      "category": "nouns"
     },
     {
-      "bn": "বলুন: “চাবি টেবিলের উপরে আছে।”",
-      "pronunciation": "bolun: chabi tebiler upore achhe",
-      "en": "Say: “The key is on the table.”",
-      "context": "Say the nouns example aloud",
-      "category": "nouns",
-      "exercise": true,
-      "sourcePhrase": "চাবি টেবিলের উপরে আছে।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "চাবি",
-          "pronunciation": "chabi",
-          "en": "key"
-        },
-        {
-          "bn": "টেবিলের",
-          "pronunciation": "tebiler",
-          "en": "of the table"
-        },
-        {
-          "bn": "উপরে",
-          "pronunciation": "upore",
-          "en": "on / above"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is / has"
-        }
-      ]
+      "bn": "এই ফুলটা সুন্দর।",
+      "pronunciation": "Ei phool ta shundor.",
+      "en": "This flower is beautiful.",
+      "context": "Complimenting nature.",
+      "category": "nouns"
     },
     {
-      "bn": "বলুন: “আমার ফোন ব্যাগে আছে।”",
-      "pronunciation": "bolun: amar phone bage achhe",
-      "en": "Say: “My phone is in the bag.”",
-      "context": "Say the nouns example aloud",
-      "category": "nouns",
-      "exercise": true,
-      "sourcePhrase": "আমার ফোন ব্যাগে আছে।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "আমার",
-          "pronunciation": "amar",
-          "en": "my"
-        },
-        {
-          "bn": "ফোন",
-          "pronunciation": "phone",
-          "en": "phone"
-        },
-        {
-          "bn": "ব্যাগে",
-          "pronunciation": "bage",
-          "en": "in the bag"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is / has"
-        }
-      ]
+      "bn": "এটা অনেক বড়।",
+      "pronunciation": "Eta onek boro.",
+      "en": "This is very big.",
+      "context": "Describing size.",
+      "category": "nouns"
     },
     {
-      "bn": "বলুন: “কম্পিউটারটি খুব দ্রুত।”",
-      "pronunciation": "bolun: kompiutar-ti khub druto",
-      "en": "Say: “The computer is very fast.”",
-      "context": "Say the nouns example aloud",
-      "category": "nouns",
-      "exercise": true,
-      "sourcePhrase": "কম্পিউটারটি খুব দ্রুত।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "কম্পিউটারটি",
-          "pronunciation": "kompiutar-ti",
-          "en": "the computer"
-        },
-        {
-          "bn": "খুব",
-          "pronunciation": "khub",
-          "en": "very"
-        },
-        {
-          "bn": "দ্রুত",
-          "pronunciation": "druto",
-          "en": "quickly"
-        }
-      ]
+      "bn": "এই গল্পটা খুব ছোট।",
+      "pronunciation": "Ei golpo ta khub chhoto.",
+      "en": "This story is very short.",
+      "context": "Description.",
+      "category": "nouns"
     },
     {
-      "bn": "বলুন: “টেবিলটি জানালার পাশে।”",
-      "pronunciation": "bolun: tebil-ti janalar pashe",
-      "en": "Say: “The table is beside the window.”",
-      "context": "Say the nouns example aloud",
-      "category": "nouns",
-      "exercise": true,
-      "sourcePhrase": "টেবিলটি জানালার পাশে।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "টেবিলটি",
-          "pronunciation": "tebil-ti",
-          "en": "the table"
-        },
-        {
-          "bn": "জানালার",
-          "pronunciation": "janalar",
-          "en": "of the window"
-        },
-        {
-          "bn": "পাশে",
-          "pronunciation": "pashe",
-          "en": "beside"
-        }
-      ]
+      "bn": "আপেল স্বাস্থ্যের জন্য খুবই ভালো।",
+      "pronunciation": "Aapel swasther jonno khubi bhalo.",
+      "en": "Apple is very good for health.",
+      "context": "Talking about health benefits.",
+      "category": "nouns"
     },
     {
-      "bn": "বলুন: “চেয়ারটি টেবিলের সামনে।”",
-      "pronunciation": "bolun: cheyar-ti tebiler shamne",
-      "en": "Say: “The chair is in front of the table.”",
-      "context": "Say the nouns example aloud",
-      "category": "nouns",
-      "exercise": true,
-      "sourcePhrase": "চেয়ারটি টেবিলের সামনে।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "চেয়ারটি",
-          "pronunciation": "cheyar-ti",
-          "en": "the chair"
-        },
-        {
-          "bn": "টেবিলের",
-          "pronunciation": "tebiler",
-          "en": "of the table"
-        },
-        {
-          "bn": "সামনে",
-          "pronunciation": "shamne",
-          "en": "in front of"
-        }
-      ]
+      "bn": "এই গাছটাতে পাতা আছে।",
+      "pronunciation": "Ei gach-ta te pata ache.",
+      "en": "This tree has leaves.",
+      "context": "Describing a tree.",
+      "category": "nouns"
     },
     {
-      "bn": "বলুন: “ঘড়িতে এখন দশটা।”",
-      "pronunciation": "bolun: ghorite ekhon doshta",
-      "en": "Say: “It is ten o'clock on the clock.”",
-      "context": "Say the nouns example aloud",
-      "category": "nouns",
-      "exercise": true,
-      "sourcePhrase": "ঘড়িতে এখন দশটা।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "ঘড়িতে",
-          "pronunciation": "ghorite",
-          "en": "on the clock"
-        },
-        {
-          "bn": "এখন",
-          "pronunciation": "ekhon",
-          "en": "now"
-        },
-        {
-          "bn": "দশটা",
-          "pronunciation": "doshta",
-          "en": "ten o'clock"
-        }
-      ]
+      "bn": "আজ দিন খুব গরম।",
+      "pronunciation": "Aj din khub gorom.",
+      "en": "Today is very hot.",
+      "context": "Talking about the weather.",
+      "category": "nouns"
     },
     {
-      "bn": "বলুন: “আমার ব্যাগটি নীল।”",
-      "pronunciation": "bolun: amar bagti nil",
-      "en": "Say: “My bag is blue.”",
-      "context": "Say the nouns example aloud",
-      "category": "nouns",
-      "exercise": true,
-      "sourcePhrase": "আমার ব্যাগটি নীল।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "আমার",
-          "pronunciation": "amar",
-          "en": "my"
-        },
-        {
-          "bn": "ব্যাগটি",
-          "pronunciation": "bagti",
-          "en": "the bag"
-        },
-        {
-          "bn": "নীল",
-          "pronunciation": "nil",
-          "en": "blue"
-        }
-      ]
+      "bn": "সকালবেলা খুবই শান্ত।",
+      "pronunciation": "Shokal-bela khubi shanto.",
+      "en": "Morning time is very peaceful.",
+      "context": "Describing the calm of morning.",
+      "category": "nouns"
     },
     {
-      "bn": "বলুন: “আমি একটি কলম কিনেছি।”",
-      "pronunciation": "bolun: ami ekti kolom kinechhi",
-      "en": "Say: “I bought a pen.”",
-      "context": "Say the nouns example aloud",
-      "category": "nouns",
-      "exercise": true,
-      "sourcePhrase": "আমি একটি কলম কিনেছি।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "একটি",
-          "pronunciation": "ekti",
-          "en": "one / a"
-        },
-        {
-          "bn": "কলম",
-          "pronunciation": "kolom",
-          "en": "pen"
-        },
-        {
-          "bn": "কিনেছি",
-          "pronunciation": "kinechhi",
-          "en": "bought"
-        }
-      ]
+      "bn": "আজ অনেক গরম",
+      "pronunciation": "Aaj onek gorom",
+      "en": "It’s very hot today",
+      "context": "Commenting on the weather.",
+      "category": "nouns"
     },
     {
-      "bn": "বলুন: “কাগজটি টেবিলে রাখুন।”",
-      "pronunciation": "bolun: kagoj-ti tebile rakhun",
-      "en": "Say: “Put the paper on the table.”",
-      "context": "Say the nouns example aloud",
-      "category": "nouns",
-      "exercise": true,
-      "sourcePhrase": "কাগজটি টেবিলে রাখুন।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "কাগজটি",
-          "pronunciation": "kagoj-ti",
-          "en": "the paper"
-        },
-        {
-          "bn": "টেবিলে",
-          "pronunciation": "tebile",
-          "en": "on the table"
-        },
-        {
-          "bn": "রাখুন",
-          "pronunciation": "rakhun",
-          "en": "please put"
-        }
-      ]
+      "bn": "আজ অনেক ঠান্ডা",
+      "pronunciation": "Aaj onek thanda",
+      "en": "It’s very cold today",
+      "context": "Commenting on the weather.",
+      "category": "nouns"
     },
     {
-      "bn": "বলুন: “শিশুটি ঘুমাচ্ছে।”",
-      "pronunciation": "bolun: shishu-ti ghumachchhe",
-      "en": "Say: “The child is sleeping.”",
-      "context": "Say the nouns example aloud",
-      "category": "nouns",
-      "exercise": true,
-      "sourcePhrase": "শিশুটি ঘুমাচ্ছে।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "শিশুটি",
-          "pronunciation": "shishu-ti",
-          "en": "the child"
-        },
-        {
-          "bn": "ঘুমাচ্ছে",
-          "pronunciation": "ghumachchhe",
-          "en": "is sleeping"
-        }
-      ]
+      "bn": "এইটা আমার পাশের বাড়ি",
+      "pronunciation": "Eita amar pasher bari",
+      "en": "This is my neighbor's house.",
+      "context": "Pointing out a location.",
+      "category": "nouns"
     },
     {
-      "bn": "বলুন: “শিক্ষক ক্লাসে পড়াচ্ছেন।”",
-      "pronunciation": "bolun: shikkhok klashe porachchhen",
-      "en": "Say: “The teacher is teaching in class.”",
-      "context": "Say the nouns example aloud",
-      "category": "nouns",
-      "exercise": true,
-      "sourcePhrase": "শিক্ষক ক্লাসে পড়াচ্ছেন।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "শিক্ষক",
-          "pronunciation": "shikkhok",
-          "en": "teacher"
-        },
-        {
-          "bn": "ক্লাসে",
-          "pronunciation": "klashe",
-          "en": "in the class"
-        },
-        {
-          "bn": "পড়াচ্ছেন",
-          "pronunciation": "porachchhen",
-          "en": "is teaching"
-        }
-      ]
+      "bn": "আজ আমি ভালো আছি!",
+      "pronunciation": "Aaj ami bhalo achhi!",
+      "en": "Today I am good!",
+      "context": "Stating current mood/health.",
+      "category": "nouns"
     },
     {
-      "bn": "বলুন: “ছাত্র বই পড়ছে।”",
-      "pronunciation": "bolun: chhatro boi porchhe",
-      "en": "Say: “The student is reading a book.”",
-      "context": "Say the nouns example aloud",
-      "category": "nouns",
-      "exercise": true,
-      "sourcePhrase": "ছাত্র বই পড়ছে।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "ছাত্র",
-          "pronunciation": "chhatro",
-          "en": "student"
-        },
-        {
-          "bn": "বই",
-          "pronunciation": "boi",
-          "en": "book"
-        },
-        {
-          "bn": "পড়ছে",
-          "pronunciation": "porchhe",
-          "en": "is reading"
-        }
-      ]
+      "bn": "এই গাছটা আমার পছন্দ।",
+      "pronunciation": "Ei gachh ta amar pochhondo.",
+      "en": "I like this tree.",
+      "context": "Expressing preference.",
+      "category": "nouns"
     },
     {
-      "bn": "বলুন: “ডাক্তার হাসপাতালে আছেন।”",
-      "pronunciation": "bolun: daktar hashpatale achhen",
-      "en": "Say: “The doctor is at the hospital.”",
-      "context": "Say the nouns example aloud",
-      "category": "nouns",
-      "exercise": true,
-      "sourcePhrase": "ডাক্তার হাসপাতালে আছেন।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "ডাক্তার",
-          "pronunciation": "daktar",
-          "en": "doctor"
-        },
-        {
-          "bn": "হাসপাতালে",
-          "pronunciation": "hashpatale",
-          "en": "at the hospital"
-        },
-        {
-          "bn": "আছেন",
-          "pronunciation": "achhen",
-          "en": "are (respectful)"
-        }
-      ]
+      "bn": "প্রত্যেক দিন খেলা ভালো লাগে।",
+      "pronunciation": "Protyek din khela bhalo lage.",
+      "en": "Playing every day feels good.",
+      "context": "Sharing a habit's benefit.",
+      "category": "nouns"
     },
     {
-      "bn": "বলুন: “বাজার আজ বন্ধ।”",
-      "pronunciation": "bolun: bajar aj bondho",
-      "en": "Say: “The market is closed today.”",
-      "context": "Say the nouns example aloud",
-      "category": "nouns",
-      "exercise": true,
-      "sourcePhrase": "বাজার আজ বন্ধ।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "বাজার",
-          "pronunciation": "bajar",
-          "en": "market"
-        },
-        {
-          "bn": "আজ",
-          "pronunciation": "aj",
-          "en": "today"
-        },
-        {
-          "bn": "বন্ধ",
-          "pronunciation": "bondho",
-          "en": "closed"
-        }
-      ]
+      "bn": "এটা আমার বই।",
+      "pronunciation": "Eta amar boi.",
+      "en": "This is my book.",
+      "context": "Showing ownership.",
+      "category": "nouns"
     },
     {
-      "bn": "বলুন: “দোকানটি সকাল নয়টায় খোলে।”",
-      "pronunciation": "bolun: dokan-ti shokal noy-tay khole",
-      "en": "Say: “The shop opens at nine in the morning.”",
-      "context": "Say the nouns example aloud",
-      "category": "nouns",
-      "exercise": true,
-      "sourcePhrase": "দোকানটি সকাল নয়টায় খোলে।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "দোকানটি",
-          "pronunciation": "dokan-ti",
-          "en": "the shop"
-        },
-        {
-          "bn": "সকাল",
-          "pronunciation": "shokal",
-          "en": "morning"
-        },
-        {
-          "bn": "নয়টায়",
-          "pronunciation": "noy-tay",
-          "en": "at nine"
-        },
-        {
-          "bn": "খোলে",
-          "pronunciation": "khole",
-          "en": "opens"
-        }
-      ]
+      "bn": "এই পথটা সুন্দর।",
+      "pronunciation": "Ei poth ta sondor.",
+      "en": "This road is beautiful.",
+      "context": "Describing the surroundings.",
+      "category": "nouns"
     },
     {
-      "bn": "বলুন: “হাসপাতালটি শহরের কাছে।”",
-      "pronunciation": "bolun: hashpatal-ti shohorer kachhe",
-      "en": "Say: “The hospital is near the city.”",
-      "context": "Say the nouns example aloud",
-      "category": "nouns",
-      "exercise": true,
-      "sourcePhrase": "হাসপাতালটি শহরের কাছে।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "হাসপাতালটি",
-          "pronunciation": "hashpatal-ti",
-          "en": "the hospital"
-        },
-        {
-          "bn": "শহরের",
-          "pronunciation": "shohorer",
-          "en": "of the city"
-        },
-        {
-          "bn": "কাছে",
-          "pronunciation": "kachhe",
-          "en": "near / with"
-        }
-      ]
+      "bn": "এই জিনিসটা অনেক পুরনো।",
+      "pronunciation": "Ei jinish ta anek purono.",
+      "en": "This thing is very old.",
+      "context": "Describing age.",
+      "category": "nouns"
     },
     {
-      "bn": "বলুন: “বাস স্টেশনে দাঁড়িয়ে আছে।”",
-      "pronunciation": "bolun: bas steshone dariye achhe",
-      "en": "Say: “The bus is standing at the station.”",
-      "context": "Say the nouns example aloud",
-      "category": "nouns",
-      "exercise": true,
-      "sourcePhrase": "বাস স্টেশনে দাঁড়িয়ে আছে।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "বাস",
-          "pronunciation": "bas",
-          "en": "bus"
-        },
-        {
-          "bn": "স্টেশনে",
-          "pronunciation": "steshone",
-          "en": "to the station"
-        },
-        {
-          "bn": "দাঁড়িয়ে",
-          "pronunciation": "dariye",
-          "en": "standing"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is / has"
-        }
-      ]
+      "bn": "এই বাড়িতে কে থাকে?",
+      "pronunciation": "Ei bari te ke thake?",
+      "en": "Who lives in this house?",
+      "context": "Curiosity about neighbors.",
+      "category": "nouns"
     },
     {
-      "bn": "বলুন: “ট্রেনটি সকালে আসে।”",
-      "pronunciation": "bolun: tren-ti shokale ashe",
-      "en": "Say: “The train comes in the morning.”",
-      "context": "Say the nouns example aloud",
-      "category": "nouns",
-      "exercise": true,
-      "sourcePhrase": "ট্রেনটি সকালে আসে।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "ট্রেনটি",
-          "pronunciation": "tren-ti",
-          "en": "the train"
-        },
-        {
-          "bn": "সকালে",
-          "pronunciation": "shokale",
-          "en": "in the morning"
-        },
-        {
-          "bn": "আসে",
-          "pronunciation": "ashe",
-          "en": "comes"
-        }
-      ]
+      "bn": "এই বই একটি রচিত গল্প।",
+      "pronunciation": "Ei boi ekti rochito golpo.",
+      "en": "This book is a written story.",
+      "context": "Describing a book.",
+      "category": "nouns"
     },
     {
-      "bn": "বলুন: “গাড়িটি বাড়ির সামনে আছে।”",
-      "pronunciation": "bolun: gari-ti barir shamne achhe",
-      "en": "Say: “The car is in front of the house.”",
-      "context": "Say the nouns example aloud",
-      "category": "nouns",
-      "exercise": true,
-      "sourcePhrase": "গাড়িটি বাড়ির সামনে আছে।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "গাড়িটি",
-          "pronunciation": "gari-ti",
-          "en": "the car"
-        },
-        {
-          "bn": "বাড়ির",
-          "pronunciation": "barir",
-          "en": "of the house"
-        },
-        {
-          "bn": "সামনে",
-          "pronunciation": "shamne",
-          "en": "in front of"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is / has"
-        }
-      ]
+      "bn": "গোলাপ ফুল খুব সুন্দর।",
+      "pronunciation": "Golap ful khub sundor.",
+      "en": "The rose is very beautiful.",
+      "context": "Describing beauty.",
+      "category": "nouns"
     },
     {
-      "bn": "বলুন: “বিড়ালটি চেয়ারের নিচে আছে।”",
-      "pronunciation": "bolun: biral-ti cheyarer niche achhe",
-      "en": "Say: “The cat is under the chair.”",
-      "context": "Say the nouns example aloud",
-      "category": "nouns",
-      "exercise": true,
-      "sourcePhrase": "বিড়ালটি চেয়ারের নিচে আছে।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "বিড়ালটি",
-          "pronunciation": "biral-ti",
-          "en": "the cat"
-        },
-        {
-          "bn": "চেয়ারের",
-          "pronunciation": "cheyarer",
-          "en": "of the chair"
-        },
-        {
-          "bn": "নিচে",
-          "pronunciation": "niche",
-          "en": "under / below"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is / has"
-        }
-      ]
+      "bn": "এই গল্প খুব রোমাঞ্চকর।",
+      "pronunciation": "Ei golpo khub romanchokor.",
+      "en": "This story is very interesting.",
+      "context": "Describing a story.",
+      "category": "nouns"
     },
     {
-      "bn": "বলুন: “কুকুরটি বাগানে খেলছে।”",
-      "pronunciation": "bolun: kukur-ti bagane khelchhe",
-      "en": "Say: “The dog is playing in the garden.”",
-      "context": "Say the nouns example aloud",
-      "category": "nouns",
-      "exercise": true,
-      "sourcePhrase": "কুকুরটি বাগানে খেলছে।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "কুকুরটি",
-          "pronunciation": "kukur-ti",
-          "en": "the dog"
-        },
-        {
-          "bn": "বাগানে",
-          "pronunciation": "bagane",
-          "en": "in the garden"
-        },
-        {
-          "bn": "খেলছে",
-          "pronunciation": "khelchhe",
-          "en": "is playing"
-        }
-      ]
+      "bn": "চেয়ারের নিচে একটা ব্যাগ আছে।",
+      "pronunciation": "Chair-er niche ekta bag ache.",
+      "en": "Under the chair there is a bag.",
+      "context": "Describing location.",
+      "category": "nouns"
     },
     {
-      "bn": "বলুন: “গাছে একটি পাখি আছে।”",
-      "pronunciation": "bolun: gachhe ekti pakhi achhe",
-      "en": "Say: “There is a bird in the tree.”",
-      "context": "Say the nouns example aloud",
-      "category": "nouns",
-      "exercise": true,
-      "sourcePhrase": "গাছে একটি পাখি আছে।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "গাছে",
-          "pronunciation": "gachhe",
-          "en": "in the tree"
-        },
-        {
-          "bn": "একটি",
-          "pronunciation": "ekti",
-          "en": "one / a"
-        },
-        {
-          "bn": "পাখি",
-          "pronunciation": "pakhi",
-          "en": "bird"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is / has"
-        }
-      ]
+      "bn": "পেঁপে স্বাস্থ্যের জন্য খুব ভালো।",
+      "pronunciation": "Pepe swasther jonno khub bhalo.",
+      "en": "Papaya is very good for health.",
+      "context": "Talking about healthy food.",
+      "category": "nouns"
     },
     {
-      "bn": "বলুন: “বাগানে একটি বড় গাছ আছে।”",
-      "pronunciation": "bolun: bagane ekti boro gachh achhe",
-      "en": "Say: “There is a big tree in the garden.”",
-      "context": "Say the nouns example aloud",
-      "category": "nouns",
-      "exercise": true,
-      "sourcePhrase": "বাগানে একটি বড় গাছ আছে।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "বাগানে",
-          "pronunciation": "bagane",
-          "en": "in the garden"
-        },
-        {
-          "bn": "একটি",
-          "pronunciation": "ekti",
-          "en": "one / a"
-        },
-        {
-          "bn": "বড়",
-          "pronunciation": "boro",
-          "en": "big"
-        },
-        {
-          "bn": "গাছ",
-          "pronunciation": "gachh",
-          "en": "tree"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is / has"
-        }
-      ]
+      "bn": "পৃথিবী খুবই সুন্দর।",
+      "pronunciation": "Prithibi khubi sundor.",
+      "en": "The world is very beautiful.",
+      "context": "Expressing admiration for the world.",
+      "category": "nouns"
     },
     {
-      "bn": "বলুন: “এই ফুলটি খুব সুন্দর।”",
-      "pronunciation": "bolun: ei phul-ti khub shundor",
-      "en": "Say: “This flower is very beautiful.”",
-      "context": "Say the nouns example aloud",
-      "category": "nouns",
-      "exercise": true,
-      "sourcePhrase": "এই ফুলটি খুব সুন্দর।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "এই",
-          "pronunciation": "ei",
-          "en": "this"
-        },
-        {
-          "bn": "ফুলটি",
-          "pronunciation": "phul-ti",
-          "en": "the flower"
-        },
-        {
-          "bn": "খুব",
-          "pronunciation": "khub",
-          "en": "very"
-        },
-        {
-          "bn": "সুন্দর",
-          "pronunciation": "shundor",
-          "en": "beautiful"
-        }
-      ]
+      "bn": "শাক খুবই স্বাস্থ্যকর।",
+      "pronunciation": "Shaak khubi swasthokor.",
+      "en": "Green vegetables are very healthy.",
+      "context": "Talking about healthy food.",
+      "category": "nouns"
     },
     {
-      "bn": "বলুন: “আকাশে আজ সূর্য দেখা যাচ্ছে।”",
-      "pronunciation": "bolun: akashe aj shurjo dekha jacchhe",
-      "en": "Say: “The sun can be seen in the sky today.”",
-      "context": "Say the nouns example aloud",
-      "category": "nouns",
-      "exercise": true,
-      "sourcePhrase": "আকাশে আজ সূর্য দেখা যাচ্ছে।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "আকাশে",
-          "pronunciation": "akashe",
-          "en": "in the sky"
-        },
-        {
-          "bn": "আজ",
-          "pronunciation": "aj",
-          "en": "today"
-        },
-        {
-          "bn": "সূর্য",
-          "pronunciation": "shurjo",
-          "en": "sun"
-        },
-        {
-          "bn": "দেখা",
-          "pronunciation": "dekha",
-          "en": "seen"
-        },
-        {
-          "bn": "যাচ্ছে",
-          "pronunciation": "jacchhe",
-          "en": "is going"
-        }
-      ]
+      "bn": "তারাগুলো খুবই ছোট।",
+      "pronunciation": "Tara gulo khubi choto.",
+      "en": "The stars are very small.",
+      "context": "Describing stars.",
+      "category": "nouns"
     },
     {
-      "bn": "বলুন: “রাতে চাঁদ খুব উজ্জ্বল।”",
-      "pronunciation": "bolun: rate chand khub ujjol",
-      "en": "Say: “The moon is very bright at night.”",
-      "context": "Say the nouns example aloud",
-      "category": "nouns",
-      "exercise": true,
-      "sourcePhrase": "রাতে চাঁদ খুব উজ্জ্বল।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "রাতে",
-          "pronunciation": "rate",
-          "en": "at night"
-        },
-        {
-          "bn": "চাঁদ",
-          "pronunciation": "chand",
-          "en": "moon"
-        },
-        {
-          "bn": "খুব",
-          "pronunciation": "khub",
-          "en": "very"
-        },
-        {
-          "bn": "উজ্জ্বল",
-          "pronunciation": "ujjol",
-          "en": "bright"
-        }
-      ]
+      "bn": "এ আমার বন্ধু!",
+      "pronunciation": "E' amar bondhu",
+      "en": "This is my friend!",
+      "context": "Introducing a friend.",
+      "category": "nouns"
     },
     {
-      "bn": "পড়ুন: “ওই মানুষটি খুব ভালো।”",
-      "pronunciation": "porun: oi manush-ti khub bhalo",
-      "en": "Read: “That person is very kind.”",
-      "context": "Read the nouns example aloud",
-      "category": "nouns",
-      "exercise": true,
-      "sourcePhrase": "ওই মানুষটি খুব ভালো।",
-      "words": [
-        {
-          "bn": "পড়ুন",
-          "pronunciation": "porun",
-          "en": "read"
-        },
-        {
-          "bn": "ওই",
-          "pronunciation": "oi",
-          "en": "that"
-        },
-        {
-          "bn": "মানুষটি",
-          "pronunciation": "manush-ti",
-          "en": "the person"
-        },
-        {
-          "bn": "খুব",
-          "pronunciation": "khub",
-          "en": "very"
-        },
-        {
-          "bn": "ভালো",
-          "pronunciation": "bhalo",
-          "en": "good"
-        }
-      ]
+      "bn": "এইটা আমার প্রিয় গান",
+      "pronunciation": "Eita amar priyo gaan",
+      "en": "This is my favorite song.",
+      "context": "Sharing a preference.",
+      "category": "nouns"
     },
     {
-      "bn": "পড়ুন: “রাহিম আমার বন্ধু।”",
-      "pronunciation": "porun: Rahim amar bondhu",
-      "en": "Read: “Rahim is my friend.”",
-      "context": "Read the nouns example aloud",
-      "category": "nouns",
-      "exercise": true,
-      "sourcePhrase": "রাহিম আমার বন্ধু।",
-      "words": [
-        {
-          "bn": "পড়ুন",
-          "pronunciation": "porun",
-          "en": "read"
-        },
-        {
-          "bn": "রাহিম",
-          "pronunciation": "Rahim",
-          "en": "Rahim"
-        },
-        {
-          "bn": "আমার",
-          "pronunciation": "amar",
-          "en": "my"
-        },
-        {
-          "bn": "বন্ধু",
-          "pronunciation": "bondhu",
-          "en": "friend"
-        }
-      ]
+      "bn": "আজ অনেক কাজ আছে",
+      "pronunciation": "Aaj onek kaj ache",
+      "en": "There’s a lot of work today.",
+      "context": "Stating workload.",
+      "category": "nouns"
     },
     {
-      "bn": "পড়ুন: “আমার পরিবার ঢাকায় থাকে।”",
-      "pronunciation": "porun: amar poribar Dhakay thake",
-      "en": "Read: “My family lives in Dhaka.”",
-      "context": "Read the nouns example aloud",
-      "category": "nouns",
-      "exercise": true,
-      "sourcePhrase": "আমার পরিবার ঢাকায় থাকে।",
-      "words": [
-        {
-          "bn": "পড়ুন",
-          "pronunciation": "porun",
-          "en": "read"
-        },
-        {
-          "bn": "আমার",
-          "pronunciation": "amar",
-          "en": "my"
-        },
-        {
-          "bn": "পরিবার",
-          "pronunciation": "poribar",
-          "en": "family"
-        },
-        {
-          "bn": "ঢাকায়",
-          "pronunciation": "Dhakay",
-          "en": "in / to Dhaka"
-        },
-        {
-          "bn": "থাকে",
-          "pronunciation": "thake",
-          "en": "lives / stays"
-        }
-      ]
+      "bn": "খুব ভালো",
+      "pronunciation": "Khub bhalo",
+      "en": "Very good",
+      "context": "Strongly positive adjective.",
+      "category": "nouns"
     },
     {
-      "bn": "পড়ুন: “আমাদের বাড়ি ছোট।”",
-      "pronunciation": "porun: amader bari chhoto",
-      "en": "Read: “Our house is small.”",
-      "context": "Read the nouns example aloud",
-      "category": "nouns",
-      "exercise": true,
-      "sourcePhrase": "আমাদের বাড়ি ছোট।",
-      "words": [
-        {
-          "bn": "পড়ুন",
-          "pronunciation": "porun",
-          "en": "read"
-        },
-        {
-          "bn": "আমাদের",
-          "pronunciation": "amader",
-          "en": "our"
-        },
-        {
-          "bn": "বাড়ি",
-          "pronunciation": "bari",
-          "en": "house / home"
-        },
-        {
-          "bn": "ছোট",
-          "pronunciation": "chhoto",
-          "en": "small"
-        }
-      ]
+      "bn": "এই বৃষ্টিটা অনেক দিন পরে হলো।",
+      "pronunciation": "Ei brishti ta onek din pore holo.",
+      "en": "It's raining after many days.",
+      "context": "Commenting on weather change.",
+      "category": "nouns"
     },
     {
-      "bn": "পড়ুন: “স্কুল সকাল আটটায় শুরু হয়।”",
-      "pronunciation": "porun: skul shokal at-tay shuru hoy",
-      "en": "Read: “School starts at eight in the morning.”",
-      "context": "Read the nouns example aloud",
-      "category": "nouns",
-      "exercise": true,
-      "sourcePhrase": "স্কুল সকাল আটটায় শুরু হয়।",
-      "words": [
-        {
-          "bn": "পড়ুন",
-          "pronunciation": "porun",
-          "en": "read"
-        },
-        {
-          "bn": "স্কুল",
-          "pronunciation": "skul",
-          "en": "school"
-        },
-        {
-          "bn": "সকাল",
-          "pronunciation": "shokal",
-          "en": "morning"
-        },
-        {
-          "bn": "আটটায়",
-          "pronunciation": "at-tay",
-          "en": "at eight"
-        },
-        {
-          "bn": "শুরু",
-          "pronunciation": "shuru",
-          "en": "start"
-        },
-        {
-          "bn": "হয়",
-          "pronunciation": "hoy",
-          "en": "is / happens"
-        }
-      ]
+      "bn": "প্রতীক খুব ভালো ছেলে।",
+      "pronunciation": "Protik khub bhalo chhele.",
+      "en": "Protik is a very good boy.",
+      "context": "Praising a specific person.",
+      "category": "nouns"
     },
     {
-      "bn": "পড়ুন: “এটা আমার প্রিয় বই।”",
-      "pronunciation": "porun: eta amar priyo boi",
-      "en": "Read: “This is my favorite book.”",
-      "context": "Read the nouns example aloud",
-      "category": "nouns",
-      "exercise": true,
-      "sourcePhrase": "এটা আমার প্রিয় বই।",
-      "words": [
-        {
-          "bn": "পড়ুন",
-          "pronunciation": "porun",
-          "en": "read"
-        },
-        {
-          "bn": "এটা",
-          "pronunciation": "eta",
-          "en": "this"
-        },
-        {
-          "bn": "আমার",
-          "pronunciation": "amar",
-          "en": "my"
-        },
-        {
-          "bn": "প্রিয়",
-          "pronunciation": "priyo",
-          "en": "favorite"
-        },
-        {
-          "bn": "বই",
-          "pronunciation": "boi",
-          "en": "book"
-        }
-      ]
+      "bn": "সে খুব সুন্দর।",
+      "pronunciation": "She khoob shundor.",
+      "en": "She is very beautiful.",
+      "context": "Complimenting a female.",
+      "category": "nouns"
     },
     {
-      "bn": "পড়ুন: “দয়া করে আমাকে পানি দিন।”",
-      "pronunciation": "porun: doya kore amake pani din",
-      "en": "Read: “Please give me water.”",
-      "context": "Read the nouns example aloud",
-      "category": "nouns",
-      "exercise": true,
-      "sourcePhrase": "দয়া করে আমাকে পানি দিন।",
-      "words": [
-        {
-          "bn": "পড়ুন",
-          "pronunciation": "porun",
-          "en": "read"
-        },
-        {
-          "bn": "দয়া",
-          "pronunciation": "doya",
-          "en": "kindness / please"
-        },
-        {
-          "bn": "করে",
-          "pronunciation": "kore",
-          "en": "does"
-        },
-        {
-          "bn": "আমাকে",
-          "pronunciation": "amake",
-          "en": "me"
-        },
-        {
-          "bn": "পানি",
-          "pronunciation": "pani",
-          "en": "water"
-        },
-        {
-          "bn": "দিন",
-          "pronunciation": "din",
-          "en": "day"
-        }
-      ]
+      "bn": "নদীটা খুব সুন্দর।",
+      "pronunciation": "Nodi ta khub shundor.",
+      "en": "The river is very beautiful.",
+      "context": "Description of scenery.",
+      "category": "nouns"
     },
     {
-      "bn": "পড়ুন: “খাবার টেবিলে রাখা আছে।”",
-      "pronunciation": "porun: khabar tebile rakha achhe",
-      "en": "Read: “The food is on the table.”",
-      "context": "Read the nouns example aloud",
-      "category": "nouns",
-      "exercise": true,
-      "sourcePhrase": "খাবার টেবিলে রাখা আছে।",
-      "words": [
-        {
-          "bn": "পড়ুন",
-          "pronunciation": "porun",
-          "en": "read"
-        },
-        {
-          "bn": "খাবার",
-          "pronunciation": "khabar",
-          "en": "food"
-        },
-        {
-          "bn": "টেবিলে",
-          "pronunciation": "tebile",
-          "en": "on the table"
-        },
-        {
-          "bn": "রাখা",
-          "pronunciation": "rakha",
-          "en": "placed"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is / has"
-        }
-      ]
+      "bn": "গাছটা খুব লম্বা।",
+      "pronunciation": "Gachh ta khub lomba.",
+      "en": "The tree is very tall.",
+      "context": "Description.",
+      "category": "nouns"
     },
     {
-      "bn": "পড়ুন: “আজ একটি সুন্দর দিন।”",
-      "pronunciation": "porun: aj ekti shundor din",
-      "en": "Read: “Today is a beautiful day.”",
-      "context": "Read the nouns example aloud",
-      "category": "nouns",
-      "exercise": true,
-      "sourcePhrase": "আজ একটি সুন্দর দিন।",
-      "words": [
-        {
-          "bn": "পড়ুন",
-          "pronunciation": "porun",
-          "en": "read"
-        },
-        {
-          "bn": "আজ",
-          "pronunciation": "aj",
-          "en": "today"
-        },
-        {
-          "bn": "একটি",
-          "pronunciation": "ekti",
-          "en": "one / a"
-        },
-        {
-          "bn": "সুন্দর",
-          "pronunciation": "shundor",
-          "en": "beautiful"
-        },
-        {
-          "bn": "দিন",
-          "pronunciation": "din",
-          "en": "day"
-        }
-      ]
+      "bn": "গাছের ছায়া খুব ঠান্ডা।",
+      "pronunciation": "Gachher chhaya khub thanda.",
+      "en": "The tree's shade is very cool.",
+      "context": "Description.",
+      "category": "nouns"
     },
     {
-      "bn": "পড়ুন: “আমার এখন সময় নেই।”",
-      "pronunciation": "porun: amar ekhon shomoy nei",
-      "en": "Read: “I do not have time now.”",
-      "context": "Read the nouns example aloud",
-      "category": "nouns",
-      "exercise": true,
-      "sourcePhrase": "আমার এখন সময় নেই।",
-      "words": [
-        {
-          "bn": "পড়ুন",
-          "pronunciation": "porun",
-          "en": "read"
-        },
-        {
-          "bn": "আমার",
-          "pronunciation": "amar",
-          "en": "my"
-        },
-        {
-          "bn": "এখন",
-          "pronunciation": "ekhon",
-          "en": "now"
-        },
-        {
-          "bn": "সময়",
-          "pronunciation": "shomoy",
-          "en": "time"
-        },
-        {
-          "bn": "নেই",
-          "pronunciation": "nei",
-          "en": "does not have"
-        }
-      ]
+      "bn": "এটা ছোট।",
+      "pronunciation": "Eta chhoto.",
+      "en": "This is small.",
+      "context": "Describing size.",
+      "category": "nouns"
     },
     {
-      "bn": "পড়ুন: “এই রাস্তা স্টেশনে যায়।”",
-      "pronunciation": "porun: ei rasta steshone jay",
-      "en": "Read: “This road goes to the station.”",
-      "context": "Read the nouns example aloud",
-      "category": "nouns",
-      "exercise": true,
-      "sourcePhrase": "এই রাস্তা স্টেশনে যায়।",
-      "words": [
-        {
-          "bn": "পড়ুন",
-          "pronunciation": "porun",
-          "en": "read"
-        },
-        {
-          "bn": "এই",
-          "pronunciation": "ei",
-          "en": "this"
-        },
-        {
-          "bn": "রাস্তা",
-          "pronunciation": "rasta",
-          "en": "road"
-        },
-        {
-          "bn": "স্টেশনে",
-          "pronunciation": "steshone",
-          "en": "to the station"
-        },
-        {
-          "bn": "যায়",
-          "pronunciation": "jay",
-          "en": "goes"
-        }
-      ]
+      "bn": "এই গাছটা উঁচু।",
+      "pronunciation": "Ei gachh ta oo^chu.",
+      "en": "This tree is tall.",
+      "context": "Description.",
+      "category": "nouns"
     },
     {
-      "bn": "পড়ুন: “এই শহর অনেক বড়।”",
-      "pronunciation": "porun: ei shohor onek boro",
-      "en": "Read: “This city is very large.”",
-      "context": "Read the nouns example aloud",
-      "category": "nouns",
-      "exercise": true,
-      "sourcePhrase": "এই শহর অনেক বড়।",
-      "words": [
-        {
-          "bn": "পড়ুন",
-          "pronunciation": "porun",
-          "en": "read"
-        },
-        {
-          "bn": "এই",
-          "pronunciation": "ei",
-          "en": "this"
-        },
-        {
-          "bn": "শহর",
-          "pronunciation": "shohor",
-          "en": "city"
-        },
-        {
-          "bn": "অনেক",
-          "pronunciation": "onek",
-          "en": "very / many"
-        },
-        {
-          "bn": "বড়",
-          "pronunciation": "boro",
-          "en": "big"
-        }
-      ]
+      "bn": "আমাদের বাড়ি নীল রঙের।",
+      "pronunciation": "Amader bari neel rong er.",
+      "en": "Our house is blue in color.",
+      "context": "Describing a house.",
+      "category": "nouns"
     },
     {
-      "bn": "পড়ুন: “ঘরের দরজা খোলা।”",
-      "pronunciation": "porun: ghorer dorja khola",
-      "en": "Read: “The room's door is open.”",
-      "context": "Read the nouns example aloud",
-      "category": "nouns",
-      "exercise": true,
-      "sourcePhrase": "ঘরের দরজা খোলা।",
-      "words": [
-        {
-          "bn": "পড়ুন",
-          "pronunciation": "porun",
-          "en": "read"
-        },
-        {
-          "bn": "ঘরের",
-          "pronunciation": "ghorer",
-          "en": "of the room"
-        },
-        {
-          "bn": "দরজা",
-          "pronunciation": "dorja",
-          "en": "door"
-        },
-        {
-          "bn": "খোলা",
-          "pronunciation": "khola",
-          "en": "open"
-        }
-      ]
+      "bn": "আমার বন্ধু আমাকে সাহায্য করে।",
+      "pronunciation": "Amar bondhu amake sahajjo kore.",
+      "en": "My friend helps me.",
+      "context": "Talking about help from a friend.",
+      "category": "nouns"
     },
     {
-      "bn": "পড়ুন: “জানালা দিয়ে আলো আসছে।”",
-      "pronunciation": "porun: janala diye alo ashchhe",
-      "en": "Read: “Light is coming through the window.”",
-      "context": "Read the nouns example aloud",
-      "category": "nouns",
-      "exercise": true,
-      "sourcePhrase": "জানালা দিয়ে আলো আসছে।",
-      "words": [
-        {
-          "bn": "পড়ুন",
-          "pronunciation": "porun",
-          "en": "read"
-        },
-        {
-          "bn": "জানালা",
-          "pronunciation": "janala",
-          "en": "window"
-        },
-        {
-          "bn": "দিয়ে",
-          "pronunciation": "diye",
-          "en": "through / with"
-        },
-        {
-          "bn": "আলো",
-          "pronunciation": "alo",
-          "en": "light"
-        },
-        {
-          "bn": "আসছে",
-          "pronunciation": "ashchhe",
-          "en": "is coming"
-        }
-      ]
+      "bn": "ডিম একটি ভালো খাবার।",
+      "pronunciation": "Dim ekti bhaalo khabar.",
+      "en": "Egg is a good food.",
+      "context": "Talking about nutrition.",
+      "category": "nouns"
     },
     {
-      "bn": "পড়ুন: “চাবি টেবিলের উপরে আছে।”",
-      "pronunciation": "porun: chabi tebiler upore achhe",
-      "en": "Read: “The key is on the table.”",
-      "context": "Read the nouns example aloud",
-      "category": "nouns",
-      "exercise": true,
-      "sourcePhrase": "চাবি টেবিলের উপরে আছে।",
-      "words": [
-        {
-          "bn": "পড়ুন",
-          "pronunciation": "porun",
-          "en": "read"
-        },
-        {
-          "bn": "চাবি",
-          "pronunciation": "chabi",
-          "en": "key"
-        },
-        {
-          "bn": "টেবিলের",
-          "pronunciation": "tebiler",
-          "en": "of the table"
-        },
-        {
-          "bn": "উপরে",
-          "pronunciation": "upore",
-          "en": "on / above"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is / has"
-        }
-      ]
+      "bn": "ফুলগুলো খুব রঙিন।",
+      "pronunciation": "Ful gulo khub rangeen.",
+      "en": "The flowers are very colorful.",
+      "context": "Describing flowers.",
+      "category": "nouns"
     },
     {
-      "bn": "পড়ুন: “আমার ফোন ব্যাগে আছে।”",
-      "pronunciation": "porun: amar phone bage achhe",
-      "en": "Read: “My phone is in the bag.”",
-      "context": "Read the nouns example aloud",
-      "category": "nouns",
-      "exercise": true,
-      "sourcePhrase": "আমার ফোন ব্যাগে আছে।",
-      "words": [
-        {
-          "bn": "পড়ুন",
-          "pronunciation": "porun",
-          "en": "read"
-        },
-        {
-          "bn": "আমার",
-          "pronunciation": "amar",
-          "en": "my"
-        },
-        {
-          "bn": "ফোন",
-          "pronunciation": "phone",
-          "en": "phone"
-        },
-        {
-          "bn": "ব্যাগে",
-          "pronunciation": "bage",
-          "en": "in the bag"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is / has"
-        }
-      ]
+      "bn": "হাতি খুবই বড়।",
+      "pronunciation": "Hati khubi boro.",
+      "en": "The elephant is very big.",
+      "context": "Describing size.",
+      "category": "nouns"
     },
     {
-      "bn": "পড়ুন: “কম্পিউটারটি খুব দ্রুত।”",
-      "pronunciation": "porun: kompiutar-ti khub druto",
-      "en": "Read: “The computer is very fast.”",
-      "context": "Read the nouns example aloud",
-      "category": "nouns",
-      "exercise": true,
-      "sourcePhrase": "কম্পিউটারটি খুব দ্রুত।",
-      "words": [
-        {
-          "bn": "পড়ুন",
-          "pronunciation": "porun",
-          "en": "read"
-        },
-        {
-          "bn": "কম্পিউটারটি",
-          "pronunciation": "kompiutar-ti",
-          "en": "the computer"
-        },
-        {
-          "bn": "খুব",
-          "pronunciation": "khub",
-          "en": "very"
-        },
-        {
-          "bn": "দ্রুত",
-          "pronunciation": "druto",
-          "en": "quickly"
-        }
-      ]
+      "bn": "আমার কলম নীল।",
+      "pronunciation": "Amar kalam nil.",
+      "en": "My pen is blue.",
+      "context": "Describing possession and color.",
+      "category": "nouns"
     },
     {
-      "bn": "পড়ুন: “টেবিলটি জানালার পাশে।”",
-      "pronunciation": "porun: tebil-ti janalar pashe",
-      "en": "Read: “The table is beside the window.”",
-      "context": "Read the nouns example aloud",
-      "category": "nouns",
-      "exercise": true,
-      "sourcePhrase": "টেবিলটি জানালার পাশে।",
-      "words": [
-        {
-          "bn": "পড়ুন",
-          "pronunciation": "porun",
-          "en": "read"
-        },
-        {
-          "bn": "টেবিলটি",
-          "pronunciation": "tebil-ti",
-          "en": "the table"
-        },
-        {
-          "bn": "জানালার",
-          "pronunciation": "janalar",
-          "en": "of the window"
-        },
-        {
-          "bn": "পাশে",
-          "pronunciation": "pashe",
-          "en": "beside"
-        }
-      ]
+      "bn": "এই খাবার খারাপ।",
+      "pronunciation": "Ei khabar kharap.",
+      "en": "This food is bad.",
+      "context": "Expressing dissatisfaction.",
+      "category": "nouns"
     },
     {
-      "bn": "পড়ুন: “চেয়ারটি টেবিলের সামনে।”",
-      "pronunciation": "porun: cheyar-ti tebiler shamne",
-      "en": "Read: “The chair is in front of the table.”",
-      "context": "Read the nouns example aloud",
-      "category": "nouns",
-      "exercise": true,
-      "sourcePhrase": "চেয়ারটি টেবিলের সামনে।",
-      "words": [
-        {
-          "bn": "পড়ুন",
-          "pronunciation": "porun",
-          "en": "read"
-        },
-        {
-          "bn": "চেয়ারটি",
-          "pronunciation": "cheyar-ti",
-          "en": "the chair"
-        },
-        {
-          "bn": "টেবিলের",
-          "pronunciation": "tebiler",
-          "en": "of the table"
-        },
-        {
-          "bn": "সামনে",
-          "pronunciation": "shamne",
-          "en": "in front of"
-        }
-      ]
+      "bn": "আমি কলম দিয়ে লিখি।",
+      "pronunciation": "Ami kalam diye likhi.",
+      "en": "I write with a pen.",
+      "context": "Describing how one writes.",
+      "category": "nouns"
     },
     {
-      "bn": "পড়ুন: “ঘড়িতে এখন দশটা।”",
-      "pronunciation": "porun: ghorite ekhon doshta",
-      "en": "Read: “It is ten o'clock on the clock.”",
-      "context": "Read the nouns example aloud",
-      "category": "nouns",
-      "exercise": true,
-      "sourcePhrase": "ঘড়িতে এখন দশটা।",
-      "words": [
-        {
-          "bn": "পড়ুন",
-          "pronunciation": "porun",
-          "en": "read"
-        },
-        {
-          "bn": "ঘড়িতে",
-          "pronunciation": "ghorite",
-          "en": "on the clock"
-        },
-        {
-          "bn": "এখন",
-          "pronunciation": "ekhon",
-          "en": "now"
-        },
-        {
-          "bn": "দশটা",
-          "pronunciation": "doshta",
-          "en": "ten o'clock"
-        }
-      ]
+      "bn": "একজন পুরুষ স্কুলে যায়।",
+      "pronunciation": "Ekjon purush school-e jay.",
+      "en": "One man goes to school.",
+      "context": "Describing a person’s routine.",
+      "category": "nouns"
     }
   ],
   "vocab": [

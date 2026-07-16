@@ -345,3382 +345,620 @@
       ]
     },
     {
-      "bn": "বলুন: “এই খাবারটি খুব ভালো।”",
-      "pronunciation": "bolun: ei khabarti khub bhalo",
-      "en": "Say: “This food is very good.”",
-      "context": "Say the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "এই খাবারটি খুব ভালো।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "এই",
-          "pronunciation": "ei",
-          "en": "this"
-        },
-        {
-          "bn": "খাবারটি",
-          "pronunciation": "khabarti",
-          "en": "the food"
-        },
-        {
-          "bn": "খুব",
-          "pronunciation": "khub",
-          "en": "very"
-        },
-        {
-          "bn": "ভালো",
-          "pronunciation": "bhalo",
-          "en": "good"
-        }
-      ]
-    },
-    {
-      "bn": "বলুন: “আজ আবহাওয়া খারাপ।”",
-      "pronunciation": "bolun: aj abohawa kharap",
-      "en": "Say: “The weather is bad today.”",
-      "context": "Say the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "আজ আবহাওয়া খারাপ।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "আজ",
-          "pronunciation": "aj",
-          "en": "today"
-        },
-        {
-          "bn": "আবহাওয়া",
-          "pronunciation": "abohawa",
-          "en": "weather"
-        },
-        {
-          "bn": "খারাপ",
-          "pronunciation": "kharap",
-          "en": "bad"
-        }
-      ]
-    },
-    {
-      "bn": "বলুন: “ওই বাড়িটি অনেক বড়।”",
-      "pronunciation": "bolun: oi bariti onek boro",
-      "en": "Say: “That house is very big.”",
-      "context": "Say the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "ওই বাড়িটি অনেক বড়।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "ওই",
-          "pronunciation": "oi",
-          "en": "that"
-        },
-        {
-          "bn": "বাড়িটি",
-          "pronunciation": "bariti",
-          "en": "the house"
-        },
-        {
-          "bn": "অনেক",
-          "pronunciation": "onek",
-          "en": "very / many"
-        },
-        {
-          "bn": "বড়",
-          "pronunciation": "boro",
-          "en": "big"
-        }
-      ]
-    },
-    {
-      "bn": "বলুন: “আমার একটি ছোট ব্যাগ আছে।”",
-      "pronunciation": "bolun: amar ekti chhoto bag achhe",
-      "en": "Say: “I have a small bag.”",
-      "context": "Say the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "আমার একটি ছোট ব্যাগ আছে।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "আমার",
-          "pronunciation": "amar",
-          "en": "my"
-        },
-        {
-          "bn": "একটি",
-          "pronunciation": "ekti",
-          "en": "one / a"
-        },
-        {
-          "bn": "ছোট",
-          "pronunciation": "chhoto",
-          "en": "small"
-        },
-        {
-          "bn": "ব্যাগ",
-          "pronunciation": "bag",
-          "en": "bag"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is / has"
-        }
-      ]
-    },
-    {
-      "bn": "বলুন: “আমি একটি নতুন বই কিনেছি।”",
-      "pronunciation": "bolun: ami ekti notun boi kinechhi",
-      "en": "Say: “I bought a new book.”",
-      "context": "Say the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "আমি একটি নতুন বই কিনেছি।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "একটি",
-          "pronunciation": "ekti",
-          "en": "one / a"
-        },
-        {
-          "bn": "নতুন",
-          "pronunciation": "notun",
-          "en": "new"
-        },
-        {
-          "bn": "বই",
-          "pronunciation": "boi",
-          "en": "book"
-        },
-        {
-          "bn": "কিনেছি",
-          "pronunciation": "kinechhi",
-          "en": "bought"
-        }
-      ]
-    },
-    {
-      "bn": "বলুন: “এটি একটি পুরোনো ছবি।”",
-      "pronunciation": "bolun: eti ekti purono chhobi",
-      "en": "Say: “This is an old photograph.”",
-      "context": "Say the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "এটি একটি পুরোনো ছবি।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "এটি",
-          "pronunciation": "eti",
-          "en": "this"
-        },
-        {
-          "bn": "একটি",
-          "pronunciation": "ekti",
-          "en": "one / a"
-        },
-        {
-          "bn": "পুরোনো",
-          "pronunciation": "purono",
-          "en": "old"
-        },
-        {
-          "bn": "ছবি",
-          "pronunciation": "chhobi",
-          "en": "picture"
-        }
-      ]
-    },
-    {
-      "bn": "বলুন: “এটা একটি সুন্দর বাড়ি।”",
-      "pronunciation": "bolun: eta ekti shundor bari",
-      "en": "Say: “This is a beautiful house.”",
-      "context": "Say the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "এটা একটি সুন্দর বাড়ি।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "এটা",
-          "pronunciation": "eta",
-          "en": "this"
-        },
-        {
-          "bn": "একটি",
-          "pronunciation": "ekti",
-          "en": "one / a"
-        },
-        {
-          "bn": "সুন্দর",
-          "pronunciation": "shundor",
-          "en": "beautiful"
-        },
-        {
-          "bn": "বাড়ি",
-          "pronunciation": "bari",
-          "en": "house / home"
-        }
-      ]
-    },
-    {
-      "bn": "বলুন: “এই প্রশ্নটি খুব সহজ।”",
-      "pronunciation": "bolun: ei proshnoti khub shohaj",
-      "en": "Say: “This question is very easy.”",
-      "context": "Say the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "এই প্রশ্নটি খুব সহজ।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "এই",
-          "pronunciation": "ei",
-          "en": "this"
-        },
-        {
-          "bn": "প্রশ্নটি",
-          "pronunciation": "proshnoti",
-          "en": "the question"
-        },
-        {
-          "bn": "খুব",
-          "pronunciation": "khub",
-          "en": "very"
-        },
-        {
-          "bn": "সহজ",
-          "pronunciation": "shohaj",
-          "en": "easy"
-        }
-      ]
-    },
-    {
-      "bn": "বলুন: “এই কাজটি বেশ কঠিন।”",
-      "pronunciation": "bolun: ei kajti besh kothin",
-      "en": "Say: “This task is quite difficult.”",
-      "context": "Say the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "এই কাজটি বেশ কঠিন।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "এই",
-          "pronunciation": "ei",
-          "en": "this"
-        },
-        {
-          "bn": "কাজটি",
-          "pronunciation": "kajti",
-          "en": "the task"
-        },
-        {
-          "bn": "বেশ",
-          "pronunciation": "besh",
-          "en": "quite"
-        },
-        {
-          "bn": "কঠিন",
-          "pronunciation": "kothin",
-          "en": "difficult"
-        }
-      ]
-    },
-    {
-      "bn": "বলুন: “চা এখনো গরম।”",
-      "pronunciation": "bolun: cha ekhono gorom",
-      "en": "Say: “The tea is still hot.”",
-      "context": "Say the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "চা এখনো গরম।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "চা",
-          "pronunciation": "cha",
-          "en": "tea"
-        },
-        {
-          "bn": "এখনো",
-          "pronunciation": "ekhono",
-          "en": "still"
-        },
-        {
-          "bn": "গরম",
-          "pronunciation": "gorom",
-          "en": "hot"
-        }
-      ]
-    },
-    {
-      "bn": "বলুন: “আজ পানি ঠান্ডা।”",
-      "pronunciation": "bolun: aj pani thanda",
-      "en": "Say: “The water is cold today.”",
-      "context": "Say the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "আজ পানি ঠান্ডা।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "আজ",
-          "pronunciation": "aj",
-          "en": "today"
-        },
-        {
-          "bn": "পানি",
-          "pronunciation": "pani",
-          "en": "water"
-        },
-        {
-          "bn": "ঠান্ডা",
-          "pronunciation": "thanda",
-          "en": "cold"
-        }
-      ]
-    },
-    {
-      "bn": "বলুন: “আমার ব্যাগটি লাল।”",
-      "pronunciation": "bolun: amar bagti lal",
-      "en": "Say: “My bag is red.”",
-      "context": "Say the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "আমার ব্যাগটি লাল।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "আমার",
-          "pronunciation": "amar",
-          "en": "my"
-        },
-        {
-          "bn": "ব্যাগটি",
-          "pronunciation": "bagti",
-          "en": "the bag"
-        },
-        {
-          "bn": "লাল",
-          "pronunciation": "lal",
-          "en": "red"
-        }
-      ]
-    },
-    {
-      "bn": "পড়ুন: “এই খাবারটি খুব ভালো।”",
-      "pronunciation": "porun: ei khabarti khub bhalo",
-      "en": "Read: “This food is very good.”",
-      "context": "Read the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "এই খাবারটি খুব ভালো।",
-      "words": [
-        {
-          "bn": "পড়ুন",
-          "pronunciation": "porun",
-          "en": "read"
-        },
-        {
-          "bn": "এই",
-          "pronunciation": "ei",
-          "en": "this"
-        },
-        {
-          "bn": "খাবারটি",
-          "pronunciation": "khabarti",
-          "en": "the food"
-        },
-        {
-          "bn": "খুব",
-          "pronunciation": "khub",
-          "en": "very"
-        },
-        {
-          "bn": "ভালো",
-          "pronunciation": "bhalo",
-          "en": "good"
-        }
-      ]
-    },
-    {
-      "bn": "পড়ুন: “আজ আবহাওয়া খারাপ।”",
-      "pronunciation": "porun: aj abohawa kharap",
-      "en": "Read: “The weather is bad today.”",
-      "context": "Read the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "আজ আবহাওয়া খারাপ।",
-      "words": [
-        {
-          "bn": "পড়ুন",
-          "pronunciation": "porun",
-          "en": "read"
-        },
-        {
-          "bn": "আজ",
-          "pronunciation": "aj",
-          "en": "today"
-        },
-        {
-          "bn": "আবহাওয়া",
-          "pronunciation": "abohawa",
-          "en": "weather"
-        },
-        {
-          "bn": "খারাপ",
-          "pronunciation": "kharap",
-          "en": "bad"
-        }
-      ]
-    },
-    {
-      "bn": "পড়ুন: “ওই বাড়িটি অনেক বড়।”",
-      "pronunciation": "porun: oi bariti onek boro",
-      "en": "Read: “That house is very big.”",
-      "context": "Read the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "ওই বাড়িটি অনেক বড়।",
-      "words": [
-        {
-          "bn": "পড়ুন",
-          "pronunciation": "porun",
-          "en": "read"
-        },
-        {
-          "bn": "ওই",
-          "pronunciation": "oi",
-          "en": "that"
-        },
-        {
-          "bn": "বাড়িটি",
-          "pronunciation": "bariti",
-          "en": "the house"
-        },
-        {
-          "bn": "অনেক",
-          "pronunciation": "onek",
-          "en": "very / many"
-        },
-        {
-          "bn": "বড়",
-          "pronunciation": "boro",
-          "en": "big"
-        }
-      ]
-    },
-    {
-      "bn": "পড়ুন: “আমার একটি ছোট ব্যাগ আছে।”",
-      "pronunciation": "porun: amar ekti chhoto bag achhe",
-      "en": "Read: “I have a small bag.”",
-      "context": "Read the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "আমার একটি ছোট ব্যাগ আছে।",
-      "words": [
-        {
-          "bn": "পড়ুন",
-          "pronunciation": "porun",
-          "en": "read"
-        },
-        {
-          "bn": "আমার",
-          "pronunciation": "amar",
-          "en": "my"
-        },
-        {
-          "bn": "একটি",
-          "pronunciation": "ekti",
-          "en": "one / a"
-        },
-        {
-          "bn": "ছোট",
-          "pronunciation": "chhoto",
-          "en": "small"
-        },
-        {
-          "bn": "ব্যাগ",
-          "pronunciation": "bag",
-          "en": "bag"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is / has"
-        }
-      ]
-    },
-    {
-      "bn": "পড়ুন: “আমি একটি নতুন বই কিনেছি।”",
-      "pronunciation": "porun: ami ekti notun boi kinechhi",
-      "en": "Read: “I bought a new book.”",
-      "context": "Read the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "আমি একটি নতুন বই কিনেছি।",
-      "words": [
-        {
-          "bn": "পড়ুন",
-          "pronunciation": "porun",
-          "en": "read"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "একটি",
-          "pronunciation": "ekti",
-          "en": "one / a"
-        },
-        {
-          "bn": "নতুন",
-          "pronunciation": "notun",
-          "en": "new"
-        },
-        {
-          "bn": "বই",
-          "pronunciation": "boi",
-          "en": "book"
-        },
-        {
-          "bn": "কিনেছি",
-          "pronunciation": "kinechhi",
-          "en": "bought"
-        }
-      ]
-    },
-    {
-      "bn": "পড়ুন: “এটি একটি পুরোনো ছবি।”",
-      "pronunciation": "porun: eti ekti purono chhobi",
-      "en": "Read: “This is an old photograph.”",
-      "context": "Read the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "এটি একটি পুরোনো ছবি।",
-      "words": [
-        {
-          "bn": "পড়ুন",
-          "pronunciation": "porun",
-          "en": "read"
-        },
-        {
-          "bn": "এটি",
-          "pronunciation": "eti",
-          "en": "this"
-        },
-        {
-          "bn": "একটি",
-          "pronunciation": "ekti",
-          "en": "one / a"
-        },
-        {
-          "bn": "পুরোনো",
-          "pronunciation": "purono",
-          "en": "old"
-        },
-        {
-          "bn": "ছবি",
-          "pronunciation": "chhobi",
-          "en": "picture"
-        }
-      ]
-    },
-    {
-      "bn": "পড়ুন: “এটা একটি সুন্দর বাড়ি।”",
-      "pronunciation": "porun: eta ekti shundor bari",
-      "en": "Read: “This is a beautiful house.”",
-      "context": "Read the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "এটা একটি সুন্দর বাড়ি।",
-      "words": [
-        {
-          "bn": "পড়ুন",
-          "pronunciation": "porun",
-          "en": "read"
-        },
-        {
-          "bn": "এটা",
-          "pronunciation": "eta",
-          "en": "this"
-        },
-        {
-          "bn": "একটি",
-          "pronunciation": "ekti",
-          "en": "one / a"
-        },
-        {
-          "bn": "সুন্দর",
-          "pronunciation": "shundor",
-          "en": "beautiful"
-        },
-        {
-          "bn": "বাড়ি",
-          "pronunciation": "bari",
-          "en": "house / home"
-        }
-      ]
-    },
-    {
-      "bn": "পড়ুন: “এই প্রশ্নটি খুব সহজ।”",
-      "pronunciation": "porun: ei proshnoti khub shohaj",
-      "en": "Read: “This question is very easy.”",
-      "context": "Read the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "এই প্রশ্নটি খুব সহজ।",
-      "words": [
-        {
-          "bn": "পড়ুন",
-          "pronunciation": "porun",
-          "en": "read"
-        },
-        {
-          "bn": "এই",
-          "pronunciation": "ei",
-          "en": "this"
-        },
-        {
-          "bn": "প্রশ্নটি",
-          "pronunciation": "proshnoti",
-          "en": "the question"
-        },
-        {
-          "bn": "খুব",
-          "pronunciation": "khub",
-          "en": "very"
-        },
-        {
-          "bn": "সহজ",
-          "pronunciation": "shohaj",
-          "en": "easy"
-        }
-      ]
-    },
-    {
-      "bn": "পড়ুন: “এই কাজটি বেশ কঠিন।”",
-      "pronunciation": "porun: ei kajti besh kothin",
-      "en": "Read: “This task is quite difficult.”",
-      "context": "Read the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "এই কাজটি বেশ কঠিন।",
-      "words": [
-        {
-          "bn": "পড়ুন",
-          "pronunciation": "porun",
-          "en": "read"
-        },
-        {
-          "bn": "এই",
-          "pronunciation": "ei",
-          "en": "this"
-        },
-        {
-          "bn": "কাজটি",
-          "pronunciation": "kajti",
-          "en": "the task"
-        },
-        {
-          "bn": "বেশ",
-          "pronunciation": "besh",
-          "en": "quite"
-        },
-        {
-          "bn": "কঠিন",
-          "pronunciation": "kothin",
-          "en": "difficult"
-        }
-      ]
-    },
-    {
-      "bn": "পড়ুন: “চা এখনো গরম।”",
-      "pronunciation": "porun: cha ekhono gorom",
-      "en": "Read: “The tea is still hot.”",
-      "context": "Read the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "চা এখনো গরম।",
-      "words": [
-        {
-          "bn": "পড়ুন",
-          "pronunciation": "porun",
-          "en": "read"
-        },
-        {
-          "bn": "চা",
-          "pronunciation": "cha",
-          "en": "tea"
-        },
-        {
-          "bn": "এখনো",
-          "pronunciation": "ekhono",
-          "en": "still"
-        },
-        {
-          "bn": "গরম",
-          "pronunciation": "gorom",
-          "en": "hot"
-        }
-      ]
-    },
-    {
-      "bn": "পড়ুন: “আজ পানি ঠান্ডা।”",
-      "pronunciation": "porun: aj pani thanda",
-      "en": "Read: “The water is cold today.”",
-      "context": "Read the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "আজ পানি ঠান্ডা।",
-      "words": [
-        {
-          "bn": "পড়ুন",
-          "pronunciation": "porun",
-          "en": "read"
-        },
-        {
-          "bn": "আজ",
-          "pronunciation": "aj",
-          "en": "today"
-        },
-        {
-          "bn": "পানি",
-          "pronunciation": "pani",
-          "en": "water"
-        },
-        {
-          "bn": "ঠান্ডা",
-          "pronunciation": "thanda",
-          "en": "cold"
-        }
-      ]
-    },
-    {
-      "bn": "পড়ুন: “আমার ব্যাগটি লাল।”",
-      "pronunciation": "porun: amar bagti lal",
-      "en": "Read: “My bag is red.”",
-      "context": "Read the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "আমার ব্যাগটি লাল।",
-      "words": [
-        {
-          "bn": "পড়ুন",
-          "pronunciation": "porun",
-          "en": "read"
-        },
-        {
-          "bn": "আমার",
-          "pronunciation": "amar",
-          "en": "my"
-        },
-        {
-          "bn": "ব্যাগটি",
-          "pronunciation": "bagti",
-          "en": "the bag"
-        },
-        {
-          "bn": "লাল",
-          "pronunciation": "lal",
-          "en": "red"
-        }
-      ]
-    },
-    {
-      "bn": "লিখুন: “এই খাবারটি খুব ভালো।”",
-      "pronunciation": "likhun: ei khabarti khub bhalo",
-      "en": "Write: “This food is very good.”",
-      "context": "Write the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "এই খাবারটি খুব ভালো।",
-      "words": [
-        {
-          "bn": "লিখুন",
-          "pronunciation": "likhun",
-          "en": "write"
-        },
-        {
-          "bn": "এই",
-          "pronunciation": "ei",
-          "en": "this"
-        },
-        {
-          "bn": "খাবারটি",
-          "pronunciation": "khabarti",
-          "en": "the food"
-        },
-        {
-          "bn": "খুব",
-          "pronunciation": "khub",
-          "en": "very"
-        },
-        {
-          "bn": "ভালো",
-          "pronunciation": "bhalo",
-          "en": "good"
-        }
-      ]
-    },
-    {
-      "bn": "লিখুন: “আজ আবহাওয়া খারাপ।”",
-      "pronunciation": "likhun: aj abohawa kharap",
-      "en": "Write: “The weather is bad today.”",
-      "context": "Write the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "আজ আবহাওয়া খারাপ।",
-      "words": [
-        {
-          "bn": "লিখুন",
-          "pronunciation": "likhun",
-          "en": "write"
-        },
-        {
-          "bn": "আজ",
-          "pronunciation": "aj",
-          "en": "today"
-        },
-        {
-          "bn": "আবহাওয়া",
-          "pronunciation": "abohawa",
-          "en": "weather"
-        },
-        {
-          "bn": "খারাপ",
-          "pronunciation": "kharap",
-          "en": "bad"
-        }
-      ]
-    },
-    {
-      "bn": "লিখুন: “ওই বাড়িটি অনেক বড়।”",
-      "pronunciation": "likhun: oi bariti onek boro",
-      "en": "Write: “That house is very big.”",
-      "context": "Write the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "ওই বাড়িটি অনেক বড়।",
-      "words": [
-        {
-          "bn": "লিখুন",
-          "pronunciation": "likhun",
-          "en": "write"
-        },
-        {
-          "bn": "ওই",
-          "pronunciation": "oi",
-          "en": "that"
-        },
-        {
-          "bn": "বাড়িটি",
-          "pronunciation": "bariti",
-          "en": "the house"
-        },
-        {
-          "bn": "অনেক",
-          "pronunciation": "onek",
-          "en": "very / many"
-        },
-        {
-          "bn": "বড়",
-          "pronunciation": "boro",
-          "en": "big"
-        }
-      ]
-    },
-    {
-      "bn": "লিখুন: “আমার একটি ছোট ব্যাগ আছে।”",
-      "pronunciation": "likhun: amar ekti chhoto bag achhe",
-      "en": "Write: “I have a small bag.”",
-      "context": "Write the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "আমার একটি ছোট ব্যাগ আছে।",
-      "words": [
-        {
-          "bn": "লিখুন",
-          "pronunciation": "likhun",
-          "en": "write"
-        },
-        {
-          "bn": "আমার",
-          "pronunciation": "amar",
-          "en": "my"
-        },
-        {
-          "bn": "একটি",
-          "pronunciation": "ekti",
-          "en": "one / a"
-        },
-        {
-          "bn": "ছোট",
-          "pronunciation": "chhoto",
-          "en": "small"
-        },
-        {
-          "bn": "ব্যাগ",
-          "pronunciation": "bag",
-          "en": "bag"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is / has"
-        }
-      ]
-    },
-    {
-      "bn": "লিখুন: “আমি একটি নতুন বই কিনেছি।”",
-      "pronunciation": "likhun: ami ekti notun boi kinechhi",
-      "en": "Write: “I bought a new book.”",
-      "context": "Write the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "আমি একটি নতুন বই কিনেছি।",
-      "words": [
-        {
-          "bn": "লিখুন",
-          "pronunciation": "likhun",
-          "en": "write"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "একটি",
-          "pronunciation": "ekti",
-          "en": "one / a"
-        },
-        {
-          "bn": "নতুন",
-          "pronunciation": "notun",
-          "en": "new"
-        },
-        {
-          "bn": "বই",
-          "pronunciation": "boi",
-          "en": "book"
-        },
-        {
-          "bn": "কিনেছি",
-          "pronunciation": "kinechhi",
-          "en": "bought"
-        }
-      ]
-    },
-    {
-      "bn": "লিখুন: “এটি একটি পুরোনো ছবি।”",
-      "pronunciation": "likhun: eti ekti purono chhobi",
-      "en": "Write: “This is an old photograph.”",
-      "context": "Write the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "এটি একটি পুরোনো ছবি।",
-      "words": [
-        {
-          "bn": "লিখুন",
-          "pronunciation": "likhun",
-          "en": "write"
-        },
-        {
-          "bn": "এটি",
-          "pronunciation": "eti",
-          "en": "this"
-        },
-        {
-          "bn": "একটি",
-          "pronunciation": "ekti",
-          "en": "one / a"
-        },
-        {
-          "bn": "পুরোনো",
-          "pronunciation": "purono",
-          "en": "old"
-        },
-        {
-          "bn": "ছবি",
-          "pronunciation": "chhobi",
-          "en": "picture"
-        }
-      ]
-    },
-    {
-      "bn": "লিখুন: “এটা একটি সুন্দর বাড়ি।”",
-      "pronunciation": "likhun: eta ekti shundor bari",
-      "en": "Write: “This is a beautiful house.”",
-      "context": "Write the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "এটা একটি সুন্দর বাড়ি।",
-      "words": [
-        {
-          "bn": "লিখুন",
-          "pronunciation": "likhun",
-          "en": "write"
-        },
-        {
-          "bn": "এটা",
-          "pronunciation": "eta",
-          "en": "this"
-        },
-        {
-          "bn": "একটি",
-          "pronunciation": "ekti",
-          "en": "one / a"
-        },
-        {
-          "bn": "সুন্দর",
-          "pronunciation": "shundor",
-          "en": "beautiful"
-        },
-        {
-          "bn": "বাড়ি",
-          "pronunciation": "bari",
-          "en": "house / home"
-        }
-      ]
-    },
-    {
-      "bn": "লিখুন: “এই প্রশ্নটি খুব সহজ।”",
-      "pronunciation": "likhun: ei proshnoti khub shohaj",
-      "en": "Write: “This question is very easy.”",
-      "context": "Write the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "এই প্রশ্নটি খুব সহজ।",
-      "words": [
-        {
-          "bn": "লিখুন",
-          "pronunciation": "likhun",
-          "en": "write"
-        },
-        {
-          "bn": "এই",
-          "pronunciation": "ei",
-          "en": "this"
-        },
-        {
-          "bn": "প্রশ্নটি",
-          "pronunciation": "proshnoti",
-          "en": "the question"
-        },
-        {
-          "bn": "খুব",
-          "pronunciation": "khub",
-          "en": "very"
-        },
-        {
-          "bn": "সহজ",
-          "pronunciation": "shohaj",
-          "en": "easy"
-        }
-      ]
-    },
-    {
-      "bn": "লিখুন: “এই কাজটি বেশ কঠিন।”",
-      "pronunciation": "likhun: ei kajti besh kothin",
-      "en": "Write: “This task is quite difficult.”",
-      "context": "Write the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "এই কাজটি বেশ কঠিন।",
-      "words": [
-        {
-          "bn": "লিখুন",
-          "pronunciation": "likhun",
-          "en": "write"
-        },
-        {
-          "bn": "এই",
-          "pronunciation": "ei",
-          "en": "this"
-        },
-        {
-          "bn": "কাজটি",
-          "pronunciation": "kajti",
-          "en": "the task"
-        },
-        {
-          "bn": "বেশ",
-          "pronunciation": "besh",
-          "en": "quite"
-        },
-        {
-          "bn": "কঠিন",
-          "pronunciation": "kothin",
-          "en": "difficult"
-        }
-      ]
-    },
-    {
-      "bn": "লিখুন: “চা এখনো গরম।”",
-      "pronunciation": "likhun: cha ekhono gorom",
-      "en": "Write: “The tea is still hot.”",
-      "context": "Write the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "চা এখনো গরম।",
-      "words": [
-        {
-          "bn": "লিখুন",
-          "pronunciation": "likhun",
-          "en": "write"
-        },
-        {
-          "bn": "চা",
-          "pronunciation": "cha",
-          "en": "tea"
-        },
-        {
-          "bn": "এখনো",
-          "pronunciation": "ekhono",
-          "en": "still"
-        },
-        {
-          "bn": "গরম",
-          "pronunciation": "gorom",
-          "en": "hot"
-        }
-      ]
-    },
-    {
-      "bn": "লিখুন: “আজ পানি ঠান্ডা।”",
-      "pronunciation": "likhun: aj pani thanda",
-      "en": "Write: “The water is cold today.”",
-      "context": "Write the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "আজ পানি ঠান্ডা।",
-      "words": [
-        {
-          "bn": "লিখুন",
-          "pronunciation": "likhun",
-          "en": "write"
-        },
-        {
-          "bn": "আজ",
-          "pronunciation": "aj",
-          "en": "today"
-        },
-        {
-          "bn": "পানি",
-          "pronunciation": "pani",
-          "en": "water"
-        },
-        {
-          "bn": "ঠান্ডা",
-          "pronunciation": "thanda",
-          "en": "cold"
-        }
-      ]
-    },
-    {
-      "bn": "লিখুন: “আমার ব্যাগটি লাল।”",
-      "pronunciation": "likhun: amar bagti lal",
-      "en": "Write: “My bag is red.”",
-      "context": "Write the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "আমার ব্যাগটি লাল।",
-      "words": [
-        {
-          "bn": "লিখুন",
-          "pronunciation": "likhun",
-          "en": "write"
-        },
-        {
-          "bn": "আমার",
-          "pronunciation": "amar",
-          "en": "my"
-        },
-        {
-          "bn": "ব্যাগটি",
-          "pronunciation": "bagti",
-          "en": "the bag"
-        },
-        {
-          "bn": "লাল",
-          "pronunciation": "lal",
-          "en": "red"
-        }
-      ]
-    },
-    {
-      "bn": "অনুবাদ করুন: “এই খাবারটি খুব ভালো।”",
-      "pronunciation": "onubad korun: ei khabarti khub bhalo",
-      "en": "Translate: “This food is very good.”",
-      "context": "Translate the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "এই খাবারটি খুব ভালো।",
-      "words": [
-        {
-          "bn": "অনুবাদ",
-          "pronunciation": "onubad",
-          "en": "translation"
-        },
-        {
-          "bn": "করুন",
-          "pronunciation": "korun",
-          "en": "please do"
-        },
-        {
-          "bn": "এই",
-          "pronunciation": "ei",
-          "en": "this"
-        },
-        {
-          "bn": "খাবারটি",
-          "pronunciation": "khabarti",
-          "en": "the food"
-        },
-        {
-          "bn": "খুব",
-          "pronunciation": "khub",
-          "en": "very"
-        },
-        {
-          "bn": "ভালো",
-          "pronunciation": "bhalo",
-          "en": "good"
-        }
-      ]
-    },
-    {
-      "bn": "অনুবাদ করুন: “আজ আবহাওয়া খারাপ।”",
-      "pronunciation": "onubad korun: aj abohawa kharap",
-      "en": "Translate: “The weather is bad today.”",
-      "context": "Translate the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "আজ আবহাওয়া খারাপ।",
-      "words": [
-        {
-          "bn": "অনুবাদ",
-          "pronunciation": "onubad",
-          "en": "translation"
-        },
-        {
-          "bn": "করুন",
-          "pronunciation": "korun",
-          "en": "please do"
-        },
-        {
-          "bn": "আজ",
-          "pronunciation": "aj",
-          "en": "today"
-        },
-        {
-          "bn": "আবহাওয়া",
-          "pronunciation": "abohawa",
-          "en": "weather"
-        },
-        {
-          "bn": "খারাপ",
-          "pronunciation": "kharap",
-          "en": "bad"
-        }
-      ]
-    },
-    {
-      "bn": "অনুবাদ করুন: “ওই বাড়িটি অনেক বড়।”",
-      "pronunciation": "onubad korun: oi bariti onek boro",
-      "en": "Translate: “That house is very big.”",
-      "context": "Translate the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "ওই বাড়িটি অনেক বড়।",
-      "words": [
-        {
-          "bn": "অনুবাদ",
-          "pronunciation": "onubad",
-          "en": "translation"
-        },
-        {
-          "bn": "করুন",
-          "pronunciation": "korun",
-          "en": "please do"
-        },
-        {
-          "bn": "ওই",
-          "pronunciation": "oi",
-          "en": "that"
-        },
-        {
-          "bn": "বাড়িটি",
-          "pronunciation": "bariti",
-          "en": "the house"
-        },
-        {
-          "bn": "অনেক",
-          "pronunciation": "onek",
-          "en": "very / many"
-        },
-        {
-          "bn": "বড়",
-          "pronunciation": "boro",
-          "en": "big"
-        }
-      ]
-    },
-    {
-      "bn": "অনুবাদ করুন: “আমার একটি ছোট ব্যাগ আছে।”",
-      "pronunciation": "onubad korun: amar ekti chhoto bag achhe",
-      "en": "Translate: “I have a small bag.”",
-      "context": "Translate the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "আমার একটি ছোট ব্যাগ আছে।",
-      "words": [
-        {
-          "bn": "অনুবাদ",
-          "pronunciation": "onubad",
-          "en": "translation"
-        },
-        {
-          "bn": "করুন",
-          "pronunciation": "korun",
-          "en": "please do"
-        },
-        {
-          "bn": "আমার",
-          "pronunciation": "amar",
-          "en": "my"
-        },
-        {
-          "bn": "একটি",
-          "pronunciation": "ekti",
-          "en": "one / a"
-        },
-        {
-          "bn": "ছোট",
-          "pronunciation": "chhoto",
-          "en": "small"
-        },
-        {
-          "bn": "ব্যাগ",
-          "pronunciation": "bag",
-          "en": "bag"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is / has"
-        }
-      ]
-    },
-    {
-      "bn": "অনুবাদ করুন: “আমি একটি নতুন বই কিনেছি।”",
-      "pronunciation": "onubad korun: ami ekti notun boi kinechhi",
-      "en": "Translate: “I bought a new book.”",
-      "context": "Translate the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "আমি একটি নতুন বই কিনেছি।",
-      "words": [
-        {
-          "bn": "অনুবাদ",
-          "pronunciation": "onubad",
-          "en": "translation"
-        },
-        {
-          "bn": "করুন",
-          "pronunciation": "korun",
-          "en": "please do"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "একটি",
-          "pronunciation": "ekti",
-          "en": "one / a"
-        },
-        {
-          "bn": "নতুন",
-          "pronunciation": "notun",
-          "en": "new"
-        },
-        {
-          "bn": "বই",
-          "pronunciation": "boi",
-          "en": "book"
-        },
-        {
-          "bn": "কিনেছি",
-          "pronunciation": "kinechhi",
-          "en": "bought"
-        }
-      ]
-    },
-    {
-      "bn": "অনুবাদ করুন: “এটি একটি পুরোনো ছবি।”",
-      "pronunciation": "onubad korun: eti ekti purono chhobi",
-      "en": "Translate: “This is an old photograph.”",
-      "context": "Translate the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "এটি একটি পুরোনো ছবি।",
-      "words": [
-        {
-          "bn": "অনুবাদ",
-          "pronunciation": "onubad",
-          "en": "translation"
-        },
-        {
-          "bn": "করুন",
-          "pronunciation": "korun",
-          "en": "please do"
-        },
-        {
-          "bn": "এটি",
-          "pronunciation": "eti",
-          "en": "this"
-        },
-        {
-          "bn": "একটি",
-          "pronunciation": "ekti",
-          "en": "one / a"
-        },
-        {
-          "bn": "পুরোনো",
-          "pronunciation": "purono",
-          "en": "old"
-        },
-        {
-          "bn": "ছবি",
-          "pronunciation": "chhobi",
-          "en": "picture"
-        }
-      ]
-    },
-    {
-      "bn": "অনুবাদ করুন: “এটা একটি সুন্দর বাড়ি।”",
-      "pronunciation": "onubad korun: eta ekti shundor bari",
-      "en": "Translate: “This is a beautiful house.”",
-      "context": "Translate the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "এটা একটি সুন্দর বাড়ি।",
-      "words": [
-        {
-          "bn": "অনুবাদ",
-          "pronunciation": "onubad",
-          "en": "translation"
-        },
-        {
-          "bn": "করুন",
-          "pronunciation": "korun",
-          "en": "please do"
-        },
-        {
-          "bn": "এটা",
-          "pronunciation": "eta",
-          "en": "this"
-        },
-        {
-          "bn": "একটি",
-          "pronunciation": "ekti",
-          "en": "one / a"
-        },
-        {
-          "bn": "সুন্দর",
-          "pronunciation": "shundor",
-          "en": "beautiful"
-        },
-        {
-          "bn": "বাড়ি",
-          "pronunciation": "bari",
-          "en": "house / home"
-        }
-      ]
-    },
-    {
-      "bn": "অনুবাদ করুন: “এই প্রশ্নটি খুব সহজ।”",
-      "pronunciation": "onubad korun: ei proshnoti khub shohaj",
-      "en": "Translate: “This question is very easy.”",
-      "context": "Translate the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "এই প্রশ্নটি খুব সহজ।",
-      "words": [
-        {
-          "bn": "অনুবাদ",
-          "pronunciation": "onubad",
-          "en": "translation"
-        },
-        {
-          "bn": "করুন",
-          "pronunciation": "korun",
-          "en": "please do"
-        },
-        {
-          "bn": "এই",
-          "pronunciation": "ei",
-          "en": "this"
-        },
-        {
-          "bn": "প্রশ্নটি",
-          "pronunciation": "proshnoti",
-          "en": "the question"
-        },
-        {
-          "bn": "খুব",
-          "pronunciation": "khub",
-          "en": "very"
-        },
-        {
-          "bn": "সহজ",
-          "pronunciation": "shohaj",
-          "en": "easy"
-        }
-      ]
-    },
-    {
-      "bn": "অনুবাদ করুন: “এই কাজটি বেশ কঠিন।”",
-      "pronunciation": "onubad korun: ei kajti besh kothin",
-      "en": "Translate: “This task is quite difficult.”",
-      "context": "Translate the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "এই কাজটি বেশ কঠিন।",
-      "words": [
-        {
-          "bn": "অনুবাদ",
-          "pronunciation": "onubad",
-          "en": "translation"
-        },
-        {
-          "bn": "করুন",
-          "pronunciation": "korun",
-          "en": "please do"
-        },
-        {
-          "bn": "এই",
-          "pronunciation": "ei",
-          "en": "this"
-        },
-        {
-          "bn": "কাজটি",
-          "pronunciation": "kajti",
-          "en": "the task"
-        },
-        {
-          "bn": "বেশ",
-          "pronunciation": "besh",
-          "en": "quite"
-        },
-        {
-          "bn": "কঠিন",
-          "pronunciation": "kothin",
-          "en": "difficult"
-        }
-      ]
-    },
-    {
-      "bn": "অনুবাদ করুন: “চা এখনো গরম।”",
-      "pronunciation": "onubad korun: cha ekhono gorom",
-      "en": "Translate: “The tea is still hot.”",
-      "context": "Translate the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "চা এখনো গরম।",
-      "words": [
-        {
-          "bn": "অনুবাদ",
-          "pronunciation": "onubad",
-          "en": "translation"
-        },
-        {
-          "bn": "করুন",
-          "pronunciation": "korun",
-          "en": "please do"
-        },
-        {
-          "bn": "চা",
-          "pronunciation": "cha",
-          "en": "tea"
-        },
-        {
-          "bn": "এখনো",
-          "pronunciation": "ekhono",
-          "en": "still"
-        },
-        {
-          "bn": "গরম",
-          "pronunciation": "gorom",
-          "en": "hot"
-        }
-      ]
-    },
-    {
-      "bn": "অনুবাদ করুন: “আজ পানি ঠান্ডা।”",
-      "pronunciation": "onubad korun: aj pani thanda",
-      "en": "Translate: “The water is cold today.”",
-      "context": "Translate the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "আজ পানি ঠান্ডা।",
-      "words": [
-        {
-          "bn": "অনুবাদ",
-          "pronunciation": "onubad",
-          "en": "translation"
-        },
-        {
-          "bn": "করুন",
-          "pronunciation": "korun",
-          "en": "please do"
-        },
-        {
-          "bn": "আজ",
-          "pronunciation": "aj",
-          "en": "today"
-        },
-        {
-          "bn": "পানি",
-          "pronunciation": "pani",
-          "en": "water"
-        },
-        {
-          "bn": "ঠান্ডা",
-          "pronunciation": "thanda",
-          "en": "cold"
-        }
-      ]
-    },
-    {
-      "bn": "অনুবাদ করুন: “আমার ব্যাগটি লাল।”",
-      "pronunciation": "onubad korun: amar bagti lal",
-      "en": "Translate: “My bag is red.”",
-      "context": "Translate the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "আমার ব্যাগটি লাল।",
-      "words": [
-        {
-          "bn": "অনুবাদ",
-          "pronunciation": "onubad",
-          "en": "translation"
-        },
-        {
-          "bn": "করুন",
-          "pronunciation": "korun",
-          "en": "please do"
-        },
-        {
-          "bn": "আমার",
-          "pronunciation": "amar",
-          "en": "my"
-        },
-        {
-          "bn": "ব্যাগটি",
-          "pronunciation": "bagti",
-          "en": "the bag"
-        },
-        {
-          "bn": "লাল",
-          "pronunciation": "lal",
-          "en": "red"
-        }
-      ]
-    },
-    {
-      "bn": "মনে রাখুন: “এই খাবারটি খুব ভালো।”",
-      "pronunciation": "mone rakhun: ei khabarti khub bhalo",
-      "en": "Remember: “This food is very good.”",
-      "context": "Remember the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "এই খাবারটি খুব ভালো।",
-      "words": [
-        {
-          "bn": "মনে",
-          "pronunciation": "mone",
-          "en": "in mind"
-        },
-        {
-          "bn": "রাখুন",
-          "pronunciation": "rakhun",
-          "en": "remember"
-        },
-        {
-          "bn": "এই",
-          "pronunciation": "ei",
-          "en": "this"
-        },
-        {
-          "bn": "খাবারটি",
-          "pronunciation": "khabarti",
-          "en": "the food"
-        },
-        {
-          "bn": "খুব",
-          "pronunciation": "khub",
-          "en": "very"
-        },
-        {
-          "bn": "ভালো",
-          "pronunciation": "bhalo",
-          "en": "good"
-        }
-      ]
-    },
-    {
-      "bn": "মনে রাখুন: “আজ আবহাওয়া খারাপ।”",
-      "pronunciation": "mone rakhun: aj abohawa kharap",
-      "en": "Remember: “The weather is bad today.”",
-      "context": "Remember the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "আজ আবহাওয়া খারাপ।",
-      "words": [
-        {
-          "bn": "মনে",
-          "pronunciation": "mone",
-          "en": "in mind"
-        },
-        {
-          "bn": "রাখুন",
-          "pronunciation": "rakhun",
-          "en": "remember"
-        },
-        {
-          "bn": "আজ",
-          "pronunciation": "aj",
-          "en": "today"
-        },
-        {
-          "bn": "আবহাওয়া",
-          "pronunciation": "abohawa",
-          "en": "weather"
-        },
-        {
-          "bn": "খারাপ",
-          "pronunciation": "kharap",
-          "en": "bad"
-        }
-      ]
-    },
-    {
-      "bn": "মনে রাখুন: “ওই বাড়িটি অনেক বড়।”",
-      "pronunciation": "mone rakhun: oi bariti onek boro",
-      "en": "Remember: “That house is very big.”",
-      "context": "Remember the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "ওই বাড়িটি অনেক বড়।",
-      "words": [
-        {
-          "bn": "মনে",
-          "pronunciation": "mone",
-          "en": "in mind"
-        },
-        {
-          "bn": "রাখুন",
-          "pronunciation": "rakhun",
-          "en": "remember"
-        },
-        {
-          "bn": "ওই",
-          "pronunciation": "oi",
-          "en": "that"
-        },
-        {
-          "bn": "বাড়িটি",
-          "pronunciation": "bariti",
-          "en": "the house"
-        },
-        {
-          "bn": "অনেক",
-          "pronunciation": "onek",
-          "en": "very / many"
-        },
-        {
-          "bn": "বড়",
-          "pronunciation": "boro",
-          "en": "big"
-        }
-      ]
-    },
-    {
-      "bn": "মনে রাখুন: “আমার একটি ছোট ব্যাগ আছে।”",
-      "pronunciation": "mone rakhun: amar ekti chhoto bag achhe",
-      "en": "Remember: “I have a small bag.”",
-      "context": "Remember the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "আমার একটি ছোট ব্যাগ আছে।",
-      "words": [
-        {
-          "bn": "মনে",
-          "pronunciation": "mone",
-          "en": "in mind"
-        },
-        {
-          "bn": "রাখুন",
-          "pronunciation": "rakhun",
-          "en": "remember"
-        },
-        {
-          "bn": "আমার",
-          "pronunciation": "amar",
-          "en": "my"
-        },
-        {
-          "bn": "একটি",
-          "pronunciation": "ekti",
-          "en": "one / a"
-        },
-        {
-          "bn": "ছোট",
-          "pronunciation": "chhoto",
-          "en": "small"
-        },
-        {
-          "bn": "ব্যাগ",
-          "pronunciation": "bag",
-          "en": "bag"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is / has"
-        }
-      ]
-    },
-    {
-      "bn": "মনে রাখুন: “আমি একটি নতুন বই কিনেছি।”",
-      "pronunciation": "mone rakhun: ami ekti notun boi kinechhi",
-      "en": "Remember: “I bought a new book.”",
-      "context": "Remember the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "আমি একটি নতুন বই কিনেছি।",
-      "words": [
-        {
-          "bn": "মনে",
-          "pronunciation": "mone",
-          "en": "in mind"
-        },
-        {
-          "bn": "রাখুন",
-          "pronunciation": "rakhun",
-          "en": "remember"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "একটি",
-          "pronunciation": "ekti",
-          "en": "one / a"
-        },
-        {
-          "bn": "নতুন",
-          "pronunciation": "notun",
-          "en": "new"
-        },
-        {
-          "bn": "বই",
-          "pronunciation": "boi",
-          "en": "book"
-        },
-        {
-          "bn": "কিনেছি",
-          "pronunciation": "kinechhi",
-          "en": "bought"
-        }
-      ]
-    },
-    {
-      "bn": "মনে রাখুন: “এটি একটি পুরোনো ছবি।”",
-      "pronunciation": "mone rakhun: eti ekti purono chhobi",
-      "en": "Remember: “This is an old photograph.”",
-      "context": "Remember the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "এটি একটি পুরোনো ছবি।",
-      "words": [
-        {
-          "bn": "মনে",
-          "pronunciation": "mone",
-          "en": "in mind"
-        },
-        {
-          "bn": "রাখুন",
-          "pronunciation": "rakhun",
-          "en": "remember"
-        },
-        {
-          "bn": "এটি",
-          "pronunciation": "eti",
-          "en": "this"
-        },
-        {
-          "bn": "একটি",
-          "pronunciation": "ekti",
-          "en": "one / a"
-        },
-        {
-          "bn": "পুরোনো",
-          "pronunciation": "purono",
-          "en": "old"
-        },
-        {
-          "bn": "ছবি",
-          "pronunciation": "chhobi",
-          "en": "picture"
-        }
-      ]
-    },
-    {
-      "bn": "মনে রাখুন: “এটা একটি সুন্দর বাড়ি।”",
-      "pronunciation": "mone rakhun: eta ekti shundor bari",
-      "en": "Remember: “This is a beautiful house.”",
-      "context": "Remember the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "এটা একটি সুন্দর বাড়ি।",
-      "words": [
-        {
-          "bn": "মনে",
-          "pronunciation": "mone",
-          "en": "in mind"
-        },
-        {
-          "bn": "রাখুন",
-          "pronunciation": "rakhun",
-          "en": "remember"
-        },
-        {
-          "bn": "এটা",
-          "pronunciation": "eta",
-          "en": "this"
-        },
-        {
-          "bn": "একটি",
-          "pronunciation": "ekti",
-          "en": "one / a"
-        },
-        {
-          "bn": "সুন্দর",
-          "pronunciation": "shundor",
-          "en": "beautiful"
-        },
-        {
-          "bn": "বাড়ি",
-          "pronunciation": "bari",
-          "en": "house / home"
-        }
-      ]
-    },
-    {
-      "bn": "মনে রাখুন: “এই প্রশ্নটি খুব সহজ।”",
-      "pronunciation": "mone rakhun: ei proshnoti khub shohaj",
-      "en": "Remember: “This question is very easy.”",
-      "context": "Remember the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "এই প্রশ্নটি খুব সহজ।",
-      "words": [
-        {
-          "bn": "মনে",
-          "pronunciation": "mone",
-          "en": "in mind"
-        },
-        {
-          "bn": "রাখুন",
-          "pronunciation": "rakhun",
-          "en": "remember"
-        },
-        {
-          "bn": "এই",
-          "pronunciation": "ei",
-          "en": "this"
-        },
-        {
-          "bn": "প্রশ্নটি",
-          "pronunciation": "proshnoti",
-          "en": "the question"
-        },
-        {
-          "bn": "খুব",
-          "pronunciation": "khub",
-          "en": "very"
-        },
-        {
-          "bn": "সহজ",
-          "pronunciation": "shohaj",
-          "en": "easy"
-        }
-      ]
-    },
-    {
-      "bn": "মনে রাখুন: “এই কাজটি বেশ কঠিন।”",
-      "pronunciation": "mone rakhun: ei kajti besh kothin",
-      "en": "Remember: “This task is quite difficult.”",
-      "context": "Remember the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "এই কাজটি বেশ কঠিন।",
-      "words": [
-        {
-          "bn": "মনে",
-          "pronunciation": "mone",
-          "en": "in mind"
-        },
-        {
-          "bn": "রাখুন",
-          "pronunciation": "rakhun",
-          "en": "remember"
-        },
-        {
-          "bn": "এই",
-          "pronunciation": "ei",
-          "en": "this"
-        },
-        {
-          "bn": "কাজটি",
-          "pronunciation": "kajti",
-          "en": "the task"
-        },
-        {
-          "bn": "বেশ",
-          "pronunciation": "besh",
-          "en": "quite"
-        },
-        {
-          "bn": "কঠিন",
-          "pronunciation": "kothin",
-          "en": "difficult"
-        }
-      ]
-    },
-    {
-      "bn": "মনে রাখুন: “চা এখনো গরম।”",
-      "pronunciation": "mone rakhun: cha ekhono gorom",
-      "en": "Remember: “The tea is still hot.”",
-      "context": "Remember the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "চা এখনো গরম।",
-      "words": [
-        {
-          "bn": "মনে",
-          "pronunciation": "mone",
-          "en": "in mind"
-        },
-        {
-          "bn": "রাখুন",
-          "pronunciation": "rakhun",
-          "en": "remember"
-        },
-        {
-          "bn": "চা",
-          "pronunciation": "cha",
-          "en": "tea"
-        },
-        {
-          "bn": "এখনো",
-          "pronunciation": "ekhono",
-          "en": "still"
-        },
-        {
-          "bn": "গরম",
-          "pronunciation": "gorom",
-          "en": "hot"
-        }
-      ]
-    },
-    {
-      "bn": "মনে রাখুন: “আজ পানি ঠান্ডা।”",
-      "pronunciation": "mone rakhun: aj pani thanda",
-      "en": "Remember: “The water is cold today.”",
-      "context": "Remember the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "আজ পানি ঠান্ডা।",
-      "words": [
-        {
-          "bn": "মনে",
-          "pronunciation": "mone",
-          "en": "in mind"
-        },
-        {
-          "bn": "রাখুন",
-          "pronunciation": "rakhun",
-          "en": "remember"
-        },
-        {
-          "bn": "আজ",
-          "pronunciation": "aj",
-          "en": "today"
-        },
-        {
-          "bn": "পানি",
-          "pronunciation": "pani",
-          "en": "water"
-        },
-        {
-          "bn": "ঠান্ডা",
-          "pronunciation": "thanda",
-          "en": "cold"
-        }
-      ]
-    },
-    {
-      "bn": "মনে রাখুন: “আমার ব্যাগটি লাল।”",
-      "pronunciation": "mone rakhun: amar bagti lal",
-      "en": "Remember: “My bag is red.”",
-      "context": "Remember the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "আমার ব্যাগটি লাল।",
-      "words": [
-        {
-          "bn": "মনে",
-          "pronunciation": "mone",
-          "en": "in mind"
-        },
-        {
-          "bn": "রাখুন",
-          "pronunciation": "rakhun",
-          "en": "remember"
-        },
-        {
-          "bn": "আমার",
-          "pronunciation": "amar",
-          "en": "my"
-        },
-        {
-          "bn": "ব্যাগটি",
-          "pronunciation": "bagti",
-          "en": "the bag"
-        },
-        {
-          "bn": "লাল",
-          "pronunciation": "lal",
-          "en": "red"
-        }
-      ]
-    },
-    {
-      "bn": "আবার বলুন: “এই খাবারটি খুব ভালো।”",
-      "pronunciation": "abar bolun: ei khabarti khub bhalo",
-      "en": "Say again: “This food is very good.”",
-      "context": "Say again the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "এই খাবারটি খুব ভালো।",
-      "words": [
-        {
-          "bn": "আবার",
-          "pronunciation": "abar",
-          "en": "again"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "এই",
-          "pronunciation": "ei",
-          "en": "this"
-        },
-        {
-          "bn": "খাবারটি",
-          "pronunciation": "khabarti",
-          "en": "the food"
-        },
-        {
-          "bn": "খুব",
-          "pronunciation": "khub",
-          "en": "very"
-        },
-        {
-          "bn": "ভালো",
-          "pronunciation": "bhalo",
-          "en": "good"
-        }
-      ]
-    },
-    {
-      "bn": "আবার বলুন: “আজ আবহাওয়া খারাপ।”",
-      "pronunciation": "abar bolun: aj abohawa kharap",
-      "en": "Say again: “The weather is bad today.”",
-      "context": "Say again the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "আজ আবহাওয়া খারাপ।",
-      "words": [
-        {
-          "bn": "আবার",
-          "pronunciation": "abar",
-          "en": "again"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "আজ",
-          "pronunciation": "aj",
-          "en": "today"
-        },
-        {
-          "bn": "আবহাওয়া",
-          "pronunciation": "abohawa",
-          "en": "weather"
-        },
-        {
-          "bn": "খারাপ",
-          "pronunciation": "kharap",
-          "en": "bad"
-        }
-      ]
-    },
-    {
-      "bn": "আবার বলুন: “ওই বাড়িটি অনেক বড়।”",
-      "pronunciation": "abar bolun: oi bariti onek boro",
-      "en": "Say again: “That house is very big.”",
-      "context": "Say again the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "ওই বাড়িটি অনেক বড়।",
-      "words": [
-        {
-          "bn": "আবার",
-          "pronunciation": "abar",
-          "en": "again"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "ওই",
-          "pronunciation": "oi",
-          "en": "that"
-        },
-        {
-          "bn": "বাড়িটি",
-          "pronunciation": "bariti",
-          "en": "the house"
-        },
-        {
-          "bn": "অনেক",
-          "pronunciation": "onek",
-          "en": "very / many"
-        },
-        {
-          "bn": "বড়",
-          "pronunciation": "boro",
-          "en": "big"
-        }
-      ]
-    },
-    {
-      "bn": "আবার বলুন: “আমার একটি ছোট ব্যাগ আছে।”",
-      "pronunciation": "abar bolun: amar ekti chhoto bag achhe",
-      "en": "Say again: “I have a small bag.”",
-      "context": "Say again the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "আমার একটি ছোট ব্যাগ আছে।",
-      "words": [
-        {
-          "bn": "আবার",
-          "pronunciation": "abar",
-          "en": "again"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "আমার",
-          "pronunciation": "amar",
-          "en": "my"
-        },
-        {
-          "bn": "একটি",
-          "pronunciation": "ekti",
-          "en": "one / a"
-        },
-        {
-          "bn": "ছোট",
-          "pronunciation": "chhoto",
-          "en": "small"
-        },
-        {
-          "bn": "ব্যাগ",
-          "pronunciation": "bag",
-          "en": "bag"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is / has"
-        }
-      ]
-    },
-    {
-      "bn": "আবার বলুন: “আমি একটি নতুন বই কিনেছি।”",
-      "pronunciation": "abar bolun: ami ekti notun boi kinechhi",
-      "en": "Say again: “I bought a new book.”",
-      "context": "Say again the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "আমি একটি নতুন বই কিনেছি।",
-      "words": [
-        {
-          "bn": "আবার",
-          "pronunciation": "abar",
-          "en": "again"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "একটি",
-          "pronunciation": "ekti",
-          "en": "one / a"
-        },
-        {
-          "bn": "নতুন",
-          "pronunciation": "notun",
-          "en": "new"
-        },
-        {
-          "bn": "বই",
-          "pronunciation": "boi",
-          "en": "book"
-        },
-        {
-          "bn": "কিনেছি",
-          "pronunciation": "kinechhi",
-          "en": "bought"
-        }
-      ]
-    },
-    {
-      "bn": "আবার বলুন: “এটি একটি পুরোনো ছবি।”",
-      "pronunciation": "abar bolun: eti ekti purono chhobi",
-      "en": "Say again: “This is an old photograph.”",
-      "context": "Say again the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "এটি একটি পুরোনো ছবি।",
-      "words": [
-        {
-          "bn": "আবার",
-          "pronunciation": "abar",
-          "en": "again"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "এটি",
-          "pronunciation": "eti",
-          "en": "this"
-        },
-        {
-          "bn": "একটি",
-          "pronunciation": "ekti",
-          "en": "one / a"
-        },
-        {
-          "bn": "পুরোনো",
-          "pronunciation": "purono",
-          "en": "old"
-        },
-        {
-          "bn": "ছবি",
-          "pronunciation": "chhobi",
-          "en": "picture"
-        }
-      ]
-    },
-    {
-      "bn": "আবার বলুন: “এটা একটি সুন্দর বাড়ি।”",
-      "pronunciation": "abar bolun: eta ekti shundor bari",
-      "en": "Say again: “This is a beautiful house.”",
-      "context": "Say again the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "এটা একটি সুন্দর বাড়ি।",
-      "words": [
-        {
-          "bn": "আবার",
-          "pronunciation": "abar",
-          "en": "again"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "এটা",
-          "pronunciation": "eta",
-          "en": "this"
-        },
-        {
-          "bn": "একটি",
-          "pronunciation": "ekti",
-          "en": "one / a"
-        },
-        {
-          "bn": "সুন্দর",
-          "pronunciation": "shundor",
-          "en": "beautiful"
-        },
-        {
-          "bn": "বাড়ি",
-          "pronunciation": "bari",
-          "en": "house / home"
-        }
-      ]
-    },
-    {
-      "bn": "আবার বলুন: “এই প্রশ্নটি খুব সহজ।”",
-      "pronunciation": "abar bolun: ei proshnoti khub shohaj",
-      "en": "Say again: “This question is very easy.”",
-      "context": "Say again the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "এই প্রশ্নটি খুব সহজ।",
-      "words": [
-        {
-          "bn": "আবার",
-          "pronunciation": "abar",
-          "en": "again"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "এই",
-          "pronunciation": "ei",
-          "en": "this"
-        },
-        {
-          "bn": "প্রশ্নটি",
-          "pronunciation": "proshnoti",
-          "en": "the question"
-        },
-        {
-          "bn": "খুব",
-          "pronunciation": "khub",
-          "en": "very"
-        },
-        {
-          "bn": "সহজ",
-          "pronunciation": "shohaj",
-          "en": "easy"
-        }
-      ]
-    },
-    {
-      "bn": "আবার বলুন: “এই কাজটি বেশ কঠিন।”",
-      "pronunciation": "abar bolun: ei kajti besh kothin",
-      "en": "Say again: “This task is quite difficult.”",
-      "context": "Say again the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "এই কাজটি বেশ কঠিন।",
-      "words": [
-        {
-          "bn": "আবার",
-          "pronunciation": "abar",
-          "en": "again"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "এই",
-          "pronunciation": "ei",
-          "en": "this"
-        },
-        {
-          "bn": "কাজটি",
-          "pronunciation": "kajti",
-          "en": "the task"
-        },
-        {
-          "bn": "বেশ",
-          "pronunciation": "besh",
-          "en": "quite"
-        },
-        {
-          "bn": "কঠিন",
-          "pronunciation": "kothin",
-          "en": "difficult"
-        }
-      ]
-    },
-    {
-      "bn": "আবার বলুন: “চা এখনো গরম।”",
-      "pronunciation": "abar bolun: cha ekhono gorom",
-      "en": "Say again: “The tea is still hot.”",
-      "context": "Say again the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "চা এখনো গরম।",
-      "words": [
-        {
-          "bn": "আবার",
-          "pronunciation": "abar",
-          "en": "again"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "চা",
-          "pronunciation": "cha",
-          "en": "tea"
-        },
-        {
-          "bn": "এখনো",
-          "pronunciation": "ekhono",
-          "en": "still"
-        },
-        {
-          "bn": "গরম",
-          "pronunciation": "gorom",
-          "en": "hot"
-        }
-      ]
-    },
-    {
-      "bn": "আবার বলুন: “আজ পানি ঠান্ডা।”",
-      "pronunciation": "abar bolun: aj pani thanda",
-      "en": "Say again: “The water is cold today.”",
-      "context": "Say again the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "আজ পানি ঠান্ডা।",
-      "words": [
-        {
-          "bn": "আবার",
-          "pronunciation": "abar",
-          "en": "again"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "আজ",
-          "pronunciation": "aj",
-          "en": "today"
-        },
-        {
-          "bn": "পানি",
-          "pronunciation": "pani",
-          "en": "water"
-        },
-        {
-          "bn": "ঠান্ডা",
-          "pronunciation": "thanda",
-          "en": "cold"
-        }
-      ]
-    },
-    {
-      "bn": "আবার বলুন: “আমার ব্যাগটি লাল।”",
-      "pronunciation": "abar bolun: amar bagti lal",
-      "en": "Say again: “My bag is red.”",
-      "context": "Say again the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "আমার ব্যাগটি লাল।",
-      "words": [
-        {
-          "bn": "আবার",
-          "pronunciation": "abar",
-          "en": "again"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "আমার",
-          "pronunciation": "amar",
-          "en": "my"
-        },
-        {
-          "bn": "ব্যাগটি",
-          "pronunciation": "bagti",
-          "en": "the bag"
-        },
-        {
-          "bn": "লাল",
-          "pronunciation": "lal",
-          "en": "red"
-        }
-      ]
-    },
-    {
-      "bn": "ধীরে বলুন: “এই খাবারটি খুব ভালো।”",
-      "pronunciation": "dhire bolun: ei khabarti khub bhalo",
-      "en": "Say slowly: “This food is very good.”",
-      "context": "Say slowly the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "এই খাবারটি খুব ভালো।",
-      "words": [
-        {
-          "bn": "ধীরে",
-          "pronunciation": "dhire",
-          "en": "slowly"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "এই",
-          "pronunciation": "ei",
-          "en": "this"
-        },
-        {
-          "bn": "খাবারটি",
-          "pronunciation": "khabarti",
-          "en": "the food"
-        },
-        {
-          "bn": "খুব",
-          "pronunciation": "khub",
-          "en": "very"
-        },
-        {
-          "bn": "ভালো",
-          "pronunciation": "bhalo",
-          "en": "good"
-        }
-      ]
-    },
-    {
-      "bn": "ধীরে বলুন: “আজ আবহাওয়া খারাপ।”",
-      "pronunciation": "dhire bolun: aj abohawa kharap",
-      "en": "Say slowly: “The weather is bad today.”",
-      "context": "Say slowly the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "আজ আবহাওয়া খারাপ।",
-      "words": [
-        {
-          "bn": "ধীরে",
-          "pronunciation": "dhire",
-          "en": "slowly"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "আজ",
-          "pronunciation": "aj",
-          "en": "today"
-        },
-        {
-          "bn": "আবহাওয়া",
-          "pronunciation": "abohawa",
-          "en": "weather"
-        },
-        {
-          "bn": "খারাপ",
-          "pronunciation": "kharap",
-          "en": "bad"
-        }
-      ]
-    },
-    {
-      "bn": "ধীরে বলুন: “ওই বাড়িটি অনেক বড়।”",
-      "pronunciation": "dhire bolun: oi bariti onek boro",
-      "en": "Say slowly: “That house is very big.”",
-      "context": "Say slowly the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "ওই বাড়িটি অনেক বড়।",
-      "words": [
-        {
-          "bn": "ধীরে",
-          "pronunciation": "dhire",
-          "en": "slowly"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "ওই",
-          "pronunciation": "oi",
-          "en": "that"
-        },
-        {
-          "bn": "বাড়িটি",
-          "pronunciation": "bariti",
-          "en": "the house"
-        },
-        {
-          "bn": "অনেক",
-          "pronunciation": "onek",
-          "en": "very / many"
-        },
-        {
-          "bn": "বড়",
-          "pronunciation": "boro",
-          "en": "big"
-        }
-      ]
-    },
-    {
-      "bn": "ধীরে বলুন: “আমার একটি ছোট ব্যাগ আছে।”",
-      "pronunciation": "dhire bolun: amar ekti chhoto bag achhe",
-      "en": "Say slowly: “I have a small bag.”",
-      "context": "Say slowly the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "আমার একটি ছোট ব্যাগ আছে।",
-      "words": [
-        {
-          "bn": "ধীরে",
-          "pronunciation": "dhire",
-          "en": "slowly"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "আমার",
-          "pronunciation": "amar",
-          "en": "my"
-        },
-        {
-          "bn": "একটি",
-          "pronunciation": "ekti",
-          "en": "one / a"
-        },
-        {
-          "bn": "ছোট",
-          "pronunciation": "chhoto",
-          "en": "small"
-        },
-        {
-          "bn": "ব্যাগ",
-          "pronunciation": "bag",
-          "en": "bag"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is / has"
-        }
-      ]
-    },
-    {
-      "bn": "ধীরে বলুন: “আমি একটি নতুন বই কিনেছি।”",
-      "pronunciation": "dhire bolun: ami ekti notun boi kinechhi",
-      "en": "Say slowly: “I bought a new book.”",
-      "context": "Say slowly the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "আমি একটি নতুন বই কিনেছি।",
-      "words": [
-        {
-          "bn": "ধীরে",
-          "pronunciation": "dhire",
-          "en": "slowly"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "একটি",
-          "pronunciation": "ekti",
-          "en": "one / a"
-        },
-        {
-          "bn": "নতুন",
-          "pronunciation": "notun",
-          "en": "new"
-        },
-        {
-          "bn": "বই",
-          "pronunciation": "boi",
-          "en": "book"
-        },
-        {
-          "bn": "কিনেছি",
-          "pronunciation": "kinechhi",
-          "en": "bought"
-        }
-      ]
-    },
-    {
-      "bn": "ধীরে বলুন: “এটি একটি পুরোনো ছবি।”",
-      "pronunciation": "dhire bolun: eti ekti purono chhobi",
-      "en": "Say slowly: “This is an old photograph.”",
-      "context": "Say slowly the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "এটি একটি পুরোনো ছবি।",
-      "words": [
-        {
-          "bn": "ধীরে",
-          "pronunciation": "dhire",
-          "en": "slowly"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "এটি",
-          "pronunciation": "eti",
-          "en": "this"
-        },
-        {
-          "bn": "একটি",
-          "pronunciation": "ekti",
-          "en": "one / a"
-        },
-        {
-          "bn": "পুরোনো",
-          "pronunciation": "purono",
-          "en": "old"
-        },
-        {
-          "bn": "ছবি",
-          "pronunciation": "chhobi",
-          "en": "picture"
-        }
-      ]
-    },
-    {
-      "bn": "ধীরে বলুন: “এটা একটি সুন্দর বাড়ি।”",
-      "pronunciation": "dhire bolun: eta ekti shundor bari",
-      "en": "Say slowly: “This is a beautiful house.”",
-      "context": "Say slowly the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "এটা একটি সুন্দর বাড়ি।",
-      "words": [
-        {
-          "bn": "ধীরে",
-          "pronunciation": "dhire",
-          "en": "slowly"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "এটা",
-          "pronunciation": "eta",
-          "en": "this"
-        },
-        {
-          "bn": "একটি",
-          "pronunciation": "ekti",
-          "en": "one / a"
-        },
-        {
-          "bn": "সুন্দর",
-          "pronunciation": "shundor",
-          "en": "beautiful"
-        },
-        {
-          "bn": "বাড়ি",
-          "pronunciation": "bari",
-          "en": "house / home"
-        }
-      ]
-    },
-    {
-      "bn": "ধীরে বলুন: “এই প্রশ্নটি খুব সহজ।”",
-      "pronunciation": "dhire bolun: ei proshnoti khub shohaj",
-      "en": "Say slowly: “This question is very easy.”",
-      "context": "Say slowly the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "এই প্রশ্নটি খুব সহজ।",
-      "words": [
-        {
-          "bn": "ধীরে",
-          "pronunciation": "dhire",
-          "en": "slowly"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "এই",
-          "pronunciation": "ei",
-          "en": "this"
-        },
-        {
-          "bn": "প্রশ্নটি",
-          "pronunciation": "proshnoti",
-          "en": "the question"
-        },
-        {
-          "bn": "খুব",
-          "pronunciation": "khub",
-          "en": "very"
-        },
-        {
-          "bn": "সহজ",
-          "pronunciation": "shohaj",
-          "en": "easy"
-        }
-      ]
-    },
-    {
-      "bn": "ধীরে বলুন: “এই কাজটি বেশ কঠিন।”",
-      "pronunciation": "dhire bolun: ei kajti besh kothin",
-      "en": "Say slowly: “This task is quite difficult.”",
-      "context": "Say slowly the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "এই কাজটি বেশ কঠিন।",
-      "words": [
-        {
-          "bn": "ধীরে",
-          "pronunciation": "dhire",
-          "en": "slowly"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "এই",
-          "pronunciation": "ei",
-          "en": "this"
-        },
-        {
-          "bn": "কাজটি",
-          "pronunciation": "kajti",
-          "en": "the task"
-        },
-        {
-          "bn": "বেশ",
-          "pronunciation": "besh",
-          "en": "quite"
-        },
-        {
-          "bn": "কঠিন",
-          "pronunciation": "kothin",
-          "en": "difficult"
-        }
-      ]
-    },
-    {
-      "bn": "ধীরে বলুন: “চা এখনো গরম।”",
-      "pronunciation": "dhire bolun: cha ekhono gorom",
-      "en": "Say slowly: “The tea is still hot.”",
-      "context": "Say slowly the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "চা এখনো গরম।",
-      "words": [
-        {
-          "bn": "ধীরে",
-          "pronunciation": "dhire",
-          "en": "slowly"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "চা",
-          "pronunciation": "cha",
-          "en": "tea"
-        },
-        {
-          "bn": "এখনো",
-          "pronunciation": "ekhono",
-          "en": "still"
-        },
-        {
-          "bn": "গরম",
-          "pronunciation": "gorom",
-          "en": "hot"
-        }
-      ]
-    },
-    {
-      "bn": "ধীরে বলুন: “আজ পানি ঠান্ডা।”",
-      "pronunciation": "dhire bolun: aj pani thanda",
-      "en": "Say slowly: “The water is cold today.”",
-      "context": "Say slowly the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "আজ পানি ঠান্ডা।",
-      "words": [
-        {
-          "bn": "ধীরে",
-          "pronunciation": "dhire",
-          "en": "slowly"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "আজ",
-          "pronunciation": "aj",
-          "en": "today"
-        },
-        {
-          "bn": "পানি",
-          "pronunciation": "pani",
-          "en": "water"
-        },
-        {
-          "bn": "ঠান্ডা",
-          "pronunciation": "thanda",
-          "en": "cold"
-        }
-      ]
-    },
-    {
-      "bn": "ধীরে বলুন: “আমার ব্যাগটি লাল।”",
-      "pronunciation": "dhire bolun: amar bagti lal",
-      "en": "Say slowly: “My bag is red.”",
-      "context": "Say slowly the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "আমার ব্যাগটি লাল।",
-      "words": [
-        {
-          "bn": "ধীরে",
-          "pronunciation": "dhire",
-          "en": "slowly"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "আমার",
-          "pronunciation": "amar",
-          "en": "my"
-        },
-        {
-          "bn": "ব্যাগটি",
-          "pronunciation": "bagti",
-          "en": "the bag"
-        },
-        {
-          "bn": "লাল",
-          "pronunciation": "lal",
-          "en": "red"
-        }
-      ]
-    },
-    {
-      "bn": "মন দিয়ে পড়ুন: “এই খাবারটি খুব ভালো।”",
-      "pronunciation": "mon diye porun: ei khabarti khub bhalo",
-      "en": "Read carefully: “This food is very good.”",
-      "context": "Read carefully the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "এই খাবারটি খুব ভালো।",
-      "words": [
-        {
-          "bn": "মন",
-          "pronunciation": "mon",
-          "en": "attention"
-        },
-        {
-          "bn": "দিয়ে",
-          "pronunciation": "diye",
-          "en": "with"
-        },
-        {
-          "bn": "পড়ুন",
-          "pronunciation": "porun",
-          "en": "read"
-        },
-        {
-          "bn": "এই",
-          "pronunciation": "ei",
-          "en": "this"
-        },
-        {
-          "bn": "খাবারটি",
-          "pronunciation": "khabarti",
-          "en": "the food"
-        },
-        {
-          "bn": "খুব",
-          "pronunciation": "khub",
-          "en": "very"
-        },
-        {
-          "bn": "ভালো",
-          "pronunciation": "bhalo",
-          "en": "good"
-        }
-      ]
-    },
-    {
-      "bn": "মন দিয়ে পড়ুন: “আজ আবহাওয়া খারাপ।”",
-      "pronunciation": "mon diye porun: aj abohawa kharap",
-      "en": "Read carefully: “The weather is bad today.”",
-      "context": "Read carefully the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "আজ আবহাওয়া খারাপ।",
-      "words": [
-        {
-          "bn": "মন",
-          "pronunciation": "mon",
-          "en": "attention"
-        },
-        {
-          "bn": "দিয়ে",
-          "pronunciation": "diye",
-          "en": "with"
-        },
-        {
-          "bn": "পড়ুন",
-          "pronunciation": "porun",
-          "en": "read"
-        },
-        {
-          "bn": "আজ",
-          "pronunciation": "aj",
-          "en": "today"
-        },
-        {
-          "bn": "আবহাওয়া",
-          "pronunciation": "abohawa",
-          "en": "weather"
-        },
-        {
-          "bn": "খারাপ",
-          "pronunciation": "kharap",
-          "en": "bad"
-        }
-      ]
-    },
-    {
-      "bn": "মন দিয়ে পড়ুন: “ওই বাড়িটি অনেক বড়।”",
-      "pronunciation": "mon diye porun: oi bariti onek boro",
-      "en": "Read carefully: “That house is very big.”",
-      "context": "Read carefully the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "ওই বাড়িটি অনেক বড়।",
-      "words": [
-        {
-          "bn": "মন",
-          "pronunciation": "mon",
-          "en": "attention"
-        },
-        {
-          "bn": "দিয়ে",
-          "pronunciation": "diye",
-          "en": "with"
-        },
-        {
-          "bn": "পড়ুন",
-          "pronunciation": "porun",
-          "en": "read"
-        },
-        {
-          "bn": "ওই",
-          "pronunciation": "oi",
-          "en": "that"
-        },
-        {
-          "bn": "বাড়িটি",
-          "pronunciation": "bariti",
-          "en": "the house"
-        },
-        {
-          "bn": "অনেক",
-          "pronunciation": "onek",
-          "en": "very / many"
-        },
-        {
-          "bn": "বড়",
-          "pronunciation": "boro",
-          "en": "big"
-        }
-      ]
-    },
-    {
-      "bn": "মন দিয়ে পড়ুন: “আমার একটি ছোট ব্যাগ আছে।”",
-      "pronunciation": "mon diye porun: amar ekti chhoto bag achhe",
-      "en": "Read carefully: “I have a small bag.”",
-      "context": "Read carefully the adjectives example aloud",
-      "category": "adjectives",
-      "exercise": true,
-      "sourcePhrase": "আমার একটি ছোট ব্যাগ আছে।",
-      "words": [
-        {
-          "bn": "মন",
-          "pronunciation": "mon",
-          "en": "attention"
-        },
-        {
-          "bn": "দিয়ে",
-          "pronunciation": "diye",
-          "en": "with"
-        },
-        {
-          "bn": "পড়ুন",
-          "pronunciation": "porun",
-          "en": "read"
-        },
-        {
-          "bn": "আমার",
-          "pronunciation": "amar",
-          "en": "my"
-        },
-        {
-          "bn": "একটি",
-          "pronunciation": "ekti",
-          "en": "one / a"
-        },
-        {
-          "bn": "ছোট",
-          "pronunciation": "chhoto",
-          "en": "small"
-        },
-        {
-          "bn": "ব্যাগ",
-          "pronunciation": "bag",
-          "en": "bag"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is / has"
-        }
-      ]
+      "bn": "সবাই একসাথে নাচছে।",
+      "pronunciation": "Shobai ekshathe nachchhe.",
+      "en": "Everyone is dancing together.",
+      "context": "Describing a group activity.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "সবাই একসাথে বসে খেলছে।",
+      "pronunciation": "Shobai ekshathe boshe khelchhe.",
+      "en": "Everyone is sitting and playing together.",
+      "context": "Describing a group activity.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "সবাই বসুন।",
+      "pronunciation": "Shobai boshun.",
+      "en": "Everyone sit down.",
+      "context": "Instruction for a group.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "আমার কাছে কিছু টাকা আছে।",
+      "pronunciation": "Amar kache kichu taka ache.",
+      "en": "I have some money.",
+      "context": "Talking about money or possession.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "ঘরের কাজ হয়েছে",
+      "pronunciation": "Ghorer kaj hoyeche",
+      "en": "Housework done",
+      "context": "Stating housework status.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "আমার সঙ্গে কেউ আসেনি।",
+      "pronunciation": "Amar shonge keu aseni.",
+      "en": "No one came with me.",
+      "context": "Clarifying arrival status.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "আমার ফোন কোথায়?",
+      "pronunciation": "Amar phone kothay?",
+      "en": "Where is my phone?",
+      "context": "Searching for an object.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "একটি সেকেন্ড গুরুত্বপূর্ণ।",
+      "pronunciation": "Ekta sekend guruttopurno.",
+      "en": "One second is important.",
+      "context": "Emphasizing the value of time.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "খাওয়া শেষ হয়েছে",
+      "pronunciation": "Khawa shesh hoyeche",
+      "en": "Eating is done",
+      "context": "Indicating meal completion.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "পথে কেউ নেই।",
+      "pronunciation": "Poth e keo nei.",
+      "en": "There is no one on the road.",
+      "context": "Observation of street.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "আটটা ফোন।",
+      "pronunciation": "Aat ta phone.",
+      "en": "Eight phones.",
+      "context": "Counting objects.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "একদিন দেখা হবে।",
+      "pronunciation": "Ekdin dekha hobe.",
+      "en": "One day we shall meet.",
+      "context": "Expressing future hope.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "একজন ছেলে স্কুলে যায়।",
+      "pronunciation": "Ekjon chele school-e jay.",
+      "en": "One boy goes to school.",
+      "context": "Describing a single person’s routine.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "একজন পুরুষ স্কুলে যায়।",
+      "pronunciation": "Ekjon purush school-e jay.",
+      "en": "One man goes to school.",
+      "context": "Describing a person’s routine.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "তার কাছে একটা নতুন খাতা আছে।",
+      "pronunciation": "Tar kachhe ekta notun khata ache.",
+      "en": "He has a new notebook.",
+      "context": "Describing someone's possession.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "এই বইটা অনেক দিন পর দেখলাম।",
+      "pronunciation": "Ei boi ta onek din por dekhlam.",
+      "en": "I saw this book after many days.",
+      "context": "Commenting on an old possession.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "আজ দিন খুবই ভালো।",
+      "pronunciation": "Aj din khubi bhalo.",
+      "en": "Today is very good.",
+      "context": "Describing the day positively.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "আজ অনেক ঠান্ডা",
+      "pronunciation": "Aaj onek thanda",
+      "en": "It’s very cold today",
+      "context": "Commenting on the weather.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "আমার বন্ধুরা খুব ভালো।",
+      "pronunciation": "Amar bondhura khub bhalo.",
+      "en": "My friends are very good.",
+      "context": "Sharing personal information.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "এই দিনটা অনেক ভালো গেল।",
+      "pronunciation": "Ei din ta onek bhalo gelo.",
+      "en": "This day went very well.",
+      "context": "Reflecting on the day.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "এটা অনেক বড়।",
+      "pronunciation": "Eta onek boro.",
+      "en": "This is very big.",
+      "context": "Describing size.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "এই গল্পটা খুব ছোট।",
+      "pronunciation": "Ei golpo ta khub chhoto.",
+      "en": "This story is very short.",
+      "context": "Description.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "এই জিনিসটা অনেক পুরনো।",
+      "pronunciation": "Ei jinish ta anek purono.",
+      "en": "This thing is very old.",
+      "context": "Describing age.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "এই গাছটাতে পাতা আছে।",
+      "pronunciation": "Ei gach-ta te pata ache.",
+      "en": "This tree has leaves.",
+      "context": "Describing a tree.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "আমার মা খুব ভালো মানুষ।",
+      "pronunciation": "Amar Maa khub bhalo manush.",
+      "en": "My mother is a very good person.",
+      "context": "Describing a family member.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "এই রাস্তা খুবই মসৃণ।",
+      "pronunciation": "Ei raasta khubi mosreen.",
+      "en": "This road is very smooth.",
+      "context": "Describing road condition.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "আজ অনেক গরম",
+      "pronunciation": "Aaj onek gorom",
+      "en": "It’s very hot today",
+      "context": "Commenting on the weather.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "খুব ভালো",
+      "pronunciation": "Khub bhalo",
+      "en": "Very good",
+      "context": "Strongly positive adjective.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "এই কাজটা খুব তাড়াতাড়ি করো।",
+      "pronunciation": "Ei kaj ta khub taratari koro.",
+      "en": "Do this work very quickly.",
+      "context": "Giving an urgent instruction.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "প্রতীক খুব ভালো ছেলে।",
+      "pronunciation": "Protik khub bhalo chhele.",
+      "en": "Protik is a very good boy.",
+      "context": "Praising a specific person.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "এই খাবারটা খুব মজা।",
+      "pronunciation": "Ei khabar ta khub moja.",
+      "en": "This food is very tasty.",
+      "context": "Reviewing a meal.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "আপেল স্বাস্থ্যের জন্য খুবই ভালো।",
+      "pronunciation": "Aapel swasther jonno khubi bhalo.",
+      "en": "Apple is very good for health.",
+      "context": "Talking about health benefits.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "চা-টা খুব গরম।",
+      "pronunciation": "Cha-ta khub garam.",
+      "en": "The tea is very hot.",
+      "context": "Describing temperature.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "আজ একটি সুন্দর দিন।",
+      "pronunciation": "Aj ekti sundor din.",
+      "en": "Today is a beautiful day.",
+      "context": "Describing the day.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "এই গল্প খুব রোমাঞ্চকর।",
+      "pronunciation": "Ei golpo khub romanchokor.",
+      "en": "This story is very interesting.",
+      "context": "Describing a story.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "আজ দিন খুব গরম।",
+      "pronunciation": "Aj din khub gorom.",
+      "en": "Today is very hot.",
+      "context": "Talking about the weather.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "পেঁপে স্বাস্থ্যের জন্য খুব ভালো।",
+      "pronunciation": "Pepe swasther jonno khub bhalo.",
+      "en": "Papaya is very good for health.",
+      "context": "Talking about healthy food.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "এইটা আমার প্রিয় বই",
+      "pronunciation": "Eita amar priyo boi",
+      "en": "This is my favorite book",
+      "context": "Sharing a favorite item.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "এই দিনটা খুব ভালোবাসার।",
+      "pronunciation": "Ei din ta khub bhalobashar.",
+      "en": "This day is full of love.",
+      "context": "Sentiment about the day.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "এটা আমার বই।",
+      "pronunciation": "Eta amar boi.",
+      "en": "This is my book.",
+      "context": "Showing ownership.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "এই ছবিটা আমার।",
+      "pronunciation": "Ei chhobi ta amar.",
+      "en": "This picture is mine.",
+      "context": "Claiming ownership.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "এই বই একটি রচিত গল্প।",
+      "pronunciation": "Ei boi ekti rochito golpo.",
+      "en": "This book is a written story.",
+      "context": "Describing a book.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "পৃথিবী খুবই সুন্দর।",
+      "pronunciation": "Prithibi khubi sundor.",
+      "en": "The world is very beautiful.",
+      "context": "Expressing admiration for the world.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "আজ সময় খুবই কম।",
+      "pronunciation": "Aj shomoy khubi kom.",
+      "en": "Today there is very little time.",
+      "context": "Talking about limited time.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "তারাগুলো খুবই ছোট।",
+      "pronunciation": "Tara gulo khubi choto.",
+      "en": "The stars are very small.",
+      "context": "Describing stars.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "এইটা আমার পাশের বাড়ি",
+      "pronunciation": "Eita amar pasher bari",
+      "en": "This is my neighbor's house.",
+      "context": "Pointing out a location.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "কি সুন্দর ছবি!",
+      "pronunciation": "Ki sundor chhobi!",
+      "en": "What a beautiful picture!",
+      "context": "Praising an image.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "এই ছবিটা তুলতে দারুণ লেগেছে।",
+      "pronunciation": "Ei chhobi ta tulte darun legechhe.",
+      "en": "It was amazing to take this picture.",
+      "context": "Reflecting on an activity.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "সে খুব সুন্দর।",
+      "pronunciation": "She khoob shundor.",
+      "en": "She is very beautiful.",
+      "context": "Complimenting a female.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "নদীটা খুব সুন্দর।",
+      "pronunciation": "Nodi ta khub shundor.",
+      "en": "The river is very beautiful.",
+      "context": "Description of scenery.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "তারা এই ছবিটা দেখে হাসছে।",
+      "pronunciation": "তারা এই ছবিটা দেখে হাসছে।",
+      "en": "They are laughing at this picture.",
+      "context": "Observation of people.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "এই ছেলেটা ভালো কাজ করে।",
+      "pronunciation": "Ei chhele ta bhalo kaj kore.",
+      "en": "This boy does good work.",
+      "context": "Praising someone's effort.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "এই ফুলটা সুন্দর।",
+      "pronunciation": "Ei phool ta shundor.",
+      "en": "This flower is beautiful.",
+      "context": "Complimenting nature.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "এটা ছোট।",
+      "pronunciation": "Eta chhoto.",
+      "en": "This is small.",
+      "context": "Describing size.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "এই ছবিটা দারুণ।",
+      "pronunciation": "Ei chhobi ta darun.",
+      "en": "This picture is amazing.",
+      "context": "Complimenting a photo.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "এই পথটা সুন্দর।",
+      "pronunciation": "Ei poth ta sondor.",
+      "en": "This road is beautiful.",
+      "context": "Describing the surroundings.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "এই ছবিটা কোথায় তুলেছ?",
+      "pronunciation": "Ei chhobi ta kothay tulechho?",
+      "en": "Where did you take this picture?",
+      "context": "Inquiring about photo location.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "গোলাপ ফুল খুব সুন্দর।",
+      "pronunciation": "Golap ful khub sundor.",
+      "en": "The rose is very beautiful.",
+      "context": "Describing beauty.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "হাতি খুবই বড়।",
+      "pronunciation": "Hati khubi boro.",
+      "en": "The elephant is very big.",
+      "context": "Describing size.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "এই খাবার খারাপ।",
+      "pronunciation": "Ei khabar kharap.",
+      "en": "This food is bad.",
+      "context": "Expressing dissatisfaction.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "এইটা আমার প্রিয় গান",
+      "pronunciation": "Eita amar priyo gaan",
+      "en": "This is my favorite song.",
+      "context": "Sharing a preference.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "আজ আমি ভালো আছি!",
+      "pronunciation": "Aaj ami bhalo achhi!",
+      "en": "Today I am good!",
+      "context": "Stating current mood/health.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "উনার কাছে একটা কলম আছে।",
+      "pronunciation": "Unaar kachhe ekta kalam ache.",
+      "en": "He has a pen.",
+      "context": "Describing someone's possession.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "উনি খুব সুন্দর।",
+      "pronunciation": "Uni khub shundor.",
+      "en": "He is very handsome.",
+      "context": "Complimenting someone.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "একটা নতুন পেন কিনে নিয়েছি।",
+      "pronunciation": "Ekta notun pen kine niyechhi.",
+      "en": "I bought a new pen.",
+      "context": "Sharing a recent purchase.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "এই গাছটা আমার পছন্দ।",
+      "pronunciation": "Ei gachh ta amar pochhondo.",
+      "en": "I like this tree.",
+      "context": "Expressing preference.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "এই বৃষ্টিটা অনেক দিন পরে হলো।",
+      "pronunciation": "Ei brishti ta onek din pore holo.",
+      "en": "It's raining after many days.",
+      "context": "Commenting on weather change.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "আমার পেট খুব ব্যথা করছে।",
+      "pronunciation": "Amar pet khub byatha korchhe.",
+      "en": "My stomach is hurting very much.",
+      "context": "Expressing physical pain.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "প্রত্যেক দিন খেলা ভালো লাগে।",
+      "pronunciation": "Protyek din khela bhalo lage.",
+      "en": "Playing every day feels good.",
+      "context": "Sharing a habit's benefit.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "গাছের ছায়া খুব ঠান্ডা।",
+      "pronunciation": "Gachher chhaya khub thanda.",
+      "en": "The tree's shade is very cool.",
+      "context": "Description.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "এই খাতাটা আপনার জন্য।",
+      "pronunciation": "Ei khata ta aapnar jonno.",
+      "en": "This notebook is for you.",
+      "context": "Giving something to someone.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "এই বাড়িতে কে থাকে?",
+      "pronunciation": "Ei bari te ke thake?",
+      "en": "Who lives in this house?",
+      "context": "Curiosity about neighbors.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "আমি একটি বই পড়ছি।",
+      "pronunciation": "Ami ekti boi porchhi.",
+      "en": "I am reading a book.",
+      "context": "Describing an ongoing action.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "দুধ খুবই মিষ্টি।",
+      "pronunciation": "Dudh khubi mishti.",
+      "en": "The milk is very sweet.",
+      "context": "Describing taste.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "কমলা খুবই মিষ্টি।",
+      "pronunciation": "Komola khubi mishti.",
+      "en": "The orange is very sweet.",
+      "context": "Describing taste.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "মাংস খুবই সুস্বাদু।",
+      "pronunciation": "Mangsho khubi swadishto.",
+      "en": "The meat is very tasty.",
+      "context": "Describing the taste of food.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "রাত খুবই শান্ত।",
+      "pronunciation": "Raat khubi shanto.",
+      "en": "The night is very quiet.",
+      "context": "Describing the calmness of night.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "রুটি খুবই সুস্বাদু।",
+      "pronunciation": "Ruti khubi swadishto.",
+      "en": "The bread is very tasty.",
+      "context": "Describing food taste.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "শাক খুবই স্বাস্থ্যকর।",
+      "pronunciation": "Shaak khubi swasthokor.",
+      "en": "Green vegetables are very healthy.",
+      "context": "Talking about healthy food.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "সকালবেলা খুবই শান্ত।",
+      "pronunciation": "Shokal-bela khubi shanto.",
+      "en": "Morning time is very peaceful.",
+      "context": "Describing the calm of morning.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "সুখ খুবই গুরুত্বপূর্ণ।",
+      "pronunciation": "Sukh khubi guruttopurno.",
+      "en": "Happiness is very important.",
+      "context": "Expressing a life value.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "এইটা কি?",
+      "pronunciation": "Eita ki?",
+      "en": "What is this?",
+      "context": "Asking about an object.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "এ আমার বন্ধু!",
+      "pronunciation": "E' amar bondhu",
+      "en": "This is my friend!",
+      "context": "Introducing a friend.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "সব কিছু ঠিক আছে",
+      "pronunciation": "Shob kichu thik ache",
+      "en": "Everything is fine.",
+      "context": "Reassurance.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "কি সুন্দর গল্প!",
+      "pronunciation": "Ki shundor golpo!",
+      "en": "What a beautiful story!",
+      "context": "Praising a story.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "আজ অনেক কাজ আছে",
+      "pronunciation": "Aaj onek kaj ache",
+      "en": "There’s a lot of work today.",
+      "context": "Stating workload.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "কি সুন্দর রাত!",
+      "pronunciation": "Ki sundor raat!",
+      "en": "What a beautiful night!",
+      "context": "Exclaiming about the night.",
+      "category": "adjectives"
+    },
+    {
+      "bn": "এই নদীতে কি আপনি কষ্ট পেলেন?",
+      "pronunciation": "Ei nodi te ki aapni koshto pelen?",
+      "en": "Did you face trouble in this river?",
+      "context": "Asking about a past difficult experience.",
+      "category": "adjectives"
     }
   ],
   "vocab": [

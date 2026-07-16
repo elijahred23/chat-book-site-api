@@ -450,4147 +450,620 @@
       ]
     },
     {
-      "bn": "বলুন: “আমি চা এবং কফি পছন্দ করি।”",
-      "pronunciation": "bolun: ami cha ebong kofi pochhondo kori",
-      "en": "Say: “I like tea and coffee.”",
-      "context": "Say the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "আমি চা এবং কফি পছন্দ করি।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "চা",
-          "pronunciation": "cha",
-          "en": "tea"
-        },
-        {
-          "bn": "এবং",
-          "pronunciation": "ebong",
-          "en": "and"
-        },
-        {
-          "bn": "কফি",
-          "pronunciation": "kofi",
-          "en": "coffee"
-        },
-        {
-          "bn": "পছন্দ",
-          "pronunciation": "pochhondo",
-          "en": "like / preference"
-        },
-        {
-          "bn": "করি",
-          "pronunciation": "kori",
-          "en": "do"
-        }
-      ]
-    },
-    {
-      "bn": "বলুন: “মা আর বাবা বাড়িতে আছেন।”",
-      "pronunciation": "bolun: ma ar baba barite achhen",
-      "en": "Say: “Mother and father are at home.”",
-      "context": "Say the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "মা আর বাবা বাড়িতে আছেন।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "মা",
-          "pronunciation": "ma",
-          "en": "mother"
-        },
-        {
-          "bn": "আর",
-          "pronunciation": "ar",
-          "en": "and / also"
-        },
-        {
-          "bn": "বাবা",
-          "pronunciation": "baba",
-          "en": "father"
-        },
-        {
-          "bn": "বাড়িতে",
-          "pronunciation": "barite",
-          "en": "at home"
-        },
-        {
-          "bn": "আছেন",
-          "pronunciation": "achhen",
-          "en": "are (respectful)"
-        }
-      ]
-    },
-    {
-      "bn": "বলুন: “তুমি চা অথবা কফি নিতে পারো।”",
-      "pronunciation": "bolun: tumi cha othoba kofi nite paro",
-      "en": "Say: “You can have tea or coffee.”",
-      "context": "Say the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "তুমি চা অথবা কফি নিতে পারো।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "তুমি",
-          "pronunciation": "tumi",
-          "en": "you (familiar)"
-        },
-        {
-          "bn": "চা",
-          "pronunciation": "cha",
-          "en": "tea"
-        },
-        {
-          "bn": "অথবা",
-          "pronunciation": "othoba",
-          "en": "or"
-        },
-        {
-          "bn": "কফি",
-          "pronunciation": "kofi",
-          "en": "coffee"
-        },
-        {
-          "bn": "নিতে",
-          "pronunciation": "nite",
-          "en": "to take"
-        },
-        {
-          "bn": "পারো",
-          "pronunciation": "paro",
-          "en": "can (familiar)"
-        }
-      ]
-    },
-    {
-      "bn": "বলুন: “আমি যাব, কিন্তু এখন নয়।”",
-      "pronunciation": "bolun: ami jabo, kintu ekhon noy",
-      "en": "Say: “I will go, but not now.”",
-      "context": "Say the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "আমি যাব, কিন্তু এখন নয়।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "যাব",
-          "pronunciation": "jabo",
-          "en": "will go"
-        },
-        {
-          "bn": "কিন্তু",
-          "pronunciation": "kintu",
-          "en": "but"
-        },
-        {
-          "bn": "এখন",
-          "pronunciation": "ekhon",
-          "en": "now"
-        },
-        {
-          "bn": "নয়",
-          "pronunciation": "noy",
-          "en": "is not"
-        }
-      ]
-    },
-    {
-      "bn": "বলুন: “আমি থাকব, কারণ বৃষ্টি হচ্ছে।”",
-      "pronunciation": "bolun: ami thakbo, karon brishti hochchhe",
-      "en": "Say: “I will stay because it is raining.”",
-      "context": "Say the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "আমি থাকব, কারণ বৃষ্টি হচ্ছে।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "থাকব",
-          "pronunciation": "thakbo",
-          "en": "will stay"
-        },
-        {
-          "bn": "কারণ",
-          "pronunciation": "karon",
-          "en": "because"
-        },
-        {
-          "bn": "বৃষ্টি",
-          "pronunciation": "brishti",
-          "en": "rain"
-        },
-        {
-          "bn": "হচ্ছে",
-          "pronunciation": "hochchhe",
-          "en": "is happening"
-        }
-      ]
-    },
-    {
-      "bn": "বলুন: “বৃষ্টি হচ্ছে, তাই আমি বাড়িতে আছি।”",
-      "pronunciation": "bolun: brishti hochchhe, tai ami barite achhi",
-      "en": "Say: “It is raining, so I am at home.”",
-      "context": "Say the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "বৃষ্টি হচ্ছে, তাই আমি বাড়িতে আছি।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "বৃষ্টি",
-          "pronunciation": "brishti",
-          "en": "rain"
-        },
-        {
-          "bn": "হচ্ছে",
-          "pronunciation": "hochchhe",
-          "en": "is happening"
-        },
-        {
-          "bn": "তাই",
-          "pronunciation": "tai",
-          "en": "so"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "বাড়িতে",
-          "pronunciation": "barite",
-          "en": "at home"
-        },
-        {
-          "bn": "আছি",
-          "pronunciation": "achhi",
-          "en": "am"
-        }
-      ]
-    },
-    {
-      "bn": "বলুন: “যদি সময় থাকে, আমি আসব।”",
-      "pronunciation": "bolun: jodi shomoy thake, ami ashbo",
-      "en": "Say: “If I have time, I will come.”",
-      "context": "Say the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "যদি সময় থাকে, আমি আসব।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "যদি",
-          "pronunciation": "jodi",
-          "en": "if"
-        },
-        {
-          "bn": "সময়",
-          "pronunciation": "shomoy",
-          "en": "time"
-        },
-        {
-          "bn": "থাকে",
-          "pronunciation": "thake",
-          "en": "lives / stays"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "আসব",
-          "pronunciation": "ashbo",
-          "en": "will come"
-        }
-      ]
-    },
-    {
-      "bn": "বলুন: “তুমি এলে, তবে আমরা যাব।”",
-      "pronunciation": "bolun: tumi ele, tobe amra jabo",
-      "en": "Say: “If you come, then we will go.”",
-      "context": "Say the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "তুমি এলে, তবে আমরা যাব।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "তুমি",
-          "pronunciation": "tumi",
-          "en": "you (familiar)"
-        },
-        {
-          "bn": "এলে",
-          "pronunciation": "ele",
-          "en": "if (you) come"
-        },
-        {
-          "bn": "তবে",
-          "pronunciation": "tobe",
-          "en": "then"
-        },
-        {
-          "bn": "আমরা",
-          "pronunciation": "amra",
-          "en": "we"
-        },
-        {
-          "bn": "যাব",
-          "pronunciation": "jabo",
-          "en": "will go"
-        }
-      ]
-    },
-    {
-      "bn": "বলুন: “যদিও কাজটি কঠিন, আমি চেষ্টা করব।”",
-      "pronunciation": "bolun: jodio kajti kothin, ami cheshta korbo",
-      "en": "Say: “Although the task is difficult, I will try.”",
-      "context": "Say the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "যদিও কাজটি কঠিন, আমি চেষ্টা করব।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "যদিও",
-          "pronunciation": "jodio",
-          "en": "although"
-        },
-        {
-          "bn": "কাজটি",
-          "pronunciation": "kajti",
-          "en": "the task"
-        },
-        {
-          "bn": "কঠিন",
-          "pronunciation": "kothin",
-          "en": "difficult"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "চেষ্টা",
-          "pronunciation": "cheshta",
-          "en": "try"
-        },
-        {
-          "bn": "করব",
-          "pronunciation": "korbo",
-          "en": "will do"
-        }
-      ]
-    },
-    {
-      "bn": "বলুন: “যখন বৃষ্টি হয়, আমি বই পড়ি।”",
-      "pronunciation": "bolun: jokhon brishti hoy, ami boi pori",
-      "en": "Say: “When it rains, I read a book.”",
-      "context": "Say the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "যখন বৃষ্টি হয়, আমি বই পড়ি।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "যখন",
-          "pronunciation": "jokhon",
-          "en": "when"
-        },
-        {
-          "bn": "বৃষ্টি",
-          "pronunciation": "brishti",
-          "en": "rain"
-        },
-        {
-          "bn": "হয়",
-          "pronunciation": "hoy",
-          "en": "is / happens"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "বই",
-          "pronunciation": "boi",
-          "en": "book"
-        },
-        {
-          "bn": "পড়ি",
-          "pronunciation": "pori",
-          "en": "read"
-        }
-      ]
-    },
-    {
-      "bn": "বলুন: “যতক্ষণ কাজ শেষ না হয়, আমি থাকব।”",
-      "pronunciation": "bolun: jotokkhon kaj shesh na hoy, ami thakbo",
-      "en": "Say: “I will stay as long as the work is not finished.”",
-      "context": "Say the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "যতক্ষণ কাজ শেষ না হয়, আমি থাকব।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "যতক্ষণ",
-          "pronunciation": "jotokkhon",
-          "en": "as long as"
-        },
-        {
-          "bn": "কাজ",
-          "pronunciation": "kaj",
-          "en": "work"
-        },
-        {
-          "bn": "শেষ",
-          "pronunciation": "shesh",
-          "en": "finished / end"
-        },
-        {
-          "bn": "না",
-          "pronunciation": "na",
-          "en": "not"
-        },
-        {
-          "bn": "হয়",
-          "pronunciation": "hoy",
-          "en": "is / happens"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "থাকব",
-          "pronunciation": "thakbo",
-          "en": "will stay"
-        }
-      ]
-    },
-    {
-      "bn": "বলুন: “এখন চলো, নইলে দেরি হবে।”",
-      "pronunciation": "bolun: ekhon cholo, noile deri hobe",
-      "en": "Say: “Let us go now, otherwise we will be late.”",
-      "context": "Say the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "এখন চলো, নইলে দেরি হবে।",
-      "words": [
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "এখন",
-          "pronunciation": "ekhon",
-          "en": "now"
-        },
-        {
-          "bn": "চলো",
-          "pronunciation": "cholo",
-          "en": "let us go"
-        },
-        {
-          "bn": "নইলে",
-          "pronunciation": "noile",
-          "en": "otherwise"
-        },
-        {
-          "bn": "দেরি",
-          "pronunciation": "deri",
-          "en": "late"
-        },
-        {
-          "bn": "হবে",
-          "pronunciation": "hobe",
-          "en": "will be"
-        }
-      ]
-    },
-    {
-      "bn": "পড়ুন: “আমি চা এবং কফি পছন্দ করি।”",
-      "pronunciation": "porun: ami cha ebong kofi pochhondo kori",
-      "en": "Read: “I like tea and coffee.”",
-      "context": "Read the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "আমি চা এবং কফি পছন্দ করি।",
-      "words": [
-        {
-          "bn": "পড়ুন",
-          "pronunciation": "porun",
-          "en": "read"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "চা",
-          "pronunciation": "cha",
-          "en": "tea"
-        },
-        {
-          "bn": "এবং",
-          "pronunciation": "ebong",
-          "en": "and"
-        },
-        {
-          "bn": "কফি",
-          "pronunciation": "kofi",
-          "en": "coffee"
-        },
-        {
-          "bn": "পছন্দ",
-          "pronunciation": "pochhondo",
-          "en": "like / preference"
-        },
-        {
-          "bn": "করি",
-          "pronunciation": "kori",
-          "en": "do"
-        }
-      ]
-    },
-    {
-      "bn": "পড়ুন: “মা আর বাবা বাড়িতে আছেন।”",
-      "pronunciation": "porun: ma ar baba barite achhen",
-      "en": "Read: “Mother and father are at home.”",
-      "context": "Read the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "মা আর বাবা বাড়িতে আছেন।",
-      "words": [
-        {
-          "bn": "পড়ুন",
-          "pronunciation": "porun",
-          "en": "read"
-        },
-        {
-          "bn": "মা",
-          "pronunciation": "ma",
-          "en": "mother"
-        },
-        {
-          "bn": "আর",
-          "pronunciation": "ar",
-          "en": "and / also"
-        },
-        {
-          "bn": "বাবা",
-          "pronunciation": "baba",
-          "en": "father"
-        },
-        {
-          "bn": "বাড়িতে",
-          "pronunciation": "barite",
-          "en": "at home"
-        },
-        {
-          "bn": "আছেন",
-          "pronunciation": "achhen",
-          "en": "are (respectful)"
-        }
-      ]
-    },
-    {
-      "bn": "পড়ুন: “তুমি চা অথবা কফি নিতে পারো।”",
-      "pronunciation": "porun: tumi cha othoba kofi nite paro",
-      "en": "Read: “You can have tea or coffee.”",
-      "context": "Read the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "তুমি চা অথবা কফি নিতে পারো।",
-      "words": [
-        {
-          "bn": "পড়ুন",
-          "pronunciation": "porun",
-          "en": "read"
-        },
-        {
-          "bn": "তুমি",
-          "pronunciation": "tumi",
-          "en": "you (familiar)"
-        },
-        {
-          "bn": "চা",
-          "pronunciation": "cha",
-          "en": "tea"
-        },
-        {
-          "bn": "অথবা",
-          "pronunciation": "othoba",
-          "en": "or"
-        },
-        {
-          "bn": "কফি",
-          "pronunciation": "kofi",
-          "en": "coffee"
-        },
-        {
-          "bn": "নিতে",
-          "pronunciation": "nite",
-          "en": "to take"
-        },
-        {
-          "bn": "পারো",
-          "pronunciation": "paro",
-          "en": "can (familiar)"
-        }
-      ]
-    },
-    {
-      "bn": "পড়ুন: “আমি যাব, কিন্তু এখন নয়।”",
-      "pronunciation": "porun: ami jabo, kintu ekhon noy",
-      "en": "Read: “I will go, but not now.”",
-      "context": "Read the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "আমি যাব, কিন্তু এখন নয়।",
-      "words": [
-        {
-          "bn": "পড়ুন",
-          "pronunciation": "porun",
-          "en": "read"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "যাব",
-          "pronunciation": "jabo",
-          "en": "will go"
-        },
-        {
-          "bn": "কিন্তু",
-          "pronunciation": "kintu",
-          "en": "but"
-        },
-        {
-          "bn": "এখন",
-          "pronunciation": "ekhon",
-          "en": "now"
-        },
-        {
-          "bn": "নয়",
-          "pronunciation": "noy",
-          "en": "is not"
-        }
-      ]
-    },
-    {
-      "bn": "পড়ুন: “আমি থাকব, কারণ বৃষ্টি হচ্ছে।”",
-      "pronunciation": "porun: ami thakbo, karon brishti hochchhe",
-      "en": "Read: “I will stay because it is raining.”",
-      "context": "Read the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "আমি থাকব, কারণ বৃষ্টি হচ্ছে।",
-      "words": [
-        {
-          "bn": "পড়ুন",
-          "pronunciation": "porun",
-          "en": "read"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "থাকব",
-          "pronunciation": "thakbo",
-          "en": "will stay"
-        },
-        {
-          "bn": "কারণ",
-          "pronunciation": "karon",
-          "en": "because"
-        },
-        {
-          "bn": "বৃষ্টি",
-          "pronunciation": "brishti",
-          "en": "rain"
-        },
-        {
-          "bn": "হচ্ছে",
-          "pronunciation": "hochchhe",
-          "en": "is happening"
-        }
-      ]
-    },
-    {
-      "bn": "পড়ুন: “বৃষ্টি হচ্ছে, তাই আমি বাড়িতে আছি।”",
-      "pronunciation": "porun: brishti hochchhe, tai ami barite achhi",
-      "en": "Read: “It is raining, so I am at home.”",
-      "context": "Read the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "বৃষ্টি হচ্ছে, তাই আমি বাড়িতে আছি।",
-      "words": [
-        {
-          "bn": "পড়ুন",
-          "pronunciation": "porun",
-          "en": "read"
-        },
-        {
-          "bn": "বৃষ্টি",
-          "pronunciation": "brishti",
-          "en": "rain"
-        },
-        {
-          "bn": "হচ্ছে",
-          "pronunciation": "hochchhe",
-          "en": "is happening"
-        },
-        {
-          "bn": "তাই",
-          "pronunciation": "tai",
-          "en": "so"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "বাড়িতে",
-          "pronunciation": "barite",
-          "en": "at home"
-        },
-        {
-          "bn": "আছি",
-          "pronunciation": "achhi",
-          "en": "am"
-        }
-      ]
-    },
-    {
-      "bn": "পড়ুন: “যদি সময় থাকে, আমি আসব।”",
-      "pronunciation": "porun: jodi shomoy thake, ami ashbo",
-      "en": "Read: “If I have time, I will come.”",
-      "context": "Read the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "যদি সময় থাকে, আমি আসব।",
-      "words": [
-        {
-          "bn": "পড়ুন",
-          "pronunciation": "porun",
-          "en": "read"
-        },
-        {
-          "bn": "যদি",
-          "pronunciation": "jodi",
-          "en": "if"
-        },
-        {
-          "bn": "সময়",
-          "pronunciation": "shomoy",
-          "en": "time"
-        },
-        {
-          "bn": "থাকে",
-          "pronunciation": "thake",
-          "en": "lives / stays"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "আসব",
-          "pronunciation": "ashbo",
-          "en": "will come"
-        }
-      ]
-    },
-    {
-      "bn": "পড়ুন: “তুমি এলে, তবে আমরা যাব।”",
-      "pronunciation": "porun: tumi ele, tobe amra jabo",
-      "en": "Read: “If you come, then we will go.”",
-      "context": "Read the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "তুমি এলে, তবে আমরা যাব।",
-      "words": [
-        {
-          "bn": "পড়ুন",
-          "pronunciation": "porun",
-          "en": "read"
-        },
-        {
-          "bn": "তুমি",
-          "pronunciation": "tumi",
-          "en": "you (familiar)"
-        },
-        {
-          "bn": "এলে",
-          "pronunciation": "ele",
-          "en": "if (you) come"
-        },
-        {
-          "bn": "তবে",
-          "pronunciation": "tobe",
-          "en": "then"
-        },
-        {
-          "bn": "আমরা",
-          "pronunciation": "amra",
-          "en": "we"
-        },
-        {
-          "bn": "যাব",
-          "pronunciation": "jabo",
-          "en": "will go"
-        }
-      ]
-    },
-    {
-      "bn": "পড়ুন: “যদিও কাজটি কঠিন, আমি চেষ্টা করব।”",
-      "pronunciation": "porun: jodio kajti kothin, ami cheshta korbo",
-      "en": "Read: “Although the task is difficult, I will try.”",
-      "context": "Read the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "যদিও কাজটি কঠিন, আমি চেষ্টা করব।",
-      "words": [
-        {
-          "bn": "পড়ুন",
-          "pronunciation": "porun",
-          "en": "read"
-        },
-        {
-          "bn": "যদিও",
-          "pronunciation": "jodio",
-          "en": "although"
-        },
-        {
-          "bn": "কাজটি",
-          "pronunciation": "kajti",
-          "en": "the task"
-        },
-        {
-          "bn": "কঠিন",
-          "pronunciation": "kothin",
-          "en": "difficult"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "চেষ্টা",
-          "pronunciation": "cheshta",
-          "en": "try"
-        },
-        {
-          "bn": "করব",
-          "pronunciation": "korbo",
-          "en": "will do"
-        }
-      ]
-    },
-    {
-      "bn": "পড়ুন: “যখন বৃষ্টি হয়, আমি বই পড়ি।”",
-      "pronunciation": "porun: jokhon brishti hoy, ami boi pori",
-      "en": "Read: “When it rains, I read a book.”",
-      "context": "Read the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "যখন বৃষ্টি হয়, আমি বই পড়ি।",
-      "words": [
-        {
-          "bn": "পড়ুন",
-          "pronunciation": "porun",
-          "en": "read"
-        },
-        {
-          "bn": "যখন",
-          "pronunciation": "jokhon",
-          "en": "when"
-        },
-        {
-          "bn": "বৃষ্টি",
-          "pronunciation": "brishti",
-          "en": "rain"
-        },
-        {
-          "bn": "হয়",
-          "pronunciation": "hoy",
-          "en": "is / happens"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "বই",
-          "pronunciation": "boi",
-          "en": "book"
-        },
-        {
-          "bn": "পড়ি",
-          "pronunciation": "pori",
-          "en": "read"
-        }
-      ]
-    },
-    {
-      "bn": "পড়ুন: “যতক্ষণ কাজ শেষ না হয়, আমি থাকব।”",
-      "pronunciation": "porun: jotokkhon kaj shesh na hoy, ami thakbo",
-      "en": "Read: “I will stay as long as the work is not finished.”",
-      "context": "Read the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "যতক্ষণ কাজ শেষ না হয়, আমি থাকব।",
-      "words": [
-        {
-          "bn": "পড়ুন",
-          "pronunciation": "porun",
-          "en": "read"
-        },
-        {
-          "bn": "যতক্ষণ",
-          "pronunciation": "jotokkhon",
-          "en": "as long as"
-        },
-        {
-          "bn": "কাজ",
-          "pronunciation": "kaj",
-          "en": "work"
-        },
-        {
-          "bn": "শেষ",
-          "pronunciation": "shesh",
-          "en": "finished / end"
-        },
-        {
-          "bn": "না",
-          "pronunciation": "na",
-          "en": "not"
-        },
-        {
-          "bn": "হয়",
-          "pronunciation": "hoy",
-          "en": "is / happens"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "থাকব",
-          "pronunciation": "thakbo",
-          "en": "will stay"
-        }
-      ]
-    },
-    {
-      "bn": "পড়ুন: “এখন চলো, নইলে দেরি হবে।”",
-      "pronunciation": "porun: ekhon cholo, noile deri hobe",
-      "en": "Read: “Let us go now, otherwise we will be late.”",
-      "context": "Read the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "এখন চলো, নইলে দেরি হবে।",
-      "words": [
-        {
-          "bn": "পড়ুন",
-          "pronunciation": "porun",
-          "en": "read"
-        },
-        {
-          "bn": "এখন",
-          "pronunciation": "ekhon",
-          "en": "now"
-        },
-        {
-          "bn": "চলো",
-          "pronunciation": "cholo",
-          "en": "let us go"
-        },
-        {
-          "bn": "নইলে",
-          "pronunciation": "noile",
-          "en": "otherwise"
-        },
-        {
-          "bn": "দেরি",
-          "pronunciation": "deri",
-          "en": "late"
-        },
-        {
-          "bn": "হবে",
-          "pronunciation": "hobe",
-          "en": "will be"
-        }
-      ]
-    },
-    {
-      "bn": "লিখুন: “আমি চা এবং কফি পছন্দ করি।”",
-      "pronunciation": "likhun: ami cha ebong kofi pochhondo kori",
-      "en": "Write: “I like tea and coffee.”",
-      "context": "Write the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "আমি চা এবং কফি পছন্দ করি।",
-      "words": [
-        {
-          "bn": "লিখুন",
-          "pronunciation": "likhun",
-          "en": "write"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "চা",
-          "pronunciation": "cha",
-          "en": "tea"
-        },
-        {
-          "bn": "এবং",
-          "pronunciation": "ebong",
-          "en": "and"
-        },
-        {
-          "bn": "কফি",
-          "pronunciation": "kofi",
-          "en": "coffee"
-        },
-        {
-          "bn": "পছন্দ",
-          "pronunciation": "pochhondo",
-          "en": "like / preference"
-        },
-        {
-          "bn": "করি",
-          "pronunciation": "kori",
-          "en": "do"
-        }
-      ]
-    },
-    {
-      "bn": "লিখুন: “মা আর বাবা বাড়িতে আছেন।”",
-      "pronunciation": "likhun: ma ar baba barite achhen",
-      "en": "Write: “Mother and father are at home.”",
-      "context": "Write the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "মা আর বাবা বাড়িতে আছেন।",
-      "words": [
-        {
-          "bn": "লিখুন",
-          "pronunciation": "likhun",
-          "en": "write"
-        },
-        {
-          "bn": "মা",
-          "pronunciation": "ma",
-          "en": "mother"
-        },
-        {
-          "bn": "আর",
-          "pronunciation": "ar",
-          "en": "and / also"
-        },
-        {
-          "bn": "বাবা",
-          "pronunciation": "baba",
-          "en": "father"
-        },
-        {
-          "bn": "বাড়িতে",
-          "pronunciation": "barite",
-          "en": "at home"
-        },
-        {
-          "bn": "আছেন",
-          "pronunciation": "achhen",
-          "en": "are (respectful)"
-        }
-      ]
-    },
-    {
-      "bn": "লিখুন: “তুমি চা অথবা কফি নিতে পারো।”",
-      "pronunciation": "likhun: tumi cha othoba kofi nite paro",
-      "en": "Write: “You can have tea or coffee.”",
-      "context": "Write the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "তুমি চা অথবা কফি নিতে পারো।",
-      "words": [
-        {
-          "bn": "লিখুন",
-          "pronunciation": "likhun",
-          "en": "write"
-        },
-        {
-          "bn": "তুমি",
-          "pronunciation": "tumi",
-          "en": "you (familiar)"
-        },
-        {
-          "bn": "চা",
-          "pronunciation": "cha",
-          "en": "tea"
-        },
-        {
-          "bn": "অথবা",
-          "pronunciation": "othoba",
-          "en": "or"
-        },
-        {
-          "bn": "কফি",
-          "pronunciation": "kofi",
-          "en": "coffee"
-        },
-        {
-          "bn": "নিতে",
-          "pronunciation": "nite",
-          "en": "to take"
-        },
-        {
-          "bn": "পারো",
-          "pronunciation": "paro",
-          "en": "can (familiar)"
-        }
-      ]
-    },
-    {
-      "bn": "লিখুন: “আমি যাব, কিন্তু এখন নয়।”",
-      "pronunciation": "likhun: ami jabo, kintu ekhon noy",
-      "en": "Write: “I will go, but not now.”",
-      "context": "Write the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "আমি যাব, কিন্তু এখন নয়।",
-      "words": [
-        {
-          "bn": "লিখুন",
-          "pronunciation": "likhun",
-          "en": "write"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "যাব",
-          "pronunciation": "jabo",
-          "en": "will go"
-        },
-        {
-          "bn": "কিন্তু",
-          "pronunciation": "kintu",
-          "en": "but"
-        },
-        {
-          "bn": "এখন",
-          "pronunciation": "ekhon",
-          "en": "now"
-        },
-        {
-          "bn": "নয়",
-          "pronunciation": "noy",
-          "en": "is not"
-        }
-      ]
-    },
-    {
-      "bn": "লিখুন: “আমি থাকব, কারণ বৃষ্টি হচ্ছে।”",
-      "pronunciation": "likhun: ami thakbo, karon brishti hochchhe",
-      "en": "Write: “I will stay because it is raining.”",
-      "context": "Write the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "আমি থাকব, কারণ বৃষ্টি হচ্ছে।",
-      "words": [
-        {
-          "bn": "লিখুন",
-          "pronunciation": "likhun",
-          "en": "write"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "থাকব",
-          "pronunciation": "thakbo",
-          "en": "will stay"
-        },
-        {
-          "bn": "কারণ",
-          "pronunciation": "karon",
-          "en": "because"
-        },
-        {
-          "bn": "বৃষ্টি",
-          "pronunciation": "brishti",
-          "en": "rain"
-        },
-        {
-          "bn": "হচ্ছে",
-          "pronunciation": "hochchhe",
-          "en": "is happening"
-        }
-      ]
-    },
-    {
-      "bn": "লিখুন: “বৃষ্টি হচ্ছে, তাই আমি বাড়িতে আছি।”",
-      "pronunciation": "likhun: brishti hochchhe, tai ami barite achhi",
-      "en": "Write: “It is raining, so I am at home.”",
-      "context": "Write the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "বৃষ্টি হচ্ছে, তাই আমি বাড়িতে আছি।",
-      "words": [
-        {
-          "bn": "লিখুন",
-          "pronunciation": "likhun",
-          "en": "write"
-        },
-        {
-          "bn": "বৃষ্টি",
-          "pronunciation": "brishti",
-          "en": "rain"
-        },
-        {
-          "bn": "হচ্ছে",
-          "pronunciation": "hochchhe",
-          "en": "is happening"
-        },
-        {
-          "bn": "তাই",
-          "pronunciation": "tai",
-          "en": "so"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "বাড়িতে",
-          "pronunciation": "barite",
-          "en": "at home"
-        },
-        {
-          "bn": "আছি",
-          "pronunciation": "achhi",
-          "en": "am"
-        }
-      ]
-    },
-    {
-      "bn": "লিখুন: “যদি সময় থাকে, আমি আসব।”",
-      "pronunciation": "likhun: jodi shomoy thake, ami ashbo",
-      "en": "Write: “If I have time, I will come.”",
-      "context": "Write the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "যদি সময় থাকে, আমি আসব।",
-      "words": [
-        {
-          "bn": "লিখুন",
-          "pronunciation": "likhun",
-          "en": "write"
-        },
-        {
-          "bn": "যদি",
-          "pronunciation": "jodi",
-          "en": "if"
-        },
-        {
-          "bn": "সময়",
-          "pronunciation": "shomoy",
-          "en": "time"
-        },
-        {
-          "bn": "থাকে",
-          "pronunciation": "thake",
-          "en": "lives / stays"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "আসব",
-          "pronunciation": "ashbo",
-          "en": "will come"
-        }
-      ]
-    },
-    {
-      "bn": "লিখুন: “তুমি এলে, তবে আমরা যাব।”",
-      "pronunciation": "likhun: tumi ele, tobe amra jabo",
-      "en": "Write: “If you come, then we will go.”",
-      "context": "Write the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "তুমি এলে, তবে আমরা যাব।",
-      "words": [
-        {
-          "bn": "লিখুন",
-          "pronunciation": "likhun",
-          "en": "write"
-        },
-        {
-          "bn": "তুমি",
-          "pronunciation": "tumi",
-          "en": "you (familiar)"
-        },
-        {
-          "bn": "এলে",
-          "pronunciation": "ele",
-          "en": "if (you) come"
-        },
-        {
-          "bn": "তবে",
-          "pronunciation": "tobe",
-          "en": "then"
-        },
-        {
-          "bn": "আমরা",
-          "pronunciation": "amra",
-          "en": "we"
-        },
-        {
-          "bn": "যাব",
-          "pronunciation": "jabo",
-          "en": "will go"
-        }
-      ]
-    },
-    {
-      "bn": "লিখুন: “যদিও কাজটি কঠিন, আমি চেষ্টা করব।”",
-      "pronunciation": "likhun: jodio kajti kothin, ami cheshta korbo",
-      "en": "Write: “Although the task is difficult, I will try.”",
-      "context": "Write the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "যদিও কাজটি কঠিন, আমি চেষ্টা করব।",
-      "words": [
-        {
-          "bn": "লিখুন",
-          "pronunciation": "likhun",
-          "en": "write"
-        },
-        {
-          "bn": "যদিও",
-          "pronunciation": "jodio",
-          "en": "although"
-        },
-        {
-          "bn": "কাজটি",
-          "pronunciation": "kajti",
-          "en": "the task"
-        },
-        {
-          "bn": "কঠিন",
-          "pronunciation": "kothin",
-          "en": "difficult"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "চেষ্টা",
-          "pronunciation": "cheshta",
-          "en": "try"
-        },
-        {
-          "bn": "করব",
-          "pronunciation": "korbo",
-          "en": "will do"
-        }
-      ]
-    },
-    {
-      "bn": "লিখুন: “যখন বৃষ্টি হয়, আমি বই পড়ি।”",
-      "pronunciation": "likhun: jokhon brishti hoy, ami boi pori",
-      "en": "Write: “When it rains, I read a book.”",
-      "context": "Write the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "যখন বৃষ্টি হয়, আমি বই পড়ি।",
-      "words": [
-        {
-          "bn": "লিখুন",
-          "pronunciation": "likhun",
-          "en": "write"
-        },
-        {
-          "bn": "যখন",
-          "pronunciation": "jokhon",
-          "en": "when"
-        },
-        {
-          "bn": "বৃষ্টি",
-          "pronunciation": "brishti",
-          "en": "rain"
-        },
-        {
-          "bn": "হয়",
-          "pronunciation": "hoy",
-          "en": "is / happens"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "বই",
-          "pronunciation": "boi",
-          "en": "book"
-        },
-        {
-          "bn": "পড়ি",
-          "pronunciation": "pori",
-          "en": "read"
-        }
-      ]
-    },
-    {
-      "bn": "লিখুন: “যতক্ষণ কাজ শেষ না হয়, আমি থাকব।”",
-      "pronunciation": "likhun: jotokkhon kaj shesh na hoy, ami thakbo",
-      "en": "Write: “I will stay as long as the work is not finished.”",
-      "context": "Write the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "যতক্ষণ কাজ শেষ না হয়, আমি থাকব।",
-      "words": [
-        {
-          "bn": "লিখুন",
-          "pronunciation": "likhun",
-          "en": "write"
-        },
-        {
-          "bn": "যতক্ষণ",
-          "pronunciation": "jotokkhon",
-          "en": "as long as"
-        },
-        {
-          "bn": "কাজ",
-          "pronunciation": "kaj",
-          "en": "work"
-        },
-        {
-          "bn": "শেষ",
-          "pronunciation": "shesh",
-          "en": "finished / end"
-        },
-        {
-          "bn": "না",
-          "pronunciation": "na",
-          "en": "not"
-        },
-        {
-          "bn": "হয়",
-          "pronunciation": "hoy",
-          "en": "is / happens"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "থাকব",
-          "pronunciation": "thakbo",
-          "en": "will stay"
-        }
-      ]
-    },
-    {
-      "bn": "লিখুন: “এখন চলো, নইলে দেরি হবে।”",
-      "pronunciation": "likhun: ekhon cholo, noile deri hobe",
-      "en": "Write: “Let us go now, otherwise we will be late.”",
-      "context": "Write the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "এখন চলো, নইলে দেরি হবে।",
-      "words": [
-        {
-          "bn": "লিখুন",
-          "pronunciation": "likhun",
-          "en": "write"
-        },
-        {
-          "bn": "এখন",
-          "pronunciation": "ekhon",
-          "en": "now"
-        },
-        {
-          "bn": "চলো",
-          "pronunciation": "cholo",
-          "en": "let us go"
-        },
-        {
-          "bn": "নইলে",
-          "pronunciation": "noile",
-          "en": "otherwise"
-        },
-        {
-          "bn": "দেরি",
-          "pronunciation": "deri",
-          "en": "late"
-        },
-        {
-          "bn": "হবে",
-          "pronunciation": "hobe",
-          "en": "will be"
-        }
-      ]
-    },
-    {
-      "bn": "অনুবাদ করুন: “আমি চা এবং কফি পছন্দ করি।”",
-      "pronunciation": "onubad korun: ami cha ebong kofi pochhondo kori",
-      "en": "Translate: “I like tea and coffee.”",
-      "context": "Translate the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "আমি চা এবং কফি পছন্দ করি।",
-      "words": [
-        {
-          "bn": "অনুবাদ",
-          "pronunciation": "onubad",
-          "en": "translation"
-        },
-        {
-          "bn": "করুন",
-          "pronunciation": "korun",
-          "en": "please do"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "চা",
-          "pronunciation": "cha",
-          "en": "tea"
-        },
-        {
-          "bn": "এবং",
-          "pronunciation": "ebong",
-          "en": "and"
-        },
-        {
-          "bn": "কফি",
-          "pronunciation": "kofi",
-          "en": "coffee"
-        },
-        {
-          "bn": "পছন্দ",
-          "pronunciation": "pochhondo",
-          "en": "like / preference"
-        },
-        {
-          "bn": "করি",
-          "pronunciation": "kori",
-          "en": "do"
-        }
-      ]
-    },
-    {
-      "bn": "অনুবাদ করুন: “মা আর বাবা বাড়িতে আছেন।”",
-      "pronunciation": "onubad korun: ma ar baba barite achhen",
-      "en": "Translate: “Mother and father are at home.”",
-      "context": "Translate the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "মা আর বাবা বাড়িতে আছেন।",
-      "words": [
-        {
-          "bn": "অনুবাদ",
-          "pronunciation": "onubad",
-          "en": "translation"
-        },
-        {
-          "bn": "করুন",
-          "pronunciation": "korun",
-          "en": "please do"
-        },
-        {
-          "bn": "মা",
-          "pronunciation": "ma",
-          "en": "mother"
-        },
-        {
-          "bn": "আর",
-          "pronunciation": "ar",
-          "en": "and / also"
-        },
-        {
-          "bn": "বাবা",
-          "pronunciation": "baba",
-          "en": "father"
-        },
-        {
-          "bn": "বাড়িতে",
-          "pronunciation": "barite",
-          "en": "at home"
-        },
-        {
-          "bn": "আছেন",
-          "pronunciation": "achhen",
-          "en": "are (respectful)"
-        }
-      ]
-    },
-    {
-      "bn": "অনুবাদ করুন: “তুমি চা অথবা কফি নিতে পারো।”",
-      "pronunciation": "onubad korun: tumi cha othoba kofi nite paro",
-      "en": "Translate: “You can have tea or coffee.”",
-      "context": "Translate the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "তুমি চা অথবা কফি নিতে পারো।",
-      "words": [
-        {
-          "bn": "অনুবাদ",
-          "pronunciation": "onubad",
-          "en": "translation"
-        },
-        {
-          "bn": "করুন",
-          "pronunciation": "korun",
-          "en": "please do"
-        },
-        {
-          "bn": "তুমি",
-          "pronunciation": "tumi",
-          "en": "you (familiar)"
-        },
-        {
-          "bn": "চা",
-          "pronunciation": "cha",
-          "en": "tea"
-        },
-        {
-          "bn": "অথবা",
-          "pronunciation": "othoba",
-          "en": "or"
-        },
-        {
-          "bn": "কফি",
-          "pronunciation": "kofi",
-          "en": "coffee"
-        },
-        {
-          "bn": "নিতে",
-          "pronunciation": "nite",
-          "en": "to take"
-        },
-        {
-          "bn": "পারো",
-          "pronunciation": "paro",
-          "en": "can (familiar)"
-        }
-      ]
-    },
-    {
-      "bn": "অনুবাদ করুন: “আমি যাব, কিন্তু এখন নয়।”",
-      "pronunciation": "onubad korun: ami jabo, kintu ekhon noy",
-      "en": "Translate: “I will go, but not now.”",
-      "context": "Translate the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "আমি যাব, কিন্তু এখন নয়।",
-      "words": [
-        {
-          "bn": "অনুবাদ",
-          "pronunciation": "onubad",
-          "en": "translation"
-        },
-        {
-          "bn": "করুন",
-          "pronunciation": "korun",
-          "en": "please do"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "যাব",
-          "pronunciation": "jabo",
-          "en": "will go"
-        },
-        {
-          "bn": "কিন্তু",
-          "pronunciation": "kintu",
-          "en": "but"
-        },
-        {
-          "bn": "এখন",
-          "pronunciation": "ekhon",
-          "en": "now"
-        },
-        {
-          "bn": "নয়",
-          "pronunciation": "noy",
-          "en": "is not"
-        }
-      ]
-    },
-    {
-      "bn": "অনুবাদ করুন: “আমি থাকব, কারণ বৃষ্টি হচ্ছে।”",
-      "pronunciation": "onubad korun: ami thakbo, karon brishti hochchhe",
-      "en": "Translate: “I will stay because it is raining.”",
-      "context": "Translate the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "আমি থাকব, কারণ বৃষ্টি হচ্ছে।",
-      "words": [
-        {
-          "bn": "অনুবাদ",
-          "pronunciation": "onubad",
-          "en": "translation"
-        },
-        {
-          "bn": "করুন",
-          "pronunciation": "korun",
-          "en": "please do"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "থাকব",
-          "pronunciation": "thakbo",
-          "en": "will stay"
-        },
-        {
-          "bn": "কারণ",
-          "pronunciation": "karon",
-          "en": "because"
-        },
-        {
-          "bn": "বৃষ্টি",
-          "pronunciation": "brishti",
-          "en": "rain"
-        },
-        {
-          "bn": "হচ্ছে",
-          "pronunciation": "hochchhe",
-          "en": "is happening"
-        }
-      ]
-    },
-    {
-      "bn": "অনুবাদ করুন: “বৃষ্টি হচ্ছে, তাই আমি বাড়িতে আছি।”",
-      "pronunciation": "onubad korun: brishti hochchhe, tai ami barite achhi",
-      "en": "Translate: “It is raining, so I am at home.”",
-      "context": "Translate the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "বৃষ্টি হচ্ছে, তাই আমি বাড়িতে আছি।",
-      "words": [
-        {
-          "bn": "অনুবাদ",
-          "pronunciation": "onubad",
-          "en": "translation"
-        },
-        {
-          "bn": "করুন",
-          "pronunciation": "korun",
-          "en": "please do"
-        },
-        {
-          "bn": "বৃষ্টি",
-          "pronunciation": "brishti",
-          "en": "rain"
-        },
-        {
-          "bn": "হচ্ছে",
-          "pronunciation": "hochchhe",
-          "en": "is happening"
-        },
-        {
-          "bn": "তাই",
-          "pronunciation": "tai",
-          "en": "so"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "বাড়িতে",
-          "pronunciation": "barite",
-          "en": "at home"
-        },
-        {
-          "bn": "আছি",
-          "pronunciation": "achhi",
-          "en": "am"
-        }
-      ]
-    },
-    {
-      "bn": "অনুবাদ করুন: “যদি সময় থাকে, আমি আসব।”",
-      "pronunciation": "onubad korun: jodi shomoy thake, ami ashbo",
-      "en": "Translate: “If I have time, I will come.”",
-      "context": "Translate the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "যদি সময় থাকে, আমি আসব।",
-      "words": [
-        {
-          "bn": "অনুবাদ",
-          "pronunciation": "onubad",
-          "en": "translation"
-        },
-        {
-          "bn": "করুন",
-          "pronunciation": "korun",
-          "en": "please do"
-        },
-        {
-          "bn": "যদি",
-          "pronunciation": "jodi",
-          "en": "if"
-        },
-        {
-          "bn": "সময়",
-          "pronunciation": "shomoy",
-          "en": "time"
-        },
-        {
-          "bn": "থাকে",
-          "pronunciation": "thake",
-          "en": "lives / stays"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "আসব",
-          "pronunciation": "ashbo",
-          "en": "will come"
-        }
-      ]
-    },
-    {
-      "bn": "অনুবাদ করুন: “তুমি এলে, তবে আমরা যাব।”",
-      "pronunciation": "onubad korun: tumi ele, tobe amra jabo",
-      "en": "Translate: “If you come, then we will go.”",
-      "context": "Translate the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "তুমি এলে, তবে আমরা যাব।",
-      "words": [
-        {
-          "bn": "অনুবাদ",
-          "pronunciation": "onubad",
-          "en": "translation"
-        },
-        {
-          "bn": "করুন",
-          "pronunciation": "korun",
-          "en": "please do"
-        },
-        {
-          "bn": "তুমি",
-          "pronunciation": "tumi",
-          "en": "you (familiar)"
-        },
-        {
-          "bn": "এলে",
-          "pronunciation": "ele",
-          "en": "if (you) come"
-        },
-        {
-          "bn": "তবে",
-          "pronunciation": "tobe",
-          "en": "then"
-        },
-        {
-          "bn": "আমরা",
-          "pronunciation": "amra",
-          "en": "we"
-        },
-        {
-          "bn": "যাব",
-          "pronunciation": "jabo",
-          "en": "will go"
-        }
-      ]
-    },
-    {
-      "bn": "অনুবাদ করুন: “যদিও কাজটি কঠিন, আমি চেষ্টা করব।”",
-      "pronunciation": "onubad korun: jodio kajti kothin, ami cheshta korbo",
-      "en": "Translate: “Although the task is difficult, I will try.”",
-      "context": "Translate the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "যদিও কাজটি কঠিন, আমি চেষ্টা করব।",
-      "words": [
-        {
-          "bn": "অনুবাদ",
-          "pronunciation": "onubad",
-          "en": "translation"
-        },
-        {
-          "bn": "করুন",
-          "pronunciation": "korun",
-          "en": "please do"
-        },
-        {
-          "bn": "যদিও",
-          "pronunciation": "jodio",
-          "en": "although"
-        },
-        {
-          "bn": "কাজটি",
-          "pronunciation": "kajti",
-          "en": "the task"
-        },
-        {
-          "bn": "কঠিন",
-          "pronunciation": "kothin",
-          "en": "difficult"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "চেষ্টা",
-          "pronunciation": "cheshta",
-          "en": "try"
-        },
-        {
-          "bn": "করব",
-          "pronunciation": "korbo",
-          "en": "will do"
-        }
-      ]
-    },
-    {
-      "bn": "অনুবাদ করুন: “যখন বৃষ্টি হয়, আমি বই পড়ি।”",
-      "pronunciation": "onubad korun: jokhon brishti hoy, ami boi pori",
-      "en": "Translate: “When it rains, I read a book.”",
-      "context": "Translate the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "যখন বৃষ্টি হয়, আমি বই পড়ি।",
-      "words": [
-        {
-          "bn": "অনুবাদ",
-          "pronunciation": "onubad",
-          "en": "translation"
-        },
-        {
-          "bn": "করুন",
-          "pronunciation": "korun",
-          "en": "please do"
-        },
-        {
-          "bn": "যখন",
-          "pronunciation": "jokhon",
-          "en": "when"
-        },
-        {
-          "bn": "বৃষ্টি",
-          "pronunciation": "brishti",
-          "en": "rain"
-        },
-        {
-          "bn": "হয়",
-          "pronunciation": "hoy",
-          "en": "is / happens"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "বই",
-          "pronunciation": "boi",
-          "en": "book"
-        },
-        {
-          "bn": "পড়ি",
-          "pronunciation": "pori",
-          "en": "read"
-        }
-      ]
-    },
-    {
-      "bn": "অনুবাদ করুন: “যতক্ষণ কাজ শেষ না হয়, আমি থাকব।”",
-      "pronunciation": "onubad korun: jotokkhon kaj shesh na hoy, ami thakbo",
-      "en": "Translate: “I will stay as long as the work is not finished.”",
-      "context": "Translate the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "যতক্ষণ কাজ শেষ না হয়, আমি থাকব।",
-      "words": [
-        {
-          "bn": "অনুবাদ",
-          "pronunciation": "onubad",
-          "en": "translation"
-        },
-        {
-          "bn": "করুন",
-          "pronunciation": "korun",
-          "en": "please do"
-        },
-        {
-          "bn": "যতক্ষণ",
-          "pronunciation": "jotokkhon",
-          "en": "as long as"
-        },
-        {
-          "bn": "কাজ",
-          "pronunciation": "kaj",
-          "en": "work"
-        },
-        {
-          "bn": "শেষ",
-          "pronunciation": "shesh",
-          "en": "finished / end"
-        },
-        {
-          "bn": "না",
-          "pronunciation": "na",
-          "en": "not"
-        },
-        {
-          "bn": "হয়",
-          "pronunciation": "hoy",
-          "en": "is / happens"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "থাকব",
-          "pronunciation": "thakbo",
-          "en": "will stay"
-        }
-      ]
-    },
-    {
-      "bn": "অনুবাদ করুন: “এখন চলো, নইলে দেরি হবে।”",
-      "pronunciation": "onubad korun: ekhon cholo, noile deri hobe",
-      "en": "Translate: “Let us go now, otherwise we will be late.”",
-      "context": "Translate the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "এখন চলো, নইলে দেরি হবে।",
-      "words": [
-        {
-          "bn": "অনুবাদ",
-          "pronunciation": "onubad",
-          "en": "translation"
-        },
-        {
-          "bn": "করুন",
-          "pronunciation": "korun",
-          "en": "please do"
-        },
-        {
-          "bn": "এখন",
-          "pronunciation": "ekhon",
-          "en": "now"
-        },
-        {
-          "bn": "চলো",
-          "pronunciation": "cholo",
-          "en": "let us go"
-        },
-        {
-          "bn": "নইলে",
-          "pronunciation": "noile",
-          "en": "otherwise"
-        },
-        {
-          "bn": "দেরি",
-          "pronunciation": "deri",
-          "en": "late"
-        },
-        {
-          "bn": "হবে",
-          "pronunciation": "hobe",
-          "en": "will be"
-        }
-      ]
-    },
-    {
-      "bn": "মনে রাখুন: “আমি চা এবং কফি পছন্দ করি।”",
-      "pronunciation": "mone rakhun: ami cha ebong kofi pochhondo kori",
-      "en": "Remember: “I like tea and coffee.”",
-      "context": "Remember the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "আমি চা এবং কফি পছন্দ করি।",
-      "words": [
-        {
-          "bn": "মনে",
-          "pronunciation": "mone",
-          "en": "in mind"
-        },
-        {
-          "bn": "রাখুন",
-          "pronunciation": "rakhun",
-          "en": "remember"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "চা",
-          "pronunciation": "cha",
-          "en": "tea"
-        },
-        {
-          "bn": "এবং",
-          "pronunciation": "ebong",
-          "en": "and"
-        },
-        {
-          "bn": "কফি",
-          "pronunciation": "kofi",
-          "en": "coffee"
-        },
-        {
-          "bn": "পছন্দ",
-          "pronunciation": "pochhondo",
-          "en": "like / preference"
-        },
-        {
-          "bn": "করি",
-          "pronunciation": "kori",
-          "en": "do"
-        }
-      ]
-    },
-    {
-      "bn": "মনে রাখুন: “মা আর বাবা বাড়িতে আছেন।”",
-      "pronunciation": "mone rakhun: ma ar baba barite achhen",
-      "en": "Remember: “Mother and father are at home.”",
-      "context": "Remember the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "মা আর বাবা বাড়িতে আছেন।",
-      "words": [
-        {
-          "bn": "মনে",
-          "pronunciation": "mone",
-          "en": "in mind"
-        },
-        {
-          "bn": "রাখুন",
-          "pronunciation": "rakhun",
-          "en": "remember"
-        },
-        {
-          "bn": "মা",
-          "pronunciation": "ma",
-          "en": "mother"
-        },
-        {
-          "bn": "আর",
-          "pronunciation": "ar",
-          "en": "and / also"
-        },
-        {
-          "bn": "বাবা",
-          "pronunciation": "baba",
-          "en": "father"
-        },
-        {
-          "bn": "বাড়িতে",
-          "pronunciation": "barite",
-          "en": "at home"
-        },
-        {
-          "bn": "আছেন",
-          "pronunciation": "achhen",
-          "en": "are (respectful)"
-        }
-      ]
-    },
-    {
-      "bn": "মনে রাখুন: “তুমি চা অথবা কফি নিতে পারো।”",
-      "pronunciation": "mone rakhun: tumi cha othoba kofi nite paro",
-      "en": "Remember: “You can have tea or coffee.”",
-      "context": "Remember the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "তুমি চা অথবা কফি নিতে পারো।",
-      "words": [
-        {
-          "bn": "মনে",
-          "pronunciation": "mone",
-          "en": "in mind"
-        },
-        {
-          "bn": "রাখুন",
-          "pronunciation": "rakhun",
-          "en": "remember"
-        },
-        {
-          "bn": "তুমি",
-          "pronunciation": "tumi",
-          "en": "you (familiar)"
-        },
-        {
-          "bn": "চা",
-          "pronunciation": "cha",
-          "en": "tea"
-        },
-        {
-          "bn": "অথবা",
-          "pronunciation": "othoba",
-          "en": "or"
-        },
-        {
-          "bn": "কফি",
-          "pronunciation": "kofi",
-          "en": "coffee"
-        },
-        {
-          "bn": "নিতে",
-          "pronunciation": "nite",
-          "en": "to take"
-        },
-        {
-          "bn": "পারো",
-          "pronunciation": "paro",
-          "en": "can (familiar)"
-        }
-      ]
-    },
-    {
-      "bn": "মনে রাখুন: “আমি যাব, কিন্তু এখন নয়।”",
-      "pronunciation": "mone rakhun: ami jabo, kintu ekhon noy",
-      "en": "Remember: “I will go, but not now.”",
-      "context": "Remember the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "আমি যাব, কিন্তু এখন নয়।",
-      "words": [
-        {
-          "bn": "মনে",
-          "pronunciation": "mone",
-          "en": "in mind"
-        },
-        {
-          "bn": "রাখুন",
-          "pronunciation": "rakhun",
-          "en": "remember"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "যাব",
-          "pronunciation": "jabo",
-          "en": "will go"
-        },
-        {
-          "bn": "কিন্তু",
-          "pronunciation": "kintu",
-          "en": "but"
-        },
-        {
-          "bn": "এখন",
-          "pronunciation": "ekhon",
-          "en": "now"
-        },
-        {
-          "bn": "নয়",
-          "pronunciation": "noy",
-          "en": "is not"
-        }
-      ]
-    },
-    {
-      "bn": "মনে রাখুন: “আমি থাকব, কারণ বৃষ্টি হচ্ছে।”",
-      "pronunciation": "mone rakhun: ami thakbo, karon brishti hochchhe",
-      "en": "Remember: “I will stay because it is raining.”",
-      "context": "Remember the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "আমি থাকব, কারণ বৃষ্টি হচ্ছে।",
-      "words": [
-        {
-          "bn": "মনে",
-          "pronunciation": "mone",
-          "en": "in mind"
-        },
-        {
-          "bn": "রাখুন",
-          "pronunciation": "rakhun",
-          "en": "remember"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "থাকব",
-          "pronunciation": "thakbo",
-          "en": "will stay"
-        },
-        {
-          "bn": "কারণ",
-          "pronunciation": "karon",
-          "en": "because"
-        },
-        {
-          "bn": "বৃষ্টি",
-          "pronunciation": "brishti",
-          "en": "rain"
-        },
-        {
-          "bn": "হচ্ছে",
-          "pronunciation": "hochchhe",
-          "en": "is happening"
-        }
-      ]
-    },
-    {
-      "bn": "মনে রাখুন: “বৃষ্টি হচ্ছে, তাই আমি বাড়িতে আছি।”",
-      "pronunciation": "mone rakhun: brishti hochchhe, tai ami barite achhi",
-      "en": "Remember: “It is raining, so I am at home.”",
-      "context": "Remember the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "বৃষ্টি হচ্ছে, তাই আমি বাড়িতে আছি।",
-      "words": [
-        {
-          "bn": "মনে",
-          "pronunciation": "mone",
-          "en": "in mind"
-        },
-        {
-          "bn": "রাখুন",
-          "pronunciation": "rakhun",
-          "en": "remember"
-        },
-        {
-          "bn": "বৃষ্টি",
-          "pronunciation": "brishti",
-          "en": "rain"
-        },
-        {
-          "bn": "হচ্ছে",
-          "pronunciation": "hochchhe",
-          "en": "is happening"
-        },
-        {
-          "bn": "তাই",
-          "pronunciation": "tai",
-          "en": "so"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "বাড়িতে",
-          "pronunciation": "barite",
-          "en": "at home"
-        },
-        {
-          "bn": "আছি",
-          "pronunciation": "achhi",
-          "en": "am"
-        }
-      ]
-    },
-    {
-      "bn": "মনে রাখুন: “যদি সময় থাকে, আমি আসব।”",
-      "pronunciation": "mone rakhun: jodi shomoy thake, ami ashbo",
-      "en": "Remember: “If I have time, I will come.”",
-      "context": "Remember the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "যদি সময় থাকে, আমি আসব।",
-      "words": [
-        {
-          "bn": "মনে",
-          "pronunciation": "mone",
-          "en": "in mind"
-        },
-        {
-          "bn": "রাখুন",
-          "pronunciation": "rakhun",
-          "en": "remember"
-        },
-        {
-          "bn": "যদি",
-          "pronunciation": "jodi",
-          "en": "if"
-        },
-        {
-          "bn": "সময়",
-          "pronunciation": "shomoy",
-          "en": "time"
-        },
-        {
-          "bn": "থাকে",
-          "pronunciation": "thake",
-          "en": "lives / stays"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "আসব",
-          "pronunciation": "ashbo",
-          "en": "will come"
-        }
-      ]
-    },
-    {
-      "bn": "মনে রাখুন: “তুমি এলে, তবে আমরা যাব।”",
-      "pronunciation": "mone rakhun: tumi ele, tobe amra jabo",
-      "en": "Remember: “If you come, then we will go.”",
-      "context": "Remember the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "তুমি এলে, তবে আমরা যাব।",
-      "words": [
-        {
-          "bn": "মনে",
-          "pronunciation": "mone",
-          "en": "in mind"
-        },
-        {
-          "bn": "রাখুন",
-          "pronunciation": "rakhun",
-          "en": "remember"
-        },
-        {
-          "bn": "তুমি",
-          "pronunciation": "tumi",
-          "en": "you (familiar)"
-        },
-        {
-          "bn": "এলে",
-          "pronunciation": "ele",
-          "en": "if (you) come"
-        },
-        {
-          "bn": "তবে",
-          "pronunciation": "tobe",
-          "en": "then"
-        },
-        {
-          "bn": "আমরা",
-          "pronunciation": "amra",
-          "en": "we"
-        },
-        {
-          "bn": "যাব",
-          "pronunciation": "jabo",
-          "en": "will go"
-        }
-      ]
-    },
-    {
-      "bn": "মনে রাখুন: “যদিও কাজটি কঠিন, আমি চেষ্টা করব।”",
-      "pronunciation": "mone rakhun: jodio kajti kothin, ami cheshta korbo",
-      "en": "Remember: “Although the task is difficult, I will try.”",
-      "context": "Remember the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "যদিও কাজটি কঠিন, আমি চেষ্টা করব।",
-      "words": [
-        {
-          "bn": "মনে",
-          "pronunciation": "mone",
-          "en": "in mind"
-        },
-        {
-          "bn": "রাখুন",
-          "pronunciation": "rakhun",
-          "en": "remember"
-        },
-        {
-          "bn": "যদিও",
-          "pronunciation": "jodio",
-          "en": "although"
-        },
-        {
-          "bn": "কাজটি",
-          "pronunciation": "kajti",
-          "en": "the task"
-        },
-        {
-          "bn": "কঠিন",
-          "pronunciation": "kothin",
-          "en": "difficult"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "চেষ্টা",
-          "pronunciation": "cheshta",
-          "en": "try"
-        },
-        {
-          "bn": "করব",
-          "pronunciation": "korbo",
-          "en": "will do"
-        }
-      ]
-    },
-    {
-      "bn": "মনে রাখুন: “যখন বৃষ্টি হয়, আমি বই পড়ি।”",
-      "pronunciation": "mone rakhun: jokhon brishti hoy, ami boi pori",
-      "en": "Remember: “When it rains, I read a book.”",
-      "context": "Remember the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "যখন বৃষ্টি হয়, আমি বই পড়ি।",
-      "words": [
-        {
-          "bn": "মনে",
-          "pronunciation": "mone",
-          "en": "in mind"
-        },
-        {
-          "bn": "রাখুন",
-          "pronunciation": "rakhun",
-          "en": "remember"
-        },
-        {
-          "bn": "যখন",
-          "pronunciation": "jokhon",
-          "en": "when"
-        },
-        {
-          "bn": "বৃষ্টি",
-          "pronunciation": "brishti",
-          "en": "rain"
-        },
-        {
-          "bn": "হয়",
-          "pronunciation": "hoy",
-          "en": "is / happens"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "বই",
-          "pronunciation": "boi",
-          "en": "book"
-        },
-        {
-          "bn": "পড়ি",
-          "pronunciation": "pori",
-          "en": "read"
-        }
-      ]
-    },
-    {
-      "bn": "মনে রাখুন: “যতক্ষণ কাজ শেষ না হয়, আমি থাকব।”",
-      "pronunciation": "mone rakhun: jotokkhon kaj shesh na hoy, ami thakbo",
-      "en": "Remember: “I will stay as long as the work is not finished.”",
-      "context": "Remember the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "যতক্ষণ কাজ শেষ না হয়, আমি থাকব।",
-      "words": [
-        {
-          "bn": "মনে",
-          "pronunciation": "mone",
-          "en": "in mind"
-        },
-        {
-          "bn": "রাখুন",
-          "pronunciation": "rakhun",
-          "en": "remember"
-        },
-        {
-          "bn": "যতক্ষণ",
-          "pronunciation": "jotokkhon",
-          "en": "as long as"
-        },
-        {
-          "bn": "কাজ",
-          "pronunciation": "kaj",
-          "en": "work"
-        },
-        {
-          "bn": "শেষ",
-          "pronunciation": "shesh",
-          "en": "finished / end"
-        },
-        {
-          "bn": "না",
-          "pronunciation": "na",
-          "en": "not"
-        },
-        {
-          "bn": "হয়",
-          "pronunciation": "hoy",
-          "en": "is / happens"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "থাকব",
-          "pronunciation": "thakbo",
-          "en": "will stay"
-        }
-      ]
-    },
-    {
-      "bn": "মনে রাখুন: “এখন চলো, নইলে দেরি হবে।”",
-      "pronunciation": "mone rakhun: ekhon cholo, noile deri hobe",
-      "en": "Remember: “Let us go now, otherwise we will be late.”",
-      "context": "Remember the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "এখন চলো, নইলে দেরি হবে।",
-      "words": [
-        {
-          "bn": "মনে",
-          "pronunciation": "mone",
-          "en": "in mind"
-        },
-        {
-          "bn": "রাখুন",
-          "pronunciation": "rakhun",
-          "en": "remember"
-        },
-        {
-          "bn": "এখন",
-          "pronunciation": "ekhon",
-          "en": "now"
-        },
-        {
-          "bn": "চলো",
-          "pronunciation": "cholo",
-          "en": "let us go"
-        },
-        {
-          "bn": "নইলে",
-          "pronunciation": "noile",
-          "en": "otherwise"
-        },
-        {
-          "bn": "দেরি",
-          "pronunciation": "deri",
-          "en": "late"
-        },
-        {
-          "bn": "হবে",
-          "pronunciation": "hobe",
-          "en": "will be"
-        }
-      ]
-    },
-    {
-      "bn": "আবার বলুন: “আমি চা এবং কফি পছন্দ করি।”",
-      "pronunciation": "abar bolun: ami cha ebong kofi pochhondo kori",
-      "en": "Say again: “I like tea and coffee.”",
-      "context": "Say again the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "আমি চা এবং কফি পছন্দ করি।",
-      "words": [
-        {
-          "bn": "আবার",
-          "pronunciation": "abar",
-          "en": "again"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "চা",
-          "pronunciation": "cha",
-          "en": "tea"
-        },
-        {
-          "bn": "এবং",
-          "pronunciation": "ebong",
-          "en": "and"
-        },
-        {
-          "bn": "কফি",
-          "pronunciation": "kofi",
-          "en": "coffee"
-        },
-        {
-          "bn": "পছন্দ",
-          "pronunciation": "pochhondo",
-          "en": "like / preference"
-        },
-        {
-          "bn": "করি",
-          "pronunciation": "kori",
-          "en": "do"
-        }
-      ]
-    },
-    {
-      "bn": "আবার বলুন: “মা আর বাবা বাড়িতে আছেন।”",
-      "pronunciation": "abar bolun: ma ar baba barite achhen",
-      "en": "Say again: “Mother and father are at home.”",
-      "context": "Say again the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "মা আর বাবা বাড়িতে আছেন।",
-      "words": [
-        {
-          "bn": "আবার",
-          "pronunciation": "abar",
-          "en": "again"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "মা",
-          "pronunciation": "ma",
-          "en": "mother"
-        },
-        {
-          "bn": "আর",
-          "pronunciation": "ar",
-          "en": "and / also"
-        },
-        {
-          "bn": "বাবা",
-          "pronunciation": "baba",
-          "en": "father"
-        },
-        {
-          "bn": "বাড়িতে",
-          "pronunciation": "barite",
-          "en": "at home"
-        },
-        {
-          "bn": "আছেন",
-          "pronunciation": "achhen",
-          "en": "are (respectful)"
-        }
-      ]
-    },
-    {
-      "bn": "আবার বলুন: “তুমি চা অথবা কফি নিতে পারো।”",
-      "pronunciation": "abar bolun: tumi cha othoba kofi nite paro",
-      "en": "Say again: “You can have tea or coffee.”",
-      "context": "Say again the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "তুমি চা অথবা কফি নিতে পারো।",
-      "words": [
-        {
-          "bn": "আবার",
-          "pronunciation": "abar",
-          "en": "again"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "তুমি",
-          "pronunciation": "tumi",
-          "en": "you (familiar)"
-        },
-        {
-          "bn": "চা",
-          "pronunciation": "cha",
-          "en": "tea"
-        },
-        {
-          "bn": "অথবা",
-          "pronunciation": "othoba",
-          "en": "or"
-        },
-        {
-          "bn": "কফি",
-          "pronunciation": "kofi",
-          "en": "coffee"
-        },
-        {
-          "bn": "নিতে",
-          "pronunciation": "nite",
-          "en": "to take"
-        },
-        {
-          "bn": "পারো",
-          "pronunciation": "paro",
-          "en": "can (familiar)"
-        }
-      ]
-    },
-    {
-      "bn": "আবার বলুন: “আমি যাব, কিন্তু এখন নয়।”",
-      "pronunciation": "abar bolun: ami jabo, kintu ekhon noy",
-      "en": "Say again: “I will go, but not now.”",
-      "context": "Say again the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "আমি যাব, কিন্তু এখন নয়।",
-      "words": [
-        {
-          "bn": "আবার",
-          "pronunciation": "abar",
-          "en": "again"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "যাব",
-          "pronunciation": "jabo",
-          "en": "will go"
-        },
-        {
-          "bn": "কিন্তু",
-          "pronunciation": "kintu",
-          "en": "but"
-        },
-        {
-          "bn": "এখন",
-          "pronunciation": "ekhon",
-          "en": "now"
-        },
-        {
-          "bn": "নয়",
-          "pronunciation": "noy",
-          "en": "is not"
-        }
-      ]
-    },
-    {
-      "bn": "আবার বলুন: “আমি থাকব, কারণ বৃষ্টি হচ্ছে।”",
-      "pronunciation": "abar bolun: ami thakbo, karon brishti hochchhe",
-      "en": "Say again: “I will stay because it is raining.”",
-      "context": "Say again the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "আমি থাকব, কারণ বৃষ্টি হচ্ছে।",
-      "words": [
-        {
-          "bn": "আবার",
-          "pronunciation": "abar",
-          "en": "again"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "থাকব",
-          "pronunciation": "thakbo",
-          "en": "will stay"
-        },
-        {
-          "bn": "কারণ",
-          "pronunciation": "karon",
-          "en": "because"
-        },
-        {
-          "bn": "বৃষ্টি",
-          "pronunciation": "brishti",
-          "en": "rain"
-        },
-        {
-          "bn": "হচ্ছে",
-          "pronunciation": "hochchhe",
-          "en": "is happening"
-        }
-      ]
-    },
-    {
-      "bn": "আবার বলুন: “বৃষ্টি হচ্ছে, তাই আমি বাড়িতে আছি।”",
-      "pronunciation": "abar bolun: brishti hochchhe, tai ami barite achhi",
-      "en": "Say again: “It is raining, so I am at home.”",
-      "context": "Say again the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "বৃষ্টি হচ্ছে, তাই আমি বাড়িতে আছি।",
-      "words": [
-        {
-          "bn": "আবার",
-          "pronunciation": "abar",
-          "en": "again"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "বৃষ্টি",
-          "pronunciation": "brishti",
-          "en": "rain"
-        },
-        {
-          "bn": "হচ্ছে",
-          "pronunciation": "hochchhe",
-          "en": "is happening"
-        },
-        {
-          "bn": "তাই",
-          "pronunciation": "tai",
-          "en": "so"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "বাড়িতে",
-          "pronunciation": "barite",
-          "en": "at home"
-        },
-        {
-          "bn": "আছি",
-          "pronunciation": "achhi",
-          "en": "am"
-        }
-      ]
-    },
-    {
-      "bn": "আবার বলুন: “যদি সময় থাকে, আমি আসব।”",
-      "pronunciation": "abar bolun: jodi shomoy thake, ami ashbo",
-      "en": "Say again: “If I have time, I will come.”",
-      "context": "Say again the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "যদি সময় থাকে, আমি আসব।",
-      "words": [
-        {
-          "bn": "আবার",
-          "pronunciation": "abar",
-          "en": "again"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "যদি",
-          "pronunciation": "jodi",
-          "en": "if"
-        },
-        {
-          "bn": "সময়",
-          "pronunciation": "shomoy",
-          "en": "time"
-        },
-        {
-          "bn": "থাকে",
-          "pronunciation": "thake",
-          "en": "lives / stays"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "আসব",
-          "pronunciation": "ashbo",
-          "en": "will come"
-        }
-      ]
-    },
-    {
-      "bn": "আবার বলুন: “তুমি এলে, তবে আমরা যাব।”",
-      "pronunciation": "abar bolun: tumi ele, tobe amra jabo",
-      "en": "Say again: “If you come, then we will go.”",
-      "context": "Say again the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "তুমি এলে, তবে আমরা যাব।",
-      "words": [
-        {
-          "bn": "আবার",
-          "pronunciation": "abar",
-          "en": "again"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "তুমি",
-          "pronunciation": "tumi",
-          "en": "you (familiar)"
-        },
-        {
-          "bn": "এলে",
-          "pronunciation": "ele",
-          "en": "if (you) come"
-        },
-        {
-          "bn": "তবে",
-          "pronunciation": "tobe",
-          "en": "then"
-        },
-        {
-          "bn": "আমরা",
-          "pronunciation": "amra",
-          "en": "we"
-        },
-        {
-          "bn": "যাব",
-          "pronunciation": "jabo",
-          "en": "will go"
-        }
-      ]
-    },
-    {
-      "bn": "আবার বলুন: “যদিও কাজটি কঠিন, আমি চেষ্টা করব।”",
-      "pronunciation": "abar bolun: jodio kajti kothin, ami cheshta korbo",
-      "en": "Say again: “Although the task is difficult, I will try.”",
-      "context": "Say again the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "যদিও কাজটি কঠিন, আমি চেষ্টা করব।",
-      "words": [
-        {
-          "bn": "আবার",
-          "pronunciation": "abar",
-          "en": "again"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "যদিও",
-          "pronunciation": "jodio",
-          "en": "although"
-        },
-        {
-          "bn": "কাজটি",
-          "pronunciation": "kajti",
-          "en": "the task"
-        },
-        {
-          "bn": "কঠিন",
-          "pronunciation": "kothin",
-          "en": "difficult"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "চেষ্টা",
-          "pronunciation": "cheshta",
-          "en": "try"
-        },
-        {
-          "bn": "করব",
-          "pronunciation": "korbo",
-          "en": "will do"
-        }
-      ]
-    },
-    {
-      "bn": "আবার বলুন: “যখন বৃষ্টি হয়, আমি বই পড়ি।”",
-      "pronunciation": "abar bolun: jokhon brishti hoy, ami boi pori",
-      "en": "Say again: “When it rains, I read a book.”",
-      "context": "Say again the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "যখন বৃষ্টি হয়, আমি বই পড়ি।",
-      "words": [
-        {
-          "bn": "আবার",
-          "pronunciation": "abar",
-          "en": "again"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "যখন",
-          "pronunciation": "jokhon",
-          "en": "when"
-        },
-        {
-          "bn": "বৃষ্টি",
-          "pronunciation": "brishti",
-          "en": "rain"
-        },
-        {
-          "bn": "হয়",
-          "pronunciation": "hoy",
-          "en": "is / happens"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "বই",
-          "pronunciation": "boi",
-          "en": "book"
-        },
-        {
-          "bn": "পড়ি",
-          "pronunciation": "pori",
-          "en": "read"
-        }
-      ]
-    },
-    {
-      "bn": "আবার বলুন: “যতক্ষণ কাজ শেষ না হয়, আমি থাকব।”",
-      "pronunciation": "abar bolun: jotokkhon kaj shesh na hoy, ami thakbo",
-      "en": "Say again: “I will stay as long as the work is not finished.”",
-      "context": "Say again the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "যতক্ষণ কাজ শেষ না হয়, আমি থাকব।",
-      "words": [
-        {
-          "bn": "আবার",
-          "pronunciation": "abar",
-          "en": "again"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "যতক্ষণ",
-          "pronunciation": "jotokkhon",
-          "en": "as long as"
-        },
-        {
-          "bn": "কাজ",
-          "pronunciation": "kaj",
-          "en": "work"
-        },
-        {
-          "bn": "শেষ",
-          "pronunciation": "shesh",
-          "en": "finished / end"
-        },
-        {
-          "bn": "না",
-          "pronunciation": "na",
-          "en": "not"
-        },
-        {
-          "bn": "হয়",
-          "pronunciation": "hoy",
-          "en": "is / happens"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "থাকব",
-          "pronunciation": "thakbo",
-          "en": "will stay"
-        }
-      ]
-    },
-    {
-      "bn": "আবার বলুন: “এখন চলো, নইলে দেরি হবে।”",
-      "pronunciation": "abar bolun: ekhon cholo, noile deri hobe",
-      "en": "Say again: “Let us go now, otherwise we will be late.”",
-      "context": "Say again the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "এখন চলো, নইলে দেরি হবে।",
-      "words": [
-        {
-          "bn": "আবার",
-          "pronunciation": "abar",
-          "en": "again"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "এখন",
-          "pronunciation": "ekhon",
-          "en": "now"
-        },
-        {
-          "bn": "চলো",
-          "pronunciation": "cholo",
-          "en": "let us go"
-        },
-        {
-          "bn": "নইলে",
-          "pronunciation": "noile",
-          "en": "otherwise"
-        },
-        {
-          "bn": "দেরি",
-          "pronunciation": "deri",
-          "en": "late"
-        },
-        {
-          "bn": "হবে",
-          "pronunciation": "hobe",
-          "en": "will be"
-        }
-      ]
-    },
-    {
-      "bn": "ধীরে বলুন: “আমি চা এবং কফি পছন্দ করি।”",
-      "pronunciation": "dhire bolun: ami cha ebong kofi pochhondo kori",
-      "en": "Say slowly: “I like tea and coffee.”",
-      "context": "Say slowly the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "আমি চা এবং কফি পছন্দ করি।",
-      "words": [
-        {
-          "bn": "ধীরে",
-          "pronunciation": "dhire",
-          "en": "slowly"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "চা",
-          "pronunciation": "cha",
-          "en": "tea"
-        },
-        {
-          "bn": "এবং",
-          "pronunciation": "ebong",
-          "en": "and"
-        },
-        {
-          "bn": "কফি",
-          "pronunciation": "kofi",
-          "en": "coffee"
-        },
-        {
-          "bn": "পছন্দ",
-          "pronunciation": "pochhondo",
-          "en": "like / preference"
-        },
-        {
-          "bn": "করি",
-          "pronunciation": "kori",
-          "en": "do"
-        }
-      ]
-    },
-    {
-      "bn": "ধীরে বলুন: “মা আর বাবা বাড়িতে আছেন।”",
-      "pronunciation": "dhire bolun: ma ar baba barite achhen",
-      "en": "Say slowly: “Mother and father are at home.”",
-      "context": "Say slowly the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "মা আর বাবা বাড়িতে আছেন।",
-      "words": [
-        {
-          "bn": "ধীরে",
-          "pronunciation": "dhire",
-          "en": "slowly"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "মা",
-          "pronunciation": "ma",
-          "en": "mother"
-        },
-        {
-          "bn": "আর",
-          "pronunciation": "ar",
-          "en": "and / also"
-        },
-        {
-          "bn": "বাবা",
-          "pronunciation": "baba",
-          "en": "father"
-        },
-        {
-          "bn": "বাড়িতে",
-          "pronunciation": "barite",
-          "en": "at home"
-        },
-        {
-          "bn": "আছেন",
-          "pronunciation": "achhen",
-          "en": "are (respectful)"
-        }
-      ]
-    },
-    {
-      "bn": "ধীরে বলুন: “তুমি চা অথবা কফি নিতে পারো।”",
-      "pronunciation": "dhire bolun: tumi cha othoba kofi nite paro",
-      "en": "Say slowly: “You can have tea or coffee.”",
-      "context": "Say slowly the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "তুমি চা অথবা কফি নিতে পারো।",
-      "words": [
-        {
-          "bn": "ধীরে",
-          "pronunciation": "dhire",
-          "en": "slowly"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "তুমি",
-          "pronunciation": "tumi",
-          "en": "you (familiar)"
-        },
-        {
-          "bn": "চা",
-          "pronunciation": "cha",
-          "en": "tea"
-        },
-        {
-          "bn": "অথবা",
-          "pronunciation": "othoba",
-          "en": "or"
-        },
-        {
-          "bn": "কফি",
-          "pronunciation": "kofi",
-          "en": "coffee"
-        },
-        {
-          "bn": "নিতে",
-          "pronunciation": "nite",
-          "en": "to take"
-        },
-        {
-          "bn": "পারো",
-          "pronunciation": "paro",
-          "en": "can (familiar)"
-        }
-      ]
-    },
-    {
-      "bn": "ধীরে বলুন: “আমি যাব, কিন্তু এখন নয়।”",
-      "pronunciation": "dhire bolun: ami jabo, kintu ekhon noy",
-      "en": "Say slowly: “I will go, but not now.”",
-      "context": "Say slowly the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "আমি যাব, কিন্তু এখন নয়।",
-      "words": [
-        {
-          "bn": "ধীরে",
-          "pronunciation": "dhire",
-          "en": "slowly"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "যাব",
-          "pronunciation": "jabo",
-          "en": "will go"
-        },
-        {
-          "bn": "কিন্তু",
-          "pronunciation": "kintu",
-          "en": "but"
-        },
-        {
-          "bn": "এখন",
-          "pronunciation": "ekhon",
-          "en": "now"
-        },
-        {
-          "bn": "নয়",
-          "pronunciation": "noy",
-          "en": "is not"
-        }
-      ]
-    },
-    {
-      "bn": "ধীরে বলুন: “আমি থাকব, কারণ বৃষ্টি হচ্ছে।”",
-      "pronunciation": "dhire bolun: ami thakbo, karon brishti hochchhe",
-      "en": "Say slowly: “I will stay because it is raining.”",
-      "context": "Say slowly the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "আমি থাকব, কারণ বৃষ্টি হচ্ছে।",
-      "words": [
-        {
-          "bn": "ধীরে",
-          "pronunciation": "dhire",
-          "en": "slowly"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "থাকব",
-          "pronunciation": "thakbo",
-          "en": "will stay"
-        },
-        {
-          "bn": "কারণ",
-          "pronunciation": "karon",
-          "en": "because"
-        },
-        {
-          "bn": "বৃষ্টি",
-          "pronunciation": "brishti",
-          "en": "rain"
-        },
-        {
-          "bn": "হচ্ছে",
-          "pronunciation": "hochchhe",
-          "en": "is happening"
-        }
-      ]
-    },
-    {
-      "bn": "ধীরে বলুন: “বৃষ্টি হচ্ছে, তাই আমি বাড়িতে আছি।”",
-      "pronunciation": "dhire bolun: brishti hochchhe, tai ami barite achhi",
-      "en": "Say slowly: “It is raining, so I am at home.”",
-      "context": "Say slowly the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "বৃষ্টি হচ্ছে, তাই আমি বাড়িতে আছি।",
-      "words": [
-        {
-          "bn": "ধীরে",
-          "pronunciation": "dhire",
-          "en": "slowly"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "বৃষ্টি",
-          "pronunciation": "brishti",
-          "en": "rain"
-        },
-        {
-          "bn": "হচ্ছে",
-          "pronunciation": "hochchhe",
-          "en": "is happening"
-        },
-        {
-          "bn": "তাই",
-          "pronunciation": "tai",
-          "en": "so"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "বাড়িতে",
-          "pronunciation": "barite",
-          "en": "at home"
-        },
-        {
-          "bn": "আছি",
-          "pronunciation": "achhi",
-          "en": "am"
-        }
-      ]
-    },
-    {
-      "bn": "ধীরে বলুন: “যদি সময় থাকে, আমি আসব।”",
-      "pronunciation": "dhire bolun: jodi shomoy thake, ami ashbo",
-      "en": "Say slowly: “If I have time, I will come.”",
-      "context": "Say slowly the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "যদি সময় থাকে, আমি আসব।",
-      "words": [
-        {
-          "bn": "ধীরে",
-          "pronunciation": "dhire",
-          "en": "slowly"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "যদি",
-          "pronunciation": "jodi",
-          "en": "if"
-        },
-        {
-          "bn": "সময়",
-          "pronunciation": "shomoy",
-          "en": "time"
-        },
-        {
-          "bn": "থাকে",
-          "pronunciation": "thake",
-          "en": "lives / stays"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "আসব",
-          "pronunciation": "ashbo",
-          "en": "will come"
-        }
-      ]
-    },
-    {
-      "bn": "ধীরে বলুন: “তুমি এলে, তবে আমরা যাব।”",
-      "pronunciation": "dhire bolun: tumi ele, tobe amra jabo",
-      "en": "Say slowly: “If you come, then we will go.”",
-      "context": "Say slowly the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "তুমি এলে, তবে আমরা যাব।",
-      "words": [
-        {
-          "bn": "ধীরে",
-          "pronunciation": "dhire",
-          "en": "slowly"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "তুমি",
-          "pronunciation": "tumi",
-          "en": "you (familiar)"
-        },
-        {
-          "bn": "এলে",
-          "pronunciation": "ele",
-          "en": "if (you) come"
-        },
-        {
-          "bn": "তবে",
-          "pronunciation": "tobe",
-          "en": "then"
-        },
-        {
-          "bn": "আমরা",
-          "pronunciation": "amra",
-          "en": "we"
-        },
-        {
-          "bn": "যাব",
-          "pronunciation": "jabo",
-          "en": "will go"
-        }
-      ]
-    },
-    {
-      "bn": "ধীরে বলুন: “যদিও কাজটি কঠিন, আমি চেষ্টা করব।”",
-      "pronunciation": "dhire bolun: jodio kajti kothin, ami cheshta korbo",
-      "en": "Say slowly: “Although the task is difficult, I will try.”",
-      "context": "Say slowly the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "যদিও কাজটি কঠিন, আমি চেষ্টা করব।",
-      "words": [
-        {
-          "bn": "ধীরে",
-          "pronunciation": "dhire",
-          "en": "slowly"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "যদিও",
-          "pronunciation": "jodio",
-          "en": "although"
-        },
-        {
-          "bn": "কাজটি",
-          "pronunciation": "kajti",
-          "en": "the task"
-        },
-        {
-          "bn": "কঠিন",
-          "pronunciation": "kothin",
-          "en": "difficult"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "চেষ্টা",
-          "pronunciation": "cheshta",
-          "en": "try"
-        },
-        {
-          "bn": "করব",
-          "pronunciation": "korbo",
-          "en": "will do"
-        }
-      ]
-    },
-    {
-      "bn": "ধীরে বলুন: “যখন বৃষ্টি হয়, আমি বই পড়ি।”",
-      "pronunciation": "dhire bolun: jokhon brishti hoy, ami boi pori",
-      "en": "Say slowly: “When it rains, I read a book.”",
-      "context": "Say slowly the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "যখন বৃষ্টি হয়, আমি বই পড়ি।",
-      "words": [
-        {
-          "bn": "ধীরে",
-          "pronunciation": "dhire",
-          "en": "slowly"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "যখন",
-          "pronunciation": "jokhon",
-          "en": "when"
-        },
-        {
-          "bn": "বৃষ্টি",
-          "pronunciation": "brishti",
-          "en": "rain"
-        },
-        {
-          "bn": "হয়",
-          "pronunciation": "hoy",
-          "en": "is / happens"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "বই",
-          "pronunciation": "boi",
-          "en": "book"
-        },
-        {
-          "bn": "পড়ি",
-          "pronunciation": "pori",
-          "en": "read"
-        }
-      ]
-    },
-    {
-      "bn": "ধীরে বলুন: “যতক্ষণ কাজ শেষ না হয়, আমি থাকব।”",
-      "pronunciation": "dhire bolun: jotokkhon kaj shesh na hoy, ami thakbo",
-      "en": "Say slowly: “I will stay as long as the work is not finished.”",
-      "context": "Say slowly the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "যতক্ষণ কাজ শেষ না হয়, আমি থাকব।",
-      "words": [
-        {
-          "bn": "ধীরে",
-          "pronunciation": "dhire",
-          "en": "slowly"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "যতক্ষণ",
-          "pronunciation": "jotokkhon",
-          "en": "as long as"
-        },
-        {
-          "bn": "কাজ",
-          "pronunciation": "kaj",
-          "en": "work"
-        },
-        {
-          "bn": "শেষ",
-          "pronunciation": "shesh",
-          "en": "finished / end"
-        },
-        {
-          "bn": "না",
-          "pronunciation": "na",
-          "en": "not"
-        },
-        {
-          "bn": "হয়",
-          "pronunciation": "hoy",
-          "en": "is / happens"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "থাকব",
-          "pronunciation": "thakbo",
-          "en": "will stay"
-        }
-      ]
-    },
-    {
-      "bn": "ধীরে বলুন: “এখন চলো, নইলে দেরি হবে।”",
-      "pronunciation": "dhire bolun: ekhon cholo, noile deri hobe",
-      "en": "Say slowly: “Let us go now, otherwise we will be late.”",
-      "context": "Say slowly the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "এখন চলো, নইলে দেরি হবে।",
-      "words": [
-        {
-          "bn": "ধীরে",
-          "pronunciation": "dhire",
-          "en": "slowly"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "say"
-        },
-        {
-          "bn": "এখন",
-          "pronunciation": "ekhon",
-          "en": "now"
-        },
-        {
-          "bn": "চলো",
-          "pronunciation": "cholo",
-          "en": "let us go"
-        },
-        {
-          "bn": "নইলে",
-          "pronunciation": "noile",
-          "en": "otherwise"
-        },
-        {
-          "bn": "দেরি",
-          "pronunciation": "deri",
-          "en": "late"
-        },
-        {
-          "bn": "হবে",
-          "pronunciation": "hobe",
-          "en": "will be"
-        }
-      ]
-    },
-    {
-      "bn": "মন দিয়ে পড়ুন: “আমি চা এবং কফি পছন্দ করি।”",
-      "pronunciation": "mon diye porun: ami cha ebong kofi pochhondo kori",
-      "en": "Read carefully: “I like tea and coffee.”",
-      "context": "Read carefully the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "আমি চা এবং কফি পছন্দ করি।",
-      "words": [
-        {
-          "bn": "মন",
-          "pronunciation": "mon",
-          "en": "attention"
-        },
-        {
-          "bn": "দিয়ে",
-          "pronunciation": "diye",
-          "en": "with"
-        },
-        {
-          "bn": "পড়ুন",
-          "pronunciation": "porun",
-          "en": "read"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "চা",
-          "pronunciation": "cha",
-          "en": "tea"
-        },
-        {
-          "bn": "এবং",
-          "pronunciation": "ebong",
-          "en": "and"
-        },
-        {
-          "bn": "কফি",
-          "pronunciation": "kofi",
-          "en": "coffee"
-        },
-        {
-          "bn": "পছন্দ",
-          "pronunciation": "pochhondo",
-          "en": "like / preference"
-        },
-        {
-          "bn": "করি",
-          "pronunciation": "kori",
-          "en": "do"
-        }
-      ]
-    },
-    {
-      "bn": "মন দিয়ে পড়ুন: “মা আর বাবা বাড়িতে আছেন।”",
-      "pronunciation": "mon diye porun: ma ar baba barite achhen",
-      "en": "Read carefully: “Mother and father are at home.”",
-      "context": "Read carefully the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "মা আর বাবা বাড়িতে আছেন।",
-      "words": [
-        {
-          "bn": "মন",
-          "pronunciation": "mon",
-          "en": "attention"
-        },
-        {
-          "bn": "দিয়ে",
-          "pronunciation": "diye",
-          "en": "with"
-        },
-        {
-          "bn": "পড়ুন",
-          "pronunciation": "porun",
-          "en": "read"
-        },
-        {
-          "bn": "মা",
-          "pronunciation": "ma",
-          "en": "mother"
-        },
-        {
-          "bn": "আর",
-          "pronunciation": "ar",
-          "en": "and / also"
-        },
-        {
-          "bn": "বাবা",
-          "pronunciation": "baba",
-          "en": "father"
-        },
-        {
-          "bn": "বাড়িতে",
-          "pronunciation": "barite",
-          "en": "at home"
-        },
-        {
-          "bn": "আছেন",
-          "pronunciation": "achhen",
-          "en": "are (respectful)"
-        }
-      ]
-    },
-    {
-      "bn": "মন দিয়ে পড়ুন: “তুমি চা অথবা কফি নিতে পারো।”",
-      "pronunciation": "mon diye porun: tumi cha othoba kofi nite paro",
-      "en": "Read carefully: “You can have tea or coffee.”",
-      "context": "Read carefully the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "তুমি চা অথবা কফি নিতে পারো।",
-      "words": [
-        {
-          "bn": "মন",
-          "pronunciation": "mon",
-          "en": "attention"
-        },
-        {
-          "bn": "দিয়ে",
-          "pronunciation": "diye",
-          "en": "with"
-        },
-        {
-          "bn": "পড়ুন",
-          "pronunciation": "porun",
-          "en": "read"
-        },
-        {
-          "bn": "তুমি",
-          "pronunciation": "tumi",
-          "en": "you (familiar)"
-        },
-        {
-          "bn": "চা",
-          "pronunciation": "cha",
-          "en": "tea"
-        },
-        {
-          "bn": "অথবা",
-          "pronunciation": "othoba",
-          "en": "or"
-        },
-        {
-          "bn": "কফি",
-          "pronunciation": "kofi",
-          "en": "coffee"
-        },
-        {
-          "bn": "নিতে",
-          "pronunciation": "nite",
-          "en": "to take"
-        },
-        {
-          "bn": "পারো",
-          "pronunciation": "paro",
-          "en": "can (familiar)"
-        }
-      ]
-    },
-    {
-      "bn": "মন দিয়ে পড়ুন: “আমি যাব, কিন্তু এখন নয়।”",
-      "pronunciation": "mon diye porun: ami jabo, kintu ekhon noy",
-      "en": "Read carefully: “I will go, but not now.”",
-      "context": "Read carefully the conjunctions example aloud",
-      "category": "conjunctions",
-      "exercise": true,
-      "sourcePhrase": "আমি যাব, কিন্তু এখন নয়।",
-      "words": [
-        {
-          "bn": "মন",
-          "pronunciation": "mon",
-          "en": "attention"
-        },
-        {
-          "bn": "দিয়ে",
-          "pronunciation": "diye",
-          "en": "with"
-        },
-        {
-          "bn": "পড়ুন",
-          "pronunciation": "porun",
-          "en": "read"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "যাব",
-          "pronunciation": "jabo",
-          "en": "will go"
-        },
-        {
-          "bn": "কিন্তু",
-          "pronunciation": "kintu",
-          "en": "but"
-        },
-        {
-          "bn": "এখন",
-          "pronunciation": "ekhon",
-          "en": "now"
-        },
-        {
-          "bn": "নয়",
-          "pronunciation": "noy",
-          "en": "is not"
-        }
-      ]
+      "bn": "মাসের শেষে আসবো।",
+      "pronunciation": "Maash-er sheshe asbo.",
+      "en": "I will come at the end of the month.",
+      "context": "Talking about time.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "বইটা খুলে পড়ো।",
+      "pronunciation": "Boi-ta khule poro.",
+      "en": "Open the book and read.",
+      "context": "Specific instruction.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "আমি বুঝতে পারছি না",
+      "pronunciation": "Ami bujhte parchi na",
+      "en": "I can't understand",
+      "context": "Expressing lack of comprehension.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "আমি তোমার বন্ধু হতে চাই!",
+      "pronunciation": "Ami tomar bondhu hote chai!",
+      "en": "I want to be your friend!",
+      "context": "Expressing desire for friendship.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "আমি যাব।",
+      "pronunciation": "Ami jabo.",
+      "en": "I will go.",
+      "context": "Stating intent to leave.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "আমার মতো কোনো বন্ধু নেই।",
+      "pronunciation": "Amar moto kono bondhu nei.",
+      "en": "There is no friend like me.",
+      "context": "Personal statement.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "এই কথাটা বুঝতে চেষ্টা করো।",
+      "pronunciation": "Ei kathata bujhte cheshta koro.",
+      "en": "Try to understand this word.",
+      "context": "Encouragement/Instruction.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "আমার দেশ ইংল্যান্ড।",
+      "pronunciation": "Amar desh England.",
+      "en": "My country is England.",
+      "context": "Stating nationality.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "আমরা একসাথে যাবো",
+      "pronunciation": "Aamra ekshathe jabo",
+      "en": "We will go together.",
+      "context": "Planning group movement.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "বুঝছেন না?",
+      "pronunciation": "Bujhchhen na?",
+      "en": "Don’t understand?",
+      "context": "Asking if someone is confused.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "বুঝতে পারছি না",
+      "pronunciation": "Bujhte parchi na",
+      "en": "Can’t understand",
+      "context": "Stating confusion.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "আপনি কি এক কাপ চা খেতে চাইবেন?",
+      "pronunciation": "Aapni ki ek cup cha khete chaiben?",
+      "en": "Do you like having a cup of tea?",
+      "context": "Offering a beverage.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "বাবা কাজ করছেন।",
+      "pronunciation": "Baba kaj korchhen.",
+      "en": "Father is working.",
+      "context": "Stating a fact about a family member.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "আমার হাত ধরো।",
+      "pronunciation": "Amar haat dhoro.",
+      "en": "Hold my hand.",
+      "context": "Simple request for physical contact/help.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "এই গাছটা আমার পছন্দ।",
+      "pronunciation": "Ei gachh ta amar pochhondo.",
+      "en": "I like this tree.",
+      "context": "Expressing preference.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "এই খাতাটা আপনার জন্য।",
+      "pronunciation": "Ei khata ta aapnar jonno.",
+      "en": "This notebook is for you.",
+      "context": "Giving something to someone.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "আমি একটি বই পড়ছি।",
+      "pronunciation": "Ami ekti boi porchhi.",
+      "en": "I am reading a book.",
+      "context": "Describing an ongoing action.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "দাদু গল্প বলেন।",
+      "pronunciation": "Dadu golpo bolen.",
+      "en": "Grandfather tells stories.",
+      "context": "Describing a habitual action.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "আমি গাড়ি চালাতে পারি না।",
+      "pronunciation": "Ami gaari chalate pari na.",
+      "en": "I cannot drive a car.",
+      "context": "Talking about ability.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "আমি হোমওয়ার্ক করবো।",
+      "pronunciation": "Ami homework korbo.",
+      "en": "I will do homework.",
+      "context": "Talking about future plans.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "পানি শেষ হয়ে গেছে।",
+      "pronunciation": "Pani sesh hoye geche.",
+      "en": "The water is finished.",
+      "context": "Stating that something has run out.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "রাজা কৃষ্ণচন্দ্র ভালো মানুষ।",
+      "pronunciation": "Raja Krishnachandra bhalo manush.",
+      "en": "King Krishnachandra is a good man.",
+      "context": "Describing a respected historical or royal figure.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "সময় ভালো কাজে লাগাও।",
+      "pronunciation": "Somoy bhalo kaaje lagao.",
+      "en": "Use time for good work.",
+      "context": "Advising good use of time.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "আমি উত্তর দিকে যাবো।",
+      "pronunciation": "Ami uttor dike jabo.",
+      "en": "I will go in the north direction.",
+      "context": "Talking about direction.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "আজ বৃষ্টি হবে",
+      "pronunciation": "Aaj brishti hobe",
+      "en": "It will rain today",
+      "context": "Predicting weather.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "এখন কি করবে?",
+      "pronunciation": "Ekhon ki korbe?",
+      "en": "What will you do now?",
+      "context": "Asking about future plans.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "এ আমার বন্ধু!",
+      "pronunciation": "E' amar bondhu",
+      "en": "This is my friend!",
+      "context": "Introducing a friend.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "আমি চিন্তা করছি না",
+      "pronunciation": "Ami chinta korchi na",
+      "en": "I am not worried",
+      "context": "Expressing lack of concern.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "আমি একটা চা চাই",
+      "pronunciation": "Ami ekta chaa chai",
+      "en": "I want a tea.",
+      "context": "Ordering or requesting tea.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "বসে কথা বলুন",
+      "pronunciation": "Boshe kotha bolun",
+      "en": "Sit down and talk.",
+      "context": "Inviting a seated conversation.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "আমি ভাবছি না",
+      "pronunciation": "Ami bhabchi na",
+      "en": "I am not thinking.",
+      "context": "Stating mental state.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "আমি একটা কাজ করছি",
+      "pronunciation": "Aami ekta kaj korchi",
+      "en": "I am doing a work.",
+      "context": "Stating current activity.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "আমার সাথে আসবেন না!",
+      "pronunciation": "Amar shathe ashben na!",
+      "en": "Don’t come with me!",
+      "context": "Forbidding someone from following.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "আমি আপনাকে ভুলবো না",
+      "pronunciation": "Ami aapnake bhulbo na",
+      "en": "I will not forget you",
+      "context": "A promise of remembrance.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "আমি তোমার সাথে আসতে চাই!",
+      "pronunciation": "Ami tomar shathe ashte chai!",
+      "en": "I want to come with you!",
+      "context": "Expressing desire to join someone.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "এইটা আমার প্রিয় বই",
+      "pronunciation": "Eita amar priyo boi",
+      "en": "This is my favorite book",
+      "context": "Sharing a favorite item.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "হাতে হাত ধরে যাও",
+      "pronunciation": "Haate haat dhore jao",
+      "en": "Go hand in hand",
+      "context": "Instruction to walk together.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "যদি মনে হয়",
+      "pronunciation": "Jodi mone hoy",
+      "en": "If feel like",
+      "context": "A conditional phrase.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "তোমার জন্য আমি চিন্তা করি!",
+      "pronunciation": "Tomar jonno ami chinta kori!",
+      "en": "I think about you!",
+      "context": "Expressing concern or affection.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "তোমার সাথে কথা বলতে ভালো লাগে",
+      "pronunciation": "Tomar shathe kotha bolte bhalo lage",
+      "en": "I like talking to you",
+      "context": "Expressing enjoyment of conversation.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "তুমি কি আমার সাথে আসবে?",
+      "pronunciation": "Tumi ki amar shathe asbe?",
+      "en": "Will you come with me?",
+      "context": "Asking for company informally.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "আপনি কি নতুন জিনিস কিনতে পছন্দ করেন?",
+      "pronunciation": "Aapni ki notun jinis kinte pochhondo koren?",
+      "en": "Do you like buying new things?",
+      "context": "Asking about someone's preferences.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "সবাই একসাথে বসে খেলছে।",
+      "pronunciation": "Shobai ekshathe boshe khelchhe.",
+      "en": "Everyone is sitting and playing together.",
+      "context": "Describing a group activity.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "উনি খুব সুন্দর।",
+      "pronunciation": "Uni khub shundor.",
+      "en": "He is very handsome.",
+      "context": "Complimenting someone.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "সে এই কাছে থাকে।",
+      "pronunciation": "Shey ei kachhe thake.",
+      "en": "He lives nearby.",
+      "context": "Giving location information.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "আমি বাড়িতে আছি।",
+      "pronunciation": "Ami barite achhi.",
+      "en": "I am at home.",
+      "context": "Stating current location.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "আমি আপনার জন্য অনেক দিন ধরে অপেক্ষা করছি।",
+      "pronunciation": "Ami Aapnar jonno anek din dhore opekkha korchi.",
+      "en": "I have been waiting for you for a long time.",
+      "context": "Expressing patience/waiting.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "এই কাজটা জানি।",
+      "pronunciation": "Ei kaj ta jani.",
+      "en": "I know this work.",
+      "context": "Expressing competence.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "আমার আপনার কাছে একটা সাহায্য চাই।",
+      "pronunciation": "Amar Aapnar kache ekta sahajyo chai.",
+      "en": "I need some help from you.",
+      "context": "Requesting assistance politely.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "আমি তোমাকে সাহায্য করতে চাই।",
+      "pronunciation": "Ami tomake shahajjo korte chai.",
+      "en": "I want to help you.",
+      "context": "Offering assistance.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "আমি আপনার সাথে কথা বলতে চাই।",
+      "pronunciation": "Ami Aapnar sathe kotha bolte chai.",
+      "en": "I want to talk to you.",
+      "context": "Requesting a conversation.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "আমি তোমাকে কিছু বলতে চাই।",
+      "pronunciation": "Ami tomake kichu bolte chai.",
+      "en": "I want to tell you something.",
+      "context": "Preparing to share information.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "আমি রান্না করব।",
+      "pronunciation": "Ami ranna korbo.",
+      "en": "I will cook.",
+      "context": "Stating future plan.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "মা রান্না করছেন।",
+      "pronunciation": "Maa ranna korchhen.",
+      "en": "Mother is cooking.",
+      "context": "Stating a fact about a family member.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "আমার বন্ধুরা খুব ভালো।",
+      "pronunciation": "Amar bondhura khub bhalo.",
+      "en": "My friends are very good.",
+      "context": "Sharing personal information.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "ছাতাটা নিয়ে যাও যদি বৃষ্টি পড়ে।",
+      "pronunciation": "Chhata ta niye jao jodi brishti pore.",
+      "en": "Take the umbrella if it rains.",
+      "context": "Giving advice/instruction.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "তারা বই পড়ছে।",
+      "pronunciation": "Tara boi porchhe.",
+      "en": "They are reading books.",
+      "context": "Describing their activity.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "এটা আমার বই।",
+      "pronunciation": "Eta amar boi.",
+      "en": "This is my book.",
+      "context": "Showing ownership.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "আমার বই কোথায়?",
+      "pronunciation": "Amar boi kothay?",
+      "en": "Where is my book?",
+      "context": "Searching for an object.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "এই বাড়িতে কে থাকে?",
+      "pronunciation": "Ei bari te ke thake?",
+      "en": "Who lives in this house?",
+      "context": "Curiosity about neighbors.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "আপনি আমার বন্ধু।",
+      "pronunciation": "Aapni amar bondhu.",
+      "en": "You are my friend.",
+      "context": "Stating friendship status.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "আমার বই।",
+      "pronunciation": "Amar boi.",
+      "en": "My book.",
+      "context": "Showing possession.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "বাবা সংবাদপত্র পড়েন।",
+      "pronunciation": "Baba newspaper poren.",
+      "en": "Father reads the newspaper.",
+      "context": "Describing a daily activity.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "আমার ভয় করে না।",
+      "pronunciation": "Amar bhoy kore naa.",
+      "en": "I am not afraid.",
+      "context": "Expressing lack of fear.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "আমার বন্ধু আমাকে সাহায্য করে।",
+      "pronunciation": "Amar bondhu amake sahajjo kore.",
+      "en": "My friend helps me.",
+      "context": "Talking about help from a friend.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "ব্যাপারটা বুঝুন।",
+      "pronunciation": "Byapar-ta bujhun.",
+      "en": "Understand the matter.",
+      "context": "Asking someone to understand an issue.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "আমি আপনাকে চাই।",
+      "pronunciation": "Ami aapnake chai.",
+      "en": "I want you.",
+      "context": "Expressing desire or intention.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "ছাত্রী বই পড়ে।",
+      "pronunciation": "Chhatri boi pore.",
+      "en": "The female student reads a book.",
+      "context": "Describing a student’s activity.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "ছাত্র বই পড়ে।",
+      "pronunciation": "Chhatro boi pore.",
+      "en": "The male student reads a book.",
+      "context": "Describing a male student’s activity.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "এক ঘণ্টা পর আসবো।",
+      "pronunciation": "Ek ghonta por asbo.",
+      "en": "I will come after an hour.",
+      "context": "Talking about future time.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "আমি কাজ করছি।",
+      "pronunciation": "Ami kaaj korchhi.",
+      "en": "I am doing work.",
+      "context": "Describing an ongoing action.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "প্রচেষ্টা করলে সাফল্য আসবে।",
+      "pronunciation": "Prochesta korle safolota ashbe.",
+      "en": "Success will come with effort.",
+      "context": "Encouraging effort and perseverance.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "শেষ করো।",
+      "pronunciation": "Shesh koro.",
+      "en": "End it.",
+      "context": "Asking someone to finish something.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "আজ সময় খুবই কম।",
+      "pronunciation": "Aj shomoy khubi kom.",
+      "en": "Today there is very little time.",
+      "context": "Talking about limited time.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "আমার শুকনো মাছ ভালো লাগে।",
+      "pronunciation": "Amar shukno machh bhaalo laage.",
+      "en": "I like dry fish.",
+      "context": "Talking about food preferences.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "শূন্য কিছু না।",
+      "pronunciation": "Shunno kichu na.",
+      "en": "Zero is nothing.",
+      "context": "Explaining the meaning of zero.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "আমি উপাসনা করি।",
+      "pronunciation": "Ami upashona kori.",
+      "en": "I worship.",
+      "context": "Describing religious practice.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "আমার নাম...",
+      "pronunciation": "Amar naam...",
+      "en": "My name is...",
+      "context": "Introducing yourself.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "আমি খাই নি",
+      "pronunciation": "Ami khai ni",
+      "en": "I did not eat",
+      "context": "Stating you haven't eaten.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "কিছু না",
+      "pronunciation": "Kichu na",
+      "en": "Nothing",
+      "context": "Response to 'what happened' or 'what is it'.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "আমি ঠিক আছি",
+      "pronunciation": "Ami thik achhi",
+      "en": "I am okay",
+      "context": "Stating you are fine/okay.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "তুমি জানো?",
+      "pronunciation": "Tumi jano?",
+      "en": "Do you know?",
+      "context": "Asking if someone is aware of something.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "এখন বাজে...",
+      "pronunciation": "Ekhon baje...",
+      "en": "It’s now...",
+      "context": "Starting to tell the time.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "আজ অনেক কাজ আছে",
+      "pronunciation": "Aaj onek kaj ache",
+      "en": "There’s a lot of work today.",
+      "context": "Stating workload.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "এখন একটু পরিষ্কার করো",
+      "pronunciation": "Ekhon ektu porishkar koro",
+      "en": "Clean up a bit now.",
+      "context": "Instruction to clean.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "আজ আমি ভালো আছি!",
+      "pronunciation": "Aaj ami bhalo achhi!",
+      "en": "Today I am good!",
+      "context": "Stating current mood/health.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "আপনার জন্য আমি খুশি!",
+      "pronunciation": "Aapnar jonno ami khushi!",
+      "en": "I am happy for you!",
+      "context": "Expressing joy for someone else.",
+      "category": "conjunctions"
+    },
+    {
+      "bn": "আমি তোমাকে ভালোবাসি!",
+      "pronunciation": "Ami tomake bhalobashi!",
+      "en": "I love you!",
+      "context": "Expressing love.",
+      "category": "conjunctions"
     }
   ],
   "vocab": [
