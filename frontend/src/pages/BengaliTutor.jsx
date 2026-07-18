@@ -8,6 +8,7 @@ import aspnetMvcLesson from "../bengali_lessons/aspnet-core-mvc.json";
 import conjunctionsLesson from "../bengali_lessons/conjunctions.json";
 import cpuAdventureLesson from "../bengali_lessons/cpu-adventure.json";
 import dotnetRuntimeLesson from "../bengali_lessons/dotnet-runtime.json";
+import halloweenMovieLesson from "../bengali_lessons/halloween-movie.json";
 import nounsLesson from "../bengali_lessons/nouns.json";
 import numbersLesson from "../bengali_lessons/numbers.json";
 import prepositionsLesson from "../bengali_lessons/prepositions.json";
@@ -38,6 +39,7 @@ const SAVED_LESSONS = [
   conjunctionsLesson,
   cpuAdventureLesson,
   dotnetRuntimeLesson,
+  halloweenMovieLesson,
   nounsLesson,
   numbersLesson,
   prepositionsLesson,
