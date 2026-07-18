@@ -1,0 +1,386 @@
+{
+  "id": "star-birth",
+  "title": "How a Star Is Born",
+  "summary": "Follow a star from a cold nebula to a stable, shining sun while learning Bengali astronomy vocabulary.",
+  "level": "intermediate",
+  "topic": "The Birth and Life of a Star",
+  "focus": "astronomy vocabulary, cause and effect, and scientific explanation",
+  "phrases": [
+    {
+      "bn": "নেবুলা হলো মহাকাশের বিশাল গ্যাস ও ধুলোর মেঘ।",
+      "pronunciation": "Nebula holo mohakasher bishal gas o dhulor megh.",
+      "en": "A nebula is a vast cloud of gas and dust in space.",
+      "context": "Defining the birthplace of stars.",
+      "category": "nebula",
+      "words": [
+        { "bn": "নেবুলা", "pronunciation": "nebula", "en": "nebula" },
+        { "bn": "হলো", "pronunciation": "holo", "en": "is" },
+        { "bn": "মহাকাশের", "pronunciation": "mohakasher", "en": "of space" },
+        { "bn": "বিশাল", "pronunciation": "bishal", "en": "vast" },
+        { "bn": "গ্যাস", "pronunciation": "gas", "en": "gas" },
+        { "bn": "ও", "pronunciation": "o", "en": "and" },
+        { "bn": "ধুলোর", "pronunciation": "dhulor", "en": "of dust" },
+        { "bn": "মেঘ", "pronunciation": "megh", "en": "cloud" }
+      ]
+    },
+    {
+      "bn": "এই মেঘের বেশিরভাগ অংশ হাইড্রোজেন দিয়ে তৈরি।",
+      "pronunciation": "Ei megher beshirbhag ongsho hydrogen diye toiri.",
+      "en": "Most of this cloud is made of hydrogen.",
+      "context": "Describing the composition of a nebula.",
+      "category": "nebula",
+      "words": [
+        { "bn": "এই", "pronunciation": "ei", "en": "this" },
+        { "bn": "মেঘের", "pronunciation": "megher", "en": "of the cloud" },
+        { "bn": "বেশিরভাগ", "pronunciation": "beshirbhag", "en": "most" },
+        { "bn": "অংশ", "pronunciation": "ongsho", "en": "part" },
+        { "bn": "হাইড্রোজেন", "pronunciation": "hydrogen", "en": "hydrogen" },
+        { "bn": "দিয়ে", "pronunciation": "diye", "en": "with" },
+        { "bn": "তৈরি", "pronunciation": "toiri", "en": "made" }
+      ]
+    },
+    {
+      "bn": "শকওয়েভ অথবা মাধ্যাকর্ষণ গ্যাসকে একত্রিত করতে পারে।",
+      "pronunciation": "Shockwave othoba madhyakarshon gaske ekotrito korte pare.",
+      "en": "A shock wave or gravity can bring the gas together.",
+      "context": "Explaining what can trigger collapse.",
+      "category": "collapse",
+      "words": [
+        { "bn": "শকওয়েভ", "pronunciation": "shockwave", "en": "shock wave" },
+        { "bn": "অথবা", "pronunciation": "othoba", "en": "or" },
+        { "bn": "মাধ্যাকর্ষণ", "pronunciation": "madhyakarshon", "en": "gravity" },
+        { "bn": "গ্যাসকে", "pronunciation": "gaske", "en": "the gas" },
+        { "bn": "একত্রিত", "pronunciation": "ekotrito", "en": "together" },
+        { "bn": "করতে", "pronunciation": "korte", "en": "to make" },
+        { "bn": "পারে", "pronunciation": "pare", "en": "can" }
+      ]
+    },
+    {
+      "bn": "গ্যাস জমলে কেন্দ্রের মাধ্যাকর্ষণ আরও শক্তিশালী হয়।",
+      "pronunciation": "Gas jomle kendrer madhyakarshon aro shoktishali hoy.",
+      "en": "As gas gathers, the gravity at the center grows stronger.",
+      "context": "Showing how collapse accelerates.",
+      "category": "collapse",
+      "words": [
+        { "bn": "গ্যাস", "pronunciation": "gas", "en": "gas" },
+        { "bn": "জমলে", "pronunciation": "jomle", "en": "when it gathers" },
+        { "bn": "কেন্দ্রের", "pronunciation": "kendrer", "en": "of the center" },
+        { "bn": "মাধ্যাকর্ষণ", "pronunciation": "madhyakarshon", "en": "gravity" },
+        { "bn": "আরও", "pronunciation": "aro", "en": "more" },
+        { "bn": "শক্তিশালী", "pronunciation": "shoktishali", "en": "strong" },
+        { "bn": "হয়", "pronunciation": "hoy", "en": "becomes" }
+      ]
+    },
+    {
+      "bn": "সংকুচিত মেঘটি ধীরে ধীরে প্রোটোস্টারে পরিণত হয়।",
+      "pronunciation": "Shongkuchito meghoti dhire dhire protostare porinoto hoy.",
+      "en": "The collapsing cloud gradually becomes a protostar.",
+      "context": "Naming the earliest stage of a forming star.",
+      "category": "protostar",
+      "words": [
+        { "bn": "সংকুচিত", "pronunciation": "shongkuchito", "en": "contracted" },
+        { "bn": "মেঘটি", "pronunciation": "meghoti", "en": "the cloud" },
+        { "bn": "ধীরে", "pronunciation": "dhire", "en": "slowly" },
+        { "bn": "ধীরে", "pronunciation": "dhire", "en": "gradually" },
+        { "bn": "প্রোটোস্টারে", "pronunciation": "protostare", "en": "into a protostar" },
+        { "bn": "পরিণত", "pronunciation": "porinoto", "en": "transformed" },
+        { "bn": "হয়", "pronunciation": "hoy", "en": "becomes" }
+      ]
+    },
+    {
+      "bn": "প্রোটোস্টার মানে জন্ম নিতে থাকা নক্ষত্র।",
+      "pronunciation": "Protostar mane jonmo nite thaka nokkhotro.",
+      "en": "Protostar means a star that is being born.",
+      "context": "Explaining the term protostar.",
+      "category": "protostar",
+      "words": [
+        { "bn": "প্রোটোস্টার", "pronunciation": "protostar", "en": "protostar" },
+        { "bn": "মানে", "pronunciation": "mane", "en": "means" },
+        { "bn": "জন্ম", "pronunciation": "jonmo", "en": "birth" },
+        { "bn": "নিতে", "pronunciation": "nite", "en": "to take" },
+        { "bn": "থাকা", "pronunciation": "thaka", "en": "being" },
+        { "bn": "নক্ষত্র", "pronunciation": "nokkhotro", "en": "star" }
+      ]
+    },
+    {
+      "bn": "মাধ্যাকর্ষণ গ্যাসকে ভেতরের দিকে চেপে ধরে।",
+      "pronunciation": "Madhyakarshon gaske bhetorer dike chepe dhore.",
+      "en": "Gravity squeezes the gas inward.",
+      "context": "Describing compression inside a protostar.",
+      "category": "heating",
+      "words": [
+        { "bn": "মাধ্যাকর্ষণ", "pronunciation": "madhyakarshon", "en": "gravity" },
+        { "bn": "গ্যাসকে", "pronunciation": "gaske", "en": "the gas" },
+        { "bn": "ভেতরের", "pronunciation": "bhetorer", "en": "inward" },
+        { "bn": "দিকে", "pronunciation": "dike", "en": "toward" },
+        { "bn": "চেপে", "pronunciation": "chepe", "en": "by squeezing" },
+        { "bn": "ধরে", "pronunciation": "dhore", "en": "holds" }
+      ]
+    },
+    {
+      "bn": "চাপ বাড়লে কেন্দ্রের তাপমাত্রাও দ্রুত বাড়ে।",
+      "pronunciation": "Chap barle kendrer tapmatrao druto bare.",
+      "en": "As pressure rises, the temperature at the center also rises quickly.",
+      "context": "Connecting pressure with temperature.",
+      "category": "heating",
+      "words": [
+        { "bn": "চাপ", "pronunciation": "chap", "en": "pressure" },
+        { "bn": "বাড়লে", "pronunciation": "barle", "en": "when it rises" },
+        { "bn": "কেন্দ্রের", "pronunciation": "kendrer", "en": "of the center" },
+        { "bn": "তাপমাত্রাও", "pronunciation": "tapmatrao", "en": "temperature also" },
+        { "bn": "দ্রুত", "pronunciation": "druto", "en": "quickly" },
+        { "bn": "বাড়ে", "pronunciation": "bare", "en": "rises" }
+      ]
+    },
+    {
+      "bn": "এই পর্যায়ে প্রোটোস্টার এখনো প্রকৃত নক্ষত্র নয়।",
+      "pronunciation": "Ei porjaye protostar ekhono prokrito nokkhotro noy.",
+      "en": "At this stage, the protostar is not yet a true star.",
+      "context": "Distinguishing a protostar from a main-sequence star.",
+      "category": "protostar",
+      "words": [
+        { "bn": "এই", "pronunciation": "ei", "en": "this" },
+        { "bn": "পর্যায়ে", "pronunciation": "porjaye", "en": "at the stage" },
+        { "bn": "প্রোটোস্টার", "pronunciation": "protostar", "en": "protostar" },
+        { "bn": "এখনো", "pronunciation": "ekhono", "en": "yet" },
+        { "bn": "প্রকৃত", "pronunciation": "prokrito", "en": "true" },
+        { "bn": "নক্ষত্র", "pronunciation": "nokkhotro", "en": "star" },
+        { "bn": "নয়", "pronunciation": "noy", "en": "is not" }
+      ]
+    },
+    {
+      "bn": "কেন্দ্র প্রায় এক কোটি ডিগ্রি সেলসিয়াসে পৌঁছায়।",
+      "pronunciation": "Kendro pray ek koti degree Celsius-e pouchhay.",
+      "en": "The center reaches about ten million degrees Celsius.",
+      "context": "Introducing the temperature needed for fusion.",
+      "category": "fusion",
+      "words": [
+        { "bn": "কেন্দ্র", "pronunciation": "kendro", "en": "center" },
+        { "bn": "প্রায়", "pronunciation": "pray", "en": "about" },
+        { "bn": "এক", "pronunciation": "ek", "en": "one" },
+        { "bn": "কোটি", "pronunciation": "koti", "en": "ten million" },
+        { "bn": "ডিগ্রি", "pronunciation": "degree", "en": "degrees" },
+        { "bn": "সেলসিয়াসে", "pronunciation": "Celsius-e", "en": "Celsius" },
+        { "bn": "পৌঁছায়", "pronunciation": "pouchhay", "en": "reaches" }
+      ]
+    },
+    {
+      "bn": "তখন হাইড্রোজেন নিউক্লিয়াসগুলো মিলিত হতে শুরু করে।",
+      "pronunciation": "Tokhon hydrogen nucleusgulo milito hote shuru kore.",
+      "en": "Then hydrogen nuclei begin to join together.",
+      "context": "Describing the start of nuclear fusion.",
+      "category": "fusion",
+      "words": [
+        { "bn": "তখন", "pronunciation": "tokhon", "en": "then" },
+        { "bn": "হাইড্রোজেন", "pronunciation": "hydrogen", "en": "hydrogen" },
+        { "bn": "নিউক্লিয়াসগুলো", "pronunciation": "nucleusgulo", "en": "the nuclei" },
+        { "bn": "মিলিত", "pronunciation": "milito", "en": "joined" },
+        { "bn": "হতে", "pronunciation": "hote", "en": "to become" },
+        { "bn": "শুরু", "pronunciation": "shuru", "en": "start" },
+        { "bn": "করে", "pronunciation": "kore", "en": "do" }
+      ]
+    },
+    {
+      "bn": "এই প্রক্রিয়াকে নিউক্লিয়ার ফিউশন বলা হয়।",
+      "pronunciation": "Ei prokriyake nuclear fusion bola hoy.",
+      "en": "This process is called nuclear fusion.",
+      "context": "Naming the star's energy-producing process.",
+      "category": "fusion",
+      "words": [
+        { "bn": "এই", "pronunciation": "ei", "en": "this" },
+        { "bn": "প্রক্রিয়াকে", "pronunciation": "prokriyake", "en": "process" },
+        { "bn": "নিউক্লিয়ার", "pronunciation": "nuclear", "en": "nuclear" },
+        { "bn": "ফিউশন", "pronunciation": "fusion", "en": "fusion" },
+        { "bn": "বলা", "pronunciation": "bola", "en": "called" },
+        { "bn": "হয়", "pronunciation": "hoy", "en": "is" }
+      ]
+    },
+    {
+      "bn": "ফিউশনে হাইড্রোজেন থেকে হিলিয়াম তৈরি হয়।",
+      "pronunciation": "Fusion-e hydrogen theke helium toiri hoy.",
+      "en": "In fusion, helium is made from hydrogen.",
+      "context": "Stating the main fusion reaction in a star.",
+      "category": "fusion",
+      "words": [
+        { "bn": "ফিউশনে", "pronunciation": "fusion-e", "en": "in fusion" },
+        { "bn": "হাইড্রোজেন", "pronunciation": "hydrogen", "en": "hydrogen" },
+        { "bn": "থেকে", "pronunciation": "theke", "en": "from" },
+        { "bn": "হিলিয়াম", "pronunciation": "helium", "en": "helium" },
+        { "bn": "তৈরি", "pronunciation": "toiri", "en": "made" },
+        { "bn": "হয়", "pronunciation": "hoy", "en": "is" }
+      ]
+    },
+    {
+      "bn": "সামান্য ভর বিপুল শক্তিতে রূপান্তরিত হয়।",
+      "pronunciation": "Shamanno bhor bipul shoktite rupantorito hoy.",
+      "en": "A small amount of mass is converted into enormous energy.",
+      "context": "Connecting fusion with Einstein's mass-energy relation.",
+      "category": "energy",
+      "words": [
+        { "bn": "সামান্য", "pronunciation": "shamanno", "en": "a small amount" },
+        { "bn": "ভর", "pronunciation": "bhor", "en": "mass" },
+        { "bn": "বিপুল", "pronunciation": "bipul", "en": "enormous" },
+        { "bn": "শক্তিতে", "pronunciation": "shoktite", "en": "into energy" },
+        { "bn": "রূপান্তরিত", "pronunciation": "rupantorito", "en": "converted" },
+        { "bn": "হয়", "pronunciation": "hoy", "en": "is" }
+      ]
+    },
+    {
+      "bn": "এই শক্তি আলো ও তাপ হিসেবে বাইরে ছড়ায়।",
+      "pronunciation": "Ei shokti alo o tap hisebe baire chhoray.",
+      "en": "This energy spreads outward as light and heat.",
+      "context": "Explaining how a star radiates energy.",
+      "category": "energy",
+      "words": [
+        { "bn": "এই", "pronunciation": "ei", "en": "this" },
+        { "bn": "শক্তি", "pronunciation": "shokti", "en": "energy" },
+        { "bn": "আলো", "pronunciation": "alo", "en": "light" },
+        { "bn": "ও", "pronunciation": "o", "en": "and" },
+        { "bn": "তাপ", "pronunciation": "tap", "en": "heat" },
+        { "bn": "হিসেবে", "pronunciation": "hisebe", "en": "as" },
+        { "bn": "বাইরে", "pronunciation": "baire", "en": "outward" },
+        { "bn": "ছড়ায়", "pronunciation": "chhoray", "en": "spreads" }
+      ]
+    },
+    {
+      "bn": "মাধ্যাকর্ষণ ভেতরে টানে আর ফিউশনের চাপ বাইরে ঠেলে।",
+      "pronunciation": "Madhyakarshon bhetore tane ar fusion-er chap baire thele.",
+      "en": "Gravity pulls inward while fusion pressure pushes outward.",
+      "context": "Comparing the two opposing forces in a star.",
+      "category": "equilibrium",
+      "words": [
+        { "bn": "মাধ্যাকর্ষণ", "pronunciation": "madhyakarshon", "en": "gravity" },
+        { "bn": "ভেতরে", "pronunciation": "bhetore", "en": "inward" },
+        { "bn": "টানে", "pronunciation": "tane", "en": "pulls" },
+        { "bn": "আর", "pronunciation": "ar", "en": "while" },
+        { "bn": "ফিউশনের", "pronunciation": "fusion-er", "en": "of fusion" },
+        { "bn": "চাপ", "pronunciation": "chap", "en": "pressure" },
+        { "bn": "বাইরে", "pronunciation": "baire", "en": "outward" },
+        { "bn": "ঠেলে", "pronunciation": "thele", "en": "pushes" }
+      ]
+    },
+    {
+      "bn": "দুই শক্তির ভারসাম্যকে হাইড্রোস্ট্যাটিক সমতা বলে।",
+      "pronunciation": "Dui shoktir bharshamyoke hydrostatic shomota bole.",
+      "en": "The balance between the two forces is called hydrostatic equilibrium.",
+      "context": "Defining the stable state of a star.",
+      "category": "equilibrium",
+      "words": [
+        { "bn": "দুই", "pronunciation": "dui", "en": "two" },
+        { "bn": "শক্তির", "pronunciation": "shoktir", "en": "of forces" },
+        { "bn": "ভারসাম্যকে", "pronunciation": "bharshamyoke", "en": "the balance" },
+        { "bn": "হাইড্রোস্ট্যাটিক", "pronunciation": "hydrostatic", "en": "hydrostatic" },
+        { "bn": "সমতা", "pronunciation": "shomota", "en": "equilibrium" },
+        { "bn": "বলে", "pronunciation": "bole", "en": "is called" }
+      ]
+    },
+    {
+      "bn": "এই ভারসাম্য তৈরি হলে একটি প্রকৃত নক্ষত্র জন্মায়।",
+      "pronunciation": "Ei bharshamyo toiri hole ekti prokrito nokkhotro jonmay.",
+      "en": "When this balance forms, a true star is born.",
+      "context": "Marking the completion of star birth.",
+      "category": "equilibrium",
+      "words": [
+        { "bn": "এই", "pronunciation": "ei", "en": "this" },
+        { "bn": "ভারসাম্য", "pronunciation": "bharshamyo", "en": "balance" },
+        { "bn": "তৈরি", "pronunciation": "toiri", "en": "formed" },
+        { "bn": "হলে", "pronunciation": "hole", "en": "when" },
+        { "bn": "একটি", "pronunciation": "ekti", "en": "a" },
+        { "bn": "প্রকৃত", "pronunciation": "prokrito", "en": "true" },
+        { "bn": "নক্ষত্র", "pronunciation": "nokkhotro", "en": "star" },
+        { "bn": "জন্মায়", "pronunciation": "jonmay", "en": "is born" }
+      ]
+    },
+    {
+      "bn": "আমাদের সূর্যও প্রায় চার দশমিক ছয় বিলিয়ন বছর আগে জন্মেছিল।",
+      "pronunciation": "Amader shurjyo-o pray char doshomik chhoy billion bochhor age jonmechhilo.",
+      "en": "Our Sun was also born about 4.6 billion years ago.",
+      "context": "Connecting the process to our Sun.",
+      "category": "sun",
+      "words": [
+        { "bn": "আমাদের", "pronunciation": "amader", "en": "our" },
+        { "bn": "সূর্যও", "pronunciation": "shurjyo-o", "en": "Sun also" },
+        { "bn": "প্রায়", "pronunciation": "pray", "en": "about" },
+        { "bn": "চার", "pronunciation": "char", "en": "four" },
+        { "bn": "দশমিক", "pronunciation": "doshomik", "en": "decimal point" },
+        { "bn": "ছয়", "pronunciation": "chhoy", "en": "six" },
+        { "bn": "বিলিয়ন", "pronunciation": "billion", "en": "billion" },
+        { "bn": "বছর", "pronunciation": "bochhor", "en": "years" },
+        { "bn": "আগে", "pronunciation": "age", "en": "ago" },
+        { "bn": "জন্মেছিল", "pronunciation": "jonmechhilo", "en": "was born" }
+      ]
+    },
+    {
+      "bn": "নক্ষত্রের ভবিষ্যৎ প্রধানত তার ভরের ওপর নির্ভর করে।",
+      "pronunciation": "Nokkhotrer bhobishshot prodhanoto tar bhorer opor nirbhor kore.",
+      "en": "A star's future depends mainly on its mass.",
+      "context": "Introducing how stellar mass shapes later evolution.",
+      "category": "stellar-life",
+      "words": [
+        { "bn": "নক্ষত্রের", "pronunciation": "nokkhotrer", "en": "of a star" },
+        { "bn": "ভবিষ্যৎ", "pronunciation": "bhobishshot", "en": "future" },
+        { "bn": "প্রধানত", "pronunciation": "prodhanoto", "en": "mainly" },
+        { "bn": "তার", "pronunciation": "tar", "en": "its" },
+        { "bn": "ভরের", "pronunciation": "bhorer", "en": "on mass" },
+        { "bn": "ওপর", "pronunciation": "opor", "en": "upon" },
+        { "bn": "নির্ভর", "pronunciation": "nirbhor", "en": "depends" },
+        { "bn": "করে", "pronunciation": "kore", "en": "does" }
+      ]
+    },
+    {
+      "bn": "বিশাল নক্ষত্রের শেষ সুপারনোভা বা কৃষ্ণগহ্বর হতে পারে।",
+      "pronunciation": "Bishal nokkhotrer shesh supernova ba krishnogohbor hote pare.",
+      "en": "A massive star may end as a supernova or a black hole.",
+      "context": "Summarizing one possible fate of massive stars.",
+      "category": "stellar-life",
+      "words": [
+        { "bn": "বিশাল", "pronunciation": "bishal", "en": "massive" },
+        { "bn": "নক্ষত্রের", "pronunciation": "nokkhotrer", "en": "of a star" },
+        { "bn": "শেষ", "pronunciation": "shesh", "en": "end" },
+        { "bn": "সুপারনোভা", "pronunciation": "supernova", "en": "supernova" },
+        { "bn": "বা", "pronunciation": "ba", "en": "or" },
+        { "bn": "কৃষ্ণগহ্বর", "pronunciation": "krishnogohbor", "en": "black hole" },
+        { "bn": "হতে", "pronunciation": "hote", "en": "to become" },
+        { "bn": "পারে", "pronunciation": "pare", "en": "may" }
+      ]
+    }
+  ],
+  "vocab": [
+    { "bn": "নেবুলা", "pronunciation": "nebula", "en": "nebula", "category": "space", "sourcePhrase": "নেবুলা হলো মহাকাশের বিশাল গ্যাস ও ধুলোর মেঘ।" },
+    { "bn": "মহাকাশ", "pronunciation": "mohakash", "en": "outer space", "category": "space", "sourcePhrase": "নেবুলা হলো মহাকাশের বিশাল গ্যাস ও ধুলোর মেঘ।" },
+    { "bn": "গ্যাস", "pronunciation": "gas", "en": "gas", "category": "matter", "sourcePhrase": "এই মেঘের বেশিরভাগ অংশ হাইড্রোজেন দিয়ে তৈরি।" },
+    { "bn": "ধুলো", "pronunciation": "dhulo", "en": "dust", "category": "matter", "sourcePhrase": "নেবুলা হলো মহাকাশের বিশাল গ্যাস ও ধুলোর মেঘ।" },
+    { "bn": "হাইড্রোজেন", "pronunciation": "hydrogen", "en": "hydrogen", "category": "elements", "sourcePhrase": "এই মেঘের বেশিরভাগ অংশ হাইড্রোজেন দিয়ে তৈরি।" },
+    { "bn": "হিলিয়াম", "pronunciation": "helium", "en": "helium", "category": "elements", "sourcePhrase": "ফিউশনে হাইড্রোজেন থেকে হিলিয়াম তৈরি হয়।" },
+    { "bn": "মাধ্যাকর্ষণ", "pronunciation": "madhyakarshon", "en": "gravity", "category": "forces", "sourcePhrase": "মাধ্যাকর্ষণ গ্যাসকে ভেতরের দিকে চেপে ধরে।" },
+    { "bn": "শকওয়েভ", "pronunciation": "shockwave", "en": "shock wave", "category": "forces", "sourcePhrase": "শকওয়েভ অথবা মাধ্যাকর্ষণ গ্যাসকে একত্রিত করতে পারে।" },
+    { "bn": "প্রোটোস্টার", "pronunciation": "protostar", "en": "protostar", "category": "star-formation", "sourcePhrase": "প্রোটোস্টার মানে জন্ম নিতে থাকা নক্ষত্র।" },
+    { "bn": "নক্ষত্র", "pronunciation": "nokkhotro", "en": "star", "category": "space", "sourcePhrase": "প্রোটোস্টার মানে জন্ম নিতে থাকা নক্ষত্র।" },
+    { "bn": "সংকোচন", "pronunciation": "shongkochon", "en": "contraction", "category": "star-formation", "sourcePhrase": "সংকুচিত মেঘটি ধীরে ধীরে প্রোটোস্টারে পরিণত হয়।" },
+    { "bn": "চাপ", "pronunciation": "chap", "en": "pressure", "category": "physics", "sourcePhrase": "চাপ বাড়লে কেন্দ্রের তাপমাত্রাও দ্রুত বাড়ে।" },
+    { "bn": "তাপমাত্রা", "pronunciation": "tapmatra", "en": "temperature", "category": "physics", "sourcePhrase": "চাপ বাড়লে কেন্দ্রের তাপমাত্রাও দ্রুত বাড়ে।" },
+    { "bn": "নিউক্লিয়াস", "pronunciation": "nucleus", "en": "nucleus", "category": "physics", "sourcePhrase": "তখন হাইড্রোজেন নিউক্লিয়াসগুলো মিলিত হতে শুরু করে।" },
+    { "bn": "নিউক্লিয়ার ফিউশন", "pronunciation": "nuclear fusion", "en": "nuclear fusion", "category": "physics", "sourcePhrase": "এই প্রক্রিয়াকে নিউক্লিয়ার ফিউশন বলা হয়।" },
+    { "bn": "ভর", "pronunciation": "bhor", "en": "mass", "category": "physics", "sourcePhrase": "সামান্য ভর বিপুল শক্তিতে রূপান্তরিত হয়।" },
+    { "bn": "শক্তি", "pronunciation": "shokti", "en": "energy", "category": "physics", "sourcePhrase": "এই শক্তি আলো ও তাপ হিসেবে বাইরে ছড়ায়।" },
+    { "bn": "ভারসাম্য", "pronunciation": "bharshamyo", "en": "balance", "category": "equilibrium", "sourcePhrase": "এই ভারসাম্য তৈরি হলে একটি প্রকৃত নক্ষত্র জন্মায়।" },
+    { "bn": "হাইড্রোস্ট্যাটিক সমতা", "pronunciation": "hydrostatic shomota", "en": "hydrostatic equilibrium", "category": "equilibrium", "sourcePhrase": "দুই শক্তির ভারসাম্যকে হাইড্রোস্ট্যাটিক সমতা বলে।" },
+    { "bn": "সূর্য", "pronunciation": "shurjyo", "en": "Sun", "category": "space", "sourcePhrase": "আমাদের সূর্যও প্রায় চার দশমিক ছয় বিলিয়ন বছর আগে জন্মেছিল।" },
+    { "bn": "সুপারনোভা", "pronunciation": "supernova", "en": "supernova", "category": "stellar-life", "sourcePhrase": "বিশাল নক্ষত্রের শেষ সুপারনোভা বা কৃষ্ণগহ্বর হতে পারে।" },
+    { "bn": "কৃষ্ণগহ্বর", "pronunciation": "krishnogohbor", "en": "black hole", "category": "stellar-life", "sourcePhrase": "বিশাল নক্ষত্রের শেষ সুপারনোভা বা কৃষ্ণগহ্বর হতে পারে।" }
+  ],
+  "practice": [
+    "Say the Bengali words for nebula, gravity, protostar, nuclear fusion, and black hole.",
+    "Explain in Bengali why the center of a protostar becomes hotter as it contracts.",
+    "Use ভেতরে and বাইরে to compare the directions of gravity and fusion pressure.",
+    "Retell the sequence নেবুলা → প্রোটোস্টার → নিউক্লিয়ার ফিউশন → নক্ষত্র in your own words.",
+    "Describe how a star's mass affects its future using one sentence from the lesson."
+  ],
+  "notes": [
+    "In astronomy, নক্ষত্র is the precise Bengali word for star; তারা is common in everyday speech and can also mean ‘they.’",
+    "One কোটি equals ten million, so এক কোটি ডিগ্রি means ten million degrees.",
+    "A protostar shines from gravitational contraction before sustained hydrogen fusion begins.",
+    "Hydrostatic equilibrium is dynamic: gravity pulls inward while pressure produced by the hot interior supports the star outward.",
+    "A massive star does not turn directly into a supernova; a supernova is the explosion that may leave behind a neutron star or black hole."
+  ]
+}

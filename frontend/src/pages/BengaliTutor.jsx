@@ -12,6 +12,7 @@ import nounsLesson from "../bengali_lessons/nouns.json";
 import numbersLesson from "../bengali_lessons/numbers.json";
 import prepositionsLesson from "../bengali_lessons/prepositions.json";
 import pronounsLesson from "../bengali_lessons/pronouns.json";
+import starBirthLesson from "../bengali_lessons/star-birth.json";
 import top125PhrasesLesson from "../bengali_lessons/top-125-phrases.json";
 import top150SentencesLesson from "../bengali_lessons/top-150-sentences.json";
 import top250WordsLesson from "../bengali_lessons/top-250-words.json";
@@ -40,6 +41,7 @@ const SAVED_LESSONS = [
   numbersLesson,
   prepositionsLesson,
   pronounsLesson,
+  starBirthLesson,
   top125PhrasesLesson,
   top150SentencesLesson,
   top250WordsLesson,
