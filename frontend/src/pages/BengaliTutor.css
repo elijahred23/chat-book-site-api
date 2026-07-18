@@ -63,6 +63,9 @@
 .bn-content-heading h3 { margin: .1rem 0 0; color: var(--bn-ink); font-size: 1.25rem; }
 .bn-page .bn-phrase-card { display: grid; gap: .45rem; padding: clamp(1rem, 2vw, 1.3rem) !important; border-color: var(--bn-line); border-radius: 16px; box-shadow: 0 7px 22px rgba(36,60,46,.055); }
 .bn-script { color: var(--bn-ink); font-family: "Noto Sans Bengali", "Nirmala UI", sans-serif; font-size: clamp(1.35rem, 3vw, 1.8rem); line-height: 1.45; }
+.bn-translate-link { width: fit-content; text-decoration: underline; text-decoration-color: rgba(23, 107, 77, .35); text-decoration-thickness: 1px; text-underline-offset: .2em; transition: color 140ms ease, text-decoration-color 140ms ease; }
+.bn-translate-link:hover { color: var(--bn-primary); text-decoration-color: currentColor; }
+.bn-translate-link:focus-visible { outline: 3px solid rgba(23, 107, 77, .3); outline-offset: 3px; }
 .bn-pronunciation { color: var(--bn-primary); font-size: .88rem; font-weight: 700; }
 .bn-translation { color: #39473f; font-size: 1rem; font-weight: 650; }
 .bn-context { display: flex; gap: .5rem; margin-top: .35rem; padding-top: .7rem; border-top: 1px solid #edf1ee; color: var(--bn-muted); font-size: .85rem; }

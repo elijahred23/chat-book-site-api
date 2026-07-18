@@ -68,6 +68,7 @@ const promptLabel = (item, direction) => (direction === "en-bn" ? item.en : beng
 const optionLabel = (item, direction) => direction === "en-bn" ? bengaliLabel(item) : item.en;
 const shuffle = (items) => [...items].sort(() => Math.random() - 0.5);
 const normalizeAnswer = (value) => value.trim().toLocaleLowerCase().replace(/[.,!?।'’"-]/g, "").replace(/\s+/g, " ");
+const googleTranslateUrl = (text) => `https://translate.google.com/?sl=bn&tl=en&text=${encodeURIComponent(text)}&op=translate`;
 
 const statusForWord = (stats, key) => {
   const record = stats[key];
@@ -591,7 +592,17 @@ export default function BengaliTutor() {
                 <h3>Key phrases</h3>
                 {filteredPhrases.map((phrase, idx) => (
                   <article key={`${phrase.bn}-${idx}`} className="bn-section" style={{ background: "#fff" }}>
-                    <div className="bn-script" lang="bn">{phrase.bn}</div>
+                    <a
+                      className="bn-script bn-translate-link"
+                      href={googleTranslateUrl(phrase.bn)}
+                      lang="bn"
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`Translate ${phrase.bn} from Bengali to English in Google Translate`}
+                      title="Open in Google Translate"
+                    >
+                      {phrase.bn}
+                    </a>
                     <div className="bn-pronunciation">{phrase.pronunciation}</div>
                     <div className="bn-translation">{phrase.en}</div>
                     {phrase.context && <div style={{ color: "#475569" }}>{phrase.context}</div>}
@@ -600,7 +611,17 @@ export default function BengaliTutor() {
                       <div className="bn-breakdown-list">
                         {phrase.words.map((word, wordIndex) => (
                           <div className="bn-breakdown-word" key={`${phrase.bn}-${word.bn}-${wordIndex}`}>
-                            <span className="bn-script" lang="bn">{word.bn}</span>
+                            <a
+                              className="bn-script bn-translate-link"
+                              href={googleTranslateUrl(word.bn)}
+                              lang="bn"
+                              target="_blank"
+                              rel="noreferrer"
+                              aria-label={`Translate ${word.bn} from Bengali to English in Google Translate`}
+                              title="Open in Google Translate"
+                            >
+                              {word.bn}
+                            </a>
                             <span className="bn-pronunciation">{word.pronunciation}</span>
                             <span className="bn-translation">{word.en}</span>
                           </div>
