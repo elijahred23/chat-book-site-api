@@ -3,7 +3,11 @@ import ActionButtons from "../ui/ActionButtons.jsx";
 import { withPhraseWords } from "../utils/bengaliPhraseBreakdown.js";
 import adjectivesLesson from "../bengali_lessons/adjectives.json";
 import adverbsLesson from "../bengali_lessons/adverbs.json";
+import anthropicPrincipleLesson from "../bengali_lessons/anthropic-principle.json";
+import aspnetMvcLesson from "../bengali_lessons/aspnet-core-mvc.json";
 import conjunctionsLesson from "../bengali_lessons/conjunctions.json";
+import cpuAdventureLesson from "../bengali_lessons/cpu-adventure.json";
+import dotnetRuntimeLesson from "../bengali_lessons/dotnet-runtime.json";
 import nounsLesson from "../bengali_lessons/nouns.json";
 import numbersLesson from "../bengali_lessons/numbers.json";
 import prepositionsLesson from "../bengali_lessons/prepositions.json";
@@ -27,7 +31,11 @@ const INCORRECT_TIME = 700;
 const SAVED_LESSONS = [
   adjectivesLesson,
   adverbsLesson,
+  anthropicPrincipleLesson,
+  aspnetMvcLesson,
   conjunctionsLesson,
+  cpuAdventureLesson,
+  dotnetRuntimeLesson,
   nounsLesson,
   numbersLesson,
   prepositionsLesson,

@@ -1,0 +1,271 @@
+{
+  "id": "anthropic-principle",
+  "title": "Little Lily and the Universe's Great Mystery",
+  "summary": "Explore the universe, the conditions needed for life, and the anthropic principle through Lily's gentle questions.",
+  "level": "beginner",
+  "topic": "The Universe and the Anthropic Principle",
+  "focus": "science vocabulary and reflective conversation",
+  "phrases": [
+    {
+      "bn": "লিলি রাতের আকাশ দেখতে ভালোবাসত।",
+      "pronunciation": "Lili rater akash dekhte bhalobashto.",
+      "en": "Lily loved looking at the night sky.",
+      "context": "Introducing Lily and her curiosity.",
+      "category": "anthropic-principle",
+      "words": [
+        { "bn": "লিলি", "pronunciation": "Lili", "en": "Lily" },
+        { "bn": "রাতের", "pronunciation": "rater", "en": "of the night" },
+        { "bn": "আকাশ", "pronunciation": "akash", "en": "sky" },
+        { "bn": "দেখতে", "pronunciation": "dekhte", "en": "to look at" },
+        { "bn": "ভালোবাসত", "pronunciation": "bhalobashto", "en": "loved" }
+      ]
+    },
+    {
+      "bn": "মহাবিশ্ব এত বড় কেন?",
+      "pronunciation": "Mohabishwo eto boro keno?",
+      "en": "Why is the universe so big?",
+      "context": "Asking a question about the universe.",
+      "category": "anthropic-principle",
+      "words": [
+        { "bn": "মহাবিশ্ব", "pronunciation": "mohabishwo", "en": "universe" },
+        { "bn": "এত", "pronunciation": "eto", "en": "so" },
+        { "bn": "বড়", "pronunciation": "boro", "en": "big" },
+        { "bn": "কেন", "pronunciation": "keno", "en": "why" }
+      ]
+    },
+    {
+      "bn": "আকাশে অসংখ্য তারা জ্বলজ্বল করছিল।",
+      "pronunciation": "Akashe oshongkhyo tara jol-jol korchhilo.",
+      "en": "Countless stars were twinkling in the sky.",
+      "context": "Describing the night sky.",
+      "category": "anthropic-principle",
+      "words": [
+        { "bn": "আকাশে", "pronunciation": "akashe", "en": "in the sky" },
+        { "bn": "অসংখ্য", "pronunciation": "oshongkhyo", "en": "countless" },
+        { "bn": "তারা", "pronunciation": "tara", "en": "stars" },
+        { "bn": "জ্বলজ্বল", "pronunciation": "jol-jol", "en": "twinkling" },
+        { "bn": "করছিল", "pronunciation": "korchhilo", "en": "were doing" }
+      ]
+    },
+    {
+      "bn": "এখানে না খুব গরম, না খুব ঠান্ডা।",
+      "pronunciation": "Ekhane na khub gorom, na khub thanda.",
+      "en": "It is neither too hot nor too cold here.",
+      "context": "Describing a Goldilocks condition.",
+      "category": "anthropic-principle",
+      "words": [
+        { "bn": "এখানে", "pronunciation": "ekhane", "en": "here" },
+        { "bn": "না", "pronunciation": "na", "en": "not" },
+        { "bn": "খুব", "pronunciation": "khub", "en": "very" },
+        { "bn": "গরম", "pronunciation": "gorom", "en": "hot" },
+        { "bn": "না", "pronunciation": "na", "en": "nor" },
+        { "bn": "খুব", "pronunciation": "khub", "en": "very" },
+        { "bn": "ঠান্ডা", "pronunciation": "thanda", "en": "cold" }
+      ]
+    },
+    {
+      "bn": "এই পরিবেশে জীবন বাঁচতে পারে।",
+      "pronunciation": "Ei poribeshe jibon banchte pare.",
+      "en": "Life can survive in this environment.",
+      "context": "Explaining a life-supporting environment.",
+      "category": "anthropic-principle",
+      "words": [
+        { "bn": "এই", "pronunciation": "ei", "en": "this" },
+        { "bn": "পরিবেশে", "pronunciation": "poribeshe", "en": "in the environment" },
+        { "bn": "জীবন", "pronunciation": "jibon", "en": "life" },
+        { "bn": "বাঁচতে", "pronunciation": "banchte", "en": "to survive" },
+        { "bn": "পারে", "pronunciation": "pare", "en": "can" }
+      ]
+    },
+    {
+      "bn": "মহাবিশ্ব কিছু প্রাকৃতিক নিয়ম মেনে চলে।",
+      "pronunciation": "Mohabishwo kichhu prakritik niyom mene chole.",
+      "en": "The universe follows certain laws of nature.",
+      "context": "Introducing laws of nature.",
+      "category": "anthropic-principle",
+      "words": [
+        { "bn": "মহাবিশ্ব", "pronunciation": "mohabishwo", "en": "universe" },
+        { "bn": "কিছু", "pronunciation": "kichhu", "en": "certain" },
+        { "bn": "প্রাকৃতিক", "pronunciation": "prakritik", "en": "natural" },
+        { "bn": "নিয়ম", "pronunciation": "niyom", "en": "laws" },
+        { "bn": "মেনে", "pronunciation": "mene", "en": "following" },
+        { "bn": "চলে", "pronunciation": "chole", "en": "operates" }
+      ]
+    },
+    {
+      "bn": "অনেক নিয়ম একসঙ্গে কাজ করে।",
+      "pronunciation": "Onek niyom eksongge kaj kore.",
+      "en": "Many laws work together.",
+      "context": "Connecting multiple conditions in the story.",
+      "category": "anthropic-principle",
+      "words": [
+        { "bn": "অনেক", "pronunciation": "onek", "en": "many" },
+        { "bn": "নিয়ম", "pronunciation": "niyom", "en": "laws" },
+        { "bn": "একসঙ্গে", "pronunciation": "eksongge", "en": "together" },
+        { "bn": "কাজ", "pronunciation": "kaj", "en": "work" },
+        { "bn": "করে", "pronunciation": "kore", "en": "do" }
+      ]
+    },
+    {
+      "bn": "পৃথিবীতে তরল পানি আছে।",
+      "pronunciation": "Prithibite torol pani achhe.",
+      "en": "There is liquid water on Earth.",
+      "context": "Naming one condition important for life.",
+      "category": "anthropic-principle",
+      "words": [
+        { "bn": "পৃথিবীতে", "pronunciation": "prithibite", "en": "on Earth" },
+        { "bn": "তরল", "pronunciation": "torol", "en": "liquid" },
+        { "bn": "পানি", "pronunciation": "pani", "en": "water" },
+        { "bn": "আছে", "pronunciation": "achhe", "en": "exists" }
+      ]
+    },
+    {
+      "bn": "সূর্য পৃথিবীকে আলো দেয়।",
+      "pronunciation": "Shurjo prithibike alo dey.",
+      "en": "The Sun gives light to Earth.",
+      "context": "Describing the Sun's role.",
+      "category": "anthropic-principle",
+      "words": [
+        { "bn": "সূর্য", "pronunciation": "shurjo", "en": "Sun" },
+        { "bn": "পৃথিবীকে", "pronunciation": "prithibike", "en": "to Earth" },
+        { "bn": "আলো", "pronunciation": "alo", "en": "light" },
+        { "bn": "দেয়", "pronunciation": "dey", "en": "gives" }
+      ]
+    },
+    {
+      "bn": "সব উপকরণ ঠিকভাবে মিশলে কেক হয়।",
+      "pronunciation": "Shob upokoron thikbhabe mishle cake hoy.",
+      "en": "A cake is made when all the ingredients are mixed correctly.",
+      "context": "Using the cake analogy from the story.",
+      "category": "anthropic-principle",
+      "words": [
+        { "bn": "সব", "pronunciation": "shob", "en": "all" },
+        { "bn": "উপকরণ", "pronunciation": "upokoron", "en": "ingredients" },
+        { "bn": "ঠিকভাবে", "pronunciation": "thikbhabe", "en": "correctly" },
+        { "bn": "মিশলে", "pronunciation": "mishle", "en": "when mixed" },
+        { "bn": "কেক", "pronunciation": "cake", "en": "cake" },
+        { "bn": "হয়", "pronunciation": "hoy", "en": "is made" }
+      ]
+    },
+    {
+      "bn": "লিলি একটি বড় প্রশ্ন করল।",
+      "pronunciation": "Lili ekti boro proshno korlo.",
+      "en": "Lily asked a big question.",
+      "context": "Describing scientific curiosity.",
+      "category": "anthropic-principle",
+      "words": [
+        { "bn": "লিলি", "pronunciation": "Lili", "en": "Lily" },
+        { "bn": "একটি", "pronunciation": "ekti", "en": "a" },
+        { "bn": "বড়", "pronunciation": "boro", "en": "big" },
+        { "bn": "প্রশ্ন", "pronunciation": "proshno", "en": "question" },
+        { "bn": "করল", "pronunciation": "korlo", "en": "asked" }
+      ]
+    },
+    {
+      "bn": "এটি একটি বৈজ্ঞানিক ও দার্শনিক ধারণা।",
+      "pronunciation": "Eti ekti boigyanik o darshonik dharona.",
+      "en": "It is a scientific and philosophical idea.",
+      "context": "Classifying the anthropic principle.",
+      "category": "anthropic-principle",
+      "words": [
+        { "bn": "এটি", "pronunciation": "eti", "en": "it" },
+        { "bn": "একটি", "pronunciation": "ekti", "en": "a" },
+        { "bn": "বৈজ্ঞানিক", "pronunciation": "boigyanik", "en": "scientific" },
+        { "bn": "ও", "pronunciation": "o", "en": "and" },
+        { "bn": "দার্শনিক", "pronunciation": "darshonik", "en": "philosophical" },
+        { "bn": "ধারণা", "pronunciation": "dharona", "en": "idea" }
+      ]
+    },
+    {
+      "bn": "এই ভাবনার নাম অ্যানথ্রপিক প্রিন্সিপল।",
+      "pronunciation": "Ei bhabnar nam anthropic principle.",
+      "en": "This idea is called the anthropic principle.",
+      "context": "Naming the central concept.",
+      "category": "anthropic-principle",
+      "words": [
+        { "bn": "এই", "pronunciation": "ei", "en": "this" },
+        { "bn": "ভাবনার", "pronunciation": "bhabnar", "en": "of the idea" },
+        { "bn": "নাম", "pronunciation": "nam", "en": "name" },
+        { "bn": "অ্যানথ্রপিক", "pronunciation": "anthropic", "en": "anthropic" },
+        { "bn": "প্রিন্সিপল", "pronunciation": "principle", "en": "principle" }
+      ]
+    },
+    {
+      "bn": "আমরা এমন মহাবিশ্ব দেখি যেখানে জীবন সম্ভব।",
+      "pronunciation": "Amra emon mohabishwo dekhi jekhane jibon shombhob.",
+      "en": "We observe a universe where life is possible.",
+      "context": "Giving a child-friendly statement of the anthropic principle.",
+      "category": "anthropic-principle",
+      "words": [
+        { "bn": "আমরা", "pronunciation": "amra", "en": "we" },
+        { "bn": "এমন", "pronunciation": "emon", "en": "such a" },
+        { "bn": "মহাবিশ্ব", "pronunciation": "mohabishwo", "en": "universe" },
+        { "bn": "দেখি", "pronunciation": "dekhi", "en": "observe" },
+        { "bn": "যেখানে", "pronunciation": "jekhane", "en": "where" },
+        { "bn": "জীবন", "pronunciation": "jibon", "en": "life" },
+        { "bn": "সম্ভব", "pronunciation": "shombhob", "en": "possible" }
+      ]
+    },
+    {
+      "bn": "এটি বলে না যে মহাবিশ্ব আমাদের জন্য তৈরি।",
+      "pronunciation": "Eti bole na je mohabishwo amader jonno toiri.",
+      "en": "It does not say that the universe was made for us.",
+      "context": "Preventing a common misunderstanding of the principle.",
+      "category": "anthropic-principle",
+      "words": [
+        { "bn": "এটি", "pronunciation": "eti", "en": "it" },
+        { "bn": "বলে", "pronunciation": "bole", "en": "says" },
+        { "bn": "না", "pronunciation": "na", "en": "not" },
+        { "bn": "যে", "pronunciation": "je", "en": "that" },
+        { "bn": "মহাবিশ্ব", "pronunciation": "mohabishwo", "en": "universe" },
+        { "bn": "আমাদের", "pronunciation": "amader", "en": "us" },
+        { "bn": "জন্য", "pronunciation": "jonno", "en": "for" },
+        { "bn": "তৈরি", "pronunciation": "toiri", "en": "made" }
+      ]
+    },
+    {
+      "bn": "কৌতূহল জ্ঞানের প্রথম ধাপ।",
+      "pronunciation": "Koutuhol gyaner prothom dhap.",
+      "en": "Curiosity is the first step toward knowledge.",
+      "context": "Stating the moral of the story.",
+      "category": "anthropic-principle",
+      "words": [
+        { "bn": "কৌতূহল", "pronunciation": "koutuhol", "en": "curiosity" },
+        { "bn": "জ্ঞানের", "pronunciation": "gyaner", "en": "toward knowledge" },
+        { "bn": "প্রথম", "pronunciation": "prothom", "en": "first" },
+        { "bn": "ধাপ", "pronunciation": "dhap", "en": "step" }
+      ]
+    }
+  ],
+  "vocab": [
+    { "bn": "মহাবিশ্ব", "pronunciation": "mohabishwo", "en": "universe", "category": "space", "sourcePhrase": "মহাবিশ্ব এত বড় কেন?" },
+    { "bn": "আকাশ", "pronunciation": "akash", "en": "sky", "category": "space", "sourcePhrase": "লিলি রাতের আকাশ দেখতে ভালোবাসত।" },
+    { "bn": "তারা", "pronunciation": "tara", "en": "star / stars", "category": "space", "sourcePhrase": "আকাশে অসংখ্য তারা জ্বলজ্বল করছিল।" },
+    { "bn": "পৃথিবী", "pronunciation": "prithibi", "en": "Earth", "category": "space", "sourcePhrase": "পৃথিবী সত্যিই সুন্দর।" },
+    { "bn": "সূর্য", "pronunciation": "shurjo", "en": "Sun", "category": "space", "sourcePhrase": "সূর্য পৃথিবীকে আলো দেয়।" },
+    { "bn": "জীবন", "pronunciation": "jibon", "en": "life", "category": "life", "sourcePhrase": "এই পরিবেশে জীবন বাঁচতে পারে।" },
+    { "bn": "পরিবেশ", "pronunciation": "poribesh", "en": "environment", "category": "life", "sourcePhrase": "এই পরিবেশে জীবন বাঁচতে পারে।" },
+    { "bn": "পানি", "pronunciation": "pani", "en": "water", "category": "life", "sourcePhrase": "পৃথিবীতে তরল পানি আছে।" },
+    { "bn": "নিয়ম", "pronunciation": "niyom", "en": "law / rule", "category": "science", "sourcePhrase": "মহাবিশ্ব কিছু প্রাকৃতিক নিয়ম মেনে চলে।" },
+    { "bn": "প্রাকৃতিক", "pronunciation": "prakritik", "en": "natural", "category": "science", "sourcePhrase": "মহাবিশ্ব কিছু প্রাকৃতিক নিয়ম মেনে চলে।" },
+    { "bn": "বৈজ্ঞানিক", "pronunciation": "boigyanik", "en": "scientific", "category": "ideas", "sourcePhrase": "এটি একটি বৈজ্ঞানিক ও দার্শনিক ধারণা।" },
+    { "bn": "দার্শনিক", "pronunciation": "darshonik", "en": "philosophical", "category": "ideas", "sourcePhrase": "এটি একটি বৈজ্ঞানিক ও দার্শনিক ধারণা।" },
+    { "bn": "ধারণা", "pronunciation": "dharona", "en": "idea / concept", "category": "ideas", "sourcePhrase": "এটি একটি বৈজ্ঞানিক ও দার্শনিক ধারণা।" },
+    { "bn": "অ্যানথ্রপিক প্রিন্সিপল", "pronunciation": "anthropic principle", "en": "anthropic principle", "category": "ideas", "sourcePhrase": "এই ভাবনার নাম অ্যানথ্রপিক প্রিন্সিপল।" },
+    { "bn": "সম্ভব", "pronunciation": "shombhob", "en": "possible", "category": "ideas", "sourcePhrase": "আমরা এমন মহাবিশ্ব দেখি যেখানে জীবন সম্ভব।" },
+    { "bn": "প্রশ্ন", "pronunciation": "proshno", "en": "question", "category": "curiosity", "sourcePhrase": "লিলি একটি বড় প্রশ্ন করল।" },
+    { "bn": "কৌতূহল", "pronunciation": "koutuhol", "en": "curiosity", "category": "curiosity", "sourcePhrase": "কৌতূহল জ্ঞানের প্রথম ধাপ।" },
+    { "bn": "জ্ঞান", "pronunciation": "gyan", "en": "knowledge", "category": "curiosity", "sourcePhrase": "কৌতূহল থেকে জ্ঞান জন্মায়।" }
+  ],
+  "practice": [
+    "Say the Bengali words for universe, Earth, Sun, life, environment, and law.",
+    "Ask মহাবিশ্ব এত বড় কেন? aloud, then answer with one fact from the lesson.",
+    "Compare a place that is too hot, too cold, and suitable for life using Bengali phrases.",
+    "Explain in simple words what the anthropic principle says and what it does not say."
+  ],
+  "notes": [
+    "The anthropic principle says that observers necessarily find themselves in conditions compatible with observers; it does not claim that the universe intentionally exists for humans.",
+    "তারা can mean either star/stars or they, depending on context.",
+    "মহাবিশ্ব means universe, while পৃথিবী means Earth or the world."
+  ]
+}

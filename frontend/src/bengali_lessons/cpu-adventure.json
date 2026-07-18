@@ -1,0 +1,263 @@
+{
+  "id": "cpu-adventure",
+  "title": "The Great Adventure of Processorpur",
+  "summary": "Learn Bengali computer vocabulary and teamwork phrases through the story of a CPU, its cores, and busy threads.",
+  "level": "beginner",
+  "topic": "Computers and Teamwork",
+  "focus": "story vocabulary and conversation",
+  "phrases": [
+    {
+      "bn": "প্রসেসরপুর একটি আশ্চর্য রাজ্য।",
+      "pronunciation": "Processorpur ekti ashchorjo rajjo.",
+      "en": "Processorpur is an amazing kingdom.",
+      "context": "Introducing the setting of the story.",
+      "category": "cpu-adventure",
+      "words": [
+        { "bn": "প্রসেসরপুর", "pronunciation": "Processorpur", "en": "Processorpur" },
+        { "bn": "একটি", "pronunciation": "ekti", "en": "a" },
+        { "bn": "আশ্চর্য", "pronunciation": "ashchorjo", "en": "amazing" },
+        { "bn": "রাজ্য", "pronunciation": "rajjo", "en": "kingdom" }
+      ]
+    },
+    {
+      "bn": "সিপিইউ কম্পিউটারের মস্তিষ্ক।",
+      "pronunciation": "CPU computerer mostishko.",
+      "en": "The CPU is the brain of the computer.",
+      "context": "Explaining the role of a CPU.",
+      "category": "cpu-adventure",
+      "words": [
+        { "bn": "সিপিইউ", "pronunciation": "CPU", "en": "CPU" },
+        { "bn": "কম্পিউটারের", "pronunciation": "computerer", "en": "of the computer" },
+        { "bn": "মস্তিষ্ক", "pronunciation": "mostishko", "en": "brain" }
+      ]
+    },
+    {
+      "bn": "চারটি কোর একসঙ্গে কাজ করে।",
+      "pronunciation": "Charti core eksongge kaj kore.",
+      "en": "Four cores work together.",
+      "context": "Describing parallel teamwork.",
+      "category": "cpu-adventure",
+      "words": [
+        { "bn": "চারটি", "pronunciation": "charti", "en": "four" },
+        { "bn": "কোর", "pronunciation": "core", "en": "cores" },
+        { "bn": "একসঙ্গে", "pronunciation": "eksongge", "en": "together" },
+        { "bn": "কাজ", "pronunciation": "kaj", "en": "work" },
+        { "bn": "করে", "pronunciation": "kore", "en": "do" }
+      ]
+    },
+    {
+      "bn": "থ্রেডরা খুব দ্রুত কাজ করে।",
+      "pronunciation": "Threadra khub druto kaj kore.",
+      "en": "The threads work very quickly.",
+      "context": "Describing the small workers.",
+      "category": "cpu-adventure",
+      "words": [
+        { "bn": "থ্রেডরা", "pronunciation": "threadra", "en": "the threads" },
+        { "bn": "খুব", "pronunciation": "khub", "en": "very" },
+        { "bn": "দ্রুত", "pronunciation": "druto", "en": "quickly" },
+        { "bn": "কাজ", "pronunciation": "kaj", "en": "work" },
+        { "bn": "করে", "pronunciation": "kore", "en": "do" }
+      ]
+    },
+    {
+      "bn": "আজ অনেক কাজ এসেছে।",
+      "pronunciation": "Aj onek kaj eshechhe.",
+      "en": "A lot of work has arrived today.",
+      "context": "Announcing a busy day.",
+      "category": "cpu-adventure",
+      "words": [
+        { "bn": "আজ", "pronunciation": "aj", "en": "today" },
+        { "bn": "অনেক", "pronunciation": "onek", "en": "a lot of" },
+        { "bn": "কাজ", "pronunciation": "kaj", "en": "work" },
+        { "bn": "এসেছে", "pronunciation": "eshechhe", "en": "has arrived" }
+      ]
+    },
+    {
+      "bn": "সবাই লাইনে দাঁড়াও।",
+      "pronunciation": "Shobai line-e darao.",
+      "en": "Everyone, stand in line.",
+      "context": "Organizing the workers.",
+      "category": "cpu-adventure",
+      "words": [
+        { "bn": "সবাই", "pronunciation": "shobai", "en": "everyone" },
+        { "bn": "লাইনে", "pronunciation": "line-e", "en": "in line" },
+        { "bn": "দাঁড়াও", "pronunciation": "darao", "en": "stand" }
+      ]
+    },
+    {
+      "bn": "বড় কাজটি ছোট অংশে ভাগ করো।",
+      "pronunciation": "Boro kajti chhoto ongsho-e bhag koro.",
+      "en": "Divide the big task into small parts.",
+      "context": "Giving a teamwork strategy.",
+      "category": "cpu-adventure",
+      "words": [
+        { "bn": "বড়", "pronunciation": "boro", "en": "big" },
+        { "bn": "কাজটি", "pronunciation": "kajti", "en": "the task" },
+        { "bn": "ছোট", "pronunciation": "chhoto", "en": "small" },
+        { "bn": "অংশে", "pronunciation": "ongsho-e", "en": "into parts" },
+        { "bn": "ভাগ", "pronunciation": "bhag", "en": "division" },
+        { "bn": "করো", "pronunciation": "koro", "en": "do" }
+      ]
+    },
+    {
+      "bn": "প্রতিটি থ্রেড নিজের অংশ শেষ করল।",
+      "pronunciation": "Protiti thread nijer ongsho shesh korlo.",
+      "en": "Each thread finished its own part.",
+      "context": "Reporting progress on a shared task.",
+      "category": "cpu-adventure",
+      "words": [
+        { "bn": "প্রতিটি", "pronunciation": "protiti", "en": "each" },
+        { "bn": "থ্রেড", "pronunciation": "thread", "en": "thread" },
+        { "bn": "নিজের", "pronunciation": "nijer", "en": "its own" },
+        { "bn": "অংশ", "pronunciation": "ongsho", "en": "part" },
+        { "bn": "শেষ", "pronunciation": "shesh", "en": "finished" },
+        { "bn": "করল", "pronunciation": "korlo", "en": "did" }
+      ]
+    },
+    {
+      "bn": "সব অংশ একসঙ্গে জুড়ে দাও।",
+      "pronunciation": "Shob ongsho eksongge jure dao.",
+      "en": "Join all the parts together.",
+      "context": "Completing a divided task.",
+      "category": "cpu-adventure",
+      "words": [
+        { "bn": "সব", "pronunciation": "shob", "en": "all" },
+        { "bn": "অংশ", "pronunciation": "ongsho", "en": "parts" },
+        { "bn": "একসঙ্গে", "pronunciation": "eksongge", "en": "together" },
+        { "bn": "জুড়ে", "pronunciation": "jure", "en": "joining" },
+        { "bn": "দাও", "pronunciation": "dao", "en": "do / give" }
+      ]
+    },
+    {
+      "bn": "জরুরি কাজ আগে হবে।",
+      "pronunciation": "Joruri kaj age hobe.",
+      "en": "Urgent work will be done first.",
+      "context": "Setting priorities when work piles up.",
+      "category": "cpu-adventure",
+      "words": [
+        { "bn": "জরুরি", "pronunciation": "joruri", "en": "urgent" },
+        { "bn": "কাজ", "pronunciation": "kaj", "en": "work" },
+        { "bn": "আগে", "pronunciation": "age", "en": "first" },
+        { "bn": "হবে", "pronunciation": "hobe", "en": "will happen" }
+      ]
+    },
+    {
+      "bn": "অন্য কাজ একটু অপেক্ষা করবে।",
+      "pronunciation": "Onno kaj ektu opekkha korbe.",
+      "en": "Other work will wait a little.",
+      "context": "Explaining a task queue.",
+      "category": "cpu-adventure",
+      "words": [
+        { "bn": "অন্য", "pronunciation": "onno", "en": "other" },
+        { "bn": "কাজ", "pronunciation": "kaj", "en": "work" },
+        { "bn": "একটু", "pronunciation": "ektu", "en": "a little" },
+        { "bn": "অপেক্ষা", "pronunciation": "opekkha", "en": "waiting" },
+        { "bn": "করবে", "pronunciation": "korbe", "en": "will do" }
+      ]
+    },
+    {
+      "bn": "ক্যাশ দরকারি তথ্য কাছে রাখে।",
+      "pronunciation": "Cache dorkari toththo kachhe rakhe.",
+      "en": "The cache keeps useful information nearby.",
+      "context": "Explaining cache memory.",
+      "category": "cpu-adventure",
+      "words": [
+        { "bn": "ক্যাশ", "pronunciation": "cache", "en": "cache" },
+        { "bn": "দরকারি", "pronunciation": "dorkari", "en": "useful" },
+        { "bn": "তথ্য", "pronunciation": "toththo", "en": "information" },
+        { "bn": "কাছে", "pronunciation": "kachhe", "en": "nearby" },
+        { "bn": "রাখে", "pronunciation": "rakhe", "en": "keeps" }
+      ]
+    },
+    {
+      "bn": "র‍্যাম চলমান কাজের তথ্য রাখে।",
+      "pronunciation": "RAM choloman kajer toththo rakhe.",
+      "en": "RAM stores information for work in progress.",
+      "context": "Explaining temporary memory.",
+      "category": "cpu-adventure",
+      "words": [
+        { "bn": "র‍্যাম", "pronunciation": "RAM", "en": "RAM" },
+        { "bn": "চলমান", "pronunciation": "choloman", "en": "ongoing" },
+        { "bn": "কাজের", "pronunciation": "kajer", "en": "of the work" },
+        { "bn": "তথ্য", "pronunciation": "toththo", "en": "information" },
+        { "bn": "রাখে", "pronunciation": "rakhe", "en": "stores" }
+      ]
+    },
+    {
+      "bn": "একটি বাগ ভুল তৈরি করল।",
+      "pronunciation": "Ekti bug bhul toiri korlo.",
+      "en": "A bug created an error.",
+      "context": "Describing a software problem.",
+      "category": "cpu-adventure",
+      "words": [
+        { "bn": "একটি", "pronunciation": "ekti", "en": "a" },
+        { "bn": "বাগ", "pronunciation": "bug", "en": "bug" },
+        { "bn": "ভুল", "pronunciation": "bhul", "en": "error" },
+        { "bn": "তৈরি", "pronunciation": "toiri", "en": "created" },
+        { "bn": "করল", "pronunciation": "korlo", "en": "did" }
+      ]
+    },
+    {
+      "bn": "ডিবাগ ডাক্তার ভুলটি খুঁজে ঠিক করলেন।",
+      "pronunciation": "Debug daktar bhulti khuje thik korlen.",
+      "en": "The debug doctor found and fixed the error.",
+      "context": "Explaining debugging through the story character.",
+      "category": "cpu-adventure",
+      "words": [
+        { "bn": "ডিবাগ", "pronunciation": "debug", "en": "debug" },
+        { "bn": "ডাক্তার", "pronunciation": "daktar", "en": "doctor" },
+        { "bn": "ভুলটি", "pronunciation": "bhulti", "en": "the error" },
+        { "bn": "খুঁজে", "pronunciation": "khuje", "en": "finding" },
+        { "bn": "ঠিক", "pronunciation": "thik", "en": "correct" },
+        { "bn": "করলেন", "pronunciation": "korlen", "en": "did respectfully" }
+      ]
+    },
+    {
+      "bn": "একসঙ্গে কাজ করলে বড় কাজও সহজ হয়।",
+      "pronunciation": "Eksongge kaj korle boro kaj-o shohoj hoy.",
+      "en": "When we work together, even a big task becomes easy.",
+      "context": "Stating the moral of the story.",
+      "category": "cpu-adventure",
+      "words": [
+        { "bn": "একসঙ্গে", "pronunciation": "eksongge", "en": "together" },
+        { "bn": "কাজ", "pronunciation": "kaj", "en": "work" },
+        { "bn": "করলে", "pronunciation": "korle", "en": "when doing" },
+        { "bn": "বড়", "pronunciation": "boro", "en": "big" },
+        { "bn": "কাজও", "pronunciation": "kaj-o", "en": "even a task" },
+        { "bn": "সহজ", "pronunciation": "shohoj", "en": "easy" },
+        { "bn": "হয়", "pronunciation": "hoy", "en": "becomes" }
+      ]
+    }
+  ],
+  "vocab": [
+    { "bn": "প্রসেসরপুর", "pronunciation": "Processorpur", "en": "Processorpur", "category": "setting", "sourcePhrase": "প্রসেসরপুর একটি আশ্চর্য রাজ্য।" },
+    { "bn": "সিপিইউ", "pronunciation": "CPU", "en": "central processing unit", "category": "computer-parts", "sourcePhrase": "সিপিইউ কম্পিউটারের মস্তিষ্ক।" },
+    { "bn": "কোর", "pronunciation": "core", "en": "processor core", "category": "computer-parts", "sourcePhrase": "চারটি কোর একসঙ্গে কাজ করে।" },
+    { "bn": "থ্রেড", "pronunciation": "thread", "en": "thread", "category": "computer-parts", "sourcePhrase": "প্রতিটি থ্রেড নিজের অংশ শেষ করল।" },
+    { "bn": "র‍্যাম", "pronunciation": "RAM", "en": "temporary working memory", "category": "computer-parts", "sourcePhrase": "র‍্যাম চলমান কাজের তথ্য রাখে।" },
+    { "bn": "ক্যাশ", "pronunciation": "cache", "en": "fast nearby memory", "category": "computer-parts", "sourcePhrase": "ক্যাশ দরকারি তথ্য কাছে রাখে।" },
+    { "bn": "বাগ", "pronunciation": "bug", "en": "software error", "category": "programming", "sourcePhrase": "একটি বাগ ভুল তৈরি করল।" },
+    { "bn": "ডিবাগ", "pronunciation": "debug", "en": "find and fix an error", "category": "programming", "sourcePhrase": "ডিবাগ ডাক্তার ভুলটি খুঁজে ঠিক করলেন।" },
+    { "bn": "মস্তিষ্ক", "pronunciation": "mostishko", "en": "brain", "category": "roles", "sourcePhrase": "সিপিইউ কম্পিউটারের মস্তিষ্ক।" },
+    { "bn": "তথ্য", "pronunciation": "toththo", "en": "information", "category": "computing", "sourcePhrase": "ক্যাশ দরকারি তথ্য কাছে রাখে।" },
+    { "bn": "কাজ", "pronunciation": "kaj", "en": "work / task", "category": "teamwork", "sourcePhrase": "আজ অনেক কাজ এসেছে।" },
+    { "bn": "অংশ", "pronunciation": "ongsho", "en": "part", "category": "teamwork", "sourcePhrase": "সব অংশ একসঙ্গে জুড়ে দাও।" },
+    { "bn": "ভাগ", "pronunciation": "bhag", "en": "division / share", "category": "teamwork", "sourcePhrase": "বড় কাজটি ছোট অংশে ভাগ করো।" },
+    { "bn": "একসঙ্গে", "pronunciation": "eksongge", "en": "together", "category": "teamwork", "sourcePhrase": "চারটি কোর একসঙ্গে কাজ করে।" },
+    { "bn": "জরুরি", "pronunciation": "joruri", "en": "urgent", "category": "priorities", "sourcePhrase": "জরুরি কাজ আগে হবে।" },
+    { "bn": "অপেক্ষা", "pronunciation": "opekkha", "en": "wait", "category": "priorities", "sourcePhrase": "অন্য কাজ একটু অপেক্ষা করবে।" },
+    { "bn": "দ্রুত", "pronunciation": "druto", "en": "quickly / fast", "category": "descriptions", "sourcePhrase": "থ্রেডরা খুব দ্রুত কাজ করে।" },
+    { "bn": "সহজ", "pronunciation": "shohoj", "en": "easy", "category": "descriptions", "sourcePhrase": "একসঙ্গে কাজ করলে বড় কাজও সহজ হয়।" }
+  ],
+  "practice": [
+    "Say the Bengali names for CPU, core, thread, RAM, cache, bug, and debug.",
+    "Read the teamwork phrases aloud, then repeat them without looking at the transliteration.",
+    "Explain in Bengali why a large task should be divided into smaller parts.",
+    "Act out Processorpur: assign the roles of CPU, cores, threads, RAM, cache, bug, and debug doctor."
+  ],
+  "notes": [
+    "Technical words such as সিপিইউ, কোর, থ্রেড, র‍্যাম, ক্যাশ, বাগ, and ডিবাগ are commonly borrowed from English in everyday Bengali.",
+    "কাজ can mean either work in general or one specific task, depending on context.",
+    "The lesson uses teamwork language from the story while giving child-friendly explanations of computer concepts."
+  ]
+}

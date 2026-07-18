@@ -1,0 +1,356 @@
+{
+  "id": "dotnet-runtime",
+  "title": ".NET Runtime: From C# Code to Web Response",
+  "summary": "Learn Bengali technical vocabulary and explanations for how C# code is compiled, executed, memory-managed, and used to serve an ASP.NET Core request.",
+  "level": "advanced",
+  "topic": ".NET and Software Development",
+  "focus": "technical explanations, process sequencing, and runtime vocabulary",
+  "phrases": [
+    {
+      "bn": "ডটনেট একটি আধুনিক ক্রস-প্ল্যাটফর্ম সফটওয়্যার প্ল্যাটফর্ম।",
+      "pronunciation": "Dotnet ekti adhunik cross-platform software platform.",
+      "en": ".NET is a modern cross-platform software platform.",
+      "context": "Defining .NET and its central capability.",
+      "category": "platform",
+      "words": [
+        { "bn": "ডটনেট", "pronunciation": "Dotnet", "en": ".NET" },
+        { "bn": "একটি", "pronunciation": "ekti", "en": "a" },
+        { "bn": "আধুনিক", "pronunciation": "adhunik", "en": "modern" },
+        { "bn": "ক্রস-প্ল্যাটফর্ম", "pronunciation": "cross-platform", "en": "cross-platform" },
+        { "bn": "সফটওয়্যার", "pronunciation": "software", "en": "software" },
+        { "bn": "প্ল্যাটফর্ম", "pronunciation": "platform", "en": "platform" }
+      ]
+    },
+    {
+      "bn": "একই অ্যাপ্লিকেশন উইন্ডোজ লিনাক্স এবং ম্যাকওএসে চলতে পারে।",
+      "pronunciation": "Eki application Windows Linux ebong macOS-e cholte pare.",
+      "en": "The same application can run on Windows, Linux, and macOS.",
+      "context": "Explaining cross-platform execution.",
+      "category": "platform",
+      "words": [
+        { "bn": "একই", "pronunciation": "eki", "en": "the same" },
+        { "bn": "অ্যাপ্লিকেশন", "pronunciation": "application", "en": "application" },
+        { "bn": "উইন্ডোজ", "pronunciation": "Windows", "en": "Windows" },
+        { "bn": "লিনাক্স", "pronunciation": "Linux", "en": "Linux" },
+        { "bn": "এবং", "pronunciation": "ebong", "en": "and" },
+        { "bn": "ম্যাকওএসে", "pronunciation": "macOS-e", "en": "on macOS" },
+        { "bn": "চলতে", "pronunciation": "cholte", "en": "to run" },
+        { "bn": "পারে", "pronunciation": "pare", "en": "can" }
+      ]
+    },
+    {
+      "bn": "রসলিন কম্পাইলার সি শার্প কোডকে আইএলে রূপান্তর করে।",
+      "pronunciation": "Roslyn compiler C sharp code-ke IL-e rupantor kore.",
+      "en": "The Roslyn compiler converts C# code into IL.",
+      "context": "Describing the compilation step.",
+      "category": "compilation",
+      "words": [
+        { "bn": "রসলিন", "pronunciation": "Roslyn", "en": "Roslyn" },
+        { "bn": "কম্পাইলার", "pronunciation": "compiler", "en": "compiler" },
+        { "bn": "সি", "pronunciation": "C", "en": "C" },
+        { "bn": "শার্প", "pronunciation": "sharp", "en": "sharp" },
+        { "bn": "কোডকে", "pronunciation": "code-ke", "en": "the code" },
+        { "bn": "আইএলে", "pronunciation": "IL-e", "en": "into IL" },
+        { "bn": "রূপান্তর", "pronunciation": "rupantor", "en": "conversion" },
+        { "bn": "করে", "pronunciation": "kore", "en": "does" }
+      ]
+    },
+    {
+      "bn": "অ্যাসেম্বলির মধ্যে আইএল কোড এবং মেটাডেটা থাকে।",
+      "pronunciation": "Assembly-r moddhe IL code ebong metadata thake.",
+      "en": "An assembly contains IL code and metadata.",
+      "context": "Explaining the contents of a DLL or EXE assembly.",
+      "category": "compilation",
+      "words": [
+        { "bn": "অ্যাসেম্বলির", "pronunciation": "assembly-r", "en": "of an assembly" },
+        { "bn": "মধ্যে", "pronunciation": "moddhe", "en": "inside" },
+        { "bn": "আইএল", "pronunciation": "IL", "en": "IL" },
+        { "bn": "কোড", "pronunciation": "code", "en": "code" },
+        { "bn": "এবং", "pronunciation": "ebong", "en": "and" },
+        { "bn": "মেটাডেটা", "pronunciation": "metadata", "en": "metadata" },
+        { "bn": "থাকে", "pronunciation": "thake", "en": "remains / is contained" }
+      ]
+    },
+    {
+      "bn": "মেটাডেটা ক্লাস মেথড এবং টাইপের তথ্য বর্ণনা করে।",
+      "pronunciation": "Metadata class method ebong type-er tottho bornona kore.",
+      "en": "Metadata describes information about classes, methods, and types.",
+      "context": "Introducing metadata and reflection.",
+      "category": "compilation",
+      "words": [
+        { "bn": "মেটাডেটা", "pronunciation": "metadata", "en": "metadata" },
+        { "bn": "ক্লাস", "pronunciation": "class", "en": "classes" },
+        { "bn": "মেথড", "pronunciation": "method", "en": "methods" },
+        { "bn": "এবং", "pronunciation": "ebong", "en": "and" },
+        { "bn": "টাইপের", "pronunciation": "type-er", "en": "of types" },
+        { "bn": "তথ্য", "pronunciation": "tottho", "en": "information" },
+        { "bn": "বর্ণনা", "pronunciation": "bornona", "en": "description" },
+        { "bn": "করে", "pronunciation": "kore", "en": "does" }
+      ]
+    },
+    {
+      "bn": "ডটনেট হোস্ট উপযুক্ত রানটাইম খুঁজে বের করে।",
+      "pronunciation": "Dotnet host upojukto runtime khuje ber kore.",
+      "en": "The .NET host finds the appropriate runtime.",
+      "context": "Explaining what happens after the dotnet command starts.",
+      "category": "startup",
+      "words": [
+        { "bn": "ডটনেট", "pronunciation": "Dotnet", "en": ".NET" },
+        { "bn": "হোস্ট", "pronunciation": "host", "en": "host" },
+        { "bn": "উপযুক্ত", "pronunciation": "upojukto", "en": "appropriate" },
+        { "bn": "রানটাইম", "pronunciation": "runtime", "en": "runtime" },
+        { "bn": "খুঁজে", "pronunciation": "khuje", "en": "searching" },
+        { "bn": "বের", "pronunciation": "ber", "en": "out" },
+        { "bn": "করে", "pronunciation": "kore", "en": "does" }
+      ]
+    },
+    {
+      "bn": "কোরসিএলআর অ্যাসেম্বলি লোড করে এবং পরিবেশ প্রস্তুত করে।",
+      "pronunciation": "CoreCLR assembly load kore ebong poribesh prostut kore.",
+      "en": "CoreCLR loads the assembly and prepares the environment.",
+      "context": "Summarizing runtime initialization.",
+      "category": "startup",
+      "words": [
+        { "bn": "কোরসিএলআর", "pronunciation": "CoreCLR", "en": "CoreCLR" },
+        { "bn": "অ্যাসেম্বলি", "pronunciation": "assembly", "en": "assembly" },
+        { "bn": "লোড", "pronunciation": "load", "en": "load" },
+        { "bn": "করে", "pronunciation": "kore", "en": "does" },
+        { "bn": "এবং", "pronunciation": "ebong", "en": "and" },
+        { "bn": "পরিবেশ", "pronunciation": "poribesh", "en": "environment" },
+        { "bn": "প্রস্তুত", "pronunciation": "prostut", "en": "ready" },
+        { "bn": "করে", "pronunciation": "kore", "en": "makes" }
+      ]
+    },
+    {
+      "bn": "জিট কম্পাইলার আইএলকে মেশিন কোডে রূপান্তর করে।",
+      "pronunciation": "JIT compiler IL-ke machine code-e rupantor kore.",
+      "en": "The JIT compiler converts IL into machine code.",
+      "context": "Explaining first-call compilation for the current processor.",
+      "category": "execution",
+      "words": [
+        { "bn": "জিট", "pronunciation": "JIT", "en": "JIT" },
+        { "bn": "কম্পাইলার", "pronunciation": "compiler", "en": "compiler" },
+        { "bn": "আইএলকে", "pronunciation": "IL-ke", "en": "IL" },
+        { "bn": "মেশিন", "pronunciation": "machine", "en": "machine" },
+        { "bn": "কোডে", "pronunciation": "code-e", "en": "into code" },
+        { "bn": "রূপান্তর", "pronunciation": "rupantor", "en": "conversion" },
+        { "bn": "করে", "pronunciation": "kore", "en": "does" }
+      ]
+    },
+    {
+      "bn": "নেটিভ এওটি প্রকাশের সময়ই মেশিন কোড তৈরি করে।",
+      "pronunciation": "Native AOT prokash-er shomoy-i machine code toiri kore.",
+      "en": "Native AOT creates machine code at publish time.",
+      "context": "Contrasting ahead-of-time compilation with JIT.",
+      "category": "execution",
+      "words": [
+        { "bn": "নেটিভ", "pronunciation": "native", "en": "native" },
+        { "bn": "এওটি", "pronunciation": "AOT", "en": "AOT" },
+        { "bn": "প্রকাশের", "pronunciation": "prokash-er", "en": "of publishing" },
+        { "bn": "সময়ই", "pronunciation": "shomoy-i", "en": "at the very time" },
+        { "bn": "মেশিন", "pronunciation": "machine", "en": "machine" },
+        { "bn": "কোড", "pronunciation": "code", "en": "code" },
+        { "bn": "তৈরি", "pronunciation": "toiri", "en": "create" },
+        { "bn": "করে", "pronunciation": "kore", "en": "does" }
+      ]
+    },
+    {
+      "bn": "নতুন অবজেক্ট ম্যানেজড হিপে সংরক্ষিত হয়।",
+      "pronunciation": "Notun object managed heap-e songrokkhito hoy.",
+      "en": "New objects are stored on the managed heap.",
+      "context": "Introducing managed memory allocation.",
+      "category": "memory",
+      "words": [
+        { "bn": "নতুন", "pronunciation": "notun", "en": "new" },
+        { "bn": "অবজেক্ট", "pronunciation": "object", "en": "objects" },
+        { "bn": "ম্যানেজড", "pronunciation": "managed", "en": "managed" },
+        { "bn": "হিপে", "pronunciation": "heap-e", "en": "on the heap" },
+        { "bn": "সংরক্ষিত", "pronunciation": "songrokkhito", "en": "stored" },
+        { "bn": "হয়", "pronunciation": "hoy", "en": "are" }
+      ]
+    },
+    {
+      "bn": "গার্বেজ কালেক্টর অব্যবহৃত মেমরি পুনরুদ্ধার করে।",
+      "pronunciation": "Garbage collector obyabohrito memory punoruddhar kore.",
+      "en": "The garbage collector reclaims unused memory.",
+      "context": "Explaining automatic memory reclamation.",
+      "category": "memory",
+      "words": [
+        { "bn": "গার্বেজ", "pronunciation": "garbage", "en": "garbage" },
+        { "bn": "কালেক্টর", "pronunciation": "collector", "en": "collector" },
+        { "bn": "অব্যবহৃত", "pronunciation": "obyabohrito", "en": "unused" },
+        { "bn": "মেমরি", "pronunciation": "memory", "en": "memory" },
+        { "bn": "পুনরুদ্ধার", "pronunciation": "punoruddhar", "en": "recovery" },
+        { "bn": "করে", "pronunciation": "kore", "en": "does" }
+      ]
+    },
+    {
+      "bn": "স্বল্পস্থায়ী অবজেক্ট প্রথমে জেনারেশন শূন্যে যায়।",
+      "pronunciation": "Sholposthayi object prothome generation shunye jay.",
+      "en": "Short-lived objects first go to Generation 0.",
+      "context": "Explaining generational garbage collection.",
+      "category": "memory",
+      "words": [
+        { "bn": "স্বল্পস্থায়ী", "pronunciation": "sholposthayi", "en": "short-lived" },
+        { "bn": "অবজেক্ট", "pronunciation": "object", "en": "objects" },
+        { "bn": "প্রথমে", "pronunciation": "prothome", "en": "first" },
+        { "bn": "জেনারেশন", "pronunciation": "generation", "en": "generation" },
+        { "bn": "শূন্যে", "pronunciation": "shunye", "en": "to zero" },
+        { "bn": "যায়", "pronunciation": "jay", "en": "go" }
+      ]
+    },
+    {
+      "bn": "স্ট্যাক মেথড কল লোকাল ভেরিয়েবল এবং প্যারামিটার রাখে।",
+      "pronunciation": "Stack method call local variable ebong parameter rakhe.",
+      "en": "The stack holds method calls, local variables, and parameters.",
+      "context": "Contrasting stack memory with heap memory.",
+      "category": "memory",
+      "words": [
+        { "bn": "স্ট্যাক", "pronunciation": "stack", "en": "stack" },
+        { "bn": "মেথড", "pronunciation": "method", "en": "method" },
+        { "bn": "কল", "pronunciation": "call", "en": "calls" },
+        { "bn": "লোকাল", "pronunciation": "local", "en": "local" },
+        { "bn": "ভেরিয়েবল", "pronunciation": "variable", "en": "variables" },
+        { "bn": "এবং", "pronunciation": "ebong", "en": "and" },
+        { "bn": "প্যারামিটার", "pronunciation": "parameter", "en": "parameters" },
+        { "bn": "রাখে", "pronunciation": "rakhe", "en": "holds" }
+      ]
+    },
+    {
+      "bn": "ডিপেন্ডেন্সি ইনজেকশন প্রয়োজনীয় সার্ভিস সরবরাহ করে।",
+      "pronunciation": "Dependency injection proyojoniyo service sorboraho kore.",
+      "en": "Dependency injection supplies the required services.",
+      "context": "Explaining service construction in ASP.NET Core.",
+      "category": "aspnet-core",
+      "words": [
+        { "bn": "ডিপেন্ডেন্সি", "pronunciation": "dependency", "en": "dependency" },
+        { "bn": "ইনজেকশন", "pronunciation": "injection", "en": "injection" },
+        { "bn": "প্রয়োজনীয়", "pronunciation": "proyojoniyo", "en": "required" },
+        { "bn": "সার্ভিস", "pronunciation": "service", "en": "services" },
+        { "bn": "সরবরাহ", "pronunciation": "sorboraho", "en": "supply" },
+        { "bn": "করে", "pronunciation": "kore", "en": "does" }
+      ]
+    },
+    {
+      "bn": "প্রতিটি এইচটিটিপি রিকোয়েস্ট মিডলওয়্যার পাইপলাইন অতিক্রম করে।",
+      "pronunciation": "Protiti HTTP request middleware pipeline otikrom kore.",
+      "en": "Every HTTP request passes through the middleware pipeline.",
+      "context": "Describing the ASP.NET Core request path.",
+      "category": "aspnet-core",
+      "words": [
+        { "bn": "প্রতিটি", "pronunciation": "protiti", "en": "every" },
+        { "bn": "এইচটিটিপি", "pronunciation": "HTTP", "en": "HTTP" },
+        { "bn": "রিকোয়েস্ট", "pronunciation": "request", "en": "request" },
+        { "bn": "মিডলওয়্যার", "pronunciation": "middleware", "en": "middleware" },
+        { "bn": "পাইপলাইন", "pronunciation": "pipeline", "en": "pipeline" },
+        { "bn": "অতিক্রম", "pronunciation": "otikrom", "en": "passing through" },
+        { "bn": "করে", "pronunciation": "kore", "en": "does" }
+      ]
+    },
+    {
+      "bn": "অ্যাসিঙ্ক কাজের সময় থ্রেড অন্য রিকোয়েস্ট সামলাতে পারে।",
+      "pronunciation": "Async kajer shomoy thread onno request samlate pare.",
+      "en": "During asynchronous work, the thread can handle another request.",
+      "context": "Explaining scalable asynchronous I/O.",
+      "category": "concurrency",
+      "words": [
+        { "bn": "অ্যাসিঙ্ক", "pronunciation": "async", "en": "asynchronous" },
+        { "bn": "কাজের", "pronunciation": "kajer", "en": "of work" },
+        { "bn": "সময়", "pronunciation": "shomoy", "en": "during" },
+        { "bn": "থ্রেড", "pronunciation": "thread", "en": "thread" },
+        { "bn": "অন্য", "pronunciation": "onno", "en": "another" },
+        { "bn": "রিকোয়েস্ট", "pronunciation": "request", "en": "request" },
+        { "bn": "সামলাতে", "pronunciation": "samlate", "en": "to handle" },
+        { "bn": "পারে", "pronunciation": "pare", "en": "can" }
+      ]
+    },
+    {
+      "bn": "ফ্রেমওয়ার্ক-নির্ভর প্রকাশনায় লক্ষ্য কম্পিউটারে রানটাইম থাকতে হয়।",
+      "pronunciation": "Framework-nirbhor prokashonay lokkho computer-e runtime thakte hoy.",
+      "en": "A framework-dependent deployment requires the runtime on the target computer.",
+      "context": "Comparing deployment models.",
+      "category": "deployment",
+      "words": [
+        { "bn": "ফ্রেমওয়ার্ক-নির্ভর", "pronunciation": "framework-nirbhor", "en": "framework-dependent" },
+        { "bn": "প্রকাশনায়", "pronunciation": "prokashonay", "en": "in deployment" },
+        { "bn": "লক্ষ্য", "pronunciation": "lokkho", "en": "target" },
+        { "bn": "কম্পিউটারে", "pronunciation": "computer-e", "en": "on the computer" },
+        { "bn": "রানটাইম", "pronunciation": "runtime", "en": "runtime" },
+        { "bn": "থাকতে", "pronunciation": "thakte", "en": "to be present" },
+        { "bn": "হয়", "pronunciation": "hoy", "en": "is required" }
+      ]
+    },
+    {
+      "bn": "স্বয়ংসম্পূর্ণ প্রকাশনায় রানটাইম অ্যাপ্লিকেশনের সঙ্গে থাকে।",
+      "pronunciation": "Shoyongshompurno prokashonay runtime application-er shonge thake.",
+      "en": "In a self-contained deployment, the runtime is included with the application.",
+      "context": "Explaining self-contained deployment.",
+      "category": "deployment",
+      "words": [
+        { "bn": "স্বয়ংসম্পূর্ণ", "pronunciation": "shoyongshompurno", "en": "self-contained" },
+        { "bn": "প্রকাশনায়", "pronunciation": "prokashonay", "en": "in deployment" },
+        { "bn": "রানটাইম", "pronunciation": "runtime", "en": "runtime" },
+        { "bn": "অ্যাপ্লিকেশনের", "pronunciation": "application-er", "en": "with the application" },
+        { "bn": "সঙ্গে", "pronunciation": "shonge", "en": "together" },
+        { "bn": "থাকে", "pronunciation": "thake", "en": "is included" }
+      ]
+    },
+    {
+      "bn": "কেস্ট্রেল রিকোয়েস্ট গ্রহণ করে এবং রেসপন্স ফেরত পাঠায়।",
+      "pronunciation": "Kestrel request grohon kore ebong response ferot pathay.",
+      "en": "Kestrel accepts the request and sends the response back.",
+      "context": "Completing the ASP.NET Core request lifecycle.",
+      "category": "aspnet-core",
+      "words": [
+        { "bn": "কেস্ট্রেল", "pronunciation": "Kestrel", "en": "Kestrel" },
+        { "bn": "রিকোয়েস্ট", "pronunciation": "request", "en": "request" },
+        { "bn": "গ্রহণ", "pronunciation": "grohon", "en": "acceptance" },
+        { "bn": "করে", "pronunciation": "kore", "en": "does" },
+        { "bn": "এবং", "pronunciation": "ebong", "en": "and" },
+        { "bn": "রেসপন্স", "pronunciation": "response", "en": "response" },
+        { "bn": "ফেরত", "pronunciation": "ferot", "en": "back" },
+        { "bn": "পাঠায়", "pronunciation": "pathay", "en": "sends" }
+      ]
+    }
+  ],
+  "vocab": [
+    { "bn": "ডটনেট", "pronunciation": "Dotnet", "en": ".NET", "category": "platform", "sourcePhrase": "ডটনেট একটি আধুনিক ক্রস-প্ল্যাটফর্ম সফটওয়্যার প্ল্যাটফর্ম।" },
+    { "bn": "ক্রস-প্ল্যাটফর্ম", "pronunciation": "cross-platform", "en": "cross-platform", "category": "platform", "sourcePhrase": "ডটনেট একটি আধুনিক ক্রস-প্ল্যাটফর্ম সফটওয়্যার প্ল্যাটফর্ম।" },
+    { "bn": "কম্পাইলার", "pronunciation": "compiler", "en": "compiler", "category": "compilation", "sourcePhrase": "রসলিন কম্পাইলার সি শার্প কোডকে আইএলে রূপান্তর করে।" },
+    { "bn": "আইএল", "pronunciation": "IL", "en": "Intermediate Language", "category": "compilation", "sourcePhrase": "অ্যাসেম্বলির মধ্যে আইএল কোড এবং মেটাডেটা থাকে।" },
+    { "bn": "অ্যাসেম্বলি", "pronunciation": "assembly", "en": "assembly", "category": "compilation", "sourcePhrase": "কোরসিএলআর অ্যাসেম্বলি লোড করে এবং পরিবেশ প্রস্তুত করে।" },
+    { "bn": "মেটাডেটা", "pronunciation": "metadata", "en": "metadata", "category": "compilation", "sourcePhrase": "অ্যাসেম্বলির মধ্যে আইএল কোড এবং মেটাডেটা থাকে।" },
+    { "bn": "হোস্ট", "pronunciation": "host", "en": "host", "category": "startup", "sourcePhrase": "ডটনেট হোস্ট উপযুক্ত রানটাইম খুঁজে বের করে।" },
+    { "bn": "রানটাইম", "pronunciation": "runtime", "en": "runtime", "category": "startup", "sourcePhrase": "ডটনেট হোস্ট উপযুক্ত রানটাইম খুঁজে বের করে।" },
+    { "bn": "কোরসিএলআর", "pronunciation": "CoreCLR", "en": "CoreCLR", "category": "startup", "sourcePhrase": "কোরসিএলআর অ্যাসেম্বলি লোড করে এবং পরিবেশ প্রস্তুত করে।" },
+    { "bn": "জিট", "pronunciation": "JIT", "en": "Just-In-Time compiler", "category": "execution", "sourcePhrase": "জিট কম্পাইলার আইএলকে মেশিন কোডে রূপান্তর করে।" },
+    { "bn": "মেশিন কোড", "pronunciation": "machine code", "en": "machine code", "category": "execution", "sourcePhrase": "জিট কম্পাইলার আইএলকে মেশিন কোডে রূপান্তর করে।" },
+    { "bn": "নেটিভ এওটি", "pronunciation": "native AOT", "en": "Native AOT", "category": "execution", "sourcePhrase": "নেটিভ এওটি প্রকাশের সময়ই মেশিন কোড তৈরি করে।" },
+    { "bn": "ম্যানেজড হিপ", "pronunciation": "managed heap", "en": "managed heap", "category": "memory", "sourcePhrase": "নতুন অবজেক্ট ম্যানেজড হিপে সংরক্ষিত হয়।" },
+    { "bn": "গার্বেজ কালেক্টর", "pronunciation": "garbage collector", "en": "garbage collector", "category": "memory", "sourcePhrase": "গার্বেজ কালেক্টর অব্যবহৃত মেমরি পুনরুদ্ধার করে।" },
+    { "bn": "জেনারেশন", "pronunciation": "generation", "en": "generation", "category": "memory", "sourcePhrase": "স্বল্পস্থায়ী অবজেক্ট প্রথমে জেনারেশন শূন্যে যায়।" },
+    { "bn": "স্ট্যাক", "pronunciation": "stack", "en": "stack", "category": "memory", "sourcePhrase": "স্ট্যাক মেথড কল লোকাল ভেরিয়েবল এবং প্যারামিটার রাখে।" },
+    { "bn": "ডিপেন্ডেন্সি ইনজেকশন", "pronunciation": "dependency injection", "en": "dependency injection", "category": "aspnet-core", "sourcePhrase": "ডিপেন্ডেন্সি ইনজেকশন প্রয়োজনীয় সার্ভিস সরবরাহ করে।" },
+    { "bn": "মিডলওয়্যার", "pronunciation": "middleware", "en": "middleware", "category": "aspnet-core", "sourcePhrase": "প্রতিটি এইচটিটিপি রিকোয়েস্ট মিডলওয়্যার পাইপলাইন অতিক্রম করে।" },
+    { "bn": "পাইপলাইন", "pronunciation": "pipeline", "en": "pipeline", "category": "aspnet-core", "sourcePhrase": "প্রতিটি এইচটিটিপি রিকোয়েস্ট মিডলওয়্যার পাইপলাইন অতিক্রম করে।" },
+    { "bn": "অ্যাসিঙ্ক", "pronunciation": "async", "en": "asynchronous", "category": "concurrency", "sourcePhrase": "অ্যাসিঙ্ক কাজের সময় থ্রেড অন্য রিকোয়েস্ট সামলাতে পারে।" },
+    { "bn": "থ্রেড", "pronunciation": "thread", "en": "thread", "category": "concurrency", "sourcePhrase": "অ্যাসিঙ্ক কাজের সময় থ্রেড অন্য রিকোয়েস্ট সামলাতে পারে।" },
+    { "bn": "ফ্রেমওয়ার্ক-নির্ভর", "pronunciation": "framework-nirbhor", "en": "framework-dependent", "category": "deployment", "sourcePhrase": "ফ্রেমওয়ার্ক-নির্ভর প্রকাশনায় লক্ষ্য কম্পিউটারে রানটাইম থাকতে হয়।" },
+    { "bn": "স্বয়ংসম্পূর্ণ", "pronunciation": "shoyongshompurno", "en": "self-contained", "category": "deployment", "sourcePhrase": "স্বয়ংসম্পূর্ণ প্রকাশনায় রানটাইম অ্যাপ্লিকেশনের সঙ্গে থাকে।" },
+    { "bn": "কেস্ট্রেল", "pronunciation": "Kestrel", "en": "Kestrel web server", "category": "aspnet-core", "sourcePhrase": "কেস্ট্রেল রিকোয়েস্ট গ্রহণ করে এবং রেসপন্স ফেরত পাঠায়।" }
+  ],
+  "practice": [
+    "Read the complete execution chain aloud: C# source code, Roslyn, IL, assembly, host, CoreCLR, JIT, machine code, and CPU.",
+    "Explain in Bengali how the managed heap differs from the stack and how the garbage collector reclaims memory.",
+    "Compare JIT with Native AOT and framework-dependent deployment with self-contained deployment.",
+    "Trace an ASP.NET Core request from Kestrel through middleware and dependency injection to the returned response.",
+    "Use the phrase cards in Bengali-only mode, then repeat them in Bengali-to-English mode."
+  ],
+  "notes": [
+    "The official platform name has been .NET since .NET 5, although many speakers still informally say .NET Core.",
+    "Technical terms such as রানটাইম, কম্পাইলার, মেটাডেটা, জিট, স্ট্যাক, হিপ, থ্রেড, and মিডলওয়্যার are commonly borrowed from English in Bengali software discussions.",
+    "IL is processor-independent, while JIT produces processor-specific machine code when a method runs.",
+    "Value types are not always stored on the stack; their storage depends on context. Reference-type objects generally live on the managed heap.",
+    "The often-cited Large Object Heap threshold is approximately 85,000 bytes and has implementation details that vary by object type and runtime version."
+  ]
+}
