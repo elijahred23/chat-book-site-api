@@ -5,7 +5,7 @@
   --bn-primary: #176b4d;
   --bn-primary-dark: #0f5139;
   min-height: 100vh;
-  padding: clamp(.75rem, 2vw, 1.75rem) 0 clamp(3rem, 7vw, 6rem);
+  padding: clamp(.75rem, 2vw, 1.75rem) 0 calc(6rem + env(safe-area-inset-bottom, 0px));
   background:
     radial-gradient(circle at 8% 0%, rgba(60, 160, 116, .13), transparent 28rem),
     radial-gradient(circle at 98% 12%, rgba(232, 151, 60, .10), transparent 24rem),
@@ -63,16 +63,19 @@
 .bn-content-heading h3 { margin: .1rem 0 0; color: var(--bn-ink); font-size: 1.25rem; }
 .bn-page .bn-phrase-card { display: grid; gap: .45rem; padding: clamp(1rem, 2vw, 1.3rem) !important; border-color: var(--bn-line); border-radius: 16px; box-shadow: 0 7px 22px rgba(36,60,46,.055); }
 .bn-script { color: var(--bn-ink); font-family: "Noto Sans Bengali", "Nirmala UI", sans-serif; font-size: clamp(1.35rem, 3vw, 1.8rem); line-height: 1.45; }
-.bn-translate-link { width: fit-content; text-decoration: underline; text-decoration-color: rgba(23, 107, 77, .35); text-decoration-thickness: 1px; text-underline-offset: .2em; transition: color 140ms ease, text-decoration-color 140ms ease; }
-.bn-translate-link:hover { color: var(--bn-primary); text-decoration-color: currentColor; }
-.bn-translate-link:focus-visible { outline: 3px solid rgba(23, 107, 77, .3); outline-offset: 3px; }
 .bn-pronunciation { color: var(--bn-primary); font-size: .88rem; font-weight: 700; }
 .bn-translation { color: #39473f; font-size: 1rem; font-weight: 650; }
 .bn-context { display: flex; gap: .5rem; margin-top: .35rem; padding-top: .7rem; border-top: 1px solid #edf1ee; color: var(--bn-muted); font-size: .85rem; }
 .bn-context span { flex: 0 0 auto; color: #829087; font-size: .68rem; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }
 .bn-audio-actions { align-items: center; }
 .bn-page .bn-audio-actions .bn-btn { min-height: 38px; padding: .45rem .7rem; font-size: .78rem; box-shadow: none; }
+.bn-page .bn-icon-btn { display: inline-grid; width: 42px; height: 38px; min-height: 38px; padding: 0; place-items: center; font-size: 1.15rem; text-decoration: none; }
+.bn-language-icon { position: relative; display: inline-grid; place-items: center; }
+.bn-language-icon > span { position: absolute; right: -.45rem; bottom: -.35rem; padding: .05rem .16rem; border-radius: 3px; background: var(--bn-primary); color: #fff; font-size: .46rem; font-weight: 900; line-height: 1; letter-spacing: .02em; }
 .bn-page .bn-bulk-actions { position: sticky; bottom: .75rem; z-index: 4; padding: .65rem; border: 1px solid var(--bn-line); border-radius: 14px; background: rgba(255,255,255,.94); box-shadow: 0 10px 30px rgba(36,60,46,.12); backdrop-filter: blur(12px); }
+.bn-jump-bar { position: fixed; z-index: 20; right: 1rem; bottom: calc(1rem + env(safe-area-inset-bottom, 0px)); display: flex; width: min(28rem, calc(100vw - 2rem)); align-items: center; gap: .7rem; padding: .65rem .75rem; border: 1px solid rgba(203, 216, 207, .95); border-radius: 14px; background: rgba(255, 255, 255, .96); box-shadow: 0 12px 34px rgba(23, 48, 33, .2); backdrop-filter: blur(12px); }
+.bn-jump-bar > span { flex: 0 0 auto; color: var(--bn-primary-dark); font-size: .74rem; font-weight: 850; }
+.bn-jump-bar .bn-select { min-width: 0; flex: 1 1 auto; }
 
 .bn-page .bn-vocab-list { grid-template-columns: repeat(2, minmax(0,1fr)); gap: .75rem !important; }
 .bn-page .bn-vocab-list > .bn-content-heading,
@@ -90,9 +93,11 @@
 .bn-page .bn-stat { border-color: var(--bn-line); }
 
 @media (max-width: 640px) {
-  .bn-page { padding-top: 0; }
+  .bn-page { padding-top: 0; padding-bottom: calc(6rem + env(safe-area-inset-bottom, 0px)); }
   .bn-page .bn-shell { width: 100%; }
   .bn-page .bn-card { border-right: 0; border-left: 0; border-radius: 0; box-shadow: none; }
+  .bn-jump-bar { right: .65rem; bottom: calc(.65rem + env(safe-area-inset-bottom, 0px)); width: calc(100vw - 1.3rem); }
+  .bn-jump-bar > span { font-size: .68rem; }
   .bn-page .bn-header-card { grid-template-columns: 1fr auto; padding: 1.1rem 1rem 1rem; }
   .bn-hero-copy p { max-width: 17rem; font-size: .85rem; }
   .bn-lesson-count { min-width: 4.4rem; padding: .65rem; }

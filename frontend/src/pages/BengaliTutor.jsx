@@ -1,4 +1,7 @@
 import React, { useEffect, useMemo, useState, useCallback } from "react";
+import PropTypes from "prop-types";
+import { FcGoogle } from "react-icons/fc";
+import { FaVolumeHigh } from "react-icons/fa6";
 import ActionButtons from "../ui/ActionButtons.jsx";
 import { withPhraseWords } from "../utils/bengaliPhraseBreakdown.js";
 import adjectivesLesson from "../bengali_lessons/adjectives.json";
@@ -98,10 +101,60 @@ const speak = (text, lang = "bn") => {
   window.speechSynthesis.speak(utter);
 };
 
+const LanguageIcon = ({ language }) => (
+  <span className="bn-language-icon" aria-hidden="true">
+    <FaVolumeHigh />
+    <span>{language}</span>
+  </span>
+);
+
+const BengaliItemActions = ({ item }) => (
+  <div className="bn-game-actions bn-audio-actions" style={{ marginTop: 8 }}>
+    <button
+      className="bn-btn secondary bn-icon-btn"
+      onClick={() => speak(item.bn, "bn")}
+      aria-label="Hear Bengali"
+      title="Hear Bengali"
+    >
+      <LanguageIcon language="BN" />
+    </button>
+    <button
+      className="bn-btn secondary bn-icon-btn"
+      onClick={() => speak(item.en, "en")}
+      aria-label="Hear English"
+      title="Hear English"
+    >
+      <LanguageIcon language="EN" />
+    </button>
+    <a
+      className="bn-btn secondary bn-icon-btn"
+      href={googleTranslateUrl(item.bn)}
+      target="_blank"
+      rel="noreferrer"
+      aria-label={`Translate ${item.bn} from Bengali to English in Google Translate`}
+      title="Open in Google Translate"
+    >
+      <FcGoogle aria-hidden="true" />
+    </a>
+  </div>
+);
+
+LanguageIcon.propTypes = {
+  language: PropTypes.string.isRequired,
+};
+
+BengaliItemActions.propTypes = {
+  item: PropTypes.shape({
+    bn: PropTypes.string.isRequired,
+    en: PropTypes.string.isRequired,
+  }).isRequired,
+};
+
 export default function BengaliTutor() {
   const [lesson, setLesson] = useState(initialSavedLesson);
   const [savedLessonId, setSavedLessonId] = useState(() => initialSavedLesson().id);
   const [contentTab, setContentTab] = useState("phrases");
+  const [jumpTarget, setJumpTarget] = useState("");
   const [gameDataset, setGameDataset] = useState("vocab");
   const [gameDirection, setGameDirection] = useState(() => {
     try {
@@ -582,27 +635,39 @@ export default function BengaliTutor() {
             </div>
 
             <div className="bn-tabs">
-              <button className={`bn-tab ${contentTab === "phrases" ? "active" : ""}`} onClick={() => setContentTab("phrases")} disabled={!filteredPhrases.length}>Key Phrases</button>
-              <button className={`bn-tab ${contentTab === "vocab" ? "active" : ""}`} onClick={() => setContentTab("vocab")} disabled={!filteredVocab.length}>Vocabulary</button>
-              <button className={`bn-tab ${contentTab === "games" ? "active" : ""}`} onClick={() => setContentTab("games")} disabled={filteredVocab.length + filteredPhrases.length < 2}>Games</button>
+              <button className={`bn-tab ${contentTab === "phrases" ? "active" : ""}`} onClick={() => { setContentTab("phrases"); setJumpTarget(""); }} disabled={!filteredPhrases.length}>Key Phrases</button>
+              <button className={`bn-tab ${contentTab === "vocab" ? "active" : ""}`} onClick={() => { setContentTab("vocab"); setJumpTarget(""); }} disabled={!filteredVocab.length}>Vocabulary</button>
+              <button className={`bn-tab ${contentTab === "games" ? "active" : ""}`} onClick={() => { setContentTab("games"); setJumpTarget(""); }} disabled={filteredVocab.length + filteredPhrases.length < 2}>Games</button>
             </div>
+
+            {contentTab !== "games" && (
+              <label className="bn-jump-bar">
+                <span>Jump to {contentTab === "phrases" ? "phrase" : "word"}</span>
+                <select
+                  className="bn-select"
+                  value={jumpTarget}
+                  onChange={(event) => {
+                    const target = event.target.value;
+                    setJumpTarget(target);
+                    document.getElementById(target)?.scrollIntoView({ behavior: "smooth", block: "center" });
+                  }}
+                >
+                  <option value="">Choose in English…</option>
+                  {(contentTab === "phrases" ? filteredPhrases : filteredVocab).map((item, idx) => (
+                    <option key={`${item.bn}-${idx}`} value={`bn-${contentTab}-${idx}`}>
+                      {item.en}
+                    </option>
+                  ))}
+                </select>
+              </label>
+            )}
 
             {contentTab === "phrases" && (
               <section className="bn-section" style={{ display: "grid", gap: 10 }}>
                 <h3>Key phrases</h3>
                 {filteredPhrases.map((phrase, idx) => (
-                  <article key={`${phrase.bn}-${idx}`} className="bn-section" style={{ background: "#fff" }}>
-                    <a
-                      className="bn-script bn-translate-link"
-                      href={googleTranslateUrl(phrase.bn)}
-                      lang="bn"
-                      target="_blank"
-                      rel="noreferrer"
-                      aria-label={`Translate ${phrase.bn} from Bengali to English in Google Translate`}
-                      title="Open in Google Translate"
-                    >
-                      {phrase.bn}
-                    </a>
+                  <article id={`bn-phrases-${idx}`} key={`${phrase.bn}-${idx}`} className="bn-section" style={{ background: "#fff" }}>
+                    <div className="bn-script" lang="bn">{phrase.bn}</div>
                     <div className="bn-pronunciation">{phrase.pronunciation}</div>
                     <div className="bn-translation">{phrase.en}</div>
                     {phrase.context && <div style={{ color: "#475569" }}>{phrase.context}</div>}
@@ -611,27 +676,14 @@ export default function BengaliTutor() {
                       <div className="bn-breakdown-list">
                         {phrase.words.map((word, wordIndex) => (
                           <div className="bn-breakdown-word" key={`${phrase.bn}-${word.bn}-${wordIndex}`}>
-                            <a
-                              className="bn-script bn-translate-link"
-                              href={googleTranslateUrl(word.bn)}
-                              lang="bn"
-                              target="_blank"
-                              rel="noreferrer"
-                              aria-label={`Translate ${word.bn} from Bengali to English in Google Translate`}
-                              title="Open in Google Translate"
-                            >
-                              {word.bn}
-                            </a>
+                            <span className="bn-script" lang="bn">{word.bn}</span>
                             <span className="bn-pronunciation">{word.pronunciation}</span>
                             <span className="bn-translation">{word.en}</span>
                           </div>
                         ))}
                       </div>
                     </div>
-                    <div className="bn-game-actions" style={{ marginTop: 8 }}>
-                      <button className="bn-btn secondary" onClick={() => speak(phrase.bn, "bn")}>Hear Bengali</button>
-                      <button className="bn-btn secondary" onClick={() => speak(phrase.en, "en")}>Hear English</button>
-                    </div>
+                    <BengaliItemActions item={phrase} />
                   </article>
                 ))}
               </section>
@@ -641,14 +693,11 @@ export default function BengaliTutor() {
               <section className="bn-section" style={{ display: "grid", gap: 10 }}>
                 <h3>Vocabulary</h3>
                 {filteredVocab.map((word, idx) => (
-                  <article key={`${word.bn}-${idx}`} className="bn-section" style={{ background: "#fff" }}>
+                  <article id={`bn-vocab-${idx}`} key={`${word.bn}-${idx}`} className="bn-section" style={{ background: "#fff" }}>
                     <div className="bn-script" lang="bn">{word.bn}</div>
                     <div className="bn-pronunciation">{word.pronunciation}</div>
                     <div className="bn-translation">{word.en}</div>
-                    <div className="bn-game-actions" style={{ marginTop: 8 }}>
-                      <button className="bn-btn secondary" onClick={() => speak(word.bn, "bn")}>Hear Bengali</button>
-                      <button className="bn-btn secondary" onClick={() => speak(word.en, "en")}>Hear English</button>
-                    </div>
+                    <BengaliItemActions item={word} />
                   </article>
                 ))}
               </section>
@@ -738,7 +787,14 @@ export default function BengaliTutor() {
                         <div className="bn-game-subtext">Type the {gameDirection === "en-bn" ? "Bengali" : "English"} translation from memory</div>
                         <div className={`bn-game-prompt ${statusClassForKey(matchStats, gameQuestion.key)}`}>{gameQuestion.displayQuestion}</div>
                       </div>
-                      <button className="bn-btn secondary" onClick={() => speak(gameQuestion.bn, "bn")}>🔊 Hear Bengali</button>
+                      <button
+                        className="bn-btn secondary bn-icon-btn"
+                        onClick={() => speak(gameQuestion.bn, "bn")}
+                        aria-label="Hear Bengali"
+                        title="Hear Bengali"
+                      >
+                        <LanguageIcon language="BN" />
+                      </button>
                     </div>
                     <form className="bn-recall-form" onSubmit={handleRecallSubmit}>
                       <label className="bn-row">
