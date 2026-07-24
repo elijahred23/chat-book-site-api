@@ -55,6 +55,7 @@ const SAVED_LESSONS = [
   verbsLesson,
   ...expandedLessons,
 ].map(withPhraseWords).sort((a, b) => a.topic.localeCompare(b.topic));
+const HIDDEN_LESSON_DROPDOWN_IDS = new Set(["aspnet-core-mvc", "dotnet-runtime"]);
 
 const initialSavedLesson = () => {
   try {
@@ -666,7 +667,7 @@ export default function BengaliTutor() {
             <label className="bn-row">
               <strong>Saved lesson category</strong>
               <select className="bn-select" value={savedLessonId} onChange={(e) => loadSavedLesson(e.target.value)}>
-                {SAVED_LESSONS.map((savedLesson) => (
+                {SAVED_LESSONS.filter((savedLesson) => !HIDDEN_LESSON_DROPDOWN_IDS.has(savedLesson.id)).map((savedLesson) => (
                   <option key={savedLesson.id} value={savedLesson.id}>{savedLesson.topic}</option>
                 ))}
               </select>
