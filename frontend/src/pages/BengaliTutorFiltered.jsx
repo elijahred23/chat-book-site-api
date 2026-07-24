@@ -85,6 +85,7 @@ export default function BengaliTutorFiltered() {
       {tab === "tutor" ? (
         <>
           <VoiceSelect label="Bengali voice" value={bnVoice} voices={bnVoices} onChange={(value) => { setBnVoice(value); if (value) preview(value, "স্বাগতম", "bn-IN"); }} />
+          <BengaliTranslator />
           <BengaliTutor />
         </>
       ) : (
@@ -92,6 +93,78 @@ export default function BengaliTutorFiltered() {
           setBnVoice={setBnVoice} setEnVoice={setEnVoice} preview={preview} />
       )}
     </main>
+  );
+}
+
+function BengaliTranslator() {
+  const [text, setText] = useState("");
+  const [translation, setTranslation] = useState("");
+  const [status, setStatus] = useState("idle");
+  const [error, setError] = useState("");
+
+  const translate = async (event) => {
+    event.preventDefault();
+    const value = text.trim();
+    if (!value) return;
+    setStatus("loading");
+    setError("");
+
+    try {
+      const response = await fetch("/api/translate", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ text: value, source: "bn", target: "en" }),
+      });
+      const data = await response.json().catch(() => ({}));
+      if (!response.ok) throw new Error(data.error || `Translation failed (${response.status}).`);
+      setTranslation(data.translation);
+      setStatus("success");
+    } catch (requestError) {
+      setTranslation("");
+      setError(requestError.message || "Translation is unavailable.");
+      setStatus("error");
+    }
+  };
+
+  const googleTranslateUrl = `https://translate.google.com/?sl=bn&tl=en&text=${encodeURIComponent(text.trim())}&op=translate`;
+
+  return (
+    <section style={ui.translator} aria-labelledby="bengali-translator-title">
+      <div>
+        <strong style={ui.eyebrow}>Bengali → English</strong>
+        <h2 id="bengali-translator-title" style={ui.heading}>Translate Bengali</h2>
+        <p style={ui.muted}>Translate with the API, or open the same text in Google Translate.</p>
+      </div>
+      <form style={ui.translatorForm} onSubmit={translate}>
+        <Field label="Bengali text">
+          <textarea
+            style={ui.textarea}
+            lang="bn"
+            maxLength={5000}
+            placeholder="বাংলা লেখা এখানে লিখুন"
+            value={text}
+            onChange={(event) => setText(event.target.value)}
+          />
+        </Field>
+        <div style={ui.actions}>
+          <button type="submit" style={ui.primary} disabled={!text.trim() || status === "loading"}>
+            {status === "loading" ? "Translating…" : "Translate to English"}
+          </button>
+          <a
+            style={{ ...ui.button, display: "inline-flex", alignItems: "center", textDecoration: "none" }}
+            href={googleTranslateUrl}
+            target="_blank"
+            rel="noreferrer"
+            aria-disabled={!text.trim()}
+            onClick={(event) => { if (!text.trim()) event.preventDefault(); }}
+          >
+            Open in Google Translate
+          </a>
+        </div>
+      </form>
+      {translation && <output style={ui.translation} aria-live="polite"><small>English translation</small><strong>{translation}</strong></output>}
+      {error && <div style={ui.notice} role="alert">{error} You can still use “Open in Google Translate.”</div>}
+    </section>
   );
 }
 
@@ -474,6 +547,10 @@ const ui = {
   tab: { minHeight: 44, border: 0, borderRadius: 10, background: "transparent", color: "#334155", fontWeight: 800 },
   active: { minHeight: 44, border: "1px solid #cbd5e1", borderRadius: 10, background: "#fff", color: "#0f172a", fontWeight: 900 },
   voice: { width: "min(100% - 2rem, 1100px)", margin: ".75rem auto 0", padding: "1rem", border: "1px solid #dbe3ef", borderRadius: 14, background: "#fff" },
+  translator: { width: "min(100% - 2rem, 1100px)", margin: ".75rem auto 0", padding: "1rem", display: "grid", gap: ".85rem", border: "1px solid #bfdbfe", borderRadius: 14, background: "#f8fbff" },
+  translatorForm: { display: "grid", gap: ".75rem" },
+  textarea: { width: "100%", minHeight: 110, resize: "vertical", padding: ".75rem", border: "1px solid #94a3b8", borderRadius: 10, background: "#fff", color: "#0f172a", font: "inherit", fontSize: "1.1rem" },
+  translation: { padding: "1rem", display: "grid", gap: ".35rem", border: "1px solid #86efac", borderRadius: 12, background: "#f0fdf4", color: "#14532d", fontSize: "1.05rem" },
   voiceCompact: { padding: ".85rem", border: "1px solid #dbe3ef", borderRadius: 12, background: "#f8fafc" },
   voiceStack: { display: "grid", alignContent: "start", gap: ".65rem" },
   card: { width: "min(100% - 2rem, 1100px)", margin: ".75rem auto 1.5rem", padding: "1rem", display: "grid", gap: "1rem", border: "1px solid #dbe3ef", borderRadius: 16, background: "#fff" },

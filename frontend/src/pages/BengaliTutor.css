@@ -70,6 +70,8 @@
 .bn-audio-actions { align-items: center; }
 .bn-page .bn-audio-actions .bn-btn { min-height: 38px; padding: .45rem .7rem; font-size: .78rem; box-shadow: none; }
 .bn-page .bn-icon-btn { display: inline-grid; width: 42px; height: 38px; min-height: 38px; padding: 0; place-items: center; font-size: 1.15rem; text-decoration: none; }
+.bn-google-speech-icon { display: inline-flex; align-items: center; gap: .2rem; }
+.bn-google-speech-icon svg:last-child { color: #2563eb; font-size: .8rem; }
 .bn-language-icon { position: relative; display: inline-grid; place-items: center; }
 .bn-language-icon > span { position: absolute; right: -.45rem; bottom: -.35rem; padding: .05rem .16rem; border-radius: 3px; background: var(--bn-primary); color: #fff; font-size: .46rem; font-weight: 900; line-height: 1; letter-spacing: .02em; }
 .bn-page .bn-bulk-actions { position: sticky; bottom: .75rem; z-index: 4; padding: .65rem; border: 1px solid var(--bn-line); border-radius: 14px; background: rgba(255,255,255,.94); box-shadow: 0 10px 30px rgba(36,60,46,.12); backdrop-filter: blur(12px); }

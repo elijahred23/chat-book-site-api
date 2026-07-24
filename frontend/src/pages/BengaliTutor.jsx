@@ -101,6 +101,30 @@ const speak = (text, lang = "bn") => {
   window.speechSynthesis.speak(utter);
 };
 
+const speakWithGoogleTts = async (text) => {
+  const response = await fetch("/api/tts", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ text, lang: "bn-IN" }),
+  });
+  if (!response.ok) {
+    const data = await response.json().catch(() => ({}));
+    throw new Error(data.error || `Google Bengali speech failed (${response.status}).`);
+  }
+
+  const audioUrl = URL.createObjectURL(await response.blob());
+  const audio = new Audio(audioUrl);
+  const releaseAudioUrl = () => URL.revokeObjectURL(audioUrl);
+  audio.addEventListener("ended", releaseAudioUrl, { once: true });
+  audio.addEventListener("error", releaseAudioUrl, { once: true });
+  try {
+    await audio.play();
+  } catch (error) {
+    releaseAudioUrl();
+    throw error;
+  }
+};
+
 const LanguageIcon = ({ language }) => (
   <span className="bn-language-icon" aria-hidden="true">
     <FaVolumeHigh />
@@ -108,36 +132,64 @@ const LanguageIcon = ({ language }) => (
   </span>
 );
 
-const BengaliItemActions = ({ item }) => (
-  <div className="bn-game-actions bn-audio-actions" style={{ marginTop: 8 }}>
-    <button
-      className="bn-btn secondary bn-icon-btn"
-      onClick={() => speak(item.bn, "bn")}
-      aria-label="Hear Bengali"
-      title="Hear Bengali"
-    >
-      <LanguageIcon language="BN" />
-    </button>
-    <button
-      className="bn-btn secondary bn-icon-btn"
-      onClick={() => speak(item.en, "en")}
-      aria-label="Hear English"
-      title="Hear English"
-    >
-      <LanguageIcon language="EN" />
-    </button>
-    <a
-      className="bn-btn secondary bn-icon-btn"
-      href={googleTranslateUrl(item.bn)}
-      target="_blank"
-      rel="noreferrer"
-      aria-label={`Translate ${item.bn} from Bengali to English in Google Translate`}
-      title="Open in Google Translate"
-    >
-      <FcGoogle aria-hidden="true" />
-    </a>
-  </div>
-);
+const BengaliItemActions = ({ item }) => {
+  const [googleSpeechStatus, setGoogleSpeechStatus] = useState("idle");
+
+  const hearGoogleBengali = async () => {
+    setGoogleSpeechStatus("loading");
+    try {
+      window.speechSynthesis?.cancel();
+      await speakWithGoogleTts(item.bn);
+      setGoogleSpeechStatus("idle");
+    } catch (error) {
+      console.error("Google Bengali speech error:", error);
+      setGoogleSpeechStatus("error");
+    }
+  };
+
+  return (
+    <div className="bn-game-actions bn-audio-actions" style={{ marginTop: 8 }}>
+      <button
+        className="bn-btn secondary bn-icon-btn"
+        onClick={() => speak(item.bn, "bn")}
+        aria-label="Hear Bengali with system voice"
+        title="Hear Bengali with system voice"
+      >
+        <LanguageIcon language="BN" />
+      </button>
+      <button
+        className="bn-btn secondary bn-icon-btn"
+        onClick={hearGoogleBengali}
+        disabled={googleSpeechStatus === "loading"}
+        aria-label="Hear Bengali with Google Text-to-Speech"
+        title={googleSpeechStatus === "error" ? "Google Bengali speech failed. Try again." : "Hear Bengali with Google Text-to-Speech"}
+      >
+        <span className="bn-google-speech-icon" aria-hidden="true">
+          <FcGoogle />
+          <FaVolumeHigh />
+        </span>
+      </button>
+      <button
+        className="bn-btn secondary bn-icon-btn"
+        onClick={() => speak(item.en, "en")}
+        aria-label="Hear English"
+        title="Hear English"
+      >
+        <LanguageIcon language="EN" />
+      </button>
+      <a
+        className="bn-btn secondary bn-icon-btn"
+        href={googleTranslateUrl(item.bn)}
+        target="_blank"
+        rel="noreferrer"
+        aria-label={`Translate ${item.bn} from Bengali to English in Google Translate`}
+        title="Open in Google Translate"
+      >
+        <FcGoogle aria-hidden="true" />
+      </a>
+    </div>
+  );
+};
 
 LanguageIcon.propTypes = {
   language: PropTypes.string.isRequired,

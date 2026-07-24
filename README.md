@@ -95,10 +95,10 @@ YOUTUBE_API_KEY=your_youtube_api_key
 # Supadata
 SUPA_DATA_API_KEY=your_supadata_api_key
 
-# Google Cloud Text-to-Speech
+# Google Cloud Text-to-Speech and Translation
 GOOGLE_APPLICATION_CREDENTIALS=/path/to/service-account.json
 
-# Optional: provide service account JSON directly
+# DigitalOcean: provide the full service-account JSON directly
 TTS_SA_JSON={"type":"service_account",...}
 
 # Optional PDF upload size in MB
@@ -106,6 +106,12 @@ PDF_UPLOAD_MAX_MB=1024
 ```
 
 Do not commit real API keys, service account JSON, or secrets.
+
+For local Google TTS and translation, either set `GOOGLE_APPLICATION_CREDENTIALS`
+to a service-account file or place that ignored file at
+`var/secrets/tts-sa.json`. In DigitalOcean, set `TTS_SA_JSON` to the complete
+JSON object. Cloud Translation is attempted first; Bengali-to-English requests
+fall back to Gemini when `GEMINI_API_KEY` is configured.
 
 ## Install
 
@@ -265,6 +271,22 @@ Fetches a transcript through the Supadata integration.
 ```http
 POST /api/tts
 POST /api/tts/batch
+```
+
+### Bengali Translation
+
+```http
+POST /api/translate
+```
+
+Example request:
+
+```json
+{
+  "text": "আমি বাংলা শিখছি",
+  "source": "bn",
+  "target": "en"
+}
 ```
 
 Example request:

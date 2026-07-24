@@ -11,7 +11,7 @@ export const createSpeech = async (req, res) => {
     return res.send(audioContent);
   } catch (err) {
     console.error('TTS error', err);
-    const message = err.message === 'TTS client not initialized. Set GOOGLE_APPLICATION_CREDENTIALS.'
+    const message = err.message === 'TTS client not initialized. Set TTS_SA_JSON or GOOGLE_APPLICATION_CREDENTIALS.'
       ? err.message
       : 'TTS failed.';
     return res.status(500).json({ error: message });
@@ -30,7 +30,7 @@ export const createSpeechBatch = async (req, res) => {
     return res.send(combined);
   } catch (err) {
     console.error('Batch TTS error', err);
-    const message = err.message === 'TTS client not initialized. Set GOOGLE_APPLICATION_CREDENTIALS.'
+    const message = err.message === 'TTS client not initialized. Set TTS_SA_JSON or GOOGLE_APPLICATION_CREDENTIALS.'
       ? err.message
       : 'Batch TTS failed.';
     return res.status(500).json({ error: message });

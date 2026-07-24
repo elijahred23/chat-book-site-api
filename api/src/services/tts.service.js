@@ -1,44 +1,16 @@
-import fs from 'fs';
-import path from 'path';
 import textToSpeech from '@google-cloud/text-to-speech';
-import { env } from '../config/env.js';
-import { secretsDir } from '../config/paths.js';
-import { logErrorToFile } from '../utils/errorLog.js';
-
-const ensureTtsCredentialsFile = () => {
-  const rawJson = env.ttsServiceAccountJson;
-  if (!rawJson) return null;
-
-  try {
-    const parsed = JSON.parse(rawJson);
-    const credentialsPath = env.googleApplicationCredentials || path.join(secretsDir, 'tts-sa.json');
-    fs.mkdirSync(path.dirname(credentialsPath), { recursive: true });
-    fs.writeFileSync(credentialsPath, JSON.stringify(parsed, null, 2));
-
-    if (!process.env.GOOGLE_APPLICATION_CREDENTIALS) {
-      process.env.GOOGLE_APPLICATION_CREDENTIALS = credentialsPath;
-    }
-
-    console.log(`TTS credentials file created at ${credentialsPath}`);
-    return credentialsPath;
-  } catch (err) {
-    console.error('Failed to parse TTS service account JSON from env', err.message);
-    logErrorToFile(err);
-    return null;
-  }
-};
+import { googleClientOptions, hasGoogleCredentials } from '../config/googleCredentials.js';
 
 let ttsClient = null;
 try {
-  ensureTtsCredentialsFile();
-  ttsClient = new textToSpeech.TextToSpeechClient();
-  console.log('Google TTS client initialized');
+  ttsClient = new textToSpeech.TextToSpeechClient(googleClientOptions());
+  console.log(`Google TTS client initialized (${hasGoogleCredentials() ? 'configured credentials' : 'application default credentials'})`);
 } catch (err) {
-  console.warn('Google TTS client not initialized (missing credentials?)', err.message);
+  console.warn('Google TTS client not initialized:', err.message);
 }
 
 export const synthesizeSpeech = async ({ text, lang = 'bn-IN' }) => {
-  if (!ttsClient) throw new Error('TTS client not initialized. Set GOOGLE_APPLICATION_CREDENTIALS.');
+  if (!ttsClient) throw new Error('TTS client not initialized. Set TTS_SA_JSON or GOOGLE_APPLICATION_CREDENTIALS.');
   const request = {
     input: { text },
     voice: {
