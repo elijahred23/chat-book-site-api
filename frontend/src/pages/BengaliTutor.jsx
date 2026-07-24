@@ -4,7 +4,7 @@ import { FcGoogle } from "react-icons/fc";
 import { FaVolumeHigh } from "react-icons/fa6";
 import ActionButtons from "../ui/ActionButtons.jsx";
 import { withPhraseWords } from "../utils/bengaliPhraseBreakdown.js";
-import { getGoogleTtsAudio } from "../utils/googleTtsAudioCache.js";
+import { getGoogleTtsAudio, GOOGLE_BENGALI_VOICE_KEY } from "../utils/googleTtsAudioCache.js";
 import adjectivesLesson from "../bengali_lessons/adjectives.json";
 import adverbsLesson from "../bengali_lessons/adverbs.json";
 import anthropicPrincipleLesson from "../bengali_lessons/anthropic-principle.json";
@@ -95,10 +95,13 @@ const pickWeightedItem = (items, stats) => {
 
 const initialScore = { correct: 0, total: 0, streak: 0, bestStreak: 0 };
 
-const speak = (text, lang = "bn") => {
+const speak = (text, lang = "bn", selectedVoiceKey = "") => {
   if (!text || typeof window === "undefined" || !window.speechSynthesis) return;
   const utter = new SpeechSynthesisUtterance(text);
-  utter.lang = lang.startsWith("bn") ? "bn-IN" : "en-US";
+  const fallbackLang = lang.startsWith("bn") ? "bn-IN" : "en-US";
+  const voice = window.speechSynthesis.getVoices().find((item) => `${item.name}__${item.lang}` === selectedVoiceKey);
+  utter.lang = voice?.lang || fallbackLang;
+  if (voice) utter.voice = voice;
   window.speechSynthesis.cancel();
   window.speechSynthesis.speak(utter);
 };
@@ -194,9 +197,16 @@ BengaliItemActions.propTypes = {
   }).isRequired,
 };
 
-export default function BengaliTutor() {
+export default function BengaliTutor({ bengaliVoice = "" }) {
   const [lesson, setLesson] = useState(initialSavedLesson);
   const [savedLessonId, setSavedLessonId] = useState(() => initialSavedLesson().id);
+  const speakBreakdownWord = useCallback((text) => {
+    if (bengaliVoice === GOOGLE_BENGALI_VOICE_KEY) {
+      speakWithGoogleTts(text).catch((error) => console.error("Google Bengali breakdown speech error:", error));
+      return;
+    }
+    speak(text, "bn", bengaliVoice);
+  }, [bengaliVoice]);
   const [contentTab, setContentTab] = useState("phrases");
   const [jumpTarget, setJumpTarget] = useState("");
   const [gameDataset, setGameDataset] = useState("vocab");
@@ -720,7 +730,23 @@ export default function BengaliTutor() {
                       <div className="bn-breakdown-list">
                         {phrase.words.map((word, wordIndex) => (
                           <div className="bn-breakdown-word" key={`${phrase.bn}-${word.bn}-${wordIndex}`}>
-                            <span className="bn-script" lang="bn">{word.bn}</span>
+                            <span
+                              className="bn-script bn-breakdown-speakable"
+                              lang="bn"
+                              role="button"
+                              tabIndex={0}
+                              aria-label={`Hear ${word.bn} in Bengali`}
+                              title="Hear this Bengali word"
+                              onClick={() => speakBreakdownWord(word.bn)}
+                              onKeyDown={(event) => {
+                                if (event.key === "Enter" || event.key === " ") {
+                                  event.preventDefault();
+                                  speakBreakdownWord(word.bn);
+                                }
+                              }}
+                            >
+                              {word.bn}
+                            </span>
                             <span className="bn-pronunciation">{word.pronunciation}</span>
                             <span className="bn-translation">{word.en}</span>
                           </div>
@@ -1030,3 +1056,7 @@ export default function BengaliTutor() {
     </main>
   );
 }
+
+BengaliTutor.propTypes = {
+  bengaliVoice: PropTypes.string,
+};

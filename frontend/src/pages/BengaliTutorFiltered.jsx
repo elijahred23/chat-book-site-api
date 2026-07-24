@@ -2,13 +2,12 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { FaAngleDoubleLeft, FaAngleDoubleRight, FaFastBackward, FaFastForward, FaPause, FaPlay, FaRedoAlt, FaStepBackward, FaStepForward, FaStop } from "react-icons/fa";
 import BengaliTutor from "./BengaliTutor.jsx";
 import { phraseBreakdownItems, withPhraseWords } from "../utils/bengaliPhraseBreakdown.js";
-import { getGoogleTtsAudio } from "../utils/googleTtsAudioCache.js";
+import { getGoogleTtsAudio, GOOGLE_BENGALI_VOICE_KEY } from "../utils/googleTtsAudioCache.js";
 
 const LESSON_KEY = "bengali_lesson_cache";
 const SETTINGS_KEY = "bengali_word_loop_settings";
 const BN_VOICE_KEY = "bengali_tutor_voice";
 const EN_VOICE_KEY = "bengali_tutor_english_voice";
-const GOOGLE_BENGALI_VOICE_KEY = "google-cloud-tts__bn-IN";
 
 const voiceKey = (voice) => `${voice.name}__${voice.lang}`;
 const storedString = (key) => {
@@ -86,9 +85,36 @@ export default function BengaliTutorFiltered() {
       </nav>
       {tab === "tutor" ? (
         <>
-          <VoiceSelect label="Bengali voice" value={bnVoice} voices={bnVoices} onChange={(value) => { setBnVoice(value); if (value) preview(value, "স্বাগতম", "bn-IN"); }} />
+          <VoiceSelect
+            label="Bengali click voice"
+            value={bnVoice}
+            voices={bnVoices}
+            extraOptions={[{ value: GOOGLE_BENGALI_VOICE_KEY, label: "Google Bengali (Cloud TTS)" }]}
+            onChange={async (value) => {
+              setBnVoice(value);
+              if (value === GOOGLE_BENGALI_VOICE_KEY) {
+                try {
+                  const audioUrl = URL.createObjectURL(await getGoogleTtsAudio("স্বাগতম", "bn-IN"));
+                  const audio = new Audio(audioUrl);
+                  const release = () => URL.revokeObjectURL(audioUrl);
+                  audio.addEventListener("ended", release, { once: true });
+                  audio.addEventListener("error", release, { once: true });
+                  try {
+                    await audio.play();
+                  } catch (error) {
+                    release();
+                    throw error;
+                  }
+                } catch (error) {
+                  console.error("Google Bengali voice preview error:", error);
+                }
+              } else if (value) {
+                preview(value, "স্বাগতম", "bn-IN");
+              }
+            }}
+          />
           <BengaliTranslator />
-          <BengaliTutor />
+          <BengaliTutor bengaliVoice={bnVoice} />
         </>
       ) : (
         <WordLoop voices={voices} bnVoices={bnVoices} enVoices={enVoices} bnVoice={bnVoice} enVoice={enVoice}

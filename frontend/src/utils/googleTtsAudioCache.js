@@ -2,6 +2,8 @@ const CACHE_NAME = "google-tts-audio-v1";
 const memoryCache = new Map();
 const inFlightRequests = new Map();
 
+export const GOOGLE_BENGALI_VOICE_KEY = "google-cloud-tts__bn-IN";
+
 const cacheKey = (text, lang) => `${lang}\u0000${text}`;
 
 const persistentCacheRequest = async (key) => {
