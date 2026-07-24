@@ -2,11 +2,13 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { FaAngleDoubleLeft, FaAngleDoubleRight, FaFastBackward, FaFastForward, FaPause, FaPlay, FaRedoAlt, FaStepBackward, FaStepForward, FaStop } from "react-icons/fa";
 import BengaliTutor from "./BengaliTutor.jsx";
 import { phraseBreakdownItems, withPhraseWords } from "../utils/bengaliPhraseBreakdown.js";
+import { getGoogleTtsAudio } from "../utils/googleTtsAudioCache.js";
 
 const LESSON_KEY = "bengali_lesson_cache";
 const SETTINGS_KEY = "bengali_word_loop_settings";
 const BN_VOICE_KEY = "bengali_tutor_voice";
 const EN_VOICE_KEY = "bengali_tutor_english_voice";
+const GOOGLE_BENGALI_VOICE_KEY = "google-cloud-tts__bn-IN";
 
 const voiceKey = (voice) => `${voice.name}__${voice.lang}`;
 const storedString = (key) => {
@@ -196,6 +198,7 @@ function WordLoop({ voices, bnVoices, enVoices, bnVoice, enVoice, setBnVoice, se
   const passRef = useRef(1);
   const playbackGenerationRef = useRef(0);
   const photoRequestRef = useRef(null);
+  const googleAudioRef = useRef(null);
 
   const sourceItems = useMemo(() => {
     const source = dataset === "breakdowns"
@@ -224,6 +227,11 @@ function WordLoop({ voices, bnVoices, enVoices, bnVoice, enVoice, setBnVoice, se
   const repeats = Math.max(1, Number(intervalRepeats) || 1);
   const delaySeconds = Math.max(0, Number(wordDelay) || 0);
 
+  const cancelGoogleAudio = useCallback(() => {
+    googleAudioRef.current?.finish();
+    googleAudioRef.current = null;
+  }, []);
+
   const stop = useCallback((message = "Stopped") => {
     playbackGenerationRef.current += 1;
     playingRef.current = false;
@@ -232,7 +240,8 @@ function WordLoop({ voices, bnVoices, enVoices, bnVoice, enVoice, setBnVoice, se
     setPaused(false);
     setStatus(message);
     window.speechSynthesis?.cancel();
-  }, []);
+    cancelGoogleAudio();
+  }, [cancelGoogleAudio]);
 
   useEffect(() => {
     if (safeChunkIndex !== Number(chunkIndex)) setChunkIndex(safeChunkIndex);
@@ -251,7 +260,7 @@ function WordLoop({ voices, bnVoices, enVoices, bnVoice, enVoice, setBnVoice, se
     passRef.current = 1;
     setCurrentIndex(0);
     setPass(1);
-  }, [dataset, mode, intervalSize, intervalRepeats, loopForever, search, facet, safeChunkSize, safeChunkIndex, showImages, delaySeconds, bengaliSpeechSource, stop]);
+  }, [dataset, mode, intervalSize, intervalRepeats, loopForever, search, facet, safeChunkSize, safeChunkIndex, showImages, delaySeconds, bengaliSpeechSource, bnVoice, enVoice, stop]);
 
   const jumpToWord = (event) => {
     const nextIndex = Math.min(Math.max(Number(event.target.value) || 0, 0), Math.max(items.length - 1, 0));
@@ -262,16 +271,47 @@ function WordLoop({ voices, bnVoices, enVoices, bnVoice, enVoice, setBnVoice, se
     setPass(1);
   };
 
-  const speak = useCallback((text, lang, key) => new Promise((resolve) => {
-    if (!playingRef.current || !text) return resolve();
-    const utterance = new SpeechSynthesisUtterance(text);
-    const voice = voices.find((item) => voiceKey(item) === key);
-    utterance.lang = voice?.lang || lang;
-    if (voice) utterance.voice = voice;
-    utterance.onend = resolve;
-    utterance.onerror = resolve;
-    window.speechSynthesis.speak(utterance);
-  }), [voices]);
+  const speak = useCallback(async (text, lang, key) => {
+    if (!playingRef.current || !text) return;
+
+    if (key === GOOGLE_BENGALI_VOICE_KEY && /^bn/i.test(lang)) {
+      try {
+        const audioBlob = await getGoogleTtsAudio(text, "bn-IN");
+        if (!playingRef.current) return;
+        await new Promise((resolve) => {
+          const audioUrl = URL.createObjectURL(audioBlob);
+          const audio = new Audio(audioUrl);
+          let finished = false;
+          const finish = () => {
+            if (finished) return;
+            finished = true;
+            audio.pause();
+            URL.revokeObjectURL(audioUrl);
+            if (googleAudioRef.current?.audio === audio) googleAudioRef.current = null;
+            resolve();
+          };
+          googleAudioRef.current = { audio, finish };
+          audio.addEventListener("ended", finish, { once: true });
+          audio.addEventListener("error", finish, { once: true });
+          audio.play().catch(finish);
+        });
+        return;
+      } catch (error) {
+        console.error("Google Bengali loop voice error:", error);
+        setStatus("Google Bengali voice unavailable; using the system voice");
+      }
+    }
+
+    await new Promise((resolve) => {
+      const utterance = new SpeechSynthesisUtterance(text);
+      const voice = voices.find((item) => voiceKey(item) === key);
+      utterance.lang = voice?.lang || lang;
+      if (voice) utterance.voice = voice;
+      utterance.onend = resolve;
+      utterance.onerror = resolve;
+      window.speechSynthesis.speak(utterance);
+    });
+  }, [voices]);
 
   const settlePhotoRequest = useCallback((request, rendered) => {
     if (!request || request.settled) return;
@@ -330,7 +370,7 @@ function WordLoop({ voices, bnVoices, enVoices, bnVoice, enVoice, setBnVoice, se
     const isActive = () => playingRef.current && !pausedRef.current && playbackGenerationRef.current === generation;
     if (!isActive()) return;
     const englishSpeechText = item.breakdownEnglish || item.en;
-    const bengaliSpeechText = bengaliSpeechSource === "pronunciation" && item.pronunciation?.trim()
+    const bengaliSpeechText = bnVoice !== GOOGLE_BENGALI_VOICE_KEY && bengaliSpeechSource === "pronunciation" && item.pronunciation?.trim()
       ? item.pronunciation.trim()
       : item.bn;
     if (mode === "english-bengali") {
@@ -407,6 +447,7 @@ function WordLoop({ voices, bnVoices, enVoices, bnVoice, enVoice, setBnVoice, se
       setPaused(true);
       setStatus("Paused");
       window.speechSynthesis.cancel();
+      cancelGoogleAudio();
     }
   };
   const restart = () => {
@@ -489,7 +530,35 @@ function WordLoop({ voices, bnVoices, enVoices, bnVoice, enVoice, setBnVoice, se
       {items.length > 0 && <Field label={dataset === "breakdowns" ? "Skip to phrase in active chunk" : "Skip to word in active chunk"}><select style={ui.input} value={currentIndex} onChange={jumpToWord}>{items.map((word, index) => <option key={`${word.bn}-${word.en}-${index}`} value={index}>{chunkStart + index + 1}. {word.pronunciation || word.bn} · {word.en}</option>)}</select></Field>}
       <div style={ui.grid}>
         <div style={ui.voiceStack}>
-          <VoiceSelect compact label="Bengali voice" value={bnVoice} voices={bnVoices} onChange={(value) => { setBnVoice(value); if (value) preview(value, "স্বাগতম", "bn-IN"); }} />
+          <VoiceSelect
+            compact
+            label="Bengali voice"
+            value={bnVoice}
+            voices={bnVoices}
+            extraOptions={[{ value: GOOGLE_BENGALI_VOICE_KEY, label: "Google Bengali (Cloud TTS)" }]}
+            onChange={async (value) => {
+              setBnVoice(value);
+              if (value === GOOGLE_BENGALI_VOICE_KEY) {
+                try {
+                  const audioUrl = URL.createObjectURL(await getGoogleTtsAudio("স্বাগতম", "bn-IN"));
+                  const audio = new Audio(audioUrl);
+                  const release = () => URL.revokeObjectURL(audioUrl);
+                  audio.addEventListener("ended", release, { once: true });
+                  audio.addEventListener("error", release, { once: true });
+                  try {
+                    await audio.play();
+                  } catch (error) {
+                    release();
+                    throw error;
+                  }
+                } catch (error) {
+                  console.error("Google Bengali voice preview error:", error);
+                }
+              } else if (value) {
+                preview(value, "স্বাগতম", "bn-IN");
+              }
+            }}
+          />
           <Field label="Bengali speech source"><select style={ui.input} value={bengaliSpeechSource} onChange={(event) => setBengaliSpeechSource(event.target.value)}><option value="pronunciation">Pronunciation (fallback to Bengali script)</option><option value="bengali">Bengali script</option></select></Field>
         </div>
         <VoiceSelect compact label="English voice" value={enVoice} voices={enVoices} onChange={(value) => { setEnVoice(value); if (value) preview(value, "Welcome to Bengali practice", "en-US"); }} />
@@ -533,8 +602,8 @@ function WordLoop({ voices, bnVoices, enVoices, bnVoice, enVoice, setBnVoice, se
   );
 }
 
-function VoiceSelect({ label, value, voices, onChange, compact }) {
-  return <section style={compact ? ui.voiceCompact : ui.voice}><Field label={label}><select style={ui.input} value={value} onChange={(event) => onChange(event.target.value)}><option value="">System default</option>{voices.map((voice) => <option key={voiceKey(voice)} value={voiceKey(voice)}>{voice.name} ({voice.lang})</option>)}</select></Field></section>;
+function VoiceSelect({ label, value, voices, onChange, compact, extraOptions = [] }) {
+  return <section style={compact ? ui.voiceCompact : ui.voice}><Field label={label}><select style={ui.input} value={value} onChange={(event) => onChange(event.target.value)}><option value="">System default</option>{extraOptions.map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}{voices.map((voice) => <option key={voiceKey(voice)} value={voiceKey(voice)}>{voice.name} ({voice.lang})</option>)}</select></Field></section>;
 }
 function Field({ label, children }) { return <label style={ui.field}><strong>{label}</strong>{children}</label>; }
 // This file's existing local components intentionally use lightweight destructured props.

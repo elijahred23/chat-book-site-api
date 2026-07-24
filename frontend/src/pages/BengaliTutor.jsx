@@ -4,6 +4,7 @@ import { FcGoogle } from "react-icons/fc";
 import { FaVolumeHigh } from "react-icons/fa6";
 import ActionButtons from "../ui/ActionButtons.jsx";
 import { withPhraseWords } from "../utils/bengaliPhraseBreakdown.js";
+import { getGoogleTtsAudio } from "../utils/googleTtsAudioCache.js";
 import adjectivesLesson from "../bengali_lessons/adjectives.json";
 import adverbsLesson from "../bengali_lessons/adverbs.json";
 import anthropicPrincipleLesson from "../bengali_lessons/anthropic-principle.json";
@@ -103,17 +104,7 @@ const speak = (text, lang = "bn") => {
 };
 
 const speakWithGoogleTts = async (text) => {
-  const response = await fetch("/api/tts", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ text, lang: "bn-IN" }),
-  });
-  if (!response.ok) {
-    const data = await response.json().catch(() => ({}));
-    throw new Error(data.error || `Google Bengali speech failed (${response.status}).`);
-  }
-
-  const audioUrl = URL.createObjectURL(await response.blob());
+  const audioUrl = URL.createObjectURL(await getGoogleTtsAudio(text, "bn-IN"));
   const audio = new Audio(audioUrl);
   const releaseAudioUrl = () => URL.revokeObjectURL(audioUrl);
   audio.addEventListener("ended", releaseAudioUrl, { once: true });
