@@ -1,175 +1,450 @@
 {
   "id": "adverbs",
   "title": "Essential Bengali Adverbs",
-  "summary": "Describe when, where, how often, and how an action happens.",
+  "summary": "Learn common Bengali adverbs of manner, time, frequency, degree, place, certainty, emotion, sequence, and quantity.",
   "level": "beginner",
   "topic": "Adverbs",
   "focus": "vocabulary",
   "phrases": [
     {
-      "bn": "আমি এখন ব্যস্ত।",
-      "pronunciation": "ami ekhon byasto",
-      "en": "I am busy now.",
-      "context": "Using এখন (now)",
-      "category": "adverbs",
-      "words": [
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "এখন",
-          "pronunciation": "ekhon",
-          "en": "now"
-        },
-        {
-          "bn": "ব্যস্ত",
-          "pronunciation": "byasto",
-          "en": "busy"
-        }
-      ]
-    },
-    {
-      "bn": "আজ আবহাওয়া সুন্দর।",
-      "pronunciation": "aj abohawa shundor",
-      "en": "The weather is beautiful today.",
-      "context": "Using আজ (today)",
-      "category": "adverbs",
-      "words": [
-        {
-          "bn": "আজ",
-          "pronunciation": "aj",
-          "en": "today"
-        },
-        {
-          "bn": "আবহাওয়া",
-          "pronunciation": "abohawa",
-          "en": "weather"
-        },
-        {
-          "bn": "সুন্দর",
-          "pronunciation": "shundor",
-          "en": "beautiful"
-        }
-      ]
-    },
-    {
-      "bn": "আমি কাল ঢাকায় যাব।",
-      "pronunciation": "ami kal Dhakay jabo",
-      "en": "I will go to Dhaka tomorrow.",
-      "context": "Using কাল (yesterday / tomorrow)",
-      "category": "adverbs",
-      "words": [
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "কাল",
-          "pronunciation": "kal",
-          "en": "tomorrow / yesterday"
-        },
-        {
-          "bn": "ঢাকায়",
-          "pronunciation": "Dhakay",
-          "en": "in / to Dhaka"
-        },
-        {
-          "bn": "যাব",
-          "pronunciation": "jabo",
-          "en": "will go"
-        }
-      ]
-    },
-    {
-      "bn": "আমি এখানে থাকি।",
-      "pronunciation": "ami ekhane thaki",
-      "en": "I live here.",
-      "context": "Using এখানে (here)",
-      "category": "adverbs",
-      "words": [
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "এখানে",
-          "pronunciation": "ekhane",
-          "en": "here"
-        },
-        {
-          "bn": "থাকি",
-          "pronunciation": "thaki",
-          "en": "live / stay"
-        }
-      ]
-    },
-    {
-      "bn": "আমার বন্ধু সেখানে থাকে।",
-      "pronunciation": "amar bondhu shekhane thake",
-      "en": "My friend lives there.",
-      "context": "Using সেখানে (there)",
-      "category": "adverbs",
-      "words": [
-        {
-          "bn": "আমার",
-          "pronunciation": "amar",
-          "en": "my"
-        },
-        {
-          "bn": "বন্ধু",
-          "pronunciation": "bondhu",
-          "en": "friend"
-        },
-        {
-          "bn": "সেখানে",
-          "pronunciation": "shekhane",
-          "en": "there"
-        },
-        {
-          "bn": "থাকে",
-          "pronunciation": "thake",
-          "en": "lives / stays"
-        }
-      ]
-    },
-    {
-      "bn": "সে সবসময় সময়মতো আসে।",
-      "pronunciation": "shey shobshomoy shomoymoto ashe",
-      "en": "He or she always arrives on time.",
-      "context": "Using সবসময় (always)",
+      "bn": "সে ধীরে হাঁটে।",
+      "pronunciation": "she dhire hate",
+      "en": "He walks slowly.",
+      "context": "Using ধীরে (slowly)",
       "category": "adverbs",
       "words": [
         {
           "bn": "সে",
-          "pronunciation": "shey",
+          "pronunciation": "she",
           "en": "he / she"
         },
         {
-          "bn": "সবসময়",
-          "pronunciation": "shobshomoy",
-          "en": "always"
+          "bn": "ধীরে",
+          "pronunciation": "dhire",
+          "en": "slowly / gradually"
         },
         {
-          "bn": "সময়মতো",
-          "pronunciation": "shomoymoto",
-          "en": "on time"
-        },
-        {
-          "bn": "আসে",
-          "pronunciation": "ashe",
-          "en": "comes"
+          "bn": "হাঁটে",
+          "pronunciation": "hate",
+          "en": "walks"
         }
       ]
     },
     {
-      "bn": "আমি কখনো এখানে খেতে আসি।",
-      "pronunciation": "ami kokhono ekhane khete ashi",
-      "en": "I sometimes come here to eat.",
-      "context": "Using কখনো (sometimes / ever)",
+      "bn": "সে দ্রুত দৌড়ায়।",
+      "pronunciation": "she druto douray",
+      "en": "She runs quickly.",
+      "context": "Using দ্রুত (quickly)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "দ্রুত",
+          "pronunciation": "druto",
+          "en": "quickly / fast / quick"
+        },
+        {
+          "bn": "দৌড়ায়",
+          "pronunciation": "douray",
+          "en": "runs"
+        }
+      ]
+    },
+    {
+      "bn": "আস্তে কথা বলো।",
+      "pronunciation": "aste kotha bolo",
+      "en": "Speak softly.",
+      "context": "Using আস্তে (gently / softly)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "আস্তে",
+          "pronunciation": "aste",
+          "en": "gently / softly"
+        },
+        {
+          "bn": "কথা",
+          "pronunciation": "kotha",
+          "en": "speech / words / matter / promise"
+        },
+        {
+          "bn": "বলো",
+          "pronunciation": "bolo",
+          "en": "speak (familiar)"
+        }
+      ]
+    },
+    {
+      "bn": "সে জোরে হাসল।",
+      "pronunciation": "she jore hashlo",
+      "en": "He laughed loudly.",
+      "context": "Using জোরে (loudly)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "জোরে",
+          "pronunciation": "jore",
+          "en": "loudly"
+        },
+        {
+          "bn": "হাসল",
+          "pronunciation": "hashlo",
+          "en": "laughed"
+        }
+      ]
+    },
+    {
+      "bn": "শিশুটি চুপচাপ বসে আছে।",
+      "pronunciation": "shishuti chupchap boshe achhe",
+      "en": "The child is sitting quietly.",
+      "context": "Using চুপচাপ (quietly)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "শিশুটি",
+          "pronunciation": "shishuti",
+          "en": "the child"
+        },
+        {
+          "bn": "চুপচাপ",
+          "pronunciation": "chupchap",
+          "en": "quietly"
+        },
+        {
+          "bn": "বসে",
+          "pronunciation": "boshe",
+          "en": "sit down"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is / has"
+        }
+      ]
+    },
+    {
+      "bn": "সে ভালোভাবে পড়াশোনা করে।",
+      "pronunciation": "she bhalobhabe porashona kore",
+      "en": "He studies well.",
+      "context": "Using ভালোভাবে (well)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "ভালোভাবে",
+          "pronunciation": "bhalobhabe",
+          "en": "well"
+        },
+        {
+          "bn": "পড়াশোনা",
+          "pronunciation": "porashona",
+          "en": "studies"
+        },
+        {
+          "bn": "করে",
+          "pronunciation": "kore",
+          "en": "does / by doing"
+        }
+      ]
+    },
+    {
+      "bn": "সে খারাপভাবে লিখেছে।",
+      "pronunciation": "she kharapbhabe likhechhe",
+      "en": "He wrote badly.",
+      "context": "Using খারাপভাবে (badly)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "খারাপভাবে",
+          "pronunciation": "kharapbhabe",
+          "en": "badly"
+        },
+        {
+          "bn": "লিখেছে",
+          "pronunciation": "likhechhe",
+          "en": "wrote / has written"
+        }
+      ]
+    },
+    {
+      "bn": "সে সুন্দরভাবে গান গায়।",
+      "pronunciation": "she shundorbhabe gan gai",
+      "en": "She sings beautifully.",
+      "context": "Using সুন্দরভাবে (beautifully)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "সুন্দরভাবে",
+          "pronunciation": "shundorbhabe",
+          "en": "beautifully"
+        },
+        {
+          "bn": "গান",
+          "pronunciation": "gan",
+          "en": "song / music"
+        },
+        {
+          "bn": "গায়",
+          "pronunciation": "gai",
+          "en": "sings"
+        }
+      ]
+    },
+    {
+      "bn": "রাস্তা সাবধানে পার হও।",
+      "pronunciation": "rasta shobdhone par hao",
+      "en": "Cross the road carefully.",
+      "context": "Using সাবধানে (carefully)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "রাস্তা",
+          "pronunciation": "rasta",
+          "en": "road"
+        },
+        {
+          "bn": "সাবধানে",
+          "pronunciation": "shobdhone",
+          "en": "Carefully"
+        },
+        {
+          "bn": "পার",
+          "pronunciation": "par",
+          "en": "across"
+        },
+        {
+          "bn": "হও",
+          "pronunciation": "hao",
+          "en": "go / become"
+        }
+      ]
+    },
+    {
+      "bn": "সে অসাবধানে গ্লাস ভেঙেছে।",
+      "pronunciation": "she oshabdhane glash bhengechhe",
+      "en": "He carelessly broke the glass.",
+      "context": "Using অসাবধানে (carelessly)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "অসাবধানে",
+          "pronunciation": "oshabdhane",
+          "en": "carelessly"
+        },
+        {
+          "bn": "গ্লাস",
+          "pronunciation": "glash",
+          "en": "glass"
+        },
+        {
+          "bn": "ভেঙেছে",
+          "pronunciation": "bhengechhe",
+          "en": "broke / has broken"
+        }
+      ]
+    },
+    {
+      "bn": "এই প্রশ্ন সহজে সমাধান করা যায়।",
+      "pronunciation": "ei proshno shohoje shomadhan kora jay",
+      "en": "This question can be solved easily.",
+      "context": "Using সহজে (easily)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "এই",
+          "pronunciation": "ei",
+          "en": "this"
+        },
+        {
+          "bn": "প্রশ্ন",
+          "pronunciation": "proshno",
+          "en": "Question"
+        },
+        {
+          "bn": "সহজে",
+          "pronunciation": "shohoje",
+          "en": "easily"
+        },
+        {
+          "bn": "সমাধান",
+          "pronunciation": "shomadhan",
+          "en": "Solution"
+        },
+        {
+          "bn": "করা",
+          "pronunciation": "kora",
+          "en": "to do / to make"
+        },
+        {
+          "bn": "যায়",
+          "pronunciation": "jay",
+          "en": "goes / can be done / is possible"
+        }
+      ]
+    },
+    {
+      "bn": "সে কঠিনভাবে কাজটি শেষ করল।",
+      "pronunciation": "she kothinbhabe kajti shesh korlo",
+      "en": "He finished the task with difficulty.",
+      "context": "Using কঠিনভাবে (with difficulty)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "কঠিনভাবে",
+          "pronunciation": "kothinbhabe",
+          "en": "with difficulty"
+        },
+        {
+          "bn": "কাজটি",
+          "pronunciation": "kajti",
+          "en": "the task"
+        },
+        {
+          "bn": "শেষ",
+          "pronunciation": "shesh",
+          "en": "end / last / final"
+        },
+        {
+          "bn": "করল",
+          "pronunciation": "korlo",
+          "en": "did"
+        }
+      ]
+    },
+    {
+      "bn": "আমরা একসাথে খেলি।",
+      "pronunciation": "amra eksathe kheli",
+      "en": "We play together.",
+      "context": "Using একসাথে (together)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "আমরা",
+          "pronunciation": "amra",
+          "en": "we"
+        },
+        {
+          "bn": "একসাথে",
+          "pronunciation": "eksathe",
+          "en": "together"
+        },
+        {
+          "bn": "খেলি",
+          "pronunciation": "kheli",
+          "en": "play"
+        }
+      ]
+    },
+    {
+      "bn": "বইগুলো আলাদাভাবে রাখো।",
+      "pronunciation": "boigulo aladabhabe rakho",
+      "en": "Keep the books separately.",
+      "context": "Using আলাদাভাবে (separately)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "বইগুলো",
+          "pronunciation": "boigulo",
+          "en": "the books"
+        },
+        {
+          "bn": "আলাদাভাবে",
+          "pronunciation": "aladabhabe",
+          "en": "separately"
+        },
+        {
+          "bn": "রাখো",
+          "pronunciation": "rakho",
+          "en": "keep"
+        }
+      ]
+    },
+    {
+      "bn": "আবার চেষ্টা করো।",
+      "pronunciation": "abar cheshta koro",
+      "en": "Try again.",
+      "context": "Using আবার (again)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "আবার",
+          "pronunciation": "abar",
+          "en": "again"
+        },
+        {
+          "bn": "চেষ্টা",
+          "pronunciation": "cheshta",
+          "en": "try"
+        },
+        {
+          "bn": "করো",
+          "pronunciation": "koro",
+          "en": "you do"
+        }
+      ]
+    },
+    {
+      "bn": "সে বারবার ডাকছে।",
+      "pronunciation": "she barbar dakchhe",
+      "en": "He is calling repeatedly.",
+      "context": "Using বারবার (repeatedly)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "বারবার",
+          "pronunciation": "barbar",
+          "en": "repeatedly"
+        },
+        {
+          "bn": "ডাকছে",
+          "pronunciation": "dakchhe",
+          "en": "is calling"
+        }
+      ]
+    },
+    {
+      "bn": "আমি প্রায়ই এখানে আসি।",
+      "pronunciation": "ami prayi ekhane ashi",
+      "en": "I often come here.",
+      "context": "Using প্রায়ই (often)",
       "category": "adverbs",
       "words": [
         {
@@ -178,19 +453,14 @@
           "en": "I"
         },
         {
-          "bn": "কখনো",
-          "pronunciation": "kokhono",
-          "en": "sometimes / ever"
+          "bn": "প্রায়ই",
+          "pronunciation": "prayi",
+          "en": "often"
         },
         {
           "bn": "এখানে",
           "pronunciation": "ekhane",
           "en": "here"
-        },
-        {
-          "bn": "খেতে",
-          "pronunciation": "khete",
-          "en": "to eat"
         },
         {
           "bn": "আসি",
@@ -200,10 +470,68 @@
       ]
     },
     {
+      "bn": "মাঝে মাঝে বৃষ্টি হয়।",
+      "pronunciation": "majhe majhe brishti hoy",
+      "en": "Sometimes it rains.",
+      "context": "Using মাঝে মাঝে (sometimes)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "মাঝে",
+          "pronunciation": "majhe",
+          "en": "sometimes / between"
+        },
+        {
+          "bn": "মাঝে",
+          "pronunciation": "majhe",
+          "en": "sometimes / between"
+        },
+        {
+          "bn": "বৃষ্টি",
+          "pronunciation": "brishti",
+          "en": "rain"
+        },
+        {
+          "bn": "হয়",
+          "pronunciation": "hoy",
+          "en": "is / happens / becomes"
+        }
+      ]
+    },
+    {
+      "bn": "আমি কখনও সেখানে গেছি।",
+      "pronunciation": "ami kokhono shekhane gechi",
+      "en": "I have gone there before.",
+      "context": "Using কখনও (ever / sometimes)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "কখনও",
+          "pronunciation": "kokhono",
+          "en": "ever / sometimes"
+        },
+        {
+          "bn": "সেখানে",
+          "pronunciation": "shekhane",
+          "en": "there"
+        },
+        {
+          "bn": "গেছি",
+          "pronunciation": "gechi",
+          "en": "have gone"
+        }
+      ]
+    },
+    {
       "bn": "আমি কখনোই মিথ্যা বলি না।",
-      "pronunciation": "ami kokhonoi mithya boli na",
-      "en": "I never tell lies.",
-      "context": "Using কখনোই না (never)",
+      "pronunciation": "ami kokhonoi mittha boli na",
+      "en": "I never lie.",
+      "context": "Using কখনোই (never)",
       "category": "adverbs",
       "words": [
         {
@@ -218,8 +546,8 @@
         },
         {
           "bn": "মিথ্যা",
-          "pronunciation": "mithya",
-          "en": "lie / falsehood"
+          "pronunciation": "mittha",
+          "en": "lie / falsehood / false"
         },
         {
           "bn": "বলি",
@@ -234,73 +562,39 @@
       ]
     },
     {
-      "bn": "সে খুব দ্রুত হাঁটে।",
-      "pronunciation": "shey khub druto hate",
-      "en": "He or she walks very quickly.",
-      "context": "Using দ্রুত (quickly)",
+      "bn": "সে সর্বদা সত্য বলে।",
+      "pronunciation": "she shorboda shotto bole",
+      "en": "He always tells the truth.",
+      "context": "Using সর্বদা (always)",
       "category": "adverbs",
       "words": [
         {
           "bn": "সে",
-          "pronunciation": "shey",
+          "pronunciation": "she",
           "en": "he / she"
         },
         {
-          "bn": "খুব",
-          "pronunciation": "khub",
-          "en": "very"
+          "bn": "সর্বদা",
+          "pronunciation": "shorboda",
+          "en": "always"
         },
         {
-          "bn": "দ্রুত",
-          "pronunciation": "druto",
-          "en": "quickly"
+          "bn": "সত্য",
+          "pronunciation": "shotto",
+          "en": "true"
         },
         {
-          "bn": "হাঁটে",
-          "pronunciation": "hate",
-          "en": "walks"
+          "bn": "বলে",
+          "pronunciation": "bole",
+          "en": "says / by saying"
         }
       ]
     },
     {
-      "bn": "দয়া করে ধীরে কথা বলুন।",
-      "pronunciation": "doya kore dhire kotha bolun",
-      "en": "Please speak slowly.",
-      "context": "Using ধীরে (slowly)",
-      "category": "adverbs",
-      "words": [
-        {
-          "bn": "দয়া",
-          "pronunciation": "doya",
-          "en": "kindness / please"
-        },
-        {
-          "bn": "করে",
-          "pronunciation": "kore",
-          "en": "does"
-        },
-        {
-          "bn": "ধীরে",
-          "pronunciation": "dhire",
-          "en": "slowly"
-        },
-        {
-          "bn": "কথা",
-          "pronunciation": "kotha",
-          "en": "speech / words"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "please say"
-        }
-      ]
-    },
-    {
-      "bn": "আমি খুব ক্লান্ত।",
-      "pronunciation": "ami khub klanto",
-      "en": "I am very tired.",
-      "context": "Using খুব (very)",
+      "bn": "আমি সবসময় সময়মতো আসি।",
+      "pronunciation": "ami shobshomoy shomoymoto ashi",
+      "en": "I always arrive on time.",
+      "context": "Using সবসময় (always)",
       "category": "adverbs",
       "words": [
         {
@@ -309,9 +603,568 @@
           "en": "I"
         },
         {
+          "bn": "সবসময়",
+          "pronunciation": "shobshomoy",
+          "en": "always"
+        },
+        {
+          "bn": "সময়মতো",
+          "pronunciation": "shomoymoto",
+          "en": "on time / punctual"
+        },
+        {
+          "bn": "আসি",
+          "pronunciation": "ashi",
+          "en": "come"
+        }
+      ]
+    },
+    {
+      "bn": "আজ আমি ব্যস্ত।",
+      "pronunciation": "aj ami byosto",
+      "en": "Today I am busy.",
+      "context": "Using আজ (today)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "আজ",
+          "pronunciation": "aj",
+          "en": "today"
+        },
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "ব্যস্ত",
+          "pronunciation": "byosto",
+          "en": "busy"
+        }
+      ]
+    },
+    {
+      "bn": "কাল আমরা দেখা করব।",
+      "pronunciation": "kal amra dekha korbo",
+      "en": "We will meet tomorrow.",
+      "context": "Using কাল (tomorrow / yesterday)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "কাল",
+          "pronunciation": "kal",
+          "en": "tomorrow / yesterday / time"
+        },
+        {
+          "bn": "আমরা",
+          "pronunciation": "amra",
+          "en": "we"
+        },
+        {
+          "bn": "দেখা",
+          "pronunciation": "dekha",
+          "en": "seeing / meeting / seen"
+        },
+        {
+          "bn": "করব",
+          "pronunciation": "korbo",
+          "en": "will do"
+        }
+      ]
+    },
+    {
+      "bn": "এখন খাও।",
+      "pronunciation": "ekhon khao",
+      "en": "Eat now.",
+      "context": "Using এখন (now)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "এখন",
+          "pronunciation": "ekhon",
+          "en": "now"
+        },
+        {
+          "bn": "খাও",
+          "pronunciation": "khao",
+          "en": "eat"
+        }
+      ]
+    },
+    {
+      "bn": "তখন সবাই হাসছিল।",
+      "pronunciation": "tokhon shobai hashchhilo",
+      "en": "Everyone was laughing then.",
+      "context": "Using তখন (then)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "তখন",
+          "pronunciation": "tokhon",
+          "en": "then"
+        },
+        {
+          "bn": "সবাই",
+          "pronunciation": "shobai",
+          "en": "everyone"
+        },
+        {
+          "bn": "হাসছিল",
+          "pronunciation": "hashchhilo",
+          "en": "was laughing"
+        }
+      ]
+    },
+    {
+      "bn": "আগে হাত ধুয়ে নাও।",
+      "pronunciation": "age hat dhuye nao",
+      "en": "Wash your hands first.",
+      "context": "Using আগে (before)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "আগে",
+          "pronunciation": "age",
+          "en": "Before"
+        },
+        {
+          "bn": "হাত",
+          "pronunciation": "hat",
+          "en": "hand / arm"
+        },
+        {
+          "bn": "ধুয়ে",
+          "pronunciation": "dhuye",
+          "en": "after washing"
+        },
+        {
+          "bn": "নাও",
+          "pronunciation": "nao",
+          "en": "take"
+        }
+      ]
+    },
+    {
+      "bn": "পরে কথা বলব।",
+      "pronunciation": "pore kotha bolbo",
+      "en": "We'll talk later.",
+      "context": "Using পরে (later)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "পরে",
+          "pronunciation": "pore",
+          "en": "after / later / wears"
+        },
+        {
+          "bn": "কথা",
+          "pronunciation": "kotha",
+          "en": "speech / words / matter / promise"
+        },
+        {
+          "bn": "বলব",
+          "pronunciation": "bolbo",
+          "en": "will speak"
+        }
+      ]
+    },
+    {
+      "bn": "সে ইতিমধ্যে চলে গেছে।",
+      "pronunciation": "she itimodhye chole geche",
+      "en": "He has already left.",
+      "context": "Using ইতিমধ্যে (already)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "ইতিমধ্যে",
+          "pronunciation": "itimodhye",
+          "en": "already"
+        },
+        {
+          "bn": "চলে",
+          "pronunciation": "chole",
+          "en": "moves / leaves / works"
+        },
+        {
+          "bn": "গেছে",
+          "pronunciation": "geche",
+          "en": "gone"
+        }
+      ]
+    },
+    {
+      "bn": "সে এখনও ঘুমাচ্ছে।",
+      "pronunciation": "she ekhono ghumachchhe",
+      "en": "He is still sleeping.",
+      "context": "Using এখনও (still)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "এখনও",
+          "pronunciation": "ekhono",
+          "en": "still / yet"
+        },
+        {
+          "bn": "ঘুমাচ্ছে",
+          "pronunciation": "ghumachchhe",
+          "en": "is sleeping"
+        }
+      ]
+    },
+    {
+      "bn": "সঙ্গে সঙ্গে উত্তর দাও।",
+      "pronunciation": "shonge shonge uttor dao",
+      "en": "Reply immediately.",
+      "context": "Using সঙ্গে সঙ্গে (immediately)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "সঙ্গে",
+          "pronunciation": "shonge",
+          "en": "with"
+        },
+        {
+          "bn": "সঙ্গে",
+          "pronunciation": "shonge",
+          "en": "with"
+        },
+        {
+          "bn": "উত্তর",
+          "pronunciation": "uttor",
+          "en": "Answer / North"
+        },
+        {
+          "bn": "দাও",
+          "pronunciation": "dao",
+          "en": "give / please give (familiar)"
+        }
+      ]
+    },
+    {
+      "bn": "হঠাৎ বৃষ্টি শুরু হলো।",
+      "pronunciation": "hothat brishti shuru holo",
+      "en": "Suddenly it started raining.",
+      "context": "Using হঠাৎ (suddenly)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "হঠাৎ",
+          "pronunciation": "hothat",
+          "en": "suddenly"
+        },
+        {
+          "bn": "বৃষ্টি",
+          "pronunciation": "brishti",
+          "en": "rain"
+        },
+        {
+          "bn": "শুরু",
+          "pronunciation": "shuru",
+          "en": "start"
+        },
+        {
+          "bn": "হলো",
+          "pronunciation": "holo",
+          "en": "done"
+        }
+      ]
+    },
+    {
+      "bn": "আকস্মিকভাবে বিদ্যুৎ চলে গেল।",
+      "pronunciation": "akośmikbʰabe bidyut chole gelo",
+      "en": "Unexpectedly the power went out.",
+      "context": "Using আকস্মিকভাবে (unexpectedly)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "আকস্মিকভাবে",
+          "pronunciation": "akośmikbʰabe",
+          "en": "unexpectedly"
+        },
+        {
+          "bn": "বিদ্যুৎ",
+          "pronunciation": "bidyut",
+          "en": "electricity"
+        },
+        {
+          "bn": "চলে",
+          "pronunciation": "chole",
+          "en": "moves / leaves / works"
+        },
+        {
+          "bn": "গেল",
+          "pronunciation": "gelo",
+          "en": "went"
+        }
+      ]
+    },
+    {
+      "bn": "ধীরে ধীরে সূর্য উঠল।",
+      "pronunciation": "dhire dhire shurjo uthlo",
+      "en": "The sun rose gradually.",
+      "context": "Using ধীরে ধীরে (gradually)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "ধীরে",
+          "pronunciation": "dhire",
+          "en": "slowly / gradually"
+        },
+        {
+          "bn": "ধীরে",
+          "pronunciation": "dhire",
+          "en": "slowly / gradually"
+        },
+        {
+          "bn": "সূর্য",
+          "pronunciation": "shurjo",
+          "en": "sun"
+        },
+        {
+          "bn": "উঠল",
+          "pronunciation": "uthlo",
+          "en": "rose"
+        }
+      ]
+    },
+    {
+      "bn": "ক্রমশ পরিস্থিতি ভালো হচ্ছে।",
+      "pronunciation": "kromosho poristhiti bhalo hochchhe",
+      "en": "The situation is gradually improving.",
+      "context": "Using ক্রমশ (gradually)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "ক্রমশ",
+          "pronunciation": "kromosho",
+          "en": "gradually"
+        },
+        {
+          "bn": "পরিস্থিতি",
+          "pronunciation": "poristhiti",
+          "en": "situation"
+        },
+        {
+          "bn": "ভালো",
+          "pronunciation": "bhalo",
+          "en": "good"
+        },
+        {
+          "bn": "হচ্ছে",
+          "pronunciation": "hochchhe",
+          "en": "is happening"
+        }
+      ]
+    },
+    {
+      "bn": "কাজটি সম্পূর্ণভাবে শেষ হয়েছে।",
+      "pronunciation": "kajti shompurnobhabe shesh hoyechhe",
+      "en": "The work is completely finished.",
+      "context": "Using সম্পূর্ণভাবে (completely)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "কাজটি",
+          "pronunciation": "kajti",
+          "en": "the task"
+        },
+        {
+          "bn": "সম্পূর্ণভাবে",
+          "pronunciation": "shompurnobhabe",
+          "en": "completely"
+        },
+        {
+          "bn": "শেষ",
+          "pronunciation": "shesh",
+          "en": "end / last / final"
+        },
+        {
+          "bn": "হয়েছে",
+          "pronunciation": "hoyechhe",
+          "en": "has been"
+        }
+      ]
+    },
+    {
+      "bn": "রাস্তা আংশিকভাবে বন্ধ।",
+      "pronunciation": "rasta angshikbhabe bondho",
+      "en": "The road is partially closed.",
+      "context": "Using আংশিকভাবে (partially)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "রাস্তা",
+          "pronunciation": "rasta",
+          "en": "road"
+        },
+        {
+          "bn": "আংশিকভাবে",
+          "pronunciation": "angshikbhabe",
+          "en": "partially"
+        },
+        {
+          "bn": "বন্ধ",
+          "pronunciation": "bondho",
+          "en": "closed / switched off"
+        }
+      ]
+    },
+    {
+      "bn": "আমি পুরোপুরি একমত।",
+      "pronunciation": "ami puropuri ekmot",
+      "en": "I completely agree.",
+      "context": "Using পুরোপুরি (completely)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "পুরোপুরি",
+          "pronunciation": "puropuri",
+          "en": "completely"
+        },
+        {
+          "bn": "একমত",
+          "pronunciation": "ekmot",
+          "en": "in agreement"
+        }
+      ]
+    },
+    {
+      "bn": "পরীক্ষাটি মোটামুটি ভালো হয়েছে।",
+      "pronunciation": "porikkhati motamuti bhalo hoyechhe",
+      "en": "The exam went fairly well.",
+      "context": "Using মোটামুটি (fairly)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "পরীক্ষাটি",
+          "pronunciation": "porikkhati",
+          "en": "the exam"
+        },
+        {
+          "bn": "মোটামুটি",
+          "pronunciation": "motamuti",
+          "en": "fairly / approximately"
+        },
+        {
+          "bn": "ভালো",
+          "pronunciation": "bhalo",
+          "en": "good"
+        },
+        {
+          "bn": "হয়েছে",
+          "pronunciation": "hoyechhe",
+          "en": "has been"
+        }
+      ]
+    },
+    {
+      "bn": "সে বেশ দ্রুত দৌড়ায়।",
+      "pronunciation": "she besh druto douray",
+      "en": "He runs quite fast.",
+      "context": "Using বেশ (quite)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "বেশ",
+          "pronunciation": "besh",
+          "en": "quite / very / all right"
+        },
+        {
+          "bn": "দ্রুত",
+          "pronunciation": "druto",
+          "en": "quickly / fast / quick"
+        },
+        {
+          "bn": "দৌড়ায়",
+          "pronunciation": "douray",
+          "en": "runs"
+        }
+      ]
+    },
+    {
+      "bn": "আজ খুব গরম।",
+      "pronunciation": "aj khub gorom",
+      "en": "It is very hot today.",
+      "context": "Using খুব (very)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "আজ",
+          "pronunciation": "aj",
+          "en": "today"
+        },
+        {
           "bn": "খুব",
           "pronunciation": "khub",
           "en": "very"
+        },
+        {
+          "bn": "গরম",
+          "pronunciation": "gorom",
+          "en": "hot"
+        }
+      ]
+    },
+    {
+      "bn": "এটি অত্যন্ত গুরুত্বপূর্ণ।",
+      "pronunciation": "eti otyonto guruttopurno",
+      "en": "This is extremely important.",
+      "context": "Using অত্যন্ত (extremely)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "এটি",
+          "pronunciation": "eti",
+          "en": "this"
+        },
+        {
+          "bn": "অত্যন্ত",
+          "pronunciation": "otyonto",
+          "en": "extremely"
+        },
+        {
+          "bn": "গুরুত্বপূর্ণ",
+          "pronunciation": "guruttopurno",
+          "en": "important"
+        }
+      ]
+    },
+    {
+      "bn": "সে ভীষণ ক্লান্ত।",
+      "pronunciation": "she bhishon klanto",
+      "en": "He is terribly tired.",
+      "context": "Using ভীষণ (terribly / very)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "ভীষণ",
+          "pronunciation": "bhishon",
+          "en": "terribly / very"
         },
         {
           "bn": "ক্লান্ত",
@@ -321,1351 +1174,2796 @@
       ]
     },
     {
-      "bn": "দয়া করে আবার বলুন।",
-      "pronunciation": "doya kore abar bolun",
-      "en": "Please say it again.",
-      "context": "Using আবার (again)",
+      "bn": "বাতাস প্রচণ্ডভাবে বইছে।",
+      "pronunciation": "batash prochondobhabe boiche",
+      "en": "The wind is blowing intensely.",
+      "context": "Using প্রচণ্ডভাবে (intensely)",
       "category": "adverbs",
       "words": [
         {
-          "bn": "দয়া",
-          "pronunciation": "doya",
-          "en": "kindness / please"
+          "bn": "বাতাস",
+          "pronunciation": "batash",
+          "en": "wind"
         },
         {
-          "bn": "করে",
-          "pronunciation": "kore",
-          "en": "does"
+          "bn": "প্রচণ্ডভাবে",
+          "pronunciation": "prochondobhabe",
+          "en": "intensely"
         },
         {
-          "bn": "আবার",
-          "pronunciation": "abar",
-          "en": "again"
-        },
-        {
-          "bn": "বলুন",
-          "pronunciation": "bolun",
-          "en": "please say"
+          "bn": "বইছে",
+          "pronunciation": "boiche",
+          "en": "is blowing / flowing"
         }
       ]
     },
     {
-      "bn": "আমার বন্ধুরা খুব ভালো।",
-      "pronunciation": "Amar bondhura khub bhalo.",
-      "en": "My friends are very good.",
-      "context": "Sharing personal information.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "সে খুব সুন্দর।",
-      "pronunciation": "She khoob shundor.",
-      "en": "She is very beautiful.",
-      "context": "Complimenting a female.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "মিথ্যা কথা বোলো না।",
-      "pronunciation": "Mithya kotha bolo na.",
-      "en": "Do not tell lies.",
-      "context": "Advising honesty.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "আমার বন্ধু আমাকে সাহায্য করে।",
-      "pronunciation": "Amar bondhu amake sahajjo kore.",
-      "en": "My friend helps me.",
-      "context": "Talking about help from a friend.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "আজ সময় খুবই কম।",
-      "pronunciation": "Aj shomoy khubi kom.",
-      "en": "Today there is very little time.",
-      "context": "Talking about limited time.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "এ আমার বন্ধু!",
-      "pronunciation": "E' amar bondhu",
-      "en": "This is my friend!",
-      "context": "Introducing a friend.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "সবাই একসাথে নাচছে।",
-      "pronunciation": "Shobai ekshathe nachchhe.",
-      "en": "Everyone is dancing together.",
-      "context": "Describing a group activity.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "সবাই একসাথে বসে খেলছে।",
-      "pronunciation": "Shobai ekshathe boshe khelchhe.",
-      "en": "Everyone is sitting and playing together.",
-      "context": "Describing a group activity.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "আমার মতো কোনো বন্ধু নেই।",
-      "pronunciation": "Amar moto kono bondhu nei.",
-      "en": "There is no friend like me.",
-      "context": "Personal statement.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "আপনি আমার বন্ধু।",
-      "pronunciation": "Aapni amar bondhu.",
-      "en": "You are my friend.",
-      "context": "Stating friendship status.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "সব কিছু ঠিক আছে",
-      "pronunciation": "Shob kichu thik ache",
-      "en": "Everything is fine.",
-      "context": "Reassurance.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "বসে কথা বলুন",
-      "pronunciation": "Boshe kotha bolun",
-      "en": "Sit down and talk.",
-      "context": "Inviting a seated conversation.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "আজ অনেক কাজ আছে",
-      "pronunciation": "Aaj onek kaj ache",
-      "en": "There’s a lot of work today.",
-      "context": "Stating workload.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "এই কাজটা খুব তাড়াতাড়ি করো।",
-      "pronunciation": "Ei kaj ta khub taratari koro.",
-      "en": "Do this work very quickly.",
-      "context": "Giving an urgent instruction.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "সবাই বসুন।",
-      "pronunciation": "Shobai boshun.",
-      "en": "Everyone sit down.",
-      "context": "Instruction for a group.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "সে এই কাছে থাকে।",
-      "pronunciation": "Shey ei kachhe thake.",
-      "en": "He lives nearby.",
-      "context": "Giving location information.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "প্রত্যেক দিন খেলা ভালো লাগে।",
-      "pronunciation": "Protyek din khela bhalo lage.",
-      "en": "Playing every day feels good.",
-      "context": "Sharing a habit's benefit.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "নদীটা খুব সুন্দর।",
-      "pronunciation": "Nodi ta khub shundor.",
-      "en": "The river is very beautiful.",
-      "context": "Description of scenery.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "মা বাড়িতে আসেন।",
-      "pronunciation": "Ma bari te ashen.",
-      "en": "Mother comes home.",
-      "context": "Describing arrival.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "আজ দিন খুবই ভালো।",
-      "pronunciation": "Aj din khubi bhalo.",
-      "en": "Today is very good.",
-      "context": "Describing the day positively.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "আমার ভয় করে না।",
-      "pronunciation": "Amar bhoy kore naa.",
-      "en": "I am not afraid.",
-      "context": "Expressing lack of fear.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "আজ একটি সুন্দর দিন।",
-      "pronunciation": "Aj ekti sundor din.",
-      "en": "Today is a beautiful day.",
-      "context": "Describing the day.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "গোলাপ ফুল খুব সুন্দর।",
-      "pronunciation": "Golap ful khub sundor.",
-      "en": "The rose is very beautiful.",
-      "context": "Describing beauty.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "আজ দিন খুব গরম।",
-      "pronunciation": "Aj din khub gorom.",
-      "en": "Today is very hot.",
-      "context": "Talking about the weather.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "পৃথিবী খুবই সুন্দর।",
-      "pronunciation": "Prithibi khubi sundor.",
-      "en": "The world is very beautiful.",
-      "context": "Expressing admiration for the world.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "সেখানে যাও।",
-      "pronunciation": "Shekhane jao.",
-      "en": "Go there.",
-      "context": "Giving a directional instruction.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "সব ঠিক আছে।",
-      "pronunciation": "Shob theek ache.",
-      "en": "Everything is alright.",
-      "context": "Reassuring or confirming well-being.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "কোথায় থাকেন?",
-      "pronunciation": "Kothay thaken?",
-      "en": "Where do you live?",
-      "context": "Asking about residence formally.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "আজ অনেক গরম",
-      "pronunciation": "Aaj onek gorom",
-      "en": "It’s very hot today",
-      "context": "Commenting on the weather.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "আজ অনেক ঠান্ডা",
-      "pronunciation": "Aaj onek thanda",
-      "en": "It’s very cold today",
-      "context": "Commenting on the weather.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "আমি চিন্তা করছি না",
-      "pronunciation": "Ami chinta korchi na",
-      "en": "I am not worried",
-      "context": "Expressing lack of concern.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "আমি ভাবছি না",
-      "pronunciation": "Ami bhabchi na",
-      "en": "I am not thinking.",
-      "context": "Stating mental state.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "আমার সাথে আসবেন না!",
-      "pronunciation": "Amar shathe ashben na!",
-      "en": "Don’t come with me!",
-      "context": "Forbidding someone from following.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "আজ আমি ভালো আছি!",
-      "pronunciation": "Aaj ami bhalo achhi!",
-      "en": "Today I am good!",
-      "context": "Stating current mood/health.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "আমাদের সাথী থাকো",
-      "pronunciation": "Amader sathi thako",
-      "en": "Stay with us",
-      "context": "Requesting company.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "আমি আপনাকে ভুলবো না",
-      "pronunciation": "Ami aapnake bhulbo na",
-      "en": "I will not forget you",
-      "context": "A promise of remembrance.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "আমি তোমার বন্ধু হতে চাই!",
-      "pronunciation": "Ami tomar bondhu hote chai!",
-      "en": "I want to be your friend!",
-      "context": "Expressing desire for friendship.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "সময় চলে যায়",
-      "pronunciation": "Samoy chole jae",
-      "en": "Time flies away",
-      "context": "Comment on the passage of time.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "সে স্কুলে যায় না।",
-      "pronunciation": "Shey school e jaay na.",
-      "en": "He doesn't go to school.",
-      "context": "Stating a fact about someone.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "উনি খুব সুন্দর।",
-      "pronunciation": "Uni khub shundor.",
-      "en": "He is very handsome.",
-      "context": "Complimenting someone.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "আমি আপনার সাথে কথা বলতে চাই।",
-      "pronunciation": "Ami Aapnar sathe kotha bolte chai.",
-      "en": "I want to talk to you.",
-      "context": "Requesting a conversation.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "আমি যাব।",
-      "pronunciation": "Ami jabo.",
-      "en": "I will go.",
-      "context": "Stating intent to leave.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "আমার পেট খুব ব্যথা করছে।",
-      "pronunciation": "Amar pet khub byatha korchhe.",
-      "en": "My stomach is hurting very much.",
-      "context": "Expressing physical pain.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "আমার সঙ্গে কেউ আসেনি।",
-      "pronunciation": "Amar shonge keu aseni.",
-      "en": "No one came with me.",
-      "context": "Clarifying arrival status.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "আমার বাড়ির পাশে একটা নদী আছে।",
-      "pronunciation": "Amar barir pashe ekta nodi ache.",
-      "en": "There is a river near my house.",
-      "context": "Location information.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "এই বাড়িতে কে থাকে?",
-      "pronunciation": "Ei bari te ke thake?",
-      "en": "Who lives in this house?",
-      "context": "Curiosity about neighbors.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "আমি গাড়ি চালাতে পারি না।",
-      "pronunciation": "Ami gaari chalate pari na.",
-      "en": "I cannot drive a car.",
-      "context": "Talking about ability.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "আপনার জামা সুন্দর।",
-      "pronunciation": "Apnar jaama sundor.",
-      "en": "Your dress is beautiful.",
-      "context": "Giving a compliment.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "আমার মা খুব ভালো মানুষ।",
-      "pronunciation": "Amar Maa khub bhalo manush.",
-      "en": "My mother is a very good person.",
-      "context": "Describing a family member.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "সকালবেলা খুবই শান্ত।",
-      "pronunciation": "Shokal-bela khubi shanto.",
-      "en": "Morning time is very peaceful.",
-      "context": "Describing the calm of morning.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "সুস্থ থাকুন।",
-      "pronunciation": "Shustho thakun.",
-      "en": "Stay healthy.",
-      "context": "Wishing good health politely.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "সুন্দরী মেয়ে নাচছে।",
-      "pronunciation": "Sundori meye nachchhe.",
-      "en": "The beautiful girl is dancing.",
-      "context": "Describing an ongoing action.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "আমি উত্তর দিকে যাবো।",
-      "pronunciation": "Ami uttor dike jabo.",
-      "en": "I will go in the north direction.",
-      "context": "Talking about direction.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "আমি বুঝতে পারছি না",
-      "pronunciation": "Ami bujhte parchi na",
-      "en": "I can't understand",
-      "context": "Expressing lack of comprehension.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "আমার নাম...",
-      "pronunciation": "Amar naam...",
-      "en": "My name is...",
-      "context": "Introducing yourself.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "আমি খাই নি",
-      "pronunciation": "Ami khai ni",
-      "en": "I did not eat",
-      "context": "Stating you haven't eaten.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "আজ কি দিন?",
-      "pronunciation": "Aaj ki din?",
-      "en": "What day is it today?",
-      "context": "Asking for the day of the week.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "সুন্দর",
-      "pronunciation": "Shundor",
-      "en": "Beautiful",
-      "context": "Describing something aesthetically pleasing.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "কিছু না",
-      "pronunciation": "Kichu na",
-      "en": "Nothing",
-      "context": "Response to 'what happened' or 'what is it'.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "আজ বৃষ্টি হবে",
-      "pronunciation": "Aaj brishti hobe",
-      "en": "It will rain today",
-      "context": "Predicting weather.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "আমার কাছে এসো",
-      "pronunciation": "Amar kache esho",
-      "en": "Come to me",
-      "context": "Calling someone near.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "এখন কি করবে?",
-      "pronunciation": "Ekhon ki korbe?",
-      "en": "What will you do now?",
-      "context": "Asking about future plans.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "এখন বাজে...",
-      "pronunciation": "Ekhon baje...",
-      "en": "It’s now...",
-      "context": "Starting to tell the time.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "কি সুন্দর!",
-      "pronunciation": "Ki sundor!",
-      "en": "How beautiful!",
-      "context": "Exclaiming about beauty.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "কি সুন্দর গল্প!",
-      "pronunciation": "Ki shundor golpo!",
-      "en": "What a beautiful story!",
-      "context": "Praising a story.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "আমার সাথে আসুন",
-      "pronunciation": "Amar shathe aashun",
-      "en": "Come with me.",
-      "context": "Requesting someone to follow you.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "সুন্দর দিন!",
-      "pronunciation": "Shundor din!",
-      "en": "Beautiful day!",
-      "context": "Exclaiming about the day.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "এখন একটু পরিষ্কার করো",
-      "pronunciation": "Ekhon ektu porishkar koro",
-      "en": "Clean up a bit now.",
-      "context": "Instruction to clean.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "কিছু বলতে পারবে না!",
-      "pronunciation": "Kichu bolte parbe na!",
-      "en": "You can’t say anything!",
-      "context": "Restricting speech.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "কি সুন্দর রাত!",
-      "pronunciation": "Ki sundor raat!",
-      "en": "What a beautiful night!",
-      "context": "Exclaiming about the night.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "আমরা একসাথে যাবো",
-      "pronunciation": "Aamra ekshathe jabo",
-      "en": "We will go together.",
-      "context": "Planning group movement.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "আপনার জন্য আমি খুশি!",
-      "pronunciation": "Aapnar jonno ami khushi!",
-      "en": "I am happy for you!",
-      "context": "Expressing joy for someone else.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "আমি তোমার সাথে আসতে চাই!",
-      "pronunciation": "Ami tomar shathe ashte chai!",
-      "en": "I want to come with you!",
-      "context": "Expressing desire to join someone.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "বিকাল বেলাতে আসুন",
-      "pronunciation": "Bikal belate ashun",
-      "en": "Come in the afternoon",
-      "context": "Setting a time for an appointment.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "খুব ভালো",
-      "pronunciation": "Khub bhalo",
-      "en": "Very good",
-      "context": "Strongly positive adjective.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "কি সুন্দর ছবি!",
-      "pronunciation": "Ki sundor chhobi!",
-      "en": "What a beautiful picture!",
-      "context": "Praising an image.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "কোথায় পাবো আপনাকে?",
-      "pronunciation": "Kothai pabo aapnake?",
-      "en": "Where can I find you?",
-      "context": "Asking for someone's location or contact.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "বন্ধু",
-      "pronunciation": "Bondhu",
-      "en": "Friend",
-      "context": "The word for friend.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "ভুলে যাবেন না",
-      "pronunciation": "Bhule jaaben naa",
-      "en": "Don’t forget it",
-      "context": "Reminder.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "তুমি কি আমার সাথে আসবে?",
-      "pronunciation": "Tumi ki amar shathe asbe?",
-      "en": "Will you come with me?",
-      "context": "Asking for company informally.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "সে আমার পাশে বসেছে।",
-      "pronunciation": "She amar pashe bosheche.",
-      "en": "He sat beside me.",
-      "context": "Describing a past action.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "সে আমার ওপর হাসছিল।",
-      "pronunciation": "Shey amar upor hashchhilo.",
-      "en": "He was laughing at me.",
-      "context": "Describing past behavior.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "উনার চুল কালো।",
-      "pronunciation": "Unaar chul kalo.",
-      "en": "His/her hair is black.",
-      "context": "Describing physical appearance.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "আমি আপনার জন্য অনেক দিন ধরে অপেক্ষা করছি।",
-      "pronunciation": "Ami Aapnar jonno anek din dhore opekkha korchi.",
-      "en": "I have been waiting for you for a long time.",
-      "context": "Expressing patience/waiting.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "আমার আপনার কাছে একটা সাহায্য চাই।",
-      "pronunciation": "Amar Aapnar kache ekta sahajyo chai.",
-      "en": "I need some help from you.",
-      "context": "Requesting assistance politely.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "আমি রান্না করব।",
-      "pronunciation": "Ami ranna korbo.",
-      "en": "I will cook.",
-      "context": "Stating future plan.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "প্রতীক খুব ভালো ছেলে।",
-      "pronunciation": "Protik khub bhalo chhele.",
-      "en": "Protik is a very good boy.",
-      "context": "Praising a specific person.",
-      "category": "adverbs"
-    },
-    {
-      "bn": "সে দোকানে যাচ্ছে।",
-      "pronunciation": "She dokane jachhe.",
-      "en": "She is going to the shop.",
-      "context": "Describing someone's movement.",
-      "category": "adverbs"
+      "bn": "তাকে বিশেষভাবে আমন্ত্রণ করা হয়েছে।",
+      "pronunciation": "take bisheshbhabe amontron kora hoyechhe",
+      "en": "He was especially invited.",
+      "context": "Using বিশেষভাবে (especially)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "তাকে",
+          "pronunciation": "take",
+          "en": "on the shelf"
+        },
+        {
+          "bn": "বিশেষভাবে",
+          "pronunciation": "bisheshbhabe",
+          "en": "especially"
+        },
+        {
+          "bn": "আমন্ত্রণ",
+          "pronunciation": "amontron",
+          "en": "invitation / invited"
+        },
+        {
+          "bn": "করা",
+          "pronunciation": "kora",
+          "en": "to do / to make"
+        },
+        {
+          "bn": "হয়েছে",
+          "pronunciation": "hoyechhe",
+          "en": "has been"
+        }
+      ]
+    },
+    {
+      "bn": "সে মূলত শিক্ষক।",
+      "pronunciation": "she muloto shikkhok",
+      "en": "He is mainly a teacher.",
+      "context": "Using মূলত (mainly)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "মূলত",
+          "pronunciation": "muloto",
+          "en": "mainly"
+        },
+        {
+          "bn": "শিক্ষক",
+          "pronunciation": "shikkhok",
+          "en": "teacher"
+        }
+      ]
+    },
+    {
+      "bn": "এখানে প্রধানত ধান জন্মায়।",
+      "pronunciation": "ekhane prodhanoto dhan jonmay",
+      "en": "Rice is primarily grown here.",
+      "context": "Using প্রধানত (primarily)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "এখানে",
+          "pronunciation": "ekhane",
+          "en": "here"
+        },
+        {
+          "bn": "প্রধানত",
+          "pronunciation": "prodhanoto",
+          "en": "mainly"
+        },
+        {
+          "bn": "ধান",
+          "pronunciation": "dhan",
+          "en": "rice crop"
+        },
+        {
+          "bn": "জন্মায়",
+          "pronunciation": "jonmay",
+          "en": "is born"
+        }
+      ]
+    },
+    {
+      "bn": "তুমি সত্যিই ভালো।",
+      "pronunciation": "tumi shotti-i bhalo",
+      "en": "You are really good.",
+      "context": "Using সত্যিই (really)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "তুমি",
+          "pronunciation": "tumi",
+          "en": "you (familiar)"
+        },
+        {
+          "bn": "সত্যিই",
+          "pronunciation": "shotti-i",
+          "en": "really"
+        },
+        {
+          "bn": "ভালো",
+          "pronunciation": "bhalo",
+          "en": "good"
+        }
+      ]
+    },
+    {
+      "bn": "আমি অবশ্যই আসব।",
+      "pronunciation": "ami oboshshoi ashbo",
+      "en": "I will certainly come.",
+      "context": "Using অবশ্যই (certainly)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "অবশ্যই",
+          "pronunciation": "oboshshoi",
+          "en": "certainly"
+        },
+        {
+          "bn": "আসব",
+          "pronunciation": "ashbo",
+          "en": "will come"
+        }
+      ]
+    },
+    {
+      "bn": "সে নিশ্চয়ই জিতবে।",
+      "pronunciation": "she nishshoyi jitbe",
+      "en": "He will surely win.",
+      "context": "Using নিশ্চয়ই (surely)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "নিশ্চয়ই",
+          "pronunciation": "nishshoyi",
+          "en": "surely"
+        },
+        {
+          "bn": "জিতবে",
+          "pronunciation": "jitbe",
+          "en": "will win"
+        }
+      ]
+    },
+    {
+      "bn": "হয়তো কাল বৃষ্টি হবে।",
+      "pronunciation": "hoyto kal brishti hobe",
+      "en": "Maybe it will rain tomorrow.",
+      "context": "Using হয়তো (maybe)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "হয়তো",
+          "pronunciation": "hoyto",
+          "en": "maybe"
+        },
+        {
+          "bn": "কাল",
+          "pronunciation": "kal",
+          "en": "tomorrow / yesterday / time"
+        },
+        {
+          "bn": "বৃষ্টি",
+          "pronunciation": "brishti",
+          "en": "rain"
+        },
+        {
+          "bn": "হবে",
+          "pronunciation": "hobe",
+          "en": "will be"
+        }
+      ]
+    },
+    {
+      "bn": "সে সম্ভবত বাড়িতে আছে।",
+      "pronunciation": "she shombhoboto barite achhe",
+      "en": "He is probably at home.",
+      "context": "Using সম্ভবত (probably)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "সম্ভবত",
+          "pronunciation": "shombhoboto",
+          "en": "probably"
+        },
+        {
+          "bn": "বাড়িতে",
+          "pronunciation": "barite",
+          "en": "at home"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is / has"
+        }
+      ]
+    },
+    {
+      "bn": "বোধহয় সে ভুলে গেছে।",
+      "pronunciation": "bodhoy she bhule geche",
+      "en": "Perhaps he forgot.",
+      "context": "Using বোধহয় (perhaps)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "বোধহয়",
+          "pronunciation": "bodhoy",
+          "en": "perhaps"
+        },
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "ভুলে",
+          "pronunciation": "bhule",
+          "en": "Forget"
+        },
+        {
+          "bn": "গেছে",
+          "pronunciation": "geche",
+          "en": "gone"
+        }
+      ]
+    },
+    {
+      "bn": "নিশ্চিন্তে ঘুমাও।",
+      "pronunciation": "nishchinte ghumao",
+      "en": "Sleep peacefully.",
+      "context": "Using নিশ্চিন্তে (peacefully)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "নিশ্চিন্তে",
+          "pronunciation": "nishchinte",
+          "en": "peacefully / without worry"
+        },
+        {
+          "bn": "ঘুমাও",
+          "pronunciation": "ghumao",
+          "en": "sleep"
+        }
+      ]
+    },
+    {
+      "bn": "শিশুরা আনন্দে খেলছে।",
+      "pronunciation": "shishura anonde khelchhe",
+      "en": "The children are playing happily.",
+      "context": "Using আনন্দে (happily)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "শিশুরা",
+          "pronunciation": "shishura",
+          "en": "the children"
+        },
+        {
+          "bn": "আনন্দে",
+          "pronunciation": "anonde",
+          "en": "in joy"
+        },
+        {
+          "bn": "খেলছে",
+          "pronunciation": "khelchhe",
+          "en": "is playing"
+        }
+      ]
+    },
+    {
+      "bn": "সে দুঃখে কাঁদছে।",
+      "pronunciation": "she dukkhe kadche",
+      "en": "He is crying sadly.",
+      "context": "Using দুঃখে (sadly)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "দুঃখে",
+          "pronunciation": "dukkhe",
+          "en": "sadly / in sorrow"
+        },
+        {
+          "bn": "কাঁদছে",
+          "pronunciation": "kadche",
+          "en": "is crying"
+        }
+      ]
+    },
+    {
+      "bn": "সে রাগে চলে গেল।",
+      "pronunciation": "she rage chole gelo",
+      "en": "He left angrily.",
+      "context": "Using রাগে (angrily)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "রাগে",
+          "pronunciation": "rage",
+          "en": "angrily / in anger"
+        },
+        {
+          "bn": "চলে",
+          "pronunciation": "chole",
+          "en": "moves / leaves / works"
+        },
+        {
+          "bn": "গেল",
+          "pronunciation": "gelo",
+          "en": "went"
+        }
+      ]
+    },
+    {
+      "bn": "সে হাসিমুখে সবাইকে স্বাগত জানাল।",
+      "pronunciation": "she hashimukhe shobaike shagoto janalo",
+      "en": "She welcomed everyone with a smile.",
+      "context": "Using হাসিমুখে (smilingly)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "হাসিমুখে",
+          "pronunciation": "hashimukhe",
+          "en": "with a smile"
+        },
+        {
+          "bn": "সবাইকে",
+          "pronunciation": "shobaike",
+          "en": "everyone"
+        },
+        {
+          "bn": "স্বাগত",
+          "pronunciation": "shagoto",
+          "en": "welcome"
+        },
+        {
+          "bn": "জানাল",
+          "pronunciation": "janalo",
+          "en": "offered / informed"
+        }
+      ]
+    },
+    {
+      "bn": "মনোযোগ দিয়ে শুনো।",
+      "pronunciation": "monojog diye shuno",
+      "en": "Listen attentively.",
+      "context": "Using মনোযোগ দিয়ে (attentively)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "মনোযোগ",
+          "pronunciation": "monojog",
+          "en": "attention"
+        },
+        {
+          "bn": "দিয়ে",
+          "pronunciation": "diye",
+          "en": "through / with"
+        },
+        {
+          "bn": "শুনো",
+          "pronunciation": "shuno",
+          "en": "listen"
+        }
+      ]
+    },
+    {
+      "bn": "সে ইচ্ছাকৃতভাবে দেরি করেছে।",
+      "pronunciation": "she ichchhakritobhabe deri koreche",
+      "en": "He intentionally arrived late.",
+      "context": "Using ইচ্ছাকৃতভাবে (intentionally)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "ইচ্ছাকৃতভাবে",
+          "pronunciation": "ichchhakritobhabe",
+          "en": "intentionally"
+        },
+        {
+          "bn": "দেরি",
+          "pronunciation": "deri",
+          "en": "late"
+        },
+        {
+          "bn": "করেছে",
+          "pronunciation": "koreche",
+          "en": "did / has done"
+        }
+      ]
+    },
+    {
+      "bn": "আমি অনিচ্ছাকৃতভাবে ভুল করেছি।",
+      "pronunciation": "ami onichchhakritobhabe bhul korechhi",
+      "en": "I made the mistake unintentionally.",
+      "context": "Using অনিচ্ছাকৃতভাবে (unintentionally)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "অনিচ্ছাকৃতভাবে",
+          "pronunciation": "onichchhakritobhabe",
+          "en": "unintentionally"
+        },
+        {
+          "bn": "ভুল",
+          "pronunciation": "bhul",
+          "en": "Mistake / wrong"
+        },
+        {
+          "bn": "করেছি",
+          "pronunciation": "korechhi",
+          "en": "did / have done"
+        }
+      ]
+    },
+    {
+      "bn": "বিষয়টি প্রকাশ্যে আলোচনা করা হলো।",
+      "pronunciation": "bishoyti prokashshe alochona kora holo",
+      "en": "The matter was discussed publicly.",
+      "context": "Using প্রকাশ্যে (publicly)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "বিষয়টি",
+          "pronunciation": "bishoyti",
+          "en": "the matter"
+        },
+        {
+          "bn": "প্রকাশ্যে",
+          "pronunciation": "prokashshe",
+          "en": "publicly"
+        },
+        {
+          "bn": "আলোচনা",
+          "pronunciation": "alochona",
+          "en": "discussion"
+        },
+        {
+          "bn": "করা",
+          "pronunciation": "kora",
+          "en": "to do / to make"
+        },
+        {
+          "bn": "হলো",
+          "pronunciation": "holo",
+          "en": "done"
+        }
+      ]
+    },
+    {
+      "bn": "তারা গোপনে দেখা করল।",
+      "pronunciation": "tara gopone dekha korlo",
+      "en": "They met secretly.",
+      "context": "Using গোপনে (secretly)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "তারা",
+          "pronunciation": "tara",
+          "en": "they / star"
+        },
+        {
+          "bn": "গোপনে",
+          "pronunciation": "gopone",
+          "en": "secretly"
+        },
+        {
+          "bn": "দেখা",
+          "pronunciation": "dekha",
+          "en": "seeing / meeting / seen"
+        },
+        {
+          "bn": "করল",
+          "pronunciation": "korlo",
+          "en": "did"
+        }
+      ]
+    },
+    {
+      "bn": "সামনে এগিয়ে যাও।",
+      "pronunciation": "shamne egiye jao",
+      "en": "Move forward.",
+      "context": "Using সামনে (ahead / in front)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "সামনে",
+          "pronunciation": "shamne",
+          "en": "in front of"
+        },
+        {
+          "bn": "এগিয়ে",
+          "pronunciation": "egiye",
+          "en": "forward"
+        },
+        {
+          "bn": "যাও",
+          "pronunciation": "jao",
+          "en": "go"
+        }
+      ]
+    },
+    {
+      "bn": "সে পেছনে দাঁড়িয়ে আছে।",
+      "pronunciation": "she pechone dariye achhe",
+      "en": "He is standing behind.",
+      "context": "Using পেছনে (behind)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "পেছনে",
+          "pronunciation": "pechone",
+          "en": "behind"
+        },
+        {
+          "bn": "দাঁড়িয়ে",
+          "pronunciation": "dariye",
+          "en": "standing"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is / has"
+        }
+      ]
+    },
+    {
+      "bn": "বাইরে খুব ঠান্ডা।",
+      "pronunciation": "baire khub thanda",
+      "en": "It is very cold outside.",
+      "context": "Using বাইরে (outside)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "বাইরে",
+          "pronunciation": "baire",
+          "en": "outward / outside"
+        },
+        {
+          "bn": "খুব",
+          "pronunciation": "khub",
+          "en": "very"
+        },
+        {
+          "bn": "ঠান্ডা",
+          "pronunciation": "thanda",
+          "en": "cold"
+        }
+      ]
+    },
+    {
+      "bn": "ভিতরে এসো।",
+      "pronunciation": "bhitore esho",
+      "en": "Come inside.",
+      "context": "Using ভিতরে (inside)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "ভিতরে",
+          "pronunciation": "bhitore",
+          "en": "Inside"
+        },
+        {
+          "bn": "এসো",
+          "pronunciation": "esho",
+          "en": "come (familiar)"
+        }
+      ]
+    },
+    {
+      "bn": "উপরে তাকাও।",
+      "pronunciation": "upore takao",
+      "en": "Look above.",
+      "context": "Using উপরে (above)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "উপরে",
+          "pronunciation": "upore",
+          "en": "on / above"
+        },
+        {
+          "bn": "তাকাও",
+          "pronunciation": "takao",
+          "en": "look"
+        }
+      ]
+    },
+    {
+      "bn": "নিচে নামো।",
+      "pronunciation": "niche namo",
+      "en": "Go down.",
+      "context": "Using নিচে (below)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "নিচে",
+          "pronunciation": "niche",
+          "en": "under / below"
+        },
+        {
+          "bn": "নামো",
+          "pronunciation": "namo",
+          "en": "go down"
+        }
+      ]
+    },
+    {
+      "bn": "সে কাছে দাঁড়িয়ে আছে।",
+      "pronunciation": "she kachhe dariye achhe",
+      "en": "He is standing nearby.",
+      "context": "Using কাছে (nearby)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "কাছে",
+          "pronunciation": "kachhe",
+          "en": "near / with / in someone's possession"
+        },
+        {
+          "bn": "দাঁড়িয়ে",
+          "pronunciation": "dariye",
+          "en": "standing"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is / has"
+        }
+      ]
+    },
+    {
+      "bn": "স্কুলটি দূরে।",
+      "pronunciation": "skulti dure",
+      "en": "The school is far away.",
+      "context": "Using দূরে (far away)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "স্কুলটি",
+          "pronunciation": "skulti",
+          "en": "the school"
+        },
+        {
+          "bn": "দূরে",
+          "pronunciation": "dure",
+          "en": "far away"
+        }
+      ]
+    },
+    {
+      "bn": "সর্বত্র ফুল ফুটেছে।",
+      "pronunciation": "shorbotro phul phutechhe",
+      "en": "Flowers have bloomed everywhere.",
+      "context": "Using সর্বত্র (everywhere)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "সর্বত্র",
+          "pronunciation": "shorbotro",
+          "en": "everywhere"
+        },
+        {
+          "bn": "ফুল",
+          "pronunciation": "phul",
+          "en": "Flower"
+        },
+        {
+          "bn": "ফুটেছে",
+          "pronunciation": "phutechhe",
+          "en": "have bloomed"
+        }
+      ]
+    },
+    {
+      "bn": "কোথাও বসো।",
+      "pronunciation": "kothao bosho",
+      "en": "Sit somewhere.",
+      "context": "Using কোথাও (somewhere)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "কোথাও",
+          "pronunciation": "kothao",
+          "en": "somewhere / anywhere"
+        },
+        {
+          "bn": "বসো",
+          "pronunciation": "bosho",
+          "en": "sit down"
+        }
+      ]
+    },
+    {
+      "bn": "আমি কোথাও যাই না।",
+      "pronunciation": "ami kothao jai na",
+      "en": "I go nowhere.",
+      "context": "Using কোথাও না (nowhere)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "কোথাও",
+          "pronunciation": "kothao",
+          "en": "somewhere / anywhere"
+        },
+        {
+          "bn": "যাই",
+          "pronunciation": "jai",
+          "en": "go"
+        },
+        {
+          "bn": "না",
+          "pronunciation": "na",
+          "en": "not"
+        }
+      ]
+    },
+    {
+      "bn": "এখানেই অপেক্ষা করো।",
+      "pronunciation": "ekhanei opekkha koro",
+      "en": "Wait right here.",
+      "context": "Using এখানেই (right here)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "এখানেই",
+          "pronunciation": "ekhanei",
+          "en": "right here"
+        },
+        {
+          "bn": "অপেক্ষা",
+          "pronunciation": "opekkha",
+          "en": "wait"
+        },
+        {
+          "bn": "করো",
+          "pronunciation": "koro",
+          "en": "you do"
+        }
+      ]
+    },
+    {
+      "bn": "ওখানেই বসো।",
+      "pronunciation": "okhanei bosho",
+      "en": "Sit right there.",
+      "context": "Using ওখানেই (right there)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "ওখানেই",
+          "pronunciation": "okhanei",
+          "en": "right there"
+        },
+        {
+          "bn": "বসো",
+          "pronunciation": "bosho",
+          "en": "sit down"
+        }
+      ]
+    },
+    {
+      "bn": "এদিকে আসো।",
+      "pronunciation": "edike asho",
+      "en": "Come this way.",
+      "context": "Using এদিকে (this way)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "এদিকে",
+          "pronunciation": "edike",
+          "en": "this way"
+        },
+        {
+          "bn": "আসো",
+          "pronunciation": "asho",
+          "en": "come"
+        }
+      ]
+    },
+    {
+      "bn": "ওদিকে যেও না।",
+      "pronunciation": "odike jeo na",
+      "en": "Don't go that way.",
+      "context": "Using ওদিকে (that way)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "ওদিকে",
+          "pronunciation": "odike",
+          "en": "that way"
+        },
+        {
+          "bn": "যেও",
+          "pronunciation": "jeo",
+          "en": "go"
+        },
+        {
+          "bn": "না",
+          "pronunciation": "na",
+          "en": "not"
+        }
+      ]
+    },
+    {
+      "bn": "সে উল্টোভাবে লিখেছে।",
+      "pronunciation": "she ultobhabe likhechhe",
+      "en": "He wrote backwards.",
+      "context": "Using উল্টোভাবে (backwards)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "উল্টোভাবে",
+          "pronunciation": "ultobhabe",
+          "en": "backwards"
+        },
+        {
+          "bn": "লিখেছে",
+          "pronunciation": "likhechhe",
+          "en": "wrote / has written"
+        }
+      ]
+    },
+    {
+      "bn": "সোজাসুজি উত্তর দাও।",
+      "pronunciation": "sojashuji uttor dao",
+      "en": "Answer directly.",
+      "context": "Using সোজাসুজি (directly)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "সোজাসুজি",
+          "pronunciation": "sojashuji",
+          "en": "directly"
+        },
+        {
+          "bn": "উত্তর",
+          "pronunciation": "uttor",
+          "en": "Answer / North"
+        },
+        {
+          "bn": "দাও",
+          "pronunciation": "dao",
+          "en": "give / please give (familiar)"
+        }
+      ]
+    },
+    {
+      "bn": "সে পরোক্ষভাবে বিষয়টি বলল।",
+      "pronunciation": "she porokkhobhabe bishoyti bollo",
+      "en": "He mentioned it indirectly.",
+      "context": "Using পরোক্ষভাবে (indirectly)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "পরোক্ষভাবে",
+          "pronunciation": "porokkhobhabe",
+          "en": "indirectly"
+        },
+        {
+          "bn": "বিষয়টি",
+          "pronunciation": "bishoyti",
+          "en": "the matter"
+        },
+        {
+          "bn": "বলল",
+          "pronunciation": "bollo",
+          "en": "he / she said"
+        }
+      ]
+    },
+    {
+      "bn": "যথাযথভাবে কাজটি করো।",
+      "pronunciation": "jothajothobhabe kajti koro",
+      "en": "Do the work properly.",
+      "context": "Using যথাযথভাবে (properly)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "যথাযথভাবে",
+          "pronunciation": "jothajothobhabe",
+          "en": "properly"
+        },
+        {
+          "bn": "কাজটি",
+          "pronunciation": "kajti",
+          "en": "the task"
+        },
+        {
+          "bn": "করো",
+          "pronunciation": "koro",
+          "en": "you do"
+        }
+      ]
+    },
+    {
+      "bn": "সে নিয়মিতভাবে ব্যায়াম করে।",
+      "pronunciation": "she niyomitobhabe byayam kore",
+      "en": "He exercises regularly.",
+      "context": "Using নিয়মিতভাবে (regularly)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "নিয়মিতভাবে",
+          "pronunciation": "niyomitobhabe",
+          "en": "regularly"
+        },
+        {
+          "bn": "ব্যায়াম",
+          "pronunciation": "byayam",
+          "en": "exercise"
+        },
+        {
+          "bn": "করে",
+          "pronunciation": "kore",
+          "en": "does / by doing"
+        }
+      ]
+    },
+    {
+      "bn": "সে অনিয়মিতভাবে আসে।",
+      "pronunciation": "she oniyomitobhabe ashe",
+      "en": "He comes irregularly.",
+      "context": "Using অনিয়মিতভাবে (irregularly)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "অনিয়মিতভাবে",
+          "pronunciation": "oniyomitobhabe",
+          "en": "irregularly"
+        },
+        {
+          "bn": "আসে",
+          "pronunciation": "ashe",
+          "en": "comes / knows how to"
+        }
+      ]
+    },
+    {
+      "bn": "আমি প্রতিদিন বাংলা পড়ি।",
+      "pronunciation": "ami protidin bangla pori",
+      "en": "I study Bengali every day.",
+      "context": "Using প্রতিদিন (daily)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "প্রতিদিন",
+          "pronunciation": "protidin",
+          "en": "every day"
+        },
+        {
+          "bn": "বাংলা",
+          "pronunciation": "bangla",
+          "en": "Bengali"
+        },
+        {
+          "bn": "পড়ি",
+          "pronunciation": "pori",
+          "en": "read"
+        }
+      ]
+    },
+    {
+      "bn": "আমরা প্রতি সপ্তাহে দেখা করি।",
+      "pronunciation": "amra proti shoptaho dekha kori",
+      "en": "We meet every week.",
+      "context": "Using প্রতি সপ্তাহে (weekly)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "আমরা",
+          "pronunciation": "amra",
+          "en": "we"
+        },
+        {
+          "bn": "প্রতি",
+          "pronunciation": "proti",
+          "en": "every / per"
+        },
+        {
+          "bn": "সপ্তাহে",
+          "pronunciation": "shoptaho",
+          "en": "in a week"
+        },
+        {
+          "bn": "দেখা",
+          "pronunciation": "dekha",
+          "en": "seeing / meeting / seen"
+        },
+        {
+          "bn": "করি",
+          "pronunciation": "kori",
+          "en": "do"
+        }
+      ]
+    },
+    {
+      "bn": "সে প্রতি মাসে ভ্রমণ করে।",
+      "pronunciation": "she proti mashe bhromon kore",
+      "en": "He travels every month.",
+      "context": "Using প্রতি মাসে (monthly)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "প্রতি",
+          "pronunciation": "proti",
+          "en": "every / per"
+        },
+        {
+          "bn": "মাসে",
+          "pronunciation": "mashe",
+          "en": "each month"
+        },
+        {
+          "bn": "ভ্রমণ",
+          "pronunciation": "bhromon",
+          "en": "travel"
+        },
+        {
+          "bn": "করে",
+          "pronunciation": "kore",
+          "en": "does / by doing"
+        }
+      ]
+    },
+    {
+      "bn": "আমরা প্রতিবছর উৎসব করি।",
+      "pronunciation": "amra protibochhor utshob kori",
+      "en": "We celebrate every year.",
+      "context": "Using প্রতিবছর (yearly)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "আমরা",
+          "pronunciation": "amra",
+          "en": "we"
+        },
+        {
+          "bn": "প্রতিবছর",
+          "pronunciation": "protibochhor",
+          "en": "every year"
+        },
+        {
+          "bn": "উৎসব",
+          "pronunciation": "utshob",
+          "en": "festival"
+        },
+        {
+          "bn": "করি",
+          "pronunciation": "kori",
+          "en": "do"
+        }
+      ]
+    },
+    {
+      "bn": "ইদানীং সে ব্যস্ত।",
+      "pronunciation": "idaning she byosto",
+      "en": "Lately he has been busy.",
+      "context": "Using ইদানীং (lately)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "ইদানীং",
+          "pronunciation": "idaning",
+          "en": "lately"
+        },
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "ব্যস্ত",
+          "pronunciation": "byosto",
+          "en": "busy"
+        }
+      ]
+    },
+    {
+      "bn": "আমি সম্প্রতি বইটি পড়েছি।",
+      "pronunciation": "ami shomproti boiti porechi",
+      "en": "I recently read the book.",
+      "context": "Using সম্প্রতি (recently)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "সম্প্রতি",
+          "pronunciation": "shomproti",
+          "en": "recently"
+        },
+        {
+          "bn": "বইটি",
+          "pronunciation": "boiti",
+          "en": "the book"
+        },
+        {
+          "bn": "পড়েছি",
+          "pronunciation": "porechi",
+          "en": "have read"
+        }
+      ]
+    },
+    {
+      "bn": "সে অল্পক্ষণ অপেক্ষা করল।",
+      "pronunciation": "she olpokkhon opekkha korlo",
+      "en": "He waited briefly.",
+      "context": "Using অল্পক্ষণ (briefly)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "অল্পক্ষণ",
+          "pronunciation": "olpokkhon",
+          "en": "for a short while"
+        },
+        {
+          "bn": "অপেক্ষা",
+          "pronunciation": "opekkha",
+          "en": "wait"
+        },
+        {
+          "bn": "করল",
+          "pronunciation": "korlo",
+          "en": "did"
+        }
+      ]
+    },
+    {
+      "bn": "তারা দীর্ঘক্ষণ কথা বলল।",
+      "pronunciation": "tara dirghokkhon kotha bollo",
+      "en": "They talked for a long time.",
+      "context": "Using দীর্ঘক্ষণ (for a long time)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "তারা",
+          "pronunciation": "tara",
+          "en": "they / star"
+        },
+        {
+          "bn": "দীর্ঘক্ষণ",
+          "pronunciation": "dirghokkhon",
+          "en": "for a long time"
+        },
+        {
+          "bn": "কথা",
+          "pronunciation": "kotha",
+          "en": "speech / words / matter / promise"
+        },
+        {
+          "bn": "বলল",
+          "pronunciation": "bollo",
+          "en": "he / she said"
+        }
+      ]
+    },
+    {
+      "bn": "এখানে বিনামূল্যে চিকিৎসা হয়।",
+      "pronunciation": "ekhane binamulye chikitsa hoy",
+      "en": "Treatment is free here.",
+      "context": "Using বিনামূল্যে (freely / free of charge)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "এখানে",
+          "pronunciation": "ekhane",
+          "en": "here"
+        },
+        {
+          "bn": "বিনামূল্যে",
+          "pronunciation": "binamulye",
+          "en": "free of charge"
+        },
+        {
+          "bn": "চিকিৎসা",
+          "pronunciation": "chikitsa",
+          "en": "medical treatment"
+        },
+        {
+          "bn": "হয়",
+          "pronunciation": "hoy",
+          "en": "is / happens / becomes"
+        }
+      ]
+    },
+    {
+      "bn": "সে স্বেচ্ছায় সাহায্য করেছে।",
+      "pronunciation": "she swechchhaye shahajjo koreche",
+      "en": "He helped voluntarily.",
+      "context": "Using স্বেচ্ছায় (voluntarily)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "স্বেচ্ছায়",
+          "pronunciation": "swechchhaye",
+          "en": "voluntarily"
+        },
+        {
+          "bn": "সাহায্য",
+          "pronunciation": "shahajjo",
+          "en": "Help"
+        },
+        {
+          "bn": "করেছে",
+          "pronunciation": "koreche",
+          "en": "did / has done"
+        }
+      ]
+    },
+    {
+      "bn": "সে বাধ্য হয়ে রাজি হলো।",
+      "pronunciation": "she baddho hoye raji holo",
+      "en": "He agreed reluctantly.",
+      "context": "Using বাধ্য হয়ে (reluctantly)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "বাধ্য",
+          "pronunciation": "baddho",
+          "en": "compelled"
+        },
+        {
+          "bn": "হয়ে",
+          "pronunciation": "hoye",
+          "en": "become"
+        },
+        {
+          "bn": "রাজি",
+          "pronunciation": "raji",
+          "en": "agreed"
+        },
+        {
+          "bn": "হলো",
+          "pronunciation": "holo",
+          "en": "done"
+        }
+      ]
+    },
+    {
+      "bn": "সে হেসে উত্তর দিল।",
+      "pronunciation": "she heshe uttor dilo",
+      "en": "He answered laughingly.",
+      "context": "Using হেসে (laughingly)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "হেসে",
+          "pronunciation": "heshe",
+          "en": "laughing / with a laugh"
+        },
+        {
+          "bn": "উত্তর",
+          "pronunciation": "uttor",
+          "en": "Answer / North"
+        },
+        {
+          "bn": "দিল",
+          "pronunciation": "dilo",
+          "en": "gave"
+        }
+      ]
+    },
+    {
+      "bn": "শিশুটি কেঁদে ঘুমিয়ে পড়ল।",
+      "pronunciation": "shishuti kende ghumie porlo",
+      "en": "The child fell asleep crying.",
+      "context": "Using কেঁদে (crying)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "শিশুটি",
+          "pronunciation": "shishuti",
+          "en": "the child"
+        },
+        {
+          "bn": "কেঁদে",
+          "pronunciation": "kende",
+          "en": "crying"
+        },
+        {
+          "bn": "ঘুমিয়ে",
+          "pronunciation": "ghumie",
+          "en": "having fallen asleep"
+        },
+        {
+          "bn": "পড়ল",
+          "pronunciation": "porlo",
+          "en": "fell"
+        }
+      ]
+    },
+    {
+      "bn": "মন খুলে হাসো।",
+      "pronunciation": "mon khule hasho",
+      "en": "Laugh wholeheartedly.",
+      "context": "Using মন খুলে (wholeheartedly)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "মন",
+          "pronunciation": "mon",
+          "en": "heart / mind"
+        },
+        {
+          "bn": "খুলে",
+          "pronunciation": "khule",
+          "en": "opened"
+        },
+        {
+          "bn": "হাসো",
+          "pronunciation": "hasho",
+          "en": "laugh"
+        }
+      ]
+    },
+    {
+      "bn": "সে নিশ্চুপে চলে গেল।",
+      "pronunciation": "she nishchupe chole gelo",
+      "en": "He left silently.",
+      "context": "Using নিশ্চুপে (silently)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "নিশ্চুপে",
+          "pronunciation": "nishchupe",
+          "en": "silently"
+        },
+        {
+          "bn": "চলে",
+          "pronunciation": "chole",
+          "en": "moves / leaves / works"
+        },
+        {
+          "bn": "গেল",
+          "pronunciation": "gelo",
+          "en": "went"
+        }
+      ]
+    },
+    {
+      "bn": "গাড়িটি দ্রুতগতিতে চলছিল।",
+      "pronunciation": "gariṭi drutogotite cholchhilo",
+      "en": "The car was moving at high speed.",
+      "context": "Using দ্রুতগতিতে (at high speed)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "গাড়িটি",
+          "pronunciation": "gariṭi",
+          "en": "the car"
+        },
+        {
+          "bn": "দ্রুতগতিতে",
+          "pronunciation": "drutogotite",
+          "en": "at high speed"
+        },
+        {
+          "bn": "চলছিল",
+          "pronunciation": "cholchhilo",
+          "en": "was running"
+        }
+      ]
+    },
+    {
+      "bn": "ট্রেনটি ধীরগতিতে চলছিল।",
+      "pronunciation": "tren-ti dhirgotite cholchhilo",
+      "en": "The train was moving slowly.",
+      "context": "Using ধীরগতিতে (slowly)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "ট্রেনটি",
+          "pronunciation": "tren-ti",
+          "en": "the train"
+        },
+        {
+          "bn": "ধীরগতিতে",
+          "pronunciation": "dhirgotite",
+          "en": "at low speed / slowly"
+        },
+        {
+          "bn": "চলছিল",
+          "pronunciation": "cholchhilo",
+          "en": "was running"
+        }
+      ]
+    },
+    {
+      "bn": "অনবরত বৃষ্টি হচ্ছে।",
+      "pronunciation": "onoboroto brishti hochchhe",
+      "en": "It is raining continuously.",
+      "context": "Using অনবরত (continuously)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "অনবরত",
+          "pronunciation": "onoboroto",
+          "en": "continuously"
+        },
+        {
+          "bn": "বৃষ্টি",
+          "pronunciation": "brishti",
+          "en": "rain"
+        },
+        {
+          "bn": "হচ্ছে",
+          "pronunciation": "hochchhe",
+          "en": "is happening"
+        }
+      ]
+    },
+    {
+      "bn": "নদী অবিরাম বয়ে চলে।",
+      "pronunciation": "Nodi obiram boye chole",
+      "en": "The river flows endlessly.",
+      "context": "Using অবিরাম (endlessly)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "নদী",
+          "pronunciation": "Nodi",
+          "en": "River"
+        },
+        {
+          "bn": "অবিরাম",
+          "pronunciation": "obiram",
+          "en": "endlessly"
+        },
+        {
+          "bn": "বয়ে",
+          "pronunciation": "boye",
+          "en": "flowing"
+        },
+        {
+          "bn": "চলে",
+          "pronunciation": "chole",
+          "en": "moves / leaves / works"
+        }
+      ]
+    },
+    {
+      "bn": "আজ যথেষ্ট কাজ করেছি।",
+      "pronunciation": "aj jôtheshto kaj korechhi",
+      "en": "I have worked enough today.",
+      "context": "Using যথেষ্ট (sufficiently)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "আজ",
+          "pronunciation": "aj",
+          "en": "today"
+        },
+        {
+          "bn": "যথেষ্ট",
+          "pronunciation": "jôtheshto",
+          "en": "enough"
+        },
+        {
+          "bn": "কাজ",
+          "pronunciation": "kaj",
+          "en": "work / task / function"
+        },
+        {
+          "bn": "করেছি",
+          "pronunciation": "korechhi",
+          "en": "did / have done"
+        }
+      ]
+    },
+    {
+      "bn": "অযথা চিন্তা করো না।",
+      "pronunciation": "ojotha chinta koro na",
+      "en": "Don't worry unnecessarily.",
+      "context": "Using অযথা (unnecessarily)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "অযথা",
+          "pronunciation": "ojotha",
+          "en": "unnecessarily"
+        },
+        {
+          "bn": "চিন্তা",
+          "pronunciation": "chinta",
+          "en": "Worry / Thought"
+        },
+        {
+          "bn": "করো",
+          "pronunciation": "koro",
+          "en": "you do"
+        },
+        {
+          "bn": "না",
+          "pronunciation": "na",
+          "en": "not"
+        }
+      ]
+    },
+    {
+      "bn": "সে বিনা কারণে রেগে গেল।",
+      "pronunciation": "she bina karone rege gelo",
+      "en": "He got angry for no reason.",
+      "context": "Using বিনা কারণে (without reason)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "বিনা",
+          "pronunciation": "bina",
+          "en": "without"
+        },
+        {
+          "bn": "কারণে",
+          "pronunciation": "karone",
+          "en": "reason / because of"
+        },
+        {
+          "bn": "রেগে",
+          "pronunciation": "rege",
+          "en": "angrily / becoming angry"
+        },
+        {
+          "bn": "গেল",
+          "pronunciation": "gelo",
+          "en": "went"
+        }
+      ]
+    },
+    {
+      "bn": "ইচ্ছেমতো খেলো।",
+      "pronunciation": "ichchhemoto khelo",
+      "en": "Play as you wish.",
+      "context": "Using ইচ্ছেমতো (as one wishes)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "ইচ্ছেমতো",
+          "pronunciation": "ichchhemoto",
+          "en": "as one wishes"
+        },
+        {
+          "bn": "খেলো",
+          "pronunciation": "khelo",
+          "en": "play"
+        }
+      ]
+    },
+    {
+      "bn": "সে স্বাভাবিকভাবে কথা বলল।",
+      "pronunciation": "she shabhabikbhabe kotha bollo",
+      "en": "He spoke naturally.",
+      "context": "Using স্বাভাবিকভাবে (naturally)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "স্বাভাবিকভাবে",
+          "pronunciation": "shabhabikbhabe",
+          "en": "naturally"
+        },
+        {
+          "bn": "কথা",
+          "pronunciation": "kotha",
+          "en": "speech / words / matter / promise"
+        },
+        {
+          "bn": "বলল",
+          "pronunciation": "bollo",
+          "en": "he / she said"
+        }
+      ]
+    },
+    {
+      "bn": "তার আচরণ অস্বাভাবিকভাবে বদলে গেছে।",
+      "pronunciation": "tar achoron oshabhabikbhabe bodle geche",
+      "en": "His behavior changed abnormally.",
+      "context": "Using অস্বাভাবিকভাবে (abnormally)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "তার",
+          "pronunciation": "tar",
+          "en": "His / Her"
+        },
+        {
+          "bn": "আচরণ",
+          "pronunciation": "achoron",
+          "en": "behavior"
+        },
+        {
+          "bn": "অস্বাভাবিকভাবে",
+          "pronunciation": "oshabhabikbhabe",
+          "en": "abnormally"
+        },
+        {
+          "bn": "বদলে",
+          "pronunciation": "bodle",
+          "en": "changed"
+        },
+        {
+          "bn": "গেছে",
+          "pronunciation": "geche",
+          "en": "gone"
+        }
+      ]
+    },
+    {
+      "bn": "খোলাখুলিভাবে বলো।",
+      "pronunciation": "kholakhulibhabe bolo",
+      "en": "Speak openly.",
+      "context": "Using খোলাখুলিভাবে (openly)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "খোলাখুলিভাবে",
+          "pronunciation": "kholakhulibhabe",
+          "en": "openly"
+        },
+        {
+          "bn": "বলো",
+          "pronunciation": "bolo",
+          "en": "speak (familiar)"
+        }
+      ]
+    },
+    {
+      "bn": "শিক্ষক স্পষ্টভাবে বুঝিয়েছেন।",
+      "pronunciation": "shikkhok sposhtobhabe bujhiyechhen",
+      "en": "The teacher explained clearly.",
+      "context": "Using স্পষ্টভাবে (clearly)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "শিক্ষক",
+          "pronunciation": "shikkhok",
+          "en": "teacher"
+        },
+        {
+          "bn": "স্পষ্টভাবে",
+          "pronunciation": "sposhtobhabe",
+          "en": "clearly"
+        },
+        {
+          "bn": "বুঝিয়েছেন",
+          "pronunciation": "bujhiyechhen",
+          "en": "explained"
+        }
+      ]
+    },
+    {
+      "bn": "সে অস্পষ্টভাবে বলল।",
+      "pronunciation": "she osposhtobhabe bollo",
+      "en": "He spoke unclearly.",
+      "context": "Using অস্পষ্টভাবে (unclearly)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "অস্পষ্টভাবে",
+          "pronunciation": "osposhtobhabe",
+          "en": "unclearly"
+        },
+        {
+          "bn": "বলল",
+          "pronunciation": "bollo",
+          "en": "he / she said"
+        }
+      ]
+    },
+    {
+      "bn": "যথাসম্ভব সাহায্য করো।",
+      "pronunciation": "jothashombhob shahajjo koro",
+      "en": "Help as much as possible.",
+      "context": "Using যথাসম্ভব (as much as possible)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "যথাসম্ভব",
+          "pronunciation": "jothashombhob",
+          "en": "as much as possible"
+        },
+        {
+          "bn": "সাহায্য",
+          "pronunciation": "shahajjo",
+          "en": "Help"
+        },
+        {
+          "bn": "করো",
+          "pronunciation": "koro",
+          "en": "you do"
+        }
+      ]
+    },
+    {
+      "bn": "সে কদাচিৎ বাইরে যায়।",
+      "pronunciation": "she kodachit baire jay",
+      "en": "He rarely goes out.",
+      "context": "Using কদাচিৎ (rarely)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "কদাচিৎ",
+          "pronunciation": "kodachit",
+          "en": "rarely"
+        },
+        {
+          "bn": "বাইরে",
+          "pronunciation": "baire",
+          "en": "outward / outside"
+        },
+        {
+          "bn": "যায়",
+          "pronunciation": "jay",
+          "en": "goes / can be done / is possible"
+        }
+      ]
+    },
+    {
+      "bn": "আমি সচরাচর চা খাই না।",
+      "pronunciation": "ami shochorachor cha khai na",
+      "en": "I don't usually drink tea.",
+      "context": "Using সচরাচর (usually)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "সচরাচর",
+          "pronunciation": "shochorachor",
+          "en": "usually"
+        },
+        {
+          "bn": "চা",
+          "pronunciation": "cha",
+          "en": "tea"
+        },
+        {
+          "bn": "খাই",
+          "pronunciation": "khai",
+          "en": "eat"
+        },
+        {
+          "bn": "না",
+          "pronunciation": "na",
+          "en": "not"
+        }
+      ]
+    },
+    {
+      "bn": "প্রাথমিকভাবে পরিকল্পনাটি অনুমোদিত হয়েছে।",
+      "pronunciation": "prathomikbhabe porikolponati onumodito hoyechhe",
+      "en": "The plan was initially approved.",
+      "context": "Using প্রাথমিকভাবে (initially)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "প্রাথমিকভাবে",
+          "pronunciation": "prathomikbhabe",
+          "en": "initially"
+        },
+        {
+          "bn": "পরিকল্পনাটি",
+          "pronunciation": "porikolponati",
+          "en": "the plan"
+        },
+        {
+          "bn": "অনুমোদিত",
+          "pronunciation": "onumodito",
+          "en": "approved"
+        },
+        {
+          "bn": "হয়েছে",
+          "pronunciation": "hoyechhe",
+          "en": "has been"
+        }
+      ]
+    },
+    {
+      "bn": "শেষ পর্যন্ত সে সফল হলো।",
+      "pronunciation": "shesh porjonto she shofol holo",
+      "en": "Eventually he succeeded.",
+      "context": "Using শেষ পর্যন্ত (eventually)",
+      "category": "adverbs",
+      "words": [
+        {
+          "bn": "শেষ",
+          "pronunciation": "shesh",
+          "en": "end / last / final"
+        },
+        {
+          "bn": "পর্যন্ত",
+          "pronunciation": "porjonto",
+          "en": "until"
+        },
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "সফল",
+          "pronunciation": "shofol",
+          "en": "successful"
+        },
+        {
+          "bn": "হলো",
+          "pronunciation": "holo",
+          "en": "done"
+        }
+      ]
     }
   ],
   "vocab": [
     {
-      "bn": "এখন",
-      "pronunciation": "ekhon",
-      "en": "now",
+      "bn": "ধীরে",
+      "pronunciation": "dhire",
+      "en": "slowly",
       "category": "adverbs",
-      "sourcePhrase": "আমি এখন ব্যস্ত।"
-    },
-    {
-      "bn": "আজ",
-      "pronunciation": "aj",
-      "en": "today",
-      "category": "adverbs",
-      "sourcePhrase": "আজ আবহাওয়া সুন্দর।"
-    },
-    {
-      "bn": "কাল",
-      "pronunciation": "kal",
-      "en": "yesterday / tomorrow",
-      "category": "adverbs",
-      "sourcePhrase": "আমি কাল ঢাকায় যাব।"
-    },
-    {
-      "bn": "এখানে",
-      "pronunciation": "ekhane",
-      "en": "here",
-      "category": "adverbs",
-      "sourcePhrase": "আমি এখানে থাকি।"
-    },
-    {
-      "bn": "সেখানে",
-      "pronunciation": "shekhane",
-      "en": "there",
-      "category": "adverbs",
-      "sourcePhrase": "আমার বন্ধু সেখানে থাকে।"
-    },
-    {
-      "bn": "সবসময়",
-      "pronunciation": "shobshomoy",
-      "en": "always",
-      "category": "adverbs",
-      "sourcePhrase": "সে সবসময় সময়মতো আসে।"
-    },
-    {
-      "bn": "কখনো",
-      "pronunciation": "kokhono",
-      "en": "sometimes / ever",
-      "category": "adverbs",
-      "sourcePhrase": "আমি কখনো এখানে খেতে আসি।"
-    },
-    {
-      "bn": "কখনোই না",
-      "pronunciation": "kokhonoi na",
-      "en": "never",
-      "category": "adverbs",
-      "sourcePhrase": "আমি কখনোই মিথ্যা বলি না।"
+      "sourcePhrase": "সে ধীরে হাঁটে।"
     },
     {
       "bn": "দ্রুত",
       "pronunciation": "druto",
       "en": "quickly",
       "category": "adverbs",
-      "sourcePhrase": "সে খুব দ্রুত হাঁটে।"
+      "sourcePhrase": "সে দ্রুত দৌড়ায়।"
     },
     {
-      "bn": "ধীরে",
-      "pronunciation": "dhire",
-      "en": "slowly",
+      "bn": "আস্তে",
+      "pronunciation": "aste",
+      "en": "gently / softly",
       "category": "adverbs",
-      "sourcePhrase": "দয়া করে ধীরে কথা বলুন।"
+      "sourcePhrase": "আস্তে কথা বলো।"
     },
     {
-      "bn": "খুব",
-      "pronunciation": "khub",
-      "en": "very",
+      "bn": "জোরে",
+      "pronunciation": "jore",
+      "en": "loudly",
       "category": "adverbs",
-      "sourcePhrase": "সে খুব দ্রুত হাঁটে।"
+      "sourcePhrase": "সে জোরে হাসল।"
+    },
+    {
+      "bn": "চুপচাপ",
+      "pronunciation": "chupchap",
+      "en": "quietly",
+      "category": "adverbs",
+      "sourcePhrase": "শিশুটি চুপচাপ বসে আছে।"
+    },
+    {
+      "bn": "ভালোভাবে",
+      "pronunciation": "bhalobhabe",
+      "en": "well",
+      "category": "adverbs",
+      "sourcePhrase": "সে ভালোভাবে পড়াশোনা করে।"
+    },
+    {
+      "bn": "খারাপভাবে",
+      "pronunciation": "kharapbhabe",
+      "en": "badly",
+      "category": "adverbs",
+      "sourcePhrase": "সে খারাপভাবে লিখেছে।"
+    },
+    {
+      "bn": "সুন্দরভাবে",
+      "pronunciation": "shundorbhabe",
+      "en": "beautifully",
+      "category": "adverbs",
+      "sourcePhrase": "সে সুন্দরভাবে গান গায়।"
+    },
+    {
+      "bn": "সাবধানে",
+      "pronunciation": "shobdhone",
+      "en": "carefully",
+      "category": "adverbs",
+      "sourcePhrase": "রাস্তা সাবধানে পার হও।"
+    },
+    {
+      "bn": "অসাবধানে",
+      "pronunciation": "oshabdhane",
+      "en": "carelessly",
+      "category": "adverbs",
+      "sourcePhrase": "সে অসাবধানে গ্লাস ভেঙেছে।"
+    },
+    {
+      "bn": "সহজে",
+      "pronunciation": "shohoje",
+      "en": "easily",
+      "category": "adverbs",
+      "sourcePhrase": "এই প্রশ্ন সহজে সমাধান করা যায়।"
+    },
+    {
+      "bn": "কঠিনভাবে",
+      "pronunciation": "kothinbhabe",
+      "en": "with difficulty",
+      "category": "adverbs",
+      "sourcePhrase": "সে কঠিনভাবে কাজটি শেষ করল।"
+    },
+    {
+      "bn": "একসাথে",
+      "pronunciation": "eksathe",
+      "en": "together",
+      "category": "adverbs",
+      "sourcePhrase": "আমরা একসাথে খেলি।"
+    },
+    {
+      "bn": "আলাদাভাবে",
+      "pronunciation": "aladabhabe",
+      "en": "separately",
+      "category": "adverbs",
+      "sourcePhrase": "বইগুলো আলাদাভাবে রাখো।"
     },
     {
       "bn": "আবার",
       "pronunciation": "abar",
       "en": "again",
       "category": "adverbs",
-      "sourcePhrase": "দয়া করে আবার বলুন।"
+      "sourcePhrase": "আবার চেষ্টা করো।"
     },
     {
-      "bn": "আমি",
-      "pronunciation": "ami",
-      "en": "I",
+      "bn": "বারবার",
+      "pronunciation": "barbar",
+      "en": "repeatedly",
       "category": "adverbs",
-      "sourcePhrase": "আমি এখন ব্যস্ত।"
+      "sourcePhrase": "সে বারবার ডাকছে।"
     },
     {
-      "bn": "ব্যস্ত",
-      "pronunciation": "byasto",
-      "en": "busy",
+      "bn": "প্রায়ই",
+      "pronunciation": "prayi",
+      "en": "often",
       "category": "adverbs",
-      "sourcePhrase": "আমি এখন ব্যস্ত।"
+      "sourcePhrase": "আমি প্রায়ই এখানে আসি।"
     },
     {
-      "bn": "আবহাওয়া",
-      "pronunciation": "abohawa",
-      "en": "weather",
+      "bn": "মাঝে মাঝে",
+      "pronunciation": "majhe majhe",
+      "en": "sometimes",
       "category": "adverbs",
-      "sourcePhrase": "আজ আবহাওয়া সুন্দর।"
+      "sourcePhrase": "মাঝে মাঝে বৃষ্টি হয়।"
     },
     {
-      "bn": "সুন্দর",
-      "pronunciation": "shundor",
-      "en": "beautiful",
+      "bn": "কখনও",
+      "pronunciation": "kokhono",
+      "en": "ever / sometimes",
       "category": "adverbs",
-      "sourcePhrase": "আজ আবহাওয়া সুন্দর।"
-    },
-    {
-      "bn": "ঢাকায়",
-      "pronunciation": "Dhakay",
-      "en": "in / to Dhaka",
-      "category": "adverbs",
-      "sourcePhrase": "আমি কাল ঢাকায় যাব।"
-    },
-    {
-      "bn": "যাব",
-      "pronunciation": "jabo",
-      "en": "will go",
-      "category": "adverbs",
-      "sourcePhrase": "আমি কাল ঢাকায় যাব।"
-    },
-    {
-      "bn": "থাকি",
-      "pronunciation": "thaki",
-      "en": "live / stay",
-      "category": "adverbs",
-      "sourcePhrase": "আমি এখানে থাকি।"
-    },
-    {
-      "bn": "আমার",
-      "pronunciation": "amar",
-      "en": "my",
-      "category": "adverbs",
-      "sourcePhrase": "আমার বন্ধু সেখানে থাকে।"
-    },
-    {
-      "bn": "বন্ধু",
-      "pronunciation": "bondhu",
-      "en": "friend",
-      "category": "adverbs",
-      "sourcePhrase": "আমার বন্ধু সেখানে থাকে।"
-    },
-    {
-      "bn": "থাকে",
-      "pronunciation": "thake",
-      "en": "lives / stays",
-      "category": "adverbs",
-      "sourcePhrase": "আমার বন্ধু সেখানে থাকে।"
-    },
-    {
-      "bn": "সে",
-      "pronunciation": "shey",
-      "en": "he / she",
-      "category": "adverbs",
-      "sourcePhrase": "সে সবসময় সময়মতো আসে।"
-    },
-    {
-      "bn": "সময়মতো",
-      "pronunciation": "shomoymoto",
-      "en": "on time",
-      "category": "adverbs",
-      "sourcePhrase": "সে সবসময় সময়মতো আসে।"
-    },
-    {
-      "bn": "আসে",
-      "pronunciation": "ashe",
-      "en": "comes",
-      "category": "adverbs",
-      "sourcePhrase": "সে সবসময় সময়মতো আসে।"
-    },
-    {
-      "bn": "খেতে",
-      "pronunciation": "khete",
-      "en": "to eat",
-      "category": "adverbs",
-      "sourcePhrase": "আমি কখনো এখানে খেতে আসি।"
-    },
-    {
-      "bn": "আসি",
-      "pronunciation": "ashi",
-      "en": "come",
-      "category": "adverbs",
-      "sourcePhrase": "আমি কখনো এখানে খেতে আসি।"
+      "sourcePhrase": "আমি কখনও সেখানে গেছি।"
     },
     {
       "bn": "কখনোই",
       "pronunciation": "kokhonoi",
-      "en": "ever",
+      "en": "never",
       "category": "adverbs",
       "sourcePhrase": "আমি কখনোই মিথ্যা বলি না।"
     },
     {
-      "bn": "মিথ্যা",
-      "pronunciation": "mithya",
-      "en": "lie / falsehood",
+      "bn": "সর্বদা",
+      "pronunciation": "shorboda",
+      "en": "always",
       "category": "adverbs",
-      "sourcePhrase": "আমি কখনোই মিথ্যা বলি না।"
+      "sourcePhrase": "সে সর্বদা সত্য বলে।"
     },
     {
-      "bn": "বলি",
-      "pronunciation": "boli",
-      "en": "say",
+      "bn": "সবসময়",
+      "pronunciation": "shobshomoy",
+      "en": "always",
       "category": "adverbs",
-      "sourcePhrase": "আমি কখনোই মিথ্যা বলি না।"
+      "sourcePhrase": "আমি সবসময় সময়মতো আসি।"
     },
     {
-      "bn": "না",
-      "pronunciation": "na",
-      "en": "not",
+      "bn": "আজ",
+      "pronunciation": "aj",
+      "en": "today",
       "category": "adverbs",
-      "sourcePhrase": "আমি কখনোই মিথ্যা বলি না।"
+      "sourcePhrase": "আজ আমি ব্যস্ত।"
     },
     {
-      "bn": "হাঁটে",
-      "pronunciation": "hate",
-      "en": "walks",
+      "bn": "কাল",
+      "pronunciation": "kal",
+      "en": "tomorrow / yesterday",
       "category": "adverbs",
-      "sourcePhrase": "সে খুব দ্রুত হাঁটে।"
+      "sourcePhrase": "কাল আমরা দেখা করব।"
     },
     {
-      "bn": "দয়া",
-      "pronunciation": "doya",
-      "en": "kindness / please",
+      "bn": "এখন",
+      "pronunciation": "ekhon",
+      "en": "now",
       "category": "adverbs",
-      "sourcePhrase": "দয়া করে ধীরে কথা বলুন।"
+      "sourcePhrase": "এখন খাও।"
     },
     {
-      "bn": "করে",
-      "pronunciation": "kore",
-      "en": "does",
+      "bn": "তখন",
+      "pronunciation": "tokhon",
+      "en": "then",
       "category": "adverbs",
-      "sourcePhrase": "দয়া করে ধীরে কথা বলুন।"
+      "sourcePhrase": "তখন সবাই হাসছিল।"
     },
     {
-      "bn": "কথা",
-      "pronunciation": "kotha",
-      "en": "speech / words",
+      "bn": "আগে",
+      "pronunciation": "age",
+      "en": "before",
       "category": "adverbs",
-      "sourcePhrase": "দয়া করে ধীরে কথা বলুন।"
+      "sourcePhrase": "আগে হাত ধুয়ে নাও।"
     },
     {
-      "bn": "বলুন",
-      "pronunciation": "bolun",
-      "en": "please say",
+      "bn": "পরে",
+      "pronunciation": "pore",
+      "en": "later",
       "category": "adverbs",
-      "sourcePhrase": "দয়া করে ধীরে কথা বলুন।"
+      "sourcePhrase": "পরে কথা বলব।"
     },
     {
-      "bn": "ক্লান্ত",
-      "pronunciation": "klanto",
-      "en": "tired",
+      "bn": "ইতিমধ্যে",
+      "pronunciation": "itimodhye",
+      "en": "already",
       "category": "adverbs",
-      "sourcePhrase": "আমি খুব ক্লান্ত।"
+      "sourcePhrase": "সে ইতিমধ্যে চলে গেছে।"
     },
     {
-      "bn": "আমি এখন",
-      "pronunciation": "ami ekhon",
-      "en": "I now",
+      "bn": "এখনও",
+      "pronunciation": "ekhono",
+      "en": "still",
       "category": "adverbs",
-      "sourcePhrase": "আমি এখন ব্যস্ত।"
+      "sourcePhrase": "সে এখনও ঘুমাচ্ছে।"
     },
     {
-      "bn": "এখন ব্যস্ত",
-      "pronunciation": "ekhon byasto",
-      "en": "now busy",
+      "bn": "সঙ্গে সঙ্গে",
+      "pronunciation": "shonge shonge",
+      "en": "immediately",
       "category": "adverbs",
-      "sourcePhrase": "আমি এখন ব্যস্ত।"
+      "sourcePhrase": "সঙ্গে সঙ্গে উত্তর দাও।"
     },
     {
-      "bn": "আজ আবহাওয়া",
-      "pronunciation": "aj abohawa",
-      "en": "today weather",
+      "bn": "হঠাৎ",
+      "pronunciation": "hothat",
+      "en": "suddenly",
       "category": "adverbs",
-      "sourcePhrase": "আজ আবহাওয়া সুন্দর।"
+      "sourcePhrase": "হঠাৎ বৃষ্টি শুরু হলো।"
     },
     {
-      "bn": "আবহাওয়া সুন্দর",
-      "pronunciation": "abohawa shundor",
-      "en": "weather beautiful",
+      "bn": "আকস্মিকভাবে",
+      "pronunciation": "akośmikbʰabe",
+      "en": "unexpectedly",
       "category": "adverbs",
-      "sourcePhrase": "আজ আবহাওয়া সুন্দর।"
+      "sourcePhrase": "আকস্মিকভাবে বিদ্যুৎ চলে গেল।"
     },
     {
-      "bn": "আমি কাল",
-      "pronunciation": "ami kal",
-      "en": "I tomorrow / yesterday",
+      "bn": "ধীরে ধীরে",
+      "pronunciation": "dhire dhire",
+      "en": "gradually",
       "category": "adverbs",
-      "sourcePhrase": "আমি কাল ঢাকায় যাব।"
+      "sourcePhrase": "ধীরে ধীরে সূর্য উঠল।"
     },
     {
-      "bn": "কাল ঢাকায়",
-      "pronunciation": "kal Dhakay",
-      "en": "tomorrow / yesterday in / to Dhaka",
+      "bn": "ক্রমশ",
+      "pronunciation": "kromosho",
+      "en": "gradually",
       "category": "adverbs",
-      "sourcePhrase": "আমি কাল ঢাকায় যাব।"
+      "sourcePhrase": "ক্রমশ পরিস্থিতি ভালো হচ্ছে।"
     },
     {
-      "bn": "ঢাকায় যাব",
-      "pronunciation": "Dhakay jabo",
-      "en": "in / to Dhaka will go",
+      "bn": "সম্পূর্ণভাবে",
+      "pronunciation": "shompurnobhabe",
+      "en": "completely",
       "category": "adverbs",
-      "sourcePhrase": "আমি কাল ঢাকায় যাব।"
+      "sourcePhrase": "কাজটি সম্পূর্ণভাবে শেষ হয়েছে।"
     },
     {
-      "bn": "আমি এখানে",
-      "pronunciation": "ami ekhane",
-      "en": "I here",
+      "bn": "আংশিকভাবে",
+      "pronunciation": "angshikbhabe",
+      "en": "partially",
       "category": "adverbs",
-      "sourcePhrase": "আমি এখানে থাকি।"
+      "sourcePhrase": "রাস্তা আংশিকভাবে বন্ধ।"
     },
     {
-      "bn": "এখানে থাকি",
-      "pronunciation": "ekhane thaki",
-      "en": "here live / stay",
+      "bn": "পুরোপুরি",
+      "pronunciation": "puropuri",
+      "en": "completely",
       "category": "adverbs",
-      "sourcePhrase": "আমি এখানে থাকি।"
+      "sourcePhrase": "আমি পুরোপুরি একমত।"
     },
     {
-      "bn": "আমার বন্ধু",
-      "pronunciation": "amar bondhu",
-      "en": "my friend",
+      "bn": "মোটামুটি",
+      "pronunciation": "motamuti",
+      "en": "fairly",
       "category": "adverbs",
-      "sourcePhrase": "আমার বন্ধু সেখানে থাকে।"
+      "sourcePhrase": "পরীক্ষাটি মোটামুটি ভালো হয়েছে।"
     },
     {
-      "bn": "বন্ধু সেখানে",
-      "pronunciation": "bondhu shekhane",
-      "en": "friend there",
+      "bn": "বেশ",
+      "pronunciation": "besh",
+      "en": "quite",
       "category": "adverbs",
-      "sourcePhrase": "আমার বন্ধু সেখানে থাকে।"
+      "sourcePhrase": "সে বেশ দ্রুত দৌড়ায়।"
     },
     {
-      "bn": "সেখানে থাকে",
-      "pronunciation": "shekhane thake",
-      "en": "there lives / stays",
+      "bn": "খুব",
+      "pronunciation": "khub",
+      "en": "very",
       "category": "adverbs",
-      "sourcePhrase": "আমার বন্ধু সেখানে থাকে।"
+      "sourcePhrase": "আজ খুব গরম।"
     },
     {
-      "bn": "সে সবসময়",
-      "pronunciation": "shey shobshomoy",
-      "en": "he / she always",
+      "bn": "অত্যন্ত",
+      "pronunciation": "otyonto",
+      "en": "extremely",
       "category": "adverbs",
-      "sourcePhrase": "সে সবসময় সময়মতো আসে।"
+      "sourcePhrase": "এটি অত্যন্ত গুরুত্বপূর্ণ।"
     },
     {
-      "bn": "সবসময় সময়মতো",
-      "pronunciation": "shobshomoy shomoymoto",
-      "en": "always on time",
+      "bn": "ভীষণ",
+      "pronunciation": "bhishon",
+      "en": "terribly / very",
       "category": "adverbs",
-      "sourcePhrase": "সে সবসময় সময়মতো আসে।"
+      "sourcePhrase": "সে ভীষণ ক্লান্ত।"
     },
     {
-      "bn": "সময়মতো আসে",
-      "pronunciation": "shomoymoto ashe",
-      "en": "on time comes",
+      "bn": "প্রচণ্ডভাবে",
+      "pronunciation": "prochondobhabe",
+      "en": "intensely",
       "category": "adverbs",
-      "sourcePhrase": "সে সবসময় সময়মতো আসে।"
+      "sourcePhrase": "বাতাস প্রচণ্ডভাবে বইছে।"
     },
     {
-      "bn": "আমি কখনো",
-      "pronunciation": "ami kokhono",
-      "en": "I sometimes / ever",
+      "bn": "বিশেষভাবে",
+      "pronunciation": "bisheshbhabe",
+      "en": "especially",
       "category": "adverbs",
-      "sourcePhrase": "আমি কখনো এখানে খেতে আসি।"
+      "sourcePhrase": "তাকে বিশেষভাবে আমন্ত্রণ করা হয়েছে।"
     },
     {
-      "bn": "কখনো এখানে",
-      "pronunciation": "kokhono ekhane",
-      "en": "sometimes / ever here",
+      "bn": "মূলত",
+      "pronunciation": "muloto",
+      "en": "mainly",
       "category": "adverbs",
-      "sourcePhrase": "আমি কখনো এখানে খেতে আসি।"
+      "sourcePhrase": "সে মূলত শিক্ষক।"
     },
     {
-      "bn": "এখানে খেতে",
-      "pronunciation": "ekhane khete",
-      "en": "here to eat",
+      "bn": "প্রধানত",
+      "pronunciation": "prodhanoto",
+      "en": "primarily",
       "category": "adverbs",
-      "sourcePhrase": "আমি কখনো এখানে খেতে আসি।"
+      "sourcePhrase": "এখানে প্রধানত ধান জন্মায়।"
     },
     {
-      "bn": "খেতে আসি",
-      "pronunciation": "khete ashi",
-      "en": "to eat come",
+      "bn": "সত্যিই",
+      "pronunciation": "shotti-i",
+      "en": "really",
       "category": "adverbs",
-      "sourcePhrase": "আমি কখনো এখানে খেতে আসি।"
+      "sourcePhrase": "তুমি সত্যিই ভালো।"
     },
     {
-      "bn": "আমি কখনোই",
-      "pronunciation": "ami kokhonoi",
-      "en": "I ever",
+      "bn": "অবশ্যই",
+      "pronunciation": "oboshshoi",
+      "en": "certainly",
       "category": "adverbs",
-      "sourcePhrase": "আমি কখনোই মিথ্যা বলি না।"
+      "sourcePhrase": "আমি অবশ্যই আসব।"
     },
     {
-      "bn": "কখনোই মিথ্যা",
-      "pronunciation": "kokhonoi mithya",
-      "en": "ever lie / falsehood",
+      "bn": "নিশ্চয়ই",
+      "pronunciation": "nishshoyi",
+      "en": "surely",
       "category": "adverbs",
-      "sourcePhrase": "আমি কখনোই মিথ্যা বলি না।"
+      "sourcePhrase": "সে নিশ্চয়ই জিতবে।"
     },
     {
-      "bn": "মিথ্যা বলি",
-      "pronunciation": "mithya boli",
-      "en": "lie / falsehood say",
+      "bn": "হয়তো",
+      "pronunciation": "hoyto",
+      "en": "maybe",
       "category": "adverbs",
-      "sourcePhrase": "আমি কখনোই মিথ্যা বলি না।"
+      "sourcePhrase": "হয়তো কাল বৃষ্টি হবে।"
     },
     {
-      "bn": "বলি না",
-      "pronunciation": "boli na",
-      "en": "say not",
+      "bn": "সম্ভবত",
+      "pronunciation": "shombhoboto",
+      "en": "probably",
       "category": "adverbs",
-      "sourcePhrase": "আমি কখনোই মিথ্যা বলি না।"
+      "sourcePhrase": "সে সম্ভবত বাড়িতে আছে।"
     },
     {
-      "bn": "সে খুব",
-      "pronunciation": "shey khub",
-      "en": "he / she very",
+      "bn": "বোধহয়",
+      "pronunciation": "bodhoy",
+      "en": "perhaps",
       "category": "adverbs",
-      "sourcePhrase": "সে খুব দ্রুত হাঁটে।"
+      "sourcePhrase": "বোধহয় সে ভুলে গেছে।"
     },
     {
-      "bn": "খুব দ্রুত",
-      "pronunciation": "khub druto",
-      "en": "very quickly",
+      "bn": "নিশ্চিন্তে",
+      "pronunciation": "nishchinte",
+      "en": "peacefully",
       "category": "adverbs",
-      "sourcePhrase": "সে খুব দ্রুত হাঁটে।"
+      "sourcePhrase": "নিশ্চিন্তে ঘুমাও।"
     },
     {
-      "bn": "দ্রুত হাঁটে",
-      "pronunciation": "druto hate",
-      "en": "quickly walks",
+      "bn": "আনন্দে",
+      "pronunciation": "anonde",
+      "en": "happily",
       "category": "adverbs",
-      "sourcePhrase": "সে খুব দ্রুত হাঁটে।"
+      "sourcePhrase": "শিশুরা আনন্দে খেলছে।"
     },
     {
-      "bn": "দয়া করে",
-      "pronunciation": "doya kore",
-      "en": "kindness / please does",
+      "bn": "দুঃখে",
+      "pronunciation": "dukkhe",
+      "en": "sadly",
       "category": "adverbs",
-      "sourcePhrase": "দয়া করে ধীরে কথা বলুন।"
+      "sourcePhrase": "সে দুঃখে কাঁদছে।"
     },
     {
-      "bn": "করে ধীরে",
-      "pronunciation": "kore dhire",
-      "en": "does slowly",
+      "bn": "রাগে",
+      "pronunciation": "rage",
+      "en": "angrily",
       "category": "adverbs",
-      "sourcePhrase": "দয়া করে ধীরে কথা বলুন।"
+      "sourcePhrase": "সে রাগে চলে গেল।"
     },
     {
-      "bn": "ধীরে কথা",
-      "pronunciation": "dhire kotha",
-      "en": "slowly speech / words",
+      "bn": "হাসিমুখে",
+      "pronunciation": "hashimukhe",
+      "en": "smilingly",
       "category": "adverbs",
-      "sourcePhrase": "দয়া করে ধীরে কথা বলুন।"
+      "sourcePhrase": "সে হাসিমুখে সবাইকে স্বাগত জানাল।"
     },
     {
-      "bn": "কথা বলুন",
-      "pronunciation": "kotha bolun",
-      "en": "speech / words please say",
+      "bn": "মনোযোগ দিয়ে",
+      "pronunciation": "monojog diye",
+      "en": "attentively",
       "category": "adverbs",
-      "sourcePhrase": "দয়া করে ধীরে কথা বলুন।"
+      "sourcePhrase": "মনোযোগ দিয়ে শুনো।"
     },
     {
-      "bn": "আমি খুব",
-      "pronunciation": "ami khub",
-      "en": "I very",
+      "bn": "ইচ্ছাকৃতভাবে",
+      "pronunciation": "ichchhakritobhabe",
+      "en": "intentionally",
       "category": "adverbs",
-      "sourcePhrase": "আমি খুব ক্লান্ত।"
+      "sourcePhrase": "সে ইচ্ছাকৃতভাবে দেরি করেছে।"
     },
     {
-      "bn": "খুব ক্লান্ত",
-      "pronunciation": "khub klanto",
-      "en": "very tired",
+      "bn": "অনিচ্ছাকৃতভাবে",
+      "pronunciation": "onichchhakritobhabe",
+      "en": "unintentionally",
       "category": "adverbs",
-      "sourcePhrase": "আমি খুব ক্লান্ত।"
+      "sourcePhrase": "আমি অনিচ্ছাকৃতভাবে ভুল করেছি।"
     },
     {
-      "bn": "করে আবার",
-      "pronunciation": "kore abar",
-      "en": "does again",
+      "bn": "প্রকাশ্যে",
+      "pronunciation": "prokashshe",
+      "en": "publicly",
       "category": "adverbs",
-      "sourcePhrase": "দয়া করে আবার বলুন।"
+      "sourcePhrase": "বিষয়টি প্রকাশ্যে আলোচনা করা হলো।"
     },
     {
-      "bn": "আবার বলুন",
-      "pronunciation": "abar bolun",
-      "en": "again please say",
+      "bn": "গোপনে",
+      "pronunciation": "gopone",
+      "en": "secretly",
       "category": "adverbs",
-      "sourcePhrase": "দয়া করে আবার বলুন।"
+      "sourcePhrase": "তারা গোপনে দেখা করল।"
     },
     {
-      "bn": "আমি এখন ব্যস্ত",
-      "pronunciation": "ami ekhon byasto",
-      "en": "I now busy",
+      "bn": "সামনে",
+      "pronunciation": "shamne",
+      "en": "ahead / in front",
       "category": "adverbs",
-      "sourcePhrase": "আমি এখন ব্যস্ত।"
+      "sourcePhrase": "সামনে এগিয়ে যাও।"
     },
     {
-      "bn": "আজ আবহাওয়া সুন্দর",
-      "pronunciation": "aj abohawa shundor",
-      "en": "today weather beautiful",
+      "bn": "পেছনে",
+      "pronunciation": "pechone",
+      "en": "behind",
       "category": "adverbs",
-      "sourcePhrase": "আজ আবহাওয়া সুন্দর।"
+      "sourcePhrase": "সে পেছনে দাঁড়িয়ে আছে।"
     },
     {
-      "bn": "আমি কাল ঢাকায়",
-      "pronunciation": "ami kal Dhakay",
-      "en": "I tomorrow / yesterday in / to Dhaka",
+      "bn": "বাইরে",
+      "pronunciation": "baire",
+      "en": "outside",
       "category": "adverbs",
-      "sourcePhrase": "আমি কাল ঢাকায় যাব।"
+      "sourcePhrase": "বাইরে খুব ঠান্ডা।"
     },
     {
-      "bn": "কাল ঢাকায় যাব",
-      "pronunciation": "kal Dhakay jabo",
-      "en": "tomorrow / yesterday in / to Dhaka will go",
+      "bn": "ভিতরে",
+      "pronunciation": "bhitore",
+      "en": "inside",
       "category": "adverbs",
-      "sourcePhrase": "আমি কাল ঢাকায় যাব।"
+      "sourcePhrase": "ভিতরে এসো।"
     },
     {
-      "bn": "আমি এখানে থাকি",
-      "pronunciation": "ami ekhane thaki",
-      "en": "I here live / stay",
+      "bn": "উপরে",
+      "pronunciation": "upore",
+      "en": "above",
       "category": "adverbs",
-      "sourcePhrase": "আমি এখানে থাকি।"
+      "sourcePhrase": "উপরে তাকাও।"
     },
     {
-      "bn": "আমার বন্ধু সেখানে",
-      "pronunciation": "amar bondhu shekhane",
-      "en": "my friend there",
+      "bn": "নিচে",
+      "pronunciation": "niche",
+      "en": "below",
       "category": "adverbs",
-      "sourcePhrase": "আমার বন্ধু সেখানে থাকে।"
+      "sourcePhrase": "নিচে নামো।"
     },
     {
-      "bn": "বন্ধু সেখানে থাকে",
-      "pronunciation": "bondhu shekhane thake",
-      "en": "friend there lives / stays",
+      "bn": "কাছে",
+      "pronunciation": "kachhe",
+      "en": "nearby",
       "category": "adverbs",
-      "sourcePhrase": "আমার বন্ধু সেখানে থাকে।"
+      "sourcePhrase": "সে কাছে দাঁড়িয়ে আছে।"
     },
     {
-      "bn": "সে সবসময় সময়মতো",
-      "pronunciation": "shey shobshomoy shomoymoto",
-      "en": "he / she always on time",
+      "bn": "দূরে",
+      "pronunciation": "dure",
+      "en": "far away",
       "category": "adverbs",
-      "sourcePhrase": "সে সবসময় সময়মতো আসে।"
+      "sourcePhrase": "স্কুলটি দূরে।"
     },
     {
-      "bn": "সবসময় সময়মতো আসে",
-      "pronunciation": "shobshomoy shomoymoto ashe",
-      "en": "always on time comes",
+      "bn": "সর্বত্র",
+      "pronunciation": "shorbotro",
+      "en": "everywhere",
       "category": "adverbs",
-      "sourcePhrase": "সে সবসময় সময়মতো আসে।"
+      "sourcePhrase": "সর্বত্র ফুল ফুটেছে।"
     },
     {
-      "bn": "আমি কখনো এখানে",
-      "pronunciation": "ami kokhono ekhane",
-      "en": "I sometimes / ever here",
+      "bn": "কোথাও",
+      "pronunciation": "kothao",
+      "en": "somewhere",
       "category": "adverbs",
-      "sourcePhrase": "আমি কখনো এখানে খেতে আসি।"
+      "sourcePhrase": "কোথাও বসো।"
     },
     {
-      "bn": "কখনো এখানে খেতে",
-      "pronunciation": "kokhono ekhane khete",
-      "en": "sometimes / ever here to eat",
+      "bn": "কোথাও না",
+      "pronunciation": "kothao na",
+      "en": "nowhere",
       "category": "adverbs",
-      "sourcePhrase": "আমি কখনো এখানে খেতে আসি।"
+      "sourcePhrase": "আমি কোথাও যাই না।"
     },
     {
-      "bn": "এখানে খেতে আসি",
-      "pronunciation": "ekhane khete ashi",
-      "en": "here to eat come",
+      "bn": "এখানেই",
+      "pronunciation": "ekhanei",
+      "en": "right here",
       "category": "adverbs",
-      "sourcePhrase": "আমি কখনো এখানে খেতে আসি।"
+      "sourcePhrase": "এখানেই অপেক্ষা করো।"
     },
     {
-      "bn": "আমি কখনোই মিথ্যা",
-      "pronunciation": "ami kokhonoi mithya",
-      "en": "I ever lie / falsehood",
+      "bn": "ওখানেই",
+      "pronunciation": "okhanei",
+      "en": "right there",
       "category": "adverbs",
-      "sourcePhrase": "আমি কখনোই মিথ্যা বলি না।"
+      "sourcePhrase": "ওখানেই বসো।"
     },
     {
-      "bn": "কখনোই মিথ্যা বলি",
-      "pronunciation": "kokhonoi mithya boli",
-      "en": "ever lie / falsehood say",
+      "bn": "এদিকে",
+      "pronunciation": "edike",
+      "en": "this way",
       "category": "adverbs",
-      "sourcePhrase": "আমি কখনোই মিথ্যা বলি না।"
+      "sourcePhrase": "এদিকে আসো।"
     },
     {
-      "bn": "মিথ্যা বলি না",
-      "pronunciation": "mithya boli na",
-      "en": "lie / falsehood say not",
+      "bn": "ওদিকে",
+      "pronunciation": "odike",
+      "en": "that way",
       "category": "adverbs",
-      "sourcePhrase": "আমি কখনোই মিথ্যা বলি না।"
+      "sourcePhrase": "ওদিকে যেও না।"
     },
     {
-      "bn": "সে খুব দ্রুত",
-      "pronunciation": "shey khub druto",
-      "en": "he / she very quickly",
+      "bn": "উল্টোভাবে",
+      "pronunciation": "ultobhabe",
+      "en": "backwards",
       "category": "adverbs",
-      "sourcePhrase": "সে খুব দ্রুত হাঁটে।"
+      "sourcePhrase": "সে উল্টোভাবে লিখেছে।"
     },
     {
-      "bn": "খুব দ্রুত হাঁটে",
-      "pronunciation": "khub druto hate",
-      "en": "very quickly walks",
+      "bn": "সোজাসুজি",
+      "pronunciation": "sojashuji",
+      "en": "directly",
       "category": "adverbs",
-      "sourcePhrase": "সে খুব দ্রুত হাঁটে।"
+      "sourcePhrase": "সোজাসুজি উত্তর দাও।"
     },
     {
-      "bn": "দয়া করে ধীরে",
-      "pronunciation": "doya kore dhire",
-      "en": "kindness / please does slowly",
+      "bn": "পরোক্ষভাবে",
+      "pronunciation": "porokkhobhabe",
+      "en": "indirectly",
       "category": "adverbs",
-      "sourcePhrase": "দয়া করে ধীরে কথা বলুন।"
+      "sourcePhrase": "সে পরোক্ষভাবে বিষয়টি বলল।"
     },
     {
-      "bn": "করে ধীরে কথা",
-      "pronunciation": "kore dhire kotha",
-      "en": "does slowly speech / words",
+      "bn": "যথাযথভাবে",
+      "pronunciation": "jothajothobhabe",
+      "en": "properly",
       "category": "adverbs",
-      "sourcePhrase": "দয়া করে ধীরে কথা বলুন।"
+      "sourcePhrase": "যথাযথভাবে কাজটি করো।"
     },
     {
-      "bn": "ধীরে কথা বলুন",
-      "pronunciation": "dhire kotha bolun",
-      "en": "slowly speech / words please say",
+      "bn": "নিয়মিতভাবে",
+      "pronunciation": "niyomitobhabe",
+      "en": "regularly",
       "category": "adverbs",
-      "sourcePhrase": "দয়া করে ধীরে কথা বলুন।"
+      "sourcePhrase": "সে নিয়মিতভাবে ব্যায়াম করে।"
     },
     {
-      "bn": "আমি খুব ক্লান্ত",
-      "pronunciation": "ami khub klanto",
-      "en": "I very tired",
+      "bn": "অনিয়মিতভাবে",
+      "pronunciation": "oniyomitobhabe",
+      "en": "irregularly",
       "category": "adverbs",
-      "sourcePhrase": "আমি খুব ক্লান্ত।"
+      "sourcePhrase": "সে অনিয়মিতভাবে আসে।"
     },
     {
-      "bn": "দয়া করে আবার",
-      "pronunciation": "doya kore abar",
-      "en": "kindness / please does again",
+      "bn": "প্রতিদিন",
+      "pronunciation": "protidin",
+      "en": "daily",
       "category": "adverbs",
-      "sourcePhrase": "দয়া করে আবার বলুন।"
+      "sourcePhrase": "আমি প্রতিদিন বাংলা পড়ি।"
     },
     {
-      "bn": "করে আবার বলুন",
-      "pronunciation": "kore abar bolun",
-      "en": "does again please say",
+      "bn": "প্রতি সপ্তাহে",
+      "pronunciation": "proti shoptaho",
+      "en": "weekly",
       "category": "adverbs",
-      "sourcePhrase": "দয়া করে আবার বলুন।"
+      "sourcePhrase": "আমরা প্রতি সপ্তাহে দেখা করি।"
     },
     {
-      "bn": "আমি কাল ঢাকায় যাব",
-      "pronunciation": "ami kal Dhakay jabo",
-      "en": "I tomorrow / yesterday in / to Dhaka will go",
+      "bn": "প্রতি মাসে",
+      "pronunciation": "proti mashe",
+      "en": "monthly",
       "category": "adverbs",
-      "sourcePhrase": "আমি কাল ঢাকায় যাব।"
+      "sourcePhrase": "সে প্রতি মাসে ভ্রমণ করে।"
     },
     {
-      "bn": "আমার বন্ধু সেখানে থাকে",
-      "pronunciation": "amar bondhu shekhane thake",
-      "en": "my friend there lives / stays",
+      "bn": "প্রতিবছর",
+      "pronunciation": "protibochhor",
+      "en": "yearly",
       "category": "adverbs",
-      "sourcePhrase": "আমার বন্ধু সেখানে থাকে।"
+      "sourcePhrase": "আমরা প্রতিবছর উৎসব করি।"
     },
     {
-      "bn": "সে সবসময় সময়মতো আসে",
-      "pronunciation": "shey shobshomoy shomoymoto ashe",
-      "en": "he / she always on time comes",
+      "bn": "ইদানীং",
+      "pronunciation": "idaning",
+      "en": "lately",
       "category": "adverbs",
-      "sourcePhrase": "সে সবসময় সময়মতো আসে।"
+      "sourcePhrase": "ইদানীং সে ব্যস্ত।"
     },
     {
-      "bn": "আমি কখনো এখানে খেতে",
-      "pronunciation": "ami kokhono ekhane khete",
-      "en": "I sometimes / ever here to eat",
+      "bn": "সম্প্রতি",
+      "pronunciation": "shomproti",
+      "en": "recently",
       "category": "adverbs",
-      "sourcePhrase": "আমি কখনো এখানে খেতে আসি।"
+      "sourcePhrase": "আমি সম্প্রতি বইটি পড়েছি।"
     },
     {
-      "bn": "কখনো এখানে খেতে আসি",
-      "pronunciation": "kokhono ekhane khete ashi",
-      "en": "sometimes / ever here to eat come",
+      "bn": "অল্পক্ষণ",
+      "pronunciation": "olpokkhon",
+      "en": "briefly",
       "category": "adverbs",
-      "sourcePhrase": "আমি কখনো এখানে খেতে আসি।"
+      "sourcePhrase": "সে অল্পক্ষণ অপেক্ষা করল।"
     },
     {
-      "bn": "আমি কখনোই মিথ্যা বলি",
-      "pronunciation": "ami kokhonoi mithya boli",
-      "en": "I ever lie / falsehood say",
+      "bn": "দীর্ঘক্ষণ",
+      "pronunciation": "dirghokkhon",
+      "en": "for a long time",
       "category": "adverbs",
-      "sourcePhrase": "আমি কখনোই মিথ্যা বলি না।"
+      "sourcePhrase": "তারা দীর্ঘক্ষণ কথা বলল।"
+    },
+    {
+      "bn": "বিনামূল্যে",
+      "pronunciation": "binamulye",
+      "en": "freely / free of charge",
+      "category": "adverbs",
+      "sourcePhrase": "এখানে বিনামূল্যে চিকিৎসা হয়।"
+    },
+    {
+      "bn": "স্বেচ্ছায়",
+      "pronunciation": "swechchhaye",
+      "en": "voluntarily",
+      "category": "adverbs",
+      "sourcePhrase": "সে স্বেচ্ছায় সাহায্য করেছে।"
+    },
+    {
+      "bn": "বাধ্য হয়ে",
+      "pronunciation": "baddho hoye",
+      "en": "reluctantly",
+      "category": "adverbs",
+      "sourcePhrase": "সে বাধ্য হয়ে রাজি হলো।"
+    },
+    {
+      "bn": "হেসে",
+      "pronunciation": "heshe",
+      "en": "laughingly",
+      "category": "adverbs",
+      "sourcePhrase": "সে হেসে উত্তর দিল।"
+    },
+    {
+      "bn": "কেঁদে",
+      "pronunciation": "kende",
+      "en": "crying",
+      "category": "adverbs",
+      "sourcePhrase": "শিশুটি কেঁদে ঘুমিয়ে পড়ল।"
+    },
+    {
+      "bn": "মন খুলে",
+      "pronunciation": "mon khule",
+      "en": "wholeheartedly",
+      "category": "adverbs",
+      "sourcePhrase": "মন খুলে হাসো।"
+    },
+    {
+      "bn": "নিশ্চুপে",
+      "pronunciation": "nishchupe",
+      "en": "silently",
+      "category": "adverbs",
+      "sourcePhrase": "সে নিশ্চুপে চলে গেল।"
+    },
+    {
+      "bn": "দ্রুতগতিতে",
+      "pronunciation": "drutogotite",
+      "en": "at high speed",
+      "category": "adverbs",
+      "sourcePhrase": "গাড়িটি দ্রুতগতিতে চলছিল।"
+    },
+    {
+      "bn": "ধীরগতিতে",
+      "pronunciation": "dhirgotite",
+      "en": "slowly",
+      "category": "adverbs",
+      "sourcePhrase": "ট্রেনটি ধীরগতিতে চলছিল।"
+    },
+    {
+      "bn": "অনবরত",
+      "pronunciation": "onoboroto",
+      "en": "continuously",
+      "category": "adverbs",
+      "sourcePhrase": "অনবরত বৃষ্টি হচ্ছে।"
+    },
+    {
+      "bn": "অবিরাম",
+      "pronunciation": "obiram",
+      "en": "endlessly",
+      "category": "adverbs",
+      "sourcePhrase": "নদী অবিরাম বয়ে চলে।"
+    },
+    {
+      "bn": "যথেষ্ট",
+      "pronunciation": "jôtheshto",
+      "en": "sufficiently",
+      "category": "adverbs",
+      "sourcePhrase": "আজ যথেষ্ট কাজ করেছি।"
+    },
+    {
+      "bn": "অযথা",
+      "pronunciation": "ojotha",
+      "en": "unnecessarily",
+      "category": "adverbs",
+      "sourcePhrase": "অযথা চিন্তা করো না।"
+    },
+    {
+      "bn": "বিনা কারণে",
+      "pronunciation": "bina karone",
+      "en": "without reason",
+      "category": "adverbs",
+      "sourcePhrase": "সে বিনা কারণে রেগে গেল।"
+    },
+    {
+      "bn": "ইচ্ছেমতো",
+      "pronunciation": "ichchhemoto",
+      "en": "as one wishes",
+      "category": "adverbs",
+      "sourcePhrase": "ইচ্ছেমতো খেলো।"
+    },
+    {
+      "bn": "স্বাভাবিকভাবে",
+      "pronunciation": "shabhabikbhabe",
+      "en": "naturally",
+      "category": "adverbs",
+      "sourcePhrase": "সে স্বাভাবিকভাবে কথা বলল।"
+    },
+    {
+      "bn": "অস্বাভাবিকভাবে",
+      "pronunciation": "oshabhabikbhabe",
+      "en": "abnormally",
+      "category": "adverbs",
+      "sourcePhrase": "তার আচরণ অস্বাভাবিকভাবে বদলে গেছে।"
+    },
+    {
+      "bn": "খোলাখুলিভাবে",
+      "pronunciation": "kholakhulibhabe",
+      "en": "openly",
+      "category": "adverbs",
+      "sourcePhrase": "খোলাখুলিভাবে বলো।"
+    },
+    {
+      "bn": "স্পষ্টভাবে",
+      "pronunciation": "sposhtobhabe",
+      "en": "clearly",
+      "category": "adverbs",
+      "sourcePhrase": "শিক্ষক স্পষ্টভাবে বুঝিয়েছেন।"
+    },
+    {
+      "bn": "অস্পষ্টভাবে",
+      "pronunciation": "osposhtobhabe",
+      "en": "unclearly",
+      "category": "adverbs",
+      "sourcePhrase": "সে অস্পষ্টভাবে বলল।"
+    },
+    {
+      "bn": "যথাসম্ভব",
+      "pronunciation": "jothashombhob",
+      "en": "as much as possible",
+      "category": "adverbs",
+      "sourcePhrase": "যথাসম্ভব সাহায্য করো।"
+    },
+    {
+      "bn": "কদাচিৎ",
+      "pronunciation": "kodachit",
+      "en": "rarely",
+      "category": "adverbs",
+      "sourcePhrase": "সে কদাচিৎ বাইরে যায়।"
+    },
+    {
+      "bn": "সচরাচর",
+      "pronunciation": "shochorachor",
+      "en": "usually",
+      "category": "adverbs",
+      "sourcePhrase": "আমি সচরাচর চা খাই না।"
+    },
+    {
+      "bn": "প্রাথমিকভাবে",
+      "pronunciation": "prathomikbhabe",
+      "en": "initially",
+      "category": "adverbs",
+      "sourcePhrase": "প্রাথমিকভাবে পরিকল্পনাটি অনুমোদিত হয়েছে।"
+    },
+    {
+      "bn": "শেষ পর্যন্ত",
+      "pronunciation": "shesh porjonto",
+      "en": "eventually",
+      "category": "adverbs",
+      "sourcePhrase": "শেষ পর্যন্ত সে সফল হলো।"
     }
   ],
   "practice": [],
