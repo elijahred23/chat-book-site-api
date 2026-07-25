@@ -20,7 +20,7 @@ export const createTranslation = async (req, res) => {
   } catch (error) {
     console.error('Translation error:', error?.message || String(error));
     return res.status(502).json({
-      error: 'Translation is unavailable. Enable Cloud Translation API or configure GEMINI_API_KEY.',
+      error: 'Translation is unavailable. Configure GEMINI_API_KEY and try again.',
     });
   }
 };

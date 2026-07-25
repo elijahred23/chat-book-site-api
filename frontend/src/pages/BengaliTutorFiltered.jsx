@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { FaAngleDoubleLeft, FaAngleDoubleRight, FaFastBackward, FaFastForward, FaPause, FaPlay, FaRedoAlt, FaStepBackward, FaStepForward, FaStop } from "react-icons/fa";
+import { FaAngleDoubleLeft, FaAngleDoubleRight, FaFastBackward, FaFastForward, FaPause, FaPlay, FaRedoAlt, FaStepBackward, FaStepForward, FaStop, FaTrash } from "react-icons/fa";
 import BengaliTutor, { SELECTABLE_SAVED_LESSONS } from "./BengaliTutor.jsx";
 import { phraseBreakdownItems, withPhraseWords } from "../utils/bengaliPhraseBreakdown.js";
 import { getGoogleTtsAudio, GOOGLE_BENGALI_VOICE_KEY } from "../utils/googleTtsAudioCache.js";
@@ -8,6 +8,9 @@ const LESSON_KEY = "bengali_lesson_cache";
 const SETTINGS_KEY = "bengali_word_loop_settings";
 const BN_VOICE_KEY = "bengali_tutor_voice";
 const EN_VOICE_KEY = "bengali_tutor_english_voice";
+const TRANSLATION_HISTORY_KEY = "bengali_translation_history";
+const TRANSLATION_VOICE_KEY = "bengali_translation_voice";
+const MAX_SAVED_TRANSLATIONS = 20;
 
 const voiceKey = (voice) => `${voice.name}__${voice.lang}`;
 const storedString = (key) => {
@@ -35,6 +38,30 @@ const storedSettings = () => {
     bengaliSpeechSource: "pronunciation",
   };
   try { return { ...defaults, ...JSON.parse(localStorage.getItem(SETTINGS_KEY) || "{}") }; } catch { return defaults; }
+};
+const storedTranslations = () => {
+  try {
+    const records = JSON.parse(localStorage.getItem(TRANSLATION_HISTORY_KEY) || "[]");
+    return Array.isArray(records)
+      ? records.filter((record) => record?.id && record.bengali && record.pronunciation
+        && record.translation && ((Array.isArray(record.sentences) && record.sentences.length)
+          || (Array.isArray(record.words) && record.words.length)))
+        .map((record) => ({
+          ...record,
+          sentences: Array.isArray(record.sentences) && record.sentences.length
+            ? record.sentences
+            : [{
+              bengali: record.bengali,
+              pronunciation: record.pronunciation,
+              translation: record.translation,
+              words: record.words,
+            }],
+        }))
+        .slice(0, MAX_SAVED_TRANSLATIONS)
+      : [];
+  } catch {
+    return [];
+  }
 };
 
 const itemFacets = (item) => {
@@ -153,9 +180,64 @@ export default function BengaliTutorFiltered() {
 
 function BengaliTranslator() {
   const [text, setText] = useState("");
-  const [translation, setTranslation] = useState("");
+  const [translations, setTranslations] = useState(storedTranslations);
+  const [speechSource, setSpeechSource] = useState(() => storedString(TRANSLATION_VOICE_KEY) || "system");
   const [status, setStatus] = useState("idle");
   const [error, setError] = useState("");
+  const [speechError, setSpeechError] = useState("");
+
+  const changeSpeechSource = (value) => {
+    setSpeechSource(value);
+    try {
+      localStorage.setItem(TRANSLATION_VOICE_KEY, value);
+    } catch {
+      // The selected voice still remains active for this session.
+    }
+  };
+
+  const speakBengali = async (value) => {
+    const spokenText = value?.trim();
+    if (!spokenText) return;
+    setSpeechError("");
+    window.speechSynthesis?.cancel();
+    try {
+      if (speechSource === "google") {
+        const audioUrl = URL.createObjectURL(await getGoogleTtsAudio(spokenText, "bn-IN"));
+        const audio = new Audio(audioUrl);
+        const release = () => URL.revokeObjectURL(audioUrl);
+        audio.addEventListener("ended", release, { once: true });
+        audio.addEventListener("error", release, { once: true });
+        try {
+          await audio.play();
+        } catch (audioError) {
+          release();
+          throw audioError;
+        }
+        return;
+      }
+      if (!window.speechSynthesis) throw new Error("System speech synthesis is unavailable.");
+      const utterance = new SpeechSynthesisUtterance(spokenText);
+      utterance.lang = "bn-IN";
+      window.speechSynthesis.speak(utterance);
+    } catch (speakError) {
+      console.error("Bengali translation speech error:", speakError);
+      setSpeechError("Bengali audio is unavailable. Try the other voice option.");
+    }
+  };
+
+  const deleteTranslation = (record) => {
+    if (!window.confirm(`Delete the saved translation “${record.translation}”?`)) return;
+    setTranslations((current) => {
+      const next = current.filter((item) => item.id !== record.id);
+      try {
+        if (next.length) localStorage.setItem(TRANSLATION_HISTORY_KEY, JSON.stringify(next));
+        else localStorage.removeItem(TRANSLATION_HISTORY_KEY);
+      } catch {
+        // The translation is still removed for this session when storage is unavailable.
+      }
+      return next;
+    });
+  };
 
   const translate = async (event) => {
     event.preventDefault();
@@ -172,10 +254,28 @@ function BengaliTranslator() {
       });
       const data = await response.json().catch(() => ({}));
       if (!response.ok) throw new Error(data.error || `Translation failed (${response.status}).`);
-      setTranslation(data.translation);
+      if (!data.bengali || !data.pronunciation || !data.translation || !Array.isArray(data.sentences) || !data.sentences.length) {
+        throw new Error("Gemini returned an incomplete phrase breakdown.");
+      }
+      const record = {
+        id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
+        bengali: data.bengali,
+        pronunciation: data.pronunciation,
+        translation: data.translation,
+        sentences: data.sentences,
+        savedAt: new Date().toISOString(),
+      };
+      setTranslations((current) => {
+        const next = [record, ...current].slice(0, MAX_SAVED_TRANSLATIONS);
+        try {
+          localStorage.setItem(TRANSLATION_HISTORY_KEY, JSON.stringify(next));
+        } catch {
+          // The result still remains available for this session when storage is unavailable.
+        }
+        return next;
+      });
       setStatus("success");
     } catch (requestError) {
-      setTranslation("");
       setError(requestError.message || "Translation is unavailable.");
       setStatus("error");
     }
@@ -188,7 +288,7 @@ function BengaliTranslator() {
       <div>
         <strong style={ui.eyebrow}>Bengali → English</strong>
         <h2 id="bengali-translator-title" style={ui.heading}>Translate Bengali</h2>
-        <p style={ui.muted}>Translate with the API, or open the same text in Google Translate.</p>
+        <p style={ui.muted}>Gemini translates the phrase and explains each Bengali word in order. Successful results are saved on this device.</p>
       </div>
       <form style={ui.translatorForm} onSubmit={translate}>
         <Field label="Bengali text">
@@ -203,7 +303,7 @@ function BengaliTranslator() {
         </Field>
         <div style={ui.actions}>
           <button type="submit" style={ui.primary} disabled={!text.trim() || status === "loading"}>
-            {status === "loading" ? "Translating…" : "Translate to English"}
+            {status === "loading" ? "Building breakdown…" : "Translate with Gemini"}
           </button>
           <a
             style={{ ...ui.button, display: "inline-flex", alignItems: "center", textDecoration: "none" }}
@@ -217,8 +317,84 @@ function BengaliTranslator() {
           </a>
         </div>
       </form>
-      {translation && <output style={ui.translation} aria-live="polite"><small>English translation</small><strong>{translation}</strong></output>}
       {error && <div style={ui.notice} role="alert">{error} You can still use “Open in Google Translate.”</div>}
+      <div style={ui.speechControls}>
+        <Field label="Bengali audio voice">
+          <select style={ui.input} value={speechSource} onChange={(event) => changeSpeechSource(event.target.value)}>
+            <option value="system">System default</option>
+            <option value="google">Google Bengali</option>
+          </select>
+        </Field>
+        <span style={ui.speechHint}>Use the play buttons for a full sentence, or select any Bengali word to hear it.</span>
+      </div>
+      {speechError && <div style={ui.notice} role="alert">{speechError}</div>}
+      <div style={ui.translationHistory} aria-live="polite">
+        {translations.map((record, recordIndex) => (
+          <article key={record.id} style={ui.translationCard}>
+            <div>
+              <div style={ui.translationCardHeader}>
+                <small style={ui.resultLabel}>{recordIndex === 0 && status === "success" ? "New translation" : "Saved translation"}</small>
+                <button
+                  type="button"
+                  style={ui.deleteButton}
+                  onClick={() => deleteTranslation(record)}
+                  aria-label={`Delete translation: ${record.translation}`}
+                  title="Delete this saved translation"
+                >
+                  <FaTrash aria-hidden="true" /> Delete
+                </button>
+              </div>
+              <div style={ui.resultBengali} lang="bn">{record.bengali}</div>
+              <div style={ui.resultPronunciation}>{record.pronunciation}</div>
+              <div style={ui.resultEnglish}>{record.translation}</div>
+              <button type="button" style={ui.speakButton} onClick={() => speakBengali(record.bengali)}>
+                <FaPlay aria-hidden="true" /> Read all Bengali
+              </button>
+            </div>
+            <div style={ui.breakdown}>
+              <strong>Sentence breakdown</strong>
+              {record.sentences.map((sentence, sentenceIndex) => (
+                <section style={ui.sentenceCard} key={`${record.id}-sentence-${sentenceIndex}`}>
+                  <div style={ui.sentenceHeader}>
+                    <div>
+                      <small style={ui.sentenceLabel}>Sentence {sentenceIndex + 1}</small>
+                      <div style={ui.sentenceBengali} lang="bn">{sentence.bengali}</div>
+                      <div style={ui.resultPronunciation}>{sentence.pronunciation}</div>
+                      <div style={ui.resultEnglish}>{sentence.translation}</div>
+                    </div>
+                    <button
+                      type="button"
+                      style={ui.iconButton}
+                      onClick={() => speakBengali(sentence.bengali)}
+                      aria-label={`Read sentence ${sentenceIndex + 1} in Bengali`}
+                      title="Read this sentence in Bengali"
+                    >
+                      <FaPlay aria-hidden="true" />
+                    </button>
+                  </div>
+                  <div style={ui.breakdownList}>
+                    {sentence.words.map((word, wordIndex) => (
+                      <button
+                        type="button"
+                        style={ui.breakdownWord}
+                        key={`${record.id}-${sentenceIndex}-${word.bn}-${wordIndex}`}
+                        onClick={() => speakBengali(word.bn)}
+                        aria-label={`Hear ${word.bn} in Bengali`}
+                        title="Hear this Bengali word"
+                      >
+                        <span style={ui.breakdownBengali} lang="bn">{word.bn}</span>
+                        <span style={ui.breakdownPronunciation}>{word.pronunciation}</span>
+                        <span style={ui.breakdownEnglish}>{word.en}</span>
+                      </button>
+                    ))}
+                  </div>
+                </section>
+              ))}
+            </div>
+          </article>
+        ))}
+        {!translations.length && <div style={ui.emptyTranslation}>Your saved translations will appear here.</div>}
+      </div>
     </section>
   );
 }
@@ -672,7 +848,28 @@ const ui = {
   translator: { width: "min(100% - 2rem, 1100px)", margin: ".75rem auto 0", padding: "1rem", display: "grid", gap: ".85rem", border: "1px solid #bfdbfe", borderRadius: 14, background: "#f8fbff" },
   translatorForm: { display: "grid", gap: ".75rem" },
   textarea: { width: "100%", minHeight: 110, resize: "vertical", padding: ".75rem", border: "1px solid #94a3b8", borderRadius: 10, background: "#fff", color: "#0f172a", font: "inherit", fontSize: "1.1rem" },
-  translation: { padding: "1rem", display: "grid", gap: ".35rem", border: "1px solid #86efac", borderRadius: 12, background: "#f0fdf4", color: "#14532d", fontSize: "1.05rem" },
+  translationHistory: { display: "grid", gap: ".85rem" },
+  translationCard: { padding: "1rem", display: "grid", gap: "1rem", border: "1px solid #86efac", borderRadius: 14, background: "#f0fdf4", color: "#14532d" },
+  translationCardHeader: { display: "flex", alignItems: "center", justifyContent: "space-between", gap: ".75rem" },
+  resultLabel: { color: "#15803d", fontWeight: 850, textTransform: "uppercase", letterSpacing: ".04em" },
+  deleteButton: { minHeight: 36, padding: ".45rem .65rem", display: "inline-flex", alignItems: "center", gap: ".35rem", border: "1px solid #fecaca", borderRadius: 8, background: "#fff", color: "#b91c1c", fontWeight: 800 },
+  resultBengali: { marginTop: ".35rem", color: "#0f172a", fontSize: "clamp(1.6rem, 5vw, 2.4rem)", fontWeight: 850, lineHeight: 1.3 },
+  resultPronunciation: { marginTop: ".25rem", color: "#1d4ed8", fontSize: "1.05rem", fontWeight: 750 },
+  resultEnglish: { marginTop: ".45rem", color: "#14532d", fontSize: "1.15rem", fontWeight: 850 },
+  speechControls: { padding: ".85rem", display: "grid", gridTemplateColumns: "minmax(180px, 280px) minmax(0, 1fr)", alignItems: "end", gap: ".75rem", border: "1px solid #bfdbfe", borderRadius: 12, background: "#eff6ff" },
+  speechHint: { minHeight: 44, display: "flex", alignItems: "center", color: "#475569", fontWeight: 700 },
+  speakButton: { minHeight: 40, marginTop: ".65rem", padding: ".55rem .8rem", display: "inline-flex", alignItems: "center", gap: ".4rem", border: 0, borderRadius: 9, background: "#166534", color: "#fff", fontWeight: 800 },
+  breakdown: { display: "grid", gap: ".55rem" },
+  sentenceCard: { padding: ".85rem", display: "grid", gap: ".75rem", border: "1px solid #86efac", borderRadius: 12, background: "#ecfdf5" },
+  sentenceHeader: { display: "grid", gridTemplateColumns: "minmax(0, 1fr) auto", alignItems: "start", gap: ".75rem" },
+  sentenceLabel: { color: "#047857", fontWeight: 850, textTransform: "uppercase", letterSpacing: ".04em" },
+  sentenceBengali: { marginTop: ".25rem", color: "#0f172a", fontSize: "1.6rem", fontWeight: 850, lineHeight: 1.3 },
+  breakdownList: { display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))", gap: ".55rem" },
+  breakdownWord: { minWidth: 0, padding: ".7rem", display: "grid", gap: ".2rem", border: "1px solid #bbf7d0", borderRadius: 10, background: "#fff", color: "#0f172a", font: "inherit", textAlign: "left", cursor: "pointer" },
+  breakdownBengali: { color: "#0f172a", fontSize: "1.35rem", fontWeight: 850, overflowWrap: "anywhere" },
+  breakdownPronunciation: { color: "#1d4ed8", fontWeight: 700, overflowWrap: "anywhere" },
+  breakdownEnglish: { color: "#475569", overflowWrap: "anywhere" },
+  emptyTranslation: { padding: "1rem", border: "1px dashed #94a3b8", borderRadius: 12, color: "#64748b", textAlign: "center" },
   voiceCompact: { padding: ".85rem", border: "1px solid #dbe3ef", borderRadius: 12, background: "#f8fafc" },
   voiceStack: { display: "grid", alignContent: "start", gap: ".65rem" },
   card: { width: "min(100% - 2rem, 1100px)", margin: ".75rem auto 1.5rem", padding: "1rem", display: "grid", gap: "1rem", border: "1px solid #dbe3ef", borderRadius: 16, background: "#fff" },
