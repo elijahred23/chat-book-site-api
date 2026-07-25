@@ -97,6 +97,7 @@ const pickWeightedItem = (items, stats) => {
 };
 
 const initialScore = { correct: 0, total: 0, streak: 0, bestStreak: 0 };
+const EMPTY_TRANSLATION_ITEMS = [];
 
 const speak = (text, lang = "bn", selectedVoiceKey = "") => {
   if (!text || typeof window === "undefined" || !window.speechSynthesis) return;
@@ -200,7 +201,7 @@ BengaliItemActions.propTypes = {
   }).isRequired,
 };
 
-export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLessonSelector = true, view = "tutor" }) {
+export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLessonSelector = true, translationItems = EMPTY_TRANSLATION_ITEMS, view = "tutor" }) {
   const startingLesson = initialLesson || initialSavedLesson();
   const [lesson, setLesson] = useState(startingLesson);
   const [savedLessonId, setSavedLessonId] = useState(startingLesson.id);
@@ -282,11 +283,26 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
     });
     return [...uniqueWords.values()];
   }, [filteredPhrases]);
+  const translationWords = useMemo(() => {
+    const uniqueWords = new Map();
+    translationItems.forEach((sentence) => {
+      sentence.words?.forEach((word) => {
+        if (!word?.bn || !word?.en) return;
+        const item = { ...word, sourcePhrase: sentence.bn, category: "Saved translation" };
+        const key = wordKey(item);
+        if (!uniqueWords.has(key)) uniqueWords.set(key, item);
+      });
+    });
+    return [...uniqueWords.values()];
+  }, [translationItems]);
   const gameItems = useMemo(() => {
     if (gameDataset === "phrases") return filteredPhrases;
     if (gameDataset === "breakdown-words") return breakdownWords;
+    if (gameDataset === "translations") return translationItems;
+    if (gameDataset === "translation-words") return translationWords;
     return filteredVocab;
-  }, [breakdownWords, filteredPhrases, filteredVocab, gameDataset]);
+  }, [breakdownWords, filteredPhrases, filteredVocab, gameDataset, translationItems, translationWords]);
+  const usingTranslations = view === "games" && gameDataset.startsWith("translation");
 
   const combinedLessonPrompt = useMemo(() => {
     if (!lesson) return "";
@@ -710,12 +726,14 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
         {lesson && (
           <article className="bn-card" style={{ display: "grid", gap: 12 }}>
             <div>
-              <h2>{lesson.title}</h2>
-              <p>{lesson.summary}</p>
+              <h2>{usingTranslations ? "Saved Bengali → English results" : lesson.title}</h2>
+              <p>{usingTranslations
+                ? `Practice with ${translationItems.length} saved translated sentence${translationItems.length === 1 ? "" : "s"}.`
+                : lesson.summary}</p>
               <div className="bn-game-actions">
-                <span className="bn-pill">{lesson.level}</span>
-                <span className="bn-pill">{lesson.focus}</span>
-                <span className="bn-pill">{filteredVocab.length + filteredPhrases.length} items</span>
+                {!usingTranslations && <span className="bn-pill">{lesson.level}</span>}
+                {!usingTranslations && <span className="bn-pill">{lesson.focus}</span>}
+                <span className="bn-pill">{usingTranslations ? gameItems.length : filteredVocab.length + filteredPhrases.length} items</span>
               </div>
             </div>
 
@@ -811,6 +829,8 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
                   <button className={`bn-tab ${gameDataset === "vocab" ? "active" : ""}`} onClick={() => setGameDataset("vocab")} disabled={!filteredVocab.length}>Vocab set</button>
                   <button className={`bn-tab ${gameDataset === "phrases" ? "active" : ""}`} onClick={() => setGameDataset("phrases")} disabled={!filteredPhrases.length}>Phrases set</button>
                   <button className={`bn-tab ${gameDataset === "breakdown-words" ? "active" : ""}`} onClick={() => setGameDataset("breakdown-words")} disabled={breakdownWords.length < 2}>Breakdown words</button>
+                  <button className={`bn-tab ${gameDataset === "translations" ? "active" : ""}`} onClick={() => setGameDataset("translations")} disabled={translationItems.length < 2}>Translations ({translationItems.length})</button>
+                  <button className={`bn-tab ${gameDataset === "translation-words" ? "active" : ""}`} onClick={() => setGameDataset("translation-words")} disabled={translationWords.length < 2}>Translation words ({translationWords.length})</button>
                 </div>
                 <div className="bn-tabs">
                   <button className={`bn-tab ${gameDirection === "bn-en" ? "active" : ""}`} onClick={() => setGameDirection("bn-en")}>Bengali to English</button>
@@ -1094,5 +1114,6 @@ BengaliTutor.propTypes = {
   bengaliVoice: PropTypes.string,
   initialLesson: PropTypes.object,
   showLessonSelector: PropTypes.bool,
+  translationItems: PropTypes.arrayOf(PropTypes.object),
   view: PropTypes.oneOf(["tutor", "games"]),
 };

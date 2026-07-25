@@ -63,6 +63,13 @@ const storedTranslations = () => {
     return [];
   }
 };
+const storedTranslationGameItems = () => storedTranslations().flatMap((record) => record.sentences.map((sentence) => ({
+  bn: sentence.bengali,
+  pronunciation: sentence.pronunciation,
+  en: sentence.translation,
+  words: sentence.words,
+  category: "Saved translation",
+})));
 
 const itemFacets = (item) => {
   const values = [item.category, item.group, item.topic, item.level];
@@ -98,6 +105,7 @@ export default function BengaliTutorFiltered() {
 
   const bnVoices = useMemo(() => voices.filter((voice) => /^bn/i.test(voice.lang)), [voices]);
   const enVoices = useMemo(() => voices.filter((voice) => /^en/i.test(voice.lang)), [voices]);
+  const translationGameItems = useMemo(() => tab === "games" ? storedTranslationGameItems() : [], [tab]);
 
   const preview = (key, text, lang) => {
     const utterance = new SpeechSynthesisUtterance(text);
@@ -175,7 +183,14 @@ export default function BengaliTutorFiltered() {
       ) : tab === "translate" ? (
         <BengaliTranslator />
       ) : (
-        <BengaliTutor key={`${lesson.id}-games`} bengaliVoice={bnVoice} initialLesson={lesson} showLessonSelector={false} view="games" />
+        <BengaliTutor
+          key={`${lesson.id}-games`}
+          bengaliVoice={bnVoice}
+          initialLesson={lesson}
+          showLessonSelector={false}
+          translationItems={translationGameItems}
+          view="games"
+        />
       )}
     </main>
   );
