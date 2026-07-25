@@ -1,7 +1,7 @@
 {
   "id": "asking-questions",
   "title": "Asking Questions",
-  "summary": "Build useful questions with who, what, where, when, why, and how.",
+  "summary": "Ask natural Bengali questions about people, places, time, reasons, methods, quantities, choices, opinions, and confirmation.",
   "level": "beginner",
   "topic": "Asking Questions",
   "focus": "grammar",
@@ -10,275 +10,3773 @@
       "bn": "কে",
       "pronunciation": "ke",
       "en": "who",
-      "category": "asking-questions"
+      "category": "asking-questions",
+      "sourcePhrase": "কে দরজায় দাঁড়িয়ে আছে?"
+    },
+    {
+      "bn": "কার",
+      "pronunciation": "kar",
+      "en": "whose",
+      "category": "asking-questions",
+      "sourcePhrase": "এটা কার বই?"
+    },
+    {
+      "bn": "কাকে",
+      "pronunciation": "kake",
+      "en": "whom",
+      "category": "asking-questions",
+      "sourcePhrase": "তুমি কাকে দেখেছ?"
+    },
+    {
+      "bn": "কারা",
+      "pronunciation": "kara",
+      "en": "who (plural)",
+      "category": "asking-questions",
+      "sourcePhrase": "কারা বাইরে খেলছে?"
     },
     {
       "bn": "কী",
       "pronunciation": "ki",
       "en": "what",
-      "category": "asking-questions"
+      "category": "asking-questions",
+      "sourcePhrase": "তুমি কী খাচ্ছ?"
     },
     {
-      "bn": "কোথায়",
-      "pronunciation": "kothay",
-      "en": "where",
-      "category": "asking-questions"
+      "bn": "কীসের",
+      "pronunciation": "kisher",
+      "en": "of what",
+      "category": "asking-questions",
+      "sourcePhrase": "এটা কীসের গন্ধ?"
     },
     {
-      "bn": "কখন",
-      "pronunciation": "kokhon",
-      "en": "when",
-      "category": "asking-questions"
-    },
-    {
-      "bn": "কেন",
-      "pronunciation": "keno",
-      "en": "why",
-      "category": "asking-questions"
-    },
-    {
-      "bn": "কীভাবে",
-      "pronunciation": "kibhabe",
-      "en": "how",
-      "category": "asking-questions"
-    },
-    {
-      "bn": "কত",
-      "pronunciation": "koto",
-      "en": "how much / many",
-      "category": "asking-questions"
+      "bn": "কিসের জন্য",
+      "pronunciation": "kisher jonno",
+      "en": "for what",
+      "category": "asking-questions",
+      "sourcePhrase": "তুমি কিসের জন্য অপেক্ষা করছ?"
     },
     {
       "bn": "কোন",
       "pronunciation": "kon",
       "en": "which",
-      "category": "asking-questions"
+      "category": "asking-questions",
+      "sourcePhrase": "কোন বইটি তোমার?"
+    },
+    {
+      "bn": "কোনটা",
+      "pronunciation": "konta",
+      "en": "which one",
+      "category": "asking-questions",
+      "sourcePhrase": "কোনটা ভালো?"
+    },
+    {
+      "bn": "কোনগুলো",
+      "pronunciation": "kongulo",
+      "en": "which ones",
+      "category": "asking-questions",
+      "sourcePhrase": "কোনগুলো তোমার জুতা?"
+    },
+    {
+      "bn": "কোথায়",
+      "pronunciation": "kothay",
+      "en": "where",
+      "category": "asking-questions",
+      "sourcePhrase": "তুমি কোথায় থাকো?"
+    },
+    {
+      "bn": "কোথা থেকে",
+      "pronunciation": "kotha theke",
+      "en": "from where",
+      "category": "asking-questions",
+      "sourcePhrase": "তুমি কোথা থেকে এসেছ?"
+    },
+    {
+      "bn": "কোথায় যেতে",
+      "pronunciation": "kothay jete",
+      "en": "where to",
+      "category": "asking-questions",
+      "sourcePhrase": "তুমি কোথায় যেতে চাও?"
+    },
+    {
+      "bn": "কোথায় রাখা",
+      "pronunciation": "kothay rakha",
+      "en": "where is it kept",
+      "category": "asking-questions",
+      "sourcePhrase": "চাবিটা কোথায় রাখা আছে?"
+    },
+    {
+      "bn": "কোথায় ছিলে",
+      "pronunciation": "kothay chile",
+      "en": "where were you",
+      "category": "asking-questions",
+      "sourcePhrase": "তুমি কোথায় ছিলে?"
+    },
+    {
+      "bn": "কোথায় পাব",
+      "pronunciation": "kothay pabo",
+      "en": "where can I get",
+      "category": "asking-questions",
+      "sourcePhrase": "আমি এটা কোথায় পাব?"
+    },
+    {
+      "bn": "কখন",
+      "pronunciation": "kokhon",
+      "en": "when",
+      "category": "asking-questions",
+      "sourcePhrase": "তুমি কখন আসবে?"
+    },
+    {
+      "bn": "কখন থেকে",
+      "pronunciation": "kokhon theke",
+      "en": "since when",
+      "category": "asking-questions",
+      "sourcePhrase": "তুমি কখন থেকে এখানে আছ?"
+    },
+    {
+      "bn": "কখন পর্যন্ত",
+      "pronunciation": "kokhon porjonto",
+      "en": "until when",
+      "category": "asking-questions",
+      "sourcePhrase": "দোকান কখন পর্যন্ত খোলা থাকে?"
+    },
+    {
+      "bn": "কখনও",
+      "pronunciation": "kokhono",
+      "en": "ever",
+      "category": "asking-questions",
+      "sourcePhrase": "তুমি কি কখনও ঢাকা গেছ?"
+    },
+    {
+      "bn": "কত",
+      "pronunciation": "koto",
+      "en": "how much / how many",
+      "category": "asking-questions",
+      "sourcePhrase": "এর দাম কত?"
+    },
+    {
+      "bn": "কতজন",
+      "pronunciation": "kotojon",
+      "en": "how many people",
+      "category": "asking-questions",
+      "sourcePhrase": "এখানে কতজন আছে?"
+    },
+    {
+      "bn": "কতবার",
+      "pronunciation": "kotobar",
+      "en": "how many times",
+      "category": "asking-questions",
+      "sourcePhrase": "তুমি কতবার চেষ্টা করেছ?"
+    },
+    {
+      "bn": "কতক্ষণ",
+      "pronunciation": "kotokkhon",
+      "en": "how long",
+      "category": "asking-questions",
+      "sourcePhrase": "তুমি কতক্ষণ অপেক্ষা করবে?"
+    },
+    {
+      "bn": "কত দূর",
+      "pronunciation": "koto dur",
+      "en": "how far",
+      "category": "asking-questions",
+      "sourcePhrase": "স্কুল কত দূর?"
+    },
+    {
+      "bn": "কত বড়",
+      "pronunciation": "koto bôṛo",
+      "en": "how big",
+      "category": "asking-questions",
+      "sourcePhrase": "তোমার বাড়ি কত বড়?"
+    },
+    {
+      "bn": "কত ছোট",
+      "pronunciation": "koto chhoto",
+      "en": "how small",
+      "category": "asking-questions",
+      "sourcePhrase": "বাক্সটা কত ছোট?"
+    },
+    {
+      "bn": "কত বছর",
+      "pronunciation": "koto bochor",
+      "en": "how many years",
+      "category": "asking-questions",
+      "sourcePhrase": "তোমার বয়স কত বছর?"
+    },
+    {
+      "bn": "কেমন",
+      "pronunciation": "kemon",
+      "en": "how / what kind",
+      "category": "asking-questions",
+      "sourcePhrase": "তুমি কেমন আছ?"
+    },
+    {
+      "bn": "কেমন লাগছে",
+      "pronunciation": "kemon lagche",
+      "en": "how does it feel",
+      "category": "asking-questions",
+      "sourcePhrase": "সিনেমাটা কেমন লাগছে?"
+    },
+    {
+      "bn": "কেমন হলো",
+      "pronunciation": "kemon holo",
+      "en": "how was it",
+      "category": "asking-questions",
+      "sourcePhrase": "পরীক্ষাটা কেমন হলো?"
+    },
+    {
+      "bn": "কেমন দেখতে",
+      "pronunciation": "kemon dekhte",
+      "en": "what does it look like",
+      "category": "asking-questions",
+      "sourcePhrase": "নতুন বাড়িটা কেমন দেখতে?"
+    },
+    {
+      "bn": "কেন",
+      "pronunciation": "keno",
+      "en": "why",
+      "category": "asking-questions",
+      "sourcePhrase": "তুমি কেন দেরি করলে?"
+    },
+    {
+      "bn": "কেন নয়",
+      "pronunciation": "keno noy",
+      "en": "why not",
+      "category": "asking-questions",
+      "sourcePhrase": "আমরা কেন নই?"
+    },
+    {
+      "bn": "কীভাবে",
+      "pronunciation": "kibhabe",
+      "en": "how",
+      "category": "asking-questions",
+      "sourcePhrase": "তুমি কীভাবে এটা করলে?"
+    },
+    {
+      "bn": "কী করে",
+      "pronunciation": "ki kore",
+      "en": "how",
+      "category": "asking-questions",
+      "sourcePhrase": "তুমি কী করে বাংলা শিখছ?"
+    },
+    {
+      "bn": "কী রকম",
+      "pronunciation": "ki rokom",
+      "en": "what kind",
+      "category": "asking-questions",
+      "sourcePhrase": "এটা কী রকম খাবার?"
+    },
+    {
+      "bn": "কী ধরনের",
+      "pronunciation": "ki dhoroner",
+      "en": "what type",
+      "category": "asking-questions",
+      "sourcePhrase": "তুমি কী ধরনের বই পড়ো?"
+    },
+    {
+      "bn": "কী নামে",
+      "pronunciation": "ki name",
+      "en": "by what name",
+      "category": "asking-questions",
+      "sourcePhrase": "তোমার স্কুল কী নামে পরিচিত?"
+    },
+    {
+      "bn": "কী জন্য",
+      "pronunciation": "ki jonno",
+      "en": "for what",
+      "category": "asking-questions",
+      "sourcePhrase": "এটা কী জন্য ব্যবহার করা হয়?"
+    },
+    {
+      "bn": "কী দিয়ে",
+      "pronunciation": "ki diye",
+      "en": "with what",
+      "category": "asking-questions",
+      "sourcePhrase": "তুমি কী দিয়ে লিখছ?"
+    },
+    {
+      "bn": "কী থেকে",
+      "pronunciation": "ki theke",
+      "en": "from what",
+      "category": "asking-questions",
+      "sourcePhrase": "এটা কী থেকে তৈরি?"
+    },
+    {
+      "bn": "কী নিয়ে",
+      "pronunciation": "ki niye",
+      "en": "about what",
+      "category": "asking-questions",
+      "sourcePhrase": "তোমরা কী নিয়ে কথা বলছ?"
+    },
+    {
+      "bn": "কী বললে",
+      "pronunciation": "ki bolle",
+      "en": "what did you say",
+      "category": "asking-questions",
+      "sourcePhrase": "তুমি কী বললে?"
+    },
+    {
+      "bn": "কী হয়েছে",
+      "pronunciation": "ki hoyechhe",
+      "en": "what happened",
+      "category": "asking-questions",
+      "sourcePhrase": "কী হয়েছে?"
+    },
+    {
+      "bn": "কী হবে",
+      "pronunciation": "ki hobe",
+      "en": "what will happen",
+      "category": "asking-questions",
+      "sourcePhrase": "এরপর কী হবে?"
+    },
+    {
+      "bn": "কী করা উচিত",
+      "pronunciation": "ki kora uchit",
+      "en": "what should be done",
+      "category": "asking-questions",
+      "sourcePhrase": "এখন কী করা উচিত?"
+    },
+    {
+      "bn": "কী চাই",
+      "pronunciation": "ki chai",
+      "en": "what do you want",
+      "category": "asking-questions",
+      "sourcePhrase": "তুমি কী চাও?"
+    },
+    {
+      "bn": "কী পছন্দ",
+      "pronunciation": "ki pochhondo",
+      "en": "what do you like",
+      "category": "asking-questions",
+      "sourcePhrase": "তোমার কী পছন্দ?"
+    },
+    {
+      "bn": "কী সমস্যা",
+      "pronunciation": "ki shomoshsha",
+      "en": "what's the problem",
+      "category": "asking-questions",
+      "sourcePhrase": "তোমার কী সমস্যা?"
+    },
+    {
+      "bn": "কী খবর",
+      "pronunciation": "ki khobor",
+      "en": "what's the news",
+      "category": "asking-questions",
+      "sourcePhrase": "কী খবর?"
+    },
+    {
+      "bn": "কী ব্যাপার",
+      "pronunciation": "ki byapar",
+      "en": "what's going on",
+      "category": "asking-questions",
+      "sourcePhrase": "কী ব্যাপার?"
+    },
+    {
+      "bn": "কার সঙ্গে",
+      "pronunciation": "kar shonge",
+      "en": "with whom",
+      "category": "asking-questions",
+      "sourcePhrase": "তুমি কার সঙ্গে এসেছ?"
+    },
+    {
+      "bn": "কার কাছে",
+      "pronunciation": "kar kachhe",
+      "en": "with whom",
+      "category": "asking-questions",
+      "sourcePhrase": "বইটা কার কাছে আছে?"
+    },
+    {
+      "bn": "কার জন্য",
+      "pronunciation": "kar jonno",
+      "en": "for whom",
+      "category": "asking-questions",
+      "sourcePhrase": "এই উপহার কার জন্য?"
+    },
+    {
+      "bn": "কার থেকে",
+      "pronunciation": "kar theke",
+      "en": "from whom",
+      "category": "asking-questions",
+      "sourcePhrase": "তুমি এটা কার থেকে পেয়েছ?"
+    },
+    {
+      "bn": "কোন দিকে",
+      "pronunciation": "kon dike",
+      "en": "which direction",
+      "category": "asking-questions",
+      "sourcePhrase": "কোন দিকে যেতে হবে?"
+    },
+    {
+      "bn": "কোন সময়",
+      "pronunciation": "kon shomoy",
+      "en": "what time",
+      "category": "asking-questions",
+      "sourcePhrase": "ট্রেন কোন সময় ছাড়বে?"
+    },
+    {
+      "bn": "কোন দিন",
+      "pronunciation": "kon din",
+      "en": "which day",
+      "category": "asking-questions",
+      "sourcePhrase": "আজ কোন দিন?"
+    },
+    {
+      "bn": "কোন মাস",
+      "pronunciation": "kon mash",
+      "en": "which month",
+      "category": "asking-questions",
+      "sourcePhrase": "এখন কোন মাস?"
+    },
+    {
+      "bn": "কোন বছর",
+      "pronunciation": "kon bochor",
+      "en": "which year",
+      "category": "asking-questions",
+      "sourcePhrase": "তুমি কোন বছরে জন্মেছ?"
+    },
+    {
+      "bn": "কোন দেশে",
+      "pronunciation": "kon deshe",
+      "en": "which country",
+      "category": "asking-questions",
+      "sourcePhrase": "তুমি কোন দেশে থাকো?"
+    },
+    {
+      "bn": "কোন শহরে",
+      "pronunciation": "kon shohore",
+      "en": "which city",
+      "category": "asking-questions",
+      "sourcePhrase": "তুমি কোন শহরে থাকো?"
+    },
+    {
+      "bn": "কোন ভাষায়",
+      "pronunciation": "kon bhashay",
+      "en": "in which language",
+      "category": "asking-questions",
+      "sourcePhrase": "তুমি কোন ভাষায় কথা বলো?"
+    },
+    {
+      "bn": "কোথায় বসব",
+      "pronunciation": "kothay boshbo",
+      "en": "where should I sit",
+      "category": "asking-questions",
+      "sourcePhrase": "আমি কোথায় বসব?"
+    },
+    {
+      "bn": "কোথায় যাব",
+      "pronunciation": "kothay jabo",
+      "en": "where should I go",
+      "category": "asking-questions",
+      "sourcePhrase": "আমি কোথায় যাব?"
+    },
+    {
+      "bn": "কোথায় খাব",
+      "pronunciation": "kothay khabo",
+      "en": "where should we eat",
+      "category": "asking-questions",
+      "sourcePhrase": "আমরা কোথায় খাব?"
+    },
+    {
+      "bn": "কোথায় কিনব",
+      "pronunciation": "kothay kinbo",
+      "en": "where should I buy",
+      "category": "asking-questions",
+      "sourcePhrase": "আমি এটা কোথায় কিনব?"
+    },
+    {
+      "bn": "কোথায় শিখব",
+      "pronunciation": "kothay shikhbo",
+      "en": "where should I learn",
+      "category": "asking-questions",
+      "sourcePhrase": "আমি বাংলা কোথায় শিখব?"
+    },
+    {
+      "bn": "কখন শুরু",
+      "pronunciation": "kokhon shuru",
+      "en": "when does it start",
+      "category": "asking-questions",
+      "sourcePhrase": "ক্লাস কখন শুরু হবে?"
+    },
+    {
+      "bn": "কখন শেষ",
+      "pronunciation": "kokhon shesh",
+      "en": "when does it end",
+      "category": "asking-questions",
+      "sourcePhrase": "সিনেমা কখন শেষ হবে?"
+    },
+    {
+      "bn": "কখন ফিরবে",
+      "pronunciation": "kokhon phirbe",
+      "en": "when will you return",
+      "category": "asking-questions",
+      "sourcePhrase": "তুমি কখন ফিরবে?"
+    },
+    {
+      "bn": "কখন দেখা হবে",
+      "pronunciation": "kokhon dekha hobe",
+      "en": "when will we meet",
+      "category": "asking-questions",
+      "sourcePhrase": "আমাদের কখন দেখা হবে?"
+    },
+    {
+      "bn": "কত টাকা",
+      "pronunciation": "koto taka",
+      "en": "how much money",
+      "category": "asking-questions",
+      "sourcePhrase": "তোমার কাছে কত টাকা আছে?"
+    },
+    {
+      "bn": "কত নম্বর",
+      "pronunciation": "koto nombor",
+      "en": "what score",
+      "category": "asking-questions",
+      "sourcePhrase": "তুমি কত নম্বর পেয়েছ?"
+    },
+    {
+      "bn": "কত কিলোমিটার",
+      "pronunciation": "koto kilomitar",
+      "en": "how many kilometers",
+      "category": "asking-questions",
+      "sourcePhrase": "ঢাকা কত কিলোমিটার দূরে?"
+    },
+    {
+      "bn": "কত মিনিট",
+      "pronunciation": "koto minit",
+      "en": "how many minutes",
+      "category": "asking-questions",
+      "sourcePhrase": "আর কত মিনিট লাগবে?"
+    },
+    {
+      "bn": "কতক্ষণ ধরে",
+      "pronunciation": "kotokkhon dhore",
+      "en": "for how long",
+      "category": "asking-questions",
+      "sourcePhrase": "তুমি কতক্ষণ ধরে অপেক্ষা করছ?"
+    },
+    {
+      "bn": "কত তাড়াতাড়ি",
+      "pronunciation": "koto taratari",
+      "en": "how soon",
+      "category": "asking-questions",
+      "sourcePhrase": "তুমি কত তাড়াতাড়ি আসতে পারবে?"
+    },
+    {
+      "bn": "কত দেরি",
+      "pronunciation": "koto deri",
+      "en": "how late",
+      "category": "asking-questions",
+      "sourcePhrase": "তুমি কত দেরি করবে?"
+    },
+    {
+      "bn": "কতটা",
+      "pronunciation": "kotota",
+      "en": "how much",
+      "category": "asking-questions",
+      "sourcePhrase": "তুমি কতটা নিশ্চিত?"
+    },
+    {
+      "bn": "কেমন করে",
+      "pronunciation": "kemon kore",
+      "en": "how",
+      "category": "asking-questions",
+      "sourcePhrase": "কেমন করে এটা কাজ করে?"
+    },
+    {
+      "bn": "কেন এমন",
+      "pronunciation": "keno emon",
+      "en": "why like this",
+      "category": "asking-questions",
+      "sourcePhrase": "তুমি কেন এমন করলে?"
+    },
+    {
+      "bn": "কেন হবে",
+      "pronunciation": "keno hobe",
+      "en": "why would it happen",
+      "category": "asking-questions",
+      "sourcePhrase": "এটা কেন হবে?"
+    },
+    {
+      "bn": "আদৌ কি",
+      "pronunciation": "adou ki",
+      "en": "whether at all",
+      "category": "asking-questions",
+      "sourcePhrase": "সে আদৌ কি আসবে?"
+    },
+    {
+      "bn": "সত্যিই কি",
+      "pronunciation": "shotti-i ki",
+      "en": "really?",
+      "category": "asking-questions",
+      "sourcePhrase": "তুমি সত্যিই কি এটা বিশ্বাস করো?"
+    },
+    {
+      "bn": "আসলেই কি",
+      "pronunciation": "asholei ki",
+      "en": "actually?",
+      "category": "asking-questions",
+      "sourcePhrase": "এটা আসলেই কি সত্যি?"
+    },
+    {
+      "bn": "যদি...তবে?",
+      "pronunciation": "jodi tobe",
+      "en": "if...then?",
+      "category": "asking-questions",
+      "sourcePhrase": "যদি বৃষ্টি হয় তবে কী হবে?"
+    },
+    {
+      "bn": "না কি",
+      "pronunciation": "na ki",
+      "en": "or",
+      "category": "asking-questions",
+      "sourcePhrase": "তুমি চা না কি কফি খাবে?"
+    },
+    {
+      "bn": "নাকি",
+      "pronunciation": "naki",
+      "en": "or is it",
+      "category": "asking-questions",
+      "sourcePhrase": "সে এসেছে, নাকি তার ভাই?"
+    },
+    {
+      "bn": "তাই না?",
+      "pronunciation": "tai na",
+      "en": "isn't it?",
+      "category": "asking-questions",
+      "sourcePhrase": "আজ গরম, তাই না?"
+    },
+    {
+      "bn": "তাই তো?",
+      "pronunciation": "tai to",
+      "en": "right?",
+      "category": "asking-questions",
+      "sourcePhrase": "তুমি আসবে, তাই তো?"
+    },
+    {
+      "bn": "তাই কি?",
+      "pronunciation": "tai ki",
+      "en": "really?",
+      "category": "asking-questions",
+      "sourcePhrase": "তাই কি?"
+    },
+    {
+      "bn": "তাই নাকি?",
+      "pronunciation": "tai naki",
+      "en": "is that so?",
+      "category": "asking-questions",
+      "sourcePhrase": "তাই নাকি?"
+    },
+    {
+      "bn": "বুঝলে?",
+      "pronunciation": "bujhle",
+      "en": "understood?",
+      "category": "asking-questions",
+      "sourcePhrase": "বুঝলে?"
+    },
+    {
+      "bn": "শুনেছ?",
+      "pronunciation": "shunecho",
+      "en": "have you heard?",
+      "category": "asking-questions",
+      "sourcePhrase": "তুমি শুনেছ?"
+    },
+    {
+      "bn": "দেখেছ?",
+      "pronunciation": "dekhechho",
+      "en": "have you seen?",
+      "category": "asking-questions",
+      "sourcePhrase": "তুমি দেখেছ?"
+    },
+    {
+      "bn": "পারবে?",
+      "pronunciation": "parbe",
+      "en": "can you?",
+      "category": "asking-questions",
+      "sourcePhrase": "তুমি কি এটা করতে পারবে?"
+    },
+    {
+      "bn": "হবে?",
+      "pronunciation": "hobe",
+      "en": "will it work?",
+      "category": "asking-questions",
+      "sourcePhrase": "কাল দেখা হবে?"
+    },
+    {
+      "bn": "ঠিক?",
+      "pronunciation": "thik",
+      "en": "okay / right?",
+      "category": "asking-questions",
+      "sourcePhrase": "বিকেল পাঁচটায়, ঠিক?"
+    },
+    {
+      "bn": "রাজি?",
+      "pronunciation": "raji",
+      "en": "agree?",
+      "category": "asking-questions",
+      "sourcePhrase": "তুমি কি রাজি?"
+    },
+    {
+      "bn": "নিশ্চিত?",
+      "pronunciation": "nishchito",
+      "en": "sure?",
+      "category": "asking-questions",
+      "sourcePhrase": "তুমি নিশ্চিত?"
+    },
+    {
+      "bn": "কী মনে হয়",
+      "pronunciation": "ki mone hoy",
+      "en": "what do you think",
+      "category": "asking-questions",
+      "sourcePhrase": "তোমার কী মনে হয়?"
+    },
+    {
+      "bn": "কী ভাবছ",
+      "pronunciation": "ki bhabcho",
+      "en": "what are you thinking",
+      "category": "asking-questions",
+      "sourcePhrase": "তুমি কী ভাবছ?"
+    },
+    {
+      "bn": "কী শুনলে",
+      "pronunciation": "ki shunle",
+      "en": "what did you hear",
+      "category": "asking-questions",
+      "sourcePhrase": "তুমি কী শুনলে?"
+    },
+    {
+      "bn": "কী দেখলে",
+      "pronunciation": "ki dekhle",
+      "en": "what did you see",
+      "category": "asking-questions",
+      "sourcePhrase": "তুমি কী দেখলে?"
+    },
+    {
+      "bn": "কী শিখলে",
+      "pronunciation": "ki shikhle",
+      "en": "what did you learn",
+      "category": "asking-questions",
+      "sourcePhrase": "আজ তুমি কী শিখলে?"
+    },
+    {
+      "bn": "এরপর কী",
+      "pronunciation": "erpor ki",
+      "en": "what next",
+      "category": "asking-questions",
+      "sourcePhrase": "এরপর কী?"
+    },
+    {
+      "bn": "এখন কী",
+      "pronunciation": "ekhon ki",
+      "en": "what now",
+      "category": "asking-questions",
+      "sourcePhrase": "এখন কী করব?"
+    },
+    {
+      "bn": "তারপর কী",
+      "pronunciation": "tarpor ki",
+      "en": "what after that",
+      "category": "asking-questions",
+      "sourcePhrase": "তারপর কী হলো?"
     }
   ],
   "phrases": [
     {
-      "bn": "আপনার নাম কী?",
-      "pronunciation": "apnar nam ki?",
-      "en": "What is your name?",
-      "context": "Asking for information",
-      "category": "asking-questions"
+      "bn": "কে দরজায় দাঁড়িয়ে আছে?",
+      "pronunciation": "ke dorjay dariye achhe",
+      "en": "Who is standing at the door?",
+      "context": "Using কে (who)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "কে",
+          "pronunciation": "ke",
+          "en": "who"
+        },
+        {
+          "bn": "দরজায়",
+          "pronunciation": "dorjay",
+          "en": "at the door"
+        },
+        {
+          "bn": "দাঁড়িয়ে",
+          "pronunciation": "dariye",
+          "en": "standing"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is / has"
+        }
+      ]
     },
     {
-      "bn": "আপনি কোথায় থাকেন?",
-      "pronunciation": "apni kothay thaken?",
+      "bn": "এটা কার বই?",
+      "pronunciation": "eta kar boi",
+      "en": "Whose book is this?",
+      "context": "Using কার (whose)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "এটা",
+          "pronunciation": "eta",
+          "en": "this"
+        },
+        {
+          "bn": "কার",
+          "pronunciation": "kar",
+          "en": "whose"
+        },
+        {
+          "bn": "বই",
+          "pronunciation": "boi",
+          "en": "book"
+        }
+      ]
+    },
+    {
+      "bn": "তুমি কাকে দেখেছ?",
+      "pronunciation": "tumi kake dekhechho",
+      "en": "Whom did you see?",
+      "context": "Using কাকে (whom)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "তুমি",
+          "pronunciation": "tumi",
+          "en": "you (familiar)"
+        },
+        {
+          "bn": "কাকে",
+          "pronunciation": "kake",
+          "en": "whom"
+        },
+        {
+          "bn": "দেখেছ",
+          "pronunciation": "dekhechho",
+          "en": "did you see / have you seen"
+        }
+      ]
+    },
+    {
+      "bn": "কারা বাইরে খেলছে?",
+      "pronunciation": "kara baire khelchhe",
+      "en": "Who are playing outside?",
+      "context": "Using কারা (who (plural))",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "কারা",
+          "pronunciation": "kara",
+          "en": "who (plural)"
+        },
+        {
+          "bn": "বাইরে",
+          "pronunciation": "baire",
+          "en": "outward / outside"
+        },
+        {
+          "bn": "খেলছে",
+          "pronunciation": "khelchhe",
+          "en": "is playing"
+        }
+      ]
+    },
+    {
+      "bn": "তুমি কী খাচ্ছ?",
+      "pronunciation": "tumi ki khachchho",
+      "en": "What are you eating?",
+      "context": "Using কী (what)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "তুমি",
+          "pronunciation": "tumi",
+          "en": "you (familiar)"
+        },
+        {
+          "bn": "কী",
+          "pronunciation": "ki",
+          "en": "what"
+        },
+        {
+          "bn": "খাচ্ছ",
+          "pronunciation": "khachchho",
+          "en": "are eating"
+        }
+      ]
+    },
+    {
+      "bn": "এটা কীসের গন্ধ?",
+      "pronunciation": "eta kisher gondho",
+      "en": "What smell is this?",
+      "context": "Using কীসের (of what)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "এটা",
+          "pronunciation": "eta",
+          "en": "this"
+        },
+        {
+          "bn": "কীসের",
+          "pronunciation": "kisher",
+          "en": "of what"
+        },
+        {
+          "bn": "গন্ধ",
+          "pronunciation": "gondho",
+          "en": "smell"
+        }
+      ]
+    },
+    {
+      "bn": "তুমি কিসের জন্য অপেক্ষা করছ?",
+      "pronunciation": "tumi kisher jonno opekkha korcho",
+      "en": "What are you waiting for?",
+      "context": "Using কিসের জন্য (for what)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "তুমি",
+          "pronunciation": "tumi",
+          "en": "you (familiar)"
+        },
+        {
+          "bn": "কিসের",
+          "pronunciation": "kisher",
+          "en": "of what"
+        },
+        {
+          "bn": "জন্য",
+          "pronunciation": "jonno",
+          "en": "for"
+        },
+        {
+          "bn": "অপেক্ষা",
+          "pronunciation": "opekkha",
+          "en": "wait"
+        },
+        {
+          "bn": "করছ",
+          "pronunciation": "korcho",
+          "en": "are doing"
+        }
+      ]
+    },
+    {
+      "bn": "কোন বইটি তোমার?",
+      "pronunciation": "kon boiti tomar",
+      "en": "Which book is yours?",
+      "context": "Using কোন (which)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "কোন",
+          "pronunciation": "kon",
+          "en": "which"
+        },
+        {
+          "bn": "বইটি",
+          "pronunciation": "boiti",
+          "en": "the book"
+        },
+        {
+          "bn": "তোমার",
+          "pronunciation": "tomar",
+          "en": "your"
+        }
+      ]
+    },
+    {
+      "bn": "কোনটা ভালো?",
+      "pronunciation": "konta bhalo",
+      "en": "Which one is better?",
+      "context": "Using কোনটা (which one)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "কোনটা",
+          "pronunciation": "konta",
+          "en": "which one"
+        },
+        {
+          "bn": "ভালো",
+          "pronunciation": "bhalo",
+          "en": "good"
+        }
+      ]
+    },
+    {
+      "bn": "কোনগুলো তোমার জুতা?",
+      "pronunciation": "kongulo tomar juta",
+      "en": "Which ones are your shoes?",
+      "context": "Using কোনগুলো (which ones)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "কোনগুলো",
+          "pronunciation": "kongulo",
+          "en": "which ones"
+        },
+        {
+          "bn": "তোমার",
+          "pronunciation": "tomar",
+          "en": "your"
+        },
+        {
+          "bn": "জুতা",
+          "pronunciation": "juta",
+          "en": "shoes"
+        }
+      ]
+    },
+    {
+      "bn": "তুমি কোথায় থাকো?",
+      "pronunciation": "tumi kothay thako",
       "en": "Where do you live?",
-      "context": "Asking about a place",
-      "category": "asking-questions"
+      "context": "Using কোথায় (where)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "তুমি",
+          "pronunciation": "tumi",
+          "en": "you (familiar)"
+        },
+        {
+          "bn": "কোথায়",
+          "pronunciation": "kothay",
+          "en": "where"
+        },
+        {
+          "bn": "থাকো",
+          "pronunciation": "thako",
+          "en": "stay"
+        }
+      ]
     },
     {
-      "bn": "ট্রেন কখন আসবে?",
-      "pronunciation": "train kokhon ashbe?",
-      "en": "When will the train arrive?",
-      "context": "Asking about time",
-      "category": "asking-questions"
+      "bn": "তুমি কোথা থেকে এসেছ?",
+      "pronunciation": "tumi kotha theke eshecho",
+      "en": "Where did you come from?",
+      "context": "Using কোথা থেকে (from where)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "তুমি",
+          "pronunciation": "tumi",
+          "en": "you (familiar)"
+        },
+        {
+          "bn": "কোথা",
+          "pronunciation": "kotha",
+          "en": "where"
+        },
+        {
+          "bn": "থেকে",
+          "pronunciation": "theke",
+          "en": "from"
+        },
+        {
+          "bn": "এসেছ",
+          "pronunciation": "eshecho",
+          "en": "have come"
+        }
+      ]
     },
     {
-      "bn": "এটার দাম কত?",
-      "pronunciation": "etar dam koto?",
-      "en": "How much does this cost?",
-      "context": "Asking a price",
-      "category": "asking-questions"
-    },
-    {
-      "bn": "কত টাকা?",
-      "pronunciation": "Koto taka?",
-      "en": "How much?",
-      "context": "Inquiring about price.",
-      "category": "asking-questions"
-    },
-    {
-      "bn": "এখান থেকে যেতে কতক্ষণ সময় লাগবে?",
-      "pronunciation": "Ekhan theke jete kotokkhon somoy lagbe?",
-      "en": "How long will it take to go from here?",
-      "context": "Inquiring about travel time.",
-      "category": "asking-questions"
-    },
-    {
-      "bn": "এত গল্প করো কেন?",
-      "pronunciation": "Eto golpo koro keno?",
-      "en": "Why do you talk so much?",
-      "context": "Inquiring about excessive talking.",
-      "category": "asking-questions"
-    },
-    {
-      "bn": "কেমন আছো?",
-      "pronunciation": "Kemon achho?",
-      "en": "How are you?",
-      "context": "Informal greeting to a peer or younger person.",
-      "category": "asking-questions"
-    },
-    {
-      "bn": "আপনি কেমন?",
-      "pronunciation": "Aapni kemon?",
-      "en": "How about you?",
-      "context": "Returning a greeting politely.",
-      "category": "asking-questions"
-    },
-    {
-      "bn": "কেমন চলছে?",
-      "pronunciation": "Kemon cholchhe?",
-      "en": "How's it going?",
-      "context": "Asking about someone's life/progress.",
-      "category": "asking-questions"
-    },
-    {
-      "bn": "কোথায় পাবো আপনাকে?",
-      "pronunciation": "Kothai pabo aapnake?",
-      "en": "Where can I find you?",
-      "context": "Asking for someone's location or contact.",
-      "category": "asking-questions"
-    },
-    {
-      "bn": "এতগুলো গরু কোথায়?",
-      "pronunciation": "Etogulo goru kothay?",
-      "en": "Where are so many cows?",
-      "context": "Observation/Question.",
-      "category": "asking-questions"
-    },
-    {
-      "bn": "আপনি কোন পথে যাচ্ছেন?",
-      "pronunciation": "Aapni kon pothe jachhen?",
-      "en": "Which way are you going?",
-      "context": "Asking for specific direction.",
-      "category": "asking-questions"
-    },
-    {
-      "bn": "এই বাড়িতে কে থাকে?",
-      "pronunciation": "Ei bari te ke thake?",
-      "en": "Who lives in this house?",
-      "context": "Curiosity about neighbors.",
-      "category": "asking-questions"
-    },
-    {
-      "bn": "আপনার কী বিচার?",
-      "pronunciation": "Aapnar ki bichar?",
-      "en": "What is your opinion?",
-      "context": "Asking for someone’s viewpoint.",
-      "category": "asking-questions"
-    },
-    {
-      "bn": "কত দূর যাবেন?",
-      "pronunciation": "Koto door jaaben?",
-      "en": "How far will you go?",
-      "context": "Asking about distance.",
-      "category": "asking-questions"
-    },
-    {
-      "bn": "একটি সেকেন্ড গুরুত্বপূর্ণ।",
-      "pronunciation": "Ekta sekend guruttopurno.",
-      "en": "One second is important.",
-      "context": "Emphasizing the value of time.",
-      "category": "asking-questions"
-    },
-    {
-      "bn": "তুমি কোথায় যাও?",
-      "pronunciation": "Tumi kothai jao?",
-      "en": "Where are you going?",
-      "context": "Asking about someone's destination informally.",
-      "category": "asking-questions"
-    },
-    {
-      "bn": "কি খবর?",
-      "pronunciation": "Ki khobor?",
-      "en": "What's the news?",
-      "context": "Equivalent to 'What's up?'",
-      "category": "asking-questions"
-    },
-    {
-      "bn": "এইটা কি?",
-      "pronunciation": "Eita ki?",
-      "en": "What is this?",
-      "context": "Asking about an object.",
-      "category": "asking-questions"
-    },
-    {
-      "bn": "আজ কি দিন?",
-      "pronunciation": "Aaj ki din?",
-      "en": "What day is it today?",
-      "context": "Asking for the day of the week.",
-      "category": "asking-questions"
-    },
-    {
-      "bn": "কি ভাবে?",
-      "pronunciation": "Ki bhabe?",
-      "en": "How?",
-      "context": "Inquiring about the method or process.",
-      "category": "asking-questions"
-    },
-    {
-      "bn": "এখন কি করবে?",
-      "pronunciation": "Ekhon ki korbe?",
-      "en": "What will you do now?",
-      "context": "Asking about future plans.",
-      "category": "asking-questions"
-    },
-    {
-      "bn": "কি সুন্দর!",
-      "pronunciation": "Ki sundor!",
-      "en": "How beautiful!",
-      "context": "Exclaiming about beauty.",
-      "category": "asking-questions"
-    },
-    {
-      "bn": "কোথায় যেতে হবে?",
-      "pronunciation": "Kothay jete hobe?",
-      "en": "Where should we go?",
-      "context": "Inquiring about destination.",
-      "category": "asking-questions"
-    },
-    {
-      "bn": "কি সুন্দর গল্প!",
-      "pronunciation": "Ki shundor golpo!",
-      "en": "What a beautiful story!",
-      "context": "Praising a story.",
-      "category": "asking-questions"
-    },
-    {
-      "bn": "কি ভালো খবর!",
-      "pronunciation": "Ki bhalo khobor!",
-      "en": "What good news!",
-      "context": "Reacting to positive news.",
-      "category": "asking-questions"
-    },
-    {
-      "bn": "তুমি কি খাবে?",
-      "pronunciation": "Tumi ki khaabe?",
-      "en": "What will you eat?",
-      "context": "Asking about food preference.",
-      "category": "asking-questions"
-    },
-    {
-      "bn": "তুমি কি ভাবছো?",
-      "pronunciation": "Tumi ki bhabcho?",
-      "en": "What are you thinking?",
-      "context": "Asking about someone's thoughts.",
-      "category": "asking-questions"
-    },
-    {
-      "bn": "কি সুন্দর রাত!",
-      "pronunciation": "Ki sundor raat!",
-      "en": "What a beautiful night!",
-      "context": "Exclaiming about the night.",
-      "category": "asking-questions"
-    },
-    {
-      "bn": "কোথায় যেতে চাইছেন?",
-      "pronunciation": "Kothay jete chaichhen?",
+      "bn": "তুমি কোথায় যেতে চাও?",
+      "pronunciation": "tumi kothay jete chao",
       "en": "Where do you want to go?",
-      "context": "Asking about destination preference.",
-      "category": "asking-questions"
+      "context": "Using কোথায় যেতে (where to)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "তুমি",
+          "pronunciation": "tumi",
+          "en": "you (familiar)"
+        },
+        {
+          "bn": "কোথায়",
+          "pronunciation": "kothay",
+          "en": "where"
+        },
+        {
+          "bn": "যেতে",
+          "pronunciation": "jete",
+          "en": "to go"
+        },
+        {
+          "bn": "চাও",
+          "pronunciation": "chao",
+          "en": "want"
+        }
+      ]
     },
     {
-      "bn": "আমি তোমাকে ভালোবাসি!",
-      "pronunciation": "Ami tomake bhalobashi!",
-      "en": "I love you!",
-      "context": "Expressing love.",
-      "category": "asking-questions"
+      "bn": "চাবিটা কোথায় রাখা আছে?",
+      "pronunciation": "chabita kothay rakha achhe",
+      "en": "Where is the key kept?",
+      "context": "Using কোথায় রাখা (where is it kept)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "চাবিটা",
+          "pronunciation": "chabita",
+          "en": "the key"
+        },
+        {
+          "bn": "কোথায়",
+          "pronunciation": "kothay",
+          "en": "where"
+        },
+        {
+          "bn": "রাখা",
+          "pronunciation": "rakha",
+          "en": "to keep / to place / placed"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is / has"
+        }
+      ]
+    },
+    {
+      "bn": "তুমি কোথায় ছিলে?",
+      "pronunciation": "tumi kothay chile",
+      "en": "Where were you?",
+      "context": "Using কোথায় ছিলে (where were you)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "তুমি",
+          "pronunciation": "tumi",
+          "en": "you (familiar)"
+        },
+        {
+          "bn": "কোথায়",
+          "pronunciation": "kothay",
+          "en": "where"
+        },
+        {
+          "bn": "ছিলে",
+          "pronunciation": "chile",
+          "en": "were"
+        }
+      ]
+    },
+    {
+      "bn": "আমি এটা কোথায় পাব?",
+      "pronunciation": "ami eta kothay pabo",
+      "en": "Where can I find this?",
+      "context": "Using কোথায় পাব (where can I get)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "এটা",
+          "pronunciation": "eta",
+          "en": "this"
+        },
+        {
+          "bn": "কোথায়",
+          "pronunciation": "kothay",
+          "en": "where"
+        },
+        {
+          "bn": "পাব",
+          "pronunciation": "pabo",
+          "en": "can find / will get"
+        }
+      ]
+    },
+    {
+      "bn": "তুমি কখন আসবে?",
+      "pronunciation": "tumi kokhon ashbe",
+      "en": "When will you come?",
+      "context": "Using কখন (when)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "তুমি",
+          "pronunciation": "tumi",
+          "en": "you (familiar)"
+        },
+        {
+          "bn": "কখন",
+          "pronunciation": "kokhon",
+          "en": "when"
+        },
+        {
+          "bn": "আসবে",
+          "pronunciation": "ashbe",
+          "en": "will come"
+        }
+      ]
+    },
+    {
+      "bn": "তুমি কখন থেকে এখানে আছ?",
+      "pronunciation": "tumi kokhon theke ekhane acho",
+      "en": "Since when have you been here?",
+      "context": "Using কখন থেকে (since when)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "তুমি",
+          "pronunciation": "tumi",
+          "en": "you (familiar)"
+        },
+        {
+          "bn": "কখন",
+          "pronunciation": "kokhon",
+          "en": "when"
+        },
+        {
+          "bn": "থেকে",
+          "pronunciation": "theke",
+          "en": "from"
+        },
+        {
+          "bn": "এখানে",
+          "pronunciation": "ekhane",
+          "en": "here"
+        },
+        {
+          "bn": "আছ",
+          "pronunciation": "acho",
+          "en": "are / have been"
+        }
+      ]
+    },
+    {
+      "bn": "দোকান কখন পর্যন্ত খোলা থাকে?",
+      "pronunciation": "dokan kokhon porjonto khola thake",
+      "en": "Until when is the store open?",
+      "context": "Using কখন পর্যন্ত (until when)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "দোকান",
+          "pronunciation": "dokan",
+          "en": "shop"
+        },
+        {
+          "bn": "কখন",
+          "pronunciation": "kokhon",
+          "en": "when"
+        },
+        {
+          "bn": "পর্যন্ত",
+          "pronunciation": "porjonto",
+          "en": "until"
+        },
+        {
+          "bn": "খোলা",
+          "pronunciation": "khola",
+          "en": "open"
+        },
+        {
+          "bn": "থাকে",
+          "pronunciation": "thake",
+          "en": "lives / stays"
+        }
+      ]
+    },
+    {
+      "bn": "তুমি কি কখনও ঢাকা গেছ?",
+      "pronunciation": "tumi ki kokhono dhaka gecho",
+      "en": "Have you ever been to Dhaka?",
+      "context": "Using কখনও (ever)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "তুমি",
+          "pronunciation": "tumi",
+          "en": "you (familiar)"
+        },
+        {
+          "bn": "কি",
+          "pronunciation": "ki",
+          "en": "what / yes-no question marker"
+        },
+        {
+          "bn": "কখনও",
+          "pronunciation": "kokhono",
+          "en": "ever / sometimes"
+        },
+        {
+          "bn": "ঢাকা",
+          "pronunciation": "dhaka",
+          "en": "Dhaka"
+        },
+        {
+          "bn": "গেছ",
+          "pronunciation": "gecho",
+          "en": "have gone"
+        }
+      ]
+    },
+    {
+      "bn": "এর দাম কত?",
+      "pronunciation": "er dam koto",
+      "en": "How much does it cost?",
+      "context": "Using কত (how much / how many)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "এর",
+          "pronunciation": "er",
+          "en": "of"
+        },
+        {
+          "bn": "দাম",
+          "pronunciation": "dam",
+          "en": "the price"
+        },
+        {
+          "bn": "কত",
+          "pronunciation": "koto",
+          "en": "how much / many"
+        }
+      ]
+    },
+    {
+      "bn": "এখানে কতজন আছে?",
+      "pronunciation": "ekhane kotojon achhe",
+      "en": "How many people are here?",
+      "context": "Using কতজন (how many people)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "এখানে",
+          "pronunciation": "ekhane",
+          "en": "here"
+        },
+        {
+          "bn": "কতজন",
+          "pronunciation": "kotojon",
+          "en": "how many people"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is / has"
+        }
+      ]
+    },
+    {
+      "bn": "তুমি কতবার চেষ্টা করেছ?",
+      "pronunciation": "tumi kotobar cheshta korecho",
+      "en": "How many times have you tried?",
+      "context": "Using কতবার (how many times)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "তুমি",
+          "pronunciation": "tumi",
+          "en": "you (familiar)"
+        },
+        {
+          "bn": "কতবার",
+          "pronunciation": "kotobar",
+          "en": "how many times"
+        },
+        {
+          "bn": "চেষ্টা",
+          "pronunciation": "cheshta",
+          "en": "try"
+        },
+        {
+          "bn": "করেছ",
+          "pronunciation": "korecho",
+          "en": "have done / tried"
+        }
+      ]
+    },
+    {
+      "bn": "তুমি কতক্ষণ অপেক্ষা করবে?",
+      "pronunciation": "tumi kotokkhon opekkha korbe",
+      "en": "How long will you wait?",
+      "context": "Using কতক্ষণ (how long)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "তুমি",
+          "pronunciation": "tumi",
+          "en": "you (familiar)"
+        },
+        {
+          "bn": "কতক্ষণ",
+          "pronunciation": "kotokkhon",
+          "en": "how long"
+        },
+        {
+          "bn": "অপেক্ষা",
+          "pronunciation": "opekkha",
+          "en": "wait"
+        },
+        {
+          "bn": "করবে",
+          "pronunciation": "korbe",
+          "en": "will do"
+        }
+      ]
+    },
+    {
+      "bn": "স্কুল কত দূর?",
+      "pronunciation": "skul koto dur",
+      "en": "How far is the school?",
+      "context": "Using কত দূর (how far)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "স্কুল",
+          "pronunciation": "skul",
+          "en": "school"
+        },
+        {
+          "bn": "কত",
+          "pronunciation": "koto",
+          "en": "how much / many"
+        },
+        {
+          "bn": "দূর",
+          "pronunciation": "dur",
+          "en": "Far"
+        }
+      ]
+    },
+    {
+      "bn": "তোমার বাড়ি কত বড়?",
+      "pronunciation": "tomar bari koto bôṛo",
+      "en": "How big is your house?",
+      "context": "Using কত বড় (how big)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "তোমার",
+          "pronunciation": "tomar",
+          "en": "your"
+        },
+        {
+          "bn": "বাড়ি",
+          "pronunciation": "bari",
+          "en": "house / home"
+        },
+        {
+          "bn": "কত",
+          "pronunciation": "koto",
+          "en": "how much / many"
+        },
+        {
+          "bn": "বড়",
+          "pronunciation": "bôṛo",
+          "en": "big / large"
+        }
+      ]
+    },
+    {
+      "bn": "বাক্সটা কত ছোট?",
+      "pronunciation": "baksota koto chhoto",
+      "en": "How small is the box?",
+      "context": "Using কত ছোট (how small)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "বাক্সটা",
+          "pronunciation": "baksota",
+          "en": "the box"
+        },
+        {
+          "bn": "কত",
+          "pronunciation": "koto",
+          "en": "how much / many"
+        },
+        {
+          "bn": "ছোট",
+          "pronunciation": "chhoto",
+          "en": "small"
+        }
+      ]
+    },
+    {
+      "bn": "তোমার বয়স কত বছর?",
+      "pronunciation": "tomar boyosh koto bochor",
+      "en": "How old are you?",
+      "context": "Using কত বছর (how many years)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "তোমার",
+          "pronunciation": "tomar",
+          "en": "your"
+        },
+        {
+          "bn": "বয়স",
+          "pronunciation": "boyosh",
+          "en": "age"
+        },
+        {
+          "bn": "কত",
+          "pronunciation": "koto",
+          "en": "how much / many"
+        },
+        {
+          "bn": "বছর",
+          "pronunciation": "bochor",
+          "en": "Year"
+        }
+      ]
+    },
+    {
+      "bn": "তুমি কেমন আছ?",
+      "pronunciation": "tumi kemon acho",
+      "en": "How are you?",
+      "context": "Using কেমন (how / what kind)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "তুমি",
+          "pronunciation": "tumi",
+          "en": "you (familiar)"
+        },
+        {
+          "bn": "কেমন",
+          "pronunciation": "kemon",
+          "en": "how"
+        },
+        {
+          "bn": "আছ",
+          "pronunciation": "acho",
+          "en": "are / have been"
+        }
+      ]
+    },
+    {
+      "bn": "সিনেমাটা কেমন লাগছে?",
+      "pronunciation": "sinemata kemon lagche",
+      "en": "How do you like the movie?",
+      "context": "Using কেমন লাগছে (how does it feel)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "সিনেমাটা",
+          "pronunciation": "sinemata",
+          "en": "the movie"
+        },
+        {
+          "bn": "কেমন",
+          "pronunciation": "kemon",
+          "en": "how"
+        },
+        {
+          "bn": "লাগছে",
+          "pronunciation": "lagche",
+          "en": "feeling"
+        }
+      ]
+    },
+    {
+      "bn": "পরীক্ষাটা কেমন হলো?",
+      "pronunciation": "porikkhata kemon holo",
+      "en": "How did the exam go?",
+      "context": "Using কেমন হলো (how was it)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "পরীক্ষাটা",
+          "pronunciation": "porikkhata",
+          "en": "the exam"
+        },
+        {
+          "bn": "কেমন",
+          "pronunciation": "kemon",
+          "en": "how"
+        },
+        {
+          "bn": "হলো",
+          "pronunciation": "holo",
+          "en": "done"
+        }
+      ]
+    },
+    {
+      "bn": "নতুন বাড়িটা কেমন দেখতে?",
+      "pronunciation": "notun barita kemon dekhte",
+      "en": "What does the new house look like?",
+      "context": "Using কেমন দেখতে (what does it look like)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "নতুন",
+          "pronunciation": "notun",
+          "en": "new"
+        },
+        {
+          "bn": "বাড়িটা",
+          "pronunciation": "barita",
+          "en": "the house"
+        },
+        {
+          "bn": "কেমন",
+          "pronunciation": "kemon",
+          "en": "how"
+        },
+        {
+          "bn": "দেখতে",
+          "pronunciation": "dekhte",
+          "en": "to see"
+        }
+      ]
+    },
+    {
+      "bn": "তুমি কেন দেরি করলে?",
+      "pronunciation": "tumi keno deri korle",
+      "en": "Why were you late?",
+      "context": "Using কেন (why)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "তুমি",
+          "pronunciation": "tumi",
+          "en": "you (familiar)"
+        },
+        {
+          "bn": "কেন",
+          "pronunciation": "keno",
+          "en": "why"
+        },
+        {
+          "bn": "দেরি",
+          "pronunciation": "deri",
+          "en": "late"
+        },
+        {
+          "bn": "করলে",
+          "pronunciation": "korle",
+          "en": "If you do"
+        }
+      ]
+    },
+    {
+      "bn": "আমরা কেন নই?",
+      "pronunciation": "amra keno noi",
+      "en": "Why not us?",
+      "context": "Using কেন নয় (why not)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "আমরা",
+          "pronunciation": "amra",
+          "en": "we"
+        },
+        {
+          "bn": "কেন",
+          "pronunciation": "keno",
+          "en": "why"
+        },
+        {
+          "bn": "নই",
+          "pronunciation": "noi",
+          "en": "am not / are not"
+        }
+      ]
+    },
+    {
+      "bn": "তুমি কীভাবে এটা করলে?",
+      "pronunciation": "tumi kibhabe eta korle",
+      "en": "How did you do it?",
+      "context": "Using কীভাবে (how)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "তুমি",
+          "pronunciation": "tumi",
+          "en": "you (familiar)"
+        },
+        {
+          "bn": "কীভাবে",
+          "pronunciation": "kibhabe",
+          "en": "how"
+        },
+        {
+          "bn": "এটা",
+          "pronunciation": "eta",
+          "en": "this"
+        },
+        {
+          "bn": "করলে",
+          "pronunciation": "korle",
+          "en": "If you do"
+        }
+      ]
+    },
+    {
+      "bn": "তুমি কী করে বাংলা শিখছ?",
+      "pronunciation": "tumi ki kore bangla shikhchho",
+      "en": "How are you learning Bengali?",
+      "context": "Using কী করে (how)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "তুমি",
+          "pronunciation": "tumi",
+          "en": "you (familiar)"
+        },
+        {
+          "bn": "কী",
+          "pronunciation": "ki",
+          "en": "what"
+        },
+        {
+          "bn": "করে",
+          "pronunciation": "kore",
+          "en": "does / by doing"
+        },
+        {
+          "bn": "বাংলা",
+          "pronunciation": "bangla",
+          "en": "Bengali"
+        },
+        {
+          "bn": "শিখছ",
+          "pronunciation": "shikhchho",
+          "en": "are learning"
+        }
+      ]
+    },
+    {
+      "bn": "এটা কী রকম খাবার?",
+      "pronunciation": "eta ki rokom khabar",
+      "en": "What kind of food is this?",
+      "context": "Using কী রকম (what kind)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "এটা",
+          "pronunciation": "eta",
+          "en": "this"
+        },
+        {
+          "bn": "কী",
+          "pronunciation": "ki",
+          "en": "what"
+        },
+        {
+          "bn": "রকম",
+          "pronunciation": "rokom",
+          "en": "kind / type"
+        },
+        {
+          "bn": "খাবার",
+          "pronunciation": "khabar",
+          "en": "food"
+        }
+      ]
+    },
+    {
+      "bn": "তুমি কী ধরনের বই পড়ো?",
+      "pronunciation": "tumi ki dhoroner boi poro",
+      "en": "What type of books do you read?",
+      "context": "Using কী ধরনের (what type)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "তুমি",
+          "pronunciation": "tumi",
+          "en": "you (familiar)"
+        },
+        {
+          "bn": "কী",
+          "pronunciation": "ki",
+          "en": "what"
+        },
+        {
+          "bn": "ধরনের",
+          "pronunciation": "dhoroner",
+          "en": "type of"
+        },
+        {
+          "bn": "বই",
+          "pronunciation": "boi",
+          "en": "book"
+        },
+        {
+          "bn": "পড়ো",
+          "pronunciation": "poro",
+          "en": "read"
+        }
+      ]
+    },
+    {
+      "bn": "তোমার স্কুল কী নামে পরিচিত?",
+      "pronunciation": "tomar skul ki name pôrichito",
+      "en": "By what name is your school known?",
+      "context": "Using কী নামে (by what name)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "তোমার",
+          "pronunciation": "tomar",
+          "en": "your"
+        },
+        {
+          "bn": "স্কুল",
+          "pronunciation": "skul",
+          "en": "school"
+        },
+        {
+          "bn": "কী",
+          "pronunciation": "ki",
+          "en": "what"
+        },
+        {
+          "bn": "নামে",
+          "pronunciation": "name",
+          "en": "in the name"
+        },
+        {
+          "bn": "পরিচিত",
+          "pronunciation": "pôrichito",
+          "en": "known / familiar"
+        }
+      ]
+    },
+    {
+      "bn": "এটা কী জন্য ব্যবহার করা হয়?",
+      "pronunciation": "eta ki jonno byabohar kora hoy",
+      "en": "What is this used for?",
+      "context": "Using কী জন্য (for what)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "এটা",
+          "pronunciation": "eta",
+          "en": "this"
+        },
+        {
+          "bn": "কী",
+          "pronunciation": "ki",
+          "en": "what"
+        },
+        {
+          "bn": "জন্য",
+          "pronunciation": "jonno",
+          "en": "for"
+        },
+        {
+          "bn": "ব্যবহার",
+          "pronunciation": "byabohar",
+          "en": "use"
+        },
+        {
+          "bn": "করা",
+          "pronunciation": "kora",
+          "en": "to do / to make"
+        },
+        {
+          "bn": "হয়",
+          "pronunciation": "hoy",
+          "en": "is / happens / becomes"
+        }
+      ]
+    },
+    {
+      "bn": "তুমি কী দিয়ে লিখছ?",
+      "pronunciation": "tumi ki diye likhchho",
+      "en": "What are you writing with?",
+      "context": "Using কী দিয়ে (with what)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "তুমি",
+          "pronunciation": "tumi",
+          "en": "you (familiar)"
+        },
+        {
+          "bn": "কী",
+          "pronunciation": "ki",
+          "en": "what"
+        },
+        {
+          "bn": "দিয়ে",
+          "pronunciation": "diye",
+          "en": "through / with"
+        },
+        {
+          "bn": "লিখছ",
+          "pronunciation": "likhchho",
+          "en": "are writing"
+        }
+      ]
+    },
+    {
+      "bn": "এটা কী থেকে তৈরি?",
+      "pronunciation": "eta ki theke toiri",
+      "en": "What is this made from?",
+      "context": "Using কী থেকে (from what)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "এটা",
+          "pronunciation": "eta",
+          "en": "this"
+        },
+        {
+          "bn": "কী",
+          "pronunciation": "ki",
+          "en": "what"
+        },
+        {
+          "bn": "থেকে",
+          "pronunciation": "theke",
+          "en": "from"
+        },
+        {
+          "bn": "তৈরি",
+          "pronunciation": "toiri",
+          "en": "made up"
+        }
+      ]
+    },
+    {
+      "bn": "তোমরা কী নিয়ে কথা বলছ?",
+      "pronunciation": "tomra ki niye kotha bolcho",
+      "en": "What are you talking about?",
+      "context": "Using কী নিয়ে (about what)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "তোমরা",
+          "pronunciation": "tomra",
+          "en": "you all"
+        },
+        {
+          "bn": "কী",
+          "pronunciation": "ki",
+          "en": "what"
+        },
+        {
+          "bn": "নিয়ে",
+          "pronunciation": "niye",
+          "en": "about / taking"
+        },
+        {
+          "bn": "কথা",
+          "pronunciation": "kotha",
+          "en": "speech / words / matter / promise"
+        },
+        {
+          "bn": "বলছ",
+          "pronunciation": "bolcho",
+          "en": "are speaking"
+        }
+      ]
+    },
+    {
+      "bn": "তুমি কী বললে?",
+      "pronunciation": "tumi ki bolle",
+      "en": "What did you say?",
+      "context": "Using কী বললে (what did you say)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "তুমি",
+          "pronunciation": "tumi",
+          "en": "you (familiar)"
+        },
+        {
+          "bn": "কী",
+          "pronunciation": "ki",
+          "en": "what"
+        },
+        {
+          "bn": "বললে",
+          "pronunciation": "bolle",
+          "en": "did you say"
+        }
+      ]
+    },
+    {
+      "bn": "কী হয়েছে?",
+      "pronunciation": "ki hoyechhe",
+      "en": "What happened?",
+      "context": "Using কী হয়েছে (what happened)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "কী",
+          "pronunciation": "ki",
+          "en": "what"
+        },
+        {
+          "bn": "হয়েছে",
+          "pronunciation": "hoyechhe",
+          "en": "has been"
+        }
+      ]
+    },
+    {
+      "bn": "এরপর কী হবে?",
+      "pronunciation": "erpor ki hobe",
+      "en": "What will happen next?",
+      "context": "Using কী হবে (what will happen)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "এরপর",
+          "pronunciation": "erpor",
+          "en": "after this / next"
+        },
+        {
+          "bn": "কী",
+          "pronunciation": "ki",
+          "en": "what"
+        },
+        {
+          "bn": "হবে",
+          "pronunciation": "hobe",
+          "en": "will be"
+        }
+      ]
+    },
+    {
+      "bn": "এখন কী করা উচিত?",
+      "pronunciation": "ekhon ki kora uchit",
+      "en": "What should we do now?",
+      "context": "Using কী করা উচিত (what should be done)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "এখন",
+          "pronunciation": "ekhon",
+          "en": "now"
+        },
+        {
+          "bn": "কী",
+          "pronunciation": "ki",
+          "en": "what"
+        },
+        {
+          "bn": "করা",
+          "pronunciation": "kora",
+          "en": "to do / to make"
+        },
+        {
+          "bn": "উচিত",
+          "pronunciation": "uchit",
+          "en": "should"
+        }
+      ]
+    },
+    {
+      "bn": "তুমি কী চাও?",
+      "pronunciation": "tumi ki chao",
+      "en": "What do you want?",
+      "context": "Using কী চাই (what do you want)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "তুমি",
+          "pronunciation": "tumi",
+          "en": "you (familiar)"
+        },
+        {
+          "bn": "কী",
+          "pronunciation": "ki",
+          "en": "what"
+        },
+        {
+          "bn": "চাও",
+          "pronunciation": "chao",
+          "en": "want"
+        }
+      ]
+    },
+    {
+      "bn": "তোমার কী পছন্দ?",
+      "pronunciation": "tomar ki pochhondo",
+      "en": "What do you like?",
+      "context": "Using কী পছন্দ (what do you like)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "তোমার",
+          "pronunciation": "tomar",
+          "en": "your"
+        },
+        {
+          "bn": "কী",
+          "pronunciation": "ki",
+          "en": "what"
+        },
+        {
+          "bn": "পছন্দ",
+          "pronunciation": "pochhondo",
+          "en": "like / preference"
+        }
+      ]
+    },
+    {
+      "bn": "তোমার কী সমস্যা?",
+      "pronunciation": "tomar ki shomoshsha",
+      "en": "What's your problem?",
+      "context": "Using কী সমস্যা (what's the problem)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "তোমার",
+          "pronunciation": "tomar",
+          "en": "your"
+        },
+        {
+          "bn": "কী",
+          "pronunciation": "ki",
+          "en": "what"
+        },
+        {
+          "bn": "সমস্যা",
+          "pronunciation": "shomoshsha",
+          "en": "problem"
+        }
+      ]
+    },
+    {
+      "bn": "কী খবর?",
+      "pronunciation": "ki khobor",
+      "en": "What's up?",
+      "context": "Using কী খবর (what's the news)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "কী",
+          "pronunciation": "ki",
+          "en": "what"
+        },
+        {
+          "bn": "খবর",
+          "pronunciation": "khobor",
+          "en": "News"
+        }
+      ]
+    },
+    {
+      "bn": "কী ব্যাপার?",
+      "pronunciation": "ki byapar",
+      "en": "What's going on?",
+      "context": "Using কী ব্যাপার (what's going on)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "কী",
+          "pronunciation": "ki",
+          "en": "what"
+        },
+        {
+          "bn": "ব্যাপার",
+          "pronunciation": "byapar",
+          "en": "Matter"
+        }
+      ]
+    },
+    {
+      "bn": "তুমি কার সঙ্গে এসেছ?",
+      "pronunciation": "tumi kar shonge eshecho",
+      "en": "Who did you come with?",
+      "context": "Using কার সঙ্গে (with whom)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "তুমি",
+          "pronunciation": "tumi",
+          "en": "you (familiar)"
+        },
+        {
+          "bn": "কার",
+          "pronunciation": "kar",
+          "en": "whose"
+        },
+        {
+          "bn": "সঙ্গে",
+          "pronunciation": "shonge",
+          "en": "with"
+        },
+        {
+          "bn": "এসেছ",
+          "pronunciation": "eshecho",
+          "en": "have come"
+        }
+      ]
+    },
+    {
+      "bn": "বইটা কার কাছে আছে?",
+      "pronunciation": "boita kar kachhe achhe",
+      "en": "Who has the book?",
+      "context": "Using কার কাছে (with whom)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "বইটা",
+          "pronunciation": "boita",
+          "en": "the book"
+        },
+        {
+          "bn": "কার",
+          "pronunciation": "kar",
+          "en": "whose"
+        },
+        {
+          "bn": "কাছে",
+          "pronunciation": "kachhe",
+          "en": "near / with / in someone's possession"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is / has"
+        }
+      ]
+    },
+    {
+      "bn": "এই উপহার কার জন্য?",
+      "pronunciation": "ei upohar kar jonno",
+      "en": "Who is this gift for?",
+      "context": "Using কার জন্য (for whom)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "এই",
+          "pronunciation": "ei",
+          "en": "this"
+        },
+        {
+          "bn": "উপহার",
+          "pronunciation": "upohar",
+          "en": "gift"
+        },
+        {
+          "bn": "কার",
+          "pronunciation": "kar",
+          "en": "whose"
+        },
+        {
+          "bn": "জন্য",
+          "pronunciation": "jonno",
+          "en": "for"
+        }
+      ]
+    },
+    {
+      "bn": "তুমি এটা কার থেকে পেয়েছ?",
+      "pronunciation": "tumi eta kar theke peyechho",
+      "en": "From whom did you receive it?",
+      "context": "Using কার থেকে (from whom)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "তুমি",
+          "pronunciation": "tumi",
+          "en": "you (familiar)"
+        },
+        {
+          "bn": "এটা",
+          "pronunciation": "eta",
+          "en": "this"
+        },
+        {
+          "bn": "কার",
+          "pronunciation": "kar",
+          "en": "whose"
+        },
+        {
+          "bn": "থেকে",
+          "pronunciation": "theke",
+          "en": "from"
+        },
+        {
+          "bn": "পেয়েছ",
+          "pronunciation": "peyechho",
+          "en": "did receive / have received"
+        }
+      ]
+    },
+    {
+      "bn": "কোন দিকে যেতে হবে?",
+      "pronunciation": "kon dike jete hobe",
+      "en": "Which direction should we go?",
+      "context": "Using কোন দিকে (which direction)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "কোন",
+          "pronunciation": "kon",
+          "en": "which"
+        },
+        {
+          "bn": "দিকে",
+          "pronunciation": "dike",
+          "en": "toward / in the direction of"
+        },
+        {
+          "bn": "যেতে",
+          "pronunciation": "jete",
+          "en": "to go"
+        },
+        {
+          "bn": "হবে",
+          "pronunciation": "hobe",
+          "en": "will be"
+        }
+      ]
+    },
+    {
+      "bn": "ট্রেন কোন সময় ছাড়বে?",
+      "pronunciation": "tren kon shomoy chharbe",
+      "en": "What time does the train leave?",
+      "context": "Using কোন সময় (what time)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "ট্রেন",
+          "pronunciation": "tren",
+          "en": "train"
+        },
+        {
+          "bn": "কোন",
+          "pronunciation": "kon",
+          "en": "which"
+        },
+        {
+          "bn": "সময়",
+          "pronunciation": "shomoy",
+          "en": "time"
+        },
+        {
+          "bn": "ছাড়বে",
+          "pronunciation": "chharbe",
+          "en": "will leave"
+        }
+      ]
+    },
+    {
+      "bn": "আজ কোন দিন?",
+      "pronunciation": "aj kon din",
+      "en": "What day is today?",
+      "context": "Using কোন দিন (which day)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "আজ",
+          "pronunciation": "aj",
+          "en": "today"
+        },
+        {
+          "bn": "কোন",
+          "pronunciation": "kon",
+          "en": "which"
+        },
+        {
+          "bn": "দিন",
+          "pronunciation": "din",
+          "en": "day / please give"
+        }
+      ]
+    },
+    {
+      "bn": "এখন কোন মাস?",
+      "pronunciation": "ekhon kon mash",
+      "en": "Which month is it now?",
+      "context": "Using কোন মাস (which month)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "এখন",
+          "pronunciation": "ekhon",
+          "en": "now"
+        },
+        {
+          "bn": "কোন",
+          "pronunciation": "kon",
+          "en": "which"
+        },
+        {
+          "bn": "মাস",
+          "pronunciation": "mash",
+          "en": "month"
+        }
+      ]
+    },
+    {
+      "bn": "তুমি কোন বছরে জন্মেছ?",
+      "pronunciation": "tumi kon bochhore jonmechho",
+      "en": "Which year were you born?",
+      "context": "Using কোন বছর (which year)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "তুমি",
+          "pronunciation": "tumi",
+          "en": "you (familiar)"
+        },
+        {
+          "bn": "কোন",
+          "pronunciation": "kon",
+          "en": "which"
+        },
+        {
+          "bn": "বছরে",
+          "pronunciation": "bochhore",
+          "en": "in a year"
+        },
+        {
+          "bn": "জন্মেছ",
+          "pronunciation": "jonmechho",
+          "en": "were born"
+        }
+      ]
+    },
+    {
+      "bn": "তুমি কোন দেশে থাকো?",
+      "pronunciation": "tumi kon deshe thako",
+      "en": "Which country do you live in?",
+      "context": "Using কোন দেশে (which country)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "তুমি",
+          "pronunciation": "tumi",
+          "en": "you (familiar)"
+        },
+        {
+          "bn": "কোন",
+          "pronunciation": "kon",
+          "en": "which"
+        },
+        {
+          "bn": "দেশে",
+          "pronunciation": "deshe",
+          "en": "in the country"
+        },
+        {
+          "bn": "থাকো",
+          "pronunciation": "thako",
+          "en": "stay"
+        }
+      ]
+    },
+    {
+      "bn": "তুমি কোন শহরে থাকো?",
+      "pronunciation": "tumi kon shohore thako",
+      "en": "Which city do you live in?",
+      "context": "Using কোন শহরে (which city)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "তুমি",
+          "pronunciation": "tumi",
+          "en": "you (familiar)"
+        },
+        {
+          "bn": "কোন",
+          "pronunciation": "kon",
+          "en": "which"
+        },
+        {
+          "bn": "শহরে",
+          "pronunciation": "shohore",
+          "en": "in the city"
+        },
+        {
+          "bn": "থাকো",
+          "pronunciation": "thako",
+          "en": "stay"
+        }
+      ]
+    },
+    {
+      "bn": "তুমি কোন ভাষায় কথা বলো?",
+      "pronunciation": "tumi kon bhashay kotha bolo",
+      "en": "Which language do you speak?",
+      "context": "Using কোন ভাষায় (in which language)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "তুমি",
+          "pronunciation": "tumi",
+          "en": "you (familiar)"
+        },
+        {
+          "bn": "কোন",
+          "pronunciation": "kon",
+          "en": "which"
+        },
+        {
+          "bn": "ভাষায়",
+          "pronunciation": "bhashay",
+          "en": "in the language"
+        },
+        {
+          "bn": "কথা",
+          "pronunciation": "kotha",
+          "en": "speech / words / matter / promise"
+        },
+        {
+          "bn": "বলো",
+          "pronunciation": "bolo",
+          "en": "speak (familiar)"
+        }
+      ]
+    },
+    {
+      "bn": "আমি কোথায় বসব?",
+      "pronunciation": "ami kothay boshbo",
+      "en": "Where should I sit?",
+      "context": "Using কোথায় বসব (where should I sit)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "কোথায়",
+          "pronunciation": "kothay",
+          "en": "where"
+        },
+        {
+          "bn": "বসব",
+          "pronunciation": "boshbo",
+          "en": "should sit / will sit"
+        }
+      ]
+    },
+    {
+      "bn": "আমি কোথায় যাব?",
+      "pronunciation": "ami kothay jabo",
+      "en": "Where should I go?",
+      "context": "Using কোথায় যাব (where should I go)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "কোথায়",
+          "pronunciation": "kothay",
+          "en": "where"
+        },
+        {
+          "bn": "যাব",
+          "pronunciation": "jabo",
+          "en": "will go"
+        }
+      ]
+    },
+    {
+      "bn": "আমরা কোথায় খাব?",
+      "pronunciation": "amra kothay khabo",
+      "en": "Where shall we eat?",
+      "context": "Using কোথায় খাব (where should we eat)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "আমরা",
+          "pronunciation": "amra",
+          "en": "we"
+        },
+        {
+          "bn": "কোথায়",
+          "pronunciation": "kothay",
+          "en": "where"
+        },
+        {
+          "bn": "খাব",
+          "pronunciation": "khabo",
+          "en": "I will eat"
+        }
+      ]
+    },
+    {
+      "bn": "আমি এটা কোথায় কিনব?",
+      "pronunciation": "ami eta kothay kinbo",
+      "en": "Where should I buy this?",
+      "context": "Using কোথায় কিনব (where should I buy)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "এটা",
+          "pronunciation": "eta",
+          "en": "this"
+        },
+        {
+          "bn": "কোথায়",
+          "pronunciation": "kothay",
+          "en": "where"
+        },
+        {
+          "bn": "কিনব",
+          "pronunciation": "kinbo",
+          "en": "should buy / will buy"
+        }
+      ]
+    },
+    {
+      "bn": "আমি বাংলা কোথায় শিখব?",
+      "pronunciation": "ami bangla kothay shikhbo",
+      "en": "Where should I learn Bengali?",
+      "context": "Using কোথায় শিখব (where should I learn)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "বাংলা",
+          "pronunciation": "bangla",
+          "en": "Bengali"
+        },
+        {
+          "bn": "কোথায়",
+          "pronunciation": "kothay",
+          "en": "where"
+        },
+        {
+          "bn": "শিখব",
+          "pronunciation": "shikhbo",
+          "en": "should learn / will learn"
+        }
+      ]
+    },
+    {
+      "bn": "ক্লাস কখন শুরু হবে?",
+      "pronunciation": "class kokhon shuru hobe",
+      "en": "When does class begin?",
+      "context": "Using কখন শুরু (when does it start)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "ক্লাস",
+          "pronunciation": "class",
+          "en": "class"
+        },
+        {
+          "bn": "কখন",
+          "pronunciation": "kokhon",
+          "en": "when"
+        },
+        {
+          "bn": "শুরু",
+          "pronunciation": "shuru",
+          "en": "start"
+        },
+        {
+          "bn": "হবে",
+          "pronunciation": "hobe",
+          "en": "will be"
+        }
+      ]
+    },
+    {
+      "bn": "সিনেমা কখন শেষ হবে?",
+      "pronunciation": "shinema kokhon shesh hobe",
+      "en": "When does the movie end?",
+      "context": "Using কখন শেষ (when does it end)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "সিনেমা",
+          "pronunciation": "shinema",
+          "en": "movie"
+        },
+        {
+          "bn": "কখন",
+          "pronunciation": "kokhon",
+          "en": "when"
+        },
+        {
+          "bn": "শেষ",
+          "pronunciation": "shesh",
+          "en": "end / last / final"
+        },
+        {
+          "bn": "হবে",
+          "pronunciation": "hobe",
+          "en": "will be"
+        }
+      ]
+    },
+    {
+      "bn": "তুমি কখন ফিরবে?",
+      "pronunciation": "tumi kokhon phirbe",
+      "en": "When will you return?",
+      "context": "Using কখন ফিরবে (when will you return)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "তুমি",
+          "pronunciation": "tumi",
+          "en": "you (familiar)"
+        },
+        {
+          "bn": "কখন",
+          "pronunciation": "kokhon",
+          "en": "when"
+        },
+        {
+          "bn": "ফিরবে",
+          "pronunciation": "phirbe",
+          "en": "will return"
+        }
+      ]
+    },
+    {
+      "bn": "আমাদের কখন দেখা হবে?",
+      "pronunciation": "amader kokhon dekha hobe",
+      "en": "When will we meet?",
+      "context": "Using কখন দেখা হবে (when will we meet)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "আমাদের",
+          "pronunciation": "amader",
+          "en": "our"
+        },
+        {
+          "bn": "কখন",
+          "pronunciation": "kokhon",
+          "en": "when"
+        },
+        {
+          "bn": "দেখা",
+          "pronunciation": "dekha",
+          "en": "seeing / meeting / seen"
+        },
+        {
+          "bn": "হবে",
+          "pronunciation": "hobe",
+          "en": "will be"
+        }
+      ]
+    },
+    {
+      "bn": "তোমার কাছে কত টাকা আছে?",
+      "pronunciation": "tomar kachhe koto taka achhe",
+      "en": "How much money do you have?",
+      "context": "Using কত টাকা (how much money)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "তোমার",
+          "pronunciation": "tomar",
+          "en": "your"
+        },
+        {
+          "bn": "কাছে",
+          "pronunciation": "kachhe",
+          "en": "near / with / in someone's possession"
+        },
+        {
+          "bn": "কত",
+          "pronunciation": "koto",
+          "en": "how much / many"
+        },
+        {
+          "bn": "টাকা",
+          "pronunciation": "taka",
+          "en": "Money"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is / has"
+        }
+      ]
+    },
+    {
+      "bn": "তুমি কত নম্বর পেয়েছ?",
+      "pronunciation": "tumi koto nombor peyechho",
+      "en": "What score did you get?",
+      "context": "Using কত নম্বর (what score)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "তুমি",
+          "pronunciation": "tumi",
+          "en": "you (familiar)"
+        },
+        {
+          "bn": "কত",
+          "pronunciation": "koto",
+          "en": "how much / many"
+        },
+        {
+          "bn": "নম্বর",
+          "pronunciation": "nombor",
+          "en": "number"
+        },
+        {
+          "bn": "পেয়েছ",
+          "pronunciation": "peyechho",
+          "en": "did receive / have received"
+        }
+      ]
+    },
+    {
+      "bn": "ঢাকা কত কিলোমিটার দূরে?",
+      "pronunciation": "dhaka koto kilomitar dure",
+      "en": "How many kilometers away is Dhaka?",
+      "context": "Using কত কিলোমিটার (how many kilometers)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "ঢাকা",
+          "pronunciation": "dhaka",
+          "en": "Dhaka"
+        },
+        {
+          "bn": "কত",
+          "pronunciation": "koto",
+          "en": "how much / many"
+        },
+        {
+          "bn": "কিলোমিটার",
+          "pronunciation": "kilomitar",
+          "en": "kilometers"
+        },
+        {
+          "bn": "দূরে",
+          "pronunciation": "dure",
+          "en": "far away"
+        }
+      ]
+    },
+    {
+      "bn": "আর কত মিনিট লাগবে?",
+      "pronunciation": "ar koto minit lagbe",
+      "en": "How many more minutes will it take?",
+      "context": "Using কত মিনিট (how many minutes)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "আর",
+          "pronunciation": "ar",
+          "en": "and / also / more"
+        },
+        {
+          "bn": "কত",
+          "pronunciation": "koto",
+          "en": "how much / many"
+        },
+        {
+          "bn": "মিনিট",
+          "pronunciation": "minit",
+          "en": "minute"
+        },
+        {
+          "bn": "লাগবে",
+          "pronunciation": "lagbe",
+          "en": "will need"
+        }
+      ]
+    },
+    {
+      "bn": "তুমি কতক্ষণ ধরে অপেক্ষা করছ?",
+      "pronunciation": "tumi kotokkhon dhore opekkha korcho",
+      "en": "How long have you been waiting?",
+      "context": "Using কতক্ষণ ধরে (for how long)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "তুমি",
+          "pronunciation": "tumi",
+          "en": "you (familiar)"
+        },
+        {
+          "bn": "কতক্ষণ",
+          "pronunciation": "kotokkhon",
+          "en": "how long"
+        },
+        {
+          "bn": "ধরে",
+          "pronunciation": "dhore",
+          "en": "holding / for / since"
+        },
+        {
+          "bn": "অপেক্ষা",
+          "pronunciation": "opekkha",
+          "en": "wait"
+        },
+        {
+          "bn": "করছ",
+          "pronunciation": "korcho",
+          "en": "are doing"
+        }
+      ]
+    },
+    {
+      "bn": "তুমি কত তাড়াতাড়ি আসতে পারবে?",
+      "pronunciation": "tumi koto taratari ashte parbe",
+      "en": "How soon can you come?",
+      "context": "Using কত তাড়াতাড়ি (how soon)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "তুমি",
+          "pronunciation": "tumi",
+          "en": "you (familiar)"
+        },
+        {
+          "bn": "কত",
+          "pronunciation": "koto",
+          "en": "how much / many"
+        },
+        {
+          "bn": "তাড়াতাড়ি",
+          "pronunciation": "taratari",
+          "en": "soon / quickly"
+        },
+        {
+          "bn": "আসতে",
+          "pronunciation": "ashte",
+          "en": "to come"
+        },
+        {
+          "bn": "পারবে",
+          "pronunciation": "parbe",
+          "en": "can"
+        }
+      ]
+    },
+    {
+      "bn": "তুমি কত দেরি করবে?",
+      "pronunciation": "tumi koto deri korbe",
+      "en": "How late will you be?",
+      "context": "Using কত দেরি (how late)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "তুমি",
+          "pronunciation": "tumi",
+          "en": "you (familiar)"
+        },
+        {
+          "bn": "কত",
+          "pronunciation": "koto",
+          "en": "how much / many"
+        },
+        {
+          "bn": "দেরি",
+          "pronunciation": "deri",
+          "en": "late"
+        },
+        {
+          "bn": "করবে",
+          "pronunciation": "korbe",
+          "en": "will do"
+        }
+      ]
+    },
+    {
+      "bn": "তুমি কতটা নিশ্চিত?",
+      "pronunciation": "tumi kotota nishchito",
+      "en": "How sure are you?",
+      "context": "Using কতটা (how much)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "তুমি",
+          "pronunciation": "tumi",
+          "en": "you (familiar)"
+        },
+        {
+          "bn": "কতটা",
+          "pronunciation": "kotota",
+          "en": "how much"
+        },
+        {
+          "bn": "নিশ্চিত",
+          "pronunciation": "nishchito",
+          "en": "Sure / certain / confirmed"
+        }
+      ]
+    },
+    {
+      "bn": "কেমন করে এটা কাজ করে?",
+      "pronunciation": "kemon kore eta kaj kore",
+      "en": "How does this work?",
+      "context": "Using কেমন করে (how)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "কেমন",
+          "pronunciation": "kemon",
+          "en": "how"
+        },
+        {
+          "bn": "করে",
+          "pronunciation": "kore",
+          "en": "does / by doing"
+        },
+        {
+          "bn": "এটা",
+          "pronunciation": "eta",
+          "en": "this"
+        },
+        {
+          "bn": "কাজ",
+          "pronunciation": "kaj",
+          "en": "work / task / function"
+        },
+        {
+          "bn": "করে",
+          "pronunciation": "kore",
+          "en": "does / by doing"
+        }
+      ]
+    },
+    {
+      "bn": "তুমি কেন এমন করলে?",
+      "pronunciation": "tumi keno emon korle",
+      "en": "Why did you do that?",
+      "context": "Using কেন এমন (why like this)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "তুমি",
+          "pronunciation": "tumi",
+          "en": "you (familiar)"
+        },
+        {
+          "bn": "কেন",
+          "pronunciation": "keno",
+          "en": "why"
+        },
+        {
+          "bn": "এমন",
+          "pronunciation": "emon",
+          "en": "such / like this"
+        },
+        {
+          "bn": "করলে",
+          "pronunciation": "korle",
+          "en": "If you do"
+        }
+      ]
+    },
+    {
+      "bn": "এটা কেন হবে?",
+      "pronunciation": "eta keno hobe",
+      "en": "Why would that happen?",
+      "context": "Using কেন হবে (why would it happen)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "এটা",
+          "pronunciation": "eta",
+          "en": "this"
+        },
+        {
+          "bn": "কেন",
+          "pronunciation": "keno",
+          "en": "why"
+        },
+        {
+          "bn": "হবে",
+          "pronunciation": "hobe",
+          "en": "will be"
+        }
+      ]
+    },
+    {
+      "bn": "সে আদৌ কি আসবে?",
+      "pronunciation": "she adou ki ashbe",
+      "en": "Will he come at all?",
+      "context": "Using আদৌ কি (whether at all)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "আদৌ",
+          "pronunciation": "adou",
+          "en": "at all"
+        },
+        {
+          "bn": "কি",
+          "pronunciation": "ki",
+          "en": "what / yes-no question marker"
+        },
+        {
+          "bn": "আসবে",
+          "pronunciation": "ashbe",
+          "en": "will come"
+        }
+      ]
+    },
+    {
+      "bn": "তুমি সত্যিই কি এটা বিশ্বাস করো?",
+      "pronunciation": "tumi shotti-i ki eta bishshash koro",
+      "en": "Do you really believe this?",
+      "context": "Using সত্যিই কি (really?)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "তুমি",
+          "pronunciation": "tumi",
+          "en": "you (familiar)"
+        },
+        {
+          "bn": "সত্যিই",
+          "pronunciation": "shotti-i",
+          "en": "really"
+        },
+        {
+          "bn": "কি",
+          "pronunciation": "ki",
+          "en": "what / yes-no question marker"
+        },
+        {
+          "bn": "এটা",
+          "pronunciation": "eta",
+          "en": "this"
+        },
+        {
+          "bn": "বিশ্বাস",
+          "pronunciation": "bishshash",
+          "en": "believe / belief"
+        },
+        {
+          "bn": "করো",
+          "pronunciation": "koro",
+          "en": "you do"
+        }
+      ]
+    },
+    {
+      "bn": "এটা আসলেই কি সত্যি?",
+      "pronunciation": "eta asholei ki shotti",
+      "en": "Is it actually true?",
+      "context": "Using আসলেই কি (actually?)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "এটা",
+          "pronunciation": "eta",
+          "en": "this"
+        },
+        {
+          "bn": "আসলেই",
+          "pronunciation": "asholei",
+          "en": "actually / really"
+        },
+        {
+          "bn": "কি",
+          "pronunciation": "ki",
+          "en": "what / yes-no question marker"
+        },
+        {
+          "bn": "সত্যি",
+          "pronunciation": "shotti",
+          "en": "Truth"
+        }
+      ]
+    },
+    {
+      "bn": "যদি বৃষ্টি হয় তবে কী হবে?",
+      "pronunciation": "jodi brishti hoy tobe ki hobe",
+      "en": "If it rains, then what will happen?",
+      "context": "Using যদি...তবে? (if...then?)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "যদি",
+          "pronunciation": "jodi",
+          "en": "if"
+        },
+        {
+          "bn": "বৃষ্টি",
+          "pronunciation": "brishti",
+          "en": "rain"
+        },
+        {
+          "bn": "হয়",
+          "pronunciation": "hoy",
+          "en": "is / happens / becomes"
+        },
+        {
+          "bn": "তবে",
+          "pronunciation": "tobe",
+          "en": "then"
+        },
+        {
+          "bn": "কী",
+          "pronunciation": "ki",
+          "en": "what"
+        },
+        {
+          "bn": "হবে",
+          "pronunciation": "hobe",
+          "en": "will be"
+        }
+      ]
+    },
+    {
+      "bn": "তুমি চা না কি কফি খাবে?",
+      "pronunciation": "tumi cha na ki kofi khabe",
+      "en": "Will you have tea or coffee?",
+      "context": "Using না কি (or)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "তুমি",
+          "pronunciation": "tumi",
+          "en": "you (familiar)"
+        },
+        {
+          "bn": "চা",
+          "pronunciation": "cha",
+          "en": "tea"
+        },
+        {
+          "bn": "না",
+          "pronunciation": "na",
+          "en": "not"
+        },
+        {
+          "bn": "কি",
+          "pronunciation": "ki",
+          "en": "what / yes-no question marker"
+        },
+        {
+          "bn": "কফি",
+          "pronunciation": "kofi",
+          "en": "coffee"
+        },
+        {
+          "bn": "খাবে",
+          "pronunciation": "khabe",
+          "en": "will eat"
+        }
+      ]
+    },
+    {
+      "bn": "সে এসেছে, নাকি তার ভাই?",
+      "pronunciation": "she eshechhe naki tar bhai",
+      "en": "Was it him or his brother who came?",
+      "context": "Using নাকি (or is it)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "এসেছে",
+          "pronunciation": "eshechhe",
+          "en": "has arrived"
+        },
+        {
+          "bn": "নাকি",
+          "pronunciation": "naki",
+          "en": "or / is it said"
+        },
+        {
+          "bn": "তার",
+          "pronunciation": "tar",
+          "en": "His / Her"
+        },
+        {
+          "bn": "ভাই",
+          "pronunciation": "bhai",
+          "en": "Brother"
+        }
+      ]
+    },
+    {
+      "bn": "আজ গরম, তাই না?",
+      "pronunciation": "aj gorom tai na",
+      "en": "It's hot today, isn't it?",
+      "context": "Using তাই না? (isn't it?)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "আজ",
+          "pronunciation": "aj",
+          "en": "today"
+        },
+        {
+          "bn": "গরম",
+          "pronunciation": "gorom",
+          "en": "hot"
+        },
+        {
+          "bn": "তাই",
+          "pronunciation": "tai",
+          "en": "so"
+        },
+        {
+          "bn": "না",
+          "pronunciation": "na",
+          "en": "not"
+        }
+      ]
+    },
+    {
+      "bn": "তুমি আসবে, তাই তো?",
+      "pronunciation": "tumi ashbe tai to",
+      "en": "You'll come, right?",
+      "context": "Using তাই তো? (right?)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "তুমি",
+          "pronunciation": "tumi",
+          "en": "you (familiar)"
+        },
+        {
+          "bn": "আসবে",
+          "pronunciation": "ashbe",
+          "en": "will come"
+        },
+        {
+          "bn": "তাই",
+          "pronunciation": "tai",
+          "en": "so"
+        },
+        {
+          "bn": "তো",
+          "pronunciation": "to",
+          "en": "right / indeed"
+        }
+      ]
+    },
+    {
+      "bn": "তাই কি?",
+      "pronunciation": "tai ki",
+      "en": "Really?",
+      "context": "Using তাই কি? (really?)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "তাই",
+          "pronunciation": "tai",
+          "en": "so"
+        },
+        {
+          "bn": "কি",
+          "pronunciation": "ki",
+          "en": "what / yes-no question marker"
+        }
+      ]
+    },
+    {
+      "bn": "তাই নাকি?",
+      "pronunciation": "tai naki",
+      "en": "Is that so?",
+      "context": "Using তাই নাকি? (is that so?)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "তাই",
+          "pronunciation": "tai",
+          "en": "so"
+        },
+        {
+          "bn": "নাকি",
+          "pronunciation": "naki",
+          "en": "or / is it said"
+        }
+      ]
+    },
+    {
+      "bn": "বুঝলে?",
+      "pronunciation": "bujhle",
+      "en": "Do you understand?",
+      "context": "Using বুঝলে? (understood?)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "বুঝলে",
+          "pronunciation": "bujhle",
+          "en": "did you understand"
+        }
+      ]
+    },
+    {
+      "bn": "তুমি শুনেছ?",
+      "pronunciation": "tumi shunecho",
+      "en": "Have you heard?",
+      "context": "Using শুনেছ? (have you heard?)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "তুমি",
+          "pronunciation": "tumi",
+          "en": "you (familiar)"
+        },
+        {
+          "bn": "শুনেছ",
+          "pronunciation": "shunecho",
+          "en": "have you heard"
+        }
+      ]
+    },
+    {
+      "bn": "তুমি দেখেছ?",
+      "pronunciation": "tumi dekhechho",
+      "en": "Have you seen it?",
+      "context": "Using দেখেছ? (have you seen?)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "তুমি",
+          "pronunciation": "tumi",
+          "en": "you (familiar)"
+        },
+        {
+          "bn": "দেখেছ",
+          "pronunciation": "dekhechho",
+          "en": "did you see / have you seen"
+        }
+      ]
+    },
+    {
+      "bn": "তুমি কি এটা করতে পারবে?",
+      "pronunciation": "tumi ki eta korte parbe",
+      "en": "Can you do this?",
+      "context": "Using পারবে? (can you?)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "তুমি",
+          "pronunciation": "tumi",
+          "en": "you (familiar)"
+        },
+        {
+          "bn": "কি",
+          "pronunciation": "ki",
+          "en": "what / yes-no question marker"
+        },
+        {
+          "bn": "এটা",
+          "pronunciation": "eta",
+          "en": "this"
+        },
+        {
+          "bn": "করতে",
+          "pronunciation": "korte",
+          "en": "to do"
+        },
+        {
+          "bn": "পারবে",
+          "pronunciation": "parbe",
+          "en": "can"
+        }
+      ]
+    },
+    {
+      "bn": "কাল দেখা হবে?",
+      "pronunciation": "kal dekha hobe",
+      "en": "Shall we meet tomorrow?",
+      "context": "Using হবে? (will it work?)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "কাল",
+          "pronunciation": "kal",
+          "en": "tomorrow / yesterday / time"
+        },
+        {
+          "bn": "দেখা",
+          "pronunciation": "dekha",
+          "en": "seeing / meeting / seen"
+        },
+        {
+          "bn": "হবে",
+          "pronunciation": "hobe",
+          "en": "will be"
+        }
+      ]
+    },
+    {
+      "bn": "বিকেল পাঁচটায়, ঠিক?",
+      "pronunciation": "bikel pañctae thik",
+      "en": "Five in the evening, okay?",
+      "context": "Using ঠিক? (okay / right?)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "বিকেল",
+          "pronunciation": "bikel",
+          "en": "afternoon / evening"
+        },
+        {
+          "bn": "পাঁচটায়",
+          "pronunciation": "pañctae",
+          "en": "at five o'clock"
+        },
+        {
+          "bn": "ঠিক",
+          "pronunciation": "thik",
+          "en": "right / correct / okay / exactly"
+        }
+      ]
+    },
+    {
+      "bn": "তুমি কি রাজি?",
+      "pronunciation": "tumi ki raji",
+      "en": "Do you agree?",
+      "context": "Using রাজি? (agree?)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "তুমি",
+          "pronunciation": "tumi",
+          "en": "you (familiar)"
+        },
+        {
+          "bn": "কি",
+          "pronunciation": "ki",
+          "en": "what / yes-no question marker"
+        },
+        {
+          "bn": "রাজি",
+          "pronunciation": "raji",
+          "en": "agreed"
+        }
+      ]
+    },
+    {
+      "bn": "তুমি নিশ্চিত?",
+      "pronunciation": "tumi nishchito",
+      "en": "Are you sure?",
+      "context": "Using নিশ্চিত? (sure?)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "তুমি",
+          "pronunciation": "tumi",
+          "en": "you (familiar)"
+        },
+        {
+          "bn": "নিশ্চিত",
+          "pronunciation": "nishchito",
+          "en": "Sure / certain / confirmed"
+        }
+      ]
+    },
+    {
+      "bn": "তোমার কী মনে হয়?",
+      "pronunciation": "tomar ki mone hoy",
+      "en": "What do you think?",
+      "context": "Using কী মনে হয় (what do you think)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "তোমার",
+          "pronunciation": "tomar",
+          "en": "your"
+        },
+        {
+          "bn": "কী",
+          "pronunciation": "ki",
+          "en": "what"
+        },
+        {
+          "bn": "মনে",
+          "pronunciation": "mone",
+          "en": "in mind"
+        },
+        {
+          "bn": "হয়",
+          "pronunciation": "hoy",
+          "en": "is / happens / becomes"
+        }
+      ]
+    },
+    {
+      "bn": "তুমি কী ভাবছ?",
+      "pronunciation": "tumi ki bhabcho",
+      "en": "What are you thinking?",
+      "context": "Using কী ভাবছ (what are you thinking)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "তুমি",
+          "pronunciation": "tumi",
+          "en": "you (familiar)"
+        },
+        {
+          "bn": "কী",
+          "pronunciation": "ki",
+          "en": "what"
+        },
+        {
+          "bn": "ভাবছ",
+          "pronunciation": "bhabcho",
+          "en": "are thinking"
+        }
+      ]
+    },
+    {
+      "bn": "তুমি কী শুনলে?",
+      "pronunciation": "tumi ki shunle",
+      "en": "What did you hear?",
+      "context": "Using কী শুনলে (what did you hear)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "তুমি",
+          "pronunciation": "tumi",
+          "en": "you (familiar)"
+        },
+        {
+          "bn": "কী",
+          "pronunciation": "ki",
+          "en": "what"
+        },
+        {
+          "bn": "শুনলে",
+          "pronunciation": "shunle",
+          "en": "did you hear"
+        }
+      ]
+    },
+    {
+      "bn": "তুমি কী দেখলে?",
+      "pronunciation": "tumi ki dekhle",
+      "en": "What did you see?",
+      "context": "Using কী দেখলে (what did you see)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "তুমি",
+          "pronunciation": "tumi",
+          "en": "you (familiar)"
+        },
+        {
+          "bn": "কী",
+          "pronunciation": "ki",
+          "en": "what"
+        },
+        {
+          "bn": "দেখলে",
+          "pronunciation": "dekhle",
+          "en": "did you see"
+        }
+      ]
+    },
+    {
+      "bn": "আজ তুমি কী শিখলে?",
+      "pronunciation": "aj tumi ki shikhle",
+      "en": "What did you learn today?",
+      "context": "Using কী শিখলে (what did you learn)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "আজ",
+          "pronunciation": "aj",
+          "en": "today"
+        },
+        {
+          "bn": "তুমি",
+          "pronunciation": "tumi",
+          "en": "you (familiar)"
+        },
+        {
+          "bn": "কী",
+          "pronunciation": "ki",
+          "en": "what"
+        },
+        {
+          "bn": "শিখলে",
+          "pronunciation": "shikhle",
+          "en": "did you learn"
+        }
+      ]
+    },
+    {
+      "bn": "এরপর কী?",
+      "pronunciation": "erpor ki",
+      "en": "What next?",
+      "context": "Using এরপর কী (what next)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "এরপর",
+          "pronunciation": "erpor",
+          "en": "after this / next"
+        },
+        {
+          "bn": "কী",
+          "pronunciation": "ki",
+          "en": "what"
+        }
+      ]
+    },
+    {
+      "bn": "এখন কী করব?",
+      "pronunciation": "ekhon ki korbo",
+      "en": "What should we do now?",
+      "context": "Using এখন কী (what now)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "এখন",
+          "pronunciation": "ekhon",
+          "en": "now"
+        },
+        {
+          "bn": "কী",
+          "pronunciation": "ki",
+          "en": "what"
+        },
+        {
+          "bn": "করব",
+          "pronunciation": "korbo",
+          "en": "will do"
+        }
+      ]
+    },
+    {
+      "bn": "তারপর কী হলো?",
+      "pronunciation": "tarpor ki holo",
+      "en": "What happened after that?",
+      "context": "Using তারপর কী (what after that)",
+      "category": "asking-questions",
+      "words": [
+        {
+          "bn": "তারপর",
+          "pronunciation": "tarpor",
+          "en": "after that / then"
+        },
+        {
+          "bn": "কী",
+          "pronunciation": "ki",
+          "en": "what"
+        },
+        {
+          "bn": "হলো",
+          "pronunciation": "holo",
+          "en": "done"
+        }
+      ]
     }
   ],
   "practice": [
