@@ -200,18 +200,19 @@ BengaliItemActions.propTypes = {
   }).isRequired,
 };
 
-export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLessonSelector = true }) {
+export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLessonSelector = true, view = "tutor" }) {
   const startingLesson = initialLesson || initialSavedLesson();
   const [lesson, setLesson] = useState(startingLesson);
   const [savedLessonId, setSavedLessonId] = useState(startingLesson.id);
-  const speakBreakdownWord = useCallback((text) => {
+  const speakSelectedBengali = useCallback((text) => {
     if (bengaliVoice === GOOGLE_BENGALI_VOICE_KEY) {
-      speakWithGoogleTts(text).catch((error) => console.error("Google Bengali breakdown speech error:", error));
+      window.speechSynthesis?.cancel();
+      speakWithGoogleTts(text).catch((error) => console.error("Google Bengali speech error:", error));
       return;
     }
     speak(text, "bn", bengaliVoice);
   }, [bengaliVoice]);
-  const [contentTab, setContentTab] = useState("phrases");
+  const [contentTab, setContentTab] = useState(view === "games" ? "games" : "phrases");
   const [jumpTarget, setJumpTarget] = useState("");
   const [gameDataset, setGameDataset] = useState("vocab");
   const [gameDirection, setGameDirection] = useState(() => {
@@ -422,19 +423,19 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
 
   useEffect(() => {
     if (gameMode === "sound" && arcadeRunning && gameQuestion) {
-      const timer = setTimeout(() => speak(gameQuestion.bn, "bn"), 120);
+      const timer = setTimeout(() => speakSelectedBengali(gameQuestion.bn), 120);
       return () => clearTimeout(timer);
     }
     return undefined;
-  }, [arcadeRunning, gameMode, gameQuestion]);
+  }, [arcadeRunning, gameMode, gameQuestion, speakSelectedBengali]);
 
   useEffect(() => {
     if (gameMode === "bingo" && bingoTarget) {
-      const timer = setTimeout(() => speak(bingoTarget.bn, "bn"), 180);
+      const timer = setTimeout(() => speakSelectedBengali(bingoTarget.bn), 180);
       return () => clearTimeout(timer);
     }
     return undefined;
-  }, [bingoTarget, gameMode]);
+  }, [bingoTarget, gameMode, speakSelectedBengali]);
 
   const loadSavedLesson = (lessonId) => {
     setSavedLessonId(lessonId);
@@ -498,7 +499,9 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
 
   const handleMemoryCard = (card) => {
     if (memoryLocked || memoryOpen.includes(card.id) || memoryMatched.includes(card.pairKey)) return;
-    speak(card.label.replace(/\s*\([^)]*\)\s*$/, ""), card.language);
+    const cardText = card.label.replace(/\s*\([^)]*\)\s*$/, "");
+    if (card.language.startsWith("bn")) speakSelectedBengali(cardText);
+    else speak(cardText, card.language);
     const nextOpen = [...memoryOpen, card.id];
     setMemoryOpen(nextOpen);
     if (nextOpen.length < 2) return;
@@ -565,7 +568,7 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
     const remaining = bingoBoard.filter((card) => !nextMatched.includes(wordKey(card)));
     const nextTarget = remaining[Math.floor(Math.random() * remaining.length)] || null;
     setBingoTarget(nextTarget);
-    if (nextTarget) setTimeout(() => speak(nextTarget.bn, "bn"), 180);
+    if (nextTarget) setTimeout(() => speakSelectedBengali(nextTarget.bn), 180);
   };
 
   const handlePronunciationPick = (option) => {
@@ -679,13 +682,16 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
     <main className="bn-page">
       <style>{shellStyles}</style>
       <div className="bn-shell">
+        {view !== "games" && 
         <header className="bn-card" style={{ display: "grid", gap: 12 }}>
           <div>
-            <span className="bn-pill">Learn naturally</span>
-            <h1><span lang="bn">বাংলা</span> Tutor</h1>
-            <p>Choose a saved lesson, hear pronunciation, and strengthen recall through focused games.</p>
+            <span className="bn-pill">{view === "games" ? "Practice and recall" : "Learn naturally"}</span>
+            <h1><span lang="bn">বাংলা</span> {view === "games" ? "Games" : "Tutor"}</h1>
+            <p>{view === "games"
+              ? "Strengthen Bengali recall with focused games from the selected lesson."
+              : "Choose a saved lesson, hear pronunciation, and build understanding phrase by phrase."}</p>
           </div>
-          {lesson && <ActionButtons promptText={combinedLessonPrompt} />}
+          {view === "tutor" && lesson && <ActionButtons promptText={combinedLessonPrompt} />}
           {showLessonSelector && (
             <div className="bn-grid">
               <label className="bn-row">
@@ -699,6 +705,7 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
             </div>
           )}
         </header>
+        }
 
         {lesson && (
           <article className="bn-card" style={{ display: "grid", gap: 12 }}>
@@ -712,13 +719,14 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
               </div>
             </div>
 
-            <div className="bn-tabs">
-              <button className={`bn-tab ${contentTab === "phrases" ? "active" : ""}`} onClick={() => { setContentTab("phrases"); setJumpTarget(""); }} disabled={!filteredPhrases.length}>Key Phrases</button>
-              <button className={`bn-tab ${contentTab === "vocab" ? "active" : ""}`} onClick={() => { setContentTab("vocab"); setJumpTarget(""); }} disabled={!filteredVocab.length}>Vocabulary</button>
-              <button className={`bn-tab ${contentTab === "games" ? "active" : ""}`} onClick={() => { setContentTab("games"); setJumpTarget(""); }} disabled={Math.max(filteredVocab.length, filteredPhrases.length, breakdownWords.length) < 2}>Games</button>
-            </div>
+            {view === "tutor" && (
+              <div className="bn-tabs">
+                <button className={`bn-tab ${contentTab === "phrases" ? "active" : ""}`} onClick={() => { setContentTab("phrases"); setJumpTarget(""); }} disabled={!filteredPhrases.length}>Key Phrases</button>
+                <button className={`bn-tab ${contentTab === "vocab" ? "active" : ""}`} onClick={() => { setContentTab("vocab"); setJumpTarget(""); }} disabled={!filteredVocab.length}>Vocabulary</button>
+              </div>
+            )}
 
-            {contentTab !== "games" && (
+            {view === "tutor" && (
               <label className="bn-jump-bar">
                 <span>Jump to {contentTab === "phrases" ? "phrase" : "word"}</span>
                 <select
@@ -740,7 +748,7 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
               </label>
             )}
 
-            {contentTab === "phrases" && (
+            {view === "tutor" && contentTab === "phrases" && (
               <section className="bn-section" style={{ display: "grid", gap: 10 }}>
                 <h3>Key phrases</h3>
                 {filteredPhrases.map((phrase, idx) => (
@@ -761,11 +769,11 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
                               tabIndex={0}
                               aria-label={`Hear ${word.bn} in Bengali`}
                               title="Hear this Bengali word"
-                              onClick={() => speakBreakdownWord(word.bn)}
+                              onClick={() => speakSelectedBengali(word.bn)}
                               onKeyDown={(event) => {
                                 if (event.key === "Enter" || event.key === " ") {
                                   event.preventDefault();
-                                  speakBreakdownWord(word.bn);
+                                  speakSelectedBengali(word.bn);
                                 }
                               }}
                             >
@@ -783,7 +791,7 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
               </section>
             )}
 
-            {contentTab === "vocab" && (
+            {view === "tutor" && contentTab === "vocab" && (
               <section className="bn-section" style={{ display: "grid", gap: 10 }}>
                 <h3>Vocabulary</h3>
                 {filteredVocab.map((word, idx) => (
@@ -797,7 +805,7 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
               </section>
             )}
 
-            {contentTab === "games" && (
+            {view === "games" && (
               <div className="bn-game-shell">
                 <div className="bn-tabs">
                   <button className={`bn-tab ${gameDataset === "vocab" ? "active" : ""}`} onClick={() => setGameDataset("vocab")} disabled={!filteredVocab.length}>Vocab set</button>
@@ -850,7 +858,7 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
                       </label>
                     </div>
                     <div className="bn-game-actions">
-                      <button className="bn-btn secondary" onClick={() => speak(gameQuestion.bn, "bn")}>Hear target Bengali</button>
+                      <button className="bn-btn secondary" onClick={() => speakSelectedBengali(gameQuestion.bn)}>Hear target Bengali</button>
                       <button className="bn-btn secondary" onClick={() => startNewGameRound()}>New card</button>
                     </div>
                     <div className="bn-game-options">
@@ -884,7 +892,7 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
                       </div>
                       <button
                         className="bn-btn secondary bn-icon-btn"
-                        onClick={() => speak(gameQuestion.bn, "bn")}
+                        onClick={() => speakSelectedBengali(gameQuestion.bn)}
                         aria-label="Hear Bengali"
                         title="Hear Bengali"
                       >
@@ -943,7 +951,7 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
                             )}
                             <div className="bn-game-subtext">{arcadeMessage || "Go!"}</div>
                           </div>
-                          {gameMode === "sound" && <button className="bn-btn secondary" onClick={() => speak(gameQuestion.bn, "bn")}>🔊 Replay sound</button>}
+                          {gameMode === "sound" && <button className="bn-btn secondary" onClick={() => speakSelectedBengali(gameQuestion.bn)}>🔊 Replay sound</button>}
                         </div>
                         <div className="bn-game-options">
                           {gameQuestion.options.map((option, idx) => (
@@ -968,7 +976,7 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
                       <div className="bn-game-actions">
                         <span className="bn-pill">✅ {bingoMatched.length}/{bingoBoard.length}</span>
                         <span className="bn-pill">💥 {bingoMistakes}</span>
-                        <button className="bn-btn secondary" onClick={() => bingoTarget && speak(bingoTarget.bn, "bn")}>🔊 Replay</button>
+                        <button className="bn-btn secondary" onClick={() => bingoTarget && speakSelectedBengali(bingoTarget.bn)}>🔊 Replay</button>
                         <button className="bn-btn secondary" onClick={startBingoRound}>New board</button>
                       </div>
                     </div>
@@ -998,7 +1006,7 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
                       <div className="bn-game-actions">
                         <span className="bn-pill">🏆 {arcadeScore}</span>
                         <span className="bn-pill">🔥 {arcadeCombo}x</span>
-                        <button className="bn-btn secondary" onClick={() => speak(pronunciationQuestion.bn, "bn")}>🔊 Hear it</button>
+                        <button className="bn-btn secondary" onClick={() => speakSelectedBengali(pronunciationQuestion.bn)}>🔊 Hear it</button>
                       </div>
                     </div>
                     <div className="bn-pop-stage">
@@ -1056,7 +1064,7 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
               </div>
             )}
 
-            {lesson.practice?.length ? (
+            {view === "tutor" && lesson.practice?.length ? (
               <section className="bn-section" style={{ display: "grid", gap: 8 }}>
                 <h3>Practice</h3>
                 {lesson.practice.map((item, idx) => (
@@ -1069,7 +1077,7 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
               </section>
             ) : null}
 
-            {lesson.notes?.length ? (
+            {view === "tutor" && lesson.notes?.length ? (
               <section className="bn-section">
                 <h3>Notes</h3>
                 {lesson.notes.map((note, idx) => <div key={idx} style={{ color: "#475569" }}>• {note}</div>)}
@@ -1086,4 +1094,5 @@ BengaliTutor.propTypes = {
   bengaliVoice: PropTypes.string,
   initialLesson: PropTypes.object,
   showLessonSelector: PropTypes.bool,
+  view: PropTypes.oneOf(["tutor", "games"]),
 };
