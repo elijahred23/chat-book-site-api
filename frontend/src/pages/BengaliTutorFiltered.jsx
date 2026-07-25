@@ -419,7 +419,7 @@ function WordLoop({ lesson, voices, bnVoices, enVoices, bnVoice, enVoice, setBnV
     await requestPhoto(item.en);
     const isActive = () => playingRef.current && !pausedRef.current && playbackGenerationRef.current === generation;
     if (!isActive()) return;
-    const englishSpeechText = item.breakdownEnglish || item.en;
+    const englishSpeechText = dataset === "breakdowns" ? item.breakdownEnglish || item.en : item.en;
     const bengaliSpeechText = bnVoice !== GOOGLE_BENGALI_VOICE_KEY && bengaliSpeechSource === "pronunciation" && item.pronunciation?.trim()
       ? item.pronunciation.trim()
       : item.bn;
@@ -430,7 +430,7 @@ function WordLoop({ lesson, voices, bnVoices, enVoices, bnVoice, enVoice, setBnV
     }
     await speak(bengaliSpeechText, "bn-IN", bnVoice);
     if (mode === "bengali-english" && isActive()) await speak(englishSpeechText, "en-US", enVoice);
-  }, [mode, speak, bnVoice, enVoice, requestPhoto, bengaliSpeechSource]);
+  }, [mode, speak, bnVoice, enVoice, requestPhoto, bengaliSpeechSource, dataset]);
 
   const waitBeforeNextWord = useCallback((generation) => new Promise((resolve) => {
     if (!delaySeconds) return resolve(playingRef.current && !pausedRef.current && playbackGenerationRef.current === generation);
