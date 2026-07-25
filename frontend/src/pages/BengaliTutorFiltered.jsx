@@ -107,6 +107,7 @@ export default function BengaliTutorFiltered() {
       <nav style={ui.tabs} aria-label="Bengali tutor sections">
         <button type="button" style={tab === "tutor" ? ui.active : ui.tab} onClick={() => setTab("tutor")}>Tutor</button>
         <button type="button" style={tab === "loop" ? ui.active : ui.tab} onClick={() => setTab("loop")}>Word Loop</button>
+        <button type="button" style={tab === "translate" ? ui.active : ui.tab} onClick={() => setTab("translate")}>Bengali → English</button>
       </nav>
       {tab === "tutor" ? (
         <>
@@ -138,12 +139,13 @@ export default function BengaliTutorFiltered() {
               }
             }}
           />
-          <BengaliTranslator />
           <BengaliTutor key={lesson.id} bengaliVoice={bnVoice} initialLesson={lesson} showLessonSelector={false} />
         </>
-      ) : (
+      ) : tab === "loop" ? (
         <WordLoop key={lesson.id} lesson={lesson} voices={voices} bnVoices={bnVoices} enVoices={enVoices} bnVoice={bnVoice} enVoice={enVoice}
           setBnVoice={setBnVoice} setEnVoice={setEnVoice} preview={preview} />
+      ) : (
+        <BengaliTranslator />
       )}
     </main>
   );
@@ -663,7 +665,7 @@ function IconButton({ label, children, disabled, onClick, primary }) { return <b
 const ui = {
   page: { minHeight: "100%", color: "#0f172a" },
   lessonPicker: { width: "min(100% - 2rem, 1100px)", margin: "1rem auto 0", padding: "1rem", border: "1px solid #dbe3ef", borderRadius: 14, background: "#fff" },
-  tabs: { width: "min(100% - 2rem, 1100px)", margin: ".75rem auto 0", padding: ".35rem", display: "grid", gridTemplateColumns: "1fr 1fr", gap: ".35rem", background: "#e2e8f0", borderRadius: 14 },
+  tabs: { width: "min(100% - 2rem, 1100px)", margin: ".75rem auto 0", padding: ".35rem", display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: ".35rem", background: "#e2e8f0", borderRadius: 14 },
   tab: { minHeight: 44, border: 0, borderRadius: 10, background: "transparent", color: "#334155", fontWeight: 800 },
   active: { minHeight: 44, border: "1px solid #cbd5e1", borderRadius: 10, background: "#fff", color: "#0f172a", fontWeight: 900 },
   voice: { width: "min(100% - 2rem, 1100px)", margin: ".75rem auto 0", padding: "1rem", border: "1px solid #dbe3ef", borderRadius: 14, background: "#fff" },
