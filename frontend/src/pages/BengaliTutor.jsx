@@ -269,15 +269,33 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
 
   const filteredVocab = useMemo(() => lesson?.vocab?.filter((v) => v?.bn && v?.en) || [], [lesson]);
   const filteredPhrases = useMemo(() => lesson?.phrases?.filter((p) => p?.bn && p?.en) || [], [lesson]);
-  const gameItems = useMemo(() => gameDataset === "phrases" ? filteredPhrases : filteredVocab, [filteredPhrases, filteredVocab, gameDataset]);
+  const breakdownWords = useMemo(() => {
+    const uniqueWords = new Map();
+    filteredPhrases.forEach((phrase) => {
+      phrase.words?.forEach((word) => {
+        if (!word?.bn || !word?.en) return;
+        const item = { ...word, sourcePhrase: phrase.bn, category: phrase.category };
+        const key = wordKey(item);
+        if (!uniqueWords.has(key)) uniqueWords.set(key, item);
+      });
+    });
+    return [...uniqueWords.values()];
+  }, [filteredPhrases]);
+  const gameItems = useMemo(() => {
+    if (gameDataset === "phrases") return filteredPhrases;
+    if (gameDataset === "breakdown-words") return breakdownWords;
+    return filteredVocab;
+  }, [breakdownWords, filteredPhrases, filteredVocab, gameDataset]);
 
   const combinedLessonPrompt = useMemo(() => {
     if (!lesson) return "";
+    const isBreakdownWords = contentTab === "games" && gameDataset === "breakdown-words";
     const isVocab = contentTab === "vocab" || (contentTab === "games" && gameDataset === "vocab");
-    const source = isVocab ? filteredVocab : filteredPhrases;
+    const source = isBreakdownWords ? breakdownWords : isVocab ? filteredVocab : filteredPhrases;
     const items = source.map((p) => `${p.bn} (${p.pronunciation || ""}) - ${p.en}`);
-    return `(${isVocab ? "Vocab" : "Phrases"}): ${items.join(" | ")}`;
-  }, [lesson, filteredPhrases, filteredVocab, contentTab, gameDataset]);
+    const label = isBreakdownWords ? "Phrase breakdown words" : isVocab ? "Vocab" : "Phrases";
+    return `(${label}): ${items.join(" | ")}`;
+  }, [lesson, breakdownWords, filteredPhrases, filteredVocab, contentTab, gameDataset]);
 
   const buildGameQuestion = useCallback((items, direction = gameDirection, stats = matchStatsRef.current) => {
     if (!items?.length || items.length < 2) return null;
@@ -697,7 +715,7 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
             <div className="bn-tabs">
               <button className={`bn-tab ${contentTab === "phrases" ? "active" : ""}`} onClick={() => { setContentTab("phrases"); setJumpTarget(""); }} disabled={!filteredPhrases.length}>Key Phrases</button>
               <button className={`bn-tab ${contentTab === "vocab" ? "active" : ""}`} onClick={() => { setContentTab("vocab"); setJumpTarget(""); }} disabled={!filteredVocab.length}>Vocabulary</button>
-              <button className={`bn-tab ${contentTab === "games" ? "active" : ""}`} onClick={() => { setContentTab("games"); setJumpTarget(""); }} disabled={filteredVocab.length + filteredPhrases.length < 2}>Games</button>
+              <button className={`bn-tab ${contentTab === "games" ? "active" : ""}`} onClick={() => { setContentTab("games"); setJumpTarget(""); }} disabled={Math.max(filteredVocab.length, filteredPhrases.length, breakdownWords.length) < 2}>Games</button>
             </div>
 
             {contentTab !== "games" && (
@@ -784,6 +802,7 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
                 <div className="bn-tabs">
                   <button className={`bn-tab ${gameDataset === "vocab" ? "active" : ""}`} onClick={() => setGameDataset("vocab")} disabled={!filteredVocab.length}>Vocab set</button>
                   <button className={`bn-tab ${gameDataset === "phrases" ? "active" : ""}`} onClick={() => setGameDataset("phrases")} disabled={!filteredPhrases.length}>Phrases set</button>
+                  <button className={`bn-tab ${gameDataset === "breakdown-words" ? "active" : ""}`} onClick={() => setGameDataset("breakdown-words")} disabled={breakdownWords.length < 2}>Breakdown words</button>
                 </div>
                 <div className="bn-tabs">
                   <button className={`bn-tab ${gameDirection === "bn-en" ? "active" : ""}`} onClick={() => setGameDirection("bn-en")}>Bengali to English</button>
