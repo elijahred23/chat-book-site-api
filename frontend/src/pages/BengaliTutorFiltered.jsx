@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { FaAngleDoubleLeft, FaAngleDoubleRight, FaFastBackward, FaFastForward, FaPause, FaPlay, FaRedoAlt, FaStepBackward, FaStepForward, FaStop } from "react-icons/fa";
-import BengaliTutor from "./BengaliTutor.jsx";
+import BengaliTutor, { SELECTABLE_SAVED_LESSONS } from "./BengaliTutor.jsx";
 import { phraseBreakdownItems, withPhraseWords } from "../utils/bengaliPhraseBreakdown.js";
 import { getGoogleTtsAudio, GOOGLE_BENGALI_VOICE_KEY } from "../utils/googleTtsAudioCache.js";
 
@@ -46,6 +46,10 @@ const itemFacets = (item) => {
 
 export default function BengaliTutorFiltered() {
   const [tab, setTab] = useState("tutor");
+  const [lesson, setLesson] = useState(() => {
+    const saved = storedLesson();
+    return SELECTABLE_SAVED_LESSONS.find((item) => item.id === saved?.id) || SELECTABLE_SAVED_LESSONS[0];
+  });
   const [voices, setVoices] = useState([]);
   const [bnVoice, setBnVoice] = useState(() => storedString(BN_VOICE_KEY));
   const [enVoice, setEnVoice] = useState(() => storedString(EN_VOICE_KEY));
@@ -77,8 +81,29 @@ export default function BengaliTutorFiltered() {
     window.speechSynthesis.speak(utterance);
   };
 
+  const selectLesson = (lessonId) => {
+    const selectedLesson = SELECTABLE_SAVED_LESSONS.find((item) => item.id === lessonId);
+    if (!selectedLesson) return;
+    window.speechSynthesis?.cancel();
+    setLesson(selectedLesson);
+    try {
+      localStorage.setItem(LESSON_KEY, JSON.stringify(selectedLesson));
+    } catch {
+      // Local storage can be unavailable in private browsing contexts.
+    }
+  };
+
   return (
     <main style={ui.page}>
+      <section style={ui.lessonPicker}>
+        <Field label="Saved lesson category">
+          <select style={ui.input} value={lesson.id} onChange={(event) => selectLesson(event.target.value)}>
+            {SELECTABLE_SAVED_LESSONS.map((savedLesson) => (
+              <option key={savedLesson.id} value={savedLesson.id}>{savedLesson.topic}</option>
+            ))}
+          </select>
+        </Field>
+      </section>
       <nav style={ui.tabs} aria-label="Bengali tutor sections">
         <button type="button" style={tab === "tutor" ? ui.active : ui.tab} onClick={() => setTab("tutor")}>Tutor</button>
         <button type="button" style={tab === "loop" ? ui.active : ui.tab} onClick={() => setTab("loop")}>Word Loop</button>
@@ -114,10 +139,10 @@ export default function BengaliTutorFiltered() {
             }}
           />
           <BengaliTranslator />
-          <BengaliTutor bengaliVoice={bnVoice} />
+          <BengaliTutor key={lesson.id} bengaliVoice={bnVoice} initialLesson={lesson} showLessonSelector={false} />
         </>
       ) : (
-        <WordLoop voices={voices} bnVoices={bnVoices} enVoices={enVoices} bnVoice={bnVoice} enVoice={enVoice}
+        <WordLoop key={lesson.id} lesson={lesson} voices={voices} bnVoices={bnVoices} enVoices={enVoices} bnVoice={bnVoice} enVoice={enVoice}
           setBnVoice={setBnVoice} setEnVoice={setEnVoice} preview={preview} />
       )}
     </main>
@@ -196,9 +221,8 @@ function BengaliTranslator() {
   );
 }
 
-function WordLoop({ voices, bnVoices, enVoices, bnVoice, enVoice, setBnVoice, setEnVoice, preview }) {
+function WordLoop({ lesson, voices, bnVoices, enVoices, bnVoice, enVoice, setBnVoice, setEnVoice, preview }) {
   const initial = useMemo(storedSettings, []);
-  const [lesson] = useState(storedLesson);
   const [dataset, setDataset] = useState(initial.dataset);
   const [mode, setMode] = useState(initial.mode);
   const [intervalSize, setIntervalSize] = useState(initial.intervalSize);
@@ -638,7 +662,8 @@ function IconButton({ label, children, disabled, onClick, primary }) { return <b
 
 const ui = {
   page: { minHeight: "100%", color: "#0f172a" },
-  tabs: { width: "min(100% - 2rem, 1100px)", margin: "1rem auto 0", padding: ".35rem", display: "grid", gridTemplateColumns: "1fr 1fr", gap: ".35rem", background: "#e2e8f0", borderRadius: 14 },
+  lessonPicker: { width: "min(100% - 2rem, 1100px)", margin: "1rem auto 0", padding: "1rem", border: "1px solid #dbe3ef", borderRadius: 14, background: "#fff" },
+  tabs: { width: "min(100% - 2rem, 1100px)", margin: ".75rem auto 0", padding: ".35rem", display: "grid", gridTemplateColumns: "1fr 1fr", gap: ".35rem", background: "#e2e8f0", borderRadius: 14 },
   tab: { minHeight: 44, border: 0, borderRadius: 10, background: "transparent", color: "#334155", fontWeight: 800 },
   active: { minHeight: 44, border: "1px solid #cbd5e1", borderRadius: 10, background: "#fff", color: "#0f172a", fontWeight: 900 },
   voice: { width: "min(100% - 2rem, 1100px)", margin: ".75rem auto 0", padding: "1rem", border: "1px solid #dbe3ef", borderRadius: 14, background: "#fff" },

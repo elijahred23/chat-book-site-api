@@ -35,7 +35,7 @@ const LESSON_CACHE_KEY = "bengali_lesson_cache";
 const CORRECT_TIME = 250;
 const INCORRECT_TIME = 700;
 
-const SAVED_LESSONS = [
+export const SAVED_LESSONS = [
   adjectivesLesson,
   adverbsLesson,
   anthropicPrincipleLesson,
@@ -57,6 +57,9 @@ const SAVED_LESSONS = [
   ...expandedLessons,
 ].map(withPhraseWords).sort((a, b) => a.topic.localeCompare(b.topic));
 const HIDDEN_LESSON_DROPDOWN_IDS = new Set(["aspnet-core-mvc", "dotnet-runtime"]);
+export const SELECTABLE_SAVED_LESSONS = SAVED_LESSONS.filter(
+  (lesson) => !HIDDEN_LESSON_DROPDOWN_IDS.has(lesson.id),
+);
 
 const initialSavedLesson = () => {
   try {
@@ -197,9 +200,10 @@ BengaliItemActions.propTypes = {
   }).isRequired,
 };
 
-export default function BengaliTutor({ bengaliVoice = "" }) {
-  const [lesson, setLesson] = useState(initialSavedLesson);
-  const [savedLessonId, setSavedLessonId] = useState(() => initialSavedLesson().id);
+export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLessonSelector = true }) {
+  const startingLesson = initialLesson || initialSavedLesson();
+  const [lesson, setLesson] = useState(startingLesson);
+  const [savedLessonId, setSavedLessonId] = useState(startingLesson.id);
   const speakBreakdownWord = useCallback((text) => {
     if (bengaliVoice === GOOGLE_BENGALI_VOICE_KEY) {
       speakWithGoogleTts(text).catch((error) => console.error("Google Bengali breakdown speech error:", error));
@@ -664,16 +668,18 @@ export default function BengaliTutor({ bengaliVoice = "" }) {
             <p>Choose a saved lesson, hear pronunciation, and strengthen recall through focused games.</p>
           </div>
           {lesson && <ActionButtons promptText={combinedLessonPrompt} />}
-          <div className="bn-grid">
-            <label className="bn-row">
-              <strong>Saved lesson category</strong>
-              <select className="bn-select" value={savedLessonId} onChange={(e) => loadSavedLesson(e.target.value)}>
-                {SAVED_LESSONS.filter((savedLesson) => !HIDDEN_LESSON_DROPDOWN_IDS.has(savedLesson.id)).map((savedLesson) => (
-                  <option key={savedLesson.id} value={savedLesson.id}>{savedLesson.topic}</option>
-                ))}
-              </select>
-            </label>
-          </div>
+          {showLessonSelector && (
+            <div className="bn-grid">
+              <label className="bn-row">
+                <strong>Saved lesson category</strong>
+                <select className="bn-select" value={savedLessonId} onChange={(e) => loadSavedLesson(e.target.value)}>
+                  {SELECTABLE_SAVED_LESSONS.map((savedLesson) => (
+                    <option key={savedLesson.id} value={savedLesson.id}>{savedLesson.topic}</option>
+                  ))}
+                </select>
+              </label>
+            </div>
+          )}
         </header>
 
         {lesson && (
@@ -1059,4 +1065,6 @@ export default function BengaliTutor({ bengaliVoice = "" }) {
 
 BengaliTutor.propTypes = {
   bengaliVoice: PropTypes.string,
+  initialLesson: PropTypes.object,
+  showLessonSelector: PropTypes.bool,
 };
