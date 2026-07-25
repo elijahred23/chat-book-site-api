@@ -1,7 +1,7 @@
 {
   "id": "greetings-introductions",
   "title": "Greetings and Introductions",
-  "summary": "Meet someone, exchange greetings, and introduce yourself politely.",
+  "summary": "Exchange greetings, introduce yourself and others, respond politely, start conversations, and say goodbye across formal and familiar settings.",
   "level": "beginner",
   "topic": "Greetings and Introductions",
   "focus": "conversation",
@@ -9,278 +9,3243 @@
     {
       "bn": "নমস্কার",
       "pronunciation": "nomoshkar",
-      "en": "hello",
-      "category": "greetings-introductions"
+      "en": "Hello (formal)",
+      "category": "greetings-introductions",
+      "sourcePhrase": "নমস্কার"
     },
     {
-      "bn": "স্বাগতম",
-      "pronunciation": "shagotom",
-      "en": "welcome",
-      "category": "greetings-introductions"
+      "bn": "নমস্তে",
+      "pronunciation": "nomoste",
+      "en": "Namaste",
+      "category": "greetings-introductions",
+      "sourcePhrase": "নমস্তে"
     },
     {
-      "bn": "নাম",
-      "pronunciation": "nam",
-      "en": "name",
-      "category": "greetings-introductions"
+      "bn": "সালাম",
+      "pronunciation": "salam",
+      "en": "Peace / Hello",
+      "category": "greetings-introductions",
+      "sourcePhrase": "সালাম"
     },
     {
-      "bn": "পরিচয়",
-      "pronunciation": "porichoy",
-      "en": "introduction",
-      "category": "greetings-introductions"
+      "bn": "আসসালামু আলাইকুম",
+      "pronunciation": "assalamu alaikum",
+      "en": "Peace be upon you",
+      "category": "greetings-introductions",
+      "sourcePhrase": "আসসালামু আলাইকুম"
+    },
+    {
+      "bn": "ওয়ালাইকুম আসসালাম",
+      "pronunciation": "ojolaikum asosalam",
+      "en": "Peace be upon you too",
+      "category": "greetings-introductions",
+      "sourcePhrase": "ওয়ালাইকুম আসসালাম"
+    },
+    {
+      "bn": "শুভেচ্ছা",
+      "pronunciation": "shubhechha",
+      "en": "Greetings",
+      "category": "greetings-introductions",
+      "sourcePhrase": "শুভেচ্ছা"
+    },
+    {
+      "bn": "হ্যালো",
+      "pronunciation": "hello",
+      "en": "Hello",
+      "category": "greetings-introductions",
+      "sourcePhrase": "হ্যালো"
+    },
+    {
+      "bn": "হাই",
+      "pronunciation": "hai",
+      "en": "Hi",
+      "category": "greetings-introductions",
+      "sourcePhrase": "হাই"
+    },
+    {
+      "bn": "আরে",
+      "pronunciation": "are",
+      "en": "Hey!",
+      "category": "greetings-introductions",
+      "sourcePhrase": "আরে!"
+    },
+    {
+      "bn": "এই",
+      "pronunciation": "ei",
+      "en": "Hey!",
+      "category": "greetings-introductions",
+      "sourcePhrase": "এই!"
+    },
+    {
+      "bn": "কেমন আছ",
+      "pronunciation": "kemon acho",
+      "en": "How are you? (informal)",
+      "category": "greetings-introductions",
+      "sourcePhrase": "কেমন আছ?"
+    },
+    {
+      "bn": "কেমন আছেন",
+      "pronunciation": "kemon achhen",
+      "en": "How are you? (formal)",
+      "category": "greetings-introductions",
+      "sourcePhrase": "কেমন আছেন?"
+    },
+    {
+      "bn": "কী খবর",
+      "pronunciation": "ki khobor",
+      "en": "What's up?",
+      "category": "greetings-introductions",
+      "sourcePhrase": "কী খবর?"
+    },
+    {
+      "bn": "খবর কী",
+      "pronunciation": "khobor ki",
+      "en": "What's new?",
+      "category": "greetings-introductions",
+      "sourcePhrase": "খবর কী?"
+    },
+    {
+      "bn": "কেমন চলছে",
+      "pronunciation": "kemon cholche",
+      "en": "How's it going?",
+      "category": "greetings-introductions",
+      "sourcePhrase": "কেমন চলছে?"
+    },
+    {
+      "bn": "কী অবস্থা",
+      "pronunciation": "ki obostha",
+      "en": "How are things?",
+      "category": "greetings-introductions",
+      "sourcePhrase": "কী অবস্থা?"
+    },
+    {
+      "bn": "মন্দ না",
+      "pronunciation": "mondo na",
+      "en": "Not bad.",
+      "category": "greetings-introductions",
+      "sourcePhrase": "মন্দ না।"
+    },
+    {
+      "bn": "চলে যাচ্ছে",
+      "pronunciation": "chole jacche",
+      "en": "Getting by.",
+      "category": "greetings-introductions",
+      "sourcePhrase": "চলে যাচ্ছে।"
+    },
+    {
+      "bn": "একই রকম",
+      "pronunciation": "eki rokom",
+      "en": "Same as always.",
+      "category": "greetings-introductions",
+      "sourcePhrase": "একই রকম।"
+    },
+    {
+      "bn": "খারাপ না",
+      "pronunciation": "kharap na",
+      "en": "Not too bad.",
+      "category": "greetings-introductions",
+      "sourcePhrase": "খারাপ না।"
+    },
+    {
+      "bn": "আপনি কে",
+      "pronunciation": "apni ke",
+      "en": "Who are you?",
+      "category": "greetings-introductions",
+      "sourcePhrase": "আপনি কে?"
+    },
+    {
+      "bn": "তুমি কে",
+      "pronunciation": "tumi ke",
+      "en": "Who are you?",
+      "category": "greetings-introductions",
+      "sourcePhrase": "তুমি কে?"
+    },
+    {
+      "bn": "আমি রাহিম",
+      "pronunciation": "ami Rahim",
+      "en": "I am Rahim.",
+      "category": "greetings-introductions",
+      "sourcePhrase": "আমি রাহিম।"
     },
     {
       "bn": "ধন্যবাদ",
       "pronunciation": "dhonnobad",
-      "en": "thank you",
-      "category": "greetings-introductions"
+      "en": "Thank you",
+      "category": "greetings-introductions",
+      "sourcePhrase": "ধন্যবাদ"
+    },
+    {
+      "bn": "অনেক ধন্যবাদ",
+      "pronunciation": "ônek dhonnobad",
+      "en": "Thank you very much",
+      "category": "greetings-introductions",
+      "sourcePhrase": "অনেক ধন্যবাদ"
+    },
+    {
+      "bn": "অসংখ্য ধন্যবাদ",
+      "pronunciation": "oshongkhyo dhonnobad",
+      "en": "Many thanks",
+      "category": "greetings-introductions",
+      "sourcePhrase": "অসংখ্য ধন্যবাদ"
+    },
+    {
+      "bn": "আপনাকে ধন্যবাদ",
+      "pronunciation": "apnake dhonnobad",
+      "en": "Thank you.",
+      "category": "greetings-introductions",
+      "sourcePhrase": "আপনাকে ধন্যবাদ।"
+    },
+    {
+      "bn": "দয়া করে",
+      "pronunciation": "doya kore",
+      "en": "Please",
+      "category": "greetings-introductions",
+      "sourcePhrase": "দয়া করে"
+    },
+    {
+      "bn": "অনুগ্রহ করে",
+      "pronunciation": "onugroh kore",
+      "en": "Please (formal)",
+      "category": "greetings-introductions",
+      "sourcePhrase": "অনুগ্রহ করে"
+    },
+    {
+      "bn": "মাফ করবেন",
+      "pronunciation": "maph korben",
+      "en": "Excuse me.",
+      "category": "greetings-introductions",
+      "sourcePhrase": "মাফ করবেন।"
+    },
+    {
+      "bn": "ক্ষমা করবেন",
+      "pronunciation": "khoma korben",
+      "en": "Forgive me.",
+      "category": "greetings-introductions",
+      "sourcePhrase": "ক্ষমা করবেন।"
+    },
+    {
+      "bn": "দুঃখিত",
+      "pronunciation": "dukkhito",
+      "en": "Sorry.",
+      "category": "greetings-introductions",
+      "sourcePhrase": "দুঃখিত।"
+    },
+    {
+      "bn": "ঠিক আছে",
+      "pronunciation": "thik achhe",
+      "en": "That's okay.",
+      "category": "greetings-introductions",
+      "sourcePhrase": "ঠিক আছে।"
+    },
+    {
+      "bn": "অবশ্যই",
+      "pronunciation": "oboshshoi",
+      "en": "Certainly.",
+      "category": "greetings-introductions",
+      "sourcePhrase": "অবশ্যই।"
+    },
+    {
+      "bn": "নিশ্চয়ই",
+      "pronunciation": "nishshoyi",
+      "en": "Of course.",
+      "category": "greetings-introductions",
+      "sourcePhrase": "নিশ্চয়ই।"
+    },
+    {
+      "bn": "স্বাগতম",
+      "pronunciation": "shagotom",
+      "en": "You're welcome.",
+      "category": "greetings-introductions",
+      "sourcePhrase": "স্বাগতম।"
+    },
+    {
+      "bn": "শুভ সকাল",
+      "pronunciation": "shubho shokal",
+      "en": "Good morning",
+      "category": "greetings-introductions",
+      "sourcePhrase": "শুভ সকাল"
+    },
+    {
+      "bn": "শুভ দুপুর",
+      "pronunciation": "shubho Dupur",
+      "en": "Good afternoon",
+      "category": "greetings-introductions",
+      "sourcePhrase": "শুভ দুপুর"
+    },
+    {
+      "bn": "শুভ সন্ধ্যা",
+      "pronunciation": "shubho shondhya",
+      "en": "Good evening",
+      "category": "greetings-introductions",
+      "sourcePhrase": "শুভ সন্ধ্যা"
+    },
+    {
+      "bn": "শুভ রাত্রি",
+      "pronunciation": "shubho ratri",
+      "en": "Good night",
+      "category": "greetings-introductions",
+      "sourcePhrase": "শুভ রাত্রি"
+    },
+    {
+      "bn": "সুপ্রভাত",
+      "pronunciation": "suprobhat",
+      "en": "Good morning (formal/literary)",
+      "category": "greetings-introductions",
+      "sourcePhrase": "সুপ্রভাত"
+    },
+    {
+      "bn": "শুভ দিন",
+      "pronunciation": "shubho din",
+      "en": "Have a nice day",
+      "category": "greetings-introductions",
+      "sourcePhrase": "শুভ দিন"
+    },
+    {
+      "bn": "শুভ যাত্রা",
+      "pronunciation": "shubho jatra",
+      "en": "Have a safe journey",
+      "category": "greetings-introductions",
+      "sourcePhrase": "শুভ যাত্রা"
+    },
+    {
+      "bn": "শুভকামনা",
+      "pronunciation": "shubhokamona",
+      "en": "Best wishes",
+      "category": "greetings-introductions",
+      "sourcePhrase": "শুভকামনা"
+    },
+    {
+      "bn": "শুভ জন্মদিন",
+      "pronunciation": "shubho jonmodin",
+      "en": "Happy Birthday",
+      "category": "greetings-introductions",
+      "sourcePhrase": "শুভ জন্মদিন"
+    },
+    {
+      "bn": "শুভ নববর্ষ",
+      "pronunciation": "shubho noboborsh",
+      "en": "Happy New Year",
+      "category": "greetings-introductions",
+      "sourcePhrase": "শুভ নববর্ষ"
+    },
+    {
+      "bn": "ঈদ মোবারক",
+      "pronunciation": "id mobarok",
+      "en": "Eid Mubarak",
+      "category": "greetings-introductions",
+      "sourcePhrase": "ঈদ মোবারক"
+    },
+    {
+      "bn": "শুভ বিজয়া",
+      "pronunciation": "shubho bijoj",
+      "en": "Happy Bijoya",
+      "category": "greetings-introductions",
+      "sourcePhrase": "শুভ বিজয়া"
+    },
+    {
+      "bn": "শুভ পূজা",
+      "pronunciation": "shubho puja",
+      "en": "Happy Durga Puja",
+      "category": "greetings-introductions",
+      "sourcePhrase": "শুভ পূজা"
     },
     {
       "bn": "বিদায়",
       "pronunciation": "biday",
-      "en": "goodbye",
-      "category": "greetings-introductions"
+      "en": "Goodbye",
+      "category": "greetings-introductions",
+      "sourcePhrase": "বিদায়"
+    },
+    {
+      "bn": "ভালো থাকবেন",
+      "pronunciation": "bhalo thakoben",
+      "en": "Stay well.",
+      "category": "greetings-introductions",
+      "sourcePhrase": "ভালো থাকবেন।"
+    },
+    {
+      "bn": "ভালো থেকো",
+      "pronunciation": "bhalo theko",
+      "en": "Take care.",
+      "category": "greetings-introductions",
+      "sourcePhrase": "ভালো থেকো।"
+    },
+    {
+      "bn": "সাবধানে যেও",
+      "pronunciation": "shobdhone jeo",
+      "en": "Travel safely.",
+      "category": "greetings-introductions",
+      "sourcePhrase": "সাবধানে যেও।"
+    },
+    {
+      "bn": "শুভরাত্রি",
+      "pronunciation": "shubhoratri",
+      "en": "Good night.",
+      "category": "greetings-introductions",
+      "sourcePhrase": "শুভরাত্রি।"
+    },
+    {
+      "bn": "আল্লাহ হাফেজ",
+      "pronunciation": "allah haphej",
+      "en": "May God protect you",
+      "category": "greetings-introductions",
+      "sourcePhrase": "আল্লাহ হাফেজ"
+    },
+    {
+      "bn": "খোদা হাফেজ",
+      "pronunciation": "khoda haphej",
+      "en": "Goodbye (traditional)",
+      "category": "greetings-introductions",
+      "sourcePhrase": "খোদা হাফেজ"
+    },
+    {
+      "bn": "হ্যাঁ",
+      "pronunciation": "haẽ",
+      "en": "Yes.",
+      "category": "greetings-introductions",
+      "sourcePhrase": "হ্যাঁ।"
+    },
+    {
+      "bn": "না",
+      "pronunciation": "na",
+      "en": "No.",
+      "category": "greetings-introductions",
+      "sourcePhrase": "না।"
+    },
+    {
+      "bn": "হয়তো",
+      "pronunciation": "hoyto",
+      "en": "Maybe.",
+      "category": "greetings-introductions",
+      "sourcePhrase": "হয়তো।"
+    },
+    {
+      "bn": "সম্ভবত",
+      "pronunciation": "shombhoboto",
+      "en": "Probably.",
+      "category": "greetings-introductions",
+      "sourcePhrase": "সম্ভবত।"
+    },
+    {
+      "bn": "জানি না",
+      "pronunciation": "jani na",
+      "en": "I don't know.",
+      "category": "greetings-introductions",
+      "sourcePhrase": "জানি না।"
+    },
+    {
+      "bn": "বুঝতে পারছি",
+      "pronunciation": "bujhte parchi",
+      "en": "I understand.",
+      "category": "greetings-introductions",
+      "sourcePhrase": "বুঝতে পারছি।"
+    },
+    {
+      "bn": "আবার বলবেন",
+      "pronunciation": "abar bolben",
+      "en": "Could you say that again?",
+      "category": "greetings-introductions",
+      "sourcePhrase": "আবার বলবেন?"
     }
   ],
   "phrases": [
     {
-      "bn": "নমস্কার, আপনি কেমন আছেন?",
-      "pronunciation": "nomoshkar, apni kemon achhen?",
-      "en": "Hello, how are you?",
-      "context": "A polite greeting",
-      "category": "greetings-introductions"
+      "bn": "নমস্কার",
+      "pronunciation": "nomoshkar",
+      "en": "Hello (formal)",
+      "context": "basic greetings",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "নমস্কার",
+          "pronunciation": "nomoshkar",
+          "en": "Hello"
+        }
+      ]
     },
     {
-      "bn": "আমার নাম মায়া।",
-      "pronunciation": "amar nam Maya.",
-      "en": "My name is Maya.",
-      "context": "Introducing yourself",
-      "category": "greetings-introductions"
+      "bn": "নমস্কার!",
+      "pronunciation": "nomoshkar",
+      "en": "Greetings!",
+      "context": "basic greetings",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "নমস্কার",
+          "pronunciation": "nomoshkar",
+          "en": "Hello"
+        }
+      ]
+    },
+    {
+      "bn": "নমস্তে",
+      "pronunciation": "nomoste",
+      "en": "Namaste",
+      "context": "basic greetings",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "নমস্তে",
+          "pronunciation": "nomoste",
+          "en": "namaste / hello"
+        }
+      ]
+    },
+    {
+      "bn": "সালাম",
+      "pronunciation": "salam",
+      "en": "Peace / Hello",
+      "context": "basic greetings",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "সালাম",
+          "pronunciation": "salam",
+          "en": "peace / hello"
+        }
+      ]
+    },
+    {
+      "bn": "আসসালামু আলাইকুম",
+      "pronunciation": "assalamu alaikum",
+      "en": "Peace be upon you",
+      "context": "basic greetings",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "আসসালামু",
+          "pronunciation": "assalamu",
+          "en": "peace"
+        },
+        {
+          "bn": "আলাইকুম",
+          "pronunciation": "alaikum",
+          "en": "be upon you"
+        }
+      ]
+    },
+    {
+      "bn": "ওয়ালাইকুম আসসালাম",
+      "pronunciation": "ojolaikum asosalam",
+      "en": "Peace be upon you too",
+      "context": "basic greetings",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "ওয়ালাইকুম",
+          "pronunciation": "ojolaikum",
+          "en": "and upon you"
+        },
+        {
+          "bn": "আসসালাম",
+          "pronunciation": "asosalam",
+          "en": "peace"
+        }
+      ]
+    },
+    {
+      "bn": "শুভেচ্ছা",
+      "pronunciation": "shubhechha",
+      "en": "Greetings",
+      "context": "basic greetings",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "শুভেচ্ছা",
+          "pronunciation": "shubhechha",
+          "en": "greetings / best wishes"
+        }
+      ]
+    },
+    {
+      "bn": "হ্যালো",
+      "pronunciation": "hello",
+      "en": "Hello",
+      "context": "basic greetings",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "হ্যালো",
+          "pronunciation": "hello",
+          "en": "hello"
+        }
+      ]
+    },
+    {
+      "bn": "হাই",
+      "pronunciation": "hai",
+      "en": "Hi",
+      "context": "basic greetings",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "হাই",
+          "pronunciation": "hai",
+          "en": "hi"
+        }
+      ]
+    },
+    {
+      "bn": "আরে!",
+      "pronunciation": "are",
+      "en": "Hey!",
+      "context": "basic greetings",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "আরে",
+          "pronunciation": "are",
+          "en": "hey"
+        }
+      ]
+    },
+    {
+      "bn": "এই!",
+      "pronunciation": "ei",
+      "en": "Hey!",
+      "context": "basic greetings",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "এই",
+          "pronunciation": "ei",
+          "en": "this"
+        }
+      ]
+    },
+    {
+      "bn": "কেমন আছ?",
+      "pronunciation": "kemon acho",
+      "en": "How are you? (informal)",
+      "context": "basic greetings",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "কেমন",
+          "pronunciation": "kemon",
+          "en": "how"
+        },
+        {
+          "bn": "আছ",
+          "pronunciation": "acho",
+          "en": "are / have been"
+        }
+      ]
+    },
+    {
+      "bn": "কেমন আছেন?",
+      "pronunciation": "kemon achhen",
+      "en": "How are you? (formal)",
+      "context": "basic greetings",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "কেমন",
+          "pronunciation": "kemon",
+          "en": "how"
+        },
+        {
+          "bn": "আছেন",
+          "pronunciation": "achhen",
+          "en": "are (respectful)"
+        }
+      ]
+    },
+    {
+      "bn": "কী খবর?",
+      "pronunciation": "ki khobor",
+      "en": "What's up?",
+      "context": "basic greetings",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "কী",
+          "pronunciation": "ki",
+          "en": "what"
+        },
+        {
+          "bn": "খবর",
+          "pronunciation": "khobor",
+          "en": "News"
+        }
+      ]
+    },
+    {
+      "bn": "খবর কী?",
+      "pronunciation": "khobor ki",
+      "en": "What's new?",
+      "context": "basic greetings",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "খবর",
+          "pronunciation": "khobor",
+          "en": "News"
+        },
+        {
+          "bn": "কী",
+          "pronunciation": "ki",
+          "en": "what"
+        }
+      ]
+    },
+    {
+      "bn": "সব ঠিক আছে?",
+      "pronunciation": "shob thik achhe",
+      "en": "Is everything okay?",
+      "context": "basic greetings",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "সব",
+          "pronunciation": "shob",
+          "en": "Everything"
+        },
+        {
+          "bn": "ঠিক",
+          "pronunciation": "thik",
+          "en": "right / correct / okay / exactly"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is / has"
+        }
+      ]
+    },
+    {
+      "bn": "কেমন চলছে?",
+      "pronunciation": "kemon cholche",
+      "en": "How's it going?",
+      "context": "basic greetings",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "কেমন",
+          "pronunciation": "kemon",
+          "en": "how"
+        },
+        {
+          "bn": "চলছে",
+          "pronunciation": "cholche",
+          "en": "in progress"
+        }
+      ]
+    },
+    {
+      "bn": "কী অবস্থা?",
+      "pronunciation": "ki obostha",
+      "en": "How are things?",
+      "context": "basic greetings",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "কী",
+          "pronunciation": "ki",
+          "en": "what"
+        },
+        {
+          "bn": "অবস্থা",
+          "pronunciation": "obostha",
+          "en": "condition / state"
+        }
+      ]
+    },
+    {
+      "bn": "আমি ভালো আছি।",
+      "pronunciation": "ami bhalo achi",
+      "en": "I'm fine.",
+      "context": "responses",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "ভালো",
+          "pronunciation": "bhalo",
+          "en": "good"
+        },
+        {
+          "bn": "আছি",
+          "pronunciation": "achi",
+          "en": "am"
+        }
+      ]
+    },
+    {
+      "bn": "আমি খুব ভালো আছি।",
+      "pronunciation": "ami khub bhalo achi",
+      "en": "I'm very well.",
+      "context": "responses",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "খুব",
+          "pronunciation": "khub",
+          "en": "very"
+        },
+        {
+          "bn": "ভালো",
+          "pronunciation": "bhalo",
+          "en": "good"
+        },
+        {
+          "bn": "আছি",
+          "pronunciation": "achi",
+          "en": "am"
+        }
+      ]
+    },
+    {
+      "bn": "আমি মোটামুটি আছি।",
+      "pronunciation": "ami motamuti achi",
+      "en": "I'm okay.",
+      "context": "responses",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "মোটামুটি",
+          "pronunciation": "motamuti",
+          "en": "fairly / approximately"
+        },
+        {
+          "bn": "আছি",
+          "pronunciation": "achi",
+          "en": "am"
+        }
+      ]
+    },
+    {
+      "bn": "ভালো আছি, ধন্যবাদ।",
+      "pronunciation": "bhalo achi dhonnobad",
+      "en": "I'm good, thank you.",
+      "context": "responses",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "ভালো",
+          "pronunciation": "bhalo",
+          "en": "good"
+        },
+        {
+          "bn": "আছি",
+          "pronunciation": "achi",
+          "en": "am"
+        },
+        {
+          "bn": "ধন্যবাদ",
+          "pronunciation": "dhonnobad",
+          "en": "Thank you"
+        }
+      ]
+    },
+    {
+      "bn": "আলহামদুলিল্লাহ ভালো আছি।",
+      "pronunciation": "alohamodulillah bhalo achi",
+      "en": "I'm well, praise be to God.",
+      "context": "responses",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "আলহামদুলিল্লাহ",
+          "pronunciation": "alohamodulillah",
+          "en": "praise be to God"
+        },
+        {
+          "bn": "ভালো",
+          "pronunciation": "bhalo",
+          "en": "good"
+        },
+        {
+          "bn": "আছি",
+          "pronunciation": "achi",
+          "en": "am"
+        }
+      ]
+    },
+    {
+      "bn": "মন্দ না।",
+      "pronunciation": "mondo na",
+      "en": "Not bad.",
+      "context": "responses",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "মন্দ",
+          "pronunciation": "mondo",
+          "en": "bad"
+        },
+        {
+          "bn": "না",
+          "pronunciation": "na",
+          "en": "not"
+        }
+      ]
+    },
+    {
+      "bn": "চলে যাচ্ছে।",
+      "pronunciation": "chole jacche",
+      "en": "Getting by.",
+      "context": "responses",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "চলে",
+          "pronunciation": "chole",
+          "en": "moves / leaves / works"
+        },
+        {
+          "bn": "যাচ্ছে",
+          "pronunciation": "jacche",
+          "en": "is going"
+        }
+      ]
+    },
+    {
+      "bn": "একই রকম।",
+      "pronunciation": "eki rokom",
+      "en": "Same as always.",
+      "context": "responses",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "একই",
+          "pronunciation": "eki",
+          "en": "the same"
+        },
+        {
+          "bn": "রকম",
+          "pronunciation": "rokom",
+          "en": "kind / type"
+        }
+      ]
+    },
+    {
+      "bn": "খারাপ না।",
+      "pronunciation": "kharap na",
+      "en": "Not too bad.",
+      "context": "responses",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "খারাপ",
+          "pronunciation": "kharap",
+          "en": "bad"
+        },
+        {
+          "bn": "না",
+          "pronunciation": "na",
+          "en": "not"
+        }
+      ]
+    },
+    {
+      "bn": "সব ঠিক আছে।",
+      "pronunciation": "shob thik achhe",
+      "en": "Everything is fine.",
+      "context": "responses",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "সব",
+          "pronunciation": "shob",
+          "en": "Everything"
+        },
+        {
+          "bn": "ঠিক",
+          "pronunciation": "thik",
+          "en": "right / correct / okay / exactly"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is / has"
+        }
+      ]
+    },
+    {
+      "bn": "একটু ব্যস্ত আছি।",
+      "pronunciation": "ektu byosto achi",
+      "en": "I'm a little busy.",
+      "context": "responses",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "একটু",
+          "pronunciation": "ektu",
+          "en": "Little"
+        },
+        {
+          "bn": "ব্যস্ত",
+          "pronunciation": "byosto",
+          "en": "busy"
+        },
+        {
+          "bn": "আছি",
+          "pronunciation": "achi",
+          "en": "am"
+        }
+      ]
+    },
+    {
+      "bn": "আজ একটু ক্লান্ত।",
+      "pronunciation": "aj ektu klanto",
+      "en": "I'm a little tired today.",
+      "context": "responses",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "আজ",
+          "pronunciation": "aj",
+          "en": "today"
+        },
+        {
+          "bn": "একটু",
+          "pronunciation": "ektu",
+          "en": "Little"
+        },
+        {
+          "bn": "ক্লান্ত",
+          "pronunciation": "klanto",
+          "en": "tired"
+        }
+      ]
+    },
+    {
+      "bn": "আপনার নাম কী?",
+      "pronunciation": "aponar nam ki",
+      "en": "What is your name? (formal)",
+      "context": "asking someone s name",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "আপনার",
+          "pronunciation": "aponar",
+          "en": "Your"
+        },
+        {
+          "bn": "নাম",
+          "pronunciation": "nam",
+          "en": "name / come down (familiar command)"
+        },
+        {
+          "bn": "কী",
+          "pronunciation": "ki",
+          "en": "what"
+        }
+      ]
+    },
+    {
+      "bn": "তোমার নাম কী?",
+      "pronunciation": "tomar nam ki",
+      "en": "What is your name?",
+      "context": "asking someone s name",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "তোমার",
+          "pronunciation": "tomar",
+          "en": "your"
+        },
+        {
+          "bn": "নাম",
+          "pronunciation": "nam",
+          "en": "name / come down (familiar command)"
+        },
+        {
+          "bn": "কী",
+          "pronunciation": "ki",
+          "en": "what"
+        }
+      ]
+    },
+    {
+      "bn": "তোর নাম কী?",
+      "pronunciation": "tor nam ki",
+      "en": "What's your name? (very close friends)",
+      "context": "asking someone s name",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "তোর",
+          "pronunciation": "tor",
+          "en": "your (intimate)"
+        },
+        {
+          "bn": "নাম",
+          "pronunciation": "nam",
+          "en": "name / come down (familiar command)"
+        },
+        {
+          "bn": "কী",
+          "pronunciation": "ki",
+          "en": "what"
+        }
+      ]
+    },
+    {
+      "bn": "আপনার নামটা কী?",
+      "pronunciation": "aponar namta ki",
+      "en": "What is your name?",
+      "context": "asking someone s name",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "আপনার",
+          "pronunciation": "aponar",
+          "en": "Your"
+        },
+        {
+          "bn": "নামটা",
+          "pronunciation": "namta",
+          "en": "the name"
+        },
+        {
+          "bn": "কী",
+          "pronunciation": "ki",
+          "en": "what"
+        }
+      ]
+    },
+    {
+      "bn": "আপনি কে?",
+      "pronunciation": "apni ke",
+      "en": "Who are you?",
+      "context": "asking someone s name",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "আপনি",
+          "pronunciation": "apni",
+          "en": "you (polite)"
+        },
+        {
+          "bn": "কে",
+          "pronunciation": "ke",
+          "en": "who"
+        }
+      ]
+    },
+    {
+      "bn": "তুমি কে?",
+      "pronunciation": "tumi ke",
+      "en": "Who are you?",
+      "context": "asking someone s name",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "তুমি",
+          "pronunciation": "tumi",
+          "en": "you (familiar)"
+        },
+        {
+          "bn": "কে",
+          "pronunciation": "ke",
+          "en": "who"
+        }
+      ]
+    },
+    {
+      "bn": "আমার নাম রাহিম।",
+      "pronunciation": "amar nam Rahim",
+      "en": "My name is Rahim.",
+      "context": "giving your name",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "আমার",
+          "pronunciation": "amar",
+          "en": "my"
+        },
+        {
+          "bn": "নাম",
+          "pronunciation": "nam",
+          "en": "name / come down (familiar command)"
+        },
+        {
+          "bn": "রাহিম",
+          "pronunciation": "Rahim",
+          "en": "Rahim"
+        }
+      ]
+    },
+    {
+      "bn": "আমি রাহিম।",
+      "pronunciation": "ami Rahim",
+      "en": "I am Rahim.",
+      "context": "giving your name",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "রাহিম",
+          "pronunciation": "Rahim",
+          "en": "Rahim"
+        }
+      ]
+    },
+    {
+      "bn": "সবাই আমাকে রাহিম বলে ডাকে।",
+      "pronunciation": "shobai amake Rahim bole dake",
+      "en": "Everyone calls me Rahim.",
+      "context": "giving your name",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "সবাই",
+          "pronunciation": "shobai",
+          "en": "everyone"
+        },
+        {
+          "bn": "আমাকে",
+          "pronunciation": "amake",
+          "en": "me"
+        },
+        {
+          "bn": "রাহিম",
+          "pronunciation": "Rahim",
+          "en": "Rahim"
+        },
+        {
+          "bn": "বলে",
+          "pronunciation": "bole",
+          "en": "says / by saying"
+        },
+        {
+          "bn": "ডাকে",
+          "pronunciation": "dake",
+          "en": "calls"
+        }
+      ]
+    },
+    {
+      "bn": "আমার পুরো নাম রাহিম আহমেদ।",
+      "pronunciation": "amar puro nam Rahim ahomed",
+      "en": "My full name is Rahim Ahmed.",
+      "context": "giving your name",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "আমার",
+          "pronunciation": "amar",
+          "en": "my"
+        },
+        {
+          "bn": "পুরো",
+          "pronunciation": "puro",
+          "en": "entire / whole"
+        },
+        {
+          "bn": "নাম",
+          "pronunciation": "nam",
+          "en": "name / come down (familiar command)"
+        },
+        {
+          "bn": "রাহিম",
+          "pronunciation": "Rahim",
+          "en": "Rahim"
+        },
+        {
+          "bn": "আহমেদ",
+          "pronunciation": "ahomed",
+          "en": "Ahmed"
+        }
+      ]
+    },
+    {
+      "bn": "আমার ডাকনাম রাজু।",
+      "pronunciation": "amar dakonam raju",
+      "en": "My nickname is Raju.",
+      "context": "giving your name",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "আমার",
+          "pronunciation": "amar",
+          "en": "my"
+        },
+        {
+          "bn": "ডাকনাম",
+          "pronunciation": "dakonam",
+          "en": "nickname"
+        },
+        {
+          "bn": "রাজু",
+          "pronunciation": "raju",
+          "en": "Raju"
+        }
+      ]
+    },
+    {
+      "bn": "আমি যুক্তরাষ্ট্র থেকে এসেছি।",
+      "pronunciation": "ami juktorashtr theke eshechi",
+      "en": "I am from the United States.",
+      "context": "introducing yourself",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "যুক্তরাষ্ট্র",
+          "pronunciation": "juktorashtr",
+          "en": "United States"
+        },
+        {
+          "bn": "থেকে",
+          "pronunciation": "theke",
+          "en": "from"
+        },
+        {
+          "bn": "এসেছি",
+          "pronunciation": "eshechi",
+          "en": "have come"
+        }
+      ]
+    },
+    {
+      "bn": "আমি বাংলাদেশ থেকে এসেছি।",
+      "pronunciation": "ami bangladesh theke eshechi",
+      "en": "I am from Bangladesh.",
+      "context": "introducing yourself",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "বাংলাদেশ",
+          "pronunciation": "bangladesh",
+          "en": "Bangladesh"
+        },
+        {
+          "bn": "থেকে",
+          "pronunciation": "theke",
+          "en": "from"
+        },
+        {
+          "bn": "এসেছি",
+          "pronunciation": "eshechi",
+          "en": "have come"
+        }
+      ]
+    },
+    {
+      "bn": "আমি একজন ছাত্র।",
+      "pronunciation": "ami ekjon chhatro",
+      "en": "I am a student.",
+      "context": "introducing yourself",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "একজন",
+          "pronunciation": "ekjon",
+          "en": "one person"
+        },
+        {
+          "bn": "ছাত্র",
+          "pronunciation": "chhatro",
+          "en": "student / student (male)"
+        }
+      ]
+    },
+    {
+      "bn": "আমি একজন শিক্ষক।",
+      "pronunciation": "ami ekjon shikkhok",
+      "en": "I am a teacher.",
+      "context": "introducing yourself",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "একজন",
+          "pronunciation": "ekjon",
+          "en": "one person"
+        },
+        {
+          "bn": "শিক্ষক",
+          "pronunciation": "shikkhok",
+          "en": "teacher"
+        }
+      ]
+    },
+    {
+      "bn": "আমি একজন সফটওয়্যার ডেভেলপার।",
+      "pronunciation": "ami ekjon software debhelopar",
+      "en": "I am a software developer.",
+      "context": "introducing yourself",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "একজন",
+          "pronunciation": "ekjon",
+          "en": "one person"
+        },
+        {
+          "bn": "সফটওয়্যার",
+          "pronunciation": "software",
+          "en": "software"
+        },
+        {
+          "bn": "ডেভেলপার",
+          "pronunciation": "debhelopar",
+          "en": "developer"
+        }
+      ]
+    },
+    {
+      "bn": "আমি বাংলা শিখছি।",
+      "pronunciation": "ami bangla shikhchhi",
+      "en": "I am learning Bengali.",
+      "context": "introducing yourself",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "বাংলা",
+          "pronunciation": "bangla",
+          "en": "Bengali"
+        },
+        {
+          "bn": "শিখছি",
+          "pronunciation": "shikhchhi",
+          "en": "am learning"
+        }
+      ]
+    },
+    {
+      "bn": "আমি ইংরেজিতে কথা বলি।",
+      "pronunciation": "ami ingrejite kotha boli",
+      "en": "I speak English.",
+      "context": "introducing yourself",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "ইংরেজিতে",
+          "pronunciation": "ingrejite",
+          "en": "in English"
+        },
+        {
+          "bn": "কথা",
+          "pronunciation": "kotha",
+          "en": "speech / words / matter / promise"
+        },
+        {
+          "bn": "বলি",
+          "pronunciation": "boli",
+          "en": "say"
+        }
+      ]
+    },
+    {
+      "bn": "আমি একটু বাংলা বলতে পারি।",
+      "pronunciation": "ami ektu bangla bolte pari",
+      "en": "I can speak a little Bengali.",
+      "context": "introducing yourself",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "একটু",
+          "pronunciation": "ektu",
+          "en": "Little"
+        },
+        {
+          "bn": "বাংলা",
+          "pronunciation": "bangla",
+          "en": "Bengali"
+        },
+        {
+          "bn": "বলতে",
+          "pronunciation": "bolte",
+          "en": "to say"
+        },
+        {
+          "bn": "পারি",
+          "pronunciation": "pari",
+          "en": "can"
+        }
+      ]
+    },
+    {
+      "bn": "আমি বাংলা শিখতে চাই।",
+      "pronunciation": "ami bangla Shikhte chai",
+      "en": "I want to learn Bengali.",
+      "context": "introducing yourself",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "বাংলা",
+          "pronunciation": "bangla",
+          "en": "Bengali"
+        },
+        {
+          "bn": "শিখতে",
+          "pronunciation": "Shikhte",
+          "en": "To learn"
+        },
+        {
+          "bn": "চাই",
+          "pronunciation": "chai",
+          "en": "want / need"
+        }
+      ]
     },
     {
       "bn": "আপনার সঙ্গে পরিচিত হয়ে ভালো লাগল।",
-      "pronunciation": "apnar shonge porichito hoye bhalo laglo.",
+      "pronunciation": "aponar shonge pôrichito hoye bhalo laglo",
       "en": "Nice to meet you.",
-      "context": "Meeting someone politely",
-      "category": "greetings-introductions"
+      "context": "introducing yourself",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "আপনার",
+          "pronunciation": "aponar",
+          "en": "Your"
+        },
+        {
+          "bn": "সঙ্গে",
+          "pronunciation": "shonge",
+          "en": "with"
+        },
+        {
+          "bn": "পরিচিত",
+          "pronunciation": "pôrichito",
+          "en": "known / familiar"
+        },
+        {
+          "bn": "হয়ে",
+          "pronunciation": "hoye",
+          "en": "become"
+        },
+        {
+          "bn": "ভালো",
+          "pronunciation": "bhalo",
+          "en": "good"
+        },
+        {
+          "bn": "লাগল",
+          "pronunciation": "laglo",
+          "en": "took"
+        }
+      ]
     },
     {
-      "bn": "আবার দেখা হবে।",
-      "pronunciation": "abar dekha hobe.",
-      "en": "See you again.",
-      "context": "Saying goodbye",
-      "category": "greetings-introductions"
+      "bn": "এ হলেন আমার বন্ধু।",
+      "pronunciation": "e holen amar bondhu",
+      "en": "This is my friend.",
+      "context": "introducing someone else",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "এ",
+          "pronunciation": "e",
+          "en": "A"
+        },
+        {
+          "bn": "হলেন",
+          "pronunciation": "holen",
+          "en": "is (respectful)"
+        },
+        {
+          "bn": "আমার",
+          "pronunciation": "amar",
+          "en": "my"
+        },
+        {
+          "bn": "বন্ধু",
+          "pronunciation": "bondhu",
+          "en": "friend"
+        }
+      ]
     },
     {
-      "bn": "নমস্কার",
-      "pronunciation": "Nomoskar",
-      "en": "Hello",
-      "context": "A standard respectful greeting.",
-      "category": "greetings-introductions"
+      "bn": "এ আমার ভাই।",
+      "pronunciation": "e amar bhai",
+      "en": "This is my brother.",
+      "context": "introducing someone else",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "এ",
+          "pronunciation": "e",
+          "en": "A"
+        },
+        {
+          "bn": "আমার",
+          "pronunciation": "amar",
+          "en": "my"
+        },
+        {
+          "bn": "ভাই",
+          "pronunciation": "bhai",
+          "en": "Brother / brother"
+        }
+      ]
+    },
+    {
+      "bn": "এ আমার বোন।",
+      "pronunciation": "e amar bon",
+      "en": "This is my sister.",
+      "context": "introducing someone else",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "এ",
+          "pronunciation": "e",
+          "en": "A"
+        },
+        {
+          "bn": "আমার",
+          "pronunciation": "amar",
+          "en": "my"
+        },
+        {
+          "bn": "বোন",
+          "pronunciation": "bon",
+          "en": "Sister / sister"
+        }
+      ]
+    },
+    {
+      "bn": "ইনি আমার শিক্ষক।",
+      "pronunciation": "ini amar shikkhok",
+      "en": "This is my teacher. (respectful)",
+      "context": "introducing someone else",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "ইনি",
+          "pronunciation": "ini",
+          "en": "He is"
+        },
+        {
+          "bn": "আমার",
+          "pronunciation": "amar",
+          "en": "my"
+        },
+        {
+          "bn": "শিক্ষক",
+          "pronunciation": "shikkhok",
+          "en": "teacher"
+        }
+      ]
+    },
+    {
+      "bn": "উনি আমার বাবা।",
+      "pronunciation": "uni amar baba",
+      "en": "This is my father.",
+      "context": "introducing someone else",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "উনি",
+          "pronunciation": "uni",
+          "en": "He is"
+        },
+        {
+          "bn": "আমার",
+          "pronunciation": "amar",
+          "en": "my"
+        },
+        {
+          "bn": "বাবা",
+          "pronunciation": "baba",
+          "en": "father"
+        }
+      ]
+    },
+    {
+      "bn": "উনি আমার মা।",
+      "pronunciation": "uni amar ma",
+      "en": "This is my mother.",
+      "context": "introducing someone else",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "উনি",
+          "pronunciation": "uni",
+          "en": "He is"
+        },
+        {
+          "bn": "আমার",
+          "pronunciation": "amar",
+          "en": "my"
+        },
+        {
+          "bn": "মা",
+          "pronunciation": "ma",
+          "en": "mother"
+        }
+      ]
+    },
+    {
+      "bn": "এ আমার সহকর্মী।",
+      "pronunciation": "e amar shohokormi",
+      "en": "This is my coworker.",
+      "context": "introducing someone else",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "এ",
+          "pronunciation": "e",
+          "en": "A"
+        },
+        {
+          "bn": "আমার",
+          "pronunciation": "amar",
+          "en": "my"
+        },
+        {
+          "bn": "সহকর্মী",
+          "pronunciation": "shohokormi",
+          "en": "colleague"
+        }
+      ]
+    },
+    {
+      "bn": "ও আমার স্ত্রী।",
+      "pronunciation": "o amar stri",
+      "en": "She is my wife.",
+      "context": "introducing someone else",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "ও",
+          "pronunciation": "o",
+          "en": "and / also"
+        },
+        {
+          "bn": "আমার",
+          "pronunciation": "amar",
+          "en": "my"
+        },
+        {
+          "bn": "স্ত্রী",
+          "pronunciation": "stri",
+          "en": "wife"
+        }
+      ]
+    },
+    {
+      "bn": "ও আমার স্বামী।",
+      "pronunciation": "o amar shami",
+      "en": "He is my husband.",
+      "context": "introducing someone else",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "ও",
+          "pronunciation": "o",
+          "en": "and / also"
+        },
+        {
+          "bn": "আমার",
+          "pronunciation": "amar",
+          "en": "my"
+        },
+        {
+          "bn": "স্বামী",
+          "pronunciation": "shami",
+          "en": "husband"
+        }
+      ]
+    },
+    {
+      "bn": "আপনার সঙ্গে দেখা হয়ে ভালো লাগল।",
+      "pronunciation": "aponar shonge dekha hoye bhalo laglo",
+      "en": "Nice to meet you.",
+      "context": "meeting someone",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "আপনার",
+          "pronunciation": "aponar",
+          "en": "Your"
+        },
+        {
+          "bn": "সঙ্গে",
+          "pronunciation": "shonge",
+          "en": "with"
+        },
+        {
+          "bn": "দেখা",
+          "pronunciation": "dekha",
+          "en": "seeing / meeting / seen / to see"
+        },
+        {
+          "bn": "হয়ে",
+          "pronunciation": "hoye",
+          "en": "become"
+        },
+        {
+          "bn": "ভালো",
+          "pronunciation": "bhalo",
+          "en": "good"
+        },
+        {
+          "bn": "লাগল",
+          "pronunciation": "laglo",
+          "en": "took"
+        }
+      ]
+    },
+    {
+      "bn": "তোমার সঙ্গে দেখা হয়ে ভালো লাগল।",
+      "pronunciation": "tomar shonge dekha hoye bhalo laglo",
+      "en": "Nice meeting you.",
+      "context": "meeting someone",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "তোমার",
+          "pronunciation": "tomar",
+          "en": "your"
+        },
+        {
+          "bn": "সঙ্গে",
+          "pronunciation": "shonge",
+          "en": "with"
+        },
+        {
+          "bn": "দেখা",
+          "pronunciation": "dekha",
+          "en": "seeing / meeting / seen / to see"
+        },
+        {
+          "bn": "হয়ে",
+          "pronunciation": "hoye",
+          "en": "become"
+        },
+        {
+          "bn": "ভালো",
+          "pronunciation": "bhalo",
+          "en": "good"
+        },
+        {
+          "bn": "লাগল",
+          "pronunciation": "laglo",
+          "en": "took"
+        }
+      ]
+    },
+    {
+      "bn": "অনেক দিন পরে দেখা।",
+      "pronunciation": "ônek din pore dekha",
+      "en": "Long time no see.",
+      "context": "meeting someone",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "অনেক",
+          "pronunciation": "ônek",
+          "en": "very / many / much"
+        },
+        {
+          "bn": "দিন",
+          "pronunciation": "din",
+          "en": "day / please give"
+        },
+        {
+          "bn": "পরে",
+          "pronunciation": "pore",
+          "en": "after / later / wears"
+        },
+        {
+          "bn": "দেখা",
+          "pronunciation": "dekha",
+          "en": "seeing / meeting / seen / to see"
+        }
+      ]
+    },
+    {
+      "bn": "আবার দেখা হলো।",
+      "pronunciation": "abar dekha holo",
+      "en": "We meet again.",
+      "context": "meeting someone",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "আবার",
+          "pronunciation": "abar",
+          "en": "again"
+        },
+        {
+          "bn": "দেখা",
+          "pronunciation": "dekha",
+          "en": "seeing / meeting / seen / to see"
+        },
+        {
+          "bn": "হলো",
+          "pronunciation": "holo",
+          "en": "done"
+        }
+      ]
+    },
+    {
+      "bn": "তোমাকে দেখে ভালো লাগছে।",
+      "pronunciation": "tomake dekhe bhalo lagche",
+      "en": "It's good to see you.",
+      "context": "meeting someone",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "তোমাকে",
+          "pronunciation": "tomake",
+          "en": "you"
+        },
+        {
+          "bn": "দেখে",
+          "pronunciation": "dekhe",
+          "en": "see"
+        },
+        {
+          "bn": "ভালো",
+          "pronunciation": "bhalo",
+          "en": "good"
+        },
+        {
+          "bn": "লাগছে",
+          "pronunciation": "lagche",
+          "en": "feeling"
+        }
+      ]
+    },
+    {
+      "bn": "অনেক দিন পর তোমাকে দেখলাম।",
+      "pronunciation": "ônek din por tomake dekhlam",
+      "en": "I saw you after a long time.",
+      "context": "meeting someone",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "অনেক",
+          "pronunciation": "ônek",
+          "en": "very / many / much"
+        },
+        {
+          "bn": "দিন",
+          "pronunciation": "din",
+          "en": "day / please give"
+        },
+        {
+          "bn": "পর",
+          "pronunciation": "por",
+          "en": "after"
+        },
+        {
+          "bn": "তোমাকে",
+          "pronunciation": "tomake",
+          "en": "you"
+        },
+        {
+          "bn": "দেখলাম",
+          "pronunciation": "dekhlam",
+          "en": "I saw"
+        }
+      ]
+    },
+    {
+      "bn": "আপনাকে দেখে খুব ভালো লাগছে।",
+      "pronunciation": "apnake dekhe khub bhalo lagche",
+      "en": "It's wonderful to see you.",
+      "context": "meeting someone",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "আপনাকে",
+          "pronunciation": "apnake",
+          "en": "to you"
+        },
+        {
+          "bn": "দেখে",
+          "pronunciation": "dekhe",
+          "en": "see"
+        },
+        {
+          "bn": "খুব",
+          "pronunciation": "khub",
+          "en": "very"
+        },
+        {
+          "bn": "ভালো",
+          "pronunciation": "bhalo",
+          "en": "good"
+        },
+        {
+          "bn": "লাগছে",
+          "pronunciation": "lagche",
+          "en": "feeling"
+        }
+      ]
     },
     {
       "bn": "ধন্যবাদ",
-      "pronunciation": "Dhonnobad",
+      "pronunciation": "dhonnobad",
       "en": "Thank you",
-      "context": "Expressing gratitude.",
-      "category": "greetings-introductions"
+      "context": "polite expressions",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "ধন্যবাদ",
+          "pronunciation": "dhonnobad",
+          "en": "Thank you"
+        }
+      ]
     },
     {
-      "bn": "আমার নাম...",
-      "pronunciation": "Amar naam...",
-      "en": "My name is...",
-      "context": "Introducing yourself.",
-      "category": "greetings-introductions"
+      "bn": "অনেক ধন্যবাদ",
+      "pronunciation": "ônek dhonnobad",
+      "en": "Thank you very much",
+      "context": "polite expressions",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "অনেক",
+          "pronunciation": "ônek",
+          "en": "very / many / much"
+        },
+        {
+          "bn": "ধন্যবাদ",
+          "pronunciation": "dhonnobad",
+          "en": "Thank you"
+        }
+      ]
     },
     {
-      "bn": "আপনার নাম কি?",
-      "pronunciation": "Aapnar naam ki?",
-      "en": "What is your name?",
-      "context": "Asking someone's name politely.",
-      "category": "greetings-introductions"
+      "bn": "অসংখ্য ধন্যবাদ",
+      "pronunciation": "oshongkhyo dhonnobad",
+      "en": "Many thanks",
+      "context": "polite expressions",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "অসংখ্য",
+          "pronunciation": "oshongkhyo",
+          "en": "countless"
+        },
+        {
+          "bn": "ধন্যবাদ",
+          "pronunciation": "dhonnobad",
+          "en": "Thank you"
+        }
+      ]
     },
     {
-      "bn": "আমি আমার পরিচয় দিলাম।",
-      "pronunciation": "Ami amar porichoy dilam.",
-      "en": "I gave my introduction.",
-      "context": "Introducing oneself.",
-      "category": "greetings-introductions"
+      "bn": "আপনাকে ধন্যবাদ।",
+      "pronunciation": "apnake dhonnobad",
+      "en": "Thank you.",
+      "context": "polite expressions",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "আপনাকে",
+          "pronunciation": "apnake",
+          "en": "to you"
+        },
+        {
+          "bn": "ধন্যবাদ",
+          "pronunciation": "dhonnobad",
+          "en": "Thank you"
+        }
+      ]
     },
     {
-      "bn": "সুপ্রভাত, অনামিকা।",
-      "pronunciation": "Suprobhaat, Anamika.",
-      "en": "Good Morning, Anamika.",
-      "context": "A friendly morning greeting.",
-      "category": "greetings-introductions"
-    },
-    {
-      "bn": "কেমন আছো?",
-      "pronunciation": "Kemon achho?",
-      "en": "How are you?",
-      "context": "Informal greeting to a peer or younger person.",
-      "category": "greetings-introductions"
-    },
-    {
-      "bn": "ভালো আছি",
-      "pronunciation": "Bhalo achhi",
-      "en": "I am fine",
-      "context": "Standard response to 'How are you?'",
-      "category": "greetings-introductions"
-    },
-    {
-      "bn": "তুমি কোথায় যাও?",
-      "pronunciation": "Tumi kothai jao?",
-      "en": "Where are you going?",
-      "context": "Asking about someone's destination informally.",
-      "category": "greetings-introductions"
-    },
-    {
-      "bn": "কি খবর?",
-      "pronunciation": "Ki khobor?",
-      "en": "What's the news?",
-      "context": "Equivalent to 'What's up?'",
-      "category": "greetings-introductions"
-    },
-    {
-      "bn": "কৃপয়া",
-      "pronunciation": "Kripaya",
+      "bn": "দয়া করে",
+      "pronunciation": "doya kore",
       "en": "Please",
-      "context": "Making a polite request.",
-      "category": "greetings-introductions"
+      "context": "polite expressions",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "দয়া",
+          "pronunciation": "doya",
+          "en": "kindness / please"
+        },
+        {
+          "bn": "করে",
+          "pronunciation": "kore",
+          "en": "does / by doing"
+        }
+      ]
     },
     {
-      "bn": "ক্ষমা করুন",
-      "pronunciation": "Khama korun",
-      "en": "Excuse me / Sorry",
-      "context": "Apologizing or asking for attention.",
-      "category": "greetings-introductions"
+      "bn": "অনুগ্রহ করে",
+      "pronunciation": "onugroh kore",
+      "en": "Please (formal)",
+      "context": "polite expressions",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "অনুগ্রহ",
+          "pronunciation": "onugroh",
+          "en": "kindness / favor"
+        },
+        {
+          "bn": "করে",
+          "pronunciation": "kore",
+          "en": "does / by doing"
+        }
+      ]
     },
     {
-      "bn": "আমি বুঝতে পারছি না",
-      "pronunciation": "Ami bujhte parchi na",
-      "en": "I can't understand",
-      "context": "Expressing lack of comprehension.",
-      "category": "greetings-introductions"
+      "bn": "মাফ করবেন।",
+      "pronunciation": "maph korben",
+      "en": "Excuse me.",
+      "context": "polite expressions",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "মাফ",
+          "pronunciation": "maph",
+          "en": "excuse / forgiveness"
+        },
+        {
+          "bn": "করবেন",
+          "pronunciation": "korben",
+          "en": "will do (polite)"
+        }
+      ]
     },
     {
-      "bn": "এইটা কি?",
-      "pronunciation": "Eita ki?",
-      "en": "What is this?",
-      "context": "Asking about an object.",
-      "category": "greetings-introductions"
+      "bn": "ক্ষমা করবেন।",
+      "pronunciation": "khoma korben",
+      "en": "Forgive me.",
+      "context": "polite expressions",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "ক্ষমা",
+          "pronunciation": "khoma",
+          "en": "Forgiveness"
+        },
+        {
+          "bn": "করবেন",
+          "pronunciation": "korben",
+          "en": "will do (polite)"
+        }
+      ]
     },
     {
-      "bn": "কত টাকা?",
-      "pronunciation": "Koto taka?",
-      "en": "How much?",
-      "context": "Inquiring about price.",
-      "category": "greetings-introductions"
+      "bn": "দুঃখিত।",
+      "pronunciation": "dukkhito",
+      "en": "Sorry.",
+      "context": "polite expressions",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "দুঃখিত",
+          "pronunciation": "dukkhito",
+          "en": "sorry"
+        }
+      ]
     },
     {
-      "bn": "আমি বেঙ্গলি বলতে পারি",
-      "pronunciation": "Aami Bengali bolte pari",
-      "en": "I can speak Bengali",
-      "context": "Stating language proficiency.",
-      "category": "greetings-introductions"
+      "bn": "আমি আন্তরিকভাবে দুঃখিত।",
+      "pronunciation": "ami antorikobhabe dukkhito",
+      "en": "I am sincerely sorry.",
+      "context": "polite expressions",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "আন্তরিকভাবে",
+          "pronunciation": "antorikobhabe",
+          "en": "sincerely"
+        },
+        {
+          "bn": "দুঃখিত",
+          "pronunciation": "dukkhito",
+          "en": "sorry"
+        }
+      ]
     },
     {
-      "bn": "আপনি কেমন?",
-      "pronunciation": "Aapni kemon?",
-      "en": "How about you?",
-      "context": "Returning a greeting politely.",
-      "category": "greetings-introductions"
+      "bn": "কোনো সমস্যা নেই।",
+      "pronunciation": "kono shomoshsha nei",
+      "en": "No problem.",
+      "context": "polite expressions",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "কোনো",
+          "pronunciation": "kono",
+          "en": "any"
+        },
+        {
+          "bn": "সমস্যা",
+          "pronunciation": "shomoshsha",
+          "en": "problem"
+        },
+        {
+          "bn": "নেই",
+          "pronunciation": "nei",
+          "en": "is not there / does not have"
+        }
+      ]
     },
     {
-      "bn": "ভালো লাগলো",
-      "pronunciation": "Bhalo laglo",
-      "en": "Felt good",
-      "context": "Expressing satisfaction.",
-      "category": "greetings-introductions"
+      "bn": "ঠিক আছে।",
+      "pronunciation": "thik achhe",
+      "en": "That's okay.",
+      "context": "polite expressions",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "ঠিক",
+          "pronunciation": "thik",
+          "en": "right / correct / okay / exactly"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is / has"
+        }
+      ]
     },
     {
-      "bn": "কোথায় থাকেন?",
-      "pronunciation": "Kothay thaken?",
+      "bn": "অবশ্যই।",
+      "pronunciation": "oboshshoi",
+      "en": "Certainly.",
+      "context": "polite expressions",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "অবশ্যই",
+          "pronunciation": "oboshshoi",
+          "en": "certainly"
+        }
+      ]
+    },
+    {
+      "bn": "নিশ্চয়ই।",
+      "pronunciation": "nishshoyi",
+      "en": "Of course.",
+      "context": "polite expressions",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "নিশ্চয়ই",
+          "pronunciation": "nishshoyi",
+          "en": "surely"
+        }
+      ]
+    },
+    {
+      "bn": "স্বাগতম।",
+      "pronunciation": "shagotom",
+      "en": "You're welcome.",
+      "context": "polite expressions",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "স্বাগতম",
+          "pronunciation": "shagotom",
+          "en": "welcome"
+        }
+      ]
+    },
+    {
+      "bn": "শুভ সকাল",
+      "pronunciation": "shubho shokal",
+      "en": "Good morning",
+      "context": "time based greetings",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "শুভ",
+          "pronunciation": "shubho",
+          "en": "happy"
+        },
+        {
+          "bn": "সকাল",
+          "pronunciation": "shokal",
+          "en": "morning"
+        }
+      ]
+    },
+    {
+      "bn": "শুভ দুপুর",
+      "pronunciation": "shubho Dupur",
+      "en": "Good afternoon",
+      "context": "time based greetings",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "শুভ",
+          "pronunciation": "shubho",
+          "en": "happy"
+        },
+        {
+          "bn": "দুপুর",
+          "pronunciation": "Dupur",
+          "en": "Noon / afternoon / noon"
+        }
+      ]
+    },
+    {
+      "bn": "শুভ সন্ধ্যা",
+      "pronunciation": "shubho shondhya",
+      "en": "Good evening",
+      "context": "time based greetings",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "শুভ",
+          "pronunciation": "shubho",
+          "en": "happy"
+        },
+        {
+          "bn": "সন্ধ্যা",
+          "pronunciation": "shondhya",
+          "en": "Evening / evening"
+        }
+      ]
+    },
+    {
+      "bn": "শুভ রাত্রি",
+      "pronunciation": "shubho ratri",
+      "en": "Good night",
+      "context": "time based greetings",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "শুভ",
+          "pronunciation": "shubho",
+          "en": "happy"
+        },
+        {
+          "bn": "রাত্রি",
+          "pronunciation": "ratri",
+          "en": "night"
+        }
+      ]
+    },
+    {
+      "bn": "সুপ্রভাত",
+      "pronunciation": "suprobhat",
+      "en": "Good morning (formal/literary)",
+      "context": "time based greetings",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "সুপ্রভাত",
+          "pronunciation": "suprobhat",
+          "en": "good morning"
+        }
+      ]
+    },
+    {
+      "bn": "শুভ দিন",
+      "pronunciation": "shubho din",
+      "en": "Have a nice day",
+      "context": "time based greetings",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "শুভ",
+          "pronunciation": "shubho",
+          "en": "happy"
+        },
+        {
+          "bn": "দিন",
+          "pronunciation": "din",
+          "en": "day / please give"
+        }
+      ]
+    },
+    {
+      "bn": "শুভ যাত্রা",
+      "pronunciation": "shubho jatra",
+      "en": "Have a safe journey",
+      "context": "time based greetings",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "শুভ",
+          "pronunciation": "shubho",
+          "en": "happy"
+        },
+        {
+          "bn": "যাত্রা",
+          "pronunciation": "jatra",
+          "en": "journey"
+        }
+      ]
+    },
+    {
+      "bn": "শুভকামনা",
+      "pronunciation": "shubhokamona",
+      "en": "Best wishes",
+      "context": "time based greetings",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "শুভকামনা",
+          "pronunciation": "shubhokamona",
+          "en": "best wishes"
+        }
+      ]
+    },
+    {
+      "bn": "শুভ জন্মদিন",
+      "pronunciation": "shubho jonmodin",
+      "en": "Happy Birthday",
+      "context": "time based greetings",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "শুভ",
+          "pronunciation": "shubho",
+          "en": "happy"
+        },
+        {
+          "bn": "জন্মদিন",
+          "pronunciation": "jonmodin",
+          "en": "birthday"
+        }
+      ]
+    },
+    {
+      "bn": "শুভ নববর্ষ",
+      "pronunciation": "shubho noboborsh",
+      "en": "Happy New Year",
+      "context": "time based greetings",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "শুভ",
+          "pronunciation": "shubho",
+          "en": "happy"
+        },
+        {
+          "bn": "নববর্ষ",
+          "pronunciation": "noboborsh",
+          "en": "New Year"
+        }
+      ]
+    },
+    {
+      "bn": "ঈদ মোবারক",
+      "pronunciation": "id mobarok",
+      "en": "Eid Mubarak",
+      "context": "time based greetings",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "ঈদ",
+          "pronunciation": "id",
+          "en": "Eid"
+        },
+        {
+          "bn": "মোবারক",
+          "pronunciation": "mobarok",
+          "en": "blessed / greetings"
+        }
+      ]
+    },
+    {
+      "bn": "শুভ বিজয়া",
+      "pronunciation": "shubho bijoj",
+      "en": "Happy Bijoya",
+      "context": "time based greetings",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "শুভ",
+          "pronunciation": "shubho",
+          "en": "happy"
+        },
+        {
+          "bn": "বিজয়া",
+          "pronunciation": "bijoj",
+          "en": "Bijoya"
+        }
+      ]
+    },
+    {
+      "bn": "শুভ পূজা",
+      "pronunciation": "shubho puja",
+      "en": "Happy Durga Puja",
+      "context": "time based greetings",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "শুভ",
+          "pronunciation": "shubho",
+          "en": "happy"
+        },
+        {
+          "bn": "পূজা",
+          "pronunciation": "puja",
+          "en": "Puja / worship"
+        }
+      ]
+    },
+    {
+      "bn": "বিদায়",
+      "pronunciation": "biday",
+      "en": "Goodbye",
+      "context": "saying goodbye",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "বিদায়",
+          "pronunciation": "biday",
+          "en": "goodbye"
+        }
+      ]
+    },
+    {
+      "bn": "ভালো থাকবেন।",
+      "pronunciation": "bhalo thakoben",
+      "en": "Stay well.",
+      "context": "saying goodbye",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "ভালো",
+          "pronunciation": "bhalo",
+          "en": "good"
+        },
+        {
+          "bn": "থাকবেন",
+          "pronunciation": "thakoben",
+          "en": "stay (respectful)"
+        }
+      ]
+    },
+    {
+      "bn": "ভালো থেকো।",
+      "pronunciation": "bhalo theko",
+      "en": "Take care.",
+      "context": "saying goodbye",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "ভালো",
+          "pronunciation": "bhalo",
+          "en": "good"
+        },
+        {
+          "bn": "থেকো",
+          "pronunciation": "theko",
+          "en": "stay (familiar)"
+        }
+      ]
+    },
+    {
+      "bn": "আবার দেখা হবে।",
+      "pronunciation": "abar dekha hobe",
+      "en": "See you again.",
+      "context": "saying goodbye",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "আবার",
+          "pronunciation": "abar",
+          "en": "again"
+        },
+        {
+          "bn": "দেখা",
+          "pronunciation": "dekha",
+          "en": "seeing / meeting / seen / to see"
+        },
+        {
+          "bn": "হবে",
+          "pronunciation": "hobe",
+          "en": "will be"
+        }
+      ]
+    },
+    {
+      "bn": "পরে দেখা হবে।",
+      "pronunciation": "pore dekha hobe",
+      "en": "See you later.",
+      "context": "saying goodbye",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "পরে",
+          "pronunciation": "pore",
+          "en": "after / later / wears"
+        },
+        {
+          "bn": "দেখা",
+          "pronunciation": "dekha",
+          "en": "seeing / meeting / seen / to see"
+        },
+        {
+          "bn": "হবে",
+          "pronunciation": "hobe",
+          "en": "will be"
+        }
+      ]
+    },
+    {
+      "bn": "কাল দেখা হবে।",
+      "pronunciation": "kal dekha hobe",
+      "en": "See you tomorrow.",
+      "context": "saying goodbye",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "কাল",
+          "pronunciation": "kal",
+          "en": "tomorrow / yesterday / time"
+        },
+        {
+          "bn": "দেখা",
+          "pronunciation": "dekha",
+          "en": "seeing / meeting / seen / to see"
+        },
+        {
+          "bn": "হবে",
+          "pronunciation": "hobe",
+          "en": "will be"
+        }
+      ]
+    },
+    {
+      "bn": "শিগগির দেখা হবে।",
+      "pronunciation": "shigogir dekha hobe",
+      "en": "See you soon.",
+      "context": "saying goodbye",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "শিগগির",
+          "pronunciation": "shigogir",
+          "en": "soon"
+        },
+        {
+          "bn": "দেখা",
+          "pronunciation": "dekha",
+          "en": "seeing / meeting / seen / to see"
+        },
+        {
+          "bn": "হবে",
+          "pronunciation": "hobe",
+          "en": "will be"
+        }
+      ]
+    },
+    {
+      "bn": "সাবধানে যেও।",
+      "pronunciation": "shobdhone jeo",
+      "en": "Travel safely.",
+      "context": "saying goodbye",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "সাবধানে",
+          "pronunciation": "shobdhone",
+          "en": "Carefully"
+        },
+        {
+          "bn": "যেও",
+          "pronunciation": "jeo",
+          "en": "go"
+        }
+      ]
+    },
+    {
+      "bn": "শুভরাত্রি।",
+      "pronunciation": "shubhoratri",
+      "en": "Good night.",
+      "context": "saying goodbye",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "শুভরাত্রি",
+          "pronunciation": "shubhoratri",
+          "en": "good night"
+        }
+      ]
+    },
+    {
+      "bn": "আল্লাহ হাফেজ",
+      "pronunciation": "allah haphej",
+      "en": "May God protect you",
+      "context": "saying goodbye",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "আল্লাহ",
+          "pronunciation": "allah",
+          "en": "Allah / God"
+        },
+        {
+          "bn": "হাফেজ",
+          "pronunciation": "haphej",
+          "en": "protector"
+        }
+      ]
+    },
+    {
+      "bn": "খোদা হাফেজ",
+      "pronunciation": "khoda haphej",
+      "en": "Goodbye (traditional)",
+      "context": "saying goodbye",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "খোদা",
+          "pronunciation": "khoda",
+          "en": "God"
+        },
+        {
+          "bn": "হাফেজ",
+          "pronunciation": "haphej",
+          "en": "protector"
+        }
+      ]
+    },
+    {
+      "bn": "আপনি কোথা থেকে এসেছেন?",
+      "pronunciation": "apni kotha theke eshechhen",
+      "en": "Where are you from?",
+      "context": "useful conversation starters",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "আপনি",
+          "pronunciation": "apni",
+          "en": "you (polite)"
+        },
+        {
+          "bn": "কোথা",
+          "pronunciation": "kotha",
+          "en": "where"
+        },
+        {
+          "bn": "থেকে",
+          "pronunciation": "theke",
+          "en": "from"
+        },
+        {
+          "bn": "এসেছেন",
+          "pronunciation": "eshechhen",
+          "en": "have come (respectful)"
+        }
+      ]
+    },
+    {
+      "bn": "তুমি কোথায় থাকো?",
+      "pronunciation": "tumi kothay thako",
       "en": "Where do you live?",
-      "context": "Asking about residence formally.",
-      "category": "greetings-introductions"
+      "context": "useful conversation starters",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "তুমি",
+          "pronunciation": "tumi",
+          "en": "you (familiar)"
+        },
+        {
+          "bn": "কোথায়",
+          "pronunciation": "kothay",
+          "en": "where"
+        },
+        {
+          "bn": "থাকো",
+          "pronunciation": "thako",
+          "en": "stay"
+        }
+      ]
     },
     {
-      "bn": "আমার বাড়ি...",
-      "pronunciation": "Amar bari...",
-      "en": "My house is...",
-      "context": "Describing your home location.",
-      "category": "greetings-introductions"
+      "bn": "আপনি কী করেন?",
+      "pronunciation": "apni ki koren",
+      "en": "What do you do?",
+      "context": "useful conversation starters",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "আপনি",
+          "pronunciation": "apni",
+          "en": "you (polite)"
+        },
+        {
+          "bn": "কী",
+          "pronunciation": "ki",
+          "en": "what"
+        },
+        {
+          "bn": "করেন",
+          "pronunciation": "koren",
+          "en": "do / does (respectful)"
+        }
+      ]
     },
     {
-      "bn": "তুমি কি খেয়েছো?",
-      "pronunciation": "Tumi ki kheyechho?",
-      "en": "Do you eat?",
-      "context": "Informal inquiry about eating.",
-      "category": "greetings-introductions"
+      "bn": "তুমি কী কাজ করো?",
+      "pronunciation": "tumi ki kaj koro",
+      "en": "What do you do for work?",
+      "context": "useful conversation starters",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "তুমি",
+          "pronunciation": "tumi",
+          "en": "you (familiar)"
+        },
+        {
+          "bn": "কী",
+          "pronunciation": "ki",
+          "en": "what"
+        },
+        {
+          "bn": "কাজ",
+          "pronunciation": "kaj",
+          "en": "work / task / function"
+        },
+        {
+          "bn": "করো",
+          "pronunciation": "koro",
+          "en": "you do"
+        }
+      ]
     },
     {
-      "bn": "আমি খাই নি",
-      "pronunciation": "Ami khai ni",
-      "en": "I did not eat",
-      "context": "Stating you haven't eaten.",
-      "category": "greetings-introductions"
+      "bn": "আপনি কি ছাত্র?",
+      "pronunciation": "apni ki chhatro",
+      "en": "Are you a student?",
+      "context": "useful conversation starters",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "আপনি",
+          "pronunciation": "apni",
+          "en": "you (polite)"
+        },
+        {
+          "bn": "কি",
+          "pronunciation": "ki",
+          "en": "what / yes-no question marker"
+        },
+        {
+          "bn": "ছাত্র",
+          "pronunciation": "chhatro",
+          "en": "student / student (male)"
+        }
+      ]
     },
     {
-      "bn": "খাওয়া শেষ হয়েছে",
-      "pronunciation": "Khawa shesh hoyeche",
-      "en": "Eating is done",
-      "context": "Indicating meal completion.",
-      "category": "greetings-introductions"
+      "bn": "আপনি কি বাংলা বলেন?",
+      "pronunciation": "apni ki bangla bolen",
+      "en": "Do you speak Bengali?",
+      "context": "useful conversation starters",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "আপনি",
+          "pronunciation": "apni",
+          "en": "you (polite)"
+        },
+        {
+          "bn": "কি",
+          "pronunciation": "ki",
+          "en": "what / yes-no question marker"
+        },
+        {
+          "bn": "বাংলা",
+          "pronunciation": "bangla",
+          "en": "Bengali"
+        },
+        {
+          "bn": "বলেন",
+          "pronunciation": "bolen",
+          "en": "says (respectful)"
+        }
+      ]
     },
     {
-      "bn": "আজ কি দিন?",
-      "pronunciation": "Aaj ki din?",
-      "en": "What day is it today?",
-      "context": "Asking for the day of the week.",
-      "category": "greetings-introductions"
+      "bn": "আপনি কতদিন ধরে বাংলা শিখছেন?",
+      "pronunciation": "apni kotodin dhore bangla shikhochhen",
+      "en": "How long have you been learning Bengali?",
+      "context": "useful conversation starters",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "আপনি",
+          "pronunciation": "apni",
+          "en": "you (polite)"
+        },
+        {
+          "bn": "কতদিন",
+          "pronunciation": "kotodin",
+          "en": "how long"
+        },
+        {
+          "bn": "ধরে",
+          "pronunciation": "dhore",
+          "en": "holding / for / since"
+        },
+        {
+          "bn": "বাংলা",
+          "pronunciation": "bangla",
+          "en": "Bengali"
+        },
+        {
+          "bn": "শিখছেন",
+          "pronunciation": "shikhochhen",
+          "en": "are learning (respectful)"
+        }
+      ]
     },
     {
-      "bn": "সুন্দর",
-      "pronunciation": "Shundor",
-      "en": "Beautiful",
-      "context": "Describing something aesthetically pleasing.",
-      "category": "greetings-introductions"
+      "bn": "আপনার বয়স কত?",
+      "pronunciation": "aponar boyosh koto",
+      "en": "How old are you?",
+      "context": "useful conversation starters",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "আপনার",
+          "pronunciation": "aponar",
+          "en": "Your"
+        },
+        {
+          "bn": "বয়স",
+          "pronunciation": "boyosh",
+          "en": "age"
+        },
+        {
+          "bn": "কত",
+          "pronunciation": "koto",
+          "en": "how much / many"
+        }
+      ]
     },
     {
-      "bn": "ভালো",
-      "pronunciation": "Bhalo",
-      "en": "Good",
-      "context": "A general positive adjective.",
-      "category": "greetings-introductions"
+      "bn": "আপনার পরিবার কেমন আছে?",
+      "pronunciation": "aponar poribar kemon achhe",
+      "en": "How is your family?",
+      "context": "useful conversation starters",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "আপনার",
+          "pronunciation": "aponar",
+          "en": "Your"
+        },
+        {
+          "bn": "পরিবার",
+          "pronunciation": "poribar",
+          "en": "family"
+        },
+        {
+          "bn": "কেমন",
+          "pronunciation": "kemon",
+          "en": "how"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is / has"
+        }
+      ]
     },
     {
-      "bn": "খারাপ",
-      "pronunciation": "Kharap",
-      "en": "Bad",
-      "context": "A general negative adjective.",
-      "category": "greetings-introductions"
+      "bn": "আপনি কি আগে এখানে এসেছেন?",
+      "pronunciation": "apni ki age ekhane eshechhen",
+      "en": "Have you been here before?",
+      "context": "useful conversation starters",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "আপনি",
+          "pronunciation": "apni",
+          "en": "you (polite)"
+        },
+        {
+          "bn": "কি",
+          "pronunciation": "ki",
+          "en": "what / yes-no question marker"
+        },
+        {
+          "bn": "আগে",
+          "pronunciation": "age",
+          "en": "Before"
+        },
+        {
+          "bn": "এখানে",
+          "pronunciation": "ekhane",
+          "en": "here"
+        },
+        {
+          "bn": "এসেছেন",
+          "pronunciation": "eshechhen",
+          "en": "have come (respectful)"
+        }
+      ]
     },
     {
-      "bn": "চলুন যাই",
-      "pronunciation": "Cholun jaai",
-      "en": "Let's go",
-      "context": "Suggesting to leave or start moving.",
-      "category": "greetings-introductions"
+      "bn": "হ্যাঁ।",
+      "pronunciation": "haẽ",
+      "en": "Yes.",
+      "context": "common replies",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "হ্যাঁ",
+          "pronunciation": "haẽ",
+          "en": "yes"
+        }
+      ]
     },
     {
-      "bn": "দেখা হয়ে ভালো লাগলো",
-      "pronunciation": "Dekha hoye bhaalo laglo",
-      "en": "Nice to see you",
-      "context": "Polite greeting upon meeting.",
-      "category": "greetings-introductions"
+      "bn": "না।",
+      "pronunciation": "na",
+      "en": "No.",
+      "context": "common replies",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "না",
+          "pronunciation": "na",
+          "en": "not"
+        }
+      ]
     },
     {
-      "bn": "আমি আসছি",
-      "pronunciation": "Ami aschi",
-      "en": "I am coming",
-      "context": "Stating that you are on your way.",
-      "category": "greetings-introductions"
+      "bn": "হয়তো।",
+      "pronunciation": "hoyto",
+      "en": "Maybe.",
+      "context": "common replies",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "হয়তো",
+          "pronunciation": "hoyto",
+          "en": "maybe"
+        }
+      ]
+    },
+    {
+      "bn": "সম্ভবত।",
+      "pronunciation": "shombhoboto",
+      "en": "Probably.",
+      "context": "common replies",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "সম্ভবত",
+          "pronunciation": "shombhoboto",
+          "en": "probably"
+        }
+      ]
+    },
+    {
+      "bn": "জানি না।",
+      "pronunciation": "jani na",
+      "en": "I don't know.",
+      "context": "common replies",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "জানি",
+          "pronunciation": "jani",
+          "en": "i know"
+        },
+        {
+          "bn": "না",
+          "pronunciation": "na",
+          "en": "not"
+        }
+      ]
+    },
+    {
+      "bn": "বুঝতে পারছি।",
+      "pronunciation": "bujhte parchi",
+      "en": "I understand.",
+      "context": "common replies",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "বুঝতে",
+          "pronunciation": "bujhte",
+          "en": "To understand"
+        },
+        {
+          "bn": "পারছি",
+          "pronunciation": "parchi",
+          "en": "i can"
+        }
+      ]
+    },
+    {
+      "bn": "বুঝতে পারছি না।",
+      "pronunciation": "bujhte parchi na",
+      "en": "I don't understand.",
+      "context": "common replies",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "বুঝতে",
+          "pronunciation": "bujhte",
+          "en": "To understand"
+        },
+        {
+          "bn": "পারছি",
+          "pronunciation": "parchi",
+          "en": "i can"
+        },
+        {
+          "bn": "না",
+          "pronunciation": "na",
+          "en": "not"
+        }
+      ]
+    },
+    {
+      "bn": "আবার বলবেন?",
+      "pronunciation": "abar bolben",
+      "en": "Could you say that again?",
+      "context": "common replies",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "আবার",
+          "pronunciation": "abar",
+          "en": "again"
+        },
+        {
+          "bn": "বলবেন",
+          "pronunciation": "bolben",
+          "en": "would you say / will say"
+        }
+      ]
+    },
+    {
+      "bn": "একটু আস্তে বলবেন?",
+      "pronunciation": "ektu aste bolben",
+      "en": "Could you speak a little more slowly?",
+      "context": "common replies",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "একটু",
+          "pronunciation": "ektu",
+          "en": "Little"
+        },
+        {
+          "bn": "আস্তে",
+          "pronunciation": "aste",
+          "en": "gently / softly"
+        },
+        {
+          "bn": "বলবেন",
+          "pronunciation": "bolben",
+          "en": "would you say / will say"
+        }
+      ]
+    },
+    {
+      "bn": "বাংলা এখনও শিখছি।",
+      "pronunciation": "bangla ekhono shikhchhi",
+      "en": "I'm still learning Bengali.",
+      "context": "common replies",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "বাংলা",
+          "pronunciation": "bangla",
+          "en": "Bengali"
+        },
+        {
+          "bn": "এখনও",
+          "pronunciation": "ekhono",
+          "en": "still / yet"
+        },
+        {
+          "bn": "শিখছি",
+          "pronunciation": "shikhchhi",
+          "en": "am learning"
+        }
+      ]
+    },
+    {
+      "bn": "আমি পুরোপুরি বুঝিনি।",
+      "pronunciation": "ami puropuri bujhini",
+      "en": "I didn't fully understand.",
+      "context": "common replies",
+      "category": "greetings-introductions",
+      "words": [
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "পুরোপুরি",
+          "pronunciation": "puropuri",
+          "en": "completely"
+        },
+        {
+          "bn": "বুঝিনি",
+          "pronunciation": "bujhini",
+          "en": "did not understand"
+        }
+      ]
     }
   ],
   "practice": [

@@ -1,7 +1,7 @@
 {
   "id": "verbs",
   "title": "Essential Bengali Verbs",
-  "summary": "Useful dictionary-form verbs for everyday actions.",
+  "summary": "Learn common Bengali dictionary-form verbs for daily actions, movement, communication, technology, work, thought, emotion, and social interaction.",
   "level": "beginner",
   "topic": "Verbs",
   "focus": "vocabulary",
@@ -990,706 +990,2219 @@
     {
       "bn": "করা",
       "pronunciation": "kora",
-      "en": "to do",
+      "en": "to do / make",
       "category": "verbs",
-      "sourcePhrase": "আমি প্রতিদিন ব্যায়াম করি।"
+      "sourcePhrase": "করা"
     },
     {
       "bn": "হওয়া",
       "pronunciation": "howa",
       "en": "to be / become",
       "category": "verbs",
-      "sourcePhrase": "আমি ডাক্তার হতে চাই।"
+      "sourcePhrase": "হওয়া"
+    },
+    {
+      "bn": "থাকা",
+      "pronunciation": "thaka",
+      "en": "to stay / remain / be",
+      "category": "verbs",
+      "sourcePhrase": "থাকা"
     },
     {
       "bn": "যাওয়া",
-      "pronunciation": "jaowa",
+      "pronunciation": "jawa",
       "en": "to go",
       "category": "verbs",
-      "sourcePhrase": "আমরা সকালে স্কুলে যাই।"
+      "sourcePhrase": "যাওয়া"
     },
     {
       "bn": "আসা",
       "pronunciation": "asha",
       "en": "to come",
       "category": "verbs",
-      "sourcePhrase": "সে প্রতিদিন এখানে আসে।"
-    },
-    {
-      "bn": "খাওয়া",
-      "pronunciation": "khaowa",
-      "en": "to eat",
-      "category": "verbs",
-      "sourcePhrase": "আমি দুপুরে ভাত খাই।"
+      "sourcePhrase": "আসা"
     },
     {
       "bn": "দেখা",
       "pronunciation": "dekha",
       "en": "to see",
       "category": "verbs",
-      "sourcePhrase": "আমি জানালা দিয়ে আকাশ দেখি।"
+      "sourcePhrase": "দেখা"
     },
     {
       "bn": "বলা",
       "pronunciation": "bola",
-      "en": "to say",
+      "en": "to say / tell",
       "category": "verbs",
-      "sourcePhrase": "তিনি ধীরে কথা বলেন।"
+      "sourcePhrase": "বলা"
     },
     {
       "bn": "শোনা",
       "pronunciation": "shona",
       "en": "to hear / listen",
       "category": "verbs",
-      "sourcePhrase": "আমি সকালে গান শুনি।"
+      "sourcePhrase": "শোনা"
     },
     {
-      "bn": "পড়া",
-      "pronunciation": "pora",
-      "en": "to read / study",
+      "bn": "খাওয়া",
+      "pronunciation": "khaowa",
+      "en": "to eat",
       "category": "verbs",
-      "sourcePhrase": "আমি রাতে বই পড়ি।"
+      "sourcePhrase": "খাওয়া"
     },
     {
-      "bn": "লেখা",
-      "pronunciation": "lekha",
-      "en": "to write",
+      "bn": "পান করা",
+      "pronunciation": "pan kora",
+      "en": "to drink",
       "category": "verbs",
-      "sourcePhrase": "সে বাংলায় চিঠি লেখে।"
+      "sourcePhrase": "পান করা"
     },
     {
       "bn": "নেওয়া",
-      "pronunciation": "neowa",
+      "pronunciation": "neoya",
       "en": "to take",
       "category": "verbs",
-      "sourcePhrase": "আমি দোকান থেকে ফল নিই।"
+      "sourcePhrase": "নেওয়া"
     },
     {
       "bn": "দেওয়া",
       "pronunciation": "deowa",
       "en": "to give",
       "category": "verbs",
-      "sourcePhrase": "মা আমাকে একটি বই দেন।"
+      "sourcePhrase": "দেওয়া"
     },
     {
-      "bn": "আমি",
-      "pronunciation": "ami",
-      "en": "I",
+      "bn": "লেখা",
+      "pronunciation": "lekha",
+      "en": "to write",
       "category": "verbs",
-      "sourcePhrase": "আমি প্রতিদিন ব্যায়াম করি।"
+      "sourcePhrase": "লেখা"
     },
     {
-      "bn": "প্রতিদিন",
-      "pronunciation": "protidin",
-      "en": "every day",
+      "bn": "পড়া",
+      "pronunciation": "pora",
+      "en": "to read / study",
       "category": "verbs",
-      "sourcePhrase": "আমি প্রতিদিন ব্যায়াম করি।"
+      "sourcePhrase": "পড়া"
     },
     {
-      "bn": "ব্যায়াম",
-      "pronunciation": "byayam",
-      "en": "exercise",
+      "bn": "শেখা",
+      "pronunciation": "Shikha",
+      "en": "to learn",
       "category": "verbs",
-      "sourcePhrase": "আমি প্রতিদিন ব্যায়াম করি।"
+      "sourcePhrase": "শেখা"
     },
     {
-      "bn": "করি",
-      "pronunciation": "kori",
-      "en": "do",
+      "bn": "শেখানো",
+      "pronunciation": "shekhan",
+      "en": "to teach",
       "category": "verbs",
-      "sourcePhrase": "আমি প্রতিদিন ব্যায়াম করি।"
+      "sourcePhrase": "শেখানো"
     },
     {
-      "bn": "ডাক্তার",
-      "pronunciation": "daktar",
-      "en": "doctor",
+      "bn": "বোঝা",
+      "pronunciation": "bojha",
+      "en": "to understand",
       "category": "verbs",
-      "sourcePhrase": "আমি ডাক্তার হতে চাই।"
+      "sourcePhrase": "বোঝা"
     },
     {
-      "bn": "হতে",
-      "pronunciation": "hote",
-      "en": "to become",
+      "bn": "বোঝানো",
+      "pronunciation": "bojhan",
+      "en": "to explain",
       "category": "verbs",
-      "sourcePhrase": "আমি ডাক্তার হতে চাই।"
+      "sourcePhrase": "বোঝানো"
     },
     {
-      "bn": "চাই",
-      "pronunciation": "chai",
-      "en": "want",
+      "bn": "জানা",
+      "pronunciation": "jana",
+      "en": "to know",
       "category": "verbs",
-      "sourcePhrase": "আমি ডাক্তার হতে চাই।"
+      "sourcePhrase": "জানা"
     },
     {
-      "bn": "আমরা",
-      "pronunciation": "amra",
-      "en": "we",
+      "bn": "চিনা",
+      "pronunciation": "china",
+      "en": "to recognize",
       "category": "verbs",
-      "sourcePhrase": "আমরা সকালে স্কুলে যাই।"
+      "sourcePhrase": "চিনা"
     },
     {
-      "bn": "সকালে",
-      "pronunciation": "shokale",
-      "en": "in the morning",
+      "bn": "ভাবা",
+      "pronunciation": "bhaba",
+      "en": "to think",
       "category": "verbs",
-      "sourcePhrase": "আমরা সকালে স্কুলে যাই।"
+      "sourcePhrase": "ভাবা"
     },
     {
-      "bn": "স্কুলে",
-      "pronunciation": "skule",
-      "en": "to school",
+      "bn": "মনে রাখা",
+      "pronunciation": "mone rakha",
+      "en": "to remember",
       "category": "verbs",
-      "sourcePhrase": "আমরা সকালে স্কুলে যাই।"
+      "sourcePhrase": "মনে রাখা"
     },
     {
-      "bn": "যাই",
-      "pronunciation": "jai",
-      "en": "go",
+      "bn": "ভুলে যাওয়া",
+      "pronunciation": "bhule jawa",
+      "en": "to forget",
       "category": "verbs",
-      "sourcePhrase": "আমরা সকালে স্কুলে যাই।"
+      "sourcePhrase": "ভুলে যাওয়া"
     },
     {
-      "bn": "সে",
-      "pronunciation": "shey",
-      "en": "he / she",
+      "bn": "চাওয়া",
+      "pronunciation": "chaoj",
+      "en": "to want",
       "category": "verbs",
-      "sourcePhrase": "সে প্রতিদিন এখানে আসে।"
+      "sourcePhrase": "চাওয়া"
     },
     {
-      "bn": "এখানে",
-      "pronunciation": "ekhane",
-      "en": "here",
+      "bn": "ভালোবাসা",
+      "pronunciation": "Bhalobasha",
+      "en": "to love",
       "category": "verbs",
-      "sourcePhrase": "সে প্রতিদিন এখানে আসে।"
+      "sourcePhrase": "ভালোবাসা"
     },
     {
-      "bn": "আসে",
-      "pronunciation": "ashe",
-      "en": "comes",
+      "bn": "পছন্দ করা",
+      "pronunciation": "pochhondo kora",
+      "en": "to like",
       "category": "verbs",
-      "sourcePhrase": "সে প্রতিদিন এখানে আসে।"
+      "sourcePhrase": "পছন্দ করা"
     },
     {
-      "bn": "দুপুরে",
-      "pronunciation": "dupure",
-      "en": "at noon",
+      "bn": "অপছন্দ করা",
+      "pronunciation": "opochhond kora",
+      "en": "to dislike",
       "category": "verbs",
-      "sourcePhrase": "আমি দুপুরে ভাত খাই।"
+      "sourcePhrase": "অপছন্দ করা"
     },
     {
-      "bn": "ভাত",
-      "pronunciation": "bhat",
-      "en": "rice",
+      "bn": "হাসা",
+      "pronunciation": "hasa",
+      "en": "to laugh",
       "category": "verbs",
-      "sourcePhrase": "আমি দুপুরে ভাত খাই।"
+      "sourcePhrase": "হাসা"
     },
     {
-      "bn": "খাই",
-      "pronunciation": "khai",
-      "en": "eat",
+      "bn": "কাঁদা",
+      "pronunciation": "kanda",
+      "en": "to cry",
       "category": "verbs",
-      "sourcePhrase": "আমি দুপুরে ভাত খাই।"
+      "sourcePhrase": "কাঁদা"
     },
     {
-      "bn": "জানালা",
-      "pronunciation": "janala",
-      "en": "window",
+      "bn": "হাসানো",
+      "pronunciation": "hasan",
+      "en": "to make laugh",
       "category": "verbs",
-      "sourcePhrase": "আমি জানালা দিয়ে আকাশ দেখি।"
+      "sourcePhrase": "হাসানো"
     },
     {
-      "bn": "দিয়ে",
-      "pronunciation": "diye",
-      "en": "through / with",
+      "bn": "দাঁড়ানো",
+      "pronunciation": "darano",
+      "en": "to stand",
       "category": "verbs",
-      "sourcePhrase": "আমি জানালা দিয়ে আকাশ দেখি।"
+      "sourcePhrase": "দাঁড়ানো"
     },
     {
-      "bn": "আকাশ",
-      "pronunciation": "akash",
-      "en": "sky",
+      "bn": "বসা",
+      "pronunciation": "bosa",
+      "en": "to sit",
       "category": "verbs",
-      "sourcePhrase": "আমি জানালা দিয়ে আকাশ দেখি।"
+      "sourcePhrase": "বসা"
     },
     {
-      "bn": "দেখি",
-      "pronunciation": "dekhi",
-      "en": "see",
+      "bn": "শোয়া",
+      "pronunciation": "shoj",
+      "en": "to lie down",
       "category": "verbs",
-      "sourcePhrase": "আমি জানালা দিয়ে আকাশ দেখি।"
+      "sourcePhrase": "শোয়া"
     },
     {
-      "bn": "তিনি",
-      "pronunciation": "tini",
-      "en": "he / she (respectful)",
+      "bn": "ঘুমানো",
+      "pronunciation": "ghuman",
+      "en": "to sleep",
       "category": "verbs",
-      "sourcePhrase": "তিনি ধীরে কথা বলেন।"
+      "sourcePhrase": "ঘুমানো"
     },
     {
-      "bn": "ধীরে",
-      "pronunciation": "dhire",
-      "en": "slowly",
+      "bn": "জাগা",
+      "pronunciation": "jaga",
+      "en": "to wake up",
       "category": "verbs",
-      "sourcePhrase": "তিনি ধীরে কথা বলেন।"
+      "sourcePhrase": "জাগা"
     },
     {
-      "bn": "কথা",
-      "pronunciation": "kotha",
-      "en": "speech / words",
+      "bn": "জাগানো",
+      "pronunciation": "jagan",
+      "en": "to wake someone",
       "category": "verbs",
-      "sourcePhrase": "তিনি ধীরে কথা বলেন।"
+      "sourcePhrase": "জাগানো"
     },
     {
-      "bn": "বলেন",
-      "pronunciation": "bolen",
-      "en": "says (respectful)",
+      "bn": "দৌড়ানো",
+      "pronunciation": "doudon",
+      "en": "to run",
       "category": "verbs",
-      "sourcePhrase": "তিনি ধীরে কথা বলেন।"
+      "sourcePhrase": "দৌড়ানো"
     },
     {
-      "bn": "গান",
-      "pronunciation": "gan",
-      "en": "song / music",
+      "bn": "হাঁটা",
+      "pronunciation": "hata",
+      "en": "to walk",
       "category": "verbs",
-      "sourcePhrase": "আমি সকালে গান শুনি।"
+      "sourcePhrase": "হাঁটা"
     },
     {
-      "bn": "শুনি",
-      "pronunciation": "shuni",
-      "en": "listen",
+      "bn": "লাফানো",
+      "pronunciation": "laphan",
+      "en": "to jump",
       "category": "verbs",
-      "sourcePhrase": "আমি সকালে গান শুনি।"
+      "sourcePhrase": "লাফানো"
     },
     {
-      "bn": "রাতে",
-      "pronunciation": "rate",
-      "en": "at night",
+      "bn": "সাঁতার কাটা",
+      "pronunciation": "santar kata",
+      "en": "to swim",
       "category": "verbs",
-      "sourcePhrase": "আমি রাতে বই পড়ি।"
+      "sourcePhrase": "সাঁতার কাটা"
     },
     {
-      "bn": "বই",
-      "pronunciation": "boi",
-      "en": "book",
+      "bn": "ওঠা",
+      "pronunciation": "oṭha",
+      "en": "to rise / get up",
       "category": "verbs",
-      "sourcePhrase": "আমি রাতে বই পড়ি।"
+      "sourcePhrase": "ওঠা"
     },
     {
-      "bn": "পড়ি",
-      "pronunciation": "pori",
-      "en": "read",
+      "bn": "নামা",
+      "pronunciation": "nama",
+      "en": "to come down",
       "category": "verbs",
-      "sourcePhrase": "আমি রাতে বই পড়ি।"
+      "sourcePhrase": "নামা"
     },
     {
-      "bn": "বাংলায়",
-      "pronunciation": "Banglay",
-      "en": "in Bengali",
+      "bn": "খোলা",
+      "pronunciation": "khola",
+      "en": "to open",
       "category": "verbs",
-      "sourcePhrase": "সে বাংলায় চিঠি লেখে।"
+      "sourcePhrase": "খোলা"
     },
     {
-      "bn": "চিঠি",
-      "pronunciation": "chithi",
-      "en": "letter",
+      "bn": "বন্ধ করা",
+      "pronunciation": "bondho kora",
+      "en": "to close",
       "category": "verbs",
-      "sourcePhrase": "সে বাংলায় চিঠি লেখে।"
+      "sourcePhrase": "বন্ধ করা"
     },
     {
-      "bn": "লেখে",
-      "pronunciation": "lekhe",
-      "en": "writes",
+      "bn": "ঢোকা",
+      "pronunciation": "dhoka",
+      "en": "to enter",
       "category": "verbs",
-      "sourcePhrase": "সে বাংলায় চিঠি লেখে।"
+      "sourcePhrase": "ঢোকা"
     },
     {
-      "bn": "দোকান",
-      "pronunciation": "dokan",
-      "en": "shop",
+      "bn": "বের হওয়া",
+      "pronunciation": "ber howa",
+      "en": "to leave / go out",
       "category": "verbs",
-      "sourcePhrase": "আমি দোকান থেকে ফল নিই।"
+      "sourcePhrase": "বের হওয়া"
     },
     {
-      "bn": "থেকে",
-      "pronunciation": "theke",
-      "en": "from",
+      "bn": "রাখা",
+      "pronunciation": "rakha",
+      "en": "to keep / put",
       "category": "verbs",
-      "sourcePhrase": "আমি দোকান থেকে ফল নিই।"
+      "sourcePhrase": "রাখা"
     },
     {
-      "bn": "ফল",
-      "pronunciation": "fol",
-      "en": "fruit",
+      "bn": "তোলা",
+      "pronunciation": "tola",
+      "en": "to lift / pick up",
       "category": "verbs",
-      "sourcePhrase": "আমি দোকান থেকে ফল নিই।"
+      "sourcePhrase": "তোলা"
     },
     {
-      "bn": "নিই",
-      "pronunciation": "nii",
-      "en": "take",
+      "bn": "ফেলা",
+      "pronunciation": "phela",
+      "en": "to throw",
       "category": "verbs",
-      "sourcePhrase": "আমি দোকান থেকে ফল নিই।"
+      "sourcePhrase": "ফেলা"
     },
     {
-      "bn": "মা",
-      "pronunciation": "ma",
-      "en": "mother",
+      "bn": "ধরা",
+      "pronunciation": "dhora",
+      "en": "to catch / hold",
       "category": "verbs",
-      "sourcePhrase": "মা আমাকে একটি বই দেন।"
+      "sourcePhrase": "ধরা"
     },
     {
-      "bn": "আমাকে",
-      "pronunciation": "amake",
-      "en": "me",
+      "bn": "ছাড়া",
+      "pronunciation": "chara",
+      "en": "to release / let go",
       "category": "verbs",
-      "sourcePhrase": "মা আমাকে একটি বই দেন।"
+      "sourcePhrase": "ছাড়া"
     },
     {
-      "bn": "একটি",
-      "pronunciation": "ekti",
-      "en": "one / a",
+      "bn": "খোঁজা",
+      "pronunciation": "khonja",
+      "en": "to search",
       "category": "verbs",
-      "sourcePhrase": "মা আমাকে একটি বই দেন।"
+      "sourcePhrase": "খোঁজা"
     },
     {
-      "bn": "দেন",
-      "pronunciation": "den",
-      "en": "gives",
+      "bn": "পাওয়া",
+      "pronunciation": "paowa",
+      "en": "to find / receive",
       "category": "verbs",
-      "sourcePhrase": "মা আমাকে একটি বই দেন।"
+      "sourcePhrase": "পাওয়া"
     },
     {
-      "bn": "বলুন",
-      "pronunciation": "bolun",
-      "en": "say",
+      "bn": "হারানো",
+      "pronunciation": "harano",
+      "en": "to lose",
       "category": "verbs",
-      "sourcePhrase": "বলুন: “আমি প্রতিদিন ব্যায়াম করি।”"
+      "sourcePhrase": "হারানো"
     },
     {
-      "bn": "পড়ুন",
-      "pronunciation": "porun",
-      "en": "read",
+      "bn": "জেতা",
+      "pronunciation": "jeta",
+      "en": "to win",
       "category": "verbs",
-      "sourcePhrase": "পড়ুন: “আমি প্রতিদিন ব্যায়াম করি।”"
+      "sourcePhrase": "জেতা"
     },
     {
-      "bn": "লিখুন",
-      "pronunciation": "likhun",
-      "en": "write",
+      "bn": "হারা",
+      "pronunciation": "hara",
+      "en": "to lose",
       "category": "verbs",
-      "sourcePhrase": "লিখুন: “আমি প্রতিদিন ব্যায়াম করি।”"
+      "sourcePhrase": "হারা"
     },
     {
-      "bn": "অনুবাদ",
-      "pronunciation": "onubad",
-      "en": "translation",
+      "bn": "কাজ করা",
+      "pronunciation": "kaj kora",
+      "en": "to work",
       "category": "verbs",
-      "sourcePhrase": "অনুবাদ করুন: “আমি প্রতিদিন ব্যায়াম করি।”"
+      "sourcePhrase": "কাজ করা"
     },
     {
-      "bn": "করুন",
-      "pronunciation": "korun",
-      "en": "please do",
+      "bn": "খেলা",
+      "pronunciation": "khela",
+      "en": "to play",
       "category": "verbs",
-      "sourcePhrase": "অনুবাদ করুন: “আমি প্রতিদিন ব্যায়াম করি।”"
+      "sourcePhrase": "খেলা"
     },
     {
-      "bn": "মনে",
-      "pronunciation": "mone",
-      "en": "in mind",
+      "bn": "গান গাওয়া",
+      "pronunciation": "gan gaoj",
+      "en": "to sing",
       "category": "verbs",
-      "sourcePhrase": "মনে রাখুন: “আমি প্রতিদিন ব্যায়াম করি।”"
+      "sourcePhrase": "গান গাওয়া"
     },
     {
-      "bn": "রাখুন",
-      "pronunciation": "rakhun",
-      "en": "remember",
+      "bn": "নাচা",
+      "pronunciation": "nacha",
+      "en": "to dance",
       "category": "verbs",
-      "sourcePhrase": "মনে রাখুন: “আমি প্রতিদিন ব্যায়াম করি।”"
+      "sourcePhrase": "নাচা"
     },
     {
-      "bn": "আবার",
-      "pronunciation": "abar",
-      "en": "again",
+      "bn": "আঁকা",
+      "pronunciation": "anka",
+      "en": "to draw",
       "category": "verbs",
-      "sourcePhrase": "আবার বলুন: “আমি প্রতিদিন ব্যায়াম করি।”"
+      "sourcePhrase": "আঁকা"
     },
     {
-      "bn": "মন",
-      "pronunciation": "mon",
-      "en": "attention",
+      "bn": "তৈরি করা",
+      "pronunciation": "toiri kora",
+      "en": "to create / make",
       "category": "verbs",
-      "sourcePhrase": "মন দিয়ে পড়ুন: “আমি প্রতিদিন ব্যায়াম করি।”"
+      "sourcePhrase": "তৈরি করা"
     },
     {
-      "bn": "আমি প্রতিদিন",
-      "pronunciation": "ami protidin",
-      "en": "I every day",
+      "bn": "বানানো",
+      "pronunciation": "banan",
+      "en": "to build / make",
       "category": "verbs",
-      "sourcePhrase": "আমি প্রতিদিন ব্যায়াম করি।"
+      "sourcePhrase": "বানানো"
     },
     {
-      "bn": "প্রতিদিন ব্যায়াম",
-      "pronunciation": "protidin byayam",
-      "en": "every day exercise",
+      "bn": "ব্যবহার করা",
+      "pronunciation": "byabohar kora",
+      "en": "to use",
       "category": "verbs",
-      "sourcePhrase": "আমি প্রতিদিন ব্যায়াম করি।"
+      "sourcePhrase": "ব্যবহার করা"
     },
     {
-      "bn": "ব্যায়াম করি",
-      "pronunciation": "byayam kori",
-      "en": "exercise do",
+      "bn": "চালানো",
+      "pronunciation": "chalano",
+      "en": "to drive / operate",
       "category": "verbs",
-      "sourcePhrase": "আমি প্রতিদিন ব্যায়াম করি।"
+      "sourcePhrase": "চালানো"
     },
     {
-      "bn": "আমি ডাক্তার",
-      "pronunciation": "ami daktar",
-      "en": "I doctor",
+      "bn": "থামা",
+      "pronunciation": "thama",
+      "en": "to stop",
       "category": "verbs",
-      "sourcePhrase": "আমি ডাক্তার হতে চাই।"
+      "sourcePhrase": "থামা"
     },
     {
-      "bn": "ডাক্তার হতে",
-      "pronunciation": "daktar hote",
-      "en": "doctor to become",
+      "bn": "থামানো",
+      "pronunciation": "thaman",
+      "en": "to stop something",
       "category": "verbs",
-      "sourcePhrase": "আমি ডাক্তার হতে চাই।"
+      "sourcePhrase": "থামানো"
     },
     {
-      "bn": "হতে চাই",
-      "pronunciation": "hote chai",
-      "en": "to become want",
+      "bn": "শুরু করা",
+      "pronunciation": "shuru kora",
+      "en": "to start",
       "category": "verbs",
-      "sourcePhrase": "আমি ডাক্তার হতে চাই।"
+      "sourcePhrase": "শুরু করা"
     },
     {
-      "bn": "আমরা সকালে",
-      "pronunciation": "amra shokale",
-      "en": "we in the morning",
+      "bn": "শেষ করা",
+      "pronunciation": "shesh kora",
+      "en": "to finish",
       "category": "verbs",
-      "sourcePhrase": "আমরা সকালে স্কুলে যাই।"
+      "sourcePhrase": "শেষ করা"
     },
     {
-      "bn": "সকালে স্কুলে",
-      "pronunciation": "shokale skule",
-      "en": "in the morning to school",
+      "bn": "চেষ্টা করা",
+      "pronunciation": "cheshta kora",
+      "en": "to try",
       "category": "verbs",
-      "sourcePhrase": "আমরা সকালে স্কুলে যাই।"
+      "sourcePhrase": "চেষ্টা করা"
     },
     {
-      "bn": "স্কুলে যাই",
-      "pronunciation": "skule jai",
-      "en": "to school go",
+      "bn": "সাহায্য করা",
+      "pronunciation": "shahajjo kora",
+      "en": "to help",
       "category": "verbs",
-      "sourcePhrase": "আমরা সকালে স্কুলে যাই।"
+      "sourcePhrase": "সাহায্য করা"
     },
     {
-      "bn": "সে প্রতিদিন",
-      "pronunciation": "shey protidin",
-      "en": "he / she every day",
+      "bn": "অপেক্ষা করা",
+      "pronunciation": "opekkha kora",
+      "en": "to wait",
       "category": "verbs",
-      "sourcePhrase": "সে প্রতিদিন এখানে আসে।"
+      "sourcePhrase": "অপেক্ষা করা"
     },
     {
-      "bn": "প্রতিদিন এখানে",
-      "pronunciation": "protidin ekhane",
-      "en": "every day here",
+      "bn": "জিজ্ঞাসা করা",
+      "pronunciation": "jiggasha kora",
+      "en": "to ask",
       "category": "verbs",
-      "sourcePhrase": "সে প্রতিদিন এখানে আসে।"
+      "sourcePhrase": "জিজ্ঞাসা করা"
     },
     {
-      "bn": "এখানে আসে",
-      "pronunciation": "ekhane ashe",
-      "en": "here comes",
+      "bn": "উত্তর দেওয়া",
+      "pronunciation": "uttor deowa",
+      "en": "to answer",
       "category": "verbs",
-      "sourcePhrase": "সে প্রতিদিন এখানে আসে।"
+      "sourcePhrase": "উত্তর দেওয়া"
     },
     {
-      "bn": "আমি দুপুরে",
-      "pronunciation": "ami dupure",
-      "en": "I at noon",
+      "bn": "ডাকা",
+      "pronunciation": "daka",
+      "en": "to call",
       "category": "verbs",
-      "sourcePhrase": "আমি দুপুরে ভাত খাই।"
+      "sourcePhrase": "ডাকা"
     },
     {
-      "bn": "দুপুরে ভাত",
-      "pronunciation": "dupure bhat",
-      "en": "at noon rice",
+      "bn": "ফোন করা",
+      "pronunciation": "fon kora",
+      "en": "to call (phone)",
       "category": "verbs",
-      "sourcePhrase": "আমি দুপুরে ভাত খাই।"
+      "sourcePhrase": "ফোন করা"
     },
     {
-      "bn": "ভাত খাই",
-      "pronunciation": "bhat khai",
-      "en": "rice eat",
+      "bn": "পাঠানো",
+      "pronunciation": "pathano",
+      "en": "to send",
       "category": "verbs",
-      "sourcePhrase": "আমি দুপুরে ভাত খাই।"
+      "sourcePhrase": "পাঠানো"
     },
     {
-      "bn": "আমি জানালা",
-      "pronunciation": "ami janala",
-      "en": "I window",
+      "bn": "গ্রহণ করা",
+      "pronunciation": "grohon kora",
+      "en": "to receive / accept",
       "category": "verbs",
-      "sourcePhrase": "আমি জানালা দিয়ে আকাশ দেখি।"
+      "sourcePhrase": "গ্রহণ করা"
     },
     {
-      "bn": "জানালা দিয়ে",
-      "pronunciation": "janala diye",
-      "en": "window through / with",
+      "bn": "ফিরে আসা",
+      "pronunciation": "phire asha",
+      "en": "to return",
       "category": "verbs",
-      "sourcePhrase": "আমি জানালা দিয়ে আকাশ দেখি।"
+      "sourcePhrase": "ফিরে আসা"
     },
     {
-      "bn": "দিয়ে আকাশ",
-      "pronunciation": "diye akash",
-      "en": "through / with sky",
+      "bn": "ফিরিয়ে দেওয়া",
+      "pronunciation": "firiye deowa",
+      "en": "to return something",
       "category": "verbs",
-      "sourcePhrase": "আমি জানালা দিয়ে আকাশ দেখি।"
+      "sourcePhrase": "ফিরিয়ে দেওয়া"
     },
     {
-      "bn": "আকাশ দেখি",
-      "pronunciation": "akash dekhi",
-      "en": "sky see",
+      "bn": "কেনা",
+      "pronunciation": "kena",
+      "en": "to buy",
       "category": "verbs",
-      "sourcePhrase": "আমি জানালা দিয়ে আকাশ দেখি।"
+      "sourcePhrase": "কেনা"
     },
     {
-      "bn": "তিনি ধীরে",
-      "pronunciation": "tini dhire",
-      "en": "he / she (respectful) slowly",
+      "bn": "বেচা",
+      "pronunciation": "becha",
+      "en": "to sell",
       "category": "verbs",
-      "sourcePhrase": "তিনি ধীরে কথা বলেন।"
+      "sourcePhrase": "বেচা"
     },
     {
-      "bn": "ধীরে কথা",
-      "pronunciation": "dhire kotha",
-      "en": "slowly speech / words",
+      "bn": "বিক্রি করা",
+      "pronunciation": "bikri kora",
+      "en": "to sell",
       "category": "verbs",
-      "sourcePhrase": "তিনি ধীরে কথা বলেন।"
+      "sourcePhrase": "বিক্রি করা"
     },
     {
-      "bn": "কথা বলেন",
-      "pronunciation": "kotha bolen",
-      "en": "speech / words says (respectful)",
+      "bn": "পরা",
+      "pronunciation": "pora",
+      "en": "to wear",
       "category": "verbs",
-      "sourcePhrase": "তিনি ধীরে কথা বলেন।"
+      "sourcePhrase": "পরা"
     },
     {
-      "bn": "আমি সকালে",
-      "pronunciation": "ami shokale",
-      "en": "I in the morning",
+      "bn": "খুলে ফেলা",
+      "pronunciation": "khule phela",
+      "en": "to take off",
       "category": "verbs",
-      "sourcePhrase": "আমি সকালে গান শুনি।"
+      "sourcePhrase": "খুলে ফেলা"
     },
     {
-      "bn": "সকালে গান",
-      "pronunciation": "shokale gan",
-      "en": "in the morning song / music",
+      "bn": "ধোয়া",
+      "pronunciation": "dhoya",
+      "en": "to wash",
       "category": "verbs",
-      "sourcePhrase": "আমি সকালে গান শুনি।"
+      "sourcePhrase": "ধোয়া"
     },
     {
-      "bn": "গান শুনি",
-      "pronunciation": "gan shuni",
-      "en": "song / music listen",
+      "bn": "পরিষ্কার করা",
+      "pronunciation": "pôrishkar kora",
+      "en": "to clean",
       "category": "verbs",
-      "sourcePhrase": "আমি সকালে গান শুনি।"
+      "sourcePhrase": "পরিষ্কার করা"
     },
     {
-      "bn": "আমি রাতে",
-      "pronunciation": "ami rate",
-      "en": "I at night",
+      "bn": "রান্না করা",
+      "pronunciation": "Ranna kora",
+      "en": "to cook",
       "category": "verbs",
-      "sourcePhrase": "আমি রাতে বই পড়ি।"
+      "sourcePhrase": "রান্না করা"
     },
     {
-      "bn": "রাতে বই",
-      "pronunciation": "rate boi",
-      "en": "at night book",
+      "bn": "কাটা",
+      "pronunciation": "kata",
+      "en": "to cut",
       "category": "verbs",
-      "sourcePhrase": "আমি রাতে বই পড়ি।"
+      "sourcePhrase": "কাটা"
     },
     {
-      "bn": "বই পড়ি",
-      "pronunciation": "boi pori",
-      "en": "book read",
+      "bn": "ভাঙা",
+      "pronunciation": "bhanga",
+      "en": "to break",
       "category": "verbs",
-      "sourcePhrase": "আমি রাতে বই পড়ি।"
+      "sourcePhrase": "ভাঙা"
     },
     {
-      "bn": "সে বাংলায়",
-      "pronunciation": "shey Banglay",
-      "en": "he / she in Bengali",
+      "bn": "মেরামত করা",
+      "pronunciation": "meramot kora",
+      "en": "to repair",
       "category": "verbs",
-      "sourcePhrase": "সে বাংলায় চিঠি লেখে।"
+      "sourcePhrase": "মেরামত করা"
     },
     {
-      "bn": "বাংলায় চিঠি",
-      "pronunciation": "Banglay chithi",
-      "en": "in Bengali letter",
+      "bn": "খোলা রাখা",
+      "pronunciation": "khola rakha",
+      "en": "to leave open",
       "category": "verbs",
-      "sourcePhrase": "সে বাংলায় চিঠি লেখে।"
+      "sourcePhrase": "খোলা রাখা"
     },
     {
-      "bn": "চিঠি লেখে",
-      "pronunciation": "chithi lekhe",
-      "en": "letter writes",
+      "bn": "বন্ধ রাখা",
+      "pronunciation": "bondho rakha",
+      "en": "to keep closed",
       "category": "verbs",
-      "sourcePhrase": "সে বাংলায় চিঠি লেখে।"
+      "sourcePhrase": "বন্ধ রাখা"
     },
     {
-      "bn": "আমি দোকান",
-      "pronunciation": "ami dokan",
-      "en": "I shop",
+      "bn": "বসানো",
+      "pronunciation": "boshano",
+      "en": "to place / install",
       "category": "verbs",
-      "sourcePhrase": "আমি দোকান থেকে ফল নিই।"
+      "sourcePhrase": "বসানো"
     },
     {
-      "bn": "দোকান থেকে",
-      "pronunciation": "dokan theke",
-      "en": "shop from",
+      "bn": "পরিবর্তন করা",
+      "pronunciation": "poriborton kora",
+      "en": "to change",
       "category": "verbs",
-      "sourcePhrase": "আমি দোকান থেকে ফল নিই।"
+      "sourcePhrase": "পরিবর্তন করা"
     },
     {
-      "bn": "থেকে ফল",
-      "pronunciation": "theke fol",
-      "en": "from fruit",
+      "bn": "নির্বাচন করা",
+      "pronunciation": "nirbachon kora",
+      "en": "to choose",
       "category": "verbs",
-      "sourcePhrase": "আমি দোকান থেকে ফল নিই।"
+      "sourcePhrase": "নির্বাচন করা"
     },
     {
-      "bn": "ফল নিই",
-      "pronunciation": "fol nii",
-      "en": "fruit take",
+      "bn": "সিদ্ধান্ত নেওয়া",
+      "pronunciation": "shiddhanto neoya",
+      "en": "to decide",
       "category": "verbs",
-      "sourcePhrase": "আমি দোকান থেকে ফল নিই।"
+      "sourcePhrase": "সিদ্ধান্ত নেওয়া"
     },
     {
-      "bn": "মা আমাকে",
-      "pronunciation": "ma amake",
-      "en": "mother me",
+      "bn": "বিশ্বাস করা",
+      "pronunciation": "bishshash kora",
+      "en": "to believe",
       "category": "verbs",
-      "sourcePhrase": "মা আমাকে একটি বই দেন।"
+      "sourcePhrase": "বিশ্বাস করা"
     },
     {
-      "bn": "আমাকে একটি",
-      "pronunciation": "amake ekti",
-      "en": "me one / a",
+      "bn": "সন্দেহ করা",
+      "pronunciation": "shondeho kora",
+      "en": "to doubt",
       "category": "verbs",
-      "sourcePhrase": "মা আমাকে একটি বই দেন।"
+      "sourcePhrase": "সন্দেহ করা"
     },
     {
-      "bn": "একটি বই",
-      "pronunciation": "ekti boi",
-      "en": "one / a book",
+      "bn": "আশা করা",
+      "pronunciation": "asha kora",
+      "en": "to hope",
       "category": "verbs",
-      "sourcePhrase": "মা আমাকে একটি বই দেন।"
+      "sourcePhrase": "আশা করা"
+    },
+    {
+      "bn": "প্রয়োজন হওয়া",
+      "pronunciation": "Proyojon howa",
+      "en": "to be needed",
+      "category": "verbs",
+      "sourcePhrase": "প্রয়োজন হওয়া"
+    },
+    {
+      "bn": "অনুমতি দেওয়া",
+      "pronunciation": "onumoti deowa",
+      "en": "to allow",
+      "category": "verbs",
+      "sourcePhrase": "অনুমতি দেওয়া"
+    },
+    {
+      "bn": "নিষেধ করা",
+      "pronunciation": "nishedh kora",
+      "en": "to forbid",
+      "category": "verbs",
+      "sourcePhrase": "নিষেধ করা"
+    },
+    {
+      "bn": "রক্ষা করা",
+      "pronunciation": "rokkha kora",
+      "en": "to protect",
+      "category": "verbs",
+      "sourcePhrase": "রক্ষা করা"
+    },
+    {
+      "bn": "বাঁচানো",
+      "pronunciation": "banchan",
+      "en": "to save",
+      "category": "verbs",
+      "sourcePhrase": "বাঁচানো"
+    },
+    {
+      "bn": "মারা যাওয়া",
+      "pronunciation": "mara jawa",
+      "en": "to die",
+      "category": "verbs",
+      "sourcePhrase": "মারা যাওয়া"
+    },
+    {
+      "bn": "জন্ম নেওয়া",
+      "pronunciation": "jonmo neoya",
+      "en": "to be born",
+      "category": "verbs",
+      "sourcePhrase": "জন্ম নেওয়া"
+    },
+    {
+      "bn": "পৌঁছানো",
+      "pronunciation": "pounchhan",
+      "en": "to arrive",
+      "category": "verbs",
+      "sourcePhrase": "পৌঁছানো"
+    },
+    {
+      "bn": "প্রবেশ করা",
+      "pronunciation": "probesh kora",
+      "en": "to enter",
+      "category": "verbs",
+      "sourcePhrase": "প্রবেশ করা"
+    },
+    {
+      "bn": "প্রস্থান করা",
+      "pronunciation": "prosthan kora",
+      "en": "to leave / depart",
+      "category": "verbs",
+      "sourcePhrase": "প্রস্থান করা"
+    },
+    {
+      "bn": "ঘোরা",
+      "pronunciation": "ghora",
+      "en": "to wander / roam",
+      "category": "verbs",
+      "sourcePhrase": "ঘোরা"
+    },
+    {
+      "bn": "বেড়ানো",
+      "pronunciation": "bedon",
+      "en": "to travel / go out",
+      "category": "verbs",
+      "sourcePhrase": "বেড়ানো"
+    },
+    {
+      "bn": "ভ্রমণ করা",
+      "pronunciation": "bhromon kora",
+      "en": "to travel",
+      "category": "verbs",
+      "sourcePhrase": "ভ্রমণ করা"
+    },
+    {
+      "bn": "অনুসরণ করা",
+      "pronunciation": "onushoron kora",
+      "en": "to follow",
+      "category": "verbs",
+      "sourcePhrase": "অনুসরণ করা"
+    },
+    {
+      "bn": "নেতৃত্ব দেওয়া",
+      "pronunciation": "netritb deowa",
+      "en": "to lead",
+      "category": "verbs",
+      "sourcePhrase": "নেতৃত্ব দেওয়া"
+    },
+    {
+      "bn": "অনুসরণ করে যাওয়া",
+      "pronunciation": "onushoron kore jawa",
+      "en": "to continue following",
+      "category": "verbs",
+      "sourcePhrase": "অনুসরণ করে যাওয়া"
+    },
+    {
+      "bn": "এগোনো",
+      "pronunciation": "egon",
+      "en": "to move forward",
+      "category": "verbs",
+      "sourcePhrase": "এগোনো"
+    },
+    {
+      "bn": "অগ্রসর হওয়া",
+      "pronunciation": "ogrosor howa",
+      "en": "to advance",
+      "category": "verbs",
+      "sourcePhrase": "অগ্রসর হওয়া"
+    },
+    {
+      "bn": "পিছিয়ে যাওয়া",
+      "pronunciation": "pichiye jawa",
+      "en": "to move back",
+      "category": "verbs",
+      "sourcePhrase": "পিছিয়ে যাওয়া"
+    },
+    {
+      "bn": "ফিরে যাওয়া",
+      "pronunciation": "phire jawa",
+      "en": "to go back",
+      "category": "verbs",
+      "sourcePhrase": "ফিরে যাওয়া"
+    },
+    {
+      "bn": "ঘুরে আসা",
+      "pronunciation": "ghure asha",
+      "en": "to visit briefly",
+      "category": "verbs",
+      "sourcePhrase": "ঘুরে আসা"
+    },
+    {
+      "bn": "উঠানো",
+      "pronunciation": "uthan",
+      "en": "to raise",
+      "category": "verbs",
+      "sourcePhrase": "উঠানো"
+    },
+    {
+      "bn": "নামানো",
+      "pronunciation": "naman",
+      "en": "to lower",
+      "category": "verbs",
+      "sourcePhrase": "নামানো"
+    },
+    {
+      "bn": "ঠেলা দেওয়া",
+      "pronunciation": "thela deowa",
+      "en": "to push",
+      "category": "verbs",
+      "sourcePhrase": "ঠেলা দেওয়া"
+    },
+    {
+      "bn": "টানা",
+      "pronunciation": "tana",
+      "en": "to pull",
+      "category": "verbs",
+      "sourcePhrase": "টানা"
+    },
+    {
+      "bn": "বহন করা",
+      "pronunciation": "bohon kora",
+      "en": "to carry",
+      "category": "verbs",
+      "sourcePhrase": "বহন করা"
+    },
+    {
+      "bn": "সরানো",
+      "pronunciation": "sorano",
+      "en": "to move",
+      "category": "verbs",
+      "sourcePhrase": "সরানো"
+    },
+    {
+      "bn": "স্থানান্তর করা",
+      "pronunciation": "sthanantor kora",
+      "en": "to transfer",
+      "category": "verbs",
+      "sourcePhrase": "স্থানান্তর করা"
+    },
+    {
+      "bn": "পৌঁছে দেওয়া",
+      "pronunciation": "pouche deowa",
+      "en": "to deliver",
+      "category": "verbs",
+      "sourcePhrase": "পৌঁছে দেওয়া"
+    },
+    {
+      "bn": "ডাকা",
+      "pronunciation": "daka",
+      "en": "to summon",
+      "category": "verbs",
+      "sourcePhrase": "ডাকা"
+    },
+    {
+      "bn": "আমন্ত্রণ করা",
+      "pronunciation": "amontron kora",
+      "en": "to invite",
+      "category": "verbs",
+      "sourcePhrase": "আমন্ত্রণ করা"
+    },
+    {
+      "bn": "স্বাগত জানানো",
+      "pronunciation": "shagoto janano",
+      "en": "to welcome",
+      "category": "verbs",
+      "sourcePhrase": "স্বাগত জানানো"
+    },
+    {
+      "bn": "বিদায় জানানো",
+      "pronunciation": "biday janano",
+      "en": "to say goodbye",
+      "category": "verbs",
+      "sourcePhrase": "বিদায় জানানো"
+    },
+    {
+      "bn": "পরিচয় করানো",
+      "pronunciation": "porichoy koran",
+      "en": "to introduce",
+      "category": "verbs",
+      "sourcePhrase": "পরিচয় করানো"
+    },
+    {
+      "bn": "পরিচিত হওয়া",
+      "pronunciation": "pôrichito howa",
+      "en": "to become acquainted",
+      "category": "verbs",
+      "sourcePhrase": "পরিচিত হওয়া"
+    },
+    {
+      "bn": "কথা বলা",
+      "pronunciation": "kotha bola",
+      "en": "to speak",
+      "category": "verbs",
+      "sourcePhrase": "কথা বলা"
+    },
+    {
+      "bn": "আলাপ করা",
+      "pronunciation": "alap kora",
+      "en": "to chat",
+      "category": "verbs",
+      "sourcePhrase": "আলাপ করা"
+    },
+    {
+      "bn": "আলোচনা করা",
+      "pronunciation": "alochona kora",
+      "en": "to discuss",
+      "category": "verbs",
+      "sourcePhrase": "আলোচনা করা"
+    },
+    {
+      "bn": "বিতর্ক করা",
+      "pronunciation": "bitork kora",
+      "en": "to debate",
+      "category": "verbs",
+      "sourcePhrase": "বিতর্ক করা"
+    },
+    {
+      "bn": "পরামর্শ দেওয়া",
+      "pronunciation": "poramorsho deowa",
+      "en": "to advise",
+      "category": "verbs",
+      "sourcePhrase": "পরামর্শ দেওয়া"
+    },
+    {
+      "bn": "অনুরোধ করা",
+      "pronunciation": "onurodh kora",
+      "en": "to request",
+      "category": "verbs",
+      "sourcePhrase": "অনুরোধ করা"
+    },
+    {
+      "bn": "ক্ষমা চাওয়া",
+      "pronunciation": "khoma chaoj",
+      "en": "to apologize",
+      "category": "verbs",
+      "sourcePhrase": "ক্ষমা চাওয়া"
+    },
+    {
+      "bn": "ক্ষমা করা",
+      "pronunciation": "khoma kora",
+      "en": "to forgive",
+      "category": "verbs",
+      "sourcePhrase": "ক্ষমা করা"
+    },
+    {
+      "bn": "ধন্যবাদ জানানো",
+      "pronunciation": "dhonnobad janano",
+      "en": "to thank",
+      "category": "verbs",
+      "sourcePhrase": "ধন্যবাদ জানানো"
+    },
+    {
+      "bn": "অভিনন্দন জানানো",
+      "pronunciation": "obhinondon janano",
+      "en": "to congratulate",
+      "category": "verbs",
+      "sourcePhrase": "অভিনন্দন জানানো"
+    },
+    {
+      "bn": "প্রশংসা করা",
+      "pronunciation": "proshongsa kora",
+      "en": "to praise",
+      "category": "verbs",
+      "sourcePhrase": "প্রশংসা করা"
+    },
+    {
+      "bn": "সমালোচনা করা",
+      "pronunciation": "somalochona kora",
+      "en": "to criticize",
+      "category": "verbs",
+      "sourcePhrase": "সমালোচনা করা"
+    },
+    {
+      "bn": "অভিযোগ করা",
+      "pronunciation": "obhijog kora",
+      "en": "to complain",
+      "category": "verbs",
+      "sourcePhrase": "অভিযোগ করা"
+    },
+    {
+      "bn": "প্রতিবাদ করা",
+      "pronunciation": "Protibad kora",
+      "en": "to protest",
+      "category": "verbs",
+      "sourcePhrase": "প্রতিবাদ করা"
+    },
+    {
+      "bn": "ঘোষণা করা",
+      "pronunciation": "ghoshona kora",
+      "en": "to announce",
+      "category": "verbs",
+      "sourcePhrase": "ঘোষণা করা"
+    },
+    {
+      "bn": "প্রতিবেদন করা",
+      "pronunciation": "protibedon kora",
+      "en": "to report",
+      "category": "verbs",
+      "sourcePhrase": "প্রতিবেদন করা"
+    },
+    {
+      "bn": "প্রকাশ করা",
+      "pronunciation": "prōkāsh kora",
+      "en": "to publish",
+      "category": "verbs",
+      "sourcePhrase": "প্রকাশ করা"
+    },
+    {
+      "bn": "ব্যাখ্যা করা",
+      "pronunciation": "bjakhja kora",
+      "en": "to clarify",
+      "category": "verbs",
+      "sourcePhrase": "ব্যাখ্যা করা"
+    },
+    {
+      "bn": "উল্লেখ করা",
+      "pronunciation": "ullekh kora",
+      "en": "to mention",
+      "category": "verbs",
+      "sourcePhrase": "উল্লেখ করা"
+    },
+    {
+      "bn": "উদ্ধৃত করা",
+      "pronunciation": "uddhrit kora",
+      "en": "to quote",
+      "category": "verbs",
+      "sourcePhrase": "উদ্ধৃত করা"
+    },
+    {
+      "bn": "প্রতিশ্রুতি দেওয়া",
+      "pronunciation": "protishruti deowa",
+      "en": "to promise",
+      "category": "verbs",
+      "sourcePhrase": "প্রতিশ্রুতি দেওয়া"
+    },
+    {
+      "bn": "সম্মতি দেওয়া",
+      "pronunciation": "sommoti deowa",
+      "en": "to agree",
+      "category": "verbs",
+      "sourcePhrase": "সম্মতি দেওয়া"
+    },
+    {
+      "bn": "অসম্মতি জানানো",
+      "pronunciation": "osommoti janano",
+      "en": "to disagree",
+      "category": "verbs",
+      "sourcePhrase": "অসম্মতি জানানো"
+    },
+    {
+      "bn": "অস্বীকার করা",
+      "pronunciation": "oshwikar kora",
+      "en": "to deny",
+      "category": "verbs",
+      "sourcePhrase": "অস্বীকার করা"
+    },
+    {
+      "bn": "স্বীকার করা",
+      "pronunciation": "sbikar kora",
+      "en": "to admit",
+      "category": "verbs",
+      "sourcePhrase": "স্বীকার করা"
+    },
+    {
+      "bn": "উত্তর করা",
+      "pronunciation": "uttor kora",
+      "en": "to reply",
+      "category": "verbs",
+      "sourcePhrase": "উত্তর করা"
+    },
+    {
+      "bn": "ইশারা করা",
+      "pronunciation": "ishara kora",
+      "en": "to gesture",
+      "category": "verbs",
+      "sourcePhrase": "ইশারা করা"
+    },
+    {
+      "bn": "চিৎকার করা",
+      "pronunciation": "chitkar kora",
+      "en": "to shout",
+      "category": "verbs",
+      "sourcePhrase": "চিৎকার করা"
+    },
+    {
+      "bn": "ফিসফিস করা",
+      "pronunciation": "pʰispʰis kora",
+      "en": "to whisper",
+      "category": "verbs",
+      "sourcePhrase": "ফিসফিস করা"
+    },
+    {
+      "bn": "ডাকাডাকি করা",
+      "pronunciation": "dakadaki kora",
+      "en": "to call repeatedly",
+      "category": "verbs",
+      "sourcePhrase": "ডাকাডাকি করা"
+    },
+    {
+      "bn": "টাইপ করা",
+      "pronunciation": "taip kora",
+      "en": "to type",
+      "category": "verbs",
+      "sourcePhrase": "টাইপ করা"
+    },
+    {
+      "bn": "ক্লিক করা",
+      "pronunciation": "klik kora",
+      "en": "to click",
+      "category": "verbs",
+      "sourcePhrase": "ক্লিক করা"
+    },
+    {
+      "bn": "ডাউনলোড করা",
+      "pronunciation": "daunolod kora",
+      "en": "to download",
+      "category": "verbs",
+      "sourcePhrase": "ডাউনলোড করা"
+    },
+    {
+      "bn": "আপলোড করা",
+      "pronunciation": "apolod kora",
+      "en": "to upload",
+      "category": "verbs",
+      "sourcePhrase": "আপলোড করা"
+    },
+    {
+      "bn": "সংরক্ষণ করা",
+      "pronunciation": "shongrokkhon kora",
+      "en": "to save",
+      "category": "verbs",
+      "sourcePhrase": "সংরক্ষণ করা"
+    },
+    {
+      "bn": "মুছে ফেলা",
+      "pronunciation": "muche phela",
+      "en": "to delete",
+      "category": "verbs",
+      "sourcePhrase": "মুছে ফেলা"
+    },
+    {
+      "bn": "মুদ্রণ করা",
+      "pronunciation": "mudron kora",
+      "en": "to print",
+      "category": "verbs",
+      "sourcePhrase": "মুদ্রণ করা"
+    },
+    {
+      "bn": "স্ক্যান করা",
+      "pronunciation": "skjan kora",
+      "en": "to scan",
+      "category": "verbs",
+      "sourcePhrase": "স্ক্যান করা"
+    },
+    {
+      "bn": "কপি করা",
+      "pronunciation": "kopi kora",
+      "en": "to copy",
+      "category": "verbs",
+      "sourcePhrase": "কপি করা"
+    },
+    {
+      "bn": "আটকানো",
+      "pronunciation": "atokan",
+      "en": "to paste / attach",
+      "category": "verbs",
+      "sourcePhrase": "আটকানো"
+    },
+    {
+      "bn": "সংযুক্ত করা",
+      "pronunciation": "songjukt kora",
+      "en": "to attach",
+      "category": "verbs",
+      "sourcePhrase": "সংযুক্ত করা"
+    },
+    {
+      "bn": "সংযোগ করা",
+      "pronunciation": "songjog kora",
+      "en": "to connect",
+      "category": "verbs",
+      "sourcePhrase": "সংযোগ করা"
+    },
+    {
+      "bn": "বিচ্ছিন্ন করা",
+      "pronunciation": "bicchinno kora",
+      "en": "to disconnect",
+      "category": "verbs",
+      "sourcePhrase": "বিচ্ছিন্ন করা"
+    },
+    {
+      "bn": "চালু করা",
+      "pronunciation": "chalu kora",
+      "en": "to turn on",
+      "category": "verbs",
+      "sourcePhrase": "চালু করা"
+    },
+    {
+      "bn": "বন্ধ করা",
+      "pronunciation": "bondho kora",
+      "en": "to turn off",
+      "category": "verbs",
+      "sourcePhrase": "বন্ধ করা"
+    },
+    {
+      "bn": "পুনরায় চালু করা",
+      "pronunciation": "punoraj chalu kora",
+      "en": "to restart",
+      "category": "verbs",
+      "sourcePhrase": "পুনরায় চালু করা"
+    },
+    {
+      "bn": "লগইন করা",
+      "pronunciation": "logoin kora",
+      "en": "to log in",
+      "category": "verbs",
+      "sourcePhrase": "লগইন করা"
+    },
+    {
+      "bn": "লগআউট করা",
+      "pronunciation": "logoaut kora",
+      "en": "to log out",
+      "category": "verbs",
+      "sourcePhrase": "লগআউট করা"
+    },
+    {
+      "bn": "নিবন্ধন করা",
+      "pronunciation": "nibondhon kora",
+      "en": "to register",
+      "category": "verbs",
+      "sourcePhrase": "নিবন্ধন করা"
+    },
+    {
+      "bn": "অনুসন্ধান করা",
+      "pronunciation": "onusondhan kora",
+      "en": "to search",
+      "category": "verbs",
+      "sourcePhrase": "অনুসন্ধান করা"
+    },
+    {
+      "bn": "ব্রাউজ করা",
+      "pronunciation": "brauj kora",
+      "en": "to browse",
+      "category": "verbs",
+      "sourcePhrase": "ব্রাউজ করা"
+    },
+    {
+      "bn": "গণনা করা",
+      "pronunciation": "gonona kora",
+      "en": "to calculate",
+      "category": "verbs",
+      "sourcePhrase": "গণনা করা"
+    },
+    {
+      "bn": "মাপা",
+      "pronunciation": "mapa",
+      "en": "to measure",
+      "category": "verbs",
+      "sourcePhrase": "মাপা"
+    },
+    {
+      "bn": "ওজন করা",
+      "pronunciation": "ojon kora",
+      "en": "to weigh",
+      "category": "verbs",
+      "sourcePhrase": "ওজন করা"
+    },
+    {
+      "bn": "গোনা",
+      "pronunciation": "gona",
+      "en": "to count",
+      "category": "verbs",
+      "sourcePhrase": "গোনা"
+    },
+    {
+      "bn": "তুলনা করা",
+      "pronunciation": "tulona kora",
+      "en": "to compare",
+      "category": "verbs",
+      "sourcePhrase": "তুলনা করা"
+    },
+    {
+      "bn": "নির্বাচন করা",
+      "pronunciation": "nirbachon kora",
+      "en": "to select",
+      "category": "verbs",
+      "sourcePhrase": "নির্বাচন করা"
+    },
+    {
+      "bn": "সাজানো",
+      "pronunciation": "sajan",
+      "en": "to arrange",
+      "category": "verbs",
+      "sourcePhrase": "সাজানো"
+    },
+    {
+      "bn": "সংগঠিত করা",
+      "pronunciation": "songgothit kora",
+      "en": "to organize",
+      "category": "verbs",
+      "sourcePhrase": "সংগঠিত করা"
+    },
+    {
+      "bn": "পরিকল্পনা করা",
+      "pronunciation": "porikolpona kora",
+      "en": "to plan",
+      "category": "verbs",
+      "sourcePhrase": "পরিকল্পনা করা"
+    },
+    {
+      "bn": "প্রস্তুত করা",
+      "pronunciation": "prostut kora",
+      "en": "to prepare",
+      "category": "verbs",
+      "sourcePhrase": "প্রস্তুত করা"
+    },
+    {
+      "bn": "প্রস্তুত হওয়া",
+      "pronunciation": "prostut howa",
+      "en": "to get ready",
+      "category": "verbs",
+      "sourcePhrase": "প্রস্তুত হওয়া"
+    },
+    {
+      "bn": "প্যাক করা",
+      "pronunciation": "pæk kora",
+      "en": "to pack",
+      "category": "verbs",
+      "sourcePhrase": "প্যাক করা"
+    },
+    {
+      "bn": "খুলে নেওয়া",
+      "pronunciation": "khule neoya",
+      "en": "to unpack",
+      "category": "verbs",
+      "sourcePhrase": "খুলে নেওয়া"
+    },
+    {
+      "bn": "সাজসজ্জা করা",
+      "pronunciation": "sajosojja kora",
+      "en": "to decorate",
+      "category": "verbs",
+      "sourcePhrase": "সাজসজ্জা করা"
+    },
+    {
+      "bn": "গুছানো",
+      "pronunciation": "guchhan",
+      "en": "to tidy",
+      "category": "verbs",
+      "sourcePhrase": "গুছানো"
+    },
+    {
+      "bn": "এলোমেলো করা",
+      "pronunciation": "elomelo kora",
+      "en": "to make messy",
+      "category": "verbs",
+      "sourcePhrase": "এলোমেলো করা"
+    },
+    {
+      "bn": "ঝাড়ু দেওয়া",
+      "pronunciation": "jhad deowa",
+      "en": "to sweep",
+      "category": "verbs",
+      "sourcePhrase": "ঝাড়ু দেওয়া"
+    },
+    {
+      "bn": "মোছা",
+      "pronunciation": "mocha",
+      "en": "to wipe",
+      "category": "verbs",
+      "sourcePhrase": "মোছা"
+    },
+    {
+      "bn": "ইস্ত্রি করা",
+      "pronunciation": "istri kora",
+      "en": "to iron",
+      "category": "verbs",
+      "sourcePhrase": "ইস্ত্রি করা"
+    },
+    {
+      "bn": "গোসল করা",
+      "pronunciation": "gosol kora",
+      "en": "to bathe",
+      "category": "verbs",
+      "sourcePhrase": "গোসল করা"
+    },
+    {
+      "bn": "দাঁত মাজা",
+      "pronunciation": "dat maja",
+      "en": "to brush teeth",
+      "category": "verbs",
+      "sourcePhrase": "দাঁত মাজা"
+    },
+    {
+      "bn": "চুল আঁচড়ানো",
+      "pronunciation": "chul anchodon",
+      "en": "to comb hair",
+      "category": "verbs",
+      "sourcePhrase": "চুল আঁচড়ানো"
+    },
+    {
+      "bn": "পোশাক বদলানো",
+      "pronunciation": "poshak bodolan",
+      "en": "to change clothes",
+      "category": "verbs",
+      "sourcePhrase": "পোশাক বদলানো"
+    },
+    {
+      "bn": "বিশ্রাম নেওয়া",
+      "pronunciation": "bishram neoya",
+      "en": "to rest",
+      "category": "verbs",
+      "sourcePhrase": "বিশ্রাম নেওয়া"
+    },
+    {
+      "bn": "ব্যায়াম করা",
+      "pronunciation": "byayam kora",
+      "en": "to exercise",
+      "category": "verbs",
+      "sourcePhrase": "ব্যায়াম করা"
+    },
+    {
+      "bn": "অনুশীলন করা",
+      "pronunciation": "onushilon kora",
+      "en": "to practice",
+      "category": "verbs",
+      "sourcePhrase": "অনুশীলন করা"
+    },
+    {
+      "bn": "প্রতিযোগিতা করা",
+      "pronunciation": "protijogita kora",
+      "en": "to compete",
+      "category": "verbs",
+      "sourcePhrase": "প্রতিযোগিতা করা"
+    },
+    {
+      "bn": "উদযাপন করা",
+      "pronunciation": "udojapon kora",
+      "en": "to celebrate",
+      "category": "verbs",
+      "sourcePhrase": "উদযাপন করা"
+    },
+    {
+      "bn": "ভাগ করা",
+      "pronunciation": "bhag kora",
+      "en": "to share",
+      "category": "verbs",
+      "sourcePhrase": "ভাগ করা"
+    },
+    {
+      "bn": "ধার নেওয়া",
+      "pronunciation": "dhar neoya",
+      "en": "to borrow",
+      "category": "verbs",
+      "sourcePhrase": "ধার নেওয়া"
+    },
+    {
+      "bn": "ধার দেওয়া",
+      "pronunciation": "dhar deowa",
+      "en": "to lend",
+      "category": "verbs",
+      "sourcePhrase": "ধার দেওয়া"
+    },
+    {
+      "bn": "জমা দেওয়া",
+      "pronunciation": "joma deowa",
+      "en": "to submit",
+      "category": "verbs",
+      "sourcePhrase": "জমা দেওয়া"
+    },
+    {
+      "bn": "সংগ্রহ করা",
+      "pronunciation": "shongroho kora",
+      "en": "to collect",
+      "category": "verbs",
+      "sourcePhrase": "সংগ্রহ করা"
+    },
+    {
+      "bn": "সংরক্ষণ করে রাখা",
+      "pronunciation": "shongrokkhon kore rakha",
+      "en": "to preserve",
+      "category": "verbs",
+      "sourcePhrase": "সংরক্ষণ করে রাখা"
+    },
+    {
+      "bn": "রেকর্ড করা",
+      "pronunciation": "rekord kora",
+      "en": "to record",
+      "category": "verbs",
+      "sourcePhrase": "রেকর্ড করা"
+    },
+    {
+      "bn": "অনুভব করা",
+      "pronunciation": "onubhob kora",
+      "en": "to feel",
+      "category": "verbs",
+      "sourcePhrase": "অনুভব করা"
+    },
+    {
+      "bn": "উপলব্ধি করা",
+      "pronunciation": "Upolabdhi kora",
+      "en": "to realize",
+      "category": "verbs",
+      "sourcePhrase": "উপলব্ধি করা"
+    },
+    {
+      "bn": "কল্পনা করা",
+      "pronunciation": "kolpona kora",
+      "en": "to imagine",
+      "category": "verbs",
+      "sourcePhrase": "কল্পনা করা"
+    },
+    {
+      "bn": "স্বপ্ন দেখা",
+      "pronunciation": "shopno dekha",
+      "en": "to dream",
+      "category": "verbs",
+      "sourcePhrase": "স্বপ্ন দেখা"
+    },
+    {
+      "bn": "অনুমান করা",
+      "pronunciation": "onuman kora",
+      "en": "to guess",
+      "category": "verbs",
+      "sourcePhrase": "অনুমান করা"
+    },
+    {
+      "bn": "আন্দাজ করা",
+      "pronunciation": "andaj kora",
+      "en": "to estimate / guess",
+      "category": "verbs",
+      "sourcePhrase": "আন্দাজ করা"
+    },
+    {
+      "bn": "বিচার করা",
+      "pronunciation": "Bichar kora",
+      "en": "to judge",
+      "category": "verbs",
+      "sourcePhrase": "বিচার করা"
+    },
+    {
+      "bn": "বিবেচনা করা",
+      "pronunciation": "bibechona kora",
+      "en": "to consider",
+      "category": "verbs",
+      "sourcePhrase": "বিবেচনা করা"
+    },
+    {
+      "bn": "সিদ্ধান্তে পৌঁছানো",
+      "pronunciation": "siddhante pounchhan",
+      "en": "to reach a decision",
+      "category": "verbs",
+      "sourcePhrase": "সিদ্ধান্তে পৌঁছানো"
+    },
+    {
+      "bn": "প্রত্যাখ্যান করা",
+      "pronunciation": "protyakhyan kora",
+      "en": "to reject",
+      "category": "verbs",
+      "sourcePhrase": "প্রত্যাখ্যান করা"
+    },
+    {
+      "bn": "গ্রহণ করা",
+      "pronunciation": "grohon kora",
+      "en": "to accept",
+      "category": "verbs",
+      "sourcePhrase": "গ্রহণ করা"
+    },
+    {
+      "bn": "সম্মান করা",
+      "pronunciation": "shomman kora",
+      "en": "to respect",
+      "category": "verbs",
+      "sourcePhrase": "সম্মান করা"
+    },
+    {
+      "bn": "অবহেলা করা",
+      "pronunciation": "obohela kora",
+      "en": "to neglect",
+      "category": "verbs",
+      "sourcePhrase": "অবহেলা করা"
+    },
+    {
+      "bn": "উপেক্ষা করা",
+      "pronunciation": "upekha kora",
+      "en": "to ignore",
+      "category": "verbs",
+      "sourcePhrase": "উপেক্ষা করা"
+    },
+    {
+      "bn": "মনোযোগ দেওয়া",
+      "pronunciation": "monojog deowa",
+      "en": "to pay attention",
+      "category": "verbs",
+      "sourcePhrase": "মনোযোগ দেওয়া"
+    },
+    {
+      "bn": "লক্ষ্য করা",
+      "pronunciation": "lokkho kora",
+      "en": "to notice",
+      "category": "verbs",
+      "sourcePhrase": "লক্ষ্য করা"
+    },
+    {
+      "bn": "পর্যবেক্ষণ করা",
+      "pronunciation": "porjobekshon kora",
+      "en": "to observe",
+      "category": "verbs",
+      "sourcePhrase": "পর্যবেক্ষণ করা"
+    },
+    {
+      "bn": "পরীক্ষা করা",
+      "pronunciation": "porikkha kora",
+      "en": "to examine",
+      "category": "verbs",
+      "sourcePhrase": "পরীক্ষা করা"
+    },
+    {
+      "bn": "যাচাই করা",
+      "pronunciation": "jachai kora",
+      "en": "to verify",
+      "category": "verbs",
+      "sourcePhrase": "যাচাই করা"
+    },
+    {
+      "bn": "প্রমাণ করা",
+      "pronunciation": "proman kora",
+      "en": "to prove",
+      "category": "verbs",
+      "sourcePhrase": "প্রমাণ করা"
+    },
+    {
+      "bn": "আবিষ্কার করা",
+      "pronunciation": "abishkar kora",
+      "en": "to discover",
+      "category": "verbs",
+      "sourcePhrase": "আবিষ্কার করা"
+    },
+    {
+      "bn": "উদ্ভাবন করা",
+      "pronunciation": "udbhabon kora",
+      "en": "to invent",
+      "category": "verbs",
+      "sourcePhrase": "উদ্ভাবন করা"
+    },
+    {
+      "bn": "গবেষণা করা",
+      "pronunciation": "gobeshona kora",
+      "en": "to research",
+      "category": "verbs",
+      "sourcePhrase": "গবেষণা করা"
+    },
+    {
+      "bn": "বিশ্লেষণ করা",
+      "pronunciation": "bishleshon kora",
+      "en": "to analyze",
+      "category": "verbs",
+      "sourcePhrase": "বিশ্লেষণ করা"
+    },
+    {
+      "bn": "মূল্যায়ন করা",
+      "pronunciation": "muljajon kora",
+      "en": "to evaluate",
+      "category": "verbs",
+      "sourcePhrase": "মূল্যায়ন করা"
+    },
+    {
+      "bn": "শ্রেণিবদ্ধ করা",
+      "pronunciation": "shreniboddh kora",
+      "en": "to classify",
+      "category": "verbs",
+      "sourcePhrase": "শ্রেণিবদ্ধ করা"
+    },
+    {
+      "bn": "গণ্য করা",
+      "pronunciation": "gonj kora",
+      "en": "to consider / regard",
+      "category": "verbs",
+      "sourcePhrase": "গণ্য করা"
+    },
+    {
+      "bn": "নির্ধারণ করা",
+      "pronunciation": "nirdharon kora",
+      "en": "to determine",
+      "category": "verbs",
+      "sourcePhrase": "নির্ধারণ করা"
+    },
+    {
+      "bn": "পরিচালনা করা",
+      "pronunciation": "porichalona kora",
+      "en": "to manage",
+      "category": "verbs",
+      "sourcePhrase": "পরিচালনা করা"
+    },
+    {
+      "bn": "নিয়ন্ত্রণ করা",
+      "pronunciation": "nijontron kora",
+      "en": "to control",
+      "category": "verbs",
+      "sourcePhrase": "নিয়ন্ত্রণ করা"
+    },
+    {
+      "bn": "পরিচালিত করা",
+      "pronunciation": "porichalit kora",
+      "en": "to operate",
+      "category": "verbs",
+      "sourcePhrase": "পরিচালিত করা"
+    },
+    {
+      "bn": "সমন্বয় করা",
+      "pronunciation": "shomonnoy kora",
+      "en": "to coordinate",
+      "category": "verbs",
+      "sourcePhrase": "সমন্বয় করা"
+    },
+    {
+      "bn": "উন্নতি করা",
+      "pronunciation": "unnoti kora",
+      "en": "to improve",
+      "category": "verbs",
+      "sourcePhrase": "উন্নতি করা"
+    },
+    {
+      "bn": "উন্নত করা",
+      "pronunciation": "unnoto kora",
+      "en": "to improve something",
+      "category": "verbs",
+      "sourcePhrase": "উন্নত করা"
+    },
+    {
+      "bn": "বিকাশ করা",
+      "pronunciation": "bikash kora",
+      "en": "to develop",
+      "category": "verbs",
+      "sourcePhrase": "বিকাশ করা"
+    },
+    {
+      "bn": "বৃদ্ধি পাওয়া",
+      "pronunciation": "briddhi paowa",
+      "en": "to increase",
+      "category": "verbs",
+      "sourcePhrase": "বৃদ্ধি পাওয়া"
+    },
+    {
+      "bn": "বৃদ্ধি করা",
+      "pronunciation": "briddhi kora",
+      "en": "to increase",
+      "category": "verbs",
+      "sourcePhrase": "বৃদ্ধি করা"
+    },
+    {
+      "bn": "কমানো",
+      "pronunciation": "koman",
+      "en": "to reduce",
+      "category": "verbs",
+      "sourcePhrase": "কমানো"
+    },
+    {
+      "bn": "কমে যাওয়া",
+      "pronunciation": "kome jawa",
+      "en": "to decrease",
+      "category": "verbs",
+      "sourcePhrase": "কমে যাওয়া"
+    },
+    {
+      "bn": "বাড়ানো",
+      "pronunciation": "badon",
+      "en": "to increase / raise",
+      "category": "verbs",
+      "sourcePhrase": "বাড়ানো"
+    },
+    {
+      "bn": "বাড়া",
+      "pronunciation": "bad",
+      "en": "to grow",
+      "category": "verbs",
+      "sourcePhrase": "বাড়া"
+    },
+    {
+      "bn": "কমা",
+      "pronunciation": "koma",
+      "en": "to lessen",
+      "category": "verbs",
+      "sourcePhrase": "কমা"
+    },
+    {
+      "bn": "সৃষ্টি করা",
+      "pronunciation": "shrishti kora",
+      "en": "to create",
+      "category": "verbs",
+      "sourcePhrase": "সৃষ্টি করা"
+    },
+    {
+      "bn": "ধ্বংস করা",
+      "pronunciation": "dhongsho kora",
+      "en": "to destroy",
+      "category": "verbs",
+      "sourcePhrase": "ধ্বংস করা"
+    },
+    {
+      "bn": "নির্মাণ করা",
+      "pronunciation": "nirman kora",
+      "en": "to construct",
+      "category": "verbs",
+      "sourcePhrase": "নির্মাণ করা"
+    },
+    {
+      "bn": "প্রতিষ্ঠা করা",
+      "pronunciation": "protishtha kora",
+      "en": "to establish",
+      "category": "verbs",
+      "sourcePhrase": "প্রতিষ্ঠা করা"
+    },
+    {
+      "bn": "সংরক্ষণ করা",
+      "pronunciation": "shongrokkhon kora",
+      "en": "to preserve",
+      "category": "verbs",
+      "sourcePhrase": "সংরক্ষণ করা"
+    },
+    {
+      "bn": "আক্রমণ করা",
+      "pronunciation": "akromon kora",
+      "en": "to attack",
+      "category": "verbs",
+      "sourcePhrase": "আক্রমণ করা"
+    },
+    {
+      "bn": "প্রতিরক্ষা করা",
+      "pronunciation": "protiroksha kora",
+      "en": "to defend",
+      "category": "verbs",
+      "sourcePhrase": "প্রতিরক্ষা করা"
+    },
+    {
+      "bn": "লুকানো",
+      "pronunciation": "lukano",
+      "en": "to hide",
+      "category": "verbs",
+      "sourcePhrase": "লুকানো"
+    },
+    {
+      "bn": "লুকিয়ে রাখা",
+      "pronunciation": "lukie rakha",
+      "en": "to conceal",
+      "category": "verbs",
+      "sourcePhrase": "লুকিয়ে রাখা"
+    },
+    {
+      "bn": "প্রকাশ করা",
+      "pronunciation": "prōkāsh kora",
+      "en": "to reveal",
+      "category": "verbs",
+      "sourcePhrase": "প্রকাশ করা"
+    },
+    {
+      "bn": "ভাগাভাগি করা",
+      "pronunciation": "bhagabhagi kora",
+      "en": "to share",
+      "category": "verbs",
+      "sourcePhrase": "ভাগাভাগি করা"
+    },
+    {
+      "bn": "নির্ভর করা",
+      "pronunciation": "nirbhor kora",
+      "en": "to depend",
+      "category": "verbs",
+      "sourcePhrase": "নির্ভর করা"
+    },
+    {
+      "bn": "ভরসা করা",
+      "pronunciation": "bhorsha kora",
+      "en": "to trust / rely on",
+      "category": "verbs",
+      "sourcePhrase": "ভরসা করা"
+    },
+    {
+      "bn": "সন্দেহ করা",
+      "pronunciation": "shondeho kora",
+      "en": "to suspect",
+      "category": "verbs",
+      "sourcePhrase": "সন্দেহ করা"
+    },
+    {
+      "bn": "উৎসাহ দেওয়া",
+      "pronunciation": "utosah deowa",
+      "en": "to encourage",
+      "category": "verbs",
+      "sourcePhrase": "উৎসাহ দেওয়া"
+    },
+    {
+      "bn": "নিরুৎসাহিত করা",
+      "pronunciation": "nirutosahit kora",
+      "en": "to discourage",
+      "category": "verbs",
+      "sourcePhrase": "নিরুৎসাহিত করা"
+    },
+    {
+      "bn": "অনুপ্রাণিত করা",
+      "pronunciation": "onupranit kora",
+      "en": "to inspire",
+      "category": "verbs",
+      "sourcePhrase": "অনুপ্রাণিত করা"
+    },
+    {
+      "bn": "উৎসর্গ করা",
+      "pronunciation": "utosorg kora",
+      "en": "to dedicate",
+      "category": "verbs",
+      "sourcePhrase": "উৎসর্গ করা"
+    },
+    {
+      "bn": "ত্যাগ করা",
+      "pronunciation": "tyag kora",
+      "en": "to sacrifice / abandon",
+      "category": "verbs",
+      "sourcePhrase": "ত্যাগ করা"
+    },
+    {
+      "bn": "ছেড়ে দেওয়া",
+      "pronunciation": "chhere deowa",
+      "en": "to give up",
+      "category": "verbs",
+      "sourcePhrase": "ছেড়ে দেওয়া"
+    },
+    {
+      "bn": "ধরে রাখা",
+      "pronunciation": "dhore rakha",
+      "en": "to keep / retain",
+      "category": "verbs",
+      "sourcePhrase": "ধরে রাখা"
+    },
+    {
+      "bn": "অর্জন করা",
+      "pronunciation": "orjon kora",
+      "en": "to achieve",
+      "category": "verbs",
+      "sourcePhrase": "অর্জন করা"
+    },
+    {
+      "bn": "সফল হওয়া",
+      "pronunciation": "shofol howa",
+      "en": "to succeed",
+      "category": "verbs",
+      "sourcePhrase": "সফল হওয়া"
+    },
+    {
+      "bn": "ব্যর্থ হওয়া",
+      "pronunciation": "byôrtho howa",
+      "en": "to fail",
+      "category": "verbs",
+      "sourcePhrase": "ব্যর্থ হওয়া"
+    },
+    {
+      "bn": "উন্নীত করা",
+      "pronunciation": "unnit kora",
+      "en": "to promote",
+      "category": "verbs",
+      "sourcePhrase": "উন্নীত করা"
+    },
+    {
+      "bn": "নিয়োগ করা",
+      "pronunciation": "nijog kora",
+      "en": "to hire",
+      "category": "verbs",
+      "sourcePhrase": "নিয়োগ করা"
+    },
+    {
+      "bn": "বরখাস্ত করা",
+      "pronunciation": "borokhast kora",
+      "en": "to dismiss",
+      "category": "verbs",
+      "sourcePhrase": "বরখাস্ত করা"
+    },
+    {
+      "bn": "অবসর নেওয়া",
+      "pronunciation": "obosor neoya",
+      "en": "to retire",
+      "category": "verbs",
+      "sourcePhrase": "অবসর নেওয়া"
+    },
+    {
+      "bn": "সহযোগিতা করা",
+      "pronunciation": "sohojogita kora",
+      "en": "to cooperate",
+      "category": "verbs",
+      "sourcePhrase": "সহযোগিতা করা"
+    },
+    {
+      "bn": "মানা",
+      "pronunciation": "mana",
+      "en": "to obey",
+      "category": "verbs",
+      "sourcePhrase": "মানা"
+    },
+    {
+      "bn": "অমান্য করা",
+      "pronunciation": "omanj kora",
+      "en": "to disobey",
+      "category": "verbs",
+      "sourcePhrase": "অমান্য করা"
+    },
+    {
+      "bn": "অভিযোগ আনা",
+      "pronunciation": "obhijog ana",
+      "en": "to accuse",
+      "category": "verbs",
+      "sourcePhrase": "অভিযোগ আনা"
+    },
+    {
+      "bn": "দোষ দেওয়া",
+      "pronunciation": "dosh deowa",
+      "en": "to blame",
+      "category": "verbs",
+      "sourcePhrase": "দোষ দেওয়া"
+    },
+    {
+      "bn": "পুরস্কৃত করা",
+      "pronunciation": "puroskrit kora",
+      "en": "to reward",
+      "category": "verbs",
+      "sourcePhrase": "পুরস্কৃত করা"
+    },
+    {
+      "bn": "শাস্তি দেওয়া",
+      "pronunciation": "shasti deowa",
+      "en": "to punish",
+      "category": "verbs",
+      "sourcePhrase": "শাস্তি দেওয়া"
+    },
+    {
+      "bn": "রাগ করা",
+      "pronunciation": "rag kora",
+      "en": "to become angry",
+      "category": "verbs",
+      "sourcePhrase": "রাগ করা"
+    },
+    {
+      "bn": "বিরক্ত হওয়া",
+      "pronunciation": "birokto howa",
+      "en": "to become annoyed",
+      "category": "verbs",
+      "sourcePhrase": "বিরক্ত হওয়া"
+    },
+    {
+      "bn": "শান্ত হওয়া",
+      "pronunciation": "shanto howa",
+      "en": "to calm down",
+      "category": "verbs",
+      "sourcePhrase": "শান্ত হওয়া"
+    },
+    {
+      "bn": "চিন্তিত হওয়া",
+      "pronunciation": "chintito howa",
+      "en": "to worry",
+      "category": "verbs",
+      "sourcePhrase": "চিন্তিত হওয়া"
+    },
+    {
+      "bn": "ভয় পাওয়া",
+      "pronunciation": "bhoy paowa",
+      "en": "to become afraid",
+      "category": "verbs",
+      "sourcePhrase": "ভয় পাওয়া"
+    },
+    {
+      "bn": "সাহস করা",
+      "pronunciation": "Shahosh kora",
+      "en": "to dare",
+      "category": "verbs",
+      "sourcePhrase": "সাহস করা"
+    },
+    {
+      "bn": "লজ্জা পাওয়া",
+      "pronunciation": "lojja paowa",
+      "en": "to feel embarrassed",
+      "category": "verbs",
+      "sourcePhrase": "লজ্জা পাওয়া"
+    },
+    {
+      "bn": "গর্ব করা",
+      "pronunciation": "gorbo kora",
+      "en": "to be proud",
+      "category": "verbs",
+      "sourcePhrase": "গর্ব করা"
+    },
+    {
+      "bn": "ঈর্ষা করা",
+      "pronunciation": "irsha kora",
+      "en": "to envy",
+      "category": "verbs",
+      "sourcePhrase": "ঈর্ষা করা"
+    },
+    {
+      "bn": "ঘৃণা করা",
+      "pronunciation": "ghrina kora",
+      "en": "to hate",
+      "category": "verbs",
+      "sourcePhrase": "ঘৃণা করা"
+    },
+    {
+      "bn": "মিলিত হওয়া",
+      "pronunciation": "milito howa",
+      "en": "to meet",
+      "category": "verbs",
+      "sourcePhrase": "মিলিত হওয়া"
+    },
+    {
+      "bn": "বিচ্ছিন্ন হওয়া",
+      "pronunciation": "bicchinno howa",
+      "en": "to separate",
+      "category": "verbs",
+      "sourcePhrase": "বিচ্ছিন্ন হওয়া"
+    },
+    {
+      "bn": "বিবাহ করা",
+      "pronunciation": "bibah kora",
+      "en": "to marry",
+      "category": "verbs",
+      "sourcePhrase": "বিবাহ করা"
+    },
+    {
+      "bn": "জন্ম দেওয়া",
+      "pronunciation": "jonmo deowa",
+      "en": "to give birth",
+      "category": "verbs",
+      "sourcePhrase": "জন্ম দেওয়া"
+    },
+    {
+      "bn": "লালন-পালন করা",
+      "pronunciation": "lalon palon kora",
+      "en": "to raise (a child)",
+      "category": "verbs",
+      "sourcePhrase": "লালন-পালন করা"
+    },
+    {
+      "bn": "যত্ন নেওয়া",
+      "pronunciation": "jotno neoya",
+      "en": "to take care of",
+      "category": "verbs",
+      "sourcePhrase": "যত্ন নেওয়া"
+    },
+    {
+      "bn": "নিরাময় করা",
+      "pronunciation": "niramoj kora",
+      "en": "to heal",
+      "category": "verbs",
+      "sourcePhrase": "নিরাময় করা"
+    },
+    {
+      "bn": "সংক্রমিত করা",
+      "pronunciation": "songkromit kora",
+      "en": "to infect",
+      "category": "verbs",
+      "sourcePhrase": "সংক্রমিত করা"
     }
   ],
   "practice": [],
   "notes": [
-    "These are dictionary forms; Bengali verbs change for tense and politeness."
+    "These are dictionary forms; Bengali verbs change for tense, person, and politeness.",
+    "Many Bengali verbs are compounds built from a noun or adjective plus করা, হওয়া, নেওয়া, or দেওয়া."
   ]
 }

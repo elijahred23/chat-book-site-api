@@ -1,7 +1,7 @@
 {
   "id": "nouns",
   "title": "Essential Bengali Nouns",
-  "summary": "Common nouns for people, places, objects, and everyday life.",
+  "summary": "Build everyday Bengali vocabulary for people, family, home, food, animals, nature, health, work, technology, places, time, and abstract ideas.",
   "level": "beginner",
   "topic": "Nouns",
   "focus": "vocabulary",
@@ -1523,700 +1523,4361 @@
       "pronunciation": "manush",
       "en": "person",
       "category": "nouns",
-      "sourcePhrase": "ওই মানুষটি খুব ভালো।"
+      "sourcePhrase": "মানুষ"
     },
     {
-      "bn": "বন্ধু",
-      "pronunciation": "bondhu",
-      "en": "friend",
+      "bn": "ছেলে",
+      "pronunciation": "chele",
+      "en": "boy",
       "category": "nouns",
-      "sourcePhrase": "রাহিম আমার বন্ধু।"
+      "sourcePhrase": "ছেলে"
     },
     {
-      "bn": "পরিবার",
-      "pronunciation": "poribar",
-      "en": "family",
+      "bn": "মেয়ে",
+      "pronunciation": "meye",
+      "en": "girl",
       "category": "nouns",
-      "sourcePhrase": "আমার পরিবার ঢাকায় থাকে।"
-    },
-    {
-      "bn": "বাড়ি",
-      "pronunciation": "bari",
-      "en": "house",
-      "category": "nouns",
-      "sourcePhrase": "আমাদের বাড়ি ছোট।"
-    },
-    {
-      "bn": "স্কুল",
-      "pronunciation": "skul",
-      "en": "school",
-      "category": "nouns",
-      "sourcePhrase": "স্কুল সকাল আটটায় শুরু হয়।"
-    },
-    {
-      "bn": "বই",
-      "pronunciation": "boi",
-      "en": "book",
-      "category": "nouns",
-      "sourcePhrase": "এটা আমার প্রিয় বই।"
-    },
-    {
-      "bn": "পানি",
-      "pronunciation": "pani",
-      "en": "water",
-      "category": "nouns",
-      "sourcePhrase": "দয়া করে আমাকে পানি দিন।"
-    },
-    {
-      "bn": "খাবার",
-      "pronunciation": "khabar",
-      "en": "food",
-      "category": "nouns",
-      "sourcePhrase": "খাবার টেবিলে রাখা আছে।"
-    },
-    {
-      "bn": "দিন",
-      "pronunciation": "din",
-      "en": "day",
-      "category": "nouns",
-      "sourcePhrase": "দয়া করে আমাকে পানি দিন।"
-    },
-    {
-      "bn": "সময়",
-      "pronunciation": "shomoy",
-      "en": "time",
-      "category": "nouns",
-      "sourcePhrase": "আমার এখন সময় নেই।"
-    },
-    {
-      "bn": "রাস্তা",
-      "pronunciation": "rasta",
-      "en": "road",
-      "category": "nouns",
-      "sourcePhrase": "এই রাস্তা স্টেশনে যায়।"
-    },
-    {
-      "bn": "শহর",
-      "pronunciation": "shohor",
-      "en": "city",
-      "category": "nouns",
-      "sourcePhrase": "এই শহর অনেক বড়।"
-    },
-    {
-      "bn": "দরজা",
-      "pronunciation": "dorja",
-      "en": "door",
-      "category": "nouns",
-      "sourcePhrase": "ঘরের দরজা খোলা।"
-    },
-    {
-      "bn": "জানালা",
-      "pronunciation": "janala",
-      "en": "window",
-      "category": "nouns",
-      "sourcePhrase": "জানালা দিয়ে আলো আসছে।"
-    },
-    {
-      "bn": "চাবি",
-      "pronunciation": "chabi",
-      "en": "key",
-      "category": "nouns",
-      "sourcePhrase": "চাবি টেবিলের উপরে আছে।"
-    },
-    {
-      "bn": "ফোন",
-      "pronunciation": "phone",
-      "en": "phone",
-      "category": "nouns",
-      "sourcePhrase": "আমার ফোন ব্যাগে আছে।"
-    },
-    {
-      "bn": "কম্পিউটার",
-      "pronunciation": "kompiutar",
-      "en": "computer",
-      "category": "nouns",
-      "sourcePhrase": "কম্পিউটারটি খুব দ্রুত।"
-    },
-    {
-      "bn": "টেবিল",
-      "pronunciation": "tebil",
-      "en": "table",
-      "category": "nouns",
-      "sourcePhrase": "খাবার টেবিলে রাখা আছে।"
-    },
-    {
-      "bn": "চেয়ার",
-      "pronunciation": "cheyar",
-      "en": "chair",
-      "category": "nouns",
-      "sourcePhrase": "চেয়ারটি টেবিলের সামনে।"
-    },
-    {
-      "bn": "ঘড়ি",
-      "pronunciation": "ghori",
-      "en": "clock / watch",
-      "category": "nouns",
-      "sourcePhrase": "ঘড়িতে এখন দশটা।"
-    },
-    {
-      "bn": "ব্যাগ",
-      "pronunciation": "bag",
-      "en": "bag",
-      "category": "nouns",
-      "sourcePhrase": "আমার ফোন ব্যাগে আছে।"
-    },
-    {
-      "bn": "কলম",
-      "pronunciation": "kolom",
-      "en": "pen",
-      "category": "nouns",
-      "sourcePhrase": "আমি একটি কলম কিনেছি।"
-    },
-    {
-      "bn": "কাগজ",
-      "pronunciation": "kagoj",
-      "en": "paper",
-      "category": "nouns",
-      "sourcePhrase": "কাগজটি টেবিলে রাখুন।"
+      "sourcePhrase": "মেয়ে"
     },
     {
       "bn": "শিশু",
       "pronunciation": "shishu",
       "en": "child",
       "category": "nouns",
-      "sourcePhrase": "শিশুটি ঘুমাচ্ছে।"
+      "sourcePhrase": "শিশু"
+    },
+    {
+      "bn": "বাচ্চা",
+      "pronunciation": "baccha",
+      "en": "kid",
+      "category": "nouns",
+      "sourcePhrase": "বাচ্চা"
+    },
+    {
+      "bn": "বন্ধু",
+      "pronunciation": "bondhu",
+      "en": "friend",
+      "category": "nouns",
+      "sourcePhrase": "বন্ধু"
     },
     {
       "bn": "শিক্ষক",
       "pronunciation": "shikkhok",
       "en": "teacher",
       "category": "nouns",
-      "sourcePhrase": "শিক্ষক ক্লাসে পড়াচ্ছেন।"
+      "sourcePhrase": "শিক্ষক"
+    },
+    {
+      "bn": "শিক্ষিকা",
+      "pronunciation": "shikshika",
+      "en": "female teacher",
+      "category": "nouns",
+      "sourcePhrase": "শিক্ষিকা"
     },
     {
       "bn": "ছাত্র",
       "pronunciation": "chhatro",
-      "en": "student",
+      "en": "student (male)",
       "category": "nouns",
-      "sourcePhrase": "ছাত্র বই পড়ছে।"
+      "sourcePhrase": "ছাত্র"
+    },
+    {
+      "bn": "ছাত্রী",
+      "pronunciation": "Chhatri",
+      "en": "student (female)",
+      "category": "nouns",
+      "sourcePhrase": "ছাত্রী"
     },
     {
       "bn": "ডাক্তার",
       "pronunciation": "daktar",
       "en": "doctor",
       "category": "nouns",
-      "sourcePhrase": "ডাক্তার হাসপাতালে আছেন।"
+      "sourcePhrase": "ডাক্তার"
     },
     {
-      "bn": "বাজার",
-      "pronunciation": "bajar",
-      "en": "market",
+      "bn": "নার্স",
+      "pronunciation": "nars",
+      "en": "nurse",
       "category": "nouns",
-      "sourcePhrase": "বাজার আজ বন্ধ।"
+      "sourcePhrase": "নার্স"
     },
     {
-      "bn": "দোকান",
-      "pronunciation": "dokan",
-      "en": "shop",
+      "bn": "রোগী",
+      "pronunciation": "rogi",
+      "en": "patient",
       "category": "nouns",
-      "sourcePhrase": "দোকানটি সকাল নয়টায় খোলে।"
+      "sourcePhrase": "রোগী"
+    },
+    {
+      "bn": "পুলিশ",
+      "pronunciation": "pulish",
+      "en": "police officer",
+      "category": "nouns",
+      "sourcePhrase": "পুলিশ"
+    },
+    {
+      "bn": "সৈনিক",
+      "pronunciation": "soinik",
+      "en": "soldier",
+      "category": "nouns",
+      "sourcePhrase": "সৈনিক"
+    },
+    {
+      "bn": "কৃষক",
+      "pronunciation": "Krishok",
+      "en": "farmer",
+      "category": "nouns",
+      "sourcePhrase": "কৃষক"
+    },
+    {
+      "bn": "জেলে",
+      "pronunciation": "jele",
+      "en": "fisherman",
+      "category": "nouns",
+      "sourcePhrase": "জেলে"
+    },
+    {
+      "bn": "ব্যবসায়ী",
+      "pronunciation": "bjobosaj",
+      "en": "businessman",
+      "category": "nouns",
+      "sourcePhrase": "ব্যবসায়ী"
+    },
+    {
+      "bn": "কর্মচারী",
+      "pronunciation": "kormochari",
+      "en": "employee",
+      "category": "nouns",
+      "sourcePhrase": "কর্মচারী"
+    },
+    {
+      "bn": "চালক",
+      "pronunciation": "chalok",
+      "en": "driver",
+      "category": "nouns",
+      "sourcePhrase": "চালক"
+    },
+    {
+      "bn": "রাঁধুনি",
+      "pronunciation": "randhuni",
+      "en": "cook",
+      "category": "nouns",
+      "sourcePhrase": "রাঁধুনি"
+    },
+    {
+      "bn": "শিল্পী",
+      "pronunciation": "shilpi",
+      "en": "artist",
+      "category": "nouns",
+      "sourcePhrase": "শিল্পী"
+    },
+    {
+      "bn": "গায়ক",
+      "pronunciation": "gajok",
+      "en": "singer",
+      "category": "nouns",
+      "sourcePhrase": "গায়ক"
+    },
+    {
+      "bn": "অভিনেতা",
+      "pronunciation": "obhineta",
+      "en": "actor",
+      "category": "nouns",
+      "sourcePhrase": "অভিনেতা"
+    },
+    {
+      "bn": "অভিনেত্রী",
+      "pronunciation": "obhinetri",
+      "en": "actress",
+      "category": "nouns",
+      "sourcePhrase": "অভিনেত্রী"
+    },
+    {
+      "bn": "লেখক",
+      "pronunciation": "lekhok",
+      "en": "writer",
+      "category": "nouns",
+      "sourcePhrase": "লেখক"
+    },
+    {
+      "bn": "কবি",
+      "pronunciation": "kobi",
+      "en": "poet",
+      "category": "nouns",
+      "sourcePhrase": "কবি"
+    },
+    {
+      "bn": "বিচারক",
+      "pronunciation": "bicharok",
+      "en": "judge",
+      "category": "nouns",
+      "sourcePhrase": "বিচারক"
+    },
+    {
+      "bn": "আইনজীবী",
+      "pronunciation": "ainojibi",
+      "en": "lawyer",
+      "category": "nouns",
+      "sourcePhrase": "আইনজীবী"
+    },
+    {
+      "bn": "প্রকৌশলী",
+      "pronunciation": "prokousholi",
+      "en": "engineer",
+      "category": "nouns",
+      "sourcePhrase": "প্রকৌশলী"
+    },
+    {
+      "bn": "বিজ্ঞানী",
+      "pronunciation": "biggani",
+      "en": "scientist",
+      "category": "nouns",
+      "sourcePhrase": "বিজ্ঞানী"
+    },
+    {
+      "bn": "পরিবার",
+      "pronunciation": "poribar",
+      "en": "family",
+      "category": "nouns",
+      "sourcePhrase": "পরিবার"
+    },
+    {
+      "bn": "বাবা",
+      "pronunciation": "baba",
+      "en": "father",
+      "category": "nouns",
+      "sourcePhrase": "বাবা"
+    },
+    {
+      "bn": "মা",
+      "pronunciation": "ma",
+      "en": "mother",
+      "category": "nouns",
+      "sourcePhrase": "মা"
+    },
+    {
+      "bn": "ভাই",
+      "pronunciation": "bhai",
+      "en": "brother",
+      "category": "nouns",
+      "sourcePhrase": "ভাই"
+    },
+    {
+      "bn": "বোন",
+      "pronunciation": "bon",
+      "en": "sister",
+      "category": "nouns",
+      "sourcePhrase": "বোন"
+    },
+    {
+      "bn": "দাদা",
+      "pronunciation": "dada",
+      "en": "older brother",
+      "category": "nouns",
+      "sourcePhrase": "দাদা"
+    },
+    {
+      "bn": "দিদি",
+      "pronunciation": "Didi",
+      "en": "older sister",
+      "category": "nouns",
+      "sourcePhrase": "দিদি"
+    },
+    {
+      "bn": "চাচা",
+      "pronunciation": "chacha",
+      "en": "uncle",
+      "category": "nouns",
+      "sourcePhrase": "চাচা"
+    },
+    {
+      "bn": "চাচি",
+      "pronunciation": "chachi",
+      "en": "aunt",
+      "category": "nouns",
+      "sourcePhrase": "চাচি"
+    },
+    {
+      "bn": "মামা",
+      "pronunciation": "mama",
+      "en": "maternal uncle",
+      "category": "nouns",
+      "sourcePhrase": "মামা"
+    },
+    {
+      "bn": "মামী",
+      "pronunciation": "mami",
+      "en": "maternal aunt",
+      "category": "nouns",
+      "sourcePhrase": "মামী"
+    },
+    {
+      "bn": "দাদা",
+      "pronunciation": "dada",
+      "en": "grandfather",
+      "category": "nouns",
+      "sourcePhrase": "দাদা"
+    },
+    {
+      "bn": "দাদি",
+      "pronunciation": "dadi",
+      "en": "grandmother",
+      "category": "nouns",
+      "sourcePhrase": "দাদি"
+    },
+    {
+      "bn": "নানা",
+      "pronunciation": "nana",
+      "en": "maternal grandfather",
+      "category": "nouns",
+      "sourcePhrase": "নানা"
+    },
+    {
+      "bn": "নানি",
+      "pronunciation": "nani",
+      "en": "maternal grandmother",
+      "category": "nouns",
+      "sourcePhrase": "নানি"
+    },
+    {
+      "bn": "স্বামী",
+      "pronunciation": "shami",
+      "en": "husband",
+      "category": "nouns",
+      "sourcePhrase": "স্বামী"
+    },
+    {
+      "bn": "স্ত্রী",
+      "pronunciation": "stri",
+      "en": "wife",
+      "category": "nouns",
+      "sourcePhrase": "স্ত্রী"
+    },
+    {
+      "bn": "সন্তান",
+      "pronunciation": "shontan",
+      "en": "child / offspring",
+      "category": "nouns",
+      "sourcePhrase": "সন্তান"
+    },
+    {
+      "bn": "ছেলে-মেয়ে",
+      "pronunciation": "chele-meye",
+      "en": "children",
+      "category": "nouns",
+      "sourcePhrase": "ছেলে-মেয়ে"
+    },
+    {
+      "bn": "বাড়ি",
+      "pronunciation": "bari",
+      "en": "house / home",
+      "category": "nouns",
+      "sourcePhrase": "বাড়ি"
+    },
+    {
+      "bn": "ঘর",
+      "pronunciation": "ghor",
+      "en": "room",
+      "category": "nouns",
+      "sourcePhrase": "ঘর"
+    },
+    {
+      "bn": "দরজা",
+      "pronunciation": "dorja",
+      "en": "door",
+      "category": "nouns",
+      "sourcePhrase": "দরজা"
+    },
+    {
+      "bn": "জানালা",
+      "pronunciation": "janala",
+      "en": "window",
+      "category": "nouns",
+      "sourcePhrase": "জানালা"
+    },
+    {
+      "bn": "ছাদ",
+      "pronunciation": "chad",
+      "en": "roof",
+      "category": "nouns",
+      "sourcePhrase": "ছাদ"
+    },
+    {
+      "bn": "মেঝে",
+      "pronunciation": "mejhe",
+      "en": "floor",
+      "category": "nouns",
+      "sourcePhrase": "মেঝে"
+    },
+    {
+      "bn": "দেয়াল",
+      "pronunciation": "deyal",
+      "en": "wall",
+      "category": "nouns",
+      "sourcePhrase": "দেয়াল"
+    },
+    {
+      "bn": "সিঁড়ি",
+      "pronunciation": "shiri",
+      "en": "stairs",
+      "category": "nouns",
+      "sourcePhrase": "সিঁড়ি"
+    },
+    {
+      "bn": "রান্নাঘর",
+      "pronunciation": "rannaghor",
+      "en": "kitchen",
+      "category": "nouns",
+      "sourcePhrase": "রান্নাঘর"
+    },
+    {
+      "bn": "বাথরুম",
+      "pronunciation": "bathorum",
+      "en": "bathroom",
+      "category": "nouns",
+      "sourcePhrase": "বাথরুম"
+    },
+    {
+      "bn": "বিছানা",
+      "pronunciation": "bichhana",
+      "en": "bed",
+      "category": "nouns",
+      "sourcePhrase": "বিছানা"
+    },
+    {
+      "bn": "বালিশ",
+      "pronunciation": "balish",
+      "en": "pillow",
+      "category": "nouns",
+      "sourcePhrase": "বালিশ"
+    },
+    {
+      "bn": "কম্বল",
+      "pronunciation": "kombol",
+      "en": "blanket",
+      "category": "nouns",
+      "sourcePhrase": "কম্বল"
+    },
+    {
+      "bn": "চেয়ার",
+      "pronunciation": "cheyar",
+      "en": "chair",
+      "category": "nouns",
+      "sourcePhrase": "চেয়ার"
+    },
+    {
+      "bn": "টেবিল",
+      "pronunciation": "tebil",
+      "en": "table",
+      "category": "nouns",
+      "sourcePhrase": "টেবিল"
+    },
+    {
+      "bn": "আলমারি",
+      "pronunciation": "almari",
+      "en": "wardrobe",
+      "category": "nouns",
+      "sourcePhrase": "আলমারি"
+    },
+    {
+      "bn": "আয়না",
+      "pronunciation": "ajona",
+      "en": "mirror",
+      "category": "nouns",
+      "sourcePhrase": "আয়না"
+    },
+    {
+      "bn": "বাতি",
+      "pronunciation": "bati",
+      "en": "light",
+      "category": "nouns",
+      "sourcePhrase": "বাতি"
+    },
+    {
+      "bn": "পাখা",
+      "pronunciation": "pakha",
+      "en": "fan",
+      "category": "nouns",
+      "sourcePhrase": "পাখা"
+    },
+    {
+      "bn": "ঘড়ি",
+      "pronunciation": "ghori",
+      "en": "clock / watch",
+      "category": "nouns",
+      "sourcePhrase": "ঘড়ি"
+    },
+    {
+      "bn": "বই",
+      "pronunciation": "boi",
+      "en": "book",
+      "category": "nouns",
+      "sourcePhrase": "বই"
+    },
+    {
+      "bn": "খাতা",
+      "pronunciation": "khata",
+      "en": "notebook",
+      "category": "nouns",
+      "sourcePhrase": "খাতা"
+    },
+    {
+      "bn": "কলম",
+      "pronunciation": "kolom",
+      "en": "pen",
+      "category": "nouns",
+      "sourcePhrase": "কলম"
+    },
+    {
+      "bn": "পেন্সিল",
+      "pronunciation": "pensil",
+      "en": "pencil",
+      "category": "nouns",
+      "sourcePhrase": "পেন্সিল"
+    },
+    {
+      "bn": "রাবার",
+      "pronunciation": "rabar",
+      "en": "eraser",
+      "category": "nouns",
+      "sourcePhrase": "রাবার"
+    },
+    {
+      "bn": "ব্যাগ",
+      "pronunciation": "bæg",
+      "en": "bag",
+      "category": "nouns",
+      "sourcePhrase": "ব্যাগ"
+    },
+    {
+      "bn": "স্কুল",
+      "pronunciation": "skul",
+      "en": "school",
+      "category": "nouns",
+      "sourcePhrase": "স্কুল"
+    },
+    {
+      "bn": "কলেজ",
+      "pronunciation": "kolej",
+      "en": "college",
+      "category": "nouns",
+      "sourcePhrase": "কলেজ"
+    },
+    {
+      "bn": "বিশ্ববিদ্যালয়",
+      "pronunciation": "bishbobidjaloj",
+      "en": "university",
+      "category": "nouns",
+      "sourcePhrase": "বিশ্ববিদ্যালয়"
+    },
+    {
+      "bn": "অফিস",
+      "pronunciation": "ofis",
+      "en": "office",
+      "category": "nouns",
+      "sourcePhrase": "অফিস"
     },
     {
       "bn": "হাসপাতাল",
       "pronunciation": "hashpatal",
       "en": "hospital",
       "category": "nouns",
-      "sourcePhrase": "ডাক্তার হাসপাতালে আছেন।"
+      "sourcePhrase": "হাসপাতাল"
     },
     {
-      "bn": "বাস",
-      "pronunciation": "bas",
-      "en": "bus",
+      "bn": "বাজার",
+      "pronunciation": "bajar",
+      "en": "market",
       "category": "nouns",
-      "sourcePhrase": "বাস স্টেশনে দাঁড়িয়ে আছে।"
+      "sourcePhrase": "বাজার"
     },
     {
-      "bn": "ট্রেন",
-      "pronunciation": "tren",
-      "en": "train",
+      "bn": "দোকান",
+      "pronunciation": "dokan",
+      "en": "shop",
       "category": "nouns",
-      "sourcePhrase": "ট্রেনটি সকালে আসে।"
+      "sourcePhrase": "দোকান"
     },
     {
-      "bn": "গাড়ি",
-      "pronunciation": "gari",
-      "en": "car",
+      "bn": "রাস্তা",
+      "pronunciation": "rasta",
+      "en": "road",
       "category": "nouns",
-      "sourcePhrase": "গাড়িটি বাড়ির সামনে আছে।"
+      "sourcePhrase": "রাস্তা"
     },
     {
-      "bn": "বিড়াল",
-      "pronunciation": "biral",
-      "en": "cat",
+      "bn": "সেতু",
+      "pronunciation": "setu",
+      "en": "bridge",
       "category": "nouns",
-      "sourcePhrase": "বিড়ালটি চেয়ারের নিচে আছে।"
+      "sourcePhrase": "সেতু"
     },
     {
-      "bn": "কুকুর",
-      "pronunciation": "kukur",
-      "en": "dog",
+      "bn": "নদী",
+      "pronunciation": "Nodi",
+      "en": "river",
       "category": "nouns",
-      "sourcePhrase": "কুকুরটি বাগানে খেলছে।"
+      "sourcePhrase": "নদী"
     },
     {
-      "bn": "পাখি",
-      "pronunciation": "pakhi",
-      "en": "bird",
+      "bn": "পুকুর",
+      "pronunciation": "pukur",
+      "en": "pond",
       "category": "nouns",
-      "sourcePhrase": "গাছে একটি পাখি আছে।"
+      "sourcePhrase": "পুকুর"
+    },
+    {
+      "bn": "সমুদ্র",
+      "pronunciation": "somudr",
+      "en": "sea",
+      "category": "nouns",
+      "sourcePhrase": "সমুদ্র"
+    },
+    {
+      "bn": "পাহাড়",
+      "pronunciation": "pahad",
+      "en": "mountain",
+      "category": "nouns",
+      "sourcePhrase": "পাহাড়"
+    },
+    {
+      "bn": "বন",
+      "pronunciation": "bon",
+      "en": "forest",
+      "category": "nouns",
+      "sourcePhrase": "বন"
     },
     {
       "bn": "গাছ",
       "pronunciation": "gachh",
       "en": "tree",
       "category": "nouns",
-      "sourcePhrase": "গাছে একটি পাখি আছে।"
+      "sourcePhrase": "গাছ"
     },
     {
       "bn": "ফুল",
       "pronunciation": "phul",
       "en": "flower",
       "category": "nouns",
-      "sourcePhrase": "এই ফুলটি খুব সুন্দর।"
+      "sourcePhrase": "ফুল"
+    },
+    {
+      "bn": "পাতা",
+      "pronunciation": "pata",
+      "en": "leaf",
+      "category": "nouns",
+      "sourcePhrase": "পাতা"
+    },
+    {
+      "bn": "ফল",
+      "pronunciation": "fol",
+      "en": "fruit",
+      "category": "nouns",
+      "sourcePhrase": "ফল"
+    },
+    {
+      "bn": "বীজ",
+      "pronunciation": "bij",
+      "en": "seed",
+      "category": "nouns",
+      "sourcePhrase": "বীজ"
+    },
+    {
+      "bn": "মাটি",
+      "pronunciation": "mati",
+      "en": "soil",
+      "category": "nouns",
+      "sourcePhrase": "মাটি"
+    },
+    {
+      "bn": "আকাশ",
+      "pronunciation": "akash",
+      "en": "sky",
+      "category": "nouns",
+      "sourcePhrase": "আকাশ"
     },
     {
       "bn": "সূর্য",
       "pronunciation": "shurjo",
       "en": "sun",
       "category": "nouns",
-      "sourcePhrase": "আকাশে আজ সূর্য দেখা যাচ্ছে।"
+      "sourcePhrase": "সূর্য"
     },
     {
       "bn": "চাঁদ",
-      "pronunciation": "chand",
+      "pronunciation": "chãd",
       "en": "moon",
       "category": "nouns",
-      "sourcePhrase": "রাতে চাঁদ খুব উজ্জ্বল।"
+      "sourcePhrase": "চাঁদ"
     },
     {
-      "bn": "ওই",
-      "pronunciation": "oi",
-      "en": "that",
+      "bn": "তারা",
+      "pronunciation": "tara",
+      "en": "star",
       "category": "nouns",
-      "sourcePhrase": "ওই মানুষটি খুব ভালো।"
+      "sourcePhrase": "তারা"
     },
     {
-      "bn": "মানুষটি",
-      "pronunciation": "manush-ti",
-      "en": "the person",
+      "bn": "মেঘ",
+      "pronunciation": "megh",
+      "en": "cloud",
       "category": "nouns",
-      "sourcePhrase": "ওই মানুষটি খুব ভালো।"
+      "sourcePhrase": "মেঘ"
     },
     {
-      "bn": "খুব",
-      "pronunciation": "khub",
-      "en": "very",
+      "bn": "বৃষ্টি",
+      "pronunciation": "brishti",
+      "en": "rain",
       "category": "nouns",
-      "sourcePhrase": "ওই মানুষটি খুব ভালো।"
+      "sourcePhrase": "বৃষ্টি"
     },
     {
-      "bn": "ভালো",
-      "pronunciation": "bhalo",
-      "en": "good",
+      "bn": "বাতাস",
+      "pronunciation": "batash",
+      "en": "wind",
       "category": "nouns",
-      "sourcePhrase": "ওই মানুষটি খুব ভালো।"
+      "sourcePhrase": "বাতাস"
     },
     {
-      "bn": "রাহিম",
-      "pronunciation": "Rahim",
-      "en": "Rahim",
+      "bn": "আগুন",
+      "pronunciation": "agun",
+      "en": "fire",
       "category": "nouns",
-      "sourcePhrase": "রাহিম আমার বন্ধু।"
+      "sourcePhrase": "আগুন"
     },
     {
-      "bn": "আমার",
-      "pronunciation": "amar",
-      "en": "my",
+      "bn": "পানি",
+      "pronunciation": "pani",
+      "en": "water",
       "category": "nouns",
-      "sourcePhrase": "রাহিম আমার বন্ধু।"
+      "sourcePhrase": "পানি"
     },
     {
-      "bn": "ঢাকায়",
-      "pronunciation": "Dhakay",
-      "en": "in / to Dhaka",
+      "bn": "খাবার",
+      "pronunciation": "khabar",
+      "en": "food",
       "category": "nouns",
-      "sourcePhrase": "আমার পরিবার ঢাকায় থাকে।"
+      "sourcePhrase": "খাবার"
     },
     {
-      "bn": "থাকে",
-      "pronunciation": "thake",
-      "en": "lives / stays",
+      "bn": "ভাত",
+      "pronunciation": "bhat",
+      "en": "rice",
       "category": "nouns",
-      "sourcePhrase": "আমার পরিবার ঢাকায় থাকে।"
+      "sourcePhrase": "ভাত"
     },
     {
-      "bn": "আমাদের",
-      "pronunciation": "amader",
-      "en": "our",
+      "bn": "ডাল",
+      "pronunciation": "dal",
+      "en": "lentils",
       "category": "nouns",
-      "sourcePhrase": "আমাদের বাড়ি ছোট।"
+      "sourcePhrase": "ডাল"
     },
     {
-      "bn": "ছোট",
-      "pronunciation": "chhoto",
-      "en": "small",
+      "bn": "মাছ",
+      "pronunciation": "machh",
+      "en": "fish",
       "category": "nouns",
-      "sourcePhrase": "আমাদের বাড়ি ছোট।"
+      "sourcePhrase": "মাছ"
+    },
+    {
+      "bn": "মাংস",
+      "pronunciation": "mangsho",
+      "en": "meat",
+      "category": "nouns",
+      "sourcePhrase": "মাংস"
+    },
+    {
+      "bn": "ডিম",
+      "pronunciation": "ḍim",
+      "en": "egg",
+      "category": "nouns",
+      "sourcePhrase": "ডিম"
+    },
+    {
+      "bn": "দুধ",
+      "pronunciation": "Dudh",
+      "en": "milk",
+      "category": "nouns",
+      "sourcePhrase": "দুধ"
+    },
+    {
+      "bn": "রুটি",
+      "pronunciation": "Ruti",
+      "en": "bread / flatbread",
+      "category": "nouns",
+      "sourcePhrase": "রুটি"
+    },
+    {
+      "bn": "চা",
+      "pronunciation": "cha",
+      "en": "tea",
+      "category": "nouns",
+      "sourcePhrase": "চা"
+    },
+    {
+      "bn": "কফি",
+      "pronunciation": "kofi",
+      "en": "coffee",
+      "category": "nouns",
+      "sourcePhrase": "কফি"
+    },
+    {
+      "bn": "চিনি",
+      "pronunciation": "chini",
+      "en": "sugar",
+      "category": "nouns",
+      "sourcePhrase": "চিনি"
+    },
+    {
+      "bn": "লবণ",
+      "pronunciation": "lobon",
+      "en": "salt",
+      "category": "nouns",
+      "sourcePhrase": "লবণ"
+    },
+    {
+      "bn": "কুকুর",
+      "pronunciation": "kukur",
+      "en": "dog",
+      "category": "nouns",
+      "sourcePhrase": "কুকুর"
+    },
+    {
+      "bn": "বিড়াল",
+      "pronunciation": "biral",
+      "en": "cat",
+      "category": "nouns",
+      "sourcePhrase": "বিড়াল"
+    },
+    {
+      "bn": "গরু",
+      "pronunciation": "Goru",
+      "en": "cow",
+      "category": "nouns",
+      "sourcePhrase": "গরু"
+    },
+    {
+      "bn": "ছাগল",
+      "pronunciation": "chhagol",
+      "en": "goat",
+      "category": "nouns",
+      "sourcePhrase": "ছাগল"
+    },
+    {
+      "bn": "ভেড়া",
+      "pronunciation": "bhed",
+      "en": "sheep",
+      "category": "nouns",
+      "sourcePhrase": "ভেড়া"
+    },
+    {
+      "bn": "ঘোড়া",
+      "pronunciation": "ghod",
+      "en": "horse",
+      "category": "nouns",
+      "sourcePhrase": "ঘোড়া"
+    },
+    {
+      "bn": "হাতি",
+      "pronunciation": "Hati",
+      "en": "elephant",
+      "category": "nouns",
+      "sourcePhrase": "হাতি"
+    },
+    {
+      "bn": "বাঘ",
+      "pronunciation": "Bagh",
+      "en": "tiger",
+      "category": "nouns",
+      "sourcePhrase": "বাঘ"
+    },
+    {
+      "bn": "সিংহ",
+      "pronunciation": "singh",
+      "en": "lion",
+      "category": "nouns",
+      "sourcePhrase": "সিংহ"
+    },
+    {
+      "bn": "বানর",
+      "pronunciation": "banor",
+      "en": "monkey",
+      "category": "nouns",
+      "sourcePhrase": "বানর"
+    },
+    {
+      "bn": "হরিণ",
+      "pronunciation": "horin",
+      "en": "deer",
+      "category": "nouns",
+      "sourcePhrase": "হরিণ"
+    },
+    {
+      "bn": "খরগোশ",
+      "pronunciation": "khorgosh",
+      "en": "rabbit",
+      "category": "nouns",
+      "sourcePhrase": "খরগোশ"
+    },
+    {
+      "bn": "শিয়াল",
+      "pronunciation": "shijol",
+      "en": "fox",
+      "category": "nouns",
+      "sourcePhrase": "শিয়াল"
+    },
+    {
+      "bn": "নেকড়ে",
+      "pronunciation": "nekod",
+      "en": "wolf",
+      "category": "nouns",
+      "sourcePhrase": "নেকড়ে"
+    },
+    {
+      "bn": "ভালুক",
+      "pronunciation": "bhaluk",
+      "en": "bear",
+      "category": "nouns",
+      "sourcePhrase": "ভালুক"
+    },
+    {
+      "bn": "ইঁদুর",
+      "pronunciation": "indur",
+      "en": "mouse",
+      "category": "nouns",
+      "sourcePhrase": "ইঁদুর"
+    },
+    {
+      "bn": "পাখি",
+      "pronunciation": "pakhi",
+      "en": "bird",
+      "category": "nouns",
+      "sourcePhrase": "পাখি"
+    },
+    {
+      "bn": "কাক",
+      "pronunciation": "kak",
+      "en": "crow",
+      "category": "nouns",
+      "sourcePhrase": "কাক"
+    },
+    {
+      "bn": "কবুতর",
+      "pronunciation": "kobutor",
+      "en": "pigeon",
+      "category": "nouns",
+      "sourcePhrase": "কবুতর"
+    },
+    {
+      "bn": "চড়ুই",
+      "pronunciation": "chodoi",
+      "en": "sparrow",
+      "category": "nouns",
+      "sourcePhrase": "চড়ুই"
+    },
+    {
+      "bn": "ঈগল",
+      "pronunciation": "igol",
+      "en": "eagle",
+      "category": "nouns",
+      "sourcePhrase": "ঈগল"
+    },
+    {
+      "bn": "হাঁস",
+      "pronunciation": "hash",
+      "en": "duck",
+      "category": "nouns",
+      "sourcePhrase": "হাঁস"
+    },
+    {
+      "bn": "মুরগি",
+      "pronunciation": "murogi",
+      "en": "chicken",
+      "category": "nouns",
+      "sourcePhrase": "মুরগি"
+    },
+    {
+      "bn": "মোরগ",
+      "pronunciation": "Morog",
+      "en": "rooster",
+      "category": "nouns",
+      "sourcePhrase": "মোরগ"
+    },
+    {
+      "bn": "মাছি",
+      "pronunciation": "machhi",
+      "en": "fly",
+      "category": "nouns",
+      "sourcePhrase": "মাছি"
+    },
+    {
+      "bn": "মশা",
+      "pronunciation": "mosha",
+      "en": "mosquito",
+      "category": "nouns",
+      "sourcePhrase": "মশা"
+    },
+    {
+      "bn": "মৌমাছি",
+      "pronunciation": "moumachhi",
+      "en": "bee",
+      "category": "nouns",
+      "sourcePhrase": "মৌমাছি"
+    },
+    {
+      "bn": "প্রজাপতি",
+      "pronunciation": "Projapoti",
+      "en": "butterfly",
+      "category": "nouns",
+      "sourcePhrase": "প্রজাপতি"
+    },
+    {
+      "bn": "পিঁপড়া",
+      "pronunciation": "pinpod",
+      "en": "ant",
+      "category": "nouns",
+      "sourcePhrase": "পিঁপড়া"
+    },
+    {
+      "bn": "সাপ",
+      "pronunciation": "Shaap",
+      "en": "snake",
+      "category": "nouns",
+      "sourcePhrase": "সাপ"
+    },
+    {
+      "bn": "কচ্ছপ",
+      "pronunciation": "kochchhop",
+      "en": "turtle",
+      "category": "nouns",
+      "sourcePhrase": "কচ্ছপ"
+    },
+    {
+      "bn": "ব্যাঙ",
+      "pronunciation": "bjang",
+      "en": "frog",
+      "category": "nouns",
+      "sourcePhrase": "ব্যাঙ"
+    },
+    {
+      "bn": "কুমির",
+      "pronunciation": "Kumir",
+      "en": "crocodile",
+      "category": "nouns",
+      "sourcePhrase": "কুমির"
+    },
+    {
+      "bn": "তিমি",
+      "pronunciation": "timi",
+      "en": "whale",
+      "category": "nouns",
+      "sourcePhrase": "তিমি"
+    },
+    {
+      "bn": "ডলফিন",
+      "pronunciation": "dolophin",
+      "en": "dolphin",
+      "category": "nouns",
+      "sourcePhrase": "ডলফিন"
+    },
+    {
+      "bn": "হাঙর",
+      "pronunciation": "hangor",
+      "en": "shark",
+      "category": "nouns",
+      "sourcePhrase": "হাঙর"
+    },
+    {
+      "bn": "অক্টোপাস",
+      "pronunciation": "oktopas",
+      "en": "octopus",
+      "category": "nouns",
+      "sourcePhrase": "অক্টোপাস"
+    },
+    {
+      "bn": "কাঁকড়া",
+      "pronunciation": "kankod",
+      "en": "crab",
+      "category": "nouns",
+      "sourcePhrase": "কাঁকড়া"
+    },
+    {
+      "bn": "চিংড়ি",
+      "pronunciation": "chingd",
+      "en": "shrimp",
+      "category": "nouns",
+      "sourcePhrase": "চিংড়ি"
+    },
+    {
+      "bn": "ফুলদানি",
+      "pronunciation": "phulodani",
+      "en": "vase",
+      "category": "nouns",
+      "sourcePhrase": "ফুলদানি"
+    },
+    {
+      "bn": "কাপ",
+      "pronunciation": "kap",
+      "en": "cup",
+      "category": "nouns",
+      "sourcePhrase": "কাপ"
+    },
+    {
+      "bn": "গ্লাস",
+      "pronunciation": "glash",
+      "en": "glass",
+      "category": "nouns",
+      "sourcePhrase": "গ্লাস"
+    },
+    {
+      "bn": "প্লেট",
+      "pronunciation": "plet",
+      "en": "plate",
+      "category": "nouns",
+      "sourcePhrase": "প্লেট"
+    },
+    {
+      "bn": "চামচ",
+      "pronunciation": "chamoch",
+      "en": "spoon",
+      "category": "nouns",
+      "sourcePhrase": "চামচ"
+    },
+    {
+      "bn": "কাঁটা",
+      "pronunciation": "kanta",
+      "en": "fork",
+      "category": "nouns",
+      "sourcePhrase": "কাঁটা"
+    },
+    {
+      "bn": "ছুরি",
+      "pronunciation": "churi",
+      "en": "knife",
+      "category": "nouns",
+      "sourcePhrase": "ছুরি"
+    },
+    {
+      "bn": "হাঁড়ি",
+      "pronunciation": "hand",
+      "en": "cooking pot",
+      "category": "nouns",
+      "sourcePhrase": "হাঁড়ি"
+    },
+    {
+      "bn": "কড়াই",
+      "pronunciation": "kodoi",
+      "en": "frying pan",
+      "category": "nouns",
+      "sourcePhrase": "কড়াই"
+    },
+    {
+      "bn": "বোতল",
+      "pronunciation": "botol",
+      "en": "bottle",
+      "category": "nouns",
+      "sourcePhrase": "বোতল"
+    },
+    {
+      "bn": "কলসি",
+      "pronunciation": "kolosi",
+      "en": "water pitcher",
+      "category": "nouns",
+      "sourcePhrase": "কলসি"
+    },
+    {
+      "bn": "কাপড়",
+      "pronunciation": "kapor",
+      "en": "clothes",
+      "category": "nouns",
+      "sourcePhrase": "কাপড়"
+    },
+    {
+      "bn": "জামা",
+      "pronunciation": "jama",
+      "en": "shirt",
+      "category": "nouns",
+      "sourcePhrase": "জামা"
+    },
+    {
+      "bn": "প্যান্ট",
+      "pronunciation": "pant",
+      "en": "pants",
+      "category": "nouns",
+      "sourcePhrase": "প্যান্ট"
+    },
+    {
+      "bn": "শাড়ি",
+      "pronunciation": "shari",
+      "en": "sari",
+      "category": "nouns",
+      "sourcePhrase": "শাড়ি"
+    },
+    {
+      "bn": "লুঙ্গি",
+      "pronunciation": "lunggi",
+      "en": "lungi",
+      "category": "nouns",
+      "sourcePhrase": "লুঙ্গি"
+    },
+    {
+      "bn": "জুতা",
+      "pronunciation": "juta",
+      "en": "shoes",
+      "category": "nouns",
+      "sourcePhrase": "জুতা"
+    },
+    {
+      "bn": "মোজা",
+      "pronunciation": "moja",
+      "en": "socks",
+      "category": "nouns",
+      "sourcePhrase": "মোজা"
+    },
+    {
+      "bn": "টুপি",
+      "pronunciation": "tupi",
+      "en": "hat",
+      "category": "nouns",
+      "sourcePhrase": "টুপি"
+    },
+    {
+      "bn": "চশমা",
+      "pronunciation": "choshma",
+      "en": "glasses",
+      "category": "nouns",
+      "sourcePhrase": "চশমা"
+    },
+    {
+      "bn": "ঘড়ি",
+      "pronunciation": "ghori",
+      "en": "wristwatch",
+      "category": "nouns",
+      "sourcePhrase": "ঘড়ি"
+    },
+    {
+      "bn": "আংটি",
+      "pronunciation": "angṭi",
+      "en": "ring",
+      "category": "nouns",
+      "sourcePhrase": "আংটি"
+    },
+    {
+      "bn": "হার",
+      "pronunciation": "har",
+      "en": "necklace",
+      "category": "nouns",
+      "sourcePhrase": "হার"
+    },
+    {
+      "bn": "ব্রেসলেট",
+      "pronunciation": "bresolet",
+      "en": "bracelet",
+      "category": "nouns",
+      "sourcePhrase": "ব্রেসলেট"
+    },
+    {
+      "bn": "টাকা",
+      "pronunciation": "taka",
+      "en": "money",
+      "category": "nouns",
+      "sourcePhrase": "টাকা"
+    },
+    {
+      "bn": "মুদ্রা",
+      "pronunciation": "mudra",
+      "en": "coin",
+      "category": "nouns",
+      "sourcePhrase": "মুদ্রা"
+    },
+    {
+      "bn": "নোট",
+      "pronunciation": "note",
+      "en": "banknote",
+      "category": "nouns",
+      "sourcePhrase": "নোট"
+    },
+    {
+      "bn": "ব্যাংক",
+      "pronunciation": "bjangk",
+      "en": "bank",
+      "category": "nouns",
+      "sourcePhrase": "ব্যাংক"
+    },
+    {
+      "bn": "হিসাব",
+      "pronunciation": "hishab",
+      "en": "account",
+      "category": "nouns",
+      "sourcePhrase": "হিসাব"
+    },
+    {
+      "bn": "বিল",
+      "pronunciation": "bil",
+      "en": "bill",
+      "category": "nouns",
+      "sourcePhrase": "বিল"
+    },
+    {
+      "bn": "বেতন",
+      "pronunciation": "beton",
+      "en": "salary",
+      "category": "nouns",
+      "sourcePhrase": "বেতন"
+    },
+    {
+      "bn": "চাকরি",
+      "pronunciation": "chakri",
+      "en": "job",
+      "category": "nouns",
+      "sourcePhrase": "চাকরি"
+    },
+    {
+      "bn": "কাজ",
+      "pronunciation": "kaj",
+      "en": "work",
+      "category": "nouns",
+      "sourcePhrase": "কাজ"
+    },
+    {
+      "bn": "ব্যবসা",
+      "pronunciation": "babsha",
+      "en": "business",
+      "category": "nouns",
+      "sourcePhrase": "ব্যবসা"
+    },
+    {
+      "bn": "কারখানা",
+      "pronunciation": "karokhana",
+      "en": "factory",
+      "category": "nouns",
+      "sourcePhrase": "কারখানা"
+    },
+    {
+      "bn": "কম্পিউটার",
+      "pronunciation": "kompiutar",
+      "en": "computer",
+      "category": "nouns",
+      "sourcePhrase": "কম্পিউটার"
+    },
+    {
+      "bn": "ল্যাপটপ",
+      "pronunciation": "ljapotop",
+      "en": "laptop",
+      "category": "nouns",
+      "sourcePhrase": "ল্যাপটপ"
+    },
+    {
+      "bn": "কীবোর্ড",
+      "pronunciation": "kibord",
+      "en": "keyboard",
+      "category": "nouns",
+      "sourcePhrase": "কীবোর্ড"
+    },
+    {
+      "bn": "মাউস",
+      "pronunciation": "maus",
+      "en": "computer mouse",
+      "category": "nouns",
+      "sourcePhrase": "মাউস"
+    },
+    {
+      "bn": "পর্দা",
+      "pronunciation": "porda",
+      "en": "screen",
+      "category": "nouns",
+      "sourcePhrase": "পর্দা"
+    },
+    {
+      "bn": "মোবাইল",
+      "pronunciation": "mobail",
+      "en": "mobile phone",
+      "category": "nouns",
+      "sourcePhrase": "মোবাইল"
+    },
+    {
+      "bn": "ফোন",
+      "pronunciation": "fon",
+      "en": "phone",
+      "category": "nouns",
+      "sourcePhrase": "ফোন"
+    },
+    {
+      "bn": "চার্জার",
+      "pronunciation": "charjar",
+      "en": "charger",
+      "category": "nouns",
+      "sourcePhrase": "চার্জার"
+    },
+    {
+      "bn": "ব্যাটারি",
+      "pronunciation": "bjatari",
+      "en": "battery",
+      "category": "nouns",
+      "sourcePhrase": "ব্যাটারি"
+    },
+    {
+      "bn": "ইন্টারনেট",
+      "pronunciation": "intaronet",
+      "en": "internet",
+      "category": "nouns",
+      "sourcePhrase": "ইন্টারনেট"
+    },
+    {
+      "bn": "ওয়েবসাইট",
+      "pronunciation": "website",
+      "en": "website",
+      "category": "nouns",
+      "sourcePhrase": "ওয়েবসাইট"
+    },
+    {
+      "bn": "ইমেইল",
+      "pronunciation": "imeil",
+      "en": "email",
+      "category": "nouns",
+      "sourcePhrase": "ইমেইল"
+    },
+    {
+      "bn": "বার্তা",
+      "pronunciation": "barta",
+      "en": "message",
+      "category": "nouns",
+      "sourcePhrase": "বার্তা"
+    },
+    {
+      "bn": "ছবি",
+      "pronunciation": "chobi",
+      "en": "picture / photo",
+      "category": "nouns",
+      "sourcePhrase": "ছবি"
+    },
+    {
+      "bn": "ভিডিও",
+      "pronunciation": "bhidi",
+      "en": "video",
+      "category": "nouns",
+      "sourcePhrase": "ভিডিও"
+    },
+    {
+      "bn": "গান",
+      "pronunciation": "gan",
+      "en": "song",
+      "category": "nouns",
+      "sourcePhrase": "গান"
+    },
+    {
+      "bn": "সিনেমা",
+      "pronunciation": "shinema",
+      "en": "movie",
+      "category": "nouns",
+      "sourcePhrase": "সিনেমা"
+    },
+    {
+      "bn": "নাটক",
+      "pronunciation": "natok",
+      "en": "drama",
+      "category": "nouns",
+      "sourcePhrase": "নাটক"
+    },
+    {
+      "bn": "গল্প",
+      "pronunciation": "golpo",
+      "en": "story",
+      "category": "nouns",
+      "sourcePhrase": "গল্প"
+    },
+    {
+      "bn": "উপন্যাস",
+      "pronunciation": "uponjas",
+      "en": "novel",
+      "category": "nouns",
+      "sourcePhrase": "উপন্যাস"
+    },
+    {
+      "bn": "কবিতা",
+      "pronunciation": "Kobita",
+      "en": "poem",
+      "category": "nouns",
+      "sourcePhrase": "কবিতা"
+    },
+    {
+      "bn": "সংবাদ",
+      "pronunciation": "songbad",
+      "en": "news",
+      "category": "nouns",
+      "sourcePhrase": "সংবাদ"
+    },
+    {
+      "bn": "পত্রিকা",
+      "pronunciation": "potrika",
+      "en": "newspaper",
+      "category": "nouns",
+      "sourcePhrase": "পত্রিকা"
+    },
+    {
+      "bn": "ম্যাগাজিন",
+      "pronunciation": "mjagajin",
+      "en": "magazine",
+      "category": "nouns",
+      "sourcePhrase": "ম্যাগাজিন"
+    },
+    {
+      "bn": "মানচিত্র",
+      "pronunciation": "manochitr",
+      "en": "map",
+      "category": "nouns",
+      "sourcePhrase": "মানচিত্র"
+    },
+    {
+      "bn": "পৃথিবী",
+      "pronunciation": "prithibi",
+      "en": "Earth",
+      "category": "nouns",
+      "sourcePhrase": "পৃথিবী"
+    },
+    {
+      "bn": "দেশ",
+      "pronunciation": "Desh",
+      "en": "country",
+      "category": "nouns",
+      "sourcePhrase": "দেশ"
+    },
+    {
+      "bn": "শহর",
+      "pronunciation": "shohor",
+      "en": "city",
+      "category": "nouns",
+      "sourcePhrase": "শহর"
+    },
+    {
+      "bn": "গ্রাম",
+      "pronunciation": "gram",
+      "en": "village",
+      "category": "nouns",
+      "sourcePhrase": "গ্রাম"
+    },
+    {
+      "bn": "রাজধানী",
+      "pronunciation": "rajodhani",
+      "en": "capital city",
+      "category": "nouns",
+      "sourcePhrase": "রাজধানী"
+    },
+    {
+      "bn": "ভাষা",
+      "pronunciation": "bhasha",
+      "en": "language",
+      "category": "nouns",
+      "sourcePhrase": "ভাষা"
+    },
+    {
+      "bn": "শব্দ",
+      "pronunciation": "shobdo",
+      "en": "word",
+      "category": "nouns",
+      "sourcePhrase": "শব্দ"
+    },
+    {
+      "bn": "বাক্য",
+      "pronunciation": "bakj",
+      "en": "sentence",
+      "category": "nouns",
+      "sourcePhrase": "বাক্য"
+    },
+    {
+      "bn": "প্রশ্ন",
+      "pronunciation": "proshno",
+      "en": "question",
+      "category": "nouns",
+      "sourcePhrase": "প্রশ্ন"
+    },
+    {
+      "bn": "উত্তর",
+      "pronunciation": "uttor",
+      "en": "answer",
+      "category": "nouns",
+      "sourcePhrase": "উত্তর"
+    },
+    {
+      "bn": "শরীর",
+      "pronunciation": "shorir",
+      "en": "body",
+      "category": "nouns",
+      "sourcePhrase": "শরীর"
+    },
+    {
+      "bn": "মাথা",
+      "pronunciation": "matha",
+      "en": "head",
+      "category": "nouns",
+      "sourcePhrase": "মাথা"
+    },
+    {
+      "bn": "মুখ",
+      "pronunciation": "mukh",
+      "en": "face / mouth",
+      "category": "nouns",
+      "sourcePhrase": "মুখ"
+    },
+    {
+      "bn": "কপাল",
+      "pronunciation": "kopal",
+      "en": "forehead",
+      "category": "nouns",
+      "sourcePhrase": "কপাল"
+    },
+    {
+      "bn": "চুল",
+      "pronunciation": "chul",
+      "en": "hair",
+      "category": "nouns",
+      "sourcePhrase": "চুল"
+    },
+    {
+      "bn": "চোখ",
+      "pronunciation": "chokh",
+      "en": "eye",
+      "category": "nouns",
+      "sourcePhrase": "চোখ"
+    },
+    {
+      "bn": "ভ্রু",
+      "pronunciation": "bhru",
+      "en": "eyebrow",
+      "category": "nouns",
+      "sourcePhrase": "ভ্রু"
+    },
+    {
+      "bn": "চোখের পাতা",
+      "pronunciation": "chokher pata",
+      "en": "eyelid",
+      "category": "nouns",
+      "sourcePhrase": "চোখের পাতা"
+    },
+    {
+      "bn": "চোখের পাপড়ি",
+      "pronunciation": "chokher papod",
+      "en": "eyelash",
+      "category": "nouns",
+      "sourcePhrase": "চোখের পাপড়ি"
+    },
+    {
+      "bn": "কান",
+      "pronunciation": "kan",
+      "en": "ear",
+      "category": "nouns",
+      "sourcePhrase": "কান"
+    },
+    {
+      "bn": "নাক",
+      "pronunciation": "nak",
+      "en": "nose",
+      "category": "nouns",
+      "sourcePhrase": "নাক"
+    },
+    {
+      "bn": "নাসারন্ধ্র",
+      "pronunciation": "nasarondhr",
+      "en": "nostril",
+      "category": "nouns",
+      "sourcePhrase": "নাসারন্ধ্র"
+    },
+    {
+      "bn": "গাল",
+      "pronunciation": "gal",
+      "en": "cheek",
+      "category": "nouns",
+      "sourcePhrase": "গাল"
+    },
+    {
+      "bn": "ঠোঁট",
+      "pronunciation": "thot",
+      "en": "lip",
+      "category": "nouns",
+      "sourcePhrase": "ঠোঁট"
+    },
+    {
+      "bn": "দাঁত",
+      "pronunciation": "dat",
+      "en": "tooth",
+      "category": "nouns",
+      "sourcePhrase": "দাঁত"
+    },
+    {
+      "bn": "জিহ্বা",
+      "pronunciation": "jihba",
+      "en": "tongue",
+      "category": "nouns",
+      "sourcePhrase": "জিহ্বা"
+    },
+    {
+      "bn": "চিবুক",
+      "pronunciation": "chibuk",
+      "en": "chin",
+      "category": "nouns",
+      "sourcePhrase": "চিবুক"
+    },
+    {
+      "bn": "দাড়ি",
+      "pronunciation": "dad",
+      "en": "beard",
+      "category": "nouns",
+      "sourcePhrase": "দাড়ি"
+    },
+    {
+      "bn": "গোঁফ",
+      "pronunciation": "gonph",
+      "en": "mustache",
+      "category": "nouns",
+      "sourcePhrase": "গোঁফ"
+    },
+    {
+      "bn": "গলা",
+      "pronunciation": "gola",
+      "en": "throat / neck",
+      "category": "nouns",
+      "sourcePhrase": "গলা"
+    },
+    {
+      "bn": "ঘাড়",
+      "pronunciation": "ghad",
+      "en": "neck",
+      "category": "nouns",
+      "sourcePhrase": "ঘাড়"
+    },
+    {
+      "bn": "কাঁধ",
+      "pronunciation": "kadh",
+      "en": "shoulder",
+      "category": "nouns",
+      "sourcePhrase": "কাঁধ"
+    },
+    {
+      "bn": "বুক",
+      "pronunciation": "buk",
+      "en": "chest",
+      "category": "nouns",
+      "sourcePhrase": "বুক"
+    },
+    {
+      "bn": "পিঠ",
+      "pronunciation": "pith",
+      "en": "back",
+      "category": "nouns",
+      "sourcePhrase": "পিঠ"
+    },
+    {
+      "bn": "কোমর",
+      "pronunciation": "komor",
+      "en": "waist",
+      "category": "nouns",
+      "sourcePhrase": "কোমর"
+    },
+    {
+      "bn": "পেট",
+      "pronunciation": "peṭ",
+      "en": "stomach",
+      "category": "nouns",
+      "sourcePhrase": "পেট"
+    },
+    {
+      "bn": "নাভি",
+      "pronunciation": "nabhi",
+      "en": "navel",
+      "category": "nouns",
+      "sourcePhrase": "নাভি"
+    },
+    {
+      "bn": "হৃদয়",
+      "pronunciation": "hridoy",
+      "en": "heart",
+      "category": "nouns",
+      "sourcePhrase": "হৃদয়"
+    },
+    {
+      "bn": "ফুসফুস",
+      "pronunciation": "phusophus",
+      "en": "lungs",
+      "category": "nouns",
+      "sourcePhrase": "ফুসফুস"
+    },
+    {
+      "bn": "যকৃত",
+      "pronunciation": "jokrit",
+      "en": "liver",
+      "category": "nouns",
+      "sourcePhrase": "যকৃত"
+    },
+    {
+      "bn": "কিডনি",
+      "pronunciation": "kidoni",
+      "en": "kidney",
+      "category": "nouns",
+      "sourcePhrase": "কিডনি"
+    },
+    {
+      "bn": "মস্তিষ্ক",
+      "pronunciation": "mostishko",
+      "en": "brain",
+      "category": "nouns",
+      "sourcePhrase": "মস্তিষ্ক"
+    },
+    {
+      "bn": "হাত",
+      "pronunciation": "hat",
+      "en": "hand",
+      "category": "nouns",
+      "sourcePhrase": "হাত"
+    },
+    {
+      "bn": "বাহু",
+      "pronunciation": "bahu",
+      "en": "arm",
+      "category": "nouns",
+      "sourcePhrase": "বাহু"
+    },
+    {
+      "bn": "কনুই",
+      "pronunciation": "konui",
+      "en": "elbow",
+      "category": "nouns",
+      "sourcePhrase": "কনুই"
+    },
+    {
+      "bn": "কবজি",
+      "pronunciation": "koboji",
+      "en": "wrist",
+      "category": "nouns",
+      "sourcePhrase": "কবজি"
+    },
+    {
+      "bn": "আঙুল",
+      "pronunciation": "angul",
+      "en": "finger",
+      "category": "nouns",
+      "sourcePhrase": "আঙুল"
+    },
+    {
+      "bn": "বুড়ো আঙুল",
+      "pronunciation": "buro angul",
+      "en": "thumb",
+      "category": "nouns",
+      "sourcePhrase": "বুড়ো আঙুল"
+    },
+    {
+      "bn": "নখ",
+      "pronunciation": "nokh",
+      "en": "fingernail / nail",
+      "category": "nouns",
+      "sourcePhrase": "নখ"
+    },
+    {
+      "bn": "পা",
+      "pronunciation": "pa",
+      "en": "leg / foot",
+      "category": "nouns",
+      "sourcePhrase": "পা"
+    },
+    {
+      "bn": "উরু",
+      "pronunciation": "uru",
+      "en": "thigh",
+      "category": "nouns",
+      "sourcePhrase": "উরু"
+    },
+    {
+      "bn": "হাঁটু",
+      "pronunciation": "hatu",
+      "en": "knee",
+      "category": "nouns",
+      "sourcePhrase": "হাঁটু"
+    },
+    {
+      "bn": "গোড়ালি",
+      "pronunciation": "godoli",
+      "en": "ankle",
+      "category": "nouns",
+      "sourcePhrase": "গোড়ালি"
+    },
+    {
+      "bn": "পায়ের পাতা",
+      "pronunciation": "payer pata",
+      "en": "foot",
+      "category": "nouns",
+      "sourcePhrase": "পায়ের পাতা"
+    },
+    {
+      "bn": "গোড়ালি",
+      "pronunciation": "godoli",
+      "en": "heel",
+      "category": "nouns",
+      "sourcePhrase": "গোড়ালি"
+    },
+    {
+      "bn": "পায়ের আঙুল",
+      "pronunciation": "payer angul",
+      "en": "toe",
+      "category": "nouns",
+      "sourcePhrase": "পায়ের আঙুল"
+    },
+    {
+      "bn": "ত্বক",
+      "pronunciation": "tbok",
+      "en": "skin",
+      "category": "nouns",
+      "sourcePhrase": "ত্বক"
+    },
+    {
+      "bn": "হাড়",
+      "pronunciation": "had",
+      "en": "bone",
+      "category": "nouns",
+      "sourcePhrase": "হাড়"
+    },
+    {
+      "bn": "পেশি",
+      "pronunciation": "peshi",
+      "en": "muscle",
+      "category": "nouns",
+      "sourcePhrase": "পেশি"
+    },
+    {
+      "bn": "রক্ত",
+      "pronunciation": "rokto",
+      "en": "blood",
+      "category": "nouns",
+      "sourcePhrase": "রক্ত"
+    },
+    {
+      "bn": "শ্বাস",
+      "pronunciation": "shbas",
+      "en": "breath",
+      "category": "nouns",
+      "sourcePhrase": "শ্বাস"
+    },
+    {
+      "bn": "কাশি",
+      "pronunciation": "kashi",
+      "en": "cough",
+      "category": "nouns",
+      "sourcePhrase": "কাশি"
+    },
+    {
+      "bn": "হাঁচি",
+      "pronunciation": "hanchi",
+      "en": "sneeze",
+      "category": "nouns",
+      "sourcePhrase": "হাঁচি"
+    },
+    {
+      "bn": "জ্বর",
+      "pronunciation": "jor",
+      "en": "fever",
+      "category": "nouns",
+      "sourcePhrase": "জ্বর"
+    },
+    {
+      "bn": "সর্দি",
+      "pronunciation": "sordi",
+      "en": "cold",
+      "category": "nouns",
+      "sourcePhrase": "সর্দি"
+    },
+    {
+      "bn": "ব্যথা",
+      "pronunciation": "byatha",
+      "en": "pain",
+      "category": "nouns",
+      "sourcePhrase": "ব্যথা"
+    },
+    {
+      "bn": "ক্ষত",
+      "pronunciation": "kshot",
+      "en": "wound",
+      "category": "nouns",
+      "sourcePhrase": "ক্ষত"
+    },
+    {
+      "bn": "আঘাত",
+      "pronunciation": "aghat",
+      "en": "injury",
+      "category": "nouns",
+      "sourcePhrase": "আঘাত"
+    },
+    {
+      "bn": "অসুখ",
+      "pronunciation": "osukh",
+      "en": "illness",
+      "category": "nouns",
+      "sourcePhrase": "অসুখ"
+    },
+    {
+      "bn": "রোগ",
+      "pronunciation": "rog",
+      "en": "disease",
+      "category": "nouns",
+      "sourcePhrase": "রোগ"
+    },
+    {
+      "bn": "ওষুধ",
+      "pronunciation": "oshudh",
+      "en": "medicine",
+      "category": "nouns",
+      "sourcePhrase": "ওষুধ"
+    },
+    {
+      "bn": "চিকিৎসা",
+      "pronunciation": "chikitsa",
+      "en": "treatment",
+      "category": "nouns",
+      "sourcePhrase": "চিকিৎসা"
+    },
+    {
+      "bn": "স্বাস্থ্য",
+      "pronunciation": "sbasthj",
+      "en": "health",
+      "category": "nouns",
+      "sourcePhrase": "স্বাস্থ্য"
+    },
+    {
+      "bn": "অস্ত্রোপচার",
+      "pronunciation": "ostropochar",
+      "en": "surgery",
+      "category": "nouns",
+      "sourcePhrase": "অস্ত্রোপচার"
+    },
+    {
+      "bn": "টিকা",
+      "pronunciation": "tika",
+      "en": "vaccine",
+      "category": "nouns",
+      "sourcePhrase": "টিকা"
+    },
+    {
+      "bn": "বিশ্রাম",
+      "pronunciation": "bishram",
+      "en": "rest",
+      "category": "nouns",
+      "sourcePhrase": "বিশ্রাম"
+    },
+    {
+      "bn": "ঘুম",
+      "pronunciation": "ghum",
+      "en": "sleep",
+      "category": "nouns",
+      "sourcePhrase": "ঘুম"
+    },
+    {
+      "bn": "স্বপ্ন",
+      "pronunciation": "shopno",
+      "en": "dream",
+      "category": "nouns",
+      "sourcePhrase": "স্বপ্ন"
+    },
+    {
+      "bn": "ক্ষুধা",
+      "pronunciation": "kshudha",
+      "en": "hunger",
+      "category": "nouns",
+      "sourcePhrase": "ক্ষুধা"
+    },
+    {
+      "bn": "তৃষ্ণা",
+      "pronunciation": "trishna",
+      "en": "thirst",
+      "category": "nouns",
+      "sourcePhrase": "তৃষ্ণা"
+    },
+    {
+      "bn": "আনন্দ",
+      "pronunciation": "anondo",
+      "en": "joy",
+      "category": "nouns",
+      "sourcePhrase": "আনন্দ"
+    },
+    {
+      "bn": "সুখ",
+      "pronunciation": "Sukh",
+      "en": "happiness",
+      "category": "nouns",
+      "sourcePhrase": "সুখ"
+    },
+    {
+      "bn": "দুঃখ",
+      "pronunciation": "Dukkho",
+      "en": "sadness",
+      "category": "nouns",
+      "sourcePhrase": "দুঃখ"
+    },
+    {
+      "bn": "রাগ",
+      "pronunciation": "rag",
+      "en": "anger",
+      "category": "nouns",
+      "sourcePhrase": "রাগ"
+    },
+    {
+      "bn": "ভয়",
+      "pronunciation": "bhoy",
+      "en": "fear",
+      "category": "nouns",
+      "sourcePhrase": "ভয়"
+    },
+    {
+      "bn": "সাহস",
+      "pronunciation": "Shahosh",
+      "en": "courage",
+      "category": "nouns",
+      "sourcePhrase": "সাহস"
+    },
+    {
+      "bn": "আশা",
+      "pronunciation": "asha",
+      "en": "hope",
+      "category": "nouns",
+      "sourcePhrase": "আশা"
+    },
+    {
+      "bn": "নিরাশা",
+      "pronunciation": "nirasha",
+      "en": "despair",
+      "category": "nouns",
+      "sourcePhrase": "নিরাশা"
+    },
+    {
+      "bn": "ভালোবাসা",
+      "pronunciation": "Bhalobasha",
+      "en": "love",
+      "category": "nouns",
+      "sourcePhrase": "ভালোবাসা"
+    },
+    {
+      "bn": "ঘৃণা",
+      "pronunciation": "ghrina",
+      "en": "hatred",
+      "category": "nouns",
+      "sourcePhrase": "ঘৃণা"
+    },
+    {
+      "bn": "সম্মান",
+      "pronunciation": "shomman",
+      "en": "respect",
+      "category": "nouns",
+      "sourcePhrase": "সম্মান"
+    },
+    {
+      "bn": "অপমান",
+      "pronunciation": "opoman",
+      "en": "insult",
+      "category": "nouns",
+      "sourcePhrase": "অপমান"
+    },
+    {
+      "bn": "বন্ধুত্ব",
+      "pronunciation": "bondhutb",
+      "en": "friendship",
+      "category": "nouns",
+      "sourcePhrase": "বন্ধুত্ব"
+    },
+    {
+      "bn": "বিশ্বাস",
+      "pronunciation": "bishshash",
+      "en": "trust",
+      "category": "nouns",
+      "sourcePhrase": "বিশ্বাস"
+    },
+    {
+      "bn": "সন্দেহ",
+      "pronunciation": "shondeho",
+      "en": "doubt",
+      "category": "nouns",
+      "sourcePhrase": "সন্দেহ"
+    },
+    {
+      "bn": "সত্য",
+      "pronunciation": "shotto",
+      "en": "truth",
+      "category": "nouns",
+      "sourcePhrase": "সত্য"
+    },
+    {
+      "bn": "মিথ্যা",
+      "pronunciation": "mittha",
+      "en": "lie",
+      "category": "nouns",
+      "sourcePhrase": "মিথ্যা"
+    },
+    {
+      "bn": "ভুল",
+      "pronunciation": "bhul",
+      "en": "mistake",
+      "category": "nouns",
+      "sourcePhrase": "ভুল"
+    },
+    {
+      "bn": "সাফল্য",
+      "pronunciation": "sapholj",
+      "en": "success",
+      "category": "nouns",
+      "sourcePhrase": "সাফল্য"
+    },
+    {
+      "bn": "ব্যর্থতা",
+      "pronunciation": "bjorthota",
+      "en": "failure",
+      "category": "nouns",
+      "sourcePhrase": "ব্যর্থতা"
+    },
+    {
+      "bn": "জয়",
+      "pronunciation": "joj",
+      "en": "victory",
+      "category": "nouns",
+      "sourcePhrase": "জয়"
+    },
+    {
+      "bn": "পরাজয়",
+      "pronunciation": "porajoj",
+      "en": "defeat",
+      "category": "nouns",
+      "sourcePhrase": "পরাজয়"
+    },
+    {
+      "bn": "জ্ঞান",
+      "pronunciation": "gyan",
+      "en": "knowledge",
+      "category": "nouns",
+      "sourcePhrase": "জ্ঞান"
+    },
+    {
+      "bn": "বুদ্ধি",
+      "pronunciation": "buddhi",
+      "en": "intelligence",
+      "category": "nouns",
+      "sourcePhrase": "বুদ্ধি"
+    },
+    {
+      "bn": "স্মৃতি",
+      "pronunciation": "smriti",
+      "en": "memory",
+      "category": "nouns",
+      "sourcePhrase": "স্মৃতি"
+    },
+    {
+      "bn": "চিন্তা",
+      "pronunciation": "chinta",
+      "en": "thought",
+      "category": "nouns",
+      "sourcePhrase": "চিন্তা"
+    },
+    {
+      "bn": "কল্পনা",
+      "pronunciation": "kolpona",
+      "en": "imagination",
+      "category": "nouns",
+      "sourcePhrase": "কল্পনা"
+    },
+    {
+      "bn": "সিদ্ধান্ত",
+      "pronunciation": "shiddhanto",
+      "en": "decision",
+      "category": "nouns",
+      "sourcePhrase": "সিদ্ধান্ত"
+    },
+    {
+      "bn": "লক্ষ্য",
+      "pronunciation": "lokkho",
+      "en": "goal",
+      "category": "nouns",
+      "sourcePhrase": "লক্ষ্য"
+    },
+    {
+      "bn": "অভ্যাস",
+      "pronunciation": "obhjas",
+      "en": "habit",
+      "category": "nouns",
+      "sourcePhrase": "অভ্যাস"
+    },
+    {
+      "bn": "অভিজ্ঞতা",
+      "pronunciation": "obhijnyota",
+      "en": "experience",
+      "category": "nouns",
+      "sourcePhrase": "অভিজ্ঞতা"
+    },
+    {
+      "bn": "দক্ষতা",
+      "pronunciation": "dokkhota",
+      "en": "skill",
+      "category": "nouns",
+      "sourcePhrase": "দক্ষতা"
+    },
+    {
+      "bn": "প্রতিভা",
+      "pronunciation": "protibha",
+      "en": "talent",
+      "category": "nouns",
+      "sourcePhrase": "প্রতিভা"
+    },
+    {
+      "bn": "ব্যক্তিত্ব",
+      "pronunciation": "bektitto",
+      "en": "personality",
+      "category": "nouns",
+      "sourcePhrase": "ব্যক্তিত্ব"
+    },
+    {
+      "bn": "সময়",
+      "pronunciation": "shomoy",
+      "en": "time",
+      "category": "nouns",
+      "sourcePhrase": "সময়"
+    },
+    {
+      "bn": "মুহূর্ত",
+      "pronunciation": "muhurto",
+      "en": "moment",
+      "category": "nouns",
+      "sourcePhrase": "মুহূর্ত"
+    },
+    {
+      "bn": "সেকেন্ড",
+      "pronunciation": "Sekend",
+      "en": "second",
+      "category": "nouns",
+      "sourcePhrase": "সেকেন্ড"
+    },
+    {
+      "bn": "মিনিট",
+      "pronunciation": "minit",
+      "en": "minute",
+      "category": "nouns",
+      "sourcePhrase": "মিনিট"
+    },
+    {
+      "bn": "ঘণ্টা",
+      "pronunciation": "Ghonta",
+      "en": "hour",
+      "category": "nouns",
+      "sourcePhrase": "ঘণ্টা"
+    },
+    {
+      "bn": "দিন",
+      "pronunciation": "din",
+      "en": "day",
+      "category": "nouns",
+      "sourcePhrase": "দিন"
+    },
+    {
+      "bn": "রাত",
+      "pronunciation": "rat",
+      "en": "night",
+      "category": "nouns",
+      "sourcePhrase": "রাত"
     },
     {
       "bn": "সকাল",
       "pronunciation": "shokal",
       "en": "morning",
       "category": "nouns",
-      "sourcePhrase": "স্কুল সকাল আটটায় শুরু হয়।"
+      "sourcePhrase": "সকাল"
     },
     {
-      "bn": "আটটায়",
-      "pronunciation": "at-tay",
-      "en": "at eight",
+      "bn": "দুপুর",
+      "pronunciation": "Dupur",
+      "en": "afternoon / noon",
       "category": "nouns",
-      "sourcePhrase": "স্কুল সকাল আটটায় শুরু হয়।"
+      "sourcePhrase": "দুপুর"
     },
     {
-      "bn": "শুরু",
-      "pronunciation": "shuru",
-      "en": "start",
+      "bn": "বিকেল",
+      "pronunciation": "bikel",
+      "en": "afternoon",
       "category": "nouns",
-      "sourcePhrase": "স্কুল সকাল আটটায় শুরু হয়।"
+      "sourcePhrase": "বিকেল"
     },
     {
-      "bn": "হয়",
-      "pronunciation": "hoy",
-      "en": "is / happens",
+      "bn": "সন্ধ্যা",
+      "pronunciation": "shondhya",
+      "en": "evening",
       "category": "nouns",
-      "sourcePhrase": "স্কুল সকাল আটটায় শুরু হয়।"
+      "sourcePhrase": "সন্ধ্যা"
     },
     {
-      "bn": "এটা",
-      "pronunciation": "eta",
-      "en": "this",
+      "bn": "মধ্যরাত",
+      "pronunciation": "modhjorat",
+      "en": "midnight",
       "category": "nouns",
-      "sourcePhrase": "এটা আমার প্রিয় বই।"
+      "sourcePhrase": "মধ্যরাত"
     },
     {
-      "bn": "প্রিয়",
-      "pronunciation": "priyo",
-      "en": "favorite",
+      "bn": "ভোর",
+      "pronunciation": "bhor",
+      "en": "dawn",
       "category": "nouns",
-      "sourcePhrase": "এটা আমার প্রিয় বই।"
+      "sourcePhrase": "ভোর"
     },
     {
-      "bn": "দয়া",
-      "pronunciation": "doya",
-      "en": "kindness / please",
+      "bn": "সূর্যোদয়",
+      "pronunciation": "surjodoj",
+      "en": "sunrise",
       "category": "nouns",
-      "sourcePhrase": "দয়া করে আমাকে পানি দিন।"
+      "sourcePhrase": "সূর্যোদয়"
     },
     {
-      "bn": "করে",
-      "pronunciation": "kore",
-      "en": "does",
+      "bn": "সূর্যাস্ত",
+      "pronunciation": "surjast",
+      "en": "sunset",
       "category": "nouns",
-      "sourcePhrase": "দয়া করে আমাকে পানি দিন।"
-    },
-    {
-      "bn": "আমাকে",
-      "pronunciation": "amake",
-      "en": "me",
-      "category": "nouns",
-      "sourcePhrase": "দয়া করে আমাকে পানি দিন।"
-    },
-    {
-      "bn": "টেবিলে",
-      "pronunciation": "tebile",
-      "en": "on the table",
-      "category": "nouns",
-      "sourcePhrase": "খাবার টেবিলে রাখা আছে।"
-    },
-    {
-      "bn": "রাখা",
-      "pronunciation": "rakha",
-      "en": "placed",
-      "category": "nouns",
-      "sourcePhrase": "খাবার টেবিলে রাখা আছে।"
-    },
-    {
-      "bn": "আছে",
-      "pronunciation": "achhe",
-      "en": "is / has",
-      "category": "nouns",
-      "sourcePhrase": "খাবার টেবিলে রাখা আছে।"
+      "sourcePhrase": "সূর্যাস্ত"
     },
     {
       "bn": "আজ",
       "pronunciation": "aj",
       "en": "today",
       "category": "nouns",
-      "sourcePhrase": "আজ একটি সুন্দর দিন।"
+      "sourcePhrase": "আজ"
     },
     {
-      "bn": "একটি",
-      "pronunciation": "ekti",
-      "en": "one / a",
+      "bn": "আগামীকাল",
+      "pronunciation": "agamikal",
+      "en": "tomorrow",
       "category": "nouns",
-      "sourcePhrase": "আজ একটি সুন্দর দিন।"
+      "sourcePhrase": "আগামীকাল"
     },
     {
-      "bn": "সুন্দর",
-      "pronunciation": "shundor",
-      "en": "beautiful",
+      "bn": "গতকাল",
+      "pronunciation": "gotokal",
+      "en": "yesterday",
       "category": "nouns",
-      "sourcePhrase": "আজ একটি সুন্দর দিন।"
+      "sourcePhrase": "গতকাল"
     },
     {
-      "bn": "এখন",
-      "pronunciation": "ekhon",
-      "en": "now",
+      "bn": "ভবিষ্যৎ",
+      "pronunciation": "bhobishshot",
+      "en": "future",
       "category": "nouns",
-      "sourcePhrase": "আমার এখন সময় নেই।"
+      "sourcePhrase": "ভবিষ্যৎ"
     },
     {
-      "bn": "নেই",
-      "pronunciation": "nei",
-      "en": "does not have",
+      "bn": "অতীত",
+      "pronunciation": "ôtit",
+      "en": "past",
       "category": "nouns",
-      "sourcePhrase": "আমার এখন সময় নেই।"
+      "sourcePhrase": "অতীত"
     },
     {
-      "bn": "এই",
-      "pronunciation": "ei",
-      "en": "this",
+      "bn": "বর্তমান",
+      "pronunciation": "bortoman",
+      "en": "present",
       "category": "nouns",
-      "sourcePhrase": "এই রাস্তা স্টেশনে যায়।"
+      "sourcePhrase": "বর্তমান"
     },
     {
-      "bn": "স্টেশনে",
-      "pronunciation": "steshone",
-      "en": "to the station",
+      "bn": "সপ্তাহ",
+      "pronunciation": "shoptaho",
+      "en": "week",
       "category": "nouns",
-      "sourcePhrase": "এই রাস্তা স্টেশনে যায়।"
+      "sourcePhrase": "সপ্তাহ"
     },
     {
-      "bn": "যায়",
-      "pronunciation": "jay",
-      "en": "goes",
+      "bn": "সপ্তাহান্ত",
+      "pronunciation": "soptahant",
+      "en": "weekend",
       "category": "nouns",
-      "sourcePhrase": "এই রাস্তা স্টেশনে যায়।"
+      "sourcePhrase": "সপ্তাহান্ত"
     },
     {
-      "bn": "অনেক",
-      "pronunciation": "onek",
-      "en": "very / many",
+      "bn": "মাস",
+      "pronunciation": "mash",
+      "en": "month",
       "category": "nouns",
-      "sourcePhrase": "এই শহর অনেক বড়।"
+      "sourcePhrase": "মাস"
     },
     {
-      "bn": "বড়",
-      "pronunciation": "boro",
-      "en": "big",
+      "bn": "বছর",
+      "pronunciation": "bochor",
+      "en": "year",
       "category": "nouns",
-      "sourcePhrase": "এই শহর অনেক বড়।"
+      "sourcePhrase": "বছর"
     },
     {
-      "bn": "ঘরের",
-      "pronunciation": "ghorer",
-      "en": "of the room",
+      "bn": "দশক",
+      "pronunciation": "doshok",
+      "en": "decade",
       "category": "nouns",
-      "sourcePhrase": "ঘরের দরজা খোলা।"
+      "sourcePhrase": "দশক"
     },
     {
-      "bn": "খোলা",
-      "pronunciation": "khola",
-      "en": "open",
+      "bn": "শতাব্দী",
+      "pronunciation": "shotabdi",
+      "en": "century",
       "category": "nouns",
-      "sourcePhrase": "ঘরের দরজা খোলা।"
+      "sourcePhrase": "শতাব্দী"
     },
     {
-      "bn": "দিয়ে",
-      "pronunciation": "diye",
-      "en": "through / with",
+      "bn": "সহস্রাব্দ",
+      "pronunciation": "sohosrabd",
+      "en": "millennium",
       "category": "nouns",
-      "sourcePhrase": "জানালা দিয়ে আলো আসছে।"
+      "sourcePhrase": "সহস্রাব্দ"
+    },
+    {
+      "bn": "ক্যালেন্ডার",
+      "pronunciation": "kjalendar",
+      "en": "calendar",
+      "category": "nouns",
+      "sourcePhrase": "ক্যালেন্ডার"
+    },
+    {
+      "bn": "তারিখ",
+      "pronunciation": "tarikh",
+      "en": "date",
+      "category": "nouns",
+      "sourcePhrase": "তারিখ"
+    },
+    {
+      "bn": "জানুয়ারি",
+      "pronunciation": "janujori",
+      "en": "January",
+      "category": "nouns",
+      "sourcePhrase": "জানুয়ারি"
+    },
+    {
+      "bn": "ফেব্রুয়ারি",
+      "pronunciation": "phebrujori",
+      "en": "February",
+      "category": "nouns",
+      "sourcePhrase": "ফেব্রুয়ারি"
+    },
+    {
+      "bn": "মার্চ",
+      "pronunciation": "march",
+      "en": "March",
+      "category": "nouns",
+      "sourcePhrase": "মার্চ"
+    },
+    {
+      "bn": "এপ্রিল",
+      "pronunciation": "epril",
+      "en": "April",
+      "category": "nouns",
+      "sourcePhrase": "এপ্রিল"
+    },
+    {
+      "bn": "মে",
+      "pronunciation": "me",
+      "en": "May",
+      "category": "nouns",
+      "sourcePhrase": "মে"
+    },
+    {
+      "bn": "জুন",
+      "pronunciation": "jun",
+      "en": "June",
+      "category": "nouns",
+      "sourcePhrase": "জুন"
+    },
+    {
+      "bn": "জুলাই",
+      "pronunciation": "julai",
+      "en": "July",
+      "category": "nouns",
+      "sourcePhrase": "জুলাই"
+    },
+    {
+      "bn": "আগস্ট",
+      "pronunciation": "agost",
+      "en": "August",
+      "category": "nouns",
+      "sourcePhrase": "আগস্ট"
+    },
+    {
+      "bn": "সেপ্টেম্বর",
+      "pronunciation": "septembor",
+      "en": "September",
+      "category": "nouns",
+      "sourcePhrase": "সেপ্টেম্বর"
+    },
+    {
+      "bn": "অক্টোবর",
+      "pronunciation": "oktobor",
+      "en": "October",
+      "category": "nouns",
+      "sourcePhrase": "অক্টোবর"
+    },
+    {
+      "bn": "নভেম্বর",
+      "pronunciation": "nobhembor",
+      "en": "November",
+      "category": "nouns",
+      "sourcePhrase": "নভেম্বর"
+    },
+    {
+      "bn": "ডিসেম্বর",
+      "pronunciation": "disembor",
+      "en": "December",
+      "category": "nouns",
+      "sourcePhrase": "ডিসেম্বর"
+    },
+    {
+      "bn": "সোমবার",
+      "pronunciation": "shombar",
+      "en": "Monday",
+      "category": "nouns",
+      "sourcePhrase": "সোমবার"
+    },
+    {
+      "bn": "মঙ্গলবার",
+      "pronunciation": "monggolobar",
+      "en": "Tuesday",
+      "category": "nouns",
+      "sourcePhrase": "মঙ্গলবার"
+    },
+    {
+      "bn": "বুধবার",
+      "pronunciation": "budhobar",
+      "en": "Wednesday",
+      "category": "nouns",
+      "sourcePhrase": "বুধবার"
+    },
+    {
+      "bn": "বৃহস্পতিবার",
+      "pronunciation": "brihoshpotibar",
+      "en": "Thursday",
+      "category": "nouns",
+      "sourcePhrase": "বৃহস্পতিবার"
+    },
+    {
+      "bn": "শুক্রবার",
+      "pronunciation": "shukrobar",
+      "en": "Friday",
+      "category": "nouns",
+      "sourcePhrase": "শুক্রবার"
+    },
+    {
+      "bn": "শনিবার",
+      "pronunciation": "shonibar",
+      "en": "Saturday",
+      "category": "nouns",
+      "sourcePhrase": "শনিবার"
+    },
+    {
+      "bn": "রবিবার",
+      "pronunciation": "robibar",
+      "en": "Sunday",
+      "category": "nouns",
+      "sourcePhrase": "রবিবার"
+    },
+    {
+      "bn": "ঋতু",
+      "pronunciation": "ritu",
+      "en": "season",
+      "category": "nouns",
+      "sourcePhrase": "ঋতু"
+    },
+    {
+      "bn": "গ্রীষ্ম",
+      "pronunciation": "grishsho",
+      "en": "summer",
+      "category": "nouns",
+      "sourcePhrase": "গ্রীষ্ম"
+    },
+    {
+      "bn": "বর্ষা",
+      "pronunciation": "borsha",
+      "en": "rainy season",
+      "category": "nouns",
+      "sourcePhrase": "বর্ষা"
+    },
+    {
+      "bn": "শরৎ",
+      "pronunciation": "shorot",
+      "en": "autumn",
+      "category": "nouns",
+      "sourcePhrase": "শরৎ"
+    },
+    {
+      "bn": "হেমন্ত",
+      "pronunciation": "hemont",
+      "en": "late autumn",
+      "category": "nouns",
+      "sourcePhrase": "হেমন্ত"
+    },
+    {
+      "bn": "শীত",
+      "pronunciation": "shit",
+      "en": "winter",
+      "category": "nouns",
+      "sourcePhrase": "শীত"
+    },
+    {
+      "bn": "বসন্ত",
+      "pronunciation": "bosont",
+      "en": "spring",
+      "category": "nouns",
+      "sourcePhrase": "বসন্ত"
+    },
+    {
+      "bn": "আবহাওয়া",
+      "pronunciation": "abohawa",
+      "en": "weather",
+      "category": "nouns",
+      "sourcePhrase": "আবহাওয়া"
+    },
+    {
+      "bn": "তাপমাত্রা",
+      "pronunciation": "tapmatra",
+      "en": "temperature",
+      "category": "nouns",
+      "sourcePhrase": "তাপমাত্রা"
+    },
+    {
+      "bn": "গরম",
+      "pronunciation": "gorom",
+      "en": "heat",
+      "category": "nouns",
+      "sourcePhrase": "গরম"
+    },
+    {
+      "bn": "ঠান্ডা",
+      "pronunciation": "thanda",
+      "en": "cold",
+      "category": "nouns",
+      "sourcePhrase": "ঠান্ডা"
+    },
+    {
+      "bn": "কুয়াশা",
+      "pronunciation": "kujosha",
+      "en": "fog",
+      "category": "nouns",
+      "sourcePhrase": "কুয়াশা"
+    },
+    {
+      "bn": "ঝড়",
+      "pronunciation": "jhod",
+      "en": "storm",
+      "category": "nouns",
+      "sourcePhrase": "ঝড়"
+    },
+    {
+      "bn": "বজ্রপাত",
+      "pronunciation": "bojropat",
+      "en": "lightning",
+      "category": "nouns",
+      "sourcePhrase": "বজ্রপাত"
+    },
+    {
+      "bn": "বজ্রধ্বনি",
+      "pronunciation": "bojrodhboni",
+      "en": "thunder",
+      "category": "nouns",
+      "sourcePhrase": "বজ্রধ্বনি"
+    },
+    {
+      "bn": "রংধনু",
+      "pronunciation": "rongdhonu",
+      "en": "rainbow",
+      "category": "nouns",
+      "sourcePhrase": "রংধনু"
+    },
+    {
+      "bn": "শিশির",
+      "pronunciation": "shishir",
+      "en": "dew",
+      "category": "nouns",
+      "sourcePhrase": "শিশির"
+    },
+    {
+      "bn": "তুষার",
+      "pronunciation": "tushar",
+      "en": "snow",
+      "category": "nouns",
+      "sourcePhrase": "তুষার"
+    },
+    {
+      "bn": "বরফ",
+      "pronunciation": "boroph",
+      "en": "ice",
+      "category": "nouns",
+      "sourcePhrase": "বরফ"
+    },
+    {
+      "bn": "মেঘলা",
+      "pronunciation": "meghola",
+      "en": "cloudiness",
+      "category": "nouns",
+      "sourcePhrase": "মেঘলা"
+    },
+    {
+      "bn": "রোদ",
+      "pronunciation": "rod",
+      "en": "sunshine",
+      "category": "nouns",
+      "sourcePhrase": "রোদ"
+    },
+    {
+      "bn": "ছায়া",
+      "pronunciation": "chaya",
+      "en": "shade",
+      "category": "nouns",
+      "sourcePhrase": "ছায়া"
     },
     {
       "bn": "আলো",
       "pronunciation": "alo",
       "en": "light",
       "category": "nouns",
-      "sourcePhrase": "জানালা দিয়ে আলো আসছে।"
+      "sourcePhrase": "আলো"
     },
     {
-      "bn": "আসছে",
-      "pronunciation": "ashchhe",
-      "en": "is coming",
+      "bn": "অন্ধকার",
+      "pronunciation": "ondhokar",
+      "en": "darkness",
       "category": "nouns",
-      "sourcePhrase": "জানালা দিয়ে আলো আসছে।"
+      "sourcePhrase": "অন্ধকার"
     },
     {
-      "bn": "টেবিলের",
-      "pronunciation": "tebiler",
-      "en": "of the table",
+      "bn": "প্রকৃতি",
+      "pronunciation": "prokriti",
+      "en": "nature",
       "category": "nouns",
-      "sourcePhrase": "চাবি টেবিলের উপরে আছে।"
+      "sourcePhrase": "প্রকৃতি"
     },
     {
-      "bn": "উপরে",
-      "pronunciation": "upore",
-      "en": "on / above",
+      "bn": "পরিবেশ",
+      "pronunciation": "poribesh",
+      "en": "environment",
       "category": "nouns",
-      "sourcePhrase": "চাবি টেবিলের উপরে আছে।"
+      "sourcePhrase": "পরিবেশ"
     },
     {
-      "bn": "ব্যাগে",
-      "pronunciation": "bage",
-      "en": "in the bag",
+      "bn": "জলবায়ু",
+      "pronunciation": "jolobaj",
+      "en": "climate",
       "category": "nouns",
-      "sourcePhrase": "আমার ফোন ব্যাগে আছে।"
+      "sourcePhrase": "জলবায়ু"
     },
     {
-      "bn": "কম্পিউটারটি",
-      "pronunciation": "kompiutar-ti",
-      "en": "the computer",
+      "bn": "মহাদেশ",
+      "pronunciation": "mohadesh",
+      "en": "continent",
       "category": "nouns",
-      "sourcePhrase": "কম্পিউটারটি খুব দ্রুত।"
+      "sourcePhrase": "মহাদেশ"
     },
     {
-      "bn": "দ্রুত",
-      "pronunciation": "druto",
-      "en": "quickly",
+      "bn": "পৃথিবী",
+      "pronunciation": "prithibi",
+      "en": "world / Earth",
       "category": "nouns",
-      "sourcePhrase": "কম্পিউটারটি খুব দ্রুত।"
+      "sourcePhrase": "পৃথিবী"
     },
     {
-      "bn": "টেবিলটি",
-      "pronunciation": "tebil-ti",
-      "en": "the table",
+      "bn": "রাজ্য",
+      "pronunciation": "rajjo",
+      "en": "state",
       "category": "nouns",
-      "sourcePhrase": "টেবিলটি জানালার পাশে।"
+      "sourcePhrase": "রাজ্য"
     },
     {
-      "bn": "জানালার",
-      "pronunciation": "janalar",
-      "en": "of the window",
+      "bn": "জেলা",
+      "pronunciation": "jela",
+      "en": "district",
       "category": "nouns",
-      "sourcePhrase": "টেবিলটি জানালার পাশে।"
+      "sourcePhrase": "জেলা"
     },
     {
-      "bn": "পাশে",
-      "pronunciation": "pashe",
-      "en": "beside",
+      "bn": "উপজেলা",
+      "pronunciation": "upojela",
+      "en": "subdistrict",
       "category": "nouns",
-      "sourcePhrase": "টেবিলটি জানালার পাশে।"
+      "sourcePhrase": "উপজেলা"
     },
     {
-      "bn": "চেয়ারটি",
-      "pronunciation": "cheyar-ti",
-      "en": "the chair",
+      "bn": "রাজধানী",
+      "pronunciation": "rajodhani",
+      "en": "capital",
       "category": "nouns",
-      "sourcePhrase": "চেয়ারটি টেবিলের সামনে।"
+      "sourcePhrase": "রাজধানী"
     },
     {
-      "bn": "সামনে",
-      "pronunciation": "shamne",
-      "en": "in front of",
+      "bn": "রাস্তা",
+      "pronunciation": "rasta",
+      "en": "street",
       "category": "nouns",
-      "sourcePhrase": "চেয়ারটি টেবিলের সামনে।"
+      "sourcePhrase": "রাস্তা"
     },
     {
-      "bn": "ঘড়িতে",
-      "pronunciation": "ghorite",
-      "en": "on the clock",
+      "bn": "মহাসড়ক",
+      "pronunciation": "mohashorok",
+      "en": "highway",
       "category": "nouns",
-      "sourcePhrase": "ঘড়িতে এখন দশটা।"
+      "sourcePhrase": "মহাসড়ক"
     },
     {
-      "bn": "দশটা",
-      "pronunciation": "doshta",
-      "en": "ten o'clock",
+      "bn": "গলি",
+      "pronunciation": "goli",
+      "en": "alley",
       "category": "nouns",
-      "sourcePhrase": "ঘড়িতে এখন দশটা।"
+      "sourcePhrase": "গলি"
     },
     {
-      "bn": "ব্যাগটি",
-      "pronunciation": "bagti",
-      "en": "the bag",
+      "bn": "মোড়",
+      "pronunciation": "mor",
+      "en": "intersection",
       "category": "nouns",
-      "sourcePhrase": "আমার ব্যাগটি নীল।"
+      "sourcePhrase": "মোড়"
     },
     {
-      "bn": "নীল",
-      "pronunciation": "nil",
-      "en": "blue",
+      "bn": "বন্দর",
+      "pronunciation": "bondor",
+      "en": "port",
       "category": "nouns",
-      "sourcePhrase": "আমার ব্যাগটি নীল।"
+      "sourcePhrase": "বন্দর"
     },
     {
-      "bn": "আমি",
-      "pronunciation": "ami",
-      "en": "I",
+      "bn": "বিমানবন্দর",
+      "pronunciation": "bimanbondor",
+      "en": "airport",
       "category": "nouns",
-      "sourcePhrase": "আমি একটি কলম কিনেছি।"
+      "sourcePhrase": "বিমানবন্দর"
     },
     {
-      "bn": "কিনেছি",
-      "pronunciation": "kinechhi",
-      "en": "bought",
+      "bn": "রেলস্টেশন",
+      "pronunciation": "relosteshon",
+      "en": "railway station",
       "category": "nouns",
-      "sourcePhrase": "আমি একটি কলম কিনেছি।"
+      "sourcePhrase": "রেলস্টেশন"
     },
     {
-      "bn": "কাগজটি",
-      "pronunciation": "kagoj-ti",
-      "en": "the paper",
+      "bn": "হ্রদ",
+      "pronunciation": "hrod",
+      "en": "lake",
       "category": "nouns",
-      "sourcePhrase": "কাগজটি টেবিলে রাখুন।"
+      "sourcePhrase": "হ্রদ"
     },
     {
-      "bn": "রাখুন",
-      "pronunciation": "rakhun",
-      "en": "please put",
+      "bn": "জলপ্রপাত",
+      "pronunciation": "jolopropat",
+      "en": "waterfall",
       "category": "nouns",
-      "sourcePhrase": "কাগজটি টেবিলে রাখুন।"
+      "sourcePhrase": "জলপ্রপাত"
     },
     {
-      "bn": "শিশুটি",
-      "pronunciation": "shishu-ti",
-      "en": "the child",
+      "bn": "দ্বীপ",
+      "pronunciation": "dbip",
+      "en": "island",
       "category": "nouns",
-      "sourcePhrase": "শিশুটি ঘুমাচ্ছে।"
+      "sourcePhrase": "দ্বীপ"
     },
     {
-      "bn": "ঘুমাচ্ছে",
-      "pronunciation": "ghumachchhe",
-      "en": "is sleeping",
+      "bn": "উপকূল",
+      "pronunciation": "upokul",
+      "en": "coast",
       "category": "nouns",
-      "sourcePhrase": "শিশুটি ঘুমাচ্ছে।"
+      "sourcePhrase": "উপকূল"
     },
     {
-      "bn": "ক্লাসে",
-      "pronunciation": "klashe",
-      "en": "in the class",
+      "bn": "সৈকত",
+      "pronunciation": "soikot",
+      "en": "beach",
       "category": "nouns",
-      "sourcePhrase": "শিক্ষক ক্লাসে পড়াচ্ছেন।"
+      "sourcePhrase": "সৈকত"
     },
     {
-      "bn": "পড়াচ্ছেন",
-      "pronunciation": "porachchhen",
-      "en": "is teaching",
+      "bn": "মরুভূমি",
+      "pronunciation": "morubhumi",
+      "en": "desert",
       "category": "nouns",
-      "sourcePhrase": "শিক্ষক ক্লাসে পড়াচ্ছেন।"
+      "sourcePhrase": "মরুভূমি"
     },
     {
-      "bn": "পড়ছে",
-      "pronunciation": "porchhe",
-      "en": "is reading",
+      "bn": "উপত্যকা",
+      "pronunciation": "upotjoka",
+      "en": "valley",
       "category": "nouns",
-      "sourcePhrase": "ছাত্র বই পড়ছে।"
+      "sourcePhrase": "উপত্যকা"
+    },
+    {
+      "bn": "আগ্নেয়গিরি",
+      "pronunciation": "agnejogiri",
+      "en": "volcano",
+      "category": "nouns",
+      "sourcePhrase": "আগ্নেয়গিরি"
+    },
+    {
+      "bn": "গুহা",
+      "pronunciation": "guha",
+      "en": "cave",
+      "category": "nouns",
+      "sourcePhrase": "গুহা"
+    },
+    {
+      "bn": "শিলা",
+      "pronunciation": "shila",
+      "en": "rock",
+      "category": "nouns",
+      "sourcePhrase": "শিলা"
+    },
+    {
+      "bn": "বালি",
+      "pronunciation": "bali",
+      "en": "sand",
+      "category": "nouns",
+      "sourcePhrase": "বালি"
+    },
+    {
+      "bn": "সমভূমি",
+      "pronunciation": "somobhumi",
+      "en": "plain",
+      "category": "nouns",
+      "sourcePhrase": "সমভূমি"
+    },
+    {
+      "bn": "শিক্ষা",
+      "pronunciation": "shikkha",
+      "en": "education",
+      "category": "nouns",
+      "sourcePhrase": "শিক্ষা"
+    },
+    {
+      "bn": "বিদ্যালয়",
+      "pronunciation": "biddaloy",
+      "en": "school",
+      "category": "nouns",
+      "sourcePhrase": "বিদ্যালয়"
+    },
+    {
+      "bn": "শ্রেণিকক্ষ",
+      "pronunciation": "shrenikoksh",
+      "en": "classroom",
+      "category": "nouns",
+      "sourcePhrase": "শ্রেণিকক্ষ"
+    },
+    {
+      "bn": "পাঠ",
+      "pronunciation": "path",
+      "en": "lesson",
+      "category": "nouns",
+      "sourcePhrase": "পাঠ"
+    },
+    {
+      "bn": "অধ্যায়",
+      "pronunciation": "odhjaj",
+      "en": "chapter",
+      "category": "nouns",
+      "sourcePhrase": "অধ্যায়"
+    },
+    {
+      "bn": "অনুচ্ছেদ",
+      "pronunciation": "onuchchhed",
+      "en": "paragraph",
+      "category": "nouns",
+      "sourcePhrase": "অনুচ্ছেদ"
+    },
+    {
+      "bn": "শব্দভাণ্ডার",
+      "pronunciation": "shobdobhandar",
+      "en": "vocabulary",
+      "category": "nouns",
+      "sourcePhrase": "শব্দভাণ্ডার"
+    },
+    {
+      "bn": "বর্ণ",
+      "pronunciation": "born",
+      "en": "letter",
+      "category": "nouns",
+      "sourcePhrase": "বর্ণ"
+    },
+    {
+      "bn": "বর্ণমালা",
+      "pronunciation": "bornomala",
+      "en": "alphabet",
+      "category": "nouns",
+      "sourcePhrase": "বর্ণমালা"
+    },
+    {
+      "bn": "অক্ষর",
+      "pronunciation": "okshor",
+      "en": "character / letter",
+      "category": "nouns",
+      "sourcePhrase": "অক্ষর"
+    },
+    {
+      "bn": "বানান",
+      "pronunciation": "banan",
+      "en": "spelling",
+      "category": "nouns",
+      "sourcePhrase": "বানান"
+    },
+    {
+      "bn": "ব্যাকরণ",
+      "pronunciation": "bjakoron",
+      "en": "grammar",
+      "category": "nouns",
+      "sourcePhrase": "ব্যাকরণ"
+    },
+    {
+      "bn": "উচ্চারণ",
+      "pronunciation": "Uccharon",
+      "en": "pronunciation",
+      "category": "nouns",
+      "sourcePhrase": "উচ্চারণ"
+    },
+    {
+      "bn": "সাহিত্য",
+      "pronunciation": "sahitj",
+      "en": "literature",
+      "category": "nouns",
+      "sourcePhrase": "সাহিত্য"
+    },
+    {
+      "bn": "প্রবন্ধ",
+      "pronunciation": "probondh",
+      "en": "essay",
+      "category": "nouns",
+      "sourcePhrase": "প্রবন্ধ"
+    },
+    {
+      "bn": "রচনা",
+      "pronunciation": "rochona",
+      "en": "composition",
+      "category": "nouns",
+      "sourcePhrase": "রচনা"
+    },
+    {
+      "bn": "পরীক্ষা",
+      "pronunciation": "porikkha",
+      "en": "examination",
+      "category": "nouns",
+      "sourcePhrase": "পরীক্ষা"
+    },
+    {
+      "bn": "কুইজ",
+      "pronunciation": "kuij",
+      "en": "quiz",
+      "category": "nouns",
+      "sourcePhrase": "কুইজ"
+    },
+    {
+      "bn": "নম্বর",
+      "pronunciation": "nombor",
+      "en": "marks / score",
+      "category": "nouns",
+      "sourcePhrase": "নম্বর"
+    },
+    {
+      "bn": "ফলাফল",
+      "pronunciation": "pholaphol",
+      "en": "result",
+      "category": "nouns",
+      "sourcePhrase": "ফলাফল"
+    },
+    {
+      "bn": "সনদ",
+      "pronunciation": "sonod",
+      "en": "certificate",
+      "category": "nouns",
+      "sourcePhrase": "সনদ"
+    },
+    {
+      "bn": "ডিগ্রি",
+      "pronunciation": "degree",
+      "en": "degree",
+      "category": "nouns",
+      "sourcePhrase": "ডিগ্রি"
+    },
+    {
+      "bn": "গবেষণা",
+      "pronunciation": "gobeshona",
+      "en": "research",
+      "category": "nouns",
+      "sourcePhrase": "গবেষণা"
+    },
+    {
+      "bn": "পরীক্ষাগার",
+      "pronunciation": "porikshagar",
+      "en": "laboratory",
+      "category": "nouns",
+      "sourcePhrase": "পরীক্ষাগার"
+    },
+    {
+      "bn": "বিজ্ঞান",
+      "pronunciation": "biggan",
+      "en": "science",
+      "category": "nouns",
+      "sourcePhrase": "বিজ্ঞান"
+    },
+    {
+      "bn": "গণিত",
+      "pronunciation": "gonit",
+      "en": "mathematics",
+      "category": "nouns",
+      "sourcePhrase": "গণিত"
+    },
+    {
+      "bn": "পদার্থবিদ্যা",
+      "pronunciation": "podarthobidja",
+      "en": "physics",
+      "category": "nouns",
+      "sourcePhrase": "পদার্থবিদ্যা"
+    },
+    {
+      "bn": "রসায়ন",
+      "pronunciation": "roshayon",
+      "en": "chemistry",
+      "category": "nouns",
+      "sourcePhrase": "রসায়ন"
+    },
+    {
+      "bn": "জীববিজ্ঞান",
+      "pronunciation": "jibobijnyan",
+      "en": "biology",
+      "category": "nouns",
+      "sourcePhrase": "জীববিজ্ঞান"
+    },
+    {
+      "bn": "জ্যোতির্বিজ্ঞান",
+      "pronunciation": "jjotirbijnyan",
+      "en": "astronomy",
+      "category": "nouns",
+      "sourcePhrase": "জ্যোতির্বিজ্ঞান"
+    },
+    {
+      "bn": "ভূগোল",
+      "pronunciation": "bhugol",
+      "en": "geography",
+      "category": "nouns",
+      "sourcePhrase": "ভূগোল"
+    },
+    {
+      "bn": "ইতিহাস",
+      "pronunciation": "itihas",
+      "en": "history",
+      "category": "nouns",
+      "sourcePhrase": "ইতিহাস"
+    },
+    {
+      "bn": "অর্থনীতি",
+      "pronunciation": "orthoniti",
+      "en": "economics",
+      "category": "nouns",
+      "sourcePhrase": "অর্থনীতি"
+    },
+    {
+      "bn": "দর্শন",
+      "pronunciation": "dorshon",
+      "en": "philosophy",
+      "category": "nouns",
+      "sourcePhrase": "দর্শন"
+    },
+    {
+      "bn": "মনোবিজ্ঞান",
+      "pronunciation": "monobijnyan",
+      "en": "psychology",
+      "category": "nouns",
+      "sourcePhrase": "মনোবিজ্ঞান"
+    },
+    {
+      "bn": "সমাজবিজ্ঞান",
+      "pronunciation": "somajobijnyan",
+      "en": "sociology",
+      "category": "nouns",
+      "sourcePhrase": "সমাজবিজ্ঞান"
+    },
+    {
+      "bn": "প্রকৌশল",
+      "pronunciation": "prokoushol",
+      "en": "engineering",
+      "category": "nouns",
+      "sourcePhrase": "প্রকৌশল"
+    },
+    {
+      "bn": "প্রযুক্তি",
+      "pronunciation": "projukti",
+      "en": "technology",
+      "category": "nouns",
+      "sourcePhrase": "প্রযুক্তি"
+    },
+    {
+      "bn": "উদ্ভাবন",
+      "pronunciation": "udbhabon",
+      "en": "innovation",
+      "category": "nouns",
+      "sourcePhrase": "উদ্ভাবন"
+    },
+    {
+      "bn": "আবিষ্কার",
+      "pronunciation": "abishkar",
+      "en": "invention",
+      "category": "nouns",
+      "sourcePhrase": "আবিষ্কার"
+    },
+    {
+      "bn": "ডেস্কটপ",
+      "pronunciation": "deskotop",
+      "en": "desktop computer",
+      "category": "nouns",
+      "sourcePhrase": "ডেস্কটপ"
+    },
+    {
+      "bn": "সার্ভার",
+      "pronunciation": "server",
+      "en": "server",
+      "category": "nouns",
+      "sourcePhrase": "সার্ভার"
+    },
+    {
+      "bn": "ক্লায়েন্ট",
+      "pronunciation": "klajont",
+      "en": "client",
+      "category": "nouns",
+      "sourcePhrase": "ক্লায়েন্ট"
+    },
+    {
+      "bn": "মনিটর",
+      "pronunciation": "monitor",
+      "en": "monitor",
+      "category": "nouns",
+      "sourcePhrase": "মনিটর"
+    },
+    {
+      "bn": "মাউস",
+      "pronunciation": "maus",
+      "en": "mouse",
+      "category": "nouns",
+      "sourcePhrase": "মাউস"
+    },
+    {
+      "bn": "স্পিকার",
+      "pronunciation": "spikar",
+      "en": "speaker",
+      "category": "nouns",
+      "sourcePhrase": "স্পিকার"
+    },
+    {
+      "bn": "মাইক্রোফোন",
+      "pronunciation": "maikrophon",
+      "en": "microphone",
+      "category": "nouns",
+      "sourcePhrase": "মাইক্রোফোন"
+    },
+    {
+      "bn": "ক্যামেরা",
+      "pronunciation": "kyamera",
+      "en": "camera",
+      "category": "nouns",
+      "sourcePhrase": "ক্যামেরা"
+    },
+    {
+      "bn": "প্রিন্টার",
+      "pronunciation": "printar",
+      "en": "printer",
+      "category": "nouns",
+      "sourcePhrase": "প্রিন্টার"
+    },
+    {
+      "bn": "স্ক্যানার",
+      "pronunciation": "skjanar",
+      "en": "scanner",
+      "category": "nouns",
+      "sourcePhrase": "স্ক্যানার"
+    },
+    {
+      "bn": "প্রসেসর",
+      "pronunciation": "prosesor",
+      "en": "processor",
+      "category": "nouns",
+      "sourcePhrase": "প্রসেসর"
+    },
+    {
+      "bn": "সিপিইউ",
+      "pronunciation": "CPU",
+      "en": "CPU",
+      "category": "nouns",
+      "sourcePhrase": "সিপিইউ"
+    },
+    {
+      "bn": "মেমোরি",
+      "pronunciation": "memori",
+      "en": "memory",
+      "category": "nouns",
+      "sourcePhrase": "মেমোরি"
+    },
+    {
+      "bn": "র‍্যাম",
+      "pronunciation": "RAM",
+      "en": "RAM",
+      "category": "nouns",
+      "sourcePhrase": "র‍্যাম"
+    },
+    {
+      "bn": "হার্ড ড্রাইভ",
+      "pronunciation": "hard draibh",
+      "en": "hard drive",
+      "category": "nouns",
+      "sourcePhrase": "হার্ড ড্রাইভ"
+    },
+    {
+      "bn": "এসএসডি",
+      "pronunciation": "esoesodi",
+      "en": "SSD",
+      "category": "nouns",
+      "sourcePhrase": "এসএসডি"
+    },
+    {
+      "bn": "ফাইল",
+      "pronunciation": "phail",
+      "en": "file",
+      "category": "nouns",
+      "sourcePhrase": "ফাইল"
+    },
+    {
+      "bn": "ফোল্ডার",
+      "pronunciation": "pholdar",
+      "en": "folder",
+      "category": "nouns",
+      "sourcePhrase": "ফোল্ডার"
+    },
+    {
+      "bn": "নথি",
+      "pronunciation": "nothi",
+      "en": "document",
+      "category": "nouns",
+      "sourcePhrase": "নথি"
+    },
+    {
+      "bn": "তথ্য",
+      "pronunciation": "tothyo",
+      "en": "data / information",
+      "category": "nouns",
+      "sourcePhrase": "তথ্য"
+    },
+    {
+      "bn": "ডেটাবেস",
+      "pronunciation": "database",
+      "en": "database",
+      "category": "nouns",
+      "sourcePhrase": "ডেটাবেস"
+    },
+    {
+      "bn": "প্রোগ্রাম",
+      "pronunciation": "program",
+      "en": "program",
+      "category": "nouns",
+      "sourcePhrase": "প্রোগ্রাম"
+    },
+    {
+      "bn": "সফটওয়্যার",
+      "pronunciation": "software",
+      "en": "software",
+      "category": "nouns",
+      "sourcePhrase": "সফটওয়্যার"
+    },
+    {
+      "bn": "হার্ডওয়্যার",
+      "pronunciation": "hardoyeyar",
+      "en": "hardware",
+      "category": "nouns",
+      "sourcePhrase": "হার্ডওয়্যার"
+    },
+    {
+      "bn": "অ্যাপ্লিকেশন",
+      "pronunciation": "application",
+      "en": "application",
+      "category": "nouns",
+      "sourcePhrase": "অ্যাপ্লিকেশন"
+    },
+    {
+      "bn": "অ্যাপ",
+      "pronunciation": "ojap",
+      "en": "app",
+      "category": "nouns",
+      "sourcePhrase": "অ্যাপ"
+    },
+    {
+      "bn": "ওয়েবপৃষ্ঠা",
+      "pronunciation": "ojoboprishtha",
+      "en": "webpage",
+      "category": "nouns",
+      "sourcePhrase": "ওয়েবপৃষ্ঠা"
+    },
+    {
+      "bn": "ব্রাউজার",
+      "pronunciation": "braujar",
+      "en": "browser",
+      "category": "nouns",
+      "sourcePhrase": "ব্রাউজার"
+    },
+    {
+      "bn": "নেটওয়ার্ক",
+      "pronunciation": "network",
+      "en": "network",
+      "category": "nouns",
+      "sourcePhrase": "নেটওয়ার্ক"
+    },
+    {
+      "bn": "সংযোগ",
+      "pronunciation": "songjog",
+      "en": "connection",
+      "category": "nouns",
+      "sourcePhrase": "সংযোগ"
+    },
+    {
+      "bn": "পাসওয়ার্ড",
+      "pronunciation": "pasoojord",
+      "en": "password",
+      "category": "nouns",
+      "sourcePhrase": "পাসওয়ার্ড"
+    },
+    {
+      "bn": "ব্যবহারকারী",
+      "pronunciation": "byaboharkari",
+      "en": "user",
+      "category": "nouns",
+      "sourcePhrase": "ব্যবহারকারী"
+    },
+    {
+      "bn": "প্রশাসক",
+      "pronunciation": "proshasok",
+      "en": "administrator",
+      "category": "nouns",
+      "sourcePhrase": "প্রশাসক"
+    },
+    {
+      "bn": "প্রোগ্রামার",
+      "pronunciation": "programar",
+      "en": "programmer",
+      "category": "nouns",
+      "sourcePhrase": "প্রোগ্রামার"
+    },
+    {
+      "bn": "ডেভেলপার",
+      "pronunciation": "debhelopar",
+      "en": "developer",
+      "category": "nouns",
+      "sourcePhrase": "ডেভেলপার"
+    },
+    {
+      "bn": "প্রকল্প",
+      "pronunciation": "prokolp",
+      "en": "project",
+      "category": "nouns",
+      "sourcePhrase": "প্রকল্প"
+    },
+    {
+      "bn": "কোড",
+      "pronunciation": "code",
+      "en": "code",
+      "category": "nouns",
+      "sourcePhrase": "কোড"
+    },
+    {
+      "bn": "অ্যালগরিদম",
+      "pronunciation": "ojalogoridom",
+      "en": "algorithm",
+      "category": "nouns",
+      "sourcePhrase": "অ্যালগরিদম"
+    },
+    {
+      "bn": "ভেরিয়েবল",
+      "pronunciation": "variable",
+      "en": "variable",
+      "category": "nouns",
+      "sourcePhrase": "ভেরিয়েবল"
+    },
+    {
+      "bn": "ফাংশন",
+      "pronunciation": "phangshon",
+      "en": "function",
+      "category": "nouns",
+      "sourcePhrase": "ফাংশন"
+    },
+    {
+      "bn": "ক্লাস",
+      "pronunciation": "class",
+      "en": "class (programming)",
+      "category": "nouns",
+      "sourcePhrase": "ক্লাস"
+    },
+    {
+      "bn": "অবজেক্ট",
+      "pronunciation": "object",
+      "en": "object",
+      "category": "nouns",
+      "sourcePhrase": "অবজেক্ট"
+    },
+    {
+      "bn": "লাইব্রেরি",
+      "pronunciation": "laibreri",
+      "en": "library (software)",
+      "category": "nouns",
+      "sourcePhrase": "লাইব্রেরি"
+    },
+    {
+      "bn": "ফ্রেমওয়ার্ক",
+      "pronunciation": "framework",
+      "en": "framework",
+      "category": "nouns",
+      "sourcePhrase": "ফ্রেমওয়ার্ক"
+    },
+    {
+      "bn": "রিপোজিটরি",
+      "pronunciation": "ripojitori",
+      "en": "repository",
+      "category": "nouns",
+      "sourcePhrase": "রিপোজিটরি"
+    },
+    {
+      "bn": "সংস্করণ",
+      "pronunciation": "songskoron",
+      "en": "version",
+      "category": "nouns",
+      "sourcePhrase": "সংস্করণ"
+    },
+    {
+      "bn": "আপডেট",
+      "pronunciation": "apodet",
+      "en": "update",
+      "category": "nouns",
+      "sourcePhrase": "আপডেট"
+    },
+    {
+      "bn": "বাগ",
+      "pronunciation": "bug",
+      "en": "bug",
+      "category": "nouns",
+      "sourcePhrase": "বাগ"
+    },
+    {
+      "bn": "ত্রুটি",
+      "pronunciation": "truti",
+      "en": "error",
+      "category": "nouns",
+      "sourcePhrase": "ত্রুটি"
+    },
+    {
+      "bn": "সমাধান",
+      "pronunciation": "shomadhan",
+      "en": "solution",
+      "category": "nouns",
+      "sourcePhrase": "সমাধান"
+    },
+    {
+      "bn": "পরীক্ষা",
+      "pronunciation": "porikkha",
+      "en": "testing",
+      "category": "nouns",
+      "sourcePhrase": "পরীক্ষা"
+    },
+    {
+      "bn": "স্বয়ংক্রিয়তা",
+      "pronunciation": "sbojongkrijota",
+      "en": "automation",
+      "category": "nouns",
+      "sourcePhrase": "স্বয়ংক্রিয়তা"
+    },
+    {
+      "bn": "কৃত্রিম বুদ্ধিমত্তা",
+      "pronunciation": "kritrim buddhimotta",
+      "en": "artificial intelligence",
+      "category": "nouns",
+      "sourcePhrase": "কৃত্রিম বুদ্ধিমত্তা"
+    },
+    {
+      "bn": "রোবট",
+      "pronunciation": "robot",
+      "en": "robot",
+      "category": "nouns",
+      "sourcePhrase": "রোবট"
+    },
+    {
+      "bn": "নিরাপত্তা",
+      "pronunciation": "nirapotta",
+      "en": "security",
+      "category": "nouns",
+      "sourcePhrase": "নিরাপত্তা"
+    },
+    {
+      "bn": "এনক্রিপশন",
+      "pronunciation": "enokriposhon",
+      "en": "encryption",
+      "category": "nouns",
+      "sourcePhrase": "এনক্রিপশন"
+    },
+    {
+      "bn": "সরকার",
+      "pronunciation": "sorokar",
+      "en": "government",
+      "category": "nouns",
+      "sourcePhrase": "সরকার"
+    },
+    {
+      "bn": "রাষ্ট্র",
+      "pronunciation": "rashtro",
+      "en": "state / nation",
+      "category": "nouns",
+      "sourcePhrase": "রাষ্ট্র"
+    },
+    {
+      "bn": "দেশ",
+      "pronunciation": "Desh",
+      "en": "nation",
+      "category": "nouns",
+      "sourcePhrase": "দেশ"
+    },
+    {
+      "bn": "সংবিধান",
+      "pronunciation": "songbidhan",
+      "en": "constitution",
+      "category": "nouns",
+      "sourcePhrase": "সংবিধান"
+    },
+    {
+      "bn": "আইন",
+      "pronunciation": "ain",
+      "en": "law",
+      "category": "nouns",
+      "sourcePhrase": "আইন"
+    },
+    {
+      "bn": "আদালত",
+      "pronunciation": "adalot",
+      "en": "court",
+      "category": "nouns",
+      "sourcePhrase": "আদালত"
+    },
+    {
+      "bn": "বিচার",
+      "pronunciation": "Bichar",
+      "en": "justice / trial",
+      "category": "nouns",
+      "sourcePhrase": "বিচার"
+    },
+    {
+      "bn": "মামলা",
+      "pronunciation": "mamla",
+      "en": "lawsuit / case",
+      "category": "nouns",
+      "sourcePhrase": "মামলা"
+    },
+    {
+      "bn": "সাক্ষী",
+      "pronunciation": "sakshi",
+      "en": "witness",
+      "category": "nouns",
+      "sourcePhrase": "সাক্ষী"
+    },
+    {
+      "bn": "সাক্ষ্য",
+      "pronunciation": "sakshj",
+      "en": "testimony",
+      "category": "nouns",
+      "sourcePhrase": "সাক্ষ্য"
+    },
+    {
+      "bn": "অপরাধ",
+      "pronunciation": "oporadh",
+      "en": "crime",
+      "category": "nouns",
+      "sourcePhrase": "অপরাধ"
+    },
+    {
+      "bn": "অপরাধী",
+      "pronunciation": "oporadhi",
+      "en": "criminal",
+      "category": "nouns",
+      "sourcePhrase": "অপরাধী"
+    },
+    {
+      "bn": "গ্রেপ্তার",
+      "pronunciation": "greptar",
+      "en": "arrest",
+      "category": "nouns",
+      "sourcePhrase": "গ্রেপ্তার"
+    },
+    {
+      "bn": "কারাগার",
+      "pronunciation": "karagar",
+      "en": "prison",
+      "category": "nouns",
+      "sourcePhrase": "কারাগার"
+    },
+    {
+      "bn": "শাস্তি",
+      "pronunciation": "shasti",
+      "en": "punishment",
+      "category": "nouns",
+      "sourcePhrase": "শাস্তি"
+    },
+    {
+      "bn": "জরিমানা",
+      "pronunciation": "jorimana",
+      "en": "fine",
+      "category": "nouns",
+      "sourcePhrase": "জরিমানা"
+    },
+    {
+      "bn": "অধিকার",
+      "pronunciation": "odhikar",
+      "en": "right",
+      "category": "nouns",
+      "sourcePhrase": "অধিকার"
+    },
+    {
+      "bn": "স্বাধীনতা",
+      "pronunciation": "sbadhinota",
+      "en": "freedom",
+      "category": "nouns",
+      "sourcePhrase": "স্বাধীনতা"
+    },
+    {
+      "bn": "দায়িত্ব",
+      "pronunciation": "dayitto",
+      "en": "responsibility",
+      "category": "nouns",
+      "sourcePhrase": "দায়িত্ব"
+    },
+    {
+      "bn": "কর্তব্য",
+      "pronunciation": "kortobj",
+      "en": "duty",
+      "category": "nouns",
+      "sourcePhrase": "কর্তব্য"
+    },
+    {
+      "bn": "নাগরিক",
+      "pronunciation": "nagorik",
+      "en": "citizen",
+      "category": "nouns",
+      "sourcePhrase": "নাগরিক"
+    },
+    {
+      "bn": "নাগরিকত্ব",
+      "pronunciation": "nagorikotb",
+      "en": "citizenship",
+      "category": "nouns",
+      "sourcePhrase": "নাগরিকত্ব"
+    },
+    {
+      "bn": "নির্বাচন",
+      "pronunciation": "nirbachon",
+      "en": "election",
+      "category": "nouns",
+      "sourcePhrase": "নির্বাচন"
+    },
+    {
+      "bn": "ভোট",
+      "pronunciation": "bhot",
+      "en": "vote",
+      "category": "nouns",
+      "sourcePhrase": "ভোট"
+    },
+    {
+      "bn": "ভোটার",
+      "pronunciation": "bhotar",
+      "en": "voter",
+      "category": "nouns",
+      "sourcePhrase": "ভোটার"
+    },
+    {
+      "bn": "প্রার্থী",
+      "pronunciation": "prarthi",
+      "en": "candidate",
+      "category": "nouns",
+      "sourcePhrase": "প্রার্থী"
+    },
+    {
+      "bn": "রাজনৈতিক দল",
+      "pronunciation": "rajnaitik dol",
+      "en": "political party",
+      "category": "nouns",
+      "sourcePhrase": "রাজনৈতিক দল"
+    },
+    {
+      "bn": "সংসদ",
+      "pronunciation": "songsod",
+      "en": "parliament",
+      "category": "nouns",
+      "sourcePhrase": "সংসদ"
+    },
+    {
+      "bn": "মন্ত্রী",
+      "pronunciation": "montri",
+      "en": "minister",
+      "category": "nouns",
+      "sourcePhrase": "মন্ত্রী"
+    },
+    {
+      "bn": "প্রধানমন্ত্রী",
+      "pronunciation": "prodhanomontri",
+      "en": "prime minister",
+      "category": "nouns",
+      "sourcePhrase": "প্রধানমন্ত্রী"
+    },
+    {
+      "bn": "রাষ্ট্রপতি",
+      "pronunciation": "rashtropoti",
+      "en": "president",
+      "category": "nouns",
+      "sourcePhrase": "রাষ্ট্রপতি"
+    },
+    {
+      "bn": "গভর্নর",
+      "pronunciation": "gobhornor",
+      "en": "governor",
+      "category": "nouns",
+      "sourcePhrase": "গভর্নর"
+    },
+    {
+      "bn": "প্রশাসন",
+      "pronunciation": "proshason",
+      "en": "administration",
+      "category": "nouns",
+      "sourcePhrase": "প্রশাসন"
+    },
+    {
+      "bn": "বিভাগ",
+      "pronunciation": "bibhag",
+      "en": "department",
+      "category": "nouns",
+      "sourcePhrase": "বিভাগ"
+    },
+    {
+      "bn": "মন্ত্রণালয়",
+      "pronunciation": "montronaloj",
+      "en": "ministry",
+      "category": "nouns",
+      "sourcePhrase": "মন্ত্রণালয়"
+    },
+    {
+      "bn": "নীতি",
+      "pronunciation": "niti",
+      "en": "policy",
+      "category": "nouns",
+      "sourcePhrase": "নীতি"
+    },
+    {
+      "bn": "বিধি",
+      "pronunciation": "bidhi",
+      "en": "regulation",
+      "category": "nouns",
+      "sourcePhrase": "বিধি"
+    },
+    {
+      "bn": "অনুমতি",
+      "pronunciation": "onumoti",
+      "en": "permission",
+      "category": "nouns",
+      "sourcePhrase": "অনুমতি"
+    },
+    {
+      "bn": "লাইসেন্স",
+      "pronunciation": "laisens",
+      "en": "license",
+      "category": "nouns",
+      "sourcePhrase": "লাইসেন্স"
+    },
+    {
+      "bn": "পরিচয়পত্র",
+      "pronunciation": "porichojopotr",
+      "en": "identity card",
+      "category": "nouns",
+      "sourcePhrase": "পরিচয়পত্র"
+    },
+    {
+      "bn": "পাসপোর্ট",
+      "pronunciation": "passport",
+      "en": "passport",
+      "category": "nouns",
+      "sourcePhrase": "পাসপোর্ট"
+    },
+    {
+      "bn": "ভিসা",
+      "pronunciation": "bhisa",
+      "en": "visa",
+      "category": "nouns",
+      "sourcePhrase": "ভিসা"
+    },
+    {
+      "bn": "সীমান্ত",
+      "pronunciation": "simant",
+      "en": "border",
+      "category": "nouns",
+      "sourcePhrase": "সীমান্ত"
+    },
+    {
+      "bn": "দূতাবাস",
+      "pronunciation": "dutabas",
+      "en": "embassy",
+      "category": "nouns",
+      "sourcePhrase": "দূতাবাস"
+    },
+    {
+      "bn": "কনস্যুলেট",
+      "pronunciation": "konosjulet",
+      "en": "consulate",
+      "category": "nouns",
+      "sourcePhrase": "কনস্যুলেট"
+    },
+    {
+      "bn": "অর্থ",
+      "pronunciation": "orth",
+      "en": "money / finance",
+      "category": "nouns",
+      "sourcePhrase": "অর্থ"
+    },
+    {
+      "bn": "অর্থনীতি",
+      "pronunciation": "orthoniti",
+      "en": "economy",
+      "category": "nouns",
+      "sourcePhrase": "অর্থনীতি"
+    },
+    {
+      "bn": "সঞ্চয়",
+      "pronunciation": "sonychoj",
+      "en": "savings",
+      "category": "nouns",
+      "sourcePhrase": "সঞ্চয়"
+    },
+    {
+      "bn": "আমানত",
+      "pronunciation": "amanot",
+      "en": "deposit",
+      "category": "nouns",
+      "sourcePhrase": "আমানত"
+    },
+    {
+      "bn": "ঋণ",
+      "pronunciation": "rin",
+      "en": "loan",
+      "category": "nouns",
+      "sourcePhrase": "ঋণ"
+    },
+    {
+      "bn": "সুদ",
+      "pronunciation": "sud",
+      "en": "interest",
+      "category": "nouns",
+      "sourcePhrase": "সুদ"
+    },
+    {
+      "bn": "মূলধন",
+      "pronunciation": "muldhon",
+      "en": "capital",
+      "category": "nouns",
+      "sourcePhrase": "মূলধন"
+    },
+    {
+      "bn": "বিনিয়োগ",
+      "pronunciation": "binijog",
+      "en": "investment",
+      "category": "nouns",
+      "sourcePhrase": "বিনিয়োগ"
+    },
+    {
+      "bn": "লাভ",
+      "pronunciation": "labh",
+      "en": "profit",
+      "category": "nouns",
+      "sourcePhrase": "লাভ"
+    },
+    {
+      "bn": "ক্ষতি",
+      "pronunciation": "khoti",
+      "en": "loss",
+      "category": "nouns",
+      "sourcePhrase": "ক্ষতি"
+    },
+    {
+      "bn": "মজুরি",
+      "pronunciation": "mojuri",
+      "en": "wages",
+      "category": "nouns",
+      "sourcePhrase": "মজুরি"
+    },
+    {
+      "bn": "কর",
+      "pronunciation": "kor",
+      "en": "tax",
+      "category": "nouns",
+      "sourcePhrase": "কর"
+    },
+    {
+      "bn": "বাজেট",
+      "pronunciation": "bajet",
+      "en": "budget",
+      "category": "nouns",
+      "sourcePhrase": "বাজেট"
+    },
+    {
+      "bn": "ব্যয়",
+      "pronunciation": "bjoj",
+      "en": "expense",
+      "category": "nouns",
+      "sourcePhrase": "ব্যয়"
+    },
+    {
+      "bn": "আয়",
+      "pronunciation": "ay",
+      "en": "income",
+      "category": "nouns",
+      "sourcePhrase": "আয়"
+    },
+    {
+      "bn": "সম্পদ",
+      "pronunciation": "shompod",
+      "en": "wealth / assets",
+      "category": "nouns",
+      "sourcePhrase": "সম্পদ"
+    },
+    {
+      "bn": "সম্পত্তি",
+      "pronunciation": "sompotti",
+      "en": "property",
+      "category": "nouns",
+      "sourcePhrase": "সম্পত্তি"
+    },
+    {
+      "bn": "কোম্পানি",
+      "pronunciation": "kompani",
+      "en": "company",
+      "category": "nouns",
+      "sourcePhrase": "কোম্পানি"
+    },
+    {
+      "bn": "প্রতিষ্ঠান",
+      "pronunciation": "protishthan",
+      "en": "organization / institution",
+      "category": "nouns",
+      "sourcePhrase": "প্রতিষ্ঠান"
+    },
+    {
+      "bn": "গ্রাহক",
+      "pronunciation": "grahok",
+      "en": "customer",
+      "category": "nouns",
+      "sourcePhrase": "গ্রাহক"
+    },
+    {
+      "bn": "ক্রেতা",
+      "pronunciation": "kreta",
+      "en": "buyer",
+      "category": "nouns",
+      "sourcePhrase": "ক্রেতা"
+    },
+    {
+      "bn": "বিক্রেতা",
+      "pronunciation": "bikreta",
+      "en": "seller",
+      "category": "nouns",
+      "sourcePhrase": "বিক্রেতা"
+    },
+    {
+      "bn": "পণ্য",
+      "pronunciation": "ponj",
+      "en": "product",
+      "category": "nouns",
+      "sourcePhrase": "পণ্য"
+    },
+    {
+      "bn": "মূল্য",
+      "pronunciation": "mullo",
+      "en": "value / price",
+      "category": "nouns",
+      "sourcePhrase": "মূল্য"
+    },
+    {
+      "bn": "ছাড়",
+      "pronunciation": "chhar",
+      "en": "discount",
+      "category": "nouns",
+      "sourcePhrase": "ছাড়"
+    },
+    {
+      "bn": "চুক্তি",
+      "pronunciation": "chukti",
+      "en": "contract",
+      "category": "nouns",
+      "sourcePhrase": "চুক্তি"
+    },
+    {
+      "bn": "স্বাক্ষর",
+      "pronunciation": "shakkhor",
+      "en": "signature",
+      "category": "nouns",
+      "sourcePhrase": "স্বাক্ষর"
+    },
+    {
+      "bn": "ধর্ম",
+      "pronunciation": "dhorm",
+      "en": "religion",
+      "category": "nouns",
+      "sourcePhrase": "ধর্ম"
+    },
+    {
+      "bn": "বিশ্বাস",
+      "pronunciation": "bishshash",
+      "en": "faith",
+      "category": "nouns",
+      "sourcePhrase": "বিশ্বাস"
+    },
+    {
+      "bn": "উপাসনা",
+      "pronunciation": "Upashona",
+      "en": "worship",
+      "category": "nouns",
+      "sourcePhrase": "উপাসনা"
+    },
+    {
+      "bn": "প্রার্থনা",
+      "pronunciation": "prarthona",
+      "en": "prayer",
+      "category": "nouns",
+      "sourcePhrase": "প্রার্থনা"
+    },
+    {
+      "bn": "মসজিদ",
+      "pronunciation": "mosojid",
+      "en": "mosque",
+      "category": "nouns",
+      "sourcePhrase": "মসজিদ"
+    },
+    {
+      "bn": "মন্দির",
+      "pronunciation": "mondir",
+      "en": "temple",
+      "category": "nouns",
+      "sourcePhrase": "মন্দির"
+    },
+    {
+      "bn": "গির্জা",
+      "pronunciation": "girja",
+      "en": "church",
+      "category": "nouns",
+      "sourcePhrase": "গির্জা"
+    },
+    {
+      "bn": "উপাসনালয়",
+      "pronunciation": "upasonaloj",
+      "en": "place of worship",
+      "category": "nouns",
+      "sourcePhrase": "উপাসনালয়"
+    },
+    {
+      "bn": "ইমাম",
+      "pronunciation": "imam",
+      "en": "imam",
+      "category": "nouns",
+      "sourcePhrase": "ইমাম"
+    },
+    {
+      "bn": "পুরোহিত",
+      "pronunciation": "purohit",
+      "en": "priest",
+      "category": "nouns",
+      "sourcePhrase": "পুরোহিত"
+    },
+    {
+      "bn": "সন্ন্যাসী",
+      "pronunciation": "sonnjasi",
+      "en": "monk",
+      "category": "nouns",
+      "sourcePhrase": "সন্ন্যাসী"
+    },
+    {
+      "bn": "নবী",
+      "pronunciation": "nobi",
+      "en": "prophet",
+      "category": "nouns",
+      "sourcePhrase": "নবী"
+    },
+    {
+      "bn": "ফেরেশতা",
+      "pronunciation": "fereshta",
+      "en": "angel",
+      "category": "nouns",
+      "sourcePhrase": "ফেরেশতা"
+    },
+    {
+      "bn": "কোরআন",
+      "pronunciation": "koroan",
+      "en": "Quran",
+      "category": "nouns",
+      "sourcePhrase": "কোরআন"
+    },
+    {
+      "bn": "হাদিস",
+      "pronunciation": "hadis",
+      "en": "Hadith",
+      "category": "nouns",
+      "sourcePhrase": "হাদিস"
+    },
+    {
+      "bn": "বাইবেল",
+      "pronunciation": "baibel",
+      "en": "Bible",
+      "category": "nouns",
+      "sourcePhrase": "বাইবেল"
+    },
+    {
+      "bn": "তাওরাত",
+      "pronunciation": "taorat",
+      "en": "Torah",
+      "category": "nouns",
+      "sourcePhrase": "তাওরাত"
+    },
+    {
+      "bn": "ইঞ্জিল",
+      "pronunciation": "inyjil",
+      "en": "Gospel",
+      "category": "nouns",
+      "sourcePhrase": "ইঞ্জিল"
+    },
+    {
+      "bn": "জান্নাত",
+      "pronunciation": "jannat",
+      "en": "Paradise",
+      "category": "nouns",
+      "sourcePhrase": "জান্নাত"
+    },
+    {
+      "bn": "জাহান্নাম",
+      "pronunciation": "jahannam",
+      "en": "Hell",
+      "category": "nouns",
+      "sourcePhrase": "জাহান্নাম"
+    },
+    {
+      "bn": "দান",
+      "pronunciation": "dan",
+      "en": "charity",
+      "category": "nouns",
+      "sourcePhrase": "দান"
+    },
+    {
+      "bn": "রোজা",
+      "pronunciation": "roja",
+      "en": "fasting",
+      "category": "nouns",
+      "sourcePhrase": "রোজা"
+    },
+    {
+      "bn": "যাকাত",
+      "pronunciation": "jakat",
+      "en": "zakat",
+      "category": "nouns",
+      "sourcePhrase": "যাকাত"
+    },
+    {
+      "bn": "হজ",
+      "pronunciation": "hoj",
+      "en": "Hajj",
+      "category": "nouns",
+      "sourcePhrase": "হজ"
     }
   ],
   "practice": [],

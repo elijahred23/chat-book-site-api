@@ -1,704 +1,3536 @@
 {
   "id": "food-restaurants",
   "title": "Food, Drinks, and Restaurants",
-  "summary": "Order food, discuss tastes, and handle a simple restaurant visit.",
+  "summary": "Discuss food and drinks, ingredients, cooking, tastes, restaurant items, and confidently order and pay for a meal.",
   "level": "beginner",
   "topic": "Food, Drinks, and Restaurants",
   "focus": "conversation",
   "vocab": [
     {
-      "bn": "ভাত",
-      "pronunciation": "bhat",
-      "en": "rice",
-      "category": "food-restaurants"
+      "bn": "খাবার",
+      "pronunciation": "khabar",
+      "en": "food",
+      "category": "food",
+      "sourcePhrase": "আজকের বিশেষ খাবার কী?"
     },
     {
-      "bn": "ডাল",
-      "pronunciation": "dal",
-      "en": "lentils",
-      "category": "food-restaurants"
+      "bn": "খাদ্য",
+      "pronunciation": "khaddo",
+      "en": "food (formal)",
+      "category": "food",
+      "sourcePhrase": "স্বাস্থ্যকর খাদ্য খাওয়া উচিত।"
     },
     {
-      "bn": "মাছ",
-      "pronunciation": "machh",
-      "en": "fish",
-      "category": "food-restaurants"
+      "bn": "রান্না",
+      "pronunciation": "Ranna",
+      "en": "cooking / cooked food",
+      "category": "food",
+      "sourcePhrase": "আমার মা খুব ভালো রান্না করেন।"
     },
     {
-      "bn": "সবজি",
-      "pronunciation": "shobji",
-      "en": "vegetables",
-      "category": "food-restaurants"
+      "bn": "খাবারদাবার",
+      "pronunciation": "khabardabar",
+      "en": "food and drinks",
+      "category": "food",
+      "sourcePhrase": "পার্টিতে অনেক খাবারদাবার ছিল।"
     },
     {
-      "bn": "পানি",
-      "pronunciation": "pani",
-      "en": "water",
-      "category": "food-restaurants"
+      "bn": "সকালের নাস্তা",
+      "pronunciation": "shokaler nasta",
+      "en": "breakfast",
+      "category": "food",
+      "sourcePhrase": "আমি সাতটায় সকালের নাস্তা খাই।"
+    },
+    {
+      "bn": "নাস্তা",
+      "pronunciation": "nasta",
+      "en": "snack / breakfast",
+      "category": "food",
+      "sourcePhrase": "আমি সাতটায় সকালের নাস্তা খাই।"
+    },
+    {
+      "bn": "দুপুরের খাবার",
+      "pronunciation": "dupurer khabar",
+      "en": "lunch",
+      "category": "food",
+      "sourcePhrase": "দুপুরের খাবার খুব সুস্বাদু ছিল।"
+    },
+    {
+      "bn": "রাতের খাবার",
+      "pronunciation": "rater khabar",
+      "en": "dinner",
+      "category": "food",
+      "sourcePhrase": "আমরা একসঙ্গে রাতের খাবার খাই।"
+    },
+    {
+      "bn": "জলখাবার",
+      "pronunciation": "jolkhabar",
+      "en": "light meal / snack",
+      "category": "food",
+      "sourcePhrase": "স্কুলের পরে আমি জলখাবার খাই।"
+    },
+    {
+      "bn": "মিষ্টি",
+      "pronunciation": "mishti",
+      "en": "sweets / dessert",
+      "category": "food",
+      "sourcePhrase": "আমি মিষ্টি খেতে ভালোবাসি।"
+    },
+    {
+      "bn": "ভোজ",
+      "pronunciation": "bhoj",
+      "en": "feast",
+      "category": "food",
+      "sourcePhrase": "ঈদে বড় ভোজ হয়।"
+    },
+    {
+      "bn": "দাওয়াত",
+      "pronunciation": "dawat",
+      "en": "dinner invitation / banquet",
+      "category": "food",
+      "sourcePhrase": "আমরা বিয়ের দাওয়াতে গিয়েছিলাম।"
+    },
+    {
+      "bn": "বুফে",
+      "pronunciation": "buffet",
+      "en": "buffet",
+      "category": "food",
+      "sourcePhrase": "হোটেলে বুফে ছিল।"
     },
     {
       "bn": "মেনু",
       "pronunciation": "menu",
       "en": "menu",
-      "category": "food-restaurants"
+      "category": "food",
+      "sourcePhrase": "মেনুটা দেখতে পারি?"
     },
     {
-      "bn": "ঝাল",
-      "pronunciation": "jhal",
-      "en": "spicy",
-      "category": "food-restaurants"
+      "bn": "রেসিপি",
+      "pronunciation": "recipe",
+      "en": "recipe",
+      "category": "food",
+      "sourcePhrase": "এই রেসিপিটি খুব সহজ।"
+    },
+    {
+      "bn": "ভাত",
+      "pronunciation": "bhat",
+      "en": "rice (cooked)",
+      "category": "staple-foods",
+      "sourcePhrase": "আমি প্রতিদিন ভাত খাই।"
+    },
+    {
+      "bn": "চাল",
+      "pronunciation": "chal",
+      "en": "uncooked rice",
+      "category": "staple-foods",
+      "sourcePhrase": "মা বাজার থেকে চাল কিনেছেন।"
+    },
+    {
+      "bn": "রুটি",
+      "pronunciation": "Ruti",
+      "en": "flatbread",
+      "category": "staple-foods",
+      "sourcePhrase": "আমি সকালে রুটি খেয়েছি।"
+    },
+    {
+      "bn": "পরোটা",
+      "pronunciation": "porota",
+      "en": "paratha",
+      "category": "staple-foods",
+      "sourcePhrase": "পরোটা আর ডিম আমার প্রিয় নাস্তা।"
+    },
+    {
+      "bn": "লুচি",
+      "pronunciation": "luchi",
+      "en": "deep-fried flatbread",
+      "category": "staple-foods",
+      "sourcePhrase": "লুচি আলুর দমের সঙ্গে খুব ভালো লাগে।"
+    },
+    {
+      "bn": "পুরি",
+      "pronunciation": "puri",
+      "en": "puri",
+      "category": "staple-foods",
+      "sourcePhrase": "আমরা পুরি খাচ্ছি।"
+    },
+    {
+      "bn": "নান",
+      "pronunciation": "nan",
+      "en": "naan",
+      "category": "staple-foods",
+      "sourcePhrase": "আমি নানের সঙ্গে কাবাব খেলাম।"
+    },
+    {
+      "bn": "খিচুড়ি",
+      "pronunciation": "khichud",
+      "en": "khichuri",
+      "category": "staple-foods",
+      "sourcePhrase": "বৃষ্টির দিনে খিচুড়ি খেতে ভালো লাগে।"
+    },
+    {
+      "bn": "পোলাও",
+      "pronunciation": "pola",
+      "en": "pilaf",
+      "category": "staple-foods",
+      "sourcePhrase": "আজ পোলাও রান্না হয়েছে।"
+    },
+    {
+      "bn": "বিরিয়ানি",
+      "pronunciation": "birijoni",
+      "en": "biryani",
+      "category": "staple-foods",
+      "sourcePhrase": "আমার জন্য এক প্লেট বিরিয়ানি দিন।"
+    },
+    {
+      "bn": "নুডলস",
+      "pronunciation": "nudolos",
+      "en": "noodles",
+      "category": "staple-foods",
+      "sourcePhrase": "শিশুরা নুডলস পছন্দ করে।"
+    },
+    {
+      "bn": "পাস্তা",
+      "pronunciation": "pasta",
+      "en": "pasta",
+      "category": "staple-foods",
+      "sourcePhrase": "আজ রাতে আমরা পাস্তা খাব।"
+    },
+    {
+      "bn": "স্প্যাগেটি",
+      "pronunciation": "spjageti",
+      "en": "spaghetti",
+      "category": "staple-foods",
+      "sourcePhrase": "সে স্প্যাগেটি রান্না করছে।"
+    },
+    {
+      "bn": "পাউরুটি",
+      "pronunciation": "pauruti",
+      "en": "bread",
+      "category": "staple-foods",
+      "sourcePhrase": "আমি পাউরুটি কিনেছি।"
+    },
+    {
+      "bn": "টোস্ট",
+      "pronunciation": "tost",
+      "en": "toast",
+      "category": "staple-foods",
+      "sourcePhrase": "সকালের নাস্তায় আমি টোস্ট খাই।"
+    },
+    {
+      "bn": "স্যান্ডউইচ",
+      "pronunciation": "sjandouich",
+      "en": "sandwich",
+      "category": "staple-foods",
+      "sourcePhrase": "আমি একটি চিকেন স্যান্ডউইচ চাই।"
+    },
+    {
+      "bn": "মাংস",
+      "pronunciation": "mangsho",
+      "en": "meat",
+      "category": "meat-and-protein",
+      "sourcePhrase": "এটা কি গরুর মাংস?"
+    },
+    {
+      "bn": "গরুর মাংস",
+      "pronunciation": "gorur mangsho",
+      "en": "beef",
+      "category": "meat-and-protein",
+      "sourcePhrase": "এটা কি গরুর মাংস?"
+    },
+    {
+      "bn": "খাসির মাংস",
+      "pronunciation": "khasir mangsho",
+      "en": "mutton",
+      "category": "meat-and-protein",
+      "sourcePhrase": "খাসির মাংস খুব জনপ্রিয়।"
+    },
+    {
+      "bn": "ছাগলের মাংস",
+      "pronunciation": "chhagoler mangsho",
+      "en": "goat meat",
+      "category": "meat-and-protein",
+      "sourcePhrase": "ছাগলের মাংস দিয়ে তরকারি হয়েছে।"
+    },
+    {
+      "bn": "মুরগির মাংস",
+      "pronunciation": "murogir mangsho",
+      "en": "chicken",
+      "category": "meat-and-protein",
+      "sourcePhrase": "এটা কি মুরগির মাংস?"
+    },
+    {
+      "bn": "হাঁসের মাংস",
+      "pronunciation": "hanser mangsho",
+      "en": "duck",
+      "category": "meat-and-protein",
+      "sourcePhrase": "শীতকালে হাঁসের মাংস অনেকেই খায়।"
+    },
+    {
+      "bn": "মাছ",
+      "pronunciation": "machh",
+      "en": "fish",
+      "category": "meat-and-protein",
+      "sourcePhrase": "বাংলাদেশে মাছ খুব জনপ্রিয়।"
+    },
+    {
+      "bn": "চিংড়ি",
+      "pronunciation": "chingd",
+      "en": "shrimp",
+      "category": "meat-and-protein",
+      "sourcePhrase": "চিংড়ি দিয়ে ভাত খুব মজাদার।"
+    },
+    {
+      "bn": "ডিম",
+      "pronunciation": "ḍim",
+      "en": "egg",
+      "category": "meat-and-protein",
+      "sourcePhrase": "পরোটা আর ডিম আমার প্রিয় নাস্তা।"
+    },
+    {
+      "bn": "সেদ্ধ ডিম",
+      "pronunciation": "seddh ḍim",
+      "en": "boiled egg",
+      "category": "meat-and-protein",
+      "sourcePhrase": "সকালের নাস্তায় সেদ্ধ ডিম ছিল।"
+    },
+    {
+      "bn": "ভাজা ডিম",
+      "pronunciation": "bhaja ḍim",
+      "en": "fried egg",
+      "category": "meat-and-protein",
+      "sourcePhrase": "আমি ভাজা ডিম বানিয়েছি।"
+    },
+    {
+      "bn": "অমলেট",
+      "pronunciation": "omolet",
+      "en": "omelet",
+      "category": "meat-and-protein",
+      "sourcePhrase": "সে একটি অমলেট রান্না করছে।"
+    },
+    {
+      "bn": "সসেজ",
+      "pronunciation": "sosej",
+      "en": "sausage",
+      "category": "meat-and-protein",
+      "sourcePhrase": "নাস্তায় সসেজ ছিল।"
+    },
+    {
+      "bn": "কাবাব",
+      "pronunciation": "kabab",
+      "en": "kebab",
+      "category": "meat-and-protein",
+      "sourcePhrase": "আমি নানের সঙ্গে কাবাব খেলাম।"
+    },
+    {
+      "bn": "ইলিশ",
+      "pronunciation": "ilish",
+      "en": "hilsa",
+      "category": "fish-and-seafood",
+      "sourcePhrase": "ইলিশ"
+    },
+    {
+      "bn": "রুই",
+      "pronunciation": "rui",
+      "en": "rohu fish",
+      "category": "fish-and-seafood",
+      "sourcePhrase": "রুই"
+    },
+    {
+      "bn": "কাতলা",
+      "pronunciation": "katola",
+      "en": "catla fish",
+      "category": "fish-and-seafood",
+      "sourcePhrase": "কাতলা"
+    },
+    {
+      "bn": "পাঙ্গাস",
+      "pronunciation": "panggas",
+      "en": "pangasius",
+      "category": "fish-and-seafood",
+      "sourcePhrase": "পাঙ্গাস"
+    },
+    {
+      "bn": "টুনা",
+      "pronunciation": "tuna",
+      "en": "tuna",
+      "category": "fish-and-seafood",
+      "sourcePhrase": "টুনা"
+    },
+    {
+      "bn": "স্যামন",
+      "pronunciation": "sjamon",
+      "en": "salmon",
+      "category": "fish-and-seafood",
+      "sourcePhrase": "স্যামন"
+    },
+    {
+      "bn": "কাঁকড়া",
+      "pronunciation": "kankod",
+      "en": "crab",
+      "category": "fish-and-seafood",
+      "sourcePhrase": "কাঁকড়া"
+    },
+    {
+      "bn": "লবস্টার",
+      "pronunciation": "lobostar",
+      "en": "lobster",
+      "category": "fish-and-seafood",
+      "sourcePhrase": "লবস্টার"
+    },
+    {
+      "bn": "ঝিনুক",
+      "pronunciation": "jhinuk",
+      "en": "oyster",
+      "category": "fish-and-seafood",
+      "sourcePhrase": "ঝিনুক"
+    },
+    {
+      "bn": "শামুক",
+      "pronunciation": "shamuk",
+      "en": "snail",
+      "category": "fish-and-seafood",
+      "sourcePhrase": "শামুক"
+    },
+    {
+      "bn": "অক্টোপাস",
+      "pronunciation": "oktopas",
+      "en": "octopus",
+      "category": "fish-and-seafood",
+      "sourcePhrase": "অক্টোপাস"
+    },
+    {
+      "bn": "স্কুইড",
+      "pronunciation": "skuid",
+      "en": "squid",
+      "category": "fish-and-seafood",
+      "sourcePhrase": "স্কুইড"
+    },
+    {
+      "bn": "সবজি",
+      "pronunciation": "shobji",
+      "en": "vegetables",
+      "category": "vegetables",
+      "sourcePhrase": "সবজি"
+    },
+    {
+      "bn": "আলু",
+      "pronunciation": "alu",
+      "en": "potato",
+      "category": "vegetables",
+      "sourcePhrase": "লুচি আলুর দমের সঙ্গে খুব ভালো লাগে।"
+    },
+    {
+      "bn": "টমেটো",
+      "pronunciation": "tomet",
+      "en": "tomato",
+      "category": "vegetables",
+      "sourcePhrase": "টমেটো"
+    },
+    {
+      "bn": "পেঁয়াজ",
+      "pronunciation": "penjoj",
+      "en": "onion",
+      "category": "vegetables",
+      "sourcePhrase": "পেঁয়াজ দেবেন না।"
+    },
+    {
+      "bn": "রসুন",
+      "pronunciation": "rosun",
+      "en": "garlic",
+      "category": "vegetables",
+      "sourcePhrase": "রসুন"
+    },
+    {
+      "bn": "আদা",
+      "pronunciation": "ada",
+      "en": "ginger",
+      "category": "vegetables",
+      "sourcePhrase": "আদা"
+    },
+    {
+      "bn": "গাজর",
+      "pronunciation": "gajor",
+      "en": "carrot",
+      "category": "vegetables",
+      "sourcePhrase": "গাজর"
+    },
+    {
+      "bn": "শসা",
+      "pronunciation": "shosa",
+      "en": "cucumber",
+      "category": "vegetables",
+      "sourcePhrase": "শসা"
+    },
+    {
+      "bn": "বাঁধাকপি",
+      "pronunciation": "bandhakopi",
+      "en": "cabbage",
+      "category": "vegetables",
+      "sourcePhrase": "বাঁধাকপি"
+    },
+    {
+      "bn": "ফুলকপি",
+      "pronunciation": "phulokopi",
+      "en": "cauliflower",
+      "category": "vegetables",
+      "sourcePhrase": "ফুলকপি"
+    },
+    {
+      "bn": "ব্রকলি",
+      "pronunciation": "brokoli",
+      "en": "broccoli",
+      "category": "vegetables",
+      "sourcePhrase": "ব্রকলি"
+    },
+    {
+      "bn": "বেগুন",
+      "pronunciation": "begun",
+      "en": "eggplant",
+      "category": "vegetables",
+      "sourcePhrase": "বেগুন"
+    },
+    {
+      "bn": "ঢেঁড়স",
+      "pronunciation": "dhendos",
+      "en": "okra",
+      "category": "vegetables",
+      "sourcePhrase": "ঢেঁড়স"
+    },
+    {
+      "bn": "কুমড়া",
+      "pronunciation": "kumra",
+      "en": "pumpkin",
+      "category": "vegetables",
+      "sourcePhrase": "কুমড়া"
+    },
+    {
+      "bn": "লাউ",
+      "pronunciation": "lau",
+      "en": "bottle gourd",
+      "category": "vegetables",
+      "sourcePhrase": "লাউ"
+    },
+    {
+      "bn": "ঝিঙে",
+      "pronunciation": "jhinge",
+      "en": "ridge gourd",
+      "category": "vegetables",
+      "sourcePhrase": "ঝিঙে"
+    },
+    {
+      "bn": "করলা",
+      "pronunciation": "korola",
+      "en": "bitter melon",
+      "category": "vegetables",
+      "sourcePhrase": "করলা"
+    },
+    {
+      "bn": "পালং শাক",
+      "pronunciation": "palong Shaak",
+      "en": "spinach",
+      "category": "vegetables",
+      "sourcePhrase": "পালং শাক"
+    },
+    {
+      "bn": "শাক",
+      "pronunciation": "Shaak",
+      "en": "leafy greens",
+      "category": "vegetables",
+      "sourcePhrase": "শাক"
+    },
+    {
+      "bn": "মরিচ",
+      "pronunciation": "morich",
+      "en": "chili pepper",
+      "category": "vegetables",
+      "sourcePhrase": "মরিচ"
+    },
+    {
+      "bn": "কাঁচা মরিচ",
+      "pronunciation": "kancha morich",
+      "en": "green chili",
+      "category": "vegetables",
+      "sourcePhrase": "কাঁচা মরিচ"
+    },
+    {
+      "bn": "ভুট্টা",
+      "pronunciation": "bhutta",
+      "en": "corn",
+      "category": "vegetables",
+      "sourcePhrase": "ভুট্টা"
+    },
+    {
+      "bn": "মটরশুঁটি",
+      "pronunciation": "motoroshunti",
+      "en": "peas",
+      "category": "vegetables",
+      "sourcePhrase": "মটরশুঁটি"
+    },
+    {
+      "bn": "মাশরুম",
+      "pronunciation": "mashorum",
+      "en": "mushroom",
+      "category": "vegetables",
+      "sourcePhrase": "মাশরুম"
+    },
+    {
+      "bn": "ফল",
+      "pronunciation": "fol",
+      "en": "fruit",
+      "category": "fruits",
+      "sourcePhrase": "ফল"
+    },
+    {
+      "bn": "আপেল",
+      "pronunciation": "apel",
+      "en": "apple",
+      "category": "fruits",
+      "sourcePhrase": "আপেল"
+    },
+    {
+      "bn": "কলা",
+      "pronunciation": "Kola",
+      "en": "banana",
+      "category": "fruits",
+      "sourcePhrase": "কলা"
+    },
+    {
+      "bn": "কমলা",
+      "pronunciation": "komola",
+      "en": "orange",
+      "category": "fruits",
+      "sourcePhrase": "কমলা"
+    },
+    {
+      "bn": "আম",
+      "pronunciation": "am",
+      "en": "mango",
+      "category": "fruits",
+      "sourcePhrase": "আমি অর্ডার দিতে চাই।"
+    },
+    {
+      "bn": "কাঁঠাল",
+      "pronunciation": "kanthal",
+      "en": "jackfruit",
+      "category": "fruits",
+      "sourcePhrase": "কাঁঠাল"
+    },
+    {
+      "bn": "লিচু",
+      "pronunciation": "lichu",
+      "en": "lychee",
+      "category": "fruits",
+      "sourcePhrase": "লিচু"
+    },
+    {
+      "bn": "আনারস",
+      "pronunciation": "anaros",
+      "en": "pineapple",
+      "category": "fruits",
+      "sourcePhrase": "আনারস"
+    },
+    {
+      "bn": "তরমুজ",
+      "pronunciation": "toromuj",
+      "en": "watermelon",
+      "category": "fruits",
+      "sourcePhrase": "তরমুজ"
+    },
+    {
+      "bn": "বাঙ্গি",
+      "pronunciation": "banggi",
+      "en": "cantaloupe",
+      "category": "fruits",
+      "sourcePhrase": "বাঙ্গি"
+    },
+    {
+      "bn": "আঙুর",
+      "pronunciation": "angur",
+      "en": "grapes",
+      "category": "fruits",
+      "sourcePhrase": "আঙুর"
+    },
+    {
+      "bn": "স্ট্রবেরি",
+      "pronunciation": "stroberi",
+      "en": "strawberry",
+      "category": "fruits",
+      "sourcePhrase": "স্ট্রবেরি"
+    },
+    {
+      "bn": "ব্লুবেরি",
+      "pronunciation": "bluberi",
+      "en": "blueberry",
+      "category": "fruits",
+      "sourcePhrase": "ব্লুবেরি"
+    },
+    {
+      "bn": "চেরি",
+      "pronunciation": "cheri",
+      "en": "cherry",
+      "category": "fruits",
+      "sourcePhrase": "চেরি"
+    },
+    {
+      "bn": "নাশপাতি",
+      "pronunciation": "nashopati",
+      "en": "pear",
+      "category": "fruits",
+      "sourcePhrase": "নাশপাতি"
+    },
+    {
+      "bn": "পেয়ারা",
+      "pronunciation": "pejora",
+      "en": "guava",
+      "category": "fruits",
+      "sourcePhrase": "পেয়ারা"
+    },
+    {
+      "bn": "ডালিম",
+      "pronunciation": "dalim",
+      "en": "pomegranate",
+      "category": "fruits",
+      "sourcePhrase": "ডালিম"
+    },
+    {
+      "bn": "নারকেল",
+      "pronunciation": "narokel",
+      "en": "coconut",
+      "category": "fruits",
+      "sourcePhrase": "নারকেল"
+    },
+    {
+      "bn": "লেবু",
+      "pronunciation": "lebu",
+      "en": "lemon",
+      "category": "fruits",
+      "sourcePhrase": "লেবু"
+    },
+    {
+      "bn": "মাল্টা",
+      "pronunciation": "malta",
+      "en": "sweet orange",
+      "category": "fruits",
+      "sourcePhrase": "মাল্টা"
+    },
+    {
+      "bn": "দুধ",
+      "pronunciation": "Dudh",
+      "en": "milk",
+      "category": "dairy",
+      "sourcePhrase": "দুধ"
+    },
+    {
+      "bn": "দই",
+      "pronunciation": "doi",
+      "en": "yogurt",
+      "category": "dairy",
+      "sourcePhrase": "দই"
+    },
+    {
+      "bn": "মাখন",
+      "pronunciation": "makhon",
+      "en": "butter",
+      "category": "dairy",
+      "sourcePhrase": "মাখন"
+    },
+    {
+      "bn": "ঘি",
+      "pronunciation": "ghi",
+      "en": "clarified butter",
+      "category": "dairy",
+      "sourcePhrase": "ঘি"
+    },
+    {
+      "bn": "পনির",
+      "pronunciation": "ponir",
+      "en": "cheese",
+      "category": "dairy",
+      "sourcePhrase": "পনির"
+    },
+    {
+      "bn": "ছানা",
+      "pronunciation": "chhana",
+      "en": "cottage cheese",
+      "category": "dairy",
+      "sourcePhrase": "ছানা"
+    },
+    {
+      "bn": "ক্রিম",
+      "pronunciation": "krim",
+      "en": "cream",
+      "category": "dairy",
+      "sourcePhrase": "ক্রিম"
+    },
+    {
+      "bn": "আইসক্রিম",
+      "pronunciation": "aisokrim",
+      "en": "ice cream",
+      "category": "dairy",
+      "sourcePhrase": "আইসক্রিম"
+    },
+    {
+      "bn": "ডাল",
+      "pronunciation": "dal",
+      "en": "lentils",
+      "category": "beans-lentils-and-grains",
+      "sourcePhrase": "ডাল"
+    },
+    {
+      "bn": "ছোলা",
+      "pronunciation": "chhola",
+      "en": "chickpeas",
+      "category": "beans-lentils-and-grains",
+      "sourcePhrase": "ছোলা"
+    },
+    {
+      "bn": "মসুর ডাল",
+      "pronunciation": "mosur dal",
+      "en": "red lentils",
+      "category": "beans-lentils-and-grains",
+      "sourcePhrase": "মসুর ডাল"
+    },
+    {
+      "bn": "মুগ ডাল",
+      "pronunciation": "mug dal",
+      "en": "mung beans",
+      "category": "beans-lentils-and-grains",
+      "sourcePhrase": "মুগ ডাল"
+    },
+    {
+      "bn": "কালো ছোলা",
+      "pronunciation": "kalo chhola",
+      "en": "black chickpeas",
+      "category": "beans-lentils-and-grains",
+      "sourcePhrase": "কালো ছোলা"
+    },
+    {
+      "bn": "রাজমা",
+      "pronunciation": "rajoma",
+      "en": "kidney beans",
+      "category": "beans-lentils-and-grains",
+      "sourcePhrase": "রাজমা"
+    },
+    {
+      "bn": "ওটস",
+      "pronunciation": "otos",
+      "en": "oats",
+      "category": "beans-lentils-and-grains",
+      "sourcePhrase": "ওটস"
+    },
+    {
+      "bn": "গম",
+      "pronunciation": "gom",
+      "en": "wheat",
+      "category": "beans-lentils-and-grains",
+      "sourcePhrase": "গম"
+    },
+    {
+      "bn": "আটা",
+      "pronunciation": "ata",
+      "en": "wheat flour",
+      "category": "beans-lentils-and-grains",
+      "sourcePhrase": "আটা"
+    },
+    {
+      "bn": "ময়দা",
+      "pronunciation": "mojoda",
+      "en": "all-purpose flour",
+      "category": "beans-lentils-and-grains",
+      "sourcePhrase": "ময়দা"
+    },
+    {
+      "bn": "মসলা",
+      "pronunciation": "mosola",
+      "en": "spices",
+      "category": "spices-and-seasonings",
+      "sourcePhrase": "মসলা"
+    },
+    {
+      "bn": "লবণ",
+      "pronunciation": "lobon",
+      "en": "salt",
+      "category": "spices-and-seasonings",
+      "sourcePhrase": "লবণ"
+    },
+    {
+      "bn": "চিনি",
+      "pronunciation": "chini",
+      "en": "sugar",
+      "category": "spices-and-seasonings",
+      "sourcePhrase": "চিনি ছাড়া দিন।"
+    },
+    {
+      "bn": "গোলমরিচ",
+      "pronunciation": "golomorich",
+      "en": "black pepper",
+      "category": "spices-and-seasonings",
+      "sourcePhrase": "গোলমরিচ"
+    },
+    {
+      "bn": "হলুদ",
+      "pronunciation": "holud",
+      "en": "turmeric",
+      "category": "spices-and-seasonings",
+      "sourcePhrase": "হলুদ"
+    },
+    {
+      "bn": "জিরা",
+      "pronunciation": "jira",
+      "en": "cumin",
+      "category": "spices-and-seasonings",
+      "sourcePhrase": "জিরা"
+    },
+    {
+      "bn": "ধনে",
+      "pronunciation": "dhone",
+      "en": "coriander",
+      "category": "spices-and-seasonings",
+      "sourcePhrase": "ধনে"
+    },
+    {
+      "bn": "দারুচিনি",
+      "pronunciation": "daruchini",
+      "en": "cinnamon",
+      "category": "spices-and-seasonings",
+      "sourcePhrase": "দারুচিনি"
+    },
+    {
+      "bn": "এলাচ",
+      "pronunciation": "elach",
+      "en": "cardamom",
+      "category": "spices-and-seasonings",
+      "sourcePhrase": "এলাচ"
+    },
+    {
+      "bn": "লবঙ্গ",
+      "pronunciation": "lobongg",
+      "en": "cloves",
+      "category": "spices-and-seasonings",
+      "sourcePhrase": "লবঙ্গ"
+    },
+    {
+      "bn": "তেজপাতা",
+      "pronunciation": "tejopata",
+      "en": "bay leaf",
+      "category": "spices-and-seasonings",
+      "sourcePhrase": "তেজপাতা"
+    },
+    {
+      "bn": "সরিষা",
+      "pronunciation": "sorisha",
+      "en": "mustard",
+      "category": "spices-and-seasonings",
+      "sourcePhrase": "সরিষা"
+    },
+    {
+      "bn": "সরিষার তেল",
+      "pronunciation": "sorishar tel",
+      "en": "mustard oil",
+      "category": "spices-and-seasonings",
+      "sourcePhrase": "সরিষার তেল"
+    },
+    {
+      "bn": "ভিনেগার",
+      "pronunciation": "bhinegar",
+      "en": "vinegar",
+      "category": "spices-and-seasonings",
+      "sourcePhrase": "ভিনেগার"
+    },
+    {
+      "bn": "সস",
+      "pronunciation": "sos",
+      "en": "sauce",
+      "category": "spices-and-seasonings",
+      "sourcePhrase": "নাস্তায় সসেজ ছিল।"
+    },
+    {
+      "bn": "কেচাপ",
+      "pronunciation": "kechap",
+      "en": "ketchup",
+      "category": "spices-and-seasonings",
+      "sourcePhrase": "কেচাপ"
+    },
+    {
+      "bn": "মেয়োনিজ",
+      "pronunciation": "mejonij",
+      "en": "mayonnaise",
+      "category": "spices-and-seasonings",
+      "sourcePhrase": "মেয়োনিজ"
+    },
+    {
+      "bn": "মধু",
+      "pronunciation": "modhu",
+      "en": "honey",
+      "category": "spices-and-seasonings",
+      "sourcePhrase": "মধু"
+    },
+    {
+      "bn": "রান্না করা",
+      "pronunciation": "Ranna kora",
+      "en": "to cook",
+      "category": "cooking-verbs",
+      "sourcePhrase": "রান্না করা"
+    },
+    {
+      "bn": "ভাজা",
+      "pronunciation": "bhaja",
+      "en": "to fry",
+      "category": "cooking-verbs",
+      "sourcePhrase": "আমি ভাজা ডিম বানিয়েছি।"
+    },
+    {
+      "bn": "সেদ্ধ করা",
+      "pronunciation": "seddh kora",
+      "en": "to boil",
+      "category": "cooking-verbs",
+      "sourcePhrase": "সেদ্ধ করা"
+    },
+    {
+      "bn": "বেক করা",
+      "pronunciation": "bek kora",
+      "en": "to bake",
+      "category": "cooking-verbs",
+      "sourcePhrase": "বেক করা"
+    },
+    {
+      "bn": "গ্রিল করা",
+      "pronunciation": "gril kora",
+      "en": "to grill",
+      "category": "cooking-verbs",
+      "sourcePhrase": "গ্রিল করা"
+    },
+    {
+      "bn": "কাটা",
+      "pronunciation": "kata",
+      "en": "to cut",
+      "category": "cooking-verbs",
+      "sourcePhrase": "কাটা"
+    },
+    {
+      "bn": "ধোয়া",
+      "pronunciation": "dhoya",
+      "en": "to wash",
+      "category": "cooking-verbs",
+      "sourcePhrase": "ধোয়া"
+    },
+    {
+      "bn": "মেশানো",
+      "pronunciation": "meshan",
+      "en": "to mix",
+      "category": "cooking-verbs",
+      "sourcePhrase": "মেশানো"
+    },
+    {
+      "bn": "নাড়ানো",
+      "pronunciation": "nadon",
+      "en": "to stir",
+      "category": "cooking-verbs",
+      "sourcePhrase": "নাড়ানো"
+    },
+    {
+      "bn": "পরিবেশন করা",
+      "pronunciation": "poribeshon kora",
+      "en": "to serve",
+      "category": "cooking-verbs",
+      "sourcePhrase": "পরিবেশন করা"
+    },
+    {
+      "bn": "স্বাদ নেওয়া",
+      "pronunciation": "sbad neoya",
+      "en": "to taste",
+      "category": "cooking-verbs",
+      "sourcePhrase": "স্বাদ নেওয়া"
+    },
+    {
+      "bn": "খাওয়া",
+      "pronunciation": "khaowa",
+      "en": "to eat",
+      "category": "cooking-verbs",
+      "sourcePhrase": "স্বাস্থ্যকর খাদ্য খাওয়া উচিত।"
+    },
+    {
+      "bn": "পান করা",
+      "pronunciation": "pan kora",
+      "en": "to drink",
+      "category": "cooking-verbs",
+      "sourcePhrase": "পান করা"
+    },
+    {
+      "bn": "পানীয়",
+      "pronunciation": "panij",
+      "en": "beverage",
+      "category": "drinks",
+      "sourcePhrase": "পানীয়"
+    },
+    {
+      "bn": "পানি",
+      "pronunciation": "pani",
+      "en": "water",
+      "category": "drinks",
+      "sourcePhrase": "পানি দিতে পারবেন?"
+    },
+    {
+      "bn": "জল",
+      "pronunciation": "jôl",
+      "en": "water",
+      "category": "drinks",
+      "sourcePhrase": "স্কুলের পরে আমি জলখাবার খাই।"
+    },
+    {
+      "bn": "চা",
+      "pronunciation": "cha",
+      "en": "tea",
+      "category": "drinks",
+      "sourcePhrase": "আমি অর্ডার দিতে চাই।"
+    },
+    {
+      "bn": "দুধ চা",
+      "pronunciation": "Dudh cha",
+      "en": "milk tea",
+      "category": "drinks",
+      "sourcePhrase": "দুধ চা"
+    },
+    {
+      "bn": "কালো চা",
+      "pronunciation": "kalo cha",
+      "en": "black tea",
+      "category": "drinks",
+      "sourcePhrase": "কালো চা"
+    },
+    {
+      "bn": "কফি",
+      "pronunciation": "kofi",
+      "en": "coffee",
+      "category": "drinks",
+      "sourcePhrase": "কফি"
+    },
+    {
+      "bn": "ঠান্ডা কফি",
+      "pronunciation": "thanda kofi",
+      "en": "iced coffee",
+      "category": "drinks",
+      "sourcePhrase": "ঠান্ডা কফি"
+    },
+    {
+      "bn": "জুস",
+      "pronunciation": "jus",
+      "en": "juice",
+      "category": "drinks",
+      "sourcePhrase": "জুস"
+    },
+    {
+      "bn": "কমলার রস",
+      "pronunciation": "komolar ros",
+      "en": "orange juice",
+      "category": "drinks",
+      "sourcePhrase": "কমলার রস"
+    },
+    {
+      "bn": "আপেলের রস",
+      "pronunciation": "apeler ros",
+      "en": "apple juice",
+      "category": "drinks",
+      "sourcePhrase": "আপেলের রস"
+    },
+    {
+      "bn": "আমের রস",
+      "pronunciation": "amer ros",
+      "en": "mango juice",
+      "category": "drinks",
+      "sourcePhrase": "আমের রস"
+    },
+    {
+      "bn": "লেবুর শরবত",
+      "pronunciation": "lebur shorobot",
+      "en": "lemonade",
+      "category": "drinks",
+      "sourcePhrase": "লেবুর শরবত"
+    },
+    {
+      "bn": "শরবত",
+      "pronunciation": "shorobot",
+      "en": "sherbet / sweet drink",
+      "category": "drinks",
+      "sourcePhrase": "শরবত"
+    },
+    {
+      "bn": "সফট ড্রিংক",
+      "pronunciation": "sophot dringk",
+      "en": "soft drink",
+      "category": "drinks",
+      "sourcePhrase": "সফট ড্রিংক"
+    },
+    {
+      "bn": "সোডা",
+      "pronunciation": "soda",
+      "en": "soda",
+      "category": "drinks",
+      "sourcePhrase": "সোডা"
+    },
+    {
+      "bn": "মিনারেল ওয়াটার",
+      "pronunciation": "minarel ojotar",
+      "en": "mineral water",
+      "category": "drinks",
+      "sourcePhrase": "মিনারেল ওয়াটার"
+    },
+    {
+      "bn": "নারকেলের পানি",
+      "pronunciation": "narokeler pani",
+      "en": "coconut water",
+      "category": "drinks",
+      "sourcePhrase": "নারকেলের পানি"
+    },
+    {
+      "bn": "লাচ্ছি",
+      "pronunciation": "lachchhi",
+      "en": "lassi",
+      "category": "drinks",
+      "sourcePhrase": "লাচ্ছি"
+    },
+    {
+      "bn": "গরম দুধ",
+      "pronunciation": "gorom Dudh",
+      "en": "hot milk",
+      "category": "drinks",
+      "sourcePhrase": "গরম দুধ"
+    },
+    {
+      "bn": "হট চকোলেট",
+      "pronunciation": "hot chokolet",
+      "en": "hot chocolate",
+      "category": "drinks",
+      "sourcePhrase": "হট চকোলেট"
+    },
+    {
+      "bn": "স্মুদি",
+      "pronunciation": "smudi",
+      "en": "smoothie",
+      "category": "drinks",
+      "sourcePhrase": "স্মুদি"
+    },
+    {
+      "bn": "রসগোল্লা",
+      "pronunciation": "rosogolla",
+      "en": "rasgulla",
+      "category": "desserts",
+      "sourcePhrase": "রসগোল্লা"
+    },
+    {
+      "bn": "সন্দেশ",
+      "pronunciation": "sondesh",
+      "en": "sandesh",
+      "category": "desserts",
+      "sourcePhrase": "সন্দেশ"
+    },
+    {
+      "bn": "মিষ্টি দই",
+      "pronunciation": "mishti doi",
+      "en": "sweet yogurt",
+      "category": "desserts",
+      "sourcePhrase": "মিষ্টি দই"
+    },
+    {
+      "bn": "ক্ষীর",
+      "pronunciation": "kshir",
+      "en": "rice pudding",
+      "category": "desserts",
+      "sourcePhrase": "ক্ষীর"
+    },
+    {
+      "bn": "পায়েস",
+      "pronunciation": "pajos",
+      "en": "rice pudding",
+      "category": "desserts",
+      "sourcePhrase": "পায়েস"
+    },
+    {
+      "bn": "জিলাপি",
+      "pronunciation": "jilapi",
+      "en": "jalebi",
+      "category": "desserts",
+      "sourcePhrase": "জিলাপি"
+    },
+    {
+      "bn": "লাড্ডু",
+      "pronunciation": "laddu",
+      "en": "laddoo",
+      "category": "desserts",
+      "sourcePhrase": "লাড্ডু"
+    },
+    {
+      "bn": "বরফি",
+      "pronunciation": "borophi",
+      "en": "barfi",
+      "category": "desserts",
+      "sourcePhrase": "বরফি"
+    },
+    {
+      "bn": "কেক",
+      "pronunciation": "cake",
+      "en": "cake",
+      "category": "desserts",
+      "sourcePhrase": "কেক"
+    },
+    {
+      "bn": "বিস্কুট",
+      "pronunciation": "biskut",
+      "en": "biscuit",
+      "category": "desserts",
+      "sourcePhrase": "বিস্কুট"
+    },
+    {
+      "bn": "কুকি",
+      "pronunciation": "kuki",
+      "en": "cookie",
+      "category": "desserts",
+      "sourcePhrase": "কুকি"
+    },
+    {
+      "bn": "চকলেট",
+      "pronunciation": "chokolet",
+      "en": "chocolate",
+      "category": "desserts",
+      "sourcePhrase": "চকলেট"
+    },
+    {
+      "bn": "পুডিং",
+      "pronunciation": "puding",
+      "en": "pudding",
+      "category": "desserts",
+      "sourcePhrase": "পুডিং"
+    },
+    {
+      "bn": "রেস্টুরেন্ট",
+      "pronunciation": "resturent",
+      "en": "restaurant",
+      "category": "restaurant-vocabulary",
+      "sourcePhrase": "রেস্টুরেন্ট"
+    },
+    {
+      "bn": "হোটেল",
+      "pronunciation": "hotel",
+      "en": "restaurant / hotel (context-dependent)",
+      "category": "restaurant-vocabulary",
+      "sourcePhrase": "হোটেলে বুফে ছিল।"
+    },
+    {
+      "bn": "ক্যাফে",
+      "pronunciation": "kjaphe",
+      "en": "café",
+      "category": "restaurant-vocabulary",
+      "sourcePhrase": "ক্যাফে"
+    },
+    {
+      "bn": "খাবারের দোকান",
+      "pronunciation": "khabarer dokan",
+      "en": "food shop",
+      "category": "restaurant-vocabulary",
+      "sourcePhrase": "খাবারের দোকান"
+    },
+    {
+      "bn": "টেবিল",
+      "pronunciation": "tebil",
+      "en": "table",
+      "category": "restaurant-vocabulary",
+      "sourcePhrase": "টেবিল"
+    },
+    {
+      "bn": "চেয়ার",
+      "pronunciation": "cheyar",
+      "en": "chair",
+      "category": "restaurant-vocabulary",
+      "sourcePhrase": "চেয়ার"
+    },
+    {
+      "bn": "ওয়েটার",
+      "pronunciation": "ojotar",
+      "en": "waiter",
+      "category": "restaurant-vocabulary",
+      "sourcePhrase": "ওয়েটার"
+    },
+    {
+      "bn": "ওয়েট্রেস",
+      "pronunciation": "ojotres",
+      "en": "waitress",
+      "category": "restaurant-vocabulary",
+      "sourcePhrase": "ওয়েট্রেস"
+    },
+    {
+      "bn": "পরিবেশক",
+      "pronunciation": "poribeshok",
+      "en": "server",
+      "category": "restaurant-vocabulary",
+      "sourcePhrase": "পরিবেশক"
+    },
+    {
+      "bn": "রাঁধুনি",
+      "pronunciation": "randhuni",
+      "en": "cook",
+      "category": "restaurant-vocabulary",
+      "sourcePhrase": "রাঁধুনি"
+    },
+    {
+      "bn": "শেফ",
+      "pronunciation": "sheph",
+      "en": "chef",
+      "category": "restaurant-vocabulary",
+      "sourcePhrase": "শেফ"
+    },
+    {
+      "bn": "রান্নাঘর",
+      "pronunciation": "rannaghor",
+      "en": "kitchen",
+      "category": "restaurant-vocabulary",
+      "sourcePhrase": "রান্নাঘর"
     },
     {
       "bn": "বিল",
       "pronunciation": "bil",
       "en": "bill",
-      "category": "food-restaurants"
+      "category": "restaurant-vocabulary",
+      "sourcePhrase": "বিলটা দিন।"
+    },
+    {
+      "bn": "রসিদ",
+      "pronunciation": "rosid",
+      "en": "receipt",
+      "category": "restaurant-vocabulary",
+      "sourcePhrase": "রসিদ"
+    },
+    {
+      "bn": "অর্ডার",
+      "pronunciation": "ordar",
+      "en": "order",
+      "category": "restaurant-vocabulary",
+      "sourcePhrase": "আমি অর্ডার দিতে চাই।"
+    },
+    {
+      "bn": "সংরক্ষণ",
+      "pronunciation": "shongrokkhon",
+      "en": "reservation",
+      "category": "restaurant-vocabulary",
+      "sourcePhrase": "সংরক্ষণ"
+    },
+    {
+      "bn": "টিপ",
+      "pronunciation": "tip",
+      "en": "tip",
+      "category": "restaurant-vocabulary",
+      "sourcePhrase": "টিপ"
+    },
+    {
+      "bn": "কাঁটা চামচ",
+      "pronunciation": "kanta chamoch",
+      "en": "fork",
+      "category": "restaurant-vocabulary",
+      "sourcePhrase": "কাঁটা চামচ"
+    },
+    {
+      "bn": "চামচ",
+      "pronunciation": "chamoch",
+      "en": "spoon",
+      "category": "restaurant-vocabulary",
+      "sourcePhrase": "চামচ"
+    },
+    {
+      "bn": "ছুরি",
+      "pronunciation": "churi",
+      "en": "knife",
+      "category": "restaurant-vocabulary",
+      "sourcePhrase": "ছুরি"
+    },
+    {
+      "bn": "প্লেট",
+      "pronunciation": "plet",
+      "en": "plate",
+      "category": "restaurant-vocabulary",
+      "sourcePhrase": "আমার জন্য এক প্লেট বিরিয়ানি দিন।"
+    },
+    {
+      "bn": "বাটি",
+      "pronunciation": "bati",
+      "en": "bowl",
+      "category": "restaurant-vocabulary",
+      "sourcePhrase": "বাটি"
+    },
+    {
+      "bn": "কাপ",
+      "pronunciation": "kap",
+      "en": "cup",
+      "category": "restaurant-vocabulary",
+      "sourcePhrase": "এক কাপ চা দিন।"
+    },
+    {
+      "bn": "গ্লাস",
+      "pronunciation": "glash",
+      "en": "glass",
+      "category": "restaurant-vocabulary",
+      "sourcePhrase": "গ্লাস"
+    },
+    {
+      "bn": "ন্যাপকিন",
+      "pronunciation": "njapokin",
+      "en": "napkin",
+      "category": "restaurant-vocabulary",
+      "sourcePhrase": "ন্যাপকিন"
+    },
+    {
+      "bn": "সুস্বাদু",
+      "pronunciation": "shushadu",
+      "en": "delicious",
+      "category": "describing-food",
+      "sourcePhrase": "দুপুরের খাবার খুব সুস্বাদু ছিল।"
+    },
+    {
+      "bn": "মজাদার",
+      "pronunciation": "mojadar",
+      "en": "tasty",
+      "category": "describing-food",
+      "sourcePhrase": "চিংড়ি দিয়ে ভাত খুব মজাদার।"
+    },
+    {
+      "bn": "ভালো",
+      "pronunciation": "bhalo",
+      "en": "good",
+      "category": "describing-food",
+      "sourcePhrase": "ধন্যবাদ, খাবার খুব ভালো ছিল।"
+    },
+    {
+      "bn": "অসাধারণ",
+      "pronunciation": "ôshadharon",
+      "en": "excellent",
+      "category": "describing-food",
+      "sourcePhrase": "অসাধারণ"
+    },
+    {
+      "bn": "চমৎকার",
+      "pronunciation": "chômotkar",
+      "en": "wonderful",
+      "category": "describing-food",
+      "sourcePhrase": "চমৎকার"
+    },
+    {
+      "bn": "গরম",
+      "pronunciation": "gorom",
+      "en": "hot",
+      "category": "describing-food",
+      "sourcePhrase": "গরম"
+    },
+    {
+      "bn": "ঠান্ডা",
+      "pronunciation": "thanda",
+      "en": "cold",
+      "category": "describing-food",
+      "sourcePhrase": "ঠান্ডা"
+    },
+    {
+      "bn": "তাজা",
+      "pronunciation": "taja",
+      "en": "fresh",
+      "category": "describing-food",
+      "sourcePhrase": "তাজা"
+    },
+    {
+      "bn": "বাসি",
+      "pronunciation": "bashi",
+      "en": "stale",
+      "category": "describing-food",
+      "sourcePhrase": "আমি মিষ্টি খেতে ভালোবাসি।"
+    },
+    {
+      "bn": "মিষ্টি",
+      "pronunciation": "mishti",
+      "en": "sweet",
+      "category": "describing-food",
+      "sourcePhrase": "আমি মিষ্টি খেতে ভালোবাসি।"
+    },
+    {
+      "bn": "ঝাল",
+      "pronunciation": "jhal",
+      "en": "spicy",
+      "category": "describing-food",
+      "sourcePhrase": "ঝাল কম রাখবেন।"
+    },
+    {
+      "bn": "টক",
+      "pronunciation": "tok",
+      "en": "sour",
+      "category": "describing-food",
+      "sourcePhrase": "টক"
+    },
+    {
+      "bn": "নোনতা",
+      "pronunciation": "nonta",
+      "en": "salty",
+      "category": "describing-food",
+      "sourcePhrase": "নোনতা"
+    },
+    {
+      "bn": "তেতো",
+      "pronunciation": "tet",
+      "en": "bitter",
+      "category": "describing-food",
+      "sourcePhrase": "তেতো"
+    },
+    {
+      "bn": "কড়া",
+      "pronunciation": "koṛa",
+      "en": "strong (flavor)",
+      "category": "describing-food",
+      "sourcePhrase": "কড়া"
+    },
+    {
+      "bn": "নরম",
+      "pronunciation": "norom",
+      "en": "soft",
+      "category": "describing-food",
+      "sourcePhrase": "নরম"
+    },
+    {
+      "bn": "শক্ত",
+      "pronunciation": "shokto",
+      "en": "hard",
+      "category": "describing-food",
+      "sourcePhrase": "শক্ত"
+    },
+    {
+      "bn": "কুড়মুড়ে",
+      "pronunciation": "kudomud",
+      "en": "crispy",
+      "category": "describing-food",
+      "sourcePhrase": "কুড়মুড়ে"
+    },
+    {
+      "bn": "শুকনো",
+      "pronunciation": "shukno",
+      "en": "dry",
+      "category": "describing-food",
+      "sourcePhrase": "শুকনো"
+    },
+    {
+      "bn": "রসালো",
+      "pronunciation": "roshalo",
+      "en": "juicy",
+      "category": "describing-food",
+      "sourcePhrase": "রসালো"
+    },
+    {
+      "bn": "তৈলাক্ত",
+      "pronunciation": "toilakto",
+      "en": "oily",
+      "category": "describing-food",
+      "sourcePhrase": "তৈলাক্ত"
     }
   ],
   "phrases": [
     {
-      "bn": "দয়া করে মেনুটা দিন।",
-      "pronunciation": "doya kore menuta din.",
-      "en": "Please give me the menu.",
-      "context": "Requesting a menu",
-      "category": "food-restaurants"
+      "bn": "আমি অর্ডার দিতে চাই।",
+      "pronunciation": "ami ordar dite chai",
+      "en": "I would like to order.",
+      "context": "ordering food",
+      "category": "food-restaurants",
+      "words": [
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "অর্ডার",
+          "pronunciation": "ordar",
+          "en": "order"
+        },
+        {
+          "bn": "দিতে",
+          "pronunciation": "dite",
+          "en": "to give"
+        },
+        {
+          "bn": "চাই",
+          "pronunciation": "chai",
+          "en": "want / need"
+        }
+      ]
     },
     {
-      "bn": "আমি ভাত আর মাছ নেব।",
-      "pronunciation": "ami bhat ar machh nebo.",
-      "en": "I’ll have rice and fish.",
-      "context": "Ordering a meal",
-      "category": "food-restaurants"
+      "bn": "মেনুটা দেখতে পারি?",
+      "pronunciation": "menuta dekhte pari",
+      "en": "May I see the menu?",
+      "context": "ordering food",
+      "category": "food-restaurants",
+      "words": [
+        {
+          "bn": "মেনুটা",
+          "pronunciation": "menuta",
+          "en": "The menu"
+        },
+        {
+          "bn": "দেখতে",
+          "pronunciation": "dekhte",
+          "en": "to see"
+        },
+        {
+          "bn": "পারি",
+          "pronunciation": "pari",
+          "en": "can"
+        }
+      ]
     },
     {
-      "bn": "খাবারটা কম ঝাল করবেন।",
-      "pronunciation": "khabarta kom jhal korben.",
-      "en": "Please make the food less spicy.",
-      "context": "Stating a preference",
-      "category": "food-restaurants"
+      "bn": "আজকের বিশেষ খাবার কী?",
+      "pronunciation": "ajker bishesh khabar ki",
+      "en": "What is today's special?",
+      "context": "ordering food",
+      "category": "food-restaurants",
+      "words": [
+        {
+          "bn": "আজকের",
+          "pronunciation": "ajker",
+          "en": "Today's"
+        },
+        {
+          "bn": "বিশেষ",
+          "pronunciation": "bishesh",
+          "en": "special"
+        },
+        {
+          "bn": "খাবার",
+          "pronunciation": "khabar",
+          "en": "food"
+        },
+        {
+          "bn": "কী",
+          "pronunciation": "ki",
+          "en": "what"
+        }
+      ]
     },
     {
-      "bn": "বিলটা দিন, দয়া করে।",
-      "pronunciation": "bilta din, doya kore.",
+      "bn": "আমি এটা নেব।",
+      "pronunciation": "ami eta nebo",
+      "en": "I'll have this.",
+      "context": "ordering food",
+      "category": "food-restaurants",
+      "words": [
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "এটা",
+          "pronunciation": "eta",
+          "en": "this"
+        },
+        {
+          "bn": "নেব",
+          "pronunciation": "nebo",
+          "en": "will take"
+        }
+      ]
+    },
+    {
+      "bn": "আমার জন্য এক প্লেট বিরিয়ানি দিন।",
+      "pronunciation": "amar jonno ek plet birijoni din",
+      "en": "One plate of biryani, please.",
+      "context": "ordering food",
+      "category": "food-restaurants",
+      "words": [
+        {
+          "bn": "আমার",
+          "pronunciation": "amar",
+          "en": "my"
+        },
+        {
+          "bn": "জন্য",
+          "pronunciation": "jonno",
+          "en": "for"
+        },
+        {
+          "bn": "এক",
+          "pronunciation": "ek",
+          "en": "one"
+        },
+        {
+          "bn": "প্লেট",
+          "pronunciation": "plet",
+          "en": "plate"
+        },
+        {
+          "bn": "বিরিয়ানি",
+          "pronunciation": "birijoni",
+          "en": "biryani"
+        },
+        {
+          "bn": "দিন",
+          "pronunciation": "din",
+          "en": "day / please give"
+        }
+      ]
+    },
+    {
+      "bn": "এক কাপ চা দিন।",
+      "pronunciation": "ek kap cha din",
+      "en": "One cup of tea, please.",
+      "context": "ordering food",
+      "category": "food-restaurants",
+      "words": [
+        {
+          "bn": "এক",
+          "pronunciation": "ek",
+          "en": "one"
+        },
+        {
+          "bn": "কাপ",
+          "pronunciation": "kap",
+          "en": "cup"
+        },
+        {
+          "bn": "চা",
+          "pronunciation": "cha",
+          "en": "tea"
+        },
+        {
+          "bn": "দিন",
+          "pronunciation": "din",
+          "en": "day / please give"
+        }
+      ]
+    },
+    {
+      "bn": "পানি দিতে পারবেন?",
+      "pronunciation": "pani dite parben",
+      "en": "Could I have some water?",
+      "context": "ordering food",
+      "category": "food-restaurants",
+      "words": [
+        {
+          "bn": "পানি",
+          "pronunciation": "pani",
+          "en": "water"
+        },
+        {
+          "bn": "দিতে",
+          "pronunciation": "dite",
+          "en": "to give"
+        },
+        {
+          "bn": "পারবেন",
+          "pronunciation": "parben",
+          "en": "can"
+        }
+      ]
+    },
+    {
+      "bn": "ঝাল কম রাখবেন।",
+      "pronunciation": "jhal kom rakhoben",
+      "en": "Please make it less spicy.",
+      "context": "ordering food",
+      "category": "food-restaurants",
+      "words": [
+        {
+          "bn": "ঝাল",
+          "pronunciation": "jhal",
+          "en": "spicy"
+        },
+        {
+          "bn": "কম",
+          "pronunciation": "kom",
+          "en": "less / few"
+        },
+        {
+          "bn": "রাখবেন",
+          "pronunciation": "rakhoben",
+          "en": "please keep / make"
+        }
+      ]
+    },
+    {
+      "bn": "ঝাল বেশি রাখবেন।",
+      "pronunciation": "jhal beshi rakhoben",
+      "en": "Please make it extra spicy.",
+      "context": "ordering food",
+      "category": "food-restaurants",
+      "words": [
+        {
+          "bn": "ঝাল",
+          "pronunciation": "jhal",
+          "en": "spicy"
+        },
+        {
+          "bn": "বেশি",
+          "pronunciation": "beshi",
+          "en": "many / more / too much"
+        },
+        {
+          "bn": "রাখবেন",
+          "pronunciation": "rakhoben",
+          "en": "please keep / make"
+        }
+      ]
+    },
+    {
+      "bn": "পেঁয়াজ দেবেন না।",
+      "pronunciation": "penjoj deben na",
+      "en": "Please don't add onions.",
+      "context": "ordering food",
+      "category": "food-restaurants",
+      "words": [
+        {
+          "bn": "পেঁয়াজ",
+          "pronunciation": "penjoj",
+          "en": "onion"
+        },
+        {
+          "bn": "দেবেন",
+          "pronunciation": "deben",
+          "en": "please give / add"
+        },
+        {
+          "bn": "না",
+          "pronunciation": "na",
+          "en": "not"
+        }
+      ]
+    },
+    {
+      "bn": "চিনি ছাড়া দিন।",
+      "pronunciation": "chini chara din",
+      "en": "Without sugar, please.",
+      "context": "ordering food",
+      "category": "food-restaurants",
+      "words": [
+        {
+          "bn": "চিনি",
+          "pronunciation": "chini",
+          "en": "sugar"
+        },
+        {
+          "bn": "ছাড়া",
+          "pronunciation": "chara",
+          "en": "without / to leave / to release / let go"
+        },
+        {
+          "bn": "দিন",
+          "pronunciation": "din",
+          "en": "day / please give"
+        }
+      ]
+    },
+    {
+      "bn": "নিরামিষ খাবার আছে?",
+      "pronunciation": "niramish khabar achhe",
+      "en": "Do you have vegetarian food?",
+      "context": "ordering food",
+      "category": "food-restaurants",
+      "words": [
+        {
+          "bn": "নিরামিষ",
+          "pronunciation": "niramish",
+          "en": "vegetarian"
+        },
+        {
+          "bn": "খাবার",
+          "pronunciation": "khabar",
+          "en": "food"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is / has"
+        }
+      ]
+    },
+    {
+      "bn": "এটা কি হালাল?",
+      "pronunciation": "eta ki halal",
+      "en": "Is this halal?",
+      "context": "ordering food",
+      "category": "food-restaurants",
+      "words": [
+        {
+          "bn": "এটা",
+          "pronunciation": "eta",
+          "en": "this"
+        },
+        {
+          "bn": "কি",
+          "pronunciation": "ki",
+          "en": "what / yes-no question marker"
+        },
+        {
+          "bn": "হালাল",
+          "pronunciation": "halal",
+          "en": "halal"
+        }
+      ]
+    },
+    {
+      "bn": "এটা কি গরুর মাংস?",
+      "pronunciation": "eta ki gorur mangsho",
+      "en": "Is this beef?",
+      "context": "ordering food",
+      "category": "food-restaurants",
+      "words": [
+        {
+          "bn": "এটা",
+          "pronunciation": "eta",
+          "en": "this"
+        },
+        {
+          "bn": "কি",
+          "pronunciation": "ki",
+          "en": "what / yes-no question marker"
+        },
+        {
+          "bn": "গরুর",
+          "pronunciation": "gorur",
+          "en": "beef / of the cow"
+        },
+        {
+          "bn": "মাংস",
+          "pronunciation": "mangsho",
+          "en": "Meat / meat"
+        }
+      ]
+    },
+    {
+      "bn": "এটা কি মুরগির মাংস?",
+      "pronunciation": "eta ki murogir mangsho",
+      "en": "Is this chicken?",
+      "context": "ordering food",
+      "category": "food-restaurants",
+      "words": [
+        {
+          "bn": "এটা",
+          "pronunciation": "eta",
+          "en": "this"
+        },
+        {
+          "bn": "কি",
+          "pronunciation": "ki",
+          "en": "what / yes-no question marker"
+        },
+        {
+          "bn": "মুরগির",
+          "pronunciation": "murogir",
+          "en": "chicken / of the chicken"
+        },
+        {
+          "bn": "মাংস",
+          "pronunciation": "mangsho",
+          "en": "Meat / meat"
+        }
+      ]
+    },
+    {
+      "bn": "আর কিছু লাগবে না।",
+      "pronunciation": "ar kichhu lagbe na",
+      "en": "I don't need anything else.",
+      "context": "ordering food",
+      "category": "food-restaurants",
+      "words": [
+        {
+          "bn": "আর",
+          "pronunciation": "ar",
+          "en": "and / also / more"
+        },
+        {
+          "bn": "কিছু",
+          "pronunciation": "kichhu",
+          "en": "Something"
+        },
+        {
+          "bn": "লাগবে",
+          "pronunciation": "lagbe",
+          "en": "will need"
+        },
+        {
+          "bn": "না",
+          "pronunciation": "na",
+          "en": "not"
+        }
+      ]
+    },
+    {
+      "bn": "বিলটা দিন।",
+      "pronunciation": "bilota din",
       "en": "Please bring the bill.",
-      "context": "Finishing the meal",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "জল/পানি দাও",
-      "pronunciation": "Jol/pani dao",
-      "en": "Give water",
-      "context": "Requesting water.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "নদীতে মাছ ধরতে মজা লাগে।",
-      "pronunciation": "Nodi te machh dhorte moja lage.",
-      "en": "Catching fish in the river is fun.",
-      "context": "Expressing enjoyment of an activity.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "আমি জল/পানি খাব।",
-      "pronunciation": "Ami jol/pani khabo.",
-      "en": "I will drink water.",
-      "context": "Expressing thirst/intent.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "আমি ভাত খাই।",
-      "pronunciation": "Aami bhaat khaai.",
-      "en": "I eat rice.",
-      "context": "Talking about food habits.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "আমি ভাত খাবো।",
-      "pronunciation": "Ami bhaat khabo.",
-      "en": "I will eat rice.",
-      "context": "Talking about future action.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "মাছ একটি প্রোটিনের উৎস।",
-      "pronunciation": "Machh ekti protein-er source.",
-      "en": "Fish is a source of protein.",
-      "context": "Talking about nutrition.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "পানি শেষ হয়ে গেছে।",
-      "pronunciation": "Pani sesh hoye geche.",
-      "en": "The water is finished.",
-      "context": "Stating that something has run out.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "আমার শুকনো মাছ ভালো লাগে।",
-      "pronunciation": "Amar shukno machh bhaalo laage.",
-      "en": "I like dry fish.",
-      "context": "Talking about food preferences.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "সুপ্রভাত, অনামিকা।",
-      "pronunciation": "Suprobhaat, Anamika.",
-      "en": "Good Morning, Anamika.",
-      "context": "A friendly morning greeting.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "একটু জল দিন।",
-      "pronunciation": "Ektu jol din.",
-      "en": "Give me some water.",
-      "context": "Politely asking for water.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "জলটা একটু গরম করো।",
-      "pronunciation": "Jol-ta ektu gorom koro.",
-      "en": "Make the water a little hot.",
-      "context": "Giving a casual instruction.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "শাক খুবই স্বাস্থ্যকর।",
-      "pronunciation": "Shaak khubi swasthokor.",
-      "en": "Green vegetables are very healthy.",
-      "context": "Talking about healthy food.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "টেবিলের ওপর বই আছে।",
-      "pronunciation": "Table-er upor boi ache.",
-      "en": "There is a book on the table.",
-      "context": "Describing position.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "নমস্কার",
-      "pronunciation": "Nomoskar",
-      "en": "Hello",
-      "context": "A standard respectful greeting.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "কেমন আছো?",
-      "pronunciation": "Kemon achho?",
-      "en": "How are you?",
-      "context": "Informal greeting to a peer or younger person.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "ভালো আছি",
-      "pronunciation": "Bhalo achhi",
-      "en": "I am fine",
-      "context": "Standard response to 'How are you?'",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "তুমি কোথায় যাও?",
-      "pronunciation": "Tumi kothai jao?",
-      "en": "Where are you going?",
-      "context": "Asking about someone's destination informally.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "কি খবর?",
-      "pronunciation": "Ki khobor?",
-      "en": "What's the news?",
-      "context": "Equivalent to 'What's up?'",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "ধন্যবাদ",
-      "pronunciation": "Dhonnobad",
-      "en": "Thank you",
-      "context": "Expressing gratitude.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "কৃপয়া",
-      "pronunciation": "Kripaya",
-      "en": "Please",
-      "context": "Making a polite request.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "ক্ষমা করুন",
-      "pronunciation": "Khama korun",
-      "en": "Excuse me / Sorry",
-      "context": "Apologizing or asking for attention.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "আমি বুঝতে পারছি না",
-      "pronunciation": "Ami bujhte parchi na",
-      "en": "I can't understand",
-      "context": "Expressing lack of comprehension.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "এইটা কি?",
-      "pronunciation": "Eita ki?",
-      "en": "What is this?",
-      "context": "Asking about an object.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "কত টাকা?",
-      "pronunciation": "Koto taka?",
-      "en": "How much?",
-      "context": "Inquiring about price.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "আমি বেঙ্গলি বলতে পারি",
-      "pronunciation": "Aami Bengali bolte pari",
-      "en": "I can speak Bengali",
-      "context": "Stating language proficiency.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "আপনি কেমন?",
-      "pronunciation": "Aapni kemon?",
-      "en": "How about you?",
-      "context": "Returning a greeting politely.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "আমার নাম...",
-      "pronunciation": "Amar naam...",
-      "en": "My name is...",
-      "context": "Introducing yourself.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "আপনার নাম কি?",
-      "pronunciation": "Aapnar naam ki?",
-      "en": "What is your name?",
-      "context": "Asking someone's name politely.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "ভালো লাগলো",
-      "pronunciation": "Bhalo laglo",
-      "en": "Felt good",
-      "context": "Expressing satisfaction.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "কোথায় থাকেন?",
-      "pronunciation": "Kothay thaken?",
-      "en": "Where do you live?",
-      "context": "Asking about residence formally.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "আমার বাড়ি...",
-      "pronunciation": "Amar bari...",
-      "en": "My house is...",
-      "context": "Describing your home location.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "তুমি কি খেয়েছো?",
-      "pronunciation": "Tumi ki kheyechho?",
-      "en": "Do you eat?",
-      "context": "Informal inquiry about eating.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "আমি খাই নি",
-      "pronunciation": "Ami khai ni",
-      "en": "I did not eat",
-      "context": "Stating you haven't eaten.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "খাওয়া শেষ হয়েছে",
-      "pronunciation": "Khawa shesh hoyeche",
-      "en": "Eating is done",
-      "context": "Indicating meal completion.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "আজ কি দিন?",
-      "pronunciation": "Aaj ki din?",
-      "en": "What day is it today?",
-      "context": "Asking for the day of the week.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "সুন্দর",
-      "pronunciation": "Shundor",
-      "en": "Beautiful",
-      "context": "Describing something aesthetically pleasing.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "ভালো",
-      "pronunciation": "Bhalo",
-      "en": "Good",
-      "context": "A general positive adjective.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "খারাপ",
-      "pronunciation": "Kharap",
-      "en": "Bad",
-      "context": "A general negative adjective.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "চলুন যাই",
-      "pronunciation": "Cholun jaai",
-      "en": "Let's go",
-      "context": "Suggesting to leave or start moving.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "দেখা হয়ে ভালো লাগলো",
-      "pronunciation": "Dekha hoye bhaalo laglo",
-      "en": "Nice to see you",
-      "context": "Polite greeting upon meeting.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "আমি আসছি",
-      "pronunciation": "Ami aschi",
-      "en": "I am coming",
-      "context": "Stating that you are on your way.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "কিছু না",
-      "pronunciation": "Kichu na",
-      "en": "Nothing",
-      "context": "Response to 'what happened' or 'what is it'.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "তুমি কি ভালো আছো?",
-      "pronunciation": "Tumi ki bhalo achho?",
-      "en": "Are you well?",
-      "context": "Checking on a friend's well-being.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "আমি ঠিক আছি",
-      "pronunciation": "Ami thik achhi",
-      "en": "I am okay",
-      "context": "Stating you are fine/okay.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "আজ অনেক গরম",
-      "pronunciation": "Aaj onek gorom",
-      "en": "It’s very hot today",
-      "context": "Commenting on the weather.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "আজ অনেক ঠান্ডা",
-      "pronunciation": "Aaj onek thanda",
-      "en": "It’s very cold today",
-      "context": "Commenting on the weather.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "আজ বৃষ্টি হবে",
-      "pronunciation": "Aaj brishti hobe",
-      "en": "It will rain today",
-      "context": "Predicting weather.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "শিখতে হবে",
-      "pronunciation": "Shikhte hobe",
-      "en": "You need to learn",
-      "context": "Emphasizing the necessity of learning.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "চিন্তা করো না",
-      "pronunciation": "Chinta koro na",
-      "en": "Don’t worry",
-      "context": "Comforting someone.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "আমার কাছে এসো",
-      "pronunciation": "Amar kache esho",
-      "en": "Come to me",
-      "context": "Calling someone near.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "তুমি জানো?",
-      "pronunciation": "Tumi jano?",
-      "en": "Do you know?",
-      "context": "Asking if someone is aware of something.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "কি ভাবে?",
-      "pronunciation": "Ki bhabe?",
-      "en": "How?",
-      "context": "Inquiring about the method or process.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "এখন কি করবে?",
-      "pronunciation": "Ekhon ki korbe?",
-      "en": "What will you do now?",
-      "context": "Asking about future plans.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "এ আমার বন্ধু!",
-      "pronunciation": "E' amar bondhu",
-      "en": "This is my friend!",
-      "context": "Introducing a friend.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "কেমন চলছে?",
-      "pronunciation": "Kemon cholchhe?",
-      "en": "How's it going?",
-      "context": "Asking about someone's life/progress.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "আমি চিন্তা করছি না",
-      "pronunciation": "Ami chinta korchi na",
-      "en": "I am not worried",
-      "context": "Expressing lack of concern.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "এখন বাজে...",
-      "pronunciation": "Ekhon baje...",
-      "en": "It’s now...",
-      "context": "Starting to tell the time.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "কি সুন্দর!",
-      "pronunciation": "Ki sundor!",
-      "en": "How beautiful!",
-      "context": "Exclaiming about beauty.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "কোথায় যেতে হবে?",
-      "pronunciation": "Kothay jete hobe?",
-      "en": "Where should we go?",
-      "context": "Inquiring about destination.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "সময় লাগবে",
-      "pronunciation": "Shomoy lagbe",
-      "en": "It will take time.",
-      "context": "Indicating a delay or duration.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "সব কিছু ঠিক আছে",
-      "pronunciation": "Shob kichu thik ache",
-      "en": "Everything is fine.",
-      "context": "Reassurance.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "কি সুন্দর গল্প!",
-      "pronunciation": "Ki shundor golpo!",
-      "en": "What a beautiful story!",
-      "context": "Praising a story.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "এইটা আমার প্রিয় গান",
-      "pronunciation": "Eita amar priyo gaan",
-      "en": "This is my favorite song.",
-      "context": "Sharing a preference.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "কি ভালো খবর!",
-      "pronunciation": "Ki bhalo khobor!",
-      "en": "What good news!",
-      "context": "Reacting to positive news.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "চলো, চলো!",
-      "pronunciation": "Cholo, cholo!",
-      "en": "Come on, let’s go!",
-      "context": "Urging to start moving.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "আমি একটা চা চাই",
-      "pronunciation": "Ami ekta chaa chai",
-      "en": "I want a tea.",
-      "context": "Ordering or requesting tea.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "তুমি কি খাবে?",
-      "pronunciation": "Tumi ki khaabe?",
-      "en": "What will you eat?",
-      "context": "Asking about food preference.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "আমার সাথে আসুন",
-      "pronunciation": "Amar shathe aashun",
-      "en": "Come with me.",
-      "context": "Requesting someone to follow you.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "বসে কথা বলুন",
-      "pronunciation": "Boshe kotha bolun",
-      "en": "Sit down and talk.",
-      "context": "Inviting a seated conversation.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "সুন্দর দিন!",
-      "pronunciation": "Shundor din!",
-      "en": "Beautiful day!",
-      "context": "Exclaiming about the day.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "কি ভালো লাগলো!",
-      "pronunciation": "Ki bhalo laglo!",
-      "en": "It felt so good!",
-      "context": "Expressing deep satisfaction.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "আজ অনেক কাজ আছে",
-      "pronunciation": "Aaj onek kaj ache",
-      "en": "There’s a lot of work today.",
-      "context": "Stating workload.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "এখন একটু পরিষ্কার করো",
-      "pronunciation": "Ekhon ektu porishkar koro",
-      "en": "Clean up a bit now.",
-      "context": "Instruction to clean.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "এইটা আমার পাশের বাড়ি",
-      "pronunciation": "Eita amar pasher bari",
-      "en": "This is my neighbor's house.",
-      "context": "Pointing out a location.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "তুমি কি ভাবছো?",
-      "pronunciation": "Tumi ki bhabcho?",
-      "en": "What are you thinking?",
-      "context": "Asking about someone's thoughts.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "আমি ভাবছি না",
-      "pronunciation": "Ami bhabchi na",
-      "en": "I am not thinking.",
-      "context": "Stating mental state.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "কিছু বলতে পারবে না!",
-      "pronunciation": "Kichu bolte parbe na!",
-      "en": "You can’t say anything!",
-      "context": "Restricting speech.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "আমি একটা কাজ করছি",
-      "pronunciation": "Aami ekta kaj korchi",
-      "en": "I am doing a work.",
-      "context": "Stating current activity.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "কি সুন্দর রাত!",
-      "pronunciation": "Ki sundor raat!",
-      "en": "What a beautiful night!",
-      "context": "Exclaiming about the night.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "আমার সাথে আসবেন না!",
-      "pronunciation": "Amar shathe ashben na!",
-      "en": "Don’t come with me!",
-      "context": "Forbidding someone from following.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "কোথায় যেতে চাইছেন?",
-      "pronunciation": "Kothay jete chaichhen?",
-      "en": "Where do you want to go?",
-      "context": "Asking about destination preference.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "আজ আমি ভালো আছি!",
-      "pronunciation": "Aaj ami bhalo achhi!",
-      "en": "Today I am good!",
-      "context": "Stating current mood/health.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "আমরা একসাথে যাবো",
-      "pronunciation": "Aamra ekshathe jabo",
-      "en": "We will go together.",
-      "context": "Planning group movement.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "আপনার জন্য আমি খুশি!",
-      "pronunciation": "Aapnar jonno ami khushi!",
-      "en": "I am happy for you!",
-      "context": "Expressing joy for someone else.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "আমাদের সাথী থাকো",
-      "pronunciation": "Amader sathi thako",
-      "en": "Stay with us",
-      "context": "Requesting company.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "আমি তোমাকে ভালোবাসি!",
-      "pronunciation": "Ami tomake bhalobashi!",
-      "en": "I love you!",
-      "context": "Expressing love.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "আমি আপনাকে ভুলবো না",
-      "pronunciation": "Ami aapnake bhulbo na",
-      "en": "I will not forget you",
-      "context": "A promise of remembrance.",
-      "category": "food-restaurants"
-    },
-    {
-      "bn": "আমি তোমার বন্ধু হতে চাই!",
-      "pronunciation": "Ami tomar bondhu hote chai!",
-      "en": "I want to be your friend!",
-      "context": "Expressing desire for friendship.",
-      "category": "food-restaurants"
+      "context": "ordering food",
+      "category": "food-restaurants",
+      "words": [
+        {
+          "bn": "বিলটা",
+          "pronunciation": "bilota",
+          "en": "the bill"
+        },
+        {
+          "bn": "দিন",
+          "pronunciation": "din",
+          "en": "day / please give"
+        }
+      ]
+    },
+    {
+      "bn": "ধন্যবাদ, খাবার খুব ভালো ছিল।",
+      "pronunciation": "dhonnobad khabar khub bhalo chhilo",
+      "en": "Thank you, the food was very good.",
+      "context": "ordering food",
+      "category": "food-restaurants",
+      "words": [
+        {
+          "bn": "ধন্যবাদ",
+          "pronunciation": "dhonnobad",
+          "en": "Thank you"
+        },
+        {
+          "bn": "খাবার",
+          "pronunciation": "khabar",
+          "en": "food"
+        },
+        {
+          "bn": "খুব",
+          "pronunciation": "khub",
+          "en": "very"
+        },
+        {
+          "bn": "ভালো",
+          "pronunciation": "bhalo",
+          "en": "good"
+        },
+        {
+          "bn": "ছিল",
+          "pronunciation": "chhilo",
+          "en": "was"
+        }
+      ]
+    },
+    {
+      "bn": "আমি বাংলা খাবার খুব পছন্দ করি।",
+      "pronunciation": "ami bangla khabar khub pochhondo kori",
+      "en": "I really like Bengali food.",
+      "context": "food drinks and restaurant vocabulary with example sentences part 1",
+      "category": "food-restaurants",
+      "words": [
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "বাংলা",
+          "pronunciation": "bangla",
+          "en": "Bengali"
+        },
+        {
+          "bn": "খাবার",
+          "pronunciation": "khabar",
+          "en": "food"
+        },
+        {
+          "bn": "খুব",
+          "pronunciation": "khub",
+          "en": "very"
+        },
+        {
+          "bn": "পছন্দ",
+          "pronunciation": "pochhondo",
+          "en": "like / preference"
+        },
+        {
+          "bn": "করি",
+          "pronunciation": "kori",
+          "en": "do"
+        }
+      ]
+    },
+    {
+      "bn": "স্বাস্থ্যকর খাদ্য খাওয়া উচিত।",
+      "pronunciation": "shasthokor khaddo khaowa uchit",
+      "en": "We should eat healthy food.",
+      "context": "food drinks and restaurant vocabulary with example sentences part 1",
+      "category": "food-restaurants",
+      "words": [
+        {
+          "bn": "স্বাস্থ্যকর",
+          "pronunciation": "shasthokor",
+          "en": "healthy"
+        },
+        {
+          "bn": "খাদ্য",
+          "pronunciation": "khaddo",
+          "en": "food (formal)"
+        },
+        {
+          "bn": "খাওয়া",
+          "pronunciation": "khaowa",
+          "en": "eating / to eat"
+        },
+        {
+          "bn": "উচিত",
+          "pronunciation": "uchit",
+          "en": "should"
+        }
+      ]
+    },
+    {
+      "bn": "আমার মা খুব ভালো রান্না করেন।",
+      "pronunciation": "amar ma khub bhalo Ranna koren",
+      "en": "My mother cooks very well.",
+      "context": "food drinks and restaurant vocabulary with example sentences part 1",
+      "category": "food-restaurants",
+      "words": [
+        {
+          "bn": "আমার",
+          "pronunciation": "amar",
+          "en": "my"
+        },
+        {
+          "bn": "মা",
+          "pronunciation": "ma",
+          "en": "mother"
+        },
+        {
+          "bn": "খুব",
+          "pronunciation": "khub",
+          "en": "very"
+        },
+        {
+          "bn": "ভালো",
+          "pronunciation": "bhalo",
+          "en": "good"
+        },
+        {
+          "bn": "রান্না",
+          "pronunciation": "Ranna",
+          "en": "Cooking / cooking, cooked food"
+        },
+        {
+          "bn": "করেন",
+          "pronunciation": "koren",
+          "en": "do / does (respectful)"
+        }
+      ]
+    },
+    {
+      "bn": "পার্টিতে অনেক খাবারদাবার ছিল।",
+      "pronunciation": "partite ônek khabardabar chhilo",
+      "en": "There was a lot of food and drink at the party.",
+      "context": "food drinks and restaurant vocabulary with example sentences part 1",
+      "category": "food-restaurants",
+      "words": [
+        {
+          "bn": "পার্টিতে",
+          "pronunciation": "partite",
+          "en": "at the party"
+        },
+        {
+          "bn": "অনেক",
+          "pronunciation": "ônek",
+          "en": "very / many / much"
+        },
+        {
+          "bn": "খাবারদাবার",
+          "pronunciation": "khabardabar",
+          "en": "food and drinks"
+        },
+        {
+          "bn": "ছিল",
+          "pronunciation": "chhilo",
+          "en": "was"
+        }
+      ]
+    },
+    {
+      "bn": "আমি সাতটায় সকালের নাস্তা খাই।",
+      "pronunciation": "ami shattay shokaler nasta khai",
+      "en": "I eat breakfast at seven o'clock.",
+      "context": "food drinks and restaurant vocabulary with example sentences part 1",
+      "category": "food-restaurants",
+      "words": [
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "সাতটায়",
+          "pronunciation": "shattay",
+          "en": "at seven o'clock"
+        },
+        {
+          "bn": "সকালের",
+          "pronunciation": "shokaler",
+          "en": "morning / of the morning"
+        },
+        {
+          "bn": "নাস্তা",
+          "pronunciation": "nasta",
+          "en": "the breakfast / snack, breakfast"
+        },
+        {
+          "bn": "খাই",
+          "pronunciation": "khai",
+          "en": "eat"
+        }
+      ]
+    },
+    {
+      "bn": "বিকেলে আমরা নাস্তা করি।",
+      "pronunciation": "bikele amra nasta kori",
+      "en": "We have a snack in the afternoon.",
+      "context": "food drinks and restaurant vocabulary with example sentences part 1",
+      "category": "food-restaurants",
+      "words": [
+        {
+          "bn": "বিকেলে",
+          "pronunciation": "bikele",
+          "en": "in the afternoon"
+        },
+        {
+          "bn": "আমরা",
+          "pronunciation": "amra",
+          "en": "we"
+        },
+        {
+          "bn": "নাস্তা",
+          "pronunciation": "nasta",
+          "en": "the breakfast / snack, breakfast"
+        },
+        {
+          "bn": "করি",
+          "pronunciation": "kori",
+          "en": "do"
+        }
+      ]
+    },
+    {
+      "bn": "দুপুরের খাবার খুব সুস্বাদু ছিল।",
+      "pronunciation": "dupurer khabar khub shushadu chhilo",
+      "en": "Lunch was very delicious.",
+      "context": "food drinks and restaurant vocabulary with example sentences part 1",
+      "category": "food-restaurants",
+      "words": [
+        {
+          "bn": "দুপুরের",
+          "pronunciation": "dupurer",
+          "en": "midday / lunch"
+        },
+        {
+          "bn": "খাবার",
+          "pronunciation": "khabar",
+          "en": "food"
+        },
+        {
+          "bn": "খুব",
+          "pronunciation": "khub",
+          "en": "very"
+        },
+        {
+          "bn": "সুস্বাদু",
+          "pronunciation": "shushadu",
+          "en": "delicious"
+        },
+        {
+          "bn": "ছিল",
+          "pronunciation": "chhilo",
+          "en": "was"
+        }
+      ]
+    },
+    {
+      "bn": "আমরা একসঙ্গে রাতের খাবার খাই।",
+      "pronunciation": "amra eksongge rater khabar khai",
+      "en": "We eat dinner together.",
+      "context": "food drinks and restaurant vocabulary with example sentences part 1",
+      "category": "food-restaurants",
+      "words": [
+        {
+          "bn": "আমরা",
+          "pronunciation": "amra",
+          "en": "we"
+        },
+        {
+          "bn": "একসঙ্গে",
+          "pronunciation": "eksongge",
+          "en": "together"
+        },
+        {
+          "bn": "রাতের",
+          "pronunciation": "rater",
+          "en": "of the night"
+        },
+        {
+          "bn": "খাবার",
+          "pronunciation": "khabar",
+          "en": "food"
+        },
+        {
+          "bn": "খাই",
+          "pronunciation": "khai",
+          "en": "eat"
+        }
+      ]
+    },
+    {
+      "bn": "স্কুলের পরে আমি জলখাবার খাই।",
+      "pronunciation": "skuler pore ami jolkhabar khai",
+      "en": "I eat a light snack after school.",
+      "context": "food drinks and restaurant vocabulary with example sentences part 1",
+      "category": "food-restaurants",
+      "words": [
+        {
+          "bn": "স্কুলের",
+          "pronunciation": "skuler",
+          "en": "of the school"
+        },
+        {
+          "bn": "পরে",
+          "pronunciation": "pore",
+          "en": "after / later / wears"
+        },
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "জলখাবার",
+          "pronunciation": "jolkhabar",
+          "en": "light meal / snack"
+        },
+        {
+          "bn": "খাই",
+          "pronunciation": "khai",
+          "en": "eat"
+        }
+      ]
+    },
+    {
+      "bn": "আমি মিষ্টি খেতে ভালোবাসি।",
+      "pronunciation": "ami mishti khete bhalobashi",
+      "en": "I love eating sweets.",
+      "context": "food drinks and restaurant vocabulary with example sentences part 1",
+      "category": "food-restaurants",
+      "words": [
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "মিষ্টি",
+          "pronunciation": "mishti",
+          "en": "sweet / cute / sweets, dessert / sweets"
+        },
+        {
+          "bn": "খেতে",
+          "pronunciation": "khete",
+          "en": "to eat"
+        },
+        {
+          "bn": "ভালোবাসি",
+          "pronunciation": "bhalobashi",
+          "en": "I love"
+        }
+      ]
+    },
+    {
+      "bn": "ঈদে বড় ভোজ হয়।",
+      "pronunciation": "ide bôṛo bhoj hoy",
+      "en": "There is a big feast on Eid.",
+      "context": "food drinks and restaurant vocabulary with example sentences part 1",
+      "category": "food-restaurants",
+      "words": [
+        {
+          "bn": "ঈদে",
+          "pronunciation": "ide",
+          "en": "on Eid"
+        },
+        {
+          "bn": "বড়",
+          "pronunciation": "bôṛo",
+          "en": "big / large"
+        },
+        {
+          "bn": "ভোজ",
+          "pronunciation": "bhoj",
+          "en": "feast"
+        },
+        {
+          "bn": "হয়",
+          "pronunciation": "hoy",
+          "en": "is / happens / becomes"
+        }
+      ]
+    },
+    {
+      "bn": "আমরা বিয়ের দাওয়াতে গিয়েছিলাম।",
+      "pronunciation": "amra bijor daojote giyechilam",
+      "en": "We went to a wedding invitation feast.",
+      "context": "food drinks and restaurant vocabulary with example sentences part 1",
+      "category": "food-restaurants",
+      "words": [
+        {
+          "bn": "আমরা",
+          "pronunciation": "amra",
+          "en": "we"
+        },
+        {
+          "bn": "বিয়ের",
+          "pronunciation": "bijor",
+          "en": "wedding / of the wedding"
+        },
+        {
+          "bn": "দাওয়াতে",
+          "pronunciation": "daojote",
+          "en": "at the invitation feast"
+        },
+        {
+          "bn": "গিয়েছিলাম",
+          "pronunciation": "giyechilam",
+          "en": "went / had gone"
+        }
+      ]
+    },
+    {
+      "bn": "হোটেলে বুফে ছিল।",
+      "pronunciation": "hotele buffet chhilo",
+      "en": "There was a buffet at the hotel.",
+      "context": "food drinks and restaurant vocabulary with example sentences part 1",
+      "category": "food-restaurants",
+      "words": [
+        {
+          "bn": "হোটেলে",
+          "pronunciation": "hotele",
+          "en": "at the hotel"
+        },
+        {
+          "bn": "বুফে",
+          "pronunciation": "buffet",
+          "en": "buffet"
+        },
+        {
+          "bn": "ছিল",
+          "pronunciation": "chhilo",
+          "en": "was"
+        }
+      ]
+    },
+    {
+      "bn": "মেনুটা আমাকে দিন।",
+      "pronunciation": "menuta amake din",
+      "en": "Please give me the menu.",
+      "context": "food drinks and restaurant vocabulary with example sentences part 1",
+      "category": "food-restaurants",
+      "words": [
+        {
+          "bn": "মেনুটা",
+          "pronunciation": "menuta",
+          "en": "The menu"
+        },
+        {
+          "bn": "আমাকে",
+          "pronunciation": "amake",
+          "en": "me"
+        },
+        {
+          "bn": "দিন",
+          "pronunciation": "din",
+          "en": "day / please give"
+        }
+      ]
+    },
+    {
+      "bn": "এই রেসিপিটি খুব সহজ।",
+      "pronunciation": "ei resipiti khub shohoj",
+      "en": "This recipe is very easy.",
+      "context": "food drinks and restaurant vocabulary with example sentences part 1",
+      "category": "food-restaurants",
+      "words": [
+        {
+          "bn": "এই",
+          "pronunciation": "ei",
+          "en": "this"
+        },
+        {
+          "bn": "রেসিপিটি",
+          "pronunciation": "resipiti",
+          "en": "the recipe"
+        },
+        {
+          "bn": "খুব",
+          "pronunciation": "khub",
+          "en": "very"
+        },
+        {
+          "bn": "সহজ",
+          "pronunciation": "shohoj",
+          "en": "easy"
+        }
+      ]
+    },
+    {
+      "bn": "আমি প্রতিদিন ভাত খাই।",
+      "pronunciation": "ami protidin bhat khai",
+      "en": "I eat rice every day.",
+      "context": "food drinks and restaurant vocabulary with example sentences part 1",
+      "category": "food-restaurants",
+      "words": [
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "প্রতিদিন",
+          "pronunciation": "protidin",
+          "en": "every day"
+        },
+        {
+          "bn": "ভাত",
+          "pronunciation": "bhat",
+          "en": "rice / rice (cooked)"
+        },
+        {
+          "bn": "খাই",
+          "pronunciation": "khai",
+          "en": "eat"
+        }
+      ]
+    },
+    {
+      "bn": "মা বাজার থেকে চাল কিনেছেন।",
+      "pronunciation": "ma bajar theke chal kinechhen",
+      "en": "Mom bought rice from the market.",
+      "context": "food drinks and restaurant vocabulary with example sentences part 1",
+      "category": "food-restaurants",
+      "words": [
+        {
+          "bn": "মা",
+          "pronunciation": "ma",
+          "en": "mother"
+        },
+        {
+          "bn": "বাজার",
+          "pronunciation": "bajar",
+          "en": "market"
+        },
+        {
+          "bn": "থেকে",
+          "pronunciation": "theke",
+          "en": "from"
+        },
+        {
+          "bn": "চাল",
+          "pronunciation": "chal",
+          "en": "rice / uncooked rice"
+        },
+        {
+          "bn": "কিনেছেন",
+          "pronunciation": "kinechhen",
+          "en": "bought / has bought"
+        }
+      ]
+    },
+    {
+      "bn": "আমি সকালে রুটি খেয়েছি।",
+      "pronunciation": "ami shokale Ruti kheyechi",
+      "en": "I ate flatbread this morning.",
+      "context": "food drinks and restaurant vocabulary with example sentences part 1",
+      "category": "food-restaurants",
+      "words": [
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "সকালে",
+          "pronunciation": "shokale",
+          "en": "in the morning"
+        },
+        {
+          "bn": "রুটি",
+          "pronunciation": "Ruti",
+          "en": "Bread / bread / flatbread"
+        },
+        {
+          "bn": "খেয়েছি",
+          "pronunciation": "kheyechi",
+          "en": "ate / have eaten"
+        }
+      ]
+    },
+    {
+      "bn": "পরোটা আর ডিম আমার প্রিয় নাস্তা।",
+      "pronunciation": "porota ar ḍim amar priyo nasta",
+      "en": "Paratha and eggs are my favorite breakfast.",
+      "context": "food drinks and restaurant vocabulary with example sentences part 1",
+      "category": "food-restaurants",
+      "words": [
+        {
+          "bn": "পরোটা",
+          "pronunciation": "porota",
+          "en": "paratha"
+        },
+        {
+          "bn": "আর",
+          "pronunciation": "ar",
+          "en": "and / also / more"
+        },
+        {
+          "bn": "ডিম",
+          "pronunciation": "ḍim",
+          "en": "Egg / egg"
+        },
+        {
+          "bn": "আমার",
+          "pronunciation": "amar",
+          "en": "my"
+        },
+        {
+          "bn": "প্রিয়",
+          "pronunciation": "priyo",
+          "en": "favorite"
+        },
+        {
+          "bn": "নাস্তা",
+          "pronunciation": "nasta",
+          "en": "the breakfast / snack, breakfast"
+        }
+      ]
+    },
+    {
+      "bn": "লুচি আলুর দমের সঙ্গে খুব ভালো লাগে।",
+      "pronunciation": "luchi alur domer shonge khub bhalo lage",
+      "en": "Luchi tastes great with potato curry.",
+      "context": "food drinks and restaurant vocabulary with example sentences part 1",
+      "category": "food-restaurants",
+      "words": [
+        {
+          "bn": "লুচি",
+          "pronunciation": "luchi",
+          "en": "deep-fried flatbread"
+        },
+        {
+          "bn": "আলুর",
+          "pronunciation": "alur",
+          "en": "potato / of potato"
+        },
+        {
+          "bn": "দমের",
+          "pronunciation": "domer",
+          "en": "curry / of dum"
+        },
+        {
+          "bn": "সঙ্গে",
+          "pronunciation": "shonge",
+          "en": "with"
+        },
+        {
+          "bn": "খুব",
+          "pronunciation": "khub",
+          "en": "very"
+        },
+        {
+          "bn": "ভালো",
+          "pronunciation": "bhalo",
+          "en": "good"
+        },
+        {
+          "bn": "লাগে",
+          "pronunciation": "lage",
+          "en": "takes / feels / needs / is required"
+        }
+      ]
+    },
+    {
+      "bn": "আমরা পুরি খাচ্ছি।",
+      "pronunciation": "amra puri khachchhi",
+      "en": "We are eating puri.",
+      "context": "food drinks and restaurant vocabulary with example sentences part 1",
+      "category": "food-restaurants",
+      "words": [
+        {
+          "bn": "আমরা",
+          "pronunciation": "amra",
+          "en": "we"
+        },
+        {
+          "bn": "পুরি",
+          "pronunciation": "puri",
+          "en": "puri"
+        },
+        {
+          "bn": "খাচ্ছি",
+          "pronunciation": "khachchhi",
+          "en": "am eating"
+        }
+      ]
+    },
+    {
+      "bn": "আমি নানের সঙ্গে কাবাব খেলাম।",
+      "pronunciation": "ami naner shonge kabab khelam",
+      "en": "I ate naan with kebab.",
+      "context": "food drinks and restaurant vocabulary with example sentences part 1",
+      "category": "food-restaurants",
+      "words": [
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "নানের",
+          "pronunciation": "naner",
+          "en": "naan / with naan"
+        },
+        {
+          "bn": "সঙ্গে",
+          "pronunciation": "shonge",
+          "en": "with"
+        },
+        {
+          "bn": "কাবাব",
+          "pronunciation": "kabab",
+          "en": "kebab"
+        },
+        {
+          "bn": "খেলাম",
+          "pronunciation": "khelam",
+          "en": "I ate"
+        }
+      ]
+    },
+    {
+      "bn": "বৃষ্টির দিনে খিচুড়ি খেতে ভালো লাগে।",
+      "pronunciation": "brishtir dine khichud khete bhalo lage",
+      "en": "Khichuri is nice on rainy days.",
+      "context": "food drinks and restaurant vocabulary with example sentences part 1",
+      "category": "food-restaurants",
+      "words": [
+        {
+          "bn": "বৃষ্টির",
+          "pronunciation": "brishtir",
+          "en": "of the rain"
+        },
+        {
+          "bn": "দিনে",
+          "pronunciation": "dine",
+          "en": "on the day / during"
+        },
+        {
+          "bn": "খিচুড়ি",
+          "pronunciation": "khichud",
+          "en": "khichuri"
+        },
+        {
+          "bn": "খেতে",
+          "pronunciation": "khete",
+          "en": "to eat"
+        },
+        {
+          "bn": "ভালো",
+          "pronunciation": "bhalo",
+          "en": "good"
+        },
+        {
+          "bn": "লাগে",
+          "pronunciation": "lage",
+          "en": "takes / feels / needs / is required"
+        }
+      ]
+    },
+    {
+      "bn": "আজ পোলাও রান্না হয়েছে।",
+      "pronunciation": "aj pola Ranna hoyechhe",
+      "en": "Pilaf was cooked today.",
+      "context": "food drinks and restaurant vocabulary with example sentences part 1",
+      "category": "food-restaurants",
+      "words": [
+        {
+          "bn": "আজ",
+          "pronunciation": "aj",
+          "en": "today"
+        },
+        {
+          "bn": "পোলাও",
+          "pronunciation": "pola",
+          "en": "pilaf"
+        },
+        {
+          "bn": "রান্না",
+          "pronunciation": "Ranna",
+          "en": "Cooking / cooking, cooked food"
+        },
+        {
+          "bn": "হয়েছে",
+          "pronunciation": "hoyechhe",
+          "en": "has been"
+        }
+      ]
+    },
+    {
+      "bn": "আমি খাসির বিরিয়ানি অর্ডার করেছি।",
+      "pronunciation": "ami khasir birijoni ordar korechhi",
+      "en": "I ordered mutton biryani.",
+      "context": "food drinks and restaurant vocabulary with example sentences part 1",
+      "category": "food-restaurants",
+      "words": [
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "খাসির",
+          "pronunciation": "khasir",
+          "en": "mutton / of goat meat"
+        },
+        {
+          "bn": "বিরিয়ানি",
+          "pronunciation": "birijoni",
+          "en": "biryani"
+        },
+        {
+          "bn": "অর্ডার",
+          "pronunciation": "ordar",
+          "en": "order"
+        },
+        {
+          "bn": "করেছি",
+          "pronunciation": "korechhi",
+          "en": "did / have done"
+        }
+      ]
+    },
+    {
+      "bn": "শিশুরা নুডলস পছন্দ করে।",
+      "pronunciation": "shishura nudolos pochhondo kore",
+      "en": "Children like noodles.",
+      "context": "food drinks and restaurant vocabulary with example sentences part 1",
+      "category": "food-restaurants",
+      "words": [
+        {
+          "bn": "শিশুরা",
+          "pronunciation": "shishura",
+          "en": "the children"
+        },
+        {
+          "bn": "নুডলস",
+          "pronunciation": "nudolos",
+          "en": "noodles"
+        },
+        {
+          "bn": "পছন্দ",
+          "pronunciation": "pochhondo",
+          "en": "like / preference"
+        },
+        {
+          "bn": "করে",
+          "pronunciation": "kore",
+          "en": "does / by doing"
+        }
+      ]
+    },
+    {
+      "bn": "আজ রাতে আমরা পাস্তা খাব।",
+      "pronunciation": "aj rate amra pasta khabo",
+      "en": "We'll eat pasta tonight.",
+      "context": "food drinks and restaurant vocabulary with example sentences part 1",
+      "category": "food-restaurants",
+      "words": [
+        {
+          "bn": "আজ",
+          "pronunciation": "aj",
+          "en": "today"
+        },
+        {
+          "bn": "রাতে",
+          "pronunciation": "rate",
+          "en": "at night"
+        },
+        {
+          "bn": "আমরা",
+          "pronunciation": "amra",
+          "en": "we"
+        },
+        {
+          "bn": "পাস্তা",
+          "pronunciation": "pasta",
+          "en": "pasta"
+        },
+        {
+          "bn": "খাব",
+          "pronunciation": "khabo",
+          "en": "I will eat"
+        }
+      ]
+    },
+    {
+      "bn": "সে স্প্যাগেটি রান্না করছে।",
+      "pronunciation": "she spjageti Ranna korche",
+      "en": "She is cooking spaghetti.",
+      "context": "food drinks and restaurant vocabulary with example sentences part 1",
+      "category": "food-restaurants",
+      "words": [
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "স্প্যাগেটি",
+          "pronunciation": "spjageti",
+          "en": "spaghetti"
+        },
+        {
+          "bn": "রান্না",
+          "pronunciation": "Ranna",
+          "en": "Cooking / cooking, cooked food"
+        },
+        {
+          "bn": "করছে",
+          "pronunciation": "korche",
+          "en": "is doing"
+        }
+      ]
+    },
+    {
+      "bn": "আমি পাউরুটি কিনেছি।",
+      "pronunciation": "ami pauruti kinechhi",
+      "en": "I bought bread.",
+      "context": "food drinks and restaurant vocabulary with example sentences part 1",
+      "category": "food-restaurants",
+      "words": [
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "পাউরুটি",
+          "pronunciation": "pauruti",
+          "en": "bread"
+        },
+        {
+          "bn": "কিনেছি",
+          "pronunciation": "kinechhi",
+          "en": "bought"
+        }
+      ]
+    },
+    {
+      "bn": "সকালের নাস্তায় আমি টোস্ট খাই।",
+      "pronunciation": "shokaler nastaj ami tost khai",
+      "en": "I eat toast for breakfast.",
+      "context": "food drinks and restaurant vocabulary with example sentences part 1",
+      "category": "food-restaurants",
+      "words": [
+        {
+          "bn": "সকালের",
+          "pronunciation": "shokaler",
+          "en": "morning / of the morning"
+        },
+        {
+          "bn": "নাস্তায়",
+          "pronunciation": "nastaj",
+          "en": "for breakfast"
+        },
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "টোস্ট",
+          "pronunciation": "tost",
+          "en": "toast"
+        },
+        {
+          "bn": "খাই",
+          "pronunciation": "khai",
+          "en": "eat"
+        }
+      ]
+    },
+    {
+      "bn": "আমি একটি চিকেন স্যান্ডউইচ চাই।",
+      "pronunciation": "ami ekti chiken sjandouich chai",
+      "en": "I'd like a chicken sandwich.",
+      "context": "food drinks and restaurant vocabulary with example sentences part 1",
+      "category": "food-restaurants",
+      "words": [
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "একটি",
+          "pronunciation": "ekti",
+          "en": "one / a"
+        },
+        {
+          "bn": "চিকেন",
+          "pronunciation": "chiken",
+          "en": "chicken"
+        },
+        {
+          "bn": "স্যান্ডউইচ",
+          "pronunciation": "sjandouich",
+          "en": "sandwich"
+        },
+        {
+          "bn": "চাই",
+          "pronunciation": "chai",
+          "en": "want / need"
+        }
+      ]
+    },
+    {
+      "bn": "আজ আমরা মাংস রান্না করেছি।",
+      "pronunciation": "aj amra mangsho Ranna korechhi",
+      "en": "We cooked meat today.",
+      "context": "food drinks and restaurant vocabulary with example sentences part 1",
+      "category": "food-restaurants",
+      "words": [
+        {
+          "bn": "আজ",
+          "pronunciation": "aj",
+          "en": "today"
+        },
+        {
+          "bn": "আমরা",
+          "pronunciation": "amra",
+          "en": "we"
+        },
+        {
+          "bn": "মাংস",
+          "pronunciation": "mangsho",
+          "en": "Meat / meat"
+        },
+        {
+          "bn": "রান্না",
+          "pronunciation": "Ranna",
+          "en": "Cooking / cooking, cooked food"
+        },
+        {
+          "bn": "করেছি",
+          "pronunciation": "korechhi",
+          "en": "did / have done"
+        }
+      ]
+    },
+    {
+      "bn": "সে গরুর মাংস খায়।",
+      "pronunciation": "she gorur mangsho khay",
+      "en": "He eats beef.",
+      "context": "food drinks and restaurant vocabulary with example sentences part 1",
+      "category": "food-restaurants",
+      "words": [
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "গরুর",
+          "pronunciation": "gorur",
+          "en": "beef / of the cow"
+        },
+        {
+          "bn": "মাংস",
+          "pronunciation": "mangsho",
+          "en": "Meat / meat"
+        },
+        {
+          "bn": "খায়",
+          "pronunciation": "khay",
+          "en": "eats"
+        }
+      ]
+    },
+    {
+      "bn": "খাসির মাংস খুব জনপ্রিয়।",
+      "pronunciation": "khasir mangsho khub jonopriyo",
+      "en": "Mutton is very popular.",
+      "context": "food drinks and restaurant vocabulary with example sentences part 1",
+      "category": "food-restaurants",
+      "words": [
+        {
+          "bn": "খাসির",
+          "pronunciation": "khasir",
+          "en": "mutton / of goat meat"
+        },
+        {
+          "bn": "মাংস",
+          "pronunciation": "mangsho",
+          "en": "Meat / meat"
+        },
+        {
+          "bn": "খুব",
+          "pronunciation": "khub",
+          "en": "very"
+        },
+        {
+          "bn": "জনপ্রিয়",
+          "pronunciation": "jonopriyo",
+          "en": "popular"
+        }
+      ]
+    },
+    {
+      "bn": "ছাগলের মাংস দিয়ে তরকারি হয়েছে।",
+      "pronunciation": "chhagoler mangsho diye torokari hoyechhe",
+      "en": "Curry was made with goat meat.",
+      "context": "food drinks and restaurant vocabulary with example sentences part 1",
+      "category": "food-restaurants",
+      "words": [
+        {
+          "bn": "ছাগলের",
+          "pronunciation": "chhagoler",
+          "en": "goat meat / of the goat"
+        },
+        {
+          "bn": "মাংস",
+          "pronunciation": "mangsho",
+          "en": "Meat / meat"
+        },
+        {
+          "bn": "দিয়ে",
+          "pronunciation": "diye",
+          "en": "through / with"
+        },
+        {
+          "bn": "তরকারি",
+          "pronunciation": "torokari",
+          "en": "curry"
+        },
+        {
+          "bn": "হয়েছে",
+          "pronunciation": "hoyechhe",
+          "en": "has been"
+        }
+      ]
+    },
+    {
+      "bn": "আমি মুরগির মাংস পছন্দ করি।",
+      "pronunciation": "ami murogir mangsho pochhondo kori",
+      "en": "I like chicken.",
+      "context": "food drinks and restaurant vocabulary with example sentences part 1",
+      "category": "food-restaurants",
+      "words": [
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "মুরগির",
+          "pronunciation": "murogir",
+          "en": "chicken / of the chicken"
+        },
+        {
+          "bn": "মাংস",
+          "pronunciation": "mangsho",
+          "en": "Meat / meat"
+        },
+        {
+          "bn": "পছন্দ",
+          "pronunciation": "pochhondo",
+          "en": "like / preference"
+        },
+        {
+          "bn": "করি",
+          "pronunciation": "kori",
+          "en": "do"
+        }
+      ]
+    },
+    {
+      "bn": "শীতকালে হাঁসের মাংস অনেকেই খায়।",
+      "pronunciation": "shitokale hanser mangsho onekei khay",
+      "en": "Many people eat duck during winter.",
+      "context": "food drinks and restaurant vocabulary with example sentences part 1",
+      "category": "food-restaurants",
+      "words": [
+        {
+          "bn": "শীতকালে",
+          "pronunciation": "shitokale",
+          "en": "in winter"
+        },
+        {
+          "bn": "হাঁসের",
+          "pronunciation": "hanser",
+          "en": "duck / of the duck"
+        },
+        {
+          "bn": "মাংস",
+          "pronunciation": "mangsho",
+          "en": "Meat / meat"
+        },
+        {
+          "bn": "অনেকেই",
+          "pronunciation": "onekei",
+          "en": "many people"
+        },
+        {
+          "bn": "খায়",
+          "pronunciation": "khay",
+          "en": "eats"
+        }
+      ]
+    },
+    {
+      "bn": "বাংলাদেশে মাছ খুব জনপ্রিয়।",
+      "pronunciation": "bangladeshe machh khub jonopriyo",
+      "en": "Fish is very popular in Bangladesh.",
+      "context": "food drinks and restaurant vocabulary with example sentences part 1",
+      "category": "food-restaurants",
+      "words": [
+        {
+          "bn": "বাংলাদেশে",
+          "pronunciation": "bangladeshe",
+          "en": "in Bangladesh"
+        },
+        {
+          "bn": "মাছ",
+          "pronunciation": "machh",
+          "en": "Fish / fish"
+        },
+        {
+          "bn": "খুব",
+          "pronunciation": "khub",
+          "en": "very"
+        },
+        {
+          "bn": "জনপ্রিয়",
+          "pronunciation": "jonopriyo",
+          "en": "popular"
+        }
+      ]
+    },
+    {
+      "bn": "চিংড়ি দিয়ে ভাত খুব মজাদার।",
+      "pronunciation": "chingd diye bhat khub mojadar",
+      "en": "Rice with shrimp is very tasty.",
+      "context": "food drinks and restaurant vocabulary with example sentences part 1",
+      "category": "food-restaurants",
+      "words": [
+        {
+          "bn": "চিংড়ি",
+          "pronunciation": "chingd",
+          "en": "shrimp"
+        },
+        {
+          "bn": "দিয়ে",
+          "pronunciation": "diye",
+          "en": "through / with"
+        },
+        {
+          "bn": "ভাত",
+          "pronunciation": "bhat",
+          "en": "rice / rice (cooked)"
+        },
+        {
+          "bn": "খুব",
+          "pronunciation": "khub",
+          "en": "very"
+        },
+        {
+          "bn": "মজাদার",
+          "pronunciation": "mojadar",
+          "en": "tasty"
+        }
+      ]
+    },
+    {
+      "bn": "আমি প্রতিদিন একটি ডিম খাই।",
+      "pronunciation": "ami protidin ekti ḍim khai",
+      "en": "I eat one egg every day.",
+      "context": "food drinks and restaurant vocabulary with example sentences part 1",
+      "category": "food-restaurants",
+      "words": [
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "প্রতিদিন",
+          "pronunciation": "protidin",
+          "en": "every day"
+        },
+        {
+          "bn": "একটি",
+          "pronunciation": "ekti",
+          "en": "one / a"
+        },
+        {
+          "bn": "ডিম",
+          "pronunciation": "ḍim",
+          "en": "Egg / egg"
+        },
+        {
+          "bn": "খাই",
+          "pronunciation": "khai",
+          "en": "eat"
+        }
+      ]
+    },
+    {
+      "bn": "সকালের নাস্তায় সেদ্ধ ডিম ছিল।",
+      "pronunciation": "shokaler nastaj seddh ḍim chhilo",
+      "en": "There was a boiled egg for breakfast.",
+      "context": "food drinks and restaurant vocabulary with example sentences part 1",
+      "category": "food-restaurants",
+      "words": [
+        {
+          "bn": "সকালের",
+          "pronunciation": "shokaler",
+          "en": "morning / of the morning"
+        },
+        {
+          "bn": "নাস্তায়",
+          "pronunciation": "nastaj",
+          "en": "for breakfast"
+        },
+        {
+          "bn": "সেদ্ধ",
+          "pronunciation": "seddh",
+          "en": "boiled"
+        },
+        {
+          "bn": "ডিম",
+          "pronunciation": "ḍim",
+          "en": "Egg / egg"
+        },
+        {
+          "bn": "ছিল",
+          "pronunciation": "chhilo",
+          "en": "was"
+        }
+      ]
+    },
+    {
+      "bn": "আমি ভাজা ডিম বানিয়েছি।",
+      "pronunciation": "ami bhaja ḍim baniyechi",
+      "en": "I made a fried egg.",
+      "context": "food drinks and restaurant vocabulary with example sentences part 1",
+      "category": "food-restaurants",
+      "words": [
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "ভাজা",
+          "pronunciation": "bhaja",
+          "en": "fried"
+        },
+        {
+          "bn": "ডিম",
+          "pronunciation": "ḍim",
+          "en": "Egg / egg"
+        },
+        {
+          "bn": "বানিয়েছি",
+          "pronunciation": "baniyechi",
+          "en": "made / have made"
+        }
+      ]
+    },
+    {
+      "bn": "সে একটি অমলেট রান্না করছে।",
+      "pronunciation": "she ekti omolet Ranna korche",
+      "en": "She is cooking an omelet.",
+      "context": "food drinks and restaurant vocabulary with example sentences part 1",
+      "category": "food-restaurants",
+      "words": [
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "একটি",
+          "pronunciation": "ekti",
+          "en": "one / a"
+        },
+        {
+          "bn": "অমলেট",
+          "pronunciation": "omolet",
+          "en": "omelet"
+        },
+        {
+          "bn": "রান্না",
+          "pronunciation": "Ranna",
+          "en": "Cooking / cooking, cooked food"
+        },
+        {
+          "bn": "করছে",
+          "pronunciation": "korche",
+          "en": "is doing"
+        }
+      ]
+    },
+    {
+      "bn": "নাস্তায় সসেজ ছিল।",
+      "pronunciation": "nastaj sosej chhilo",
+      "en": "There were sausages for breakfast.",
+      "context": "food drinks and restaurant vocabulary with example sentences part 1",
+      "category": "food-restaurants",
+      "words": [
+        {
+          "bn": "নাস্তায়",
+          "pronunciation": "nastaj",
+          "en": "for breakfast"
+        },
+        {
+          "bn": "সসেজ",
+          "pronunciation": "sosej",
+          "en": "sausage"
+        },
+        {
+          "bn": "ছিল",
+          "pronunciation": "chhilo",
+          "en": "was"
+        }
+      ]
+    },
+    {
+      "bn": "কাবাব খুব সুস্বাদু ছিল।",
+      "pronunciation": "kabab khub shushadu chhilo",
+      "en": "The kebab was delicious.",
+      "context": "food drinks and restaurant vocabulary with example sentences part 1",
+      "category": "food-restaurants",
+      "words": [
+        {
+          "bn": "কাবাব",
+          "pronunciation": "kabab",
+          "en": "kebab"
+        },
+        {
+          "bn": "খুব",
+          "pronunciation": "khub",
+          "en": "very"
+        },
+        {
+          "bn": "সুস্বাদু",
+          "pronunciation": "shushadu",
+          "en": "delicious"
+        },
+        {
+          "bn": "ছিল",
+          "pronunciation": "chhilo",
+          "en": "was"
+        }
+      ]
     }
   ],
   "practice": [

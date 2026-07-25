@@ -1,284 +1,1498 @@
 {
   "id": "plurals-classifiers",
   "title": "Singular, Plural, and Classifiers",
-  "summary": "Count people and objects with common Bengali classifiers and plural markers.",
+  "summary": "Count people and objects, form plurals, use formal and colloquial number patterns, and measure pairs, containers, weight, volume, and occurrences.",
   "level": "beginner",
   "topic": "Singular, Plural, and Classifiers",
   "focus": "grammar",
   "vocab": [
     {
-      "bn": "একটা",
-      "pronunciation": "ekta",
-      "en": "one / a (general)",
-      "category": "plurals-classifiers"
+      "bn": "টি",
+      "pronunciation": "ti",
+      "en": "general classifier (formal)",
+      "category": "classifiers",
+      "sourcePhrase": "আমি পাঁচটি বই কিনেছি।"
     },
     {
-      "bn": "একটি",
-      "pronunciation": "ekti",
-      "en": "one / a (formal)",
-      "category": "plurals-classifiers"
+      "bn": "টা",
+      "pronunciation": "ta",
+      "en": "general classifier (colloquial)",
+      "category": "classifiers",
+      "sourcePhrase": "টেবিলে একটা বই আছে।"
     },
     {
-      "bn": "একজন",
-      "pronunciation": "ekjon",
-      "en": "one person",
-      "category": "plurals-classifiers"
+      "bn": "খান",
+      "pronunciation": "khan",
+      "en": "respectful classifier",
+      "category": "classifiers",
+      "sourcePhrase": "সে একখানা চিঠি লিখেছে।"
     },
     {
-      "bn": "দুইজন",
-      "pronunciation": "duijon",
-      "en": "two people",
-      "category": "plurals-classifiers"
+      "bn": "খানা",
+      "pronunciation": "khana",
+      "en": "object classifier",
+      "category": "classifiers",
+      "sourcePhrase": "সে একখানা চিঠি লিখেছে।"
     },
     {
-      "bn": "তিনটি",
-      "pronunciation": "tinti",
-      "en": "three items",
-      "category": "plurals-classifiers"
+      "bn": "খানি",
+      "pronunciation": "khani",
+      "en": "literary / affectionate classifier",
+      "category": "classifiers",
+      "sourcePhrase": "তিনি একখানি কবিতা পড়লেন।"
+    },
+    {
+      "bn": "জন",
+      "pronunciation": "jon",
+      "en": "classifier for people",
+      "category": "classifiers",
+      "sourcePhrase": "তিনজন ছাত্র এসেছে।"
+    },
+    {
+      "bn": "জোড়া",
+      "pronunciation": "jod",
+      "en": "pair",
+      "category": "classifiers",
+      "sourcePhrase": "আমার একজোড়া জুতা আছে।"
+    },
+    {
+      "bn": "দফা",
+      "pronunciation": "dofa",
+      "en": "round / phase",
+      "category": "classifiers",
+      "sourcePhrase": "আমরা দুই দফা আলোচনা করেছি।"
+    },
+    {
+      "bn": "বার",
+      "pronunciation": "Bar",
+      "en": "time / occurrence",
+      "category": "classifiers",
+      "sourcePhrase": "আমি তিনবার চেষ্টা করেছি।"
+    },
+    {
+      "bn": "পিস",
+      "pronunciation": "pis",
+      "en": "piece",
+      "category": "classifiers",
+      "sourcePhrase": "সে দুই পিস কেক খেয়েছে।"
+    },
+    {
+      "bn": "কাপ",
+      "pronunciation": "kap",
+      "en": "cupful",
+      "category": "measurements",
+      "sourcePhrase": "আমাকে দুই কাপ চা দাও।"
+    },
+    {
+      "bn": "বোতল",
+      "pronunciation": "botol",
+      "en": "bottleful",
+      "category": "measurements",
+      "sourcePhrase": "এক বোতল পানি কিনো।"
+    },
+    {
+      "bn": "কেজি",
+      "pronunciation": "keji",
+      "en": "kilogram",
+      "category": "measurements",
+      "sourcePhrase": "আমাদের দুই কেজি চাল দরকার।"
+    },
+    {
+      "bn": "লিটার",
+      "pronunciation": "litar",
+      "en": "liter",
+      "category": "measurements",
+      "sourcePhrase": "আমি এক লিটার দুধ কিনেছি।"
+    },
+    {
+      "bn": "ডজন",
+      "pronunciation": "dojon",
+      "en": "dozen",
+      "category": "measurements",
+      "sourcePhrase": "সে এক ডজন ডিম এনেছে।"
+    },
+    {
+      "bn": "গ্লাস",
+      "pronunciation": "glash",
+      "en": "glassful",
+      "category": "measurements",
+      "sourcePhrase": "এক গ্লাস পানি খাও।"
+    },
+    {
+      "bn": "প্লেট",
+      "pronunciation": "plet",
+      "en": "plateful",
+      "category": "measurements",
+      "sourcePhrase": "প্লেট"
+    },
+    {
+      "bn": "বাটি",
+      "pronunciation": "bati",
+      "en": "bowlful",
+      "category": "measurements",
+      "sourcePhrase": "টেবিলে দুই বাটি স্যুপ আছে।"
+    },
+    {
+      "bn": "চামচ",
+      "pronunciation": "chamoch",
+      "en": "spoonful",
+      "category": "measurements",
+      "sourcePhrase": "চায়ে এক চামচ চিনি দাও।"
     },
     {
       "bn": "গুলো",
       "pronunciation": "gulo",
-      "en": "plural marker",
-      "category": "plurals-classifiers"
+      "en": "common plural marker",
+      "category": "plural-markers",
+      "sourcePhrase": "বইগুলো টেবিলে আছে।"
+    },
+    {
+      "bn": "গুলি",
+      "pronunciation": "guli",
+      "en": "formal plural marker",
+      "category": "plural-markers",
+      "sourcePhrase": "বইগুলি নতুন।"
+    },
+    {
+      "bn": "গুলা",
+      "pronunciation": "gula",
+      "en": "regional plural marker",
+      "category": "plural-markers",
+      "sourcePhrase": "গুলা"
+    },
+    {
+      "bn": "দের",
+      "pronunciation": "der",
+      "en": "possessive / objective human plural marker",
+      "category": "plural-markers",
+      "sourcePhrase": "শিক্ষকদের ধন্যবাদ।"
     },
     {
       "bn": "রা",
       "pronunciation": "ra",
-      "en": "human plural marker",
-      "category": "plurals-classifiers"
+      "en": "human subject plural marker",
+      "category": "plural-markers",
+      "sourcePhrase": "ছাত্ররা এসেছে।"
+    },
+    {
+      "bn": "বৃন্দ",
+      "pronunciation": "brind",
+      "en": "formal group marker",
+      "category": "plural-markers",
+      "sourcePhrase": "অতিথিবৃন্দকে স্বাগতম।"
+    },
+    {
+      "bn": "গণ",
+      "pronunciation": "gon",
+      "en": "very formal human plural marker",
+      "category": "plural-markers",
+      "sourcePhrase": "ভদ্রলোকগণ বসুন।"
+    },
+    {
+      "bn": "একটি",
+      "pronunciation": "ekti",
+      "en": "one (formal)",
+      "category": "formal-counting",
+      "sourcePhrase": "প্রত্যেকে একটি কলম পেয়েছে।"
+    },
+    {
+      "bn": "দুটি",
+      "pronunciation": "duṭi",
+      "en": "two (formal)",
+      "category": "formal-counting",
+      "sourcePhrase": "দুটি"
+    },
+    {
+      "bn": "তিনটি",
+      "pronunciation": "tinti",
+      "en": "three (formal)",
+      "category": "formal-counting",
+      "sourcePhrase": "তিনটি"
+    },
+    {
+      "bn": "চারটি",
+      "pronunciation": "charti",
+      "en": "four (formal)",
+      "category": "formal-counting",
+      "sourcePhrase": "বাগানে চারটি ফুল ফুটেছে।"
+    },
+    {
+      "bn": "পাঁচটি",
+      "pronunciation": "panchti",
+      "en": "five (formal)",
+      "category": "formal-counting",
+      "sourcePhrase": "আমি পাঁচটি বই কিনেছি।"
+    },
+    {
+      "bn": "ছয়টি",
+      "pronunciation": "chhojoti",
+      "en": "six (formal)",
+      "category": "formal-counting",
+      "sourcePhrase": "ছয়টি"
+    },
+    {
+      "bn": "সাতটি",
+      "pronunciation": "satoti",
+      "en": "seven (formal)",
+      "category": "formal-counting",
+      "sourcePhrase": "সাতটি"
+    },
+    {
+      "bn": "আটটি",
+      "pronunciation": "atoti",
+      "en": "eight (formal)",
+      "category": "formal-counting",
+      "sourcePhrase": "আটটি"
+    },
+    {
+      "bn": "নয়টি",
+      "pronunciation": "nojoti",
+      "en": "nine (formal)",
+      "category": "formal-counting",
+      "sourcePhrase": "নয়টি"
+    },
+    {
+      "bn": "দশটি",
+      "pronunciation": "doshoti",
+      "en": "ten (formal)",
+      "category": "formal-counting",
+      "sourcePhrase": "দশটি প্রশ্নের মধ্যে পাঁচটি কঠিন।"
+    },
+    {
+      "bn": "একটা",
+      "pronunciation": "ekta",
+      "en": "one (colloquial)",
+      "category": "colloquial-counting",
+      "sourcePhrase": "টেবিলে একটা বই আছে।"
+    },
+    {
+      "bn": "দুটো",
+      "pronunciation": "dut",
+      "en": "two (colloquial)",
+      "category": "colloquial-counting",
+      "sourcePhrase": "দুটো"
+    },
+    {
+      "bn": "তিনটা",
+      "pronunciation": "tinta",
+      "en": "three (colloquial)",
+      "category": "colloquial-counting",
+      "sourcePhrase": "আমার তিনটা কলম আছে।"
+    },
+    {
+      "bn": "চারটা",
+      "pronunciation": "charota",
+      "en": "four (colloquial)",
+      "category": "colloquial-counting",
+      "sourcePhrase": "চারটা"
+    },
+    {
+      "bn": "পাঁচটা",
+      "pronunciation": "panchta",
+      "en": "five (colloquial)",
+      "category": "colloquial-counting",
+      "sourcePhrase": "পাঁচটা"
+    },
+    {
+      "bn": "ছয়টা",
+      "pronunciation": "chhojota",
+      "en": "six (colloquial)",
+      "category": "colloquial-counting",
+      "sourcePhrase": "ছয়টা"
+    },
+    {
+      "bn": "সাতটা",
+      "pronunciation": "satota",
+      "en": "seven (colloquial)",
+      "category": "colloquial-counting",
+      "sourcePhrase": "সাতটা"
+    },
+    {
+      "bn": "আটটা",
+      "pronunciation": "atta",
+      "en": "eight (colloquial)",
+      "category": "colloquial-counting",
+      "sourcePhrase": "আটটা"
+    },
+    {
+      "bn": "নয়টা",
+      "pronunciation": "nojota",
+      "en": "nine (colloquial)",
+      "category": "colloquial-counting",
+      "sourcePhrase": "নয়টা"
+    },
+    {
+      "bn": "দশটা",
+      "pronunciation": "doshta",
+      "en": "ten (colloquial)",
+      "category": "colloquial-counting",
+      "sourcePhrase": "দশটা"
     },
     {
       "bn": "সব",
       "pronunciation": "shob",
       "en": "all",
-      "category": "plurals-classifiers"
+      "category": "collectives",
+      "sourcePhrase": "দুজন বন্ধু আজ আসবে।"
+    },
+    {
+      "bn": "সকল",
+      "pronunciation": "sokol",
+      "en": "all (formal)",
+      "category": "collectives",
+      "sourcePhrase": "সকল শিক্ষার্থী উপস্থিত।"
+    },
+    {
+      "bn": "সবাই",
+      "pronunciation": "shobai",
+      "en": "everyone",
+      "category": "collectives",
+      "sourcePhrase": "সবাই"
+    },
+    {
+      "bn": "প্রত্যেকে",
+      "pronunciation": "protjeke",
+      "en": "each person",
+      "category": "collectives",
+      "sourcePhrase": "প্রত্যেকে একটি কলম পেয়েছে।"
+    },
+    {
+      "bn": "উভয়",
+      "pronunciation": "ubhoj",
+      "en": "both",
+      "category": "collectives",
+      "sourcePhrase": "উভয় ছাত্রই উত্তীর্ণ হয়েছে।"
+    },
+    {
+      "bn": "প্রত্যেকটি",
+      "pronunciation": "protjekoti",
+      "en": "each one",
+      "category": "collectives",
+      "sourcePhrase": "প্রত্যেকটি উত্তর সঠিক।"
+    },
+    {
+      "bn": "প্রতিটি",
+      "pronunciation": "protiti",
+      "en": "every single one",
+      "category": "collectives",
+      "sourcePhrase": "প্রতিটি প্রশ্নের উত্তর দাও।"
     }
   ],
   "phrases": [
     {
       "bn": "টেবিলে একটা বই আছে।",
-      "pronunciation": "tebile ekta boi achhe.",
-      "en": "There is a book on the table.",
-      "context": "Using the general classifier",
-      "category": "plurals-classifiers"
+      "pronunciation": "ṭebile ekta boi achhe",
+      "en": "There is one book on the table.",
+      "context": "general classifier",
+      "category": "plurals-classifiers",
+      "words": [
+        {
+          "bn": "টেবিলে",
+          "pronunciation": "ṭebile",
+          "en": "on the table"
+        },
+        {
+          "bn": "একটা",
+          "pronunciation": "ekta",
+          "en": "one / a (general)"
+        },
+        {
+          "bn": "বই",
+          "pronunciation": "boi",
+          "en": "book"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is / has"
+        }
+      ]
     },
     {
-      "bn": "ঘরে তিনজন ছাত্র আছে।",
-      "pronunciation": "ghore tinjon chhatro achhe.",
-      "en": "There are three students in the room.",
-      "context": "Counting people",
-      "category": "plurals-classifiers"
+      "bn": "আমি পাঁচটি বই কিনেছি।",
+      "pronunciation": "ami panchti boi kinechhi",
+      "en": "I bought five books.",
+      "context": "formal classifier",
+      "category": "plurals-classifiers",
+      "words": [
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "পাঁচটি",
+          "pronunciation": "panchti",
+          "en": "five"
+        },
+        {
+          "bn": "বই",
+          "pronunciation": "boi",
+          "en": "book"
+        },
+        {
+          "bn": "কিনেছি",
+          "pronunciation": "kinechhi",
+          "en": "bought"
+        }
+      ]
     },
     {
-      "bn": "ফুলগুলো সুন্দর।",
-      "pronunciation": "phulgulo shundor.",
-      "en": "The flowers are beautiful.",
-      "context": "Marking a definite plural",
-      "category": "plurals-classifiers"
+      "bn": "আমার তিনটা কলম আছে।",
+      "pronunciation": "amar tinta kolom achhe",
+      "en": "I have three pens.",
+      "context": "colloquial classifier",
+      "category": "plurals-classifiers",
+      "words": [
+        {
+          "bn": "আমার",
+          "pronunciation": "amar",
+          "en": "my"
+        },
+        {
+          "bn": "তিনটা",
+          "pronunciation": "tinta",
+          "en": "three o'clock"
+        },
+        {
+          "bn": "কলম",
+          "pronunciation": "kolom",
+          "en": "pen"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is / has"
+        }
+      ]
     },
     {
-      "bn": "ছাত্ররা মাঠে খেলছে।",
-      "pronunciation": "chhatrora mathe khelchhe.",
-      "en": "The students are playing in the field.",
-      "context": "A human plural",
-      "category": "plurals-classifiers"
+      "bn": "বাগানে চারটি ফুল ফুটেছে।",
+      "pronunciation": "bagane charti phul phutechhe",
+      "en": "Four flowers have bloomed in the garden.",
+      "context": "formal classifier",
+      "category": "plurals-classifiers",
+      "words": [
+        {
+          "bn": "বাগানে",
+          "pronunciation": "bagane",
+          "en": "in the garden"
+        },
+        {
+          "bn": "চারটি",
+          "pronunciation": "charti",
+          "en": "four"
+        },
+        {
+          "bn": "ফুল",
+          "pronunciation": "phul",
+          "en": "Flower / flower"
+        },
+        {
+          "bn": "ফুটেছে",
+          "pronunciation": "phutechhe",
+          "en": "have bloomed"
+        }
+      ]
     },
     {
-      "bn": "সবাই একসাথে নাচছে।",
-      "pronunciation": "Shobai ekshathe nachchhe.",
-      "en": "Everyone is dancing together.",
-      "context": "Describing a group activity.",
-      "category": "plurals-classifiers"
+      "bn": "সে একখানা চিঠি লিখেছে।",
+      "pronunciation": "she ekokhana chithi likhechhe",
+      "en": "She wrote one letter.",
+      "context": "object classifier",
+      "category": "plurals-classifiers",
+      "words": [
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "একখানা",
+          "pronunciation": "ekokhana",
+          "en": "one (object classifier)"
+        },
+        {
+          "bn": "চিঠি",
+          "pronunciation": "chithi",
+          "en": "letter"
+        },
+        {
+          "bn": "লিখেছে",
+          "pronunciation": "likhechhe",
+          "en": "wrote / has written"
+        }
+      ]
     },
     {
-      "bn": "সবাই একসাথে বসে খেলছে।",
-      "pronunciation": "Shobai ekshathe boshe khelchhe.",
-      "en": "Everyone is sitting and playing together.",
-      "context": "Describing a group activity.",
-      "category": "plurals-classifiers"
+      "bn": "তিনি একখানি কবিতা পড়লেন।",
+      "pronunciation": "tini ekokhani Kobita podolen",
+      "en": "She read one poem.",
+      "context": "literary classifier",
+      "category": "plurals-classifiers",
+      "words": [
+        {
+          "bn": "তিনি",
+          "pronunciation": "tini",
+          "en": "he / she (respectful)"
+        },
+        {
+          "bn": "একখানি",
+          "pronunciation": "ekokhani",
+          "en": "one (literary classifier)"
+        },
+        {
+          "bn": "কবিতা",
+          "pronunciation": "Kobita",
+          "en": "Poem / poem"
+        },
+        {
+          "bn": "পড়লেন",
+          "pronunciation": "podolen",
+          "en": "read"
+        }
+      ]
     },
     {
-      "bn": "সবাই বসুন।",
-      "pronunciation": "Shobai boshun.",
-      "en": "Everyone sit down.",
-      "context": "Instruction for a group.",
-      "category": "plurals-classifiers"
+      "bn": "তিনজন ছাত্র এসেছে।",
+      "pronunciation": "tinjon chhatro eshechhe",
+      "en": "Three students have arrived.",
+      "context": "people classifier",
+      "category": "plurals-classifiers",
+      "words": [
+        {
+          "bn": "তিনজন",
+          "pronunciation": "tinjon",
+          "en": "three people"
+        },
+        {
+          "bn": "ছাত্র",
+          "pronunciation": "chhatro",
+          "en": "student / student (male)"
+        },
+        {
+          "bn": "এসেছে",
+          "pronunciation": "eshechhe",
+          "en": "has arrived"
+        }
+      ]
     },
     {
-      "bn": "একদিন দেখা হবে।",
-      "pronunciation": "Ekdin dekha hobe.",
-      "en": "One day we shall meet.",
-      "context": "Expressing future hope.",
-      "category": "plurals-classifiers"
+      "bn": "পাঁচজন শিক্ষক সভায় ছিলেন।",
+      "pronunciation": "pachjon shikkhok sobhaj chilen",
+      "en": "Five teachers were at the meeting.",
+      "context": "people classifier",
+      "category": "plurals-classifiers",
+      "words": [
+        {
+          "bn": "পাঁচজন",
+          "pronunciation": "pachjon",
+          "en": "five people"
+        },
+        {
+          "bn": "শিক্ষক",
+          "pronunciation": "shikkhok",
+          "en": "teacher"
+        },
+        {
+          "bn": "সভায়",
+          "pronunciation": "sobhaj",
+          "en": "at the meeting"
+        },
+        {
+          "bn": "ছিলেন",
+          "pronunciation": "chilen",
+          "en": "was"
+        }
+      ]
     },
     {
-      "bn": "একজন ছেলে স্কুলে যায়।",
-      "pronunciation": "Ekjon chele school-e jay.",
-      "en": "One boy goes to school.",
-      "context": "Describing a single person’s routine.",
-      "category": "plurals-classifiers"
+      "bn": "একজন ডাক্তার আমাকে দেখেছেন।",
+      "pronunciation": "ekjon daktar amake dekhechen",
+      "en": "A doctor examined me.",
+      "context": "people classifier",
+      "category": "plurals-classifiers",
+      "words": [
+        {
+          "bn": "একজন",
+          "pronunciation": "ekjon",
+          "en": "one person"
+        },
+        {
+          "bn": "ডাক্তার",
+          "pronunciation": "daktar",
+          "en": "doctor"
+        },
+        {
+          "bn": "আমাকে",
+          "pronunciation": "amake",
+          "en": "me"
+        },
+        {
+          "bn": "দেখেছেন",
+          "pronunciation": "dekhechen",
+          "en": "have seen"
+        }
+      ]
     },
     {
-      "bn": "একজন পুরুষ স্কুলে যায়।",
-      "pronunciation": "Ekjon purush school-e jay.",
-      "en": "One man goes to school.",
-      "context": "Describing a person’s routine.",
-      "category": "plurals-classifiers"
+      "bn": "দুজন বন্ধু আজ আসবে।",
+      "pronunciation": "dujon bondhu aj ashbe",
+      "en": "Two friends will come today.",
+      "context": "people classifier",
+      "category": "plurals-classifiers",
+      "words": [
+        {
+          "bn": "দুজন",
+          "pronunciation": "dujon",
+          "en": "two people"
+        },
+        {
+          "bn": "বন্ধু",
+          "pronunciation": "bondhu",
+          "en": "friend"
+        },
+        {
+          "bn": "আজ",
+          "pronunciation": "aj",
+          "en": "today"
+        },
+        {
+          "bn": "আসবে",
+          "pronunciation": "ashbe",
+          "en": "will come"
+        }
+      ]
     },
     {
-      "bn": "একটি সেকেন্ড গুরুত্বপূর্ণ।",
-      "pronunciation": "Ekta sekend guruttopurno.",
-      "en": "One second is important.",
-      "context": "Emphasizing the value of time.",
-      "category": "plurals-classifiers"
+      "bn": "দুইটা বিড়াল ঘুমাচ্ছে।",
+      "pronunciation": "duita biral ghumachchhe",
+      "en": "Two cats are sleeping.",
+      "context": "animal counting",
+      "category": "plurals-classifiers",
+      "words": [
+        {
+          "bn": "দুইটা",
+          "pronunciation": "duita",
+          "en": "two (colloquial)"
+        },
+        {
+          "bn": "বিড়াল",
+          "pronunciation": "biral",
+          "en": "cat"
+        },
+        {
+          "bn": "ঘুমাচ্ছে",
+          "pronunciation": "ghumachchhe",
+          "en": "is sleeping"
+        }
+      ]
     },
     {
-      "bn": "তারাগুলো খুবই ছোট।",
-      "pronunciation": "Tara gulo khubi choto.",
-      "en": "The stars are very small.",
-      "context": "Describing stars.",
-      "category": "plurals-classifiers"
+      "bn": "তিনটা ঘোড়া দৌড়াচ্ছে।",
+      "pronunciation": "tinta ghod douracche",
+      "en": "Three horses are running.",
+      "context": "animal counting",
+      "category": "plurals-classifiers",
+      "words": [
+        {
+          "bn": "তিনটা",
+          "pronunciation": "tinta",
+          "en": "three o'clock"
+        },
+        {
+          "bn": "ঘোড়া",
+          "pronunciation": "ghod",
+          "en": "horse"
+        },
+        {
+          "bn": "দৌড়াচ্ছে",
+          "pronunciation": "douracche",
+          "en": "are running"
+        }
+      ]
     },
     {
-      "bn": "খাওয়া শেষ হয়েছে",
-      "pronunciation": "Khawa shesh hoyeche",
-      "en": "Eating is done",
-      "context": "Indicating meal completion.",
-      "category": "plurals-classifiers"
+      "bn": "বইগুলো টেবিলে আছে।",
+      "pronunciation": "boigulo ṭebile achhe",
+      "en": "The books are on the table.",
+      "context": "common plural marker",
+      "category": "plurals-classifiers",
+      "words": [
+        {
+          "bn": "বইগুলো",
+          "pronunciation": "boigulo",
+          "en": "the books"
+        },
+        {
+          "bn": "টেবিলে",
+          "pronunciation": "ṭebile",
+          "en": "on the table"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is / has"
+        }
+      ]
     },
     {
-      "bn": "ঘরের কাজ হয়েছে",
-      "pronunciation": "Ghorer kaj hoyeche",
-      "en": "Housework done",
-      "context": "Stating housework status.",
-      "category": "plurals-classifiers"
+      "bn": "বইগুলি নতুন।",
+      "pronunciation": "boiguli notun",
+      "en": "The books are new.",
+      "context": "formal plural marker",
+      "category": "plurals-classifiers",
+      "words": [
+        {
+          "bn": "বইগুলি",
+          "pronunciation": "boiguli",
+          "en": "the books (formal)"
+        },
+        {
+          "bn": "নতুন",
+          "pronunciation": "notun",
+          "en": "new"
+        }
+      ]
     },
     {
-      "bn": "আমার সঙ্গে কেউ আসেনি।",
-      "pronunciation": "Amar shonge keu aseni.",
-      "en": "No one came with me.",
-      "context": "Clarifying arrival status.",
-      "category": "plurals-classifiers"
+      "bn": "ছাত্ররা এসেছে।",
+      "pronunciation": "chhatrora eshechhe",
+      "en": "The students have arrived.",
+      "context": "human plural marker",
+      "category": "plurals-classifiers",
+      "words": [
+        {
+          "bn": "ছাত্ররা",
+          "pronunciation": "chhatrora",
+          "en": "the students"
+        },
+        {
+          "bn": "এসেছে",
+          "pronunciation": "eshechhe",
+          "en": "has arrived"
+        }
+      ]
     },
     {
-      "bn": "পথে কেউ নেই।",
-      "pronunciation": "Poth e keo nei.",
-      "en": "There is no one on the road.",
-      "context": "Observation of street.",
-      "category": "plurals-classifiers"
+      "bn": "শিক্ষকদের ধন্যবাদ।",
+      "pronunciation": "shikshokoder dhonnobad",
+      "en": "Thanks to the teachers.",
+      "context": "human plural case marker",
+      "category": "plurals-classifiers",
+      "words": [
+        {
+          "bn": "শিক্ষকদের",
+          "pronunciation": "shikshokoder",
+          "en": "to the teachers / the teachers'"
+        },
+        {
+          "bn": "ধন্যবাদ",
+          "pronunciation": "dhonnobad",
+          "en": "Thank you"
+        }
+      ]
     },
     {
-      "bn": "আমার ফোন কোথায়?",
-      "pronunciation": "Amar phone kothay?",
-      "en": "Where is my phone?",
-      "context": "Searching for an object.",
-      "category": "plurals-classifiers"
+      "bn": "অতিথিবৃন্দকে স্বাগতম।",
+      "pronunciation": "otithibrindoke shagotom",
+      "en": "Welcome, honored guests.",
+      "context": "formal group marker",
+      "category": "plurals-classifiers",
+      "words": [
+        {
+          "bn": "অতিথিবৃন্দকে",
+          "pronunciation": "otithibrindoke",
+          "en": "honored guests"
+        },
+        {
+          "bn": "স্বাগতম",
+          "pronunciation": "shagotom",
+          "en": "welcome"
+        }
+      ]
     },
     {
-      "bn": "আটটা ফোন।",
-      "pronunciation": "Aat ta phone.",
-      "en": "Eight phones.",
-      "context": "Counting objects.",
-      "category": "plurals-classifiers"
+      "bn": "ভদ্রলোকগণ বসুন।",
+      "pronunciation": "bhodrolokogon boshun",
+      "en": "Gentlemen, please sit.",
+      "context": "very formal group marker",
+      "category": "plurals-classifiers",
+      "words": [
+        {
+          "bn": "ভদ্রলোকগণ",
+          "pronunciation": "bhodrolokogon",
+          "en": "gentlemen"
+        },
+        {
+          "bn": "বসুন",
+          "pronunciation": "boshun",
+          "en": "please sit"
+        }
+      ]
     },
     {
-      "bn": "দুজন ফুটবল খেলছে।",
-      "pronunciation": "Dujon football khelchhe.",
-      "en": "Two people are playing football.",
-      "context": "Describing an ongoing activity.",
-      "category": "plurals-classifiers"
+      "bn": "আমার একজোড়া জুতা আছে।",
+      "pronunciation": "amar ekojod juta achhe",
+      "en": "I have one pair of shoes.",
+      "context": "pair classifier",
+      "category": "plurals-classifiers",
+      "words": [
+        {
+          "bn": "আমার",
+          "pronunciation": "amar",
+          "en": "my"
+        },
+        {
+          "bn": "একজোড়া",
+          "pronunciation": "ekojod",
+          "en": "one pair"
+        },
+        {
+          "bn": "জুতা",
+          "pronunciation": "juta",
+          "en": "shoes"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is / has"
+        }
+      ]
     },
     {
-      "bn": "সে একটি বল খেলছে।",
-      "pronunciation": "Se ekti ball khelchhe.",
-      "en": "He is playing with a ball.",
-      "context": "Describing an ongoing action.",
-      "category": "plurals-classifiers"
+      "bn": "সে একজোড়া মোজা কিনেছে।",
+      "pronunciation": "she ekojod moja kinechhe",
+      "en": "He bought one pair of socks.",
+      "context": "pair classifier",
+      "category": "plurals-classifiers",
+      "words": [
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "একজোড়া",
+          "pronunciation": "ekojod",
+          "en": "one pair"
+        },
+        {
+          "bn": "মোজা",
+          "pronunciation": "moja",
+          "en": "socks"
+        },
+        {
+          "bn": "কিনেছে",
+          "pronunciation": "kinechhe",
+          "en": "bought / has bought"
+        }
+      ]
     },
     {
-      "bn": "সাপ একটি বিপজ্জনক প্রাণী।",
-      "pronunciation": "Shaap ekti bipojjonok prani.",
-      "en": "A snake is a dangerous animal.",
-      "context": "Stating a fact about animals.",
-      "category": "plurals-classifiers"
+      "bn": "আমরা দুই দফা আলোচনা করেছি।",
+      "pronunciation": "amra dui dofa alochona korechhi",
+      "en": "We held two rounds of discussion.",
+      "context": "round classifier",
+      "category": "plurals-classifiers",
+      "words": [
+        {
+          "bn": "আমরা",
+          "pronunciation": "amra",
+          "en": "we"
+        },
+        {
+          "bn": "দুই",
+          "pronunciation": "dui",
+          "en": "two"
+        },
+        {
+          "bn": "দফা",
+          "pronunciation": "dofa",
+          "en": "round / phase"
+        },
+        {
+          "bn": "আলোচনা",
+          "pronunciation": "alochona",
+          "en": "discussion"
+        },
+        {
+          "bn": "করেছি",
+          "pronunciation": "korechhi",
+          "en": "did / have done"
+        }
+      ]
     },
     {
-      "bn": "আমার কাছে কিছু টাকা আছে।",
-      "pronunciation": "Amar kache kichu taka ache.",
-      "en": "I have some money.",
-      "context": "Talking about money or possession.",
-      "category": "plurals-classifiers"
+      "bn": "আমি তিনবার চেষ্টা করেছি।",
+      "pronunciation": "ami tinbar cheshta korechhi",
+      "en": "I tried three times.",
+      "context": "occurrence classifier",
+      "category": "plurals-classifiers",
+      "words": [
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "তিনবার",
+          "pronunciation": "tinbar",
+          "en": "three times"
+        },
+        {
+          "bn": "চেষ্টা",
+          "pronunciation": "cheshta",
+          "en": "try"
+        },
+        {
+          "bn": "করেছি",
+          "pronunciation": "korechhi",
+          "en": "did / have done"
+        }
+      ]
     },
     {
-      "bn": "খারাপ",
-      "pronunciation": "Kharap",
-      "en": "Bad",
-      "context": "A general negative adjective.",
-      "category": "plurals-classifiers"
+      "bn": "সে দুই পিস কেক খেয়েছে।",
+      "pronunciation": "she dui pis cake khejochhe",
+      "en": "She ate two pieces of cake.",
+      "context": "piece classifier",
+      "category": "plurals-classifiers",
+      "words": [
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "দুই",
+          "pronunciation": "dui",
+          "en": "two"
+        },
+        {
+          "bn": "পিস",
+          "pronunciation": "pis",
+          "en": "piece"
+        },
+        {
+          "bn": "কেক",
+          "pronunciation": "cake",
+          "en": "cake"
+        },
+        {
+          "bn": "খেয়েছে",
+          "pronunciation": "khejochhe",
+          "en": "ate / has eaten"
+        }
+      ]
     },
     {
-      "bn": "সব কিছু ঠিক আছে",
-      "pronunciation": "Shob kichu thik ache",
-      "en": "Everything is fine.",
-      "context": "Reassurance.",
-      "category": "plurals-classifiers"
+      "bn": "আমাকে দুই কাপ চা দাও।",
+      "pronunciation": "amake dui kap cha dao",
+      "en": "Give me two cups of tea.",
+      "context": "cup measure",
+      "category": "plurals-classifiers",
+      "words": [
+        {
+          "bn": "আমাকে",
+          "pronunciation": "amake",
+          "en": "me"
+        },
+        {
+          "bn": "দুই",
+          "pronunciation": "dui",
+          "en": "two"
+        },
+        {
+          "bn": "কাপ",
+          "pronunciation": "kap",
+          "en": "cup"
+        },
+        {
+          "bn": "চা",
+          "pronunciation": "cha",
+          "en": "tea"
+        },
+        {
+          "bn": "দাও",
+          "pronunciation": "dao",
+          "en": "give / please give (familiar)"
+        }
+      ]
     },
     {
-      "bn": "আমি একটা চা চাই",
-      "pronunciation": "Ami ekta chaa chai",
-      "en": "I want a tea.",
-      "context": "Ordering or requesting tea.",
-      "category": "plurals-classifiers"
+      "bn": "এক বোতল পানি কিনো।",
+      "pronunciation": "ek botol pani kin",
+      "en": "Buy one bottle of water.",
+      "context": "bottle measure",
+      "category": "plurals-classifiers",
+      "words": [
+        {
+          "bn": "এক",
+          "pronunciation": "ek",
+          "en": "one"
+        },
+        {
+          "bn": "বোতল",
+          "pronunciation": "botol",
+          "en": "bottle"
+        },
+        {
+          "bn": "পানি",
+          "pronunciation": "pani",
+          "en": "water"
+        },
+        {
+          "bn": "কিনো",
+          "pronunciation": "kin",
+          "en": "buy"
+        }
+      ]
     },
     {
-      "bn": "আমি একটা কাজ করছি",
-      "pronunciation": "Aami ekta kaj korchi",
-      "en": "I am doing a work.",
-      "context": "Stating current activity.",
-      "category": "plurals-classifiers"
+      "bn": "আমাদের দুই কেজি চাল দরকার।",
+      "pronunciation": "amader dui keji chal dorkar",
+      "en": "We need two kilograms of rice.",
+      "context": "weight measure",
+      "category": "plurals-classifiers",
+      "words": [
+        {
+          "bn": "আমাদের",
+          "pronunciation": "amader",
+          "en": "our"
+        },
+        {
+          "bn": "দুই",
+          "pronunciation": "dui",
+          "en": "two"
+        },
+        {
+          "bn": "কেজি",
+          "pronunciation": "keji",
+          "en": "kilogram"
+        },
+        {
+          "bn": "চাল",
+          "pronunciation": "chal",
+          "en": "rice"
+        },
+        {
+          "bn": "দরকার",
+          "pronunciation": "dorkar",
+          "en": "Requirement"
+        }
+      ]
     },
     {
-      "bn": "কি সুন্দর রাত!",
-      "pronunciation": "Ki sundor raat!",
-      "en": "What a beautiful night!",
-      "context": "Exclaiming about the night.",
-      "category": "plurals-classifiers"
+      "bn": "আমি এক লিটার দুধ কিনেছি।",
+      "pronunciation": "ami ek litar Dudh kinechhi",
+      "en": "I bought one liter of milk.",
+      "context": "volume measure",
+      "category": "plurals-classifiers",
+      "words": [
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "এক",
+          "pronunciation": "ek",
+          "en": "one"
+        },
+        {
+          "bn": "লিটার",
+          "pronunciation": "litar",
+          "en": "liter"
+        },
+        {
+          "bn": "দুধ",
+          "pronunciation": "Dudh",
+          "en": "Milk / milk"
+        },
+        {
+          "bn": "কিনেছি",
+          "pronunciation": "kinechhi",
+          "en": "bought"
+        }
+      ]
     },
     {
-      "bn": "আমার সাথে আসবেন না!",
-      "pronunciation": "Amar shathe ashben na!",
-      "en": "Don’t come with me!",
-      "context": "Forbidding someone from following.",
-      "category": "plurals-classifiers"
+      "bn": "সে এক ডজন ডিম এনেছে।",
+      "pronunciation": "she ek dojon ḍim enechhe",
+      "en": "He brought one dozen eggs.",
+      "context": "dozen measure",
+      "category": "plurals-classifiers",
+      "words": [
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "এক",
+          "pronunciation": "ek",
+          "en": "one"
+        },
+        {
+          "bn": "ডজন",
+          "pronunciation": "dojon",
+          "en": "dozen"
+        },
+        {
+          "bn": "ডিম",
+          "pronunciation": "ḍim",
+          "en": "Egg / egg"
+        },
+        {
+          "bn": "এনেছে",
+          "pronunciation": "enechhe",
+          "en": "brought / has brought"
+        }
+      ]
     },
     {
-      "bn": "আমরা একসাথে যাবো",
-      "pronunciation": "Aamra ekshathe jabo",
-      "en": "We will go together.",
-      "context": "Planning group movement.",
-      "category": "plurals-classifiers"
+      "bn": "এক গ্লাস পানি খাও।",
+      "pronunciation": "ek glash pani khao",
+      "en": "Drink one glass of water.",
+      "context": "container measure",
+      "category": "plurals-classifiers",
+      "words": [
+        {
+          "bn": "এক",
+          "pronunciation": "ek",
+          "en": "one"
+        },
+        {
+          "bn": "গ্লাস",
+          "pronunciation": "glash",
+          "en": "glass"
+        },
+        {
+          "bn": "পানি",
+          "pronunciation": "pani",
+          "en": "water"
+        },
+        {
+          "bn": "খাও",
+          "pronunciation": "khao",
+          "en": "eat"
+        }
+      ]
     },
     {
-      "bn": "চলো, একটা মুভি দেখি!",
-      "pronunciation": "Cholo, ekta movie dekhi!",
-      "en": "Come, let’s watch a movie!",
-      "context": "Suggesting an activity.",
-      "category": "plurals-classifiers"
+      "bn": "টেবিলে দুই বাটি স্যুপ আছে।",
+      "pronunciation": "ṭebile dui bati sjup achhe",
+      "en": "There are two bowls of soup on the table.",
+      "context": "container measure",
+      "category": "plurals-classifiers",
+      "words": [
+        {
+          "bn": "টেবিলে",
+          "pronunciation": "ṭebile",
+          "en": "on the table"
+        },
+        {
+          "bn": "দুই",
+          "pronunciation": "dui",
+          "en": "two"
+        },
+        {
+          "bn": "বাটি",
+          "pronunciation": "bati",
+          "en": "bowlful"
+        },
+        {
+          "bn": "স্যুপ",
+          "pronunciation": "sjup",
+          "en": "soup"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is / has"
+        }
+      ]
     },
     {
-      "bn": "দিন গুলো চলে যায়",
-      "pronunciation": "Din gulo chole jae",
-      "en": "Days pass by",
-      "context": "Philosophical observation on time.",
-      "category": "plurals-classifiers"
+      "bn": "চায়ে এক চামচ চিনি দাও।",
+      "pronunciation": "chaj ek chamoch chini dao",
+      "en": "Add one spoonful of sugar to the tea.",
+      "context": "spoon measure",
+      "category": "plurals-classifiers",
+      "words": [
+        {
+          "bn": "চায়ে",
+          "pronunciation": "chaj",
+          "en": "to the tea / in tea"
+        },
+        {
+          "bn": "এক",
+          "pronunciation": "ek",
+          "en": "one"
+        },
+        {
+          "bn": "চামচ",
+          "pronunciation": "chamoch",
+          "en": "spoon"
+        },
+        {
+          "bn": "চিনি",
+          "pronunciation": "chini",
+          "en": "sugar"
+        },
+        {
+          "bn": "দাও",
+          "pronunciation": "dao",
+          "en": "give / please give (familiar)"
+        }
+      ]
     },
     {
-      "bn": "নিজের মনে রাখো",
-      "pronunciation": "Nijer mone rakho",
-      "en": "Keep in your mind",
-      "context": "Telling someone to remember something privately.",
-      "category": "plurals-classifiers"
+      "bn": "আমি দুবার সেখানে গিয়েছি।",
+      "pronunciation": "ami dubar shekhane gijochhi",
+      "en": "I have gone there twice.",
+      "context": "time classifier",
+      "category": "plurals-classifiers",
+      "words": [
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "দুবার",
+          "pronunciation": "dubar",
+          "en": "twice"
+        },
+        {
+          "bn": "সেখানে",
+          "pronunciation": "shekhane",
+          "en": "there"
+        },
+        {
+          "bn": "গিয়েছি",
+          "pronunciation": "gijochhi",
+          "en": "have gone"
+        }
+      ]
+    },
+    {
+      "bn": "এটাই আমার প্রথমবার।",
+      "pronunciation": "etai amar prothombar",
+      "en": "This is my first time.",
+      "context": "time classifier",
+      "category": "plurals-classifiers",
+      "words": [
+        {
+          "bn": "এটাই",
+          "pronunciation": "etai",
+          "en": "this is"
+        },
+        {
+          "bn": "আমার",
+          "pronunciation": "amar",
+          "en": "my"
+        },
+        {
+          "bn": "প্রথমবার",
+          "pronunciation": "prothombar",
+          "en": "the first time"
+        }
+      ]
+    },
+    {
+      "bn": "সব বই পড়ো।",
+      "pronunciation": "shob boi poro",
+      "en": "Read all the books.",
+      "context": "collective word",
+      "category": "plurals-classifiers",
+      "words": [
+        {
+          "bn": "সব",
+          "pronunciation": "shob",
+          "en": "Everything"
+        },
+        {
+          "bn": "বই",
+          "pronunciation": "boi",
+          "en": "book"
+        },
+        {
+          "bn": "পড়ো",
+          "pronunciation": "poro",
+          "en": "read"
+        }
+      ]
+    },
+    {
+      "bn": "প্রতিটি প্রশ্নের উত্তর দাও।",
+      "pronunciation": "protiti proshner uttor dao",
+      "en": "Answer every question.",
+      "context": "collective word",
+      "category": "plurals-classifiers",
+      "words": [
+        {
+          "bn": "প্রতিটি",
+          "pronunciation": "protiti",
+          "en": "each"
+        },
+        {
+          "bn": "প্রশ্নের",
+          "pronunciation": "proshner",
+          "en": "of the question"
+        },
+        {
+          "bn": "উত্তর",
+          "pronunciation": "uttor",
+          "en": "Answer / North / answer"
+        },
+        {
+          "bn": "দাও",
+          "pronunciation": "dao",
+          "en": "give / please give (familiar)"
+        }
+      ]
+    },
+    {
+      "bn": "প্রত্যেকে একটি কলম পেয়েছে।",
+      "pronunciation": "protjeke ekti kolom peyeche",
+      "en": "Each person received a pen.",
+      "context": "collective word",
+      "category": "plurals-classifiers",
+      "words": [
+        {
+          "bn": "প্রত্যেকে",
+          "pronunciation": "protjeke",
+          "en": "each person"
+        },
+        {
+          "bn": "একটি",
+          "pronunciation": "ekti",
+          "en": "one / a"
+        },
+        {
+          "bn": "কলম",
+          "pronunciation": "kolom",
+          "en": "pen"
+        },
+        {
+          "bn": "পেয়েছে",
+          "pronunciation": "peyeche",
+          "en": "received / has received"
+        }
+      ]
+    },
+    {
+      "bn": "উভয় ছাত্রই উত্তীর্ণ হয়েছে।",
+      "pronunciation": "ubhoj chhatroi uttirn hoyechhe",
+      "en": "Both students passed.",
+      "context": "collective word",
+      "category": "plurals-classifiers",
+      "words": [
+        {
+          "bn": "উভয়",
+          "pronunciation": "ubhoj",
+          "en": "both"
+        },
+        {
+          "bn": "ছাত্রই",
+          "pronunciation": "chhatroi",
+          "en": "both students / the students"
+        },
+        {
+          "bn": "উত্তীর্ণ",
+          "pronunciation": "uttirn",
+          "en": "passed"
+        },
+        {
+          "bn": "হয়েছে",
+          "pronunciation": "hoyechhe",
+          "en": "has been"
+        }
+      ]
+    },
+    {
+      "bn": "সকল শিক্ষার্থী উপস্থিত।",
+      "pronunciation": "sokol shikkharthi uposthit",
+      "en": "All students are present.",
+      "context": "formal collective",
+      "category": "plurals-classifiers",
+      "words": [
+        {
+          "bn": "সকল",
+          "pronunciation": "sokol",
+          "en": "all"
+        },
+        {
+          "bn": "শিক্ষার্থী",
+          "pronunciation": "shikkharthi",
+          "en": "student"
+        },
+        {
+          "bn": "উপস্থিত",
+          "pronunciation": "uposthit",
+          "en": "present"
+        }
+      ]
+    },
+    {
+      "bn": "প্রত্যেকটি উত্তর সঠিক।",
+      "pronunciation": "protjekoti uttor shothik",
+      "en": "Each answer is correct.",
+      "context": "distributive collective",
+      "category": "plurals-classifiers",
+      "words": [
+        {
+          "bn": "প্রত্যেকটি",
+          "pronunciation": "protjekoti",
+          "en": "each one"
+        },
+        {
+          "bn": "উত্তর",
+          "pronunciation": "uttor",
+          "en": "Answer / North / answer"
+        },
+        {
+          "bn": "সঠিক",
+          "pronunciation": "shothik",
+          "en": "correct"
+        }
+      ]
+    },
+    {
+      "bn": "দশটি প্রশ্নের মধ্যে পাঁচটি কঠিন।",
+      "pronunciation": "doshoti proshner moddhe panchti kothin",
+      "en": "Five out of ten questions are difficult.",
+      "context": "formal counting",
+      "category": "plurals-classifiers",
+      "words": [
+        {
+          "bn": "দশটি",
+          "pronunciation": "doshoti",
+          "en": "ten (formal)"
+        },
+        {
+          "bn": "প্রশ্নের",
+          "pronunciation": "proshner",
+          "en": "of the question"
+        },
+        {
+          "bn": "মধ্যে",
+          "pronunciation": "moddhe",
+          "en": "inside / among"
+        },
+        {
+          "bn": "পাঁচটি",
+          "pronunciation": "panchti",
+          "en": "five"
+        },
+        {
+          "bn": "কঠিন",
+          "pronunciation": "kothin",
+          "en": "difficult / hard"
+        }
+      ]
     }
   ],
   "practice": [
@@ -288,6 +1502,7 @@
   ],
   "notes": [
     "Use জন for people and টা or টি for many general objects.",
-    "A bare noun may be singular or plural when context is clear."
+    "Use রা mainly for human plural subjects and গুলো for most non-human plurals.",
+    "After a number and classifier, the noun normally stays unmarked: তিনটি বই, not তিনটি বইগুলো."
   ]
 }

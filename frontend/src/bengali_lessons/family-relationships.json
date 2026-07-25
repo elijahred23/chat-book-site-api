@@ -1,704 +1,1538 @@
 {
   "id": "family-relationships",
   "title": "Family and Relationships",
-  "summary": "Talk about relatives, friends, and family relationships.",
+  "summary": "Talk precisely about immediate and extended family, relatives on each side, marriage, in-laws, friendships, family roles, and relationships.",
   "level": "beginner",
   "topic": "Family and Relationships",
   "focus": "vocabulary",
   "vocab": [
     {
-      "bn": "মা",
-      "pronunciation": "ma",
-      "en": "mother",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "বাবা",
-      "pronunciation": "baba",
-      "en": "father",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "ভাই",
-      "pronunciation": "bhai",
-      "en": "brother",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "বোন",
-      "pronunciation": "bon",
-      "en": "sister",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "স্বামী",
-      "pronunciation": "shami",
-      "en": "husband",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "স্ত্রী",
-      "pronunciation": "stri",
-      "en": "wife",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "সন্তান",
-      "pronunciation": "shontan",
-      "en": "child",
-      "category": "family-relationships"
+      "bn": "পরিবার",
+      "pronunciation": "poribar",
+      "en": "family",
+      "category": "immediate-family",
+      "sourcePhrase": "আমার একটি বড় পরিবার আছে।"
     },
     {
       "bn": "আত্মীয়",
       "pronunciation": "attiyo",
       "en": "relative",
-      "category": "family-relationships"
+      "category": "immediate-family",
+      "sourcePhrase": "আত্মীয়"
+    },
+    {
+      "bn": "সদস্য",
+      "pronunciation": "shôdôshsho",
+      "en": "member",
+      "category": "immediate-family",
+      "sourcePhrase": "সদস্য"
+    },
+    {
+      "bn": "বাবা",
+      "pronunciation": "baba",
+      "en": "father",
+      "category": "immediate-family",
+      "sourcePhrase": "আমার বাবা একজন শিক্ষক।"
+    },
+    {
+      "bn": "পিতা",
+      "pronunciation": "pita",
+      "en": "father (formal)",
+      "category": "immediate-family",
+      "sourcePhrase": "পিতা"
+    },
+    {
+      "bn": "মা",
+      "pronunciation": "ma",
+      "en": "mother",
+      "category": "immediate-family",
+      "sourcePhrase": "আমার একটি বড় পরিবার আছে।"
+    },
+    {
+      "bn": "মাতা",
+      "pronunciation": "mata",
+      "en": "mother (formal)",
+      "category": "immediate-family",
+      "sourcePhrase": "মাতা"
+    },
+    {
+      "bn": "সন্তান",
+      "pronunciation": "shontan",
+      "en": "child",
+      "category": "immediate-family",
+      "sourcePhrase": "সন্তান"
+    },
+    {
+      "bn": "ছেলে",
+      "pronunciation": "chele",
+      "en": "son / boy",
+      "category": "immediate-family",
+      "sourcePhrase": "আমি বড় ছেলে।"
+    },
+    {
+      "bn": "মেয়ে",
+      "pronunciation": "meye",
+      "en": "daughter / girl",
+      "category": "immediate-family",
+      "sourcePhrase": "আমি ছোট মেয়ে।"
+    },
+    {
+      "bn": "শিশু",
+      "pronunciation": "shishu",
+      "en": "child",
+      "category": "immediate-family",
+      "sourcePhrase": "শিশু"
+    },
+    {
+      "bn": "নবজাতক",
+      "pronunciation": "nôbojatok",
+      "en": "newborn baby",
+      "category": "immediate-family",
+      "sourcePhrase": "নবজাতক"
+    },
+    {
+      "bn": "বাচ্চা",
+      "pronunciation": "baccha",
+      "en": "child / kid",
+      "category": "immediate-family",
+      "sourcePhrase": "বাচ্চা"
+    },
+    {
+      "bn": "ভাই",
+      "pronunciation": "bhai",
+      "en": "brother",
+      "category": "immediate-family",
+      "sourcePhrase": "আমার দুই ভাই আছে।"
+    },
+    {
+      "bn": "বোন",
+      "pronunciation": "bon",
+      "en": "sister",
+      "category": "immediate-family",
+      "sourcePhrase": "আমার এক বোন আছে।"
+    },
+    {
+      "bn": "যমজ",
+      "pronunciation": "jômôj",
+      "en": "twin",
+      "category": "immediate-family",
+      "sourcePhrase": "যমজ"
+    },
+    {
+      "bn": "বড় ভাই",
+      "pronunciation": "bôṛo bhai",
+      "en": "older brother",
+      "category": "immediate-family",
+      "sourcePhrase": "বড় ভাই"
+    },
+    {
+      "bn": "ছোট ভাই",
+      "pronunciation": "chhoto bhai",
+      "en": "younger brother",
+      "category": "immediate-family",
+      "sourcePhrase": "ছোট ভাই"
+    },
+    {
+      "bn": "বড় বোন",
+      "pronunciation": "bôṛo bon",
+      "en": "older sister",
+      "category": "immediate-family",
+      "sourcePhrase": "বড় বোন"
+    },
+    {
+      "bn": "ছোট বোন",
+      "pronunciation": "chhoto bon",
+      "en": "younger sister",
+      "category": "immediate-family",
+      "sourcePhrase": "ছোট বোন"
+    },
+    {
+      "bn": "সহোদর",
+      "pronunciation": "shôhodor",
+      "en": "sibling",
+      "category": "immediate-family",
+      "sourcePhrase": "সহোদর"
+    },
+    {
+      "bn": "অভিভাবক",
+      "pronunciation": "obhibhabok",
+      "en": "parent / guardian",
+      "category": "parents",
+      "sourcePhrase": "অভিভাবক"
+    },
+    {
+      "bn": "পালক পিতা",
+      "pronunciation": "palok pita",
+      "en": "adoptive father",
+      "category": "parents",
+      "sourcePhrase": "পালক পিতা"
+    },
+    {
+      "bn": "পালক মাতা",
+      "pronunciation": "palok mata",
+      "en": "adoptive mother",
+      "category": "parents",
+      "sourcePhrase": "পালক মাতা"
+    },
+    {
+      "bn": "সৎ বাবা",
+      "pronunciation": "shot baba",
+      "en": "stepfather",
+      "category": "parents",
+      "sourcePhrase": "সৎ বাবা"
+    },
+    {
+      "bn": "সৎ মা",
+      "pronunciation": "shot ma",
+      "en": "stepmother",
+      "category": "parents",
+      "sourcePhrase": "সৎ মা"
+    },
+    {
+      "bn": "একক অভিভাবক",
+      "pronunciation": "ekok obhibhabok",
+      "en": "single parent",
+      "category": "parents",
+      "sourcePhrase": "একক অভিভাবক"
+    },
+    {
+      "bn": "শিশুপুত্র",
+      "pronunciation": "shishuputr",
+      "en": "baby boy",
+      "category": "children",
+      "sourcePhrase": "শিশুপুত্র"
+    },
+    {
+      "bn": "শিশুকন্যা",
+      "pronunciation": "shishukonja",
+      "en": "baby girl",
+      "category": "children",
+      "sourcePhrase": "শিশুকন্যা"
+    },
+    {
+      "bn": "পালক সন্তান",
+      "pronunciation": "palok shontan",
+      "en": "adopted child",
+      "category": "children",
+      "sourcePhrase": "পালক সন্তান"
+    },
+    {
+      "bn": "সৎ ছেলে",
+      "pronunciation": "shot chele",
+      "en": "stepson",
+      "category": "children",
+      "sourcePhrase": "সৎ ছেলে"
+    },
+    {
+      "bn": "সৎ মেয়ে",
+      "pronunciation": "shot meye",
+      "en": "stepdaughter",
+      "category": "children",
+      "sourcePhrase": "সৎ মেয়ে"
+    },
+    {
+      "bn": "অনাথ",
+      "pronunciation": "onath",
+      "en": "orphan",
+      "category": "children",
+      "sourcePhrase": "অনাথ"
+    },
+    {
+      "bn": "দাদা",
+      "pronunciation": "dada",
+      "en": "paternal grandfather",
+      "category": "grandparents",
+      "sourcePhrase": "আমার দাদা-দাদি গ্রামে থাকেন।"
+    },
+    {
+      "bn": "দাদু",
+      "pronunciation": "Dadu",
+      "en": "grandfather (common)",
+      "category": "grandparents",
+      "sourcePhrase": "দাদু"
+    },
+    {
+      "bn": "দাদি",
+      "pronunciation": "dadi",
+      "en": "paternal grandmother",
+      "category": "grandparents",
+      "sourcePhrase": "আমার দাদা-দাদি গ্রামে থাকেন।"
+    },
+    {
+      "bn": "দিদা",
+      "pronunciation": "dida",
+      "en": "maternal grandmother",
+      "category": "grandparents",
+      "sourcePhrase": "দিদা"
+    },
+    {
+      "bn": "নানা",
+      "pronunciation": "nana",
+      "en": "maternal grandfather",
+      "category": "grandparents",
+      "sourcePhrase": "নানা"
+    },
+    {
+      "bn": "নানু",
+      "pronunciation": "nanu",
+      "en": "grandfather (maternal / affectionate)",
+      "category": "grandparents",
+      "sourcePhrase": "নানু"
+    },
+    {
+      "bn": "নানি",
+      "pronunciation": "nani",
+      "en": "maternal grandmother",
+      "category": "grandparents",
+      "sourcePhrase": "নানি"
+    },
+    {
+      "bn": "প্রপিতামহ",
+      "pronunciation": "propitamoh",
+      "en": "great-grandfather",
+      "category": "grandparents",
+      "sourcePhrase": "প্রপিতামহ"
+    },
+    {
+      "bn": "প্রমাতামহ",
+      "pronunciation": "promatamoh",
+      "en": "maternal great-grandfather",
+      "category": "grandparents",
+      "sourcePhrase": "প্রমাতামহ"
+    },
+    {
+      "bn": "প্রপিতামহী",
+      "pronunciation": "propitamohi",
+      "en": "great-grandmother",
+      "category": "grandparents",
+      "sourcePhrase": "প্রপিতামহী"
+    },
+    {
+      "bn": "প্রমাতামহী",
+      "pronunciation": "promatamohi",
+      "en": "maternal great-grandmother",
+      "category": "grandparents",
+      "sourcePhrase": "প্রমাতামহী"
+    },
+    {
+      "bn": "নাতি",
+      "pronunciation": "nati",
+      "en": "grandson (through son)",
+      "category": "grandchildren",
+      "sourcePhrase": "নাতি"
+    },
+    {
+      "bn": "নাতনি",
+      "pronunciation": "natoni",
+      "en": "granddaughter (through son)",
+      "category": "grandchildren",
+      "sourcePhrase": "নাতনি"
+    },
+    {
+      "bn": "দৌহিত্র",
+      "pronunciation": "douhitr",
+      "en": "grandson (through daughter)",
+      "category": "grandchildren",
+      "sourcePhrase": "দৌহিত্র"
+    },
+    {
+      "bn": "দৌহিত্রী",
+      "pronunciation": "douhitri",
+      "en": "granddaughter (through daughter)",
+      "category": "grandchildren",
+      "sourcePhrase": "দৌহিত্রী"
+    },
+    {
+      "bn": "নাতি-নাতনি",
+      "pronunciation": "nati natoni",
+      "en": "grandchildren",
+      "category": "grandchildren",
+      "sourcePhrase": "নাতি-নাতনি"
+    },
+    {
+      "bn": "চাচা",
+      "pronunciation": "chacha",
+      "en": "father's younger brother",
+      "category": "father-s-side-relatives",
+      "sourcePhrase": "চাচা"
+    },
+    {
+      "bn": "কাকা",
+      "pronunciation": "Kaka",
+      "en": "father's younger brother (regional/common)",
+      "category": "father-s-side-relatives",
+      "sourcePhrase": "কাকা"
+    },
+    {
+      "bn": "জ্যাঠা",
+      "pronunciation": "jjatha",
+      "en": "father's older brother",
+      "category": "father-s-side-relatives",
+      "sourcePhrase": "জ্যাঠা"
+    },
+    {
+      "bn": "চাচি",
+      "pronunciation": "chachi",
+      "en": "wife of father's younger brother",
+      "category": "father-s-side-relatives",
+      "sourcePhrase": "চাচি"
+    },
+    {
+      "bn": "কাকিমা",
+      "pronunciation": "kakima",
+      "en": "wife of father's younger brother",
+      "category": "father-s-side-relatives",
+      "sourcePhrase": "কাকিমা"
+    },
+    {
+      "bn": "জ্যাঠাইমা",
+      "pronunciation": "jjathaima",
+      "en": "wife of father's older brother",
+      "category": "father-s-side-relatives",
+      "sourcePhrase": "জ্যাঠাইমা"
+    },
+    {
+      "bn": "ফুফু",
+      "pronunciation": "phuphu",
+      "en": "father's sister",
+      "category": "father-s-side-relatives",
+      "sourcePhrase": "ফুফু"
+    },
+    {
+      "bn": "পিসি",
+      "pronunciation": "pisi",
+      "en": "father's sister (common in West Bengal)",
+      "category": "father-s-side-relatives",
+      "sourcePhrase": "পিসি"
+    },
+    {
+      "bn": "ফুফা",
+      "pronunciation": "phupha",
+      "en": "husband of father's sister",
+      "category": "father-s-side-relatives",
+      "sourcePhrase": "ফুফা"
+    },
+    {
+      "bn": "পিসেমশাই",
+      "pronunciation": "pisemoshai",
+      "en": "husband of father's sister",
+      "category": "father-s-side-relatives",
+      "sourcePhrase": "পিসেমশাই"
+    },
+    {
+      "bn": "চাচাতো ভাই",
+      "pronunciation": "chachat bhai",
+      "en": "paternal cousin (uncle's son)",
+      "category": "father-s-side-relatives",
+      "sourcePhrase": "চাচাতো ভাই"
+    },
+    {
+      "bn": "চাচাতো বোন",
+      "pronunciation": "chachat bon",
+      "en": "paternal cousin (uncle's daughter)",
+      "category": "father-s-side-relatives",
+      "sourcePhrase": "চাচাতো বোন"
+    },
+    {
+      "bn": "জ্যাঠাতো ভাই",
+      "pronunciation": "jjathat bhai",
+      "en": "older uncle's son",
+      "category": "father-s-side-relatives",
+      "sourcePhrase": "জ্যাঠাতো ভাই"
+    },
+    {
+      "bn": "জ্যাঠাতো বোন",
+      "pronunciation": "jjathat bon",
+      "en": "older uncle's daughter",
+      "category": "father-s-side-relatives",
+      "sourcePhrase": "জ্যাঠাতো বোন"
+    },
+    {
+      "bn": "ফুফাতো ভাই",
+      "pronunciation": "phuphat bhai",
+      "en": "aunt's son",
+      "category": "father-s-side-relatives",
+      "sourcePhrase": "ফুফাতো ভাই"
+    },
+    {
+      "bn": "ফুফাতো বোন",
+      "pronunciation": "phuphat bon",
+      "en": "aunt's daughter",
+      "category": "father-s-side-relatives",
+      "sourcePhrase": "ফুফাতো বোন"
+    },
+    {
+      "bn": "মামা",
+      "pronunciation": "mama",
+      "en": "mother's brother",
+      "category": "mother-s-side-relatives",
+      "sourcePhrase": "মামা"
+    },
+    {
+      "bn": "মামী",
+      "pronunciation": "mami",
+      "en": "wife of mother's brother",
+      "category": "mother-s-side-relatives",
+      "sourcePhrase": "মামী"
+    },
+    {
+      "bn": "খালা",
+      "pronunciation": "khala",
+      "en": "mother's sister",
+      "category": "mother-s-side-relatives",
+      "sourcePhrase": "খালা"
+    },
+    {
+      "bn": "খালু",
+      "pronunciation": "khalu",
+      "en": "husband of mother's sister",
+      "category": "mother-s-side-relatives",
+      "sourcePhrase": "খালু"
+    },
+    {
+      "bn": "মামাতো ভাই",
+      "pronunciation": "mamat bhai",
+      "en": "maternal cousin (uncle's son)",
+      "category": "mother-s-side-relatives",
+      "sourcePhrase": "মামাতো ভাই"
+    },
+    {
+      "bn": "মামাতো বোন",
+      "pronunciation": "mamat bon",
+      "en": "maternal cousin (uncle's daughter)",
+      "category": "mother-s-side-relatives",
+      "sourcePhrase": "মামাতো বোন"
+    },
+    {
+      "bn": "খালাতো ভাই",
+      "pronunciation": "khalat bhai",
+      "en": "maternal aunt's son",
+      "category": "mother-s-side-relatives",
+      "sourcePhrase": "খালাতো ভাই"
+    },
+    {
+      "bn": "খালাতো বোন",
+      "pronunciation": "khalat bon",
+      "en": "maternal aunt's daughter",
+      "category": "mother-s-side-relatives",
+      "sourcePhrase": "খালাতো বোন"
+    },
+    {
+      "bn": "বিয়ে",
+      "pronunciation": "bij",
+      "en": "marriage",
+      "category": "marriage",
+      "sourcePhrase": "বিয়ে"
+    },
+    {
+      "bn": "বিবাহ",
+      "pronunciation": "bibah",
+      "en": "marriage (formal)",
+      "category": "marriage",
+      "sourcePhrase": "বিবাহ"
+    },
+    {
+      "bn": "স্বামী",
+      "pronunciation": "shami",
+      "en": "husband",
+      "category": "marriage",
+      "sourcePhrase": "স্বামী"
+    },
+    {
+      "bn": "স্ত্রী",
+      "pronunciation": "stri",
+      "en": "wife",
+      "category": "marriage",
+      "sourcePhrase": "স্ত্রী"
+    },
+    {
+      "bn": "জীবনসঙ্গী",
+      "pronunciation": "jibonosonggi",
+      "en": "spouse",
+      "category": "marriage",
+      "sourcePhrase": "জীবনসঙ্গী"
+    },
+    {
+      "bn": "বর",
+      "pronunciation": "bor",
+      "en": "groom",
+      "category": "marriage",
+      "sourcePhrase": "বর"
+    },
+    {
+      "bn": "কনে",
+      "pronunciation": "kone",
+      "en": "bride",
+      "category": "marriage",
+      "sourcePhrase": "কনে"
+    },
+    {
+      "bn": "নবদম্পতি",
+      "pronunciation": "nobodompoti",
+      "en": "newly married couple",
+      "category": "marriage",
+      "sourcePhrase": "নবদম্পতি"
+    },
+    {
+      "bn": "বাগদান",
+      "pronunciation": "bagodan",
+      "en": "engagement",
+      "category": "marriage",
+      "sourcePhrase": "বাগদান"
+    },
+    {
+      "bn": "বাগদত্ত",
+      "pronunciation": "bagodott",
+      "en": "fiancé",
+      "category": "marriage",
+      "sourcePhrase": "বাগদত্ত"
+    },
+    {
+      "bn": "বাগদত্তা",
+      "pronunciation": "bagodotta",
+      "en": "fiancée",
+      "category": "marriage",
+      "sourcePhrase": "বাগদত্তা"
+    },
+    {
+      "bn": "বিবাহিত",
+      "pronunciation": "bibahit",
+      "en": "married",
+      "category": "marriage",
+      "sourcePhrase": "বিবাহিত"
+    },
+    {
+      "bn": "অবিবাহিত",
+      "pronunciation": "obibahit",
+      "en": "unmarried",
+      "category": "marriage",
+      "sourcePhrase": "অবিবাহিত"
+    },
+    {
+      "bn": "তালাকপ্রাপ্ত",
+      "pronunciation": "talakoprapt",
+      "en": "divorced",
+      "category": "marriage",
+      "sourcePhrase": "তালাকপ্রাপ্ত"
+    },
+    {
+      "bn": "বিধবা",
+      "pronunciation": "bidhoba",
+      "en": "widow",
+      "category": "marriage",
+      "sourcePhrase": "বিধবা"
+    },
+    {
+      "bn": "বিধুর",
+      "pronunciation": "bidhur",
+      "en": "widower",
+      "category": "marriage",
+      "sourcePhrase": "বিধুর"
+    },
+    {
+      "bn": "শ্বশুর",
+      "pronunciation": "shboshur",
+      "en": "father-in-law",
+      "category": "in-laws",
+      "sourcePhrase": "শ্বশুর"
+    },
+    {
+      "bn": "শাশুড়ি",
+      "pronunciation": "shashud",
+      "en": "mother-in-law",
+      "category": "in-laws",
+      "sourcePhrase": "শাশুড়ি"
+    },
+    {
+      "bn": "শ্বশুরবাড়ি",
+      "pronunciation": "shboshurobad",
+      "en": "in-laws' house",
+      "category": "in-laws",
+      "sourcePhrase": "শ্বশুরবাড়ি"
+    },
+    {
+      "bn": "জামাই",
+      "pronunciation": "jamai",
+      "en": "son-in-law",
+      "category": "in-laws",
+      "sourcePhrase": "জামাই"
+    },
+    {
+      "bn": "পুত্রবধূ",
+      "pronunciation": "putrobodhu",
+      "en": "daughter-in-law",
+      "category": "in-laws",
+      "sourcePhrase": "পুত্রবধূ"
+    },
+    {
+      "bn": "বউমা",
+      "pronunciation": "bouma",
+      "en": "daughter-in-law",
+      "category": "in-laws",
+      "sourcePhrase": "বউমা"
+    },
+    {
+      "bn": "ননদ",
+      "pronunciation": "nonod",
+      "en": "husband's sister",
+      "category": "in-laws",
+      "sourcePhrase": "ননদ"
+    },
+    {
+      "bn": "দেবর",
+      "pronunciation": "debor",
+      "en": "husband's younger brother",
+      "category": "in-laws",
+      "sourcePhrase": "দেবর"
+    },
+    {
+      "bn": "ভাশুর",
+      "pronunciation": "bhashur",
+      "en": "husband's older brother",
+      "category": "in-laws",
+      "sourcePhrase": "ভাশুর"
+    },
+    {
+      "bn": "জা",
+      "pronunciation": "ja",
+      "en": "husband's elder brother's wife",
+      "category": "in-laws",
+      "sourcePhrase": "জা"
+    },
+    {
+      "bn": "ভাবি",
+      "pronunciation": "bhabi",
+      "en": "elder brother's wife / sister-in-law",
+      "category": "in-laws",
+      "sourcePhrase": "ভাবি"
+    },
+    {
+      "bn": "দুলাভাই",
+      "pronunciation": "dulabhai",
+      "en": "sister's husband",
+      "category": "in-laws",
+      "sourcePhrase": "দুলাভাই"
+    },
+    {
+      "bn": "ভগ্নিপতি",
+      "pronunciation": "bhognipoti",
+      "en": "brother-in-law (formal)",
+      "category": "in-laws",
+      "sourcePhrase": "ভগ্নিপতি"
+    },
+    {
+      "bn": "শ্যালক",
+      "pronunciation": "shjalok",
+      "en": "wife's brother",
+      "category": "in-laws",
+      "sourcePhrase": "শ্যালক"
+    },
+    {
+      "bn": "শ্যালিকা",
+      "pronunciation": "shjalika",
+      "en": "wife's sister",
+      "category": "in-laws",
+      "sourcePhrase": "শ্যালিকা"
+    },
+    {
+      "bn": "কাজিন",
+      "pronunciation": "kajin",
+      "en": "cousin (modern borrowing)",
+      "category": "cousins",
+      "sourcePhrase": "কাজিন"
+    },
+    {
+      "bn": "বন্ধু",
+      "pronunciation": "bondhu",
+      "en": "friend",
+      "category": "relationship-status",
+      "sourcePhrase": "বন্ধু"
+    },
+    {
+      "bn": "বান্ধবী",
+      "pronunciation": "bandhobi",
+      "en": "female friend",
+      "category": "relationship-status",
+      "sourcePhrase": "বান্ধবী"
+    },
+    {
+      "bn": "প্রেমিক",
+      "pronunciation": "premik",
+      "en": "boyfriend",
+      "category": "relationship-status",
+      "sourcePhrase": "প্রেমিক"
+    },
+    {
+      "bn": "প্রেমিকা",
+      "pronunciation": "premika",
+      "en": "girlfriend",
+      "category": "relationship-status",
+      "sourcePhrase": "প্রেমিকা"
+    },
+    {
+      "bn": "সঙ্গী",
+      "pronunciation": "songgi",
+      "en": "partner",
+      "category": "relationship-status",
+      "sourcePhrase": "সঙ্গী"
+    },
+    {
+      "bn": "সহকর্মী",
+      "pronunciation": "shohokormi",
+      "en": "coworker",
+      "category": "relationship-status",
+      "sourcePhrase": "সহকর্মী"
+    },
+    {
+      "bn": "প্রতিবেশী",
+      "pronunciation": "protibeshi",
+      "en": "neighbor",
+      "category": "relationship-status",
+      "sourcePhrase": "প্রতিবেশী"
+    },
+    {
+      "bn": "পরিচিত",
+      "pronunciation": "pôrichito",
+      "en": "acquaintance",
+      "category": "relationship-status",
+      "sourcePhrase": "পরিচিত"
+    },
+    {
+      "bn": "সহপাঠী",
+      "pronunciation": "sohopathi",
+      "en": "classmate",
+      "category": "relationship-status",
+      "sourcePhrase": "সহপাঠী"
+    },
+    {
+      "bn": "রুমমেট",
+      "pronunciation": "rumomet",
+      "en": "roommate",
+      "category": "relationship-status",
+      "sourcePhrase": "রুমমেট"
+    },
+    {
+      "bn": "পরিবারের প্রধান",
+      "pronunciation": "poribarer prodhan",
+      "en": "head of the family",
+      "category": "family-roles",
+      "sourcePhrase": "পরিবারের প্রধান"
+    },
+    {
+      "bn": "উপার্জনকারী",
+      "pronunciation": "uparjonokari",
+      "en": "breadwinner",
+      "category": "family-roles",
+      "sourcePhrase": "উপার্জনকারী"
+    },
+    {
+      "bn": "গৃহিণী",
+      "pronunciation": "grihini",
+      "en": "homemaker",
+      "category": "family-roles",
+      "sourcePhrase": "গৃহিণী"
+    },
+    {
+      "bn": "গৃহকর্তা",
+      "pronunciation": "grihokorta",
+      "en": "head of household",
+      "category": "family-roles",
+      "sourcePhrase": "গৃহকর্তা"
+    },
+    {
+      "bn": "উত্তরাধিকারী",
+      "pronunciation": "uttoradhikari",
+      "en": "heir",
+      "category": "family-roles",
+      "sourcePhrase": "উত্তরাধিকারী"
+    },
+    {
+      "bn": "উত্তরসূরি",
+      "pronunciation": "uttorosuri",
+      "en": "successor",
+      "category": "family-roles",
+      "sourcePhrase": "উত্তরসূরি"
+    },
+    {
+      "bn": "পরিচর্যাকারী",
+      "pronunciation": "porichorjakari",
+      "en": "caregiver",
+      "category": "family-roles",
+      "sourcePhrase": "পরিচর্যাকারী"
+    },
+    {
+      "bn": "আম্মু",
+      "pronunciation": "ammu",
+      "en": "mom",
+      "category": "affectionate-terms",
+      "sourcePhrase": "আম্মু"
+    },
+    {
+      "bn": "আব্বু",
+      "pronunciation": "abbu",
+      "en": "dad",
+      "category": "affectionate-terms",
+      "sourcePhrase": "আব্বু"
+    },
+    {
+      "bn": "আব্বা",
+      "pronunciation": "abba",
+      "en": "father",
+      "category": "affectionate-terms",
+      "sourcePhrase": "আব্বা"
+    },
+    {
+      "bn": "আম্মা",
+      "pronunciation": "amma",
+      "en": "mother",
+      "category": "affectionate-terms",
+      "sourcePhrase": "আম্মা"
+    },
+    {
+      "bn": "ভাইয়া",
+      "pronunciation": "bhaij",
+      "en": "older brother",
+      "category": "affectionate-terms",
+      "sourcePhrase": "ভাইয়া"
+    },
+    {
+      "bn": "আপু",
+      "pronunciation": "apu",
+      "en": "older sister",
+      "category": "affectionate-terms",
+      "sourcePhrase": "আপু"
+    },
+    {
+      "bn": "দাদা",
+      "pronunciation": "dada",
+      "en": "older brother / grandfather (depending on context)",
+      "category": "affectionate-terms",
+      "sourcePhrase": "আমার দাদা-দাদি গ্রামে থাকেন।"
+    },
+    {
+      "bn": "দিদি",
+      "pronunciation": "Didi",
+      "en": "older sister",
+      "category": "affectionate-terms",
+      "sourcePhrase": "দিদি"
+    },
+    {
+      "bn": "মামণি",
+      "pronunciation": "mamoni",
+      "en": "dear daughter",
+      "category": "affectionate-terms",
+      "sourcePhrase": "মামণি"
+    },
+    {
+      "bn": "সোনা",
+      "pronunciation": "shona",
+      "en": "darling",
+      "category": "affectionate-terms",
+      "sourcePhrase": "সোনা"
+    },
+    {
+      "bn": "বাবু",
+      "pronunciation": "babu",
+      "en": "little boy / dear",
+      "category": "affectionate-terms",
+      "sourcePhrase": "বাবু"
+    },
+    {
+      "bn": "রাজকুমার",
+      "pronunciation": "rajokumar",
+      "en": "prince",
+      "category": "affectionate-terms",
+      "sourcePhrase": "রাজকুমার"
+    },
+    {
+      "bn": "রাজকুমারী",
+      "pronunciation": "rajokumari",
+      "en": "princess",
+      "category": "affectionate-terms",
+      "sourcePhrase": "রাজকুমারী"
+    },
+    {
+      "bn": "জন্ম দেওয়া",
+      "pronunciation": "jonmo deowa",
+      "en": "to give birth",
+      "category": "family-verbs",
+      "sourcePhrase": "জন্ম দেওয়া"
+    },
+    {
+      "bn": "জন্ম নেওয়া",
+      "pronunciation": "jonmo neoya",
+      "en": "to be born",
+      "category": "family-verbs",
+      "sourcePhrase": "জন্ম নেওয়া"
+    },
+    {
+      "bn": "বড় হওয়া",
+      "pronunciation": "bôṛo howa",
+      "en": "to grow up",
+      "category": "family-verbs",
+      "sourcePhrase": "বড় হওয়া"
+    },
+    {
+      "bn": "বিয়ে করা",
+      "pronunciation": "bij kora",
+      "en": "to marry",
+      "category": "family-verbs",
+      "sourcePhrase": "বিয়ে করা"
+    },
+    {
+      "bn": "তালাক দেওয়া",
+      "pronunciation": "talak deowa",
+      "en": "to divorce",
+      "category": "family-verbs",
+      "sourcePhrase": "তালাক দেওয়া"
+    },
+    {
+      "bn": "লালন-পালন করা",
+      "pronunciation": "lalon palon kora",
+      "en": "to raise",
+      "category": "family-verbs",
+      "sourcePhrase": "লালন-পালন করা"
+    },
+    {
+      "bn": "দত্তক নেওয়া",
+      "pronunciation": "dottok neoya",
+      "en": "to adopt",
+      "category": "family-verbs",
+      "sourcePhrase": "দত্তক নেওয়া"
+    },
+    {
+      "bn": "যত্ন নেওয়া",
+      "pronunciation": "jotno neoya",
+      "en": "to take care of",
+      "category": "family-verbs",
+      "sourcePhrase": "যত্ন নেওয়া"
+    },
+    {
+      "bn": "ভালোবাসা",
+      "pronunciation": "Bhalobasha",
+      "en": "to love",
+      "category": "family-verbs",
+      "sourcePhrase": "ভালোবাসা"
+    },
+    {
+      "bn": "রক্ষা করা",
+      "pronunciation": "rokkha kora",
+      "en": "to protect",
+      "category": "family-verbs",
+      "sourcePhrase": "রক্ষা করা"
+    },
+    {
+      "bn": "সাহায্য করা",
+      "pronunciation": "shahajjo kora",
+      "en": "to help",
+      "category": "family-verbs",
+      "sourcePhrase": "সাহায্য করা"
+    },
+    {
+      "bn": "সমর্থন করা",
+      "pronunciation": "somorthon kora",
+      "en": "to support",
+      "category": "family-verbs",
+      "sourcePhrase": "সমর্থন করা"
+    },
+    {
+      "bn": "ক্ষমা করা",
+      "pronunciation": "khoma kora",
+      "en": "to forgive",
+      "category": "family-verbs",
+      "sourcePhrase": "ক্ষমা করা"
+    },
+    {
+      "bn": "উত্তরাধিকার পাওয়া",
+      "pronunciation": "uttoradhikar paowa",
+      "en": "to inherit",
+      "category": "family-verbs",
+      "sourcePhrase": "উত্তরাধিকার পাওয়া"
+    },
+    {
+      "bn": "দেখা করতে যাওয়া",
+      "pronunciation": "dekha korte jawa",
+      "en": "to visit",
+      "category": "family-verbs",
+      "sourcePhrase": "দেখা করতে যাওয়া"
+    },
+    {
+      "bn": "সুখী পরিবার",
+      "pronunciation": "shukhi poribar",
+      "en": "happy family",
+      "category": "describing-relationships",
+      "sourcePhrase": "সুখী পরিবার"
+    },
+    {
+      "bn": "বড় পরিবার",
+      "pronunciation": "bôṛo poribar",
+      "en": "large family",
+      "category": "describing-relationships",
+      "sourcePhrase": "আমার একটি বড় পরিবার আছে।"
+    },
+    {
+      "bn": "ছোট পরিবার",
+      "pronunciation": "chhoto poribar",
+      "en": "small family",
+      "category": "describing-relationships",
+      "sourcePhrase": "ছোট পরিবার"
+    },
+    {
+      "bn": "যৌথ পরিবার",
+      "pronunciation": "jouth poribar",
+      "en": "joint family",
+      "category": "describing-relationships",
+      "sourcePhrase": "যৌথ পরিবার"
+    },
+    {
+      "bn": "একান্নবর্তী পরিবার",
+      "pronunciation": "ekannoborti poribar",
+      "en": "extended family living together",
+      "category": "describing-relationships",
+      "sourcePhrase": "একান্নবর্তী পরিবার"
+    },
+    {
+      "bn": "একক পরিবার",
+      "pronunciation": "ekok poribar",
+      "en": "nuclear family",
+      "category": "describing-relationships",
+      "sourcePhrase": "একক পরিবার"
+    },
+    {
+      "bn": "ঘনিষ্ঠ আত্মীয়",
+      "pronunciation": "ghonishth attiyo",
+      "en": "close relative",
+      "category": "describing-relationships",
+      "sourcePhrase": "ঘনিষ্ঠ আত্মীয়"
+    },
+    {
+      "bn": "দূর সম্পর্কের আত্মীয়",
+      "pronunciation": "dur somporker attiyo",
+      "en": "distant relative",
+      "category": "describing-relationships",
+      "sourcePhrase": "দূর সম্পর্কের আত্মীয়"
+    },
+    {
+      "bn": "রক্তের সম্পর্ক",
+      "pronunciation": "rokter shomporko",
+      "en": "blood relation",
+      "category": "describing-relationships",
+      "sourcePhrase": "রক্তের সম্পর্ক"
+    },
+    {
+      "bn": "বৈবাহিক সম্পর্ক",
+      "pronunciation": "boibahik shomporko",
+      "en": "marital relationship",
+      "category": "describing-relationships",
+      "sourcePhrase": "বৈবাহিক সম্পর্ক"
+    },
+    {
+      "bn": "পারিবারিক বন্ধন",
+      "pronunciation": "paribarik bondhon",
+      "en": "family bond",
+      "category": "describing-relationships",
+      "sourcePhrase": "পারিবারিক বন্ধন"
+    },
+    {
+      "bn": "পারিবারিক ঐতিহ্য",
+      "pronunciation": "paribarik oitihj",
+      "en": "family tradition",
+      "category": "describing-relationships",
+      "sourcePhrase": "পারিবারিক ঐতিহ্য"
+    },
+    {
+      "bn": "পারিবারিক মূল্যবোধ",
+      "pronunciation": "paribarik muljobodh",
+      "en": "family values",
+      "category": "describing-relationships",
+      "sourcePhrase": "পারিবারিক মূল্যবোধ"
+    },
+    {
+      "bn": "পারিবারিক অনুষ্ঠান",
+      "pronunciation": "paribarik onushthan",
+      "en": "family gathering",
+      "category": "describing-relationships",
+      "sourcePhrase": "পারিবারিক অনুষ্ঠান"
     }
   ],
   "phrases": [
     {
-      "bn": "আমার পরিবার ঢাকায় থাকে।",
-      "pronunciation": "amar poribar Dhakay thake.",
-      "en": "My family lives in Dhaka.",
-      "context": "Describing family",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "তোমার কয়জন ভাইবোন আছে?",
-      "pronunciation": "tomar koyjon bhaibon achhe?",
-      "en": "How many siblings do you have?",
-      "context": "Asking about siblings",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "তিনি আমার বড় বোন।",
-      "pronunciation": "tini amar boro bon.",
-      "en": "She is my older sister.",
-      "context": "Identifying a relative respectfully",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "আমার একটা ছোট বোন আছে।",
-      "pronunciation": "Amar ekti chhoto bon ache.",
-      "en": "I have a younger sister.",
-      "context": "Sharing family information.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "বাবা কাজ করছেন।",
-      "pronunciation": "Baba kaj korchhen.",
-      "en": "Father is working.",
-      "context": "Stating a fact about a family member.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "মা রান্না করছেন।",
-      "pronunciation": "Maa ranna korchhen.",
-      "en": "Mother is cooking.",
-      "context": "Stating a fact about a family member.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "ইনি আমার মা।",
-      "pronunciation": "Ini amar Maa.",
-      "en": "This is my mother.",
-      "context": "Introducing a family member.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "মা বাড়িতে আসেন।",
-      "pronunciation": "Ma bari te ashen.",
-      "en": "Mother comes home.",
-      "context": "Describing arrival.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "বাবা সংবাদপত্র পড়েন।",
-      "pronunciation": "Baba newspaper poren.",
-      "en": "Father reads the newspaper.",
-      "context": "Describing a daily activity.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "ভাই, আমি স্কুলে যাই।",
-      "pronunciation": "Bhai, ami school-e jai.",
-      "en": "Brother, I am going to school.",
-      "context": "Talking to or addressing a brother.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "বোন গান গায়।",
-      "pronunciation": "Bon gaan gaay.",
-      "en": "Sister sings songs.",
-      "context": "Describing a sister’s activity.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "আমার মা খুব ভালো মানুষ।",
-      "pronunciation": "Amar Maa khub bhalo manush.",
-      "en": "My mother is a very good person.",
-      "context": "Describing a family member.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "আমার দাদা মোটা।",
-      "pronunciation": "Amar dada mota.",
-      "en": "My elder brother is fat.",
-      "context": "Describing physical appearance.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "ক্ষমা করুন",
-      "pronunciation": "Khama korun",
-      "en": "Excuse me / Sorry",
-      "context": "Apologizing or asking for attention.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "আমার নাম...",
-      "pronunciation": "Amar naam...",
-      "en": "My name is...",
-      "context": "Introducing yourself.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "আমার বাড়ি...",
-      "pronunciation": "Amar bari...",
-      "en": "My house is...",
-      "context": "Describing your home location.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "আমার কাছে এসো",
-      "pronunciation": "Amar kache esho",
-      "en": "Come to me",
-      "context": "Calling someone near.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "এ আমার বন্ধু!",
-      "pronunciation": "E' amar bondhu",
-      "en": "This is my friend!",
-      "context": "Introducing a friend.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "এইটা আমার প্রিয় গান",
-      "pronunciation": "Eita amar priyo gaan",
-      "en": "This is my favorite song.",
-      "context": "Sharing a preference.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "আমার সাথে আসুন",
-      "pronunciation": "Amar shathe aashun",
-      "en": "Come with me.",
-      "context": "Requesting someone to follow you.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "এইটা আমার পাশের বাড়ি",
-      "pronunciation": "Eita amar pasher bari",
-      "en": "This is my neighbor's house.",
-      "context": "Pointing out a location.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "আমার সাথে আসবেন না!",
-      "pronunciation": "Amar shathe ashben na!",
-      "en": "Don’t come with me!",
-      "context": "Forbidding someone from following.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "আমাদের সাথী থাকো",
-      "pronunciation": "Amader sathi thako",
-      "en": "Stay with us",
-      "context": "Requesting company.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "আমি তোমাকে ভালোবাসি!",
-      "pronunciation": "Ami tomake bhalobashi!",
-      "en": "I love you!",
-      "context": "Expressing love.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "আমি তোমার বন্ধু হতে চাই!",
-      "pronunciation": "Ami tomar bondhu hote chai!",
-      "en": "I want to be your friend!",
-      "context": "Expressing desire for friendship.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "আমি তোমার সাথে আসতে চাই!",
-      "pronunciation": "Ami tomar shathe ashte chai!",
-      "en": "I want to come with you!",
-      "context": "Expressing desire to join someone.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "এইটা আমার প্রিয় বই",
-      "pronunciation": "Eita amar priyo boi",
-      "en": "This is my favorite book",
-      "context": "Sharing a favorite item.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "তোমার জন্য আমি চিন্তা করি!",
-      "pronunciation": "Tomar jonno ami chinta kori!",
-      "en": "I think about you!",
-      "context": "Expressing concern or affection.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "তোমার সাথে কথা বলতে ভালো লাগে",
-      "pronunciation": "Tomar shathe kotha bolte bhalo lage",
-      "en": "I like talking to you",
-      "context": "Expressing enjoyment of conversation.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "তুমি কি আমার সাথে আসবে?",
-      "pronunciation": "Tumi ki amar shathe asbe?",
-      "en": "Will you come with me?",
-      "context": "Asking for company informally.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "নদীতে মাছ ধরতে মজা লাগে।",
-      "pronunciation": "Nodi te machh dhorte moja lage.",
-      "en": "Catching fish in the river is fun.",
-      "context": "Expressing enjoyment of an activity.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "আপনি কি আমার দিকে তাকিয়েছেন?",
-      "pronunciation": "Aapni ki amar dike takiyechhen?",
-      "en": "Did you look at me?",
-      "context": "Asking about a specific action directed toward the speaker.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "আপনি কি আমাকে দেখেছেন?",
-      "pronunciation": "Aapni ki amake dekhechhen?",
-      "en": "Did you see me?",
-      "context": "Asking about a past encounter.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "সে আমার পাশে বসেছে।",
-      "pronunciation": "She amar pashe bosheche.",
-      "en": "He sat beside me.",
-      "context": "Describing a past action.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "সে আমার ওপর হাসছিল।",
-      "pronunciation": "Shey amar upor hashchhilo.",
-      "en": "He was laughing at me.",
-      "context": "Describing past behavior.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "আমার হাত ধরো।",
-      "pronunciation": "Amar haat dhoro.",
-      "en": "Hold my hand.",
-      "context": "Simple request for physical contact/help.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "আমার গাড়ি নেই।",
-      "pronunciation": "Amar gari nei.",
-      "en": "I don't have a car.",
-      "context": "Stating lack of something.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "আমার একটা প্রশ্ন আছে।",
-      "pronunciation": "Amar ekti proshno ache.",
-      "en": "I have a question.",
-      "context": "Starting an inquiry.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "এই গাছটা আমার পছন্দ।",
-      "pronunciation": "Ei gachh ta amar pochhondo.",
-      "en": "I like this tree.",
-      "context": "Expressing preference.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "আমি তোমাকে ভালোবাসি।",
-      "pronunciation": "Ami tomake bhalobashi.",
-      "en": "I love you.",
-      "context": "Expressing affection.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "আমার আপনার কাছে একটা সাহায্য চাই।",
-      "pronunciation": "Amar Aapnar kache ekta sahajyo chai.",
-      "en": "I need some help from you.",
-      "context": "Requesting assistance politely.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "আমি তোমাকে দেখেছি।",
-      "pronunciation": "Ami tomake dekhechi.",
-      "en": "I saw you.",
-      "context": "Recognizing someone.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "আমি তোমাকে সাহায্য করতে চাই।",
-      "pronunciation": "Ami tomake shahajjo korte chai.",
-      "en": "I want to help you.",
-      "context": "Offering assistance.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "আমি তোমাকে কিছু বলতে চাই।",
-      "pronunciation": "Ami tomake kichu bolte chai.",
-      "en": "I want to tell you something.",
-      "context": "Preparing to share information.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "আমার চোখ ব্যথা করছে।",
-      "pronunciation": "Amar chokh byatha korchhe.",
-      "en": "My eyes are hurting.",
-      "context": "Expressing physical discomfort.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "আমার চোখে ঘুম।",
-      "pronunciation": "Amar chokhe ghoom.",
-      "en": "My eyes are sleepy.",
-      "context": "Expressing tiredness.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "আমার বন্ধুরা খুব ভালো।",
-      "pronunciation": "Amar bondhura khub bhalo.",
-      "en": "My friends are very good.",
-      "context": "Sharing personal information.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "আমার বাড়ি ঢাকায়।",
-      "pronunciation": "Amar bari Dhakay.",
-      "en": "My house is in Dhaka.",
-      "context": "Giving location info.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "আমার পেট খুব ব্যথা করছে।",
-      "pronunciation": "Amar pet khub byatha korchhe.",
-      "en": "My stomach is hurting very much.",
-      "context": "Expressing physical pain.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "আমার ছাতা হারিয়ে গেছে।",
-      "pronunciation": "Amar chhata hariye geche.",
-      "en": "My umbrella is lost.",
-      "context": "Sharing a loss.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "আমার সঙ্গে কেউ আসেনি।",
-      "pronunciation": "Amar shonge keu aseni.",
-      "en": "No one came with me.",
-      "context": "Clarifying arrival status.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "আমার চোখে জল এসেছে।",
-      "pronunciation": "Amar chokhe jol esheche.",
-      "en": "Tears came to my eyes.",
-      "context": "Expressing emotion/reaction.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "আমাদের বাড়িতে পাখির বাসা আছে।",
-      "pronunciation": "Amader bari te pakhir basa ache.",
-      "en": "There is a bird's nest in our house.",
-      "context": "Fact about home.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "আমার বাড়ির পাশে একটা নদী আছে।",
-      "pronunciation": "Amar barir pashe ekta nodi ache.",
-      "en": "There is a river near my house.",
-      "context": "Location information.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "আমার মতো কোনো বন্ধু নেই।",
-      "pronunciation": "Amar moto kono bondhu nei.",
-      "en": "There is no friend like me.",
-      "context": "Personal statement.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "এটা আমার বই।",
-      "pronunciation": "Eta amar boi.",
-      "en": "This is my book.",
-      "context": "Showing ownership.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "এই ছবিটা আমার।",
-      "pronunciation": "Ei chhobi ta amar.",
-      "en": "This picture is mine.",
-      "context": "Claiming ownership.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "আমার জন্য অপেক্ষা করো।",
-      "pronunciation": "Amar jonno opekkha koro.",
-      "en": "Wait for me.",
-      "context": "Requesting patience.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "আমার বই কোথায়?",
-      "pronunciation": "Amar boi kothay?",
-      "en": "Where is my book?",
-      "context": "Searching for an object.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "আমার ফোন কোথায়?",
-      "pronunciation": "Amar phone kothay?",
-      "en": "Where is my phone?",
-      "context": "Searching for an object.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "আপনি আমার বন্ধু।",
-      "pronunciation": "Aapni amar bondhu.",
-      "en": "You are my friend.",
-      "context": "Stating friendship status.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "আমার আগে রেডি হন।",
-      "pronunciation": "Amar aage ready hon.",
-      "en": "Get ready before me.",
-      "context": "Telling someone to be ready before you.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "আমাদের বাড়ি।",
-      "pronunciation": "Amader bari.",
-      "en": "Our house.",
-      "context": "Referring to shared ownership.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "আমার বই।",
-      "pronunciation": "Amar boi.",
-      "en": "My book.",
-      "context": "Showing possession.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "আমাকে আশীর্বাদ দিন।",
-      "pronunciation": "Amake ashirbaad din.",
-      "en": "Give me blessings.",
-      "context": "Requesting blessings.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "আমাদের বাড়ি নীল রঙের।",
-      "pronunciation": "Amader bari neel rong er.",
-      "en": "Our house is blue in color.",
-      "context": "Describing a house.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "বাচ্চা খুশি।",
-      "pronunciation": "Bachcha khushi.",
-      "en": "Child is happy.",
-      "context": "Describing a child's emotion.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "আমার জামা ভেজা।",
-      "pronunciation": "Amar jama bheja.",
-      "en": "My dress is wet.",
-      "context": "Describing clothing condition.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "আমার ভয় করে না।",
-      "pronunciation": "Amar bhoy kore naa.",
-      "en": "I am not afraid.",
-      "context": "Expressing lack of fear.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "আমার বন্ধু আমাকে সাহায্য করে।",
-      "pronunciation": "Amar bondhu amake sahajjo kore.",
-      "en": "My friend helps me.",
-      "context": "Talking about help from a friend.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "তোমার দাঁত সাদা।",
-      "pronunciation": "Tomar daant shada.",
-      "en": "Your teeth are white.",
-      "context": "Describing appearance.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "দাদু গল্প বলেন।",
-      "pronunciation": "Dadu golpo bolen.",
-      "en": "Grandfather tells stories.",
-      "context": "Describing a habitual action.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "আমার দেশ ইংল্যান্ড।",
-      "pronunciation": "Amar desh England.",
-      "en": "My country is England.",
-      "context": "Stating nationality.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "দিদি রান্না করে।",
-      "pronunciation": "Didi ranna kore.",
-      "en": "Elder sister cooks.",
-      "context": "Describing a daily activity.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "দিদি গান গায়।",
-      "pronunciation": "Didi gaan gaay.",
-      "en": "Elder sister sings a song.",
-      "context": "Describing a musical activity.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "এই গল্প খুব রোমাঞ্চকর।",
-      "pronunciation": "Ei golpo khub romanchokor.",
-      "en": "This story is very interesting.",
-      "context": "Describing a story.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "আপনার জামা সুন্দর।",
-      "pronunciation": "Apnar jaama sundor.",
-      "en": "Your dress is beautiful.",
-      "context": "Giving a compliment.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "তোমার জন্য।",
-      "pronunciation": "Tomar jonno.",
-      "en": "For you.",
-      "context": "Offering or dedicating something.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "আমার কলম নীল।",
-      "pronunciation": "Amar kalam nil.",
-      "en": "My pen is blue.",
-      "context": "Describing possession and color.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "আমাকে নতুন কাপড় দিন।",
-      "pronunciation": "Amake notun kapor din.",
-      "en": "Give me new clothes.",
-      "context": "Requesting clothing.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "ক্ষমা করুন।",
-      "pronunciation": "Khoma korun.",
-      "en": "Forgive.",
-      "context": "Making a polite apology or request.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "কুকুর আমার দিকে ঘেউ ঘেউ করছে।",
-      "pronunciation": "Kukur amar dike gheu gheu korchhe.",
-      "en": "The dog is barking at me.",
-      "context": "Describing an animal’s action.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "আমার টি-শার্ট লাল।",
-      "pronunciation": "Amar t-shirt lal.",
-      "en": "My t-shirt is red.",
-      "context": "Describing clothing color.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "মাসের শেষে আসবো।",
-      "pronunciation": "Maash-er sheshe asbo.",
-      "en": "I will come at the end of the month.",
-      "context": "Talking about time.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "মাছ একটি প্রোটিনের উৎস।",
-      "pronunciation": "Machh ekti protein-er source.",
-      "en": "Fish is a source of protein.",
-      "context": "Talking about nutrition.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "মাঝখানে বসো।",
-      "pronunciation": "Majhkhaane bosho.",
-      "en": "Sit in the middle.",
-      "context": "Giving a seating instruction.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "মাংস খুবই সুস্বাদু।",
-      "pronunciation": "Mangsho khubi swadishto.",
-      "en": "The meat is very tasty.",
-      "context": "Describing the taste of food.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "মাসি রান্না করেন।",
-      "pronunciation": "Mashi ranna koren.",
-      "en": "Aunt cooks.",
-      "context": "Describing a family member’s activity.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "আমি আমার পরিচয় দিলাম।",
-      "pronunciation": "Ami amar porichoy dilam.",
-      "en": "I gave my introduction.",
-      "context": "Introducing oneself.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "আমার একটা পুতুল চাই।",
-      "pronunciation": "Amar ekta putul chai.",
-      "en": "I need a toy.",
-      "context": "Expressing desire or need.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "রাজা কৃষ্ণচন্দ্র ভালো মানুষ।",
-      "pronunciation": "Raja Krishnachandra bhalo manush.",
-      "en": "King Krishnachandra is a good man.",
-      "context": "Describing a respected historical or royal figure.",
-      "category": "family-relationships"
-    },
-    {
-      "bn": "এটা সামান্য ব্যাপার।",
-      "pronunciation": "Eita samannyo byapar.",
-      "en": "This is an ordinary thing.",
-      "context": "Downplaying the importance of something.",
-      "category": "family-relationships"
+      "bn": "আমার একটি বড় পরিবার আছে।",
+      "pronunciation": "amar ekti bôṛo poribar achhe",
+      "en": "I have a big family.",
+      "context": "Talking about your family",
+      "category": "family-relationships",
+      "words": [
+        {
+          "bn": "আমার",
+          "pronunciation": "amar",
+          "en": "my"
+        },
+        {
+          "bn": "একটি",
+          "pronunciation": "ekti",
+          "en": "one / a"
+        },
+        {
+          "bn": "বড়",
+          "pronunciation": "bôṛo",
+          "en": "big / large"
+        },
+        {
+          "bn": "পরিবার",
+          "pronunciation": "poribar",
+          "en": "family"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is / has"
+        }
+      ]
+    },
+    {
+      "bn": "আমার দুই ভাই আছে।",
+      "pronunciation": "amar dui bhai achhe",
+      "en": "I have two brothers.",
+      "context": "Talking about your family",
+      "category": "family-relationships",
+      "words": [
+        {
+          "bn": "আমার",
+          "pronunciation": "amar",
+          "en": "my"
+        },
+        {
+          "bn": "দুই",
+          "pronunciation": "dui",
+          "en": "two"
+        },
+        {
+          "bn": "ভাই",
+          "pronunciation": "bhai",
+          "en": "Brother / brother"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is / has"
+        }
+      ]
+    },
+    {
+      "bn": "আমার এক বোন আছে।",
+      "pronunciation": "amar ek bon achhe",
+      "en": "I have one sister.",
+      "context": "Talking about your family",
+      "category": "family-relationships",
+      "words": [
+        {
+          "bn": "আমার",
+          "pronunciation": "amar",
+          "en": "my"
+        },
+        {
+          "bn": "এক",
+          "pronunciation": "ek",
+          "en": "one"
+        },
+        {
+          "bn": "বোন",
+          "pronunciation": "bon",
+          "en": "Sister / sister"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is / has"
+        }
+      ]
+    },
+    {
+      "bn": "আমি বড় ছেলে।",
+      "pronunciation": "ami bôṛo chele",
+      "en": "I am the oldest son.",
+      "context": "Talking about your family",
+      "category": "family-relationships",
+      "words": [
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "বড়",
+          "pronunciation": "bôṛo",
+          "en": "big / large"
+        },
+        {
+          "bn": "ছেলে",
+          "pronunciation": "chele",
+          "en": "Boy / boy / son, boy"
+        }
+      ]
+    },
+    {
+      "bn": "আমি ছোট মেয়ে।",
+      "pronunciation": "ami chhoto meye",
+      "en": "I am the youngest daughter.",
+      "context": "Talking about your family",
+      "category": "family-relationships",
+      "words": [
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "ছোট",
+          "pronunciation": "chhoto",
+          "en": "small"
+        },
+        {
+          "bn": "মেয়ে",
+          "pronunciation": "meye",
+          "en": "girl / daughter, girl"
+        }
+      ]
+    },
+    {
+      "bn": "আমার বাবা একজন শিক্ষক।",
+      "pronunciation": "amar baba ekjon shikkhok",
+      "en": "My father is a teacher.",
+      "context": "Talking about your family",
+      "category": "family-relationships",
+      "words": [
+        {
+          "bn": "আমার",
+          "pronunciation": "amar",
+          "en": "my"
+        },
+        {
+          "bn": "বাবা",
+          "pronunciation": "baba",
+          "en": "father"
+        },
+        {
+          "bn": "একজন",
+          "pronunciation": "ekjon",
+          "en": "one person"
+        },
+        {
+          "bn": "শিক্ষক",
+          "pronunciation": "shikkhok",
+          "en": "teacher"
+        }
+      ]
+    },
+    {
+      "bn": "আমার মা একজন ডাক্তার।",
+      "pronunciation": "amar ma ekjon daktar",
+      "en": "My mother is a doctor.",
+      "context": "Talking about your family",
+      "category": "family-relationships",
+      "words": [
+        {
+          "bn": "আমার",
+          "pronunciation": "amar",
+          "en": "my"
+        },
+        {
+          "bn": "মা",
+          "pronunciation": "ma",
+          "en": "mother"
+        },
+        {
+          "bn": "একজন",
+          "pronunciation": "ekjon",
+          "en": "one person"
+        },
+        {
+          "bn": "ডাক্তার",
+          "pronunciation": "daktar",
+          "en": "doctor"
+        }
+      ]
+    },
+    {
+      "bn": "আমার দাদা-দাদি গ্রামে থাকেন।",
+      "pronunciation": "amar dada dadi grame thaken",
+      "en": "My grandparents live in the village.",
+      "context": "Talking about your family",
+      "category": "family-relationships",
+      "words": [
+        {
+          "bn": "আমার",
+          "pronunciation": "amar",
+          "en": "my"
+        },
+        {
+          "bn": "দাদা",
+          "pronunciation": "dada",
+          "en": "grandfather / older brother / paternal grandfather / grandfather (depending on context)"
+        },
+        {
+          "bn": "দাদি",
+          "pronunciation": "dadi",
+          "en": "paternal grandmother"
+        },
+        {
+          "bn": "গ্রামে",
+          "pronunciation": "grame",
+          "en": "in the village"
+        },
+        {
+          "bn": "থাকেন",
+          "pronunciation": "thaken",
+          "en": "stay"
+        }
+      ]
+    },
+    {
+      "bn": "আমি আমার পরিবারের সঙ্গে থাকি।",
+      "pronunciation": "ami amar poribarer shonge thaki",
+      "en": "I live with my family.",
+      "context": "Talking about your family",
+      "category": "family-relationships",
+      "words": [
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "আমার",
+          "pronunciation": "amar",
+          "en": "my"
+        },
+        {
+          "bn": "পরিবারের",
+          "pronunciation": "poribarer",
+          "en": "head of the family"
+        },
+        {
+          "bn": "সঙ্গে",
+          "pronunciation": "shonge",
+          "en": "with"
+        },
+        {
+          "bn": "থাকি",
+          "pronunciation": "thaki",
+          "en": "live / stay"
+        }
+      ]
+    },
+    {
+      "bn": "আমরা প্রতি সপ্তাহে একসঙ্গে খাই।",
+      "pronunciation": "amra proti shoptaho eksongge khai",
+      "en": "We eat together every week.",
+      "context": "Talking about your family",
+      "category": "family-relationships",
+      "words": [
+        {
+          "bn": "আমরা",
+          "pronunciation": "amra",
+          "en": "we"
+        },
+        {
+          "bn": "প্রতি",
+          "pronunciation": "proti",
+          "en": "every / per"
+        },
+        {
+          "bn": "সপ্তাহে",
+          "pronunciation": "shoptaho",
+          "en": "in a week"
+        },
+        {
+          "bn": "একসঙ্গে",
+          "pronunciation": "eksongge",
+          "en": "together"
+        },
+        {
+          "bn": "খাই",
+          "pronunciation": "khai",
+          "en": "eat"
+        }
+      ]
+    },
+    {
+      "bn": "আমার পরিবারের সবাই খুব সহায়ক।",
+      "pronunciation": "amar poribarer shobai khub sohajok",
+      "en": "Everyone in my family is very supportive.",
+      "context": "Talking about your family",
+      "category": "family-relationships",
+      "words": [
+        {
+          "bn": "আমার",
+          "pronunciation": "amar",
+          "en": "my"
+        },
+        {
+          "bn": "পরিবারের",
+          "pronunciation": "poribarer",
+          "en": "head of the family"
+        },
+        {
+          "bn": "সবাই",
+          "pronunciation": "shobai",
+          "en": "everyone"
+        },
+        {
+          "bn": "খুব",
+          "pronunciation": "khub",
+          "en": "very"
+        },
+        {
+          "bn": "সহায়ক",
+          "pronunciation": "sohajok",
+          "en": "supportive"
+        }
+      ]
+    },
+    {
+      "bn": "আমি আমার পরিবারের সঙ্গে সময় কাটাতে ভালোবাসি।",
+      "pronunciation": "ami amar poribarer shonge shomoy katate bhalobashi",
+      "en": "I love spending time with my family.",
+      "context": "Talking about your family",
+      "category": "family-relationships",
+      "words": [
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "আমার",
+          "pronunciation": "amar",
+          "en": "my"
+        },
+        {
+          "bn": "পরিবারের",
+          "pronunciation": "poribarer",
+          "en": "head of the family"
+        },
+        {
+          "bn": "সঙ্গে",
+          "pronunciation": "shonge",
+          "en": "with"
+        },
+        {
+          "bn": "সময়",
+          "pronunciation": "shomoy",
+          "en": "time"
+        },
+        {
+          "bn": "কাটাতে",
+          "pronunciation": "katate",
+          "en": "to spend"
+        },
+        {
+          "bn": "ভালোবাসি",
+          "pronunciation": "bhalobashi",
+          "en": "I love"
+        }
+      ]
     }
   ],
   "practice": [
@@ -707,7 +1541,7 @@
     "Create a new sentence by replacing one word in a lesson phrase."
   ],
   "notes": [
-    "ভাইবোন means siblings collectively.",
-    "Add বড় or ছোট before a sibling term to mean older or younger."
+    "Bengali kinship terms often identify whether a relative is from the mother's or father's side and whether they are older or younger.",
+    "Regional usage varies; for example, চাচা and কাকা can both refer to a father's younger brother."
   ]
 }

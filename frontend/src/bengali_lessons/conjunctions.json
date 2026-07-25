@@ -1,16 +1,45 @@
 {
   "id": "conjunctions",
   "title": "Bengali Conjunctions",
-  "summary": "Connect words, choices, reasons, and contrasting ideas.",
+  "summary": "Connect words and clauses while expressing choices, contrasts, conditions, reasons, results, sequence, and comparison.",
   "level": "beginner",
   "topic": "Conjunctions",
   "focus": "grammar",
   "phrases": [
     {
-      "bn": "আমি চা এবং কফি পছন্দ করি।",
-      "pronunciation": "ami cha ebong kofi pochhondo kori",
-      "en": "I like tea and coffee.",
+      "bn": "রাহিম এবং করিম বন্ধু।",
+      "pronunciation": "Rahim ebong korim bondhu",
+      "en": "Rahim and Karim are friends.",
       "context": "Using এবং (and)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "রাহিম",
+          "pronunciation": "Rahim",
+          "en": "Rahim"
+        },
+        {
+          "bn": "এবং",
+          "pronunciation": "ebong",
+          "en": "and"
+        },
+        {
+          "bn": "করিম",
+          "pronunciation": "korim",
+          "en": "Karim"
+        },
+        {
+          "bn": "বন্ধু",
+          "pronunciation": "bondhu",
+          "en": "friend"
+        }
+      ]
+    },
+    {
+      "bn": "আমি ভাত আর মাছ খাই।",
+      "pronunciation": "ami bhat ar machh khai",
+      "en": "I eat rice and fish.",
+      "context": "Using আর (and)",
       "category": "conjunctions",
       "words": [
         {
@@ -19,37 +48,32 @@
           "en": "I"
         },
         {
-          "bn": "চা",
-          "pronunciation": "cha",
-          "en": "tea"
+          "bn": "ভাত",
+          "pronunciation": "bhat",
+          "en": "rice"
         },
         {
-          "bn": "এবং",
-          "pronunciation": "ebong",
-          "en": "and"
+          "bn": "আর",
+          "pronunciation": "ar",
+          "en": "and / also / more"
         },
         {
-          "bn": "কফি",
-          "pronunciation": "kofi",
-          "en": "coffee"
+          "bn": "মাছ",
+          "pronunciation": "machh",
+          "en": "Fish"
         },
         {
-          "bn": "পছন্দ",
-          "pronunciation": "pochhondo",
-          "en": "like / preference"
-        },
-        {
-          "bn": "করি",
-          "pronunciation": "kori",
-          "en": "do"
+          "bn": "খাই",
+          "pronunciation": "khai",
+          "en": "eat"
         }
       ]
     },
     {
-      "bn": "মা আর বাবা বাড়িতে আছেন।",
-      "pronunciation": "ma ar baba barite achhen",
+      "bn": "মা ও বাবা বাড়িতে আছেন।",
+      "pronunciation": "ma o baba barite achhen",
       "en": "Mother and father are at home.",
-      "context": "Using আর (and / also)",
+      "context": "Using ও (and)",
       "category": "conjunctions",
       "words": [
         {
@@ -58,8 +82,8 @@
           "en": "mother"
         },
         {
-          "bn": "আর",
-          "pronunciation": "ar",
+          "bn": "ও",
+          "pronunciation": "o",
           "en": "and / also"
         },
         {
@@ -80,10 +104,10 @@
       ]
     },
     {
-      "bn": "তুমি চা অথবা কফি নিতে পারো।",
-      "pronunciation": "tumi cha othoba kofi nite paro",
-      "en": "You can have tea or coffee.",
-      "context": "Using অথবা (or)",
+      "bn": "তুমি চা কিংবা কফি খাবে?",
+      "pronunciation": "tumi cha kingba kofi khabe",
+      "en": "Will you have tea or coffee?",
+      "context": "Using কিংবা (or)",
       "category": "conjunctions",
       "words": [
         {
@@ -97,8 +121,8 @@
           "en": "tea"
         },
         {
-          "bn": "অথবা",
-          "pronunciation": "othoba",
+          "bn": "কিংবা",
+          "pronunciation": "kingba",
           "en": "or"
         },
         {
@@ -107,9 +131,72 @@
           "en": "coffee"
         },
         {
-          "bn": "নিতে",
-          "pronunciation": "nite",
-          "en": "to take"
+          "bn": "খাবে",
+          "pronunciation": "khabe",
+          "en": "will eat"
+        }
+      ]
+    },
+    {
+      "bn": "এখন অথবা পরে এসো।",
+      "pronunciation": "ekhon othoba pore esho",
+      "en": "Come now or later.",
+      "context": "Using অথবা (or)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "এখন",
+          "pronunciation": "ekhon",
+          "en": "now"
+        },
+        {
+          "bn": "অথবা",
+          "pronunciation": "othoba",
+          "en": "or"
+        },
+        {
+          "bn": "পরে",
+          "pronunciation": "pore",
+          "en": "after / later / wears"
+        },
+        {
+          "bn": "এসো",
+          "pronunciation": "esho",
+          "en": "come (familiar)"
+        }
+      ]
+    },
+    {
+      "bn": "তুমি বাস বা ট্রেনে যেতে পারো।",
+      "pronunciation": "tumi bas ba trene jete paro",
+      "en": "You can go by bus or train.",
+      "context": "Using বা (or)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "তুমি",
+          "pronunciation": "tumi",
+          "en": "you (familiar)"
+        },
+        {
+          "bn": "বাস",
+          "pronunciation": "bas",
+          "en": "bus"
+        },
+        {
+          "bn": "বা",
+          "pronunciation": "ba",
+          "en": "or"
+        },
+        {
+          "bn": "ট্রেনে",
+          "pronunciation": "trene",
+          "en": "by train"
+        },
+        {
+          "bn": "যেতে",
+          "pronunciation": "jete",
+          "en": "to go"
         },
         {
           "bn": "পারো",
@@ -119,9 +206,82 @@
       ]
     },
     {
-      "bn": "আমি যাব, কিন্তু এখন নয়।",
-      "pronunciation": "ami jabo, kintu ekhon noy",
-      "en": "I will go, but not now.",
+      "bn": "এখনই পড়ো, নতুবা ফেল করবে।",
+      "pronunciation": "ekhoni poro notuba phel korbe",
+      "en": "Study now, otherwise you will fail.",
+      "context": "Using নতুবা (otherwise)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "এখনই",
+          "pronunciation": "ekhoni",
+          "en": "right now"
+        },
+        {
+          "bn": "পড়ো",
+          "pronunciation": "poro",
+          "en": "read"
+        },
+        {
+          "bn": "নতুবা",
+          "pronunciation": "notuba",
+          "en": "otherwise"
+        },
+        {
+          "bn": "ফেল",
+          "pronunciation": "phel",
+          "en": "fail"
+        },
+        {
+          "bn": "করবে",
+          "pronunciation": "korbe",
+          "en": "will do"
+        }
+      ]
+    },
+    {
+      "bn": "তাড়াতাড়ি এসো, নয়তো ট্রেন মিস করবে।",
+      "pronunciation": "taratari esho noyto tren mis korbe",
+      "en": "Come quickly, otherwise you'll miss the train.",
+      "context": "Using নয়তো (otherwise)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "তাড়াতাড়ি",
+          "pronunciation": "taratari",
+          "en": "soon / quickly"
+        },
+        {
+          "bn": "এসো",
+          "pronunciation": "esho",
+          "en": "come (familiar)"
+        },
+        {
+          "bn": "নয়তো",
+          "pronunciation": "noyto",
+          "en": "otherwise"
+        },
+        {
+          "bn": "ট্রেন",
+          "pronunciation": "tren",
+          "en": "train"
+        },
+        {
+          "bn": "মিস",
+          "pronunciation": "mis",
+          "en": "miss"
+        },
+        {
+          "bn": "করবে",
+          "pronunciation": "korbe",
+          "en": "will do"
+        }
+      ]
+    },
+    {
+      "bn": "আমি যেতে চেয়েছিলাম, কিন্তু পারিনি।",
+      "pronunciation": "ami jete cheyechilam kintu parini",
+      "en": "I wanted to go, but I couldn't.",
       "context": "Using কিন্তু (but)",
       "category": "conjunctions",
       "words": [
@@ -131,9 +291,14 @@
           "en": "I"
         },
         {
-          "bn": "যাব",
-          "pronunciation": "jabo",
-          "en": "will go"
+          "bn": "যেতে",
+          "pronunciation": "jete",
+          "en": "to go"
+        },
+        {
+          "bn": "চেয়েছিলাম",
+          "pronunciation": "cheyechilam",
+          "en": "wanted"
         },
         {
           "bn": "কিন্তু",
@@ -141,21 +306,430 @@
           "en": "but"
         },
         {
-          "bn": "এখন",
-          "pronunciation": "ekhon",
-          "en": "now"
-        },
-        {
-          "bn": "নয়",
-          "pronunciation": "noy",
-          "en": "is not"
+          "bn": "পারিনি",
+          "pronunciation": "parini",
+          "en": "could not"
         }
       ]
     },
     {
-      "bn": "আমি থাকব, কারণ বৃষ্টি হচ্ছে।",
-      "pronunciation": "ami thakbo, karon brishti hochchhe",
-      "en": "I will stay because it is raining.",
+      "bn": "সে ছোট, তবে খুব বুদ্ধিমান।",
+      "pronunciation": "she chhoto tobe khub buddhiman",
+      "en": "He is young, but very intelligent.",
+      "context": "Using তবে (however / but)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "ছোট",
+          "pronunciation": "chhoto",
+          "en": "small"
+        },
+        {
+          "bn": "তবে",
+          "pronunciation": "tobe",
+          "en": "then"
+        },
+        {
+          "bn": "খুব",
+          "pronunciation": "khub",
+          "en": "very"
+        },
+        {
+          "bn": "বুদ্ধিমান",
+          "pronunciation": "buddhiman",
+          "en": "intelligent"
+        }
+      ]
+    },
+    {
+      "bn": "সে অনেক পড়েছে, অথচ ফেল করেছে।",
+      "pronunciation": "she ônek poreche othoco phel koreche",
+      "en": "He studied a lot, yet failed.",
+      "context": "Using অথচ (yet)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "অনেক",
+          "pronunciation": "ônek",
+          "en": "very / many / much"
+        },
+        {
+          "bn": "পড়েছে",
+          "pronunciation": "poreche",
+          "en": "fell"
+        },
+        {
+          "bn": "অথচ",
+          "pronunciation": "othoco",
+          "en": "yet"
+        },
+        {
+          "bn": "ফেল",
+          "pronunciation": "phel",
+          "en": "fail"
+        },
+        {
+          "bn": "করেছে",
+          "pronunciation": "koreche",
+          "en": "did / has done"
+        }
+      ]
+    },
+    {
+      "bn": "বৃষ্টি হচ্ছিল, কিন্তু তারপরও তারা খেলল।",
+      "pronunciation": "brishti hochchhilo kintu tarporo tara khello",
+      "en": "It was raining, but they still played.",
+      "context": "Using কিন্তু তারপরও (but still)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "বৃষ্টি",
+          "pronunciation": "brishti",
+          "en": "rain"
+        },
+        {
+          "bn": "হচ্ছিল",
+          "pronunciation": "hochchhilo",
+          "en": "was happening"
+        },
+        {
+          "bn": "কিন্তু",
+          "pronunciation": "kintu",
+          "en": "but"
+        },
+        {
+          "bn": "তারপরও",
+          "pronunciation": "tarporo",
+          "en": "even then / still"
+        },
+        {
+          "bn": "তারা",
+          "pronunciation": "tara",
+          "en": "they / star"
+        },
+        {
+          "bn": "খেলল",
+          "pronunciation": "khello",
+          "en": "played"
+        }
+      ]
+    },
+    {
+      "bn": "সে ক্লান্ত ছিল, তবুও কাজ করল।",
+      "pronunciation": "she klanto chhilo tobuo kaj korlo",
+      "en": "He was tired, nevertheless he worked.",
+      "context": "Using তবুও (nevertheless)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "ক্লান্ত",
+          "pronunciation": "klanto",
+          "en": "tired"
+        },
+        {
+          "bn": "ছিল",
+          "pronunciation": "chhilo",
+          "en": "was"
+        },
+        {
+          "bn": "তবুও",
+          "pronunciation": "tobuo",
+          "en": "nevertheless / still"
+        },
+        {
+          "bn": "কাজ",
+          "pronunciation": "kaj",
+          "en": "work / task / function"
+        },
+        {
+          "bn": "করল",
+          "pronunciation": "korlo",
+          "en": "did"
+        }
+      ]
+    },
+    {
+      "bn": "যদিও বৃষ্টি হচ্ছিল, আমরা বের হলাম।",
+      "pronunciation": "jodio brishti hochchhilo amra ber holam",
+      "en": "Although it was raining, we went out.",
+      "context": "Using যদিও (although)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "যদিও",
+          "pronunciation": "jodio",
+          "en": "although"
+        },
+        {
+          "bn": "বৃষ্টি",
+          "pronunciation": "brishti",
+          "en": "rain"
+        },
+        {
+          "bn": "হচ্ছিল",
+          "pronunciation": "hochchhilo",
+          "en": "was happening"
+        },
+        {
+          "bn": "আমরা",
+          "pronunciation": "amra",
+          "en": "we"
+        },
+        {
+          "bn": "বের",
+          "pronunciation": "ber",
+          "en": "out"
+        },
+        {
+          "bn": "হলাম",
+          "pronunciation": "holam",
+          "en": "went out / became"
+        }
+      ]
+    },
+    {
+      "bn": "যদিও সে ব্যস্ত, তবুও আমাকে সাহায্য করল।",
+      "pronunciation": "jodio she byosto tobuo amake shahajjo korlo",
+      "en": "Although he was busy, he still helped me.",
+      "context": "Using যদিও...তবুও (although...still)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "যদিও",
+          "pronunciation": "jodio",
+          "en": "although"
+        },
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "ব্যস্ত",
+          "pronunciation": "byosto",
+          "en": "busy"
+        },
+        {
+          "bn": "তবুও",
+          "pronunciation": "tobuo",
+          "en": "nevertheless / still"
+        },
+        {
+          "bn": "আমাকে",
+          "pronunciation": "amake",
+          "en": "me"
+        },
+        {
+          "bn": "সাহায্য",
+          "pronunciation": "shahajjo",
+          "en": "Help"
+        },
+        {
+          "bn": "করল",
+          "pronunciation": "korlo",
+          "en": "did"
+        }
+      ]
+    },
+    {
+      "bn": "যদি সময় পাও, এসো।",
+      "pronunciation": "jodi shomoy pao esho",
+      "en": "If you have time, come.",
+      "context": "Using যদি (if)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "যদি",
+          "pronunciation": "jodi",
+          "en": "if"
+        },
+        {
+          "bn": "সময়",
+          "pronunciation": "shomoy",
+          "en": "time"
+        },
+        {
+          "bn": "পাও",
+          "pronunciation": "pao",
+          "en": "get / have"
+        },
+        {
+          "bn": "এসো",
+          "pronunciation": "esho",
+          "en": "come (familiar)"
+        }
+      ]
+    },
+    {
+      "bn": "যদি বৃষ্টি হয়, তবে আমরা যাব না।",
+      "pronunciation": "jodi brishti hoy tobe amra jabo na",
+      "en": "If it rains, then we won't go.",
+      "context": "Using যদি...তবে (if...then)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "যদি",
+          "pronunciation": "jodi",
+          "en": "if"
+        },
+        {
+          "bn": "বৃষ্টি",
+          "pronunciation": "brishti",
+          "en": "rain"
+        },
+        {
+          "bn": "হয়",
+          "pronunciation": "hoy",
+          "en": "is / happens / becomes"
+        },
+        {
+          "bn": "তবে",
+          "pronunciation": "tobe",
+          "en": "then"
+        },
+        {
+          "bn": "আমরা",
+          "pronunciation": "amra",
+          "en": "we"
+        },
+        {
+          "bn": "যাব",
+          "pronunciation": "jabo",
+          "en": "will go"
+        },
+        {
+          "bn": "না",
+          "pronunciation": "na",
+          "en": "not"
+        }
+      ]
+    },
+    {
+      "bn": "যদি পড়ো, তাহলে ভালো ফল করবে।",
+      "pronunciation": "jodi poro tahole bhalo fol korbe",
+      "en": "If you study, then you'll do well.",
+      "context": "Using যদি...তাহলে (if...then)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "যদি",
+          "pronunciation": "jodi",
+          "en": "if"
+        },
+        {
+          "bn": "পড়ো",
+          "pronunciation": "poro",
+          "en": "read"
+        },
+        {
+          "bn": "তাহলে",
+          "pronunciation": "tahole",
+          "en": "then"
+        },
+        {
+          "bn": "ভালো",
+          "pronunciation": "bhalo",
+          "en": "good"
+        },
+        {
+          "bn": "ফল",
+          "pronunciation": "fol",
+          "en": "fruit / result / outcome"
+        },
+        {
+          "bn": "করবে",
+          "pronunciation": "korbe",
+          "en": "will do"
+        }
+      ]
+    },
+    {
+      "bn": "তুমি প্রস্তুত? তাহলে শুরু করি।",
+      "pronunciation": "tumi prostut tahole shuru kori",
+      "en": "Are you ready? Then let's begin.",
+      "context": "Using তাহলে (then)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "তুমি",
+          "pronunciation": "tumi",
+          "en": "you (familiar)"
+        },
+        {
+          "bn": "প্রস্তুত",
+          "pronunciation": "prostut",
+          "en": "ready"
+        },
+        {
+          "bn": "তাহলে",
+          "pronunciation": "tahole",
+          "en": "then"
+        },
+        {
+          "bn": "শুরু",
+          "pronunciation": "shuru",
+          "en": "start"
+        },
+        {
+          "bn": "করি",
+          "pronunciation": "kori",
+          "en": "do"
+        }
+      ]
+    },
+    {
+      "bn": "যদি চাও, তবে শুরু করো।",
+      "pronunciation": "jodi chao tobe shuru koro",
+      "en": "If you want, then begin.",
+      "context": "Using তবে (then)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "যদি",
+          "pronunciation": "jodi",
+          "en": "if"
+        },
+        {
+          "bn": "চাও",
+          "pronunciation": "chao",
+          "en": "want"
+        },
+        {
+          "bn": "তবে",
+          "pronunciation": "tobe",
+          "en": "then"
+        },
+        {
+          "bn": "শুরু",
+          "pronunciation": "shuru",
+          "en": "start"
+        },
+        {
+          "bn": "করো",
+          "pronunciation": "koro",
+          "en": "you do"
+        }
+      ]
+    },
+    {
+      "bn": "আমি আসিনি, কারণ অসুস্থ ছিলাম।",
+      "pronunciation": "ami asini karon ôshustho chhilam",
+      "en": "I didn't come because I was sick.",
       "context": "Using কারণ (because)",
       "category": "conjunctions",
       "words": [
@@ -165,9 +739,9 @@
           "en": "I"
         },
         {
-          "bn": "থাকব",
-          "pronunciation": "thakbo",
-          "en": "will stay"
+          "bn": "আসিনি",
+          "pronunciation": "asini",
+          "en": "did not come"
         },
         {
           "bn": "কারণ",
@@ -175,24 +749,63 @@
           "en": "because"
         },
         {
-          "bn": "বৃষ্টি",
-          "pronunciation": "brishti",
-          "en": "rain"
+          "bn": "অসুস্থ",
+          "pronunciation": "ôshustho",
+          "en": "sick"
         },
         {
-          "bn": "হচ্ছে",
-          "pronunciation": "hochchhe",
-          "en": "is happening"
+          "bn": "ছিলাম",
+          "pronunciation": "chhilam",
+          "en": "we were"
         }
       ]
     },
     {
-      "bn": "বৃষ্টি হচ্ছে, তাই আমি বাড়িতে আছি।",
-      "pronunciation": "brishti hochchhe, tai ami barite achhi",
-      "en": "It is raining, so I am at home.",
-      "context": "Using তাই (so / therefore)",
+      "bn": "সে খুশি, কেননা সে জিতেছে।",
+      "pronunciation": "she khushi kenona she jitechhe",
+      "en": "He is happy because he won.",
+      "context": "Using কেননা (because)",
       "category": "conjunctions",
       "words": [
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "খুশি",
+          "pronunciation": "khushi",
+          "en": "Happy"
+        },
+        {
+          "bn": "কেননা",
+          "pronunciation": "kenona",
+          "en": "because"
+        },
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "জিতেছে",
+          "pronunciation": "jitechhe",
+          "en": "has won"
+        }
+      ]
+    },
+    {
+      "bn": "যেহেতু বৃষ্টি হচ্ছে, আমরা বাড়িতে থাকব।",
+      "pronunciation": "jehetu brishti hochchhe amra barite thakbo",
+      "en": "Since it's raining, we'll stay home.",
+      "context": "Using যেহেতু (since / because)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "যেহেতু",
+          "pronunciation": "jehetu",
+          "en": "since / because"
+        },
         {
           "bn": "বৃষ্টি",
           "pronunciation": "brishti",
@@ -204,14 +817,9 @@
           "en": "is happening"
         },
         {
-          "bn": "তাই",
-          "pronunciation": "tai",
-          "en": "so"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
+          "bn": "আমরা",
+          "pronunciation": "amra",
+          "en": "we"
         },
         {
           "bn": "বাড়িতে",
@@ -219,19 +827,1606 @@
           "en": "at home"
         },
         {
-          "bn": "আছি",
-          "pronunciation": "achhi",
-          "en": "am"
+          "bn": "থাকব",
+          "pronunciation": "thakbo",
+          "en": "will stay"
         }
       ]
     },
     {
-      "bn": "যদি সময় থাকে, আমি আসব।",
-      "pronunciation": "jodi shomoy thake, ami ashbo",
-      "en": "If I have time, I will come.",
-      "context": "Using যদি (if)",
+      "bn": "যেহেতু আজ ছুটি, সেহেতু স্কুল বন্ধ।",
+      "pronunciation": "jehetu aj Chhuti shehetu skul bondho",
+      "en": "Since today is a holiday, the school is closed.",
+      "context": "Using যেহেতু...সেহেতু (since...therefore)",
       "category": "conjunctions",
       "words": [
+        {
+          "bn": "যেহেতু",
+          "pronunciation": "jehetu",
+          "en": "since / because"
+        },
+        {
+          "bn": "আজ",
+          "pronunciation": "aj",
+          "en": "today"
+        },
+        {
+          "bn": "ছুটি",
+          "pronunciation": "Chhuti",
+          "en": "leave / holiday"
+        },
+        {
+          "bn": "সেহেতু",
+          "pronunciation": "shehetu",
+          "en": "therefore"
+        },
+        {
+          "bn": "স্কুল",
+          "pronunciation": "skul",
+          "en": "school"
+        },
+        {
+          "bn": "বন্ধ",
+          "pronunciation": "bondho",
+          "en": "closed / switched off"
+        }
+      ]
+    },
+    {
+      "bn": "সে পরিশ্রম করেছে, তাই সফল হয়েছে।",
+      "pronunciation": "she porishrom koreche tai shofol hoyechhe",
+      "en": "He worked hard, therefore he succeeded.",
+      "context": "Using তাই (therefore)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "পরিশ্রম",
+          "pronunciation": "porishrom",
+          "en": "hard work"
+        },
+        {
+          "bn": "করেছে",
+          "pronunciation": "koreche",
+          "en": "did / has done"
+        },
+        {
+          "bn": "তাই",
+          "pronunciation": "tai",
+          "en": "so"
+        },
+        {
+          "bn": "সফল",
+          "pronunciation": "shofol",
+          "en": "successful"
+        },
+        {
+          "bn": "হয়েছে",
+          "pronunciation": "hoyechhe",
+          "en": "has been"
+        }
+      ]
+    },
+    {
+      "bn": "সে ভুল করেছে, তাই বলে তাকে অপমান করো না।",
+      "pronunciation": "she bhul koreche tai bole take opoman koro na",
+      "en": "He made a mistake, but that doesn't mean you should insult him.",
+      "context": "Using তাই বলে (that doesn't mean)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "ভুল",
+          "pronunciation": "bhul",
+          "en": "Mistake / wrong"
+        },
+        {
+          "bn": "করেছে",
+          "pronunciation": "koreche",
+          "en": "did / has done"
+        },
+        {
+          "bn": "তাই",
+          "pronunciation": "tai",
+          "en": "so"
+        },
+        {
+          "bn": "বলে",
+          "pronunciation": "bole",
+          "en": "says / by saying"
+        },
+        {
+          "bn": "তাকে",
+          "pronunciation": "take",
+          "en": "on the shelf"
+        },
+        {
+          "bn": "অপমান",
+          "pronunciation": "opoman",
+          "en": "insult"
+        },
+        {
+          "bn": "করো",
+          "pronunciation": "koro",
+          "en": "you do"
+        },
+        {
+          "bn": "না",
+          "pronunciation": "na",
+          "en": "not"
+        }
+      ]
+    },
+    {
+      "bn": "বৃষ্টি হচ্ছিল, এজন্য আমরা যাইনি।",
+      "pronunciation": "brishti hochchhilo ejonno amra jaini",
+      "en": "It was raining; for this reason we didn't go.",
+      "context": "Using এজন্য (for this reason)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "বৃষ্টি",
+          "pronunciation": "brishti",
+          "en": "rain"
+        },
+        {
+          "bn": "হচ্ছিল",
+          "pronunciation": "hochchhilo",
+          "en": "was happening"
+        },
+        {
+          "bn": "এজন্য",
+          "pronunciation": "ejonno",
+          "en": "for this reason"
+        },
+        {
+          "bn": "আমরা",
+          "pronunciation": "amra",
+          "en": "we"
+        },
+        {
+          "bn": "যাইনি",
+          "pronunciation": "jaini",
+          "en": "did not go"
+        }
+      ]
+    },
+    {
+      "bn": "সে অসুস্থ ছিল, সেজন্য আসেনি।",
+      "pronunciation": "she ôshustho chhilo shejonno asheni",
+      "en": "He was sick, therefore he didn't come.",
+      "context": "Using সেজন্য (therefore)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "অসুস্থ",
+          "pronunciation": "ôshustho",
+          "en": "sick"
+        },
+        {
+          "bn": "ছিল",
+          "pronunciation": "chhilo",
+          "en": "was"
+        },
+        {
+          "bn": "সেজন্য",
+          "pronunciation": "shejonno",
+          "en": "therefore / for that reason"
+        },
+        {
+          "bn": "আসেনি",
+          "pronunciation": "asheni",
+          "en": "didn't come"
+        }
+      ]
+    },
+    {
+      "bn": "অনেক বৃষ্টি হয়েছে, ফলে নদী ভরে গেছে।",
+      "pronunciation": "ônek brishti hoyechhe fole Nodi bhore geche",
+      "en": "It rained heavily; as a result the river filled up.",
+      "context": "Using ফলে (as a result)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "অনেক",
+          "pronunciation": "ônek",
+          "en": "very / many / much"
+        },
+        {
+          "bn": "বৃষ্টি",
+          "pronunciation": "brishti",
+          "en": "rain"
+        },
+        {
+          "bn": "হয়েছে",
+          "pronunciation": "hoyechhe",
+          "en": "has been"
+        },
+        {
+          "bn": "ফলে",
+          "pronunciation": "fole",
+          "en": "as a result"
+        },
+        {
+          "bn": "নদী",
+          "pronunciation": "Nodi",
+          "en": "River"
+        },
+        {
+          "bn": "ভরে",
+          "pronunciation": "bhore",
+          "en": "fills"
+        },
+        {
+          "bn": "গেছে",
+          "pronunciation": "geche",
+          "en": "gone"
+        }
+      ]
+    },
+    {
+      "bn": "সব প্রস্তুত, অতএব শুরু করা যাক।",
+      "pronunciation": "shob prostut otoeb shuru kora jak",
+      "en": "Everything is ready; therefore let's begin.",
+      "context": "Using অতএব (therefore)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "সব",
+          "pronunciation": "shob",
+          "en": "Everything"
+        },
+        {
+          "bn": "প্রস্তুত",
+          "pronunciation": "prostut",
+          "en": "ready"
+        },
+        {
+          "bn": "অতএব",
+          "pronunciation": "otoeb",
+          "en": "therefore"
+        },
+        {
+          "bn": "শুরু",
+          "pronunciation": "shuru",
+          "en": "start"
+        },
+        {
+          "bn": "করা",
+          "pronunciation": "kora",
+          "en": "to do / to make"
+        },
+        {
+          "bn": "যাক",
+          "pronunciation": "jak",
+          "en": "let it / let us"
+        }
+      ]
+    },
+    {
+      "bn": "তুমি পড়েছ, সুতরাং পরীক্ষায় ভালো করবে।",
+      "pronunciation": "tumi porechho shutorang porikkhay bhalo korbe",
+      "en": "You studied, therefore you'll do well.",
+      "context": "Using সুতরাং (therefore)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "তুমি",
+          "pronunciation": "tumi",
+          "en": "you (familiar)"
+        },
+        {
+          "bn": "পড়েছ",
+          "pronunciation": "porechho",
+          "en": "have studied"
+        },
+        {
+          "bn": "সুতরাং",
+          "pronunciation": "shutorang",
+          "en": "therefore"
+        },
+        {
+          "bn": "পরীক্ষায়",
+          "pronunciation": "porikkhay",
+          "en": "in tests"
+        },
+        {
+          "bn": "ভালো",
+          "pronunciation": "bhalo",
+          "en": "good"
+        },
+        {
+          "bn": "করবে",
+          "pronunciation": "korbe",
+          "en": "will do"
+        }
+      ]
+    },
+    {
+      "bn": "সবাই খাওয়া শেষ করল, অতঃপর বাড়ি ফিরল।",
+      "pronunciation": "shobai khaowa shesh korlo otopor bari phirlo",
+      "en": "Everyone finished eating; afterward they went home.",
+      "context": "Using অতঃপর (afterward)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "সবাই",
+          "pronunciation": "shobai",
+          "en": "everyone"
+        },
+        {
+          "bn": "খাওয়া",
+          "pronunciation": "khaowa",
+          "en": "eating"
+        },
+        {
+          "bn": "শেষ",
+          "pronunciation": "shesh",
+          "en": "end / last / final"
+        },
+        {
+          "bn": "করল",
+          "pronunciation": "korlo",
+          "en": "did"
+        },
+        {
+          "bn": "অতঃপর",
+          "pronunciation": "otopor",
+          "en": "afterward"
+        },
+        {
+          "bn": "বাড়ি",
+          "pronunciation": "bari",
+          "en": "house / home"
+        },
+        {
+          "bn": "ফিরল",
+          "pronunciation": "phirlo",
+          "en": "returned"
+        }
+      ]
+    },
+    {
+      "bn": "আমরা খেললাম, তারপর বাড়ি ফিরলাম।",
+      "pronunciation": "amra khellam tarpor bari phirlam",
+      "en": "We played, then returned home.",
+      "context": "Using তারপর (then / after that)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "আমরা",
+          "pronunciation": "amra",
+          "en": "we"
+        },
+        {
+          "bn": "খেললাম",
+          "pronunciation": "khellam",
+          "en": "played"
+        },
+        {
+          "bn": "তারপর",
+          "pronunciation": "tarpor",
+          "en": "after that / then"
+        },
+        {
+          "bn": "বাড়ি",
+          "pronunciation": "bari",
+          "en": "house / home"
+        },
+        {
+          "bn": "ফিরলাম",
+          "pronunciation": "phirlam",
+          "en": "returned"
+        }
+      ]
+    },
+    {
+      "bn": "এরপর কী হবে?",
+      "pronunciation": "erpor ki hobe",
+      "en": "What happens after this?",
+      "context": "Using এরপর (after this)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "এরপর",
+          "pronunciation": "erpor",
+          "en": "after this / next"
+        },
+        {
+          "bn": "কী",
+          "pronunciation": "ki",
+          "en": "what"
+        },
+        {
+          "bn": "হবে",
+          "pronunciation": "hobe",
+          "en": "will be"
+        }
+      ]
+    },
+    {
+      "bn": "সে হারল, তারপরেও হাসল।",
+      "pronunciation": "she harlo tarporeo hashlo",
+      "en": "He lost, even after that he smiled.",
+      "context": "Using তারপরেও (even after that)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "হারল",
+          "pronunciation": "harlo",
+          "en": "lost"
+        },
+        {
+          "bn": "তারপরেও",
+          "pronunciation": "tarporeo",
+          "en": "even after that"
+        },
+        {
+          "bn": "হাসল",
+          "pronunciation": "hashlo",
+          "en": "laughed"
+        }
+      ]
+    },
+    {
+      "bn": "সে পড়াশোনা করে, আবার খেলাধুলাও করে।",
+      "pronunciation": "she porashona kore abar kheladhulao kore",
+      "en": "He studies and also plays sports.",
+      "context": "Using আবার (again / also)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "পড়াশোনা",
+          "pronunciation": "porashona",
+          "en": "studies"
+        },
+        {
+          "bn": "করে",
+          "pronunciation": "kore",
+          "en": "does / by doing"
+        },
+        {
+          "bn": "আবার",
+          "pronunciation": "abar",
+          "en": "again"
+        },
+        {
+          "bn": "খেলাধুলাও",
+          "pronunciation": "kheladhulao",
+          "en": "sports too"
+        },
+        {
+          "bn": "করে",
+          "pronunciation": "kore",
+          "en": "does / by doing"
+        }
+      ]
+    },
+    {
+      "bn": "সে পড়াশোনা করে, এছাড়া গানও গায়।",
+      "pronunciation": "she porashona kore echhara gano gai",
+      "en": "He studies; besides, he also sings.",
+      "context": "Using এছাড়া (besides)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "পড়াশোনা",
+          "pronunciation": "porashona",
+          "en": "studies"
+        },
+        {
+          "bn": "করে",
+          "pronunciation": "kore",
+          "en": "does / by doing"
+        },
+        {
+          "bn": "এছাড়া",
+          "pronunciation": "echhara",
+          "en": "besides"
+        },
+        {
+          "bn": "গানও",
+          "pronunciation": "gano",
+          "en": "songs too / also sings"
+        },
+        {
+          "bn": "গায়",
+          "pronunciation": "gai",
+          "en": "sings"
+        }
+      ]
+    },
+    {
+      "bn": "সে ভালো ছাত্র, তাছাড়া খুব ভদ্র।",
+      "pronunciation": "she bhalo chhatro tachhara khub bhodro",
+      "en": "He is a good student; moreover, he is very polite.",
+      "context": "Using তাছাড়া (moreover)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "ভালো",
+          "pronunciation": "bhalo",
+          "en": "good"
+        },
+        {
+          "bn": "ছাত্র",
+          "pronunciation": "chhatro",
+          "en": "student"
+        },
+        {
+          "bn": "তাছাড়া",
+          "pronunciation": "tachhara",
+          "en": "moreover / besides"
+        },
+        {
+          "bn": "খুব",
+          "pronunciation": "khub",
+          "en": "very"
+        },
+        {
+          "bn": "ভদ্র",
+          "pronunciation": "bhodro",
+          "en": "polite"
+        }
+      ]
+    },
+    {
+      "bn": "সে পরিশ্রমী, উপরন্তু সৎ।",
+      "pronunciation": "she pôrishromi uporontu shot",
+      "en": "He is hardworking; furthermore, he is honest.",
+      "context": "Using উপরন্তু (furthermore)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "পরিশ্রমী",
+          "pronunciation": "pôrishromi",
+          "en": "hardworking"
+        },
+        {
+          "bn": "উপরন্তু",
+          "pronunciation": "uporontu",
+          "en": "furthermore"
+        },
+        {
+          "bn": "সৎ",
+          "pronunciation": "shot",
+          "en": "honest"
+        }
+      ]
+    },
+    {
+      "bn": "বইটি সস্তা, অধিকন্তু খুব ভালো।",
+      "pronunciation": "boiti shosta odhikontu khub bhalo",
+      "en": "The book is inexpensive; moreover, it's very good.",
+      "context": "Using অধিকন্তু (moreover)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "বইটি",
+          "pronunciation": "boiti",
+          "en": "the book"
+        },
+        {
+          "bn": "সস্তা",
+          "pronunciation": "shosta",
+          "en": "cheap"
+        },
+        {
+          "bn": "অধিকন্তু",
+          "pronunciation": "odhikontu",
+          "en": "moreover"
+        },
+        {
+          "bn": "খুব",
+          "pronunciation": "khub",
+          "en": "very"
+        },
+        {
+          "bn": "ভালো",
+          "pronunciation": "bhalo",
+          "en": "good"
+        }
+      ]
+    },
+    {
+      "bn": "এমনকি শিশুরাও এটি জানে।",
+      "pronunciation": "emonki shishurao eti jane",
+      "en": "Even children know this.",
+      "context": "Using এমনকি (even)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "এমনকি",
+          "pronunciation": "emonki",
+          "en": "even"
+        },
+        {
+          "bn": "শিশুরাও",
+          "pronunciation": "shishurao",
+          "en": "children too"
+        },
+        {
+          "bn": "এটি",
+          "pronunciation": "eti",
+          "en": "this"
+        },
+        {
+          "bn": "জানে",
+          "pronunciation": "jane",
+          "en": "knows"
+        }
+      ]
+    },
+    {
+      "bn": "সে শুধু পড়াশোনা নয়, বরং খেলাধুলাতেও ভালো।",
+      "pronunciation": "she shudhu porashona noy borong kheladhulateo bhalo",
+      "en": "He is not only good at studying but also at sports.",
+      "context": "Using শুধু...নয়, বরং (not only...but also)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "শুধু",
+          "pronunciation": "shudhu",
+          "en": "only"
+        },
+        {
+          "bn": "পড়াশোনা",
+          "pronunciation": "porashona",
+          "en": "studies"
+        },
+        {
+          "bn": "নয়",
+          "pronunciation": "noy",
+          "en": "is not"
+        },
+        {
+          "bn": "বরং",
+          "pronunciation": "borong",
+          "en": "rather"
+        },
+        {
+          "bn": "খেলাধুলাতেও",
+          "pronunciation": "kheladhulateo",
+          "en": "at sports too"
+        },
+        {
+          "bn": "ভালো",
+          "pronunciation": "bhalo",
+          "en": "good"
+        }
+      ]
+    },
+    {
+      "bn": "রাগ করো না, বরং শান্ত থাকো।",
+      "pronunciation": "rag koro na borong shanto thako",
+      "en": "Don't get angry; rather, stay calm.",
+      "context": "Using বরং (rather)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "রাগ",
+          "pronunciation": "rag",
+          "en": "Anger"
+        },
+        {
+          "bn": "করো",
+          "pronunciation": "koro",
+          "en": "you do"
+        },
+        {
+          "bn": "না",
+          "pronunciation": "na",
+          "en": "not"
+        },
+        {
+          "bn": "বরং",
+          "pronunciation": "borong",
+          "en": "rather"
+        },
+        {
+          "bn": "শান্ত",
+          "pronunciation": "shanto",
+          "en": "calm down / calm"
+        },
+        {
+          "bn": "থাকো",
+          "pronunciation": "thako",
+          "en": "stay"
+        }
+      ]
+    },
+    {
+      "bn": "এখন যাওয়ার চেয়ে বরং কাল যাওয়া ভালো।",
+      "pronunciation": "ekhon jaoar ceye borong kal jawa bhalo",
+      "en": "Rather than going now, it is better to go tomorrow.",
+      "context": "Using বরং...ভালো (rather)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "এখন",
+          "pronunciation": "ekhon",
+          "en": "now"
+        },
+        {
+          "bn": "যাওয়ার",
+          "pronunciation": "jaoar",
+          "en": "of going"
+        },
+        {
+          "bn": "চেয়ে",
+          "pronunciation": "ceye",
+          "en": "rather than / compared with"
+        },
+        {
+          "bn": "বরং",
+          "pronunciation": "borong",
+          "en": "rather"
+        },
+        {
+          "bn": "কাল",
+          "pronunciation": "kal",
+          "en": "tomorrow / yesterday / time"
+        },
+        {
+          "bn": "যাওয়া",
+          "pronunciation": "jawa",
+          "en": "going"
+        },
+        {
+          "bn": "ভালো",
+          "pronunciation": "bhalo",
+          "en": "good"
+        }
+      ]
+    },
+    {
+      "bn": "সে চিকিৎসক, অর্থাৎ একজন ডাক্তার।",
+      "pronunciation": "she chikitsok orthat ekjon daktar",
+      "en": "He is a physician, that is, a doctor.",
+      "context": "Using অর্থাৎ (that is)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "চিকিৎসক",
+          "pronunciation": "chikitsok",
+          "en": "physician"
+        },
+        {
+          "bn": "অর্থাৎ",
+          "pronunciation": "orthat",
+          "en": "that is"
+        },
+        {
+          "bn": "একজন",
+          "pronunciation": "ekjon",
+          "en": "one person"
+        },
+        {
+          "bn": "ডাক্তার",
+          "pronunciation": "daktar",
+          "en": "doctor"
+        }
+      ]
+    },
+    {
+      "bn": "সে শিক্ষক, মানে স্কুলে পড়ায়।",
+      "pronunciation": "she shikkhok mane skule poray",
+      "en": "He is a teacher, meaning he teaches at school.",
+      "context": "Using মানে (meaning)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "শিক্ষক",
+          "pronunciation": "shikkhok",
+          "en": "teacher"
+        },
+        {
+          "bn": "মানে",
+          "pronunciation": "mane",
+          "en": "means"
+        },
+        {
+          "bn": "স্কুলে",
+          "pronunciation": "skule",
+          "en": "to school"
+        },
+        {
+          "bn": "পড়ায়",
+          "pronunciation": "poray",
+          "en": "teaches"
+        }
+      ]
+    },
+    {
+      "bn": "আমি ফল পছন্দ করি, যেমন আম ও কলা।",
+      "pronunciation": "ami fol pochhondo kori jemon am o Kola",
+      "en": "I like fruits such as mangoes and bananas.",
+      "context": "Using যেমন (such as)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "ফল",
+          "pronunciation": "fol",
+          "en": "fruit / result / outcome"
+        },
+        {
+          "bn": "পছন্দ",
+          "pronunciation": "pochhondo",
+          "en": "like / preference"
+        },
+        {
+          "bn": "করি",
+          "pronunciation": "kori",
+          "en": "do"
+        },
+        {
+          "bn": "যেমন",
+          "pronunciation": "jemon",
+          "en": "such as / just as"
+        },
+        {
+          "bn": "আম",
+          "pronunciation": "am",
+          "en": "mango"
+        },
+        {
+          "bn": "ও",
+          "pronunciation": "o",
+          "en": "and / also"
+        },
+        {
+          "bn": "কলা",
+          "pronunciation": "Kola",
+          "en": "Banana"
+        }
+      ]
+    },
+    {
+      "bn": "যেমন বাবা, তেমন ছেলে।",
+      "pronunciation": "jemon baba temon chele",
+      "en": "Like father, like son.",
+      "context": "Using যেমন...তেমন (just as...so)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "যেমন",
+          "pronunciation": "jemon",
+          "en": "such as / just as"
+        },
+        {
+          "bn": "বাবা",
+          "pronunciation": "baba",
+          "en": "father"
+        },
+        {
+          "bn": "তেমন",
+          "pronunciation": "temon",
+          "en": "so / like that"
+        },
+        {
+          "bn": "ছেলে",
+          "pronunciation": "chele",
+          "en": "Boy"
+        }
+      ]
+    },
+    {
+      "bn": "যে পরিশ্রম করে, সে সফল হয়।",
+      "pronunciation": "je porishrom kore she shofol hoy",
+      "en": "Whoever works hard succeeds.",
+      "context": "Using যে...সে (whoever...that person)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "যে",
+          "pronunciation": "je",
+          "en": "that / who"
+        },
+        {
+          "bn": "পরিশ্রম",
+          "pronunciation": "porishrom",
+          "en": "hard work"
+        },
+        {
+          "bn": "করে",
+          "pronunciation": "kore",
+          "en": "does / by doing"
+        },
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "সফল",
+          "pronunciation": "shofol",
+          "en": "successful"
+        },
+        {
+          "bn": "হয়",
+          "pronunciation": "hoy",
+          "en": "is / happens / becomes"
+        }
+      ]
+    },
+    {
+      "bn": "যা বলবে, তা করব।",
+      "pronunciation": "ja bolbe ta korbo",
+      "en": "Whatever you say, I'll do.",
+      "context": "Using যা...তা (whatever...that)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "যা",
+          "pronunciation": "ja",
+          "en": "whatever / what"
+        },
+        {
+          "bn": "বলবে",
+          "pronunciation": "bolbe",
+          "en": "will say"
+        },
+        {
+          "bn": "তা",
+          "pronunciation": "ta",
+          "en": "that"
+        },
+        {
+          "bn": "করব",
+          "pronunciation": "korbo",
+          "en": "will do"
+        }
+      ]
+    },
+    {
+      "bn": "যেখানে নদী আছে, সেখানে মাছও আছে।",
+      "pronunciation": "jekhane Nodi achhe shekhane machho achhe",
+      "en": "Where there is a river, there are fish.",
+      "context": "Using যেখানে...সেখানে (where...there)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "যেখানে",
+          "pronunciation": "jekhane",
+          "en": "where"
+        },
+        {
+          "bn": "নদী",
+          "pronunciation": "Nodi",
+          "en": "River"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is / has"
+        },
+        {
+          "bn": "সেখানে",
+          "pronunciation": "shekhane",
+          "en": "there"
+        },
+        {
+          "bn": "মাছও",
+          "pronunciation": "machho",
+          "en": "fish too"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is / has"
+        }
+      ]
+    },
+    {
+      "bn": "যখন ডাকবে, তখন আসব।",
+      "pronunciation": "jokhon dakbe tokhon ashbo",
+      "en": "When you call, then I'll come.",
+      "context": "Using যখন...তখন (when...then)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "যখন",
+          "pronunciation": "jokhon",
+          "en": "when"
+        },
+        {
+          "bn": "ডাকবে",
+          "pronunciation": "dakbe",
+          "en": "will call"
+        },
+        {
+          "bn": "তখন",
+          "pronunciation": "tokhon",
+          "en": "then"
+        },
+        {
+          "bn": "আসব",
+          "pronunciation": "ashbo",
+          "en": "will come"
+        }
+      ]
+    },
+    {
+      "bn": "যত পড়বে, তত শিখবে।",
+      "pronunciation": "joto porbe toto shikhbe",
+      "en": "The more you study, the more you'll learn.",
+      "context": "Using যত...তত (the more...the more)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "যত",
+          "pronunciation": "joto",
+          "en": "the more / as much as"
+        },
+        {
+          "bn": "পড়বে",
+          "pronunciation": "porbe",
+          "en": "will study"
+        },
+        {
+          "bn": "তত",
+          "pronunciation": "toto",
+          "en": "the more / that much"
+        },
+        {
+          "bn": "শিখবে",
+          "pronunciation": "shikhbe",
+          "en": "will learn"
+        }
+      ]
+    },
+    {
+      "bn": "যতক্ষণ বৃষ্টি হবে, ততক্ষণ অপেক্ষা করব।",
+      "pronunciation": "jotokkhon brishti hobe totokkhon opekkha korbo",
+      "en": "As long as it rains, we'll wait.",
+      "context": "Using যতক্ষণ...ততক্ষণ (as long as)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "যতক্ষণ",
+          "pronunciation": "jotokkhon",
+          "en": "as long as"
+        },
+        {
+          "bn": "বৃষ্টি",
+          "pronunciation": "brishti",
+          "en": "rain"
+        },
+        {
+          "bn": "হবে",
+          "pronunciation": "hobe",
+          "en": "will be"
+        },
+        {
+          "bn": "ততক্ষণ",
+          "pronunciation": "totokkhon",
+          "en": "for that long"
+        },
+        {
+          "bn": "অপেক্ষা",
+          "pronunciation": "opekkha",
+          "en": "wait"
+        },
+        {
+          "bn": "করব",
+          "pronunciation": "korbo",
+          "en": "will do"
+        }
+      ]
+    },
+    {
+      "bn": "যতক্ষণ না সে আসে, অপেক্ষা করো।",
+      "pronunciation": "jotokkhon na she ashe opekkha koro",
+      "en": "Wait until he comes.",
+      "context": "Using যতক্ষণ না (until)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "যতক্ষণ",
+          "pronunciation": "jotokkhon",
+          "en": "as long as"
+        },
+        {
+          "bn": "না",
+          "pronunciation": "na",
+          "en": "not"
+        },
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "আসে",
+          "pronunciation": "ashe",
+          "en": "comes / knows how to"
+        },
+        {
+          "bn": "অপেক্ষা",
+          "pronunciation": "opekkha",
+          "en": "wait"
+        },
+        {
+          "bn": "করো",
+          "pronunciation": "koro",
+          "en": "you do"
+        }
+      ]
+    },
+    {
+      "bn": "এখন বের হও, না হলে দেরি হবে।",
+      "pronunciation": "ekhon ber hao na hole deri hobe",
+      "en": "Leave now, otherwise you'll be late.",
+      "context": "Using না হলে (otherwise)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "এখন",
+          "pronunciation": "ekhon",
+          "en": "now"
+        },
+        {
+          "bn": "বের",
+          "pronunciation": "ber",
+          "en": "out"
+        },
+        {
+          "bn": "হও",
+          "pronunciation": "hao",
+          "en": "go / become"
+        },
+        {
+          "bn": "না",
+          "pronunciation": "na",
+          "en": "not"
+        },
+        {
+          "bn": "হলে",
+          "pronunciation": "hole",
+          "en": "if"
+        },
+        {
+          "bn": "দেরি",
+          "pronunciation": "deri",
+          "en": "late"
+        },
+        {
+          "bn": "হবে",
+          "pronunciation": "hobe",
+          "en": "will be"
+        }
+      ]
+    },
+    {
+      "bn": "তাড়াতাড়ি খাও, না হলে তো ঠান্ডা হয়ে যাবে।",
+      "pronunciation": "taratari khao na hole to thanda hoye jabe",
+      "en": "Eat quickly, otherwise it'll get cold.",
+      "context": "Using না হলে তো (otherwise)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "তাড়াতাড়ি",
+          "pronunciation": "taratari",
+          "en": "soon / quickly"
+        },
+        {
+          "bn": "খাও",
+          "pronunciation": "khao",
+          "en": "eat"
+        },
+        {
+          "bn": "না",
+          "pronunciation": "na",
+          "en": "not"
+        },
+        {
+          "bn": "হলে",
+          "pronunciation": "hole",
+          "en": "if"
+        },
+        {
+          "bn": "তো",
+          "pronunciation": "to",
+          "en": "right / indeed"
+        },
+        {
+          "bn": "ঠান্ডা",
+          "pronunciation": "thanda",
+          "en": "cold"
+        },
+        {
+          "bn": "হয়ে",
+          "pronunciation": "hoye",
+          "en": "become"
+        },
+        {
+          "bn": "যাবে",
+          "pronunciation": "jabe",
+          "en": "will go"
+        }
+      ]
+    },
+    {
+      "bn": "সে না হাসল, না কাঁদল।",
+      "pronunciation": "she na hashlo na kadlo",
+      "en": "He neither laughed nor cried.",
+      "context": "Using না...না (neither...nor)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "না",
+          "pronunciation": "na",
+          "en": "not"
+        },
+        {
+          "bn": "হাসল",
+          "pronunciation": "hashlo",
+          "en": "laughed"
+        },
+        {
+          "bn": "না",
+          "pronunciation": "na",
+          "en": "not"
+        },
+        {
+          "bn": "কাঁদল",
+          "pronunciation": "kadlo",
+          "en": "cried"
+        }
+      ]
+    },
+    {
+      "bn": "হয় তুমি যাবে, হয় আমি যাব।",
+      "pronunciation": "hoy tumi jabe hoy ami jabo",
+      "en": "Either you'll go, or I will.",
+      "context": "Using হয়...হয় (either...or)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "হয়",
+          "pronunciation": "hoy",
+          "en": "is / happens / becomes"
+        },
+        {
+          "bn": "তুমি",
+          "pronunciation": "tumi",
+          "en": "you (familiar)"
+        },
+        {
+          "bn": "যাবে",
+          "pronunciation": "jabe",
+          "en": "will go"
+        },
+        {
+          "bn": "হয়",
+          "pronunciation": "hoy",
+          "en": "is / happens / becomes"
+        },
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "যাব",
+          "pronunciation": "jabo",
+          "en": "will go"
+        }
+      ]
+    },
+    {
+      "bn": "একদিকে কাজ, অন্যদিকে পড়াশোনা।",
+      "pronunciation": "ekdike kaj onnodike porashona",
+      "en": "On one hand work, on the other hand studies.",
+      "context": "Using একদিকে...অন্যদিকে (on one hand...on the other hand)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "একদিকে",
+          "pronunciation": "ekdike",
+          "en": "on one hand"
+        },
+        {
+          "bn": "কাজ",
+          "pronunciation": "kaj",
+          "en": "work / task / function"
+        },
+        {
+          "bn": "অন্যদিকে",
+          "pronunciation": "onnodike",
+          "en": "on the other hand"
+        },
+        {
+          "bn": "পড়াশোনা",
+          "pronunciation": "porashona",
+          "en": "studies"
+        }
+      ]
+    },
+    {
+      "bn": "প্রথমত সময় নেই, দ্বিতীয়ত টাকা নেই।",
+      "pronunciation": "prothomoto shomoy nei ditiyoto taka nei",
+      "en": "Firstly there's no time; secondly there's no money.",
+      "context": "Using প্রথমত...দ্বিতীয়ত (firstly...secondly)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "প্রথমত",
+          "pronunciation": "prothomoto",
+          "en": "firstly"
+        },
+        {
+          "bn": "সময়",
+          "pronunciation": "shomoy",
+          "en": "time"
+        },
+        {
+          "bn": "নেই",
+          "pronunciation": "nei",
+          "en": "is not there / does not have"
+        },
+        {
+          "bn": "দ্বিতীয়ত",
+          "pronunciation": "ditiyoto",
+          "en": "secondly"
+        },
+        {
+          "bn": "টাকা",
+          "pronunciation": "taka",
+          "en": "Money"
+        },
+        {
+          "bn": "নেই",
+          "pronunciation": "nei",
+          "en": "is not there / does not have"
+        }
+      ]
+    },
+    {
+      "bn": "শেষে সবাই বাড়ি ফিরল।",
+      "pronunciation": "sheshe shobai bari phirlo",
+      "en": "Finally everyone returned home.",
+      "context": "Using শেষে (finally)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "শেষে",
+          "pronunciation": "sheshe",
+          "en": "at the end"
+        },
+        {
+          "bn": "সবাই",
+          "pronunciation": "shobai",
+          "en": "everyone"
+        },
+        {
+          "bn": "বাড়ি",
+          "pronunciation": "bari",
+          "en": "house / home"
+        },
+        {
+          "bn": "ফিরল",
+          "pronunciation": "phirlo",
+          "en": "returned"
+        }
+      ]
+    },
+    {
+      "bn": "অবশেষে ট্রেন এল।",
+      "pronunciation": "obosheshe tren elo",
+      "en": "Finally the train arrived.",
+      "context": "Using অবশেষে (finally)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "অবশেষে",
+          "pronunciation": "obosheshe",
+          "en": "finally"
+        },
+        {
+          "bn": "ট্রেন",
+          "pronunciation": "tren",
+          "en": "train"
+        },
+        {
+          "bn": "এল",
+          "pronunciation": "elo",
+          "en": "arrived"
+        }
+      ]
+    },
+    {
+      "bn": "যদিও সে দরিদ্র, তথাপি সৎ।",
+      "pronunciation": "jodio she doridro tothapi shot",
+      "en": "Although he is poor, nevertheless he is honest.",
+      "context": "Using যদিও...তথাপি (although...nevertheless)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "যদিও",
+          "pronunciation": "jodio",
+          "en": "although"
+        },
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "দরিদ্র",
+          "pronunciation": "doridro",
+          "en": "poor"
+        },
+        {
+          "bn": "তথাপি",
+          "pronunciation": "tothapi",
+          "en": "nevertheless"
+        },
+        {
+          "bn": "সৎ",
+          "pronunciation": "shot",
+          "en": "honest"
+        }
+      ]
+    },
+    {
+      "bn": "অনেক বাধা ছিল, তথাপি সে সফল হলো।",
+      "pronunciation": "ônek badha chhilo tothapi she shofol holo",
+      "en": "There were many obstacles; nevertheless he succeeded.",
+      "context": "Using তথাপি (nevertheless)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "অনেক",
+          "pronunciation": "ônek",
+          "en": "very / many / much"
+        },
+        {
+          "bn": "বাধা",
+          "pronunciation": "badha",
+          "en": "obstacle"
+        },
+        {
+          "bn": "ছিল",
+          "pronunciation": "chhilo",
+          "en": "was"
+        },
+        {
+          "bn": "তথাপি",
+          "pronunciation": "tothapi",
+          "en": "nevertheless"
+        },
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "সফল",
+          "pronunciation": "shofol",
+          "en": "successful"
+        },
+        {
+          "bn": "হলো",
+          "pronunciation": "holo",
+          "en": "done"
+        }
+      ]
+    },
+    {
+      "bn": "কিংবা তুমি বলো, কিংবা আমি বলি।",
+      "pronunciation": "kingba tumi bolo kingba ami boli",
+      "en": "Either you speak, or I will.",
+      "context": "Using কিংবা...কিংবা (either...or)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "কিংবা",
+          "pronunciation": "kingba",
+          "en": "or"
+        },
+        {
+          "bn": "তুমি",
+          "pronunciation": "tumi",
+          "en": "you (familiar)"
+        },
+        {
+          "bn": "বলো",
+          "pronunciation": "bolo",
+          "en": "speak (familiar)"
+        },
+        {
+          "bn": "কিংবা",
+          "pronunciation": "kingba",
+          "en": "or"
+        },
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "বলি",
+          "pronunciation": "boli",
+          "en": "say"
+        }
+      ]
+    },
+    {
+      "bn": "আর যদি সময় থাকে, তাহলে সিনেমাও দেখব।",
+      "pronunciation": "ar jodi shomoy thake tahole sinemao dekhbo",
+      "en": "And if there's time, we'll watch a movie too.",
+      "context": "Using আর যদি (and if)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "আর",
+          "pronunciation": "ar",
+          "en": "and / also / more"
+        },
         {
           "bn": "যদি",
           "pronunciation": "jodi",
@@ -248,38 +2443,82 @@
           "en": "lives / stays"
         },
         {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
+          "bn": "তাহলে",
+          "pronunciation": "tahole",
+          "en": "then"
         },
         {
-          "bn": "আসব",
-          "pronunciation": "ashbo",
-          "en": "will come"
+          "bn": "সিনেমাও",
+          "pronunciation": "sinemao",
+          "en": "a movie too"
+        },
+        {
+          "bn": "দেখব",
+          "pronunciation": "dekhbo",
+          "en": "will watch"
         }
       ]
     },
     {
-      "bn": "তুমি এলে, তবে আমরা যাব।",
-      "pronunciation": "tumi ele, tobe amra jabo",
-      "en": "If you come, then we will go.",
-      "context": "Using তবে (then)",
+      "bn": "এমন হলে আমাকে জানিও।",
+      "pronunciation": "emon hole amake janio",
+      "en": "If that happens, let me know.",
+      "context": "Using এমন হলে (if that happens)",
       "category": "conjunctions",
       "words": [
+        {
+          "bn": "এমন",
+          "pronunciation": "emon",
+          "en": "such / like this"
+        },
+        {
+          "bn": "হলে",
+          "pronunciation": "hole",
+          "en": "if"
+        },
+        {
+          "bn": "আমাকে",
+          "pronunciation": "amake",
+          "en": "me"
+        },
+        {
+          "bn": "জানিও",
+          "pronunciation": "janio",
+          "en": "let know"
+        }
+      ]
+    },
+    {
+      "bn": "শুধু যদি তুমি রাজি হও, আমরা শুরু করব।",
+      "pronunciation": "shudhu jodi tumi raji hao amra shuru korbo",
+      "en": "Only if you agree will we begin.",
+      "context": "Using শুধু যদি (only if)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "শুধু",
+          "pronunciation": "shudhu",
+          "en": "only"
+        },
+        {
+          "bn": "যদি",
+          "pronunciation": "jodi",
+          "en": "if"
+        },
         {
           "bn": "তুমি",
           "pronunciation": "tumi",
           "en": "you (familiar)"
         },
         {
-          "bn": "এলে",
-          "pronunciation": "ele",
-          "en": "if (you) come"
+          "bn": "রাজি",
+          "pronunciation": "raji",
+          "en": "agreed"
         },
         {
-          "bn": "তবে",
-          "pronunciation": "tobe",
-          "en": "then"
+          "bn": "হও",
+          "pronunciation": "hao",
+          "en": "go / become"
         },
         {
           "bn": "আমরা",
@@ -287,43 +2526,9 @@
           "en": "we"
         },
         {
-          "bn": "যাব",
-          "pronunciation": "jabo",
-          "en": "will go"
-        }
-      ]
-    },
-    {
-      "bn": "যদিও কাজটি কঠিন, আমি চেষ্টা করব।",
-      "pronunciation": "jodio kajti kothin, ami cheshta korbo",
-      "en": "Although the task is difficult, I will try.",
-      "context": "Using যদিও (although)",
-      "category": "conjunctions",
-      "words": [
-        {
-          "bn": "যদিও",
-          "pronunciation": "jodio",
-          "en": "although"
-        },
-        {
-          "bn": "কাজটি",
-          "pronunciation": "kajti",
-          "en": "the task"
-        },
-        {
-          "bn": "কঠিন",
-          "pronunciation": "kothin",
-          "en": "difficult"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "চেষ্টা",
-          "pronunciation": "cheshta",
-          "en": "try"
+          "bn": "শুরু",
+          "pronunciation": "shuru",
+          "en": "start"
         },
         {
           "bn": "করব",
@@ -333,65 +2538,16 @@
       ]
     },
     {
-      "bn": "যখন বৃষ্টি হয়, আমি বই পড়ি।",
-      "pronunciation": "jokhon brishti hoy, ami boi pori",
-      "en": "When it rains, I read a book.",
-      "context": "Using যখন (when)",
+      "bn": "যদিও না পারো, তবুও চেষ্টা করো।",
+      "pronunciation": "jodio na paro tobuo cheshta koro",
+      "en": "Even if you can't, still try.",
+      "context": "Using যদিও না (even if not)",
       "category": "conjunctions",
       "words": [
         {
-          "bn": "যখন",
-          "pronunciation": "jokhon",
-          "en": "when"
-        },
-        {
-          "bn": "বৃষ্টি",
-          "pronunciation": "brishti",
-          "en": "rain"
-        },
-        {
-          "bn": "হয়",
-          "pronunciation": "hoy",
-          "en": "is / happens"
-        },
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "বই",
-          "pronunciation": "boi",
-          "en": "book"
-        },
-        {
-          "bn": "পড়ি",
-          "pronunciation": "pori",
-          "en": "read"
-        }
-      ]
-    },
-    {
-      "bn": "যতক্ষণ কাজ শেষ না হয়, আমি থাকব।",
-      "pronunciation": "jotokkhon kaj shesh na hoy, ami thakbo",
-      "en": "I will stay as long as the work is not finished.",
-      "context": "Using যতক্ষণ (as long as)",
-      "category": "conjunctions",
-      "words": [
-        {
-          "bn": "যতক্ষণ",
-          "pronunciation": "jotokkhon",
-          "en": "as long as"
-        },
-        {
-          "bn": "কাজ",
-          "pronunciation": "kaj",
-          "en": "work"
-        },
-        {
-          "bn": "শেষ",
-          "pronunciation": "shesh",
-          "en": "finished / end"
+          "bn": "যদিও",
+          "pronunciation": "jodio",
+          "en": "although"
         },
         {
           "bn": "না",
@@ -399,9 +2555,48 @@
           "en": "not"
         },
         {
-          "bn": "হয়",
-          "pronunciation": "hoy",
-          "en": "is / happens"
+          "bn": "পারো",
+          "pronunciation": "paro",
+          "en": "can (familiar)"
+        },
+        {
+          "bn": "তবুও",
+          "pronunciation": "tobuo",
+          "en": "nevertheless / still"
+        },
+        {
+          "bn": "চেষ্টা",
+          "pronunciation": "cheshta",
+          "en": "try"
+        },
+        {
+          "bn": "করো",
+          "pronunciation": "koro",
+          "en": "you do"
+        }
+      ]
+    },
+    {
+      "bn": "এমন নয় যে আমি রাগ করেছি।",
+      "pronunciation": "emon noy je ami rag korechhi",
+      "en": "It's not that I'm angry.",
+      "context": "Using এমন নয় যে (it's not that)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "এমন",
+          "pronunciation": "emon",
+          "en": "such / like this"
+        },
+        {
+          "bn": "নয়",
+          "pronunciation": "noy",
+          "en": "is not"
+        },
+        {
+          "bn": "যে",
+          "pronunciation": "je",
+          "en": "that / who"
         },
         {
           "bn": "আমি",
@@ -409,661 +2604,372 @@
           "en": "I"
         },
         {
-          "bn": "থাকব",
-          "pronunciation": "thakbo",
-          "en": "will stay"
+          "bn": "রাগ",
+          "pronunciation": "rag",
+          "en": "Anger"
+        },
+        {
+          "bn": "করেছি",
+          "pronunciation": "korechhi",
+          "en": "did / have done"
         }
       ]
     },
     {
-      "bn": "এখন চলো, নইলে দেরি হবে।",
-      "pronunciation": "ekhon cholo, noile deri hobe",
-      "en": "Let us go now, otherwise we will be late.",
-      "context": "Using নইলে (otherwise)",
+      "bn": "অর্থাৎ বলতে গেলে কাজ শেষ।",
+      "pronunciation": "orthat bolte gele kaj shesh",
+      "en": "In other words, the work is finished.",
+      "context": "Using অর্থাৎ বলতে গেলে (in other words)",
       "category": "conjunctions",
       "words": [
         {
-          "bn": "এখন",
-          "pronunciation": "ekhon",
-          "en": "now"
+          "bn": "অর্থাৎ",
+          "pronunciation": "orthat",
+          "en": "that is"
         },
         {
-          "bn": "চলো",
-          "pronunciation": "cholo",
-          "en": "let us go"
+          "bn": "বলতে",
+          "pronunciation": "bolte",
+          "en": "to say"
         },
         {
-          "bn": "নইলে",
-          "pronunciation": "noile",
-          "en": "otherwise"
+          "bn": "গেলে",
+          "pronunciation": "gele",
+          "en": "if said / when going"
         },
         {
-          "bn": "দেরি",
-          "pronunciation": "deri",
-          "en": "late"
+          "bn": "কাজ",
+          "pronunciation": "kaj",
+          "en": "work / task / function"
         },
         {
-          "bn": "হবে",
-          "pronunciation": "hobe",
-          "en": "will be"
+          "bn": "শেষ",
+          "pronunciation": "shesh",
+          "en": "end / last / final"
         }
       ]
     },
     {
-      "bn": "মাসের শেষে আসবো।",
-      "pronunciation": "Maash-er sheshe asbo.",
-      "en": "I will come at the end of the month.",
-      "context": "Talking about time.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "বইটা খুলে পড়ো।",
-      "pronunciation": "Boi-ta khule poro.",
-      "en": "Open the book and read.",
-      "context": "Specific instruction.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "আমি বুঝতে পারছি না",
-      "pronunciation": "Ami bujhte parchi na",
-      "en": "I can't understand",
-      "context": "Expressing lack of comprehension.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "আমি তোমার বন্ধু হতে চাই!",
-      "pronunciation": "Ami tomar bondhu hote chai!",
-      "en": "I want to be your friend!",
-      "context": "Expressing desire for friendship.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "আমি যাব।",
-      "pronunciation": "Ami jabo.",
-      "en": "I will go.",
-      "context": "Stating intent to leave.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "আমার মতো কোনো বন্ধু নেই।",
-      "pronunciation": "Amar moto kono bondhu nei.",
-      "en": "There is no friend like me.",
-      "context": "Personal statement.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "এই কথাটা বুঝতে চেষ্টা করো।",
-      "pronunciation": "Ei kathata bujhte cheshta koro.",
-      "en": "Try to understand this word.",
-      "context": "Encouragement/Instruction.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "আমার দেশ ইংল্যান্ড।",
-      "pronunciation": "Amar desh England.",
-      "en": "My country is England.",
-      "context": "Stating nationality.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "আমরা একসাথে যাবো",
-      "pronunciation": "Aamra ekshathe jabo",
-      "en": "We will go together.",
-      "context": "Planning group movement.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "বুঝছেন না?",
-      "pronunciation": "Bujhchhen na?",
-      "en": "Don’t understand?",
-      "context": "Asking if someone is confused.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "বুঝতে পারছি না",
-      "pronunciation": "Bujhte parchi na",
-      "en": "Can’t understand",
-      "context": "Stating confusion.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "আপনি কি এক কাপ চা খেতে চাইবেন?",
-      "pronunciation": "Aapni ki ek cup cha khete chaiben?",
-      "en": "Do you like having a cup of tea?",
-      "context": "Offering a beverage.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "বাবা কাজ করছেন।",
-      "pronunciation": "Baba kaj korchhen.",
-      "en": "Father is working.",
-      "context": "Stating a fact about a family member.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "আমার হাত ধরো।",
-      "pronunciation": "Amar haat dhoro.",
-      "en": "Hold my hand.",
-      "context": "Simple request for physical contact/help.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "এই গাছটা আমার পছন্দ।",
-      "pronunciation": "Ei gachh ta amar pochhondo.",
-      "en": "I like this tree.",
-      "context": "Expressing preference.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "এই খাতাটা আপনার জন্য।",
-      "pronunciation": "Ei khata ta aapnar jonno.",
-      "en": "This notebook is for you.",
-      "context": "Giving something to someone.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "আমি একটি বই পড়ছি।",
-      "pronunciation": "Ami ekti boi porchhi.",
-      "en": "I am reading a book.",
-      "context": "Describing an ongoing action.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "দাদু গল্প বলেন।",
-      "pronunciation": "Dadu golpo bolen.",
-      "en": "Grandfather tells stories.",
-      "context": "Describing a habitual action.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "আমি গাড়ি চালাতে পারি না।",
-      "pronunciation": "Ami gaari chalate pari na.",
-      "en": "I cannot drive a car.",
-      "context": "Talking about ability.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "আমি হোমওয়ার্ক করবো।",
-      "pronunciation": "Ami homework korbo.",
-      "en": "I will do homework.",
-      "context": "Talking about future plans.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "পানি শেষ হয়ে গেছে।",
-      "pronunciation": "Pani sesh hoye geche.",
-      "en": "The water is finished.",
-      "context": "Stating that something has run out.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "রাজা কৃষ্ণচন্দ্র ভালো মানুষ।",
-      "pronunciation": "Raja Krishnachandra bhalo manush.",
-      "en": "King Krishnachandra is a good man.",
-      "context": "Describing a respected historical or royal figure.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "সময় ভালো কাজে লাগাও।",
-      "pronunciation": "Somoy bhalo kaaje lagao.",
-      "en": "Use time for good work.",
-      "context": "Advising good use of time.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "আমি উত্তর দিকে যাবো।",
-      "pronunciation": "Ami uttor dike jabo.",
-      "en": "I will go in the north direction.",
-      "context": "Talking about direction.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "আজ বৃষ্টি হবে",
-      "pronunciation": "Aaj brishti hobe",
-      "en": "It will rain today",
-      "context": "Predicting weather.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "এখন কি করবে?",
-      "pronunciation": "Ekhon ki korbe?",
-      "en": "What will you do now?",
-      "context": "Asking about future plans.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "এ আমার বন্ধু!",
-      "pronunciation": "E' amar bondhu",
-      "en": "This is my friend!",
-      "context": "Introducing a friend.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "আমি চিন্তা করছি না",
-      "pronunciation": "Ami chinta korchi na",
-      "en": "I am not worried",
-      "context": "Expressing lack of concern.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "আমি একটা চা চাই",
-      "pronunciation": "Ami ekta chaa chai",
-      "en": "I want a tea.",
-      "context": "Ordering or requesting tea.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "বসে কথা বলুন",
-      "pronunciation": "Boshe kotha bolun",
-      "en": "Sit down and talk.",
-      "context": "Inviting a seated conversation.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "আমি ভাবছি না",
-      "pronunciation": "Ami bhabchi na",
-      "en": "I am not thinking.",
-      "context": "Stating mental state.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "আমি একটা কাজ করছি",
-      "pronunciation": "Aami ekta kaj korchi",
-      "en": "I am doing a work.",
-      "context": "Stating current activity.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "আমার সাথে আসবেন না!",
-      "pronunciation": "Amar shathe ashben na!",
-      "en": "Don’t come with me!",
-      "context": "Forbidding someone from following.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "আমি আপনাকে ভুলবো না",
-      "pronunciation": "Ami aapnake bhulbo na",
-      "en": "I will not forget you",
-      "context": "A promise of remembrance.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "আমি তোমার সাথে আসতে চাই!",
-      "pronunciation": "Ami tomar shathe ashte chai!",
-      "en": "I want to come with you!",
-      "context": "Expressing desire to join someone.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "এইটা আমার প্রিয় বই",
-      "pronunciation": "Eita amar priyo boi",
-      "en": "This is my favorite book",
-      "context": "Sharing a favorite item.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "হাতে হাত ধরে যাও",
-      "pronunciation": "Haate haat dhore jao",
-      "en": "Go hand in hand",
-      "context": "Instruction to walk together.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "যদি মনে হয়",
-      "pronunciation": "Jodi mone hoy",
-      "en": "If feel like",
-      "context": "A conditional phrase.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "তোমার জন্য আমি চিন্তা করি!",
-      "pronunciation": "Tomar jonno ami chinta kori!",
-      "en": "I think about you!",
-      "context": "Expressing concern or affection.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "তোমার সাথে কথা বলতে ভালো লাগে",
-      "pronunciation": "Tomar shathe kotha bolte bhalo lage",
-      "en": "I like talking to you",
-      "context": "Expressing enjoyment of conversation.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "তুমি কি আমার সাথে আসবে?",
-      "pronunciation": "Tumi ki amar shathe asbe?",
-      "en": "Will you come with me?",
-      "context": "Asking for company informally.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "আপনি কি নতুন জিনিস কিনতে পছন্দ করেন?",
-      "pronunciation": "Aapni ki notun jinis kinte pochhondo koren?",
-      "en": "Do you like buying new things?",
-      "context": "Asking about someone's preferences.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "সবাই একসাথে বসে খেলছে।",
-      "pronunciation": "Shobai ekshathe boshe khelchhe.",
-      "en": "Everyone is sitting and playing together.",
-      "context": "Describing a group activity.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "উনি খুব সুন্দর।",
-      "pronunciation": "Uni khub shundor.",
-      "en": "He is very handsome.",
-      "context": "Complimenting someone.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "সে এই কাছে থাকে।",
-      "pronunciation": "Shey ei kachhe thake.",
-      "en": "He lives nearby.",
-      "context": "Giving location information.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "আমি বাড়িতে আছি।",
-      "pronunciation": "Ami barite achhi.",
-      "en": "I am at home.",
-      "context": "Stating current location.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "আমি আপনার জন্য অনেক দিন ধরে অপেক্ষা করছি।",
-      "pronunciation": "Ami Aapnar jonno anek din dhore opekkha korchi.",
-      "en": "I have been waiting for you for a long time.",
-      "context": "Expressing patience/waiting.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "এই কাজটা জানি।",
-      "pronunciation": "Ei kaj ta jani.",
-      "en": "I know this work.",
-      "context": "Expressing competence.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "আমার আপনার কাছে একটা সাহায্য চাই।",
-      "pronunciation": "Amar Aapnar kache ekta sahajyo chai.",
-      "en": "I need some help from you.",
-      "context": "Requesting assistance politely.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "আমি তোমাকে সাহায্য করতে চাই।",
-      "pronunciation": "Ami tomake shahajjo korte chai.",
-      "en": "I want to help you.",
-      "context": "Offering assistance.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "আমি আপনার সাথে কথা বলতে চাই।",
-      "pronunciation": "Ami Aapnar sathe kotha bolte chai.",
-      "en": "I want to talk to you.",
-      "context": "Requesting a conversation.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "আমি তোমাকে কিছু বলতে চাই।",
-      "pronunciation": "Ami tomake kichu bolte chai.",
-      "en": "I want to tell you something.",
-      "context": "Preparing to share information.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "আমি রান্না করব।",
-      "pronunciation": "Ami ranna korbo.",
-      "en": "I will cook.",
-      "context": "Stating future plan.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "মা রান্না করছেন।",
-      "pronunciation": "Maa ranna korchhen.",
-      "en": "Mother is cooking.",
-      "context": "Stating a fact about a family member.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "আমার বন্ধুরা খুব ভালো।",
-      "pronunciation": "Amar bondhura khub bhalo.",
-      "en": "My friends are very good.",
-      "context": "Sharing personal information.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "ছাতাটা নিয়ে যাও যদি বৃষ্টি পড়ে।",
-      "pronunciation": "Chhata ta niye jao jodi brishti pore.",
-      "en": "Take the umbrella if it rains.",
-      "context": "Giving advice/instruction.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "তারা বই পড়ছে।",
-      "pronunciation": "Tara boi porchhe.",
-      "en": "They are reading books.",
-      "context": "Describing their activity.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "এটা আমার বই।",
-      "pronunciation": "Eta amar boi.",
-      "en": "This is my book.",
-      "context": "Showing ownership.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "আমার বই কোথায়?",
-      "pronunciation": "Amar boi kothay?",
-      "en": "Where is my book?",
-      "context": "Searching for an object.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "এই বাড়িতে কে থাকে?",
-      "pronunciation": "Ei bari te ke thake?",
-      "en": "Who lives in this house?",
-      "context": "Curiosity about neighbors.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "আপনি আমার বন্ধু।",
-      "pronunciation": "Aapni amar bondhu.",
-      "en": "You are my friend.",
-      "context": "Stating friendship status.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "আমার বই।",
-      "pronunciation": "Amar boi.",
-      "en": "My book.",
-      "context": "Showing possession.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "বাবা সংবাদপত্র পড়েন।",
-      "pronunciation": "Baba newspaper poren.",
-      "en": "Father reads the newspaper.",
-      "context": "Describing a daily activity.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "আমার ভয় করে না।",
-      "pronunciation": "Amar bhoy kore naa.",
-      "en": "I am not afraid.",
-      "context": "Expressing lack of fear.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "আমার বন্ধু আমাকে সাহায্য করে।",
-      "pronunciation": "Amar bondhu amake sahajjo kore.",
-      "en": "My friend helps me.",
-      "context": "Talking about help from a friend.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "ব্যাপারটা বুঝুন।",
-      "pronunciation": "Byapar-ta bujhun.",
-      "en": "Understand the matter.",
-      "context": "Asking someone to understand an issue.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "আমি আপনাকে চাই।",
-      "pronunciation": "Ami aapnake chai.",
-      "en": "I want you.",
-      "context": "Expressing desire or intention.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "ছাত্রী বই পড়ে।",
-      "pronunciation": "Chhatri boi pore.",
-      "en": "The female student reads a book.",
-      "context": "Describing a student’s activity.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "ছাত্র বই পড়ে।",
-      "pronunciation": "Chhatro boi pore.",
-      "en": "The male student reads a book.",
-      "context": "Describing a male student’s activity.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "এক ঘণ্টা পর আসবো।",
-      "pronunciation": "Ek ghonta por asbo.",
-      "en": "I will come after an hour.",
-      "context": "Talking about future time.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "আমি কাজ করছি।",
-      "pronunciation": "Ami kaaj korchhi.",
-      "en": "I am doing work.",
-      "context": "Describing an ongoing action.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "প্রচেষ্টা করলে সাফল্য আসবে।",
-      "pronunciation": "Prochesta korle safolota ashbe.",
-      "en": "Success will come with effort.",
-      "context": "Encouraging effort and perseverance.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "শেষ করো।",
-      "pronunciation": "Shesh koro.",
-      "en": "End it.",
-      "context": "Asking someone to finish something.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "আজ সময় খুবই কম।",
-      "pronunciation": "Aj shomoy khubi kom.",
-      "en": "Today there is very little time.",
-      "context": "Talking about limited time.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "আমার শুকনো মাছ ভালো লাগে।",
-      "pronunciation": "Amar shukno machh bhaalo laage.",
-      "en": "I like dry fish.",
-      "context": "Talking about food preferences.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "শূন্য কিছু না।",
-      "pronunciation": "Shunno kichu na.",
-      "en": "Zero is nothing.",
-      "context": "Explaining the meaning of zero.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "আমি উপাসনা করি।",
-      "pronunciation": "Ami upashona kori.",
-      "en": "I worship.",
-      "context": "Describing religious practice.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "আমার নাম...",
-      "pronunciation": "Amar naam...",
-      "en": "My name is...",
-      "context": "Introducing yourself.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "আমি খাই নি",
-      "pronunciation": "Ami khai ni",
-      "en": "I did not eat",
-      "context": "Stating you haven't eaten.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "কিছু না",
-      "pronunciation": "Kichu na",
-      "en": "Nothing",
-      "context": "Response to 'what happened' or 'what is it'.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "আমি ঠিক আছি",
-      "pronunciation": "Ami thik achhi",
-      "en": "I am okay",
-      "context": "Stating you are fine/okay.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "তুমি জানো?",
-      "pronunciation": "Tumi jano?",
-      "en": "Do you know?",
-      "context": "Asking if someone is aware of something.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "এখন বাজে...",
-      "pronunciation": "Ekhon baje...",
-      "en": "It’s now...",
-      "context": "Starting to tell the time.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "আজ অনেক কাজ আছে",
-      "pronunciation": "Aaj onek kaj ache",
-      "en": "There’s a lot of work today.",
-      "context": "Stating workload.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "এখন একটু পরিষ্কার করো",
-      "pronunciation": "Ekhon ektu porishkar koro",
-      "en": "Clean up a bit now.",
-      "context": "Instruction to clean.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "আজ আমি ভালো আছি!",
-      "pronunciation": "Aaj ami bhalo achhi!",
-      "en": "Today I am good!",
-      "context": "Stating current mood/health.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "আপনার জন্য আমি খুশি!",
-      "pronunciation": "Aapnar jonno ami khushi!",
-      "en": "I am happy for you!",
-      "context": "Expressing joy for someone else.",
-      "category": "conjunctions"
-    },
-    {
-      "bn": "আমি তোমাকে ভালোবাসি!",
-      "pronunciation": "Ami tomake bhalobashi!",
-      "en": "I love you!",
-      "context": "Expressing love.",
-      "category": "conjunctions"
+      "bn": "যেমনই সে এল, তেমনি সবাই খুশি হলো।",
+      "pronunciation": "jemoni she elo temoni shobai khushi holo",
+      "en": "As soon as he arrived, everyone became happy.",
+      "context": "Using যেমনই...তেমনি (just as soon as)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "যেমনই",
+          "pronunciation": "jemoni",
+          "en": "as soon as / just as"
+        },
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "এল",
+          "pronunciation": "elo",
+          "en": "arrived"
+        },
+        {
+          "bn": "তেমনি",
+          "pronunciation": "temoni",
+          "en": "likewise / then"
+        },
+        {
+          "bn": "সবাই",
+          "pronunciation": "shobai",
+          "en": "everyone"
+        },
+        {
+          "bn": "খুশি",
+          "pronunciation": "khushi",
+          "en": "Happy"
+        },
+        {
+          "bn": "হলো",
+          "pronunciation": "holo",
+          "en": "done"
+        }
+      ]
+    },
+    {
+      "bn": "যখনই ফোন করি, সে উত্তর দেয়।",
+      "pronunciation": "jokhoni fon kori she uttor dey",
+      "en": "Whenever I call, he answers.",
+      "context": "Using যখনই (whenever)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "যখনই",
+          "pronunciation": "jokhoni",
+          "en": "whenever"
+        },
+        {
+          "bn": "ফোন",
+          "pronunciation": "fon",
+          "en": "phone"
+        },
+        {
+          "bn": "করি",
+          "pronunciation": "kori",
+          "en": "do"
+        },
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "উত্তর",
+          "pronunciation": "uttor",
+          "en": "Answer / North"
+        },
+        {
+          "bn": "দেয়",
+          "pronunciation": "dey",
+          "en": "gives"
+        }
+      ]
+    },
+    {
+      "bn": "যেখানেই যাও, সাবধানে যেও।",
+      "pronunciation": "jekhanei jao shobdhone jeo",
+      "en": "Wherever you go, be careful.",
+      "context": "Using যেখানেই (wherever)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "যেখানেই",
+          "pronunciation": "jekhanei",
+          "en": "wherever"
+        },
+        {
+          "bn": "যাও",
+          "pronunciation": "jao",
+          "en": "go"
+        },
+        {
+          "bn": "সাবধানে",
+          "pronunciation": "shobdhone",
+          "en": "Carefully"
+        },
+        {
+          "bn": "যেও",
+          "pronunciation": "jeo",
+          "en": "go"
+        }
+      ]
+    },
+    {
+      "bn": "যাই হোক, কাজটা শেষ করি।",
+      "pronunciation": "jai hok kajta shesh kori",
+      "en": "Anyway, let's finish the work.",
+      "context": "Using যাই হোক (anyway)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "যাই",
+          "pronunciation": "jai",
+          "en": "go"
+        },
+        {
+          "bn": "হোক",
+          "pronunciation": "hok",
+          "en": "anyway / let it be"
+        },
+        {
+          "bn": "কাজটা",
+          "pronunciation": "kajta",
+          "en": "the job"
+        },
+        {
+          "bn": "শেষ",
+          "pronunciation": "shesh",
+          "en": "end / last / final"
+        },
+        {
+          "bn": "করি",
+          "pronunciation": "kori",
+          "en": "do"
+        }
+      ]
+    },
+    {
+      "bn": "সে অসুস্থ ছিল, তা সত্ত্বেও কাজে গেল।",
+      "pronunciation": "she ôshustho chhilo ta shotteo kaje gelo",
+      "en": "He was sick; despite that, he went to work.",
+      "context": "Using তা সত্ত্বেও (despite that)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "অসুস্থ",
+          "pronunciation": "ôshustho",
+          "en": "sick"
+        },
+        {
+          "bn": "ছিল",
+          "pronunciation": "chhilo",
+          "en": "was"
+        },
+        {
+          "bn": "তা",
+          "pronunciation": "ta",
+          "en": "that"
+        },
+        {
+          "bn": "সত্ত্বেও",
+          "pronunciation": "shotteo",
+          "en": "despite"
+        },
+        {
+          "bn": "কাজে",
+          "pronunciation": "kaje",
+          "en": "at work"
+        },
+        {
+          "bn": "গেল",
+          "pronunciation": "gelo",
+          "en": "went"
+        }
+      ]
+    },
+    {
+      "bn": "যদিও তেমন কঠিন নয়, সবাই ভয় পায়।",
+      "pronunciation": "jodio temon kothin noy shobai bhoy pay",
+      "en": "Even though it's not very difficult, everyone is afraid.",
+      "context": "Using যদিও তেমন (even though)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "যদিও",
+          "pronunciation": "jodio",
+          "en": "although"
+        },
+        {
+          "bn": "তেমন",
+          "pronunciation": "temon",
+          "en": "so / like that"
+        },
+        {
+          "bn": "কঠিন",
+          "pronunciation": "kothin",
+          "en": "difficult / hard"
+        },
+        {
+          "bn": "নয়",
+          "pronunciation": "noy",
+          "en": "is not"
+        },
+        {
+          "bn": "সবাই",
+          "pronunciation": "shobai",
+          "en": "everyone"
+        },
+        {
+          "bn": "ভয়",
+          "pronunciation": "bhoy",
+          "en": "fear"
+        },
+        {
+          "bn": "পায়",
+          "pronunciation": "pay",
+          "en": "feels / gets"
+        }
+      ]
+    },
+    {
+      "bn": "সে চাকরি করে, এর পাশাপাশি পড়াশোনাও করে।",
+      "pronunciation": "she chakri kore er pashapashi porashonao kore",
+      "en": "He works, and alongside that he studies.",
+      "context": "Using এর পাশাপাশি (alongside this)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "চাকরি",
+          "pronunciation": "chakri",
+          "en": "job"
+        },
+        {
+          "bn": "করে",
+          "pronunciation": "kore",
+          "en": "does / by doing"
+        },
+        {
+          "bn": "এর",
+          "pronunciation": "er",
+          "en": "of"
+        },
+        {
+          "bn": "পাশাপাশি",
+          "pronunciation": "pashapashi",
+          "en": "alongside"
+        },
+        {
+          "bn": "পড়াশোনাও",
+          "pronunciation": "porashonao",
+          "en": "studies too"
+        },
+        {
+          "bn": "করে",
+          "pronunciation": "kore",
+          "en": "does / by doing"
+        }
+      ]
+    },
+    {
+      "bn": "সে একই সঙ্গে গান গায় এবং নাচে।",
+      "pronunciation": "she eki shonge gan gai ebong nache",
+      "en": "She sings and dances at the same time.",
+      "context": "Using একই সঙ্গে (at the same time)",
+      "category": "conjunctions",
+      "words": [
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "একই",
+          "pronunciation": "eki",
+          "en": "the same"
+        },
+        {
+          "bn": "সঙ্গে",
+          "pronunciation": "shonge",
+          "en": "with"
+        },
+        {
+          "bn": "গান",
+          "pronunciation": "gan",
+          "en": "song / music"
+        },
+        {
+          "bn": "গায়",
+          "pronunciation": "gai",
+          "en": "sings"
+        },
+        {
+          "bn": "এবং",
+          "pronunciation": "ebong",
+          "en": "and"
+        },
+        {
+          "bn": "নাচে",
+          "pronunciation": "nache",
+          "en": "dances"
+        }
+      ]
     }
   ],
   "vocab": [
@@ -1072,700 +2978,560 @@
       "pronunciation": "ebong",
       "en": "and",
       "category": "conjunctions",
-      "sourcePhrase": "আমি চা এবং কফি পছন্দ করি।"
+      "sourcePhrase": "রাহিম এবং করিম বন্ধু।"
     },
     {
       "bn": "আর",
       "pronunciation": "ar",
-      "en": "and / also",
+      "en": "and",
       "category": "conjunctions",
-      "sourcePhrase": "মা আর বাবা বাড়িতে আছেন।"
+      "sourcePhrase": "আমি ভাত আর মাছ খাই।"
+    },
+    {
+      "bn": "ও",
+      "pronunciation": "o",
+      "en": "and",
+      "category": "conjunctions",
+      "sourcePhrase": "মা ও বাবা বাড়িতে আছেন।"
+    },
+    {
+      "bn": "কিংবা",
+      "pronunciation": "kingba",
+      "en": "or",
+      "category": "conjunctions",
+      "sourcePhrase": "তুমি চা কিংবা কফি খাবে?"
     },
     {
       "bn": "অথবা",
       "pronunciation": "othoba",
       "en": "or",
       "category": "conjunctions",
-      "sourcePhrase": "তুমি চা অথবা কফি নিতে পারো।"
+      "sourcePhrase": "এখন অথবা পরে এসো।"
+    },
+    {
+      "bn": "বা",
+      "pronunciation": "ba",
+      "en": "or",
+      "category": "conjunctions",
+      "sourcePhrase": "তুমি বাস বা ট্রেনে যেতে পারো।"
+    },
+    {
+      "bn": "নতুবা",
+      "pronunciation": "notuba",
+      "en": "otherwise",
+      "category": "conjunctions",
+      "sourcePhrase": "এখনই পড়ো, নতুবা ফেল করবে।"
+    },
+    {
+      "bn": "নয়তো",
+      "pronunciation": "noyto",
+      "en": "otherwise",
+      "category": "conjunctions",
+      "sourcePhrase": "তাড়াতাড়ি এসো, নয়তো ট্রেন মিস করবে।"
     },
     {
       "bn": "কিন্তু",
       "pronunciation": "kintu",
       "en": "but",
       "category": "conjunctions",
-      "sourcePhrase": "আমি যাব, কিন্তু এখন নয়।"
-    },
-    {
-      "bn": "কারণ",
-      "pronunciation": "karon",
-      "en": "because",
-      "category": "conjunctions",
-      "sourcePhrase": "আমি থাকব, কারণ বৃষ্টি হচ্ছে।"
-    },
-    {
-      "bn": "তাই",
-      "pronunciation": "tai",
-      "en": "so / therefore",
-      "category": "conjunctions",
-      "sourcePhrase": "বৃষ্টি হচ্ছে, তাই আমি বাড়িতে আছি।"
-    },
-    {
-      "bn": "যদি",
-      "pronunciation": "jodi",
-      "en": "if",
-      "category": "conjunctions",
-      "sourcePhrase": "যদি সময় থাকে, আমি আসব।"
+      "sourcePhrase": "আমি যেতে চেয়েছিলাম, কিন্তু পারিনি।"
     },
     {
       "bn": "তবে",
       "pronunciation": "tobe",
-      "en": "then / however",
+      "en": "however / but",
       "category": "conjunctions",
-      "sourcePhrase": "তুমি এলে, তবে আমরা যাব।"
+      "sourcePhrase": "সে ছোট, তবে খুব বুদ্ধিমান।"
+    },
+    {
+      "bn": "অথচ",
+      "pronunciation": "othoco",
+      "en": "yet",
+      "category": "conjunctions",
+      "sourcePhrase": "সে অনেক পড়েছে, অথচ ফেল করেছে।"
+    },
+    {
+      "bn": "কিন্তু তারপরও",
+      "pronunciation": "kintu tarporo",
+      "en": "but still",
+      "category": "conjunctions",
+      "sourcePhrase": "বৃষ্টি হচ্ছিল, কিন্তু তারপরও তারা খেলল।"
+    },
+    {
+      "bn": "তবুও",
+      "pronunciation": "tobuo",
+      "en": "nevertheless",
+      "category": "conjunctions",
+      "sourcePhrase": "সে ক্লান্ত ছিল, তবুও কাজ করল।"
     },
     {
       "bn": "যদিও",
       "pronunciation": "jodio",
       "en": "although",
       "category": "conjunctions",
-      "sourcePhrase": "যদিও কাজটি কঠিন, আমি চেষ্টা করব।"
+      "sourcePhrase": "যদিও বৃষ্টি হচ্ছিল, আমরা বের হলাম।"
     },
     {
-      "bn": "যখন",
-      "pronunciation": "jokhon",
-      "en": "when",
+      "bn": "যদিও...তবুও",
+      "pronunciation": "jodio tobuo",
+      "en": "although...still",
       "category": "conjunctions",
-      "sourcePhrase": "যখন বৃষ্টি হয়, আমি বই পড়ি।"
+      "sourcePhrase": "যদিও সে ব্যস্ত, তবুও আমাকে সাহায্য করল।"
     },
     {
-      "bn": "যতক্ষণ",
-      "pronunciation": "jotokkhon",
+      "bn": "যদি",
+      "pronunciation": "jodi",
+      "en": "if",
+      "category": "conjunctions",
+      "sourcePhrase": "যদি সময় পাও, এসো।"
+    },
+    {
+      "bn": "যদি...তবে",
+      "pronunciation": "jodi tobe",
+      "en": "if...then",
+      "category": "conjunctions",
+      "sourcePhrase": "যদি বৃষ্টি হয়, তবে আমরা যাব না।"
+    },
+    {
+      "bn": "যদি...তাহলে",
+      "pronunciation": "jodi tahole",
+      "en": "if...then",
+      "category": "conjunctions",
+      "sourcePhrase": "যদি পড়ো, তাহলে ভালো ফল করবে।"
+    },
+    {
+      "bn": "তাহলে",
+      "pronunciation": "tahole",
+      "en": "then",
+      "category": "conjunctions",
+      "sourcePhrase": "তুমি প্রস্তুত? তাহলে শুরু করি।"
+    },
+    {
+      "bn": "তবে",
+      "pronunciation": "tobe",
+      "en": "then",
+      "category": "conjunctions",
+      "sourcePhrase": "যদি চাও, তবে শুরু করো।"
+    },
+    {
+      "bn": "কারণ",
+      "pronunciation": "karon",
+      "en": "because",
+      "category": "conjunctions",
+      "sourcePhrase": "আমি আসিনি, কারণ অসুস্থ ছিলাম।"
+    },
+    {
+      "bn": "কেননা",
+      "pronunciation": "kenona",
+      "en": "because",
+      "category": "conjunctions",
+      "sourcePhrase": "সে খুশি, কেননা সে জিতেছে।"
+    },
+    {
+      "bn": "যেহেতু",
+      "pronunciation": "jehetu",
+      "en": "since / because",
+      "category": "conjunctions",
+      "sourcePhrase": "যেহেতু বৃষ্টি হচ্ছে, আমরা বাড়িতে থাকব।"
+    },
+    {
+      "bn": "যেহেতু...সেহেতু",
+      "pronunciation": "jehetu shehetu",
+      "en": "since...therefore",
+      "category": "conjunctions",
+      "sourcePhrase": "যেহেতু আজ ছুটি, সেহেতু স্কুল বন্ধ।"
+    },
+    {
+      "bn": "তাই",
+      "pronunciation": "tai",
+      "en": "therefore",
+      "category": "conjunctions",
+      "sourcePhrase": "সে পরিশ্রম করেছে, তাই সফল হয়েছে।"
+    },
+    {
+      "bn": "তাই বলে",
+      "pronunciation": "tai bole",
+      "en": "that doesn't mean",
+      "category": "conjunctions",
+      "sourcePhrase": "সে ভুল করেছে, তাই বলে তাকে অপমান করো না।"
+    },
+    {
+      "bn": "এজন্য",
+      "pronunciation": "ejonno",
+      "en": "for this reason",
+      "category": "conjunctions",
+      "sourcePhrase": "বৃষ্টি হচ্ছিল, এজন্য আমরা যাইনি।"
+    },
+    {
+      "bn": "সেজন্য",
+      "pronunciation": "shejonno",
+      "en": "therefore",
+      "category": "conjunctions",
+      "sourcePhrase": "সে অসুস্থ ছিল, সেজন্য আসেনি।"
+    },
+    {
+      "bn": "ফলে",
+      "pronunciation": "fole",
+      "en": "as a result",
+      "category": "conjunctions",
+      "sourcePhrase": "অনেক বৃষ্টি হয়েছে, ফলে নদী ভরে গেছে।"
+    },
+    {
+      "bn": "অতএব",
+      "pronunciation": "otoeb",
+      "en": "therefore",
+      "category": "conjunctions",
+      "sourcePhrase": "সব প্রস্তুত, অতএব শুরু করা যাক।"
+    },
+    {
+      "bn": "সুতরাং",
+      "pronunciation": "shutorang",
+      "en": "therefore",
+      "category": "conjunctions",
+      "sourcePhrase": "তুমি পড়েছ, সুতরাং পরীক্ষায় ভালো করবে।"
+    },
+    {
+      "bn": "অতঃপর",
+      "pronunciation": "otopor",
+      "en": "afterward",
+      "category": "conjunctions",
+      "sourcePhrase": "সবাই খাওয়া শেষ করল, অতঃপর বাড়ি ফিরল।"
+    },
+    {
+      "bn": "তারপর",
+      "pronunciation": "tarpor",
+      "en": "then / after that",
+      "category": "conjunctions",
+      "sourcePhrase": "আমরা খেললাম, তারপর বাড়ি ফিরলাম।"
+    },
+    {
+      "bn": "এরপর",
+      "pronunciation": "erpor",
+      "en": "after this",
+      "category": "conjunctions",
+      "sourcePhrase": "এরপর কী হবে?"
+    },
+    {
+      "bn": "তারপরেও",
+      "pronunciation": "tarporeo",
+      "en": "even after that",
+      "category": "conjunctions",
+      "sourcePhrase": "সে হারল, তারপরেও হাসল।"
+    },
+    {
+      "bn": "আবার",
+      "pronunciation": "abar",
+      "en": "again / also",
+      "category": "conjunctions",
+      "sourcePhrase": "সে পড়াশোনা করে, আবার খেলাধুলাও করে।"
+    },
+    {
+      "bn": "এছাড়া",
+      "pronunciation": "echhara",
+      "en": "besides",
+      "category": "conjunctions",
+      "sourcePhrase": "সে পড়াশোনা করে, এছাড়া গানও গায়।"
+    },
+    {
+      "bn": "তাছাড়া",
+      "pronunciation": "tachhara",
+      "en": "moreover",
+      "category": "conjunctions",
+      "sourcePhrase": "সে ভালো ছাত্র, তাছাড়া খুব ভদ্র।"
+    },
+    {
+      "bn": "উপরন্তু",
+      "pronunciation": "uporontu",
+      "en": "furthermore",
+      "category": "conjunctions",
+      "sourcePhrase": "সে পরিশ্রমী, উপরন্তু সৎ।"
+    },
+    {
+      "bn": "অধিকন্তু",
+      "pronunciation": "odhikontu",
+      "en": "moreover",
+      "category": "conjunctions",
+      "sourcePhrase": "বইটি সস্তা, অধিকন্তু খুব ভালো।"
+    },
+    {
+      "bn": "এমনকি",
+      "pronunciation": "emonki",
+      "en": "even",
+      "category": "conjunctions",
+      "sourcePhrase": "এমনকি শিশুরাও এটি জানে।"
+    },
+    {
+      "bn": "শুধু...নয়, বরং",
+      "pronunciation": "shudhu noy borong",
+      "en": "not only...but also",
+      "category": "conjunctions",
+      "sourcePhrase": "সে শুধু পড়াশোনা নয়, বরং খেলাধুলাতেও ভালো।"
+    },
+    {
+      "bn": "বরং",
+      "pronunciation": "borong",
+      "en": "rather",
+      "category": "conjunctions",
+      "sourcePhrase": "রাগ করো না, বরং শান্ত থাকো।"
+    },
+    {
+      "bn": "বরং...ভালো",
+      "pronunciation": "borong bhalo",
+      "en": "rather",
+      "category": "conjunctions",
+      "sourcePhrase": "এখন যাওয়ার চেয়ে বরং কাল যাওয়া ভালো।"
+    },
+    {
+      "bn": "অর্থাৎ",
+      "pronunciation": "orthat",
+      "en": "that is",
+      "category": "conjunctions",
+      "sourcePhrase": "সে চিকিৎসক, অর্থাৎ একজন ডাক্তার।"
+    },
+    {
+      "bn": "মানে",
+      "pronunciation": "mane",
+      "en": "meaning",
+      "category": "conjunctions",
+      "sourcePhrase": "সে শিক্ষক, মানে স্কুলে পড়ায়।"
+    },
+    {
+      "bn": "যেমন",
+      "pronunciation": "jemon",
+      "en": "such as",
+      "category": "conjunctions",
+      "sourcePhrase": "আমি ফল পছন্দ করি, যেমন আম ও কলা।"
+    },
+    {
+      "bn": "যেমন...তেমন",
+      "pronunciation": "jemon temon",
+      "en": "just as...so",
+      "category": "conjunctions",
+      "sourcePhrase": "যেমন বাবা, তেমন ছেলে।"
+    },
+    {
+      "bn": "যে...সে",
+      "pronunciation": "je she",
+      "en": "whoever...that person",
+      "category": "conjunctions",
+      "sourcePhrase": "যে পরিশ্রম করে, সে সফল হয়।"
+    },
+    {
+      "bn": "যা...তা",
+      "pronunciation": "ja ta",
+      "en": "whatever...that",
+      "category": "conjunctions",
+      "sourcePhrase": "যা বলবে, তা করব।"
+    },
+    {
+      "bn": "যেখানে...সেখানে",
+      "pronunciation": "jekhane shekhane",
+      "en": "where...there",
+      "category": "conjunctions",
+      "sourcePhrase": "যেখানে নদী আছে, সেখানে মাছও আছে।"
+    },
+    {
+      "bn": "যখন...তখন",
+      "pronunciation": "jokhon tokhon",
+      "en": "when...then",
+      "category": "conjunctions",
+      "sourcePhrase": "যখন ডাকবে, তখন আসব।"
+    },
+    {
+      "bn": "যত...তত",
+      "pronunciation": "joto toto",
+      "en": "the more...the more",
+      "category": "conjunctions",
+      "sourcePhrase": "যত পড়বে, তত শিখবে।"
+    },
+    {
+      "bn": "যতক্ষণ...ততক্ষণ",
+      "pronunciation": "jotokkhon totokkhon",
       "en": "as long as",
       "category": "conjunctions",
-      "sourcePhrase": "যতক্ষণ কাজ শেষ না হয়, আমি থাকব।"
+      "sourcePhrase": "যতক্ষণ বৃষ্টি হবে, ততক্ষণ অপেক্ষা করব।"
     },
     {
-      "bn": "নইলে",
-      "pronunciation": "noile",
+      "bn": "যতক্ষণ না",
+      "pronunciation": "jotokkhon na",
+      "en": "until",
+      "category": "conjunctions",
+      "sourcePhrase": "যতক্ষণ না সে আসে, অপেক্ষা করো।"
+    },
+    {
+      "bn": "না হলে",
+      "pronunciation": "na hole",
       "en": "otherwise",
       "category": "conjunctions",
-      "sourcePhrase": "এখন চলো, নইলে দেরি হবে।"
+      "sourcePhrase": "এখন বের হও, না হলে দেরি হবে।"
     },
     {
-      "bn": "আমি",
-      "pronunciation": "ami",
-      "en": "I",
+      "bn": "না হলে তো",
+      "pronunciation": "na hole to",
+      "en": "otherwise",
       "category": "conjunctions",
-      "sourcePhrase": "আমি চা এবং কফি পছন্দ করি।"
+      "sourcePhrase": "তাড়াতাড়ি খাও, না হলে তো ঠান্ডা হয়ে যাবে।"
     },
     {
-      "bn": "চা",
-      "pronunciation": "cha",
-      "en": "tea",
+      "bn": "না...না",
+      "pronunciation": "na na",
+      "en": "neither...nor",
       "category": "conjunctions",
-      "sourcePhrase": "আমি চা এবং কফি পছন্দ করি।"
+      "sourcePhrase": "সে না হাসল, না কাঁদল।"
     },
     {
-      "bn": "কফি",
-      "pronunciation": "kofi",
-      "en": "coffee",
+      "bn": "হয়...হয়",
+      "pronunciation": "hoy hoy",
+      "en": "either...or",
       "category": "conjunctions",
-      "sourcePhrase": "আমি চা এবং কফি পছন্দ করি।"
+      "sourcePhrase": "হয় তুমি যাবে, হয় আমি যাব।"
     },
     {
-      "bn": "পছন্দ",
-      "pronunciation": "pochhondo",
-      "en": "like / preference",
+      "bn": "একদিকে...অন্যদিকে",
+      "pronunciation": "ekdike onnodike",
+      "en": "on one hand...on the other hand",
       "category": "conjunctions",
-      "sourcePhrase": "আমি চা এবং কফি পছন্দ করি।"
+      "sourcePhrase": "একদিকে কাজ, অন্যদিকে পড়াশোনা।"
     },
     {
-      "bn": "করি",
-      "pronunciation": "kori",
-      "en": "do",
+      "bn": "প্রথমত...দ্বিতীয়ত",
+      "pronunciation": "prothomoto ditiyoto",
+      "en": "firstly...secondly",
       "category": "conjunctions",
-      "sourcePhrase": "আমি চা এবং কফি পছন্দ করি।"
+      "sourcePhrase": "প্রথমত সময় নেই, দ্বিতীয়ত টাকা নেই।"
     },
     {
-      "bn": "মা",
-      "pronunciation": "ma",
-      "en": "mother",
+      "bn": "শেষে",
+      "pronunciation": "sheshe",
+      "en": "finally",
       "category": "conjunctions",
-      "sourcePhrase": "মা আর বাবা বাড়িতে আছেন।"
+      "sourcePhrase": "শেষে সবাই বাড়ি ফিরল।"
     },
     {
-      "bn": "বাবা",
-      "pronunciation": "baba",
-      "en": "father",
+      "bn": "অবশেষে",
+      "pronunciation": "obosheshe",
+      "en": "finally",
       "category": "conjunctions",
-      "sourcePhrase": "মা আর বাবা বাড়িতে আছেন।"
+      "sourcePhrase": "অবশেষে ট্রেন এল।"
     },
     {
-      "bn": "বাড়িতে",
-      "pronunciation": "barite",
-      "en": "at home",
+      "bn": "যদিও...তথাপি",
+      "pronunciation": "jodio tothapi",
+      "en": "although...nevertheless",
       "category": "conjunctions",
-      "sourcePhrase": "মা আর বাবা বাড়িতে আছেন।"
+      "sourcePhrase": "যদিও সে দরিদ্র, তথাপি সৎ।"
     },
     {
-      "bn": "আছেন",
-      "pronunciation": "achhen",
-      "en": "are (respectful)",
+      "bn": "তথাপি",
+      "pronunciation": "tothapi",
+      "en": "nevertheless",
       "category": "conjunctions",
-      "sourcePhrase": "মা আর বাবা বাড়িতে আছেন।"
+      "sourcePhrase": "অনেক বাধা ছিল, তথাপি সে সফল হলো।"
     },
     {
-      "bn": "তুমি",
-      "pronunciation": "tumi",
-      "en": "you (familiar)",
+      "bn": "কিংবা...কিংবা",
+      "pronunciation": "kingba kingba",
+      "en": "either...or",
       "category": "conjunctions",
-      "sourcePhrase": "তুমি চা অথবা কফি নিতে পারো।"
+      "sourcePhrase": "কিংবা তুমি বলো, কিংবা আমি বলি।"
     },
     {
-      "bn": "নিতে",
-      "pronunciation": "nite",
-      "en": "to take",
+      "bn": "আর যদি",
+      "pronunciation": "ar jodi",
+      "en": "and if",
       "category": "conjunctions",
-      "sourcePhrase": "তুমি চা অথবা কফি নিতে পারো।"
+      "sourcePhrase": "আর যদি সময় থাকে, তাহলে সিনেমাও দেখব।"
     },
     {
-      "bn": "পারো",
-      "pronunciation": "paro",
-      "en": "can (familiar)",
+      "bn": "এমন হলে",
+      "pronunciation": "emon hole",
+      "en": "if that happens",
       "category": "conjunctions",
-      "sourcePhrase": "তুমি চা অথবা কফি নিতে পারো।"
+      "sourcePhrase": "এমন হলে আমাকে জানিও।"
     },
     {
-      "bn": "যাব",
-      "pronunciation": "jabo",
-      "en": "will go",
+      "bn": "শুধু যদি",
+      "pronunciation": "shudhu jodi",
+      "en": "only if",
       "category": "conjunctions",
-      "sourcePhrase": "আমি যাব, কিন্তু এখন নয়।"
+      "sourcePhrase": "শুধু যদি তুমি রাজি হও, আমরা শুরু করব।"
     },
     {
-      "bn": "এখন",
-      "pronunciation": "ekhon",
-      "en": "now",
+      "bn": "যদিও না",
+      "pronunciation": "jodio na",
+      "en": "even if not",
       "category": "conjunctions",
-      "sourcePhrase": "আমি যাব, কিন্তু এখন নয়।"
+      "sourcePhrase": "যদিও না পারো, তবুও চেষ্টা করো।"
     },
     {
-      "bn": "নয়",
-      "pronunciation": "noy",
-      "en": "is not",
+      "bn": "এমন নয় যে",
+      "pronunciation": "emon noy je",
+      "en": "it's not that",
       "category": "conjunctions",
-      "sourcePhrase": "আমি যাব, কিন্তু এখন নয়।"
+      "sourcePhrase": "এমন নয় যে আমি রাগ করেছি।"
     },
     {
-      "bn": "থাকব",
-      "pronunciation": "thakbo",
-      "en": "will stay",
+      "bn": "অর্থাৎ বলতে গেলে",
+      "pronunciation": "orthat bolte gele",
+      "en": "in other words",
       "category": "conjunctions",
-      "sourcePhrase": "আমি থাকব, কারণ বৃষ্টি হচ্ছে।"
+      "sourcePhrase": "অর্থাৎ বলতে গেলে কাজ শেষ।"
     },
     {
-      "bn": "বৃষ্টি",
-      "pronunciation": "brishti",
-      "en": "rain",
+      "bn": "যেমনই...তেমনি",
+      "pronunciation": "jemoni temoni",
+      "en": "just as soon as",
       "category": "conjunctions",
-      "sourcePhrase": "আমি থাকব, কারণ বৃষ্টি হচ্ছে।"
+      "sourcePhrase": "যেমনই সে এল, তেমনি সবাই খুশি হলো।"
     },
     {
-      "bn": "হচ্ছে",
-      "pronunciation": "hochchhe",
-      "en": "is happening",
+      "bn": "যখনই",
+      "pronunciation": "jokhoni",
+      "en": "whenever",
       "category": "conjunctions",
-      "sourcePhrase": "আমি থাকব, কারণ বৃষ্টি হচ্ছে।"
+      "sourcePhrase": "যখনই ফোন করি, সে উত্তর দেয়।"
     },
     {
-      "bn": "আছি",
-      "pronunciation": "achhi",
-      "en": "am",
+      "bn": "যেখানেই",
+      "pronunciation": "jekhanei",
+      "en": "wherever",
       "category": "conjunctions",
-      "sourcePhrase": "বৃষ্টি হচ্ছে, তাই আমি বাড়িতে আছি।"
+      "sourcePhrase": "যেখানেই যাও, সাবধানে যেও।"
     },
     {
-      "bn": "সময়",
-      "pronunciation": "shomoy",
-      "en": "time",
+      "bn": "যাই হোক",
+      "pronunciation": "jai hok",
+      "en": "anyway",
       "category": "conjunctions",
-      "sourcePhrase": "যদি সময় থাকে, আমি আসব।"
+      "sourcePhrase": "যাই হোক, কাজটা শেষ করি।"
     },
     {
-      "bn": "থাকে",
-      "pronunciation": "thake",
-      "en": "lives / stays",
+      "bn": "তা সত্ত্বেও",
+      "pronunciation": "ta shotteo",
+      "en": "despite that",
       "category": "conjunctions",
-      "sourcePhrase": "যদি সময় থাকে, আমি আসব।"
+      "sourcePhrase": "সে অসুস্থ ছিল, তা সত্ত্বেও কাজে গেল।"
     },
     {
-      "bn": "আসব",
-      "pronunciation": "ashbo",
-      "en": "will come",
+      "bn": "যদিও তেমন",
+      "pronunciation": "jodio temon",
+      "en": "even though",
       "category": "conjunctions",
-      "sourcePhrase": "যদি সময় থাকে, আমি আসব।"
+      "sourcePhrase": "যদিও তেমন কঠিন নয়, সবাই ভয় পায়।"
     },
     {
-      "bn": "এলে",
-      "pronunciation": "ele",
-      "en": "if (you) come",
+      "bn": "এর পাশাপাশি",
+      "pronunciation": "er pashapashi",
+      "en": "alongside this",
       "category": "conjunctions",
-      "sourcePhrase": "তুমি এলে, তবে আমরা যাব।"
+      "sourcePhrase": "সে চাকরি করে, এর পাশাপাশি পড়াশোনাও করে।"
     },
     {
-      "bn": "আমরা",
-      "pronunciation": "amra",
-      "en": "we",
+      "bn": "একই সঙ্গে",
+      "pronunciation": "eki shonge",
+      "en": "at the same time",
       "category": "conjunctions",
-      "sourcePhrase": "তুমি এলে, তবে আমরা যাব।"
-    },
-    {
-      "bn": "কাজটি",
-      "pronunciation": "kajti",
-      "en": "the task",
-      "category": "conjunctions",
-      "sourcePhrase": "যদিও কাজটি কঠিন, আমি চেষ্টা করব।"
-    },
-    {
-      "bn": "কঠিন",
-      "pronunciation": "kothin",
-      "en": "difficult",
-      "category": "conjunctions",
-      "sourcePhrase": "যদিও কাজটি কঠিন, আমি চেষ্টা করব।"
-    },
-    {
-      "bn": "চেষ্টা",
-      "pronunciation": "cheshta",
-      "en": "try",
-      "category": "conjunctions",
-      "sourcePhrase": "যদিও কাজটি কঠিন, আমি চেষ্টা করব।"
-    },
-    {
-      "bn": "করব",
-      "pronunciation": "korbo",
-      "en": "will do",
-      "category": "conjunctions",
-      "sourcePhrase": "যদিও কাজটি কঠিন, আমি চেষ্টা করব।"
-    },
-    {
-      "bn": "হয়",
-      "pronunciation": "hoy",
-      "en": "is / happens",
-      "category": "conjunctions",
-      "sourcePhrase": "যখন বৃষ্টি হয়, আমি বই পড়ি।"
-    },
-    {
-      "bn": "বই",
-      "pronunciation": "boi",
-      "en": "book",
-      "category": "conjunctions",
-      "sourcePhrase": "যখন বৃষ্টি হয়, আমি বই পড়ি।"
-    },
-    {
-      "bn": "পড়ি",
-      "pronunciation": "pori",
-      "en": "read",
-      "category": "conjunctions",
-      "sourcePhrase": "যখন বৃষ্টি হয়, আমি বই পড়ি।"
-    },
-    {
-      "bn": "কাজ",
-      "pronunciation": "kaj",
-      "en": "work",
-      "category": "conjunctions",
-      "sourcePhrase": "যতক্ষণ কাজ শেষ না হয়, আমি থাকব।"
-    },
-    {
-      "bn": "শেষ",
-      "pronunciation": "shesh",
-      "en": "finished / end",
-      "category": "conjunctions",
-      "sourcePhrase": "যতক্ষণ কাজ শেষ না হয়, আমি থাকব।"
-    },
-    {
-      "bn": "না",
-      "pronunciation": "na",
-      "en": "not",
-      "category": "conjunctions",
-      "sourcePhrase": "যতক্ষণ কাজ শেষ না হয়, আমি থাকব।"
-    },
-    {
-      "bn": "চলো",
-      "pronunciation": "cholo",
-      "en": "let us go",
-      "category": "conjunctions",
-      "sourcePhrase": "এখন চলো, নইলে দেরি হবে।"
-    },
-    {
-      "bn": "দেরি",
-      "pronunciation": "deri",
-      "en": "late",
-      "category": "conjunctions",
-      "sourcePhrase": "এখন চলো, নইলে দেরি হবে।"
-    },
-    {
-      "bn": "হবে",
-      "pronunciation": "hobe",
-      "en": "will be",
-      "category": "conjunctions",
-      "sourcePhrase": "এখন চলো, নইলে দেরি হবে।"
-    },
-    {
-      "bn": "আমি চা",
-      "pronunciation": "ami cha",
-      "en": "I tea",
-      "category": "conjunctions",
-      "sourcePhrase": "আমি চা এবং কফি পছন্দ করি।"
-    },
-    {
-      "bn": "চা এবং",
-      "pronunciation": "cha ebong",
-      "en": "tea and",
-      "category": "conjunctions",
-      "sourcePhrase": "আমি চা এবং কফি পছন্দ করি।"
-    },
-    {
-      "bn": "এবং কফি",
-      "pronunciation": "ebong kofi",
-      "en": "and coffee",
-      "category": "conjunctions",
-      "sourcePhrase": "আমি চা এবং কফি পছন্দ করি।"
-    },
-    {
-      "bn": "কফি পছন্দ",
-      "pronunciation": "kofi pochhondo",
-      "en": "coffee like / preference",
-      "category": "conjunctions",
-      "sourcePhrase": "আমি চা এবং কফি পছন্দ করি।"
-    },
-    {
-      "bn": "পছন্দ করি",
-      "pronunciation": "pochhondo kori",
-      "en": "like / preference do",
-      "category": "conjunctions",
-      "sourcePhrase": "আমি চা এবং কফি পছন্দ করি।"
-    },
-    {
-      "bn": "মা আর",
-      "pronunciation": "ma ar",
-      "en": "mother and / also",
-      "category": "conjunctions",
-      "sourcePhrase": "মা আর বাবা বাড়িতে আছেন।"
-    },
-    {
-      "bn": "আর বাবা",
-      "pronunciation": "ar baba",
-      "en": "and / also father",
-      "category": "conjunctions",
-      "sourcePhrase": "মা আর বাবা বাড়িতে আছেন।"
-    },
-    {
-      "bn": "বাবা বাড়িতে",
-      "pronunciation": "baba barite",
-      "en": "father at home",
-      "category": "conjunctions",
-      "sourcePhrase": "মা আর বাবা বাড়িতে আছেন।"
-    },
-    {
-      "bn": "বাড়িতে আছেন",
-      "pronunciation": "barite achhen",
-      "en": "at home are (respectful)",
-      "category": "conjunctions",
-      "sourcePhrase": "মা আর বাবা বাড়িতে আছেন।"
-    },
-    {
-      "bn": "তুমি চা",
-      "pronunciation": "tumi cha",
-      "en": "you (familiar) tea",
-      "category": "conjunctions",
-      "sourcePhrase": "তুমি চা অথবা কফি নিতে পারো।"
-    },
-    {
-      "bn": "চা অথবা",
-      "pronunciation": "cha othoba",
-      "en": "tea or",
-      "category": "conjunctions",
-      "sourcePhrase": "তুমি চা অথবা কফি নিতে পারো।"
-    },
-    {
-      "bn": "অথবা কফি",
-      "pronunciation": "othoba kofi",
-      "en": "or coffee",
-      "category": "conjunctions",
-      "sourcePhrase": "তুমি চা অথবা কফি নিতে পারো।"
-    },
-    {
-      "bn": "কফি নিতে",
-      "pronunciation": "kofi nite",
-      "en": "coffee to take",
-      "category": "conjunctions",
-      "sourcePhrase": "তুমি চা অথবা কফি নিতে পারো।"
-    },
-    {
-      "bn": "নিতে পারো",
-      "pronunciation": "nite paro",
-      "en": "to take can (familiar)",
-      "category": "conjunctions",
-      "sourcePhrase": "তুমি চা অথবা কফি নিতে পারো।"
-    },
-    {
-      "bn": "আমি যাব",
-      "pronunciation": "ami jabo",
-      "en": "I will go",
-      "category": "conjunctions",
-      "sourcePhrase": "আমি যাব, কিন্তু এখন নয়।"
-    },
-    {
-      "bn": "যাব কিন্তু",
-      "pronunciation": "jabo kintu",
-      "en": "will go but",
-      "category": "conjunctions",
-      "sourcePhrase": "আমি যাব, কিন্তু এখন নয়।"
-    },
-    {
-      "bn": "কিন্তু এখন",
-      "pronunciation": "kintu ekhon",
-      "en": "but now",
-      "category": "conjunctions",
-      "sourcePhrase": "আমি যাব, কিন্তু এখন নয়।"
-    },
-    {
-      "bn": "এখন নয়",
-      "pronunciation": "ekhon noy",
-      "en": "now is not",
-      "category": "conjunctions",
-      "sourcePhrase": "আমি যাব, কিন্তু এখন নয়।"
-    },
-    {
-      "bn": "আমি থাকব",
-      "pronunciation": "ami thakbo",
-      "en": "I will stay",
-      "category": "conjunctions",
-      "sourcePhrase": "আমি থাকব, কারণ বৃষ্টি হচ্ছে।"
-    },
-    {
-      "bn": "থাকব কারণ",
-      "pronunciation": "thakbo karon",
-      "en": "will stay because",
-      "category": "conjunctions",
-      "sourcePhrase": "আমি থাকব, কারণ বৃষ্টি হচ্ছে।"
-    },
-    {
-      "bn": "কারণ বৃষ্টি",
-      "pronunciation": "karon brishti",
-      "en": "because rain",
-      "category": "conjunctions",
-      "sourcePhrase": "আমি থাকব, কারণ বৃষ্টি হচ্ছে।"
-    },
-    {
-      "bn": "বৃষ্টি হচ্ছে",
-      "pronunciation": "brishti hochchhe",
-      "en": "rain is happening",
-      "category": "conjunctions",
-      "sourcePhrase": "আমি থাকব, কারণ বৃষ্টি হচ্ছে।"
-    },
-    {
-      "bn": "হচ্ছে তাই",
-      "pronunciation": "hochchhe tai",
-      "en": "is happening so",
-      "category": "conjunctions",
-      "sourcePhrase": "বৃষ্টি হচ্ছে, তাই আমি বাড়িতে আছি।"
-    },
-    {
-      "bn": "তাই আমি",
-      "pronunciation": "tai ami",
-      "en": "so I",
-      "category": "conjunctions",
-      "sourcePhrase": "বৃষ্টি হচ্ছে, তাই আমি বাড়িতে আছি।"
-    },
-    {
-      "bn": "আমি বাড়িতে",
-      "pronunciation": "ami barite",
-      "en": "I at home",
-      "category": "conjunctions",
-      "sourcePhrase": "বৃষ্টি হচ্ছে, তাই আমি বাড়িতে আছি।"
-    },
-    {
-      "bn": "বাড়িতে আছি",
-      "pronunciation": "barite achhi",
-      "en": "at home am",
-      "category": "conjunctions",
-      "sourcePhrase": "বৃষ্টি হচ্ছে, তাই আমি বাড়িতে আছি।"
-    },
-    {
-      "bn": "যদি সময়",
-      "pronunciation": "jodi shomoy",
-      "en": "if time",
-      "category": "conjunctions",
-      "sourcePhrase": "যদি সময় থাকে, আমি আসব।"
-    },
-    {
-      "bn": "সময় থাকে",
-      "pronunciation": "shomoy thake",
-      "en": "time lives / stays",
-      "category": "conjunctions",
-      "sourcePhrase": "যদি সময় থাকে, আমি আসব।"
-    },
-    {
-      "bn": "থাকে আমি",
-      "pronunciation": "thake ami",
-      "en": "lives / stays I",
-      "category": "conjunctions",
-      "sourcePhrase": "যদি সময় থাকে, আমি আসব।"
-    },
-    {
-      "bn": "আমি আসব",
-      "pronunciation": "ami ashbo",
-      "en": "I will come",
-      "category": "conjunctions",
-      "sourcePhrase": "যদি সময় থাকে, আমি আসব।"
-    },
-    {
-      "bn": "তুমি এলে",
-      "pronunciation": "tumi ele",
-      "en": "you (familiar) if (you) come",
-      "category": "conjunctions",
-      "sourcePhrase": "তুমি এলে, তবে আমরা যাব।"
-    },
-    {
-      "bn": "এলে তবে",
-      "pronunciation": "ele tobe",
-      "en": "if (you) come then",
-      "category": "conjunctions",
-      "sourcePhrase": "তুমি এলে, তবে আমরা যাব।"
-    },
-    {
-      "bn": "তবে আমরা",
-      "pronunciation": "tobe amra",
-      "en": "then we",
-      "category": "conjunctions",
-      "sourcePhrase": "তুমি এলে, তবে আমরা যাব।"
-    },
-    {
-      "bn": "আমরা যাব",
-      "pronunciation": "amra jabo",
-      "en": "we will go",
-      "category": "conjunctions",
-      "sourcePhrase": "তুমি এলে, তবে আমরা যাব।"
-    },
-    {
-      "bn": "যদিও কাজটি",
-      "pronunciation": "jodio kajti",
-      "en": "although the task",
-      "category": "conjunctions",
-      "sourcePhrase": "যদিও কাজটি কঠিন, আমি চেষ্টা করব।"
-    },
-    {
-      "bn": "কাজটি কঠিন",
-      "pronunciation": "kajti kothin",
-      "en": "the task difficult",
-      "category": "conjunctions",
-      "sourcePhrase": "যদিও কাজটি কঠিন, আমি চেষ্টা করব।"
-    },
-    {
-      "bn": "কঠিন আমি",
-      "pronunciation": "kothin ami",
-      "en": "difficult I",
-      "category": "conjunctions",
-      "sourcePhrase": "যদিও কাজটি কঠিন, আমি চেষ্টা করব।"
-    },
-    {
-      "bn": "আমি চেষ্টা",
-      "pronunciation": "ami cheshta",
-      "en": "I try",
-      "category": "conjunctions",
-      "sourcePhrase": "যদিও কাজটি কঠিন, আমি চেষ্টা করব।"
-    },
-    {
-      "bn": "চেষ্টা করব",
-      "pronunciation": "cheshta korbo",
-      "en": "try will do",
-      "category": "conjunctions",
-      "sourcePhrase": "যদিও কাজটি কঠিন, আমি চেষ্টা করব।"
-    },
-    {
-      "bn": "যখন বৃষ্টি",
-      "pronunciation": "jokhon brishti",
-      "en": "when rain",
-      "category": "conjunctions",
-      "sourcePhrase": "যখন বৃষ্টি হয়, আমি বই পড়ি।"
-    },
-    {
-      "bn": "বৃষ্টি হয়",
-      "pronunciation": "brishti hoy",
-      "en": "rain is / happens",
-      "category": "conjunctions",
-      "sourcePhrase": "যখন বৃষ্টি হয়, আমি বই পড়ি।"
-    },
-    {
-      "bn": "হয় আমি",
-      "pronunciation": "hoy ami",
-      "en": "is / happens I",
-      "category": "conjunctions",
-      "sourcePhrase": "যখন বৃষ্টি হয়, আমি বই পড়ি।"
-    },
-    {
-      "bn": "আমি বই",
-      "pronunciation": "ami boi",
-      "en": "I book",
-      "category": "conjunctions",
-      "sourcePhrase": "যখন বৃষ্টি হয়, আমি বই পড়ি।"
-    },
-    {
-      "bn": "বই পড়ি",
-      "pronunciation": "boi pori",
-      "en": "book read",
-      "category": "conjunctions",
-      "sourcePhrase": "যখন বৃষ্টি হয়, আমি বই পড়ি।"
-    },
-    {
-      "bn": "যতক্ষণ কাজ",
-      "pronunciation": "jotokkhon kaj",
-      "en": "as long as work",
-      "category": "conjunctions",
-      "sourcePhrase": "যতক্ষণ কাজ শেষ না হয়, আমি থাকব।"
-    },
-    {
-      "bn": "কাজ শেষ",
-      "pronunciation": "kaj shesh",
-      "en": "work finished / end",
-      "category": "conjunctions",
-      "sourcePhrase": "যতক্ষণ কাজ শেষ না হয়, আমি থাকব।"
-    },
-    {
-      "bn": "শেষ না",
-      "pronunciation": "shesh na",
-      "en": "finished / end not",
-      "category": "conjunctions",
-      "sourcePhrase": "যতক্ষণ কাজ শেষ না হয়, আমি থাকব।"
-    },
-    {
-      "bn": "না হয়",
-      "pronunciation": "na hoy",
-      "en": "not is / happens",
-      "category": "conjunctions",
-      "sourcePhrase": "যতক্ষণ কাজ শেষ না হয়, আমি থাকব।"
-    },
-    {
-      "bn": "এখন চলো",
-      "pronunciation": "ekhon cholo",
-      "en": "now let us go",
-      "category": "conjunctions",
-      "sourcePhrase": "এখন চলো, নইলে দেরি হবে।"
-    },
-    {
-      "bn": "চলো নইলে",
-      "pronunciation": "cholo noile",
-      "en": "let us go otherwise",
-      "category": "conjunctions",
-      "sourcePhrase": "এখন চলো, নইলে দেরি হবে।"
-    },
-    {
-      "bn": "নইলে দেরি",
-      "pronunciation": "noile deri",
-      "en": "otherwise late",
-      "category": "conjunctions",
-      "sourcePhrase": "এখন চলো, নইলে দেরি হবে।"
+      "sourcePhrase": "সে একই সঙ্গে গান গায় এবং নাচে।"
     }
   ],
   "practice": [],
