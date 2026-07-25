@@ -825,13 +825,16 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
 
             {view === "games" && (
               <div className="bn-game-shell">
-                <div className="bn-tabs">
-                  <button className={`bn-tab ${gameDataset === "vocab" ? "active" : ""}`} onClick={() => setGameDataset("vocab")} disabled={!filteredVocab.length}>Vocab set</button>
-                  <button className={`bn-tab ${gameDataset === "phrases" ? "active" : ""}`} onClick={() => setGameDataset("phrases")} disabled={!filteredPhrases.length}>Phrases set</button>
-                  <button className={`bn-tab ${gameDataset === "breakdown-words" ? "active" : ""}`} onClick={() => setGameDataset("breakdown-words")} disabled={breakdownWords.length < 2}>Breakdown words</button>
-                  <button className={`bn-tab ${gameDataset === "translations" ? "active" : ""}`} onClick={() => setGameDataset("translations")} disabled={translationItems.length < 2}>Translations ({translationItems.length})</button>
-                  <button className={`bn-tab ${gameDataset === "translation-words" ? "active" : ""}`} onClick={() => setGameDataset("translation-words")} disabled={translationWords.length < 2}>Translation words ({translationWords.length})</button>
-                </div>
+                <label className="bn-row bn-game-picker">
+                  <strong>Practice set</strong>
+                  <select className="bn-select" value={gameDataset} onChange={(event) => setGameDataset(event.target.value)}>
+                    <option value="vocab" disabled={!filteredVocab.length}>Vocab set</option>
+                    <option value="phrases" disabled={!filteredPhrases.length}>Phrases set</option>
+                    <option value="breakdown-words" disabled={breakdownWords.length < 2}>Breakdown words</option>
+                    <option value="translations" disabled={translationItems.length < 2}>Translations ({translationItems.length})</option>
+                    <option value="translation-words" disabled={translationWords.length < 2}>Translation words ({translationWords.length})</option>
+                  </select>
+                </label>
                 <div className="bn-tabs">
                   <button className={`bn-tab ${gameDirection === "bn-en" ? "active" : ""}`} onClick={() => setGameDirection("bn-en")}>Bengali to English</button>
                   <button className={`bn-tab ${gameDirection === "en-bn" ? "active" : ""}`} onClick={() => setGameDirection("en-bn")}>English to Bengali</button>
