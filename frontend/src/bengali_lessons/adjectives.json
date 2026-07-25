@@ -10,8 +10,8 @@
       "bn": "এই খাবারটি খুব ভালো।",
       "pronunciation": "ei khabarti khub bhalo",
       "en": "This food is very good.",
-      "context": "Using ভালো (good)",
-      "category": "adjectives",
+      "context": "good",
+      "category": "basic-descriptions",
       "words": [
         {
           "bn": "এই",
@@ -36,35 +36,11 @@
       ]
     },
     {
-      "bn": "আজ আবহাওয়া খারাপ।",
-      "pronunciation": "aj abohawa kharap",
-      "en": "The weather is bad today.",
-      "context": "Using খারাপ (bad)",
-      "category": "adjectives",
-      "words": [
-        {
-          "bn": "আজ",
-          "pronunciation": "aj",
-          "en": "today"
-        },
-        {
-          "bn": "আবহাওয়া",
-          "pronunciation": "abohawa",
-          "en": "weather"
-        },
-        {
-          "bn": "খারাপ",
-          "pronunciation": "kharap",
-          "en": "bad"
-        }
-      ]
-    },
-    {
       "bn": "ওই বাড়িটি অনেক বড়।",
       "pronunciation": "oi bariti onek boro",
-      "en": "That house is very big.",
-      "context": "Using বড় (big)",
-      "category": "adjectives",
+      "en": "That house is very large.",
+      "context": "size",
+      "category": "basic-descriptions",
       "words": [
         {
           "bn": "ওই",
@@ -79,21 +55,21 @@
         {
           "bn": "অনেক",
           "pronunciation": "onek",
-          "en": "very / many"
+          "en": "very / many / much"
         },
         {
           "bn": "বড়",
           "pronunciation": "boro",
-          "en": "big"
+          "en": "big / large"
         }
       ]
     },
     {
-      "bn": "আমার একটি ছোট ব্যাগ আছে।",
-      "pronunciation": "amar ekti chhoto bag achhe",
-      "en": "I have a small bag.",
-      "context": "Using ছোট (small)",
-      "category": "adjectives",
+      "bn": "আমার ঘরটি ছোট কিন্তু আরামদায়ক।",
+      "pronunciation": "amar ghorti chhoto kintu aramdayok",
+      "en": "My room is small but comfortable.",
+      "context": "size and comfort",
+      "category": "basic-descriptions",
       "words": [
         {
           "bn": "আমার",
@@ -101,9 +77,9 @@
           "en": "my"
         },
         {
-          "bn": "একটি",
-          "pronunciation": "ekti",
-          "en": "one / a"
+          "bn": "ঘরটি",
+          "pronunciation": "ghorti",
+          "en": "the room"
         },
         {
           "bn": "ছোট",
@@ -111,14 +87,242 @@
           "en": "small"
         },
         {
-          "bn": "ব্যাগ",
-          "pronunciation": "bag",
-          "en": "bag"
+          "bn": "কিন্তু",
+          "pronunciation": "kintu",
+          "en": "but"
         },
         {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is / has"
+          "bn": "আরামদায়ক",
+          "pronunciation": "aramdayok",
+          "en": "comfortable"
+        }
+      ]
+    },
+    {
+      "bn": "নদীটি এখানে গভীর এবং চওড়া।",
+      "pronunciation": "noditi ekhane gobhir ebong chowra",
+      "en": "The river is deep and wide here.",
+      "context": "dimensions",
+      "category": "basic-descriptions",
+      "words": [
+        {
+          "bn": "নদীটি",
+          "pronunciation": "noditi",
+          "en": "the river"
+        },
+        {
+          "bn": "এখানে",
+          "pronunciation": "ekhane",
+          "en": "here"
+        },
+        {
+          "bn": "গভীর",
+          "pronunciation": "gobhir",
+          "en": "deep"
+        },
+        {
+          "bn": "এবং",
+          "pronunciation": "ebong",
+          "en": "and"
+        },
+        {
+          "bn": "চওড়া",
+          "pronunciation": "chowra",
+          "en": "wide"
+        }
+      ]
+    },
+    {
+      "bn": "এই পথটি সরু ও বাঁকা।",
+      "pronunciation": "ei pothti shoru o banka",
+      "en": "This path is narrow and winding.",
+      "context": "shape",
+      "category": "basic-descriptions",
+      "words": [
+        {
+          "bn": "এই",
+          "pronunciation": "ei",
+          "en": "this"
+        },
+        {
+          "bn": "পথটি",
+          "pronunciation": "pothti",
+          "en": "the path"
+        },
+        {
+          "bn": "সরু",
+          "pronunciation": "shoru",
+          "en": "Thin / narrow / thin"
+        },
+        {
+          "bn": "ও",
+          "pronunciation": "o",
+          "en": "and / also"
+        },
+        {
+          "bn": "বাঁকা",
+          "pronunciation": "banka",
+          "en": "bent / crooked"
+        }
+      ]
+    },
+    {
+      "bn": "বাগানটি আজ খুব সুন্দর দেখাচ্ছে।",
+      "pronunciation": "baganti aj khub shundor dekhachchhe",
+      "en": "The garden looks very beautiful today.",
+      "context": "appearance",
+      "category": "appearance",
+      "words": [
+        {
+          "bn": "বাগানটি",
+          "pronunciation": "baganti",
+          "en": "the garden"
+        },
+        {
+          "bn": "আজ",
+          "pronunciation": "aj",
+          "en": "today"
+        },
+        {
+          "bn": "খুব",
+          "pronunciation": "khub",
+          "en": "very"
+        },
+        {
+          "bn": "সুন্দর",
+          "pronunciation": "shundor",
+          "en": "beautiful / handsome"
+        },
+        {
+          "bn": "দেখাচ্ছে",
+          "pronunciation": "dekhachchhe",
+          "en": "showing"
+        }
+      ]
+    },
+    {
+      "bn": "তোমার টেবিলটি পরিষ্কার ও পরিপাটি।",
+      "pronunciation": "tomar tebilti porishkar o poripati",
+      "en": "Your table is clean and tidy.",
+      "context": "cleanliness",
+      "category": "appearance",
+      "words": [
+        {
+          "bn": "তোমার",
+          "pronunciation": "tomar",
+          "en": "your"
+        },
+        {
+          "bn": "টেবিলটি",
+          "pronunciation": "tebilti",
+          "en": "the table"
+        },
+        {
+          "bn": "পরিষ্কার",
+          "pronunciation": "porishkar",
+          "en": "Clean / clean / clear"
+        },
+        {
+          "bn": "ও",
+          "pronunciation": "o",
+          "en": "and / also"
+        },
+        {
+          "bn": "পরিপাটি",
+          "pronunciation": "poripati",
+          "en": "neat / tidy"
+        }
+      ]
+    },
+    {
+      "bn": "বৃষ্টির পরে পাতাগুলো চকচকে হয়েছে।",
+      "pronunciation": "brishtir pore patagulo chokchoke hoyechhe",
+      "en": "The leaves became shiny after the rain.",
+      "context": "appearance",
+      "category": "appearance",
+      "words": [
+        {
+          "bn": "বৃষ্টির",
+          "pronunciation": "brishtir",
+          "en": "of the rain"
+        },
+        {
+          "bn": "পরে",
+          "pronunciation": "pore",
+          "en": "after / later / wears"
+        },
+        {
+          "bn": "পাতাগুলো",
+          "pronunciation": "patagulo",
+          "en": "the leaves"
+        },
+        {
+          "bn": "চকচকে",
+          "pronunciation": "chokchoke",
+          "en": "shiny"
+        },
+        {
+          "bn": "হয়েছে",
+          "pronunciation": "hoyechhe",
+          "en": "has been"
+        }
+      ]
+    },
+    {
+      "bn": "ঘরটি উজ্জ্বল কিন্তু সাদামাটা।",
+      "pronunciation": "ghorti ujjol kintu shadamata",
+      "en": "The room is bright but simple.",
+      "context": "appearance",
+      "category": "appearance",
+      "words": [
+        {
+          "bn": "ঘরটি",
+          "pronunciation": "ghorti",
+          "en": "the room"
+        },
+        {
+          "bn": "উজ্জ্বল",
+          "pronunciation": "ujjol",
+          "en": "bright"
+        },
+        {
+          "bn": "কিন্তু",
+          "pronunciation": "kintu",
+          "en": "but"
+        },
+        {
+          "bn": "সাদামাটা",
+          "pronunciation": "shadamata",
+          "en": "plain / simple"
+        }
+      ]
+    },
+    {
+      "bn": "তার চুল আজ অগোছালো।",
+      "pronunciation": "tar chul aj ogochhalo",
+      "en": "Her hair is messy today.",
+      "context": "appearance",
+      "category": "appearance",
+      "words": [
+        {
+          "bn": "তার",
+          "pronunciation": "tar",
+          "en": "His / Her"
+        },
+        {
+          "bn": "চুল",
+          "pronunciation": "chul",
+          "en": "Hair"
+        },
+        {
+          "bn": "আজ",
+          "pronunciation": "aj",
+          "en": "today"
+        },
+        {
+          "bn": "অগোছালো",
+          "pronunciation": "ogochhalo",
+          "en": "messy / disorganized"
         }
       ]
     },
@@ -126,8 +330,8 @@
       "bn": "আমি একটি নতুন বই কিনেছি।",
       "pronunciation": "ami ekti notun boi kinechhi",
       "en": "I bought a new book.",
-      "context": "Using নতুন (new)",
-      "category": "adjectives",
+      "context": "age",
+      "category": "age-and-condition",
       "words": [
         {
           "bn": "আমি",
@@ -157,69 +361,437 @@
       ]
     },
     {
-      "bn": "এটি একটি পুরোনো ছবি।",
-      "pronunciation": "eti ekti purono chhobi",
-      "en": "This is an old photograph.",
-      "context": "Using পুরোনো (old)",
-      "category": "adjectives",
+      "bn": "এই মন্দিরটি খুব প্রাচীন।",
+      "pronunciation": "ei mondirti khub prachin",
+      "en": "This temple is very ancient.",
+      "context": "age",
+      "category": "age-and-condition",
       "words": [
         {
-          "bn": "এটি",
-          "pronunciation": "eti",
+          "bn": "এই",
+          "pronunciation": "ei",
           "en": "this"
         },
         {
-          "bn": "একটি",
-          "pronunciation": "ekti",
-          "en": "one / a"
+          "bn": "মন্দিরটি",
+          "pronunciation": "mondirti",
+          "en": "the temple"
         },
         {
-          "bn": "পুরোনো",
-          "pronunciation": "purono",
-          "en": "old"
+          "bn": "খুব",
+          "pronunciation": "khub",
+          "en": "very"
         },
         {
-          "bn": "ছবি",
-          "pronunciation": "chhobi",
-          "en": "picture"
+          "bn": "প্রাচীন",
+          "pronunciation": "prachin",
+          "en": "ancient"
         }
       ]
     },
     {
-      "bn": "এটা একটি সুন্দর বাড়ি।",
-      "pronunciation": "eta ekti shundor bari",
-      "en": "This is a beautiful house.",
-      "context": "Using সুন্দর (beautiful)",
-      "category": "adjectives",
+      "bn": "ফলগুলো এখনো তাজা আছে।",
+      "pronunciation": "pholgulo ekhono taja achhe",
+      "en": "The fruit is still fresh.",
+      "context": "condition",
+      "category": "age-and-condition",
       "words": [
         {
-          "bn": "এটা",
-          "pronunciation": "eta",
+          "bn": "ফলগুলো",
+          "pronunciation": "pholgulo",
+          "en": "the fruits"
+        },
+        {
+          "bn": "এখনো",
+          "pronunciation": "ekhono",
+          "en": "yet / still"
+        },
+        {
+          "bn": "তাজা",
+          "pronunciation": "taja",
+          "en": "fresh"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is / has"
+        }
+      ]
+    },
+    {
+      "bn": "ভাঙা কাপটি ব্যবহার কোরো না।",
+      "pronunciation": "bhanga kapti byabohar koro na",
+      "en": "Do not use the broken cup.",
+      "context": "condition",
+      "category": "age-and-condition",
+      "words": [
+        {
+          "bn": "ভাঙা",
+          "pronunciation": "bhanga",
+          "en": "broken"
+        },
+        {
+          "bn": "কাপটি",
+          "pronunciation": "kapti",
+          "en": "the cup"
+        },
+        {
+          "bn": "ব্যবহার",
+          "pronunciation": "byabohar",
+          "en": "use"
+        },
+        {
+          "bn": "কোরো",
+          "pronunciation": "koro",
+          "en": "do"
+        },
+        {
+          "bn": "না",
+          "pronunciation": "na",
+          "en": "not"
+        }
+      ]
+    },
+    {
+      "bn": "কাজটি এখনো অসম্পূর্ণ আছে।",
+      "pronunciation": "kajti ekhono oshompurno achhe",
+      "en": "The work is still incomplete.",
+      "context": "condition",
+      "category": "age-and-condition",
+      "words": [
+        {
+          "bn": "কাজটি",
+          "pronunciation": "kajti",
+          "en": "the task"
+        },
+        {
+          "bn": "এখনো",
+          "pronunciation": "ekhono",
+          "en": "yet / still"
+        },
+        {
+          "bn": "অসম্পূর্ণ",
+          "pronunciation": "oshompurno",
+          "en": "incomplete"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is / has"
+        }
+      ]
+    },
+    {
+      "bn": "চা গরম কিন্তু পানি ঠান্ডা।",
+      "pronunciation": "cha gorom kintu pani thanda",
+      "en": "The tea is hot, but the water is cold.",
+      "context": "temperature",
+      "category": "temperature-and-texture",
+      "words": [
+        {
+          "bn": "চা",
+          "pronunciation": "cha",
+          "en": "tea"
+        },
+        {
+          "bn": "গরম",
+          "pronunciation": "gorom",
+          "en": "hot"
+        },
+        {
+          "bn": "কিন্তু",
+          "pronunciation": "kintu",
+          "en": "but"
+        },
+        {
+          "bn": "পানি",
+          "pronunciation": "pani",
+          "en": "water"
+        },
+        {
+          "bn": "ঠান্ডা",
+          "pronunciation": "thanda",
+          "en": "cold"
+        }
+      ]
+    },
+    {
+      "bn": "এই কম্বলটি খুব নরম ও উষ্ণ।",
+      "pronunciation": "ei kombolti khub norom o ushno",
+      "en": "This blanket is very soft and warm.",
+      "context": "texture",
+      "category": "temperature-and-texture",
+      "words": [
+        {
+          "bn": "এই",
+          "pronunciation": "ei",
           "en": "this"
         },
         {
-          "bn": "একটি",
-          "pronunciation": "ekti",
-          "en": "one / a"
+          "bn": "কম্বলটি",
+          "pronunciation": "kombolti",
+          "en": "the blanket"
         },
         {
-          "bn": "সুন্দর",
-          "pronunciation": "shundor",
-          "en": "beautiful"
+          "bn": "খুব",
+          "pronunciation": "khub",
+          "en": "very"
         },
         {
-          "bn": "বাড়ি",
-          "pronunciation": "bari",
-          "en": "house / home"
+          "bn": "নরম",
+          "pronunciation": "norom",
+          "en": "Soft / soft / tender"
+        },
+        {
+          "bn": "ও",
+          "pronunciation": "o",
+          "en": "and / also"
+        },
+        {
+          "bn": "উষ্ণ",
+          "pronunciation": "ushno",
+          "en": "warm"
+        }
+      ]
+    },
+    {
+      "bn": "ভেজা মেঝেটি খুব পিচ্ছিল।",
+      "pronunciation": "bheja mejheti khub pichchhil",
+      "en": "The wet floor is very slippery.",
+      "context": "texture",
+      "category": "temperature-and-texture",
+      "words": [
+        {
+          "bn": "ভেজা",
+          "pronunciation": "bheja",
+          "en": "Wet / wet"
+        },
+        {
+          "bn": "মেঝেটি",
+          "pronunciation": "mejheti",
+          "en": "the floor"
+        },
+        {
+          "bn": "খুব",
+          "pronunciation": "khub",
+          "en": "very"
+        },
+        {
+          "bn": "পিচ্ছিল",
+          "pronunciation": "pichchhil",
+          "en": "slippery"
+        }
+      ]
+    },
+    {
+      "bn": "ছুরিটি ধারালো কিন্তু ভারী।",
+      "pronunciation": "chhuriti dharalo kintu bhari",
+      "en": "The knife is sharp but heavy.",
+      "context": "physical quality",
+      "category": "temperature-and-texture",
+      "words": [
+        {
+          "bn": "ছুরিটি",
+          "pronunciation": "chhuriti",
+          "en": "the knife"
+        },
+        {
+          "bn": "ধারালো",
+          "pronunciation": "dharalo",
+          "en": "sharp"
+        },
+        {
+          "bn": "কিন্তু",
+          "pronunciation": "kintu",
+          "en": "but"
+        },
+        {
+          "bn": "ভারী",
+          "pronunciation": "bhari",
+          "en": "heavy"
+        }
+      ]
+    },
+    {
+      "bn": "পাকা আমটি নরম ও রসালো।",
+      "pronunciation": "paka amti norom o roshalo",
+      "en": "The ripe mango is soft and juicy.",
+      "context": "texture",
+      "category": "temperature-and-texture",
+      "words": [
+        {
+          "bn": "পাকা",
+          "pronunciation": "paka",
+          "en": "ripe / cooked / mature"
+        },
+        {
+          "bn": "আমটি",
+          "pronunciation": "amti",
+          "en": "the mango"
+        },
+        {
+          "bn": "নরম",
+          "pronunciation": "norom",
+          "en": "Soft / soft / tender"
+        },
+        {
+          "bn": "ও",
+          "pronunciation": "o",
+          "en": "and / also"
+        },
+        {
+          "bn": "রসালো",
+          "pronunciation": "roshalo",
+          "en": "juicy"
+        }
+      ]
+    },
+    {
+      "bn": "এই আমটি খুব মিষ্টি।",
+      "pronunciation": "ei amti khub mishti",
+      "en": "This mango is very sweet.",
+      "context": "taste",
+      "category": "taste-and-food",
+      "words": [
+        {
+          "bn": "এই",
+          "pronunciation": "ei",
+          "en": "this"
+        },
+        {
+          "bn": "আমটি",
+          "pronunciation": "amti",
+          "en": "the mango"
+        },
+        {
+          "bn": "খুব",
+          "pronunciation": "khub",
+          "en": "very"
+        },
+        {
+          "bn": "মিষ্টি",
+          "pronunciation": "mishti",
+          "en": "sweet / cute"
+        }
+      ]
+    },
+    {
+      "bn": "তরকারিটি ঝাল ও মসলাদার।",
+      "pronunciation": "torkariti jhal o mosholadar",
+      "en": "The curry is spicy and well-seasoned.",
+      "context": "taste",
+      "category": "taste-and-food",
+      "words": [
+        {
+          "bn": "তরকারিটি",
+          "pronunciation": "torkariti",
+          "en": "the curry"
+        },
+        {
+          "bn": "ঝাল",
+          "pronunciation": "jhal",
+          "en": "spicy"
+        },
+        {
+          "bn": "ও",
+          "pronunciation": "o",
+          "en": "and / also"
+        },
+        {
+          "bn": "মসলাদার",
+          "pronunciation": "mosholadar",
+          "en": "spicy / seasoned"
+        }
+      ]
+    },
+    {
+      "bn": "স্যুপটি সুস্বাদু এবং পুষ্টিকর।",
+      "pronunciation": "syupti shushadu ebong pushtikor",
+      "en": "The soup is delicious and nutritious.",
+      "context": "food quality",
+      "category": "taste-and-food",
+      "words": [
+        {
+          "bn": "স্যুপটি",
+          "pronunciation": "syupti",
+          "en": "the soup"
+        },
+        {
+          "bn": "সুস্বাদু",
+          "pronunciation": "shushadu",
+          "en": "delicious"
+        },
+        {
+          "bn": "এবং",
+          "pronunciation": "ebong",
+          "en": "and"
+        },
+        {
+          "bn": "পুষ্টিকর",
+          "pronunciation": "pushtikor",
+          "en": "nutritious"
+        }
+      ]
+    },
+    {
+      "bn": "লেবুটি টক কিন্তু রসালো।",
+      "pronunciation": "lebuti tok kintu roshalo",
+      "en": "The lemon is sour but juicy.",
+      "context": "taste",
+      "category": "taste-and-food",
+      "words": [
+        {
+          "bn": "লেবুটি",
+          "pronunciation": "lebuti",
+          "en": "the lemon"
+        },
+        {
+          "bn": "টক",
+          "pronunciation": "tok",
+          "en": "sour"
+        },
+        {
+          "bn": "কিন্তু",
+          "pronunciation": "kintu",
+          "en": "but"
+        },
+        {
+          "bn": "রসালো",
+          "pronunciation": "roshalo",
+          "en": "juicy"
+        }
+      ]
+    },
+    {
+      "bn": "বাসি খাবারটি দুর্গন্ধযুক্ত।",
+      "pronunciation": "bashi khabarti durgondhojukto",
+      "en": "The stale food smells foul.",
+      "context": "food condition",
+      "category": "taste-and-food",
+      "words": [
+        {
+          "bn": "বাসি",
+          "pronunciation": "bashi",
+          "en": "stale"
+        },
+        {
+          "bn": "খাবারটি",
+          "pronunciation": "khabarti",
+          "en": "the food"
+        },
+        {
+          "bn": "দুর্গন্ধযুক্ত",
+          "pronunciation": "durgondhojukto",
+          "en": "foul-smelling"
         }
       ]
     },
     {
       "bn": "এই প্রশ্নটি খুব সহজ।",
-      "pronunciation": "ei proshnoti khub shohaj",
+      "pronunciation": "ei proshnoti khub shohoj",
       "en": "This question is very easy.",
-      "context": "Using সহজ (easy)",
-      "category": "adjectives",
+      "context": "difficulty",
+      "category": "speed-difficulty-and-quality",
       "words": [
         {
           "bn": "এই",
@@ -238,17 +810,1020 @@
         },
         {
           "bn": "সহজ",
-          "pronunciation": "shohaj",
+          "pronunciation": "shohoj",
           "en": "easy"
         }
       ]
     },
     {
-      "bn": "এই কাজটি বেশ কঠিন।",
-      "pronunciation": "ei kajti besh kothin",
-      "en": "This task is quite difficult.",
-      "context": "Using কঠিন (difficult / hard)",
-      "category": "adjectives",
+      "bn": "শেষ সমস্যাটি বেশ কঠিন ও জটিল।",
+      "pronunciation": "shesh shomoshyati besh kothin o jotil",
+      "en": "The last problem is quite difficult and complex.",
+      "context": "difficulty",
+      "category": "speed-difficulty-and-quality",
+      "words": [
+        {
+          "bn": "শেষ",
+          "pronunciation": "shesh",
+          "en": "end / last / final"
+        },
+        {
+          "bn": "সমস্যাটি",
+          "pronunciation": "shomoshyati",
+          "en": "the problem"
+        },
+        {
+          "bn": "বেশ",
+          "pronunciation": "besh",
+          "en": "quite / very / all right"
+        },
+        {
+          "bn": "কঠিন",
+          "pronunciation": "kothin",
+          "en": "difficult / hard"
+        },
+        {
+          "bn": "ও",
+          "pronunciation": "o",
+          "en": "and / also"
+        },
+        {
+          "bn": "জটিল",
+          "pronunciation": "jotil",
+          "en": "complicated"
+        }
+      ]
+    },
+    {
+      "bn": "তোমার পরিকল্পনাটি সরল কিন্তু কার্যকর।",
+      "pronunciation": "tomar porikolponati shorol kintu karjokor",
+      "en": "Your plan is simple but effective.",
+      "context": "quality",
+      "category": "speed-difficulty-and-quality",
+      "words": [
+        {
+          "bn": "তোমার",
+          "pronunciation": "tomar",
+          "en": "your"
+        },
+        {
+          "bn": "পরিকল্পনাটি",
+          "pronunciation": "porikolponati",
+          "en": "the plan"
+        },
+        {
+          "bn": "সরল",
+          "pronunciation": "shorol",
+          "en": "simple / straightforward"
+        },
+        {
+          "bn": "কিন্তু",
+          "pronunciation": "kintu",
+          "en": "but"
+        },
+        {
+          "bn": "কার্যকর",
+          "pronunciation": "karjokor",
+          "en": "effective"
+        }
+      ]
+    },
+    {
+      "bn": "তার উত্তরটি সঠিক ও নিখুঁত।",
+      "pronunciation": "tar uttorti shothik o nikhut",
+      "en": "Her answer is correct and precise.",
+      "context": "quality",
+      "category": "speed-difficulty-and-quality",
+      "words": [
+        {
+          "bn": "তার",
+          "pronunciation": "tar",
+          "en": "His / Her"
+        },
+        {
+          "bn": "উত্তরটি",
+          "pronunciation": "uttorti",
+          "en": "the answer"
+        },
+        {
+          "bn": "সঠিক",
+          "pronunciation": "shothik",
+          "en": "correct"
+        },
+        {
+          "bn": "ও",
+          "pronunciation": "o",
+          "en": "and / also"
+        },
+        {
+          "bn": "নিখুঁত",
+          "pronunciation": "nikhut",
+          "en": "perfect / precise"
+        }
+      ]
+    },
+    {
+      "bn": "এই চেয়ারটি খুব আরামদায়ক।",
+      "pronunciation": "ei cheyarti khub aramdayok",
+      "en": "This chair is very comfortable.",
+      "context": "comfort",
+      "category": "speed-difficulty-and-quality",
+      "words": [
+        {
+          "bn": "এই",
+          "pronunciation": "ei",
+          "en": "this"
+        },
+        {
+          "bn": "চেয়ারটি",
+          "pronunciation": "cheyarti",
+          "en": "the chair"
+        },
+        {
+          "bn": "খুব",
+          "pronunciation": "khub",
+          "en": "very"
+        },
+        {
+          "bn": "আরামদায়ক",
+          "pronunciation": "aramdayok",
+          "en": "comfortable"
+        }
+      ]
+    },
+    {
+      "bn": "রিমা খুব দয়ালু ও যত্নশীল।",
+      "pronunciation": "rima khub doyalu o jotnoshil",
+      "en": "Rima is very kind and caring.",
+      "context": "personality",
+      "category": "personality-and-behavior",
+      "words": [
+        {
+          "bn": "রিমা",
+          "pronunciation": "rima",
+          "en": "Rima"
+        },
+        {
+          "bn": "খুব",
+          "pronunciation": "khub",
+          "en": "very"
+        },
+        {
+          "bn": "দয়ালু",
+          "pronunciation": "doyalu",
+          "en": "kind"
+        },
+        {
+          "bn": "ও",
+          "pronunciation": "o",
+          "en": "and / also"
+        },
+        {
+          "bn": "যত্নশীল",
+          "pronunciation": "jotnoshil",
+          "en": "caring"
+        }
+      ]
+    },
+    {
+      "bn": "আমার শিক্ষক শান্ত ও ধৈর্যশীল।",
+      "pronunciation": "amar shikkhok shanto o dhoirjoshil",
+      "en": "My teacher is calm and patient.",
+      "context": "personality",
+      "category": "personality-and-behavior",
+      "words": [
+        {
+          "bn": "আমার",
+          "pronunciation": "amar",
+          "en": "my"
+        },
+        {
+          "bn": "শিক্ষক",
+          "pronunciation": "shikkhok",
+          "en": "teacher"
+        },
+        {
+          "bn": "শান্ত",
+          "pronunciation": "shanto",
+          "en": "calm down / calm"
+        },
+        {
+          "bn": "ও",
+          "pronunciation": "o",
+          "en": "and / also"
+        },
+        {
+          "bn": "ধৈর্যশীল",
+          "pronunciation": "dhoirjoshil",
+          "en": "Patient / patient"
+        }
+      ]
+    },
+    {
+      "bn": "ছেলেটি বুদ্ধিমান কিন্তু লাজুক।",
+      "pronunciation": "chheleti buddhiman kintu lajuk",
+      "en": "The boy is intelligent but shy.",
+      "context": "personality",
+      "category": "personality-and-behavior",
+      "words": [
+        {
+          "bn": "ছেলেটি",
+          "pronunciation": "chheleti",
+          "en": "the boy"
+        },
+        {
+          "bn": "বুদ্ধিমান",
+          "pronunciation": "buddhiman",
+          "en": "intelligent"
+        },
+        {
+          "bn": "কিন্তু",
+          "pronunciation": "kintu",
+          "en": "but"
+        },
+        {
+          "bn": "লাজুক",
+          "pronunciation": "lajuk",
+          "en": "shy"
+        }
+      ]
+    },
+    {
+      "bn": "একজন সৎ মানুষ বিশ্বস্ত হয়।",
+      "pronunciation": "ekjon shot manush bishshosto hoy",
+      "en": "An honest person is trustworthy.",
+      "context": "character",
+      "category": "personality-and-behavior",
+      "words": [
+        {
+          "bn": "একজন",
+          "pronunciation": "ekjon",
+          "en": "one person"
+        },
+        {
+          "bn": "সৎ",
+          "pronunciation": "shot",
+          "en": "honest"
+        },
+        {
+          "bn": "মানুষ",
+          "pronunciation": "manush",
+          "en": "person"
+        },
+        {
+          "bn": "বিশ্বস্ত",
+          "pronunciation": "bishshosto",
+          "en": "trustworthy / loyal"
+        },
+        {
+          "bn": "হয়",
+          "pronunciation": "hoy",
+          "en": "is / happens / becomes"
+        }
+      ]
+    },
+    {
+      "bn": "সে খুব পরিশ্রমী ও দায়িত্বশীল।",
+      "pronunciation": "she khub porishromi o dayittoshil",
+      "en": "She is very hardworking and responsible.",
+      "context": "character",
+      "category": "personality-and-behavior",
+      "words": [
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "খুব",
+          "pronunciation": "khub",
+          "en": "very"
+        },
+        {
+          "bn": "পরিশ্রমী",
+          "pronunciation": "porishromi",
+          "en": "hardworking"
+        },
+        {
+          "bn": "ও",
+          "pronunciation": "o",
+          "en": "and / also"
+        },
+        {
+          "bn": "দায়িত্বশীল",
+          "pronunciation": "dayittoshil",
+          "en": "responsible"
+        }
+      ]
+    },
+    {
+      "bn": "আজ আমি খুব সুখী।",
+      "pronunciation": "aj ami khub shukhi",
+      "en": "I am very happy today.",
+      "context": "feeling",
+      "category": "feelings-and-physical-states",
+      "words": [
+        {
+          "bn": "আজ",
+          "pronunciation": "aj",
+          "en": "today"
+        },
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "খুব",
+          "pronunciation": "khub",
+          "en": "very"
+        },
+        {
+          "bn": "সুখী",
+          "pronunciation": "shukhi",
+          "en": "happy"
+        }
+      ]
+    },
+    {
+      "bn": "পরীক্ষার আগে সে উদ্বিগ্ন ছিল।",
+      "pronunciation": "porikkhar age she udbigno chhilo",
+      "en": "She was anxious before the exam.",
+      "context": "feeling",
+      "category": "feelings-and-physical-states",
+      "words": [
+        {
+          "bn": "পরীক্ষার",
+          "pronunciation": "porikkhar",
+          "en": "of the exam"
+        },
+        {
+          "bn": "আগে",
+          "pronunciation": "age",
+          "en": "Before"
+        },
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "উদ্বিগ্ন",
+          "pronunciation": "udbigno",
+          "en": "anxious"
+        },
+        {
+          "bn": "ছিল",
+          "pronunciation": "chhilo",
+          "en": "was"
+        }
+      ]
+    },
+    {
+      "bn": "দীর্ঘ ভ্রমণের পরে আমরা ক্লান্ত ছিলাম।",
+      "pronunciation": "dirgho bhromoner pore amra klanto chhilam",
+      "en": "We were tired after the long journey.",
+      "context": "physical state",
+      "category": "feelings-and-physical-states",
+      "words": [
+        {
+          "bn": "দীর্ঘ",
+          "pronunciation": "dirgho",
+          "en": "long"
+        },
+        {
+          "bn": "ভ্রমণের",
+          "pronunciation": "bhromoner",
+          "en": "after the journey"
+        },
+        {
+          "bn": "পরে",
+          "pronunciation": "pore",
+          "en": "after / later / wears"
+        },
+        {
+          "bn": "আমরা",
+          "pronunciation": "amra",
+          "en": "we"
+        },
+        {
+          "bn": "ক্লান্ত",
+          "pronunciation": "klanto",
+          "en": "tired"
+        },
+        {
+          "bn": "ছিলাম",
+          "pronunciation": "chhilam",
+          "en": "we were"
+        }
+      ]
+    },
+    {
+      "bn": "শিশুটি ক্ষুধার্ত ও তৃষ্ণার্ত।",
+      "pronunciation": "shishuti khudharto o trishnarto",
+      "en": "The child is hungry and thirsty.",
+      "context": "physical state",
+      "category": "feelings-and-physical-states",
+      "words": [
+        {
+          "bn": "শিশুটি",
+          "pronunciation": "shishuti",
+          "en": "the child"
+        },
+        {
+          "bn": "ক্ষুধার্ত",
+          "pronunciation": "khudharto",
+          "en": "hungry"
+        },
+        {
+          "bn": "ও",
+          "pronunciation": "o",
+          "en": "and / also"
+        },
+        {
+          "bn": "তৃষ্ণার্ত",
+          "pronunciation": "trishnarto",
+          "en": "thirsty"
+        }
+      ]
+    },
+    {
+      "bn": "অসুস্থ মানুষটি এখন সুস্থ।",
+      "pronunciation": "oshustho manushti ekhon shustho",
+      "en": "The sick person is healthy now.",
+      "context": "health",
+      "category": "feelings-and-physical-states",
+      "words": [
+        {
+          "bn": "অসুস্থ",
+          "pronunciation": "oshustho",
+          "en": "sick"
+        },
+        {
+          "bn": "মানুষটি",
+          "pronunciation": "manushti",
+          "en": "the person"
+        },
+        {
+          "bn": "এখন",
+          "pronunciation": "ekhon",
+          "en": "now"
+        },
+        {
+          "bn": "সুস্থ",
+          "pronunciation": "shustho",
+          "en": "Healthy / healthy"
+        }
+      ]
+    },
+    {
+      "bn": "আমাদের কাছে যথেষ্ট সময় আছে।",
+      "pronunciation": "amader kachhe jotheshto shomoy achhe",
+      "en": "We have enough time.",
+      "context": "amount",
+      "category": "amount-and-availability",
+      "words": [
+        {
+          "bn": "আমাদের",
+          "pronunciation": "amader",
+          "en": "our"
+        },
+        {
+          "bn": "কাছে",
+          "pronunciation": "kachhe",
+          "en": "near / with / in someone's possession"
+        },
+        {
+          "bn": "যথেষ্ট",
+          "pronunciation": "jotheshto",
+          "en": "enough"
+        },
+        {
+          "bn": "সময়",
+          "pronunciation": "shomoy",
+          "en": "time"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is / has"
+        }
+      ]
+    },
+    {
+      "bn": "এই দোকানে প্রচুর বই উপলভ্য।",
+      "pronunciation": "ei dokane prochur boi upolobdho",
+      "en": "Many books are available in this shop.",
+      "context": "availability",
+      "category": "amount-and-availability",
+      "words": [
+        {
+          "bn": "এই",
+          "pronunciation": "ei",
+          "en": "this"
+        },
+        {
+          "bn": "দোকানে",
+          "pronunciation": "dokane",
+          "en": "in the shop"
+        },
+        {
+          "bn": "প্রচুর",
+          "pronunciation": "prochur",
+          "en": "abundant"
+        },
+        {
+          "bn": "বই",
+          "pronunciation": "boi",
+          "en": "book"
+        },
+        {
+          "bn": "উপলভ্য",
+          "pronunciation": "upolobdho",
+          "en": "available"
+        }
+      ]
+    },
+    {
+      "bn": "বোতলটি এখন পুরো খালি।",
+      "pronunciation": "botolti ekhon puro khali",
+      "en": "The bottle is completely empty now.",
+      "context": "amount",
+      "category": "amount-and-availability",
+      "words": [
+        {
+          "bn": "বোতলটি",
+          "pronunciation": "botolti",
+          "en": "the bottle"
+        },
+        {
+          "bn": "এখন",
+          "pronunciation": "ekhon",
+          "en": "now"
+        },
+        {
+          "bn": "পুরো",
+          "pronunciation": "puro",
+          "en": "entire / whole"
+        },
+        {
+          "bn": "খালি",
+          "pronunciation": "khali",
+          "en": "empty"
+        }
+      ]
+    },
+    {
+      "bn": "আমাদের সম্পদ সীমিত।",
+      "pronunciation": "amader shompod shimito",
+      "en": "Our resources are limited.",
+      "context": "amount",
+      "category": "amount-and-availability",
+      "words": [
+        {
+          "bn": "আমাদের",
+          "pronunciation": "amader",
+          "en": "our"
+        },
+        {
+          "bn": "সম্পদ",
+          "pronunciation": "shompod",
+          "en": "resources"
+        },
+        {
+          "bn": "সীমিত",
+          "pronunciation": "shimito",
+          "en": "limited"
+        }
+      ]
+    },
+    {
+      "bn": "এই তথ্য অপর্যাপ্ত।",
+      "pronunciation": "ei tothyo oporjapto",
+      "en": "This information is insufficient.",
+      "context": "amount",
+      "category": "amount-and-availability",
+      "words": [
+        {
+          "bn": "এই",
+          "pronunciation": "ei",
+          "en": "this"
+        },
+        {
+          "bn": "তথ্য",
+          "pronunciation": "tothyo",
+          "en": "information"
+        },
+        {
+          "bn": "অপর্যাপ্ত",
+          "pronunciation": "oporjapto",
+          "en": "insufficient"
+        }
+      ]
+    },
+    {
+      "bn": "এই জামাটি সস্তা কিন্তু ভালো।",
+      "pronunciation": "ei jamati shosta kintu bhalo",
+      "en": "This shirt is inexpensive but good.",
+      "context": "price",
+      "category": "price-wealth-and-value",
+      "words": [
+        {
+          "bn": "এই",
+          "pronunciation": "ei",
+          "en": "this"
+        },
+        {
+          "bn": "জামাটি",
+          "pronunciation": "jamati",
+          "en": "the shirt"
+        },
+        {
+          "bn": "সস্তা",
+          "pronunciation": "shosta",
+          "en": "cheap"
+        },
+        {
+          "bn": "কিন্তু",
+          "pronunciation": "kintu",
+          "en": "but"
+        },
+        {
+          "bn": "ভালো",
+          "pronunciation": "bhalo",
+          "en": "good"
+        }
+      ]
+    },
+    {
+      "bn": "ওই ফোনটি খুব দামি।",
+      "pronunciation": "oi phonti khub dami",
+      "en": "That phone is very expensive.",
+      "context": "price",
+      "category": "price-wealth-and-value",
+      "words": [
+        {
+          "bn": "ওই",
+          "pronunciation": "oi",
+          "en": "that"
+        },
+        {
+          "bn": "ফোনটি",
+          "pronunciation": "phonti",
+          "en": "the phone"
+        },
+        {
+          "bn": "খুব",
+          "pronunciation": "khub",
+          "en": "very"
+        },
+        {
+          "bn": "দামি",
+          "pronunciation": "dami",
+          "en": "expensive"
+        }
+      ]
+    },
+    {
+      "bn": "পুরোনো চিঠিটি আমার কাছে মূল্যবান।",
+      "pronunciation": "purono chithiti amar kachhe mullyoban",
+      "en": "The old letter is valuable to me.",
+      "context": "value",
+      "category": "price-wealth-and-value",
+      "words": [
+        {
+          "bn": "পুরোনো",
+          "pronunciation": "purono",
+          "en": "old"
+        },
+        {
+          "bn": "চিঠিটি",
+          "pronunciation": "chithiti",
+          "en": "the letter"
+        },
+        {
+          "bn": "আমার",
+          "pronunciation": "amar",
+          "en": "my"
+        },
+        {
+          "bn": "কাছে",
+          "pronunciation": "kachhe",
+          "en": "near / with / in someone's possession"
+        },
+        {
+          "bn": "মূল্যবান",
+          "pronunciation": "mullyoban",
+          "en": "valuable"
+        }
+      ]
+    },
+    {
+      "bn": "এই পরামর্শটি খুব উপকারী।",
+      "pronunciation": "ei poramorshoti khub upokari",
+      "en": "This advice is very useful.",
+      "context": "value",
+      "category": "price-wealth-and-value",
+      "words": [
+        {
+          "bn": "এই",
+          "pronunciation": "ei",
+          "en": "this"
+        },
+        {
+          "bn": "পরামর্শটি",
+          "pronunciation": "poramorshoti",
+          "en": "the advice"
+        },
+        {
+          "bn": "খুব",
+          "pronunciation": "khub",
+          "en": "very"
+        },
+        {
+          "bn": "উপকারী",
+          "pronunciation": "upokari",
+          "en": "beneficial"
+        }
+      ]
+    },
+    {
+      "bn": "দূষিত পানি স্বাস্থ্যের জন্য ক্ষতিকর।",
+      "pronunciation": "dushito pani shasthyer jonno khotikor",
+      "en": "Contaminated water is harmful to health.",
+      "context": "value",
+      "category": "price-wealth-and-value",
+      "words": [
+        {
+          "bn": "দূষিত",
+          "pronunciation": "dushito",
+          "en": "contaminated"
+        },
+        {
+          "bn": "পানি",
+          "pronunciation": "pani",
+          "en": "water"
+        },
+        {
+          "bn": "স্বাস্থ্যের",
+          "pronunciation": "shasthyer",
+          "en": "of health"
+        },
+        {
+          "bn": "জন্য",
+          "pronunciation": "jonno",
+          "en": "for"
+        },
+        {
+          "bn": "ক্ষতিকর",
+          "pronunciation": "khotikor",
+          "en": "malicious / harmful"
+        }
+      ]
+    },
+    {
+      "bn": "তোমার উত্তরটি সম্পূর্ণ সঠিক।",
+      "pronunciation": "tomar uttorti shompurno shothik",
+      "en": "Your answer is completely correct.",
+      "context": "correctness",
+      "category": "truth-correctness-and-possibility",
+      "words": [
+        {
+          "bn": "তোমার",
+          "pronunciation": "tomar",
+          "en": "your"
+        },
+        {
+          "bn": "উত্তরটি",
+          "pronunciation": "uttorti",
+          "en": "the answer"
+        },
+        {
+          "bn": "সম্পূর্ণ",
+          "pronunciation": "shompurno",
+          "en": "complete"
+        },
+        {
+          "bn": "সঠিক",
+          "pronunciation": "shothik",
+          "en": "correct"
+        }
+      ]
+    },
+    {
+      "bn": "এই খবরটি সত্য না মিথ্যা?",
+      "pronunciation": "ei khoborti shotto na mittha",
+      "en": "Is this news true or false?",
+      "context": "truth",
+      "category": "truth-correctness-and-possibility",
+      "words": [
+        {
+          "bn": "এই",
+          "pronunciation": "ei",
+          "en": "this"
+        },
+        {
+          "bn": "খবরটি",
+          "pronunciation": "khoborti",
+          "en": "the news"
+        },
+        {
+          "bn": "সত্য",
+          "pronunciation": "shotto",
+          "en": "true"
+        },
+        {
+          "bn": "না",
+          "pronunciation": "na",
+          "en": "not"
+        },
+        {
+          "bn": "মিথ্যা",
+          "pronunciation": "mittha",
+          "en": "lie / falsehood / false"
+        }
+      ]
+    },
+    {
+      "bn": "আগামীকাল বৃষ্টি সম্ভব।",
+      "pronunciation": "agamikal brishti shombhob",
+      "en": "Rain is possible tomorrow.",
+      "context": "possibility",
+      "category": "truth-correctness-and-possibility",
+      "words": [
+        {
+          "bn": "আগামীকাল",
+          "pronunciation": "agamikal",
+          "en": "tomorrow"
+        },
+        {
+          "bn": "বৃষ্টি",
+          "pronunciation": "brishti",
+          "en": "rain"
+        },
+        {
+          "bn": "সম্ভব",
+          "pronunciation": "shombhob",
+          "en": "possible"
+        }
+      ]
+    },
+    {
+      "bn": "তার ব্যাখ্যাটি স্পষ্ট ও যুক্তিসঙ্গত।",
+      "pronunciation": "tar byakhyati sposhto o juktishongoto",
+      "en": "Her explanation is clear and reasonable.",
+      "context": "clarity",
+      "category": "truth-correctness-and-possibility",
+      "words": [
+        {
+          "bn": "তার",
+          "pronunciation": "tar",
+          "en": "His / Her"
+        },
+        {
+          "bn": "ব্যাখ্যাটি",
+          "pronunciation": "byakhyati",
+          "en": "the explanation"
+        },
+        {
+          "bn": "স্পষ্ট",
+          "pronunciation": "sposhto",
+          "en": "clear / obvious"
+        },
+        {
+          "bn": "ও",
+          "pronunciation": "o",
+          "en": "and / also"
+        },
+        {
+          "bn": "যুক্তিসঙ্গত",
+          "pronunciation": "juktishongoto",
+          "en": "reasonable"
+        }
+      ]
+    },
+    {
+      "bn": "এই দাবিটি এখনো অনিশ্চিত।",
+      "pronunciation": "ei dabiti ekhono onishchito",
+      "en": "This claim is still uncertain.",
+      "context": "certainty",
+      "category": "truth-correctness-and-possibility",
+      "words": [
+        {
+          "bn": "এই",
+          "pronunciation": "ei",
+          "en": "this"
+        },
+        {
+          "bn": "দাবিটি",
+          "pronunciation": "dabiti",
+          "en": "the claim"
+        },
+        {
+          "bn": "এখনো",
+          "pronunciation": "ekhono",
+          "en": "yet / still"
+        },
+        {
+          "bn": "অনিশ্চিত",
+          "pronunciation": "onishchito",
+          "en": "uncertain"
+        }
+      ]
+    },
+    {
+      "bn": "নিরাপত্তা খুব গুরুত্বপূর্ণ।",
+      "pronunciation": "nirapotta khub guruttopurno",
+      "en": "Safety is very important.",
+      "context": "importance",
+      "category": "importance-and-popularity",
+      "words": [
+        {
+          "bn": "নিরাপত্তা",
+          "pronunciation": "nirapotta",
+          "en": "safety"
+        },
+        {
+          "bn": "খুব",
+          "pronunciation": "khub",
+          "en": "very"
+        },
+        {
+          "bn": "গুরুত্বপূর্ণ",
+          "pronunciation": "guruttopurno",
+          "en": "important"
+        }
+      ]
+    },
+    {
+      "bn": "এটি একটি জনপ্রিয় বাংলা গান।",
+      "pronunciation": "eti ekti jonopriyo bangla gan",
+      "en": "This is a popular Bengali song.",
+      "context": "popularity",
+      "category": "importance-and-popularity",
+      "words": [
+        {
+          "bn": "এটি",
+          "pronunciation": "eti",
+          "en": "this"
+        },
+        {
+          "bn": "একটি",
+          "pronunciation": "ekti",
+          "en": "one / a"
+        },
+        {
+          "bn": "জনপ্রিয়",
+          "pronunciation": "jonopriyo",
+          "en": "popular"
+        },
+        {
+          "bn": "বাংলা",
+          "pronunciation": "bangla",
+          "en": "Bengali"
+        },
+        {
+          "bn": "গান",
+          "pronunciation": "gan",
+          "en": "song / music"
+        }
+      ]
+    },
+    {
+      "bn": "ঢাকা একটি বিখ্যাত শহর।",
+      "pronunciation": "dhaka ekti bikkhato shohor",
+      "en": "Dhaka is a famous city.",
+      "context": "popularity",
+      "category": "importance-and-popularity",
+      "words": [
+        {
+          "bn": "ঢাকা",
+          "pronunciation": "dhaka",
+          "en": "Dhaka"
+        },
+        {
+          "bn": "একটি",
+          "pronunciation": "ekti",
+          "en": "one / a"
+        },
+        {
+          "bn": "বিখ্যাত",
+          "pronunciation": "bikkhato",
+          "en": "famous"
+        },
+        {
+          "bn": "শহর",
+          "pronunciation": "shohor",
+          "en": "city"
+        }
+      ]
+    },
+    {
+      "bn": "এই কাজটি জরুরি ও প্রয়োজনীয়।",
+      "pronunciation": "ei kajti joruri o proyojoniyo",
+      "en": "This task is urgent and necessary.",
+      "context": "importance",
+      "category": "importance-and-popularity",
       "words": [
         {
           "bn": "এই",
@@ -261,47 +1836,212 @@
           "en": "the task"
         },
         {
-          "bn": "বেশ",
-          "pronunciation": "besh",
-          "en": "quite"
+          "bn": "জরুরি",
+          "pronunciation": "joruri",
+          "en": "urgent"
         },
         {
-          "bn": "কঠিন",
-          "pronunciation": "kothin",
-          "en": "difficult"
+          "bn": "ও",
+          "pronunciation": "o",
+          "en": "and / also"
+        },
+        {
+          "bn": "প্রয়োজনীয়",
+          "pronunciation": "proyojoniyo",
+          "en": "required / necessary"
         }
       ]
     },
     {
-      "bn": "চা এখনো গরম।",
-      "pronunciation": "cha ekhono gorom",
-      "en": "The tea is still hot.",
-      "context": "Using গরম (hot)",
-      "category": "adjectives",
+      "bn": "এখানে নিয়মিত অনুশীলন স্বাভাবিক।",
+      "pronunciation": "ekhane niyomito onushilon shabhabik",
+      "en": "Regular practice is normal here.",
+      "context": "regularity",
+      "category": "importance-and-popularity",
       "words": [
         {
-          "bn": "চা",
-          "pronunciation": "cha",
-          "en": "tea"
+          "bn": "এখানে",
+          "pronunciation": "ekhane",
+          "en": "here"
         },
         {
-          "bn": "এখনো",
-          "pronunciation": "ekhono",
-          "en": "still"
+          "bn": "নিয়মিত",
+          "pronunciation": "niyomito",
+          "en": "regular"
         },
         {
-          "bn": "গরম",
-          "pronunciation": "gorom",
-          "en": "hot"
+          "bn": "অনুশীলন",
+          "pronunciation": "onushilon",
+          "en": "practice"
+        },
+        {
+          "bn": "স্বাভাবিক",
+          "pronunciation": "shabhabik",
+          "en": "normal / natural"
         }
       ]
     },
     {
-      "bn": "আজ পানি ঠান্ডা।",
-      "pronunciation": "aj pani thanda",
-      "en": "The water is cold today.",
-      "context": "Using ঠান্ডা (cold)",
-      "category": "adjectives",
+      "bn": "এই রাস্তা রাতে নিরাপদ নয়।",
+      "pronunciation": "ei rasta rate nirapod noy",
+      "en": "This road is not safe at night.",
+      "context": "safety",
+      "category": "safety-and-health",
+      "words": [
+        {
+          "bn": "এই",
+          "pronunciation": "ei",
+          "en": "this"
+        },
+        {
+          "bn": "রাস্তা",
+          "pronunciation": "rasta",
+          "en": "road"
+        },
+        {
+          "bn": "রাতে",
+          "pronunciation": "rate",
+          "en": "at night"
+        },
+        {
+          "bn": "নিরাপদ",
+          "pronunciation": "nirapod",
+          "en": "safe"
+        },
+        {
+          "bn": "নয়",
+          "pronunciation": "noy",
+          "en": "is not"
+        }
+      ]
+    },
+    {
+      "bn": "ঝড়ের সময় নদীটি বিপজ্জনক।",
+      "pronunciation": "jhorer shomoy noditi bipodjonok",
+      "en": "The river is dangerous during a storm.",
+      "context": "safety",
+      "category": "safety-and-health",
+      "words": [
+        {
+          "bn": "ঝড়ের",
+          "pronunciation": "jhorer",
+          "en": "of the storm"
+        },
+        {
+          "bn": "সময়",
+          "pronunciation": "shomoy",
+          "en": "time"
+        },
+        {
+          "bn": "নদীটি",
+          "pronunciation": "noditi",
+          "en": "the river"
+        },
+        {
+          "bn": "বিপজ্জনক",
+          "pronunciation": "bipodjonok",
+          "en": "dangerous"
+        }
+      ]
+    },
+    {
+      "bn": "তাজা শাকসবজি খুব স্বাস্থ্যকর।",
+      "pronunciation": "taja shakshobji khub shasthokor",
+      "en": "Fresh vegetables are very healthy.",
+      "context": "health",
+      "category": "safety-and-health",
+      "words": [
+        {
+          "bn": "তাজা",
+          "pronunciation": "taja",
+          "en": "fresh"
+        },
+        {
+          "bn": "শাকসবজি",
+          "pronunciation": "shakshobji",
+          "en": "vegetables"
+        },
+        {
+          "bn": "খুব",
+          "pronunciation": "khub",
+          "en": "very"
+        },
+        {
+          "bn": "স্বাস্থ্যকর",
+          "pronunciation": "shasthokor",
+          "en": "healthy"
+        }
+      ]
+    },
+    {
+      "bn": "এই রাসায়নিক পদার্থটি বিষাক্ত।",
+      "pronunciation": "ei rashayonik podarthoti bishakto",
+      "en": "This chemical substance is toxic.",
+      "context": "health",
+      "category": "safety-and-health",
+      "words": [
+        {
+          "bn": "এই",
+          "pronunciation": "ei",
+          "en": "this"
+        },
+        {
+          "bn": "রাসায়নিক",
+          "pronunciation": "rashayonik",
+          "en": "chemical"
+        },
+        {
+          "bn": "পদার্থটি",
+          "pronunciation": "podarthoti",
+          "en": "the substance"
+        },
+        {
+          "bn": "বিষাক্ত",
+          "pronunciation": "bishakto",
+          "en": "poisonous / toxic"
+        }
+      ]
+    },
+    {
+      "bn": "রোগটি গুরুতর কিন্তু সংক্রামক নয়।",
+      "pronunciation": "rogti gurutoro kintu shongkramok noy",
+      "en": "The disease is serious but not contagious.",
+      "context": "health",
+      "category": "safety-and-health",
+      "words": [
+        {
+          "bn": "রোগটি",
+          "pronunciation": "rogti",
+          "en": "the disease"
+        },
+        {
+          "bn": "গুরুতর",
+          "pronunciation": "gurutoro",
+          "en": "serious"
+        },
+        {
+          "bn": "কিন্তু",
+          "pronunciation": "kintu",
+          "en": "but"
+        },
+        {
+          "bn": "সংক্রামক",
+          "pronunciation": "shongkramok",
+          "en": "contagious"
+        },
+        {
+          "bn": "নয়",
+          "pronunciation": "noy",
+          "en": "is not"
+        }
+      ]
+    },
+    {
+      "bn": "আজ আমার প্রথম কর্মদিবস।",
+      "pronunciation": "aj amar prothom kormodibosh",
+      "en": "Today is my first workday.",
+      "context": "order",
+      "category": "time-and-order",
       "words": [
         {
           "bn": "আজ",
@@ -309,14 +2049,440 @@
           "en": "today"
         },
         {
-          "bn": "পানি",
-          "pronunciation": "pani",
-          "en": "water"
+          "bn": "আমার",
+          "pronunciation": "amar",
+          "en": "my"
         },
         {
-          "bn": "ঠান্ডা",
-          "pronunciation": "thanda",
-          "en": "cold"
+          "bn": "প্রথম",
+          "pronunciation": "prothom",
+          "en": "First / first"
+        },
+        {
+          "bn": "কর্মদিবস",
+          "pronunciation": "kormodibosh",
+          "en": "workday"
+        }
+      ]
+    },
+    {
+      "bn": "এটাই আমাদের শেষ সুযোগ।",
+      "pronunciation": "etai amader shesh shujog",
+      "en": "This is our last chance.",
+      "context": "order",
+      "category": "time-and-order",
+      "words": [
+        {
+          "bn": "এটাই",
+          "pronunciation": "etai",
+          "en": "this is"
+        },
+        {
+          "bn": "আমাদের",
+          "pronunciation": "amader",
+          "en": "our"
+        },
+        {
+          "bn": "শেষ",
+          "pronunciation": "shesh",
+          "en": "end / last / final"
+        },
+        {
+          "bn": "সুযোগ",
+          "pronunciation": "shujog",
+          "en": "chance"
+        }
+      ]
+    },
+    {
+      "bn": "পরের সভাটি আগামী সপ্তাহে।",
+      "pronunciation": "porer shobhati agami shoptaho",
+      "en": "The next meeting is next week.",
+      "context": "time",
+      "category": "time-and-order",
+      "words": [
+        {
+          "bn": "পরের",
+          "pronunciation": "porer",
+          "en": "the next / next"
+        },
+        {
+          "bn": "সভাটি",
+          "pronunciation": "shobhati",
+          "en": "the meeting"
+        },
+        {
+          "bn": "আগামী",
+          "pronunciation": "agami",
+          "en": "coming / next"
+        },
+        {
+          "bn": "সপ্তাহে",
+          "pronunciation": "shoptaho",
+          "en": "in a week"
+        }
+      ]
+    },
+    {
+      "bn": "এই ব্যবস্থা অস্থায়ী নয়, স্থায়ী।",
+      "pronunciation": "ei byabostha osthayi noy sthayi",
+      "en": "This arrangement is not temporary; it is permanent.",
+      "context": "duration",
+      "category": "time-and-order",
+      "words": [
+        {
+          "bn": "এই",
+          "pronunciation": "ei",
+          "en": "this"
+        },
+        {
+          "bn": "ব্যবস্থা",
+          "pronunciation": "byabostha",
+          "en": "system"
+        },
+        {
+          "bn": "অস্থায়ী",
+          "pronunciation": "osthayi",
+          "en": "temporary"
+        },
+        {
+          "bn": "নয়",
+          "pronunciation": "noy",
+          "en": "is not"
+        },
+        {
+          "bn": "স্থায়ী",
+          "pronunciation": "sthayi",
+          "en": "permanent"
+        }
+      ]
+    },
+    {
+      "bn": "সাম্প্রতিক প্রতিবেদনটি চূড়ান্ত নয়।",
+      "pronunciation": "shamprotik protibedonti churanto noy",
+      "en": "The recent report is not final.",
+      "context": "time",
+      "category": "time-and-order",
+      "words": [
+        {
+          "bn": "সাম্প্রতিক",
+          "pronunciation": "shamprotik",
+          "en": "recent"
+        },
+        {
+          "bn": "প্রতিবেদনটি",
+          "pronunciation": "protibedonti",
+          "en": "the report"
+        },
+        {
+          "bn": "চূড়ান্ত",
+          "pronunciation": "churanto",
+          "en": "final"
+        },
+        {
+          "bn": "নয়",
+          "pronunciation": "noy",
+          "en": "is not"
+        }
+      ]
+    },
+    {
+      "bn": "আমার স্কুলটি খুব কাছের।",
+      "pronunciation": "amar skulti khub kachher",
+      "en": "My school is very nearby.",
+      "context": "distance",
+      "category": "location-and-distance",
+      "words": [
+        {
+          "bn": "আমার",
+          "pronunciation": "amar",
+          "en": "my"
+        },
+        {
+          "bn": "স্কুলটি",
+          "pronunciation": "skulti",
+          "en": "the school"
+        },
+        {
+          "bn": "খুব",
+          "pronunciation": "khub",
+          "en": "very"
+        },
+        {
+          "bn": "কাছের",
+          "pronunciation": "kachher",
+          "en": "nearby"
+        }
+      ]
+    },
+    {
+      "bn": "ওই গ্রামটি অনেক দূরের।",
+      "pronunciation": "oi gramti onek durer",
+      "en": "That village is very distant.",
+      "context": "distance",
+      "category": "location-and-distance",
+      "words": [
+        {
+          "bn": "ওই",
+          "pronunciation": "oi",
+          "en": "that"
+        },
+        {
+          "bn": "গ্রামটি",
+          "pronunciation": "gramti",
+          "en": "the village"
+        },
+        {
+          "bn": "অনেক",
+          "pronunciation": "onek",
+          "en": "very / many / much"
+        },
+        {
+          "bn": "দূরের",
+          "pronunciation": "durer",
+          "en": "distant"
+        }
+      ]
+    },
+    {
+      "bn": "আমরা স্থানীয় বাজারে যাই।",
+      "pronunciation": "amra sthaniyo bajare jai",
+      "en": "We go to the local market.",
+      "context": "location",
+      "category": "location-and-distance",
+      "words": [
+        {
+          "bn": "আমরা",
+          "pronunciation": "amra",
+          "en": "we"
+        },
+        {
+          "bn": "স্থানীয়",
+          "pronunciation": "sthaniyo",
+          "en": "local"
+        },
+        {
+          "bn": "বাজারে",
+          "pronunciation": "bajare",
+          "en": "in the market"
+        },
+        {
+          "bn": "যাই",
+          "pronunciation": "jai",
+          "en": "go"
+        }
+      ]
+    },
+    {
+      "bn": "বইটি উপরের তাকে আছে।",
+      "pronunciation": "boiti uporer take achhe",
+      "en": "The book is on the upper shelf.",
+      "context": "location",
+      "category": "location-and-distance",
+      "words": [
+        {
+          "bn": "বইটি",
+          "pronunciation": "boiti",
+          "en": "the book"
+        },
+        {
+          "bn": "উপরের",
+          "pronunciation": "uporer",
+          "en": "upper"
+        },
+        {
+          "bn": "তাকে",
+          "pronunciation": "take",
+          "en": "on the shelf"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is / has"
+        }
+      ]
+    },
+    {
+      "bn": "এটি একটি প্রত্যন্ত অঞ্চল।",
+      "pronunciation": "eti ekti protyonto onchol",
+      "en": "This is a remote region.",
+      "context": "location",
+      "category": "location-and-distance",
+      "words": [
+        {
+          "bn": "এটি",
+          "pronunciation": "eti",
+          "en": "this"
+        },
+        {
+          "bn": "একটি",
+          "pronunciation": "ekti",
+          "en": "one / a"
+        },
+        {
+          "bn": "প্রত্যন্ত",
+          "pronunciation": "protyonto",
+          "en": "remote"
+        },
+        {
+          "bn": "অঞ্চল",
+          "pronunciation": "onchol",
+          "en": "region"
+        }
+      ]
+    },
+    {
+      "bn": "এটি আমার ব্যক্তিগত মতামত।",
+      "pronunciation": "eti amar byaktigoto motamot",
+      "en": "This is my personal opinion.",
+      "context": "relationship",
+      "category": "relationships-and-categories",
+      "words": [
+        {
+          "bn": "এটি",
+          "pronunciation": "eti",
+          "en": "this"
+        },
+        {
+          "bn": "আমার",
+          "pronunciation": "amar",
+          "en": "my"
+        },
+        {
+          "bn": "ব্যক্তিগত",
+          "pronunciation": "byaktigoto",
+          "en": "personal"
+        },
+        {
+          "bn": "মতামত",
+          "pronunciation": "motamot",
+          "en": "opinion"
+        }
+      ]
+    },
+    {
+      "bn": "উৎসবটি একটি সাংস্কৃতিক অনুষ্ঠান।",
+      "pronunciation": "utshobti ekti shangskritik onushthan",
+      "en": "The festival is a cultural event.",
+      "context": "category",
+      "category": "relationships-and-categories",
+      "words": [
+        {
+          "bn": "উৎসবটি",
+          "pronunciation": "utshobti",
+          "en": "the festival"
+        },
+        {
+          "bn": "একটি",
+          "pronunciation": "ekti",
+          "en": "one / a"
+        },
+        {
+          "bn": "সাংস্কৃতিক",
+          "pronunciation": "shangskritik",
+          "en": "cultural"
+        },
+        {
+          "bn": "অনুষ্ঠান",
+          "pronunciation": "onushthan",
+          "en": "event"
+        }
+      ]
+    },
+    {
+      "bn": "এটি একটি বৈজ্ঞানিক গবেষণা।",
+      "pronunciation": "eti ekti boigganik gobeshona",
+      "en": "This is a scientific study.",
+      "context": "category",
+      "category": "relationships-and-categories",
+      "words": [
+        {
+          "bn": "এটি",
+          "pronunciation": "eti",
+          "en": "this"
+        },
+        {
+          "bn": "একটি",
+          "pronunciation": "ekti",
+          "en": "one / a"
+        },
+        {
+          "bn": "বৈজ্ঞানিক",
+          "pronunciation": "boigganik",
+          "en": "scientific"
+        },
+        {
+          "bn": "গবেষণা",
+          "pronunciation": "gobeshona",
+          "en": "research / study"
+        }
+      ]
+    },
+    {
+      "bn": "সভাটি আনুষ্ঠানিক কিন্তু আলোচনা প্রকাশ্য।",
+      "pronunciation": "shobhati anushthanik kintu alochona prokashsho",
+      "en": "The meeting is formal, but the discussion is public.",
+      "context": "category",
+      "category": "relationships-and-categories",
+      "words": [
+        {
+          "bn": "সভাটি",
+          "pronunciation": "shobhati",
+          "en": "the meeting"
+        },
+        {
+          "bn": "আনুষ্ঠানিক",
+          "pronunciation": "anushthanik",
+          "en": "formal"
+        },
+        {
+          "bn": "কিন্তু",
+          "pronunciation": "kintu",
+          "en": "but"
+        },
+        {
+          "bn": "আলোচনা",
+          "pronunciation": "alochona",
+          "en": "discussion"
+        },
+        {
+          "bn": "প্রকাশ্য",
+          "pronunciation": "prokashsho",
+          "en": "public / open"
+        }
+      ]
+    },
+    {
+      "bn": "এই তথ্যটি ব্যক্তিগত ও গোপন।",
+      "pronunciation": "ei tothyoti byaktigoto o gopon",
+      "en": "This information is personal and secret.",
+      "context": "privacy",
+      "category": "relationships-and-categories",
+      "words": [
+        {
+          "bn": "এই",
+          "pronunciation": "ei",
+          "en": "this"
+        },
+        {
+          "bn": "তথ্যটি",
+          "pronunciation": "tothyoti",
+          "en": "the information"
+        },
+        {
+          "bn": "ব্যক্তিগত",
+          "pronunciation": "byaktigoto",
+          "en": "personal"
+        },
+        {
+          "bn": "ও",
+          "pronunciation": "o",
+          "en": "and / also"
+        },
+        {
+          "bn": "গোপন",
+          "pronunciation": "gopon",
+          "en": "secret"
         }
       ]
     },
@@ -324,8 +2490,8 @@
       "bn": "আমার ব্যাগটি লাল।",
       "pronunciation": "amar bagti lal",
       "en": "My bag is red.",
-      "context": "Using লাল (red)",
-      "category": "adjectives",
+      "context": "color",
+      "category": "colors",
       "words": [
         {
           "bn": "আমার",
@@ -345,620 +2511,125 @@
       ]
     },
     {
-      "bn": "সবাই একসাথে নাচছে।",
-      "pronunciation": "Shobai ekshathe nachchhe.",
-      "en": "Everyone is dancing together.",
-      "context": "Describing a group activity.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "সবাই একসাথে বসে খেলছে।",
-      "pronunciation": "Shobai ekshathe boshe khelchhe.",
-      "en": "Everyone is sitting and playing together.",
-      "context": "Describing a group activity.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "সবাই বসুন।",
-      "pronunciation": "Shobai boshun.",
-      "en": "Everyone sit down.",
-      "context": "Instruction for a group.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "আমার কাছে কিছু টাকা আছে।",
-      "pronunciation": "Amar kache kichu taka ache.",
-      "en": "I have some money.",
-      "context": "Talking about money or possession.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "ঘরের কাজ হয়েছে",
-      "pronunciation": "Ghorer kaj hoyeche",
-      "en": "Housework done",
-      "context": "Stating housework status.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "আমার সঙ্গে কেউ আসেনি।",
-      "pronunciation": "Amar shonge keu aseni.",
-      "en": "No one came with me.",
-      "context": "Clarifying arrival status.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "আমার ফোন কোথায়?",
-      "pronunciation": "Amar phone kothay?",
-      "en": "Where is my phone?",
-      "context": "Searching for an object.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "একটি সেকেন্ড গুরুত্বপূর্ণ।",
-      "pronunciation": "Ekta sekend guruttopurno.",
-      "en": "One second is important.",
-      "context": "Emphasizing the value of time.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "খাওয়া শেষ হয়েছে",
-      "pronunciation": "Khawa shesh hoyeche",
-      "en": "Eating is done",
-      "context": "Indicating meal completion.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "পথে কেউ নেই।",
-      "pronunciation": "Poth e keo nei.",
-      "en": "There is no one on the road.",
-      "context": "Observation of street.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "আটটা ফোন।",
-      "pronunciation": "Aat ta phone.",
-      "en": "Eight phones.",
-      "context": "Counting objects.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "একদিন দেখা হবে।",
-      "pronunciation": "Ekdin dekha hobe.",
-      "en": "One day we shall meet.",
-      "context": "Expressing future hope.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "একজন ছেলে স্কুলে যায়।",
-      "pronunciation": "Ekjon chele school-e jay.",
-      "en": "One boy goes to school.",
-      "context": "Describing a single person’s routine.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "একজন পুরুষ স্কুলে যায়।",
-      "pronunciation": "Ekjon purush school-e jay.",
-      "en": "One man goes to school.",
-      "context": "Describing a person’s routine.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "তার কাছে একটা নতুন খাতা আছে।",
-      "pronunciation": "Tar kachhe ekta notun khata ache.",
-      "en": "He has a new notebook.",
-      "context": "Describing someone's possession.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "এই বইটা অনেক দিন পর দেখলাম।",
-      "pronunciation": "Ei boi ta onek din por dekhlam.",
-      "en": "I saw this book after many days.",
-      "context": "Commenting on an old possession.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "আজ দিন খুবই ভালো।",
-      "pronunciation": "Aj din khubi bhalo.",
-      "en": "Today is very good.",
-      "context": "Describing the day positively.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "আজ অনেক ঠান্ডা",
-      "pronunciation": "Aaj onek thanda",
-      "en": "It’s very cold today",
-      "context": "Commenting on the weather.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "আমার বন্ধুরা খুব ভালো।",
-      "pronunciation": "Amar bondhura khub bhalo.",
-      "en": "My friends are very good.",
-      "context": "Sharing personal information.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "এই দিনটা অনেক ভালো গেল।",
-      "pronunciation": "Ei din ta onek bhalo gelo.",
-      "en": "This day went very well.",
-      "context": "Reflecting on the day.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "এটা অনেক বড়।",
-      "pronunciation": "Eta onek boro.",
-      "en": "This is very big.",
-      "context": "Describing size.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "এই গল্পটা খুব ছোট।",
-      "pronunciation": "Ei golpo ta khub chhoto.",
-      "en": "This story is very short.",
-      "context": "Description.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "এই জিনিসটা অনেক পুরনো।",
-      "pronunciation": "Ei jinish ta anek purono.",
-      "en": "This thing is very old.",
-      "context": "Describing age.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "এই গাছটাতে পাতা আছে।",
-      "pronunciation": "Ei gach-ta te pata ache.",
-      "en": "This tree has leaves.",
-      "context": "Describing a tree.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "আমার মা খুব ভালো মানুষ।",
-      "pronunciation": "Amar Maa khub bhalo manush.",
-      "en": "My mother is a very good person.",
-      "context": "Describing a family member.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "এই রাস্তা খুবই মসৃণ।",
-      "pronunciation": "Ei raasta khubi mosreen.",
-      "en": "This road is very smooth.",
-      "context": "Describing road condition.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "আজ অনেক গরম",
-      "pronunciation": "Aaj onek gorom",
-      "en": "It’s very hot today",
-      "context": "Commenting on the weather.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "খুব ভালো",
-      "pronunciation": "Khub bhalo",
-      "en": "Very good",
-      "context": "Strongly positive adjective.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "এই কাজটা খুব তাড়াতাড়ি করো।",
-      "pronunciation": "Ei kaj ta khub taratari koro.",
-      "en": "Do this work very quickly.",
-      "context": "Giving an urgent instruction.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "প্রতীক খুব ভালো ছেলে।",
-      "pronunciation": "Protik khub bhalo chhele.",
-      "en": "Protik is a very good boy.",
-      "context": "Praising a specific person.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "এই খাবারটা খুব মজা।",
-      "pronunciation": "Ei khabar ta khub moja.",
-      "en": "This food is very tasty.",
-      "context": "Reviewing a meal.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "আপেল স্বাস্থ্যের জন্য খুবই ভালো।",
-      "pronunciation": "Aapel swasther jonno khubi bhalo.",
-      "en": "Apple is very good for health.",
-      "context": "Talking about health benefits.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "চা-টা খুব গরম।",
-      "pronunciation": "Cha-ta khub garam.",
-      "en": "The tea is very hot.",
-      "context": "Describing temperature.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "আজ একটি সুন্দর দিন।",
-      "pronunciation": "Aj ekti sundor din.",
-      "en": "Today is a beautiful day.",
-      "context": "Describing the day.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "এই গল্প খুব রোমাঞ্চকর।",
-      "pronunciation": "Ei golpo khub romanchokor.",
-      "en": "This story is very interesting.",
-      "context": "Describing a story.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "আজ দিন খুব গরম।",
-      "pronunciation": "Aj din khub gorom.",
-      "en": "Today is very hot.",
-      "context": "Talking about the weather.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "পেঁপে স্বাস্থ্যের জন্য খুব ভালো।",
-      "pronunciation": "Pepe swasther jonno khub bhalo.",
-      "en": "Papaya is very good for health.",
-      "context": "Talking about healthy food.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "এইটা আমার প্রিয় বই",
-      "pronunciation": "Eita amar priyo boi",
-      "en": "This is my favorite book",
-      "context": "Sharing a favorite item.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "এই দিনটা খুব ভালোবাসার।",
-      "pronunciation": "Ei din ta khub bhalobashar.",
-      "en": "This day is full of love.",
-      "context": "Sentiment about the day.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "এটা আমার বই।",
-      "pronunciation": "Eta amar boi.",
-      "en": "This is my book.",
-      "context": "Showing ownership.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "এই ছবিটা আমার।",
-      "pronunciation": "Ei chhobi ta amar.",
-      "en": "This picture is mine.",
-      "context": "Claiming ownership.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "এই বই একটি রচিত গল্প।",
-      "pronunciation": "Ei boi ekti rochito golpo.",
-      "en": "This book is a written story.",
-      "context": "Describing a book.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "পৃথিবী খুবই সুন্দর।",
-      "pronunciation": "Prithibi khubi sundor.",
-      "en": "The world is very beautiful.",
-      "context": "Expressing admiration for the world.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "আজ সময় খুবই কম।",
-      "pronunciation": "Aj shomoy khubi kom.",
-      "en": "Today there is very little time.",
-      "context": "Talking about limited time.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "তারাগুলো খুবই ছোট।",
-      "pronunciation": "Tara gulo khubi choto.",
-      "en": "The stars are very small.",
-      "context": "Describing stars.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "এইটা আমার পাশের বাড়ি",
-      "pronunciation": "Eita amar pasher bari",
-      "en": "This is my neighbor's house.",
-      "context": "Pointing out a location.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "কি সুন্দর ছবি!",
-      "pronunciation": "Ki sundor chhobi!",
-      "en": "What a beautiful picture!",
-      "context": "Praising an image.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "এই ছবিটা তুলতে দারুণ লেগেছে।",
-      "pronunciation": "Ei chhobi ta tulte darun legechhe.",
-      "en": "It was amazing to take this picture.",
-      "context": "Reflecting on an activity.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "সে খুব সুন্দর।",
-      "pronunciation": "She khoob shundor.",
-      "en": "She is very beautiful.",
-      "context": "Complimenting a female.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "নদীটা খুব সুন্দর।",
-      "pronunciation": "Nodi ta khub shundor.",
-      "en": "The river is very beautiful.",
-      "context": "Description of scenery.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "তারা এই ছবিটা দেখে হাসছে।",
-      "pronunciation": "তারা এই ছবিটা দেখে হাসছে।",
-      "en": "They are laughing at this picture.",
-      "context": "Observation of people.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "এই ছেলেটা ভালো কাজ করে।",
-      "pronunciation": "Ei chhele ta bhalo kaj kore.",
-      "en": "This boy does good work.",
-      "context": "Praising someone's effort.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "এই ফুলটা সুন্দর।",
-      "pronunciation": "Ei phool ta shundor.",
-      "en": "This flower is beautiful.",
-      "context": "Complimenting nature.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "এটা ছোট।",
-      "pronunciation": "Eta chhoto.",
-      "en": "This is small.",
-      "context": "Describing size.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "এই ছবিটা দারুণ।",
-      "pronunciation": "Ei chhobi ta darun.",
-      "en": "This picture is amazing.",
-      "context": "Complimenting a photo.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "এই পথটা সুন্দর।",
-      "pronunciation": "Ei poth ta sondor.",
-      "en": "This road is beautiful.",
-      "context": "Describing the surroundings.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "এই ছবিটা কোথায় তুলেছ?",
-      "pronunciation": "Ei chhobi ta kothay tulechho?",
-      "en": "Where did you take this picture?",
-      "context": "Inquiring about photo location.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "গোলাপ ফুল খুব সুন্দর।",
-      "pronunciation": "Golap ful khub sundor.",
-      "en": "The rose is very beautiful.",
-      "context": "Describing beauty.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "হাতি খুবই বড়।",
-      "pronunciation": "Hati khubi boro.",
-      "en": "The elephant is very big.",
-      "context": "Describing size.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "এই খাবার খারাপ।",
-      "pronunciation": "Ei khabar kharap.",
-      "en": "This food is bad.",
-      "context": "Expressing dissatisfaction.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "এইটা আমার প্রিয় গান",
-      "pronunciation": "Eita amar priyo gaan",
-      "en": "This is my favorite song.",
-      "context": "Sharing a preference.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "আজ আমি ভালো আছি!",
-      "pronunciation": "Aaj ami bhalo achhi!",
-      "en": "Today I am good!",
-      "context": "Stating current mood/health.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "উনার কাছে একটা কলম আছে।",
-      "pronunciation": "Unaar kachhe ekta kalam ache.",
-      "en": "He has a pen.",
-      "context": "Describing someone's possession.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "উনি খুব সুন্দর।",
-      "pronunciation": "Uni khub shundor.",
-      "en": "He is very handsome.",
-      "context": "Complimenting someone.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "একটা নতুন পেন কিনে নিয়েছি।",
-      "pronunciation": "Ekta notun pen kine niyechhi.",
-      "en": "I bought a new pen.",
-      "context": "Sharing a recent purchase.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "এই গাছটা আমার পছন্দ।",
-      "pronunciation": "Ei gachh ta amar pochhondo.",
-      "en": "I like this tree.",
-      "context": "Expressing preference.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "এই বৃষ্টিটা অনেক দিন পরে হলো।",
-      "pronunciation": "Ei brishti ta onek din pore holo.",
-      "en": "It's raining after many days.",
-      "context": "Commenting on weather change.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "আমার পেট খুব ব্যথা করছে।",
-      "pronunciation": "Amar pet khub byatha korchhe.",
-      "en": "My stomach is hurting very much.",
-      "context": "Expressing physical pain.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "প্রত্যেক দিন খেলা ভালো লাগে।",
-      "pronunciation": "Protyek din khela bhalo lage.",
-      "en": "Playing every day feels good.",
-      "context": "Sharing a habit's benefit.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "গাছের ছায়া খুব ঠান্ডা।",
-      "pronunciation": "Gachher chhaya khub thanda.",
-      "en": "The tree's shade is very cool.",
-      "context": "Description.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "এই খাতাটা আপনার জন্য।",
-      "pronunciation": "Ei khata ta aapnar jonno.",
-      "en": "This notebook is for you.",
-      "context": "Giving something to someone.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "এই বাড়িতে কে থাকে?",
-      "pronunciation": "Ei bari te ke thake?",
-      "en": "Who lives in this house?",
-      "context": "Curiosity about neighbors.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "আমি একটি বই পড়ছি।",
-      "pronunciation": "Ami ekti boi porchhi.",
-      "en": "I am reading a book.",
-      "context": "Describing an ongoing action.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "দুধ খুবই মিষ্টি।",
-      "pronunciation": "Dudh khubi mishti.",
-      "en": "The milk is very sweet.",
-      "context": "Describing taste.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "কমলা খুবই মিষ্টি।",
-      "pronunciation": "Komola khubi mishti.",
-      "en": "The orange is very sweet.",
-      "context": "Describing taste.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "মাংস খুবই সুস্বাদু।",
-      "pronunciation": "Mangsho khubi swadishto.",
-      "en": "The meat is very tasty.",
-      "context": "Describing the taste of food.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "রাত খুবই শান্ত।",
-      "pronunciation": "Raat khubi shanto.",
-      "en": "The night is very quiet.",
-      "context": "Describing the calmness of night.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "রুটি খুবই সুস্বাদু।",
-      "pronunciation": "Ruti khubi swadishto.",
-      "en": "The bread is very tasty.",
-      "context": "Describing food taste.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "শাক খুবই স্বাস্থ্যকর।",
-      "pronunciation": "Shaak khubi swasthokor.",
-      "en": "Green vegetables are very healthy.",
-      "context": "Talking about healthy food.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "সকালবেলা খুবই শান্ত।",
-      "pronunciation": "Shokal-bela khubi shanto.",
-      "en": "Morning time is very peaceful.",
-      "context": "Describing the calm of morning.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "সুখ খুবই গুরুত্বপূর্ণ।",
-      "pronunciation": "Sukh khubi guruttopurno.",
-      "en": "Happiness is very important.",
-      "context": "Expressing a life value.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "এইটা কি?",
-      "pronunciation": "Eita ki?",
-      "en": "What is this?",
-      "context": "Asking about an object.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "এ আমার বন্ধু!",
-      "pronunciation": "E' amar bondhu",
-      "en": "This is my friend!",
-      "context": "Introducing a friend.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "সব কিছু ঠিক আছে",
-      "pronunciation": "Shob kichu thik ache",
-      "en": "Everything is fine.",
-      "context": "Reassurance.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "কি সুন্দর গল্প!",
-      "pronunciation": "Ki shundor golpo!",
-      "en": "What a beautiful story!",
-      "context": "Praising a story.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "আজ অনেক কাজ আছে",
-      "pronunciation": "Aaj onek kaj ache",
-      "en": "There’s a lot of work today.",
-      "context": "Stating workload.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "কি সুন্দর রাত!",
-      "pronunciation": "Ki sundor raat!",
-      "en": "What a beautiful night!",
-      "context": "Exclaiming about the night.",
-      "category": "adjectives"
-    },
-    {
-      "bn": "এই নদীতে কি আপনি কষ্ট পেলেন?",
-      "pronunciation": "Ei nodi te ki aapni koshto pelen?",
-      "en": "Did you face trouble in this river?",
-      "context": "Asking about a past difficult experience.",
-      "category": "adjectives"
+      "bn": "আকাশ আজ গাঢ় নীল।",
+      "pronunciation": "akash aj garho nil",
+      "en": "The sky is dark blue today.",
+      "context": "color",
+      "category": "colors",
+      "words": [
+        {
+          "bn": "আকাশ",
+          "pronunciation": "akash",
+          "en": "sky"
+        },
+        {
+          "bn": "আজ",
+          "pronunciation": "aj",
+          "en": "today"
+        },
+        {
+          "bn": "গাঢ়",
+          "pronunciation": "garho",
+          "en": "dark"
+        },
+        {
+          "bn": "নীল",
+          "pronunciation": "nil",
+          "en": "blue"
+        }
+      ]
+    },
+    {
+      "bn": "বাগানে সাদা ও গোলাপি ফুল আছে।",
+      "pronunciation": "bagane shada o golapi phul achhe",
+      "en": "There are white and pink flowers in the garden.",
+      "context": "color",
+      "category": "colors",
+      "words": [
+        {
+          "bn": "বাগানে",
+          "pronunciation": "bagane",
+          "en": "in the garden"
+        },
+        {
+          "bn": "সাদা",
+          "pronunciation": "shada",
+          "en": "White / white"
+        },
+        {
+          "bn": "ও",
+          "pronunciation": "o",
+          "en": "and / also"
+        },
+        {
+          "bn": "গোলাপি",
+          "pronunciation": "golapi",
+          "en": "pink"
+        },
+        {
+          "bn": "ফুল",
+          "pronunciation": "phul",
+          "en": "Flower"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is / has"
+        }
+      ]
+    },
+    {
+      "bn": "পাতাগুলো এখনো সবুজ।",
+      "pronunciation": "patagulo ekhono shobuj",
+      "en": "The leaves are still green.",
+      "context": "color",
+      "category": "colors",
+      "words": [
+        {
+          "bn": "পাতাগুলো",
+          "pronunciation": "patagulo",
+          "en": "the leaves"
+        },
+        {
+          "bn": "এখনো",
+          "pronunciation": "ekhono",
+          "en": "yet / still"
+        },
+        {
+          "bn": "সবুজ",
+          "pronunciation": "shobuj",
+          "en": "Green / green"
+        }
+      ]
+    },
+    {
+      "bn": "জানালার কাচটি সম্পূর্ণ স্বচ্ছ।",
+      "pronunciation": "janalar kachti shompurno swochchho",
+      "en": "The window glass is completely transparent.",
+      "context": "color and clarity",
+      "category": "colors",
+      "words": [
+        {
+          "bn": "জানালার",
+          "pronunciation": "janalar",
+          "en": "of the window"
+        },
+        {
+          "bn": "কাচটি",
+          "pronunciation": "kachti",
+          "en": "the glass"
+        },
+        {
+          "bn": "সম্পূর্ণ",
+          "pronunciation": "shompurno",
+          "en": "complete"
+        },
+        {
+          "bn": "স্বচ্ছ",
+          "pronunciation": "swochchho",
+          "en": "transparent"
+        }
+      ]
     }
   ],
   "vocab": [
@@ -966,701 +2637,2444 @@
       "bn": "ভালো",
       "pronunciation": "bhalo",
       "en": "good",
-      "category": "adjectives",
-      "sourcePhrase": "এই খাবারটি খুব ভালো।"
+      "category": "basic-descriptions",
+      "sourcePhrase": "এটি ভালো।"
     },
     {
       "bn": "খারাপ",
       "pronunciation": "kharap",
       "en": "bad",
-      "category": "adjectives",
-      "sourcePhrase": "আজ আবহাওয়া খারাপ।"
+      "category": "basic-descriptions",
+      "sourcePhrase": "এটি খারাপ।"
     },
     {
       "bn": "বড়",
-      "pronunciation": "boro",
-      "en": "big",
-      "category": "adjectives",
-      "sourcePhrase": "ওই বাড়িটি অনেক বড়।"
+      "pronunciation": "bôṛo",
+      "en": "big / large",
+      "category": "basic-descriptions",
+      "sourcePhrase": "এটি বড়।"
     },
     {
       "bn": "ছোট",
       "pronunciation": "chhoto",
       "en": "small",
-      "category": "adjectives",
-      "sourcePhrase": "আমার একটি ছোট ব্যাগ আছে।"
+      "category": "basic-descriptions",
+      "sourcePhrase": "এটি ছোট।"
+    },
+    {
+      "bn": "লম্বা",
+      "pronunciation": "lomba",
+      "en": "tall / long",
+      "category": "basic-descriptions",
+      "sourcePhrase": "এটি লম্বা।"
+    },
+    {
+      "bn": "খাটো",
+      "pronunciation": "khato",
+      "en": "short in height",
+      "category": "basic-descriptions",
+      "sourcePhrase": "এটি খাটো।"
+    },
+    {
+      "bn": "চওড়া",
+      "pronunciation": "chowṛa",
+      "en": "wide",
+      "category": "basic-descriptions",
+      "sourcePhrase": "এটি চওড়া।"
+    },
+    {
+      "bn": "সরু",
+      "pronunciation": "shoru",
+      "en": "narrow / thin",
+      "category": "basic-descriptions",
+      "sourcePhrase": "এটি সরু।"
+    },
+    {
+      "bn": "মোটা",
+      "pronunciation": "mota",
+      "en": "thick / fat",
+      "category": "basic-descriptions",
+      "sourcePhrase": "এটি মোটা।"
+    },
+    {
+      "bn": "পাতলা",
+      "pronunciation": "patla",
+      "en": "thin",
+      "category": "basic-descriptions",
+      "sourcePhrase": "এটি পাতলা।"
+    },
+    {
+      "bn": "গভীর",
+      "pronunciation": "gobhir",
+      "en": "deep",
+      "category": "basic-descriptions",
+      "sourcePhrase": "এটি গভীর।"
+    },
+    {
+      "bn": "অগভীর",
+      "pronunciation": "ôgobhir",
+      "en": "shallow",
+      "category": "basic-descriptions",
+      "sourcePhrase": "এটি অগভীর।"
+    },
+    {
+      "bn": "উঁচু",
+      "pronunciation": "unchu",
+      "en": "high / tall",
+      "category": "basic-descriptions",
+      "sourcePhrase": "এটি উঁচু।"
+    },
+    {
+      "bn": "নিচু",
+      "pronunciation": "nichu",
+      "en": "low",
+      "category": "basic-descriptions",
+      "sourcePhrase": "এটি নিচু।"
+    },
+    {
+      "bn": "সমান",
+      "pronunciation": "shoman",
+      "en": "equal / level",
+      "category": "basic-descriptions",
+      "sourcePhrase": "এটি সমান।"
+    },
+    {
+      "bn": "অসমান",
+      "pronunciation": "ôshoman",
+      "en": "uneven / unequal",
+      "category": "basic-descriptions",
+      "sourcePhrase": "এটি অসমান।"
+    },
+    {
+      "bn": "গোল",
+      "pronunciation": "gol",
+      "en": "round",
+      "category": "basic-descriptions",
+      "sourcePhrase": "এটি গোল।"
+    },
+    {
+      "bn": "চ্যাপ্টা",
+      "pronunciation": "chyapta",
+      "en": "flat",
+      "category": "basic-descriptions",
+      "sourcePhrase": "এটি চ্যাপ্টা।"
+    },
+    {
+      "bn": "সোজা",
+      "pronunciation": "soja",
+      "en": "straight",
+      "category": "basic-descriptions",
+      "sourcePhrase": "এটি সোজা।"
+    },
+    {
+      "bn": "বাঁকা",
+      "pronunciation": "banka",
+      "en": "bent / crooked",
+      "category": "basic-descriptions",
+      "sourcePhrase": "এটি বাঁকা।"
+    },
+    {
+      "bn": "সুন্দর",
+      "pronunciation": "shundor",
+      "en": "beautiful / handsome",
+      "category": "appearance",
+      "sourcePhrase": "এটি সুন্দর।"
+    },
+    {
+      "bn": "কুৎসিত",
+      "pronunciation": "kutsito",
+      "en": "ugly",
+      "category": "appearance",
+      "sourcePhrase": "এটি কুৎসিত।"
+    },
+    {
+      "bn": "আকর্ষণীয়",
+      "pronunciation": "akôrshoniyo",
+      "en": "attractive",
+      "category": "appearance",
+      "sourcePhrase": "এটি আকর্ষণীয়।"
+    },
+    {
+      "bn": "সুদর্শন",
+      "pronunciation": "shudôrshon",
+      "en": "handsome",
+      "category": "appearance",
+      "sourcePhrase": "এটি সুদর্শন।"
+    },
+    {
+      "bn": "মিষ্টি",
+      "pronunciation": "mishti",
+      "en": "cute / sweet",
+      "category": "appearance",
+      "sourcePhrase": "এটি মিষ্টি।"
+    },
+    {
+      "bn": "পরিষ্কার",
+      "pronunciation": "pôrishkar",
+      "en": "clean / clear",
+      "category": "appearance",
+      "sourcePhrase": "এটি পরিষ্কার।"
+    },
+    {
+      "bn": "নোংরা",
+      "pronunciation": "nongra",
+      "en": "dirty",
+      "category": "appearance",
+      "sourcePhrase": "এটি নোংরা।"
+    },
+    {
+      "bn": "চকচকে",
+      "pronunciation": "chôkchôke",
+      "en": "shiny",
+      "category": "appearance",
+      "sourcePhrase": "এটি চকচকে।"
+    },
+    {
+      "bn": "মলিন",
+      "pronunciation": "molin",
+      "en": "dull / faded",
+      "category": "appearance",
+      "sourcePhrase": "এটি মলিন।"
+    },
+    {
+      "bn": "উজ্জ্বল",
+      "pronunciation": "ujjol",
+      "en": "bright",
+      "category": "appearance",
+      "sourcePhrase": "এটি উজ্জ্বল।"
+    },
+    {
+      "bn": "ফ্যাকাশে",
+      "pronunciation": "fyakashe",
+      "en": "pale",
+      "category": "appearance",
+      "sourcePhrase": "এটি ফ্যাকাশে।"
+    },
+    {
+      "bn": "রঙিন",
+      "pronunciation": "rongin",
+      "en": "colorful",
+      "category": "appearance",
+      "sourcePhrase": "এটি রঙিন।"
+    },
+    {
+      "bn": "সাদামাটা",
+      "pronunciation": "shadamata",
+      "en": "plain / simple",
+      "category": "appearance",
+      "sourcePhrase": "এটি সাদামাটা।"
+    },
+    {
+      "bn": "পরিপাটি",
+      "pronunciation": "pôripati",
+      "en": "neat / tidy",
+      "category": "appearance",
+      "sourcePhrase": "এটি পরিপাটি।"
+    },
+    {
+      "bn": "অগোছালো",
+      "pronunciation": "ôgochhalo",
+      "en": "messy / disorganized",
+      "category": "appearance",
+      "sourcePhrase": "এটি অগোছালো।"
     },
     {
       "bn": "নতুন",
       "pronunciation": "notun",
       "en": "new",
-      "category": "adjectives",
-      "sourcePhrase": "আমি একটি নতুন বই কিনেছি।"
+      "category": "age-and-condition",
+      "sourcePhrase": "এটি নতুন।"
     },
     {
       "bn": "পুরোনো",
       "pronunciation": "purono",
       "en": "old",
-      "category": "adjectives",
-      "sourcePhrase": "এটি একটি পুরোনো ছবি।"
+      "category": "age-and-condition",
+      "sourcePhrase": "এটি পুরোনো।"
     },
     {
-      "bn": "সুন্দর",
-      "pronunciation": "shundor",
-      "en": "beautiful",
-      "category": "adjectives",
-      "sourcePhrase": "এটা একটি সুন্দর বাড়ি।"
+      "bn": "নবীন",
+      "pronunciation": "nobin",
+      "en": "young / new",
+      "category": "age-and-condition",
+      "sourcePhrase": "এটি নবীন।"
     },
     {
-      "bn": "সহজ",
-      "pronunciation": "shohaj",
-      "en": "easy",
-      "category": "adjectives",
-      "sourcePhrase": "এই প্রশ্নটি খুব সহজ।"
+      "bn": "তরুণ",
+      "pronunciation": "torun",
+      "en": "young",
+      "category": "age-and-condition",
+      "sourcePhrase": "এটি তরুণ।"
     },
     {
-      "bn": "কঠিন",
-      "pronunciation": "kothin",
-      "en": "difficult / hard",
-      "category": "adjectives",
-      "sourcePhrase": "এই কাজটি বেশ কঠিন।"
+      "bn": "বয়স্ক",
+      "pronunciation": "boyoshko",
+      "en": "elderly / older",
+      "category": "age-and-condition",
+      "sourcePhrase": "এটি বয়স্ক।"
+    },
+    {
+      "bn": "বৃদ্ধ",
+      "pronunciation": "briddho",
+      "en": "old / elderly",
+      "category": "age-and-condition",
+      "sourcePhrase": "এটি বৃদ্ধ।"
+    },
+    {
+      "bn": "প্রাচীন",
+      "pronunciation": "prachin",
+      "en": "ancient",
+      "category": "age-and-condition",
+      "sourcePhrase": "এটি প্রাচীন।"
+    },
+    {
+      "bn": "আধুনিক",
+      "pronunciation": "adhunik",
+      "en": "modern",
+      "category": "age-and-condition",
+      "sourcePhrase": "এটি আধুনিক।"
+    },
+    {
+      "bn": "তাজা",
+      "pronunciation": "taja",
+      "en": "fresh",
+      "category": "age-and-condition",
+      "sourcePhrase": "এটি তাজা।"
+    },
+    {
+      "bn": "বাসি",
+      "pronunciation": "bashi",
+      "en": "stale",
+      "category": "age-and-condition",
+      "sourcePhrase": "এটি বাসি।"
+    },
+    {
+      "bn": "ভাঙা",
+      "pronunciation": "bhanga",
+      "en": "broken",
+      "category": "age-and-condition",
+      "sourcePhrase": "এটি ভাঙা।"
+    },
+    {
+      "bn": "অক্ষত",
+      "pronunciation": "ôkkhoto",
+      "en": "undamaged / intact",
+      "category": "age-and-condition",
+      "sourcePhrase": "এটি অক্ষত।"
+    },
+    {
+      "bn": "নষ্ট",
+      "pronunciation": "noshto",
+      "en": "damaged / spoiled",
+      "category": "age-and-condition",
+      "sourcePhrase": "এটি নষ্ট।"
+    },
+    {
+      "bn": "জীবিত",
+      "pronunciation": "jibito",
+      "en": "alive",
+      "category": "age-and-condition",
+      "sourcePhrase": "এটি জীবিত।"
+    },
+    {
+      "bn": "মৃত",
+      "pronunciation": "mrito",
+      "en": "dead",
+      "category": "age-and-condition",
+      "sourcePhrase": "এটি মৃত।"
+    },
+    {
+      "bn": "প্রস্তুত",
+      "pronunciation": "prostut",
+      "en": "ready",
+      "category": "age-and-condition",
+      "sourcePhrase": "এটি প্রস্তুত।"
+    },
+    {
+      "bn": "অসম্পূর্ণ",
+      "pronunciation": "ôshompurno",
+      "en": "incomplete",
+      "category": "age-and-condition",
+      "sourcePhrase": "এটি অসম্পূর্ণ।"
+    },
+    {
+      "bn": "সম্পূর্ণ",
+      "pronunciation": "shompurno",
+      "en": "complete",
+      "category": "age-and-condition",
+      "sourcePhrase": "এটি সম্পূর্ণ।"
+    },
+    {
+      "bn": "চালু",
+      "pronunciation": "chalu",
+      "en": "active / running",
+      "category": "age-and-condition",
+      "sourcePhrase": "এটি চালু।"
+    },
+    {
+      "bn": "বন্ধ",
+      "pronunciation": "bondho",
+      "en": "closed / switched off",
+      "category": "age-and-condition",
+      "sourcePhrase": "এটি বন্ধ।"
     },
     {
       "bn": "গরম",
       "pronunciation": "gorom",
       "en": "hot",
-      "category": "adjectives",
-      "sourcePhrase": "চা এখনো গরম।"
+      "category": "temperature-and-texture",
+      "sourcePhrase": "এটি গরম।"
     },
     {
       "bn": "ঠান্ডা",
       "pronunciation": "thanda",
       "en": "cold",
-      "category": "adjectives",
-      "sourcePhrase": "আজ পানি ঠান্ডা।"
+      "category": "temperature-and-texture",
+      "sourcePhrase": "এটি ঠান্ডা।"
+    },
+    {
+      "bn": "উষ্ণ",
+      "pronunciation": "ushno",
+      "en": "warm",
+      "category": "temperature-and-texture",
+      "sourcePhrase": "এটি উষ্ণ।"
+    },
+    {
+      "bn": "শীতল",
+      "pronunciation": "shitol",
+      "en": "cool",
+      "category": "temperature-and-texture",
+      "sourcePhrase": "এটি শীতল।"
+    },
+    {
+      "bn": "নরম",
+      "pronunciation": "norom",
+      "en": "soft",
+      "category": "temperature-and-texture",
+      "sourcePhrase": "এটি নরম।"
+    },
+    {
+      "bn": "শক্ত",
+      "pronunciation": "shokto",
+      "en": "hard / strong",
+      "category": "temperature-and-texture",
+      "sourcePhrase": "এটি শক্ত।"
+    },
+    {
+      "bn": "মসৃণ",
+      "pronunciation": "mosrin",
+      "en": "smooth",
+      "category": "temperature-and-texture",
+      "sourcePhrase": "এটি মসৃণ।"
+    },
+    {
+      "bn": "খসখসে",
+      "pronunciation": "khôshkhôshe",
+      "en": "rough",
+      "category": "temperature-and-texture",
+      "sourcePhrase": "এটি খসখসে।"
+    },
+    {
+      "bn": "আঠালো",
+      "pronunciation": "aṭhalo",
+      "en": "sticky",
+      "category": "temperature-and-texture",
+      "sourcePhrase": "এটি আঠালো।"
+    },
+    {
+      "bn": "পিচ্ছিল",
+      "pronunciation": "pichchhil",
+      "en": "slippery",
+      "category": "temperature-and-texture",
+      "sourcePhrase": "এটি পিচ্ছিল।"
+    },
+    {
+      "bn": "ভেজা",
+      "pronunciation": "bheja",
+      "en": "wet",
+      "category": "temperature-and-texture",
+      "sourcePhrase": "এটি ভেজা।"
+    },
+    {
+      "bn": "শুকনো",
+      "pronunciation": "shukno",
+      "en": "dry",
+      "category": "temperature-and-texture",
+      "sourcePhrase": "এটি শুকনো।"
+    },
+    {
+      "bn": "কাঁচা",
+      "pronunciation": "kancha",
+      "en": "raw / unripe",
+      "category": "temperature-and-texture",
+      "sourcePhrase": "এটি কাঁচা।"
+    },
+    {
+      "bn": "পাকা",
+      "pronunciation": "paka",
+      "en": "ripe / cooked / mature",
+      "category": "temperature-and-texture",
+      "sourcePhrase": "এটি পাকা।"
+    },
+    {
+      "bn": "তরল",
+      "pronunciation": "torol",
+      "en": "liquid",
+      "category": "temperature-and-texture",
+      "sourcePhrase": "এটি তরল।"
+    },
+    {
+      "bn": "ঘন",
+      "pronunciation": "ghono",
+      "en": "thick / dense",
+      "category": "temperature-and-texture",
+      "sourcePhrase": "এটি ঘন।"
+    },
+    {
+      "bn": "পাতলা",
+      "pronunciation": "patla",
+      "en": "thin / watery",
+      "category": "temperature-and-texture",
+      "sourcePhrase": "এটি পাতলা।"
+    },
+    {
+      "bn": "ভারী",
+      "pronunciation": "bhari",
+      "en": "heavy",
+      "category": "temperature-and-texture",
+      "sourcePhrase": "এটি ভারী।"
+    },
+    {
+      "bn": "হালকা",
+      "pronunciation": "halka",
+      "en": "light",
+      "category": "temperature-and-texture",
+      "sourcePhrase": "এটি হালকা।"
+    },
+    {
+      "bn": "ধারালো",
+      "pronunciation": "dharalo",
+      "en": "sharp",
+      "category": "temperature-and-texture",
+      "sourcePhrase": "এটি ধারালো।"
+    },
+    {
+      "bn": "ভোঁতা",
+      "pronunciation": "bhonta",
+      "en": "blunt",
+      "category": "temperature-and-texture",
+      "sourcePhrase": "এটি ভোঁতা।"
+    },
+    {
+      "bn": "মিষ্টি",
+      "pronunciation": "mishti",
+      "en": "sweet",
+      "category": "taste-and-food",
+      "sourcePhrase": "এটি মিষ্টি।"
+    },
+    {
+      "bn": "টক",
+      "pronunciation": "tok",
+      "en": "sour",
+      "category": "taste-and-food",
+      "sourcePhrase": "এটি টক।"
+    },
+    {
+      "bn": "তিতা",
+      "pronunciation": "tita",
+      "en": "bitter",
+      "category": "taste-and-food",
+      "sourcePhrase": "এটি তিতা।"
+    },
+    {
+      "bn": "ঝাল",
+      "pronunciation": "jhal",
+      "en": "spicy",
+      "category": "taste-and-food",
+      "sourcePhrase": "এটি ঝাল।"
+    },
+    {
+      "bn": "নোনতা",
+      "pronunciation": "nonta",
+      "en": "salty",
+      "category": "taste-and-food",
+      "sourcePhrase": "এটি নোনতা।"
+    },
+    {
+      "bn": "সুস্বাদু",
+      "pronunciation": "shushadu",
+      "en": "delicious",
+      "category": "taste-and-food",
+      "sourcePhrase": "এটি সুস্বাদু।"
+    },
+    {
+      "bn": "বিস্বাদ",
+      "pronunciation": "bishshad",
+      "en": "tasteless",
+      "category": "taste-and-food",
+      "sourcePhrase": "এটি বিস্বাদ।"
+    },
+    {
+      "bn": "মুখরোচক",
+      "pronunciation": "mukhrochok",
+      "en": "appetizing",
+      "category": "taste-and-food",
+      "sourcePhrase": "এটি মুখরোচক।"
+    },
+    {
+      "bn": "পুষ্টিকর",
+      "pronunciation": "pushtikor",
+      "en": "nutritious",
+      "category": "taste-and-food",
+      "sourcePhrase": "এটি পুষ্টিকর।"
+    },
+    {
+      "bn": "অস্বাস্থ্যকর",
+      "pronunciation": "ôshasthokor",
+      "en": "unhealthy",
+      "category": "taste-and-food",
+      "sourcePhrase": "এটি অস্বাস্থ্যকর।"
+    },
+    {
+      "bn": "মচমচে",
+      "pronunciation": "môchmôche",
+      "en": "crispy",
+      "category": "taste-and-food",
+      "sourcePhrase": "এটি মচমচে।"
+    },
+    {
+      "bn": "নরম",
+      "pronunciation": "norom",
+      "en": "tender / soft",
+      "category": "taste-and-food",
+      "sourcePhrase": "এটি নরম।"
+    },
+    {
+      "bn": "রসালো",
+      "pronunciation": "roshalo",
+      "en": "juicy",
+      "category": "taste-and-food",
+      "sourcePhrase": "এটি রসালো।"
+    },
+    {
+      "bn": "তৈলাক্ত",
+      "pronunciation": "toilakto",
+      "en": "oily / greasy",
+      "category": "taste-and-food",
+      "sourcePhrase": "এটি তৈলাক্ত।"
+    },
+    {
+      "bn": "মসলাদার",
+      "pronunciation": "môsholadar",
+      "en": "spicy / seasoned",
+      "category": "taste-and-food",
+      "sourcePhrase": "এটি মসলাদার।"
+    },
+    {
+      "bn": "গন্ধযুক্ত",
+      "pronunciation": "gondhojukto",
+      "en": "smelly / fragrant",
+      "category": "taste-and-food",
+      "sourcePhrase": "এটি গন্ধযুক্ত।"
+    },
+    {
+      "bn": "দুর্গন্ধযুক্ত",
+      "pronunciation": "durgondhojukto",
+      "en": "foul-smelling",
+      "category": "taste-and-food",
+      "sourcePhrase": "এটি দুর্গন্ধযুক্ত।"
+    },
+    {
+      "bn": "দ্রুত",
+      "pronunciation": "druto",
+      "en": "fast / quick",
+      "category": "speed-difficulty-and-quality",
+      "sourcePhrase": "এটি দ্রুত।"
+    },
+    {
+      "bn": "ধীর",
+      "pronunciation": "dhir",
+      "en": "slow",
+      "category": "speed-difficulty-and-quality",
+      "sourcePhrase": "এটি ধীর।"
+    },
+    {
+      "bn": "সহজ",
+      "pronunciation": "shohoj",
+      "en": "easy",
+      "category": "speed-difficulty-and-quality",
+      "sourcePhrase": "এটি সহজ।"
+    },
+    {
+      "bn": "কঠিন",
+      "pronunciation": "kothin",
+      "en": "difficult / hard",
+      "category": "speed-difficulty-and-quality",
+      "sourcePhrase": "এটি কঠিন।"
+    },
+    {
+      "bn": "জটিল",
+      "pronunciation": "jotil",
+      "en": "complicated",
+      "category": "speed-difficulty-and-quality",
+      "sourcePhrase": "এটি জটিল।"
+    },
+    {
+      "bn": "সরল",
+      "pronunciation": "shorol",
+      "en": "simple / straightforward",
+      "category": "speed-difficulty-and-quality",
+      "sourcePhrase": "এটি সরল।"
+    },
+    {
+      "bn": "উন্নত",
+      "pronunciation": "unnoto",
+      "en": "advanced / improved",
+      "category": "speed-difficulty-and-quality",
+      "sourcePhrase": "এটি উন্নত।"
+    },
+    {
+      "bn": "সাধারণ",
+      "pronunciation": "shadharon",
+      "en": "ordinary / common",
+      "category": "speed-difficulty-and-quality",
+      "sourcePhrase": "এটি সাধারণ।"
+    },
+    {
+      "bn": "বিশেষ",
+      "pronunciation": "bishesh",
+      "en": "special",
+      "category": "speed-difficulty-and-quality",
+      "sourcePhrase": "এটি বিশেষ।"
+    },
+    {
+      "bn": "অসাধারণ",
+      "pronunciation": "ôshadharon",
+      "en": "extraordinary",
+      "category": "speed-difficulty-and-quality",
+      "sourcePhrase": "এটি অসাধারণ।"
+    },
+    {
+      "bn": "চমৎকার",
+      "pronunciation": "chômotkar",
+      "en": "excellent",
+      "category": "speed-difficulty-and-quality",
+      "sourcePhrase": "এটি চমৎকার।"
+    },
+    {
+      "bn": "নিখুঁত",
+      "pronunciation": "nikhut",
+      "en": "perfect / precise",
+      "category": "speed-difficulty-and-quality",
+      "sourcePhrase": "এটি নিখুঁত।"
+    },
+    {
+      "bn": "ত্রুটিপূর্ণ",
+      "pronunciation": "trutipurno",
+      "en": "faulty",
+      "category": "speed-difficulty-and-quality",
+      "sourcePhrase": "এটি ত্রুটিপূর্ণ।"
+    },
+    {
+      "bn": "কার্যকর",
+      "pronunciation": "karjokor",
+      "en": "effective",
+      "category": "speed-difficulty-and-quality",
+      "sourcePhrase": "এটি কার্যকর।"
+    },
+    {
+      "bn": "অকার্যকর",
+      "pronunciation": "ôkarjokor",
+      "en": "ineffective",
+      "category": "speed-difficulty-and-quality",
+      "sourcePhrase": "এটি অকার্যকর।"
+    },
+    {
+      "bn": "সফল",
+      "pronunciation": "shofol",
+      "en": "successful",
+      "category": "speed-difficulty-and-quality",
+      "sourcePhrase": "এটি সফল।"
+    },
+    {
+      "bn": "ব্যর্থ",
+      "pronunciation": "byôrtho",
+      "en": "unsuccessful",
+      "category": "speed-difficulty-and-quality",
+      "sourcePhrase": "এটি ব্যর্থ।"
+    },
+    {
+      "bn": "উপযুক্ত",
+      "pronunciation": "upojukto",
+      "en": "suitable",
+      "category": "speed-difficulty-and-quality",
+      "sourcePhrase": "এটি উপযুক্ত।"
+    },
+    {
+      "bn": "অনুপযুক্ত",
+      "pronunciation": "ônupojukto",
+      "en": "unsuitable",
+      "category": "speed-difficulty-and-quality",
+      "sourcePhrase": "এটি অনুপযুক্ত।"
+    },
+    {
+      "bn": "আরামদায়ক",
+      "pronunciation": "aramdayok",
+      "en": "comfortable",
+      "category": "speed-difficulty-and-quality",
+      "sourcePhrase": "এটি আরামদায়ক।"
+    },
+    {
+      "bn": "অস্বস্তিকর",
+      "pronunciation": "ôshostikor",
+      "en": "uncomfortable",
+      "category": "speed-difficulty-and-quality",
+      "sourcePhrase": "এটি অস্বস্তিকর।"
+    },
+    {
+      "bn": "দয়ালু",
+      "pronunciation": "doyalu",
+      "en": "kind",
+      "category": "personality-and-behavior",
+      "sourcePhrase": "এটি দয়ালু।"
+    },
+    {
+      "bn": "নির্দয়",
+      "pronunciation": "nirdoy",
+      "en": "merciless / unkind",
+      "category": "personality-and-behavior",
+      "sourcePhrase": "এটি নির্দয়।"
+    },
+    {
+      "bn": "ভদ্র",
+      "pronunciation": "bhodro",
+      "en": "polite",
+      "category": "personality-and-behavior",
+      "sourcePhrase": "এটি ভদ্র।"
+    },
+    {
+      "bn": "অভদ্র",
+      "pronunciation": "ôbhodro",
+      "en": "rude",
+      "category": "personality-and-behavior",
+      "sourcePhrase": "এটি অভদ্র।"
+    },
+    {
+      "bn": "সৎ",
+      "pronunciation": "shot",
+      "en": "honest",
+      "category": "personality-and-behavior",
+      "sourcePhrase": "এটি সৎ।"
+    },
+    {
+      "bn": "অসৎ",
+      "pronunciation": "ôshot",
+      "en": "dishonest",
+      "category": "personality-and-behavior",
+      "sourcePhrase": "এটি অসৎ।"
+    },
+    {
+      "bn": "সাহসী",
+      "pronunciation": "shahoshi",
+      "en": "brave",
+      "category": "personality-and-behavior",
+      "sourcePhrase": "এটি সাহসী।"
+    },
+    {
+      "bn": "ভীরু",
+      "pronunciation": "bhiru",
+      "en": "cowardly / timid",
+      "category": "personality-and-behavior",
+      "sourcePhrase": "এটি ভীরু।"
+    },
+    {
+      "bn": "বুদ্ধিমান",
+      "pronunciation": "buddhiman",
+      "en": "intelligent",
+      "category": "personality-and-behavior",
+      "sourcePhrase": "এটি বুদ্ধিমান।"
+    },
+    {
+      "bn": "বোকা",
+      "pronunciation": "boka",
+      "en": "foolish / stupid",
+      "category": "personality-and-behavior",
+      "sourcePhrase": "এটি বোকা।"
+    },
+    {
+      "bn": "চালাক",
+      "pronunciation": "chalak",
+      "en": "clever / cunning",
+      "category": "personality-and-behavior",
+      "sourcePhrase": "এটি চালাক।"
+    },
+    {
+      "bn": "চতুর",
+      "pronunciation": "chotur",
+      "en": "clever",
+      "category": "personality-and-behavior",
+      "sourcePhrase": "এটি চতুর।"
+    },
+    {
+      "bn": "জ্ঞানী",
+      "pronunciation": "gyani",
+      "en": "wise",
+      "category": "personality-and-behavior",
+      "sourcePhrase": "এটি জ্ঞানী।"
+    },
+    {
+      "bn": "অজ্ঞ",
+      "pronunciation": "ôggyo",
+      "en": "ignorant",
+      "category": "personality-and-behavior",
+      "sourcePhrase": "এটি অজ্ঞ।"
+    },
+    {
+      "bn": "পরিশ্রমী",
+      "pronunciation": "pôrishromi",
+      "en": "hardworking",
+      "category": "personality-and-behavior",
+      "sourcePhrase": "এটি পরিশ্রমী।"
+    },
+    {
+      "bn": "অলস",
+      "pronunciation": "olosh",
+      "en": "lazy",
+      "category": "personality-and-behavior",
+      "sourcePhrase": "এটি অলস।"
+    },
+    {
+      "bn": "উদার",
+      "pronunciation": "udar",
+      "en": "generous",
+      "category": "personality-and-behavior",
+      "sourcePhrase": "এটি উদার।"
+    },
+    {
+      "bn": "কৃপণ",
+      "pronunciation": "kripon",
+      "en": "stingy",
+      "category": "personality-and-behavior",
+      "sourcePhrase": "এটি কৃপণ।"
+    },
+    {
+      "bn": "বন্ধুত্বপূর্ণ",
+      "pronunciation": "bondhuttopurno",
+      "en": "friendly",
+      "category": "personality-and-behavior",
+      "sourcePhrase": "এটি বন্ধুত্বপূর্ণ।"
+    },
+    {
+      "bn": "মিশুক",
+      "pronunciation": "mishuk",
+      "en": "sociable",
+      "category": "personality-and-behavior",
+      "sourcePhrase": "এটি মিশুক।"
+    },
+    {
+      "bn": "লাজুক",
+      "pronunciation": "lajuk",
+      "en": "shy",
+      "category": "personality-and-behavior",
+      "sourcePhrase": "এটি লাজুক।"
+    },
+    {
+      "bn": "শান্ত",
+      "pronunciation": "shanto",
+      "en": "calm",
+      "category": "personality-and-behavior",
+      "sourcePhrase": "এটি শান্ত।"
+    },
+    {
+      "bn": "রাগী",
+      "pronunciation": "ragi",
+      "en": "hot-tempered / angry",
+      "category": "personality-and-behavior",
+      "sourcePhrase": "এটি রাগী।"
+    },
+    {
+      "bn": "ধৈর্যশীল",
+      "pronunciation": "dhoirjoshil",
+      "en": "patient",
+      "category": "personality-and-behavior",
+      "sourcePhrase": "এটি ধৈর্যশীল।"
+    },
+    {
+      "bn": "অধৈর্য",
+      "pronunciation": "ôdhoirjo",
+      "en": "impatient",
+      "category": "personality-and-behavior",
+      "sourcePhrase": "এটি অধৈর্য।"
+    },
+    {
+      "bn": "বিশ্বস্ত",
+      "pronunciation": "bishshosto",
+      "en": "trustworthy / loyal",
+      "category": "personality-and-behavior",
+      "sourcePhrase": "এটি বিশ্বস্ত।"
+    },
+    {
+      "bn": "অবিশ্বস্ত",
+      "pronunciation": "ôbishshosto",
+      "en": "untrustworthy",
+      "category": "personality-and-behavior",
+      "sourcePhrase": "এটি অবিশ্বস্ত।"
+    },
+    {
+      "bn": "বিনয়ী",
+      "pronunciation": "binoyi",
+      "en": "humble",
+      "category": "personality-and-behavior",
+      "sourcePhrase": "এটি বিনয়ী।"
+    },
+    {
+      "bn": "অহংকারী",
+      "pronunciation": "ôhongkari",
+      "en": "arrogant",
+      "category": "personality-and-behavior",
+      "sourcePhrase": "এটি অহংকারী।"
+    },
+    {
+      "bn": "নিষ্ঠুর",
+      "pronunciation": "nishthur",
+      "en": "cruel",
+      "category": "personality-and-behavior",
+      "sourcePhrase": "এটি নিষ্ঠুর।"
+    },
+    {
+      "bn": "যত্নশীল",
+      "pronunciation": "jotnoshil",
+      "en": "caring",
+      "category": "personality-and-behavior",
+      "sourcePhrase": "এটি যত্নশীল।"
+    },
+    {
+      "bn": "দায়িত্বশীল",
+      "pronunciation": "dayittoshil",
+      "en": "responsible",
+      "category": "personality-and-behavior",
+      "sourcePhrase": "এটি দায়িত্বশীল।"
+    },
+    {
+      "bn": "দায়িত্বহীন",
+      "pronunciation": "dayittohin",
+      "en": "irresponsible",
+      "category": "personality-and-behavior",
+      "sourcePhrase": "এটি দায়িত্বহীন।"
+    },
+    {
+      "bn": "নিয়মানুবর্তী",
+      "pronunciation": "niyomanuborti",
+      "en": "disciplined",
+      "category": "personality-and-behavior",
+      "sourcePhrase": "এটি নিয়মানুবর্তী।"
+    },
+    {
+      "bn": "অসাবধান",
+      "pronunciation": "ôshabdhan",
+      "en": "careless",
+      "category": "personality-and-behavior",
+      "sourcePhrase": "এটি অসাবধান।"
+    },
+    {
+      "bn": "সাবধানী",
+      "pronunciation": "shabdhani",
+      "en": "careful",
+      "category": "personality-and-behavior",
+      "sourcePhrase": "এটি সাবধানী।"
+    },
+    {
+      "bn": "কৌতূহলী",
+      "pronunciation": "koutuholi",
+      "en": "curious",
+      "category": "personality-and-behavior",
+      "sourcePhrase": "এটি কৌতূহলী।"
+    },
+    {
+      "bn": "সৃজনশীল",
+      "pronunciation": "shrijonshil",
+      "en": "creative",
+      "category": "personality-and-behavior",
+      "sourcePhrase": "এটি সৃজনশীল।"
+    },
+    {
+      "bn": "মজার",
+      "pronunciation": "mojar",
+      "en": "funny / interesting",
+      "category": "personality-and-behavior",
+      "sourcePhrase": "এটি মজার।"
+    },
+    {
+      "bn": "বিরক্তিকর",
+      "pronunciation": "biroktikor",
+      "en": "annoying",
+      "category": "personality-and-behavior",
+      "sourcePhrase": "এটি বিরক্তিকর।"
+    },
+    {
+      "bn": "সুখী",
+      "pronunciation": "shukhi",
+      "en": "happy",
+      "category": "feelings-and-physical-states",
+      "sourcePhrase": "এটি সুখী।"
+    },
+    {
+      "bn": "দুঃখী",
+      "pronunciation": "dukkhi",
+      "en": "sad",
+      "category": "feelings-and-physical-states",
+      "sourcePhrase": "এটি দুঃখী।"
+    },
+    {
+      "bn": "আনন্দিত",
+      "pronunciation": "anondito",
+      "en": "delighted",
+      "category": "feelings-and-physical-states",
+      "sourcePhrase": "এটি আনন্দিত।"
+    },
+    {
+      "bn": "বিষণ্ণ",
+      "pronunciation": "bishonno",
+      "en": "depressed / gloomy",
+      "category": "feelings-and-physical-states",
+      "sourcePhrase": "এটি বিষণ্ণ।"
+    },
+    {
+      "bn": "রাগান্বিত",
+      "pronunciation": "raganbito",
+      "en": "angry",
+      "category": "feelings-and-physical-states",
+      "sourcePhrase": "এটি রাগান্বিত।"
+    },
+    {
+      "bn": "উত্তেজিত",
+      "pronunciation": "uttejito",
+      "en": "excited",
+      "category": "feelings-and-physical-states",
+      "sourcePhrase": "এটি উত্তেজিত।"
+    },
+    {
+      "bn": "চিন্তিত",
+      "pronunciation": "chintito",
+      "en": "worried",
+      "category": "feelings-and-physical-states",
+      "sourcePhrase": "এটি চিন্তিত।"
+    },
+    {
+      "bn": "উদ্বিগ্ন",
+      "pronunciation": "udbigno",
+      "en": "anxious",
+      "category": "feelings-and-physical-states",
+      "sourcePhrase": "এটি উদ্বিগ্ন।"
+    },
+    {
+      "bn": "ভীত",
+      "pronunciation": "bhito",
+      "en": "frightened",
+      "category": "feelings-and-physical-states",
+      "sourcePhrase": "এটি ভীত।"
+    },
+    {
+      "bn": "নির্ভীক",
+      "pronunciation": "nirbhik",
+      "en": "fearless",
+      "category": "feelings-and-physical-states",
+      "sourcePhrase": "এটি নির্ভীক।"
+    },
+    {
+      "bn": "অবাক",
+      "pronunciation": "ôbak",
+      "en": "surprised",
+      "category": "feelings-and-physical-states",
+      "sourcePhrase": "এটি অবাক।"
+    },
+    {
+      "bn": "হতাশ",
+      "pronunciation": "hotash",
+      "en": "disappointed",
+      "category": "feelings-and-physical-states",
+      "sourcePhrase": "এটি হতাশ।"
+    },
+    {
+      "bn": "আশাবাদী",
+      "pronunciation": "ashabadi",
+      "en": "optimistic",
+      "category": "feelings-and-physical-states",
+      "sourcePhrase": "এটি আশাবাদী।"
+    },
+    {
+      "bn": "নিরাশ",
+      "pronunciation": "nirash",
+      "en": "hopeless",
+      "category": "feelings-and-physical-states",
+      "sourcePhrase": "এটি নিরাশ।"
+    },
+    {
+      "bn": "লজ্জিত",
+      "pronunciation": "lojjito",
+      "en": "embarrassed / ashamed",
+      "category": "feelings-and-physical-states",
+      "sourcePhrase": "এটি লজ্জিত।"
+    },
+    {
+      "bn": "গর্বিত",
+      "pronunciation": "gorbito",
+      "en": "proud",
+      "category": "feelings-and-physical-states",
+      "sourcePhrase": "এটি গর্বিত।"
+    },
+    {
+      "bn": "ঈর্ষান্বিত",
+      "pronunciation": "irshanbito",
+      "en": "jealous",
+      "category": "feelings-and-physical-states",
+      "sourcePhrase": "এটি ঈর্ষান্বিত।"
+    },
+    {
+      "bn": "সন্তুষ্ট",
+      "pronunciation": "shontushto",
+      "en": "satisfied",
+      "category": "feelings-and-physical-states",
+      "sourcePhrase": "এটি সন্তুষ্ট।"
+    },
+    {
+      "bn": "অসন্তুষ্ট",
+      "pronunciation": "ôshontushto",
+      "en": "dissatisfied",
+      "category": "feelings-and-physical-states",
+      "sourcePhrase": "এটি অসন্তুষ্ট।"
+    },
+    {
+      "bn": "ক্লান্ত",
+      "pronunciation": "klanto",
+      "en": "tired",
+      "category": "feelings-and-physical-states",
+      "sourcePhrase": "এটি ক্লান্ত।"
+    },
+    {
+      "bn": "সতেজ",
+      "pronunciation": "shotej",
+      "en": "refreshed",
+      "category": "feelings-and-physical-states",
+      "sourcePhrase": "এটি সতেজ।"
+    },
+    {
+      "bn": "ঘুমন্ত",
+      "pronunciation": "ghumonto",
+      "en": "sleeping / sleepy",
+      "category": "feelings-and-physical-states",
+      "sourcePhrase": "এটি ঘুমন্ত।"
+    },
+    {
+      "bn": "জাগ্রত",
+      "pronunciation": "jagroto",
+      "en": "awake / alert",
+      "category": "feelings-and-physical-states",
+      "sourcePhrase": "এটি জাগ্রত।"
+    },
+    {
+      "bn": "ক্ষুধার্ত",
+      "pronunciation": "khudharto",
+      "en": "hungry",
+      "category": "feelings-and-physical-states",
+      "sourcePhrase": "এটি ক্ষুধার্ত।"
+    },
+    {
+      "bn": "তৃষ্ণার্ত",
+      "pronunciation": "trishnarto",
+      "en": "thirsty",
+      "category": "feelings-and-physical-states",
+      "sourcePhrase": "এটি তৃষ্ণার্ত।"
+    },
+    {
+      "bn": "অসুস্থ",
+      "pronunciation": "ôshustho",
+      "en": "sick",
+      "category": "feelings-and-physical-states",
+      "sourcePhrase": "এটি অসুস্থ।"
+    },
+    {
+      "bn": "সুস্থ",
+      "pronunciation": "shustho",
+      "en": "healthy",
+      "category": "feelings-and-physical-states",
+      "sourcePhrase": "এটি সুস্থ।"
+    },
+    {
+      "bn": "দুর্বল",
+      "pronunciation": "durbol",
+      "en": "weak",
+      "category": "feelings-and-physical-states",
+      "sourcePhrase": "এটি দুর্বল।"
+    },
+    {
+      "bn": "সবল",
+      "pronunciation": "shobol",
+      "en": "strong",
+      "category": "feelings-and-physical-states",
+      "sourcePhrase": "এটি সবল।"
+    },
+    {
+      "bn": "ব্যস্ত",
+      "pronunciation": "byosto",
+      "en": "busy",
+      "category": "feelings-and-physical-states",
+      "sourcePhrase": "এটি ব্যস্ত।"
+    },
+    {
+      "bn": "মুক্ত",
+      "pronunciation": "mukto",
+      "en": "free",
+      "category": "feelings-and-physical-states",
+      "sourcePhrase": "এটি মুক্ত।"
+    },
+    {
+      "bn": "একা",
+      "pronunciation": "eka",
+      "en": "alone / lonely",
+      "category": "feelings-and-physical-states",
+      "sourcePhrase": "এটি একা।"
+    },
+    {
+      "bn": "অনেক",
+      "pronunciation": "ônek",
+      "en": "many / much",
+      "category": "amount-and-availability",
+      "sourcePhrase": "এটি অনেক।"
+    },
+    {
+      "bn": "অল্প",
+      "pronunciation": "ôlpo",
+      "en": "little / few",
+      "category": "amount-and-availability",
+      "sourcePhrase": "এটি অল্প।"
+    },
+    {
+      "bn": "কম",
+      "pronunciation": "kom",
+      "en": "less / few",
+      "category": "amount-and-availability",
+      "sourcePhrase": "এটি কম।"
+    },
+    {
+      "bn": "বেশি",
+      "pronunciation": "beshi",
+      "en": "more / too much",
+      "category": "amount-and-availability",
+      "sourcePhrase": "এটি বেশি।"
+    },
+    {
+      "bn": "যথেষ্ট",
+      "pronunciation": "jôtheshto",
+      "en": "enough",
+      "category": "amount-and-availability",
+      "sourcePhrase": "এটি যথেষ্ট।"
+    },
+    {
+      "bn": "অতিরিক্ত",
+      "pronunciation": "ôtirikto",
+      "en": "extra / excessive",
+      "category": "amount-and-availability",
+      "sourcePhrase": "এটি অতিরিক্ত।"
+    },
+    {
+      "bn": "পুরো",
+      "pronunciation": "puro",
+      "en": "whole / entire",
+      "category": "amount-and-availability",
+      "sourcePhrase": "এটি পুরো।"
+    },
+    {
+      "bn": "অর্ধেক",
+      "pronunciation": "ôrdhek",
+      "en": "half",
+      "category": "amount-and-availability",
+      "sourcePhrase": "এটি অর্ধেক।"
+    },
+    {
+      "bn": "পূর্ণ",
+      "pronunciation": "purno",
+      "en": "full",
+      "category": "amount-and-availability",
+      "sourcePhrase": "এটি পূর্ণ।"
+    },
+    {
+      "bn": "খালি",
+      "pronunciation": "khali",
+      "en": "empty",
+      "category": "amount-and-availability",
+      "sourcePhrase": "এটি খালি।"
+    },
+    {
+      "bn": "সীমিত",
+      "pronunciation": "shimito",
+      "en": "limited",
+      "category": "amount-and-availability",
+      "sourcePhrase": "এটি সীমিত।"
+    },
+    {
+      "bn": "অসীম",
+      "pronunciation": "ôshim",
+      "en": "unlimited / infinite",
+      "category": "amount-and-availability",
+      "sourcePhrase": "এটি অসীম।"
+    },
+    {
+      "bn": "বিরল",
+      "pronunciation": "birol",
+      "en": "rare",
+      "category": "amount-and-availability",
+      "sourcePhrase": "এটি বিরল।"
+    },
+    {
+      "bn": "প্রচুর",
+      "pronunciation": "prochur",
+      "en": "abundant",
+      "category": "amount-and-availability",
+      "sourcePhrase": "এটি প্রচুর।"
+    },
+    {
+      "bn": "উপলভ্য",
+      "pronunciation": "upolobdho",
+      "en": "available",
+      "category": "amount-and-availability",
+      "sourcePhrase": "এটি উপলভ্য।"
+    },
+    {
+      "bn": "অনুপলভ্য",
+      "pronunciation": "ônupolobdho",
+      "en": "unavailable",
+      "category": "amount-and-availability",
+      "sourcePhrase": "এটি অনুপলভ্য।"
+    },
+    {
+      "bn": "পর্যাপ্ত",
+      "pronunciation": "pôrjapto",
+      "en": "sufficient",
+      "category": "amount-and-availability",
+      "sourcePhrase": "এটি পর্যাপ্ত।"
+    },
+    {
+      "bn": "অপর্যাপ্ত",
+      "pronunciation": "ôpôrjapto",
+      "en": "insufficient",
+      "category": "amount-and-availability",
+      "sourcePhrase": "এটি অপর্যাপ্ত।"
+    },
+    {
+      "bn": "সস্তা",
+      "pronunciation": "shosta",
+      "en": "cheap",
+      "category": "price-wealth-and-value",
+      "sourcePhrase": "এটি সস্তা।"
+    },
+    {
+      "bn": "দামি",
+      "pronunciation": "dami",
+      "en": "expensive",
+      "category": "price-wealth-and-value",
+      "sourcePhrase": "এটি দামি।"
+    },
+    {
+      "bn": "মূল্যবান",
+      "pronunciation": "mullyoban",
+      "en": "valuable",
+      "category": "price-wealth-and-value",
+      "sourcePhrase": "এটি মূল্যবান।"
+    },
+    {
+      "bn": "মূল্যহীন",
+      "pronunciation": "mullyohin",
+      "en": "worthless",
+      "category": "price-wealth-and-value",
+      "sourcePhrase": "এটি মূল্যহীন।"
+    },
+    {
+      "bn": "ধনী",
+      "pronunciation": "dhoni",
+      "en": "rich",
+      "category": "price-wealth-and-value",
+      "sourcePhrase": "এটি ধনী।"
+    },
+    {
+      "bn": "গরিব",
+      "pronunciation": "gorib",
+      "en": "poor",
+      "category": "price-wealth-and-value",
+      "sourcePhrase": "এটি গরিব।"
+    },
+    {
+      "bn": "লাভজনক",
+      "pronunciation": "labhjonok",
+      "en": "profitable",
+      "category": "price-wealth-and-value",
+      "sourcePhrase": "এটি লাভজনক।"
+    },
+    {
+      "bn": "অলাভজনক",
+      "pronunciation": "ôlabhjonok",
+      "en": "unprofitable",
+      "category": "price-wealth-and-value",
+      "sourcePhrase": "এটি অলাভজনক।"
+    },
+    {
+      "bn": "দরকারি",
+      "pronunciation": "dorkari",
+      "en": "useful / necessary",
+      "category": "price-wealth-and-value",
+      "sourcePhrase": "এটি দরকারি।"
+    },
+    {
+      "bn": "অদরকারি",
+      "pronunciation": "ôdorkari",
+      "en": "unnecessary",
+      "category": "price-wealth-and-value",
+      "sourcePhrase": "এটি অদরকারি।"
+    },
+    {
+      "bn": "উপকারী",
+      "pronunciation": "upokari",
+      "en": "beneficial",
+      "category": "price-wealth-and-value",
+      "sourcePhrase": "এটি উপকারী।"
+    },
+    {
+      "bn": "ক্ষতিকর",
+      "pronunciation": "khotikor",
+      "en": "harmful",
+      "category": "price-wealth-and-value",
+      "sourcePhrase": "এটি ক্ষতিকর।"
+    },
+    {
+      "bn": "বিনামূল্যের",
+      "pronunciation": "binamulryer",
+      "en": "free of charge",
+      "category": "price-wealth-and-value",
+      "sourcePhrase": "এটি বিনামূল্যের।"
+    },
+    {
+      "bn": "ন্যায্য",
+      "pronunciation": "nyajjo",
+      "en": "fair",
+      "category": "price-wealth-and-value",
+      "sourcePhrase": "এটি ন্যায্য।"
+    },
+    {
+      "bn": "অন্যায্য",
+      "pronunciation": "ônyajjo",
+      "en": "unfair",
+      "category": "price-wealth-and-value",
+      "sourcePhrase": "এটি অন্যায্য।"
+    },
+    {
+      "bn": "সত্য",
+      "pronunciation": "shotto",
+      "en": "true",
+      "category": "truth-correctness-and-possibility",
+      "sourcePhrase": "এটি সত্য।"
+    },
+    {
+      "bn": "মিথ্যা",
+      "pronunciation": "mittha",
+      "en": "false",
+      "category": "truth-correctness-and-possibility",
+      "sourcePhrase": "এটি মিথ্যা।"
+    },
+    {
+      "bn": "সঠিক",
+      "pronunciation": "shothik",
+      "en": "correct",
+      "category": "truth-correctness-and-possibility",
+      "sourcePhrase": "এটি সঠিক।"
+    },
+    {
+      "bn": "ভুল",
+      "pronunciation": "bhul",
+      "en": "wrong",
+      "category": "truth-correctness-and-possibility",
+      "sourcePhrase": "এটি ভুল।"
+    },
+    {
+      "bn": "সম্ভব",
+      "pronunciation": "shombhob",
+      "en": "possible",
+      "category": "truth-correctness-and-possibility",
+      "sourcePhrase": "এটি সম্ভব।"
+    },
+    {
+      "bn": "অসম্ভব",
+      "pronunciation": "ôshombhob",
+      "en": "impossible",
+      "category": "truth-correctness-and-possibility",
+      "sourcePhrase": "এটি অসম্ভব।"
+    },
+    {
+      "bn": "নিশ্চিত",
+      "pronunciation": "nishchito",
+      "en": "certain / confirmed",
+      "category": "truth-correctness-and-possibility",
+      "sourcePhrase": "এটি নিশ্চিত।"
+    },
+    {
+      "bn": "অনিশ্চিত",
+      "pronunciation": "ônishchito",
+      "en": "uncertain",
+      "category": "truth-correctness-and-possibility",
+      "sourcePhrase": "এটি অনিশ্চিত।"
+    },
+    {
+      "bn": "স্পষ্ট",
+      "pronunciation": "sposhto",
+      "en": "clear / obvious",
+      "category": "truth-correctness-and-possibility",
+      "sourcePhrase": "এটি স্পষ্ট।"
+    },
+    {
+      "bn": "অস্পষ্ট",
+      "pronunciation": "ôsposhto",
+      "en": "unclear / vague",
+      "category": "truth-correctness-and-possibility",
+      "sourcePhrase": "এটি অস্পষ্ট।"
+    },
+    {
+      "bn": "বাস্তব",
+      "pronunciation": "bastob",
+      "en": "real",
+      "category": "truth-correctness-and-possibility",
+      "sourcePhrase": "এটি বাস্তব।"
+    },
+    {
+      "bn": "কাল্পনিক",
+      "pronunciation": "kalponik",
+      "en": "imaginary",
+      "category": "truth-correctness-and-possibility",
+      "sourcePhrase": "এটি কাল্পনিক।"
+    },
+    {
+      "bn": "বৈধ",
+      "pronunciation": "boidho",
+      "en": "valid / legal",
+      "category": "truth-correctness-and-possibility",
+      "sourcePhrase": "এটি বৈধ।"
+    },
+    {
+      "bn": "অবৈধ",
+      "pronunciation": "ôboidho",
+      "en": "invalid / illegal",
+      "category": "truth-correctness-and-possibility",
+      "sourcePhrase": "এটি অবৈধ।"
+    },
+    {
+      "bn": "যুক্তিসঙ্গত",
+      "pronunciation": "juktishongoto",
+      "en": "reasonable",
+      "category": "truth-correctness-and-possibility",
+      "sourcePhrase": "এটি যুক্তিসঙ্গত।"
+    },
+    {
+      "bn": "অযৌক্তিক",
+      "pronunciation": "ôjouktik",
+      "en": "unreasonable",
+      "category": "truth-correctness-and-possibility",
+      "sourcePhrase": "এটি অযৌক্তিক।"
+    },
+    {
+      "bn": "নির্ভুল",
+      "pronunciation": "nirbhul",
+      "en": "accurate",
+      "category": "truth-correctness-and-possibility",
+      "sourcePhrase": "এটি নির্ভুল।"
+    },
+    {
+      "bn": "ভুলভাল",
+      "pronunciation": "bhulbhal",
+      "en": "incorrect / nonsensical",
+      "category": "truth-correctness-and-possibility",
+      "sourcePhrase": "এটি ভুলভাল।"
+    },
+    {
+      "bn": "প্রাসঙ্গিক",
+      "pronunciation": "prashongik",
+      "en": "relevant",
+      "category": "truth-correctness-and-possibility",
+      "sourcePhrase": "এটি প্রাসঙ্গিক।"
+    },
+    {
+      "bn": "অপ্রাসঙ্গিক",
+      "pronunciation": "ôprashongik",
+      "en": "irrelevant",
+      "category": "truth-correctness-and-possibility",
+      "sourcePhrase": "এটি অপ্রাসঙ্গিক।"
+    },
+    {
+      "bn": "গুরুত্বপূর্ণ",
+      "pronunciation": "guruttopurno",
+      "en": "important",
+      "category": "importance-and-popularity",
+      "sourcePhrase": "এটি গুরুত্বপূর্ণ।"
+    },
+    {
+      "bn": "গুরুত্বহীন",
+      "pronunciation": "guruttohin",
+      "en": "unimportant",
+      "category": "importance-and-popularity",
+      "sourcePhrase": "এটি গুরুত্বহীন।"
+    },
+    {
+      "bn": "প্রধান",
+      "pronunciation": "prodhan",
+      "en": "main / primary",
+      "category": "importance-and-popularity",
+      "sourcePhrase": "এটি প্রধান।"
+    },
+    {
+      "bn": "গৌণ",
+      "pronunciation": "gouno",
+      "en": "secondary",
+      "category": "importance-and-popularity",
+      "sourcePhrase": "এটি গৌণ।"
+    },
+    {
+      "bn": "জনপ্রিয়",
+      "pronunciation": "jonopriyo",
+      "en": "popular",
+      "category": "importance-and-popularity",
+      "sourcePhrase": "এটি জনপ্রিয়।"
+    },
+    {
+      "bn": "অজনপ্রিয়",
+      "pronunciation": "ôjonopriyo",
+      "en": "unpopular",
+      "category": "importance-and-popularity",
+      "sourcePhrase": "এটি অজনপ্রিয়।"
+    },
+    {
+      "bn": "বিখ্যাত",
+      "pronunciation": "bikkhato",
+      "en": "famous",
+      "category": "importance-and-popularity",
+      "sourcePhrase": "এটি বিখ্যাত।"
+    },
+    {
+      "bn": "অখ্যাত",
+      "pronunciation": "ôkkhato",
+      "en": "unknown / obscure",
+      "category": "importance-and-popularity",
+      "sourcePhrase": "এটি অখ্যাত।"
+    },
+    {
+      "bn": "পরিচিত",
+      "pronunciation": "pôrichito",
+      "en": "familiar / known",
+      "category": "importance-and-popularity",
+      "sourcePhrase": "এটি পরিচিত।"
+    },
+    {
+      "bn": "অপরিচিত",
+      "pronunciation": "ôpôrichito",
+      "en": "unfamiliar / unknown",
+      "category": "importance-and-popularity",
+      "sourcePhrase": "এটি অপরিচিত।"
+    },
+    {
+      "bn": "প্রয়োজনীয়",
+      "pronunciation": "proyojoniyo",
+      "en": "necessary",
+      "category": "importance-and-popularity",
+      "sourcePhrase": "এটি প্রয়োজনীয়।"
+    },
+    {
+      "bn": "অপ্রয়োজনীয়",
+      "pronunciation": "ôproyojoniyo",
+      "en": "unnecessary",
+      "category": "importance-and-popularity",
+      "sourcePhrase": "এটি অপ্রয়োজনীয়।"
+    },
+    {
+      "bn": "জরুরি",
+      "pronunciation": "joruri",
+      "en": "urgent",
+      "category": "importance-and-popularity",
+      "sourcePhrase": "এটি জরুরি।"
+    },
+    {
+      "bn": "স্বাভাবিক",
+      "pronunciation": "shabhabik",
+      "en": "normal / natural",
+      "category": "importance-and-popularity",
+      "sourcePhrase": "এটি স্বাভাবিক।"
+    },
+    {
+      "bn": "অস্বাভাবিক",
+      "pronunciation": "ôshabhabik",
+      "en": "abnormal / unusual",
+      "category": "importance-and-popularity",
+      "sourcePhrase": "এটি অস্বাভাবিক।"
+    },
+    {
+      "bn": "নিয়মিত",
+      "pronunciation": "niyomito",
+      "en": "regular",
+      "category": "importance-and-popularity",
+      "sourcePhrase": "এটি নিয়মিত।"
+    },
+    {
+      "bn": "অনিয়মিত",
+      "pronunciation": "ôniyomito",
+      "en": "irregular",
+      "category": "importance-and-popularity",
+      "sourcePhrase": "এটি অনিয়মিত।"
+    },
+    {
+      "bn": "প্রচলিত",
+      "pronunciation": "procholito",
+      "en": "common / customary",
+      "category": "importance-and-popularity",
+      "sourcePhrase": "এটি প্রচলিত।"
+    },
+    {
+      "bn": "বিরল",
+      "pronunciation": "birol",
+      "en": "uncommon / rare",
+      "category": "importance-and-popularity",
+      "sourcePhrase": "এটি বিরল।"
+    },
+    {
+      "bn": "নিরাপদ",
+      "pronunciation": "nirapod",
+      "en": "safe",
+      "category": "safety-and-health",
+      "sourcePhrase": "এটি নিরাপদ।"
+    },
+    {
+      "bn": "বিপজ্জনক",
+      "pronunciation": "bipodjonok",
+      "en": "dangerous",
+      "category": "safety-and-health",
+      "sourcePhrase": "এটি বিপজ্জনক।"
+    },
+    {
+      "bn": "স্বাস্থ্যকর",
+      "pronunciation": "shasthokor",
+      "en": "healthy",
+      "category": "safety-and-health",
+      "sourcePhrase": "এটি স্বাস্থ্যকর।"
+    },
+    {
+      "bn": "জীবাণুমুক্ত",
+      "pronunciation": "jibanumukto",
+      "en": "germ-free / sterile",
+      "category": "safety-and-health",
+      "sourcePhrase": "এটি জীবাণুমুক্ত।"
+    },
+    {
+      "bn": "বিষাক্ত",
+      "pronunciation": "bishakto",
+      "en": "poisonous / toxic",
+      "category": "safety-and-health",
+      "sourcePhrase": "এটি বিষাক্ত।"
+    },
+    {
+      "bn": "নিরীহ",
+      "pronunciation": "nirih",
+      "en": "harmless",
+      "category": "safety-and-health",
+      "sourcePhrase": "এটি নিরীহ।"
+    },
+    {
+      "bn": "সংক্রামক",
+      "pronunciation": "shongkramok",
+      "en": "contagious",
+      "category": "safety-and-health",
+      "sourcePhrase": "এটি সংক্রামক।"
+    },
+    {
+      "bn": "মারাত্মক",
+      "pronunciation": "marattok",
+      "en": "deadly / severe",
+      "category": "safety-and-health",
+      "sourcePhrase": "এটি মারাত্মক।"
+    },
+    {
+      "bn": "গুরুতর",
+      "pronunciation": "gurutoro",
+      "en": "serious",
+      "category": "safety-and-health",
+      "sourcePhrase": "এটি গুরুতর।"
+    },
+    {
+      "bn": "হালকা",
+      "pronunciation": "halka",
+      "en": "mild",
+      "category": "safety-and-health",
+      "sourcePhrase": "এটি হালকা।"
+    },
+    {
+      "bn": "সচেতন",
+      "pronunciation": "shôcheton",
+      "en": "aware / conscious",
+      "category": "safety-and-health",
+      "sourcePhrase": "এটি সচেতন।"
+    },
+    {
+      "bn": "অচেতন",
+      "pronunciation": "ôcheton",
+      "en": "unconscious",
+      "category": "safety-and-health",
+      "sourcePhrase": "এটি অচেতন।"
+    },
+    {
+      "bn": "সতর্ক",
+      "pronunciation": "shotorko",
+      "en": "alert / cautious",
+      "category": "safety-and-health",
+      "sourcePhrase": "এটি সতর্ক।"
+    },
+    {
+      "bn": "ঝুঁকিপূর্ণ",
+      "pronunciation": "jhukipurno",
+      "en": "risky",
+      "category": "safety-and-health",
+      "sourcePhrase": "এটি ঝুঁকিপূর্ণ।"
+    },
+    {
+      "bn": "প্রথম",
+      "pronunciation": "prothom",
+      "en": "first",
+      "category": "time-and-order",
+      "sourcePhrase": "এটি প্রথম।"
+    },
+    {
+      "bn": "শেষ",
+      "pronunciation": "shesh",
+      "en": "last / final",
+      "category": "time-and-order",
+      "sourcePhrase": "এটি শেষ।"
+    },
+    {
+      "bn": "পরের",
+      "pronunciation": "porer",
+      "en": "next",
+      "category": "time-and-order",
+      "sourcePhrase": "এটি পরের।"
+    },
+    {
+      "bn": "আগের",
+      "pronunciation": "ager",
+      "en": "previous",
+      "category": "time-and-order",
+      "sourcePhrase": "এটি আগের।"
+    },
+    {
+      "bn": "বর্তমান",
+      "pronunciation": "bortoman",
+      "en": "current / present",
+      "category": "time-and-order",
+      "sourcePhrase": "এটি বর্তমান।"
+    },
+    {
+      "bn": "ভবিষ্যৎ",
+      "pronunciation": "bhobishshot",
+      "en": "future",
+      "category": "time-and-order",
+      "sourcePhrase": "এটি ভবিষ্যৎ।"
+    },
+    {
+      "bn": "অতীত",
+      "pronunciation": "ôtit",
+      "en": "past",
+      "category": "time-and-order",
+      "sourcePhrase": "এটি অতীত।"
+    },
+    {
+      "bn": "সাম্প্রতিক",
+      "pronunciation": "shamprotik",
+      "en": "recent",
+      "category": "time-and-order",
+      "sourcePhrase": "এটি সাম্প্রতিক।"
+    },
+    {
+      "bn": "দৈনিক",
+      "pronunciation": "doinik",
+      "en": "daily",
+      "category": "time-and-order",
+      "sourcePhrase": "এটি দৈনিক।"
+    },
+    {
+      "bn": "সাপ্তাহিক",
+      "pronunciation": "shaptahik",
+      "en": "weekly",
+      "category": "time-and-order",
+      "sourcePhrase": "এটি সাপ্তাহিক।"
+    },
+    {
+      "bn": "মাসিক",
+      "pronunciation": "mashik",
+      "en": "monthly",
+      "category": "time-and-order",
+      "sourcePhrase": "এটি মাসিক।"
+    },
+    {
+      "bn": "বার্ষিক",
+      "pronunciation": "barshik",
+      "en": "yearly / annual",
+      "category": "time-and-order",
+      "sourcePhrase": "এটি বার্ষিক।"
+    },
+    {
+      "bn": "অস্থায়ী",
+      "pronunciation": "ôsthayi",
+      "en": "temporary",
+      "category": "time-and-order",
+      "sourcePhrase": "এটি অস্থায়ী।"
+    },
+    {
+      "bn": "স্থায়ী",
+      "pronunciation": "sthayi",
+      "en": "permanent",
+      "category": "time-and-order",
+      "sourcePhrase": "এটি স্থায়ী।"
+    },
+    {
+      "bn": "তাৎক্ষণিক",
+      "pronunciation": "tatkhonik",
+      "en": "immediate",
+      "category": "time-and-order",
+      "sourcePhrase": "এটি তাৎক্ষণিক।"
+    },
+    {
+      "bn": "বিলম্বিত",
+      "pronunciation": "bilombito",
+      "en": "delayed",
+      "category": "time-and-order",
+      "sourcePhrase": "এটি বিলম্বিত।"
+    },
+    {
+      "bn": "সময়মতো",
+      "pronunciation": "shomoymoto",
+      "en": "punctual / on time",
+      "category": "time-and-order",
+      "sourcePhrase": "এটি সময়মতো।"
+    },
+    {
+      "bn": "দেরি",
+      "pronunciation": "deri",
+      "en": "late",
+      "category": "time-and-order",
+      "sourcePhrase": "এটি দেরি।"
+    },
+    {
+      "bn": "প্রাথমিক",
+      "pronunciation": "prathomik",
+      "en": "initial / basic",
+      "category": "time-and-order",
+      "sourcePhrase": "এটি প্রাথমিক।"
+    },
+    {
+      "bn": "চূড়ান্ত",
+      "pronunciation": "churanto",
+      "en": "final",
+      "category": "time-and-order",
+      "sourcePhrase": "এটি চূড়ান্ত।"
+    },
+    {
+      "bn": "কাছের",
+      "pronunciation": "kachher",
+      "en": "nearby",
+      "category": "location-and-distance",
+      "sourcePhrase": "এটি কাছের।"
+    },
+    {
+      "bn": "দূরের",
+      "pronunciation": "durer",
+      "en": "distant",
+      "category": "location-and-distance",
+      "sourcePhrase": "এটি দূরের।"
+    },
+    {
+      "bn": "স্থানীয়",
+      "pronunciation": "sthaniyo",
+      "en": "local",
+      "category": "location-and-distance",
+      "sourcePhrase": "এটি স্থানীয়।"
+    },
+    {
+      "bn": "বিদেশি",
+      "pronunciation": "bideshi",
+      "en": "foreign",
+      "category": "location-and-distance",
+      "sourcePhrase": "এটি বিদেশি।"
+    },
+    {
+      "bn": "দেশি",
+      "pronunciation": "deshi",
+      "en": "local / native",
+      "category": "location-and-distance",
+      "sourcePhrase": "এটি দেশি।"
+    },
+    {
+      "bn": "আন্তর্জাতিক",
+      "pronunciation": "antorjatik",
+      "en": "international",
+      "category": "location-and-distance",
+      "sourcePhrase": "এটি আন্তর্জাতিক।"
+    },
+    {
+      "bn": "ভেতরের",
+      "pronunciation": "bhetorer",
+      "en": "inner / inside",
+      "category": "location-and-distance",
+      "sourcePhrase": "এটি ভেতরের।"
+    },
+    {
+      "bn": "বাইরের",
+      "pronunciation": "bairer",
+      "en": "outer / outside",
+      "category": "location-and-distance",
+      "sourcePhrase": "এটি বাইরের।"
+    },
+    {
+      "bn": "উপরের",
+      "pronunciation": "uporer",
+      "en": "upper",
+      "category": "location-and-distance",
+      "sourcePhrase": "এটি উপরের।"
+    },
+    {
+      "bn": "নিচের",
+      "pronunciation": "nicher",
+      "en": "lower",
+      "category": "location-and-distance",
+      "sourcePhrase": "এটি নিচের।"
+    },
+    {
+      "bn": "সামনের",
+      "pronunciation": "shamner",
+      "en": "front",
+      "category": "location-and-distance",
+      "sourcePhrase": "এটি সামনের।"
+    },
+    {
+      "bn": "পেছনের",
+      "pronunciation": "pechhoner",
+      "en": "rear / back",
+      "category": "location-and-distance",
+      "sourcePhrase": "এটি পেছনের।"
+    },
+    {
+      "bn": "ডান",
+      "pronunciation": "dan",
+      "en": "right",
+      "category": "location-and-distance",
+      "sourcePhrase": "এটি ডান।"
+    },
+    {
+      "bn": "বাঁ",
+      "pronunciation": "ba",
+      "en": "left",
+      "category": "location-and-distance",
+      "sourcePhrase": "এটি বাঁ।"
+    },
+    {
+      "bn": "কেন্দ্রীয়",
+      "pronunciation": "kendriyo",
+      "en": "central",
+      "category": "location-and-distance",
+      "sourcePhrase": "এটি কেন্দ্রীয়।"
+    },
+    {
+      "bn": "উত্তরাঞ্চলীয়",
+      "pronunciation": "uttorancholiyo",
+      "en": "northern",
+      "category": "location-and-distance",
+      "sourcePhrase": "এটি উত্তরাঞ্চলীয়।"
+    },
+    {
+      "bn": "দক্ষিণাঞ্চলীয়",
+      "pronunciation": "dokkhinancholiyo",
+      "en": "southern",
+      "category": "location-and-distance",
+      "sourcePhrase": "এটি দক্ষিণাঞ্চলীয়।"
+    },
+    {
+      "bn": "পূর্বাঞ্চলীয়",
+      "pronunciation": "purbancholiyo",
+      "en": "eastern",
+      "category": "location-and-distance",
+      "sourcePhrase": "এটি পূর্বাঞ্চলীয়।"
+    },
+    {
+      "bn": "পশ্চিমাঞ্চলীয়",
+      "pronunciation": "pôshchimancholiyo",
+      "en": "western",
+      "category": "location-and-distance",
+      "sourcePhrase": "এটি পশ্চিমাঞ্চলীয়।"
+    },
+    {
+      "bn": "প্রত্যন্ত",
+      "pronunciation": "protyonto",
+      "en": "remote",
+      "category": "location-and-distance",
+      "sourcePhrase": "এটি প্রত্যন্ত।"
+    },
+    {
+      "bn": "ব্যক্তিগত",
+      "pronunciation": "byaktigoto",
+      "en": "personal",
+      "category": "relationships-and-categories",
+      "sourcePhrase": "এটি ব্যক্তিগত।"
+    },
+    {
+      "bn": "পারিবারিক",
+      "pronunciation": "paribarik",
+      "en": "familial / family-related",
+      "category": "relationships-and-categories",
+      "sourcePhrase": "এটি পারিবারিক।"
+    },
+    {
+      "bn": "সামাজিক",
+      "pronunciation": "shamajik",
+      "en": "social",
+      "category": "relationships-and-categories",
+      "sourcePhrase": "এটি সামাজিক।"
+    },
+    {
+      "bn": "সরকারি",
+      "pronunciation": "shorkari",
+      "en": "governmental / public",
+      "category": "relationships-and-categories",
+      "sourcePhrase": "এটি সরকারি।"
+    },
+    {
+      "bn": "বেসরকারি",
+      "pronunciation": "beshorkari",
+      "en": "private / non-governmental",
+      "category": "relationships-and-categories",
+      "sourcePhrase": "এটি বেসরকারি।"
+    },
+    {
+      "bn": "জাতীয়",
+      "pronunciation": "jatiyo",
+      "en": "national",
+      "category": "relationships-and-categories",
+      "sourcePhrase": "এটি জাতীয়।"
+    },
+    {
+      "bn": "ধর্মীয়",
+      "pronunciation": "dhormiyo",
+      "en": "religious",
+      "category": "relationships-and-categories",
+      "sourcePhrase": "এটি ধর্মীয়।"
+    },
+    {
+      "bn": "সাংস্কৃতিক",
+      "pronunciation": "shangskritik",
+      "en": "cultural",
+      "category": "relationships-and-categories",
+      "sourcePhrase": "এটি সাংস্কৃতিক।"
+    },
+    {
+      "bn": "রাজনৈতিক",
+      "pronunciation": "rajnaitik",
+      "en": "political",
+      "category": "relationships-and-categories",
+      "sourcePhrase": "এটি রাজনৈতিক।"
+    },
+    {
+      "bn": "অর্থনৈতিক",
+      "pronunciation": "orthonoitik",
+      "en": "economic",
+      "category": "relationships-and-categories",
+      "sourcePhrase": "এটি অর্থনৈতিক।"
+    },
+    {
+      "bn": "শিক্ষামূলক",
+      "pronunciation": "shikkhamulok",
+      "en": "educational",
+      "category": "relationships-and-categories",
+      "sourcePhrase": "এটি শিক্ষামূলক।"
+    },
+    {
+      "bn": "বৈজ্ঞানিক",
+      "pronunciation": "boigganik",
+      "en": "scientific",
+      "category": "relationships-and-categories",
+      "sourcePhrase": "এটি বৈজ্ঞানিক।"
+    },
+    {
+      "bn": "প্রযুক্তিগত",
+      "pronunciation": "projuktigoto",
+      "en": "technological / technical",
+      "category": "relationships-and-categories",
+      "sourcePhrase": "এটি প্রযুক্তিগত।"
+    },
+    {
+      "bn": "পেশাদার",
+      "pronunciation": "peshadar",
+      "en": "professional",
+      "category": "relationships-and-categories",
+      "sourcePhrase": "এটি পেশাদার।"
+    },
+    {
+      "bn": "অপেশাদার",
+      "pronunciation": "ôpeshadar",
+      "en": "amateur / unprofessional",
+      "category": "relationships-and-categories",
+      "sourcePhrase": "এটি অপেশাদার।"
+    },
+    {
+      "bn": "আনুষ্ঠানিক",
+      "pronunciation": "anushthanik",
+      "en": "formal",
+      "category": "relationships-and-categories",
+      "sourcePhrase": "এটি আনুষ্ঠানিক।"
+    },
+    {
+      "bn": "অনানুষ্ঠানিক",
+      "pronunciation": "ônanushthanik",
+      "en": "informal",
+      "category": "relationships-and-categories",
+      "sourcePhrase": "এটি অনানুষ্ঠানিক।"
+    },
+    {
+      "bn": "জনসাধারণের",
+      "pronunciation": "jonoshadharoner",
+      "en": "public",
+      "category": "relationships-and-categories",
+      "sourcePhrase": "এটি জনসাধারণের।"
+    },
+    {
+      "bn": "গোপন",
+      "pronunciation": "gopon",
+      "en": "secret",
+      "category": "relationships-and-categories",
+      "sourcePhrase": "এটি গোপন।"
+    },
+    {
+      "bn": "প্রকাশ্য",
+      "pronunciation": "prokashsho",
+      "en": "public / open",
+      "category": "relationships-and-categories",
+      "sourcePhrase": "এটি প্রকাশ্য।"
+    },
+    {
+      "bn": "সাদা",
+      "pronunciation": "shada",
+      "en": "white",
+      "category": "colors",
+      "sourcePhrase": "এটি সাদা।"
+    },
+    {
+      "bn": "কালো",
+      "pronunciation": "kalo",
+      "en": "black",
+      "category": "colors",
+      "sourcePhrase": "এটি কালো।"
     },
     {
       "bn": "লাল",
       "pronunciation": "lal",
       "en": "red",
-      "category": "adjectives",
-      "sourcePhrase": "আমার ব্যাগটি লাল।"
+      "category": "colors",
+      "sourcePhrase": "এটি লাল।"
     },
     {
-      "bn": "এই",
-      "pronunciation": "ei",
-      "en": "this",
-      "category": "adjectives",
-      "sourcePhrase": "এই খাবারটি খুব ভালো।"
+      "bn": "নীল",
+      "pronunciation": "nil",
+      "en": "blue",
+      "category": "colors",
+      "sourcePhrase": "এটি নীল।"
     },
     {
-      "bn": "খাবারটি",
-      "pronunciation": "khabarti",
-      "en": "the food",
-      "category": "adjectives",
-      "sourcePhrase": "এই খাবারটি খুব ভালো।"
+      "bn": "সবুজ",
+      "pronunciation": "shobuj",
+      "en": "green",
+      "category": "colors",
+      "sourcePhrase": "এটি সবুজ।"
     },
     {
-      "bn": "খুব",
-      "pronunciation": "khub",
-      "en": "very",
-      "category": "adjectives",
-      "sourcePhrase": "এই খাবারটি খুব ভালো।"
+      "bn": "হলুদ",
+      "pronunciation": "holud",
+      "en": "yellow",
+      "category": "colors",
+      "sourcePhrase": "এটি হলুদ।"
     },
     {
-      "bn": "আজ",
-      "pronunciation": "aj",
-      "en": "today",
-      "category": "adjectives",
-      "sourcePhrase": "আজ আবহাওয়া খারাপ।"
+      "bn": "কমলা",
+      "pronunciation": "komola",
+      "en": "orange",
+      "category": "colors",
+      "sourcePhrase": "এটি কমলা।"
     },
     {
-      "bn": "আবহাওয়া",
-      "pronunciation": "abohawa",
-      "en": "weather",
-      "category": "adjectives",
-      "sourcePhrase": "আজ আবহাওয়া খারাপ।"
+      "bn": "গোলাপি",
+      "pronunciation": "golapi",
+      "en": "pink",
+      "category": "colors",
+      "sourcePhrase": "এটি গোলাপি।"
     },
     {
-      "bn": "ওই",
-      "pronunciation": "oi",
-      "en": "that",
-      "category": "adjectives",
-      "sourcePhrase": "ওই বাড়িটি অনেক বড়।"
+      "bn": "বেগুনি",
+      "pronunciation": "beguni",
+      "en": "purple",
+      "category": "colors",
+      "sourcePhrase": "এটি বেগুনি।"
     },
     {
-      "bn": "বাড়িটি",
-      "pronunciation": "bariti",
-      "en": "the house",
-      "category": "adjectives",
-      "sourcePhrase": "ওই বাড়িটি অনেক বড়।"
+      "bn": "বাদামি",
+      "pronunciation": "badami",
+      "en": "brown",
+      "category": "colors",
+      "sourcePhrase": "এটি বাদামি।"
     },
     {
-      "bn": "অনেক",
-      "pronunciation": "onek",
-      "en": "very / many",
-      "category": "adjectives",
-      "sourcePhrase": "ওই বাড়িটি অনেক বড়।"
+      "bn": "ধূসর",
+      "pronunciation": "dhushor",
+      "en": "gray",
+      "category": "colors",
+      "sourcePhrase": "এটি ধূসর।"
     },
     {
-      "bn": "আমার",
-      "pronunciation": "amar",
-      "en": "my",
-      "category": "adjectives",
-      "sourcePhrase": "আমার একটি ছোট ব্যাগ আছে।"
+      "bn": "সোনালি",
+      "pronunciation": "shonali",
+      "en": "golden",
+      "category": "colors",
+      "sourcePhrase": "এটি সোনালি।"
     },
     {
-      "bn": "একটি",
-      "pronunciation": "ekti",
-      "en": "one / a",
-      "category": "adjectives",
-      "sourcePhrase": "আমার একটি ছোট ব্যাগ আছে।"
+      "bn": "রুপালি",
+      "pronunciation": "rupali",
+      "en": "silver-colored",
+      "category": "colors",
+      "sourcePhrase": "এটি রুপালি।"
     },
     {
-      "bn": "ব্যাগ",
-      "pronunciation": "bag",
-      "en": "bag",
-      "category": "adjectives",
-      "sourcePhrase": "আমার একটি ছোট ব্যাগ আছে।"
+      "bn": "গাঢ়",
+      "pronunciation": "gaṛho",
+      "en": "dark",
+      "category": "colors",
+      "sourcePhrase": "এটি গাঢ়।"
     },
     {
-      "bn": "আছে",
-      "pronunciation": "achhe",
-      "en": "is / has",
-      "category": "adjectives",
-      "sourcePhrase": "আমার একটি ছোট ব্যাগ আছে।"
+      "bn": "হালকা",
+      "pronunciation": "halka",
+      "en": "light-colored",
+      "category": "colors",
+      "sourcePhrase": "এটি হালকা।"
     },
     {
-      "bn": "আমি",
-      "pronunciation": "ami",
-      "en": "I",
-      "category": "adjectives",
-      "sourcePhrase": "আমি একটি নতুন বই কিনেছি।"
+      "bn": "স্বচ্ছ",
+      "pronunciation": "swochchho",
+      "en": "transparent",
+      "category": "colors",
+      "sourcePhrase": "এটি স্বচ্ছ।"
     },
     {
-      "bn": "বই",
-      "pronunciation": "boi",
-      "en": "book",
-      "category": "adjectives",
-      "sourcePhrase": "আমি একটি নতুন বই কিনেছি।"
-    },
-    {
-      "bn": "কিনেছি",
-      "pronunciation": "kinechhi",
-      "en": "bought",
-      "category": "adjectives",
-      "sourcePhrase": "আমি একটি নতুন বই কিনেছি।"
-    },
-    {
-      "bn": "এটি",
-      "pronunciation": "eti",
-      "en": "this",
-      "category": "adjectives",
-      "sourcePhrase": "এটি একটি পুরোনো ছবি।"
-    },
-    {
-      "bn": "ছবি",
-      "pronunciation": "chhobi",
-      "en": "picture",
-      "category": "adjectives",
-      "sourcePhrase": "এটি একটি পুরোনো ছবি।"
-    },
-    {
-      "bn": "এটা",
-      "pronunciation": "eta",
-      "en": "this",
-      "category": "adjectives",
-      "sourcePhrase": "এটা একটি সুন্দর বাড়ি।"
-    },
-    {
-      "bn": "বাড়ি",
-      "pronunciation": "bari",
-      "en": "house / home",
-      "category": "adjectives",
-      "sourcePhrase": "এটা একটি সুন্দর বাড়ি।"
-    },
-    {
-      "bn": "প্রশ্নটি",
-      "pronunciation": "proshnoti",
-      "en": "the question",
-      "category": "adjectives",
-      "sourcePhrase": "এই প্রশ্নটি খুব সহজ।"
-    },
-    {
-      "bn": "কাজটি",
-      "pronunciation": "kajti",
-      "en": "the task",
-      "category": "adjectives",
-      "sourcePhrase": "এই কাজটি বেশ কঠিন।"
-    },
-    {
-      "bn": "বেশ",
-      "pronunciation": "besh",
-      "en": "quite",
-      "category": "adjectives",
-      "sourcePhrase": "এই কাজটি বেশ কঠিন।"
-    },
-    {
-      "bn": "চা",
-      "pronunciation": "cha",
-      "en": "tea",
-      "category": "adjectives",
-      "sourcePhrase": "চা এখনো গরম।"
-    },
-    {
-      "bn": "এখনো",
-      "pronunciation": "ekhono",
-      "en": "still",
-      "category": "adjectives",
-      "sourcePhrase": "চা এখনো গরম।"
-    },
-    {
-      "bn": "পানি",
-      "pronunciation": "pani",
-      "en": "water",
-      "category": "adjectives",
-      "sourcePhrase": "আজ পানি ঠান্ডা।"
-    },
-    {
-      "bn": "ব্যাগটি",
-      "pronunciation": "bagti",
-      "en": "the bag",
-      "category": "adjectives",
-      "sourcePhrase": "আমার ব্যাগটি লাল।"
-    },
-    {
-      "bn": "এই খাবারটি",
-      "pronunciation": "ei khabarti",
-      "en": "this the food",
-      "category": "adjectives",
-      "sourcePhrase": "এই খাবারটি খুব ভালো।"
-    },
-    {
-      "bn": "খাবারটি খুব",
-      "pronunciation": "khabarti khub",
-      "en": "the food very",
-      "category": "adjectives",
-      "sourcePhrase": "এই খাবারটি খুব ভালো।"
-    },
-    {
-      "bn": "খুব ভালো",
-      "pronunciation": "khub bhalo",
-      "en": "very good",
-      "category": "adjectives",
-      "sourcePhrase": "এই খাবারটি খুব ভালো।"
-    },
-    {
-      "bn": "আজ আবহাওয়া",
-      "pronunciation": "aj abohawa",
-      "en": "today weather",
-      "category": "adjectives",
-      "sourcePhrase": "আজ আবহাওয়া খারাপ।"
-    },
-    {
-      "bn": "আবহাওয়া খারাপ",
-      "pronunciation": "abohawa kharap",
-      "en": "weather bad",
-      "category": "adjectives",
-      "sourcePhrase": "আজ আবহাওয়া খারাপ।"
-    },
-    {
-      "bn": "ওই বাড়িটি",
-      "pronunciation": "oi bariti",
-      "en": "that the house",
-      "category": "adjectives",
-      "sourcePhrase": "ওই বাড়িটি অনেক বড়।"
-    },
-    {
-      "bn": "বাড়িটি অনেক",
-      "pronunciation": "bariti onek",
-      "en": "the house very / many",
-      "category": "adjectives",
-      "sourcePhrase": "ওই বাড়িটি অনেক বড়।"
-    },
-    {
-      "bn": "অনেক বড়",
-      "pronunciation": "onek boro",
-      "en": "very / many big",
-      "category": "adjectives",
-      "sourcePhrase": "ওই বাড়িটি অনেক বড়।"
-    },
-    {
-      "bn": "আমার একটি",
-      "pronunciation": "amar ekti",
-      "en": "my one / a",
-      "category": "adjectives",
-      "sourcePhrase": "আমার একটি ছোট ব্যাগ আছে।"
-    },
-    {
-      "bn": "একটি ছোট",
-      "pronunciation": "ekti chhoto",
-      "en": "one / a small",
-      "category": "adjectives",
-      "sourcePhrase": "আমার একটি ছোট ব্যাগ আছে।"
-    },
-    {
-      "bn": "ছোট ব্যাগ",
-      "pronunciation": "chhoto bag",
-      "en": "small bag",
-      "category": "adjectives",
-      "sourcePhrase": "আমার একটি ছোট ব্যাগ আছে।"
-    },
-    {
-      "bn": "ব্যাগ আছে",
-      "pronunciation": "bag achhe",
-      "en": "bag is / has",
-      "category": "adjectives",
-      "sourcePhrase": "আমার একটি ছোট ব্যাগ আছে।"
-    },
-    {
-      "bn": "আমি একটি",
-      "pronunciation": "ami ekti",
-      "en": "I one / a",
-      "category": "adjectives",
-      "sourcePhrase": "আমি একটি নতুন বই কিনেছি।"
-    },
-    {
-      "bn": "একটি নতুন",
-      "pronunciation": "ekti notun",
-      "en": "one / a new",
-      "category": "adjectives",
-      "sourcePhrase": "আমি একটি নতুন বই কিনেছি।"
-    },
-    {
-      "bn": "নতুন বই",
-      "pronunciation": "notun boi",
-      "en": "new book",
-      "category": "adjectives",
-      "sourcePhrase": "আমি একটি নতুন বই কিনেছি।"
-    },
-    {
-      "bn": "বই কিনেছি",
-      "pronunciation": "boi kinechhi",
-      "en": "book bought",
-      "category": "adjectives",
-      "sourcePhrase": "আমি একটি নতুন বই কিনেছি।"
-    },
-    {
-      "bn": "এটি একটি",
-      "pronunciation": "eti ekti",
-      "en": "this one / a",
-      "category": "adjectives",
-      "sourcePhrase": "এটি একটি পুরোনো ছবি।"
-    },
-    {
-      "bn": "একটি পুরোনো",
-      "pronunciation": "ekti purono",
-      "en": "one / a old",
-      "category": "adjectives",
-      "sourcePhrase": "এটি একটি পুরোনো ছবি।"
-    },
-    {
-      "bn": "পুরোনো ছবি",
-      "pronunciation": "purono chhobi",
-      "en": "old picture",
-      "category": "adjectives",
-      "sourcePhrase": "এটি একটি পুরোনো ছবি।"
-    },
-    {
-      "bn": "এটা একটি",
-      "pronunciation": "eta ekti",
-      "en": "this one / a",
-      "category": "adjectives",
-      "sourcePhrase": "এটা একটি সুন্দর বাড়ি।"
-    },
-    {
-      "bn": "একটি সুন্দর",
-      "pronunciation": "ekti shundor",
-      "en": "one / a beautiful",
-      "category": "adjectives",
-      "sourcePhrase": "এটা একটি সুন্দর বাড়ি।"
-    },
-    {
-      "bn": "সুন্দর বাড়ি",
-      "pronunciation": "shundor bari",
-      "en": "beautiful house / home",
-      "category": "adjectives",
-      "sourcePhrase": "এটা একটি সুন্দর বাড়ি।"
-    },
-    {
-      "bn": "এই প্রশ্নটি",
-      "pronunciation": "ei proshnoti",
-      "en": "this the question",
-      "category": "adjectives",
-      "sourcePhrase": "এই প্রশ্নটি খুব সহজ।"
-    },
-    {
-      "bn": "প্রশ্নটি খুব",
-      "pronunciation": "proshnoti khub",
-      "en": "the question very",
-      "category": "adjectives",
-      "sourcePhrase": "এই প্রশ্নটি খুব সহজ।"
-    },
-    {
-      "bn": "খুব সহজ",
-      "pronunciation": "khub shohaj",
-      "en": "very easy",
-      "category": "adjectives",
-      "sourcePhrase": "এই প্রশ্নটি খুব সহজ।"
-    },
-    {
-      "bn": "এই কাজটি",
-      "pronunciation": "ei kajti",
-      "en": "this the task",
-      "category": "adjectives",
-      "sourcePhrase": "এই কাজটি বেশ কঠিন।"
-    },
-    {
-      "bn": "কাজটি বেশ",
-      "pronunciation": "kajti besh",
-      "en": "the task quite",
-      "category": "adjectives",
-      "sourcePhrase": "এই কাজটি বেশ কঠিন।"
-    },
-    {
-      "bn": "বেশ কঠিন",
-      "pronunciation": "besh kothin",
-      "en": "quite difficult",
-      "category": "adjectives",
-      "sourcePhrase": "এই কাজটি বেশ কঠিন।"
-    },
-    {
-      "bn": "চা এখনো",
-      "pronunciation": "cha ekhono",
-      "en": "tea still",
-      "category": "adjectives",
-      "sourcePhrase": "চা এখনো গরম।"
-    },
-    {
-      "bn": "এখনো গরম",
-      "pronunciation": "ekhono gorom",
-      "en": "still hot",
-      "category": "adjectives",
-      "sourcePhrase": "চা এখনো গরম।"
-    },
-    {
-      "bn": "আজ পানি",
-      "pronunciation": "aj pani",
-      "en": "today water",
-      "category": "adjectives",
-      "sourcePhrase": "আজ পানি ঠান্ডা।"
-    },
-    {
-      "bn": "পানি ঠান্ডা",
-      "pronunciation": "pani thanda",
-      "en": "water cold",
-      "category": "adjectives",
-      "sourcePhrase": "আজ পানি ঠান্ডা।"
-    },
-    {
-      "bn": "আমার ব্যাগটি",
-      "pronunciation": "amar bagti",
-      "en": "my the bag",
-      "category": "adjectives",
-      "sourcePhrase": "আমার ব্যাগটি লাল।"
-    },
-    {
-      "bn": "ব্যাগটি লাল",
-      "pronunciation": "bagti lal",
-      "en": "the bag red",
-      "category": "adjectives",
-      "sourcePhrase": "আমার ব্যাগটি লাল।"
-    },
-    {
-      "bn": "এই খাবারটি খুব",
-      "pronunciation": "ei khabarti khub",
-      "en": "this the food very",
-      "category": "adjectives",
-      "sourcePhrase": "এই খাবারটি খুব ভালো।"
-    },
-    {
-      "bn": "খাবারটি খুব ভালো",
-      "pronunciation": "khabarti khub bhalo",
-      "en": "the food very good",
-      "category": "adjectives",
-      "sourcePhrase": "এই খাবারটি খুব ভালো।"
-    },
-    {
-      "bn": "আজ আবহাওয়া খারাপ",
-      "pronunciation": "aj abohawa kharap",
-      "en": "today weather bad",
-      "category": "adjectives",
-      "sourcePhrase": "আজ আবহাওয়া খারাপ।"
-    },
-    {
-      "bn": "ওই বাড়িটি অনেক",
-      "pronunciation": "oi bariti onek",
-      "en": "that the house very / many",
-      "category": "adjectives",
-      "sourcePhrase": "ওই বাড়িটি অনেক বড়।"
-    },
-    {
-      "bn": "বাড়িটি অনেক বড়",
-      "pronunciation": "bariti onek boro",
-      "en": "the house very / many big",
-      "category": "adjectives",
-      "sourcePhrase": "ওই বাড়িটি অনেক বড়।"
-    },
-    {
-      "bn": "আমার একটি ছোট",
-      "pronunciation": "amar ekti chhoto",
-      "en": "my one / a small",
-      "category": "adjectives",
-      "sourcePhrase": "আমার একটি ছোট ব্যাগ আছে।"
-    },
-    {
-      "bn": "একটি ছোট ব্যাগ",
-      "pronunciation": "ekti chhoto bag",
-      "en": "one / a small bag",
-      "category": "adjectives",
-      "sourcePhrase": "আমার একটি ছোট ব্যাগ আছে।"
-    },
-    {
-      "bn": "ছোট ব্যাগ আছে",
-      "pronunciation": "chhoto bag achhe",
-      "en": "small bag is / has",
-      "category": "adjectives",
-      "sourcePhrase": "আমার একটি ছোট ব্যাগ আছে।"
-    },
-    {
-      "bn": "আমি একটি নতুন",
-      "pronunciation": "ami ekti notun",
-      "en": "I one / a new",
-      "category": "adjectives",
-      "sourcePhrase": "আমি একটি নতুন বই কিনেছি।"
-    },
-    {
-      "bn": "একটি নতুন বই",
-      "pronunciation": "ekti notun boi",
-      "en": "one / a new book",
-      "category": "adjectives",
-      "sourcePhrase": "আমি একটি নতুন বই কিনেছি।"
-    },
-    {
-      "bn": "নতুন বই কিনেছি",
-      "pronunciation": "notun boi kinechhi",
-      "en": "new book bought",
-      "category": "adjectives",
-      "sourcePhrase": "আমি একটি নতুন বই কিনেছি।"
-    },
-    {
-      "bn": "এটি একটি পুরোনো",
-      "pronunciation": "eti ekti purono",
-      "en": "this one / a old",
-      "category": "adjectives",
-      "sourcePhrase": "এটি একটি পুরোনো ছবি।"
-    },
-    {
-      "bn": "একটি পুরোনো ছবি",
-      "pronunciation": "ekti purono chhobi",
-      "en": "one / a old picture",
-      "category": "adjectives",
-      "sourcePhrase": "এটি একটি পুরোনো ছবি।"
-    },
-    {
-      "bn": "এটা একটি সুন্দর",
-      "pronunciation": "eta ekti shundor",
-      "en": "this one / a beautiful",
-      "category": "adjectives",
-      "sourcePhrase": "এটা একটি সুন্দর বাড়ি।"
-    },
-    {
-      "bn": "একটি সুন্দর বাড়ি",
-      "pronunciation": "ekti shundor bari",
-      "en": "one / a beautiful house / home",
-      "category": "adjectives",
-      "sourcePhrase": "এটা একটি সুন্দর বাড়ি।"
-    },
-    {
-      "bn": "এই প্রশ্নটি খুব",
-      "pronunciation": "ei proshnoti khub",
-      "en": "this the question very",
-      "category": "adjectives",
-      "sourcePhrase": "এই প্রশ্নটি খুব সহজ।"
-    },
-    {
-      "bn": "প্রশ্নটি খুব সহজ",
-      "pronunciation": "proshnoti khub shohaj",
-      "en": "the question very easy",
-      "category": "adjectives",
-      "sourcePhrase": "এই প্রশ্নটি খুব সহজ।"
-    },
-    {
-      "bn": "এই কাজটি বেশ",
-      "pronunciation": "ei kajti besh",
-      "en": "this the task quite",
-      "category": "adjectives",
-      "sourcePhrase": "এই কাজটি বেশ কঠিন।"
-    },
-    {
-      "bn": "কাজটি বেশ কঠিন",
-      "pronunciation": "kajti besh kothin",
-      "en": "the task quite difficult",
-      "category": "adjectives",
-      "sourcePhrase": "এই কাজটি বেশ কঠিন।"
-    },
-    {
-      "bn": "চা এখনো গরম",
-      "pronunciation": "cha ekhono gorom",
-      "en": "tea still hot",
-      "category": "adjectives",
-      "sourcePhrase": "চা এখনো গরম।"
-    },
-    {
-      "bn": "আজ পানি ঠান্ডা",
-      "pronunciation": "aj pani thanda",
-      "en": "today water cold",
-      "category": "adjectives",
-      "sourcePhrase": "আজ পানি ঠান্ডা।"
-    },
-    {
-      "bn": "আমার ব্যাগটি লাল",
-      "pronunciation": "amar bagti lal",
-      "en": "my the bag red",
-      "category": "adjectives",
-      "sourcePhrase": "আমার ব্যাগটি লাল।"
-    },
-    {
-      "bn": "এই খাবারটি খুব ভালো",
-      "pronunciation": "ei khabarti khub bhalo",
-      "en": "this the food very good",
-      "category": "adjectives",
-      "sourcePhrase": "এই খাবারটি খুব ভালো।"
-    },
-    {
-      "bn": "ওই বাড়িটি অনেক বড়",
-      "pronunciation": "oi bariti onek boro",
-      "en": "that the house very / many big",
-      "category": "adjectives",
-      "sourcePhrase": "ওই বাড়িটি অনেক বড়।"
-    },
-    {
-      "bn": "আমার একটি ছোট ব্যাগ",
-      "pronunciation": "amar ekti chhoto bag",
-      "en": "my one / a small bag",
-      "category": "adjectives",
-      "sourcePhrase": "আমার একটি ছোট ব্যাগ আছে।"
-    },
-    {
-      "bn": "একটি ছোট ব্যাগ আছে",
-      "pronunciation": "ekti chhoto bag achhe",
-      "en": "one / a small bag is / has",
-      "category": "adjectives",
-      "sourcePhrase": "আমার একটি ছোট ব্যাগ আছে।"
-    },
-    {
-      "bn": "আমি একটি নতুন বই",
-      "pronunciation": "ami ekti notun boi",
-      "en": "I one / a new book",
-      "category": "adjectives",
-      "sourcePhrase": "আমি একটি নতুন বই কিনেছি।"
-    },
-    {
-      "bn": "একটি নতুন বই কিনেছি",
-      "pronunciation": "ekti notun boi kinechhi",
-      "en": "one / a new book bought",
-      "category": "adjectives",
-      "sourcePhrase": "আমি একটি নতুন বই কিনেছি।"
+      "bn": "অস্বচ্ছ",
+      "pronunciation": "ôswochchho",
+      "en": "opaque",
+      "category": "colors",
+      "sourcePhrase": "এটি অস্বচ্ছ।"
     }
   ],
   "practice": [],
