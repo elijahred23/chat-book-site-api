@@ -13,6 +13,7 @@ const navigationGroups = [
       { to: "/flashCards", label: "Flash Cards" },
       { to: "/Quran", label: "Quran" },
       { to: "/bengali", label: "Bengali Tutor" },
+      { to: "/bengali-alphabet", label: "Bangla Characters" },
     ],
   },
   {

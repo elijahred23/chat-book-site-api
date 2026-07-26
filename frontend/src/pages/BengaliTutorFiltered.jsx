@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { FaAngleDoubleLeft, FaAngleDoubleRight, FaFastBackward, FaFastForward, FaPause, FaPlay, FaRedoAlt, FaStepBackward, FaStepForward, FaStop, FaTrash } from "react-icons/fa";
+import { FaAngleDoubleLeft, FaAngleDoubleRight, FaDownload, FaFastBackward, FaFastForward, FaPause, FaPlay, FaRedoAlt, FaStepBackward, FaStepForward, FaStop, FaTrash, FaUpload } from "react-icons/fa";
 import BengaliTutor, { SELECTABLE_SAVED_LESSONS } from "./BengaliTutor.jsx";
 import { phraseBreakdownItems, withPhraseWords } from "../utils/bengaliPhraseBreakdown.js";
 import { getGoogleTtsAudio, GOOGLE_BENGALI_VOICE_KEY } from "../utils/googleTtsAudioCache.js";
@@ -13,6 +13,12 @@ const TRANSLATION_VOICE_KEY = "bengali_translation_voice";
 const MAX_SAVED_TRANSLATIONS = 20;
 
 const voiceKey = (voice) => `${voice.name}__${voice.lang}`;
+const fileSlug = (value) => String(value || "saved-translation")
+  .toLocaleLowerCase()
+  .normalize("NFKD")
+  .replace(/[^a-z0-9]+/g, "-")
+  .replace(/^-|-$/g, "")
+  .slice(0, 60) || "saved-translation";
 const storedString = (key) => {
   try { return localStorage.getItem(key) || ""; } catch { return ""; }
 };
@@ -199,10 +205,20 @@ export default function BengaliTutorFiltered() {
 function BengaliTranslator() {
   const [text, setText] = useState("");
   const [translations, setTranslations] = useState(storedTranslations);
+  const [selectedTranslationId, setSelectedTranslationId] = useState("");
   const [speechSource, setSpeechSource] = useState(() => storedString(TRANSLATION_VOICE_KEY) || "system");
   const [status, setStatus] = useState("idle");
   const [error, setError] = useState("");
   const [speechError, setSpeechError] = useState("");
+  const [translationFileStatus, setTranslationFileStatus] = useState("");
+  const translationFileInputRef = useRef(null);
+  const selectedTranslation = translations.find((record) => record.id === selectedTranslationId) || translations[0] || null;
+
+  useEffect(() => {
+    if (selectedTranslation?.id !== selectedTranslationId) {
+      setSelectedTranslationId(selectedTranslation?.id || "");
+    }
+  }, [selectedTranslation, selectedTranslationId]);
 
   const changeSpeechSource = (value) => {
     setSpeechSource(value);
@@ -257,6 +273,75 @@ function BengaliTranslator() {
     });
   };
 
+  const downloadTranslation = async (record) => {
+    const json = `${JSON.stringify(record, null, 2)}\n`;
+    const fileName = `${fileSlug(record.translation)}.json`;
+    if (window.showSaveFilePicker) {
+      try {
+        const fileHandle = await window.showSaveFilePicker({
+          suggestedName: fileName,
+          types: [{
+            description: "JSON file",
+            accept: { "application/json": [".json"] },
+          }],
+        });
+        const writable = await fileHandle.createWritable();
+        await writable.write(json);
+        await writable.close();
+        setTranslationFileStatus(`Saved ${fileName}.`);
+      } catch (saveError) {
+        if (saveError.name !== "AbortError") {
+          setTranslationFileStatus(`Could not save ${fileName}: ${saveError.message}`);
+        }
+      }
+      return;
+    }
+    const url = URL.createObjectURL(new Blob([json], { type: "application/json;charset=utf-8" }));
+    const anchor = document.createElement("a");
+    anchor.href = url;
+    anchor.download = fileName;
+    document.body.appendChild(anchor);
+    anchor.click();
+    anchor.remove();
+    URL.revokeObjectURL(url);
+    setTranslationFileStatus(`Downloaded ${fileName}. Use your browser's download settings to choose a folder.`);
+  };
+
+  const uploadTranslation = async (event) => {
+    const [file] = event.target.files || [];
+    event.target.value = "";
+    if (!file) return;
+    setTranslationFileStatus("");
+    try {
+      const value = JSON.parse(await file.text());
+      const sentenceFieldsValid = Array.isArray(value?.sentences) && value.sentences.length
+        && value.sentences.every((sentence) => sentence?.bengali && sentence.pronunciation && sentence.translation
+          && Array.isArray(sentence.words)
+          && sentence.words.every((word) => word?.bn && word.pronunciation && word.en));
+      if (!value?.bengali || !value.pronunciation || !value.translation || !sentenceFieldsValid) {
+        throw new Error("The file is not a complete saved Bengali translation.");
+      }
+      const importedRecord = {
+        ...value,
+        id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
+        savedAt: new Date().toISOString(),
+      };
+      setSelectedTranslationId(importedRecord.id);
+      setTranslations((current) => {
+        const next = [importedRecord, ...current].slice(0, MAX_SAVED_TRANSLATIONS);
+        try {
+          localStorage.setItem(TRANSLATION_HISTORY_KEY, JSON.stringify(next));
+        } catch {
+          // The uploaded translation remains available for this session.
+        }
+        return next;
+      });
+      setTranslationFileStatus(`Added saved translation from ${file.name}.`);
+    } catch (fileError) {
+      setTranslationFileStatus(`Could not upload ${file.name}: ${fileError.message}`);
+    }
+  };
+
   const translate = async (event) => {
     event.preventDefault();
     const value = text.trim();
@@ -283,6 +368,7 @@ function BengaliTranslator() {
         sentences: data.sentences,
         savedAt: new Date().toISOString(),
       };
+      setSelectedTranslationId(record.id);
       setTranslations((current) => {
         const next = [record, ...current].slice(0, MAX_SAVED_TRANSLATIONS);
         try {
@@ -346,21 +432,56 @@ function BengaliTranslator() {
         <span style={ui.speechHint}>Use the play buttons for a full sentence, or select any Bengali word to hear it.</span>
       </div>
       {speechError && <div style={ui.notice} role="alert">{speechError}</div>}
+      <div style={ui.translationHistoryHeader}>
+        <h3 style={ui.translationHistoryTitle}>Saved translations</h3>
+        <div style={ui.translationHistoryControls}>
+          {translations.length > 1 && (
+            <label style={ui.translationSelectLabel}>
+              <span>Choose translation</span>
+              <select
+                style={ui.translationSelect}
+                value={selectedTranslation?.id || ""}
+                onChange={(event) => setSelectedTranslationId(event.target.value)}
+              >
+                {translations.map((record) => (
+                  <option key={record.id} value={record.id}>{record.translation}</option>
+                ))}
+              </select>
+            </label>
+          )}
+          <button type="button" style={ui.button} onClick={() => translationFileInputRef.current?.click()}>
+            <FaUpload aria-hidden="true" /> Upload saved translation
+          </button>
+          <input ref={translationFileInputRef} type="file" accept="application/json,.json" onChange={uploadTranslation} hidden />
+        </div>
+      </div>
+      {translationFileStatus && <div style={ui.translationFileStatus} role="status">{translationFileStatus}</div>}
       <div style={ui.translationHistory} aria-live="polite">
-        {translations.map((record, recordIndex) => (
+        {selectedTranslation && [selectedTranslation].map((record) => (
           <article key={record.id} style={ui.translationCard}>
             <div>
               <div style={ui.translationCardHeader}>
-                <small style={ui.resultLabel}>{recordIndex === 0 && status === "success" ? "New translation" : "Saved translation"}</small>
-                <button
-                  type="button"
-                  style={ui.deleteButton}
-                  onClick={() => deleteTranslation(record)}
-                  aria-label={`Delete translation: ${record.translation}`}
-                  title="Delete this saved translation"
-                >
-                  <FaTrash aria-hidden="true" /> Delete
-                </button>
+                <small style={ui.resultLabel}>{record.id === translations[0]?.id && status === "success" ? "New translation" : "Saved translation"}</small>
+                <div style={ui.translationCardActions}>
+                  <button
+                    type="button"
+                    style={ui.downloadButton}
+                    onClick={() => downloadTranslation(record)}
+                    aria-label={`Download translation: ${record.translation}`}
+                    title="Download this saved translation as JSON"
+                  >
+                    <FaDownload aria-hidden="true" /> Download
+                  </button>
+                  <button
+                    type="button"
+                    style={ui.deleteButton}
+                    onClick={() => deleteTranslation(record)}
+                    aria-label={`Delete translation: ${record.translation}`}
+                    title="Delete this saved translation"
+                  >
+                    <FaTrash aria-hidden="true" /> Delete
+                  </button>
+                </div>
               </div>
               <div style={ui.resultBengali} lang="bn">{record.bengali}</div>
               <div style={ui.resultPronunciation}>{record.pronunciation}</div>
@@ -867,9 +988,17 @@ const ui = {
   translatorForm: { display: "grid", gap: ".75rem" },
   textarea: { width: "100%", minHeight: 110, resize: "vertical", padding: ".75rem", border: "1px solid #94a3b8", borderRadius: 10, background: "#fff", color: "#0f172a", font: "inherit", fontSize: "1.1rem" },
   translationHistory: { display: "grid", gap: ".85rem" },
+  translationHistoryHeader: { display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: ".75rem" },
+  translationHistoryTitle: { margin: 0, color: "#0f172a" },
+  translationHistoryControls: { display: "flex", flex: "1 1 440px", flexWrap: "wrap", alignItems: "end", justifyContent: "flex-end", gap: ".6rem" },
+  translationSelectLabel: { flex: "1 1 240px", display: "grid", gap: ".3rem", color: "#334155", fontSize: ".82rem", fontWeight: 800 },
+  translationSelect: { width: "100%", minHeight: 44, padding: ".6rem .7rem", border: "1px solid #94a3b8", borderRadius: 10, background: "#fff", color: "#0f172a", font: "inherit", fontWeight: 700 },
+  translationFileStatus: { color: "#475569", fontWeight: 700, overflowWrap: "anywhere" },
   translationCard: { padding: "1rem", display: "grid", gap: "1rem", border: "1px solid #86efac", borderRadius: 14, background: "#f0fdf4", color: "#14532d" },
   translationCardHeader: { display: "flex", alignItems: "center", justifyContent: "space-between", gap: ".75rem" },
+  translationCardActions: { display: "flex", flexWrap: "wrap", justifyContent: "flex-end", gap: ".45rem" },
   resultLabel: { color: "#15803d", fontWeight: 850, textTransform: "uppercase", letterSpacing: ".04em" },
+  downloadButton: { minHeight: 36, padding: ".45rem .65rem", display: "inline-flex", alignItems: "center", gap: ".35rem", border: "1px solid #bfdbfe", borderRadius: 8, background: "#fff", color: "#1d4ed8", fontWeight: 800 },
   deleteButton: { minHeight: 36, padding: ".45rem .65rem", display: "inline-flex", alignItems: "center", gap: ".35rem", border: "1px solid #fecaca", borderRadius: 8, background: "#fff", color: "#b91c1c", fontWeight: 800 },
   resultBengali: { marginTop: ".35rem", color: "#0f172a", fontSize: "clamp(1.6rem, 5vw, 2.4rem)", fontWeight: 850, lineHeight: 1.3 },
   resultPronunciation: { marginTop: ".25rem", color: "#1d4ed8", fontSize: "1.05rem", fontWeight: 750 },
@@ -911,7 +1040,7 @@ const ui = {
   iconButton: { width: 34, height: 34, padding: 0, display: "inline-grid", placeItems: "center", border: "1px solid #94a3b8", borderRadius: 8, background: "#fff", color: "#0f172a", fontSize: ".85rem" },
   iconPrimary: { width: 34, height: 34, padding: 0, display: "inline-grid", placeItems: "center", border: 0, borderRadius: 8, background: "#0f172a", color: "#fff", fontSize: ".85rem" },
   primary: { minHeight: 44, padding: ".65rem 1rem", border: 0, borderRadius: 10, background: "#0f172a", color: "#fff", fontWeight: 850 },
-  button: { minHeight: 44, padding: ".65rem 1rem", border: "1px solid #94a3b8", borderRadius: 10, background: "#f8fafc", color: "#0f172a", fontWeight: 800 },
+  button: { minHeight: 44, padding: ".65rem 1rem", display: "inline-flex", alignItems: "center", justifyContent: "center", gap: ".45rem", border: "1px solid #94a3b8", borderRadius: 10, background: "#f8fafc", color: "#0f172a", fontWeight: 800 },
   notice: { padding: "1rem", borderRadius: 12, background: "#fff7ed", color: "#9a3412", fontWeight: 750 },
   eyebrow: { color: "#2563eb", fontSize: ".78rem", textTransform: "uppercase" },
   heading: { margin: ".25rem 0", color: "#0f172a" },

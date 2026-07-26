@@ -27,6 +27,7 @@ import AppDrawers from "./layouts/AppDrawers.jsx";
 import ActionButtonStudio from "./pages/ActionButtonStudio.jsx";
 import ApiCheck from "./pages/ApiCheck.jsx";
 import BengaliTutorWithVoice from "./pages/BengaliTutorWithVoice.jsx";
+import BengaliAlphabet from "./pages/BengaliAlphabet.jsx";
 import ChatTemplate from "./pages/ChatTemplate.jsx";
 import CodingProblems from "./pages/CodingProblems.jsx";
 import CorrespondentBankingGuide from "./pages/CorrespondentBankingGuide.jsx";
@@ -128,6 +129,7 @@ function AppContent() {
           <Route path="/flashCards" element={<FlashCardApp />} />
           <Route path="/plantUML" element={<PlantUMLViewer />} />
           <Route path="/bengali" element={<BengaliTutorWithVoice />} />
+          <Route path="/bengali-alphabet" element={<BengaliAlphabet />} />
           <Route path="/coding" element={<CodingProblems />} />
           <Route path="/cpu-simulator" element={<Suspense fallback={null}><CpuSimulatorWithOutputHistory /></Suspense>} />
           <Route path="/system-design" element={<SystemDesignPrep />} />
