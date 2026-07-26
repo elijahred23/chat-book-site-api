@@ -1,0 +1,136 @@
+{
+  "id": "consonant-po",
+  "title": "প — pô",
+  "summary": "Learn প, pronounced pô, and recognize it in three useful Bengali words.",
+  "level": "beginner",
+  "topic": "Consonant: প",
+  "focus": "character recognition and pronunciation",
+  "phrases": [
+    {
+      "bn": "পাখি শব্দে প আছে।",
+      "pronunciation": "pakhi shôbde pô achhe",
+      "en": "The word “পাখি” contains প.",
+      "context": "Find প in পাখি and say the complete word aloud.",
+      "category": "consonant-po",
+      "words": [
+        {
+          "bn": "পাখি",
+          "pronunciation": "pakhi",
+          "en": "bird"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "প",
+          "pronunciation": "pô",
+          "en": "the pô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "পানি শব্দে প আছে।",
+      "pronunciation": "pani shôbde pô achhe",
+      "en": "The word “পানি” contains প.",
+      "context": "Find প in পানি and say the complete word aloud.",
+      "category": "consonant-po",
+      "words": [
+        {
+          "bn": "পানি",
+          "pronunciation": "pani",
+          "en": "water"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "প",
+          "pronunciation": "pô",
+          "en": "the pô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "কাপ শব্দে প আছে।",
+      "pronunciation": "kap shôbde pô achhe",
+      "en": "The word “কাপ” contains প.",
+      "context": "Find প in কাপ and say the complete word aloud.",
+      "category": "consonant-po",
+      "words": [
+        {
+          "bn": "কাপ",
+          "pronunciation": "kap",
+          "en": "cup"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "প",
+          "pronunciation": "pô",
+          "en": "the pô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bn": "প",
+      "pronunciation": "pô",
+      "en": "pô: p",
+      "category": "consonant-po",
+      "sourcePhrase": "পাখি শব্দে প আছে।"
+    },
+    {
+      "bn": "পাখি",
+      "pronunciation": "pakhi",
+      "en": "bird",
+      "category": "consonant-po",
+      "sourcePhrase": "পাখি শব্দে প আছে।"
+    },
+    {
+      "bn": "পানি",
+      "pronunciation": "pani",
+      "en": "water",
+      "category": "consonant-po",
+      "sourcePhrase": "পানি শব্দে প আছে।"
+    },
+    {
+      "bn": "কাপ",
+      "pronunciation": "kap",
+      "en": "cup",
+      "category": "consonant-po",
+      "sourcePhrase": "কাপ শব্দে প আছে।"
+    }
+  ],
+  "practice": [
+    "Say প three times: pô, pô, pô.",
+    "Find প in each example word and read the whole word aloud.",
+    "Write প five times while saying its name."
+  ],
+  "notes": [
+    "প is pronounced approximately p.",
+    "Listen to the audio and compare প across the example words."
+  ]
+}

@@ -1,0 +1,136 @@
+{
+  "id": "consonant-lo",
+  "title": "ল — lô",
+  "summary": "Learn ল, pronounced lô, and recognize it in three useful Bengali words.",
+  "level": "beginner",
+  "topic": "Consonant: ল",
+  "focus": "character recognition and pronunciation",
+  "phrases": [
+    {
+      "bn": "লাল শব্দে ল আছে।",
+      "pronunciation": "lal shôbde lô achhe",
+      "en": "The word “লাল” contains ল.",
+      "context": "Find ল in লাল and say the complete word aloud.",
+      "category": "consonant-lo",
+      "words": [
+        {
+          "bn": "লাল",
+          "pronunciation": "lal",
+          "en": "red"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ল",
+          "pronunciation": "lô",
+          "en": "the lô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "লবণ শব্দে ল আছে।",
+      "pronunciation": "lôboṇ shôbde lô achhe",
+      "en": "The word “লবণ” contains ল.",
+      "context": "Find ল in লবণ and say the complete word aloud.",
+      "category": "consonant-lo",
+      "words": [
+        {
+          "bn": "লবণ",
+          "pronunciation": "lôboṇ",
+          "en": "salt"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ল",
+          "pronunciation": "lô",
+          "en": "the lô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "ফল শব্দে ল আছে।",
+      "pronunciation": "phôl shôbde lô achhe",
+      "en": "The word “ফল” contains ল.",
+      "context": "Find ল in ফল and say the complete word aloud.",
+      "category": "consonant-lo",
+      "words": [
+        {
+          "bn": "ফল",
+          "pronunciation": "phôl",
+          "en": "fruit"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ল",
+          "pronunciation": "lô",
+          "en": "the lô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bn": "ল",
+      "pronunciation": "lô",
+      "en": "lô: l",
+      "category": "consonant-lo",
+      "sourcePhrase": "লাল শব্দে ল আছে।"
+    },
+    {
+      "bn": "লাল",
+      "pronunciation": "lal",
+      "en": "red",
+      "category": "consonant-lo",
+      "sourcePhrase": "লাল শব্দে ল আছে।"
+    },
+    {
+      "bn": "লবণ",
+      "pronunciation": "lôboṇ",
+      "en": "salt",
+      "category": "consonant-lo",
+      "sourcePhrase": "লবণ শব্দে ল আছে।"
+    },
+    {
+      "bn": "ফল",
+      "pronunciation": "phôl",
+      "en": "fruit",
+      "category": "consonant-lo",
+      "sourcePhrase": "ফল শব্দে ল আছে।"
+    }
+  ],
+  "practice": [
+    "Say ল three times: lô, lô, lô.",
+    "Find ল in each example word and read the whole word aloud.",
+    "Write ল five times while saying its name."
+  ],
+  "notes": [
+    "ল is pronounced approximately l.",
+    "Listen to the audio and compare ল across the example words."
+  ]
+}

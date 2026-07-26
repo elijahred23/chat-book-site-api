@@ -1,0 +1,136 @@
+{
+  "id": "consonant-cho",
+  "title": "চ — chô",
+  "summary": "Learn চ, pronounced chô, and recognize it in three useful Bengali words.",
+  "level": "beginner",
+  "topic": "Consonant: চ",
+  "focus": "character recognition and pronunciation",
+  "phrases": [
+    {
+      "bn": "চাঁদ শব্দে চ আছে।",
+      "pronunciation": "chãd shôbde chô achhe",
+      "en": "The word “চাঁদ” contains চ.",
+      "context": "Find চ in চাঁদ and say the complete word aloud.",
+      "category": "consonant-cho",
+      "words": [
+        {
+          "bn": "চাঁদ",
+          "pronunciation": "chãd",
+          "en": "moon"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "চ",
+          "pronunciation": "chô",
+          "en": "the chô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "চা শব্দে চ আছে।",
+      "pronunciation": "cha shôbde chô achhe",
+      "en": "The word “চা” contains চ.",
+      "context": "Find চ in চা and say the complete word aloud.",
+      "category": "consonant-cho",
+      "words": [
+        {
+          "bn": "চা",
+          "pronunciation": "cha",
+          "en": "tea"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "চ",
+          "pronunciation": "chô",
+          "en": "the chô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "মাছ শব্দে চ আছে।",
+      "pronunciation": "machh shôbde chô achhe",
+      "en": "The word “মাছ” contains চ.",
+      "context": "Find চ in মাছ and say the complete word aloud.",
+      "category": "consonant-cho",
+      "words": [
+        {
+          "bn": "মাছ",
+          "pronunciation": "machh",
+          "en": "fish"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "চ",
+          "pronunciation": "chô",
+          "en": "the chô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bn": "চ",
+      "pronunciation": "chô",
+      "en": "chô: ch as in chair",
+      "category": "consonant-cho",
+      "sourcePhrase": "চাঁদ শব্দে চ আছে।"
+    },
+    {
+      "bn": "চাঁদ",
+      "pronunciation": "chãd",
+      "en": "moon",
+      "category": "consonant-cho",
+      "sourcePhrase": "চাঁদ শব্দে চ আছে।"
+    },
+    {
+      "bn": "চা",
+      "pronunciation": "cha",
+      "en": "tea",
+      "category": "consonant-cho",
+      "sourcePhrase": "চা শব্দে চ আছে।"
+    },
+    {
+      "bn": "মাছ",
+      "pronunciation": "machh",
+      "en": "fish",
+      "category": "consonant-cho",
+      "sourcePhrase": "মাছ শব্দে চ আছে।"
+    }
+  ],
+  "practice": [
+    "Say চ three times: chô, chô, chô.",
+    "Find চ in each example word and read the whole word aloud.",
+    "Write চ five times while saying its name."
+  ],
+  "notes": [
+    "চ is pronounced approximately ch as in chair.",
+    "Listen to the audio and compare চ across the example words."
+  ]
+}

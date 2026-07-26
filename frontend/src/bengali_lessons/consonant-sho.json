@@ -1,0 +1,136 @@
+{
+  "id": "consonant-sho",
+  "title": "শ — shô",
+  "summary": "Learn শ, pronounced shô, and recognize it in three useful Bengali words.",
+  "level": "beginner",
+  "topic": "Consonant: শ",
+  "focus": "character recognition and pronunciation",
+  "phrases": [
+    {
+      "bn": "শাপলা শব্দে শ আছে।",
+      "pronunciation": "shapla shôbde shô achhe",
+      "en": "The word “শাপলা” contains শ.",
+      "context": "Find শ in শাপলা and say the complete word aloud.",
+      "category": "consonant-sho",
+      "words": [
+        {
+          "bn": "শাপলা",
+          "pronunciation": "shapla",
+          "en": "water lily"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "শ",
+          "pronunciation": "shô",
+          "en": "the shô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "শিশু শব্দে শ আছে।",
+      "pronunciation": "shishu shôbde shô achhe",
+      "en": "The word “শিশু” contains শ.",
+      "context": "Find শ in শিশু and say the complete word aloud.",
+      "category": "consonant-sho",
+      "words": [
+        {
+          "bn": "শিশু",
+          "pronunciation": "shishu",
+          "en": "child"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "শ",
+          "pronunciation": "shô",
+          "en": "the shô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "আকাশ শব্দে শ আছে।",
+      "pronunciation": "akash shôbde shô achhe",
+      "en": "The word “আকাশ” contains শ.",
+      "context": "Find শ in আকাশ and say the complete word aloud.",
+      "category": "consonant-sho",
+      "words": [
+        {
+          "bn": "আকাশ",
+          "pronunciation": "akash",
+          "en": "sky"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "শ",
+          "pronunciation": "shô",
+          "en": "the shô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bn": "শ",
+      "pronunciation": "shô",
+      "en": "shô: sh",
+      "category": "consonant-sho",
+      "sourcePhrase": "শাপলা শব্দে শ আছে।"
+    },
+    {
+      "bn": "শাপলা",
+      "pronunciation": "shapla",
+      "en": "water lily",
+      "category": "consonant-sho",
+      "sourcePhrase": "শাপলা শব্দে শ আছে।"
+    },
+    {
+      "bn": "শিশু",
+      "pronunciation": "shishu",
+      "en": "child",
+      "category": "consonant-sho",
+      "sourcePhrase": "শিশু শব্দে শ আছে।"
+    },
+    {
+      "bn": "আকাশ",
+      "pronunciation": "akash",
+      "en": "sky",
+      "category": "consonant-sho",
+      "sourcePhrase": "আকাশ শব্দে শ আছে।"
+    }
+  ],
+  "practice": [
+    "Say শ three times: shô, shô, shô.",
+    "Find শ in each example word and read the whole word aloud.",
+    "Write শ five times while saying its name."
+  ],
+  "notes": [
+    "শ is pronounced approximately sh.",
+    "Listen to the audio and compare শ across the example words."
+  ]
+}

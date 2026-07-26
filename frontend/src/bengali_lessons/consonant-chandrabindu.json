@@ -1,0 +1,136 @@
+{
+  "id": "consonant-chandrabindu",
+  "title": "ঁ — chandrabindu",
+  "summary": "Learn ঁ, pronounced chandrabindu, and recognize it in three useful Bengali words.",
+  "level": "beginner",
+  "topic": "Consonant: ঁ",
+  "focus": "character recognition and pronunciation",
+  "phrases": [
+    {
+      "bn": "চাঁদ শব্দে ঁ আছে।",
+      "pronunciation": "chãd shôbde chandrabindu achhe",
+      "en": "The word “চাঁদ” contains ঁ.",
+      "context": "Find ঁ in চাঁদ and say the complete word aloud.",
+      "category": "consonant-chandrabindu",
+      "words": [
+        {
+          "bn": "চাঁদ",
+          "pronunciation": "chãd",
+          "en": "moon"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ঁ",
+          "pronunciation": "chandrabindu",
+          "en": "the chandrabindu character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "বাঁশ শব্দে ঁ আছে।",
+      "pronunciation": "bãsh shôbde chandrabindu achhe",
+      "en": "The word “বাঁশ” contains ঁ.",
+      "context": "Find ঁ in বাঁশ and say the complete word aloud.",
+      "category": "consonant-chandrabindu",
+      "words": [
+        {
+          "bn": "বাঁশ",
+          "pronunciation": "bãsh",
+          "en": "bamboo"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ঁ",
+          "pronunciation": "chandrabindu",
+          "en": "the chandrabindu character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "হাঁস শব্দে ঁ আছে।",
+      "pronunciation": "hãsh shôbde chandrabindu achhe",
+      "en": "The word “হাঁস” contains ঁ.",
+      "context": "Find ঁ in হাঁস and say the complete word aloud.",
+      "category": "consonant-chandrabindu",
+      "words": [
+        {
+          "bn": "হাঁস",
+          "pronunciation": "hãsh",
+          "en": "duck"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ঁ",
+          "pronunciation": "chandrabindu",
+          "en": "the chandrabindu character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bn": "ঁ",
+      "pronunciation": "chandrabindu",
+      "en": "chandrabindu: nasalizes the preceding vowel",
+      "category": "consonant-chandrabindu",
+      "sourcePhrase": "চাঁদ শব্দে ঁ আছে।"
+    },
+    {
+      "bn": "চাঁদ",
+      "pronunciation": "chãd",
+      "en": "moon",
+      "category": "consonant-chandrabindu",
+      "sourcePhrase": "চাঁদ শব্দে ঁ আছে।"
+    },
+    {
+      "bn": "বাঁশ",
+      "pronunciation": "bãsh",
+      "en": "bamboo",
+      "category": "consonant-chandrabindu",
+      "sourcePhrase": "বাঁশ শব্দে ঁ আছে।"
+    },
+    {
+      "bn": "হাঁস",
+      "pronunciation": "hãsh",
+      "en": "duck",
+      "category": "consonant-chandrabindu",
+      "sourcePhrase": "হাঁস শব্দে ঁ আছে।"
+    }
+  ],
+  "practice": [
+    "Say ঁ three times: chandrabindu, chandrabindu, chandrabindu.",
+    "Find ঁ in each example word and read the whole word aloud.",
+    "Write ঁ five times while saying its name."
+  ],
+  "notes": [
+    "ঁ is pronounced approximately nasalizes the preceding vowel.",
+    "ঁ is a sign placed above a vowel to nasalize it."
+  ]
+}

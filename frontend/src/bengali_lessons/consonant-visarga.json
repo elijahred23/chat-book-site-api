@@ -1,0 +1,136 @@
+{
+  "id": "consonant-visarga",
+  "title": "ঃ — visarga",
+  "summary": "Learn ঃ, pronounced visarga, and recognize it in three useful Bengali words.",
+  "level": "beginner",
+  "topic": "Consonant: ঃ",
+  "focus": "character recognition and pronunciation",
+  "phrases": [
+    {
+      "bn": "দুঃখ শব্দে ঃ আছে।",
+      "pronunciation": "dukkho shôbde visarga achhe",
+      "en": "The word “দুঃখ” contains ঃ.",
+      "context": "Find ঃ in দুঃখ and say the complete word aloud.",
+      "category": "consonant-visarga",
+      "words": [
+        {
+          "bn": "দুঃখ",
+          "pronunciation": "dukkho",
+          "en": "sorrow"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ঃ",
+          "pronunciation": "visarga",
+          "en": "the visarga character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "নিঃশ্বাস শব্দে ঃ আছে।",
+      "pronunciation": "nishshash shôbde visarga achhe",
+      "en": "The word “নিঃশ্বাস” contains ঃ.",
+      "context": "Find ঃ in নিঃশ্বাস and say the complete word aloud.",
+      "category": "consonant-visarga",
+      "words": [
+        {
+          "bn": "নিঃশ্বাস",
+          "pronunciation": "nishshash",
+          "en": "breath"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ঃ",
+          "pronunciation": "visarga",
+          "en": "the visarga character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "পুনঃ শব্দে ঃ আছে।",
+      "pronunciation": "punôh shôbde visarga achhe",
+      "en": "The word “পুনঃ” contains ঃ.",
+      "context": "Find ঃ in পুনঃ and say the complete word aloud.",
+      "category": "consonant-visarga",
+      "words": [
+        {
+          "bn": "পুনঃ",
+          "pronunciation": "punôh",
+          "en": "again"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ঃ",
+          "pronunciation": "visarga",
+          "en": "the visarga character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bn": "ঃ",
+      "pronunciation": "visarga",
+      "en": "visarga: a breathy h after a vowel",
+      "category": "consonant-visarga",
+      "sourcePhrase": "দুঃখ শব্দে ঃ আছে।"
+    },
+    {
+      "bn": "দুঃখ",
+      "pronunciation": "dukkho",
+      "en": "sorrow",
+      "category": "consonant-visarga",
+      "sourcePhrase": "দুঃখ শব্দে ঃ আছে।"
+    },
+    {
+      "bn": "নিঃশ্বাস",
+      "pronunciation": "nishshash",
+      "en": "breath",
+      "category": "consonant-visarga",
+      "sourcePhrase": "নিঃশ্বাস শব্দে ঃ আছে।"
+    },
+    {
+      "bn": "পুনঃ",
+      "pronunciation": "punôh",
+      "en": "again",
+      "category": "consonant-visarga",
+      "sourcePhrase": "পুনঃ শব্দে ঃ আছে।"
+    }
+  ],
+  "practice": [
+    "Say ঃ three times: visarga, visarga, visarga.",
+    "Find ঃ in each example word and read the whole word aloud.",
+    "Write ঃ five times while saying its name."
+  ],
+  "notes": [
+    "ঃ is pronounced approximately a breathy h after a vowel.",
+    "ঃ is a sign used mainly in learned or Sanskrit-derived spelling."
+  ]
+}

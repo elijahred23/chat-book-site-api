@@ -1,0 +1,136 @@
+{
+  "id": "consonant-nno",
+  "title": "ণ — ṇô",
+  "summary": "Learn ণ, pronounced ṇô, and recognize it in three useful Bengali words.",
+  "level": "beginner",
+  "topic": "Consonant: ণ",
+  "focus": "character recognition and pronunciation",
+  "phrases": [
+    {
+      "bn": "হরিণ শব্দে ণ আছে।",
+      "pronunciation": "horiṇ shôbde ṇô achhe",
+      "en": "The word “হরিণ” contains ণ.",
+      "context": "Find ণ in হরিণ and say the complete word aloud.",
+      "category": "consonant-nno",
+      "words": [
+        {
+          "bn": "হরিণ",
+          "pronunciation": "horiṇ",
+          "en": "deer"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ণ",
+          "pronunciation": "ṇô",
+          "en": "the ṇô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "গণিত শব্দে ণ আছে।",
+      "pronunciation": "gôṇit shôbde ṇô achhe",
+      "en": "The word “গণিত” contains ণ.",
+      "context": "Find ণ in গণিত and say the complete word aloud.",
+      "category": "consonant-nno",
+      "words": [
+        {
+          "bn": "গণিত",
+          "pronunciation": "gôṇit",
+          "en": "mathematics"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ণ",
+          "pronunciation": "ṇô",
+          "en": "the ṇô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "ঘণ্টা শব্দে ণ আছে।",
+      "pronunciation": "ghônṭa shôbde ṇô achhe",
+      "en": "The word “ঘণ্টা” contains ণ.",
+      "context": "Find ণ in ঘণ্টা and say the complete word aloud.",
+      "category": "consonant-nno",
+      "words": [
+        {
+          "bn": "ঘণ্টা",
+          "pronunciation": "ghônṭa",
+          "en": "hour"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ণ",
+          "pronunciation": "ṇô",
+          "en": "the ṇô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bn": "ণ",
+      "pronunciation": "ṇô",
+      "en": "ṇô: a retroflex n",
+      "category": "consonant-nno",
+      "sourcePhrase": "হরিণ শব্দে ণ আছে।"
+    },
+    {
+      "bn": "হরিণ",
+      "pronunciation": "horiṇ",
+      "en": "deer",
+      "category": "consonant-nno",
+      "sourcePhrase": "হরিণ শব্দে ণ আছে।"
+    },
+    {
+      "bn": "গণিত",
+      "pronunciation": "gôṇit",
+      "en": "mathematics",
+      "category": "consonant-nno",
+      "sourcePhrase": "গণিত শব্দে ণ আছে।"
+    },
+    {
+      "bn": "ঘণ্টা",
+      "pronunciation": "ghônṭa",
+      "en": "hour",
+      "category": "consonant-nno",
+      "sourcePhrase": "ঘণ্টা শব্দে ণ আছে।"
+    }
+  ],
+  "practice": [
+    "Say ণ three times: ṇô, ṇô, ṇô.",
+    "Find ণ in each example word and read the whole word aloud.",
+    "Write ণ five times while saying its name."
+  ],
+  "notes": [
+    "ণ is pronounced approximately a retroflex n.",
+    "ণ is most often found inside Sanskrit-derived words and consonant clusters."
+  ]
+}

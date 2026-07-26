@@ -1,0 +1,136 @@
+{
+  "id": "consonant-jo-yo",
+  "title": "য — jô / yô",
+  "summary": "Learn য, pronounced jô / yô, and recognize it in three useful Bengali words.",
+  "level": "beginner",
+  "topic": "Consonant: য",
+  "focus": "character recognition and pronunciation",
+  "phrases": [
+    {
+      "bn": "যান শব্দে য আছে।",
+      "pronunciation": "jan shôbde jô / yô achhe",
+      "en": "The word “যান” contains য.",
+      "context": "Find য in যান and say the complete word aloud.",
+      "category": "consonant-jo-yo",
+      "words": [
+        {
+          "bn": "যান",
+          "pronunciation": "jan",
+          "en": "vehicle"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "য",
+          "pronunciation": "jô / yô",
+          "en": "the jô / yô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "যদি শব্দে য আছে।",
+      "pronunciation": "jôdi shôbde jô / yô achhe",
+      "en": "The word “যদি” contains য.",
+      "context": "Find য in যদি and say the complete word aloud.",
+      "category": "consonant-jo-yo",
+      "words": [
+        {
+          "bn": "যদি",
+          "pronunciation": "jôdi",
+          "en": "if"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "য",
+          "pronunciation": "jô / yô",
+          "en": "the jô / yô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "যোগ শব্দে য আছে।",
+      "pronunciation": "jog shôbde jô / yô achhe",
+      "en": "The word “যোগ” contains য.",
+      "context": "Find য in যোগ and say the complete word aloud.",
+      "category": "consonant-jo-yo",
+      "words": [
+        {
+          "bn": "যোগ",
+          "pronunciation": "jog",
+          "en": "yoga / addition"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "য",
+          "pronunciation": "jô / yô",
+          "en": "the jô / yô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bn": "য",
+      "pronunciation": "jô / yô",
+      "en": "jô / yô: historically y and often pronounced j",
+      "category": "consonant-jo-yo",
+      "sourcePhrase": "যান শব্দে য আছে।"
+    },
+    {
+      "bn": "যান",
+      "pronunciation": "jan",
+      "en": "vehicle",
+      "category": "consonant-jo-yo",
+      "sourcePhrase": "যান শব্দে য আছে।"
+    },
+    {
+      "bn": "যদি",
+      "pronunciation": "jôdi",
+      "en": "if",
+      "category": "consonant-jo-yo",
+      "sourcePhrase": "যদি শব্দে য আছে।"
+    },
+    {
+      "bn": "যোগ",
+      "pronunciation": "jog",
+      "en": "yoga / addition",
+      "category": "consonant-jo-yo",
+      "sourcePhrase": "যোগ শব্দে য আছে।"
+    }
+  ],
+  "practice": [
+    "Say য three times: jô / yô, jô / yô, jô / yô.",
+    "Find য in each example word and read the whole word aloud.",
+    "Write য five times while saying its name."
+  ],
+  "notes": [
+    "য is pronounced approximately historically y and often pronounced j.",
+    "Listen to the audio and compare য across the example words."
+  ]
+}

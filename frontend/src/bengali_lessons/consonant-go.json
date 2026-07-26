@@ -1,0 +1,136 @@
+{
+  "id": "consonant-go",
+  "title": "গ — gô",
+  "summary": "Learn গ, pronounced gô, and recognize it in three useful Bengali words.",
+  "level": "beginner",
+  "topic": "Consonant: গ",
+  "focus": "character recognition and pronunciation",
+  "phrases": [
+    {
+      "bn": "গাছ শব্দে গ আছে।",
+      "pronunciation": "gachh shôbde gô achhe",
+      "en": "The word “গাছ” contains গ.",
+      "context": "Find গ in গাছ and say the complete word aloud.",
+      "category": "consonant-go",
+      "words": [
+        {
+          "bn": "গাছ",
+          "pronunciation": "gachh",
+          "en": "tree"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "গ",
+          "pronunciation": "gô",
+          "en": "the gô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "গান শব্দে গ আছে।",
+      "pronunciation": "gan shôbde gô achhe",
+      "en": "The word “গান” contains গ.",
+      "context": "Find গ in গান and say the complete word aloud.",
+      "category": "consonant-go",
+      "words": [
+        {
+          "bn": "গান",
+          "pronunciation": "gan",
+          "en": "song"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "গ",
+          "pronunciation": "gô",
+          "en": "the gô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "আগুন শব্দে গ আছে।",
+      "pronunciation": "agun shôbde gô achhe",
+      "en": "The word “আগুন” contains গ.",
+      "context": "Find গ in আগুন and say the complete word aloud.",
+      "category": "consonant-go",
+      "words": [
+        {
+          "bn": "আগুন",
+          "pronunciation": "agun",
+          "en": "fire"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "গ",
+          "pronunciation": "gô",
+          "en": "the gô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bn": "গ",
+      "pronunciation": "gô",
+      "en": "gô: g as in go",
+      "category": "consonant-go",
+      "sourcePhrase": "গাছ শব্দে গ আছে।"
+    },
+    {
+      "bn": "গাছ",
+      "pronunciation": "gachh",
+      "en": "tree",
+      "category": "consonant-go",
+      "sourcePhrase": "গাছ শব্দে গ আছে।"
+    },
+    {
+      "bn": "গান",
+      "pronunciation": "gan",
+      "en": "song",
+      "category": "consonant-go",
+      "sourcePhrase": "গান শব্দে গ আছে।"
+    },
+    {
+      "bn": "আগুন",
+      "pronunciation": "agun",
+      "en": "fire",
+      "category": "consonant-go",
+      "sourcePhrase": "আগুন শব্দে গ আছে।"
+    }
+  ],
+  "practice": [
+    "Say গ three times: gô, gô, gô.",
+    "Find গ in each example word and read the whole word aloud.",
+    "Write গ five times while saying its name."
+  ],
+  "notes": [
+    "গ is pronounced approximately g as in go.",
+    "Listen to the audio and compare গ across the example words."
+  ]
+}

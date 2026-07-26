@@ -1,0 +1,136 @@
+{
+  "id": "consonant-do",
+  "title": "দ — dô",
+  "summary": "Learn দ, pronounced dô, and recognize it in three useful Bengali words.",
+  "level": "beginner",
+  "topic": "Consonant: দ",
+  "focus": "character recognition and pronunciation",
+  "phrases": [
+    {
+      "bn": "দরজা শব্দে দ আছে।",
+      "pronunciation": "dôrja shôbde dô achhe",
+      "en": "The word “দরজা” contains দ.",
+      "context": "Find দ in দরজা and say the complete word aloud.",
+      "category": "consonant-do",
+      "words": [
+        {
+          "bn": "দরজা",
+          "pronunciation": "dôrja",
+          "en": "door"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "দ",
+          "pronunciation": "dô",
+          "en": "the dô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "দিন শব্দে দ আছে।",
+      "pronunciation": "din shôbde dô achhe",
+      "en": "The word “দিন” contains দ.",
+      "context": "Find দ in দিন and say the complete word aloud.",
+      "category": "consonant-do",
+      "words": [
+        {
+          "bn": "দিন",
+          "pronunciation": "din",
+          "en": "day"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "দ",
+          "pronunciation": "dô",
+          "en": "the dô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "নদী শব্দে দ আছে।",
+      "pronunciation": "nôdi shôbde dô achhe",
+      "en": "The word “নদী” contains দ.",
+      "context": "Find দ in নদী and say the complete word aloud.",
+      "category": "consonant-do",
+      "words": [
+        {
+          "bn": "নদী",
+          "pronunciation": "nôdi",
+          "en": "river"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "দ",
+          "pronunciation": "dô",
+          "en": "the dô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bn": "দ",
+      "pronunciation": "dô",
+      "en": "dô: a dental d",
+      "category": "consonant-do",
+      "sourcePhrase": "দরজা শব্দে দ আছে।"
+    },
+    {
+      "bn": "দরজা",
+      "pronunciation": "dôrja",
+      "en": "door",
+      "category": "consonant-do",
+      "sourcePhrase": "দরজা শব্দে দ আছে।"
+    },
+    {
+      "bn": "দিন",
+      "pronunciation": "din",
+      "en": "day",
+      "category": "consonant-do",
+      "sourcePhrase": "দিন শব্দে দ আছে।"
+    },
+    {
+      "bn": "নদী",
+      "pronunciation": "nôdi",
+      "en": "river",
+      "category": "consonant-do",
+      "sourcePhrase": "নদী শব্দে দ আছে।"
+    }
+  ],
+  "practice": [
+    "Say দ three times: dô, dô, dô.",
+    "Find দ in each example word and read the whole word aloud.",
+    "Write দ five times while saying its name."
+  ],
+  "notes": [
+    "দ is pronounced approximately a dental d.",
+    "Listen to the audio and compare দ across the example words."
+  ]
+}

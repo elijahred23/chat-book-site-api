@@ -1,0 +1,136 @@
+{
+  "id": "consonant-rrho",
+  "title": "ঢ় — ṛhô",
+  "summary": "Learn ঢ়, pronounced ṛhô, and recognize it in three useful Bengali words.",
+  "level": "beginner",
+  "topic": "Consonant: ঢ়",
+  "focus": "character recognition and pronunciation",
+  "phrases": [
+    {
+      "bn": "আষাঢ় শব্দে ঢ় আছে।",
+      "pronunciation": "ashaṛh shôbde ṛhô achhe",
+      "en": "The word “আষাঢ়” contains ঢ়.",
+      "context": "Find ঢ় in আষাঢ় and say the complete word aloud.",
+      "category": "consonant-rrho",
+      "words": [
+        {
+          "bn": "আষাঢ়",
+          "pronunciation": "ashaṛh",
+          "en": "the month Asharh"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ঢ়",
+          "pronunciation": "ṛhô",
+          "en": "the ṛhô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "দৃঢ় শব্দে ঢ় আছে।",
+      "pronunciation": "driṛho shôbde ṛhô achhe",
+      "en": "The word “দৃঢ়” contains ঢ়.",
+      "context": "Find ঢ় in দৃঢ় and say the complete word aloud.",
+      "category": "consonant-rrho",
+      "words": [
+        {
+          "bn": "দৃঢ়",
+          "pronunciation": "driṛho",
+          "en": "firm"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ঢ়",
+          "pronunciation": "ṛhô",
+          "en": "the ṛhô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "গাঢ় শব্দে ঢ় আছে।",
+      "pronunciation": "gaṛho shôbde ṛhô achhe",
+      "en": "The word “গাঢ়” contains ঢ়.",
+      "context": "Find ঢ় in গাঢ় and say the complete word aloud.",
+      "category": "consonant-rrho",
+      "words": [
+        {
+          "bn": "গাঢ়",
+          "pronunciation": "gaṛho",
+          "en": "deep / dark"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ঢ়",
+          "pronunciation": "ṛhô",
+          "en": "the ṛhô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bn": "ঢ়",
+      "pronunciation": "ṛhô",
+      "en": "ṛhô: an aspirated flapped r/d sound",
+      "category": "consonant-rrho",
+      "sourcePhrase": "আষাঢ় শব্দে ঢ় আছে।"
+    },
+    {
+      "bn": "আষাঢ়",
+      "pronunciation": "ashaṛh",
+      "en": "the month Asharh",
+      "category": "consonant-rrho",
+      "sourcePhrase": "আষাঢ় শব্দে ঢ় আছে।"
+    },
+    {
+      "bn": "দৃঢ়",
+      "pronunciation": "driṛho",
+      "en": "firm",
+      "category": "consonant-rrho",
+      "sourcePhrase": "দৃঢ় শব্দে ঢ় আছে।"
+    },
+    {
+      "bn": "গাঢ়",
+      "pronunciation": "gaṛho",
+      "en": "deep / dark",
+      "category": "consonant-rrho",
+      "sourcePhrase": "গাঢ় শব্দে ঢ় আছে।"
+    }
+  ],
+  "practice": [
+    "Say ঢ় three times: ṛhô, ṛhô, ṛhô.",
+    "Find ঢ় in each example word and read the whole word aloud.",
+    "Write ঢ় five times while saying its name."
+  ],
+  "notes": [
+    "ঢ় is pronounced approximately an aspirated flapped r/d sound.",
+    "ঢ় is rare and normally appears within a word rather than at the beginning."
+  ]
+}

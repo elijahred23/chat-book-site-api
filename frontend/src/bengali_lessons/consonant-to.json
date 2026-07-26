@@ -1,0 +1,136 @@
+{
+  "id": "consonant-to",
+  "title": "ত — tô",
+  "summary": "Learn ত, pronounced tô, and recognize it in three useful Bengali words.",
+  "level": "beginner",
+  "topic": "Consonant: ত",
+  "focus": "character recognition and pronunciation",
+  "phrases": [
+    {
+      "bn": "তারা শব্দে ত আছে।",
+      "pronunciation": "tara shôbde tô achhe",
+      "en": "The word “তারা” contains ত.",
+      "context": "Find ত in তারা and say the complete word aloud.",
+      "category": "consonant-to",
+      "words": [
+        {
+          "bn": "তারা",
+          "pronunciation": "tara",
+          "en": "star"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ত",
+          "pronunciation": "tô",
+          "en": "the tô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "তাল শব্দে ত আছে।",
+      "pronunciation": "tal shôbde tô achhe",
+      "en": "The word “তাল” contains ত.",
+      "context": "Find ত in তাল and say the complete word aloud.",
+      "category": "consonant-to",
+      "words": [
+        {
+          "bn": "তাল",
+          "pronunciation": "tal",
+          "en": "palm fruit / list"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ত",
+          "pronunciation": "tô",
+          "en": "the tô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "রাত শব্দে ত আছে।",
+      "pronunciation": "rat shôbde tô achhe",
+      "en": "The word “রাত” contains ত.",
+      "context": "Find ত in রাত and say the complete word aloud.",
+      "category": "consonant-to",
+      "words": [
+        {
+          "bn": "রাত",
+          "pronunciation": "rat",
+          "en": "night"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ত",
+          "pronunciation": "tô",
+          "en": "the tô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bn": "ত",
+      "pronunciation": "tô",
+      "en": "tô: a dental t",
+      "category": "consonant-to",
+      "sourcePhrase": "তারা শব্দে ত আছে।"
+    },
+    {
+      "bn": "তারা",
+      "pronunciation": "tara",
+      "en": "star",
+      "category": "consonant-to",
+      "sourcePhrase": "তারা শব্দে ত আছে।"
+    },
+    {
+      "bn": "তাল",
+      "pronunciation": "tal",
+      "en": "palm fruit / list",
+      "category": "consonant-to",
+      "sourcePhrase": "তাল শব্দে ত আছে।"
+    },
+    {
+      "bn": "রাত",
+      "pronunciation": "rat",
+      "en": "night",
+      "category": "consonant-to",
+      "sourcePhrase": "রাত শব্দে ত আছে।"
+    }
+  ],
+  "practice": [
+    "Say ত three times: tô, tô, tô.",
+    "Find ত in each example word and read the whole word aloud.",
+    "Write ত five times while saying its name."
+  ],
+  "notes": [
+    "ত is pronounced approximately a dental t.",
+    "Listen to the audio and compare ত across the example words."
+  ]
+}

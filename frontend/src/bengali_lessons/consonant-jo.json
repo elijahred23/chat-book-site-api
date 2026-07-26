@@ -1,0 +1,136 @@
+{
+  "id": "consonant-jo",
+  "title": "জ — jô",
+  "summary": "Learn জ, pronounced jô, and recognize it in three useful Bengali words.",
+  "level": "beginner",
+  "topic": "Consonant: জ",
+  "focus": "character recognition and pronunciation",
+  "phrases": [
+    {
+      "bn": "জল শব্দে জ আছে।",
+      "pronunciation": "jôl shôbde jô achhe",
+      "en": "The word “জল” contains জ.",
+      "context": "Find জ in জল and say the complete word aloud.",
+      "category": "consonant-jo",
+      "words": [
+        {
+          "bn": "জল",
+          "pronunciation": "jôl",
+          "en": "water"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "জ",
+          "pronunciation": "jô",
+          "en": "the jô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "জাহাজ শব্দে জ আছে।",
+      "pronunciation": "jahaj shôbde jô achhe",
+      "en": "The word “জাহাজ” contains জ.",
+      "context": "Find জ in জাহাজ and say the complete word aloud.",
+      "category": "consonant-jo",
+      "words": [
+        {
+          "bn": "জাহাজ",
+          "pronunciation": "jahaj",
+          "en": "ship"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "জ",
+          "pronunciation": "jô",
+          "en": "the jô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "আজ শব্দে জ আছে।",
+      "pronunciation": "aj shôbde jô achhe",
+      "en": "The word “আজ” contains জ.",
+      "context": "Find জ in আজ and say the complete word aloud.",
+      "category": "consonant-jo",
+      "words": [
+        {
+          "bn": "আজ",
+          "pronunciation": "aj",
+          "en": "today"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "জ",
+          "pronunciation": "jô",
+          "en": "the jô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bn": "জ",
+      "pronunciation": "jô",
+      "en": "jô: j as in jam",
+      "category": "consonant-jo",
+      "sourcePhrase": "জল শব্দে জ আছে।"
+    },
+    {
+      "bn": "জল",
+      "pronunciation": "jôl",
+      "en": "water",
+      "category": "consonant-jo",
+      "sourcePhrase": "জল শব্দে জ আছে।"
+    },
+    {
+      "bn": "জাহাজ",
+      "pronunciation": "jahaj",
+      "en": "ship",
+      "category": "consonant-jo",
+      "sourcePhrase": "জাহাজ শব্দে জ আছে।"
+    },
+    {
+      "bn": "আজ",
+      "pronunciation": "aj",
+      "en": "today",
+      "category": "consonant-jo",
+      "sourcePhrase": "আজ শব্দে জ আছে।"
+    }
+  ],
+  "practice": [
+    "Say জ three times: jô, jô, jô.",
+    "Find জ in each example word and read the whole word aloud.",
+    "Write জ five times while saying its name."
+  ],
+  "notes": [
+    "জ is pronounced approximately j as in jam.",
+    "Listen to the audio and compare জ across the example words."
+  ]
+}

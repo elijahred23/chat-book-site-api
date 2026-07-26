@@ -1,0 +1,136 @@
+{
+  "id": "consonant-no",
+  "title": "ন — nô",
+  "summary": "Learn ন, pronounced nô, and recognize it in three useful Bengali words.",
+  "level": "beginner",
+  "topic": "Consonant: ন",
+  "focus": "character recognition and pronunciation",
+  "phrases": [
+    {
+      "bn": "নদী শব্দে ন আছে।",
+      "pronunciation": "nôdi shôbde nô achhe",
+      "en": "The word “নদী” contains ন.",
+      "context": "Find ন in নদী and say the complete word aloud.",
+      "category": "consonant-no",
+      "words": [
+        {
+          "bn": "নদী",
+          "pronunciation": "nôdi",
+          "en": "river"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ন",
+          "pronunciation": "nô",
+          "en": "the nô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "নাম শব্দে ন আছে।",
+      "pronunciation": "nam shôbde nô achhe",
+      "en": "The word “নাম” contains ন.",
+      "context": "Find ন in নাম and say the complete word aloud.",
+      "category": "consonant-no",
+      "words": [
+        {
+          "bn": "নাম",
+          "pronunciation": "nam",
+          "en": "name"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ন",
+          "pronunciation": "nô",
+          "en": "the nô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "মন শব্দে ন আছে।",
+      "pronunciation": "môn shôbde nô achhe",
+      "en": "The word “মন” contains ন.",
+      "context": "Find ন in মন and say the complete word aloud.",
+      "category": "consonant-no",
+      "words": [
+        {
+          "bn": "মন",
+          "pronunciation": "môn",
+          "en": "mind"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ন",
+          "pronunciation": "nô",
+          "en": "the nô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bn": "ন",
+      "pronunciation": "nô",
+      "en": "nô: n",
+      "category": "consonant-no",
+      "sourcePhrase": "নদী শব্দে ন আছে।"
+    },
+    {
+      "bn": "নদী",
+      "pronunciation": "nôdi",
+      "en": "river",
+      "category": "consonant-no",
+      "sourcePhrase": "নদী শব্দে ন আছে।"
+    },
+    {
+      "bn": "নাম",
+      "pronunciation": "nam",
+      "en": "name",
+      "category": "consonant-no",
+      "sourcePhrase": "নাম শব্দে ন আছে।"
+    },
+    {
+      "bn": "মন",
+      "pronunciation": "môn",
+      "en": "mind",
+      "category": "consonant-no",
+      "sourcePhrase": "মন শব্দে ন আছে।"
+    }
+  ],
+  "practice": [
+    "Say ন three times: nô, nô, nô.",
+    "Find ন in each example word and read the whole word aloud.",
+    "Write ন five times while saying its name."
+  ],
+  "notes": [
+    "ন is pronounced approximately n.",
+    "Listen to the audio and compare ন across the example words."
+  ]
+}

@@ -1,0 +1,136 @@
+{
+  "id": "consonant-ngo",
+  "title": "ঙ — ngô",
+  "summary": "Learn ঙ, pronounced ngô, and recognize it in three useful Bengali words.",
+  "level": "beginner",
+  "topic": "Consonant: ঙ",
+  "focus": "character recognition and pronunciation",
+  "phrases": [
+    {
+      "bn": "রঙ শব্দে ঙ আছে।",
+      "pronunciation": "rông shôbde ngô achhe",
+      "en": "The word “রঙ” contains ঙ.",
+      "context": "Find ঙ in রঙ and say the complete word aloud.",
+      "category": "consonant-ngo",
+      "words": [
+        {
+          "bn": "রঙ",
+          "pronunciation": "rông",
+          "en": "color"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ঙ",
+          "pronunciation": "ngô",
+          "en": "the ngô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "বাংলা শব্দে ঙ আছে।",
+      "pronunciation": "bangla shôbde ngô achhe",
+      "en": "The word “বাংলা” contains ঙ.",
+      "context": "Find ঙ in বাংলা and say the complete word aloud.",
+      "category": "consonant-ngo",
+      "words": [
+        {
+          "bn": "বাংলা",
+          "pronunciation": "bangla",
+          "en": "Bengali"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ঙ",
+          "pronunciation": "ngô",
+          "en": "the ngô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "আঙুর শব্দে ঙ আছে।",
+      "pronunciation": "angur shôbde ngô achhe",
+      "en": "The word “আঙুর” contains ঙ.",
+      "context": "Find ঙ in আঙুর and say the complete word aloud.",
+      "category": "consonant-ngo",
+      "words": [
+        {
+          "bn": "আঙুর",
+          "pronunciation": "angur",
+          "en": "grapes"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ঙ",
+          "pronunciation": "ngô",
+          "en": "the ngô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bn": "ঙ",
+      "pronunciation": "ngô",
+      "en": "ngô: ng as in sing",
+      "category": "consonant-ngo",
+      "sourcePhrase": "রঙ শব্দে ঙ আছে।"
+    },
+    {
+      "bn": "রঙ",
+      "pronunciation": "rông",
+      "en": "color",
+      "category": "consonant-ngo",
+      "sourcePhrase": "রঙ শব্দে ঙ আছে।"
+    },
+    {
+      "bn": "বাংলা",
+      "pronunciation": "bangla",
+      "en": "Bengali",
+      "category": "consonant-ngo",
+      "sourcePhrase": "বাংলা শব্দে ঙ আছে।"
+    },
+    {
+      "bn": "আঙুর",
+      "pronunciation": "angur",
+      "en": "grapes",
+      "category": "consonant-ngo",
+      "sourcePhrase": "আঙুর শব্দে ঙ আছে।"
+    }
+  ],
+  "practice": [
+    "Say ঙ three times: ngô, ngô, ngô.",
+    "Find ঙ in each example word and read the whole word aloud.",
+    "Write ঙ five times while saying its name."
+  ],
+  "notes": [
+    "ঙ is pronounced approximately ng as in sing.",
+    "ঙ rarely begins a native Bengali word; learn to recognize it within words and conjuncts."
+  ]
+}

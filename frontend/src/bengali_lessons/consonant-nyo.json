@@ -1,0 +1,136 @@
+{
+  "id": "consonant-nyo",
+  "title": "ঞ — ñô",
+  "summary": "Learn ঞ, pronounced ñô, and recognize it in three useful Bengali words.",
+  "level": "beginner",
+  "topic": "Consonant: ঞ",
+  "focus": "character recognition and pronunciation",
+  "phrases": [
+    {
+      "bn": "পঞ্চ শব্দে ঞ আছে।",
+      "pronunciation": "pôncho shôbde ñô achhe",
+      "en": "The word “পঞ্চ” contains ঞ.",
+      "context": "Find ঞ in পঞ্চ and say the complete word aloud.",
+      "category": "consonant-nyo",
+      "words": [
+        {
+          "bn": "পঞ্চ",
+          "pronunciation": "pôncho",
+          "en": "five"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ঞ",
+          "pronunciation": "ñô",
+          "en": "the ñô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "অঞ্চল শব্দে ঞ আছে।",
+      "pronunciation": "ônchôl shôbde ñô achhe",
+      "en": "The word “অঞ্চল” contains ঞ.",
+      "context": "Find ঞ in অঞ্চল and say the complete word aloud.",
+      "category": "consonant-nyo",
+      "words": [
+        {
+          "bn": "অঞ্চল",
+          "pronunciation": "ônchôl",
+          "en": "region"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ঞ",
+          "pronunciation": "ñô",
+          "en": "the ñô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "বাঞ্ছা শব্দে ঞ আছে।",
+      "pronunciation": "banchha shôbde ñô achhe",
+      "en": "The word “বাঞ্ছা” contains ঞ.",
+      "context": "Find ঞ in বাঞ্ছা and say the complete word aloud.",
+      "category": "consonant-nyo",
+      "words": [
+        {
+          "bn": "বাঞ্ছা",
+          "pronunciation": "banchha",
+          "en": "desire"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ঞ",
+          "pronunciation": "ñô",
+          "en": "the ñô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bn": "ঞ",
+      "pronunciation": "ñô",
+      "en": "ñô: ny as in canyon",
+      "category": "consonant-nyo",
+      "sourcePhrase": "পঞ্চ শব্দে ঞ আছে।"
+    },
+    {
+      "bn": "পঞ্চ",
+      "pronunciation": "pôncho",
+      "en": "five",
+      "category": "consonant-nyo",
+      "sourcePhrase": "পঞ্চ শব্দে ঞ আছে।"
+    },
+    {
+      "bn": "অঞ্চল",
+      "pronunciation": "ônchôl",
+      "en": "region",
+      "category": "consonant-nyo",
+      "sourcePhrase": "অঞ্চল শব্দে ঞ আছে।"
+    },
+    {
+      "bn": "বাঞ্ছা",
+      "pronunciation": "banchha",
+      "en": "desire",
+      "category": "consonant-nyo",
+      "sourcePhrase": "বাঞ্ছা শব্দে ঞ আছে।"
+    }
+  ],
+  "practice": [
+    "Say ঞ three times: ñô, ñô, ñô.",
+    "Find ঞ in each example word and read the whole word aloud.",
+    "Write ঞ five times while saying its name."
+  ],
+  "notes": [
+    "ঞ is pronounced approximately ny as in canyon.",
+    "ঞ is uncommon by itself and usually appears within conjuncts such as ঞ্চ."
+  ]
+}

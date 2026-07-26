@@ -1,0 +1,136 @@
+{
+  "id": "consonant-bho",
+  "title": "ভ — bhô",
+  "summary": "Learn ভ, pronounced bhô, and recognize it in three useful Bengali words.",
+  "level": "beginner",
+  "topic": "Consonant: ভ",
+  "focus": "character recognition and pronunciation",
+  "phrases": [
+    {
+      "bn": "ভাত শব্দে ভ আছে।",
+      "pronunciation": "bhat shôbde bhô achhe",
+      "en": "The word “ভাত” contains ভ.",
+      "context": "Find ভ in ভাত and say the complete word aloud.",
+      "category": "consonant-bho",
+      "words": [
+        {
+          "bn": "ভাত",
+          "pronunciation": "bhat",
+          "en": "rice"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ভ",
+          "pronunciation": "bhô",
+          "en": "the bhô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "ভালো শব্দে ভ আছে।",
+      "pronunciation": "bhalo shôbde bhô achhe",
+      "en": "The word “ভালো” contains ভ.",
+      "context": "Find ভ in ভালো and say the complete word aloud.",
+      "category": "consonant-bho",
+      "words": [
+        {
+          "bn": "ভালো",
+          "pronunciation": "bhalo",
+          "en": "good"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ভ",
+          "pronunciation": "bhô",
+          "en": "the bhô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "ভাব শব্দে ভ আছে।",
+      "pronunciation": "bhab shôbde bhô achhe",
+      "en": "The word “ভাব” contains ভ.",
+      "context": "Find ভ in ভাব and say the complete word aloud.",
+      "category": "consonant-bho",
+      "words": [
+        {
+          "bn": "ভাব",
+          "pronunciation": "bhab",
+          "en": "idea / thought"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ভ",
+          "pronunciation": "bhô",
+          "en": "the bhô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bn": "ভ",
+      "pronunciation": "bhô",
+      "en": "bhô: an aspirated b",
+      "category": "consonant-bho",
+      "sourcePhrase": "ভাত শব্দে ভ আছে।"
+    },
+    {
+      "bn": "ভাত",
+      "pronunciation": "bhat",
+      "en": "rice",
+      "category": "consonant-bho",
+      "sourcePhrase": "ভাত শব্দে ভ আছে।"
+    },
+    {
+      "bn": "ভালো",
+      "pronunciation": "bhalo",
+      "en": "good",
+      "category": "consonant-bho",
+      "sourcePhrase": "ভালো শব্দে ভ আছে।"
+    },
+    {
+      "bn": "ভাব",
+      "pronunciation": "bhab",
+      "en": "idea / thought",
+      "category": "consonant-bho",
+      "sourcePhrase": "ভাব শব্দে ভ আছে।"
+    }
+  ],
+  "practice": [
+    "Say ভ three times: bhô, bhô, bhô.",
+    "Find ভ in each example word and read the whole word aloud.",
+    "Write ভ five times while saying its name."
+  ],
+  "notes": [
+    "ভ is pronounced approximately an aspirated b.",
+    "Listen to the audio and compare ভ across the example words."
+  ]
+}

@@ -1,0 +1,136 @@
+{
+  "id": "consonant-tto",
+  "title": "ট — ṭô",
+  "summary": "Learn ট, pronounced ṭô, and recognize it in three useful Bengali words.",
+  "level": "beginner",
+  "topic": "Consonant: ট",
+  "focus": "character recognition and pronunciation",
+  "phrases": [
+    {
+      "bn": "টাকা শব্দে ট আছে।",
+      "pronunciation": "ṭaka shôbde ṭô achhe",
+      "en": "The word “টাকা” contains ট.",
+      "context": "Find ট in টাকা and say the complete word aloud.",
+      "category": "consonant-tto",
+      "words": [
+        {
+          "bn": "টাকা",
+          "pronunciation": "ṭaka",
+          "en": "money"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ট",
+          "pronunciation": "ṭô",
+          "en": "the ṭô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "টেবিল শব্দে ট আছে।",
+      "pronunciation": "ṭebil shôbde ṭô achhe",
+      "en": "The word “টেবিল” contains ট.",
+      "context": "Find ট in টেবিল and say the complete word aloud.",
+      "category": "consonant-tto",
+      "words": [
+        {
+          "bn": "টেবিল",
+          "pronunciation": "ṭebil",
+          "en": "table"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ট",
+          "pronunciation": "ṭô",
+          "en": "the ṭô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "নাটক শব্দে ট আছে।",
+      "pronunciation": "naṭok shôbde ṭô achhe",
+      "en": "The word “নাটক” contains ট.",
+      "context": "Find ট in নাটক and say the complete word aloud.",
+      "category": "consonant-tto",
+      "words": [
+        {
+          "bn": "নাটক",
+          "pronunciation": "naṭok",
+          "en": "play / drama"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ট",
+          "pronunciation": "ṭô",
+          "en": "the ṭô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bn": "ট",
+      "pronunciation": "ṭô",
+      "en": "ṭô: a retroflex t",
+      "category": "consonant-tto",
+      "sourcePhrase": "টাকা শব্দে ট আছে।"
+    },
+    {
+      "bn": "টাকা",
+      "pronunciation": "ṭaka",
+      "en": "money",
+      "category": "consonant-tto",
+      "sourcePhrase": "টাকা শব্দে ট আছে।"
+    },
+    {
+      "bn": "টেবিল",
+      "pronunciation": "ṭebil",
+      "en": "table",
+      "category": "consonant-tto",
+      "sourcePhrase": "টেবিল শব্দে ট আছে।"
+    },
+    {
+      "bn": "নাটক",
+      "pronunciation": "naṭok",
+      "en": "play / drama",
+      "category": "consonant-tto",
+      "sourcePhrase": "নাটক শব্দে ট আছে।"
+    }
+  ],
+  "practice": [
+    "Say ট three times: ṭô, ṭô, ṭô.",
+    "Find ট in each example word and read the whole word aloud.",
+    "Write ট five times while saying its name."
+  ],
+  "notes": [
+    "ট is pronounced approximately a retroflex t.",
+    "Listen to the audio and compare ট across the example words."
+  ]
+}

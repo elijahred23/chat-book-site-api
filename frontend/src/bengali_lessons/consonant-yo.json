@@ -1,0 +1,136 @@
+{
+  "id": "consonant-yo",
+  "title": "য় — yô",
+  "summary": "Learn য়, pronounced yô, and recognize it in three useful Bengali words.",
+  "level": "beginner",
+  "topic": "Consonant: য়",
+  "focus": "character recognition and pronunciation",
+  "phrases": [
+    {
+      "bn": "সময় শব্দে য় আছে।",
+      "pronunciation": "shômôy shôbde yô achhe",
+      "en": "The word “সময়” contains য়.",
+      "context": "Find য় in সময় and say the complete word aloud.",
+      "category": "consonant-yo",
+      "words": [
+        {
+          "bn": "সময়",
+          "pronunciation": "shômôy",
+          "en": "time"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "য়",
+          "pronunciation": "yô",
+          "en": "the yô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "দয়া শব্দে য় আছে।",
+      "pronunciation": "dôya shôbde yô achhe",
+      "en": "The word “দয়া” contains য়.",
+      "context": "Find য় in দয়া and say the complete word aloud.",
+      "category": "consonant-yo",
+      "words": [
+        {
+          "bn": "দয়া",
+          "pronunciation": "dôya",
+          "en": "kindness"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "য়",
+          "pronunciation": "yô",
+          "en": "the yô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "ময়ূর শব্দে য় আছে।",
+      "pronunciation": "môyur shôbde yô achhe",
+      "en": "The word “ময়ূর” contains য়.",
+      "context": "Find য় in ময়ূর and say the complete word aloud.",
+      "category": "consonant-yo",
+      "words": [
+        {
+          "bn": "ময়ূর",
+          "pronunciation": "môyur",
+          "en": "peacock"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "য়",
+          "pronunciation": "yô",
+          "en": "the yô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bn": "য়",
+      "pronunciation": "yô",
+      "en": "yô: y as in yes",
+      "category": "consonant-yo",
+      "sourcePhrase": "সময় শব্দে য় আছে।"
+    },
+    {
+      "bn": "সময়",
+      "pronunciation": "shômôy",
+      "en": "time",
+      "category": "consonant-yo",
+      "sourcePhrase": "সময় শব্দে য় আছে।"
+    },
+    {
+      "bn": "দয়া",
+      "pronunciation": "dôya",
+      "en": "kindness",
+      "category": "consonant-yo",
+      "sourcePhrase": "দয়া শব্দে য় আছে।"
+    },
+    {
+      "bn": "ময়ূর",
+      "pronunciation": "môyur",
+      "en": "peacock",
+      "category": "consonant-yo",
+      "sourcePhrase": "ময়ূর শব্দে য় আছে।"
+    }
+  ],
+  "practice": [
+    "Say য় three times: yô, yô, yô.",
+    "Find য় in each example word and read the whole word aloud.",
+    "Write য় five times while saying its name."
+  ],
+  "notes": [
+    "য় is pronounced approximately y as in yes.",
+    "য় is distinct from য in modern Bengali spelling and represents a y sound."
+  ]
+}

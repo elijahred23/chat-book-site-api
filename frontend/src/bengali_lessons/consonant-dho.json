@@ -1,0 +1,136 @@
+{
+  "id": "consonant-dho",
+  "title": "ধ — dhô",
+  "summary": "Learn ধ, pronounced dhô, and recognize it in three useful Bengali words.",
+  "level": "beginner",
+  "topic": "Consonant: ধ",
+  "focus": "character recognition and pronunciation",
+  "phrases": [
+    {
+      "bn": "ধান শব্দে ধ আছে।",
+      "pronunciation": "dhan shôbde dhô achhe",
+      "en": "The word “ধান” contains ধ.",
+      "context": "Find ধ in ধান and say the complete word aloud.",
+      "category": "consonant-dho",
+      "words": [
+        {
+          "bn": "ধান",
+          "pronunciation": "dhan",
+          "en": "paddy"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ধ",
+          "pronunciation": "dhô",
+          "en": "the dhô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "ধন্যবাদ শব্দে ধ আছে।",
+      "pronunciation": "dhônnobad shôbde dhô achhe",
+      "en": "The word “ধন্যবাদ” contains ধ.",
+      "context": "Find ধ in ধন্যবাদ and say the complete word aloud.",
+      "category": "consonant-dho",
+      "words": [
+        {
+          "bn": "ধন্যবাদ",
+          "pronunciation": "dhônnobad",
+          "en": "thank you"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ধ",
+          "pronunciation": "dhô",
+          "en": "the dhô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "মধু শব্দে ধ আছে।",
+      "pronunciation": "môdhu shôbde dhô achhe",
+      "en": "The word “মধু” contains ধ.",
+      "context": "Find ধ in মধু and say the complete word aloud.",
+      "category": "consonant-dho",
+      "words": [
+        {
+          "bn": "মধু",
+          "pronunciation": "môdhu",
+          "en": "honey"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ধ",
+          "pronunciation": "dhô",
+          "en": "the dhô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bn": "ধ",
+      "pronunciation": "dhô",
+      "en": "dhô: an aspirated dental d",
+      "category": "consonant-dho",
+      "sourcePhrase": "ধান শব্দে ধ আছে।"
+    },
+    {
+      "bn": "ধান",
+      "pronunciation": "dhan",
+      "en": "paddy",
+      "category": "consonant-dho",
+      "sourcePhrase": "ধান শব্দে ধ আছে।"
+    },
+    {
+      "bn": "ধন্যবাদ",
+      "pronunciation": "dhônnobad",
+      "en": "thank you",
+      "category": "consonant-dho",
+      "sourcePhrase": "ধন্যবাদ শব্দে ধ আছে।"
+    },
+    {
+      "bn": "মধু",
+      "pronunciation": "môdhu",
+      "en": "honey",
+      "category": "consonant-dho",
+      "sourcePhrase": "মধু শব্দে ধ আছে।"
+    }
+  ],
+  "practice": [
+    "Say ধ three times: dhô, dhô, dhô.",
+    "Find ধ in each example word and read the whole word aloud.",
+    "Write ধ five times while saying its name."
+  ],
+  "notes": [
+    "ধ is pronounced approximately an aspirated dental d.",
+    "Listen to the audio and compare ধ across the example words."
+  ]
+}

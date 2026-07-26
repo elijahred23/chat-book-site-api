@@ -1,0 +1,136 @@
+{
+  "id": "consonant-ddo",
+  "title": "ড — ḍô",
+  "summary": "Learn ড, pronounced ḍô, and recognize it in three useful Bengali words.",
+  "level": "beginner",
+  "topic": "Consonant: ড",
+  "focus": "character recognition and pronunciation",
+  "phrases": [
+    {
+      "bn": "ডাল শব্দে ড আছে।",
+      "pronunciation": "ḍal shôbde ḍô achhe",
+      "en": "The word “ডাল” contains ড.",
+      "context": "Find ড in ডাল and say the complete word aloud.",
+      "category": "consonant-ddo",
+      "words": [
+        {
+          "bn": "ডাল",
+          "pronunciation": "ḍal",
+          "en": "lentils"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ড",
+          "pronunciation": "ḍô",
+          "en": "the ḍô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "ডিম শব্দে ড আছে।",
+      "pronunciation": "ḍim shôbde ḍô achhe",
+      "en": "The word “ডিম” contains ড.",
+      "context": "Find ড in ডিম and say the complete word aloud.",
+      "category": "consonant-ddo",
+      "words": [
+        {
+          "bn": "ডিম",
+          "pronunciation": "ḍim",
+          "en": "egg"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ড",
+          "pronunciation": "ḍô",
+          "en": "the ḍô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "ডাক শব্দে ড আছে।",
+      "pronunciation": "ḍak shôbde ḍô achhe",
+      "en": "The word “ডাক” contains ড.",
+      "context": "Find ড in ডাক and say the complete word aloud.",
+      "category": "consonant-ddo",
+      "words": [
+        {
+          "bn": "ডাক",
+          "pronunciation": "ḍak",
+          "en": "call / mail"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ড",
+          "pronunciation": "ḍô",
+          "en": "the ḍô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bn": "ড",
+      "pronunciation": "ḍô",
+      "en": "ḍô: a retroflex d",
+      "category": "consonant-ddo",
+      "sourcePhrase": "ডাল শব্দে ড আছে।"
+    },
+    {
+      "bn": "ডাল",
+      "pronunciation": "ḍal",
+      "en": "lentils",
+      "category": "consonant-ddo",
+      "sourcePhrase": "ডাল শব্দে ড আছে।"
+    },
+    {
+      "bn": "ডিম",
+      "pronunciation": "ḍim",
+      "en": "egg",
+      "category": "consonant-ddo",
+      "sourcePhrase": "ডিম শব্দে ড আছে।"
+    },
+    {
+      "bn": "ডাক",
+      "pronunciation": "ḍak",
+      "en": "call / mail",
+      "category": "consonant-ddo",
+      "sourcePhrase": "ডাক শব্দে ড আছে।"
+    }
+  ],
+  "practice": [
+    "Say ড three times: ḍô, ḍô, ḍô.",
+    "Find ড in each example word and read the whole word aloud.",
+    "Write ড five times while saying its name."
+  ],
+  "notes": [
+    "ড is pronounced approximately a retroflex d.",
+    "Listen to the audio and compare ড across the example words."
+  ]
+}

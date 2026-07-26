@@ -1,0 +1,136 @@
+{
+  "id": "consonant-pho",
+  "title": "ফ — phô",
+  "summary": "Learn ফ, pronounced phô, and recognize it in three useful Bengali words.",
+  "level": "beginner",
+  "topic": "Consonant: ফ",
+  "focus": "character recognition and pronunciation",
+  "phrases": [
+    {
+      "bn": "ফুল শব্দে ফ আছে।",
+      "pronunciation": "phul shôbde phô achhe",
+      "en": "The word “ফুল” contains ফ.",
+      "context": "Find ফ in ফুল and say the complete word aloud.",
+      "category": "consonant-pho",
+      "words": [
+        {
+          "bn": "ফুল",
+          "pronunciation": "phul",
+          "en": "flower"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ফ",
+          "pronunciation": "phô",
+          "en": "the phô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "ফল শব্দে ফ আছে।",
+      "pronunciation": "phôl shôbde phô achhe",
+      "en": "The word “ফল” contains ফ.",
+      "context": "Find ফ in ফল and say the complete word aloud.",
+      "category": "consonant-pho",
+      "words": [
+        {
+          "bn": "ফল",
+          "pronunciation": "phôl",
+          "en": "fruit"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ফ",
+          "pronunciation": "phô",
+          "en": "the phô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "কফি শব্দে ফ আছে।",
+      "pronunciation": "kôfi shôbde phô achhe",
+      "en": "The word “কফি” contains ফ.",
+      "context": "Find ফ in কফি and say the complete word aloud.",
+      "category": "consonant-pho",
+      "words": [
+        {
+          "bn": "কফি",
+          "pronunciation": "kôfi",
+          "en": "coffee"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ফ",
+          "pronunciation": "phô",
+          "en": "the phô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bn": "ফ",
+      "pronunciation": "phô",
+      "en": "phô: an aspirated p, often f in modern words",
+      "category": "consonant-pho",
+      "sourcePhrase": "ফুল শব্দে ফ আছে।"
+    },
+    {
+      "bn": "ফুল",
+      "pronunciation": "phul",
+      "en": "flower",
+      "category": "consonant-pho",
+      "sourcePhrase": "ফুল শব্দে ফ আছে।"
+    },
+    {
+      "bn": "ফল",
+      "pronunciation": "phôl",
+      "en": "fruit",
+      "category": "consonant-pho",
+      "sourcePhrase": "ফল শব্দে ফ আছে।"
+    },
+    {
+      "bn": "কফি",
+      "pronunciation": "kôfi",
+      "en": "coffee",
+      "category": "consonant-pho",
+      "sourcePhrase": "কফি শব্দে ফ আছে।"
+    }
+  ],
+  "practice": [
+    "Say ফ three times: phô, phô, phô.",
+    "Find ফ in each example word and read the whole word aloud.",
+    "Write ফ five times while saying its name."
+  ],
+  "notes": [
+    "ফ is pronounced approximately an aspirated p, often f in modern words.",
+    "Listen to the audio and compare ফ across the example words."
+  ]
+}

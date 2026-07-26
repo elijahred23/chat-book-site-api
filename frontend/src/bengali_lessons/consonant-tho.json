@@ -1,0 +1,136 @@
+{
+  "id": "consonant-tho",
+  "title": "থ — thô",
+  "summary": "Learn থ, pronounced thô, and recognize it in three useful Bengali words.",
+  "level": "beginner",
+  "topic": "Consonant: থ",
+  "focus": "character recognition and pronunciation",
+  "phrases": [
+    {
+      "bn": "থালা শব্দে থ আছে।",
+      "pronunciation": "thala shôbde thô achhe",
+      "en": "The word “থালা” contains থ.",
+      "context": "Find থ in থালা and say the complete word aloud.",
+      "category": "consonant-tho",
+      "words": [
+        {
+          "bn": "থালা",
+          "pronunciation": "thala",
+          "en": "plate"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "থ",
+          "pronunciation": "thô",
+          "en": "the thô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "থামো শব্দে থ আছে।",
+      "pronunciation": "thamo shôbde thô achhe",
+      "en": "The word “থামো” contains থ.",
+      "context": "Find থ in থামো and say the complete word aloud.",
+      "category": "consonant-tho",
+      "words": [
+        {
+          "bn": "থামো",
+          "pronunciation": "thamo",
+          "en": "stop"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "থ",
+          "pronunciation": "thô",
+          "en": "the thô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "কথা শব্দে থ আছে।",
+      "pronunciation": "kôtha shôbde thô achhe",
+      "en": "The word “কথা” contains থ.",
+      "context": "Find থ in কথা and say the complete word aloud.",
+      "category": "consonant-tho",
+      "words": [
+        {
+          "bn": "কথা",
+          "pronunciation": "kôtha",
+          "en": "word / speech"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "থ",
+          "pronunciation": "thô",
+          "en": "the thô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bn": "থ",
+      "pronunciation": "thô",
+      "en": "thô: an aspirated dental t",
+      "category": "consonant-tho",
+      "sourcePhrase": "থালা শব্দে থ আছে।"
+    },
+    {
+      "bn": "থালা",
+      "pronunciation": "thala",
+      "en": "plate",
+      "category": "consonant-tho",
+      "sourcePhrase": "থালা শব্দে থ আছে।"
+    },
+    {
+      "bn": "থামো",
+      "pronunciation": "thamo",
+      "en": "stop",
+      "category": "consonant-tho",
+      "sourcePhrase": "থামো শব্দে থ আছে।"
+    },
+    {
+      "bn": "কথা",
+      "pronunciation": "kôtha",
+      "en": "word / speech",
+      "category": "consonant-tho",
+      "sourcePhrase": "কথা শব্দে থ আছে।"
+    }
+  ],
+  "practice": [
+    "Say থ three times: thô, thô, thô.",
+    "Find থ in each example word and read the whole word aloud.",
+    "Write থ five times while saying its name."
+  ],
+  "notes": [
+    "থ is pronounced approximately an aspirated dental t.",
+    "Listen to the audio and compare থ across the example words."
+  ]
+}

@@ -1,0 +1,136 @@
+{
+  "id": "consonant-ttho",
+  "title": "ঠ — ṭhô",
+  "summary": "Learn ঠ, pronounced ṭhô, and recognize it in three useful Bengali words.",
+  "level": "beginner",
+  "topic": "Consonant: ঠ",
+  "focus": "character recognition and pronunciation",
+  "phrases": [
+    {
+      "bn": "ঠোঁট শব্দে ঠ আছে।",
+      "pronunciation": "ṭhõṭ shôbde ṭhô achhe",
+      "en": "The word “ঠোঁট” contains ঠ.",
+      "context": "Find ঠ in ঠোঁট and say the complete word aloud.",
+      "category": "consonant-ttho",
+      "words": [
+        {
+          "bn": "ঠোঁট",
+          "pronunciation": "ṭhõṭ",
+          "en": "lip"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ঠ",
+          "pronunciation": "ṭhô",
+          "en": "the ṭhô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "ঠান্ডা শব্দে ঠ আছে।",
+      "pronunciation": "ṭhanḍa shôbde ṭhô achhe",
+      "en": "The word “ঠান্ডা” contains ঠ.",
+      "context": "Find ঠ in ঠান্ডা and say the complete word aloud.",
+      "category": "consonant-ttho",
+      "words": [
+        {
+          "bn": "ঠান্ডা",
+          "pronunciation": "ṭhanḍa",
+          "en": "cold"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ঠ",
+          "pronunciation": "ṭhô",
+          "en": "the ṭhô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "পাঠ শব্দে ঠ আছে।",
+      "pronunciation": "paṭh shôbde ṭhô achhe",
+      "en": "The word “পাঠ” contains ঠ.",
+      "context": "Find ঠ in পাঠ and say the complete word aloud.",
+      "category": "consonant-ttho",
+      "words": [
+        {
+          "bn": "পাঠ",
+          "pronunciation": "paṭh",
+          "en": "lesson / reading"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ঠ",
+          "pronunciation": "ṭhô",
+          "en": "the ṭhô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bn": "ঠ",
+      "pronunciation": "ṭhô",
+      "en": "ṭhô: an aspirated retroflex t",
+      "category": "consonant-ttho",
+      "sourcePhrase": "ঠোঁট শব্দে ঠ আছে।"
+    },
+    {
+      "bn": "ঠোঁট",
+      "pronunciation": "ṭhõṭ",
+      "en": "lip",
+      "category": "consonant-ttho",
+      "sourcePhrase": "ঠোঁট শব্দে ঠ আছে।"
+    },
+    {
+      "bn": "ঠান্ডা",
+      "pronunciation": "ṭhanḍa",
+      "en": "cold",
+      "category": "consonant-ttho",
+      "sourcePhrase": "ঠান্ডা শব্দে ঠ আছে।"
+    },
+    {
+      "bn": "পাঠ",
+      "pronunciation": "paṭh",
+      "en": "lesson / reading",
+      "category": "consonant-ttho",
+      "sourcePhrase": "পাঠ শব্দে ঠ আছে।"
+    }
+  ],
+  "practice": [
+    "Say ঠ three times: ṭhô, ṭhô, ṭhô.",
+    "Find ঠ in each example word and read the whole word aloud.",
+    "Write ঠ five times while saying its name."
+  ],
+  "notes": [
+    "ঠ is pronounced approximately an aspirated retroflex t.",
+    "Listen to the audio and compare ঠ across the example words."
+  ]
+}

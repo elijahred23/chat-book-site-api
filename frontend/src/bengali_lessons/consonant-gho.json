@@ -1,0 +1,136 @@
+{
+  "id": "consonant-gho",
+  "title": "ঘ — ghô",
+  "summary": "Learn ঘ, pronounced ghô, and recognize it in three useful Bengali words.",
+  "level": "beginner",
+  "topic": "Consonant: ঘ",
+  "focus": "character recognition and pronunciation",
+  "phrases": [
+    {
+      "bn": "ঘর শব্দে ঘ আছে।",
+      "pronunciation": "ghôr shôbde ghô achhe",
+      "en": "The word “ঘর” contains ঘ.",
+      "context": "Find ঘ in ঘর and say the complete word aloud.",
+      "category": "consonant-gho",
+      "words": [
+        {
+          "bn": "ঘর",
+          "pronunciation": "ghôr",
+          "en": "house"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ঘ",
+          "pronunciation": "ghô",
+          "en": "the ghô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "ঘড়ি শব্দে ঘ আছে।",
+      "pronunciation": "ghôṛi shôbde ghô achhe",
+      "en": "The word “ঘড়ি” contains ঘ.",
+      "context": "Find ঘ in ঘড়ি and say the complete word aloud.",
+      "category": "consonant-gho",
+      "words": [
+        {
+          "bn": "ঘড়ি",
+          "pronunciation": "ghôṛi",
+          "en": "clock"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ঘ",
+          "pronunciation": "ghô",
+          "en": "the ghô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "মেঘ শব্দে ঘ আছে।",
+      "pronunciation": "megh shôbde ghô achhe",
+      "en": "The word “মেঘ” contains ঘ.",
+      "context": "Find ঘ in মেঘ and say the complete word aloud.",
+      "category": "consonant-gho",
+      "words": [
+        {
+          "bn": "মেঘ",
+          "pronunciation": "megh",
+          "en": "cloud"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ঘ",
+          "pronunciation": "ghô",
+          "en": "the ghô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bn": "ঘ",
+      "pronunciation": "ghô",
+      "en": "ghô: an aspirated g",
+      "category": "consonant-gho",
+      "sourcePhrase": "ঘর শব্দে ঘ আছে।"
+    },
+    {
+      "bn": "ঘর",
+      "pronunciation": "ghôr",
+      "en": "house",
+      "category": "consonant-gho",
+      "sourcePhrase": "ঘর শব্দে ঘ আছে।"
+    },
+    {
+      "bn": "ঘড়ি",
+      "pronunciation": "ghôṛi",
+      "en": "clock",
+      "category": "consonant-gho",
+      "sourcePhrase": "ঘড়ি শব্দে ঘ আছে।"
+    },
+    {
+      "bn": "মেঘ",
+      "pronunciation": "megh",
+      "en": "cloud",
+      "category": "consonant-gho",
+      "sourcePhrase": "মেঘ শব্দে ঘ আছে।"
+    }
+  ],
+  "practice": [
+    "Say ঘ three times: ghô, ghô, ghô.",
+    "Find ঘ in each example word and read the whole word aloud.",
+    "Write ঘ five times while saying its name."
+  ],
+  "notes": [
+    "ঘ is pronounced approximately an aspirated g.",
+    "Listen to the audio and compare ঘ across the example words."
+  ]
+}

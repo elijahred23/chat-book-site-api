@@ -1,0 +1,136 @@
+{
+  "id": "consonant-ho",
+  "title": "হ — hô",
+  "summary": "Learn হ, pronounced hô, and recognize it in three useful Bengali words.",
+  "level": "beginner",
+  "topic": "Consonant: হ",
+  "focus": "character recognition and pronunciation",
+  "phrases": [
+    {
+      "bn": "হাত শব্দে হ আছে।",
+      "pronunciation": "hat shôbde hô achhe",
+      "en": "The word “হাত” contains হ.",
+      "context": "Find হ in হাত and say the complete word aloud.",
+      "category": "consonant-ho",
+      "words": [
+        {
+          "bn": "হাত",
+          "pronunciation": "hat",
+          "en": "hand"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "হ",
+          "pronunciation": "hô",
+          "en": "the hô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "হাসি শব্দে হ আছে।",
+      "pronunciation": "hashi shôbde hô achhe",
+      "en": "The word “হাসি” contains হ.",
+      "context": "Find হ in হাসি and say the complete word aloud.",
+      "category": "consonant-ho",
+      "words": [
+        {
+          "bn": "হাসি",
+          "pronunciation": "hashi",
+          "en": "smile"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "হ",
+          "pronunciation": "hô",
+          "en": "the hô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "দেহ শব্দে হ আছে।",
+      "pronunciation": "deho shôbde hô achhe",
+      "en": "The word “দেহ” contains হ.",
+      "context": "Find হ in দেহ and say the complete word aloud.",
+      "category": "consonant-ho",
+      "words": [
+        {
+          "bn": "দেহ",
+          "pronunciation": "deho",
+          "en": "body"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "হ",
+          "pronunciation": "hô",
+          "en": "the hô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bn": "হ",
+      "pronunciation": "hô",
+      "en": "hô: h",
+      "category": "consonant-ho",
+      "sourcePhrase": "হাত শব্দে হ আছে।"
+    },
+    {
+      "bn": "হাত",
+      "pronunciation": "hat",
+      "en": "hand",
+      "category": "consonant-ho",
+      "sourcePhrase": "হাত শব্দে হ আছে।"
+    },
+    {
+      "bn": "হাসি",
+      "pronunciation": "hashi",
+      "en": "smile",
+      "category": "consonant-ho",
+      "sourcePhrase": "হাসি শব্দে হ আছে।"
+    },
+    {
+      "bn": "দেহ",
+      "pronunciation": "deho",
+      "en": "body",
+      "category": "consonant-ho",
+      "sourcePhrase": "দেহ শব্দে হ আছে।"
+    }
+  ],
+  "practice": [
+    "Say হ three times: hô, hô, hô.",
+    "Find হ in each example word and read the whole word aloud.",
+    "Write হ five times while saying its name."
+  ],
+  "notes": [
+    "হ is pronounced approximately h.",
+    "Listen to the audio and compare হ across the example words."
+  ]
+}

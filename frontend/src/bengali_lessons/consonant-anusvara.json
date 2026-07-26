@@ -1,0 +1,136 @@
+{
+  "id": "consonant-anusvara",
+  "title": "ং — anusvara",
+  "summary": "Learn ং, pronounced anusvara, and recognize it in three useful Bengali words.",
+  "level": "beginner",
+  "topic": "Consonant: ং",
+  "focus": "character recognition and pronunciation",
+  "phrases": [
+    {
+      "bn": "বাংলা শব্দে ং আছে।",
+      "pronunciation": "bangla shôbde anusvara achhe",
+      "en": "The word “বাংলা” contains ং.",
+      "context": "Find ং in বাংলা and say the complete word aloud.",
+      "category": "consonant-anusvara",
+      "words": [
+        {
+          "bn": "বাংলা",
+          "pronunciation": "bangla",
+          "en": "Bengali"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ং",
+          "pronunciation": "anusvara",
+          "en": "the anusvara character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "রং শব্দে ং আছে।",
+      "pronunciation": "rông shôbde anusvara achhe",
+      "en": "The word “রং” contains ং.",
+      "context": "Find ং in রং and say the complete word aloud.",
+      "category": "consonant-anusvara",
+      "words": [
+        {
+          "bn": "রং",
+          "pronunciation": "rông",
+          "en": "color"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ং",
+          "pronunciation": "anusvara",
+          "en": "the anusvara character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "সংবাদ শব্দে ং আছে।",
+      "pronunciation": "shôngbad shôbde anusvara achhe",
+      "en": "The word “সংবাদ” contains ং.",
+      "context": "Find ং in সংবাদ and say the complete word aloud.",
+      "category": "consonant-anusvara",
+      "words": [
+        {
+          "bn": "সংবাদ",
+          "pronunciation": "shôngbad",
+          "en": "news"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ং",
+          "pronunciation": "anusvara",
+          "en": "the anusvara character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bn": "ং",
+      "pronunciation": "anusvara",
+      "en": "anusvara: a contextual nasal sound",
+      "category": "consonant-anusvara",
+      "sourcePhrase": "বাংলা শব্দে ং আছে।"
+    },
+    {
+      "bn": "বাংলা",
+      "pronunciation": "bangla",
+      "en": "Bengali",
+      "category": "consonant-anusvara",
+      "sourcePhrase": "বাংলা শব্দে ং আছে।"
+    },
+    {
+      "bn": "রং",
+      "pronunciation": "rông",
+      "en": "color",
+      "category": "consonant-anusvara",
+      "sourcePhrase": "রং শব্দে ং আছে।"
+    },
+    {
+      "bn": "সংবাদ",
+      "pronunciation": "shôngbad",
+      "en": "news",
+      "category": "consonant-anusvara",
+      "sourcePhrase": "সংবাদ শব্দে ং আছে।"
+    }
+  ],
+  "practice": [
+    "Say ং three times: anusvara, anusvara, anusvara.",
+    "Find ং in each example word and read the whole word aloud.",
+    "Write ং five times while saying its name."
+  ],
+  "notes": [
+    "ং is pronounced approximately a contextual nasal sound.",
+    "ং is a sign rather than an independent consonant; its nasal sound changes with context."
+  ]
+}

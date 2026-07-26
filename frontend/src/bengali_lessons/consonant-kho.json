@@ -1,0 +1,136 @@
+{
+  "id": "consonant-kho",
+  "title": "খ — khô",
+  "summary": "Learn খ, pronounced khô, and recognize it in three useful Bengali words.",
+  "level": "beginner",
+  "topic": "Consonant: খ",
+  "focus": "character recognition and pronunciation",
+  "phrases": [
+    {
+      "bn": "খাতা শব্দে খ আছে।",
+      "pronunciation": "khata shôbde khô achhe",
+      "en": "The word “খাতা” contains খ.",
+      "context": "Find খ in খাতা and say the complete word aloud.",
+      "category": "consonant-kho",
+      "words": [
+        {
+          "bn": "খাতা",
+          "pronunciation": "khata",
+          "en": "notebook"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "খ",
+          "pronunciation": "khô",
+          "en": "the khô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "খবর শব্দে খ আছে।",
+      "pronunciation": "khôbor shôbde khô achhe",
+      "en": "The word “খবর” contains খ.",
+      "context": "Find খ in খবর and say the complete word aloud.",
+      "category": "consonant-kho",
+      "words": [
+        {
+          "bn": "খবর",
+          "pronunciation": "khôbor",
+          "en": "news"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "খ",
+          "pronunciation": "khô",
+          "en": "the khô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "সুখ শব্দে খ আছে।",
+      "pronunciation": "shukh shôbde khô achhe",
+      "en": "The word “সুখ” contains খ.",
+      "context": "Find খ in সুখ and say the complete word aloud.",
+      "category": "consonant-kho",
+      "words": [
+        {
+          "bn": "সুখ",
+          "pronunciation": "shukh",
+          "en": "happiness"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "খ",
+          "pronunciation": "khô",
+          "en": "the khô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bn": "খ",
+      "pronunciation": "khô",
+      "en": "khô: an aspirated k",
+      "category": "consonant-kho",
+      "sourcePhrase": "খাতা শব্দে খ আছে।"
+    },
+    {
+      "bn": "খাতা",
+      "pronunciation": "khata",
+      "en": "notebook",
+      "category": "consonant-kho",
+      "sourcePhrase": "খাতা শব্দে খ আছে।"
+    },
+    {
+      "bn": "খবর",
+      "pronunciation": "khôbor",
+      "en": "news",
+      "category": "consonant-kho",
+      "sourcePhrase": "খবর শব্দে খ আছে।"
+    },
+    {
+      "bn": "সুখ",
+      "pronunciation": "shukh",
+      "en": "happiness",
+      "category": "consonant-kho",
+      "sourcePhrase": "সুখ শব্দে খ আছে।"
+    }
+  ],
+  "practice": [
+    "Say খ three times: khô, khô, khô.",
+    "Find খ in each example word and read the whole word aloud.",
+    "Write খ five times while saying its name."
+  ],
+  "notes": [
+    "খ is pronounced approximately an aspirated k.",
+    "Listen to the audio and compare খ across the example words."
+  ]
+}

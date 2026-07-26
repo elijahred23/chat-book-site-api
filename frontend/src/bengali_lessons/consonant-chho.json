@@ -1,0 +1,136 @@
+{
+  "id": "consonant-chho",
+  "title": "ছ — chhô",
+  "summary": "Learn ছ, pronounced chhô, and recognize it in three useful Bengali words.",
+  "level": "beginner",
+  "topic": "Consonant: ছ",
+  "focus": "character recognition and pronunciation",
+  "phrases": [
+    {
+      "bn": "ছাতা শব্দে ছ আছে।",
+      "pronunciation": "chhata shôbde chhô achhe",
+      "en": "The word “ছাতা” contains ছ.",
+      "context": "Find ছ in ছাতা and say the complete word aloud.",
+      "category": "consonant-chho",
+      "words": [
+        {
+          "bn": "ছাতা",
+          "pronunciation": "chhata",
+          "en": "umbrella"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ছ",
+          "pronunciation": "chhô",
+          "en": "the chhô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "ছবি শব্দে ছ আছে।",
+      "pronunciation": "chhobi shôbde chhô achhe",
+      "en": "The word “ছবি” contains ছ.",
+      "context": "Find ছ in ছবি and say the complete word aloud.",
+      "category": "consonant-chho",
+      "words": [
+        {
+          "bn": "ছবি",
+          "pronunciation": "chhobi",
+          "en": "picture"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ছ",
+          "pronunciation": "chhô",
+          "en": "the chhô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "গাছ শব্দে ছ আছে।",
+      "pronunciation": "gachh shôbde chhô achhe",
+      "en": "The word “গাছ” contains ছ.",
+      "context": "Find ছ in গাছ and say the complete word aloud.",
+      "category": "consonant-chho",
+      "words": [
+        {
+          "bn": "গাছ",
+          "pronunciation": "gachh",
+          "en": "tree"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ছ",
+          "pronunciation": "chhô",
+          "en": "the chhô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bn": "ছ",
+      "pronunciation": "chhô",
+      "en": "chhô: a strongly aspirated ch",
+      "category": "consonant-chho",
+      "sourcePhrase": "ছাতা শব্দে ছ আছে।"
+    },
+    {
+      "bn": "ছাতা",
+      "pronunciation": "chhata",
+      "en": "umbrella",
+      "category": "consonant-chho",
+      "sourcePhrase": "ছাতা শব্দে ছ আছে।"
+    },
+    {
+      "bn": "ছবি",
+      "pronunciation": "chhobi",
+      "en": "picture",
+      "category": "consonant-chho",
+      "sourcePhrase": "ছবি শব্দে ছ আছে।"
+    },
+    {
+      "bn": "গাছ",
+      "pronunciation": "gachh",
+      "en": "tree",
+      "category": "consonant-chho",
+      "sourcePhrase": "গাছ শব্দে ছ আছে।"
+    }
+  ],
+  "practice": [
+    "Say ছ three times: chhô, chhô, chhô.",
+    "Find ছ in each example word and read the whole word aloud.",
+    "Write ছ five times while saying its name."
+  ],
+  "notes": [
+    "ছ is pronounced approximately a strongly aspirated ch.",
+    "Listen to the audio and compare ছ across the example words."
+  ]
+}

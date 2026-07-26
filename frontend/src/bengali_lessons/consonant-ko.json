@@ -1,0 +1,136 @@
+{
+  "id": "consonant-ko",
+  "title": "ক — kô",
+  "summary": "Learn ক, pronounced kô, and recognize it in three useful Bengali words.",
+  "level": "beginner",
+  "topic": "Consonant: ক",
+  "focus": "character recognition and pronunciation",
+  "phrases": [
+    {
+      "bn": "কলম শব্দে ক আছে।",
+      "pronunciation": "kôlom shôbde kô achhe",
+      "en": "The word “কলম” contains ক.",
+      "context": "Find ক in কলম and say the complete word aloud.",
+      "category": "consonant-ko",
+      "words": [
+        {
+          "bn": "কলম",
+          "pronunciation": "kôlom",
+          "en": "pen"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ক",
+          "pronunciation": "kô",
+          "en": "the kô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "কাজ শব্দে ক আছে।",
+      "pronunciation": "kaj shôbde kô achhe",
+      "en": "The word “কাজ” contains ক.",
+      "context": "Find ক in কাজ and say the complete word aloud.",
+      "category": "consonant-ko",
+      "words": [
+        {
+          "bn": "কাজ",
+          "pronunciation": "kaj",
+          "en": "work"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ক",
+          "pronunciation": "kô",
+          "en": "the kô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "কাক শব্দে ক আছে।",
+      "pronunciation": "kak shôbde kô achhe",
+      "en": "The word “কাক” contains ক.",
+      "context": "Find ক in কাক and say the complete word aloud.",
+      "category": "consonant-ko",
+      "words": [
+        {
+          "bn": "কাক",
+          "pronunciation": "kak",
+          "en": "crow"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ক",
+          "pronunciation": "kô",
+          "en": "the kô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bn": "ক",
+      "pronunciation": "kô",
+      "en": "kô: k as in kite",
+      "category": "consonant-ko",
+      "sourcePhrase": "কলম শব্দে ক আছে।"
+    },
+    {
+      "bn": "কলম",
+      "pronunciation": "kôlom",
+      "en": "pen",
+      "category": "consonant-ko",
+      "sourcePhrase": "কলম শব্দে ক আছে।"
+    },
+    {
+      "bn": "কাজ",
+      "pronunciation": "kaj",
+      "en": "work",
+      "category": "consonant-ko",
+      "sourcePhrase": "কাজ শব্দে ক আছে।"
+    },
+    {
+      "bn": "কাক",
+      "pronunciation": "kak",
+      "en": "crow",
+      "category": "consonant-ko",
+      "sourcePhrase": "কাক শব্দে ক আছে।"
+    }
+  ],
+  "practice": [
+    "Say ক three times: kô, kô, kô.",
+    "Find ক in each example word and read the whole word aloud.",
+    "Write ক five times while saying its name."
+  ],
+  "notes": [
+    "ক is pronounced approximately k as in kite.",
+    "Listen to the audio and compare ক across the example words."
+  ]
+}

@@ -1,0 +1,136 @@
+{
+  "id": "consonant-bo",
+  "title": "ব — bô",
+  "summary": "Learn ব, pronounced bô, and recognize it in three useful Bengali words.",
+  "level": "beginner",
+  "topic": "Consonant: ব",
+  "focus": "character recognition and pronunciation",
+  "phrases": [
+    {
+      "bn": "বই শব্দে ব আছে।",
+      "pronunciation": "boi shôbde bô achhe",
+      "en": "The word “বই” contains ব.",
+      "context": "Find ব in বই and say the complete word aloud.",
+      "category": "consonant-bo",
+      "words": [
+        {
+          "bn": "বই",
+          "pronunciation": "boi",
+          "en": "book"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ব",
+          "pronunciation": "bô",
+          "en": "the bô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "বাংলা শব্দে ব আছে।",
+      "pronunciation": "bangla shôbde bô achhe",
+      "en": "The word “বাংলা” contains ব.",
+      "context": "Find ব in বাংলা and say the complete word aloud.",
+      "category": "consonant-bo",
+      "words": [
+        {
+          "bn": "বাংলা",
+          "pronunciation": "bangla",
+          "en": "Bengali"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ব",
+          "pronunciation": "bô",
+          "en": "the bô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "ছবি শব্দে ব আছে।",
+      "pronunciation": "chhobi shôbde bô achhe",
+      "en": "The word “ছবি” contains ব.",
+      "context": "Find ব in ছবি and say the complete word aloud.",
+      "category": "consonant-bo",
+      "words": [
+        {
+          "bn": "ছবি",
+          "pronunciation": "chhobi",
+          "en": "picture"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ব",
+          "pronunciation": "bô",
+          "en": "the bô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bn": "ব",
+      "pronunciation": "bô",
+      "en": "bô: b",
+      "category": "consonant-bo",
+      "sourcePhrase": "বই শব্দে ব আছে।"
+    },
+    {
+      "bn": "বই",
+      "pronunciation": "boi",
+      "en": "book",
+      "category": "consonant-bo",
+      "sourcePhrase": "বই শব্দে ব আছে।"
+    },
+    {
+      "bn": "বাংলা",
+      "pronunciation": "bangla",
+      "en": "Bengali",
+      "category": "consonant-bo",
+      "sourcePhrase": "বাংলা শব্দে ব আছে।"
+    },
+    {
+      "bn": "ছবি",
+      "pronunciation": "chhobi",
+      "en": "picture",
+      "category": "consonant-bo",
+      "sourcePhrase": "ছবি শব্দে ব আছে।"
+    }
+  ],
+  "practice": [
+    "Say ব three times: bô, bô, bô.",
+    "Find ব in each example word and read the whole word aloud.",
+    "Write ব five times while saying its name."
+  ],
+  "notes": [
+    "ব is pronounced approximately b.",
+    "Listen to the audio and compare ব across the example words."
+  ]
+}

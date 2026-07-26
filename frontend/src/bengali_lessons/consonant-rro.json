@@ -1,0 +1,136 @@
+{
+  "id": "consonant-rro",
+  "title": "ড় — ṛô",
+  "summary": "Learn ড়, pronounced ṛô, and recognize it in three useful Bengali words.",
+  "level": "beginner",
+  "topic": "Consonant: ড়",
+  "focus": "character recognition and pronunciation",
+  "phrases": [
+    {
+      "bn": "গাড়ি শব্দে ড় আছে।",
+      "pronunciation": "gaṛi shôbde ṛô achhe",
+      "en": "The word “গাড়ি” contains ড়.",
+      "context": "Find ড় in গাড়ি and say the complete word aloud.",
+      "category": "consonant-rro",
+      "words": [
+        {
+          "bn": "গাড়ি",
+          "pronunciation": "gaṛi",
+          "en": "car"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ড়",
+          "pronunciation": "ṛô",
+          "en": "the ṛô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "বড় শব্দে ড় আছে।",
+      "pronunciation": "bôṛo shôbde ṛô achhe",
+      "en": "The word “বড়” contains ড়.",
+      "context": "Find ড় in বড় and say the complete word aloud.",
+      "category": "consonant-rro",
+      "words": [
+        {
+          "bn": "বড়",
+          "pronunciation": "bôṛo",
+          "en": "big"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ড়",
+          "pronunciation": "ṛô",
+          "en": "the ṛô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "ঘড়ি শব্দে ড় আছে।",
+      "pronunciation": "ghôṛi shôbde ṛô achhe",
+      "en": "The word “ঘড়ি” contains ড়.",
+      "context": "Find ড় in ঘড়ি and say the complete word aloud.",
+      "category": "consonant-rro",
+      "words": [
+        {
+          "bn": "ঘড়ি",
+          "pronunciation": "ghôṛi",
+          "en": "clock"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ড়",
+          "pronunciation": "ṛô",
+          "en": "the ṛô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bn": "ড়",
+      "pronunciation": "ṛô",
+      "en": "ṛô: a flapped r/d sound",
+      "category": "consonant-rro",
+      "sourcePhrase": "গাড়ি শব্দে ড় আছে।"
+    },
+    {
+      "bn": "গাড়ি",
+      "pronunciation": "gaṛi",
+      "en": "car",
+      "category": "consonant-rro",
+      "sourcePhrase": "গাড়ি শব্দে ড় আছে।"
+    },
+    {
+      "bn": "বড়",
+      "pronunciation": "bôṛo",
+      "en": "big",
+      "category": "consonant-rro",
+      "sourcePhrase": "বড় শব্দে ড় আছে।"
+    },
+    {
+      "bn": "ঘড়ি",
+      "pronunciation": "ghôṛi",
+      "en": "clock",
+      "category": "consonant-rro",
+      "sourcePhrase": "ঘড়ি শব্দে ড় আছে।"
+    }
+  ],
+  "practice": [
+    "Say ড় three times: ṛô, ṛô, ṛô.",
+    "Find ড় in each example word and read the whole word aloud.",
+    "Write ড় five times while saying its name."
+  ],
+  "notes": [
+    "ড় is pronounced approximately a flapped r/d sound.",
+    "Listen to the audio and compare ড় across the example words."
+  ]
+}

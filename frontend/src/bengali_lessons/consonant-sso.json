@@ -1,0 +1,136 @@
+{
+  "id": "consonant-sso",
+  "title": "ষ — ṣô",
+  "summary": "Learn ষ, pronounced ṣô, and recognize it in three useful Bengali words.",
+  "level": "beginner",
+  "topic": "Consonant: ষ",
+  "focus": "character recognition and pronunciation",
+  "phrases": [
+    {
+      "bn": "ষাট শব্দে ষ আছে।",
+      "pronunciation": "shaṭ shôbde ṣô achhe",
+      "en": "The word “ষাট” contains ষ.",
+      "context": "Find ষ in ষাট and say the complete word aloud.",
+      "category": "consonant-sso",
+      "words": [
+        {
+          "bn": "ষাট",
+          "pronunciation": "shaṭ",
+          "en": "sixty"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ষ",
+          "pronunciation": "ṣô",
+          "en": "the ṣô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "কষ্ট শব্দে ষ আছে।",
+      "pronunciation": "kôshṭo shôbde ṣô achhe",
+      "en": "The word “কষ্ট” contains ষ.",
+      "context": "Find ষ in কষ্ট and say the complete word aloud.",
+      "category": "consonant-sso",
+      "words": [
+        {
+          "bn": "কষ্ট",
+          "pronunciation": "kôshṭo",
+          "en": "pain / difficulty"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ষ",
+          "pronunciation": "ṣô",
+          "en": "the ṣô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "ভাষা শব্দে ষ আছে।",
+      "pronunciation": "bhasha shôbde ṣô achhe",
+      "en": "The word “ভাষা” contains ষ.",
+      "context": "Find ষ in ভাষা and say the complete word aloud.",
+      "category": "consonant-sso",
+      "words": [
+        {
+          "bn": "ভাষা",
+          "pronunciation": "bhasha",
+          "en": "language"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ষ",
+          "pronunciation": "ṣô",
+          "en": "the ṣô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bn": "ষ",
+      "pronunciation": "ṣô",
+      "en": "ṣô: a historical retroflex sh, usually sh today",
+      "category": "consonant-sso",
+      "sourcePhrase": "ষাট শব্দে ষ আছে।"
+    },
+    {
+      "bn": "ষাট",
+      "pronunciation": "shaṭ",
+      "en": "sixty",
+      "category": "consonant-sso",
+      "sourcePhrase": "ষাট শব্দে ষ আছে।"
+    },
+    {
+      "bn": "কষ্ট",
+      "pronunciation": "kôshṭo",
+      "en": "pain / difficulty",
+      "category": "consonant-sso",
+      "sourcePhrase": "কষ্ট শব্দে ষ আছে।"
+    },
+    {
+      "bn": "ভাষা",
+      "pronunciation": "bhasha",
+      "en": "language",
+      "category": "consonant-sso",
+      "sourcePhrase": "ভাষা শব্দে ষ আছে।"
+    }
+  ],
+  "practice": [
+    "Say ষ three times: ṣô, ṣô, ṣô.",
+    "Find ষ in each example word and read the whole word aloud.",
+    "Write ষ five times while saying its name."
+  ],
+  "notes": [
+    "ষ is pronounced approximately a historical retroflex sh, usually sh today.",
+    "Listen to the audio and compare ষ across the example words."
+  ]
+}

@@ -1,0 +1,136 @@
+{
+  "id": "consonant-ddho",
+  "title": "ঢ — ḍhô",
+  "summary": "Learn ঢ, pronounced ḍhô, and recognize it in three useful Bengali words.",
+  "level": "beginner",
+  "topic": "Consonant: ঢ",
+  "focus": "character recognition and pronunciation",
+  "phrases": [
+    {
+      "bn": "ঢাক শব্দে ঢ আছে।",
+      "pronunciation": "ḍhak shôbde ḍhô achhe",
+      "en": "The word “ঢাক” contains ঢ.",
+      "context": "Find ঢ in ঢাক and say the complete word aloud.",
+      "category": "consonant-ddho",
+      "words": [
+        {
+          "bn": "ঢাক",
+          "pronunciation": "ḍhak",
+          "en": "drum"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ঢ",
+          "pronunciation": "ḍhô",
+          "en": "the ḍhô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "ঢাকা শব্দে ঢ আছে।",
+      "pronunciation": "ḍhaka shôbde ḍhô achhe",
+      "en": "The word “ঢাকা” contains ঢ.",
+      "context": "Find ঢ in ঢাকা and say the complete word aloud.",
+      "category": "consonant-ddho",
+      "words": [
+        {
+          "bn": "ঢাকা",
+          "pronunciation": "ḍhaka",
+          "en": "Dhaka"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ঢ",
+          "pronunciation": "ḍhô",
+          "en": "the ḍhô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "ঢেউ শব্দে ঢ আছে।",
+      "pronunciation": "ḍheu shôbde ḍhô achhe",
+      "en": "The word “ঢেউ” contains ঢ.",
+      "context": "Find ঢ in ঢেউ and say the complete word aloud.",
+      "category": "consonant-ddho",
+      "words": [
+        {
+          "bn": "ঢেউ",
+          "pronunciation": "ḍheu",
+          "en": "wave"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ঢ",
+          "pronunciation": "ḍhô",
+          "en": "the ḍhô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bn": "ঢ",
+      "pronunciation": "ḍhô",
+      "en": "ḍhô: an aspirated retroflex d",
+      "category": "consonant-ddho",
+      "sourcePhrase": "ঢাক শব্দে ঢ আছে।"
+    },
+    {
+      "bn": "ঢাক",
+      "pronunciation": "ḍhak",
+      "en": "drum",
+      "category": "consonant-ddho",
+      "sourcePhrase": "ঢাক শব্দে ঢ আছে।"
+    },
+    {
+      "bn": "ঢাকা",
+      "pronunciation": "ḍhaka",
+      "en": "Dhaka",
+      "category": "consonant-ddho",
+      "sourcePhrase": "ঢাকা শব্দে ঢ আছে।"
+    },
+    {
+      "bn": "ঢেউ",
+      "pronunciation": "ḍheu",
+      "en": "wave",
+      "category": "consonant-ddho",
+      "sourcePhrase": "ঢেউ শব্দে ঢ আছে।"
+    }
+  ],
+  "practice": [
+    "Say ঢ three times: ḍhô, ḍhô, ḍhô.",
+    "Find ঢ in each example word and read the whole word aloud.",
+    "Write ঢ five times while saying its name."
+  ],
+  "notes": [
+    "ঢ is pronounced approximately an aspirated retroflex d.",
+    "Listen to the audio and compare ঢ across the example words."
+  ]
+}

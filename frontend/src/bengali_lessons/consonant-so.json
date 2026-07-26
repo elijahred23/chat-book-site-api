@@ -1,0 +1,136 @@
+{
+  "id": "consonant-so",
+  "title": "স — sô",
+  "summary": "Learn স, pronounced sô, and recognize it in three useful Bengali words.",
+  "level": "beginner",
+  "topic": "Consonant: স",
+  "focus": "character recognition and pronunciation",
+  "phrases": [
+    {
+      "bn": "সকাল শব্দে স আছে।",
+      "pronunciation": "shôkal shôbde sô achhe",
+      "en": "The word “সকাল” contains স.",
+      "context": "Find স in সকাল and say the complete word aloud.",
+      "category": "consonant-so",
+      "words": [
+        {
+          "bn": "সকাল",
+          "pronunciation": "shôkal",
+          "en": "morning"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "স",
+          "pronunciation": "sô",
+          "en": "the sô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "সাপ শব্দে স আছে।",
+      "pronunciation": "shap shôbde sô achhe",
+      "en": "The word “সাপ” contains স.",
+      "context": "Find স in সাপ and say the complete word aloud.",
+      "category": "consonant-so",
+      "words": [
+        {
+          "bn": "সাপ",
+          "pronunciation": "shap",
+          "en": "snake"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "স",
+          "pronunciation": "sô",
+          "en": "the sô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "বাস শব্দে স আছে।",
+      "pronunciation": "bash shôbde sô achhe",
+      "en": "The word “বাস” contains স.",
+      "context": "Find স in বাস and say the complete word aloud.",
+      "category": "consonant-so",
+      "words": [
+        {
+          "bn": "বাস",
+          "pronunciation": "bash",
+          "en": "bus"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "স",
+          "pronunciation": "sô",
+          "en": "the sô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bn": "স",
+      "pronunciation": "sô",
+      "en": "sô: s",
+      "category": "consonant-so",
+      "sourcePhrase": "সকাল শব্দে স আছে।"
+    },
+    {
+      "bn": "সকাল",
+      "pronunciation": "shôkal",
+      "en": "morning",
+      "category": "consonant-so",
+      "sourcePhrase": "সকাল শব্দে স আছে।"
+    },
+    {
+      "bn": "সাপ",
+      "pronunciation": "shap",
+      "en": "snake",
+      "category": "consonant-so",
+      "sourcePhrase": "সাপ শব্দে স আছে।"
+    },
+    {
+      "bn": "বাস",
+      "pronunciation": "bash",
+      "en": "bus",
+      "category": "consonant-so",
+      "sourcePhrase": "বাস শব্দে স আছে।"
+    }
+  ],
+  "practice": [
+    "Say স three times: sô, sô, sô.",
+    "Find স in each example word and read the whole word aloud.",
+    "Write স five times while saying its name."
+  ],
+  "notes": [
+    "স is pronounced approximately s.",
+    "Listen to the audio and compare স across the example words."
+  ]
+}

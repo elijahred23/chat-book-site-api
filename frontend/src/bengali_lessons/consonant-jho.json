@@ -1,0 +1,136 @@
+{
+  "id": "consonant-jho",
+  "title": "ঝ — jhô",
+  "summary": "Learn ঝ, pronounced jhô, and recognize it in three useful Bengali words.",
+  "level": "beginner",
+  "topic": "Consonant: ঝ",
+  "focus": "character recognition and pronunciation",
+  "phrases": [
+    {
+      "bn": "ঝড় শব্দে ঝ আছে।",
+      "pronunciation": "jhôṛ shôbde jhô achhe",
+      "en": "The word “ঝড়” contains ঝ.",
+      "context": "Find ঝ in ঝড় and say the complete word aloud.",
+      "category": "consonant-jho",
+      "words": [
+        {
+          "bn": "ঝড়",
+          "pronunciation": "jhôṛ",
+          "en": "storm"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ঝ",
+          "pronunciation": "jhô",
+          "en": "the jhô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "ঝিনুক শব্দে ঝ আছে।",
+      "pronunciation": "jhinuk shôbde jhô achhe",
+      "en": "The word “ঝিনুক” contains ঝ.",
+      "context": "Find ঝ in ঝিনুক and say the complete word aloud.",
+      "category": "consonant-jho",
+      "words": [
+        {
+          "bn": "ঝিনুক",
+          "pronunciation": "jhinuk",
+          "en": "shell"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ঝ",
+          "pronunciation": "jhô",
+          "en": "the jhô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "মাঝি শব্দে ঝ আছে।",
+      "pronunciation": "majhi shôbde jhô achhe",
+      "en": "The word “মাঝি” contains ঝ.",
+      "context": "Find ঝ in মাঝি and say the complete word aloud.",
+      "category": "consonant-jho",
+      "words": [
+        {
+          "bn": "মাঝি",
+          "pronunciation": "majhi",
+          "en": "boatman"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ঝ",
+          "pronunciation": "jhô",
+          "en": "the jhô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bn": "ঝ",
+      "pronunciation": "jhô",
+      "en": "jhô: an aspirated j",
+      "category": "consonant-jho",
+      "sourcePhrase": "ঝড় শব্দে ঝ আছে।"
+    },
+    {
+      "bn": "ঝড়",
+      "pronunciation": "jhôṛ",
+      "en": "storm",
+      "category": "consonant-jho",
+      "sourcePhrase": "ঝড় শব্দে ঝ আছে।"
+    },
+    {
+      "bn": "ঝিনুক",
+      "pronunciation": "jhinuk",
+      "en": "shell",
+      "category": "consonant-jho",
+      "sourcePhrase": "ঝিনুক শব্দে ঝ আছে।"
+    },
+    {
+      "bn": "মাঝি",
+      "pronunciation": "majhi",
+      "en": "boatman",
+      "category": "consonant-jho",
+      "sourcePhrase": "মাঝি শব্দে ঝ আছে।"
+    }
+  ],
+  "practice": [
+    "Say ঝ three times: jhô, jhô, jhô.",
+    "Find ঝ in each example word and read the whole word aloud.",
+    "Write ঝ five times while saying its name."
+  ],
+  "notes": [
+    "ঝ is pronounced approximately an aspirated j.",
+    "Listen to the audio and compare ঝ across the example words."
+  ]
+}

@@ -1,0 +1,136 @@
+{
+  "id": "consonant-kkho",
+  "title": "ক্ষ — kṣô / khô",
+  "summary": "Learn ক্ষ, pronounced kṣô / khô, and recognize it in three useful Bengali words.",
+  "level": "beginner",
+  "topic": "Consonant: ক্ষ",
+  "focus": "character recognition and pronunciation",
+  "phrases": [
+    {
+      "bn": "ক্ষতি শব্দে ক্ষ আছে।",
+      "pronunciation": "khôti shôbde kṣô / khô achhe",
+      "en": "The word “ক্ষতি” contains ক্ষ.",
+      "context": "Find ক্ষ in ক্ষতি and say the complete word aloud.",
+      "category": "consonant-kkho",
+      "words": [
+        {
+          "bn": "ক্ষতি",
+          "pronunciation": "khôti",
+          "en": "harm"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ক্ষ",
+          "pronunciation": "kṣô / khô",
+          "en": "the kṣô / khô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "ক্ষমা শব্দে ক্ষ আছে।",
+      "pronunciation": "khôma shôbde kṣô / khô achhe",
+      "en": "The word “ক্ষমা” contains ক্ষ.",
+      "context": "Find ক্ষ in ক্ষমা and say the complete word aloud.",
+      "category": "consonant-kkho",
+      "words": [
+        {
+          "bn": "ক্ষমা",
+          "pronunciation": "khôma",
+          "en": "forgiveness"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ক্ষ",
+          "pronunciation": "kṣô / khô",
+          "en": "the kṣô / khô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "রক্ষা শব্দে ক্ষ আছে।",
+      "pronunciation": "rôkkha shôbde kṣô / khô achhe",
+      "en": "The word “রক্ষা” contains ক্ষ.",
+      "context": "Find ক্ষ in রক্ষা and say the complete word aloud.",
+      "category": "consonant-kkho",
+      "words": [
+        {
+          "bn": "রক্ষা",
+          "pronunciation": "rôkkha",
+          "en": "protection"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ক্ষ",
+          "pronunciation": "kṣô / khô",
+          "en": "the kṣô / khô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bn": "ক্ষ",
+      "pronunciation": "kṣô / khô",
+      "en": "kṣô / khô: a conjunct often pronounced kkho or kho",
+      "category": "consonant-kkho",
+      "sourcePhrase": "ক্ষতি শব্দে ক্ষ আছে।"
+    },
+    {
+      "bn": "ক্ষতি",
+      "pronunciation": "khôti",
+      "en": "harm",
+      "category": "consonant-kkho",
+      "sourcePhrase": "ক্ষতি শব্দে ক্ষ আছে।"
+    },
+    {
+      "bn": "ক্ষমা",
+      "pronunciation": "khôma",
+      "en": "forgiveness",
+      "category": "consonant-kkho",
+      "sourcePhrase": "ক্ষমা শব্দে ক্ষ আছে।"
+    },
+    {
+      "bn": "রক্ষা",
+      "pronunciation": "rôkkha",
+      "en": "protection",
+      "category": "consonant-kkho",
+      "sourcePhrase": "রক্ষা শব্দে ক্ষ আছে।"
+    }
+  ],
+  "practice": [
+    "Say ক্ষ three times: kṣô / khô, kṣô / khô, kṣô / khô.",
+    "Find ক্ষ in each example word and read the whole word aloud.",
+    "Write ক্ষ five times while saying its name."
+  ],
+  "notes": [
+    "ক্ষ is pronounced approximately a conjunct often pronounced kkho or kho.",
+    "ক্ষ is a conjunct of ক + ষ, traditionally taught alongside the consonants."
+  ]
+}

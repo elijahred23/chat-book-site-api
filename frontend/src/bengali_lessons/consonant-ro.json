@@ -1,0 +1,136 @@
+{
+  "id": "consonant-ro",
+  "title": "র — rô",
+  "summary": "Learn র, pronounced rô, and recognize it in three useful Bengali words.",
+  "level": "beginner",
+  "topic": "Consonant: র",
+  "focus": "character recognition and pronunciation",
+  "phrases": [
+    {
+      "bn": "রাত শব্দে র আছে।",
+      "pronunciation": "rat shôbde rô achhe",
+      "en": "The word “রাত” contains র.",
+      "context": "Find র in রাত and say the complete word aloud.",
+      "category": "consonant-ro",
+      "words": [
+        {
+          "bn": "রাত",
+          "pronunciation": "rat",
+          "en": "night"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "র",
+          "pronunciation": "rô",
+          "en": "the rô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "রাস্তা শব্দে র আছে।",
+      "pronunciation": "rasta shôbde rô achhe",
+      "en": "The word “রাস্তা” contains র.",
+      "context": "Find র in রাস্তা and say the complete word aloud.",
+      "category": "consonant-ro",
+      "words": [
+        {
+          "bn": "রাস্তা",
+          "pronunciation": "rasta",
+          "en": "road"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "র",
+          "pronunciation": "rô",
+          "en": "the rô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "ঘর শব্দে র আছে।",
+      "pronunciation": "ghôr shôbde rô achhe",
+      "en": "The word “ঘর” contains র.",
+      "context": "Find র in ঘর and say the complete word aloud.",
+      "category": "consonant-ro",
+      "words": [
+        {
+          "bn": "ঘর",
+          "pronunciation": "ghôr",
+          "en": "house"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "র",
+          "pronunciation": "rô",
+          "en": "the rô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bn": "র",
+      "pronunciation": "rô",
+      "en": "rô: a rolled or flapped r",
+      "category": "consonant-ro",
+      "sourcePhrase": "রাত শব্দে র আছে।"
+    },
+    {
+      "bn": "রাত",
+      "pronunciation": "rat",
+      "en": "night",
+      "category": "consonant-ro",
+      "sourcePhrase": "রাত শব্দে র আছে।"
+    },
+    {
+      "bn": "রাস্তা",
+      "pronunciation": "rasta",
+      "en": "road",
+      "category": "consonant-ro",
+      "sourcePhrase": "রাস্তা শব্দে র আছে।"
+    },
+    {
+      "bn": "ঘর",
+      "pronunciation": "ghôr",
+      "en": "house",
+      "category": "consonant-ro",
+      "sourcePhrase": "ঘর শব্দে র আছে।"
+    }
+  ],
+  "practice": [
+    "Say র three times: rô, rô, rô.",
+    "Find র in each example word and read the whole word aloud.",
+    "Write র five times while saying its name."
+  ],
+  "notes": [
+    "র is pronounced approximately a rolled or flapped r.",
+    "Listen to the audio and compare র across the example words."
+  ]
+}

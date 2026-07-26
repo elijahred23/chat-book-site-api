@@ -1,0 +1,136 @@
+{
+  "id": "consonant-mo",
+  "title": "ম — mô",
+  "summary": "Learn ম, pronounced mô, and recognize it in three useful Bengali words.",
+  "level": "beginner",
+  "topic": "Consonant: ম",
+  "focus": "character recognition and pronunciation",
+  "phrases": [
+    {
+      "bn": "মাছ শব্দে ম আছে।",
+      "pronunciation": "machh shôbde mô achhe",
+      "en": "The word “মাছ” contains ম.",
+      "context": "Find ম in মাছ and say the complete word aloud.",
+      "category": "consonant-mo",
+      "words": [
+        {
+          "bn": "মাছ",
+          "pronunciation": "machh",
+          "en": "fish"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ম",
+          "pronunciation": "mô",
+          "en": "the mô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "মা শব্দে ম আছে।",
+      "pronunciation": "ma shôbde mô achhe",
+      "en": "The word “মা” contains ম.",
+      "context": "Find ম in মা and say the complete word aloud.",
+      "category": "consonant-mo",
+      "words": [
+        {
+          "bn": "মা",
+          "pronunciation": "ma",
+          "en": "mother"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ম",
+          "pronunciation": "mô",
+          "en": "the mô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    },
+    {
+      "bn": "আম শব্দে ম আছে।",
+      "pronunciation": "am shôbde mô achhe",
+      "en": "The word “আম” contains ম.",
+      "context": "Find ম in আম and say the complete word aloud.",
+      "category": "consonant-mo",
+      "words": [
+        {
+          "bn": "আম",
+          "pronunciation": "am",
+          "en": "mango"
+        },
+        {
+          "bn": "শব্দে",
+          "pronunciation": "shôbde",
+          "en": "in the word"
+        },
+        {
+          "bn": "ম",
+          "pronunciation": "mô",
+          "en": "the mô character"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "is present"
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bn": "ম",
+      "pronunciation": "mô",
+      "en": "mô: m",
+      "category": "consonant-mo",
+      "sourcePhrase": "মাছ শব্দে ম আছে।"
+    },
+    {
+      "bn": "মাছ",
+      "pronunciation": "machh",
+      "en": "fish",
+      "category": "consonant-mo",
+      "sourcePhrase": "মাছ শব্দে ম আছে।"
+    },
+    {
+      "bn": "মা",
+      "pronunciation": "ma",
+      "en": "mother",
+      "category": "consonant-mo",
+      "sourcePhrase": "মা শব্দে ম আছে।"
+    },
+    {
+      "bn": "আম",
+      "pronunciation": "am",
+      "en": "mango",
+      "category": "consonant-mo",
+      "sourcePhrase": "আম শব্দে ম আছে।"
+    }
+  ],
+  "practice": [
+    "Say ম three times: mô, mô, mô.",
+    "Find ম in each example word and read the whole word aloud.",
+    "Write ম five times while saying its name."
+  ],
+  "notes": [
+    "ম is pronounced approximately m.",
+    "Listen to the audio and compare ম across the example words."
+  ]
+}

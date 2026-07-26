@@ -41,6 +41,11 @@ const expandedLessonModules = import.meta.glob("../bengali_lessons/{greetings-in
   import: "default",
 });
 const expandedLessons = Object.values(expandedLessonModules);
+const consonantLessonModules = import.meta.glob("../bengali_lessons/consonant-*.json", {
+  eager: true,
+  import: "default",
+});
+const consonantLessons = Object.values(consonantLessonModules);
 
 const LESSON_CACHE_KEY = "bengali_lesson_cache";
 const CORRECT_TIME = 250;
@@ -77,6 +82,7 @@ export const SAVED_LESSONS = [
   top250WordsLesson,
   verbsLesson,
   ...expandedLessons,
+  ...consonantLessons,
 ].map(withPhraseWords).sort((a, b) => a.topic.localeCompare(b.topic));
 const HIDDEN_LESSON_DROPDOWN_IDS = new Set(["aspnet-core-mvc", "dotnet-runtime"]);
 export const SELECTABLE_SAVED_LESSONS = SAVED_LESSONS.filter(
