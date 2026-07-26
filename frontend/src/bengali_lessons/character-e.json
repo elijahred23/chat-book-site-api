@@ -1,0 +1,25 @@
+{
+  "id": "character-e",
+  "title": "এ — The E Vowel",
+  "summary": "Learn এ, its e sound, and useful words beginning with it.",
+  "level": "beginner",
+  "topic": "Alphabet: এ",
+  "focus": "character and pronunciation",
+  "phrases": [
+    {"bn":"এ মানে এক।","pronunciation":"e mane ek","en":"এ is for one.","context":"Connect এ with the example word এক.","category":"character-e","words":[{"bn":"এ","pronunciation":"e","en":"the letter এ"},{"bn":"মানে","pronunciation":"mane","en":"means / stands for"},{"bn":"এক","pronunciation":"ek","en":"one"}]},
+    {"bn":"এখানে বসো।","pronunciation":"ekhane bôsho","en":"Sit here.","context":"Practice এ at the start of এখানে.","category":"character-e","words":[{"bn":"এখানে","pronunciation":"ekhane","en":"here"},{"bn":"বসো","pronunciation":"bôsho","en":"sit"}]},
+    {"bn":"এখন সময় আছে।","pronunciation":"ekhon shômoy achhe","en":"There is time now.","context":"Hear এ in এখন.","category":"character-e","words":[{"bn":"এখন","pronunciation":"ekhon","en":"now"},{"bn":"সময়","pronunciation":"shômoy","en":"time"},{"bn":"আছে","pronunciation":"achhe","en":"there is"}]},
+    {"bn":"এমন কথা বলো না।","pronunciation":"emon kôtha bôlo na","en":"Do not say such things.","context":"Use এমন to mean such or like this.","category":"character-e","words":[{"bn":"এমন","pronunciation":"emon","en":"such / like this"},{"bn":"কথা","pronunciation":"kôtha","en":"words / speech"},{"bn":"বলো","pronunciation":"bôlo","en":"say"},{"bn":"না","pronunciation":"na","en":"not"}]},
+    {"bn":"আমার বয়স এগারো।","pronunciation":"amar bôyosh egaro","en":"I am eleven years old.","context":"Practice এ in এগারো.","category":"character-e","words":[{"bn":"আমার","pronunciation":"amar","en":"my"},{"bn":"বয়স","pronunciation":"bôyosh","en":"age"},{"bn":"এগারো","pronunciation":"egaro","en":"eleven"}]}
+  ],
+  "vocab": [
+    {"bn":"এ","pronunciation":"e","en":"the eighth Bengali vowel","category":"character-e","sourcePhrase":"এ মানে এক।"},
+    {"bn":"এক","pronunciation":"ek","en":"one","category":"character-e","sourcePhrase":"এ মানে এক।"},
+    {"bn":"এখানে","pronunciation":"ekhane","en":"here","category":"character-e","sourcePhrase":"এখানে বসো।"},
+    {"bn":"এখন","pronunciation":"ekhon","en":"now","category":"character-e","sourcePhrase":"এখন সময় আছে।"},
+    {"bn":"এমন","pronunciation":"emon","en":"such / like this","category":"character-e","sourcePhrase":"এমন কথা বলো না।"},
+    {"bn":"এগারো","pronunciation":"egaro","en":"eleven","category":"character-e","sourcePhrase":"আমার বয়স এগারো।"}
+  ],
+  "practice": ["Say এ three times: e, e, e.","Read each এ-word aloud.","Write এ five times."],
+  "notes": ["এ usually sounds like e in “bed,” though its exact quality varies by word and dialect.","After a consonant, এ becomes ে (এ-কার), written to the left: ক + ে = কে (ke)."]
+}

@@ -1,0 +1,298 @@
+{
+  "id": "character-aw",
+  "title": "অ — The First Bengali Vowel",
+  "summary": "Learn the Bengali vowel অ, its short ô sound, and eight useful words that begin with it.",
+  "level": "beginner",
+  "topic": "Alphabet: অ",
+  "focus": "character and pronunciation",
+  "phrases": [
+    {
+      "bn": "অ মানে অজগর।",
+      "pronunciation": "ô mane ôjogor",
+      "en": "অ is for python.",
+      "context": "Connect the letter অ with the traditional example word অজগর.",
+      "category": "character-aw",
+      "words": [
+        {
+          "bn": "অ",
+          "pronunciation": "ô",
+          "en": "the letter অ"
+        },
+        {
+          "bn": "মানে",
+          "pronunciation": "mane",
+          "en": "means / stands for"
+        },
+        {
+          "bn": "অজগর",
+          "pronunciation": "ôjogor",
+          "en": "python"
+        }
+      ]
+    },
+    {
+      "bn": "এখানে অনেক ফল আছে।",
+      "pronunciation": "ekhane ônek phôl achhe",
+      "en": "There is a lot of fruit here.",
+      "context": "Hear অ at the beginning of অনেক.",
+      "category": "character-aw",
+      "words": [
+        {
+          "bn": "এখানে",
+          "pronunciation": "ekhane",
+          "en": "here"
+        },
+        {
+          "bn": "অনেক",
+          "pronunciation": "ônek",
+          "en": "many / a lot of"
+        },
+        {
+          "bn": "ফল",
+          "pronunciation": "phôl",
+          "en": "fruit"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "there is / has"
+        }
+      ]
+    },
+    {
+      "bn": "আমার অল্প সময় আছে।",
+      "pronunciation": "amar ôlpo shômoy achhe",
+      "en": "I have a little time.",
+      "context": "Practice the initial অ sound in অল্প.",
+      "category": "character-aw",
+      "words": [
+        {
+          "bn": "আমার",
+          "pronunciation": "amar",
+          "en": "my / I have"
+        },
+        {
+          "bn": "অল্প",
+          "pronunciation": "ôlpo",
+          "en": "a little"
+        },
+        {
+          "bn": "সময়",
+          "pronunciation": "shômoy",
+          "en": "time"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "there is / has"
+        }
+      ]
+    },
+    {
+      "bn": "আমি অঙ্ক শিখছি।",
+      "pronunciation": "ami ônko shikhchhi",
+      "en": "I am learning mathematics.",
+      "context": "Read অ before the consonant cluster ঙ্ক in অঙ্ক.",
+      "category": "character-aw",
+      "words": [
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "অঙ্ক",
+          "pronunciation": "ônko",
+          "en": "mathematics"
+        },
+        {
+          "bn": "শিখছি",
+          "pronunciation": "shikhchhi",
+          "en": "am learning"
+        }
+      ]
+    },
+    {
+      "bn": "অ একটি বাংলা অক্ষর।",
+      "pronunciation": "ô ekti bangla ôkkhor",
+      "en": "অ is a Bengali letter.",
+      "context": "Name অ and use the word অক্ষর for a written letter.",
+      "category": "character-aw",
+      "words": [
+        {
+          "bn": "অ",
+          "pronunciation": "ô",
+          "en": "the letter অ"
+        },
+        {
+          "bn": "একটি",
+          "pronunciation": "ekti",
+          "en": "a / one"
+        },
+        {
+          "bn": "বাংলা",
+          "pronunciation": "bangla",
+          "en": "Bengali"
+        },
+        {
+          "bn": "অক্ষর",
+          "pronunciation": "ôkkhor",
+          "en": "letter / character"
+        }
+      ]
+    },
+    {
+      "bn": "অল্প অপেক্ষা করো।",
+      "pronunciation": "ôlpo ôpekkha kôro",
+      "en": "Wait a little.",
+      "context": "Compare the initial অ sound in অল্প and অপেক্ষা.",
+      "category": "character-aw",
+      "words": [
+        {
+          "bn": "অল্প",
+          "pronunciation": "ôlpo",
+          "en": "a little"
+        },
+        {
+          "bn": "অপেক্ষা",
+          "pronunciation": "ôpekkha",
+          "en": "wait"
+        },
+        {
+          "bn": "করো",
+          "pronunciation": "kôro",
+          "en": "do / please"
+        }
+      ]
+    },
+    {
+      "bn": "সে আজ অসুস্থ।",
+      "pronunciation": "she aj ôshustho",
+      "en": "He or she is ill today.",
+      "context": "Hear অ at the start of the common adjective অসুস্থ.",
+      "category": "character-aw",
+      "words": [
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "আজ",
+          "pronunciation": "aj",
+          "en": "today"
+        },
+        {
+          "bn": "অসুস্থ",
+          "pronunciation": "ôshustho",
+          "en": "ill / sick"
+        }
+      ]
+    },
+    {
+      "bn": "চা অথবা কফি খাবে?",
+      "pronunciation": "cha ôthoba kôphi khabe",
+      "en": "Will you have tea or coffee?",
+      "context": "Use অথবা, a useful connector beginning with অ.",
+      "category": "character-aw",
+      "words": [
+        {
+          "bn": "চা",
+          "pronunciation": "cha",
+          "en": "tea"
+        },
+        {
+          "bn": "অথবা",
+          "pronunciation": "ôthoba",
+          "en": "or"
+        },
+        {
+          "bn": "কফি",
+          "pronunciation": "kôphi",
+          "en": "coffee"
+        },
+        {
+          "bn": "খাবে",
+          "pronunciation": "khabe",
+          "en": "will eat / will have"
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bn": "অ",
+      "pronunciation": "ô",
+      "en": "the first Bengali vowel",
+      "category": "character-aw",
+      "sourcePhrase": "অ মানে অজগর।"
+    },
+    {
+      "bn": "অজগর",
+      "pronunciation": "ôjogor",
+      "en": "python",
+      "category": "character-aw",
+      "sourcePhrase": "অ মানে অজগর।"
+    },
+    {
+      "bn": "অনেক",
+      "pronunciation": "ônek",
+      "en": "many / a lot",
+      "category": "character-aw",
+      "sourcePhrase": "এখানে অনেক ফল আছে।"
+    },
+    {
+      "bn": "অল্প",
+      "pronunciation": "ôlpo",
+      "en": "a little / a small amount",
+      "category": "character-aw",
+      "sourcePhrase": "আমার অল্প সময় আছে।"
+    },
+    {
+      "bn": "অঙ্ক",
+      "pronunciation": "ônko",
+      "en": "mathematics / number",
+      "category": "character-aw",
+      "sourcePhrase": "আমি অঙ্ক শিখছি।"
+    },
+    {
+      "bn": "অক্ষর",
+      "pronunciation": "ôkkhor",
+      "en": "letter / character",
+      "category": "character-aw",
+      "sourcePhrase": "অ একটি বাংলা অক্ষর।"
+    },
+    {
+      "bn": "অপেক্ষা",
+      "pronunciation": "ôpekkha",
+      "en": "wait / waiting",
+      "category": "character-aw",
+      "sourcePhrase": "অল্প অপেক্ষা করো।"
+    },
+    {
+      "bn": "অসুস্থ",
+      "pronunciation": "ôshustho",
+      "en": "ill / sick",
+      "category": "character-aw",
+      "sourcePhrase": "সে আজ অসুস্থ।"
+    },
+    {
+      "bn": "অথবা",
+      "pronunciation": "ôthoba",
+      "en": "or",
+      "category": "character-aw",
+      "sourcePhrase": "চা অথবা কফি খাবে?"
+    }
+  ],
+  "practice": [
+    "Say অ three times, keeping the sound short: ô, ô, ô.",
+    "Read each vocabulary word aloud and listen for অ at the beginning.",
+    "Contrast অ (ô) with আ (a): অজগর (ôjogor), আম (am).",
+    "Write অ five times, starting with the curved body and finishing with the top line."
+  ],
+  "notes": [
+    "অ is the first independent vowel in the Bengali alphabet. Its sound is commonly written ô in learner transliteration and is similar to the first vowel sound in the British pronunciation of “often.”",
+    "Unlike most other Bengali vowels, অ has no separate vowel mark (কার). After a consonant with no visible vowel sign, an inherent অ-like sound is often understood: ক is read kô.",
+    "In natural speech, the exact sound of অ can vary slightly by word and dialect. Use the audio controls to imitate a Bengali voice."
+  ]
+}

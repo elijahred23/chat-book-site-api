@@ -1,0 +1,268 @@
+{
+  "id": "character-aa",
+  "title": "আ — The Long A Vowel",
+  "summary": "Learn the Bengali vowel আ, its open a sound, and eight useful words that begin with it.",
+  "level": "beginner",
+  "topic": "Alphabet: আ",
+  "focus": "character and pronunciation",
+  "phrases": [
+    {
+      "bn": "আ মানে আম।",
+      "pronunciation": "a mane am",
+      "en": "আ is for mango.",
+      "context": "Connect the letter আ with the familiar example word আম.",
+      "category": "character-aa",
+      "words": [
+        {
+          "bn": "আ",
+          "pronunciation": "a",
+          "en": "the letter আ"
+        },
+        {
+          "bn": "মানে",
+          "pronunciation": "mane",
+          "en": "means / stands for"
+        },
+        {
+          "bn": "আম",
+          "pronunciation": "am",
+          "en": "mango"
+        }
+      ]
+    },
+    {
+      "bn": "আকাশ নীল।",
+      "pronunciation": "akash nil",
+      "en": "The sky is blue.",
+      "context": "Hear the clear আ sound at the beginning of আকাশ.",
+      "category": "character-aa",
+      "words": [
+        {
+          "bn": "আকাশ",
+          "pronunciation": "akash",
+          "en": "sky"
+        },
+        {
+          "bn": "নীল",
+          "pronunciation": "nil",
+          "en": "blue"
+        }
+      ]
+    },
+    {
+      "bn": "আগুন জ্বলছে।",
+      "pronunciation": "agun jôlchhe",
+      "en": "The fire is burning.",
+      "context": "Practice the initial আ sound in আগুন.",
+      "category": "character-aa",
+      "words": [
+        {
+          "bn": "আগুন",
+          "pronunciation": "agun",
+          "en": "fire"
+        },
+        {
+          "bn": "জ্বলছে",
+          "pronunciation": "jôlchhe",
+          "en": "is burning"
+        }
+      ]
+    },
+    {
+      "bn": "ঘরে আলো আছে।",
+      "pronunciation": "ghôre alo achhe",
+      "en": "There is light in the room.",
+      "context": "Read আ at the beginning of আলো.",
+      "category": "character-aa",
+      "words": [
+        {
+          "bn": "ঘরে",
+          "pronunciation": "ghôre",
+          "en": "in the room"
+        },
+        {
+          "bn": "আলো",
+          "pronunciation": "alo",
+          "en": "light"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "there is / has"
+        }
+      ]
+    },
+    {
+      "bn": "আমরা আনন্দে হাসি।",
+      "pronunciation": "amra anônde hashi",
+      "en": "We laugh with joy.",
+      "context": "Compare আ at the start of আমরা and আনন্দে.",
+      "category": "character-aa",
+      "words": [
+        {
+          "bn": "আমরা",
+          "pronunciation": "amra",
+          "en": "we"
+        },
+        {
+          "bn": "আনন্দে",
+          "pronunciation": "anônde",
+          "en": "with joy / happily"
+        },
+        {
+          "bn": "হাসি",
+          "pronunciation": "hashi",
+          "en": "laugh"
+        }
+      ]
+    },
+    {
+      "bn": "আমি আঙুর খাই।",
+      "pronunciation": "ami angur khai",
+      "en": "I eat grapes.",
+      "context": "Hear আ followed by the nasal marker ঁ in আঙুর.",
+      "category": "character-aa",
+      "words": [
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "আঙুর",
+          "pronunciation": "angur",
+          "en": "grapes"
+        },
+        {
+          "bn": "খাই",
+          "pronunciation": "khai",
+          "en": "eat"
+        }
+      ]
+    },
+    {
+      "bn": "আয়নায় মুখ দেখো।",
+      "pronunciation": "aynay mukh dekho",
+      "en": "Look at your face in the mirror.",
+      "context": "Use the আ-word আয়না with the location ending য়.",
+      "category": "character-aa",
+      "words": [
+        {
+          "bn": "আয়নায়",
+          "pronunciation": "aynay",
+          "en": "in the mirror"
+        },
+        {
+          "bn": "মুখ",
+          "pronunciation": "mukh",
+          "en": "face"
+        },
+        {
+          "bn": "দেখো",
+          "pronunciation": "dekho",
+          "en": "look / see"
+        }
+      ]
+    },
+    {
+      "bn": "আস্তে কথা বলো।",
+      "pronunciation": "aste kôtha bôlo",
+      "en": "Speak slowly.",
+      "context": "Practice আ at the beginning of the useful adverb আস্তে.",
+      "category": "character-aa",
+      "words": [
+        {
+          "bn": "আস্তে",
+          "pronunciation": "aste",
+          "en": "slowly / softly"
+        },
+        {
+          "bn": "কথা",
+          "pronunciation": "kôtha",
+          "en": "speech / words"
+        },
+        {
+          "bn": "বলো",
+          "pronunciation": "bôlo",
+          "en": "speak / say"
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bn": "আ",
+      "pronunciation": "a",
+      "en": "the second Bengali vowel",
+      "category": "character-aa",
+      "sourcePhrase": "আ মানে আম।"
+    },
+    {
+      "bn": "আম",
+      "pronunciation": "am",
+      "en": "mango",
+      "category": "character-aa",
+      "sourcePhrase": "আ মানে আম।"
+    },
+    {
+      "bn": "আকাশ",
+      "pronunciation": "akash",
+      "en": "sky",
+      "category": "character-aa",
+      "sourcePhrase": "আকাশ নীল।"
+    },
+    {
+      "bn": "আগুন",
+      "pronunciation": "agun",
+      "en": "fire",
+      "category": "character-aa",
+      "sourcePhrase": "আগুন জ্বলছে।"
+    },
+    {
+      "bn": "আলো",
+      "pronunciation": "alo",
+      "en": "light",
+      "category": "character-aa",
+      "sourcePhrase": "ঘরে আলো আছে।"
+    },
+    {
+      "bn": "আনন্দ",
+      "pronunciation": "anôndo",
+      "en": "joy / happiness",
+      "category": "character-aa",
+      "sourcePhrase": "আমরা আনন্দে হাসি।"
+    },
+    {
+      "bn": "আঙুর",
+      "pronunciation": "angur",
+      "en": "grapes",
+      "category": "character-aa",
+      "sourcePhrase": "আমি আঙুর খাই।"
+    },
+    {
+      "bn": "আয়না",
+      "pronunciation": "ayna",
+      "en": "mirror",
+      "category": "character-aa",
+      "sourcePhrase": "আয়নায় মুখ দেখো।"
+    },
+    {
+      "bn": "আস্তে",
+      "pronunciation": "aste",
+      "en": "slowly / softly",
+      "category": "character-aa",
+      "sourcePhrase": "আস্তে কথা বলো।"
+    }
+  ],
+  "practice": [
+    "Say আ three times with an open, steady sound: a, a, a.",
+    "Read each vocabulary word aloud and listen for আ at the beginning.",
+    "Contrast অ (ô) with আ (a): অজগর (ôjogor), আম (am).",
+    "Write আ five times, noticing that it resembles অ with an added vertical stroke on the right."
+  ],
+  "notes": [
+    "আ is the second independent vowel in the Bengali alphabet. It has an open a sound, similar to the vowel in “father.”",
+    "When আ follows a consonant, it usually becomes the vowel mark া (আ-কার): ক + া = কা (ka).",
+    "Keep আ distinct from the shorter অ sound. Compare আম (am, mango) with অল্প (ôlpo, a little). Use the audio controls to imitate a Bengali voice."
+  ]
+}

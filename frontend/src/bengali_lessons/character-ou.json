@@ -1,0 +1,25 @@
+{
+  "id": "character-ou",
+  "title": "ঔ — The Ou Vowel",
+  "summary": "Learn the less common vowel ঔ, its ou sound, and established words beginning with it.",
+  "level": "beginner",
+  "topic": "Alphabet: ঔ",
+  "focus": "character and pronunciation",
+  "phrases": [
+    {"bn":"ঔ মানে ঔষধ।","pronunciation":"ou mane oushodh","en":"ঔ is for medicine.","context":"Connect ঔ with the traditional spelling ঔষধ.","category":"character-ou","words":[{"bn":"ঔ","pronunciation":"ou","en":"the letter ঔ"},{"bn":"মানে","pronunciation":"mane","en":"means / stands for"},{"bn":"ঔষধ","pronunciation":"oushodh","en":"medicine"}]},
+    {"bn":"তিনি বিখ্যাত ঔপন্যাসিক।","pronunciation":"tini bikkhato ouponnashik","en":"He or she is a famous novelist.","context":"Practice ঔ in ঔপন্যাসিক.","category":"character-ou","words":[{"bn":"তিনি","pronunciation":"tini","en":"he / she (respectful)"},{"bn":"বিখ্যাত","pronunciation":"bikkhato","en":"famous"},{"bn":"ঔপন্যাসিক","pronunciation":"ouponnashik","en":"novelist"}]},
+    {"bn":"এটি ঔপনিবেশিক ভবন।","pronunciation":"eṭi ouponibeshik bhôbon","en":"This is a colonial building.","context":"Read ঔ in ঔপনিবেশিক.","category":"character-ou","words":[{"bn":"এটি","pronunciation":"eṭi","en":"this"},{"bn":"ঔপনিবেশিক","pronunciation":"ouponibeshik","en":"colonial"},{"bn":"ভবন","pronunciation":"bhôbon","en":"building"}]},
+    {"bn":"কথাটির ঔচিত্য আছে।","pronunciation":"kôthaṭir ouchittoo achhe","en":"The remark is appropriate.","context":"Practice ঔ in the formal word ঔচিত্য.","category":"character-ou","words":[{"bn":"কথাটির","pronunciation":"kôthaṭir","en":"of the remark"},{"bn":"ঔচিত্য","pronunciation":"ouchittoo","en":"propriety / appropriateness"},{"bn":"আছে","pronunciation":"achhe","en":"there is / has"}]},
+    {"bn":"তার ঔদার্য অতুলনীয়।","pronunciation":"tar oudarjo ôtuloniyo","en":"His or her generosity is incomparable.","context":"Hear ঔ at the start of ঔদার্য.","category":"character-ou","words":[{"bn":"তার","pronunciation":"tar","en":"his / her"},{"bn":"ঔদার্য","pronunciation":"oudarjo","en":"generosity"},{"bn":"অতুলনীয়","pronunciation":"ôtuloniyo","en":"incomparable"}]}
+  ],
+  "vocab": [
+    {"bn":"ঔ","pronunciation":"ou","en":"the eleventh Bengali vowel","category":"character-ou","sourcePhrase":"ঔ মানে ঔষধ।"},
+    {"bn":"ঔষধ","pronunciation":"oushodh","en":"medicine (traditional spelling)","category":"character-ou","sourcePhrase":"ঔ মানে ঔষধ।"},
+    {"bn":"ঔপন্যাসিক","pronunciation":"ouponnashik","en":"novelist","category":"character-ou","sourcePhrase":"তিনি বিখ্যাত ঔপন্যাসিক।"},
+    {"bn":"ঔপনিবেশিক","pronunciation":"ouponibeshik","en":"colonial","category":"character-ou","sourcePhrase":"এটি ঔপনিবেশিক ভবন।"},
+    {"bn":"ঔচিত্য","pronunciation":"ouchittoo","en":"propriety / appropriateness","category":"character-ou","sourcePhrase":"কথাটির ঔচিত্য আছে।"},
+    {"bn":"ঔদার্য","pronunciation":"oudarjo","en":"generosity","category":"character-ou","sourcePhrase":"তার ঔদার্য অতুলনীয়।"}
+  ],
+  "practice": ["Say ঔ as ou three times.","Read each ঔ-word slowly.","Write ঔ five times and compare it with ও."],
+  "notes": ["ঔ has the diphthong ou, similar to “ow” in “cow.”","After a consonant, ঔ becomes ৌ (ঔ-কার): ক + ৌ = কৌ (kou). Words beginning with independent ঔ are relatively uncommon and often formal or Sanskrit-derived.","The everyday modern spelling of medicine is usually ওষুধ; ঔষধ is retained here as the traditional alphabet example."]
+}

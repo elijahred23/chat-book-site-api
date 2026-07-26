@@ -1,0 +1,25 @@
+{
+  "id": "character-u",
+  "title": "উ — The Short U Vowel",
+  "summary": "Learn উ, its short u sound, and useful words beginning with it.",
+  "level": "beginner",
+  "topic": "Alphabet: উ",
+  "focus": "character and pronunciation",
+  "phrases": [
+    {"bn":"উ মানে উট।","pronunciation":"u mane uṭ","en":"উ is for camel.","context":"Connect উ with the example word উট.","category":"character-u","words":[{"bn":"উ","pronunciation":"u","en":"the letter উ"},{"bn":"মানে","pronunciation":"mane","en":"means / stands for"},{"bn":"উট","pronunciation":"uṭ","en":"camel"}]},
+    {"bn":"উত্তর দিকে যাও।","pronunciation":"uttor dike jao","en":"Go north.","context":"Practice the initial উ in উত্তর.","category":"character-u","words":[{"bn":"উত্তর","pronunciation":"uttor","en":"north"},{"bn":"দিকে","pronunciation":"dike","en":"toward / in the direction"},{"bn":"যাও","pronunciation":"jao","en":"go"}]},
+    {"bn":"আজ বড় উৎসব।","pronunciation":"aj bôṛo utshôb","en":"Today is a big festival.","context":"Hear উ at the start of উৎসব.","category":"character-u","words":[{"bn":"আজ","pronunciation":"aj","en":"today"},{"bn":"বড়","pronunciation":"bôṛo","en":"big"},{"bn":"উৎসব","pronunciation":"utshôb","en":"festival"}]},
+    {"bn":"এটি তোমার উপহার।","pronunciation":"eṭi tomar upohar","en":"This is your gift.","context":"Use the common উ-word উপহার.","category":"character-u","words":[{"bn":"এটি","pronunciation":"eṭi","en":"this"},{"bn":"তোমার","pronunciation":"tomar","en":"your"},{"bn":"উপহার","pronunciation":"upohar","en":"gift"}]},
+    {"bn":"পানি উষ্ণ আছে।","pronunciation":"pani ushno achhe","en":"The water is warm.","context":"Practice উ at the beginning of উষ্ণ.","category":"character-u","words":[{"bn":"পানি","pronunciation":"pani","en":"water"},{"bn":"উষ্ণ","pronunciation":"ushno","en":"warm"},{"bn":"আছে","pronunciation":"achhe","en":"is"}]}
+  ],
+  "vocab": [
+    {"bn":"উ","pronunciation":"u","en":"the fifth Bengali vowel","category":"character-u","sourcePhrase":"উ মানে উট।"},
+    {"bn":"উট","pronunciation":"uṭ","en":"camel","category":"character-u","sourcePhrase":"উ মানে উট।"},
+    {"bn":"উত্তর","pronunciation":"uttor","en":"north / answer","category":"character-u","sourcePhrase":"উত্তর দিকে যাও।"},
+    {"bn":"উৎসব","pronunciation":"utshôb","en":"festival","category":"character-u","sourcePhrase":"আজ বড় উৎসব।"},
+    {"bn":"উপহার","pronunciation":"upohar","en":"gift","category":"character-u","sourcePhrase":"এটি তোমার উপহার।"},
+    {"bn":"উষ্ণ","pronunciation":"ushno","en":"warm","category":"character-u","sourcePhrase":"পানি উষ্ণ আছে।"}
+  ],
+  "practice": ["Say উ three times with rounded lips: u, u, u.","Read each উ-word aloud.","Write উ five times."],
+  "notes": ["উ has a short u sound similar to the vowel in “put.”","After a consonant, উ becomes ু (উ-কার), written below it: ক + ু = কু (ku)."]
+}

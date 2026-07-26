@@ -1,0 +1,25 @@
+{
+  "id": "character-ri",
+  "title": "ঋ — The Ri Vowel",
+  "summary": "Learn the Bengali vowel ঋ, its ri sound, and useful words beginning with it.",
+  "level": "beginner",
+  "topic": "Alphabet: ঋ",
+  "focus": "character and pronunciation",
+  "phrases": [
+    {"bn":"ঋ মানে ঋষি।","pronunciation":"ri mane rishi","en":"ঋ is for sage.","context":"Connect ঋ with the traditional example ঋষি.","category":"character-ri","words":[{"bn":"ঋ","pronunciation":"ri","en":"the letter ঋ"},{"bn":"মানে","pronunciation":"mane","en":"means / stands for"},{"bn":"ঋষি","pronunciation":"rishi","en":"sage"}]},
+    {"bn":"আমার ঋণ আছে।","pronunciation":"amar rin achhe","en":"I have a debt.","context":"Practice ঋ in the short word ঋণ.","category":"character-ri","words":[{"bn":"আমার","pronunciation":"amar","en":"my / I have"},{"bn":"ঋণ","pronunciation":"rin","en":"debt"},{"bn":"আছে","pronunciation":"achhe","en":"there is / have"}]},
+    {"bn":"এখন বর্ষা ঋতু।","pronunciation":"ekhon bôrsha ritu","en":"It is the monsoon season now.","context":"Read ঋ in the common word ঋতু.","category":"character-ri","words":[{"bn":"এখন","pronunciation":"ekhon","en":"now"},{"bn":"বর্ষা","pronunciation":"bôrsha","en":"monsoon"},{"bn":"ঋতু","pronunciation":"ritu","en":"season"}]},
+    {"bn":"তিনি ঋজু মানুষ।","pronunciation":"tini riju manush","en":"He or she is an upright person.","context":"Practice ঋ in ঋজু.","category":"character-ri","words":[{"bn":"তিনি","pronunciation":"tini","en":"he / she (respectful)"},{"bn":"ঋজু","pronunciation":"riju","en":"upright / honest"},{"bn":"মানুষ","pronunciation":"manush","en":"person"}]},
+    {"bn":"ঋদ্ধ আমার বন্ধু।","pronunciation":"riddho amar bôndhu","en":"Riddho is my friend.","context":"Read ঋ in the name ঋদ্ধ.","category":"character-ri","words":[{"bn":"ঋদ্ধ","pronunciation":"riddho","en":"Riddho / prosperous"},{"bn":"আমার","pronunciation":"amar","en":"my"},{"bn":"বন্ধু","pronunciation":"bôndhu","en":"friend"}]}
+  ],
+  "vocab": [
+    {"bn":"ঋ","pronunciation":"ri","en":"the seventh Bengali vowel","category":"character-ri","sourcePhrase":"ঋ মানে ঋষি।"},
+    {"bn":"ঋষি","pronunciation":"rishi","en":"sage","category":"character-ri","sourcePhrase":"ঋ মানে ঋষি।"},
+    {"bn":"ঋণ","pronunciation":"rin","en":"debt / loan","category":"character-ri","sourcePhrase":"আমার ঋণ আছে।"},
+    {"bn":"ঋতু","pronunciation":"ritu","en":"season","category":"character-ri","sourcePhrase":"এখন বর্ষা ঋতু।"},
+    {"bn":"ঋজু","pronunciation":"riju","en":"upright / honest","category":"character-ri","sourcePhrase":"তিনি ঋজু মানুষ।"},
+    {"bn":"ঋদ্ধ","pronunciation":"riddho","en":"prosperous / the name Riddho","category":"character-ri","sourcePhrase":"ঋদ্ধ আমার বন্ধু।"}
+  ],
+  "practice": ["Say ঋ as ri three times.","Read each ঋ-word aloud.","Write ঋ five times."],
+  "notes": ["In modern Bengali, ঋ is normally pronounced ri.","After a consonant, ঋ becomes the mark ৃ (ঋ-কার): ক + ৃ = কৃ (kri)."]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "character-uu",
+  "title": "ঊ — The Long U Vowel",
+  "summary": "Learn the less common vowel ঊ and several established words that begin with it.",
+  "level": "beginner",
+  "topic": "Alphabet: ঊ",
+  "focus": "character and pronunciation",
+  "phrases": [
+    {"bn":"ঊ মানে ঊষা।","pronunciation":"u mane usha","en":"ঊ is for dawn.","context":"Connect ঊ with the traditional example ঊষা.","category":"character-uu","words":[{"bn":"ঊ","pronunciation":"u","en":"the letter ঊ"},{"bn":"মানে","pronunciation":"mane","en":"means / stands for"},{"bn":"ঊষা","pronunciation":"usha","en":"dawn"}]},
+    {"bn":"আমার বয়স ঊনিশ।","pronunciation":"amar bôyosh unish","en":"I am nineteen years old.","context":"Practice ঊ in the common number ঊনিশ.","category":"character-uu","words":[{"bn":"আমার","pronunciation":"amar","en":"my"},{"bn":"বয়স","pronunciation":"bôyosh","en":"age"},{"bn":"ঊনিশ","pronunciation":"unish","en":"nineteen"}]},
+    {"bn":"তীরটি ঊর্ধ্বমুখী।","pronunciation":"tirṭi urdhomukhi","en":"The arrow points upward.","context":"Read ঊ in ঊর্ধ্বমুখী.","category":"character-uu","words":[{"bn":"তীরটি","pronunciation":"tirṭi","en":"the arrow"},{"bn":"ঊর্ধ্বমুখী","pronunciation":"urdhomukhi","en":"upward-facing"}]},
+    {"bn":"ঊর্মি আমার বন্ধু।","pronunciation":"urmi amar bôndhu","en":"Urmi is my friend.","context":"Practice the name ঊর্মি.","category":"character-uu","words":[{"bn":"ঊর্মি","pronunciation":"urmi","en":"Urmi / wave"},{"bn":"আমার","pronunciation":"amar","en":"my"},{"bn":"বন্ধু","pronunciation":"bôndhu","en":"friend"}]},
+    {"bn":"তার ঊরুতে ব্যথা।","pronunciation":"tar urute bætha","en":"His or her thigh hurts.","context":"Recognize ঊ in ঊরু and its inflected form ঊরুতে.","category":"character-uu","words":[{"bn":"তার","pronunciation":"tar","en":"his / her"},{"bn":"ঊরুতে","pronunciation":"urute","en":"in the thigh"},{"bn":"ব্যথা","pronunciation":"bætha","en":"pain"}]}
+  ],
+  "vocab": [
+    {"bn":"ঊ","pronunciation":"u","en":"the sixth Bengali vowel","category":"character-uu","sourcePhrase":"ঊ মানে ঊষা।"},
+    {"bn":"ঊষা","pronunciation":"usha","en":"dawn","category":"character-uu","sourcePhrase":"ঊ মানে ঊষা।"},
+    {"bn":"ঊনিশ","pronunciation":"unish","en":"nineteen","category":"character-uu","sourcePhrase":"আমার বয়স ঊনিশ।"},
+    {"bn":"ঊর্ধ্ব","pronunciation":"urdho","en":"upward / above","category":"character-uu","sourcePhrase":"তীরটি ঊর্ধ্বমুখী।"},
+    {"bn":"ঊর্মি","pronunciation":"urmi","en":"wave / the name Urmi","category":"character-uu","sourcePhrase":"ঊর্মি আমার বন্ধু।"},
+    {"bn":"ঊরু","pronunciation":"uru","en":"thigh","category":"character-uu","sourcePhrase":"তার ঊরুতে ব্যথা।"}
+  ],
+  "practice": ["Say ঊ three times: u, u, u.","Find ঊ in each vocabulary word.","Write ঊ five times and compare it with উ."],
+  "notes": ["ঊ was historically a long u vowel. Modern Bengali generally pronounces উ and ঊ alike.","ঊ and its vowel mark ূ are relatively uncommon. Learn their spelling through established words such as ঊষা and ঊনিশ."]
+}

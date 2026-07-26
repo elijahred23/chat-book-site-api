@@ -1,0 +1,278 @@
+{
+  "id": "character-i",
+  "title": "ই — The Short I Vowel",
+  "summary": "Learn the Bengali vowel ই, its short i sound, and eight useful words that begin with it.",
+  "level": "beginner",
+  "topic": "Alphabet: ই",
+  "focus": "character and pronunciation",
+  "phrases": [
+    {
+      "bn": "ই মানে ইঁদুর।",
+      "pronunciation": "i mane ĩdur",
+      "en": "ই is for mouse.",
+      "context": "Connect the letter ই with the familiar example word ইঁদুর.",
+      "category": "character-i",
+      "words": [
+        {
+          "bn": "ই",
+          "pronunciation": "i",
+          "en": "the letter ই"
+        },
+        {
+          "bn": "মানে",
+          "pronunciation": "mane",
+          "en": "means / stands for"
+        },
+        {
+          "bn": "ইঁদুর",
+          "pronunciation": "ĩdur",
+          "en": "mouse"
+        }
+      ]
+    },
+    {
+      "bn": "এই ইট লাল।",
+      "pronunciation": "ei iṭ lal",
+      "en": "This brick is red.",
+      "context": "Hear the short ই sound in the one-syllable word ইট.",
+      "category": "character-i",
+      "words": [
+        {
+          "bn": "এই",
+          "pronunciation": "ei",
+          "en": "this"
+        },
+        {
+          "bn": "ইট",
+          "pronunciation": "iṭ",
+          "en": "brick"
+        },
+        {
+          "bn": "লাল",
+          "pronunciation": "lal",
+          "en": "red"
+        }
+      ]
+    },
+    {
+      "bn": "ইলিশ মাছ সুস্বাদু।",
+      "pronunciation": "ilish machh shushadu",
+      "en": "Hilsa fish is delicious.",
+      "context": "Practice ই at the beginning of ইলিশ.",
+      "category": "character-i",
+      "words": [
+        {
+          "bn": "ইলিশ",
+          "pronunciation": "ilish",
+          "en": "hilsa"
+        },
+        {
+          "bn": "মাছ",
+          "pronunciation": "machh",
+          "en": "fish"
+        },
+        {
+          "bn": "সুস্বাদু",
+          "pronunciation": "shushadu",
+          "en": "delicious"
+        }
+      ]
+    },
+    {
+      "bn": "আমার বাংলা শেখার ইচ্ছা আছে।",
+      "pronunciation": "amar bangla shekhar ichchha achhe",
+      "en": "I want to learn Bengali.",
+      "context": "Use ইচ্ছা to express a wish or desire.",
+      "category": "character-i",
+      "words": [
+        {
+          "bn": "আমার",
+          "pronunciation": "amar",
+          "en": "my / I have"
+        },
+        {
+          "bn": "বাংলা",
+          "pronunciation": "bangla",
+          "en": "Bengali"
+        },
+        {
+          "bn": "শেখার",
+          "pronunciation": "shekhar",
+          "en": "of learning / to learn"
+        },
+        {
+          "bn": "ইচ্ছা",
+          "pronunciation": "ichchha",
+          "en": "wish / desire"
+        },
+        {
+          "bn": "আছে",
+          "pronunciation": "achhe",
+          "en": "there is / have"
+        }
+      ]
+    },
+    {
+      "bn": "আমি ইতিহাস পড়ি।",
+      "pronunciation": "ami itihash poṛi",
+      "en": "I study history.",
+      "context": "Read the initial ই in ইতিহাস.",
+      "category": "character-i",
+      "words": [
+        {
+          "bn": "আমি",
+          "pronunciation": "ami",
+          "en": "I"
+        },
+        {
+          "bn": "ইতিহাস",
+          "pronunciation": "itihash",
+          "en": "history"
+        },
+        {
+          "bn": "পড়ি",
+          "pronunciation": "poṛi",
+          "en": "read / study"
+        }
+      ]
+    },
+    {
+      "bn": "সে ইশারা করছে।",
+      "pronunciation": "she ishara kôrchhe",
+      "en": "He or she is gesturing.",
+      "context": "Practice ই in the everyday word ইশারা.",
+      "category": "character-i",
+      "words": [
+        {
+          "bn": "সে",
+          "pronunciation": "she",
+          "en": "he / she"
+        },
+        {
+          "bn": "ইশারা",
+          "pronunciation": "ishara",
+          "en": "gesture / signal"
+        },
+        {
+          "bn": "করছে",
+          "pronunciation": "kôrchhe",
+          "en": "is doing"
+        }
+      ]
+    },
+    {
+      "bn": "ইঞ্জিন চলছে।",
+      "pronunciation": "injin chôlchhe",
+      "en": "The engine is running.",
+      "context": "Hear the ই sound in the borrowed word ইঞ্জিন.",
+      "category": "character-i",
+      "words": [
+        {
+          "bn": "ইঞ্জিন",
+          "pronunciation": "injin",
+          "en": "engine"
+        },
+        {
+          "bn": "চলছে",
+          "pronunciation": "chôlchhe",
+          "en": "is running / moving"
+        }
+      ]
+    },
+    {
+      "bn": "ইন্টারনেট ধীর।",
+      "pronunciation": "inṭarneṭ dhir",
+      "en": "The internet is slow.",
+      "context": "Recognize ই at the start of a common modern loanword.",
+      "category": "character-i",
+      "words": [
+        {
+          "bn": "ইন্টারনেট",
+          "pronunciation": "inṭarneṭ",
+          "en": "internet"
+        },
+        {
+          "bn": "ধীর",
+          "pronunciation": "dhir",
+          "en": "slow"
+        }
+      ]
+    }
+  ],
+  "vocab": [
+    {
+      "bn": "ই",
+      "pronunciation": "i",
+      "en": "the third Bengali vowel",
+      "category": "character-i",
+      "sourcePhrase": "ই মানে ইঁদুর।"
+    },
+    {
+      "bn": "ইঁদুর",
+      "pronunciation": "ĩdur",
+      "en": "mouse",
+      "category": "character-i",
+      "sourcePhrase": "ই মানে ইঁদুর।"
+    },
+    {
+      "bn": "ইট",
+      "pronunciation": "iṭ",
+      "en": "brick",
+      "category": "character-i",
+      "sourcePhrase": "এই ইট লাল।"
+    },
+    {
+      "bn": "ইলিশ",
+      "pronunciation": "ilish",
+      "en": "hilsa fish",
+      "category": "character-i",
+      "sourcePhrase": "ইলিশ মাছ সুস্বাদু।"
+    },
+    {
+      "bn": "ইচ্ছা",
+      "pronunciation": "ichchha",
+      "en": "wish / desire",
+      "category": "character-i",
+      "sourcePhrase": "আমার বাংলা শেখার ইচ্ছা আছে।"
+    },
+    {
+      "bn": "ইতিহাস",
+      "pronunciation": "itihash",
+      "en": "history",
+      "category": "character-i",
+      "sourcePhrase": "আমি ইতিহাস পড়ি।"
+    },
+    {
+      "bn": "ইশারা",
+      "pronunciation": "ishara",
+      "en": "gesture / signal",
+      "category": "character-i",
+      "sourcePhrase": "সে ইশারা করছে।"
+    },
+    {
+      "bn": "ইঞ্জিন",
+      "pronunciation": "injin",
+      "en": "engine",
+      "category": "character-i",
+      "sourcePhrase": "ইঞ্জিন চলছে।"
+    },
+    {
+      "bn": "ইন্টারনেট",
+      "pronunciation": "inṭarneṭ",
+      "en": "internet",
+      "category": "character-i",
+      "sourcePhrase": "ইন্টারনেট ধীর।"
+    }
+  ],
+  "practice": [
+    "Say ই three times with a short, relaxed sound: i, i, i.",
+    "Read each vocabulary word aloud and listen for ই at the beginning.",
+    "Contrast ই (i) with আ (a): ইট (iṭ), আম (am).",
+    "Write ই five times, paying attention to its curved left side and top line."
+  ],
+  "notes": [
+    "ই is the third independent vowel in the Bengali alphabet. It has a short i sound similar to the vowel in “sit.”",
+    "When ই follows a consonant, it becomes the vowel mark ি (ই-কার): ক + ি = কি (ki). Although ি is written to the left of the consonant, it is pronounced after it.",
+    "Keep ই distinct from the longer ঈ sound in careful spelling. In modern Bengali speech, ই and ঈ are often pronounced alike, but their written forms remain different."
+  ]
+}

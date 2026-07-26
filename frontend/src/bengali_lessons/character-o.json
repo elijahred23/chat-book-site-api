@@ -1,0 +1,25 @@
+{
+  "id": "character-o",
+  "title": "ও — The O Vowel",
+  "summary": "Learn ও, its rounded o sound, and useful words beginning with it.",
+  "level": "beginner",
+  "topic": "Alphabet: ও",
+  "focus": "character and pronunciation",
+  "phrases": [
+    {"bn":"ও মানে ওজন।","pronunciation":"o mane ojon","en":"ও is for weight.","context":"Connect ও with the example word ওজন.","category":"character-o","words":[{"bn":"ও","pronunciation":"o","en":"the letter ও / and"},{"bn":"মানে","pronunciation":"mane","en":"means / stands for"},{"bn":"ওজন","pronunciation":"ojon","en":"weight"}]},
+    {"bn":"ওখানে যাও।","pronunciation":"okhane jao","en":"Go over there.","context":"Practice ও in ওখানে.","category":"character-o","words":[{"bn":"ওখানে","pronunciation":"okhane","en":"over there"},{"bn":"যাও","pronunciation":"jao","en":"go"}]},
+    {"bn":"ওরা আমার বন্ধু।","pronunciation":"ora amar bôndhu","en":"They are my friends.","context":"Use ওরা for people farther away or previously mentioned.","category":"character-o","words":[{"bn":"ওরা","pronunciation":"ora","en":"they"},{"bn":"আমার","pronunciation":"amar","en":"my"},{"bn":"বন্ধু","pronunciation":"bôndhu","en":"friends"}]},
+    {"bn":"সময়মতো ওষুধ খাও।","pronunciation":"shômôymôto oshudh khao","en":"Take the medicine on time.","context":"Read ও in the modern spelling ওষুধ.","category":"character-o","words":[{"bn":"সময়মতো","pronunciation":"shômôymôto","en":"on time"},{"bn":"ওষুধ","pronunciation":"oshudh","en":"medicine"},{"bn":"খাও","pronunciation":"khao","en":"eat / take"}]},
+    {"bn":"তার ওড়না নীল।","pronunciation":"tar oṛna nil","en":"Her scarf is blue.","context":"Practice ও in ওড়না.","category":"character-o","words":[{"bn":"তার","pronunciation":"tar","en":"his / her"},{"bn":"ওড়না","pronunciation":"oṛna","en":"scarf / orna"},{"bn":"নীল","pronunciation":"nil","en":"blue"}]}
+  ],
+  "vocab": [
+    {"bn":"ও","pronunciation":"o","en":"the tenth Bengali vowel / and","category":"character-o","sourcePhrase":"ও মানে ওজন।"},
+    {"bn":"ওজন","pronunciation":"ojon","en":"weight","category":"character-o","sourcePhrase":"ও মানে ওজন।"},
+    {"bn":"ওখানে","pronunciation":"okhane","en":"over there","category":"character-o","sourcePhrase":"ওখানে যাও।"},
+    {"bn":"ওরা","pronunciation":"ora","en":"they","category":"character-o","sourcePhrase":"ওরা আমার বন্ধু।"},
+    {"bn":"ওষুধ","pronunciation":"oshudh","en":"medicine","category":"character-o","sourcePhrase":"সময়মতো ওষুধ খাও।"},
+    {"bn":"ওড়না","pronunciation":"oṛna","en":"scarf / orna","category":"character-o","sourcePhrase":"তার ওড়না নীল।"}
+  ],
+  "practice": ["Say ও three times with rounded lips: o, o, o.","Read each ও-word aloud.","Write ও five times."],
+  "notes": ["ও has a rounded o sound similar to the vowel in “go.”","After a consonant, ও becomes ো (ও-কার), which surrounds it: ক + ো = কো (ko)."]
+}

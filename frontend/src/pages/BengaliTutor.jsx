@@ -9,6 +9,17 @@ import adjectivesLesson from "../bengali_lessons/adjectives.json";
 import adverbsLesson from "../bengali_lessons/adverbs.json";
 import anthropicPrincipleLesson from "../bengali_lessons/anthropic-principle.json";
 import aspnetMvcLesson from "../bengali_lessons/aspnet-core-mvc.json";
+import characterAaLesson from "../bengali_lessons/character-aa.json";
+import characterAwLesson from "../bengali_lessons/character-aw.json";
+import characterELesson from "../bengali_lessons/character-e.json";
+import characterILesson from "../bengali_lessons/character-i.json";
+import characterIiLesson from "../bengali_lessons/character-ii.json";
+import characterOLesson from "../bengali_lessons/character-o.json";
+import characterOiLesson from "../bengali_lessons/character-oi.json";
+import characterOuLesson from "../bengali_lessons/character-ou.json";
+import characterRiLesson from "../bengali_lessons/character-ri.json";
+import characterULesson from "../bengali_lessons/character-u.json";
+import characterUuLesson from "../bengali_lessons/character-uu.json";
 import conjunctionsLesson from "../bengali_lessons/conjunctions.json";
 import cpuAdventureLesson from "../bengali_lessons/cpu-adventure.json";
 import dotnetRuntimeLesson from "../bengali_lessons/dotnet-runtime.json";
@@ -40,6 +51,17 @@ export const SAVED_LESSONS = [
   adverbsLesson,
   anthropicPrincipleLesson,
   aspnetMvcLesson,
+  characterAaLesson,
+  characterAwLesson,
+  characterELesson,
+  characterILesson,
+  characterIiLesson,
+  characterOLesson,
+  characterOiLesson,
+  characterOuLesson,
+  characterRiLesson,
+  characterULesson,
+  characterUuLesson,
   conjunctionsLesson,
   cpuAdventureLesson,
   dotnetRuntimeLesson,

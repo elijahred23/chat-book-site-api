@@ -1,0 +1,25 @@
+{
+  "id": "character-ii",
+  "title": "ঈ — The Long I Vowel",
+  "summary": "Learn ঈ, its modern i sound, and useful words beginning with this independent vowel.",
+  "level": "beginner",
+  "topic": "Alphabet: ঈ",
+  "focus": "character and pronunciation",
+  "phrases": [
+    {"bn":"ঈ মানে ঈগল।","pronunciation":"i mane igol","en":"ঈ is for eagle.","context":"Connect ঈ with the example word ঈগল.","category":"character-ii","words":[{"bn":"ঈ","pronunciation":"i","en":"the letter ঈ"},{"bn":"মানে","pronunciation":"mane","en":"means / stands for"},{"bn":"ঈগল","pronunciation":"igol","en":"eagle"}]},
+    {"bn":"ঈদ আনন্দের দিন।","pronunciation":"id anônder din","en":"Eid is a joyful day.","context":"Practice ঈ in the familiar word ঈদ.","category":"character-ii","words":[{"bn":"ঈদ","pronunciation":"id","en":"Eid"},{"bn":"আনন্দের","pronunciation":"anônder","en":"of joy / joyful"},{"bn":"দিন","pronunciation":"din","en":"day"}]},
+    {"bn":"ঈর্ষা ভালো নয়।","pronunciation":"irsha bhalo nôy","en":"Envy is not good.","context":"Hear ঈ before a consonant cluster in ঈর্ষা.","category":"character-ii","words":[{"bn":"ঈর্ষা","pronunciation":"irsha","en":"envy"},{"bn":"ভালো","pronunciation":"bhalo","en":"good"},{"bn":"নয়","pronunciation":"nôy","en":"is not"}]},
+    {"bn":"ঈশান আমার বন্ধু।","pronunciation":"ishan amar bôndhu","en":"Ishan is my friend.","context":"Read ঈ at the beginning of the name ঈশান.","category":"character-ii","words":[{"bn":"ঈশান","pronunciation":"ishan","en":"Ishan"},{"bn":"আমার","pronunciation":"amar","en":"my"},{"bn":"বন্ধু","pronunciation":"bôndhu","en":"friend"}]},
+    {"bn":"তিনি ঈশ্বরে বিশ্বাস করেন।","pronunciation":"tini ishshôre bishshash kôren","en":"He or she believes in God.","context":"Practice ঈ in ঈশ্বর and its inflected form ঈশ্বরে.","category":"character-ii","words":[{"bn":"তিনি","pronunciation":"tini","en":"he / she (respectful)"},{"bn":"ঈশ্বরে","pronunciation":"ishshôre","en":"in God"},{"bn":"বিশ্বাস","pronunciation":"bishshash","en":"belief"},{"bn":"করেন","pronunciation":"kôren","en":"does / has"}]}
+  ],
+  "vocab": [
+    {"bn":"ঈ","pronunciation":"i","en":"the fourth Bengali vowel","category":"character-ii","sourcePhrase":"ঈ মানে ঈগল।"},
+    {"bn":"ঈগল","pronunciation":"igol","en":"eagle","category":"character-ii","sourcePhrase":"ঈ মানে ঈগল।"},
+    {"bn":"ঈদ","pronunciation":"id","en":"Eid","category":"character-ii","sourcePhrase":"ঈদ আনন্দের দিন।"},
+    {"bn":"ঈর্ষা","pronunciation":"irsha","en":"envy","category":"character-ii","sourcePhrase":"ঈর্ষা ভালো নয়।"},
+    {"bn":"ঈশান","pronunciation":"ishan","en":"Ishan / northeast","category":"character-ii","sourcePhrase":"ঈশান আমার বন্ধু।"},
+    {"bn":"ঈশ্বর","pronunciation":"ishshôr","en":"God","category":"character-ii","sourcePhrase":"তিনি ঈশ্বরে বিশ্বাস করেন।"}
+  ],
+  "practice": ["Say ঈ three times: i, i, i.","Contrast the written forms ই and ঈ.","Write ঈ five times, noticing its extra curl."],
+  "notes": ["ঈ was historically a long i vowel. In modern Bengali, ই and ঈ are generally pronounced alike.","After a consonant, ঈ becomes ী (ঈ-কার): ক + ী = কী (ki). Spelling determines whether ি or ী is used."]
+}

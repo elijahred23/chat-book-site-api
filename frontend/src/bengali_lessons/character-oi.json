@@ -1,0 +1,25 @@
+{
+  "id": "character-oi",
+  "title": "ঐ — The Oi Vowel",
+  "summary": "Learn ঐ, its oi sound, and established words beginning with it.",
+  "level": "beginner",
+  "topic": "Alphabet: ঐ",
+  "focus": "character and pronunciation",
+  "phrases": [
+    {"bn":"ঐ মানে ঐক্য।","pronunciation":"oi mane oikko","en":"ঐ is for unity.","context":"Connect ঐ with the example word ঐক্য.","category":"character-oi","words":[{"bn":"ঐ","pronunciation":"oi","en":"the letter ঐ / that over there"},{"bn":"মানে","pronunciation":"mane","en":"means / stands for"},{"bn":"ঐক্য","pronunciation":"oikko","en":"unity"}]},
+    {"bn":"ঐ বইটি আমার।","pronunciation":"oi boiṭi amar","en":"That book over there is mine.","context":"Use ঐ as a word meaning that over there.","category":"character-oi","words":[{"bn":"ঐ","pronunciation":"oi","en":"that over there"},{"bn":"বইটি","pronunciation":"boiṭi","en":"the book"},{"bn":"আমার","pronunciation":"amar","en":"mine"}]},
+    {"bn":"আমাদের ঐতিহ্য সমৃদ্ধ।","pronunciation":"amader oitijjho shomriddho","en":"Our heritage is rich.","context":"Practice ঐ in ঐতিহ্য.","category":"character-oi","words":[{"bn":"আমাদের","pronunciation":"amader","en":"our"},{"bn":"ঐতিহ্য","pronunciation":"oitijjho","en":"heritage / tradition"},{"bn":"সমৃদ্ধ","pronunciation":"shomriddho","en":"rich"}]},
+    {"bn":"এটি ঐতিহাসিক স্থান।","pronunciation":"eṭi oitihashik sthan","en":"This is a historic place.","context":"Read the ঐ sound in ঐতিহাসিক.","category":"character-oi","words":[{"bn":"এটি","pronunciation":"eṭi","en":"this"},{"bn":"ঐতিহাসিক","pronunciation":"oitihashik","en":"historic"},{"bn":"স্থান","pronunciation":"sthan","en":"place"}]},
+    {"bn":"জ্ঞানই আসল ঐশ্বর্য।","pronunciation":"gyan-i ashôl oishôrjo","en":"Knowledge is true wealth.","context":"Practice ঐ in ঐশ্বর্য.","category":"character-oi","words":[{"bn":"জ্ঞানই","pronunciation":"gyan-i","en":"knowledge itself"},{"bn":"আসল","pronunciation":"ashôl","en":"true / real"},{"bn":"ঐশ্বর্য","pronunciation":"oishôrjo","en":"wealth / splendor"}]}
+  ],
+  "vocab": [
+    {"bn":"ঐ","pronunciation":"oi","en":"the ninth Bengali vowel / that over there","category":"character-oi","sourcePhrase":"ঐ মানে ঐক্য।"},
+    {"bn":"ঐক্য","pronunciation":"oikko","en":"unity","category":"character-oi","sourcePhrase":"ঐ মানে ঐক্য।"},
+    {"bn":"ঐতিহ্য","pronunciation":"oitijjho","en":"heritage / tradition","category":"character-oi","sourcePhrase":"আমাদের ঐতিহ্য সমৃদ্ধ।"},
+    {"bn":"ঐতিহাসিক","pronunciation":"oitihashik","en":"historic / historical","category":"character-oi","sourcePhrase":"এটি ঐতিহাসিক স্থান।"},
+    {"bn":"ঐশ্বর্য","pronunciation":"oishôrjo","en":"wealth / splendor","category":"character-oi","sourcePhrase":"জ্ঞানই আসল ঐশ্বর্য।"},
+    {"bn":"ঐকমত্য","pronunciation":"oikomotyo","en":"consensus","category":"character-oi","sourcePhrase":"ঐকমত্য ঐক্যের ফল।"}
+  ],
+  "practice": ["Say ঐ as oi three times.","Use ঐ to point to something farther away.","Write ঐ five times."],
+  "notes": ["ঐ has the diphthong oi, similar to “oy” in “boy.”","After a consonant, ঐ becomes ৈ (ঐ-কার), written to the left: ক + ৈ = কৈ (koi)."]
+}

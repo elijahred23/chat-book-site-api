@@ -10,6 +10,7 @@ import {
   FaPenNib,
   FaPlay,
   FaRotateRight,
+  FaStop,
   FaVolumeHigh,
 } from "react-icons/fa6";
 import { getGoogleTtsAudio } from "../utils/googleTtsAudioCache.js";
@@ -150,14 +151,14 @@ function AudioButton({ text, label, voiceMode }) {
       onClick={playAudio}
       disabled={status === "loading"}
       aria-label={`${label} with ${voiceMode === "google" ? "Google" : "system"} voice`}
-      title={status === "error" ? "Google speech was unavailable. Try again." : undefined}
+      title={status === "error" ? "Google speech was unavailable. Try again." : "Play sound once"}
     >
       {voiceMode === "google" ? <FcGoogle aria-hidden="true" /> : <FaVolumeHigh aria-hidden="true" />}
     </button>
   );
 }
 
-function CharacterCard({ character, learned, onLearn, voiceMode }) {
+function CharacterCard({ character, learned, onLearn, voiceMode, isLooping, onLoop }) {
   return (
     <article className={`alpha-character-card ${learned ? "is-learned" : ""}`}>
       <div className="alpha-character-top">
@@ -169,9 +170,20 @@ function CharacterCard({ character, learned, onLearn, voiceMode }) {
         <span lang="bn">{character.example}</span>
         <small>{character.word} · {character.meaning}</small>
       </div>
-      <button className="alpha-learn-button" type="button" onClick={onLearn}>
-        {learned ? <><FaCheck /> Learned</> : "Mark as learned"}
-      </button>
+      <div className="alpha-character-actions">
+        <button
+          className={`alpha-card-loop ${isLooping ? "is-playing" : ""}`}
+          type="button"
+          onClick={onLoop}
+          aria-label={isLooping ? `Stop looping ${character.bn}` : `Loop ${character.bn} continuously`}
+          title={isLooping ? "Stop character loop" : "Loop character continuously"}
+        >
+          {isLooping ? <FaStop aria-hidden="true" /> : <FaRotateRight aria-hidden="true" />}
+        </button>
+        <button className="alpha-learn-button" type="button" onClick={onLearn}>
+          {learned ? <><FaCheck /> Learned</> : "Mark as learned"}
+        </button>
+      </div>
     </article>
   );
 }
@@ -193,6 +205,8 @@ CharacterCard.propTypes = {
   learned: PropTypes.bool.isRequired,
   onLearn: PropTypes.func.isRequired,
   voiceMode: PropTypes.oneOf(["system", "google"]).isRequired,
+  isLooping: PropTypes.bool.isRequired,
+  onLoop: PropTypes.func.isRequired,
 };
 
 export default function BengaliAlphabet() {
@@ -212,6 +226,14 @@ export default function BengaliAlphabet() {
   const [lessonId, setLessonId] = useState(1);
   const [translateText, setTranslateText] = useState("");
   const [voiceMode, setVoiceMode] = useState(() => localStorage.getItem("bangla-alphabet-voice") || "system");
+  const [isLooping, setIsLooping] = useState(false);
+  const [loopIndex, setLoopIndex] = useState(0);
+  const [loopCharacter, setLoopCharacter] = useState("");
+  const characters = group === "vowels" ? VOWELS : CONSONANTS;
+  const playbackCharacters = useMemo(
+    () => loopCharacter ? allCharacters.filter((character) => character.bn === loopCharacter) : characters,
+    [allCharacters, characters, loopCharacter],
+  );
 
   useEffect(() => {
     localStorage.setItem("bangla-alphabet-progress", JSON.stringify(learned));
@@ -222,9 +244,81 @@ export default function BengaliAlphabet() {
     window.speechSynthesis?.cancel();
   }, [voiceMode]);
 
+  useEffect(() => {
+    if (!isLooping) return undefined;
+
+    let cancelled = false;
+    let activeAudio;
+    let pauseTimer;
+
+    const wait = (duration) => new Promise((resolve) => {
+      pauseTimer = window.setTimeout(resolve, duration);
+    });
+
+    const playSystemVoice = (text) => new Promise((resolve) => {
+      if (!window.speechSynthesis) {
+        resolve();
+        return;
+      }
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = "bn-BD";
+      utterance.onend = resolve;
+      utterance.onerror = resolve;
+      window.speechSynthesis.cancel();
+      window.speechSynthesis.speak(utterance);
+    });
+
+    const playGoogleVoice = async (text) => {
+      const audioUrl = URL.createObjectURL(await getGoogleTtsAudio(text, "bn-IN"));
+      await new Promise((resolve) => {
+        activeAudio = new Audio(audioUrl);
+        const finish = () => {
+          URL.revokeObjectURL(audioUrl);
+          activeAudio = undefined;
+          resolve();
+        };
+        activeAudio.addEventListener("ended", finish, { once: true });
+        activeAudio.addEventListener("error", finish, { once: true });
+        activeAudio.play().catch(finish);
+      });
+    };
+
+    const runLoop = async () => {
+      let index = loopIndex;
+      while (!cancelled) {
+        setLoopIndex(index);
+        try {
+          if (voiceMode === "google") {
+            await playGoogleVoice(playbackCharacters[index].bn);
+          } else {
+            await playSystemVoice(playbackCharacters[index].bn);
+          }
+        } catch (error) {
+          console.error("Bengali character loop error:", error);
+        }
+        if (cancelled) return;
+        await wait(550);
+        index = (index + 1) % playbackCharacters.length;
+      }
+    };
+
+    runLoop();
+    return () => {
+      cancelled = true;
+      window.clearTimeout(pauseTimer);
+      window.speechSynthesis?.cancel();
+      activeAudio?.pause();
+    };
+  }, [isLooping, loopIndex, playbackCharacters, voiceMode]);
+
+  useEffect(() => {
+    setIsLooping(false);
+    setLoopIndex(0);
+    setLoopCharacter("");
+  }, [group]);
+
   const progress = Math.round((learned.length / allCharacters.length) * 100);
   const activeLesson = LESSONS.find((lesson) => lesson.id === lessonId);
-  const characters = group === "vowels" ? VOWELS : CONSONANTS;
 
   function toggleLearned(character) {
     setLearned((current) => current.includes(character)
@@ -314,11 +408,32 @@ export default function BengaliAlphabet() {
                 <h2>Meet the Bangla characters</h2>
                 <p>Tap the speaker to hear a letter. Use each example word to remember its sound.</p>
               </div>
-              <div className="alpha-segmented">
-                <button className={group === "vowels" ? "active" : ""} type="button" onClick={() => setGroup("vowels")}>Vowels · স্বরবর্ণ</button>
-                <button className={group === "consonants" ? "active" : ""} type="button" onClick={() => setGroup("consonants")}>Consonants · ব্যঞ্জনবর্ণ</button>
+              <div className="alpha-learn-controls">
+                <div className="alpha-segmented">
+                  <button className={group === "vowels" ? "active" : ""} type="button" onClick={() => setGroup("vowels")}>Vowels · স্বরবর্ণ</button>
+                  <button className={group === "consonants" ? "active" : ""} type="button" onClick={() => setGroup("consonants")}>Consonants · ব্যঞ্জনবর্ণ</button>
+                </div>
+                <button
+                  className={`alpha-loop-button ${isLooping ? "is-playing" : ""}`}
+                  type="button"
+                  onClick={() => {
+                    setLoopCharacter("");
+                    setLoopIndex(0);
+                    setIsLooping((current) => loopCharacter ? true : !current);
+                  }}
+                >
+                  {isLooping && !loopCharacter ? <><FaStop /> Stop loop</> : <><FaRotateRight /> Loop {group}</>}
+                </button>
               </div>
             </div>
+            {isLooping && (
+              <div className="alpha-now-playing" role="status">
+                <span className="alpha-now-playing-bars" aria-hidden="true"><i /><i /><i /></span>
+                <span>Now playing</span>
+                <strong lang="bn">{playbackCharacters[loopIndex].bn}</strong>
+                <small>{playbackCharacters[loopIndex].sound} · repeats continuously</small>
+              </div>
+            )}
             <div className="alpha-character-grid">
               {characters.map((character) => (
                 <CharacterCard
@@ -327,6 +442,13 @@ export default function BengaliAlphabet() {
                   learned={learned.includes(character.bn)}
                   onLearn={() => toggleLearned(character.bn)}
                   voiceMode={voiceMode}
+                  isLooping={isLooping && loopCharacter === character.bn}
+                  onLoop={() => {
+                    const stoppingCurrent = isLooping && loopCharacter === character.bn;
+                    setLoopIndex(0);
+                    setLoopCharacter(stoppingCurrent ? "" : character.bn);
+                    setIsLooping(!stoppingCurrent);
+                  }}
                 />
               ))}
             </div>
