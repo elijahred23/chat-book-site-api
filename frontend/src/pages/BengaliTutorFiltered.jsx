@@ -19,6 +19,10 @@ const fileSlug = (value) => String(value || "saved-translation")
   .replace(/[^a-z0-9]+/g, "-")
   .replace(/^-|-$/g, "")
   .slice(0, 60) || "saved-translation";
+const shortTranslationLabel = (value, maxLength = 32) => {
+  const label = String(value || "").trim().replace(/\s+/g, " ");
+  return label.length > maxLength ? `${label.slice(0, maxLength)}…` : label;
+};
 const storedString = (key) => {
   try { return localStorage.getItem(key) || ""; } catch { return ""; }
 };
@@ -69,13 +73,19 @@ const storedTranslations = () => {
     return [];
   }
 };
-const storedTranslationGameItems = () => storedTranslations().flatMap((record) => record.sentences.map((sentence) => ({
-  bn: sentence.bengali,
-  pronunciation: sentence.pronunciation,
-  en: sentence.translation,
-  words: sentence.words,
-  category: "Saved translation",
-})));
+const storedTranslationPracticeSets = () => storedTranslations().map((record) => ({
+  id: record.id,
+  title: record.translation,
+  phrases: record.sentences.map((sentence, sentenceIndex) => ({
+    bn: sentence.bengali,
+    pronunciation: sentence.pronunciation,
+    en: sentence.translation,
+    words: sentence.words,
+    category: `Saved translation: ${record.translation}`,
+    sourceTranslationId: record.id,
+    sentenceIndex,
+  })),
+}));
 
 const itemFacets = (item) => {
   const values = [item.category, item.group, item.topic, item.level];
@@ -111,7 +121,7 @@ export default function BengaliTutorFiltered() {
 
   const bnVoices = useMemo(() => voices.filter((voice) => /^bn/i.test(voice.lang)), [voices]);
   const enVoices = useMemo(() => voices.filter((voice) => /^en/i.test(voice.lang)), [voices]);
-  const translationGameItems = useMemo(() => tab === "games" ? storedTranslationGameItems() : [], [tab]);
+  const translationPracticeSets = useMemo(() => tab === "games" ? storedTranslationPracticeSets() : [], [tab]);
 
   const preview = (key, text, lang) => {
     const utterance = new SpeechSynthesisUtterance(text);
@@ -194,7 +204,7 @@ export default function BengaliTutorFiltered() {
           bengaliVoice={bnVoice}
           initialLesson={lesson}
           showLessonSelector={false}
-          translationItems={translationGameItems}
+          translationSets={translationPracticeSets}
           view="games"
         />
       )}
@@ -444,7 +454,7 @@ function BengaliTranslator() {
                 onChange={(event) => setSelectedTranslationId(event.target.value)}
               >
                 {translations.map((record) => (
-                  <option key={record.id} value={record.id}>{record.translation}</option>
+                  <option key={record.id} value={record.id}>{shortTranslationLabel(record.translation)}</option>
                 ))}
               </select>
             </label>
