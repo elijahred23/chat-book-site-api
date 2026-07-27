@@ -61,12 +61,17 @@ const additionalBengaliCharacters = [
 ].filter((character, index, characters) =>
   !commonKeyboardCharacters.has(character) && characters.indexOf(character) === index
 );
+const PUNCTUATION_KEYBOARD_ROWS = [
+  [",", ".", "?", "!", ":", ";", "…", "-", "—", "/", "\\"],
+  ["'", "\"", "‘", "’", "“", "”", "(", ")", "[", "]", "{", "}"],
+];
 const BENGALI_KEYBOARD_ROWS = [
   ...COMMON_BENGALI_KEYBOARD_ROWS,
   ...Array.from(
     { length: Math.ceil(additionalBengaliCharacters.length / 14) },
     (_, index) => additionalBengaliCharacters.slice(index * 14, index * 14 + 14)
   ),
+  ...PUNCTUATION_KEYBOARD_ROWS,
 ];
 
 function describeCharacter(character) {
@@ -330,6 +335,17 @@ export default function BengaliCharacterBreakdown({ isOpen }) {
                   </div>
                 </div>
                 <div className="bengali-keyboard__rows">
+                  <div className="bengali-keyboard__row bengali-keyboard__controls">
+                    <button
+                      type="button"
+                      onClick={() => editTypedText(" ")}
+                      className={nextCharacter === " " ? "is-suggested" : ""}
+                      aria-label="Type a space"
+                    >
+                      Space
+                    </button>
+                    <button type="button" onClick={() => editTypedText("", true)} aria-label="Delete previous character">⌫ Backspace</button>
+                  </div>
                   {BENGALI_KEYBOARD_ROWS.map((row, rowIndex) => (
                     <div className="bengali-keyboard__row" key={rowIndex}>
                       {row.map((character) => (
@@ -346,10 +362,6 @@ export default function BengaliCharacterBreakdown({ isOpen }) {
                       ))}
                     </div>
                   ))}
-                  <div className="bengali-keyboard__row bengali-keyboard__controls">
-                    <button type="button" onClick={() => editTypedText(" ")} aria-label="Type a space">Space</button>
-                    <button type="button" onClick={() => editTypedText("", true)} aria-label="Delete previous character">⌫ Backspace</button>
-                  </div>
                 </div>
               </section>
               <div className="bengali-breakdown__toolbar">
