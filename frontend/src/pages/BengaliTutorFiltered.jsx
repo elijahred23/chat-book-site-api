@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import PropTypes from "prop-types";
 import { FaAngleDoubleLeft, FaAngleDoubleRight, FaDownload, FaFastBackward, FaFastForward, FaPause, FaPlay, FaRedoAlt, FaStepBackward, FaStepForward, FaStop, FaTrash, FaUpload } from "react-icons/fa";
 import BengaliTutor, { SELECTABLE_SAVED_LESSONS } from "./BengaliTutor.jsx";
 import { phraseBreakdownItems, withPhraseWords } from "../utils/bengaliPhraseBreakdown.js";
@@ -46,6 +47,7 @@ const storedSettings = () => {
     showImages: true,
     wordDelay: 0,
     bengaliSpeechSource: "pronunciation",
+    translationSetId: "",
   };
   try { return { ...defaults, ...JSON.parse(localStorage.getItem(SETTINGS_KEY) || "{}") }; } catch { return defaults; }
 };
@@ -121,7 +123,10 @@ export default function BengaliTutorFiltered() {
 
   const bnVoices = useMemo(() => voices.filter((voice) => /^bn/i.test(voice.lang)), [voices]);
   const enVoices = useMemo(() => voices.filter((voice) => /^en/i.test(voice.lang)), [voices]);
-  const translationPracticeSets = useMemo(() => tab === "games" ? storedTranslationPracticeSets() : [], [tab]);
+  const translationPracticeSets = useMemo(
+    () => tab === "games" || tab === "loop" ? storedTranslationPracticeSets() : [],
+    [tab],
+  );
 
   const preview = (key, text, lang) => {
     const utterance = new SpeechSynthesisUtterance(text);
@@ -195,7 +200,7 @@ export default function BengaliTutorFiltered() {
         <BengaliTutor key={lesson.id} bengaliVoice={bnVoice} initialLesson={lesson} showLessonSelector={false} />
       ) : tab === "loop" ? (
         <WordLoop key={lesson.id} lesson={lesson} voices={voices} bnVoices={bnVoices} enVoices={enVoices} bnVoice={bnVoice} enVoice={enVoice}
-          setBnVoice={setBnVoice} setEnVoice={setEnVoice} preview={preview} />
+          setBnVoice={setBnVoice} setEnVoice={setEnVoice} preview={preview} translationSets={translationPracticeSets} />
       ) : tab === "translate" ? (
         <BengaliTranslator />
       ) : (
@@ -548,7 +553,7 @@ function BengaliTranslator() {
   );
 }
 
-function WordLoop({ lesson, voices, bnVoices, enVoices, bnVoice, enVoice, setBnVoice, setEnVoice, preview }) {
+function WordLoop({ lesson, voices, bnVoices, enVoices, bnVoice, enVoice, setBnVoice, setEnVoice, preview, translationSets }) {
   const initial = useMemo(storedSettings, []);
   const [dataset, setDataset] = useState(initial.dataset);
   const [mode, setMode] = useState(initial.mode);
@@ -562,6 +567,9 @@ function WordLoop({ lesson, voices, bnVoices, enVoices, bnVoice, enVoice, setBnV
   const [showImages, setShowImages] = useState(initial.showImages);
   const [wordDelay, setWordDelay] = useState(initial.wordDelay);
   const [bengaliSpeechSource, setBengaliSpeechSource] = useState(initial.bengaliSpeechSource);
+  const [translationSetId, setTranslationSetId] = useState(
+    () => translationSets.find((set) => set.id === initial.translationSetId)?.id || translationSets[0]?.id || "",
+  );
   const [playing, setPlaying] = useState(false);
   const [paused, setPaused] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -577,12 +585,45 @@ function WordLoop({ lesson, voices, bnVoices, enVoices, bnVoice, enVoice, setBnV
   const photoRequestRef = useRef(null);
   const googleAudioRef = useRef(null);
 
+  const selectedTranslationSet = useMemo(
+    () => translationSets.find((set) => set.id === translationSetId) || translationSets[0] || null,
+    [translationSetId, translationSets],
+  );
+  const translationPhraseItems = useMemo(
+    () => phraseBreakdownItems({ phrases: selectedTranslationSet?.phrases || [] }),
+    [selectedTranslationSet],
+  );
+  const translationWordItems = useMemo(() => {
+    const uniqueWords = new Map();
+    translationPhraseItems.forEach((phrase) => {
+      phrase.words?.forEach((word) => {
+        if (!word?.bn || !word?.en) return;
+        const item = {
+          ...word,
+          sourcePhrase: phrase.bn,
+          category: phrase.category,
+        };
+        const key = JSON.stringify([item.bn, item.en]);
+        if (!uniqueWords.has(key)) uniqueWords.set(key, item);
+      });
+    });
+    return [...uniqueWords.values()];
+  }, [translationPhraseItems]);
+
+  useEffect(() => {
+    if (selectedTranslationSet?.id !== translationSetId) {
+      setTranslationSetId(selectedTranslationSet?.id || "");
+    }
+  }, [selectedTranslationSet, translationSetId]);
+
   const sourceItems = useMemo(() => {
+    if (dataset === "translation-phrases") return translationPhraseItems;
+    if (dataset === "translation-words") return translationWordItems;
     const source = dataset === "breakdowns" || dataset === "phrases"
       ? phraseBreakdownItems(lesson)
       : lesson?.vocab;
     return (source || []).filter((item) => item?.bn && item?.en);
-  }, [dataset, lesson]);
+  }, [dataset, lesson, translationPhraseItems, translationWordItems]);
 
   const facets = useMemo(() => [...new Set(sourceItems.flatMap(itemFacets))].sort((a, b) => a.localeCompare(b)), [sourceItems]);
   const matchingItems = useMemo(() => {
@@ -626,9 +667,9 @@ function WordLoop({ lesson, voices, bnVoices, enVoices, bnVoice, enVoice, setBnV
 
   useEffect(() => {
     try {
-      localStorage.setItem(SETTINGS_KEY, JSON.stringify({ dataset, mode, intervalSize: size, intervalRepeats: repeats, loopForever, search, facet, chunkSize: safeChunkSize, chunkIndex: safeChunkIndex, showImages, wordDelay: delaySeconds, bengaliSpeechSource }));
+      localStorage.setItem(SETTINGS_KEY, JSON.stringify({ dataset, mode, intervalSize: size, intervalRepeats: repeats, loopForever, search, facet, chunkSize: safeChunkSize, chunkIndex: safeChunkIndex, showImages, wordDelay: delaySeconds, bengaliSpeechSource, translationSetId }));
     } catch {}
-  }, [dataset, mode, size, repeats, loopForever, search, facet, safeChunkSize, safeChunkIndex, showImages, delaySeconds, bengaliSpeechSource]);
+  }, [dataset, mode, size, repeats, loopForever, search, facet, safeChunkSize, safeChunkIndex, showImages, delaySeconds, bengaliSpeechSource, translationSetId]);
 
   useEffect(() => () => stop(), [stop]);
   useEffect(() => {
@@ -637,7 +678,7 @@ function WordLoop({ lesson, voices, bnVoices, enVoices, bnVoice, enVoice, setBnV
     passRef.current = 1;
     setCurrentIndex(0);
     setPass(1);
-  }, [dataset, mode, intervalSize, intervalRepeats, loopForever, search, facet, safeChunkSize, safeChunkIndex, showImages, delaySeconds, bengaliSpeechSource, bnVoice, enVoice, stop]);
+  }, [dataset, mode, intervalSize, intervalRepeats, loopForever, search, facet, safeChunkSize, safeChunkIndex, showImages, delaySeconds, bengaliSpeechSource, translationSetId, bnVoice, enVoice, stop]);
 
   const jumpToWord = (event) => {
     const nextIndex = Math.min(Math.max(Number(event.target.value) || 0, 0), Math.max(items.length - 1, 0));
@@ -889,9 +930,20 @@ function WordLoop({ lesson, voices, bnVoices, enVoices, bnVoice, enVoice, setBnV
 
       <section style={ui.filterPanel} aria-label="Word filters">
         <div style={ui.grid}>
-          <Field label="Items"><select style={ui.input} value={dataset} onChange={(event) => { setDataset(event.target.value); setChunkIndex(0); }}><option value="vocab">Vocabulary words</option><option value="phrases">Lesson phrases</option><option value="breakdowns">Phrase breakdowns</option></select></Field>
+          <Field label="Items"><select style={ui.input} value={dataset} onChange={(event) => { setDataset(event.target.value); setChunkIndex(0); }}><option value="vocab">Vocabulary words</option><option value="phrases">Lesson phrases</option><option value="breakdowns">Phrase breakdowns</option><option value="translation-phrases" disabled={!translationPhraseItems.length}>Saved translation phrases ({translationPhraseItems.length})</option><option value="translation-words" disabled={!translationWordItems.length}>Saved translation words ({translationWordItems.length})</option></select></Field>
           <Field label="Words per study chunk"><select style={ui.input} value={safeChunkSize} onChange={(event) => { setChunkSize(Number(event.target.value)); setChunkIndex(0); }}><option value="10">10</option><option value="20">20</option><option value="25">25</option><option value="50">50</option><option value="100">100</option><option value="150">150</option><option value="200">200</option><option value="250">250</option><option value="300">300</option></select></Field>
         </div>
+        {translationSets.length > 0 && (
+          <div style={ui.chunkRow}>
+            <Field label="Saved translation">
+              <select style={ui.input} value={selectedTranslationSet?.id || ""} onChange={(event) => { setTranslationSetId(event.target.value); setChunkIndex(0); }}>
+                {translationSets.map((set, index) => (
+                  <option key={set.id} value={set.id}>{index + 1}. {shortTranslationLabel(set.title)}</option>
+                ))}
+              </select>
+            </Field>
+          </div>
+        )}
         <div style={ui.chunkRow}>
           <Field label={`Study chunk (${matchingItems.length} matching)`}><select style={ui.input} value={safeChunkIndex} onChange={(event) => setChunkIndex(Number(event.target.value))}>{Array.from({ length: chunkCount }, (_, index) => { const start = index * safeChunkSize + 1; const end = Math.min((index + 1) * safeChunkSize, matchingItems.length); return <option key={index} value={index}>Chunk {index + 1}: {matchingItems.length ? `${start}–${end}` : "empty"}</option>; })}</select></Field>
         </div>
@@ -904,7 +956,7 @@ function WordLoop({ lesson, voices, bnVoices, enVoices, bnVoice, enVoice, setBnV
         <Field label="Repeat each interval"><input style={ui.input} type="number" min="1" value={intervalRepeats} onChange={(event) => setIntervalRepeats(event.target.value)} /></Field>
         <Field label="Delay before next word (seconds)"><input style={ui.input} type="number" min="0" step="0.5" value={wordDelay} onChange={(event) => setWordDelay(event.target.value)} /></Field>
       </div>
-      {items.length > 0 && <Field label={dataset === "breakdowns" || dataset === "phrases" ? "Skip to phrase in active chunk" : "Skip to word in active chunk"}><select style={ui.input} value={currentIndex} onChange={jumpToWord}>{items.map((word, index) => <option key={`${word.bn}-${word.en}-${index}`} value={index}>{chunkStart + index + 1}. {word.pronunciation || word.bn} · {word.en}</option>)}</select></Field>}
+      {items.length > 0 && <Field label={dataset === "breakdowns" || dataset === "phrases" || dataset === "translation-phrases" ? "Skip to phrase in active chunk" : "Skip to word in active chunk"}><select style={ui.input} value={currentIndex} onChange={jumpToWord}>{items.map((word, index) => <option key={`${word.bn}-${word.en}-${index}`} value={index}>{chunkStart + index + 1}. {word.pronunciation || word.bn} · {word.en}</option>)}</select></Field>}
       <div style={ui.grid}>
         <div style={ui.voiceStack}>
           <VoiceSelect
@@ -945,7 +997,7 @@ function WordLoop({ lesson, voices, bnVoices, enVoices, bnVoice, enVoice, setBnV
         <label className="bn-word-loop__toggle" style={ui.check}><input type="checkbox" checked={showImages} onChange={(event) => setShowImages(event.target.checked)} /><span>Show stock photos for vocabulary words</span></label>
       </div>
       {!lesson ? <div style={ui.notice}>Generate or upload a lesson in the Tutor tab first.</div> : !items.length ? <div style={ui.notice}>No items match the active filters.</div> : <>
-        <div style={ui.flash}><small>Chunk {safeChunkIndex + 1}/{chunkCount} · {currentIndex + 1}/{items.length} · Overall filtered position {chunkStart + currentIndex + 1}/{matchingItems.length} · Pass {pass}/{repeats}</small><strong lang="bn" style={ui.bn}>{item?.bn}</strong>{item?.pronunciation && <strong style={ui.activePronunciation}>{item.pronunciation}</strong>}<span style={ui.en}>{item?.en}</span>{(dataset === "breakdowns" || dataset === "phrases") && <section className="bn-loop-breakdown" aria-label="Complete phrase breakdown"><strong className="bn-loop-breakdown__title">Phrase breakdown</strong><div className="bn-loop-breakdown__literal"><small>Literal Bengali order</small><span>{item?.breakdownEnglish}</span></div><div className="bn-loop-breakdown__grid">{item?.words?.map((word, wordIndex) => <article className="bn-loop-breakdown__word" key={`${item.bn}-${word.bn}-${wordIndex}`}><span lang="bn">{word.bn}</span><strong>{word.pronunciation}</strong><small>{word.en}</small></article>)}</div></section>}
+        <div style={ui.flash}><small>Chunk {safeChunkIndex + 1}/{chunkCount} · {currentIndex + 1}/{items.length} · Overall filtered position {chunkStart + currentIndex + 1}/{matchingItems.length} · Pass {pass}/{repeats}</small><strong lang="bn" style={ui.bn}>{item?.bn}</strong>{item?.pronunciation && <strong style={ui.activePronunciation}>{item.pronunciation}</strong>}<span style={ui.en}>{item?.en}</span>{(dataset === "breakdowns" || dataset === "phrases" || dataset === "translation-phrases") && <section className="bn-loop-breakdown" aria-label="Complete phrase breakdown"><strong className="bn-loop-breakdown__title">Phrase breakdown</strong><div className="bn-loop-breakdown__literal"><small>Literal Bengali order</small><span>{item?.breakdownEnglish}</span></div><div className="bn-loop-breakdown__grid">{item?.words?.map((word, wordIndex) => <article className="bn-loop-breakdown__word" key={`${item.bn}-${word.bn}-${wordIndex}`}><span lang="bn">{word.bn}</span><strong>{word.pronunciation}</strong><small>{word.en}</small></article>)}</div></section>}
           {showImages && <div style={ui.photoFrame} aria-live="polite">
             {photoStatus === "loading" && <span style={ui.muted}>Finding a photo…</span>}
             {photoStatus === "empty" && <span style={ui.muted}>No photo found for this item.</span>}
@@ -978,6 +1030,26 @@ function WordLoop({ lesson, voices, bnVoices, enVoices, bnVoice, enVoice, setBnV
     </section>
   );
 }
+
+WordLoop.propTypes = {
+  lesson: PropTypes.shape({
+    vocab: PropTypes.arrayOf(PropTypes.object),
+    phrases: PropTypes.arrayOf(PropTypes.object),
+  }),
+  voices: PropTypes.arrayOf(PropTypes.object).isRequired,
+  bnVoices: PropTypes.arrayOf(PropTypes.object).isRequired,
+  enVoices: PropTypes.arrayOf(PropTypes.object).isRequired,
+  bnVoice: PropTypes.string.isRequired,
+  enVoice: PropTypes.string.isRequired,
+  setBnVoice: PropTypes.func.isRequired,
+  setEnVoice: PropTypes.func.isRequired,
+  preview: PropTypes.func.isRequired,
+  translationSets: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    phrases: PropTypes.arrayOf(PropTypes.object).isRequired,
+  })).isRequired,
+};
 
 function VoiceSelect({ label, value, voices, onChange, compact, extraOptions = [] }) {
   return <section style={compact ? ui.voiceCompact : ui.voice}><Field label={label}><select style={ui.input} value={value} onChange={(event) => onChange(event.target.value)}><option value="">System default</option>{extraOptions.map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}{voices.map((voice) => <option key={voiceKey(voice)} value={voiceKey(voice)}>{voice.name} ({voice.lang})</option>)}</select></Field></section>;
