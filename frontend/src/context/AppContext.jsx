@@ -33,6 +33,8 @@ const initialState = {
   isLargeTextOpen: false,
   isMarkdownViewerOpen: false,
   markdownViewerText: '',
+  isBengaliBreakdownOpen: false,
+  bengaliBreakdownText: '',
 };
 
 const actionTypes = {
@@ -67,6 +69,8 @@ const actionTypes = {
   SET_IS_LARGE_TEXT_OPEN: 'SET_IS_LARGE_TEXT_OPEN',
   SET_IS_MARKDOWN_VIEWER_OPEN: 'SET_IS_MARKDOWN_VIEWER_OPEN',
   SET_MARKDOWN_VIEWER_TEXT: 'SET_MARKDOWN_VIEWER_TEXT',
+  SET_IS_BENGALI_BREAKDOWN_OPEN: 'SET_IS_BENGALI_BREAKDOWN_OPEN',
+  SET_BENGALI_BREAKDOWN_TEXT: 'SET_BENGALI_BREAKDOWN_TEXT',
 };
 
 const closeAllPanels = (state) => ({
@@ -84,6 +88,7 @@ const closeAllPanels = (state) => ({
   isIframeOpen: false,
   isLargeTextOpen: false,
   isMarkdownViewerOpen: false,
+  isBengaliBreakdownOpen: false,
 });
 
 const drawerKeyToState = {
@@ -100,6 +105,7 @@ const drawerKeyToState = {
   iframe: 'isIframeOpen',
   large: 'isLargeTextOpen',
   markdown: 'isMarkdownViewerOpen',
+  bengaliBreakdown: 'isBengaliBreakdownOpen',
 };
 
 const activateDrawer = (state, key) => {
@@ -190,6 +196,10 @@ function appReducer(state, action) {
       return action.payload ? activateDrawer(state, 'markdown') : deactivateDrawer(state, 'markdown');
     case actionTypes.SET_MARKDOWN_VIEWER_TEXT:
       return { ...state, markdownViewerText: action.payload };
+    case actionTypes.SET_IS_BENGALI_BREAKDOWN_OPEN:
+      return action.payload ? activateDrawer(state, 'bengaliBreakdown') : deactivateDrawer(state, 'bengaliBreakdown');
+    case actionTypes.SET_BENGALI_BREAKDOWN_TEXT:
+      return { ...state, bengaliBreakdownText: action.payload };
     default:
       console.warn(`Unhandled action type: ${action.type}`);
       return state;
@@ -246,4 +256,6 @@ export const actions = {
   setLargeTextBuffer: (text) => ({ type: actionTypes.SET_COPY_TEXT, payload: text }),
   setIsMarkdownViewerOpen: (open) => ({ type: actionTypes.SET_IS_MARKDOWN_VIEWER_OPEN, payload: open }),
   setMarkdownViewerText: (text) => ({ type: actionTypes.SET_MARKDOWN_VIEWER_TEXT, payload: text }),
+  setIsBengaliBreakdownOpen: (open) => ({ type: actionTypes.SET_IS_BENGALI_BREAKDOWN_OPEN, payload: open }),
+  setBengaliBreakdownText: (text) => ({ type: actionTypes.SET_BENGALI_BREAKDOWN_TEXT, payload: text }),
 };

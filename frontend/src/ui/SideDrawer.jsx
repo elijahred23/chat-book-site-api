@@ -5,6 +5,7 @@ import {
   FaComments,
   FaExpandAlt,
   FaGlobe,
+  FaLanguage,
   FaKeyboard,
   FaMagic,
   FaPodcast,
@@ -35,6 +36,7 @@ const drawerMeta = {
   large: { icon: FaBookReader, label: "Text Chunker" },
   asmr: { icon: FaKeyboard, label: "ASMR" },
   markdown: { icon: SiMarkdown, label: "Markdown" },
+  bengaliBreakdown: { icon: FaLanguage, label: "Bengali Breakdown" },
 };
 
 export default function SideDrawer({

@@ -1,0 +1,23 @@
+.bengali-breakdown { width: min(100%, 64rem); margin: 0 auto; padding: clamp(1rem, 2.5vw, 2rem); }
+.bengali-breakdown__intro { display: grid; gap: 1rem; padding: clamp(1rem, 2.5vw, 1.5rem); border: 1px solid var(--color-border); border-radius: var(--radius-lg); background: var(--color-surface); }
+.bengali-breakdown__intro > p { margin: 0; color: var(--color-text-muted); }
+.bengali-breakdown__input { min-height: 9rem !important; font-family: "Noto Sans Bengali", "Nirmala UI", "Vrinda", sans-serif; font-size: 1.25rem !important; line-height: 1.7; }
+.bengali-breakdown__toolbar { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: .75rem; color: var(--color-text-muted); font-size: .85rem; font-weight: 700; }
+.bengali-breakdown__list { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr)); gap: .8rem; margin: 1rem 0 0; padding: 0; list-style: none; }
+.bengali-breakdown__item { min-width: 0; display: grid; grid-template-columns: 4.25rem 1fr; gap: .85rem; border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: .85rem; background: var(--color-surface); box-shadow: var(--shadow-sm); }
+.bengali-breakdown__glyph { min-height: 4.25rem; display: grid; place-items: center; align-self: start; border-radius: var(--radius-md); background: linear-gradient(145deg, #ecfdf5, #eff6ff); color: #14532d; font-family: "Noto Sans Bengali", "Nirmala UI", "Vrinda", sans-serif; font-size: 2rem; font-weight: 750; }
+.bengali-breakdown__item.is-whitespace .bengali-breakdown__glyph { color: var(--color-text-muted); font-family: inherit; font-size: 1.25rem; }
+.bengali-breakdown__details, .bengali-breakdown__part { min-width: 0; display: grid; }
+.bengali-breakdown__details { gap: .55rem; }
+.bengali-breakdown__position { color: var(--color-primary); font-size: .68rem; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }
+.bengali-breakdown__part { grid-template-columns: 1.75rem minmax(0, 1fr); column-gap: .5rem; align-items: baseline; }
+.bengali-breakdown__part b { font-family: "Noto Sans Bengali", "Nirmala UI", "Vrinda", sans-serif; font-size: 1.05rem; }
+.bengali-breakdown__part span { overflow-wrap: anywhere; color: var(--color-text); font-size: .85rem; }
+.bengali-breakdown__part small { grid-column: 2; color: var(--color-text-muted); font-size: .7rem; }
+.bengali-breakdown__empty { min-height: 14rem; display: grid; place-items: center; align-content: center; gap: .75rem; color: var(--color-text-muted); text-align: center; }
+.bengali-breakdown__empty span { color: #0f766e; font-family: "Noto Sans Bengali", "Nirmala UI", "Vrinda", sans-serif; font-size: clamp(2rem, 8vw, 4rem); letter-spacing: .15em; }
+.bengali-breakdown__empty p { margin: 0; color: inherit; }
+@media (max-width: 480px) {
+  .bengali-breakdown__item { grid-template-columns: 3.5rem 1fr; }
+  .bengali-breakdown__glyph { min-height: 3.5rem; font-size: 1.65rem; }
+}

@@ -6,6 +6,7 @@ import {
   FaComments,
   FaGlobe,
   FaKeyboard,
+  FaLanguage,
   FaProjectDiagram,
   FaScroll,
   FaVolumeUp,
@@ -63,6 +64,7 @@ function AppContent() {
     isTeleprompterOpen,
     isTypingOpen,
     isYouTubeOpen,
+    isBengaliBreakdownOpen,
   } = state;
 
   const toggleWidth = () => setIsFullWidth((current) => !current);
@@ -86,7 +88,8 @@ function AppContent() {
     isTypingOpen ||
     isIframeOpen ||
     isLargeTextOpen ||
-    isMarkdownViewerOpen
+    isMarkdownViewerOpen ||
+    isBengaliBreakdownOpen
   );
 
   const tools = [
@@ -102,6 +105,7 @@ function AppContent() {
     { key: "large", label: "Text Chunker", icon: FaBookReader, active: isLargeTextOpen, action: () => setPanel(actions.setIsLargeTextOpen, true) },
     { key: "html", label: "HTML Builder", icon: FaCode, active: isHtmlBuilderOpen, action: () => setPanel(actions.setIsHtmlBuilderOpen, true) },
     { key: "typing", label: "Typing Test", icon: FaKeyboard, active: isTypingOpen, action: () => setPanel(actions.setIsTypingOpen, true) },
+    { key: "bengaliBreakdown", label: "Bengali Breakdown", icon: FaLanguage, active: isBengaliBreakdownOpen, action: () => setPanel(actions.setIsBengaliBreakdownOpen, true) },
   ];
 
   return (

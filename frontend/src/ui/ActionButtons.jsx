@@ -9,6 +9,7 @@ import {
   FaDownload,
   FaEllipsisH,
   FaKeyboard,
+  FaLanguage,
   FaLightbulb,
   FaListAlt,
   FaProjectDiagram,
@@ -98,6 +99,7 @@ export default function ActionButtons({ promptText, limitButtons = false }) {
     {
       label: "Learn",
       buttons: [
+        { icon: FaLanguage, title: "Break Down Bengali", drawer: "bengaliBreakdown", color: "#047857", onClick: () => { dispatch(actions.setBengaliBreakdownText(cleanText)); dispatch(actions.setIsBengaliBreakdownOpen(true)); } },
         {
           icon: GiGraduateCap,
           title: "Create Flashcards",
@@ -144,6 +146,7 @@ export default function ActionButtons({ promptText, limitButtons = false }) {
     chat: "AI Chat", chatbook: "Chat Book", typing: "Typing Test", plantuml: "PlantUML",
     tts: "Text to Speech", teleprompter: "Teleprompter", markdown: "Markdown Viewer",
     large: "Text Chunker", youtube: "YouTube Transcript",
+    bengaliBreakdown: "Bengali Breakdown",
   };
   let remaining = limitButtons && !showAll ? 8 : Number.POSITIVE_INFINITY;
 
