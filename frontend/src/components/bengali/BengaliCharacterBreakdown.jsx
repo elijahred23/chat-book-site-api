@@ -206,7 +206,6 @@ export default function BengaliCharacterBreakdown({ isOpen }) {
     const nextCursor = editStart + replacement.length;
     setTypedText(nextText);
     window.requestAnimationFrame(() => {
-      input?.focus();
       input?.setSelectionRange(nextCursor, nextCursor);
     });
   };
