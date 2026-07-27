@@ -63,6 +63,12 @@ function segmentText(text) {
   });
 }
 
+function whitespaceSymbol(character) {
+  if (character === "\n") return "↵";
+  if (character === "\t") return "⇥";
+  return "␠";
+}
+
 export default function BengaliCharacterBreakdown() {
   const dispatch = useAppDispatch();
   const { bengaliBreakdownText } = useAppState();
@@ -101,13 +107,15 @@ export default function BengaliCharacterBreakdown() {
             return (
               <li className={`bengali-breakdown__item${whitespace ? " is-whitespace" : ""}`} key={`${offset}-${grapheme}`}>
                 <div className="bengali-breakdown__glyph" lang="bn" aria-label={whitespace ? characters[0].name : grapheme}>
-                  {whitespace ? "␠" : grapheme}
+                  {whitespace ? whitespaceSymbol(characters[0].character) : grapheme}
                 </div>
                 <div className="bengali-breakdown__details">
                   <span className="bengali-breakdown__position">Character {index + 1}</span>
                   {characters.map(({ character, name, type, code }, partIndex) => (
                     <div className="bengali-breakdown__part" key={`${code}-${partIndex}`}>
-                      <b lang="bn">{/\s/u.test(character) ? "Whitespace" : character}</b>
+                      <b lang="bn" aria-hidden={/\s/u.test(character) || undefined}>
+                        {/\s/u.test(character) ? whitespaceSymbol(character) : character}
+                      </b>
                       <span>{name}</span>
                       <small>{type} · {code}</small>
                     </div>
