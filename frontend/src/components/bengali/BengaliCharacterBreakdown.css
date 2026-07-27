@@ -6,9 +6,13 @@
 .bengali-breakdown__list { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr)); gap: .8rem; margin: 1rem 0 0; padding: 0; list-style: none; }
 .bengali-breakdown__item { min-width: 0; display: grid; grid-template-columns: 4.25rem 1fr; gap: .85rem; border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: .85rem; background: var(--color-surface); box-shadow: var(--shadow-sm); }
 .bengali-breakdown__glyph { min-height: 4.25rem; display: grid; place-items: center; align-self: start; border-radius: var(--radius-md); background: linear-gradient(145deg, #ecfdf5, #eff6ff); color: #14532d; font-family: "Noto Sans Bengali", "Nirmala UI", "Vrinda", sans-serif; font-size: 2rem; font-weight: 750; }
-.bengali-breakdown__item.is-whitespace { background: var(--color-surface-subtle); box-shadow: none; }
-.bengali-breakdown__item.is-whitespace .bengali-breakdown__glyph { color: var(--color-text-muted); font-family: inherit; font-size: 1.25rem; }
-.bengali-breakdown__item.is-whitespace .bengali-breakdown__part b { color: var(--color-text-muted); font-family: inherit; }
+.bengali-breakdown__item.is-completed-word { grid-column: 1 / -1; grid-template-columns: minmax(7rem, auto) 1fr; border-color: #a7d8c8; background: #f0fdf8; box-shadow: none; }
+.bengali-breakdown__item.is-completed-word .bengali-breakdown__glyph { min-width: 7rem; padding: 0 .75rem; color: #065f46; font-size: 1.65rem; }
+.bengali-breakdown__word-boundary { display: grid; align-content: center; }
+.bengali-breakdown__word-boundary b { color: #065f46; font-family: "Noto Sans Bengali", "Nirmala UI", "Vrinda", sans-serif; font-size: 1.1rem; }
+.bengali-breakdown__word-boundary span { color: var(--color-text-muted); font-size: .75rem; }
+.bengali-breakdown__word-boundary span strong { color: #064e3b; font-size: .9rem; }
+.bengali-breakdown__word-boundary small { color: var(--color-text-muted); font-size: .68rem; }
 .bengali-breakdown__details, .bengali-breakdown__part { min-width: 0; display: grid; }
 .bengali-breakdown__details { gap: .55rem; }
 .bengali-breakdown__position { color: var(--color-primary); font-size: .68rem; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }

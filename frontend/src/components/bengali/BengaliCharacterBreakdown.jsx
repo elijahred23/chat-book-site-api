@@ -31,6 +31,19 @@ const DIGIT_NAMES = {
 
 const PUNCTUATION_NAMES = { "।": "dari (sentence mark)", "॥": "double dari", "৳": "taka sign" };
 const bengaliPattern = /[\u0980-\u09FF]/u;
+const PRONUNCIATION_LETTERS = {
+  "অ": "ô", "আ": "a", "ই": "i", "ঈ": "i", "উ": "u", "ঊ": "u", "ঋ": "ri",
+  "এ": "e", "ঐ": "oi", "ও": "o", "ঔ": "ou", "ক": "k", "খ": "kh", "গ": "g",
+  "ঘ": "gh", "ঙ": "ng", "চ": "ch", "ছ": "chh", "জ": "j", "ঝ": "jh", "ঞ": "ny",
+  "ট": "ṭ", "ঠ": "ṭh", "ড": "ḍ", "ঢ": "ḍh", "ণ": "ṇ", "ত": "t", "থ": "th",
+  "দ": "d", "ধ": "dh", "ন": "n", "প": "p", "ফ": "ph", "ব": "b", "ভ": "bh",
+  "ম": "m", "য": "j", "র": "r", "ল": "l", "শ": "sh", "ষ": "ṣ", "স": "s",
+  "হ": "h", "ড়": "ṛ", "ঢ়": "ṛh", "য়": "y", "ৎ": "t",
+};
+const PRONUNCIATION_MARKS = {
+  "া": "a", "ি": "i", "ী": "i", "ু": "u", "ূ": "u", "ৃ": "ri",
+  "ে": "e", "ৈ": "oi", "ো": "o", "ৌ": "ou",
+};
 
 function describeCharacter(character) {
   const code = `U+${character.codePointAt(0).toString(16).toUpperCase().padStart(4, "0")}`;
@@ -63,10 +76,35 @@ function segmentText(text) {
   });
 }
 
-function whitespaceSymbol(character) {
-  if (character === "\n") return "↵";
-  if (character === "\t") return "⇥";
-  return "␠";
+function completedWordBefore(segments, index) {
+  const characters = [];
+  for (let cursor = index - 1; cursor >= 0; cursor -= 1) {
+    const segment = segments[cursor];
+    if (segment.characters.every(({ type }) => type === "Whitespace")) break;
+    characters.unshift(segment.grapheme);
+  }
+  return characters.join("");
+}
+
+function approximatePronunciation(word) {
+  let pronunciation = "";
+  for (const character of Array.from(word.normalize("NFC"))) {
+    if (PRONUNCIATION_LETTERS[character]) {
+      const isConsonant = Boolean(LETTER_NAMES[character]) && !/^[অআইঈউঊঋএঐওঔ]$/u.test(character);
+      pronunciation += PRONUNCIATION_LETTERS[character] + (isConsonant ? "ô" : "");
+    } else if (PRONUNCIATION_MARKS[character]) {
+      pronunciation = pronunciation.replace(/ô$/u, "") + PRONUNCIATION_MARKS[character];
+    } else if (character === "্") {
+      pronunciation = pronunciation.replace(/ô$/u, "");
+    } else if (character === "ং") {
+      pronunciation += "ng";
+    } else if (character === "ঁ") {
+      pronunciation += "̃";
+    } else if (character === "ঃ") {
+      pronunciation += "h";
+    }
+  }
+  return pronunciation || "—";
 }
 
 export default function BengaliCharacterBreakdown() {
@@ -76,6 +114,10 @@ export default function BengaliCharacterBreakdown() {
   const bengaliCount = segments.filter(({ characters }) =>
     characters.some(({ character }) => bengaliPattern.test(character))
   ).length;
+  const lastSegment = segments[segments.length - 1];
+  const finalWord = lastSegment && !lastSegment.characters.every(({ type }) => type === "Whitespace")
+    ? completedWordBefore(segments, segments.length)
+    : "";
 
   return (
     <div className="bengali-breakdown">
@@ -104,26 +146,48 @@ export default function BengaliCharacterBreakdown() {
         <ol className="bengali-breakdown__list" aria-label="Character breakdown">
           {segments.map(({ grapheme, characters, index, offset }) => {
             const whitespace = characters.every(({ type }) => type === "Whitespace");
+            const completedWord = whitespace ? completedWordBefore(segments, index) : "";
+            const pronunciation = completedWord ? approximatePronunciation(completedWord) : "";
+            if (whitespace && !completedWord) return null;
             return (
-              <li className={`bengali-breakdown__item${whitespace ? " is-whitespace" : ""}`} key={`${offset}-${grapheme}`}>
+              <li className={`bengali-breakdown__item${whitespace ? " is-completed-word" : ""}`} key={`${offset}-${grapheme}`}>
                 <div className="bengali-breakdown__glyph" lang="bn" aria-label={whitespace ? characters[0].name : grapheme}>
-                  {whitespace ? whitespaceSymbol(characters[0].character) : grapheme}
+                  {whitespace ? completedWord : grapheme}
                 </div>
                 <div className="bengali-breakdown__details">
-                  <span className="bengali-breakdown__position">Character {index + 1}</span>
-                  {characters.map(({ character, name, type, code }, partIndex) => (
-                    <div className="bengali-breakdown__part" key={`${code}-${partIndex}`}>
-                      <b lang="bn" aria-hidden={/\s/u.test(character) || undefined}>
-                        {/\s/u.test(character) ? whitespaceSymbol(character) : character}
-                      </b>
-                      <span>{name}</span>
-                      <small>{type} · {code}</small>
+                  <span className="bengali-breakdown__position">{whitespace ? "Completed word" : `Character ${index + 1}`}</span>
+                  {whitespace ? (
+                    <div className="bengali-breakdown__word-boundary">
+                      <b lang="bn">{completedWord}</b>
+                      <span>Possible pronunciation: <strong>{pronunciation}</strong></span>
+                      <small>Approximate; pronunciation may vary.</small>
                     </div>
-                  ))}
+                  ) : (
+                    characters.map(({ character, name, type, code }, partIndex) => (
+                      <div className="bengali-breakdown__part" key={`${code}-${partIndex}`}>
+                        <b lang="bn">{character}</b>
+                        <span>{name}</span>
+                        <small>{type} · {code}</small>
+                      </div>
+                    ))
+                  )}
                 </div>
               </li>
             );
           })}
+          {finalWord ? (
+            <li className="bengali-breakdown__item is-completed-word" key="final-completed-word">
+              <div className="bengali-breakdown__glyph" lang="bn">{finalWord}</div>
+              <div className="bengali-breakdown__details">
+                <span className="bengali-breakdown__position">Completed word</span>
+                <div className="bengali-breakdown__word-boundary">
+                  <b lang="bn">{finalWord}</b>
+                  <span>Possible pronunciation: <strong>{approximatePronunciation(finalWord)}</strong></span>
+                  <small>Approximate; pronunciation may vary.</small>
+                </div>
+              </div>
+            </li>
+          ) : null}
         </ol>
       ) : (
         <div className="bengali-breakdown__empty">
