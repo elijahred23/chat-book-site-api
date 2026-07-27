@@ -63,7 +63,7 @@ export default function AppDrawers({ state, isFullWidth, onToggleWidth, setPanel
       <SideDrawer isOpen={isLargeTextOpen} isFullWidth={isFullWidth} stack={drawerStack} currentKey="large" title="Text Chunker" onToggleWidth={onToggleWidth} onClose={() => setPanel(actions.setIsLargeTextOpen, false)}><LargeTextChunks /></SideDrawer>
       <SideDrawer isOpen={isChat2Open} isFullWidth={isFullWidth} stack={drawerStack} currentKey="chat2" title="Dual Chat" onToggleWidth={onToggleWidth} onClose={() => setPanel(actions.setIsChat2Open, false)}><ChatGPTDual isOpen /></SideDrawer>
       <SideDrawer isOpen={isMarkdownViewerOpen} isFullWidth={isFullWidth} stack={drawerStack} currentKey="markdown" title="Markdown Viewer" onToggleWidth={onToggleWidth} onClose={() => setPanel(actions.setIsMarkdownViewerOpen, false)}><MarkdownViewer /></SideDrawer>
-      <SideDrawer isOpen={isBengaliBreakdownOpen} isFullWidth={isFullWidth} stack={drawerStack} currentKey="bengaliBreakdown" title="Bengali Breakdown" onToggleWidth={onToggleWidth} onClose={() => setPanel(actions.setIsBengaliBreakdownOpen, false)}><BengaliCharacterBreakdown /></SideDrawer>
+      <SideDrawer isOpen={isBengaliBreakdownOpen} isFullWidth={isFullWidth} stack={drawerStack} currentKey="bengaliBreakdown" title="Bengali Breakdown" onToggleWidth={onToggleWidth} onClose={() => setPanel(actions.setIsBengaliBreakdownOpen, false)}><BengaliCharacterBreakdown isOpen={isBengaliBreakdownOpen} /></SideDrawer>
 
       <DownloadCopyTextFile />
       <TextSelectionTooltip

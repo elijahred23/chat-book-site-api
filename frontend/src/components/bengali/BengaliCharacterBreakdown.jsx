@@ -1,4 +1,5 @@
-import { useMemo } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import PropTypes from "prop-types";
 import { FaEraser } from "react-icons/fa";
 import { actions, useAppDispatch, useAppState } from "../../context/AppContext.jsx";
 import Button from "../../ui/Button.jsx";
@@ -44,6 +45,29 @@ const PRONUNCIATION_MARKS = {
   "া": "a", "ি": "i", "ী": "i", "ু": "u", "ূ": "u", "ৃ": "ri",
   "ে": "e", "ৈ": "oi", "ো": "o", "ৌ": "ou",
 };
+const COMMON_BENGALI_KEYBOARD_ROWS = [
+  ["অ", "আ", "ই", "ঈ", "উ", "ঊ", "ঋ", "এ", "ঐ", "ও", "ঔ"],
+  ["ক", "খ", "গ", "ঘ", "ঙ", "চ", "ছ", "জ", "ঝ", "ঞ"],
+  ["ট", "ঠ", "ড", "ঢ", "ণ", "ত", "থ", "দ", "ধ", "ন"],
+  ["প", "ফ", "ব", "ভ", "ম", "য", "র", "ল", "শ", "ষ", "স", "হ"],
+  ["ড়", "ঢ়", "য়", "ৎ", "ং", "ঃ", "ঁ", "়", "া", "ি", "ী", "ু", "ূ", "ৃ", "ে", "ৈ", "ো", "ৌ", "্"],
+];
+const commonKeyboardCharacters = new Set(COMMON_BENGALI_KEYBOARD_ROWS.flat());
+const additionalBengaliCharacters = [
+  "।",
+  "॥",
+  ...Array.from({ length: 0x80 }, (_, index) => String.fromCodePoint(0x0980 + index))
+    .filter((character) => /\p{Assigned}/u.test(character)),
+].filter((character, index, characters) =>
+  !commonKeyboardCharacters.has(character) && characters.indexOf(character) === index
+);
+const BENGALI_KEYBOARD_ROWS = [
+  ...COMMON_BENGALI_KEYBOARD_ROWS,
+  ...Array.from(
+    { length: Math.ceil(additionalBengaliCharacters.length / 14) },
+    (_, index) => additionalBengaliCharacters.slice(index * 14, index * 14 + 14)
+  ),
+];
 
 function describeCharacter(character) {
   const code = `U+${character.codePointAt(0).toString(16).toUpperCase().padStart(4, "0")}`;
@@ -107,10 +131,52 @@ function approximatePronunciation(word) {
   return pronunciation || "—";
 }
 
-export default function BengaliCharacterBreakdown() {
+function nextCharacterPronunciation(character) {
+  if (character === "্") return "joins letters; no vowel";
+  if (character === "়") return "modifies the preceding consonant";
+  if (character === "।") return "sentence stop";
+  if (character === "॥") return "double sentence stop";
+  if (character === "ঁ") return "nasal sound";
+  if (character === "ং") return "ng";
+  if (character === "ঃ") return "h";
+  if (DIGIT_NAMES[character]) return DIGIT_NAMES[character];
+  if (character === " ") return "space";
+  if (character === "\n") return "line break";
+  const pronunciation = approximatePronunciation(character);
+  return pronunciation === "—" ? describeCharacter(character).name : pronunciation;
+}
+
+function approximateTextPronunciation(text) {
+  return text
+    .split(/(\s+)/u)
+    .map((part) => {
+      if (/\s/u.test(part)) return part;
+      const pronunciation = approximatePronunciation(part);
+      return pronunciation === "—" ? "" : pronunciation;
+    })
+    .join("")
+    .trim();
+}
+
+function keyboardKeyLabel(character) {
+  return /\p{Mark}/u.test(character) ? `◌${character}` : character;
+}
+
+export default function BengaliCharacterBreakdown({ isOpen }) {
   const dispatch = useAppDispatch();
   const { bengaliBreakdownText } = useAppState();
+  const [activeTab, setActiveTab] = useState("breakdown");
+  const [typedText, setTypedText] = useState("");
+  const typingInputRef = useRef(null);
+  const wasOpenRef = useRef(false);
   const segments = useMemo(() => segmentText(bengaliBreakdownText), [bengaliBreakdownText]);
+  const targetCharacters = useMemo(() => Array.from(bengaliBreakdownText), [bengaliBreakdownText]);
+  const typedCharacters = useMemo(() => Array.from(typedText), [typedText]);
+  const correctCount = typedCharacters.findIndex((character, index) => character !== targetCharacters[index]);
+  const matchedCount = correctCount === -1 ? typedCharacters.length : correctCount;
+  const hasMistake = correctCount !== -1;
+  const nextCharacter = targetCharacters[matchedCount];
+  const practiceComplete = Boolean(targetCharacters.length && matchedCount === targetCharacters.length && !hasMistake);
   const bengaliCount = segments.filter(({ characters }) =>
     characters.some(({ character }) => bengaliPattern.test(character))
   ).length;
@@ -119,30 +185,189 @@ export default function BengaliCharacterBreakdown() {
     ? completedWordBefore(segments, segments.length)
     : "";
 
+  useEffect(() => {
+    if (isOpen && !wasOpenRef.current) setTypedText("");
+    wasOpenRef.current = isOpen;
+  }, [isOpen]);
+
+  const editTypedText = (replacement, removePrevious = false) => {
+    const input = typingInputRef.current;
+    const start = input?.selectionStart ?? typedText.length;
+    const end = input?.selectionEnd ?? typedText.length;
+    let editStart = start;
+
+    if (removePrevious && start === end && start > 0) {
+      const beforeCursor = typedText.slice(0, start);
+      const previousSegments = segmentText(beforeCursor);
+      editStart = start - (previousSegments.at(-1)?.grapheme.length || 1);
+    }
+
+    const nextText = typedText.slice(0, editStart) + replacement + typedText.slice(end);
+    const nextCursor = editStart + replacement.length;
+    setTypedText(nextText);
+    window.requestAnimationFrame(() => {
+      input?.focus();
+      input?.setSelectionRange(nextCursor, nextCursor);
+    });
+  };
+
   return (
     <div className="bengali-breakdown">
+      <div className="bengali-breakdown__tabs" role="tablist" aria-label="Bengali tools">
+        <button
+          type="button"
+          role="tab"
+          aria-selected={activeTab === "breakdown"}
+          className={activeTab === "breakdown" ? "is-active" : ""}
+          onClick={() => setActiveTab("breakdown")}
+        >
+          Character breakdown
+        </button>
+        <button
+          type="button"
+          role="tab"
+          aria-selected={activeTab === "typing"}
+          className={activeTab === "typing" ? "is-active" : ""}
+          onClick={() => setActiveTab("typing")}
+        >
+          Typing practice
+        </button>
+      </div>
+
       <section className="bengali-breakdown__intro">
-        <p>Paste a Bengali word, sentence, paragraph, or mixed text. Each written character is separated, including the Unicode parts inside conjuncts and vowel signs.</p>
+        <p>{activeTab === "breakdown"
+          ? "Paste a Bengali word, sentence, paragraph, or mixed text. Each written character is separated, including the Unicode parts inside conjuncts and vowel signs."
+          : "Enter the Bengali text you want to practice, then type it below. The guide will show the next character."}</p>
         <label className="ui-field">
-          <span className="ui-field__label">Bengali text</span>
+          <span className="ui-field__label">{activeTab === "breakdown" ? "Bengali text" : "Practice text"}</span>
           <textarea
             className="ui-input bengali-breakdown__input"
             lang="bn"
             value={bengaliBreakdownText}
             onChange={(event) => dispatch(actions.setBengaliBreakdownText(event.target.value))}
             placeholder="উদাহরণ: আমি বাংলা শিখছি।"
-            autoFocus
+            autoFocus={activeTab === "breakdown"}
           />
         </label>
-        <div className="bengali-breakdown__toolbar">
-          <span role="status">{segments.length} written characters · {bengaliCount} Bengali</span>
-          <Button variant="ghost" onClick={() => dispatch(actions.setBengaliBreakdownText(""))} disabled={!bengaliBreakdownText}>
-            <FaEraser aria-hidden="true" /> Clear
-          </Button>
-        </div>
+        {activeTab === "breakdown" ? (
+          <div className="bengali-breakdown__toolbar">
+            <span role="status">{segments.length} written characters · {bengaliCount} Bengali</span>
+            <Button variant="ghost" onClick={() => dispatch(actions.setBengaliBreakdownText(""))} disabled={!bengaliBreakdownText}>
+              <FaEraser aria-hidden="true" /> Clear
+            </Button>
+          </div>
+        ) : null}
       </section>
 
-      {segments.length ? (
+      {activeTab === "typing" ? (
+        <section className="bengali-typing" aria-label="Bengali typing practice">
+          {segments.length ? (
+            <>
+              <div className={`bengali-typing__prompt${hasMistake ? " is-error" : ""}${practiceComplete ? " is-complete" : ""}`} role="status" aria-live="polite">
+                {practiceComplete ? (
+                  <>
+                    <span className="bengali-typing__prompt-label">Complete</span>
+                    <strong>দারুণ! Great work.</strong>
+                  </>
+                ) : (
+                  <>
+                    <span className="bengali-typing__prompt-label">{hasMistake ? "Try this character" : "Type next"}</span>
+                    <div className="bengali-typing__next">
+                      <strong lang="bn">{nextCharacter && /\p{Mark}/u.test(nextCharacter) ? `◌${nextCharacter}` : nextCharacter || "—"}</strong>
+                      {nextCharacter ? (
+                        <span>
+                          {nextCharacterPronunciation(nextCharacter)}
+                        </span>
+                      ) : null}
+                    </div>
+                    {hasMistake ? <small>Your last character did not match. Delete it and try again.</small> : null}
+                  </>
+                )}
+              </div>
+
+              <div className="bengali-typing__target" lang="bn" aria-label="Practice text">
+                {segments.map(({ grapheme, offset }) => (
+                  <span
+                    className={(() => {
+                      const segmentStart = Array.from(bengaliBreakdownText.slice(0, offset)).length;
+                      const segmentEnd = segmentStart + Array.from(grapheme).length;
+                      if (segmentEnd <= matchedCount) return "is-correct";
+                      if (segmentStart <= matchedCount && matchedCount < segmentEnd) return "is-next";
+                      return "";
+                    })()}
+                    key={`${offset}-${grapheme}`}
+                  >
+                    {grapheme === " " ? "\u00A0" : grapheme}
+                  </span>
+                ))}
+              </div>
+              <p className="bengali-typing__target-pronunciation">
+                <span>Possible pronunciation</span>
+                <strong>{approximateTextPronunciation(bengaliBreakdownText)}</strong>
+              </p>
+
+              <label className="ui-field">
+                <span className="ui-field__label">Type here with your Bengali keyboard</span>
+                <textarea
+                  ref={typingInputRef}
+                  className={`ui-input bengali-typing__input${hasMistake ? " is-error" : ""}`}
+                  lang="bn"
+                  inputMode="text"
+                  autoCapitalize="none"
+                  autoCorrect="off"
+                  spellCheck="false"
+                  autoFocus
+                  value={typedText}
+                  onChange={(event) => setTypedText(event.target.value)}
+                  placeholder="এখানে টাইপ করুন…"
+                />
+                <span className="ui-field__hint">On mobile, use your keyboard’s globe or language key to switch to Bengali.</span>
+              </label>
+              <section className="bengali-keyboard" aria-label="On-screen Bengali keyboard">
+                <div className="bengali-keyboard__heading">
+                  <div>
+                    <strong>On-screen Bengali keyboard</strong>
+                    <span>Tap letters if your device does not have a Bengali keyboard.</span>
+                  </div>
+                </div>
+                <div className="bengali-keyboard__rows">
+                  {BENGALI_KEYBOARD_ROWS.map((row, rowIndex) => (
+                    <div className="bengali-keyboard__row" key={rowIndex}>
+                      {row.map((character) => (
+                        <button
+                          type="button"
+                          lang="bn"
+                          onClick={() => editTypedText(character)}
+                          className={character === nextCharacter ? "is-suggested" : ""}
+                          aria-label={`Type ${LETTER_NAMES[character] || MARK_NAMES[character] || character}`}
+                          key={character}
+                        >
+                          {keyboardKeyLabel(character)}
+                        </button>
+                      ))}
+                    </div>
+                  ))}
+                  <div className="bengali-keyboard__row bengali-keyboard__controls">
+                    <button type="button" onClick={() => editTypedText(" ")} aria-label="Type a space">Space</button>
+                    <button type="button" onClick={() => editTypedText("", true)} aria-label="Delete previous character">⌫ Backspace</button>
+                  </div>
+                </div>
+              </section>
+              <div className="bengali-breakdown__toolbar">
+                <span>{matchedCount} of {targetCharacters.length} characters correct</span>
+                <Button variant="ghost" onClick={() => setTypedText("")} disabled={!typedText}>
+                  <FaEraser aria-hidden="true" /> Start over
+                </Button>
+              </div>
+            </>
+          ) : (
+            <div className="bengali-breakdown__empty">
+              <span lang="bn" aria-hidden="true">ক খ গ</span>
+              <p>Add some Bengali practice text above to begin.</p>
+            </div>
+          )}
+        </section>
+      ) : segments.length ? (
         <ol className="bengali-breakdown__list" aria-label="Character breakdown">
           {segments.map(({ grapheme, characters, index, offset }) => {
             const whitespace = characters.every(({ type }) => type === "Whitespace");
@@ -198,3 +423,7 @@ export default function BengaliCharacterBreakdown() {
     </div>
   );
 }
+
+BengaliCharacterBreakdown.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+};
