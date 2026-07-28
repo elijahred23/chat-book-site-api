@@ -56,14 +56,11 @@
           }
         };
 
-        const pronunciationTextTargets = (main) => main.querySelectorAll([
-          ".bn-game-prompt",
-          ".bn-game-option",
-          ".bn-game-feedback",
-          ".bn-memory-card",
-          ".bn-bingo-cell",
+        // Only rewrite native select options. React owns the Games tab DOM,
+        // and changing its rendered text nodes outside React can break rerenders.
+        const pronunciationTextTargets = (main) => main.querySelectorAll(
           ".bn-word-loop select option"
-        ].join(","));
+        );
 
         const setTextIfChanged = (element, value) => {
           if (element.textContent !== value) element.textContent = value;
