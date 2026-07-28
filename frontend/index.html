@@ -37,6 +37,7 @@
       (() => {
         const STORAGE_KEY = "bengali_tutor_show_pronunciations";
         const originalText = new WeakMap();
+        const originalGameText = new WeakMap();
         let applying = false;
 
         const getPreference = () => {
@@ -56,14 +57,21 @@
           }
         };
 
-        // Only rewrite native select options. React owns the Games tab DOM,
-        // and changing its rendered text nodes outside React can break rerenders.
         const pronunciationTextTargets = (main) => main.querySelectorAll(
           ".bn-word-loop select option"
         );
 
-        const setTextIfChanged = (element, value) => {
-          if (element.textContent !== value) element.textContent = value;
+        const gameTextTargets = (main) => main.querySelectorAll([
+          ".bn-game-prompt",
+          ".bn-game-option",
+          ".bn-game-feedback",
+          ".bn-memory-card",
+          ".bn-game-subtext[lang=\"bn\"]",
+          ".bn-bingo-card small"
+        ].join(","));
+
+        const setTextIfChanged = (node, value) => {
+          if (node.textContent !== value) node.textContent = value;
         };
 
         const hideEmbeddedPronunciation = (element) => {
@@ -78,6 +86,21 @@
 
         const restoreEmbeddedPronunciation = (element) => {
           if (originalText.has(element)) setTextIfChanged(element, originalText.get(element));
+        };
+
+        const updateGameText = (element, showPronunciations) => {
+          const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT);
+          const nodes = [];
+          while (walker.nextNode()) nodes.push(walker.currentNode);
+
+          nodes.forEach((node) => {
+            if (!originalGameText.has(node)) originalGameText.set(node, node.nodeValue || "");
+            const original = originalGameText.get(node) || "";
+            const next = showPronunciations
+              ? original
+              : original.replace(/\s*\([^()]*\)/g, "").replace(/\s{2,}/g, " ");
+            if (node.nodeValue !== next) node.nodeValue = next;
+          });
         };
 
         const handlePronunciationGame = (main, showPronunciations) => {
@@ -101,6 +124,7 @@
             if (showPronunciations) restoreEmbeddedPronunciation(element);
             else hideEmbeddedPronunciation(element);
           });
+          gameTextTargets(main).forEach((element) => updateGameText(element, showPronunciations));
           handlePronunciationGame(main, showPronunciations);
           applying = false;
         };
