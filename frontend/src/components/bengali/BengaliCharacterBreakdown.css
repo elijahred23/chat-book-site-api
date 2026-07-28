@@ -62,6 +62,29 @@
 .bengali-keyboard__row button:active { transform: translateY(1px); box-shadow: none; }
 .bengali-keyboard__row button.is-suggested { border-color: #2563eb; background: #dbeafe; color: #1d4ed8; box-shadow: 0 2px 0 #93c5fd, 0 0 0 2px #bfdbfe; }
 .bengali-keyboard__controls button { min-width: 8rem; font-family: inherit; font-size: .82rem; }
+.bengali-worksheet-builder { display: grid; gap: 1.25rem; }
+.bengali-worksheet-controls { display: grid; gap: 1rem; border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: clamp(1rem, 2.5vw, 1.5rem); background: var(--color-surface); }
+.bengali-worksheet-controls h3 { margin: 0; color: var(--color-text); font-size: 1.15rem; }
+.bengali-worksheet-controls p { margin: .25rem 0 0; color: var(--color-text-muted); font-size: .85rem; }
+.bengali-worksheet-controls__text textarea { min-height: 6rem; font-family: "Noto Sans Bengali", "Nirmala UI", "Vrinda", sans-serif; font-size: 1.2rem; line-height: 1.6; }
+.bengali-worksheet-controls__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.bengali-worksheet-controls__range { width: 100%; min-height: 44px; margin: 0; accent-color: var(--color-primary); }
+.bengali-worksheet-controls .ui-btn { justify-self: start; }
+.bengali-worksheet-sentences { min-width: 0; display: grid; gap: .65rem; margin: 0; border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: .9rem; }
+.bengali-worksheet-sentences legend { padding: 0 .35rem; color: var(--color-text); font-size: .82rem; font-weight: 800; }
+.bengali-worksheet-sentences label { min-width: 0; display: grid; grid-template-columns: minmax(0, 1fr) 5.5rem; align-items: center; gap: .75rem; border-bottom: 1px solid var(--color-border); padding-bottom: .65rem; }
+.bengali-worksheet-sentences label:last-child { border-bottom: 0; padding-bottom: 0; }
+.bengali-worksheet-sentences label span { overflow-wrap: anywhere; color: var(--color-text); font-family: "Noto Sans Bengali", "Nirmala UI", "Vrinda", sans-serif; font-size: 1rem; line-height: 1.5; }
+.bengali-worksheet-sentences .ui-input { margin: 0; text-align: center; }
+.bengali-worksheet { width: min(100%, 52rem); min-height: 68rem; margin: 0 auto; border: 1px solid #cbd5e1; padding: clamp(1rem, 4vw, 2.5rem); background: #fff; color: #172033; box-shadow: 0 18px 45px rgba(15, 23, 42, .14); }
+.bengali-worksheet__practice { display: grid; gap: 1rem; }
+.bengali-worksheet.is-character .bengali-worksheet__practice { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.bengali-worksheet.is-word .bengali-worksheet__practice { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.bengali-worksheet.is-sentence .bengali-worksheet__practice { grid-template-columns: 1fr; }
+.bengali-worksheet__entry { min-width: 0; display: grid; gap: .35rem; break-inside: avoid; }
+.bengali-worksheet__trace { min-height: calc(var(--worksheet-letter-size) * 1.55); display: flex; align-items: center; overflow-wrap: anywhere; border-bottom: 2px solid #d7dde5; background-image: linear-gradient(to bottom, transparent 49%, #edf0f4 50%, transparent 51%); font-size: var(--worksheet-letter-size); line-height: 1.25; }
+.bengali-worksheet__trace { color: #e3e7ec; font-family: "Noto Sans Bengali", "Nirmala UI", "Vrinda", sans-serif; font-weight: 400; }
+.bengali-worksheet__empty { min-height: 20rem; display: grid; place-items: center; color: #64748b; text-align: center; }
 @media (hover: hover) and (pointer: fine) {
   .bengali-keyboard__row button:hover { border-color: var(--color-primary); background: var(--color-primary-soft); color: var(--color-primary); transform: translateY(-1px); }
 }
@@ -76,4 +99,8 @@
   .bengali-keyboard__row { gap: .25rem; }
   .bengali-keyboard__row button { min-width: 2.25rem; min-height: 2.5rem; padding: .25rem .4rem; font-size: 1.05rem; }
   .bengali-keyboard__controls button { flex: 1; min-width: 7rem; }
+  .bengali-worksheet-controls__grid { grid-template-columns: 1fr; }
+  .bengali-worksheet { min-height: 50rem; padding: .9rem; }
+  .bengali-worksheet.is-character .bengali-worksheet__practice,
+  .bengali-worksheet.is-word .bengali-worksheet__practice { grid-template-columns: 1fr; }
 }

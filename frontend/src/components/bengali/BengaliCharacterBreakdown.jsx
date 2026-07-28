@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import PropTypes from "prop-types";
-import { FaEraser } from "react-icons/fa";
+import { FaEraser, FaPrint } from "react-icons/fa";
 import { actions, useAppDispatch, useAppState } from "../../context/AppContext.jsx";
 import Button from "../../ui/Button.jsx";
 import "./BengaliCharacterBreakdown.css";
@@ -179,11 +179,30 @@ function keyboardKeyLabel(character) {
   return /\p{Mark}/u.test(character) ? `◌${character}` : character;
 }
 
+function splitWorksheetSentences(text) {
+  return (text.match(/[^।॥.!?\n]+(?:[।॥.!?]+|$)/gu) || [])
+    .map((sentence) => sentence.trim())
+    .filter(Boolean);
+}
+
+function escapeHtml(text) {
+  return text
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
+
 export default function BengaliCharacterBreakdown({ isOpen }) {
   const dispatch = useAppDispatch();
   const { bengaliBreakdownText } = useAppState();
   const [activeTab, setActiveTab] = useState("breakdown");
   const [typedText, setTypedText] = useState("");
+  const [worksheetText, setWorksheetText] = useState(bengaliBreakdownText || "বাংলা");
+  const [worksheetRepeats, setWorksheetRepeats] = useState(8);
+  const [worksheetLetterSize, setWorksheetLetterSize] = useState(48);
+  const [sentenceRepeats, setSentenceRepeats] = useState({});
   const typingInputRef = useRef(null);
   const wasOpenRef = useRef(false);
   const previousPracticeTextRef = useRef(bengaliBreakdownText);
@@ -205,11 +224,29 @@ export default function BengaliCharacterBreakdown({ isOpen }) {
   const finalWord = lastSegment && !lastSegment.characters.every(({ type }) => type === "Whitespace")
     ? completedWordBefore(segments, segments.length)
     : "";
+  const worksheetLength = segmentText(worksheetText).length;
+  const worksheetSentences = useMemo(() => splitWorksheetSentences(worksheetText), [worksheetText]);
+  const hasMultipleWorksheetSentences = worksheetSentences.length > 1;
+  const worksheetLayout = hasMultipleWorksheetSentences || worksheetLength > 12
+    ? "is-sentence"
+    : worksheetLength <= 2 ? "is-character" : "is-word";
+  const worksheetEntries = hasMultipleWorksheetSentences
+    ? worksheetSentences.flatMap((sentence, sentenceIndex) =>
+      Array.from(
+        { length: sentenceRepeats[sentenceIndex] ?? worksheetRepeats },
+        () => ({ sentence, sentenceIndex })
+      )
+    )
+    : Array.from({ length: worksheetRepeats }, () => ({ sentence: worksheetText, sentenceIndex: 0 }));
 
   useEffect(() => {
-    if (isOpen && !wasOpenRef.current) setTypedText("");
+    if (isOpen && !wasOpenRef.current) {
+      setTypedText("");
+      setWorksheetText(bengaliBreakdownText);
+      setSentenceRepeats({});
+    }
     wasOpenRef.current = isOpen;
-  }, [isOpen]);
+  }, [bengaliBreakdownText, isOpen]);
 
   useEffect(() => {
     if (previousPracticeTextRef.current !== bengaliBreakdownText) {
@@ -238,6 +275,72 @@ export default function BengaliCharacterBreakdown({ isOpen }) {
     });
   };
 
+  const printWorksheet = () => {
+    const printWindow = window.open("", "_blank");
+    if (!printWindow) {
+      window.print();
+      return;
+    }
+
+    const columns = worksheetLayout === "is-sentence" ? 1 : 2;
+    const traceRows = worksheetEntries
+      .map(({ sentence }) => `<div class="trace" lang="bn">${escapeHtml(sentence)}</div>`)
+      .join("");
+
+    printWindow.document.open();
+    printWindow.document.write(`<!doctype html>
+      <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <title>Bengali Trace Worksheet</title>
+          <style>
+            @page { size: letter portrait; margin: 0.45in; }
+            * { box-sizing: border-box; }
+            html, body { margin: 0; padding: 0; background: #fff; }
+            .sheet {
+              display: grid;
+              grid-template-columns: repeat(${columns}, minmax(0, 1fr));
+              gap: 16px;
+              font-family: "Noto Sans Bengali", "Nirmala UI", "Vrinda", sans-serif;
+            }
+            .trace {
+              min-width: 0;
+              min-height: ${Math.round(worksheetLetterSize * 1.55)}px;
+              display: flex;
+              align-items: center;
+              overflow-wrap: anywhere;
+              break-inside: avoid;
+              border-bottom: 2px solid #d7dde5;
+              color: #e3e7ec;
+              background-image: linear-gradient(to bottom, transparent 49%, #edf0f4 50%, transparent 51%);
+              font-size: ${worksheetLetterSize}px;
+              font-weight: 400;
+              line-height: 1.25;
+              -webkit-print-color-adjust: exact;
+              print-color-adjust: exact;
+            }
+            @media (max-width: 600px) {
+              .sheet { grid-template-columns: 1fr; }
+            }
+          </style>
+        </head>
+        <body>
+          <main class="sheet">${traceRows}</main>
+        </body>
+      </html>`);
+    printWindow.document.close();
+    const openPrintDialog = () => {
+      printWindow.focus();
+      printWindow.print();
+    };
+    if (printWindow.document.readyState === "complete") {
+      window.setTimeout(openPrintDialog, 100);
+    } else {
+      printWindow.addEventListener("load", openPrintDialog, { once: true });
+    }
+  };
+
   return (
     <div className="bengali-breakdown">
       <div className="bengali-breakdown__tabs" role="tablist" aria-label="Bengali tools">
@@ -259,9 +362,18 @@ export default function BengaliCharacterBreakdown({ isOpen }) {
         >
           Typing practice
         </button>
+        <button
+          type="button"
+          role="tab"
+          aria-selected={activeTab === "worksheet"}
+          className={activeTab === "worksheet" ? "is-active" : ""}
+          onClick={() => setActiveTab("worksheet")}
+        >
+          Trace &amp; write
+        </button>
       </div>
 
-      <section className="bengali-breakdown__intro">
+      {activeTab !== "worksheet" ? <section className="bengali-breakdown__intro">
         <p>{activeTab === "breakdown"
           ? "Paste a Bengali word, sentence, paragraph, or mixed text. Each written character is separated, including the Unicode parts inside conjuncts and vowel signs."
           : "Enter the Bengali text you want to practice, then type it below. The guide will show the next character."}</p>
@@ -284,9 +396,98 @@ export default function BengaliCharacterBreakdown({ isOpen }) {
             </Button>
           </div>
         ) : null}
-      </section>
+      </section> : null}
 
-      {activeTab === "typing" ? (
+      {activeTab === "worksheet" ? (
+        <section className="bengali-worksheet-builder" aria-label="Bengali trace and write worksheet builder">
+          <div className="bengali-worksheet-controls">
+            <div>
+              <h3>Create a Bengali practice sheet</h3>
+              <p>Use one character, a word, or a complete sentence. The layout adjusts automatically.</p>
+            </div>
+            <label className="ui-field bengali-worksheet-controls__text">
+              <span className="ui-field__label">Text to trace and write</span>
+              <textarea
+                className="ui-input"
+                lang="bn"
+                value={worksheetText}
+                onChange={(event) => {
+                  setWorksheetText(event.target.value);
+                  setSentenceRepeats({});
+                }}
+                placeholder="ক, বাংলা, or আমি বাংলা শিখছি।"
+              />
+            </label>
+            <div className="bengali-worksheet-controls__grid">
+              <label className="ui-field">
+                <span className="ui-field__label">Number of repetitions</span>
+                <input
+                  className="ui-input"
+                  type="number"
+                  min="1"
+                  max="40"
+                  value={worksheetRepeats}
+                  onChange={(event) => setWorksheetRepeats(Math.min(40, Math.max(1, Number(event.target.value) || 1)))}
+                />
+              </label>
+              <label className="ui-field">
+                <span className="ui-field__label">Letter size: {worksheetLetterSize}px</span>
+                <input
+                  className="bengali-worksheet-controls__range"
+                  type="range"
+                  min="24"
+                  max="96"
+                  step="4"
+                  value={worksheetLetterSize}
+                  onChange={(event) => setWorksheetLetterSize(Number(event.target.value))}
+                />
+              </label>
+            </div>
+            {hasMultipleWorksheetSentences ? (
+              <fieldset className="bengali-worksheet-sentences">
+                <legend>Repetitions for each sentence</legend>
+                {worksheetSentences.map((sentence, index) => (
+                  <label key={`${sentence}-${index}`}>
+                    <span lang="bn">{sentence}</span>
+                    <input
+                      className="ui-input"
+                      type="number"
+                      min="1"
+                      max="40"
+                      aria-label={`Repetitions for sentence ${index + 1}`}
+                      value={sentenceRepeats[index] ?? worksheetRepeats}
+                      onChange={(event) => {
+                        const repeats = Math.min(40, Math.max(1, Number(event.target.value) || 1));
+                        setSentenceRepeats((current) => ({ ...current, [index]: repeats }));
+                      }}
+                    />
+                  </label>
+                ))}
+              </fieldset>
+            ) : null}
+            <Button variant="primary" onClick={printWorksheet} disabled={!worksheetText.trim()}>
+              <FaPrint aria-hidden="true" /> Print or save as PDF
+            </Button>
+          </div>
+
+          <div
+            className={`bengali-worksheet ${worksheetLayout}`}
+            style={{ "--worksheet-letter-size": `${worksheetLetterSize}px` }}
+          >
+            {worksheetText.trim() ? (
+              <div className="bengali-worksheet__practice">
+                {worksheetEntries.map(({ sentence, sentenceIndex }, index) => (
+                  <div className="bengali-worksheet__entry" key={`${sentenceIndex}-${index}`}>
+                    <div className="bengali-worksheet__trace" lang="bn">{sentence}</div>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div className="bengali-worksheet__empty">Enter Bengali text to create your sheet.</div>
+            )}
+          </div>
+        </section>
+      ) : activeTab === "typing" ? (
         <section className="bengali-typing" aria-label="Bengali typing practice">
           {segments.length ? (
             <>
