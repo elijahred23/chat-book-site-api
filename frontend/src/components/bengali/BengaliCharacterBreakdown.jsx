@@ -186,6 +186,7 @@ export default function BengaliCharacterBreakdown({ isOpen }) {
   const [typedText, setTypedText] = useState("");
   const typingInputRef = useRef(null);
   const wasOpenRef = useRef(false);
+  const previousPracticeTextRef = useRef(bengaliBreakdownText);
   const segments = useMemo(() => segmentText(bengaliBreakdownText), [bengaliBreakdownText]);
   const targetCharacters = useMemo(() => Array.from(bengaliBreakdownText), [bengaliBreakdownText]);
   const typedCharacters = useMemo(() => Array.from(typedText), [typedText]);
@@ -195,6 +196,7 @@ export default function BengaliCharacterBreakdown({ isOpen }) {
   const nextCharacter = targetCharacters[matchedCount];
   const currentWordDetails = wordAtCharacterIndex(bengaliBreakdownText, matchedCount);
   const currentWord = currentWordDetails.word;
+  const currentWordSegments = segmentText(currentWord);
   const practiceComplete = Boolean(targetCharacters.length && matchedCount === targetCharacters.length && !hasMistake);
   const bengaliCount = segments.filter(({ characters }) =>
     characters.some(({ character }) => bengaliPattern.test(character))
@@ -208,6 +210,13 @@ export default function BengaliCharacterBreakdown({ isOpen }) {
     if (isOpen && !wasOpenRef.current) setTypedText("");
     wasOpenRef.current = isOpen;
   }, [isOpen]);
+
+  useEffect(() => {
+    if (previousPracticeTextRef.current !== bengaliBreakdownText) {
+      setTypedText("");
+      previousPracticeTextRef.current = bengaliBreakdownText;
+    }
+  }, [bengaliBreakdownText]);
 
   const editTypedText = (replacement, removePrevious = false) => {
     const input = typingInputRef.current;
@@ -293,14 +302,19 @@ export default function BengaliCharacterBreakdown({ isOpen }) {
                     <div className="bengali-typing__current-word">
                       <small>Current word</small>
                       <b lang="bn">
-                        {Array.from(currentWord).map((character, index) => (
-                          <span
-                            className={currentWordDetails.start + index < matchedCount ? "is-filled" : ""}
-                            key={`${character}-${index}`}
-                          >
-                            {character}
-                          </span>
-                        ))}
+                        {currentWordSegments.map(({ grapheme, offset }) => {
+                          const segmentEnd = currentWordDetails.start
+                            + Array.from(currentWord.slice(0, offset)).length
+                            + Array.from(grapheme).length;
+                          return (
+                            <span
+                              className={segmentEnd <= matchedCount ? "is-filled" : ""}
+                              key={`${grapheme}-${offset}`}
+                            >
+                              {grapheme}
+                            </span>
+                          );
+                        })}
                       </b>
                       <span className="bengali-typing__current-pronunciation">{approximatePronunciation(currentWord)}</span>
                     </div>
