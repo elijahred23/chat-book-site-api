@@ -28,6 +28,26 @@
       .bn-pronunciations-hidden [aria-labelledby="bengali-translator-title"] [lang="bn"] + span {
         display: none !important;
       }
+      .bn-pronunciations-hidden [data-bn-game-display] {
+        font-size: 0 !important;
+      }
+      .bn-pronunciations-hidden [data-bn-game-display]::after {
+        content: attr(data-bn-game-display);
+        font-size: 1rem;
+      }
+      .bn-pronunciations-hidden .bn-game-prompt[data-bn-game-display]::after {
+        font-size: 1.25rem;
+      }
+      .bn-pronunciations-hidden .bn-game-subtext[data-bn-game-display]::after {
+        font-size: 0.95rem;
+      }
+      .bn-pronunciations-hidden .bn-memory-card[data-bn-game-display]::after,
+      .bn-pronunciations-hidden .bn-bingo-card small[data-bn-game-display]::after {
+        font-size: 0.85rem;
+      }
+      .bn-pronunciations-hidden .bn-game-option .bn-option-index {
+        font-size: 0.76rem;
+      }
     </style>
   </head>
   <body>
@@ -37,7 +57,6 @@
       (() => {
         const STORAGE_KEY = "bengali_tutor_show_pronunciations";
         const originalText = new WeakMap();
-        const originalGameText = new WeakMap();
         let applying = false;
 
         const getPreference = () => {
@@ -88,19 +107,27 @@
           if (originalText.has(element)) setTextIfChanged(element, originalText.get(element));
         };
 
-        const updateGameText = (element, showPronunciations) => {
+        const gameTextValue = (element) => {
           const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT);
-          const nodes = [];
-          while (walker.nextNode()) nodes.push(walker.currentNode);
+          const parts = [];
+          while (walker.nextNode()) {
+            const node = walker.currentNode;
+            if (node.parentElement?.closest(".bn-option-index")) continue;
+            parts.push(node.nodeValue || "");
+          }
+          return parts.join(" ").replace(/\s+/g, " ").trim();
+        };
 
-          nodes.forEach((node) => {
-            if (!originalGameText.has(node)) originalGameText.set(node, node.nodeValue || "");
-            const original = originalGameText.get(node) || "";
-            const next = showPronunciations
-              ? original
-              : original.replace(/\s*\([^()]*\)/g, "").replace(/\s{2,}/g, " ");
-            if (node.nodeValue !== next) node.nodeValue = next;
-          });
+        const updateGameDisplay = (element, showPronunciations) => {
+          if (showPronunciations) {
+            element.removeAttribute("data-bn-game-display");
+            return;
+          }
+          const display = gameTextValue(element)
+            .replace(/\s*\([^()]*\)/g, "")
+            .replace(/\s{2,}/g, " ")
+            .trim();
+          element.setAttribute("data-bn-game-display", display);
         };
 
         const handlePronunciationGame = (main, showPronunciations) => {
@@ -124,7 +151,7 @@
             if (showPronunciations) restoreEmbeddedPronunciation(element);
             else hideEmbeddedPronunciation(element);
           });
-          gameTextTargets(main).forEach((element) => updateGameText(element, showPronunciations));
+          gameTextTargets(main).forEach((element) => updateGameDisplay(element, showPronunciations));
           handlePronunciationGame(main, showPronunciations);
           applying = false;
         };
@@ -162,7 +189,11 @@
           if (main && checkbox) applyPreference(main, checkbox.checked);
         });
 
-        observer.observe(document.documentElement, { childList: true, subtree: true });
+        observer.observe(document.documentElement, {
+          childList: true,
+          characterData: true,
+          subtree: true
+        });
         installToggle();
       })();
     </script>
