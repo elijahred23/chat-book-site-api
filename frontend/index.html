@@ -65,18 +65,22 @@
           ".bn-word-loop select option"
         ].join(","));
 
+        const setTextIfChanged = (element, value) => {
+          if (element.textContent !== value) element.textContent = value;
+        };
+
         const hideEmbeddedPronunciation = (element) => {
           if (!originalText.has(element)) originalText.set(element, element.textContent);
           const value = originalText.get(element) || "";
           if (element.matches(".bn-word-loop select option") && value.includes(" · ")) {
-            element.textContent = value.replace(/^(\s*\d+\.\s*).*?\s+·\s+/, "$1");
+            setTextIfChanged(element, value.replace(/^(\s*\d+\.\s*).*?\s+·\s+/, "$1"));
             return;
           }
-          element.textContent = value.replace(/\s*\([^()]*\)/g, "").replace(/\s{2,}/g, " ").trim();
+          setTextIfChanged(element, value.replace(/\s*\([^()]*\)/g, "").replace(/\s{2,}/g, " ").trim());
         };
 
         const restoreEmbeddedPronunciation = (element) => {
-          if (originalText.has(element)) element.textContent = originalText.get(element);
+          if (originalText.has(element)) setTextIfChanged(element, originalText.get(element));
         };
 
         const handlePronunciationGame = (main, showPronunciations) => {
