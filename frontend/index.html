@@ -5,9 +5,141 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Learning Hub</title>
+    <style>
+      .bn-pronunciation-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 0.55rem;
+        margin: 0.75rem 0;
+        color: #334155;
+        font-size: 0.9rem;
+        font-weight: 700;
+      }
+      .bn-pronunciation-toggle input {
+        width: 1.05rem;
+        height: 1.05rem;
+        accent-color: #2563eb;
+      }
+      .bn-pronunciations-hidden .bn-pronunciation,
+      .bn-pronunciations-hidden .bn-loop-breakdown__word > strong,
+      .bn-pronunciations-hidden .bn-word-loop strong[lang="bn"] + strong,
+      .bn-pronunciations-hidden [aria-labelledby="bengali-translator-title"] [lang="bn"] + div,
+      .bn-pronunciations-hidden [aria-labelledby="bengali-translator-title"] [lang="bn"] + span {
+        display: none !important;
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <script>
+      (() => {
+        const STORAGE_KEY = "bengali_tutor_show_pronunciations";
+        const originalText = new WeakMap();
+        let applying = false;
+
+        const getPreference = () => {
+          try {
+            const stored = localStorage.getItem(STORAGE_KEY);
+            return stored === null ? true : stored === "true";
+          } catch {
+            return true;
+          }
+        };
+
+        const savePreference = (value) => {
+          try {
+            localStorage.setItem(STORAGE_KEY, String(value));
+          } catch {
+            // The toggle still works for the current session.
+          }
+        };
+
+        const pronunciationTextTargets = (main) => main.querySelectorAll([
+          ".bn-game-prompt",
+          ".bn-game-option",
+          ".bn-game-feedback",
+          ".bn-memory-card",
+          ".bn-bingo-cell",
+          ".bn-word-loop select option"
+        ].join(","));
+
+        const hideEmbeddedPronunciation = (element) => {
+          if (!originalText.has(element)) originalText.set(element, element.textContent);
+          const value = originalText.get(element) || "";
+          if (element.matches(".bn-word-loop select option") && value.includes(" · ")) {
+            element.textContent = value.replace(/^(\s*\d+\.\s*).*?\s+·\s+/, "$1");
+            return;
+          }
+          element.textContent = value.replace(/\s*\([^()]*\)/g, "").replace(/\s{2,}/g, " ").trim();
+        };
+
+        const restoreEmbeddedPronunciation = (element) => {
+          if (originalText.has(element)) element.textContent = originalText.get(element);
+        };
+
+        const handlePronunciationGame = (main, showPronunciations) => {
+          const gameSelect = [...main.querySelectorAll("select")]
+            .find((select) => [...select.options].some((option) => option.value === "pronunciation"));
+          if (!gameSelect) return;
+          const pronunciationOption = [...gameSelect.options].find((option) => option.value === "pronunciation");
+          pronunciationOption.disabled = !showPronunciations;
+          pronunciationOption.hidden = !showPronunciations;
+          if (!showPronunciations && gameSelect.value === "pronunciation") {
+            gameSelect.value = "match";
+            gameSelect.dispatchEvent(new Event("change", { bubbles: true }));
+          }
+        };
+
+        const applyPreference = (main, showPronunciations) => {
+          if (applying) return;
+          applying = true;
+          main.classList.toggle("bn-pronunciations-hidden", !showPronunciations);
+          pronunciationTextTargets(main).forEach((element) => {
+            if (showPronunciations) restoreEmbeddedPronunciation(element);
+            else hideEmbeddedPronunciation(element);
+          });
+          handlePronunciationGame(main, showPronunciations);
+          applying = false;
+        };
+
+        const installToggle = () => {
+          const nav = document.querySelector('nav[aria-label="Bengali tutor sections"]');
+          if (!nav || nav.dataset.pronunciationToggleReady === "true") return;
+          const main = nav.closest("main");
+          if (!main) return;
+          nav.dataset.pronunciationToggleReady = "true";
+
+          const label = document.createElement("label");
+          label.className = "bn-pronunciation-toggle";
+          const checkbox = document.createElement("input");
+          checkbox.type = "checkbox";
+          checkbox.checked = getPreference();
+          checkbox.setAttribute("aria-label", "Show Bengali pronunciations");
+          const text = document.createElement("span");
+          text.textContent = "Show pronunciations";
+          label.append(checkbox, text);
+          nav.insertAdjacentElement("afterend", label);
+
+          checkbox.addEventListener("change", () => {
+            savePreference(checkbox.checked);
+            applyPreference(main, checkbox.checked);
+          });
+          applyPreference(main, checkbox.checked);
+        };
+
+        const observer = new MutationObserver(() => {
+          installToggle();
+          const nav = document.querySelector('nav[aria-label="Bengali tutor sections"]');
+          const main = nav?.closest("main");
+          const checkbox = main?.querySelector(".bn-pronunciation-toggle input");
+          if (main && checkbox) applyPreference(main, checkbox.checked);
+        });
+
+        observer.observe(document.documentElement, { childList: true, subtree: true });
+        installToggle();
+      })();
+    </script>
   </body>
 </html>
