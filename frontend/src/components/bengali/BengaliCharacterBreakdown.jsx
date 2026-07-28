@@ -163,6 +163,18 @@ function approximateTextPronunciation(text) {
     .trim();
 }
 
+function wordAtCharacterIndex(text, characterIndex) {
+  const characters = Array.from(text);
+  if (!characters.length) return { word: "", start: 0 };
+  let index = Math.min(characterIndex, characters.length - 1);
+  if (/\s/u.test(characters[index]) && index > 0) index -= 1;
+  let start = index;
+  let end = index + 1;
+  while (start > 0 && !/\s/u.test(characters[start - 1])) start -= 1;
+  while (end < characters.length && !/\s/u.test(characters[end])) end += 1;
+  return { word: characters.slice(start, end).join(""), start };
+}
+
 function keyboardKeyLabel(character) {
   return /\p{Mark}/u.test(character) ? `◌${character}` : character;
 }
@@ -181,6 +193,8 @@ export default function BengaliCharacterBreakdown({ isOpen }) {
   const matchedCount = correctCount === -1 ? typedCharacters.length : correctCount;
   const hasMistake = correctCount !== -1;
   const nextCharacter = targetCharacters[matchedCount];
+  const currentWordDetails = wordAtCharacterIndex(bengaliBreakdownText, matchedCount);
+  const currentWord = currentWordDetails.word;
   const practiceComplete = Boolean(targetCharacters.length && matchedCount === targetCharacters.length && !hasMistake);
   const bengaliCount = segments.filter(({ characters }) =>
     characters.some(({ character }) => bengaliPattern.test(character))
@@ -276,6 +290,20 @@ export default function BengaliCharacterBreakdown({ isOpen }) {
                 ) : (
                   <>
                     <span className="bengali-typing__prompt-label">{hasMistake ? "Try this character" : "Type next"}</span>
+                    <div className="bengali-typing__current-word">
+                      <small>Current word</small>
+                      <b lang="bn">
+                        {Array.from(currentWord).map((character, index) => (
+                          <span
+                            className={currentWordDetails.start + index < matchedCount ? "is-filled" : ""}
+                            key={`${character}-${index}`}
+                          >
+                            {character}
+                          </span>
+                        ))}
+                      </b>
+                      <span className="bengali-typing__current-pronunciation">{approximatePronunciation(currentWord)}</span>
+                    </div>
                     <div className="bengali-typing__next">
                       <strong lang="bn">{nextCharacter && /\p{Mark}/u.test(nextCharacter) ? `◌${nextCharacter}` : nextCharacter || "—"}</strong>
                       {nextCharacter ? (

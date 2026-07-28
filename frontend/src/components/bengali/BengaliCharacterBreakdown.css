@@ -31,6 +31,12 @@
 .bengali-typing__prompt { position: sticky; top: 0; z-index: 5; min-height: 8rem; display: grid; place-items: center; align-content: center; gap: .25rem; border: 1px solid #93c5fd; border-radius: var(--radius-lg); padding: 1rem; background: #eff6ff; box-shadow: 0 10px 24px rgba(15, 23, 42, .12); text-align: center; }
 .bengali-typing__prompt-label { color: #1d4ed8; font-size: .7rem; font-weight: 850; letter-spacing: .1em; text-transform: uppercase; }
 .bengali-typing__prompt strong { color: #1e3a8a; font-family: "Noto Sans Bengali", "Nirmala UI", "Vrinda", sans-serif; font-size: clamp(2.5rem, 10vw, 4.5rem); line-height: 1.1; }
+.bengali-typing__current-word { display: flex; align-items: baseline; justify-content: center; gap: .55rem; }
+.bengali-typing__prompt .bengali-typing__current-word small { color: #64748b; font-size: .62rem; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }
+.bengali-typing__current-word b { color: #94a3b8; font-family: "Noto Sans Bengali", "Nirmala UI", "Vrinda", sans-serif; font-size: clamp(1.1rem, 4vw, 1.45rem); }
+.bengali-typing__current-word b span { transition: color 120ms ease, background 120ms ease; }
+.bengali-typing__current-word b span.is-filled { border-radius: .2rem; background: #dcfce7; color: #047857; }
+.bengali-typing__current-pronunciation { border-left: 1px solid #94a3b8; padding-left: .55rem; color: #334155; font-size: clamp(.9rem, 3vw, 1.05rem); font-weight: 750; }
 .bengali-typing__next { display: flex; align-items: center; justify-content: center; gap: clamp(1rem, 4vw, 2rem); }
 .bengali-typing__next > span { display: grid; justify-items: start; color: #1e3a8a; font-size: clamp(1rem, 3vw, 1.35rem); font-weight: 800; text-align: left; }
 .bengali-typing__prompt small { color: var(--color-danger); }
@@ -52,10 +58,16 @@
 .bengali-keyboard__rows { display: grid; gap: .4rem; }
 .bengali-keyboard__row { display: flex; justify-content: center; flex-wrap: wrap; gap: .35rem; }
 .bengali-keyboard__row button { min-width: 2.65rem; min-height: 2.75rem; border: 1px solid var(--color-border-strong); border-radius: .55rem; padding: .35rem .55rem; background: var(--color-surface); color: var(--color-text); box-shadow: 0 2px 0 var(--color-border-strong); font-family: "Noto Sans Bengali", "Nirmala UI", "Vrinda", sans-serif; font-size: 1.15rem; font-weight: 750; }
-.bengali-keyboard__row button:hover, .bengali-keyboard__row button:focus-visible { border-color: var(--color-primary); background: var(--color-primary-soft); color: var(--color-primary); transform: translateY(-1px); }
+.bengali-keyboard__row button:focus-visible { border-color: var(--color-primary); background: var(--color-primary-soft); color: var(--color-primary); transform: translateY(-1px); }
 .bengali-keyboard__row button:active { transform: translateY(1px); box-shadow: none; }
 .bengali-keyboard__row button.is-suggested { border-color: #2563eb; background: #dbeafe; color: #1d4ed8; box-shadow: 0 2px 0 #93c5fd, 0 0 0 2px #bfdbfe; }
 .bengali-keyboard__controls button { min-width: 8rem; font-family: inherit; font-size: .82rem; }
+@media (hover: hover) and (pointer: fine) {
+  .bengali-keyboard__row button:hover { border-color: var(--color-primary); background: var(--color-primary-soft); color: var(--color-primary); transform: translateY(-1px); }
+}
+@media (hover: none) {
+  .bengali-keyboard__row button:hover:not(.is-suggested) { border-color: var(--color-border-strong); background: var(--color-surface); color: var(--color-text); transform: none; }
+}
 @media (max-width: 480px) {
   .bengali-breakdown__tabs button { flex: 1; padding-inline: .45rem; }
   .bengali-breakdown__item { grid-template-columns: 3.5rem 1fr; }
