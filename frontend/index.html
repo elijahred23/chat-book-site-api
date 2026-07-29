@@ -31,6 +31,14 @@
         color: #0f172a;
         font: inherit;
       }
+      .bengali-breakdown__completed-glyph > strong[lang="bn"] {
+        cursor: pointer;
+        border-radius: 0.5rem;
+      }
+      .bengali-breakdown__completed-glyph > strong[lang="bn"]:focus-visible {
+        outline: 3px solid #2563eb;
+        outline-offset: 4px;
+      }
       .bn-pronunciations-hidden .bn-pronunciation,
       .bn-pronunciations-hidden .bn-loop-breakdown__word > strong,
       .bn-pronunciations-hidden .bn-word-loop strong[lang="bn"] + strong,
@@ -77,7 +85,7 @@
     <script>
       (() => {
         const STORAGE_KEY = "bengali_tutor_show_pronunciations";
-        const BREAKDOWN_SPEECH_KEY = "bengali_breakdown_speech_source";
+        const BREAKDOWN_SPEECH_KEY = "bn_breakdown_speech_source";
         const originalText = new WeakMap();
         let applying = false;
         let activeGoogleAudio = null;
@@ -101,9 +109,9 @@
 
         const getBreakdownSpeechSource = () => {
           try {
-            return localStorage.getItem(BREAKDOWN_SPEECH_KEY) === "google" ? "google" : "system";
+            return localStorage.getItem(BREAKDOWN_SPEECH_KEY) === "system" ? "system" : "google";
           } catch {
-            return "system";
+            return "google";
           }
         };
 
@@ -253,22 +261,35 @@
           applying = false;
         };
 
-        const installBreakdownSpeechControl = (nav, main) => {
-          if (main.querySelector(".bn-breakdown-speech-control")) return;
+        const installBreakdownSpeechControl = () => {
+          const breakdown = document.querySelector(".bengali-breakdown");
+          if (!breakdown) return;
+
+          breakdown.querySelectorAll('.bengali-breakdown__completed-glyph > strong[lang="bn"]').forEach((word) => {
+            word.classList.add("bn-breakdown-speakable");
+            word.setAttribute("role", "button");
+            word.setAttribute("tabindex", "0");
+            word.setAttribute("title", "Click to hear this Bangla word");
+            word.setAttribute("aria-label", `Hear ${word.textContent.trim()}`);
+          });
+
+          if (breakdown.querySelector(".bn-breakdown-speech-control")) return;
+          const tabs = breakdown.querySelector(".bengali-breakdown__tabs");
           const label = document.createElement("label");
           label.className = "bn-breakdown-speech-control";
           const text = document.createElement("span");
-          text.textContent = "Breakdown word voice";
+          text.textContent = "Bangla word voice";
           const select = document.createElement("select");
-          select.setAttribute("aria-label", "Bengali breakdown word voice");
+          select.setAttribute("aria-label", "Bangla word voice in character breakdown");
           select.innerHTML = [
-            '<option value="system">System default</option>',
-            '<option value="google">Google Text-to-Speech</option>'
+            '<option value="google">Google Text-to-Speech</option>',
+            '<option value="system">System default</option>'
           ].join("");
           select.value = getBreakdownSpeechSource();
           select.addEventListener("change", () => saveBreakdownSpeechSource(select.value));
           label.append(text, select);
-          nav.insertAdjacentElement("afterend", label);
+          if (tabs) tabs.insertAdjacentElement("afterend", label);
+          else breakdown.prepend(label);
         };
 
         const installToggle = () => {
@@ -276,7 +297,7 @@
           if (!nav) return;
           const main = nav.closest("main");
           if (!main) return;
-          installBreakdownSpeechControl(nav, main);
+          main.querySelector(".bn-breakdown-speech-control")?.remove();
           if (nav.dataset.pronunciationToggleReady === "true") return;
           nav.dataset.pronunciationToggleReady = "true";
 
@@ -289,8 +310,7 @@
           const text = document.createElement("span");
           text.textContent = "Show pronunciations";
           label.append(checkbox, text);
-          const speechControl = main.querySelector(".bn-breakdown-speech-control");
-          speechControl?.insertAdjacentElement("afterend", label);
+          nav.insertAdjacentElement("afterend", label);
 
           checkbox.addEventListener("change", () => {
             savePreference(checkbox.checked);
@@ -300,7 +320,7 @@
         };
 
         document.addEventListener("click", (event) => {
-          const target = event.target.closest?.(".bn-breakdown-speakable");
+          const target = event.target.closest?.('.bengali-breakdown .bn-breakdown-speakable');
           if (!target) return;
           event.preventDefault();
           event.stopImmediatePropagation();
@@ -308,7 +328,7 @@
         }, true);
 
         document.addEventListener("keydown", (event) => {
-          const target = event.target.closest?.(".bn-breakdown-speakable");
+          const target = event.target.closest?.('.bengali-breakdown .bn-breakdown-speakable');
           if (!target || (event.key !== "Enter" && event.key !== " ")) return;
           event.preventDefault();
           event.stopImmediatePropagation();
@@ -317,6 +337,7 @@
 
         const observer = new MutationObserver(() => {
           installToggle();
+          installBreakdownSpeechControl();
           const nav = document.querySelector('nav[aria-label="Bengali tutor sections"]');
           const main = nav?.closest("main");
           const checkbox = main?.querySelector(".bn-pronunciation-toggle input");
@@ -329,6 +350,7 @@
           subtree: true
         });
         installToggle();
+        installBreakdownSpeechControl();
       })();
     </script>
   </body>
