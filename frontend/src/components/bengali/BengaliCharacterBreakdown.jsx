@@ -105,17 +105,25 @@ function segmentText(text) {
   });
 }
 
-function completedWordBefore(segments, index) {
-  const characters = [];
-  for (let cursor = index - 1; cursor >= 0; cursor -= 1) {
-    const segment = segments[cursor];
-    if (segment.characters.every(({ type }) => type === "Whitespace")) break;
-    characters.unshift(segment.grapheme);
-  }
-  return characters.join("");
+function groupSegmentsIntoWords(segments) {
+  const groups = [];
+  let currentGroup = [];
+
+  segments.forEach((segment) => {
+    const whitespace = segment.characters.every(({ type }) => type === "Whitespace");
+    if (whitespace) {
+      if (currentGroup.length) groups.push(currentGroup);
+      currentGroup = [];
+      return;
+    }
+    currentGroup.push(segment);
+  });
+
+  if (currentGroup.length) groups.push(currentGroup);
+  return groups;
 }
 
-function approximatePronunciation(word) {
+function localPronunciation(word) {
   let pronunciation = "";
   for (const character of Array.from(word.normalize("NFC"))) {
     if (PRONUNCIATION_LETTERS[character]) {
@@ -147,16 +155,16 @@ function nextCharacterPronunciation(character) {
   if (DIGIT_NAMES[character]) return DIGIT_NAMES[character];
   if (character === " ") return "space";
   if (character === "\n") return "line break";
-  const pronunciation = approximatePronunciation(character);
+  const pronunciation = localPronunciation(character);
   return pronunciation === "—" ? describeCharacter(character).name : pronunciation;
 }
 
-function approximateTextPronunciation(text) {
+function localTextPronunciation(text) {
   return text
     .split(/(\s+)/u)
     .map((part) => {
       if (/\s/u.test(part)) return part;
-      const pronunciation = approximatePronunciation(part);
+      const pronunciation = localPronunciation(part);
       return pronunciation === "—" ? "" : pronunciation;
     })
     .join("")
@@ -203,10 +211,12 @@ export default function BengaliCharacterBreakdown({ isOpen }) {
   const [worksheetRepeats, setWorksheetRepeats] = useState(8);
   const [worksheetLetterSize, setWorksheetLetterSize] = useState(48);
   const [sentenceRepeats, setSentenceRepeats] = useState({});
+  const [contextualPronunciations, setContextualPronunciations] = useState(null);
   const typingInputRef = useRef(null);
   const wasOpenRef = useRef(false);
   const previousPracticeTextRef = useRef(bengaliBreakdownText);
   const segments = useMemo(() => segmentText(bengaliBreakdownText), [bengaliBreakdownText]);
+  const wordGroups = useMemo(() => groupSegmentsIntoWords(segments), [segments]);
   const targetCharacters = useMemo(() => Array.from(bengaliBreakdownText), [bengaliBreakdownText]);
   const typedCharacters = useMemo(() => Array.from(typedText), [typedText]);
   const correctCount = typedCharacters.findIndex((character, index) => character !== targetCharacters[index]);
@@ -220,10 +230,6 @@ export default function BengaliCharacterBreakdown({ isOpen }) {
   const bengaliCount = segments.filter(({ characters }) =>
     characters.some(({ character }) => bengaliPattern.test(character))
   ).length;
-  const lastSegment = segments[segments.length - 1];
-  const finalWord = lastSegment && !lastSegment.characters.every(({ type }) => type === "Whitespace")
-    ? completedWordBefore(segments, segments.length)
-    : "";
   const worksheetLength = segmentText(worksheetText).length;
   const worksheetSentences = useMemo(() => splitWorksheetSentences(worksheetText), [worksheetText]);
   const hasMultipleWorksheetSentences = worksheetSentences.length > 1;
@@ -238,6 +244,17 @@ export default function BengaliCharacterBreakdown({ isOpen }) {
       )
     )
     : Array.from({ length: worksheetRepeats }, () => ({ sentence: worksheetText, sentenceIndex: 0 }));
+
+  const pronunciationForWord = (word) => {
+    const normalizedWord = word.replace(/^[^\p{Letter}\p{Mark}\p{Number}]+|[^\p{Letter}\p{Mark}\p{Number}]+$/gu, "");
+    const contextualWords = contextualPronunciations?.text === bengaliBreakdownText.trim()
+      ? contextualPronunciations.words
+      : [];
+    const contextualWord = contextualWords.find(({ bn }) =>
+      bn === word || bn.replace(/^[^\p{Letter}\p{Mark}\p{Number}]+|[^\p{Letter}\p{Mark}\p{Number}]+$/gu, "") === normalizedWord
+    );
+    return contextualWord?.pronunciation || localPronunciation(word);
+  };
 
   useEffect(() => {
     if (isOpen && !wasOpenRef.current) {
@@ -254,6 +271,41 @@ export default function BengaliCharacterBreakdown({ isOpen }) {
       previousPracticeTextRef.current = bengaliBreakdownText;
     }
   }, [bengaliBreakdownText]);
+
+  useEffect(() => {
+    const text = bengaliBreakdownText.trim();
+    if (!isOpen || !text || text.length > 5000) {
+      setContextualPronunciations(null);
+      return undefined;
+    }
+
+    setContextualPronunciations(null);
+    const controller = new AbortController();
+    const timeout = window.setTimeout(async () => {
+      try {
+        const response = await fetch("/api/translate", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ text, source: "bn", target: "en" }),
+          signal: controller.signal,
+        });
+        const data = await response.json().catch(() => ({}));
+        if (!response.ok || !data.pronunciation || !Array.isArray(data.sentences)) return;
+        setContextualPronunciations({
+          text,
+          full: data.pronunciation,
+          words: data.sentences.flatMap((sentence) => Array.isArray(sentence.words) ? sentence.words : []),
+        });
+      } catch (error) {
+        if (error.name !== "AbortError") setContextualPronunciations(null);
+      }
+    }, 650);
+
+    return () => {
+      window.clearTimeout(timeout);
+      controller.abort();
+    };
+  }, [bengaliBreakdownText, isOpen]);
 
   const editTypedText = (replacement, removePrevious = false) => {
     const input = typingInputRef.current;
@@ -517,7 +569,7 @@ export default function BengaliCharacterBreakdown({ isOpen }) {
                           );
                         })}
                       </b>
-                      <span className="bengali-typing__current-pronunciation">{approximatePronunciation(currentWord)}</span>
+                      <span className="bengali-typing__current-pronunciation">{pronunciationForWord(currentWord)}</span>
                     </div>
                     <div className="bengali-typing__next">
                       <strong lang="bn">{nextCharacter && /\p{Mark}/u.test(nextCharacter) ? `◌${nextCharacter}` : nextCharacter || "—"}</strong>
@@ -549,8 +601,10 @@ export default function BengaliCharacterBreakdown({ isOpen }) {
                 ))}
               </div>
               <p className="bengali-typing__target-pronunciation">
-                <span>Possible pronunciation</span>
-                <strong>{approximateTextPronunciation(bengaliBreakdownText)}</strong>
+                <span>Pronunciation</span>
+                <strong>{contextualPronunciations?.text === bengaliBreakdownText.trim()
+                  ? contextualPronunciations.full
+                  : localTextPronunciation(bengaliBreakdownText)}</strong>
               </p>
 
               <label className="ui-field">
@@ -623,50 +677,45 @@ export default function BengaliCharacterBreakdown({ isOpen }) {
         </section>
       ) : segments.length ? (
         <ol className="bengali-breakdown__list" aria-label="Character breakdown">
-          {segments.map(({ grapheme, characters, index, offset }) => {
-            const whitespace = characters.every(({ type }) => type === "Whitespace");
-            const completedWord = whitespace ? completedWordBefore(segments, index) : "";
-            const pronunciation = completedWord ? approximatePronunciation(completedWord) : "";
-            if (whitespace && !completedWord) return null;
-            return (
-              <li className={`bengali-breakdown__item${whitespace ? " is-completed-word" : ""}`} key={`${offset}-${grapheme}`}>
-                <div className="bengali-breakdown__glyph" lang="bn" aria-label={whitespace ? characters[0].name : grapheme}>
-                  {whitespace ? completedWord : grapheme}
-                </div>
-                <div className="bengali-breakdown__details">
-                  <span className="bengali-breakdown__position">{whitespace ? "Completed word" : `Character ${index + 1}`}</span>
-                  {whitespace ? (
+          {wordGroups.flatMap((wordSegments, wordIndex) => {
+            const completedWord = wordSegments.map(({ grapheme }) => grapheme).join("");
+            return [
+                <li className="bengali-breakdown__item is-completed-word" key={`word-${wordIndex}-${wordSegments[0].offset}`}>
+                  <div className="bengali-breakdown__completed-glyph">
+                    <strong lang="bn">{completedWord}</strong>
+                    <span lang="bn" aria-label={`${completedWord} characters separated`}>
+                      {Array.from(completedWord).join(" ")}
+                    </span>
+                  </div>
+                  <div className="bengali-breakdown__details">
+                    <span className="bengali-breakdown__position">Complete word</span>
                     <div className="bengali-breakdown__word-boundary">
                       <b lang="bn">{completedWord}</b>
-                      <span>Possible pronunciation: <strong>{pronunciation}</strong></span>
-                      <small>Approximate; pronunciation may vary.</small>
+                      <span>Pronunciation: <strong>{pronunciationForWord(completedWord)}</strong></span>
+                      <small>Uses the complete phrase for context when the pronunciation service is available.</small>
                     </div>
-                  ) : (
+                  </div>
+                </li>,
+                ...wordSegments.map(({ grapheme, characters, index, offset }) => (
+                  <li className="bengali-breakdown__item" key={`${offset}-${grapheme}`}>
+                    <div className="bengali-breakdown__glyph" lang="bn" aria-label={grapheme}>
+                      {grapheme}
+                    </div>
+                    <div className="bengali-breakdown__details">
+                      <span className="bengali-breakdown__position">Character {index + 1}</span>
+                      {
                     characters.map(({ character, name, type, code }, partIndex) => (
                       <div className="bengali-breakdown__part" key={`${code}-${partIndex}`}>
                         <b lang="bn">{character}</b>
                         <span>{name}</span>
                         <small>{type} · {code}</small>
                       </div>
-                    ))
-                  )}
-                </div>
-              </li>
-            );
+                    ))}
+                    </div>
+                  </li>
+                )),
+            ];
           })}
-          {finalWord ? (
-            <li className="bengali-breakdown__item is-completed-word" key="final-completed-word">
-              <div className="bengali-breakdown__glyph" lang="bn">{finalWord}</div>
-              <div className="bengali-breakdown__details">
-                <span className="bengali-breakdown__position">Completed word</span>
-                <div className="bengali-breakdown__word-boundary">
-                  <b lang="bn">{finalWord}</b>
-                  <span>Possible pronunciation: <strong>{approximatePronunciation(finalWord)}</strong></span>
-                  <small>Approximate; pronunciation may vary.</small>
-                </div>
-              </div>
-            </li>
-          ) : null}
         </ol>
       ) : (
         <div className="bengali-breakdown__empty">
