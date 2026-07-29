@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Learning Hub</title>
     <style>
-      .bn-pronunciation-toggle {
+      .bn-pronunciation-toggle,
+      .bn-breakdown-speech-control {
         display: flex;
         align-items: center;
         justify-content: flex-end;
@@ -20,6 +21,15 @@
         width: 1.05rem;
         height: 1.05rem;
         accent-color: #2563eb;
+      }
+      .bn-breakdown-speech-control select {
+        min-height: 2.5rem;
+        padding: 0.45rem 0.7rem;
+        border: 1px solid #cbd5e1;
+        border-radius: 0.65rem;
+        background: #fff;
+        color: #0f172a;
+        font: inherit;
       }
       .bn-pronunciations-hidden .bn-pronunciation,
       .bn-pronunciations-hidden .bn-loop-breakdown__word > strong,
@@ -48,6 +58,17 @@
       .bn-pronunciations-hidden .bn-game-option .bn-option-index {
         font-size: 0.76rem;
       }
+      @media (max-width: 640px) {
+        .bn-pronunciation-toggle,
+        .bn-breakdown-speech-control {
+          justify-content: space-between;
+          padding: 0 0.75rem;
+        }
+        .bn-breakdown-speech-control select {
+          min-width: 0;
+          max-width: 58vw;
+        }
+      }
     </style>
   </head>
   <body>
@@ -56,8 +77,10 @@
     <script>
       (() => {
         const STORAGE_KEY = "bengali_tutor_show_pronunciations";
+        const BREAKDOWN_SPEECH_KEY = "bengali_breakdown_speech_source";
         const originalText = new WeakMap();
         let applying = false;
+        let activeGoogleAudio = null;
 
         const getPreference = () => {
           try {
@@ -73,6 +96,80 @@
             localStorage.setItem(STORAGE_KEY, String(value));
           } catch {
             // The toggle still works for the current session.
+          }
+        };
+
+        const getBreakdownSpeechSource = () => {
+          try {
+            return localStorage.getItem(BREAKDOWN_SPEECH_KEY) === "google" ? "google" : "system";
+          } catch {
+            return "system";
+          }
+        };
+
+        const saveBreakdownSpeechSource = (value) => {
+          try {
+            localStorage.setItem(BREAKDOWN_SPEECH_KEY, value);
+          } catch {
+            // The selected source still works for the current session.
+          }
+        };
+
+        const speakWithSystemVoice = (text) => {
+          if (!window.speechSynthesis) throw new Error("System speech synthesis is unavailable.");
+          const utterance = new SpeechSynthesisUtterance(text);
+          const bengaliVoice = window.speechSynthesis.getVoices().find((voice) => /^bn/i.test(voice.lang));
+          utterance.lang = bengaliVoice?.lang || "bn-IN";
+          if (bengaliVoice) utterance.voice = bengaliVoice;
+          window.speechSynthesis.cancel();
+          window.speechSynthesis.speak(utterance);
+        };
+
+        const speakWithGoogle = async (text) => {
+          window.speechSynthesis?.cancel();
+          activeGoogleAudio?.pause();
+          const response = await fetch("/api/tts", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ text, lang: "bn-IN" })
+          });
+          if (!response.ok) {
+            const data = await response.json().catch(() => ({}));
+            throw new Error(data.error || `Google speech failed (${response.status}).`);
+          }
+          const audioUrl = URL.createObjectURL(await response.blob());
+          const audio = new Audio(audioUrl);
+          activeGoogleAudio = audio;
+          const release = () => {
+            URL.revokeObjectURL(audioUrl);
+            if (activeGoogleAudio === audio) activeGoogleAudio = null;
+          };
+          audio.addEventListener("ended", release, { once: true });
+          audio.addEventListener("error", release, { once: true });
+          try {
+            await audio.play();
+          } catch (error) {
+            release();
+            throw error;
+          }
+        };
+
+        const speakBreakdownWord = async (text) => {
+          const spokenText = text?.trim();
+          if (!spokenText) return;
+          const source = getBreakdownSpeechSource();
+          try {
+            if (source === "google") await speakWithGoogle(spokenText);
+            else speakWithSystemVoice(spokenText);
+          } catch (error) {
+            console.error("Bengali breakdown speech error:", error);
+            if (source === "google") {
+              try {
+                speakWithSystemVoice(spokenText);
+              } catch (fallbackError) {
+                console.error("Bengali system speech fallback error:", fallbackError);
+              }
+            }
           }
         };
 
@@ -156,11 +253,31 @@
           applying = false;
         };
 
+        const installBreakdownSpeechControl = (nav, main) => {
+          if (main.querySelector(".bn-breakdown-speech-control")) return;
+          const label = document.createElement("label");
+          label.className = "bn-breakdown-speech-control";
+          const text = document.createElement("span");
+          text.textContent = "Breakdown word voice";
+          const select = document.createElement("select");
+          select.setAttribute("aria-label", "Bengali breakdown word voice");
+          select.innerHTML = [
+            '<option value="system">System default</option>',
+            '<option value="google">Google Text-to-Speech</option>'
+          ].join("");
+          select.value = getBreakdownSpeechSource();
+          select.addEventListener("change", () => saveBreakdownSpeechSource(select.value));
+          label.append(text, select);
+          nav.insertAdjacentElement("afterend", label);
+        };
+
         const installToggle = () => {
           const nav = document.querySelector('nav[aria-label="Bengali tutor sections"]');
-          if (!nav || nav.dataset.pronunciationToggleReady === "true") return;
+          if (!nav) return;
           const main = nav.closest("main");
           if (!main) return;
+          installBreakdownSpeechControl(nav, main);
+          if (nav.dataset.pronunciationToggleReady === "true") return;
           nav.dataset.pronunciationToggleReady = "true";
 
           const label = document.createElement("label");
@@ -172,7 +289,8 @@
           const text = document.createElement("span");
           text.textContent = "Show pronunciations";
           label.append(checkbox, text);
-          nav.insertAdjacentElement("afterend", label);
+          const speechControl = main.querySelector(".bn-breakdown-speech-control");
+          speechControl?.insertAdjacentElement("afterend", label);
 
           checkbox.addEventListener("change", () => {
             savePreference(checkbox.checked);
@@ -180,6 +298,22 @@
           });
           applyPreference(main, checkbox.checked);
         };
+
+        document.addEventListener("click", (event) => {
+          const target = event.target.closest?.(".bn-breakdown-speakable");
+          if (!target) return;
+          event.preventDefault();
+          event.stopImmediatePropagation();
+          speakBreakdownWord(target.textContent);
+        }, true);
+
+        document.addEventListener("keydown", (event) => {
+          const target = event.target.closest?.(".bn-breakdown-speakable");
+          if (!target || (event.key !== "Enter" && event.key !== " ")) return;
+          event.preventDefault();
+          event.stopImmediatePropagation();
+          speakBreakdownWord(target.textContent);
+        }, true);
 
         const observer = new MutationObserver(() => {
           installToggle();
