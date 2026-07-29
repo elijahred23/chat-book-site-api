@@ -123,7 +123,7 @@ function groupSegmentsIntoWords(segments) {
   return groups;
 }
 
-function localPronunciation(word) {
+function approximatePronunciation(word) {
   let pronunciation = "";
   for (const character of Array.from(word.normalize("NFC"))) {
     if (PRONUNCIATION_LETTERS[character]) {
@@ -155,16 +155,16 @@ function nextCharacterPronunciation(character) {
   if (DIGIT_NAMES[character]) return DIGIT_NAMES[character];
   if (character === " ") return "space";
   if (character === "\n") return "line break";
-  const pronunciation = localPronunciation(character);
+  const pronunciation = approximatePronunciation(character);
   return pronunciation === "—" ? describeCharacter(character).name : pronunciation;
 }
 
-function localTextPronunciation(text) {
+function approximateTextPronunciation(text) {
   return text
     .split(/(\s+)/u)
     .map((part) => {
       if (/\s/u.test(part)) return part;
-      const pronunciation = localPronunciation(part);
+      const pronunciation = approximatePronunciation(part);
       return pronunciation === "—" ? "" : pronunciation;
     })
     .join("")
@@ -211,7 +211,6 @@ export default function BengaliCharacterBreakdown({ isOpen }) {
   const [worksheetRepeats, setWorksheetRepeats] = useState(8);
   const [worksheetLetterSize, setWorksheetLetterSize] = useState(48);
   const [sentenceRepeats, setSentenceRepeats] = useState({});
-  const [contextualPronunciations, setContextualPronunciations] = useState(null);
   const typingInputRef = useRef(null);
   const wasOpenRef = useRef(false);
   const previousPracticeTextRef = useRef(bengaliBreakdownText);
@@ -245,17 +244,6 @@ export default function BengaliCharacterBreakdown({ isOpen }) {
     )
     : Array.from({ length: worksheetRepeats }, () => ({ sentence: worksheetText, sentenceIndex: 0 }));
 
-  const pronunciationForWord = (word) => {
-    const normalizedWord = word.replace(/^[^\p{Letter}\p{Mark}\p{Number}]+|[^\p{Letter}\p{Mark}\p{Number}]+$/gu, "");
-    const contextualWords = contextualPronunciations?.text === bengaliBreakdownText.trim()
-      ? contextualPronunciations.words
-      : [];
-    const contextualWord = contextualWords.find(({ bn }) =>
-      bn === word || bn.replace(/^[^\p{Letter}\p{Mark}\p{Number}]+|[^\p{Letter}\p{Mark}\p{Number}]+$/gu, "") === normalizedWord
-    );
-    return contextualWord?.pronunciation || localPronunciation(word);
-  };
-
   useEffect(() => {
     if (isOpen && !wasOpenRef.current) {
       setTypedText("");
@@ -271,41 +259,6 @@ export default function BengaliCharacterBreakdown({ isOpen }) {
       previousPracticeTextRef.current = bengaliBreakdownText;
     }
   }, [bengaliBreakdownText]);
-
-  useEffect(() => {
-    const text = bengaliBreakdownText.trim();
-    if (!isOpen || !text || text.length > 5000) {
-      setContextualPronunciations(null);
-      return undefined;
-    }
-
-    setContextualPronunciations(null);
-    const controller = new AbortController();
-    const timeout = window.setTimeout(async () => {
-      try {
-        const response = await fetch("/api/translate", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ text, source: "bn", target: "en" }),
-          signal: controller.signal,
-        });
-        const data = await response.json().catch(() => ({}));
-        if (!response.ok || !data.pronunciation || !Array.isArray(data.sentences)) return;
-        setContextualPronunciations({
-          text,
-          full: data.pronunciation,
-          words: data.sentences.flatMap((sentence) => Array.isArray(sentence.words) ? sentence.words : []),
-        });
-      } catch (error) {
-        if (error.name !== "AbortError") setContextualPronunciations(null);
-      }
-    }, 650);
-
-    return () => {
-      window.clearTimeout(timeout);
-      controller.abort();
-    };
-  }, [bengaliBreakdownText, isOpen]);
 
   const editTypedText = (replacement, removePrevious = false) => {
     const input = typingInputRef.current;
@@ -569,7 +522,7 @@ export default function BengaliCharacterBreakdown({ isOpen }) {
                           );
                         })}
                       </b>
-                      <span className="bengali-typing__current-pronunciation">{pronunciationForWord(currentWord)}</span>
+                      <span className="bengali-typing__current-pronunciation">{approximatePronunciation(currentWord)}</span>
                     </div>
                     <div className="bengali-typing__next">
                       <strong lang="bn">{nextCharacter && /\p{Mark}/u.test(nextCharacter) ? `◌${nextCharacter}` : nextCharacter || "—"}</strong>
@@ -601,10 +554,8 @@ export default function BengaliCharacterBreakdown({ isOpen }) {
                 ))}
               </div>
               <p className="bengali-typing__target-pronunciation">
-                <span>Pronunciation</span>
-                <strong>{contextualPronunciations?.text === bengaliBreakdownText.trim()
-                  ? contextualPronunciations.full
-                  : localTextPronunciation(bengaliBreakdownText)}</strong>
+                <span>Possible pronunciation</span>
+                <strong>{approximateTextPronunciation(bengaliBreakdownText)}</strong>
               </p>
 
               <label className="ui-field">
@@ -691,8 +642,8 @@ export default function BengaliCharacterBreakdown({ isOpen }) {
                     <span className="bengali-breakdown__position">Complete word</span>
                     <div className="bengali-breakdown__word-boundary">
                       <b lang="bn">{completedWord}</b>
-                      <span>Pronunciation: <strong>{pronunciationForWord(completedWord)}</strong></span>
-                      <small>Uses the complete phrase for context when the pronunciation service is available.</small>
+                      <span>Possible pronunciation: <strong>{approximatePronunciation(completedWord)}</strong></span>
+                      <small>Approximate; pronunciation may vary.</small>
                     </div>
                   </div>
                 </li>,
