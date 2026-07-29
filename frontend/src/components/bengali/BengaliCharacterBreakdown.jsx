@@ -141,7 +141,8 @@ function approximatePronunciation(word) {
       pronunciation += "h";
     }
   }
-  return pronunciation || "—";
+  const isSingleWrittenCharacter = Array.from(word.normalize("NFC")).length === 1;
+  return (!isSingleWrittenCharacter ? pronunciation.replace(/ô$/u, "") : pronunciation) || "—";
 }
 
 function nextCharacterPronunciation(character) {
@@ -185,6 +186,17 @@ function wordAtCharacterIndex(text, characterIndex) {
 
 function keyboardKeyLabel(character) {
   return /\p{Mark}/u.test(character) ? `◌${character}` : character;
+}
+
+function characterSoundLabel(character) {
+  if (PRONUNCIATION_LETTERS[character]) {
+    return LETTER_NAMES[character]?.split(" — ")[1] || PRONUNCIATION_LETTERS[character];
+  }
+  if (MARK_NAMES[character]) return MARK_NAMES[character].split(" — ")[1];
+  if (DIGIT_NAMES[character]) return DIGIT_NAMES[character];
+  if (character === "।") return "stop";
+  if (character === "॥") return "double stop";
+  return describeCharacter(character).name;
 }
 
 function splitWorksheetSentences(text) {
@@ -634,9 +646,14 @@ export default function BengaliCharacterBreakdown({ isOpen }) {
                 <li className="bengali-breakdown__item is-completed-word" key={`word-${wordIndex}-${wordSegments[0].offset}`}>
                   <div className="bengali-breakdown__completed-glyph">
                     <strong lang="bn">{completedWord}</strong>
-                    <span lang="bn" aria-label={`${completedWord} characters separated`}>
-                      {Array.from(completedWord).join(" ")}
-                    </span>
+                    <div className="bengali-breakdown__character-sounds" aria-label={`${completedWord} characters and sounds`}>
+                      {Array.from(completedWord).map((character, characterIndex) => (
+                        <span className="bengali-breakdown__character-sound" key={`${character}-${characterIndex}`}>
+                          <b lang="bn">{character}</b>
+                          <small>{characterSoundLabel(character)}</small>
+                        </span>
+                      ))}
+                    </div>
                   </div>
                   <div className="bengali-breakdown__details">
                     <span className="bengali-breakdown__position">Complete word</span>
