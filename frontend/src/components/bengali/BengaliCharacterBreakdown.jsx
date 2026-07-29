@@ -640,9 +640,9 @@ export default function BengaliCharacterBreakdown({ isOpen }) {
         </section>
       ) : segments.length ? (
         <ol className="bengali-breakdown__list" aria-label="Character breakdown">
-          {wordGroups.flatMap((wordSegments, wordIndex) => {
+          {wordGroups.map((wordSegments, wordIndex) => {
             const completedWord = wordSegments.map(({ grapheme }) => grapheme).join("");
-            return [
+            return (
                 <li className="bengali-breakdown__item is-completed-word" key={`word-${wordIndex}-${wordSegments[0].offset}`}>
                   <div className="bengali-breakdown__completed-glyph">
                     <strong lang="bn">{completedWord}</strong>
@@ -654,35 +654,12 @@ export default function BengaliCharacterBreakdown({ isOpen }) {
                         </span>
                       ))}
                     </div>
+                    <span className="bengali-breakdown__combined-pronunciation">
+                      ({approximatePronunciation(completedWord)})
+                    </span>
                   </div>
-                  <div className="bengali-breakdown__details">
-                    <span className="bengali-breakdown__position">Complete word</span>
-                    <div className="bengali-breakdown__word-boundary">
-                      <b lang="bn">{completedWord}</b>
-                      <span>Possible pronunciation: <strong>{approximatePronunciation(completedWord)}</strong></span>
-                      <small>Approximate; pronunciation may vary.</small>
-                    </div>
-                  </div>
-                </li>,
-                ...wordSegments.map(({ grapheme, characters, index, offset }) => (
-                  <li className="bengali-breakdown__item" key={`${offset}-${grapheme}`}>
-                    <div className="bengali-breakdown__glyph" lang="bn" aria-label={grapheme}>
-                      {grapheme}
-                    </div>
-                    <div className="bengali-breakdown__details">
-                      <span className="bengali-breakdown__position">Character {index + 1}</span>
-                      {
-                    characters.map(({ character, name, type, code }, partIndex) => (
-                      <div className="bengali-breakdown__part" key={`${code}-${partIndex}`}>
-                        <b lang="bn">{character}</b>
-                        <span>{name}</span>
-                        <small>{type} · {code}</small>
-                      </div>
-                    ))}
-                    </div>
-                  </li>
-                )),
-            ];
+                </li>
+            );
           })}
         </ol>
       ) : (
