@@ -48,6 +48,7 @@ const consonantLessonModules = import.meta.glob("../bengali_lessons/consonant-*.
 const consonantLessons = Object.values(consonantLessonModules);
 
 const LESSON_CACHE_KEY = "bengali_lesson_cache";
+const BREAKDOWN_SPEECH_KEY = "bn_breakdown_speech_source";
 const CORRECT_TIME = 250;
 const INCORRECT_TIME = 700;
 
@@ -95,6 +96,15 @@ const initialSavedLesson = () => {
     return SAVED_LESSONS.find((lesson) => lesson.id === savedId) || SAVED_LESSONS[0];
   } catch {
     return SAVED_LESSONS[0];
+  }
+};
+
+const initialBreakdownSpeechSource = () => {
+  try {
+    const savedSource = localStorage.getItem(BREAKDOWN_SPEECH_KEY);
+    return savedSource === "system" ? "system" : "google";
+  } catch {
+    return "google";
   }
 };
 
@@ -237,6 +247,7 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
   const startingLesson = initialLesson || initialSavedLesson();
   const [lesson, setLesson] = useState(startingLesson);
   const [savedLessonId, setSavedLessonId] = useState(startingLesson.id);
+  const [breakdownSpeechSource, setBreakdownSpeechSource] = useState(initialBreakdownSpeechSource);
   const speakSelectedBengali = useCallback((text) => {
     if (bengaliVoice === GOOGLE_BENGALI_VOICE_KEY) {
       window.speechSynthesis?.cancel();
@@ -245,6 +256,17 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
     }
     speak(text, "bn", bengaliVoice);
   }, [bengaliVoice]);
+  const speakBreakdownWord = useCallback((text) => {
+    if (breakdownSpeechSource === "system") {
+      speak(text, "bn", bengaliVoice === GOOGLE_BENGALI_VOICE_KEY ? "" : bengaliVoice);
+      return;
+    }
+    window.speechSynthesis?.cancel();
+    speakWithGoogleTts(text).catch((error) => {
+      console.error("Google Bengali breakdown speech error:", error);
+      speak(text, "bn", bengaliVoice === GOOGLE_BENGALI_VOICE_KEY ? "" : bengaliVoice);
+    });
+  }, [bengaliVoice, breakdownSpeechSource]);
   const [contentTab, setContentTab] = useState(view === "games" ? "games" : "phrases");
   const [jumpTarget, setJumpTarget] = useState("");
   const [gameDataset, setGameDataset] = useState("vocab");
@@ -301,6 +323,14 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
       // Local storage can be unavailable in private browsing contexts.
     }
   }, [gameDirection]);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem(BREAKDOWN_SPEECH_KEY, breakdownSpeechSource);
+    } catch {
+      // Local storage can be unavailable in private browsing contexts.
+    }
+  }, [breakdownSpeechSource]);
 
   const filteredVocab = useMemo(() => lesson?.vocab?.filter((v) => v?.bn && v?.en) || [], [lesson]);
   const filteredPhrases = useMemo(() => lesson?.phrases?.filter((p) => p?.bn && p?.en) || [], [lesson]);
@@ -742,6 +772,9 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
     .bn-pronunciation { color: #475569; font-weight: 700; }
     .bn-translation { color: #0f172a; }
     .bn-breakdown { display: grid; gap: 8px; margin-top: 12px; padding-top: 12px; border-top: 1px solid #e2e8f0; }
+    .bn-breakdown-header { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+    .bn-breakdown-speech-control { display: flex; align-items: center; gap: 8px; color: #475569; font-size: .82rem; font-weight: 700; }
+    .bn-breakdown-speech-control .bn-select { min-height: 38px; padding: .45rem .65rem; }
     .bn-breakdown-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 8px; }
     .bn-breakdown-word { display: grid; gap: 3px; padding: 0.65rem; border: 1px solid #dbe3ef; border-radius: 10px; background: #f8fafc; }
     .bn-breakdown-word .bn-pronunciation { color: #1d4ed8; }
@@ -829,27 +862,34 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
                     <div className="bn-translation">{phrase.en}</div>
                     {phrase.context && <div style={{ color: "#475569" }}>{phrase.context}</div>}
                     <div className="bn-breakdown">
-                      <strong>Phrase breakdown</strong>
+                      <div className="bn-breakdown-header">
+                        <strong>Phrase breakdown</strong>
+                        <label className="bn-breakdown-speech-control">
+                          <span>Word speech</span>
+                          <select
+                            className="bn-select"
+                            value={breakdownSpeechSource}
+                            onChange={(event) => setBreakdownSpeechSource(event.target.value)}
+                            aria-label="Choose phrase breakdown word speech source"
+                          >
+                            <option value="google">Google voice</option>
+                            <option value="system">System default</option>
+                          </select>
+                        </label>
+                      </div>
                       <div className="bn-breakdown-list">
                         {phrase.words.map((word, wordIndex) => (
                           <div className="bn-breakdown-word" key={`${phrase.bn}-${word.bn}-${wordIndex}`}>
-                            <span
+                            <button
+                              type="button"
                               className="bn-script bn-breakdown-speakable"
                               lang="bn"
-                              role="button"
-                              tabIndex={0}
-                              aria-label={`Hear ${word.bn} in Bengali`}
-                              title="Hear this Bengali word"
-                              onClick={() => speakSelectedBengali(word.bn)}
-                              onKeyDown={(event) => {
-                                if (event.key === "Enter" || event.key === " ") {
-                                  event.preventDefault();
-                                  speakSelectedBengali(word.bn);
-                                }
-                              }}
+                              aria-label={`Hear ${word.bn} in Bengali with ${breakdownSpeechSource === "google" ? "Google voice" : "the system default voice"}`}
+                              title={`Hear with ${breakdownSpeechSource === "google" ? "Google voice" : "system default"}`}
+                              onClick={() => speakBreakdownWord(word.bn)}
                             >
                               {word.bn}
-                            </span>
+                            </button>
                             <span className="bn-pronunciation">{word.pronunciation}</span>
                             <span className="bn-translation">{word.en}</span>
                           </div>
