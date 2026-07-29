@@ -141,8 +141,7 @@ function approximatePronunciation(word) {
       pronunciation += "h";
     }
   }
-  const isSingleWrittenCharacter = Array.from(word.normalize("NFC")).length === 1;
-  return (!isSingleWrittenCharacter ? pronunciation.replace(/ô$/u, "") : pronunciation) || "—";
+  return pronunciation || "—";
 }
 
 function nextCharacterPronunciation(character) {
