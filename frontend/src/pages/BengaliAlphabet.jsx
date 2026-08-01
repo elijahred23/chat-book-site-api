@@ -663,6 +663,7 @@ export const WORD_LEVELS = [
 ];
 
 const shuffle = (items) => [...items].sort(() => Math.random() - 0.5);
+const makeWordOrder = (words) => shuffle(words.map((_, index) => index));
 
 function speakBengali(text) {
   if (!window.speechSynthesis) return;
@@ -787,6 +788,7 @@ export default function BengaliAlphabet() {
   const [gameMode, setGameMode] = useState("sound");
   const [wordClass, setWordClass] = useState(1);
   const [wordIndex, setWordIndex] = useState(0);
+  const [wordOrder, setWordOrder] = useState(() => makeWordOrder(WORD_LEVELS[0].words));
   const [wordPieces, setWordPieces] = useState([]);
   const [wordResult, setWordResult] = useState("");
   const [showWordHint, setShowWordHint] = useState(false);
@@ -892,15 +894,15 @@ export default function BengaliAlphabet() {
   const ActiveSectionIcon = activeSection.icon;
   const activeWordLevel = WORD_LEVELS[wordClass - 1];
   const activeWordSet = activeWordLevel.words;
-  const activeWord = activeWordSet[wordIndex];
+  const activeWord = activeWordSet[wordOrder[wordIndex] ?? wordIndex];
   const availablePieces = useMemo(
     () => shuffle([
       ...activeWord.pieces,
-      ...activeWordSet[(wordIndex + 1) % activeWordSet.length].pieces
+      ...activeWordSet[wordOrder[(wordIndex + 1) % activeWordSet.length] ?? ((wordIndex + 1) % activeWordSet.length)].pieces
         .filter((piece) => !activeWord.pieces.includes(piece))
         .slice(0, 2),
     ]),
-    [activeWord, activeWordSet, wordIndex],
+    [activeWord, activeWordSet, wordIndex, wordOrder],
   );
 
   function toggleLearned(character) {
@@ -933,17 +935,39 @@ export default function BengaliAlphabet() {
   }
 
   function changeWordClass(nextClass) {
+    const nextWords = WORD_LEVELS[nextClass - 1].words;
     setWordClass(nextClass);
+    setWordOrder(makeWordOrder(nextWords));
     setWordIndex(0);
     setWordPieces([]);
     setWordResult("");
     setShowWordHint(false);
   }
 
+  function nextRandomWord() {
+    if (wordIndex < activeWordSet.length - 1) {
+      resetWord(wordIndex + 1);
+      return;
+    }
+
+    const nextOrder = makeWordOrder(activeWordSet);
+    const previousWordIndex = wordOrder[wordIndex];
+    if (nextOrder.length > 1 && nextOrder[0] === previousWordIndex) {
+      [nextOrder[0], nextOrder[1]] = [nextOrder[1], nextOrder[0]];
+    }
+    setWordOrder(nextOrder);
+    resetWord(0);
+  }
+
   function checkWord() {
     const isCorrect = wordPieces.join("") === activeWord.word;
     setWordResult(isCorrect ? "correct" : "wrong");
-    if (isCorrect) speakBengali(activeWord.word);
+    if (!isCorrect) return;
+    if (voiceMode === "google") {
+      speakGoogleBengali(activeWord.word).catch((error) => console.error("Google Bengali speech error:", error));
+    } else {
+      speakBengali(activeWord.word);
+    }
   }
 
   return (
@@ -1257,7 +1281,7 @@ export default function BengaliAlphabet() {
                 {wordResult && <div className={`alpha-word-feedback ${wordResult}`} role="status">{wordResult === "correct" ? `দারুণ! ${activeWord.word} means ${activeWord.meaning}.` : "Almost! Tap a block above to remove it and try again."}</div>}
                 <div className="alpha-word-actions">
                   <button type="button" onClick={() => resetWord()}><FaRotateRight /> Clear</button>
-                  <button className="alpha-primary-button" type="button" onClick={wordResult === "correct" ? () => resetWord((wordIndex + 1) % activeWordSet.length) : checkWord} disabled={!wordPieces.length}>
+                  <button className="alpha-primary-button" type="button" onClick={wordResult === "correct" ? nextRandomWord : checkWord} disabled={!wordPieces.length}>
                     {wordResult === "correct" ? <>Next word <FaArrowRight /></> : <>Check word <FaCheck /></>}
                   </button>
                 </div>
