@@ -12,6 +12,29 @@ Object.entries(BENGALI_GLOSSES).forEach(([word, gloss]) => {
   if (!(normalizedWord in NORMALIZED_BENGALI_GLOSSES)) NORMALIZED_BENGALI_GLOSSES[normalizedWord] = gloss;
 });
 
+const pronunciationLessonModules = import.meta.glob("../../bengali_lessons/*.json", {
+  eager: true,
+  import: "default",
+});
+const SAVED_BENGALI_PRONUNCIATIONS = {};
+const savePronunciation = (item) => {
+  const word = String(item?.bn || "")
+    .normalize("NFC")
+    .replaceAll("।", "")
+    .replace(/^[\p{P}\p{S}]+|[\p{P}\p{S}]+$/gu, "");
+  const pronunciation = String(item?.pronunciation || "").trim();
+  if (word && pronunciation && !(word in SAVED_BENGALI_PRONUNCIATIONS)) {
+    SAVED_BENGALI_PRONUNCIATIONS[word] = pronunciation;
+  }
+};
+Object.values(pronunciationLessonModules).forEach((lesson) => {
+  lesson.vocab?.forEach(savePronunciation);
+  lesson.phrases?.forEach((phrase) => {
+    phrase.words?.forEach(savePronunciation);
+    if (!/\s/u.test(String(phrase.bn || "").trim())) savePronunciation(phrase);
+  });
+});
+
 const LETTER_NAMES = {
   "অ": "অ — ô", "আ": "আ — a", "ই": "ই — i", "ঈ": "ঈ — ī", "উ": "উ — u", "ঊ": "ঊ — ū",
   "ঋ": "ঋ — ri", "এ": "এ — e", "ঐ": "ঐ — oi", "ও": "ও — o", "ঔ": "ঔ — ou",
@@ -249,7 +272,7 @@ function multipleChoiceOptions(targetCharacters, targetIndex) {
     "।",
   ].forEach((character) => {
     const normalizedCharacter = character.normalize("NFC");
-    if (normalizedCharacter !== correctKey && !/[\r\t]/u.test(character) && !uniquePool.has(normalizedCharacter)) {
+    if (normalizedCharacter !== correctKey && !/\s/u.test(character) && !uniquePool.has(normalizedCharacter)) {
       uniquePool.set(normalizedCharacter, character);
     }
   });
@@ -400,6 +423,8 @@ export default function BengaliCharacterBreakdown({ isOpen }) {
     .replaceAll("।", "")
     .replace(/^[\p{P}\p{S}]+|[\p{P}\p{S}]+$/gu, "");
   const currentWordGloss = NORMALIZED_BENGALI_GLOSSES[currentWordGlossKey] || "";
+  const currentWordPossiblePronunciation = approximatePronunciation(currentWord);
+  const currentWordSavedPronunciation = SAVED_BENGALI_PRONUNCIATIONS[currentWordGlossKey] || "";
   const currentWordSegments = segmentText(currentWord);
   const practiceComplete = Boolean(targetCharacters.length && matchedCount === targetCharacters.length && !hasMistake);
   const bengaliCount = segments.filter(({ characters }) =>
@@ -743,8 +768,14 @@ export default function BengaliCharacterBreakdown({ isOpen }) {
                           );
                         })}
                       </b>
-                      <span className="bengali-typing__current-pronunciation">{approximatePronunciation(currentWord)}</span>
-                      {currentWordGloss ? <span className="bengali-typing__current-gloss">{currentWordGloss}</span> : null}
+                      <span className="bengali-typing__current-pronunciation">
+                        {currentWordPossiblePronunciation}
+                      </span>
+                      {currentWordGloss ? (
+                        <span className="bengali-typing__current-gloss">
+                          {currentWordGloss}{currentWordSavedPronunciation ? ` (${currentWordSavedPronunciation})` : ""}
+                        </span>
+                      ) : null}
                     </div>
                     <div className="bengali-typing__next">
                       {typingMode === "keyboard" ? <strong lang="bn">{nextCharacter && /^\p{Mark}+$/u.test(nextCharacter) ? `◌${nextCharacter}` : nextCharacter || "—"}</strong> : null}
@@ -793,7 +824,6 @@ export default function BengaliCharacterBreakdown({ isOpen }) {
                 ))}
               </div>
               <p className="bengali-typing__target-pronunciation">
-                <span>Possible pronunciation</span>
                 <strong>{approximateTextPronunciation(bengaliBreakdownText)}</strong>
               </p>
 

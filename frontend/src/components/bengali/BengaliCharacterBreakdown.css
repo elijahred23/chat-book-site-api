@@ -34,7 +34,8 @@
 .bengali-typing__current-word b { color: #94a3b8; font-family: "Noto Sans Bengali", "Nirmala UI", "Vrinda", sans-serif; font-size: clamp(1.1rem, 4vw, 1.45rem); }
 .bengali-typing__current-word b span { transition: color 120ms ease, background 120ms ease; }
 .bengali-typing__current-word b span.is-filled { border-radius: .2rem; background: #dcfce7; color: #047857; }
-.bengali-typing__current-pronunciation { border-left: 1px solid #94a3b8; padding-left: .55rem; color: #334155; font-size: clamp(.9rem, 3vw, 1.05rem); font-weight: 750; }
+.bengali-typing__current-pronunciation { display: grid; gap: .05rem; border-left: 1px solid #94a3b8; padding-left: .55rem; color: #334155; font-size: clamp(.9rem, 3vw, 1.05rem); font-weight: 750; }
+.bengali-typing__current-word .bengali-typing__current-pronunciation small { color: #64748b; font-size: .55rem; font-weight: 850; letter-spacing: .06em; text-transform: uppercase; }
 .bengali-typing__current-gloss { border-left: 1px solid #94a3b8; padding-left: .55rem; color: #166534; font-size: clamp(.82rem, 2.5vw, .95rem); font-weight: 800; }
 .bengali-typing__next { display: flex; align-items: center; justify-content: center; gap: clamp(1rem, 4vw, 2rem); }
 .bengali-typing__next > span { display: grid; justify-items: start; color: #1e3a8a; font-size: clamp(1rem, 3vw, 1.35rem); font-weight: 800; text-align: left; }
