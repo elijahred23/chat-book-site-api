@@ -6,6 +6,12 @@ import BENGALI_GLOSSES from "../../data/bengali-glosses.json";
 import Button from "../../ui/Button.jsx";
 import "./BengaliCharacterBreakdown.css";
 
+const NORMALIZED_BENGALI_GLOSSES = { ...BENGALI_GLOSSES };
+Object.entries(BENGALI_GLOSSES).forEach(([word, gloss]) => {
+  const normalizedWord = word.normalize("NFC");
+  if (!(normalizedWord in NORMALIZED_BENGALI_GLOSSES)) NORMALIZED_BENGALI_GLOSSES[normalizedWord] = gloss;
+});
+
 const LETTER_NAMES = {
   "অ": "অ — ô", "আ": "আ — a", "ই": "ই — i", "ঈ": "ঈ — ī", "উ": "উ — u", "ঊ": "ঊ — ū",
   "ঋ": "ঋ — ri", "এ": "এ — e", "ঐ": "ঐ — oi", "ও": "ও — o", "ঔ": "ঔ — ou",
@@ -99,7 +105,21 @@ function segmentText(text) {
   const segmenter = typeof Intl.Segmenter === "function"
     ? new Intl.Segmenter("bn", { granularity: "grapheme" })
     : null;
-  const graphemes = segmenter ? [...segmenter.segment(text)].map(({ segment }) => segment) : Array.from(text);
+  const graphemes = segmenter
+    ? [...segmenter.segment(text)].map(({ segment }) => segment)
+    : Array.from(text).reduce((groups, character) => {
+      const current = groups.at(-1);
+      const previousCharacter = current ? Array.from(current).at(-1) : "";
+      const joinsCurrent = current && (/\p{Mark}/u.test(character)
+        || character === "\u200D"
+        || character === "\u200C"
+        || previousCharacter === "্"
+        || previousCharacter === "\u200D"
+        || previousCharacter === "\u200C");
+      if (joinsCurrent) groups[groups.length - 1] += character;
+      else groups.push(character);
+      return groups;
+    }, []);
   let offset = 0;
   return graphemes.map((grapheme, index) => {
     const characters = Array.from(grapheme).map((character) => ({ character, ...describeCharacter(character) }));
@@ -221,11 +241,19 @@ function keyboardKeyLabel(character) {
 function multipleChoiceOptions(targetCharacters, targetIndex) {
   const correct = targetCharacters[targetIndex];
   if (!correct) return [];
-  const pool = [...new Set([
+  const correctKey = correct.normalize("NFC");
+  const uniquePool = new Map();
+  [
     ...targetCharacters,
     ...COMMON_BENGALI_KEYBOARD_ROWS.flat(),
     "।",
-  ])].filter((character) => character !== correct && !/[\r\t]/u.test(character));
+  ].forEach((character) => {
+    const normalizedCharacter = character.normalize("NFC");
+    if (normalizedCharacter !== correctKey && !/[\r\t]/u.test(character) && !uniquePool.has(normalizedCharacter)) {
+      uniquePool.set(normalizedCharacter, character);
+    }
+  });
+  const pool = [...uniquePool.values()];
   const start = (targetIndex * 7 + correct.codePointAt(0)) % pool.length;
   const distractors = Array.from({ length: 3 }, (_, index) => pool[(start + index * 11) % pool.length]);
   const options = [...new Set([correct, ...distractors])];
@@ -353,7 +381,9 @@ export default function BengaliCharacterBreakdown({ isOpen }) {
   const wordGroups = useMemo(() => groupSegmentsIntoWords(segments), [segments]);
   const targetCharacters = useMemo(() => segments.map(({ grapheme }) => grapheme), [segments]);
   const typedCharacters = useMemo(() => segmentText(typedText).map(({ grapheme }) => grapheme), [typedText]);
-  const correctCount = typedCharacters.findIndex((character, index) => character !== targetCharacters[index]);
+  const correctCount = typedCharacters.findIndex(
+    (character, index) => character.normalize("NFC") !== targetCharacters[index]?.normalize("NFC")
+  );
   const matchedCount = correctCount === -1 ? typedCharacters.length : correctCount;
   const hasMistake = correctCount !== -1;
   const nextCharacter = targetCharacters[matchedCount];
@@ -369,7 +399,7 @@ export default function BengaliCharacterBreakdown({ isOpen }) {
     .normalize("NFC")
     .replaceAll("।", "")
     .replace(/^[\p{P}\p{S}]+|[\p{P}\p{S}]+$/gu, "");
-  const currentWordGloss = BENGALI_GLOSSES[currentWordGlossKey] || "";
+  const currentWordGloss = NORMALIZED_BENGALI_GLOSSES[currentWordGlossKey] || "";
   const currentWordSegments = segmentText(currentWord);
   const practiceComplete = Boolean(targetCharacters.length && matchedCount === targetCharacters.length && !hasMistake);
   const bengaliCount = segments.filter(({ characters }) =>
@@ -429,7 +459,7 @@ export default function BengaliCharacterBreakdown({ isOpen }) {
   };
 
   const chooseCharacter = useCallback((character) => {
-    if (character !== nextCharacter) {
+    if (character.normalize("NFC") !== nextCharacter?.normalize("NFC")) {
       setWrongChoices((current) => current.includes(character) ? current : [...current, character]);
       return;
     }
