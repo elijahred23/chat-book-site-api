@@ -394,9 +394,13 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
     const isBreakdownWords = contentTab === "games" && gameDataset === "breakdown-words";
     const isVocab = contentTab === "vocab" || (contentTab === "games" && gameDataset === "vocab");
     const source = isBreakdownWords ? breakdownWords : isVocab ? filteredVocab : filteredPhrases;
-    const items = source.map((p) => `${p.bn} (${p.pronunciation || ""}) - ${p.en}`);
     const label = isBreakdownWords ? "Phrase breakdown words" : isVocab ? "Vocab" : "Phrases";
-    return `(${label}): ${items.join(" | ")}`;
+    const items = source.map((item, index) => [
+      `${index + 1}. ${item.bn}`,
+      item.pronunciation ? `   Pronunciation: ${item.pronunciation}` : "",
+      `   English: ${item.en}`,
+    ].filter(Boolean).join("\n"));
+    return `${lesson.title}\n${label}\n\n${items.join("\n\n")}`;
   }, [lesson, breakdownWords, filteredPhrases, filteredVocab, contentTab, gameDataset]);
 
   const buildGameQuestion = useCallback((items, direction = gameDirection, stats = matchStatsRef.current) => {

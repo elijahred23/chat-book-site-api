@@ -1,7 +1,8 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import PropTypes from "prop-types";
 import { FaEraser, FaPrint } from "react-icons/fa";
 import { actions, useAppDispatch, useAppState } from "../../context/AppContext.jsx";
+import BENGALI_GLOSSES from "../../data/bengali-glosses.json";
 import Button from "../../ui/Button.jsx";
 import "./BengaliCharacterBreakdown.css";
 
@@ -212,7 +213,39 @@ function wordAtCharacterIndex(text, characterIndex) {
 }
 
 function keyboardKeyLabel(character) {
+  if (character === " ") return "Space";
+  if (character === "\n") return "↵";
   return /\p{Mark}/u.test(character) ? `◌${character}` : character;
+}
+
+function multipleChoiceOptions(targetCharacters, targetIndex) {
+  const correct = targetCharacters[targetIndex];
+  if (!correct) return [];
+  const pool = [...new Set([
+    ...targetCharacters,
+    ...COMMON_BENGALI_KEYBOARD_ROWS.flat(),
+    "।",
+  ])].filter((character) => character !== correct && !/[\r\t]/u.test(character));
+  const start = (targetIndex * 7 + correct.codePointAt(0)) % pool.length;
+  const distractors = Array.from({ length: 3 }, (_, index) => pool[(start + index * 11) % pool.length]);
+  const options = [...new Set([correct, ...distractors])];
+  for (let index = 0; options.length < 4 && index < pool.length; index += 1) {
+    if (!options.includes(pool[index])) options.push(pool[index]);
+  }
+  const correctPosition = (targetIndex + correct.codePointAt(0)) % options.length;
+  options.splice(options.indexOf(correct), 1);
+  options.splice(correctPosition, 0, correct);
+  return options;
+}
+
+function includeFollowingSpaces(value, targetCharacters) {
+  let nextValue = value;
+  let nextIndex = Array.from(nextValue).length;
+  while (nextIndex < targetCharacters.length && /\s/u.test(targetCharacters[nextIndex])) {
+    nextValue += targetCharacters[nextIndex];
+    nextIndex += 1;
+  }
+  return nextValue;
 }
 
 function characterSoundLabel(character) {
@@ -307,6 +340,8 @@ export default function BengaliCharacterBreakdown({ isOpen }) {
   const { bengaliBreakdownText } = useAppState();
   const [activeTab, setActiveTab] = useState("breakdown");
   const [typedText, setTypedText] = useState("");
+  const [typingMode, setTypingMode] = useState("keyboard");
+  const [wrongChoices, setWrongChoices] = useState([]);
   const [worksheetText, setWorksheetText] = useState(bengaliBreakdownText || "বাংলা");
   const [worksheetRepeats, setWorksheetRepeats] = useState(8);
   const [worksheetLetterSize, setWorksheetLetterSize] = useState(48);
@@ -322,8 +357,17 @@ export default function BengaliCharacterBreakdown({ isOpen }) {
   const matchedCount = correctCount === -1 ? typedCharacters.length : correctCount;
   const hasMistake = correctCount !== -1;
   const nextCharacter = targetCharacters[matchedCount];
+  const characterChoices = useMemo(
+    () => multipleChoiceOptions(targetCharacters, matchedCount),
+    [matchedCount, targetCharacters]
+  );
   const currentWordDetails = wordAtCharacterIndex(bengaliBreakdownText, matchedCount);
   const currentWord = currentWordDetails.word;
+  const currentWordGlossKey = currentWord
+    .normalize("NFC")
+    .replaceAll("।", "")
+    .replace(/^[\p{P}\p{S}]+|[\p{P}\p{S}]+$/gu, "");
+  const currentWordGloss = BENGALI_GLOSSES[currentWordGlossKey] || "";
   const currentWordSegments = segmentText(currentWord);
   const practiceComplete = Boolean(targetCharacters.length && matchedCount === targetCharacters.length && !hasMistake);
   const bengaliCount = segments.filter(({ characters }) =>
@@ -346,19 +390,21 @@ export default function BengaliCharacterBreakdown({ isOpen }) {
 
   useEffect(() => {
     if (isOpen && !wasOpenRef.current) {
-      setTypedText("");
+      setTypedText(typingMode === "multiple-choice" ? includeFollowingSpaces("", targetCharacters) : "");
+      setWrongChoices([]);
       setWorksheetText(bengaliBreakdownText);
       setSentenceRepeats({});
     }
     wasOpenRef.current = isOpen;
-  }, [bengaliBreakdownText, isOpen]);
+  }, [bengaliBreakdownText, isOpen, targetCharacters, typingMode]);
 
   useEffect(() => {
     if (previousPracticeTextRef.current !== bengaliBreakdownText) {
-      setTypedText("");
+      setTypedText(typingMode === "multiple-choice" ? includeFollowingSpaces("", targetCharacters) : "");
+      setWrongChoices([]);
       previousPracticeTextRef.current = bengaliBreakdownText;
     }
-  }, [bengaliBreakdownText]);
+  }, [bengaliBreakdownText, targetCharacters, typingMode]);
 
   const editTypedText = (replacement, removePrevious = false) => {
     const input = typingInputRef.current;
@@ -379,6 +425,30 @@ export default function BengaliCharacterBreakdown({ isOpen }) {
       input?.setSelectionRange(nextCursor, nextCursor);
     });
   };
+
+  const chooseCharacter = useCallback((character) => {
+    if (character !== nextCharacter) {
+      setWrongChoices((current) => current.includes(character) ? current : [...current, character]);
+      return;
+    }
+    setWrongChoices([]);
+    setTypedText((current) => includeFollowingSpaces(current + character, targetCharacters));
+  }, [nextCharacter, targetCharacters]);
+
+  useEffect(() => {
+    if (activeTab !== "typing" || typingMode !== "multiple-choice" || practiceComplete) return undefined;
+    const handleNumberChoice = (event) => {
+      const target = event.target;
+      if (target instanceof HTMLElement
+        && (target.isContentEditable || ["INPUT", "TEXTAREA", "SELECT"].includes(target.tagName))) return;
+      const optionIndex = Number(event.key) - 1;
+      if (optionIndex < 0 || optionIndex > 3 || !characterChoices[optionIndex]) return;
+      event.preventDefault();
+      chooseCharacter(characterChoices[optionIndex]);
+    };
+    window.addEventListener("keydown", handleNumberChoice);
+    return () => window.removeEventListener("keydown", handleNumberChoice);
+  }, [activeTab, characterChoices, chooseCharacter, practiceComplete, typingMode]);
 
   const printWorksheet = () => {
     const printWindow = window.open("", "_blank");
@@ -594,9 +664,28 @@ export default function BengaliCharacterBreakdown({ isOpen }) {
         </section>
       ) : activeTab === "typing" ? (
         <section className="bengali-typing" aria-label="Bengali typing practice">
+          <fieldset className="bengali-typing__mode">
+            <legend>Practice mode</legend>
+            <button
+              type="button"
+              className={typingMode === "keyboard" ? "is-active" : ""}
+              aria-pressed={typingMode === "keyboard"}
+              onClick={() => { setTypingMode("keyboard"); setTypedText(""); setWrongChoices([]); }}
+            >
+              Keyboard typing
+            </button>
+            <button
+              type="button"
+              className={typingMode === "multiple-choice" ? "is-active" : ""}
+              aria-pressed={typingMode === "multiple-choice"}
+              onClick={() => { setTypingMode("multiple-choice"); setTypedText(includeFollowingSpaces("", targetCharacters)); setWrongChoices([]); }}
+            >
+              Multiple choice
+            </button>
+          </fieldset>
           {segments.length ? (
             <>
-              <div className={`bengali-typing__prompt${hasMistake ? " is-error" : ""}${practiceComplete ? " is-complete" : ""}`} role="status" aria-live="polite">
+              <div className={`bengali-typing__prompt${hasMistake || wrongChoices.length ? " is-error" : ""}${practiceComplete ? " is-complete" : ""}`} role="status" aria-live="polite">
                 {practiceComplete ? (
                   <>
                     <span className="bengali-typing__prompt-label">Complete</span>
@@ -604,9 +693,8 @@ export default function BengaliCharacterBreakdown({ isOpen }) {
                   </>
                 ) : (
                   <>
-                    <span className="bengali-typing__prompt-label">{hasMistake ? "Try this character" : "Type next"}</span>
+                    <span className="bengali-typing__prompt-label">{typingMode === "multiple-choice" ? "Choose the next character" : hasMistake ? "Try this character" : "Type next"}</span>
                     <div className="bengali-typing__current-word">
-                      <small>Current word</small>
                       <b lang="bn">
                         {currentWordSegments.map(({ grapheme, offset }) => {
                           const segmentEnd = currentWordDetails.start
@@ -623,15 +711,39 @@ export default function BengaliCharacterBreakdown({ isOpen }) {
                         })}
                       </b>
                       <span className="bengali-typing__current-pronunciation">{approximatePronunciation(currentWord)}</span>
+                      {currentWordGloss ? <span className="bengali-typing__current-gloss">{currentWordGloss}</span> : null}
                     </div>
                     <div className="bengali-typing__next">
-                      <strong lang="bn">{nextCharacter && /\p{Mark}/u.test(nextCharacter) ? `◌${nextCharacter}` : nextCharacter || "—"}</strong>
+                      {typingMode === "keyboard" ? <strong lang="bn">{nextCharacter && /\p{Mark}/u.test(nextCharacter) ? `◌${nextCharacter}` : nextCharacter || "—"}</strong> : null}
                       {nextCharacter ? (
                         <span>
                           {nextCharacterPronunciation(nextCharacter)}
                         </span>
                       ) : null}
                     </div>
+                    {typingMode === "multiple-choice" ? (
+                      <div className="bengali-typing__choices" role="group" aria-label="Choose the next Bengali character">
+                        {characterChoices.map((character, optionIndex) => {
+                          const isWrong = wrongChoices.includes(character);
+                          return (
+                            <button
+                              type="button"
+                              lang="bn"
+                              className={isWrong ? "is-wrong" : ""}
+                              aria-label={`${optionIndex + 1}: Choose ${LETTER_NAMES[character] || MARK_NAMES[character] || keyboardKeyLabel(character)}`}
+                              onClick={() => chooseCharacter(character)}
+                              key={character}
+                            >
+                              <span className="bengali-typing__choice-number" aria-hidden="true">{optionIndex + 1}</span>
+                              <span>{keyboardKeyLabel(character)}</span>
+                            </button>
+                          );
+                        })}
+                        <span className="bengali-typing__choice-feedback">
+                          {wrongChoices.length ? "Not quite—try another character." : "Choose one of four characters."}
+                        </span>
+                      </div>
+                    ) : null}
                     {hasMistake ? <small>Your last character did not match. Delete it and try again.</small> : null}
                   </>
                 )}
@@ -658,7 +770,7 @@ export default function BengaliCharacterBreakdown({ isOpen }) {
                 <strong>{approximateTextPronunciation(bengaliBreakdownText)}</strong>
               </p>
 
-              <label className="ui-field">
+              {typingMode === "keyboard" ? <label className="ui-field">
                 <span className="ui-field__label">Type here with your Bengali keyboard</span>
                 <textarea
                   ref={typingInputRef}
@@ -674,8 +786,8 @@ export default function BengaliCharacterBreakdown({ isOpen }) {
                   placeholder="এখানে টাইপ করুন…"
                 />
                 <span className="ui-field__hint">On mobile, use your keyboard’s globe or language key to switch to Bengali.</span>
-              </label>
-              <section className="bengali-keyboard" aria-label="On-screen Bengali keyboard">
+              </label> : null}
+              {typingMode === "keyboard" ? <section className="bengali-keyboard" aria-label="On-screen Bengali keyboard">
                 <div className="bengali-keyboard__heading">
                   <div>
                     <strong>On-screen Bengali keyboard</strong>
@@ -711,10 +823,10 @@ export default function BengaliCharacterBreakdown({ isOpen }) {
                     </div>
                   ))}
                 </div>
-              </section>
+              </section> : null}
               <div className="bengali-breakdown__toolbar">
                 <span>{matchedCount} of {targetCharacters.length} characters correct</span>
-                <Button variant="ghost" onClick={() => setTypedText("")} disabled={!typedText}>
+                <Button variant="ghost" onClick={() => { setTypedText(typingMode === "multiple-choice" ? includeFollowingSpaces("", targetCharacters) : ""); setWrongChoices([]); }} disabled={!typedText}>
                   <FaEraser aria-hidden="true" /> Start over
                 </Button>
               </div>

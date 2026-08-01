@@ -43,6 +43,10 @@ function removeMarkdown(text) {
     .trim();
 }
 
+function keepBengaliText(text) {
+  return (text.match(/[\u0980-\u09FF\u0964]+/g) || []).join(" ");
+}
+
 function downloadText(text, extension, mimeType, showMessage) {
   const filename = `content.${extension}`;
   const blob = new Blob([text || ""], { type: mimeType });
@@ -99,7 +103,7 @@ export default function ActionButtons({ promptText, limitButtons = false }) {
     {
       label: "Learn",
       buttons: [
-        { icon: FaLanguage, title: "Break Down Bengali", drawer: "bengaliBreakdown", color: "#047857", onClick: () => { dispatch(actions.setBengaliBreakdownText(cleanText)); dispatch(actions.setIsBengaliBreakdownOpen(true)); } },
+        { icon: FaLanguage, title: "Break Down Bengali", drawer: "bengaliBreakdown", color: "#047857", onClick: () => { dispatch(actions.setBengaliBreakdownText(keepBengaliText(cleanText))); dispatch(actions.setIsBengaliBreakdownOpen(true)); } },
         {
           icon: GiGraduateCap,
           title: "Create Flashcards",
