@@ -215,7 +215,7 @@ function wordAtCharacterIndex(text, characterIndex) {
 function keyboardKeyLabel(character) {
   if (character === " ") return "Space";
   if (character === "\n") return "↵";
-  return /\p{Mark}/u.test(character) ? `◌${character}` : character;
+  return /^\p{Mark}+$/u.test(character) ? `◌${character}` : character;
 }
 
 function multipleChoiceOptions(targetCharacters, targetIndex) {
@@ -240,7 +240,7 @@ function multipleChoiceOptions(targetCharacters, targetIndex) {
 
 function includeFollowingSpaces(value, targetCharacters) {
   let nextValue = value;
-  let nextIndex = Array.from(nextValue).length;
+  let nextIndex = segmentText(nextValue).length;
   while (nextIndex < targetCharacters.length && /\s/u.test(targetCharacters[nextIndex])) {
     nextValue += targetCharacters[nextIndex];
     nextIndex += 1;
@@ -351,8 +351,8 @@ export default function BengaliCharacterBreakdown({ isOpen }) {
   const previousPracticeTextRef = useRef(bengaliBreakdownText);
   const segments = useMemo(() => segmentText(bengaliBreakdownText), [bengaliBreakdownText]);
   const wordGroups = useMemo(() => groupSegmentsIntoWords(segments), [segments]);
-  const targetCharacters = useMemo(() => Array.from(bengaliBreakdownText), [bengaliBreakdownText]);
-  const typedCharacters = useMemo(() => Array.from(typedText), [typedText]);
+  const targetCharacters = useMemo(() => segments.map(({ grapheme }) => grapheme), [segments]);
+  const typedCharacters = useMemo(() => segmentText(typedText).map(({ grapheme }) => grapheme), [typedText]);
   const correctCount = typedCharacters.findIndex((character, index) => character !== targetCharacters[index]);
   const matchedCount = correctCount === -1 ? typedCharacters.length : correctCount;
   const hasMistake = correctCount !== -1;
@@ -361,7 +361,9 @@ export default function BengaliCharacterBreakdown({ isOpen }) {
     () => multipleChoiceOptions(targetCharacters, matchedCount),
     [matchedCount, targetCharacters]
   );
-  const currentWordDetails = wordAtCharacterIndex(bengaliBreakdownText, matchedCount);
+  const nextCharacterOffset = segments[matchedCount]?.offset ?? bengaliBreakdownText.length;
+  const nextCharacterCodePointIndex = Array.from(bengaliBreakdownText.slice(0, nextCharacterOffset)).length;
+  const currentWordDetails = wordAtCharacterIndex(bengaliBreakdownText, nextCharacterCodePointIndex);
   const currentWord = currentWordDetails.word;
   const currentWordGlossKey = currentWord
     .normalize("NFC")
@@ -697,12 +699,13 @@ export default function BengaliCharacterBreakdown({ isOpen }) {
                     <div className="bengali-typing__current-word">
                       <b lang="bn">
                         {currentWordSegments.map(({ grapheme, offset }) => {
-                          const segmentEnd = currentWordDetails.start
-                            + Array.from(currentWord.slice(0, offset)).length
-                            + Array.from(grapheme).length;
+                          const wordStartOffset = Array.from(bengaliBreakdownText)
+                            .slice(0, currentWordDetails.start)
+                            .join("").length;
+                          const segmentEnd = wordStartOffset + offset + grapheme.length;
                           return (
                             <span
-                              className={segmentEnd <= matchedCount ? "is-filled" : ""}
+                              className={segmentEnd <= nextCharacterOffset ? "is-filled" : ""}
                               key={`${grapheme}-${offset}`}
                             >
                               {grapheme}
@@ -714,7 +717,7 @@ export default function BengaliCharacterBreakdown({ isOpen }) {
                       {currentWordGloss ? <span className="bengali-typing__current-gloss">{currentWordGloss}</span> : null}
                     </div>
                     <div className="bengali-typing__next">
-                      {typingMode === "keyboard" ? <strong lang="bn">{nextCharacter && /\p{Mark}/u.test(nextCharacter) ? `◌${nextCharacter}` : nextCharacter || "—"}</strong> : null}
+                      {typingMode === "keyboard" ? <strong lang="bn">{nextCharacter && /^\p{Mark}+$/u.test(nextCharacter) ? `◌${nextCharacter}` : nextCharacter || "—"}</strong> : null}
                       {nextCharacter ? (
                         <span>
                           {nextCharacterPronunciation(nextCharacter)}
@@ -750,15 +753,9 @@ export default function BengaliCharacterBreakdown({ isOpen }) {
               </div>
 
               <div className="bengali-typing__target" lang="bn" aria-label="Practice text">
-                {segments.map(({ grapheme, offset }) => (
+                {segments.map(({ grapheme, offset }, segmentIndex) => (
                   <span
-                    className={(() => {
-                      const segmentStart = Array.from(bengaliBreakdownText.slice(0, offset)).length;
-                      const segmentEnd = segmentStart + Array.from(grapheme).length;
-                      if (segmentEnd <= matchedCount) return "is-correct";
-                      if (segmentStart <= matchedCount && matchedCount < segmentEnd) return "is-next";
-                      return "";
-                    })()}
+                    className={segmentIndex < matchedCount ? "is-correct" : segmentIndex === matchedCount ? "is-next" : ""}
                     key={`${offset}-${grapheme}`}
                   >
                     {grapheme === " " ? "\u00A0" : grapheme}
