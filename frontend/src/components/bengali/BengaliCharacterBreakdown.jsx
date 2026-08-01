@@ -125,10 +125,19 @@ function groupSegmentsIntoWords(segments) {
 
 function approximatePronunciation(word) {
   let pronunciation = "";
-  for (const character of Array.from(word.normalize("NFC"))) {
+  const characters = Array.from(word.normalize("NFC"));
+  for (let index = 0; index < characters.length; index += 1) {
+    const character = characters[index];
+    const previousCharacter = characters[index - 1];
+    const nextCharacter = characters[index + 1];
+    const isDecomposedY = character === "য" && nextCharacter === "়";
+    const isYaPhala = character === "য" && previousCharacter === "্";
+
     if (PRONUNCIATION_LETTERS[character]) {
       const isConsonant = Boolean(LETTER_NAMES[character]) && !/^[অআইঈউঊঋএঐওঔ]$/u.test(character);
-      pronunciation += PRONUNCIATION_LETTERS[character] + (isConsonant ? "ô" : "");
+      const sound = isDecomposedY || isYaPhala ? "y" : PRONUNCIATION_LETTERS[character];
+      pronunciation += sound + (isConsonant ? "ô" : "");
+      if (isDecomposedY) index += 1;
     } else if (PRONUNCIATION_MARKS[character]) {
       pronunciation = pronunciation.replace(/ô$/u, "") + PRONUNCIATION_MARKS[character];
     } else if (character === "্") {
