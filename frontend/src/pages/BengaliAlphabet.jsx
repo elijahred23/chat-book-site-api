@@ -16,6 +16,7 @@ import {
   FaVolumeHigh,
 } from "react-icons/fa6";
 import { getGoogleTtsAudio } from "../utils/googleTtsAudioCache.js";
+import { BENGALI_LEARN_SECTIONS } from "../data/bengaliLearnSections.js";
 import "./BengaliAlphabet.css";
 
 const VOWELS = [
@@ -97,7 +98,6 @@ const LESSONS = [
 
 const TABS = [
   { id: "learn", label: "Learn", icon: FaBookOpen },
-  { id: "vowel-marks", label: "Vowel Sounds", icon: FaLanguage },
   { id: "lessons", label: "Lessons", icon: FaPlay },
   { id: "grammar", label: "Grammar Lessons", icon: FaBookOpen },
   { id: "words", label: "Make Words", icon: FaPuzzlePiece },
@@ -231,6 +231,10 @@ const GRAMMAR_LESSONS = [
 
 const SHORT_VOWEL_MARKS = [
   {
+    name: "আ-কার", mark: "া", sound: "a", placement: "Written after the consonant", placementBn: "ব্যঞ্জনের পরে লেখা হয়",
+    base: "ক", combined: "কা", romanized: "ka", example: "কাজ", exampleSound: "kaj", meaning: "work", position: "after",
+  },
+  {
     name: "ই-কার",
     mark: "ি",
     sound: "i",
@@ -243,6 +247,10 @@ const SHORT_VOWEL_MARKS = [
     exampleSound: "kintu",
     meaning: "but",
     position: "before",
+  },
+  {
+    name: "ঈ-কার", mark: "ী", sound: "ee", placement: "Written after the consonant", placementBn: "ব্যঞ্জনের পরে লেখা হয়",
+    base: "ক", combined: "কী", romanized: "kee", example: "নীল", exampleSound: "nil", meaning: "blue", position: "after",
   },
   {
     name: "উ-কার",
@@ -259,6 +267,10 @@ const SHORT_VOWEL_MARKS = [
     position: "below",
   },
   {
+    name: "ঊ-কার", mark: "ূ", sound: "oo", placement: "Written below the consonant", placementBn: "ব্যঞ্জনের নিচে লেখা হয়",
+    base: "ক", combined: "কূ", romanized: "koo", example: "দূর", exampleSound: "dur", meaning: "far", position: "below",
+  },
+  {
     name: "ঋ-কার",
     mark: "ৃ",
     sound: "ri",
@@ -272,7 +284,116 @@ const SHORT_VOWEL_MARKS = [
     meaning: "farmer",
     position: "below",
   },
+  {
+    name: "এ-কার", mark: "ে", sound: "e", placement: "Written before the consonant", placementBn: "ব্যঞ্জনের আগে লেখা হয়",
+    base: "ক", combined: "কে", romanized: "ke", example: "দেশ", exampleSound: "desh", meaning: "country", position: "before",
+  },
+  {
+    name: "ঐ-কার", mark: "ৈ", sound: "oi", placement: "Written before the consonant", placementBn: "ব্যঞ্জনের আগে লেখা হয়",
+    base: "ক", combined: "কৈ", romanized: "koi", example: "বৈঠক", exampleSound: "boithok", meaning: "meeting", position: "before",
+  },
+  {
+    name: "ও-কার", mark: "ো", sound: "o", placement: "Written around the consonant", placementBn: "ব্যঞ্জনের দুই পাশে লেখা হয়",
+    base: "ক", combined: "কো", romanized: "ko", example: "গোল", exampleSound: "gol", meaning: "round", position: "around",
+  },
+  {
+    name: "ঔ-কার", mark: "ৌ", sound: "ou", placement: "Written around the consonant", placementBn: "ব্যঞ্জনের দুই পাশে লেখা হয়",
+    base: "ক", combined: "কৌ", romanized: "kou", example: "কৌশল", exampleSound: "koushol", meaning: "skill", position: "around",
+  },
 ];
+
+const VOWEL_MARK_CHARACTERS = SHORT_VOWEL_MARKS.map((vowel) => ({
+  bn: vowel.combined,
+  sound: vowel.romanized,
+  example: vowel.example,
+  word: vowel.exampleSound,
+  meaning: vowel.meaning,
+}));
+
+const CONJUNCT_CLUSTERS = [
+  { bn: "শ্র", sound: "shrô", parts: "শ + ্ + র", example: "শ্রেণি", word: "shreni", meaning: "class" },
+  { bn: "ক্ষ", sound: "kh / kkh", parts: "ক + ্ + ষ", example: "শিক্ষা", word: "shikkha", meaning: "education" },
+  { bn: "জ্ঞ", sound: "gg / gy", parts: "জ + ্ + ঞ", example: "জ্ঞান", word: "ggan", meaning: "knowledge" },
+  { bn: "ত্র", sound: "trô", parts: "ত + ্ + র", example: "ত্রাণ", word: "tran", meaning: "relief" },
+  { bn: "ন্দ", sound: "ndô", parts: "ন + ্ + দ", example: "আনন্দ", word: "anondo", meaning: "joy" },
+  { bn: "ন্ধ", sound: "ndhô", parts: "ন + ্ + ধ", example: "বন্ধু", word: "bondhu", meaning: "friend" },
+  { bn: "ন্ত", sound: "ntô", parts: "ন + ্ + ত", example: "শান্ত", word: "shanto", meaning: "calm" },
+  { bn: "ম্প", sound: "mpô", parts: "ম + ্ + প", example: "সম্পদ", word: "shompod", meaning: "wealth" },
+  { bn: "ষ্ট", sound: "shtô", parts: "ষ + ্ + ট", example: "কষ্ট", word: "koshto", meaning: "hardship" },
+  { bn: "দ্ধ", sound: "ddhô", parts: "দ + ্ + ধ", example: "শ্রদ্ধা", word: "shroddha", meaning: "respect" },
+  { bn: "ক্র", sound: "krô", parts: "ক + ্ + র", example: "ক্রম", word: "krom", meaning: "order" },
+  { bn: "গ্র", sound: "grô", parts: "গ + ্ + র", example: "গ্রাম", word: "gram", meaning: "village" },
+  { bn: "স্ব", sound: "shwô / swô", parts: "স + ্ + ব", example: "স্বপ্ন", word: "shopno", meaning: "dream" },
+  { bn: "ক্ক", sound: "kkô", parts: "ক + ্ + ক", example: "এক্কা", word: "ekka", meaning: "ace / one-horse cart" },
+  { bn: "ক্ত", sound: "ktô", parts: "ক + ্ + ত", example: "শক্তি", word: "shokti", meaning: "strength" },
+  { bn: "গ্ধ", sound: "gdhô", parts: "গ + ্ + ধ", example: "মুগ্ধ", word: "mugdho", meaning: "fascinated" },
+  { bn: "গ্ন", sound: "gnô", parts: "গ + ্ + ন", example: "অগ্নি", word: "ogni", meaning: "fire" },
+  { bn: "ঙ্ক", sound: "ngkô", parts: "ঙ + ্ + ক", example: "অঙ্ক", word: "onko", meaning: "arithmetic" },
+  { bn: "ঙ্খ", sound: "ngkhô", parts: "ঙ + ্ + খ", example: "শঙ্খ", word: "shongkho", meaning: "conch shell" },
+  { bn: "ঙ্গ", sound: "nggô", parts: "ঙ + ্ + গ", example: "সঙ্গ", word: "shongo", meaning: "company" },
+  { bn: "ঙ্ঘ", sound: "ngghô", parts: "ঙ + ্ + ঘ", example: "সংঘ", word: "shongho", meaning: "association" },
+  { bn: "চ্চ", sound: "cchô", parts: "চ + ্ + চ", example: "উচ্চ", word: "uchcho", meaning: "high" },
+  { bn: "চ্ছ", sound: "chchhô", parts: "চ + ্ + ছ", example: "ইচ্ছা", word: "ichchha", meaning: "wish" },
+  { bn: "জ্জ", sound: "jjô", parts: "জ + ্ + জ", example: "লজ্জা", word: "lojja", meaning: "shame" },
+  { bn: "ঞ্চ", sound: "nchô", parts: "ঞ + ্ + চ", example: "অঞ্চল", word: "onchol", meaning: "region" },
+  { bn: "ঞ্জ", sound: "njô", parts: "ঞ + ্ + জ", example: "অঞ্জলি", word: "onjoli", meaning: "offering" },
+  { bn: "ণ্ট", sound: "ntô", parts: "ণ + ্ + ট", example: "ঘণ্টা", word: "ghonta", meaning: "bell / hour" },
+  { bn: "ণ্ড", sound: "ndô", parts: "ণ + ্ + ড", example: "পণ্ডিত", word: "pondit", meaning: "scholar" },
+  { bn: "ত্ত", sound: "ttô", parts: "ত + ্ + ত", example: "উত্তর", word: "uttor", meaning: "answer / north" },
+  { bn: "ত্থ", sound: "tthô", parts: "ত + ্ + থ", example: "উত্থান", word: "utthan", meaning: "rise" },
+  { bn: "ত্ম", sound: "tmô", parts: "ত + ্ + ম", example: "আত্মা", word: "atma", meaning: "soul" },
+  { bn: "থ্য", sound: "thyô", parts: "থ + ্ + য", example: "তথ্য", word: "toththo", meaning: "information" },
+  { bn: "দ্ব", sound: "dwô", parts: "দ + ্ + ব", example: "দ্বার", word: "dwar", meaning: "door" },
+  { bn: "দ্ম", sound: "dmô", parts: "দ + ্ + ম", example: "পদ্ম", word: "poddo", meaning: "lotus" },
+  { bn: "দ্য", sound: "dyô", parts: "দ + ্ + য", example: "বিদ্যা", word: "bidya", meaning: "knowledge" },
+  { bn: "ধ্ব", sound: "dhwô", parts: "ধ + ্ + ব", example: "ধ্বনি", word: "dhoni", meaning: "sound" },
+  { bn: "ন্ড", sound: "ndô", parts: "ন + ্ + ড", example: "ঠান্ডা", word: "thanda", meaning: "cold" },
+  { bn: "ন্ন", sound: "nnô", parts: "ন + ্ + ন", example: "অন্ন", word: "onno", meaning: "food / rice" },
+  { bn: "ন্ম", sound: "nmô", parts: "ন + ্ + ম", example: "জন্ম", word: "jonmo", meaning: "birth" },
+  { bn: "প্ত", sound: "ptô", parts: "প + ্ + ত", example: "সপ্ত", word: "shopto", meaning: "seven" },
+  { bn: "প্ন", sound: "pnô", parts: "প + ্ + ন", example: "স্বপ্ন", word: "shopno", meaning: "dream" },
+  { bn: "প্র", sound: "prô", parts: "প + ্ + র", example: "প্রশ্ন", word: "proshno", meaning: "question" },
+  { bn: "প্ল", sound: "plô", parts: "প + ্ + ল", example: "প্লাবন", word: "plabon", meaning: "flood" },
+  { bn: "ব্দ", sound: "bdô", parts: "ব + ্ + দ", example: "শব্দ", word: "shobdo", meaning: "word / sound" },
+  { bn: "ব্ধ", sound: "bdhô", parts: "ব + ্ + ধ", example: "লব্ধ", word: "lobdho", meaning: "obtained" },
+  { bn: "ব্র", sound: "brô", parts: "ব + ্ + র", example: "ব্রত", word: "broto", meaning: "vow" },
+  { bn: "ভ্র", sound: "bhrô", parts: "ভ + ্ + র", example: "ভ্রমণ", word: "bhromon", meaning: "travel" },
+  { bn: "ম্ম", sound: "mmô", parts: "ম + ্ + ম", example: "সম্মান", word: "shomman", meaning: "respect" },
+  { bn: "ম্ব", sound: "mbô", parts: "ম + ্ + ব", example: "লম্বা", word: "lomba", meaning: "tall" },
+  { bn: "র্থ", sound: "rthô", parts: "র + ্ + থ", example: "অর্থ", word: "ortho", meaning: "meaning / money" },
+  { bn: "র্ধ", sound: "rdhô", parts: "র + ্ + ধ", example: "অর্ধ", word: "ordho", meaning: "half" },
+  { bn: "ল্প", sound: "lpô", parts: "ল + ্ + প", example: "গল্প", word: "golpo", meaning: "story" },
+  { bn: "শ্চ", sound: "shchô", parts: "শ + ্ + চ", example: "আশ্চর্য", word: "ashchorjo", meaning: "surprise" },
+  { bn: "শ্ন", sound: "shnô", parts: "শ + ্ + ন", example: "প্রশ্ন", word: "proshno", meaning: "question" },
+  { bn: "শ্ব", sound: "shwô", parts: "শ + ্ + ব", example: "বিশ্ব", word: "bishsho", meaning: "world" },
+  { bn: "স্ক", sound: "skô", parts: "স + ্ + ক", example: "স্কুল", word: "skul", meaning: "school" },
+  { bn: "স্ত", sound: "stô", parts: "স + ্ + ত", example: "ব্যস্ত", word: "byasto", meaning: "busy" },
+  { bn: "স্থ", sound: "sthô", parts: "স + ্ + থ", example: "স্থান", word: "sthan", meaning: "place" },
+  { bn: "স্ন", sound: "snô", parts: "স + ্ + ন", example: "স্নেহ", word: "sneho", meaning: "affection" },
+  { bn: "স্প", sound: "spô", parts: "স + ্ + প", example: "স্পষ্ট", word: "sposhto", meaning: "clear" },
+  { bn: "স্ম", sound: "smô", parts: "স + ্ + ম", example: "স্মৃতি", word: "smriti", meaning: "memory" },
+  { bn: "হ্ন", sound: "hnô", parts: "হ + ্ + ন", example: "চিহ্ন", word: "chihno", meaning: "mark / sign" },
+  { bn: "হ্ম", sound: "hmô", parts: "হ + ্ + ম", example: "ব্রহ্ম", word: "brohmo", meaning: "Brahman" },
+  { bn: "ন্ত্র", sound: "ntrô", parts: "ন + ্ + ত + ্ + র", example: "মন্ত্র", word: "montro", meaning: "mantra" },
+  { bn: "ন্দ্র", sound: "ndrô", parts: "ন + ্ + দ + ্ + র", example: "চন্দ্র", word: "chondro", meaning: "moon" },
+  { bn: "ম্প্র", sound: "mprô", parts: "ম + ্ + প + ্ + র", example: "সম্প্রতি", word: "shomproti", meaning: "recently" },
+  { bn: "স্ত্র", sound: "strô", parts: "স + ্ + ত + ্ + র", example: "অস্ত্র", word: "ostro", meaning: "weapon" },
+  { bn: "ত্ত্ব", sound: "ttwô", parts: "ত + ্ + ত + ্ + ব", example: "তত্ত্ব", word: "totto", meaning: "theory" },
+  { bn: "ঙ্ক্ষ", sound: "ngkkhô", parts: "ঙ + ্ + ক + ্ + ষ", example: "আকাঙ্ক্ষা", word: "akankkha", meaning: "aspiration" },
+  { bn: "ষ্ক্র", sound: "shkrô", parts: "ষ + ্ + ক + ্ + র", example: "নিষ্ক্রিয়", word: "nishkriyo", meaning: "inactive" },
+  { bn: "জ্জ্ব", sound: "jjwô", parts: "জ + ্ + জ + ্ + ব", example: "উজ্জ্বল", word: "ujjol", meaning: "bright" },
+];
+
+const CONJUNCT_BEGINNER = new Set(["শ্র", "ক্ষ", "জ্ঞ", "ত্র", "ন্দ", "ন্ধ", "ন্ত", "ম্প", "ষ্ট", "দ্ধ", "ক্র", "গ্র", "স্ব", "ক্ত", "প্র"]);
+const CONJUNCT_COMMON = new Set(["গ্ন", "ঙ্ক", "ঙ্খ", "ঙ্গ", "চ্চ", "চ্ছ", "জ্জ", "ঞ্চ", "ঞ্জ", "ণ্ট", "ণ্ড", "ত্ত", "ত্ম", "থ্য", "দ্ব", "দ্ম", "দ্য", "ধ্ব", "ন্ড", "ন্ন", "ন্ম", "প্ন", "ব্দ", "ব্র", "ভ্র", "ম্ম", "ম্ব", "র্থ", "ল্প", "শ্চ", "শ্ন", "শ্ব", "স্ক", "স্ত", "স্থ", "স্ন", "স্প", "স্ম"]);
+const CONJUNCT_RARE = new Set(["হ্ম", "ঙ্ক্ষ", "ষ্ক্র", "জ্জ্ব"]);
+
+function conjunctLevel(conjunct) {
+  if (CONJUNCT_BEGINNER.has(conjunct)) return "beginner";
+  if (CONJUNCT_COMMON.has(conjunct)) return "common";
+  if (CONJUNCT_RARE.has(conjunct)) return "rare";
+  return "advanced";
+}
 
 // This curriculum also powers the matching Class 1–12 Bengali Tutor lessons.
 // eslint-disable-next-line react-refresh/only-export-components
@@ -771,6 +892,116 @@ CharacterCard.propTypes = {
   onLoop: PropTypes.func.isRequired,
 };
 
+function VowelMarksSection({ voiceMode }) {
+  return (
+    <section className="alpha-vowel-marks">
+      <div className="alpha-vowel-rule">
+        <span>ব্যঞ্জন</span><strong>consonant</strong><b>+</b><span>কার</span><strong>vowel mark</strong><b>=</b><span>নতুন ধ্বনি</span><strong>new sound</strong>
+      </div>
+      <div className="alpha-vowel-grid">
+        {SHORT_VOWEL_MARKS.map((vowel) => (
+          <article className="alpha-vowel-card" key={vowel.name}>
+            <div className="alpha-vowel-card-top">
+              <div><span className="alpha-kicker">{vowel.position.toUpperCase()} THE CONSONANT</span><h3>{vowel.name} <small>( {vowel.mark} )</small></h3></div>
+              <AudioButton text={vowel.combined} label={`Hear ${vowel.combined}`} voiceMode={voiceMode} />
+            </div>
+            <p>{vowel.placement}</p><small className="alpha-placement-bn">{vowel.placementBn}</small>
+            <button className="alpha-vowel-equation" type="button" onClick={() => voiceMode === "google" ? speakGoogleBengali(vowel.combined).catch((error) => console.error("Google Bengali speech error:", error)) : speakBengali(vowel.combined)} aria-label={`Hear ${vowel.combined}, ${vowel.romanized}`}>
+              <span>{vowel.base}</span><b>+</b><span className="is-mark">{vowel.mark}</span><b>=</b><span className="is-result">{vowel.combined}</span>
+            </button>
+            <div className="alpha-vowel-pronunciation"><strong>{vowel.combined}</strong><span>{vowel.romanized}</span><em>sound: {vowel.sound}</em></div>
+            <div className="alpha-vowel-example"><div><span>Example word</span><strong>{vowel.example}</strong><small>{vowel.exampleSound} · {vowel.meaning}</small></div><AudioButton text={vowel.example} label={`Hear ${vowel.example}`} voiceMode={voiceMode} /></div>
+          </article>
+        ))}
+      </div>
+      <div className="alpha-tip"><span>Remember</span>The <strong>ই-কার (ি)</strong> appears visually before the consonant, but you pronounce the consonant first: <strong>ক + ি = কি (ki)</strong>.</div>
+    </section>
+  );
+}
+
+VowelMarksSection.propTypes = { voiceMode: PropTypes.oneOf(["system", "google"]).isRequired };
+
+function ConjunctSection({ voiceMode }) {
+  const [level, setLevel] = useState("beginner");
+  const [search, setSearch] = useState("");
+  const filteredConjuncts = useMemo(() => {
+    const query = search.trim().toLocaleLowerCase();
+    return CONJUNCT_CLUSTERS.filter((cluster) => {
+      const matchesLevel = level === "all" || conjunctLevel(cluster.bn) === level;
+      const matchesSearch = !query || [cluster.bn, cluster.parts, cluster.example, cluster.word, cluster.meaning]
+        .some((value) => value.toLocaleLowerCase().includes(query));
+      return matchesLevel && matchesSearch;
+    });
+  }, [level, search]);
+
+  return (
+    <section className="alpha-conjunct-section">
+      <div className="alpha-conjunct-controls">
+        <label>Search conjuncts or words<input type="search" value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Try শ্র, শিক্ষা, or knowledge" /></label>
+        <label>Difficulty<select value={level} onChange={(event) => setLevel(event.target.value)}><option value="beginner">Beginner</option><option value="common">Common</option><option value="advanced">Advanced</option><option value="rare">Rare</option><option value="all">All conjuncts</option></select></label>
+        <span>{filteredConjuncts.length} of {CONJUNCT_CLUSTERS.length}</span>
+      </div>
+      <div className="alpha-conjunct-grid">
+        {filteredConjuncts.map((cluster) => (
+          <article className="alpha-conjunct-card" key={cluster.bn}>
+            <div className="alpha-conjunct-top"><strong lang="bn">{cluster.bn}</strong><AudioButton text={cluster.bn} label={`Hear ${cluster.bn}`} voiceMode={voiceMode} /></div>
+            <span className="alpha-conjunct-level">{conjunctLevel(cluster.bn)}</span>
+            <span className="alpha-conjunct-sound">{cluster.sound}</span>
+            <div className="alpha-conjunct-parts" lang="bn">{cluster.parts}</div>
+            <div className="alpha-vowel-example"><div><span>Example word</span><strong>{cluster.example}</strong><small>{cluster.word} · {cluster.meaning}</small></div><AudioButton text={cluster.example} label={`Hear ${cluster.example}`} voiceMode={voiceMode} /></div>
+          </article>
+        ))}
+        {!filteredConjuncts.length && <div className="alpha-conjunct-empty">No conjuncts match this search and difficulty.</div>}
+      </div>
+      <div className="alpha-tip"><span>How conjuncts work</span>A <strong>যুক্তবর্ণ (juktoborno)</strong> forms when a hasanta joins two or more consonants. The written shape and spoken sound can change, so learn each cluster through a familiar word.</div>
+    </section>
+  );
+}
+
+ConjunctSection.propTypes = { voiceMode: PropTypes.oneOf(["system", "google"]).isRequired };
+
+function LearnTopicSection({ section, voiceMode }) {
+  return (
+    <section className={`alpha-topic-section ${section.id === "reading-practice" ? "is-reading" : ""}`}>
+      <div className="alpha-topic-grid">
+        {section.items.map((item) => (
+          <article className="alpha-topic-card" key={`${section.id}-${item.title}`}>
+            <div className="alpha-topic-top">
+              <strong lang="bn">{item.bn}</strong>
+              <AudioButton text={item.example || item.bn} label={`Hear ${item.example || item.bn}`} voiceMode={voiceMode} />
+            </div>
+            <span className="alpha-topic-sound">{item.sound}</span>
+            <h3>{item.title}</h3>
+            <p>{item.note}</p>
+            <div className="alpha-topic-example">
+              <span>Example</span>
+              <strong lang="bn">{item.example}</strong>
+              <small>{item.meaning}</small>
+            </div>
+          </article>
+        ))}
+      </div>
+      <div className="alpha-tip"><span>Practice tip</span>{section.tip}</div>
+    </section>
+  );
+}
+
+LearnTopicSection.propTypes = {
+  section: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    tip: PropTypes.string.isRequired,
+    items: PropTypes.arrayOf(PropTypes.shape({
+      bn: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      sound: PropTypes.string.isRequired,
+      example: PropTypes.string.isRequired,
+      meaning: PropTypes.string.isRequired,
+      note: PropTypes.string.isRequired,
+    })).isRequired,
+  }).isRequired,
+  voiceMode: PropTypes.oneOf(["system", "google"]).isRequired,
+};
+
 export default function BengaliAlphabet() {
   const [tab, setTab] = useState("learn");
   const [group, setGroup] = useState("vowels");
@@ -799,10 +1030,19 @@ export default function BengaliAlphabet() {
   const [isLooping, setIsLooping] = useState(false);
   const [loopIndex, setLoopIndex] = useState(0);
   const [loopCharacter, setLoopCharacter] = useState("");
-  const characters = group === "vowels" ? VOWELS : CONSONANTS;
+  const activeLearnSection = BENGALI_LEARN_SECTIONS.find((section) => section.id === group);
+  const characters = useMemo(() => group === "vowels"
+    ? VOWELS
+    : group === "consonants"
+      ? CONSONANTS
+      : group === "vowel-marks"
+        ? VOWEL_MARK_CHARACTERS
+        : group === "conjuncts"
+          ? CONJUNCT_CLUSTERS
+          : [], [group]);
   const playbackCharacters = useMemo(
-    () => loopCharacter ? allCharacters.filter((character) => character.bn === loopCharacter) : characters,
-    [allCharacters, characters, loopCharacter],
+    () => loopCharacter ? characters.filter((character) => character.bn === loopCharacter) : characters,
+    [characters, loopCharacter],
   );
 
   useEffect(() => {
@@ -1034,16 +1274,25 @@ export default function BengaliAlphabet() {
           <main className="alpha-content">
             <div className="alpha-section-heading">
               <div>
-                <span className="alpha-kicker">CHARACTER LIBRARY</span>
-                <h2>Meet the Bangla characters</h2>
-                <p>Tap the speaker to hear a letter. Use each example word to remember its sound.</p>
+                <span className="alpha-kicker">{activeLearnSection ? `${activeLearnSection.bnTitle} · GUIDED TOPIC` : group === "vowel-marks" ? "কারচিহ্ন · ALL VOWEL MARKS" : group === "conjuncts" ? "যুক্তবর্ণ · CONJUNCTS" : "CHARACTER LIBRARY"}</span>
+                <h2>{activeLearnSection?.title || (group === "vowel-marks" ? "Marks that change a consonant" : group === "conjuncts" ? "Meet the joined consonants" : "Meet the Bangla characters")}</h2>
+                <p>{activeLearnSection?.description || (group === "vowel-marks" ? "Learn all ten dependent vowel signs, where they appear, and how they sound inside words." : group === "conjuncts" ? "See how consonants join through a hasanta and learn the cluster through a familiar word." : "Tap the speaker to hear a letter. Use each example word to remember its sound.")}</p>
               </div>
               <div className="alpha-learn-controls">
                 <div className="alpha-segmented">
                   <button className={group === "vowels" ? "active" : ""} type="button" onClick={() => setGroup("vowels")}>Vowels · স্বরবর্ণ</button>
                   <button className={group === "consonants" ? "active" : ""} type="button" onClick={() => setGroup("consonants")}>Consonants · ব্যঞ্জনবর্ণ</button>
+                  <button className={group === "vowel-marks" ? "active" : ""} type="button" onClick={() => setGroup("vowel-marks")}>Vowel sounds · কার</button>
+                  <button className={group === "conjuncts" ? "active" : ""} type="button" onClick={() => setGroup("conjuncts")}>Conjuncts · যুক্তবর্ণ</button>
                 </div>
-                <button
+                <label className="alpha-learn-topic-select">
+                  <span>More lessons · আরও পাঠ</span>
+                  <select value={activeLearnSection?.id || ""} onChange={(event) => event.target.value && setGroup(event.target.value)}>
+                    <option value="" disabled>Choose a guided topic</option>
+                    {BENGALI_LEARN_SECTIONS.map((section, index) => <option key={section.id} value={section.id}>{index + 2}. {section.title} · {section.bnTitle}</option>)}
+                  </select>
+                </label>
+                {!activeLearnSection && <button
                   className={`alpha-loop-button ${isLooping ? "is-playing" : ""}`}
                   type="button"
                   onClick={() => {
@@ -1053,10 +1302,10 @@ export default function BengaliAlphabet() {
                   }}
                 >
                   {isLooping && !loopCharacter ? <><FaStop /> Stop loop</> : <><FaRotateRight /> Loop {group}</>}
-                </button>
+                </button>}
               </div>
             </div>
-            {isLooping && (
+            {isLooping && playbackCharacters.length > 0 && (
               <div className="alpha-now-playing" role="status">
                 <span className="alpha-now-playing-bars" aria-hidden="true"><i /><i /><i /></span>
                 <span>Now playing</span>
@@ -1064,7 +1313,7 @@ export default function BengaliAlphabet() {
                 <small>{playbackCharacters[loopIndex].sound} · repeats continuously</small>
               </div>
             )}
-            <div className="alpha-character-grid">
+            {(group === "vowels" || group === "consonants") && <div className="alpha-character-grid">
               {characters.map((character) => (
                 <CharacterCard
                   key={character.bn}
@@ -1081,7 +1330,10 @@ export default function BengaliAlphabet() {
                   }}
                 />
               ))}
-            </div>
+            </div>}
+            {group === "vowel-marks" && <VowelMarksSection voiceMode={voiceMode} />}
+            {group === "conjuncts" && <ConjunctSection voiceMode={voiceMode} />}
+            {activeLearnSection && <LearnTopicSection section={activeLearnSection} voiceMode={voiceMode} />}
           </main>
         )}
 
@@ -1123,53 +1375,6 @@ export default function BengaliAlphabet() {
                 Next lesson <FaArrowRight />
               </button>
             </article>
-          </main>
-        )}
-
-        {tab === "vowel-marks" && (
-          <main className="alpha-content alpha-vowel-marks">
-            <div className="alpha-section-heading">
-              <div>
-                <span className="alpha-kicker">হ্রস্ব স্বরধ্বনি · SHORT VOWEL SOUNDS</span>
-                <h2>Small marks that change a consonant</h2>
-                <p>These dependent vowel signs attach to a consonant. Notice where each mark is written, then tap the example to hear the new sound.</p>
-              </div>
-            </div>
-            <div className="alpha-vowel-rule">
-              <span>ব্যঞ্জন</span><strong>consonant</strong><b>+</b><span>কার</span><strong>vowel mark</strong><b>=</b><span>নতুন ধ্বনি</span><strong>new sound</strong>
-            </div>
-            <div className="alpha-vowel-grid">
-              {SHORT_VOWEL_MARKS.map((vowel) => (
-                <article className="alpha-vowel-card" key={vowel.name}>
-                  <div className="alpha-vowel-card-top">
-                    <div>
-                      <span className="alpha-kicker">{vowel.position === "before" ? "BEFORE" : "BELOW"} THE CONSONANT</span>
-                      <h3>{vowel.name} <small>( {vowel.mark} )</small></h3>
-                    </div>
-                    <AudioButton text={vowel.combined} label={`Hear ${vowel.combined}`} voiceMode={voiceMode} />
-                  </div>
-                  <p>{vowel.placement}</p>
-                  <small className="alpha-placement-bn">{vowel.placementBn}</small>
-                  <button
-                    className="alpha-vowel-equation"
-                    type="button"
-                    onClick={() => voiceMode === "google" ? speakGoogleBengali(vowel.combined).catch((error) => console.error("Google Bengali speech error:", error)) : speakBengali(vowel.combined)}
-                    aria-label={`Hear ${vowel.combined}, ${vowel.romanized}`}
-                  >
-                    <span>{vowel.base}</span><b>+</b><span className="is-mark">{vowel.mark}</span><b>=</b><span className="is-result">{vowel.combined}</span>
-                  </button>
-                  <div className="alpha-vowel-pronunciation"><strong>{vowel.combined}</strong><span>{vowel.romanized}</span><em>sound: {vowel.sound}</em></div>
-                  <div className="alpha-vowel-example">
-                    <div><span>Example word</span><strong>{vowel.example}</strong><small>{vowel.exampleSound} · {vowel.meaning}</small></div>
-                    <AudioButton text={vowel.example} label={`Hear ${vowel.example}`} voiceMode={voiceMode} />
-                  </div>
-                </article>
-              ))}
-            </div>
-            <div className="alpha-tip">
-              <span>Remember</span>
-              The <strong>ই-কার (ি)</strong> appears visually before the consonant, but you pronounce the consonant first: <strong>ক + ি = কি (ki)</strong>.
-            </div>
           </main>
         )}
 

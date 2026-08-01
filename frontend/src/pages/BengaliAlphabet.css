@@ -68,6 +68,9 @@
 .alpha-segmented button { min-height: 40px; border: 0; border-radius: 9px; padding: .55rem .8rem; background: transparent; color: var(--alpha-muted); font-size: .78rem; font-weight: 800; cursor: pointer; }
 .alpha-segmented button.active { background: #fff; color: var(--alpha-green); box-shadow: 0 3px 10px rgba(25,55,39,.1); }
 .alpha-learn-controls { display: grid; flex: 0 0 auto; gap: .55rem; }
+.alpha-learn-topic-select { display: grid; gap: .28rem; color: var(--alpha-muted); font-size: .64rem; font-weight: 900; letter-spacing: .06em; text-transform: uppercase; }
+.alpha-learn-topic-select select { width: 100%; min-height: 42px; border: 1px solid #cbd9cf; border-radius: 11px; padding: .6rem 2.4rem .6rem .75rem; background: #fff; color: var(--alpha-ink); font: inherit; font-size: .78rem; font-weight: 800; letter-spacing: 0; text-transform: none; cursor: pointer; }
+.alpha-learn-topic-select select:focus { border-color: var(--alpha-green); outline: 3px solid rgba(23,107,77,.12); }
 .alpha-loop-button { min-height: 42px; display: inline-flex; align-items: center; justify-content: center; gap: .5rem; border: 1px solid var(--alpha-green); border-radius: 11px; padding: .6rem .85rem; background: #fff; color: var(--alpha-green); font-size: .78rem; font-weight: 850; cursor: pointer; }
 .alpha-loop-button:hover { background: var(--alpha-mint); }
 .alpha-loop-button.is-playing { border-color: #b35e22; background: #fff4e9; color: #9a4a14; }
@@ -149,6 +152,38 @@
 .alpha-vowel-example strong { font-family: "Noto Sans Bengali", sans-serif; font-size: 1.2rem; }
 .alpha-vowel-example small { overflow: hidden; color: var(--alpha-muted); font-size: .7rem; text-overflow: ellipsis; white-space: nowrap; }
 .alpha-vowel-marks > .alpha-tip { margin: 1rem 0 0; }
+
+.alpha-conjunct-section { display: grid; gap: .9rem; }
+.alpha-conjunct-controls { display: grid; grid-template-columns: minmax(12rem,1fr) minmax(10rem,.45fr) auto; align-items: end; gap: .7rem; border: 1px solid #dce5de; border-radius: 15px; padding: .8rem; background: #f7faf8; }
+.alpha-conjunct-controls label { display: grid; gap: .3rem; color: var(--alpha-muted); font-size: .65rem; font-weight: 900; letter-spacing: .05em; text-transform: uppercase; }
+.alpha-conjunct-controls input, .alpha-conjunct-controls select { width: 100%; min-height: 44px; border: 1px solid #cbd9cf; border-radius: 10px; padding: .65rem .75rem; background: #fff; color: var(--alpha-ink); font: inherit; font-size: .8rem; text-transform: none; }
+.alpha-conjunct-controls input:focus, .alpha-conjunct-controls select:focus { border-color: var(--alpha-green); outline: 3px solid rgba(23,107,77,.12); }
+.alpha-conjunct-controls > span { border-radius: 999px; padding: .5rem .7rem; background: var(--alpha-mint); color: var(--alpha-green); font-size: .72rem; font-weight: 900; white-space: nowrap; }
+.alpha-conjunct-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: .8rem; }
+.alpha-conjunct-card { min-width: 0; border: 1px solid #dce5de; border-radius: 18px; padding: 1rem; background: #fcfdfb; box-shadow: 0 9px 24px rgba(31,60,44,.055); }
+.alpha-conjunct-top { display: flex; align-items: flex-start; justify-content: space-between; gap: .7rem; }
+.alpha-conjunct-top > strong { color: var(--alpha-dark); font-family: "Noto Sans Bengali", "Nirmala UI", sans-serif; font-size: 3.3rem; line-height: 1.1; }
+.alpha-conjunct-sound { display: block; margin-top: .25rem; color: var(--alpha-green); font-size: .82rem; font-weight: 900; }
+.alpha-conjunct-level { display: inline-block; border-radius: 999px; padding: .2rem .45rem; background: #edf2ee; color: var(--alpha-muted); font-size: .58rem; font-weight: 900; letter-spacing: .06em; text-transform: uppercase; }
+.alpha-conjunct-parts { margin-top: .75rem; border-radius: 10px; padding: .55rem .65rem; background: #edf5f0; color: #456154; font-family: "Noto Sans Bengali", sans-serif; font-size: .85rem; font-weight: 750; text-align: center; }
+.alpha-conjunct-section > .alpha-tip { margin: .2rem 0 0; }
+
+.alpha-topic-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: .85rem; }
+.alpha-topic-card { min-width: 0; display: grid; align-content: start; border: 1px solid #dfe7e1; border-radius: 17px; padding: 1rem; background: #fff; }
+.alpha-topic-card:hover { border-color: #aac9b6; box-shadow: 0 12px 28px rgba(31,60,44,.08); }
+.alpha-topic-top { min-width: 0; display: flex; align-items: flex-start; justify-content: space-between; gap: .7rem; }
+.alpha-topic-top > strong { overflow-wrap: anywhere; color: #0b6044; font-family: "Noto Sans Bengali", "Nirmala UI", sans-serif; font-size: clamp(1.7rem, 3vw, 2.5rem); line-height: 1.25; }
+.alpha-topic-sound { margin-top: .45rem; color: var(--alpha-green); font-size: .78rem; font-weight: 850; }
+.alpha-topic-card h3 { margin: .65rem 0 .3rem; color: #14251c; font-size: .95rem; }
+.alpha-topic-card > p { margin: 0; color: var(--alpha-muted); font-size: .78rem; line-height: 1.5; }
+.alpha-topic-example { display: grid; gap: .1rem; margin-top: .8rem; border-top: 1px solid #edf0ed; padding-top: .7rem; }
+.alpha-topic-example span { color: #87968d; font-size: .62rem; font-weight: 900; letter-spacing: .07em; text-transform: uppercase; }
+.alpha-topic-example strong { color: #10241a; font-family: "Noto Sans Bengali", sans-serif; font-size: 1.05rem; }
+.alpha-topic-example small { color: var(--alpha-muted); font-size: .72rem; line-height: 1.4; }
+.alpha-topic-section > .alpha-tip { margin: 1rem 0 0; }
+.alpha-topic-section.is-reading .alpha-topic-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+.alpha-topic-section.is-reading .alpha-topic-top > strong { font-size: clamp(1.25rem, 2.4vw, 1.65rem); line-height: 1.65; }
+.alpha-conjunct-empty { grid-column: 1 / -1; min-height: 10rem; display: grid; place-items: center; border: 1px dashed #cbd9cf; border-radius: 16px; color: var(--alpha-muted); text-align: center; }
 
 .alpha-lesson-select { display: grid; flex: 0 0 min(100%, 21rem); gap: .3rem; color: var(--alpha-muted); font-size: .65rem; font-weight: 900; letter-spacing: .06em; text-transform: uppercase; }
 .alpha-lesson-select select { width: 100%; text-transform: none; }
@@ -275,6 +310,10 @@
   .alpha-lesson-list { border-right: 0; border-bottom: 1px solid #e2e8e3; padding: 0 0 1.5rem; }
   .alpha-lesson-characters { grid-template-columns: repeat(2, minmax(0,1fr)); }
   .alpha-vowel-grid { grid-template-columns: 1fr; }
+  .alpha-conjunct-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .alpha-topic-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .alpha-conjunct-controls { grid-template-columns: 1fr 1fr; }
+  .alpha-conjunct-controls > span { grid-column: 1 / -1; width: fit-content; }
   .alpha-grammar-examples > div { grid-template-columns: 2rem minmax(0,1fr) 34px; }
   .alpha-grammar-examples p { grid-column: 2 / -1; }
   .alpha-practice-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
@@ -292,6 +331,10 @@
   .alpha-voice-card small { white-space: normal; }
   .alpha-voice-toggle { flex-direction: column; }
   .alpha-character-grid, .alpha-practice-grid { grid-template-columns: 1fr; }
+  .alpha-conjunct-grid { grid-template-columns: 1fr; }
+  .alpha-topic-grid, .alpha-topic-section.is-reading .alpha-topic-grid { grid-template-columns: 1fr; }
+  .alpha-conjunct-controls { grid-template-columns: 1fr; }
+  .alpha-conjunct-controls > span { grid-column: auto; }
   .alpha-vowel-rule { gap: .3rem; padding-inline: .7rem; }
   .alpha-vowel-rule span { font-size: 1rem; }
   .alpha-vowel-rule strong { font-size: .58rem; }
