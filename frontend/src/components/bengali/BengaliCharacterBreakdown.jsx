@@ -45,6 +45,7 @@ const PRONUNCIATION_MARKS = {
   "া": "a", "ি": "i", "ী": "i", "ু": "u", "ূ": "u", "ৃ": "ri",
   "ে": "e", "ৈ": "oi", "ো": "o", "ৌ": "ou",
 };
+const DECOMPOSED_NUKTA_SOUNDS = { "ড": "ṛ", "ঢ": "ṛh", "য": "y" };
 const COMMON_BENGALI_KEYBOARD_ROWS = [
   ["অ", "আ", "ই", "ঈ", "উ", "ঊ", "ঋ", "এ", "ঐ", "ও", "ঔ"],
   ["ক", "খ", "গ", "ঘ", "ঙ", "চ", "ছ", "জ", "ঝ", "ঞ"],
@@ -130,14 +131,23 @@ function approximatePronunciation(word) {
     const character = characters[index];
     const previousCharacter = characters[index - 1];
     const nextCharacter = characters[index + 1];
-    const isDecomposedY = character === "য" && nextCharacter === "়";
+    const conjunctCharacter = nextCharacter === "্" ? characters[index + 2] : "";
+    const decomposedNuktaSound = nextCharacter === "়" ? DECOMPOSED_NUKTA_SOUNDS[character] : "";
     const isYaPhala = character === "য" && previousCharacter === "্";
 
-    if (PRONUNCIATION_LETTERS[character]) {
+    if (character === "ক" && conjunctCharacter === "ষ") {
+      pronunciation += `${pronunciation ? "kkh" : "kh"}ô`;
+      index += 2;
+    } else if (character === "জ" && conjunctCharacter === "ঞ") {
+      pronunciation += "ggô";
+      index += 2;
+    } else if (decomposedNuktaSound) {
+      pronunciation += `${decomposedNuktaSound}ô`;
+      index += 1;
+    } else if (PRONUNCIATION_LETTERS[character]) {
       const isConsonant = Boolean(LETTER_NAMES[character]) && !/^[অআইঈউঊঋএঐওঔ]$/u.test(character);
-      const sound = isDecomposedY || isYaPhala ? "y" : PRONUNCIATION_LETTERS[character];
+      const sound = isYaPhala ? "y" : PRONUNCIATION_LETTERS[character];
       pronunciation += sound + (isConsonant ? "ô" : "");
-      if (isDecomposedY) index += 1;
     } else if (PRONUNCIATION_MARKS[character]) {
       pronunciation = pronunciation.replace(/ô$/u, "") + PRONUNCIATION_MARKS[character];
     } else if (character === "্") {
@@ -205,6 +215,32 @@ function characterSoundLabel(character) {
   if (character === "।") return "stop";
   if (character === "॥") return "double stop";
   return describeCharacter(character).name;
+}
+
+function characterSoundEntries(word) {
+  const characters = Array.from(word.normalize("NFC"));
+  const entries = [];
+
+  for (let index = 0; index < characters.length; index += 1) {
+    const character = characters[index];
+    const previousCharacter = characters[index - 1];
+    const nextCharacter = characters[index + 1];
+    const decomposedNuktaSound = nextCharacter === "়" ? DECOMPOSED_NUKTA_SOUNDS[character] : "";
+
+    if (decomposedNuktaSound) {
+      entries.push({
+        character: `${character}${nextCharacter}`,
+        sound: `${decomposedNuktaSound}ô`,
+      });
+      index += 1;
+    } else if (character === "য" && previousCharacter === "্") {
+      entries.push({ character, sound: "yô · য-ফলা" });
+    } else {
+      entries.push({ character, sound: characterSoundLabel(character) });
+    }
+  }
+
+  return entries;
 }
 
 function splitWorksheetSentences(text) {
@@ -650,15 +686,16 @@ export default function BengaliCharacterBreakdown({ isOpen }) {
         <ol className="bengali-breakdown__list" aria-label="Character breakdown">
           {wordGroups.map((wordSegments, wordIndex) => {
             const completedWord = wordSegments.map(({ grapheme }) => grapheme).join("");
+            const soundEntries = characterSoundEntries(completedWord);
             return (
                 <li className="bengali-breakdown__item is-completed-word" key={`word-${wordIndex}-${wordSegments[0].offset}`}>
                   <div className="bengali-breakdown__completed-glyph">
                     <strong lang="bn">{completedWord}</strong>
                     <div className="bengali-breakdown__character-sounds" aria-label={`${completedWord} characters and sounds`}>
-                      {Array.from(completedWord).map((character, characterIndex) => (
+                      {soundEntries.map(({ character, sound }, characterIndex) => (
                         <span className="bengali-breakdown__character-sound" key={`${character}-${characterIndex}`}>
                           <b lang="bn">{character}</b>
-                          <small>{characterSoundLabel(character)}</small>
+                          <small>{sound}</small>
                         </span>
                       ))}
                     </div>
