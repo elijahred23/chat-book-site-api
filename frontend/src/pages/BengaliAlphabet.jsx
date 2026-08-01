@@ -7,8 +7,10 @@ import {
   FaCheck,
   FaGamepad,
   FaLanguage,
+  FaLightbulb,
   FaPenNib,
   FaPlay,
+  FaPuzzlePiece,
   FaRotateRight,
   FaStop,
   FaVolumeHigh,
@@ -95,10 +97,569 @@ const LESSONS = [
 
 const TABS = [
   { id: "learn", label: "Learn", icon: FaBookOpen },
+  { id: "vowel-marks", label: "Vowel Sounds", icon: FaLanguage },
   { id: "lessons", label: "Lessons", icon: FaPlay },
+  { id: "grammar", label: "Grammar Lessons", icon: FaBookOpen },
+  { id: "words", label: "Make Words", icon: FaPuzzlePiece },
   { id: "practice", label: "Practice", icon: FaPenNib },
   { id: "games", label: "Games", icon: FaGamepad },
   { id: "translate", label: "Translate", icon: FaLanguage },
+];
+
+const GRAMMAR_LESSONS = [
+  {
+    title: "Pronouns and ‘to be’",
+    bnTitle: "সর্বনাম ও ‘হওয়া’",
+    description: "Meet আমি, তুমি, সে, আমরা and learn why Bengali often leaves out am, is, and are.",
+    pattern: "pronoun + description",
+    examples: [
+      ["আমি ছাত্র।", "ami chatro", "I am a student."],
+      ["সে ভালো।", "she bhalo", "He or she is well."],
+      ["আমরা বন্ধু।", "amra bondhu", "We are friends."],
+    ],
+    tip: "Bengali usually does not need a present-tense word for ‘am,’ ‘is,’ or ‘are.’",
+  },
+  {
+    title: "Basic sentence order",
+    bnTitle: "বাক্যের সাধারণ ক্রম",
+    description: "Build sentences in Bengali’s usual Subject–Object–Verb order.",
+    pattern: "subject + object + verb",
+    examples: [
+      ["আমি বই পড়ি।", "ami boi poṛi", "I read a book."],
+      ["সে ভাত খায়।", "she bhat khay", "He or she eats rice."],
+      ["আমরা বাংলা শিখি।", "amra bangla shikhi", "We learn Bengali."],
+    ],
+    tip: "The action normally comes at the end: literally, ‘I book read.’",
+  },
+  {
+    title: "Making plurals",
+    bnTitle: "বহুবচন",
+    description: "Use -রা for people and -গুলো or -গুলি for things.",
+    pattern: "person + রা · thing + গুলো",
+    examples: [
+      ["ছেলেরা খেলছে।", "chhelera khelchhe", "The boys are playing."],
+      ["বইগুলো নতুন।", "boigulo notun", "The books are new."],
+      ["বন্ধুরা এসেছে।", "bondhura eshechhe", "The friends have come."],
+    ],
+    tip: "Use -রা mainly for people; -গুলো is common for objects and animals.",
+  },
+  {
+    title: "Using classifiers",
+    bnTitle: "গণনাবাচক শব্দ",
+    description: "Count naturally with জন for people and টি or টা for things.",
+    pattern: "number + classifier + noun",
+    examples: [
+      ["এক জন মানুষ", "ek jon manush", "one person"],
+      ["দুইটা বই", "duita boi", "two books"],
+      ["তিনটি ফুল", "tinti phul", "three flowers"],
+    ],
+    tip: "A classifier normally sits between the number and the noun.",
+  },
+  {
+    title: "Present-tense verbs",
+    bnTitle: "বর্তমান কালের ক্রিয়া",
+    description: "See how a verb changes with the speaker and level of respect.",
+    pattern: "আমি করি · তুমি করো · সে করে",
+    examples: [
+      ["আমি কাজ করি।", "ami kaj kori", "I work."],
+      ["তুমি কী করো?", "tumi ki koro", "What do you do?"],
+      ["সে রান্না করে।", "she ranna kore", "He or she cooks."],
+    ],
+    tip: "Learn a verb as a family of forms rather than as one unchanging word.",
+  },
+  {
+    title: "Negatives",
+    bnTitle: "না-বোধক বাক্য",
+    description: "Make a statement negative by placing না after the verb.",
+    pattern: "statement + না",
+    examples: [
+      ["আমি জানি না।", "ami jani na", "I do not know."],
+      ["সে যায় না।", "she jay na", "He or she does not go."],
+      ["আমরা চা খাই না।", "amra cha khai na", "We do not drink tea."],
+    ],
+    tip: "In most simple sentences, না follows the verb it makes negative.",
+  },
+  {
+    title: "Asking questions",
+    bnTitle: "প্রশ্ন করা",
+    description: "Ask for people, things, places, times, reasons, and methods.",
+    pattern: "কে · কী · কোথায় · কখন · কেন · কীভাবে",
+    examples: [
+      ["তুমি কোথায় থাকো?", "tumi kothay thako", "Where do you live?"],
+      ["তোমার নাম কী?", "tomar nam ki", "What is your name?"],
+      ["সে কখন আসবে?", "she kokhon ashbe", "When will he or she come?"],
+    ],
+    tip: "Keep the question word where the missing information would normally appear.",
+  },
+  {
+    title: "Possession",
+    bnTitle: "সম্বন্ধ ও অধিকার",
+    description: "Use আমার, তোমার, and তার to show who owns or relates to something.",
+    pattern: "owner + noun",
+    examples: [
+      ["আমার বই", "amar boi", "my book"],
+      ["তোমার নাম", "tomar nam", "your name"],
+      ["তার বাড়ি", "tar baṛi", "his or her house"],
+    ],
+    tip: "The owner comes before the thing: আমার বই, literally ‘my book.’",
+  },
+  {
+    title: "Postpositions",
+    bnTitle: "অনুসর্গ",
+    description: "Express place and relationships with words that follow the noun.",
+    pattern: "noun + postposition",
+    examples: [
+      ["ঘরে", "ghore", "in the house"],
+      ["ঢাকা থেকে", "dhaka theke", "from Dhaka"],
+      ["বন্ধুর সঙ্গে", "bondhur shonge", "with a friend"],
+    ],
+    tip: "English uses prepositions before nouns; Bengali commonly places these relationships after them.",
+  },
+  {
+    title: "Politeness levels",
+    bnTitle: "সম্বোধনের স্তর",
+    description: "Choose তুই, তুমি, or আপনি and match the verb to the relationship.",
+    pattern: "তুই করিস · তুমি করো · আপনি করেন",
+    examples: [
+      ["তুই কেমন আছিস?", "tui kemon achhish", "How are you? Very familiar."],
+      ["তুমি কেমন আছো?", "tumi kemon achho", "How are you? Familiar."],
+      ["আপনি কেমন আছেন?", "apni kemon achhen", "How are you? Respectful."],
+    ],
+    tip: "আপনি is the safest choice for elders, strangers, and formal situations.",
+  },
+];
+
+const SHORT_VOWEL_MARKS = [
+  {
+    name: "ই-কার",
+    mark: "ি",
+    sound: "i",
+    placement: "Written before the consonant",
+    placementBn: "ব্যঞ্জনের আগে লেখা হয়",
+    base: "ক",
+    combined: "কি",
+    romanized: "ki",
+    example: "কিন্তু",
+    exampleSound: "kintu",
+    meaning: "but",
+    position: "before",
+  },
+  {
+    name: "উ-কার",
+    mark: "ু",
+    sound: "u",
+    placement: "Written below the consonant",
+    placementBn: "ব্যঞ্জনের নিচে লেখা হয়",
+    base: "ক",
+    combined: "কু",
+    romanized: "ku",
+    example: "কুকুর",
+    exampleSound: "kukur",
+    meaning: "dog",
+    position: "below",
+  },
+  {
+    name: "ঋ-কার",
+    mark: "ৃ",
+    sound: "ri",
+    placement: "Written below the consonant",
+    placementBn: "ব্যঞ্জনের নিচে লেখা হয়",
+    base: "ক",
+    combined: "কৃ",
+    romanized: "kri",
+    example: "কৃষক",
+    exampleSound: "krishok",
+    meaning: "farmer",
+    position: "below",
+  },
+];
+
+// This curriculum also powers the matching Class 1–12 Bengali Tutor lessons.
+// eslint-disable-next-line react-refresh/only-export-components
+export const WORD_LEVELS = [
+  { classNumber: 1, focus: "Two-part everyday words", words: [
+    { word: "আম", pieces: ["আ", "ম"], sound: "am", meaning: "mango", hint: "A sweet summer fruit" },
+    { word: "বই", pieces: ["ব", "ই"], sound: "boi", meaning: "book", hint: "You read this" },
+    { word: "ফুল", pieces: ["ফু", "ল"], sound: "phul", meaning: "flower", hint: "It blooms in a garden" },
+    { word: "জল", pieces: ["জ", "ল"], sound: "jol", meaning: "water", hint: "You drink this when thirsty" },
+    { word: "ফল", pieces: ["ফ", "ল"], sound: "phol", meaning: "fruit", hint: "A sweet food that grows on plants" },
+    { word: "ঘর", pieces: ["ঘ", "র"], sound: "ghor", meaning: "room", hint: "A space inside a house" },
+    { word: "হাত", pieces: ["হা", "ত"], sound: "hat", meaning: "hand", hint: "You hold things with it" },
+    { word: "পা", pieces: ["প", "া"], sound: "pa", meaning: "foot", hint: "You stand on it" },
+    { word: "চোখ", pieces: ["চো", "খ"], sound: "chokh", meaning: "eye", hint: "You see with it" },
+    { word: "কান", pieces: ["কা", "ন"], sound: "kan", meaning: "ear", hint: "You hear with it" },
+    { word: "নাক", pieces: ["না", "ক"], sound: "nak", meaning: "nose", hint: "You smell with it" },
+    { word: "মুখ", pieces: ["মু", "খ"], sound: "mukh", meaning: "mouth", hint: "You speak and eat with it" },
+    { word: "লাল", pieces: ["লা", "ল"], sound: "lal", meaning: "red", hint: "The color of a ripe tomato" },
+    { word: "নীল", pieces: ["নী", "ল"], sound: "nil", meaning: "blue", hint: "The color of a clear sky" },
+    { word: "সাদা", pieces: ["সা", "দা"], sound: "shada", meaning: "white", hint: "The color of fresh snow" },
+    { word: "কালো", pieces: ["কা", "লো"], sound: "kalo", meaning: "black", hint: "The darkest color" },
+    { word: "এক", pieces: ["এ", "ক"], sound: "ek", meaning: "one", hint: "The first counting number" },
+    { word: "দুই", pieces: ["দু", "ই"], sound: "dui", meaning: "two", hint: "One plus one" },
+    { word: "তিন", pieces: ["তি", "ন"], sound: "tin", meaning: "three", hint: "The number after two" },
+    { word: "চার", pieces: ["চা", "র"], sound: "char", meaning: "four", hint: "The number after three" },
+    { word: "পাঁচ", pieces: ["পাঁ", "চ"], sound: "pach", meaning: "five", hint: "The number of fingers on one hand" },
+    { word: "দিন", pieces: ["দি", "ন"], sound: "din", meaning: "day", hint: "The time when the sun is up" },
+    { word: "রাত", pieces: ["রা", "ত"], sound: "rat", meaning: "night", hint: "The dark time when we sleep" },
+    { word: "চাঁদ", pieces: ["চাঁ", "দ"], sound: "chad", meaning: "moon", hint: "It shines in the night sky" },
+    { word: "তারা", pieces: ["তা", "রা"], sound: "tara", meaning: "star", hint: "A tiny light in the night sky" },
+    { word: "গাছ", pieces: ["গা", "ছ"], sound: "gachh", meaning: "tree", hint: "A tall plant with a trunk" },
+    { word: "পাতা", pieces: ["পা", "তা"], sound: "pata", meaning: "leaf", hint: "A green part of a plant" },
+    { word: "দুধ", pieces: ["দু", "ধ"], sound: "dudh", meaning: "milk", hint: "A white drink" },
+    { word: "ভাত", pieces: ["ভা", "ত"], sound: "bhat", meaning: "rice", hint: "A common cooked grain" },
+  ] },
+  { classNumber: 2, focus: "Familiar people and animals", words: [
+    { word: "মা", pieces: ["ম", "া"], sound: "ma", meaning: "mother", hint: "A parent" },
+    { word: "বাবা", pieces: ["বা", "বা"], sound: "baba", meaning: "father", hint: "A parent" },
+    { word: "পাখি", pieces: ["পা", "খি"], sound: "pakhi", meaning: "bird", hint: "It has wings and feathers" },
+    { word: "মাছ", pieces: ["মা", "ছ"], sound: "machh", meaning: "fish", hint: "It swims in water" },
+    { word: "বিড়াল", pieces: ["বি", "ড়া", "ল"], sound: "biṛal", meaning: "cat", hint: "A small pet that says meow" },
+    { word: "ছাগল", pieces: ["ছা", "গ", "ল"], sound: "chhagol", meaning: "goat", hint: "A farm animal with horns" },
+    { word: "দাদা", pieces: ["দা", "দা"], sound: "dada", meaning: "older brother", hint: "A male sibling who is older than you" },
+    { word: "দাদি", pieces: ["দা", "দি"], sound: "dadi", meaning: "paternal grandmother", hint: "Your father's mother" },
+    { word: "নানা", pieces: ["না", "না"], sound: "nana", meaning: "maternal grandfather", hint: "Your mother's father" },
+    { word: "নানি", pieces: ["না", "নি"], sound: "nani", meaning: "maternal grandmother", hint: "Your mother's mother" },
+    { word: "ভাই", pieces: ["ভা", "ই"], sound: "bhai", meaning: "brother", hint: "A male sibling" },
+    { word: "বোন", pieces: ["বো", "ন"], sound: "bon", meaning: "sister", hint: "A female sibling" },
+    { word: "শিশু", pieces: ["শি", "শু"], sound: "shishu", meaning: "child", hint: "A very young person" },
+    { word: "ছেলে", pieces: ["ছে", "লে"], sound: "chhele", meaning: "boy", hint: "A young male person" },
+    { word: "মেয়ে", pieces: ["মে", "য়ে"], sound: "meye", meaning: "girl", hint: "A young female person" },
+    { word: "বন্ধু", pieces: ["ব", "ন্ধু"], sound: "bondhu", meaning: "friend", hint: "Someone you enjoy spending time with" },
+    { word: "গরু", pieces: ["গ", "রু"], sound: "goru", meaning: "cow", hint: "A farm animal that gives milk" },
+    { word: "ঘোড়া", pieces: ["ঘো", "ড়া"], sound: "ghoṛa", meaning: "horse", hint: "A large animal people can ride" },
+    { word: "হাঁস", pieces: ["হাঁ", "স"], sound: "hash", meaning: "duck", hint: "A bird that swims and quacks" },
+    { word: "মুরগি", pieces: ["মু", "র", "গি"], sound: "murgi", meaning: "chicken", hint: "A farm bird that lays eggs" },
+    { word: "বাঘ", pieces: ["বা", "ঘ"], sound: "bagh", meaning: "tiger", hint: "A large striped wild cat" },
+    { word: "সিংহ", pieces: ["সিং", "হ"], sound: "shingho", meaning: "lion", hint: "A large wild cat with a mane" },
+    { word: "হাতি", pieces: ["হা", "তি"], sound: "hati", meaning: "elephant", hint: "A huge animal with a trunk" },
+    { word: "বানর", pieces: ["বা", "ন", "র"], sound: "banor", meaning: "monkey", hint: "An animal that climbs and swings" },
+    { word: "খরগোশ", pieces: ["খ", "র", "গো", "শ"], sound: "khorgosh", meaning: "rabbit", hint: "A small animal with long ears" },
+    { word: "কচ্ছপ", pieces: ["ক", "চ্ছ", "প"], sound: "kochchhop", meaning: "turtle", hint: "A slow animal with a hard shell" },
+    { word: "সাপ", pieces: ["সা", "প"], sound: "shap", meaning: "snake", hint: "A long animal with no legs" },
+    { word: "ব্যাঙ", pieces: ["ব্যা", "ঙ"], sound: "byang", meaning: "frog", hint: "A small animal that jumps near water" },
+    { word: "মৌমাছি", pieces: ["মৌ", "মা", "ছি"], sound: "moumachi", meaning: "bee", hint: "A small insect that makes honey" },
+    { word: "প্রজাপতি", pieces: ["প্র", "জা", "প", "তি"], sound: "projapoti", meaning: "butterfly", hint: "A colorful insect with wide wings" },
+  ] },
+  { classNumber: 3, focus: "Three-part school words", words: [
+    { word: "কলম", pieces: ["ক", "ল", "ম"], sound: "kolom", meaning: "pen", hint: "You write with this" },
+    { word: "খাতা", pieces: ["খা", "তা"], sound: "khata", meaning: "notebook", hint: "You write lessons in it" },
+    { word: "বিদ্যালয়", pieces: ["বি", "দ্যা", "লয়"], sound: "bidyaloy", meaning: "school", hint: "A place where students learn" },
+    { word: "শিক্ষক", pieces: ["শি", "ক্ষ", "ক"], sound: "shikkhok", meaning: "teacher", hint: "A person who helps students learn" },
+    { word: "পেন্সিল", pieces: ["পে", "ন্সি", "ল"], sound: "pensil", meaning: "pencil", hint: "You can write and erase with this" },
+    { word: "শ্রেণি", pieces: ["শ্রে", "ণি"], sound: "shreni", meaning: "class", hint: "A group of students learning together" },
+    { word: "ব্যাগ", pieces: ["ব্যা", "গ"], sound: "byag", meaning: "bag", hint: "You carry school supplies in it" },
+    { word: "ডেস্ক", pieces: ["ডে", "স্ক"], sound: "desk", meaning: "desk", hint: "A table used for schoolwork" },
+    { word: "বেঞ্চ", pieces: ["বে", "ঞ্চ"], sound: "bench", meaning: "bench", hint: "A long seat for several students" },
+    { word: "বোর্ড", pieces: ["বো", "র্ড"], sound: "bord", meaning: "board", hint: "The teacher writes on it" },
+    { word: "চক", pieces: ["চ", "ক"], sound: "chok", meaning: "chalk", hint: "A small stick used to write on a board" },
+    { word: "রাবার", pieces: ["রা", "বা", "র"], sound: "rabar", meaning: "eraser", hint: "It removes pencil marks" },
+    { word: "স্কেল", pieces: ["স্কে", "ল"], sound: "skel", meaning: "ruler", hint: "It measures length and draws straight lines" },
+    { word: "কাগজ", pieces: ["কা", "গ", "জ"], sound: "kagoj", meaning: "paper", hint: "You write or draw on it" },
+    { word: "মানচিত্র", pieces: ["মা", "ন", "চি", "ত্র"], sound: "manchitro", meaning: "map", hint: "It shows where places are" },
+    { word: "ঘণ্টা", pieces: ["ঘ", "ণ্টা"], sound: "ghonta", meaning: "bell", hint: "It rings when a class begins or ends" },
+    { word: "পাঠ", pieces: ["পা", "ঠ"], sound: "path", meaning: "lesson", hint: "Something a teacher helps you learn" },
+    { word: "পড়া", pieces: ["প", "ড়া"], sound: "poṛa", meaning: "reading", hint: "Looking at words and understanding them" },
+    { word: "লেখা", pieces: ["লে", "খা"], sound: "lekha", meaning: "writing", hint: "Making words with a pen or pencil" },
+    { word: "অঙ্ক", pieces: ["অ", "ঙ্ক"], sound: "onko", meaning: "arithmetic", hint: "Working with numbers" },
+    { word: "ছবি", pieces: ["ছ", "বি"], sound: "chhobi", meaning: "picture", hint: "An image you can draw or view" },
+    { word: "রং", pieces: ["র", "ং"], sound: "rong", meaning: "color", hint: "Red, blue, and green are examples" },
+    { word: "গল্প", pieces: ["গ", "ল্প"], sound: "golpo", meaning: "story", hint: "A tale about people or events" },
+    { word: "কবিতা", pieces: ["ক", "বি", "তা"], sound: "kobita", meaning: "poem", hint: "Writing arranged with rhythm and imagery" },
+    { word: "পরীক্ষা", pieces: ["প", "রী", "ক্ষা"], sound: "porikkha", meaning: "exam", hint: "It checks what a student has learned" },
+    { word: "ছুটি", pieces: ["ছু", "টি"], sound: "chhuti", meaning: "holiday", hint: "A day when school is closed" },
+    { word: "মাঠ", pieces: ["মা", "ঠ"], sound: "math", meaning: "field", hint: "An open place for games and sports" },
+    { word: "গ্রন্থাগার", pieces: ["গ্র", "ন্থা", "গা", "র"], sound: "gronthagar", meaning: "library", hint: "A place where many books are kept" },
+    { word: "কম্পিউটার", pieces: ["ক", "ম্পি", "উ", "টা", "র"], sound: "kompiutar", meaning: "computer", hint: "An electronic machine used to learn and work" },
+    { word: "বিষয়", pieces: ["বি", "ষ", "য়"], sound: "bishoy", meaning: "subject", hint: "A branch of knowledge studied at school" },
+  ] },
+  { classNumber: 4, focus: "Vowel marks inside words", words: [
+    { word: "কুকুর", pieces: ["কু", "কু", "র"], sound: "kukur", meaning: "dog", hint: "A loyal pet" },
+    { word: "কৃষক", pieces: ["কৃ", "ষ", "ক"], sound: "krishok", meaning: "farmer", hint: "Someone who grows crops" },
+    { word: "নদী", pieces: ["ন", "দী"], sound: "nodi", meaning: "river", hint: "Water flowing toward the sea" },
+    { word: "গাড়ি", pieces: ["গা", "ড়ি"], sound: "gaṛi", meaning: "car", hint: "A vehicle driven on roads" },
+    { word: "চেয়ার", pieces: ["চে", "য়া", "র"], sound: "cheyar", meaning: "chair", hint: "You sit on it" },
+    { word: "ময়ূর", pieces: ["ম", "য়ূ", "র"], sound: "moyur", meaning: "peacock", hint: "A bird with a colorful tail" },
+    { word: "চাবি", pieces: ["চা", "বি"], sound: "chabi", meaning: "key", hint: "It opens a lock" },
+    { word: "বাড়ি", pieces: ["বা", "ড়ি"], sound: "baṛi", meaning: "house", hint: "A place where a family lives" },
+    { word: "দাদি", pieces: ["দা", "দি"], sound: "dadi", meaning: "paternal grandmother", hint: "Your father's mother" },
+    { word: "হরিণ", pieces: ["হ", "রি", "ণ"], sound: "horin", meaning: "deer", hint: "A graceful animal with slender legs" },
+    { word: "শিশু", pieces: ["শি", "শু"], sound: "shishu", meaning: "child", hint: "A very young person" },
+    { word: "জুতা", pieces: ["জু", "তা"], sound: "juta", meaning: "shoe", hint: "You wear it on your foot" },
+    { word: "পুতুল", pieces: ["পু", "তু", "ল"], sound: "putul", meaning: "doll", hint: "A toy shaped like a person" },
+    { word: "সূর্য", pieces: ["সূ", "র্য"], sound: "shurjo", meaning: "sun", hint: "It gives Earth light and warmth" },
+    { word: "ভূত", pieces: ["ভূ", "ত"], sound: "bhut", meaning: "ghost", hint: "A spirit in a spooky story" },
+    { word: "ঋতু", pieces: ["ঋ", "তু"], sound: "ritu", meaning: "season", hint: "A division of the year based on weather" },
+    { word: "ঘৃণা", pieces: ["ঘৃ", "ণা"], sound: "ghrina", meaning: "hatred", hint: "A very strong feeling of dislike" },
+    { word: "মৃগ", pieces: ["মৃ", "গ"], sound: "mrig", meaning: "deer", hint: "A literary word for a deer" },
+    { word: "দেশ", pieces: ["দে", "শ"], sound: "desh", meaning: "country", hint: "A nation and its land" },
+    { word: "মেঘ", pieces: ["মে", "ঘ"], sound: "megh", meaning: "cloud", hint: "A white or gray shape in the sky" },
+    { word: "খেলা", pieces: ["খে", "লা"], sound: "khela", meaning: "game", hint: "An activity played for fun" },
+    { word: "বৈঠক", pieces: ["বৈ", "ঠ", "ক"], sound: "boithok", meaning: "meeting", hint: "People gathering to discuss something" },
+    { word: "সৈনিক", pieces: ["সৈ", "নি", "ক"], sound: "shoinik", meaning: "soldier", hint: "A member of an army" },
+    { word: "নৌকা", pieces: ["নৌ", "কা"], sound: "nouka", meaning: "boat", hint: "A small vessel that travels on water" },
+    { word: "মৌচাক", pieces: ["মৌ", "চা", "ক"], sound: "mouchak", meaning: "beehive", hint: "The home where bees make honey" },
+    { word: "গোল", pieces: ["গো", "ল"], sound: "gol", meaning: "round", hint: "Shaped like a circle" },
+    { word: "দোলনা", pieces: ["দো", "ল", "না"], sound: "dolna", meaning: "swing", hint: "A hanging seat that moves back and forth" },
+    { word: "কৌশল", pieces: ["কৌ", "শ", "ল"], sound: "koushol", meaning: "skill", hint: "An ability learned through practice" },
+    { word: "ভোর", pieces: ["ভো", "র"], sound: "bhor", meaning: "dawn", hint: "The first light of morning" },
+    { word: "রোদ", pieces: ["রো", "দ"], sound: "rod", meaning: "sunshine", hint: "Bright light coming from the sun" },
+  ] },
+  { classNumber: 5, focus: "Longer descriptive words", words: [
+    { word: "সুন্দর", pieces: ["সু", "ন্দ", "র"], sound: "shundor", meaning: "beautiful", hint: "Lovely to see" },
+    { word: "সাহসী", pieces: ["সা", "হ", "সী"], sound: "shahoshi", meaning: "brave", hint: "Not afraid to face danger" },
+    { word: "পরিষ্কার", pieces: ["প", "রি", "ষ্কার"], sound: "porishkar", meaning: "clean", hint: "Not dirty" },
+    { word: "আনন্দিত", pieces: ["আ", "ন", "ন্দি", "ত"], sound: "anondito", meaning: "delighted", hint: "Feeling very happy" },
+    { word: "মিষ্টি", pieces: ["মি", "ষ্টি"], sound: "mishti", meaning: "sweet", hint: "The taste of sugar" },
+    { word: "শক্তিশালী", pieces: ["শ", "ক্তি", "শা", "লী"], sound: "shoktishali", meaning: "powerful", hint: "Having great strength" },
+    { word: "ভালো", pieces: ["ভা", "লো"], sound: "bhalo", meaning: "good", hint: "Pleasant, positive, or of high quality" },
+    { word: "খারাপ", pieces: ["খা", "রা", "প"], sound: "kharap", meaning: "bad", hint: "Not good or unpleasant" },
+    { word: "বড়", pieces: ["ব", "ড়"], sound: "boṛo", meaning: "big", hint: "Large in size" },
+    { word: "ছোট", pieces: ["ছো", "ট"], sound: "chhoto", meaning: "small", hint: "Little in size" },
+    { word: "লম্বা", pieces: ["ল", "ম্বা"], sound: "lomba", meaning: "tall", hint: "Having greater than average height" },
+    { word: "খাটো", pieces: ["খা", "টো"], sound: "khato", meaning: "short", hint: "Having less than average height" },
+    { word: "নতুন", pieces: ["ন", "তু", "ন"], sound: "notun", meaning: "new", hint: "Recently made or obtained" },
+    { word: "পুরোনো", pieces: ["পু", "রো", "নো"], sound: "purono", meaning: "old", hint: "Having existed for a long time" },
+    { word: "গরম", pieces: ["গ", "র", "ম"], sound: "gorom", meaning: "hot", hint: "Having a high temperature" },
+    { word: "ঠান্ডা", pieces: ["ঠা", "ন্ডা"], sound: "thanda", meaning: "cold", hint: "Having a low temperature" },
+    { word: "নরম", pieces: ["ন", "র", "ম"], sound: "norom", meaning: "soft", hint: "Easy to press or gentle to touch" },
+    { word: "কঠিন", pieces: ["ক", "ঠি", "ন"], sound: "kothin", meaning: "hard", hint: "Firm or difficult to do" },
+    { word: "দ্রুত", pieces: ["দ্রু", "ত"], sound: "druto", meaning: "fast", hint: "Moving or happening quickly" },
+    { word: "ধীর", pieces: ["ধী", "র"], sound: "dhir", meaning: "slow", hint: "Moving without much speed" },
+    { word: "সুখী", pieces: ["সু", "খী"], sound: "shukhi", meaning: "happy", hint: "Feeling pleased and content" },
+    { word: "দুঃখী", pieces: ["দুঃ", "খী"], sound: "dukkhi", meaning: "sad", hint: "Feeling unhappy or sorrowful" },
+    { word: "রাগী", pieces: ["রা", "গী"], sound: "ragi", meaning: "angry", hint: "Feeling or showing strong annoyance" },
+    { word: "শান্ত", pieces: ["শা", "ন্ত"], sound: "shanto", meaning: "calm", hint: "Peaceful and not excited" },
+    { word: "বুদ্ধিমান", pieces: ["বু", "দ্ধি", "মা", "ন"], sound: "buddhiman", meaning: "intelligent", hint: "Able to learn and understand quickly" },
+    { word: "সৎ", pieces: ["স", "ৎ"], sound: "shot", meaning: "honest", hint: "Truthful and fair" },
+    { word: "দয়ালু", pieces: ["দ", "য়া", "লু"], sound: "doyalu", meaning: "kind", hint: "Caring and helpful toward others" },
+    { word: "অলস", pieces: ["অ", "ল", "স"], sound: "olosh", meaning: "lazy", hint: "Not willing to work or be active" },
+    { word: "সক্রিয়", pieces: ["স", "ক্রি", "য়"], sound: "shokriyo", meaning: "active", hint: "Busy, energetic, and involved" },
+    { word: "রঙিন", pieces: ["র", "ঙি", "ন"], sound: "rongin", meaning: "colorful", hint: "Full of bright or varied colors" },
+  ] },
+  { classNumber: 6, focus: "Conjunct consonants", words: [
+    { word: "বন্ধু", pieces: ["ব", "ন্ধু"], sound: "bondhu", meaning: "friend", hint: "Someone you trust and like" },
+    { word: "স্বপ্ন", pieces: ["স্ব", "প্ন"], sound: "shopno", meaning: "dream", hint: "A story seen while sleeping" },
+    { word: "প্রশ্ন", pieces: ["প্র", "শ্ন"], sound: "proshno", meaning: "question", hint: "Something asked for an answer" },
+    { word: "রক্ত", pieces: ["র", "ক্ত"], sound: "rokto", meaning: "blood", hint: "The red liquid flowing through the body" },
+    { word: "শক্তি", pieces: ["শ", "ক্তি"], sound: "shokti", meaning: "energy", hint: "The power needed to do work" },
+    { word: "শ্রদ্ধা", pieces: ["শ্র", "দ্ধা"], sound: "shroddha", meaning: "reverence", hint: "Deep respect for someone" },
+    { word: "ভক্ত", pieces: ["ভ", "ক্ত"], sound: "bhokto", meaning: "devotee", hint: "A person deeply devoted to a faith or figure" },
+    { word: "মুক্ত", pieces: ["মু", "ক্ত"], sound: "mukto", meaning: "free", hint: "Not confined or controlled" },
+    { word: "যুক্ত", pieces: ["যু", "ক্ত"], sound: "jukto", meaning: "connected", hint: "Joined or linked together" },
+    { word: "শব্দ", pieces: ["শ", "ব্দ"], sound: "shobdo", meaning: "word", hint: "A unit of language with meaning" },
+    { word: "অগ্নি", pieces: ["অ", "গ্নি"], sound: "ogni", meaning: "fire", hint: "Flame, heat, and light from burning" },
+    { word: "চন্দ্র", pieces: ["চ", "ন্দ্র"], sound: "chondro", meaning: "moon", hint: "A literary word for Earth's natural satellite" },
+    { word: "মন্ত্র", pieces: ["ম", "ন্ত্র"], sound: "montro", meaning: "mantra", hint: "A sacred phrase repeated in prayer" },
+    { word: "তন্ত্র", pieces: ["ত", "ন্ত্র"], sound: "tontro", meaning: "system", hint: "A connected set of parts or methods" },
+    { word: "যন্ত্র", pieces: ["য", "ন্ত্র"], sound: "jontro", meaning: "machine", hint: "A device that performs work" },
+    { word: "কেন্দ্র", pieces: ["কে", "ন্দ্র"], sound: "kendro", meaning: "center", hint: "The middle point of something" },
+    { word: "গ্রাম", pieces: ["গ্রা", "ম"], sound: "gram", meaning: "village", hint: "A small community in the countryside" },
+    { word: "ক্রম", pieces: ["ক্র", "ম"], sound: "krom", meaning: "order", hint: "A sequence or arranged position" },
+    { word: "ক্লাস", pieces: ["ক্লা", "স"], sound: "klas", meaning: "class", hint: "A lesson or group of students" },
+    { word: "প্লাবন", pieces: ["প্লা", "ব", "ন"], sound: "plabon", meaning: "flood", hint: "Water covering normally dry land" },
+    { word: "ব্রত", pieces: ["ব্র", "ত"], sound: "broto", meaning: "vow", hint: "A solemn promise or observance" },
+    { word: "ত্রাণ", pieces: ["ত্রা", "ণ"], sound: "tran", meaning: "relief", hint: "Help given after a disaster" },
+    { word: "দৃষ্টি", pieces: ["দৃ", "ষ্টি"], sound: "drishti", meaning: "vision", hint: "The ability to see or a way of viewing things" },
+    { word: "সৃষ্টি", pieces: ["সৃ", "ষ্টি"], sound: "srishti", meaning: "creation", hint: "Something made or brought into existence" },
+    { word: "কষ্ট", pieces: ["ক", "ষ্ট"], sound: "koshto", meaning: "hardship", hint: "Pain, difficulty, or suffering" },
+    { word: "স্পষ্ট", pieces: ["স্প", "ষ্ট"], sound: "sposhto", meaning: "clear", hint: "Easy to see or understand" },
+    { word: "স্মৃতি", pieces: ["স্মৃ", "তি"], sound: "smriti", meaning: "memory", hint: "Something remembered from the past" },
+    { word: "সম্পদ", pieces: ["স", "ম্প", "দ"], sound: "shompod", meaning: "wealth", hint: "Valuable possessions or resources" },
+    { word: "অন্তর", pieces: ["অ", "ন্ত", "র"], sound: "ontor", meaning: "inner heart", hint: "The inside or deepest feelings" },
+    { word: "গন্ধ", pieces: ["গ", "ন্ধ"], sound: "gondho", meaning: "smell", hint: "Something detected by the nose" },
+  ] },
+  { classNumber: 7, focus: "Ideas and feelings", words: [
+    { word: "আনন্দ", pieces: ["আ", "ন", "ন্দ"], sound: "anondo", meaning: "joy", hint: "A feeling of great happiness" },
+    { word: "সম্মান", pieces: ["স", "ম্মা", "ন"], sound: "shomman", meaning: "respect", hint: "Honoring someone" },
+    { word: "বিশ্বাস", pieces: ["বি", "শ্বা", "স"], sound: "bishshash", meaning: "trust", hint: "Confidence that something is true" },
+    { word: "আশা", pieces: ["আ", "শা"], sound: "asha", meaning: "hope", hint: "A wish that something good will happen" },
+    { word: "ভয়", pieces: ["ভ", "য়"], sound: "bhoy", meaning: "fear", hint: "The feeling of being afraid" },
+    { word: "কৌতূহল", pieces: ["কৌ", "তূ", "হ", "ল"], sound: "koutuhol", meaning: "curiosity", hint: "A strong desire to learn or know" },
+    { word: "ভালোবাসা", pieces: ["ভা", "লো", "বা", "সা"], sound: "bhalobasha", meaning: "love", hint: "Deep care and affection for someone" },
+    { word: "স্নেহ", pieces: ["স্নে", "হ"], sound: "sneho", meaning: "affection", hint: "A gentle feeling of fondness and care" },
+    { word: "বন্ধুত্ব", pieces: ["ব", "ন্ধু", "ত্ব"], sound: "bondhutto", meaning: "friendship", hint: "The relationship shared by friends" },
+    { word: "শান্তি", pieces: ["শা", "ন্তি"], sound: "shanti", meaning: "peace", hint: "A state without conflict or disturbance" },
+    { word: "রাগ", pieces: ["রা", "গ"], sound: "rag", meaning: "anger", hint: "A strong feeling of annoyance" },
+    { word: "দুঃখ", pieces: ["দুঃ", "খ"], sound: "dukkho", meaning: "sadness", hint: "The feeling of being unhappy" },
+    { word: "সুখ", pieces: ["সু", "খ"], sound: "shukh", meaning: "happiness", hint: "A state of pleasure and contentment" },
+    { word: "বিস্ময়", pieces: ["বি", "স্ম", "য়"], sound: "bishshoy", meaning: "surprise", hint: "A feeling caused by something unexpected" },
+    { word: "লজ্জা", pieces: ["ল", "জ্জা"], sound: "lojja", meaning: "shame", hint: "Embarrassment about something wrong or awkward" },
+    { word: "গর্ব", pieces: ["গ", "র্ব"], sound: "gorbo", meaning: "pride", hint: "Satisfaction in an achievement or identity" },
+    { word: "ধৈর্য", pieces: ["ধৈ", "র্য"], sound: "dhoirjo", meaning: "patience", hint: "The ability to wait without becoming upset" },
+    { word: "সাহস", pieces: ["সা", "হ", "স"], sound: "shahosh", meaning: "courage", hint: "Strength to face fear or difficulty" },
+    { word: "দয়া", pieces: ["দ", "য়া"], sound: "doya", meaning: "kindness", hint: "Care and concern shown toward others" },
+    { word: "ক্ষমা", pieces: ["ক্ষ", "মা"], sound: "khoma", meaning: "forgiveness", hint: "Letting go of anger after being hurt" },
+    { word: "দুশ্চিন্তা", pieces: ["দু", "শ্চি", "ন্তা"], sound: "dushchinta", meaning: "worry", hint: "Troubled thoughts about possible problems" },
+    { word: "ইচ্ছা", pieces: ["ই", "চ্ছা"], sound: "ichchha", meaning: "desire", hint: "A strong wish for something" },
+    { word: "স্বাধীনতা", pieces: ["স্বা", "ধী", "ন", "তা"], sound: "shadhinota", meaning: "freedom", hint: "The condition of being able to choose and act" },
+    { word: "সত্য", pieces: ["স", "ত্য"], sound: "shotto", meaning: "truth", hint: "Something that agrees with fact or reality" },
+    { word: "মিথ্যা", pieces: ["মি", "থ্যা"], sound: "miththa", meaning: "falsehood", hint: "A statement that is not true" },
+    { word: "জ্ঞান", pieces: ["জ্ঞা", "ন"], sound: "ggan", meaning: "knowledge", hint: "Understanding gained through learning" },
+    { word: "প্রজ্ঞা", pieces: ["প্র", "জ্ঞা"], sound: "progga", meaning: "wisdom", hint: "Good judgment based on knowledge and experience" },
+    { word: "চিন্তা", pieces: ["চি", "ন্তা"], sound: "chinta", meaning: "thought", hint: "An idea formed in the mind" },
+    { word: "কল্পনা", pieces: ["ক", "ল্প", "না"], sound: "kolpona", meaning: "imagination", hint: "The ability to form new pictures and ideas in the mind" },
+    { word: "কৃতজ্ঞতা", pieces: ["কৃ", "ত", "জ্ঞ", "তা"], sound: "kritoggota", meaning: "gratitude", hint: "Thankfulness for kindness or help" },
+  ] },
+  { classNumber: 8, focus: "Academic vocabulary", words: [
+    { word: "বিজ্ঞান", pieces: ["বি", "জ্ঞা", "ন"], sound: "biggan", meaning: "science", hint: "The study of the natural world" },
+    { word: "ইতিহাস", pieces: ["ই", "তি", "হা", "স"], sound: "itihash", meaning: "history", hint: "The study of the past" },
+    { word: "ভূগোল", pieces: ["ভূ", "গো", "ল"], sound: "bhugol", meaning: "geography", hint: "The study of places and Earth" },
+    { word: "গণিত", pieces: ["গ", "ণি", "ত"], sound: "gonit", meaning: "mathematics", hint: "The study of numbers and quantities" },
+    { word: "সাহিত্য", pieces: ["সা", "হি", "ত্য"], sound: "shahitto", meaning: "literature", hint: "Written artistic works and stories" },
+    { word: "অর্থনীতি", pieces: ["অ", "র্থ", "নী", "তি"], sound: "orthoniti", meaning: "economics", hint: "The study of money, trade, and resources" },
+    { word: "পদার্থবিজ্ঞান", pieces: ["প", "দা", "র্থ", "বি", "জ্ঞা", "ন"], sound: "podarthobiggan", meaning: "physics", hint: "The science of matter, energy, force, and motion" },
+    { word: "রসায়ন", pieces: ["র", "সা", "য়", "ন"], sound: "roshayon", meaning: "chemistry", hint: "The science of substances and how they change" },
+    { word: "জীববিজ্ঞান", pieces: ["জী", "ব", "বি", "জ্ঞা", "ন"], sound: "jibobiggan", meaning: "biology", hint: "The scientific study of living things" },
+    { word: "জ্যোতির্বিজ্ঞান", pieces: ["জ্যো", "তি", "র্বি", "জ্ঞা", "ন"], sound: "jyotirbiggan", meaning: "astronomy", hint: "The study of stars, planets, and space" },
+    { word: "ভাষা", pieces: ["ভা", "ষা"], sound: "bhasha", meaning: "language", hint: "A system people use to communicate" },
+    { word: "ব্যাকরণ", pieces: ["ব্যা", "ক", "র", "ণ"], sound: "byakoron", meaning: "grammar", hint: "The rules for forming words and sentences" },
+    { word: "সমাজবিজ্ঞান", pieces: ["স", "মা", "জ", "বি", "জ্ঞা", "ন"], sound: "shomajbiggan", meaning: "sociology", hint: "The study of society and social relationships" },
+    { word: "পৌরনীতি", pieces: ["পৌ", "র", "নী", "তি"], sound: "pouroniti", meaning: "civics", hint: "The study of citizens, government, and public life" },
+    { word: "পরিসংখ্যান", pieces: ["প", "রি", "সং", "খ্যা", "ন"], sound: "porishongkhyan", meaning: "statistics", hint: "The collection and analysis of numerical data" },
+    { word: "জ্যামিতি", pieces: ["জ্যা", "মি", "তি"], sound: "jyamiti", meaning: "geometry", hint: "The mathematics of shapes, lines, and space" },
+    { word: "বীজগণিত", pieces: ["বী", "জ", "গ", "ণি", "ত"], sound: "bijgonit", meaning: "algebra", hint: "Mathematics that uses symbols for unknown values" },
+    { word: "প্রযুক্তি", pieces: ["প্র", "যু", "ক্তি"], sound: "projukti", meaning: "technology", hint: "Practical tools and systems made using knowledge" },
+    { word: "গবেষণা", pieces: ["গ", "বে", "ষ", "ণা"], sound: "gobeshona", meaning: "research", hint: "Careful study to discover new information" },
+    { word: "পরীক্ষণ", pieces: ["প", "রী", "ক্ষ", "ণ"], sound: "porikkhon", meaning: "experiment", hint: "A test performed to investigate an idea" },
+    { word: "অনুমান", pieces: ["অ", "নু", "মা", "ন"], sound: "onuman", meaning: "hypothesis", hint: "A proposed explanation that can be tested" },
+    { word: "তত্ত্ব", pieces: ["ত", "ত্ত্ব"], sound: "totto", meaning: "theory", hint: "A system of ideas explaining something" },
+    { word: "তথ্য", pieces: ["ত", "থ্য"], sound: "toththo", meaning: "information", hint: "Facts or details learned about something" },
+    { word: "উপাত্ত", pieces: ["উ", "পা", "ত্ত"], sound: "upatto", meaning: "data", hint: "Facts and measurements collected for study" },
+    { word: "বিশ্লেষণ", pieces: ["বি", "শ্লে", "ষ", "ণ"], sound: "bishleshon", meaning: "analysis", hint: "Detailed examination of parts and relationships" },
+    { word: "শিক্ষা", pieces: ["শি", "ক্ষা"], sound: "shikkha", meaning: "education", hint: "The process of teaching and learning" },
+    { word: "বিশ্ববিদ্যালয়", pieces: ["বি", "শ্ব", "বি", "দ্যা", "লয়"], sound: "bishshobidyaloy", meaning: "university", hint: "An institution for advanced study and degrees" },
+    { word: "অভিধান", pieces: ["অ", "ভি", "ধা", "ন"], sound: "obhidhan", meaning: "dictionary", hint: "A book that explains words and meanings" },
+    { word: "বিশ্বকোষ", pieces: ["বি", "শ্ব", "কো", "ষ"], sound: "bishshokosh", meaning: "encyclopedia", hint: "A reference work covering many subjects" },
+    { word: "গবেষণাগার", pieces: ["গ", "বে", "ষ", "ণা", "গা", "র"], sound: "gobeshonagar", meaning: "laboratory", hint: "A place equipped for scientific research" },
+  ] },
+  { classNumber: 9, focus: "Formal and compound words", words: [
+    { word: "স্বাধীনতা", pieces: ["স্বা", "ধী", "ন", "তা"], sound: "shadhinota", meaning: "independence", hint: "Freedom from control" },
+    { word: "পরিবেশ", pieces: ["প", "রি", "বে", "শ"], sound: "poribesh", meaning: "environment", hint: "The natural world around us" },
+    { word: "দায়িত্ব", pieces: ["দা", "য়ি", "ত্ব"], sound: "dayitto", meaning: "responsibility", hint: "A duty you are expected to fulfill" },
+    { word: "নাগরিক", pieces: ["না", "গ", "রি", "ক"], sound: "nagorik", meaning: "citizen", hint: "A legal member of a country" },
+    { word: "যোগাযোগ", pieces: ["যো", "গা", "যো", "গ"], sound: "jogajog", meaning: "communication", hint: "Sharing information with others" },
+    { word: "প্রযুক্তি", pieces: ["প্র", "যু", "ক্তি"], sound: "projukti", meaning: "technology", hint: "Tools and systems created from science" },
+    { word: "সমাজ", pieces: ["স", "মা", "জ"], sound: "shomaj", meaning: "society", hint: "People living together in an organized community" },
+    { word: "সরকার", pieces: ["স", "র", "কা", "র"], sound: "shorkar", meaning: "government", hint: "The group that governs a country or region" },
+    { word: "সংবিধান", pieces: ["সং", "বি", "ধা", "ন"], sound: "shongbidhan", meaning: "constitution", hint: "The fundamental laws of a country" },
+    { word: "আইন", pieces: ["আ", "ই", "ন"], sound: "ain", meaning: "law", hint: "An official rule enforced by a country" },
+    { word: "অধিকার", pieces: ["অ", "ধি", "কা", "র"], sound: "odhikar", meaning: "right", hint: "A legal or moral freedom a person possesses" },
+    { word: "কর্তব্য", pieces: ["ক", "র্ত", "ব্য"], sound: "kortobbo", meaning: "duty", hint: "Something a person is responsible for doing" },
+    { word: "নির্বাচন", pieces: ["নি", "র্বা", "চ", "ন"], sound: "nirbachon", meaning: "election", hint: "A public vote used to choose leaders" },
+    { word: "সংসদ", pieces: ["সং", "স", "দ"], sound: "shongshod", meaning: "parliament", hint: "A national body that debates and makes laws" },
+    { word: "প্রশাসন", pieces: ["প্র", "শা", "স", "ন"], sound: "proshashon", meaning: "administration", hint: "The management of an organization or government" },
+    { word: "ন্যায়বিচার", pieces: ["ন্যা", "য়", "বি", "চা", "র"], sound: "nyaybichar", meaning: "justice", hint: "Fair treatment under rules and law" },
+    { word: "সমতা", pieces: ["স", "ম", "তা"], sound: "shomota", meaning: "equality", hint: "The state of having equal rights and opportunities" },
+    { word: "উন্নয়ন", pieces: ["উ", "ন্ন", "য়", "ন"], sound: "unnoyon", meaning: "development", hint: "Growth or progress toward a better condition" },
+    { word: "অর্থনীতি", pieces: ["অ", "র্থ", "নী", "তি"], sound: "orthoniti", meaning: "economy", hint: "The system of production, trade, and money" },
+    { word: "শিল্প", pieces: ["শি", "ল্প"], sound: "shilpo", meaning: "industry", hint: "Economic activity that makes goods or services" },
+    { word: "কৃষি", pieces: ["কৃ", "ষি"], sound: "krishi", meaning: "agriculture", hint: "Growing crops and raising animals for food" },
+    { word: "জনসংখ্যা", pieces: ["জ", "ন", "সং", "খ্যা"], sound: "jonoshongkhya", meaning: "population", hint: "The number of people living in a place" },
+    { word: "দূষণ", pieces: ["দূ", "ষ", "ণ"], sound: "dushon", meaning: "pollution", hint: "Harmful contamination of air, water, or land" },
+    { word: "সংরক্ষণ", pieces: ["সং", "র", "ক্ষ", "ণ"], sound: "shongrokkhon", meaning: "conservation", hint: "Protection and careful use of natural resources" },
+    { word: "জলবায়ু", pieces: ["জ", "ল", "বা", "য়ু"], sound: "jolobayu", meaning: "climate", hint: "Long-term weather patterns in a region" },
+    { word: "দুর্যোগ", pieces: ["দু", "র্যো", "গ"], sound: "durjog", meaning: "disaster", hint: "An event causing widespread damage or hardship" },
+    { word: "স্বাস্থ্য", pieces: ["স্বা", "স্থ্য"], sound: "shastho", meaning: "health", hint: "The condition of the body and mind" },
+    { word: "শিক্ষা", pieces: ["শি", "ক্ষা"], sound: "shikkha", meaning: "education", hint: "The process of teaching and learning" },
+    { word: "পরিবহন", pieces: ["প", "রি", "ব", "হ", "ন"], sound: "poribohon", meaning: "transportation", hint: "Moving people or goods between places" },
+    { word: "অবকাঠামো", pieces: ["অ", "ব", "কা", "ঠা", "মো"], sound: "obokathamo", meaning: "infrastructure", hint: "Basic systems such as roads, power, and water" },
+  ] },
+  { classNumber: 10, focus: "Abstract concepts", words: [
+    { word: "গণতন্ত্র", pieces: ["গ", "ণ", "ত", "ন্ত্র"], sound: "gonotontro", meaning: "democracy", hint: "Government chosen by the people" },
+    { word: "মানবতা", pieces: ["মা", "ন", "ব", "তা"], sound: "manobota", meaning: "humanity", hint: "Compassion for humankind" },
+    { word: "সংস্কৃতি", pieces: ["সং", "স্কৃ", "তি"], sound: "shongskriti", meaning: "culture", hint: "Shared traditions, arts, and customs" },
+    { word: "সাম্য", pieces: ["সা", "ম্য"], sound: "shammo", meaning: "equality", hint: "The state of being equal" },
+    { word: "ন্যায়বিচার", pieces: ["ন্যা", "য়", "বি", "চা", "র"], sound: "nyaybichar", meaning: "justice", hint: "Fair treatment under rules or law" },
+    { word: "ঐতিহ্য", pieces: ["ঐ", "তি", "হ্য"], sound: "oitijjho", meaning: "heritage", hint: "Traditions passed down through generations" },
+    { word: "স্বাধীনতা", pieces: ["স্বা", "ধী", "ন", "তা"], sound: "shadhinota", meaning: "liberty", hint: "Freedom to live and act without oppression" },
+    { word: "ভ্রাতৃত্ব", pieces: ["ভ্রা", "তৃ", "ত্ব"], sound: "bhratritto", meaning: "fraternity", hint: "A spirit of unity and fellowship" },
+    { word: "নৈতিকতা", pieces: ["নৈ", "তি", "ক", "তা"], sound: "noitikota", meaning: "morality", hint: "Principles that distinguish right from wrong" },
+    { word: "নীতিশাস্ত্র", pieces: ["নী", "তি", "শা", "স্ত্র"], sound: "nitishastro", meaning: "ethics", hint: "The study of moral principles" },
+    { word: "মতাদর্শ", pieces: ["ম", "তা", "দ", "র্শ"], sound: "motadorsho", meaning: "ideology", hint: "A system of political or social beliefs" },
+    { word: "দর্শন", pieces: ["দ", "র্শ", "ন"], sound: "dorshon", meaning: "philosophy", hint: "The study of knowledge, reality, and existence" },
+    { word: "চেতনা", pieces: ["চে", "ত", "না"], sound: "chetona", meaning: "consciousness", hint: "Awareness of oneself and the world" },
+    { word: "পরিচয়", pieces: ["প", "রি", "চ", "য়"], sound: "porichoy", meaning: "identity", hint: "The qualities that define a person or group" },
+    { word: "বৈচিত্র্য", pieces: ["বৈ", "চি", "ত্র্য"], sound: "boichitro", meaning: "diversity", hint: "The presence of many different forms or kinds" },
+    { word: "ঐক্য", pieces: ["ঐ", "ক্য"], sound: "oikko", meaning: "unity", hint: "The state of being joined together" },
+    { word: "সহিষ্ণুতা", pieces: ["স", "হি", "ষ্ণু", "তা"], sound: "shohishnuta", meaning: "tolerance", hint: "Acceptance of differences and disagreement" },
+    { word: "ধর্মনিরপেক্ষতা", pieces: ["ধ", "র্ম", "নি", "র", "পে", "ক্ষ", "তা"], sound: "dhormoniropekkhota", meaning: "secularism", hint: "Separation of religion from state authority" },
+    { word: "জাতীয়তাবাদ", pieces: ["জা", "তী", "য়", "তা", "বা", "দ"], sound: "jatiyotabad", meaning: "nationalism", hint: "Strong identification with one's nation" },
+    { word: "সার্বভৌমত্ব", pieces: ["সা", "র্ব", "ভৌ", "ম", "ত্ব"], sound: "sharbobhoumotto", meaning: "sovereignty", hint: "A state's authority to govern itself" },
+    { word: "অধিকার", pieces: ["অ", "ধি", "কা", "র"], sound: "odhikar", meaning: "rights", hint: "Freedoms protected by law or morality" },
+    { word: "দায়বদ্ধতা", pieces: ["দা", "য়", "ব", "দ্ধ", "তা"], sound: "dayoboddhota", meaning: "accountability", hint: "Being responsible for decisions and actions" },
+    { word: "অগ্রগতি", pieces: ["অ", "গ্র", "গ", "তি"], sound: "ogrogoti", meaning: "progress", hint: "Movement toward improvement or advancement" },
+    { word: "সভ্যতা", pieces: ["স", "ভ্য", "তা"], sound: "shobbhota", meaning: "civilization", hint: "An advanced organized human society" },
+    { word: "কল্যাণ", pieces: ["ক", "ল্যা", "ণ"], sound: "kollyan", meaning: "welfare", hint: "Health, happiness, and well-being" },
+    { word: "আধুনিকতা", pieces: ["আ", "ধু", "নি", "ক", "তা"], sound: "adhunikota", meaning: "modernity", hint: "The condition of being modern" },
+    { word: "যুক্তিবাদ", pieces: ["যু", "ক্তি", "বা", "দ"], sound: "juktibad", meaning: "rationalism", hint: "Reliance on reason as a source of knowledge" },
+    { word: "সৃজনশীলতা", pieces: ["সৃ", "জ", "ন", "শী", "ল", "তা"], sound: "srijonshilota", meaning: "creativity", hint: "The power to make original ideas or work" },
+    { word: "মতপ্রকাশ", pieces: ["ম", "ত", "প্র", "কা", "শ"], sound: "motoprokash", meaning: "expression", hint: "Communicating one's thoughts and opinions" },
+    { word: "সহাবস্থান", pieces: ["স", "হা", "ব", "স্থা", "ন"], sound: "shohabosthan", meaning: "coexistence", hint: "Living together peacefully despite differences" },
+  ] },
+  { classNumber: 11, focus: "Advanced literary vocabulary", words: [
+    { word: "সৃজনশীলতা", pieces: ["সৃ", "জ", "ন", "শী", "ল", "তা"], sound: "srijonshilota", meaning: "creativity", hint: "The ability to produce original ideas" },
+    { word: "আত্মবিশ্বাস", pieces: ["আত্ম", "বি", "শ্বা", "স"], sound: "attobishshash", meaning: "self-confidence", hint: "Belief in your own ability" },
+    { word: "সহানুভূতি", pieces: ["স", "হা", "নু", "ভূ", "তি"], sound: "shohanubhuti", meaning: "empathy", hint: "Understanding another person's feelings" },
+    { word: "মননশীলতা", pieces: ["ম", "ন", "ন", "শী", "ল", "তা"], sound: "mononshilota", meaning: "thoughtfulness", hint: "Careful and considerate thinking" },
+    { word: "আত্মমর্যাদা", pieces: ["আত্ম", "ম", "র্যা", "দা"], sound: "attomorjada", meaning: "self-respect", hint: "A sense of your own worth" },
+    { word: "সহমর্মিতা", pieces: ["স", "হ", "ম", "র্মি", "তা"], sound: "shohomormita", meaning: "compassion", hint: "Concern for another person's suffering" },
+    { word: "নন্দনতত্ত্ব", pieces: ["ন", "ন্দ", "ন", "ত", "ত্ত্ব"], sound: "nondonototto", meaning: "aesthetics", hint: "The study of beauty and artistic taste" },
+    { word: "রূপক", pieces: ["রূ", "প", "ক"], sound: "rupok", meaning: "metaphor", hint: "A comparison stated without using like or as" },
+    { word: "উপমা", pieces: ["উ", "প", "মা"], sound: "upoma", meaning: "simile", hint: "A comparison that commonly uses like or as" },
+    { word: "প্রতীকবাদ", pieces: ["প্র", "তী", "ক", "বা", "দ"], sound: "protikbad", meaning: "symbolism", hint: "Using symbols to represent deeper ideas" },
+    { word: "কল্পনাশক্তি", pieces: ["ক", "ল্প", "না", "শ", "ক্তি"], sound: "kolponashokti", meaning: "imagination", hint: "The ability to create ideas and images mentally" },
+    { word: "দৃষ্টিভঙ্গি", pieces: ["দৃ", "ষ্টি", "ভ", "ঙ্গি"], sound: "drishtibhongi", meaning: "perspective", hint: "A particular way of viewing something" },
+    { word: "ব্যাখ্যা", pieces: ["ব্যা", "খ্যা"], sound: "byakhya", meaning: "interpretation", hint: "An explanation of meaning" },
+    { word: "সমালোচনা", pieces: ["স", "মা", "লো", "চ", "না"], sound: "shomalochona", meaning: "criticism", hint: "Careful judgment of a work's qualities" },
+    { word: "আখ্যান", pieces: ["আ", "খ্যা", "ন"], sound: "akhyan", meaning: "narrative", hint: "A structured account of connected events" },
+    { word: "নায়ক", pieces: ["না", "য়", "ক"], sound: "nayok", meaning: "protagonist", hint: "The leading character in a story" },
+    { word: "চরিত্র", pieces: ["চ", "রি", "ত্র"], sound: "choritro", meaning: "character", hint: "A person represented in a literary work" },
+    { word: "সংলাপ", pieces: ["সং", "লা", "প"], sound: "shonglap", meaning: "dialogue", hint: "Conversation between characters" },
+    { word: "কাব্য", pieces: ["কা", "ব্য"], sound: "kabbo", meaning: "poetry", hint: "Literary writing shaped by rhythm and imagery" },
+    { word: "গদ্য", pieces: ["গ", "দ্য"], sound: "goddo", meaning: "prose", hint: "Ordinary written language without poetic meter" },
+    { word: "নাটক", pieces: ["না", "ট", "ক"], sound: "natok", meaning: "drama", hint: "A story written to be performed" },
+    { word: "উপন্যাস", pieces: ["উ", "প", "ন্যা", "স"], sound: "uponnash", meaning: "novel", hint: "A long work of fictional prose" },
+    { word: "প্রবন্ধ", pieces: ["প্র", "ব", "ন্ধ"], sound: "probondho", meaning: "essay", hint: "A focused piece of nonfiction writing" },
+    { word: "অলংকার", pieces: ["অ", "লং", "কা", "র"], sound: "olongkar", meaning: "rhetorical device", hint: "A language technique used for expressive effect" },
+    { word: "চেতনাবোধ", pieces: ["চে", "ত", "না", "বো", "ধ"], sound: "chetonabodh", meaning: "awareness", hint: "Conscious understanding of an idea or condition" },
+    { word: "আত্মবিশ্লেষণ", pieces: ["আত্ম", "বি", "শ্লে", "ষ", "ণ"], sound: "attobishleshon", meaning: "introspection", hint: "Examination of one's own thoughts and feelings" },
+    { word: "ব্যক্তিস্বাতন্ত্র্য", pieces: ["ব্য", "ক্তি", "স্বা", "ত", "ন্ত্র্য"], sound: "bektishatontro", meaning: "individuality", hint: "Qualities that distinguish one person from others" },
+    { word: "মানবতাবাদ", pieces: ["মা", "ন", "ব", "তা", "বা", "দ"], sound: "manobotabad", meaning: "humanism", hint: "A philosophy centered on human value and agency" },
+    { word: "অস্তিত্ববাদ", pieces: ["অ", "স্তি", "ত্ব", "বা", "দ"], sound: "ostittobad", meaning: "existentialism", hint: "A philosophy of freedom, choice, and existence" },
+    { word: "রোমান্টিকতাবাদ", pieces: ["রো", "মা", "ন্টি", "ক", "তা", "বা", "দ"], sound: "romantikotabad", meaning: "romanticism", hint: "A movement emphasizing emotion and imagination" },
+  ] },
+  { classNumber: 12, focus: "Complex academic concepts", words: [
+    { word: "জীববৈচিত্র্য", pieces: ["জী", "ব", "বৈ", "চি", "ত্র্য"], sound: "jiboboichitro", meaning: "biodiversity", hint: "The variety of living things in nature" },
+    { word: "বিশ্বায়ন", pieces: ["বি", "শ্বা", "য়", "ন"], sound: "bishshayon", meaning: "globalization", hint: "Increasing connection across the world" },
+    { word: "সাংবিধানিক", pieces: ["সাং", "বি", "ধা", "নি", "ক"], sound: "shangbidhanik", meaning: "constitutional", hint: "Related to a country's fundamental laws" },
+    { word: "জলবায়ু", pieces: ["জ", "ল", "বা", "য়ু"], sound: "jolobayu", meaning: "climate", hint: "Long-term weather patterns in a region" },
+    { word: "রাষ্ট্রবিজ্ঞান", pieces: ["রা", "ষ্ট্র", "বি", "জ্ঞা", "ন"], sound: "rashtrobiggan", meaning: "political science", hint: "The study of government and political systems" },
+    { word: "বহুসংস্কৃতিবাদ", pieces: ["ব", "হু", "সং", "স্কৃ", "তি", "বা", "দ"], sound: "bohushongskritibad", meaning: "multiculturalism", hint: "Many cultures existing together in society" },
+    { word: "বাস্তুতন্ত্র", pieces: ["বা", "স্তু", "ত", "ন্ত্র"], sound: "bastutontro", meaning: "ecosystem", hint: "Living things interacting with their environment" },
+    { word: "সালোকসংশ্লেষণ", pieces: ["সা", "লো", "ক", "সং", "শ্লে", "ষ", "ণ"], sound: "salokshongshleshon", meaning: "photosynthesis", hint: "The process plants use to make food from light" },
+    { word: "উত্তরাধিকার", pieces: ["উ", "ত্ত", "রা", "ধি", "কা", "র"], sound: "uttoradhikar", meaning: "inheritance", hint: "Traits or property passed to later generations" },
+    { word: "বিবর্তন", pieces: ["বি", "ব", "র্ত", "ন"], sound: "biborton", meaning: "evolution", hint: "Biological change across generations" },
+    { word: "আপেক্ষিকতা", pieces: ["আ", "পে", "ক্ষি", "ক", "তা"], sound: "apekkhikota", meaning: "relativity", hint: "A theory relating space, time, matter, and gravity" },
+    { word: "অ্যালগরিদম", pieces: ["অ্যা", "ল", "গ", "রি", "দ", "ম"], sound: "algorithm", meaning: "algorithm", hint: "A defined sequence of steps for solving a problem" },
+    { word: "সংকেতায়ন", pieces: ["সং", "কে", "তা", "য়", "ন"], sound: "shongketayon", meaning: "encryption", hint: "Converting information into a protected code" },
+    { word: "কূটনীতি", pieces: ["কূ", "ট", "নী", "তি"], sound: "kutniti", meaning: "diplomacy", hint: "Managing relations and negotiations between states" },
+    { word: "ভূরাজনীতি", pieces: ["ভূ", "রা", "জ", "নী", "তি"], sound: "bhurajniti", meaning: "geopolitics", hint: "How geography influences international politics" },
+    { word: "জননীতি", pieces: ["জ", "ন", "নী", "তি"], sound: "jononiti", meaning: "public policy", hint: "Government principles and plans for public issues" },
+    { word: "আইনশাস্ত্র", pieces: ["আ", "ই", "ন", "শা", "স্ত্র"], sound: "ainshastro", meaning: "jurisprudence", hint: "The theory and philosophy of law" },
+    { word: "নৃবিজ্ঞান", pieces: ["নৃ", "বি", "জ্ঞা", "ন"], sound: "nribiggan", meaning: "anthropology", hint: "The study of humans and cultures" },
+    { word: "প্রত্নতত্ত্ব", pieces: ["প্র", "ত্ন", "ত", "ত্ত্ব"], sound: "protnototto", meaning: "archaeology", hint: "The study of past societies through material remains" },
+    { word: "ভাষাবিজ্ঞান", pieces: ["ভা", "ষা", "বি", "জ্ঞা", "ন"], sound: "bhashabiggan", meaning: "linguistics", hint: "The scientific study of language" },
+    { word: "জ্ঞানতত্ত্ব", pieces: ["জ্ঞা", "ন", "ত", "ত্ত্ব"], sound: "gganototto", meaning: "epistemology", hint: "The philosophical study of knowledge" },
+    { word: "মনোবিজ্ঞান", pieces: ["ম", "নো", "বি", "জ্ঞা", "ন"], sound: "monobiggan", meaning: "psychology", hint: "The scientific study of mind and behavior" },
+    { word: "উদ্যোক্তৃত্ব", pieces: ["উ", "দ্যো", "ক্তৃ", "ত্ব"], sound: "uddyoktritto", meaning: "entrepreneurship", hint: "Creating and managing a new venture" },
+    { word: "উদ্ভাবন", pieces: ["উ", "দ্ভা", "ব", "ন"], sound: "udbhabon", meaning: "innovation", hint: "Introducing a useful new idea or method" },
+    { word: "নবায়নযোগ্য", pieces: ["ন", "বা", "য়", "ন", "যো", "গ্য"], sound: "nobayonjoggo", meaning: "renewable", hint: "Able to be naturally restored or replaced" },
+    { word: "অভিবাসন", pieces: ["অ", "ভি", "বা", "স", "ন"], sound: "obhibashon", meaning: "migration", hint: "Movement to a new place to live" },
+    { word: "নগরায়ণ", pieces: ["ন", "গ", "রা", "য়", "ণ"], sound: "nogorayon", meaning: "urbanization", hint: "The growth of cities and urban populations" },
+    { word: "বিকেন্দ্রীকরণ", pieces: ["বি", "কে", "ন্দ্রী", "ক", "র", "ণ"], sound: "bikendrikoron", meaning: "decentralization", hint: "Distributing authority away from one central body" },
+    { word: "জবাবদিহিতা", pieces: ["জ", "বা", "ব", "দি", "হি", "তা"], sound: "jobabdihita", meaning: "accountability", hint: "The obligation to explain actions and accept responsibility" },
+    { word: "সুশাসন", pieces: ["সু", "শা", "স", "ন"], sound: "shushashon", meaning: "good governance", hint: "Effective, fair, and accountable public leadership" },
+  ] },
 ];
 
 const shuffle = (items) => [...items].sort(() => Math.random() - 0.5);
@@ -223,7 +784,14 @@ export default function BengaliAlphabet() {
   const [quiz, setQuiz] = useState(() => makeQuiz(VOWELS));
   const [answer, setAnswer] = useState("");
   const [score, setScore] = useState({ correct: 0, total: 0, streak: 0 });
+  const [gameMode, setGameMode] = useState("sound");
+  const [wordClass, setWordClass] = useState(1);
+  const [wordIndex, setWordIndex] = useState(0);
+  const [wordPieces, setWordPieces] = useState([]);
+  const [wordResult, setWordResult] = useState("");
+  const [showWordHint, setShowWordHint] = useState(false);
   const [lessonId, setLessonId] = useState(1);
+  const [grammarLessonIndex, setGrammarLessonIndex] = useState(0);
   const [translateText, setTranslateText] = useState("");
   const [voiceMode, setVoiceMode] = useState(() => localStorage.getItem("bangla-alphabet-voice") || "system");
   const [isLooping, setIsLooping] = useState(false);
@@ -319,6 +887,21 @@ export default function BengaliAlphabet() {
 
   const progress = Math.round((learned.length / allCharacters.length) * 100);
   const activeLesson = LESSONS.find((lesson) => lesson.id === lessonId);
+  const activeGrammarLesson = GRAMMAR_LESSONS[grammarLessonIndex];
+  const activeSection = TABS.find((section) => section.id === tab);
+  const ActiveSectionIcon = activeSection.icon;
+  const activeWordLevel = WORD_LEVELS[wordClass - 1];
+  const activeWordSet = activeWordLevel.words;
+  const activeWord = activeWordSet[wordIndex];
+  const availablePieces = useMemo(
+    () => shuffle([
+      ...activeWord.pieces,
+      ...activeWordSet[(wordIndex + 1) % activeWordSet.length].pieces
+        .filter((piece) => !activeWord.pieces.includes(piece))
+        .slice(0, 2),
+    ]),
+    [activeWord, activeWordSet, wordIndex],
+  );
 
   function toggleLearned(character) {
     setLearned((current) => current.includes(character)
@@ -329,7 +912,7 @@ export default function BengaliAlphabet() {
   function chooseAnswer(choice) {
     if (answer) return;
     setAnswer(choice);
-    const correct = choice === quiz.target.sound;
+    const correct = choice === (gameMode === "sound" ? quiz.target.sound : quiz.target.meaning);
     setScore((current) => ({
       correct: current.correct + (correct ? 1 : 0),
       total: current.total + 1,
@@ -342,14 +925,35 @@ export default function BengaliAlphabet() {
     setAnswer("");
   }
 
+  function resetWord(nextIndex = wordIndex) {
+    setWordIndex(nextIndex);
+    setWordPieces([]);
+    setWordResult("");
+    setShowWordHint(false);
+  }
+
+  function changeWordClass(nextClass) {
+    setWordClass(nextClass);
+    setWordIndex(0);
+    setWordPieces([]);
+    setWordResult("");
+    setShowWordHint(false);
+  }
+
+  function checkWord() {
+    const isCorrect = wordPieces.join("") === activeWord.word;
+    setWordResult(isCorrect ? "correct" : "wrong");
+    if (isCorrect) speakBengali(activeWord.word);
+  }
+
   return (
     <div className="alpha-page">
       <div className="alpha-shell">
         <section className="alpha-hero">
           <div className="alpha-hero-copy">
-            <span className="alpha-kicker">বাংলা বর্ণমালা · BANGLA ALPHABET</span>
-            <h1>Learn to read <span>বাংলা</span>,<br />one character at a time.</h1>
-            <p>Master every Bangla letter through sound, simple words, guided lessons, and quick games.</p>
+            <span className="alpha-kicker">বাংলা ব্যাকরণ · BENGALI GRAMMAR</span>
+            <h1>Build your Bengali,<br /><span>অক্ষর থেকে শব্দ</span>.</h1>
+            <p>Learn characters, join them into useful words, and grow your grammar through playful challenges.</p>
             <button className="alpha-primary-button" type="button" onClick={() => { setTab("lessons"); setLessonId(1); }}>
               Continue lesson <FaArrowRight aria-hidden="true" />
             </button>
@@ -366,7 +970,7 @@ export default function BengaliAlphabet() {
         <section className="alpha-progress-card" aria-label="Alphabet progress">
           <div className="alpha-progress-heading">
             <div>
-              <span>Your alphabet journey</span>
+              <span>Your Bengali grammar journey</span>
               <strong>{learned.length} of {allCharacters.length} characters learned</strong>
             </div>
             <b>{progress}%</b>
@@ -392,12 +996,14 @@ export default function BengaliAlphabet() {
           </div>
         </section>
 
-        <nav className="alpha-tabs" aria-label="Bangla alphabet sections">
-          {TABS.map(({ id, label, icon: Icon }) => (
-            <button key={id} type="button" className={tab === id ? "active" : ""} onClick={() => setTab(id)}>
-              <Icon aria-hidden="true" /> {label}
-            </button>
-          ))}
+        <nav className="alpha-section-picker" aria-label="Bengali grammar sections">
+          <div>
+            <span className="alpha-section-picker-icon"><ActiveSectionIcon aria-hidden="true" /></span>
+            <label htmlFor="alpha-section-select"><small>CHOOSE A SECTION</small><strong>{activeSection.label}</strong></label>
+          </div>
+          <select id="alpha-section-select" value={tab} onChange={(event) => setTab(event.target.value)}>
+            {TABS.map(({ id, label }) => <option key={id} value={id}>{label}</option>)}
+          </select>
         </nav>
 
         {tab === "learn" && (
@@ -496,6 +1102,99 @@ export default function BengaliAlphabet() {
           </main>
         )}
 
+        {tab === "vowel-marks" && (
+          <main className="alpha-content alpha-vowel-marks">
+            <div className="alpha-section-heading">
+              <div>
+                <span className="alpha-kicker">হ্রস্ব স্বরধ্বনি · SHORT VOWEL SOUNDS</span>
+                <h2>Small marks that change a consonant</h2>
+                <p>These dependent vowel signs attach to a consonant. Notice where each mark is written, then tap the example to hear the new sound.</p>
+              </div>
+            </div>
+            <div className="alpha-vowel-rule">
+              <span>ব্যঞ্জন</span><strong>consonant</strong><b>+</b><span>কার</span><strong>vowel mark</strong><b>=</b><span>নতুন ধ্বনি</span><strong>new sound</strong>
+            </div>
+            <div className="alpha-vowel-grid">
+              {SHORT_VOWEL_MARKS.map((vowel) => (
+                <article className="alpha-vowel-card" key={vowel.name}>
+                  <div className="alpha-vowel-card-top">
+                    <div>
+                      <span className="alpha-kicker">{vowel.position === "before" ? "BEFORE" : "BELOW"} THE CONSONANT</span>
+                      <h3>{vowel.name} <small>( {vowel.mark} )</small></h3>
+                    </div>
+                    <AudioButton text={vowel.combined} label={`Hear ${vowel.combined}`} voiceMode={voiceMode} />
+                  </div>
+                  <p>{vowel.placement}</p>
+                  <small className="alpha-placement-bn">{vowel.placementBn}</small>
+                  <button
+                    className="alpha-vowel-equation"
+                    type="button"
+                    onClick={() => voiceMode === "google" ? speakGoogleBengali(vowel.combined).catch((error) => console.error("Google Bengali speech error:", error)) : speakBengali(vowel.combined)}
+                    aria-label={`Hear ${vowel.combined}, ${vowel.romanized}`}
+                  >
+                    <span>{vowel.base}</span><b>+</b><span className="is-mark">{vowel.mark}</span><b>=</b><span className="is-result">{vowel.combined}</span>
+                  </button>
+                  <div className="alpha-vowel-pronunciation"><strong>{vowel.combined}</strong><span>{vowel.romanized}</span><em>sound: {vowel.sound}</em></div>
+                  <div className="alpha-vowel-example">
+                    <div><span>Example word</span><strong>{vowel.example}</strong><small>{vowel.exampleSound} · {vowel.meaning}</small></div>
+                    <AudioButton text={vowel.example} label={`Hear ${vowel.example}`} voiceMode={voiceMode} />
+                  </div>
+                </article>
+              ))}
+            </div>
+            <div className="alpha-tip">
+              <span>Remember</span>
+              The <strong>ই-কার (ি)</strong> appears visually before the consonant, but you pronounce the consonant first: <strong>ক + ি = কি (ki)</strong>.
+            </div>
+          </main>
+        )}
+
+        {tab === "grammar" && (
+          <main className="alpha-content alpha-grammar-lessons">
+            <div className="alpha-section-heading">
+              <div>
+                <span className="alpha-kicker">ব্যাকরণ পাঠ · GRAMMAR PATH</span>
+                <h2>Build sentences that sound natural</h2>
+                <p>Move from pronouns and word order to questions, verb forms, and respectful everyday speech.</p>
+              </div>
+              <label className="alpha-lesson-select">Lesson
+                <select value={grammarLessonIndex} onChange={(event) => setGrammarLessonIndex(Number(event.target.value))}>
+                  {GRAMMAR_LESSONS.map((lesson, index) => <option key={lesson.title} value={index}>{index + 1}. {lesson.title}</option>)}
+                </select>
+              </label>
+            </div>
+            <div className="alpha-grammar-progress" aria-label={`Grammar lesson ${grammarLessonIndex + 1} of ${GRAMMAR_LESSONS.length}`}>
+              {GRAMMAR_LESSONS.map((lesson, index) => <button key={lesson.title} type="button" className={index === grammarLessonIndex ? "active" : ""} onClick={() => setGrammarLessonIndex(index)} aria-label={`Open lesson ${index + 1}: ${lesson.title}`}>{index + 1}</button>)}
+            </div>
+            <article className="alpha-grammar-card">
+              <header>
+                <span className="alpha-kicker">LESSON {String(grammarLessonIndex + 1).padStart(2, "0")}</span>
+                <h3>{activeGrammarLesson.title}</h3>
+                <strong lang="bn">{activeGrammarLesson.bnTitle}</strong>
+                <p>{activeGrammarLesson.description}</p>
+              </header>
+              <div className="alpha-grammar-pattern"><span>Sentence pattern</span><strong>{activeGrammarLesson.pattern}</strong></div>
+              <div className="alpha-grammar-examples">
+                {activeGrammarLesson.examples.map(([bengali, romanized, meaning], index) => (
+                  <div key={bengali}>
+                    <span>{String(index + 1).padStart(2, "0")}</span>
+                    <button type="button" onClick={() => voiceMode === "google" ? speakGoogleBengali(bengali).catch((error) => console.error("Google Bengali speech error:", error)) : speakBengali(bengali)}>
+                      <strong lang="bn">{bengali}</strong><small>{romanized}</small>
+                    </button>
+                    <p>{meaning}</p>
+                    <AudioButton text={bengali} label={`Hear ${bengali}`} voiceMode={voiceMode} />
+                  </div>
+                ))}
+              </div>
+              <div className="alpha-tip"><span>Grammar note</span>{activeGrammarLesson.tip}</div>
+              <div className="alpha-grammar-actions">
+                <button type="button" disabled={grammarLessonIndex === 0} onClick={() => setGrammarLessonIndex((current) => current - 1)}>Previous</button>
+                <button className="alpha-primary-button" type="button" onClick={() => setGrammarLessonIndex((current) => (current + 1) % GRAMMAR_LESSONS.length)}>Next lesson <FaArrowRight /></button>
+              </div>
+            </article>
+          </main>
+        )}
+
         {tab === "practice" && (
           <main className="alpha-content">
             <div className="alpha-section-heading">
@@ -515,17 +1214,75 @@ export default function BengaliAlphabet() {
           </main>
         )}
 
+        {tab === "words" && (
+          <main className="alpha-content alpha-word-workshop">
+            <div className="alpha-section-heading">
+              <div>
+                <span className="alpha-kicker">শব্দ গঠন · WORD WORKSHOP</span>
+                <h2>Make a Bengali word</h2>
+                <p>Tap the sound blocks in the right order. Watch each small part become a word you can use.</p>
+              </div>
+              <label className="alpha-word-class-select">Difficulty level
+                <select value={wordClass} onChange={(event) => changeWordClass(Number(event.target.value))}>
+                  {WORD_LEVELS.map((level) => <option key={level.classNumber} value={level.classNumber}>Class {level.classNumber}</option>)}
+                </select>
+              </label>
+            </div>
+            <div className="alpha-word-level-bar">
+              <div><span>CLASS {wordClass}</span><strong>{activeWordLevel.focus}</strong></div>
+              <span className="alpha-challenge-count">Word {wordIndex + 1} of {activeWordSet.length}</span>
+            </div>
+            <section className="alpha-word-board">
+              <div className="alpha-word-clue">
+                <span className="alpha-kicker">YOUR CLUE</span>
+                <strong>{activeWord.meaning}</strong>
+                <small>{activeWord.sound}</small>
+                <button type="button" onClick={() => setShowWordHint((current) => !current)}>
+                  <FaLightbulb /> {showWordHint ? activeWord.hint : "Show a hint"}
+                </button>
+              </div>
+              <div className="alpha-word-play">
+                <div className={`alpha-word-slots ${wordResult}`} aria-label="Your word">
+                  {wordPieces.length ? wordPieces.map((piece, index) => (
+                    <button type="button" key={`${piece}-${index}`} onClick={() => { setWordPieces((current) => current.filter((_, itemIndex) => itemIndex !== index)); setWordResult(""); }}>
+                      {piece}
+                    </button>
+                  )) : <span>এখানে অক্ষর বসাও · build here</span>}
+                </div>
+                <div className="alpha-word-bank" aria-label="Available word pieces">
+                  {availablePieces.map((piece, index) => (
+                    <button type="button" key={`${piece}-${index}`} onClick={() => { setWordPieces((current) => [...current, piece]); setWordResult(""); }}>{piece}</button>
+                  ))}
+                </div>
+                {wordResult && <div className={`alpha-word-feedback ${wordResult}`} role="status">{wordResult === "correct" ? `দারুণ! ${activeWord.word} means ${activeWord.meaning}.` : "Almost! Tap a block above to remove it and try again."}</div>}
+                <div className="alpha-word-actions">
+                  <button type="button" onClick={() => resetWord()}><FaRotateRight /> Clear</button>
+                  <button className="alpha-primary-button" type="button" onClick={wordResult === "correct" ? () => resetWord((wordIndex + 1) % activeWordSet.length) : checkWord} disabled={!wordPieces.length}>
+                    {wordResult === "correct" ? <>Next word <FaArrowRight /></> : <>Check word <FaCheck /></>}
+                  </button>
+                </div>
+              </div>
+            </section>
+          </main>
+        )}
+
         {tab === "games" && (
           <main className="alpha-content alpha-game-layout">
             <section className="alpha-game-card">
-              <span className="alpha-kicker">SOUND MATCH</span>
-              <h2>Which sound matches?</h2>
-              <p>Choose the Romanized sound for this character.</p>
+              <div className="alpha-game-switcher" aria-label="Choose a game">
+                <button type="button" className={gameMode === "sound" ? "active" : ""} onClick={() => { setGameMode("sound"); nextQuestion(); }}>Sound match</button>
+                <button type="button" className={gameMode === "meaning" ? "active" : ""} onClick={() => { setGameMode("meaning"); nextQuestion(); }}>Word meaning</button>
+              </div>
+              <span className="alpha-kicker">{gameMode === "sound" ? "SOUND MATCH" : "MEANING MATCH"}</span>
+              <h2>{gameMode === "sound" ? "Which sound matches?" : "What does this word mean?"}</h2>
+              <p>{gameMode === "sound" ? "Choose the Romanized sound for this character." : "Read the example word and choose its English meaning."}</p>
               <div className="alpha-game-glyph">{quiz.target.bn}</div>
+              {gameMode === "meaning" && <strong className="alpha-game-word">{quiz.target.example}</strong>}
               <AudioButton text={quiz.target.bn} label={`Hear ${quiz.target.bn}`} voiceMode={voiceMode} />
               <div className="alpha-game-options">
-                {quiz.options.map((option) => {
-                  const isCorrect = answer && option === quiz.target.sound;
+                {(gameMode === "sound" ? quiz.options : quiz.meanings).map((option) => {
+                  const correctAnswer = gameMode === "sound" ? quiz.target.sound : quiz.target.meaning;
+                  const isCorrect = answer && option === correctAnswer;
                   const isWrong = answer === option && !isCorrect;
                   return (
                     <button className={`${isCorrect ? "correct" : ""} ${isWrong ? "wrong" : ""}`} key={option} type="button" onClick={() => chooseAnswer(option)}>
@@ -536,7 +1293,7 @@ export default function BengaliAlphabet() {
               </div>
               {answer && (
                 <div className="alpha-game-result">
-                  <span>{answer === quiz.target.sound ? "শাবাশ! Great work." : `The answer is ${quiz.target.sound}.`}</span>
+                  <span>{answer === (gameMode === "sound" ? quiz.target.sound : quiz.target.meaning) ? "শাবাশ! Great work." : `The answer is ${gameMode === "sound" ? quiz.target.sound : quiz.target.meaning}.`}</span>
                   <button type="button" onClick={nextQuestion}>Next <FaArrowRight /></button>
                 </div>
               )}
@@ -593,5 +1350,10 @@ export default function BengaliAlphabet() {
 function makeQuiz(items) {
   const target = items[Math.floor(Math.random() * items.length)];
   const distractors = shuffle(items.filter((item) => item.sound !== target.sound)).slice(0, 3);
-  return { target, options: shuffle([target, ...distractors]).map((item) => item.sound) };
+  const meaningDistractors = shuffle(items.filter((item) => item.meaning !== target.meaning)).slice(0, 3);
+  return {
+    target,
+    options: shuffle([target, ...distractors]).map((item) => item.sound),
+    meanings: shuffle([target, ...meaningDistractors]).map((item) => item.meaning),
+  };
 }

@@ -52,9 +52,14 @@
 .alpha-voice-toggle button { min-height: 40px; display: inline-flex; align-items: center; gap: .45rem; border: 0; border-radius: 9px; padding: .55rem .8rem; background: transparent; color: var(--alpha-muted); font-size: .75rem; font-weight: 800; cursor: pointer; }
 .alpha-voice-toggle button.active { background: #fff; color: var(--alpha-green); box-shadow: 0 3px 10px rgba(25,55,39,.1); }
 .alpha-voice-toggle svg { font-size: 1rem; }
-.alpha-tabs { display: flex; gap: .35rem; margin: 1.1rem 0 0; padding: .35rem; overflow-x: auto; border: 1px solid #dce5de; border-radius: 15px; background: rgba(255,255,255,.8); }
-.alpha-tabs button { flex: 1 0 max-content; min-height: 46px; display: inline-flex; align-items: center; justify-content: center; gap: .5rem; border: 0; border-radius: 11px; padding: .65rem 1rem; background: transparent; color: var(--alpha-muted); font-weight: 800; cursor: pointer; }
-.alpha-tabs button.active { background: var(--alpha-green); color: #fff; box-shadow: 0 8px 20px rgba(23,107,77,.18); }
+.alpha-section-picker { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin: 1.1rem 0 0; border: 1px solid #dce5de; border-radius: 16px; padding: .65rem .75rem; background: rgba(255,255,255,.9); box-shadow: 0 10px 28px rgba(31,60,44,.06); }
+.alpha-section-picker > div { min-width: 0; display: flex; align-items: center; gap: .75rem; }
+.alpha-section-picker-icon { width: 42px; height: 42px; display: grid; flex: 0 0 auto; place-items: center; border-radius: 12px; background: var(--alpha-mint); color: var(--alpha-green); }
+.alpha-section-picker label { min-width: 0; display: grid; }
+.alpha-section-picker label small { color: var(--alpha-muted); font-size: .62rem; font-weight: 900; letter-spacing: .08em; }
+.alpha-section-picker label strong { overflow: hidden; font-size: .9rem; text-overflow: ellipsis; white-space: nowrap; }
+.alpha-section-picker select, .alpha-lesson-select select { min-height: 44px; border: 1px solid #cbd9cf; border-radius: 11px; padding: .65rem 2.5rem .65rem .85rem; background: #fff; color: var(--alpha-ink); font: inherit; font-size: .82rem; font-weight: 800; cursor: pointer; }
+.alpha-section-picker select:focus, .alpha-lesson-select select:focus { border-color: var(--alpha-green); outline: 3px solid rgba(23,107,77,.12); }
 .alpha-content { margin-top: 1rem; border: 1px solid #dce5de; border-radius: 24px; padding: clamp(1.2rem, 3.5vw, 2.5rem); background: rgba(255,255,255,.92); box-shadow: 0 18px 50px rgba(31,60,44,.07); }
 .alpha-section-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 1.5rem; margin-bottom: 1.7rem; }
 .alpha-section-heading h2, .alpha-lesson-list h2, .alpha-lesson-detail h2, .alpha-game-card h2 { margin: .25rem 0 .4rem; font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.8rem, 4vw, 2.7rem); font-weight: 500; letter-spacing: -.035em; }
@@ -117,6 +122,61 @@
 .alpha-tip { margin: 1rem 0 1.5rem; border-left: 4px solid var(--alpha-orange); border-radius: 0 12px 12px 0; padding: 1rem; background: #fff8eb; color: #5e513c; line-height: 1.6; }
 .alpha-tip > span { display: block; color: #a86413; font-size: .68rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
 
+.alpha-vowel-rule { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; align-items: center; gap: .5rem 1rem; margin-bottom: 1.2rem; border-radius: 18px; padding: 1rem 1.3rem; background: var(--alpha-dark); color: #fff; text-align: center; }
+.alpha-vowel-rule span { grid-row: 1; font-family: "Noto Sans Bengali", sans-serif; font-size: 1.3rem; font-weight: 800; }
+.alpha-vowel-rule strong { grid-row: 2; color: #bcd8c8; font-size: .68rem; }
+.alpha-vowel-rule b { grid-row: 1 / 3; color: var(--alpha-orange); font-size: 1.2rem; }
+.alpha-vowel-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: .85rem; }
+.alpha-vowel-card { min-width: 0; border: 1px solid #dce5de; border-radius: 20px; padding: 1.15rem; background: #fcfdfb; box-shadow: 0 10px 28px rgba(31,60,44,.06); }
+.alpha-vowel-card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: .7rem; }
+.alpha-vowel-card h3 { margin: .3rem 0 0; color: var(--alpha-ink); font-family: "Noto Sans Bengali", "Nirmala UI", sans-serif; font-size: 1.45rem; }
+.alpha-vowel-card h3 small { color: var(--alpha-green); font-size: 1.2rem; }
+.alpha-vowel-card > p { margin: 1rem 0 .1rem; color: var(--alpha-ink); font-size: .82rem; font-weight: 800; }
+.alpha-placement-bn { color: var(--alpha-muted); font-family: "Noto Sans Bengali", sans-serif; font-size: .75rem; }
+.alpha-vowel-equation { width: 100%; min-height: 6.8rem; display: flex; align-items: center; justify-content: center; gap: .6rem; margin-top: 1rem; border: 1px solid #d6e3da; border-radius: 16px; background: #f1f7f3; color: var(--alpha-dark); cursor: pointer; }
+.alpha-vowel-equation:hover { border-color: #8bb99d; background: var(--alpha-mint); }
+.alpha-vowel-equation span { min-width: 2.5rem; font-family: "Noto Sans Bengali", sans-serif; font-size: 2.4rem; font-weight: 800; }
+.alpha-vowel-equation .is-mark { color: #bd6a15; }
+.alpha-vowel-equation .is-result { color: var(--alpha-green); font-size: 3rem; }
+.alpha-vowel-equation b { color: #87968d; }
+.alpha-vowel-pronunciation { display: flex; align-items: baseline; gap: .5rem; margin-top: .8rem; }
+.alpha-vowel-pronunciation strong { font-family: "Noto Sans Bengali", sans-serif; font-size: 1.25rem; }
+.alpha-vowel-pronunciation span { color: var(--alpha-green); font-weight: 900; }
+.alpha-vowel-pronunciation em { margin-left: auto; color: var(--alpha-muted); font-size: .7rem; font-style: normal; }
+.alpha-vowel-example { display: flex; align-items: center; justify-content: space-between; gap: .7rem; margin-top: .9rem; border-top: 1px solid #e7ece8; padding-top: .85rem; }
+.alpha-vowel-example > div { min-width: 0; display: grid; }
+.alpha-vowel-example div > span { color: var(--alpha-muted); font-size: .65rem; font-weight: 800; text-transform: uppercase; }
+.alpha-vowel-example strong { font-family: "Noto Sans Bengali", sans-serif; font-size: 1.2rem; }
+.alpha-vowel-example small { overflow: hidden; color: var(--alpha-muted); font-size: .7rem; text-overflow: ellipsis; white-space: nowrap; }
+.alpha-vowel-marks > .alpha-tip { margin: 1rem 0 0; }
+
+.alpha-lesson-select { display: grid; flex: 0 0 min(100%, 21rem); gap: .3rem; color: var(--alpha-muted); font-size: .65rem; font-weight: 900; letter-spacing: .06em; text-transform: uppercase; }
+.alpha-lesson-select select { width: 100%; text-transform: none; }
+.alpha-grammar-progress { display: grid; grid-template-columns: repeat(10, 1fr); gap: .35rem; margin-bottom: 1rem; }
+.alpha-grammar-progress button { min-height: 34px; border: 0; border-radius: 9px; background: #edf2ee; color: var(--alpha-muted); font-size: .72rem; font-weight: 900; cursor: pointer; }
+.alpha-grammar-progress button:hover { background: #ddebe2; color: var(--alpha-green); }
+.alpha-grammar-progress button.active { background: var(--alpha-green); color: #fff; box-shadow: 0 6px 15px rgba(23,107,77,.2); }
+.alpha-grammar-card { overflow: hidden; border: 1px solid #dce5de; border-radius: 22px; background: #fbfcfa; box-shadow: 0 16px 42px rgba(31,60,44,.07); }
+.alpha-grammar-card > header { padding: clamp(1.4rem, 4vw, 2.5rem); background: linear-gradient(145deg, #104c38, #176b4d); color: #fff; }
+.alpha-grammar-card header .alpha-kicker { color: #a8ddbf; }
+.alpha-grammar-card header h3 { margin: .55rem 0 .15rem; color: #fff; font-family: Georgia, "Times New Roman", serif; font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 500; letter-spacing: -.035em; }
+.alpha-grammar-card header > strong { color: #f3b25f; font-family: "Noto Sans Bengali", sans-serif; font-size: 1.15rem; }
+.alpha-grammar-card header p { max-width: 45rem; margin: .85rem 0 0; color: #d6e4db; line-height: 1.6; }
+.alpha-grammar-pattern { display: flex; align-items: center; gap: 1rem; border-bottom: 1px solid #e1e8e3; padding: 1rem clamp(1rem, 3vw, 2rem); background: #edf5f0; }
+.alpha-grammar-pattern span { color: var(--alpha-muted); font-size: .68rem; font-weight: 900; letter-spacing: .06em; text-transform: uppercase; }
+.alpha-grammar-pattern strong { color: var(--alpha-green); font-size: .9rem; }
+.alpha-grammar-examples { display: grid; gap: .65rem; padding: clamp(1rem, 3vw, 2rem); }
+.alpha-grammar-examples > div { display: grid; grid-template-columns: 2rem minmax(10rem, 1fr) minmax(10rem, .8fr) 34px; align-items: center; gap: .8rem; border: 1px solid #e0e7e2; border-radius: 14px; padding: .75rem; background: #fff; }
+.alpha-grammar-examples > div > span { color: #9aa89f; font-size: .68rem; font-weight: 900; }
+.alpha-grammar-examples > div > button:not(.alpha-audio) { min-width: 0; display: grid; border: 0; padding: 0; background: transparent; color: var(--alpha-ink); text-align: left; cursor: pointer; }
+.alpha-grammar-examples button strong { font-family: "Noto Sans Bengali", sans-serif; font-size: 1.2rem; }
+.alpha-grammar-examples button small { overflow: hidden; color: var(--alpha-green); font-size: .72rem; font-weight: 800; text-overflow: ellipsis; white-space: nowrap; }
+.alpha-grammar-examples p { margin: 0; color: var(--alpha-muted); font-size: .8rem; line-height: 1.4; }
+.alpha-grammar-card > .alpha-tip { margin: 0 clamp(1rem, 3vw, 2rem) 1rem; }
+.alpha-grammar-actions { display: flex; align-items: center; justify-content: space-between; gap: .7rem; padding: 0 clamp(1rem, 3vw, 2rem) 2rem; }
+.alpha-grammar-actions > button:first-child { min-height: 46px; border: 1px solid #d7e1da; border-radius: 11px; padding: .65rem .9rem; background: #fff; color: var(--alpha-muted); font-weight: 800; cursor: pointer; }
+.alpha-grammar-actions > button:first-child:disabled { opacity: .4; cursor: not-allowed; }
+
 .alpha-practice-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: .8rem; }
 .alpha-trace-card { position: relative; overflow: hidden; border: 1px solid #dfe7e1; border-radius: 18px; padding: 1rem; background: #fcfdfb; }
 .alpha-trace-number { color: #9ba79f; font-size: .68rem; font-weight: 900; }
@@ -127,11 +187,47 @@
 .alpha-trace-card > div:nth-of-type(3) strong { color: var(--alpha-green); }
 .alpha-trace-card small { color: var(--alpha-muted); }
 
+.alpha-challenge-count { flex: 0 0 auto; border-radius: 999px; padding: .5rem .8rem; background: var(--alpha-mint); color: var(--alpha-green); font-size: .78rem; font-weight: 900; }
+.alpha-word-class-select { min-width: min(100%, 12rem); display: grid; gap: .3rem; color: var(--alpha-muted); font-size: .65rem; font-weight: 900; letter-spacing: .06em; text-transform: uppercase; }
+.alpha-word-class-select select { min-height: 44px; border: 1px solid #cbd9cf; border-radius: 11px; padding: .65rem 2.5rem .65rem .85rem; background: #fff; color: var(--alpha-ink); font: inherit; font-size: .82rem; font-weight: 800; text-transform: none; cursor: pointer; }
+.alpha-word-class-select select:focus { border-color: var(--alpha-green); outline: 3px solid rgba(23,107,77,.12); }
+.alpha-word-level-bar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin: -.45rem 0 1rem; border: 1px solid #dce5de; border-radius: 14px; padding: .75rem .9rem; background: #f8faf8; }
+.alpha-word-level-bar > div { min-width: 0; display: grid; }
+.alpha-word-level-bar > div span { color: var(--alpha-green); font-size: .64rem; font-weight: 950; letter-spacing: .08em; }
+.alpha-word-level-bar > div strong { overflow: hidden; font-size: .82rem; text-overflow: ellipsis; white-space: nowrap; }
+.alpha-word-board { display: grid; grid-template-columns: minmax(12rem, .55fr) minmax(0, 1.45fr); overflow: hidden; border: 1px solid #dce5de; border-radius: 22px; background: #fbfcfa; box-shadow: 0 16px 40px rgba(31,60,44,.07); }
+.alpha-word-clue { display: flex; min-height: 24rem; align-items: center; justify-content: center; flex-direction: column; padding: 2rem; background: linear-gradient(145deg, #104c38, #176b4d); color: #fff; text-align: center; }
+.alpha-word-clue .alpha-kicker { color: #a8ddbf; }
+.alpha-word-clue strong { margin-top: 1rem; font-family: Georgia, "Times New Roman", serif; font-size: clamp(2.1rem, 5vw, 3.5rem); font-weight: 500; }
+.alpha-word-clue small { margin-top: .3rem; color: #cce4d6; font-size: .9rem; }
+.alpha-word-clue button { min-height: 42px; display: inline-flex; align-items: center; gap: .5rem; margin-top: 2rem; border: 1px solid rgba(255,255,255,.2); border-radius: 999px; padding: .6rem .9rem; background: rgba(255,255,255,.1); color: #fff; font-weight: 800; cursor: pointer; }
+.alpha-word-clue button:hover { background: rgba(255,255,255,.16); }
+.alpha-word-play { display: flex; min-width: 0; justify-content: center; flex-direction: column; padding: clamp(1.3rem, 4vw, 3rem); }
+.alpha-word-slots { min-height: 8.5rem; display: flex; align-items: center; justify-content: center; gap: .55rem; border: 2px dashed #cbdad0; border-radius: 18px; padding: 1rem; background: #fff; transition: border-color 180ms ease, background 180ms ease; }
+.alpha-word-slots > span { color: #91a097; font-size: .82rem; font-weight: 800; }
+.alpha-word-slots button, .alpha-word-bank button { min-width: 4.2rem; min-height: 4.2rem; border: 1px solid #c8ddd0; border-radius: 14px; background: var(--alpha-mint); color: var(--alpha-dark); font-family: "Noto Sans Bengali", "Nirmala UI", sans-serif; font-size: 2rem; font-weight: 800; cursor: pointer; box-shadow: 0 6px 14px rgba(20,74,50,.08); }
+.alpha-word-slots button:hover { border-color: #d77c72; background: #fff0ee; }
+.alpha-word-slots.correct { border-color: #47a26f; background: #effaf3; }
+.alpha-word-slots.wrong { border-color: #d77c72; background: #fff7f6; }
+.alpha-word-bank { display: flex; min-height: 5.5rem; align-items: center; justify-content: center; flex-wrap: wrap; gap: .55rem; margin-top: 1rem; border-radius: 16px; padding: .65rem; background: #eef3ef; }
+.alpha-word-bank button { background: #fff; }
+.alpha-word-bank button:hover { border-color: #83b69a; transform: translateY(-2px); }
+.alpha-word-feedback { margin-top: .85rem; border-radius: 11px; padding: .7rem .9rem; font-size: .82rem; font-weight: 800; text-align: center; }
+.alpha-word-feedback.correct { background: #def4e6; color: #135b3d; }
+.alpha-word-feedback.wrong { background: #fff0ee; color: #8c2d24; }
+.alpha-word-actions { display: flex; align-items: center; justify-content: flex-end; gap: .65rem; margin-top: 1rem; }
+.alpha-word-actions > button:first-child { min-height: 46px; display: inline-flex; align-items: center; gap: .45rem; border: 1px solid #d7e1da; border-radius: 11px; padding: .65rem .85rem; background: #fff; color: var(--alpha-muted); font-weight: 800; cursor: pointer; }
+.alpha-word-actions .alpha-primary-button:disabled { opacity: .45; cursor: not-allowed; transform: none; }
+
 .alpha-game-layout { display: grid; grid-template-columns: minmax(0, 1fr) 14rem; gap: 1rem; background: linear-gradient(145deg, #fff, #f2f8f4); }
 .alpha-game-card { text-align: center; }
 .alpha-game-card .alpha-kicker { text-align: left; }
+.alpha-game-switcher { width: fit-content; display: flex; gap: .25rem; margin: 0 auto 1.5rem; border-radius: 12px; padding: .25rem; background: #eaf0ec; }
+.alpha-game-switcher button { min-height: 40px; border: 0; border-radius: 9px; padding: .55rem .85rem; background: transparent; color: var(--alpha-muted); font-size: .75rem; font-weight: 850; cursor: pointer; }
+.alpha-game-switcher button.active { background: #fff; color: var(--alpha-green); box-shadow: 0 3px 10px rgba(25,55,39,.1); }
 .alpha-game-card h2 { margin-top: .25rem; }
 .alpha-game-glyph { margin: 1.5rem auto .6rem; color: #071b12; font-family: "Noto Sans Bengali", sans-serif; font-size: 7.5rem; font-weight: 700; line-height: 1; }
+.alpha-game-word { display: block; margin: -1rem 0 .5rem; color: var(--alpha-green); font-family: "Noto Sans Bengali", sans-serif; font-size: 1.7rem; }
 .alpha-game-options { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: .65rem; max-width: 35rem; margin: 1.5rem auto 0; }
 .alpha-game-options button { min-height: 52px; display: flex; align-items: center; justify-content: center; gap: .5rem; border: 1px solid #d9e2dc; border-radius: 12px; background: #fff; color: var(--alpha-ink); font-weight: 850; cursor: pointer; }
 .alpha-game-options button:hover { border-color: #83b69a; background: var(--alpha-mint); }
@@ -168,7 +264,7 @@
   .alpha-progress-card { width: calc(100% - 2rem); }
   .alpha-voice-card { align-items: stretch; flex-direction: column; margin: 1rem .75rem 0; }
   .alpha-voice-toggle button { flex: 1 1 0; justify-content: center; }
-  .alpha-tabs { margin: 1.25rem .75rem 0; }
+  .alpha-section-picker { margin: 1.25rem .75rem 0; }
   .alpha-content { margin: .75rem; border-radius: 18px; }
   .alpha-section-heading { align-items: stretch; flex-direction: column; }
   .alpha-learn-controls { width: 100%; }
@@ -178,7 +274,12 @@
   .alpha-lesson-layout { grid-template-columns: 1fr; gap: 1.5rem; }
   .alpha-lesson-list { border-right: 0; border-bottom: 1px solid #e2e8e3; padding: 0 0 1.5rem; }
   .alpha-lesson-characters { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .alpha-vowel-grid { grid-template-columns: 1fr; }
+  .alpha-grammar-examples > div { grid-template-columns: 2rem minmax(0,1fr) 34px; }
+  .alpha-grammar-examples p { grid-column: 2 / -1; }
   .alpha-practice-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .alpha-word-board { grid-template-columns: 1fr; }
+  .alpha-word-clue { min-height: 15rem; }
   .alpha-game-layout { grid-template-columns: 1fr; }
   .alpha-score-card { grid-template-columns: repeat(3, 1fr); }
   .alpha-score-card .alpha-kicker, .alpha-score-card button { grid-column: 1 / -1; }
@@ -186,10 +287,23 @@
 }
 
 @media (max-width: 430px) {
-  .alpha-tabs button { padding-inline: .8rem; }
+  .alpha-section-picker { align-items: stretch; flex-direction: column; }
+  .alpha-section-picker select { width: 100%; }
   .alpha-voice-card small { white-space: normal; }
   .alpha-voice-toggle { flex-direction: column; }
   .alpha-character-grid, .alpha-practice-grid { grid-template-columns: 1fr; }
+  .alpha-vowel-rule { gap: .3rem; padding-inline: .7rem; }
+  .alpha-vowel-rule span { font-size: 1rem; }
+  .alpha-vowel-rule strong { font-size: .58rem; }
+  .alpha-grammar-progress { grid-template-columns: repeat(5, 1fr); }
+  .alpha-grammar-pattern { align-items: flex-start; flex-direction: column; gap: .35rem; }
+  .alpha-grammar-examples > div { grid-template-columns: 1.5rem minmax(0,1fr) 34px; gap: .55rem; }
+  .alpha-grammar-actions { align-items: stretch; flex-direction: column-reverse; }
+  .alpha-grammar-actions button { width: 100%; }
+  .alpha-word-slots button, .alpha-word-bank button { min-width: 3.5rem; min-height: 3.5rem; font-size: 1.7rem; }
+  .alpha-word-actions { align-items: stretch; flex-direction: column-reverse; }
+  .alpha-word-actions button { width: 100%; }
+  .alpha-word-level-bar { align-items: flex-start; flex-direction: column; }
   .alpha-now-playing { flex-wrap: wrap; }
   .alpha-now-playing small { width: 100%; padding-left: 2rem; }
   .alpha-translate-actions { align-items: stretch; flex-direction: column; }

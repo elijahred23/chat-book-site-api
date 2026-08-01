@@ -34,6 +34,7 @@ import top125PhrasesLesson from "../bengali_lessons/top-125-phrases.json";
 import top150SentencesLesson from "../bengali_lessons/top-150-sentences.json";
 import top250WordsLesson from "../bengali_lessons/top-250-words.json";
 import verbsLesson from "../bengali_lessons/verbs.json";
+import { BENGALI_CLASS_LESSONS } from "../data/bengaliClassLessons.js";
 import "./BengaliTutor.css";
 
 const expandedLessonModules = import.meta.glob("../bengali_lessons/{greetings-introductions,family-relationships,food-restaurants,time-dates-days,weather-seasons,colors-shapes-sizes,home-household,clothing-personal-items,body-health-doctor,school-education,work-workplace,hobbies-sports-entertainment,travel-hotels-airports,phone-text-messages,asking-questions,commands-polite-requests,possession-ownership,plurals-classifiers,present-tense,past-tense,future-tense,negatives-saying-no,formal-informal}.json", {
@@ -81,9 +82,10 @@ export const SAVED_LESSONS = [
   top150SentencesLesson,
   top250WordsLesson,
   verbsLesson,
+  ...BENGALI_CLASS_LESSONS,
   ...expandedLessons,
   ...consonantLessons,
-].map(withPhraseWords).sort((a, b) => a.topic.localeCompare(b.topic));
+].map(withPhraseWords).sort((a, b) => a.topic.localeCompare(b.topic, undefined, { numeric: true }));
 const HIDDEN_LESSON_DROPDOWN_IDS = new Set(["aspnet-core-mvc", "dotnet-runtime"]);
 export const SELECTABLE_SAVED_LESSONS = SAVED_LESSONS.filter(
   (lesson) => !HIDDEN_LESSON_DROPDOWN_IDS.has(lesson.id),
