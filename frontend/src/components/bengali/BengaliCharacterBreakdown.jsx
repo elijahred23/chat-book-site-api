@@ -81,6 +81,8 @@ function describeCharacter(character) {
   if (MARK_NAMES[character]) return { name: MARK_NAMES[character], type: "Vowel/phonetic mark", code };
   if (DIGIT_NAMES[character]) return { name: `Bengali ${DIGIT_NAMES[character]}`, type: "Digit", code };
   if (PUNCTUATION_NAMES[character]) return { name: PUNCTUATION_NAMES[character], type: "Symbol", code };
+  if (character === "\u200D") return { name: "Zero-width joiner (shapes a conjunct)", type: "Joiner", code };
+  if (character === "\u200C") return { name: "Zero-width non-joiner (blocks a conjunct)", type: "Joiner", code };
   if (character === "\n") return { name: "Line break", type: "Whitespace", code };
   if (character === "\t") return { name: "Tab", type: "Whitespace", code };
   if (/\s/u.test(character)) return { name: "Space", type: "Whitespace", code };
@@ -114,6 +116,13 @@ function groupSegmentsIntoWords(segments) {
     const whitespace = segment.characters.every(({ type }) => type === "Whitespace");
     if (whitespace) {
       if (currentGroup.length) groups.push(currentGroup);
+      currentGroup = [];
+      return;
+    }
+    const punctuation = segment.characters.every(({ type }) => type === "Symbol");
+    if (punctuation) {
+      if (currentGroup.length) groups.push(currentGroup);
+      groups.push([segment]);
       currentGroup = [];
       return;
     }
@@ -223,18 +232,53 @@ function characterSoundEntries(word) {
 
   for (let index = 0; index < characters.length; index += 1) {
     const character = characters[index];
-    const previousCharacter = characters[index - 1];
     const nextCharacter = characters[index + 1];
     const decomposedNuktaSound = nextCharacter === "়" ? DECOMPOSED_NUKTA_SOUNDS[character] : "";
 
     if (decomposedNuktaSound) {
+      const vowelFollows = Boolean(PRONUNCIATION_MARKS[characters[index + 2]]);
       entries.push({
         character: `${character}${nextCharacter}`,
-        sound: `${decomposedNuktaSound}ô`,
+        sound: vowelFollows ? `${decomposedNuktaSound} · vowel follows` : `${decomposedNuktaSound}ô`,
       });
       index += 1;
-    } else if (character === "য" && previousCharacter === "্") {
-      entries.push({ character, sound: "yô · য-ফলা" });
+    } else if (PRONUNCIATION_LETTERS[character] && nextCharacter === "্") {
+      let clusterEnd = index;
+      let hasJoiner = false;
+      while (characters[clusterEnd + 1] === "্") {
+        let joinedIndex = clusterEnd + 2;
+        if (characters[joinedIndex] === "\u200D" || characters[joinedIndex] === "\u200C") {
+          hasJoiner = true;
+          joinedIndex += 1;
+        }
+        if (!PRONUNCIATION_LETTERS[characters[joinedIndex]]) break;
+        clusterEnd = joinedIndex;
+      }
+      if (clusterEnd === index) {
+        entries.push({ character, sound: `${PRONUNCIATION_LETTERS[character]} · hasanta removes ô` });
+        continue;
+      }
+      const cluster = characters.slice(index, clusterEnd + 1).join("");
+      const vowelFollows = Boolean(PRONUNCIATION_MARKS[characters[clusterEnd + 1]]);
+      const clusterSound = approximatePronunciation(cluster).replace(vowelFollows ? /ô$/u : /$^/u, "");
+      entries.push({
+        character: cluster,
+        sound: `${clusterSound} · conjunct${hasJoiner ? " · joiner-shaped" : ""}${vowelFollows ? " · vowel follows" : ""}`,
+      });
+      index = clusterEnd;
+    } else if (PRONUNCIATION_LETTERS[character] && PRONUNCIATION_MARKS[nextCharacter]) {
+      const baseSound = character === "ফ" ? "ph / f" : PRONUNCIATION_LETTERS[character];
+      entries.push({ character, sound: `${baseSound} · vowel follows` });
+    } else if (character === "ং") {
+      entries.push({ character, sound: "ng · contextual nasal" });
+    } else if (character === "ফ") {
+      entries.push({ character, sound: "ph / f · word-dependent" });
+    } else if (character === "ি") {
+      entries.push({ character, sound: "i-kar · stored after, written before" });
+    } else if (character === "\u200D") {
+      entries.push({ character: "ZWJ", sound: "shapes a conjunct · silent" });
+    } else if (character === "\u200C") {
+      entries.push({ character: "ZWNJ", sound: "blocks a conjunct · silent" });
     } else {
       entries.push({ character, sound: characterSoundLabel(character) });
     }
