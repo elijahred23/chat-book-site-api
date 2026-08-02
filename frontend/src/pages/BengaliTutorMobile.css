@@ -1,4 +1,10 @@
 @media (max-width: 700px) {
+  .bn-learning-tabs {
+    grid-template-columns: repeat(5, minmax(8.5rem, 1fr)) !important;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+  }
+
   main:has(section[aria-label="Word filters"]) {
     width: 100%;
     max-width: 100%;

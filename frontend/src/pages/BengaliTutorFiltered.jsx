@@ -103,6 +103,27 @@ const shuffleItems = (items) => {
   }
   return shuffled;
 };
+const buildGoogleTtsChunks = (items, maxBytes = 4500) => {
+  const encoder = new TextEncoder();
+  const separator = "। ";
+  const chunks = [];
+  let current = "";
+
+  items.forEach((item) => {
+    const text = String(item?.bn || "").trim();
+    if (!text) return;
+    const candidate = current ? `${current}${separator}${text}` : text;
+    if (current && encoder.encode(candidate).length > maxBytes) {
+      chunks.push(current);
+      current = text;
+    } else {
+      current = candidate;
+    }
+  });
+
+  if (current) chunks.push(current);
+  return chunks;
+};
 
 export default function BengaliTutorFiltered() {
   const [tab, setTab] = useState("tutor");
@@ -132,7 +153,7 @@ export default function BengaliTutorFiltered() {
   const bnVoices = useMemo(() => voices.filter((voice) => /^bn/i.test(voice.lang)), [voices]);
   const enVoices = useMemo(() => voices.filter((voice) => /^en/i.test(voice.lang)), [voices]);
   const translationPracticeSets = useMemo(
-    () => tab === "games" || tab === "loop" ? storedTranslationPracticeSets() : [],
+    () => tab === "games" || tab === "loop" || tab === "downloads" ? storedTranslationPracticeSets() : [],
     [tab],
   );
 
@@ -168,11 +189,12 @@ export default function BengaliTutorFiltered() {
           </select>
         </Field>
       </section>
-      <nav style={ui.tabs} aria-label="Bengali tutor sections">
+      <nav className="bn-learning-tabs" style={ui.tabs} aria-label="Bengali tutor sections">
         <button type="button" style={tab === "tutor" ? ui.active : ui.tab} onClick={() => setTab("tutor")}>Tutor</button>
         <button type="button" style={tab === "loop" ? ui.active : ui.tab} onClick={() => setTab("loop")}>Word Loop</button>
         <button type="button" style={tab === "translate" ? ui.active : ui.tab} onClick={() => setTab("translate")}>Bengali → English</button>
         <button type="button" style={tab === "games" ? ui.active : ui.tab} onClick={() => setTab("games")}>Games</button>
+        <button type="button" style={tab === "downloads" ? ui.active : ui.tab} onClick={() => setTab("downloads")}>MP3 Downloads</button>
       </nav>
       {(tab === "tutor" || tab === "games") && (
         <VoiceSelect
@@ -211,6 +233,8 @@ export default function BengaliTutorFiltered() {
           setBnVoice={setBnVoice} setEnVoice={setEnVoice} preview={preview} translationSets={translationPracticeSets} />
       ) : tab === "translate" ? (
         <BengaliTranslator />
+      ) : tab === "downloads" ? (
+        <BengaliMp3Downloads lesson={lesson} translationSets={translationPracticeSets} />
       ) : (
         <BengaliTutor
           key={`${lesson.id}-games`}
@@ -224,6 +248,127 @@ export default function BengaliTutorFiltered() {
     </main>
   );
 }
+
+function BengaliMp3Downloads({ lesson, translationSets }) {
+  const [dataset, setDataset] = useState("lesson-phrases");
+  const [translationSetId, setTranslationSetId] = useState(() => translationSets[0]?.id || "");
+  const [downloading, setDownloading] = useState(false);
+  const [status, setStatus] = useState("");
+  const selectedTranslationSet = translationSets.find((set) => set.id === translationSetId) || translationSets[0] || null;
+  const translationPhrases = useMemo(
+    () => phraseBreakdownItems({ phrases: selectedTranslationSet?.phrases || [] }),
+    [selectedTranslationSet],
+  );
+  const translationWords = useMemo(() => {
+    const uniqueWords = new Map();
+    translationPhrases.forEach((phrase) => {
+      phrase.words?.forEach((word) => {
+        if (!word?.bn) return;
+        const key = word.bn.normalize("NFC");
+        if (!uniqueWords.has(key)) uniqueWords.set(key, word);
+      });
+    });
+    return [...uniqueWords.values()];
+  }, [translationPhrases]);
+  const collections = {
+    "lesson-phrases": lesson?.phrases || [],
+    "lesson-vocab": lesson?.vocab || [],
+    "translation-phrases": translationPhrases,
+    "translation-words": translationWords,
+  };
+  const items = collections[dataset].filter((item) => item?.bn);
+  const isTranslationDataset = dataset.startsWith("translation-");
+  const datasetLabel = {
+    "lesson-phrases": "lesson phrases",
+    "lesson-vocab": "lesson vocabulary",
+    "translation-phrases": "saved-translation phrases",
+    "translation-words": "saved-translation words",
+  }[dataset];
+
+  const downloadMp3 = async () => {
+    if (!items.length || downloading) return;
+    setDownloading(true);
+    setStatus(`Generating ${items.length} ${datasetLabel} with Google Bengali speech…`);
+    try {
+      const chunks = buildGoogleTtsChunks(items);
+      const response = await fetch("/api/tts/batch", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ items: chunks.map((text) => ({ text, lang: "bn-IN" })) }),
+      });
+      if (!response.ok) {
+        const data = await response.json().catch(() => ({}));
+        throw new Error(data.error || `MP3 generation failed (${response.status}).`);
+      }
+      const audioBlob = await response.blob();
+      const audioUrl = URL.createObjectURL(audioBlob);
+      const sourceName = isTranslationDataset ? selectedTranslationSet?.title : lesson?.title;
+      const link = document.createElement("a");
+      link.href = audioUrl;
+      link.download = `${fileSlug(sourceName || "bengali")}-${dataset}.mp3`;
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      setTimeout(() => URL.revokeObjectURL(audioUrl), 1000);
+      setStatus(`Downloaded ${items.length} ${datasetLabel}.`);
+    } catch (error) {
+      setStatus(error.message || "MP3 generation failed.");
+    } finally {
+      setDownloading(false);
+    }
+  };
+
+  return (
+    <section style={ui.downloadCard} aria-labelledby="bn-mp3-heading">
+      <div>
+        <strong style={ui.eyebrow}>Google Bengali speech</strong>
+        <h1 id="bn-mp3-heading" style={ui.heading}>Download Bengali as MP3</h1>
+        <p style={ui.muted}>Create one Bengali audio file from the selected lesson or one of your saved translations.</p>
+      </div>
+      <div style={ui.grid}>
+        <Field label="Audio collection">
+          <select style={ui.input} value={dataset} onChange={(event) => { setDataset(event.target.value); setStatus(""); }}>
+            <option value="lesson-phrases">Lesson phrases ({lesson?.phrases?.length || 0})</option>
+            <option value="lesson-vocab">Lesson vocabulary ({lesson?.vocab?.length || 0})</option>
+            <option value="translation-phrases" disabled={!translationSets.length}>Saved translation phrases ({translationPhrases.length})</option>
+            <option value="translation-words" disabled={!translationSets.length}>Saved translation words ({translationWords.length})</option>
+          </select>
+        </Field>
+        {isTranslationDataset && translationSets.length > 0 && (
+          <Field label="Saved translation">
+            <select style={ui.input} value={selectedTranslationSet?.id || ""} onChange={(event) => { setTranslationSetId(event.target.value); setStatus(""); }}>
+              {translationSets.map((set, index) => (
+                <option key={set.id} value={set.id}>{index + 1}. {shortTranslationLabel(set.title)}</option>
+              ))}
+            </select>
+          </Field>
+        )}
+      </div>
+      <div style={ui.downloadSummary}>
+        <strong>{items.length} items</strong>
+        <span>{items.slice(0, 4).map((item) => item.bn).join(" · ")}{items.length > 4 ? " …" : ""}</span>
+      </div>
+      <button type="button" style={ui.downloadButtonPrimary} disabled={!items.length || downloading} onClick={downloadMp3}>
+        {downloading ? "Generating MP3…" : `Download ${datasetLabel} MP3`}
+      </button>
+      {status && <div role="status" style={status.startsWith("Downloaded") ? ui.downloadSuccess : ui.downloadStatus}>{status}</div>}
+      <small style={ui.muted}>Requires the API’s configured Google Cloud Text-to-Speech credentials. Large collections can take longer to generate.</small>
+    </section>
+  );
+}
+
+BengaliMp3Downloads.propTypes = {
+  lesson: PropTypes.shape({
+    title: PropTypes.string,
+    vocab: PropTypes.arrayOf(PropTypes.object),
+    phrases: PropTypes.arrayOf(PropTypes.object),
+  }).isRequired,
+  translationSets: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    phrases: PropTypes.arrayOf(PropTypes.object).isRequired,
+  })).isRequired,
+};
 
 function BengaliTranslator() {
   const [text, setText] = useState("");
@@ -1087,7 +1232,7 @@ function IconButton({ label, children, disabled, onClick, primary }) { return <b
 const ui = {
   page: { minHeight: "100%", color: "#0f172a" },
   lessonPicker: { width: "min(100% - 2rem, 1100px)", margin: "1rem auto 0", padding: "1rem", border: "1px solid #dbe3ef", borderRadius: 14, background: "#fff" },
-  tabs: { width: "min(100% - 2rem, 1100px)", margin: ".75rem auto 0", padding: ".35rem", display: "grid", gridTemplateColumns: "repeat(4, minmax(0, 1fr))", gap: ".35rem", background: "#e2e8f0", borderRadius: 14 },
+  tabs: { width: "min(100% - 2rem, 1100px)", margin: ".75rem auto 0", padding: ".35rem", display: "grid", gridTemplateColumns: "repeat(5, minmax(0, 1fr))", gap: ".35rem", background: "#e2e8f0", borderRadius: 14 },
   tab: { minHeight: 44, border: 0, borderRadius: 10, background: "transparent", color: "#334155", fontWeight: 800 },
   active: { minHeight: 44, border: "1px solid #cbd5e1", borderRadius: 10, background: "#fff", color: "#0f172a", fontWeight: 900 },
   voice: { width: "min(100% - 2rem, 1100px)", margin: ".75rem auto 0", padding: "1rem", border: "1px solid #dbe3ef", borderRadius: 14, background: "#fff" },
@@ -1127,6 +1272,11 @@ const ui = {
   voiceCompact: { padding: ".85rem", border: "1px solid #dbe3ef", borderRadius: 12, background: "#f8fafc" },
   voiceStack: { display: "grid", alignContent: "start", gap: ".65rem" },
   card: { width: "min(100% - 2rem, 1100px)", margin: ".75rem auto 1.5rem", padding: "1rem", display: "grid", gap: "1rem", border: "1px solid #dbe3ef", borderRadius: 16, background: "#fff" },
+  downloadCard: { width: "min(100% - 2rem, 1100px)", margin: ".75rem auto 1.5rem", padding: "1rem", display: "grid", gap: "1rem", border: "1px solid #bfdbfe", borderRadius: 16, background: "linear-gradient(145deg,#f8fbff,#f0fdf4)" },
+  downloadSummary: { minWidth: 0, padding: ".85rem", display: "grid", gap: ".35rem", border: "1px solid #dbe3ef", borderRadius: 12, background: "#fff", color: "#334155", overflowWrap: "anywhere" },
+  downloadButtonPrimary: { minHeight: 48, justifySelf: "start", padding: ".7rem 1rem", border: 0, borderRadius: 10, background: "#166534", color: "#fff", fontWeight: 850 },
+  downloadStatus: { padding: ".75rem", borderRadius: 10, background: "#fff7ed", color: "#9a3412", fontWeight: 750 },
+  downloadSuccess: { padding: ".75rem", borderRadius: 10, background: "#dcfce7", color: "#166534", fontWeight: 750 },
   filterPanel: { display: "grid", gap: ".8rem", padding: "1rem", border: "1px solid #bfdbfe", borderRadius: 14, background: "#f8fbff" },
   grid: { display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(210px,1fr))", gap: ".75rem" },
   chunkRow: { display: "grid", gridTemplateColumns: "minmax(210px,1fr)", alignItems: "end", gap: ".6rem" },
