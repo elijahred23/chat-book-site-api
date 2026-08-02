@@ -26,7 +26,7 @@ export const buildPhraseWords = (phrase) => {
   return bengali.map((bn, index) => ({
     bn,
     pronunciation: pronunciation[index] || bn,
-    en: GLOSSES[bn] || `part of “${phrase.en}”`,
+    en: GLOSSES[bn] || "meaning unavailable",
   }));
 };
 
