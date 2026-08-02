@@ -53,6 +53,9 @@
 .bn-page .bn-content-tabs { display: flex; gap: .4rem; padding: .3rem; overflow-x: auto; border: 1px solid var(--bn-line); border-radius: 14px; background: #f5f7f5; }
 .bn-page .bn-content-tabs .bn-tab { flex: 1 0 max-content; min-height: 42px; border: 0; border-radius: 10px; background: transparent; color: var(--bn-muted); box-shadow: none; }
 .bn-page .bn-content-tabs .bn-tab.active { background: var(--bn-primary); color: #fff; box-shadow: 0 7px 18px rgba(23,107,77,.2); }
+.bn-tutor-order-controls { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: stretch; gap: .65rem; }
+.bn-tutor-order-controls .bn-tabs { min-width: 0; }
+.bn-page .bn-shuffle-btn { min-width: 10rem; box-shadow: none; }
 .bn-page .bn-action-toggle { padding: .65rem .85rem !important; border-color: var(--bn-line) !important; background: #f8faf8 !important; }
 .bn-page .bn-action-toggle input { width: 1.1rem; height: 1.1rem; margin: 0; accent-color: var(--bn-primary); }
 
@@ -110,6 +113,8 @@
   .bn-page .bn-primary-tabs .bn-tab { flex: 1 0 max-content; }
   .bn-page .bn-lesson-card { padding: 1rem !important; }
   .bn-page .bn-content-tabs { margin-right: -1rem; margin-left: -1rem; padding-right: 1rem; padding-left: 1rem; border-right: 0; border-left: 0; border-radius: 0; }
+  .bn-tutor-order-controls { grid-template-columns: 1fr; }
+  .bn-page .bn-shuffle-btn { width: 100%; }
   .bn-page .bn-phrase-card { border-radius: 14px; }
   .bn-page .bn-phrase-card > div:first-child { align-items: flex-start !important; }
   .bn-audio-actions { width: 100%; display: grid !important; grid-template-columns: repeat(2,minmax(0,1fr)); }

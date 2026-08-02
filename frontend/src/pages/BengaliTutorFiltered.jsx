@@ -95,6 +95,14 @@ const itemFacets = (item) => {
   else if (item.tags) values.push(...String(item.tags).split(","));
   return values.map((value) => String(value || "").trim()).filter(Boolean);
 };
+const shuffleItems = (items) => {
+  const shuffled = [...items];
+  for (let index = shuffled.length - 1; index > 0; index -= 1) {
+    const randomIndex = Math.floor(Math.random() * (index + 1));
+    [shuffled[index], shuffled[randomIndex]] = [shuffled[randomIndex], shuffled[index]];
+  }
+  return shuffled;
+};
 
 export default function BengaliTutorFiltered() {
   const [tab, setTab] = useState("tutor");
@@ -573,6 +581,7 @@ function WordLoop({ lesson, voices, bnVoices, enVoices, bnVoice, enVoice, setBnV
   const [playing, setPlaying] = useState(false);
   const [paused, setPaused] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [shuffleVersion, setShuffleVersion] = useState(0);
   const [pass, setPass] = useState(1);
   const [status, setStatus] = useState("Ready");
   const [photo, setPhoto] = useState(null);
@@ -635,12 +644,16 @@ function WordLoop({ lesson, voices, bnVoices, enVoices, bnVoice, enVoice, setBnV
       return haystack.includes(query);
     });
   }, [sourceItems, search, facet]);
+  const orderedMatchingItems = useMemo(
+    () => shuffleVersion ? shuffleItems(matchingItems) : matchingItems,
+    [matchingItems, shuffleVersion],
+  );
 
   const safeChunkSize = Math.max(1, Number(chunkSize) || 25);
-  const chunkCount = Math.max(1, Math.ceil(matchingItems.length / safeChunkSize));
+  const chunkCount = Math.max(1, Math.ceil(orderedMatchingItems.length / safeChunkSize));
   const safeChunkIndex = Math.min(Math.max(Number(chunkIndex) || 0, 0), chunkCount - 1);
   const chunkStart = safeChunkIndex * safeChunkSize;
-  const items = matchingItems.slice(chunkStart, chunkStart + safeChunkSize);
+  const items = orderedMatchingItems.slice(chunkStart, chunkStart + safeChunkSize);
   const size = Math.max(1, Number(intervalSize) || 1);
   const repeats = Math.max(1, Number(intervalRepeats) || 1);
   const delaySeconds = Math.max(0, Number(wordDelay) || 0);
@@ -678,7 +691,7 @@ function WordLoop({ lesson, voices, bnVoices, enVoices, bnVoice, enVoice, setBnV
     passRef.current = 1;
     setCurrentIndex(0);
     setPass(1);
-  }, [dataset, mode, intervalSize, intervalRepeats, loopForever, search, facet, safeChunkSize, safeChunkIndex, showImages, delaySeconds, bengaliSpeechSource, translationSetId, bnVoice, enVoice, stop]);
+  }, [dataset, mode, intervalSize, intervalRepeats, loopForever, search, facet, safeChunkSize, safeChunkIndex, showImages, delaySeconds, bengaliSpeechSource, translationSetId, bnVoice, enVoice, shuffleVersion, stop]);
 
   const jumpToWord = (event) => {
     const nextIndex = Math.min(Math.max(Number(event.target.value) || 0, 0), Math.max(items.length - 1, 0));
@@ -897,7 +910,8 @@ function WordLoop({ lesson, voices, bnVoices, enVoices, bnVoice, enVoice, setBnV
   };
 
   const item = items[currentIndex];
-  const chunkLabel = matchingItems.length ? `${chunkStart + 1}–${Math.min(chunkStart + safeChunkSize, matchingItems.length)}` : "0";
+  const chunkLabel = orderedMatchingItems.length ? `${chunkStart + 1}–${Math.min(chunkStart + safeChunkSize, orderedMatchingItems.length)}` : "0";
+  const loopItemLabel = dataset === "vocab" || dataset === "translation-words" ? "words" : "phrases";
 
   useEffect(() => {
     const query = item?.en?.trim();
@@ -930,13 +944,13 @@ function WordLoop({ lesson, voices, bnVoices, enVoices, bnVoice, enVoice, setBnV
 
       <section style={ui.filterPanel} aria-label="Word filters">
         <div style={ui.grid}>
-          <Field label="Items"><select style={ui.input} value={dataset} onChange={(event) => { setDataset(event.target.value); setChunkIndex(0); }}><option value="vocab">Vocabulary words</option><option value="phrases">Lesson phrases</option><option value="breakdowns">Phrase breakdowns</option><option value="translation-phrases" disabled={!translationPhraseItems.length}>Saved translation phrases ({translationPhraseItems.length})</option><option value="translation-words" disabled={!translationWordItems.length}>Saved translation words ({translationWordItems.length})</option></select></Field>
+          <Field label="Items"><select style={ui.input} value={dataset} onChange={(event) => { setDataset(event.target.value); setChunkIndex(0); setShuffleVersion(0); }}><option value="vocab">Vocabulary words</option><option value="phrases">Lesson phrases</option><option value="breakdowns">Phrase breakdowns</option><option value="translation-phrases" disabled={!translationPhraseItems.length}>Saved translation phrases ({translationPhraseItems.length})</option><option value="translation-words" disabled={!translationWordItems.length}>Saved translation words ({translationWordItems.length})</option></select></Field>
           <Field label="Words per study chunk"><select style={ui.input} value={safeChunkSize} onChange={(event) => { setChunkSize(Number(event.target.value)); setChunkIndex(0); }}><option value="10">10</option><option value="20">20</option><option value="25">25</option><option value="50">50</option><option value="100">100</option><option value="150">150</option><option value="200">200</option><option value="250">250</option><option value="300">300</option></select></Field>
         </div>
         {translationSets.length > 0 && (
           <div style={ui.chunkRow}>
             <Field label="Saved translation">
-              <select style={ui.input} value={selectedTranslationSet?.id || ""} onChange={(event) => { setTranslationSetId(event.target.value); setChunkIndex(0); }}>
+              <select style={ui.input} value={selectedTranslationSet?.id || ""} onChange={(event) => { setTranslationSetId(event.target.value); setChunkIndex(0); setShuffleVersion(0); }}>
                 {translationSets.map((set, index) => (
                   <option key={set.id} value={set.id}>{index + 1}. {shortTranslationLabel(set.title)}</option>
                 ))}
@@ -945,9 +959,20 @@ function WordLoop({ lesson, voices, bnVoices, enVoices, bnVoice, enVoice, setBnV
           </div>
         )}
         <div style={ui.chunkRow}>
-          <Field label={`Study chunk (${matchingItems.length} matching)`}><select style={ui.input} value={safeChunkIndex} onChange={(event) => setChunkIndex(Number(event.target.value))}>{Array.from({ length: chunkCount }, (_, index) => { const start = index * safeChunkSize + 1; const end = Math.min((index + 1) * safeChunkSize, matchingItems.length); return <option key={index} value={index}>Chunk {index + 1}: {matchingItems.length ? `${start}–${end}` : "empty"}</option>; })}</select></Field>
+          <Field label={`Study chunk (${orderedMatchingItems.length} matching)`}><select style={ui.input} value={safeChunkIndex} onChange={(event) => setChunkIndex(Number(event.target.value))}>{Array.from({ length: chunkCount }, (_, index) => { const start = index * safeChunkSize + 1; const end = Math.min((index + 1) * safeChunkSize, orderedMatchingItems.length); return <option key={index} value={index}>Chunk {index + 1}: {orderedMatchingItems.length ? `${start}–${end}` : "empty"}</option>; })}</select></Field>
+          <button
+            type="button"
+            style={ui.shuffleButton}
+            disabled={orderedMatchingItems.length < 2}
+            onClick={() => {
+              setChunkIndex(0);
+              setShuffleVersion((version) => version + 1);
+            }}
+          >
+            Shuffle {loopItemLabel}
+          </button>
         </div>
-        <div style={ui.summary}>Showing {items.length} items from positions {chunkLabel} of {matchingItems.length} filtered results, from {sourceItems.length} total.</div>
+        <div style={ui.summary}>Showing {items.length} items from positions {chunkLabel} of {orderedMatchingItems.length} filtered results, from {sourceItems.length} total.</div>
       </section>
 
       <div style={ui.grid}>
@@ -997,7 +1022,7 @@ function WordLoop({ lesson, voices, bnVoices, enVoices, bnVoice, enVoice, setBnV
         <label className="bn-word-loop__toggle" style={ui.check}><input type="checkbox" checked={showImages} onChange={(event) => setShowImages(event.target.checked)} /><span>Show stock photos for vocabulary words</span></label>
       </div>
       {!lesson ? <div style={ui.notice}>Generate or upload a lesson in the Tutor tab first.</div> : !items.length ? <div style={ui.notice}>No items match the active filters.</div> : <>
-        <div style={ui.flash}><small>Chunk {safeChunkIndex + 1}/{chunkCount} · {currentIndex + 1}/{items.length} · Overall filtered position {chunkStart + currentIndex + 1}/{matchingItems.length} · Pass {pass}/{repeats}</small><strong lang="bn" style={ui.bn}>{item?.bn}</strong>{item?.pronunciation && <strong style={ui.activePronunciation}>{item.pronunciation}</strong>}<span style={ui.en}>{item?.en}</span>{(dataset === "breakdowns" || dataset === "phrases" || dataset === "translation-phrases") && <section className="bn-loop-breakdown" aria-label="Complete phrase breakdown"><strong className="bn-loop-breakdown__title">Phrase breakdown</strong><div className="bn-loop-breakdown__literal"><small>Literal Bengali order</small><span>{item?.breakdownEnglish}</span></div><div className="bn-loop-breakdown__grid">{item?.words?.map((word, wordIndex) => <article className="bn-loop-breakdown__word" key={`${item.bn}-${word.bn}-${wordIndex}`}><span lang="bn">{word.bn}</span><strong>{word.pronunciation}</strong><small>{word.en}</small></article>)}</div></section>}
+        <div style={ui.flash}><small>Chunk {safeChunkIndex + 1}/{chunkCount} · {currentIndex + 1}/{items.length} · Overall filtered position {chunkStart + currentIndex + 1}/{orderedMatchingItems.length} · Pass {pass}/{repeats}</small><strong lang="bn" style={ui.bn}>{item?.bn}</strong>{item?.pronunciation && <strong style={ui.activePronunciation}>{item.pronunciation}</strong>}<span style={ui.en}>{item?.en}</span>{(dataset === "breakdowns" || dataset === "phrases" || dataset === "translation-phrases") && <section className="bn-loop-breakdown" aria-label="Complete phrase breakdown"><strong className="bn-loop-breakdown__title">Phrase breakdown</strong><div className="bn-loop-breakdown__literal"><small>Literal Bengali order</small><span>{item?.breakdownEnglish}</span></div><div className="bn-loop-breakdown__grid">{item?.words?.map((word, wordIndex) => <article className="bn-loop-breakdown__word" key={`${item.bn}-${word.bn}-${wordIndex}`}><span lang="bn">{word.bn}</span><strong>{word.pronunciation}</strong><small>{word.en}</small></article>)}</div></section>}
           {showImages && <div style={ui.photoFrame} aria-live="polite">
             {photoStatus === "loading" && <span style={ui.muted}>Finding a photo…</span>}
             {photoStatus === "empty" && <span style={ui.muted}>No photo found for this item.</span>}
@@ -1123,6 +1148,7 @@ const ui = {
   iconPrimary: { width: 34, height: 34, padding: 0, display: "inline-grid", placeItems: "center", border: 0, borderRadius: 8, background: "#0f172a", color: "#fff", fontSize: ".85rem" },
   primary: { minHeight: 44, padding: ".65rem 1rem", border: 0, borderRadius: 10, background: "#0f172a", color: "#fff", fontWeight: 850 },
   button: { minHeight: 44, padding: ".65rem 1rem", display: "inline-flex", alignItems: "center", justifyContent: "center", gap: ".45rem", border: "1px solid #94a3b8", borderRadius: 10, background: "#f8fafc", color: "#0f172a", fontWeight: 800 },
+  shuffleButton: { minHeight: 44, justifySelf: "start", padding: ".65rem 1rem", border: "1px solid #2563eb", borderRadius: 10, background: "#eff6ff", color: "#1d4ed8", fontWeight: 850 },
   notice: { padding: "1rem", borderRadius: 12, background: "#fff7ed", color: "#9a3412", fontWeight: 750 },
   eyebrow: { color: "#2563eb", fontSize: ".78rem", textTransform: "uppercase" },
   heading: { margin: ".25rem 0", color: "#0f172a" },

@@ -17,11 +17,12 @@ const pronunciationLessonModules = import.meta.glob("../../bengali_lessons/*.jso
   import: "default",
 });
 const SAVED_BENGALI_PRONUNCIATIONS = {};
+const normalizeLookupWord = (value) => String(value || "")
+  .normalize("NFC")
+  .replaceAll("।", "")
+  .replace(/^[\p{P}\p{S}]+|[\p{P}\p{S}]+$/gu, "");
 const savePronunciation = (item) => {
-  const word = String(item?.bn || "")
-    .normalize("NFC")
-    .replaceAll("।", "")
-    .replace(/^[\p{P}\p{S}]+|[\p{P}\p{S}]+$/gu, "");
+  const word = normalizeLookupWord(item?.bn);
   const pronunciation = String(item?.pronunciation || "").trim();
   if (word && pronunciation && !(word in SAVED_BENGALI_PRONUNCIATIONS)) {
     SAVED_BENGALI_PRONUNCIATIONS[word] = pronunciation;
@@ -418,10 +419,7 @@ export default function BengaliCharacterBreakdown({ isOpen }) {
   const nextCharacterCodePointIndex = Array.from(bengaliBreakdownText.slice(0, nextCharacterOffset)).length;
   const currentWordDetails = wordAtCharacterIndex(bengaliBreakdownText, nextCharacterCodePointIndex);
   const currentWord = currentWordDetails.word;
-  const currentWordGlossKey = currentWord
-    .normalize("NFC")
-    .replaceAll("।", "")
-    .replace(/^[\p{P}\p{S}]+|[\p{P}\p{S}]+$/gu, "");
+  const currentWordGlossKey = normalizeLookupWord(currentWord);
   const currentWordGloss = NORMALIZED_BENGALI_GLOSSES[currentWordGlossKey] || "";
   const currentWordPossiblePronunciation = approximatePronunciation(currentWord);
   const currentWordSavedPronunciation = SAVED_BENGALI_PRONUNCIATIONS[currentWordGlossKey] || "";
@@ -900,6 +898,9 @@ export default function BengaliCharacterBreakdown({ isOpen }) {
           {wordGroups.map((wordSegments, wordIndex) => {
             const completedWord = wordSegments.map(({ grapheme }) => grapheme).join("");
             const soundEntries = characterSoundEntries(completedWord);
+            const lookupWord = normalizeLookupWord(completedWord);
+            const wordGloss = NORMALIZED_BENGALI_GLOSSES[lookupWord] || "";
+            const savedPronunciation = SAVED_BENGALI_PRONUNCIATIONS[lookupWord] || "";
             return (
                 <li className="bengali-breakdown__item is-completed-word" key={`word-${wordIndex}-${wordSegments[0].offset}`}>
                   <div className="bengali-breakdown__completed-glyph">
@@ -912,9 +913,16 @@ export default function BengaliCharacterBreakdown({ isOpen }) {
                         </span>
                       ))}
                     </div>
-                    <span className="bengali-breakdown__combined-pronunciation">
-                      ({approximatePronunciation(completedWord)})
-                    </span>
+                    <div className="bengali-breakdown__word-details">
+                      <span className="bengali-breakdown__combined-pronunciation">
+                        {approximatePronunciation(completedWord)}
+                      </span>
+                      {wordGloss ? (
+                        <span className="bengali-breakdown__word-gloss">
+                          {wordGloss}{savedPronunciation ? ` (${savedPronunciation})` : ""}
+                        </span>
+                      ) : null}
+                    </div>
                   </div>
                 </li>
             );

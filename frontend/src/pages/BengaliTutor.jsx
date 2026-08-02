@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { FcGoogle } from "react-icons/fc";
 import { FaVolumeHigh } from "react-icons/fa6";
 import ActionButtons from "../ui/ActionButtons.jsx";
+import { actions, useAppDispatch } from "../context/AppContext.jsx";
 import { withPhraseWords } from "../utils/bengaliPhraseBreakdown.js";
 import { getGoogleTtsAudio, GOOGLE_BENGALI_VOICE_KEY } from "../utils/googleTtsAudioCache.js";
 import adjectivesLesson from "../bengali_lessons/adjectives.json";
@@ -115,6 +116,7 @@ const bengaliLabel = (item) => item.pronunciation ? `${item.bn} (${item.pronunci
 const promptLabel = (item, direction) => (direction === "en-bn" ? item.en : bengaliLabel(item));
 const optionLabel = (item, direction) => direction === "en-bn" ? bengaliLabel(item) : item.en;
 const shuffle = (items) => [...items].sort(() => Math.random() - 0.5);
+const containsBengali = (value) => /\p{Script=Bengali}/u.test(String(value || ""));
 const normalizeAnswer = (value) => value.trim().toLocaleLowerCase().replace(/[.,!?।'’"-]/g, "").replace(/\s+/g, " ");
 const googleTranslateUrl = (text) => `https://translate.google.com/?sl=bn&tl=en&text=${encodeURIComponent(text)}&op=translate`;
 const shortTranslationLabel = (value, maxLength = 32) => {
@@ -130,10 +132,20 @@ const statusForWord = (stats, key) => {
 
 const statusClassForKey = (stats, key) => `match-${statusForWord(stats, key)}`;
 
+const MATCH_ITEM_WEIGHTS = {
+  unseen: 20,
+  incorrect: 30,
+  correct: 1,
+};
+
 const pickWeightedItem = (items, stats) => {
   const weighted = items.flatMap((item) => {
     const record = stats[wordKey(item)];
-    const weight = !record ? 5 : record.last === "wrong" ? 8 : record.correct > 0 ? 1 : 6;
+    const weight = !record
+      ? MATCH_ITEM_WEIGHTS.unseen
+      : record.last === "wrong"
+        ? MATCH_ITEM_WEIGHTS.incorrect
+        : MATCH_ITEM_WEIGHTS.correct;
     return Array.from({ length: weight }, () => item);
   });
 
@@ -246,6 +258,7 @@ BengaliItemActions.propTypes = {
 };
 
 export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLessonSelector = true, translationSets = EMPTY_TRANSLATION_SETS, view = "tutor" }) {
+  const dispatch = useAppDispatch();
   const startingLesson = initialLesson || initialSavedLesson();
   const [lesson, setLesson] = useState(startingLesson);
   const [savedLessonId, setSavedLessonId] = useState(startingLesson.id);
@@ -271,6 +284,8 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
   }, [bengaliVoice, breakdownSpeechSource]);
   const [contentTab, setContentTab] = useState(view === "games" ? "games" : "phrases");
   const [jumpTarget, setJumpTarget] = useState("");
+  const [phraseShuffleVersion, setPhraseShuffleVersion] = useState(0);
+  const [vocabShuffleVersion, setVocabShuffleVersion] = useState(0);
   const [gameDataset, setGameDataset] = useState("vocab");
   const [translationSetId, setTranslationSetId] = useState(() => translationSets[0]?.id || "");
   const [gameDirection, setGameDirection] = useState(() => {
@@ -336,6 +351,15 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
 
   const filteredVocab = useMemo(() => lesson?.vocab?.filter((v) => v?.bn && v?.en) || [], [lesson]);
   const filteredPhrases = useMemo(() => lesson?.phrases?.filter((p) => p?.bn && p?.en) || [], [lesson]);
+  const orderedVocab = useMemo(
+    () => vocabShuffleVersion ? shuffle(filteredVocab) : filteredVocab,
+    [filteredVocab, vocabShuffleVersion],
+  );
+  const orderedPhrases = useMemo(
+    () => phraseShuffleVersion ? shuffle(filteredPhrases) : filteredPhrases,
+    [filteredPhrases, phraseShuffleVersion],
+  );
+  const activeTutorItems = contentTab === "phrases" ? orderedPhrases : orderedVocab;
   const selectedTranslationSet = useMemo(
     () => translationSets.find((set) => set.id === translationSetId) || translationSets[0] || null,
     [translationSetId, translationSets],
@@ -551,6 +575,9 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
 
     setLesson(selectedLesson);
     setContentTab(selectedLesson.phrases?.length ? "phrases" : "vocab");
+    setJumpTarget("");
+    setPhraseShuffleVersion(0);
+    setVocabShuffleVersion(0);
     setGameDataset(selectedLesson.vocab?.length ? "vocab" : "phrases");
     localStorage.setItem(LESSON_CACHE_KEY, JSON.stringify(selectedLesson));
   };
@@ -830,9 +857,23 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
             </div>
 
             {view === "tutor" && (
-              <div className="bn-tabs">
-                <button className={`bn-tab ${contentTab === "phrases" ? "active" : ""}`} onClick={() => { setContentTab("phrases"); setJumpTarget(""); }} disabled={!filteredPhrases.length}>Key Phrases</button>
-                <button className={`bn-tab ${contentTab === "vocab" ? "active" : ""}`} onClick={() => { setContentTab("vocab"); setJumpTarget(""); }} disabled={!filteredVocab.length}>Vocabulary</button>
+              <div className="bn-tutor-order-controls">
+                <div className="bn-tabs">
+                  <button className={`bn-tab ${contentTab === "phrases" ? "active" : ""}`} onClick={() => { setContentTab("phrases"); setJumpTarget(""); }} disabled={!filteredPhrases.length}>Key Phrases</button>
+                  <button className={`bn-tab ${contentTab === "vocab" ? "active" : ""}`} onClick={() => { setContentTab("vocab"); setJumpTarget(""); }} disabled={!filteredVocab.length}>Vocabulary</button>
+                </div>
+                <button
+                  type="button"
+                  className="bn-btn secondary bn-shuffle-btn"
+                  disabled={activeTutorItems.length < 2}
+                  onClick={() => {
+                    setJumpTarget("");
+                    if (contentTab === "phrases") setPhraseShuffleVersion((version) => version + 1);
+                    else setVocabShuffleVersion((version) => version + 1);
+                  }}
+                >
+                  Shuffle {contentTab === "phrases" ? "phrases" : "vocabulary"}
+                </button>
               </div>
             )}
 
@@ -849,7 +890,7 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
                   }}
                 >
                   <option value="">Choose in English…</option>
-                  {(contentTab === "phrases" ? filteredPhrases : filteredVocab).map((item, idx) => (
+                  {activeTutorItems.map((item, idx) => (
                     <option key={`${item.bn}-${idx}`} value={`bn-${contentTab}-${idx}`}>
                       {item.en}
                     </option>
@@ -861,7 +902,7 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
             {view === "tutor" && contentTab === "phrases" && (
               <section className="bn-section" style={{ display: "grid", gap: 10 }}>
                 <h3>Key phrases</h3>
-                {filteredPhrases.map((phrase, idx) => (
+                {orderedPhrases.map((phrase, idx) => (
                   <article id={`bn-phrases-${idx}`} key={`${phrase.bn}-${idx}`} className="bn-section" style={{ background: "#fff" }}>
                     <div className="bn-script" lang="bn">{phrase.bn}</div>
                     <div className="bn-pronunciation">{phrase.pronunciation}</div>
@@ -911,7 +952,7 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
             {view === "tutor" && contentTab === "vocab" && (
               <section className="bn-section" style={{ display: "grid", gap: 10 }}>
                 <h3>Vocabulary</h3>
-                {filteredVocab.map((word, idx) => (
+                {orderedVocab.map((word, idx) => (
                   <article id={`bn-vocab-${idx}`} key={`${word.bn}-${idx}`} className="bn-section" style={{ background: "#fff" }}>
                     <div className="bn-script" lang="bn">{word.bn}</div>
                     <div className="bn-pronunciation">{word.pronunciation}</div>
@@ -997,6 +1038,18 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
                     </div>
                     <div className="bn-game-actions">
                       <button className="bn-btn secondary" onClick={() => speakSelectedBengali(gameQuestion.bn)}>Hear target Bengali</button>
+                      {containsBengali(gameQuestion.bn) && (
+                        <button
+                          type="button"
+                          className="bn-btn secondary"
+                          onClick={() => {
+                            dispatch(actions.setBengaliBreakdownText(gameQuestion.bn));
+                            dispatch(actions.setIsBengaliBreakdownOpen(true));
+                          }}
+                        >
+                          Open Bengali breakdown
+                        </button>
+                      )}
                       <button className="bn-btn secondary" onClick={() => startNewGameRound()}>New card</button>
                     </div>
                     <div className="bn-game-options">
