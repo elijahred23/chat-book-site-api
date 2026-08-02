@@ -389,7 +389,7 @@ function escapeHtml(text) {
 
 export default function BengaliCharacterBreakdown({ isOpen }) {
   const dispatch = useAppDispatch();
-  const { bengaliBreakdownText } = useAppState();
+  const { bengaliBreakdownText, bengaliBreakdownWords } = useAppState();
   const [activeTab, setActiveTab] = useState("breakdown");
   const [typedText, setTypedText] = useState("");
   const [typingMode, setTypingMode] = useState("keyboard");
@@ -403,6 +403,14 @@ export default function BengaliCharacterBreakdown({ isOpen }) {
   const previousPracticeTextRef = useRef(bengaliBreakdownText);
   const segments = useMemo(() => segmentText(bengaliBreakdownText), [bengaliBreakdownText]);
   const wordGroups = useMemo(() => groupSegmentsIntoWords(segments), [segments]);
+  const contextualWords = useMemo(() => {
+    const words = new Map();
+    bengaliBreakdownWords.forEach((word) => {
+      const key = normalizeLookupWord(word?.bn);
+      if (key && !words.has(key)) words.set(key, word);
+    });
+    return words;
+  }, [bengaliBreakdownWords]);
   const targetCharacters = useMemo(() => segments.map(({ grapheme }) => grapheme), [segments]);
   const typedCharacters = useMemo(() => segmentText(typedText).map(({ grapheme }) => grapheme), [typedText]);
   const correctCount = typedCharacters.findIndex(
@@ -420,9 +428,9 @@ export default function BengaliCharacterBreakdown({ isOpen }) {
   const currentWordDetails = wordAtCharacterIndex(bengaliBreakdownText, nextCharacterCodePointIndex);
   const currentWord = currentWordDetails.word;
   const currentWordGlossKey = normalizeLookupWord(currentWord);
-  const currentWordGloss = NORMALIZED_BENGALI_GLOSSES[currentWordGlossKey] || "";
+  const currentWordGloss = contextualWords.get(currentWordGlossKey)?.en || NORMALIZED_BENGALI_GLOSSES[currentWordGlossKey] || "";
   const currentWordPossiblePronunciation = approximatePronunciation(currentWord);
-  const currentWordSavedPronunciation = SAVED_BENGALI_PRONUNCIATIONS[currentWordGlossKey] || "";
+  const currentWordSavedPronunciation = contextualWords.get(currentWordGlossKey)?.pronunciation || SAVED_BENGALI_PRONUNCIATIONS[currentWordGlossKey] || "";
   const currentWordSegments = segmentText(currentWord);
   const practiceComplete = Boolean(targetCharacters.length && matchedCount === targetCharacters.length && !hasMistake);
   const bengaliCount = segments.filter(({ characters }) =>
@@ -899,8 +907,9 @@ export default function BengaliCharacterBreakdown({ isOpen }) {
             const completedWord = wordSegments.map(({ grapheme }) => grapheme).join("");
             const soundEntries = characterSoundEntries(completedWord);
             const lookupWord = normalizeLookupWord(completedWord);
-            const wordGloss = NORMALIZED_BENGALI_GLOSSES[lookupWord] || "";
-            const savedPronunciation = SAVED_BENGALI_PRONUNCIATIONS[lookupWord] || "";
+            const contextualWord = contextualWords.get(lookupWord);
+            const wordGloss = contextualWord?.en || NORMALIZED_BENGALI_GLOSSES[lookupWord] || "";
+            const savedPronunciation = contextualWord?.pronunciation || SAVED_BENGALI_PRONUNCIATIONS[lookupWord] || "";
             return (
                 <li className="bengali-breakdown__item is-completed-word" key={`word-${wordIndex}-${wordSegments[0].offset}`}>
                   <div className="bengali-breakdown__completed-glyph">

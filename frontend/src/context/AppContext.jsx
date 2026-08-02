@@ -35,6 +35,7 @@ const initialState = {
   markdownViewerText: '',
   isBengaliBreakdownOpen: false,
   bengaliBreakdownText: '',
+  bengaliBreakdownWords: [],
 };
 
 const actionTypes = {
@@ -71,6 +72,7 @@ const actionTypes = {
   SET_MARKDOWN_VIEWER_TEXT: 'SET_MARKDOWN_VIEWER_TEXT',
   SET_IS_BENGALI_BREAKDOWN_OPEN: 'SET_IS_BENGALI_BREAKDOWN_OPEN',
   SET_BENGALI_BREAKDOWN_TEXT: 'SET_BENGALI_BREAKDOWN_TEXT',
+  SET_BENGALI_BREAKDOWN_WORDS: 'SET_BENGALI_BREAKDOWN_WORDS',
 };
 
 const closeAllPanels = (state) => ({
@@ -199,7 +201,9 @@ function appReducer(state, action) {
     case actionTypes.SET_IS_BENGALI_BREAKDOWN_OPEN:
       return action.payload ? activateDrawer(state, 'bengaliBreakdown') : deactivateDrawer(state, 'bengaliBreakdown');
     case actionTypes.SET_BENGALI_BREAKDOWN_TEXT:
-      return { ...state, bengaliBreakdownText: action.payload };
+      return { ...state, bengaliBreakdownText: action.payload, bengaliBreakdownWords: [] };
+    case actionTypes.SET_BENGALI_BREAKDOWN_WORDS:
+      return { ...state, bengaliBreakdownWords: action.payload };
     default:
       console.warn(`Unhandled action type: ${action.type}`);
       return state;
@@ -258,4 +262,5 @@ export const actions = {
   setMarkdownViewerText: (text) => ({ type: actionTypes.SET_MARKDOWN_VIEWER_TEXT, payload: text }),
   setIsBengaliBreakdownOpen: (open) => ({ type: actionTypes.SET_IS_BENGALI_BREAKDOWN_OPEN, payload: open }),
   setBengaliBreakdownText: (text) => ({ type: actionTypes.SET_BENGALI_BREAKDOWN_TEXT, payload: text }),
+  setBengaliBreakdownWords: (words) => ({ type: actionTypes.SET_BENGALI_BREAKDOWN_WORDS, payload: words }),
 };

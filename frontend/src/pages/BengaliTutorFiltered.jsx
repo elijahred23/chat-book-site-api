@@ -1,9 +1,10 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import PropTypes from "prop-types";
-import { FaAngleDoubleLeft, FaAngleDoubleRight, FaDownload, FaFastBackward, FaFastForward, FaPause, FaPlay, FaRedoAlt, FaStepBackward, FaStepForward, FaStop, FaTrash, FaUpload } from "react-icons/fa";
+import { FaAngleDoubleLeft, FaAngleDoubleRight, FaDownload, FaFastBackward, FaFastForward, FaLanguage, FaPause, FaPlay, FaRedoAlt, FaStepBackward, FaStepForward, FaStop, FaTrash, FaUpload } from "react-icons/fa";
 import BengaliTutor, { SELECTABLE_SAVED_LESSONS } from "./BengaliTutor.jsx";
 import { phraseBreakdownItems, withPhraseWords } from "../utils/bengaliPhraseBreakdown.js";
 import { getGoogleTtsAudio, GOOGLE_BENGALI_VOICE_KEY } from "../utils/googleTtsAudioCache.js";
+import { actions, useAppDispatch } from "../context/AppContext.jsx";
 
 const LESSON_KEY = "bengali_lesson_cache";
 const SETTINGS_KEY = "bengali_word_loop_settings";
@@ -371,6 +372,7 @@ BengaliMp3Downloads.propTypes = {
 };
 
 function BengaliTranslator() {
+  const dispatch = useAppDispatch();
   const [text, setText] = useState("");
   const [translations, setTranslations] = useState(storedTranslations);
   const [selectedTranslationId, setSelectedTranslationId] = useState("");
@@ -439,6 +441,12 @@ function BengaliTranslator() {
       }
       return next;
     });
+  };
+
+  const openBengaliBreakdown = (record) => {
+    dispatch(actions.setBengaliBreakdownText(record.bengali));
+    dispatch(actions.setBengaliBreakdownWords(record.sentences.flatMap((sentence) => sentence.words || [])));
+    dispatch(actions.setIsBengaliBreakdownOpen(true));
   };
 
   const downloadTranslation = async (record) => {
@@ -631,6 +639,15 @@ function BengaliTranslator() {
               <div style={ui.translationCardHeader}>
                 <small style={ui.resultLabel}>{record.id === translations[0]?.id && status === "success" ? "New translation" : "Saved translation"}</small>
                 <div style={ui.translationCardActions}>
+                  <button
+                    type="button"
+                    style={ui.breakdownButton}
+                    onClick={() => openBengaliBreakdown(record)}
+                    aria-label={`Open Bengali breakdown: ${record.translation}`}
+                    title="Open the Bengali text in Bengali Breakdown"
+                  >
+                    <FaLanguage aria-hidden="true" /> Bengali breakdown
+                  </button>
                   <button
                     type="button"
                     style={ui.downloadButton}
@@ -1250,6 +1267,7 @@ const ui = {
   translationCardHeader: { display: "flex", alignItems: "center", justifyContent: "space-between", gap: ".75rem" },
   translationCardActions: { display: "flex", flexWrap: "wrap", justifyContent: "flex-end", gap: ".45rem" },
   resultLabel: { color: "#15803d", fontWeight: 850, textTransform: "uppercase", letterSpacing: ".04em" },
+  breakdownButton: { minHeight: 36, padding: ".45rem .65rem", display: "inline-flex", alignItems: "center", gap: ".35rem", border: "1px solid #a7f3d0", borderRadius: 8, background: "#fff", color: "#047857", fontWeight: 800 },
   downloadButton: { minHeight: 36, padding: ".45rem .65rem", display: "inline-flex", alignItems: "center", gap: ".35rem", border: "1px solid #bfdbfe", borderRadius: 8, background: "#fff", color: "#1d4ed8", fontWeight: 800 },
   deleteButton: { minHeight: 36, padding: ".45rem .65rem", display: "inline-flex", alignItems: "center", gap: ".35rem", border: "1px solid #fecaca", borderRadius: 8, background: "#fff", color: "#b91c1c", fontWeight: 800 },
   resultBengali: { marginTop: ".35rem", color: "#0f172a", fontSize: "clamp(1.6rem, 5vw, 2.4rem)", fontWeight: 850, lineHeight: 1.3 },
