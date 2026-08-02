@@ -54,7 +54,6 @@
 .bengali-typing__choices { width: min(100%, 34rem); display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .65rem; margin-top: .45rem; }
 .bengali-typing__choices button { position: relative; min-width: 0; min-height: 5rem; display: grid; place-items: center; border: 2px solid #93c5fd; border-radius: var(--radius-lg); padding: .65rem; background: #eff6ff; color: #1e3a8a; box-shadow: 0 4px 0 #bfdbfe; font-family: "Noto Sans Bengali", "Nirmala UI", "Vrinda", sans-serif; font-size: clamp(1.6rem, 6vw, 2.5rem); font-weight: 850; }
 .bengali-typing__choice-number { position: absolute; top: .35rem; left: .45rem; color: #64748b; font-family: var(--font-sans); font-size: .7rem; font-weight: 900; line-height: 1; }
-.bengali-typing__choices button:hover { border-color: #2563eb; background: #dbeafe; transform: translateY(-1px); }
 .bengali-typing__choices button:active { transform: translateY(2px); box-shadow: none; }
 .bengali-typing__choices button.is-wrong { border-color: #f87171; background: #fff1f2; color: #b91c1c; box-shadow: 0 4px 0 #fecaca; }
 .bengali-typing__choice-feedback { grid-column: 1 / -1; min-height: 1.25rem; color: var(--color-text-muted); font-size: .82rem; font-weight: 750; text-align: center; }
@@ -94,9 +93,11 @@
 .bengali-worksheet__trace { color: #e3e7ec; font-family: "Noto Sans Bengali", "Nirmala UI", "Vrinda", sans-serif; font-weight: 400; }
 .bengali-worksheet__empty { min-height: 20rem; display: grid; place-items: center; color: #64748b; text-align: center; }
 @media (hover: hover) and (pointer: fine) {
+  .bengali-typing__choices button:hover { border-color: #2563eb; background: #dbeafe; transform: translateY(-1px); }
   .bengali-keyboard__row button:hover { border-color: var(--color-primary); background: var(--color-primary-soft); color: var(--color-primary); transform: translateY(-1px); }
 }
 @media (hover: none) {
+  .bengali-typing__choices button:hover:not(.is-wrong) { border-color: #93c5fd; background: #eff6ff; color: #1e3a8a; transform: none; }
   .bengali-keyboard__row button:hover:not(.is-suggested) { border-color: var(--color-border-strong); background: var(--color-surface); color: var(--color-text); transform: none; }
 }
 @media (max-width: 480px) {
