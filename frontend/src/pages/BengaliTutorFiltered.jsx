@@ -47,6 +47,8 @@ const storedSettings = () => {
     chunkIndex: 0,
     showImages: true,
     wordDelay: 0,
+    speechRate: 1,
+    englishOncePerInterval: false,
     bengaliSpeechSource: "pronunciation",
     translationSetId: "",
   };
@@ -736,6 +738,8 @@ function WordLoop({ lesson, voices, bnVoices, enVoices, bnVoice, enVoice, setBnV
   const [chunkIndex, setChunkIndex] = useState(initial.chunkIndex);
   const [showImages, setShowImages] = useState(initial.showImages);
   const [wordDelay, setWordDelay] = useState(initial.wordDelay);
+  const [speechRate, setSpeechRate] = useState(initial.speechRate);
+  const [englishOncePerInterval, setEnglishOncePerInterval] = useState(initial.englishOncePerInterval);
   const [bengaliSpeechSource, setBengaliSpeechSource] = useState(initial.bengaliSpeechSource);
   const [translationSetId, setTranslationSetId] = useState(
     () => translationSets.find((set) => set.id === initial.translationSetId)?.id || translationSets[0]?.id || "",
@@ -788,7 +792,7 @@ function WordLoop({ lesson, voices, bnVoices, enVoices, bnVoice, enVoice, setBnV
   }, [selectedTranslationSet, translationSetId]);
 
   const sourceItems = useMemo(() => {
-    if (dataset === "translation-phrases") return translationPhraseItems;
+    if (dataset === "translation-phrases" || dataset === "translation-breakdowns") return translationPhraseItems;
     if (dataset === "translation-words") return translationWordItems;
     const source = dataset === "breakdowns" || dataset === "phrases"
       ? phraseBreakdownItems(lesson)
@@ -819,6 +823,7 @@ function WordLoop({ lesson, voices, bnVoices, enVoices, bnVoice, enVoice, setBnV
   const size = Math.max(1, Number(intervalSize) || 1);
   const repeats = Math.max(1, Number(intervalRepeats) || 1);
   const delaySeconds = Math.max(0, Number(wordDelay) || 0);
+  const playbackRate = Math.min(2, Math.max(0.5, Number(speechRate) || 1));
 
   const cancelGoogleAudio = useCallback(() => {
     googleAudioRef.current?.finish();
@@ -842,9 +847,9 @@ function WordLoop({ lesson, voices, bnVoices, enVoices, bnVoice, enVoice, setBnV
 
   useEffect(() => {
     try {
-      localStorage.setItem(SETTINGS_KEY, JSON.stringify({ dataset, mode, intervalSize: size, intervalRepeats: repeats, loopForever, search, facet, chunkSize: safeChunkSize, chunkIndex: safeChunkIndex, showImages, wordDelay: delaySeconds, bengaliSpeechSource, translationSetId }));
+      localStorage.setItem(SETTINGS_KEY, JSON.stringify({ dataset, mode, intervalSize: size, intervalRepeats: repeats, loopForever, search, facet, chunkSize: safeChunkSize, chunkIndex: safeChunkIndex, showImages, wordDelay: delaySeconds, speechRate: playbackRate, englishOncePerInterval, bengaliSpeechSource, translationSetId }));
     } catch {}
-  }, [dataset, mode, size, repeats, loopForever, search, facet, safeChunkSize, safeChunkIndex, showImages, delaySeconds, bengaliSpeechSource, translationSetId]);
+  }, [dataset, mode, size, repeats, loopForever, search, facet, safeChunkSize, safeChunkIndex, showImages, delaySeconds, playbackRate, englishOncePerInterval, bengaliSpeechSource, translationSetId]);
 
   useEffect(() => () => stop(), [stop]);
   useEffect(() => {
@@ -853,7 +858,7 @@ function WordLoop({ lesson, voices, bnVoices, enVoices, bnVoice, enVoice, setBnV
     passRef.current = 1;
     setCurrentIndex(0);
     setPass(1);
-  }, [dataset, mode, intervalSize, intervalRepeats, loopForever, search, facet, safeChunkSize, safeChunkIndex, showImages, delaySeconds, bengaliSpeechSource, translationSetId, bnVoice, enVoice, shuffleVersion, stop]);
+  }, [dataset, mode, intervalSize, intervalRepeats, loopForever, search, facet, safeChunkSize, safeChunkIndex, showImages, delaySeconds, playbackRate, englishOncePerInterval, bengaliSpeechSource, translationSetId, bnVoice, enVoice, shuffleVersion, stop]);
 
   const jumpToWord = (event) => {
     const nextIndex = Math.min(Math.max(Number(event.target.value) || 0, 0), Math.max(items.length - 1, 0));
@@ -874,6 +879,8 @@ function WordLoop({ lesson, voices, bnVoices, enVoices, bnVoice, enVoice, setBnV
         await new Promise((resolve) => {
           const audioUrl = URL.createObjectURL(audioBlob);
           const audio = new Audio(audioUrl);
+          audio.playbackRate = playbackRate;
+          audio.preservesPitch = true;
           let finished = false;
           const finish = () => {
             if (finished) return;
@@ -904,7 +911,7 @@ function WordLoop({ lesson, voices, bnVoices, enVoices, bnVoice, enVoice, setBnV
       utterance.onerror = resolve;
       window.speechSynthesis.speak(utterance);
     });
-  }, [voices]);
+  }, [playbackRate, voices]);
 
   const settlePhotoRequest = useCallback((request, rendered) => {
     if (!request || request.settled) return;
@@ -958,16 +965,16 @@ function WordLoop({ lesson, voices, bnVoices, enVoices, bnVoice, enVoice, setBnV
     return request.promise;
   }, [settlePhotoRequest, showImages]);
 
-  const readItem = useCallback(async (item, generation) => {
+  const readItem = useCallback(async (item, generation, playEnglish = true) => {
     await requestPhoto(item.en);
     const isActive = () => playingRef.current && !pausedRef.current && playbackGenerationRef.current === generation;
     if (!isActive()) return;
-    const englishSpeechText = dataset === "breakdowns" ? item.breakdownEnglish || item.en : item.en;
+    const englishSpeechText = dataset === "breakdowns" || dataset === "translation-breakdowns" ? item.breakdownEnglish || item.en : item.en;
     const bengaliSpeechText = bnVoice !== GOOGLE_BENGALI_VOICE_KEY && bengaliSpeechSource === "pronunciation" && item.pronunciation?.trim()
       ? item.pronunciation.trim()
       : item.bn;
     if (mode === "english-bengali") {
-      await speak(englishSpeechText, "en-US", enVoice);
+      if (playEnglish) await speak(englishSpeechText, "en-US", enVoice);
       if (isActive()) await speak(bengaliSpeechText, "bn-IN", bnVoice);
       return;
     }
@@ -993,7 +1000,8 @@ function WordLoop({ lesson, voices, bnVoices, enVoices, bnVoice, enVoice, setBnV
         setCurrentIndex(index);
         setPass(currentPass);
         setStatus(`Chunk ${safeChunkIndex + 1}/${chunkCount} · Item ${index + 1}/${items.length} · Set ${Math.floor(batchStart / size) + 1}/${Math.ceil(items.length / size)} · Pass ${currentPass}/${repeats}`);
-        await readItem(items[index], generation);
+        const playEnglish = !(mode === "english-bengali" && size === 1 && englishOncePerInterval && currentPass > 1);
+        await readItem(items[index], generation, playEnglish);
         const finishesPlayback = !loopForever && batchEnd >= items.length && currentPass >= repeats && index === batchEnd - 1;
         if (!finishesPlayback && !await waitBeforeNextWord(generation)) return;
       }
@@ -1014,7 +1022,7 @@ function WordLoop({ lesson, voices, bnVoices, enVoices, bnVoice, enVoice, setBnV
       }
       resumeIndex = batchStart;
     }
-  }, [items, loopForever, readItem, repeats, size, stop, safeChunkIndex, chunkCount, waitBeforeNextWord]);
+  }, [items, loopForever, readItem, repeats, size, stop, safeChunkIndex, chunkCount, waitBeforeNextWord, mode, englishOncePerInterval]);
 
   const start = () => {
     if (!items.length) return;
@@ -1106,7 +1114,7 @@ function WordLoop({ lesson, voices, bnVoices, enVoices, bnVoice, enVoice, setBnV
 
       <section style={ui.filterPanel} aria-label="Word filters">
         <div style={ui.grid}>
-          <Field label="Items"><select style={ui.input} value={dataset} onChange={(event) => { setDataset(event.target.value); setChunkIndex(0); setShuffleVersion(0); }}><option value="vocab">Vocabulary words</option><option value="phrases">Lesson phrases</option><option value="breakdowns">Phrase breakdowns</option><option value="translation-phrases" disabled={!translationPhraseItems.length}>Saved translation phrases ({translationPhraseItems.length})</option><option value="translation-words" disabled={!translationWordItems.length}>Saved translation words ({translationWordItems.length})</option></select></Field>
+          <Field label="Items"><select style={ui.input} value={dataset} onChange={(event) => { setDataset(event.target.value); setChunkIndex(0); setShuffleVersion(0); }}><option value="vocab">Vocabulary words</option><option value="phrases">Lesson phrases</option><option value="breakdowns">Phrase breakdowns</option><option value="translation-phrases" disabled={!translationPhraseItems.length}>Saved translation phrases ({translationPhraseItems.length})</option><option value="translation-breakdowns" disabled={!translationPhraseItems.length}>Saved translation breakdowns ({translationPhraseItems.length})</option><option value="translation-words" disabled={!translationWordItems.length}>Saved translation words ({translationWordItems.length})</option></select></Field>
           <Field label="Words per study chunk"><select style={ui.input} value={safeChunkSize} onChange={(event) => { setChunkSize(Number(event.target.value)); setChunkIndex(0); }}><option value="10">10</option><option value="20">20</option><option value="25">25</option><option value="50">50</option><option value="100">100</option><option value="150">150</option><option value="200">200</option><option value="250">250</option><option value="300">300</option></select></Field>
         </div>
         {translationSets.length > 0 && (
@@ -1142,8 +1150,9 @@ function WordLoop({ lesson, voices, bnVoices, enVoices, bnVoice, enVoice, setBnV
         <Field label="Words per interval"><input style={ui.input} type="number" min="1" value={intervalSize} onChange={(event) => setIntervalSize(event.target.value)} /></Field>
         <Field label="Repeat each interval"><input style={ui.input} type="number" min="1" value={intervalRepeats} onChange={(event) => setIntervalRepeats(event.target.value)} /></Field>
         <Field label="Delay before next word (seconds)"><input style={ui.input} type="number" min="0" step="0.5" value={wordDelay} onChange={(event) => setWordDelay(event.target.value)} /></Field>
+        {bnVoice === GOOGLE_BENGALI_VOICE_KEY && <Field label="Google Bengali speed"><select style={ui.input} value={playbackRate} onChange={(event) => setSpeechRate(Number(event.target.value))}><option value="0.5">0.5×</option><option value="0.75">0.75×</option><option value="1">1×</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option><option value="2">2×</option></select></Field>}
       </div>
-      {items.length > 0 && <Field label={dataset === "breakdowns" || dataset === "phrases" || dataset === "translation-phrases" ? "Skip to phrase in active chunk" : "Skip to word in active chunk"}><select style={ui.input} value={currentIndex} onChange={jumpToWord}>{items.map((word, index) => <option key={`${word.bn}-${word.en}-${index}`} value={index}>{chunkStart + index + 1}. {word.pronunciation || word.bn} · {word.en}</option>)}</select></Field>}
+      {items.length > 0 && <Field label={dataset === "breakdowns" || dataset === "phrases" || dataset === "translation-phrases" || dataset === "translation-breakdowns" ? "Skip to phrase in active chunk" : "Skip to word in active chunk"}><select style={ui.input} value={currentIndex} onChange={jumpToWord}>{items.map((word, index) => <option key={`${word.bn}-${word.en}-${index}`} value={index}>{chunkStart + index + 1}. {word.pronunciation || word.bn} · {word.en}</option>)}</select></Field>}
       <div style={ui.grid}>
         <div style={ui.voiceStack}>
           <VoiceSelect
@@ -1180,11 +1189,12 @@ function WordLoop({ lesson, voices, bnVoices, enVoices, bnVoice, enVoice, setBnV
         <VoiceSelect compact label="English voice" value={enVoice} voices={enVoices} onChange={(value) => { setEnVoice(value); if (value) preview(value, "Welcome to Bengali practice", "en-US"); }} />
       </div>
       <div className="bn-word-loop__toggles" style={ui.toggles}>
+        {mode === "english-bengali" && size === 1 && <label className="bn-word-loop__toggle" style={ui.check}><input type="checkbox" checked={englishOncePerInterval} onChange={(event) => setEnglishOncePerInterval(event.target.checked)} /><span>Play English once, then repeat Bengali only</span></label>}
         <label className="bn-word-loop__toggle" style={ui.check}><input type="checkbox" checked={loopForever} onChange={(event) => setLoopForever(event.target.checked)} /><span>Loop the active study chunk forever</span></label>
         <label className="bn-word-loop__toggle" style={ui.check}><input type="checkbox" checked={showImages} onChange={(event) => setShowImages(event.target.checked)} /><span>Show stock photos for vocabulary words</span></label>
       </div>
       {!lesson ? <div style={ui.notice}>Generate or upload a lesson in the Tutor tab first.</div> : !items.length ? <div style={ui.notice}>No items match the active filters.</div> : <>
-        <div style={ui.flash}><small>Chunk {safeChunkIndex + 1}/{chunkCount} · {currentIndex + 1}/{items.length} · Overall filtered position {chunkStart + currentIndex + 1}/{orderedMatchingItems.length} · Pass {pass}/{repeats}</small><strong lang="bn" style={ui.bn}>{item?.bn}</strong>{item?.pronunciation && <strong style={ui.activePronunciation}>{item.pronunciation}</strong>}<span style={ui.en}>{item?.en}</span>{(dataset === "breakdowns" || dataset === "phrases" || dataset === "translation-phrases") && <section className="bn-loop-breakdown" aria-label="Complete phrase breakdown"><strong className="bn-loop-breakdown__title">Phrase breakdown</strong><div className="bn-loop-breakdown__literal"><small>Literal Bengali order</small><span>{item?.breakdownEnglish}</span></div><div className="bn-loop-breakdown__grid">{item?.words?.map((word, wordIndex) => <article className="bn-loop-breakdown__word" key={`${item.bn}-${word.bn}-${wordIndex}`}><span lang="bn">{word.bn}</span><strong>{word.pronunciation}</strong><small>{word.en}</small></article>)}</div></section>}
+        <div style={ui.flash}><small>Chunk {safeChunkIndex + 1}/{chunkCount} · {currentIndex + 1}/{items.length} · Overall filtered position {chunkStart + currentIndex + 1}/{orderedMatchingItems.length} · Pass {pass}/{repeats}</small><strong lang="bn" style={ui.bn}>{item?.bn}</strong>{item?.pronunciation && <strong style={ui.activePronunciation}>{item.pronunciation}</strong>}<span style={ui.en}>{item?.en}</span>{(dataset === "breakdowns" || dataset === "phrases" || dataset === "translation-phrases" || dataset === "translation-breakdowns") && <section className="bn-loop-breakdown" aria-label="Complete phrase breakdown"><strong className="bn-loop-breakdown__title">Phrase breakdown</strong><div className="bn-loop-breakdown__literal"><small>Literal Bengali order</small><span>{item?.breakdownEnglish}</span></div><div className="bn-loop-breakdown__grid">{item?.words?.map((word, wordIndex) => <article className="bn-loop-breakdown__word" key={`${item.bn}-${word.bn}-${wordIndex}`}><span lang="bn">{word.bn}</span><strong>{word.pronunciation}</strong><small>{word.en}</small></article>)}</div></section>}
           {showImages && <div style={ui.photoFrame} aria-live="polite">
             {photoStatus === "loading" && <span style={ui.muted}>Finding a photo…</span>}
             {photoStatus === "empty" && <span style={ui.muted}>No photo found for this item.</span>}
