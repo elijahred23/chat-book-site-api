@@ -827,7 +827,6 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
     .bn-game-card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; flex-wrap: wrap; }
     .bn-game-prompt { display: inline-block; color: #0f172a; font-size: 1.25rem; font-weight: 900; line-height: 1.25; border-radius: 10px; padding: 0.12rem 0.45rem; }
     .bn-game-prompt.bn-match-prompt { display: block; font-size: clamp(2.75rem, 9vw, 5.5rem) !important; line-height: 1.12; }
-    .bn-game-prompt.bn-match-prompt::after { display: none !important; content: none !important; }
     .bn-game-prompt.match-correct { background: #dcfce7; color: #14532d; border: 1px solid #16a34a; }
     .bn-game-prompt.match-wrong { background: #fee2e2; color: #7f1d1d; border: 1px solid #ef4444; }
     .bn-game-prompt.match-new { background: #fef9c3; color: #713f12; border: 1px solid #eab308; }
@@ -1106,7 +1105,12 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
                           className={`bn-game-prompt bn-match-prompt ${statusClassForKey(matchStats, gameQuestion.key)}`}
                           style={{ fontSize: "clamp(2.75rem, 9vw, 5.5rem)" }}
                         >
-                          {gameQuestion.displayQuestion}
+                          {gameDirection === "bn-en" ? (
+                            <>
+                              <span lang="bn">{gameQuestion.bn}</span>
+                              {gameQuestion.pronunciation && <span className="bn-match-pronunciation"> ({gameQuestion.pronunciation})</span>}
+                            </>
+                          ) : gameQuestion.en}
                         </div>
                       </div>
                       <label className="bn-row" style={{ width: 130 }}>

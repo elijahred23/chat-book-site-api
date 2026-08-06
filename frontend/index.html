@@ -56,6 +56,9 @@
       .bn-pronunciations-hidden .bn-game-prompt[data-bn-game-display]::after {
         font-size: 1.25rem;
       }
+      .bn-pronunciations-hidden .bn-match-pronunciation {
+        display: none !important;
+      }
       .bn-pronunciations-hidden .bn-game-subtext[data-bn-game-display]::after {
         font-size: 0.95rem;
       }
@@ -224,6 +227,10 @@
         };
 
         const updateGameDisplay = (element, showPronunciations) => {
+          if (element.matches(".bn-match-prompt")) {
+            element.removeAttribute("data-bn-game-display");
+            return;
+          }
           if (showPronunciations) {
             element.removeAttribute("data-bn-game-display");
             return;
