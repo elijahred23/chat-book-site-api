@@ -324,6 +324,7 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
   const [pronunciationChoice, setPronunciationChoice] = useState(null);
   const matchStatsRef = React.useRef({});
   const memoryTimerRef = React.useRef(null);
+  const keyboardActionsRef = React.useRef({});
 
   useEffect(() => {
     try {
@@ -717,6 +718,78 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
     }
   };
 
+  keyboardActionsRef.current = {
+    pickGame: handleGamePick,
+    pickArcade: handleArcadePick,
+    pickBingo: handleBingoPick,
+    pickPronunciation: handlePronunciationPick,
+  };
+
+  useEffect(() => {
+    if (contentTab !== "games") return undefined;
+
+    const handleGameKeyDown = (event) => {
+      if (event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
+      const target = event.target;
+      if (target instanceof HTMLElement && (target.isContentEditable || /^(INPUT|SELECT|TEXTAREA)$/.test(target.tagName))) return;
+
+      const shortcutKey = event.key.toLocaleLowerCase();
+      if (shortcutKey === "r" || shortcutKey === "t") {
+        const targetBengali = gameMode === "bingo"
+          ? bingoTarget?.bn
+          : gameMode === "pronunciation"
+            ? pronunciationQuestion?.bn
+            : gameQuestion?.bn;
+        if (targetBengali) {
+          event.preventDefault();
+          if (shortcutKey === "r") {
+            speakSelectedBengali(targetBengali);
+          } else if (containsBengali(targetBengali)) {
+            dispatch(actions.setBengaliBreakdownText(targetBengali));
+            dispatch(actions.setIsBengaliBreakdownOpen(true));
+          }
+        }
+        return;
+      }
+
+      if (!/^\d$/.test(event.key)) return;
+      const optionIndex = event.key === "0" ? 9 : Number(event.key) - 1;
+      if (optionIndex < 0) return;
+
+      if (gameMode === "match" && !gameResult) {
+        const option = gameQuestion?.options[optionIndex];
+        if (option) keyboardActionsRef.current.pickGame(option);
+      } else if ((gameMode === "sprint" || gameMode === "sound") && arcadeRunning) {
+        const option = gameQuestion?.options[optionIndex];
+        if (option) keyboardActionsRef.current.pickArcade(option);
+      } else if (gameMode === "bingo") {
+        const option = bingoBoard[optionIndex];
+        if (option) keyboardActionsRef.current.pickBingo(option);
+      } else if (gameMode === "pronunciation" && !pronunciationResult) {
+        const option = pronunciationQuestion?.options[optionIndex];
+        if (option) keyboardActionsRef.current.pickPronunciation(option);
+      } else {
+        return;
+      }
+      event.preventDefault();
+    };
+
+    window.addEventListener("keydown", handleGameKeyDown);
+    return () => window.removeEventListener("keydown", handleGameKeyDown);
+  }, [
+    arcadeRunning,
+    bingoBoard,
+    bingoTarget,
+    contentTab,
+    dispatch,
+    gameMode,
+    gameQuestion,
+    gameResult,
+    pronunciationQuestion,
+    pronunciationResult,
+    speakSelectedBengali,
+  ]);
+
   const statsSummary = useMemo(() => {
     return gameItems.map(wordKey).reduce((acc, key) => {
       acc[statusForWord(matchStats, key)] += 1;
@@ -753,6 +826,8 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
     .bn-game-card { display: grid; gap: 12px; padding: 1rem; border: 1px solid #dbe3ef; border-radius: 16px; background: #fff; box-shadow: 0 14px 34px rgba(15,23,42,0.08); }
     .bn-game-card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; flex-wrap: wrap; }
     .bn-game-prompt { display: inline-block; color: #0f172a; font-size: 1.25rem; font-weight: 900; line-height: 1.25; border-radius: 10px; padding: 0.12rem 0.45rem; }
+    .bn-game-prompt.bn-match-prompt { display: block; font-size: clamp(2.75rem, 9vw, 5.5rem) !important; line-height: 1.12; }
+    .bn-game-prompt.bn-match-prompt::after { display: none !important; content: none !important; }
     .bn-game-prompt.match-correct { background: #dcfce7; color: #14532d; border: 1px solid #16a34a; }
     .bn-game-prompt.match-wrong { background: #fee2e2; color: #7f1d1d; border: 1px solid #ef4444; }
     .bn-game-prompt.match-new { background: #fef9c3; color: #713f12; border: 1px solid #eab308; }
@@ -1027,7 +1102,12 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
                   <div className="bn-game-card">
                     <div className="bn-game-card-top">
                       <div>
-                        <div className={`bn-game-prompt ${statusClassForKey(matchStats, gameQuestion.key)}`}>{gameQuestion.displayQuestion}</div>
+                        <div
+                          className={`bn-game-prompt bn-match-prompt ${statusClassForKey(matchStats, gameQuestion.key)}`}
+                          style={{ fontSize: "clamp(2.75rem, 9vw, 5.5rem)" }}
+                        >
+                          {gameQuestion.displayQuestion}
+                        </div>
                       </div>
                       <label className="bn-row" style={{ width: 130 }}>
                         <strong>Options</strong>
@@ -1173,10 +1253,11 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
                     </div>
                     {bingoTarget && <div className="bn-game-feedback correct" lang="bn">Find: {bengaliLabel(bingoTarget)}</div>}
                     <div className="bn-bingo-grid">
-                      {bingoBoard.map((item) => {
+                      {bingoBoard.map((item, idx) => {
                         const matched = bingoMatched.includes(wordKey(item));
                         return (
                           <button key={wordKey(item)} className={`bn-bingo-card ${matched ? "matched" : ""}`} onClick={() => handleBingoPick(item)} disabled={matched}>
+                            <span className="bn-option-index">{idx + 1}</span>
                             {matched ? "✓ " : ""}{item.en}
                             {matched && <small>{bengaliLabel(item)}</small>}
                           </button>
@@ -1203,10 +1284,10 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
                     <div className="bn-pop-stage">
                       {pronunciationResult === "correct" && <div className="bn-pop-burst" aria-hidden="true">💥✨🎉</div>}
                       <div className="bn-pop-options">
-                        {pronunciationQuestion.options.map((option) => {
+                        {pronunciationQuestion.options.map((option, idx) => {
                           const stateClass = pronunciationResult ? option === pronunciationQuestion.en ? "correct" : option === pronunciationChoice ? "wrong" : "" : "";
                           const isPopping = pronunciationResult && option === pronunciationChoice;
-                          return <button key={option} className={`bn-pop-option ${stateClass} ${isPopping ? "popping" : ""}`} onClick={() => handlePronunciationPick(option)} disabled={!!pronunciationResult}>{option}</button>;
+                          return <button key={option} className={`bn-pop-option ${stateClass} ${isPopping ? "popping" : ""}`} onClick={() => handlePronunciationPick(option)} disabled={!!pronunciationResult}><span className="bn-option-index">{idx + 1}</span>{option}</button>;
                         })}
                       </div>
                     </div>
