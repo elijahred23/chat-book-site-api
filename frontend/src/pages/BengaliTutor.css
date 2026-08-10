@@ -66,7 +66,7 @@
 .bn-content-heading h3 { margin: .1rem 0 0; color: var(--bn-ink); font-size: 1.25rem; }
 .bn-page .bn-phrase-card { display: grid; gap: .45rem; padding: clamp(1rem, 2vw, 1.3rem) !important; border-color: var(--bn-line); border-radius: 16px; box-shadow: 0 7px 22px rgba(36,60,46,.055); }
 .bn-script { color: var(--bn-ink); font-family: "Noto Sans Bengali", "Nirmala UI", sans-serif; font-size: clamp(1.35rem, 3vw, 1.8rem); line-height: 1.45; }
-.bn-breakdown-speakable { border-radius: 6px; cursor: pointer; }
+.bn-breakdown-speakable { border-radius: 6px; background: #eaf2f8; color: var(--bn-ink); cursor: pointer; }
 .bn-breakdown-speakable:hover { color: var(--bn-primary); background: #eef7f1; }
 .bn-breakdown-speakable:focus-visible { outline: 3px solid rgba(42, 123, 76, .28); outline-offset: 3px; }
 .bn-pronunciation { color: var(--bn-primary); font-size: .88rem; font-weight: 700; }
