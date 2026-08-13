@@ -875,7 +875,7 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
     @media (max-width: 520px) { .bn-memory-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
     @media (max-width: 520px) { .bn-bingo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
     @media (prefers-reduced-motion: reduce) { .bn-pop-option { animation: none; } .bn-pop-option.popping { opacity: 0; } .bn-pop-burst { animation: none; } }
-    .bn-script { display: inline-block; font-size: 1.12rem; font-weight: 800; color: #0f172a; border-radius: 10px; padding: 0.08rem 0.35rem; }
+    .bn-script { display: inline-block; font-size: 3rem; font-weight: 800; color: #0f172a; border-radius: 10px; padding: 0.08rem 0.35rem; }
     .bn-pronunciation { color: #475569; font-weight: 700; }
     .bn-translation { color: #0f172a; }
     .bn-breakdown { display: grid; gap: 8px; margin-top: 12px; padding-top: 12px; border-top: 1px solid #e2e8f0; }
