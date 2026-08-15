@@ -254,6 +254,7 @@ export default function BengaliTutorFiltered() {
 
 function BengaliMp3Downloads({ lesson, translationSets }) {
   const [dataset, setDataset] = useState("lesson-phrases");
+  const [speechOrder, setSpeechOrder] = useState("bn");
   const [translationSetId, setTranslationSetId] = useState(() => translationSets[0]?.id || "");
   const [downloading, setDownloading] = useState(false);
   const [status, setStatus] = useState("");
@@ -291,13 +292,18 @@ function BengaliMp3Downloads({ lesson, translationSets }) {
   const downloadMp3 = async () => {
     if (!items.length || downloading) return;
     setDownloading(true);
-    setStatus(`Generating ${items.length} ${datasetLabel} with Google Bengali speech…`);
+    setStatus(`Generating ${items.length} ${datasetLabel} with Google ${speechOrder === "en-bn" ? "English and Bengali" : "Bengali"} speech…`);
     try {
-      const chunks = buildGoogleTtsChunks(items);
+      const batchItems = speechOrder === "en-bn"
+        ? items.flatMap((item) => [
+          { text: String(item.en || "").trim(), lang: "en-US" },
+          { text: String(item.bn || "").trim(), lang: "bn-IN" },
+        ]).filter((item) => item.text)
+        : buildGoogleTtsChunks(items).map((text) => ({ text, lang: "bn-IN" }));
       const response = await fetch("/api/tts/batch", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ items: chunks.map((text) => ({ text, lang: "bn-IN" })) }),
+        body: JSON.stringify({ items: batchItems }),
       });
       if (!response.ok) {
         const data = await response.json().catch(() => ({}));
@@ -308,7 +314,7 @@ function BengaliMp3Downloads({ lesson, translationSets }) {
       const sourceName = isTranslationDataset ? selectedTranslationSet?.title : lesson?.title;
       const link = document.createElement("a");
       link.href = audioUrl;
-      link.download = `${fileSlug(sourceName || "bengali")}-${dataset}.mp3`;
+      link.download = `${fileSlug(sourceName || "bengali")}-${dataset}${speechOrder === "en-bn" ? "-english-bengali" : ""}.mp3`;
       document.body.appendChild(link);
       link.click();
       link.remove();
@@ -337,6 +343,12 @@ function BengaliMp3Downloads({ lesson, translationSets }) {
             <option value="translation-words" disabled={!translationSets.length}>Saved translation words ({translationWords.length})</option>
           </select>
         </Field>
+        <Field label="Speech order">
+          <select style={ui.input} value={speechOrder} onChange={(event) => { setSpeechOrder(event.target.value); setStatus(""); }}>
+            <option value="bn">Bengali only</option>
+            <option value="en-bn">English → Bengali</option>
+          </select>
+        </Field>
         {isTranslationDataset && translationSets.length > 0 && (
           <Field label="Saved translation">
             <select style={ui.input} value={selectedTranslationSet?.id || ""} onChange={(event) => { setTranslationSetId(event.target.value); setStatus(""); }}>
@@ -349,7 +361,7 @@ function BengaliMp3Downloads({ lesson, translationSets }) {
       </div>
       <div style={ui.downloadSummary}>
         <strong>{items.length} items</strong>
-        <span>{items.slice(0, 4).map((item) => item.bn).join(" · ")}{items.length > 4 ? " …" : ""}</span>
+        <span>{items.slice(0, 4).map((item) => speechOrder === "en-bn" ? `${item.en} → ${item.bn}` : item.bn).join(" · ")}{items.length > 4 ? " …" : ""}</span>
       </div>
       <button type="button" style={ui.downloadButtonPrimary} disabled={!items.length || downloading} onClick={downloadMp3}>
         {downloading ? "Generating MP3…" : `Download ${datasetLabel} MP3`}

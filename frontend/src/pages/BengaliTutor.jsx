@@ -1,7 +1,8 @@
-import React, { useEffect, useMemo, useState, useCallback } from "react";
+import React, { useEffect, useMemo, useRef, useState, useCallback } from "react";
 import PropTypes from "prop-types";
 import { FcGoogle } from "react-icons/fc";
 import { FaVolumeHigh } from "react-icons/fa6";
+import { FaBackward, FaCompressAlt, FaExpandAlt, FaForward, FaMinus, FaPause, FaPlay, FaPlus, FaRedoAlt, FaStepBackward, FaStepForward, FaUndoAlt } from "react-icons/fa";
 import ActionButtons from "../ui/ActionButtons.jsx";
 import { actions, useAppDispatch } from "../context/AppContext.jsx";
 import { withPhraseWords } from "../utils/bengaliPhraseBreakdown.js";
@@ -51,6 +52,9 @@ const consonantLessons = Object.values(consonantLessonModules);
 
 const LESSON_CACHE_KEY = "bengali_lesson_cache";
 const BREAKDOWN_SPEECH_KEY = "bn_breakdown_speech_source";
+const AUTO_SCROLL_SPEED_KEY = "bengali_tutor_auto_scroll_speed";
+const AUTO_SCROLL_LOOP_KEY = "bengali_tutor_auto_scroll_loop";
+const AUTO_SCROLL_DELAY_KEY = "bengali_tutor_auto_scroll_delay";
 const CORRECT_TIME = 250;
 const INCORRECT_TIME = 700;
 
@@ -109,6 +113,24 @@ const initialBreakdownSpeechSource = () => {
   } catch {
     return "google";
   }
+};
+
+const initialAutoScrollSpeed = () => {
+  try {
+    const value = Number(localStorage.getItem(AUTO_SCROLL_SPEED_KEY));
+    return Number.isFinite(value) && value >= 5 && value <= 200 ? value : 30;
+  } catch {
+    return 30;
+  }
+};
+const initialAutoScrollLoop = () => {
+  try { return localStorage.getItem(AUTO_SCROLL_LOOP_KEY) === "true"; } catch { return false; }
+};
+const initialAutoScrollDelay = () => {
+  try {
+    const value = Number(localStorage.getItem(AUTO_SCROLL_DELAY_KEY));
+    return Number.isFinite(value) && value >= 0 && value <= 60 ? value : 3;
+  } catch { return 3; }
 };
 
 const wordKey = (item) => JSON.stringify([item?.bn || "", item?.en || ""]);
@@ -283,6 +305,16 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
     });
   }, [bengaliVoice, breakdownSpeechSource]);
   const [contentTab, setContentTab] = useState(view === "games" ? "games" : "phrases");
+  const [isAutoScrolling, setIsAutoScrolling] = useState(false);
+  const [scrollDirection, setScrollDirection] = useState(1);
+  const [scrollSpeed, setScrollSpeed] = useState(initialAutoScrollSpeed);
+  const [isScrollLooping, setIsScrollLooping] = useState(initialAutoScrollLoop);
+  const [scrollRestartDelay, setScrollRestartDelay] = useState(initialAutoScrollDelay);
+  const [isTutorWindowView, setIsTutorWindowView] = useState(false);
+  const tutorContentRef = useRef(null);
+  const scrollDirectionRef = useRef(scrollDirection);
+  const scrollSpeedRef = useRef(scrollSpeed);
+  const scrollLoopTimeoutRef = useRef(null);
   const [jumpTarget, setJumpTarget] = useState("");
   const [phraseShuffleVersion, setPhraseShuffleVersion] = useState(0);
   const [vocabShuffleVersion, setVocabShuffleVersion] = useState(0);
@@ -318,6 +350,116 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
   const [bingoBoard, setBingoBoard] = useState([]);
   const [bingoTarget, setBingoTarget] = useState(null);
   const [bingoMatched, setBingoMatched] = useState([]);
+
+  useEffect(() => {
+    scrollDirectionRef.current = scrollDirection;
+  }, [scrollDirection]);
+
+  useEffect(() => {
+    scrollSpeedRef.current = scrollSpeed;
+    try {
+      localStorage.setItem(AUTO_SCROLL_SPEED_KEY, String(scrollSpeed));
+    } catch {
+      // Local storage can be unavailable in private browsing contexts.
+    }
+  }, [scrollSpeed]);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem(AUTO_SCROLL_LOOP_KEY, String(isScrollLooping));
+      localStorage.setItem(AUTO_SCROLL_DELAY_KEY, String(scrollRestartDelay));
+    } catch {
+      // Local storage can be unavailable in private browsing contexts.
+    }
+  }, [isScrollLooping, scrollRestartDelay]);
+
+  useEffect(() => {
+    if (!isTutorWindowView) return undefined;
+    document.body.classList.add("bn-tutor-window-open");
+    const closeWindowView = (event) => {
+      if (event.key === "Escape") setIsTutorWindowView(false);
+    };
+    window.addEventListener("keydown", closeWindowView);
+    return () => {
+      window.removeEventListener("keydown", closeWindowView);
+      document.body.classList.remove("bn-tutor-window-open");
+    };
+  }, [isTutorWindowView]);
+
+  useEffect(() => () => clearTimeout(scrollLoopTimeoutRef.current), []);
+
+  useEffect(() => {
+    if (!isScrollLooping) clearTimeout(scrollLoopTimeoutRef.current);
+  }, [isScrollLooping]);
+
+  useEffect(() => {
+    if (!isAutoScrolling || view !== "tutor") return undefined;
+    let frame;
+    let previousTime = null;
+    let preciseScrollTop = tutorContentRef.current?.scrollTop || 0;
+
+    const scroll = (timestamp) => {
+      const container = tutorContentRef.current;
+      if (!container) return;
+      if (previousTime === null) previousTime = timestamp;
+      const elapsedSeconds = Math.min((timestamp - previousTime) / 1000, 0.1);
+      previousTime = timestamp;
+      if (Math.abs(container.scrollTop - preciseScrollTop) > 1) preciseScrollTop = container.scrollTop;
+
+      const maxScrollTop = Math.max(0, container.scrollHeight - container.clientHeight);
+      preciseScrollTop = Math.max(0, Math.min(
+        maxScrollTop,
+        preciseScrollTop + scrollDirectionRef.current * scrollSpeedRef.current * elapsedSeconds,
+      ));
+      container.scrollTop = preciseScrollTop;
+
+      const reachedEnd = scrollDirectionRef.current > 0
+        ? preciseScrollTop >= maxScrollTop
+        : preciseScrollTop <= 0;
+      if (reachedEnd) {
+        if (isScrollLooping && scrollDirectionRef.current > 0) {
+          setIsAutoScrolling(false);
+          scrollLoopTimeoutRef.current = setTimeout(() => {
+            const nextContainer = tutorContentRef.current;
+            if (!nextContainer) return;
+            nextContainer.scrollTop = 0;
+            setIsAutoScrolling(true);
+          }, scrollRestartDelay * 1000);
+          return;
+        }
+        setIsAutoScrolling(false);
+        return;
+      }
+      frame = requestAnimationFrame(scroll);
+    };
+
+    frame = requestAnimationFrame(scroll);
+    return () => cancelAnimationFrame(frame);
+  }, [isAutoScrolling, isScrollLooping, scrollRestartDelay, view]);
+
+  useEffect(() => {
+    clearTimeout(scrollLoopTimeoutRef.current);
+    setIsAutoScrolling(false);
+    if (tutorContentRef.current) tutorContentRef.current.scrollTop = 0;
+  }, [contentTab, lesson]);
+
+  const activateScrollDirection = (direction) => {
+    clearTimeout(scrollLoopTimeoutRef.current);
+    setScrollDirection(direction);
+    setIsAutoScrolling(true);
+  };
+
+  const jumpTutorSection = (change) => {
+    const container = tutorContentRef.current;
+    if (!container) return;
+    setIsAutoScrolling(false);
+    const sections = [...container.querySelectorAll("article[id^='bn-']")];
+    if (!sections.length) return;
+    const currentIndex = sections.findIndex((section) => section.offsetTop > container.scrollTop + 8);
+    const baseIndex = currentIndex < 0 ? sections.length - 1 : Math.max(0, currentIndex - 1);
+    const target = sections[Math.max(0, Math.min(sections.length - 1, baseIndex + change))];
+    container.scrollTo({ top: target.offsetTop - 12, behavior: "smooth" });
+  };
   const [bingoMistakes, setBingoMistakes] = useState(0);
   const [pronunciationQuestion, setPronunciationQuestion] = useState(null);
   const [pronunciationResult, setPronunciationResult] = useState(null);
@@ -952,28 +1094,63 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
             )}
 
             {view === "tutor" && (
-              <label className="bn-jump-bar">
-                <span>Jump to {contentTab === "phrases" ? "phrase" : "word"}</span>
-                <select
-                  className="bn-select"
-                  value={jumpTarget}
-                  onChange={(event) => {
-                    const target = event.target.value;
-                    setJumpTarget(target);
-                    document.getElementById(target)?.scrollIntoView({ behavior: "smooth", block: "center" });
-                  }}
-                >
-                  <option value="">Choose in English…</option>
-                  {activeTutorItems.map((item, idx) => (
-                    <option key={`${item.bn}-${idx}`} value={`bn-${contentTab}-${idx}`}>
-                      {item.en}
-                    </option>
-                  ))}
-                </select>
-              </label>
-            )}
-
-            {view === "tutor" && contentTab === "phrases" && (
+              <div className={`bn-tutor-scroll-shell ${isTutorWindowView ? "bn-tutor-window-view" : ""}`}>
+                <div className="bn-auto-scroll" aria-label="Automatic lesson scroll controls">
+                  <div className="bn-scroll-button-group">
+                    <button type="button" className={scrollDirection < 0 ? "active" : ""} onClick={() => activateScrollDirection(-1)} aria-label="Auto-scroll up" title="Auto-scroll up"><FaBackward aria-hidden="true" /></button>
+                    <button type="button" className="primary" onClick={() => setIsAutoScrolling((running) => !running)} aria-label={isAutoScrolling ? "Pause automatic scrolling" : "Start automatic scrolling"}>{isAutoScrolling ? <FaPause aria-hidden="true" /> : <FaPlay aria-hidden="true" />}</button>
+                    <button type="button" className={isScrollLooping ? "active" : ""} onClick={() => setIsScrollLooping((looping) => !looping)} aria-label={isScrollLooping ? "Disable looping" : "Enable looping"} title="Toggle looping"><FaRedoAlt aria-hidden="true" /></button>
+                    <button type="button" className={scrollDirection > 0 ? "active" : ""} onClick={() => activateScrollDirection(1)} aria-label="Auto-scroll down" title="Auto-scroll down"><FaForward aria-hidden="true" /></button>
+                    <button type="button" onClick={() => { setIsAutoScrolling(false); tutorContentRef.current?.scrollTo({ top: 0, behavior: "smooth" }); }} aria-label="Return to top" title="Return to top"><FaUndoAlt aria-hidden="true" /></button>
+                    <button type="button" onClick={() => jumpTutorSection(-1)} aria-label="Previous item" title="Previous item"><FaStepBackward aria-hidden="true" /></button>
+                    <button type="button" onClick={() => jumpTutorSection(1)} aria-label="Next item" title="Next item"><FaStepForward aria-hidden="true" /></button>
+                  </div>
+                  <div className="bn-scroll-settings">
+                    <button type="button" onClick={() => setScrollSpeed((speed) => Math.max(5, speed - 5))} aria-label="Decrease scroll speed" title="Decrease scroll speed"><FaMinus aria-hidden="true" /></button>
+                    <button type="button" onClick={() => setScrollSpeed((speed) => Math.min(200, speed + 5))} aria-label="Increase scroll speed" title="Increase scroll speed"><FaPlus aria-hidden="true" /></button>
+                    <span className="bn-scroll-speed">{scrollSpeed} px/s</span>
+                    <label className="bn-scroll-delay">
+                      <span>Restart</span>
+                      <input type="number" min="0" max="60" step="0.5" value={scrollRestartDelay} onChange={(event) => setScrollRestartDelay(Math.max(0, Math.min(60, Number(event.target.value) || 0)))} aria-label="Loop restart delay in seconds" />
+                      <span>sec</span>
+                    </label>
+                    <button type="button" className="bn-window-button" onClick={() => setIsTutorWindowView((expanded) => !expanded)} aria-label={isTutorWindowView ? "Exit full window view" : "Open lesson in full window view"} title={isTutorWindowView ? "Exit full window (Esc)" : "Full window"}>
+                      {isTutorWindowView ? <FaCompressAlt aria-hidden="true" /> : <FaExpandAlt aria-hidden="true" />}
+                      <span>{isTutorWindowView ? "Exit" : "Full window"}</span>
+                    </button>
+                  </div>
+                  <label className="bn-jump-bar">
+                    <select
+                      className="bn-select"
+                      value={jumpTarget}
+                      aria-label={`Jump to ${contentTab === "phrases" ? "phrase" : "word"}`}
+                      onChange={(event) => {
+                        const targetId = event.target.value;
+                        setJumpTarget(targetId);
+                        setIsAutoScrolling(false);
+                        const container = tutorContentRef.current;
+                        const target = document.getElementById(targetId);
+                        if (!container || !target) return;
+                        const containerRect = container.getBoundingClientRect();
+                        const targetRect = target.getBoundingClientRect();
+                        container.scrollTo({
+                          top: container.scrollTop + targetRect.top - containerRect.top
+                            - Math.max(0, (container.clientHeight - targetRect.height) / 2),
+                          behavior: "smooth",
+                        });
+                      }}
+                    >
+                      <option value="">Choose in English…</option>
+                      {activeTutorItems.map((item, idx) => (
+                        <option key={`${item.bn}-${idx}`} value={`bn-${contentTab}-${idx}`}>
+                          {item.en}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
+                </div>
+                <div className="bn-tutor-scroll-content" ref={tutorContentRef}>
+            {contentTab === "phrases" && (
               <section className="bn-section" style={{ display: "grid", gap: 10 }}>
                 <h3>Key phrases</h3>
                 {orderedPhrases.map((phrase, idx) => (
@@ -1023,7 +1200,7 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
               </section>
             )}
 
-            {view === "tutor" && contentTab === "vocab" && (
+            {contentTab === "vocab" && (
               <section className="bn-section" style={{ display: "grid", gap: 10 }}>
                 <h3>Vocabulary</h3>
                 {orderedVocab.map((word, idx) => (
@@ -1035,6 +1212,9 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
                   </article>
                 ))}
               </section>
+            )}
+                </div>
+              </div>
             )}
 
             {view === "games" && (
