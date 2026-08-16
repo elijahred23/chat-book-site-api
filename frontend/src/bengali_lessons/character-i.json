@@ -1,278 +1,96 @@
 {
   "id": "character-i",
   "title": "ই — The Short I Vowel",
-  "summary": "Learn the Bengali vowel ই, its short i sound, and eight useful words that begin with it.",
+  "summary": "Learn the Bengali vowel ই, its short ee/i sound, and common words and phrases containing ই and the ি vowel sign.",
   "level": "beginner",
   "topic": "Alphabet: ই",
   "focus": "character and pronunciation",
   "phrases": [
-    {
-      "bn": "ই মানে ইঁদুর।",
-      "pronunciation": "i mane ĩdur",
-      "en": "ই is for mouse.",
-      "context": "Connect the letter ই with the familiar example word ইঁদুর.",
-      "category": "character-i",
-      "words": [
-        {
-          "bn": "ই",
-          "pronunciation": "i",
-          "en": "the letter ই"
-        },
-        {
-          "bn": "মানে",
-          "pronunciation": "mane",
-          "en": "means / stands for"
-        },
-        {
-          "bn": "ইঁদুর",
-          "pronunciation": "ĩdur",
-          "en": "mouse"
-        }
-      ]
-    },
-    {
-      "bn": "এই ইট লাল।",
-      "pronunciation": "ei iṭ lal",
-      "en": "This brick is red.",
-      "context": "Hear the short ই sound in the one-syllable word ইট.",
-      "category": "character-i",
-      "words": [
-        {
-          "bn": "এই",
-          "pronunciation": "ei",
-          "en": "this"
-        },
-        {
-          "bn": "ইট",
-          "pronunciation": "iṭ",
-          "en": "brick"
-        },
-        {
-          "bn": "লাল",
-          "pronunciation": "lal",
-          "en": "red"
-        }
-      ]
-    },
-    {
-      "bn": "ইলিশ মাছ সুস্বাদু।",
-      "pronunciation": "ilish machh shushadu",
-      "en": "Hilsa fish is delicious.",
-      "context": "Practice ই at the beginning of ইলিশ.",
-      "category": "character-i",
-      "words": [
-        {
-          "bn": "ইলিশ",
-          "pronunciation": "ilish",
-          "en": "hilsa"
-        },
-        {
-          "bn": "মাছ",
-          "pronunciation": "machh",
-          "en": "fish"
-        },
-        {
-          "bn": "সুস্বাদু",
-          "pronunciation": "shushadu",
-          "en": "delicious"
-        }
-      ]
-    },
-    {
-      "bn": "আমার বাংলা শেখার ইচ্ছা আছে।",
-      "pronunciation": "amar bangla shekhar ichchha achhe",
-      "en": "I want to learn Bengali.",
-      "context": "Use ইচ্ছা to express a wish or desire.",
-      "category": "character-i",
-      "words": [
-        {
-          "bn": "আমার",
-          "pronunciation": "amar",
-          "en": "my / I have"
-        },
-        {
-          "bn": "বাংলা",
-          "pronunciation": "bangla",
-          "en": "Bengali"
-        },
-        {
-          "bn": "শেখার",
-          "pronunciation": "shekhar",
-          "en": "of learning / to learn"
-        },
-        {
-          "bn": "ইচ্ছা",
-          "pronunciation": "ichchha",
-          "en": "wish / desire"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "there is / have"
-        }
-      ]
-    },
-    {
-      "bn": "আমি ইতিহাস পড়ি।",
-      "pronunciation": "ami itihash poṛi",
-      "en": "I study history.",
-      "context": "Read the initial ই in ইতিহাস.",
-      "category": "character-i",
-      "words": [
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "ইতিহাস",
-          "pronunciation": "itihash",
-          "en": "history"
-        },
-        {
-          "bn": "পড়ি",
-          "pronunciation": "poṛi",
-          "en": "read / study"
-        }
-      ]
-    },
-    {
-      "bn": "সে ইশারা করছে।",
-      "pronunciation": "she ishara kôrchhe",
-      "en": "He or she is gesturing.",
-      "context": "Practice ই in the everyday word ইশারা.",
-      "category": "character-i",
-      "words": [
-        {
-          "bn": "সে",
-          "pronunciation": "she",
-          "en": "he / she"
-        },
-        {
-          "bn": "ইশারা",
-          "pronunciation": "ishara",
-          "en": "gesture / signal"
-        },
-        {
-          "bn": "করছে",
-          "pronunciation": "kôrchhe",
-          "en": "is doing"
-        }
-      ]
-    },
-    {
-      "bn": "ইঞ্জিন চলছে।",
-      "pronunciation": "injin chôlchhe",
-      "en": "The engine is running.",
-      "context": "Hear the ই sound in the borrowed word ইঞ্জিন.",
-      "category": "character-i",
-      "words": [
-        {
-          "bn": "ইঞ্জিন",
-          "pronunciation": "injin",
-          "en": "engine"
-        },
-        {
-          "bn": "চলছে",
-          "pronunciation": "chôlchhe",
-          "en": "is running / moving"
-        }
-      ]
-    },
-    {
-      "bn": "ইন্টারনেট ধীর।",
-      "pronunciation": "inṭarneṭ dhir",
-      "en": "The internet is slow.",
-      "context": "Recognize ই at the start of a common modern loanword.",
-      "category": "character-i",
-      "words": [
-        {
-          "bn": "ইন্টারনেট",
-          "pronunciation": "inṭarneṭ",
-          "en": "internet"
-        },
-        {
-          "bn": "ধীর",
-          "pronunciation": "dhir",
-          "en": "slow"
-        }
-      ]
-    }
+    { "bn": "এটা কি?", "pronunciation": "eta ki?", "en": "What is this?", "context": "Ask what something is.", "category": "character-i" },
+    { "bn": "এটা কি ঠিক?", "pronunciation": "eta ki thik?", "en": "Is this correct?", "context": "Ask whether something is correct.", "category": "character-i" },
+    { "bn": "তুমি কি জানো?", "pronunciation": "tumi ki jano?", "en": "Do you know?", "context": "Ask informally whether someone knows.", "category": "character-i" },
+    { "bn": "কিছু আছে?", "pronunciation": "kichhu achhe?", "en": "Is there anything?", "context": "Ask whether anything is available.", "category": "character-i" },
+    { "bn": "কিছু না।", "pronunciation": "kichhu na.", "en": "Nothing.", "context": "Say that there is nothing.", "category": "character-i" },
+    { "bn": "কিছুক্ষণ অপেক্ষা করো।", "pronunciation": "kichhukhon opekkha koro.", "en": "Wait for a little while.", "context": "Give an informal instruction.", "category": "character-i" },
+    { "bn": "কিন্তু কেন?", "pronunciation": "kintu keno?", "en": "But why?", "context": "Ask for a reason.", "category": "character-i" },
+    { "bn": "ঠিক আছে।", "pronunciation": "thik achhe.", "en": "Okay.", "context": "Agree or confirm.", "category": "character-i" },
+    { "bn": "ঠিক বলেছ।", "pronunciation": "thik bolechho.", "en": "You're right.", "context": "Confirm that someone is correct.", "category": "character-i" },
+    { "bn": "ঠিক বুঝিনি।", "pronunciation": "thik bujhini.", "en": "I didn't understand properly.", "context": "Explain that you did not understand.", "category": "character-i" },
+    { "bn": "চিন্তা করো না।", "pronunciation": "chinta koro na.", "en": "Don't worry.", "context": "Reassure someone.", "category": "character-i" },
+    { "bn": "নিচে যাও।", "pronunciation": "niche jao.", "en": "Go downstairs.", "context": "Give a direction.", "category": "character-i" },
+    { "bn": "ভিতরে আসো।", "pronunciation": "bhitore asho.", "en": "Come inside.", "context": "Invite someone inside.", "category": "character-i" },
+    { "bn": "ফিরে আসো।", "pronunciation": "phire asho.", "en": "Come back.", "context": "Ask someone to return.", "category": "character-i" },
+    { "bn": "আমাকে দিতে পারো?", "pronunciation": "amake dite paro?", "en": "Can you give it to me?", "context": "Make an informal request.", "category": "character-i" },
+    { "bn": "আমি কিনতে চাই।", "pronunciation": "ami kinte chai.", "en": "I want to buy it.", "context": "Express an intention to buy.", "category": "character-i" },
+    { "bn": "আমি লিখতে পারি।", "pronunciation": "ami likhte pari.", "en": "I can write.", "context": "Describe an ability.", "category": "character-i" },
+    { "bn": "বৃষ্টি হচ্ছে।", "pronunciation": "brishti hochhe.", "en": "It's raining.", "context": "Describe the weather.", "category": "character-i" },
+    { "bn": "কী হয়েছে?", "pronunciation": "ki hoyeche?", "en": "What happened?", "context": "Ask what happened.", "category": "character-i" },
+    { "bn": "কী বললে?", "pronunciation": "ki bolle?", "en": "What did you say?", "context": "Ask someone to clarify what they said.", "category": "character-i" }
   ],
   "vocab": [
-    {
-      "bn": "ই",
-      "pronunciation": "i",
-      "en": "the third Bengali vowel",
-      "category": "character-i",
-      "sourcePhrase": "ই মানে ইঁদুর।"
-    },
-    {
-      "bn": "ইঁদুর",
-      "pronunciation": "ĩdur",
-      "en": "mouse",
-      "category": "character-i",
-      "sourcePhrase": "ই মানে ইঁদুর।"
-    },
-    {
-      "bn": "ইট",
-      "pronunciation": "iṭ",
-      "en": "brick",
-      "category": "character-i",
-      "sourcePhrase": "এই ইট লাল।"
-    },
-    {
-      "bn": "ইলিশ",
-      "pronunciation": "ilish",
-      "en": "hilsa fish",
-      "category": "character-i",
-      "sourcePhrase": "ইলিশ মাছ সুস্বাদু।"
-    },
-    {
-      "bn": "ইচ্ছা",
-      "pronunciation": "ichchha",
-      "en": "wish / desire",
-      "category": "character-i",
-      "sourcePhrase": "আমার বাংলা শেখার ইচ্ছা আছে।"
-    },
-    {
-      "bn": "ইতিহাস",
-      "pronunciation": "itihash",
-      "en": "history",
-      "category": "character-i",
-      "sourcePhrase": "আমি ইতিহাস পড়ি।"
-    },
-    {
-      "bn": "ইশারা",
-      "pronunciation": "ishara",
-      "en": "gesture / signal",
-      "category": "character-i",
-      "sourcePhrase": "সে ইশারা করছে।"
-    },
-    {
-      "bn": "ইঞ্জিন",
-      "pronunciation": "injin",
-      "en": "engine",
-      "category": "character-i",
-      "sourcePhrase": "ইঞ্জিন চলছে।"
-    },
-    {
-      "bn": "ইন্টারনেট",
-      "pronunciation": "inṭarneṭ",
-      "en": "internet",
-      "category": "character-i",
-      "sourcePhrase": "ইন্টারনেট ধীর।"
-    }
+    { "bn": "ইচ্ছা", "pronunciation": "ichchha", "en": "wish / desire", "category": "Words Beginning with ই" },
+    { "bn": "ইচ্ছুক", "pronunciation": "ichchhuk", "en": "willing / interested", "category": "Words Beginning with ই" },
+    { "bn": "ইচ্ছে", "pronunciation": "ichchhe", "en": "wish / desire", "category": "Words Beginning with ই" },
+    { "bn": "ইঙ্গিত", "pronunciation": "ingit", "en": "hint / indication", "category": "Words Beginning with ই" },
+    { "bn": "ইট", "pronunciation": "it", "en": "brick", "category": "Words Beginning with ই" },
+    { "bn": "ইতিমধ্যে", "pronunciation": "itimodhye", "en": "already / meanwhile", "category": "Words Beginning with ই" },
+    { "bn": "ইতিহাস", "pronunciation": "itihash", "en": "history", "category": "Words Beginning with ই" },
+    { "bn": "ইদানীং", "pronunciation": "idaning", "en": "recently / nowadays", "category": "Words Beginning with ই" },
+    { "bn": "ইন্টারনেট", "pronunciation": "internet", "en": "internet", "category": "Words Beginning with ই" },
+    { "bn": "ইমেইল", "pronunciation": "email", "en": "email", "category": "Words Beginning with ই" },
+    { "bn": "ইঞ্জিন", "pronunciation": "injin", "en": "engine", "category": "Words Beginning with ই" },
+    { "bn": "ইঞ্জিনিয়ার", "pronunciation": "injiniyar", "en": "engineer", "category": "Words Beginning with ই" },
+    { "bn": "ইংরেজি", "pronunciation": "ingreji", "en": "English", "category": "Words Beginning with ই" },
+    { "bn": "ইঁদুর", "pronunciation": "indur", "en": "mouse / rat", "category": "Words Beginning with ই" },
+    { "bn": "ইলিশ", "pronunciation": "ilish", "en": "hilsa fish", "category": "Words Beginning with ই" },
+    { "bn": "ইত্যাদি", "pronunciation": "ityadi", "en": "etcetera", "category": "Words Beginning with ই" },
+    { "bn": "ইতি", "pronunciation": "iti", "en": "end / conclusion", "category": "Words Beginning with ই" },
+    { "bn": "ইঞ্চি", "pronunciation": "inchi", "en": "inch", "category": "Words Beginning with ই" },
+    { "bn": "ইস্ত্রি", "pronunciation": "istri", "en": "iron / ironing", "category": "Words Beginning with ই" },
+    { "bn": "ইশারা", "pronunciation": "ishara", "en": "gesture / signal", "category": "Words Beginning with ই" },
+    { "bn": "কি", "pronunciation": "ki", "en": "whether / question particle", "category": "Words with ি" },
+    { "bn": "কিছু", "pronunciation": "kichhu", "en": "something / some", "category": "Words with ি" },
+    { "bn": "কিন্তু", "pronunciation": "kintu", "en": "but", "category": "Words with ি" },
+    { "bn": "দিন", "pronunciation": "din", "en": "day", "category": "Words with ি" },
+    { "bn": "দিক", "pronunciation": "dik", "en": "direction / side", "category": "Words with ি" },
+    { "bn": "ছবি", "pronunciation": "chhobi", "en": "picture", "category": "Words with ি" },
+    { "bn": "চিনি", "pronunciation": "chini", "en": "sugar / I know", "category": "Words with ি" },
+    { "bn": "তিনি", "pronunciation": "tini", "en": "he / she (respectful)", "category": "Words with ি" },
+    { "bn": "শিশু", "pronunciation": "shishu", "en": "child", "category": "Words with ি" },
+    { "bn": "হিসাব", "pronunciation": "hishab", "en": "calculation / account", "category": "Words with ি" },
+    { "bn": "লিখা/লেখা", "pronunciation": "likha / lekha", "en": "writing", "category": "Words with ি" },
+    { "bn": "ঠিক", "pronunciation": "thik", "en": "correct / okay", "category": "Words with ি" },
+    { "bn": "বিড়াল", "pronunciation": "biral", "en": "cat", "category": "Words with ি" },
+    { "bn": "পাখি", "pronunciation": "pakhi", "en": "bird", "category": "Words with ি" },
+    { "bn": "মিষ্টি", "pronunciation": "mishti", "en": "sweet", "category": "Words with ি" },
+    { "bn": "বৃষ্টি", "pronunciation": "brishti", "en": "rain", "category": "Words with ি" },
+    { "bn": "বিকাল", "pronunciation": "bikal", "en": "afternoon", "category": "Words with ি" },
+    { "bn": "বিয়ে", "pronunciation": "biye", "en": "marriage / wedding", "category": "Words with ি" },
+    { "bn": "মিনিট", "pronunciation": "minit", "en": "minute", "category": "Words with ি" },
+    { "bn": "জিনিস", "pronunciation": "jinish", "en": "thing / item", "category": "Words with ি" },
+    { "bn": "চিন্তা", "pronunciation": "chinta", "en": "thought / worry", "category": "Words with ি" },
+    { "bn": "শিক্ষা", "pronunciation": "shikkha", "en": "education", "category": "Words with ি" },
+    { "bn": "শিক্ষক", "pronunciation": "shikkhok", "en": "teacher", "category": "Words with ি" },
+    { "bn": "পৃথিবী", "pronunciation": "prithibi", "en": "Earth / world", "category": "Words with ি" },
+    { "bn": "দিকে", "pronunciation": "dike", "en": "toward", "category": "Words with ি" },
+    { "bn": "নিচে", "pronunciation": "niche", "en": "below", "category": "Words with ি" },
+    { "bn": "ভিতরে", "pronunciation": "bhitore", "en": "inside", "category": "Words with ি" },
+    { "bn": "ফিরে", "pronunciation": "phire", "en": "back / returning", "category": "Words with ি" },
+    { "bn": "কিনতে", "pronunciation": "kinte", "en": "to buy", "category": "Words with ি" },
+    { "bn": "দিতে", "pronunciation": "dite", "en": "to give", "category": "Words with ি" },
+    { "bn": "নিতে", "pronunciation": "nite", "en": "to take", "category": "Words with ি" },
+    { "bn": "লিখতে", "pronunciation": "likhte", "en": "to write", "category": "Words with ি" }
   ],
   "practice": [
-    "Say ই three times with a short, relaxed sound: i, i, i.",
-    "Read each vocabulary word aloud and listen for ই at the beginning.",
-    "Contrast ই (i) with আ (a): ইট (iṭ), আম (am).",
-    "Write ই five times, paying attention to its curved left side and top line."
+    "Say ই three times with a short, relaxed ee/i sound: i, i, i.",
+    "Read each vocabulary word aloud and listen for ই at the beginning or ি after a consonant.",
+    "Practice the vowel sign: ক + ি = কি, দ + ি = দি, and ন + ি = নি.",
+    "Remember that ি is written before its consonant but pronounced after it: কি is ki, not ik."
   ],
   "notes": [
-    "ই is the third independent vowel in the Bengali alphabet. It has a short i sound similar to the vowel in “sit.”",
-    "When ই follows a consonant, it becomes the vowel mark ি (ই-কার): ক + ি = কি (ki). Although ি is written to the left of the consonant, it is pronounced after it.",
-    "Keep ই distinct from the longer ঈ sound in careful spelling. In modern Bengali speech, ই and ঈ are often pronounced alike, but their written forms remain different."
+    "ই is generally pronounced like ee/i, similar to the vowel in see but often shorter.",
+    "When ই follows a consonant, it is represented by the ি vowel sign (ই-কার): ক + ি = কি.",
+    "The ি sign is written to the left of the consonant it belongs to, but its sound follows that consonant.",
+    "Keep ই distinct from the longer ঈ in spelling. In modern Bengali speech, ই and ঈ are often pronounced alike."
   ]
 }

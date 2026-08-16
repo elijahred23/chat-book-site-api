@@ -1,298 +1,133 @@
 {
   "id": "character-aw",
-  "title": "অ — The First Bengali Vowel",
-  "summary": "Learn the Bengali vowel অ, its short ô sound, and eight useful words that begin with it.",
+  "title": "আ — The Long A Vowel",
+  "summary": "Learn the Bengali vowel আ, its open a sound, and common words and phrases containing আ and the া vowel sign.",
   "level": "beginner",
-  "topic": "Alphabet: অ",
+  "topic": "Alphabet: আ",
   "focus": "character and pronunciation",
   "phrases": [
-    {
-      "bn": "অ মানে অজগর।",
-      "pronunciation": "ô mane ôjogor",
-      "en": "অ is for python.",
-      "context": "Connect the letter অ with the traditional example word অজগর.",
-      "category": "character-aw",
-      "words": [
-        {
-          "bn": "অ",
-          "pronunciation": "ô",
-          "en": "the letter অ"
-        },
-        {
-          "bn": "মানে",
-          "pronunciation": "mane",
-          "en": "means / stands for"
-        },
-        {
-          "bn": "অজগর",
-          "pronunciation": "ôjogor",
-          "en": "python"
-        }
-      ]
-    },
-    {
-      "bn": "এখানে অনেক ফল আছে।",
-      "pronunciation": "ekhane ônek phôl achhe",
-      "en": "There is a lot of fruit here.",
-      "context": "Hear অ at the beginning of অনেক.",
-      "category": "character-aw",
-      "words": [
-        {
-          "bn": "এখানে",
-          "pronunciation": "ekhane",
-          "en": "here"
-        },
-        {
-          "bn": "অনেক",
-          "pronunciation": "ônek",
-          "en": "many / a lot of"
-        },
-        {
-          "bn": "ফল",
-          "pronunciation": "phôl",
-          "en": "fruit"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "there is / has"
-        }
-      ]
-    },
-    {
-      "bn": "আমার অল্প সময় আছে।",
-      "pronunciation": "amar ôlpo shômoy achhe",
-      "en": "I have a little time.",
-      "context": "Practice the initial অ sound in অল্প.",
-      "category": "character-aw",
-      "words": [
-        {
-          "bn": "আমার",
-          "pronunciation": "amar",
-          "en": "my / I have"
-        },
-        {
-          "bn": "অল্প",
-          "pronunciation": "ôlpo",
-          "en": "a little"
-        },
-        {
-          "bn": "সময়",
-          "pronunciation": "shômoy",
-          "en": "time"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "there is / has"
-        }
-      ]
-    },
-    {
-      "bn": "আমি অঙ্ক শিখছি।",
-      "pronunciation": "ami ônko shikhchhi",
-      "en": "I am learning mathematics.",
-      "context": "Read অ before the consonant cluster ঙ্ক in অঙ্ক.",
-      "category": "character-aw",
-      "words": [
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "অঙ্ক",
-          "pronunciation": "ônko",
-          "en": "mathematics"
-        },
-        {
-          "bn": "শিখছি",
-          "pronunciation": "shikhchhi",
-          "en": "am learning"
-        }
-      ]
-    },
-    {
-      "bn": "অ একটি বাংলা অক্ষর।",
-      "pronunciation": "ô ekti bangla ôkkhor",
-      "en": "অ is a Bengali letter.",
-      "context": "Name অ and use the word অক্ষর for a written letter.",
-      "category": "character-aw",
-      "words": [
-        {
-          "bn": "অ",
-          "pronunciation": "ô",
-          "en": "the letter অ"
-        },
-        {
-          "bn": "একটি",
-          "pronunciation": "ekti",
-          "en": "a / one"
-        },
-        {
-          "bn": "বাংলা",
-          "pronunciation": "bangla",
-          "en": "Bengali"
-        },
-        {
-          "bn": "অক্ষর",
-          "pronunciation": "ôkkhor",
-          "en": "letter / character"
-        }
-      ]
-    },
-    {
-      "bn": "অল্প অপেক্ষা করো।",
-      "pronunciation": "ôlpo ôpekkha kôro",
-      "en": "Wait a little.",
-      "context": "Compare the initial অ sound in অল্প and অপেক্ষা.",
-      "category": "character-aw",
-      "words": [
-        {
-          "bn": "অল্প",
-          "pronunciation": "ôlpo",
-          "en": "a little"
-        },
-        {
-          "bn": "অপেক্ষা",
-          "pronunciation": "ôpekkha",
-          "en": "wait"
-        },
-        {
-          "bn": "করো",
-          "pronunciation": "kôro",
-          "en": "do / please"
-        }
-      ]
-    },
-    {
-      "bn": "সে আজ অসুস্থ।",
-      "pronunciation": "she aj ôshustho",
-      "en": "He or she is ill today.",
-      "context": "Hear অ at the start of the common adjective অসুস্থ.",
-      "category": "character-aw",
-      "words": [
-        {
-          "bn": "সে",
-          "pronunciation": "she",
-          "en": "he / she"
-        },
-        {
-          "bn": "আজ",
-          "pronunciation": "aj",
-          "en": "today"
-        },
-        {
-          "bn": "অসুস্থ",
-          "pronunciation": "ôshustho",
-          "en": "ill / sick"
-        }
-      ]
-    },
-    {
-      "bn": "চা অথবা কফি খাবে?",
-      "pronunciation": "cha ôthoba kôphi khabe",
-      "en": "Will you have tea or coffee?",
-      "context": "Use অথবা, a useful connector beginning with অ.",
-      "category": "character-aw",
-      "words": [
-        {
-          "bn": "চা",
-          "pronunciation": "cha",
-          "en": "tea"
-        },
-        {
-          "bn": "অথবা",
-          "pronunciation": "ôthoba",
-          "en": "or"
-        },
-        {
-          "bn": "কফি",
-          "pronunciation": "kôphi",
-          "en": "coffee"
-        },
-        {
-          "bn": "খাবে",
-          "pronunciation": "khabe",
-          "en": "will eat / will have"
-        }
-      ]
-    }
+    { "bn": "আমি ভালো আছি।", "pronunciation": "ami bhalo achhi.", "en": "I am well.", "context": "Introduce yourself and describe how you feel.", "category": "character-aw" },
+    { "bn": "আমার নাম…", "pronunciation": "amar nam…", "en": "My name is…", "context": "Introduce yourself.", "category": "character-aw" },
+    { "bn": "আমার একটা প্রশ্ন আছে।", "pronunciation": "amar ekta proshno achhe.", "en": "I have a question.", "context": "Introduce a question.", "category": "character-aw" },
+    { "bn": "আপনি কেমন আছেন?", "pronunciation": "apni kemon achhen?", "en": "How are you?", "context": "Ask politely how someone is.", "category": "character-aw" },
+    { "bn": "আবার বলুন।", "pronunciation": "abar bolun.", "en": "Say it again.", "context": "Make a polite request for repetition.", "category": "character-aw" },
+    { "bn": "আস্তে বলুন।", "pronunciation": "aste bolun.", "en": "Speak slowly.", "context": "Make a polite request.", "category": "character-aw" },
+    { "bn": "আজ কী বার?", "pronunciation": "aj ki bar?", "en": "What day is today?", "context": "Ask the day of the week.", "category": "character-aw" },
+    { "bn": "আজ যাব।", "pronunciation": "aj jabo.", "en": "I will go today.", "context": "Describe a plan for today.", "category": "character-aw" },
+    { "bn": "আমার ভালো লাগছে।", "pronunciation": "amar bhalo lagchhe.", "en": "I like it / I'm enjoying it.", "context": "Express a positive feeling.", "category": "character-aw" },
+    { "bn": "আমার ভালো লাগছে না।", "pronunciation": "amar bhalo lagchhe na.", "en": "I don't like it / I'm not feeling well.", "context": "Express dislike or discomfort.", "category": "character-aw" },
+    { "bn": "আমার জানা নেই।", "pronunciation": "amar jana nei.", "en": "I don't know.", "context": "Say that you do not know something.", "category": "character-aw" },
+    { "bn": "আমার মনে হয়…", "pronunciation": "amar mone hoy…", "en": "I think…", "context": "Introduce an opinion.", "category": "character-aw" },
+    { "bn": "আমার কাছে আছে।", "pronunciation": "amar kachhe achhe.", "en": "I have it.", "context": "Say that you possess something.", "category": "character-aw" },
+    { "bn": "আর কিছু?", "pronunciation": "ar kichhu?", "en": "Anything else?", "context": "Ask whether anything more is needed.", "category": "character-aw" },
+    { "bn": "আর কত?", "pronunciation": "ar koto?", "en": "How much more?", "context": "Ask about an additional amount.", "category": "character-aw" },
+    { "bn": "আবার দেখা হবে।", "pronunciation": "abar dekha hobe.", "en": "See you again.", "context": "Say goodbye with the expectation of meeting again.", "category": "character-aw" },
+    { "bn": "আসলে কী হয়েছে?", "pronunciation": "ashole ki hoyeche?", "en": "What actually happened?", "context": "Ask what really happened.", "category": "character-aw" },
+    { "bn": "এখানে আসুন।", "pronunciation": "ekhane ashun.", "en": "Come here.", "context": "Make a polite request.", "category": "character-aw" },
+    { "bn": "আমার সাথে আসুন।", "pronunciation": "amar shathe ashun.", "en": "Come with me.", "context": "Invite someone to accompany you.", "category": "character-aw" },
+    { "bn": "আশা করি।", "pronunciation": "asha kori.", "en": "I hope so.", "context": "Express hope.", "category": "character-aw" },
+    { "bn": "অনেক আনন্দ হয়েছে।", "pronunciation": "onek anondo hoyeche.", "en": "It was a lot of fun.", "context": "Describe an enjoyable experience.", "category": "character-aw" },
+    { "bn": "আজ আবহাওয়া ভালো।", "pronunciation": "aj abohawa bhalo.", "en": "The weather is nice today.", "context": "Talk about today's weather.", "category": "character-aw" }
   ],
   "vocab": [
-    {
-      "bn": "অ",
-      "pronunciation": "ô",
-      "en": "the first Bengali vowel",
-      "category": "character-aw",
-      "sourcePhrase": "অ মানে অজগর।"
-    },
-    {
-      "bn": "অজগর",
-      "pronunciation": "ôjogor",
-      "en": "python",
-      "category": "character-aw",
-      "sourcePhrase": "অ মানে অজগর।"
-    },
-    {
-      "bn": "অনেক",
-      "pronunciation": "ônek",
-      "en": "many / a lot",
-      "category": "character-aw",
-      "sourcePhrase": "এখানে অনেক ফল আছে।"
-    },
-    {
-      "bn": "অল্প",
-      "pronunciation": "ôlpo",
-      "en": "a little / a small amount",
-      "category": "character-aw",
-      "sourcePhrase": "আমার অল্প সময় আছে।"
-    },
-    {
-      "bn": "অঙ্ক",
-      "pronunciation": "ônko",
-      "en": "mathematics / number",
-      "category": "character-aw",
-      "sourcePhrase": "আমি অঙ্ক শিখছি।"
-    },
-    {
-      "bn": "অক্ষর",
-      "pronunciation": "ôkkhor",
-      "en": "letter / character",
-      "category": "character-aw",
-      "sourcePhrase": "অ একটি বাংলা অক্ষর।"
-    },
-    {
-      "bn": "অপেক্ষা",
-      "pronunciation": "ôpekkha",
-      "en": "wait / waiting",
-      "category": "character-aw",
-      "sourcePhrase": "অল্প অপেক্ষা করো।"
-    },
-    {
-      "bn": "অসুস্থ",
-      "pronunciation": "ôshustho",
-      "en": "ill / sick",
-      "category": "character-aw",
-      "sourcePhrase": "সে আজ অসুস্থ।"
-    },
-    {
-      "bn": "অথবা",
-      "pronunciation": "ôthoba",
-      "en": "or",
-      "category": "character-aw",
-      "sourcePhrase": "চা অথবা কফি খাবে?"
-    }
+    { "bn": "আমি", "pronunciation": "ami", "en": "I", "category": "Very Common Words" },
+    { "bn": "আমার", "pronunciation": "amar", "en": "my", "category": "Very Common Words" },
+    { "bn": "আমরা", "pronunciation": "amra", "en": "we", "category": "Very Common Words" },
+    { "bn": "আমাদের", "pronunciation": "amader", "en": "our", "category": "Very Common Words" },
+    { "bn": "আপনি", "pronunciation": "apni", "en": "you", "category": "Very Common Words" },
+    { "bn": "আপনার", "pronunciation": "apnar", "en": "your", "category": "Very Common Words" },
+    { "bn": "আবার", "pronunciation": "abar", "en": "again", "category": "Very Common Words" },
+    { "bn": "আজ", "pronunciation": "aj", "en": "today", "category": "Very Common Words" },
+    { "bn": "আগামী", "pronunciation": "agami", "en": "upcoming / next", "category": "Very Common Words" },
+    { "bn": "আগে", "pronunciation": "age", "en": "before", "category": "Very Common Words" },
+    { "bn": "আগুন", "pronunciation": "agun", "en": "fire", "category": "Very Common Words" },
+    { "bn": "আকাশ", "pronunciation": "akash", "en": "sky", "category": "Very Common Words" },
+    { "bn": "আলো", "pronunciation": "alo", "en": "light", "category": "Very Common Words" },
+    { "bn": "আলাদা", "pronunciation": "alada", "en": "separate / different", "category": "Very Common Words" },
+    { "bn": "আসা", "pronunciation": "asha", "en": "to come", "category": "Very Common Words" },
+    { "bn": "আসে", "pronunciation": "ashe", "en": "comes", "category": "Very Common Words" },
+    { "bn": "আসল", "pronunciation": "ashol", "en": "real / genuine", "category": "Very Common Words" },
+    { "bn": "আস্তে", "pronunciation": "aste", "en": "slowly", "category": "Very Common Words" },
+    { "bn": "আশা", "pronunciation": "asha", "en": "hope", "category": "Very Common Words" },
+    { "bn": "আছে", "pronunciation": "achhe", "en": "is / exists / has", "category": "Very Common Words" },
+    { "bn": "আছি", "pronunciation": "achhi", "en": "am", "category": "Very Common Words" },
+    { "bn": "আছেন", "pronunciation": "achhen", "en": "is/are (respectful)", "category": "Very Common Words" },
+    { "bn": "আট", "pronunciation": "at", "en": "eight", "category": "Very Common Words" },
+    { "bn": "আঠারো", "pronunciation": "atharo", "en": "eighteen", "category": "Very Common Words" },
+    { "bn": "আধা", "pronunciation": "adha", "en": "half", "category": "Very Common Words" },
+    { "bn": "আদর", "pronunciation": "ador", "en": "affection", "category": "Very Common Words" },
+    { "bn": "আনন্দ", "pronunciation": "anondo", "en": "happiness / joy", "category": "Very Common Words" },
+    { "bn": "আওয়াজ", "pronunciation": "awaj", "en": "sound / noise", "category": "Very Common Words" },
+    { "bn": "আঘাত", "pronunciation": "aghat", "en": "injury / blow", "category": "Very Common Words" },
+    { "bn": "আচার", "pronunciation": "achar", "en": "pickle", "category": "Very Common Words" },
+    { "bn": "আঙুল", "pronunciation": "angul", "en": "finger", "category": "Very Common Words" },
+    { "bn": "আঙুর", "pronunciation": "angur", "en": "grape", "category": "Very Common Words" },
+    { "bn": "আয়না", "pronunciation": "ayna", "en": "mirror", "category": "Very Common Words" },
+    { "bn": "আইন", "pronunciation": "ain", "en": "law", "category": "Very Common Words" },
+    { "bn": "আকার", "pronunciation": "akar", "en": "shape / size", "category": "Very Common Words" },
+    { "bn": "আক্রমণ", "pronunciation": "akromon", "en": "attack", "category": "Very Common Words" },
+    { "bn": "আলোচনা", "pronunciation": "alochona", "en": "discussion", "category": "Very Common Words" },
+    { "bn": "আলু", "pronunciation": "alu", "en": "potato", "category": "Very Common Words" },
+    { "bn": "আম", "pronunciation": "am", "en": "mango", "category": "Very Common Words" },
+    { "bn": "আর", "pronunciation": "ar", "en": "and / more / anymore", "category": "Very Common Words" },
+    { "bn": "আরাম", "pronunciation": "aram", "en": "comfort / rest", "category": "Very Common Words" },
+    { "bn": "আসামি", "pronunciation": "ashami", "en": "accused / defendant", "category": "Very Common Words" },
+    { "bn": "আত্মীয়", "pronunciation": "atmiyo", "en": "relative", "category": "Very Common Words" },
+    { "bn": "আত্মবিশ্বাস", "pronunciation": "atmobhishshash", "en": "self-confidence", "category": "Very Common Words" },
+    { "bn": "আশেপাশে", "pronunciation": "ashepashe", "en": "nearby / around", "category": "Very Common Words" },
+    { "bn": "আস্তে আস্তে", "pronunciation": "aste aste", "en": "gradually / slowly", "category": "Very Common Words" },
+    { "bn": "আসলে", "pronunciation": "ashole", "en": "actually", "category": "Very Common Words" },
+    { "bn": "আচরণ", "pronunciation": "achoron", "en": "behavior", "category": "Very Common Words" },
+    { "bn": "আবহাওয়া", "pronunciation": "abohawa", "en": "weather", "category": "Very Common Words" },
+    { "bn": "আবেদন", "pronunciation": "abedon", "en": "application / request", "category": "Very Common Words" },
+    { "bn": "আবেগ", "pronunciation": "abeg", "en": "emotion", "category": "Very Common Words" },
+    { "bn": "আদেশ", "pronunciation": "adesh", "en": "order / command", "category": "Very Common Words" },
+    { "bn": "আয়োজন", "pronunciation": "ayojon", "en": "arrangement / event preparation", "category": "Very Common Words" },
+    { "bn": "মা", "pronunciation": "ma", "en": "mother", "category": "Words with া" },
+    { "bn": "বাবা", "pronunciation": "baba", "en": "father", "category": "Words with া" },
+    { "bn": "ভাই", "pronunciation": "bhai", "en": "brother", "category": "Words with া" },
+    { "bn": "নাম", "pronunciation": "nam", "en": "name", "category": "Words with া" },
+    { "bn": "কাজ", "pronunciation": "kaj", "en": "work", "category": "Words with া" },
+    { "bn": "কাল", "pronunciation": "kal", "en": "tomorrow / yesterday", "category": "Words with া" },
+    { "bn": "ভালো", "pronunciation": "bhalo", "en": "good", "category": "Words with া" },
+    { "bn": "খারাপ", "pronunciation": "kharap", "en": "bad", "category": "Words with া" },
+    { "bn": "খাবার", "pronunciation": "khabar", "en": "food", "category": "Words with া" },
+    { "bn": "বাজার", "pronunciation": "bajar", "en": "market", "category": "Words with া" },
+    { "bn": "বাসা", "pronunciation": "basha", "en": "home", "category": "Words with া" },
+    { "bn": "রাস্তা", "pronunciation": "rasta", "en": "road", "category": "Words with া" },
+    { "bn": "মাথা", "pronunciation": "matha", "en": "head", "category": "Words with া" },
+    { "bn": "হাত", "pronunciation": "hat", "en": "hand", "category": "Words with া" },
+    { "bn": "পা", "pronunciation": "pa", "en": "foot / leg", "category": "Words with া" },
+    { "bn": "কান", "pronunciation": "kan", "en": "ear", "category": "Words with া" },
+    { "bn": "জামা", "pronunciation": "jama", "en": "clothes / shirt", "category": "Words with া" },
+    { "bn": "টাকা", "pronunciation": "taka", "en": "money", "category": "Words with া" },
+    { "bn": "পানি", "pronunciation": "pani", "en": "water", "category": "Words with া" },
+    { "bn": "বাংলা", "pronunciation": "bangla", "en": "Bangla", "category": "Words with া" },
+    { "bn": "মানুষ", "pronunciation": "manush", "en": "person / people", "category": "Words with া" },
+    { "bn": "গান", "pronunciation": "gan", "en": "song", "category": "Words with া" },
+    { "bn": "গাছ", "pronunciation": "gachh", "en": "tree", "category": "Words with া" },
+    { "bn": "মাছ", "pronunciation": "machh", "en": "fish", "category": "Words with া" },
+    { "bn": "ভাত", "pronunciation": "bhat", "en": "cooked rice", "category": "Words with া" },
+    { "bn": "রাত", "pronunciation": "rat", "en": "night", "category": "Words with া" },
+    { "bn": "সকাল", "pronunciation": "shokal", "en": "morning", "category": "Words with া" },
+    { "bn": "চা", "pronunciation": "cha", "en": "tea", "category": "Words with া" },
+    { "bn": "জানালা", "pronunciation": "janala", "en": "window", "category": "Words with া" },
+    { "bn": "দরজা", "pronunciation": "dorja", "en": "door", "category": "Words with া" },
+    { "bn": "হাসপাতাল", "pronunciation": "hashpatal", "en": "hospital", "category": "Words with া" },
+    { "bn": "ডাক্তার", "pronunciation": "daktar", "en": "doctor", "category": "Words with া" },
+    { "bn": "দোকান", "pronunciation": "dokan", "en": "shop", "category": "Words with া" },
+    { "bn": "পরিবার", "pronunciation": "poribar", "en": "family", "category": "Words with া" }
   ],
   "practice": [
-    "Say অ three times, keeping the sound short: ô, ô, ô.",
-    "Read each vocabulary word aloud and listen for অ at the beginning.",
-    "Contrast অ (ô) with আ (a): অজগর (ôjogor), আম (am).",
-    "Write অ five times, starting with the curved body and finishing with the top line."
+    "Say আ three times with an open, steady sound like the a in father: a, a, a.",
+    "Read the common vocabulary aloud and listen for আ at the beginning of words.",
+    "Practice the vowel sign: ক + া = কা, ম + া = মা, and ব + া = বা.",
+    "Contrast অ (ô) with আ (a): অল্প (ôlpo), আম (am)."
   ],
   "notes": [
-    "অ is the first independent vowel in the Bengali alphabet. Its sound is commonly written ô in learner transliteration and is similar to the first vowel sound in the British pronunciation of “often.”",
-    "Unlike most other Bengali vowels, অ has no separate vowel mark (কার). After a consonant with no visible vowel sign, an inherent অ-like sound is often understood: ক is read kô.",
-    "In natural speech, the exact sound of অ can vary slightly by word and dialect. Use the audio controls to imitate a Bengali voice."
+    "আ is the second independent vowel in the Bengali alphabet. It has an open a/ah sound similar to the vowel in father.",
+    "After a consonant, আ is written with the া vowel sign rather than as the independent letter: ক + া = কা.",
+    "The া sign appears in many everyday words, including মা, বাবা, নাম, ভালো, and বাংলা.",
+    "Keep আ distinct from the shorter inherent অ sound. Compare আম (am, mango) with অল্প (ôlpo, a little)."
   ]
 }

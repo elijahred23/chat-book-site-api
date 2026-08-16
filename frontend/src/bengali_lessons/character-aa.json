@@ -1,268 +1,104 @@
 {
   "id": "character-aa",
-  "title": "আ — The Long A Vowel",
-  "summary": "Learn the Bengali vowel আ, its open a sound, and eight useful words that begin with it.",
+  "title": "অ — The Inherent O Vowel",
+  "summary": "Learn the Bengali vowel অ, its inherent ô sound, and common words and phrases that use it.",
   "level": "beginner",
-  "topic": "Alphabet: আ",
+  "topic": "Alphabet: অ",
   "focus": "character and pronunciation",
   "phrases": [
-    {
-      "bn": "আ মানে আম।",
-      "pronunciation": "a mane am",
-      "en": "আ is for mango.",
-      "context": "Connect the letter আ with the familiar example word আম.",
-      "category": "character-aa",
-      "words": [
-        {
-          "bn": "আ",
-          "pronunciation": "a",
-          "en": "the letter আ"
-        },
-        {
-          "bn": "মানে",
-          "pronunciation": "mane",
-          "en": "means / stands for"
-        },
-        {
-          "bn": "আম",
-          "pronunciation": "am",
-          "en": "mango"
-        }
-      ]
-    },
-    {
-      "bn": "আকাশ নীল।",
-      "pronunciation": "akash nil",
-      "en": "The sky is blue.",
-      "context": "Hear the clear আ sound at the beginning of আকাশ.",
-      "category": "character-aa",
-      "words": [
-        {
-          "bn": "আকাশ",
-          "pronunciation": "akash",
-          "en": "sky"
-        },
-        {
-          "bn": "নীল",
-          "pronunciation": "nil",
-          "en": "blue"
-        }
-      ]
-    },
-    {
-      "bn": "আগুন জ্বলছে।",
-      "pronunciation": "agun jôlchhe",
-      "en": "The fire is burning.",
-      "context": "Practice the initial আ sound in আগুন.",
-      "category": "character-aa",
-      "words": [
-        {
-          "bn": "আগুন",
-          "pronunciation": "agun",
-          "en": "fire"
-        },
-        {
-          "bn": "জ্বলছে",
-          "pronunciation": "jôlchhe",
-          "en": "is burning"
-        }
-      ]
-    },
-    {
-      "bn": "ঘরে আলো আছে।",
-      "pronunciation": "ghôre alo achhe",
-      "en": "There is light in the room.",
-      "context": "Read আ at the beginning of আলো.",
-      "category": "character-aa",
-      "words": [
-        {
-          "bn": "ঘরে",
-          "pronunciation": "ghôre",
-          "en": "in the room"
-        },
-        {
-          "bn": "আলো",
-          "pronunciation": "alo",
-          "en": "light"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "there is / has"
-        }
-      ]
-    },
-    {
-      "bn": "আমরা আনন্দে হাসি।",
-      "pronunciation": "amra anônde hashi",
-      "en": "We laugh with joy.",
-      "context": "Compare আ at the start of আমরা and আনন্দে.",
-      "category": "character-aa",
-      "words": [
-        {
-          "bn": "আমরা",
-          "pronunciation": "amra",
-          "en": "we"
-        },
-        {
-          "bn": "আনন্দে",
-          "pronunciation": "anônde",
-          "en": "with joy / happily"
-        },
-        {
-          "bn": "হাসি",
-          "pronunciation": "hashi",
-          "en": "laugh"
-        }
-      ]
-    },
-    {
-      "bn": "আমি আঙুর খাই।",
-      "pronunciation": "ami angur khai",
-      "en": "I eat grapes.",
-      "context": "Hear আ followed by the nasal marker ঁ in আঙুর.",
-      "category": "character-aa",
-      "words": [
-        {
-          "bn": "আমি",
-          "pronunciation": "ami",
-          "en": "I"
-        },
-        {
-          "bn": "আঙুর",
-          "pronunciation": "angur",
-          "en": "grapes"
-        },
-        {
-          "bn": "খাই",
-          "pronunciation": "khai",
-          "en": "eat"
-        }
-      ]
-    },
-    {
-      "bn": "আয়নায় মুখ দেখো।",
-      "pronunciation": "aynay mukh dekho",
-      "en": "Look at your face in the mirror.",
-      "context": "Use the আ-word আয়না with the location ending য়.",
-      "category": "character-aa",
-      "words": [
-        {
-          "bn": "আয়নায়",
-          "pronunciation": "aynay",
-          "en": "in the mirror"
-        },
-        {
-          "bn": "মুখ",
-          "pronunciation": "mukh",
-          "en": "face"
-        },
-        {
-          "bn": "দেখো",
-          "pronunciation": "dekho",
-          "en": "look / see"
-        }
-      ]
-    },
-    {
-      "bn": "আস্তে কথা বলো।",
-      "pronunciation": "aste kôtha bôlo",
-      "en": "Speak slowly.",
-      "context": "Practice আ at the beginning of the useful adverb আস্তে.",
-      "category": "character-aa",
-      "words": [
-        {
-          "bn": "আস্তে",
-          "pronunciation": "aste",
-          "en": "slowly / softly"
-        },
-        {
-          "bn": "কথা",
-          "pronunciation": "kôtha",
-          "en": "speech / words"
-        },
-        {
-          "bn": "বলো",
-          "pronunciation": "bôlo",
-          "en": "speak / say"
-        }
-      ]
-    }
+    { "bn": "অনেক ভালো", "pronunciation": "ônek bhalo", "en": "very good", "context": "Practice অ in an everyday expression.", "category": "character-aa" },
+    { "bn": "অনেক সুন্দর", "pronunciation": "ônek shundor", "en": "very beautiful", "context": "Practice অ in an everyday expression.", "category": "character-aa" },
+    { "bn": "অনেক দিন", "pronunciation": "ônek din", "en": "many days / a long time", "context": "Practice অ in a time expression.", "category": "character-aa" },
+    { "bn": "অনেক মানুষ", "pronunciation": "ônek manush", "en": "many people", "context": "Practice অ in an everyday expression.", "category": "character-aa" },
+    { "bn": "অনেক সময়", "pronunciation": "ônek shômoy", "en": "often / a lot of the time", "context": "Practice অ in a time expression.", "category": "character-aa" },
+    { "bn": "অল্প একটু", "pronunciation": "ôlpo ektu", "en": "just a little", "context": "Practice asking for a small amount.", "category": "character-aa" },
+    { "bn": "অন্য মানুষ", "pronunciation": "ônno manush", "en": "another person / other people", "context": "Practice অন্য in a noun phrase.", "category": "character-aa" },
+    { "bn": "অন্য কিছু", "pronunciation": "ônno kichhu", "en": "something else", "context": "Practice অন্য in an everyday phrase.", "category": "character-aa" },
+    { "bn": "অন্য দিন", "pronunciation": "ônno din", "en": "another day", "context": "Practice অন্য in a time phrase.", "category": "character-aa" },
+    { "bn": "অবশ্যই যাব", "pronunciation": "ôbosshoi jabo", "en": "I will definitely go", "context": "Express certainty.", "category": "character-aa" },
+    { "bn": "অবশ্যই পারব", "pronunciation": "ôbosshoi parbo", "en": "I can definitely do it", "context": "Express confidence and certainty.", "category": "character-aa" },
+    { "bn": "এখন কী করব?", "pronunciation": "ekhon ki korbo?", "en": "What will I do now?", "context": "Ask what to do next.", "category": "character-aa" },
+    { "bn": "এখন কোথায়?", "pronunciation": "ekhon kothay?", "en": "Where is it now?", "context": "Ask about a current location.", "category": "character-aa" },
+    { "bn": "কখন আসবে?", "pronunciation": "kokhon ashbe?", "en": "When will you come?", "context": "Ask when someone will arrive.", "category": "character-aa" },
+    { "bn": "সকাল থেকে", "pronunciation": "shokal theke", "en": "since morning", "context": "Practice a common time phrase.", "category": "character-aa" },
+    { "bn": "আমার অসুখ হয়েছে", "pronunciation": "amar oshukh hoyeche", "en": "I have become sick", "context": "Describe illness.", "category": "character-aa" },
+    { "bn": "আমি অসুস্থ", "pronunciation": "ami oshustho", "en": "I am sick", "context": "Describe illness.", "category": "character-aa" },
+    { "bn": "খুব অন্ধকার", "pronunciation": "khub ôndhokar", "en": "very dark", "context": "Describe darkness.", "category": "character-aa" },
+    { "bn": "আমি অবাক হয়েছি", "pronunciation": "ami ôbak hoyechi", "en": "I was surprised", "context": "Describe a reaction.", "category": "character-aa" },
+    { "bn": "কোনো অসুবিধা নেই", "pronunciation": "kono oshubidha nei", "en": "No problem", "context": "Reassure someone.", "category": "character-aa" },
+    { "bn": "অপেক্ষা করো", "pronunciation": "ôpekkha koro", "en": "Wait", "context": "Give an informal instruction.", "category": "character-aa" },
+    { "bn": "একটু অপেক্ষা করুন", "pronunciation": "ektu ôpekkha korun", "en": "Please wait a little", "context": "Make a polite request.", "category": "character-aa" },
+    { "bn": "এর অর্থ কী?", "pronunciation": "er ôrtho ki?", "en": "What does this mean?", "context": "Ask for a meaning.", "category": "character-aa" },
+    { "bn": "এটা অসম্ভব", "pronunciation": "eta ôshombhob", "en": "This is impossible", "context": "Describe an impossibility.", "category": "character-aa" },
+    { "bn": "এটা অদ্ভুত", "pronunciation": "eta odbhut", "en": "This is strange", "context": "Describe something unusual.", "category": "character-aa" },
+    { "bn": "অসাধারণ হয়েছে!", "pronunciation": "oshadharon hoyeche!", "en": "It turned out great!", "context": "Praise a result.", "category": "character-aa" },
+    { "bn": "আমি অনুভব করছি", "pronunciation": "ami onubhob korchi", "en": "I am feeling it", "context": "Describe a feeling.", "category": "character-aa" },
+    { "bn": "অনুমতি আছে?", "pronunciation": "onumoti ache?", "en": "Is it allowed? / Do I have permission?", "context": "Ask for permission.", "category": "character-aa" },
+    { "bn": "আমার একটা অনুরোধ আছে", "pronunciation": "amar ekta onurodh ache", "en": "I have a request", "context": "Introduce a request.", "category": "character-aa" },
+    { "bn": "অভিনন্দন!", "pronunciation": "obhinondon!", "en": "Congratulations!", "context": "Congratulate someone.", "category": "character-aa" }
   ],
   "vocab": [
-    {
-      "bn": "আ",
-      "pronunciation": "a",
-      "en": "the second Bengali vowel",
-      "category": "character-aa",
-      "sourcePhrase": "আ মানে আম।"
-    },
-    {
-      "bn": "আম",
-      "pronunciation": "am",
-      "en": "mango",
-      "category": "character-aa",
-      "sourcePhrase": "আ মানে আম।"
-    },
-    {
-      "bn": "আকাশ",
-      "pronunciation": "akash",
-      "en": "sky",
-      "category": "character-aa",
-      "sourcePhrase": "আকাশ নীল।"
-    },
-    {
-      "bn": "আগুন",
-      "pronunciation": "agun",
-      "en": "fire",
-      "category": "character-aa",
-      "sourcePhrase": "আগুন জ্বলছে।"
-    },
-    {
-      "bn": "আলো",
-      "pronunciation": "alo",
-      "en": "light",
-      "category": "character-aa",
-      "sourcePhrase": "ঘরে আলো আছে।"
-    },
-    {
-      "bn": "আনন্দ",
-      "pronunciation": "anôndo",
-      "en": "joy / happiness",
-      "category": "character-aa",
-      "sourcePhrase": "আমরা আনন্দে হাসি।"
-    },
-    {
-      "bn": "আঙুর",
-      "pronunciation": "angur",
-      "en": "grapes",
-      "category": "character-aa",
-      "sourcePhrase": "আমি আঙুর খাই।"
-    },
-    {
-      "bn": "আয়না",
-      "pronunciation": "ayna",
-      "en": "mirror",
-      "category": "character-aa",
-      "sourcePhrase": "আয়নায় মুখ দেখো।"
-    },
-    {
-      "bn": "আস্তে",
-      "pronunciation": "aste",
-      "en": "slowly / softly",
-      "category": "character-aa",
-      "sourcePhrase": "আস্তে কথা বলো।"
-    }
+    { "bn": "অল্প", "pronunciation": "ôlpo", "en": "a little / small amount", "category": "character-aa" },
+    { "bn": "অনেক", "pronunciation": "ônek", "en": "many / a lot", "category": "character-aa" },
+    { "bn": "অন্য", "pronunciation": "ônno", "en": "other / another", "category": "character-aa" },
+    { "bn": "অবশ্যই", "pronunciation": "ôbosshoi", "en": "of course / definitely", "category": "character-aa" },
+    { "bn": "এখন", "pronunciation": "ekhon", "en": "now", "category": "character-aa" },
+    { "bn": "কখন", "pronunciation": "kokhon", "en": "when", "category": "character-aa" },
+    { "bn": "তখন", "pronunciation": "tokhon", "en": "then", "category": "character-aa" },
+    { "bn": "সকাল", "pronunciation": "shokal", "en": "morning", "category": "character-aa" },
+    { "bn": "অসুখ", "pronunciation": "oshukh", "en": "illness", "category": "character-aa" },
+    { "bn": "অসুস্থ", "pronunciation": "oshustho", "en": "sick", "category": "character-aa" },
+    { "bn": "অন্ধকার", "pronunciation": "ôndhokar", "en": "darkness / dark", "category": "character-aa" },
+    { "bn": "অঙ্ক", "pronunciation": "ôngko", "en": "math", "category": "character-aa" },
+    { "bn": "অফিস", "pronunciation": "ofis", "en": "office", "category": "character-aa" },
+    { "bn": "অভ্যাস", "pronunciation": "obhyash", "en": "habit", "category": "character-aa" },
+    { "bn": "অভিনয়", "pronunciation": "obhinoy", "en": "acting", "category": "character-aa" },
+    { "bn": "অভিনেতা", "pronunciation": "obhineta", "en": "actor", "category": "character-aa" },
+    { "bn": "অভিনেত্রী", "pronunciation": "obhinetri", "en": "actress", "category": "character-aa" },
+    { "bn": "অবস্থা", "pronunciation": "obostha", "en": "condition / situation", "category": "character-aa" },
+    { "bn": "অভাব", "pronunciation": "obhab", "en": "lack / shortage", "category": "character-aa" },
+    { "bn": "অভিযোগ", "pronunciation": "obhijog", "en": "complaint", "category": "character-aa" },
+    { "bn": "অপরাধ", "pronunciation": "oporadh", "en": "crime", "category": "character-aa" },
+    { "bn": "অপরাধী", "pronunciation": "oporadhi", "en": "criminal", "category": "character-aa" },
+    { "bn": "অপেক্ষা", "pronunciation": "ôpekkha", "en": "waiting", "category": "character-aa" },
+    { "bn": "অর্থ", "pronunciation": "ôrtho", "en": "meaning / money", "category": "character-aa" },
+    { "bn": "অর্থাৎ", "pronunciation": "ôrthat", "en": "that is / in other words", "category": "character-aa" },
+    { "bn": "অদ্ভুত", "pronunciation": "odbhut", "en": "strange", "category": "character-aa" },
+    { "bn": "অসম্ভব", "pronunciation": "ôshombhob", "en": "impossible", "category": "character-aa" },
+    { "bn": "অসাধারণ", "pronunciation": "oshadharon", "en": "excellent / extraordinary", "category": "character-aa" },
+    { "bn": "অচেনা", "pronunciation": "ochena", "en": "unfamiliar", "category": "character-aa" },
+    { "bn": "অজানা", "pronunciation": "ojana", "en": "unknown", "category": "character-aa" },
+    { "bn": "অকারণ", "pronunciation": "okaron", "en": "without reason", "category": "character-aa" },
+    { "bn": "অর্ধেক", "pronunciation": "ordhek", "en": "half", "category": "character-aa" },
+    { "bn": "অস্ত্র", "pronunciation": "ostro", "en": "weapon", "category": "character-aa" },
+    { "bn": "অশ্রু", "pronunciation": "oshru", "en": "tear", "category": "character-aa" },
+    { "bn": "অমর", "pronunciation": "omor", "en": "immortal", "category": "character-aa" },
+    { "bn": "অশান্ত", "pronunciation": "oshanto", "en": "restless / troubled", "category": "character-aa" },
+    { "bn": "অবাক", "pronunciation": "obak", "en": "surprised", "category": "character-aa" },
+    { "bn": "অবশেষে", "pronunciation": "oboshese", "en": "finally", "category": "character-aa" },
+    { "bn": "অবশ্য", "pronunciation": "obossho", "en": "certainly / however", "category": "character-aa" },
+    { "bn": "অনুমতি", "pronunciation": "onumoti", "en": "permission", "category": "character-aa" },
+    { "bn": "অনুভব", "pronunciation": "onubhob", "en": "feeling / to feel", "category": "character-aa" },
+    { "bn": "অভিজ্ঞতা", "pronunciation": "obhiggota", "en": "experience", "category": "character-aa" },
+    { "bn": "অভিনন্দন", "pronunciation": "obhinondon", "en": "congratulations", "category": "character-aa" },
+    { "bn": "অনুরোধ", "pronunciation": "onurodh", "en": "request", "category": "character-aa" },
+    { "bn": "অনুসরণ", "pronunciation": "onushoron", "en": "following / to follow", "category": "character-aa" },
+    { "bn": "অনুষ্ঠান", "pronunciation": "onushthan", "en": "program / ceremony", "category": "character-aa" },
+    { "bn": "অনুবাদ", "pronunciation": "onubad", "en": "translation", "category": "character-aa" },
+    { "bn": "অনুপস্থিত", "pronunciation": "onuposthit", "en": "absent", "category": "character-aa" },
+    { "bn": "অস্বীকার", "pronunciation": "oshshikar", "en": "refusal / denial", "category": "character-aa" },
+    { "bn": "অস্বাভাবিক", "pronunciation": "oshshabhabik", "en": "abnormal / unusual", "category": "character-aa" }
   ],
   "practice": [
-    "Say আ three times with an open, steady sound: a, a, a.",
-    "Read each vocabulary word aloud and listen for আ at the beginning.",
-    "Contrast অ (ô) with আ (a): অজগর (ôjogor), আম (am).",
-    "Write আ five times, noticing that it resembles অ with an added vertical stroke on the right."
+    "Say অ three times with its short inherent sound: ô, ô, ô.",
+    "Read each vocabulary word aloud and notice অ at the beginning or as the built-in vowel sound of a consonant.",
+    "Contrast অ (ô) with আ (a): অল্প (ôlpo), আম (am).",
+    "Read কম aloud as kôm and notice that the অ sound is present even though অ is not visibly written."
   ],
   "notes": [
-    "আ is the second independent vowel in the Bengali alphabet. It has an open a sound, similar to the vowel in “father.”",
-    "When আ follows a consonant, it usually becomes the vowel mark া (আ-কার): ক + া = কা (ka).",
-    "Keep আ distinct from the shorter অ sound. Compare আম (am, mango) with অল্প (ôlpo, a little). Use the audio controls to imitate a Bengali voice."
+    "অ is the first independent vowel in the Bengali alphabet and is commonly transliterated as ô.",
+    "অ is often present as the built-in vowel sound of a consonant even when it is not visibly written. For example, কম is approximately kôm.",
+    "Recognizing this inherent vowel is one of the keys to becoming comfortable reading Bangla.",
+    "Keep অ distinct from the longer আ sound. Compare অল্প (ôlpo, a little) with আম (am, mango)."
   ]
 }
