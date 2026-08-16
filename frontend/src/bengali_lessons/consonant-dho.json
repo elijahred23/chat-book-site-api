@@ -1,136 +1,80 @@
 {
   "id": "consonant-dho",
   "title": "ধ — dhô",
-  "summary": "Learn ধ, pronounced dhô, and recognize it in three useful Bengali words.",
+  "summary": "Learn the common Bangla consonant ধ, its aspirated dh sound, vowel-sign forms, and useful words and phrases.",
   "level": "beginner",
   "topic": "Consonant: ধ",
   "focus": "character recognition and pronunciation",
   "phrases": [
-    {
-      "bn": "ধান শব্দে ধ আছে।",
-      "pronunciation": "dhan shôbde dhô achhe",
-      "en": "The word “ধান” contains ধ.",
-      "context": "Find ধ in ধান and say the complete word aloud.",
-      "category": "consonant-dho",
-      "words": [
-        {
-          "bn": "ধান",
-          "pronunciation": "dhan",
-          "en": "paddy"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ধ",
-          "pronunciation": "dhô",
-          "en": "the dhô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "ধন্যবাদ শব্দে ধ আছে।",
-      "pronunciation": "dhônnobad shôbde dhô achhe",
-      "en": "The word “ধন্যবাদ” contains ধ.",
-      "context": "Find ধ in ধন্যবাদ and say the complete word aloud.",
-      "category": "consonant-dho",
-      "words": [
-        {
-          "bn": "ধন্যবাদ",
-          "pronunciation": "dhônnobad",
-          "en": "thank you"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ধ",
-          "pronunciation": "dhô",
-          "en": "the dhô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "মধু শব্দে ধ আছে।",
-      "pronunciation": "môdhu shôbde dhô achhe",
-      "en": "The word “মধু” contains ধ.",
-      "context": "Find ধ in মধু and say the complete word aloud.",
-      "category": "consonant-dho",
-      "words": [
-        {
-          "bn": "মধু",
-          "pronunciation": "môdhu",
-          "en": "honey"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ধ",
-          "pronunciation": "dhô",
-          "en": "the dhô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    }
+    { "bn": "ধন্যবাদ।", "pronunciation": "dhonnobad.", "en": "Thank you.", "context": "Express thanks.", "category": "consonant-dho" },
+    { "bn": "অনেক ধন্যবাদ।", "pronunciation": "onek dhonnobad.", "en": "Thank you very much.", "context": "Express strong thanks.", "category": "consonant-dho" },
+    { "bn": "আপনাকে ধন্যবাদ।", "pronunciation": "apnake dhonnobad.", "en": "Thank you.", "context": "Thank someone politely.", "category": "consonant-dho" },
+    { "bn": "এটা ধরো।", "pronunciation": "eta dhoro.", "en": "Hold this.", "context": "Ask someone to hold something.", "category": "consonant-dho" },
+    { "bn": "আমার হাত ধরো।", "pronunciation": "amar hat dhoro.", "en": "Hold my hand.", "context": "Ask someone to hold your hand.", "category": "consonant-dho" },
+    { "bn": "ওকে ধরো।", "pronunciation": "oke dhoro.", "en": "Catch him/her.", "context": "Tell someone to catch a person.", "category": "consonant-dho" },
+    { "bn": "পুলিশ চোরকে ধরেছে।", "pronunciation": "polish chorke dhorechhe.", "en": "The police caught the thief.", "context": "Describe someone being caught.", "category": "consonant-dho" },
+    { "bn": "আমার একটা ধারণা আছে।", "pronunciation": "amar ekta dharona achhe.", "en": "I have an idea.", "context": "Share that you have an idea.", "category": "consonant-dho" },
+    { "bn": "আমার কোনো ধারণা নেই।", "pronunciation": "amar kono dharona nei.", "en": "I have no idea.", "context": "Say you do not know.", "category": "consonant-dho" },
+    { "bn": "তোমার কী ধারণা?", "pronunciation": "tomar ki dharona?", "en": "What do you think?", "context": "Ask for someone's opinion.", "category": "consonant-dho" },
+    { "bn": "ধীরে বলো।", "pronunciation": "dhire bolo.", "en": "Speak slowly.", "context": "Ask someone to slow their speech.", "category": "consonant-dho" },
+    { "bn": "আরও ধীরে বলো।", "pronunciation": "aro dhire bolo.", "en": "Speak more slowly.", "context": "Ask someone to speak even more slowly.", "category": "consonant-dho" },
+    { "bn": "একটু ধীরে বলুন।", "pronunciation": "ektu dhire bolun.", "en": "Please speak a little slower.", "context": "Politely ask someone to slow down.", "category": "consonant-dho" },
+    { "bn": "ধীরে বলুন।", "pronunciation": "dhire bolun.", "en": "Please speak slowly.", "context": "Politely ask someone to speak slowly.", "category": "consonant-dho" },
+    { "bn": "ধীরে হাঁটো।", "pronunciation": "dhire hãto.", "en": "Walk slowly.", "context": "Tell someone to walk slowly.", "category": "consonant-dho" },
+    { "bn": "ধীরে ধীরে", "pronunciation": "dhire dhire", "en": "slowly / gradually", "context": "Describe gradual action.", "category": "consonant-dho" },
+    { "bn": "হাত ধোও।", "pronunciation": "hat dhoo.", "en": "Wash your hands.", "context": "Give a hygiene instruction.", "category": "consonant-dho" },
+    { "bn": "মুখ ধোও।", "pronunciation": "mukh dhoo.", "en": "Wash your face.", "context": "Give a washing instruction.", "category": "consonant-dho" },
+    { "bn": "কাপড় ধোয়া", "pronunciation": "kapor dhoa", "en": "to wash clothes", "context": "Practice ধোয়া with clothing.", "category": "consonant-dho" },
+    { "bn": "অনেক ধুলো।", "pronunciation": "onek dhulo.", "en": "A lot of dust.", "context": "Describe a dusty place.", "category": "consonant-dho" },
+    { "bn": "ধোঁয়া বের হচ্ছে।", "pronunciation": "dhõa ber hochchhe.", "en": "Smoke is coming out.", "context": "Describe visible smoke.", "category": "consonant-dho" },
+    { "bn": "ধৈর্য ধরো।", "pronunciation": "dhoirjo dhoro.", "en": "Be patient.", "context": "Encourage patience.", "category": "consonant-dho" },
+    { "bn": "ধাক্কা দিও না।", "pronunciation": "dhakka dio na.", "en": "Don't push.", "context": "Tell someone not to push.", "category": "consonant-dho" },
+    { "bn": "এটা কী ধরনের?", "pronunciation": "eta ki dhoroner?", "en": "What kind is this?", "context": "Ask about a type or category.", "category": "consonant-dho" },
+    { "bn": "পরের ধাপ কী?", "pronunciation": "porer dhap ki?", "en": "What's the next step?", "context": "Ask what comes next.", "category": "consonant-dho" }
   ],
   "vocab": [
-    {
-      "bn": "ধ",
-      "pronunciation": "dhô",
-      "en": "dhô: an aspirated dental d",
-      "category": "consonant-dho",
-      "sourcePhrase": "ধান শব্দে ধ আছে।"
-    },
-    {
-      "bn": "ধান",
-      "pronunciation": "dhan",
-      "en": "paddy",
-      "category": "consonant-dho",
-      "sourcePhrase": "ধান শব্দে ধ আছে।"
-    },
-    {
-      "bn": "ধন্যবাদ",
-      "pronunciation": "dhônnobad",
-      "en": "thank you",
-      "category": "consonant-dho",
-      "sourcePhrase": "ধন্যবাদ শব্দে ধ আছে।"
-    },
-    {
-      "bn": "মধু",
-      "pronunciation": "môdhu",
-      "en": "honey",
-      "category": "consonant-dho",
-      "sourcePhrase": "মধু শব্দে ধ আছে।"
-    }
+    { "bn": "ধন্যবাদ", "pronunciation": "dhonnobad", "en": "thank you", "category": "Common Words Beginning with ধ" },
+    { "bn": "ধনী", "pronunciation": "dhoni", "en": "rich / wealthy", "category": "Common Words Beginning with ধ" },
+    { "bn": "ধন", "pronunciation": "dhon", "en": "wealth", "category": "Common Words Beginning with ধ" },
+    { "bn": "ধরা", "pronunciation": "dhora", "en": "to catch / hold", "category": "Common Words Beginning with ধ" },
+    { "bn": "ধরো", "pronunciation": "dhoro", "en": "catch / hold / suppose", "category": "Common Words Beginning with ধ" },
+    { "bn": "ধরে", "pronunciation": "dhore", "en": "holding / since", "category": "Common Words Beginning with ধ" },
+    { "bn": "ধরন", "pronunciation": "dhoron", "en": "type / kind", "category": "Common Words Beginning with ধ" },
+    { "bn": "ধারণা", "pronunciation": "dharona", "en": "idea / concept", "category": "Common Words Beginning with ধ" },
+    { "bn": "ধর্ম", "pronunciation": "dhormo", "en": "religion", "category": "Common Words Beginning with ধ" },
+    { "bn": "ধর্মীয়", "pronunciation": "dhormiyo", "en": "religious", "category": "Common Words Beginning with ধ" },
+    { "bn": "ধান", "pronunciation": "dhan", "en": "rice crop / paddy", "category": "Common Words Beginning with ধ" },
+    { "bn": "ধীর", "pronunciation": "dhir", "en": "slow", "category": "Common Words Beginning with ধ" },
+    { "bn": "ধীরে", "pronunciation": "dhire", "en": "slowly", "category": "Common Words Beginning with ধ" },
+    { "bn": "ধুলো", "pronunciation": "dhulo", "en": "dust", "category": "Common Words Beginning with ধ" },
+    { "bn": "ধুলা", "pronunciation": "dhula", "en": "dust", "category": "Common Words Beginning with ধ" },
+    { "bn": "ধোয়া", "pronunciation": "dhoa", "en": "to wash", "category": "Common Words Beginning with ধ" },
+    { "bn": "ধোঁয়া", "pronunciation": "dhõa", "en": "smoke", "category": "Common Words Beginning with ধ" },
+    { "bn": "ধ্বনি", "pronunciation": "dhoni", "en": "sound", "category": "Common Words Beginning with ধ" },
+    { "bn": "ধ্বংস", "pronunciation": "dhongsho", "en": "destruction", "category": "Common Words Beginning with ধ" },
+    { "bn": "ধাক্কা", "pronunciation": "dhakka", "en": "push / collision", "category": "Common Words Beginning with ধ" },
+    { "bn": "ধাপ", "pronunciation": "dhap", "en": "step / stage", "category": "Common Words Beginning with ধ" },
+    { "bn": "ধাতু", "pronunciation": "dhatu", "en": "metal", "category": "Common Words Beginning with ধ" },
+    { "bn": "ধৈর্য", "pronunciation": "dhoirjo", "en": "patience", "category": "Common Words Beginning with ধ" },
+    { "bn": "ধারা", "pronunciation": "dhara", "en": "stream / sequence", "category": "Common Words Beginning with ধ" },
+    { "bn": "ধার", "pronunciation": "dhar", "en": "edge / loan", "category": "Common Words Beginning with ধ" },
+    { "bn": "ধারালো", "pronunciation": "dharalo", "en": "sharp", "category": "Common Words Beginning with ধ" },
+    { "bn": "ধূমপান", "pronunciation": "dhumpan", "en": "smoking", "category": "Common Words Beginning with ধ" },
+    { "bn": "ধূসর", "pronunciation": "dhushor", "en": "gray", "category": "Common Words Beginning with ধ" },
+    { "bn": "ধুম", "pronunciation": "dhum", "en": "great excitement / intensity", "category": "Common Words Beginning with ধ" }
   ],
   "practice": [
-    "Say ধ three times: dhô, dhô, dhô.",
-    "Find ধ in each example word and read the whole word aloud.",
-    "Write ধ five times while saying its name."
+    "Say ধ three times with a puff of air: dhô, dhô, dhô.",
+    "Practice the vowel forms: ধ (dhô), ধা (dha), ধি (dhi), ধী (dhi), ধু (dhu), ধূ (dhu), ধে (dhe), ধৈ (dhoi), ধো (dho), and ধৌ (dhou).",
+    "Read the combinations aloud: ধ + া = ধা as in ধান, ধ + ী = ধী as in ধীর, ধ + ু = ধু as in ধুলো, ধ + ূ = ধূ as in ধূসর, ধ + ৈ = ধৈ as in ধৈর্য, and ধ + ো = ধো as in ধোয়া.",
+    "Compare দ (d) with ধ (dh, extra air): দাদা / ধান, দরজা / ধরা, and দিন / ধীর.",
+    "Use ধন্যবাদ, ধরা, ধারণা, ধীরে, ধুলো, ধোঁয়া, ধৈর্য, and ধান as quick reading anchors.",
+    "Memorize these immediately useful phrases: অনেক ধন্যবাদ, ধীরে বলুন, and আমার কোনো ধারণা নেই."
   ],
   "notes": [
-    "ধ is pronounced approximately an aspirated dental d.",
-    "Listen to the audio and compare ধ across the example words."
+    "ধ is a very common Bangla consonant named dhô. It is the aspirated partner of দ and is pronounced with a little more air.",
+    "The vowel-sign forms include ধ (dhô), ধা (dha), ধি (dhi), ধী (dhi), ধু (dhu), ধূ (dhu), ধে (dhe), ধৈ (dhoi), ধো (dho), and ধৌ (dhou). Examples include ধর্ম, ধান, ধিক্কার, ধীর, ধুলো, ধূসর, ধেয়ে, ধৈর্য, ধোয়া, and ধৌত.",
+    "Compare দরজা (dorja, door) with ধরা (dhora, to catch/hold), and দিন (din, day) with ধীর (dhir, slow).",
+    "Best words to memorize include ধন্যবাদ, ধরা, ধরো, ধরে, ধরন, ধারণা, ধান, ধনী, ধীর, ধীরে, ধুলো, ধোয়া, ধোঁয়া, ধাক্কা, ধাপ, ধৈর্য, ধারালো, ধ্বনি, ধ্বংস, and ধূসর."
   ]
 }

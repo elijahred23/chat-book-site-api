@@ -1,136 +1,83 @@
 {
   "id": "consonant-chho",
   "title": "ছ — chhô",
-  "summary": "Learn ছ, pronounced chhô, and recognize it in three useful Bengali words.",
+  "summary": "Learn the Bangla consonant ছ, its aspirated chh sound, vowel-sign forms, and common words and phrases.",
   "level": "beginner",
   "topic": "Consonant: ছ",
   "focus": "character recognition and pronunciation",
   "phrases": [
-    {
-      "bn": "ছাতা শব্দে ছ আছে।",
-      "pronunciation": "chhata shôbde chhô achhe",
-      "en": "The word “ছাতা” contains ছ.",
-      "context": "Find ছ in ছাতা and say the complete word aloud.",
-      "category": "consonant-chho",
-      "words": [
-        {
-          "bn": "ছাতা",
-          "pronunciation": "chhata",
-          "en": "umbrella"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ছ",
-          "pronunciation": "chhô",
-          "en": "the chhô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "ছবি শব্দে ছ আছে।",
-      "pronunciation": "chhobi shôbde chhô achhe",
-      "en": "The word “ছবি” contains ছ.",
-      "context": "Find ছ in ছবি and say the complete word aloud.",
-      "category": "consonant-chho",
-      "words": [
-        {
-          "bn": "ছবি",
-          "pronunciation": "chhobi",
-          "en": "picture"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ছ",
-          "pronunciation": "chhô",
-          "en": "the chhô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "গাছ শব্দে ছ আছে।",
-      "pronunciation": "gachh shôbde chhô achhe",
-      "en": "The word “গাছ” contains ছ.",
-      "context": "Find ছ in গাছ and say the complete word aloud.",
-      "category": "consonant-chho",
-      "words": [
-        {
-          "bn": "গাছ",
-          "pronunciation": "gachh",
-          "en": "tree"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ছ",
-          "pronunciation": "chhô",
-          "en": "the chhô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    }
+    { "bn": "ছেলেটা কে?", "pronunciation": "chheleta ke?", "en": "Who is the boy?", "context": "Ask who a boy is.", "category": "consonant-chho" },
+    { "bn": "আমার ছেলে।", "pronunciation": "amar chhele.", "en": "My son.", "context": "Identify your son.", "category": "consonant-chho" },
+    { "bn": "ছেলেটা ছোট।", "pronunciation": "chheleta chhoto.", "en": "The boy is young/small.", "context": "Describe a boy.", "category": "consonant-chho" },
+    { "bn": "এটা আমার ছবি।", "pronunciation": "eta amar chhobi.", "en": "This is my picture.", "context": "Identify your picture.", "category": "consonant-chho" },
+    { "bn": "ছবি দেখো।", "pronunciation": "chhobi dekho.", "en": "Look at the picture.", "context": "Ask someone to look at a picture.", "category": "consonant-chho" },
+    { "bn": "ছবি তোলো।", "pronunciation": "chhobi tolo.", "en": "Take a picture.", "context": "Ask someone to take a picture.", "category": "consonant-chho" },
+    { "bn": "আমি ছবি তুলছি।", "pronunciation": "ami chhobi tulchhi.", "en": "I'm taking a picture.", "context": "Describe taking a picture.", "category": "consonant-chho" },
+    { "bn": "এটা কার ছবি?", "pronunciation": "eta kar chhobi?", "en": "Whose picture is this?", "context": "Ask who owns a picture.", "category": "consonant-chho" },
+    { "bn": "এটা ছোট।", "pronunciation": "eta chhoto.", "en": "This is small.", "context": "Describe something small.", "category": "consonant-chho" },
+    { "bn": "খুব ছোট।", "pronunciation": "khub chhoto.", "en": "Very small.", "context": "Emphasize small size.", "category": "consonant-chho" },
+    { "bn": "ছোট ভাই", "pronunciation": "chhoto bhai", "en": "younger brother", "context": "Describe a younger brother.", "category": "consonant-chho" },
+    { "bn": "ছোট বোন", "pronunciation": "chhoto bon", "en": "younger sister", "context": "Describe a younger sister.", "category": "consonant-chho" },
+    { "bn": "ছোট বাচ্চা", "pronunciation": "chhoto bachcha", "en": "small child / young child", "context": "Describe a young child.", "category": "consonant-chho" },
+    { "bn": "তুমি ছাড়া কেউ নেই।", "pronunciation": "tumi chhara keu nei.", "en": "There is no one except you.", "context": "Use ছাড়া to mean except.", "category": "consonant-chho" },
+    { "bn": "চিনি ছাড়া চা।", "pronunciation": "chini chhara cha.", "en": "Tea without sugar.", "context": "Order or describe tea without sugar.", "category": "consonant-chho" },
+    { "bn": "ওকে ছাড়া যাব না।", "pronunciation": "oke chhara jabo na.", "en": "I won't go without him/her.", "context": "Say you will not leave someone behind.", "category": "consonant-chho" },
+    { "bn": "আজ ছুটি।", "pronunciation": "aj chhuti.", "en": "Today is a holiday.", "context": "Say today is a day off.", "category": "consonant-chho" },
+    { "bn": "কাল ছুটি আছে।", "pronunciation": "kal chhuti achhe.", "en": "Tomorrow is a day off.", "context": "Talk about tomorrow's holiday.", "category": "consonant-chho" },
+    { "bn": "কাল ছুটি।", "pronunciation": "kal chhuti.", "en": "Tomorrow is a holiday.", "context": "Say tomorrow is a holiday.", "category": "consonant-chho" },
+    { "bn": "আমি ছুটিতে আছি।", "pronunciation": "ami chhutite achhi.", "en": "I'm on vacation.", "context": "Say you are on vacation.", "category": "consonant-chho" },
+    { "bn": "আমার ছেলে", "pronunciation": "amar chhele", "en": "my son", "context": "Practice ছেলে in a family phrase.", "category": "consonant-chho" },
+    { "bn": "আমার ছাতা কোথায়?", "pronunciation": "amar chhata kothay?", "en": "Where is my umbrella?", "context": "Ask where your umbrella is.", "category": "consonant-chho" },
+    { "bn": "ছাতা নিয়ে যাও।", "pronunciation": "chhata niye jao.", "en": "Take an umbrella.", "context": "Remind someone to take an umbrella.", "category": "consonant-chho" },
+    { "bn": "ছাদে যাও।", "pronunciation": "chhade jao.", "en": "Go to the roof.", "context": "Give a direction.", "category": "consonant-chho" },
+    { "bn": "ছায়ায় বসো।", "pronunciation": "chhayay bosho.", "en": "Sit in the shade.", "context": "Tell someone to sit in the shade.", "category": "consonant-chho" },
+    { "bn": "আমাকে ছাড়ো।", "pronunciation": "amake chharo.", "en": "Let me go.", "context": "Ask someone to release you.", "category": "consonant-chho" },
+    { "bn": "এটা ছেড়ে দাও।", "pronunciation": "eta chhere dao.", "en": "Leave this alone.", "context": "Ask someone to leave something alone.", "category": "consonant-chho" },
+    { "bn": "ছুঁয়ো না।", "pronunciation": "chhuyo na.", "en": "Don't touch.", "context": "Warn someone not to touch.", "category": "consonant-chho" },
+    { "bn": "ছয়টা বাজে।", "pronunciation": "chhoyta baje.", "en": "It's six o'clock.", "context": "Tell the time.", "category": "consonant-chho" },
+    { "bn": "ছয় বছর", "pronunciation": "chhoy bochhor", "en": "six years", "context": "Practice ছয় with years.", "category": "consonant-chho" },
+    { "bn": "ছয় দিন", "pronunciation": "chhoy din", "en": "six days", "context": "Practice ছয় with days.", "category": "consonant-chho" },
+    { "bn": "চিনি ছাড়া", "pronunciation": "chini chhara", "en": "without sugar", "context": "Practice ছাড়া in a food phrase.", "category": "consonant-chho" },
+    { "bn": "তোমাকে ছাড়া", "pronunciation": "tomake chhara", "en": "without you", "context": "Practice ছাড়া in a personal phrase.", "category": "consonant-chho" }
   ],
   "vocab": [
-    {
-      "bn": "ছ",
-      "pronunciation": "chhô",
-      "en": "chhô: a strongly aspirated ch",
-      "category": "consonant-chho",
-      "sourcePhrase": "ছাতা শব্দে ছ আছে।"
-    },
-    {
-      "bn": "ছাতা",
-      "pronunciation": "chhata",
-      "en": "umbrella",
-      "category": "consonant-chho",
-      "sourcePhrase": "ছাতা শব্দে ছ আছে।"
-    },
-    {
-      "bn": "ছবি",
-      "pronunciation": "chhobi",
-      "en": "picture",
-      "category": "consonant-chho",
-      "sourcePhrase": "ছবি শব্দে ছ আছে।"
-    },
-    {
-      "bn": "গাছ",
-      "pronunciation": "gachh",
-      "en": "tree",
-      "category": "consonant-chho",
-      "sourcePhrase": "গাছ শব্দে ছ আছে।"
-    }
+    { "bn": "ছেলে", "pronunciation": "chhele", "en": "boy / son", "category": "Common Words Beginning with ছ" },
+    { "bn": "ছবি", "pronunciation": "chhobi", "en": "picture / photo", "category": "Common Words Beginning with ছ" },
+    { "bn": "ছোট", "pronunciation": "chhoto", "en": "small / young", "category": "Common Words Beginning with ছ" },
+    { "bn": "ছয়", "pronunciation": "chhoy", "en": "six", "category": "Common Words Beginning with ছ" },
+    { "bn": "ছাড়া", "pronunciation": "chhara", "en": "without / except", "category": "Common Words Beginning with ছ" },
+    { "bn": "ছাতা", "pronunciation": "chhata", "en": "umbrella", "category": "Common Words Beginning with ছ" },
+    { "bn": "ছাগল", "pronunciation": "chhagol", "en": "goat", "category": "Common Words Beginning with ছ" },
+    { "bn": "ছুরি", "pronunciation": "chhuri", "en": "knife", "category": "Common Words Beginning with ছ" },
+    { "bn": "ছুটি", "pronunciation": "chhuti", "en": "holiday / time off", "category": "Common Words Beginning with ছ" },
+    { "bn": "ছুটির দিন", "pronunciation": "chhutir din", "en": "day off / holiday", "category": "Common Words Beginning with ছ" },
+    { "bn": "ছাদ", "pronunciation": "chhad", "en": "roof", "category": "Common Words Beginning with ছ" },
+    { "bn": "ছায়া", "pronunciation": "chhaya", "en": "shade / shadow", "category": "Common Words Beginning with ছ" },
+    { "bn": "ছাই", "pronunciation": "chhai", "en": "ash", "category": "Common Words Beginning with ছ" },
+    { "bn": "ছাপ", "pronunciation": "chhap", "en": "mark / print", "category": "Common Words Beginning with ছ" },
+    { "bn": "ছাপা", "pronunciation": "chhapa", "en": "printed / printing", "category": "Common Words Beginning with ছ" },
+    { "bn": "ছাড়", "pronunciation": "chhar", "en": "discount / release", "category": "Common Words Beginning with ছ" },
+    { "bn": "ছাড়ো", "pronunciation": "chharo", "en": "let go / leave it", "category": "Common Words Beginning with ছ" },
+    { "bn": "ছাড়ানো", "pronunciation": "chharano", "en": "to remove / release", "category": "Common Words Beginning with ছ" },
+    { "bn": "ছিঁড়ে", "pronunciation": "chhĩre", "en": "torn / by tearing", "category": "Common Words Beginning with ছ" },
+    { "bn": "ছেঁড়া", "pronunciation": "chhẽra", "en": "torn", "category": "Common Words Beginning with ছ" },
+    { "bn": "ছোঁয়া", "pronunciation": "chhõya", "en": "to touch", "category": "Common Words Beginning with ছ" },
+    { "bn": "ছড়া", "pronunciation": "chhora", "en": "rhyme", "category": "Common Words Beginning with ছ" },
+    { "bn": "ছড়ানো", "pronunciation": "chhorano", "en": "to spread", "category": "Common Words Beginning with ছ" },
+    { "bn": "ছটফট", "pronunciation": "chhotphot", "en": "restlessness", "category": "Common Words Beginning with ছ" }
   ],
   "practice": [
-    "Say ছ three times: chhô, chhô, chhô.",
-    "Find ছ in each example word and read the whole word aloud.",
-    "Write ছ five times while saying its name."
+    "Say ছ three times with a strong puff of air: chhô, chhô, chhô.",
+    "Practice the vowel forms: ছ (chhô), ছা (chha), ছি (chhi), ছী (chhi, uncommon), ছু (chhu), ছূ (chhu, rare), ছে (chhe), ছৈ (chhoi, uncommon), ছো (chho), and ছৌ (chhou, uncommon).",
+    "Read the combinations aloud: ছ + া = ছা as in ছাতা, ছ + ি = ছি as in ছিঁড়ে, ছ + ু = ছু as in ছুরি, ছ + ে = ছে as in ছেলে, and ছ + ো = ছো as in ছোট.",
+    "Put your hand near your mouth and compare চ (ch, less air) with ছ (chh, a stronger puff of air).",
+    "Use ছেলে, ছবি, ছোট, ছাতা, ছুটি, ছয়, ছাড়া, and ছায়া as quick reading anchors."
   ],
   "notes": [
-    "ছ is pronounced approximately a strongly aspirated ch.",
-    "Listen to the audio and compare ছ across the example words."
+    "ছ is a Bangla consonant named chhô. Its sound is roughly chh, an aspirated version of চ with a stronger burst of air.",
+    "চ and ছ are an important reading and pronunciation pair: চ is ch, while ছ is chh.",
+    "Compare চা (cha, tea), চাল (chal, rice), and চোখ (chokh, eye) with ছাতা (chhata, umbrella), ছবি (chhobi, picture), ছেলে (chhele, boy), and ছোট (chhoto, small).",
+    "Best words to memorize include ছেলে, ছবি, ছোট, ছয়, ছাড়া, ছাতা, ছুটি, ছাদ, ছায়া, ছাগল, ছুরি, ছাই, ছাপ, ছেঁড়া, ছোঁয়া, ছড়া, and ছাড়ো.",
+    "A useful recognition set is: ছেলে • ছবি • ছোট • ছয় • ছাতা • ছুটি • ছাড়া."
   ]
 }

@@ -1,136 +1,78 @@
 {
   "id": "consonant-nyo",
-  "title": "ঞ — ñô",
-  "summary": "Learn ঞ, pronounced ñô, and recognize it in three useful Bengali words.",
+  "title": "ঞ — ñô / ny",
+  "summary": "Learn the uncommon standalone consonant ঞ through its frequent conjunct forms ঞ্চ, ঞ্ছ, ঞ্জ, and ঞ্ঝ.",
   "level": "beginner",
   "topic": "Consonant: ঞ",
-  "focus": "character recognition and pronunciation",
+  "focus": "conjunct recognition and whole-word reading",
   "phrases": [
-    {
-      "bn": "পঞ্চ শব্দে ঞ আছে।",
-      "pronunciation": "pôncho shôbde ñô achhe",
-      "en": "The word “পঞ্চ” contains ঞ.",
-      "context": "Find ঞ in পঞ্চ and say the complete word aloud.",
-      "category": "consonant-nyo",
-      "words": [
-        {
-          "bn": "পঞ্চ",
-          "pronunciation": "pôncho",
-          "en": "five"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ঞ",
-          "pronunciation": "ñô",
-          "en": "the ñô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "অঞ্চল শব্দে ঞ আছে।",
-      "pronunciation": "ônchôl shôbde ñô achhe",
-      "en": "The word “অঞ্চল” contains ঞ.",
-      "context": "Find ঞ in অঞ্চল and say the complete word aloud.",
-      "category": "consonant-nyo",
-      "words": [
-        {
-          "bn": "অঞ্চল",
-          "pronunciation": "ônchôl",
-          "en": "region"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ঞ",
-          "pronunciation": "ñô",
-          "en": "the ñô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "বাঞ্ছা শব্দে ঞ আছে।",
-      "pronunciation": "banchha shôbde ñô achhe",
-      "en": "The word “বাঞ্ছা” contains ঞ.",
-      "context": "Find ঞ in বাঞ্ছা and say the complete word aloud.",
-      "category": "consonant-nyo",
-      "words": [
-        {
-          "bn": "বাঞ্ছা",
-          "pronunciation": "banchha",
-          "en": "desire"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ঞ",
-          "pronunciation": "ñô",
-          "en": "the ñô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    }
+    { "bn": "পাঁচ টাকা।", "pronunciation": "pãch taka.", "en": "Five taka.", "context": "Practice পাঁচ with money.", "category": "consonant-nyo" },
+    { "bn": "পাঁচ মিনিট।", "pronunciation": "pãch minute.", "en": "Five minutes.", "context": "Practice পাঁচ with time.", "category": "consonant-nyo" },
+    { "bn": "পাঁচ দিন।", "pronunciation": "pãch din.", "en": "Five days.", "context": "Practice পাঁচ with a duration.", "category": "consonant-nyo" },
+    { "bn": "পাঁচ বছর", "pronunciation": "pãch bochhor", "en": "five years", "context": "Practice পাঁচ with years.", "category": "consonant-nyo" },
+    { "bn": "পাঁচটা", "pronunciation": "pãchta", "en": "five", "context": "Practice five with the general counter.", "category": "consonant-nyo" },
+    { "bn": "পাঁচজন মানুষ", "pronunciation": "pãchjon manush", "en": "five people", "context": "Practice five with the people counter.", "category": "consonant-nyo" },
+    { "bn": "আমার পাঁচটা বই আছে।", "pronunciation": "amar pãchta boi achhe.", "en": "I have five books.", "context": "Count books with পাঁচটা.", "category": "consonant-nyo" },
+    { "bn": "এই অঞ্চলটা সুন্দর।", "pronunciation": "ei oncholta shundor.", "en": "This area is beautiful.", "context": "Describe a region positively.", "category": "consonant-nyo" },
+    { "bn": "এই অঞ্চলে অনেক মানুষ থাকে।", "pronunciation": "ei onchole onek manush thake.", "en": "Many people live in this region.", "context": "Describe a region's population.", "category": "consonant-nyo" },
+    { "bn": "এই অঞ্চল", "pronunciation": "ei onchol", "en": "this region", "context": "Practice অঞ্চল in a short phrase.", "category": "consonant-nyo" },
+    { "bn": "এই অঞ্চলে", "pronunciation": "ei onchole", "en": "in this region", "context": "Practice the locative form of অঞ্চল.", "category": "consonant-nyo" },
+    { "bn": "পঞ্চাশ টাকা।", "pronunciation": "ponchash taka.", "en": "Fifty taka.", "context": "Practice পঞ্চাশ with money.", "category": "consonant-nyo" },
+    { "bn": "তার বয়স পঞ্চাশ বছর।", "pronunciation": "tar boyosh ponchash bochhor.", "en": "He/she is fifty years old.", "context": "State someone's age.", "category": "consonant-nyo" },
+    { "bn": "টাকা সঞ্চয় করো।", "pronunciation": "taka shonchoy koro.", "en": "Save money.", "context": "Encourage saving money.", "category": "consonant-nyo" },
+    { "bn": "আমি টাকা সঞ্চয় করছি।", "pronunciation": "ami taka shonchoy korchhi.", "en": "I'm saving money.", "context": "Describe saving money now.", "category": "consonant-nyo" },
+    { "bn": "আমার কিছু সঞ্চয় আছে।", "pronunciation": "amar kichhu shonchoy achhe.", "en": "I have some savings.", "context": "Talk about personal savings.", "category": "consonant-nyo" },
+    { "bn": "এটা মঞ্জুর হয়েছে।", "pronunciation": "eta monjur hoyechhe.", "en": "This has been approved.", "context": "Report an approval.", "category": "consonant-nyo" },
+    { "bn": "মঞ্চে যাও।", "pronunciation": "monche jao.", "en": "Go to the stage.", "context": "Direct someone toward a stage.", "category": "consonant-nyo" },
+    { "bn": "সে মঞ্চে আছে।", "pronunciation": "she monche achhe.", "en": "He/she is on the stage.", "context": "Describe someone's location.", "category": "consonant-nyo" },
+    { "bn": "মঞ্চে গান হচ্ছে।", "pronunciation": "monche gan hochchhe.", "en": "There is singing/music on the stage.", "context": "Describe a stage performance.", "category": "consonant-nyo" },
+    { "bn": "মঞ্চে উঠো।", "pronunciation": "monche utho.", "en": "Go up onto the stage.", "context": "Tell someone to enter the stage.", "category": "consonant-nyo" },
+    { "bn": "আঞ্চলিক ভাষা", "pronunciation": "ancholik bhasha", "en": "regional language", "context": "Practice আঞ্চলিক in a language phrase.", "category": "consonant-nyo" },
+    { "bn": "পঞ্চম শ্রেণি", "pronunciation": "ponchom shreni", "en": "fifth grade", "context": "Practice ordinal vocabulary.", "category": "consonant-nyo" },
+    { "bn": "ব্যঞ্জনবর্ণ", "pronunciation": "byonjonborno", "en": "consonant letter", "context": "Name a Bangla letter category.", "category": "consonant-nyo" }
   ],
   "vocab": [
-    {
-      "bn": "ঞ",
-      "pronunciation": "ñô",
-      "en": "ñô: ny as in canyon",
-      "category": "consonant-nyo",
-      "sourcePhrase": "পঞ্চ শব্দে ঞ আছে।"
-    },
-    {
-      "bn": "পঞ্চ",
-      "pronunciation": "pôncho",
-      "en": "five",
-      "category": "consonant-nyo",
-      "sourcePhrase": "পঞ্চ শব্দে ঞ আছে।"
-    },
-    {
-      "bn": "অঞ্চল",
-      "pronunciation": "ônchôl",
-      "en": "region",
-      "category": "consonant-nyo",
-      "sourcePhrase": "অঞ্চল শব্দে ঞ আছে।"
-    },
-    {
-      "bn": "বাঞ্ছা",
-      "pronunciation": "banchha",
-      "en": "desire",
-      "category": "consonant-nyo",
-      "sourcePhrase": "বাঞ্ছা শব্দে ঞ আছে।"
-    }
+    { "bn": "পাঁচ", "pronunciation": "pãch", "en": "five", "category": "Common Words Containing ঞ" },
+    { "bn": "পঞ্চাশ", "pronunciation": "ponchash", "en": "fifty", "category": "Common Words Containing ঞ" },
+    { "bn": "পঞ্চম", "pronunciation": "ponchom", "en": "fifth", "category": "Common Words Containing ঞ" },
+    { "bn": "অঞ্চল", "pronunciation": "onchol", "en": "region / area", "category": "Common Words Containing ঞ" },
+    { "bn": "আঞ্চলিক", "pronunciation": "ancholik", "en": "regional", "category": "Common Words Containing ঞ" },
+    { "bn": "সঞ্চয়", "pronunciation": "shonchoy", "en": "savings", "category": "Common Words Containing ঞ" },
+    { "bn": "সঞ্চয় করা", "pronunciation": "shonchoy kora", "en": "to save", "category": "Common Words Containing ঞ" },
+    { "bn": "সঞ্চিত", "pronunciation": "shonchito", "en": "accumulated / saved", "category": "Common Words Containing ঞ" },
+    { "bn": "সঞ্চালন", "pronunciation": "shonchalon", "en": "circulation / operation", "category": "Common Words Containing ঞ" },
+    { "bn": "মঞ্চ", "pronunciation": "moncho", "en": "stage", "category": "Common Words Containing ঞ" },
+    { "bn": "বঞ্চিত", "pronunciation": "bonchito", "en": "deprived", "category": "Common Words Containing ঞ" },
+    { "bn": "বঞ্চনা", "pronunciation": "bonchona", "en": "deprivation / cheating", "category": "Common Words Containing ঞ" },
+    { "bn": "লাঞ্ছনা", "pronunciation": "lanchhona", "en": "humiliation", "category": "Common Words Containing ঞ" },
+    { "bn": "লাঞ্ছিত", "pronunciation": "lanchhito", "en": "humiliated", "category": "Common Words Containing ঞ" },
+    { "bn": "অঞ্জলি", "pronunciation": "onjoli", "en": "offering / cupped hands", "category": "Common Words Containing ঞ" },
+    { "bn": "গঞ্জ", "pronunciation": "gonj", "en": "market town / suffix in place names", "category": "Common Words Containing ঞ" },
+    { "bn": "কুঞ্জ", "pronunciation": "kunjo", "en": "grove", "category": "Common Words Containing ঞ" },
+    { "bn": "পাঞ্জাবি", "pronunciation": "panjabi", "en": "Punjabi / traditional kurta", "category": "Common Words Containing ঞ" },
+    { "bn": "ব্যঞ্জন", "pronunciation": "byonjon", "en": "consonant / savory dish", "category": "Common Words Containing ঞ" },
+    { "bn": "ব্যঞ্জনবর্ণ", "pronunciation": "byonjonborno", "en": "consonant letter", "category": "Common Words Containing ঞ" },
+    { "bn": "রঞ্জন", "pronunciation": "ronjon", "en": "coloring / a name", "category": "Common Words Containing ঞ" },
+    { "bn": "রঞ্জিত", "pronunciation": "ronjito", "en": "colored / a name", "category": "Common Words Containing ঞ" },
+    { "bn": "মঞ্জুর", "pronunciation": "monjur", "en": "approved / accepted", "category": "Common Words Containing ঞ" },
+    { "bn": "নারায়ণগঞ্জ", "pronunciation": "narayongonj", "en": "Narayanganj", "category": "Place Names Ending in গঞ্জ" },
+    { "bn": "মুন্সীগঞ্জ", "pronunciation": "munshigonj", "en": "Munshiganj", "category": "Place Names Ending in গঞ্জ" },
+    { "bn": "সিরাজগঞ্জ", "pronunciation": "shirajgonj", "en": "Sirajganj", "category": "Place Names Ending in গঞ্জ" }
   ],
   "practice": [
-    "Say ঞ three times: ñô, ñô, ñô.",
-    "Find ঞ in each example word and read the whole word aloud.",
-    "Write ঞ five times while saying its name."
+    "Say the historical ঞ sound roughly like ny or ñ, similar to the middle of canyon. In everyday Bangla, learn its conjunct forms and whole words.",
+    "Recognize the most important shapes: ঞ্চ, ঞ্ছ, ঞ্জ, and ঞ্ঝ. ঞ almost never appears alone at the beginning of everyday words.",
+    "Practice ঞ্চ = ঞ্ + চ in পাঁচ, পঞ্চাশ, পঞ্চম, অঞ্চল, সঞ্চয়, and মঞ্চ.",
+    "Practice ঞ্জ = ঞ্ + জ in অঞ্জলি, গঞ্জ, কুঞ্জ, ব্যঞ্জন, রঞ্জন, and মঞ্জুর.",
+    "Compare ঙ, associated with ng in আঙুল and ভাঙা, with ঞ, usually hidden inside conjuncts in পাঁচ, অঞ্চল, সঞ্চয়, and মঞ্চ.",
+    "Use পাঁচ, পঞ্চাশ, পঞ্চম, অঞ্চল, সঞ্চয়, মঞ্চ, বঞ্চিত, and ব্যঞ্জন as quick reading anchors.",
+    "Recognize these phrases instantly: পাঁচ মিনিট, পাঁচ দিন, পঞ্চাশ টাকা, টাকা সঞ্চয় করো, and মঞ্চে যাও."
   ],
   "notes": [
-    "ঞ is pronounced approximately ny as in canyon.",
-    "ঞ is uncommon by itself and usually appears within conjuncts such as ঞ্চ."
+    "ঞ is a Bangla consonant historically associated with a ny or ñ sound. It almost never appears by itself at the beginning of everyday words.",
+    "The best way to learn ঞ is by recognizing it inside conjunct letters, especially ঞ্চ, ঞ্ছ, ঞ্জ, and ঞ্ঝ.",
+    "গঞ্জ commonly appears in Bangladeshi place names and historically refers to a market town or trading place.",
+    "Do not confuse ঞ with ঙ: ঙ is associated with ng, while ঞ is usually hidden inside conjuncts such as ঞ্চ and ঞ্জ.",
+    "Best words to memorize include পাঁচ, পঞ্চাশ, পঞ্চম, অঞ্চল, আঞ্চলিক, সঞ্চয়, সঞ্চিত, সঞ্চালন, মঞ্চ, বঞ্চিত, বঞ্চনা, লাঞ্ছনা, অঞ্জলি, গঞ্জ, ব্যঞ্জন, and ব্যঞ্জনবর্ণ."
   ]
 }

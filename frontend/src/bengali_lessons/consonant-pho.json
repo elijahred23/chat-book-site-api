@@ -1,136 +1,105 @@
 {
   "id": "consonant-pho",
-  "title": "ফ — phô",
-  "summary": "Learn ফ, pronounced phô, and recognize it in three useful Bengali words.",
+  "title": "ফ — phô / fô",
+  "summary": "Learn the common Bangla consonant ফ, its traditional ph and modern f sounds, vowel-sign forms, and useful words and phrases.",
   "level": "beginner",
   "topic": "Consonant: ফ",
-  "focus": "character recognition and pronunciation",
+  "focus": "character recognition, pronunciation, and the ফেরা word family",
   "phrases": [
-    {
-      "bn": "ফুল শব্দে ফ আছে।",
-      "pronunciation": "phul shôbde phô achhe",
-      "en": "The word “ফুল” contains ফ.",
-      "context": "Find ফ in ফুল and say the complete word aloud.",
-      "category": "consonant-pho",
-      "words": [
-        {
-          "bn": "ফুল",
-          "pronunciation": "phul",
-          "en": "flower"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ফ",
-          "pronunciation": "phô",
-          "en": "the phô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "ফল শব্দে ফ আছে।",
-      "pronunciation": "phôl shôbde phô achhe",
-      "en": "The word “ফল” contains ফ.",
-      "context": "Find ফ in ফল and say the complete word aloud.",
-      "category": "consonant-pho",
-      "words": [
-        {
-          "bn": "ফল",
-          "pronunciation": "phôl",
-          "en": "fruit"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ফ",
-          "pronunciation": "phô",
-          "en": "the phô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "কফি শব্দে ফ আছে।",
-      "pronunciation": "kôfi shôbde phô achhe",
-      "en": "The word “কফি” contains ফ.",
-      "context": "Find ফ in কফি and say the complete word aloud.",
-      "category": "consonant-pho",
-      "words": [
-        {
-          "bn": "কফি",
-          "pronunciation": "kôfi",
-          "en": "coffee"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ফ",
-          "pronunciation": "phô",
-          "en": "the phô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    }
+    { "bn": "আমার ফোন কোথায়?", "pronunciation": "amar phone kothay?", "en": "Where is my phone?", "context": "Ask where your phone is.", "category": "consonant-pho" },
+    { "bn": "আমাকে ফোন করো।", "pronunciation": "amake phone koro.", "en": "Call me.", "context": "Ask someone to phone you.", "category": "consonant-pho" },
+    { "bn": "আমি তোমাকে ফোন করব।", "pronunciation": "ami tomake phone korbo.", "en": "I'll call you.", "context": "Promise to call someone.", "category": "consonant-pho" },
+    { "bn": "ফোনটা দাও।", "pronunciation": "phoneta dao.", "en": "Give me the phone.", "context": "Ask for a phone.", "category": "consonant-pho" },
+    { "bn": "ফোন ধরো।", "pronunciation": "phone dhoro.", "en": "Answer the phone.", "context": "Tell someone to answer a call.", "category": "consonant-pho" },
+    { "bn": "আমি ফল খাই।", "pronunciation": "ami phol khai.", "en": "I eat fruit.", "context": "Talk about eating fruit.", "category": "consonant-pho" },
+    { "bn": "ফল খাব?", "pronunciation": "phol khabo?", "en": "Shall we eat fruit?", "context": "Suggest eating fruit.", "category": "consonant-pho" },
+    { "bn": "এই ফলটা কী?", "pronunciation": "ei pholta ki?", "en": "What fruit is this?", "context": "Ask someone to identify a fruit.", "category": "consonant-pho" },
+    { "bn": "পরীক্ষার ফলাফল কী?", "pronunciation": "porikkhar pholaphol ki?", "en": "What is the exam result?", "context": "Ask about an exam outcome.", "category": "consonant-pho" },
+    { "bn": "এটা একটা ফুল।", "pronunciation": "eta ekta phul.", "en": "This is a flower.", "context": "Identify a flower.", "category": "consonant-pho" },
+    { "bn": "ফুলটা সুন্দর।", "pronunciation": "phulta shundor.", "en": "The flower is beautiful.", "context": "Describe a flower positively.", "category": "consonant-pho" },
+    { "bn": "লাল ফুল।", "pronunciation": "lal phul.", "en": "Red flower.", "context": "Describe a flower's color.", "category": "consonant-pho" },
+    { "bn": "আমি ফুল পছন্দ করি।", "pronunciation": "ami phul pochhondo kori.", "en": "I like flowers.", "context": "Express a preference for flowers.", "category": "consonant-pho" },
+    { "bn": "এটা ফেলে দাও।", "pronunciation": "eta phele dao.", "en": "Throw this away.", "context": "Ask someone to discard something.", "category": "consonant-pho" },
+    { "bn": "ময়লা ফেলে দাও।", "pronunciation": "moyla phele dao.", "en": "Throw away the trash.", "context": "Ask someone to dispose of trash.", "category": "consonant-pho" },
+    { "bn": "নিচে ফেলো না।", "pronunciation": "niche phelo na.", "en": "Don't drop it.", "context": "Warn someone not to drop something.", "category": "consonant-pho" },
+    { "bn": "আমি ভুল করে ফেলে দিয়েছি।", "pronunciation": "ami bhul kore phele diyechhi.", "en": "I threw it away by mistake.", "context": "Explain an accidental disposal.", "category": "consonant-pho" },
+    { "bn": "এটা ফেরত দাও।", "pronunciation": "eta pherot dao.", "en": "Give this back.", "context": "Ask for an item to be returned.", "category": "consonant-pho" },
+    { "bn": "টাকা ফেরত দাও।", "pronunciation": "taka pherot dao.", "en": "Give the money back.", "context": "Ask for money to be returned.", "category": "consonant-pho" },
+    { "bn": "আমি এটা ফেরত দিতে চাই।", "pronunciation": "ami eta pherot dite chai.", "en": "I want to return this.", "context": "Request to return an item.", "category": "consonant-pho" },
+    { "bn": "আমি টাকা ফেরত চাই।", "pronunciation": "ami taka pherot chai.", "en": "I want a refund.", "context": "Ask for a refund.", "category": "consonant-pho" },
+    { "bn": "আমি বাড়ি ফিরব।", "pronunciation": "ami bari phirbo.", "en": "I'll return home.", "context": "Talk about returning home.", "category": "consonant-pho" },
+    { "bn": "আমি বাড়ি ফিরছি।", "pronunciation": "ami bari phirchhi.", "en": "I'm returning home.", "context": "Describe returning home now.", "category": "consonant-pho" },
+    { "bn": "সে কখন ফিরবে?", "pronunciation": "she kokhon phirbe?", "en": "When will he/she return?", "context": "Ask about someone's return.", "category": "consonant-pho" },
+    { "bn": "কখন ফিরবে?", "pronunciation": "kokhon phirbe?", "en": "When will you return?", "context": "Ask when someone will come back.", "category": "consonant-pho" },
+    { "bn": "ফিরে আসো।", "pronunciation": "phire asho.", "en": "Come back.", "context": "Ask someone to return.", "category": "consonant-pho" },
+    { "bn": "আমি ফিরে এসেছি।", "pronunciation": "ami phire eshechhi.", "en": "I'm back.", "context": "Announce your return.", "category": "consonant-pho" },
+    { "bn": "কখন ফিরে আসবে?", "pronunciation": "kokhon phire ashbe?", "en": "When will you come back?", "context": "Ask about a return time.", "category": "consonant-pho" },
+    { "bn": "জায়গাটা ফাঁকা।", "pronunciation": "jaygata fãka.", "en": "The place is empty.", "context": "Describe a vacant place.", "category": "consonant-pho" },
+    { "bn": "ফ্রিজে রাখো।", "pronunciation": "frije rakho.", "en": "Put it in the refrigerator.", "context": "Give a food-storage instruction.", "category": "consonant-pho" },
+    { "bn": "ফ্যান চালাও।", "pronunciation": "fan chalao.", "en": "Turn on the fan.", "context": "Ask someone to start a fan.", "category": "consonant-pho" },
+    { "bn": "ফ্যান বন্ধ করো।", "pronunciation": "fan bondho koro.", "en": "Turn off the fan.", "context": "Ask someone to stop a fan.", "category": "consonant-pho" },
+    { "bn": "ফার্মেসি কোথায়?", "pronunciation": "pharmesi kothay?", "en": "Where is the pharmacy?", "context": "Ask for a pharmacy's location.", "category": "consonant-pho" },
+    { "bn": "ফাইলটা কোথায়?", "pronunciation": "phailta kothay?", "en": "Where is the file?", "context": "Ask where a file is.", "category": "consonant-pho" },
+    { "bn": "ফর্মটা পূরণ করো।", "pronunciation": "phormta puron koro.", "en": "Fill out the form.", "context": "Give a paperwork instruction.", "category": "consonant-pho" }
   ],
   "vocab": [
-    {
-      "bn": "ফ",
-      "pronunciation": "phô",
-      "en": "phô: an aspirated p, often f in modern words",
-      "category": "consonant-pho",
-      "sourcePhrase": "ফুল শব্দে ফ আছে।"
-    },
-    {
-      "bn": "ফুল",
-      "pronunciation": "phul",
-      "en": "flower",
-      "category": "consonant-pho",
-      "sourcePhrase": "ফুল শব্দে ফ আছে।"
-    },
-    {
-      "bn": "ফল",
-      "pronunciation": "phôl",
-      "en": "fruit",
-      "category": "consonant-pho",
-      "sourcePhrase": "ফল শব্দে ফ আছে।"
-    },
-    {
-      "bn": "কফি",
-      "pronunciation": "kôfi",
-      "en": "coffee",
-      "category": "consonant-pho",
-      "sourcePhrase": "কফি শব্দে ফ আছে।"
-    }
+    { "bn": "ফল", "pronunciation": "phol / fol", "en": "fruit / result", "category": "Common Words Beginning with ফ" },
+    { "bn": "ফলাফল", "pronunciation": "pholaphol", "en": "result", "category": "Common Words Beginning with ফ" },
+    { "bn": "ফুল", "pronunciation": "phul / ful", "en": "flower", "category": "Common Words Beginning with ফ" },
+    { "bn": "ফোন", "pronunciation": "fon", "en": "phone", "category": "Common Words Beginning with ফ" },
+    { "bn": "ফোন করা", "pronunciation": "fon kora", "en": "to call", "category": "Common Words Beginning with ফ" },
+    { "bn": "ফেলা", "pronunciation": "phela / fela", "en": "to throw / drop", "category": "Common Words Beginning with ফ" },
+    { "bn": "ফেলো", "pronunciation": "phelo / felo", "en": "throw / drop", "category": "Common Words Beginning with ফ" },
+    { "bn": "ফেলে", "pronunciation": "phele / fele", "en": "after throwing / leaving", "category": "Common Words Beginning with ফ" },
+    { "bn": "ফেরত", "pronunciation": "pherot / ferot", "en": "return / returned", "category": "Common Words Beginning with ফ" },
+    { "bn": "ফেরা", "pronunciation": "phera / fera", "en": "to return", "category": "The ফেরা Word Family" },
+    { "bn": "ফিরে", "pronunciation": "phire / fire", "en": "back / having returned", "category": "The ফেরা Word Family" },
+    { "bn": "ফাঁকা", "pronunciation": "phãka / fãka", "en": "empty / vacant", "category": "Common Words Beginning with ফ" },
+    { "bn": "ফাঁকি", "pronunciation": "phãki / fãki", "en": "avoidance / trick", "category": "Common Words Beginning with ফ" },
+    { "bn": "ফাটল", "pronunciation": "phatol / fatol", "en": "crack", "category": "Common Words Beginning with ফ" },
+    { "bn": "ফাটা", "pronunciation": "phata / fata", "en": "torn / cracked", "category": "Common Words Beginning with ফ" },
+    { "bn": "ফালতু", "pronunciation": "phaltu / faltu", "en": "useless / nonsense", "category": "Common Words Beginning with ফ" },
+    { "bn": "ফার্মেসি", "pronunciation": "pharmesi / farmesi", "en": "pharmacy", "category": "Common Words Beginning with ফ" },
+    { "bn": "ফাইল", "pronunciation": "phail / fail", "en": "file", "category": "Common Words Beginning with ফ" },
+    { "bn": "ফটো", "pronunciation": "foto", "en": "photo", "category": "Common Words Beginning with ফ" },
+    { "bn": "ফ্রিজ", "pronunciation": "frij", "en": "refrigerator", "category": "Common Words Beginning with ফ" },
+    { "bn": "ফ্যান", "pronunciation": "fan", "en": "fan", "category": "Common Words Beginning with ফ" },
+    { "bn": "ফ্ল্যাট", "pronunciation": "flat", "en": "apartment / flat", "category": "Common Words Beginning with ফ" },
+    { "bn": "ফ্লোর", "pronunciation": "flor", "en": "floor", "category": "Common Words Beginning with ফ" },
+    { "bn": "ফেব্রুয়ারি", "pronunciation": "februari", "en": "February", "category": "Common Words Beginning with ফ" },
+    { "bn": "ফেসবুক", "pronunciation": "facebook", "en": "Facebook", "category": "Common Words Beginning with ফ" },
+    { "bn": "ফর্ম", "pronunciation": "form", "en": "form", "category": "Common Words Beginning with ফ" },
+    { "bn": "ফুট", "pronunciation": "fut", "en": "foot", "category": "Common Words Beginning with ফ" },
+    { "bn": "ফুটবল", "pronunciation": "football", "en": "football / soccer", "category": "Common Words Beginning with ফ" },
+    { "bn": "ফোঁটা", "pronunciation": "phõta / fõta", "en": "drop", "category": "Common Words Beginning with ফ" },
+    { "bn": "ফোঁড়া", "pronunciation": "phõra / fõra", "en": "boil / abscess", "category": "Common Words Beginning with ফ" },
+    { "bn": "ফুসফুস", "pronunciation": "fusfus", "en": "lungs", "category": "Common Words Beginning with ফ" },
+    { "bn": "ফিসফিস", "pronunciation": "fisfis", "en": "whisper", "category": "Common Words Beginning with ফ" },
+    { "bn": "ফিসফিস করা", "pronunciation": "fisfis kora", "en": "to whisper", "category": "Common Words Beginning with ফ" },
+    { "bn": "অফিস", "pronunciation": "ofis", "en": "office", "category": "Everyday Words Containing ফ" },
+    { "bn": "কফি", "pronunciation": "kofi", "en": "coffee", "category": "Everyday Words Containing ফ" },
+    { "bn": "সফর", "pronunciation": "sofor", "en": "journey / trip", "category": "Everyday Words Containing ফ" },
+    { "bn": "সফল", "pronunciation": "sofol", "en": "successful", "category": "Everyday Words Containing ফ" },
+    { "bn": "ট্রাফিক", "pronunciation": "traffic", "en": "traffic", "category": "Everyday Words Containing ফ" },
+    { "bn": "টফি", "pronunciation": "tofi", "en": "candy", "category": "Everyday Words Containing ফ" },
+    { "bn": "রেফারি", "pronunciation": "refari", "en": "referee", "category": "Everyday Words Containing ফ" },
+    { "bn": "সোফা", "pronunciation": "sofa", "en": "sofa", "category": "Everyday Words Containing ফ" },
+    { "bn": "কাফেলা", "pronunciation": "kafela", "en": "caravan", "category": "Everyday Words Containing ফ" }
   ],
   "practice": [
-    "Say ফ three times: phô, phô, phô.",
-    "Find ফ in each example word and read the whole word aloud.",
-    "Write ফ five times while saying its name."
+    "Say ফ with its traditional aspirated ph sound and its common modern f sound: phô / fô.",
+    "Practice the vowel forms: ফ (phô/fô), ফা (pha/fa), ফি (phi/fi), ফী (phi/fi, uncommon), ফু (phu/fu), ফূ (phu/fu, rare), ফে (phe/fe), ফৈ (phoi/foi, rare), ফো (pho/fo), and ফৌ (phou/fou).",
+    "Read the combinations aloud: ফ + া = ফা as in ফাঁকা, ফ + ি = ফি as in ফিতা, ফ + ু = ফু as in ফুল, ফ + ে = ফে as in ফেরত, and ফ + ো = ফো as in ফোন.",
+    "Practice the ফেরা family: আমি বাড়ি ফিরব, সে কখন ফিরবে, ফিরে আসো, আমি ফিরে এসেছি, and কখন ফিরে আসবে.",
+    "Compare প (p) with traditional ফ (ph, extra air): পানি / ফল, পথ / ফুল, and পড়া / ফেলা. Notice modern f pronunciation, especially in borrowed words.",
+    "Look for ফ inside অফিস, কফি, সফর, সফল, ট্রাফিক, টফি, রেফারি, সোফা, and কাফেলা.",
+    "Use ফল, ফুল, ফোন, ফেলা, ফেরত, ফিরে, ফাঁকা, ফ্রিজ, and ফ্যান as quick reading anchors.",
+    "Recognize these phrases instantly: আমাকে ফোন করো, ফোন ধরো, এটা ফেলে দাও, এটা ফেরত দাও, and ফিরে আসো."
   ],
   "notes": [
-    "ফ is pronounced approximately an aspirated p, often f in modern words.",
-    "Listen to the audio and compare ফ across the example words."
+    "ফ is a very common Bangla consonant named phô. Traditionally it is an aspirated প, but many modern speakers pronounce it close to English f, especially in borrowed words.",
+    "Both pronunciations appear in common words: ফল may sound like phol or fol, while ফোন is normally pronounced fon.",
+    "The vowel-sign forms include ফ (phô/fô), ফা (pha/fa), ফি (phi/fi), ফী (phi/fi), ফু (phu/fu), ফূ (phu/fu), ফে (phe/fe), ফৈ (phoi/foi), ফো (pho/fo), and ফৌ (phou/fou).",
+    "Best words to memorize include ফোন, ফল, ফলাফল, ফুল, ফেলা, ফেরত, ফেরা, ফিরে, ফাঁকা, ফাটা, ফাইল, ফটো, ফ্যান, ফ্রিজ, ফার্মেসি, ফর্ম, ফুটবল, ফুসফুস, and ফিসফিস."
   ]
 }

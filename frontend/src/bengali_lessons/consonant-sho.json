@@ -1,136 +1,121 @@
 {
   "id": "consonant-sho",
   "title": "শ — shô",
-  "summary": "Learn শ, pronounced shô, and recognize it in three useful Bengali words.",
+  "summary": "Learn the common Bangla consonant শ, its sh sound, vowel-sign forms, useful verb families, and how it differs from ষ and স.",
   "level": "beginner",
   "topic": "Consonant: শ",
-  "focus": "character recognition and pronunciation",
+  "focus": "character recognition, pronunciation, and spelling distinctions",
   "phrases": [
-    {
-      "bn": "শাপলা শব্দে শ আছে।",
-      "pronunciation": "shapla shôbde shô achhe",
-      "en": "The word “শাপলা” contains শ.",
-      "context": "Find শ in শাপলা and say the complete word aloud.",
-      "category": "consonant-sho",
-      "words": [
-        {
-          "bn": "শাপলা",
-          "pronunciation": "shapla",
-          "en": "water lily"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "শ",
-          "pronunciation": "shô",
-          "en": "the shô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "শিশু শব্দে শ আছে।",
-      "pronunciation": "shishu shôbde shô achhe",
-      "en": "The word “শিশু” contains শ.",
-      "context": "Find শ in শিশু and say the complete word aloud.",
-      "category": "consonant-sho",
-      "words": [
-        {
-          "bn": "শিশু",
-          "pronunciation": "shishu",
-          "en": "child"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "শ",
-          "pronunciation": "shô",
-          "en": "the shô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "আকাশ শব্দে শ আছে।",
-      "pronunciation": "akash shôbde shô achhe",
-      "en": "The word “আকাশ” contains শ.",
-      "context": "Find শ in আকাশ and say the complete word aloud.",
-      "category": "consonant-sho",
-      "words": [
-        {
-          "bn": "আকাশ",
-          "pronunciation": "akash",
-          "en": "sky"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "শ",
-          "pronunciation": "shô",
-          "en": "the shô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    }
+    { "bn": "শুরু করো।", "pronunciation": "shuru koro.", "en": "Start.", "context": "Tell someone to begin.", "category": "consonant-sho" },
+    { "bn": "চলো শুরু করি।", "pronunciation": "cholo shuru kori.", "en": "Let's start.", "context": "Suggest beginning together.", "category": "consonant-sho" },
+    { "bn": "কখন শুরু হবে?", "pronunciation": "kokhon shuru hobe?", "en": "When will it start?", "context": "Ask about a starting time.", "category": "consonant-sho" },
+    { "bn": "এখন শুরু করি।", "pronunciation": "ekhon shuru kori.", "en": "Let's start now.", "context": "Suggest beginning immediately.", "category": "consonant-sho" },
+    { "bn": "শুরু থেকে বলো।", "pronunciation": "shuru theke bolo.", "en": "Tell me from the beginning.", "context": "Ask for a complete retelling.", "category": "consonant-sho" },
+    { "bn": "শেষ।", "pronunciation": "shesh.", "en": "Finished.", "context": "Announce completion.", "category": "consonant-sho" },
+    { "bn": "শেষ করো।", "pronunciation": "shesh koro.", "en": "Finish it.", "context": "Tell someone to complete something.", "category": "consonant-sho" },
+    { "bn": "কখন শেষ হবে?", "pronunciation": "kokhon shesh hobe?", "en": "When will it finish?", "context": "Ask about an ending time.", "category": "consonant-sho" },
+    { "bn": "আমি শেষ করেছি।", "pronunciation": "ami shesh korechhi.", "en": "I have finished.", "context": "Report completing something.", "category": "consonant-sho" },
+    { "bn": "এটা শেষ হয়ে গেছে।", "pronunciation": "eta shesh hoye gechhe.", "en": "It's finished.", "context": "Describe something already completed.", "category": "consonant-sho" },
+    { "bn": "শেষ হয়ে গেছে।", "pronunciation": "shesh hoye gechhe.", "en": "It's finished.", "context": "State that something is over.", "category": "consonant-sho" },
+    { "bn": "আমি বাংলা শিখছি।", "pronunciation": "ami bangla shikhchhi.", "en": "I'm learning Bangla.", "context": "Describe language study.", "category": "consonant-sho" },
+    { "bn": "আমি বাংলা শিখতে চাই।", "pronunciation": "ami bangla shikhte chai.", "en": "I want to learn Bangla.", "context": "Express a learning goal.", "category": "consonant-sho" },
+    { "bn": "আমি শিখতে চাই।", "pronunciation": "ami shikhte chai.", "en": "I want to learn.", "context": "Express a desire to learn.", "category": "consonant-sho" },
+    { "bn": "আমি পড়তে শিখছি।", "pronunciation": "ami porte shikhchhi.", "en": "I'm learning to read.", "context": "Describe learning to read.", "category": "consonant-sho" },
+    { "bn": "এটা কীভাবে শিখব?", "pronunciation": "eta kibhabe shikhbo?", "en": "How will I learn this?", "context": "Ask about a learning method.", "category": "consonant-sho" },
+    { "bn": "আমাকে শেখাও।", "pronunciation": "amake shekhao.", "en": "Teach me.", "context": "Ask someone to teach you.", "category": "consonant-sho" },
+    { "bn": "আমি বাংলা শিখি।", "pronunciation": "ami bangla shikhi.", "en": "I learn Bangla.", "context": "Describe habitual study.", "category": "consonant-sho" },
+    { "bn": "আমি অনেক কিছু শিখেছি।", "pronunciation": "ami onek kichhu shikhechhi.", "en": "I've learned many things.", "context": "Describe completed learning.", "category": "consonant-sho" },
+    { "bn": "শুনো।", "pronunciation": "shuno.", "en": "Listen.", "context": "Ask someone to listen.", "category": "consonant-sho" },
+    { "bn": "আমার কথা শুনো।", "pronunciation": "amar kotha shuno.", "en": "Listen to me.", "context": "Ask for attention.", "category": "consonant-sho" },
+    { "bn": "আমি গান শুনছি।", "pronunciation": "ami gan shunchhi.", "en": "I'm listening to music.", "context": "Describe listening to music.", "category": "consonant-sho" },
+    { "bn": "তুমি কি শুনতে পাচ্ছ?", "pronunciation": "tumi ki shunte pachchho?", "en": "Can you hear?", "context": "Check whether someone can hear.", "category": "consonant-sho" },
+    { "bn": "শুনতে পাচ্ছ?", "pronunciation": "shunte pachchho?", "en": "Can you hear?", "context": "Check audibility casually.", "category": "consonant-sho" },
+    { "bn": "আমি শুনতে পাচ্ছি না।", "pronunciation": "ami shunte pachchhi na.", "en": "I can't hear.", "context": "Report difficulty hearing.", "category": "consonant-sho" },
+    { "bn": "আমি শুনছি।", "pronunciation": "ami shunchhi.", "en": "I'm listening.", "context": "Confirm that you are listening.", "category": "consonant-sho" },
+    { "bn": "তুমি শুনছ?", "pronunciation": "tumi shunchho?", "en": "Are you listening?", "context": "Check someone's attention.", "category": "consonant-sho" },
+    { "bn": "আমি এটা শুনেছি।", "pronunciation": "ami eta shunechhi.", "en": "I've heard this.", "context": "Describe having heard something before.", "category": "consonant-sho" },
+    { "bn": "আমার শরীর ভালো আছে।", "pronunciation": "amar shorir bhalo achhe.", "en": "My body/health is fine.", "context": "Describe feeling healthy.", "category": "consonant-sho" },
+    { "bn": "শরীর খারাপ।", "pronunciation": "shorir kharap.", "en": "I'm feeling sick/unwell.", "context": "Describe feeling unwell.", "category": "consonant-sho" },
+    { "bn": "শরীরে ব্যথা।", "pronunciation": "shorire byatha.", "en": "My body hurts.", "context": "Describe body pain.", "category": "consonant-sho" },
+    { "bn": "শরীরের যত্ন নাও।", "pronunciation": "shorirer jotno nao.", "en": "Take care of your body/health.", "context": "Give health advice.", "category": "consonant-sho" },
+    { "bn": "শরীর কেমন?", "pronunciation": "shorir kemon?", "en": "How are you feeling?", "context": "Ask about someone's health.", "category": "consonant-sho" },
+    { "bn": "শান্ত হও।", "pronunciation": "shanto hoo.", "en": "Calm down.", "context": "Ask someone to become calm.", "category": "consonant-sho" },
+    { "bn": "এখানে শান্তি আছে।", "pronunciation": "ekhane shanti achhe.", "en": "It's peaceful here.", "context": "Describe a peaceful place.", "category": "consonant-sho" },
+    { "bn": "শহরটা সুন্দর।", "pronunciation": "shohorta shundor.", "en": "The city is beautiful.", "context": "Describe a city positively.", "category": "consonant-sho" },
+    { "bn": "এটা খুব শক্ত।", "pronunciation": "eta khub shokto.", "en": "This is very hard.", "context": "Describe hardness or strength.", "category": "consonant-sho" },
+    { "bn": "আমার শক্তি নেই।", "pronunciation": "amar shokti nei.", "en": "I don't have energy.", "context": "Describe low energy.", "category": "consonant-sho" },
+    { "bn": "শুয়ে পড়ো।", "pronunciation": "shuye poro.", "en": "Lie down.", "context": "Tell someone to lie down.", "category": "consonant-sho" },
+    { "bn": "শ্বাস নাও।", "pronunciation": "shash nao.", "en": "Breathe / Take a breath.", "context": "Give a breathing instruction.", "category": "consonant-sho" },
+    { "bn": "শব্দটা কী?", "pronunciation": "shobdota ki?", "en": "What is the word/sound?", "context": "Ask someone to identify a word or sound.", "category": "consonant-sho" },
+    { "bn": "এই শব্দের মানে কী?", "pronunciation": "ei shobder mane ki?", "en": "What does this word mean?", "context": "Ask for a word's meaning.", "category": "consonant-sho" }
   ],
   "vocab": [
-    {
-      "bn": "শ",
-      "pronunciation": "shô",
-      "en": "shô: sh",
-      "category": "consonant-sho",
-      "sourcePhrase": "শাপলা শব্দে শ আছে।"
-    },
-    {
-      "bn": "শাপলা",
-      "pronunciation": "shapla",
-      "en": "water lily",
-      "category": "consonant-sho",
-      "sourcePhrase": "শাপলা শব্দে শ আছে।"
-    },
-    {
-      "bn": "শিশু",
-      "pronunciation": "shishu",
-      "en": "child",
-      "category": "consonant-sho",
-      "sourcePhrase": "শিশু শব্দে শ আছে।"
-    },
-    {
-      "bn": "আকাশ",
-      "pronunciation": "akash",
-      "en": "sky",
-      "category": "consonant-sho",
-      "sourcePhrase": "আকাশ শব্দে শ আছে।"
-    }
+    { "bn": "শব্দ", "pronunciation": "shobdo", "en": "word / sound", "category": "Common Words Beginning with শ" },
+    { "bn": "সব্দ", "pronunciation": "sobdo", "en": "nonstandard misspelling of শব্দ", "category": "Spelling Note" },
+    { "bn": "শাক", "pronunciation": "shak", "en": "leafy vegetables", "category": "Common Words Beginning with শ" },
+    { "bn": "শান্ত", "pronunciation": "shanto", "en": "calm / peaceful", "category": "Common Words Beginning with শ" },
+    { "bn": "শান্তি", "pronunciation": "shanti", "en": "peace", "category": "Common Words Beginning with শ" },
+    { "bn": "শাড়ি", "pronunciation": "shari", "en": "sari", "category": "Common Words Beginning with শ" },
+    { "bn": "শার্ট", "pronunciation": "shirt", "en": "shirt", "category": "Common Words Beginning with শ" },
+    { "bn": "শরীর", "pronunciation": "shorir", "en": "body", "category": "Common Words Beginning with শ" },
+    { "bn": "শরীরের", "pronunciation": "shorirer", "en": "of the body", "category": "Common Words Beginning with শ" },
+    { "bn": "শুরু", "pronunciation": "shuru", "en": "beginning / start", "category": "Common Words Beginning with শ" },
+    { "bn": "শুরু করা", "pronunciation": "shuru kora", "en": "to start", "category": "Common Words Beginning with শ" },
+    { "bn": "শেখা", "pronunciation": "shekha", "en": "to learn", "category": "The শেখা Word Family" },
+    { "bn": "শেখানো", "pronunciation": "shekhano", "en": "to teach", "category": "The শেখা Word Family" },
+    { "bn": "শেখার", "pronunciation": "shekhar", "en": "of learning", "category": "The শেখা Word Family" },
+    { "bn": "শিখি", "pronunciation": "shikhi", "en": "I learn", "category": "The শেখা Word Family" },
+    { "bn": "শিখছি", "pronunciation": "shikhchhi", "en": "I am learning", "category": "The শেখা Word Family" },
+    { "bn": "শিখতে", "pronunciation": "shikhte", "en": "to learn", "category": "The শেখা Word Family" },
+    { "bn": "শিখেছি", "pronunciation": "shikhechhi", "en": "I have learned", "category": "The শেখা Word Family" },
+    { "bn": "শেষ", "pronunciation": "shesh", "en": "end / finished", "category": "Common Words Beginning with শ" },
+    { "bn": "শেষ করা", "pronunciation": "shesh kora", "en": "to finish", "category": "Common Words Beginning with শ" },
+    { "bn": "শোনা", "pronunciation": "shona", "en": "to hear / listen", "category": "The শোনা Word Family" },
+    { "bn": "শুনি", "pronunciation": "shuni", "en": "I hear", "category": "The শোনা Word Family" },
+    { "bn": "শুনতে", "pronunciation": "shunte", "en": "to listen", "category": "The শোনা Word Family" },
+    { "bn": "শুনো", "pronunciation": "shuno", "en": "listen", "category": "The শোনা Word Family" },
+    { "bn": "শুনুন", "pronunciation": "shunun", "en": "listen (respectful)", "category": "The শোনা Word Family" },
+    { "bn": "শুনছি", "pronunciation": "shunchhi", "en": "am listening", "category": "The শোনা Word Family" },
+    { "bn": "শুনেছি", "pronunciation": "shunechhi", "en": "I have heard", "category": "The শোনা Word Family" },
+    { "bn": "শহর", "pronunciation": "shohor", "en": "city", "category": "Common Words Beginning with শ" },
+    { "bn": "শহরের", "pronunciation": "shohorer", "en": "of the city", "category": "Common Words Beginning with শ" },
+    { "bn": "শিশু", "pronunciation": "shishu", "en": "child", "category": "Common Words Beginning with শ" },
+    { "bn": "শিক্ষা", "pronunciation": "shikkha", "en": "education", "category": "Common Words Beginning with শ" },
+    { "bn": "শিক্ষক", "pronunciation": "shikkhok", "en": "teacher", "category": "Common Words Beginning with শ" },
+    { "bn": "শিক্ষার্থী", "pronunciation": "shikkharthi", "en": "student", "category": "Common Words Beginning with শ" },
+    { "bn": "শীত", "pronunciation": "shit", "en": "winter / cold", "category": "Common Words Beginning with শ" },
+    { "bn": "শীতকাল", "pronunciation": "shitkal", "en": "winter season", "category": "Common Words Beginning with শ" },
+    { "bn": "শুয়ে", "pronunciation": "shuye", "en": "lying down", "category": "Common Words Beginning with শ" },
+    { "bn": "শোয়া", "pronunciation": "shoa", "en": "to lie down", "category": "Common Words Beginning with শ" },
+    { "bn": "শক্ত", "pronunciation": "shokto", "en": "hard / strong", "category": "Common Words Beginning with শ" },
+    { "bn": "শক্তি", "pronunciation": "shokti", "en": "strength / energy", "category": "Common Words Beginning with শ" },
+    { "bn": "শত", "pronunciation": "shoto", "en": "hundred", "category": "Common Words Beginning with শ" },
+    { "bn": "শতকরা", "pronunciation": "shotokora", "en": "percent", "category": "Common Words Beginning with শ" },
+    { "bn": "শত্রু", "pronunciation": "shotru", "en": "enemy", "category": "Common Words Beginning with শ" },
+    { "bn": "শাস্তি", "pronunciation": "shasti", "en": "punishment", "category": "Common Words Beginning with শ" },
+    { "bn": "শ্বাস", "pronunciation": "shash", "en": "breath", "category": "Common Words Beginning with শ" },
+    { "bn": "শ্বাস নেওয়া", "pronunciation": "shash neoa", "en": "to breathe", "category": "Common Words Beginning with শ" },
+    { "bn": "শূন্য", "pronunciation": "shunno", "en": "zero / empty", "category": "Common Words Beginning with শ" },
+    { "bn": "শৈশব", "pronunciation": "shoishob", "en": "childhood", "category": "Common Words Beginning with শ" },
+    { "bn": "শৌখিন", "pronunciation": "shoukhin", "en": "fond of hobbies / stylish", "category": "Common Words Beginning with শ" },
+    { "bn": "সুন্দর", "pronunciation": "shundor", "en": "beautiful (spelled with স)", "category": "Spelling Comparison" }
   ],
   "practice": [
     "Say শ three times: shô, shô, shô.",
-    "Find শ in each example word and read the whole word aloud.",
-    "Write শ five times while saying its name."
+    "Practice the vowel forms: শ (shô), শা (sha), শি (shi), শী (shi), শু (shu), শূ (shu), শে (she), শৈ (shoi), শো (sho), and শৌ (shou).",
+    "Read the combinations aloud: শ + া = শা as in শান্ত, শ + ি = শি as in শিশু, শ + ী = শী as in শীত, শ + ু = শু as in শুরু, শ + ূ = শূ as in শূন্য, শ + ে = শে as in শেখা, and শ + ো = শো as in শোনা.",
+    "Memorize the useful opposite pair শুরু ↔ শেষ, start ↔ finish.",
+    "Practice the শোনা family: শোনা, শুনি, শুনো, শুনুন, শুনছি, শুনতে, and শুনেছি.",
+    "Practice the শেখা family: শেখা, শিখি, শিখছি, শিখতে, and শিখেছি.",
+    "Compare শ, ষ, and স by whole-word spelling: শহর/শুরু/শেষ/শোনা; কষ্ট/নষ্ট; সকাল/সময়/সাদা/সুন্দর.",
+    "Use শুরু, শেষ, শেখা, শোনা, শহর, শরীর, শব্দ, শান্তি, শিশু, শীত, and শূন্য as quick reading anchors.",
+    "Recognize these phrases instantly: শুরু করো, শেষ করো, আমি বাংলা শিখছি, আমার কথা শুনো, and এই শব্দের মানে কী."
   ],
   "notes": [
-    "শ is pronounced approximately sh.",
-    "Listen to the audio and compare শ across the example words."
+    "শ is a very common Bangla consonant called তালব্য শ (talobbo shô). It usually sounds like sh in the English word shoe.",
+    "The standard spelling for word/sound is শব্দ. The supplied form সব্দ is nonstandard and should not be used in careful writing.",
+    "The vowel-sign forms include শ (shô), শা (sha), শি (shi), শী (shi), শু (shu), শূ (shu), শে (she), শৈ (shoi), শো (sho), and শৌ (shou).",
+    "Bangla has three letters learners associate with s or sh: শ usually sounds sh, ষ often sounds sh, and স sounds s or sometimes sh. Modern শ and ষ may sound very similar, so whole-word spelling matters.",
+    "Best words to memorize include শুরু, শেষ, শেখা, শেখানো, শোনা, শুনো, শহর, শরীর, শব্দ, শান্ত, শান্তি, শক্ত, শক্তি, শিশু, শিক্ষা, শিক্ষক, শিক্ষার্থী, শীত, শূন্য, শ্বাস, and শাড়ি."
   ]
 }

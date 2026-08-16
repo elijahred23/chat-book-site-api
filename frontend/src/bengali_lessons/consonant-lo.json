@@ -1,136 +1,98 @@
 {
   "id": "consonant-lo",
   "title": "ল — lô",
-  "summary": "Learn ল, pronounced lô, and recognize it in three useful Bengali words.",
+  "summary": "Learn the common Bangla consonant ল, its l sound, vowel-sign forms, and the highly useful লাগা word family.",
   "level": "beginner",
   "topic": "Consonant: ল",
-  "focus": "character recognition and pronunciation",
+  "focus": "character recognition, pronunciation, and the লাগা word family",
   "phrases": [
-    {
-      "bn": "লাল শব্দে ল আছে।",
-      "pronunciation": "lal shôbde lô achhe",
-      "en": "The word “লাল” contains ল.",
-      "context": "Find ল in লাল and say the complete word aloud.",
-      "category": "consonant-lo",
-      "words": [
-        {
-          "bn": "লাল",
-          "pronunciation": "lal",
-          "en": "red"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ল",
-          "pronunciation": "lô",
-          "en": "the lô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "লবণ শব্দে ল আছে।",
-      "pronunciation": "lôboṇ shôbde lô achhe",
-      "en": "The word “লবণ” contains ল.",
-      "context": "Find ল in লবণ and say the complete word aloud.",
-      "category": "consonant-lo",
-      "words": [
-        {
-          "bn": "লবণ",
-          "pronunciation": "lôboṇ",
-          "en": "salt"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ল",
-          "pronunciation": "lô",
-          "en": "the lô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "ফল শব্দে ল আছে।",
-      "pronunciation": "phôl shôbde lô achhe",
-      "en": "The word “ফল” contains ল.",
-      "context": "Find ল in ফল and say the complete word aloud.",
-      "category": "consonant-lo",
-      "words": [
-        {
-          "bn": "ফল",
-          "pronunciation": "phôl",
-          "en": "fruit"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ল",
-          "pronunciation": "lô",
-          "en": "the lô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    }
+    { "bn": "আমার ভালো লাগে।", "pronunciation": "amar bhalo lage.", "en": "I like it.", "context": "Express liking something.", "category": "consonant-lo" },
+    { "bn": "আমার ভালো লাগছে।", "pronunciation": "amar bhalo lagchhe.", "en": "I'm enjoying it / It feels good.", "context": "Express a positive feeling.", "category": "consonant-lo" },
+    { "bn": "আমার ভালো লাগছে না।", "pronunciation": "amar bhalo lagchhe na.", "en": "I don't like it / I don't feel well.", "context": "Express dislike or discomfort.", "category": "consonant-lo" },
+    { "bn": "আমার খারাপ লাগছে।", "pronunciation": "amar kharap lagchhe.", "en": "I feel bad.", "context": "Describe feeling unwell or upset.", "category": "consonant-lo" },
+    { "bn": "আমার ভয় লাগছে।", "pronunciation": "amar bhoy lagchhe.", "en": "I'm scared.", "context": "Express fear.", "category": "consonant-lo" },
+    { "bn": "কত সময় লাগবে?", "pronunciation": "koto shomoy lagbe?", "en": "How long will it take?", "context": "Ask about duration.", "category": "consonant-lo" },
+    { "bn": "এটা লাগবে।", "pronunciation": "eta lagbe.", "en": "This will be needed.", "context": "Say an item will be needed.", "category": "consonant-lo" },
+    { "bn": "আমার এটা লাগবে।", "pronunciation": "amar eta lagbe.", "en": "I need this.", "context": "Express a future or immediate need.", "category": "consonant-lo" },
+    { "bn": "ভালো লাগছে।", "pronunciation": "bhalo lagchhe.", "en": "Feels good / I like it.", "context": "Express a positive reaction.", "category": "consonant-lo" },
+    { "bn": "খারাপ লাগছে।", "pronunciation": "kharap lagchhe.", "en": "I feel bad.", "context": "Express discomfort.", "category": "consonant-lo" },
+    { "bn": "ভয় লাগছে।", "pronunciation": "bhoy lagchhe.", "en": "I'm scared.", "context": "Express fear briefly.", "category": "consonant-lo" },
+    { "bn": "এক ঘণ্টা লাগবে।", "pronunciation": "ek ghonta lagbe.", "en": "It will take one hour.", "context": "State a duration.", "category": "consonant-lo" },
+    { "bn": "আমার টাকা লাগবে।", "pronunciation": "amar taka lagbe.", "en": "I will need money.", "context": "Express a need for money.", "category": "consonant-lo" },
+    { "bn": "ওই লোকটা কে?", "pronunciation": "oi lokta ke?", "en": "Who is that person?", "context": "Ask someone's identity.", "category": "consonant-lo" },
+    { "bn": "অনেক লোক আছে।", "pronunciation": "onek lok achhe.", "en": "There are many people.", "context": "Describe a crowd.", "category": "consonant-lo" },
+    { "bn": "লোকটা ভালো।", "pronunciation": "lokta bhalo.", "en": "The person is nice.", "context": "Describe someone positively.", "category": "consonant-lo" },
+    { "bn": "আমি বাংলা লিখছি।", "pronunciation": "ami bangla likhchhi.", "en": "I'm writing Bangla.", "context": "Describe writing in Bangla.", "category": "consonant-lo" },
+    { "bn": "এখানে কী লেখা আছে?", "pronunciation": "ekhane ki lekha achhe?", "en": "What is written here?", "context": "Ask about written text.", "category": "consonant-lo" },
+    { "bn": "এটা লিখে দাও।", "pronunciation": "eta likhe dao.", "en": "Write this down for me.", "context": "Ask someone to write something.", "category": "consonant-lo" },
+    { "bn": "বাংলায় লিখো।", "pronunciation": "banglay likho.", "en": "Write in Bangla.", "context": "Ask someone to use Bangla writing.", "category": "consonant-lo" },
+    { "bn": "এটা লাল।", "pronunciation": "eta lal.", "en": "This is red.", "context": "Identify a color.", "category": "consonant-lo" },
+    { "bn": "লাল রং।", "pronunciation": "lal rong.", "en": "Red color.", "context": "Practice লাল in a color phrase.", "category": "consonant-lo" },
+    { "bn": "লাল গাড়ি।", "pronunciation": "lal gari.", "en": "Red car.", "context": "Describe a car's color.", "category": "consonant-lo" },
+    { "bn": "আমার লালটা চাই।", "pronunciation": "amar lalta chai.", "en": "I want the red one.", "context": "Choose an item by color.", "category": "consonant-lo" },
+    { "bn": "সে অনেক লম্বা।", "pronunciation": "she onek lomba.", "en": "He/she is very tall.", "context": "Describe someone's height.", "category": "consonant-lo" },
+    { "bn": "রাস্তাটা অনেক লম্বা।", "pronunciation": "rastata onek lomba.", "en": "The road is very long.", "context": "Describe a road's length.", "category": "consonant-lo" },
+    { "bn": "লম্বা চুল।", "pronunciation": "lomba chul.", "en": "Long hair.", "context": "Describe hair length.", "category": "consonant-lo" },
+    { "bn": "লবণ দাও।", "pronunciation": "lobon dao.", "en": "Give me salt.", "context": "Ask for salt.", "category": "consonant-lo" },
+    { "bn": "লেবু দাও।", "pronunciation": "lebu dao.", "en": "Give me a lemon/lime.", "context": "Ask for a lemon or lime.", "category": "consonant-lo" },
+    { "bn": "লাফ দাও।", "pronunciation": "laf dao.", "en": "Jump.", "context": "Tell someone to jump.", "category": "consonant-lo" },
+    { "bn": "লুকিয়ে থাকো।", "pronunciation": "lukiye thako.", "en": "Stay hidden.", "context": "Tell someone to remain hidden.", "category": "consonant-lo" },
+    { "bn": "আমার লক্ষ্য আছে।", "pronunciation": "amar lokkho achhe.", "en": "I have a goal.", "context": "State that you have a goal.", "category": "consonant-lo" },
+    { "bn": "আমার লক্ষ্য বাংলা শেখা।", "pronunciation": "amar lokkho bangla shekha.", "en": "My goal is to learn Bangla.", "context": "Describe a learning goal.", "category": "consonant-lo" },
+    { "bn": "কী লক্ষণ আছে?", "pronunciation": "ki lokkhon achhe?", "en": "What symptoms are there?", "context": "Ask about symptoms.", "category": "consonant-lo" },
+    { "bn": "লজ্জা পেও না।", "pronunciation": "lojja peyo na.", "en": "Don't be embarrassed.", "context": "Reassure someone.", "category": "consonant-lo" }
   ],
   "vocab": [
-    {
-      "bn": "ল",
-      "pronunciation": "lô",
-      "en": "lô: l",
-      "category": "consonant-lo",
-      "sourcePhrase": "লাল শব্দে ল আছে।"
-    },
-    {
-      "bn": "লাল",
-      "pronunciation": "lal",
-      "en": "red",
-      "category": "consonant-lo",
-      "sourcePhrase": "লাল শব্দে ল আছে।"
-    },
-    {
-      "bn": "লবণ",
-      "pronunciation": "lôboṇ",
-      "en": "salt",
-      "category": "consonant-lo",
-      "sourcePhrase": "লবণ শব্দে ল আছে।"
-    },
-    {
-      "bn": "ফল",
-      "pronunciation": "phôl",
-      "en": "fruit",
-      "category": "consonant-lo",
-      "sourcePhrase": "ফল শব্দে ল আছে।"
-    }
+    { "bn": "লোক", "pronunciation": "lok", "en": "person / people", "category": "Common Words Beginning with ল" },
+    { "bn": "লোকজন", "pronunciation": "lokjon", "en": "people", "category": "Common Words Beginning with ল" },
+    { "bn": "লাল", "pronunciation": "lal", "en": "red", "category": "Common Words Beginning with ল" },
+    { "bn": "লম্বা", "pronunciation": "lomba", "en": "tall / long", "category": "Common Words Beginning with ল" },
+    { "bn": "লম্বা হওয়া", "pronunciation": "lomba hooa", "en": "to become tall/long", "category": "Common Words Beginning with ল" },
+    { "bn": "লেখা", "pronunciation": "lekha", "en": "writing / to write", "category": "Common Words Beginning with ল" },
+    { "bn": "লেখক", "pronunciation": "lekhok", "en": "writer", "category": "Common Words Beginning with ল" },
+    { "bn": "লেখিকা", "pronunciation": "lekhika", "en": "female writer", "category": "Common Words Beginning with ল" },
+    { "bn": "লিখা", "pronunciation": "likha", "en": "writing (variant; লেখা is standard)", "category": "Common Words Beginning with ল" },
+    { "bn": "লিখতে", "pronunciation": "likhte", "en": "to write", "category": "Common Words Beginning with ল" },
+    { "bn": "লিখি", "pronunciation": "likhi", "en": "I write", "category": "Common Words Beginning with ল" },
+    { "bn": "লিখো", "pronunciation": "likho", "en": "write", "category": "Common Words Beginning with ল" },
+    { "bn": "লাগা", "pronunciation": "laga", "en": "to feel / need / take", "category": "The লাগা Word Family" },
+    { "bn": "লাগে", "pronunciation": "lage", "en": "feels / needs / takes", "category": "The লাগা Word Family" },
+    { "bn": "লাগছে", "pronunciation": "lagchhe", "en": "is feeling / taking", "category": "The লাগা Word Family" },
+    { "bn": "লাগবে", "pronunciation": "lagbe", "en": "will need / will take", "category": "The লাগা Word Family" },
+    { "bn": "লেগেছে", "pronunciation": "legechhe", "en": "has affected / has taken", "category": "The লাগা Word Family" },
+    { "bn": "লাগানো", "pronunciation": "lagano", "en": "to put / attach", "category": "The লাগা Word Family" },
+    { "bn": "লাভ", "pronunciation": "labh", "en": "profit / benefit", "category": "Common Words Beginning with ল" },
+    { "bn": "লাফ", "pronunciation": "laf", "en": "jump", "category": "Common Words Beginning with ল" },
+    { "bn": "লাফানো", "pronunciation": "lafano", "en": "to jump", "category": "Common Words Beginning with ল" },
+    { "bn": "লড়াই", "pronunciation": "lorai", "en": "fight / struggle", "category": "Common Words Beginning with ল" },
+    { "bn": "লড়া", "pronunciation": "lora", "en": "to fight", "category": "Common Words Beginning with ল" },
+    { "bn": "লুকানো", "pronunciation": "lukano", "en": "to hide", "category": "Common Words Beginning with ল" },
+    { "bn": "লুকিয়ে", "pronunciation": "lukiye", "en": "secretly / while hiding", "category": "Common Words Beginning with ল" },
+    { "bn": "লুট", "pronunciation": "lut", "en": "robbery / looting", "category": "Common Words Beginning with ল" },
+    { "bn": "লেবু", "pronunciation": "lebu", "en": "lemon / lime", "category": "Common Words Beginning with ল" },
+    { "bn": "লবণ", "pronunciation": "lobon", "en": "salt", "category": "Common Words Beginning with ল" },
+    { "bn": "লিচু", "pronunciation": "lichu", "en": "lychee", "category": "Common Words Beginning with ল" },
+    { "bn": "লোহা", "pronunciation": "loha", "en": "iron", "category": "Common Words Beginning with ল" },
+    { "bn": "লাঠি", "pronunciation": "lathi", "en": "stick", "category": "Common Words Beginning with ল" },
+    { "bn": "লাশ", "pronunciation": "lash", "en": "dead body", "category": "Common Words Beginning with ল" },
+    { "bn": "লক্ষ্য", "pronunciation": "lokkho", "en": "goal / target", "category": "Common Words Beginning with ল" },
+    { "bn": "লক্ষ", "pronunciation": "lokkh", "en": "one hundred thousand / lakh", "category": "Common Words Beginning with ল" },
+    { "bn": "লক্ষণ", "pronunciation": "lokkhon", "en": "sign / symptom", "category": "Common Words Beginning with ল" },
+    { "bn": "লজ্জা", "pronunciation": "lojja", "en": "shame / embarrassment", "category": "Common Words Beginning with ল" },
+    { "bn": "লজ্জিত", "pronunciation": "lojjito", "en": "embarrassed / ashamed", "category": "Common Words Beginning with ল" }
   ],
   "practice": [
     "Say ল three times: lô, lô, lô.",
-    "Find ল in each example word and read the whole word aloud.",
-    "Write ল five times while saying its name."
+    "Practice the vowel forms: ল (lô), লা (la), লি (li), লী (li), লু (lu), লূ (lu, rare), লে (le), লৈ (loi, uncommon), লো (lo), and লৌ (lou).",
+    "Read the combinations aloud: ল + া = লা as in লাল, ল + ি = লি as in লিচু, ল + ু = লু as in লুকানো, ল + ে = লে as in লেবু, and ল + ো = লো as in লোক.",
+    "Practice the লাগা family across contexts: ভালো লাগছে, খারাপ লাগছে, ভয় লাগছে, এক ঘণ্টা লাগবে, and আমার টাকা লাগবে.",
+    "Use লাল, লোক, লম্বা, লেবু, লবণ, লিখতে, লাগবে, লড়াই, and লুকানো as quick reading anchors.",
+    "Recognize these phrases instantly: আমার ভালো লাগে, আমার খারাপ লাগছে, কত সময় লাগবে, এখানে কী লেখা আছে, and বাংলায় লিখো."
   ],
   "notes": [
-    "ল is pronounced approximately l.",
-    "Listen to the audio and compare ল across the example words."
+    "ল is one of the most common Bangla consonants. Its name is lô and its sound is roughly l as in the English word love.",
+    "The vowel-sign forms include ল (lô), লা (la), লি (li), লী (li), লু (lu), লূ (lu), লে (le), লৈ (loi), লো (lo), and লৌ (lou). Examples include লবণ, লাল, লিচু, লীলা, লুকানো, লেবু, লোক, and লৌহ.",
+    "The লাগা family is extremely common and changes meaning by context: it can express feeling, liking, fear, time required, need, or attachment.",
+    "Best words to memorize include লোক, লাল, লম্বা, লাগা, লাগে, লাগছে, লাগবে, লেখা, লিখতে, লেবু, লবণ, লিচু, লাফ, লড়াই, লুকানো, লোহা, লাঠি, লজ্জা, লক্ষ্য, and লক্ষণ."
   ]
 }

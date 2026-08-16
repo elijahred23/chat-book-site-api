@@ -1,136 +1,87 @@
 {
   "id": "consonant-nno",
   "title": "ণ — ṇô",
-  "summary": "Learn ণ, pronounced ṇô, and recognize it in three useful Bengali words.",
+  "summary": "Learn the Bangla retroflex consonant ণ, its common internal and conjunct forms, and how its spelling differs from ন.",
   "level": "beginner",
   "topic": "Consonant: ণ",
-  "focus": "character recognition and pronunciation",
+  "focus": "internal character recognition, spelling, and pronunciation",
   "phrases": [
-    {
-      "bn": "হরিণ শব্দে ণ আছে।",
-      "pronunciation": "horiṇ shôbde ṇô achhe",
-      "en": "The word “হরিণ” contains ণ.",
-      "context": "Find ণ in হরিণ and say the complete word aloud.",
-      "category": "consonant-nno",
-      "words": [
-        {
-          "bn": "হরিণ",
-          "pronunciation": "horiṇ",
-          "en": "deer"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ণ",
-          "pronunciation": "ṇô",
-          "en": "the ṇô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "গণিত শব্দে ণ আছে।",
-      "pronunciation": "gôṇit shôbde ṇô achhe",
-      "en": "The word “গণিত” contains ণ.",
-      "context": "Find ণ in গণিত and say the complete word aloud.",
-      "category": "consonant-nno",
-      "words": [
-        {
-          "bn": "গণিত",
-          "pronunciation": "gôṇit",
-          "en": "mathematics"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ণ",
-          "pronunciation": "ṇô",
-          "en": "the ṇô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "ঘণ্টা শব্দে ণ আছে।",
-      "pronunciation": "ghônṭa shôbde ṇô achhe",
-      "en": "The word “ঘণ্টা” contains ণ.",
-      "context": "Find ণ in ঘণ্টা and say the complete word aloud.",
-      "category": "consonant-nno",
-      "words": [
-        {
-          "bn": "ঘণ্টা",
-          "pronunciation": "ghônṭa",
-          "en": "hour"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ণ",
-          "pronunciation": "ṇô",
-          "en": "the ṇô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    }
+    { "bn": "কারণ কী?", "pronunciation": "karon ki?", "en": "What is the reason?", "context": "Ask for a reason.", "category": "consonant-nno" },
+    { "bn": "এর কারণ কী?", "pronunciation": "er karon ki?", "en": "What's the reason for this?", "context": "Ask for a specific explanation.", "category": "consonant-nno" },
+    { "bn": "আমি যাব না, কারণ আমি ব্যস্ত।", "pronunciation": "ami jabo na, karon ami byasto.", "en": "I won't go because I'm busy.", "context": "Give a reason with কারণ.", "category": "consonant-nno" },
+    { "bn": "কোনো কারণ নেই।", "pronunciation": "kono karon nei.", "en": "There is no reason.", "context": "Say that no reason exists.", "category": "consonant-nno" },
+    { "bn": "কারণ আমি ব্যস্ত।", "pronunciation": "karon ami byasto.", "en": "Because I'm busy.", "context": "Give a short explanation.", "category": "consonant-nno" },
+    { "bn": "আমার একটা ধারণা আছে।", "pronunciation": "amar ekta dharona achhe.", "en": "I have an idea.", "context": "Share that you have an idea.", "category": "consonant-nno" },
+    { "bn": "আমার কোনো ধারণা নেই।", "pronunciation": "amar kono dharona nei.", "en": "I have no idea.", "context": "Say that you do not know.", "category": "consonant-nno" },
+    { "bn": "তোমার কী ধারণা?", "pronunciation": "tomar ki dharona?", "en": "What do you think?", "context": "Ask for someone's opinion.", "category": "consonant-nno" },
+    { "bn": "কী পরিমাণ?", "pronunciation": "ki poriman?", "en": "What amount?", "context": "Ask about quantity.", "category": "consonant-nno" },
+    { "bn": "অল্প পরিমাণে", "pronunciation": "olpo porimane", "en": "in a small amount", "context": "Describe a small quantity.", "category": "consonant-nno" },
+    { "bn": "বেশি পরিমাণে", "pronunciation": "beshi porimane", "en": "in a large amount", "context": "Describe a large quantity.", "category": "consonant-nno" },
+    { "bn": "পানির পরিমাণ কম।", "pronunciation": "panir poriman kom.", "en": "The amount of water is low.", "context": "Describe a limited quantity of water.", "category": "consonant-nno" },
+    { "bn": "কোনো প্রমাণ আছে?", "pronunciation": "kono proman achhe?", "en": "Is there any evidence?", "context": "Ask whether evidence exists.", "category": "consonant-nno" },
+    { "bn": "আমার কাছে প্রমাণ আছে।", "pronunciation": "amar kachhe proman achhe.", "en": "I have evidence.", "context": "State that you possess evidence.", "category": "consonant-nno" },
+    { "bn": "এটা প্রমাণ নয়।", "pronunciation": "eta proman noy.", "en": "This isn't proof.", "context": "Reject something as evidence.", "category": "consonant-nno" },
+    { "bn": "কী লক্ষণ আছে?", "pronunciation": "ki lokkhon achhe?", "en": "What symptoms are there?", "context": "Ask about symptoms.", "category": "consonant-nno" },
+    { "bn": "কোনো লক্ষণ নেই।", "pronunciation": "kono lokkhon nei.", "en": "There are no symptoms.", "context": "Say that no symptoms are present.", "category": "consonant-nno" },
+    { "bn": "এটা কীসের লক্ষণ?", "pronunciation": "eta kisher lokkhon?", "en": "What is this a sign/symptom of?", "context": "Ask what a symptom indicates.", "category": "consonant-nno" },
+    { "bn": "গণিত কঠিন।", "pronunciation": "gonit kothin.", "en": "Mathematics is difficult.", "context": "Describe mathematics as challenging.", "category": "consonant-nno" },
+    { "bn": "গণনা করো।", "pronunciation": "gonona koro.", "en": "Count / calculate.", "context": "Ask someone to calculate.", "category": "consonant-nno" },
+    { "bn": "ভালো গুণ", "pronunciation": "bhalo gun", "en": "good quality", "context": "Describe a positive quality.", "category": "consonant-nno" },
+    { "bn": "বর্ণমালা শেখো।", "pronunciation": "bornomala shekho.", "en": "Learn the alphabet.", "context": "Encourage alphabet study.", "category": "consonant-nno" },
+    { "bn": "দক্ষিণ দিকে যাও।", "pronunciation": "dokkhin dike jao.", "en": "Go south.", "context": "Give a compass direction.", "category": "consonant-nno" },
+    { "bn": "ঘোষণা করা হয়েছে।", "pronunciation": "ghoshona kora hoyechhe.", "en": "An announcement has been made.", "context": "Report an announcement.", "category": "consonant-nno" },
+    { "bn": "ঋণ আছে।", "pronunciation": "rin achhe.", "en": "There is debt / a loan.", "context": "Talk about debt or a loan.", "category": "consonant-nno" },
+    { "bn": "এক ঘণ্টা।", "pronunciation": "ek ghonta.", "en": "One hour.", "context": "State a duration while recognizing ণ্ট.", "category": "consonant-nno" }
   ],
   "vocab": [
-    {
-      "bn": "ণ",
-      "pronunciation": "ṇô",
-      "en": "ṇô: a retroflex n",
-      "category": "consonant-nno",
-      "sourcePhrase": "হরিণ শব্দে ণ আছে।"
-    },
-    {
-      "bn": "হরিণ",
-      "pronunciation": "horiṇ",
-      "en": "deer",
-      "category": "consonant-nno",
-      "sourcePhrase": "হরিণ শব্দে ণ আছে।"
-    },
-    {
-      "bn": "গণিত",
-      "pronunciation": "gôṇit",
-      "en": "mathematics",
-      "category": "consonant-nno",
-      "sourcePhrase": "গণিত শব্দে ণ আছে।"
-    },
-    {
-      "bn": "ঘণ্টা",
-      "pronunciation": "ghônṭa",
-      "en": "hour",
-      "category": "consonant-nno",
-      "sourcePhrase": "ঘণ্টা শব্দে ণ আছে।"
-    }
+    { "bn": "কারণ", "pronunciation": "karon", "en": "reason / because", "category": "Common Words Containing ণ" },
+    { "bn": "ধারণা", "pronunciation": "dharona", "en": "idea / concept", "category": "Common Words Containing ণ" },
+    { "bn": "গণিত", "pronunciation": "gonit", "en": "mathematics", "category": "Common Words Containing ণ" },
+    { "bn": "গণনা", "pronunciation": "gonona", "en": "counting / calculation", "category": "Common Words Containing ণ" },
+    { "bn": "গুণ", "pronunciation": "gun", "en": "quality / multiplication", "category": "Common Words Containing ণ" },
+    { "bn": "গুণী", "pronunciation": "guni", "en": "talented", "category": "Common Words Containing ণ" },
+    { "bn": "গুণমান", "pronunciation": "gunoman", "en": "quality", "category": "Common Words Containing ণ" },
+    { "bn": "বর্ণ", "pronunciation": "borno", "en": "letter / color / description", "category": "Common Words Containing ণ" },
+    { "bn": "বর্ণনা", "pronunciation": "bornona", "en": "description", "category": "Common Words Containing ণ" },
+    { "bn": "বর্ণমালা", "pronunciation": "bornomala", "en": "alphabet", "category": "Common Words Containing ণ" },
+    { "bn": "পূর্ণ", "pronunciation": "purno", "en": "full / complete", "category": "Common Words Containing ণ" },
+    { "bn": "পূর্ণিমা", "pronunciation": "purnima", "en": "full moon", "category": "Common Words Containing ণ" },
+    { "bn": "প্রাণ", "pronunciation": "pran", "en": "life", "category": "Common Words Containing ণ" },
+    { "bn": "প্রাণী", "pronunciation": "prani", "en": "animal / living creature", "category": "Common Words Containing ণ" },
+    { "bn": "প্রমাণ", "pronunciation": "proman", "en": "proof / evidence", "category": "Common Words Containing ণ" },
+    { "bn": "পরিমাণ", "pronunciation": "poriman", "en": "amount / quantity", "category": "Common Words Containing ণ" },
+    { "bn": "ফলাফল", "pronunciation": "pholaphol", "en": "result", "category": "Related Common Word" },
+    { "bn": "লক্ষণ", "pronunciation": "lokkhon", "en": "symptom / sign", "category": "Common Words Containing ণ" },
+    { "bn": "ক্ষণ", "pronunciation": "khon", "en": "moment", "category": "Common Words Containing ণ" },
+    { "bn": "দক্ষিণ", "pronunciation": "dokkhin", "en": "south", "category": "Common Words Containing ণ" },
+    { "bn": "পুরাণ", "pronunciation": "puran", "en": "ancient religious literature", "category": "Common Words Containing ণ" },
+    { "bn": "ঘোষণা", "pronunciation": "ghoshona", "en": "announcement", "category": "Common Words Containing ণ" },
+    { "bn": "ঘৃণা", "pronunciation": "ghrina", "en": "hatred / disgust", "category": "Common Words Containing ণ" },
+    { "bn": "ঋণ", "pronunciation": "rin", "en": "debt / loan", "category": "Common Words Containing ণ" },
+    { "bn": "পণ্য", "pronunciation": "ponno", "en": "product / goods", "category": "Common Words Containing ণ" },
+    { "bn": "গণ্য", "pronunciation": "gonno", "en": "considered / regarded", "category": "Common Words Containing ণ" },
+    { "bn": "পুণ্য", "pronunciation": "punno", "en": "virtue / merit", "category": "Common Words Containing ণ" },
+    { "bn": "মরণ", "pronunciation": "moron", "en": "death / dying", "category": "Common Words Containing ণ" },
+    { "bn": "হরণ", "pronunciation": "horon", "en": "taking away / abduction", "category": "Common Words Containing ণ" },
+    { "bn": "রক্ষণ", "pronunciation": "rokkhon", "en": "protection / maintenance", "category": "Common Words Containing ণ" },
+    { "bn": "পণ্ডিত", "pronunciation": "pondit", "en": "scholar", "category": "Common ণ Conjuncts" },
+    { "bn": "ঘণ্টা", "pronunciation": "ghonta", "en": "hour / bell", "category": "Common ণ Conjuncts" },
+    { "bn": "কণ্ঠ", "pronunciation": "kontho", "en": "voice / throat", "category": "Common ণ Conjuncts" },
+    { "bn": "কৃষ্ণ", "pronunciation": "krishno", "en": "Krishna / black (literary contexts)", "category": "Common ণ Conjuncts" }
   ],
   "practice": [
-    "Say ণ three times: ṇô, ṇô, ṇô.",
-    "Find ণ in each example word and read the whole word aloud.",
-    "Write ণ five times while saying its name."
+    "Say ণ with the tongue curled slightly backward: ṇô, ṇô, ṇô. In modern speech it may sound very similar to ন.",
+    "Practice the forms: ণ (ṇô), ণা (ṇa), ণি (ṇi), ণী (ṇi), ণু (ṇu, uncommon), ণূ (ṇu, rare), ণে (ṇe, uncommon), ণৈ (ṇoi, rare), ণো (ṇo, uncommon), and ণৌ (ṇou, rare).",
+    "Compare ন words নাম, নতুন, নাক, and নিচে with ণ words কারণ, গণিত, প্রমাণ, পরিমাণ, and লক্ষণ. Memorize ণ as part of each whole word.",
+    "Recognize ণ inside conjuncts: ণ্ড in পণ্ডিত, ণ্ট in ঘণ্টা, ণ্ঠ in কণ্ঠ, ষ্ণ in কৃষ্ণ, and ণ্য in পণ্য and গণ্য.",
+    "Use কারণ, ধারণা, গণিত, গুণ, বর্ণ, পূর্ণ, প্রাণী, প্রমাণ, পরিমাণ, and দক্ষিণ as quick reading anchors.",
+    "Recognize these phrases instantly: কারণ কী, আমার কোনো ধারণা নেই, কোনো প্রমাণ আছে, কী পরিমাণ, and এক ঘণ্টা."
   ],
   "notes": [
-    "ণ is pronounced approximately a retroflex n.",
-    "ণ is most often found inside Sanskrit-derived words and consonant clusters."
+    "ণ is called মূর্ধন্য ণ (murdhonno ṇô). It is traditionally a retroflex n pronounced with the tongue curled slightly backward.",
+    "In modern spoken Bangla, ণ and ন often sound nearly identical, so spelling and whole-word recognition matter more for beginners.",
+    "ণ rarely begins everyday words. It usually appears in the middle or at the end of words, including inside conjunct letters.",
+    "Possible vowel-sign forms exist, but many are uncommon at the beginning of everyday words.",
+    "Best words to memorize include কারণ, ধারণা, গণিত, গণনা, গুণ, বর্ণ, বর্ণনা, বর্ণমালা, পূর্ণ, পূর্ণিমা, প্রাণ, প্রাণী, প্রমাণ, পরিমাণ, লক্ষণ, দক্ষিণ, ঘোষণা, ঋণ, পণ্য, ঘণ্টা, and কণ্ঠ."
   ]
 }

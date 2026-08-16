@@ -1,136 +1,95 @@
 {
   "id": "consonant-ho",
   "title": "হ — hô",
-  "summary": "Learn হ, pronounced hô, and recognize it in three useful Bengali words.",
+  "summary": "Learn the common Bangla consonant হ, its h sound, vowel-sign forms, and the essential হওয়া word family.",
   "level": "beginner",
   "topic": "Consonant: হ",
-  "focus": "character recognition and pronunciation",
+  "focus": "character recognition, pronunciation, and the হওয়া word family",
   "phrases": [
-    {
-      "bn": "হাত শব্দে হ আছে।",
-      "pronunciation": "hat shôbde hô achhe",
-      "en": "The word “হাত” contains হ.",
-      "context": "Find হ in হাত and say the complete word aloud.",
-      "category": "consonant-ho",
-      "words": [
-        {
-          "bn": "হাত",
-          "pronunciation": "hat",
-          "en": "hand"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "হ",
-          "pronunciation": "hô",
-          "en": "the hô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "হাসি শব্দে হ আছে।",
-      "pronunciation": "hashi shôbde hô achhe",
-      "en": "The word “হাসি” contains হ.",
-      "context": "Find হ in হাসি and say the complete word aloud.",
-      "category": "consonant-ho",
-      "words": [
-        {
-          "bn": "হাসি",
-          "pronunciation": "hashi",
-          "en": "smile"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "হ",
-          "pronunciation": "hô",
-          "en": "the hô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "দেহ শব্দে হ আছে।",
-      "pronunciation": "deho shôbde hô achhe",
-      "en": "The word “দেহ” contains হ.",
-      "context": "Find হ in দেহ and say the complete word aloud.",
-      "category": "consonant-ho",
-      "words": [
-        {
-          "bn": "দেহ",
-          "pronunciation": "deho",
-          "en": "body"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "হ",
-          "pronunciation": "hô",
-          "en": "the hô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    }
+    { "bn": "হ্যাঁ।", "pronunciation": "hã.", "en": "Yes.", "context": "Give an affirmative answer.", "category": "consonant-ho" },
+    { "bn": "হ্যাঁ, আমি যাব।", "pronunciation": "hã, ami jabo.", "en": "Yes, I will go.", "context": "Confirm that you will go.", "category": "consonant-ho" },
+    { "bn": "হ্যাঁ, আমি বুঝেছি।", "pronunciation": "hã, ami bujhechhi.", "en": "Yes, I understood.", "context": "Confirm understanding.", "category": "consonant-ho" },
+    { "bn": "হ্যাঁ না?", "pronunciation": "hã na?", "en": "Yes or no?", "context": "Ask for a direct answer.", "category": "consonant-ho" },
+    { "bn": "হ্যাঁ, অবশ্যই।", "pronunciation": "hã, oboshshoi.", "en": "Yes, of course.", "context": "Agree emphatically.", "category": "consonant-ho" },
+    { "bn": "কী হয়েছে?", "pronunciation": "ki hoyechhe?", "en": "What happened?", "context": "Ask about a completed event or change.", "category": "consonant-ho" },
+    { "bn": "কী হচ্ছে?", "pronunciation": "ki hochchhe?", "en": "What's happening?", "context": "Ask about something happening now.", "category": "consonant-ho" },
+    { "bn": "কী হবে?", "pronunciation": "ki hobe?", "en": "What will happen?", "context": "Ask about a future outcome.", "category": "consonant-ho" },
+    { "bn": "এটা কীভাবে হলো?", "pronunciation": "eta kibhabe holo?", "en": "How did this happen?", "context": "Ask how something occurred.", "category": "consonant-ho" },
+    { "bn": "কাল হবে।", "pronunciation": "kal hobe.", "en": "It will happen tomorrow.", "context": "Say when something will happen.", "category": "consonant-ho" },
+    { "bn": "হয়তো।", "pronunciation": "hoyto.", "en": "Maybe.", "context": "Express uncertainty.", "category": "consonant-ho" },
+    { "bn": "হয়তো যাব।", "pronunciation": "hoyto jabo.", "en": "Maybe I'll go.", "context": "Express uncertainty about going.", "category": "consonant-ho" },
+    { "bn": "আমার হাত।", "pronunciation": "amar hat.", "en": "My hand.", "context": "Practice হাত in a personal phrase.", "category": "consonant-ho" },
+    { "bn": "হাত ধরো।", "pronunciation": "hat dhoro.", "en": "Hold my hand.", "context": "Ask someone to hold your hand.", "category": "consonant-ho" },
+    { "bn": "হাত ধোও।", "pronunciation": "hat dhoo.", "en": "Wash your hands.", "context": "Give a hygiene instruction.", "category": "consonant-ho" },
+    { "bn": "হাত ছাড়ো।", "pronunciation": "hat chharo.", "en": "Let go of my hand.", "context": "Ask someone to release your hand.", "category": "consonant-ho" },
+    { "bn": "আমার হাতে ব্যথা।", "pronunciation": "amar hate byatha.", "en": "My hand/arm hurts.", "context": "Describe pain in your hand or arm.", "category": "consonant-ho" },
+    { "bn": "হাসো।", "pronunciation": "hasho.", "en": "Smile / laugh.", "context": "Encourage someone to smile.", "category": "consonant-ho" },
+    { "bn": "সে হাসছে।", "pronunciation": "she hashchhe.", "en": "He/she is laughing.", "context": "Describe someone laughing.", "category": "consonant-ho" },
+    { "bn": "তুমি কেন হাসছ?", "pronunciation": "tumi keno hashchho?", "en": "Why are you laughing?", "context": "Ask why someone is laughing.", "category": "consonant-ho" },
+    { "bn": "তার হাসি সুন্দর।", "pronunciation": "tar hashi shundor.", "en": "His/her smile is beautiful.", "context": "Compliment someone's smile.", "category": "consonant-ho" },
+    { "bn": "আমি চাবি হারিয়েছি।", "pronunciation": "ami chabi hariyechhi.", "en": "I lost the key.", "context": "Report a lost key.", "category": "consonant-ho" },
+    { "bn": "আমার ফোন হারিয়ে গেছে।", "pronunciation": "amar phone hariye gechhe.", "en": "My phone is lost.", "context": "Report a lost phone.", "category": "consonant-ho" },
+    { "bn": "এটা হারিও না।", "pronunciation": "eta hario na.", "en": "Don't lose this.", "context": "Warn someone to keep an item safe.", "category": "consonant-ho" },
+    { "bn": "আমি হাঁটছি।", "pronunciation": "ami hãtchhi.", "en": "I'm walking.", "context": "Describe walking now.", "category": "consonant-ho" },
+    { "bn": "চলো হাঁটতে যাই।", "pronunciation": "cholo hãtte jai.", "en": "Let's go for a walk.", "context": "Suggest walking together.", "category": "consonant-ho" },
+    { "bn": "আমার হাঁটুতে ব্যথা।", "pronunciation": "amar hãtute byatha.", "en": "My knee hurts.", "context": "Describe knee pain.", "category": "consonant-ho" },
+    { "bn": "হঠাৎ কী হলো?", "pronunciation": "hothat ki holo?", "en": "What suddenly happened?", "context": "Ask about a sudden event.", "category": "consonant-ho" },
+    { "bn": "হলুদ রং", "pronunciation": "holud rong", "en": "yellow color", "context": "Practice হলুদ in a color phrase.", "category": "consonant-ho" },
+    { "bn": "হাসপাতালে যাব।", "pronunciation": "hashpatale jabo.", "en": "I will go to the hospital.", "context": "Talk about going to the hospital.", "category": "consonant-ho" },
+    { "bn": "হিসাব করো।", "pronunciation": "hishab koro.", "en": "Calculate it.", "context": "Ask someone to calculate something.", "category": "consonant-ho" },
+    { "bn": "এক হাজার টাকা", "pronunciation": "ek hajar taka", "en": "one thousand taka", "context": "Practice a money amount.", "category": "consonant-ho" },
+    { "bn": "হাওয়া হচ্ছে।", "pronunciation": "haoa hochchhe.", "en": "It's windy.", "context": "Describe windy weather.", "category": "consonant-ho" },
+    { "bn": "খাবার হজম হচ্ছে।", "pronunciation": "khabar hojom hochchhe.", "en": "The food is digesting.", "context": "Talk about digestion.", "category": "consonant-ho" }
   ],
   "vocab": [
-    {
-      "bn": "হ",
-      "pronunciation": "hô",
-      "en": "hô: h",
-      "category": "consonant-ho",
-      "sourcePhrase": "হাত শব্দে হ আছে।"
-    },
-    {
-      "bn": "হাত",
-      "pronunciation": "hat",
-      "en": "hand",
-      "category": "consonant-ho",
-      "sourcePhrase": "হাত শব্দে হ আছে।"
-    },
-    {
-      "bn": "হাসি",
-      "pronunciation": "hashi",
-      "en": "smile",
-      "category": "consonant-ho",
-      "sourcePhrase": "হাসি শব্দে হ আছে।"
-    },
-    {
-      "bn": "দেহ",
-      "pronunciation": "deho",
-      "en": "body",
-      "category": "consonant-ho",
-      "sourcePhrase": "দেহ শব্দে হ আছে।"
-    }
+    { "bn": "হ্যাঁ", "pronunciation": "hã", "en": "yes", "category": "Common Words Beginning with হ" },
+    { "bn": "হওয়া", "pronunciation": "hooa", "en": "to be / become / happen", "category": "The হওয়া Word Family" },
+    { "bn": "হয়", "pronunciation": "hoy", "en": "is / happens", "category": "The হওয়া Word Family" },
+    { "bn": "হবে", "pronunciation": "hobe", "en": "will be / will happen", "category": "The হওয়া Word Family" },
+    { "bn": "হলো", "pronunciation": "holo", "en": "happened / became", "category": "The হওয়া Word Family" },
+    { "bn": "হয়েছে", "pronunciation": "hoyechhe", "en": "has happened / has become", "category": "The হওয়া Word Family" },
+    { "bn": "হচ্ছে", "pronunciation": "hochchhe", "en": "is happening / becoming", "category": "The হওয়া Word Family" },
+    { "bn": "হতে", "pronunciation": "hote", "en": "to be / become", "category": "The হওয়া Word Family" },
+    { "bn": "হয়তো", "pronunciation": "hoyto", "en": "maybe / perhaps", "category": "The হওয়া Word Family" },
+    { "bn": "হলে", "pronunciation": "hole", "en": "if / when", "category": "The হওয়া Word Family" },
+    { "bn": "হাত", "pronunciation": "hat", "en": "hand / arm", "category": "Common Words Beginning with হ" },
+    { "bn": "হাঁটা", "pronunciation": "hãta", "en": "to walk", "category": "Common Words Beginning with হ" },
+    { "bn": "হাঁটু", "pronunciation": "hãtu", "en": "knee", "category": "Common Words Beginning with হ" },
+    { "bn": "হাঁস", "pronunciation": "hãsh", "en": "duck", "category": "Common Words Beginning with হ" },
+    { "bn": "হাসা", "pronunciation": "hasha", "en": "to laugh / smile", "category": "Common Words Beginning with হ" },
+    { "bn": "হাসি", "pronunciation": "hashi", "en": "smile / laughter", "category": "Common Words Beginning with হ" },
+    { "bn": "হাজার", "pronunciation": "hajar", "en": "thousand", "category": "Common Words Beginning with হ" },
+    { "bn": "হালকা", "pronunciation": "halka", "en": "light / lightweight", "category": "Common Words Beginning with হ" },
+    { "bn": "হাওয়া", "pronunciation": "haoa", "en": "air / wind", "category": "Common Words Beginning with হ" },
+    { "bn": "হার", "pronunciation": "har", "en": "loss / necklace", "category": "Common Words Beginning with হ" },
+    { "bn": "হারানো", "pronunciation": "harano", "en": "to lose", "category": "Common Words Beginning with হ" },
+    { "bn": "হঠাৎ", "pronunciation": "hothat", "en": "suddenly", "category": "Common Words Beginning with হ" },
+    { "bn": "হলুদ", "pronunciation": "holud", "en": "yellow / turmeric", "category": "Common Words Beginning with হ" },
+    { "bn": "হাসপাতাল", "pronunciation": "hashpatal", "en": "hospital", "category": "Common Words Beginning with হ" },
+    { "bn": "হিসাব", "pronunciation": "hishab", "en": "calculation / account", "category": "Common Words Beginning with হ" },
+    { "bn": "ইতিহাস", "pronunciation": "itihash", "en": "history", "category": "Common Words Beginning with হ" },
+    { "bn": "হিংসা", "pronunciation": "hingsha", "en": "jealousy / violence", "category": "Common Words Beginning with হ" },
+    { "bn": "হৃদয়", "pronunciation": "hridoy", "en": "heart", "category": "Common Words Beginning with হ" },
+    { "bn": "হুমকি", "pronunciation": "humki", "en": "threat", "category": "Common Words Beginning with হ" },
+    { "bn": "হুকুম", "pronunciation": "hukum", "en": "order / command", "category": "Common Words Beginning with হ" },
+    { "bn": "হোটেল", "pronunciation": "hotel", "en": "hotel", "category": "Common Words Beginning with হ" },
+    { "bn": "হেডফোন", "pronunciation": "hedphone", "en": "headphones", "category": "Common Words Beginning with হ" },
+    { "bn": "হজ", "pronunciation": "hoj", "en": "Hajj", "category": "Common Words Beginning with হ" },
+    { "bn": "হজম", "pronunciation": "hojom", "en": "digestion / to digest", "category": "Common Words Beginning with হ" }
   ],
   "practice": [
     "Say হ three times: hô, hô, hô.",
-    "Find হ in each example word and read the whole word aloud.",
-    "Write হ five times while saying its name."
+    "Practice the vowel forms: হ (hô), হা (ha), হি (hi), হী (hi, rare), হু (hu), হূ (hu, rare), হে (he), হৈ (hoi), হো (ho), and হৌ (hou, rare).",
+    "Read the combinations aloud: হ + া = হা as in হাত, হ + ি = হি as in হিসাব, হ + ু = হু as in হুমকি, হ + ৈ = হৈ as in হৈচৈ, and হ + ো = হো as in হোটেল.",
+    "Practice the essential হওয়া family: হওয়া, হয়, হচ্ছে, হয়েছে, হলো, হবে, হলে, হতে, and হয়তো.",
+    "Use হ্যাঁ, হাত, হাসি, হাঁটা, হলুদ, হঠাৎ, হাজার, হাসপাতাল, and হয়তো as quick reading anchors.",
+    "Recognize these phrases instantly: হ্যাঁ, অবশ্যই; কী হয়েছে; কী হচ্ছে; হয়তো; and হাত ধোও."
   ],
   "notes": [
-    "হ is pronounced approximately h.",
-    "Listen to the audio and compare হ across the example words."
+    "হ is a very common Bangla consonant named hô. Its sound is usually h as in home.",
+    "The vowel-sign forms include হ (hô), হা (ha), হি (hi), হী (hi), হু (hu), হূ (hu), হে (he), হৈ (hoi), হো (ho), and হৌ (hou). Examples include হলুদ, হাত, হিসাব, হুমকি, হেলিকপ্টার, হৈচৈ, and হোটেল.",
+    "The হওয়া family is extremely important: হওয়া means to be/become/happen; হচ্ছে is happening; হয়েছে has happened; হলো happened; হবে will happen; হলে means if/when; হতে means to be/become; and হয়তো means maybe.",
+    "কী হচ্ছে, কী হয়েছে, and কী হবে are especially useful everyday questions.",
+    "Best words to memorize include হ্যাঁ, হওয়া, হয়, হচ্ছে, হয়েছে, হবে, হয়তো, হাত, হাঁটা, হাঁটু, হাসা, হাসি, হাজার, হঠাৎ, হলুদ, হাওয়া, হারানো, হালকা, হাসপাতাল, and হিসাব."
   ]
 }

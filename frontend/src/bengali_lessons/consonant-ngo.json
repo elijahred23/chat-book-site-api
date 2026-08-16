@@ -1,136 +1,86 @@
 {
   "id": "consonant-ngo",
   "title": "ঙ — ngô",
-  "summary": "Learn ঙ, pronounced ngô, and recognize it in three useful Bengali words.",
+  "summary": "Learn the Bangla consonant ঙ, its ng sound, common conjunct forms, internal-word recognition, and how it differs from anusvara ং.",
   "level": "beginner",
   "topic": "Consonant: ঙ",
-  "focus": "character recognition and pronunciation",
+  "focus": "internal character recognition, conjuncts, and pronunciation",
   "phrases": [
-    {
-      "bn": "রঙ শব্দে ঙ আছে।",
-      "pronunciation": "rông shôbde ngô achhe",
-      "en": "The word “রঙ” contains ঙ.",
-      "context": "Find ঙ in রঙ and say the complete word aloud.",
-      "category": "consonant-ngo",
-      "words": [
-        {
-          "bn": "রঙ",
-          "pronunciation": "rông",
-          "en": "color"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ঙ",
-          "pronunciation": "ngô",
-          "en": "the ngô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "বাংলা শব্দে ঙ আছে।",
-      "pronunciation": "bangla shôbde ngô achhe",
-      "en": "The word “বাংলা” contains ঙ.",
-      "context": "Find ঙ in বাংলা and say the complete word aloud.",
-      "category": "consonant-ngo",
-      "words": [
-        {
-          "bn": "বাংলা",
-          "pronunciation": "bangla",
-          "en": "Bengali"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ঙ",
-          "pronunciation": "ngô",
-          "en": "the ngô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "আঙুর শব্দে ঙ আছে।",
-      "pronunciation": "angur shôbde ngô achhe",
-      "en": "The word “আঙুর” contains ঙ.",
-      "context": "Find ঙ in আঙুর and say the complete word aloud.",
-      "category": "consonant-ngo",
-      "words": [
-        {
-          "bn": "আঙুর",
-          "pronunciation": "angur",
-          "en": "grapes"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ঙ",
-          "pronunciation": "ngô",
-          "en": "the ngô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    }
+    { "bn": "আমি বাংলা শিখছি।", "pronunciation": "ami bangla shikhchhi.", "en": "I am learning Bangla.", "context": "Talk about learning Bangla.", "category": "consonant-ngo" },
+    { "bn": "আমি বাংলা বলতে চাই।", "pronunciation": "ami bangla bolte chai.", "en": "I want to speak Bangla.", "context": "Express a language goal.", "category": "consonant-ngo" },
+    { "bn": "বাংলায় বলো।", "pronunciation": "banglay bolo.", "en": "Say it in Bangla.", "context": "Ask someone to speak in Bangla.", "category": "consonant-ngo" },
+    { "bn": "বাংলায় লিখো।", "pronunciation": "banglay likho.", "en": "Write it in Bangla.", "context": "Ask someone to write in Bangla.", "category": "consonant-ngo" },
+    { "bn": "আমি বাঙালি।", "pronunciation": "ami bangali.", "en": "I am Bengali.", "context": "State Bengali identity.", "category": "consonant-ngo" },
+    { "bn": "বাংলাদেশ সুন্দর।", "pronunciation": "bangladesh shundor.", "en": "Bangladesh is beautiful.", "context": "Describe Bangladesh positively.", "category": "consonant-ngo" },
+    { "bn": "আমার সঙ্গে আসো।", "pronunciation": "amar shôngge asho.", "en": "Come with me.", "context": "Invite someone to accompany you.", "category": "consonant-ngo" },
+    { "bn": "তোমার সঙ্গে যাব।", "pronunciation": "tomar shôngge jabo.", "en": "I will go with you.", "context": "Promise to accompany someone.", "category": "consonant-ngo" },
+    { "bn": "সে আমার সঙ্গে আছে।", "pronunciation": "she amar shôngge achhe.", "en": "He/she is with me.", "context": "Describe who is accompanying you.", "category": "consonant-ngo" },
+    { "bn": "কার সঙ্গে?", "pronunciation": "kar shôngge?", "en": "With whom?", "context": "Ask about a companion.", "category": "consonant-ngo" },
+    { "bn": "আমার আঙুল।", "pronunciation": "amar angul.", "en": "My finger.", "context": "Practice আঙুল in a personal phrase.", "category": "consonant-ngo" },
+    { "bn": "আঙুল দিয়ে দেখাও।", "pronunciation": "angul diye dekhao.", "en": "Point with your finger.", "context": "Ask someone to point.", "category": "consonant-ngo" },
+    { "bn": "আমার আঙুলে ব্যথা।", "pronunciation": "amar angule byatha.", "en": "My finger hurts.", "context": "Describe finger pain.", "category": "consonant-ngo" },
+    { "bn": "এটা কী রং?", "pronunciation": "eta ki rong?", "en": "What color is this?", "context": "Ask about color.", "category": "consonant-ngo" },
+    { "bn": "লাল রং।", "pronunciation": "lal rong.", "en": "Red.", "context": "Name a color.", "category": "consonant-ngo" },
+    { "bn": "লাল রং", "pronunciation": "lal rong", "en": "red color", "context": "Practice a color phrase.", "category": "consonant-ngo" },
+    { "bn": "নীল রং", "pronunciation": "nil rong", "en": "blue color", "context": "Practice a color phrase.", "category": "consonant-ngo" },
+    { "bn": "আমার এই রংটা ভালো লাগে।", "pronunciation": "amar ei rongta bhalo lage.", "en": "I like this color.", "context": "Express a color preference.", "category": "consonant-ngo" },
+    { "bn": "রঙিন ছবি।", "pronunciation": "rongin chhobi.", "en": "Colorful picture.", "context": "Describe a colorful picture.", "category": "consonant-ngo" },
+    { "bn": "রঙিন ছবি", "pronunciation": "rongin chhobi", "en": "colorful picture", "context": "Practice রঙিন in a short phrase.", "category": "consonant-ngo" },
+    { "bn": "এই সংখ্যাটা কী?", "pronunciation": "ei shôngkhata ki?", "en": "What is this number?", "context": "Ask someone to identify a number.", "category": "consonant-ngo" },
+    { "bn": "সংখ্যা গুনো।", "pronunciation": "shôngkha guno.", "en": "Count the numbers.", "context": "Ask someone to count.", "category": "consonant-ngo" },
+    { "bn": "আমার ফোন নম্বর...", "pronunciation": "amar phone nombor...", "en": "My phone number is...", "context": "Begin giving a phone number.", "category": "consonant-ngo" },
+    { "bn": "আঙুর খাবে?", "pronunciation": "angur khabe?", "en": "Will you eat grapes?", "context": "Offer grapes.", "category": "consonant-ngo" },
+    { "bn": "অঙ্ক করো।", "pronunciation": "ôngko koro.", "en": "Do the math.", "context": "Tell someone to solve arithmetic.", "category": "consonant-ngo" },
+    { "bn": "এটা ভাঙা।", "pronunciation": "eta bhanga.", "en": "This is broken.", "context": "Describe a broken object.", "category": "consonant-ngo" },
+    { "bn": "এটা ভেঙে গেছে।", "pronunciation": "eta bhenge gechhe.", "en": "This has broken.", "context": "Report that something broke.", "category": "consonant-ngo" },
+    { "bn": "একটা ব্যাঙ", "pronunciation": "ekta byang", "en": "a frog", "context": "Practice ব্যাঙ with a counter.", "category": "consonant-ngo" },
+    { "bn": "সংগীত শুনছি।", "pronunciation": "shônggit shunchhi.", "en": "I'm listening to music.", "context": "Describe listening to music.", "category": "consonant-ngo" }
   ],
   "vocab": [
-    {
-      "bn": "ঙ",
-      "pronunciation": "ngô",
-      "en": "ngô: ng as in sing",
-      "category": "consonant-ngo",
-      "sourcePhrase": "রঙ শব্দে ঙ আছে।"
-    },
-    {
-      "bn": "রঙ",
-      "pronunciation": "rông",
-      "en": "color",
-      "category": "consonant-ngo",
-      "sourcePhrase": "রঙ শব্দে ঙ আছে।"
-    },
-    {
-      "bn": "বাংলা",
-      "pronunciation": "bangla",
-      "en": "Bengali",
-      "category": "consonant-ngo",
-      "sourcePhrase": "বাংলা শব্দে ঙ আছে।"
-    },
-    {
-      "bn": "আঙুর",
-      "pronunciation": "angur",
-      "en": "grapes",
-      "category": "consonant-ngo",
-      "sourcePhrase": "আঙুর শব্দে ঙ আছে।"
-    }
+    { "bn": "বাংলা", "pronunciation": "bangla", "en": "Bangla / Bengali", "category": "Common Words with an ng Sound" },
+    { "bn": "বাঙালি", "pronunciation": "bangali", "en": "Bengali person", "category": "Common Words Containing ঙ" },
+    { "bn": "বাংলাদেশ", "pronunciation": "bangladesh", "en": "Bangladesh", "category": "Common Words with an ng Sound" },
+    { "bn": "রং", "pronunciation": "rong", "en": "color", "category": "Words Using Anusvara ং" },
+    { "bn": "রঙিন", "pronunciation": "rongin", "en": "colorful", "category": "Common Words Containing ঙ" },
+    { "bn": "আঙুল", "pronunciation": "angul", "en": "finger", "category": "Common Words Containing ঙ" },
+    { "bn": "আঙুর", "pronunciation": "angur", "en": "grapes", "category": "Common Words Containing ঙ" },
+    { "bn": "অঙ্গ", "pronunciation": "ônggo", "en": "body part / limb", "category": "Common Words Containing ঙ" },
+    { "bn": "অঙ্গীকার", "pronunciation": "ônggikar", "en": "promise / commitment", "category": "Common Words Containing ঙ" },
+    { "bn": "অঙ্ক", "pronunciation": "ôngko", "en": "mathematics / arithmetic", "category": "Common Words Containing ঙ" },
+    { "bn": "অঙ্কন", "pronunciation": "ôngkon", "en": "drawing", "category": "Common Words Containing ঙ" },
+    { "bn": "অঙ্কুর", "pronunciation": "ôngkur", "en": "sprout", "category": "Common Words Containing ঙ" },
+    { "bn": "সংখ্যা", "pronunciation": "shôngkha", "en": "number", "category": "Words Using Anusvara ং" },
+    { "bn": "সংখ্যা গোনা", "pronunciation": "shôngkha gona", "en": "counting numbers", "category": "Words Using Anusvara ং" },
+    { "bn": "সংগীত", "pronunciation": "shônggit", "en": "music", "category": "Words Using Anusvara ং" },
+    { "bn": "সংগঠন", "pronunciation": "shônggothon", "en": "organization", "category": "Words Using Anusvara ং" },
+    { "bn": "সংগ্রহ", "pronunciation": "shônggroho", "en": "collection", "category": "Words Using Anusvara ং" },
+    { "bn": "সংগ্রাম", "pronunciation": "shônggram", "en": "struggle", "category": "Words Using Anusvara ং" },
+    { "bn": "সঙ্গে", "pronunciation": "shôngge", "en": "with", "category": "Common Words Containing ঙ" },
+    { "bn": "সঙ্গী", "pronunciation": "shônggi", "en": "companion / partner", "category": "Common Words Containing ঙ" },
+    { "bn": "সঙ্গ", "pronunciation": "shônggo", "en": "company / companionship", "category": "Common Words Containing ঙ" },
+    { "bn": "ভাঙা", "pronunciation": "bhanga", "en": "to break / broken", "category": "Common Words Containing ঙ" },
+    { "bn": "ভাঙানো", "pronunciation": "bhangano", "en": "to have something broken", "category": "Common Words Containing ঙ" },
+    { "bn": "রাঙা", "pronunciation": "ranga", "en": "red-colored", "category": "Common Words Containing ঙ" },
+    { "bn": "ব্যাঙ", "pronunciation": "byang", "en": "frog", "category": "Common Words Containing ঙ" },
+    { "bn": "গাঙ", "pronunciation": "gang", "en": "river / stream", "category": "Common Words Containing ঙ" },
+    { "bn": "চাঙা", "pronunciation": "changa", "en": "refreshed / energetic", "category": "Common Words Containing ঙ" },
+    { "bn": "আঙিনা", "pronunciation": "angina", "en": "courtyard", "category": "Common Words Containing ঙ" },
+    { "bn": "লঙ্ঘন", "pronunciation": "lôngghon", "en": "violation", "category": "Common Words Containing ঙ" },
+    { "bn": "শঙ্খ", "pronunciation": "shôngkho", "en": "conch shell", "category": "Common ঙ Conjuncts" }
   ],
   "practice": [
-    "Say ঙ three times: ngô, ngô, ngô.",
-    "Find ঙ in each example word and read the whole word aloud.",
-    "Write ঙ five times while saying its name."
+    "Say the ঙ sound like the ng at the end of sing, song, and long; produce it toward the back of the mouth.",
+    "Practice common conjuncts: ঙ্ক = ঙ্ + ক as in অঙ্ক, ঙ্খ = ঙ্ + খ as in শঙ্খ, ঙ্গ = ঙ্ + গ as in সঙ্গে, and ঙ্ঘ as in লঙ্ঘন.",
+    "Compare full consonant ঙ in আঙুল, বাঙালি, and ভাঙা with the smaller anusvara sign ং in রং, সংখ্যা, and সংগীত.",
+    "Train your eyes to spot ঙ inside words because it rarely begins ordinary Bangla words: বাঙালি, আঙুল, আঙুর, অঙ্ক, সঙ্গে, ভাঙা, and ব্যাঙ.",
+    "Use বাংলা, বাঙালি, আঙুল, আঙুর, অঙ্ক, সঙ্গে, সঙ্গী, ভাঙা, ব্যাঙ, and রঙিন as quick reading anchors.",
+    "Recognize these phrases instantly: আমি বাংলা শিখছি, বাংলায় বলো, আমার সঙ্গে আসো, এটা কী রং, and আমার আঙুলে ব্যথা."
   ],
   "notes": [
-    "ঙ is pronounced approximately ng as in sing.",
-    "ঙ rarely begins a native Bengali word; learn to recognize it within words and conjuncts."
+    "ঙ is a Bangla consonant used for the ng sound heard in English sing or song. It rarely begins ordinary Bangla words and usually appears inside words, especially near ক, খ, গ, or ঘ.",
+    "Common conjunct forms include ঙ্ক (ঙ্ + ক), ঙ্খ (ঙ্ + খ), ঙ্গ (ঙ্ + গ), and ঙ্ঘ (ঙ্ + ঘ).",
+    "ঙ and ং are different: ঙ is a full consonant, while ং is anusvara, a special sign. Compare আঙুল, বাঙালি, and ভাঙা with রং, সংখ্যা, and সংগীত.",
+    "Because ঙ rarely starts words, internal recognition is more useful than memorizing word-initial examples.",
+    "Best words to memorize include বাংলা, বাঙালি, বাংলাদেশ, আঙুল, আঙুর, অঙ্ক, অঙ্গ, সঙ্গে, সঙ্গী, সংগীত, সংখ্যা, সংগ্রহ, সংগ্রাম, ভাঙা, ব্যাঙ, রঙিন, and আঙিনা."
   ]
 }

@@ -1,136 +1,114 @@
 {
   "id": "consonant-jo-yo",
-  "title": "য — jô / yô",
-  "summary": "Learn য, pronounced jô / yô, and recognize it in three useful Bengali words.",
+  "title": "য — jô",
+  "summary": "Learn the common Bangla consonant য, its modern j sound, useful connector words, and how it differs from য় and য-ফলা.",
   "level": "beginner",
   "topic": "Consonant: য",
-  "focus": "character recognition and pronunciation",
+  "focus": "character recognition, pronunciation, connectors, and য-ফলা",
   "phrases": [
-    {
-      "bn": "যান শব্দে য আছে।",
-      "pronunciation": "jan shôbde jô / yô achhe",
-      "en": "The word “যান” contains য.",
-      "context": "Find য in যান and say the complete word aloud.",
-      "category": "consonant-jo-yo",
-      "words": [
-        {
-          "bn": "যান",
-          "pronunciation": "jan",
-          "en": "vehicle"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "য",
-          "pronunciation": "jô / yô",
-          "en": "the jô / yô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "যদি শব্দে য আছে।",
-      "pronunciation": "jôdi shôbde jô / yô achhe",
-      "en": "The word “যদি” contains য.",
-      "context": "Find য in যদি and say the complete word aloud.",
-      "category": "consonant-jo-yo",
-      "words": [
-        {
-          "bn": "যদি",
-          "pronunciation": "jôdi",
-          "en": "if"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "য",
-          "pronunciation": "jô / yô",
-          "en": "the jô / yô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "যোগ শব্দে য আছে।",
-      "pronunciation": "jog shôbde jô / yô achhe",
-      "en": "The word “যোগ” contains য.",
-      "context": "Find য in যোগ and say the complete word aloud.",
-      "category": "consonant-jo-yo",
-      "words": [
-        {
-          "bn": "যোগ",
-          "pronunciation": "jog",
-          "en": "yoga / addition"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "য",
-          "pronunciation": "jô / yô",
-          "en": "the jô / yô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    }
+    { "bn": "আমি জানি যে সে আসবে।", "pronunciation": "ami jani je she ashbe.", "en": "I know that he/she will come.", "context": "Use যে to introduce a clause.", "category": "consonant-jo-yo" },
+    { "bn": "যে লোকটা এসেছে", "pronunciation": "je lokta eshechhe", "en": "the person who came", "context": "Use যে to identify a person.", "category": "consonant-jo-yo" },
+    { "bn": "যে বইটা আমি পড়ছি", "pronunciation": "je boita ami porchhi", "en": "the book that I'm reading", "context": "Use যে to identify a thing.", "category": "consonant-jo-yo" },
+    { "bn": "যদি তুমি আসো...", "pronunciation": "jodi tumi asho...", "en": "If you come...", "context": "Begin a conditional sentence.", "category": "consonant-jo-yo" },
+    { "bn": "যদি বৃষ্টি হয়...", "pronunciation": "jodi brishti hoy...", "en": "If it rains...", "context": "Talk about a possible condition.", "category": "consonant-jo-yo" },
+    { "bn": "যদি সময় থাকে...", "pronunciation": "jodi shomoy thake...", "en": "If there is time...", "context": "Talk about available time.", "category": "consonant-jo-yo" },
+    { "bn": "যদি পারো, আমাকে সাহায্য করো।", "pronunciation": "jodi paro, amake shahajjo koro.", "en": "If you can, help me.", "context": "Make a conditional request.", "category": "consonant-jo-yo" },
+    { "bn": "যদি পারো।", "pronunciation": "jodi paro.", "en": "If you can.", "context": "Use a short conditional phrase.", "category": "consonant-jo-yo" },
+    { "bn": "যদি সময় থাকে", "pronunciation": "jodi shomoy thake", "en": "if you have time", "context": "Practice a time condition.", "category": "consonant-jo-yo" },
+    { "bn": "যদি বৃষ্টি হয়", "pronunciation": "jodi brishti hoy", "en": "if it rains", "context": "Practice a weather condition.", "category": "consonant-jo-yo" },
+    { "bn": "যখন আমি বাসায় আসি...", "pronunciation": "jokhon ami bashay ashi...", "en": "When I come home...", "context": "Begin a sentence about a recurring time.", "category": "consonant-jo-yo" },
+    { "bn": "যখন সময় হবে...", "pronunciation": "jokhon shomoy hobe...", "en": "When there is time...", "context": "Talk about future availability.", "category": "consonant-jo-yo" },
+    { "bn": "যখন সময় হবে।", "pronunciation": "jokhon shomoy hobe.", "en": "When there is time.", "context": "Practice a common time phrase.", "category": "consonant-jo-yo" },
+    { "bn": "যখন তুমি আসবে, আমাকে বলো।", "pronunciation": "jokhon tumi ashbe, amake bolo.", "en": "When you come, tell me.", "context": "Give an instruction tied to a future time.", "category": "consonant-jo-yo" },
+    { "bn": "যখন আমি আসব", "pronunciation": "jokhon ami ashbo", "en": "when I come", "context": "Practice a future time clause.", "category": "consonant-jo-yo" },
+    { "bn": "যেখানে তুমি আছো", "pronunciation": "jekhane tumi achho", "en": "where you are", "context": "Refer to someone's location.", "category": "consonant-jo-yo" },
+    { "bn": "যেখানে আছো।", "pronunciation": "jekhane achho.", "en": "Where you are.", "context": "Practice a location phrase.", "category": "consonant-jo-yo" },
+    { "bn": "যেখানে যেতে চাও", "pronunciation": "jekhane jete chao", "en": "where you want to go", "context": "Refer to a desired destination.", "category": "consonant-jo-yo" },
+    { "bn": "যেখানে যাবে", "pronunciation": "jekhane jabe", "en": "where you will go", "context": "Refer to a future destination.", "category": "consonant-jo-yo" },
+    { "bn": "আমি সেখানে যাব যেখানে তুমি যাবে।", "pronunciation": "ami shekhane jabo jekhane tumi jabe.", "en": "I'll go where you go.", "context": "Connect two locations with যেখানে.", "category": "consonant-jo-yo" },
+    { "bn": "যেমন...", "pronunciation": "jemon...", "en": "For example...", "context": "Introduce an example.", "category": "consonant-jo-yo" },
+    { "bn": "আমি ফল পছন্দ করি, যেমন আম ও কলা।", "pronunciation": "ami phol pochhondo kori, jemon am o kola.", "en": "I like fruit, such as mangoes and bananas.", "context": "Give examples with যেমন.", "category": "consonant-jo-yo" },
+    { "bn": "যেমন তুমি চাও", "pronunciation": "jemon tumi chao", "en": "as you want", "context": "Agree to someone's preference.", "category": "consonant-jo-yo" },
+    { "bn": "যেমন তুমি চাও।", "pronunciation": "jemon tumi chao.", "en": "As you want.", "context": "Use a common agreement phrase.", "category": "consonant-jo-yo" },
+    { "bn": "যে মানুষ", "pronunciation": "je manush", "en": "the person who", "context": "Begin a relative phrase about a person.", "category": "consonant-jo-yo" },
+    { "bn": "যেটা ভালো", "pronunciation": "jeta bhalo", "en": "the one that is good", "context": "Identify a preferred option.", "category": "consonant-jo-yo" },
+    { "bn": "যেটা চাই", "pronunciation": "jeta chai", "en": "the one I want", "context": "Identify what you want.", "category": "consonant-jo-yo" },
+    { "bn": "যেকোনো সময়", "pronunciation": "jekono shomoy", "en": "anytime", "context": "Refer to unrestricted time.", "category": "consonant-jo-yo" },
+    { "bn": "যেকোনো জায়গায়", "pronunciation": "jekono jaygay", "en": "anywhere", "context": "Refer to unrestricted place.", "category": "consonant-jo-yo" },
+    { "bn": "যার দরকার", "pronunciation": "jar dorkar", "en": "whoever needs it", "context": "Refer to the person who needs something.", "category": "consonant-jo-yo" },
+    { "bn": "যাকে চাই", "pronunciation": "jake chai", "en": "whom I want", "context": "Refer to a desired person.", "category": "consonant-jo-yo" },
+    { "bn": "যারা এসেছে", "pronunciation": "jara eshechhe", "en": "those who came", "context": "Refer to a group of people.", "category": "consonant-jo-yo" },
+    { "bn": "যত তাড়াতাড়ি সম্ভব", "pronunciation": "joto taratari shombhob", "en": "as soon as possible", "context": "Request urgency.", "category": "consonant-jo-yo" },
+    { "bn": "যতটা সম্ভব", "pronunciation": "jotota shombhob", "en": "as much as possible", "context": "Express the greatest possible amount.", "category": "consonant-jo-yo" },
+    { "bn": "যত্ন নাও।", "pronunciation": "jotno nao.", "en": "Take care.", "context": "Encourage care.", "category": "consonant-jo-yo" },
+    { "bn": "নিজের যত্ন নাও।", "pronunciation": "nijer jotno nao.", "en": "Take care of yourself.", "context": "Offer a caring farewell or reminder.", "category": "consonant-jo-yo" },
+    { "bn": "যোগাযোগ করো।", "pronunciation": "jogajog koro.", "en": "Contact me/them.", "context": "Ask someone to make contact.", "category": "consonant-jo-yo" },
+    { "bn": "আমার সাথে যোগাযোগ করো।", "pronunciation": "amar shathe jogajog koro.", "en": "Contact me.", "context": "Ask someone to contact you.", "category": "consonant-jo-yo" },
+    { "bn": "যাত্রা শুরু হয়েছে।", "pronunciation": "jatra shuru hoyechhe.", "en": "The journey has started.", "context": "Announce the start of a journey.", "category": "consonant-jo-yo" }
   ],
   "vocab": [
-    {
-      "bn": "য",
-      "pronunciation": "jô / yô",
-      "en": "jô / yô: historically y and often pronounced j",
-      "category": "consonant-jo-yo",
-      "sourcePhrase": "যান শব্দে য আছে।"
-    },
-    {
-      "bn": "যান",
-      "pronunciation": "jan",
-      "en": "vehicle",
-      "category": "consonant-jo-yo",
-      "sourcePhrase": "যান শব্দে য আছে।"
-    },
-    {
-      "bn": "যদি",
-      "pronunciation": "jôdi",
-      "en": "if",
-      "category": "consonant-jo-yo",
-      "sourcePhrase": "যদি শব্দে য আছে।"
-    },
-    {
-      "bn": "যোগ",
-      "pronunciation": "jog",
-      "en": "yoga / addition",
-      "category": "consonant-jo-yo",
-      "sourcePhrase": "যোগ শব্দে য আছে।"
-    }
+    { "bn": "যে", "pronunciation": "je", "en": "that / who", "category": "Common Words Beginning with য" },
+    { "bn": "যেই", "pronunciation": "jei", "en": "as soon as / whoever", "category": "Common Words Beginning with য" },
+    { "bn": "যেটা", "pronunciation": "jeta", "en": "which / the one that", "category": "Common Words Beginning with য" },
+    { "bn": "যেটি", "pronunciation": "jeti", "en": "which / the one that", "category": "Common Words Beginning with য" },
+    { "bn": "যেগুলো", "pronunciation": "jegulo", "en": "which ones / those that", "category": "Common Words Beginning with য" },
+    { "bn": "যেন", "pronunciation": "jeno", "en": "as if / so that", "category": "Common Words Beginning with য" },
+    { "bn": "যেমন", "pronunciation": "jemon", "en": "such as / like", "category": "Common Words Beginning with য" },
+    { "bn": "যেহেতু", "pronunciation": "jehetu", "en": "because / since", "category": "Common Words Beginning with য" },
+    { "bn": "যেখানে", "pronunciation": "jekhane", "en": "where", "category": "Common Words Beginning with য" },
+    { "bn": "যেখানেই", "pronunciation": "jekhanei", "en": "wherever", "category": "Common Words Beginning with য" },
+    { "bn": "যেদিন", "pronunciation": "jedin", "en": "the day when", "category": "Common Words Beginning with য" },
+    { "bn": "যেভাবে", "pronunciation": "jebhabe", "en": "the way that", "category": "Common Words Beginning with য" },
+    { "bn": "যেকোনো", "pronunciation": "jekono", "en": "any", "category": "Common Words Beginning with য" },
+    { "bn": "যত", "pronunciation": "joto", "en": "as much / as many", "category": "Common Words Beginning with য" },
+    { "bn": "যতটা", "pronunciation": "jotota", "en": "as much as", "category": "Common Words Beginning with য" },
+    { "bn": "যখন", "pronunciation": "jokhon", "en": "when", "category": "Common Words Beginning with য" },
+    { "bn": "যতক্ষণ", "pronunciation": "jotokkhon", "en": "as long as", "category": "Common Words Beginning with য" },
+    { "bn": "যদি", "pronunciation": "jodi", "en": "if", "category": "Common Words Beginning with য" },
+    { "bn": "যদিও", "pronunciation": "jodio", "en": "although", "category": "Common Words Beginning with য" },
+    { "bn": "যার", "pronunciation": "jar", "en": "whose", "category": "Common Words Beginning with য" },
+    { "bn": "যাকে", "pronunciation": "jake", "en": "whom", "category": "Common Words Beginning with য" },
+    { "bn": "যারা", "pronunciation": "jara", "en": "those who", "category": "Common Words Beginning with য" },
+    { "bn": "যাদের", "pronunciation": "jader", "en": "whose / those people's", "category": "Common Words Beginning with য" },
+    { "bn": "যাও", "pronunciation": "jao", "en": "go", "category": "Common Words Beginning with য" },
+    { "bn": "যাত্রা", "pronunciation": "jatra", "en": "journey", "category": "Common Words Beginning with য" },
+    { "bn": "যাত্রী", "pronunciation": "jatri", "en": "passenger", "category": "Common Words Beginning with য" },
+    { "bn": "যান", "pronunciation": "jan", "en": "go (respectful) / vehicle", "category": "Common Words Beginning with য" },
+    { "bn": "যানবাহন", "pronunciation": "janbahon", "en": "vehicle / transportation", "category": "Common Words Beginning with য" },
+    { "bn": "যন্ত্র", "pronunciation": "jontro", "en": "machine / instrument", "category": "Common Words Beginning with য" },
+    { "bn": "যন্ত্রণা", "pronunciation": "jontona", "en": "pain / suffering", "category": "Common Words Beginning with য" },
+    { "bn": "যত্ন", "pronunciation": "jotno", "en": "care", "category": "Common Words Beginning with য" },
+    { "bn": "যত্নশীল", "pronunciation": "jotnoshil", "en": "caring / careful", "category": "Common Words Beginning with য" },
+    { "bn": "যোগ", "pronunciation": "jog", "en": "addition / connection", "category": "Common Words Beginning with য" },
+    { "bn": "যোগ্য", "pronunciation": "joggo", "en": "qualified / worthy", "category": "Common Words Beginning with য" },
+    { "bn": "যোগ্যতা", "pronunciation": "joggota", "en": "qualification", "category": "Common Words Beginning with য" },
+    { "bn": "যোগাযোগ", "pronunciation": "jogajog", "en": "communication / contact", "category": "Common Words Beginning with য" },
+    { "bn": "যুদ্ধ", "pronunciation": "juddho", "en": "war", "category": "Common Words Beginning with য" },
+    { "bn": "যুবক", "pronunciation": "jubok", "en": "young man", "category": "Common Words Beginning with য" },
+    { "bn": "যুবতী", "pronunciation": "juboti", "en": "young woman", "category": "Common Words Beginning with য" },
+    { "bn": "ব্যথা", "pronunciation": "byatha", "en": "pain", "category": "Words with য-ফলা (্য)" },
+    { "bn": "ব্যস্ত", "pronunciation": "byasto", "en": "busy", "category": "Words with য-ফলা (্য)" },
+    { "bn": "ব্যবহার", "pronunciation": "byabohar", "en": "use", "category": "Words with য-ফলা (্য)" },
+    { "bn": "ব্যক্তি", "pronunciation": "byokti", "en": "person / individual", "category": "Words with য-ফলা (্য)" },
+    { "bn": "সত্য", "pronunciation": "sotto", "en": "truth / true", "category": "Words with য-ফলা (্য)" },
+    { "bn": "ন্যায়", "pronunciation": "nyay", "en": "justice", "category": "Words with য-ফলা (্য)" },
+    { "bn": "মূল্য", "pronunciation": "mullo", "en": "price / value", "category": "Words with য-ফলা (্য)" },
+    { "bn": "স্বাস্থ্য", "pronunciation": "shastho", "en": "health", "category": "Words with য-ফলা (্য)" },
+    { "bn": "সাহায্য", "pronunciation": "shahajjo", "en": "help", "category": "Words with য-ফলা (্য)" }
   ],
   "practice": [
-    "Say য three times: jô / yô, jô / yô, jô / yô.",
-    "Find য in each example word and read the whole word aloud.",
-    "Write য five times while saying its name."
+    "Say য three times with its usual modern Bangla sound: jô, jô, jô.",
+    "Practice the vowel forms: য (jô), যা (ja), যি (ji), যী (ji, uncommon), যু (ju), যূ (ju, uncommon), যে (je), যৈ (joi, uncommon), যো (jo), and যৌ (jou).",
+    "Read the combinations aloud: য + া = যা as in যাত্রা, য + ি = যি as in যদি, য + ু = যু as in যুদ্ধ, য + ে = যে as in যেমন, য + ো = যো as in যোগ, and য + ৌ = যৌ as in যৌথ.",
+    "Compare য (usually j) with য় (a y-like sound): যদি / হয়, যখন / ভয়, যে / সময়, and যাও / বয়স.",
+    "Learn to recognize য-ফলা (্য) in ব্যথা, ব্যস্ত, ব্যবহার, ব্যক্তি, সত্য, ন্যায়, মূল্য, স্বাস্থ্য, and সাহায্য.",
+    "Use যে, যদি, যখন, যেমন, যেখানে, যাও, যত্ন, and যোগাযোগ as quick reading anchors.",
+    "Recognize these phrases instantly: যদি পারো, যখন সময় হবে, যেখানে আছো, যেমন তুমি চাও, and নিজের যত্ন নাও."
   ],
   "notes": [
-    "য is pronounced approximately historically y and often pronounced j.",
-    "Listen to the audio and compare য across the example words."
+    "য is a very common Bangla consonant named jô. In modern Bangla, it usually has a j sound as in job.",
+    "Do not confuse য with য়. য normally has a j sound, as in যদি, যখন, যে, and যাও; য় contributes a y-like sound, as in হয়, ভয়, সময়, and বয়স.",
+    "য-ফলা is the attached form ্য. It appears after another consonant in words such as ব্যথা, ব্যস্ত, ব্যবহার, ব্যক্তি, সত্য, ন্যায়, মূল্য, স্বাস্থ্য, and সাহায্য. Beginners should first learn to recognize its shape.",
+    "Best words to memorize include যে, যদি, যখন, যেখানে, যেমন, যেটা, যেকোনো, যত, যার, যাকে, যারা, যাও, যাত্রা, যাত্রী, যত্ন, যোগ, যোগ্য, যোগাযোগ, and যুদ্ধ."
   ]
 }

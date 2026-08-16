@@ -1,136 +1,101 @@
 {
   "id": "consonant-rro",
   "title": "ড় — ṛô",
-  "summary": "Learn ড়, pronounced ṛô, and recognize it in three useful Bengali words.",
+  "summary": "Learn the common internal Bangla consonant ড়, its flapped ṛ sound, useful word families, and how it differs from ড and ঢ়.",
   "level": "beginner",
   "topic": "Consonant: ড়",
-  "focus": "character recognition and pronunciation",
+  "focus": "internal character recognition, pronunciation, and word families",
   "phrases": [
-    {
-      "bn": "গাড়ি শব্দে ড় আছে।",
-      "pronunciation": "gaṛi shôbde ṛô achhe",
-      "en": "The word “গাড়ি” contains ড়.",
-      "context": "Find ড় in গাড়ি and say the complete word aloud.",
-      "category": "consonant-rro",
-      "words": [
-        {
-          "bn": "গাড়ি",
-          "pronunciation": "gaṛi",
-          "en": "car"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ড়",
-          "pronunciation": "ṛô",
-          "en": "the ṛô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "বড় শব্দে ড় আছে।",
-      "pronunciation": "bôṛo shôbde ṛô achhe",
-      "en": "The word “বড়” contains ড়.",
-      "context": "Find ড় in বড় and say the complete word aloud.",
-      "category": "consonant-rro",
-      "words": [
-        {
-          "bn": "বড়",
-          "pronunciation": "bôṛo",
-          "en": "big"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ড়",
-          "pronunciation": "ṛô",
-          "en": "the ṛô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "ঘড়ি শব্দে ড় আছে।",
-      "pronunciation": "ghôṛi shôbde ṛô achhe",
-      "en": "The word “ঘড়ি” contains ড়.",
-      "context": "Find ড় in ঘড়ি and say the complete word aloud.",
-      "category": "consonant-rro",
-      "words": [
-        {
-          "bn": "ঘড়ি",
-          "pronunciation": "ghôṛi",
-          "en": "clock"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ড়",
-          "pronunciation": "ṛô",
-          "en": "the ṛô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    }
+    { "bn": "এটা বড়।", "pronunciation": "eta boro.", "en": "This is big.", "context": "Describe something large.", "category": "consonant-rro" },
+    { "bn": "খুব বড়।", "pronunciation": "khub boro.", "en": "Very big.", "context": "Emphasize size.", "category": "consonant-rro" },
+    { "bn": "বড় বাড়ি।", "pronunciation": "boro bari.", "en": "Big house.", "context": "Describe a large house.", "category": "consonant-rro" },
+    { "bn": "আমার বড় ভাই।", "pronunciation": "amar boro bhai.", "en": "My older brother.", "context": "Describe an older brother.", "category": "consonant-rro" },
+    { "bn": "আমার বড় বোন।", "pronunciation": "amar boro bon.", "en": "My older sister.", "context": "Describe an older sister.", "category": "consonant-rro" },
+    { "bn": "আমার বাড়ি।", "pronunciation": "amar bari.", "en": "My house.", "context": "Identify your home.", "category": "consonant-rro" },
+    { "bn": "আমি বাড়িতে আছি।", "pronunciation": "ami barite achhi.", "en": "I'm at home.", "context": "Say that you are home.", "category": "consonant-rro" },
+    { "bn": "আমি বাড়ি যাচ্ছি।", "pronunciation": "ami bari jachchhi.", "en": "I'm going home.", "context": "Describe going home now.", "category": "consonant-rro" },
+    { "bn": "বাড়ি কোথায়?", "pronunciation": "bari kothay?", "en": "Where is the house/home?", "context": "Ask where a home is.", "category": "consonant-rro" },
+    { "bn": "বাড়ি চলো।", "pronunciation": "bari cholo.", "en": "Let's go home.", "context": "Suggest going home.", "category": "consonant-rro" },
+    { "bn": "বাড়িতে যাও।", "pronunciation": "barite jao.", "en": "Go home.", "context": "Tell someone to go home.", "category": "consonant-rro" },
+    { "bn": "আমার গাড়ি।", "pronunciation": "amar gari.", "en": "My car.", "context": "Identify your car.", "category": "consonant-rro" },
+    { "bn": "গাড়ি কোথায়?", "pronunciation": "gari kothay?", "en": "Where is the car?", "context": "Ask where a car is.", "category": "consonant-rro" },
+    { "bn": "আমি গাড়ি চালাচ্ছি।", "pronunciation": "ami gari chalachchhi.", "en": "I'm driving.", "context": "Describe driving now.", "category": "consonant-rro" },
+    { "bn": "গাড়িতে বসো।", "pronunciation": "garite bosho.", "en": "Sit in the car.", "context": "Tell someone to sit in a car.", "category": "consonant-rro" },
+    { "bn": "গাড়ি থামাও।", "pronunciation": "gari thamao.", "en": "Stop the car.", "context": "Tell someone to stop a vehicle.", "category": "consonant-rro" },
+    { "bn": "আমি বই পড়ছি।", "pronunciation": "ami boi porchhi.", "en": "I'm reading a book.", "context": "Use পড়া to describe reading.", "category": "consonant-rro" },
+    { "bn": "আমি বাংলা পড়ছি।", "pronunciation": "ami bangla porchhi.", "en": "I'm studying/reading Bangla.", "context": "Describe studying Bangla.", "category": "consonant-rro" },
+    { "bn": "আমি পড়তে চাই।", "pronunciation": "ami porte chai.", "en": "I want to read.", "context": "Express a desire to read.", "category": "consonant-rro" },
+    { "bn": "সে পড়ে গেছে।", "pronunciation": "she pore gechhe.", "en": "He/she fell down.", "context": "Use পড়া to mean fall.", "category": "consonant-rro" },
+    { "bn": "ঘড়ি কোথায়?", "pronunciation": "ghori kothay?", "en": "Where is the watch?", "context": "Ask where a watch is.", "category": "consonant-rro" },
+    { "bn": "আমার ঘড়ি।", "pronunciation": "amar ghori.", "en": "My watch.", "context": "Identify your watch.", "category": "consonant-rro" },
+    { "bn": "ঘড়িটা সুন্দর।", "pronunciation": "ghorita shundor.", "en": "The watch is beautiful.", "context": "Compliment a watch.", "category": "consonant-rro" },
+    { "bn": "এখানে দাঁড়াও।", "pronunciation": "ekhane dãrao.", "en": "Stand here / Wait here.", "context": "Tell someone where to stand or wait.", "category": "consonant-rro" },
+    { "bn": "ওখানে দাঁড়াও।", "pronunciation": "okhane dãrao.", "en": "Stand there.", "context": "Tell someone where to stand.", "category": "consonant-rro" },
+    { "bn": "আমি দাঁড়িয়ে আছি।", "pronunciation": "ami dãriye achhi.", "en": "I'm standing.", "context": "Describe standing now.", "category": "consonant-rro" },
+    { "bn": "সে বাইরে দাঁড়িয়ে আছে।", "pronunciation": "she baire dãriye achhe.", "en": "He/she is standing outside.", "context": "Describe someone's location and posture.", "category": "consonant-rro" },
+    { "bn": "দৌড়াও!", "pronunciation": "dourao!", "en": "Run!", "context": "Tell someone to run.", "category": "consonant-rro" },
+    { "bn": "আমি দৌড়াচ্ছি।", "pronunciation": "ami dourachchhi.", "en": "I'm running.", "context": "Describe running now.", "category": "consonant-rro" },
+    { "bn": "সে খুব দ্রুত দৌড়ায়।", "pronunciation": "she khub druto douray.", "en": "He/she runs very fast.", "context": "Describe someone's running speed.", "category": "consonant-rro" },
+    { "bn": "দৌড় প্রতিযোগিতা", "pronunciation": "dour protijogita", "en": "running race", "context": "Name a running competition.", "category": "consonant-rro" },
+    { "bn": "নড়বে না।", "pronunciation": "norbe na.", "en": "Don't move.", "context": "Tell someone to remain still.", "category": "consonant-rro" },
+    { "bn": "ঝড় আসছে।", "pronunciation": "jhor aschhe.", "en": "A storm is coming.", "context": "Warn about an approaching storm.", "category": "consonant-rro" },
+    { "bn": "মোড়ে থামো।", "pronunciation": "more thamo.", "en": "Stop at the corner.", "context": "Give a travel direction.", "category": "consonant-rro" }
   ],
   "vocab": [
-    {
-      "bn": "ড়",
-      "pronunciation": "ṛô",
-      "en": "ṛô: a flapped r/d sound",
-      "category": "consonant-rro",
-      "sourcePhrase": "গাড়ি শব্দে ড় আছে।"
-    },
-    {
-      "bn": "গাড়ি",
-      "pronunciation": "gaṛi",
-      "en": "car",
-      "category": "consonant-rro",
-      "sourcePhrase": "গাড়ি শব্দে ড় আছে।"
-    },
-    {
-      "bn": "বড়",
-      "pronunciation": "bôṛo",
-      "en": "big",
-      "category": "consonant-rro",
-      "sourcePhrase": "বড় শব্দে ড় আছে।"
-    },
-    {
-      "bn": "ঘড়ি",
-      "pronunciation": "ghôṛi",
-      "en": "clock",
-      "category": "consonant-rro",
-      "sourcePhrase": "ঘড়ি শব্দে ড় আছে।"
-    }
+    { "bn": "বড়", "pronunciation": "boro", "en": "big / older", "category": "Common Words Containing ড়" },
+    { "bn": "বাড়ি", "pronunciation": "bari", "en": "house / home", "category": "The বাড়ি Word Family" },
+    { "bn": "বাড়িতে", "pronunciation": "barite", "en": "at home", "category": "The বাড়ি Word Family" },
+    { "bn": "বাড়ির", "pronunciation": "barir", "en": "of the house", "category": "The বাড়ি Word Family" },
+    { "bn": "গাড়ি", "pronunciation": "gari", "en": "car / vehicle", "category": "Common Words Containing ড়" },
+    { "bn": "ঘড়ি", "pronunciation": "ghori", "en": "clock / watch", "category": "Common Words Containing ড়" },
+    { "bn": "পড়া", "pronunciation": "pora", "en": "to read / study / fall", "category": "The পড়া Word Family" },
+    { "bn": "পড়ি", "pronunciation": "pori", "en": "I read", "category": "The পড়া Word Family" },
+    { "bn": "পড়তে", "pronunciation": "porte", "en": "to read / study", "category": "The পড়া Word Family" },
+    { "bn": "পড়ছে", "pronunciation": "porchhe", "en": "is reading", "category": "The পড়া Word Family" },
+    { "bn": "পড়ছি", "pronunciation": "porchhi", "en": "I'm reading", "category": "The পড়া Word Family" },
+    { "bn": "পড়াশোনা", "pronunciation": "porashona", "en": "studying / education", "category": "The পড়া Word Family" },
+    { "bn": "দাঁড়ানো", "pronunciation": "dãrano", "en": "to stand", "category": "The দাঁড়ানো Word Family" },
+    { "bn": "দাঁড়াও", "pronunciation": "dãrao", "en": "stand / wait", "category": "The দাঁড়ানো Word Family" },
+    { "bn": "দাঁড়িয়ে", "pronunciation": "dãriye", "en": "standing", "category": "The দাঁড়ানো Word Family" },
+    { "bn": "দাঁড়িয়ে আছে", "pronunciation": "dãriye achhe", "en": "is standing", "category": "The দাঁড়ানো Word Family" },
+    { "bn": "নড়া", "pronunciation": "nora", "en": "to move", "category": "Common Words Containing ড়" },
+    { "bn": "নড়াচড়া", "pronunciation": "norachora", "en": "movement", "category": "Common Words Containing ড়" },
+    { "bn": "ছড়া", "pronunciation": "chhora", "en": "rhyme", "category": "Common Words Containing ড়" },
+    { "bn": "ছড়ানো", "pronunciation": "chhorano", "en": "to spread", "category": "Common Words Containing ড়" },
+    { "bn": "ঝড়", "pronunciation": "jhor", "en": "storm", "category": "Common Words Containing ড়" },
+    { "bn": "গড়া", "pronunciation": "gora", "en": "to build / form", "category": "Common Words Containing ড়" },
+    { "bn": "গড়ে", "pronunciation": "gore", "en": "on average / by building", "category": "Common Words Containing ড়" },
+    { "bn": "গড়", "pronunciation": "gor", "en": "average", "category": "Common Words Containing ড়" },
+    { "bn": "চড়া", "pronunciation": "chora", "en": "to climb / ride / high", "category": "Common Words Containing ড়" },
+    { "bn": "চড়ুই", "pronunciation": "chorui", "en": "sparrow", "category": "Common Words Containing ড়" },
+    { "bn": "আড়াল", "pronunciation": "aral", "en": "cover / hiding", "category": "Common Words Containing ড়" },
+    { "bn": "আড়ালে", "pronunciation": "arale", "en": "behind / out of sight", "category": "Common Words Containing ড়" },
+    { "bn": "মোড়", "pronunciation": "mor", "en": "turn / corner", "category": "Common Words Containing ড়" },
+    { "bn": "ঘোড়া", "pronunciation": "ghora", "en": "horse", "category": "Common Words Containing ড়" },
+    { "bn": "দৌড়", "pronunciation": "dour", "en": "running / race", "category": "Common Words Containing ড়" },
+    { "bn": "দৌড়ানো", "pronunciation": "dourano", "en": "to run", "category": "Common Words Containing ড়" },
+    { "bn": "জড়ানো", "pronunciation": "jorano", "en": "to wrap / become involved", "category": "Common Words Containing ড়" },
+    { "bn": "জড়িয়ে", "pronunciation": "joriye", "en": "wrapped / embracing", "category": "Common Words Containing ড়" },
+    { "bn": "এগিয়ে", "pronunciation": "egiye", "en": "forward", "category": "Related Movement Word" },
+    { "bn": "পিছিয়ে", "pronunciation": "pichhiye", "en": "behind / backward", "category": "Related Movement Word" },
+    { "bn": "ভেঙে পড়া", "pronunciation": "bhenge pora", "en": "to collapse", "category": "Common Words Containing ড়" }
   ],
   "practice": [
-    "Say ড় three times: ṛô, ṛô, ṛô.",
-    "Find ড় in each example word and read the whole word aloud.",
-    "Write ড় five times while saying its name."
+    "Say ড় with a quick flapped ṛ or r-like sound: ṛô, ṛô, ṛô. It is not identical to English r.",
+    "Train your eyes to find ড় in the middle or at the end of words because it normally does not begin native Bangla words.",
+    "Practice the বাড়ি family: বাড়ি, বাড়িতে, বাড়ির, and বাড়িতে যাও.",
+    "Practice the পড়া family: পড়া, পড়ি, পড়ছি, পড়তে, and পড়াশোনা. Use context to distinguish reading/studying from falling.",
+    "Practice the দাঁড়ানো family: দাঁড়ানো, দাঁড়াও, দাঁড়িয়ে, and দাঁড়িয়ে আছে.",
+    "Compare ড (hard d) with ড় (flapped ṛ): ডাল / বড়, ডাক / বাড়ি, ডাক্তার / গাড়ি, and ডিম / পড়া.",
+    "Compare common ড় with rare ঢ়: বড় / গাঢ়, বাড়ি / দৃঢ়, গাড়ি / রূঢ়.",
+    "Use বড়, বাড়ি, গাড়ি, ঘড়ি, পড়া, দাঁড়ানো, নড়া, ঝড়, মোড়, দৌড়, and ঘোড়া as quick reading anchors.",
+    "Recognize these phrases instantly: আমি বাড়ি যাচ্ছি, গাড়ি কোথায়, আমি বাংলা পড়ছি, এখানে দাঁড়াও, and নড়বে না."
   ],
   "notes": [
-    "ড় is pronounced approximately a flapped r/d sound.",
-    "Listen to the audio and compare ড় across the example words."
+    "ড় is a common and important Bangla consonant, especially inside words. Its name is ṛô and its sound is a quick flap rather than the usual English r.",
+    "ড় normally does not begin native Bangla words; it usually appears in the middle or at the end.",
+    "The dot changes ড into ড় and significantly changes the sound: ড is a hard d, while ড় is a flapped ṛ or r-like sound.",
+    "ড় and ঢ় form a pair: ড় is ṛ and is common, while ঢ় is aspirated ṛh and much rarer.",
+    "Best words to memorize include বড়, বাড়ি, গাড়ি, ঘড়ি, পড়া, পড়তে, পড়াশোনা, দাঁড়ানো, দাঁড়াও, নড়া, নড়াচড়া, ঝড়, ছড়া, গড়, গড়া, মোড়, ঘোড়া, দৌড়, দৌড়ানো, and আড়াল."
   ]
 }

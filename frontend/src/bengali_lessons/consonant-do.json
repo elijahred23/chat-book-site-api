@@ -1,136 +1,96 @@
 {
   "id": "consonant-do",
   "title": "দ — dô",
-  "summary": "Learn দ, pronounced dô, and recognize it in three useful Bengali words.",
+  "summary": "Learn the common Bangla consonant দ, its dental d sound, vowel-sign forms, and useful words and phrases.",
   "level": "beginner",
   "topic": "Consonant: দ",
   "focus": "character recognition and pronunciation",
   "phrases": [
-    {
-      "bn": "দরজা শব্দে দ আছে।",
-      "pronunciation": "dôrja shôbde dô achhe",
-      "en": "The word “দরজা” contains দ.",
-      "context": "Find দ in দরজা and say the complete word aloud.",
-      "category": "consonant-do",
-      "words": [
-        {
-          "bn": "দরজা",
-          "pronunciation": "dôrja",
-          "en": "door"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "দ",
-          "pronunciation": "dô",
-          "en": "the dô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "দিন শব্দে দ আছে।",
-      "pronunciation": "din shôbde dô achhe",
-      "en": "The word “দিন” contains দ.",
-      "context": "Find দ in দিন and say the complete word aloud.",
-      "category": "consonant-do",
-      "words": [
-        {
-          "bn": "দিন",
-          "pronunciation": "din",
-          "en": "day"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "দ",
-          "pronunciation": "dô",
-          "en": "the dô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "নদী শব্দে দ আছে।",
-      "pronunciation": "nôdi shôbde dô achhe",
-      "en": "The word “নদী” contains দ.",
-      "context": "Find দ in নদী and say the complete word aloud.",
-      "category": "consonant-do",
-      "words": [
-        {
-          "bn": "নদী",
-          "pronunciation": "nôdi",
-          "en": "river"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "দ",
-          "pronunciation": "dô",
-          "en": "the dô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    }
+    { "bn": "আমাকে দাও।", "pronunciation": "amake dao.", "en": "Give it to me.", "context": "Ask someone to give you something.", "category": "consonant-do" },
+    { "bn": "এটা আমাকে দাও।", "pronunciation": "eta amake dao.", "en": "Give this to me.", "context": "Ask for a specific object.", "category": "consonant-do" },
+    { "bn": "এটা দাও।", "pronunciation": "eta dao.", "en": "Give me this.", "context": "Ask for a specific object.", "category": "consonant-do" },
+    { "bn": "একটু পানি দাও।", "pronunciation": "ektu pani dao.", "en": "Give me some water.", "context": "Ask for some water.", "category": "consonant-do" },
+    { "bn": "পানি দাও।", "pronunciation": "pani dao.", "en": "Give me water.", "context": "Ask for water.", "category": "consonant-do" },
+    { "bn": "আমাকে একটা দাও।", "pronunciation": "amake ekta dao.", "en": "Give me one.", "context": "Ask for one item.", "category": "consonant-do" },
+    { "bn": "আমি দেখছি।", "pronunciation": "ami dekhchhi.", "en": "I'm looking / I can see.", "context": "Describe looking or seeing.", "category": "consonant-do" },
+    { "bn": "এটা দেখো।", "pronunciation": "eta dekho.", "en": "Look at this.", "context": "Direct someone's attention.", "category": "consonant-do" },
+    { "bn": "আমাকে দেখাও।", "pronunciation": "amake dekhao.", "en": "Show me.", "context": "Ask to be shown something.", "category": "consonant-do" },
+    { "bn": "আবার দেখা হবে।", "pronunciation": "abar dekha hobe.", "en": "See you again.", "context": "Say goodbye with an expectation of meeting again.", "category": "consonant-do" },
+    { "bn": "আমার এটা দরকার।", "pronunciation": "amar eta dorkar.", "en": "I need this.", "context": "Express a need for something.", "category": "consonant-do" },
+    { "bn": "আমার সাহায্য দরকার।", "pronunciation": "amar shahajjo dorkar.", "en": "I need help.", "context": "Ask for help.", "category": "consonant-do" },
+    { "bn": "সাহায্য দরকার।", "pronunciation": "shahajjo dorkar.", "en": "I need help.", "context": "State that help is needed.", "category": "consonant-do" },
+    { "bn": "আমার দরকার।", "pronunciation": "amar dorkar.", "en": "I need it.", "context": "State that something is needed.", "category": "consonant-do" },
+    { "bn": "তোমার কী দরকার?", "pronunciation": "tomar ki dorkar?", "en": "What do you need?", "context": "Ask what someone needs.", "category": "consonant-do" },
+    { "bn": "দরকার নেই।", "pronunciation": "dorkar nei.", "en": "No need.", "context": "Say something is unnecessary.", "category": "consonant-do" },
+    { "bn": "দাম কত?", "pronunciation": "dam koto?", "en": "How much is it?", "context": "Ask a price.", "category": "consonant-do" },
+    { "bn": "এটার দাম কত?", "pronunciation": "etar dam koto?", "en": "How much is this?", "context": "Ask the price of a specific item.", "category": "consonant-do" },
+    { "bn": "অনেক দামি।", "pronunciation": "onek dami.", "en": "Very expensive.", "context": "Describe a high price.", "category": "consonant-do" },
+    { "bn": "দাম বেশি।", "pronunciation": "dam beshi.", "en": "The price is high.", "context": "Describe something as expensive.", "category": "consonant-do" },
+    { "bn": "অনেক দেরি হয়েছে।", "pronunciation": "onek deri hoyechhe.", "en": "It's very late.", "context": "Note that it is late.", "category": "consonant-do" },
+    { "bn": "দেরি করো না।", "pronunciation": "deri koro na.", "en": "Don't be late.", "context": "Ask someone to arrive on time.", "category": "consonant-do" },
+    { "bn": "আমার দেরি হয়ে গেছে।", "pronunciation": "amar deri hoye gechhe.", "en": "I'm late.", "context": "Acknowledge being late.", "category": "consonant-do" },
+    { "bn": "আজ কী দিন?", "pronunciation": "aj ki din?", "en": "What day is today?", "context": "Ask the day.", "category": "consonant-do" },
+    { "bn": "দুই দিন", "pronunciation": "dui din", "en": "two days", "context": "Practice a duration.", "category": "consonant-do" },
+    { "bn": "দশ দিন", "pronunciation": "dosh din", "en": "ten days", "context": "Practice a duration.", "category": "consonant-do" },
+    { "bn": "দরজা খোলো।", "pronunciation": "dorja kholo.", "en": "Open the door.", "context": "Ask someone to open a door.", "category": "consonant-do" },
+    { "bn": "দরজা বন্ধ করো।", "pronunciation": "dorja bondho koro.", "en": "Close the door.", "context": "Ask someone to close a door.", "category": "consonant-do" },
+    { "bn": "দোকান কোথায়?", "pronunciation": "dokan kothay?", "en": "Where is the shop?", "context": "Ask where a shop is.", "category": "consonant-do" },
+    { "bn": "আমি দুঃখিত।", "pronunciation": "ami dukkhito.", "en": "I'm sorry.", "context": "Apologize.", "category": "consonant-do" },
+    { "bn": "অনেক দূর।", "pronunciation": "onek dur.", "en": "Very far.", "context": "Describe distance.", "category": "consonant-do" },
+    { "bn": "কত দূর?", "pronunciation": "koto dur?", "en": "How far?", "context": "Ask about distance.", "category": "consonant-do" },
+    { "bn": "এটা আমার দোষ।", "pronunciation": "eta amar dosh.", "en": "It's my fault.", "context": "Accept blame.", "category": "consonant-do" },
+    { "bn": "আমার দোষ না।", "pronunciation": "amar dosh na.", "en": "It's not my fault.", "context": "Deny blame.", "category": "consonant-do" },
+    { "bn": "দৌড়াও!", "pronunciation": "dourao!", "en": "Run!", "context": "Tell someone to run.", "category": "consonant-do" }
   ],
   "vocab": [
-    {
-      "bn": "দ",
-      "pronunciation": "dô",
-      "en": "dô: a dental d",
-      "category": "consonant-do",
-      "sourcePhrase": "দরজা শব্দে দ আছে।"
-    },
-    {
-      "bn": "দরজা",
-      "pronunciation": "dôrja",
-      "en": "door",
-      "category": "consonant-do",
-      "sourcePhrase": "দরজা শব্দে দ আছে।"
-    },
-    {
-      "bn": "দিন",
-      "pronunciation": "din",
-      "en": "day",
-      "category": "consonant-do",
-      "sourcePhrase": "দিন শব্দে দ আছে।"
-    },
-    {
-      "bn": "নদী",
-      "pronunciation": "nôdi",
-      "en": "river",
-      "category": "consonant-do",
-      "sourcePhrase": "নদী শব্দে দ আছে।"
-    }
+    { "bn": "দাও", "pronunciation": "dao", "en": "give", "category": "Common Words Beginning with দ" },
+    { "bn": "দেওয়া", "pronunciation": "deoa", "en": "to give", "category": "Common Words Beginning with দ" },
+    { "bn": "দেয়", "pronunciation": "dey", "en": "gives", "category": "Common Words Beginning with দ" },
+    { "bn": "দেখা", "pronunciation": "dekha", "en": "to see", "category": "Common Words Beginning with দ" },
+    { "bn": "দেখো", "pronunciation": "dekho", "en": "look / see", "category": "Common Words Beginning with দ" },
+    { "bn": "দেখি", "pronunciation": "dekhi", "en": "I see / let me see", "category": "Common Words Beginning with দ" },
+    { "bn": "দেখে", "pronunciation": "dekhe", "en": "seeing / after seeing", "category": "Common Words Beginning with দ" },
+    { "bn": "দেখানো", "pronunciation": "dekhano", "en": "to show", "category": "Common Words Beginning with দ" },
+    { "bn": "দিন", "pronunciation": "din", "en": "day", "category": "Common Words Beginning with দ" },
+    { "bn": "দিনে", "pronunciation": "dine", "en": "during the day", "category": "Common Words Beginning with দ" },
+    { "bn": "দুই", "pronunciation": "dui", "en": "two", "category": "Common Words Beginning with দ" },
+    { "bn": "দশ", "pronunciation": "dosh", "en": "ten", "category": "Common Words Beginning with দ" },
+    { "bn": "দরজা", "pronunciation": "dorja", "en": "door", "category": "Common Words Beginning with দ" },
+    { "bn": "দরকার", "pronunciation": "dorkar", "en": "need / necessary", "category": "Common Words Beginning with দ" },
+    { "bn": "দাম", "pronunciation": "dam", "en": "price", "category": "Common Words Beginning with দ" },
+    { "bn": "দামি", "pronunciation": "dami", "en": "expensive", "category": "Common Words Beginning with দ" },
+    { "bn": "দাদা", "pronunciation": "dada", "en": "older brother / grandfather", "category": "Common Words Beginning with দ" },
+    { "bn": "দাদি", "pronunciation": "dadi", "en": "paternal grandmother", "category": "Common Words Beginning with দ" },
+    { "bn": "দাঁত", "pronunciation": "dãt", "en": "tooth / teeth", "category": "Common Words Beginning with দ" },
+    { "bn": "দিক", "pronunciation": "dik", "en": "direction / side", "category": "Common Words Beginning with দ" },
+    { "bn": "দোকান", "pronunciation": "dokan", "en": "shop", "category": "Common Words Beginning with দ" },
+    { "bn": "দুধ", "pronunciation": "dudh", "en": "milk", "category": "Common Words Beginning with দ" },
+    { "bn": "দুপুর", "pronunciation": "dupur", "en": "noon / afternoon", "category": "Common Words Beginning with দ" },
+    { "bn": "দুঃখ", "pronunciation": "dukkho", "en": "sadness", "category": "Common Words Beginning with দ" },
+    { "bn": "দুঃখিত", "pronunciation": "dukkhito", "en": "sorry / sad", "category": "Common Words Beginning with দ" },
+    { "bn": "দূর", "pronunciation": "dur", "en": "far", "category": "Common Words Beginning with দ" },
+    { "bn": "দেশ", "pronunciation": "desh", "en": "country", "category": "Common Words Beginning with দ" },
+    { "bn": "দেরি", "pronunciation": "deri", "en": "late / delay", "category": "Common Words Beginning with দ" },
+    { "bn": "দেহ", "pronunciation": "deho", "en": "body", "category": "Common Words Beginning with দ" },
+    { "bn": "দোষ", "pronunciation": "dosh", "en": "fault / blame", "category": "Common Words Beginning with দ" },
+    { "bn": "দোয়া", "pronunciation": "doa", "en": "prayer / blessing", "category": "Common Words Beginning with দ" },
+    { "bn": "দৌড়", "pronunciation": "dour", "en": "run / race", "category": "Common Words Beginning with দ" },
+    { "bn": "দৌড়ানো", "pronunciation": "dourano", "en": "to run", "category": "Common Words Beginning with দ" },
+    { "bn": "দৈনিক", "pronunciation": "doinik", "en": "daily", "category": "Common Words Beginning with দ" },
+    { "bn": "দৈর্ঘ্য", "pronunciation": "doirgho", "en": "length", "category": "Common Words Beginning with দ" }
   ],
   "practice": [
-    "Say দ three times: dô, dô, dô.",
-    "Find দ in each example word and read the whole word aloud.",
-    "Write দ five times while saying its name."
+    "Say দ three times with the tongue near the teeth: dô, dô, dô.",
+    "Practice the vowel forms: দ (dô), দা (da), দি (di), দী (di), দু (du), দূ (du), দে (de), দৈ (doi), দো (do), and দৌ (dou).",
+    "Read the combinations aloud: দ + া = দা as in দাম, দ + ি = দি as in দিন, দ + ু = দু as in দুধ, দ + ূ = দূ as in দূর, দ + ে = দে as in দেশ, দ + ৈ = দৈ as in দৈনিক, দ + ো = দো as in দোষ, and দ + ৌ = দৌ as in দৌড়.",
+    "Compare দ (d) with ধ (dh, extra air): দাদা / ধান, দাম / ধরা, দিন / ধীরে, and দুধ / ধন্যবাদ.",
+    "Use দাও, দেখো, দিন, দুই, দরজা, দরকার, দাম, দুধ, দেশ, দেরি, দোষ, and দৌড় as quick reading anchors.",
+    "Recognize these phrases instantly: এটা দাও, এটা দেখো, আমার দরকার, দাম কত, and দরজা খোলো."
   ],
   "notes": [
-    "দ is pronounced approximately a dental d.",
-    "Listen to the audio and compare দ across the example words."
+    "দ is one of the most common Bangla consonants. Its name is dô and its sound is roughly d, pronounced with the tongue closer to the teeth than the English d.",
+    "দ and ধ are closely related: দ has a d sound, while ধ has an aspirated dh sound with an extra burst of air.",
+    "Compare দাম (dam, price), দিন (din, day), দুধ (dudh, milk), and দরজা (dorja, door) with ধান (dhan, paddy), ধরা (dhora, hold/catch), ধীরে (dhire, slowly), and ধন্যবাদ (dhonnobad, thank you).",
+    "Best words to memorize include দাও, দেওয়া, দেখা, দেখো, দেখানো, দিন, দুই, দশ, দরজা, দরকার, দাম, দামি, দিক, দোকান, দুধ, দুপুর, দুঃখিত, দূর, দেশ, দেরি, দোষ, and দৌড়."
   ]
 }

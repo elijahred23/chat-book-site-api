@@ -1,136 +1,102 @@
 {
   "id": "consonant-bo",
   "title": "ব — bô",
-  "summary": "Learn ব, pronounced bô, and recognize it in three useful Bengali words.",
+  "summary": "Learn the common Bangla consonant ব, its b sound, vowel-sign forms, and useful words and phrases.",
   "level": "beginner",
   "topic": "Consonant: ব",
   "focus": "character recognition and pronunciation",
   "phrases": [
-    {
-      "bn": "বই শব্দে ব আছে।",
-      "pronunciation": "boi shôbde bô achhe",
-      "en": "The word “বই” contains ব.",
-      "context": "Find ব in বই and say the complete word aloud.",
-      "category": "consonant-bo",
-      "words": [
-        {
-          "bn": "বই",
-          "pronunciation": "boi",
-          "en": "book"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ব",
-          "pronunciation": "bô",
-          "en": "the bô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "বাংলা শব্দে ব আছে।",
-      "pronunciation": "bangla shôbde bô achhe",
-      "en": "The word “বাংলা” contains ব.",
-      "context": "Find ব in বাংলা and say the complete word aloud.",
-      "category": "consonant-bo",
-      "words": [
-        {
-          "bn": "বাংলা",
-          "pronunciation": "bangla",
-          "en": "Bengali"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ব",
-          "pronunciation": "bô",
-          "en": "the bô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "ছবি শব্দে ব আছে।",
-      "pronunciation": "chhobi shôbde bô achhe",
-      "en": "The word “ছবি” contains ব.",
-      "context": "Find ব in ছবি and say the complete word aloud.",
-      "category": "consonant-bo",
-      "words": [
-        {
-          "bn": "ছবি",
-          "pronunciation": "chhobi",
-          "en": "picture"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ব",
-          "pronunciation": "bô",
-          "en": "the bô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    }
+    { "bn": "আমার বাবা।", "pronunciation": "amar baba.", "en": "My father.", "context": "Practice বাবা in a family phrase.", "category": "consonant-bo" },
+    { "bn": "আমার বাবা বাসায় আছেন।", "pronunciation": "amar baba bashay achhen.", "en": "My father is at home.", "context": "Say where your father is.", "category": "consonant-bo" },
+    { "bn": "বাবা কোথায়?", "pronunciation": "baba kothay?", "en": "Where is Dad?", "context": "Ask where Dad is.", "category": "consonant-bo" },
+    { "bn": "এটা আমার বই।", "pronunciation": "eta amar boi.", "en": "This is my book.", "context": "Identify your book.", "category": "consonant-bo" },
+    { "bn": "আমি বই পড়ছি।", "pronunciation": "ami boi porchhi.", "en": "I am reading a book.", "context": "Describe what you are reading.", "category": "consonant-bo" },
+    { "bn": "বইটা কোথায়?", "pronunciation": "boita kothay?", "en": "Where is the book?", "context": "Ask where a book is.", "category": "consonant-bo" },
+    { "bn": "কী বললে?", "pronunciation": "ki bolle?", "en": "What did you say?", "context": "Ask someone to clarify what they said.", "category": "consonant-bo" },
+    { "bn": "আবার বলো।", "pronunciation": "abar bolo.", "en": "Say it again.", "context": "Ask someone to repeat something.", "category": "consonant-bo" },
+    { "bn": "বাংলায় বলো।", "pronunciation": "banglay bolo.", "en": "Say it in Bangla.", "context": "Ask someone to speak in Bangla.", "category": "consonant-bo" },
+    { "bn": "সত্যি বলো।", "pronunciation": "sotti bolo.", "en": "Tell the truth.", "context": "Ask someone to be truthful.", "category": "consonant-bo" },
+    { "bn": "এটা অনেক বড়।", "pronunciation": "eta onek boro.", "en": "This is very big.", "context": "Describe something large.", "category": "consonant-bo" },
+    { "bn": "আমার বড় ভাই।", "pronunciation": "amar boro bhai.", "en": "My older brother.", "context": "Describe an older brother.", "category": "consonant-bo" },
+    { "bn": "বড় বাড়ি।", "pronunciation": "boro bari.", "en": "Big house.", "context": "Practice বড় in a short phrase.", "category": "consonant-bo" },
+    { "bn": "অনেক বেশি।", "pronunciation": "onek beshi.", "en": "Too much.", "context": "Describe an excessive amount.", "category": "consonant-bo" },
+    { "bn": "বেশি কথা বলো না।", "pronunciation": "beshi kotha bolo na.", "en": "Don't talk too much.", "context": "Ask someone not to talk too much.", "category": "consonant-bo" },
+    { "bn": "এটা বেশি দামি।", "pronunciation": "eta beshi dami.", "en": "This is too expensive.", "context": "Describe an excessive price.", "category": "consonant-bo" },
+    { "bn": "এখানে বসো।", "pronunciation": "ekhane bosho.", "en": "Sit here.", "context": "Invite someone to sit.", "category": "consonant-bo" },
+    { "bn": "বাইরে যাও।", "pronunciation": "baire jao.", "en": "Go outside.", "context": "Give a direction.", "category": "consonant-bo" },
+    { "bn": "বাইরে আসো।", "pronunciation": "baire asho.", "en": "Come outside.", "context": "Ask someone to come outside.", "category": "consonant-bo" },
+    { "bn": "বাসায় যাও।", "pronunciation": "bashay jao.", "en": "Go home.", "context": "Tell someone to go home.", "category": "consonant-bo" },
+    { "bn": "বাজারে যাব।", "pronunciation": "bajare jabo.", "en": "I will go to the market.", "context": "Talk about a future trip.", "category": "consonant-bo" },
+    { "bn": "আমার বন্ধু", "pronunciation": "amar bondhu", "en": "my friend", "context": "Practice বন্ধু in a personal phrase.", "category": "consonant-bo" },
+    { "bn": "আমার বোন", "pronunciation": "amar bon", "en": "my sister", "context": "Practice বোন in a family phrase.", "category": "consonant-bo" },
+    { "bn": "বড় ভাই", "pronunciation": "boro bhai", "en": "older brother", "context": "Describe an older brother.", "category": "consonant-bo" },
+    { "bn": "বড় বোন", "pronunciation": "boro bon", "en": "older sister", "context": "Describe an older sister.", "category": "consonant-bo" },
+    { "bn": "অনেক বড়", "pronunciation": "onek boro", "en": "very big", "context": "Emphasize size.", "category": "consonant-bo" },
+    { "bn": "বেশি না", "pronunciation": "beshi na", "en": "not much", "context": "Describe a limited amount.", "category": "consonant-bo" },
+    { "bn": "বৃষ্টি হচ্ছে।", "pronunciation": "brishti hochchhe.", "en": "It's raining.", "context": "Describe the weather.", "category": "consonant-bo" },
+    { "bn": "আমার বয়স বিশ বছর।", "pronunciation": "amar boyosh bish bochhor.", "en": "I am twenty years old.", "context": "State your age.", "category": "consonant-bo" },
+    { "bn": "আমার ব্যথা হচ্ছে।", "pronunciation": "amar byatha hochchhe.", "en": "I'm having pain.", "context": "Describe pain.", "category": "consonant-bo" },
+    { "bn": "আমি ব্যস্ত।", "pronunciation": "ami byasto.", "en": "I'm busy.", "context": "Describe being occupied.", "category": "consonant-bo" },
+    { "bn": "কোনো ব্যাপার না।", "pronunciation": "kono byapar na.", "en": "No problem.", "context": "Reassure someone.", "category": "consonant-bo" },
+    { "bn": "আমি বুঝতে পারছি।", "pronunciation": "ami bujhte parchhi.", "en": "I understand.", "context": "Confirm understanding.", "category": "consonant-bo" },
+    { "bn": "আমি বুঝতে পারছি না।", "pronunciation": "ami bujhte parchhi na.", "en": "I don't understand.", "context": "Say that you do not understand.", "category": "consonant-bo" }
   ],
   "vocab": [
-    {
-      "bn": "ব",
-      "pronunciation": "bô",
-      "en": "bô: b",
-      "category": "consonant-bo",
-      "sourcePhrase": "বই শব্দে ব আছে।"
-    },
-    {
-      "bn": "বই",
-      "pronunciation": "boi",
-      "en": "book",
-      "category": "consonant-bo",
-      "sourcePhrase": "বই শব্দে ব আছে।"
-    },
-    {
-      "bn": "বাংলা",
-      "pronunciation": "bangla",
-      "en": "Bengali",
-      "category": "consonant-bo",
-      "sourcePhrase": "বাংলা শব্দে ব আছে।"
-    },
-    {
-      "bn": "ছবি",
-      "pronunciation": "chhobi",
-      "en": "picture",
-      "category": "consonant-bo",
-      "sourcePhrase": "ছবি শব্দে ব আছে।"
-    }
+    { "bn": "বাবা", "pronunciation": "baba", "en": "father / dad", "category": "Common Words Beginning with ব" },
+    { "bn": "বই", "pronunciation": "boi", "en": "book", "category": "Common Words Beginning with ব" },
+    { "bn": "বলা", "pronunciation": "bola", "en": "to say / tell", "category": "Common Words Beginning with ব" },
+    { "bn": "বলে", "pronunciation": "bole", "en": "says / by saying", "category": "Common Words Beginning with ব" },
+    { "bn": "বল", "pronunciation": "bol", "en": "say / tell", "category": "Common Words Beginning with ব" },
+    { "bn": "বড়", "pronunciation": "boro", "en": "big / older", "category": "Common Words Beginning with ব" },
+    { "bn": "বড়ো", "pronunciation": "boro", "en": "big", "category": "Common Words Beginning with ব" },
+    { "bn": "বসা", "pronunciation": "bosha", "en": "to sit", "category": "Common Words Beginning with ব" },
+    { "bn": "বস", "pronunciation": "bosh", "en": "sit", "category": "Common Words Beginning with ব" },
+    { "bn": "বাসা", "pronunciation": "basha", "en": "home", "category": "Common Words Beginning with ব" },
+    { "bn": "বাস", "pronunciation": "bas", "en": "bus", "category": "Common Words Beginning with ব" },
+    { "bn": "বাজার", "pronunciation": "bajar", "en": "market", "category": "Common Words Beginning with ব" },
+    { "bn": "বাইরে", "pronunciation": "baire", "en": "outside", "category": "Common Words Beginning with ব" },
+    { "bn": "বানানো", "pronunciation": "banano", "en": "to make", "category": "Common Words Beginning with ব" },
+    { "bn": "বাচ্চা", "pronunciation": "bachcha", "en": "child / baby", "category": "Common Words Beginning with ব" },
+    { "bn": "বাংলা", "pronunciation": "bangla", "en": "Bangla", "category": "Common Words Beginning with ব" },
+    { "bn": "বাংলাদেশ", "pronunciation": "bangladesh", "en": "Bangladesh", "category": "Common Words Beginning with ব" },
+    { "bn": "বাঙালি", "pronunciation": "bangali", "en": "Bengali", "category": "Common Words Beginning with ব" },
+    { "bn": "বন্ধু", "pronunciation": "bondhu", "en": "friend", "category": "Common Words Beginning with ব" },
+    { "bn": "বন্ধ", "pronunciation": "bondho", "en": "closed / stop", "category": "Common Words Beginning with ব" },
+    { "bn": "বন্দুক", "pronunciation": "bonduk", "en": "gun", "category": "Common Words Beginning with ব" },
+    { "bn": "বদল", "pronunciation": "bodol", "en": "change", "category": "Common Words Beginning with ব" },
+    { "bn": "বদলানো", "pronunciation": "bodlano", "en": "to change", "category": "Common Words Beginning with ব" },
+    { "bn": "বছর", "pronunciation": "bochhor", "en": "year", "category": "Common Words Beginning with ব" },
+    { "bn": "বয়স", "pronunciation": "boyosh", "en": "age", "category": "Common Words Beginning with ব" },
+    { "bn": "বৃষ্টি", "pronunciation": "brishti", "en": "rain", "category": "Common Words Beginning with ব" },
+    { "bn": "বিড়াল", "pronunciation": "biral", "en": "cat", "category": "Common Words Beginning with ব" },
+    { "bn": "বিয়ে", "pronunciation": "biye", "en": "marriage / wedding", "category": "Common Words Beginning with ব" },
+    { "bn": "বিকাল", "pronunciation": "bikal", "en": "afternoon", "category": "Common Words Beginning with ব" },
+    { "bn": "বিপদ", "pronunciation": "bipod", "en": "danger / trouble", "category": "Common Words Beginning with ব" },
+    { "bn": "বেশি", "pronunciation": "beshi", "en": "more / too much", "category": "Common Words Beginning with ব" },
+    { "bn": "বেলা", "pronunciation": "bela", "en": "time of day", "category": "Common Words Beginning with ব" },
+    { "bn": "বোঝা", "pronunciation": "bojha", "en": "to understand", "category": "Common Words Beginning with ব" },
+    { "bn": "বোন", "pronunciation": "bon", "en": "sister", "category": "Common Words Beginning with ব" },
+    { "bn": "বোতল", "pronunciation": "botol", "en": "bottle", "category": "Common Words Beginning with ব" },
+    { "bn": "বুক", "pronunciation": "buk", "en": "chest", "category": "Common Words Beginning with ব" },
+    { "bn": "বুদ্ধি", "pronunciation": "buddhi", "en": "intelligence", "category": "Common Words Beginning with ব" },
+    { "bn": "বুধবার", "pronunciation": "budhbar", "en": "Wednesday", "category": "Common Words Beginning with ব" },
+    { "bn": "ব্যথা", "pronunciation": "byatha", "en": "pain", "category": "Common Words Beginning with ব" },
+    { "bn": "ব্যস্ত", "pronunciation": "byasto", "en": "busy", "category": "Common Words Beginning with ব" },
+    { "bn": "ব্যবহার", "pronunciation": "byabohar", "en": "use / usage", "category": "Common Words Beginning with ব" },
+    { "bn": "ব্যবস্থা", "pronunciation": "byabostha", "en": "arrangement / system", "category": "Common Words Beginning with ব" },
+    { "bn": "ব্যাপার", "pronunciation": "byapar", "en": "matter / issue", "category": "Common Words Beginning with ব" }
   ],
   "practice": [
     "Say ব three times: bô, bô, bô.",
-    "Find ব in each example word and read the whole word aloud.",
-    "Write ব five times while saying its name."
+    "Practice the vowel forms: ব, বা, বি, বী, বু, বূ, বে, বৈ, বো, and বৌ.",
+    "Read the combinations aloud: ব + া = বা, ব + ি = বি, ব + ী = বী, ব + ু = বু, ব + ে = বে, ব + ৈ = বৈ, ব + ো = বো, and ব + ৌ = বৌ.",
+    "Compare ব (b) with ভ (bh): বাবা / ভাই, বই / ভাত, বোন / ভালো, and বসো / ভয়.",
+    "Use বাবা, বই, বড়, বন্ধু, বোন, বৃষ্টি, বাইরে, বাজার, বিড়াল, and বুঝতে as quick reading anchors."
   ],
   "notes": [
-    "ব is pronounced approximately b.",
-    "Listen to the audio and compare ব across the example words."
+    "ব is one of the most common Bangla consonants. Its name is bô and its main sound is b, as in boy.",
+    "The core ব changes with vowel signs: ব (bô), বা (ba), বি (bi), বী (bi), বু (bu), বূ (bu, rare), বে (be), বৈ (boi), বো (bo), and বৌ (bou).",
+    "ব and ভ are important to distinguish visually and by sound: ব has a b sound, while ভ has an aspirated bh sound.",
+    "Best words to memorize include বাবা, বই, বলা, বড়, বসা, বাসা, বাস, বাজার, বাইরে, বাচ্চা, বাংলা, বন্ধু, বছর, বয়স, বৃষ্টি, বিড়াল, বিয়ে, বেশি, বোন, বুক, বোঝা, ব্যথা, ব্যস্ত, and ব্যাপার."
   ]
 }

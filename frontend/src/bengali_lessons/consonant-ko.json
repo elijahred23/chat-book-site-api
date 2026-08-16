@@ -1,136 +1,124 @@
 {
   "id": "consonant-ko",
   "title": "ক — kô",
-  "summary": "Learn ক, pronounced kô, and recognize it in three useful Bengali words.",
+  "summary": "Learn the common Bangla consonant ক, its k sound, core question words, vowel-sign forms, and the essential করা verb family.",
   "level": "beginner",
   "topic": "Consonant: ক",
-  "focus": "character recognition and pronunciation",
+  "focus": "character recognition, question words, and the করা verb family",
   "phrases": [
-    {
-      "bn": "কলম শব্দে ক আছে।",
-      "pronunciation": "kôlom shôbde kô achhe",
-      "en": "The word “কলম” contains ক.",
-      "context": "Find ক in কলম and say the complete word aloud.",
-      "category": "consonant-ko",
-      "words": [
-        {
-          "bn": "কলম",
-          "pronunciation": "kôlom",
-          "en": "pen"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ক",
-          "pronunciation": "kô",
-          "en": "the kô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "কাজ শব্দে ক আছে।",
-      "pronunciation": "kaj shôbde kô achhe",
-      "en": "The word “কাজ” contains ক.",
-      "context": "Find ক in কাজ and say the complete word aloud.",
-      "category": "consonant-ko",
-      "words": [
-        {
-          "bn": "কাজ",
-          "pronunciation": "kaj",
-          "en": "work"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ক",
-          "pronunciation": "kô",
-          "en": "the kô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "কাক শব্দে ক আছে।",
-      "pronunciation": "kak shôbde kô achhe",
-      "en": "The word “কাক” contains ক.",
-      "context": "Find ক in কাক and say the complete word aloud.",
-      "category": "consonant-ko",
-      "words": [
-        {
-          "bn": "কাক",
-          "pronunciation": "kak",
-          "en": "crow"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ক",
-          "pronunciation": "kô",
-          "en": "the kô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    }
+    { "bn": "এটা কী?", "pronunciation": "eta ki?", "en": "What is this?", "context": "Ask what something is.", "category": "consonant-ko" },
+    { "bn": "তুমি কী করছ?", "pronunciation": "tumi ki korchho?", "en": "What are you doing?", "context": "Ask about someone's current activity.", "category": "consonant-ko" },
+    { "bn": "কী করছ?", "pronunciation": "ki korchho?", "en": "What are you doing?", "context": "Ask casually about an activity.", "category": "consonant-ko" },
+    { "bn": "কী হয়েছে?", "pronunciation": "ki hoyechhe?", "en": "What happened?", "context": "Ask about an event or problem.", "category": "consonant-ko" },
+    { "bn": "ও কে?", "pronunciation": "o ke?", "en": "Who is that?", "context": "Ask someone's identity.", "category": "consonant-ko" },
+    { "bn": "কে আসছে?", "pronunciation": "ke aschhe?", "en": "Who is coming?", "context": "Ask who is approaching.", "category": "consonant-ko" },
+    { "bn": "কে বলেছে?", "pronunciation": "ke bolechhe?", "en": "Who said that?", "context": "Ask who made a statement.", "category": "consonant-ko" },
+    { "bn": "কেন?", "pronunciation": "keno?", "en": "Why?", "context": "Ask for a reason.", "category": "consonant-ko" },
+    { "bn": "তুমি কেন যাচ্ছ?", "pronunciation": "tumi keno jachchho?", "en": "Why are you going?", "context": "Ask someone's reason for leaving.", "category": "consonant-ko" },
+    { "bn": "এটা কেন?", "pronunciation": "eta keno?", "en": "Why is this?", "context": "Ask for an explanation.", "category": "consonant-ko" },
+    { "bn": "কখন?", "pronunciation": "kokhon?", "en": "When?", "context": "Ask about time.", "category": "consonant-ko" },
+    { "bn": "তুমি কখন আসবে?", "pronunciation": "tumi kokhon ashbe?", "en": "When will you come?", "context": "Ask about someone's arrival.", "category": "consonant-ko" },
+    { "bn": "কখন যাব?", "pronunciation": "kokhon jabo?", "en": "When will I/we go?", "context": "Ask when to leave.", "category": "consonant-ko" },
+    { "bn": "কোথায়?", "pronunciation": "kothay?", "en": "Where?", "context": "Ask about location.", "category": "consonant-ko" },
+    { "bn": "তুমি কোথায়?", "pronunciation": "tumi kothay?", "en": "Where are you?", "context": "Ask someone's location.", "category": "consonant-ko" },
+    { "bn": "এটা কোথায়?", "pronunciation": "eta kothay?", "en": "Where is this?", "context": "Ask where something is.", "category": "consonant-ko" },
+    { "bn": "কোথায় যাচ্ছ?", "pronunciation": "kothay jachchho?", "en": "Where are you going?", "context": "Ask someone's destination.", "category": "consonant-ko" },
+    { "bn": "কত?", "pronunciation": "koto?", "en": "How much?", "context": "Ask an amount.", "category": "consonant-ko" },
+    { "bn": "দাম কত?", "pronunciation": "dam koto?", "en": "How much is it?", "context": "Ask a price.", "category": "consonant-ko" },
+    { "bn": "কত টাকা?", "pronunciation": "koto taka?", "en": "How much money?", "context": "Ask a monetary amount.", "category": "consonant-ko" },
+    { "bn": "কত দিন?", "pronunciation": "koto din?", "en": "How many days?", "context": "Ask a duration.", "category": "consonant-ko" },
+    { "bn": "আমি কাজ করি।", "pronunciation": "ami kaj kori.", "en": "I work.", "context": "Describe working.", "category": "consonant-ko" },
+    { "bn": "এটা করো।", "pronunciation": "eta koro.", "en": "Do this.", "context": "Tell someone to perform a task.", "category": "consonant-ko" },
+    { "bn": "আমি এটা করতে চাই।", "pronunciation": "ami eta korte chai.", "en": "I want to do this.", "context": "Express a desire to do something.", "category": "consonant-ko" },
+    { "bn": "তুমি কী করবে?", "pronunciation": "tumi ki korbe?", "en": "What will you do?", "context": "Ask about a future action.", "category": "consonant-ko" },
+    { "bn": "তুমি কেমন আছো?", "pronunciation": "tumi kemon achho?", "en": "How are you?", "context": "Ask how someone is doing.", "category": "consonant-ko" },
+    { "bn": "কোনটা?", "pronunciation": "konta?", "en": "Which one?", "context": "Ask someone to choose or identify an option.", "category": "consonant-ko" },
+    { "bn": "কার এটা?", "pronunciation": "kar eta?", "en": "Whose is this?", "context": "Ask who owns something.", "category": "consonant-ko" },
+    { "bn": "কাজ করো।", "pronunciation": "kaj koro.", "en": "Do the work.", "context": "Tell someone to work.", "category": "consonant-ko" },
+    { "bn": "আমার কাজ আছে।", "pronunciation": "amar kaj achhe.", "en": "I have work.", "context": "Say that you have work to do.", "category": "consonant-ko" },
+    { "bn": "কথা বলো।", "pronunciation": "kotha bolo.", "en": "Speak / Talk.", "context": "Ask someone to speak.", "category": "consonant-ko" },
+    { "bn": "আমার কথা শোনো।", "pronunciation": "amar kotha shono.", "en": "Listen to me.", "context": "Ask someone to listen.", "category": "consonant-ko" },
+    { "bn": "কাল আসো।", "pronunciation": "kal asho.", "en": "Come tomorrow.", "context": "Invite someone to come tomorrow.", "category": "consonant-ko" },
+    { "bn": "আমার কাছে আছে।", "pronunciation": "amar kachhe achhe.", "en": "I have it.", "context": "Say something is with you.", "category": "consonant-ko" },
+    { "bn": "কিছু আছে?", "pronunciation": "kichhu achhe?", "en": "Is there anything?", "context": "Ask whether anything is available.", "category": "consonant-ko" },
+    { "bn": "কিছু না।", "pronunciation": "kichhu na.", "en": "Nothing.", "context": "Say there is nothing.", "category": "consonant-ko" },
+    { "bn": "কিন্তু কেন?", "pronunciation": "kintu keno?", "en": "But why?", "context": "Question a reason or decision.", "category": "consonant-ko" },
+    { "bn": "কম দাও।", "pronunciation": "kom dao.", "en": "Give me less.", "context": "Request a smaller amount.", "category": "consonant-ko" },
+    { "bn": "খুব কঠিন।", "pronunciation": "khub kothin.", "en": "Very difficult.", "context": "Describe something hard.", "category": "consonant-ko" },
+    { "bn": "আমার কষ্ট হচ্ছে।", "pronunciation": "amar koshto hochchhe.", "en": "I'm having difficulty / pain.", "context": "Describe difficulty or pain.", "category": "consonant-ko" },
+    { "bn": "কুকুর কোথায়?", "pronunciation": "kukur kothay?", "en": "Where is the dog?", "context": "Ask where a dog is.", "category": "consonant-ko" }
   ],
   "vocab": [
-    {
-      "bn": "ক",
-      "pronunciation": "kô",
-      "en": "kô: k as in kite",
-      "category": "consonant-ko",
-      "sourcePhrase": "কলম শব্দে ক আছে।"
-    },
-    {
-      "bn": "কলম",
-      "pronunciation": "kôlom",
-      "en": "pen",
-      "category": "consonant-ko",
-      "sourcePhrase": "কলম শব্দে ক আছে।"
-    },
-    {
-      "bn": "কাজ",
-      "pronunciation": "kaj",
-      "en": "work",
-      "category": "consonant-ko",
-      "sourcePhrase": "কাজ শব্দে ক আছে।"
-    },
-    {
-      "bn": "কাক",
-      "pronunciation": "kak",
-      "en": "crow",
-      "category": "consonant-ko",
-      "sourcePhrase": "কাক শব্দে ক আছে।"
-    }
+    { "bn": "কী", "pronunciation": "ki", "en": "what", "category": "Question Words Beginning with ক" },
+    { "bn": "কে", "pronunciation": "ke", "en": "who", "category": "Question Words Beginning with ক" },
+    { "bn": "কেন", "pronunciation": "keno", "en": "why", "category": "Question Words Beginning with ক" },
+    { "bn": "কখন", "pronunciation": "kokhon", "en": "when", "category": "Question Words Beginning with ক" },
+    { "bn": "কোথায়", "pronunciation": "kothay", "en": "where", "category": "Question Words Beginning with ক" },
+    { "bn": "কোথা", "pronunciation": "kotha", "en": "where", "category": "Question Words Beginning with ক" },
+    { "bn": "কোন", "pronunciation": "kon", "en": "which", "category": "Question Words Beginning with ক" },
+    { "bn": "কোনো", "pronunciation": "kono", "en": "any / some", "category": "Common Words Beginning with ক" },
+    { "bn": "কত", "pronunciation": "koto", "en": "how much / how many", "category": "Question Words Beginning with ক" },
+    { "bn": "কয়", "pronunciation": "koy", "en": "how many", "category": "Question Words Beginning with ক" },
+    { "bn": "কয়টা", "pronunciation": "koyta", "en": "how many", "category": "Question Words Beginning with ক" },
+    { "bn": "কেমন", "pronunciation": "kemon", "en": "how / what kind", "category": "Question Words Beginning with ক" },
+    { "bn": "কার", "pronunciation": "kar", "en": "whose", "category": "Question Words Beginning with ক" },
+    { "bn": "কাকে", "pronunciation": "kake", "en": "whom", "category": "Question Words Beginning with ক" },
+    { "bn": "কাজ", "pronunciation": "kaj", "en": "work", "category": "Common Words Beginning with ক" },
+    { "bn": "করা", "pronunciation": "kora", "en": "to do", "category": "The করা Word Family" },
+    { "bn": "করি", "pronunciation": "kori", "en": "I do", "category": "The করা Word Family" },
+    { "bn": "করো", "pronunciation": "koro", "en": "you do / do!", "category": "The করা Word Family" },
+    { "bn": "করে", "pronunciation": "kore", "en": "does / by doing", "category": "The করা Word Family" },
+    { "bn": "করছি", "pronunciation": "korchhi", "en": "am doing", "category": "The করা Word Family" },
+    { "bn": "করছ", "pronunciation": "korchho", "en": "are doing", "category": "The করা Word Family" },
+    { "bn": "করতে", "pronunciation": "korte", "en": "to do", "category": "The করা Word Family" },
+    { "bn": "করবে", "pronunciation": "korbe", "en": "will do", "category": "The করা Word Family" },
+    { "bn": "করবেন", "pronunciation": "korben", "en": "will do (respectful)", "category": "The করা Word Family" },
+    { "bn": "করেছিল", "pronunciation": "korechhilo", "en": "did / had done", "category": "The করা Word Family" },
+    { "bn": "কথা", "pronunciation": "kotha", "en": "word / conversation", "category": "Common Words Beginning with ক" },
+    { "bn": "কাল", "pronunciation": "kal", "en": "tomorrow / yesterday", "category": "Common Words Beginning with ক" },
+    { "bn": "কাছে", "pronunciation": "kachhe", "en": "near / with", "category": "Common Words Beginning with ক" },
+    { "bn": "কাপড়", "pronunciation": "kapor", "en": "clothes", "category": "Common Words Beginning with ক" },
+    { "bn": "কাগজ", "pronunciation": "kagoj", "en": "paper", "category": "Common Words Beginning with ক" },
+    { "bn": "কালো", "pronunciation": "kalo", "en": "black", "category": "Common Words Beginning with ক" },
+    { "bn": "কান", "pronunciation": "kan", "en": "ear", "category": "Common Words Beginning with ক" },
+    { "bn": "কাঁধ", "pronunciation": "kãdh", "en": "shoulder", "category": "Common Words Beginning with ক" },
+    { "bn": "কাঁচা", "pronunciation": "kãcha", "en": "raw / unripe", "category": "Common Words Beginning with ক" },
+    { "bn": "কাঁচি", "pronunciation": "kãchi", "en": "scissors", "category": "Common Words Beginning with ক" },
+    { "bn": "কাঁদা", "pronunciation": "kãda", "en": "to cry", "category": "Common Words Beginning with ক" },
+    { "bn": "কারণ", "pronunciation": "karon", "en": "reason / because", "category": "Common Words Beginning with ক" },
+    { "bn": "কারও", "pronunciation": "karo", "en": "someone's / anyone's", "category": "Common Words Beginning with ক" },
+    { "bn": "কম", "pronunciation": "kom", "en": "less", "category": "Common Words Beginning with ক" },
+    { "bn": "কয়েক", "pronunciation": "koyek", "en": "several / a few", "category": "Common Words Beginning with ক" },
+    { "bn": "কখনো", "pronunciation": "kokhono", "en": "ever / sometimes", "category": "Common Words Beginning with ক" },
+    { "bn": "কষ্ট", "pronunciation": "koshto", "en": "difficulty / pain", "category": "Common Words Beginning with ক" },
+    { "bn": "কঠিন", "pronunciation": "kothin", "en": "difficult / hard", "category": "Common Words Beginning with ক" },
+    { "bn": "কুকুর", "pronunciation": "kukur", "en": "dog", "category": "Common Words Beginning with ক" },
+    { "bn": "কুমির", "pronunciation": "kumir", "en": "crocodile", "category": "Common Words Beginning with ক" },
+    { "bn": "কুয়াশা", "pronunciation": "kuyasha", "en": "fog", "category": "Common Words Beginning with ক" },
+    { "bn": "কিছু", "pronunciation": "kichhu", "en": "something / some", "category": "Common Words Beginning with ক" },
+    { "bn": "কিন্তু", "pronunciation": "kintu", "en": "but", "category": "Common Words Beginning with ক" },
+    { "bn": "কিনা", "pronunciation": "kina", "en": "whether", "category": "Common Words Beginning with ক" },
+    { "bn": "কেনা", "pronunciation": "kena", "en": "to buy", "category": "Common Words Beginning with ক" },
+    { "bn": "কিনতে", "pronunciation": "kinte", "en": "to buy", "category": "Common Words Beginning with ক" },
+    { "bn": "কোমর", "pronunciation": "komor", "en": "waist", "category": "Common Words Beginning with ক" },
+    { "bn": "কোণ", "pronunciation": "kon", "en": "corner / angle", "category": "Common Words Beginning with ক" },
+    { "bn": "কোটি", "pronunciation": "koti", "en": "ten million / crore", "category": "Common Words Beginning with ক" }
   ],
   "practice": [
     "Say ক three times: kô, kô, kô.",
-    "Find ক in each example word and read the whole word aloud.",
-    "Write ক five times while saying its name."
+    "Practice the vowel forms: ক (kô), কা (ka), কি (ki), কী (ki), কু (ku), কূ (ku, uncommon), কে (ke), কৈ (koi), কো (ko), and কৌ (kou).",
+    "Read the combinations aloud: ক + া = কা as in কাজ, ক + ি = কি as in কিছু, ক + ী = কী, ক + ু = কু as in কুকুর, ক + ে = কে, ক + ো = কো as in কোমর, and ক + ৌ = কৌ as in কৌতুক.",
+    "Practice the essential question words: কী, কে, কেন, কখন, কোথায়, কোন, কত, কেমন, কার, and কাকে.",
+    "Practice the করা family: করা, করি, করো, করে, করছি, করছ, করতে, করবে, করবেন, and করেছিল.",
+    "Compare ক (k, less air) with খ (kh, extra air): কাল / খাবার, কাজ / খুব, কম / খেলা, and কুকুর / খুশি.",
+    "Use কী, কে, কেন, কখন, কোথায়, কাজ, কথা, কম, কিছু, and কুকুর as quick reading anchors.",
+    "Recognize these phrases instantly: এটা কী, ও কে, কেন, কোথায়, and তুমি কী করছ."
   ],
   "notes": [
-    "ক is pronounced approximately k as in kite.",
-    "Listen to the audio and compare ক across the example words."
+    "ক is one of the most common Bangla consonants. Its name is kô and its sound is roughly k as in kite.",
+    "The vowel-sign forms include ক (kô), কা (ka), কি (ki), কী (ki), কু (ku), কূ (ku), কে (ke), কৈ (koi), কো (ko), and কৌ (kou). Examples include কম, কাজ, কিছু, কী, কুকুর, কে, কৈ, কোমর, and কৌতুক.",
+    "Learning ক unlocks a large group of essential Bangla question words, including কী, কে, কেন, কখন, কোথায়, কত, কেমন, কার, and কাকে.",
+    "ক and খ form a pronunciation pair: ক has a k sound, while খ has an aspirated kh sound with a stronger puff of air.",
+    "Best words to memorize include কী, কে, কেন, কখন, কোথায়, কোন, কত, কেমন, কার, কাজ, করা, কথা, কাল, কাছে, কারণ, কম, কিছু, কিন্তু, কেনা, কষ্ট, কঠিন, কুকুর, কাপড়, কাগজ, and কালো."
   ]
 }

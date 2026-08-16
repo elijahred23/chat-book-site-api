@@ -1,136 +1,55 @@
 {
   "id": "consonant-rrho",
   "title": "ঢ় — ṛhô",
-  "summary": "Learn ঢ়, pronounced ṛhô, and recognize it in three useful Bengali words.",
+  "summary": "Learn the rare Bangla consonant ঢ়, its flapped aspirated ṛh sound, internal-word forms, and how it differs from ড় and ঢ.",
   "level": "beginner",
   "topic": "Consonant: ঢ়",
-  "focus": "character recognition and pronunciation",
+  "focus": "internal character recognition and letter comparison",
   "phrases": [
-    {
-      "bn": "আষাঢ় শব্দে ঢ় আছে।",
-      "pronunciation": "ashaṛh shôbde ṛhô achhe",
-      "en": "The word “আষাঢ়” contains ঢ়.",
-      "context": "Find ঢ় in আষাঢ় and say the complete word aloud.",
-      "category": "consonant-rrho",
-      "words": [
-        {
-          "bn": "আষাঢ়",
-          "pronunciation": "ashaṛh",
-          "en": "the month Asharh"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ঢ়",
-          "pronunciation": "ṛhô",
-          "en": "the ṛhô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "দৃঢ় শব্দে ঢ় আছে।",
-      "pronunciation": "driṛho shôbde ṛhô achhe",
-      "en": "The word “দৃঢ়” contains ঢ়.",
-      "context": "Find ঢ় in দৃঢ় and say the complete word aloud.",
-      "category": "consonant-rrho",
-      "words": [
-        {
-          "bn": "দৃঢ়",
-          "pronunciation": "driṛho",
-          "en": "firm"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ঢ়",
-          "pronunciation": "ṛhô",
-          "en": "the ṛhô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "গাঢ় শব্দে ঢ় আছে।",
-      "pronunciation": "gaṛho shôbde ṛhô achhe",
-      "en": "The word “গাঢ়” contains ঢ়.",
-      "context": "Find ঢ় in গাঢ় and say the complete word aloud.",
-      "category": "consonant-rrho",
-      "words": [
-        {
-          "bn": "গাঢ়",
-          "pronunciation": "gaṛho",
-          "en": "deep / dark"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ঢ়",
-          "pronunciation": "ṛhô",
-          "en": "the ṛhô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    }
+    { "bn": "গাঢ় নীল", "pronunciation": "gaṛho nil", "en": "dark blue", "context": "Describe a dark shade of blue.", "category": "consonant-rrho" },
+    { "bn": "গাঢ় লাল", "pronunciation": "gaṛho lal", "en": "dark red", "context": "Describe a dark shade of red.", "category": "consonant-rrho" },
+    { "bn": "গাঢ় সবুজ", "pronunciation": "gaṛho shobuj", "en": "dark green", "context": "Describe a dark shade of green.", "category": "consonant-rrho" },
+    { "bn": "গাঢ় রং", "pronunciation": "gaṛho rong", "en": "dark/deep color", "context": "Describe a deep color.", "category": "consonant-rrho" },
+    { "bn": "রংটা খুব গাঢ়।", "pronunciation": "rongta khub gaṛho.", "en": "The color is very dark.", "context": "Describe an especially dark color.", "category": "consonant-rrho" },
+    { "bn": "রংটা গাঢ়।", "pronunciation": "rongta gaṛho.", "en": "The color is dark.", "context": "Describe a color's depth.", "category": "consonant-rrho" },
+    { "bn": "খুব গাঢ়।", "pronunciation": "khub gaṛho.", "en": "Very dark/intense.", "context": "Emphasize darkness or intensity.", "category": "consonant-rrho" },
+    { "bn": "গাঢ় চা", "pronunciation": "gaṛho cha", "en": "strong tea", "context": "Describe strongly brewed tea.", "category": "consonant-rrho" },
+    { "bn": "দৃঢ় সিদ্ধান্ত", "pronunciation": "driṛho shiddhanto", "en": "firm decision", "context": "Describe a resolute decision.", "category": "consonant-rrho" },
+    { "bn": "দৃঢ় বিশ্বাস", "pronunciation": "driṛho bishshash", "en": "strong belief", "context": "Describe a strong conviction.", "category": "consonant-rrho" },
+    { "bn": "দৃঢ়ভাবে ধরো।", "pronunciation": "driṛhobhabe dhoro.", "en": "Hold it firmly.", "context": "Tell someone to maintain a firm grip.", "category": "consonant-rrho" },
+    { "bn": "দৃঢ় থাকো।", "pronunciation": "driṛho thako.", "en": "Stay strong/firm.", "context": "Encourage resolve.", "category": "consonant-rrho" },
+    { "bn": "সে দৃঢ় সিদ্ধান্ত নিয়েছে।", "pronunciation": "she driṛho shiddhanto niyechhe.", "en": "He/she has made a firm decision.", "context": "Describe a decisive choice.", "category": "consonant-rrho" },
+    { "bn": "রূঢ় আচরণ", "pronunciation": "ruṛho achoron", "en": "rude behavior", "context": "Describe impolite conduct.", "category": "consonant-rrho" },
+    { "bn": "রূঢ় কথা", "pronunciation": "ruṛho kotha", "en": "harsh words", "context": "Describe unkind speech.", "category": "consonant-rrho" },
+    { "bn": "রূঢ়ভাবে কথা বলো না।", "pronunciation": "ruṛhobhabe kotha bolo na.", "en": "Don't speak rudely.", "context": "Ask someone to speak politely.", "category": "consonant-rrho" },
+    { "bn": "সে একটু রূঢ়।", "pronunciation": "she ektu ruṛho.", "en": "He/she is a little rude.", "context": "Describe someone's manner.", "category": "consonant-rrho" },
+    { "bn": "আষাঢ় মাস", "pronunciation": "ashaṛh mash", "en": "the month of Asharh", "context": "Name a Bengali calendar month.", "category": "consonant-rrho" },
+    { "bn": "আষাঢ়ে অনেক বৃষ্টি হয়।", "pronunciation": "ashaṛhe onek brishti hoy.", "en": "It rains a lot during Asharh.", "context": "Describe weather during Asharh.", "category": "consonant-rrho" }
   ],
   "vocab": [
-    {
-      "bn": "ঢ়",
-      "pronunciation": "ṛhô",
-      "en": "ṛhô: an aspirated flapped r/d sound",
-      "category": "consonant-rrho",
-      "sourcePhrase": "আষাঢ় শব্দে ঢ় আছে।"
-    },
-    {
-      "bn": "আষাঢ়",
-      "pronunciation": "ashaṛh",
-      "en": "the month Asharh",
-      "category": "consonant-rrho",
-      "sourcePhrase": "আষাঢ় শব্দে ঢ় আছে।"
-    },
-    {
-      "bn": "দৃঢ়",
-      "pronunciation": "driṛho",
-      "en": "firm",
-      "category": "consonant-rrho",
-      "sourcePhrase": "দৃঢ় শব্দে ঢ় আছে।"
-    },
-    {
-      "bn": "গাঢ়",
-      "pronunciation": "gaṛho",
-      "en": "deep / dark",
-      "category": "consonant-rrho",
-      "sourcePhrase": "গাঢ় শব্দে ঢ় আছে।"
-    }
+    { "bn": "গাঢ়", "pronunciation": "gaṛho", "en": "dark / deep / intense", "category": "Common Words Containing ঢ়" },
+    { "bn": "দৃঢ়", "pronunciation": "driṛho", "en": "firm / strong / determined", "category": "Common Words Containing ঢ়" },
+    { "bn": "দৃঢ়তা", "pronunciation": "driṛhota", "en": "firmness / determination", "category": "Common Words Containing ঢ়" },
+    { "bn": "দৃঢ়ভাবে", "pronunciation": "driṛhobhabe", "en": "firmly", "category": "Common Words Containing ঢ়" },
+    { "bn": "আষাঢ়", "pronunciation": "ashaṛh", "en": "Asharh, a Bengali month", "category": "Common Words Containing ঢ়" },
+    { "bn": "মূঢ়", "pronunciation": "muṛho", "en": "foolish / ignorant", "category": "Common Words Containing ঢ়" },
+    { "bn": "রূঢ়", "pronunciation": "ruṛho", "en": "rude / harsh", "category": "Common Words Containing ঢ়" },
+    { "bn": "রূঢ়তা", "pronunciation": "ruṛhota", "en": "rudeness / harshness", "category": "Common Words Containing ঢ়" }
   ],
   "practice": [
-    "Say ঢ় three times: ṛhô, ṛhô, ṛhô.",
-    "Find ঢ় in each example word and read the whole word aloud.",
-    "Write ঢ় five times while saying its name."
+    "Say ঢ় with an approximate flapped and aspirated ṛh sound: ṛhô, ṛhô, ṛhô.",
+    "Train your eyes to find ঢ় inside words because it almost never begins a normal Bangla word: গাঢ়, দৃঢ়, আষাঢ়, মূঢ়, and রূঢ়.",
+    "Compare ড়, which is much more common, with ঢ়: বড় / গাঢ়, ঘড়ি / দৃঢ়, গাড়ি / রূঢ়, পড়া / আষাঢ়.",
+    "Compare ঢ and ঢ় carefully: the dot underneath changes ঢ into ঢ়. Practice ঢাকা, ঢাকনা, ঢেউ, and ঢাল versus গাঢ়, দৃঢ়, রূঢ়, and আষাঢ়.",
+    "Use গাঢ়, দৃঢ়, দৃঢ়তা, রূঢ়, রূঢ়তা, আষাঢ়, and মূঢ় as quick reading anchors.",
+    "Recognize these phrases instantly: গাঢ় নীল, গাঢ় রং, দৃঢ় সিদ্ধান্ত, দৃঢ়ভাবে ধরো, and রূঢ়ভাবে কথা বলো না."
   ],
   "notes": [
-    "ঢ় is pronounced approximately an aspirated flapped r/d sound.",
-    "ঢ় is rare and normally appears within a word rather than at the beginning."
+    "ঢ় is one of the least common Bangla consonants. Its name is ṛhô and its sound is roughly a flapped aspirated rh or ṛh.",
+    "ঢ় almost never begins a normal Bangla word. It is mainly encountered inside a small set of words.",
+    "ড় is much more common than ঢ়. Compare বড়, ঘড়ি, গাড়ি, পড়া, and দাঁড়ানো with গাঢ়, দৃঢ়, রূঢ়, and আষাঢ়.",
+    "ঢ and ঢ় are different letters. The dot underneath ঢ creates ঢ়, changing the letter and its pronunciation.",
+    "আষাঢ় is a Bengali calendar month that falls roughly around June and July.",
+    "The most useful ঢ় words to memorize are গাঢ়, দৃঢ়, দৃঢ়তা, দৃঢ়ভাবে, রূঢ়, রূঢ়তা, আষাঢ়, and মূঢ়."
   ]
 }

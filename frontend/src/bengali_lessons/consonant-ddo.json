@@ -1,136 +1,84 @@
 {
   "id": "consonant-ddo",
   "title": "ড — ḍô",
-  "summary": "Learn ড, pronounced ḍô, and recognize it in three useful Bengali words.",
+  "summary": "Learn the common Bangla consonant ড, its retroflex ḍ sound, vowel-sign forms, and useful words and phrases.",
   "level": "beginner",
   "topic": "Consonant: ড",
   "focus": "character recognition and pronunciation",
   "phrases": [
-    {
-      "bn": "ডাল শব্দে ড আছে।",
-      "pronunciation": "ḍal shôbde ḍô achhe",
-      "en": "The word “ডাল” contains ড.",
-      "context": "Find ড in ডাল and say the complete word aloud.",
-      "category": "consonant-ddo",
-      "words": [
-        {
-          "bn": "ডাল",
-          "pronunciation": "ḍal",
-          "en": "lentils"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ড",
-          "pronunciation": "ḍô",
-          "en": "the ḍô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "ডিম শব্দে ড আছে।",
-      "pronunciation": "ḍim shôbde ḍô achhe",
-      "en": "The word “ডিম” contains ড.",
-      "context": "Find ড in ডিম and say the complete word aloud.",
-      "category": "consonant-ddo",
-      "words": [
-        {
-          "bn": "ডিম",
-          "pronunciation": "ḍim",
-          "en": "egg"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ড",
-          "pronunciation": "ḍô",
-          "en": "the ḍô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "ডাক শব্দে ড আছে।",
-      "pronunciation": "ḍak shôbde ḍô achhe",
-      "en": "The word “ডাক” contains ড.",
-      "context": "Find ড in ডাক and say the complete word aloud.",
-      "category": "consonant-ddo",
-      "words": [
-        {
-          "bn": "ডাক",
-          "pronunciation": "ḍak",
-          "en": "call / mail"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ড",
-          "pronunciation": "ḍô",
-          "en": "the ḍô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    }
+    { "bn": "আমি ডাক্তারের কাছে যাব।", "pronunciation": "ami ḍaktarer kachhe jabo.", "en": "I will go to the doctor.", "context": "Talk about visiting a doctor.", "category": "consonant-ddo" },
+    { "bn": "ডাক্তারের কাছে যাব।", "pronunciation": "ḍaktarer kachhe jabo.", "en": "I will go to the doctor.", "context": "Talk about visiting a doctor.", "category": "consonant-ddo" },
+    { "bn": "ডাক্তার কোথায়?", "pronunciation": "ḍaktar kothay?", "en": "Where is the doctor?", "context": "Ask where a doctor is.", "category": "consonant-ddo" },
+    { "bn": "ডাক্তার কী বলেছেন?", "pronunciation": "ḍaktar ki bolechhen?", "en": "What did the doctor say?", "context": "Ask about a doctor's advice.", "category": "consonant-ddo" },
+    { "bn": "একজন ডাক্তার", "pronunciation": "ekjon ḍaktar", "en": "a doctor", "context": "Practice the word ডাক্তার with a counter.", "category": "consonant-ddo" },
+    { "bn": "ওকে ডাকো।", "pronunciation": "oke ḍako.", "en": "Call him/her.", "context": "Ask someone to call another person.", "category": "consonant-ddo" },
+    { "bn": "আমাকে ডাকো।", "pronunciation": "amake ḍako.", "en": "Call me.", "context": "Ask someone to call you.", "category": "consonant-ddo" },
+    { "bn": "তুমি আমাকে ডাকলে?", "pronunciation": "tumi amake ḍakle?", "en": "Did you call me?", "context": "Ask whether someone called you.", "category": "consonant-ddo" },
+    { "bn": "ডাক্তারকে ডাকো।", "pronunciation": "ḍaktarke ḍako.", "en": "Call the doctor.", "context": "Ask someone to summon a doctor.", "category": "consonant-ddo" },
+    { "bn": "আমি ডিম খাব।", "pronunciation": "ami ḍim khabo.", "en": "I will eat eggs.", "context": "Talk about eating eggs.", "category": "consonant-ddo" },
+    { "bn": "একটা ডিম দাও।", "pronunciation": "ekta ḍim dao.", "en": "Give me an egg.", "context": "Ask for an egg.", "category": "consonant-ddo" },
+    { "bn": "ডিম ভাজি", "pronunciation": "ḍim bhaji", "en": "fried egg / egg fry", "context": "Practice a common egg dish.", "category": "consonant-ddo" },
+    { "bn": "ডিম কোথায়?", "pronunciation": "ḍim kothay?", "en": "Where are the eggs?", "context": "Ask where the eggs are.", "category": "consonant-ddo" },
+    { "bn": "ডান দিকে যাও।", "pronunciation": "ḍan dike jao.", "en": "Go right.", "context": "Give a direction.", "category": "consonant-ddo" },
+    { "bn": "ডান হাত", "pronunciation": "ḍan hat", "en": "right hand", "context": "Identify the right hand.", "category": "consonant-ddo" },
+    { "bn": "ডান পা", "pronunciation": "ḍan pa", "en": "right leg/foot", "context": "Identify the right foot or leg.", "category": "consonant-ddo" },
+    { "bn": "ডান দিকে ঘুরো।", "pronunciation": "ḍan dike ghuro.", "en": "Turn right.", "context": "Give a turning direction.", "category": "consonant-ddo" },
+    { "bn": "আমি ডাল খাব।", "pronunciation": "ami ḍal khabo.", "en": "I will eat dal.", "context": "Talk about eating dal.", "category": "consonant-ddo" },
+    { "bn": "ভাত আর ডাল।", "pronunciation": "bhat ar ḍal.", "en": "Rice and dal.", "context": "Name a common meal.", "category": "consonant-ddo" },
+    { "bn": "ডাল খুব ভালো হয়েছে।", "pronunciation": "ḍal khub bhalo hoyechhe.", "en": "The dal turned out very good.", "context": "Compliment the dal.", "category": "consonant-ddo" },
+    { "bn": "পাখির ডানা", "pronunciation": "pakhir ḍana", "en": "bird's wing", "context": "Practice ডানা in a possessive phrase.", "category": "consonant-ddo" },
+    { "bn": "পানিতে ডুবে গেছে।", "pronunciation": "panite ḍube gechhe.", "en": "It sank in the water.", "context": "Describe something that sank.", "category": "consonant-ddo" },
+    { "bn": "বারো ডজন", "pronunciation": "baro ḍojon", "en": "twelve dozen", "context": "Practice ডজন with a quantity.", "category": "consonant-ddo" },
+    { "bn": "দশ ডলার", "pronunciation": "dosh ḍolar", "en": "ten dollars", "context": "Practice ডলার with a quantity.", "category": "consonant-ddo" },
+    { "bn": "ড্রাইভার কোথায়?", "pronunciation": "ḍraibar kothay?", "en": "Where is the driver?", "context": "Ask where the driver is.", "category": "consonant-ddo" },
+    { "bn": "গাড়ি ড্রাইভ করছি।", "pronunciation": "gari ḍraibh korchhi.", "en": "I'm driving the car.", "context": "Describe driving.", "category": "consonant-ddo" },
+    { "bn": "ডেটা কোথায়?", "pronunciation": "ḍeta kothay?", "en": "Where is the data?", "context": "Ask where data is located.", "category": "consonant-ddo" },
+    { "bn": "ডেস্কের উপর", "pronunciation": "ḍesker upor", "en": "on the desk", "context": "Describe an object's location.", "category": "consonant-ddo" }
   ],
   "vocab": [
-    {
-      "bn": "ড",
-      "pronunciation": "ḍô",
-      "en": "ḍô: a retroflex d",
-      "category": "consonant-ddo",
-      "sourcePhrase": "ডাল শব্দে ড আছে।"
-    },
-    {
-      "bn": "ডাল",
-      "pronunciation": "ḍal",
-      "en": "lentils",
-      "category": "consonant-ddo",
-      "sourcePhrase": "ডাল শব্দে ড আছে।"
-    },
-    {
-      "bn": "ডিম",
-      "pronunciation": "ḍim",
-      "en": "egg",
-      "category": "consonant-ddo",
-      "sourcePhrase": "ডিম শব্দে ড আছে।"
-    },
-    {
-      "bn": "ডাক",
-      "pronunciation": "ḍak",
-      "en": "call / mail",
-      "category": "consonant-ddo",
-      "sourcePhrase": "ডাক শব্দে ড আছে।"
-    }
+    { "bn": "ডাক", "pronunciation": "ḍak", "en": "call / mail", "category": "Common Words Beginning with ড" },
+    { "bn": "ডাকা", "pronunciation": "ḍaka", "en": "to call", "category": "Common Words Beginning with ড" },
+    { "bn": "ডাকো", "pronunciation": "ḍako", "en": "call", "category": "Common Words Beginning with ড" },
+    { "bn": "ডাক্তার", "pronunciation": "ḍaktar", "en": "doctor", "category": "Common Words Beginning with ড" },
+    { "bn": "ডাকঘর", "pronunciation": "ḍakghor", "en": "post office", "category": "Common Words Beginning with ড" },
+    { "bn": "ডাল", "pronunciation": "ḍal", "en": "lentils / dal", "category": "Common Words Beginning with ড" },
+    { "bn": "ডাব", "pronunciation": "ḍab", "en": "green coconut", "category": "Common Words Beginning with ড" },
+    { "bn": "ডান", "pronunciation": "ḍan", "en": "right side", "category": "Common Words Beginning with ড" },
+    { "bn": "ডানা", "pronunciation": "ḍana", "en": "wing", "category": "Common Words Beginning with ড" },
+    { "bn": "ডিম", "pronunciation": "ḍim", "en": "egg", "category": "Common Words Beginning with ড" },
+    { "bn": "ডিমের", "pronunciation": "ḍimer", "en": "of the egg", "category": "Common Words Beginning with ড" },
+    { "bn": "ডুব", "pronunciation": "ḍub", "en": "sinking / dip", "category": "Common Words Beginning with ড" },
+    { "bn": "ডুবা", "pronunciation": "ḍuba", "en": "to sink", "category": "Common Words Beginning with ড" },
+    { "bn": "ডুবানো", "pronunciation": "ḍubano", "en": "to submerge", "category": "Common Words Beginning with ড" },
+    { "bn": "ডুবে", "pronunciation": "ḍube", "en": "submerged / having sunk", "category": "Common Words Beginning with ড" },
+    { "bn": "ডুবুরি", "pronunciation": "ḍuburi", "en": "diver", "category": "Common Words Beginning with ড" },
+    { "bn": "ডোরাকাটা", "pronunciation": "ḍorakata", "en": "striped", "category": "Common Words Beginning with ড" },
+    { "bn": "ডোবা", "pronunciation": "ḍoba", "en": "pond / ditch", "category": "Common Words Beginning with ড" },
+    { "bn": "ডোজ", "pronunciation": "ḍoj", "en": "dose", "category": "Common Words Beginning with ড" },
+    { "bn": "ডজন", "pronunciation": "ḍojon", "en": "dozen", "category": "Common Words Beginning with ড" },
+    { "bn": "ডিগ্রি", "pronunciation": "ḍigri", "en": "degree", "category": "Common Words Beginning with ড" },
+    { "bn": "ডলার", "pronunciation": "ḍolar", "en": "dollar", "category": "Common Words Beginning with ড" },
+    { "bn": "ড্রাইভার", "pronunciation": "ḍraibar", "en": "driver", "category": "Common Words Beginning with ড" },
+    { "bn": "ড্রাইভ", "pronunciation": "ḍraibh", "en": "drive", "category": "Common Words Beginning with ড" },
+    { "bn": "ড্রাম", "pronunciation": "ḍram", "en": "drum", "category": "Common Words Beginning with ড" },
+    { "bn": "ড্রেস", "pronunciation": "ḍres", "en": "dress", "category": "Common Words Beginning with ড" },
+    { "bn": "ড্রয়ার", "pronunciation": "ḍroyar", "en": "drawer", "category": "Common Words Beginning with ড" },
+    { "bn": "ডেটা", "pronunciation": "ḍeta", "en": "data", "category": "Common Words Beginning with ড" },
+    { "bn": "ডেস্ক", "pronunciation": "ḍesk", "en": "desk", "category": "Common Words Beginning with ড" },
+    { "bn": "ডিসেম্বর", "pronunciation": "ḍishembar", "en": "December", "category": "Common Words Beginning with ড" }
   ],
   "practice": [
-    "Say ড three times: ḍô, ḍô, ḍô.",
-    "Find ড in each example word and read the whole word aloud.",
-    "Write ড five times while saying its name."
+    "Say ড three times with the tongue curled slightly backward: ḍô, ḍô, ḍô.",
+    "Practice the vowel forms: ড (ḍô), ডা (ḍa), ডি (ḍi), ডী (ḍi, uncommon), ডু (ḍu), ডূ (ḍu, rare), ডে (ḍe), ডৈ (ḍoi, rare), ডো (ḍo), and ডৌ (ḍou, rare).",
+    "Read the combinations aloud: ড + া = ডা as in ডাক, ড + ি = ডি as in ডিম, ড + ু = ডু as in ডুব, ড + ে = ডে as in ডেটা, and ড + ো = ডো as in ডোজ.",
+    "Compare ড (ḍ) with ঢ (ḍh, extra air): ডাল / ঢাল, ডাক / ঢাকা, ডিম / ঢেউ, and ডান / ঢোকা.",
+    "Use ডাক, ডাকা, ডাক্তার, ডাল, ডিম, ডান, ডানা, ডাব, and ডুব as quick reading anchors.",
+    "Break down ডাক্তারকে ডাকো: ডাক্তার means doctor, কে is the object marker, and ডাকো means call."
   ],
   "notes": [
-    "ড is pronounced approximately a retroflex d.",
-    "Listen to the audio and compare ড across the example words."
+    "ড is a common Bangla consonant named ḍô. Its sound resembles d, but the tongue curls slightly backward.",
+    "ড and ঢ are closely related: ড has a ḍ sound, while ঢ has an aspirated ḍh sound with a stronger burst of air.",
+    "Compare ডাল (ḍal, lentils), ডাক (ḍak, call), ডিম (ḍim, egg), and ডান (ḍan, right) with ঢাল (ḍhal, slope/shield), ঢাকা (ḍhaka, Dhaka), ঢেউ (ḍheu, wave), and ঢোকা (ḍhoka, enter).",
+    "Best words to memorize include ডাক্তার, ডাকা, ডাক, ডাল, ডিম, ডান, ডানা, ডাব, ডুবা, ডুবে, ডুবুরি, ডলার, ডজন, ডিগ্রি, ড্রাইভার, ড্রাইভ, ডেটা, and ডেস্ক."
   ]
 }

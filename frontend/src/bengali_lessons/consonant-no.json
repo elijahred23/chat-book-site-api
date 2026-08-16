@@ -1,136 +1,128 @@
 {
   "id": "consonant-no",
   "title": "ন — nô",
-  "summary": "Learn ন, pronounced nô, and recognize it in three useful Bengali words.",
+  "summary": "Learn the common Bangla consonant ন, its n sound, vowel-sign forms, negation with না, and how its spelling differs from ণ.",
   "level": "beginner",
   "topic": "Consonant: ন",
-  "focus": "character recognition and pronunciation",
+  "focus": "character recognition, pronunciation, and negation",
   "phrases": [
-    {
-      "bn": "নদী শব্দে ন আছে।",
-      "pronunciation": "nôdi shôbde nô achhe",
-      "en": "The word “নদী” contains ন.",
-      "context": "Find ন in নদী and say the complete word aloud.",
-      "category": "consonant-no",
-      "words": [
-        {
-          "bn": "নদী",
-          "pronunciation": "nôdi",
-          "en": "river"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ন",
-          "pronunciation": "nô",
-          "en": "the nô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "নাম শব্দে ন আছে।",
-      "pronunciation": "nam shôbde nô achhe",
-      "en": "The word “নাম” contains ন.",
-      "context": "Find ন in নাম and say the complete word aloud.",
-      "category": "consonant-no",
-      "words": [
-        {
-          "bn": "নাম",
-          "pronunciation": "nam",
-          "en": "name"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ন",
-          "pronunciation": "nô",
-          "en": "the nô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "মন শব্দে ন আছে।",
-      "pronunciation": "môn shôbde nô achhe",
-      "en": "The word “মন” contains ন.",
-      "context": "Find ন in মন and say the complete word aloud.",
-      "category": "consonant-no",
-      "words": [
-        {
-          "bn": "মন",
-          "pronunciation": "môn",
-          "en": "mind"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ন",
-          "pronunciation": "nô",
-          "en": "the nô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    }
+    { "bn": "না।", "pronunciation": "na.", "en": "No.", "context": "Give a negative answer.", "category": "consonant-no" },
+    { "bn": "আমি জানি না।", "pronunciation": "ami jani na.", "en": "I don't know.", "context": "Say that you do not know.", "category": "consonant-no" },
+    { "bn": "আমি যাব না।", "pronunciation": "ami jabo na.", "en": "I won't go.", "context": "Decline to go.", "category": "consonant-no" },
+    { "bn": "আমি চাই না।", "pronunciation": "ami chai na.", "en": "I don't want it.", "context": "Reject something.", "category": "consonant-no" },
+    { "bn": "আমি এটা চাই না।", "pronunciation": "ami eta chai na.", "en": "I don't want this.", "context": "Reject a specific item.", "category": "consonant-no" },
+    { "bn": "করো না।", "pronunciation": "koro na.", "en": "Don't do it.", "context": "Tell someone not to do something.", "category": "consonant-no" },
+    { "bn": "যেও না।", "pronunciation": "jeo na.", "en": "Don't go.", "context": "Ask someone not to leave.", "category": "consonant-no" },
+    { "bn": "চিন্তা করো না।", "pronunciation": "chinta koro na.", "en": "Don't worry.", "context": "Reassure someone.", "category": "consonant-no" },
+    { "bn": "আমি জানি।", "pronunciation": "ami jani.", "en": "I know.", "context": "Contrast a positive statement with জানি না.", "category": "consonant-no" },
+    { "bn": "আমি চাই।", "pronunciation": "ami chai.", "en": "I want it.", "context": "Contrast a positive statement with চাই না.", "category": "consonant-no" },
+    { "bn": "আমি যাব।", "pronunciation": "ami jabo.", "en": "I will go.", "context": "Contrast a positive statement with যাব না.", "category": "consonant-no" },
+    { "bn": "আমি পারি।", "pronunciation": "ami pari.", "en": "I can.", "context": "Contrast a positive statement with পারি না.", "category": "consonant-no" },
+    { "bn": "আমি পারি না।", "pronunciation": "ami pari na.", "en": "I can't.", "context": "Say that you cannot do something.", "category": "consonant-no" },
+    { "bn": "তোমার নাম কী?", "pronunciation": "tomar nam ki?", "en": "What is your name?", "context": "Ask someone's name.", "category": "consonant-no" },
+    { "bn": "আমার নাম...", "pronunciation": "amar nam...", "en": "My name is...", "context": "Introduce yourself.", "category": "consonant-no" },
+    { "bn": "ওর নাম কী?", "pronunciation": "or nam ki?", "en": "What is his/her name?", "context": "Ask another person's name.", "category": "consonant-no" },
+    { "bn": "নামটা বলো।", "pronunciation": "namta bolo.", "en": "Tell me the name.", "context": "Ask someone to say a name.", "category": "consonant-no" },
+    { "bn": "আমার কাছে নেই।", "pronunciation": "amar kachhe nei.", "en": "I don't have it.", "context": "Say that something is not with you.", "category": "consonant-no" },
+    { "bn": "এখানে কেউ নেই।", "pronunciation": "ekhane keu nei.", "en": "Nobody is here.", "context": "Say that a place is empty of people.", "category": "consonant-no" },
+    { "bn": "কোনো সমস্যা নেই।", "pronunciation": "kono shomoshsha nei.", "en": "There is no problem.", "context": "Reassure someone.", "category": "consonant-no" },
+    { "bn": "সময় নেই।", "pronunciation": "shomoy nei.", "en": "There is no time.", "context": "Say that time is unavailable.", "category": "consonant-no" },
+    { "bn": "টাকা নেই।", "pronunciation": "taka nei.", "en": "There is no money / I don't have money.", "context": "Say that money is unavailable.", "category": "consonant-no" },
+    { "bn": "এটা নতুন।", "pronunciation": "eta notun.", "en": "This is new.", "context": "Describe something new.", "category": "consonant-no" },
+    { "bn": "নতুন গাড়ি।", "pronunciation": "notun gari.", "en": "New car.", "context": "Describe a new car.", "category": "consonant-no" },
+    { "bn": "নতুন গাড়ি", "pronunciation": "notun gari", "en": "new car", "context": "Practice নতুন in a short phrase.", "category": "consonant-no" },
+    { "bn": "নতুন বাড়ি।", "pronunciation": "notun bari.", "en": "New house.", "context": "Describe a new house.", "category": "consonant-no" },
+    { "bn": "আমি নতুন।", "pronunciation": "ami notun.", "en": "I'm new.", "context": "Introduce yourself as a newcomer.", "category": "consonant-no" },
+    { "bn": "এটা নাও।", "pronunciation": "eta nao.", "en": "Take this.", "context": "Offer something.", "category": "consonant-no" },
+    { "bn": "একটা নাও।", "pronunciation": "ekta nao.", "en": "Take one.", "context": "Offer one item.", "category": "consonant-no" },
+    { "bn": "আমি এটা নেব।", "pronunciation": "ami eta nebo.", "en": "I'll take this.", "context": "Choose an item.", "category": "consonant-no" },
+    { "bn": "সঙ্গে নিয়ে যাও।", "pronunciation": "shôngge niye jao.", "en": "Take it with you.", "context": "Tell someone to carry something along.", "category": "consonant-no" },
+    { "bn": "নিচে যাও।", "pronunciation": "niche jao.", "en": "Go downstairs.", "context": "Give a direction.", "category": "consonant-no" },
+    { "bn": "নিচে দেখো।", "pronunciation": "niche dekho.", "en": "Look down/below.", "context": "Direct someone's attention downward.", "category": "consonant-no" },
+    { "bn": "নিজে করো।", "pronunciation": "nije koro.", "en": "Do it yourself.", "context": "Ask someone to act independently.", "category": "consonant-no" },
+    { "bn": "নাক বন্ধ।", "pronunciation": "nak bondho.", "en": "Nose is blocked.", "context": "Describe nasal congestion.", "category": "consonant-no" },
+    { "bn": "নীল রং", "pronunciation": "nil rong", "en": "blue color", "context": "Practice নীল in a color phrase.", "category": "consonant-no" },
+    { "bn": "নোংরা করো না।", "pronunciation": "nongra koro na.", "en": "Don't make it dirty.", "context": "Ask someone to keep something clean.", "category": "consonant-no" },
+    { "bn": "এটা নিরাপদ।", "pronunciation": "eta nirapod.", "en": "This is safe.", "context": "Describe something as safe.", "category": "consonant-no" }
   ],
   "vocab": [
-    {
-      "bn": "ন",
-      "pronunciation": "nô",
-      "en": "nô: n",
-      "category": "consonant-no",
-      "sourcePhrase": "নদী শব্দে ন আছে।"
-    },
-    {
-      "bn": "নদী",
-      "pronunciation": "nôdi",
-      "en": "river",
-      "category": "consonant-no",
-      "sourcePhrase": "নদী শব্দে ন আছে।"
-    },
-    {
-      "bn": "নাম",
-      "pronunciation": "nam",
-      "en": "name",
-      "category": "consonant-no",
-      "sourcePhrase": "নাম শব্দে ন আছে।"
-    },
-    {
-      "bn": "মন",
-      "pronunciation": "môn",
-      "en": "mind",
-      "category": "consonant-no",
-      "sourcePhrase": "মন শব্দে ন আছে।"
-    }
+    { "bn": "না", "pronunciation": "na", "en": "no / not", "category": "Common Words Beginning with ন" },
+    { "bn": "নাম", "pronunciation": "nam", "en": "name", "category": "Common Words Beginning with ন" },
+    { "bn": "নানা", "pronunciation": "nana", "en": "various / maternal grandfather", "category": "Common Words Beginning with ন" },
+    { "bn": "নাক", "pronunciation": "nak", "en": "nose", "category": "Common Words Beginning with ন" },
+    { "bn": "নাচ", "pronunciation": "nach", "en": "dance", "category": "Common Words Beginning with ন" },
+    { "bn": "নাচা", "pronunciation": "nacha", "en": "to dance", "category": "Common Words Beginning with ন" },
+    { "bn": "নাও", "pronunciation": "nao", "en": "take", "category": "The নেওয়া Word Family" },
+    { "bn": "নতুন", "pronunciation": "notun", "en": "new", "category": "Common Words Beginning with ন" },
+    { "bn": "নদী", "pronunciation": "nodi", "en": "river", "category": "Common Words Beginning with ন" },
+    { "bn": "নিচে", "pronunciation": "niche", "en": "below / downstairs", "category": "Common Words Beginning with ন" },
+    { "bn": "নিজের", "pronunciation": "nijer", "en": "one's own", "category": "Common Words Beginning with ন" },
+    { "bn": "নিজে", "pronunciation": "nije", "en": "oneself", "category": "Common Words Beginning with ন" },
+    { "bn": "নিকট", "pronunciation": "nikot", "en": "near", "category": "Common Words Beginning with ন" },
+    { "bn": "নিয়ম", "pronunciation": "niyom", "en": "rule", "category": "Common Words Beginning with ন" },
+    { "bn": "নিয়মিত", "pronunciation": "niyomito", "en": "regularly", "category": "Common Words Beginning with ন" },
+    { "bn": "নিয়ে", "pronunciation": "niye", "en": "with / taking", "category": "The নেওয়া Word Family" },
+    { "bn": "নেওয়া", "pronunciation": "neoa", "en": "to take", "category": "The নেওয়া Word Family" },
+    { "bn": "নেই", "pronunciation": "nei", "en": "isn't / don't have", "category": "Common Words Beginning with ন" },
+    { "bn": "নেব", "pronunciation": "nebo", "en": "will take", "category": "The নেওয়া Word Family" },
+    { "bn": "নেতা", "pronunciation": "neta", "en": "leader", "category": "Common Words Beginning with ন" },
+    { "bn": "নোংরা", "pronunciation": "nongra", "en": "dirty", "category": "Common Words Beginning with ন" },
+    { "bn": "নরম", "pronunciation": "norom", "en": "soft", "category": "Common Words Beginning with ন" },
+    { "bn": "নষ্ট", "pronunciation": "noshto", "en": "ruined / broken", "category": "Common Words Beginning with ন" },
+    { "bn": "নম্বর", "pronunciation": "nombor", "en": "number", "category": "Common Words Beginning with ন" },
+    { "bn": "নমুনা", "pronunciation": "nomuna", "en": "sample", "category": "Common Words Beginning with ন" },
+    { "bn": "নজর", "pronunciation": "nojor", "en": "attention / sight", "category": "Common Words Beginning with ন" },
+    { "bn": "নকল", "pronunciation": "nokol", "en": "copy / fake", "category": "Common Words Beginning with ন" },
+    { "bn": "নড়া", "pronunciation": "nora", "en": "to move", "category": "Common Words Beginning with ন" },
+    { "bn": "নড়াচড়া", "pronunciation": "norachora", "en": "movement", "category": "Common Words Beginning with ন" },
+    { "bn": "নীরব", "pronunciation": "nirob", "en": "silent", "category": "Common Words Beginning with ন" },
+    { "bn": "নীল", "pronunciation": "nil", "en": "blue", "category": "Common Words Beginning with ন" },
+    { "bn": "নিরাপদ", "pronunciation": "nirapod", "en": "safe", "category": "Common Words Beginning with ন" },
+    { "bn": "নিরাপত্তা", "pronunciation": "nirapotta", "en": "safety", "category": "Common Words Beginning with ন" },
+    { "bn": "নিশ্চয়", "pronunciation": "nishchoy", "en": "surely", "category": "Common Words Beginning with ন" },
+    { "bn": "নিশ্চিত", "pronunciation": "nishchito", "en": "certain / confirmed", "category": "Common Words Beginning with ন" },
+    { "bn": "নিষেধ", "pronunciation": "nishedh", "en": "forbidden", "category": "Common Words Beginning with ন" },
+    { "bn": "নিঃশ্বাস", "pronunciation": "nihshash", "en": "breath", "category": "Common Words Beginning with ন" },
+    { "bn": "নিশ্বাস", "pronunciation": "nishshash", "en": "breath", "category": "Common Words Beginning with ন" },
+    { "bn": "নিখোঁজ", "pronunciation": "nikhõj", "en": "missing", "category": "Common Words Beginning with ন" },
+    { "bn": "নির্বাচন", "pronunciation": "nirbachon", "en": "election / selection", "category": "Common Words Beginning with ন" },
+    { "bn": "নির্মাণ", "pronunciation": "nirman", "en": "construction", "category": "Common Words Beginning with ন" },
+    { "bn": "নিয়ন্ত্রণ", "pronunciation": "niyontron", "en": "control", "category": "Common Words Beginning with ন" },
+    { "bn": "ন্যায়", "pronunciation": "nyay", "en": "justice", "category": "Common Words Beginning with ন" },
+    { "bn": "নৌকা", "pronunciation": "nouka", "en": "boat", "category": "Common Words Beginning with ন" },
+    { "bn": "অনেক", "pronunciation": "onek", "en": "many / a lot", "category": "Everyday Words Containing ন" },
+    { "bn": "কেন", "pronunciation": "keno", "en": "why", "category": "Everyday Words Containing ন" },
+    { "bn": "কখন", "pronunciation": "kokhon", "en": "when", "category": "Everyday Words Containing ন" },
+    { "bn": "এখন", "pronunciation": "ekhon", "en": "now", "category": "Everyday Words Containing ন" },
+    { "bn": "তখন", "pronunciation": "tokhon", "en": "then", "category": "Everyday Words Containing ন" },
+    { "bn": "এখানে", "pronunciation": "ekhane", "en": "here", "category": "Everyday Words Containing ন" },
+    { "bn": "সেখানে", "pronunciation": "shekhane", "en": "there", "category": "Everyday Words Containing ন" },
+    { "bn": "কোনো", "pronunciation": "kono", "en": "any", "category": "Everyday Words Containing ন" },
+    { "bn": "একজন", "pronunciation": "ekjon", "en": "one person", "category": "Everyday Words Containing ন" },
+    { "bn": "জীবন", "pronunciation": "jibon", "en": "life", "category": "Everyday Words Containing ন" },
+    { "bn": "মানুষ", "pronunciation": "manush", "en": "person", "category": "Everyday Words Containing ন" },
+    { "bn": "দিন", "pronunciation": "din", "en": "day", "category": "Everyday Words Containing ন" },
+    { "bn": "মনে", "pronunciation": "mone", "en": "in the mind", "category": "Everyday Words Containing ন" },
+    { "bn": "জানি", "pronunciation": "jani", "en": "I know", "category": "Everyday Words Containing ন" },
+    { "bn": "শুনি", "pronunciation": "shuni", "en": "I hear", "category": "Everyday Words Containing ন" },
+    { "bn": "বন্ধু", "pronunciation": "bondhu", "en": "friend", "category": "Everyday Words Containing ন" },
+    { "bn": "সুন্দর", "pronunciation": "shundor", "en": "beautiful", "category": "Everyday Words Containing ন" }
   ],
   "practice": [
     "Say ন three times: nô, nô, nô.",
-    "Find ন in each example word and read the whole word aloud.",
-    "Write ন five times while saying its name."
+    "Practice the vowel forms: ন (nô), না (na), নি (ni), নী (ni), নু (nu), নূ (nu), নে (ne), নৈ (noi), নো (no), and নৌ (nou).",
+    "Read the combinations aloud: ন + া = না as in নাম, ন + ি = নি as in নিচে, ন + ী = নী as in নীল, ন + ু = নু as in নতুন, ন + ে = নে as in নেতা, ন + ো = নো as in নোংরা, and ন + ৌ = নৌ as in নৌকা.",
+    "Practice the beginner negation pattern verb + না: জানি না, চাই না, যাব না, পারি না, করো না, and যেও না.",
+    "Compare ন words না, নাম, নতুন, নাক, নদী, and নিচে with ণ words কারণ, গণিত, প্রমাণ, পরিমাণ, and লক্ষণ. Memorize each spelling.",
+    "Look for ন inside frequent words such as অনেক, কেন, কখন, এখন, এখানে, কোনো, একজন, জীবন, মানুষ, দিন, মনে, জানি, বন্ধু, and সুন্দর.",
+    "Use না, নাম, নাক, নতুন, নদী, নিচে, নিজে, নেই, নরম, নীল, and নৌকা as quick reading anchors.",
+    "Recognize these phrases instantly: আমি জানি না, তোমার নাম কী, কোনো সমস্যা নেই, এটা নাও, and আমি এটা চাই না."
   ],
   "notes": [
-    "ন is pronounced approximately n.",
-    "Listen to the audio and compare ন across the example words."
+    "ন is one of the most common Bangla consonants. It is called দন্ত্য ন (dôntyo nô) and sounds roughly like n in name.",
+    "The vowel-sign forms include ন (nô), না (na), নি (ni), নী (ni), নু (nu), নূ (nu), নে (ne), নৈ (noi), নো (no), and নৌ (nou). Examples include নম্বর, নাম, নিচে, নীল, নতুন, নূতন, নেতা, নৈশ, নোংরা, and নৌকা.",
+    "না is one of the most important Bangla words. Placing it after a verb commonly makes the statement negative: জানি না, চাই না, যাব না, and পারি না.",
+    "ন and ণ can sound nearly identical in modern speech. For everyday reading, learn the spelling of each complete word rather than relying only on pronunciation.",
+    "Best words to memorize include না, নাম, নতুন, নাক, নাচ, নাও, নদী, নিচে, নিজে, নিজের, নেওয়া, নেই, নেব, নরম, নষ্ট, নম্বর, নোংরা, নীল, নিরাপদ, নিশ্চিত, নিষেধ, and নৌকা."
   ]
 }

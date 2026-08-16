@@ -1,136 +1,82 @@
 {
   "id": "consonant-visarga",
-  "title": "ঃ — visarga",
-  "summary": "Learn ঃ, pronounced visarga, and recognize it in three useful Bengali words.",
+  "title": "ঃ — বিসর্গ (bishôrgo)",
+  "summary": "Learn the Bangla visarga sign ঃ, recognize it in useful Sanskrit-derived words, and decode common দুঃ- and নিঃ- formations.",
   "level": "beginner",
-  "topic": "Consonant: ঃ",
-  "focus": "character recognition and pronunciation",
+  "topic": "Special sign: ঃ (বিসর্গ)",
+  "focus": "symbol recognition, word-building patterns, pronunciation, and sign distinctions",
   "phrases": [
-    {
-      "bn": "দুঃখ শব্দে ঃ আছে।",
-      "pronunciation": "dukkho shôbde visarga achhe",
-      "en": "The word “দুঃখ” contains ঃ.",
-      "context": "Find ঃ in দুঃখ and say the complete word aloud.",
-      "category": "consonant-visarga",
-      "words": [
-        {
-          "bn": "দুঃখ",
-          "pronunciation": "dukkho",
-          "en": "sorrow"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ঃ",
-          "pronunciation": "visarga",
-          "en": "the visarga character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "নিঃশ্বাস শব্দে ঃ আছে।",
-      "pronunciation": "nishshash shôbde visarga achhe",
-      "en": "The word “নিঃশ্বাস” contains ঃ.",
-      "context": "Find ঃ in নিঃশ্বাস and say the complete word aloud.",
-      "category": "consonant-visarga",
-      "words": [
-        {
-          "bn": "নিঃশ্বাস",
-          "pronunciation": "nishshash",
-          "en": "breath"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ঃ",
-          "pronunciation": "visarga",
-          "en": "the visarga character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "পুনঃ শব্দে ঃ আছে।",
-      "pronunciation": "punôh shôbde visarga achhe",
-      "en": "The word “পুনঃ” contains ঃ.",
-      "context": "Find ঃ in পুনঃ and say the complete word aloud.",
-      "category": "consonant-visarga",
-      "words": [
-        {
-          "bn": "পুনঃ",
-          "pronunciation": "punôh",
-          "en": "again"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ঃ",
-          "pronunciation": "visarga",
-          "en": "the visarga character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    }
+    { "bn": "আমি দুঃখিত।", "pronunciation": "ami dukkhito.", "en": "I'm sorry.", "context": "Offer a basic apology.", "category": "consonant-visarga" },
+    { "bn": "আমি খুব দুঃখিত।", "pronunciation": "ami khub dukkhito.", "en": "I'm very sorry.", "context": "Offer a stronger apology.", "category": "consonant-visarga" },
+    { "bn": "দেরি হওয়ার জন্য দুঃখিত।", "pronunciation": "deri hoar jonno dukkhito.", "en": "Sorry for being late.", "context": "Apologize for lateness.", "category": "consonant-visarga" },
+    { "bn": "ভুলের জন্য দুঃখিত।", "pronunciation": "bhuler jonno dukkhito.", "en": "Sorry for the mistake.", "context": "Apologize for an error.", "category": "consonant-visarga" },
+    { "bn": "আমার খুব দুঃখ হচ্ছে।", "pronunciation": "amar khub dukkho hochchhe.", "en": "I feel very sad.", "context": "Express sadness.", "category": "consonant-visarga" },
+    { "bn": "এটা খুব দুঃখের।", "pronunciation": "eta khub dukkher.", "en": "This is very sad.", "context": "React to something sad.", "category": "consonant-visarga" },
+    { "bn": "দুঃখ করো না।", "pronunciation": "dukkho koro na.", "en": "Don't be sad.", "context": "Comfort someone.", "category": "consonant-visarga" },
+    { "bn": "দুঃখের খবর।", "pronunciation": "dukkher khobor.", "en": "Sad news.", "context": "Describe upsetting news.", "category": "consonant-visarga" },
+    { "bn": "দুঃখজনক ঘটনা।", "pronunciation": "dukkhojonok ghoṭona.", "en": "A tragic / sad incident.", "context": "Describe an unfortunate event.", "category": "consonant-visarga" },
+    { "bn": "আমি একটা দুঃস্বপ্ন দেখেছি।", "pronunciation": "ami ekṭa dushshopno dekhechhi.", "en": "I had a nightmare.", "context": "Describe a bad dream.", "category": "consonant-visarga" },
+    { "bn": "কাল রাতে দুঃস্বপ্ন দেখেছি।", "pronunciation": "kal rate dushshopno dekhechhi.", "en": "I had a nightmare last night.", "context": "Say when a nightmare occurred.", "category": "consonant-visarga" },
+    { "bn": "এটা একটা দুঃস্বপ্ন ছিল।", "pronunciation": "eta ekṭa dushshopno chhilo.", "en": "It was a nightmare.", "context": "Describe a past experience or dream.", "category": "consonant-visarga" },
+    { "bn": "একটা দুঃসংবাদ আছে।", "pronunciation": "ekṭa dushshongbad achhe.", "en": "There is some bad news.", "context": "Introduce bad news.", "category": "consonant-visarga" },
+    { "bn": "এটা খুব দুঃসংবাদ।", "pronunciation": "eta khub dushshongbad.", "en": "This is very bad news.", "context": "React to bad news.", "category": "consonant-visarga" },
+    { "bn": "দুঃসংবাদ শুনেছি।", "pronunciation": "dushshongbad shunechhi.", "en": "I heard the bad news.", "context": "Say that you learned upsetting news.", "category": "consonant-visarga" },
+    { "bn": "দুঃসময় চলছে।", "pronunciation": "dushshomoy cholchhe.", "en": "It's a difficult time.", "context": "Describe a difficult period.", "category": "consonant-visarga" },
+    { "bn": "নিঃশ্বাস নাও।", "pronunciation": "nishshash nao.", "en": "Breathe / Take a breath.", "context": "Give a breathing instruction.", "category": "consonant-visarga" },
+    { "bn": "গভীর নিঃশ্বাস নাও।", "pronunciation": "gobhir nishshash nao.", "en": "Take a deep breath.", "context": "Encourage slow or calming breathing.", "category": "consonant-visarga" },
+    { "bn": "নিঃশ্বাস নিতে কষ্ট হচ্ছে।", "pronunciation": "nishshash nite koshto hochchhe.", "en": "It's difficult to breathe.", "context": "Describe breathing difficulty.", "category": "consonant-visarga" },
+    { "bn": "নিঃশব্দে থাকো।", "pronunciation": "nishshobde thako.", "en": "Stay quiet.", "context": "Ask someone to remain silent.", "category": "consonant-visarga" },
+    { "bn": "ঘরটা নিঃশব্দ।", "pronunciation": "ghorṭa nishshobdo.", "en": "The room is silent.", "context": "Describe a silent room.", "category": "consonant-visarga" },
+    { "bn": "নিঃশব্দে হাঁটো।", "pronunciation": "nishshobde hãṭo.", "en": "Walk quietly.", "context": "Ask someone to move without sound.", "category": "consonant-visarga" },
+    { "bn": "নিঃস্বার্থ ভালোবাসা", "pronunciation": "nishshartho bhalobasha", "en": "selfless love", "context": "Describe love without selfish interest.", "category": "consonant-visarga" }
   ],
   "vocab": [
-    {
-      "bn": "ঃ",
-      "pronunciation": "visarga",
-      "en": "visarga: a breathy h after a vowel",
-      "category": "consonant-visarga",
-      "sourcePhrase": "দুঃখ শব্দে ঃ আছে।"
-    },
-    {
-      "bn": "দুঃখ",
-      "pronunciation": "dukkho",
-      "en": "sorrow",
-      "category": "consonant-visarga",
-      "sourcePhrase": "দুঃখ শব্দে ঃ আছে।"
-    },
-    {
-      "bn": "নিঃশ্বাস",
-      "pronunciation": "nishshash",
-      "en": "breath",
-      "category": "consonant-visarga",
-      "sourcePhrase": "নিঃশ্বাস শব্দে ঃ আছে।"
-    },
-    {
-      "bn": "পুনঃ",
-      "pronunciation": "punôh",
-      "en": "again",
-      "category": "consonant-visarga",
-      "sourcePhrase": "পুনঃ শব্দে ঃ আছে।"
-    }
+    { "bn": "ঃ", "pronunciation": "bishôrgo", "en": "visarga; historically a light breathy h after a vowel", "category": "Special Sign" },
+    { "bn": "দুঃখ", "pronunciation": "dukkho", "en": "sadness / sorrow", "category": "The দুঃ- Pattern" },
+    { "bn": "দুঃখিত", "pronunciation": "dukkhito", "en": "sorry / saddened", "category": "The দুঃ- Pattern" },
+    { "bn": "দুঃখের", "pronunciation": "dukkher", "en": "sad / of sadness", "category": "The দুঃ- Pattern" },
+    { "bn": "দুঃখজনক", "pronunciation": "dukkhojonok", "en": "sad / unfortunate / tragic", "category": "The দুঃ- Pattern" },
+    { "bn": "দুঃসংবাদ", "pronunciation": "dushshongbad", "en": "bad news", "category": "The দুঃ- Pattern" },
+    { "bn": "দুঃস্বপ্ন", "pronunciation": "dushshopno", "en": "nightmare", "category": "The দুঃ- Pattern" },
+    { "bn": "দুঃসময়", "pronunciation": "dushshomoy", "en": "difficult time", "category": "The দুঃ- Pattern" },
+    { "bn": "দুঃসাহস", "pronunciation": "dushshahosh", "en": "audacity / daring", "category": "The দুঃ- Pattern" },
+    { "bn": "দুঃসহ", "pronunciation": "dushshoho", "en": "unbearable", "category": "The দুঃ- Pattern" },
+    { "bn": "দুঃস্থ", "pronunciation": "dushstho", "en": "poor / destitute", "category": "The দুঃ- Pattern" },
+    { "bn": "নিঃশ্বাস", "pronunciation": "nishshash", "en": "breath", "category": "The নিঃ- Pattern" },
+    { "bn": "নিঃশব্দ", "pronunciation": "nishshobdo", "en": "silent / soundless", "category": "The নিঃ- Pattern" },
+    { "bn": "নিঃসন্দেহে", "pronunciation": "nishshondehe", "en": "undoubtedly", "category": "The নিঃ- Pattern" },
+    { "bn": "নিঃসঙ্গ", "pronunciation": "nishshongo", "en": "lonely / solitary", "category": "The নিঃ- Pattern" },
+    { "bn": "নিঃস্ব", "pronunciation": "nishsho", "en": "penniless / destitute", "category": "The নিঃ- Pattern" },
+    { "bn": "নিঃশেষ", "pronunciation": "nishshesh", "en": "completely exhausted / finished", "category": "The নিঃ- Pattern" },
+    { "bn": "নিঃস্বার্থ", "pronunciation": "nishshartho", "en": "selfless", "category": "The নিঃ- Pattern" },
+    { "bn": "নিঃসন্দেহ", "pronunciation": "nishshondeho", "en": "no doubt", "category": "The নিঃ- Pattern" },
+    { "bn": "অন্তঃসত্ত্বা", "pronunciation": "ontohshotta", "en": "pregnant", "category": "Other Words Containing ঃ" },
+    { "bn": "স্বতঃস্ফূর্ত", "pronunciation": "shotohsphurto", "en": "spontaneous", "category": "Other Words Containing ঃ" },
+    { "bn": "প্রাতঃকাল", "pronunciation": "pratohkal", "en": "early morning", "category": "Other Words Containing ঃ" },
+    { "bn": "পুনঃ", "pronunciation": "punoh", "en": "again", "category": "Other Words Containing ঃ" },
+    { "bn": "ং", "pronunciation": "onushshar", "en": "anusvara; a nasal sign", "category": "Symbol Comparison" },
+    { "bn": "ঁ", "pronunciation": "chondrobindu", "en": "chandrabindu; a nasalization sign", "category": "Symbol Comparison" },
+    { "bn": "রং", "pronunciation": "rong", "en": "color; example with ং", "category": "Symbol Comparison" },
+    { "bn": "সংবাদ", "pronunciation": "shongbad", "en": "news; example with ং", "category": "Symbol Comparison" },
+    { "bn": "চাঁদ", "pronunciation": "chãd", "en": "moon; example with ঁ", "category": "Symbol Comparison" },
+    { "bn": "পাঁচ", "pronunciation": "pãch", "en": "five; example with ঁ", "category": "Symbol Comparison" },
+    { "bn": "কাঁধ", "pronunciation": "kãdh", "en": "shoulder; example with ঁ", "category": "Symbol Comparison" }
   ],
   "practice": [
-    "Say ঃ three times: visarga, visarga, visarga.",
-    "Find ঃ in each example word and read the whole word aloud.",
-    "Write ঃ five times while saying its name."
+    "Say the sign's name three times: বিসর্গ, বিসর্গ, বিসর্গ (bishôrgo).",
+    "Find ঃ inside দুঃখ, দুঃখিত, দুঃসংবাদ, দুঃস্বপ্ন, দুঃসময়, নিঃশ্বাস, নিঃশব্দ, and নিঃসঙ্গ.",
+    "Decode the দুঃ- pattern: দুঃখ, দুঃসংবাদ, দুঃস্বপ্ন, দুঃসময়, and দুঃসহ often convey a negative or difficult meaning.",
+    "Decode the নিঃ- pattern: নিঃশব্দ, নিঃসঙ্গ, নিঃস্বার্থ, and নিঃসন্দেহে often convey without, lacking, or free from.",
+    "Break apart নিঃশ্বাস as নিঃ + শ্বাস and practice saying the whole word nishshash.",
+    "Compare the three small signs visually: ঃ has two dots, ং is a single dot-like anusvara sign, and ঁ is a moon-shaped chandrabindu above a letter.",
+    "Use দুঃখ, দুঃখিত, দুঃসংবাদ, দুঃস্বপ্ন, দুঃসময়, নিঃশ্বাস, নিঃশব্দ, নিঃসঙ্গ, নিঃসন্দেহে, and নিঃস্বার্থ as reading anchors.",
+    "Recognize these phrases instantly: আমি দুঃখিত, আমি খুব দুঃখিত, এটা খুব দুঃখের, আমি দুঃস্বপ্ন দেখেছি, and ঘরটা নিঃশব্দ."
   ],
   "notes": [
-    "ঃ is pronounced approximately a breathy h after a vowel.",
-    "ঃ is a sign used mainly in learned or Sanskrit-derived spelling."
+    "ঃ is called বিসর্গ (bishôrgo). It is a special Bangla sign, not a consonant or vowel.",
+    "Historically, visarga represented a light breathy h sound after a vowel. In modern everyday Bangla it is relatively uncommon and mainly appears in words inherited from Sanskrit.",
+    "The prefix-like form দুঃ- often carries a negative or difficult sense, while নিঃ- often suggests without, lacking, or free from.",
+    "Do not confuse ঃ with ং or ঁ: ঃ is visarga, ং is anusvara, and ঁ is chandrabindu.",
+    "Best ঃ words to memorize include দুঃখ, দুঃখিত, দুঃখের, দুঃখজনক, দুঃসংবাদ, দুঃস্বপ্ন, দুঃসময়, দুঃসহ, নিঃশ্বাস, নিঃশব্দ, নিঃসঙ্গ, নিঃসন্দেহে, and নিঃস্বার্থ."
   ]
 }

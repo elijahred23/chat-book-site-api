@@ -1,136 +1,101 @@
 {
   "id": "consonant-ttho",
   "title": "ঠ — ṭhô",
-  "summary": "Learn ঠ, pronounced ṭhô, and recognize it in three useful Bengali words.",
+  "summary": "Learn the Bangla consonant ঠ, its aspirated retroflex ṭh sound, vowel-sign forms, high-frequency words, and contrast with ট.",
   "level": "beginner",
   "topic": "Consonant: ঠ",
-  "focus": "character recognition and pronunciation",
+  "focus": "character recognition, aspiration, everyday vocabulary, and reading practice",
   "phrases": [
-    {
-      "bn": "ঠোঁট শব্দে ঠ আছে।",
-      "pronunciation": "ṭhõṭ shôbde ṭhô achhe",
-      "en": "The word “ঠোঁট” contains ঠ.",
-      "context": "Find ঠ in ঠোঁট and say the complete word aloud.",
-      "category": "consonant-ttho",
-      "words": [
-        {
-          "bn": "ঠোঁট",
-          "pronunciation": "ṭhõṭ",
-          "en": "lip"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ঠ",
-          "pronunciation": "ṭhô",
-          "en": "the ṭhô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "ঠান্ডা শব্দে ঠ আছে।",
-      "pronunciation": "ṭhanḍa shôbde ṭhô achhe",
-      "en": "The word “ঠান্ডা” contains ঠ.",
-      "context": "Find ঠ in ঠান্ডা and say the complete word aloud.",
-      "category": "consonant-ttho",
-      "words": [
-        {
-          "bn": "ঠান্ডা",
-          "pronunciation": "ṭhanḍa",
-          "en": "cold"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ঠ",
-          "pronunciation": "ṭhô",
-          "en": "the ṭhô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "পাঠ শব্দে ঠ আছে।",
-      "pronunciation": "paṭh shôbde ṭhô achhe",
-      "en": "The word “পাঠ” contains ঠ.",
-      "context": "Find ঠ in পাঠ and say the complete word aloud.",
-      "category": "consonant-ttho",
-      "words": [
-        {
-          "bn": "পাঠ",
-          "pronunciation": "paṭh",
-          "en": "lesson / reading"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ঠ",
-          "pronunciation": "ṭhô",
-          "en": "the ṭhô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    }
+    { "bn": "ঠিক আছে।", "pronunciation": "ṭhik achhe.", "en": "Okay / All right.", "context": "Agree or confirm that things are fine.", "category": "consonant-ttho" },
+    { "bn": "সব ঠিক আছে।", "pronunciation": "shob ṭhik achhe.", "en": "Everything is okay.", "context": "Reassure someone that everything is fine.", "category": "consonant-ttho" },
+    { "bn": "এটা ঠিক।", "pronunciation": "eta ṭhik.", "en": "This is correct.", "context": "Confirm accuracy.", "category": "consonant-ttho" },
+    { "bn": "এটা ঠিক না।", "pronunciation": "eta ṭhik na.", "en": "This isn't correct.", "context": "Reject something as incorrect.", "category": "consonant-ttho" },
+    { "bn": "তুমি ঠিক বলেছ।", "pronunciation": "tumi ṭhik bolechho.", "en": "You're right.", "context": "Agree with someone's statement.", "category": "consonant-ttho" },
+    { "bn": "ঠিক এখন।", "pronunciation": "ṭhik ekhon.", "en": "Right now.", "context": "Emphasize the present moment.", "category": "consonant-ttho" },
+    { "bn": "ঠান্ডা পানি।", "pronunciation": "ṭhanḍa pani.", "en": "Cold water.", "context": "Describe water temperature.", "category": "consonant-ttho" },
+    { "bn": "আজ খুব ঠান্ডা।", "pronunciation": "aj khub ṭhanḍa.", "en": "It's very cold today.", "context": "Describe cold weather.", "category": "consonant-ttho" },
+    { "bn": "আমার ঠান্ডা লাগছে।", "pronunciation": "amar ṭhanḍa lagchhe.", "en": "I feel cold.", "context": "Say that you feel cold.", "category": "consonant-ttho" },
+    { "bn": "ঠান্ডা পানি দাও।", "pronunciation": "ṭhanḍa pani dao.", "en": "Give me cold water.", "context": "Ask for cold water.", "category": "consonant-ttho" },
+    { "bn": "পানিটা ঠান্ডা।", "pronunciation": "panita ṭhanḍa.", "en": "The water is cold.", "context": "Describe water temperature.", "category": "consonant-ttho" },
+    { "bn": "ঠান্ডা হয়ে গেছে।", "pronunciation": "ṭhanḍa hoye gechhe.", "en": "It has become cold.", "context": "Describe something cooling down.", "category": "consonant-ttho" },
+    { "bn": "তোমার ঠিকানা কী?", "pronunciation": "tomar ṭhikana ki?", "en": "What is your address?", "context": "Ask someone's address.", "category": "consonant-ttho" },
+    { "bn": "ঠিকানাটা দাও।", "pronunciation": "ṭhikanata dao.", "en": "Give me the address.", "context": "Ask someone for an address.", "category": "consonant-ttho" },
+    { "bn": "আমি ঠিকানা জানি না।", "pronunciation": "ami ṭhikana jani na.", "en": "I don't know the address.", "context": "Say that an address is unknown.", "category": "consonant-ttho" },
+    { "bn": "এই ঠিকানায় যাও।", "pronunciation": "ei ṭhikanay jao.", "en": "Go to this address.", "context": "Give a destination.", "category": "consonant-ttho" },
+    { "bn": "আমার ঠোঁট।", "pronunciation": "amar ṭhõṭ.", "en": "My lips.", "context": "Identify your lips.", "category": "consonant-ttho" },
+    { "bn": "ঠোঁটে ব্যথা।", "pronunciation": "ṭhõṭe byatha.", "en": "My lip hurts.", "context": "Describe lip pain.", "category": "consonant-ttho" },
+    { "bn": "ঠোঁট শুকিয়ে গেছে।", "pronunciation": "ṭhõṭ shukiye gechhe.", "en": "My lips have become dry.", "context": "Describe dry lips.", "category": "consonant-ttho" },
+    { "bn": "ঠোঁট বন্ধ করো।", "pronunciation": "ṭhõṭ bondho koro.", "en": "Close your lips.", "context": "Give an instruction involving the lips.", "category": "consonant-ttho" },
+    { "bn": "ঠেলা দাও।", "pronunciation": "ṭhela dao.", "en": "Give it a push.", "context": "Ask someone to push something.", "category": "consonant-ttho" },
+    { "bn": "এটা ঠেলো।", "pronunciation": "eta ṭhelo.", "en": "Push this.", "context": "Tell someone to push an object.", "category": "consonant-ttho" },
+    { "bn": "দরজাটা ঠেলো।", "pronunciation": "dorjata ṭhelo.", "en": "Push the door.", "context": "Tell someone how to open or move a door.", "category": "consonant-ttho" },
+    { "bn": "আমাকে ঠেলো না।", "pronunciation": "amake ṭhelo na.", "en": "Don't push me.", "context": "Tell someone not to push you.", "category": "consonant-ttho" },
+    { "bn": "আমি ঠাট্টা করছি।", "pronunciation": "ami ṭhaṭṭa korchhi.", "en": "I'm joking.", "context": "Clarify that you are joking.", "category": "consonant-ttho" },
+    { "bn": "ঠাট্টা করো না।", "pronunciation": "ṭhaṭṭa koro na.", "en": "Don't joke / tease.", "context": "Ask someone to stop joking or teasing.", "category": "consonant-ttho" },
+    { "bn": "তুমি কি ঠাট্টা করছ?", "pronunciation": "tumi ki ṭhaṭṭa korchho?", "en": "Are you joking?", "context": "Ask whether someone is serious.", "category": "consonant-ttho" },
+    { "bn": "এটা শুধু ঠাট্টা।", "pronunciation": "eta shudhu ṭhaṭṭa.", "en": "It's just a joke.", "context": "Explain that something was not serious.", "category": "consonant-ttho" },
+    { "bn": "সব ঠিকঠাক আছে।", "pronunciation": "shob ṭhikṭhak achhe.", "en": "Everything is all right.", "context": "Confirm that everything is in order.", "category": "consonant-ttho" },
+    { "bn": "উঠে দাঁড়াও।", "pronunciation": "uṭhe dãrao.", "en": "Stand up.", "context": "Tell someone to rise and stand.", "category": "consonant-ttho" },
+    { "bn": "আমি উঠে গেছি।", "pronunciation": "ami uṭhe gechhi.", "en": "I've gotten up.", "context": "Report getting out of bed or rising.", "category": "consonant-ttho" },
+    { "bn": "মাঠে যাও।", "pronunciation": "maṭhe jao.", "en": "Go to the field.", "context": "Direct someone to a field.", "category": "consonant-ttho" },
+    { "bn": "আমার পিঠে ব্যথা।", "pronunciation": "amar piṭhe byatha.", "en": "My back hurts.", "context": "Describe back pain.", "category": "consonant-ttho" },
+    { "bn": "হঠাৎ কী হলো?", "pronunciation": "hoṭhat ki holo?", "en": "What happened suddenly?", "context": "Ask about an unexpected event.", "category": "consonant-ttho" }
   ],
   "vocab": [
-    {
-      "bn": "ঠ",
-      "pronunciation": "ṭhô",
-      "en": "ṭhô: an aspirated retroflex t",
-      "category": "consonant-ttho",
-      "sourcePhrase": "ঠোঁট শব্দে ঠ আছে।"
-    },
-    {
-      "bn": "ঠোঁট",
-      "pronunciation": "ṭhõṭ",
-      "en": "lip",
-      "category": "consonant-ttho",
-      "sourcePhrase": "ঠোঁট শব্দে ঠ আছে।"
-    },
-    {
-      "bn": "ঠান্ডা",
-      "pronunciation": "ṭhanḍa",
-      "en": "cold",
-      "category": "consonant-ttho",
-      "sourcePhrase": "ঠান্ডা শব্দে ঠ আছে।"
-    },
-    {
-      "bn": "পাঠ",
-      "pronunciation": "paṭh",
-      "en": "lesson / reading",
-      "category": "consonant-ttho",
-      "sourcePhrase": "পাঠ শব্দে ঠ আছে।"
-    }
+    { "bn": "ঠ", "pronunciation": "ṭhô", "en": "an aspirated retroflex t", "category": "Letter" },
+    { "bn": "ঠান্ডা", "pronunciation": "ṭhanḍa", "en": "cold", "category": "Common Words Beginning with ঠ" },
+    { "bn": "ঠান্ডা পানি", "pronunciation": "ṭhanḍa pani", "en": "cold water", "category": "The ঠান্ডা Family" },
+    { "bn": "ঠান্ডা লাগা", "pronunciation": "ṭhanḍa laga", "en": "to feel cold / catch a cold", "category": "The ঠান্ডা Family" },
+    { "bn": "গরম", "pronunciation": "gorom", "en": "hot / warm; opposite of ঠান্ডা", "category": "Useful Opposites" },
+    { "bn": "ঠিক", "pronunciation": "ṭhik", "en": "correct / okay / exactly", "category": "The ঠিক Family" },
+    { "bn": "ঠিক আছে", "pronunciation": "ṭhik achhe", "en": "okay / all right", "category": "The ঠিক Family" },
+    { "bn": "ঠিকানা", "pronunciation": "ṭhikana", "en": "address", "category": "The ঠিক Family" },
+    { "bn": "ঠিকঠাক", "pronunciation": "ṭhikṭhak", "en": "okay / all right", "category": "The ঠিক Family" },
+    { "bn": "ঠোঁট", "pronunciation": "ṭhõṭ", "en": "lip", "category": "Common Words Beginning with ঠ" },
+    { "bn": "ঠোঁটে", "pronunciation": "ṭhõṭe", "en": "on the lips", "category": "Common Words Beginning with ঠ" },
+    { "bn": "ঠেলা", "pronunciation": "ṭhela", "en": "to push", "category": "The ঠেলা Family" },
+    { "bn": "ঠেলানো", "pronunciation": "ṭhelano", "en": "to have something pushed", "category": "The ঠেলা Family" },
+    { "bn": "ঠেকা", "pronunciation": "ṭheka", "en": "to stop / block / lean against", "category": "Common Words Beginning with ঠ" },
+    { "bn": "ঠেকানো", "pronunciation": "ṭhekano", "en": "to prevent / stop", "category": "Common Words Beginning with ঠ" },
+    { "bn": "ঠকানো", "pronunciation": "ṭhokano", "en": "to cheat / deceive", "category": "Common Words Beginning with ঠ" },
+    { "bn": "ঠকা", "pronunciation": "ṭhoka", "en": "to be cheated", "category": "Common Words Beginning with ঠ" },
+    { "bn": "ঠাট্টা", "pronunciation": "ṭhaṭṭa", "en": "joke / teasing", "category": "The ঠাট্টা Family" },
+    { "bn": "ঠাট্টা করা", "pronunciation": "ṭhaṭṭa kora", "en": "to joke", "category": "The ঠাট্টা Family" },
+    { "bn": "ঠাসা", "pronunciation": "ṭhasha", "en": "packed / crowded", "category": "Common Words Beginning with ঠ" },
+    { "bn": "ঠাসাঠাসি", "pronunciation": "ṭhashaṭhashi", "en": "overcrowding", "category": "Common Words Beginning with ঠ" },
+    { "bn": "ঠুকা", "pronunciation": "ṭhuka", "en": "to knock / hit", "category": "Common Words Beginning with ঠ" },
+    { "bn": "ঠোকা", "pronunciation": "ṭhoka", "en": "to strike / peck", "category": "Common Words Beginning with ঠ" },
+    { "bn": "ঠাকুর", "pronunciation": "ṭhakur", "en": "deity / honorific title", "category": "Common Words Beginning with ঠ" },
+    { "bn": "ঠাকুরমা", "pronunciation": "ṭhakurma", "en": "paternal grandmother", "category": "Common Words Beginning with ঠ" },
+    { "bn": "ঠাকুরদা", "pronunciation": "ṭhakurda", "en": "paternal grandfather", "category": "Common Words Beginning with ঠ" },
+    { "bn": "মুঠো", "pronunciation": "muṭho", "en": "fist / handful", "category": "ঠ Inside Common Words" },
+    { "bn": "পাঠানো", "pronunciation": "paṭhano", "en": "to send", "category": "ঠ Inside Common Words" },
+    { "bn": "পাঠ", "pronunciation": "paṭh", "en": "lesson / reading", "category": "ঠ Inside Common Words" },
+    { "bn": "কাঠ", "pronunciation": "kaṭh", "en": "wood", "category": "ঠ Inside Common Words" },
+    { "bn": "মাঠ", "pronunciation": "maṭh", "en": "field", "category": "ঠ Inside Common Words" },
+    { "bn": "পিঠ", "pronunciation": "piṭh", "en": "back", "category": "ঠ Inside Common Words" },
+    { "bn": "আঠা", "pronunciation": "aṭha", "en": "glue", "category": "ঠ Inside Common Words" },
+    { "bn": "ওঠা", "pronunciation": "oṭha", "en": "to get up / rise", "category": "ঠ Inside Common Words" },
+    { "bn": "উঠে", "pronunciation": "uṭhe", "en": "getting up / having risen", "category": "ঠ Inside Common Words" },
+    { "bn": "বসে ওঠা", "pronunciation": "boshe oṭha", "en": "to sit up", "category": "ঠ Inside Common Words" },
+    { "bn": "হঠাৎ", "pronunciation": "hoṭhat", "en": "suddenly", "category": "ঠ Inside Common Words" }
   ],
   "practice": [
-    "Say ঠ three times: ṭhô, ṭhô, ṭhô.",
-    "Find ঠ in each example word and read the whole word aloud.",
-    "Write ঠ five times while saying its name."
+    "Say ঠ three times with the tongue curled slightly backward and a strong puff of air: ṭhô, ṭhô, ṭhô.",
+    "Practice the vowel forms: ঠ (ṭhô), ঠা (ṭha), ঠি (ṭhi), ঠী (ṭhi), ঠু (ṭhu), ঠূ (ṭhu), ঠে (ṭhe), ঠৈ (ṭhoi), ঠো (ṭho), and ঠৌ (ṭhou).",
+    "Read the common combinations aloud: ঠ + া = ঠা as in ঠান্ডা, ঠ + ি = ঠি as in ঠিক, ঠ + ু = ঠু as in ঠুকা, ঠ + ে = ঠে as in ঠেলা, and ঠ + ো = ঠো as in ঠোঁট.",
+    "Memorize the opposite pair ঠান্ডা ↔ গরম: cold ↔ hot.",
+    "Notice the chandrabindu ঁ in ঠোঁট and practice reading ঠোঁট and ঠোঁটে.",
+    "Contrast ট and ঠ with your hand near your mouth: ট has little air; ঠ has a noticeable puff.",
+    "Find ঠ inside মুঠো, পাঠানো, পাঠ, কাঠ, মাঠ, পিঠ, আঠা, ওঠা, উঠে, বসে ওঠা, and হঠাৎ.",
+    "Use ঠিক, ঠান্ডা, ঠিকানা, ঠিকঠাক, ঠোঁট, ঠেলা, ঠেকানো, ঠকানো, and ঠাট্টা as reading anchors.",
+    "Recognize these phrases instantly: ঠিক আছে, সব ঠিক আছে, আমার ঠান্ডা লাগছে, দরজাটা ঠেলো, and আমি ঠাট্টা করছি."
   ],
   "notes": [
-    "ঠ is pronounced approximately an aspirated retroflex t.",
-    "Listen to the audio and compare ঠ across the example words."
+    "ঠ is called মূর্ধন্য ঠ (murdhonno ṭhô). It is an aspirated retroflex consonant made with the tongue curled slightly backward and a strong puff of air.",
+    "ঠ is not the English th sound in think. It is the aspirated partner of ট: ট has little air, while ঠ has a noticeable puff.",
+    "ঠিক is one of the most useful ঠ words and can mean correct, okay, or exactly depending on context.",
+    "The word ঠোঁট contains the chandrabindu ঁ, which marks nasalization.",
+    "Best words to memorize include ঠিক, ঠিক আছে, ঠান্ডা, ঠিকানা, ঠিকঠাক, ঠোঁট, ঠেলা, ঠেকানো, ঠকানো, ঠাট্টা, ঠাকুরমা, and ঠাকুরদা, plus common words containing ঠ such as ওঠা, উঠে, পিঠ, মাঠ, কাঠ, পাঠ, হঠাৎ, and মুঠো."
   ]
 }

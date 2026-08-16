@@ -1,136 +1,94 @@
 {
   "id": "consonant-chandrabindu",
   "title": "ঁ — chandrabindu",
-  "summary": "Learn ঁ, pronounced chandrabindu, and recognize it in three useful Bengali words.",
+  "summary": "Learn the Bangla chandrabindu mark ঁ, how it nasalizes a vowel, and how it differs from anusvara ং.",
   "level": "beginner",
-  "topic": "Consonant: ঁ",
-  "focus": "character recognition and pronunciation",
+  "topic": "Mark: ঁ",
+  "focus": "vowel nasalization, character recognition, and pronunciation",
   "phrases": [
-    {
-      "bn": "চাঁদ শব্দে ঁ আছে।",
-      "pronunciation": "chãd shôbde chandrabindu achhe",
-      "en": "The word “চাঁদ” contains ঁ.",
-      "context": "Find ঁ in চাঁদ and say the complete word aloud.",
-      "category": "consonant-chandrabindu",
-      "words": [
-        {
-          "bn": "চাঁদ",
-          "pronunciation": "chãd",
-          "en": "moon"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ঁ",
-          "pronunciation": "chandrabindu",
-          "en": "the chandrabindu character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "বাঁশ শব্দে ঁ আছে।",
-      "pronunciation": "bãsh shôbde chandrabindu achhe",
-      "en": "The word “বাঁশ” contains ঁ.",
-      "context": "Find ঁ in বাঁশ and say the complete word aloud.",
-      "category": "consonant-chandrabindu",
-      "words": [
-        {
-          "bn": "বাঁশ",
-          "pronunciation": "bãsh",
-          "en": "bamboo"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ঁ",
-          "pronunciation": "chandrabindu",
-          "en": "the chandrabindu character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "হাঁস শব্দে ঁ আছে।",
-      "pronunciation": "hãsh shôbde chandrabindu achhe",
-      "en": "The word “হাঁস” contains ঁ.",
-      "context": "Find ঁ in হাঁস and say the complete word aloud.",
-      "category": "consonant-chandrabindu",
-      "words": [
-        {
-          "bn": "হাঁস",
-          "pronunciation": "hãsh",
-          "en": "duck"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ঁ",
-          "pronunciation": "chandrabindu",
-          "en": "the chandrabindu character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    }
+    { "bn": "চাঁদ উঠেছে।", "pronunciation": "chãd uthechhe.", "en": "The moon has risen.", "context": "Talk about the moon.", "category": "consonant-chandrabindu" },
+    { "bn": "আজ চাঁদ সুন্দর।", "pronunciation": "aj chãd shundor.", "en": "The moon is beautiful today.", "context": "Describe the moon.", "category": "consonant-chandrabindu" },
+    { "bn": "আকাশে চাঁদ আছে।", "pronunciation": "akashe chãd achhe.", "en": "There is a moon in the sky.", "context": "Say what is visible in the sky.", "category": "consonant-chandrabindu" },
+    { "bn": "সুন্দর চাঁদ", "pronunciation": "shundor chãd", "en": "beautiful moon", "context": "Practice চাঁদ in a descriptive phrase.", "category": "consonant-chandrabindu" },
+    { "bn": "আমার দাঁত ব্যথা করছে।", "pronunciation": "amar dãt byatha korchhe.", "en": "My tooth hurts.", "context": "Describe tooth pain.", "category": "consonant-chandrabindu" },
+    { "bn": "দাঁত ব্রাশ করো।", "pronunciation": "dãt brush koro.", "en": "Brush your teeth.", "context": "Give a dental-care instruction.", "category": "consonant-chandrabindu" },
+    { "bn": "আমার দাঁতে ব্যথা।", "pronunciation": "amar dãte byatha.", "en": "I have a toothache.", "context": "Describe a toothache.", "category": "consonant-chandrabindu" },
+    { "bn": "এখানে দাঁড়াও।", "pronunciation": "ekhane dãrao.", "en": "Stand here.", "context": "Tell someone where to stand.", "category": "consonant-chandrabindu" },
+    { "bn": "ওখানে দাঁড়াও।", "pronunciation": "okhane dãrao.", "en": "Stand over there.", "context": "Tell someone where to stand.", "category": "consonant-chandrabindu" },
+    { "bn": "একটু দাঁড়াও।", "pronunciation": "ektu dãrao.", "en": "Wait a moment.", "context": "Ask someone to wait briefly.", "category": "consonant-chandrabindu" },
+    { "bn": "আমি বাইরে দাঁড়িয়ে আছি।", "pronunciation": "ami baire dãriye achhi.", "en": "I'm standing outside.", "context": "Describe where you are standing.", "category": "consonant-chandrabindu" },
+    { "bn": "কাঁদো না।", "pronunciation": "kãdo na.", "en": "Don't cry.", "context": "Comfort someone who is crying.", "category": "consonant-chandrabindu" },
+    { "bn": "সে কাঁদছে।", "pronunciation": "she kãdchhe.", "en": "He/she is crying.", "context": "Describe someone crying.", "category": "consonant-chandrabindu" },
+    { "bn": "তুমি কেন কাঁদছ?", "pronunciation": "tumi keno kãdchho?", "en": "Why are you crying?", "context": "Ask why someone is crying.", "category": "consonant-chandrabindu" },
+    { "bn": "আমার কাঁধে ব্যথা।", "pronunciation": "amar kãdhe byatha.", "en": "My shoulder hurts.", "context": "Describe shoulder pain.", "category": "consonant-chandrabindu" },
+    { "bn": "কাঁচা আম", "pronunciation": "kãcha am", "en": "unripe mango", "context": "Practice কাঁচা in a food phrase.", "category": "consonant-chandrabindu" },
+    { "bn": "পাঁচ মিনিট", "pronunciation": "pãch minute", "en": "five minutes", "context": "Practice পাঁচ with time.", "category": "consonant-chandrabindu" },
+    { "bn": "পাঁচ বছর", "pronunciation": "pãch bochhor", "en": "five years", "context": "Practice পাঁচ with years.", "category": "consonant-chandrabindu" },
+    { "bn": "আমি হাঁটছি।", "pronunciation": "ami hãtchhi.", "en": "I'm walking.", "context": "Describe walking now.", "category": "consonant-chandrabindu" },
+    { "bn": "আস্তে হাঁটো।", "pronunciation": "aste hãto.", "en": "Walk slowly.", "context": "Tell someone to walk slowly.", "category": "consonant-chandrabindu" },
+    { "bn": "চলো হাঁটতে যাই।", "pronunciation": "cholo hãtte jai.", "en": "Let's go for a walk.", "context": "Suggest going for a walk.", "category": "consonant-chandrabindu" },
+    { "bn": "আমার হাঁটুতে ব্যথা।", "pronunciation": "amar hãtute byatha.", "en": "My knee hurts.", "context": "Describe knee pain.", "category": "consonant-chandrabindu" },
+    { "bn": "হাঁস পানিতে আছে।", "pronunciation": "hãsh panite achhe.", "en": "The duck is in the water.", "context": "Describe where a duck is.", "category": "consonant-chandrabindu" },
+    { "bn": "আমি সাঁতার জানি।", "pronunciation": "ami sãtar jani.", "en": "I know how to swim.", "context": "Talk about swimming ability.", "category": "consonant-chandrabindu" },
+    { "bn": "আমি সাঁতার কাটছি।", "pronunciation": "ami sãtar katchhi.", "en": "I'm swimming.", "context": "Describe swimming now.", "category": "consonant-chandrabindu" },
+    { "bn": "ঘরটা ফাঁকা।", "pronunciation": "ghorta fãka.", "en": "The room is empty.", "context": "Describe an empty room.", "category": "consonant-chandrabindu" },
+    { "bn": "এটা ভাঁজ করো।", "pronunciation": "eta bhãj koro.", "en": "Fold this.", "context": "Tell someone to fold something.", "category": "consonant-chandrabindu" },
+    { "bn": "ছবি আঁকো।", "pronunciation": "chhobi ãko.", "en": "Draw a picture.", "context": "Ask someone to draw.", "category": "consonant-chandrabindu" },
+    { "bn": "আমি ছবি আঁকছি।", "pronunciation": "ami chhobi ãkchhi.", "en": "I'm drawing a picture.", "context": "Describe drawing now.", "category": "consonant-chandrabindu" }
   ],
   "vocab": [
-    {
-      "bn": "ঁ",
-      "pronunciation": "chandrabindu",
-      "en": "chandrabindu: nasalizes the preceding vowel",
-      "category": "consonant-chandrabindu",
-      "sourcePhrase": "চাঁদ শব্দে ঁ আছে।"
-    },
-    {
-      "bn": "চাঁদ",
-      "pronunciation": "chãd",
-      "en": "moon",
-      "category": "consonant-chandrabindu",
-      "sourcePhrase": "চাঁদ শব্দে ঁ আছে।"
-    },
-    {
-      "bn": "বাঁশ",
-      "pronunciation": "bãsh",
-      "en": "bamboo",
-      "category": "consonant-chandrabindu",
-      "sourcePhrase": "বাঁশ শব্দে ঁ আছে।"
-    },
-    {
-      "bn": "হাঁস",
-      "pronunciation": "hãsh",
-      "en": "duck",
-      "category": "consonant-chandrabindu",
-      "sourcePhrase": "হাঁস শব্দে ঁ আছে।"
-    }
+    { "bn": "চাঁদ", "pronunciation": "chãd", "en": "moon", "category": "Common Words Containing ঁ" },
+    { "bn": "চাঁদনি", "pronunciation": "chãdni", "en": "moonlight", "category": "Common Words Containing ঁ" },
+    { "bn": "চাঁদপুর", "pronunciation": "chãdpur", "en": "Chandpur", "category": "Common Words Containing ঁ" },
+    { "bn": "দাঁত", "pronunciation": "dãt", "en": "tooth / teeth", "category": "Common Words Containing ঁ" },
+    { "bn": "দাঁড়ানো", "pronunciation": "dãrano", "en": "to stand", "category": "Common Words Containing ঁ" },
+    { "bn": "দাঁড়াও", "pronunciation": "dãrao", "en": "stand / wait", "category": "Common Words Containing ঁ" },
+    { "bn": "কাঁদা", "pronunciation": "kãda", "en": "to cry", "category": "Common Words Containing ঁ" },
+    { "bn": "কাঁদছে", "pronunciation": "kãdchhe", "en": "is crying", "category": "Common Words Containing ঁ" },
+    { "bn": "কাঁটা", "pronunciation": "kãta", "en": "thorn", "category": "Common Words Containing ঁ" },
+    { "bn": "কাঁধ", "pronunciation": "kãdh", "en": "shoulder", "category": "Common Words Containing ঁ" },
+    { "bn": "কাঁচা", "pronunciation": "kãcha", "en": "raw / unripe", "category": "Common Words Containing ঁ" },
+    { "bn": "কাঁচ", "pronunciation": "kãch", "en": "glass", "category": "Common Words Containing ঁ" },
+    { "bn": "কাঁচি", "pronunciation": "kãchi", "en": "scissors", "category": "Common Words Containing ঁ" },
+    { "bn": "বাঁশ", "pronunciation": "bãsh", "en": "bamboo", "category": "Common Words Containing ঁ" },
+    { "bn": "বাঁশি", "pronunciation": "bãshi", "en": "flute", "category": "Common Words Containing ঁ" },
+    { "bn": "বাঁধা", "pronunciation": "bãdha", "en": "to tie / obstacle", "category": "Common Words Containing ঁ" },
+    { "bn": "বাঁকা", "pronunciation": "bãka", "en": "bent / crooked", "category": "Common Words Containing ঁ" },
+    { "bn": "হাঁটা", "pronunciation": "hãta", "en": "to walk", "category": "Common Words Containing ঁ" },
+    { "bn": "হাঁটু", "pronunciation": "hãtu", "en": "knee", "category": "Common Words Containing ঁ" },
+    { "bn": "হাঁস", "pronunciation": "hãsh", "en": "duck", "category": "Common Words Containing ঁ" },
+    { "bn": "হাঁসি", "pronunciation": "hãshi", "en": "laughter (usually spelled হাসি)", "category": "Common Words Containing ঁ" },
+    { "bn": "পাঁজর", "pronunciation": "pãjor", "en": "rib", "category": "Common Words Containing ঁ" },
+    { "bn": "পাঁচ", "pronunciation": "pãch", "en": "five", "category": "Common Words Containing ঁ" },
+    { "bn": "আঁকা", "pronunciation": "ãka", "en": "to draw", "category": "Common Words Containing ঁ" },
+    { "bn": "আঁচ", "pronunciation": "ãch", "en": "heat / hint", "category": "Common Words Containing ঁ" },
+    { "bn": "আঁচড়", "pronunciation": "ãchor", "en": "scratch", "category": "Common Words Containing ঁ" },
+    { "bn": "আঁধার", "pronunciation": "ãdhar", "en": "darkness", "category": "Common Words Containing ঁ" },
+    { "bn": "গাঁ", "pronunciation": "gã", "en": "village", "category": "Common Words Containing ঁ" },
+    { "bn": "গাঁথা", "pronunciation": "gãtha", "en": "threaded / woven", "category": "Common Words Containing ঁ" },
+    { "bn": "সাঁতার", "pronunciation": "sãtar", "en": "swimming", "category": "Common Words Containing ঁ" },
+    { "bn": "সাঁতার কাটা", "pronunciation": "sãtar kata", "en": "to swim", "category": "Common Words Containing ঁ" },
+    { "bn": "ফাঁকা", "pronunciation": "fãka", "en": "empty", "category": "Common Words Containing ঁ" },
+    { "bn": "ফাঁকি", "pronunciation": "fãki", "en": "evasion / trick", "category": "Common Words Containing ঁ" },
+    { "bn": "ঝাঁপ", "pronunciation": "jhãp", "en": "jump / leap", "category": "Common Words Containing ঁ" },
+    { "bn": "ঝাঁটা", "pronunciation": "jhãta", "en": "broom", "category": "Common Words Containing ঁ" },
+    { "bn": "ঝাঁক", "pronunciation": "jhãk", "en": "flock / group", "category": "Common Words Containing ঁ" },
+    { "bn": "ভাঁজ", "pronunciation": "bhãj", "en": "fold", "category": "Common Words Containing ঁ" },
+    { "bn": "ভাঙা", "pronunciation": "bhãga", "en": "broken / to break", "category": "Common Words Containing ঁ" },
+    { "bn": "রান্নাঘর", "pronunciation": "rannaghor", "en": "kitchen", "category": "Common Words Containing ঁ" }
   ],
   "practice": [
-    "Say ঁ three times: chandrabindu, chandrabindu, chandrabindu.",
-    "Find ঁ in each example word and read the whole word aloud.",
-    "Write ঁ five times while saying its name."
+    "Find ঁ in চাঁদ, দাঁত, কাঁদা, হাঁটা, and পাঁচ, then read each word aloud without pronouncing ঁ as a separate n or ng.",
+    "Compare চাদর (chador, sheet/cover) with চাঁদ (chãd, moon) and let the vowel in চাঁদ resonate slightly through your nose.",
+    "Compare বাধা (obstacle) with বাঁধা (tied / to bind) to hear how chandrabindu can affect pronunciation and meaning.",
+    "Compare ঁ and ং: ঁ nasalizes a vowel, while ং generally represents a nasal consonant sound like ng.",
+    "Use চাঁদ, দাঁত, দাঁড়ানো, কাঁদা, কাঁধ, কাঁটা, কাঁচা, কাঁচি, বাঁশ, বাঁশি, বাঁকা, হাঁটা, হাঁটু, হাঁস, পাঁচ, আঁকা, সাঁতার, ফাঁকা, ঝাঁপ, and ভাঁজ as reading anchors."
   ],
   "notes": [
-    "ঁ is pronounced approximately nasalizes the preceding vowel.",
-    "ঁ is a sign placed above a vowel to nasalize it."
+    "ঁ is called চন্দ্রবিন্দু (chôndrobindu). It is a mark, not a separate vowel or consonant.",
+    "Chandrabindu nasalizes the vowel: some air passes through the nose while the vowel is pronounced. Its shape resembles a tiny moon and dot.",
+    "Chandrabindu can affect both pronunciation and meaning, as in বাধা and বাঁধা.",
+    "ঁ and ং are different marks: ঁ nasalizes a vowel, while ং (anusvara) generally represents a nasal consonant sound. Compare চাঁদ (chãd, moon) with রং (rong, color).",
+    "When reading চাঁদ, দাঁত, কাঁদা, হাঁটা, or পাঁচ, do not pronounce ঁ as a separate n or ng; instead, let the vowel resonate slightly through the nose."
   ]
 }

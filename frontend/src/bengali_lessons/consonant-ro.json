@@ -1,136 +1,135 @@
 {
   "id": "consonant-ro",
   "title": "র — rô",
-  "summary": "Learn র, pronounced rô, and recognize it in three useful Bengali words.",
+  "summary": "Learn the very common Bangla consonant র, its tapped r sound, vowel-sign forms, and special রেফ and র-ফলা conjunct forms.",
   "level": "beginner",
   "topic": "Consonant: র",
-  "focus": "character recognition and pronunciation",
+  "focus": "character recognition, pronunciation, and conjunct forms",
   "phrases": [
-    {
-      "bn": "রাত শব্দে র আছে।",
-      "pronunciation": "rat shôbde rô achhe",
-      "en": "The word “রাত” contains র.",
-      "context": "Find র in রাত and say the complete word aloud.",
-      "category": "consonant-ro",
-      "words": [
-        {
-          "bn": "রাত",
-          "pronunciation": "rat",
-          "en": "night"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "র",
-          "pronunciation": "rô",
-          "en": "the rô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "রাস্তা শব্দে র আছে।",
-      "pronunciation": "rasta shôbde rô achhe",
-      "en": "The word “রাস্তা” contains র.",
-      "context": "Find র in রাস্তা and say the complete word aloud.",
-      "category": "consonant-ro",
-      "words": [
-        {
-          "bn": "রাস্তা",
-          "pronunciation": "rasta",
-          "en": "road"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "র",
-          "pronunciation": "rô",
-          "en": "the rô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "ঘর শব্দে র আছে।",
-      "pronunciation": "ghôr shôbde rô achhe",
-      "en": "The word “ঘর” contains র.",
-      "context": "Find র in ঘর and say the complete word aloud.",
-      "category": "consonant-ro",
-      "words": [
-        {
-          "bn": "ঘর",
-          "pronunciation": "ghôr",
-          "en": "house"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "র",
-          "pronunciation": "rô",
-          "en": "the rô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    }
+    { "bn": "এটা এখানে রাখো।", "pronunciation": "eta ekhane rakho.", "en": "Put this here.", "context": "Tell someone where to put something.", "category": "consonant-ro" },
+    { "bn": "ওটা কোথায় রাখব?", "pronunciation": "ota kothay rakhbo?", "en": "Where should I put that?", "context": "Ask where an item belongs.", "category": "consonant-ro" },
+    { "bn": "কোথায় রাখব?", "pronunciation": "kothay rakhbo?", "en": "Where should I put it?", "context": "Ask where to place something.", "category": "consonant-ro" },
+    { "bn": "ফ্রিজে রাখো।", "pronunciation": "frije rakho.", "en": "Put it in the refrigerator.", "context": "Give a food-storage instruction.", "category": "consonant-ro" },
+    { "bn": "মনে রাখো।", "pronunciation": "mone rakho.", "en": "Remember it.", "context": "Tell someone to remember.", "category": "consonant-ro" },
+    { "bn": "এটা রেখে দাও।", "pronunciation": "eta rekhe dao.", "en": "Keep this / Leave this here.", "context": "Ask someone to leave an item in place.", "category": "consonant-ro" },
+    { "bn": "শুভ রাত্রি।", "pronunciation": "shubho ratri.", "en": "Good night.", "context": "Offer a nighttime farewell.", "category": "consonant-ro" },
+    { "bn": "আজ রাতে।", "pronunciation": "aj rate.", "en": "Tonight.", "context": "Refer to tonight.", "category": "consonant-ro" },
+    { "bn": "আজ রাতে", "pronunciation": "aj rate", "en": "tonight", "context": "Practice a time phrase.", "category": "consonant-ro" },
+    { "bn": "কাল রাতে।", "pronunciation": "kal rate.", "en": "Last night / tomorrow night, depending on context.", "context": "Refer to a nearby night using context.", "category": "consonant-ro" },
+    { "bn": "রাতে দেখা হবে।", "pronunciation": "rate dekha hobe.", "en": "See you tonight.", "context": "Arrange an evening meeting.", "category": "consonant-ro" },
+    { "bn": "রাতে ঘুমাই।", "pronunciation": "rate ghumai.", "en": "I sleep at night.", "context": "Describe a nighttime habit.", "category": "consonant-ro" },
+    { "bn": "রাস্তা কোথায়?", "pronunciation": "rasta kothay?", "en": "Where is the road/way?", "context": "Ask for directions.", "category": "consonant-ro" },
+    { "bn": "এই রাস্তা দিয়ে যাও।", "pronunciation": "ei rasta diye jao.", "en": "Go this way.", "context": "Give a route direction.", "category": "consonant-ro" },
+    { "bn": "রাস্তা পার হও।", "pronunciation": "rasta par hoo.", "en": "Cross the road.", "context": "Give a road-crossing instruction.", "category": "consonant-ro" },
+    { "bn": "রাস্তা বন্ধ।", "pronunciation": "rasta bondho.", "en": "The road is closed.", "context": "Describe a closed road.", "category": "consonant-ro" },
+    { "bn": "আমি রান্না করছি।", "pronunciation": "ami ranna korchhi.", "en": "I'm cooking.", "context": "Describe cooking now.", "category": "consonant-ro" },
+    { "bn": "রান্না হয়ে গেছে।", "pronunciation": "ranna hoye gechhe.", "en": "The cooking is finished / The food is ready.", "context": "Announce that the food is ready.", "category": "consonant-ro" },
+    { "bn": "কে রান্না করেছে?", "pronunciation": "ke ranna korechhe?", "en": "Who cooked?", "context": "Ask who prepared the food.", "category": "consonant-ro" },
+    { "bn": "রান্নাটা ভালো হয়েছে।", "pronunciation": "rannata bhalo hoyechhe.", "en": "The food turned out well.", "context": "Compliment the cooking.", "category": "consonant-ro" },
+    { "bn": "রাগ করো না।", "pronunciation": "rag koro na.", "en": "Don't get angry.", "context": "Ask someone to stay calm.", "category": "consonant-ro" },
+    { "bn": "তুমি কি রাগ করেছ?", "pronunciation": "tumi ki rag korechho?", "en": "Are you angry?", "context": "Ask about someone's mood.", "category": "consonant-ro" },
+    { "bn": "আমার রাগ হচ্ছে।", "pronunciation": "amar rag hochchhe.", "en": "I'm getting angry.", "context": "Describe growing anger.", "category": "consonant-ro" },
+    { "bn": "সে খুব রেগে গেছে।", "pronunciation": "she khub rege gechhe.", "en": "He/she became very angry.", "context": "Describe someone's anger.", "category": "consonant-ro" },
+    { "bn": "এটা কী রং?", "pronunciation": "eta ki rong?", "en": "What color is this?", "context": "Ask about color.", "category": "consonant-ro" },
+    { "bn": "লাল রং", "pronunciation": "lal rong", "en": "red color", "context": "Practice a color phrase.", "category": "consonant-ro" },
+    { "bn": "রোগী কোথায়?", "pronunciation": "rogi kothay?", "en": "Where is the patient?", "context": "Ask for a patient's location.", "category": "consonant-ro" },
+    { "bn": "রোদ অনেক।", "pronunciation": "rod onek.", "en": "It's very sunny.", "context": "Describe strong sunlight.", "category": "consonant-ro" },
+    { "bn": "রোজ করি।", "pronunciation": "roj kori.", "en": "I do it every day.", "context": "Describe a daily habit.", "category": "consonant-ro" },
+    { "bn": "রুটি খাব?", "pronunciation": "ruti khabo?", "en": "Shall we eat roti?", "context": "Suggest eating roti.", "category": "consonant-ro" },
+    { "bn": "রওনা দিই।", "pronunciation": "rouna dii.", "en": "Let's leave.", "context": "Suggest departing.", "category": "consonant-ro" },
+    { "bn": "রিপোর্টটা দেখো।", "pronunciation": "reportta dekho.", "en": "Look at the report.", "context": "Ask someone to review a report.", "category": "consonant-ro" },
+    { "bn": "রেস্টুরেন্ট কোথায়?", "pronunciation": "restaurant kothay?", "en": "Where is the restaurant?", "context": "Ask for a restaurant's location.", "category": "consonant-ro" },
+    { "bn": "আমাকে রক্ষা করো।", "pronunciation": "amake rokkha koro.", "en": "Protect me.", "context": "Ask for protection.", "category": "consonant-ro" }
   ],
   "vocab": [
-    {
-      "bn": "র",
-      "pronunciation": "rô",
-      "en": "rô: a rolled or flapped r",
-      "category": "consonant-ro",
-      "sourcePhrase": "রাত শব্দে র আছে।"
-    },
-    {
-      "bn": "রাত",
-      "pronunciation": "rat",
-      "en": "night",
-      "category": "consonant-ro",
-      "sourcePhrase": "রাত শব্দে র আছে।"
-    },
-    {
-      "bn": "রাস্তা",
-      "pronunciation": "rasta",
-      "en": "road",
-      "category": "consonant-ro",
-      "sourcePhrase": "রাস্তা শব্দে র আছে।"
-    },
-    {
-      "bn": "ঘর",
-      "pronunciation": "ghôr",
-      "en": "house",
-      "category": "consonant-ro",
-      "sourcePhrase": "ঘর শব্দে র আছে।"
-    }
+    { "bn": "রাত", "pronunciation": "rat", "en": "night", "category": "Common Words Beginning with র" },
+    { "bn": "রাস্তা", "pronunciation": "rasta", "en": "road / street", "category": "Common Words Beginning with র" },
+    { "bn": "রান্না", "pronunciation": "ranna", "en": "cooking / cooked food", "category": "Common Words Beginning with র" },
+    { "bn": "রান্নাঘর", "pronunciation": "rannaghor", "en": "kitchen", "category": "Common Words Beginning with র" },
+    { "bn": "রাখা", "pronunciation": "rakha", "en": "to keep / put", "category": "The রাখা Word Family" },
+    { "bn": "রাখি", "pronunciation": "rakhi", "en": "I keep", "category": "The রাখা Word Family" },
+    { "bn": "রাখো", "pronunciation": "rakho", "en": "keep / put", "category": "The রাখা Word Family" },
+    { "bn": "রাখবে", "pronunciation": "rakhbe", "en": "will keep", "category": "The রাখা Word Family" },
+    { "bn": "রং", "pronunciation": "rong", "en": "color", "category": "Common Words Beginning with র" },
+    { "bn": "রঙিন", "pronunciation": "rongin", "en": "colorful", "category": "Common Words Beginning with র" },
+    { "bn": "রকম", "pronunciation": "rokom", "en": "kind / type", "category": "Common Words Beginning with র" },
+    { "bn": "রক্ত", "pronunciation": "rokto", "en": "blood", "category": "Common Words Beginning with র" },
+    { "bn": "রাগ", "pronunciation": "rag", "en": "anger", "category": "Common Words Beginning with র" },
+    { "bn": "রাগ করা", "pronunciation": "rag kora", "en": "to get angry", "category": "Common Words Beginning with র" },
+    { "bn": "রাজা", "pronunciation": "raja", "en": "king", "category": "Common Words Beginning with র" },
+    { "bn": "রানী", "pronunciation": "rani", "en": "queen", "category": "Common Words Beginning with র" },
+    { "bn": "রাজ্য", "pronunciation": "rajjo", "en": "state / kingdom", "category": "Common Words Beginning with র" },
+    { "bn": "রোগ", "pronunciation": "rog", "en": "disease / illness", "category": "Common Words Beginning with র" },
+    { "bn": "রোগী", "pronunciation": "rogi", "en": "patient / sick person", "category": "Common Words Beginning with র" },
+    { "bn": "রোদ", "pronunciation": "rod", "en": "sunlight", "category": "Common Words Beginning with র" },
+    { "bn": "রোজ", "pronunciation": "roj", "en": "every day", "category": "Common Words Beginning with র" },
+    { "bn": "রুটি", "pronunciation": "ruti", "en": "bread / roti", "category": "Common Words Beginning with র" },
+    { "bn": "রুম", "pronunciation": "rum", "en": "room", "category": "Common Words Beginning with র" },
+    { "bn": "রূপ", "pronunciation": "rup", "en": "form / appearance", "category": "Common Words Beginning with র" },
+    { "bn": "রূপকথা", "pronunciation": "rupkotha", "en": "fairy tale", "category": "Common Words Beginning with র" },
+    { "bn": "রক্ষা", "pronunciation": "rokkha", "en": "protection", "category": "Common Words Beginning with র" },
+    { "bn": "রক্ষা করা", "pronunciation": "rokkha kora", "en": "to protect", "category": "Common Words Beginning with র" },
+    { "bn": "রওনা", "pronunciation": "rouna", "en": "departure", "category": "Common Words Beginning with র" },
+    { "bn": "রওনা হওয়া", "pronunciation": "rouna hooa", "en": "to leave / depart", "category": "Common Words Beginning with র" },
+    { "bn": "রবিবার", "pronunciation": "robibar", "en": "Sunday", "category": "Common Words Beginning with র" },
+    { "bn": "রিপোর্ট", "pronunciation": "report", "en": "report", "category": "Common Words Beginning with র" },
+    { "bn": "রেস্টুরেন্ট", "pronunciation": "restaurant", "en": "restaurant", "category": "Common Words Beginning with র" },
+    { "bn": "রস", "pronunciation": "rosh", "en": "juice / essence", "category": "Common Words Beginning with র" },
+    { "bn": "রসুন", "pronunciation": "roshun", "en": "garlic", "category": "Common Words Beginning with র" },
+    { "bn": "রশি", "pronunciation": "roshi", "en": "rope", "category": "Common Words Beginning with র" },
+    { "bn": "রসিকতা", "pronunciation": "roshikota", "en": "joke / humor", "category": "Common Words Beginning with র" },
+    { "bn": "রহস্য", "pronunciation": "rohossho", "en": "mystery", "category": "Common Words Beginning with র" },
+    { "bn": "রহস্যময়", "pronunciation": "rohosshomoy", "en": "mysterious", "category": "Common Words Beginning with র" },
+    { "bn": "রায়", "pronunciation": "ray", "en": "judgment / verdict", "category": "Common Words Beginning with র" },
+    { "bn": "করা", "pronunciation": "kora", "en": "to do", "category": "Everyday Words Containing র" },
+    { "bn": "আমার", "pronunciation": "amar", "en": "my", "category": "Everyday Words Containing র" },
+    { "bn": "তোমার", "pronunciation": "tomar", "en": "your", "category": "Everyday Words Containing র" },
+    { "bn": "ঘর", "pronunciation": "ghor", "en": "room", "category": "Everyday Words Containing র" },
+    { "bn": "গরম", "pronunciation": "gorom", "en": "hot", "category": "Everyday Words Containing র" },
+    { "bn": "খারাপ", "pronunciation": "kharap", "en": "bad", "category": "Everyday Words Containing র" },
+    { "bn": "সুন্দর", "pronunciation": "shundor", "en": "beautiful", "category": "Everyday Words Containing র" },
+    { "bn": "শরীর", "pronunciation": "shorir", "en": "body", "category": "Everyday Words Containing র" },
+    { "bn": "খাবার", "pronunciation": "khabar", "en": "food", "category": "Everyday Words Containing র" },
+    { "bn": "দরকার", "pronunciation": "dorkar", "en": "need", "category": "Everyday Words Containing র" },
+    { "bn": "আবার", "pronunciation": "abar", "en": "again", "category": "Everyday Words Containing র" },
+    { "bn": "তারপর", "pronunciation": "tarpor", "en": "then / afterward", "category": "Everyday Words Containing র" },
+    { "bn": "পরিবার", "pronunciation": "poribar", "en": "family", "category": "Everyday Words Containing র" },
+    { "bn": "বাইরে", "pronunciation": "baire", "en": "outside", "category": "Everyday Words Containing র" },
+    { "bn": "ভিতরে", "pronunciation": "bhitore", "en": "inside", "category": "Everyday Words Containing র" },
+    { "bn": "উপরে", "pronunciation": "upore", "en": "above", "category": "Everyday Words Containing র" },
+    { "bn": "পরে", "pronunciation": "pore", "en": "later", "category": "Everyday Words Containing র" },
+    { "bn": "কারণ", "pronunciation": "karon", "en": "reason", "category": "Everyday Words Containing র" },
+    { "bn": "ধরো", "pronunciation": "dhoro", "en": "hold", "category": "Everyday Words Containing র" },
+    { "bn": "করো", "pronunciation": "koro", "en": "do", "category": "Everyday Words Containing র" },
+    { "bn": "তর্ক", "pronunciation": "torko", "en": "argument / debate", "category": "Words with রেফ" },
+    { "bn": "সূর্য", "pronunciation": "shurjo", "en": "sun", "category": "Words with Special র Combinations" },
+    { "bn": "প্রশ্ন", "pronunciation": "proshno", "en": "question", "category": "Common র-ফলা Conjuncts" },
+    { "bn": "প্রথম", "pronunciation": "prothom", "en": "first", "category": "Common র-ফলা Conjuncts" },
+    { "bn": "প্রয়োজন", "pronunciation": "proyojon", "en": "need", "category": "Common র-ফলা Conjuncts" },
+    { "bn": "প্রায়", "pronunciation": "pray", "en": "almost / approximately", "category": "Common র-ফলা Conjuncts" },
+    { "bn": "ক্রম", "pronunciation": "krom", "en": "order / sequence", "category": "Common র-ফলা Conjuncts" },
+    { "bn": "ক্রিয়া", "pronunciation": "kriya", "en": "verb / action", "category": "Common র-ফলা Conjuncts" },
+    { "bn": "গ্রাম", "pronunciation": "gram", "en": "village", "category": "Common র-ফলা Conjuncts" },
+    { "bn": "গ্রহণ", "pronunciation": "grohon", "en": "accept / receive", "category": "Common র-ফলা Conjuncts" },
+    { "bn": "ত্রিশ", "pronunciation": "trish", "en": "thirty", "category": "Common র-ফলা Conjuncts" },
+    { "bn": "ত্রুটি", "pronunciation": "truti", "en": "error", "category": "Common র-ফলা Conjuncts" }
   ],
   "practice": [
-    "Say র three times: rô, rô, rô.",
-    "Find র in each example word and read the whole word aloud.",
-    "Write র five times while saying its name."
+    "Say র with a quick tap of the tongue: rô, rô, rô.",
+    "Practice the vowel forms: র (rô), রা (ra), রি (ri), রী (ri), রু (ru), রূ (ru), রে (re), রৈ (roi, rare), রো (ro), and রৌ (rou).",
+    "Read the combinations aloud: র + া = রা as in রাত, র + ি = রি as in রিপোর্ট, র + ু = রু as in রুটি, র + ূ = রূ as in রূপ, and র + ো = রো as in রোগ.",
+    "Recognize রেফ when র্ comes before another consonant, as in র্ + ক = র্ক and the word তর্ক.",
+    "Recognize র-ফলা when র follows another consonant: প্র = প্ + র, ক্র = ক্ + র, গ্র = গ্ + র, ত্র = ত্ + র, and ব্র = ব্ + র.",
+    "Practice common র conjunct words: প্রশ্ন, প্রথম, প্রয়োজন, প্রায়, ক্রম, ক্রিয়া, গ্রাম, গ্রহণ, ত্রিশ, and ত্রুটি.",
+    "Look for র inside frequent words such as করা, আমার, তোমার, ঘর, গরম, খারাপ, সুন্দর, শরীর, খাবার, দরকার, আবার, পরিবার, বাইরে, ভিতরে, and পরে.",
+    "Use রাত, রাস্তা, রান্না, রাখা, রং, রাগ, রক্ত, রোগ, রুটি, রোদ, and রহস্য as quick reading anchors.",
+    "Recognize these phrases instantly: এটা এখানে রাখো, মনে রাখো, রাগ করো না, রাস্তা কোথায়, and আমি রান্না করছি."
   ],
   "notes": [
-    "র is pronounced approximately a rolled or flapped r.",
-    "Listen to the audio and compare র across the example words."
+    "র is one of the most common Bangla consonants. Its name is rô and its sound is usually produced with a quick tap of the tongue.",
+    "The vowel-sign forms include র (rô), রা (ra), রি (ri), রী (ri), রু (ru), রূ (ru), রে (re), রৈ (roi), রো (ro), and রৌ (rou). Examples include রকম, রাত, রিপোর্ট, রীতি, রুটি, রূপ, রেস, রোগ, and রৌদ্র.",
+    "র changes shape in conjuncts. রেফ occurs when র্ precedes another consonant, while র-ফলা occurs when র joins after another consonant.",
+    "Very common র-ফলা combinations include প্র, ক্র, গ্র, ত্র, and ব্র.",
+    "Best words to memorize include রাত, রাস্তা, রান্না, রান্নাঘর, রাখা, রাখো, রং, রাগ, রকম, রক্ত, রোগ, রোগী, রোদ, রোজ, রুটি, রুম, রক্ষা, রওনা, রিপোর্ট, রেস্টুরেন্ট, and রহস্য."
   ]
 }

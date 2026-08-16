@@ -1,136 +1,88 @@
 {
   "id": "consonant-gho",
   "title": "ঘ — ghô",
-  "summary": "Learn ঘ, pronounced ghô, and recognize it in three useful Bengali words.",
+  "summary": "Learn the common Bangla consonant ঘ, its aspirated gh sound, vowel-sign forms, and useful words and phrases.",
   "level": "beginner",
   "topic": "Consonant: ঘ",
   "focus": "character recognition and pronunciation",
   "phrases": [
-    {
-      "bn": "ঘর শব্দে ঘ আছে।",
-      "pronunciation": "ghôr shôbde ghô achhe",
-      "en": "The word “ঘর” contains ঘ.",
-      "context": "Find ঘ in ঘর and say the complete word aloud.",
-      "category": "consonant-gho",
-      "words": [
-        {
-          "bn": "ঘর",
-          "pronunciation": "ghôr",
-          "en": "house"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ঘ",
-          "pronunciation": "ghô",
-          "en": "the ghô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "ঘড়ি শব্দে ঘ আছে।",
-      "pronunciation": "ghôṛi shôbde ghô achhe",
-      "en": "The word “ঘড়ি” contains ঘ.",
-      "context": "Find ঘ in ঘড়ি and say the complete word aloud.",
-      "category": "consonant-gho",
-      "words": [
-        {
-          "bn": "ঘড়ি",
-          "pronunciation": "ghôṛi",
-          "en": "clock"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ঘ",
-          "pronunciation": "ghô",
-          "en": "the ghô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "মেঘ শব্দে ঘ আছে।",
-      "pronunciation": "megh shôbde ghô achhe",
-      "en": "The word “মেঘ” contains ঘ.",
-      "context": "Find ঘ in মেঘ and say the complete word aloud.",
-      "category": "consonant-gho",
-      "words": [
-        {
-          "bn": "মেঘ",
-          "pronunciation": "megh",
-          "en": "cloud"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ঘ",
-          "pronunciation": "ghô",
-          "en": "the ghô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    }
+    { "bn": "এটা আমার ঘর।", "pronunciation": "eta amar ghor.", "en": "This is my room.", "context": "Identify your room.", "category": "consonant-gho" },
+    { "bn": "আমার ঘর", "pronunciation": "amar ghor", "en": "my room", "context": "Practice ঘর in a personal phrase.", "category": "consonant-gho" },
+    { "bn": "ঘরে আসো।", "pronunciation": "ghore asho.", "en": "Come inside.", "context": "Invite someone into the room.", "category": "consonant-gho" },
+    { "bn": "আমি ঘরে আছি।", "pronunciation": "ami ghore achhi.", "en": "I'm at home.", "context": "Say that you are home or in the room.", "category": "consonant-gho" },
+    { "bn": "ঘরে কেউ আছে?", "pronunciation": "ghore keu achhe?", "en": "Is anyone home?", "context": "Ask whether anyone is home.", "category": "consonant-gho" },
+    { "bn": "ঘরে যাও।", "pronunciation": "ghore jao.", "en": "Go to the room.", "context": "Direct someone to a room.", "category": "consonant-gho" },
+    { "bn": "আমার ঘুম পাচ্ছে।", "pronunciation": "amar ghum pachchhe.", "en": "I'm sleepy.", "context": "Say that you feel sleepy.", "category": "consonant-gho" },
+    { "bn": "আমি ঘুমাতে চাই।", "pronunciation": "ami ghumate chai.", "en": "I want to sleep.", "context": "Express a desire to sleep.", "category": "consonant-gho" },
+    { "bn": "সে ঘুমাচ্ছে।", "pronunciation": "she ghumachchhe.", "en": "He/she is sleeping.", "context": "Describe someone sleeping.", "category": "consonant-gho" },
+    { "bn": "ঘুম থেকে ওঠো।", "pronunciation": "ghum theke otho.", "en": "Wake up.", "context": "Tell someone to wake up.", "category": "consonant-gho" },
+    { "bn": "ভালো ঘুম হয়েছে।", "pronunciation": "bhalo ghum hoyechhe.", "en": "I slept well.", "context": "Describe a good night's sleep.", "category": "consonant-gho" },
+    { "bn": "ঘড়ি কোথায়?", "pronunciation": "ghori kothay?", "en": "Where is the watch?", "context": "Ask where a watch is.", "category": "consonant-gho" },
+    { "bn": "কয়টা বাজে?", "pronunciation": "koyta baje?", "en": "What time is it?", "context": "Ask the time.", "category": "consonant-gho" },
+    { "bn": "আমার ঘড়ি নেই।", "pronunciation": "amar ghori nei.", "en": "I don't have a watch.", "context": "Say that you do not own a watch.", "category": "consonant-gho" },
+    { "bn": "এক ঘণ্টা", "pronunciation": "ek ghonta", "en": "one hour", "context": "Practice a duration.", "category": "consonant-gho" },
+    { "bn": "এক ঘণ্টা।", "pronunciation": "ek ghonta.", "en": "One hour.", "context": "State a duration.", "category": "consonant-gho" },
+    { "bn": "দুই ঘণ্টা", "pronunciation": "dui ghonta", "en": "two hours", "context": "Practice a duration.", "category": "consonant-gho" },
+    { "bn": "এক ঘণ্টা অপেক্ষা করো।", "pronunciation": "ek ghonta opekkha koro.", "en": "Wait for one hour.", "context": "Ask someone to wait.", "category": "consonant-gho" },
+    { "bn": "কত ঘণ্টা লাগবে?", "pronunciation": "koto ghonta lagbe?", "en": "How many hours will it take?", "context": "Ask about duration.", "category": "consonant-gho" },
+    { "bn": "কত ঘণ্টা?", "pronunciation": "koto ghonta?", "en": "How many hours?", "context": "Ask for a duration.", "category": "consonant-gho" },
+    { "bn": "আমি ঘুরতে চাই।", "pronunciation": "ami ghurte chai.", "en": "I want to go sightseeing / travel around.", "context": "Express a desire to explore.", "category": "consonant-gho" },
+    { "bn": "চলো ঘুরতে যাই।", "pronunciation": "cholo ghurte jai.", "en": "Let's go out.", "context": "Suggest going out or sightseeing.", "category": "consonant-gho" },
+    { "bn": "আমি শহর ঘুরছি।", "pronunciation": "ami shohor ghurchhi.", "en": "I'm exploring the city.", "context": "Describe sightseeing in a city.", "category": "consonant-gho" },
+    { "bn": "আমার ঘাড়ে ব্যথা।", "pronunciation": "amar ghare byatha.", "en": "My neck hurts.", "context": "Describe neck pain.", "category": "consonant-gho" },
+    { "bn": "আমার ঘাম হচ্ছে।", "pronunciation": "amar gham hochchhe.", "en": "I'm sweating.", "context": "Describe sweating.", "category": "consonant-gho" },
+    { "bn": "ঘাস সবুজ।", "pronunciation": "ghash shobuj.", "en": "The grass is green.", "context": "Describe grass.", "category": "consonant-gho" },
+    { "bn": "ঘুড়ি উড়ছে।", "pronunciation": "ghuri urchhe.", "en": "The kite is flying.", "context": "Describe a flying kite.", "category": "consonant-gho" },
+    { "bn": "ঘোড়া দৌড়াচ্ছে।", "pronunciation": "ghora dourachchhe.", "en": "The horse is running.", "context": "Describe a running horse.", "category": "consonant-gho" },
+    { "bn": "কী ঘটেছে?", "pronunciation": "ki ghoteche?", "en": "What happened?", "context": "Ask about an event.", "category": "consonant-gho" },
+    { "bn": "ঘটনাটা কী?", "pronunciation": "ghotonata ki?", "en": "What happened? / What's the incident?", "context": "Ask about an incident.", "category": "consonant-gho" }
   ],
   "vocab": [
-    {
-      "bn": "ঘ",
-      "pronunciation": "ghô",
-      "en": "ghô: an aspirated g",
-      "category": "consonant-gho",
-      "sourcePhrase": "ঘর শব্দে ঘ আছে।"
-    },
-    {
-      "bn": "ঘর",
-      "pronunciation": "ghôr",
-      "en": "house",
-      "category": "consonant-gho",
-      "sourcePhrase": "ঘর শব্দে ঘ আছে।"
-    },
-    {
-      "bn": "ঘড়ি",
-      "pronunciation": "ghôṛi",
-      "en": "clock",
-      "category": "consonant-gho",
-      "sourcePhrase": "ঘড়ি শব্দে ঘ আছে।"
-    },
-    {
-      "bn": "মেঘ",
-      "pronunciation": "megh",
-      "en": "cloud",
-      "category": "consonant-gho",
-      "sourcePhrase": "মেঘ শব্দে ঘ আছে।"
-    }
+    { "bn": "ঘর", "pronunciation": "ghor", "en": "room / home", "category": "Common Words Beginning with ঘ" },
+    { "bn": "ঘরে", "pronunciation": "ghore", "en": "in the room / at home", "category": "Common Words Beginning with ঘ" },
+    { "bn": "ঘরের", "pronunciation": "ghorer", "en": "of the room/home", "category": "Common Words Beginning with ঘ" },
+    { "bn": "ঘড়ি", "pronunciation": "ghori", "en": "clock / watch", "category": "Common Words Beginning with ঘ" },
+    { "bn": "ঘণ্টা", "pronunciation": "ghonta", "en": "hour / bell", "category": "Common Words Beginning with ঘ" },
+    { "bn": "ঘণ্টার", "pronunciation": "ghontar", "en": "of an hour", "category": "Common Words Beginning with ঘ" },
+    { "bn": "ঘুম", "pronunciation": "ghum", "en": "sleep", "category": "Common Words Beginning with ঘ" },
+    { "bn": "ঘুমানো", "pronunciation": "ghumano", "en": "to sleep", "category": "Common Words Beginning with ঘ" },
+    { "bn": "ঘুমিয়ে", "pronunciation": "ghumiye", "en": "sleeping", "category": "Common Words Beginning with ঘ" },
+    { "bn": "ঘুমন্ত", "pronunciation": "ghumonto", "en": "sleeping / asleep", "category": "Common Words Beginning with ঘ" },
+    { "bn": "ঘুম থেকে ওঠা", "pronunciation": "ghum theke otha", "en": "to wake up", "category": "Common Words Beginning with ঘ" },
+    { "bn": "ঘাম", "pronunciation": "gham", "en": "sweat", "category": "Common Words Beginning with ঘ" },
+    { "bn": "ঘামা", "pronunciation": "ghama", "en": "to sweat", "category": "Common Words Beginning with ঘ" },
+    { "bn": "ঘাড়", "pronunciation": "ghar", "en": "neck", "category": "Common Words Beginning with ঘ" },
+    { "bn": "ঘাস", "pronunciation": "ghash", "en": "grass", "category": "Common Words Beginning with ঘ" },
+    { "bn": "ঘাট", "pronunciation": "ghat", "en": "riverbank / landing place", "category": "Common Words Beginning with ঘ" },
+    { "bn": "ঘুড়ি", "pronunciation": "ghuri", "en": "kite", "category": "Common Words Beginning with ঘ" },
+    { "bn": "ঘুঘু", "pronunciation": "ghughu", "en": "dove", "category": "Common Words Beginning with ঘ" },
+    { "bn": "ঘোড়া", "pronunciation": "ghora", "en": "horse", "category": "Common Words Beginning with ঘ" },
+    { "bn": "ঘোষণা", "pronunciation": "ghoshona", "en": "announcement", "category": "Common Words Beginning with ঘ" },
+    { "bn": "ঘটনা", "pronunciation": "ghotona", "en": "event / incident", "category": "Common Words Beginning with ঘ" },
+    { "bn": "ঘটানো", "pronunciation": "ghotano", "en": "to cause", "category": "Common Words Beginning with ঘ" },
+    { "bn": "ঘটা", "pronunciation": "ghota", "en": "to happen", "category": "Common Words Beginning with ঘ" },
+    { "bn": "ঘন", "pronunciation": "ghono", "en": "thick / dense", "category": "Common Words Beginning with ঘ" },
+    { "bn": "ঘনঘন", "pronunciation": "ghonoghon", "en": "frequently", "category": "Common Words Beginning with ঘ" },
+    { "bn": "ঘূর্ণি", "pronunciation": "ghurni", "en": "whirl / vortex", "category": "Common Words Beginning with ঘ" },
+    { "bn": "ঘূর্ণিঝড়", "pronunciation": "ghurnijhor", "en": "cyclone", "category": "Common Words Beginning with ঘ" },
+    { "bn": "ঘেরা", "pronunciation": "ghera", "en": "surrounded", "category": "Common Words Beginning with ঘ" },
+    { "bn": "ঘোর", "pronunciation": "ghor", "en": "intense state / daze", "category": "Common Words Beginning with ঘ" },
+    { "bn": "ঘোরা", "pronunciation": "ghora", "en": "to roam / turn", "category": "Common Words Beginning with ঘ" },
+    { "bn": "ঘুরে", "pronunciation": "ghure", "en": "after turning / traveling around", "category": "Common Words Beginning with ঘ" },
+    { "bn": "ঘুরতে", "pronunciation": "ghurte", "en": "to travel around / roam", "category": "Common Words Beginning with ঘ" }
   ],
   "practice": [
-    "Say ঘ three times: ghô, ghô, ghô.",
-    "Find ঘ in each example word and read the whole word aloud.",
-    "Write ঘ five times while saying its name."
+    "Say ঘ three times with extra air: ghô, ghô, ghô.",
+    "Practice the vowel forms: ঘ (ghô), ঘা (gha), ঘি (ghi), ঘী (ghi, rare), ঘু (ghu), ঘূ (ghu), ঘে (ghe), ঘৈ (ghoi, rare), ঘো (gho), and ঘৌ (ghou, rare).",
+    "Read the combinations aloud: ঘ + া = ঘা as in ঘাম, ঘ + ি = ঘি, ঘ + ু = ঘু as in ঘুম, ঘ + ে = ঘে as in ঘেরা, and ঘ + ো = ঘো as in ঘোড়া.",
+    "Compare গ (g) with ঘ (gh, extra air): গান / ঘর, গাছ / ঘুম, and গাড়ি / ঘড়ি.",
+    "Use ঘর, ঘরে, ঘড়ি, ঘুম, ঘাম, ঘাস, ঘোড়া, and ঘটনা as quick reading anchors.",
+    "Recognize these phrases instantly: আমি ঘরে আছি, আমার ঘুম পাচ্ছে, আমি ঘুমাতে চাই, এক ঘণ্টা, and কী ঘটেছে."
   ],
   "notes": [
-    "ঘ is pronounced approximately an aspirated g.",
-    "Listen to the audio and compare ঘ across the example words."
+    "ঘ is a common Bangla consonant named ghô. It is the aspirated partner of গ and is pronounced with extra air.",
+    "The vowel-sign forms include ঘ (ghô), ঘা (gha), ঘি (ghi), ঘী (ghi), ঘু (ghu), ঘূ (ghu), ঘে (ghe), ঘৈ (ghoi), ঘো (gho), and ঘৌ (ghou). Examples include ঘর, ঘাম, ঘি, ঘুম, ঘূর্ণি, ঘেরা, and ঘোড়া.",
+    "Compare গান (gan, song), গাছ (gachh, tree), and গাড়ি (gari, car) with ঘর (ghor, room), ঘুম (ghum, sleep), ঘড়ি (ghori, clock/watch), and ঘোড়া (ghora, horse).",
+    "Best words to memorize include ঘর, ঘরে, ঘড়ি, ঘণ্টা, ঘুম, ঘুমানো, ঘাম, ঘাড়, ঘাস, ঘুড়ি, ঘোড়া, ঘটনা, ঘটা, ঘোরা, ঘুরতে, ঘনঘন, and ঘূর্ণিঝড়."
   ]
 }

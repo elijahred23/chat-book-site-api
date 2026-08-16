@@ -1,136 +1,98 @@
 {
   "id": "consonant-go",
   "title": "গ — gô",
-  "summary": "Learn গ, pronounced gô, and recognize it in three useful Bengali words.",
+  "summary": "Learn the common Bangla consonant গ, its g sound, vowel-sign forms, and useful words and phrases.",
   "level": "beginner",
   "topic": "Consonant: গ",
   "focus": "character recognition and pronunciation",
   "phrases": [
-    {
-      "bn": "গাছ শব্দে গ আছে।",
-      "pronunciation": "gachh shôbde gô achhe",
-      "en": "The word “গাছ” contains গ.",
-      "context": "Find গ in গাছ and say the complete word aloud.",
-      "category": "consonant-go",
-      "words": [
-        {
-          "bn": "গাছ",
-          "pronunciation": "gachh",
-          "en": "tree"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "গ",
-          "pronunciation": "gô",
-          "en": "the gô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "গান শব্দে গ আছে।",
-      "pronunciation": "gan shôbde gô achhe",
-      "en": "The word “গান” contains গ.",
-      "context": "Find গ in গান and say the complete word aloud.",
-      "category": "consonant-go",
-      "words": [
-        {
-          "bn": "গান",
-          "pronunciation": "gan",
-          "en": "song"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "গ",
-          "pronunciation": "gô",
-          "en": "the gô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "আগুন শব্দে গ আছে।",
-      "pronunciation": "agun shôbde gô achhe",
-      "en": "The word “আগুন” contains গ.",
-      "context": "Find গ in আগুন and say the complete word aloud.",
-      "category": "consonant-go",
-      "words": [
-        {
-          "bn": "আগুন",
-          "pronunciation": "agun",
-          "en": "fire"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "গ",
-          "pronunciation": "gô",
-          "en": "the gô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    }
+    { "bn": "এটা আমার গাড়ি।", "pronunciation": "eta amar gari.", "en": "This is my car.", "context": "Identify your car.", "category": "consonant-go" },
+    { "bn": "গাড়ি কোথায়?", "pronunciation": "gari kothay?", "en": "Where is the car?", "context": "Ask where a car is.", "category": "consonant-go" },
+    { "bn": "গাড়িতে যাও।", "pronunciation": "garite jao.", "en": "Go by car.", "context": "Suggest traveling by car.", "category": "consonant-go" },
+    { "bn": "গাড়িতে বসো।", "pronunciation": "garite bosho.", "en": "Sit in the car.", "context": "Tell someone to sit in the car.", "category": "consonant-go" },
+    { "bn": "আমি গাড়ি চালাচ্ছি।", "pronunciation": "ami gari chalachchhi.", "en": "I'm driving.", "context": "Describe driving a car.", "category": "consonant-go" },
+    { "bn": "খুব গরম।", "pronunciation": "khub gorom.", "en": "It's very hot.", "context": "Describe hot weather or temperature.", "category": "consonant-go" },
+    { "bn": "আজ অনেক গরম।", "pronunciation": "aj onek gorom.", "en": "It's very hot today.", "context": "Describe today's weather.", "category": "consonant-go" },
+    { "bn": "পানি গরম।", "pronunciation": "pani gorom.", "en": "The water is hot.", "context": "Describe water temperature.", "category": "consonant-go" },
+    { "bn": "খাবারটা গরম।", "pronunciation": "khabarta gorom.", "en": "The food is hot.", "context": "Describe food temperature.", "category": "consonant-go" },
+    { "bn": "গরম পানি", "pronunciation": "gorom pani", "en": "hot water", "context": "Practice গরম in a short phrase.", "category": "consonant-go" },
+    { "bn": "গরম খাবার", "pronunciation": "gorom khabar", "en": "hot food", "context": "Practice গরম in a food phrase.", "category": "consonant-go" },
+    { "bn": "একটা গল্প বলো।", "pronunciation": "ekta golpo bolo.", "en": "Tell me a story.", "context": "Ask someone to tell a story.", "category": "consonant-go" },
+    { "bn": "আমি গল্প পড়ছি।", "pronunciation": "ami golpo porchhi.", "en": "I'm reading a story.", "context": "Describe reading a story.", "category": "consonant-go" },
+    { "bn": "গল্পটা ভালো।", "pronunciation": "golpota bhalo.", "en": "The story is good.", "context": "Describe a story positively.", "category": "consonant-go" },
+    { "bn": "এটা সত্যি গল্প?", "pronunciation": "eta sotti golpo?", "en": "Is this a true story?", "context": "Ask whether a story is true.", "category": "consonant-go" },
+    { "bn": "গল্পটা কী?", "pronunciation": "golpota ki?", "en": "What's the story?", "context": "Ask about a story.", "category": "consonant-go" },
+    { "bn": "আমি গান শুনছি।", "pronunciation": "ami gan shunchhi.", "en": "I'm listening to music/a song.", "context": "Describe listening to music.", "category": "consonant-go" },
+    { "bn": "আমি গান গাই।", "pronunciation": "ami gan gai.", "en": "I sing.", "context": "Describe singing.", "category": "consonant-go" },
+    { "bn": "এই গানটা ভালো।", "pronunciation": "ei ganta bhalo.", "en": "This song is good.", "context": "Praise a song.", "category": "consonant-go" },
+    { "bn": "তুমি কি গান গাও?", "pronunciation": "tumi ki gan gao?", "en": "Do you sing?", "context": "Ask whether someone sings.", "category": "consonant-go" },
+    { "bn": "গান শোনো।", "pronunciation": "gan shono.", "en": "Listen to the song.", "context": "Ask someone to listen.", "category": "consonant-go" },
+    { "bn": "গানটা ভালো।", "pronunciation": "ganta bhalo.", "en": "The song is good.", "context": "Describe a song positively.", "category": "consonant-go" },
+    { "bn": "ভালো গন্ধ।", "pronunciation": "bhalo gondho.", "en": "Nice smell.", "context": "Describe a pleasant smell.", "category": "consonant-go" },
+    { "bn": "খারাপ গন্ধ।", "pronunciation": "kharap gondho.", "en": "Bad smell.", "context": "Describe an unpleasant smell.", "category": "consonant-go" },
+    { "bn": "এটা কীসের গন্ধ?", "pronunciation": "eta kisher gondho?", "en": "What is this smell?", "context": "Ask what is causing a smell.", "category": "consonant-go" },
+    { "bn": "গাছের নিচে বসো।", "pronunciation": "gachher niche bosho.", "en": "Sit under the tree.", "context": "Tell someone where to sit.", "category": "consonant-go" },
+    { "bn": "আমার গলা ব্যথা।", "pronunciation": "amar gola byatha.", "en": "My throat hurts.", "context": "Describe a sore throat.", "category": "consonant-go" },
+    { "bn": "গতকাল কী হয়েছিল?", "pronunciation": "gotokal ki hoyechhilo?", "en": "What happened yesterday?", "context": "Ask about yesterday's events.", "category": "consonant-go" },
+    { "bn": "গতকাল দেখা হয়েছিল।", "pronunciation": "gotokal dekha hoyechhilo.", "en": "We met yesterday.", "context": "Talk about a past meeting.", "category": "consonant-go" },
+    { "bn": "এটা গোপন।", "pronunciation": "eta gopon.", "en": "This is secret.", "context": "Describe confidential information.", "category": "consonant-go" },
+    { "bn": "এটা খুব গুরুত্বপূর্ণ।", "pronunciation": "eta khub guruttopurno.", "en": "This is very important.", "context": "Emphasize importance.", "category": "consonant-go" },
+    { "bn": "সমস্যা গুরুতর।", "pronunciation": "shomoshsha gurutor.", "en": "The problem is serious.", "context": "Describe a serious problem.", "category": "consonant-go" },
+    { "bn": "গোসল করো।", "pronunciation": "gosol koro.", "en": "Take a bath.", "context": "Tell someone to bathe.", "category": "consonant-go" },
+    { "bn": "আমি গোসল করছি।", "pronunciation": "ami gosol korchhi.", "en": "I'm bathing.", "context": "Describe taking a bath.", "category": "consonant-go" }
   ],
   "vocab": [
-    {
-      "bn": "গ",
-      "pronunciation": "gô",
-      "en": "gô: g as in go",
-      "category": "consonant-go",
-      "sourcePhrase": "গাছ শব্দে গ আছে।"
-    },
-    {
-      "bn": "গাছ",
-      "pronunciation": "gachh",
-      "en": "tree",
-      "category": "consonant-go",
-      "sourcePhrase": "গাছ শব্দে গ আছে।"
-    },
-    {
-      "bn": "গান",
-      "pronunciation": "gan",
-      "en": "song",
-      "category": "consonant-go",
-      "sourcePhrase": "গান শব্দে গ আছে।"
-    },
-    {
-      "bn": "আগুন",
-      "pronunciation": "agun",
-      "en": "fire",
-      "category": "consonant-go",
-      "sourcePhrase": "আগুন শব্দে গ আছে।"
-    }
+    { "bn": "গান", "pronunciation": "gan", "en": "song", "category": "Common Words Beginning with গ" },
+    { "bn": "গাওয়া", "pronunciation": "gaoa", "en": "to sing", "category": "Common Words Beginning with গ" },
+    { "bn": "গাছ", "pronunciation": "gachh", "en": "tree", "category": "Common Words Beginning with গ" },
+    { "bn": "গাড়ি", "pronunciation": "gari", "en": "car / vehicle", "category": "Common Words Beginning with গ" },
+    { "bn": "গরু", "pronunciation": "goru", "en": "cow", "category": "Common Words Beginning with গ" },
+    { "bn": "গরম", "pronunciation": "gorom", "en": "hot / warm", "category": "Common Words Beginning with গ" },
+    { "bn": "গলা", "pronunciation": "gola", "en": "throat / voice", "category": "Common Words Beginning with গ" },
+    { "bn": "গল্প", "pronunciation": "golpo", "en": "story", "category": "Common Words Beginning with গ" },
+    { "bn": "গোল", "pronunciation": "gol", "en": "round / goal", "category": "Common Words Beginning with গ" },
+    { "bn": "গোলাপ", "pronunciation": "golap", "en": "rose", "category": "Common Words Beginning with গ" },
+    { "bn": "গোসল", "pronunciation": "gosol", "en": "bath / bathing", "category": "Common Words Beginning with গ" },
+    { "bn": "গোটা", "pronunciation": "gota", "en": "whole / entire", "category": "Common Words Beginning with গ" },
+    { "bn": "গোনা", "pronunciation": "gona", "en": "to count", "category": "Common Words Beginning with গ" },
+    { "bn": "গন্ধ", "pronunciation": "gondho", "en": "smell", "category": "Common Words Beginning with গ" },
+    { "bn": "গতি", "pronunciation": "goti", "en": "speed / movement", "category": "Common Words Beginning with গ" },
+    { "bn": "গর্ত", "pronunciation": "gorto", "en": "hole", "category": "Common Words Beginning with গ" },
+    { "bn": "গরিব", "pronunciation": "gorib", "en": "poor", "category": "Common Words Beginning with গ" },
+    { "bn": "গুরু", "pronunciation": "guru", "en": "teacher / master", "category": "Common Words Beginning with গ" },
+    { "bn": "গুরুত্ব", "pronunciation": "gurutto", "en": "importance", "category": "Common Words Beginning with গ" },
+    { "bn": "গুরুত্বপূর্ণ", "pronunciation": "guruttopurno", "en": "important", "category": "Common Words Beginning with গ" },
+    { "bn": "গুরুতর", "pronunciation": "gurutor", "en": "serious / severe", "category": "Common Words Beginning with গ" },
+    { "bn": "গর্ব", "pronunciation": "gorbo", "en": "pride", "category": "Common Words Beginning with গ" },
+    { "bn": "গর্ভ", "pronunciation": "gorbho", "en": "womb / pregnancy", "category": "Common Words Beginning with গ" },
+    { "bn": "গতকাল", "pronunciation": "gotokal", "en": "yesterday", "category": "Common Words Beginning with গ" },
+    { "bn": "গত", "pronunciation": "goto", "en": "previous / past", "category": "Common Words Beginning with গ" },
+    { "bn": "গায়ে", "pronunciation": "gaye", "en": "on the body", "category": "Common Words Beginning with গ" },
+    { "bn": "গায়ক", "pronunciation": "gayok", "en": "singer", "category": "Common Words Beginning with গ" },
+    { "bn": "গায়িকা", "pronunciation": "gayika", "en": "female singer", "category": "Common Words Beginning with গ" },
+    { "bn": "গুছানো", "pronunciation": "guchhano", "en": "to organize / tidy", "category": "Common Words Beginning with গ" },
+    { "bn": "গুজব", "pronunciation": "gujob", "en": "rumor", "category": "Common Words Beginning with গ" },
+    { "bn": "গুণ", "pronunciation": "gun", "en": "quality / multiplication", "category": "Common Words Beginning with গ" },
+    { "bn": "গুলি", "pronunciation": "guli", "en": "bullet / pills (context-dependent)", "category": "Common Words Beginning with গ" },
+    { "bn": "গোপন", "pronunciation": "gopon", "en": "secret", "category": "Common Words Beginning with গ" },
+    { "bn": "গোপনে", "pronunciation": "gopone", "en": "secretly", "category": "Common Words Beginning with গ" },
+    { "bn": "গোড়া", "pronunciation": "gora", "en": "beginning / base", "category": "Common Words Beginning with গ" },
+    { "bn": "গবেষণা", "pronunciation": "gobeshona", "en": "research", "category": "Common Words Beginning with গ" },
+    { "bn": "গণনা", "pronunciation": "gonona", "en": "calculation / counting", "category": "Common Words Beginning with গ" },
+    { "bn": "গণিত", "pronunciation": "gonit", "en": "mathematics", "category": "Common Words Beginning with গ" }
   ],
   "practice": [
     "Say গ three times: gô, gô, gô.",
-    "Find গ in each example word and read the whole word aloud.",
-    "Write গ five times while saying its name."
+    "Practice the vowel forms: গ (gô), গা (ga), গি (gi), গী (gi), গু (gu), গূ (gu, uncommon), গে (ge), গৈ (goi, uncommon), গো (go), and গৌ (gou).",
+    "Read the combinations aloud: গ + া = গা as in গান, গ + ি = গি as in গিটার, গ + ী = গী as in গীত, গ + ু = গু as in গুরু, গ + ে = গে as in গেম, গ + ো = গো as in গোল, and গ + ৌ = গৌ as in গৌরব.",
+    "Compare গ (g) with ঘ (gh, extra air): গান / ঘর, গাছ / ঘুম, গাড়ি / ঘড়ি, and গরম / ঘোড়া.",
+    "Use গান, গাছ, গাড়ি, গরম, গলা, গল্প, গন্ধ, গতকাল, গোসল, and গোলাপ as quick reading anchors.",
+    "Recognize these phrases instantly: খুব গরম, গাড়ি কোথায়, একটা গল্প বলো, আমি গান শুনছি, and আমার গলা ব্যথা."
   ],
   "notes": [
-    "গ is pronounced approximately g as in go.",
-    "Listen to the audio and compare গ across the example words."
+    "গ is one of the most common Bangla consonants. Its name is gô and its sound is usually g as in go.",
+    "The vowel-sign forms include গ (gô), গা (ga), গি (gi), গী (gi), গু (gu), গূ (gu), গে (ge), গৈ (goi), গো (go), and গৌ (gou). Examples include গরম, গান, গিটার, গীত, গুরু, গেম, গোল, and গৌরব.",
+    "গ and ঘ form a pronunciation pair: গ has a g sound, while ঘ has an aspirated gh sound with a stronger puff of air.",
+    "Best words to memorize include গান, গাছ, গাড়ি, গরু, গরম, গলা, গল্প, গন্ধ, গোসল, গোল, গোলাপ, গরিব, গতকাল, গতি, গর্ত, গুরুত্ব, গুরুত্বপূর্ণ, গুরুতর, গোপন, গবেষণা, and গণিত."
   ]
 }

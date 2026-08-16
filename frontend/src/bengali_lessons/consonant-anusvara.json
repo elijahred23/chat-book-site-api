@@ -1,136 +1,76 @@
 {
   "id": "consonant-anusvara",
-  "title": "ং — anusvara",
-  "summary": "Learn ং, pronounced anusvara, and recognize it in three useful Bengali words.",
+  "title": "ং — অনুস্বার (Anusvara)",
+  "summary": "Learn the Bengali nasal sign ং, its context-sensitive sound, and common words and phrases that contain it.",
   "level": "beginner",
-  "topic": "Consonant: ং",
+  "topic": "Sign: ং",
   "focus": "character recognition and pronunciation",
   "phrases": [
-    {
-      "bn": "বাংলা শব্দে ং আছে।",
-      "pronunciation": "bangla shôbde anusvara achhe",
-      "en": "The word “বাংলা” contains ং.",
-      "context": "Find ং in বাংলা and say the complete word aloud.",
-      "category": "consonant-anusvara",
-      "words": [
-        {
-          "bn": "বাংলা",
-          "pronunciation": "bangla",
-          "en": "Bengali"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ং",
-          "pronunciation": "anusvara",
-          "en": "the anusvara character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "রং শব্দে ং আছে।",
-      "pronunciation": "rông shôbde anusvara achhe",
-      "en": "The word “রং” contains ং.",
-      "context": "Find ং in রং and say the complete word aloud.",
-      "category": "consonant-anusvara",
-      "words": [
-        {
-          "bn": "রং",
-          "pronunciation": "rông",
-          "en": "color"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ং",
-          "pronunciation": "anusvara",
-          "en": "the anusvara character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "সংবাদ শব্দে ং আছে।",
-      "pronunciation": "shôngbad shôbde anusvara achhe",
-      "en": "The word “সংবাদ” contains ং.",
-      "context": "Find ং in সংবাদ and say the complete word aloud.",
-      "category": "consonant-anusvara",
-      "words": [
-        {
-          "bn": "সংবাদ",
-          "pronunciation": "shôngbad",
-          "en": "news"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ং",
-          "pronunciation": "anusvara",
-          "en": "the anusvara character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    }
+    { "bn": "আমি বাংলা শিখছি।", "pronunciation": "ami bangla shikhchhi.", "en": "I am learning Bangla.", "context": "Practice ং in বাংলা.", "category": "consonant-anusvara" },
+    { "bn": "আমি বাংলায় কথা বলতে চাই।", "pronunciation": "ami banglay kotha bolte chai.", "en": "I want to speak in Bangla.", "context": "Practice ং in বাংলায়.", "category": "consonant-anusvara" },
+    { "bn": "আমার সঙ্গে আসো।", "pronunciation": "amar shonge asho.", "en": "Come with me.", "context": "Practice ং in সঙ্গে.", "category": "consonant-anusvara" },
+    { "bn": "তুমি কার সঙ্গে যাচ্ছ?", "pronunciation": "tumi kar shonge jachchho?", "en": "Who are you going with?", "context": "Ask who someone is accompanying.", "category": "consonant-anusvara" },
+    { "bn": "এটা কী রং?", "pronunciation": "eta ki rong?", "en": "What color is this?", "context": "Ask about a color.", "category": "consonant-anusvara" },
+    { "bn": "আমার প্রিয় রং নীল।", "pronunciation": "amar priyo rong nil.", "en": "My favorite color is blue.", "context": "Describe a favorite color.", "category": "consonant-anusvara" },
+    { "bn": "এই সংখ্যাটা কী?", "pronunciation": "ei shongkhata ki?", "en": "What is this number?", "context": "Ask about a number.", "category": "consonant-anusvara" },
+    { "bn": "তুমি কি বাংলা জানো?", "pronunciation": "tumi ki bangla jano?", "en": "Do you know Bangla?", "context": "Ask about language knowledge.", "category": "consonant-anusvara" },
+    { "bn": "বাংলায় বলো।", "pronunciation": "banglay bolo.", "en": "Say it in Bangla.", "context": "Ask someone to speak in Bangla.", "category": "consonant-anusvara" },
+    { "bn": "আমার সঙ্গে যাও।", "pronunciation": "amar shonge jao.", "en": "Go with me.", "context": "Ask someone to accompany you.", "category": "consonant-anusvara" },
+    { "bn": "তোমার সঙ্গে কথা বলব।", "pronunciation": "tomar shonge kotha bolbo.", "en": "I will talk with you.", "context": "Describe a future conversation.", "category": "consonant-anusvara" },
+    { "bn": "লাল রং", "pronunciation": "lal rong", "en": "red color", "context": "Practice ং in a color phrase.", "category": "consonant-anusvara" },
+    { "bn": "নীল রং", "pronunciation": "nil rong", "en": "blue color", "context": "Practice ং in a color phrase.", "category": "consonant-anusvara" },
+    { "bn": "অনেক মানুষ", "pronunciation": "onek manush", "en": "many people", "context": "Practice a common quantity phrase.", "category": "consonant-anusvara" },
+    { "bn": "সংবাদ দেখছি।", "pronunciation": "shongbad dekhchhi.", "en": "I'm watching the news.", "context": "Practice ং in সংবাদ.", "category": "consonant-anusvara" },
+    { "bn": "কোনো সংকেত নেই।", "pronunciation": "kono shongket nei.", "en": "There is no signal.", "context": "Describe a lack of signal.", "category": "consonant-anusvara" },
+    { "bn": "এটা একটা সংকট।", "pronunciation": "eta ekta shongkot.", "en": "This is a crisis.", "context": "Identify a crisis.", "category": "consonant-anusvara" },
+    { "bn": "এর একটা অংশ", "pronunciation": "er ekta ongsho", "en": "a part of this", "context": "Practice ং in অংশ.", "category": "consonant-anusvara" },
+    { "bn": "আমি অংশগ্রহণ করব।", "pronunciation": "ami ongshogrohon korbo.", "en": "I will participate.", "context": "Describe future participation.", "category": "consonant-anusvara" },
+    { "bn": "মাংস খাব।", "pronunciation": "mangsho khabo.", "en": "I will eat meat.", "context": "Practice ং in মাংস.", "category": "consonant-anusvara" },
+    { "bn": "এটা ভয়ংকর!", "pronunciation": "eta bhoyongkor!", "en": "This is terrifying!", "context": "Describe something frightening.", "category": "consonant-anusvara" },
+    { "bn": "বাংলাদেশের সংস্কৃতি", "pronunciation": "bangladesher shongskriti", "en": "the culture of Bangladesh", "context": "Practice ং in a noun phrase.", "category": "consonant-anusvara" }
   ],
   "vocab": [
-    {
-      "bn": "ং",
-      "pronunciation": "anusvara",
-      "en": "anusvara: a contextual nasal sound",
-      "category": "consonant-anusvara",
-      "sourcePhrase": "বাংলা শব্দে ং আছে।"
-    },
-    {
-      "bn": "বাংলা",
-      "pronunciation": "bangla",
-      "en": "Bengali",
-      "category": "consonant-anusvara",
-      "sourcePhrase": "বাংলা শব্দে ং আছে।"
-    },
-    {
-      "bn": "রং",
-      "pronunciation": "rông",
-      "en": "color",
-      "category": "consonant-anusvara",
-      "sourcePhrase": "রং শব্দে ং আছে।"
-    },
-    {
-      "bn": "সংবাদ",
-      "pronunciation": "shôngbad",
-      "en": "news",
-      "category": "consonant-anusvara",
-      "sourcePhrase": "সংবাদ শব্দে ং আছে।"
-    }
+    { "bn": "বাংলা", "pronunciation": "bangla", "en": "Bangla / Bengali", "category": "Common Words with ং" },
+    { "bn": "বাংলায়", "pronunciation": "banglay", "en": "in Bangla", "category": "Common Words with ং" },
+    { "bn": "বাংলাদেশ", "pronunciation": "bangladesh", "en": "Bangladesh", "category": "Common Words with ং" },
+    { "bn": "বাঙালি", "pronunciation": "bangali", "en": "Bengali person", "category": "Compare ং and ঙ" },
+    { "bn": "রং", "pronunciation": "rong", "en": "color", "category": "Common Words with ং" },
+    { "bn": "রঙিন", "pronunciation": "rongin", "en": "colorful", "category": "Compare ং and ঙ" },
+    { "bn": "সঙ্গে", "pronunciation": "shonge", "en": "with", "category": "Common Words with ং" },
+    { "bn": "সংগীত", "pronunciation": "shonggit", "en": "music", "category": "Common Words with ং" },
+    { "bn": "সংবাদ", "pronunciation": "shongbad", "en": "news", "category": "Common Words with ং" },
+    { "bn": "সংখ্যা", "pronunciation": "shongkha", "en": "number", "category": "Common Words with ং" },
+    { "bn": "সংসার", "pronunciation": "shongshar", "en": "household / family life", "category": "Common Words with ং" },
+    { "bn": "সংস্কৃতি", "pronunciation": "shongskriti", "en": "culture", "category": "Common Words with ং" },
+    { "bn": "সংকেত", "pronunciation": "shongket", "en": "signal", "category": "Common Words with ং" },
+    { "bn": "সংকট", "pronunciation": "shongkot", "en": "crisis", "category": "Common Words with ং" },
+    { "bn": "সংস্থা", "pronunciation": "shongstha", "en": "organization", "category": "Common Words with ং" },
+    { "bn": "সংগ্রাম", "pronunciation": "shonggram", "en": "struggle", "category": "Common Words with ং" },
+    { "bn": "সংগ্রহ", "pronunciation": "shonggroho", "en": "collection", "category": "Common Words with ং" },
+    { "bn": "সংযোগ", "pronunciation": "shongjog", "en": "connection", "category": "Common Words with ং" },
+    { "bn": "সংক্ষেপ", "pronunciation": "shongkhep", "en": "summary / briefly", "category": "Common Words with ং" },
+    { "bn": "সংরক্ষণ", "pronunciation": "shongrokkhon", "en": "preservation / saving", "category": "Common Words with ং" },
+    { "bn": "সংলাপ", "pronunciation": "shonglap", "en": "dialogue", "category": "Common Words with ং" },
+    { "bn": "সংশয়", "pronunciation": "shongshoy", "en": "doubt", "category": "Common Words with ং" },
+    { "bn": "সংশোধন", "pronunciation": "shongshodhon", "en": "correction", "category": "Common Words with ং" },
+    { "bn": "অংশ", "pronunciation": "ongsho", "en": "part", "category": "Common Words with ং" },
+    { "bn": "অংশগ্রহণ", "pronunciation": "ongshogrohon", "en": "participation", "category": "Common Words with ং" },
+    { "bn": "বংশ", "pronunciation": "bongsho", "en": "lineage / family line", "category": "Common Words with ং" },
+    { "bn": "মাংস", "pronunciation": "mangsho", "en": "meat", "category": "Common Words with ং" },
+    { "bn": "সিংহ", "pronunciation": "shingho", "en": "lion", "category": "Common Words with ং" },
+    { "bn": "হিংসা", "pronunciation": "hingsha", "en": "violence / jealousy", "category": "Common Words with ং" },
+    { "bn": "ভয়ংকর", "pronunciation": "bhoyongkor", "en": "terrifying / terrible", "category": "Common Words with ং" }
   ],
   "practice": [
-    "Say ং three times: anusvara, anusvara, anusvara.",
-    "Find ং in each example word and read the whole word aloud.",
-    "Write ং five times while saying its name."
+    "Say the name অনুস্বার (onushshar / anusvara), then practice ং as an ng-like nasal sound.",
+    "Read রং, বাংলা, সংগীত, and ভয়ংকর aloud and listen for their nasal quality.",
+    "Compare the small sign ং with the full consonant ঙ in রং/রঙিন and বাংলা/বাঙালি.",
+    "Notice how ং blends with the following consonant in সংবাদ, সংগীত, and সংস্কৃতি."
   ],
   "notes": [
-    "ং is pronounced approximately a contextual nasal sound.",
-    "ং is a sign rather than an independent consonant; its nasal sound changes with context."
+    "ং is called অনুস্বার (onushshar / anusvara). It is a nasal sign, not a vowel.",
+    "For beginners, ং ≈ ng is a useful reading shortcut, as in রং (rong), বাংলা (Bangla), and ভয়ংকর (bhoyongkor).",
+    "The exact nasal pronunciation can shift with the following consonant: সংবাদ is shongbad, সংগীত is shonggit, and সংস্কৃতি is shongskriti.",
+    "Do not confuse ং, the small anusvara sign, with ঙ, a full consonant. বাংলা and রং contain ং, while বাঙালি and রঙিন contain ঙ."
   ]
 }

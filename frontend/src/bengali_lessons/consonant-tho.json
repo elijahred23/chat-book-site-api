@@ -1,136 +1,102 @@
 {
   "id": "consonant-tho",
   "title": "থ — thô",
-  "summary": "Learn থ, pronounced thô, and recognize it in three useful Bengali words.",
+  "summary": "Learn the common Bangla consonant থ, its aspirated t sound, vowel-sign forms, and the essential থাকা, থেকে, and থামা word families.",
   "level": "beginner",
   "topic": "Consonant: থ",
-  "focus": "character recognition and pronunciation",
+  "focus": "character recognition, aspiration, useful verb families, and reading practice",
   "phrases": [
-    {
-      "bn": "থালা শব্দে থ আছে।",
-      "pronunciation": "thala shôbde thô achhe",
-      "en": "The word “থালা” contains থ.",
-      "context": "Find থ in থালা and say the complete word aloud.",
-      "category": "consonant-tho",
-      "words": [
-        {
-          "bn": "থালা",
-          "pronunciation": "thala",
-          "en": "plate"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "থ",
-          "pronunciation": "thô",
-          "en": "the thô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "থামো শব্দে থ আছে।",
-      "pronunciation": "thamo shôbde thô achhe",
-      "en": "The word “থামো” contains থ.",
-      "context": "Find থ in থামো and say the complete word aloud.",
-      "category": "consonant-tho",
-      "words": [
-        {
-          "bn": "থামো",
-          "pronunciation": "thamo",
-          "en": "stop"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "থ",
-          "pronunciation": "thô",
-          "en": "the thô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "কথা শব্দে থ আছে।",
-      "pronunciation": "kôtha shôbde thô achhe",
-      "en": "The word “কথা” contains থ.",
-      "context": "Find থ in কথা and say the complete word aloud.",
-      "category": "consonant-tho",
-      "words": [
-        {
-          "bn": "কথা",
-          "pronunciation": "kôtha",
-          "en": "word / speech"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "থ",
-          "pronunciation": "thô",
-          "en": "the thô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    }
+    { "bn": "আমি এখানে থাকি।", "pronunciation": "ami ekhane thaki.", "en": "I live / stay here.", "context": "Say where you live or stay.", "category": "consonant-tho" },
+    { "bn": "তুমি কোথায় থাকো?", "pronunciation": "tumi kothay thako?", "en": "Where do you live?", "context": "Ask someone where they live.", "category": "consonant-tho" },
+    { "bn": "সে ঢাকায় থাকে।", "pronunciation": "she dhakay thake.", "en": "He/she lives in Dhaka.", "context": "Describe where someone lives.", "category": "consonant-tho" },
+    { "bn": "এখানে থাকো।", "pronunciation": "ekhane thako.", "en": "Stay here.", "context": "Ask someone to remain here.", "category": "consonant-tho" },
+    { "bn": "বাড়িতে থাকো।", "pronunciation": "barite thako.", "en": "Stay home.", "context": "Tell someone to remain at home.", "category": "consonant-tho" },
+    { "bn": "আমি বাড়িতে থাকব।", "pronunciation": "ami barite thakbo.", "en": "I'll stay home.", "context": "State a future plan to remain home.", "category": "consonant-tho" },
+    { "bn": "আমি একা থাকি।", "pronunciation": "ami eka thaki.", "en": "I live alone.", "context": "Describe your living arrangement.", "category": "consonant-tho" },
+    { "bn": "তুমি এখানে থাকতে পারো।", "pronunciation": "tumi ekhane thakte paro.", "en": "You can stay here.", "context": "Offer someone a place to stay.", "category": "consonant-tho" },
+    { "bn": "সে বাড়িতে থাকবে।", "pronunciation": "she barite thakbe.", "en": "He/she will stay home.", "context": "Describe where someone will stay.", "category": "consonant-tho" },
+    { "bn": "ভালো থাকুন।", "pronunciation": "bhalo thakun.", "en": "Stay well / Take care.", "context": "Use as a respectful farewell.", "category": "consonant-tho" },
+    { "bn": "আমি বাংলাদেশ থেকে এসেছি।", "pronunciation": "ami bangladesh theke eshechhi.", "en": "I came from Bangladesh.", "context": "State your place of origin.", "category": "consonant-tho" },
+    { "bn": "আমি বাড়ি থেকে এসেছি।", "pronunciation": "ami bari theke eshechhi.", "en": "I came from home.", "context": "State where you came from.", "category": "consonant-tho" },
+    { "bn": "বাড়ি থেকে এসেছি।", "pronunciation": "bari theke eshechhi.", "en": "I came from home.", "context": "Give a concise place of origin.", "category": "consonant-tho" },
+    { "bn": "এখান থেকে যাও।", "pronunciation": "ekhan theke jao.", "en": "Leave here.", "context": "Tell someone to go away from this place.", "category": "consonant-tho" },
+    { "bn": "কোথা থেকে?", "pronunciation": "kotha theke?", "en": "From where?", "context": "Ask about a place of origin.", "category": "consonant-tho" },
+    { "bn": "সকাল থেকে বৃষ্টি হচ্ছে।", "pronunciation": "shokal theke brishti hochchhe.", "en": "It has been raining since morning.", "context": "Describe when rain began.", "category": "consonant-tho" },
+    { "bn": "তোমার থেকে বড়।", "pronunciation": "tomar theke boro.", "en": "Older / bigger than you.", "context": "Make an informal comparison.", "category": "consonant-tho" },
+    { "bn": "এটার থেকে ভালো।", "pronunciation": "etar theke bhalo.", "en": "Better than this.", "context": "Make an informal comparison.", "category": "consonant-tho" },
+    { "bn": "এটার চেয়ে ভালো।", "pronunciation": "etar cheye bhalo.", "en": "Better than this.", "context": "Use the standard comparison form.", "category": "consonant-tho" },
+    { "bn": "থামো!", "pronunciation": "thamo!", "en": "Stop!", "context": "Give an urgent command.", "category": "consonant-tho" },
+    { "bn": "এখানে থামো।", "pronunciation": "ekhane thamo.", "en": "Stop here.", "context": "Tell someone where to stop.", "category": "consonant-tho" },
+    { "bn": "গাড়ি থামাও।", "pronunciation": "gari thamao.", "en": "Stop the car.", "context": "Ask someone to halt a car.", "category": "consonant-tho" },
+    { "bn": "বৃষ্টি থেমে গেছে।", "pronunciation": "brishti theme gechhe.", "en": "The rain has stopped.", "context": "Describe rain ending.", "category": "consonant-tho" },
+    { "bn": "কথা বলা থামাও।", "pronunciation": "kotha bola thamao.", "en": "Stop talking.", "context": "Tell someone to stop speaking.", "category": "consonant-tho" },
+    { "bn": "থালাটা দাও।", "pronunciation": "thalata dao.", "en": "Give me the plate.", "context": "Ask for a plate.", "category": "consonant-tho" },
+    { "bn": "থানা কোথায়?", "pronunciation": "thana kothay?", "en": "Where is the police station?", "context": "Ask for the police station.", "category": "consonant-tho" },
+    { "bn": "আমার থুতনিতে ব্যথা।", "pronunciation": "amar thutnite byatha.", "en": "My chin hurts.", "context": "Describe pain in your chin.", "category": "consonant-tho" },
+    { "bn": "কোথায়?", "pronunciation": "kothay?", "en": "Where?", "context": "Ask about a location.", "category": "consonant-tho" },
+    { "bn": "আমার মাথা ব্যথা।", "pronunciation": "amar matha byatha.", "en": "My head hurts.", "context": "Describe a headache.", "category": "consonant-tho" },
+    { "bn": "আমার সাথে আসো।", "pronunciation": "amar shathe asho.", "en": "Come with me.", "context": "Invite someone to accompany you.", "category": "consonant-tho" },
+    { "bn": "যথেষ্ট।", "pronunciation": "jotheshto.", "en": "Enough.", "context": "Say that no more is needed.", "category": "consonant-tho" }
   ],
   "vocab": [
-    {
-      "bn": "থ",
-      "pronunciation": "thô",
-      "en": "thô: an aspirated dental t",
-      "category": "consonant-tho",
-      "sourcePhrase": "থালা শব্দে থ আছে।"
-    },
-    {
-      "bn": "থালা",
-      "pronunciation": "thala",
-      "en": "plate",
-      "category": "consonant-tho",
-      "sourcePhrase": "থালা শব্দে থ আছে।"
-    },
-    {
-      "bn": "থামো",
-      "pronunciation": "thamo",
-      "en": "stop",
-      "category": "consonant-tho",
-      "sourcePhrase": "থামো শব্দে থ আছে।"
-    },
-    {
-      "bn": "কথা",
-      "pronunciation": "kôtha",
-      "en": "word / speech",
-      "category": "consonant-tho",
-      "sourcePhrase": "কথা শব্দে থ আছে।"
-    }
+    { "bn": "থ", "pronunciation": "thô", "en": "an aspirated dental t", "category": "Letter" },
+    { "bn": "থাকা", "pronunciation": "thaka", "en": "to stay / live / remain / be located", "category": "The থাকা Family" },
+    { "bn": "থাকি", "pronunciation": "thaki", "en": "I stay / live", "category": "The থাকা Family" },
+    { "bn": "থাকো", "pronunciation": "thako", "en": "stay / you stay", "category": "The থাকা Family" },
+    { "bn": "থাকে", "pronunciation": "thake", "en": "stays / lives / is located", "category": "The থাকা Family" },
+    { "bn": "থাকবে", "pronunciation": "thakbe", "en": "will stay / will be", "category": "The থাকা Family" },
+    { "bn": "থাকুন", "pronunciation": "thakun", "en": "stay (respectful)", "category": "The থাকা Family" },
+    { "bn": "থাকছে", "pronunciation": "thakchhe", "en": "is staying", "category": "The থাকা Family" },
+    { "bn": "থেকেছি", "pronunciation": "thekechhi", "en": "have stayed", "category": "The থাকা Family" },
+    { "bn": "থাকতে", "pronunciation": "thakte", "en": "to stay", "category": "The থাকা Family" },
+    { "bn": "থাকলে", "pronunciation": "thakle", "en": "if staying / if there is", "category": "The থাকা Family" },
+    { "bn": "থেকে", "pronunciation": "theke", "en": "from / than / since", "category": "The থেকে Family" },
+    { "bn": "থেকেও", "pronunciation": "thekeo", "en": "even from / despite being", "category": "The থেকে Family" },
+    { "bn": "থামা", "pronunciation": "thama", "en": "to stop", "category": "The থামা Family" },
+    { "bn": "থামানো", "pronunciation": "thamano", "en": "to stop something", "category": "The থামা Family" },
+    { "bn": "থামো", "pronunciation": "thamo", "en": "stop", "category": "The থামা Family" },
+    { "bn": "থামুন", "pronunciation": "thamun", "en": "stop (respectful)", "category": "The থামা Family" },
+    { "bn": "থেমে", "pronunciation": "theme", "en": "having stopped", "category": "The থামা Family" },
+    { "bn": "থালা", "pronunciation": "thala", "en": "plate", "category": "Common Words Beginning with থ" },
+    { "bn": "থানা", "pronunciation": "thana", "en": "police station", "category": "Common Words Beginning with থ" },
+    { "bn": "থাবা", "pronunciation": "thaba", "en": "paw", "category": "Common Words Beginning with থ" },
+    { "bn": "থুতনি", "pronunciation": "thutni", "en": "chin", "category": "Common Words Beginning with থ" },
+    { "bn": "থুতু", "pronunciation": "thutu", "en": "spit", "category": "Common Words Beginning with থ" },
+    { "bn": "থলি", "pronunciation": "tholi", "en": "bag / pouch", "category": "Common Words Beginning with থ" },
+    { "bn": "থেঁতলে যাওয়া", "pronunciation": "thetle jaoa", "en": "to get crushed", "category": "Common Words Beginning with থ" },
+    { "bn": "থরথর", "pronunciation": "thorthor", "en": "trembling", "category": "Common Words Beginning with থ" },
+    { "bn": "থমকে", "pronunciation": "thomke", "en": "suddenly stopping / pausing", "category": "Common Words Beginning with থ" },
+    { "bn": "থমথমে", "pronunciation": "thomthome", "en": "tense / gloomy", "category": "Common Words Beginning with থ" },
+    { "bn": "থোকা", "pronunciation": "thoka", "en": "bunch / cluster", "category": "Common Words Beginning with থ" },
+    { "bn": "থৈথৈ", "pronunciation": "thoithoi", "en": "brimming / flooded", "category": "Vowel-Sign Examples" },
+    { "bn": "কথা", "pronunciation": "kotha", "en": "word / conversation", "category": "থ Inside Common Words" },
+    { "bn": "কোথায়", "pronunciation": "kothay", "en": "where", "category": "থ Inside Common Words" },
+    { "bn": "ব্যথা", "pronunciation": "byatha", "en": "pain", "category": "থ Inside Common Words" },
+    { "bn": "মাথা", "pronunciation": "matha", "en": "head", "category": "থ Inside Common Words" },
+    { "bn": "প্রথম", "pronunciation": "prothom", "en": "first", "category": "থ Inside Common Words" },
+    { "bn": "পৃথিবী", "pronunciation": "prithibi", "en": "Earth / world", "category": "থ Inside Common Words" },
+    { "bn": "পথ", "pronunciation": "poth", "en": "road / path", "category": "থ Inside Common Words" },
+    { "bn": "সাথে", "pronunciation": "shathe", "en": "with", "category": "থ Inside Common Words" },
+    { "bn": "অর্থ", "pronunciation": "ortho", "en": "meaning / money", "category": "থ Inside Common Words" },
+    { "bn": "যথেষ্ট", "pronunciation": "jotheshto", "en": "enough", "category": "থ Inside Common Words" }
   ],
   "practice": [
-    "Say থ three times: thô, thô, thô.",
-    "Find থ in each example word and read the whole word aloud.",
-    "Write থ five times while saying its name."
+    "Say থ three times with a noticeable puff of air: thô, thô, thô.",
+    "Practice the vowel forms: থ (thô), থা (tha), থি (thi), থী (thi), থু (thu), থূ (thu), থে (the), থৈ (thoi), থো (tho), and থৌ (thou).",
+    "Read the common combinations aloud: থ + া = থা as in থাকা, থ + ু = থু as in থুতনি, থ + ে = থে as in থেকে, and থ + ো = থো as in থোকা.",
+    "Practice the থাকা family: থাকা, থাকি, থাকো, থাকে, থাকুন, থাকছে, থাকবে, থেকেছি, থাকতে, and থাকলে.",
+    "Practice থেকে in its three main senses: from, since, and than. Remember that চেয়ে is often preferred in standard comparisons.",
+    "Practice the থামা family: থামা, থামানো, থামো, থামুন, and থেমে.",
+    "Contrast ত and থ with your hand near your mouth: ত has less air; থ has a stronger puff.",
+    "Find থ inside কথা, কোথায়, ব্যথা, মাথা, প্রথম, পৃথিবী, পথ, সাথে, অর্থ, and যথেষ্ট.",
+    "Recognize these phrases instantly: তুমি কোথায় থাকো, আমি এখানে থাকি, কোথা থেকে, থামো, and গাড়ি থামাও."
   ],
   "notes": [
-    "থ is pronounced approximately an aspirated dental t.",
-    "Listen to the audio and compare থ across the example words."
+    "থ is a common Bangla consonant pronounced as an aspirated dental t with a noticeable puff of air.",
+    "It is not normally the English th sound in think or this. Think of ত as t and থ as the same type of consonant with extra air.",
+    "There are fewer everyday words beginning with থ than with ক, প, স, or ম, but থাকা, থেকে, and থামা are exceptionally useful.",
+    "থাকা can mean to stay, live, remain, or be located, depending on context.",
+    "থেকে can mean from, since, or than. In standard or formal comparisons, চেয়ে is often preferred.",
+    "Best থ words to memorize include থাকা, থাকি, থাকো, থাকে, থাকবে, থেকে, থামা, থামো, থামানো, থালা, থানা, and থুতনি, plus common words containing থ such as কথা, কোথায়, মাথা, ব্যথা, প্রথম, পথ, পৃথিবী, and যথেষ্ট."
   ]
 }

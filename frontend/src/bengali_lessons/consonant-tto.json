@@ -1,136 +1,126 @@
 {
   "id": "consonant-tto",
   "title": "ট — ṭô",
-  "summary": "Learn ট, pronounced ṭô, and recognize it in three useful Bengali words.",
+  "summary": "Learn the common Bangla consonant ট, its retroflex ṭ sound, vowel-sign forms, everyday words, and the essential টা/টি classifier pattern.",
   "level": "beginner",
   "topic": "Consonant: ট",
-  "focus": "character recognition and pronunciation",
+  "focus": "character recognition, pronunciation, classifiers, and everyday reading",
   "phrases": [
-    {
-      "bn": "টাকা শব্দে ট আছে।",
-      "pronunciation": "ṭaka shôbde ṭô achhe",
-      "en": "The word “টাকা” contains ট.",
-      "context": "Find ট in টাকা and say the complete word aloud.",
-      "category": "consonant-tto",
-      "words": [
-        {
-          "bn": "টাকা",
-          "pronunciation": "ṭaka",
-          "en": "money"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ট",
-          "pronunciation": "ṭô",
-          "en": "the ṭô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "টেবিল শব্দে ট আছে।",
-      "pronunciation": "ṭebil shôbde ṭô achhe",
-      "en": "The word “টেবিল” contains ট.",
-      "context": "Find ট in টেবিল and say the complete word aloud.",
-      "category": "consonant-tto",
-      "words": [
-        {
-          "bn": "টেবিল",
-          "pronunciation": "ṭebil",
-          "en": "table"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ট",
-          "pronunciation": "ṭô",
-          "en": "the ṭô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "নাটক শব্দে ট আছে।",
-      "pronunciation": "naṭok shôbde ṭô achhe",
-      "en": "The word “নাটক” contains ট.",
-      "context": "Find ট in নাটক and say the complete word aloud.",
-      "category": "consonant-tto",
-      "words": [
-        {
-          "bn": "নাটক",
-          "pronunciation": "naṭok",
-          "en": "play / drama"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ট",
-          "pronunciation": "ṭô",
-          "en": "the ṭô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    }
+    { "bn": "কত টাকা?", "pronunciation": "koto ṭaka?", "en": "How much?", "context": "Ask a price or amount of money.", "category": "consonant-tto" },
+    { "bn": "আমার কাছে টাকা আছে।", "pronunciation": "amar kachhe ṭaka achhe.", "en": "I have money.", "context": "Say that you possess money.", "category": "consonant-tto" },
+    { "bn": "আমার কাছে টাকা নেই।", "pronunciation": "amar kachhe ṭaka nei.", "en": "I don't have money.", "context": "Say that you have no money.", "category": "consonant-tto" },
+    { "bn": "টাকা দাও।", "pronunciation": "ṭaka dao.", "en": "Give me the money.", "context": "Ask for money.", "category": "consonant-tto" },
+    { "bn": "কত টাকা লাগবে?", "pronunciation": "koto ṭaka lagbe?", "en": "How much money will be needed?", "context": "Ask about a required cost.", "category": "consonant-tto" },
+    { "bn": "একশ টাকা।", "pronunciation": "eksho ṭaka.", "en": "One hundred taka.", "context": "State a currency amount.", "category": "consonant-tto" },
+    { "bn": "এটা কী?", "pronunciation": "eṭa ki?", "en": "What is this?", "context": "Ask about a nearby object.", "category": "consonant-tto" },
+    { "bn": "ওটা কী?", "pronunciation": "oṭa ki?", "en": "What is that?", "context": "Ask about a distant object.", "category": "consonant-tto" },
+    { "bn": "সেটা আমার।", "pronunciation": "sheṭa amar.", "en": "That's mine.", "context": "Claim an object.", "category": "consonant-tto" },
+    { "bn": "কোনটা তোমার?", "pronunciation": "konṭa tomar?", "en": "Which one is yours?", "context": "Ask someone to identify their item.", "category": "consonant-tto" },
+    { "bn": "একটা বই।", "pronunciation": "ekṭa boi.", "en": "A book.", "context": "Use the conversational singular classifier.", "category": "consonant-tto" },
+    { "bn": "একটা দাও।", "pronunciation": "ekṭa dao.", "en": "Give me one.", "context": "Ask for one item.", "category": "consonant-tto" },
+    { "bn": "ফোনটা কোথায়?", "pronunciation": "phonṭa kothay?", "en": "Where is the phone?", "context": "Ask about a particular phone.", "category": "consonant-tto" },
+    { "bn": "ফোনটা দাও।", "pronunciation": "phonṭa dao.", "en": "Give me the phone.", "context": "Ask for a particular phone.", "category": "consonant-tto" },
+    { "bn": "বইটা দাও।", "pronunciation": "boiṭa dao.", "en": "Give me the book.", "context": "Ask for a particular book.", "category": "consonant-tto" },
+    { "bn": "বইটা কোথায়?", "pronunciation": "boiṭa kothay?", "en": "Where is the book?", "context": "Ask about a particular book.", "category": "consonant-tto" },
+    { "bn": "গাড়িটা আমার।", "pronunciation": "gariṭa amar.", "en": "The car is mine.", "context": "Claim a particular car.", "category": "consonant-tto" },
+    { "bn": "লোকটা কে?", "pronunciation": "lokṭa ke?", "en": "Who is that person?", "context": "Ask someone to identify a person.", "category": "consonant-tto" },
+    { "bn": "টেবিলে রাখো।", "pronunciation": "ṭebile rakho.", "en": "Put it on the table.", "context": "Tell someone where to place something.", "category": "consonant-tto" },
+    { "bn": "টেবিলের ওপর।", "pronunciation": "ṭebiler opor.", "en": "On the table.", "context": "Describe an object's location.", "category": "consonant-tto" },
+    { "bn": "টেবিলটা কোথায়?", "pronunciation": "ṭebilṭa kothay?", "en": "Where is the table?", "context": "Ask for a table's location.", "category": "consonant-tto" },
+    { "bn": "বইটা টেবিলে আছে।", "pronunciation": "boiṭa ṭebile achhe.", "en": "The book is on the table.", "context": "Describe where a book is.", "category": "consonant-tto" },
+    { "bn": "টিকিট কোথায়?", "pronunciation": "ṭikiṭ kothay?", "en": "Where is the ticket?", "context": "Ask for a ticket's location.", "category": "consonant-tto" },
+    { "bn": "একটা টিকিট চাই।", "pronunciation": "ekṭa ṭikiṭ chai.", "en": "I want one ticket.", "context": "Purchase or request a ticket.", "category": "consonant-tto" },
+    { "bn": "টিকিট কত?", "pronunciation": "ṭikiṭ koto?", "en": "How much is the ticket?", "context": "Ask a ticket price.", "category": "consonant-tto" },
+    { "bn": "আমার টিকিট আছে।", "pronunciation": "amar ṭikiṭ achhe.", "en": "I have a ticket.", "context": "Confirm that you possess a ticket.", "category": "consonant-tto" },
+    { "bn": "টানো।", "pronunciation": "ṭano.", "en": "Pull.", "context": "Tell someone to pull.", "category": "consonant-tto" },
+    { "bn": "দরজাটা টানো।", "pronunciation": "dorjaṭa ṭano.", "en": "Pull the door.", "context": "Tell someone to pull a door.", "category": "consonant-tto" },
+    { "bn": "আমাকে টানো না।", "pronunciation": "amake ṭano na.", "en": "Don't pull me.", "context": "Tell someone not to pull you.", "category": "consonant-tto" },
+    { "bn": "দড়িটা টানো।", "pronunciation": "doriṭa ṭano.", "en": "Pull the rope.", "context": "Tell someone to pull a rope.", "category": "consonant-tto" },
+    { "bn": "টিভি দেখছি।", "pronunciation": "ṭibhi dekhchhi.", "en": "I'm watching TV.", "context": "Describe watching television.", "category": "consonant-tto" },
+    { "bn": "টিভি বন্ধ করো।", "pronunciation": "ṭibhi bondho koro.", "en": "Turn off the TV.", "context": "Tell someone to switch off the television.", "category": "consonant-tto" },
+    { "bn": "টুপি পরো।", "pronunciation": "ṭupi poro.", "en": "Put on a hat.", "context": "Tell someone to wear a hat.", "category": "consonant-tto" },
+    { "bn": "টুকরো করো।", "pronunciation": "ṭukro koro.", "en": "Cut / break it into pieces.", "context": "Tell someone to divide something.", "category": "consonant-tto" },
+    { "bn": "টয়লেট কোথায়?", "pronunciation": "ṭoyleṭ kothay?", "en": "Where is the toilet?", "context": "Ask for the restroom.", "category": "consonant-tto" },
+    { "bn": "ট্রেন কখন আসবে?", "pronunciation": "ṭren kokhon ashbe?", "en": "When will the train come?", "context": "Ask about a train's arrival.", "category": "consonant-tto" },
+    { "bn": "ট্রাফিক অনেক।", "pronunciation": "ṭraphik onek.", "en": "There's a lot of traffic.", "context": "Describe heavy traffic.", "category": "consonant-tto" },
+    { "bn": "দরজায় টোকা দাও।", "pronunciation": "dorjay ṭoka dao.", "en": "Knock on the door.", "context": "Tell someone to knock.", "category": "consonant-tto" }
   ],
   "vocab": [
-    {
-      "bn": "ট",
-      "pronunciation": "ṭô",
-      "en": "ṭô: a retroflex t",
-      "category": "consonant-tto",
-      "sourcePhrase": "টাকা শব্দে ট আছে।"
-    },
-    {
-      "bn": "টাকা",
-      "pronunciation": "ṭaka",
-      "en": "money",
-      "category": "consonant-tto",
-      "sourcePhrase": "টাকা শব্দে ট আছে।"
-    },
-    {
-      "bn": "টেবিল",
-      "pronunciation": "ṭebil",
-      "en": "table",
-      "category": "consonant-tto",
-      "sourcePhrase": "টেবিল শব্দে ট আছে।"
-    },
-    {
-      "bn": "নাটক",
-      "pronunciation": "naṭok",
-      "en": "play / drama",
-      "category": "consonant-tto",
-      "sourcePhrase": "নাটক শব্দে ট আছে।"
-    }
+    { "bn": "ট", "pronunciation": "ṭô", "en": "a retroflex t", "category": "Letter" },
+    { "bn": "টাকা", "pronunciation": "ṭaka", "en": "money / taka", "category": "Common Words Beginning with ট" },
+    { "bn": "টাকাপয়সা", "pronunciation": "ṭakapoysha", "en": "money / finances", "category": "Common Words Beginning with ট" },
+    { "bn": "টান", "pronunciation": "ṭan", "en": "pull / tension", "category": "The টান Family" },
+    { "bn": "টানা", "pronunciation": "ṭana", "en": "to pull / continuous", "category": "The টান Family" },
+    { "bn": "টানানো", "pronunciation": "ṭanano", "en": "to hang / stretch", "category": "The টান Family" },
+    { "bn": "টেবিল", "pronunciation": "ṭebil", "en": "table", "category": "Common Words Beginning with ট" },
+    { "bn": "টিকিট", "pronunciation": "ṭikiṭ", "en": "ticket", "category": "Common Words Beginning with ট" },
+    { "bn": "টিভি", "pronunciation": "ṭibhi", "en": "TV", "category": "Common Words Beginning with ট" },
+    { "bn": "টিফিন", "pronunciation": "ṭiphin", "en": "snack / lunch", "category": "Common Words Beginning with ট" },
+    { "bn": "টুপি", "pronunciation": "ṭupi", "en": "hat / cap", "category": "Common Words Beginning with ট" },
+    { "bn": "টুকরা", "pronunciation": "ṭukra", "en": "piece", "category": "Common Words Beginning with ট" },
+    { "bn": "টুকরো", "pronunciation": "ṭukro", "en": "piece / fragment", "category": "Common Words Beginning with ট" },
+    { "bn": "টমেটো", "pronunciation": "ṭomeṭo", "en": "tomato", "category": "Common Words Beginning with ট" },
+    { "bn": "টয়লেট", "pronunciation": "ṭoyleṭ", "en": "toilet", "category": "Common Words Beginning with ট" },
+    { "bn": "টর্চ", "pronunciation": "ṭorch", "en": "flashlight", "category": "Common Words Beginning with ট" },
+    { "bn": "টাওয়ার", "pronunciation": "ṭaoar", "en": "tower", "category": "Common Words Beginning with ট" },
+    { "bn": "ট্যাক্সি", "pronunciation": "ṭyaksi", "en": "taxi", "category": "Common Words Beginning with ট" },
+    { "bn": "ট্রেন", "pronunciation": "ṭren", "en": "train", "category": "Common Words Beginning with ট" },
+    { "bn": "ট্রাক", "pronunciation": "ṭrak", "en": "truck", "category": "Common Words Beginning with ট" },
+    { "bn": "ট্রাফিক", "pronunciation": "ṭraphik", "en": "traffic", "category": "Common Words Beginning with ট" },
+    { "bn": "টায়ার", "pronunciation": "ṭayar", "en": "tire", "category": "Common Words Beginning with ট" },
+    { "bn": "টেস্ট", "pronunciation": "ṭesṭ", "en": "test", "category": "Common Words Beginning with ট" },
+    { "bn": "টেক্সট", "pronunciation": "ṭeksṭ", "en": "text", "category": "Common Words Beginning with ট" },
+    { "bn": "টেকা", "pronunciation": "ṭeka", "en": "to last / survive", "category": "Common Words Beginning with ট" },
+    { "bn": "টোকা", "pronunciation": "ṭoka", "en": "knock / tap", "category": "Common Words Beginning with ট" },
+    { "bn": "টক", "pronunciation": "ṭok", "en": "sour", "category": "Common Words Beginning with ট" },
+    { "bn": "টাটকা", "pronunciation": "ṭaṭka", "en": "fresh", "category": "Common Words Beginning with ট" },
+    { "bn": "টাইট", "pronunciation": "ṭaiṭ", "en": "tight", "category": "Common Words Beginning with ট" },
+    { "bn": "টিপ", "pronunciation": "ṭip", "en": "tip / press", "category": "Common Words Beginning with ট" },
+    { "bn": "টিপে", "pronunciation": "ṭipe", "en": "by pressing", "category": "Common Words Beginning with ট" },
+    { "bn": "টপকানো", "pronunciation": "ṭopkano", "en": "to cross / jump over", "category": "Common Words Beginning with ট" },
+    { "bn": "টা", "pronunciation": "ṭa", "en": "common conversational classifier for singular things", "category": "The টা / টি Classifiers" },
+    { "bn": "টি", "pronunciation": "ṭi", "en": "more formal classifier", "category": "The টা / টি Classifiers" },
+    { "bn": "এটা", "pronunciation": "eṭa", "en": "this", "category": "The টা / টি Classifiers" },
+    { "bn": "ওটা", "pronunciation": "oṭa", "en": "that", "category": "The টা / টি Classifiers" },
+    { "bn": "সেটা", "pronunciation": "sheṭa", "en": "that", "category": "The টা / টি Classifiers" },
+    { "bn": "কোনটা", "pronunciation": "konṭa", "en": "which one", "category": "The টা / টি Classifiers" },
+    { "bn": "একটা", "pronunciation": "ekṭa", "en": "one / a", "category": "The টা / টি Classifiers" },
+    { "bn": "একটি", "pronunciation": "ekṭi", "en": "one / a (formal)", "category": "The টা / টি Classifiers" },
+    { "bn": "দুইটা", "pronunciation": "duiṭa", "en": "two (conversational classifier)", "category": "The টা / টি Classifiers" },
+    { "bn": "দুটি", "pronunciation": "duṭi", "en": "two (formal classifier)", "category": "The টা / টি Classifiers" },
+    { "bn": "বইটা", "pronunciation": "boiṭa", "en": "the book", "category": "টা Attached to Nouns" },
+    { "bn": "ফোনটা", "pronunciation": "phonṭa", "en": "the phone", "category": "টা Attached to Nouns" },
+    { "bn": "গাড়িটা", "pronunciation": "gariṭa", "en": "the car", "category": "টা Attached to Nouns" },
+    { "bn": "বাড়িটা", "pronunciation": "bariṭa", "en": "the house", "category": "টা Attached to Nouns" },
+    { "bn": "লোকটা", "pronunciation": "lokṭa", "en": "the person", "category": "টা Attached to Nouns" },
+    { "bn": "ছোট", "pronunciation": "chhoṭo", "en": "small", "category": "ট Inside Common Words" },
+    { "bn": "মোট", "pronunciation": "moṭ", "en": "total", "category": "ট Inside Common Words" },
+    { "bn": "পেট", "pronunciation": "peṭ", "en": "stomach", "category": "ট Inside Common Words" },
+    { "bn": "হোটেল", "pronunciation": "hoṭel", "en": "hotel", "category": "ট Inside Common Words" },
+    { "bn": "ডাক্তার", "pronunciation": "ḍaktar", "en": "doctor", "category": "ট Inside Common Words" },
+    { "bn": "আট", "pronunciation": "aṭ", "en": "eight", "category": "ট Inside Common Words" },
+    { "bn": "হাঁটা", "pronunciation": "hãṭa", "en": "to walk", "category": "ট Inside Common Words" },
+    { "bn": "মিষ্টি", "pronunciation": "mishṭi", "en": "sweet", "category": "ট Inside Common Words" },
+    { "bn": "কষ্ট", "pronunciation": "koshṭo", "en": "pain / difficulty", "category": "ট Inside Common Words" },
+    { "bn": "নষ্ট", "pronunciation": "noshṭo", "en": "broken / ruined", "category": "ট Inside Common Words" }
   ],
   "practice": [
-    "Say ট three times: ṭô, ṭô, ṭô.",
-    "Find ট in each example word and read the whole word aloud.",
-    "Write ট five times while saying its name."
+    "Say ট three times with the tongue slightly curled back: ṭô, ṭô, ṭô.",
+    "Practice the vowel forms: ট (ṭô), টা (ṭa), টি (ṭi), টী (ṭi), টু (ṭu), টূ (ṭu), টে (ṭe), টৈ (ṭoi), টো (ṭo), and টৌ (ṭou).",
+    "Read the common combinations aloud: ট + া = টা as in টাকা, ট + ি = টি as in টিকিট, ট + ু = টু as in টুপি, ট + ে = টে as in টেবিল, and ট + ো = টো as in টোকা.",
+    "Practice the conversational classifier টা with এটা, ওটা, সেটা, কোনটা, একটা, বইটা, ফোনটা, গাড়িটা, বাড়িটা, and লোকটা.",
+    "Contrast conversational টা with more formal টি: একটা/একটি, বইটা/বইটি, and দুইটা/দুটি.",
+    "Contrast ট and ঠ with your hand near your mouth: ট has little air; ঠ has a noticeable puff. Also remember টানা = pull and ঠেলা = push.",
+    "Find ট inside এটা, ওটা, সেটা, একটা, কোনটা, ছোট, মোট, পেট, হোটেল, ডাক্তার, আট, হাঁটা, মিষ্টি, কষ্ট, and নষ্ট.",
+    "Use টাকা, টেবিল, টিকিট, টিভি, টুপি, টুকরো, টয়লেট, টমেটো, টান, টোকা, টক, and ট্রেন as reading anchors.",
+    "Recognize these phrases instantly: এটা কী, একটা দাও, কোনটা তোমার, কত টাকা, and টয়লেট কোথায়."
   ],
   "notes": [
-    "ট is pronounced approximately a retroflex t.",
-    "Listen to the audio and compare ট across the example words."
+    "ট is called মূর্ধন্য ট (murdhonno ṭô). It is a hard retroflex t made with the tongue slightly curled backward.",
+    "ট is unaspirated. Its partner ঠ uses a similar tongue position with an extra puff of air.",
+    "টাকা means money and is also the name of Bangladesh's currency.",
+    "The classifier টা is extremely common in conversational Bangla. It can mark one particular thing, as in বইটা, or appear in forms such as এটা, ওটা, সেটা, কোনটা, and একটা.",
+    "টি serves a similar classifier role but often sounds more formal or polite: একটা corresponds to একটি, and দুইটা corresponds to দুটি.",
+    "Best ট words to memorize include টাকা, টা, এটা, ওটা, সেটা, একটা, কোনটা, টেবিল, টিকিট, টিভি, টুপি, টুকরো, টয়লেট, টমেটো, টান, টানা, টোকা, টক, টাটকা, ট্রেন, ট্রাক, and ট্রাফিক."
   ]
 }

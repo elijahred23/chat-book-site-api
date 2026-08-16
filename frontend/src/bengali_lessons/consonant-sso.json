@@ -1,136 +1,103 @@
 {
   "id": "consonant-sso",
-  "title": "ষ — ṣô",
-  "summary": "Learn ষ, pronounced ṣô, and recognize it in three useful Bengali words.",
+  "title": "ষ — shô",
+  "summary": "Learn the Bangla consonant ষ, its modern sh sound, its most useful words, and its common conjunct forms ষ্ট, ষ্ঠ, and ক্ষ.",
   "level": "beginner",
   "topic": "Consonant: ষ",
-  "focus": "character recognition and pronunciation",
+  "focus": "character recognition, conjunct forms, pronunciation, and spelling distinctions",
   "phrases": [
-    {
-      "bn": "ষাট শব্দে ষ আছে।",
-      "pronunciation": "shaṭ shôbde ṣô achhe",
-      "en": "The word “ষাট” contains ষ.",
-      "context": "Find ষ in ষাট and say the complete word aloud.",
-      "category": "consonant-sso",
-      "words": [
-        {
-          "bn": "ষাট",
-          "pronunciation": "shaṭ",
-          "en": "sixty"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ষ",
-          "pronunciation": "ṣô",
-          "en": "the ṣô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "কষ্ট শব্দে ষ আছে।",
-      "pronunciation": "kôshṭo shôbde ṣô achhe",
-      "en": "The word “কষ্ট” contains ষ.",
-      "context": "Find ষ in কষ্ট and say the complete word aloud.",
-      "category": "consonant-sso",
-      "words": [
-        {
-          "bn": "কষ্ট",
-          "pronunciation": "kôshṭo",
-          "en": "pain / difficulty"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ষ",
-          "pronunciation": "ṣô",
-          "en": "the ṣô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "ভাষা শব্দে ষ আছে।",
-      "pronunciation": "bhasha shôbde ṣô achhe",
-      "en": "The word “ভাষা” contains ষ.",
-      "context": "Find ষ in ভাষা and say the complete word aloud.",
-      "category": "consonant-sso",
-      "words": [
-        {
-          "bn": "ভাষা",
-          "pronunciation": "bhasha",
-          "en": "language"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ষ",
-          "pronunciation": "ṣô",
-          "en": "the ṣô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    }
+    { "bn": "আমার কষ্ট হচ্ছে।", "pronunciation": "amar koshto hochchhe.", "en": "I'm in pain / I'm having difficulty.", "context": "Describe pain or difficulty.", "category": "consonant-sso" },
+    { "bn": "খুব কষ্ট হচ্ছে।", "pronunciation": "khub koshto hochchhe.", "en": "It hurts a lot / It's very difficult.", "context": "Describe severe pain or difficulty.", "category": "consonant-sso" },
+    { "bn": "কাজটা কষ্টকর।", "pronunciation": "kajta koshtokor.", "en": "The work is difficult.", "context": "Describe difficult work.", "category": "consonant-sso" },
+    { "bn": "কষ্ট করো না।", "pronunciation": "koshto koro na.", "en": "Don't trouble yourself.", "context": "Tell someone not to exert themselves.", "category": "consonant-sso" },
+    { "bn": "চেষ্টা করো।", "pronunciation": "cheshta koro.", "en": "Try.", "context": "Encourage someone to make an attempt.", "category": "consonant-sso" },
+    { "bn": "আবার চেষ্টা করো।", "pronunciation": "abar cheshta koro.", "en": "Try again.", "context": "Encourage another attempt.", "category": "consonant-sso" },
+    { "bn": "আমি চেষ্টা করছি।", "pronunciation": "ami cheshta korchhi.", "en": "I'm trying.", "context": "Describe an ongoing attempt.", "category": "consonant-sso" },
+    { "bn": "আমি চেষ্টা করব।", "pronunciation": "ami cheshta korbo.", "en": "I'll try.", "context": "Promise to make an attempt.", "category": "consonant-sso" },
+    { "bn": "চেষ্টা করতে থাকো।", "pronunciation": "cheshta korte thako.", "en": "Keep trying.", "context": "Encourage persistence.", "category": "consonant-sso" },
+    { "bn": "বৃষ্টি হচ্ছে।", "pronunciation": "brishti hochchhe.", "en": "It's raining.", "context": "Describe current weather.", "category": "consonant-sso" },
+    { "bn": "আজ বৃষ্টি হবে।", "pronunciation": "aj brishti hobe.", "en": "It will rain today.", "context": "Give a weather prediction.", "category": "consonant-sso" },
+    { "bn": "বৃষ্টি থেমে গেছে।", "pronunciation": "brishti theme gechhe.", "en": "The rain has stopped.", "context": "Describe rain ending.", "category": "consonant-sso" },
+    { "bn": "বাইরে বৃষ্টি হচ্ছে।", "pronunciation": "baire brishti hochchhe.", "en": "It's raining outside.", "context": "Describe outdoor weather.", "category": "consonant-sso" },
+    { "bn": "এটা নষ্ট।", "pronunciation": "eta noshto.", "en": "This is broken / ruined.", "context": "Describe a damaged object.", "category": "consonant-sso" },
+    { "bn": "ফোনটা নষ্ট।", "pronunciation": "phonta noshto.", "en": "The phone is broken.", "context": "Report a broken phone.", "category": "consonant-sso" },
+    { "bn": "খাবার নষ্ট হয়ে গেছে।", "pronunciation": "khabar noshto hoye gechhe.", "en": "The food has spoiled.", "context": "Describe spoiled food.", "category": "consonant-sso" },
+    { "bn": "সময় নষ্ট করো না।", "pronunciation": "shomoy noshto koro na.", "en": "Don't waste time.", "context": "Warn against wasting time.", "category": "consonant-sso" },
+    { "bn": "এটা মিষ্টি।", "pronunciation": "eta mishti.", "en": "This is sweet.", "context": "Describe a sweet taste.", "category": "consonant-sso" },
+    { "bn": "খুব মিষ্টি।", "pronunciation": "khub mishti.", "en": "Very sweet.", "context": "Emphasize sweetness.", "category": "consonant-sso" },
+    { "bn": "আমি মিষ্টি পছন্দ করি।", "pronunciation": "ami mishti pochhondo kori.", "en": "I like sweets.", "context": "Describe a food preference.", "category": "consonant-sso" },
+    { "bn": "মিষ্টি খাব?", "pronunciation": "mishti khabo?", "en": "Shall we eat sweets?", "context": "Suggest eating sweets.", "category": "consonant-sso" },
+    { "bn": "এটা স্পষ্ট।", "pronunciation": "eta sposhto.", "en": "This is clear.", "context": "Say that something is obvious.", "category": "consonant-sso" },
+    { "bn": "আমি নিশ্চিত।", "pronunciation": "ami nishchit.", "en": "I'm sure.", "context": "Express certainty.", "category": "consonant-sso" },
+    { "bn": "এটা নিষেধ।", "pronunciation": "eta nisheddho.", "en": "This is forbidden.", "context": "State a prohibition.", "category": "consonant-sso" },
+    { "bn": "এখানে যাওয়া নিষেধ।", "pronunciation": "ekhane jaoa nisheddho.", "en": "Going here is prohibited.", "context": "Warn that entry is forbidden.", "category": "consonant-sso" },
+    { "bn": "এটা বিশেষ।", "pronunciation": "eta bishesh.", "en": "This is special.", "context": "Describe something as special.", "category": "consonant-sso" },
+    { "bn": "বিষয়টা কী?", "pronunciation": "bishoyta ki?", "en": "What's the matter / topic?", "context": "Ask what is being discussed.", "category": "consonant-sso" },
+    { "bn": "ভবিষ্যতে দেখা হবে।", "pronunciation": "bhobishshote dekha hobe.", "en": "See you in the future.", "context": "Refer to meeting again later.", "category": "consonant-sso" },
+    { "bn": "আজ খুব উষ্ণ।", "pronunciation": "aj khub ushno.", "en": "It's very warm today.", "context": "Describe warm weather.", "category": "consonant-sso" },
+    { "bn": "আমার তৃষ্ণা পেয়েছে।", "pronunciation": "amar trishna peyechhe.", "en": "I'm thirsty.", "context": "Express thirst.", "category": "consonant-sso" }
   ],
   "vocab": [
-    {
-      "bn": "ষ",
-      "pronunciation": "ṣô",
-      "en": "ṣô: a historical retroflex sh, usually sh today",
-      "category": "consonant-sso",
-      "sourcePhrase": "ষাট শব্দে ষ আছে।"
-    },
-    {
-      "bn": "ষাট",
-      "pronunciation": "shaṭ",
-      "en": "sixty",
-      "category": "consonant-sso",
-      "sourcePhrase": "ষাট শব্দে ষ আছে।"
-    },
-    {
-      "bn": "কষ্ট",
-      "pronunciation": "kôshṭo",
-      "en": "pain / difficulty",
-      "category": "consonant-sso",
-      "sourcePhrase": "কষ্ট শব্দে ষ আছে।"
-    },
-    {
-      "bn": "ভাষা",
-      "pronunciation": "bhasha",
-      "en": "language",
-      "category": "consonant-sso",
-      "sourcePhrase": "ভাষা শব্দে ষ আছে।"
-    }
+    { "bn": "ষ", "pronunciation": "shô", "en": "the Bangla consonant murdhonno shô", "category": "Letter" },
+    { "bn": "কষ্ট", "pronunciation": "koshto", "en": "pain / difficulty", "category": "Common Words Containing ষ" },
+    { "bn": "নষ্ট", "pronunciation": "noshto", "en": "ruined / broken / wasted", "category": "Common Words Containing ষ" },
+    { "bn": "চেষ্টা", "pronunciation": "cheshta", "en": "attempt / effort", "category": "Common Words Containing ষ" },
+    { "bn": "বৃষ্টি", "pronunciation": "brishti", "en": "rain", "category": "Common Words Containing ষ" },
+    { "bn": "সৃষ্টি", "pronunciation": "srishti", "en": "creation", "category": "Common Words Containing ষ" },
+    { "bn": "দৃষ্টি", "pronunciation": "drishti", "en": "sight / vision", "category": "Common Words Containing ষ" },
+    { "bn": "মিষ্টি", "pronunciation": "mishti", "en": "sweet / sweets", "category": "Common Words Containing ষ" },
+    { "bn": "স্পষ্ট", "pronunciation": "sposhto", "en": "clear / obvious", "category": "The ষ্ট Conjunct" },
+    { "bn": "শ্রেষ্ঠ", "pronunciation": "shreshtho", "en": "best / greatest", "category": "The ষ্ঠ Conjunct" },
+    { "bn": "ষষ্ঠ", "pronunciation": "shoshtho", "en": "sixth", "category": "The ষ্ঠ Conjunct" },
+    { "bn": "পছন্দ", "pronunciation": "pochhondo", "en": "preference / like; contains ছ, not ষ", "category": "Spelling Note" },
+    { "bn": "কষ্টকর", "pronunciation": "koshtokor", "en": "difficult / painful", "category": "The ষ্ট Conjunct" },
+    { "bn": "সন্তুষ্ট", "pronunciation": "shontushto", "en": "satisfied", "category": "The ষ্ট Conjunct" },
+    { "bn": "অসন্তুষ্ট", "pronunciation": "oshontushto", "en": "dissatisfied", "category": "The ষ্ট Conjunct" },
+    { "bn": "নিশ্চিত", "pronunciation": "nishchit", "en": "certain / sure", "category": "Common Words Containing ষ" },
+    { "bn": "নিষেধ", "pronunciation": "nishedh", "en": "prohibited / forbidden", "category": "Common Words Containing ষ" },
+    { "bn": "নিষিদ্ধ", "pronunciation": "nishiddho", "en": "prohibited / banned", "category": "Common Words Containing ষ" },
+    { "bn": "নিষ্ঠা", "pronunciation": "nishtha", "en": "dedication", "category": "The ষ্ঠ Conjunct" },
+    { "bn": "কৃষ্ণ", "pronunciation": "krishno", "en": "Krishna", "category": "Common Words Containing ষ" },
+    { "bn": "তৃষ্ণা", "pronunciation": "trishna", "en": "thirst", "category": "Common Words Containing ষ" },
+    { "bn": "উষ্ণ", "pronunciation": "ushno", "en": "warm", "category": "Common Words Containing ষ" },
+    { "bn": "গ্রীষ্ম", "pronunciation": "grishsho", "en": "summer", "category": "Common Words Containing ষ" },
+    { "bn": "ভবিষ্যৎ", "pronunciation": "bhobishshot", "en": "future", "category": "Common Words Containing ষ" },
+    { "bn": "বিষয়", "pronunciation": "bishoy", "en": "subject / matter", "category": "Common Words Containing ষ" },
+    { "bn": "বিশেষ", "pronunciation": "bishesh", "en": "special", "category": "Common Words Containing ষ" },
+    { "bn": "বিষ", "pronunciation": "bish", "en": "poison", "category": "Common Words Containing ষ" },
+    { "bn": "বিষাক্ত", "pronunciation": "bishakto", "en": "poisonous", "category": "Common Words Containing ষ" },
+    { "bn": "পরিষ্কার", "pronunciation": "porishkar", "en": "clean / clear", "category": "Common Words Containing ষ" },
+    { "bn": "ক্ষমা", "pronunciation": "khoma", "en": "forgiveness", "category": "ষ Inside ক্ষ" },
+    { "bn": "ক্ষতি", "pronunciation": "khoti", "en": "damage", "category": "ষ Inside ক্ষ" },
+    { "bn": "ক্ষুধা", "pronunciation": "khudha", "en": "hunger", "category": "ষ Inside ক্ষ" },
+    { "bn": "ক্ষেত্র", "pronunciation": "khetro", "en": "field / area", "category": "ষ Inside ক্ষ" },
+    { "bn": "পরীক্ষা", "pronunciation": "porikkha", "en": "examination / test", "category": "ষ Inside ক্ষ" },
+    { "bn": "রক্ষা", "pronunciation": "rokkha", "en": "protection", "category": "ষ Inside ক্ষ" },
+    { "bn": "শিক্ষা", "pronunciation": "shikkha", "en": "education", "category": "ষ Inside ক্ষ" },
+    { "bn": "শিক্ষক", "pronunciation": "shikkhok", "en": "teacher", "category": "ষ Inside ক্ষ" },
+    { "bn": "দক্ষ", "pronunciation": "dokkho", "en": "skilled", "category": "ষ Inside ক্ষ" },
+    { "bn": "দক্ষিণ", "pronunciation": "dokkhin", "en": "south", "category": "ষ Inside ক্ষ" },
+    { "bn": "লক্ষ্য", "pronunciation": "lokkho", "en": "goal", "category": "ষ Inside ক্ষ" },
+    { "bn": "লক্ষণ", "pronunciation": "lokkhon", "en": "symptom / sign", "category": "ষ Inside ক্ষ" }
   ],
   "practice": [
-    "Say ষ three times: ṣô, ṣô, ṣô.",
-    "Find ষ in each example word and read the whole word aloud.",
-    "Write ষ five times while saying its name."
+    "Say ষ three times: shô, shô, shô.",
+    "Recognize the standalone vowel pattern: ষ, ষা, ষি, ষী, ষু, ষূ, ষে, ষৈ, ষো, and ষৌ. These forms are less useful than conjunct recognition.",
+    "Build and read ষ্ট: ষ্ + ট = ষ্ট. Practice কষ্ট, নষ্ট, স্পষ্ট, and সন্তুষ্ট.",
+    "Contrast ষ্ট and ষ্ঠ: কষ্ট/নষ্ট/স্পষ্ট use ষ্ট, while শ্রেষ্ঠ and ষষ্ঠ use ষ্ঠ.",
+    "Recognize ষ inside ক্ষ: ক্ + ষ = ক্ষ. Practice ক্ষমা, ক্ষতি, ক্ষুধা, ক্ষেত্র, লক্ষ্য, রক্ষা, শিক্ষা, and পরীক্ষা.",
+    "Compare whole-word spellings with শ, ষ, and স: শুরু/শেষ/শহর; কষ্ট/নষ্ট/বৃষ্টি; সব/সময়/সকাল.",
+    "Use কষ্ট, নষ্ট, চেষ্টা, বৃষ্টি, মিষ্টি, স্পষ্ট, সৃষ্টি, দৃষ্টি, শ্রেষ্ঠ, and তৃষ্ণা as quick reading anchors.",
+    "Recognize these phrases instantly: চেষ্টা করো, আবার চেষ্টা করো, বৃষ্টি হচ্ছে, ফোনটা নষ্ট, and আমি নিশ্চিত."
   ],
   "notes": [
-    "ষ is pronounced approximately a historical retroflex sh, usually sh today.",
-    "Listen to the audio and compare ষ across the example words."
+    "ষ is called মূর্ধন্য ষ (murdhonno shô) and is usually pronounced close to English sh in modern Bangla.",
+    "ষ rarely begins common everyday words. It is much more useful to recognize it inside words and conjunct letters.",
+    "The supplied word পছন্দ does not contain ষ; it is spelled with ছ. It is retained as a spelling note so learners do not mistake the letters.",
+    "The extremely common ষ্ট conjunct is built as ষ্ + ট = ষ্ট and appears in কষ্ট, নষ্ট, স্পষ্ট, and সন্তুষ্ট.",
+    "Do not confuse ষ্ট with ষ্ঠ. ষ্ট contains ট, while ষ্ঠ contains ঠ; শ্রেষ্ঠ and ষষ্ঠ use ষ্ঠ.",
+    "The conjunct ক্ষ is built from ক্ + ষ. Every ক্ষ word therefore contains ষ, even though the combined shape looks very different.",
+    "Modern pronunciations of শ, ষ, and স overlap considerably, so pronunciation alone may not reveal the spelling. Learn each letter as part of the whole word.",
+    "Best words to memorize include কষ্ট, নষ্ট, চেষ্টা, বৃষ্টি, মিষ্টি, স্পষ্ট, সৃষ্টি, দৃষ্টি, শ্রেষ্ঠ, সন্তুষ্ট, নিশ্চিত, নিষেধ, তৃষ্ণা, উষ্ণ, গ্রীষ্ম, ভবিষ্যৎ, বিষয়, বিশেষ, পরীক্ষা, শিক্ষা, দক্ষ, and লক্ষ্য."
   ]
 }

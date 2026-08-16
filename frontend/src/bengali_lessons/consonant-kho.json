@@ -1,136 +1,97 @@
 {
   "id": "consonant-kho",
   "title": "খ — khô",
-  "summary": "Learn খ, pronounced khô, and recognize it in three useful Bengali words.",
+  "summary": "Learn the common Bangla consonant খ, its aspirated kh sound, vowel-sign forms, and the essential খাওয়া word family.",
   "level": "beginner",
   "topic": "Consonant: খ",
-  "focus": "character recognition and pronunciation",
+  "focus": "character recognition, pronunciation, and the খাওয়া word family",
   "phrases": [
-    {
-      "bn": "খাতা শব্দে খ আছে।",
-      "pronunciation": "khata shôbde khô achhe",
-      "en": "The word “খাতা” contains খ.",
-      "context": "Find খ in খাতা and say the complete word aloud.",
-      "category": "consonant-kho",
-      "words": [
-        {
-          "bn": "খাতা",
-          "pronunciation": "khata",
-          "en": "notebook"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "খ",
-          "pronunciation": "khô",
-          "en": "the khô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "খবর শব্দে খ আছে।",
-      "pronunciation": "khôbor shôbde khô achhe",
-      "en": "The word “খবর” contains খ.",
-      "context": "Find খ in খবর and say the complete word aloud.",
-      "category": "consonant-kho",
-      "words": [
-        {
-          "bn": "খবর",
-          "pronunciation": "khôbor",
-          "en": "news"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "খ",
-          "pronunciation": "khô",
-          "en": "the khô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "সুখ শব্দে খ আছে।",
-      "pronunciation": "shukh shôbde khô achhe",
-      "en": "The word “সুখ” contains খ.",
-      "context": "Find খ in সুখ and say the complete word aloud.",
-      "category": "consonant-kho",
-      "words": [
-        {
-          "bn": "সুখ",
-          "pronunciation": "shukh",
-          "en": "happiness"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "খ",
-          "pronunciation": "khô",
-          "en": "the khô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    }
+    { "bn": "খাবার কোথায়?", "pronunciation": "khabar kothay?", "en": "Where is the food?", "context": "Ask where the food is.", "category": "consonant-kho" },
+    { "bn": "খাবার তৈরি।", "pronunciation": "khabar toiri.", "en": "The food is ready.", "context": "Announce that food is ready.", "category": "consonant-kho" },
+    { "bn": "খাবার ভালো।", "pronunciation": "khabar bhalo.", "en": "The food is good.", "context": "Compliment the food.", "category": "consonant-kho" },
+    { "bn": "খাবারটা গরম।", "pronunciation": "khabarta gorom.", "en": "The food is hot.", "context": "Describe food temperature.", "category": "consonant-kho" },
+    { "bn": "আমি খাই।", "pronunciation": "ami khai.", "en": "I eat.", "context": "Describe eating habitually.", "category": "consonant-kho" },
+    { "bn": "আমি খাব।", "pronunciation": "ami khabo.", "en": "I will eat.", "context": "Talk about eating later.", "category": "consonant-kho" },
+    { "bn": "তুমি খাবে?", "pronunciation": "tumi khabe?", "en": "Will you eat?", "context": "Ask whether someone will eat.", "category": "consonant-kho" },
+    { "bn": "আমি খেতে চাই।", "pronunciation": "ami khete chai.", "en": "I want to eat.", "context": "Express hunger or a desire to eat.", "category": "consonant-kho" },
+    { "bn": "খেয়ে নাও।", "pronunciation": "kheye nao.", "en": "Eat / Go ahead and eat.", "context": "Encourage someone to eat.", "category": "consonant-kho" },
+    { "bn": "তুমি কি খেয়েছ?", "pronunciation": "tumi ki kheyechho?", "en": "Have you eaten?", "context": "Ask whether someone has eaten.", "category": "consonant-kho" },
+    { "bn": "খুব ভালো।", "pronunciation": "khub bhalo.", "en": "Very good.", "context": "Give positive feedback.", "category": "consonant-kho" },
+    { "bn": "খুব সুন্দর।", "pronunciation": "khub shundor.", "en": "Very beautiful.", "context": "Give a strong compliment.", "category": "consonant-kho" },
+    { "bn": "খুব গরম।", "pronunciation": "khub gorom.", "en": "Very hot.", "context": "Emphasize heat.", "category": "consonant-kho" },
+    { "bn": "খুব বেশি।", "pronunciation": "khub beshi.", "en": "Too much.", "context": "Describe an excessive amount.", "category": "consonant-kho" },
+    { "bn": "খুব খারাপ।", "pronunciation": "khub kharap.", "en": "Very bad.", "context": "Describe something very negatively.", "category": "consonant-kho" },
+    { "bn": "এটা খারাপ।", "pronunciation": "eta kharap.", "en": "This is bad.", "context": "Describe something negatively.", "category": "consonant-kho" },
+    { "bn": "আমার খারাপ লাগছে।", "pronunciation": "amar kharap lagchhe.", "en": "I feel bad.", "context": "Describe feeling unwell or upset.", "category": "consonant-kho" },
+    { "bn": "খাবারটা খারাপ।", "pronunciation": "khabarta kharap.", "en": "The food is bad.", "context": "Describe bad food.", "category": "consonant-kho" },
+    { "bn": "দরজা খোলো।", "pronunciation": "dorja kholo.", "en": "Open the door.", "context": "Ask someone to open a door.", "category": "consonant-kho" },
+    { "bn": "জানালা খোলো।", "pronunciation": "janala kholo.", "en": "Open the window.", "context": "Ask someone to open a window.", "category": "consonant-kho" },
+    { "bn": "দোকান খোলা আছে।", "pronunciation": "dokan khola achhe.", "en": "The shop is open.", "context": "Describe an open shop.", "category": "consonant-kho" },
+    { "bn": "এটা খুলে দাও।", "pronunciation": "eta khule dao.", "en": "Open this for me.", "context": "Ask someone to open something.", "category": "consonant-kho" },
+    { "bn": "আমার খিদে পেয়েছে।", "pronunciation": "amar khide peyechhe.", "en": "I'm hungry.", "context": "Express hunger.", "category": "consonant-kho" },
+    { "bn": "আমি খুশি।", "pronunciation": "ami khushi.", "en": "I'm happy.", "context": "Describe feeling happy.", "category": "consonant-kho" },
+    { "bn": "কী খবর?", "pronunciation": "ki khobor?", "en": "What's up? / What's the news?", "context": "Ask casually for news.", "category": "consonant-kho" },
+    { "bn": "কোনো খবর আছে?", "pronunciation": "kono khobor achhe?", "en": "Any news?", "context": "Ask whether there is news.", "category": "consonant-kho" },
+    { "bn": "আমি খুঁজছি।", "pronunciation": "ami khũjchhi.", "en": "I'm looking/searching.", "context": "Describe searching now.", "category": "consonant-kho" },
+    { "bn": "এটা খুঁজে পাচ্ছি না।", "pronunciation": "eta khũje pachchhi na.", "en": "I can't find this.", "context": "Say that you cannot find something.", "category": "consonant-kho" },
+    { "bn": "চলো খেলি।", "pronunciation": "cholo kheli.", "en": "Let's play.", "context": "Invite someone to play.", "category": "consonant-kho" },
+    { "bn": "খেয়াল রাখো।", "pronunciation": "kheyal rakho.", "en": "Be careful / Pay attention.", "context": "Remind someone to take care.", "category": "consonant-kho" },
+    { "bn": "কত খরচ?", "pronunciation": "koto khoroch?", "en": "How much does it cost?", "context": "Ask about an expense.", "category": "consonant-kho" }
   ],
   "vocab": [
-    {
-      "bn": "খ",
-      "pronunciation": "khô",
-      "en": "khô: an aspirated k",
-      "category": "consonant-kho",
-      "sourcePhrase": "খাতা শব্দে খ আছে।"
-    },
-    {
-      "bn": "খাতা",
-      "pronunciation": "khata",
-      "en": "notebook",
-      "category": "consonant-kho",
-      "sourcePhrase": "খাতা শব্দে খ আছে।"
-    },
-    {
-      "bn": "খবর",
-      "pronunciation": "khôbor",
-      "en": "news",
-      "category": "consonant-kho",
-      "sourcePhrase": "খবর শব্দে খ আছে।"
-    },
-    {
-      "bn": "সুখ",
-      "pronunciation": "shukh",
-      "en": "happiness",
-      "category": "consonant-kho",
-      "sourcePhrase": "সুখ শব্দে খ আছে।"
-    }
+    { "bn": "খাবার", "pronunciation": "khabar", "en": "food", "category": "Common Words Beginning with খ" },
+    { "bn": "খাওয়া", "pronunciation": "khaoa", "en": "to eat", "category": "The খাওয়া Word Family" },
+    { "bn": "খাই", "pronunciation": "khai", "en": "I eat", "category": "The খাওয়া Word Family" },
+    { "bn": "খাও", "pronunciation": "khao", "en": "eat", "category": "The খাওয়া Word Family" },
+    { "bn": "খাব", "pronunciation": "khabo", "en": "will eat", "category": "The খাওয়া Word Family" },
+    { "bn": "খাবে", "pronunciation": "khabe", "en": "will eat", "category": "The খাওয়া Word Family" },
+    { "bn": "খেতে", "pronunciation": "khete", "en": "to eat", "category": "The খাওয়া Word Family" },
+    { "bn": "খেয়ে", "pronunciation": "kheye", "en": "after eating", "category": "The খাওয়া Word Family" },
+    { "bn": "খিদে", "pronunciation": "khide", "en": "hunger", "category": "Common Words Beginning with খ" },
+    { "bn": "খুব", "pronunciation": "khub", "en": "very", "category": "Common Words Beginning with খ" },
+    { "bn": "খুশি", "pronunciation": "khushi", "en": "happy / pleased", "category": "Common Words Beginning with খ" },
+    { "bn": "খবর", "pronunciation": "khobor", "en": "news", "category": "Common Words Beginning with খ" },
+    { "bn": "খবরের কাগজ", "pronunciation": "khoborer kagoj", "en": "newspaper", "category": "Common Words Beginning with খ" },
+    { "bn": "খারাপ", "pronunciation": "kharap", "en": "bad", "category": "Common Words Beginning with খ" },
+    { "bn": "খালি", "pronunciation": "khali", "en": "empty / only", "category": "Common Words Beginning with খ" },
+    { "bn": "খাল", "pronunciation": "khal", "en": "canal", "category": "Common Words Beginning with খ" },
+    { "bn": "খালা", "pronunciation": "khala", "en": "maternal aunt", "category": "Common Words Beginning with খ" },
+    { "bn": "খালু", "pronunciation": "khalu", "en": "maternal aunt's husband", "category": "Common Words Beginning with খ" },
+    { "bn": "খাতা", "pronunciation": "khata", "en": "notebook", "category": "Common Words Beginning with খ" },
+    { "bn": "খাট", "pronunciation": "khat", "en": "bed", "category": "Common Words Beginning with খ" },
+    { "bn": "খাটানো", "pronunciation": "khatano", "en": "to make someone work / utilize", "category": "Common Words Beginning with খ" },
+    { "bn": "খেলা", "pronunciation": "khela", "en": "game / to play", "category": "Common Words Beginning with খ" },
+    { "bn": "খেলনা", "pronunciation": "khelna", "en": "toy", "category": "Common Words Beginning with খ" },
+    { "bn": "খেলো", "pronunciation": "khelo", "en": "play / eat", "category": "Common Words Beginning with খ" },
+    { "bn": "খেলোয়াড়", "pronunciation": "kheloyar", "en": "player", "category": "Common Words Beginning with খ" },
+    { "bn": "খেয়াল", "pronunciation": "kheyal", "en": "attention / thought", "category": "Common Words Beginning with খ" },
+    { "bn": "খোঁজা", "pronunciation": "khõja", "en": "to search / look for", "category": "Common Words Beginning with খ" },
+    { "bn": "খুঁজে", "pronunciation": "khũje", "en": "searching / having found", "category": "Common Words Beginning with খ" },
+    { "bn": "খোলা", "pronunciation": "khola", "en": "open / to open", "category": "Common Words Beginning with খ" },
+    { "bn": "খোলো", "pronunciation": "kholo", "en": "open", "category": "Common Words Beginning with খ" },
+    { "bn": "খুলে", "pronunciation": "khule", "en": "opening / after opening", "category": "Common Words Beginning with খ" },
+    { "bn": "খরচ", "pronunciation": "khoroch", "en": "expense / cost", "category": "Common Words Beginning with খ" },
+    { "bn": "খরগোশ", "pronunciation": "khorgosh", "en": "rabbit", "category": "Common Words Beginning with খ" },
+    { "bn": "খসড়া", "pronunciation": "khosora", "en": "draft", "category": "Common Words Beginning with খ" },
+    { "bn": "খুন", "pronunciation": "khun", "en": "murder", "category": "Common Words Beginning with খ" },
+    { "bn": "খুনি", "pronunciation": "khuni", "en": "murderer", "category": "Common Words Beginning with খ" },
+    { "bn": "খুঁটি", "pronunciation": "khũti", "en": "post / pole", "category": "Common Words Beginning with খ" },
+    { "bn": "খুঁজা", "pronunciation": "khũja", "en": "to dig / poke", "category": "Common Words Beginning with খ" },
+    { "bn": "খেত", "pronunciation": "khet", "en": "field / farmland", "category": "Common Words Beginning with খ" }
   ],
   "practice": [
-    "Say খ three times: khô, khô, khô.",
-    "Find খ in each example word and read the whole word aloud.",
-    "Write খ five times while saying its name."
+    "Say খ three times with an extra puff of air: khô, khô, khô.",
+    "Practice the vowel forms: খ (khô), খা (kha), খি (khi), খী (khi, uncommon), খু (khu), খূ (khu, rare), খে (khe), খৈ (khoi), খো (kho), and খৌ (khou, uncommon).",
+    "Read the combinations aloud: খ + া = খা as in খাবার, খ + ি = খি as in খিদে, খ + ু = খু as in খুশি, খ + ে = খে as in খেলা, and খ + ো = খো as in খোলা.",
+    "Put your hand near your mouth and compare ক (k, less air) with খ (kh, a noticeable puff): কাল / খাল, কাজ / খাবার, and কম / খেলা.",
+    "Practice the essential খাওয়া family: খাওয়া, খাই, খাও, খাব, খাবে, খেতে, খেয়ে, and খেয়েছ.",
+    "Use খুব, খাবার, খাওয়া, খুশি, খবর, খারাপ, খেলা, খোলা, and খরচ as quick reading anchors.",
+    "Recognize these phrases instantly: খুব ভালো, আমি খেতে চাই, আমার খিদে পেয়েছে, কী খবর, and দরজা খোলো."
   ],
   "notes": [
-    "খ is pronounced approximately an aspirated k.",
-    "Listen to the audio and compare খ across the example words."
+    "খ is a very common Bangla consonant named khô. It is the aspirated partner of ক and is pronounced with an extra puff of air.",
+    "The vowel-sign forms include খ (khô), খা (kha), খি (khi), খী (khi), খু (khu), খূ (khu), খে (khe), খৈ (khoi), খো (kho), and খৌ (khou). Examples include খবর, খাবার, খিদে, খুশি, খেলা, খৈ, and খোলা.",
+    "Compare কাল (kal, tomorrow/yesterday), কাজ (kaj, work), and কম (kom, less) with খাল (khal, canal), খাবার (khabar, food), and খেলা (khela, game/play).",
+    "Best words to memorize include খুব, খাবার, খাওয়া, খাই, খাব, খেতে, খেয়ে, খিদে, খুশি, খবর, খারাপ, খাতা, খেলা, খেলনা, খোঁজা, খুঁজে, খোলা, খোলো, খরচ, and খেয়াল."
   ]
 }

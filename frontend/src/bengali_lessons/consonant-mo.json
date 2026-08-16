@@ -1,136 +1,126 @@
 {
   "id": "consonant-mo",
   "title": "ম — mô",
-  "summary": "Learn ম, pronounced mô, and recognize it in three useful Bengali words.",
+  "summary": "Learn the common Bangla consonant ম, its m sound, vowel-sign forms, and the highly useful মনে expression family.",
   "level": "beginner",
   "topic": "Consonant: ম",
-  "focus": "character recognition and pronunciation",
+  "focus": "character recognition, pronunciation, and the মনে expression family",
   "phrases": [
-    {
-      "bn": "মাছ শব্দে ম আছে।",
-      "pronunciation": "machh shôbde mô achhe",
-      "en": "The word “মাছ” contains ম.",
-      "context": "Find ম in মাছ and say the complete word aloud.",
-      "category": "consonant-mo",
-      "words": [
-        {
-          "bn": "মাছ",
-          "pronunciation": "machh",
-          "en": "fish"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ম",
-          "pronunciation": "mô",
-          "en": "the mô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "মা শব্দে ম আছে।",
-      "pronunciation": "ma shôbde mô achhe",
-      "en": "The word “মা” contains ম.",
-      "context": "Find ম in মা and say the complete word aloud.",
-      "category": "consonant-mo",
-      "words": [
-        {
-          "bn": "মা",
-          "pronunciation": "ma",
-          "en": "mother"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ম",
-          "pronunciation": "mô",
-          "en": "the mô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "আম শব্দে ম আছে।",
-      "pronunciation": "am shôbde mô achhe",
-      "en": "The word “আম” contains ম.",
-      "context": "Find ম in আম and say the complete word aloud.",
-      "category": "consonant-mo",
-      "words": [
-        {
-          "bn": "আম",
-          "pronunciation": "am",
-          "en": "mango"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ম",
-          "pronunciation": "mô",
-          "en": "the mô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    }
+    { "bn": "আমার মা।", "pronunciation": "amar ma.", "en": "My mother.", "context": "Practice মা in a family phrase.", "category": "consonant-mo" },
+    { "bn": "মা কোথায়?", "pronunciation": "ma kothay?", "en": "Where is Mom?", "context": "Ask where Mom is.", "category": "consonant-mo" },
+    { "bn": "আমার মা বাসায় আছেন।", "pronunciation": "amar ma bashay achhen.", "en": "My mother is at home.", "context": "Say where your mother is.", "category": "consonant-mo" },
+    { "bn": "মাকে ডাকো।", "pronunciation": "make dako.", "en": "Call Mom.", "context": "Ask someone to call Mom.", "category": "consonant-mo" },
+    { "bn": "ওই মানুষটা কে?", "pronunciation": "oi manushta ke?", "en": "Who is that person?", "context": "Ask someone's identity.", "category": "consonant-mo" },
+    { "bn": "সে ভালো মানুষ।", "pronunciation": "she bhalo manush.", "en": "He/she is a good person.", "context": "Describe someone's character positively.", "category": "consonant-mo" },
+    { "bn": "অনেক মানুষ আছে।", "pronunciation": "onek manush achhe.", "en": "There are many people.", "context": "Describe a crowd.", "category": "consonant-mo" },
+    { "bn": "আমার মনে হয়।", "pronunciation": "amar mone hoy.", "en": "I think so.", "context": "Express an opinion or impression.", "category": "consonant-mo" },
+    { "bn": "আমার মনে হয় না।", "pronunciation": "amar mone hoy na.", "en": "I don't think so.", "context": "Express disagreement or doubt.", "category": "consonant-mo" },
+    { "bn": "আমার মনে হয় সে আসবে।", "pronunciation": "amar mone hoy she ashbe.", "en": "I think he/she will come.", "context": "Express a prediction.", "category": "consonant-mo" },
+    { "bn": "মনে হয় বৃষ্টি হবে।", "pronunciation": "mone hoy brishti hobe.", "en": "It looks like it will rain.", "context": "Express a weather prediction.", "category": "consonant-mo" },
+    { "bn": "আমার মনে আছে।", "pronunciation": "amar mone achhe.", "en": "I remember.", "context": "Confirm remembering something.", "category": "consonant-mo" },
+    { "bn": "তোমার মনে আছে?", "pronunciation": "tomar mone achhe?", "en": "Do you remember?", "context": "Ask whether someone remembers.", "category": "consonant-mo" },
+    { "bn": "হ্যাঁ, মনে আছে।", "pronunciation": "hã, mone achhe.", "en": "Yes, I remember.", "context": "Confirm a memory.", "category": "consonant-mo" },
+    { "bn": "আমার মনে নেই।", "pronunciation": "amar mone nei.", "en": "I don't remember.", "context": "Say that you do not remember.", "category": "consonant-mo" },
+    { "bn": "মনে রাখো।", "pronunciation": "mone rakho.", "en": "Remember it.", "context": "Tell someone to remember.", "category": "consonant-mo" },
+    { "bn": "এটা মনে রাখো।", "pronunciation": "eta mone rakho.", "en": "Remember this.", "context": "Emphasize something to remember.", "category": "consonant-mo" },
+    { "bn": "আমার মনে পড়ে।", "pronunciation": "amar mone pore.", "en": "I remember / It comes to mind.", "context": "Describe a memory coming to mind.", "category": "consonant-mo" },
+    { "bn": "এর মানে কী?", "pronunciation": "er mane ki?", "en": "What does this mean?", "context": "Ask for a meaning.", "category": "consonant-mo" },
+    { "bn": "এই শব্দের মানে কী?", "pronunciation": "ei shobder mane ki?", "en": "What does this word mean?", "context": "Ask for a word's meaning.", "category": "consonant-mo" },
+    { "bn": "মানে...", "pronunciation": "mane...", "en": "I mean...", "context": "Clarify or reformulate what you are saying.", "category": "consonant-mo" },
+    { "bn": "আমার মাথা ব্যথা করছে।", "pronunciation": "amar matha byatha korchhe.", "en": "My head hurts.", "context": "Describe a headache.", "category": "consonant-mo" },
+    { "bn": "আমার মুখে ব্যথা।", "pronunciation": "amar mukhe byatha.", "en": "My face/mouth hurts.", "context": "Describe facial or mouth pain.", "category": "consonant-mo" },
+    { "bn": "মুখ খোলো।", "pronunciation": "mukh kholo.", "en": "Open your mouth.", "context": "Give an instruction.", "category": "consonant-mo" },
+    { "bn": "মাছ খাব?", "pronunciation": "machh khabo?", "en": "Shall we eat fish?", "context": "Suggest eating fish.", "category": "consonant-mo" },
+    { "bn": "আমি মাছ খাই।", "pronunciation": "ami machh khai.", "en": "I eat fish.", "context": "Describe eating fish.", "category": "consonant-mo" },
+    { "bn": "মাংস খাব?", "pronunciation": "mangsho khabo?", "en": "Shall we eat meat?", "context": "Suggest eating meat.", "category": "consonant-mo" },
+    { "bn": "এটা খুব মিষ্টি।", "pronunciation": "eta khub mishti.", "en": "This is very sweet.", "context": "Describe sweet food.", "category": "consonant-mo" },
+    { "bn": "অনেক মজা।", "pronunciation": "onek moja.", "en": "A lot of fun.", "context": "Describe an enjoyable experience.", "category": "consonant-mo" },
+    { "bn": "এটা মজার।", "pronunciation": "eta mojar.", "en": "This is funny/interesting.", "context": "Describe something entertaining.", "category": "consonant-mo" },
+    { "bn": "মাঝখানে বসো।", "pronunciation": "majhkhane bosho.", "en": "Sit in the middle.", "context": "Tell someone where to sit.", "category": "consonant-mo" },
+    { "bn": "এক মাস", "pronunciation": "ek mash", "en": "one month", "context": "Practice a duration.", "category": "consonant-mo" },
+    { "bn": "দুই মাস", "pronunciation": "dui mash", "en": "two months", "context": "Practice a duration.", "category": "consonant-mo" },
+    { "bn": "এক মিনিট", "pronunciation": "ek minute", "en": "one minute", "context": "Practice a short duration.", "category": "consonant-mo" },
+    { "bn": "এক মুহূর্ত।", "pronunciation": "ek muhurto.", "en": "One moment.", "context": "Ask for or state a brief pause.", "category": "consonant-mo" },
+    { "bn": "মোট কত?", "pronunciation": "mot koto?", "en": "What's the total?", "context": "Ask for a total amount.", "category": "consonant-mo" },
+    { "bn": "মোটামুটি ভালো।", "pronunciation": "motamuti bhalo.", "en": "Fairly good / Not bad.", "context": "Give a moderate positive assessment.", "category": "consonant-mo" }
   ],
   "vocab": [
-    {
-      "bn": "ম",
-      "pronunciation": "mô",
-      "en": "mô: m",
-      "category": "consonant-mo",
-      "sourcePhrase": "মাছ শব্দে ম আছে।"
-    },
-    {
-      "bn": "মাছ",
-      "pronunciation": "machh",
-      "en": "fish",
-      "category": "consonant-mo",
-      "sourcePhrase": "মাছ শব্দে ম আছে।"
-    },
-    {
-      "bn": "মা",
-      "pronunciation": "ma",
-      "en": "mother",
-      "category": "consonant-mo",
-      "sourcePhrase": "মা শব্দে ম আছে।"
-    },
-    {
-      "bn": "আম",
-      "pronunciation": "am",
-      "en": "mango",
-      "category": "consonant-mo",
-      "sourcePhrase": "আম শব্দে ম আছে।"
-    }
+    { "bn": "মা", "pronunciation": "ma", "en": "mother / mom", "category": "Common Words Beginning with ম" },
+    { "bn": "মানুষ", "pronunciation": "manush", "en": "person / human", "category": "Common Words Beginning with ম" },
+    { "bn": "মন", "pronunciation": "mon", "en": "mind / heart", "category": "The মনে Expression Family" },
+    { "bn": "মনে", "pronunciation": "mone", "en": "in the mind / feel", "category": "The মনে Expression Family" },
+    { "bn": "মনে হয়", "pronunciation": "mone hoy", "en": "I think / it seems", "category": "The মনে Expression Family" },
+    { "bn": "মনে রাখা", "pronunciation": "mone rakha", "en": "to remember", "category": "The মনে Expression Family" },
+    { "bn": "মনে পড়া", "pronunciation": "mone pora", "en": "to remember / come to mind", "category": "The মনে Expression Family" },
+    { "bn": "মনে আছে", "pronunciation": "mone achhe", "en": "remember", "category": "The মনে Expression Family" },
+    { "bn": "মনে নেই", "pronunciation": "mone nei", "en": "don't remember", "category": "The মনে Expression Family" },
+    { "bn": "মুখ", "pronunciation": "mukh", "en": "face / mouth", "category": "Common Words Beginning with ম" },
+    { "bn": "মাথা", "pronunciation": "matha", "en": "head", "category": "Common Words Beginning with ম" },
+    { "bn": "মাটি", "pronunciation": "mati", "en": "soil / ground", "category": "Common Words Beginning with ম" },
+    { "bn": "মাছ", "pronunciation": "machh", "en": "fish", "category": "Common Words Beginning with ম" },
+    { "bn": "মাংস", "pronunciation": "mangsho", "en": "meat", "category": "Common Words Beginning with ম" },
+    { "bn": "মুরগি", "pronunciation": "murgi", "en": "chicken", "category": "Common Words Beginning with ম" },
+    { "bn": "মশা", "pronunciation": "mosha", "en": "mosquito", "category": "Common Words Beginning with ম" },
+    { "bn": "মশলা", "pronunciation": "moshla", "en": "spice", "category": "Common Words Beginning with ম" },
+    { "bn": "মিষ্টি", "pronunciation": "mishti", "en": "sweet / sweets", "category": "Common Words Beginning with ম" },
+    { "bn": "মরিচ", "pronunciation": "morich", "en": "chili / pepper", "category": "Common Words Beginning with ম" },
+    { "bn": "ময়লা", "pronunciation": "moyla", "en": "dirty / dirt", "category": "Common Words Beginning with ম" },
+    { "bn": "মজা", "pronunciation": "moja", "en": "fun / enjoyable", "category": "Common Words Beginning with ম" },
+    { "bn": "মজার", "pronunciation": "mojar", "en": "funny / interesting", "category": "Common Words Beginning with ম" },
+    { "bn": "মাঝখানে", "pronunciation": "majhkhane", "en": "in the middle", "category": "Common Words Beginning with ম" },
+    { "bn": "মাঝে", "pronunciation": "majhe", "en": "between / among", "category": "Common Words Beginning with ম" },
+    { "bn": "মাঠ", "pronunciation": "math", "en": "field", "category": "Common Words Beginning with ম" },
+    { "bn": "মাস", "pronunciation": "mash", "en": "month", "category": "Common Words Beginning with ম" },
+    { "bn": "মাসে", "pronunciation": "mashe", "en": "per month", "category": "Common Words Beginning with ম" },
+    { "bn": "মালিক", "pronunciation": "malik", "en": "owner", "category": "Common Words Beginning with ম" },
+    { "bn": "মানে", "pronunciation": "mane", "en": "meaning / means", "category": "Common Words Beginning with ম" },
+    { "bn": "মানা", "pronunciation": "mana", "en": "to obey / forbidden", "category": "Common Words Beginning with ম" },
+    { "bn": "মাপ", "pronunciation": "map", "en": "measurement", "category": "Common Words Beginning with ম" },
+    { "bn": "মাপা", "pronunciation": "mapa", "en": "to measure", "category": "Common Words Beginning with ম" },
+    { "bn": "মারা", "pronunciation": "mara", "en": "to hit / kill", "category": "Common Words Beginning with ম" },
+    { "bn": "মৃত্যু", "pronunciation": "mrittu", "en": "death", "category": "Common Words Beginning with ম" },
+    { "bn": "মৃত", "pronunciation": "mrito", "en": "dead", "category": "Common Words Beginning with ম" },
+    { "bn": "মহিলা", "pronunciation": "mohila", "en": "woman / lady", "category": "Common Words Beginning with ম" },
+    { "bn": "মেয়ে", "pronunciation": "meye", "en": "girl / daughter", "category": "Common Words Beginning with ম" },
+    { "bn": "মোবাইল", "pronunciation": "mobile", "en": "mobile phone", "category": "Common Words Beginning with ম" },
+    { "bn": "মোট", "pronunciation": "mot", "en": "total", "category": "Common Words Beginning with ম" },
+    { "bn": "মোটামুটি", "pronunciation": "motamuti", "en": "more or less / fairly", "category": "Common Words Beginning with ম" },
+    { "bn": "মোটা", "pronunciation": "mota", "en": "fat / thick", "category": "Common Words Beginning with ম" },
+    { "bn": "মূল্য", "pronunciation": "mullo", "en": "value / price", "category": "Common Words Beginning with ম" },
+    { "bn": "মূল", "pronunciation": "mul", "en": "main / original / root", "category": "Common Words Beginning with ম" },
+    { "bn": "মুহূর্ত", "pronunciation": "muhurto", "en": "moment", "category": "Common Words Beginning with ম" },
+    { "bn": "মামলা", "pronunciation": "mamla", "en": "case / lawsuit", "category": "Common Words Beginning with ম" },
+    { "bn": "আমি", "pronunciation": "ami", "en": "I", "category": "Everyday Words Containing ম" },
+    { "bn": "আমার", "pronunciation": "amar", "en": "my", "category": "Everyday Words Containing ম" },
+    { "bn": "তুমি", "pronunciation": "tumi", "en": "you", "category": "Everyday Words Containing ম" },
+    { "bn": "তোমার", "pronunciation": "tomar", "en": "your", "category": "Everyday Words Containing ম" },
+    { "bn": "সময়", "pronunciation": "shomoy", "en": "time", "category": "Everyday Words Containing ম" },
+    { "bn": "কেমন", "pronunciation": "kemon", "en": "how", "category": "Everyday Words Containing ম" },
+    { "bn": "এমন", "pronunciation": "emon", "en": "like this / such", "category": "Everyday Words Containing ম" },
+    { "bn": "দাম", "pronunciation": "dam", "en": "price", "category": "Everyday Words Containing ম" },
+    { "bn": "গরম", "pronunciation": "gorom", "en": "hot", "category": "Everyday Words Containing ম" },
+    { "bn": "কম", "pronunciation": "kom", "en": "less", "category": "Everyday Words Containing ম" },
+    { "bn": "সমস্যা", "pronunciation": "shomoshsha", "en": "problem", "category": "Everyday Words Containing ম" },
+    { "bn": "ক্ষমা", "pronunciation": "khoma", "en": "forgiveness", "category": "Everyday Words Containing ম" },
+    { "bn": "জন্ম", "pronunciation": "jonmo", "en": "birth", "category": "Everyday Words Containing ম" },
+    { "bn": "নাম", "pronunciation": "nam", "en": "name", "category": "Everyday Words Containing ম" },
+    { "bn": "ঘুম", "pronunciation": "ghum", "en": "sleep", "category": "Everyday Words Containing ম" },
+    { "bn": "প্রথম", "pronunciation": "prothom", "en": "first", "category": "Everyday Words Containing ম" }
   ],
   "practice": [
     "Say ম three times: mô, mô, mô.",
-    "Find ম in each example word and read the whole word aloud.",
-    "Write ম five times while saying its name."
+    "Practice the vowel forms: ম (mô), মা (ma), মি (mi), মী (mi), মু (mu), মূ (mu), মে (me), মৈ (moi), মো (mo), and মৌ (mou).",
+    "Read the combinations aloud: ম + া = মা, ম + ি = মি as in মিষ্টি, ম + ু = মু as in মুখ, ম + ে = মে as in মেয়ে, ম + ো = মো as in মোটা, and ম + ৌ = মৌ as in মৌমাছি.",
+    "Practice the মনে family: আমার মনে হয়, আমার মনে হয় না, তোমার মনে আছে, আমার মনে নেই, এটা মনে রাখো, and আমার মনে পড়ে.",
+    "Look for ম inside high-frequency words such as আমি, আমার, তুমি, তোমার, সময়, কেমন, দাম, গরম, কম, সমস্যা, নাম, ঘুম, and প্রথম.",
+    "Use মা, মন, মানুষ, মাথা, মুখ, মাছ, মাংস, মিষ্টি, মজা, মেয়ে, মানে, and মনে as quick reading anchors.",
+    "Recognize these phrases instantly: এর মানে কী, আমার মনে হয়, আমার মনে হয় না, তোমার মনে আছে, and আমার মাথা ব্যথা করছে."
   ],
   "notes": [
-    "ম is pronounced approximately m.",
-    "Listen to the audio and compare ম across the example words."
+    "ম is one of the most common Bangla consonants. Its name is mô and its sound is m as in the English word mother.",
+    "The vowel-sign forms include ম (mô), মা (ma), মি (mi), মী (mi), মু (mu), মূ (mu), মে (me), মৈ (moi), মো (mo), and মৌ (mou). Examples include মন, মা, মিষ্টি, মীর, মুখ, মূল্য, মেয়ে, মৈত্রী, মোটা, and মৌমাছি.",
+    "The মনে family is extremely common: মনে হয় expresses an opinion or impression; মনে আছে and মনে নেই express remembering; মনে রাখো means remember; and মনে পড়ে describes something coming to mind.",
+    "ম also appears inside many of the most common Bangla words, so practice recognizing it beyond word-initial position.",
+    "Best words to memorize include মা, মানুষ, মন, মনে হয়, মনে আছে, মনে নেই, মনে রাখা, মানে, মাথা, মুখ, মাটি, মাছ, মাংস, মুরগি, মিষ্টি, মজা, মজার, মেয়ে, মাস, মাঝখানে, ময়লা, মোট, মোটামুটি, and মুহূর্ত."
   ]
 }

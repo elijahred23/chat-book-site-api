@@ -1,136 +1,90 @@
 {
   "id": "consonant-kkho",
-  "title": "ক্ষ — kṣô / khô",
-  "summary": "Learn ক্ষ, pronounced kṣô / khô, and recognize it in three useful Bengali words.",
+  "title": "ক্ষ — kkhô / kh / ksh",
+  "summary": "Learn the important Bangla conjunct ক্ষ, how ক্ and ষ combine, its variable pronunciations, and useful words and phrases.",
   "level": "beginner",
-  "topic": "Consonant: ক্ষ",
-  "focus": "character recognition and pronunciation",
+  "topic": "Conjunct: ক্ষ",
+  "focus": "conjunct recognition, construction, and word-specific pronunciation",
   "phrases": [
-    {
-      "bn": "ক্ষতি শব্দে ক্ষ আছে।",
-      "pronunciation": "khôti shôbde kṣô / khô achhe",
-      "en": "The word “ক্ষতি” contains ক্ষ.",
-      "context": "Find ক্ষ in ক্ষতি and say the complete word aloud.",
-      "category": "consonant-kkho",
-      "words": [
-        {
-          "bn": "ক্ষতি",
-          "pronunciation": "khôti",
-          "en": "harm"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ক্ষ",
-          "pronunciation": "kṣô / khô",
-          "en": "the kṣô / khô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "ক্ষমা শব্দে ক্ষ আছে।",
-      "pronunciation": "khôma shôbde kṣô / khô achhe",
-      "en": "The word “ক্ষমা” contains ক্ষ.",
-      "context": "Find ক্ষ in ক্ষমা and say the complete word aloud.",
-      "category": "consonant-kkho",
-      "words": [
-        {
-          "bn": "ক্ষমা",
-          "pronunciation": "khôma",
-          "en": "forgiveness"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ক্ষ",
-          "pronunciation": "kṣô / khô",
-          "en": "the kṣô / khô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "রক্ষা শব্দে ক্ষ আছে।",
-      "pronunciation": "rôkkha shôbde kṣô / khô achhe",
-      "en": "The word “রক্ষা” contains ক্ষ.",
-      "context": "Find ক্ষ in রক্ষা and say the complete word aloud.",
-      "category": "consonant-kkho",
-      "words": [
-        {
-          "bn": "রক্ষা",
-          "pronunciation": "rôkkha",
-          "en": "protection"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ক্ষ",
-          "pronunciation": "kṣô / khô",
-          "en": "the kṣô / khô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    }
+    { "bn": "আমাকে ক্ষমা করো।", "pronunciation": "amake khoma koro.", "en": "Forgive me.", "context": "Ask someone for forgiveness.", "category": "consonant-kkho" },
+    { "bn": "আমাকে ক্ষমা করবেন।", "pronunciation": "amake khoma korben.", "en": "Please forgive me. / Excuse me.", "context": "Politely ask for forgiveness or excuse yourself.", "category": "consonant-kkho" },
+    { "bn": "ক্ষমা চাই।", "pronunciation": "khoma chai.", "en": "I apologize / I ask forgiveness.", "context": "Offer an apology.", "category": "consonant-kkho" },
+    { "bn": "অনেক ক্ষতি হয়েছে।", "pronunciation": "onek khoti hoyechhe.", "en": "A lot of damage has occurred.", "context": "Describe significant damage.", "category": "consonant-kkho" },
+    { "bn": "এতে কোনো ক্ষতি নেই।", "pronunciation": "ete kono khoti nei.", "en": "There is no harm in this.", "context": "Say that something is harmless.", "category": "consonant-kkho" },
+    { "bn": "কোনো ক্ষতি নেই।", "pronunciation": "kono khoti nei.", "en": "There's no harm.", "context": "Reassure someone that there is no harm.", "category": "consonant-kkho" },
+    { "bn": "এটা ক্ষতিকর।", "pronunciation": "eta khotikor.", "en": "This is harmful.", "context": "Warn that something causes harm.", "category": "consonant-kkho" },
+    { "bn": "আমার একটা লক্ষ্য আছে।", "pronunciation": "amar ekta lokkho achhe.", "en": "I have a goal.", "context": "State that you have a goal.", "category": "consonant-kkho" },
+    { "bn": "আমার লক্ষ্য বাংলা শেখা।", "pronunciation": "amar lokkho bangla shekha.", "en": "My goal is to learn Bangla.", "context": "Describe a learning goal.", "category": "consonant-kkho" },
+    { "bn": "লক্ষ্য ঠিক রাখো।", "pronunciation": "lokkho thik rakho.", "en": "Keep your goal in focus.", "context": "Encourage someone to stay focused.", "category": "consonant-kkho" },
+    { "bn": "কী লক্ষণ আছে?", "pronunciation": "ki lokkhon achhe?", "en": "What symptoms are there?", "context": "Ask about symptoms or signs.", "category": "consonant-kkho" },
+    { "bn": "এটা কীসের লক্ষণ?", "pronunciation": "eta kisher lokkhon?", "en": "What is this a sign/symptom of?", "context": "Ask what a symptom indicates.", "category": "consonant-kkho" },
+    { "bn": "কোনো লক্ষণ নেই।", "pronunciation": "kono lokkhon nei.", "en": "There are no symptoms.", "context": "Say that no symptoms are present.", "category": "consonant-kkho" },
+    { "bn": "অপেক্ষা করো।", "pronunciation": "opekkha koro.", "en": "Wait.", "context": "Ask someone to wait.", "category": "consonant-kkho" },
+    { "bn": "একটু অপেক্ষা করো।", "pronunciation": "ektu opekkha koro.", "en": "Wait a little.", "context": "Ask someone to wait briefly.", "category": "consonant-kkho" },
+    { "bn": "এখানে অপেক্ষা করো।", "pronunciation": "ekhane opekkha koro.", "en": "Wait here.", "context": "Tell someone where to wait.", "category": "consonant-kkho" },
+    { "bn": "আমি অপেক্ষা করছি।", "pronunciation": "ami opekkha korchhi.", "en": "I'm waiting.", "context": "Describe waiting now.", "category": "consonant-kkho" },
+    { "bn": "আজ আমার পরীক্ষা।", "pronunciation": "aj amar porikkha.", "en": "I have an exam today.", "context": "Talk about today's exam.", "category": "consonant-kkho" },
+    { "bn": "পরীক্ষা কখন?", "pronunciation": "porikkha kokhon?", "en": "When is the exam?", "context": "Ask when an exam is scheduled.", "category": "consonant-kkho" },
+    { "bn": "পরীক্ষা ভালো হয়েছে।", "pronunciation": "porikkha bhalo hoyechhe.", "en": "The exam went well.", "context": "Describe a successful exam.", "category": "consonant-kkho" },
+    { "bn": "শিক্ষা গুরুত্বপূর্ণ।", "pronunciation": "shikkha guruttopurno.", "en": "Education is important.", "context": "Emphasize the value of education.", "category": "consonant-kkho" },
+    { "bn": "শিক্ষক কোথায়?", "pronunciation": "shikkhok kothay?", "en": "Where is the teacher?", "context": "Ask where a teacher is.", "category": "consonant-kkho" },
+    { "bn": "আমি একজন শিক্ষার্থী।", "pronunciation": "ami ekjon shikkharthi.", "en": "I am a student.", "context": "Identify yourself as a student.", "category": "consonant-kkho" },
+    { "bn": "আমার শিক্ষক", "pronunciation": "amar shikkhok", "en": "my teacher", "context": "Practice শিক্ষক in a personal phrase.", "category": "consonant-kkho" },
+    { "bn": "একজন শিক্ষার্থী", "pronunciation": "ekjon shikkharthi", "en": "a student", "context": "Practice শিক্ষার্থী with a classifier.", "category": "consonant-kkho" },
+    { "bn": "নিজেকে রক্ষা করো।", "pronunciation": "nijeke rokkha koro.", "en": "Protect yourself.", "context": "Give a safety instruction.", "category": "consonant-kkho" },
+    { "bn": "তাকে রক্ষা করো।", "pronunciation": "take rokkha koro.", "en": "Protect him/her.", "context": "Ask someone to protect another person.", "category": "consonant-kkho" },
+    { "bn": "সে খুব দক্ষ।", "pronunciation": "she khub dokkho.", "en": "He/she is very skilled.", "context": "Compliment someone's ability.", "category": "consonant-kkho" },
+    { "bn": "তার অনেক দক্ষতা আছে।", "pronunciation": "tar onek dokkhota achhe.", "en": "He/she has many skills.", "context": "Describe someone's skills.", "category": "consonant-kkho" },
+    { "bn": "দক্ষিণ দিকে যাও।", "pronunciation": "dokkhino dike jao.", "en": "Go south.", "context": "Give a compass direction.", "category": "consonant-kkho" },
+    { "bn": "এটা কোন অক্ষর?", "pronunciation": "eta kon okkhor?", "en": "What letter is this?", "context": "Ask someone to identify a letter.", "category": "consonant-kkho" }
   ],
   "vocab": [
-    {
-      "bn": "ক্ষ",
-      "pronunciation": "kṣô / khô",
-      "en": "kṣô / khô: a conjunct often pronounced kkho or kho",
-      "category": "consonant-kkho",
-      "sourcePhrase": "ক্ষতি শব্দে ক্ষ আছে।"
-    },
-    {
-      "bn": "ক্ষতি",
-      "pronunciation": "khôti",
-      "en": "harm",
-      "category": "consonant-kkho",
-      "sourcePhrase": "ক্ষতি শব্দে ক্ষ আছে।"
-    },
-    {
-      "bn": "ক্ষমা",
-      "pronunciation": "khôma",
-      "en": "forgiveness",
-      "category": "consonant-kkho",
-      "sourcePhrase": "ক্ষমা শব্দে ক্ষ আছে।"
-    },
-    {
-      "bn": "রক্ষা",
-      "pronunciation": "rôkkha",
-      "en": "protection",
-      "category": "consonant-kkho",
-      "sourcePhrase": "রক্ষা শব্দে ক্ষ আছে।"
-    }
+    { "bn": "ক্ষমা", "pronunciation": "khoma", "en": "forgiveness / pardon", "category": "Common Words Containing ক্ষ" },
+    { "bn": "ক্ষমতা", "pronunciation": "khomota", "en": "power / ability", "category": "Common Words Containing ক্ষ" },
+    { "bn": "ক্ষতি", "pronunciation": "khoti", "en": "damage / harm / loss", "category": "Common Words Containing ক্ষ" },
+    { "bn": "ক্ষতিকর", "pronunciation": "khotikor", "en": "harmful", "category": "Common Words Containing ক্ষ" },
+    { "bn": "ক্ষত", "pronunciation": "khoto", "en": "wound", "category": "Common Words Containing ক্ষ" },
+    { "bn": "ক্ষুধা", "pronunciation": "khudha", "en": "hunger", "category": "Common Words Containing ক্ষ" },
+    { "bn": "ক্ষুধার্ত", "pronunciation": "khudharto", "en": "hungry", "category": "Common Words Containing ক্ষ" },
+    { "bn": "ক্ষুদ্র", "pronunciation": "khudro", "en": "small / tiny", "category": "Common Words Containing ক্ষ" },
+    { "bn": "ক্ষয়", "pronunciation": "khoy", "en": "decay / loss", "category": "Common Words Containing ক্ষ" },
+    { "bn": "ক্ষোভ", "pronunciation": "khobh", "en": "anger / resentment", "category": "Common Words Containing ক্ষ" },
+    { "bn": "ক্ষেত", "pronunciation": "khet", "en": "field / farmland", "category": "Common Words Containing ক্ষ" },
+    { "bn": "ক্ষেত্র", "pronunciation": "khetro", "en": "field / area", "category": "Common Words Containing ক্ষ" },
+    { "bn": "লক্ষ্য", "pronunciation": "lokkho", "en": "goal / target", "category": "Common Words Containing ক্ষ" },
+    { "bn": "লক্ষ", "pronunciation": "lokkh", "en": "hundred thousand / lakh", "category": "Common Words Containing ক্ষ" },
+    { "bn": "লক্ষণ", "pronunciation": "lokkhon", "en": "symptom / sign", "category": "Common Words Containing ক্ষ" },
+    { "bn": "লক্ষ করা", "pronunciation": "lokkh kora", "en": "to notice", "category": "Common Words Containing ক্ষ" },
+    { "bn": "পরীক্ষা", "pronunciation": "porikkha", "en": "test / examination", "category": "Common Words Containing ক্ষ" },
+    { "bn": "শিক্ষা", "pronunciation": "shikkha", "en": "education", "category": "Common Words Containing ক্ষ" },
+    { "bn": "শিক্ষক", "pronunciation": "shikkhok", "en": "teacher", "category": "Common Words Containing ক্ষ" },
+    { "bn": "শিক্ষার্থী", "pronunciation": "shikkharthi", "en": "student", "category": "Common Words Containing ক্ষ" },
+    { "bn": "রক্ষা", "pronunciation": "rokkha", "en": "protection", "category": "Common Words Containing ক্ষ" },
+    { "bn": "রক্ষা করা", "pronunciation": "rokkha kora", "en": "to protect", "category": "Common Words Containing ক্ষ" },
+    { "bn": "নিরাপত্তা", "pronunciation": "nirapotta", "en": "safety", "category": "Common Words Containing ক্ষ" },
+    { "bn": "অপেক্ষা", "pronunciation": "opekkha", "en": "waiting", "category": "Common Words Containing ক্ষ" },
+    { "bn": "অপেক্ষা করা", "pronunciation": "opekkha kora", "en": "to wait", "category": "Common Words Containing ক্ষ" },
+    { "bn": "দক্ষ", "pronunciation": "dokkho", "en": "skilled", "category": "Common Words Containing ক্ষ" },
+    { "bn": "দক্ষতা", "pronunciation": "dokkhota", "en": "skill", "category": "Common Words Containing ক্ষ" },
+    { "bn": "পক্ষ", "pronunciation": "pokkho", "en": "side / party", "category": "Common Words Containing ক্ষ" },
+    { "bn": "বিপক্ষ", "pronunciation": "bipokkho", "en": "opposing side", "category": "Common Words Containing ক্ষ" },
+    { "bn": "সাক্ষী", "pronunciation": "shakkhi", "en": "witness", "category": "Common Words Containing ক্ষ" },
+    { "bn": "সাক্ষাৎ", "pronunciation": "shakkhat", "en": "meeting / encounter", "category": "Common Words Containing ক্ষ" },
+    { "bn": "দক্ষিণ", "pronunciation": "dokkhino", "en": "south", "category": "Common Words Containing ক্ষ" },
+    { "bn": "অক্ষর", "pronunciation": "okkhor", "en": "letter / character", "category": "Common Words Containing ক্ষ" }
   ],
   "practice": [
-    "Say ক্ষ three times: kṣô / khô, kṣô / khô, kṣô / khô.",
-    "Find ক্ষ in each example word and read the whole word aloud.",
-    "Write ক্ষ five times while saying its name."
+    "Build and recognize the conjunct: ক্ + ষ = ক্ষ. The virama ্ removes the inherent vowel from ক so it can join ষ.",
+    "Learn ক্ষ word by word because its pronunciation varies: it may sound roughly like kkh, kh, ksh, or kkhô.",
+    "Practice initial ক্ষ as approximately kh in ক্ষমা, ক্ষতি, and ক্ষুধা, and medial ক্ষ as approximately kkh in লক্ষ্য, লক্ষণ, রক্ষা, শিক্ষা, and পরীক্ষা.",
+    "Use ক্ষমা, ক্ষতি, ক্ষুধা, লক্ষ্য, লক্ষণ, শিক্ষা, পরীক্ষা, রক্ষা, অপেক্ষা, and দক্ষ as quick reading anchors.",
+    "Recognize these phrases instantly: একটু অপেক্ষা করো, আমাকে ক্ষমা করো, আমার লক্ষ্য বাংলা শেখা, আজ আমার পরীক্ষা, and এটা কোন অক্ষর."
   ],
   "notes": [
-    "ক্ষ is pronounced approximately a conjunct often pronounced kkho or kho.",
-    "ক্ষ is a conjunct of ক + ষ, traditionally taught alongside the consonants."
+    "ক্ষ is an important Bangla conjunct letter (যুক্তাক্ষর), not a standalone basic consonant. It is formed from ক্ + ষ.",
+    "The virama ্ removes the inherent vowel from ক, allowing it to join ষ: ক + ্ + ষ → ক্ষ. The resulting conjunct looks very different from its component letters.",
+    "Pronunciation varies by word. Beginner approximations include ক্ষমা (khoma), ক্ষতি (khoti), ক্ষুধা (khudha), ক্ষেত্র (khetro), লক্ষ্য (lokkho), লক্ষণ (lokkhon), রক্ষা (rokkha), শিক্ষা (shikkha), and পরীক্ষা (porikkha).",
+    "A useful approximation is that word-initial ক্ষ often sounds like kh, while inside many words it sounds like kkh, though actual pronunciation varies.",
+    "Best words to memorize include ক্ষমা, ক্ষমতা, ক্ষতি, ক্ষতিকর, ক্ষুধা, ক্ষুদ্র, ক্ষেত্র, লক্ষ্য, লক্ষণ, পরীক্ষা, শিক্ষা, শিক্ষক, শিক্ষার্থী, রক্ষা, অপেক্ষা, দক্ষ, দক্ষতা, পক্ষ, সাক্ষী, দক্ষিণ, and অক্ষর."
   ]
 }

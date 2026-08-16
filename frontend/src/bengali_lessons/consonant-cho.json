@@ -1,136 +1,103 @@
 {
   "id": "consonant-cho",
   "title": "চ — chô",
-  "summary": "Learn চ, pronounced chô, and recognize it in three useful Bengali words.",
+  "summary": "Learn the common Bangla consonant চ, its ch sound, vowel-sign forms, and useful words and phrases.",
   "level": "beginner",
   "topic": "Consonant: চ",
   "focus": "character recognition and pronunciation",
   "phrases": [
-    {
-      "bn": "চাঁদ শব্দে চ আছে।",
-      "pronunciation": "chãd shôbde chô achhe",
-      "en": "The word “চাঁদ” contains চ.",
-      "context": "Find চ in চাঁদ and say the complete word aloud.",
-      "category": "consonant-cho",
-      "words": [
-        {
-          "bn": "চাঁদ",
-          "pronunciation": "chãd",
-          "en": "moon"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "চ",
-          "pronunciation": "chô",
-          "en": "the chô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "চা শব্দে চ আছে।",
-      "pronunciation": "cha shôbde chô achhe",
-      "en": "The word “চা” contains চ.",
-      "context": "Find চ in চা and say the complete word aloud.",
-      "category": "consonant-cho",
-      "words": [
-        {
-          "bn": "চা",
-          "pronunciation": "cha",
-          "en": "tea"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "চ",
-          "pronunciation": "chô",
-          "en": "the chô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "মাছ শব্দে চ আছে।",
-      "pronunciation": "machh shôbde chô achhe",
-      "en": "The word “মাছ” contains চ.",
-      "context": "Find চ in মাছ and say the complete word aloud.",
-      "category": "consonant-cho",
-      "words": [
-        {
-          "bn": "মাছ",
-          "pronunciation": "machh",
-          "en": "fish"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "চ",
-          "pronunciation": "chô",
-          "en": "the chô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    }
+    { "bn": "আমি চাই।", "pronunciation": "ami chai.", "en": "I want it.", "context": "Express that you want something.", "category": "consonant-cho" },
+    { "bn": "আমি এটা চাই।", "pronunciation": "ami eta chai.", "en": "I want this.", "context": "Point out what you want.", "category": "consonant-cho" },
+    { "bn": "তুমি কী চাও?", "pronunciation": "tumi ki chao?", "en": "What do you want?", "context": "Ask what someone wants.", "category": "consonant-cho" },
+    { "bn": "আমি যেতে চাই।", "pronunciation": "ami jete chai.", "en": "I want to go.", "context": "Express a desire to go.", "category": "consonant-cho" },
+    { "bn": "আমি বাংলা শিখতে চাই।", "pronunciation": "ami bangla shikhte chai.", "en": "I want to learn Bangla.", "context": "Express a learning goal.", "category": "consonant-cho" },
+    { "bn": "আমি খেতে চাই।", "pronunciation": "ami khete chai.", "en": "I want to eat.", "context": "Express a desire to eat.", "category": "consonant-cho" },
+    { "bn": "আমি জানতে চাই।", "pronunciation": "ami jante chai.", "en": "I want to know.", "context": "Express a desire to know something.", "category": "consonant-cho" },
+    { "bn": "আমি ঘুমাতে চাই।", "pronunciation": "ami ghumate chai.", "en": "I want to sleep.", "context": "Express a desire to sleep.", "category": "consonant-cho" },
+    { "bn": "আমি শিখতে চাই।", "pronunciation": "ami shikhte chai.", "en": "I want to learn.", "context": "Express a desire to learn.", "category": "consonant-cho" },
+    { "bn": "আমি বাংলা বলতে চাই।", "pronunciation": "ami bangla bolte chai.", "en": "I want to speak Bangla.", "context": "Express a language goal.", "category": "consonant-cho" },
+    { "bn": "আমি চা চাই।", "pronunciation": "ami cha chai.", "en": "I want tea.", "context": "Ask for tea.", "category": "consonant-cho" },
+    { "bn": "চা খাবেন?", "pronunciation": "cha khaben?", "en": "Would you like tea?", "context": "Offer someone tea politely.", "category": "consonant-cho" },
+    { "bn": "চা বানাও।", "pronunciation": "cha banao.", "en": "Make tea.", "context": "Ask someone to prepare tea.", "category": "consonant-cho" },
+    { "bn": "চিনি ছাড়া চা।", "pronunciation": "chini chhara cha.", "en": "Tea without sugar.", "context": "Order or describe tea without sugar.", "category": "consonant-cho" },
+    { "bn": "আমার চোখ।", "pronunciation": "amar chokh.", "en": "My eye.", "context": "Practice চোখ in a personal phrase.", "category": "consonant-cho" },
+    { "bn": "চোখ বন্ধ করো।", "pronunciation": "chokh bondho koro.", "en": "Close your eyes.", "context": "Give an instruction.", "category": "consonant-cho" },
+    { "bn": "চোখ খোলো।", "pronunciation": "chokh kholo.", "en": "Open your eyes.", "context": "Give an instruction.", "category": "consonant-cho" },
+    { "bn": "আমার চোখে ব্যথা।", "pronunciation": "amar chokhe byatha.", "en": "My eye hurts.", "context": "Describe eye pain.", "category": "consonant-cho" },
+    { "bn": "চিন্তা করো না।", "pronunciation": "chinta koro na.", "en": "Don't worry.", "context": "Reassure someone.", "category": "consonant-cho" },
+    { "bn": "আমি চিন্তা করছি।", "pronunciation": "ami chinta korchhi.", "en": "I'm thinking/worrying.", "context": "Describe your thoughts or worries.", "category": "consonant-cho" },
+    { "bn": "কোনো চিন্তা নেই।", "pronunciation": "kono chinta nei.", "en": "No worries.", "context": "Reassure someone casually.", "category": "consonant-cho" },
+    { "bn": "চল!", "pronunciation": "chôl!", "en": "Let's go!", "context": "Encourage someone to leave with you.", "category": "consonant-cho" },
+    { "bn": "চল যাই।", "pronunciation": "chôl jai.", "en": "Let's go.", "context": "Suggest going somewhere.", "category": "consonant-cho" },
+    { "bn": "চল বাসায় যাই।", "pronunciation": "chôl bashay jai.", "en": "Let's go home.", "context": "Suggest going home.", "category": "consonant-cho" },
+    { "bn": "চাবি কোথায়?", "pronunciation": "chabi kothay?", "en": "Where is the key?", "context": "Ask where a key is.", "category": "consonant-cho" },
+    { "bn": "আমার চাকরি আছে।", "pronunciation": "amar chakri achhe.", "en": "I have a job.", "context": "Talk about employment.", "category": "consonant-cho" },
+    { "bn": "চারটা বাজে।", "pronunciation": "charta baje.", "en": "It's four o'clock.", "context": "Tell the time.", "category": "consonant-cho" },
+    { "bn": "চিঠি এসেছে।", "pronunciation": "chithi eshechhe.", "en": "A letter has arrived.", "context": "Announce the arrival of a letter.", "category": "consonant-cho" },
+    { "bn": "চিনি লাগবে?", "pronunciation": "chini lagbe?", "en": "Do you need sugar?", "context": "Offer sugar.", "category": "consonant-cho" },
+    { "bn": "চুপ করো।", "pronunciation": "chup koro.", "en": "Be quiet.", "context": "Ask someone to be quiet.", "category": "consonant-cho" },
+    { "bn": "চুপচাপ বসো।", "pronunciation": "chupchap bosho.", "en": "Sit quietly.", "context": "Ask someone to sit quietly.", "category": "consonant-cho" },
+    { "bn": "চেষ্টা করো।", "pronunciation": "cheshta koro.", "en": "Try.", "context": "Encourage someone to make an effort.", "category": "consonant-cho" },
+    { "bn": "আবার চেষ্টা করো।", "pronunciation": "abar cheshta koro.", "en": "Try again.", "context": "Encourage another attempt.", "category": "consonant-cho" },
+    { "bn": "এটা চুরি হয়েছে।", "pronunciation": "eta churi hoyechhe.", "en": "This was stolen.", "context": "Report a theft.", "category": "consonant-cho" },
+    { "bn": "চোর ধরো!", "pronunciation": "chor dhoro!", "en": "Catch the thief!", "context": "Call for someone to stop a thief.", "category": "consonant-cho" }
   ],
   "vocab": [
-    {
-      "bn": "চ",
-      "pronunciation": "chô",
-      "en": "chô: ch as in chair",
-      "category": "consonant-cho",
-      "sourcePhrase": "চাঁদ শব্দে চ আছে।"
-    },
-    {
-      "bn": "চাঁদ",
-      "pronunciation": "chãd",
-      "en": "moon",
-      "category": "consonant-cho",
-      "sourcePhrase": "চাঁদ শব্দে চ আছে।"
-    },
-    {
-      "bn": "চা",
-      "pronunciation": "cha",
-      "en": "tea",
-      "category": "consonant-cho",
-      "sourcePhrase": "চা শব্দে চ আছে।"
-    },
-    {
-      "bn": "মাছ",
-      "pronunciation": "machh",
-      "en": "fish",
-      "category": "consonant-cho",
-      "sourcePhrase": "মাছ শব্দে চ আছে।"
-    }
+    { "bn": "চা", "pronunciation": "cha", "en": "tea", "category": "Common Words Beginning with চ" },
+    { "bn": "চাই", "pronunciation": "chai", "en": "want", "category": "Common Words Beginning with চ" },
+    { "bn": "চাওয়া", "pronunciation": "chaoa", "en": "to want", "category": "Common Words Beginning with চ" },
+    { "bn": "চাল", "pronunciation": "chal", "en": "rice / চালানো = operate", "category": "Common Words Beginning with চ" },
+    { "bn": "চাবি", "pronunciation": "chabi", "en": "key", "category": "Common Words Beginning with চ" },
+    { "bn": "চাকরি", "pronunciation": "chakri", "en": "job", "category": "Common Words Beginning with চ" },
+    { "bn": "চাকর", "pronunciation": "chakor", "en": "servant", "category": "Common Words Beginning with চ" },
+    { "bn": "চাকা", "pronunciation": "chaka", "en": "wheel", "category": "Common Words Beginning with চ" },
+    { "bn": "চাচা", "pronunciation": "chacha", "en": "paternal uncle", "category": "Common Words Beginning with চ" },
+    { "bn": "চাচি", "pronunciation": "chachi", "en": "paternal uncle's wife", "category": "Common Words Beginning with চ" },
+    { "bn": "চামচ", "pronunciation": "chamoch", "en": "spoon", "category": "Common Words Beginning with চ" },
+    { "bn": "চাদর", "pronunciation": "chador", "en": "sheet / blanket", "category": "Common Words Beginning with চ" },
+    { "bn": "চান", "pronunciation": "chan", "en": "want (respectful)", "category": "Common Words Beginning with চ" },
+    { "bn": "চাষ", "pronunciation": "chash", "en": "farming", "category": "Common Words Beginning with চ" },
+    { "bn": "চাষি", "pronunciation": "chashi", "en": "farmer", "category": "Common Words Beginning with চ" },
+    { "bn": "চার", "pronunciation": "char", "en": "four", "category": "Common Words Beginning with চ" },
+    { "bn": "চারটা", "pronunciation": "charta", "en": "four / four o'clock", "category": "Common Words Beginning with চ" },
+    { "bn": "চারপাশ", "pronunciation": "charpash", "en": "surroundings", "category": "Common Words Beginning with চ" },
+    { "bn": "চিঠি", "pronunciation": "chithi", "en": "letter", "category": "Common Words Beginning with চ" },
+    { "bn": "চিনি", "pronunciation": "chini", "en": "sugar / I know", "category": "Common Words Beginning with চ" },
+    { "bn": "চিন্তা", "pronunciation": "chinta", "en": "thought / worry", "category": "Common Words Beginning with চ" },
+    { "bn": "চিহ্ন", "pronunciation": "chinho", "en": "sign / symbol", "category": "Common Words Beginning with চ" },
+    { "bn": "চিৎকার", "pronunciation": "chitkar", "en": "scream / shout", "category": "Common Words Beginning with চ" },
+    { "bn": "চুপ", "pronunciation": "chup", "en": "quiet", "category": "Common Words Beginning with চ" },
+    { "bn": "চুপচাপ", "pronunciation": "chupchap", "en": "quietly", "category": "Common Words Beginning with চ" },
+    { "bn": "চুমু", "pronunciation": "chumu", "en": "kiss", "category": "Common Words Beginning with চ" },
+    { "bn": "চুল", "pronunciation": "chul", "en": "hair", "category": "Common Words Beginning with চ" },
+    { "bn": "চুলা", "pronunciation": "chula", "en": "stove", "category": "Common Words Beginning with চ" },
+    { "bn": "চুরি", "pronunciation": "churi", "en": "theft", "category": "Common Words Beginning with চ" },
+    { "bn": "চোর", "pronunciation": "chor", "en": "thief", "category": "Common Words Beginning with চ" },
+    { "bn": "চোখ", "pronunciation": "chokh", "en": "eye", "category": "Common Words Beginning with চ" },
+    { "bn": "চোট", "pronunciation": "chot", "en": "injury", "category": "Common Words Beginning with চ" },
+    { "bn": "চেষ্টা", "pronunciation": "cheshta", "en": "attempt / effort", "category": "Common Words Beginning with চ" },
+    { "bn": "চেয়ার", "pronunciation": "cheyar", "en": "chair", "category": "Common Words Beginning with চ" },
+    { "bn": "চেনা", "pronunciation": "chena", "en": "familiar / to recognize", "category": "Common Words Beginning with চ" },
+    { "bn": "চেহারা", "pronunciation": "chehara", "en": "face / appearance", "category": "Common Words Beginning with চ" },
+    { "bn": "চেক", "pronunciation": "chek", "en": "check", "category": "Common Words Beginning with চ" },
+    { "bn": "চকলেট", "pronunciation": "chokolet", "en": "chocolate", "category": "Common Words Beginning with চ" },
+    { "bn": "চলা", "pronunciation": "chola", "en": "to move / go", "category": "Common Words Beginning with চ" },
+    { "bn": "চল", "pronunciation": "chôl", "en": "let's go", "category": "Common Words Beginning with চ" },
+    { "bn": "চলচ্চিত্র", "pronunciation": "cholochchitro", "en": "film / movie", "category": "Common Words Beginning with চ" }
   ],
   "practice": [
     "Say চ three times: chô, chô, chô.",
-    "Find চ in each example word and read the whole word aloud.",
-    "Write চ five times while saying its name."
+    "Practice the vowel forms: চ (chô), চা (cha), চি (chi), চী (chi), চু (chu), চূ (chu), চে (che), চৈ (choi), চো (cho), and চৌ (chou).",
+    "Read the combinations aloud: চ + া = চা, চ + ি = চি, চ + ী = চী, চ + ু = চু, চ + ূ = চূ, চ + ে = চে, চ + ৈ = চৈ, চ + ো = চো, and চ + ৌ = চৌ.",
+    "Compare চ (ch, less air) with ছ (chh, a stronger puff of air): চা / ছাতা, চাই / ছবি, চোখ / ছেলে, and চাবি / ছোট.",
+    "Use চা, চাই, চাবি, চিনি, চুল, চোখ, চোর, চেষ্টা, and চল as quick reading anchors.",
+    "Build useful sentences with আমি + [verb] + চাই: আমি খেতে চাই, আমি যেতে চাই, আমি ঘুমাতে চাই, আমি শিখতে চাই, and আমি বাংলা বলতে চাই."
   ],
   "notes": [
-    "চ is pronounced approximately ch as in chair.",
-    "Listen to the audio and compare চ across the example words."
+    "চ is a very common Bangla consonant named chô. Its sound is approximately ch as in chair.",
+    "The vowel-sign forms include চ (chô), চা (cha), চি (chi), চী (chi), চু (chu), চূ (chu), চে (che), চৈ (choi), চো (cho), and চৌ (chou). Examples include চল, চা, চিনি, চীন, চুমু, চূড়া, চেনা, চৈত্র, চোখ, and চৌদ্দ.",
+    "চ and ছ are worth learning together: চ has a ch sound, while ছ has an aspirated chh sound with a stronger puff of air.",
+    "Best words to memorize include চা, চাই, চাওয়া, চাবি, চাকরি, চাকা, চামচ, চার, চিঠি, চিনি, চিন্তা, চুপ, চুল, চুরি, চোর, চোখ, চোট, চেষ্টা, চেয়ার, চেনা, and চল.",
+    "চাই is especially useful because the pattern আমি + [verb] + চাই means I want to [verb]."
   ]
 }

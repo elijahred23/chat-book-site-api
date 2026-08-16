@@ -1,136 +1,110 @@
 {
   "id": "consonant-yo",
   "title": "য় — yô",
-  "summary": "Learn য়, pronounced yô, and recognize it in three useful Bengali words.",
+  "summary": "Learn the important Bangla consonant য়, its y glide, its common position inside words, and how it differs from য.",
   "level": "beginner",
   "topic": "Consonant: য়",
-  "focus": "character recognition and pronunciation",
+  "focus": "character recognition, y-glide pronunciation, word families, and spelling distinctions",
   "phrases": [
-    {
-      "bn": "সময় শব্দে য় আছে।",
-      "pronunciation": "shômôy shôbde yô achhe",
-      "en": "The word “সময়” contains য়.",
-      "context": "Find য় in সময় and say the complete word aloud.",
-      "category": "consonant-yo",
-      "words": [
-        {
-          "bn": "সময়",
-          "pronunciation": "shômôy",
-          "en": "time"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "য়",
-          "pronunciation": "yô",
-          "en": "the yô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "দয়া শব্দে য় আছে।",
-      "pronunciation": "dôya shôbde yô achhe",
-      "en": "The word “দয়া” contains য়.",
-      "context": "Find য় in দয়া and say the complete word aloud.",
-      "category": "consonant-yo",
-      "words": [
-        {
-          "bn": "দয়া",
-          "pronunciation": "dôya",
-          "en": "kindness"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "য়",
-          "pronunciation": "yô",
-          "en": "the yô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "ময়ূর শব্দে য় আছে।",
-      "pronunciation": "môyur shôbde yô achhe",
-      "en": "The word “ময়ূর” contains য়.",
-      "context": "Find য় in ময়ূর and say the complete word aloud.",
-      "category": "consonant-yo",
-      "words": [
-        {
-          "bn": "ময়ূর",
-          "pronunciation": "môyur",
-          "en": "peacock"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "য়",
-          "pronunciation": "yô",
-          "en": "the yô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    }
+    { "bn": "কী হয়?", "pronunciation": "ki hoy?", "en": "What happens?", "context": "Ask what normally occurs.", "category": "consonant-yo" },
+    { "bn": "কী হয়েছে?", "pronunciation": "ki hoyechhe?", "en": "What happened? / What's wrong?", "context": "Ask about an event or problem.", "category": "consonant-yo" },
+    { "bn": "এটা হয়।", "pronunciation": "eta hoy.", "en": "This happens.", "context": "Say that something occurs.", "category": "consonant-yo" },
+    { "bn": "এমন হয়।", "pronunciation": "emon hoy.", "en": "This happens / It can be like this.", "context": "Reassure someone that an event is normal.", "category": "consonant-yo" },
+    { "bn": "কখন হয়?", "pronunciation": "kokhon hoy?", "en": "When does it happen?", "context": "Ask when something occurs.", "category": "consonant-yo" },
+    { "bn": "কিছু হয়নি।", "pronunciation": "kichhu hoyni.", "en": "Nothing happened.", "context": "Reassure someone after an event.", "category": "consonant-yo" },
+    { "bn": "অনেক হয়েছে।", "pronunciation": "onek hoyechhe.", "en": "That's enough / It's been a lot.", "context": "Say that something should stop or has been sufficient.", "category": "consonant-yo" },
+    { "bn": "কাজ শেষ হয়েছে।", "pronunciation": "kaj shesh hoyechhe.", "en": "The work is finished.", "context": "Report completed work.", "category": "consonant-yo" },
+    { "bn": "রান্না হয়ে গেছে।", "pronunciation": "ranna hoye gechhe.", "en": "The cooking is done / The food is ready.", "context": "Announce that cooking is complete.", "category": "consonant-yo" },
+    { "bn": "হয়তো।", "pronunciation": "hoyto.", "en": "Maybe.", "context": "Express uncertainty.", "category": "consonant-yo" },
+    { "bn": "হয়তো সে আসবে।", "pronunciation": "hoyto she ashbe.", "en": "Maybe he/she will come.", "context": "Express uncertainty about someone's arrival.", "category": "consonant-yo" },
+    { "bn": "হয়তো কাল।", "pronunciation": "hoyto kal.", "en": "Maybe tomorrow.", "context": "Suggest an uncertain future time.", "category": "consonant-yo" },
+    { "bn": "হয়তো না।", "pronunciation": "hoyto na.", "en": "Maybe not.", "context": "Express negative uncertainty.", "category": "consonant-yo" },
+    { "bn": "আমি হয়তো যাব।", "pronunciation": "ami hoyto jabo.", "en": "I might go.", "context": "Describe an uncertain plan.", "category": "consonant-yo" },
+    { "bn": "এটা আমার নয়।", "pronunciation": "eta amar noy.", "en": "This isn't mine.", "context": "Deny ownership.", "category": "consonant-yo" },
+    { "bn": "সে ডাক্তার নয়।", "pronunciation": "she daktar noy.", "en": "He/she isn't a doctor.", "context": "Negate someone's identity or profession.", "category": "consonant-yo" },
+    { "bn": "এটা সত্য নয়।", "pronunciation": "eta shotyo noy.", "en": "This isn't true.", "context": "Reject a statement as false.", "category": "consonant-yo" },
+    { "bn": "এটা সহজ নয়।", "pronunciation": "eta shohoj noy.", "en": "This isn't easy.", "context": "Describe something as difficult.", "category": "consonant-yo" },
+    { "bn": "কত সময় লাগবে?", "pronunciation": "koto shomoy lagbe?", "en": "How long will it take?", "context": "Ask about required time.", "category": "consonant-yo" },
+    { "bn": "সময় নেই।", "pronunciation": "shomoy nei.", "en": "There's no time.", "context": "Say that time is unavailable.", "category": "consonant-yo" },
+    { "bn": "আমার সময় আছে।", "pronunciation": "amar shomoy achhe.", "en": "I have time.", "context": "Say that you are available.", "category": "consonant-yo" },
+    { "bn": "এখন সময় আছে?", "pronunciation": "ekhon shomoy achhe?", "en": "Do you have time now?", "context": "Ask about current availability.", "category": "consonant-yo" },
+    { "bn": "সময় হয়ে গেছে।", "pronunciation": "shomoy hoye gechhe.", "en": "It's time.", "context": "Say that the appointed time has arrived.", "category": "consonant-yo" },
+    { "bn": "আমার ভয় লাগছে।", "pronunciation": "amar bhoy lagchhe.", "en": "I'm scared.", "context": "Express fear.", "category": "consonant-yo" },
+    { "bn": "ভয় পেও না।", "pronunciation": "bhoy peo na.", "en": "Don't be afraid.", "context": "Reassure someone.", "category": "consonant-yo" },
+    { "bn": "আমি ভয় পাই না।", "pronunciation": "ami bhoy pai na.", "en": "I'm not afraid.", "context": "Deny feeling fear.", "category": "consonant-yo" },
+    { "bn": "এটা ভয়ানক।", "pronunciation": "eta bhoyanok.", "en": "This is scary / terrible.", "context": "Describe something frightening or awful.", "category": "consonant-yo" },
+    { "bn": "কীসের ভয়?", "pronunciation": "kisher bhoy?", "en": "Afraid of what?", "context": "Ask what someone fears.", "category": "consonant-yo" },
+    { "bn": "তোমার বয়স কত?", "pronunciation": "tomar boyosh koto?", "en": "How old are you?", "context": "Ask someone's age.", "category": "consonant-yo" },
+    { "bn": "আমার বয়স দশ বছর।", "pronunciation": "amar boyosh dosh bochhor.", "en": "I'm ten years old.", "context": "State an age.", "category": "consonant-yo" },
+    { "bn": "তার বয়স কত?", "pronunciation": "tar boyosh koto?", "en": "How old is he/she?", "context": "Ask another person's age.", "category": "consonant-yo" },
+    { "bn": "বয়স হয়েছে।", "pronunciation": "boyosh hoyechhe.", "en": "Has gotten older / is aged.", "context": "Describe aging.", "category": "consonant-yo" },
+    { "bn": "কোনো উপায় আছে?", "pronunciation": "kono upay achhe?", "en": "Is there any way?", "context": "Ask whether a solution exists.", "category": "consonant-yo" },
+    { "bn": "আর কোনো উপায় নেই।", "pronunciation": "ar kono upay nei.", "en": "There is no other way.", "context": "Say there is no alternative.", "category": "consonant-yo" },
+    { "bn": "এটাই একমাত্র উপায়।", "pronunciation": "etai ekmatro upay.", "en": "This is the only way.", "context": "Identify the sole solution.", "category": "consonant-yo" },
+    { "bn": "কোনো উপায় নেই।", "pronunciation": "kono upay nei.", "en": "There's no way.", "context": "State that no solution exists.", "category": "consonant-yo" },
+    { "bn": "আমার সাহায্য দরকার।", "pronunciation": "amar shahajjo dorkar.", "en": "I need help.", "context": "Ask for assistance.", "category": "consonant-yo" },
+    { "bn": "তোমার পরিচয় কী?", "pronunciation": "tomar porichoy ki?", "en": "What is your identity?", "context": "Ask someone to identify themselves.", "category": "consonant-yo" },
+    { "bn": "দয়া করে।", "pronunciation": "doya kore.", "en": "Please.", "context": "Make a polite request.", "category": "consonant-yo" },
+    { "bn": "নিশ্চয়।", "pronunciation": "nishchoy.", "en": "Certainly / Sure.", "context": "Express confident agreement.", "category": "consonant-yo" }
   ],
   "vocab": [
-    {
-      "bn": "য়",
-      "pronunciation": "yô",
-      "en": "yô: y as in yes",
-      "category": "consonant-yo",
-      "sourcePhrase": "সময় শব্দে য় আছে।"
-    },
-    {
-      "bn": "সময়",
-      "pronunciation": "shômôy",
-      "en": "time",
-      "category": "consonant-yo",
-      "sourcePhrase": "সময় শব্দে য় আছে।"
-    },
-    {
-      "bn": "দয়া",
-      "pronunciation": "dôya",
-      "en": "kindness",
-      "category": "consonant-yo",
-      "sourcePhrase": "দয়া শব্দে য় আছে।"
-    },
-    {
-      "bn": "ময়ূর",
-      "pronunciation": "môyur",
-      "en": "peacock",
-      "category": "consonant-yo",
-      "sourcePhrase": "ময়ূর শব্দে য় আছে।"
-    }
+    { "bn": "য়", "pronunciation": "yô", "en": "ontostho yô; usually y as in yes", "category": "Letter" },
+    { "bn": "হয়", "pronunciation": "hoy", "en": "happens / is / becomes", "category": "The হয় Family" },
+    { "bn": "হয়ে", "pronunciation": "hoye", "en": "becoming / having become", "category": "The হয় Family" },
+    { "bn": "হয়েছে", "pronunciation": "hoyechhe", "en": "has happened / has become", "category": "The হয় Family" },
+    { "bn": "হয়নি", "pronunciation": "hoyni", "en": "did not happen", "category": "The হয় Family" },
+    { "bn": "হয়তো", "pronunciation": "hoyto", "en": "maybe", "category": "The হয় Family" },
+    { "bn": "নয়", "pronunciation": "noy", "en": "is not", "category": "The নয় Pattern" },
+    { "bn": "সময়", "pronunciation": "shomoy", "en": "time", "category": "Common Words Containing য়" },
+    { "bn": "বয়স", "pronunciation": "boyosh", "en": "age", "category": "Common Words Containing য়" },
+    { "bn": "ভয়", "pronunciation": "bhoy", "en": "fear", "category": "Common Words Containing য়" },
+    { "bn": "ভয়ানক", "pronunciation": "bhoyanok", "en": "scary / terrible", "category": "Common Words Containing য়" },
+    { "bn": "প্রয়োজন", "pronunciation": "proyojon", "en": "need / necessity", "category": "Common Words Containing য়" },
+    { "bn": "বিষয়", "pronunciation": "bishoy", "en": "subject / matter", "category": "Common Words Containing য়" },
+    { "bn": "উপায়", "pronunciation": "upay", "en": "way / solution", "category": "Common Words Containing য়" },
+    { "bn": "পরিচয়", "pronunciation": "porichoy", "en": "identity / introduction", "category": "Common Words Containing য়" },
+    { "bn": "সিদ্ধান্ত নেওয়া", "pronunciation": "shiddhanto neoa", "en": "to make a decision", "category": "Common Words Containing য়" },
+    { "bn": "দয়া", "pronunciation": "doya", "en": "kindness / please", "category": "Common Words Containing য়" },
+    { "bn": "মায়া", "pronunciation": "maya", "en": "affection", "category": "Common Words Containing য়" },
+    { "bn": "ছায়া", "pronunciation": "chhaya", "en": "shadow", "category": "Common Words Containing য়" },
+    { "bn": "আয়না", "pronunciation": "ayna", "en": "mirror", "category": "Common Words Containing য়" },
+    { "bn": "আয়োজন", "pronunciation": "ayojon", "en": "arrangement / event organization", "category": "Common Words Containing য়" },
+    { "bn": "ব্যয়", "pronunciation": "byoy", "en": "expense", "category": "Common Words Containing য়" },
+    { "bn": "জয়", "pronunciation": "joy", "en": "victory", "category": "Common Words Containing য়" },
+    { "bn": "পরাজয়", "pronunciation": "porajoy", "en": "defeat", "category": "Common Words Containing য়" },
+    { "bn": "নিশ্চয়", "pronunciation": "nishchoy", "en": "surely", "category": "Common Words Containing য়" },
+    { "bn": "স্বাস্থ্য", "pronunciation": "shasthyo", "en": "health; uses য-ফলা (্য), not standalone য়", "category": "Spelling Note: য-ফলা" },
+    { "bn": "সাহায্য", "pronunciation": "shahajjo", "en": "help; uses য-ফলা (্য), not standalone য়", "category": "Spelling Note: য-ফলা" },
+    { "bn": "মূল্য", "pronunciation": "mullo", "en": "value / price; uses য-ফলা (্য), not standalone য়", "category": "Spelling Note: য-ফলা" },
+    { "bn": "লক্ষ্য", "pronunciation": "lokkho", "en": "goal; uses য-ফলা (্য), not standalone য়", "category": "Spelling Note: য-ফলা" },
+    { "bn": "ভাগ্য", "pronunciation": "bhaggo", "en": "luck / fate; uses য-ফলা (্য), not standalone য়", "category": "Spelling Note: য-ফলা" },
+    { "bn": "সত্য", "pronunciation": "shotyo", "en": "truth; uses য-ফলা (্য), not standalone য়", "category": "Spelling Note: য-ফলা" },
+    { "bn": "ন্যায়", "pronunciation": "nyay", "en": "justice", "category": "Common Words Containing য়" },
+    { "bn": "অন্যায়", "pronunciation": "onnyay", "en": "injustice", "category": "Common Words Containing য়" },
+    { "bn": "যাওয়া", "pronunciation": "jaoa", "en": "to go; begins with য, not য়", "category": "য vs য়" },
+    { "bn": "যদি", "pronunciation": "jodi", "en": "if; begins with য, not য়", "category": "য vs য়" },
+    { "bn": "যখন", "pronunciation": "jokhon", "en": "when; begins with য, not য়", "category": "য vs য়" },
+    { "bn": "যে", "pronunciation": "je", "en": "that / who; begins with য, not য়", "category": "য vs য়" },
+    { "bn": "যেমন", "pronunciation": "jemon", "en": "such as; begins with য, not য়", "category": "য vs য়" }
   ],
   "practice": [
     "Say য় three times: yô, yô, yô.",
-    "Find য় in each example word and read the whole word aloud.",
-    "Write য় five times while saying its name."
+    "Find য় inside হয়, হয়েছে, হয়তো, নয়, সময়, বয়স, ভয়, উপায়, বিষয়, দয়া, মায়া, ছায়া, and জয়.",
+    "Practice the হয় family: হয়, হয়ে, হয়েছে, হয়নি, and হয়তো.",
+    "Contrast না and নয়: না is the general no/not word, while নয় means is not when negating identity or description.",
+    "Compare য and য় visually: য has no dot underneath, while য় has a dot underneath. Learn the distinction through whole words.",
+    "Practice য at the beginning in যাওয়া, যদি, যখন, যে, and যেমন; practice য় inside or at the end in হয়, সময়, ভয়, বয়স, and উপায়.",
+    "Read the y glides aloud: হয় (hoy), সময় (shomoy), ভয় (bhoy), জয় (joy), উপায় (upay), দয়া (doya), মায়া (maya), and ছায়া (chhaya).",
+    "Use হয়, হয়েছে, হয়তো, নয়, সময়, বয়স, ভয়, ভয়ানক, উপায়, বিষয়, প্রয়োজন, পরিচয়, and দয়া as reading anchors.",
+    "Recognize these phrases instantly: কী হয়েছে, হয়তো, এটা আমার নয়, তোমার বয়স কত, and কোনো উপায় নেই."
   ],
   "notes": [
-    "য় is pronounced approximately y as in yes.",
-    "য় is distinct from য in modern Bengali spelling and represents a y sound."
+    "য় is called অন্তঃস্থ য় (ôntôsthô yô) and usually contributes a y sound like the y in English yes.",
+    "য় rarely begins ordinary Bangla words. It usually appears in the middle or at the end and often creates a y glide.",
+    "য and য় are different letters. য commonly begins words such as যদি and যখন, while য় appears in words such as হয়, সময়, ভয়, বয়স, and উপায়.",
+    "Do not confuse standalone য় with য-ফলা (্য). Words such as স্বাস্থ্য, সাহায্য, মূল্য, লক্ষ্য, ভাগ্য, and সত্য use য-ফলা, not standalone য়.",
+    "A useful visual reminder is that য has no dot underneath, while য় has a dot underneath.",
+    "হয় is extremely common and can mean is, happens, becomes, or occurs depending on context. নয় means is not.",
+    "Best য় words to memorize include হয়, হয়ে, হয়েছে, হয়তো, নয়, সময়, বয়স, ভয়, ভয়ানক, উপায়, বিষয়, প্রয়োজন, পরিচয়, দয়া, মায়া, ছায়া, আয়না, জয়, পরাজয়, and নিশ্চয়."
   ]
 }

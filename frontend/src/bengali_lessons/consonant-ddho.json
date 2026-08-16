@@ -1,136 +1,68 @@
 {
   "id": "consonant-ddho",
   "title": "ঢ — ḍhô",
-  "summary": "Learn ঢ, pronounced ḍhô, and recognize it in three useful Bengali words.",
+  "summary": "Learn the Bangla consonant ঢ, its aspirated retroflex ḍh sound, vowel-sign forms, and useful words and phrases.",
   "level": "beginner",
   "topic": "Consonant: ঢ",
   "focus": "character recognition and pronunciation",
   "phrases": [
-    {
-      "bn": "ঢাক শব্দে ঢ আছে।",
-      "pronunciation": "ḍhak shôbde ḍhô achhe",
-      "en": "The word “ঢাক” contains ঢ.",
-      "context": "Find ঢ in ঢাক and say the complete word aloud.",
-      "category": "consonant-ddho",
-      "words": [
-        {
-          "bn": "ঢাক",
-          "pronunciation": "ḍhak",
-          "en": "drum"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ঢ",
-          "pronunciation": "ḍhô",
-          "en": "the ḍhô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "ঢাকা শব্দে ঢ আছে।",
-      "pronunciation": "ḍhaka shôbde ḍhô achhe",
-      "en": "The word “ঢাকা” contains ঢ.",
-      "context": "Find ঢ in ঢাকা and say the complete word aloud.",
-      "category": "consonant-ddho",
-      "words": [
-        {
-          "bn": "ঢাকা",
-          "pronunciation": "ḍhaka",
-          "en": "Dhaka"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ঢ",
-          "pronunciation": "ḍhô",
-          "en": "the ḍhô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "ঢেউ শব্দে ঢ আছে।",
-      "pronunciation": "ḍheu shôbde ḍhô achhe",
-      "en": "The word “ঢেউ” contains ঢ.",
-      "context": "Find ঢ in ঢেউ and say the complete word aloud.",
-      "category": "consonant-ddho",
-      "words": [
-        {
-          "bn": "ঢেউ",
-          "pronunciation": "ḍheu",
-          "en": "wave"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ঢ",
-          "pronunciation": "ḍhô",
-          "en": "the ḍhô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    }
+    { "bn": "ঢাকা বাংলাদেশের রাজধানী।", "pronunciation": "ḍhaka bangladesher rajdhani.", "en": "Dhaka is the capital of Bangladesh.", "context": "Identify Bangladesh's capital.", "category": "consonant-ddho" },
+    { "bn": "আমি ঢাকা যাব।", "pronunciation": "ami ḍhaka jabo.", "en": "I will go to Dhaka.", "context": "Talk about future travel.", "category": "consonant-ddho" },
+    { "bn": "এটা ঢাকা আছে।", "pronunciation": "eta ḍhaka achhe.", "en": "This is covered.", "context": "Describe something covered.", "category": "consonant-ddho" },
+    { "bn": "ঢাকা অনেক বড় শহর।", "pronunciation": "ḍhaka onek boro shohor.", "en": "Dhaka is a very big city.", "context": "Describe Dhaka.", "category": "consonant-ddho" },
+    { "bn": "ভিতরে ঢোকো।", "pronunciation": "bhitore ḍhoko.", "en": "Go/come inside.", "context": "Invite or direct someone inside.", "category": "consonant-ddho" },
+    { "bn": "ঘরে ঢোকো।", "pronunciation": "ghore ḍhoko.", "en": "Enter the room.", "context": "Tell someone to enter a room.", "category": "consonant-ddho" },
+    { "bn": "আমি ঘরে ঢুকছি।", "pronunciation": "ami ghore ḍhukchhi.", "en": "I'm entering the room.", "context": "Describe entering a room.", "category": "consonant-ddho" },
+    { "bn": "আমি ভিতরে ঢুকছি।", "pronunciation": "ami bhitore ḍhukchhi.", "en": "I'm going inside.", "context": "Describe going inside.", "category": "consonant-ddho" },
+    { "bn": "এটা ভিতরে ঢোকাও।", "pronunciation": "eta bhitore ḍhokao.", "en": "Put this inside.", "context": "Tell someone to insert something.", "category": "consonant-ddho" },
+    { "bn": "এখানে ঢুকবেন না।", "pronunciation": "ekhane ḍhukben na.", "en": "Don't enter here.", "context": "Politely prohibit entry.", "category": "consonant-ddho" },
+    { "bn": "পানি ঢালো।", "pronunciation": "pani ḍhalo.", "en": "Pour the water.", "context": "Tell someone to pour water.", "category": "consonant-ddho" },
+    { "bn": "গ্লাসে পানি ঢালো।", "pronunciation": "glase pani ḍhalo.", "en": "Pour water into the glass.", "context": "Give a pouring instruction.", "category": "consonant-ddho" },
+    { "bn": "এখানে ঢালো।", "pronunciation": "ekhane ḍhalo.", "en": "Pour it here.", "context": "Show where something should be poured.", "category": "consonant-ddho" },
+    { "bn": "সমুদ্রে ঢেউ আছে।", "pronunciation": "shomudre ḍheu achhe.", "en": "There are waves in the sea.", "context": "Describe the sea.", "category": "consonant-ddho" },
+    { "bn": "বড় ঢেউ আসছে।", "pronunciation": "boro ḍheu aschhe.", "en": "A big wave is coming.", "context": "Warn about an approaching wave.", "category": "consonant-ddho" },
+    { "bn": "ঢাকনা খোলো।", "pronunciation": "ḍhakna kholo.", "en": "Open the lid.", "context": "Tell someone to open a lid.", "category": "consonant-ddho" },
+    { "bn": "ঢাকনা লাগাও।", "pronunciation": "ḍhakna lagao.", "en": "Put the lid on.", "context": "Tell someone to replace a lid.", "category": "consonant-ddho" },
+    { "bn": "ঢাকনা কোথায়?", "pronunciation": "ḍhakna kothay?", "en": "Where is the lid?", "context": "Ask where a lid is.", "category": "consonant-ddho" },
+    { "bn": "এটা ঢেকে রাখো।", "pronunciation": "eta ḍheke rakho.", "en": "Keep this covered.", "context": "Tell someone to keep something covered.", "category": "consonant-ddho" },
+    { "bn": "কাপড়টা ঢিলা।", "pronunciation": "kaporta ḍhila.", "en": "The clothing is loose.", "context": "Describe loose clothing.", "category": "consonant-ddho" },
+    { "bn": "ঢোল বাজছে।", "pronunciation": "ḍhol bajchhe.", "en": "The drum is playing.", "context": "Describe the sound of a drum.", "category": "consonant-ddho" },
+    { "bn": "আমার ঢেকুর উঠছে।", "pronunciation": "amar ḍhekur uthchhe.", "en": "I'm burping.", "context": "Describe burping.", "category": "consonant-ddho" }
   ],
   "vocab": [
-    {
-      "bn": "ঢ",
-      "pronunciation": "ḍhô",
-      "en": "ḍhô: an aspirated retroflex d",
-      "category": "consonant-ddho",
-      "sourcePhrase": "ঢাক শব্দে ঢ আছে।"
-    },
-    {
-      "bn": "ঢাক",
-      "pronunciation": "ḍhak",
-      "en": "drum",
-      "category": "consonant-ddho",
-      "sourcePhrase": "ঢাক শব্দে ঢ আছে।"
-    },
-    {
-      "bn": "ঢাকা",
-      "pronunciation": "ḍhaka",
-      "en": "Dhaka",
-      "category": "consonant-ddho",
-      "sourcePhrase": "ঢাকা শব্দে ঢ আছে।"
-    },
-    {
-      "bn": "ঢেউ",
-      "pronunciation": "ḍheu",
-      "en": "wave",
-      "category": "consonant-ddho",
-      "sourcePhrase": "ঢেউ শব্দে ঢ আছে।"
-    }
+    { "bn": "ঢাকা", "pronunciation": "ḍhaka", "en": "Dhaka / covered", "category": "Common Words Beginning with ঢ" },
+    { "bn": "ঢাকনা", "pronunciation": "ḍhakna", "en": "lid / cover", "category": "Common Words Beginning with ঢ" },
+    { "bn": "ঢাক", "pronunciation": "ḍhak", "en": "traditional drum", "category": "Common Words Beginning with ঢ" },
+    { "bn": "ঢাল", "pronunciation": "ḍhal", "en": "slope / shield", "category": "Common Words Beginning with ঢ" },
+    { "bn": "ঢালা", "pronunciation": "ḍhala", "en": "to pour", "category": "Common Words Beginning with ঢ" },
+    { "bn": "ঢেউ", "pronunciation": "ḍheu", "en": "wave", "category": "Common Words Beginning with ঢ" },
+    { "bn": "ঢোকা", "pronunciation": "ḍhoka", "en": "to enter", "category": "Common Words Beginning with ঢ" },
+    { "bn": "ঢোকে", "pronunciation": "ḍhoke", "en": "enters", "category": "Common Words Beginning with ঢ" },
+    { "bn": "ঢুকা", "pronunciation": "ḍhuka", "en": "to enter", "category": "Common Words Beginning with ঢ" },
+    { "bn": "ঢুকে", "pronunciation": "ḍhuke", "en": "entering / having entered", "category": "Common Words Beginning with ঢ" },
+    { "bn": "ঢুকানো", "pronunciation": "ḍhukano", "en": "to insert / put inside", "category": "Common Words Beginning with ঢ" },
+    { "bn": "ঢেকে", "pronunciation": "ḍheke", "en": "covering", "category": "Common Words Beginning with ঢ" },
+    { "bn": "ঢেকে রাখা", "pronunciation": "ḍheke rakha", "en": "to keep covered", "category": "Common Words Beginning with ঢ" },
+    { "bn": "ঢিলা", "pronunciation": "ḍhila", "en": "loose", "category": "Common Words Beginning with ঢ" },
+    { "bn": "ঢোল", "pronunciation": "ḍhol", "en": "drum", "category": "Common Words Beginning with ঢ" },
+    { "bn": "ঢোলক", "pronunciation": "ḍholok", "en": "hand drum", "category": "Common Words Beginning with ঢ" },
+    { "bn": "ঢং", "pronunciation": "ḍhong", "en": "manner / affectation", "category": "Common Words Beginning with ঢ" },
+    { "bn": "ঢেঁকি", "pronunciation": "ḍhẽki", "en": "traditional rice-pounding tool", "category": "Common Words Beginning with ঢ" },
+    { "bn": "ঢেঁড়স", "pronunciation": "ḍhẽros", "en": "okra", "category": "Common Words Beginning with ঢ" },
+    { "bn": "ঢেকুর", "pronunciation": "ḍhekur", "en": "burp / belch", "category": "Common Words Beginning with ঢ" }
   ],
   "practice": [
-    "Say ঢ three times: ḍhô, ḍhô, ḍhô.",
-    "Find ঢ in each example word and read the whole word aloud.",
-    "Write ঢ five times while saying its name."
+    "Say ঢ three times with a puff of air: ḍhô, ḍhô, ḍhô.",
+    "Practice the vowel forms: ঢ (ḍhô), ঢা (ḍha), ঢি (ḍhi), ঢী (ḍhi, uncommon), ঢু (ḍhu), ঢূ (ḍhu, rare), ঢে (ḍhe), ঢৈ (ḍhoi, rare), ঢো (ḍho), and ঢৌ (ḍhou, rare).",
+    "Read the combinations aloud: ঢ + া = ঢা as in ঢাকা, ঢ + ি = ঢি as in ঢিলা, ঢ + ু = ঢু as in ঢুকা, ঢ + ে = ঢে as in ঢেউ, and ঢ + ো = ঢো as in ঢোকা.",
+    "Curl the tongue slightly backward and compare ড (ḍ) with ঢ (ḍh, extra air): ডাল / ঢাল, ডাক / ঢাকা, and ডিম / ঢোকা.",
+    "Practice the useful verb family: ঢোকা, ঢুকছি, ঢুকতে, ঢুকে, and ঢুকবেন না.",
+    "Use ঢাকা, ঢাকনা, ঢালা, ঢেউ, ঢোকা, ঢুকতে, ঢিলা, and ঢোল as quick reading anchors."
   ],
   "notes": [
-    "ঢ is pronounced approximately an aspirated retroflex d.",
-    "Listen to the audio and compare ঢ across the example words."
+    "ঢ is a Bangla consonant named ḍhô. Its sound is roughly dh with the tongue curled slightly backward.",
+    "ঢ is the aspirated partner of ড: the tongue position is similar, but ঢ has an extra puff of air.",
+    "Compare ডাল (ḍal, lentils), ডাক (ḍak, call/mail), and ডিম (ḍim, egg) with ঢাল (ḍhal, slope/shield), ঢাকা (ḍhaka, Dhaka), and ঢোকা (ḍhoka, to enter).",
+    "Best words to memorize include ঢাকা, ঢাকনা, ঢালা, ঢেউ, ঢোকা, ঢুকা, ঢুকে, ঢুকানো, ঢেকে, ঢিলা, ঢাল, ঢোল, ঢাক, ঢেঁড়স, and ঢেকুর."
   ]
 }

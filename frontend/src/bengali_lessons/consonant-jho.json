@@ -1,136 +1,80 @@
 {
   "id": "consonant-jho",
   "title": "ঝ — jhô",
-  "summary": "Learn ঝ, pronounced jhô, and recognize it in three useful Bengali words.",
+  "summary": "Learn the Bangla consonant ঝ, its aspirated jh sound, vowel-sign forms, and useful words and phrases.",
   "level": "beginner",
   "topic": "Consonant: ঝ",
   "focus": "character recognition and pronunciation",
   "phrases": [
-    {
-      "bn": "ঝড় শব্দে ঝ আছে।",
-      "pronunciation": "jhôṛ shôbde jhô achhe",
-      "en": "The word “ঝড়” contains ঝ.",
-      "context": "Find ঝ in ঝড় and say the complete word aloud.",
-      "category": "consonant-jho",
-      "words": [
-        {
-          "bn": "ঝড়",
-          "pronunciation": "jhôṛ",
-          "en": "storm"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ঝ",
-          "pronunciation": "jhô",
-          "en": "the jhô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "ঝিনুক শব্দে ঝ আছে।",
-      "pronunciation": "jhinuk shôbde jhô achhe",
-      "en": "The word “ঝিনুক” contains ঝ.",
-      "context": "Find ঝ in ঝিনুক and say the complete word aloud.",
-      "category": "consonant-jho",
-      "words": [
-        {
-          "bn": "ঝিনুক",
-          "pronunciation": "jhinuk",
-          "en": "shell"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ঝ",
-          "pronunciation": "jhô",
-          "en": "the jhô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "মাঝি শব্দে ঝ আছে।",
-      "pronunciation": "majhi shôbde jhô achhe",
-      "en": "The word “মাঝি” contains ঝ.",
-      "context": "Find ঝ in মাঝি and say the complete word aloud.",
-      "category": "consonant-jho",
-      "words": [
-        {
-          "bn": "মাঝি",
-          "pronunciation": "majhi",
-          "en": "boatman"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ঝ",
-          "pronunciation": "jhô",
-          "en": "the jhô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    }
+    { "bn": "অনেক ঝামেলা।", "pronunciation": "onek jhamela.", "en": "A lot of trouble.", "context": "Describe a troublesome situation.", "category": "consonant-jho" },
+    { "bn": "কোনো ঝামেলা নেই।", "pronunciation": "kono jhamela nei.", "en": "No problem / No trouble.", "context": "Reassure someone that there is no problem.", "category": "consonant-jho" },
+    { "bn": "এটা একটা ঝামেলা।", "pronunciation": "eta ekta jhamela.", "en": "This is a hassle.", "context": "Describe something inconvenient.", "category": "consonant-jho" },
+    { "bn": "ঝামেলা করো না।", "pronunciation": "jhamela koro na.", "en": "Don't cause trouble.", "context": "Warn someone not to cause trouble.", "category": "consonant-jho" },
+    { "bn": "ঝগড়া করো না।", "pronunciation": "jhogra koro na.", "en": "Don't argue/fight.", "context": "Ask someone not to argue.", "category": "consonant-jho" },
+    { "bn": "ওরা ঝগড়া করছে।", "pronunciation": "ora jhogra korchhe.", "en": "They are arguing.", "context": "Describe an argument in progress.", "category": "consonant-jho" },
+    { "bn": "কেন ঝগড়া করছ?", "pronunciation": "keno jhogra korchho?", "en": "Why are you arguing?", "context": "Ask why someone is arguing.", "category": "consonant-jho" },
+    { "bn": "এটা ঝাল।", "pronunciation": "eta jhal.", "en": "This is spicy.", "context": "Describe spicy food.", "category": "consonant-jho" },
+    { "bn": "খুব ঝাল!", "pronunciation": "khub jhal!", "en": "Very spicy!", "context": "React to very spicy food.", "category": "consonant-jho" },
+    { "bn": "আমি ঝাল খাবার পছন্দ করি।", "pronunciation": "ami jhal khabar pochhondo kori.", "en": "I like spicy food.", "context": "State a food preference.", "category": "consonant-jho" },
+    { "bn": "কম ঝাল দিন।", "pronunciation": "kom jhal din.", "en": "Make it less spicy / Give me less spicy food.", "context": "Politely request less spice.", "category": "consonant-jho" },
+    { "bn": "ঝড় আসছে।", "pronunciation": "jhor aschhe.", "en": "A storm is coming.", "context": "Warn about an approaching storm.", "category": "consonant-jho" },
+    { "bn": "বাইরে ঝড় হচ্ছে।", "pronunciation": "baire jhor hochchhe.", "en": "There's a storm outside.", "context": "Describe stormy weather.", "category": "consonant-jho" },
+    { "bn": "আজ ঝড় হতে পারে।", "pronunciation": "aj jhor hote pare.", "en": "There may be a storm today.", "context": "Talk about possible weather.", "category": "consonant-jho" },
+    { "bn": "এটা ঝুঁকিপূর্ণ।", "pronunciation": "eta jhũkipurno.", "en": "This is risky.", "context": "Warn that something is dangerous.", "category": "consonant-jho" },
+    { "bn": "অনেক ঝুঁকি আছে।", "pronunciation": "onek jhũki achhe.", "en": "There is a lot of risk.", "context": "Describe a risky situation.", "category": "consonant-jho" },
+    { "bn": "ঝুঁকি নিও না।", "pronunciation": "jhũki nio na.", "en": "Don't take the risk.", "context": "Warn someone against taking a risk.", "category": "consonant-jho" },
+    { "bn": "পানিতে ঝাঁপ দাও।", "pronunciation": "panite jhãp dao.", "en": "Jump into the water.", "context": "Tell someone to jump into water.", "category": "consonant-jho" },
+    { "bn": "ঝাড়ু দাও।", "pronunciation": "jharu dao.", "en": "Sweep the floor.", "context": "Ask someone to sweep.", "category": "consonant-jho" },
+    { "bn": "ঝাড়ু কোথায়?", "pronunciation": "jharu kothay?", "en": "Where is the broom?", "context": "Ask where the broom is.", "category": "consonant-jho" },
+    { "bn": "এটা ঝাঁকাও।", "pronunciation": "eta jhãkao.", "en": "Shake this.", "context": "Tell someone to shake something.", "category": "consonant-jho" },
+    { "bn": "এখানে ঝুলিয়ে দাও।", "pronunciation": "ekhane jhuliye dao.", "en": "Hang it here.", "context": "Show where something should be hung.", "category": "consonant-jho" },
+    { "bn": "ছবিটা ঝাপসা।", "pronunciation": "chhobita jhapsha.", "en": "The picture is blurry.", "context": "Describe an unclear picture.", "category": "consonant-jho" },
+    { "bn": "পানি ঝরছে।", "pronunciation": "pani jhorchhe.", "en": "Water is dripping.", "context": "Describe dripping water.", "category": "consonant-jho" },
+    { "bn": "ঝোলটা ভালো।", "pronunciation": "jholta bhalo.", "en": "The curry/gravy is good.", "context": "Compliment a curry or gravy.", "category": "consonant-jho" }
   ],
   "vocab": [
-    {
-      "bn": "ঝ",
-      "pronunciation": "jhô",
-      "en": "jhô: an aspirated j",
-      "category": "consonant-jho",
-      "sourcePhrase": "ঝড় শব্দে ঝ আছে।"
-    },
-    {
-      "bn": "ঝড়",
-      "pronunciation": "jhôṛ",
-      "en": "storm",
-      "category": "consonant-jho",
-      "sourcePhrase": "ঝড় শব্দে ঝ আছে।"
-    },
-    {
-      "bn": "ঝিনুক",
-      "pronunciation": "jhinuk",
-      "en": "shell",
-      "category": "consonant-jho",
-      "sourcePhrase": "ঝিনুক শব্দে ঝ আছে।"
-    },
-    {
-      "bn": "মাঝি",
-      "pronunciation": "majhi",
-      "en": "boatman",
-      "category": "consonant-jho",
-      "sourcePhrase": "মাঝি শব্দে ঝ আছে।"
-    }
+    { "bn": "ঝড়", "pronunciation": "jhor", "en": "storm", "category": "Common Words Beginning with ঝ" },
+    { "bn": "ঝড়ো", "pronunciation": "jhoro", "en": "stormy", "category": "Common Words Beginning with ঝ" },
+    { "bn": "ঝগড়া", "pronunciation": "jhogra", "en": "argument / fight", "category": "Common Words Beginning with ঝ" },
+    { "bn": "ঝামেলা", "pronunciation": "jhamela", "en": "trouble / hassle", "category": "Common Words Beginning with ঝ" },
+    { "bn": "ঝাল", "pronunciation": "jhal", "en": "spicy", "category": "Common Words Beginning with ঝ" },
+    { "bn": "ঝাঁপ", "pronunciation": "jhãp", "en": "jump / leap", "category": "Common Words Beginning with ঝ" },
+    { "bn": "ঝাঁপানো", "pronunciation": "jhãpano", "en": "to jump", "category": "Common Words Beginning with ঝ" },
+    { "bn": "ঝাঁক", "pronunciation": "jhãk", "en": "group / flock", "category": "Common Words Beginning with ঝ" },
+    { "bn": "ঝাঁটা", "pronunciation": "jhãta", "en": "broom", "category": "Common Words Beginning with ঝ" },
+    { "bn": "ঝাঁকানো", "pronunciation": "jhãkano", "en": "to shake", "category": "Common Words Beginning with ঝ" },
+    { "bn": "ঝাড়ু", "pronunciation": "jharu", "en": "broom", "category": "Common Words Beginning with ঝ" },
+    { "bn": "ঝাড়ু দেওয়া", "pronunciation": "jharu deoa", "en": "to sweep", "category": "Common Words Beginning with ঝ" },
+    { "bn": "ঝরনা", "pronunciation": "jhorna", "en": "waterfall", "category": "Common Words Beginning with ঝ" },
+    { "bn": "ঝরা", "pronunciation": "jhora", "en": "to fall / shed", "category": "Common Words Beginning with ঝ" },
+    { "bn": "ঝিল", "pronunciation": "jhil", "en": "lake / small body of water", "category": "Common Words Beginning with ঝ" },
+    { "bn": "ঝিনুক", "pronunciation": "jhinuk", "en": "shell / oyster", "category": "Common Words Beginning with ঝ" },
+    { "bn": "ঝিঁঝিঁ পোকা", "pronunciation": "jhĩjhĩ poka", "en": "cricket (insect)", "category": "Common Words Beginning with ঝ" },
+    { "bn": "ঝুলা", "pronunciation": "jhula", "en": "to hang", "category": "Common Words Beginning with ঝ" },
+    { "bn": "ঝুলানো", "pronunciation": "jhulano", "en": "to hang something", "category": "Common Words Beginning with ঝ" },
+    { "bn": "ঝুঁকি", "pronunciation": "jhũki", "en": "risk", "category": "Common Words Beginning with ঝ" },
+    { "bn": "ঝুঁকিপূর্ণ", "pronunciation": "jhũkipurno", "en": "risky / dangerous", "category": "Common Words Beginning with ঝ" },
+    { "bn": "ঝুঁকে", "pronunciation": "jhũke", "en": "bending / leaning", "category": "Common Words Beginning with ঝ" },
+    { "bn": "ঝোপ", "pronunciation": "jhop", "en": "bush / shrub", "category": "Common Words Beginning with ঝ" },
+    { "bn": "ঝোল", "pronunciation": "jhol", "en": "curry / gravy", "category": "Common Words Beginning with ঝ" },
+    { "bn": "ঝোলা", "pronunciation": "jhola", "en": "bag / hanging", "category": "Common Words Beginning with ঝ" },
+    { "bn": "ঝকঝকে", "pronunciation": "jhokjhoke", "en": "shiny / sparkling", "category": "Common Words Beginning with ঝ" },
+    { "bn": "ঝাপসা", "pronunciation": "jhapsha", "en": "blurry", "category": "Common Words Beginning with ঝ" },
+    { "bn": "ঝটপট", "pronunciation": "jhotpot", "en": "quickly", "category": "Common Words Beginning with ঝ" },
+    { "bn": "ঝিমানো", "pronunciation": "jhimano", "en": "to feel drowsy", "category": "Common Words Beginning with ঝ" }
   ],
   "practice": [
-    "Say ঝ three times: jhô, jhô, jhô.",
-    "Find ঝ in each example word and read the whole word aloud.",
-    "Write ঝ five times while saying its name."
+    "Say ঝ three times with extra air: jhô, jhô, jhô.",
+    "Practice the vowel forms: ঝ (jhô), ঝা (jha), ঝি (jhi), ঝী (jhi, uncommon), ঝু (jhu), ঝূ (jhu, rare), ঝে (jhe), ঝৈ (jhoi, rare), ঝো (jho), and ঝৌ (jhou, rare).",
+    "Read the combinations aloud: ঝ + া = ঝা as in ঝাল, ঝ + ি = ঝি as in ঝিনুক, ঝ + ু = ঝু as in ঝুলা, ঝ + ে = ঝে as in ঝেড়ে, and ঝ + ো = ঝো as in ঝোল.",
+    "Compare জ (j) with ঝ (jh, extra air): জল / ঝড়, জানালা / ঝাল, and জানা / ঝামেলা.",
+    "Use ঝড়, ঝাল, ঝামেলা, ঝগড়া, ঝাঁপ, ঝাড়ু, ঝুঁকি, and ঝোল as quick reading anchors.",
+    "Recognize these phrases instantly: কোনো ঝামেলা নেই, ঝগড়া করো না, খুব ঝাল, ঝড় আসছে, and এটা ঝুঁকিপূর্ণ."
   ],
   "notes": [
-    "ঝ is pronounced approximately an aspirated j.",
-    "Listen to the audio and compare ঝ across the example words."
+    "ঝ is a Bangla consonant named jhô. It is the aspirated partner of জ and is pronounced with extra air.",
+    "The vowel-sign forms include ঝ (jhô), ঝা (jha), ঝি (jhi), ঝী (jhi), ঝু (jhu), ঝূ (jhu), ঝে (jhe), ঝৈ (jhoi), ঝো (jho), and ঝৌ (jhou). Examples include ঝড়, ঝাল, ঝিনুক, ঝুলা, ঝেড়ে, and ঝোল.",
+    "Compare জল (jol, water), জানালা (janala, window), and জানা (jana, to know) with ঝাল (jhal, spicy), ঝড় (jhor, storm), ঝামেলা (jhamela, trouble), and ঝগড়া (jhogra, argument).",
+    "Best words to memorize include ঝামেলা, ঝগড়া, ঝাল, ঝড়, ঝড়ো, ঝাঁপ, ঝাঁক, ঝাঁকানো, ঝাঁটা, ঝাড়ু, ঝরনা, ঝিনুক, ঝুলানো, ঝুঁকি, ঝুঁকিপূর্ণ, ঝোপ, ঝোল, ঝাপসা, ঝকঝকে, and ঝটপট."
   ]
 }

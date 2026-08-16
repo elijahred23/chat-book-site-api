@@ -1,136 +1,98 @@
 {
   "id": "consonant-jo",
   "title": "জ — jô",
-  "summary": "Learn জ, pronounced jô, and recognize it in three useful Bengali words.",
+  "summary": "Learn the common Bangla consonant জ, its j sound, vowel-sign forms, and how it differs from ঝ and য.",
   "level": "beginner",
   "topic": "Consonant: জ",
   "focus": "character recognition and pronunciation",
   "phrases": [
-    {
-      "bn": "জল শব্দে জ আছে।",
-      "pronunciation": "jôl shôbde jô achhe",
-      "en": "The word “জল” contains জ.",
-      "context": "Find জ in জল and say the complete word aloud.",
-      "category": "consonant-jo",
-      "words": [
-        {
-          "bn": "জল",
-          "pronunciation": "jôl",
-          "en": "water"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "জ",
-          "pronunciation": "jô",
-          "en": "the jô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "জাহাজ শব্দে জ আছে।",
-      "pronunciation": "jahaj shôbde jô achhe",
-      "en": "The word “জাহাজ” contains জ.",
-      "context": "Find জ in জাহাজ and say the complete word aloud.",
-      "category": "consonant-jo",
-      "words": [
-        {
-          "bn": "জাহাজ",
-          "pronunciation": "jahaj",
-          "en": "ship"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "জ",
-          "pronunciation": "jô",
-          "en": "the jô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "আজ শব্দে জ আছে।",
-      "pronunciation": "aj shôbde jô achhe",
-      "en": "The word “আজ” contains জ.",
-      "context": "Find জ in আজ and say the complete word aloud.",
-      "category": "consonant-jo",
-      "words": [
-        {
-          "bn": "আজ",
-          "pronunciation": "aj",
-          "en": "today"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "জ",
-          "pronunciation": "jô",
-          "en": "the jô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    }
+    { "bn": "আমি জানি।", "pronunciation": "ami jani.", "en": "I know.", "context": "Confirm that you know something.", "category": "consonant-jo" },
+    { "bn": "আমি জানি না।", "pronunciation": "ami jani na.", "en": "I don't know.", "context": "Say that you do not know.", "category": "consonant-jo" },
+    { "bn": "তুমি কি জানো?", "pronunciation": "tumi ki jano?", "en": "Do you know?", "context": "Ask whether someone knows.", "category": "consonant-jo" },
+    { "bn": "আমি জানতে চাই।", "pronunciation": "ami jante chai.", "en": "I want to know.", "context": "Express a desire to learn something.", "category": "consonant-jo" },
+    { "bn": "আমাকে জানাও।", "pronunciation": "amake janao.", "en": "Let me know.", "context": "Ask someone to inform you.", "category": "consonant-jo" },
+    { "bn": "এই জায়গাটা কোথায়?", "pronunciation": "ei jaygata kothay?", "en": "Where is this place?", "context": "Ask for a place's location.", "category": "consonant-jo" },
+    { "bn": "এখানে জায়গা আছে।", "pronunciation": "ekhane jayga achhe.", "en": "There is space here.", "context": "Say that space is available.", "category": "consonant-jo" },
+    { "bn": "এই জায়গাটা সুন্দর।", "pronunciation": "ei jaygata shundor.", "en": "This place is beautiful.", "context": "Describe a place positively.", "category": "consonant-jo" },
+    { "bn": "কোনো জায়গা নেই।", "pronunciation": "kono jayga nei.", "en": "There is no space.", "context": "Say that no space is available.", "category": "consonant-jo" },
+    { "bn": "এটা কী জিনিস?", "pronunciation": "eta ki jinish?", "en": "What is this thing?", "context": "Ask what an object is.", "category": "consonant-jo" },
+    { "bn": "আমার জিনিস কোথায়?", "pronunciation": "amar jinish kothay?", "en": "Where are my things?", "context": "Ask where your belongings are.", "category": "consonant-jo" },
+    { "bn": "এই জিনিসটা ভালো।", "pronunciation": "ei jinishta bhalo.", "en": "This thing is good.", "context": "Describe an item positively.", "category": "consonant-jo" },
+    { "bn": "অনেক জিনিস আছে।", "pronunciation": "onek jinish achhe.", "en": "There are many things.", "context": "Describe a large number of items.", "category": "consonant-jo" },
+    { "bn": "এটা জরুরি।", "pronunciation": "eta joruri.", "en": "This is urgent.", "context": "Mark something as urgent.", "category": "consonant-jo" },
+    { "bn": "খুব জরুরি।", "pronunciation": "khub joruri.", "en": "Very urgent.", "context": "Emphasize urgency.", "category": "consonant-jo" },
+    { "bn": "জরুরি সাহায্য দরকার।", "pronunciation": "joruri shahajjo dorkar.", "en": "Emergency help is needed.", "context": "Request urgent help.", "category": "consonant-jo" },
+    { "bn": "শুভ জন্মদিন!", "pronunciation": "shubho jonmodin!", "en": "Happy birthday!", "context": "Wish someone a happy birthday.", "category": "consonant-jo" },
+    { "bn": "আজ আমার জন্মদিন।", "pronunciation": "aj amar jonmodin.", "en": "Today is my birthday.", "context": "State your birthday.", "category": "consonant-jo" },
+    { "bn": "তোমার জন্মদিন কবে?", "pronunciation": "tomar jonmodin kobe?", "en": "When is your birthday?", "context": "Ask someone's birthday.", "category": "consonant-jo" },
+    { "bn": "জানালা খোলো।", "pronunciation": "janala kholo.", "en": "Open the window.", "context": "Ask someone to open a window.", "category": "consonant-jo" },
+    { "bn": "জানালা বন্ধ করো।", "pronunciation": "janala bondho koro.", "en": "Close the window.", "context": "Ask someone to close a window.", "category": "consonant-jo" },
+    { "bn": "জামাটা সুন্দর।", "pronunciation": "jamata shundor.", "en": "The shirt is beautiful.", "context": "Compliment a shirt.", "category": "consonant-jo" },
+    { "bn": "আমার জ্বর হয়েছে।", "pronunciation": "amar jor hoyechhe.", "en": "I have a fever.", "context": "Describe having a fever.", "category": "consonant-jo" },
+    { "bn": "জোরে বলো।", "pronunciation": "jore bolo.", "en": "Speak loudly.", "context": "Ask someone to speak louder.", "category": "consonant-jo" },
+    { "bn": "একটু জোরে বলুন।", "pronunciation": "ektu jore bolun.", "en": "Please speak louder.", "context": "Politely ask someone to speak up.", "category": "consonant-jo" },
+    { "bn": "জুতা পরো।", "pronunciation": "juta poro.", "en": "Put on your shoes.", "context": "Tell someone to put on shoes.", "category": "consonant-jo" },
+    { "bn": "জুতা খোলো।", "pronunciation": "juta kholo.", "en": "Take off your shoes.", "context": "Tell someone to remove shoes.", "category": "consonant-jo" },
+    { "bn": "আমি জিতেছি।", "pronunciation": "ami jitechhi.", "en": "I won.", "context": "Celebrate a victory.", "category": "consonant-jo" },
+    { "bn": "তুমি জিতেছ।", "pronunciation": "tumi jitechho.", "en": "You won.", "context": "Tell someone that they won.", "category": "consonant-jo" },
+    { "bn": "এটা খুব জটিল।", "pronunciation": "eta khub jotil.", "en": "This is very complicated.", "context": "Describe something complex.", "category": "consonant-jo" }
   ],
   "vocab": [
-    {
-      "bn": "জ",
-      "pronunciation": "jô",
-      "en": "jô: j as in jam",
-      "category": "consonant-jo",
-      "sourcePhrase": "জল শব্দে জ আছে।"
-    },
-    {
-      "bn": "জল",
-      "pronunciation": "jôl",
-      "en": "water",
-      "category": "consonant-jo",
-      "sourcePhrase": "জল শব্দে জ আছে।"
-    },
-    {
-      "bn": "জাহাজ",
-      "pronunciation": "jahaj",
-      "en": "ship",
-      "category": "consonant-jo",
-      "sourcePhrase": "জাহাজ শব্দে জ আছে।"
-    },
-    {
-      "bn": "আজ",
-      "pronunciation": "aj",
-      "en": "today",
-      "category": "consonant-jo",
-      "sourcePhrase": "আজ শব্দে জ আছে।"
-    }
+    { "bn": "জল", "pronunciation": "jol", "en": "water", "category": "Common Words Beginning with জ" },
+    { "bn": "জমি", "pronunciation": "jomi", "en": "land", "category": "Common Words Beginning with জ" },
+    { "bn": "জমা", "pronunciation": "joma", "en": "deposit / saved", "category": "Common Words Beginning with জ" },
+    { "bn": "জমা দেওয়া", "pronunciation": "joma deoa", "en": "to submit / deposit", "category": "Common Words Beginning with জ" },
+    { "bn": "জন্ম", "pronunciation": "jonmo", "en": "birth", "category": "Common Words Beginning with জ" },
+    { "bn": "জন্মদিন", "pronunciation": "jonmodin", "en": "birthday", "category": "Common Words Beginning with জ" },
+    { "bn": "জায়গা", "pronunciation": "jayga", "en": "place / space", "category": "Common Words Beginning with জ" },
+    { "bn": "জানা", "pronunciation": "jana", "en": "to know", "category": "Common Words Beginning with জ" },
+    { "bn": "জানি", "pronunciation": "jani", "en": "I know", "category": "Common Words Beginning with জ" },
+    { "bn": "জানো", "pronunciation": "jano", "en": "you know", "category": "Common Words Beginning with জ" },
+    { "bn": "জানতে", "pronunciation": "jante", "en": "to know / learn", "category": "Common Words Beginning with জ" },
+    { "bn": "জানালা", "pronunciation": "janala", "en": "window", "category": "Common Words Beginning with জ" },
+    { "bn": "জামা", "pronunciation": "jama", "en": "shirt / clothing", "category": "Common Words Beginning with জ" },
+    { "bn": "জামাই", "pronunciation": "jamai", "en": "son-in-law", "category": "Common Words Beginning with জ" },
+    { "bn": "জাগা", "pronunciation": "jaga", "en": "to wake", "category": "Common Words Beginning with জ" },
+    { "bn": "জাগানো", "pronunciation": "jagano", "en": "to wake someone", "category": "Common Words Beginning with জ" },
+    { "bn": "জবাব", "pronunciation": "jobab", "en": "answer / reply", "category": "Common Words Beginning with জ" },
+    { "bn": "জরুরি", "pronunciation": "joruri", "en": "urgent / emergency", "category": "Common Words Beginning with জ" },
+    { "bn": "জরিমানা", "pronunciation": "jorimana", "en": "fine / penalty", "category": "Common Words Beginning with জ" },
+    { "bn": "জ্বর", "pronunciation": "jor", "en": "fever", "category": "Common Words Beginning with জ" },
+    { "bn": "জীবন", "pronunciation": "jibon", "en": "life", "category": "Common Words Beginning with জ" },
+    { "bn": "জীবিত", "pronunciation": "jibito", "en": "alive", "category": "Common Words Beginning with জ" },
+    { "bn": "জীব", "pronunciation": "jib", "en": "living being", "category": "Common Words Beginning with জ" },
+    { "bn": "জীবাণু", "pronunciation": "jibanu", "en": "germ", "category": "Common Words Beginning with জ" },
+    { "bn": "জিনিস", "pronunciation": "jinish", "en": "thing / item", "category": "Common Words Beginning with জ" },
+    { "bn": "জিজ্ঞাসা", "pronunciation": "jiggasha", "en": "to ask / question", "category": "Common Words Beginning with জ" },
+    { "bn": "জিত", "pronunciation": "jit", "en": "victory", "category": "Common Words Beginning with জ" },
+    { "bn": "জেতা", "pronunciation": "jeta", "en": "to win", "category": "Common Words Beginning with জ" },
+    { "bn": "জোর", "pronunciation": "jor", "en": "force / loudly", "category": "Common Words Beginning with জ" },
+    { "bn": "জোরে", "pronunciation": "jore", "en": "loudly", "category": "Common Words Beginning with জ" },
+    { "bn": "জোড়া", "pronunciation": "jora", "en": "pair", "category": "Common Words Beginning with জ" },
+    { "bn": "জুতা", "pronunciation": "juta", "en": "shoes", "category": "Common Words Beginning with জ" },
+    { "bn": "জুলাই", "pronunciation": "julai", "en": "July", "category": "Common Words Beginning with জ" },
+    { "bn": "জুন", "pronunciation": "jun", "en": "June", "category": "Common Words Beginning with জ" },
+    { "bn": "জঙ্গল", "pronunciation": "jongol", "en": "forest / jungle", "category": "Common Words Beginning with জ" },
+    { "bn": "জটিল", "pronunciation": "jotil", "en": "complicated", "category": "Common Words Beginning with জ" },
+    { "bn": "জনপ্রিয়", "pronunciation": "jonopriyo", "en": "popular", "category": "Common Words Beginning with জ" },
+    { "bn": "জন", "pronunciation": "jon", "en": "person (classifier)", "category": "Common Words Beginning with জ" },
+    { "bn": "জনগণ", "pronunciation": "jonogon", "en": "the public / people", "category": "Common Words Beginning with জ" },
+    { "bn": "যত্ন", "pronunciation": "jotno", "en": "care", "category": "Related Common Word" }
   ],
   "practice": [
     "Say জ three times: jô, jô, jô.",
-    "Find জ in each example word and read the whole word aloud.",
-    "Write জ five times while saying its name."
+    "Practice the vowel forms: জ (jô), জা (ja), জি (ji), জী (ji), জু (ju), জূ (ju, rare), জে (je), জৈ (joi), জো (jo), and জৌ (jou, rare).",
+    "Read the combinations aloud: জ + া = জা as in জামা, জ + ি = জি as in জিনিস, জ + ী = জী as in জীবন, জ + ু = জু as in জুতা, জ + ে = জে as in জেতা, and জ + ো = জো as in জোর.",
+    "Compare জ (j) with ঝ (jh, extra air): জল / ঝাল, জামা / ঝড়, জানা / ঝামেলা, and জিনিস / ঝগড়া.",
+    "Compare জ and য, which are both commonly pronounced j in modern Bangla: জল, জামা, জীবন, জানা versus যদি, যখন, যে, যাও. Learn the spelling with each word.",
+    "Use জল, জানা, জানি, জামা, জায়গা, জিনিস, জীবন, জুতা, জ্বর, and জোরে as quick reading anchors.",
+    "Recognize these phrases instantly: আমি জানি, আমি জানি না, আমি জানতে চাই, এটা কী জিনিস, and শুভ জন্মদিন."
   ],
   "notes": [
-    "জ is pronounced approximately j as in jam.",
-    "Listen to the audio and compare জ across the example words."
+    "জ is a very common Bangla consonant named jô. Its sound is usually j as in the English word job.",
+    "The vowel-sign forms include জ (jô), জা (ja), জি (ji), জী (ji), জু (ju), জূ (ju), জে (je), জৈ (joi), জো (jo), and জৌ (jou). Examples include জল, জামা, জিনিস, জীবন, জুতা, জেতা, জৈব, and জোর.",
+    "জ and ঝ form a pronunciation pair: জ has a j sound, while ঝ has an aspirated jh sound with a stronger burst of air.",
+    "জ and য are both commonly pronounced with a j sound in modern Bangla, so pronunciation alone does not always reveal the spelling. Learn জ words and য words individually.",
+    "Best words to memorize include জানা, জানি, জায়গা, জিনিস, জল, জামা, জানালা, জন্ম, জন্মদিন, জরুরি, জ্বর, জীবন, জীবিত, জিজ্ঞাসা, জেতা, জোরে, জুতা, জঙ্গল, জটিল, and জনপ্রিয়."
   ]
 }

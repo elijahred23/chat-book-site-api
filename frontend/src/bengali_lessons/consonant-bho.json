@@ -1,136 +1,88 @@
 {
   "id": "consonant-bho",
-  "title": "ভ — bhô",
-  "summary": "Learn ভ, pronounced bhô, and recognize it in three useful Bengali words.",
+  "title": "ভ — bho / bhô",
+  "summary": "Learn the Bengali consonant ভ, its aspirated bh sound, vowel-sign forms, and common words and phrases.",
   "level": "beginner",
   "topic": "Consonant: ভ",
   "focus": "character recognition and pronunciation",
   "phrases": [
-    {
-      "bn": "ভাত শব্দে ভ আছে।",
-      "pronunciation": "bhat shôbde bhô achhe",
-      "en": "The word “ভাত” contains ভ.",
-      "context": "Find ভ in ভাত and say the complete word aloud.",
-      "category": "consonant-bho",
-      "words": [
-        {
-          "bn": "ভাত",
-          "pronunciation": "bhat",
-          "en": "rice"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ভ",
-          "pronunciation": "bhô",
-          "en": "the bhô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "ভালো শব্দে ভ আছে।",
-      "pronunciation": "bhalo shôbde bhô achhe",
-      "en": "The word “ভালো” contains ভ.",
-      "context": "Find ভ in ভালো and say the complete word aloud.",
-      "category": "consonant-bho",
-      "words": [
-        {
-          "bn": "ভালো",
-          "pronunciation": "bhalo",
-          "en": "good"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ভ",
-          "pronunciation": "bhô",
-          "en": "the bhô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "ভাব শব্দে ভ আছে।",
-      "pronunciation": "bhab shôbde bhô achhe",
-      "en": "The word “ভাব” contains ভ.",
-      "context": "Find ভ in ভাব and say the complete word aloud.",
-      "category": "consonant-bho",
-      "words": [
-        {
-          "bn": "ভাব",
-          "pronunciation": "bhab",
-          "en": "idea / thought"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ভ",
-          "pronunciation": "bhô",
-          "en": "the bhô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    }
+    { "bn": "খুব ভালো।", "pronunciation": "khub bhalo.", "en": "Very good.", "context": "Give positive feedback.", "category": "consonant-bho" },
+    { "bn": "আমি ভালো আছি।", "pronunciation": "ami bhalo achhi.", "en": "I am well.", "context": "Describe how you feel.", "category": "consonant-bho" },
+    { "bn": "ভালো হয়েছে।", "pronunciation": "bhalo hoyeche.", "en": "That's good. / It turned out well.", "context": "Praise a result.", "category": "consonant-bho" },
+    { "bn": "ভালো লাগছে।", "pronunciation": "bhalo lagchhe.", "en": "I like it / It feels good.", "context": "Express a positive feeling.", "category": "consonant-bho" },
+    { "bn": "ভালো লাগছে না।", "pronunciation": "bhalo lagchhe na.", "en": "I don't like it / I don't feel well.", "context": "Express dislike or discomfort.", "category": "consonant-bho" },
+    { "bn": "আমি তোমাকে ভালোবাসি।", "pronunciation": "ami tomake bhalobashi.", "en": "I love you.", "context": "Express love.", "category": "consonant-bho" },
+    { "bn": "আমার ভাই", "pronunciation": "amar bhai", "en": "my brother", "context": "Practice ভ in a family phrase.", "category": "consonant-bho" },
+    { "bn": "বড় ভাই", "pronunciation": "boro bhai", "en": "older brother", "context": "Describe an older brother.", "category": "consonant-bho" },
+    { "bn": "ছোট ভাই", "pronunciation": "chhoto bhai", "en": "younger brother", "context": "Describe a younger brother.", "category": "consonant-bho" },
+    { "bn": "ভাত খাব।", "pronunciation": "bhat khabo.", "en": "I will eat rice.", "context": "Describe a future meal.", "category": "consonant-bho" },
+    { "bn": "আমার ভয় লাগছে।", "pronunciation": "amar bhoy lagchhe.", "en": "I'm scared.", "context": "Express fear.", "category": "consonant-bho" },
+    { "bn": "ভয় পেও না।", "pronunciation": "bhoy peyo na.", "en": "Don't be afraid.", "context": "Reassure someone.", "category": "consonant-bho" },
+    { "bn": "এটা ভয়ংকর।", "pronunciation": "eta bhoyongkor.", "en": "This is scary.", "context": "Describe something frightening.", "category": "consonant-bho" },
+    { "bn": "এটা ভুল।", "pronunciation": "eta bhul.", "en": "This is wrong.", "context": "Identify a mistake.", "category": "consonant-bho" },
+    { "bn": "আমার ভুল হয়েছে।", "pronunciation": "amar bhul hoyeche.", "en": "I made a mistake.", "context": "Acknowledge a mistake.", "category": "consonant-bho" },
+    { "bn": "আমি ভাবছি।", "pronunciation": "ami bhabchhi.", "en": "I'm thinking.", "context": "Describe an ongoing thought.", "category": "consonant-bho" },
+    { "bn": "তুমি কী ভাবছ?", "pronunciation": "tumi ki bhabchho?", "en": "What are you thinking?", "context": "Ask about someone's thoughts.", "category": "consonant-bho" },
+    { "bn": "ভিতরে আসো।", "pronunciation": "bhitore asho.", "en": "Come inside.", "context": "Invite someone inside.", "category": "consonant-bho" },
+    { "bn": "ভিতরে যাও।", "pronunciation": "bhitore jao.", "en": "Go inside.", "context": "Give a direction.", "category": "consonant-bho" },
+    { "bn": "অনেক ভিড়।", "pronunciation": "onek bhir.", "en": "It's very crowded.", "context": "Describe a crowd.", "category": "consonant-bho" },
+    { "bn": "এটা ভেজা।", "pronunciation": "eta bheja.", "en": "This is wet.", "context": "Describe something wet.", "category": "consonant-bho" },
+    { "bn": "এটা ভাঙা।", "pronunciation": "eta bhanga.", "en": "This is broken.", "context": "Describe something broken.", "category": "consonant-bho" },
+    { "bn": "ভবিষ্যতে দেখা হবে।", "pronunciation": "bhobishshote dekha hobe.", "en": "We'll meet in the future.", "context": "Talk about a future meeting.", "category": "consonant-bho" },
+    { "bn": "বাংলা ভাষা", "pronunciation": "bangla bhasha", "en": "Bangla language", "context": "Practice ভ in a language phrase.", "category": "consonant-bho" },
+    { "bn": "ভাড়া কত?", "pronunciation": "bhara koto?", "en": "How much is the fare/rent?", "context": "Ask a price.", "category": "consonant-bho" },
+    { "bn": "এটা খুব ভারী।", "pronunciation": "eta khub bhari.", "en": "This is very heavy.", "context": "Describe something heavy.", "category": "consonant-bho" },
+    { "bn": "এটা ভালো।", "pronunciation": "eta bhalo.", "en": "This is good.", "context": "Describe something positively.", "category": "consonant-bho" },
+    { "bn": "আমার এক ভাই আছে।", "pronunciation": "amar ek bhai achhe.", "en": "I have one brother.", "context": "Describe your family.", "category": "consonant-bho" },
+    { "bn": "তোমার ভাই কোথায়?", "pronunciation": "tomar bhai kothay?", "en": "Where is your brother?", "context": "Ask about someone's brother.", "category": "consonant-bho" },
+    { "bn": "আমি ভয় পাই না।", "pronunciation": "ami bhoy pai na.", "en": "I'm not afraid.", "context": "Deny being afraid.", "category": "consonant-bho" },
+    { "bn": "খুব ভয়ংকর।", "pronunciation": "khub bhoyongkor.", "en": "Very scary.", "context": "Describe something frightening.", "category": "consonant-bho" },
+    { "bn": "ভুল করো না।", "pronunciation": "bhul koro na.", "en": "Don't make a mistake.", "context": "Warn someone against a mistake.", "category": "consonant-bho" },
+    { "bn": "আমি তাই ভাবি।", "pronunciation": "ami tai bhabi.", "en": "That's what I think.", "context": "Express an opinion.", "category": "consonant-bho" }
   ],
   "vocab": [
-    {
-      "bn": "ভ",
-      "pronunciation": "bhô",
-      "en": "bhô: an aspirated b",
-      "category": "consonant-bho",
-      "sourcePhrase": "ভাত শব্দে ভ আছে।"
-    },
-    {
-      "bn": "ভাত",
-      "pronunciation": "bhat",
-      "en": "rice",
-      "category": "consonant-bho",
-      "sourcePhrase": "ভাত শব্দে ভ আছে।"
-    },
-    {
-      "bn": "ভালো",
-      "pronunciation": "bhalo",
-      "en": "good",
-      "category": "consonant-bho",
-      "sourcePhrase": "ভালো শব্দে ভ আছে।"
-    },
-    {
-      "bn": "ভাব",
-      "pronunciation": "bhab",
-      "en": "idea / thought",
-      "category": "consonant-bho",
-      "sourcePhrase": "ভাব শব্দে ভ আছে।"
-    }
+    { "bn": "ভালো", "pronunciation": "bhalo", "en": "good / well", "category": "Common Words Beginning with ভ" },
+    { "bn": "ভালোবাসা", "pronunciation": "bhalobasha", "en": "love / to love", "category": "Common Words Beginning with ভ" },
+    { "bn": "ভাই", "pronunciation": "bhai", "en": "brother", "category": "Common Words Beginning with ভ" },
+    { "bn": "ভাব", "pronunciation": "bhab", "en": "thought / feeling", "category": "Common Words Beginning with ভ" },
+    { "bn": "ভাবা", "pronunciation": "bhaba", "en": "to think", "category": "Common Words Beginning with ভ" },
+    { "bn": "ভাত", "pronunciation": "bhat", "en": "cooked rice", "category": "Common Words Beginning with ভ" },
+    { "bn": "ভাষা", "pronunciation": "bhasha", "en": "language", "category": "Common Words Beginning with ভ" },
+    { "bn": "ভারত", "pronunciation": "bharot", "en": "India", "category": "Common Words Beginning with ভ" },
+    { "bn": "ভারী", "pronunciation": "bhari", "en": "heavy", "category": "Common Words Beginning with ভ" },
+    { "bn": "ভাগ", "pronunciation": "bhag", "en": "part / share", "category": "Common Words Beginning with ভ" },
+    { "bn": "ভাগ্য", "pronunciation": "bhaggo", "en": "luck / fate", "category": "Common Words Beginning with ভ" },
+    { "bn": "ভাড়া", "pronunciation": "bhara", "en": "rent / fare", "category": "Common Words Beginning with ভ" },
+    { "bn": "ভয়", "pronunciation": "bhoy", "en": "fear", "category": "Common Words Beginning with ভ" },
+    { "bn": "ভয়ংকর", "pronunciation": "bhoyongkor", "en": "scary / terrible", "category": "Common Words Beginning with ভ" },
+    { "bn": "ভুল", "pronunciation": "bhul", "en": "mistake / wrong", "category": "Common Words Beginning with ভ" },
+    { "bn": "ভোর", "pronunciation": "bhor", "en": "dawn", "category": "Common Words Beginning with ভ" },
+    { "bn": "ভিতর", "pronunciation": "bhitor", "en": "inside", "category": "Common Words Beginning with ভ" },
+    { "bn": "ভিতরে", "pronunciation": "bhitore", "en": "inside", "category": "Common Words Beginning with ভ" },
+    { "bn": "ভিন্ন", "pronunciation": "bhinno", "en": "different", "category": "Common Words Beginning with ভ" },
+    { "bn": "ভিড়", "pronunciation": "bhir", "en": "crowd", "category": "Common Words Beginning with ভ" },
+    { "bn": "ভেজা", "pronunciation": "bheja", "en": "wet", "category": "Common Words Beginning with ভ" },
+    { "bn": "ভাঙা", "pronunciation": "bhanga", "en": "broken / to break", "category": "Common Words Beginning with ভ" },
+    { "bn": "ভবিষ্যৎ", "pronunciation": "bhobishshot", "en": "future", "category": "Common Words Beginning with ভ" },
+    { "bn": "ভবন", "pronunciation": "bhobon", "en": "building", "category": "Common Words Beginning with ভ" },
+    { "bn": "ভ্রমণ", "pronunciation": "bhromon", "en": "travel", "category": "Common Words Beginning with ভ" },
+    { "bn": "ভদ্র", "pronunciation": "bhodro", "en": "polite", "category": "Common Words Beginning with ভ" },
+    { "bn": "ভর্তি", "pronunciation": "bhorti", "en": "full / admitted", "category": "Common Words Beginning with ভ" },
+    { "bn": "ভীষণ", "pronunciation": "bhishon", "en": "extremely / terribly", "category": "Common Words Beginning with ভ" },
+    { "bn": "ভুয়া", "pronunciation": "bhuya", "en": "fake", "category": "Common Words Beginning with ভ" },
+    { "bn": "ভূমি", "pronunciation": "bhumi", "en": "land", "category": "Common Words Beginning with ভ" },
+    { "bn": "ভূত", "pronunciation": "bhut", "en": "ghost", "category": "Common Words Beginning with ভ" }
   ],
   "practice": [
-    "Say ভ three times: bhô, bhô, bhô.",
-    "Find ভ in each example word and read the whole word aloud.",
-    "Write ভ five times while saying its name."
+    "Say ভ three times with an extra burst of air: bhô, bhô, bhô.",
+    "Practice the vowel forms: ভ, ভা, ভি, ভী, ভু, ভূ, ভে, ভৈ, ভো, and ভৌ.",
+    "Hold your hand in front of your mouth and compare ব (ba) with aspirated ভ (bha).",
+    "Use ভালো, ভাই, ভাত, ভয়, ভুল, ভোর, ভূত, and ভাষা as quick reading anchors."
   ],
   "notes": [
-    "ভ is pronounced approximately an aspirated b.",
-    "Listen to the audio and compare ভ across the example words."
+    "ভ is a Bengali consonant named bho or bhô. It is roughly an aspirated ব sound, written bh.",
+    "In everyday speech, ভ can sometimes sound close to b or v depending on the speaker and word.",
+    "The core ভ remains recognizable as vowel signs change around it: ভা (bha), ভি (bhi), ভী (bhi), ভু (bhu), ভূ (bhu), ভে (bhe), ভৈ (bhoi), ভো (bho), and ভৌ (bhou).",
+    "ভ has an extra burst of air compared with ব. Compare বাত (bat) with ভাত (bhat), and বাল (bal) with ভাল/ভালো (bhal/bhalo)."
   ]
 }

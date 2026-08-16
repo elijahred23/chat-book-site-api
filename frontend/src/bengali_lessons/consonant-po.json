@@ -1,136 +1,127 @@
 {
   "id": "consonant-po",
   "title": "প — pô",
-  "summary": "Learn প, pronounced pô, and recognize it in three useful Bengali words.",
+  "summary": "Learn the common Bangla consonant প, its p sound, vowel-sign forms, and the essential পারা ability pattern.",
   "level": "beginner",
   "topic": "Consonant: প",
-  "focus": "character recognition and pronunciation",
+  "focus": "character recognition, pronunciation, and the পারা verb family",
   "phrases": [
-    {
-      "bn": "পাখি শব্দে প আছে।",
-      "pronunciation": "pakhi shôbde pô achhe",
-      "en": "The word “পাখি” contains প.",
-      "context": "Find প in পাখি and say the complete word aloud.",
-      "category": "consonant-po",
-      "words": [
-        {
-          "bn": "পাখি",
-          "pronunciation": "pakhi",
-          "en": "bird"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "প",
-          "pronunciation": "pô",
-          "en": "the pô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "পানি শব্দে প আছে।",
-      "pronunciation": "pani shôbde pô achhe",
-      "en": "The word “পানি” contains প.",
-      "context": "Find প in পানি and say the complete word aloud.",
-      "category": "consonant-po",
-      "words": [
-        {
-          "bn": "পানি",
-          "pronunciation": "pani",
-          "en": "water"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "প",
-          "pronunciation": "pô",
-          "en": "the pô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "কাপ শব্দে প আছে।",
-      "pronunciation": "kap shôbde pô achhe",
-      "en": "The word “কাপ” contains প.",
-      "context": "Find প in কাপ and say the complete word aloud.",
-      "category": "consonant-po",
-      "words": [
-        {
-          "bn": "কাপ",
-          "pronunciation": "kap",
-          "en": "cup"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "প",
-          "pronunciation": "pô",
-          "en": "the pô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    }
+    { "bn": "পানি দাও।", "pronunciation": "pani dao.", "en": "Give me water.", "context": "Ask for water.", "category": "consonant-po" },
+    { "bn": "আমি পানি খাব।", "pronunciation": "ami pani khabo.", "en": "I'll drink water.", "context": "Talk about drinking water.", "category": "consonant-po" },
+    { "bn": "পানি কোথায়?", "pronunciation": "pani kothay?", "en": "Where is the water?", "context": "Ask where water is.", "category": "consonant-po" },
+    { "bn": "একটু পানি দিন।", "pronunciation": "ektu pani din.", "en": "Please give me some water.", "context": "Politely ask for water.", "category": "consonant-po" },
+    { "bn": "আমি পারি।", "pronunciation": "ami pari.", "en": "I can.", "context": "Express ability.", "category": "consonant-po" },
+    { "bn": "আমি পারি না।", "pronunciation": "ami pari na.", "en": "I can't.", "context": "Express inability.", "category": "consonant-po" },
+    { "bn": "তুমি পারবে?", "pronunciation": "tumi parbe?", "en": "Can you do it?", "context": "Ask about someone's ability.", "category": "consonant-po" },
+    { "bn": "আমি বাংলা পড়তে পারি।", "pronunciation": "ami bangla porte pari.", "en": "I can read Bangla.", "context": "Describe a language ability.", "category": "consonant-po" },
+    { "bn": "আমি একটু বাংলা বলতে পারি।", "pronunciation": "ami ektu bangla bolte pari.", "en": "I can speak a little Bangla.", "context": "Describe limited speaking ability.", "category": "consonant-po" },
+    { "bn": "আমি বাংলা বলতে পারি।", "pronunciation": "ami bangla bolte pari.", "en": "I can speak Bangla.", "context": "Describe speaking ability.", "category": "consonant-po" },
+    { "bn": "আমি যেতে পারি।", "pronunciation": "ami jete pari.", "en": "I can go.", "context": "Practice the verb + তে + পারি pattern.", "category": "consonant-po" },
+    { "bn": "আমি পড়তে পারি।", "pronunciation": "ami porte pari.", "en": "I can read.", "context": "Practice the ability pattern.", "category": "consonant-po" },
+    { "bn": "আমি লিখতে পারি।", "pronunciation": "ami likhte pari.", "en": "I can write.", "context": "Practice the ability pattern.", "category": "consonant-po" },
+    { "bn": "আমি বুঝতে পারি।", "pronunciation": "ami bujhte pari.", "en": "I can understand.", "context": "Practice the ability pattern.", "category": "consonant-po" },
+    { "bn": "আমার এটা পছন্দ।", "pronunciation": "amar eta pochhondo.", "en": "I like this.", "context": "Express a preference.", "category": "consonant-po" },
+    { "bn": "আমি এটা পছন্দ করি।", "pronunciation": "ami eta pochhondo kori.", "en": "I like this.", "context": "Express a preference with a verb.", "category": "consonant-po" },
+    { "bn": "তোমার কোনটা পছন্দ?", "pronunciation": "tomar konta pochhondo?", "en": "Which one do you like?", "context": "Ask about someone's preference.", "category": "consonant-po" },
+    { "bn": "আমার বাংলা গান পছন্দ।", "pronunciation": "amar bangla gan pochhondo.", "en": "I like Bangla songs.", "context": "Express a music preference.", "category": "consonant-po" },
+    { "bn": "আমি বাংলা পড়ছি।", "pronunciation": "ami bangla porchhi.", "en": "I'm reading Bangla.", "context": "Describe reading Bangla.", "category": "consonant-po" },
+    { "bn": "আমি বই পড়ছি।", "pronunciation": "ami boi porchhi.", "en": "I'm reading a book.", "context": "Describe reading a book.", "category": "consonant-po" },
+    { "bn": "আমি পড়তে চাই।", "pronunciation": "ami porte chai.", "en": "I want to read.", "context": "Express a desire to read.", "category": "consonant-po" },
+    { "bn": "তুমি কী পড়ছ?", "pronunciation": "tumi ki porchho?", "en": "What are you reading/studying?", "context": "Ask about someone's reading or studies.", "category": "consonant-po" },
+    { "bn": "সে পড়ে গেছে।", "pronunciation": "she pore gechhe.", "en": "He/she fell down.", "context": "Use পড়া to mean fall.", "category": "consonant-po" },
+    { "bn": "ঢাকা বাংলাদেশে পড়ে।", "pronunciation": "dhaka bangladeshe pore.", "en": "Dhaka is located within Bangladesh.", "context": "Use পড়া to describe location.", "category": "consonant-po" },
+    { "bn": "আমি পেয়েছি।", "pronunciation": "ami peyechhi.", "en": "I got/found it.", "context": "Report finding or receiving something.", "category": "consonant-po" },
+    { "bn": "আমি খুঁজে পাচ্ছি না।", "pronunciation": "ami khũje pachchhi na.", "en": "I can't find it.", "context": "Describe difficulty finding something.", "category": "consonant-po" },
+    { "bn": "কোথায় পাব?", "pronunciation": "kothay pabo?", "en": "Where can I get it?", "context": "Ask where something is available.", "category": "consonant-po" },
+    { "bn": "তুমি এটা কোথায় পেয়েছ?", "pronunciation": "tumi eta kothay peyechho?", "en": "Where did you get/find this?", "context": "Ask where an item came from.", "category": "consonant-po" },
+    { "bn": "আমার পাশে বসো।", "pronunciation": "amar pashe bosho.", "en": "Sit beside me.", "context": "Invite someone to sit nearby.", "category": "consonant-po" },
+    { "bn": "পরে কথা বলব।", "pronunciation": "pore kotha bolbo.", "en": "I'll talk later.", "context": "Postpone a conversation.", "category": "consonant-po" },
+    { "bn": "পরে দেখা হবে।", "pronunciation": "pore dekha hobe.", "en": "See you later.", "context": "Say goodbye casually.", "category": "consonant-po" },
+    { "bn": "পরেরটা কী?", "pronunciation": "porerta ki?", "en": "What's next?", "context": "Ask about the next item or step.", "category": "consonant-po" },
+    { "bn": "পেছনে দেখো।", "pronunciation": "pechhone dekho.", "en": "Look behind you.", "context": "Direct someone's attention backward.", "category": "consonant-po" },
+    { "bn": "আমার পেটে ব্যথা।", "pronunciation": "amar pete byatha.", "en": "My stomach hurts.", "context": "Describe stomach pain.", "category": "consonant-po" },
+    { "bn": "এটা পরিষ্কার।", "pronunciation": "eta porishkar.", "en": "This is clean/clear.", "context": "Describe cleanliness or clarity.", "category": "consonant-po" },
+    { "bn": "পুলিশকে ডাকো।", "pronunciation": "polishke dako.", "en": "Call the police.", "context": "Ask someone to summon police.", "category": "consonant-po" },
+    { "bn": "আমার একটা প্রশ্ন আছে।", "pronunciation": "amar ekta proshno achhe.", "en": "I have a question.", "context": "Ask to pose a question.", "category": "consonant-po" },
+    { "bn": "পুরোটা বলো।", "pronunciation": "purota bolo.", "en": "Tell me the whole thing.", "context": "Ask for a complete explanation.", "category": "consonant-po" },
+    { "bn": "এটা আমার প্রথম দিন।", "pronunciation": "eta amar prothom din.", "en": "This is my first day.", "context": "Describe your first day.", "category": "consonant-po" },
+    { "bn": "পরিকল্পনা কী?", "pronunciation": "porikolpona ki?", "en": "What's the plan?", "context": "Ask about a plan.", "category": "consonant-po" }
   ],
   "vocab": [
-    {
-      "bn": "প",
-      "pronunciation": "pô",
-      "en": "pô: p",
-      "category": "consonant-po",
-      "sourcePhrase": "পাখি শব্দে প আছে।"
-    },
-    {
-      "bn": "পাখি",
-      "pronunciation": "pakhi",
-      "en": "bird",
-      "category": "consonant-po",
-      "sourcePhrase": "পাখি শব্দে প আছে।"
-    },
-    {
-      "bn": "পানি",
-      "pronunciation": "pani",
-      "en": "water",
-      "category": "consonant-po",
-      "sourcePhrase": "পানি শব্দে প আছে।"
-    },
-    {
-      "bn": "কাপ",
-      "pronunciation": "kap",
-      "en": "cup",
-      "category": "consonant-po",
-      "sourcePhrase": "কাপ শব্দে প আছে।"
-    }
+    { "bn": "পানি", "pronunciation": "pani", "en": "water", "category": "Common Words Beginning with প" },
+    { "bn": "পান", "pronunciation": "pan", "en": "drink / receive (respectful)", "category": "Common Words Beginning with প" },
+    { "bn": "পান করা", "pronunciation": "pan kora", "en": "to drink", "category": "Common Words Beginning with প" },
+    { "bn": "পা", "pronunciation": "pa", "en": "foot / leg", "category": "Common Words Beginning with প" },
+    { "bn": "পায়ে", "pronunciation": "paye", "en": "on the foot / by foot", "category": "Common Words Beginning with প" },
+    { "bn": "পথ", "pronunciation": "poth", "en": "path / way", "category": "Common Words Beginning with প" },
+    { "bn": "পরে", "pronunciation": "pore", "en": "later / after", "category": "Common Words Beginning with প" },
+    { "bn": "পর", "pronunciation": "por", "en": "after / other", "category": "Common Words Beginning with প" },
+    { "bn": "পরের", "pronunciation": "porer", "en": "next", "category": "Common Words Beginning with প" },
+    { "bn": "পড়া", "pronunciation": "pora", "en": "to read / study / fall", "category": "The পড়া Word Family" },
+    { "bn": "পড়ি", "pronunciation": "pori", "en": "I read / study", "category": "The পড়া Word Family" },
+    { "bn": "পড়ছে", "pronunciation": "porchhe", "en": "is reading", "category": "The পড়া Word Family" },
+    { "bn": "পড়তে", "pronunciation": "porte", "en": "to read / study", "category": "The পড়া Word Family" },
+    { "bn": "পড়াশোনা", "pronunciation": "porashona", "en": "studying / education", "category": "The পড়া Word Family" },
+    { "bn": "পছন্দ", "pronunciation": "pochhondo", "en": "like / preference", "category": "Common Words Beginning with প" },
+    { "bn": "পছন্দ করা", "pronunciation": "pochhondo kora", "en": "to like", "category": "Common Words Beginning with প" },
+    { "bn": "পাওয়া", "pronunciation": "paoa", "en": "to get / find", "category": "The পাওয়া Word Family" },
+    { "bn": "পাই", "pronunciation": "pai", "en": "I get / find", "category": "The পাওয়া Word Family" },
+    { "bn": "পাবে", "pronunciation": "pabe", "en": "will get", "category": "The পাওয়া Word Family" },
+    { "bn": "পেয়েছি", "pronunciation": "peyechhi", "en": "have received / found", "category": "The পাওয়া Word Family" },
+    { "bn": "পারা", "pronunciation": "para", "en": "to be able to", "category": "The পারা Word Family" },
+    { "bn": "পারি", "pronunciation": "pari", "en": "I can", "category": "The পারা Word Family" },
+    { "bn": "পারো", "pronunciation": "paro", "en": "you can", "category": "The পারা Word Family" },
+    { "bn": "পারে", "pronunciation": "pare", "en": "he/she can", "category": "The পারা Word Family" },
+    { "bn": "পারবে", "pronunciation": "parbe", "en": "will be able to", "category": "The পারা Word Family" },
+    { "bn": "পারবেন", "pronunciation": "parben", "en": "can/will be able to (respectful)", "category": "The পারা Word Family" },
+    { "bn": "পারি না", "pronunciation": "pari na", "en": "I can't", "category": "The পারা Word Family" },
+    { "bn": "পারবে না", "pronunciation": "parbe na", "en": "won't be able to", "category": "The পারা Word Family" },
+    { "bn": "পাঠানো", "pronunciation": "pathano", "en": "to send", "category": "Common Words Beginning with প" },
+    { "bn": "পাশে", "pronunciation": "pashe", "en": "beside / next to", "category": "Common Words Beginning with প" },
+    { "bn": "পরিবার", "pronunciation": "poribar", "en": "family", "category": "Common Words Beginning with প" },
+    { "bn": "পরিচয়", "pronunciation": "porichoy", "en": "identity / introduction", "category": "Common Words Beginning with প" },
+    { "bn": "পরিচিত", "pronunciation": "porichito", "en": "familiar / acquaintance", "category": "Common Words Beginning with প" },
+    { "bn": "পরিষ্কার", "pronunciation": "porishkar", "en": "clean / clear", "category": "Common Words Beginning with প" },
+    { "bn": "পরিবর্তন", "pronunciation": "poriborton", "en": "change", "category": "Common Words Beginning with প" },
+    { "bn": "পরিকল্পনা", "pronunciation": "porikolpona", "en": "plan", "category": "Common Words Beginning with প" },
+    { "bn": "পরীক্ষা", "pronunciation": "porikkha", "en": "exam / test", "category": "Common Words Beginning with প" },
+    { "bn": "প্রশ্ন", "pronunciation": "proshno", "en": "question", "category": "Common Words Beginning with প" },
+    { "bn": "পুলিশ", "pronunciation": "polish", "en": "police", "category": "Common Words Beginning with প" },
+    { "bn": "পুরোনো", "pronunciation": "purono", "en": "old", "category": "Common Words Beginning with প" },
+    { "bn": "পুরো", "pronunciation": "puro", "en": "whole / entire", "category": "Common Words Beginning with প" },
+    { "bn": "প্রথম", "pronunciation": "prothom", "en": "first", "category": "Common Words Beginning with প" },
+    { "bn": "পৃথিবী", "pronunciation": "prithibi", "en": "Earth / world", "category": "Common Words Beginning with প" },
+    { "bn": "পেট", "pronunciation": "pet", "en": "stomach", "category": "Common Words Beginning with প" },
+    { "bn": "পেছনে", "pronunciation": "pechhone", "en": "behind", "category": "Common Words Beginning with প" },
+    { "bn": "পকেট", "pronunciation": "poket", "en": "pocket", "category": "Common Words Beginning with প" },
+    { "bn": "পাখি", "pronunciation": "pakhi", "en": "bird", "category": "Common Words Beginning with প" },
+    { "bn": "পাতা", "pronunciation": "pata", "en": "leaf / page", "category": "Common Words Beginning with প" },
+    { "bn": "পাহাড়", "pronunciation": "pahar", "en": "mountain", "category": "Common Words Beginning with প" },
+    { "bn": "পাঁচ", "pronunciation": "pãch", "en": "five", "category": "Common Words Beginning with প" },
+    { "bn": "পঞ্চাশ", "pronunciation": "ponchash", "en": "fifty", "category": "Common Words Beginning with প" },
+    { "bn": "পুতুল", "pronunciation": "putul", "en": "doll", "category": "Common Words Beginning with প" },
+    { "bn": "পুরুষ", "pronunciation": "purush", "en": "man / male", "category": "Common Words Beginning with প" },
+    { "bn": "পোশাক", "pronunciation": "poshak", "en": "clothing", "category": "Common Words Beginning with প" },
+    { "bn": "পৌঁছানো", "pronunciation": "põuchhano", "en": "to arrive / reach", "category": "Common Words Beginning with প" },
+    { "bn": "প্রয়োজন", "pronunciation": "proyojon", "en": "need / necessity", "category": "Common Words Beginning with প" },
+    { "bn": "প্রায়", "pronunciation": "pray", "en": "approximately / almost", "category": "Common Words Beginning with প" }
   ],
   "practice": [
     "Say প three times: pô, pô, pô.",
-    "Find প in each example word and read the whole word aloud.",
-    "Write প five times while saying its name."
+    "Practice the vowel forms: প (pô), পা (pa), পি (pi), পী (pi), পু (pu), পূ (pu), পে (pe), পৈ (poi), পো (po), and পৌ (pou).",
+    "Read the combinations aloud: প + া = পা as in পানি, প + ি = পি as in পিতা, প + ু = পু as in পুতুল, প + ূ = পূ as in পূর্ণ, প + ে = পে as in পেট, প + ো = পো as in পোশাক, and প + ৌ = পৌ as in পৌঁছানো.",
+    "Practice the ability pattern [verb] + তে + পারি: যেতে পারি, পড়তে পারি, লিখতে পারি, বুঝতে পারি, and বাংলা বলতে পারি.",
+    "Compare the meanings of পড়া by context: reading in আমি বই পড়ছি, falling in সে পড়ে গেছে, and location in ঢাকা বাংলাদেশে পড়ে.",
+    "Compare প (p) with ফ (traditional ph or modern f): পানি / ফল, পা / ফুল, পথ / ফোন, and পড়া / ফেলা.",
+    "Use পানি, পা, পারি, পছন্দ, পড়া, পরে, পাশে, পেট, পুলিশ, পুরো, and প্রথম as quick reading anchors.",
+    "Recognize these phrases instantly: আমি পারি, আমি পারি না, পানি দাও, আমার এটা পছন্দ, and আমি বাংলা পড়তে পারি."
   ],
   "notes": [
-    "প is pronounced approximately p.",
-    "Listen to the audio and compare প across the example words."
+    "প is one of the most common Bangla consonants. Its name is pô and its sound is roughly p as in pen.",
+    "The vowel-sign forms include প (pô), পা (pa), পি (pi), পী (pi), পু (pu), পূ (pu), পে (pe), পৈ (poi), পো (po), and পৌ (pou). Examples include পথ, পানি, পিতা, পীর, পুতুল, পূর্ণ, পেট, পৈতৃক, পোশাক, and পৌঁছানো.",
+    "পারা expresses ability like can or be able to. The pattern [verb] + তে + পারি unlocks many practical sentences.",
+    "পড়া can mean to read/study, to fall, or to be located, depending on context.",
+    "প and ফ form a pronunciation pair: প has a p sound, while ফ traditionally has an aspirated ph sound and often sounds like f in modern Bangla.",
+    "Best words to memorize include পানি, পা, পারা, পারি, পছন্দ, পড়া, পড়াশোনা, পাওয়া, পেয়েছি, পরে, পরের, পাশে, পরিবার, পরিষ্কার, পরিকল্পনা, পরীক্ষা, প্রশ্ন, পুলিশ, পুরো, পুরোনো, প্রথম, পেট, পেছনে, পাখি, পাঁচ, and প্রয়োজন."
   ]
 }

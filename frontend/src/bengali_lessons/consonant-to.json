@@ -1,136 +1,132 @@
 {
   "id": "consonant-to",
   "title": "ত — tô",
-  "summary": "Learn ত, pronounced tô, and recognize it in three useful Bengali words.",
+  "summary": "Learn the very common Bangla consonant ত, its dental t sound, vowel-sign forms, essential pronouns and connectors, and its contrast with থ.",
   "level": "beginner",
   "topic": "Consonant: ত",
-  "focus": "character recognition and pronunciation",
+  "focus": "character recognition, pronunciation, everyday grammar, and reading patterns",
   "phrases": [
-    {
-      "bn": "তারা শব্দে ত আছে।",
-      "pronunciation": "tara shôbde tô achhe",
-      "en": "The word “তারা” contains ত.",
-      "context": "Find ত in তারা and say the complete word aloud.",
-      "category": "consonant-to",
-      "words": [
-        {
-          "bn": "তারা",
-          "pronunciation": "tara",
-          "en": "star"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ত",
-          "pronunciation": "tô",
-          "en": "the tô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "তাল শব্দে ত আছে।",
-      "pronunciation": "tal shôbde tô achhe",
-      "en": "The word “তাল” contains ত.",
-      "context": "Find ত in তাল and say the complete word aloud.",
-      "category": "consonant-to",
-      "words": [
-        {
-          "bn": "তাল",
-          "pronunciation": "tal",
-          "en": "palm fruit / list"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ত",
-          "pronunciation": "tô",
-          "en": "the tô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "রাত শব্দে ত আছে।",
-      "pronunciation": "rat shôbde tô achhe",
-      "en": "The word “রাত” contains ত.",
-      "context": "Find ত in রাত and say the complete word aloud.",
-      "category": "consonant-to",
-      "words": [
-        {
-          "bn": "রাত",
-          "pronunciation": "rat",
-          "en": "night"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "ত",
-          "pronunciation": "tô",
-          "en": "the tô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    }
+    { "bn": "তুমি কেমন আছো?", "pronunciation": "tumi kemon achho?", "en": "How are you?", "context": "Ask someone how they are.", "category": "consonant-to" },
+    { "bn": "তুমি কোথায়?", "pronunciation": "tumi kothay?", "en": "Where are you?", "context": "Ask someone's location.", "category": "consonant-to" },
+    { "bn": "তুমি কী করছ?", "pronunciation": "tumi ki korchho?", "en": "What are you doing?", "context": "Ask about someone's current activity.", "category": "consonant-to" },
+    { "bn": "তুমি কোথায় যাচ্ছ?", "pronunciation": "tumi kothay jachchho?", "en": "Where are you going?", "context": "Ask someone's destination.", "category": "consonant-to" },
+    { "bn": "তুমি কি বাংলা বলো?", "pronunciation": "tumi ki bangla bolo?", "en": "Do you speak Bangla?", "context": "Ask about language ability.", "category": "consonant-to" },
+    { "bn": "তোমার নাম কী?", "pronunciation": "tomar nam ki?", "en": "What is your name?", "context": "Ask someone's name.", "category": "consonant-to" },
+    { "bn": "তোমার বাড়ি কোথায়?", "pronunciation": "tomar bari kothay?", "en": "Where is your home?", "context": "Ask where someone lives.", "category": "consonant-to" },
+    { "bn": "তোমার ফোন কোথায়?", "pronunciation": "tomar phone kothay?", "en": "Where is your phone?", "context": "Ask about someone's phone.", "category": "consonant-to" },
+    { "bn": "এটা কি তোমার?", "pronunciation": "eta ki tomar?", "en": "Is this yours?", "context": "Ask about ownership.", "category": "consonant-to" },
+    { "bn": "তাহলে চলো।", "pronunciation": "tahole cholo.", "en": "Then let's go.", "context": "Suggest leaving after a decision.", "category": "consonant-to" },
+    { "bn": "তাহলে কী করব?", "pronunciation": "tahole ki korbo?", "en": "Then what should we do?", "context": "Ask for the next course of action.", "category": "consonant-to" },
+    { "bn": "তাহলে ঠিক আছে।", "pronunciation": "tahole thik achhe.", "en": "Then that's okay.", "context": "Accept a conclusion or arrangement.", "category": "consonant-to" },
+    { "bn": "তাহলে পরে দেখা হবে।", "pronunciation": "tahole pore dekha hobe.", "en": "Then I'll see you later.", "context": "Close a conversation with a plan to meet later.", "category": "consonant-to" },
+    { "bn": "তাই আমি যাইনি।", "pronunciation": "tai ami jaini.", "en": "That's why I didn't go.", "context": "Explain a consequence.", "category": "consonant-to" },
+    { "bn": "তাই নাকি?", "pronunciation": "tai naki?", "en": "Really? / Is that so?", "context": "React with surprise.", "category": "consonant-to" },
+    { "bn": "আমি ব্যস্ত, তাই যেতে পারব না।", "pronunciation": "ami byasto, tai jete parbo na.", "en": "I'm busy, so I won't be able to go.", "context": "Give a reason for being unable to go.", "category": "consonant-to" },
+    { "bn": "আমি তখন বাড়িতে ছিলাম।", "pronunciation": "ami tokhon barite chhilam.", "en": "I was at home then.", "context": "Describe a past location.", "category": "consonant-to" },
+    { "bn": "তখন কী হয়েছিল?", "pronunciation": "tokhon ki hoyechhilo?", "en": "What happened then?", "context": "Ask about a past event.", "category": "consonant-to" },
+    { "bn": "তখন আমি ছোট ছিলাম।", "pronunciation": "tokhon ami chhoto chhilam.", "en": "I was young then.", "context": "Describe an earlier time in life.", "category": "consonant-to" },
+    { "bn": "আমি তৈরি।", "pronunciation": "ami toiri.", "en": "I'm ready.", "context": "State that you are prepared.", "category": "consonant-to" },
+    { "bn": "তুমি তৈরি?", "pronunciation": "tumi toiri?", "en": "Are you ready?", "context": "Ask whether someone is prepared.", "category": "consonant-to" },
+    { "bn": "খাবার তৈরি।", "pronunciation": "khabar toiri.", "en": "The food is ready.", "context": "Announce that food is prepared.", "category": "consonant-to" },
+    { "bn": "এটা কে তৈরি করেছে?", "pronunciation": "eta ke toiri korechhe?", "en": "Who made this?", "context": "Ask who created something.", "category": "consonant-to" },
+    { "bn": "তৈরি করো।", "pronunciation": "toiri koro.", "en": "Make it / Prepare it.", "context": "Tell someone to prepare something.", "category": "consonant-to" },
+    { "bn": "কত টাকা?", "pronunciation": "koto taka?", "en": "How much money?", "context": "Ask a price or amount.", "category": "consonant-to" },
+    { "bn": "আমার কাছে টাকা আছে।", "pronunciation": "amar kachhe taka achhe.", "en": "I have money.", "context": "Say that you possess money.", "category": "consonant-to" },
+    { "bn": "আমার কাছে টাকা নেই।", "pronunciation": "amar kachhe taka nei.", "en": "I don't have money.", "context": "Say that you have no money.", "category": "consonant-to" },
+    { "bn": "টাকা দাও।", "pronunciation": "taka dao.", "en": "Give me the money.", "context": "Ask for money.", "category": "consonant-to" },
+    { "bn": "পঞ্চাশ টাকা।", "pronunciation": "ponchash taka.", "en": "Fifty taka.", "context": "State an amount of Bangladeshi currency.", "category": "consonant-to" },
+    { "bn": "তাড়াতাড়ি!", "pronunciation": "taratari!", "en": "Quickly! / Hurry!", "context": "Urge immediate action.", "category": "consonant-to" },
+    { "bn": "তাড়াতাড়ি করো।", "pronunciation": "taratari koro.", "en": "Hurry up.", "context": "Tell someone to act quickly.", "category": "consonant-to" },
+    { "bn": "তাড়াতাড়ি আসো।", "pronunciation": "taratari asho.", "en": "Come quickly.", "context": "Ask someone to arrive quickly.", "category": "consonant-to" },
+    { "bn": "তাড়াতাড়ি যাও।", "pronunciation": "taratari jao.", "en": "Go quickly.", "context": "Tell someone to leave quickly.", "category": "consonant-to" },
+    { "bn": "তাড়াতাড়ি খাও।", "pronunciation": "taratari khao.", "en": "Eat quickly.", "context": "Tell someone to eat quickly.", "category": "consonant-to" },
+    { "bn": "তিনটা দাও।", "pronunciation": "tinta dao.", "en": "Give me three.", "context": "Ask for three items.", "category": "consonant-to" },
+    { "bn": "তারিখ কী?", "pronunciation": "tarikh ki?", "en": "What's the date?", "context": "Ask for the calendar date.", "category": "consonant-to" },
+    { "bn": "তালা লাগাও।", "pronunciation": "tala lagao.", "en": "Lock it.", "context": "Tell someone to apply a lock.", "category": "consonant-to" },
+    { "bn": "তেল দাও।", "pronunciation": "tel dao.", "en": "Give / add oil.", "context": "Ask for oil or for oil to be added.", "category": "consonant-to" },
+    { "bn": "তথ্য কোথায়?", "pronunciation": "tothyo kothay?", "en": "Where is the information?", "context": "Ask where information can be found.", "category": "consonant-to" },
+    { "bn": "এটা তাজা।", "pronunciation": "eta taja.", "en": "This is fresh.", "context": "Describe fresh food or produce.", "category": "consonant-to" }
   ],
   "vocab": [
-    {
-      "bn": "ত",
-      "pronunciation": "tô",
-      "en": "tô: a dental t",
-      "category": "consonant-to",
-      "sourcePhrase": "তারা শব্দে ত আছে।"
-    },
-    {
-      "bn": "তারা",
-      "pronunciation": "tara",
-      "en": "star",
-      "category": "consonant-to",
-      "sourcePhrase": "তারা শব্দে ত আছে।"
-    },
-    {
-      "bn": "তাল",
-      "pronunciation": "tal",
-      "en": "palm fruit / list",
-      "category": "consonant-to",
-      "sourcePhrase": "তাল শব্দে ত আছে।"
-    },
-    {
-      "bn": "রাত",
-      "pronunciation": "rat",
-      "en": "night",
-      "category": "consonant-to",
-      "sourcePhrase": "রাত শব্দে ত আছে।"
-    }
+    { "bn": "ত", "pronunciation": "tô", "en": "a dental t", "category": "Letter" },
+    { "bn": "তুমি", "pronunciation": "tumi", "en": "you", "category": "Pronouns and Related Forms" },
+    { "bn": "তোমার", "pronunciation": "tomar", "en": "your", "category": "Pronouns and Related Forms" },
+    { "bn": "তোমাকে", "pronunciation": "tomake", "en": "you / to you", "category": "Pronouns and Related Forms" },
+    { "bn": "তোমাদের", "pronunciation": "tomader", "en": "your / you all", "category": "Pronouns and Related Forms" },
+    { "bn": "তারা", "pronunciation": "tara", "en": "they", "category": "Pronouns and Related Forms" },
+    { "bn": "তাদের", "pronunciation": "tader", "en": "their", "category": "Pronouns and Related Forms" },
+    { "bn": "তাকে", "pronunciation": "take", "en": "him / her", "category": "Pronouns and Related Forms" },
+    { "bn": "তাহলে", "pronunciation": "tahole", "en": "then / in that case", "category": "Conversation Connectors" },
+    { "bn": "তাই", "pronunciation": "tai", "en": "so / therefore", "category": "Conversation Connectors" },
+    { "bn": "তাও", "pronunciation": "tao", "en": "even then / nevertheless", "category": "Conversation Connectors" },
+    { "bn": "তবে", "pronunciation": "tobe", "en": "however / then", "category": "Conversation Connectors" },
+    { "bn": "তখন", "pronunciation": "tokhon", "en": "then / at that time", "category": "The এখন / তখন / কখন Family" },
+    { "bn": "এখন", "pronunciation": "ekhon", "en": "now", "category": "The এখন / তখন / কখন Family" },
+    { "bn": "কখন", "pronunciation": "kokhon", "en": "when", "category": "The এখন / তখন / কখন Family" },
+    { "bn": "তত", "pronunciation": "toto", "en": "that much", "category": "Common Words Beginning with ত" },
+    { "bn": "ততক্ষণ", "pronunciation": "totokkhon", "en": "until then / that long", "category": "Common Words Beginning with ত" },
+    { "bn": "তিন", "pronunciation": "tin", "en": "three", "category": "Common Words Beginning with ত" },
+    { "bn": "তিরিশ", "pronunciation": "tirish", "en": "thirty", "category": "Common Words Beginning with ত" },
+    { "bn": "টাকা", "pronunciation": "taka", "en": "money / taka", "category": "Common Words Beginning with ত" },
+    { "bn": "তাড়াতাড়ি", "pronunciation": "taratari", "en": "quickly / hurry", "category": "Common Words Beginning with ত" },
+    { "bn": "তাড়া", "pronunciation": "tara", "en": "hurry / chase", "category": "Common Words Beginning with ত" },
+    { "bn": "তারিখ", "pronunciation": "tarikh", "en": "date", "category": "Common Words Beginning with ত" },
+    { "bn": "তালা", "pronunciation": "tala", "en": "lock", "category": "Common Words Beginning with ত" },
+    { "bn": "তালিকা", "pronunciation": "talika", "en": "list", "category": "Common Words Beginning with ত" },
+    { "bn": "তাজা", "pronunciation": "taja", "en": "fresh", "category": "Common Words Beginning with ত" },
+    { "bn": "তৈরি", "pronunciation": "toiri", "en": "made / ready", "category": "The তৈরি Family" },
+    { "bn": "তৈরি করা", "pronunciation": "toiri kora", "en": "to make / prepare", "category": "The তৈরি Family" },
+    { "bn": "তেল", "pronunciation": "tel", "en": "oil", "category": "Common Words Beginning with ত" },
+    { "bn": "তেষ্টা", "pronunciation": "teshta", "en": "thirst", "category": "Common Words Beginning with ত" },
+    { "bn": "তোলা", "pronunciation": "tola", "en": "to lift / pick up / take a photo", "category": "Common Words Beginning with ত" },
+    { "bn": "তুলনা", "pronunciation": "tulona", "en": "comparison", "category": "Common Words Beginning with ত" },
+    { "bn": "তুলনা করা", "pronunciation": "tulona kora", "en": "to compare", "category": "Common Words Beginning with ত" },
+    { "bn": "তেমন", "pronunciation": "temon", "en": "like that / particularly", "category": "Common Words Beginning with ত" },
+    { "bn": "ঠিক", "pronunciation": "thik", "en": "correct / okay / exactly", "category": "Common Words Beginning with ত" },
+    { "bn": "তথ্য", "pronunciation": "tothyo", "en": "information", "category": "Common Words Beginning with ত" },
+    { "bn": "তদন্ত", "pronunciation": "todonto", "en": "investigation", "category": "Common Words Beginning with ত" },
+    { "bn": "তাপ", "pronunciation": "tap", "en": "heat", "category": "Common Words Beginning with ত" },
+    { "bn": "ত্বক", "pronunciation": "tok", "en": "skin", "category": "Common Words Beginning with ত" },
+    { "bn": "তীব্র", "pronunciation": "tibro", "en": "intense / severe", "category": "Common Words Beginning with ত" },
+    { "bn": "এটা", "pronunciation": "eta", "en": "this", "category": "ত Inside Common Words" },
+    { "bn": "সেটা", "pronunciation": "sheta", "en": "that", "category": "ত Inside Common Words" },
+    { "bn": "কত", "pronunciation": "koto", "en": "how much / many", "category": "ত Inside Common Words" },
+    { "bn": "কথা", "pronunciation": "kotha", "en": "talk / words", "category": "ত Inside Common Words" },
+    { "bn": "ভিতরে", "pronunciation": "bhitore", "en": "inside", "category": "ত Inside Common Words" },
+    { "bn": "রাতে", "pronunciation": "rate", "en": "at night", "category": "ত Inside Common Words" },
+    { "bn": "সাথে", "pronunciation": "shathe", "en": "with", "category": "ত Inside Common Words" },
+    { "bn": "যেতে", "pronunciation": "jete", "en": "to go", "category": "The -তে Pattern" },
+    { "bn": "করতে", "pronunciation": "korte", "en": "to do", "category": "The -তে Pattern" },
+    { "bn": "বলতে", "pronunciation": "bolte", "en": "to say", "category": "The -তে Pattern" },
+    { "bn": "খেতে", "pronunciation": "khete", "en": "to eat", "category": "The -তে Pattern" },
+    { "bn": "দেখতে", "pronunciation": "dekhte", "en": "to see", "category": "The -তে Pattern" },
+    { "bn": "জানতে", "pronunciation": "jante", "en": "to know", "category": "The -তে Pattern" },
+    { "bn": "থাকতে", "pronunciation": "thakte", "en": "to stay", "category": "The -তে Pattern" },
+    { "bn": "শিখতে", "pronunciation": "shikhte", "en": "to learn", "category": "The -তে Pattern" },
+    { "bn": "সত্যি", "pronunciation": "shotyi", "en": "really / true", "category": "ত Inside Common Words" },
+    { "bn": "নতুন", "pronunciation": "notun", "en": "new", "category": "ত Inside Common Words" },
+    { "bn": "প্রথম", "pronunciation": "prothom", "en": "first", "category": "ত Inside Common Words" },
+    { "bn": "বন্ধু", "pronunciation": "bondhu", "en": "friend", "category": "ত Inside Common Words" },
+    { "bn": "ভালোবাসতে", "pronunciation": "bhalobashte", "en": "to love", "category": "The -তে Pattern" }
   ],
   "practice": [
-    "Say ত three times: tô, tô, tô.",
-    "Find ত in each example word and read the whole word aloud.",
-    "Write ত five times while saying its name."
+    "Say ত three times with the tongue near the teeth: tô, tô, tô.",
+    "Practice the vowel forms: ত (tô), তা (ta), তি (ti), তী (ti), তু (tu), তূ (tu), তে (te), তৈ (toi), তো (to), and তৌ (tou).",
+    "Read the common combinations aloud: ত + া = তা as in তারা, ত + ি = তি as in তিন, ত + ী = তী as in তীব্র, ত + ু = তু as in তুমি, ত + ে = তে as in তেল, ত + ৈ = তৈ as in তৈরি, and ত + ো = তো as in তোমার.",
+    "Practice the related time words এখন, তখন, and কখন: now, then, and when.",
+    "Practice the -তে infinitive pattern with করতে, যেতে, খেতে, বলতে, দেখতে, জানতে, থাকতে, and শিখতে.",
+    "Contrast ত and থ with your hand near your mouth: ত releases little air; থ releases a noticeable puff.",
+    "Find ত inside এটা, সেটা, কত, কথা, ভিতরে, রাতে, সাথে, নতুন, প্রথম, বন্ধু, and ভালোবাসতে.",
+    "Use তুমি, তোমার, তারা, তাহলে, তাই, তখন, তিন, টাকা, তাড়াতাড়ি, তৈরি, and তেল as quick reading anchors.",
+    "Recognize these phrases instantly: তুমি কেমন আছো, তোমার নাম কী, তাহলে চলো, তাড়াতাড়ি করো, and তুমি তৈরি."
   ],
   "notes": [
-    "ত is pronounced approximately a dental t.",
-    "Listen to the audio and compare ত across the example words."
+    "ত is one of the most common Bangla consonants. It is called দন্ত্য ত (dôntyo tô) and is pronounced with the tongue near the teeth.",
+    "ত is an unaspirated dental t. Its partner থ uses a similar tongue position with an extra puff of air.",
+    "তুমি is the normal familiar-polite form of you. তোমার means your, তোমাকে means you or to you, and তোমাদের addresses or refers to more than one person.",
+    "The time words এখন, তখন, and কখন form a useful visual set: now, then, and when.",
+    "তাহলে means then or in that case, while তাই means so, therefore, or that's why.",
+    "The ending -তে appears in many useful infinitive forms, including করতে, যেতে, খেতে, বলতে, দেখতে, জানতে, থাকতে, and শিখতে.",
+    "Best ত words to memorize include তুমি, তোমার, তোমাকে, তারা, তাদের, তাকে, তাহলে, তাই, তখন, তিন, টাকা, তাড়াতাড়ি, তারিখ, তাজা, তৈরি, তেল, তোলা, তুলনা, তথ্য, তদন্ত, and ত্বক."
   ]
 }

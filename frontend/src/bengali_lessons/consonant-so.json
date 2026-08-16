@@ -1,136 +1,141 @@
 {
   "id": "consonant-so",
   "title": "স — sô",
-  "summary": "Learn স, pronounced sô, and recognize it in three useful Bengali words.",
+  "summary": "Learn the very common Bangla consonant স, its variable s/sh pronunciation, vowel-sign forms, essential words, and spelling contrasts with শ and ষ.",
   "level": "beginner",
   "topic": "Consonant: স",
-  "focus": "character recognition and pronunciation",
+  "focus": "character recognition, pronunciation, useful vocabulary, and spelling distinctions",
   "phrases": [
-    {
-      "bn": "সকাল শব্দে স আছে।",
-      "pronunciation": "shôkal shôbde sô achhe",
-      "en": "The word “সকাল” contains স.",
-      "context": "Find স in সকাল and say the complete word aloud.",
-      "category": "consonant-so",
-      "words": [
-        {
-          "bn": "সকাল",
-          "pronunciation": "shôkal",
-          "en": "morning"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "স",
-          "pronunciation": "sô",
-          "en": "the sô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "সাপ শব্দে স আছে।",
-      "pronunciation": "shap shôbde sô achhe",
-      "en": "The word “সাপ” contains স.",
-      "context": "Find স in সাপ and say the complete word aloud.",
-      "category": "consonant-so",
-      "words": [
-        {
-          "bn": "সাপ",
-          "pronunciation": "shap",
-          "en": "snake"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "স",
-          "pronunciation": "sô",
-          "en": "the sô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    },
-    {
-      "bn": "বাস শব্দে স আছে।",
-      "pronunciation": "bash shôbde sô achhe",
-      "en": "The word “বাস” contains স.",
-      "context": "Find স in বাস and say the complete word aloud.",
-      "category": "consonant-so",
-      "words": [
-        {
-          "bn": "বাস",
-          "pronunciation": "bash",
-          "en": "bus"
-        },
-        {
-          "bn": "শব্দে",
-          "pronunciation": "shôbde",
-          "en": "in the word"
-        },
-        {
-          "bn": "স",
-          "pronunciation": "sô",
-          "en": "the sô character"
-        },
-        {
-          "bn": "আছে",
-          "pronunciation": "achhe",
-          "en": "is present"
-        }
-      ]
-    }
+    { "bn": "সব ঠিক আছে।", "pronunciation": "shob thik achhe.", "en": "Everything is okay.", "context": "Reassure someone that everything is fine.", "category": "consonant-so" },
+    { "bn": "সব ভালো।", "pronunciation": "shob bhalo.", "en": "Everything is good.", "context": "Say that everything is going well.", "category": "consonant-so" },
+    { "bn": "সব দাও।", "pronunciation": "shob dao.", "en": "Give me everything.", "context": "Ask for all of something.", "category": "consonant-so" },
+    { "bn": "সব শেষ।", "pronunciation": "shob shesh.", "en": "Everything is finished.", "context": "Say that nothing remains.", "category": "consonant-so" },
+    { "bn": "সবাই এখানে আছে।", "pronunciation": "shobai ekhane achhe.", "en": "Everyone is here.", "context": "Confirm that the whole group is present.", "category": "consonant-so" },
+    { "bn": "সবাই ভালো আছে।", "pronunciation": "shobai bhalo achhe.", "en": "Everyone is well.", "context": "Report that everyone is doing well.", "category": "consonant-so" },
+    { "bn": "সবাইকে বলো।", "pronunciation": "shobaike bolo.", "en": "Tell everyone.", "context": "Ask someone to inform the group.", "category": "consonant-so" },
+    { "bn": "সবাই আসবে।", "pronunciation": "shobai ashbe.", "en": "Everyone will come.", "context": "Say that the whole group will attend.", "category": "consonant-so" },
+    { "bn": "সুপ্রভাত।", "pronunciation": "shuprobhat.", "en": "Good morning.", "context": "Use as a morning greeting.", "category": "consonant-so" },
+    { "bn": "সকালে দেখা হবে।", "pronunciation": "shokale dekha hobe.", "en": "See you in the morning.", "context": "Arrange a morning meeting.", "category": "consonant-so" },
+    { "bn": "কত সময় লাগবে?", "pronunciation": "koto shomoy lagbe?", "en": "How long will it take?", "context": "Ask about the required time.", "category": "consonant-so" },
+    { "bn": "সময় নেই।", "pronunciation": "shomoy nei.", "en": "There is no time.", "context": "Say that time is unavailable.", "category": "consonant-so" },
+    { "bn": "আমার সময় আছে।", "pronunciation": "amar shomoy achhe.", "en": "I have time.", "context": "Say that you are available.", "category": "consonant-so" },
+    { "bn": "এখন সময় আছে?", "pronunciation": "ekhon shomoy achhe?", "en": "Do you have time now?", "context": "Ask whether someone is currently available.", "category": "consonant-so" },
+    { "bn": "সময় হয়ে গেছে।", "pronunciation": "shomoy hoye gechhe.", "en": "It's time.", "context": "Say that the appointed time has arrived.", "category": "consonant-so" },
+    { "bn": "কোনো সমস্যা নেই।", "pronunciation": "kono shomossha nei.", "en": "No problem.", "context": "Reassure someone casually.", "category": "consonant-so" },
+    { "bn": "সমস্যা কী?", "pronunciation": "shomossha ki?", "en": "What's the problem?", "context": "Ask someone to identify a problem.", "category": "consonant-so" },
+    { "bn": "একটা সমস্যা আছে।", "pronunciation": "ekta shomossha achhe.", "en": "There is a problem.", "context": "Report an issue.", "category": "consonant-so" },
+    { "bn": "এটা বড় সমস্যা।", "pronunciation": "eta boro shomossha.", "en": "This is a big problem.", "context": "Describe a serious issue.", "category": "consonant-so" },
+    { "bn": "এটা সম্ভব।", "pronunciation": "eta shombhob.", "en": "This is possible.", "context": "Confirm feasibility.", "category": "consonant-so" },
+    { "bn": "এটা সম্ভব না।", "pronunciation": "eta shombhob na.", "en": "This isn't possible.", "context": "Say that something cannot be done.", "category": "consonant-so" },
+    { "bn": "সত্যি?", "pronunciation": "shotyi?", "en": "Really?", "context": "React with surprise or seek confirmation.", "category": "consonant-so" },
+    { "bn": "এটা সত্যি।", "pronunciation": "eta shotyi.", "en": "This is true.", "context": "Confirm that something is true.", "category": "consonant-so" },
+    { "bn": "খুব সুন্দর।", "pronunciation": "khub shundor.", "en": "Very beautiful.", "context": "Compliment something.", "category": "consonant-so" },
+    { "bn": "এটা সুন্দর।", "pronunciation": "eta shundor.", "en": "This is beautiful.", "context": "Describe something as beautiful.", "category": "consonant-so" },
+    { "bn": "জায়গাটা সুন্দর।", "pronunciation": "jaygata shundor.", "en": "The place is beautiful.", "context": "Compliment a location.", "category": "consonant-so" },
+    { "bn": "ছবিটা সুন্দর।", "pronunciation": "chhobita shundor.", "en": "The picture is beautiful.", "context": "Compliment a picture.", "category": "consonant-so" },
+    { "bn": "আমাকে সাহায্য করো।", "pronunciation": "amake shahajjo koro.", "en": "Help me.", "context": "Ask someone for help.", "category": "consonant-so" },
+    { "bn": "আপনি কি আমাকে সাহায্য করতে পারবেন?", "pronunciation": "apni ki amake shahajjo korte parben?", "en": "Can you help me?", "context": "Ask respectfully for assistance.", "category": "consonant-so" },
+    { "bn": "আমার সাহায্য দরকার।", "pronunciation": "amar shahajjo dorkar.", "en": "I need help.", "context": "State that assistance is needed.", "category": "consonant-so" },
+    { "bn": "সাহায্যের জন্য ধন্যবাদ।", "pronunciation": "shahajjer jonno dhonnobad.", "en": "Thank you for the help.", "context": "Thank someone for helping.", "category": "consonant-so" },
+    { "bn": "সাবধান!", "pronunciation": "shabdhan!", "en": "Be careful!", "context": "Warn someone of danger.", "category": "consonant-so" },
+    { "bn": "সোজা যাও।", "pronunciation": "shoja jao.", "en": "Go straight.", "context": "Give directions.", "category": "consonant-so" },
+    { "bn": "সামনে দেখো।", "pronunciation": "shamne dekho.", "en": "Look ahead.", "context": "Direct someone's attention forward.", "category": "consonant-so" },
+    { "bn": "সেখানে যাও।", "pronunciation": "shekhane jao.", "en": "Go there.", "context": "Direct someone to another place.", "category": "consonant-so" },
+    { "bn": "সেটা কী?", "pronunciation": "sheta ki?", "en": "What's that?", "context": "Ask about a distant object.", "category": "consonant-so" },
+    { "bn": "এটা সহজ।", "pronunciation": "eta shohoj.", "en": "This is easy.", "context": "Describe something as simple.", "category": "consonant-so" },
+    { "bn": "সঠিক উত্তর", "pronunciation": "shothik uttor", "en": "correct answer", "context": "Identify an accurate response.", "category": "consonant-so" },
+    { "bn": "সে কোথায়?", "pronunciation": "she kothay?", "en": "Where is he/she?", "context": "Ask where a person is.", "category": "consonant-so" },
+    { "bn": "সে আসছে।", "pronunciation": "she ashchhe.", "en": "He/she is coming.", "context": "Report that someone is approaching.", "category": "consonant-so" },
+    { "bn": "সেটা আমার।", "pronunciation": "sheta amar.", "en": "That's mine.", "context": "Claim a distant item.", "category": "consonant-so" },
+    { "bn": "সেটা ভালো।", "pronunciation": "sheta bhalo.", "en": "That's good.", "context": "Approve of something.", "category": "consonant-so" },
+    { "bn": "সেখানে কে আছে?", "pronunciation": "shekhane ke achhe?", "en": "Who is there?", "context": "Ask who is at a place.", "category": "consonant-so" },
+    { "bn": "আমি সেখানে যাব।", "pronunciation": "ami shekhane jabo.", "en": "I'll go there.", "context": "State where you will go.", "category": "consonant-so" }
   ],
   "vocab": [
-    {
-      "bn": "স",
-      "pronunciation": "sô",
-      "en": "sô: s",
-      "category": "consonant-so",
-      "sourcePhrase": "সকাল শব্দে স আছে।"
-    },
-    {
-      "bn": "সকাল",
-      "pronunciation": "shôkal",
-      "en": "morning",
-      "category": "consonant-so",
-      "sourcePhrase": "সকাল শব্দে স আছে।"
-    },
-    {
-      "bn": "সাপ",
-      "pronunciation": "shap",
-      "en": "snake",
-      "category": "consonant-so",
-      "sourcePhrase": "সাপ শব্দে স আছে।"
-    },
-    {
-      "bn": "বাস",
-      "pronunciation": "bash",
-      "en": "bus",
-      "category": "consonant-so",
-      "sourcePhrase": "বাস শব্দে স আছে।"
-    }
+    { "bn": "স", "pronunciation": "sô", "en": "the Bangla consonant sô", "category": "Letter" },
+    { "bn": "সব", "pronunciation": "shob", "en": "all / everything", "category": "Common Words Beginning with স" },
+    { "bn": "সবাই", "pronunciation": "shobai", "en": "everyone", "category": "Common Words Beginning with স" },
+    { "bn": "সঙ্গে", "pronunciation": "shonge", "en": "with", "category": "Common Words Beginning with স" },
+    { "bn": "সকাল", "pronunciation": "shokal", "en": "morning", "category": "Common Words Beginning with স" },
+    { "bn": "সকালে", "pronunciation": "shokale", "en": "in the morning", "category": "Common Words Beginning with স" },
+    { "bn": "সামনে", "pronunciation": "shamne", "en": "in front", "category": "Common Words Beginning with স" },
+    { "bn": "সাদা", "pronunciation": "shada", "en": "white", "category": "Common Words Beginning with স" },
+    { "bn": "সারা", "pronunciation": "shara", "en": "whole / entire", "category": "Common Words Beginning with স" },
+    { "bn": "সারাদিন", "pronunciation": "sharadin", "en": "all day", "category": "Common Words Beginning with স" },
+    { "bn": "সাধারণ", "pronunciation": "shadharon", "en": "general / ordinary", "category": "Common Words Beginning with স" },
+    { "bn": "সত্য", "pronunciation": "shotyo", "en": "truth / true", "category": "Common Words Beginning with স" },
+    { "bn": "সত্যি", "pronunciation": "shotyi", "en": "really / true", "category": "Common Words Beginning with স" },
+    { "bn": "সময়", "pronunciation": "shomoy", "en": "time", "category": "Common Words Beginning with স" },
+    { "bn": "সময়ে", "pronunciation": "shomoye", "en": "on time / at the time", "category": "Common Words Beginning with স" },
+    { "bn": "সমস্যা", "pronunciation": "shomossha", "en": "problem", "category": "Common Words Beginning with স" },
+    { "bn": "সমাধান", "pronunciation": "shomadhan", "en": "solution", "category": "Common Words Beginning with স" },
+    { "bn": "সম্ভব", "pronunciation": "shombhob", "en": "possible", "category": "Common Words Beginning with স" },
+    { "bn": "সম্ভবত", "pronunciation": "shombhoboto", "en": "probably", "category": "Common Words Beginning with স" },
+    { "bn": "সমান", "pronunciation": "shoman", "en": "equal", "category": "Common Words Beginning with স" },
+    { "bn": "সম্পর্ক", "pronunciation": "shomporko", "en": "relationship", "category": "Common Words Beginning with স" },
+    { "bn": "সম্পর্কে", "pronunciation": "shomporke", "en": "about / regarding", "category": "Common Words Beginning with স" },
+    { "bn": "সমুদ্র", "pronunciation": "shomudro", "en": "sea / ocean", "category": "Common Words Beginning with স" },
+    { "bn": "সংবাদ", "pronunciation": "shongbad", "en": "news", "category": "Common Words Beginning with স" },
+    { "bn": "সংখ্যা", "pronunciation": "shongkhya", "en": "number", "category": "Common Words Beginning with স" },
+    { "bn": "সুন্দর", "pronunciation": "shundor", "en": "beautiful", "category": "Common Words Beginning with স" },
+    { "bn": "সুখ", "pronunciation": "shukh", "en": "happiness", "category": "Common Words Beginning with স" },
+    { "bn": "সুখী", "pronunciation": "shukhi", "en": "happy", "category": "Common Words Beginning with স" },
+    { "bn": "সুস্থ", "pronunciation": "shustho", "en": "healthy / well", "category": "Common Words Beginning with স" },
+    { "bn": "সুযোগ", "pronunciation": "shujog", "en": "opportunity / chance", "category": "Common Words Beginning with স" },
+    { "bn": "সুবিধা", "pronunciation": "shubidha", "en": "convenience / advantage", "category": "Common Words Beginning with স" },
+    { "bn": "সাবধান", "pronunciation": "shabdhan", "en": "careful / beware", "category": "Common Words Beginning with স" },
+    { "bn": "সাহায্য", "pronunciation": "shahajjo", "en": "help", "category": "Common Words Beginning with স" },
+    { "bn": "সাহায্য করা", "pronunciation": "shahajjo kora", "en": "to help", "category": "Common Words Beginning with স" },
+    { "bn": "সঠিক", "pronunciation": "shothik", "en": "correct", "category": "Common Words Beginning with স" },
+    { "bn": "সরাসরি", "pronunciation": "shorashori", "en": "directly", "category": "Common Words Beginning with স" },
+    { "bn": "সহজ", "pronunciation": "shohoj", "en": "easy / simple", "category": "Common Words Beginning with স" },
+    { "bn": "সহজে", "pronunciation": "shohoje", "en": "easily", "category": "Common Words Beginning with স" },
+    { "bn": "স্কুল", "pronunciation": "skul", "en": "school", "category": "Common Words Beginning with স" },
+    { "bn": "সিঁড়ি", "pronunciation": "shiri", "en": "stairs", "category": "Common Words Beginning with স" },
+    { "bn": "সিনেমা", "pronunciation": "shinema", "en": "movie / cinema", "category": "Common Words Beginning with স" },
+    { "bn": "সিগারেট", "pronunciation": "shigaret", "en": "cigarette", "category": "Common Words Beginning with স" },
+    { "bn": "সোনা", "pronunciation": "shona", "en": "gold / dear", "category": "Common Words Beginning with স" },
+    { "bn": "সোজা", "pronunciation": "shoja", "en": "straight", "category": "Common Words Beginning with স" },
+    { "bn": "সে", "pronunciation": "she", "en": "he / she", "category": "The সে / সেটা / সেখানে Family" },
+    { "bn": "সেদিন", "pronunciation": "shedin", "en": "that day", "category": "The সে / সেটা / সেখানে Family" },
+    { "bn": "সেখানে", "pronunciation": "shekhane", "en": "there", "category": "The সে / সেটা / সেখানে Family" },
+    { "bn": "সেটা", "pronunciation": "sheta", "en": "that", "category": "The সে / সেটা / সেখানে Family" },
+    { "bn": "সেগুলো", "pronunciation": "shegulo", "en": "those", "category": "The সে / সেটা / সেখানে Family" },
+    { "bn": "সীমা", "pronunciation": "shima", "en": "limit / boundary", "category": "Vowel-Sign Examples" },
+    { "bn": "সূর্য", "pronunciation": "shurjo", "en": "sun", "category": "Vowel-Sign Examples" },
+    { "bn": "সৈনিক", "pronunciation": "shoinik", "en": "soldier", "category": "Vowel-Sign Examples" },
+    { "bn": "সৌন্দর্য", "pronunciation": "shoundorjo", "en": "beauty", "category": "Vowel-Sign Examples" },
+    { "bn": "বাসা", "pronunciation": "basha", "en": "home", "category": "স Inside Common Words" },
+    { "bn": "রাস্তা", "pronunciation": "rasta", "en": "road", "category": "স Inside Common Words" },
+    { "bn": "হাসি", "pronunciation": "hashi", "en": "smile", "category": "স Inside Common Words" },
+    { "bn": "আসা", "pronunciation": "asha", "en": "to come", "category": "স Inside Common Words" },
+    { "bn": "বসা", "pronunciation": "bosha", "en": "to sit", "category": "স Inside Common Words" },
+    { "bn": "বেশি", "pronunciation": "beshi", "en": "more", "category": "স Inside Common Words" },
+    { "bn": "ভালোবাসা", "pronunciation": "bhalobasha", "en": "love", "category": "স Inside Common Words" },
+    { "bn": "মাস", "pronunciation": "mash", "en": "month", "category": "স Inside Common Words" },
+    { "bn": "মানুষ", "pronunciation": "manush", "en": "person", "category": "স Inside Common Words" },
+    { "bn": "পুলিশ", "pronunciation": "pulish", "en": "police", "category": "স Inside Common Words" },
+    { "bn": "দেশ", "pronunciation": "desh", "en": "country", "category": "স Inside Common Words" },
+    { "bn": "পাশে", "pronunciation": "pashe", "en": "beside", "category": "স Inside Common Words" },
+    { "bn": "বিশ্বাস", "pronunciation": "bishshash", "en": "belief", "category": "স Inside Common Words" },
+    { "bn": "সাহস", "pronunciation": "shahosh", "en": "courage", "category": "স Inside Common Words" }
   ],
   "practice": [
     "Say স three times: sô, sô, sô.",
-    "Find স in each example word and read the whole word aloud.",
-    "Write স five times while saying its name."
+    "Practice the vowel forms: স (sô), সা (sa), সি (si), সী (si), সু (su), সূ (su), সে (se), সৈ (soi), সো (so), and সৌ (sou).",
+    "Read the combinations aloud: স + া = সা as in সাদা, স + ি = সি as in সিনেমা, স + ী = সী as in সীমা, স + ু = সু as in সুন্দর, স + ূ = সূ as in সূর্য, স + ে = সে, স + ো = সো as in সোজা, and স + ৌ = সৌ as in সৌন্দর্য.",
+    "Practice the related forms সে, সেটা, and সেখানে: he/she, that, and there.",
+    "Compare whole-word spellings with স, শ, and ষ: সব/সকাল/সময়/সাদা/সুন্দর; শুরু/শেষ/শহর/শোনা; কষ্ট/নষ্ট.",
+    "Find স inside বাসা, রাস্তা, হাসি, আসা, বসা, বেশি, ভালোবাসা, মাস, মানুষ, পুলিশ, দেশ, পাশে, বিশ্বাস, and সাহস.",
+    "Use সব, সবাই, সময়, সমস্যা, সুন্দর, সাহায্য, সহজ, সোজা, সকাল, and সঙ্গে as quick reading anchors.",
+    "Recognize these phrases instantly: সব ঠিক আছে, কোনো সমস্যা নেই, কত সময় লাগবে, আমাকে সাহায্য করো, and সোজা যাও."
   ],
   "notes": [
-    "স is pronounced approximately s.",
-    "Listen to the audio and compare স across the example words."
+    "স is one of the most common Bangla consonants. It is called দন্ত্য স (dôntyo shô/sô).",
+    "Its pronunciation varies by word. Although স is often introduced as s, many common Bangla words pronounce it closer to English sh, including সব (shob), সকাল (shokal), and সুন্দর (shundor).",
+    "The vowel-sign forms are স (sô), সা (sa), সি (si), সী (si), সু (su), সূ (su), সে (se), সৈ (soi), সো (so), and সৌ (sou).",
+    "Bangla has three letters learners often mix up: স is pronounced s or sh, শ usually sh, and ষ usually sh. Their modern pronunciations can overlap, so memorize the spelling of whole words.",
+    "Bangla সে can mean either he or she. Learn সে, সেটা, and সেখানে together as he/she, that, and there.",
+    "Best words to memorize include সব, সবাই, সে, সেটা, সেখানে, সঙ্গে, সকাল, সামনে, সাদা, সত্যি, সময়, সমস্যা, সমাধান, সম্ভব, সম্পর্কে, সুন্দর, সুখ, সুস্থ, সুযোগ, সাহায্য, সাবধান, সঠিক, সহজ, সোজা, and স্কুল."
   ]
 }
