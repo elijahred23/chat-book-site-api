@@ -7,6 +7,10 @@ import { BENGALI_CLASS_FIVE_LESSON } from "./bengaliClassFiveLesson.js";
 import { BENGALI_CLASS_SIX_LESSON } from "./bengaliClassSixLesson.js";
 import { BENGALI_CLASS_SEVEN_LESSON } from "./bengaliClassSevenLesson.js";
 import { BENGALI_CLASS_EIGHT_LESSON } from "./bengaliClassEightLesson.js";
+import { BENGALI_CLASS_NINE_LESSON } from "./bengaliClassNineLesson.js";
+import { BENGALI_CLASS_TEN_LESSON } from "./bengaliClassTenLesson.js";
+import { BENGALI_CLASS_ELEVEN_LESSON } from "./bengaliClassElevenLesson.js";
+import { BENGALI_CLASS_TWELVE_LESSON } from "./bengaliClassTwelveLesson.js";
 
 const CLASS_PHRASES = {
   1: [
@@ -178,6 +182,10 @@ export const BENGALI_CLASS_LESSONS = WORD_LEVELS.map((level, levelIndex) => {
   if (level.classNumber === 6) return BENGALI_CLASS_SIX_LESSON;
   if (level.classNumber === 7) return BENGALI_CLASS_SEVEN_LESSON;
   if (level.classNumber === 8) return BENGALI_CLASS_EIGHT_LESSON;
+  if (level.classNumber === 9) return BENGALI_CLASS_NINE_LESSON;
+  if (level.classNumber === 10) return BENGALI_CLASS_TEN_LESSON;
+  if (level.classNumber === 11) return BENGALI_CLASS_ELEVEN_LESSON;
+  if (level.classNumber === 12) return BENGALI_CLASS_TWELVE_LESSON;
   const coreCategory = `class-${level.classNumber}-core`;
   const extensionCategory = `class-${level.classNumber}-review-extension`;
   const reviewLevels = WORD_LEVELS.slice(0, levelIndex).reverse();
