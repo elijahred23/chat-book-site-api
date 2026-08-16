@@ -5,6 +5,8 @@ import { BENGALI_CLASS_THREE_LESSON } from "./bengaliClassThreeLesson.js";
 import { BENGALI_CLASS_FOUR_LESSON } from "./bengaliClassFourLesson.js";
 import { BENGALI_CLASS_FIVE_LESSON } from "./bengaliClassFiveLesson.js";
 import { BENGALI_CLASS_SIX_LESSON } from "./bengaliClassSixLesson.js";
+import { BENGALI_CLASS_SEVEN_LESSON } from "./bengaliClassSevenLesson.js";
+import { BENGALI_CLASS_EIGHT_LESSON } from "./bengaliClassEightLesson.js";
 
 const CLASS_PHRASES = {
   1: [
@@ -174,6 +176,8 @@ export const BENGALI_CLASS_LESSONS = WORD_LEVELS.map((level, levelIndex) => {
   if (level.classNumber === 4) return BENGALI_CLASS_FOUR_LESSON;
   if (level.classNumber === 5) return BENGALI_CLASS_FIVE_LESSON;
   if (level.classNumber === 6) return BENGALI_CLASS_SIX_LESSON;
+  if (level.classNumber === 7) return BENGALI_CLASS_SEVEN_LESSON;
+  if (level.classNumber === 8) return BENGALI_CLASS_EIGHT_LESSON;
   const coreCategory = `class-${level.classNumber}-core`;
   const extensionCategory = `class-${level.classNumber}-review-extension`;
   const reviewLevels = WORD_LEVELS.slice(0, levelIndex).reverse();
