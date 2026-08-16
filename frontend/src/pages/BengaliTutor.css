@@ -93,6 +93,9 @@
 .bn-auto-scroll button.primary { border-color: #176b4d; background: #176b4d; color: #fff; }
 .bn-auto-scroll label { display: grid; min-width: 8.5rem; gap: .15rem; color: #66736b; font-size: .68rem; font-weight: 800; text-align: center; }
 .bn-auto-scroll input { width: 100%; accent-color: #176b4d; }
+.bn-scroll-progress { width: 100%; height: 5px; overflow: hidden; background: #dfe7e1; cursor: pointer; touch-action: none; }
+.bn-scroll-progress span { display: block; height: 100%; border-radius: 0 999px 999px 0; background: linear-gradient(90deg, #176b4d, #34a36f); transition: width 80ms linear; }
+.bn-scroll-progress:focus-visible { height: 7px; outline: 2px solid rgba(23,107,77,.35); outline-offset: 2px; }
 .bn-scroll-speed { color: var(--bn-muted); font-size: .72rem; font-weight: 850; white-space: nowrap; }
 .bn-auto-scroll .bn-scroll-delay { display: inline-flex; min-width: 0; grid-auto-flow: column; align-items: center; gap: .25rem; white-space: nowrap; }
 .bn-auto-scroll .bn-scroll-delay input { width: 3.5rem; min-height: 38px; padding: .25rem; border: 1px solid var(--bn-line); border-radius: 8px; }

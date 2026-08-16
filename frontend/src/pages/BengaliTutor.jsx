@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useRef, useState, useCallback } from "react"
 import PropTypes from "prop-types";
 import { FcGoogle } from "react-icons/fc";
 import { FaVolumeHigh } from "react-icons/fa6";
-import { FaBackward, FaCompressAlt, FaExpandAlt, FaForward, FaMinus, FaPause, FaPlay, FaPlus, FaRedoAlt, FaStepBackward, FaStepForward, FaUndoAlt } from "react-icons/fa";
+import { FaBackward, FaCompressAlt, FaExpandAlt, FaForward, FaLanguage, FaMinus, FaPause, FaPlay, FaPlus, FaRedoAlt, FaStepBackward, FaStepForward, FaUndoAlt } from "react-icons/fa";
 import ActionButtons from "../ui/ActionButtons.jsx";
 import { actions, useAppDispatch } from "../context/AppContext.jsx";
 import { withPhraseWords } from "../utils/bengaliPhraseBreakdown.js";
@@ -210,6 +210,7 @@ const LanguageIcon = ({ language }) => (
 );
 
 const BengaliItemActions = ({ item }) => {
+  const dispatch = useAppDispatch();
   const [googleSpeechStatus, setGoogleSpeechStatus] = useState("idle");
 
   const hearGoogleBengali = async () => {
@@ -264,6 +265,19 @@ const BengaliItemActions = ({ item }) => {
       >
         <FcGoogle aria-hidden="true" />
       </a>
+      <button
+        className="bn-btn secondary bn-icon-btn"
+        type="button"
+        onClick={() => {
+          dispatch(actions.setBengaliBreakdownText(item.bn));
+          if (item.words?.length) dispatch(actions.setBengaliBreakdownWords(item.words));
+          dispatch(actions.setIsBengaliBreakdownOpen(true));
+        }}
+        aria-label={`Open Bengali breakdown for ${item.bn}`}
+        title="Open in Bengali Breakdown"
+      >
+        <FaLanguage aria-hidden="true" />
+      </button>
     </div>
   );
 };
@@ -276,6 +290,11 @@ BengaliItemActions.propTypes = {
   item: PropTypes.shape({
     bn: PropTypes.string.isRequired,
     en: PropTypes.string.isRequired,
+    words: PropTypes.arrayOf(PropTypes.shape({
+      bn: PropTypes.string,
+      pronunciation: PropTypes.string,
+      en: PropTypes.string,
+    })),
   }).isRequired,
 };
 
@@ -311,6 +330,7 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
   const [isScrollLooping, setIsScrollLooping] = useState(initialAutoScrollLoop);
   const [scrollRestartDelay, setScrollRestartDelay] = useState(initialAutoScrollDelay);
   const [isTutorWindowView, setIsTutorWindowView] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
   const tutorContentRef = useRef(null);
   const scrollDirectionRef = useRef(scrollDirection);
   const scrollSpeedRef = useRef(scrollSpeed);
@@ -412,6 +432,7 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
         preciseScrollTop + scrollDirectionRef.current * scrollSpeedRef.current * elapsedSeconds,
       ));
       container.scrollTop = preciseScrollTop;
+      setScrollProgress(maxScrollTop ? (preciseScrollTop / maxScrollTop) * 100 : 100);
 
       const reachedEnd = scrollDirectionRef.current > 0
         ? preciseScrollTop >= maxScrollTop
@@ -440,6 +461,7 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
   useEffect(() => {
     clearTimeout(scrollLoopTimeoutRef.current);
     setIsAutoScrolling(false);
+    setScrollProgress(0);
     if (tutorContentRef.current) tutorContentRef.current.scrollTop = 0;
   }, [contentTab, lesson]);
 
@@ -449,16 +471,20 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
     setIsAutoScrolling(true);
   };
 
-  const jumpTutorSection = (change) => {
+  const nudgeTutorScroll = (change) => {
     const container = tutorContentRef.current;
     if (!container) return;
-    setIsAutoScrolling(false);
-    const sections = [...container.querySelectorAll("article[id^='bn-']")];
-    if (!sections.length) return;
-    const currentIndex = sections.findIndex((section) => section.offsetTop > container.scrollTop + 8);
-    const baseIndex = currentIndex < 0 ? sections.length - 1 : Math.max(0, currentIndex - 1);
-    const target = sections[Math.max(0, Math.min(sections.length - 1, baseIndex + change))];
-    container.scrollTo({ top: target.offsetTop - 12, behavior: "smooth" });
+    const distance = Math.min(240, container.clientHeight * 0.35);
+    container.scrollTop += change * distance;
+  };
+
+  const seekTutorScroll = (percentage) => {
+    const container = tutorContentRef.current;
+    if (!container) return;
+    const nextPercentage = Math.max(0, Math.min(100, percentage));
+    const maxScrollTop = Math.max(0, container.scrollHeight - container.clientHeight);
+    container.scrollTop = maxScrollTop * (nextPercentage / 100);
+    setScrollProgress(nextPercentage);
   };
   const [bingoMistakes, setBingoMistakes] = useState(0);
   const [pronunciationQuestion, setPronunciationQuestion] = useState(null);
@@ -1102,8 +1128,8 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
                     <button type="button" className={isScrollLooping ? "active" : ""} onClick={() => setIsScrollLooping((looping) => !looping)} aria-label={isScrollLooping ? "Disable looping" : "Enable looping"} title="Toggle looping"><FaRedoAlt aria-hidden="true" /></button>
                     <button type="button" className={scrollDirection > 0 ? "active" : ""} onClick={() => activateScrollDirection(1)} aria-label="Auto-scroll down" title="Auto-scroll down"><FaForward aria-hidden="true" /></button>
                     <button type="button" onClick={() => { setIsAutoScrolling(false); tutorContentRef.current?.scrollTo({ top: 0, behavior: "smooth" }); }} aria-label="Return to top" title="Return to top"><FaUndoAlt aria-hidden="true" /></button>
-                    <button type="button" onClick={() => jumpTutorSection(-1)} aria-label="Previous item" title="Previous item"><FaStepBackward aria-hidden="true" /></button>
-                    <button type="button" onClick={() => jumpTutorSection(1)} aria-label="Next item" title="Next item"><FaStepForward aria-hidden="true" /></button>
+                    <button type="button" onClick={() => nudgeTutorScroll(-1)} aria-label="Scroll up a little" title="Scroll up a little"><FaStepBackward aria-hidden="true" /></button>
+                    <button type="button" onClick={() => nudgeTutorScroll(1)} aria-label="Scroll down a little" title="Scroll down a little"><FaStepForward aria-hidden="true" /></button>
                   </div>
                   <div className="bn-scroll-settings">
                     <button type="button" onClick={() => setScrollSpeed((speed) => Math.max(5, speed - 5))} aria-label="Decrease scroll speed" title="Decrease scroll speed"><FaMinus aria-hidden="true" /></button>
@@ -1149,7 +1175,36 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
                     </select>
                   </label>
                 </div>
-                <div className="bn-tutor-scroll-content" ref={tutorContentRef}>
+                <div
+                  className="bn-scroll-progress"
+                  role="slider"
+                  tabIndex="0"
+                  aria-label="Lesson scroll position"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuenow={Math.round(scrollProgress)}
+                  aria-valuetext={`${Math.round(scrollProgress)} percent`}
+                  onPointerDown={(event) => {
+                    const bounds = event.currentTarget.getBoundingClientRect();
+                    seekTutorScroll(((event.clientX - bounds.left) / bounds.width) * 100);
+                  }}
+                  onKeyDown={(event) => {
+                    if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+                    event.preventDefault();
+                    seekTutorScroll(scrollProgress + (event.key === "ArrowRight" ? 5 : -5));
+                  }}
+                >
+                  <span style={{ width: `${scrollProgress}%` }} />
+                </div>
+                <div
+                  className="bn-tutor-scroll-content"
+                  ref={tutorContentRef}
+                  onScroll={(event) => {
+                    const container = event.currentTarget;
+                    const maxScrollTop = Math.max(0, container.scrollHeight - container.clientHeight);
+                    setScrollProgress(maxScrollTop ? (container.scrollTop / maxScrollTop) * 100 : 100);
+                  }}
+                >
             {contentTab === "phrases" && (
               <section className="bn-section" style={{ display: "grid", gap: 10 }}>
                 <h3>Key phrases</h3>
