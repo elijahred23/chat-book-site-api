@@ -143,8 +143,8 @@ body.bn-tutor-window-open { overflow: hidden; }
   .bn-page .bn-shuffle-btn { width: 100%; }
   .bn-page .bn-phrase-card { border-radius: 14px; }
   .bn-page .bn-phrase-card > div:first-child { align-items: flex-start !important; }
-  .bn-audio-actions { width: 100%; display: grid !important; grid-template-columns: repeat(2,minmax(0,1fr)); }
-  .bn-page .bn-audio-actions .bn-btn { width: 100%; }
+  .bn-audio-actions { display: flex !important; width: auto; flex-wrap: wrap; gap: .4rem; }
+  .bn-page .bn-game-actions.bn-audio-actions .bn-btn { width: 42px; flex: 0 0 42px; }
   .bn-page .bn-vocab-list { grid-template-columns: 1fr; }
   .bn-page .bn-vocab-list > .bn-content-heading,
   .bn-page .bn-vocab-list > .bn-bulk-actions { grid-column: auto; }
