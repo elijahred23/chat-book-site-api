@@ -3,7 +3,7 @@ import { readdir, readFile } from "node:fs/promises";
 import test from "node:test";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
-import { buildPhraseWordsWithGlosses } from "../src/utils/bengaliPhraseBreakdownCore.js";
+import { buildPhraseWordsWithGlosses, romanizeBengaliWord } from "../src/utils/bengaliPhraseBreakdownCore.js";
 
 const frontendRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const lessonsDirectory = path.join(frontendRoot, "src/bengali_lessons");
@@ -77,4 +77,14 @@ test("known regression words have learner-friendly meanings", () => {
 
   assert.equal(phraseGlosses["গ্রন্থাগারে"], "in the library");
   assert.equal(phraseGlosses["খোলো"], "open");
+});
+
+test("missing pronunciations fall back to Latin-script Bengali sounds", () => {
+  assert.equal(romanizeBengaliWord("আমি"), "ami");
+  assert.equal(romanizeBengaliWord("আমার"), "amar");
+  assert.equal(romanizeBengaliWord("বন্ধ করা"), "bondho kora");
+
+  const words = buildPhraseWordsWithGlosses({ bn: "আমি ভালো আছি।" }, glosses);
+  assert.deepEqual(words.map((word) => word.pronunciation), ["ami", "bhalo", "achhi"]);
+  words.forEach((word) => assert.doesNotMatch(word.pronunciation, /\p{Script=Bengali}/u));
 });
