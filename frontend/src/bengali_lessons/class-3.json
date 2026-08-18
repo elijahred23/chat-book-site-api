@@ -8,2651 +8,3181 @@
   "vocab": [
     {
       "bn": "প্রতিদিন",
+      "pronunciation": "protidin",
       "en": "every day",
       "category": "Class 3 · Important everyday words"
     },
     {
       "bn": "সাধারণত",
+      "pronunciation": "shadharonoto",
       "en": "usually",
       "category": "Class 3 · Important everyday words"
     },
     {
       "bn": "নিয়মিত",
+      "pronunciation": "niyomito",
       "en": "regularly",
       "category": "Class 3 · Important everyday words"
     },
     {
       "bn": "প্রায়ই",
+      "pronunciation": "prayi",
       "en": "often",
       "category": "Class 3 · Important everyday words"
     },
     {
       "bn": "মাঝে মাঝে",
+      "pronunciation": "majhe majhe",
       "en": "occasionally",
       "category": "Class 3 · Important everyday words"
     },
     {
       "bn": "কখনো",
+      "pronunciation": "kokhono",
       "en": "sometimes/ever",
       "category": "Class 3 · Important everyday words"
     },
     {
       "bn": "সবসময়",
+      "pronunciation": "shobshomoy",
       "en": "always",
       "category": "Class 3 · Important everyday words"
     },
     {
       "bn": "ইতিমধ্যে",
+      "pronunciation": "itimodhye",
       "en": "already",
       "category": "Class 3 · Important everyday words"
     },
     {
       "bn": "হঠাৎ",
+      "pronunciation": "hothat",
       "en": "suddenly",
       "category": "Class 3 · Important everyday words"
     },
     {
       "bn": "আবার",
+      "pronunciation": "abar",
       "en": "again",
       "category": "Class 3 · Important everyday words"
     },
     {
       "bn": "একসঙ্গে",
+      "pronunciation": "eksongge",
       "en": "together",
       "category": "Class 3 · Important everyday words"
     },
     {
       "bn": "আলাদা",
+      "pronunciation": "alada",
       "en": "different",
       "category": "Class 3 · Important everyday words"
     },
     {
       "bn": "নিজে",
+      "pronunciation": "nije",
       "en": "oneself",
       "category": "Class 3 · Important everyday words"
     },
     {
       "bn": "অন্যদিকে",
+      "pronunciation": "onnodike",
       "en": "on the other hand",
       "category": "Class 3 · Important everyday words"
     },
     {
       "bn": "চারদিকে",
+      "pronunciation": "charodike",
       "en": "all around",
       "category": "Class 3 · Important everyday words"
     },
     {
       "bn": "কাছাকাছি",
+      "pronunciation": "kachakachi",
       "en": "nearby",
       "category": "Class 3 · Important everyday words"
     },
     {
       "bn": "দূরে",
+      "pronunciation": "dure",
       "en": "far",
       "category": "Class 3 · Important everyday words"
     },
     {
       "bn": "সামনে",
+      "pronunciation": "shamne",
       "en": "in front",
       "category": "Class 3 · Important everyday words"
     },
     {
       "bn": "পিছনে",
+      "pronunciation": "Pichone",
       "en": "behind",
       "category": "Class 3 · Important everyday words"
     },
     {
       "bn": "শুরু",
+      "pronunciation": "shuru",
       "en": "start",
       "category": "Class 3 · Important everyday words"
     },
     {
       "bn": "শেষ",
+      "pronunciation": "shesh",
       "en": "end",
       "category": "Class 3 · Important everyday words"
     },
     {
       "bn": "মাঝখান",
+      "pronunciation": "Majhkhaan",
       "en": "middle",
       "category": "Class 3 · Important everyday words"
     },
     {
       "bn": "সম্পূর্ণ",
+      "pronunciation": "shompurno",
       "en": "complete",
       "category": "Class 3 · Important everyday words"
     },
     {
       "bn": "প্রয়োজন",
+      "pronunciation": "proyojon",
       "en": "need",
       "category": "Class 3 · Important everyday words"
     },
     {
       "bn": "সুযোগ",
+      "pronunciation": "shujog",
       "en": "opportunity",
       "category": "Class 3 · Important everyday words"
     },
     {
       "bn": "সমস্যা",
+      "pronunciation": "shomoshsha",
       "en": "problem",
       "category": "Class 3 · Important everyday words"
     },
     {
       "bn": "সমাধান",
+      "pronunciation": "shomadhan",
       "en": "solution",
       "category": "Class 3 · Important everyday words"
     },
     {
       "bn": "কারণ",
+      "pronunciation": "karon",
       "en": "because",
       "category": "Class 3 · Important everyday words"
     },
     {
       "bn": "ফলাফল",
+      "pronunciation": "pholaphol",
       "en": "result",
       "category": "Class 3 · Important everyday words"
     },
     {
       "bn": "ঘটনা",
+      "pronunciation": "ghotona",
       "en": "event",
       "category": "Class 3 · Important everyday words"
     },
     {
       "bn": "বিষয়",
+      "pronunciation": "bishoy",
       "en": "subject",
       "category": "Class 3 · Important everyday words"
     },
     {
       "bn": "উপায়",
+      "pronunciation": "upay",
       "en": "way",
       "category": "Class 3 · Important everyday words"
     },
     {
       "bn": "অভ্যাস",
+      "pronunciation": "obhyash",
       "en": "habit",
       "category": "Class 3 · Important everyday words"
     },
     {
       "bn": "নিয়ম",
+      "pronunciation": "niyom",
       "en": "rule",
       "category": "Class 3 · Important everyday words"
     },
     {
       "bn": "সিদ্ধান্ত",
+      "pronunciation": "shiddhanto",
       "en": "decision",
       "category": "Class 3 · Important everyday words"
     },
     {
       "bn": "চেষ্টা",
+      "pronunciation": "cheshta",
       "en": "effort",
       "category": "Class 3 · Important everyday words"
     },
     {
       "bn": "পরিবর্তন",
+      "pronunciation": "poriborton",
       "en": "change",
       "category": "Class 3 · Important everyday words"
     },
     {
       "bn": "পরিবার",
+      "pronunciation": "poribar",
       "en": "family",
       "category": "Class 3 · Family and relationships"
     },
     {
       "bn": "সদস্য",
+      "pronunciation": "shôdôshsho",
       "en": "member",
       "category": "Class 3 · Family and relationships"
     },
     {
       "bn": "বাবা-মা",
+      "pronunciation": "baba-ma",
       "en": "parents",
       "category": "Class 3 · Family and relationships"
     },
     {
       "bn": "ভাইবোন",
+      "pronunciation": "bhaibon",
       "en": "siblings",
       "category": "Class 3 · Family and relationships"
     },
     {
       "bn": "আত্মীয়",
+      "pronunciation": "atmiyo",
       "en": "relative",
       "category": "Class 3 · Family and relationships"
     },
     {
       "bn": "প্রতিবেশী",
+      "pronunciation": "protibeshi",
       "en": "neighbor",
       "category": "Class 3 · Family and relationships"
     },
     {
       "bn": "বন্ধু",
+      "pronunciation": "bondhu",
       "en": "friend",
       "category": "Class 3 · Family and relationships"
     },
     {
       "bn": "সহপাঠী",
+      "pronunciation": "sohopathi",
       "en": "classmate",
       "category": "Class 3 · Family and relationships"
     },
     {
       "bn": "অতিথি",
+      "pronunciation": "otithi",
       "en": "guest",
       "category": "Class 3 · Family and relationships"
     },
     {
       "bn": "পরিচিত",
+      "pronunciation": "pôrichito",
       "en": "acquaintance",
       "category": "Class 3 · Family and relationships"
     },
     {
       "bn": "সম্পর্ক",
+      "pronunciation": "shomporko",
       "en": "relationship",
       "category": "Class 3 · Family and relationships"
     },
     {
       "bn": "বন্ধুত্ব",
+      "pronunciation": "bondhutb",
       "en": "friendship",
       "category": "Class 3 · Family and relationships"
     },
     {
       "bn": "ভালোবাসা",
+      "pronunciation": "bhalobasha",
       "en": "to love",
       "category": "Class 3 · Family and relationships"
     },
     {
       "bn": "যত্ন",
+      "pronunciation": "jotno",
       "en": "care",
       "category": "Class 3 · Family and relationships"
     },
     {
       "bn": "সম্মান",
+      "pronunciation": "shomman",
       "en": "respect",
       "category": "Class 3 · Family and relationships"
     },
     {
       "bn": "সাহায্য",
+      "pronunciation": "shahajjo",
       "en": "help",
       "category": "Class 3 · Family and relationships"
     },
     {
       "bn": "দায়িত্ব",
+      "pronunciation": "dayitto",
       "en": "responsibility",
       "category": "Class 3 · Family and relationships"
     },
     {
       "bn": "সহযোগিতা",
+      "pronunciation": "sohojogita",
       "en": "cooperation",
       "category": "Class 3 · Family and relationships"
     },
     {
       "bn": "আচরণ",
+      "pronunciation": "achoron",
       "en": "behavior",
       "category": "Class 3 · Family and relationships"
     },
     {
       "bn": "বিদ্যালয়",
+      "pronunciation": "biddaloy",
       "en": "school",
       "category": "Class 3 · School and education"
     },
     {
       "bn": "শ্রেণিকক্ষ",
+      "pronunciation": "shrenikoksh",
       "en": "classroom",
       "category": "Class 3 · School and education"
     },
     {
       "bn": "শিক্ষার্থী",
+      "pronunciation": "shikkharthi",
       "en": "student",
       "category": "Class 3 · School and education"
     },
     {
       "bn": "শিক্ষক",
+      "pronunciation": "shikkhok",
       "en": "male teacher",
       "category": "Class 3 · School and education"
     },
     {
       "bn": "পাঠ",
+      "pronunciation": "paṭh",
       "en": "lesson",
       "category": "Class 3 · School and education"
     },
     {
       "bn": "অধ্যায়",
+      "pronunciation": "odhjaj",
       "en": "chapter",
       "category": "Class 3 · School and education"
     },
     {
       "bn": "বিষয়",
+      "pronunciation": "bishoy",
       "en": "subject",
       "category": "Class 3 · School and education"
     },
     {
       "bn": "পাঠ্যবই",
+      "pronunciation": "pathjoboi",
       "en": "textbook",
       "category": "Class 3 · School and education"
     },
     {
       "bn": "অনুশীলন",
+      "pronunciation": "onushilon",
       "en": "practice",
       "category": "Class 3 · School and education"
     },
     {
       "bn": "বাড়ির কাজ",
+      "pronunciation": "barir kaj",
       "en": "homework",
       "category": "Class 3 · School and education"
     },
     {
       "bn": "পরীক্ষা",
+      "pronunciation": "porikkha",
       "en": "exam",
       "category": "Class 3 · School and education"
     },
     {
       "bn": "প্রশ্ন",
+      "pronunciation": "proshno",
       "en": "question",
       "category": "Class 3 · School and education"
     },
     {
       "bn": "উত্তর",
+      "pronunciation": "uttor",
       "en": "north",
       "category": "Class 3 · School and education"
     },
     {
       "bn": "ফলাফল",
+      "pronunciation": "pholaphol",
       "en": "result",
       "category": "Class 3 · School and education"
     },
     {
       "bn": "নম্বর",
+      "pronunciation": "nombor",
       "en": "marks",
       "category": "Class 3 · School and education"
     },
     {
       "bn": "শিক্ষা",
+      "pronunciation": "shikkha",
       "en": "education",
       "category": "Class 3 · School and education"
     },
     {
       "bn": "জ্ঞান",
+      "pronunciation": "gyan",
       "en": "knowledge",
       "category": "Class 3 · School and education"
     },
     {
       "bn": "আলোচনা",
+      "pronunciation": "alochona",
       "en": "discussion",
       "category": "Class 3 · School and education"
     },
     {
       "bn": "ব্যাখ্যা",
+      "pronunciation": "bjakhja",
       "en": "explanation",
       "category": "Class 3 · School and education"
     },
     {
       "bn": "উদাহরণ",
+      "pronunciation": "udahoron",
       "en": "example",
       "category": "Class 3 · School and education"
     },
     {
       "bn": "বানান",
+      "pronunciation": "banan",
       "en": "spelling",
       "category": "Class 3 · School and education"
     },
     {
       "bn": "বাক্য",
+      "pronunciation": "bakj",
       "en": "sentence",
       "category": "Class 3 · School and education"
     },
     {
       "bn": "অনুচ্ছেদ",
+      "pronunciation": "onuchchhed",
       "en": "paragraph",
       "category": "Class 3 · School and education"
     },
     {
       "bn": "গল্প",
+      "pronunciation": "golpo",
       "en": "story",
       "category": "Class 3 · School and education"
     },
     {
       "bn": "কবিতা",
+      "pronunciation": "Kobita",
       "en": "poem",
       "category": "Class 3 · School and education"
     },
     {
       "bn": "ছড়া",
+      "pronunciation": "chhora",
       "en": "rhyme",
       "category": "Class 3 · School and education"
     },
     {
       "bn": "রচনা",
+      "pronunciation": "rochona",
       "en": "composition",
       "category": "Class 3 · School and education"
     },
     {
       "bn": "শিরোনাম",
+      "pronunciation": "shironam",
       "en": "title",
       "category": "Class 3 · School and education"
     },
     {
       "bn": "অর্থ",
+      "pronunciation": "ôrtho",
       "en": "meaning",
       "category": "Class 3 · School and education"
     },
     {
       "bn": "অভিধান",
+      "pronunciation": "obhidhan",
       "en": "dictionary",
       "category": "Class 3 · School and education"
     },
     {
       "bn": "গ্রন্থাগার",
+      "pronunciation": "gronthagar",
       "en": "library",
       "category": "Class 3 · School and education"
     },
     {
       "bn": "ভাষা",
+      "pronunciation": "bhasha",
       "en": "language",
       "category": "Class 3 · Language and grammar"
     },
     {
       "bn": "বাংলা",
+      "pronunciation": "bangla",
       "en": "Bengali",
       "category": "Class 3 · Language and grammar"
     },
     {
       "bn": "বর্ণ",
+      "pronunciation": "borno",
       "en": "character",
       "category": "Class 3 · Language and grammar"
     },
     {
       "bn": "শব্দ",
+      "pronunciation": "shobdo",
       "en": "word",
       "category": "Class 3 · Language and grammar"
     },
     {
       "bn": "বাক্য",
+      "pronunciation": "bakj",
       "en": "sentence",
       "category": "Class 3 · Language and grammar"
     },
     {
       "bn": "অনুচ্ছেদ",
+      "pronunciation": "onuchchhed",
       "en": "paragraph",
       "category": "Class 3 · Language and grammar"
     },
     {
       "bn": "বিশেষ্য",
+      "pronunciation": "bisheshj",
       "en": "noun",
       "category": "Class 3 · Language and grammar"
     },
     {
       "bn": "সর্বনাম",
+      "pronunciation": "sorbonam",
       "en": "pronoun",
       "category": "Class 3 · Language and grammar"
     },
     {
       "bn": "ক্রিয়া",
+      "pronunciation": "kriya",
       "en": "verb",
       "category": "Class 3 · Language and grammar"
     },
     {
       "bn": "বিশেষণ",
+      "pronunciation": "bisheshon",
       "en": "adjective",
       "category": "Class 3 · Language and grammar"
     },
     {
       "bn": "একবচন",
+      "pronunciation": "ekobochon",
       "en": "singular",
       "category": "Class 3 · Language and grammar"
     },
     {
       "bn": "বহুবচন",
+      "pronunciation": "bohubochon",
       "en": "plural",
       "category": "Class 3 · Language and grammar"
     },
     {
       "bn": "বর্তমান",
+      "pronunciation": "bortoman",
       "en": "present",
       "category": "Class 3 · Language and grammar"
     },
     {
       "bn": "অতীত",
+      "pronunciation": "ôtit",
       "en": "past",
       "category": "Class 3 · Language and grammar"
     },
     {
       "bn": "ভবিষ্যৎ",
+      "pronunciation": "bhobishshot",
       "en": "future",
       "category": "Class 3 · Language and grammar"
     },
     {
       "bn": "প্রশ্নবোধক",
+      "pronunciation": "proshnobodhok",
       "en": "interrogative",
       "category": "Class 3 · Language and grammar"
     },
     {
       "bn": "বিরামচিহ্ন",
+      "pronunciation": "biramochihn",
       "en": "punctuation",
       "category": "Class 3 · Language and grammar"
     },
     {
       "bn": "কমা",
+      "pronunciation": "koma",
       "en": "comma",
       "category": "Class 3 · Language and grammar"
     },
     {
       "bn": "দাঁড়ি",
+      "pronunciation": "dandi",
       "en": "full stop",
       "category": "Class 3 · Language and grammar"
     },
     {
       "bn": "বানান",
+      "pronunciation": "banan",
       "en": "spelling",
       "category": "Class 3 · Language and grammar"
     },
     {
       "bn": "উচ্চারণ",
+      "pronunciation": "Uccharon",
       "en": "pronunciation",
       "category": "Class 3 · Language and grammar"
     },
     {
       "bn": "অর্থ",
+      "pronunciation": "ôrtho",
       "en": "meaning",
       "category": "Class 3 · Language and grammar"
     },
     {
       "bn": "বিপরীত শব্দ",
+      "pronunciation": "biporit shobdo",
       "en": "opposite word",
       "category": "Class 3 · Language and grammar"
     },
     {
       "bn": "সমার্থক শব্দ",
+      "pronunciation": "somarthok shobdo",
       "en": "synonym",
       "category": "Class 3 · Language and grammar"
     },
     {
       "bn": "বাড়ি",
+      "pronunciation": "bari",
       "en": "house",
       "category": "Class 3 · Home and daily life"
     },
     {
       "bn": "উঠান",
+      "pronunciation": "othan",
       "en": "yard",
       "category": "Class 3 · Home and daily life"
     },
     {
       "bn": "বারান্দা",
+      "pronunciation": "baranda",
       "en": "balcony",
       "category": "Class 3 · Home and daily life"
     },
     {
       "bn": "রান্নাঘর",
+      "pronunciation": "rannaghor",
       "en": "kitchen",
       "category": "Class 3 · Home and daily life"
     },
     {
       "bn": "শোবার ঘর",
+      "pronunciation": "shobar ghor",
       "en": "bedroom",
       "category": "Class 3 · Home and daily life"
     },
     {
       "bn": "বসার ঘর",
+      "pronunciation": "bosar ghor",
       "en": "living room",
       "category": "Class 3 · Home and daily life"
     },
     {
       "bn": "দরজা",
+      "pronunciation": "dorja",
       "en": "door",
       "category": "Class 3 · Home and daily life"
     },
     {
       "bn": "জানালা",
+      "pronunciation": "janala",
       "en": "window",
       "category": "Class 3 · Home and daily life"
     },
     {
       "bn": "আসবাবপত্র",
+      "pronunciation": "asobabopotr",
       "en": "furniture",
       "category": "Class 3 · Home and daily life"
     },
     {
       "bn": "আলমারি",
+      "pronunciation": "almari",
       "en": "cupboard",
       "category": "Class 3 · Home and daily life"
     },
     {
       "bn": "তাক",
+      "pronunciation": "tak",
       "en": "shelf",
       "category": "Class 3 · Home and daily life"
     },
     {
       "bn": "পর্দা",
+      "pronunciation": "porda",
       "en": "curtain",
       "category": "Class 3 · Home and daily life"
     },
     {
       "bn": "বিছানা",
+      "pronunciation": "bichhana",
       "en": "bed",
       "category": "Class 3 · Home and daily life"
     },
     {
       "bn": "বালিশ",
+      "pronunciation": "balish",
       "en": "pillow",
       "category": "Class 3 · Home and daily life"
     },
     {
       "bn": "চাদর",
+      "pronunciation": "chador",
       "en": "sheet",
       "category": "Class 3 · Home and daily life"
     },
     {
       "bn": "আয়না",
+      "pronunciation": "ayna",
       "en": "mirror",
       "category": "Class 3 · Home and daily life"
     },
     {
       "bn": "ঘড়ি",
+      "pronunciation": "ghori",
       "en": "clock",
       "category": "Class 3 · Home and daily life"
     },
     {
       "bn": "বাতি",
+      "pronunciation": "bati",
       "en": "light",
       "category": "Class 3 · Home and daily life"
     },
     {
       "bn": "পাখা",
+      "pronunciation": "pakha",
       "en": "fan",
       "category": "Class 3 · Home and daily life"
     },
     {
       "bn": "বিদ্যুৎ",
+      "pronunciation": "bidyut",
       "en": "electricity",
       "category": "Class 3 · Home and daily life"
     },
     {
       "bn": "পরিষ্কার",
+      "pronunciation": "pôrishkar",
       "en": "clean",
       "category": "Class 3 · Home and daily life"
     },
     {
       "bn": "পরিচ্ছন্নতা",
+      "pronunciation": "porichchhonnota",
       "en": "cleanliness",
       "category": "Class 3 · Home and daily life"
     },
     {
       "bn": "কাজ",
+      "pronunciation": "kaj",
       "en": "work",
       "category": "Class 3 · Home and daily life"
     },
     {
       "bn": "বিশ্রাম",
+      "pronunciation": "bishram",
       "en": "rest",
       "category": "Class 3 · Home and daily life"
     },
     {
       "bn": "সমাজ",
+      "pronunciation": "somaj",
       "en": "society",
       "category": "Class 3 · Society and surroundings"
     },
     {
       "bn": "এলাকা",
+      "pronunciation": "elaka",
       "en": "area",
       "category": "Class 3 · Society and surroundings"
     },
     {
       "bn": "গ্রাম",
+      "pronunciation": "gram",
       "en": "village",
       "category": "Class 3 · Society and surroundings"
     },
     {
       "bn": "শহর",
+      "pronunciation": "shohor",
       "en": "city",
       "category": "Class 3 · Society and surroundings"
     },
     {
       "bn": "রাস্তা",
+      "pronunciation": "rasta",
       "en": "road",
       "category": "Class 3 · Society and surroundings"
     },
     {
       "bn": "বাজার",
+      "pronunciation": "bajar",
       "en": "market",
       "category": "Class 3 · Society and surroundings"
     },
     {
       "bn": "দোকান",
+      "pronunciation": "dokan",
       "en": "shop",
       "category": "Class 3 · Society and surroundings"
     },
     {
       "bn": "হাসপাতাল",
+      "pronunciation": "hashpatal",
       "en": "hospital",
       "category": "Class 3 · Society and surroundings"
     },
     {
       "bn": "বিদ্যালয়",
+      "pronunciation": "biddaloy",
       "en": "school",
       "category": "Class 3 · Society and surroundings"
     },
     {
       "bn": "ডাকঘর",
+      "pronunciation": "ḍakghor",
       "en": "post office",
       "category": "Class 3 · Society and surroundings"
     },
     {
       "bn": "থানা",
+      "pronunciation": "thana",
       "en": "police station",
       "category": "Class 3 · Society and surroundings"
     },
     {
       "bn": "মসজিদ",
+      "pronunciation": "mosojid",
       "en": "mosque",
       "category": "Class 3 · Society and surroundings"
     },
     {
       "bn": "পার্ক",
+      "pronunciation": "park",
       "en": "park",
       "category": "Class 3 · Society and surroundings"
     },
     {
       "bn": "খেলার মাঠ",
+      "pronunciation": "khelar math",
       "en": "playground",
       "category": "Class 3 · Society and surroundings"
     },
     {
       "bn": "প্রতিবেশী",
+      "pronunciation": "protibeshi",
       "en": "neighbor",
       "category": "Class 3 · Society and surroundings"
     },
     {
       "bn": "নাগরিক",
+      "pronunciation": "nagorik",
       "en": "citizen",
       "category": "Class 3 · Society and surroundings"
     },
     {
       "bn": "জনসাধারণ",
+      "pronunciation": "jonosadharon",
       "en": "public",
       "category": "Class 3 · Society and surroundings"
     },
     {
       "bn": "যানবাহন",
+      "pronunciation": "janbahon",
       "en": "vehicle",
       "category": "Class 3 · Society and surroundings"
     },
     {
       "bn": "নিয়ম",
+      "pronunciation": "niyom",
       "en": "rule",
       "category": "Class 3 · Society and surroundings"
     },
     {
       "bn": "নিরাপত্তা",
+      "pronunciation": "nirapotta",
       "en": "safety",
       "category": "Class 3 · Society and surroundings"
     },
     {
       "bn": "শিক্ষক",
+      "pronunciation": "shikkhok",
       "en": "male teacher",
       "category": "Class 3 · Professions"
     },
     {
       "bn": "ডাক্তার",
+      "pronunciation": "daktar",
       "en": "doctor",
       "category": "Class 3 · Professions"
     },
     {
       "bn": "নার্স",
+      "pronunciation": "nars",
       "en": "nurse",
       "category": "Class 3 · Professions"
     },
     {
       "bn": "কৃষক",
+      "pronunciation": "krishok",
       "en": "farmer",
       "category": "Class 3 · Professions"
     },
     {
       "bn": "জেলে",
+      "pronunciation": "jele",
       "en": "fisher",
       "category": "Class 3 · Professions"
     },
     {
       "bn": "পুলিশ",
+      "pronunciation": "polish",
       "en": "police officer",
       "category": "Class 3 · Professions"
     },
     {
       "bn": "চালক",
+      "pronunciation": "chalok",
       "en": "driver",
       "category": "Class 3 · Professions"
     },
     {
       "bn": "দোকানদার",
+      "pronunciation": "dokanodar",
       "en": "shopkeeper",
       "category": "Class 3 · Professions"
     },
     {
       "bn": "ব্যবসায়ী",
+      "pronunciation": "bjobosaj",
       "en": "businessperson",
       "category": "Class 3 · Professions"
     },
     {
       "bn": "শ্রমিক",
+      "pronunciation": "shromik",
       "en": "worker",
       "category": "Class 3 · Professions"
     },
     {
       "bn": "দর্জি",
+      "pronunciation": "dorji",
       "en": "tailor",
       "category": "Class 3 · Professions"
     },
     {
       "bn": "রাঁধুনি",
+      "pronunciation": "randhuni",
       "en": "cook",
       "category": "Class 3 · Professions"
     },
     {
       "bn": "মিস্ত্রি",
+      "pronunciation": "mistri",
       "en": "craftsperson",
       "category": "Class 3 · Professions"
     },
     {
       "bn": "ডাকপিয়ন",
+      "pronunciation": "dakopijon",
       "en": "postal worker",
       "category": "Class 3 · Professions"
     },
     {
       "bn": "প্রকৌশলী",
+      "pronunciation": "prokousholi",
       "en": "engineer",
       "category": "Class 3 · Professions"
     },
     {
       "bn": "লেখক",
+      "pronunciation": "lekhok",
       "en": "writer",
       "category": "Class 3 · Professions"
     },
     {
       "bn": "শিল্পী",
+      "pronunciation": "shilpi",
       "en": "artist",
       "category": "Class 3 · Professions"
     },
     {
       "bn": "প্রকৃতি",
+      "pronunciation": "prokriti",
       "en": "nature",
       "category": "Class 3 · Nature and environment"
     },
     {
       "bn": "পরিবেশ",
+      "pronunciation": "poribesh",
       "en": "environment",
       "category": "Class 3 · Nature and environment"
     },
     {
       "bn": "পৃথিবী",
+      "pronunciation": "prithibi",
       "en": "earth",
       "category": "Class 3 · Nature and environment"
     },
     {
       "bn": "আকাশ",
+      "pronunciation": "akash",
       "en": "sky",
       "category": "Class 3 · Nature and environment"
     },
     {
       "bn": "সূর্য",
+      "pronunciation": "shurjo",
       "en": "sun",
       "category": "Class 3 · Nature and environment"
     },
     {
       "bn": "চাঁদ",
+      "pronunciation": "chãd",
       "en": "moon",
       "category": "Class 3 · Nature and environment"
     },
     {
       "bn": "তারা",
+      "pronunciation": "tara",
       "en": "star",
       "category": "Class 3 · Nature and environment"
     },
     {
       "bn": "মেঘ",
+      "pronunciation": "megh",
       "en": "cloud",
       "category": "Class 3 · Nature and environment"
     },
     {
       "bn": "বাতাস",
+      "pronunciation": "batash",
       "en": "wind",
       "category": "Class 3 · Nature and environment"
     },
     {
       "bn": "বৃষ্টি",
+      "pronunciation": "brishti",
       "en": "rain",
       "category": "Class 3 · Nature and environment"
     },
     {
       "bn": "ঝড়",
+      "pronunciation": "jhor",
       "en": "storm",
       "category": "Class 3 · Nature and environment"
     },
     {
       "bn": "বজ্রপাত",
+      "pronunciation": "bojropat",
       "en": "lightning",
       "category": "Class 3 · Nature and environment"
     },
     {
       "bn": "নদী",
+      "pronunciation": "nodi",
       "en": "river",
       "category": "Class 3 · Nature and environment"
     },
     {
       "bn": "সাগর",
+      "pronunciation": "sagor",
       "en": "sea",
       "category": "Class 3 · Nature and environment"
     },
     {
       "bn": "পাহাড়",
+      "pronunciation": "pahar",
       "en": "mountain",
       "category": "Class 3 · Nature and environment"
     },
     {
       "bn": "বন",
+      "pronunciation": "bon",
       "en": "forest",
       "category": "Class 3 · Nature and environment"
     },
     {
       "bn": "মাঠ",
+      "pronunciation": "math",
       "en": "field",
       "category": "Class 3 · Nature and environment"
     },
     {
       "bn": "মাটি",
+      "pronunciation": "mati",
       "en": "soil",
       "category": "Class 3 · Nature and environment"
     },
     {
       "bn": "গাছপালা",
+      "pronunciation": "gachhopala",
       "en": "plants",
       "category": "Class 3 · Nature and environment"
     },
     {
       "bn": "ফুল",
+      "pronunciation": "phul / ful",
       "en": "flower",
       "category": "Class 3 · Nature and environment"
     },
     {
       "bn": "ফল",
+      "pronunciation": "phol / fol",
       "en": "fruit",
       "category": "Class 3 · Nature and environment"
     },
     {
       "bn": "বীজ",
+      "pronunciation": "bij",
       "en": "seed",
       "category": "Class 3 · Nature and environment"
     },
     {
       "bn": "প্রাণী",
+      "pronunciation": "prani",
       "en": "animal",
       "category": "Class 3 · Nature and environment"
     },
     {
       "bn": "পাখি",
+      "pronunciation": "pakhi",
       "en": "bird",
       "category": "Class 3 · Nature and environment"
     },
     {
       "bn": "পোকামাকড়",
+      "pronunciation": "pokamakodo",
       "en": "insects",
       "category": "Class 3 · Nature and environment"
     },
     {
       "bn": "পরিবেশ রক্ষা",
+      "pronunciation": "poribesh rokkha",
       "en": "environmental protection",
       "category": "Class 3 · Nature and environment"
     },
     {
       "bn": "দূষণ",
+      "pronunciation": "dushon",
       "en": "pollution",
       "category": "Class 3 · Nature and environment"
     },
     {
       "bn": "আবর্জনা",
+      "pronunciation": "aborjona",
       "en": "garbage",
       "category": "Class 3 · Nature and environment"
     },
     {
       "bn": "আবহাওয়া",
+      "pronunciation": "abohawa",
       "en": "weather",
       "category": "Class 3 · Weather and seasons"
     },
     {
       "bn": "তাপমাত্রা",
+      "pronunciation": "tapmatra",
       "en": "temperature",
       "category": "Class 3 · Weather and seasons"
     },
     {
       "bn": "রোদ",
+      "pronunciation": "rod",
       "en": "sunshine",
       "category": "Class 3 · Weather and seasons"
     },
     {
       "bn": "বৃষ্টি",
+      "pronunciation": "brishti",
       "en": "rain",
       "category": "Class 3 · Weather and seasons"
     },
     {
       "bn": "বাতাস",
+      "pronunciation": "batash",
       "en": "wind",
       "category": "Class 3 · Weather and seasons"
     },
     {
       "bn": "ঝড়",
+      "pronunciation": "jhor",
       "en": "storm",
       "category": "Class 3 · Weather and seasons"
     },
     {
       "bn": "কুয়াশা",
+      "pronunciation": "kuyasha",
       "en": "fog",
       "category": "Class 3 · Weather and seasons"
     },
     {
       "bn": "মেঘলা",
+      "pronunciation": "meghola",
       "en": "cloudy",
       "category": "Class 3 · Weather and seasons"
     },
     {
       "bn": "গরম",
+      "pronunciation": "gorom",
       "en": "hot",
       "category": "Class 3 · Weather and seasons"
     },
     {
       "bn": "ঠান্ডা",
+      "pronunciation": "thanda",
       "en": "cold",
       "category": "Class 3 · Weather and seasons"
     },
     {
       "bn": "গ্রীষ্ম",
+      "pronunciation": "grishsho",
       "en": "summer",
       "category": "Class 3 · Weather and seasons"
     },
     {
       "bn": "বর্ষা",
+      "pronunciation": "borsha",
       "en": "monsoon",
       "category": "Class 3 · Weather and seasons"
     },
     {
       "bn": "শরৎ",
+      "pronunciation": "shorot",
       "en": "autumn",
       "category": "Class 3 · Weather and seasons"
     },
     {
       "bn": "হেমন্ত",
+      "pronunciation": "hemont",
       "en": "late autumn",
       "category": "Class 3 · Weather and seasons"
     },
     {
       "bn": "শীত",
+      "pronunciation": "shit",
       "en": "winter",
       "category": "Class 3 · Weather and seasons"
     },
     {
       "bn": "বসন্ত",
+      "pronunciation": "bosont",
       "en": "spring",
       "category": "Class 3 · Weather and seasons"
     },
     {
       "bn": "ঋতু",
+      "pronunciation": "ritu",
       "en": "season",
       "category": "Class 3 · Weather and seasons"
     },
     {
       "bn": "পরিবর্তন",
+      "pronunciation": "poriborton",
       "en": "change",
       "category": "Class 3 · Weather and seasons"
     },
     {
       "bn": "প্রাণী",
+      "pronunciation": "prani",
       "en": "animal",
       "category": "Class 3 · Animal life"
     },
     {
       "bn": "বন্য প্রাণী",
+      "pronunciation": "bonno prani",
       "en": "wild animal",
       "category": "Class 3 · Animal life"
     },
     {
       "bn": "গৃহপালিত প্রাণী",
+      "pronunciation": "grihopalit prani",
       "en": "domestic animal",
       "category": "Class 3 · Animal life"
     },
     {
       "bn": "পাখি",
+      "pronunciation": "pakhi",
       "en": "bird",
       "category": "Class 3 · Animal life"
     },
     {
       "bn": "মাছ",
+      "pronunciation": "machh",
       "en": "fish",
       "category": "Class 3 · Animal life"
     },
     {
       "bn": "কীটপতঙ্গ",
+      "pronunciation": "kitopotongg",
       "en": "insect",
       "category": "Class 3 · Animal life"
     },
     {
       "bn": "বাসস্থান",
+      "pronunciation": "basosthan",
       "en": "habitat",
       "category": "Class 3 · Animal life"
     },
     {
       "bn": "খাবার",
+      "pronunciation": "khabar",
       "en": "food",
       "category": "Class 3 · Animal life"
     },
     {
       "bn": "শিকার",
+      "pronunciation": "shikar",
       "en": "prey/hunt",
       "category": "Class 3 · Animal life"
     },
     {
       "bn": "শিকারি",
+      "pronunciation": "shikari",
       "en": "hunter/predator",
       "category": "Class 3 · Animal life"
     },
     {
       "bn": "ডানা",
+      "pronunciation": "ḍana",
       "en": "wing",
       "category": "Class 3 · Animal life"
     },
     {
       "bn": "পালক",
+      "pronunciation": "palok",
       "en": "feather",
       "category": "Class 3 · Animal life"
     },
     {
       "bn": "লেজ",
+      "pronunciation": "lej",
       "en": "tail",
       "category": "Class 3 · Animal life"
     },
     {
       "bn": "শিং",
+      "pronunciation": "shing",
       "en": "horn",
       "category": "Class 3 · Animal life"
     },
     {
       "bn": "নখ",
+      "pronunciation": "nokh",
       "en": "claw",
       "category": "Class 3 · Animal life"
     },
     {
       "bn": "বাসা",
+      "pronunciation": "basha",
       "en": "nest",
       "category": "Class 3 · Animal life"
     },
     {
       "bn": "ডিম",
+      "pronunciation": "ḍim",
       "en": "egg",
       "category": "Class 3 · Animal life"
     },
     {
       "bn": "বাচ্চা",
+      "pronunciation": "bachcha",
       "en": "child",
       "category": "Class 3 · Animal life"
     },
     {
       "bn": "দল",
+      "pronunciation": "dol",
       "en": "group",
       "category": "Class 3 · Animal life"
     },
     {
       "bn": "জীবন",
+      "pronunciation": "jibon",
       "en": "life",
       "category": "Class 3 · Animal life"
     },
     {
       "bn": "উদ্ভিদ",
+      "pronunciation": "udbhid",
       "en": "plant",
       "category": "Class 3 · Plants"
     },
     {
       "bn": "গাছ",
+      "pronunciation": "gachh",
       "en": "tree",
       "category": "Class 3 · Plants"
     },
     {
       "bn": "শিকড়",
+      "pronunciation": "shikodo",
       "en": "root",
       "category": "Class 3 · Plants"
     },
     {
       "bn": "কাণ্ড",
+      "pronunciation": "kand",
       "en": "stem",
       "category": "Class 3 · Plants"
     },
     {
       "bn": "ডাল",
+      "pronunciation": "ḍal",
       "en": "branch",
       "category": "Class 3 · Plants"
     },
     {
       "bn": "পাতা",
+      "pronunciation": "pata",
       "en": "leaf",
       "category": "Class 3 · Plants"
     },
     {
       "bn": "ফুল",
+      "pronunciation": "phul / ful",
       "en": "flower",
       "category": "Class 3 · Plants"
     },
     {
       "bn": "ফল",
+      "pronunciation": "phol / fol",
       "en": "fruit",
       "category": "Class 3 · Plants"
     },
     {
       "bn": "বীজ",
+      "pronunciation": "bij",
       "en": "seed",
       "category": "Class 3 · Plants"
     },
     {
       "bn": "মাটি",
+      "pronunciation": "mati",
       "en": "soil",
       "category": "Class 3 · Plants"
     },
     {
       "bn": "পানি",
+      "pronunciation": "pani",
       "en": "water",
       "category": "Class 3 · Plants"
     },
     {
       "bn": "সূর্যের আলো",
+      "pronunciation": "shurjer alo",
       "en": "sunlight",
       "category": "Class 3 · Plants"
     },
     {
       "bn": "বৃদ্ধি",
+      "pronunciation": "briddhi",
       "en": "growth",
       "category": "Class 3 · Plants"
     },
     {
       "bn": "চারা",
+      "pronunciation": "chara",
       "en": "sapling",
       "category": "Class 3 · Plants"
     },
     {
       "bn": "বাগান",
+      "pronunciation": "bagan",
       "en": "garden",
       "category": "Class 3 · Plants"
     },
     {
       "bn": "ফসল",
+      "pronunciation": "phosol",
       "en": "crop",
       "category": "Class 3 · Plants"
     },
     {
       "bn": "শরীর",
+      "pronunciation": "shorir",
       "en": "body",
       "category": "Class 3 · Body and health"
     },
     {
       "bn": "স্বাস্থ্য",
+      "pronunciation": "shastho",
       "en": "health",
       "category": "Class 3 · Body and health"
     },
     {
       "bn": "পরিচ্ছন্নতা",
+      "pronunciation": "porichchhonnota",
       "en": "cleanliness",
       "category": "Class 3 · Body and health"
     },
     {
       "bn": "ব্যায়াম",
+      "pronunciation": "byayam",
       "en": "exercise",
       "category": "Class 3 · Body and health"
     },
     {
       "bn": "বিশ্রাম",
+      "pronunciation": "bishram",
       "en": "rest",
       "category": "Class 3 · Body and health"
     },
     {
       "bn": "পুষ্টি",
+      "pronunciation": "pushti",
       "en": "nutrition",
       "category": "Class 3 · Body and health"
     },
     {
       "bn": "খাবার",
+      "pronunciation": "khabar",
       "en": "food",
       "category": "Class 3 · Body and health"
     },
     {
       "bn": "অসুস্থতা",
+      "pronunciation": "osusthota",
       "en": "illness",
       "category": "Class 3 · Body and health"
     },
     {
       "bn": "জ্বর",
+      "pronunciation": "jor",
       "en": "fever",
       "category": "Class 3 · Body and health"
     },
     {
       "bn": "সর্দি",
+      "pronunciation": "shordi",
       "en": "cold",
       "category": "Class 3 · Body and health"
     },
     {
       "bn": "কাশি",
+      "pronunciation": "kashi",
       "en": "cough",
       "category": "Class 3 · Body and health"
     },
     {
       "bn": "ব্যথা",
+      "pronunciation": "byatha",
       "en": "pain",
       "category": "Class 3 · Body and health"
     },
     {
       "bn": "চিকিৎসা",
+      "pronunciation": "chikitsa",
       "en": "treatment",
       "category": "Class 3 · Body and health"
     },
     {
       "bn": "ডাক্তার",
+      "pronunciation": "daktar",
       "en": "doctor",
       "category": "Class 3 · Body and health"
     },
     {
       "bn": "হাসপাতাল",
+      "pronunciation": "hashpatal",
       "en": "hospital",
       "category": "Class 3 · Body and health"
     },
     {
       "bn": "ওষুধ",
+      "pronunciation": "oshudh",
       "en": "medicine",
       "category": "Class 3 · Body and health"
     },
     {
       "bn": "সুস্থ",
+      "pronunciation": "shustho",
       "en": "healthy",
       "category": "Class 3 · Body and health"
     },
     {
       "bn": "অসুস্থ",
+      "pronunciation": "ôshustho",
       "en": "sick",
       "category": "Class 3 · Body and health"
     },
     {
       "bn": "শক্তি",
+      "pronunciation": "shokti",
       "en": "strength",
       "category": "Class 3 · Body and health"
     },
     {
       "bn": "যত্ন",
+      "pronunciation": "jotno",
       "en": "care",
       "category": "Class 3 · Body and health"
     },
     {
       "bn": "খাবার",
+      "pronunciation": "khabar",
       "en": "food",
       "category": "Class 3 · Food and nutrition"
     },
     {
       "bn": "পুষ্টি",
+      "pronunciation": "pushti",
       "en": "nutrition",
       "category": "Class 3 · Food and nutrition"
     },
     {
       "bn": "নাশতা",
+      "pronunciation": "nashta",
       "en": "breakfast",
       "category": "Class 3 · Food and nutrition"
     },
     {
       "bn": "দুপুরের খাবার",
+      "pronunciation": "dupurer khabar",
       "en": "lunch",
       "category": "Class 3 · Food and nutrition"
     },
     {
       "bn": "রাতের খাবার",
+      "pronunciation": "rater khabar",
       "en": "dinner",
       "category": "Class 3 · Food and nutrition"
     },
     {
       "bn": "শাকসবজি",
+      "pronunciation": "shakshobji",
       "en": "vegetables",
       "category": "Class 3 · Food and nutrition"
     },
     {
       "bn": "ফলমূল",
+      "pronunciation": "pholomul",
       "en": "fruits",
       "category": "Class 3 · Food and nutrition"
     },
     {
       "bn": "মাছ",
+      "pronunciation": "machh",
       "en": "fish",
       "category": "Class 3 · Food and nutrition"
     },
     {
       "bn": "মাংস",
+      "pronunciation": "mangsho",
       "en": "meat",
       "category": "Class 3 · Food and nutrition"
     },
     {
       "bn": "ডিম",
+      "pronunciation": "ḍim",
       "en": "egg",
       "category": "Class 3 · Food and nutrition"
     },
     {
       "bn": "দুধ",
+      "pronunciation": "dudh",
       "en": "milk",
       "category": "Class 3 · Food and nutrition"
     },
     {
       "bn": "চাল",
+      "pronunciation": "chal",
       "en": "uncooked rice",
       "category": "Class 3 · Food and nutrition"
     },
     {
       "bn": "ডাল",
+      "pronunciation": "ḍal",
       "en": "branch",
       "category": "Class 3 · Food and nutrition"
     },
     {
       "bn": "পানি",
+      "pronunciation": "pani",
       "en": "water",
       "category": "Class 3 · Food and nutrition"
     },
     {
       "bn": "স্বাস্থ্যকর",
+      "pronunciation": "shasthokor",
       "en": "healthy",
       "category": "Class 3 · Food and nutrition"
     },
     {
       "bn": "তাজা",
+      "pronunciation": "taja",
       "en": "fresh",
       "category": "Class 3 · Food and nutrition"
     },
     {
       "bn": "স্বাদ",
+      "pronunciation": "sbado",
       "en": "taste",
       "category": "Class 3 · Food and nutrition"
     },
     {
       "bn": "মিষ্টি",
+      "pronunciation": "mishti",
       "en": "sweet",
       "category": "Class 3 · Food and nutrition"
     },
     {
       "bn": "টক",
+      "pronunciation": "tok",
       "en": "sour",
       "category": "Class 3 · Food and nutrition"
     },
     {
       "bn": "ঝাল",
+      "pronunciation": "jhal",
       "en": "spicy",
       "category": "Class 3 · Food and nutrition"
     },
     {
       "bn": "তিতা",
+      "pronunciation": "tita",
       "en": "bitter",
       "category": "Class 3 · Food and nutrition"
     },
     {
       "bn": "ভ্রমণ",
+      "pronunciation": "bhromon",
       "en": "travel",
       "category": "Class 3 · Transportation and travel"
     },
     {
       "bn": "যাত্রা",
+      "pronunciation": "jatra",
       "en": "journey",
       "category": "Class 3 · Transportation and travel"
     },
     {
       "bn": "গন্তব্য",
+      "pronunciation": "gontobj",
       "en": "destination",
       "category": "Class 3 · Transportation and travel"
     },
     {
       "bn": "যানবাহন",
+      "pronunciation": "janbahon",
       "en": "vehicle",
       "category": "Class 3 · Transportation and travel"
     },
     {
       "bn": "বাস",
+      "pronunciation": "bas",
       "en": "bus",
       "category": "Class 3 · Transportation and travel"
     },
     {
       "bn": "ট্রেন",
+      "pronunciation": "ṭren",
       "en": "train",
       "category": "Class 3 · Transportation and travel"
     },
     {
       "bn": "নৌকা",
+      "pronunciation": "nouka",
       "en": "boat",
       "category": "Class 3 · Transportation and travel"
     },
     {
       "bn": "জাহাজ",
+      "pronunciation": "jahaj",
       "en": "ship",
       "category": "Class 3 · Transportation and travel"
     },
     {
       "bn": "বিমান",
+      "pronunciation": "biman",
       "en": "airplane",
       "category": "Class 3 · Transportation and travel"
     },
     {
       "bn": "সাইকেল",
+      "pronunciation": "saikel",
       "en": "bicycle",
       "category": "Class 3 · Transportation and travel"
     },
     {
       "bn": "স্টেশন",
+      "pronunciation": "sṭēshōn",
       "en": "station",
       "category": "Class 3 · Transportation and travel"
     },
     {
       "bn": "বিমানবন্দর",
+      "pronunciation": "bimanbondor",
       "en": "airport",
       "category": "Class 3 · Transportation and travel"
     },
     {
       "bn": "রাস্তা",
+      "pronunciation": "rasta",
       "en": "road",
       "category": "Class 3 · Transportation and travel"
     },
     {
       "bn": "সেতু",
+      "pronunciation": "setu",
       "en": "bridge",
       "category": "Class 3 · Transportation and travel"
     },
     {
       "bn": "টিকিট",
+      "pronunciation": "ṭikiṭ",
       "en": "ticket",
       "category": "Class 3 · Transportation and travel"
     },
     {
       "bn": "যাত্রী",
+      "pronunciation": "jatri",
       "en": "passenger",
       "category": "Class 3 · Transportation and travel"
     },
     {
       "bn": "চালক",
+      "pronunciation": "chalok",
       "en": "driver",
       "category": "Class 3 · Transportation and travel"
     },
     {
       "bn": "পথ",
+      "pronunciation": "poth",
       "en": "path",
       "category": "Class 3 · Transportation and travel"
     },
     {
       "bn": "দূরত্ব",
+      "pronunciation": "durotto",
       "en": "distance",
       "category": "Class 3 · Transportation and travel"
     },
     {
       "bn": "দিক",
+      "pronunciation": "dik",
       "en": "direction",
       "category": "Class 3 · Transportation and travel"
     },
     {
       "bn": "সময়",
+      "pronunciation": "shomoy",
       "en": "time",
       "category": "Class 3 · Time"
     },
     {
       "bn": "মুহূর্ত",
+      "pronunciation": "muhurto",
       "en": "moment",
       "category": "Class 3 · Time"
     },
     {
       "bn": "ঘণ্টা",
+      "pronunciation": "ghonta",
       "en": "hour",
       "category": "Class 3 · Time"
     },
     {
       "bn": "মিনিট",
+      "pronunciation": "minit",
       "en": "minute",
       "category": "Class 3 · Time"
     },
     {
       "bn": "সকাল",
+      "pronunciation": "shokal",
       "en": "morning",
       "category": "Class 3 · Time"
     },
     {
       "bn": "দুপুর",
+      "pronunciation": "dupur",
       "en": "noon",
       "category": "Class 3 · Time"
     },
     {
       "bn": "বিকেল",
+      "pronunciation": "bikel",
       "en": "afternoon",
       "category": "Class 3 · Time"
     },
     {
       "bn": "সন্ধ্যা",
+      "pronunciation": "shondhya",
       "en": "evening",
       "category": "Class 3 · Time"
     },
     {
       "bn": "রাত",
+      "pronunciation": "rat",
       "en": "night",
       "category": "Class 3 · Time"
     },
     {
       "bn": "গতকাল",
+      "pronunciation": "gotokal",
       "en": "yesterday",
       "category": "Class 3 · Time"
     },
     {
       "bn": "আজ",
+      "pronunciation": "aj",
       "en": "today",
       "category": "Class 3 · Time"
     },
     {
       "bn": "আগামীকাল",
+      "pronunciation": "agamikal",
       "en": "tomorrow",
       "category": "Class 3 · Time"
     },
     {
       "bn": "সপ্তাহ",
+      "pronunciation": "shoptaho",
       "en": "week",
       "category": "Class 3 · Time"
     },
     {
       "bn": "মাস",
+      "pronunciation": "mash",
       "en": "month",
       "category": "Class 3 · Time"
     },
     {
       "bn": "বছর",
+      "pronunciation": "bochhor",
       "en": "year",
       "category": "Class 3 · Time"
     },
     {
       "bn": "অতীত",
+      "pronunciation": "ôtit",
       "en": "past",
       "category": "Class 3 · Time"
     },
     {
       "bn": "বর্তমান",
+      "pronunciation": "bortoman",
       "en": "present",
       "category": "Class 3 · Time"
     },
     {
       "bn": "ভবিষ্যৎ",
+      "pronunciation": "bhobishshot",
       "en": "future",
       "category": "Class 3 · Time"
     },
     {
       "bn": "প্রথমে",
+      "pronunciation": "prothome",
       "en": "first",
       "category": "Class 3 · Time"
     },
     {
       "bn": "এরপর",
+      "pronunciation": "erpor",
       "en": "next",
       "category": "Class 3 · Time"
     },
     {
       "bn": "তারপর",
+      "pronunciation": "tarpor",
       "en": "then",
       "category": "Class 3 · Time"
     },
     {
       "bn": "শেষে",
+      "pronunciation": "sheshe",
       "en": "finally",
       "category": "Class 3 · Time"
     },
     {
       "bn": "আনন্দ",
+      "pronunciation": "anondo",
       "en": "joy",
       "category": "Class 3 · Feelings"
     },
     {
       "bn": "দুঃখ",
+      "pronunciation": "dukkho",
       "en": "sadness",
       "category": "Class 3 · Feelings"
     },
     {
       "bn": "রাগ",
+      "pronunciation": "rag",
       "en": "anger",
       "category": "Class 3 · Feelings"
     },
     {
       "bn": "ভয়",
+      "pronunciation": "bhoy",
       "en": "fear",
       "category": "Class 3 · Feelings"
     },
     {
       "bn": "সাহস",
+      "pronunciation": "shahosh",
       "en": "courage",
       "category": "Class 3 · Feelings"
     },
     {
       "bn": "আশা",
+      "pronunciation": "asha",
       "en": "hope",
       "category": "Class 3 · Feelings"
     },
     {
       "bn": "হতাশা",
+      "pronunciation": "hotasha",
       "en": "disappointment",
       "category": "Class 3 · Feelings"
     },
     {
       "bn": "অবাক",
+      "pronunciation": "ôbak",
       "en": "surprised",
       "category": "Class 3 · Feelings"
     },
     {
       "bn": "লজ্জা",
+      "pronunciation": "lojja",
       "en": "shyness",
       "category": "Class 3 · Feelings"
     },
     {
       "bn": "চিন্তা",
+      "pronunciation": "chinta",
       "en": "worry",
       "category": "Class 3 · Feelings"
     },
     {
       "bn": "উত্তেজনা",
+      "pronunciation": "uttejona",
       "en": "excitement",
       "category": "Class 3 · Feelings"
     },
     {
       "bn": "শান্তি",
+      "pronunciation": "shanti",
       "en": "peace",
       "category": "Class 3 · Feelings"
     },
     {
       "bn": "ভালোবাসা",
+      "pronunciation": "bhalobasha",
       "en": "to love",
       "category": "Class 3 · Feelings"
     },
     {
       "bn": "গর্ব",
+      "pronunciation": "gorbo",
       "en": "pride",
       "category": "Class 3 · Feelings"
     },
     {
       "bn": "কৃতজ্ঞতা",
+      "pronunciation": "kritoggota",
       "en": "gratitude",
       "category": "Class 3 · Feelings"
     },
     {
       "bn": "একাকী",
+      "pronunciation": "ekaki",
       "en": "lonely",
       "category": "Class 3 · Feelings"
     },
     {
       "bn": "ক্লান্ত",
+      "pronunciation": "klanto",
       "en": "tired",
       "category": "Class 3 · Feelings"
     },
     {
       "bn": "বিরক্ত",
+      "pronunciation": "birokto",
       "en": "annoyed",
       "category": "Class 3 · Feelings"
     },
     {
       "bn": "আগ্রহ",
+      "pronunciation": "agroho",
       "en": "interest",
       "category": "Class 3 · Feelings"
     },
     {
       "bn": "সৎ",
+      "pronunciation": "shot",
       "en": "honest",
       "category": "Class 3 · Character and personality"
     },
     {
       "bn": "অসৎ",
+      "pronunciation": "ôshot",
       "en": "dishonest",
       "category": "Class 3 · Character and personality"
     },
     {
       "bn": "সাহসী",
+      "pronunciation": "shahoshi",
       "en": "brave",
       "category": "Class 3 · Character and personality"
     },
     {
       "bn": "ভীরু",
+      "pronunciation": "bhiru",
       "en": "cowardly",
       "category": "Class 3 · Character and personality"
     },
     {
       "bn": "দয়ালু",
+      "pronunciation": "doyalu",
       "en": "kind",
       "category": "Class 3 · Character and personality"
     },
     {
       "bn": "নিষ্ঠুর",
+      "pronunciation": "nishthur",
       "en": "cruel",
       "category": "Class 3 · Character and personality"
     },
     {
       "bn": "ভদ্র",
+      "pronunciation": "bhodro",
       "en": "polite",
       "category": "Class 3 · Character and personality"
     },
     {
       "bn": "অভদ্র",
+      "pronunciation": "ôbhodro",
       "en": "rude",
       "category": "Class 3 · Character and personality"
     },
     {
       "bn": "বুদ্ধিমান",
+      "pronunciation": "buddhiman",
       "en": "intelligent",
       "category": "Class 3 · Character and personality"
     },
     {
       "bn": "পরিশ্রমী",
+      "pronunciation": "pôrishromi",
       "en": "hardworking",
       "category": "Class 3 · Character and personality"
     },
     {
       "bn": "অলস",
+      "pronunciation": "olosh",
       "en": "lazy",
       "category": "Class 3 · Character and personality"
     },
     {
       "bn": "শান্ত",
+      "pronunciation": "shanto",
       "en": "calm",
       "category": "Class 3 · Character and personality"
     },
     {
       "bn": "রাগী",
+      "pronunciation": "ragi",
       "en": "angry",
       "category": "Class 3 · Character and personality"
     },
     {
       "bn": "বন্ধুত্বপূর্ণ",
+      "pronunciation": "bondhuttopurno",
       "en": "friendly",
       "category": "Class 3 · Character and personality"
     },
     {
       "bn": "সাহায্যকারী",
+      "pronunciation": "sahajjokari",
       "en": "helpful",
       "category": "Class 3 · Character and personality"
     },
     {
       "bn": "দায়িত্বশীল",
+      "pronunciation": "dayittoshil",
       "en": "responsible",
       "category": "Class 3 · Character and personality"
     },
     {
       "bn": "যত্নশীল",
+      "pronunciation": "jotnoshil",
       "en": "caring",
       "category": "Class 3 · Character and personality"
     },
     {
       "bn": "কৌতূহলী",
+      "pronunciation": "koutuholi",
       "en": "curious",
       "category": "Class 3 · Character and personality"
     },
     {
       "bn": "করা",
+      "pronunciation": "kora",
       "en": "to do",
       "category": "Class 3 · Important verbs"
     },
     {
       "bn": "হওয়া",
+      "pronunciation": "hooa",
       "en": "to be",
       "category": "Class 3 · Important verbs"
     },
     {
       "bn": "থাকা",
+      "pronunciation": "thaka",
       "en": "to stay",
       "category": "Class 3 · Important verbs"
     },
     {
       "bn": "যাওয়া",
+      "pronunciation": "jaoa",
       "en": "to go",
       "category": "Class 3 · Important verbs"
     },
     {
       "bn": "আসা",
+      "pronunciation": "asha",
       "en": "to come",
       "category": "Class 3 · Important verbs"
     },
     {
       "bn": "ফেরা",
+      "pronunciation": "phera / fera",
       "en": "to return",
       "category": "Class 3 · Important verbs"
     },
     {
       "bn": "দেখা",
+      "pronunciation": "dekha",
       "en": "to see",
       "category": "Class 3 · Important verbs"
     },
     {
       "bn": "শোনা",
+      "pronunciation": "shona",
       "en": "to hear",
       "category": "Class 3 · Important verbs"
     },
     {
       "bn": "বলা",
+      "pronunciation": "bola",
       "en": "to say",
       "category": "Class 3 · Important verbs"
     },
     {
       "bn": "পড়া",
+      "pronunciation": "pora",
       "en": "to read",
       "category": "Class 3 · Important verbs"
     },
     {
       "bn": "লেখা",
+      "pronunciation": "lekha",
       "en": "to write",
       "category": "Class 3 · Important verbs"
     },
     {
       "bn": "শেখা",
+      "pronunciation": "shekha",
       "en": "to learn",
       "category": "Class 3 · Important verbs"
     },
     {
       "bn": "শেখানো",
+      "pronunciation": "shekhano",
       "en": "to teach",
       "category": "Class 3 · Important verbs"
     },
     {
       "bn": "জানা",
+      "pronunciation": "jana",
       "en": "to know",
       "category": "Class 3 · Important verbs"
     },
     {
       "bn": "বোঝা",
+      "pronunciation": "bojha",
       "en": "to understand",
       "category": "Class 3 · Important verbs"
     },
     {
       "bn": "ভাবা",
+      "pronunciation": "bhaba",
       "en": "to think",
       "category": "Class 3 · Important verbs"
     },
     {
       "bn": "মনে করা",
+      "pronunciation": "mone kora",
       "en": "to think",
       "category": "Class 3 · Important verbs"
     },
     {
       "bn": "মনে রাখা",
+      "pronunciation": "mone rakha",
       "en": "to remember",
       "category": "Class 3 · Important verbs"
     },
     {
       "bn": "ভুলে যাওয়া",
+      "pronunciation": "bhule jawa",
       "en": "to forget",
       "category": "Class 3 · Important verbs"
     },
     {
       "bn": "খোঁজা",
+      "pronunciation": "khonja",
       "en": "to search",
       "category": "Class 3 · Important verbs"
     },
     {
       "bn": "পাওয়া",
+      "pronunciation": "paoa",
       "en": "to get",
       "category": "Class 3 · Important verbs"
     },
     {
       "bn": "হারানো",
+      "pronunciation": "harano",
       "en": "to lose",
       "category": "Class 3 · Important verbs"
     },
     {
       "bn": "রাখা",
+      "pronunciation": "rakha",
       "en": "to keep",
       "category": "Class 3 · Important verbs"
     },
     {
       "bn": "সরানো",
+      "pronunciation": "sorano",
       "en": "to move",
       "category": "Class 3 · Important verbs"
     },
     {
       "bn": "ধরা",
+      "pronunciation": "dhora",
       "en": "to hold",
       "category": "Class 3 · Important verbs"
     },
     {
       "bn": "ছাড়া",
+      "pronunciation": "chhara",
       "en": "to release",
       "category": "Class 3 · Important verbs"
     },
     {
       "bn": "তোলা",
+      "pronunciation": "tola",
       "en": "to lift",
       "category": "Class 3 · Important verbs"
     },
     {
       "bn": "নামানো",
+      "pronunciation": "naman",
       "en": "to lower",
       "category": "Class 3 · Important verbs"
     },
     {
       "bn": "খোলা",
+      "pronunciation": "khola",
       "en": "to open",
       "category": "Class 3 · Important verbs"
     },
     {
       "bn": "বন্ধ করা",
+      "pronunciation": "bondho kora",
       "en": "to close",
       "category": "Class 3 · Important verbs"
     },
     {
       "bn": "শুরু করা",
+      "pronunciation": "shuru kora",
       "en": "to start",
       "category": "Class 3 · Important verbs"
     },
     {
       "bn": "শেষ করা",
+      "pronunciation": "shesh kora",
       "en": "to finish",
       "category": "Class 3 · Important verbs"
     },
     {
       "bn": "চেষ্টা করা",
+      "pronunciation": "cheshta kora",
       "en": "to try",
       "category": "Class 3 · Advanced verbs"
     },
     {
       "bn": "সিদ্ধান্ত নেওয়া",
+      "pronunciation": "shiddhanto neoa",
       "en": "to decide",
       "category": "Class 3 · Advanced verbs"
     },
     {
       "bn": "সাহায্য করা",
+      "pronunciation": "shahajjo kora",
       "en": "to help",
       "category": "Class 3 · Advanced verbs"
     },
     {
       "bn": "অপেক্ষা করা",
+      "pronunciation": "opekkha kora",
       "en": "to wait",
       "category": "Class 3 · Advanced verbs"
     },
     {
       "bn": "আলোচনা করা",
+      "pronunciation": "alochona kora",
       "en": "to discuss",
       "category": "Class 3 · Advanced verbs"
     },
     {
       "bn": "ব্যাখ্যা করা",
+      "pronunciation": "bjakhja kora",
       "en": "to explain",
       "category": "Class 3 · Advanced verbs"
     },
     {
       "bn": "বর্ণনা করা",
+      "pronunciation": "bornona kora",
       "en": "to describe",
       "category": "Class 3 · Advanced verbs"
     },
     {
       "bn": "জিজ্ঞাসা করা",
+      "pronunciation": "jiggasha kora",
       "en": "to ask",
       "category": "Class 3 · Advanced verbs"
     },
     {
       "bn": "উত্তর দেওয়া",
+      "pronunciation": "uttor deowa",
       "en": "to answer",
       "category": "Class 3 · Advanced verbs"
     },
     {
       "bn": "নির্বাচন করা",
+      "pronunciation": "nirbachon kora",
       "en": "to choose",
       "category": "Class 3 · Advanced verbs"
     },
     {
       "bn": "পরিবর্তন করা",
+      "pronunciation": "poriborton kora",
       "en": "to change",
       "category": "Class 3 · Advanced verbs"
     },
     {
       "bn": "তৈরি করা",
+      "pronunciation": "toiri kora",
       "en": "to create",
       "category": "Class 3 · Advanced verbs"
     },
     {
       "bn": "ব্যবহার করা",
+      "pronunciation": "byabohar kora",
       "en": "to use",
       "category": "Class 3 · Advanced verbs"
     },
     {
       "bn": "রক্ষা করা",
+      "pronunciation": "rokkha kora",
       "en": "to protect",
       "category": "Class 3 · Advanced verbs"
     },
     {
       "bn": "পরিষ্কার করা",
+      "pronunciation": "pôrishkar kora",
       "en": "to clean",
       "category": "Class 3 · Advanced verbs"
     },
     {
       "bn": "সংগ্রহ করা",
+      "pronunciation": "shongroho kora",
       "en": "to collect",
       "category": "Class 3 · Advanced verbs"
     },
     {
       "bn": "ভাগ করা",
+      "pronunciation": "bhag kora",
       "en": "to share",
       "category": "Class 3 · Advanced verbs"
     },
     {
       "bn": "তুলনা করা",
+      "pronunciation": "tulona kora",
       "en": "to compare",
       "category": "Class 3 · Advanced verbs"
     },
     {
       "bn": "পরীক্ষা করা",
+      "pronunciation": "porikkha kora",
       "en": "to test",
       "category": "Class 3 · Advanced verbs"
     },
     {
       "bn": "আবিষ্কার করা",
+      "pronunciation": "abishkar kora",
       "en": "to discover",
       "category": "Class 3 · Advanced verbs"
     },
     {
       "bn": "বিশ্বাস করা",
+      "pronunciation": "bishshash kora",
       "en": "to believe",
       "category": "Class 3 · Advanced verbs"
     },
     {
       "bn": "আশা করা",
+      "pronunciation": "asha kora",
       "en": "to hope",
       "category": "Class 3 · Advanced verbs"
     },
     {
       "bn": "পরিকল্পনা করা",
+      "pronunciation": "porikolpona kora",
       "en": "to plan",
       "category": "Class 3 · Advanced verbs"
     },
     {
       "bn": "বিশাল",
+      "pronunciation": "bishal",
       "en": "enormous",
       "category": "Class 3 · Descriptive words"
     },
     {
       "bn": "ক্ষুদ্র",
+      "pronunciation": "khudro",
       "en": "tiny",
       "category": "Class 3 · Descriptive words"
     },
     {
       "bn": "সুন্দর",
+      "pronunciation": "shundor",
       "en": "beautiful",
       "category": "Class 3 · Descriptive words"
     },
     {
       "bn": "আকর্ষণীয়",
+      "pronunciation": "akôrshoniyo",
       "en": "interesting",
       "category": "Class 3 · Descriptive words"
     },
     {
       "bn": "উজ্জ্বল",
+      "pronunciation": "ujjol",
       "en": "bright",
       "category": "Class 3 · Descriptive words"
     },
     {
       "bn": "অন্ধকার",
+      "pronunciation": "ôndhokar",
       "en": "dark",
       "category": "Class 3 · Descriptive words"
     },
     {
       "bn": "পরিষ্কার",
+      "pronunciation": "pôrishkar",
       "en": "clean",
       "category": "Class 3 · Descriptive words"
     },
     {
       "bn": "নোংরা",
+      "pronunciation": "nongra",
       "en": "dirty",
       "category": "Class 3 · Descriptive words"
     },
     {
       "bn": "শান্ত",
+      "pronunciation": "shanto",
       "en": "calm",
       "category": "Class 3 · Descriptive words"
     },
     {
       "bn": "কোলাহলপূর্ণ",
+      "pronunciation": "kolaholopurn",
       "en": "noisy",
       "category": "Class 3 · Descriptive words"
     },
     {
       "bn": "দ্রুত",
+      "pronunciation": "druto",
       "en": "fast",
       "category": "Class 3 · Descriptive words"
     },
     {
       "bn": "ধীর",
+      "pronunciation": "dhir",
       "en": "slow",
       "category": "Class 3 · Descriptive words"
     },
     {
       "bn": "সহজ",
+      "pronunciation": "shohoj",
       "en": "easy",
       "category": "Class 3 · Descriptive words"
     },
     {
       "bn": "কঠিন",
+      "pronunciation": "kothin",
       "en": "difficult",
       "category": "Class 3 · Descriptive words"
     },
     {
       "bn": "শক্তিশালী",
+      "pronunciation": "shoktishali",
       "en": "strong",
       "category": "Class 3 · Descriptive words"
     },
     {
       "bn": "দুর্বল",
+      "pronunciation": "durbol",
       "en": "weak",
       "category": "Class 3 · Descriptive words"
     },
     {
       "bn": "ভারী",
+      "pronunciation": "bhari",
       "en": "heavy",
       "category": "Class 3 · Descriptive words"
     },
     {
       "bn": "হালকা",
+      "pronunciation": "halka",
       "en": "light",
       "category": "Class 3 · Descriptive words"
     },
     {
       "bn": "গভীর",
+      "pronunciation": "gobhir",
       "en": "deep",
       "category": "Class 3 · Descriptive words"
     },
     {
       "bn": "অগভীর",
+      "pronunciation": "ôgobhir",
       "en": "shallow",
       "category": "Class 3 · Descriptive words"
     },
     {
       "bn": "প্রশস্ত",
+      "pronunciation": "proshosto",
       "en": "wide",
       "category": "Class 3 · Descriptive words"
     },
     {
       "bn": "সরু",
+      "pronunciation": "shoru",
       "en": "narrow",
       "category": "Class 3 · Descriptive words"
     },
     {
       "bn": "উঁচু",
+      "pronunciation": "unchu",
       "en": "high",
       "category": "Class 3 · Descriptive words"
     },
     {
       "bn": "নিচু",
+      "pronunciation": "nichu",
       "en": "low",
       "category": "Class 3 · Descriptive words"
     },
     {
       "bn": "কাছের",
+      "pronunciation": "kachher",
       "en": "nearby",
       "category": "Class 3 · Descriptive words"
     },
     {
       "bn": "দূরের",
+      "pronunciation": "durer",
       "en": "distant",
       "category": "Class 3 · Descriptive words"
     },
     {
       "bn": "তাজা",
+      "pronunciation": "taja",
       "en": "fresh",
       "category": "Class 3 · Descriptive words"
     },
     {
       "bn": "শুকনো",
+      "pronunciation": "shukno",
       "en": "dry",
       "category": "Class 3 · Descriptive words"
     },
     {
       "bn": "ভেজা",
+      "pronunciation": "bheja",
       "en": "wet",
       "category": "Class 3 · Descriptive words"
     },
     {
       "bn": "নিরাপদ",
+      "pronunciation": "nirapod",
       "en": "safe",
       "category": "Class 3 · Descriptive words"
     },
     {
       "bn": "বিপজ্জনক",
+      "pronunciation": "bipodjonok",
       "en": "dangerous",
       "category": "Class 3 · Descriptive words"
     },
     {
       "bn": "অনেক",
+      "pronunciation": "ônek",
       "en": "many",
       "category": "Class 3 · Quantity and comparison"
     },
     {
       "bn": "অল্প",
+      "pronunciation": "ôlpo",
       "en": "a little",
       "category": "Class 3 · Quantity and comparison"
     },
     {
       "bn": "বেশি",
+      "pronunciation": "beshi",
       "en": "more",
       "category": "Class 3 · Quantity and comparison"
     },
     {
       "bn": "কম",
+      "pronunciation": "kom",
       "en": "less",
       "category": "Class 3 · Quantity and comparison"
     },
     {
       "bn": "কয়েকটি",
+      "pronunciation": "koyekṭi",
       "en": "a few",
       "category": "Class 3 · Quantity and comparison"
     },
     {
       "bn": "কিছু",
+      "pronunciation": "kichhu",
       "en": "some",
       "category": "Class 3 · Quantity and comparison"
     },
     {
       "bn": "সব",
+      "pronunciation": "shob",
       "en": "all",
       "category": "Class 3 · Quantity and comparison"
     },
     {
       "bn": "অধিকাংশ",
+      "pronunciation": "odhikangsh",
       "en": "most",
       "category": "Class 3 · Quantity and comparison"
     },
     {
       "bn": "অর্ধেক",
+      "pronunciation": "ôrdhek",
       "en": "half",
       "category": "Class 3 · Quantity and comparison"
     },
     {
       "bn": "সম্পূর্ণ",
+      "pronunciation": "shompurno",
       "en": "complete",
       "category": "Class 3 · Quantity and comparison"
     },
     {
       "bn": "সমান",
+      "pronunciation": "shoman",
       "en": "equal",
       "category": "Class 3 · Quantity and comparison"
     },
     {
       "bn": "অসমান",
+      "pronunciation": "ôshoman",
       "en": "unequal",
       "category": "Class 3 · Quantity and comparison"
     },
     {
       "bn": "বড়",
+      "pronunciation": "bôṛo",
       "en": "big",
       "category": "Class 3 · Quantity and comparison"
     },
     {
       "bn": "ছোট",
+      "pronunciation": "chhoto",
       "en": "small",
       "category": "Class 3 · Quantity and comparison"
     },
     {
       "bn": "সবচেয়ে বড়",
+      "pronunciation": "sobcheye bôṛo",
       "en": "biggest",
       "category": "Class 3 · Quantity and comparison"
     },
     {
       "bn": "সবচেয়ে ছোট",
+      "pronunciation": "sobcheye chhoto",
       "en": "smallest",
       "category": "Class 3 · Quantity and comparison"
     },
     {
       "bn": "বেশি",
+      "pronunciation": "beshi",
       "en": "more",
       "category": "Class 3 · Quantity and comparison"
     },
     {
       "bn": "সবচেয়ে বেশি",
+      "pronunciation": "sobcheye beshi",
       "en": "most",
       "category": "Class 3 · Quantity and comparison"
     },
     {
       "bn": "কম",
+      "pronunciation": "kom",
       "en": "less",
       "category": "Class 3 · Quantity and comparison"
     },
     {
       "bn": "সবচেয়ে কম",
+      "pronunciation": "sobcheye kom",
       "en": "least",
       "category": "Class 3 · Quantity and comparison"
     },
     {
       "bn": "উত্তর",
+      "pronunciation": "uttor",
       "en": "north",
       "category": "Class 3 · Direction and position"
     },
     {
       "bn": "দক্ষিণ",
+      "pronunciation": "dokkhino",
       "en": "south",
       "category": "Class 3 · Direction and position"
     },
     {
       "bn": "পূর্ব",
+      "pronunciation": "purbo",
       "en": "east",
       "category": "Class 3 · Direction and position"
     },
     {
       "bn": "পশ্চিম",
+      "pronunciation": "poshchim",
       "en": "west",
       "category": "Class 3 · Direction and position"
     },
     {
       "bn": "ডান",
+      "pronunciation": "dan",
       "en": "right",
       "category": "Class 3 · Direction and position"
     },
     {
       "bn": "বাম",
+      "pronunciation": "Baam",
       "en": "left",
       "category": "Class 3 · Direction and position"
     },
     {
       "bn": "সামনে",
+      "pronunciation": "shamne",
       "en": "in front",
       "category": "Class 3 · Direction and position"
     },
     {
       "bn": "পিছনে",
+      "pronunciation": "Pichone",
       "en": "behind",
       "category": "Class 3 · Direction and position"
     },
     {
       "bn": "উপরে",
+      "pronunciation": "upore",
       "en": "above",
       "category": "Class 3 · Direction and position"
     },
     {
       "bn": "নিচে",
+      "pronunciation": "niche",
       "en": "under",
       "category": "Class 3 · Direction and position"
     },
     {
       "bn": "ভিতরে",
+      "pronunciation": "bhitore",
       "en": "inside",
       "category": "Class 3 · Direction and position"
     },
     {
       "bn": "বাইরে",
+      "pronunciation": "baire",
       "en": "outside",
       "category": "Class 3 · Direction and position"
     },
     {
       "bn": "মাঝখানে",
+      "pronunciation": "majhkhane",
       "en": "in the middle",
       "category": "Class 3 · Direction and position"
     },
     {
       "bn": "পাশে",
+      "pronunciation": "pashe",
       "en": "beside",
       "category": "Class 3 · Direction and position"
     },
     {
       "bn": "চারদিকে",
+      "pronunciation": "charodike",
       "en": "all around",
       "category": "Class 3 · Direction and position"
     },
     {
       "bn": "কাছাকাছি",
+      "pronunciation": "kachakachi",
       "en": "nearby",
       "category": "Class 3 · Direction and position"
     },
     {
       "bn": "দূরে",
+      "pronunciation": "dure",
       "en": "far",
       "category": "Class 3 · Direction and position"
     },
     {
       "bn": "বিপরীতে",
+      "pronunciation": "biporite",
       "en": "opposite",
       "category": "Class 3 · Direction and position"
     },
     {
       "bn": "কে",
+      "pronunciation": "ke",
       "en": "who",
       "category": "Class 3 · Question words"
     },
     {
       "bn": "কী",
+      "pronunciation": "ki",
       "en": "what",
       "category": "Class 3 · Question words"
     },
     {
       "bn": "কোথায়",
+      "pronunciation": "kothay",
       "en": "where",
       "category": "Class 3 · Question words"
     },
     {
       "bn": "কখন",
+      "pronunciation": "kokhon",
       "en": "when",
       "category": "Class 3 · Question words"
     },
     {
       "bn": "কেন",
+      "pronunciation": "keno",
       "en": "why",
       "category": "Class 3 · Question words"
     },
     {
       "bn": "কেমন",
+      "pronunciation": "kemon",
       "en": "how",
       "category": "Class 3 · Question words"
     },
     {
       "bn": "কোন",
+      "pronunciation": "kon",
       "en": "which",
       "category": "Class 3 · Question words"
     },
     {
       "bn": "কত",
+      "pronunciation": "koto",
       "en": "how many",
       "category": "Class 3 · Question words"
     },
     {
       "bn": "কার",
+      "pronunciation": "kar",
       "en": "whose",
       "category": "Class 3 · Question words"
     },
     {
       "bn": "কাকে",
+      "pronunciation": "kake",
       "en": "whom",
       "category": "Class 3 · Question words"
     },
     {
       "bn": "কীভাবে",
+      "pronunciation": "kibhabe",
       "en": "how",
       "category": "Class 3 · Question words"
     },
     {
       "bn": "কোথা থেকে",
+      "pronunciation": "kotha theke",
       "en": "from where",
       "category": "Class 3 · Question words"
     },
     {
       "bn": "কোথায়",
+      "pronunciation": "kothay",
       "en": "where",
       "category": "Class 3 · Question words"
     },
     {
       "bn": "কতক্ষণ",
+      "pronunciation": "kotokkhon",
       "en": "how long",
       "category": "Class 3 · Question words"
     },
     {
       "bn": "কতবার",
+      "pronunciation": "kotobar",
       "en": "how many times",
       "category": "Class 3 · Question words"
     },
     {
       "bn": "এবং",
+      "pronunciation": "ebong",
       "en": "and",
       "category": "Class 3 · Connecting words"
     },
     {
       "bn": "আর",
+      "pronunciation": "ar",
       "en": "and/more",
       "category": "Class 3 · Connecting words"
     },
     {
       "bn": "কিন্তু",
+      "pronunciation": "kintu",
       "en": "but",
       "category": "Class 3 · Connecting words"
     },
     {
       "bn": "অথবা",
+      "pronunciation": "othoba",
       "en": "or",
       "category": "Class 3 · Connecting words"
     },
     {
       "bn": "কারণ",
+      "pronunciation": "karon",
       "en": "because",
       "category": "Class 3 · Connecting words"
     },
     {
       "bn": "তাই",
+      "pronunciation": "tai",
       "en": "therefore",
       "category": "Class 3 · Connecting words"
     },
     {
       "bn": "এজন্য",
+      "pronunciation": "ejonno",
       "en": "for this reason",
       "category": "Class 3 · Connecting words"
     },
     {
       "bn": "যদি",
+      "pronunciation": "jodi",
       "en": "if",
       "category": "Class 3 · Connecting words"
     },
     {
       "bn": "তবে",
+      "pronunciation": "tobe",
       "en": "then",
       "category": "Class 3 · Connecting words"
     },
     {
       "bn": "যখন",
+      "pronunciation": "jokhon",
       "en": "when",
       "category": "Class 3 · Connecting words"
     },
     {
       "bn": "তখন",
+      "pronunciation": "tokhon",
       "en": "then",
       "category": "Class 3 · Connecting words"
     },
     {
       "bn": "যদিও",
+      "pronunciation": "jodio",
       "en": "although",
       "category": "Class 3 · Connecting words"
     },
     {
       "bn": "তবুও",
+      "pronunciation": "tobuo",
       "en": "nevertheless",
       "category": "Class 3 · Connecting words"
     },
     {
       "bn": "তারপর",
+      "pronunciation": "tarpor",
       "en": "then",
       "category": "Class 3 · Connecting words"
     },
     {
       "bn": "এরপর",
+      "pronunciation": "erpor",
       "en": "next",
       "category": "Class 3 · Connecting words"
     },
     {
       "bn": "শেষে",
+      "pronunciation": "sheshe",
       "en": "finally",
       "category": "Class 3 · Connecting words"
     },
     {
       "bn": "যেহেতু",
+      "pronunciation": "jehetu",
       "en": "since",
       "category": "Class 3 · Connecting words"
     }
@@ -2660,1272 +3190,1484 @@
   "phrases": [
     {
       "bn": "আমার নাম ___।",
+      "pronunciation": "amar nam",
       "en": "About yourself practice 1",
       "context": "About yourself",
       "category": "Class 3 · About yourself"
     },
     {
       "bn": "আমি তৃতীয় শ্রেণিতে পড়ি।",
+      "pronunciation": "ami tritijo shrenite pori",
       "en": "About yourself practice 2",
       "context": "About yourself",
       "category": "Class 3 · About yourself"
     },
     {
       "bn": "আমার বয়স আট বছর।",
+      "pronunciation": "amar boyosh at bochhor",
       "en": "About yourself practice 3",
       "context": "About yourself",
       "category": "Class 3 · About yourself"
     },
     {
       "bn": "আমি প্রতিদিন স্কুলে যাই।",
+      "pronunciation": "ami protidin skule jai",
       "en": "About yourself practice 4",
       "context": "About yourself",
       "category": "Class 3 · About yourself"
     },
     {
       "bn": "বাংলা আমার প্রিয় বিষয়।",
+      "pronunciation": "bangla amar priyo bishoy",
       "en": "About yourself practice 5",
       "context": "About yourself",
       "category": "Class 3 · About yourself"
     },
     {
       "bn": "আমি গল্পের বই পড়তে পছন্দ করি।",
+      "pronunciation": "ami golper boi porte pochhondo kori",
       "en": "About yourself practice 6",
       "context": "About yourself",
       "category": "Class 3 · About yourself"
     },
     {
       "bn": "অবসর সময়ে আমি ছবি আঁকি।",
+      "pronunciation": "obosor shomoye ami chhobi anki",
       "en": "About yourself practice 7",
       "context": "About yourself",
       "category": "Class 3 · About yourself"
     },
     {
       "bn": "আমি বড় হয়ে ডাক্তার হতে চাই।",
+      "pronunciation": "ami bôṛo hoye daktar hote chai",
       "en": "About yourself practice 8",
       "context": "About yourself",
       "category": "Class 3 · About yourself"
     },
     {
       "bn": "আমার সবচেয়ে ভালো বন্ধুর নাম ___।",
+      "pronunciation": "amar sobcheye bhalo bondhur nam",
       "en": "About yourself practice 9",
       "context": "About yourself",
       "category": "Class 3 · About yourself"
     },
     {
       "bn": "আমি নতুন কিছু শিখতে ভালোবাসি।",
+      "pronunciation": "ami notun kichhu shikhte bhalobashi",
       "en": "About yourself practice 10",
       "context": "About yourself",
       "category": "Class 3 · About yourself"
     },
     {
       "bn": "আজ আমরা একটি নতুন অধ্যায় পড়ব।",
+      "pronunciation": "aj amra ekti notun odhjaj podob",
       "en": "At school practice 1",
       "context": "At school",
       "category": "Class 3 · At school"
     },
     {
       "bn": "আমি প্রশ্নটির উত্তর জানি।",
+      "pronunciation": "ami proshnotir uttor jani",
       "en": "At school practice 2",
       "context": "At school",
       "category": "Class 3 · At school"
     },
     {
       "bn": "আমি প্রশ্নটি ঠিকভাবে বুঝতে পারিনি।",
+      "pronunciation": "ami proshnoti thikbhabe bujhte parini",
       "en": "At school practice 3",
       "context": "At school",
       "category": "Class 3 · At school"
     },
     {
       "bn": "আপনি কি বিষয়টি আবার বুঝিয়ে বলবেন?",
+      "pronunciation": "apni ki bishoyti abar bujhije bolben",
       "en": "At school practice 4",
       "context": "At school",
       "category": "Class 3 · At school"
     },
     {
       "bn": "এই শব্দটির অর্থ কী?",
+      "pronunciation": "ei shobdotir ôrtho ki",
       "en": "At school practice 5",
       "context": "At school",
       "category": "Class 3 · At school"
     },
     {
       "bn": "আমি অভিধানে শব্দটির অর্থ খুঁজে দেখব।",
+      "pronunciation": "ami obhidhane shobdotir ôrtho khũje dekhbo",
       "en": "At school practice 6",
       "context": "At school",
       "category": "Class 3 · At school"
     },
     {
       "bn": "আমি আমার বাড়ির কাজ শেষ করেছি।",
+      "pronunciation": "ami amar barir kaj shesh korechhi",
       "en": "At school practice 7",
       "context": "At school",
       "category": "Class 3 · At school"
     },
     {
       "bn": "আমরা দল বেঁধে কাজ করছি।",
+      "pronunciation": "amra dol bendhe kaj korchhi",
       "en": "At school practice 8",
       "context": "At school",
       "category": "Class 3 · At school"
     },
     {
       "bn": "আমি আমার সহপাঠীকে সাহায্য করেছি।",
+      "pronunciation": "ami amar sohopathike shahajjo korechhi",
       "en": "At school practice 9",
       "context": "At school",
       "category": "Class 3 · At school"
     },
     {
       "bn": "আজ আমাদের বাংলা পরীক্ষা আছে।",
+      "pronunciation": "aj amader bangla porikkha achhe",
       "en": "At school practice 10",
       "context": "At school",
       "category": "Class 3 · At school"
     },
     {
       "bn": "আমি উত্তরটি পূর্ণ বাক্যে লিখেছি।",
+      "pronunciation": "ami uttorti purno bakje likhechi",
       "en": "At school practice 11",
       "context": "At school",
       "category": "Class 3 · At school"
     },
     {
       "bn": "আমি প্রতিদিন সকাল সাতটায় ঘুম থেকে উঠি।",
+      "pronunciation": "ami protidin shokal shattay ghum theke uthi",
       "en": "Daily life practice 1",
       "context": "Daily life",
       "category": "Class 3 · Daily life"
     },
     {
       "bn": "ঘুম থেকে উঠে আমি দাঁত ব্রাশ করি।",
+      "pronunciation": "ghum theke uṭhe ami dant brawsh kori",
       "en": "Daily life practice 2",
       "context": "Daily life",
       "category": "Class 3 · Daily life"
     },
     {
       "bn": "নাশতা খাওয়ার পরে আমি স্কুলের জন্য তৈরি হই।",
+      "pronunciation": "nashta khaojar pore ami skuler jonno toiri hoi",
       "en": "Daily life practice 3",
       "context": "Daily life",
       "category": "Class 3 · Daily life"
     },
     {
       "bn": "স্কুল শেষে আমি বাড়িতে ফিরে আসি।",
+      "pronunciation": "skul sheshe ami barite phire ashi",
       "en": "Daily life practice 4",
       "context": "Daily life",
       "category": "Class 3 · Daily life"
     },
     {
       "bn": "বিকেলে আমি বন্ধুদের সঙ্গে খেলি।",
+      "pronunciation": "bikele ami bondhuder shonge kheli",
       "en": "Daily life practice 5",
       "context": "Daily life",
       "category": "Class 3 · Daily life"
     },
     {
       "bn": "সন্ধ্যায় আমি পড়াশোনা করি।",
+      "pronunciation": "shondhyay ami porashona kori",
       "en": "Daily life practice 6",
       "context": "Daily life",
       "category": "Class 3 · Daily life"
     },
     {
       "bn": "রাতে পরিবারের সবাই একসঙ্গে খাবার খাই।",
+      "pronunciation": "rate poribarer shobai eksongge khabar khai",
       "en": "Daily life practice 7",
       "context": "Daily life",
       "category": "Class 3 · Daily life"
     },
     {
       "bn": "ঘুমানোর আগে আমি কিছুক্ষণ গল্পের বই পড়ি।",
+      "pronunciation": "ghumonor age ami kichukhon golper boi pori",
       "en": "Daily life practice 8",
       "context": "Daily life",
       "category": "Class 3 · Daily life"
     },
     {
       "bn": "আমার মনে হয় এটি ভালো।",
+      "pronunciation": "amar mone hoy eti bhalo",
       "en": "Opinions practice 1",
       "context": "Opinions",
       "category": "Class 3 · Opinions"
     },
     {
       "bn": "আমি মনে করি তুমি ঠিক বলেছ।",
+      "pronunciation": "ami mone kori tumi thik bolecho",
       "en": "Opinions practice 2",
       "context": "Opinions",
       "category": "Class 3 · Opinions"
     },
     {
       "bn": "আমার মতে গল্পটি খুব সুন্দর।",
+      "pronunciation": "amar mote golpoti khub shundor",
       "en": "Opinions practice 3",
       "context": "Opinions",
       "category": "Class 3 · Opinions"
     },
     {
       "bn": "আমি এই বইটি পছন্দ করি কারণ এটি মজার।",
+      "pronunciation": "ami ei boiti pochhondo kori karon eti mojar",
       "en": "Opinions practice 4",
       "context": "Opinions",
       "category": "Class 3 · Opinions"
     },
     {
       "bn": "আমার সবচেয়ে ভালো লেগেছে গল্পের শেষ অংশটি।",
+      "pronunciation": "amar sobcheye bhalo legechhe golper shesh ongshoti",
       "en": "Opinions practice 5",
       "context": "Opinions",
       "category": "Class 3 · Opinions"
     },
     {
       "bn": "আমি এই কথার সঙ্গে একমত।",
+      "pronunciation": "ami ei kothar shonge ekmot",
       "en": "Opinions practice 6",
       "context": "Opinions",
       "category": "Class 3 · Opinions"
     },
     {
       "bn": "আমি অন্যভাবে চিন্তা করি।",
+      "pronunciation": "ami onjobhabe chinta kori",
       "en": "Opinions practice 7",
       "context": "Opinions",
       "category": "Class 3 · Opinions"
     },
     {
       "bn": "আমি মনে করি আমাদের গাছ লাগানো উচিত।",
+      "pronunciation": "ami mone kori amader gachh lagano uchit",
       "en": "Opinions practice 8",
       "context": "Opinions",
       "category": "Class 3 · Opinions"
     },
     {
       "bn": "আমি ক্রিকেট খেলতে পছন্দ করি।",
+      "pronunciation": "ami cricket khelte pochhondo kori",
       "en": "Likes and dislikes practice 1",
       "context": "Likes and dislikes",
       "category": "Class 3 · Likes and dislikes"
     },
     {
       "bn": "আমি গল্প পড়তে খুব ভালোবাসি।",
+      "pronunciation": "ami golpo porte khub bhalobashi",
       "en": "Likes and dislikes practice 2",
       "context": "Likes and dislikes",
       "category": "Class 3 · Likes and dislikes"
     },
     {
       "bn": "আমার আম খেতে সবচেয়ে ভালো লাগে।",
+      "pronunciation": "amar am khete sobcheye bhalo lage",
       "en": "Likes and dislikes practice 3",
       "context": "Likes and dislikes",
       "category": "Class 3 · Likes and dislikes"
     },
     {
       "bn": "আমি খুব ঝাল খাবার পছন্দ করি না।",
+      "pronunciation": "ami khub jhal khabar pochhondo kori na",
       "en": "Likes and dislikes practice 4",
       "context": "Likes and dislikes",
       "category": "Class 3 · Likes and dislikes"
     },
     {
       "bn": "আমি টেলিভিশনের চেয়ে বই পড়তে বেশি পছন্দ করি।",
+      "pronunciation": "ami telibhishoner ceye boi porte beshi pochhondo kori",
       "en": "Likes and dislikes practice 5",
       "context": "Likes and dislikes",
       "category": "Class 3 · Likes and dislikes"
     },
     {
       "bn": "আমার প্রিয় ঋতু হলো শীতকাল।",
+      "pronunciation": "amar priyo ritu holo shitkal",
       "en": "Likes and dislikes practice 6",
       "context": "Likes and dislikes",
       "category": "Class 3 · Likes and dislikes"
     },
     {
       "bn": "আমি বাড়িতে ছিলাম কারণ বাইরে বৃষ্টি হচ্ছিল।",
+      "pronunciation": "ami barite chhilam karon baire brishti hochchhilo",
       "en": "Explaining reasons practice 1",
       "context": "Explaining reasons",
       "category": "Class 3 · Explaining reasons"
     },
     {
       "bn": "আমি পানি পান করলাম কারণ আমার তৃষ্ণা পেয়েছিল।",
+      "pronunciation": "ami pani pan korlam karon amar trishna pejechhil",
       "en": "Explaining reasons practice 2",
       "context": "Explaining reasons",
       "category": "Class 3 · Explaining reasons"
     },
     {
       "bn": "রাহিম খুশি কারণ সে পরীক্ষায় ভালো করেছে।",
+      "pronunciation": "Rahim khushi karon she porikkhay bhalo koreche",
       "en": "Explaining reasons practice 3",
       "context": "Explaining reasons",
       "category": "Class 3 · Explaining reasons"
     },
     {
       "bn": "আমরা তাড়াতাড়ি বের হলাম কারণ স্কুলে দেরি হয়ে যাচ্ছিল।",
+      "pronunciation": "amra taratari ber holam karon skule deri hoye jachchhil",
       "en": "Explaining reasons practice 4",
       "context": "Explaining reasons",
       "category": "Class 3 · Explaining reasons"
     },
     {
       "bn": "গাছ আমাদের জন্য গুরুত্বপূর্ণ কারণ গাছ অক্সিজেন দেয়।",
+      "pronunciation": "gachh amader jonno guruttopurno karon gachh oksijen dey",
       "en": "Explaining reasons practice 5",
       "context": "Explaining reasons",
       "category": "Class 3 · Explaining reasons"
     },
     {
       "bn": "সারাদিন বৃষ্টি হয়েছে, তাই মাঠ ভিজে গেছে।",
+      "pronunciation": "sharadin brishti hoyechhe tai math bhije geche",
       "en": "Cause and result practice 1",
       "context": "Cause and result",
       "category": "Class 3 · Cause and result"
     },
     {
       "bn": "রিমা নিয়মিত পড়াশোনা করেছে, তাই সে ভালো ফল করেছে।",
+      "pronunciation": "rima niyomito porashona koreche tai she bhalo phol / fol koreche",
       "en": "Cause and result practice 2",
       "context": "Cause and result",
       "category": "Class 3 · Cause and result"
     },
     {
       "bn": "গাছটি অনেক দিন পানি পায়নি, তাই পাতাগুলো শুকিয়ে গেছে।",
+      "pronunciation": "gachhoti ônek din pani pajoni tai patagulo shukije geche",
       "en": "Cause and result practice 3",
       "context": "Cause and result",
       "category": "Class 3 · Cause and result"
     },
     {
       "bn": "আমি দেরিতে ঘুম থেকে উঠেছি, তাই স্কুলে যেতে দেরি হয়েছে।",
+      "pronunciation": "ami derite ghum theke uthechhi tai skule jete deri hoyechhe",
       "en": "Cause and result practice 4",
       "context": "Cause and result",
       "category": "Class 3 · Cause and result"
     },
     {
       "bn": "রাস্তা ভেজা ছিল, তাই আমরা সাবধানে হাঁটলাম।",
+      "pronunciation": "rasta bheja chhilo tai amra shobdhone hantolam",
       "en": "Cause and result practice 5",
       "context": "Cause and result",
       "category": "Class 3 · Cause and result"
     },
     {
       "bn": "প্রথমে আমি ঘুম থেকে উঠলাম।",
+      "pronunciation": "prothome ami ghum theke utholam",
       "en": "Sequence practice 1",
       "context": "Sequence",
       "category": "Class 3 · Sequence"
     },
     {
       "bn": "তারপর আমি দাঁত ব্রাশ করলাম।",
+      "pronunciation": "tarpor ami dant brawsh korlam",
       "en": "Sequence practice 2",
       "context": "Sequence",
       "category": "Class 3 · Sequence"
     },
     {
       "bn": "এরপর আমি নাশতা খেলাম।",
+      "pronunciation": "erpor ami nashta khelam",
       "en": "Sequence practice 3",
       "context": "Sequence",
       "category": "Class 3 · Sequence"
     },
     {
       "bn": "তারপর স্কুলের পোশাক পরলাম।",
+      "pronunciation": "tarpor skuler poshak porolam",
       "en": "Sequence practice 4",
       "context": "Sequence",
       "category": "Class 3 · Sequence"
     },
     {
       "bn": "অবশেষে আমি স্কুলে রওনা হলাম।",
+      "pronunciation": "oboshese ami skule rouna holam",
       "en": "Sequence practice 5",
       "context": "Sequence",
       "category": "Class 3 · Sequence"
     },
     {
       "bn": "গতকাল আমরা চিড়িয়াখানায় গিয়েছিলাম।",
+      "pronunciation": "gotokal amra chidijakhanajo giyechilam",
       "en": "Past practice 1",
       "context": "Past",
       "category": "Class 3 · Past"
     },
     {
       "bn": "সেখানে আমি অনেক বন্য প্রাণী দেখেছিলাম।",
+      "pronunciation": "sekhane ami ônek bonno prani dekhechhilam",
       "en": "Past practice 2",
       "context": "Past",
       "category": "Class 3 · Past"
     },
     {
       "bn": "আমরা একটি বড় হাতি দেখেছিলাম।",
+      "pronunciation": "amra ekti bôṛo Hati dekhechhilam",
       "en": "Past practice 3",
       "context": "Past",
       "category": "Class 3 · Past"
     },
     {
       "bn": "হাতিটি গাছের পাতা খাচ্ছিল।",
+      "pronunciation": "hatiti gacher pata khachchhil",
       "en": "Past practice 4",
       "context": "Past",
       "category": "Class 3 · Past"
     },
     {
       "bn": "দুপুরে আমরা একসঙ্গে খাবার খেয়েছিলাম।",
+      "pronunciation": "dupure amra eksongge khabar khejechhilam",
       "en": "Past practice 5",
       "context": "Past",
       "category": "Class 3 · Past"
     },
     {
       "bn": "বিকেলে আমরা বাড়িতে ফিরে এসেছিলাম।",
+      "pronunciation": "bikele amra barite phire eshechilam",
       "en": "Past practice 6",
       "context": "Past",
       "category": "Class 3 · Past"
     },
     {
       "bn": "দিনটি আমার খুব ভালো লেগেছিল।",
+      "pronunciation": "dinoti amar khub bhalo legechhil",
       "en": "Past practice 7",
       "context": "Past",
       "category": "Class 3 · Past"
     },
     {
       "bn": "আগামীকাল আমরা গ্রামে যাব।",
+      "pronunciation": "agamikal amra grame jabo",
       "en": "Future practice 1",
       "context": "Future",
       "category": "Class 3 · Future"
     },
     {
       "bn": "আমি ছুটির দিনে দাদির সঙ্গে দেখা করব।",
+      "pronunciation": "ami chhutir dine dadir shonge dekha korbo",
       "en": "Future practice 2",
       "context": "Future",
       "category": "Class 3 · Future"
     },
     {
       "bn": "আমরা নদীর পাশে হাঁটতে যাব।",
+      "pronunciation": "amra nodir pashe hatte jabo",
       "en": "Future practice 3",
       "context": "Future",
       "category": "Class 3 · Future"
     },
     {
       "bn": "আমি আমার বন্ধুদের সঙ্গে খেলব।",
+      "pronunciation": "ami amar bondhuder shonge khelob",
       "en": "Future practice 4",
       "context": "Future",
       "category": "Class 3 · Future"
     },
     {
       "bn": "পরের সপ্তাহে আমাদের পরীক্ষা হবে।",
+      "pronunciation": "porer shoptah-e amader porikkha hobe",
       "en": "Future practice 5",
       "context": "Future",
       "category": "Class 3 · Future"
     },
     {
       "bn": "আমি পরীক্ষার জন্য ভালোভাবে পড়াশোনা করব।",
+      "pronunciation": "ami porikkhar jonno bhalobhabe porashona korbo",
       "en": "Future practice 6",
       "context": "Future",
       "category": "Class 3 · Future"
     },
     {
       "bn": "আমি এখন বই পড়ছি।",
+      "pronunciation": "ami ekhon boi porchhi.",
       "en": "Ongoing actions practice 1",
       "context": "Ongoing actions",
       "category": "Class 3 · Ongoing actions"
     },
     {
       "bn": "মা রান্নাঘরে রান্না করছেন।",
+      "pronunciation": "ma rannaghore ranna korchen",
       "en": "Ongoing actions practice 2",
       "context": "Ongoing actions",
       "category": "Class 3 · Ongoing actions"
     },
     {
       "bn": "বাবা টেলিভিশন দেখছেন।",
+      "pronunciation": "baba telibhishon dekhchen",
       "en": "Ongoing actions practice 3",
       "context": "Ongoing actions",
       "category": "Class 3 · Ongoing actions"
     },
     {
       "bn": "আমার ভাই মাঠে খেলছে।",
+      "pronunciation": "amar bhai mathe khelchhe",
       "en": "Ongoing actions practice 4",
       "context": "Ongoing actions",
       "category": "Class 3 · Ongoing actions"
     },
     {
       "bn": "পাখিগুলো আকাশে উড়ছে।",
+      "pronunciation": "pakhigulo akashe udochhe",
       "en": "Ongoing actions practice 5",
       "context": "Ongoing actions",
       "category": "Class 3 · Ongoing actions"
     },
     {
       "bn": "বাইরে বৃষ্টি পড়ছে।",
+      "pronunciation": "baire brishti porchhe",
       "en": "Ongoing actions practice 6",
       "context": "Ongoing actions",
       "category": "Class 3 · Ongoing actions"
     },
     {
       "bn": "শিক্ষক বোর্ডে লিখছেন।",
+      "pronunciation": "shikkhok borde likhochhen",
       "en": "Ongoing actions practice 7",
       "context": "Ongoing actions",
       "category": "Class 3 · Ongoing actions"
     },
     {
       "bn": "হাতি ঘোড়ার চেয়ে বড়।",
+      "pronunciation": "Hati ghodar ceye bôṛo",
       "en": "Comparisons practice 1",
       "context": "Comparisons",
       "category": "Class 3 · Comparisons"
     },
     {
       "bn": "নদীটি পুকুরের চেয়ে গভীর।",
+      "pronunciation": "noditi pukurer ceye gobhir",
       "en": "Comparisons practice 2",
       "context": "Comparisons",
       "category": "Class 3 · Comparisons"
     },
     {
       "bn": "আমার ভাই আমার চেয়ে লম্বা।",
+      "pronunciation": "amar bhai amar ceye lomba",
       "en": "Comparisons practice 3",
       "context": "Comparisons",
       "category": "Class 3 · Comparisons"
     },
     {
       "bn": "এই গল্পটি আগের গল্পটির চেয়ে মজার।",
+      "pronunciation": "ei golpoti ager golpotir ceye mojar",
       "en": "Comparisons practice 4",
       "context": "Comparisons",
       "category": "Class 3 · Comparisons"
     },
     {
       "bn": "আজ গতকালের চেয়ে বেশি গরম।",
+      "pronunciation": "aj gotokaler ceye beshi gorom",
       "en": "Comparisons practice 5",
       "context": "Comparisons",
       "category": "Class 3 · Comparisons"
     },
     {
       "bn": "ট্রেন বাসের চেয়ে দ্রুত চলতে পারে।",
+      "pronunciation": "ṭren baser ceye druto cholte pare",
       "en": "Comparisons practice 6",
       "context": "Comparisons",
       "category": "Class 3 · Comparisons"
     },
     {
       "bn": "রাহিম করিমের চেয়ে দ্রুত দৌড়ায়।",
+      "pronunciation": "Rahim korimer ceye druto douray",
       "en": "Comparisons practice 7",
       "context": "Comparisons",
       "category": "Class 3 · Comparisons"
     },
     {
       "bn": "আমি কি বাইরে যেতে পারি?",
+      "pronunciation": "ami ki baire jete pari",
       "en": "Permission practice 1",
       "context": "Permission",
       "category": "Class 3 · Permission"
     },
     {
       "bn": "আমি কি আপনার কলমটি ব্যবহার করতে পারি?",
+      "pronunciation": "ami ki apnar kolomoti byabohar korte pari",
       "en": "Permission practice 2",
       "context": "Permission",
       "category": "Class 3 · Permission"
     },
     {
       "bn": "আমি কি এখানে বসতে পারি?",
+      "pronunciation": "ami ki ekhane boshte pari",
       "en": "Permission practice 3",
       "context": "Permission",
       "category": "Class 3 · Permission"
     },
     {
       "bn": "আমি কি একটি প্রশ্ন করতে পারি?",
+      "pronunciation": "ami ki ekti proshno korte pari",
       "en": "Permission practice 4",
       "context": "Permission",
       "category": "Class 3 · Permission"
     },
     {
       "bn": "আমি কি বইটি বাড়িতে নিয়ে যেতে পারি?",
+      "pronunciation": "ami ki boiti barite niye jete pari",
       "en": "Permission practice 5",
       "context": "Permission",
       "category": "Class 3 · Permission"
     },
     {
       "bn": "তুমি কি আমাকে সাহায্য করতে পারবে?",
+      "pronunciation": "tumi ki amake shahajjo korte parbe",
       "en": "Asking for help practice 1",
       "context": "Asking for help",
       "category": "Class 3 · Asking for help"
     },
     {
       "bn": "আমি এই অঙ্কটি বুঝতে পারছি না।",
+      "pronunciation": "ami ei ongkoti bujhte parchi na",
       "en": "Asking for help practice 2",
       "context": "Asking for help",
       "category": "Class 3 · Asking for help"
     },
     {
       "bn": "তুমি কি আমাকে পথটি দেখাতে পারবে?",
+      "pronunciation": "tumi ki amake pothti dekhate parbe",
       "en": "Asking for help practice 3",
       "context": "Asking for help",
       "category": "Class 3 · Asking for help"
     },
     {
       "bn": "দয়া করে শব্দটির অর্থ বুঝিয়ে বলো।",
+      "pronunciation": "doya kore shobdotir ôrtho bujhije bolo",
       "en": "Asking for help practice 4",
       "context": "Asking for help",
       "category": "Class 3 · Asking for help"
     },
     {
       "bn": "আমার বইটি খুঁজে পেতে সাহায্য করো।",
+      "pronunciation": "amar boiti khũje pete shahajjo koro",
       "en": "Asking for help practice 5",
       "context": "Asking for help",
       "category": "Class 3 · Asking for help"
     },
     {
       "bn": "তোমার নিয়মিত পড়াশোনা করা উচিত।",
+      "pronunciation": "tomar niyomito porashona kora uchit",
       "en": "Advice practice 1",
       "context": "Advice",
       "category": "Class 3 · Advice"
     },
     {
       "bn": "আমাদের প্রতিদিন দাঁত ব্রাশ করা উচিত।",
+      "pronunciation": "amader protidin dant brawsh kora uchit",
       "en": "Advice practice 2",
       "context": "Advice",
       "category": "Class 3 · Advice"
     },
     {
       "bn": "আমাদের বেশি করে পানি পান করা উচিত।",
+      "pronunciation": "amader beshi kore pani pan kora uchit",
       "en": "Advice practice 3",
       "context": "Advice",
       "category": "Class 3 · Advice"
     },
     {
       "bn": "আমাদের গাছপালা রক্ষা করা উচিত।",
+      "pronunciation": "amader gachhopala rokkha kora uchit",
       "en": "Advice practice 4",
       "context": "Advice",
       "category": "Class 3 · Advice"
     },
     {
       "bn": "রাস্তা পার হওয়ার সময় সাবধান হওয়া উচিত।",
+      "pronunciation": "rasta par howar shomoy shabdhan hooa uchit",
       "en": "Advice practice 5",
       "context": "Advice",
       "category": "Class 3 · Advice"
     },
     {
       "bn": "আমাদের অন্যদের সাহায্য করা উচিত।",
+      "pronunciation": "amader onjoder shahajjo kora uchit",
       "en": "Advice practice 6",
       "context": "Advice",
       "category": "Class 3 · Advice"
     },
     {
       "bn": "যদি বৃষ্টি হয়, আমরা ঘরে থাকব।",
+      "pronunciation": "jodi brishti hoy amra ghore thakbo",
       "en": "If practice 1",
       "context": "If",
       "category": "Class 3 · If"
     },
     {
       "bn": "যদি তুমি মন দিয়ে পড়ো, তুমি ভালো ফল করবে।",
+      "pronunciation": "jodi tumi mon diye poro tumi bhalo phol / fol korbe",
       "en": "If practice 2",
       "context": "If",
       "category": "Class 3 · If"
     },
     {
       "bn": "যদি আমার সময় থাকে, আমি তোমার সঙ্গে খেলব।",
+      "pronunciation": "jodi amar shomoy thake ami tomar shonge khelob",
       "en": "If practice 3",
       "context": "If",
       "category": "Class 3 · If"
     },
     {
       "bn": "যদি গাছে পানি না দাও, গাছটি শুকিয়ে যাবে।",
+      "pronunciation": "jodi gache pani na dao gachhoti shukije jabe",
       "en": "If practice 4",
       "context": "If",
       "category": "Class 3 · If"
     },
     {
       "bn": "যদি তুমি তাড়াতাড়ি আসো, আমরা একসঙ্গে যেতে পারব।",
+      "pronunciation": "jodi tumi taratari asho amra eksongge jete parbo",
       "en": "If practice 5",
       "context": "If",
       "category": "Class 3 · If"
     },
     {
       "bn": "যখন সকাল হয়, সূর্য ওঠে।",
+      "pronunciation": "jokhon shokal hoy shurjo othe",
       "en": "When practice 1",
       "context": "When",
       "category": "Class 3 · When"
     },
     {
       "bn": "যখন বৃষ্টি হয়, আমি ছাতা ব্যবহার করি।",
+      "pronunciation": "jokhon brishti hoy ami chhata byabohar kori",
       "en": "When practice 2",
       "context": "When",
       "category": "Class 3 · When"
     },
     {
       "bn": "যখন আমার ক্ষুধা লাগে, আমি খাবার খাই।",
+      "pronunciation": "jokhon amar khudha lage ami khabar khai",
       "en": "When practice 3",
       "context": "When",
       "category": "Class 3 · When"
     },
     {
       "bn": "যখন স্কুল ছুটি হয়, আমরা বাড়িতে ফিরে যাই।",
+      "pronunciation": "jokhon skul chhuti hoy amra barite phire jai",
       "en": "When practice 4",
       "context": "When",
       "category": "Class 3 · When"
     },
     {
       "bn": "যখন আমি গল্প পড়ি, তখন নতুন শব্দ শিখি।",
+      "pronunciation": "jokhon ami golpo pori tokhon notun shobdo shikhi",
       "en": "When practice 5",
       "context": "When",
       "category": "Class 3 · When"
     },
     {
       "bn": "যদিও বাইরে বৃষ্টি হচ্ছিল, তবুও আমরা স্কুলে গিয়েছিলাম।",
+      "pronunciation": "jodio baire brishti hochchhilo tobuo amra skule giyechilam",
       "en": "Although and nevertheless practice 1",
       "context": "Although and nevertheless",
       "category": "Class 3 · Although and nevertheless"
     },
     {
       "bn": "যদিও কাজটি কঠিন ছিল, তবুও আমি চেষ্টা করেছি।",
+      "pronunciation": "jodio kajti kothin chhilo tobuo ami cheshta korechhi",
       "en": "Although and nevertheless practice 2",
       "context": "Although and nevertheless",
       "category": "Class 3 · Although and nevertheless"
     },
     {
       "bn": "যদিও রাহিম ছোট, তবুও সে খুব সাহসী।",
+      "pronunciation": "jodio Rahim chhoto tobuo she khub shahoshi",
       "en": "Although and nevertheless practice 3",
       "context": "Although and nevertheless",
       "category": "Class 3 · Although and nevertheless"
     },
     {
       "bn": "যদিও আমার ক্লান্ত লাগছিল, তবুও আমি বাড়ির কাজ শেষ করেছি।",
+      "pronunciation": "jodio amar klanto lagchilo tobuo ami barir kaj shesh korechhi",
       "en": "Although and nevertheless practice 4",
       "context": "Although and nevertheless",
       "category": "Class 3 · Although and nevertheless"
     },
     {
       "bn": "তুমি কেন স্কুলে যাও?",
+      "pronunciation": "tumi keno skule jao",
       "en": "Full questions and answers practice 1",
       "context": "Full questions and answers",
       "category": "Class 3 · Full questions and answers"
     },
     {
       "bn": "আমি নতুন কিছু শেখার জন্য স্কুলে যাই।",
+      "pronunciation": "ami notun kichhu shekhar jonno skule jai",
       "en": "Full questions and answers practice 2",
       "context": "Full questions and answers",
       "category": "Class 3 · Full questions and answers"
     },
     {
       "bn": "তুমি কখন ঘুম থেকে ওঠো?",
+      "pronunciation": "tumi kokhon ghum theke otho",
       "en": "Full questions and answers practice 3",
       "context": "Full questions and answers",
       "category": "Class 3 · Full questions and answers"
     },
     {
       "bn": "আমি প্রতিদিন সকাল সাতটায় ঘুম থেকে উঠি।",
+      "pronunciation": "ami protidin shokal shattay ghum theke uthi",
       "en": "Full questions and answers practice 4",
       "context": "Full questions and answers",
       "category": "Class 3 · Full questions and answers"
     },
     {
       "bn": "তোমার প্রিয় খেলা কী?",
+      "pronunciation": "tomar priyo khela ki",
       "en": "Full questions and answers practice 5",
       "context": "Full questions and answers",
       "category": "Class 3 · Full questions and answers"
     },
     {
       "bn": "আমার প্রিয় খেলা ক্রিকেট।",
+      "pronunciation": "amar priyo khela cricket",
       "en": "Full questions and answers practice 6",
       "context": "Full questions and answers",
       "category": "Class 3 · Full questions and answers"
     },
     {
       "bn": "তুমি অবসর সময়ে কী করো?",
+      "pronunciation": "tumi obosor shomoye ki koro",
       "en": "Full questions and answers practice 7",
       "context": "Full questions and answers",
       "category": "Class 3 · Full questions and answers"
     },
     {
       "bn": "আমি অবসর সময়ে গল্পের বই পড়ি।",
+      "pronunciation": "ami obosor shomoye golper boi pori",
       "en": "Full questions and answers practice 8",
       "context": "Full questions and answers",
       "category": "Class 3 · Full questions and answers"
     },
     {
       "bn": "তোমার প্রিয় ঋতু কোনটি এবং কেন?",
+      "pronunciation": "tomar priyo ritu konoti ebong keno",
       "en": "Full questions and answers practice 9",
       "context": "Full questions and answers",
       "category": "Class 3 · Full questions and answers"
     },
     {
       "bn": "আমার প্রিয় ঋতু শীত, কারণ শীতের আবহাওয়া আমার ভালো লাগে।",
+      "pronunciation": "amar priyo ritu shit karon shiter abohawa amar bhalo lage",
       "en": "Full questions and answers practice 10",
       "context": "Full questions and answers",
       "category": "Class 3 · Full questions and answers"
     },
     {
       "bn": "তুমি কীভাবে স্কুলে যাও?",
+      "pronunciation": "tumi kibhabe skule jao",
       "en": "Full questions and answers practice 11",
       "context": "Full questions and answers",
       "category": "Class 3 · Full questions and answers"
     },
     {
       "bn": "আমি বাসে করে স্কুলে যাই।",
+      "pronunciation": "ami base kore skule jai",
       "en": "Full questions and answers practice 12",
       "context": "Full questions and answers",
       "category": "Class 3 · Full questions and answers"
     },
     {
       "bn": "সত্য — মিথ্যা",
+      "pronunciation": "shotto mittha",
       "en": "Opposites practice 1",
       "context": "Opposites",
       "category": "Class 3 · Opposites"
     },
     {
       "bn": "সৎ — অসৎ",
+      "pronunciation": "shot ôshot",
       "en": "Opposites practice 2",
       "context": "Opposites",
       "category": "Class 3 · Opposites"
     },
     {
       "bn": "সাহসী — ভীরু",
+      "pronunciation": "shahoshi bhiru",
       "en": "Opposites practice 3",
       "context": "Opposites",
       "category": "Class 3 · Opposites"
     },
     {
       "bn": "দয়ালু — নিষ্ঠুর",
+      "pronunciation": "doyalu nishthur",
       "en": "Opposites practice 4",
       "context": "Opposites",
       "category": "Class 3 · Opposites"
     },
     {
       "bn": "ভদ্র — অভদ্র",
+      "pronunciation": "bhodro ôbhodro",
       "en": "Opposites practice 5",
       "context": "Opposites",
       "category": "Class 3 · Opposites"
     },
     {
       "bn": "পরিশ্রমী — অলস",
+      "pronunciation": "pôrishromi olosh",
       "en": "Opposites practice 6",
       "context": "Opposites",
       "category": "Class 3 · Opposites"
     },
     {
       "bn": "সুখ — দুঃখ",
+      "pronunciation": "shukh dukkho",
       "en": "Opposites practice 7",
       "context": "Opposites",
       "category": "Class 3 · Opposites"
     },
     {
       "bn": "আলো — অন্ধকার",
+      "pronunciation": "alo ôndhokar",
       "en": "Opposites practice 8",
       "context": "Opposites",
       "category": "Class 3 · Opposites"
     },
     {
       "bn": "শক্তিশালী — দুর্বল",
+      "pronunciation": "shoktishali durbol",
       "en": "Opposites practice 9",
       "context": "Opposites",
       "category": "Class 3 · Opposites"
     },
     {
       "bn": "সহজ — কঠিন",
+      "pronunciation": "shohoj kothin",
       "en": "Opposites practice 10",
       "context": "Opposites",
       "category": "Class 3 · Opposites"
     },
     {
       "bn": "নিরাপদ — বিপজ্জনক",
+      "pronunciation": "nirapod bipodjonok",
       "en": "Opposites practice 11",
       "context": "Opposites",
       "category": "Class 3 · Opposites"
     },
     {
       "bn": "পরিষ্কার — নোংরা",
+      "pronunciation": "pôrishkar nongra",
       "en": "Opposites practice 12",
       "context": "Opposites",
       "category": "Class 3 · Opposites"
     },
     {
       "bn": "শুকনো — ভেজা",
+      "pronunciation": "shukno bheja",
       "en": "Opposites practice 13",
       "context": "Opposites",
       "category": "Class 3 · Opposites"
     },
     {
       "bn": "গভীর — অগভীর",
+      "pronunciation": "gobhir ôgobhir",
       "en": "Opposites practice 14",
       "context": "Opposites",
       "category": "Class 3 · Opposites"
     },
     {
       "bn": "প্রশস্ত — সরু",
+      "pronunciation": "proshosto shoru",
       "en": "Opposites practice 15",
       "context": "Opposites",
       "category": "Class 3 · Opposites"
     },
     {
       "bn": "উঁচু — নিচু",
+      "pronunciation": "unchu nichu",
       "en": "Opposites practice 16",
       "context": "Opposites",
       "category": "Class 3 · Opposites"
     },
     {
       "bn": "দ্রুত — ধীর",
+      "pronunciation": "druto dhir",
       "en": "Opposites practice 17",
       "context": "Opposites",
       "category": "Class 3 · Opposites"
     },
     {
       "bn": "শুরু — শেষ",
+      "pronunciation": "shuru shesh",
       "en": "Opposites practice 18",
       "context": "Opposites",
       "category": "Class 3 · Opposites"
     },
     {
       "bn": "জয় — পরাজয়",
+      "pronunciation": "joy porajoy",
       "en": "Opposites practice 19",
       "context": "Opposites",
       "category": "Class 3 · Opposites"
     },
     {
       "bn": "লাভ — ক্ষতি",
+      "pronunciation": "labh khoti",
       "en": "Opposites practice 20",
       "context": "Opposites",
       "category": "Class 3 · Opposites"
     },
     {
       "bn": "সামনে — পিছনে",
+      "pronunciation": "shamne Pichone",
       "en": "Opposites practice 21",
       "context": "Opposites",
       "category": "Class 3 · Opposites"
     },
     {
       "bn": "ভিতরে — বাইরে",
+      "pronunciation": "bhitore baire",
       "en": "Opposites practice 22",
       "context": "Opposites",
       "category": "Class 3 · Opposites"
     },
     {
       "bn": "কাছে — দূরে",
+      "pronunciation": "kachhe dure",
       "en": "Opposites practice 23",
       "context": "Opposites",
       "category": "Class 3 · Opposites"
     },
     {
       "bn": "বেশি — কম",
+      "pronunciation": "beshi kom",
       "en": "Opposites practice 24",
       "context": "Opposites",
       "category": "Class 3 · Opposites"
     },
     {
       "bn": "পুরোনো — নতুন",
+      "pronunciation": "purono notun",
       "en": "Opposites practice 25",
       "context": "Opposites",
       "category": "Class 3 · Opposites"
     },
     {
       "bn": "পানি — জল",
+      "pronunciation": "pani jol",
       "en": "Synonyms practice 1",
       "context": "Synonyms",
       "category": "Class 3 · Synonyms"
     },
     {
       "bn": "আকাশ — গগন",
+      "pronunciation": "akash gogon",
       "en": "Synonyms practice 2",
       "context": "Synonyms",
       "category": "Class 3 · Synonyms"
     },
     {
       "bn": "সূর্য — রবি",
+      "pronunciation": "shurjo robi",
       "en": "Synonyms practice 3",
       "context": "Synonyms",
       "category": "Class 3 · Synonyms"
     },
     {
       "bn": "চাঁদ — চন্দ্র",
+      "pronunciation": "chãd chondr",
       "en": "Synonyms practice 4",
       "context": "Synonyms",
       "category": "Class 3 · Synonyms"
     },
     {
       "bn": "পৃথিবী — ধরণি",
+      "pronunciation": "prithibi dhoroni",
       "en": "Synonyms practice 5",
       "context": "Synonyms",
       "category": "Class 3 · Synonyms"
     },
     {
       "bn": "বন — অরণ্য",
+      "pronunciation": "bon oronj",
       "en": "Synonyms practice 6",
       "context": "Synonyms",
       "category": "Class 3 · Synonyms"
     },
     {
       "bn": "রাস্তা — পথ",
+      "pronunciation": "rasta poth",
       "en": "Synonyms practice 7",
       "context": "Synonyms",
       "category": "Class 3 · Synonyms"
     },
     {
       "bn": "বাড়ি — গৃহ",
+      "pronunciation": "bari griho",
       "en": "Synonyms practice 8",
       "context": "Synonyms",
       "category": "Class 3 · Synonyms"
     },
     {
       "bn": "বন্ধু — সাথি",
+      "pronunciation": "bondhu sathi",
       "en": "Synonyms practice 9",
       "context": "Synonyms",
       "category": "Class 3 · Synonyms"
     },
     {
       "bn": "খুশি — আনন্দিত",
+      "pronunciation": "khushi anondito",
       "en": "Synonyms practice 10",
       "context": "Synonyms",
       "category": "Class 3 · Synonyms"
     },
     {
       "bn": "দুঃখ — কষ্ট",
+      "pronunciation": "dukkho koshto",
       "en": "Synonyms practice 11",
       "context": "Synonyms",
       "category": "Class 3 · Synonyms"
     },
     {
       "bn": "সকাল — প্রভাত",
+      "pronunciation": "shokal probhat",
       "en": "Synonyms practice 12",
       "context": "Synonyms",
       "category": "Class 3 · Synonyms"
     },
     {
       "bn": "রাত — রাত্রি",
+      "pronunciation": "rat ratri",
       "en": "Synonyms practice 13",
       "context": "Synonyms",
       "category": "Class 3 · Synonyms"
     },
     {
       "bn": "ফুল — পুষ্প",
+      "pronunciation": "phul / ful pushp",
       "en": "Synonyms practice 14",
       "context": "Synonyms",
       "category": "Class 3 · Synonyms"
     },
     {
       "bn": "বাতাস — হাওয়া",
+      "pronunciation": "batash haoa",
       "en": "Synonyms practice 15",
       "context": "Synonyms",
       "category": "Class 3 · Synonyms"
     },
     {
       "bn": "নিজের কাজ নিজে করা আমাদের দায়িত্ব।",
+      "pronunciation": "nijer kaj nije kora amader dayitto",
       "en": "Words in sentences practice 1",
       "context": "Words in sentences",
       "category": "Class 3 · Words in sentences"
     },
     {
       "bn": "আমাদের পরিবেশ পরিষ্কার রাখা উচিত।",
+      "pronunciation": "amader poribesh pôrishkar rakha uchit",
       "en": "Words in sentences practice 2",
       "context": "Words in sentences",
       "category": "Class 3 · Words in sentences"
     },
     {
       "bn": "সবাই সহযোগিতা করলে কাজটি সহজ হয়।",
+      "pronunciation": "shobai sohojogita korle kajti shohoj hoy",
       "en": "Words in sentences practice 3",
       "context": "Words in sentences",
       "category": "Class 3 · Words in sentences"
     },
     {
       "bn": "বিপদের সময় সাহস হারানো উচিত নয়।",
+      "pronunciation": "bipoder shomoy shahosh harano uchit noy",
       "en": "Words in sentences practice 4",
       "context": "Words in sentences",
       "category": "Class 3 · Words in sentences"
     },
     {
       "bn": "আমি প্রতিদিন বই পড়ার সিদ্ধান্ত নিয়েছি।",
+      "pronunciation": "ami protidin boi podar shiddhanto niyechi",
       "en": "Words in sentences practice 5",
       "context": "Words in sentences",
       "category": "Class 3 · Words in sentences"
     },
     {
       "bn": "পরিশ্রম করলে ভালো ফল পাওয়া যায়।",
+      "pronunciation": "porishrom korle bhalo phol / fol paoa Jay",
       "en": "Words in sentences practice 6",
       "context": "Words in sentences",
       "category": "Class 3 · Words in sentences"
     },
     {
       "bn": "শীত শেষে আবহাওয়ার পরিবর্তন হয়।",
+      "pronunciation": "shit sheshe abohaojar poriborton hoy",
       "en": "Words in sentences practice 7",
       "context": "Words in sentences",
       "category": "Class 3 · Words in sentences"
     },
     {
       "bn": "আমরা একসঙ্গে সমস্যার সমাধান খুঁজলাম।",
+      "pronunciation": "amra eksongge somosjar shomadhan khunjolam",
       "en": "Words in sentences practice 8",
       "context": "Words in sentences",
       "category": "Class 3 · Words in sentences"
     },
     {
       "bn": "সকালে তাড়াতাড়ি ওঠা একটি ভালো অভ্যাস।",
+      "pronunciation": "shokale taratari oṭha ekti bhalo obhyash",
       "en": "Words in sentences practice 9",
       "context": "Words in sentences",
       "category": "Class 3 · Words in sentences"
     },
     {
       "bn": "আমাদের বড়দের সম্মান করা উচিত।",
+      "pronunciation": "amader bododer shomman kora uchit",
       "en": "Words in sentences practice 10",
       "context": "Words in sentences",
       "category": "Class 3 · Words in sentences"
     },
     {
       "bn": "সুস্থ থাকার জন্য পরিষ্কার পানির প্রয়োজন।",
+      "pronunciation": "shustho thakar jonno pôrishkar panir proyojon",
       "en": "Words in sentences practice 11",
       "context": "Words in sentences",
       "category": "Class 3 · Words in sentences"
     },
     {
       "bn": "আমি নতুন বইটি পড়ার সুযোগ পেয়েছি।",
+      "pronunciation": "ami notun boiti podar shujog peyechhi",
       "en": "Words in sentences practice 12",
       "context": "Words in sentences",
       "category": "Class 3 · Words in sentences"
     },
     {
       "bn": "বৃষ্টি থামার পরে শিশুরা মাঠে খেলতে বের হলো।",
+      "pronunciation": "brishti thamar pore shishura mathe khelte ber holo",
       "en": "Challenging sentences practice 1",
       "context": "Challenging sentences",
       "category": "Class 3 · Challenging sentences"
     },
     {
       "bn": "পাখিটি খাবারের খোঁজে এক গাছ থেকে অন্য গাছে উড়ে গেল।",
+      "pronunciation": "pakhiti khabarer khonje ek gachh theke ônno gache ure gelo",
       "en": "Challenging sentences practice 2",
       "context": "Challenging sentences",
       "category": "Class 3 · Challenging sentences"
     },
     {
       "bn": "রাহিম তার ভুল বুঝতে পেরে বন্ধুর কাছে ক্ষমা চাইল।",
+      "pronunciation": "Rahim tar bhul bujhte pere bondhur kachhe khoma chail",
       "en": "Challenging sentences practice 3",
       "context": "Challenging sentences",
       "category": "Class 3 · Challenging sentences"
     },
     {
       "bn": "নিয়মিত অনুশীলন করলে যেকোনো কাজে উন্নতি করা সম্ভব।",
+      "pronunciation": "niyomito onushilon korle jekono kaje unnoti kora shombhob",
       "en": "Challenging sentences practice 4",
       "context": "Challenging sentences",
       "category": "Class 3 · Challenging sentences"
     },
     {
       "bn": "আমাদের চারপাশ পরিষ্কার রাখলে পরিবেশ সুন্দর থাকে।",
+      "pronunciation": "amader charpash pôrishkar rakhle poribesh shundor thake",
       "en": "Challenging sentences practice 5",
       "context": "Challenging sentences",
       "category": "Class 3 · Challenging sentences"
     },
     {
       "bn": "কৃষকরা কঠোর পরিশ্রম করে আমাদের জন্য ফসল উৎপাদন করেন।",
+      "pronunciation": "krishokora kothor porishrom kore amader jonno phosol utpadon koren",
       "en": "Challenging sentences practice 6",
       "context": "Challenging sentences",
       "category": "Class 3 · Challenging sentences"
     },
     {
       "bn": "শীতের সকালে ঘন কুয়াশার কারণে দূরের জিনিস স্পষ্ট দেখা যায় না।",
+      "pronunciation": "shiter shokale ghono kujashar karone durer jinish sposhto dekha Jay na",
       "en": "Challenging sentences practice 7",
       "context": "Challenging sentences",
       "category": "Class 3 · Challenging sentences"
     },
     {
       "bn": "বন্ধুর বিপদ দেখে মিতা দ্রুত তাকে সাহায্য করতে এগিয়ে গেল।",
+      "pronunciation": "bondhur bipod dekhe mita druto take shahajjo korte egiye gelo",
       "en": "Challenging sentences practice 8",
       "context": "Challenging sentences",
       "category": "Class 3 · Challenging sentences"
     },
     {
       "bn": "সকাল থেকেই আকাশ মেঘলা ছিল। স্কুলে যাওয়ার সময় রাহিম তার সঙ্গে একটি ছাতা নিয়ে গেল। দুপুরের দিকে হঠাৎ প্রচণ্ড বৃষ্টি শুরু হলো। স্কুল ছুটির পরেও বৃষ্টি থামল না। রাহিম ও তার বন্ধুরা কিছুক্ষণ বিদ্যালয়ের বারান্দায় অপেক্ষা করল। বৃষ্টি একটু কমলে তারা ছাতা মাথায় দিয়ে বাড়ির দিকে রওনা হলো। রাস্তায় অনেক জায়গায় পানি জমে ছিল। রাহিম সাবধানে হেঁটে বাড়িতে পৌঁছাল।",
+      "pronunciation": "shokal thekei akash meghola chhilo skule jaoar shomoy Rahim tar shonge ekti chhata niye gelo dupurer dike hothat prochond brishti shuru holo skul chhutir pore brishti thamol na Rahim o tar bondhura kichukhon biddaloyer baranday ôpekkha korlo brishti ektu komole tara chhata mathay diye barir dike rouna holo rastay ônek jaygay pani jome chhilo Rahim shobdhone hete barite pounchhal",
       "en": "Reading passages practice 1",
       "context": "Reading passages",
       "category": "Class 3 · Reading passages"
     },
     {
       "bn": "গাছ আমাদের খুব উপকারী বন্ধু। গাছ থেকে আমরা ফল, ফুল, কাঠ ও ছায়া পাই। অনেক পাখি গাছে বাসা তৈরি করে। গাছ বাতাস পরিষ্কার রাখতে সাহায্য করে। গাছের শিকড় মাটিকে শক্ত করে ধরে রাখে। তাই আমাদের অকারণে গাছ কাটা উচিত নয়। বরং সুযোগ পেলে নতুন গাছ লাগানো এবং সেগুলোর যত্ন নেওয়া উচিত।",
+      "pronunciation": "gachh amader khub upokari bondhu gachh theke amra phol / fol phul / ful kaṭh o chhaya pai ônek pakhi gache basha toiri kore gachh batash pôrishkar rakhte shahajjo kore gacher shikodo matike shokto kore dhore rakhe tai amader okarone gachh kata uchit noy borong shujog pele notun gachh lagano ebong segulor jotno neoa uchit",
       "en": "Reading passages practice 2",
       "context": "Reading passages",
       "category": "Class 3 · Reading passages"
     },
     {
       "bn": "সুমন ও রবি একই শ্রেণিতে পড়ে। তারা খুব ভালো বন্ধু। একদিন রবি স্কুলে তার পেন্সিল আনতে ভুলে গেল। সুমনের কাছে দুটি পেন্সিল ছিল। সে একটি পেন্সিল রবিকে দিল। রবি তাকে ধন্যবাদ জানাল। ছুটির পরে তারা একসঙ্গে বাড়ি ফিরল। একজন ভালো বন্ধু বিপদের সময় অন্য বন্ধুকে সাহায্য করে।",
+      "pronunciation": "sumon o robi ekoi shrenite pore tara khub bhalo bondhu ekdin robi skule tar pensil anote Bhule gelo sumoner kachhe duṭi pensil chhilo she ekti pensil robike dilo robi take Dhonnobad janalo chhutir pore tara eksongge bari phirlo ekjon bhalo bondhu bipoder shomoy ônno bondhuke shahajjo kore",
       "en": "Reading passages practice 3",
       "context": "Reading passages",
       "category": "Class 3 · Reading passages"
     },
     {
       "bn": "একদিন মিতা স্কুল থেকে বাড়ি ফিরছিল। রাস্তার পাশে সে একটি ছোট বিড়াল দেখতে পেল। বিড়ালটি ভিজে গিয়েছিল এবং কাঁপছিল। আকাশে তখনও বৃষ্টি হচ্ছিল। মিতা বিড়ালটিকে বাড়িতে নিয়ে গেল। সে একটি তোয়ালে দিয়ে বিড়ালটির শরীর মুছে দিল এবং তাকে কিছু খাবার দিল। কিছুক্ষণ পরে বিড়ালটি আর কাঁপছিল না। মিতা খুব খুশি হলো।",
+      "pronunciation": "ekdin mita skul theke bari phirochhil rastar pashe she ekti chhoto biral dekhte pel biral-ti bhije gijechhil ebong kanpochhil akashe tokhonoo brishti hochchhilo mita bidalotike barite niye gelo she ekti tojale diye bidalotir shorir muche dilo ebong take kichhu khabar dilo kichukhon pore biral-ti ar kanpochhil na mita khub khushi holo",
       "en": "Comprehension story practice 1",
       "context": "Comprehension story",
       "category": "Class 3 · Comprehension story"
     },
     {
       "bn": "১. মিতা কোথা থেকে ফিরছিল?",
+      "pronunciation": "ek mita kotha theke phirochhil",
       "en": "Comprehension story practice 2",
       "context": "Comprehension story",
       "category": "Class 3 · Comprehension story"
     },
     {
       "bn": "২. সে রাস্তার পাশে কী দেখতে পেল?",
+      "pronunciation": "dui she rastar pashe ki dekhte pel",
       "en": "Comprehension story practice 3",
       "context": "Comprehension story",
       "category": "Class 3 · Comprehension story"
     },
     {
       "bn": "৩. বিড়ালটি কেন ভিজে গিয়েছিল?",
+      "pronunciation": "tin biral-ti keno bhije gijechhil",
       "en": "Comprehension story practice 4",
       "context": "Comprehension story",
       "category": "Class 3 · Comprehension story"
     },
     {
       "bn": "৪. মিতা বিড়ালটিকে কোথায় নিয়ে গেল?",
+      "pronunciation": "char mita bidalotike kothay niye gelo",
       "en": "Comprehension story practice 5",
       "context": "Comprehension story",
       "category": "Class 3 · Comprehension story"
     },
     {
       "bn": "৫. মিতা কীভাবে বিড়ালটিকে সাহায্য করল?",
+      "pronunciation": "panch mita kibhabe bidalotike shahajjo korlo",
       "en": "Comprehension story practice 6",
       "context": "Comprehension story",
       "category": "Class 3 · Comprehension story"
     },
     {
       "bn": "৬. গল্পটি থেকে মিতার চরিত্র সম্পর্কে কী বোঝা যায়?",
+      "pronunciation": "chhoy golpoti theke mitar choritr shomporke ki bojha Jay",
       "en": "Comprehension story practice 7",
       "context": "Comprehension story",
       "category": "Class 3 · Comprehension story"
     },
     {
       "bn": "আমি ছাতা নিয়েছি কারণ বাইরে বৃষ্টি হচ্ছে।",
+      "pronunciation": "ami chhata niyechi karon baire brishti hochchhe",
       "en": "Sentence structures practice 1",
       "context": "Sentence structures",
       "category": "Class 3 · Sentence structures"
     },
     {
       "bn": "বাইরে বৃষ্টি হচ্ছে, তাই আমি ছাতা নিয়েছি।",
+      "pronunciation": "baire brishti hochchhe tai ami chhata niyechi",
       "en": "Sentence structures practice 2",
       "context": "Sentence structures",
       "category": "Class 3 · Sentence structures"
     },
     {
       "bn": "আমি খেলতে চেয়েছিলাম, কিন্তু আমার পড়া বাকি ছিল।",
+      "pronunciation": "ami khelte cheyechilam kintu amar pora baki chhilo",
       "en": "Sentence structures practice 3",
       "context": "Sentence structures",
       "category": "Class 3 · Sentence structures"
     },
     {
       "bn": "যদি তুমি নিয়মিত অনুশীলন করো, তবে তোমার পড়া আরও ভালো হবে।",
+      "pronunciation": "jodi tumi niyomito onushilon koro tobe tomar pora aro bhalo hobe",
       "en": "Sentence structures practice 4",
       "context": "Sentence structures",
       "category": "Class 3 · Sentence structures"
     },
     {
       "bn": "যখন স্কুল ছুটি হয়, তখন আমরা বাড়িতে ফিরে যাই।",
+      "pronunciation": "jokhon skul chhuti hoy tokhon amra barite phire jai",
       "en": "Sentence structures practice 5",
       "context": "Sentence structures",
       "category": "Class 3 · Sentence structures"
     },
     {
       "bn": "যদিও কাজটি কঠিন ছিল, তবুও সে চেষ্টা চালিয়ে গেল।",
+      "pronunciation": "jodio kajti kothin chhilo tobuo she cheshta chaliye gelo",
       "en": "Sentence structures practice 6",
       "context": "Sentence structures",
       "category": "Class 3 · Sentence structures"
     },
     {
       "bn": "প্রথমে আমরা বাজারে গেলাম, তারপর কিছু ফল কিনলাম এবং শেষে বাড়িতে ফিরে এলাম।",
+      "pronunciation": "prothome amra bajare gelam tarpor kichhu phol / fol kinolam ebong sheshe barite phire elam",
       "en": "Sentence structures practice 7",
       "context": "Sentence structures",
       "category": "Class 3 · Sentence structures"
     },
     {
       "bn": "একজন শিক্ষার্থীর ছোট গল্প ও অনুচ্ছেদ নিজে পড়ে বুঝতে পারা উচিত।",
+      "pronunciation": "ekjon shiksharthir chhoto golpo o onuchchhed nije pore bujhte para uchit",
       "en": "End-of-Class 3 skills practice 1",
       "context": "End-of-Class 3 skills",
       "category": "Class 3 · End-of-Class 3 skills"
     },
     {
       "bn": "গল্প পড়ে কে, কী, কোথায়, কখন, কেন এবং কীভাবে প্রশ্নের উত্তর দিতে পারা উচিত।",
+      "pronunciation": "golpo pore ke ki kothay kokhon keno ebong kibhabe proshner uttor dite para uchit",
       "en": "End-of-Class 3 skills practice 2",
       "context": "End-of-Class 3 skills",
       "category": "Class 3 · End-of-Class 3 skills"
     },
     {
       "bn": "পরিচিত কোনো বিষয় নিয়ে পাঁচ থেকে আটটি সম্পর্কিত বাক্য লিখতে পারা উচিত।",
+      "pronunciation": "pôrichito kono bishoy niye pãch theke atoti shômpôrkito bakj likhte para uchit",
       "en": "End-of-Class 3 skills practice 3",
       "context": "End-of-Class 3 skills",
       "category": "Class 3 · End-of-Class 3 skills"
     },
     {
       "bn": "ঘটনাগুলো সঠিক ক্রমে বর্ণনা করতে পারা উচিত।",
+      "pronunciation": "ghotonagulo shothik krome bornona korte para uchit",
       "en": "End-of-Class 3 skills practice 4",
       "context": "End-of-Class 3 skills",
       "category": "Class 3 · End-of-Class 3 skills"
     },
     {
       "bn": "বর্তমান, অতীত ও ভবিষ্যৎ সময়ের সহজ বাক্য বুঝতে ও ব্যবহার করতে পারা উচিত।",
+      "pronunciation": "bortoman ôtit o bhobishshot shomoyer shohoj bakj bujhte o byabohar korte para uchit",
       "en": "End-of-Class 3 skills practice 5",
       "context": "End-of-Class 3 skills",
       "category": "Class 3 · End-of-Class 3 skills"
     },
     {
       "bn": "কারণ, তাই, কিন্তু, যদি, যখন, যদিও, তবুও, প্রথমে, তারপর, এরপর, শেষে ব্যবহার করে তুলনামূলকভাবে বড় বাক্য তৈরি করতে পারা উচিত।",
+      "pronunciation": "karon tai kintu jodi jokhon jodio tobuo prothome tarpor erpor sheshe byabohar kore tulonamulokobhabe bôṛo bakj toiri korte para uchit",
       "en": "End-of-Class 3 skills practice 6",
       "context": "End-of-Class 3 skills",
       "category": "Class 3 · End-of-Class 3 skills"
     },
     {
       "bn": "নিজের পছন্দ, অপছন্দ, অনুভূতি, অভিজ্ঞতা এবং সাধারণ মতামত পূর্ণ বাক্যে প্রকাশ করতে পারা উচিত।",
+      "pronunciation": "nijer pochhondo opochhond onubhuti obhiggota ebong shadharon motamot purno bakje prōkāsh korte para uchit",
       "en": "End-of-Class 3 skills practice 7",
       "context": "End-of-Class 3 skills",
       "category": "Class 3 · End-of-Class 3 skills"
     },
     {
       "bn": "নতুন শব্দের অর্থ বাক্যের প্রসঙ্গ থেকে অনুমান করার প্রাথমিক দক্ষতা তৈরি হওয়া উচিত।",
+      "pronunciation": "notun shobder ôrtho bakjer Proshongo theke onuman korar prathomik dokkhota toiri hooa uchit",
       "en": "End-of-Class 3 skills practice 8",
       "context": "End-of-Class 3 skills",
       "category": "Class 3 · End-of-Class 3 skills"

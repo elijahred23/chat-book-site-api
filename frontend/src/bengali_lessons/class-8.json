@@ -8,2141 +8,2569 @@
   "vocab": [
     {
       "bn": "বিশ্লেষণ",
+      "pronunciation": "bishleshon",
       "en": "analysis",
       "category": "Class 8 · Academic analysis"
     },
     {
       "bn": "মূল্যায়ন",
+      "pronunciation": "muljajon",
       "en": "assessment",
       "category": "Class 8 · Academic analysis"
     },
     {
       "bn": "যুক্তি",
+      "pronunciation": "jukti",
       "en": "reasoning",
       "category": "Class 8 · Academic analysis"
     },
     {
       "bn": "প্রমাণ",
+      "pronunciation": "proman",
       "en": "evidence",
       "category": "Class 8 · Academic analysis"
     },
     {
       "bn": "দৃষ্টিভঙ্গি",
+      "pronunciation": "drishtibhongi",
       "en": "perspective",
       "category": "Class 8 · Academic analysis"
     },
     {
       "bn": "ব্যাখ্যা",
+      "pronunciation": "bjakhja",
       "en": "explanation",
       "category": "Class 8 · Academic analysis"
     },
     {
       "bn": "তুলনা",
+      "pronunciation": "tulona",
       "en": "comparison",
       "category": "Class 8 · Academic analysis"
     },
     {
       "bn": "বৈপরীত্য",
+      "pronunciation": "boiporitj",
       "en": "contrast",
       "category": "Class 8 · Academic analysis"
     },
     {
       "bn": "উপসংহার",
+      "pronunciation": "uposonghar",
       "en": "conclusion",
       "category": "Class 8 · Academic analysis"
     },
     {
       "bn": "সিদ্ধান্ত",
+      "pronunciation": "shiddhanto",
       "en": "decision",
       "category": "Class 8 · Academic analysis"
     },
     {
       "bn": "অনুমান",
+      "pronunciation": "onuman",
       "en": "inference",
       "category": "Class 8 · Academic analysis"
     },
     {
       "bn": "ধারণা",
+      "pronunciation": "dharona",
       "en": "idea",
       "category": "Class 8 · Academic analysis"
     },
     {
       "bn": "পর্যবেক্ষণ",
+      "pronunciation": "porjobekshon",
       "en": "observation",
       "category": "Class 8 · Academic analysis"
     },
     {
       "bn": "গবেষণা",
+      "pronunciation": "gobeshona",
       "en": "research",
       "category": "Class 8 · Academic analysis"
     },
     {
       "bn": "নির্ভরযোগ্যতা",
+      "pronunciation": "nirbhorojogjota",
       "en": "reliability",
       "category": "Class 8 · Academic analysis"
     },
     {
       "bn": "পক্ষপাত",
+      "pronunciation": "pokshopat",
       "en": "bias",
       "category": "Class 8 · Academic analysis"
     },
     {
       "bn": "উদ্দেশ্য",
+      "pronunciation": "uddeshsho",
       "en": "purpose",
       "category": "Class 8 · Academic analysis"
     },
     {
       "bn": "প্রভাব",
+      "pronunciation": "probhab",
       "en": "effect",
       "category": "Class 8 · Academic analysis"
     },
     {
       "bn": "কারণ",
+      "pronunciation": "karon",
       "en": "because",
       "category": "Class 8 · Academic analysis"
     },
     {
       "bn": "ফলাফল",
+      "pronunciation": "pholaphol",
       "en": "result",
       "category": "Class 8 · Academic analysis"
     },
     {
       "bn": "সমস্যা",
+      "pronunciation": "shomoshsha",
       "en": "problem",
       "category": "Class 8 · Academic analysis"
     },
     {
       "bn": "সমাধান",
+      "pronunciation": "shomadhan",
       "en": "solution",
       "category": "Class 8 · Academic analysis"
     },
     {
       "bn": "সীমাবদ্ধতা",
+      "pronunciation": "simaboddhota",
       "en": "limitation",
       "category": "Class 8 · Academic analysis"
     },
     {
       "bn": "সুবিধা",
+      "pronunciation": "shubidha",
       "en": "advantage",
       "category": "Class 8 · Academic analysis"
     },
     {
       "bn": "অসুবিধা",
+      "pronunciation": "osubidha",
       "en": "disadvantage",
       "category": "Class 8 · Academic analysis"
     },
     {
       "bn": "বিকল্প",
+      "pronunciation": "bikolp",
       "en": "alternative",
       "category": "Class 8 · Academic analysis"
     },
     {
       "bn": "পদ্ধতি",
+      "pronunciation": "poddhoti",
       "en": "method",
       "category": "Class 8 · Academic analysis"
     },
     {
       "bn": "কৌশল",
+      "pronunciation": "koushol",
       "en": "strategy",
       "category": "Class 8 · Academic analysis"
     },
     {
       "bn": "অগ্রাধিকার",
+      "pronunciation": "ogradhikar",
       "en": "priority",
       "category": "Class 8 · Academic analysis"
     },
     {
       "bn": "সম্ভাবনা",
+      "pronunciation": "shombhabona",
       "en": "possibility",
       "category": "Class 8 · Academic analysis"
     },
     {
       "bn": "ঝুঁকি",
+      "pronunciation": "jhũki",
       "en": "risk",
       "category": "Class 8 · Academic analysis"
     },
     {
       "bn": "প্রবণতা",
+      "pronunciation": "probonota",
       "en": "trend",
       "category": "Class 8 · Academic analysis"
     },
     {
       "bn": "প্রেক্ষাপট",
+      "pronunciation": "prekshapot",
       "en": "context",
       "category": "Class 8 · Academic analysis"
     },
     {
       "bn": "অধ্যয়ন",
+      "pronunciation": "odhjojon",
       "en": "study",
       "category": "Class 8 · Education and study"
     },
     {
       "bn": "পাঠ্যক্রম",
+      "pronunciation": "pathjokrom",
       "en": "curriculum",
       "category": "Class 8 · Education and study"
     },
     {
       "bn": "বিষয়বস্তু",
+      "pronunciation": "bishojobostu",
       "en": "content",
       "category": "Class 8 · Education and study"
     },
     {
       "bn": "অনুধাবন",
+      "pronunciation": "onudhabon",
       "en": "comprehension",
       "category": "Class 8 · Education and study"
     },
     {
       "bn": "বিশ্লেষণ",
+      "pronunciation": "bishleshon",
       "en": "analysis",
       "category": "Class 8 · Education and study"
     },
     {
       "bn": "ব্যাখ্যা",
+      "pronunciation": "bjakhja",
       "en": "explanation",
       "category": "Class 8 · Education and study"
     },
     {
       "bn": "গবেষণা",
+      "pronunciation": "gobeshona",
       "en": "research",
       "category": "Class 8 · Education and study"
     },
     {
       "bn": "তথ্যসংগ্রহ",
+      "pronunciation": "tothjosonggroh",
       "en": "data collection",
       "category": "Class 8 · Education and study"
     },
     {
       "bn": "উৎস",
+      "pronunciation": "utsho",
       "en": "source",
       "category": "Class 8 · Education and study"
     },
     {
       "bn": "তথ্যসূত্র",
+      "pronunciation": "tothjosutr",
       "en": "source",
       "category": "Class 8 · Education and study"
     },
     {
       "bn": "রেফারেন্স",
+      "pronunciation": "repharens",
       "en": "reference",
       "category": "Class 8 · Education and study"
     },
     {
       "bn": "উদ্ধৃতি",
+      "pronunciation": "uddhriti",
       "en": "citation",
       "category": "Class 8 · Education and study"
     },
     {
       "bn": "সারাংশ",
+      "pronunciation": "sarangsh",
       "en": "summary",
       "category": "Class 8 · Education and study"
     },
     {
       "bn": "প্রতিবেদন",
+      "pronunciation": "protibedon",
       "en": "report",
       "category": "Class 8 · Education and study"
     },
     {
       "bn": "প্রবন্ধ",
+      "pronunciation": "probondh",
       "en": "essay",
       "category": "Class 8 · Education and study"
     },
     {
       "bn": "উপস্থাপনা",
+      "pronunciation": "uposthapona",
       "en": "presentation",
       "category": "Class 8 · Education and study"
     },
     {
       "bn": "প্রকল্প",
+      "pronunciation": "prokolp",
       "en": "project",
       "category": "Class 8 · Education and study"
     },
     {
       "bn": "বিতর্ক",
+      "pronunciation": "bitork",
       "en": "debate",
       "category": "Class 8 · Education and study"
     },
     {
       "bn": "আলোচনা",
+      "pronunciation": "alochona",
       "en": "discussion",
       "category": "Class 8 · Education and study"
     },
     {
       "bn": "মূল্যায়ন",
+      "pronunciation": "muljajon",
       "en": "assessment",
       "category": "Class 8 · Education and study"
     },
     {
       "bn": "দক্ষতা",
+      "pronunciation": "dokkhota",
       "en": "skill",
       "category": "Class 8 · Education and study"
     },
     {
       "bn": "জ্ঞান",
+      "pronunciation": "gyan",
       "en": "knowledge",
       "category": "Class 8 · Education and study"
     },
     {
       "bn": "ধারণা",
+      "pronunciation": "dharona",
       "en": "idea",
       "category": "Class 8 · Education and study"
     },
     {
       "bn": "প্রয়োগ",
+      "pronunciation": "proyog",
       "en": "application",
       "category": "Class 8 · Education and study"
     },
     {
       "bn": "পুনর্বিবেচনা",
+      "pronunciation": "punorbibechona",
       "en": "revision",
       "category": "Class 8 · Education and study"
     },
     {
       "bn": "সংশোধন",
+      "pronunciation": "shongshodhon",
       "en": "correction",
       "category": "Class 8 · Education and study"
     },
     {
       "bn": "বিশেষ্য",
+      "pronunciation": "bisheshj",
       "en": "noun",
       "category": "Class 8 · Bengali grammar"
     },
     {
       "bn": "সর্বনাম",
+      "pronunciation": "sorbonam",
       "en": "pronoun",
       "category": "Class 8 · Bengali grammar"
     },
     {
       "bn": "ক্রিয়া",
+      "pronunciation": "kriya",
       "en": "verb",
       "category": "Class 8 · Bengali grammar"
     },
     {
       "bn": "বিশেষণ",
+      "pronunciation": "bisheshon",
       "en": "adjective",
       "category": "Class 8 · Bengali grammar"
     },
     {
       "bn": "ক্রিয়াবিশেষণ",
+      "pronunciation": "krijabisheshon",
       "en": "adverb",
       "category": "Class 8 · Bengali grammar"
     },
     {
       "bn": "অব্যয়",
+      "pronunciation": "objojo",
       "en": "indeclinable",
       "category": "Class 8 · Bengali grammar"
     },
     {
       "bn": "অনুসর্গ",
+      "pronunciation": "onusorg",
       "en": "postposition",
       "category": "Class 8 · Bengali grammar"
     },
     {
       "bn": "বিভক্তি",
+      "pronunciation": "bibhokti",
       "en": "case ending",
       "category": "Class 8 · Bengali grammar"
     },
     {
       "bn": "উপসর্গ",
+      "pronunciation": "uposorg",
       "en": "symptom",
       "category": "Class 8 · Bengali grammar"
     },
     {
       "bn": "প্রত্যয়",
+      "pronunciation": "protjojo",
       "en": "suffix",
       "category": "Class 8 · Bengali grammar"
     },
     {
       "bn": "সন্ধি",
+      "pronunciation": "sondhi",
       "en": "euphonic combination",
       "category": "Class 8 · Bengali grammar"
     },
     {
       "bn": "সমাস",
+      "pronunciation": "somas",
       "en": "compound formation",
       "category": "Class 8 · Bengali grammar"
     },
     {
       "bn": "ধাতু",
+      "pronunciation": "dhatu",
       "en": "verb root",
       "category": "Class 8 · Bengali grammar"
     },
     {
       "bn": "কারক",
+      "pronunciation": "karok",
       "en": "grammatical case",
       "category": "Class 8 · Bengali grammar"
     },
     {
       "bn": "কর্তা",
+      "pronunciation": "korta",
       "en": "subject",
       "category": "Class 8 · Bengali grammar"
     },
     {
       "bn": "কর্ম",
+      "pronunciation": "kormo",
       "en": "object",
       "category": "Class 8 · Bengali grammar"
     },
     {
       "bn": "কাল",
+      "pronunciation": "kal",
       "en": "tense",
       "category": "Class 8 · Bengali grammar"
     },
     {
       "bn": "পুরুষ",
+      "pronunciation": "purush",
       "en": "grammatical person",
       "category": "Class 8 · Bengali grammar"
     },
     {
       "bn": "বচন",
+      "pronunciation": "bochon",
       "en": "number",
       "category": "Class 8 · Bengali grammar"
     },
     {
       "bn": "সরল বাক্য",
+      "pronunciation": "shorol bakj",
       "en": "simple sentence",
       "category": "Class 8 · Bengali grammar"
     },
     {
       "bn": "যৌগিক বাক্য",
+      "pronunciation": "jougik bakj",
       "en": "compound sentence",
       "category": "Class 8 · Bengali grammar"
     },
     {
       "bn": "জটিল বাক্য",
+      "pronunciation": "jotil bakj",
       "en": "complex sentence",
       "category": "Class 8 · Bengali grammar"
     },
     {
       "bn": "সক্রিয় রূপ",
+      "pronunciation": "sokrijo rup",
       "en": "active voice",
       "category": "Class 8 · Bengali grammar"
     },
     {
       "bn": "নিষ্ক্রিয় রূপ",
+      "pronunciation": "nishkrijo rup",
       "en": "passive voice",
       "category": "Class 8 · Bengali grammar"
     },
     {
       "bn": "বাগধারা",
+      "pronunciation": "bagodhara",
       "en": "idiom",
       "category": "Class 8 · Bengali grammar"
     },
     {
       "bn": "প্রবাদ",
+      "pronunciation": "probad",
       "en": "proverb",
       "category": "Class 8 · Bengali grammar"
     },
     {
       "bn": "অলংকার",
+      "pronunciation": "olongkar",
       "en": "figure of speech",
       "category": "Class 8 · Bengali grammar"
     },
     {
       "bn": "বাক্যরূপান্তর",
+      "pronunciation": "bakjorupantor",
       "en": "sentence transformation",
       "category": "Class 8 · Bengali grammar"
     },
     {
       "bn": "সাহিত্য",
+      "pronunciation": "sahitj",
       "en": "literature",
       "category": "Class 8 · Literary analysis"
     },
     {
       "bn": "কবিতা",
+      "pronunciation": "Kobita",
       "en": "poem",
       "category": "Class 8 · Literary analysis"
     },
     {
       "bn": "গল্প",
+      "pronunciation": "golpo",
       "en": "story",
       "category": "Class 8 · Literary analysis"
     },
     {
       "bn": "উপন্যাস",
+      "pronunciation": "uponjas",
       "en": "novel",
       "category": "Class 8 · Literary analysis"
     },
     {
       "bn": "নাটক",
+      "pronunciation": "natok",
       "en": "drama",
       "category": "Class 8 · Literary analysis"
     },
     {
       "bn": "প্রবন্ধ",
+      "pronunciation": "probondh",
       "en": "essay",
       "category": "Class 8 · Literary analysis"
     },
     {
       "bn": "কাহিনি",
+      "pronunciation": "kahini",
       "en": "plot",
       "category": "Class 8 · Literary analysis"
     },
     {
       "bn": "প্লট",
+      "pronunciation": "plot",
       "en": "plot",
       "category": "Class 8 · Literary analysis"
     },
     {
       "bn": "চরিত্রায়ন",
+      "pronunciation": "choritrajon",
       "en": "characterization",
       "category": "Class 8 · Literary analysis"
     },
     {
       "bn": "সংঘাত",
+      "pronunciation": "songghat",
       "en": "conflict",
       "category": "Class 8 · Literary analysis"
     },
     {
       "bn": "পটভূমি",
+      "pronunciation": "potobhumi",
       "en": "setting",
       "category": "Class 8 · Literary analysis"
     },
     {
       "bn": "পরিবেশ",
+      "pronunciation": "poribesh",
       "en": "environment",
       "category": "Class 8 · Literary analysis"
     },
     {
       "bn": "আবহ",
+      "pronunciation": "aboh",
       "en": "atmosphere",
       "category": "Class 8 · Literary analysis"
     },
     {
       "bn": "সংলাপ",
+      "pronunciation": "shonglap",
       "en": "dialogue",
       "category": "Class 8 · Literary analysis"
     },
     {
       "bn": "বর্ণনা",
+      "pronunciation": "bornona",
       "en": "description",
       "category": "Class 8 · Literary analysis"
     },
     {
       "bn": "মূলভাব",
+      "pronunciation": "mulobhab",
       "en": "main idea",
       "category": "Class 8 · Literary analysis"
     },
     {
       "bn": "বিষয়বস্তু",
+      "pronunciation": "bishojobostu",
       "en": "content",
       "category": "Class 8 · Literary analysis"
     },
     {
       "bn": "বার্তা",
+      "pronunciation": "barta",
       "en": "message",
       "category": "Class 8 · Literary analysis"
     },
     {
       "bn": "প্রতীক",
+      "pronunciation": "protik",
       "en": "symbol",
       "category": "Class 8 · Literary analysis"
     },
     {
       "bn": "উপমা",
+      "pronunciation": "upoma",
       "en": "simile",
       "category": "Class 8 · Literary analysis"
     },
     {
       "bn": "রূপক",
+      "pronunciation": "rupok",
       "en": "metaphor",
       "category": "Class 8 · Literary analysis"
     },
     {
       "bn": "চিত্রকল্প",
+      "pronunciation": "chitrokolp",
       "en": "imagery",
       "category": "Class 8 · Literary analysis"
     },
     {
       "bn": "ব্যঙ্গ",
+      "pronunciation": "bjongg",
       "en": "satire",
       "category": "Class 8 · Literary analysis"
     },
     {
       "bn": "বিদ্রূপ",
+      "pronunciation": "bidrup",
       "en": "irony",
       "category": "Class 8 · Literary analysis"
     },
     {
       "bn": "দৃষ্টিকোণ",
+      "pronunciation": "drishtikon",
       "en": "point of view",
       "category": "Class 8 · Literary analysis"
     },
     {
       "bn": "সুর",
+      "pronunciation": "sur",
       "en": "tone",
       "category": "Class 8 · Literary analysis"
     },
     {
       "bn": "লেখকের উদ্দেশ্য",
+      "pronunciation": "lekhoker uddeshsho",
       "en": "author's purpose",
       "category": "Class 8 · Literary analysis"
     },
     {
       "bn": "চরিত্রের বিকাশ",
+      "pronunciation": "choritrer bikash",
       "en": "character development",
       "category": "Class 8 · Literary analysis"
     },
     {
       "bn": "সমাজ",
+      "pronunciation": "somaj",
       "en": "society",
       "category": "Class 8 · Society and citizenship"
     },
     {
       "bn": "নাগরিক",
+      "pronunciation": "nagorik",
       "en": "citizen",
       "category": "Class 8 · Society and citizenship"
     },
     {
       "bn": "রাষ্ট্র",
+      "pronunciation": "rashtro",
       "en": "state",
       "category": "Class 8 · Society and citizenship"
     },
     {
       "bn": "সরকার",
+      "pronunciation": "sorokar",
       "en": "government",
       "category": "Class 8 · Society and citizenship"
     },
     {
       "bn": "প্রশাসন",
+      "pronunciation": "proshason",
       "en": "administration",
       "category": "Class 8 · Society and citizenship"
     },
     {
       "bn": "সংবিধান",
+      "pronunciation": "songbidhan",
       "en": "constitution",
       "category": "Class 8 · Society and citizenship"
     },
     {
       "bn": "আইন",
+      "pronunciation": "ain",
       "en": "law",
       "category": "Class 8 · Society and citizenship"
     },
     {
       "bn": "অধিকার",
+      "pronunciation": "odhikar",
       "en": "right",
       "category": "Class 8 · Society and citizenship"
     },
     {
       "bn": "দায়িত্ব",
+      "pronunciation": "dayitto",
       "en": "responsibility",
       "category": "Class 8 · Society and citizenship"
     },
     {
       "bn": "কর্তব্য",
+      "pronunciation": "kortobj",
       "en": "duty",
       "category": "Class 8 · Society and citizenship"
     },
     {
       "bn": "ন্যায়বিচার",
+      "pronunciation": "njajobichar",
       "en": "justice",
       "category": "Class 8 · Society and citizenship"
     },
     {
       "bn": "বৈষম্য",
+      "pronunciation": "boishomj",
       "en": "inequality",
       "category": "Class 8 · Society and citizenship"
     },
     {
       "bn": "সমতা",
+      "pronunciation": "shomota",
       "en": "equality",
       "category": "Class 8 · Society and citizenship"
     },
     {
       "bn": "স্বাধীনতা",
+      "pronunciation": "shadhinota",
       "en": "independence",
       "category": "Class 8 · Society and citizenship"
     },
     {
       "bn": "নিরাপত্তা",
+      "pronunciation": "nirapotta",
       "en": "safety",
       "category": "Class 8 · Society and citizenship"
     },
     {
       "bn": "জনসেবা",
+      "pronunciation": "jonoseba",
       "en": "public service",
       "category": "Class 8 · Society and citizenship"
     },
     {
       "bn": "নির্বাচন",
+      "pronunciation": "nirbachon",
       "en": "election",
       "category": "Class 8 · Society and citizenship"
     },
     {
       "bn": "গণতন্ত্র",
+      "pronunciation": "gonotontr",
       "en": "democracy",
       "category": "Class 8 · Society and citizenship"
     },
     {
       "bn": "নেতৃত্ব",
+      "pronunciation": "netritb",
       "en": "leadership",
       "category": "Class 8 · Society and citizenship"
     },
     {
       "bn": "জনমত",
+      "pronunciation": "jonomot",
       "en": "public opinion",
       "category": "Class 8 · Society and citizenship"
     },
     {
       "bn": "নাগরিক অংশগ্রহণ",
+      "pronunciation": "nagorik ongshogrohon",
       "en": "civic participation",
       "category": "Class 8 · Society and citizenship"
     },
     {
       "bn": "সামাজিক সমস্যা",
+      "pronunciation": "shamajik shomoshsha",
       "en": "social issue",
       "category": "Class 8 · Society and citizenship"
     },
     {
       "bn": "সম্প্রদায়",
+      "pronunciation": "somprodajo",
       "en": "community",
       "category": "Class 8 · Society and citizenship"
     },
     {
       "bn": "সংস্কার",
+      "pronunciation": "songskar",
       "en": "reform",
       "category": "Class 8 · Society and citizenship"
     },
     {
       "bn": "সচেতনতা",
+      "pronunciation": "sochetonota",
       "en": "awareness",
       "category": "Class 8 · Society and citizenship"
     },
     {
       "bn": "ইতিহাস",
+      "pronunciation": "itihash",
       "en": "history",
       "category": "Class 8 · History and politics"
     },
     {
       "bn": "ঐতিহাসিক",
+      "pronunciation": "oitihashik",
       "en": "historical",
       "category": "Class 8 · History and politics"
     },
     {
       "bn": "সভ্যতা",
+      "pronunciation": "Shobhyata",
       "en": "civilization",
       "category": "Class 8 · History and politics"
     },
     {
       "bn": "সাম্রাজ্য",
+      "pronunciation": "samrajj",
       "en": "empire",
       "category": "Class 8 · History and politics"
     },
     {
       "bn": "শাসন",
+      "pronunciation": "shason",
       "en": "rule",
       "category": "Class 8 · History and politics"
     },
     {
       "bn": "উপনিবেশ",
+      "pronunciation": "uponibesh",
       "en": "colony",
       "category": "Class 8 · History and politics"
     },
     {
       "bn": "স্বাধীনতা",
+      "pronunciation": "shadhinota",
       "en": "independence",
       "category": "Class 8 · History and politics"
     },
     {
       "bn": "আন্দোলন",
+      "pronunciation": "andolon",
       "en": "movement",
       "category": "Class 8 · History and politics"
     },
     {
       "bn": "সংগ্রাম",
+      "pronunciation": "shonggram",
       "en": "struggle",
       "category": "Class 8 · History and politics"
     },
     {
       "bn": "বিপ্লব",
+      "pronunciation": "biplob",
       "en": "revolution",
       "category": "Class 8 · History and politics"
     },
     {
       "bn": "যুদ্ধ",
+      "pronunciation": "juddho",
       "en": "war",
       "category": "Class 8 · History and politics"
     },
     {
       "bn": "চুক্তি",
+      "pronunciation": "chukti",
       "en": "treaty",
       "category": "Class 8 · History and politics"
     },
     {
       "bn": "বিজয়",
+      "pronunciation": "bijojo",
       "en": "victory",
       "category": "Class 8 · History and politics"
     },
     {
       "bn": "পরাজয়",
+      "pronunciation": "porajoy",
       "en": "defeat",
       "category": "Class 8 · History and politics"
     },
     {
       "bn": "সংস্কার",
+      "pronunciation": "songskar",
       "en": "reform",
       "category": "Class 8 · History and politics"
     },
     {
       "bn": "জাতীয়তাবাদ",
+      "pronunciation": "jatijotabad",
       "en": "nationalism",
       "category": "Class 8 · History and politics"
     },
     {
       "bn": "ঐতিহ্য",
+      "pronunciation": "oitijjho",
       "en": "heritage",
       "category": "Class 8 · History and politics"
     },
     {
       "bn": "উত্তরাধিকার",
+      "pronunciation": "uttoradhikar",
       "en": "legacy",
       "category": "Class 8 · History and politics"
     },
     {
       "bn": "রাজনৈতিক পরিবর্তন",
+      "pronunciation": "rajnaitik poriborton",
       "en": "political change",
       "category": "Class 8 · History and politics"
     },
     {
       "bn": "ক্ষমতা",
+      "pronunciation": "khomota",
       "en": "power",
       "category": "Class 8 · History and politics"
     },
     {
       "bn": "নেতৃত্ব",
+      "pronunciation": "netritb",
       "en": "leadership",
       "category": "Class 8 · History and politics"
     },
     {
       "bn": "ভূগোল",
+      "pronunciation": "bhugol",
       "en": "geography",
       "category": "Class 8 · Geography"
     },
     {
       "bn": "ভূপ্রকৃতি",
+      "pronunciation": "bhuprokriti",
       "en": "landform",
       "category": "Class 8 · Geography"
     },
     {
       "bn": "অক্ষাংশ",
+      "pronunciation": "okshangsh",
       "en": "latitude",
       "category": "Class 8 · Geography"
     },
     {
       "bn": "দ্রাঘিমাংশ",
+      "pronunciation": "draghimangsh",
       "en": "longitude",
       "category": "Class 8 · Geography"
     },
     {
       "bn": "মানচিত্র",
+      "pronunciation": "manochitr",
       "en": "map",
       "category": "Class 8 · Geography"
     },
     {
       "bn": "স্কেল",
+      "pronunciation": "skel",
       "en": "scale",
       "category": "Class 8 · Geography"
     },
     {
       "bn": "পর্বত",
+      "pronunciation": "porbot",
       "en": "mountain",
       "category": "Class 8 · Geography"
     },
     {
       "bn": "উপত্যকা",
+      "pronunciation": "upotjoka",
       "en": "valley",
       "category": "Class 8 · Geography"
     },
     {
       "bn": "সমভূমি",
+      "pronunciation": "somobhumi",
       "en": "plain",
       "category": "Class 8 · Geography"
     },
     {
       "bn": "মালভূমি",
+      "pronunciation": "malobhumi",
       "en": "plateau",
       "category": "Class 8 · Geography"
     },
     {
       "bn": "মরুভূমি",
+      "pronunciation": "morubhumi",
       "en": "desert",
       "category": "Class 8 · Geography"
     },
     {
       "bn": "নদী",
+      "pronunciation": "nodi",
       "en": "river",
       "category": "Class 8 · Geography"
     },
     {
       "bn": "বদ্বীপ",
+      "pronunciation": "bodbip",
       "en": "delta",
       "category": "Class 8 · Geography"
     },
     {
       "bn": "উপকূল",
+      "pronunciation": "upokul",
       "en": "coast",
       "category": "Class 8 · Geography"
     },
     {
       "bn": "দ্বীপ",
+      "pronunciation": "dbip",
       "en": "island",
       "category": "Class 8 · Geography"
     },
     {
       "bn": "মহাদেশ",
+      "pronunciation": "mohadesh",
       "en": "continent",
       "category": "Class 8 · Geography"
     },
     {
       "bn": "মহাসাগর",
+      "pronunciation": "mohasagor",
       "en": "ocean",
       "category": "Class 8 · Geography"
     },
     {
       "bn": "জলবায়ু",
+      "pronunciation": "jolobaj",
       "en": "climate",
       "category": "Class 8 · Geography"
     },
     {
       "bn": "আবহাওয়া",
+      "pronunciation": "abohawa",
       "en": "weather",
       "category": "Class 8 · Geography"
     },
     {
       "bn": "জনসংখ্যা",
+      "pronunciation": "jonosongkhja",
       "en": "population",
       "category": "Class 8 · Geography"
     },
     {
       "bn": "জনঘনত্ব",
+      "pronunciation": "jonoghonotb",
       "en": "population density",
       "category": "Class 8 · Geography"
     },
     {
       "bn": "নগরায়ণ",
+      "pronunciation": "nogorajon",
       "en": "urbanization",
       "category": "Class 8 · Geography"
     },
     {
       "bn": "অভিবাসন",
+      "pronunciation": "obhibason",
       "en": "migration",
       "category": "Class 8 · Geography"
     },
     {
       "bn": "প্রাকৃতিক সম্পদ",
+      "pronunciation": "prakritik shompod",
       "en": "natural resources",
       "category": "Class 8 · Geography"
     },
     {
       "bn": "পরিবেশ",
+      "pronunciation": "poribesh",
       "en": "environment",
       "category": "Class 8 · Environment and climate"
     },
     {
       "bn": "বাস্তুতন্ত্র",
+      "pronunciation": "bastutontr",
       "en": "ecosystem",
       "category": "Class 8 · Environment and climate"
     },
     {
       "bn": "জীববৈচিত্র্য",
+      "pronunciation": "jiboboichitrj",
       "en": "biodiversity",
       "category": "Class 8 · Environment and climate"
     },
     {
       "bn": "জলবায়ু পরিবর্তন",
+      "pronunciation": "jolobaj poriborton",
       "en": "climate change",
       "category": "Class 8 · Environment and climate"
     },
     {
       "bn": "বৈশ্বিক উষ্ণায়ন",
+      "pronunciation": "boishbik ushnajon",
       "en": "global warming",
       "category": "Class 8 · Environment and climate"
     },
     {
       "bn": "কার্বন নিঃসরণ",
+      "pronunciation": "karbon nihsoron",
       "en": "carbon emissions",
       "category": "Class 8 · Environment and climate"
     },
     {
       "bn": "দূষণ",
+      "pronunciation": "dushon",
       "en": "pollution",
       "category": "Class 8 · Environment and climate"
     },
     {
       "bn": "বন উজাড়",
+      "pronunciation": "bon ujado",
       "en": "deforestation",
       "category": "Class 8 · Environment and climate"
     },
     {
       "bn": "মাটিক্ষয়",
+      "pronunciation": "matikshojo",
       "en": "soil erosion",
       "category": "Class 8 · Environment and climate"
     },
     {
       "bn": "খরা",
+      "pronunciation": "khora",
       "en": "drought",
       "category": "Class 8 · Environment and climate"
     },
     {
       "bn": "বন্যা",
+      "pronunciation": "bonja",
       "en": "flood",
       "category": "Class 8 · Environment and climate"
     },
     {
       "bn": "পুনর্ব্যবহার",
+      "pronunciation": "punorbjobohar",
       "en": "recycling",
       "category": "Class 8 · Environment and climate"
     },
     {
       "bn": "সংরক্ষণ",
+      "pronunciation": "shongrokkhon",
       "en": "conservation",
       "category": "Class 8 · Environment and climate"
     },
     {
       "bn": "নবায়নযোগ্য শক্তি",
+      "pronunciation": "nobajonojogj shokti",
       "en": "renewable energy",
       "category": "Class 8 · Environment and climate"
     },
     {
       "bn": "জীবাশ্ম জ্বালানি",
+      "pronunciation": "jibashm jbalani",
       "en": "fossil fuel",
       "category": "Class 8 · Environment and climate"
     },
     {
       "bn": "প্রাকৃতিক সম্পদ",
+      "pronunciation": "prakritik shompod",
       "en": "natural resources",
       "category": "Class 8 · Environment and climate"
     },
     {
       "bn": "পরিবেশের ভারসাম্য",
+      "pronunciation": "poribesher bharshamyo",
       "en": "ecological balance",
       "category": "Class 8 · Environment and climate"
     },
     {
       "bn": "টেকসই উন্নয়ন",
+      "pronunciation": "tekosoi unnojon",
       "en": "sustainable development",
       "category": "Class 8 · Environment and climate"
     },
     {
       "bn": "বিজ্ঞান",
+      "pronunciation": "biggan",
       "en": "science",
       "category": "Class 8 · Science"
     },
     {
       "bn": "পর্যবেক্ষণ",
+      "pronunciation": "porjobekshon",
       "en": "observation",
       "category": "Class 8 · Science"
     },
     {
       "bn": "পরীক্ষা",
+      "pronunciation": "porikkha",
       "en": "exam",
       "category": "Class 8 · Science"
     },
     {
       "bn": "অনুমান",
+      "pronunciation": "onuman",
       "en": "inference",
       "category": "Class 8 · Science"
     },
     {
       "bn": "তত্ত্ব",
+      "pronunciation": "tottbo",
       "en": "theory",
       "category": "Class 8 · Science"
     },
     {
       "bn": "সূত্র",
+      "pronunciation": "shutro",
       "en": "formula",
       "category": "Class 8 · Science"
     },
     {
       "bn": "প্রমাণ",
+      "pronunciation": "proman",
       "en": "evidence",
       "category": "Class 8 · Science"
     },
     {
       "bn": "চলক",
+      "pronunciation": "cholok",
       "en": "variable",
       "category": "Class 8 · Science"
     },
     {
       "bn": "ফলাফল",
+      "pronunciation": "pholaphol",
       "en": "result",
       "category": "Class 8 · Science"
     },
     {
       "bn": "উপসংহার",
+      "pronunciation": "uposonghar",
       "en": "conclusion",
       "category": "Class 8 · Science"
     },
     {
       "bn": "পরমাণু",
+      "pronunciation": "poromanu",
       "en": "atom",
       "category": "Class 8 · Science"
     },
     {
       "bn": "অণু",
+      "pronunciation": "onu",
       "en": "molecule",
       "category": "Class 8 · Science"
     },
     {
       "bn": "উপাদান",
+      "pronunciation": "upadan",
       "en": "element",
       "category": "Class 8 · Science"
     },
     {
       "bn": "যৌগ",
+      "pronunciation": "jougo",
       "en": "compound",
       "category": "Class 8 · Science"
     },
     {
       "bn": "পদার্থ",
+      "pronunciation": "podarth",
       "en": "matter",
       "category": "Class 8 · Science"
     },
     {
       "bn": "শক্তি",
+      "pronunciation": "shokti",
       "en": "strength",
       "category": "Class 8 · Science"
     },
     {
       "bn": "বল",
+      "pronunciation": "bol",
       "en": "force",
       "category": "Class 8 · Science"
     },
     {
       "bn": "গতি",
+      "pronunciation": "goti",
       "en": "motion",
       "category": "Class 8 · Science"
     },
     {
       "bn": "ঘর্ষণ",
+      "pronunciation": "ghorshon",
       "en": "friction",
       "category": "Class 8 · Science"
     },
     {
       "bn": "চাপ",
+      "pronunciation": "chap",
       "en": "pressure",
       "category": "Class 8 · Science"
     },
     {
       "bn": "তাপ",
+      "pronunciation": "tap",
       "en": "heat",
       "category": "Class 8 · Science"
     },
     {
       "bn": "আলো",
+      "pronunciation": "alo",
       "en": "light",
       "category": "Class 8 · Science"
     },
     {
       "bn": "শব্দ",
+      "pronunciation": "shobdo",
       "en": "word",
       "category": "Class 8 · Science"
     },
     {
       "bn": "বিদ্যুৎ",
+      "pronunciation": "bidyut",
       "en": "electricity",
       "category": "Class 8 · Science"
     },
     {
       "bn": "চুম্বকত্ব",
+      "pronunciation": "chumbokotb",
       "en": "magnetism",
       "category": "Class 8 · Science"
     },
     {
       "bn": "রাসায়নিক বিক্রিয়া",
+      "pronunciation": "rashayonik bikrija",
       "en": "chemical reaction",
       "category": "Class 8 · Science"
     },
     {
       "bn": "কোষ",
+      "pronunciation": "kosh",
       "en": "cell",
       "category": "Class 8 · Biology"
     },
     {
       "bn": "টিস্যু",
+      "pronunciation": "tisju",
       "en": "tissue",
       "category": "Class 8 · Biology"
     },
     {
       "bn": "অঙ্গ",
+      "pronunciation": "ônggo",
       "en": "organ",
       "category": "Class 8 · Biology"
     },
     {
       "bn": "অঙ্গতন্ত্র",
+      "pronunciation": "onggotontr",
       "en": "organ system",
       "category": "Class 8 · Biology"
     },
     {
       "bn": "শ্বাসপ্রশ্বাস",
+      "pronunciation": "shbasoproshbas",
       "en": "respiration",
       "category": "Class 8 · Biology"
     },
     {
       "bn": "পরিপাক",
+      "pronunciation": "poripak",
       "en": "digestion",
       "category": "Class 8 · Biology"
     },
     {
       "bn": "রক্তসঞ্চালন",
+      "pronunciation": "roktosonychalon",
       "en": "circulation",
       "category": "Class 8 · Biology"
     },
     {
       "bn": "স্নায়ুতন্ত্র",
+      "pronunciation": "snajutontr",
       "en": "nervous system",
       "category": "Class 8 · Biology"
     },
     {
       "bn": "প্রজনন",
+      "pronunciation": "projonon",
       "en": "reproduction",
       "category": "Class 8 · Biology"
     },
     {
       "bn": "বংশগতি",
+      "pronunciation": "bongshogoti",
       "en": "heredity",
       "category": "Class 8 · Biology"
     },
     {
       "bn": "অভিযোজন",
+      "pronunciation": "obhijojon",
       "en": "adaptation",
       "category": "Class 8 · Biology"
     },
     {
       "bn": "বিবর্তন",
+      "pronunciation": "biborton",
       "en": "evolution",
       "category": "Class 8 · Biology"
     },
     {
       "bn": "বাসস্থান",
+      "pronunciation": "basosthan",
       "en": "habitat",
       "category": "Class 8 · Biology"
     },
     {
       "bn": "খাদ্যশৃঙ্খল",
+      "pronunciation": "khadjoshringkhol",
       "en": "food chain",
       "category": "Class 8 · Biology"
     },
     {
       "bn": "খাদ্যজাল",
+      "pronunciation": "khadjojal",
       "en": "food web",
       "category": "Class 8 · Biology"
     },
     {
       "bn": "উৎপাদক",
+      "pronunciation": "utopadok",
       "en": "producer",
       "category": "Class 8 · Biology"
     },
     {
       "bn": "ভোক্তা",
+      "pronunciation": "bhokta",
       "en": "consumer",
       "category": "Class 8 · Biology"
     },
     {
       "bn": "পচনকারী",
+      "pronunciation": "pochonokari",
       "en": "decomposer",
       "category": "Class 8 · Biology"
     },
     {
       "bn": "জীবচক্র",
+      "pronunciation": "jibochokr",
       "en": "life cycle",
       "category": "Class 8 · Biology"
     },
     {
       "bn": "প্রজাতি",
+      "pronunciation": "projati",
       "en": "species",
       "category": "Class 8 · Biology"
     },
     {
       "bn": "জীববৈচিত্র্য",
+      "pronunciation": "jiboboichitrj",
       "en": "biodiversity",
       "category": "Class 8 · Biology"
     },
     {
       "bn": "প্রযুক্তি",
+      "pronunciation": "projukti",
       "en": "technology",
       "category": "Class 8 · Technology and digital life"
     },
     {
       "bn": "সফটওয়্যার",
+      "pronunciation": "software",
       "en": "software",
       "category": "Class 8 · Technology and digital life"
     },
     {
       "bn": "হার্ডওয়্যার",
+      "pronunciation": "hardoyeyar",
       "en": "hardware",
       "category": "Class 8 · Technology and digital life"
     },
     {
       "bn": "ইন্টারনেট",
+      "pronunciation": "internet",
       "en": "internet",
       "category": "Class 8 · Technology and digital life"
     },
     {
       "bn": "নেটওয়ার্ক",
+      "pronunciation": "network",
       "en": "network",
       "category": "Class 8 · Technology and digital life"
     },
     {
       "bn": "ডেটা",
+      "pronunciation": "ḍeta",
       "en": "data",
       "category": "Class 8 · Technology and digital life"
     },
     {
       "bn": "অ্যালগরিদম",
+      "pronunciation": "ojalogoridom",
       "en": "algorithm",
       "category": "Class 8 · Technology and digital life"
     },
     {
       "bn": "প্রোগ্রামিং",
+      "pronunciation": "programing",
       "en": "programming",
       "category": "Class 8 · Technology and digital life"
     },
     {
       "bn": "কৃত্রিম বুদ্ধিমত্তা",
+      "pronunciation": "kritrim buddhimotta",
       "en": "artificial intelligence",
       "category": "Class 8 · Technology and digital life"
     },
     {
       "bn": "ডিজিটাল নিরাপত্তা",
+      "pronunciation": "dijital nirapotta",
       "en": "digital security",
       "category": "Class 8 · Technology and digital life"
     },
     {
       "bn": "সাইবার নিরাপত্তা",
+      "pronunciation": "saibar nirapotta",
       "en": "cybersecurity",
       "category": "Class 8 · Technology and digital life"
     },
     {
       "bn": "গোপনীয়তা",
+      "pronunciation": "goponijota",
       "en": "privacy",
       "category": "Class 8 · Technology and digital life"
     },
     {
       "bn": "তথ্য যাচাই",
+      "pronunciation": "tothyo jachai",
       "en": "fact-checking",
       "category": "Class 8 · Technology and digital life"
     },
     {
       "bn": "ভুয়া তথ্য",
+      "pronunciation": "bhuya tothyo",
       "en": "misinformation",
       "category": "Class 8 · Technology and digital life"
     },
     {
       "bn": "সামাজিক যোগাযোগমাধ্যম",
+      "pronunciation": "shamajik jogajogomadhjom",
       "en": "social media",
       "category": "Class 8 · Technology and digital life"
     },
     {
       "bn": "ডিজিটাল পদচিহ্ন",
+      "pronunciation": "dijital podochihn",
       "en": "digital footprint",
       "category": "Class 8 · Technology and digital life"
     },
     {
       "bn": "প্রযুক্তিনির্ভরতা",
+      "pronunciation": "projuktinirbhorota",
       "en": "technology dependence",
       "category": "Class 8 · Technology and digital life"
     },
     {
       "bn": "অর্থনীতি",
+      "pronunciation": "orthoniti",
       "en": "economy",
       "category": "Class 8 · Economics"
     },
     {
       "bn": "আয়",
+      "pronunciation": "ay",
       "en": "income",
       "category": "Class 8 · Economics"
     },
     {
       "bn": "ব্যয়",
+      "pronunciation": "byoy",
       "en": "expense",
       "category": "Class 8 · Economics"
     },
     {
       "bn": "সঞ্চয়",
+      "pronunciation": "shonchoy",
       "en": "savings",
       "category": "Class 8 · Economics"
     },
     {
       "bn": "বাজেট",
+      "pronunciation": "bajet",
       "en": "budget",
       "category": "Class 8 · Economics"
     },
     {
       "bn": "বিনিয়োগ",
+      "pronunciation": "binijog",
       "en": "investment",
       "category": "Class 8 · Economics"
     },
     {
       "bn": "মুদ্রা",
+      "pronunciation": "mudra",
       "en": "currency",
       "category": "Class 8 · Economics"
     },
     {
       "bn": "মূল্যস্ফীতি",
+      "pronunciation": "muljosphiti",
       "en": "inflation",
       "category": "Class 8 · Economics"
     },
     {
       "bn": "বাজার",
+      "pronunciation": "bajar",
       "en": "market",
       "category": "Class 8 · Economics"
     },
     {
       "bn": "পণ্য",
+      "pronunciation": "ponno",
       "en": "product",
       "category": "Class 8 · Economics"
     },
     {
       "bn": "সেবা",
+      "pronunciation": "seba",
       "en": "service",
       "category": "Class 8 · Economics"
     },
     {
       "bn": "চাহিদা",
+      "pronunciation": "chahida",
       "en": "demand",
       "category": "Class 8 · Economics"
     },
     {
       "bn": "সরবরাহ",
+      "pronunciation": "sorboraho",
       "en": "supply",
       "category": "Class 8 · Economics"
     },
     {
       "bn": "উৎপাদন",
+      "pronunciation": "utpadon",
       "en": "production",
       "category": "Class 8 · Economics"
     },
     {
       "bn": "ভোক্তা",
+      "pronunciation": "bhokta",
       "en": "consumer",
       "category": "Class 8 · Economics"
     },
     {
       "bn": "ব্যবসা",
+      "pronunciation": "babsha",
       "en": "business",
       "category": "Class 8 · Economics"
     },
     {
       "bn": "লাভ",
+      "pronunciation": "labh",
       "en": "profit",
       "category": "Class 8 · Economics"
     },
     {
       "bn": "ক্ষতি",
+      "pronunciation": "khoti",
       "en": "loss",
       "category": "Class 8 · Economics"
     },
     {
       "bn": "সম্পদ",
+      "pronunciation": "shompod",
       "en": "resource",
       "category": "Class 8 · Economics"
     },
     {
       "bn": "কর্মসংস্থান",
+      "pronunciation": "kormosongsthan",
       "en": "employment",
       "category": "Class 8 · Economics"
     },
     {
       "bn": "বেকারত্ব",
+      "pronunciation": "bekarotb",
       "en": "unemployment",
       "category": "Class 8 · Economics"
     },
     {
       "bn": "অর্থনৈতিক উন্নয়ন",
+      "pronunciation": "orthonoitik unnojon",
       "en": "economic development",
       "category": "Class 8 · Economics"
     },
     {
       "bn": "স্বাস্থ্য",
+      "pronunciation": "shastho",
       "en": "health",
       "category": "Class 8 · Health and the body"
     },
     {
       "bn": "রোগ",
+      "pronunciation": "rog",
       "en": "disease",
       "category": "Class 8 · Health and the body"
     },
     {
       "bn": "সংক্রমণ",
+      "pronunciation": "shongkromon",
       "en": "infection",
       "category": "Class 8 · Health and the body"
     },
     {
       "bn": "রোগপ্রতিরোধ",
+      "pronunciation": "rogoprotirodh",
       "en": "immunity",
       "category": "Class 8 · Health and the body"
     },
     {
       "bn": "টিকা",
+      "pronunciation": "tika",
       "en": "vaccine",
       "category": "Class 8 · Health and the body"
     },
     {
       "bn": "চিকিৎসা",
+      "pronunciation": "chikitsa",
       "en": "treatment",
       "category": "Class 8 · Health and the body"
     },
     {
       "bn": "উপসর্গ",
+      "pronunciation": "uposorg",
       "en": "symptom",
       "category": "Class 8 · Health and the body"
     },
     {
       "bn": "রোগনির্ণয়",
+      "pronunciation": "rogonirnojo",
       "en": "diagnosis",
       "category": "Class 8 · Health and the body"
     },
     {
       "bn": "স্বাস্থ্যবিধি",
+      "pronunciation": "sbasthjobidhi",
       "en": "hygiene",
       "category": "Class 8 · Health and the body"
     },
     {
       "bn": "সুষম খাদ্য",
+      "pronunciation": "sushom khaddo",
       "en": "balanced diet",
       "category": "Class 8 · Health and the body"
     },
     {
       "bn": "পুষ্টি",
+      "pronunciation": "pushti",
       "en": "nutrition",
       "category": "Class 8 · Health and the body"
     },
     {
       "bn": "মানসিক স্বাস্থ্য",
+      "pronunciation": "manosik shastho",
       "en": "mental health",
       "category": "Class 8 · Health and the body"
     },
     {
       "bn": "শারীরিক স্বাস্থ্য",
+      "pronunciation": "sharirik shastho",
       "en": "physical health",
       "category": "Class 8 · Health and the body"
     },
     {
       "bn": "ব্যায়াম",
+      "pronunciation": "byayam",
       "en": "exercise",
       "category": "Class 8 · Health and the body"
     },
     {
       "bn": "বিশ্রাম",
+      "pronunciation": "bishram",
       "en": "rest",
       "category": "Class 8 · Health and the body"
     },
     {
       "bn": "মানসিক চাপ",
+      "pronunciation": "manosik chap",
       "en": "mental stress",
       "category": "Class 8 · Health and the body"
     },
     {
       "bn": "প্রতিরোধ",
+      "pronunciation": "protirodh",
       "en": "prevention",
       "category": "Class 8 · Health and the body"
     },
     {
       "bn": "সচেতনতা",
+      "pronunciation": "sochetonota",
       "en": "awareness",
       "category": "Class 8 · Health and the body"
     },
     {
       "bn": "আত্মবিশ্বাস",
+      "pronunciation": "atmobhishshash",
       "en": "confidence",
       "category": "Class 8 · Feelings"
     },
     {
       "bn": "অনিশ্চয়তা",
+      "pronunciation": "onishchojota",
       "en": "uncertainty",
       "category": "Class 8 · Feelings"
     },
     {
       "bn": "উদ্বেগ",
+      "pronunciation": "udbeg",
       "en": "anxiety",
       "category": "Class 8 · Feelings"
     },
     {
       "bn": "হতাশা",
+      "pronunciation": "hotasha",
       "en": "despair",
       "category": "Class 8 · Feelings"
     },
     {
       "bn": "আশাবাদ",
+      "pronunciation": "ashabad",
       "en": "optimism",
       "category": "Class 8 · Feelings"
     },
     {
       "bn": "অনুতাপ",
+      "pronunciation": "onutap",
       "en": "regret",
       "category": "Class 8 · Feelings"
     },
     {
       "bn": "সহানুভূতি",
+      "pronunciation": "sohanubhuti",
       "en": "empathy",
       "category": "Class 8 · Feelings"
     },
     {
       "bn": "সহমর্মিতা",
+      "pronunciation": "sohomormita",
       "en": "compassion",
       "category": "Class 8 · Feelings"
     },
     {
       "bn": "দ্বিধা",
+      "pronunciation": "dbidha",
       "en": "hesitation",
       "category": "Class 8 · Feelings"
     },
     {
       "bn": "সংকোচ",
+      "pronunciation": "songkoch",
       "en": "inhibition",
       "category": "Class 8 · Feelings"
     },
     {
       "bn": "উত্তেজনা",
+      "pronunciation": "uttejona",
       "en": "excitement",
       "category": "Class 8 · Feelings"
     },
     {
       "bn": "গর্ব",
+      "pronunciation": "gorbo",
       "en": "pride",
       "category": "Class 8 · Feelings"
     },
     {
       "bn": "কৃতজ্ঞতা",
+      "pronunciation": "kritoggota",
       "en": "gratitude",
       "category": "Class 8 · Feelings"
     },
     {
       "bn": "বিরক্তি",
+      "pronunciation": "birokti",
       "en": "annoyance",
       "category": "Class 8 · Feelings"
     },
     {
       "bn": "হতবুদ্ধি",
+      "pronunciation": "hotobuddhi",
       "en": "confused",
       "category": "Class 8 · Feelings"
     },
     {
       "bn": "অনুপ্রেরণা",
+      "pronunciation": "onuprerona",
       "en": "motivation",
       "category": "Class 8 · Feelings"
     },
     {
       "bn": "মানসিক চাপ",
+      "pronunciation": "manosik chap",
       "en": "mental stress",
       "category": "Class 8 · Feelings"
     },
     {
       "bn": "সন্তুষ্টি",
+      "pronunciation": "sontushti",
       "en": "satisfaction",
       "category": "Class 8 · Feelings"
     },
     {
       "bn": "হতাশাবাদ",
+      "pronunciation": "hotashabad",
       "en": "pessimism",
       "category": "Class 8 · Feelings"
     },
     {
       "bn": "বিচক্ষণ",
+      "pronunciation": "bichokshon",
       "en": "prudent",
       "category": "Class 8 · Character"
     },
     {
       "bn": "দায়িত্বশীল",
+      "pronunciation": "dayittoshil",
       "en": "responsible",
       "category": "Class 8 · Character"
     },
     {
       "bn": "ন্যায়পরায়ণ",
+      "pronunciation": "njajoporajon",
       "en": "just",
       "category": "Class 8 · Character"
     },
     {
       "bn": "সৎ",
+      "pronunciation": "shot",
       "en": "honest",
       "category": "Class 8 · Character"
     },
     {
       "bn": "বিশ্বস্ত",
+      "pronunciation": "bishshosto",
       "en": "trustworthy",
       "category": "Class 8 · Character"
     },
     {
       "bn": "ধৈর্যশীল",
+      "pronunciation": "dhoirjoshil",
       "en": "patient",
       "category": "Class 8 · Character"
     },
     {
       "bn": "পরিশ্রমী",
+      "pronunciation": "pôrishromi",
       "en": "hardworking",
       "category": "Class 8 · Character"
     },
     {
       "bn": "সাহসী",
+      "pronunciation": "shahoshi",
       "en": "brave",
       "category": "Class 8 · Character"
     },
     {
       "bn": "বিনয়ী",
+      "pronunciation": "binoyi",
       "en": "humble",
       "category": "Class 8 · Character"
     },
     {
       "bn": "উদার",
+      "pronunciation": "udar",
       "en": "generous",
       "category": "Class 8 · Character"
     },
     {
       "bn": "আত্মনির্ভরশীল",
+      "pronunciation": "atmonirbhoroshil",
       "en": "self-reliant",
       "category": "Class 8 · Character"
     },
     {
       "bn": "সহানুভূতিশীল",
+      "pronunciation": "sohanubhutishil",
       "en": "empathetic",
       "category": "Class 8 · Character"
     },
     {
       "bn": "যুক্তিবাদী",
+      "pronunciation": "juktibadi",
       "en": "rational",
       "category": "Class 8 · Character"
     },
     {
       "bn": "বাস্তববাদী",
+      "pronunciation": "bastobobadi",
       "en": "realistic",
       "category": "Class 8 · Character"
     },
     {
       "bn": "আদর্শবাদী",
+      "pronunciation": "adorshobadi",
       "en": "idealistic",
       "category": "Class 8 · Character"
     },
     {
       "bn": "আত্মকেন্দ্রিক",
+      "pronunciation": "atmokendrik",
       "en": "self-centered",
       "category": "Class 8 · Character"
     },
     {
       "bn": "স্বার্থপর",
+      "pronunciation": "sharthopor",
       "en": "selfish",
       "category": "Class 8 · Character"
     },
     {
       "bn": "দৃঢ়প্রতিজ্ঞ",
+      "pronunciation": "dridhoprotijny",
       "en": "determined",
       "category": "Class 8 · Character"
     },
     {
       "bn": "কৌশলী",
+      "pronunciation": "kousholi",
       "en": "strategic",
       "category": "Class 8 · Character"
     },
     {
       "bn": "দূরদর্শী",
+      "pronunciation": "durodorshi",
       "en": "far-sighted",
       "category": "Class 8 · Character"
     },
     {
       "bn": "বিশ্লেষণ করা",
+      "pronunciation": "bishleshon kora",
       "en": "to analyze",
       "category": "Class 8 · Advanced verbs"
     },
     {
       "bn": "মূল্যায়ন করা",
+      "pronunciation": "muljajon kora",
       "en": "to evaluate",
       "category": "Class 8 · Advanced verbs"
     },
     {
       "bn": "ব্যাখ্যা করা",
+      "pronunciation": "bjakhja kora",
       "en": "to explain",
       "category": "Class 8 · Advanced verbs"
     },
     {
       "bn": "তুলনা করা",
+      "pronunciation": "tulona kora",
       "en": "to compare",
       "category": "Class 8 · Advanced verbs"
     },
     {
       "bn": "বৈপরীত্য দেখানো",
+      "pronunciation": "boiporitj dekhano",
       "en": "to contrast",
       "category": "Class 8 · Advanced verbs"
     },
     {
       "bn": "অনুমান করা",
+      "pronunciation": "onuman kora",
       "en": "to infer",
       "category": "Class 8 · Advanced verbs"
     },
     {
       "bn": "যাচাই করা",
+      "pronunciation": "jachai kora",
       "en": "to verify",
       "category": "Class 8 · Advanced verbs"
     },
     {
       "bn": "সিদ্ধান্তে পৌঁছানো",
+      "pronunciation": "siddhante pounchhan",
       "en": "to reach a conclusion",
       "category": "Class 8 · Advanced verbs"
     },
     {
       "bn": "যুক্তি উপস্থাপন করা",
+      "pronunciation": "jukti uposthapon kora",
       "en": "to present an argument",
       "category": "Class 8 · Advanced verbs"
     },
     {
       "bn": "সমর্থন করা",
+      "pronunciation": "somorthon kora",
       "en": "to support",
       "category": "Class 8 · Advanced verbs"
     },
     {
       "bn": "খণ্ডন করা",
+      "pronunciation": "khondon kora",
       "en": "to refute",
       "category": "Class 8 · Advanced verbs"
     },
     {
       "bn": "গবেষণা করা",
+      "pronunciation": "gobeshona kora",
       "en": "to research",
       "category": "Class 8 · Advanced verbs"
     },
     {
       "bn": "শ্রেণিবদ্ধ করা",
+      "pronunciation": "shreniboddh kora",
       "en": "to classify",
       "category": "Class 8 · Advanced verbs"
     },
     {
       "bn": "নির্ধারণ করা",
+      "pronunciation": "nirdharon kora",
       "en": "to determine",
       "category": "Class 8 · Advanced verbs"
     },
     {
       "bn": "পুনর্বিবেচনা করা",
+      "pronunciation": "punorbibechona kora",
       "en": "to reconsider",
       "category": "Class 8 · Advanced verbs"
     },
     {
       "bn": "ব্যাখ্যা করা",
+      "pronunciation": "bjakhja kora",
       "en": "to explain",
       "category": "Class 8 · Advanced verbs"
     },
     {
       "bn": "ব্যাখ্যার পক্ষে প্রমাণ দেওয়া",
+      "pronunciation": "bjakhjar pokkhe proman deoa",
       "en": "to support an interpretation with evidence",
       "category": "Class 8 · Advanced verbs"
     },
     {
       "bn": "সংশোধন করা",
+      "pronunciation": "shongshodhon kora",
       "en": "to revise",
       "category": "Class 8 · Advanced verbs"
     },
     {
       "bn": "প্রভাবিত করা",
+      "pronunciation": "probhabit kora",
       "en": "to influence",
       "category": "Class 8 · Useful verbs"
     },
     {
       "bn": "বাস্তবায়ন করা",
+      "pronunciation": "bastobayon kora",
       "en": "to implement",
       "category": "Class 8 · Useful verbs"
     },
     {
       "bn": "প্রতিরোধ করা",
+      "pronunciation": "protirodh kora",
       "en": "to prevent",
       "category": "Class 8 · Useful verbs"
     },
     {
       "bn": "সংরক্ষণ করা",
+      "pronunciation": "shongrokkhon kora",
       "en": "to conserve",
       "category": "Class 8 · Useful verbs"
     },
     {
       "bn": "উন্নত করা",
+      "pronunciation": "unnoto kora",
       "en": "to improve",
       "category": "Class 8 · Useful verbs"
     },
     {
       "bn": "পরিবর্তন করা",
+      "pronunciation": "poriborton kora",
       "en": "to change",
       "category": "Class 8 · Useful verbs"
     },
     {
       "bn": "অংশগ্রহণ করা",
+      "pronunciation": "ongshogrohon kora",
       "en": "to participate",
       "category": "Class 8 · Useful verbs"
     },
     {
       "bn": "নেতৃত্ব দেওয়া",
+      "pronunciation": "netritb deowa",
       "en": "to lead",
       "category": "Class 8 · Useful verbs"
     },
     {
       "bn": "সহযোগিতা করা",
+      "pronunciation": "sohojogita kora",
       "en": "to cooperate",
       "category": "Class 8 · Useful verbs"
     },
     {
       "bn": "উৎসাহিত করা",
+      "pronunciation": "utosahit kora",
       "en": "to encourage",
       "category": "Class 8 · Useful verbs"
     },
     {
       "bn": "সমালোচনা করা",
+      "pronunciation": "somalochona kora",
       "en": "to criticize",
       "category": "Class 8 · Useful verbs"
     },
     {
       "bn": "গ্রহণ করা",
+      "pronunciation": "grohon kora",
       "en": "to accept",
       "category": "Class 8 · Useful verbs"
     },
     {
       "bn": "প্রত্যাখ্যান করা",
+      "pronunciation": "protyakhyan kora",
       "en": "to reject",
       "category": "Class 8 · Useful verbs"
     },
     {
       "bn": "স্বীকার করা",
+      "pronunciation": "sbikar kora",
       "en": "to acknowledge",
       "category": "Class 8 · Useful verbs"
     },
     {
       "bn": "প্রশ্ন তোলা",
+      "pronunciation": "proshno tola",
       "en": "to question",
       "category": "Class 8 · Useful verbs"
     },
     {
       "bn": "চ্যালেঞ্জ করা",
+      "pronunciation": "chjalenyj kora",
       "en": "to challenge",
       "category": "Class 8 · Useful verbs"
     },
     {
       "bn": "সম্পর্ক স্থাপন করা",
+      "pronunciation": "shomporko sthapon kora",
       "en": "to establish a relationship",
       "category": "Class 8 · Useful verbs"
     },
     {
       "bn": "যুক্তিসঙ্গত",
+      "pronunciation": "juktishongoto",
       "en": "reasonable",
       "category": "Class 8 · Descriptive words"
     },
     {
       "bn": "অযৌক্তিক",
+      "pronunciation": "ôjouktik",
       "en": "illogical",
       "category": "Class 8 · Descriptive words"
     },
     {
       "bn": "নির্ভরযোগ্য",
+      "pronunciation": "nirbhorojogj",
       "en": "reliable",
       "category": "Class 8 · Descriptive words"
     },
     {
       "bn": "সন্দেহজনক",
+      "pronunciation": "sondehojonok",
       "en": "questionable",
       "category": "Class 8 · Descriptive words"
     },
     {
       "bn": "কার্যকর",
+      "pronunciation": "karjokor",
       "en": "effective",
       "category": "Class 8 · Descriptive words"
     },
     {
       "bn": "অকার্যকর",
+      "pronunciation": "ôkarjokor",
       "en": "ineffective",
       "category": "Class 8 · Descriptive words"
     },
     {
       "bn": "প্রাসঙ্গিক",
+      "pronunciation": "prashongik",
       "en": "relevant",
       "category": "Class 8 · Descriptive words"
     },
     {
       "bn": "অপ্রাসঙ্গিক",
+      "pronunciation": "ôprashongik",
       "en": "irrelevant",
       "category": "Class 8 · Descriptive words"
     },
     {
       "bn": "নিরপেক্ষ",
+      "pronunciation": "niropeksho",
       "en": "neutral",
       "category": "Class 8 · Descriptive words"
     },
     {
       "bn": "পক্ষপাতদুষ্ট",
+      "pronunciation": "pokshopatodusht",
       "en": "biased",
       "category": "Class 8 · Descriptive words"
     },
     {
       "bn": "ইতিবাচক",
+      "pronunciation": "itibachok",
       "en": "positive",
       "category": "Class 8 · Descriptive words"
     },
     {
       "bn": "নেতিবাচক",
+      "pronunciation": "netibachok",
       "en": "negative",
       "category": "Class 8 · Descriptive words"
     },
     {
       "bn": "জটিল",
+      "pronunciation": "jotil",
       "en": "complex",
       "category": "Class 8 · Descriptive words"
     },
     {
       "bn": "সরল",
+      "pronunciation": "shorol",
       "en": "straightforward",
       "category": "Class 8 · Descriptive words"
     },
     {
       "bn": "বাস্তবসম্মত",
+      "pronunciation": "bastobosommot",
       "en": "realistic",
       "category": "Class 8 · Descriptive words"
     },
     {
       "bn": "অবাস্তব",
+      "pronunciation": "obastob",
       "en": "unrealistic",
       "category": "Class 8 · Descriptive words"
     },
     {
       "bn": "স্থায়ী",
+      "pronunciation": "sthayi",
       "en": "permanent",
       "category": "Class 8 · Descriptive words"
     },
     {
       "bn": "অস্থায়ী",
+      "pronunciation": "ôsthayi",
       "en": "temporary",
       "category": "Class 8 · Descriptive words"
     },
     {
       "bn": "সম্ভাব্য",
+      "pronunciation": "sombhabj",
       "en": "possible",
       "category": "Class 8 · Descriptive words"
     },
     {
       "bn": "অনিবার্য",
+      "pronunciation": "onibarj",
       "en": "inevitable",
       "category": "Class 8 · Descriptive words"
     },
     {
       "bn": "উল্লেখযোগ্য",
+      "pronunciation": "ullekhojogj",
       "en": "significant",
       "category": "Class 8 · Descriptive words"
     },
     {
       "bn": "সামান্য",
+      "pronunciation": "Samannyo",
       "en": "minor",
       "category": "Class 8 · Descriptive words"
     },
     {
       "bn": "সুস্পষ্ট",
+      "pronunciation": "susposht",
       "en": "evident",
       "category": "Class 8 · Descriptive words"
     },
     {
       "bn": "অস্পষ্ট",
+      "pronunciation": "ôsposhto",
       "en": "unclear",
       "category": "Class 8 · Descriptive words"
     },
     {
       "bn": "প্রথমত",
+      "pronunciation": "prothomoto",
       "en": "firstly",
       "category": "Class 8 · Connectors"
     },
     {
       "bn": "দ্বিতীয়ত",
+      "pronunciation": "ditiyoto",
       "en": "secondly",
       "category": "Class 8 · Connectors"
     },
     {
       "bn": "তৃতীয়ত",
+      "pronunciation": "tritijot",
       "en": "thirdly",
       "category": "Class 8 · Connectors"
     },
     {
       "bn": "তদুপরি",
+      "pronunciation": "todupori",
       "en": "furthermore",
       "category": "Class 8 · Connectors"
     },
     {
       "bn": "এছাড়া",
+      "pronunciation": "echhara",
       "en": "in addition",
       "category": "Class 8 · Connectors"
     },
     {
       "bn": "পাশাপাশি",
+      "pronunciation": "pashapashi",
       "en": "in addition",
       "category": "Class 8 · Connectors"
     },
     {
       "bn": "একইভাবে",
+      "pronunciation": "ekoibhabe",
       "en": "similarly",
       "category": "Class 8 · Connectors"
     },
     {
       "bn": "অন্যদিকে",
+      "pronunciation": "onnodike",
       "en": "on the other hand",
       "category": "Class 8 · Connectors"
     },
     {
       "bn": "বিপরীতে",
+      "pronunciation": "biporite",
       "en": "in contrast",
       "category": "Class 8 · Connectors"
     },
     {
       "bn": "অন্যথায়",
+      "pronunciation": "onjothajo",
       "en": "otherwise",
       "category": "Class 8 · Connectors"
     },
     {
       "bn": "উদাহরণস্বরূপ",
+      "pronunciation": "udahoronosborup",
       "en": "for example",
       "category": "Class 8 · Connectors"
     },
     {
       "bn": "বিশেষত",
+      "pronunciation": "bisheshot",
       "en": "particularly",
       "category": "Class 8 · Connectors"
     },
     {
       "bn": "মূলত",
+      "pronunciation": "muloto",
       "en": "primarily",
       "category": "Class 8 · Connectors"
     },
     {
       "bn": "কারণ",
+      "pronunciation": "karon",
       "en": "because",
       "category": "Class 8 · Connectors"
     },
     {
       "bn": "ফলে",
+      "pronunciation": "fole",
       "en": "consequently",
       "category": "Class 8 · Connectors"
     },
     {
       "bn": "ফলস্বরূপ",
+      "pronunciation": "pholosborup",
       "en": "as a result",
       "category": "Class 8 · Connectors"
     },
     {
       "bn": "যদিও",
+      "pronunciation": "jodio",
       "en": "although",
       "category": "Class 8 · Connectors"
     },
     {
       "bn": "তবুও",
+      "pronunciation": "tobuo",
       "en": "nevertheless",
       "category": "Class 8 · Connectors"
     },
     {
       "bn": "যেহেতু",
+      "pronunciation": "jehetu",
       "en": "since",
       "category": "Class 8 · Connectors"
     },
     {
       "bn": "সেহেতু",
+      "pronunciation": "shehetu",
       "en": "therefore",
       "category": "Class 8 · Connectors"
     },
     {
       "bn": "অতএব",
+      "pronunciation": "otoeb",
       "en": "therefore",
       "category": "Class 8 · Connectors"
     },
     {
       "bn": "অবশেষে",
+      "pronunciation": "oboshese",
       "en": "finally",
       "category": "Class 8 · Connectors"
     },
     {
       "bn": "সংক্ষেপে",
+      "pronunciation": "shongkhepe",
       "en": "in brief",
       "category": "Class 8 · Connectors"
     }
@@ -2150,534 +2578,623 @@
   "phrases": [
     {
       "bn": "আমার মতে বিষয়টি সরলভাবে বিচার করা ঠিক হবে না।",
+      "pronunciation": "amar mote bishoyti sorolobhabe Bichar kora thik hobe na",
       "en": "Opinion and argument practice 1",
       "context": "Opinion and argument",
       "category": "Class 8 · Opinion and argument"
     },
     {
       "bn": "আমার দৃষ্টিতে এই সিদ্ধান্তের পক্ষে ও বিপক্ষে উভয় ধরনের যুক্তি রয়েছে।",
+      "pronunciation": "amar drishtite ei siddhanter pokkhe o bipokshe ubhoy dhoroner jukti royeche",
       "en": "Opinion and argument practice 2",
       "context": "Opinion and argument",
       "category": "Class 8 · Opinion and argument"
     },
     {
       "bn": "আমি এই বক্তব্যের সঙ্গে আংশিকভাবে একমত।",
+      "pronunciation": "ami ei boktobjer shonge angshikbhabe ekmot",
       "en": "Opinion and argument practice 3",
       "context": "Opinion and argument",
       "category": "Class 8 · Opinion and argument"
     },
     {
       "bn": "আমি এই মতের সঙ্গে একমত নই, কারণ প্রমাণগুলো অন্য সিদ্ধান্তের দিকে ইঙ্গিত করে।",
+      "pronunciation": "ami ei moter shonge ekmot noi karon promanogulo ônno siddhanter dike ingit kore",
       "en": "Opinion and argument practice 4",
       "context": "Opinion and argument",
       "category": "Class 8 · Opinion and argument"
     },
     {
       "bn": "আমার ধারণা, আরও তথ্য ছাড়া নিশ্চিত সিদ্ধান্তে পৌঁছানো কঠিন।",
+      "pronunciation": "amar dharona aro tothyo chhara nishchito siddhante põuchhano kothin",
       "en": "Opinion and argument practice 5",
       "context": "Opinion and argument",
       "category": "Class 8 · Opinion and argument"
     },
     {
       "bn": "বিষয়টিকে বৃহত্তর প্রেক্ষাপটে বিবেচনা করা দরকার।",
+      "pronunciation": "bishojotike brihottor prekshapote bibechona kora dorkar",
       "en": "Opinion and argument practice 6",
       "context": "Opinion and argument",
       "category": "Class 8 · Opinion and argument"
     },
     {
       "bn": "আমার বক্তব্যের পক্ষে সবচেয়ে শক্তিশালী যুক্তি হলো এর দীর্ঘমেয়াদি প্রভাব।",
+      "pronunciation": "amar boktobjer pokkhe sobcheye shoktishali jukti holo er dirghomejadi probhab",
       "en": "Opinion and argument practice 7",
       "context": "Opinion and argument",
       "category": "Class 8 · Opinion and argument"
     },
     {
       "bn": "প্রথমত, পরিকল্পনাটি বাস্তবসম্মত।",
+      "pronunciation": "prothomoto porikolponati bastobosommot",
       "en": "Opinion and argument practice 8",
       "context": "Opinion and argument",
       "category": "Class 8 · Opinion and argument"
     },
     {
       "bn": "দ্বিতীয়ত, এটি তুলনামূলকভাবে কম ব্যয়বহুল।",
+      "pronunciation": "ditiyoto eti tulonamulokobhabe kom bjojobohul",
       "en": "Opinion and argument practice 9",
       "context": "Opinion and argument",
       "category": "Class 8 · Opinion and argument"
     },
     {
       "bn": "তদুপরি, এর সামাজিক ও পরিবেশগত সুবিধাও রয়েছে।",
+      "pronunciation": "todupori er shamajik o poribeshogot subidhao royeche",
       "en": "Opinion and argument practice 10",
       "context": "Opinion and argument",
       "category": "Class 8 · Opinion and argument"
     },
     {
       "bn": "শুধু একটি উদাহরণ পুরো দাবিটি প্রমাণ করার জন্য যথেষ্ট নয়।",
+      "pronunciation": "shudhu ekti udahoron puro dabiti proman korar jonno jôtheshto noy",
       "en": "Evaluating evidence practice 1",
       "context": "Evaluating evidence",
       "category": "Class 8 · Evaluating evidence"
     },
     {
       "bn": "এই তথ্যের উৎস নির্ভরযোগ্য হলে দাবিটি আরও শক্তিশালী হয়।",
+      "pronunciation": "ei tothjer utsho nirbhorojogj hole dabiti aro shoktishali hoy",
       "en": "Evaluating evidence practice 2",
       "context": "Evaluating evidence",
       "category": "Class 8 · Evaluating evidence"
     },
     {
       "bn": "পরিসংখ্যানটি গুরুত্বপূর্ণ, তবে কীভাবে তথ্য সংগ্রহ করা হয়েছে তা জানা দরকার।",
+      "pronunciation": "porisongkhjanoti guruttopurno tobe kibhabe tothyo shonggroho kora hoyechhe ta jana dorkar",
       "en": "Evaluating evidence practice 3",
       "context": "Evaluating evidence",
       "category": "Class 8 · Evaluating evidence"
     },
     {
       "bn": "দুটি স্বাধীন উৎস একই তথ্য দিলে তার বিশ্বাসযোগ্যতা বাড়ে।",
+      "pronunciation": "duṭi shadhin utsho ekoi tothyo dile tar bishbasojogjota bare",
       "en": "Evaluating evidence practice 4",
       "context": "Evaluating evidence",
       "category": "Class 8 · Evaluating evidence"
     },
     {
       "bn": "প্রমাণটি দাবির সঙ্গে সরাসরি সম্পর্কিত কি না তা বিবেচনা করা উচিত।",
+      "pronunciation": "promanoti dabir shonge shorashori shômpôrkito ki na ta bibechona kora uchit",
       "en": "Evaluating evidence practice 5",
       "context": "Evaluating evidence",
       "category": "Class 8 · Evaluating evidence"
     },
     {
       "bn": "লেখকের দাবি হলো প্রযুক্তি শিক্ষাকে উন্নত করতে পারে।",
+      "pronunciation": "lekhoker dabi holo projukti shikshake unnoto korte pare",
       "en": "Evaluating evidence practice 6",
       "context": "Evaluating evidence",
       "category": "Class 8 · Evaluating evidence"
     },
     {
       "bn": "এই দাবির পক্ষে তিনি কয়েকটি বাস্তব উদাহরণ দিয়েছেন।",
+      "pronunciation": "ei dabir pokkhe tini koyekṭi bastob udahoron diyechen",
       "en": "Evaluating evidence practice 7",
       "context": "Evaluating evidence",
       "category": "Class 8 · Evaluating evidence"
     },
     {
       "bn": "তবে লেখক সম্ভাব্য অসুবিধাগুলো বিস্তারিতভাবে আলোচনা করেননি।",
+      "pronunciation": "tobe lekhok sombhabj osubidhagulo bistaritobhabe alochona korenni",
       "en": "Evaluating evidence practice 8",
       "context": "Evaluating evidence",
       "category": "Class 8 · Evaluating evidence"
     },
     {
       "bn": "এ কারণে যুক্তিটি কিছুটা অসম্পূর্ণ বলে মনে হয়।",
+      "pronunciation": "e karone juktiti kichuta ôshompurno bole mone hoy",
       "en": "Evaluating evidence practice 9",
       "context": "Evaluating evidence",
       "category": "Class 8 · Evaluating evidence"
     },
     {
       "bn": "চরিত্রটির সিদ্ধান্ত শুধু তার নিজের নয়, অন্য চরিত্রগুলোর জীবনকেও প্রভাবিত করেছে।",
+      "pronunciation": "choritrotir shiddhanto shudhu tar nijer noy ônno choritrogulor jibonokeo probhabit koreche",
       "en": "Analysis and comparison practice 1",
       "context": "Analysis and comparison",
       "category": "Class 8 · Analysis and comparison"
     },
     {
       "bn": "ঘটনাটি বিশ্লেষণ করলে ব্যক্তিগত ও সামাজিক উভয় ধরনের কারণ দেখা যায়।",
+      "pronunciation": "ghotonati bishleshon korle byaktigoto o shamajik ubhoy dhoroner karon dekha Jay",
       "en": "Analysis and comparison practice 2",
       "context": "Analysis and comparison",
       "category": "Class 8 · Analysis and comparison"
     },
     {
       "bn": "লেখকের শব্দচয়ন বিষয়টির প্রতি তার মনোভাব প্রকাশ করে।",
+      "pronunciation": "lekhoker shobdochojon bishoytir proti tar monobhab prōkāsh kore",
       "en": "Analysis and comparison practice 3",
       "context": "Analysis and comparison",
       "category": "Class 8 · Analysis and comparison"
     },
     {
       "bn": "একই ঘটনাকে দুই চরিত্র সম্পূর্ণ ভিন্নভাবে দেখেছে।",
+      "pronunciation": "ekoi ghotonake dui choritr shompurno bhinnobhabe dekhechhe",
       "en": "Analysis and comparison practice 4",
       "context": "Analysis and comparison",
       "category": "Class 8 · Analysis and comparison"
     },
     {
       "bn": "দুটি লেখাই একই সমস্যা নিয়ে আলোচনা করে, তবে তাদের উদ্দেশ্য আলাদা।",
+      "pronunciation": "duṭi lekhai ekoi shomoshsha niye alochona kore tobe tader uddeshsho alada",
       "en": "Analysis and comparison practice 5",
       "context": "Analysis and comparison",
       "category": "Class 8 · Analysis and comparison"
     },
     {
       "bn": "প্রথম লেখাটি তথ্য দেওয়ার চেষ্টা করে, বিপরীতে দ্বিতীয়টি পাঠককে প্রভাবিত করতে চায়।",
+      "pronunciation": "prothom lekhati tothyo dewar cheshta kore biporite dbitijoti pathokoke probhabit korte chay",
       "en": "Analysis and comparison practice 6",
       "context": "Analysis and comparison",
       "category": "Class 8 · Analysis and comparison"
     },
     {
       "bn": "দুই চরিত্রের মূল্যবোধের মধ্যে মিল থাকলেও তাদের সিদ্ধান্ত নেওয়ার পদ্ধতি ভিন্ন।",
+      "pronunciation": "dui choritrer muljobodher moddhe mil thakoleo tader shiddhanto neoyar poddhoti bhinno",
       "en": "Analysis and comparison practice 7",
       "context": "Analysis and comparison",
       "category": "Class 8 · Analysis and comparison"
     },
     {
       "bn": "দ্রুত নগরায়ণের ফলে অনেক এলাকায় যানজট ও দূষণ বৃদ্ধি পেয়েছে।",
+      "pronunciation": "druto nogorajoner fole ônek elakay janojot o dushon briddhi peyeche",
       "en": "Cause, effect, and solutions practice 1",
       "context": "Cause, effect, and solutions",
       "category": "Class 8 · Cause, effect, and solutions"
     },
     {
       "bn": "ভুল তথ্য ছড়ালে জনমত প্রভাবিত হতে পারে।",
+      "pronunciation": "bhul tothyo chhodale jonomot probhabit hote pare",
       "en": "Cause, effect, and solutions practice 2",
       "context": "Cause, effect, and solutions",
       "category": "Class 8 · Cause, effect, and solutions"
     },
     {
       "bn": "দীর্ঘমেয়াদি খরার ফলে কৃষি উৎপাদন কমে যেতে পারে।",
+      "pronunciation": "dirghomejadi khorar fole krishi utpadon kome jete pare",
       "en": "Cause, effect, and solutions practice 3",
       "context": "Cause, effect, and solutions",
       "category": "Class 8 · Cause, effect, and solutions"
     },
     {
       "bn": "শিক্ষায় বৈষম্য থাকলে ভবিষ্যতে অর্থনৈতিক বৈষম্যও বাড়তে পারে।",
+      "pronunciation": "shikshajo boishomj thakle bhobishjote orthonoitik boishomjoo barte pare",
       "en": "Cause, effect, and solutions practice 4",
       "context": "Cause, effect, and solutions",
       "category": "Class 8 · Cause, effect, and solutions"
     },
     {
       "bn": "কোনো সমস্যা সমাধানের আগে তার মূল কারণ ও প্রেক্ষাপট বুঝতে হবে।",
+      "pronunciation": "kono shomoshsha somadhaner age tar mul karon o prekshapot bujhte hobe",
       "en": "Cause, effect, and solutions practice 5",
       "context": "Cause, effect, and solutions",
       "category": "Class 8 · Cause, effect, and solutions"
     },
     {
       "bn": "স্বল্পমেয়াদি সমাধান দ্রুত ফল দিতে পারে, কিন্তু দীর্ঘমেয়াদে টেকসই নাও হতে পারে।",
+      "pronunciation": "sbolpomejadi shomadhan druto phol / fol dite pare kintu dirghomejade tekosoi nao hote pare",
       "en": "Cause, effect, and solutions practice 6",
       "context": "Cause, effect, and solutions",
       "category": "Class 8 · Cause, effect, and solutions"
     },
     {
       "bn": "কার্যকর সমাধান বাস্তবায়নের জন্য পর্যাপ্ত সম্পদ ও পরিকল্পনা প্রয়োজন।",
+      "pronunciation": "karjokor shomadhan bastobajoner jonno pôrjapto shompod o porikolpona proyojon",
       "en": "Cause, effect, and solutions practice 7",
       "context": "Cause, effect, and solutions",
       "category": "Class 8 · Cause, effect, and solutions"
     },
     {
       "bn": "সমাধানের ফলাফল নিয়মিত মূল্যায়ন করে প্রয়োজনে পরিবর্তন আনা উচিত।",
+      "pronunciation": "somadhaner pholaphol niyomito muljajon kore projojone poriborton ana uchit",
       "en": "Cause, effect, and solutions practice 8",
       "context": "Cause, effect, and solutions",
       "category": "Class 8 · Cause, effect, and solutions"
     },
     {
       "bn": "লেখক সরাসরি বলেননি, তবে চরিত্রটির আচরণ থেকে তার হতাশা বোঝা যায়।",
+      "pronunciation": "lekhok shorashori bolenni tobe choritrotir achoron theke tar hotasha bojha Jay",
       "en": "Inference and purpose practice 1",
       "context": "Inference and purpose",
       "category": "Class 8 · Inference and purpose"
     },
     {
       "bn": "পটভূমির বর্ণনা থেকে অনুমান করা যায় ঘটনাটি একটি অর্থনৈতিক সংকটের সময় ঘটেছে।",
+      "pronunciation": "potobhumir bornona theke onuman kora Jay ghotonati ekti orthonoitik songkoter shomoy ghoteche",
       "en": "Inference and purpose practice 2",
       "context": "Inference and purpose",
       "category": "Class 8 · Inference and purpose"
     },
     {
       "bn": "উপস্থিত প্রমাণ অনুযায়ী এই ব্যাখ্যাটি সবচেয়ে যুক্তিসঙ্গত।",
+      "pronunciation": "uposthit proman onujayi ei byakhyati sobcheye juktishongoto",
       "en": "Inference and purpose practice 3",
       "context": "Inference and purpose",
       "category": "Class 8 · Inference and purpose"
     },
     {
       "bn": "লেখকের উদ্দেশ্য শুধু তথ্য দেওয়া নয়, পাঠকের মতামত প্রভাবিত করাও হতে পারে।",
+      "pronunciation": "lekhoker uddeshsho shudhu tothyo deoa noy pathoker motamot probhabit korao hote pare",
       "en": "Inference and purpose practice 4",
       "context": "Inference and purpose",
       "category": "Class 8 · Inference and purpose"
     },
     {
       "bn": "আবেগপূর্ণ ভাষার ব্যবহার বোঝায় যে লেখক পাঠকের অনুভূতিতে প্রভাব ফেলতে চাইছেন।",
+      "pronunciation": "abegopurn bhashar byabohar bojhajo je lekhok pathoker onubhutite probhab phelte chaichhen",
       "en": "Inference and purpose practice 5",
       "context": "Inference and purpose",
       "category": "Class 8 · Inference and purpose"
     },
     {
       "bn": "লেখক উভয় পক্ষের যুক্তি উপস্থাপন করায় লেখাটি তুলনামূলকভাবে ভারসাম্যপূর্ণ।",
+      "pronunciation": "lekhok ubhoy poksher jukti uposthapon koray lekhati tulonamulokobhabe bharosamjopurn",
       "en": "Inference and purpose practice 6",
       "context": "Inference and purpose",
       "category": "Class 8 · Inference and purpose"
     },
     {
       "bn": "কোন শব্দগুলো নিরপেক্ষ এবং কোনগুলো আবেগপূর্ণ তা লক্ষ্য করা উচিত।",
+      "pronunciation": "kon shobdogulo niropeksho ebong kongulo abegopurn ta lokkho kora uchit",
       "en": "Bias and source checks practice 1",
       "context": "Bias and source checks",
       "category": "Class 8 · Bias and source checks"
     },
     {
       "bn": "লেখক বিপরীত মতের প্রমাণ উপেক্ষা করেছেন কি না দেখতে হবে।",
+      "pronunciation": "lekhok biporit moter proman upekha korechen ki na dekhte hobe",
       "en": "Bias and source checks practice 2",
       "context": "Bias and source checks",
       "category": "Class 8 · Bias and source checks"
     },
     {
       "bn": "শুধু একটি পক্ষের বক্তব্য ব্যবহার করলে লেখাটি পক্ষপাতদুষ্ট হতে পারে।",
+      "pronunciation": "shudhu ekti poksher boktobj byabohar korle lekhati pokshopatodusht hote pare",
       "en": "Bias and source checks practice 3",
       "context": "Bias and source checks",
       "category": "Class 8 · Bias and source checks"
     },
     {
       "bn": "তথ্যটি কে প্রকাশ করেছে?",
+      "pronunciation": "tothyoti ke prōkāsh koreche",
       "en": "Bias and source checks practice 4",
       "context": "Bias and source checks",
       "category": "Class 8 · Bias and source checks"
     },
     {
       "bn": "লেখক বা প্রতিষ্ঠানের দক্ষতা কী?",
+      "pronunciation": "lekhok ba protishthaner dokkhota ki",
       "en": "Bias and source checks practice 5",
       "context": "Bias and source checks",
       "category": "Class 8 · Bias and source checks"
     },
     {
       "bn": "তথ্যের পক্ষে প্রমাণ বা সূত্র দেওয়া হয়েছে কি?",
+      "pronunciation": "tothjer pokkhe proman ba shutro deoa hoyechhe ki",
       "en": "Bias and source checks practice 6",
       "context": "Bias and source checks",
       "category": "Class 8 · Bias and source checks"
     },
     {
       "bn": "তথ্যটি কত পুরোনো?",
+      "pronunciation": "tothyoti koto purono",
       "en": "Bias and source checks practice 7",
       "context": "Bias and source checks",
       "category": "Class 8 · Bias and source checks"
     },
     {
       "bn": "অন্য নির্ভরযোগ্য উৎস একই কথা বলছে কি?",
+      "pronunciation": "ônno nirbhorojogj utsho ekoi kotha bolchhe ki",
       "en": "Bias and source checks practice 8",
       "context": "Bias and source checks",
       "category": "Class 8 · Bias and source checks"
     },
     {
       "bn": "লেখাটির উদ্দেশ্য তথ্য দেওয়া, বিক্রি করা, না কি প্রভাবিত করা?",
+      "pronunciation": "lekhatir uddeshsho tothyo deoa bikri kora na ki probhabit kora",
       "en": "Bias and source checks practice 9",
       "context": "Bias and source checks",
       "category": "Class 8 · Bias and source checks"
     },
     {
       "bn": "আমার মূল দাবি হলো বিদ্যালয়ে ডিজিটাল শিক্ষার সুযোগ বাড়ানো উচিত।",
+      "pronunciation": "amar mul dabi holo bidjaloje dijital shikshar shujog badon uchit",
       "en": "Debate practice 1",
       "context": "Debate",
       "category": "Class 8 · Debate"
     },
     {
       "bn": "এই দাবির পক্ষে তিনটি গুরুত্বপূর্ণ যুক্তি রয়েছে।",
+      "pronunciation": "ei dabir pokkhe tinti guruttopurno jukti royeche",
       "en": "Debate practice 2",
       "context": "Debate",
       "category": "Class 8 · Debate"
     },
     {
       "bn": "বিপরীত পক্ষ প্রযুক্তিনির্ভরতার ঝুঁকির কথা উল্লেখ করতে পারে।",
+      "pronunciation": "biporit pokkho projuktinirbhorotar jhunkir kotha ullekh korte pare",
       "en": "Debate practice 3",
       "context": "Debate",
       "category": "Class 8 · Debate"
     },
     {
       "bn": "এই উদ্বেগ যুক্তিসঙ্গত, তবে নিয়ম ও প্রশিক্ষণের মাধ্যমে ঝুঁকি কমানো সম্ভব।",
+      "pronunciation": "ei udbeg juktishongoto tobe niyom o proshikshoner maddhome jhũki koman shombhob",
       "en": "Debate practice 4",
       "context": "Debate",
       "category": "Class 8 · Debate"
     },
     {
       "bn": "সব প্রমাণ বিবেচনা করলে সীমিত ও পরিকল্পিত প্রযুক্তি ব্যবহার সবচেয়ে যুক্তিসঙ্গত সমাধান।",
+      "pronunciation": "shob proman bibechona korle shimito o porikolpit projukti byabohar sobcheye juktishongoto shomadhan",
       "en": "Debate practice 5",
       "context": "Debate",
       "category": "Class 8 · Debate"
     },
     {
       "bn": "একটি তথ্য সত্য কি না তা বিচার করার সময় শুধু তার বিষয়বস্তু নয়, উৎসের নির্ভরযোগ্যতাও বিবেচনা করা দরকার।",
+      "pronunciation": "ekti tothyo shotto ki na ta Bichar korar shomoy shudhu tar bishojobostu noy utoser nirbhorojogjotao bibechona kora dorkar",
       "en": "Advanced sentences practice 1",
       "context": "Advanced sentences",
       "category": "Class 8 · Advanced sentences"
     },
     {
       "bn": "কোনো লেখকের পক্ষপাত সব সময় সরাসরি প্রকাশ পায় না; কখনো তথ্য নির্বাচন ও শব্দচয়নের মধ্যেও তা দেখা যায়।",
+      "pronunciation": "kono lekhoker pokshopat shob shomoy shorashori prōkāsh pay na kokhono tothyo nirbachon o shobdochojoner modhjeo ta dekha Jay",
       "en": "Advanced sentences practice 2",
       "context": "Advanced sentences",
       "category": "Class 8 · Advanced sentences"
     },
     {
       "bn": "একই সমস্যার স্বল্পমেয়াদি ও দীর্ঘমেয়াদি সমাধান এক রকম নাও হতে পারে।",
+      "pronunciation": "ekoi somosjar sbolpomejadi o dirghomejadi shomadhan ek rokom nao hote pare",
       "en": "Advanced sentences practice 3",
       "context": "Advanced sentences",
       "category": "Class 8 · Advanced sentences"
     },
     {
       "bn": "প্রযুক্তির সুবিধা গ্রহণের পাশাপাশি তার সামাজিক, নৈতিক ও ব্যক্তিগত প্রভাবও বিবেচনা করা দরকার।",
+      "pronunciation": "projuktir shubidha grohoner pashapashi tar shamajik noitik o byaktigoto probhaboo bibechona kora dorkar",
       "en": "Advanced sentences practice 4",
       "context": "Advanced sentences",
       "category": "Class 8 · Advanced sentences"
     },
     {
       "bn": "পরিসংখ্যান গুরুত্বপূর্ণ প্রমাণ হতে পারে, তবে ভুলভাবে উপস্থাপন করলে একই তথ্য বিভ্রান্তিকর হয়ে উঠতে পারে।",
+      "pronunciation": "porisongkhjan guruttopurno proman hote pare tobe bhulobhabe uposthapon korle ekoi tothyo bibhrantikor hoye uṭhtē pare",
       "en": "Advanced sentences practice 5",
       "context": "Advanced sentences",
       "category": "Class 8 · Advanced sentences"
     },
     {
       "bn": "একজন দক্ষ পাঠক লেখকের বক্তব্য গ্রহণ করার আগে তার যুক্তির শক্তি ও দুর্বলতা বিশ্লেষণ করে।",
+      "pronunciation": "ekjon dokkho pathok lekhoker boktobj grohon korar age tar juktir shokti o durbolota bishleshon kore",
       "en": "Advanced sentences practice 6",
       "context": "Advanced sentences",
       "category": "Class 8 · Advanced sentences"
     },
     {
       "bn": "ইন্টারনেটের মাধ্যমে তথ্য খুব দ্রুত ছড়িয়ে পড়ে। এর ফলে মানুষ সহজে সংবাদ ও জ্ঞান পেতে পারে, কিন্তু একই সঙ্গে ভুয়া তথ্যও দ্রুত ছড়াতে পারে। কোনো খবর দেখেই সেটি শেয়ার না করে প্রথমে তার উৎস, প্রকাশের তারিখ এবং অন্য নির্ভরযোগ্য সংবাদমাধ্যমের প্রতিবেদন যাচাই করা উচিত। ছবি ও শিরোনামও বিভ্রান্তিকরভাবে ব্যবহার করা হতে পারে। তাই ডিজিটাল যুগে তথ্য যাচাই একটি গুরুত্বপূর্ণ দক্ষতা।",
+      "pronunciation": "intaroneter maddhome tothyo khub druto chhodije pore er fole manush shohoje shongbad o gyan pete pare kintu ekoi shonge bhuya tothjoo druto chhodate pare kono khobor dekhei seti shejar na kore prothome tar utsho prokash-er tarikh ebong ônno nirbhorojogj songbadomadhjomer protibedon jachai kora uchit chhobi o shironamoo bibhrantikorobhabe byabohar kora hote pare tai dijital juge tothyo jachai ekti guruttopurno dokkhota",
       "en": "False information passage practice 1",
       "context": "False information passage",
       "category": "Class 8 · False information passage"
     },
     {
       "bn": "টেকসই উন্নয়ন বলতে এমন উন্নয়ন বোঝায় যা বর্তমান মানুষের প্রয়োজন পূরণ করে, কিন্তু ভবিষ্যৎ প্রজন্মের সুযোগ নষ্ট করে না। অর্থনৈতিক উন্নয়নের জন্য শিল্প ও অবকাঠামো প্রয়োজন, তবে এর ফলে পরিবেশের ক্ষতি হলে দীর্ঘমেয়াদে নতুন সমস্যা সৃষ্টি হতে পারে। নবায়নযোগ্য শক্তি, পানি সংরক্ষণ, পুনর্ব্যবহার এবং দায়িত্বশীল সম্পদ ব্যবহার টেকসই উন্নয়নের গুরুত্বপূর্ণ অংশ।",
+      "pronunciation": "tekosoi unnojon bolte emon unnojon bojhajo ja bortoman manusher proyojon puron kore kintu bhobishshot projonmer shujog noshto kore na orthonoitik unnojoner jonno shilp o obokathamo proyojon tobe er fole poribesher khoti hole dirghomejade notun shomoshsha srishti hote pare nobajonojogj shokti pani shongrokkhon punorbjobohar ebong dayittoshil shompod byabohar tekosoi unnojoner guruttopurno ongsho",
       "en": "Sustainable development passage practice 1",
       "context": "Sustainable development passage",
       "category": "Class 8 · Sustainable development passage"
     },
     {
       "bn": "শিক্ষায় প্রযুক্তির ব্যবহার দ্রুত বৃদ্ধি পাচ্ছে। ডিজিটাল বই, অনলাইন ক্লাস এবং শিক্ষামূলক সফটওয়্যার শিক্ষার্থীদের বিভিন্ন উপায়ে শেখার সুযোগ দেয়। প্রযুক্তি দূরের শিক্ষার্থীদের কাছেও শিক্ষা পৌঁছে দিতে পারে। তবে যাদের ইন্টারনেট বা উপযুক্ত যন্ত্র নেই তারা পিছিয়ে পড়তে পারে। তাই প্রযুক্তিভিত্তিক শিক্ষা চালু করার সময় সুযোগের সমতা নিশ্চিত করাও গুরুত্বপূর্ণ।",
+      "pronunciation": "shikshajo projuktir byabohar druto briddhi pacche dijital boi onolain class ebong shikkhamulok software shiksharthider bibhinn upaje shekhar shujog dey projukti durer shiksharthider kachheo shikkha pouche dite pare tobe jader internet ba upojukto jontro nei tara pichhiye porte pare tai projuktibhittik shikkha chalu korar shomoy sujoger shomota nishchito korao guruttopurno",
       "en": "Technology in education passage practice 1",
       "context": "Technology in education passage",
       "category": "Class 8 · Technology in education passage"
     },
     {
       "bn": "গল্প: বিদ্যালয়ের ছাত্র সংসদ খাবারের অপচয় কমাতে কর্মসূচি নিল। মেহেদী খাবারের পরিমাণ কমানোর প্রস্তাব দিল, কিন্তু সারা তথ্য সংগ্রহের পরামর্শ দিল। তথ্য থেকে দেখা গেল অপচয়ের বেশির ভাগই অপছন্দের খাবার থেকে হচ্ছে। খাবারের তালিকা বদলে ছোট বা বড় অংশ বেছে নেওয়ার সুযোগ দেওয়ার পর অপচয় উল্লেখযোগ্যভাবে কমে গেল।",
+      "pronunciation": "golpo biddaloyer chhatro songsod khabarer opochojo komate kormosuchi nil mehedi khabarer poriman komanor prostab dilo kintu shara tothyo songgroher poramorsho dilo tothyo theke dekha gelo opochojer beshir bhagoi opochhonder khabar theke hochchhe khabarer talika bodle chhoto ba bôṛo ongsho beche neoyar shujog dewar por opochojo ullekhjoggyobhabe kome gelo",
       "en": "Story analysis practice 1",
       "context": "Story analysis",
       "category": "Class 8 · Story analysis"
     },
     {
       "bn": "১. ছাত্র সংসদ কোন সমস্যা সমাধান করতে চেয়েছিল?",
+      "pronunciation": "ek chhatro songsod kon shomoshsha shomadhan korte chejechhil",
       "en": "Story analysis practice 2",
       "context": "Story analysis",
       "category": "Class 8 · Story analysis"
     },
     {
       "bn": "২. মেহেদীর প্রথম প্রস্তাব কী ছিল?",
+      "pronunciation": "dui mehedir prothom prostab ki chhilo",
       "en": "Story analysis practice 3",
       "context": "Story analysis",
       "category": "Class 8 · Story analysis"
     },
     {
       "bn": "৩. সারা কেন সেই প্রস্তাব নিয়ে প্রশ্ন তুলেছিল?",
+      "pronunciation": "tin shara keno shei prostab niye proshno tulechhil",
       "en": "Story analysis practice 4",
       "context": "Story analysis",
       "category": "Class 8 · Story analysis"
     },
     {
       "bn": "৪. তথ্য সংগ্রহ করে শিক্ষার্থীরা কী জানতে পেরেছিল?",
+      "pronunciation": "char tothyo shonggroho kore shikkharthira ki jante perechhil",
       "en": "Story analysis practice 5",
       "context": "Story analysis",
       "category": "Class 8 · Story analysis"
     },
     {
       "bn": "৫. কোন ঘটনা প্রমাণ করে যে সারা তথ্যভিত্তিক সিদ্ধান্তে বিশ্বাস করে?",
+      "pronunciation": "panch kon ghotona proman kore je shara tothjobhittik siddhante bishshash kore",
       "en": "Story analysis practice 6",
       "context": "Story analysis",
       "category": "Class 8 · Story analysis"
     },
     {
       "bn": "৬. তথ্য সংগ্রহ না করলে কী ধরনের ভুল সিদ্ধান্ত হতে পারত?",
+      "pronunciation": "chhoy tothyo shonggroho na korle ki dhoroner bhul shiddhanto hote paroto",
       "en": "Story analysis practice 7",
       "context": "Story analysis",
       "category": "Class 8 · Story analysis"
     },
     {
       "bn": "দাবি: বিদ্যালয়ে শিক্ষার্থীদের জন্য আরও গাছ লাগানো উচিত।",
+      "pronunciation": "dabi bidjaloje shiksharthider jonno aro gachh lagano uchit",
       "en": "Claim, evidence, analysis practice 1",
       "context": "Claim, evidence, analysis",
       "category": "Class 8 · Claim, evidence, analysis"
     },
     {
       "bn": "প্রমাণ: গাছ ছায়া দেয়, বাতাসের তাপমাত্রা কমাতে সাহায্য করে এবং বৃষ্টির পানি মাটিতে শোষিত হতে সহায়তা করে।",
+      "pronunciation": "proman gachh chhaya dey batasher tapmatra komate shahajjo kore ebong brishtir pani matite shoshit hote Shahayota kore",
       "en": "Claim, evidence, analysis practice 2",
       "context": "Claim, evidence, analysis",
       "category": "Class 8 · Claim, evidence, analysis"
     },
     {
       "bn": "বিশ্লেষণ: এই সুবিধাগুলো বিদ্যালয়ের পরিবেশকে আরও আরামদায়ক ও স্বাস্থ্যকর করতে পারে। তাই গাছ লাগানো শুধু সৌন্দর্যের জন্য নয়, ব্যবহারিক কারণেও গুরুত্বপূর্ণ।",
+      "pronunciation": "bishleshon ei subidhagulo biddaloyer poribeshoke aro aramdayok o shasthokor korte pare tai gachh lagano shudhu soundorjer jonno noy bjoboharik karoneo guruttopurno",
       "en": "Claim, evidence, analysis practice 3",
       "context": "Claim, evidence, analysis",
       "category": "Class 8 · Claim, evidence, analysis"
     },
     {
       "bn": "নাজিয়া উৎসের নির্ভরযোগ্যতা সম্পর্কে সচেতন এবং যাচাই ছাড়া তথ্য গ্রহণ করতে চায় না।",
+      "pronunciation": "najija utoser nirbhorojogjota shomporke shôcheton ebong jachai chhara tothyo grohon korte chay na",
       "en": "Reading and writing practice practice 1",
       "context": "Reading and writing practice",
       "category": "Class 8 · Reading and writing practice"
     },
     {
       "bn": "নতুন বাসসেবা চালুর পর প্রতিদিন গড়ে পাঁচ হাজার যাত্রী এটি ব্যবহার করছে—এটি নিরপেক্ষ ও যাচাইযোগ্য দাবি।",
+      "pronunciation": "notun basoseba chalur por protidin gore pãch hajar jatri eti byabohar korochhe—eti niropeksho o jachaijogj dabi",
       "en": "Reading and writing practice practice 2",
       "context": "Reading and writing practice",
       "category": "Class 8 · Reading and writing practice"
     },
     {
       "bn": "পুনর্ব্যবহারযোগ্য ব্যাগের ব্যবহার প্লাস্টিক বর্জ্য কমাতে কিছুটা সফল হয়েছে, তবে সমান বাস্তবায়নের জন্য আরও সচেতনতা প্রয়োজন।",
+      "pronunciation": "punorbjoboharojogj bjager byabohar plastik borjjo komate kichuta shofol hoyechhe tobe shoman bastobajoner jonno aro sochetonota proyojon",
       "en": "Reading and writing practice practice 3",
       "context": "Reading and writing practice",
       "category": "Class 8 · Reading and writing practice"
     },
     {
       "bn": "বিদ্যালয়ের সময় পরে শুরু করার সিদ্ধান্তে শিক্ষার্থীদের স্বাস্থ্যগত সুবিধা ও বাস্তব সমস্যা উভয়ই বিবেচনা করা উচিত।",
+      "pronunciation": "biddaloyer shomoy pore shuru korar siddhante shiksharthider sbasthjogot shubidha o bastob shomoshsha ubhojoi bibechona kora uchit",
       "en": "Reading and writing practice practice 4",
       "context": "Reading and writing practice",
       "category": "Class 8 · Reading and writing practice"
     },
     {
       "bn": "সংবাদপত্র ও সামাজিক যোগাযোগমাধ্যমের তথ্য অন্ধভাবে গ্রহণ না করে উৎস ও প্রমাণ যাচাই করা উচিত।",
+      "pronunciation": "songbadopotr o shamajik jogajogomadhjomer tothyo ondhobhabe grohon na kore utsho o proman jachai kora uchit",
       "en": "Reading and writing practice practice 5",
       "context": "Reading and writing practice",
       "category": "Class 8 · Reading and writing practice"
     },
     {
       "bn": "আমার মতে বিদ্যালয়ে আরও গাছ লাগানো উচিত। গবেষণায় দেখা যায় গাছপালা আশপাশের তাপমাত্রা কমাতে সাহায্য করতে পারে। তাই বেশি গাছ শিক্ষার্থীদের জন্য আরও আরামদায়ক পরিবেশ তৈরি করতে পারে।",
+      "pronunciation": "amar mote bidjaloje aro gachh lagano uchit gobeshonajo dekha Jay gachhopala ashopasher tapmatra komate shahajjo korte pare tai beshi gachh shiksharthider jonno aro aramdayok poribesh toiri korte pare",
       "en": "Important structures practice 1",
       "context": "Important structures",
       "category": "Class 8 · Important structures"
     },
     {
       "bn": "কেউ কেউ বলতে পারে ডিজিটাল বইয়ের জন্য যন্ত্র কেনা ব্যয়বহুল। তবে একটি যন্ত্রে বহু বই রাখা যায়, ফলে দীর্ঘমেয়াদে কিছু খরচ কমতে পারে।",
+      "pronunciation": "keu keu bolte pare dijital boiyer jonno jontro kena bjojobohul tobe ekti jontre bohu boi rakha Jay fole dirghomejade kichhu khoroch komote pare",
       "en": "Important structures practice 2",
       "context": "Important structures",
       "category": "Class 8 · Important structures"
     },
     {
       "bn": "এই তথ্যটি বিশ্বাসযোগ্য মনে হলেও উৎসটি কে প্রকাশ করেছে এবং প্রমাণ কোথা থেকে এসেছে তা যাচাই করা দরকার।",
+      "pronunciation": "ei tothyoti bishbasojogj mone holeo utosoti ke prōkāsh koreche ebong proman kotha theke eshechhe ta jachai kora dorkar",
       "en": "Important structures practice 3",
       "context": "Important structures",
       "category": "Class 8 · Important structures"
     },
     {
       "bn": "লেখক বারবার নেতিবাচক শব্দ ব্যবহার করেছেন, যা তার দৃষ্টিভঙ্গিতে পক্ষপাত থাকার ইঙ্গিত দিতে পারে।",
+      "pronunciation": "lekhok barbar netibachok shobdo byabohar korechen ja tar drishtibhonggite pokshopat thakar ingit dite pare",
       "en": "Important structures practice 4",
       "context": "Important structures",
       "category": "Class 8 · Important structures"
     },
     {
       "bn": "প্রমাণগুলো একই সিদ্ধান্তকে সমর্থন করছে। অতএব, দাবিটি যুক্তিসঙ্গত বলে মনে হয়।",
+      "pronunciation": "promanogulo ekoi siddhantoke somorthon korchhe otoeb dabiti juktishongoto bole mone hoy",
       "en": "Important structures practice 5",
       "context": "Important structures",
       "category": "Class 8 · Important structures"
     },
     {
       "bn": "মূলভাব, দৃষ্টিভঙ্গি, লেখকের উদ্দেশ্য, যুক্তি, প্রমাণ এবং পক্ষপাত শনাক্ত করতে পারা উচিত।",
+      "pronunciation": "mulobhab drishtibhongi lekhoker uddeshsho jukti proman ebong pokshopat shonakto korte para uchit",
       "en": "End-of-Class 8 skills practice 1",
       "context": "End-of-Class 8 skills",
       "category": "Class 8 · End-of-Class 8 skills"
     },
     {
       "bn": "প্রমাণ কতটা শক্তিশালী, প্রাসঙ্গিক ও নির্ভরযোগ্য তা বিচার করতে পারা উচিত।",
+      "pronunciation": "proman kotota shoktishali prashongik o nirbhorojogj ta Bichar korte para uchit",
       "en": "End-of-Class 8 skills practice 2",
       "context": "End-of-Class 8 skills",
       "category": "Class 8 · End-of-Class 8 skills"
     },
     {
       "bn": "লেখক, প্রকাশক, তারিখ, প্রমাণ, উদ্দেশ্য ও অন্যান্য উৎসের সঙ্গে সামঞ্জস্য দেখে তথ্যসূত্র যাচাই করতে পারা উচিত।",
+      "pronunciation": "lekhok prokashok tarikh proman uddeshsho o onjanj utoser shonge samonyjosj dekhe tothjosutr jachai korte para uchit",
       "en": "End-of-Class 8 skills practice 3",
       "context": "End-of-Class 8 skills",
       "category": "Class 8 · End-of-Class 8 skills"
     },
     {
       "bn": "চরিত্রের উদ্দেশ্য, পরিবর্তন ও সিদ্ধান্তের ফলাফল বিশ্লেষণ করতে পারা উচিত।",
+      "pronunciation": "choritrer uddeshsho poriborton o siddhanter pholaphol bishleshon korte para uchit",
       "en": "End-of-Class 8 skills practice 4",
       "context": "End-of-Class 8 skills",
       "category": "Class 8 · End-of-Class 8 skills"
     },
     {
       "bn": "বিপরীত অবস্থান সঠিকভাবে উপস্থাপন করে যুক্তিসঙ্গত প্রতিউত্তর দিতে পারা উচিত।",
+      "pronunciation": "biporit obosthan shothikbhabe uposthapon kore juktishongoto protiuttor dite para uchit",
       "en": "End-of-Class 8 skills practice 5",
       "context": "End-of-Class 8 skills",
       "category": "Class 8 · End-of-Class 8 skills"
     },
     {
       "bn": "দাবি, প্রমাণ, বিশ্লেষণ, বিপরীত মত ও উপসংহার ব্যবহার করে যুক্তিনির্ভর প্রবন্ধ লিখতে পারা উচিত।",
+      "pronunciation": "dabi proman bishleshon biporit moto o uposonghar byabohar kore juktinirbhor probondh likhte para uchit",
       "en": "End-of-Class 8 skills practice 6",
       "context": "End-of-Class 8 skills",
       "category": "Class 8 · End-of-Class 8 skills"

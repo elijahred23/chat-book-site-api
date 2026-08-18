@@ -8,2106 +8,2527 @@
   "vocab": [
     {
       "bn": "আমি",
+      "pronunciation": "ami",
       "en": "I",
       "category": "Class 1 · Very common words"
     },
     {
       "bn": "তুমি",
+      "pronunciation": "tumi",
       "en": "you",
       "category": "Class 1 · Very common words"
     },
     {
       "bn": "সে",
+      "pronunciation": "she",
       "en": "he/she",
       "category": "Class 1 · Very common words"
     },
     {
       "bn": "আমরা",
+      "pronunciation": "amra",
       "en": "we",
       "category": "Class 1 · Very common words"
     },
     {
       "bn": "তোমরা",
+      "pronunciation": "tomra",
       "en": "you all",
       "category": "Class 1 · Very common words"
     },
     {
       "bn": "তারা",
+      "pronunciation": "tara",
       "en": "they",
       "category": "Class 1 · Very common words"
     },
     {
       "bn": "এটা",
+      "pronunciation": "eta",
       "en": "this",
       "category": "Class 1 · Very common words"
     },
     {
       "bn": "ওটা",
+      "pronunciation": "ota",
       "en": "that",
       "category": "Class 1 · Very common words"
     },
     {
       "bn": "এই",
+      "pronunciation": "ei",
       "en": "this one",
       "category": "Class 1 · Very common words"
     },
     {
       "bn": "ওই",
+      "pronunciation": "oi",
       "en": "that one",
       "category": "Class 1 · Very common words"
     },
     {
       "bn": "এখানে",
+      "pronunciation": "ekhane",
       "en": "here",
       "category": "Class 1 · Very common words"
     },
     {
       "bn": "সেখানে",
+      "pronunciation": "sekhane",
       "en": "there",
       "category": "Class 1 · Very common words"
     },
     {
       "bn": "কে",
+      "pronunciation": "ke",
       "en": "who",
       "category": "Class 1 · Very common words"
     },
     {
       "bn": "কী",
+      "pronunciation": "ki",
       "en": "what",
       "category": "Class 1 · Very common words"
     },
     {
       "bn": "কোথায়",
+      "pronunciation": "kothay",
       "en": "where",
       "category": "Class 1 · Very common words"
     },
     {
       "bn": "কখন",
+      "pronunciation": "kokhon",
       "en": "when",
       "category": "Class 1 · Very common words"
     },
     {
       "bn": "কেন",
+      "pronunciation": "keno",
       "en": "why",
       "category": "Class 1 · Very common words"
     },
     {
       "bn": "কেমন",
+      "pronunciation": "kemon",
       "en": "how",
       "category": "Class 1 · Very common words"
     },
     {
       "bn": "কত",
+      "pronunciation": "koto",
       "en": "how many",
       "category": "Class 1 · Very common words"
     },
     {
       "bn": "হ্যাঁ",
+      "pronunciation": "hã",
       "en": "yes",
       "category": "Class 1 · Very common words"
     },
     {
       "bn": "না",
+      "pronunciation": "na",
       "en": "no",
       "category": "Class 1 · Very common words"
     },
     {
       "bn": "আছে",
+      "pronunciation": "achhe",
       "en": "exists/has",
       "category": "Class 1 · Very common words"
     },
     {
       "bn": "নেই",
+      "pronunciation": "nei",
       "en": "does not exist",
       "category": "Class 1 · Very common words"
     },
     {
       "bn": "হবে",
+      "pronunciation": "hobe",
       "en": "will be",
       "category": "Class 1 · Very common words"
     },
     {
       "bn": "ছিল",
+      "pronunciation": "chhilo",
       "en": "was",
       "category": "Class 1 · Very common words"
     },
     {
       "bn": "খুব",
+      "pronunciation": "khub",
       "en": "very",
       "category": "Class 1 · Very common words"
     },
     {
       "bn": "একটু",
+      "pronunciation": "ektu",
       "en": "a little",
       "category": "Class 1 · Very common words"
     },
     {
       "bn": "আবার",
+      "pronunciation": "abar",
       "en": "again",
       "category": "Class 1 · Very common words"
     },
     {
       "bn": "এখন",
+      "pronunciation": "ekhon",
       "en": "now",
       "category": "Class 1 · Very common words"
     },
     {
       "bn": "আজ",
+      "pronunciation": "aj",
       "en": "today",
       "category": "Class 1 · Very common words"
     },
     {
       "bn": "কাল",
+      "pronunciation": "kal",
       "en": "tomorrow",
       "category": "Class 1 · Very common words"
     },
     {
       "bn": "আগে",
+      "pronunciation": "age",
       "en": "before",
       "category": "Class 1 · Very common words"
     },
     {
       "bn": "পরে",
+      "pronunciation": "pore",
       "en": "after",
       "category": "Class 1 · Very common words"
     },
     {
       "bn": "মা",
+      "pronunciation": "ma",
       "en": "mother",
       "category": "Class 1 · Family"
     },
     {
       "bn": "বাবা",
+      "pronunciation": "baba",
       "en": "father",
       "category": "Class 1 · Family"
     },
     {
       "bn": "ভাই",
+      "pronunciation": "bhai",
       "en": "brother",
       "category": "Class 1 · Family"
     },
     {
       "bn": "বোন",
+      "pronunciation": "bon",
       "en": "sister",
       "category": "Class 1 · Family"
     },
     {
       "bn": "দাদা",
+      "pronunciation": "dada",
       "en": "elder brother",
       "category": "Class 1 · Family"
     },
     {
       "bn": "দাদি",
+      "pronunciation": "dadi",
       "en": "paternal grandmother",
       "category": "Class 1 · Family"
     },
     {
       "bn": "নানা",
+      "pronunciation": "nana",
       "en": "maternal grandfather",
       "category": "Class 1 · Family"
     },
     {
       "bn": "নানি",
+      "pronunciation": "nani",
       "en": "maternal grandmother",
       "category": "Class 1 · Family"
     },
     {
       "bn": "চাচা",
+      "pronunciation": "chacha",
       "en": "paternal uncle",
       "category": "Class 1 · Family"
     },
     {
       "bn": "চাচি",
+      "pronunciation": "chachi",
       "en": "paternal aunt",
       "category": "Class 1 · Family"
     },
     {
       "bn": "মামা",
+      "pronunciation": "mama",
       "en": "maternal uncle",
       "category": "Class 1 · Family"
     },
     {
       "bn": "মামি",
+      "pronunciation": "mami",
       "en": "maternal aunt",
       "category": "Class 1 · Family"
     },
     {
       "bn": "খালা",
+      "pronunciation": "khala",
       "en": "maternal aunt",
       "category": "Class 1 · Family"
     },
     {
       "bn": "খালু",
+      "pronunciation": "khalu",
       "en": "maternal uncle by marriage",
       "category": "Class 1 · Family"
     },
     {
       "bn": "পরিবার",
+      "pronunciation": "poribar",
       "en": "family",
       "category": "Class 1 · Family"
     },
     {
       "bn": "শিশু",
+      "pronunciation": "shishu",
       "en": "child",
       "category": "Class 1 · Family"
     },
     {
       "bn": "ছেলে",
+      "pronunciation": "chhele",
       "en": "boy",
       "category": "Class 1 · Family"
     },
     {
       "bn": "মেয়ে",
+      "pronunciation": "meye",
       "en": "girl",
       "category": "Class 1 · Family"
     },
     {
       "bn": "মানুষ",
+      "pronunciation": "manush",
       "en": "person",
       "category": "Class 1 · Family"
     },
     {
       "bn": "বন্ধু",
+      "pronunciation": "bondhu",
       "en": "friend",
       "category": "Class 1 · Family"
     },
     {
       "bn": "মাথা",
+      "pronunciation": "matha",
       "en": "head",
       "category": "Class 1 · Body"
     },
     {
       "bn": "চুল",
+      "pronunciation": "chul",
       "en": "hair",
       "category": "Class 1 · Body"
     },
     {
       "bn": "মুখ",
+      "pronunciation": "mukh",
       "en": "face",
       "category": "Class 1 · Body"
     },
     {
       "bn": "চোখ",
+      "pronunciation": "chokh",
       "en": "eye",
       "category": "Class 1 · Body"
     },
     {
       "bn": "কান",
+      "pronunciation": "kan",
       "en": "ear",
       "category": "Class 1 · Body"
     },
     {
       "bn": "নাক",
+      "pronunciation": "nak",
       "en": "nose",
       "category": "Class 1 · Body"
     },
     {
       "bn": "ঠোঁট",
+      "pronunciation": "thont",
       "en": "lip",
       "category": "Class 1 · Body"
     },
     {
       "bn": "মুখ",
+      "pronunciation": "mukh",
       "en": "mouth",
       "category": "Class 1 · Body"
     },
     {
       "bn": "দাঁত",
+      "pronunciation": "dant",
       "en": "tooth",
       "category": "Class 1 · Body"
     },
     {
       "bn": "জিহ্বা",
+      "pronunciation": "jihba",
       "en": "tongue",
       "category": "Class 1 · Body"
     },
     {
       "bn": "গলা",
+      "pronunciation": "gola",
       "en": "throat",
       "category": "Class 1 · Body"
     },
     {
       "bn": "ঘাড়",
+      "pronunciation": "ghar",
       "en": "neck",
       "category": "Class 1 · Body"
     },
     {
       "bn": "কাঁধ",
+      "pronunciation": "kandh",
       "en": "shoulder",
       "category": "Class 1 · Body"
     },
     {
       "bn": "বুক",
+      "pronunciation": "buk",
       "en": "chest",
       "category": "Class 1 · Body"
     },
     {
       "bn": "পেট",
+      "pronunciation": "pet",
       "en": "stomach",
       "category": "Class 1 · Body"
     },
     {
       "bn": "পিঠ",
+      "pronunciation": "pith",
       "en": "back",
       "category": "Class 1 · Body"
     },
     {
       "bn": "হাত",
+      "pronunciation": "hat",
       "en": "hand",
       "category": "Class 1 · Body"
     },
     {
       "bn": "আঙুল",
+      "pronunciation": "angul",
       "en": "finger",
       "category": "Class 1 · Body"
     },
     {
       "bn": "পা",
+      "pronunciation": "pa",
       "en": "foot",
       "category": "Class 1 · Body"
     },
     {
       "bn": "হাঁটু",
+      "pronunciation": "hantu",
       "en": "knee",
       "category": "Class 1 · Body"
     },
     {
       "bn": "পায়ের আঙুল",
+      "pronunciation": "payer angul",
       "en": "toe",
       "category": "Class 1 · Body"
     },
     {
       "bn": "বাড়ি",
+      "pronunciation": "bari",
       "en": "house",
       "category": "Class 1 · Home"
     },
     {
       "bn": "ঘর",
+      "pronunciation": "ghor",
       "en": "room",
       "category": "Class 1 · Home"
     },
     {
       "bn": "দরজা",
+      "pronunciation": "dorja",
       "en": "door",
       "category": "Class 1 · Home"
     },
     {
       "bn": "জানালা",
+      "pronunciation": "janala",
       "en": "window",
       "category": "Class 1 · Home"
     },
     {
       "bn": "ছাদ",
+      "pronunciation": "chhad",
       "en": "roof",
       "category": "Class 1 · Home"
     },
     {
       "bn": "দেয়াল",
+      "pronunciation": "deyal",
       "en": "wall",
       "category": "Class 1 · Home"
     },
     {
       "bn": "মেঝে",
+      "pronunciation": "mejhe",
       "en": "floor",
       "category": "Class 1 · Home"
     },
     {
       "bn": "সিঁড়ি",
+      "pronunciation": "shiri",
       "en": "stairs",
       "category": "Class 1 · Home"
     },
     {
       "bn": "বারান্দা",
+      "pronunciation": "baranda",
       "en": "balcony",
       "category": "Class 1 · Home"
     },
     {
       "bn": "রান্নাঘর",
+      "pronunciation": "rannaghor",
       "en": "kitchen",
       "category": "Class 1 · Home"
     },
     {
       "bn": "বাথরুম",
+      "pronunciation": "bathorum",
       "en": "bathroom",
       "category": "Class 1 · Home"
     },
     {
       "bn": "বিছানা",
+      "pronunciation": "bichhana",
       "en": "bed",
       "category": "Class 1 · Home"
     },
     {
       "bn": "বালিশ",
+      "pronunciation": "balish",
       "en": "pillow",
       "category": "Class 1 · Home"
     },
     {
       "bn": "চাদর",
+      "pronunciation": "chador",
       "en": "sheet",
       "category": "Class 1 · Home"
     },
     {
       "bn": "টেবিল",
+      "pronunciation": "ṭebil",
       "en": "table",
       "category": "Class 1 · Home"
     },
     {
       "bn": "চেয়ার",
+      "pronunciation": "cheyar",
       "en": "chair",
       "category": "Class 1 · Home"
     },
     {
       "bn": "আলমারি",
+      "pronunciation": "almari",
       "en": "cupboard",
       "category": "Class 1 · Home"
     },
     {
       "bn": "আয়না",
+      "pronunciation": "ayna",
       "en": "mirror",
       "category": "Class 1 · Home"
     },
     {
       "bn": "বাতি",
+      "pronunciation": "bati",
       "en": "light",
       "category": "Class 1 · Home"
     },
     {
       "bn": "পাখা",
+      "pronunciation": "pakha",
       "en": "fan",
       "category": "Class 1 · Home"
     },
     {
       "bn": "ঘড়ি",
+      "pronunciation": "ghori",
       "en": "clock",
       "category": "Class 1 · Home"
     },
     {
       "bn": "চাবি",
+      "pronunciation": "chabi",
       "en": "key",
       "category": "Class 1 · Home"
     },
     {
       "bn": "স্কুল",
+      "pronunciation": "skul",
       "en": "school",
       "category": "Class 1 · School"
     },
     {
       "bn": "শ্রেণি",
+      "pronunciation": "shreni",
       "en": "class",
       "category": "Class 1 · School"
     },
     {
       "bn": "শিক্ষক",
+      "pronunciation": "shikkhok",
       "en": "male teacher",
       "category": "Class 1 · School"
     },
     {
       "bn": "শিক্ষিকা",
+      "pronunciation": "shikshika",
       "en": "female teacher",
       "category": "Class 1 · School"
     },
     {
       "bn": "ছাত্র",
+      "pronunciation": "chhatro",
       "en": "male student",
       "category": "Class 1 · School"
     },
     {
       "bn": "ছাত্রী",
+      "pronunciation": "Chhatri",
       "en": "female student",
       "category": "Class 1 · School"
     },
     {
       "bn": "বই",
+      "pronunciation": "boi",
       "en": "book",
       "category": "Class 1 · School"
     },
     {
       "bn": "খাতা",
+      "pronunciation": "khata",
       "en": "notebook",
       "category": "Class 1 · School"
     },
     {
       "bn": "কলম",
+      "pronunciation": "kolom",
       "en": "pen",
       "category": "Class 1 · School"
     },
     {
       "bn": "পেন্সিল",
+      "pronunciation": "pensil",
       "en": "pencil",
       "category": "Class 1 · School"
     },
     {
       "bn": "রাবার",
+      "pronunciation": "rabar",
       "en": "eraser",
       "category": "Class 1 · School"
     },
     {
       "bn": "ব্যাগ",
+      "pronunciation": "bæg",
       "en": "bag",
       "category": "Class 1 · School"
     },
     {
       "bn": "কাগজ",
+      "pronunciation": "kagoj",
       "en": "paper",
       "category": "Class 1 · School"
     },
     {
       "bn": "বোর্ড",
+      "pronunciation": "bordo",
       "en": "board",
       "category": "Class 1 · School"
     },
     {
       "bn": "চক",
+      "pronunciation": "chok",
       "en": "chalk",
       "category": "Class 1 · School"
     },
     {
       "bn": "বেঞ্চ",
+      "pronunciation": "benych",
       "en": "bench",
       "category": "Class 1 · School"
     },
     {
       "bn": "পরীক্ষা",
+      "pronunciation": "porikkha",
       "en": "exam",
       "category": "Class 1 · School"
     },
     {
       "bn": "পড়া",
+      "pronunciation": "pora",
       "en": "reading",
       "category": "Class 1 · School"
     },
     {
       "bn": "লেখা",
+      "pronunciation": "lekha",
       "en": "writing",
       "category": "Class 1 · School"
     },
     {
       "bn": "অঙ্ক",
+      "pronunciation": "ôngko",
       "en": "mathematics",
       "category": "Class 1 · School"
     },
     {
       "bn": "প্রশ্ন",
+      "pronunciation": "proshno",
       "en": "question",
       "category": "Class 1 · School"
     },
     {
       "bn": "উত্তর",
+      "pronunciation": "uttor",
       "en": "answer",
       "category": "Class 1 · School"
     },
     {
       "bn": "ছুটি",
+      "pronunciation": "chhuti",
       "en": "holiday",
       "category": "Class 1 · School"
     },
     {
       "bn": "ভাত",
+      "pronunciation": "bhat",
       "en": "rice",
       "category": "Class 1 · Food and drink"
     },
     {
       "bn": "রুটি",
+      "pronunciation": "ruti",
       "en": "flatbread",
       "category": "Class 1 · Food and drink"
     },
     {
       "bn": "ডাল",
+      "pronunciation": "ḍal",
       "en": "lentils",
       "category": "Class 1 · Food and drink"
     },
     {
       "bn": "মাছ",
+      "pronunciation": "machh",
       "en": "fish",
       "category": "Class 1 · Food and drink"
     },
     {
       "bn": "মাংস",
+      "pronunciation": "mangsho",
       "en": "meat",
       "category": "Class 1 · Food and drink"
     },
     {
       "bn": "ডিম",
+      "pronunciation": "ḍim",
       "en": "egg",
       "category": "Class 1 · Food and drink"
     },
     {
       "bn": "দুধ",
+      "pronunciation": "dudh",
       "en": "milk",
       "category": "Class 1 · Food and drink"
     },
     {
       "bn": "পানি",
+      "pronunciation": "pani",
       "en": "water",
       "category": "Class 1 · Food and drink"
     },
     {
       "bn": "চা",
+      "pronunciation": "cha",
       "en": "tea",
       "category": "Class 1 · Food and drink"
     },
     {
       "bn": "জুস",
+      "pronunciation": "jus",
       "en": "juice",
       "category": "Class 1 · Food and drink"
     },
     {
       "bn": "ফল",
+      "pronunciation": "phol / fol",
       "en": "fruit",
       "category": "Class 1 · Food and drink"
     },
     {
       "bn": "সবজি",
+      "pronunciation": "shobji",
       "en": "vegetable",
       "category": "Class 1 · Food and drink"
     },
     {
       "bn": "আলু",
+      "pronunciation": "alu",
       "en": "potato",
       "category": "Class 1 · Food and drink"
     },
     {
       "bn": "টমেটো",
+      "pronunciation": "ṭomeṭo",
       "en": "tomato",
       "category": "Class 1 · Food and drink"
     },
     {
       "bn": "পেঁয়াজ",
+      "pronunciation": "penjoj",
       "en": "onion",
       "category": "Class 1 · Food and drink"
     },
     {
       "bn": "লবণ",
+      "pronunciation": "lobon",
       "en": "salt",
       "category": "Class 1 · Food and drink"
     },
     {
       "bn": "চিনি",
+      "pronunciation": "chini",
       "en": "sugar",
       "category": "Class 1 · Food and drink"
     },
     {
       "bn": "তেল",
+      "pronunciation": "tel",
       "en": "oil",
       "category": "Class 1 · Food and drink"
     },
     {
       "bn": "মধু",
+      "pronunciation": "modhu",
       "en": "honey",
       "category": "Class 1 · Food and drink"
     },
     {
       "bn": "বিস্কুট",
+      "pronunciation": "biskut",
       "en": "biscuit",
       "category": "Class 1 · Food and drink"
     },
     {
       "bn": "কেক",
+      "pronunciation": "cake",
       "en": "cake",
       "category": "Class 1 · Food and drink"
     },
     {
       "bn": "মিষ্টি",
+      "pronunciation": "mishti",
       "en": "sweet",
       "category": "Class 1 · Food and drink"
     },
     {
       "bn": "আম",
+      "pronunciation": "am",
       "en": "mango",
       "category": "Class 1 · Fruit"
     },
     {
       "bn": "কলা",
+      "pronunciation": "Kola",
       "en": "banana",
       "category": "Class 1 · Fruit"
     },
     {
       "bn": "আপেল",
+      "pronunciation": "apel",
       "en": "apple",
       "category": "Class 1 · Fruit"
     },
     {
       "bn": "কমলা",
+      "pronunciation": "komola",
       "en": "orange",
       "category": "Class 1 · Fruit"
     },
     {
       "bn": "আঙুর",
+      "pronunciation": "angur",
       "en": "grape",
       "category": "Class 1 · Fruit"
     },
     {
       "bn": "পেয়ারা",
+      "pronunciation": "pejora",
       "en": "guava",
       "category": "Class 1 · Fruit"
     },
     {
       "bn": "লিচু",
+      "pronunciation": "lichu",
       "en": "lychee",
       "category": "Class 1 · Fruit"
     },
     {
       "bn": "তরমুজ",
+      "pronunciation": "toromuj",
       "en": "watermelon",
       "category": "Class 1 · Fruit"
     },
     {
       "bn": "নারকেল",
+      "pronunciation": "narokel",
       "en": "coconut",
       "category": "Class 1 · Fruit"
     },
     {
       "bn": "কাঁঠাল",
+      "pronunciation": "kanthal",
       "en": "jackfruit",
       "category": "Class 1 · Fruit"
     },
     {
       "bn": "আনারস",
+      "pronunciation": "anaros",
       "en": "pineapple",
       "category": "Class 1 · Fruit"
     },
     {
       "bn": "পেঁপে",
+      "pronunciation": "Pepe",
       "en": "papaya",
       "category": "Class 1 · Fruit"
     },
     {
       "bn": "লেবু",
+      "pronunciation": "lebu",
       "en": "lemon",
       "category": "Class 1 · Fruit"
     },
     {
       "bn": "কুকুর",
+      "pronunciation": "kukur",
       "en": "dog",
       "category": "Class 1 · Animals"
     },
     {
       "bn": "বিড়াল",
+      "pronunciation": "biral",
       "en": "cat",
       "category": "Class 1 · Animals"
     },
     {
       "bn": "গরু",
+      "pronunciation": "goru",
       "en": "cow",
       "category": "Class 1 · Animals"
     },
     {
       "bn": "ছাগল",
+      "pronunciation": "chhagol",
       "en": "goat",
       "category": "Class 1 · Animals"
     },
     {
       "bn": "ঘোড়া",
+      "pronunciation": "ghora",
       "en": "horse",
       "category": "Class 1 · Animals"
     },
     {
       "bn": "বাঘ",
+      "pronunciation": "Bagh",
       "en": "tiger",
       "category": "Class 1 · Animals"
     },
     {
       "bn": "সিংহ",
+      "pronunciation": "shingho",
       "en": "lion",
       "category": "Class 1 · Animals"
     },
     {
       "bn": "হাতি",
+      "pronunciation": "Hati",
       "en": "elephant",
       "category": "Class 1 · Animals"
     },
     {
       "bn": "বানর",
+      "pronunciation": "banor",
       "en": "monkey",
       "category": "Class 1 · Animals"
     },
     {
       "bn": "হরিণ",
+      "pronunciation": "horin",
       "en": "deer",
       "category": "Class 1 · Animals"
     },
     {
       "bn": "ভালুক",
+      "pronunciation": "bhaluk",
       "en": "bear",
       "category": "Class 1 · Animals"
     },
     {
       "bn": "শিয়াল",
+      "pronunciation": "shijol",
       "en": "fox",
       "category": "Class 1 · Animals"
     },
     {
       "bn": "খরগোশ",
+      "pronunciation": "khorgosh",
       "en": "rabbit",
       "category": "Class 1 · Animals"
     },
     {
       "bn": "ইঁদুর",
+      "pronunciation": "indur",
       "en": "mouse",
       "category": "Class 1 · Animals"
     },
     {
       "bn": "সাপ",
+      "pronunciation": "Shaap",
       "en": "snake",
       "category": "Class 1 · Animals"
     },
     {
       "bn": "মাছ",
+      "pronunciation": "machh",
       "en": "fish",
       "category": "Class 1 · Animals"
     },
     {
       "bn": "ব্যাঙ",
+      "pronunciation": "byang",
       "en": "frog",
       "category": "Class 1 · Animals"
     },
     {
       "bn": "পাখি",
+      "pronunciation": "pakhi",
       "en": "bird",
       "category": "Class 1 · Birds and insects"
     },
     {
       "bn": "কাক",
+      "pronunciation": "kak",
       "en": "crow",
       "category": "Class 1 · Birds and insects"
     },
     {
       "bn": "কবুতর",
+      "pronunciation": "kobutor",
       "en": "pigeon",
       "category": "Class 1 · Birds and insects"
     },
     {
       "bn": "চড়ুই",
+      "pronunciation": "chorui",
       "en": "sparrow",
       "category": "Class 1 · Birds and insects"
     },
     {
       "bn": "হাঁস",
+      "pronunciation": "hãsh",
       "en": "duck",
       "category": "Class 1 · Birds and insects"
     },
     {
       "bn": "মুরগি",
+      "pronunciation": "murgi",
       "en": "hen",
       "category": "Class 1 · Birds and insects"
     },
     {
       "bn": "মোরগ",
+      "pronunciation": "Morog",
       "en": "rooster",
       "category": "Class 1 · Birds and insects"
     },
     {
       "bn": "ঈগল",
+      "pronunciation": "igol",
       "en": "eagle",
       "category": "Class 1 · Birds and insects"
     },
     {
       "bn": "পেঁচা",
+      "pronunciation": "pencha",
       "en": "owl",
       "category": "Class 1 · Birds and insects"
     },
     {
       "bn": "প্রজাপতি",
+      "pronunciation": "Projapoti",
       "en": "butterfly",
       "category": "Class 1 · Birds and insects"
     },
     {
       "bn": "মৌমাছি",
+      "pronunciation": "moumachi",
       "en": "bee",
       "category": "Class 1 · Birds and insects"
     },
     {
       "bn": "পিঁপড়া",
+      "pronunciation": "pinpod",
       "en": "ant",
       "category": "Class 1 · Birds and insects"
     },
     {
       "bn": "মশা",
+      "pronunciation": "mosha",
       "en": "mosquito",
       "category": "Class 1 · Birds and insects"
     },
     {
       "bn": "মাছি",
+      "pronunciation": "machhi",
       "en": "fly",
       "category": "Class 1 · Birds and insects"
     },
     {
       "bn": "আকাশ",
+      "pronunciation": "akash",
       "en": "sky",
       "category": "Class 1 · Nature"
     },
     {
       "bn": "সূর্য",
+      "pronunciation": "shurjo",
       "en": "sun",
       "category": "Class 1 · Nature"
     },
     {
       "bn": "চাঁদ",
+      "pronunciation": "chãd",
       "en": "moon",
       "category": "Class 1 · Nature"
     },
     {
       "bn": "তারা",
+      "pronunciation": "tara",
       "en": "star",
       "category": "Class 1 · Nature"
     },
     {
       "bn": "মেঘ",
+      "pronunciation": "megh",
       "en": "cloud",
       "category": "Class 1 · Nature"
     },
     {
       "bn": "বৃষ্টি",
+      "pronunciation": "brishti",
       "en": "rain",
       "category": "Class 1 · Nature"
     },
     {
       "bn": "বাতাস",
+      "pronunciation": "batash",
       "en": "wind",
       "category": "Class 1 · Nature"
     },
     {
       "bn": "ঝড়",
+      "pronunciation": "jhor",
       "en": "storm",
       "category": "Class 1 · Nature"
     },
     {
       "bn": "নদী",
+      "pronunciation": "nodi",
       "en": "river",
       "category": "Class 1 · Nature"
     },
     {
       "bn": "পুকুর",
+      "pronunciation": "pukur",
       "en": "pond",
       "category": "Class 1 · Nature"
     },
     {
       "bn": "সাগর",
+      "pronunciation": "sagor",
       "en": "sea",
       "category": "Class 1 · Nature"
     },
     {
       "bn": "পাহাড়",
+      "pronunciation": "pahar",
       "en": "mountain",
       "category": "Class 1 · Nature"
     },
     {
       "bn": "মাঠ",
+      "pronunciation": "math",
       "en": "field",
       "category": "Class 1 · Nature"
     },
     {
       "bn": "মাটি",
+      "pronunciation": "mati",
       "en": "soil",
       "category": "Class 1 · Nature"
     },
     {
       "bn": "বালি",
+      "pronunciation": "bali",
       "en": "sand",
       "category": "Class 1 · Nature"
     },
     {
       "bn": "গাছ",
+      "pronunciation": "gachh",
       "en": "tree",
       "category": "Class 1 · Nature"
     },
     {
       "bn": "ফুল",
+      "pronunciation": "phul / ful",
       "en": "flower",
       "category": "Class 1 · Nature"
     },
     {
       "bn": "পাতা",
+      "pronunciation": "pata",
       "en": "leaf",
       "category": "Class 1 · Nature"
     },
     {
       "bn": "ঘাস",
+      "pronunciation": "ghash",
       "en": "grass",
       "category": "Class 1 · Nature"
     },
     {
       "bn": "বন",
+      "pronunciation": "bon",
       "en": "forest",
       "category": "Class 1 · Nature"
     },
     {
       "bn": "লাল",
+      "pronunciation": "lal",
       "en": "red",
       "category": "Class 1 · Colors"
     },
     {
       "bn": "নীল",
+      "pronunciation": "nil",
       "en": "blue",
       "category": "Class 1 · Colors"
     },
     {
       "bn": "সবুজ",
+      "pronunciation": "shobuj",
       "en": "green",
       "category": "Class 1 · Colors"
     },
     {
       "bn": "হলুদ",
+      "pronunciation": "holud",
       "en": "yellow",
       "category": "Class 1 · Colors"
     },
     {
       "bn": "কালো",
+      "pronunciation": "kalo",
       "en": "black",
       "category": "Class 1 · Colors"
     },
     {
       "bn": "সাদা",
+      "pronunciation": "shada",
       "en": "white",
       "category": "Class 1 · Colors"
     },
     {
       "bn": "গোলাপি",
+      "pronunciation": "golapi",
       "en": "pink",
       "category": "Class 1 · Colors"
     },
     {
       "bn": "কমলা",
+      "pronunciation": "komola",
       "en": "orange",
       "category": "Class 1 · Colors"
     },
     {
       "bn": "বাদামি",
+      "pronunciation": "badami",
       "en": "brown",
       "category": "Class 1 · Colors"
     },
     {
       "bn": "বেগুনি",
+      "pronunciation": "beguni",
       "en": "purple",
       "category": "Class 1 · Colors"
     },
     {
       "bn": "ধূসর",
+      "pronunciation": "dhushor",
       "en": "gray",
       "category": "Class 1 · Colors"
     },
     {
       "bn": "এক",
+      "pronunciation": "ek",
       "en": "one",
       "category": "Class 1 · Numbers"
     },
     {
       "bn": "দুই",
+      "pronunciation": "dui",
       "en": "two",
       "category": "Class 1 · Numbers"
     },
     {
       "bn": "তিন",
+      "pronunciation": "tin",
       "en": "three",
       "category": "Class 1 · Numbers"
     },
     {
       "bn": "চার",
+      "pronunciation": "char",
       "en": "four",
       "category": "Class 1 · Numbers"
     },
     {
       "bn": "পাঁচ",
+      "pronunciation": "pãch",
       "en": "five",
       "category": "Class 1 · Numbers"
     },
     {
       "bn": "ছয়",
+      "pronunciation": "chhoy",
       "en": "six",
       "category": "Class 1 · Numbers"
     },
     {
       "bn": "সাত",
+      "pronunciation": "shat",
       "en": "seven",
       "category": "Class 1 · Numbers"
     },
     {
       "bn": "আট",
+      "pronunciation": "at",
       "en": "eight",
       "category": "Class 1 · Numbers"
     },
     {
       "bn": "নয়",
+      "pronunciation": "noy",
       "en": "nine",
       "category": "Class 1 · Numbers"
     },
     {
       "bn": "দশ",
+      "pronunciation": "dosh",
       "en": "ten",
       "category": "Class 1 · Numbers"
     },
     {
       "bn": "এগারো",
+      "pronunciation": "egaro",
       "en": "eleven",
       "category": "Class 1 · Numbers"
     },
     {
       "bn": "বারো",
+      "pronunciation": "baro",
       "en": "twelve",
       "category": "Class 1 · Numbers"
     },
     {
       "bn": "তেরো",
+      "pronunciation": "tero",
       "en": "thirteen",
       "category": "Class 1 · Numbers"
     },
     {
       "bn": "চৌদ্দ",
+      "pronunciation": "chouddo",
       "en": "fourteen",
       "category": "Class 1 · Numbers"
     },
     {
       "bn": "পনেরো",
+      "pronunciation": "ponero",
       "en": "fifteen",
       "category": "Class 1 · Numbers"
     },
     {
       "bn": "ষোলো",
+      "pronunciation": "sholo",
       "en": "sixteen",
       "category": "Class 1 · Numbers"
     },
     {
       "bn": "সতেরো",
+      "pronunciation": "sotero",
       "en": "seventeen",
       "category": "Class 1 · Numbers"
     },
     {
       "bn": "আঠারো",
+      "pronunciation": "atharo",
       "en": "eighteen",
       "category": "Class 1 · Numbers"
     },
     {
       "bn": "উনিশ",
+      "pronunciation": "unish",
       "en": "nineteen",
       "category": "Class 1 · Numbers"
     },
     {
       "bn": "বিশ",
+      "pronunciation": "bish",
       "en": "twenty",
       "category": "Class 1 · Numbers"
     },
     {
       "bn": "সকাল",
+      "pronunciation": "shokal",
       "en": "morning",
       "category": "Class 1 · Time"
     },
     {
       "bn": "দুপুর",
+      "pronunciation": "dupur",
       "en": "noon",
       "category": "Class 1 · Time"
     },
     {
       "bn": "বিকেল",
+      "pronunciation": "bikel",
       "en": "afternoon",
       "category": "Class 1 · Time"
     },
     {
       "bn": "সন্ধ্যা",
+      "pronunciation": "shondhya",
       "en": "evening",
       "category": "Class 1 · Time"
     },
     {
       "bn": "রাত",
+      "pronunciation": "rat",
       "en": "night",
       "category": "Class 1 · Time"
     },
     {
       "bn": "দিন",
+      "pronunciation": "din",
       "en": "day",
       "category": "Class 1 · Time"
     },
     {
       "bn": "সপ্তাহ",
+      "pronunciation": "shoptaho",
       "en": "week",
       "category": "Class 1 · Time"
     },
     {
       "bn": "মাস",
+      "pronunciation": "mash",
       "en": "month",
       "category": "Class 1 · Time"
     },
     {
       "bn": "বছর",
+      "pronunciation": "bochhor",
       "en": "year",
       "category": "Class 1 · Time"
     },
     {
       "bn": "আজ",
+      "pronunciation": "aj",
       "en": "today",
       "category": "Class 1 · Time"
     },
     {
       "bn": "কাল",
+      "pronunciation": "kal",
       "en": "tomorrow",
       "category": "Class 1 · Time"
     },
     {
       "bn": "গতকাল",
+      "pronunciation": "gotokal",
       "en": "yesterday",
       "category": "Class 1 · Time"
     },
     {
       "bn": "আগামীকাল",
+      "pronunciation": "agamikal",
       "en": "tomorrow",
       "category": "Class 1 · Time"
     },
     {
       "bn": "এখন",
+      "pronunciation": "ekhon",
       "en": "now",
       "category": "Class 1 · Time"
     },
     {
       "bn": "পরে",
+      "pronunciation": "pore",
       "en": "later",
       "category": "Class 1 · Time"
     },
     {
       "bn": "আগে",
+      "pronunciation": "age",
       "en": "before",
       "category": "Class 1 · Time"
     },
     {
       "bn": "তাড়াতাড়ি",
+      "pronunciation": "taratari",
       "en": "early",
       "category": "Class 1 · Time"
     },
     {
       "bn": "দেরি",
+      "pronunciation": "deri",
       "en": "late",
       "category": "Class 1 · Time"
     },
     {
       "bn": "শনিবার",
+      "pronunciation": "shonibar",
       "en": "Saturday",
       "category": "Class 1 · Days of the week"
     },
     {
       "bn": "রবিবার",
+      "pronunciation": "robibar",
       "en": "Sunday",
       "category": "Class 1 · Days of the week"
     },
     {
       "bn": "সোমবার",
+      "pronunciation": "shombar",
       "en": "Monday",
       "category": "Class 1 · Days of the week"
     },
     {
       "bn": "মঙ্গলবার",
+      "pronunciation": "monggolobar",
       "en": "Tuesday",
       "category": "Class 1 · Days of the week"
     },
     {
       "bn": "বুধবার",
+      "pronunciation": "budhbar",
       "en": "Wednesday",
       "category": "Class 1 · Days of the week"
     },
     {
       "bn": "বৃহস্পতিবার",
+      "pronunciation": "brihoshpotibar",
       "en": "Thursday",
       "category": "Class 1 · Days of the week"
     },
     {
       "bn": "শুক্রবার",
+      "pronunciation": "shukrobar",
       "en": "Friday",
       "category": "Class 1 · Days of the week"
     },
     {
       "bn": "বাড়ি",
+      "pronunciation": "bari",
       "en": "house",
       "category": "Class 1 · Places"
     },
     {
       "bn": "স্কুল",
+      "pronunciation": "skul",
       "en": "school",
       "category": "Class 1 · Places"
     },
     {
       "bn": "দোকান",
+      "pronunciation": "dokan",
       "en": "shop",
       "category": "Class 1 · Places"
     },
     {
       "bn": "বাজার",
+      "pronunciation": "bajar",
       "en": "market",
       "category": "Class 1 · Places"
     },
     {
       "bn": "রাস্তা",
+      "pronunciation": "rasta",
       "en": "road",
       "category": "Class 1 · Places"
     },
     {
       "bn": "পার্ক",
+      "pronunciation": "park",
       "en": "park",
       "category": "Class 1 · Places"
     },
     {
       "bn": "মাঠ",
+      "pronunciation": "math",
       "en": "field",
       "category": "Class 1 · Places"
     },
     {
       "bn": "হাসপাতাল",
+      "pronunciation": "hashpatal",
       "en": "hospital",
       "category": "Class 1 · Places"
     },
     {
       "bn": "গ্রাম",
+      "pronunciation": "gram",
       "en": "village",
       "category": "Class 1 · Places"
     },
     {
       "bn": "শহর",
+      "pronunciation": "shohor",
       "en": "city",
       "category": "Class 1 · Places"
     },
     {
       "bn": "দেশ",
+      "pronunciation": "desh",
       "en": "country",
       "category": "Class 1 · Places"
     },
     {
       "bn": "মসজিদ",
+      "pronunciation": "mosojid",
       "en": "mosque",
       "category": "Class 1 · Places"
     },
     {
       "bn": "বাগান",
+      "pronunciation": "bagan",
       "en": "garden",
       "category": "Class 1 · Places"
     },
     {
       "bn": "নদী",
+      "pronunciation": "nodi",
       "en": "river",
       "category": "Class 1 · Places"
     },
     {
       "bn": "পুকুর",
+      "pronunciation": "pukur",
       "en": "pond",
       "category": "Class 1 · Places"
     },
     {
       "bn": "গাড়ি",
+      "pronunciation": "gari",
       "en": "car",
       "category": "Class 1 · Transportation"
     },
     {
       "bn": "বাস",
+      "pronunciation": "bas",
       "en": "bus",
       "category": "Class 1 · Transportation"
     },
     {
       "bn": "ট্রেন",
+      "pronunciation": "ṭren",
       "en": "train",
       "category": "Class 1 · Transportation"
     },
     {
       "bn": "রিকশা",
+      "pronunciation": "rikosha",
       "en": "rickshaw",
       "category": "Class 1 · Transportation"
     },
     {
       "bn": "সাইকেল",
+      "pronunciation": "saikel",
       "en": "bicycle",
       "category": "Class 1 · Transportation"
     },
     {
       "bn": "মোটরসাইকেল",
+      "pronunciation": "motorosaikel",
       "en": "motorcycle",
       "category": "Class 1 · Transportation"
     },
     {
       "bn": "নৌকা",
+      "pronunciation": "nouka",
       "en": "boat",
       "category": "Class 1 · Transportation"
     },
     {
       "bn": "জাহাজ",
+      "pronunciation": "jahaj",
       "en": "ship",
       "category": "Class 1 · Transportation"
     },
     {
       "bn": "বিমান",
+      "pronunciation": "biman",
       "en": "airplane",
       "category": "Class 1 · Transportation"
     },
     {
       "bn": "চাকা",
+      "pronunciation": "chaka",
       "en": "wheel",
       "category": "Class 1 · Transportation"
     },
     {
       "bn": "রাস্তা",
+      "pronunciation": "rasta",
       "en": "road",
       "category": "Class 1 · Transportation"
     },
     {
       "bn": "জামা",
+      "pronunciation": "jama",
       "en": "clothes",
       "category": "Class 1 · Clothing"
     },
     {
       "bn": "প্যান্ট",
+      "pronunciation": "pant",
       "en": "pants",
       "category": "Class 1 · Clothing"
     },
     {
       "bn": "শার্ট",
+      "pronunciation": "shirt",
       "en": "shirt",
       "category": "Class 1 · Clothing"
     },
     {
       "bn": "জুতা",
+      "pronunciation": "juta",
       "en": "shoes",
       "category": "Class 1 · Clothing"
     },
     {
       "bn": "মোজা",
+      "pronunciation": "moja",
       "en": "socks",
       "category": "Class 1 · Clothing"
     },
     {
       "bn": "টুপি",
+      "pronunciation": "ṭupi",
       "en": "hat",
       "category": "Class 1 · Clothing"
     },
     {
       "bn": "পোশাক",
+      "pronunciation": "poshak",
       "en": "clothing",
       "category": "Class 1 · Clothing"
     },
     {
       "bn": "চশমা",
+      "pronunciation": "choshma",
       "en": "glasses",
       "category": "Class 1 · Clothing"
     },
     {
       "bn": "ছাতা",
+      "pronunciation": "chhata",
       "en": "umbrella",
       "category": "Class 1 · Clothing"
     },
     {
       "bn": "বল",
+      "pronunciation": "bol",
       "en": "ball",
       "category": "Class 1 · Toys and games"
     },
     {
       "bn": "ব্যাট",
+      "pronunciation": "bjat",
       "en": "bat",
       "category": "Class 1 · Toys and games"
     },
     {
       "bn": "পুতুল",
+      "pronunciation": "putul",
       "en": "doll",
       "category": "Class 1 · Toys and games"
     },
     {
       "bn": "ঘুড়ি",
+      "pronunciation": "ghuri",
       "en": "kite",
       "category": "Class 1 · Toys and games"
     },
     {
       "bn": "খেলনা",
+      "pronunciation": "khelna",
       "en": "toy",
       "category": "Class 1 · Toys and games"
     },
     {
       "bn": "খেলা",
+      "pronunciation": "khela",
       "en": "game",
       "category": "Class 1 · Toys and games"
     },
     {
       "bn": "দৌড়",
+      "pronunciation": "dour",
       "en": "running",
       "category": "Class 1 · Toys and games"
     },
     {
       "bn": "ফুটবল",
+      "pronunciation": "football",
       "en": "football",
       "category": "Class 1 · Toys and games"
     },
     {
       "bn": "ক্রিকেট",
+      "pronunciation": "cricket",
       "en": "cricket",
       "category": "Class 1 · Toys and games"
     },
     {
       "bn": "লুকোচুরি",
+      "pronunciation": "lukochuri",
       "en": "hide-and-seek",
       "category": "Class 1 · Toys and games"
     },
     {
       "bn": "করা",
+      "pronunciation": "kora",
       "en": "to do",
       "category": "Class 1 · Common verbs"
     },
     {
       "bn": "যাওয়া",
+      "pronunciation": "jaoa",
       "en": "to go",
       "category": "Class 1 · Common verbs"
     },
     {
       "bn": "আসা",
+      "pronunciation": "asha",
       "en": "to come",
       "category": "Class 1 · Common verbs"
     },
     {
       "bn": "খাওয়া",
+      "pronunciation": "khaoa",
       "en": "to eat",
       "category": "Class 1 · Common verbs"
     },
     {
       "bn": "পান করা",
+      "pronunciation": "pan kora",
       "en": "to drink",
       "category": "Class 1 · Common verbs"
     },
     {
       "bn": "দেখা",
+      "pronunciation": "dekha",
       "en": "to see",
       "category": "Class 1 · Common verbs"
     },
     {
       "bn": "শোনা",
+      "pronunciation": "shona",
       "en": "to hear",
       "category": "Class 1 · Common verbs"
     },
     {
       "bn": "বলা",
+      "pronunciation": "bola",
       "en": "to say",
       "category": "Class 1 · Common verbs"
     },
     {
       "bn": "পড়া",
+      "pronunciation": "pora",
       "en": "to read",
       "category": "Class 1 · Common verbs"
     },
     {
       "bn": "লেখা",
+      "pronunciation": "lekha",
       "en": "to write",
       "category": "Class 1 · Common verbs"
     },
     {
       "bn": "শেখা",
+      "pronunciation": "shekha",
       "en": "to learn",
       "category": "Class 1 · Common verbs"
     },
     {
       "bn": "জানা",
+      "pronunciation": "jana",
       "en": "to know",
       "category": "Class 1 · Common verbs"
     },
     {
       "bn": "বোঝা",
+      "pronunciation": "bojha",
       "en": "to understand",
       "category": "Class 1 · Common verbs"
     },
     {
       "bn": "বসা",
+      "pronunciation": "bosha",
       "en": "to sit",
       "category": "Class 1 · Common verbs"
     },
     {
       "bn": "দাঁড়ানো",
+      "pronunciation": "dãrano",
       "en": "to stand",
       "category": "Class 1 · Common verbs"
     },
     {
       "bn": "হাঁটা",
+      "pronunciation": "hãta",
       "en": "to walk",
       "category": "Class 1 · Common verbs"
     },
     {
       "bn": "দৌড়ানো",
+      "pronunciation": "dourano",
       "en": "to run",
       "category": "Class 1 · Common verbs"
     },
     {
       "bn": "খেলা",
+      "pronunciation": "khela",
       "en": "to play",
       "category": "Class 1 · Common verbs"
     },
     {
       "bn": "ঘুমানো",
+      "pronunciation": "ghumano",
       "en": "to sleep",
       "category": "Class 1 · Common verbs"
     },
     {
       "bn": "জাগা",
+      "pronunciation": "jaga",
       "en": "to wake",
       "category": "Class 1 · Common verbs"
     },
     {
       "bn": "হাসা",
+      "pronunciation": "hasha",
       "en": "to laugh",
       "category": "Class 1 · Common verbs"
     },
     {
       "bn": "কাঁদা",
+      "pronunciation": "kãda",
       "en": "to cry",
       "category": "Class 1 · Common verbs"
     },
     {
       "bn": "দেওয়া",
+      "pronunciation": "deoa",
       "en": "to give",
       "category": "Class 1 · Common verbs"
     },
     {
       "bn": "নেওয়া",
+      "pronunciation": "neoa",
       "en": "to take",
       "category": "Class 1 · Common verbs"
     },
     {
       "bn": "রাখা",
+      "pronunciation": "rakha",
       "en": "to keep",
       "category": "Class 1 · Common verbs"
     },
     {
       "bn": "ধরা",
+      "pronunciation": "dhora",
       "en": "to hold",
       "category": "Class 1 · Common verbs"
     },
     {
       "bn": "খোলা",
+      "pronunciation": "khola",
       "en": "to open",
       "category": "Class 1 · Common verbs"
     },
     {
       "bn": "বন্ধ করা",
+      "pronunciation": "bondho kora",
       "en": "to close",
       "category": "Class 1 · Common verbs"
     },
     {
       "bn": "বানানো",
+      "pronunciation": "banano",
       "en": "to make",
       "category": "Class 1 · Common verbs"
     },
     {
       "bn": "আঁকা",
+      "pronunciation": "ãka",
       "en": "to draw",
       "category": "Class 1 · Common verbs"
     },
     {
       "bn": "গাওয়া",
+      "pronunciation": "gaoa",
       "en": "to sing",
       "category": "Class 1 · Common verbs"
     },
     {
       "bn": "নাচা",
+      "pronunciation": "nacha",
       "en": "to dance",
       "category": "Class 1 · Common verbs"
     },
     {
       "bn": "চাওয়া",
+      "pronunciation": "chaoa",
       "en": "to want",
       "category": "Class 1 · Common verbs"
     },
     {
       "bn": "পাওয়া",
+      "pronunciation": "paoa",
       "en": "to get",
       "category": "Class 1 · Common verbs"
     },
     {
       "bn": "কেনা",
+      "pronunciation": "kena",
       "en": "to buy",
       "category": "Class 1 · Common verbs"
     },
     {
       "bn": "ডাকা",
+      "pronunciation": "ḍaka",
       "en": "to call",
       "category": "Class 1 · Common verbs"
     },
     {
       "bn": "ওঠা",
+      "pronunciation": "oṭha",
       "en": "to rise",
       "category": "Class 1 · Common verbs"
     },
     {
       "bn": "নামা",
+      "pronunciation": "nama",
       "en": "to descend",
       "category": "Class 1 · Common verbs"
     },
     {
       "bn": "ফেরা",
+      "pronunciation": "phera / fera",
       "en": "to return",
       "category": "Class 1 · Common verbs"
     },
     {
       "bn": "পড়ে যাওয়া",
+      "pronunciation": "pore jaoa",
       "en": "to fall down",
       "category": "Class 1 · Common verbs"
     },
     {
       "bn": "বড়",
+      "pronunciation": "bôṛo",
       "en": "big",
       "category": "Class 1 · Describing words"
     },
     {
       "bn": "ছোট",
+      "pronunciation": "chhoto",
       "en": "small",
       "category": "Class 1 · Describing words"
     },
     {
       "bn": "লম্বা",
+      "pronunciation": "lomba",
       "en": "tall",
       "category": "Class 1 · Describing words"
     },
     {
       "bn": "খাটো",
+      "pronunciation": "khato",
       "en": "short",
       "category": "Class 1 · Describing words"
     },
     {
       "bn": "মোটা",
+      "pronunciation": "mota",
       "en": "fat",
       "category": "Class 1 · Describing words"
     },
     {
       "bn": "পাতলা",
+      "pronunciation": "patla",
       "en": "thin",
       "category": "Class 1 · Describing words"
     },
     {
       "bn": "ভালো",
+      "pronunciation": "bhalo",
       "en": "good",
       "category": "Class 1 · Describing words"
     },
     {
       "bn": "খারাপ",
+      "pronunciation": "kharap",
       "en": "bad",
       "category": "Class 1 · Describing words"
     },
     {
       "bn": "সুন্দর",
+      "pronunciation": "shundor",
       "en": "beautiful",
       "category": "Class 1 · Describing words"
     },
     {
       "bn": "পরিষ্কার",
+      "pronunciation": "pôrishkar",
       "en": "clean",
       "category": "Class 1 · Describing words"
     },
     {
       "bn": "নোংরা",
+      "pronunciation": "nongra",
       "en": "dirty",
       "category": "Class 1 · Describing words"
     },
     {
       "bn": "নতুন",
+      "pronunciation": "notun",
       "en": "new",
       "category": "Class 1 · Describing words"
     },
     {
       "bn": "পুরোনো",
+      "pronunciation": "purono",
       "en": "old",
       "category": "Class 1 · Describing words"
     },
     {
       "bn": "গরম",
+      "pronunciation": "gorom",
       "en": "hot",
       "category": "Class 1 · Describing words"
     },
     {
       "bn": "ঠান্ডা",
+      "pronunciation": "thanda",
       "en": "cold",
       "category": "Class 1 · Describing words"
     },
     {
       "bn": "মিষ্টি",
+      "pronunciation": "mishti",
       "en": "sweet",
       "category": "Class 1 · Describing words"
     },
     {
       "bn": "টক",
+      "pronunciation": "tok",
       "en": "sour",
       "category": "Class 1 · Describing words"
     },
     {
       "bn": "নরম",
+      "pronunciation": "norom",
       "en": "soft",
       "category": "Class 1 · Describing words"
     },
     {
       "bn": "শক্ত",
+      "pronunciation": "shokto",
       "en": "hard",
       "category": "Class 1 · Describing words"
     },
     {
       "bn": "ভারী",
+      "pronunciation": "bhari",
       "en": "heavy",
       "category": "Class 1 · Describing words"
     },
     {
       "bn": "হালকা",
+      "pronunciation": "halka",
       "en": "light",
       "category": "Class 1 · Describing words"
     },
     {
       "bn": "দ্রুত",
+      "pronunciation": "druto",
       "en": "fast",
       "category": "Class 1 · Describing words"
     },
     {
       "bn": "ধীর",
+      "pronunciation": "dhir",
       "en": "slow",
       "category": "Class 1 · Describing words"
     },
     {
       "bn": "কাছে",
+      "pronunciation": "kachhe",
       "en": "near",
       "category": "Class 1 · Describing words"
     },
     {
       "bn": "দূরে",
+      "pronunciation": "dure",
       "en": "far",
       "category": "Class 1 · Describing words"
     },
     {
       "bn": "সহজ",
+      "pronunciation": "shohoj",
       "en": "easy",
       "category": "Class 1 · Describing words"
     },
     {
       "bn": "কঠিন",
+      "pronunciation": "kothin",
       "en": "difficult",
       "category": "Class 1 · Describing words"
     },
     {
       "bn": "খালি",
+      "pronunciation": "khali",
       "en": "empty",
       "category": "Class 1 · Describing words"
     },
     {
       "bn": "ভরা",
+      "pronunciation": "bhora",
       "en": "full",
       "category": "Class 1 · Describing words"
     },
     {
       "bn": "খুশি",
+      "pronunciation": "khushi",
       "en": "happy",
       "category": "Class 1 · Feelings"
     },
     {
       "bn": "দুঃখ",
+      "pronunciation": "dukkho",
       "en": "sadness",
       "category": "Class 1 · Feelings"
     },
     {
       "bn": "রাগ",
+      "pronunciation": "rag",
       "en": "anger",
       "category": "Class 1 · Feelings"
     },
     {
       "bn": "ভয়",
+      "pronunciation": "bhoy",
       "en": "fear",
       "category": "Class 1 · Feelings"
     },
     {
       "bn": "ভালোবাসা",
+      "pronunciation": "bhalobasha",
       "en": "love",
       "category": "Class 1 · Feelings"
     },
     {
       "bn": "আনন্দ",
+      "pronunciation": "anondo",
       "en": "joy",
       "category": "Class 1 · Feelings"
     },
     {
       "bn": "কষ্ট",
+      "pronunciation": "koshto",
       "en": "pain",
       "category": "Class 1 · Feelings"
     },
     {
       "bn": "ক্ষুধা",
+      "pronunciation": "khudha",
       "en": "hunger",
       "category": "Class 1 · Feelings"
     },
     {
       "bn": "তৃষ্ণা",
+      "pronunciation": "trishna",
       "en": "thirst",
       "category": "Class 1 · Feelings"
     },
     {
       "bn": "ক্লান্ত",
+      "pronunciation": "klanto",
       "en": "tired",
       "category": "Class 1 · Feelings"
     },
     {
       "bn": "উপরে",
+      "pronunciation": "upore",
       "en": "above",
       "category": "Class 1 · Position words"
     },
     {
       "bn": "নিচে",
+      "pronunciation": "niche",
       "en": "below",
       "category": "Class 1 · Position words"
     },
     {
       "bn": "সামনে",
+      "pronunciation": "shamne",
       "en": "in front",
       "category": "Class 1 · Position words"
     },
     {
       "bn": "পিছনে",
+      "pronunciation": "Pichone",
       "en": "behind",
       "category": "Class 1 · Position words"
     },
     {
       "bn": "পাশে",
+      "pronunciation": "pashe",
       "en": "beside",
       "category": "Class 1 · Position words"
     },
     {
       "bn": "ভিতরে",
+      "pronunciation": "bhitore",
       "en": "inside",
       "category": "Class 1 · Position words"
     },
     {
       "bn": "বাইরে",
+      "pronunciation": "baire",
       "en": "outside",
       "category": "Class 1 · Position words"
     },
     {
       "bn": "কাছে",
+      "pronunciation": "kachhe",
       "en": "near",
       "category": "Class 1 · Position words"
     },
     {
       "bn": "দূরে",
+      "pronunciation": "dure",
       "en": "far",
       "category": "Class 1 · Position words"
     },
     {
       "bn": "ডানে",
+      "pronunciation": "dane",
       "en": "right",
       "category": "Class 1 · Position words"
     },
     {
       "bn": "বামে",
+      "pronunciation": "bame",
       "en": "left",
       "category": "Class 1 · Position words"
     },
     {
       "bn": "মাঝে",
+      "pronunciation": "majhe",
       "en": "between",
       "category": "Class 1 · Position words"
     },
     {
       "bn": "কে",
+      "pronunciation": "ke",
       "en": "who",
       "category": "Class 1 · Question words"
     },
     {
       "bn": "কী",
+      "pronunciation": "ki",
       "en": "what",
       "category": "Class 1 · Question words"
     },
     {
       "bn": "কোথায়",
+      "pronunciation": "kothay",
       "en": "where",
       "category": "Class 1 · Question words"
     },
     {
       "bn": "কখন",
+      "pronunciation": "kokhon",
       "en": "when",
       "category": "Class 1 · Question words"
     },
     {
       "bn": "কেন",
+      "pronunciation": "keno",
       "en": "why",
       "category": "Class 1 · Question words"
     },
     {
       "bn": "কেমন",
+      "pronunciation": "kemon",
       "en": "how",
       "category": "Class 1 · Question words"
     },
     {
       "bn": "কোন",
+      "pronunciation": "kon",
       "en": "which",
       "category": "Class 1 · Question words"
     },
     {
       "bn": "কত",
+      "pronunciation": "koto",
       "en": "how many",
       "category": "Class 1 · Question words"
     },
     {
       "bn": "কার",
+      "pronunciation": "kar",
       "en": "whose",
       "category": "Class 1 · Question words"
     },
     {
       "bn": "আর",
+      "pronunciation": "ar",
       "en": "and/more",
       "category": "Class 1 · Useful small words"
     },
     {
       "bn": "কিন্তু",
+      "pronunciation": "kintu",
       "en": "but",
       "category": "Class 1 · Useful small words"
     },
     {
       "bn": "তাই",
+      "pronunciation": "tai",
       "en": "therefore",
       "category": "Class 1 · Useful small words"
     },
     {
       "bn": "যদি",
+      "pronunciation": "jodi",
       "en": "if",
       "category": "Class 1 · Useful small words"
     },
     {
       "bn": "তবে",
+      "pronunciation": "tobe",
       "en": "then",
       "category": "Class 1 · Useful small words"
     },
     {
       "bn": "কারণ",
+      "pronunciation": "karon",
       "en": "because",
       "category": "Class 1 · Useful small words"
     },
     {
       "bn": "অথবা",
+      "pronunciation": "othoba",
       "en": "or",
       "category": "Class 1 · Useful small words"
     },
     {
       "bn": "সঙ্গে",
+      "pronunciation": "shonge",
       "en": "with",
       "category": "Class 1 · Useful small words"
     },
     {
       "bn": "জন্য",
+      "pronunciation": "jonno",
       "en": "for",
       "category": "Class 1 · Useful small words"
     },
     {
       "bn": "থেকে",
+      "pronunciation": "theke",
       "en": "from",
       "category": "Class 1 · Useful small words"
     },
     {
       "bn": "পর্যন্ত",
+      "pronunciation": "porjonto",
       "en": "until",
       "category": "Class 1 · Useful small words"
     },
     {
       "bn": "দিকে",
+      "pronunciation": "dike",
       "en": "toward",
       "category": "Class 1 · Useful small words"
     },
     {
       "bn": "মধ্যে",
+      "pronunciation": "moddhe",
       "en": "among",
       "category": "Class 1 · Useful small words"
     },
     {
       "bn": "উপর",
+      "pronunciation": "upor",
       "en": "on",
       "category": "Class 1 · Useful small words"
     },
     {
       "bn": "নিচে",
+      "pronunciation": "niche",
       "en": "under",
       "category": "Class 1 · Useful small words"
     }
@@ -2115,1200 +2536,1400 @@
   "phrases": [
     {
       "bn": "আমার নাম ___।",
+      "pronunciation": "amar nam",
       "en": "My name is ___.",
       "context": "Introductions and conversation",
       "category": "Class 1 · Introductions and conversation"
     },
     {
       "bn": "তোমার নাম কী?",
+      "pronunciation": "tomar nam ki?",
       "en": "What is your name?",
       "context": "Introductions and conversation",
       "category": "Class 1 · Introductions and conversation"
     },
     {
       "bn": "তুমি কেমন আছ?",
+      "pronunciation": "tumi kemon acho",
       "en": "How are you?",
       "context": "Introductions and conversation",
       "category": "Class 1 · Introductions and conversation"
     },
     {
       "bn": "আমি ভালো আছি।",
+      "pronunciation": "ami bhalo achhi.",
       "en": "I am well.",
       "context": "Introductions and conversation",
       "category": "Class 1 · Introductions and conversation"
     },
     {
       "bn": "তুমি কোথায় থাকো?",
+      "pronunciation": "tumi kothay thako",
       "en": "Where do you live?",
       "context": "Introductions and conversation",
       "category": "Class 1 · Introductions and conversation"
     },
     {
       "bn": "আমি এখানে থাকি।",
+      "pronunciation": "ami ekhane thaki.",
       "en": "I live here.",
       "context": "Introductions and conversation",
       "category": "Class 1 · Introductions and conversation"
     },
     {
       "bn": "এটা কী?",
+      "pronunciation": "eta ki?",
       "en": "What is this?",
       "context": "Introductions and conversation",
       "category": "Class 1 · Introductions and conversation"
     },
     {
       "bn": "ওটা কী?",
+      "pronunciation": "ota ki?",
       "en": "What is that?",
       "context": "Introductions and conversation",
       "category": "Class 1 · Introductions and conversation"
     },
     {
       "bn": "এটা আমার।",
+      "pronunciation": "eta amar.",
       "en": "This is mine.",
       "context": "Introductions and conversation",
       "category": "Class 1 · Introductions and conversation"
     },
     {
       "bn": "ওটা তোমার।",
+      "pronunciation": "ota tomar",
       "en": "That is yours.",
       "context": "Introductions and conversation",
       "category": "Class 1 · Introductions and conversation"
     },
     {
       "bn": "আমি জানি।",
+      "pronunciation": "ami jani.",
       "en": "I know.",
       "context": "Introductions and conversation",
       "category": "Class 1 · Introductions and conversation"
     },
     {
       "bn": "আমি জানি না।",
+      "pronunciation": "ami jani na.",
       "en": "I do not know.",
       "context": "Introductions and conversation",
       "category": "Class 1 · Introductions and conversation"
     },
     {
       "bn": "আমি বুঝেছি।",
+      "pronunciation": "ami bujhechhi",
       "en": "I understood.",
       "context": "Introductions and conversation",
       "category": "Class 1 · Introductions and conversation"
     },
     {
       "bn": "আমি বুঝিনি।",
+      "pronunciation": "ami bujhini",
       "en": "I did not understand.",
       "context": "Introductions and conversation",
       "category": "Class 1 · Introductions and conversation"
     },
     {
       "bn": "আবার বলো।",
+      "pronunciation": "abar bolo.",
       "en": "Say it again.",
       "context": "Introductions and conversation",
       "category": "Class 1 · Introductions and conversation"
     },
     {
       "bn": "ধীরে বলো।",
+      "pronunciation": "dhire bolo.",
       "en": "Speak slowly.",
       "context": "Introductions and conversation",
       "category": "Class 1 · Introductions and conversation"
     },
     {
       "bn": "ধন্যবাদ।",
+      "pronunciation": "dhonnobad.",
       "en": "Thank you.",
       "context": "Polite phrases",
       "category": "Class 1 · Polite phrases"
     },
     {
       "bn": "দয়া করে।",
+      "pronunciation": "doya kore.",
       "en": "Please.",
       "context": "Polite phrases",
       "category": "Class 1 · Polite phrases"
     },
     {
       "bn": "মাফ করবেন।",
+      "pronunciation": "maph korben",
       "en": "Excuse me.",
       "context": "Polite phrases",
       "category": "Class 1 · Polite phrases"
     },
     {
       "bn": "কোনো সমস্যা নেই।",
+      "pronunciation": "kono shomoshsha nei.",
       "en": "No problem.",
       "context": "Polite phrases",
       "category": "Class 1 · Polite phrases"
     },
     {
       "bn": "স্বাগতম।",
+      "pronunciation": "shagotom",
       "en": "Welcome.",
       "context": "Polite phrases",
       "category": "Class 1 · Polite phrases"
     },
     {
       "bn": "শুভ সকাল।",
+      "pronunciation": "shubho shokal.",
       "en": "Good morning.",
       "context": "Polite phrases",
       "category": "Class 1 · Polite phrases"
     },
     {
       "bn": "শুভ রাত্রি।",
+      "pronunciation": "shubho ratri.",
       "en": "Good night.",
       "context": "Polite phrases",
       "category": "Class 1 · Polite phrases"
     },
     {
       "bn": "বিদায়।",
+      "pronunciation": "biday.",
       "en": "Goodbye.",
       "context": "Polite phrases",
       "category": "Class 1 · Polite phrases"
     },
     {
       "bn": "আবার দেখা হবে।",
+      "pronunciation": "abar dekha hobe.",
       "en": "See you again.",
       "context": "Polite phrases",
       "category": "Class 1 · Polite phrases"
     },
     {
       "bn": "আমি স্কুলে যাই।",
+      "pronunciation": "ami skule jai",
       "en": "I go to school.",
       "context": "At school",
       "category": "Class 1 · At school"
     },
     {
       "bn": "আমি বই পড়ি।",
+      "pronunciation": "ami boi pori",
       "en": "I read a book.",
       "context": "At school",
       "category": "Class 1 · At school"
     },
     {
       "bn": "আমি খাতায় লিখি।",
+      "pronunciation": "ami khatajo likhi",
       "en": "I write in my notebook.",
       "context": "At school",
       "category": "Class 1 · At school"
     },
     {
       "bn": "এটা আমার বই।",
+      "pronunciation": "eta amar boi.",
       "en": "This is my book.",
       "context": "At school",
       "category": "Class 1 · At school"
     },
     {
       "bn": "ওটা আমার ব্যাগ।",
+      "pronunciation": "ota amar bæg",
       "en": "That is my bag.",
       "context": "At school",
       "category": "Class 1 · At school"
     },
     {
       "bn": "আমার একটি পেন্সিল আছে।",
+      "pronunciation": "amar ekti pensil achhe",
       "en": "I have a pencil.",
       "context": "At school",
       "category": "Class 1 · At school"
     },
     {
       "bn": "শিক্ষক পড়াচ্ছেন।",
+      "pronunciation": "shikkhok porachchhen",
       "en": "The teacher is teaching.",
       "context": "At school",
       "category": "Class 1 · At school"
     },
     {
       "bn": "আমি উত্তর জানি।",
+      "pronunciation": "ami uttor jani",
       "en": "I know the answer.",
       "context": "At school",
       "category": "Class 1 · At school"
     },
     {
       "bn": "আমি উত্তর জানি না।",
+      "pronunciation": "ami uttor jani na",
       "en": "I do not know the answer.",
       "context": "At school",
       "category": "Class 1 · At school"
     },
     {
       "bn": "আমি কি বসতে পারি?",
+      "pronunciation": "ami ki boshte pari",
       "en": "May I sit?",
       "context": "At school",
       "category": "Class 1 · At school"
     },
     {
       "bn": "আমি কি যেতে পারি?",
+      "pronunciation": "ami ki jete pari",
       "en": "May I go?",
       "context": "At school",
       "category": "Class 1 · At school"
     },
     {
       "bn": "আমাকে সাহায্য করুন।",
+      "pronunciation": "amake shahajjo korun",
       "en": "Please help me.",
       "context": "At school",
       "category": "Class 1 · At school"
     },
     {
       "bn": "আমি বুঝতে পারছি না।",
+      "pronunciation": "ami bujhte parchhi na.",
       "en": "I do not understand.",
       "context": "At school",
       "category": "Class 1 · At school"
     },
     {
       "bn": "আমি বাড়িতে আছি।",
+      "pronunciation": "ami barite achhi.",
       "en": "I am at home.",
       "context": "At home",
       "category": "Class 1 · At home"
     },
     {
       "bn": "মা রান্না করছেন।",
+      "pronunciation": "Maa ranna korchhen.",
       "en": "Mother is cooking.",
       "context": "At home",
       "category": "Class 1 · At home"
     },
     {
       "bn": "বাবা বাড়িতে আছেন।",
+      "pronunciation": "baba barite achhen",
       "en": "Father is at home.",
       "context": "At home",
       "category": "Class 1 · At home"
     },
     {
       "bn": "আমি ঘুমাতে যাচ্ছি।",
+      "pronunciation": "Ami ghumate jacchi.",
       "en": "I am going to sleep.",
       "context": "At home",
       "category": "Class 1 · At home"
     },
     {
       "bn": "দরজা খোলো।",
+      "pronunciation": "dorja kholo.",
       "en": "Open the door.",
       "context": "At home",
       "category": "Class 1 · At home"
     },
     {
       "bn": "দরজা বন্ধ করো।",
+      "pronunciation": "dorja bondho koro.",
       "en": "Close the door.",
       "context": "At home",
       "category": "Class 1 · At home"
     },
     {
       "bn": "বাতি জ্বালাও।",
+      "pronunciation": "bati jbalao",
       "en": "Turn on the light.",
       "context": "At home",
       "category": "Class 1 · At home"
     },
     {
       "bn": "বাতি বন্ধ করো।",
+      "pronunciation": "bati bondho koro",
       "en": "Turn off the light.",
       "context": "At home",
       "category": "Class 1 · At home"
     },
     {
       "bn": "এখানে এসো।",
+      "pronunciation": "ekhane esho",
       "en": "Come here.",
       "context": "At home",
       "category": "Class 1 · At home"
     },
     {
       "bn": "ওখানে যাও।",
+      "pronunciation": "okhane jao.",
       "en": "Go there.",
       "context": "At home",
       "category": "Class 1 · At home"
     },
     {
       "bn": "আমার পাশে বসো।",
+      "pronunciation": "amar pashe bosho.",
       "en": "Sit beside me.",
       "context": "At home",
       "category": "Class 1 · At home"
     },
     {
       "bn": "আমার ক্ষুধা লেগেছে।",
+      "pronunciation": "amar khudha legechhe",
       "en": "I am hungry.",
       "context": "Food and drink",
       "category": "Class 1 · Food and drink"
     },
     {
       "bn": "আমার তৃষ্ণা পেয়েছে।",
+      "pronunciation": "amar trishna peyechhe.",
       "en": "I am thirsty.",
       "context": "Food and drink",
       "category": "Class 1 · Food and drink"
     },
     {
       "bn": "আমি ভাত খাই।",
+      "pronunciation": "Aami bhaat khaai.",
       "en": "I eat rice.",
       "context": "Food and drink",
       "category": "Class 1 · Food and drink"
     },
     {
       "bn": "আমি পানি পান করি।",
+      "pronunciation": "ami pani pan kori",
       "en": "I drink water.",
       "context": "Food and drink",
       "category": "Class 1 · Food and drink"
     },
     {
       "bn": "আমি আম খেতে ভালোবাসি।",
+      "pronunciation": "ami am khete bhalobashi",
       "en": "I love to eat mangoes.",
       "context": "Food and drink",
       "category": "Class 1 · Food and drink"
     },
     {
       "bn": "এটা খুব মিষ্টি।",
+      "pronunciation": "eta khub mishti.",
       "en": "This is very sweet.",
       "context": "Food and drink",
       "category": "Class 1 · Food and drink"
     },
     {
       "bn": "এটা খুব গরম।",
+      "pronunciation": "eta khub gorom",
       "en": "This is very hot.",
       "context": "Food and drink",
       "category": "Class 1 · Food and drink"
     },
     {
       "bn": "এটা ঠান্ডা।",
+      "pronunciation": "eta thanda",
       "en": "This is cold.",
       "context": "Food and drink",
       "category": "Class 1 · Food and drink"
     },
     {
       "bn": "আমাকে একটু পানি দাও।",
+      "pronunciation": "amake ektu pani dao",
       "en": "Give me a little water.",
       "context": "Food and drink",
       "category": "Class 1 · Food and drink"
     },
     {
       "bn": "আর একটু দাও।",
+      "pronunciation": "ar ektu dao",
       "en": "Give me a little more.",
       "context": "Food and drink",
       "category": "Class 1 · Food and drink"
     },
     {
       "bn": "আমার আর লাগবে না।",
+      "pronunciation": "amar ar lagbe na",
       "en": "I do not need any more.",
       "context": "Food and drink",
       "category": "Class 1 · Food and drink"
     },
     {
       "bn": "চলো খেলি।",
+      "pronunciation": "cholo kheli.",
       "en": "Let us play.",
       "context": "Play and activities",
       "category": "Class 1 · Play and activities"
     },
     {
       "bn": "আমি বল নিয়ে খেলি।",
+      "pronunciation": "ami bol niye kheli",
       "en": "I play with a ball.",
       "context": "Play and activities",
       "category": "Class 1 · Play and activities"
     },
     {
       "bn": "বলটি আমাকে দাও।",
+      "pronunciation": "boloti amake dao",
       "en": "Give me the ball.",
       "context": "Play and activities",
       "category": "Class 1 · Play and activities"
     },
     {
       "bn": "বলটি ধরো।",
+      "pronunciation": "boloti dhoro",
       "en": "Catch the ball.",
       "context": "Play and activities",
       "category": "Class 1 · Play and activities"
     },
     {
       "bn": "এখানে দাঁড়াও।",
+      "pronunciation": "ekhane dãrao.",
       "en": "Stand here.",
       "context": "Play and activities",
       "category": "Class 1 · Play and activities"
     },
     {
       "bn": "আমার সঙ্গে এসো।",
+      "pronunciation": "amar shonge esho",
       "en": "Come with me.",
       "context": "Play and activities",
       "category": "Class 1 · Play and activities"
     },
     {
       "bn": "চলো বাইরে যাই।",
+      "pronunciation": "cholo baire jai",
       "en": "Let us go outside.",
       "context": "Play and activities",
       "category": "Class 1 · Play and activities"
     },
     {
       "bn": "আমি দৌড়াতে পারি।",
+      "pronunciation": "ami dorate pari",
       "en": "I can run.",
       "context": "Play and activities",
       "category": "Class 1 · Play and activities"
     },
     {
       "bn": "আমি সাইকেল চালাতে পারি।",
+      "pronunciation": "ami saikel chalate pari",
       "en": "I can ride a bicycle.",
       "context": "Play and activities",
       "category": "Class 1 · Play and activities"
     },
     {
       "bn": "আমি ছবি আঁকতে পারি।",
+      "pronunciation": "ami chhobi ankote pari",
       "en": "I can draw a picture.",
       "context": "Play and activities",
       "category": "Class 1 · Play and activities"
     },
     {
       "bn": "আমি খুশি।",
+      "pronunciation": "ami khushi.",
       "en": "I am happy.",
       "context": "Expressing feelings",
       "category": "Class 1 · Expressing feelings"
     },
     {
       "bn": "আমার মন খারাপ।",
+      "pronunciation": "amar mon kharap",
       "en": "I feel sad.",
       "context": "Expressing feelings",
       "category": "Class 1 · Expressing feelings"
     },
     {
       "bn": "আমার ভয় লাগছে।",
+      "pronunciation": "amar bhoy lagchhe.",
       "en": "I am afraid.",
       "context": "Expressing feelings",
       "category": "Class 1 · Expressing feelings"
     },
     {
       "bn": "আমার রাগ হয়েছে।",
+      "pronunciation": "amar rag hoyechhe",
       "en": "I am angry.",
       "context": "Expressing feelings",
       "category": "Class 1 · Expressing feelings"
     },
     {
       "bn": "আমি ক্লান্ত।",
+      "pronunciation": "ami klanto",
       "en": "I am tired.",
       "context": "Expressing feelings",
       "category": "Class 1 · Expressing feelings"
     },
     {
       "bn": "আমি ভালো আছি।",
+      "pronunciation": "ami bhalo achhi.",
       "en": "I am well.",
       "context": "Expressing feelings",
       "category": "Class 1 · Expressing feelings"
     },
     {
       "bn": "আমার ব্যথা করছে।",
+      "pronunciation": "amar byatha korchhe",
       "en": "It hurts.",
       "context": "Expressing feelings",
       "category": "Class 1 · Expressing feelings"
     },
     {
       "bn": "চিন্তা করো না।",
+      "pronunciation": "chinta koro na.",
       "en": "Do not worry.",
       "context": "Expressing feelings",
       "category": "Class 1 · Expressing feelings"
     },
     {
       "bn": "আমি তোমাকে ভালোবাসি।",
+      "pronunciation": "ami tomake bhalobashi.",
       "en": "I love you.",
       "context": "Expressing feelings",
       "category": "Class 1 · Expressing feelings"
     },
     {
       "bn": "তুমি কী করছ?",
+      "pronunciation": "tumi ki korchho?",
       "en": "What are you doing?",
       "context": "Questions and answers",
       "category": "Class 1 · Questions and answers"
     },
     {
       "bn": "আমি খেলছি।",
+      "pronunciation": "ami khelochhi",
       "en": "I am playing.",
       "context": "Questions and answers",
       "category": "Class 1 · Questions and answers"
     },
     {
       "bn": "তুমি কোথায় যাচ্ছ?",
+      "pronunciation": "tumi kothay jachchho?",
       "en": "Where are you going?",
       "context": "Questions and answers",
       "category": "Class 1 · Questions and answers"
     },
     {
       "bn": "আমি স্কুলে যাচ্ছি।",
+      "pronunciation": "ami skule jacchi",
       "en": "I am going to school.",
       "context": "Questions and answers",
       "category": "Class 1 · Questions and answers"
     },
     {
       "bn": "তুমি কী খাচ্ছ?",
+      "pronunciation": "tumi ki khachchho",
       "en": "What are you eating?",
       "context": "Questions and answers",
       "category": "Class 1 · Questions and answers"
     },
     {
       "bn": "আমি ভাত খাচ্ছি।",
+      "pronunciation": "ami bhat khachchhi",
       "en": "I am eating rice.",
       "context": "Questions and answers",
       "category": "Class 1 · Questions and answers"
     },
     {
       "bn": "কে এসেছে?",
+      "pronunciation": "ke eshechhe",
       "en": "Who has come?",
       "context": "Questions and answers",
       "category": "Class 1 · Questions and answers"
     },
     {
       "bn": "মা এসেছেন।",
+      "pronunciation": "ma eshechhen",
       "en": "Mother has come.",
       "context": "Questions and answers",
       "category": "Class 1 · Questions and answers"
     },
     {
       "bn": "এটা কার?",
+      "pronunciation": "eta kar",
       "en": "Whose is this?",
       "context": "Questions and answers",
       "category": "Class 1 · Questions and answers"
     },
     {
       "bn": "এটা আমার।",
+      "pronunciation": "eta amar.",
       "en": "This is mine.",
       "context": "Questions and answers",
       "category": "Class 1 · Questions and answers"
     },
     {
       "bn": "তুমি কি যাবে?",
+      "pronunciation": "tumi ki jabe",
       "en": "Will you go?",
       "context": "Questions and answers",
       "category": "Class 1 · Questions and answers"
     },
     {
       "bn": "হ্যাঁ, আমি যাব।",
+      "pronunciation": "hã, ami jabo.",
       "en": "Yes, I will go.",
       "context": "Questions and answers",
       "category": "Class 1 · Questions and answers"
     },
     {
       "bn": "না, আমি যাব না।",
+      "pronunciation": "na ami jabo na",
       "en": "No, I will not go.",
       "context": "Questions and answers",
       "category": "Class 1 · Questions and answers"
     },
     {
       "bn": "বইটি টেবিলের উপর আছে।",
+      "pronunciation": "boiti tebiler upor achhe",
       "en": "The book is on the table.",
       "context": "Position",
       "category": "Class 1 · Position"
     },
     {
       "bn": "বলটি টেবিলের নিচে আছে।",
+      "pronunciation": "boloti tebiler niche achhe",
       "en": "The ball is under the table.",
       "context": "Position",
       "category": "Class 1 · Position"
     },
     {
       "bn": "বিড়ালটি ঘরের ভিতরে আছে।",
+      "pronunciation": "biral-ti ghorer bhitore achhe",
       "en": "The cat is inside the room.",
       "context": "Position",
       "category": "Class 1 · Position"
     },
     {
       "bn": "কুকুরটি বাইরে আছে।",
+      "pronunciation": "kukurṭi baire achhe",
       "en": "The dog is outside.",
       "context": "Position",
       "category": "Class 1 · Position"
     },
     {
       "bn": "আমি তোমার পাশে আছি।",
+      "pronunciation": "ami tomar pashe achhi",
       "en": "I am beside you.",
       "context": "Position",
       "category": "Class 1 · Position"
     },
     {
       "bn": "স্কুলটি বাড়ির কাছে।",
+      "pronunciation": "skulti barir kachhe",
       "en": "The school is near the house.",
       "context": "Position",
       "category": "Class 1 · Position"
     },
     {
       "bn": "গাছটি বাড়ির সামনে।",
+      "pronunciation": "gachhoti barir shamne",
       "en": "The tree is in front of the house.",
       "context": "Position",
       "category": "Class 1 · Position"
     },
     {
       "bn": "আমার একটি বই আছে।",
+      "pronunciation": "amar ekti boi achhe",
       "en": "I have one book.",
       "context": "Numbers and quantities",
       "category": "Class 1 · Numbers and quantities"
     },
     {
       "bn": "আমার দুটি পেন্সিল আছে।",
+      "pronunciation": "amar duṭi pensil achhe",
       "en": "I have two pencils.",
       "context": "Numbers and quantities",
       "category": "Class 1 · Numbers and quantities"
     },
     {
       "bn": "তিনটি পাখি আছে।",
+      "pronunciation": "tinti pakhi achhe",
       "en": "There are three birds.",
       "context": "Numbers and quantities",
       "category": "Class 1 · Numbers and quantities"
     },
     {
       "bn": "আমাকে একটি দাও।",
+      "pronunciation": "amake ekti dao",
       "en": "Give me one.",
       "context": "Numbers and quantities",
       "category": "Class 1 · Numbers and quantities"
     },
     {
       "bn": "কতগুলো আছে?",
+      "pronunciation": "kotogulo achhe",
       "en": "How many are there?",
       "context": "Numbers and quantities",
       "category": "Class 1 · Numbers and quantities"
     },
     {
       "bn": "এখানে অনেক ফুল আছে।",
+      "pronunciation": "ekhane ônek phul / ful achhe",
       "en": "There are many flowers here.",
       "context": "Numbers and quantities",
       "category": "Class 1 · Numbers and quantities"
     },
     {
       "bn": "এখানে অল্প পানি আছে।",
+      "pronunciation": "ekhane ôlpo pani achhe",
       "en": "There is a little water here.",
       "context": "Numbers and quantities",
       "category": "Class 1 · Numbers and quantities"
     },
     {
       "bn": "এটি একটি আম।",
+      "pronunciation": "eti ekti am",
       "en": "This is a mango.",
       "context": "Easy reading",
       "category": "Class 1 · Easy reading"
     },
     {
       "bn": "আমটি হলুদ।",
+      "pronunciation": "amti holud",
       "en": "The mango is yellow.",
       "context": "Easy reading",
       "category": "Class 1 · Easy reading"
     },
     {
       "bn": "আমটি মিষ্টি।",
+      "pronunciation": "amti mishti",
       "en": "The mango is sweet.",
       "context": "Easy reading",
       "category": "Class 1 · Easy reading"
     },
     {
       "bn": "এটি একটি লাল বল।",
+      "pronunciation": "eti ekti lal bol",
       "en": "This is a red ball.",
       "context": "Easy reading",
       "category": "Class 1 · Easy reading"
     },
     {
       "bn": "বলটি বড়।",
+      "pronunciation": "boloti bôṛo",
       "en": "The ball is big.",
       "context": "Easy reading",
       "category": "Class 1 · Easy reading"
     },
     {
       "bn": "রিমা বল নিয়ে খেলে।",
+      "pronunciation": "rima bol niye khele",
       "en": "Rima plays with a ball.",
       "context": "Easy reading",
       "category": "Class 1 · Easy reading"
     },
     {
       "bn": "একটি বিড়াল আছে।",
+      "pronunciation": "ekti biral achhe",
       "en": "There is a cat.",
       "context": "Easy reading",
       "category": "Class 1 · Easy reading"
     },
     {
       "bn": "বিড়ালটি ছোট।",
+      "pronunciation": "biral-ti chhoto",
       "en": "The cat is small.",
       "context": "Easy reading",
       "category": "Class 1 · Easy reading"
     },
     {
       "bn": "বিড়ালটি দুধ খায়।",
+      "pronunciation": "biral-ti dudh khay",
       "en": "The cat drinks milk.",
       "context": "Easy reading",
       "category": "Class 1 · Easy reading"
     },
     {
       "bn": "আকাশ নীল।",
+      "pronunciation": "Akash neel.",
       "en": "The sky is blue.",
       "context": "Easy reading",
       "category": "Class 1 · Easy reading"
     },
     {
       "bn": "সূর্য ওঠে।",
+      "pronunciation": "shurjo othe",
       "en": "The sun rises.",
       "context": "Easy reading",
       "category": "Class 1 · Easy reading"
     },
     {
       "bn": "পাখি আকাশে ওড়ে।",
+      "pronunciation": "pakhi akashe ode",
       "en": "A bird flies in the sky.",
       "context": "Easy reading",
       "category": "Class 1 · Easy reading"
     },
     {
       "bn": "গাছে সবুজ পাতা আছে।",
+      "pronunciation": "gache shobuj pata achhe",
       "en": "The tree has green leaves.",
       "context": "Easy reading",
       "category": "Class 1 · Easy reading"
     },
     {
       "bn": "ফুলটি সুন্দর।",
+      "pronunciation": "phul-ti shundor",
       "en": "The flower is beautiful.",
       "context": "Easy reading",
       "category": "Class 1 · Easy reading"
     },
     {
       "bn": "বৃষ্টি পড়ছে।",
+      "pronunciation": "brishti porchhe",
       "en": "It is raining.",
       "context": "Easy reading",
       "category": "Class 1 · Easy reading"
     },
     {
       "bn": "আমি ছাতা নিই।",
+      "pronunciation": "ami chhata nii",
       "en": "I take an umbrella.",
       "context": "Easy reading",
       "category": "Class 1 · Easy reading"
     },
     {
       "bn": "আজ খুব গরম।",
+      "pronunciation": "aj khub gorom",
       "en": "Today is very hot.",
       "context": "Easy reading",
       "category": "Class 1 · Easy reading"
     },
     {
       "bn": "রাতে চাঁদ ওঠে।",
+      "pronunciation": "rate chãd othe",
       "en": "The moon rises at night.",
       "context": "Easy reading",
       "category": "Class 1 · Easy reading"
     },
     {
       "bn": "আমি রাতে ঘুমাই।",
+      "pronunciation": "ami rate ghumai",
       "en": "I sleep at night.",
       "context": "Easy reading",
       "category": "Class 1 · Easy reading"
     },
     {
       "bn": "সকালে আমি স্কুলে যাই।",
+      "pronunciation": "shokale ami skule jai",
       "en": "I go to school in the morning.",
       "context": "Easy reading",
       "category": "Class 1 · Easy reading"
     },
     {
       "bn": "এসো।",
+      "pronunciation": "esho",
       "en": "Come.",
       "context": "Short instructions",
       "category": "Class 1 · Short instructions"
     },
     {
       "bn": "যাও।",
+      "pronunciation": "jao",
       "en": "Go.",
       "context": "Short instructions",
       "category": "Class 1 · Short instructions"
     },
     {
       "bn": "বসো।",
+      "pronunciation": "bosho",
       "en": "Sit.",
       "context": "Short instructions",
       "category": "Class 1 · Short instructions"
     },
     {
       "bn": "দাঁড়াও।",
+      "pronunciation": "darao.",
       "en": "Stand.",
       "context": "Short instructions",
       "category": "Class 1 · Short instructions"
     },
     {
       "bn": "দেখো।",
+      "pronunciation": "dekho",
       "en": "Look.",
       "context": "Short instructions",
       "category": "Class 1 · Short instructions"
     },
     {
       "bn": "শোনো।",
+      "pronunciation": "Shono.",
       "en": "Listen.",
       "context": "Short instructions",
       "category": "Class 1 · Short instructions"
     },
     {
       "bn": "বলো।",
+      "pronunciation": "bolo.",
       "en": "Speak.",
       "context": "Short instructions",
       "category": "Class 1 · Short instructions"
     },
     {
       "bn": "পড়ো।",
+      "pronunciation": "poro",
       "en": "Read.",
       "context": "Short instructions",
       "category": "Class 1 · Short instructions"
     },
     {
       "bn": "লেখো।",
+      "pronunciation": "lekho",
       "en": "Write.",
       "context": "Short instructions",
       "category": "Class 1 · Short instructions"
     },
     {
       "bn": "খাও।",
+      "pronunciation": "khao",
       "en": "Eat.",
       "context": "Short instructions",
       "category": "Class 1 · Short instructions"
     },
     {
       "bn": "পানি খাও।",
+      "pronunciation": "pani khao",
       "en": "Drink water.",
       "context": "Short instructions",
       "category": "Class 1 · Short instructions"
     },
     {
       "bn": "ধরো।",
+      "pronunciation": "dhoro",
       "en": "Hold it.",
       "context": "Short instructions",
       "category": "Class 1 · Short instructions"
     },
     {
       "bn": "ছাড়ো।",
+      "pronunciation": "chharo",
       "en": "Let go.",
       "context": "Short instructions",
       "category": "Class 1 · Short instructions"
     },
     {
       "bn": "খোলো।",
+      "pronunciation": "kholo",
       "en": "Open it.",
       "context": "Short instructions",
       "category": "Class 1 · Short instructions"
     },
     {
       "bn": "বন্ধ করো।",
+      "pronunciation": "bondho koro",
       "en": "Close it.",
       "context": "Short instructions",
       "category": "Class 1 · Short instructions"
     },
     {
       "bn": "অপেক্ষা করো।",
+      "pronunciation": "opekkha koro.",
       "en": "Wait.",
       "context": "Short instructions",
       "category": "Class 1 · Short instructions"
     },
     {
       "bn": "আবার করো।",
+      "pronunciation": "abar koro",
       "en": "Do it again.",
       "context": "Short instructions",
       "category": "Class 1 · Short instructions"
     },
     {
       "bn": "এখানে রাখো।",
+      "pronunciation": "ekhane rakho.",
       "en": "Put it here.",
       "context": "Short instructions",
       "category": "Class 1 · Short instructions"
     },
     {
       "bn": "ওখানে রাখো।",
+      "pronunciation": "okhane rakho",
       "en": "Put it there.",
       "context": "Short instructions",
       "category": "Class 1 · Short instructions"
     },
     {
       "bn": "আমার সঙ্গে এসো।",
+      "pronunciation": "amar shonge esho",
       "en": "Come with me.",
       "context": "Short instructions",
       "category": "Class 1 · Short instructions"
     },
     {
       "bn": "সাবধানে যাও।",
+      "pronunciation": "shobdhone jao",
       "en": "Go carefully.",
       "context": "Short instructions",
       "category": "Class 1 · Short instructions"
     },
     {
       "bn": "বড় — ছোট",
+      "pronunciation": "bôṛo chhoto",
       "en": "big — small",
       "context": "Important opposites",
       "category": "Class 1 · Important opposites"
     },
     {
       "bn": "লম্বা — খাটো",
+      "pronunciation": "lomba khato",
       "en": "tall — short",
       "context": "Important opposites",
       "category": "Class 1 · Important opposites"
     },
     {
       "bn": "ভালো — খারাপ",
+      "pronunciation": "bhalo kharap",
       "en": "good — bad",
       "context": "Important opposites",
       "category": "Class 1 · Important opposites"
     },
     {
       "bn": "দিন — রাত",
+      "pronunciation": "din rat",
       "en": "day — night",
       "context": "Important opposites",
       "category": "Class 1 · Important opposites"
     },
     {
       "bn": "সকাল — সন্ধ্যা",
+      "pronunciation": "shokal shondhya",
       "en": "morning — evening",
       "context": "Important opposites",
       "category": "Class 1 · Important opposites"
     },
     {
       "bn": "আলো — অন্ধকার",
+      "pronunciation": "alo ôndhokar",
       "en": "light — darkness",
       "context": "Important opposites",
       "category": "Class 1 · Important opposites"
     },
     {
       "bn": "গরম — ঠান্ডা",
+      "pronunciation": "gorom thanda",
       "en": "hot — cold",
       "context": "Important opposites",
       "category": "Class 1 · Important opposites"
     },
     {
       "bn": "নতুন — পুরোনো",
+      "pronunciation": "notun purono",
       "en": "new — old",
       "context": "Important opposites",
       "category": "Class 1 · Important opposites"
     },
     {
       "bn": "উপরে — নিচে",
+      "pronunciation": "upore niche",
       "en": "above — below",
       "context": "Important opposites",
       "category": "Class 1 · Important opposites"
     },
     {
       "bn": "সামনে — পিছনে",
+      "pronunciation": "shamne Pichone",
       "en": "in front — behind",
       "context": "Important opposites",
       "category": "Class 1 · Important opposites"
     },
     {
       "bn": "ভিতরে — বাইরে",
+      "pronunciation": "bhitore baire",
       "en": "inside — outside",
       "context": "Important opposites",
       "category": "Class 1 · Important opposites"
     },
     {
       "bn": "কাছে — দূরে",
+      "pronunciation": "kachhe dure",
       "en": "near — far",
       "context": "Important opposites",
       "category": "Class 1 · Important opposites"
     },
     {
       "bn": "ডান — বাম",
+      "pronunciation": "dan Baam",
       "en": "right — left",
       "context": "Important opposites",
       "category": "Class 1 · Important opposites"
     },
     {
       "bn": "দ্রুত — ধীর",
+      "pronunciation": "druto dhir",
       "en": "fast — slow",
       "context": "Important opposites",
       "category": "Class 1 · Important opposites"
     },
     {
       "bn": "হাসি — কান্না",
+      "pronunciation": "hashi Kanna",
       "en": "laughter — crying",
       "context": "Important opposites",
       "category": "Class 1 · Important opposites"
     },
     {
       "bn": "আসা — যাওয়া",
+      "pronunciation": "asha jaoa",
       "en": "coming — going",
       "context": "Important opposites",
       "category": "Class 1 · Important opposites"
     },
     {
       "bn": "খোলা — বন্ধ",
+      "pronunciation": "khola bondho",
       "en": "open — closed",
       "context": "Important opposites",
       "category": "Class 1 · Important opposites"
     },
     {
       "bn": "ভরা — খালি",
+      "pronunciation": "bhora khali",
       "en": "full — empty",
       "context": "Important opposites",
       "category": "Class 1 · Important opposites"
     },
     {
       "bn": "শুরু — শেষ",
+      "pronunciation": "shuru shesh",
       "en": "start — finish",
       "context": "Important opposites",
       "category": "Class 1 · Important opposites"
     },
     {
       "bn": "হ্যাঁ — না",
+      "pronunciation": "hã na",
       "en": "yes — no",
       "context": "Important opposites",
       "category": "Class 1 · Important opposites"
     },
     {
       "bn": "আমি খাই।",
+      "pronunciation": "ami khai.",
       "en": "I eat.",
       "context": "আমি + কাজ",
       "category": "Class 1 · আমি + কাজ"
     },
     {
       "bn": "আমি খেলি।",
+      "pronunciation": "ami kheli",
       "en": "I play.",
       "context": "আমি + কাজ",
       "category": "Class 1 · আমি + কাজ"
     },
     {
       "bn": "আমি পড়ি।",
+      "pronunciation": "ami pori",
       "en": "I read.",
       "context": "আমি + কাজ",
       "category": "Class 1 · আমি + কাজ"
     },
     {
       "bn": "আমি লিখি।",
+      "pronunciation": "ami likhi",
       "en": "I write.",
       "context": "আমি + কাজ",
       "category": "Class 1 · আমি + কাজ"
     },
     {
       "bn": "আমি যাই।",
+      "pronunciation": "ami jai",
       "en": "I go.",
       "context": "আমি + কাজ",
       "category": "Class 1 · আমি + কাজ"
     },
     {
       "bn": "আমি ঘুমাই।",
+      "pronunciation": "ami ghumai",
       "en": "I sleep.",
       "context": "আমি + কাজ",
       "category": "Class 1 · আমি + কাজ"
     },
     {
       "bn": "সে খায়।",
+      "pronunciation": "she khay",
       "en": "He or she eats.",
       "context": "সে + কাজ",
       "category": "Class 1 · সে + কাজ"
     },
     {
       "bn": "সে খেলে।",
+      "pronunciation": "she khele",
       "en": "He or she plays.",
       "context": "সে + কাজ",
       "category": "Class 1 · সে + কাজ"
     },
     {
       "bn": "সে পড়ে।",
+      "pronunciation": "she pore",
       "en": "He or she reads.",
       "context": "সে + কাজ",
       "category": "Class 1 · সে + কাজ"
     },
     {
       "bn": "সে লেখে।",
+      "pronunciation": "she lekhe",
       "en": "He or she writes.",
       "context": "সে + কাজ",
       "category": "Class 1 · সে + কাজ"
     },
     {
       "bn": "সে যায়।",
+      "pronunciation": "she Jay",
       "en": "He or she goes.",
       "context": "সে + কাজ",
       "category": "Class 1 · সে + কাজ"
     },
     {
       "bn": "সে ঘুমায়।",
+      "pronunciation": "she ghumajo",
       "en": "He or she sleeps.",
       "context": "সে + কাজ",
       "category": "Class 1 · সে + কাজ"
     },
     {
       "bn": "এটি একটি বই।",
+      "pronunciation": "eti ekti boi",
       "en": "This is a book.",
       "context": "এটি + বস্তু",
       "category": "Class 1 · এটি + বস্তু"
     },
     {
       "bn": "এটি একটি ফুল।",
+      "pronunciation": "eti ekti phul / ful",
       "en": "This is a flower.",
       "context": "এটি + বস্তু",
       "category": "Class 1 · এটি + বস্তু"
     },
     {
       "bn": "এটি একটি গাছ।",
+      "pronunciation": "eti ekti gachh",
       "en": "This is a tree.",
       "context": "এটি + বস্তু",
       "category": "Class 1 · এটি + বস্তু"
     },
     {
       "bn": "এটি একটি বল।",
+      "pronunciation": "eti ekti bol",
       "en": "This is a ball.",
       "context": "এটি + বস্তু",
       "category": "Class 1 · এটি + বস্তু"
     },
     {
       "bn": "আমার বই।",
+      "pronunciation": "Amar boi.",
       "en": "My book.",
       "context": "আমার + বস্তু",
       "category": "Class 1 · আমার + বস্তু"
     },
     {
       "bn": "আমার খাতা।",
+      "pronunciation": "amar khata",
       "en": "My notebook.",
       "context": "আমার + বস্তু",
       "category": "Class 1 · আমার + বস্তু"
     },
     {
       "bn": "আমার বাড়ি।",
+      "pronunciation": "amar bari.",
       "en": "My house.",
       "context": "আমার + বস্তু",
       "category": "Class 1 · আমার + বস্তু"
     },
     {
       "bn": "আমার মা।",
+      "pronunciation": "amar ma.",
       "en": "My mother.",
       "context": "আমার + বস্তু",
       "category": "Class 1 · আমার + বস্তু"
     },
     {
       "bn": "আমার বন্ধু।",
+      "pronunciation": "amar bondhu",
       "en": "My friend.",
       "context": "আমার + বস্তু",
       "category": "Class 1 · আমার + বস্তু"
     },
     {
       "bn": "মা কোথায়?",
+      "pronunciation": "ma kothay?",
       "en": "Where is mother?",
       "context": "কোথায় + প্রশ্ন",
       "category": "Class 1 · কোথায় + প্রশ্ন"
     },
     {
       "bn": "বই কোথায়?",
+      "pronunciation": "boi kothay",
       "en": "Where is the book?",
       "context": "কোথায় + প্রশ্ন",
       "category": "Class 1 · কোথায় + প্রশ্ন"
     },
     {
       "bn": "বল কোথায়?",
+      "pronunciation": "bol kothay",
       "en": "Where is the ball?",
       "context": "কোথায় + প্রশ্ন",
       "category": "Class 1 · কোথায় + প্রশ্ন"
     },
     {
       "bn": "তুমি কোথায়?",
+      "pronunciation": "tumi kothay?",
       "en": "Where are you?",
       "context": "কোথায় + প্রশ্ন",
       "category": "Class 1 · কোথায় + প্রশ্ন"
     },
     {
       "bn": "এটা কী?",
+      "pronunciation": "eta ki?",
       "en": "What is this?",
       "context": "কী + প্রশ্ন",
       "category": "Class 1 · কী + প্রশ্ন"
     },
     {
       "bn": "তুমি কী করছ?",
+      "pronunciation": "tumi ki korchho?",
       "en": "What are you doing?",
       "context": "কী + প্রশ্ন",
       "category": "Class 1 · কী + প্রশ্ন"
     },
     {
       "bn": "তুমি কী খাচ্ছ?",
+      "pronunciation": "tumi ki khachchho",
       "en": "What are you eating?",
       "context": "কী + প্রশ্ন",
       "category": "Class 1 · কী + প্রশ্ন"
     },
     {
       "bn": "তুমি কী পড়ছ?",
+      "pronunciation": "tumi ki porchho?",
       "en": "What are you reading?",
       "context": "কী + প্রশ্ন",
       "category": "Class 1 · কী + প্রশ্ন"
     },
     {
       "bn": "এটা কে?",
+      "pronunciation": "eta ke",
       "en": "Who is this?",
       "context": "কে + প্রশ্ন",
       "category": "Class 1 · কে + প্রশ্ন"
     },
     {
       "bn": "কে এসেছে?",
+      "pronunciation": "ke eshechhe",
       "en": "Who has come?",
       "context": "কে + প্রশ্ন",
       "category": "Class 1 · কে + প্রশ্ন"
     },
     {
       "bn": "কে খেলছে?",
+      "pronunciation": "ke khelchhe",
       "en": "Who is playing?",
       "context": "কে + প্রশ্ন",
       "category": "Class 1 · কে + প্রশ্ন"
     },
     {
       "bn": "কে ডাকছে?",
+      "pronunciation": "ke dakchhe",
       "en": "Who is calling?",
       "context": "কে + প্রশ্ন",
       "category": "Class 1 · কে + প্রশ্ন"

@@ -8,3686 +8,4423 @@
   "vocab": [
     {
       "bn": "বিশ্লেষণ",
+      "pronunciation": "bishleshon",
       "en": "analysis",
       "category": "Class 11 · spiral review· spiral review· spiral review · Academic analysis"
     },
     {
       "bn": "মূল্যায়ন",
+      "pronunciation": "muljajon",
       "en": "assessment",
       "category": "Class 11 · spiral review· spiral review· spiral review · Academic analysis"
     },
     {
       "bn": "যুক্তি",
+      "pronunciation": "jukti",
       "en": "reasoning",
       "category": "Class 11 · spiral review· spiral review· spiral review · Academic analysis"
     },
     {
       "bn": "প্রমাণ",
+      "pronunciation": "proman",
       "en": "evidence",
       "category": "Class 11 · spiral review· spiral review· spiral review · Academic analysis"
     },
     {
       "bn": "দৃষ্টিভঙ্গি",
+      "pronunciation": "drishtibhongi",
       "en": "perspective",
       "category": "Class 11 · spiral review· spiral review· spiral review · Academic analysis"
     },
     {
       "bn": "ব্যাখ্যা",
+      "pronunciation": "bjakhja",
       "en": "explanation",
       "category": "Class 11 · spiral review· spiral review· spiral review · Academic analysis"
     },
     {
       "bn": "তুলনা",
+      "pronunciation": "tulona",
       "en": "comparison",
       "category": "Class 11 · spiral review· spiral review· spiral review · Academic analysis"
     },
     {
       "bn": "বৈপরীত্য",
+      "pronunciation": "boiporitj",
       "en": "contrast",
       "category": "Class 11 · spiral review· spiral review· spiral review · Academic analysis"
     },
     {
       "bn": "উপসংহার",
+      "pronunciation": "uposonghar",
       "en": "conclusion",
       "category": "Class 11 · spiral review· spiral review· spiral review · Academic analysis"
     },
     {
       "bn": "সিদ্ধান্ত",
+      "pronunciation": "shiddhanto",
       "en": "decision",
       "category": "Class 11 · spiral review· spiral review· spiral review · Academic analysis"
     },
     {
       "bn": "অনুমান",
+      "pronunciation": "onuman",
       "en": "inference",
       "category": "Class 11 · spiral review· spiral review· spiral review · Academic analysis"
     },
     {
       "bn": "ধারণা",
+      "pronunciation": "dharona",
       "en": "idea",
       "category": "Class 11 · spiral review· spiral review· spiral review · Academic analysis"
     },
     {
       "bn": "পর্যবেক্ষণ",
+      "pronunciation": "porjobekshon",
       "en": "observation",
       "category": "Class 11 · spiral review· spiral review· spiral review · Academic analysis"
     },
     {
       "bn": "গবেষণা",
+      "pronunciation": "gobeshona",
       "en": "research",
       "category": "Class 11 · spiral review· spiral review· spiral review · Academic analysis"
     },
     {
       "bn": "নির্ভরযোগ্যতা",
+      "pronunciation": "nirbhorojogjota",
       "en": "reliability",
       "category": "Class 11 · spiral review· spiral review· spiral review · Academic analysis"
     },
     {
       "bn": "পক্ষপাত",
+      "pronunciation": "pokshopat",
       "en": "bias",
       "category": "Class 11 · spiral review· spiral review· spiral review · Academic analysis"
     },
     {
       "bn": "উদ্দেশ্য",
+      "pronunciation": "uddeshsho",
       "en": "purpose",
       "category": "Class 11 · spiral review· spiral review· spiral review · Academic analysis"
     },
     {
       "bn": "প্রভাব",
+      "pronunciation": "probhab",
       "en": "effect",
       "category": "Class 11 · spiral review· spiral review· spiral review · Academic analysis"
     },
     {
       "bn": "কারণ",
+      "pronunciation": "karon",
       "en": "because",
       "category": "Class 11 · spiral review· spiral review· spiral review · Academic analysis"
     },
     {
       "bn": "ফলাফল",
+      "pronunciation": "pholaphol",
       "en": "result",
       "category": "Class 11 · spiral review· spiral review· spiral review · Academic analysis"
     },
     {
       "bn": "সমস্যা",
+      "pronunciation": "shomoshsha",
       "en": "problem",
       "category": "Class 11 · spiral review· spiral review· spiral review · Academic analysis"
     },
     {
       "bn": "সমাধান",
+      "pronunciation": "shomadhan",
       "en": "solution",
       "category": "Class 11 · spiral review· spiral review· spiral review · Academic analysis"
     },
     {
       "bn": "সীমাবদ্ধতা",
+      "pronunciation": "simaboddhota",
       "en": "limitation",
       "category": "Class 11 · spiral review· spiral review· spiral review · Academic analysis"
     },
     {
       "bn": "সুবিধা",
+      "pronunciation": "shubidha",
       "en": "advantage",
       "category": "Class 11 · spiral review· spiral review· spiral review · Academic analysis"
     },
     {
       "bn": "অসুবিধা",
+      "pronunciation": "osubidha",
       "en": "disadvantage",
       "category": "Class 11 · spiral review· spiral review· spiral review · Academic analysis"
     },
     {
       "bn": "বিকল্প",
+      "pronunciation": "bikolp",
       "en": "alternative",
       "category": "Class 11 · spiral review· spiral review· spiral review · Academic analysis"
     },
     {
       "bn": "পদ্ধতি",
+      "pronunciation": "poddhoti",
       "en": "method",
       "category": "Class 11 · spiral review· spiral review· spiral review · Academic analysis"
     },
     {
       "bn": "কৌশল",
+      "pronunciation": "koushol",
       "en": "strategy",
       "category": "Class 11 · spiral review· spiral review· spiral review · Academic analysis"
     },
     {
       "bn": "অগ্রাধিকার",
+      "pronunciation": "ogradhikar",
       "en": "priority",
       "category": "Class 11 · spiral review· spiral review· spiral review · Academic analysis"
     },
     {
       "bn": "সম্ভাবনা",
+      "pronunciation": "shombhabona",
       "en": "possibility",
       "category": "Class 11 · spiral review· spiral review· spiral review · Academic analysis"
     },
     {
       "bn": "ঝুঁকি",
+      "pronunciation": "jhũki",
       "en": "risk",
       "category": "Class 11 · spiral review· spiral review· spiral review · Academic analysis"
     },
     {
       "bn": "প্রবণতা",
+      "pronunciation": "probonota",
       "en": "trend",
       "category": "Class 11 · spiral review· spiral review· spiral review · Academic analysis"
     },
     {
       "bn": "প্রেক্ষাপট",
+      "pronunciation": "prekshapot",
       "en": "context",
       "category": "Class 11 · spiral review· spiral review· spiral review · Academic analysis"
     },
     {
       "bn": "অধ্যয়ন",
+      "pronunciation": "odhjojon",
       "en": "study",
       "category": "Class 11 · spiral review· spiral review· spiral review · Education and study"
     },
     {
       "bn": "পাঠ্যক্রম",
+      "pronunciation": "pathjokrom",
       "en": "curriculum",
       "category": "Class 11 · spiral review· spiral review· spiral review · Education and study"
     },
     {
       "bn": "বিষয়বস্তু",
+      "pronunciation": "bishojobostu",
       "en": "content",
       "category": "Class 11 · spiral review· spiral review· spiral review · Education and study"
     },
     {
       "bn": "অনুধাবন",
+      "pronunciation": "onudhabon",
       "en": "comprehension",
       "category": "Class 11 · spiral review· spiral review· spiral review · Education and study"
     },
     {
       "bn": "তথ্যসংগ্রহ",
+      "pronunciation": "tothjosonggroh",
       "en": "data collection",
       "category": "Class 11 · spiral review· spiral review· spiral review · Education and study"
     },
     {
       "bn": "উৎস",
+      "pronunciation": "utsho",
       "en": "source",
       "category": "Class 11 · spiral review· spiral review· spiral review · Education and study"
     },
     {
       "bn": "তথ্যসূত্র",
+      "pronunciation": "tothjosutr",
       "en": "source",
       "category": "Class 11 · spiral review· spiral review· spiral review · Education and study"
     },
     {
       "bn": "রেফারেন্স",
+      "pronunciation": "repharens",
       "en": "reference",
       "category": "Class 11 · spiral review· spiral review· spiral review · Education and study"
     },
     {
       "bn": "উদ্ধৃতি",
+      "pronunciation": "uddhriti",
       "en": "citation",
       "category": "Class 11 · spiral review· spiral review· spiral review · Education and study"
     },
     {
       "bn": "সারাংশ",
+      "pronunciation": "sarangsh",
       "en": "summary",
       "category": "Class 11 · spiral review· spiral review· spiral review · Education and study"
     },
     {
       "bn": "প্রতিবেদন",
+      "pronunciation": "protibedon",
       "en": "report",
       "category": "Class 11 · spiral review· spiral review· spiral review · Education and study"
     },
     {
       "bn": "প্রবন্ধ",
+      "pronunciation": "probondh",
       "en": "essay",
       "category": "Class 11 · spiral review· spiral review· spiral review · Education and study"
     },
     {
       "bn": "উপস্থাপনা",
+      "pronunciation": "uposthapona",
       "en": "presentation",
       "category": "Class 11 · spiral review· spiral review· spiral review · Education and study"
     },
     {
       "bn": "প্রকল্প",
+      "pronunciation": "prokolp",
       "en": "project",
       "category": "Class 11 · spiral review· spiral review· spiral review · Education and study"
     },
     {
       "bn": "বিতর্ক",
+      "pronunciation": "bitork",
       "en": "debate",
       "category": "Class 11 · spiral review· spiral review· spiral review · Education and study"
     },
     {
       "bn": "আলোচনা",
+      "pronunciation": "alochona",
       "en": "discussion",
       "category": "Class 11 · spiral review· spiral review· spiral review · Education and study"
     },
     {
       "bn": "দক্ষতা",
+      "pronunciation": "dokkhota",
       "en": "skill",
       "category": "Class 11 · spiral review· spiral review· spiral review · Education and study"
     },
     {
       "bn": "জ্ঞান",
+      "pronunciation": "gyan",
       "en": "knowledge",
       "category": "Class 11 · spiral review· spiral review· spiral review · Education and study"
     },
     {
       "bn": "প্রয়োগ",
+      "pronunciation": "proyog",
       "en": "application",
       "category": "Class 11 · spiral review· spiral review· spiral review · Education and study"
     },
     {
       "bn": "পুনর্বিবেচনা",
+      "pronunciation": "punorbibechona",
       "en": "revision",
       "category": "Class 11 · spiral review· spiral review· spiral review · Education and study"
     },
     {
       "bn": "সংশোধন",
+      "pronunciation": "shongshodhon",
       "en": "correction",
       "category": "Class 11 · spiral review· spiral review· spiral review · Education and study"
     },
     {
       "bn": "বিশেষ্য",
+      "pronunciation": "bisheshj",
       "en": "noun",
       "category": "Class 11 · spiral review· spiral review· spiral review · Bengali grammar"
     },
     {
       "bn": "সর্বনাম",
+      "pronunciation": "sorbonam",
       "en": "pronoun",
       "category": "Class 11 · spiral review· spiral review· spiral review · Bengali grammar"
     },
     {
       "bn": "ক্রিয়া",
+      "pronunciation": "kriya",
       "en": "verb",
       "category": "Class 11 · spiral review· spiral review· spiral review · Bengali grammar"
     },
     {
       "bn": "বিশেষণ",
+      "pronunciation": "bisheshon",
       "en": "adjective",
       "category": "Class 11 · spiral review· spiral review· spiral review · Bengali grammar"
     },
     {
       "bn": "ক্রিয়াবিশেষণ",
+      "pronunciation": "krijabisheshon",
       "en": "adverb",
       "category": "Class 11 · spiral review· spiral review· spiral review · Bengali grammar"
     },
     {
       "bn": "অব্যয়",
+      "pronunciation": "objojo",
       "en": "indeclinable",
       "category": "Class 11 · spiral review· spiral review· spiral review · Bengali grammar"
     },
     {
       "bn": "অনুসর্গ",
+      "pronunciation": "onusorg",
       "en": "postposition",
       "category": "Class 11 · spiral review· spiral review· spiral review · Bengali grammar"
     },
     {
       "bn": "বিভক্তি",
+      "pronunciation": "bibhokti",
       "en": "case ending",
       "category": "Class 11 · spiral review· spiral review· spiral review · Bengali grammar"
     },
     {
       "bn": "উপসর্গ",
+      "pronunciation": "uposorg",
       "en": "symptom",
       "category": "Class 11 · spiral review· spiral review· spiral review · Bengali grammar"
     },
     {
       "bn": "প্রত্যয়",
+      "pronunciation": "protjojo",
       "en": "suffix",
       "category": "Class 11 · spiral review· spiral review· spiral review · Bengali grammar"
     },
     {
       "bn": "সন্ধি",
+      "pronunciation": "sondhi",
       "en": "euphonic combination",
       "category": "Class 11 · spiral review· spiral review· spiral review · Bengali grammar"
     },
     {
       "bn": "সমাস",
+      "pronunciation": "somas",
       "en": "compound formation",
       "category": "Class 11 · spiral review· spiral review· spiral review · Bengali grammar"
     },
     {
       "bn": "ধাতু",
+      "pronunciation": "dhatu",
       "en": "verb root",
       "category": "Class 11 · spiral review· spiral review· spiral review · Bengali grammar"
     },
     {
       "bn": "কারক",
+      "pronunciation": "karok",
       "en": "grammatical case",
       "category": "Class 11 · spiral review· spiral review· spiral review · Bengali grammar"
     },
     {
       "bn": "কর্তা",
+      "pronunciation": "korta",
       "en": "subject",
       "category": "Class 11 · spiral review· spiral review· spiral review · Bengali grammar"
     },
     {
       "bn": "কর্ম",
+      "pronunciation": "kormo",
       "en": "object",
       "category": "Class 11 · spiral review· spiral review· spiral review · Bengali grammar"
     },
     {
       "bn": "কাল",
+      "pronunciation": "kal",
       "en": "tense",
       "category": "Class 11 · spiral review· spiral review· spiral review · Bengali grammar"
     },
     {
       "bn": "পুরুষ",
+      "pronunciation": "purush",
       "en": "grammatical person",
       "category": "Class 11 · spiral review· spiral review· spiral review · Bengali grammar"
     },
     {
       "bn": "বচন",
+      "pronunciation": "bochon",
       "en": "number",
       "category": "Class 11 · spiral review· spiral review· spiral review · Bengali grammar"
     },
     {
       "bn": "সরল বাক্য",
+      "pronunciation": "shorol bakj",
       "en": "simple sentence",
       "category": "Class 11 · spiral review· spiral review· spiral review · Bengali grammar"
     },
     {
       "bn": "যৌগিক বাক্য",
+      "pronunciation": "jougik bakj",
       "en": "compound sentence",
       "category": "Class 11 · spiral review· spiral review· spiral review · Bengali grammar"
     },
     {
       "bn": "জটিল বাক্য",
+      "pronunciation": "jotil bakj",
       "en": "complex sentence",
       "category": "Class 11 · spiral review· spiral review· spiral review · Bengali grammar"
     },
     {
       "bn": "সক্রিয় রূপ",
+      "pronunciation": "sokrijo rup",
       "en": "active voice",
       "category": "Class 11 · spiral review· spiral review· spiral review · Bengali grammar"
     },
     {
       "bn": "নিষ্ক্রিয় রূপ",
+      "pronunciation": "nishkrijo rup",
       "en": "passive voice",
       "category": "Class 11 · spiral review· spiral review· spiral review · Bengali grammar"
     },
     {
       "bn": "বাগধারা",
+      "pronunciation": "bagodhara",
       "en": "idiom",
       "category": "Class 11 · spiral review· spiral review· spiral review · Bengali grammar"
     },
     {
       "bn": "প্রবাদ",
+      "pronunciation": "probad",
       "en": "proverb",
       "category": "Class 11 · spiral review· spiral review· spiral review · Bengali grammar"
     },
     {
       "bn": "অলংকার",
+      "pronunciation": "olongkar",
       "en": "figure of speech",
       "category": "Class 11 · spiral review· spiral review· spiral review · Bengali grammar"
     },
     {
       "bn": "বাক্যরূপান্তর",
+      "pronunciation": "bakjorupantor",
       "en": "sentence transformation",
       "category": "Class 11 · spiral review· spiral review· spiral review · Bengali grammar"
     },
     {
       "bn": "সাহিত্য",
+      "pronunciation": "sahitj",
       "en": "literature",
       "category": "Class 11 · spiral review· spiral review· spiral review · Literary analysis"
     },
     {
       "bn": "কবিতা",
+      "pronunciation": "Kobita",
       "en": "poem",
       "category": "Class 11 · spiral review· spiral review· spiral review · Literary analysis"
     },
     {
       "bn": "গল্প",
+      "pronunciation": "golpo",
       "en": "story",
       "category": "Class 11 · spiral review· spiral review· spiral review · Literary analysis"
     },
     {
       "bn": "উপন্যাস",
+      "pronunciation": "uponjas",
       "en": "novel",
       "category": "Class 11 · spiral review· spiral review· spiral review · Literary analysis"
     },
     {
       "bn": "নাটক",
+      "pronunciation": "natok",
       "en": "drama",
       "category": "Class 11 · spiral review· spiral review· spiral review · Literary analysis"
     },
     {
       "bn": "কাহিনি",
+      "pronunciation": "kahini",
       "en": "plot",
       "category": "Class 11 · spiral review· spiral review· spiral review · Literary analysis"
     },
     {
       "bn": "প্লট",
+      "pronunciation": "plot",
       "en": "plot",
       "category": "Class 11 · spiral review· spiral review· spiral review · Literary analysis"
     },
     {
       "bn": "চরিত্রায়ন",
+      "pronunciation": "choritrajon",
       "en": "characterization",
       "category": "Class 11 · spiral review· spiral review· spiral review · Literary analysis"
     },
     {
       "bn": "সংঘাত",
+      "pronunciation": "songghat",
       "en": "conflict",
       "category": "Class 11 · spiral review· spiral review· spiral review · Literary analysis"
     },
     {
       "bn": "পটভূমি",
+      "pronunciation": "potobhumi",
       "en": "setting",
       "category": "Class 11 · spiral review· spiral review· spiral review · Literary analysis"
     },
     {
       "bn": "পরিবেশ",
+      "pronunciation": "poribesh",
       "en": "environment",
       "category": "Class 11 · spiral review· spiral review· spiral review · Literary analysis"
     },
     {
       "bn": "আবহ",
+      "pronunciation": "aboh",
       "en": "atmosphere",
       "category": "Class 11 · spiral review· spiral review· spiral review · Literary analysis"
     },
     {
       "bn": "সংলাপ",
+      "pronunciation": "shonglap",
       "en": "dialogue",
       "category": "Class 11 · spiral review· spiral review· spiral review · Literary analysis"
     },
     {
       "bn": "বর্ণনা",
+      "pronunciation": "bornona",
       "en": "description",
       "category": "Class 11 · spiral review· spiral review· spiral review · Literary analysis"
     },
     {
       "bn": "মূলভাব",
+      "pronunciation": "mulobhab",
       "en": "main idea",
       "category": "Class 11 · spiral review· spiral review· spiral review · Literary analysis"
     },
     {
       "bn": "বার্তা",
+      "pronunciation": "barta",
       "en": "message",
       "category": "Class 11 · spiral review· spiral review· spiral review · Literary analysis"
     },
     {
       "bn": "প্রতীক",
+      "pronunciation": "protik",
       "en": "symbol",
       "category": "Class 11 · spiral review· spiral review· spiral review · Literary analysis"
     },
     {
       "bn": "উপমা",
+      "pronunciation": "upoma",
       "en": "simile",
       "category": "Class 11 · spiral review· spiral review· spiral review · Literary analysis"
     },
     {
       "bn": "রূপক",
+      "pronunciation": "rupok",
       "en": "metaphor",
       "category": "Class 11 · spiral review· spiral review· spiral review · Literary analysis"
     },
     {
       "bn": "চিত্রকল্প",
+      "pronunciation": "chitrokolp",
       "en": "imagery",
       "category": "Class 11 · spiral review· spiral review· spiral review · Literary analysis"
     },
     {
       "bn": "ব্যঙ্গ",
+      "pronunciation": "bjongg",
       "en": "satire",
       "category": "Class 11 · spiral review· spiral review· spiral review · Literary analysis"
     },
     {
       "bn": "বিদ্রূপ",
+      "pronunciation": "bidrup",
       "en": "irony",
       "category": "Class 11 · spiral review· spiral review· spiral review · Literary analysis"
     },
     {
       "bn": "দৃষ্টিকোণ",
+      "pronunciation": "drishtikon",
       "en": "point of view",
       "category": "Class 11 · spiral review· spiral review· spiral review · Literary analysis"
     },
     {
       "bn": "সুর",
+      "pronunciation": "sur",
       "en": "tone",
       "category": "Class 11 · spiral review· spiral review· spiral review · Literary analysis"
     },
     {
       "bn": "লেখকের উদ্দেশ্য",
+      "pronunciation": "lekhoker uddeshsho",
       "en": "author's purpose",
       "category": "Class 11 · spiral review· spiral review· spiral review · Literary analysis"
     },
     {
       "bn": "চরিত্রের বিকাশ",
+      "pronunciation": "choritrer bikash",
       "en": "character development",
       "category": "Class 11 · spiral review· spiral review· spiral review · Literary analysis"
     },
     {
       "bn": "সমাজ",
+      "pronunciation": "somaj",
       "en": "society",
       "category": "Class 11 · spiral review· spiral review· spiral review · Society and citizenship"
     },
     {
       "bn": "নাগরিক",
+      "pronunciation": "nagorik",
       "en": "citizen",
       "category": "Class 11 · spiral review· spiral review· spiral review · Society and citizenship"
     },
     {
       "bn": "রাষ্ট্র",
+      "pronunciation": "rashtro",
       "en": "state",
       "category": "Class 11 · spiral review· spiral review· spiral review · Society and citizenship"
     },
     {
       "bn": "সরকার",
+      "pronunciation": "sorokar",
       "en": "government",
       "category": "Class 11 · spiral review· spiral review· spiral review · Society and citizenship"
     },
     {
       "bn": "প্রশাসন",
+      "pronunciation": "proshason",
       "en": "administration",
       "category": "Class 11 · spiral review· spiral review· spiral review · Society and citizenship"
     },
     {
       "bn": "সংবিধান",
+      "pronunciation": "songbidhan",
       "en": "constitution",
       "category": "Class 11 · spiral review· spiral review· spiral review · Society and citizenship"
     },
     {
       "bn": "আইন",
+      "pronunciation": "ain",
       "en": "law",
       "category": "Class 11 · spiral review· spiral review· spiral review · Society and citizenship"
     },
     {
       "bn": "অধিকার",
+      "pronunciation": "odhikar",
       "en": "right",
       "category": "Class 11 · spiral review· spiral review· spiral review · Society and citizenship"
     },
     {
       "bn": "দায়িত্ব",
+      "pronunciation": "dayitto",
       "en": "responsibility",
       "category": "Class 11 · spiral review· spiral review· spiral review · Society and citizenship"
     },
     {
       "bn": "কর্তব্য",
+      "pronunciation": "kortobj",
       "en": "duty",
       "category": "Class 11 · spiral review· spiral review· spiral review · Society and citizenship"
     },
     {
       "bn": "ন্যায়বিচার",
+      "pronunciation": "njajobichar",
       "en": "justice",
       "category": "Class 11 · spiral review· spiral review· spiral review · Society and citizenship"
     },
     {
       "bn": "বৈষম্য",
+      "pronunciation": "boishomj",
       "en": "inequality",
       "category": "Class 11 · spiral review· spiral review· spiral review · Society and citizenship"
     },
     {
       "bn": "সমতা",
+      "pronunciation": "shomota",
       "en": "equality",
       "category": "Class 11 · spiral review· spiral review· spiral review · Society and citizenship"
     },
     {
       "bn": "স্বাধীনতা",
+      "pronunciation": "shadhinota",
       "en": "independence",
       "category": "Class 11 · spiral review· spiral review· spiral review · Society and citizenship"
     },
     {
       "bn": "নিরাপত্তা",
+      "pronunciation": "nirapotta",
       "en": "safety",
       "category": "Class 11 · spiral review· spiral review· spiral review · Society and citizenship"
     },
     {
       "bn": "জনসেবা",
+      "pronunciation": "jonoseba",
       "en": "public service",
       "category": "Class 11 · spiral review· spiral review· spiral review · Society and citizenship"
     },
     {
       "bn": "নির্বাচন",
+      "pronunciation": "nirbachon",
       "en": "election",
       "category": "Class 11 · spiral review· spiral review· spiral review · Society and citizenship"
     },
     {
       "bn": "গণতন্ত্র",
+      "pronunciation": "gonotontr",
       "en": "democracy",
       "category": "Class 11 · spiral review· spiral review· spiral review · Society and citizenship"
     },
     {
       "bn": "নেতৃত্ব",
+      "pronunciation": "netritb",
       "en": "leadership",
       "category": "Class 11 · spiral review· spiral review· spiral review · Society and citizenship"
     },
     {
       "bn": "জনমত",
+      "pronunciation": "jonomot",
       "en": "public opinion",
       "category": "Class 11 · spiral review· spiral review· spiral review · Society and citizenship"
     },
     {
       "bn": "নাগরিক অংশগ্রহণ",
+      "pronunciation": "nagorik ongshogrohon",
       "en": "civic participation",
       "category": "Class 11 · spiral review· spiral review· spiral review · Society and citizenship"
     },
     {
       "bn": "সামাজিক সমস্যা",
+      "pronunciation": "shamajik shomoshsha",
       "en": "social issue",
       "category": "Class 11 · spiral review· spiral review· spiral review · Society and citizenship"
     },
     {
       "bn": "সম্প্রদায়",
+      "pronunciation": "somprodajo",
       "en": "community",
       "category": "Class 11 · spiral review· spiral review· spiral review · Society and citizenship"
     },
     {
       "bn": "সংস্কার",
+      "pronunciation": "songskar",
       "en": "reform",
       "category": "Class 11 · spiral review· spiral review· spiral review · Society and citizenship"
     },
     {
       "bn": "সচেতনতা",
+      "pronunciation": "sochetonota",
       "en": "awareness",
       "category": "Class 11 · spiral review· spiral review· spiral review · Society and citizenship"
     },
     {
       "bn": "ইতিহাস",
+      "pronunciation": "itihash",
       "en": "history",
       "category": "Class 11 · spiral review· spiral review· spiral review · History and politics"
     },
     {
       "bn": "ঐতিহাসিক",
+      "pronunciation": "oitihashik",
       "en": "historical",
       "category": "Class 11 · spiral review· spiral review· spiral review · History and politics"
     },
     {
       "bn": "সভ্যতা",
+      "pronunciation": "Shobhyata",
       "en": "civilization",
       "category": "Class 11 · spiral review· spiral review· spiral review · History and politics"
     },
     {
       "bn": "সাম্রাজ্য",
+      "pronunciation": "samrajj",
       "en": "empire",
       "category": "Class 11 · spiral review· spiral review· spiral review · History and politics"
     },
     {
       "bn": "শাসন",
+      "pronunciation": "shason",
       "en": "rule",
       "category": "Class 11 · spiral review· spiral review· spiral review · History and politics"
     },
     {
       "bn": "উপনিবেশ",
+      "pronunciation": "uponibesh",
       "en": "colony",
       "category": "Class 11 · spiral review· spiral review· spiral review · History and politics"
     },
     {
       "bn": "আন্দোলন",
+      "pronunciation": "andolon",
       "en": "movement",
       "category": "Class 11 · spiral review· spiral review· spiral review · History and politics"
     },
     {
       "bn": "সংগ্রাম",
+      "pronunciation": "shonggram",
       "en": "struggle",
       "category": "Class 11 · spiral review· spiral review· spiral review · History and politics"
     },
     {
       "bn": "বিপ্লব",
+      "pronunciation": "biplob",
       "en": "revolution",
       "category": "Class 11 · spiral review· spiral review· spiral review · History and politics"
     },
     {
       "bn": "যুদ্ধ",
+      "pronunciation": "juddho",
       "en": "war",
       "category": "Class 11 · spiral review· spiral review· spiral review · History and politics"
     },
     {
       "bn": "চুক্তি",
+      "pronunciation": "chukti",
       "en": "treaty",
       "category": "Class 11 · spiral review· spiral review· spiral review · History and politics"
     },
     {
       "bn": "বিজয়",
+      "pronunciation": "bijojo",
       "en": "victory",
       "category": "Class 11 · spiral review· spiral review· spiral review · History and politics"
     },
     {
       "bn": "পরাজয়",
+      "pronunciation": "porajoy",
       "en": "defeat",
       "category": "Class 11 · spiral review· spiral review· spiral review · History and politics"
     },
     {
       "bn": "জাতীয়তাবাদ",
+      "pronunciation": "jatijotabad",
       "en": "nationalism",
       "category": "Class 11 · spiral review· spiral review· spiral review · History and politics"
     },
     {
       "bn": "ঐতিহ্য",
+      "pronunciation": "oitijjho",
       "en": "heritage",
       "category": "Class 11 · spiral review· spiral review· spiral review · History and politics"
     },
     {
       "bn": "উত্তরাধিকার",
+      "pronunciation": "uttoradhikar",
       "en": "legacy",
       "category": "Class 11 · spiral review· spiral review· spiral review · History and politics"
     },
     {
       "bn": "রাজনৈতিক পরিবর্তন",
+      "pronunciation": "rajnaitik poriborton",
       "en": "political change",
       "category": "Class 11 · spiral review· spiral review· spiral review · History and politics"
     },
     {
       "bn": "ক্ষমতা",
+      "pronunciation": "khomota",
       "en": "power",
       "category": "Class 11 · spiral review· spiral review· spiral review · History and politics"
     },
     {
       "bn": "ভূগোল",
+      "pronunciation": "bhugol",
       "en": "geography",
       "category": "Class 11 · spiral review· spiral review· spiral review · Geography"
     },
     {
       "bn": "ভূপ্রকৃতি",
+      "pronunciation": "bhuprokriti",
       "en": "landform",
       "category": "Class 11 · spiral review· spiral review· spiral review · Geography"
     },
     {
       "bn": "অক্ষাংশ",
+      "pronunciation": "okshangsh",
       "en": "latitude",
       "category": "Class 11 · spiral review· spiral review· spiral review · Geography"
     },
     {
       "bn": "দ্রাঘিমাংশ",
+      "pronunciation": "draghimangsh",
       "en": "longitude",
       "category": "Class 11 · spiral review· spiral review· spiral review · Geography"
     },
     {
       "bn": "মানচিত্র",
+      "pronunciation": "manochitr",
       "en": "map",
       "category": "Class 11 · spiral review· spiral review· spiral review · Geography"
     },
     {
       "bn": "স্কেল",
+      "pronunciation": "skel",
       "en": "scale",
       "category": "Class 11 · spiral review· spiral review· spiral review · Geography"
     },
     {
       "bn": "পর্বত",
+      "pronunciation": "porbot",
       "en": "mountain",
       "category": "Class 11 · spiral review· spiral review· spiral review · Geography"
     },
     {
       "bn": "উপত্যকা",
+      "pronunciation": "upotjoka",
       "en": "valley",
       "category": "Class 11 · spiral review· spiral review· spiral review · Geography"
     },
     {
       "bn": "সমভূমি",
+      "pronunciation": "somobhumi",
       "en": "plain",
       "category": "Class 11 · spiral review· spiral review· spiral review · Geography"
     },
     {
       "bn": "মালভূমি",
+      "pronunciation": "malobhumi",
       "en": "plateau",
       "category": "Class 11 · spiral review· spiral review· spiral review · Geography"
     },
     {
       "bn": "মরুভূমি",
+      "pronunciation": "morubhumi",
       "en": "desert",
       "category": "Class 11 · spiral review· spiral review· spiral review · Geography"
     },
     {
       "bn": "নদী",
+      "pronunciation": "nodi",
       "en": "river",
       "category": "Class 11 · spiral review· spiral review· spiral review · Geography"
     },
     {
       "bn": "বদ্বীপ",
+      "pronunciation": "bodbip",
       "en": "delta",
       "category": "Class 11 · spiral review· spiral review· spiral review · Geography"
     },
     {
       "bn": "উপকূল",
+      "pronunciation": "upokul",
       "en": "coast",
       "category": "Class 11 · spiral review· spiral review· spiral review · Geography"
     },
     {
       "bn": "দ্বীপ",
+      "pronunciation": "dbip",
       "en": "island",
       "category": "Class 11 · spiral review· spiral review· spiral review · Geography"
     },
     {
       "bn": "মহাদেশ",
+      "pronunciation": "mohadesh",
       "en": "continent",
       "category": "Class 11 · spiral review· spiral review· spiral review · Geography"
     },
     {
       "bn": "মহাসাগর",
+      "pronunciation": "mohasagor",
       "en": "ocean",
       "category": "Class 11 · spiral review· spiral review· spiral review · Geography"
     },
     {
       "bn": "জলবায়ু",
+      "pronunciation": "jolobaj",
       "en": "climate",
       "category": "Class 11 · spiral review· spiral review· spiral review · Geography"
     },
     {
       "bn": "আবহাওয়া",
+      "pronunciation": "abohawa",
       "en": "weather",
       "category": "Class 11 · spiral review· spiral review· spiral review · Geography"
     },
     {
       "bn": "জনসংখ্যা",
+      "pronunciation": "jonosongkhja",
       "en": "population",
       "category": "Class 11 · spiral review· spiral review· spiral review · Geography"
     },
     {
       "bn": "জনঘনত্ব",
+      "pronunciation": "jonoghonotb",
       "en": "population density",
       "category": "Class 11 · spiral review· spiral review· spiral review · Geography"
     },
     {
       "bn": "নগরায়ণ",
+      "pronunciation": "nogorajon",
       "en": "urbanization",
       "category": "Class 11 · spiral review· spiral review· spiral review · Geography"
     },
     {
       "bn": "অভিবাসন",
+      "pronunciation": "obhibason",
       "en": "migration",
       "category": "Class 11 · spiral review· spiral review· spiral review · Geography"
     },
     {
       "bn": "প্রাকৃতিক সম্পদ",
+      "pronunciation": "prakritik shompod",
       "en": "natural resources",
       "category": "Class 11 · spiral review· spiral review· spiral review · Geography"
     },
     {
       "bn": "বাস্তুতন্ত্র",
+      "pronunciation": "bastutontr",
       "en": "ecosystem",
       "category": "Class 11 · spiral review· spiral review· spiral review · Environment and climate"
     },
     {
       "bn": "জীববৈচিত্র্য",
+      "pronunciation": "jiboboichitrj",
       "en": "biodiversity",
       "category": "Class 11 · spiral review· spiral review· spiral review · Environment and climate"
     },
     {
       "bn": "জলবায়ু পরিবর্তন",
+      "pronunciation": "jolobaj poriborton",
       "en": "climate change",
       "category": "Class 11 · spiral review· spiral review· spiral review · Environment and climate"
     },
     {
       "bn": "বৈশ্বিক উষ্ণায়ন",
+      "pronunciation": "boishbik ushnajon",
       "en": "global warming",
       "category": "Class 11 · spiral review· spiral review· spiral review · Environment and climate"
     },
     {
       "bn": "কার্বন নিঃসরণ",
+      "pronunciation": "karbon nihsoron",
       "en": "carbon emissions",
       "category": "Class 11 · spiral review· spiral review· spiral review · Environment and climate"
     },
     {
       "bn": "দূষণ",
+      "pronunciation": "dushon",
       "en": "pollution",
       "category": "Class 11 · spiral review· spiral review· spiral review · Environment and climate"
     },
     {
       "bn": "বন উজাড়",
+      "pronunciation": "bon ujado",
       "en": "deforestation",
       "category": "Class 11 · spiral review· spiral review· spiral review · Environment and climate"
     },
     {
       "bn": "মাটিক্ষয়",
+      "pronunciation": "matikshojo",
       "en": "soil erosion",
       "category": "Class 11 · spiral review· spiral review· spiral review · Environment and climate"
     },
     {
       "bn": "খরা",
+      "pronunciation": "khora",
       "en": "drought",
       "category": "Class 11 · spiral review· spiral review· spiral review · Environment and climate"
     },
     {
       "bn": "বন্যা",
+      "pronunciation": "bonja",
       "en": "flood",
       "category": "Class 11 · spiral review· spiral review· spiral review · Environment and climate"
     },
     {
       "bn": "পুনর্ব্যবহার",
+      "pronunciation": "punorbjobohar",
       "en": "recycling",
       "category": "Class 11 · spiral review· spiral review· spiral review · Environment and climate"
     },
     {
       "bn": "সংরক্ষণ",
+      "pronunciation": "shongrokkhon",
       "en": "conservation",
       "category": "Class 11 · spiral review· spiral review· spiral review · Environment and climate"
     },
     {
       "bn": "নবায়নযোগ্য শক্তি",
+      "pronunciation": "nobajonojogj shokti",
       "en": "renewable energy",
       "category": "Class 11 · spiral review· spiral review· spiral review · Environment and climate"
     },
     {
       "bn": "জীবাশ্ম জ্বালানি",
+      "pronunciation": "jibashm jbalani",
       "en": "fossil fuel",
       "category": "Class 11 · spiral review· spiral review· spiral review · Environment and climate"
     },
     {
       "bn": "পরিবেশের ভারসাম্য",
+      "pronunciation": "poribesher bharshamyo",
       "en": "ecological balance",
       "category": "Class 11 · spiral review· spiral review· spiral review · Environment and climate"
     },
     {
       "bn": "টেকসই উন্নয়ন",
+      "pronunciation": "tekosoi unnojon",
       "en": "sustainable development",
       "category": "Class 11 · spiral review· spiral review· spiral review · Environment and climate"
     },
     {
       "bn": "বিজ্ঞান",
+      "pronunciation": "biggan",
       "en": "science",
       "category": "Class 11 · spiral review· spiral review· spiral review · Science"
     },
     {
       "bn": "পরীক্ষা",
+      "pronunciation": "porikkha",
       "en": "exam",
       "category": "Class 11 · spiral review· spiral review· spiral review · Science"
     },
     {
       "bn": "তত্ত্ব",
+      "pronunciation": "tottbo",
       "en": "theory",
       "category": "Class 11 · spiral review· spiral review· spiral review · Science"
     },
     {
       "bn": "সূত্র",
+      "pronunciation": "shutro",
       "en": "formula",
       "category": "Class 11 · spiral review· spiral review· spiral review · Science"
     },
     {
       "bn": "চলক",
+      "pronunciation": "cholok",
       "en": "variable",
       "category": "Class 11 · spiral review· spiral review· spiral review · Science"
     },
     {
       "bn": "পরমাণু",
+      "pronunciation": "poromanu",
       "en": "atom",
       "category": "Class 11 · spiral review· spiral review· spiral review · Science"
     },
     {
       "bn": "অণু",
+      "pronunciation": "onu",
       "en": "molecule",
       "category": "Class 11 · spiral review· spiral review· spiral review · Science"
     },
     {
       "bn": "উপাদান",
+      "pronunciation": "upadan",
       "en": "element",
       "category": "Class 11 · spiral review· spiral review· spiral review · Science"
     },
     {
       "bn": "যৌগ",
+      "pronunciation": "jougo",
       "en": "compound",
       "category": "Class 11 · spiral review· spiral review· spiral review · Science"
     },
     {
       "bn": "পদার্থ",
+      "pronunciation": "podarth",
       "en": "matter",
       "category": "Class 11 · spiral review· spiral review· spiral review · Science"
     },
     {
       "bn": "শক্তি",
+      "pronunciation": "shokti",
       "en": "strength",
       "category": "Class 11 · spiral review· spiral review· spiral review · Science"
     },
     {
       "bn": "বল",
+      "pronunciation": "bol",
       "en": "force",
       "category": "Class 11 · spiral review· spiral review· spiral review · Science"
     },
     {
       "bn": "গতি",
+      "pronunciation": "goti",
       "en": "motion",
       "category": "Class 11 · spiral review· spiral review· spiral review · Science"
     },
     {
       "bn": "ঘর্ষণ",
+      "pronunciation": "ghorshon",
       "en": "friction",
       "category": "Class 11 · spiral review· spiral review· spiral review · Science"
     },
     {
       "bn": "চাপ",
+      "pronunciation": "chap",
       "en": "pressure",
       "category": "Class 11 · spiral review· spiral review· spiral review · Science"
     },
     {
       "bn": "তাপ",
+      "pronunciation": "tap",
       "en": "heat",
       "category": "Class 11 · spiral review· spiral review· spiral review · Science"
     },
     {
       "bn": "আলো",
+      "pronunciation": "alo",
       "en": "light",
       "category": "Class 11 · spiral review· spiral review· spiral review · Science"
     },
     {
       "bn": "শব্দ",
+      "pronunciation": "shobdo",
       "en": "word",
       "category": "Class 11 · spiral review· spiral review· spiral review · Science"
     },
     {
       "bn": "বিদ্যুৎ",
+      "pronunciation": "bidyut",
       "en": "electricity",
       "category": "Class 11 · spiral review· spiral review· spiral review · Science"
     },
     {
       "bn": "চুম্বকত্ব",
+      "pronunciation": "chumbokotb",
       "en": "magnetism",
       "category": "Class 11 · spiral review· spiral review· spiral review · Science"
     },
     {
       "bn": "রাসায়নিক বিক্রিয়া",
+      "pronunciation": "rashayonik bikrija",
       "en": "chemical reaction",
       "category": "Class 11 · spiral review· spiral review· spiral review · Science"
     },
     {
       "bn": "কোষ",
+      "pronunciation": "kosh",
       "en": "cell",
       "category": "Class 11 · spiral review· spiral review· spiral review · Biology"
     },
     {
       "bn": "টিস্যু",
+      "pronunciation": "tisju",
       "en": "tissue",
       "category": "Class 11 · spiral review· spiral review· spiral review · Biology"
     },
     {
       "bn": "অঙ্গ",
+      "pronunciation": "ônggo",
       "en": "organ",
       "category": "Class 11 · spiral review· spiral review· spiral review · Biology"
     },
     {
       "bn": "অঙ্গতন্ত্র",
+      "pronunciation": "onggotontr",
       "en": "organ system",
       "category": "Class 11 · spiral review· spiral review· spiral review · Biology"
     },
     {
       "bn": "শ্বাসপ্রশ্বাস",
+      "pronunciation": "shbasoproshbas",
       "en": "respiration",
       "category": "Class 11 · spiral review· spiral review· spiral review · Biology"
     },
     {
       "bn": "পরিপাক",
+      "pronunciation": "poripak",
       "en": "digestion",
       "category": "Class 11 · spiral review· spiral review· spiral review · Biology"
     },
     {
       "bn": "রক্তসঞ্চালন",
+      "pronunciation": "roktosonychalon",
       "en": "circulation",
       "category": "Class 11 · spiral review· spiral review· spiral review · Biology"
     },
     {
       "bn": "স্নায়ুতন্ত্র",
+      "pronunciation": "snajutontr",
       "en": "nervous system",
       "category": "Class 11 · spiral review· spiral review· spiral review · Biology"
     },
     {
       "bn": "প্রজনন",
+      "pronunciation": "projonon",
       "en": "reproduction",
       "category": "Class 11 · spiral review· spiral review· spiral review · Biology"
     },
     {
       "bn": "বংশগতি",
+      "pronunciation": "bongshogoti",
       "en": "heredity",
       "category": "Class 11 · spiral review· spiral review· spiral review · Biology"
     },
     {
       "bn": "অভিযোজন",
+      "pronunciation": "obhijojon",
       "en": "adaptation",
       "category": "Class 11 · spiral review· spiral review· spiral review · Biology"
     },
     {
       "bn": "বিবর্তন",
+      "pronunciation": "biborton",
       "en": "evolution",
       "category": "Class 11 · spiral review· spiral review· spiral review · Biology"
     },
     {
       "bn": "বাসস্থান",
+      "pronunciation": "basosthan",
       "en": "habitat",
       "category": "Class 11 · spiral review· spiral review· spiral review · Biology"
     },
     {
       "bn": "খাদ্যশৃঙ্খল",
+      "pronunciation": "khadjoshringkhol",
       "en": "food chain",
       "category": "Class 11 · spiral review· spiral review· spiral review · Biology"
     },
     {
       "bn": "খাদ্যজাল",
+      "pronunciation": "khadjojal",
       "en": "food web",
       "category": "Class 11 · spiral review· spiral review· spiral review · Biology"
     },
     {
       "bn": "উৎপাদক",
+      "pronunciation": "utopadok",
       "en": "producer",
       "category": "Class 11 · spiral review· spiral review· spiral review · Biology"
     },
     {
       "bn": "ভোক্তা",
+      "pronunciation": "bhokta",
       "en": "consumer",
       "category": "Class 11 · spiral review· spiral review· spiral review · Biology"
     },
     {
       "bn": "পচনকারী",
+      "pronunciation": "pochonokari",
       "en": "decomposer",
       "category": "Class 11 · spiral review· spiral review· spiral review · Biology"
     },
     {
       "bn": "জীবচক্র",
+      "pronunciation": "jibochokr",
       "en": "life cycle",
       "category": "Class 11 · spiral review· spiral review· spiral review · Biology"
     },
     {
       "bn": "প্রজাতি",
+      "pronunciation": "projati",
       "en": "species",
       "category": "Class 11 · spiral review· spiral review· spiral review · Biology"
     },
     {
       "bn": "প্রযুক্তি",
+      "pronunciation": "projukti",
       "en": "technology",
       "category": "Class 11 · spiral review· spiral review· spiral review · Technology and digital life"
     },
     {
       "bn": "সফটওয়্যার",
+      "pronunciation": "software",
       "en": "software",
       "category": "Class 11 · spiral review· spiral review· spiral review · Technology and digital life"
     },
     {
       "bn": "হার্ডওয়্যার",
+      "pronunciation": "hardoyeyar",
       "en": "hardware",
       "category": "Class 11 · spiral review· spiral review· spiral review · Technology and digital life"
     },
     {
       "bn": "ইন্টারনেট",
+      "pronunciation": "internet",
       "en": "internet",
       "category": "Class 11 · spiral review· spiral review· spiral review · Technology and digital life"
     },
     {
       "bn": "নেটওয়ার্ক",
+      "pronunciation": "network",
       "en": "network",
       "category": "Class 11 · spiral review· spiral review· spiral review · Technology and digital life"
     },
     {
       "bn": "ডেটা",
+      "pronunciation": "ḍeta",
       "en": "data",
       "category": "Class 11 · spiral review· spiral review· spiral review · Technology and digital life"
     },
     {
       "bn": "অ্যালগরিদম",
+      "pronunciation": "ojalogoridom",
       "en": "algorithm",
       "category": "Class 11 · spiral review· spiral review· spiral review · Technology and digital life"
     },
     {
       "bn": "প্রোগ্রামিং",
+      "pronunciation": "programing",
       "en": "programming",
       "category": "Class 11 · spiral review· spiral review· spiral review · Technology and digital life"
     },
     {
       "bn": "কৃত্রিম বুদ্ধিমত্তা",
+      "pronunciation": "kritrim buddhimotta",
       "en": "artificial intelligence",
       "category": "Class 11 · spiral review· spiral review· spiral review · Technology and digital life"
     },
     {
       "bn": "ডিজিটাল নিরাপত্তা",
+      "pronunciation": "dijital nirapotta",
       "en": "digital security",
       "category": "Class 11 · spiral review· spiral review· spiral review · Technology and digital life"
     },
     {
       "bn": "সাইবার নিরাপত্তা",
+      "pronunciation": "saibar nirapotta",
       "en": "cybersecurity",
       "category": "Class 11 · spiral review· spiral review· spiral review · Technology and digital life"
     },
     {
       "bn": "গোপনীয়তা",
+      "pronunciation": "goponijota",
       "en": "privacy",
       "category": "Class 11 · spiral review· spiral review· spiral review · Technology and digital life"
     },
     {
       "bn": "তথ্য যাচাই",
+      "pronunciation": "tothyo jachai",
       "en": "fact-checking",
       "category": "Class 11 · spiral review· spiral review· spiral review · Technology and digital life"
     },
     {
       "bn": "ভুয়া তথ্য",
+      "pronunciation": "bhuya tothyo",
       "en": "misinformation",
       "category": "Class 11 · spiral review· spiral review· spiral review · Technology and digital life"
     },
     {
       "bn": "সামাজিক যোগাযোগমাধ্যম",
+      "pronunciation": "shamajik jogajogomadhjom",
       "en": "social media",
       "category": "Class 11 · spiral review· spiral review· spiral review · Technology and digital life"
     },
     {
       "bn": "ডিজিটাল পদচিহ্ন",
+      "pronunciation": "dijital podochihn",
       "en": "digital footprint",
       "category": "Class 11 · spiral review· spiral review· spiral review · Technology and digital life"
     },
     {
       "bn": "প্রযুক্তিনির্ভরতা",
+      "pronunciation": "projuktinirbhorota",
       "en": "technology dependence",
       "category": "Class 11 · spiral review· spiral review· spiral review · Technology and digital life"
     },
     {
       "bn": "অর্থনীতি",
+      "pronunciation": "orthoniti",
       "en": "economy",
       "category": "Class 11 · spiral review· spiral review· spiral review · Economics"
     },
     {
       "bn": "আয়",
+      "pronunciation": "ay",
       "en": "income",
       "category": "Class 11 · spiral review· spiral review· spiral review · Economics"
     },
     {
       "bn": "ব্যয়",
+      "pronunciation": "byoy",
       "en": "expense",
       "category": "Class 11 · spiral review· spiral review· spiral review · Economics"
     },
     {
       "bn": "সঞ্চয়",
+      "pronunciation": "shonchoy",
       "en": "savings",
       "category": "Class 11 · spiral review· spiral review· spiral review · Economics"
     },
     {
       "bn": "বাজেট",
+      "pronunciation": "bajet",
       "en": "budget",
       "category": "Class 11 · spiral review· spiral review· spiral review · Economics"
     },
     {
       "bn": "বিনিয়োগ",
+      "pronunciation": "binijog",
       "en": "investment",
       "category": "Class 11 · spiral review· spiral review· spiral review · Economics"
     },
     {
       "bn": "মুদ্রা",
+      "pronunciation": "mudra",
       "en": "currency",
       "category": "Class 11 · spiral review· spiral review· spiral review · Economics"
     },
     {
       "bn": "মূল্যস্ফীতি",
+      "pronunciation": "muljosphiti",
       "en": "inflation",
       "category": "Class 11 · spiral review· spiral review· spiral review · Economics"
     },
     {
       "bn": "বাজার",
+      "pronunciation": "bajar",
       "en": "market",
       "category": "Class 11 · spiral review· spiral review· spiral review · Economics"
     },
     {
       "bn": "পণ্য",
+      "pronunciation": "ponno",
       "en": "product",
       "category": "Class 11 · spiral review· spiral review· spiral review · Economics"
     },
     {
       "bn": "সেবা",
+      "pronunciation": "seba",
       "en": "service",
       "category": "Class 11 · spiral review· spiral review· spiral review · Economics"
     },
     {
       "bn": "চাহিদা",
+      "pronunciation": "chahida",
       "en": "demand",
       "category": "Class 11 · spiral review· spiral review· spiral review · Economics"
     },
     {
       "bn": "সরবরাহ",
+      "pronunciation": "sorboraho",
       "en": "supply",
       "category": "Class 11 · spiral review· spiral review· spiral review · Economics"
     },
     {
       "bn": "উৎপাদন",
+      "pronunciation": "utpadon",
       "en": "production",
       "category": "Class 11 · spiral review· spiral review· spiral review · Economics"
     },
     {
       "bn": "ব্যবসা",
+      "pronunciation": "babsha",
       "en": "business",
       "category": "Class 11 · spiral review· spiral review· spiral review · Economics"
     },
     {
       "bn": "লাভ",
+      "pronunciation": "labh",
       "en": "profit",
       "category": "Class 11 · spiral review· spiral review· spiral review · Economics"
     },
     {
       "bn": "ক্ষতি",
+      "pronunciation": "khoti",
       "en": "loss",
       "category": "Class 11 · spiral review· spiral review· spiral review · Economics"
     },
     {
       "bn": "সম্পদ",
+      "pronunciation": "shompod",
       "en": "resource",
       "category": "Class 11 · spiral review· spiral review· spiral review · Economics"
     },
     {
       "bn": "কর্মসংস্থান",
+      "pronunciation": "kormosongsthan",
       "en": "employment",
       "category": "Class 11 · spiral review· spiral review· spiral review · Economics"
     },
     {
       "bn": "বেকারত্ব",
+      "pronunciation": "bekarotb",
       "en": "unemployment",
       "category": "Class 11 · spiral review· spiral review· spiral review · Economics"
     },
     {
       "bn": "অর্থনৈতিক উন্নয়ন",
+      "pronunciation": "orthonoitik unnojon",
       "en": "economic development",
       "category": "Class 11 · spiral review· spiral review· spiral review · Economics"
     },
     {
       "bn": "স্বাস্থ্য",
+      "pronunciation": "shastho",
       "en": "health",
       "category": "Class 11 · spiral review· spiral review· spiral review · Health and the body"
     },
     {
       "bn": "রোগ",
+      "pronunciation": "rog",
       "en": "disease",
       "category": "Class 11 · spiral review· spiral review· spiral review · Health and the body"
     },
     {
       "bn": "সংক্রমণ",
+      "pronunciation": "shongkromon",
       "en": "infection",
       "category": "Class 11 · spiral review· spiral review· spiral review · Health and the body"
     },
     {
       "bn": "রোগপ্রতিরোধ",
+      "pronunciation": "rogoprotirodh",
       "en": "immunity",
       "category": "Class 11 · spiral review· spiral review· spiral review · Health and the body"
     },
     {
       "bn": "টিকা",
+      "pronunciation": "tika",
       "en": "vaccine",
       "category": "Class 11 · spiral review· spiral review· spiral review · Health and the body"
     },
     {
       "bn": "চিকিৎসা",
+      "pronunciation": "chikitsa",
       "en": "treatment",
       "category": "Class 11 · spiral review· spiral review· spiral review · Health and the body"
     },
     {
       "bn": "রোগনির্ণয়",
+      "pronunciation": "rogonirnojo",
       "en": "diagnosis",
       "category": "Class 11 · spiral review· spiral review· spiral review · Health and the body"
     },
     {
       "bn": "স্বাস্থ্যবিধি",
+      "pronunciation": "sbasthjobidhi",
       "en": "hygiene",
       "category": "Class 11 · spiral review· spiral review· spiral review · Health and the body"
     },
     {
       "bn": "সুষম খাদ্য",
+      "pronunciation": "sushom khaddo",
       "en": "balanced diet",
       "category": "Class 11 · spiral review· spiral review· spiral review · Health and the body"
     },
     {
       "bn": "পুষ্টি",
+      "pronunciation": "pushti",
       "en": "nutrition",
       "category": "Class 11 · spiral review· spiral review· spiral review · Health and the body"
     },
     {
       "bn": "মানসিক স্বাস্থ্য",
+      "pronunciation": "manosik shastho",
       "en": "mental health",
       "category": "Class 11 · spiral review· spiral review· spiral review · Health and the body"
     },
     {
       "bn": "শারীরিক স্বাস্থ্য",
+      "pronunciation": "sharirik shastho",
       "en": "physical health",
       "category": "Class 11 · spiral review· spiral review· spiral review · Health and the body"
     },
     {
       "bn": "ব্যায়াম",
+      "pronunciation": "byayam",
       "en": "exercise",
       "category": "Class 11 · spiral review· spiral review· spiral review · Health and the body"
     },
     {
       "bn": "বিশ্রাম",
+      "pronunciation": "bishram",
       "en": "rest",
       "category": "Class 11 · spiral review· spiral review· spiral review · Health and the body"
     },
     {
       "bn": "মানসিক চাপ",
+      "pronunciation": "manosik chap",
       "en": "mental stress",
       "category": "Class 11 · spiral review· spiral review· spiral review · Health and the body"
     },
     {
       "bn": "প্রতিরোধ",
+      "pronunciation": "protirodh",
       "en": "prevention",
       "category": "Class 11 · spiral review· spiral review· spiral review · Health and the body"
     },
     {
       "bn": "আত্মবিশ্বাস",
+      "pronunciation": "atmobhishshash",
       "en": "confidence",
       "category": "Class 11 · spiral review· spiral review· spiral review · Feelings"
     },
     {
       "bn": "অনিশ্চয়তা",
+      "pronunciation": "onishchojota",
       "en": "uncertainty",
       "category": "Class 11 · spiral review· spiral review· spiral review · Feelings"
     },
     {
       "bn": "উদ্বেগ",
+      "pronunciation": "udbeg",
       "en": "anxiety",
       "category": "Class 11 · spiral review· spiral review· spiral review · Feelings"
     },
     {
       "bn": "হতাশা",
+      "pronunciation": "hotasha",
       "en": "despair",
       "category": "Class 11 · spiral review· spiral review· spiral review · Feelings"
     },
     {
       "bn": "আশাবাদ",
+      "pronunciation": "ashabad",
       "en": "optimism",
       "category": "Class 11 · spiral review· spiral review· spiral review · Feelings"
     },
     {
       "bn": "অনুতাপ",
+      "pronunciation": "onutap",
       "en": "regret",
       "category": "Class 11 · spiral review· spiral review· spiral review · Feelings"
     },
     {
       "bn": "সহানুভূতি",
+      "pronunciation": "sohanubhuti",
       "en": "empathy",
       "category": "Class 11 · spiral review· spiral review· spiral review · Feelings"
     },
     {
       "bn": "সহমর্মিতা",
+      "pronunciation": "sohomormita",
       "en": "compassion",
       "category": "Class 11 · spiral review· spiral review· spiral review · Feelings"
     },
     {
       "bn": "দ্বিধা",
+      "pronunciation": "dbidha",
       "en": "hesitation",
       "category": "Class 11 · spiral review· spiral review· spiral review · Feelings"
     },
     {
       "bn": "সংকোচ",
+      "pronunciation": "songkoch",
       "en": "inhibition",
       "category": "Class 11 · spiral review· spiral review· spiral review · Feelings"
     },
     {
       "bn": "উত্তেজনা",
+      "pronunciation": "uttejona",
       "en": "excitement",
       "category": "Class 11 · spiral review· spiral review· spiral review · Feelings"
     },
     {
       "bn": "গর্ব",
+      "pronunciation": "gorbo",
       "en": "pride",
       "category": "Class 11 · spiral review· spiral review· spiral review · Feelings"
     },
     {
       "bn": "কৃতজ্ঞতা",
+      "pronunciation": "kritoggota",
       "en": "gratitude",
       "category": "Class 11 · spiral review· spiral review· spiral review · Feelings"
     },
     {
       "bn": "বিরক্তি",
+      "pronunciation": "birokti",
       "en": "annoyance",
       "category": "Class 11 · spiral review· spiral review· spiral review · Feelings"
     },
     {
       "bn": "হতবুদ্ধি",
+      "pronunciation": "hotobuddhi",
       "en": "confused",
       "category": "Class 11 · spiral review· spiral review· spiral review · Feelings"
     },
     {
       "bn": "অনুপ্রেরণা",
+      "pronunciation": "onuprerona",
       "en": "motivation",
       "category": "Class 11 · spiral review· spiral review· spiral review · Feelings"
     },
     {
       "bn": "সন্তুষ্টি",
+      "pronunciation": "sontushti",
       "en": "satisfaction",
       "category": "Class 11 · spiral review· spiral review· spiral review · Feelings"
     },
     {
       "bn": "হতাশাবাদ",
+      "pronunciation": "hotashabad",
       "en": "pessimism",
       "category": "Class 11 · spiral review· spiral review· spiral review · Feelings"
     },
     {
       "bn": "বিচক্ষণ",
+      "pronunciation": "bichokshon",
       "en": "prudent",
       "category": "Class 11 · spiral review· spiral review· spiral review · Character"
     },
     {
       "bn": "দায়িত্বশীল",
+      "pronunciation": "dayittoshil",
       "en": "responsible",
       "category": "Class 11 · spiral review· spiral review· spiral review · Character"
     },
     {
       "bn": "ন্যায়পরায়ণ",
+      "pronunciation": "njajoporajon",
       "en": "just",
       "category": "Class 11 · spiral review· spiral review· spiral review · Character"
     },
     {
       "bn": "সৎ",
+      "pronunciation": "shot",
       "en": "honest",
       "category": "Class 11 · spiral review· spiral review· spiral review · Character"
     },
     {
       "bn": "বিশ্বস্ত",
+      "pronunciation": "bishshosto",
       "en": "trustworthy",
       "category": "Class 11 · spiral review· spiral review· spiral review · Character"
     },
     {
       "bn": "ধৈর্যশীল",
+      "pronunciation": "dhoirjoshil",
       "en": "patient",
       "category": "Class 11 · spiral review· spiral review· spiral review · Character"
     },
     {
       "bn": "পরিশ্রমী",
+      "pronunciation": "pôrishromi",
       "en": "hardworking",
       "category": "Class 11 · spiral review· spiral review· spiral review · Character"
     },
     {
       "bn": "সাহসী",
+      "pronunciation": "shahoshi",
       "en": "brave",
       "category": "Class 11 · spiral review· spiral review· spiral review · Character"
     },
     {
       "bn": "বিনয়ী",
+      "pronunciation": "binoyi",
       "en": "humble",
       "category": "Class 11 · spiral review· spiral review· spiral review · Character"
     },
     {
       "bn": "উদার",
+      "pronunciation": "udar",
       "en": "generous",
       "category": "Class 11 · spiral review· spiral review· spiral review · Character"
     },
     {
       "bn": "আত্মনির্ভরশীল",
+      "pronunciation": "atmonirbhoroshil",
       "en": "self-reliant",
       "category": "Class 11 · spiral review· spiral review· spiral review · Character"
     },
     {
       "bn": "সহানুভূতিশীল",
+      "pronunciation": "sohanubhutishil",
       "en": "empathetic",
       "category": "Class 11 · spiral review· spiral review· spiral review · Character"
     },
     {
       "bn": "যুক্তিবাদী",
+      "pronunciation": "juktibadi",
       "en": "rational",
       "category": "Class 11 · spiral review· spiral review· spiral review · Character"
     },
     {
       "bn": "বাস্তববাদী",
+      "pronunciation": "bastobobadi",
       "en": "realistic",
       "category": "Class 11 · spiral review· spiral review· spiral review · Character"
     },
     {
       "bn": "আদর্শবাদী",
+      "pronunciation": "adorshobadi",
       "en": "idealistic",
       "category": "Class 11 · spiral review· spiral review· spiral review · Character"
     },
     {
       "bn": "আত্মকেন্দ্রিক",
+      "pronunciation": "atmokendrik",
       "en": "self-centered",
       "category": "Class 11 · spiral review· spiral review· spiral review · Character"
     },
     {
       "bn": "স্বার্থপর",
+      "pronunciation": "sharthopor",
       "en": "selfish",
       "category": "Class 11 · spiral review· spiral review· spiral review · Character"
     },
     {
       "bn": "দৃঢ়প্রতিজ্ঞ",
+      "pronunciation": "dridhoprotijny",
       "en": "determined",
       "category": "Class 11 · spiral review· spiral review· spiral review · Character"
     },
     {
       "bn": "কৌশলী",
+      "pronunciation": "kousholi",
       "en": "strategic",
       "category": "Class 11 · spiral review· spiral review· spiral review · Character"
     },
     {
       "bn": "দূরদর্শী",
+      "pronunciation": "durodorshi",
       "en": "far-sighted",
       "category": "Class 11 · spiral review· spiral review· spiral review · Character"
     },
     {
       "bn": "বিশ্লেষণ করা",
+      "pronunciation": "bishleshon kora",
       "en": "to analyze",
       "category": "Class 11 · spiral review· spiral review· spiral review · Advanced verbs"
     },
     {
       "bn": "মূল্যায়ন করা",
+      "pronunciation": "muljajon kora",
       "en": "to evaluate",
       "category": "Class 11 · spiral review· spiral review· spiral review · Advanced verbs"
     },
     {
       "bn": "ব্যাখ্যা করা",
+      "pronunciation": "bjakhja kora",
       "en": "to explain",
       "category": "Class 11 · spiral review· spiral review· spiral review · Advanced verbs"
     },
     {
       "bn": "তুলনা করা",
+      "pronunciation": "tulona kora",
       "en": "to compare",
       "category": "Class 11 · spiral review· spiral review· spiral review · Advanced verbs"
     },
     {
       "bn": "বৈপরীত্য দেখানো",
+      "pronunciation": "boiporitj dekhano",
       "en": "to contrast",
       "category": "Class 11 · spiral review· spiral review· spiral review · Advanced verbs"
     },
     {
       "bn": "অনুমান করা",
+      "pronunciation": "onuman kora",
       "en": "to infer",
       "category": "Class 11 · spiral review· spiral review· spiral review · Advanced verbs"
     },
     {
       "bn": "যাচাই করা",
+      "pronunciation": "jachai kora",
       "en": "to verify",
       "category": "Class 11 · spiral review· spiral review· spiral review · Advanced verbs"
     },
     {
       "bn": "সিদ্ধান্তে পৌঁছানো",
+      "pronunciation": "siddhante pounchhan",
       "en": "to reach a conclusion",
       "category": "Class 11 · spiral review· spiral review· spiral review · Advanced verbs"
     },
     {
       "bn": "যুক্তি উপস্থাপন করা",
+      "pronunciation": "jukti uposthapon kora",
       "en": "to present an argument",
       "category": "Class 11 · spiral review· spiral review· spiral review · Advanced verbs"
     },
     {
       "bn": "সমর্থন করা",
+      "pronunciation": "somorthon kora",
       "en": "to support",
       "category": "Class 11 · spiral review· spiral review· spiral review · Advanced verbs"
     },
     {
       "bn": "খণ্ডন করা",
+      "pronunciation": "khondon kora",
       "en": "to refute",
       "category": "Class 11 · spiral review· spiral review· spiral review · Advanced verbs"
     },
     {
       "bn": "গবেষণা করা",
+      "pronunciation": "gobeshona kora",
       "en": "to research",
       "category": "Class 11 · spiral review· spiral review· spiral review · Advanced verbs"
     },
     {
       "bn": "শ্রেণিবদ্ধ করা",
+      "pronunciation": "shreniboddh kora",
       "en": "to classify",
       "category": "Class 11 · spiral review· spiral review· spiral review · Advanced verbs"
     },
     {
       "bn": "নির্ধারণ করা",
+      "pronunciation": "nirdharon kora",
       "en": "to determine",
       "category": "Class 11 · spiral review· spiral review· spiral review · Advanced verbs"
     },
     {
       "bn": "পুনর্বিবেচনা করা",
+      "pronunciation": "punorbibechona kora",
       "en": "to reconsider",
       "category": "Class 11 · spiral review· spiral review· spiral review · Advanced verbs"
     },
     {
       "bn": "ব্যাখ্যার পক্ষে প্রমাণ দেওয়া",
+      "pronunciation": "bjakhjar pokkhe proman deoa",
       "en": "to support an interpretation with evidence",
       "category": "Class 11 · spiral review· spiral review· spiral review · Advanced verbs"
     },
     {
       "bn": "সংশোধন করা",
+      "pronunciation": "shongshodhon kora",
       "en": "to revise",
       "category": "Class 11 · spiral review· spiral review· spiral review · Advanced verbs"
     },
     {
       "bn": "প্রভাবিত করা",
+      "pronunciation": "probhabit kora",
       "en": "to influence",
       "category": "Class 11 · spiral review· spiral review· spiral review · Useful verbs"
     },
     {
       "bn": "বাস্তবায়ন করা",
+      "pronunciation": "bastobayon kora",
       "en": "to implement",
       "category": "Class 11 · spiral review· spiral review· spiral review · Useful verbs"
     },
     {
       "bn": "প্রতিরোধ করা",
+      "pronunciation": "protirodh kora",
       "en": "to prevent",
       "category": "Class 11 · spiral review· spiral review· spiral review · Useful verbs"
     },
     {
       "bn": "সংরক্ষণ করা",
+      "pronunciation": "shongrokkhon kora",
       "en": "to conserve",
       "category": "Class 11 · spiral review· spiral review· spiral review · Useful verbs"
     },
     {
       "bn": "উন্নত করা",
+      "pronunciation": "unnoto kora",
       "en": "to improve",
       "category": "Class 11 · spiral review· spiral review· spiral review · Useful verbs"
     },
     {
       "bn": "পরিবর্তন করা",
+      "pronunciation": "poriborton kora",
       "en": "to change",
       "category": "Class 11 · spiral review· spiral review· spiral review · Useful verbs"
     },
     {
       "bn": "অংশগ্রহণ করা",
+      "pronunciation": "ongshogrohon kora",
       "en": "to participate",
       "category": "Class 11 · spiral review· spiral review· spiral review · Useful verbs"
     },
     {
       "bn": "নেতৃত্ব দেওয়া",
+      "pronunciation": "netritb deowa",
       "en": "to lead",
       "category": "Class 11 · spiral review· spiral review· spiral review · Useful verbs"
     },
     {
       "bn": "সহযোগিতা করা",
+      "pronunciation": "sohojogita kora",
       "en": "to cooperate",
       "category": "Class 11 · spiral review· spiral review· spiral review · Useful verbs"
     },
     {
       "bn": "উৎসাহিত করা",
+      "pronunciation": "utosahit kora",
       "en": "to encourage",
       "category": "Class 11 · spiral review· spiral review· spiral review · Useful verbs"
     },
     {
       "bn": "সমালোচনা করা",
+      "pronunciation": "somalochona kora",
       "en": "to criticize",
       "category": "Class 11 · spiral review· spiral review· spiral review · Useful verbs"
     },
     {
       "bn": "গ্রহণ করা",
+      "pronunciation": "grohon kora",
       "en": "to accept",
       "category": "Class 11 · spiral review· spiral review· spiral review · Useful verbs"
     },
     {
       "bn": "প্রত্যাখ্যান করা",
+      "pronunciation": "protyakhyan kora",
       "en": "to reject",
       "category": "Class 11 · spiral review· spiral review· spiral review · Useful verbs"
     },
     {
       "bn": "স্বীকার করা",
+      "pronunciation": "sbikar kora",
       "en": "to acknowledge",
       "category": "Class 11 · spiral review· spiral review· spiral review · Useful verbs"
     },
     {
       "bn": "প্রশ্ন তোলা",
+      "pronunciation": "proshno tola",
       "en": "to question",
       "category": "Class 11 · spiral review· spiral review· spiral review · Useful verbs"
     },
     {
       "bn": "চ্যালেঞ্জ করা",
+      "pronunciation": "chjalenyj kora",
       "en": "to challenge",
       "category": "Class 11 · spiral review· spiral review· spiral review · Useful verbs"
     },
     {
       "bn": "সম্পর্ক স্থাপন করা",
+      "pronunciation": "shomporko sthapon kora",
       "en": "to establish a relationship",
       "category": "Class 11 · spiral review· spiral review· spiral review · Useful verbs"
     },
     {
       "bn": "যুক্তিসঙ্গত",
+      "pronunciation": "juktishongoto",
       "en": "reasonable",
       "category": "Class 11 · spiral review· spiral review· spiral review · Descriptive words"
     },
     {
       "bn": "অযৌক্তিক",
+      "pronunciation": "ôjouktik",
       "en": "illogical",
       "category": "Class 11 · spiral review· spiral review· spiral review · Descriptive words"
     },
     {
       "bn": "নির্ভরযোগ্য",
+      "pronunciation": "nirbhorojogj",
       "en": "reliable",
       "category": "Class 11 · spiral review· spiral review· spiral review · Descriptive words"
     },
     {
       "bn": "সন্দেহজনক",
+      "pronunciation": "sondehojonok",
       "en": "questionable",
       "category": "Class 11 · spiral review· spiral review· spiral review · Descriptive words"
     },
     {
       "bn": "কার্যকর",
+      "pronunciation": "karjokor",
       "en": "effective",
       "category": "Class 11 · spiral review· spiral review· spiral review · Descriptive words"
     },
     {
       "bn": "অকার্যকর",
+      "pronunciation": "ôkarjokor",
       "en": "ineffective",
       "category": "Class 11 · spiral review· spiral review· spiral review · Descriptive words"
     },
     {
       "bn": "প্রাসঙ্গিক",
+      "pronunciation": "prashongik",
       "en": "relevant",
       "category": "Class 11 · spiral review· spiral review· spiral review · Descriptive words"
     },
     {
       "bn": "অপ্রাসঙ্গিক",
+      "pronunciation": "ôprashongik",
       "en": "irrelevant",
       "category": "Class 11 · spiral review· spiral review· spiral review · Descriptive words"
     },
     {
       "bn": "নিরপেক্ষ",
+      "pronunciation": "niropeksho",
       "en": "neutral",
       "category": "Class 11 · spiral review· spiral review· spiral review · Descriptive words"
     },
     {
       "bn": "পক্ষপাতদুষ্ট",
+      "pronunciation": "pokshopatodusht",
       "en": "biased",
       "category": "Class 11 · spiral review· spiral review· spiral review · Descriptive words"
     },
     {
       "bn": "ইতিবাচক",
+      "pronunciation": "itibachok",
       "en": "positive",
       "category": "Class 11 · spiral review· spiral review· spiral review · Descriptive words"
     },
     {
       "bn": "নেতিবাচক",
+      "pronunciation": "netibachok",
       "en": "negative",
       "category": "Class 11 · spiral review· spiral review· spiral review · Descriptive words"
     },
     {
       "bn": "জটিল",
+      "pronunciation": "jotil",
       "en": "complex",
       "category": "Class 11 · spiral review· spiral review· spiral review · Descriptive words"
     },
     {
       "bn": "সরল",
+      "pronunciation": "shorol",
       "en": "straightforward",
       "category": "Class 11 · spiral review· spiral review· spiral review · Descriptive words"
     },
     {
       "bn": "বাস্তবসম্মত",
+      "pronunciation": "bastobosommot",
       "en": "realistic",
       "category": "Class 11 · spiral review· spiral review· spiral review · Descriptive words"
     },
     {
       "bn": "অবাস্তব",
+      "pronunciation": "obastob",
       "en": "unrealistic",
       "category": "Class 11 · spiral review· spiral review· spiral review · Descriptive words"
     },
     {
       "bn": "স্থায়ী",
+      "pronunciation": "sthayi",
       "en": "permanent",
       "category": "Class 11 · spiral review· spiral review· spiral review · Descriptive words"
     },
     {
       "bn": "অস্থায়ী",
+      "pronunciation": "ôsthayi",
       "en": "temporary",
       "category": "Class 11 · spiral review· spiral review· spiral review · Descriptive words"
     },
     {
       "bn": "সম্ভাব্য",
+      "pronunciation": "sombhabj",
       "en": "possible",
       "category": "Class 11 · spiral review· spiral review· spiral review · Descriptive words"
     },
     {
       "bn": "অনিবার্য",
+      "pronunciation": "onibarj",
       "en": "inevitable",
       "category": "Class 11 · spiral review· spiral review· spiral review · Descriptive words"
     },
     {
       "bn": "উল্লেখযোগ্য",
+      "pronunciation": "ullekhojogj",
       "en": "significant",
       "category": "Class 11 · spiral review· spiral review· spiral review · Descriptive words"
     },
     {
       "bn": "সামান্য",
+      "pronunciation": "Samannyo",
       "en": "minor",
       "category": "Class 11 · spiral review· spiral review· spiral review · Descriptive words"
     },
     {
       "bn": "সুস্পষ্ট",
+      "pronunciation": "susposht",
       "en": "evident",
       "category": "Class 11 · spiral review· spiral review· spiral review · Descriptive words"
     },
     {
       "bn": "অস্পষ্ট",
+      "pronunciation": "ôsposhto",
       "en": "unclear",
       "category": "Class 11 · spiral review· spiral review· spiral review · Descriptive words"
     },
     {
       "bn": "প্রথমত",
+      "pronunciation": "prothomoto",
       "en": "firstly",
       "category": "Class 11 · spiral review· spiral review· spiral review · Connectors"
     },
     {
       "bn": "দ্বিতীয়ত",
+      "pronunciation": "ditiyoto",
       "en": "secondly",
       "category": "Class 11 · spiral review· spiral review· spiral review · Connectors"
     },
     {
       "bn": "তৃতীয়ত",
+      "pronunciation": "tritijot",
       "en": "thirdly",
       "category": "Class 11 · spiral review· spiral review· spiral review · Connectors"
     },
     {
       "bn": "তদুপরি",
+      "pronunciation": "todupori",
       "en": "furthermore",
       "category": "Class 11 · spiral review· spiral review· spiral review · Connectors"
     },
     {
       "bn": "এছাড়া",
+      "pronunciation": "echhara",
       "en": "in addition",
       "category": "Class 11 · spiral review· spiral review· spiral review · Connectors"
     },
     {
       "bn": "পাশাপাশি",
+      "pronunciation": "pashapashi",
       "en": "in addition",
       "category": "Class 11 · spiral review· spiral review· spiral review · Connectors"
     },
     {
       "bn": "একইভাবে",
+      "pronunciation": "ekoibhabe",
       "en": "similarly",
       "category": "Class 11 · spiral review· spiral review· spiral review · Connectors"
     },
     {
       "bn": "অন্যদিকে",
+      "pronunciation": "onnodike",
       "en": "on the other hand",
       "category": "Class 11 · spiral review· spiral review· spiral review · Connectors"
     },
     {
       "bn": "বিপরীতে",
+      "pronunciation": "biporite",
       "en": "in contrast",
       "category": "Class 11 · spiral review· spiral review· spiral review · Connectors"
     },
     {
       "bn": "অন্যথায়",
+      "pronunciation": "onjothajo",
       "en": "otherwise",
       "category": "Class 11 · spiral review· spiral review· spiral review · Connectors"
     },
     {
       "bn": "উদাহরণস্বরূপ",
+      "pronunciation": "udahoronosborup",
       "en": "for example",
       "category": "Class 11 · spiral review· spiral review· spiral review · Connectors"
     },
     {
       "bn": "বিশেষত",
+      "pronunciation": "bisheshot",
       "en": "particularly",
       "category": "Class 11 · spiral review· spiral review· spiral review · Connectors"
     },
     {
       "bn": "মূলত",
+      "pronunciation": "muloto",
       "en": "primarily",
       "category": "Class 11 · spiral review· spiral review· spiral review · Connectors"
     },
     {
       "bn": "ফলে",
+      "pronunciation": "fole",
       "en": "consequently",
       "category": "Class 11 · spiral review· spiral review· spiral review · Connectors"
     },
     {
       "bn": "ফলস্বরূপ",
+      "pronunciation": "pholosborup",
       "en": "as a result",
       "category": "Class 11 · spiral review· spiral review· spiral review · Connectors"
     },
     {
       "bn": "যদিও",
+      "pronunciation": "jodio",
       "en": "although",
       "category": "Class 11 · spiral review· spiral review· spiral review · Connectors"
     },
     {
       "bn": "তবুও",
+      "pronunciation": "tobuo",
       "en": "nevertheless",
       "category": "Class 11 · spiral review· spiral review· spiral review · Connectors"
     },
     {
       "bn": "যেহেতু",
+      "pronunciation": "jehetu",
       "en": "since",
       "category": "Class 11 · spiral review· spiral review· spiral review · Connectors"
     },
     {
       "bn": "সেহেতু",
+      "pronunciation": "shehetu",
       "en": "therefore",
       "category": "Class 11 · spiral review· spiral review· spiral review · Connectors"
     },
     {
       "bn": "অতএব",
+      "pronunciation": "otoeb",
       "en": "therefore",
       "category": "Class 11 · spiral review· spiral review· spiral review · Connectors"
     },
     {
       "bn": "অবশেষে",
+      "pronunciation": "oboshese",
       "en": "finally",
       "category": "Class 11 · spiral review· spiral review· spiral review · Connectors"
     },
     {
       "bn": "সংক্ষেপে",
+      "pronunciation": "shongkhepe",
       "en": "in brief",
       "category": "Class 11 · spiral review· spiral review· spiral review · Connectors"
     },
     {
       "bn": "ব্যাখ্যামূলক",
+      "pronunciation": "bjakhjamulok",
       "en": "explanatory",
       "category": "Class 11 · spiral review· spiral review· Advanced academic words"
     },
     {
       "bn": "সমালোচনামূলক",
+      "pronunciation": "somalochonamulok",
       "en": "critical",
       "category": "Class 11 · spiral review· spiral review· Advanced academic words"
     },
     {
       "bn": "প্রাসঙ্গিকতা",
+      "pronunciation": "prasonggikota",
       "en": "relevance",
       "category": "Class 11 · spiral review· spiral review· Advanced academic words"
     },
     {
       "bn": "বৈধতা",
+      "pronunciation": "boidhota",
       "en": "validity",
       "category": "Class 11 · spiral review· spiral review· Advanced academic words"
     },
     {
       "bn": "কাঠামো",
+      "pronunciation": "kathamo",
       "en": "structure",
       "category": "Class 11 · spiral review· spiral review· Advanced academic words"
     },
     {
       "bn": "তাৎপর্য",
+      "pronunciation": "tatoporj",
       "en": "significance",
       "category": "Class 11 · spiral review· spiral review· Advanced academic words"
     },
     {
       "bn": "পরিণতি",
+      "pronunciation": "porinoti",
       "en": "consequence",
       "category": "Class 11 · spiral review· spiral review· Advanced academic words"
     },
     {
       "bn": "দাবি",
+      "pronunciation": "dabi",
       "en": "claim",
       "category": "Class 11 · spiral review· spiral review· Advanced academic words"
     },
     {
       "bn": "প্রতিদাবি",
+      "pronunciation": "protidabi",
       "en": "counterclaim",
       "category": "Class 11 · spiral review· spiral review· Advanced academic words"
     },
     {
       "bn": "অবস্থান",
+      "pronunciation": "obosthan",
       "en": "position",
       "category": "Class 11 · spiral review· spiral review· Advanced academic words"
     },
     {
       "bn": "জরিপ",
+      "pronunciation": "jorip",
       "en": "survey",
       "category": "Class 11 · spiral review· spiral review· Education and research"
     },
     {
       "bn": "সাক্ষাৎকার",
+      "pronunciation": "sakshatokar",
       "en": "interview",
       "category": "Class 11 · spiral review· spiral review· Education and research"
     },
     {
       "bn": "গবেষণাপত্র",
+      "pronunciation": "gobeshonapotr",
       "en": "research paper",
       "category": "Class 11 · spiral review· spiral review· Education and research"
     },
     {
       "bn": "বাচ্য",
+      "pronunciation": "bachj",
       "en": "voice",
       "category": "Class 11 · spiral review· spiral review· Grammar and language"
     },
     {
       "bn": "সক্রিয় বাচ্য",
+      "pronunciation": "sokrijo bachj",
       "en": "active voice",
       "category": "Class 11 · spiral review· spiral review· Grammar and language"
     },
     {
       "bn": "কর্মবাচ্য",
+      "pronunciation": "kormobachj",
       "en": "passive voice",
       "category": "Class 11 · spiral review· spiral review· Grammar and language"
     },
     {
       "bn": "শব্দার্থ",
+      "pronunciation": "shobdarth",
       "en": "word meaning",
       "category": "Class 11 · spiral review· spiral review· Grammar and language"
     },
     {
       "bn": "ব্যুৎপত্তি",
+      "pronunciation": "bjutopotti",
       "en": "etymology",
       "category": "Class 11 · spiral review· spiral review· Grammar and language"
     },
     {
       "bn": "গদ্য",
+      "pronunciation": "godj",
       "en": "prose",
       "category": "Class 11 · spiral review· spiral review· Literary analysis"
     },
     {
       "bn": "পদ্য",
+      "pronunciation": "podj",
       "en": "verse",
       "category": "Class 11 · spiral review· spiral review· Literary analysis"
     },
     {
       "bn": "বর্ণনাকারী",
+      "pronunciation": "bornonakari",
       "en": "narrator",
       "category": "Class 11 · spiral review· spiral review· Literary analysis"
     },
     {
       "bn": "উপভাব",
+      "pronunciation": "upobhab",
       "en": "supporting theme",
       "category": "Class 11 · spiral review· spiral review· Literary analysis"
     },
     {
       "bn": "ভাষাশৈলী",
+      "pronunciation": "bhashashoili",
       "en": "literary style",
       "category": "Class 11 · spiral review· spiral review· Literary analysis"
     },
     {
       "bn": "শব্দচয়ন",
+      "pronunciation": "shobdochojon",
       "en": "word choice",
       "category": "Class 11 · spiral review· spiral review· Literary analysis"
     },
     {
       "bn": "অন্তর্নিহিত অর্থ",
+      "pronunciation": "ontornihit ôrtho",
       "en": "implicit meaning",
       "category": "Class 11 · spiral review· spiral review· Literary analysis"
     },
     {
       "bn": "প্রতিনিধিত্ব",
+      "pronunciation": "protinidhitb",
       "en": "representation",
       "category": "Class 11 · spiral review· spiral review· Civics and history"
     },
     {
       "bn": "সামাজিক ন্যায়",
+      "pronunciation": "shamajik nyay",
       "en": "social justice",
       "category": "Class 11 · spiral review· spiral review· Civics and history"
     },
     {
       "bn": "জবাবদিহি",
+      "pronunciation": "jobabodihi",
       "en": "accountability",
       "category": "Class 11 · spiral review· spiral review· Civics and history"
     },
     {
       "bn": "সামাজিক পরিবর্তন",
+      "pronunciation": "shamajik poriborton",
       "en": "social change",
       "category": "Class 11 · spiral review· spiral review· Civics and history"
     },
     {
       "bn": "সামাজিক মূল্যবোধ",
+      "pronunciation": "shamajik muljobodh",
       "en": "social values",
       "category": "Class 11 · spiral review· spiral review· Civics and history"
     },
     {
       "bn": "ঐতিহাসিক প্রেক্ষাপট",
+      "pronunciation": "oitihashik prekshapot",
       "en": "historical context",
       "category": "Class 11 · spiral review· spiral review· Civics and history"
     },
     {
       "bn": "উপনিবেশবাদ",
+      "pronunciation": "uponibeshobad",
       "en": "colonialism",
       "category": "Class 11 · spiral review· spiral review· Civics and history"
     },
     {
       "bn": "সাম্রাজ্যবাদ",
+      "pronunciation": "samrajjobad",
       "en": "imperialism",
       "category": "Class 11 · spiral review· spiral review· Civics and history"
     },
     {
       "bn": "ঐতিহাসিক উৎস",
+      "pronunciation": "oitihashik utsho",
       "en": "historical source",
       "category": "Class 11 · spiral review· spiral review· Civics and history"
     },
     {
       "bn": "প্রাথমিক উৎস",
+      "pronunciation": "prathomik utsho",
       "en": "primary source",
       "category": "Class 11 · spiral review· spiral review· Civics and history"
     },
     {
       "bn": "দ্বিতীয়িক উৎস",
+      "pronunciation": "dbitijik utsho",
       "en": "secondary source",
       "category": "Class 11 · spiral review· spiral review· Civics and history"
     },
     {
       "bn": "কৃষি",
+      "pronunciation": "krishi",
       "en": "agriculture",
       "category": "Class 11 · spiral review· spiral review· Geography and environment"
     },
     {
       "bn": "নদী অববাহিকা",
+      "pronunciation": "nodi obobahika",
       "en": "river basin",
       "category": "Class 11 · spiral review· spiral review· Geography and environment"
     },
     {
       "bn": "ভূমিক্ষয়",
+      "pronunciation": "bhumikshojo",
       "en": "land erosion",
       "category": "Class 11 · spiral review· spiral review· Geography and environment"
     },
     {
       "bn": "মরুকরণ",
+      "pronunciation": "morukoron",
       "en": "desertification",
       "category": "Class 11 · spiral review· spiral review· Geography and environment"
     },
     {
       "bn": "ভূমি ব্যবহার",
+      "pronunciation": "bhumi byabohar",
       "en": "land use",
       "category": "Class 11 · spiral review· spiral review· Geography and environment"
     },
     {
       "bn": "ভূ-অবস্থান",
+      "pronunciation": "bhu-obosthan",
       "en": "geographical location",
       "category": "Class 11 · spiral review· spiral review· Geography and environment"
     },
     {
       "bn": "পরিবহন",
+      "pronunciation": "poribohon",
       "en": "transportation",
       "category": "Class 11 · spiral review· spiral review· Geography and environment"
     },
     {
       "bn": "অর্থনৈতিক অঞ্চল",
+      "pronunciation": "orthonoitik onchol",
       "en": "economic region",
       "category": "Class 11 · spiral review· spiral review· Geography and environment"
     },
     {
       "bn": "গ্রিনহাউস গ্যাস",
+      "pronunciation": "grinohaus gas",
       "en": "greenhouse gas",
       "category": "Class 11 · spiral review· spiral review· Geography and environment"
     },
     {
       "bn": "প্রাকৃতিক দুর্যোগ",
+      "pronunciation": "prakritik durjog",
       "en": "natural disaster",
       "category": "Class 11 · spiral review· spiral review· Geography and environment"
     },
     {
       "bn": "সম্পদ ব্যবস্থাপনা",
+      "pronunciation": "shompod bjobosthapona",
       "en": "resource management",
       "category": "Class 11 · spiral review· spiral review· Geography and environment"
     },
     {
       "bn": "পরিবেশগত প্রভাব",
+      "pronunciation": "poribeshogot probhab",
       "en": "environmental impact",
       "category": "Class 11 · spiral review· spiral review· Geography and environment"
     },
     {
       "bn": "পরিবেশনীতি",
+      "pronunciation": "poribeshoniti",
       "en": "environmental policy",
       "category": "Class 11 · spiral review· spiral review· Geography and environment"
     },
     {
       "bn": "বৈজ্ঞানিক পদ্ধতি",
+      "pronunciation": "boigganik poddhoti",
       "en": "scientific method",
       "category": "Class 11 · spiral review· spiral review· Scientific method"
     },
     {
       "bn": "স্বাধীন চলক",
+      "pronunciation": "shadhin cholok",
       "en": "independent variable",
       "category": "Class 11 · spiral review· spiral review· Scientific method"
     },
     {
       "bn": "নির্ভরশীল চলক",
+      "pronunciation": "nirbhoroshil cholok",
       "en": "dependent variable",
       "category": "Class 11 · spiral review· spiral review· Scientific method"
     },
     {
       "bn": "নিয়ন্ত্রিত চলক",
+      "pronunciation": "nijontrit cholok",
       "en": "controlled variable",
       "category": "Class 11 · spiral review· spiral review· Scientific method"
     },
     {
       "bn": "ত্রুটি",
+      "pronunciation": "truti",
       "en": "error",
       "category": "Class 11 · spiral review· spiral review· Scientific method"
     },
     {
       "bn": "নির্ভুলতা",
+      "pronunciation": "nirbhulota",
       "en": "precision",
       "category": "Class 11 · spiral review· spiral review· Scientific method"
     },
     {
       "bn": "যথার্থতা",
+      "pronunciation": "jotharthota",
       "en": "accuracy",
       "category": "Class 11 · spiral review· spiral review· Scientific method"
     },
     {
       "bn": "মডেল",
+      "pronunciation": "model",
       "en": "model",
       "category": "Class 11 · spiral review· spiral review· Scientific method"
     },
     {
       "bn": "পুনরাবৃত্তি",
+      "pronunciation": "punorabritti",
       "en": "replication",
       "category": "Class 11 · spiral review· spiral review· Scientific method"
     },
     {
       "bn": "শক্তি রূপান্তর",
+      "pronunciation": "shokti rupantor",
       "en": "energy transformation",
       "category": "Class 11 · spiral review· spiral review· Scientific method"
     },
     {
       "bn": "কোষঝিল্লি",
+      "pronunciation": "koshojhilli",
       "en": "cell membrane",
       "category": "Class 11 · spiral review· spiral review· Biology"
     },
     {
       "bn": "নিউক্লিয়াস",
+      "pronunciation": "nucleus",
       "en": "nucleus",
       "category": "Class 11 · spiral review· spiral review· Biology"
     },
     {
       "bn": "হরমোন",
+      "pronunciation": "hormon",
       "en": "hormone",
       "category": "Class 11 · spiral review· spiral review· Biology"
     },
     {
       "bn": "জিন",
+      "pronunciation": "jin",
       "en": "gene",
       "category": "Class 11 · spiral review· spiral review· Biology"
     },
     {
       "bn": "ক্রোমোজোম",
+      "pronunciation": "kromojom",
       "en": "chromosome",
       "category": "Class 11 · spiral review· spiral review· Biology"
     },
     {
       "bn": "প্রাকৃতিক নির্বাচন",
+      "pronunciation": "prakritik nirbachon",
       "en": "natural selection",
       "category": "Class 11 · spiral review· spiral review· Biology"
     },
     {
       "bn": "বেগ",
+      "pronunciation": "beg",
       "en": "velocity",
       "category": "Class 11 · spiral review· spiral review· Physics"
     },
     {
       "bn": "ত্বরণ",
+      "pronunciation": "tboron",
       "en": "acceleration",
       "category": "Class 11 · spiral review· spiral review· Physics"
     },
     {
       "bn": "ভর",
+      "pronunciation": "bhor",
       "en": "mass",
       "category": "Class 11 · spiral review· spiral review· Physics"
     },
     {
       "bn": "ওজন",
+      "pronunciation": "ojon",
       "en": "weight",
       "category": "Class 11 · spiral review· spiral review· Physics"
     },
     {
       "bn": "কাজ",
+      "pronunciation": "kaj",
       "en": "work",
       "category": "Class 11 · spiral review· spiral review· Physics"
     },
     {
       "bn": "তাপমাত্রা",
+      "pronunciation": "tapmatra",
       "en": "temperature",
       "category": "Class 11 · spiral review· spiral review· Physics"
     },
     {
       "bn": "প্রতিফলন",
+      "pronunciation": "protipholon",
       "en": "reflection",
       "category": "Class 11 · spiral review· spiral review· Physics"
     },
     {
       "bn": "প্রতিসরণ",
+      "pronunciation": "protisoron",
       "en": "refraction",
       "category": "Class 11 · spiral review· spiral review· Physics"
     },
     {
       "bn": "কম্পন",
+      "pronunciation": "kompon",
       "en": "vibration",
       "category": "Class 11 · spiral review· spiral review· Physics"
     },
     {
       "bn": "বৈদ্যুতিক প্রবাহ",
+      "pronunciation": "boidyutik probah",
       "en": "electric current",
       "category": "Class 11 · spiral review· spiral review· Physics"
     },
     {
       "bn": "ভোল্টেজ",
+      "pronunciation": "bholtej",
       "en": "voltage",
       "category": "Class 11 · spiral review· spiral review· Physics"
     },
     {
       "bn": "চৌম্বক ক্ষেত্র",
+      "pronunciation": "choumbok khetro",
       "en": "magnetic field",
       "category": "Class 11 · spiral review· spiral review· Physics"
     },
     {
       "bn": "মৌল",
+      "pronunciation": "moul",
       "en": "element",
       "category": "Class 11 · spiral review· spiral review· Chemistry"
     },
     {
       "bn": "মিশ্রণ",
+      "pronunciation": "mishron",
       "en": "mixture",
       "category": "Class 11 · spiral review· spiral review· Chemistry"
     },
     {
       "bn": "আয়ন",
+      "pronunciation": "ajon",
       "en": "ion",
       "category": "Class 11 · spiral review· spiral review· Chemistry"
     },
     {
       "bn": "রাসায়নিক বন্ধন",
+      "pronunciation": "rashayonik bondhon",
       "en": "chemical bond",
       "category": "Class 11 · spiral review· spiral review· Chemistry"
     },
     {
       "bn": "বিক্রিয়ক",
+      "pronunciation": "bikrijok",
       "en": "reactant",
       "category": "Class 11 · spiral review· spiral review· Chemistry"
     },
     {
       "bn": "উৎপাদ",
+      "pronunciation": "utopad",
       "en": "product",
       "category": "Class 11 · spiral review· spiral review· Chemistry"
     },
     {
       "bn": "অম্ল",
+      "pronunciation": "omlo",
       "en": "acid",
       "category": "Class 11 · spiral review· spiral review· Chemistry"
     },
     {
       "bn": "ক্ষার",
+      "pronunciation": "kshar",
       "en": "base",
       "category": "Class 11 · spiral review· spiral review· Chemistry"
     },
     {
       "bn": "লবণ",
+      "pronunciation": "lobon",
       "en": "salt",
       "category": "Class 11 · spiral review· spiral review· Chemistry"
     },
     {
       "bn": "দ্রবণ",
+      "pronunciation": "drobon",
       "en": "solution",
       "category": "Class 11 · spiral review· spiral review· Chemistry"
     },
     {
       "bn": "দ্রাবক",
+      "pronunciation": "drabok",
       "en": "solvent",
       "category": "Class 11 · spiral review· spiral review· Chemistry"
     },
     {
       "bn": "দ্রব",
+      "pronunciation": "drob",
       "en": "solute",
       "category": "Class 11 · spiral review· spiral review· Chemistry"
     },
     {
       "bn": "ঘনত্ব",
+      "pronunciation": "ghonotb",
       "en": "concentration",
       "category": "Class 11 · spiral review· spiral review· Chemistry"
     },
     {
       "bn": "ডেটাবেস",
+      "pronunciation": "database",
       "en": "database",
       "category": "Class 11 · spiral review· spiral review· Digital literacy"
     },
     {
       "bn": "স্বয়ংক্রিয়তা",
+      "pronunciation": "sbojongkrijota",
       "en": "automation",
       "category": "Class 11 · spiral review· spiral review· Digital literacy"
     },
     {
       "bn": "বিভ্রান্তিকর তথ্য",
+      "pronunciation": "bibhrantikor tothyo",
       "en": "disinformation",
       "category": "Class 11 · spiral review· spiral review· Digital literacy"
     },
     {
       "bn": "অনলাইন নিরাপত্তা",
+      "pronunciation": "onolain nirapotta",
       "en": "online safety",
       "category": "Class 11 · spiral review· spiral review· Digital literacy"
     },
     {
       "bn": "তথ্যের উৎস",
+      "pronunciation": "tothjer utsho",
       "en": "information source",
       "category": "Class 11 · spiral review· spiral review· Digital literacy"
     },
     {
       "bn": "ভোগ",
+      "pronunciation": "bhog",
       "en": "consumption",
       "category": "Class 11 · spiral review· spiral review· Economics"
     },
     {
       "bn": "মুদ্রাস্ফীতি",
+      "pronunciation": "mudrasphiti",
       "en": "inflation",
       "category": "Class 11 · spiral review· spiral review· Economics"
     },
     {
       "bn": "ঋণ",
+      "pronunciation": "rin",
       "en": "debt",
       "category": "Class 11 · spiral review· spiral review· Economics"
     },
     {
       "bn": "দারিদ্র্য",
+      "pronunciation": "daridrj",
       "en": "poverty",
       "category": "Class 11 · spiral review· spiral review· Economics"
     },
     {
       "bn": "অর্থনৈতিক প্রবৃদ্ধি",
+      "pronunciation": "orthonoitik probriddhi",
       "en": "economic growth",
       "category": "Class 11 · spiral review· spiral review· Economics"
     },
     {
       "bn": "অর্থনৈতিক বৈষম্য",
+      "pronunciation": "orthonoitik boishomj",
       "en": "economic inequality",
       "category": "Class 11 · spiral review· spiral review· Economics"
     },
     {
       "bn": "আত্মসন্দেহ",
+      "pronunciation": "atmosondeh",
       "en": "self-doubt",
       "category": "Class 11 · spiral review· spiral review· Feelings and character"
     },
     {
       "bn": "প্রেরণা",
+      "pronunciation": "prerona",
       "en": "motivation",
       "category": "Class 11 · spiral review· spiral review· Feelings and character"
     },
     {
       "bn": "তৃপ্তি",
+      "pronunciation": "tripti",
       "en": "contentment",
       "category": "Class 11 · spiral review· spiral review· Feelings and character"
     },
     {
       "bn": "অসন্তোষ",
+      "pronunciation": "osontosh",
       "en": "dissatisfaction",
       "category": "Class 11 · spiral review· spiral review· Feelings and character"
     },
     {
       "bn": "দৃঢ়তা",
+      "pronunciation": "driṛhota",
       "en": "resilience",
       "category": "Class 11 · spiral review· spiral review· Feelings and character"
     },
     {
       "bn": "অসহায়ত্ব",
+      "pronunciation": "osohajotb",
       "en": "helplessness",
       "category": "Class 11 · spiral review· spiral review· Feelings and character"
     },
     {
       "bn": "পরিণত",
+      "pronunciation": "porinoto",
       "en": "mature",
       "category": "Class 11 · spiral review· spiral review· Feelings and character"
     },
     {
       "bn": "আবেগপ্রবণ",
+      "pronunciation": "abegoprobon",
       "en": "emotional",
       "category": "Class 11 · spiral review· spiral review· Feelings and character"
     },
     {
       "bn": "নীতিবান",
+      "pronunciation": "nitiban",
       "en": "ethical",
       "category": "Class 11 · spiral review· spiral review· Feelings and character"
     },
     {
       "bn": "ব্যাখ্যা নির্ণয় করা",
+      "pronunciation": "bjakhja nirnojo kora",
       "en": "to determine an interpretation",
       "category": "Class 11 · spiral review· spiral review· Advanced verbs"
     },
     {
       "bn": "ব্যাখ্যা পুনর্গঠন করা",
+      "pronunciation": "bjakhja punorgothon kora",
       "en": "to reconstruct an interpretation",
       "category": "Class 11 · spiral review· spiral review· Advanced verbs"
     },
     {
       "bn": "পর্যালোচনা করা",
+      "pronunciation": "porjalochona kora",
       "en": "to review",
       "category": "Class 11 · spiral review· spiral review· Advanced verbs"
     },
     {
       "bn": "ব্যাখ্যার সীমাবদ্ধতা চিহ্নিত করা",
+      "pronunciation": "bjakhjar simaboddhota chinnito kora",
       "en": "to identify limitations of an interpretation",
       "category": "Class 11 · spiral review· spiral review· Advanced verbs"
     },
     {
       "bn": "নিয়ন্ত্রণ করা",
+      "pronunciation": "nijontron kora",
       "en": "to control",
       "category": "Class 11 · spiral review· spiral review· Advanced verbs"
     },
     {
       "bn": "সংস্কার করা",
+      "pronunciation": "songskar kora",
       "en": "to reform",
       "category": "Class 11 · spiral review· spiral review· Advanced verbs"
     },
     {
       "bn": "সমন্বয় করা",
+      "pronunciation": "shomonnoy kora",
       "en": "to coordinate",
       "category": "Class 11 · spiral review· spiral review· Advanced verbs"
     },
     {
       "bn": "আলোচনায় অংশ নেওয়া",
+      "pronunciation": "alochonajo ongsho neoa",
       "en": "to participate in discussion",
       "category": "Class 11 · spiral review· spiral review· Advanced verbs"
     },
     {
       "bn": "যুক্তিসঙ্গত করা",
+      "pronunciation": "juktishongoto kora",
       "en": "to justify",
       "category": "Class 11 · spiral review· spiral review· Advanced verbs"
     },
     {
       "bn": "যৌক্তিক",
+      "pronunciation": "jouktik",
       "en": "logical",
       "category": "Class 11 · spiral review· spiral review· Analytical adjectives and connectors"
     },
     {
       "bn": "বিশ্বাসযোগ্য",
+      "pronunciation": "bishbasojogj",
       "en": "credible",
       "category": "Class 11 · spiral review· spiral review· Analytical adjectives and connectors"
     },
     {
       "bn": "অবিশ্বাস্য",
+      "pronunciation": "obishshashsho",
       "en": "not credible",
       "category": "Class 11 · spiral review· spiral review· Analytical adjectives and connectors"
     },
     {
       "bn": "সুসংগত",
+      "pronunciation": "susonggot",
       "en": "coherent",
       "category": "Class 11 · spiral review· spiral review· Analytical adjectives and connectors"
     },
     {
       "bn": "অসংগত",
+      "pronunciation": "osonggot",
       "en": "incoherent",
       "category": "Class 11 · spiral review· spiral review· Analytical adjectives and connectors"
     },
     {
       "bn": "টেকসই",
+      "pronunciation": "tekosoi",
       "en": "sustainable",
       "category": "Class 11 · spiral review· spiral review· Analytical adjectives and connectors"
     },
     {
       "bn": "দীর্ঘমেয়াদি",
+      "pronunciation": "dirghomejadi",
       "en": "long-term",
       "category": "Class 11 · spiral review· spiral review· Analytical adjectives and connectors"
     },
     {
       "bn": "স্বল্পমেয়াদি",
+      "pronunciation": "sbolpomejadi",
       "en": "short-term",
       "category": "Class 11 · spiral review· spiral review· Analytical adjectives and connectors"
     },
     {
       "bn": "নগণ্য",
+      "pronunciation": "nogonj",
       "en": "negligible",
       "category": "Class 11 · spiral review· spiral review· Analytical adjectives and connectors"
     },
     {
       "bn": "বিতর্কিত",
+      "pronunciation": "bitorkit",
       "en": "controversial",
       "category": "Class 11 · spiral review· spiral review· Analytical adjectives and connectors"
     },
     {
       "bn": "উপরন্তু",
+      "pronunciation": "uporontu",
       "en": "moreover",
       "category": "Class 11 · spiral review· spiral review· Analytical adjectives and connectors"
     },
     {
       "bn": "বরং",
+      "pronunciation": "borong",
       "en": "rather",
       "category": "Class 11 · spiral review· spiral review· Analytical adjectives and connectors"
     },
     {
       "bn": "সুতরাং",
+      "pronunciation": "shutorang",
       "en": "therefore",
       "category": "Class 11 · spiral review· spiral review· Analytical adjectives and connectors"
     },
     {
       "bn": "পরিশেষে",
+      "pronunciation": "porisheshe",
       "en": "finally",
       "category": "Class 11 · spiral review· spiral review· Analytical adjectives and connectors"
     },
     {
       "bn": "সমালোচনা",
+      "pronunciation": "somalochona",
       "en": "criticism",
       "category": "Class 11 · spiral review· Advanced academic words"
     },
     {
       "bn": "সংশ্লেষণ",
+      "pronunciation": "songshleshon",
       "en": "synthesis",
       "category": "Class 11 · spiral review· Advanced academic words"
     },
     {
       "bn": "সাধারণীকরণ",
+      "pronunciation": "sadharonikoron",
       "en": "generalization",
       "category": "Class 11 · spiral review· Advanced academic words"
     },
     {
       "bn": "গবেষণা প্রশ্ন",
+      "pronunciation": "gobeshona proshno",
       "en": "research question",
       "category": "Class 11 · spiral review· Research and data analysis"
     },
     {
       "bn": "নমুনা",
+      "pronunciation": "nomuna",
       "en": "sample",
       "category": "Class 11 · spiral review· Research and data analysis"
     },
     {
       "bn": "পরিসংখ্যান",
+      "pronunciation": "porisongkhjan",
       "en": "statistics",
       "category": "Class 11 · spiral review· Research and data analysis"
     },
     {
       "bn": "যাচাই",
+      "pronunciation": "jachai",
       "en": "verification",
       "category": "Class 11 · spiral review· Research and data analysis"
     },
     {
       "bn": "বাক্যসংকোচন",
+      "pronunciation": "bakjosongkochon",
       "en": "sentence reduction",
       "category": "Class 11 · spiral review· Grammar and linguistics"
     },
     {
       "bn": "পূর্বাভাস",
+      "pronunciation": "purbabhas",
       "en": "foreshadowing",
       "category": "Class 11 · spiral review· Advanced literary analysis"
     },
     {
       "bn": "প্রতীকী অর্থ",
+      "pronunciation": "protiki ôrtho",
       "en": "symbolic meaning",
       "category": "Class 11 · spiral review· Advanced literary analysis"
     },
     {
       "bn": "সামাজিক প্রেক্ষাপট",
+      "pronunciation": "shamajik prekshapot",
       "en": "social context",
       "category": "Class 11 · spiral review· Advanced literary analysis"
     },
     {
       "bn": "আইনের শাসন",
+      "pronunciation": "ainer shason",
       "en": "rule of law",
       "category": "Class 11 · spiral review· Society and state"
     },
     {
       "bn": "রাজনৈতিক অংশগ্রহণ",
+      "pronunciation": "rajnaitik ongshogrohon",
       "en": "political participation",
       "category": "Class 11 · spiral review· Society and state"
     },
     {
       "bn": "জননীতি",
+      "pronunciation": "jononiti",
       "en": "public policy",
       "category": "Class 11 · spiral review· Society and state"
     },
     {
       "bn": "প্রতিষ্ঠান",
+      "pronunciation": "protishthan",
       "en": "institution",
       "category": "Class 11 · spiral review· Society and state"
     },
     {
       "bn": "স্বাধীনতা আন্দোলন",
+      "pronunciation": "shadhinota andolon",
       "en": "independence movement",
       "category": "Class 11 · spiral review· History"
     },
     {
       "bn": "শাসনব্যবস্থা",
+      "pronunciation": "shasonobjobostha",
       "en": "system of government",
       "category": "Class 11 · spiral review· History"
     },
     {
       "bn": "ক্ষমতার পরিবর্তন",
+      "pronunciation": "khomotar poriborton",
       "en": "transfer of power",
       "category": "Class 11 · spiral review· History"
     },
     {
       "bn": "রাজনৈতিক আন্দোলন",
+      "pronunciation": "rajnaitik andolon",
       "en": "political movement",
       "category": "Class 11 · spiral review· History"
     },
     {
       "bn": "শিল্পায়ন",
+      "pronunciation": "shilpajon",
       "en": "industrialization",
       "category": "Class 11 · spiral review· Human geography"
     },
     {
       "bn": "অবকাঠামো",
+      "pronunciation": "obokathamo",
       "en": "infrastructure",
       "category": "Class 11 · spiral review· Human geography"
     },
     {
       "bn": "আঞ্চলিক বৈষম্য",
+      "pronunciation": "ancholik boishomj",
       "en": "regional inequality",
       "category": "Class 11 · spiral review· Human geography"
     },
     {
       "bn": "জনসংখ্যাগত পরিবর্তন",
+      "pronunciation": "jonosongkhjagot poriborton",
       "en": "demographic change",
       "category": "Class 11 · spiral review· Human geography"
     },
     {
       "bn": "পরিবেশগত ভারসাম্য",
+      "pronunciation": "poribeshogot bharshamyo",
       "en": "ecological balance",
       "category": "Class 11 · spiral review· Environment and sustainability"
     },
     {
       "bn": "পানি সংকট",
+      "pronunciation": "pani shongkot",
       "en": "water scarcity",
       "category": "Class 11 · spiral review· Environment and sustainability"
     },
     {
       "bn": "প্রশমন",
+      "pronunciation": "proshomon",
       "en": "mitigation",
       "category": "Class 11 · spiral review· Environment and sustainability"
     },
     {
       "bn": "কারণগত সম্পর্ক",
+      "pronunciation": "karonogot shomporko",
       "en": "causal relationship",
       "category": "Class 11 · spiral review· Scientific method"
     },
     {
       "bn": "কোষ বিভাজন",
+      "pronunciation": "kosh bibhajon",
       "en": "cell division",
       "category": "Class 11 · spiral review· Biology"
     },
     {
       "bn": "ডিএনএ",
+      "pronunciation": "DNA",
       "en": "DNA",
       "category": "Class 11 · spiral review· Biology"
     },
     {
       "bn": "মিউটেশন",
+      "pronunciation": "miuteshon",
       "en": "mutation",
       "category": "Class 11 · spiral review· Biology"
     },
     {
       "bn": "ভরবেগ",
+      "pronunciation": "bhorobeg",
       "en": "momentum",
       "category": "Class 11 · spiral review· Physics"
     },
     {
       "bn": "তরঙ্গ",
+      "pronunciation": "torongg",
       "en": "wave",
       "category": "Class 11 · spiral review· Physics"
     },
     {
       "bn": "পিএইচ",
+      "pronunciation": "pieich",
       "en": "pH",
       "category": "Class 11 · spiral review· Chemistry"
     },
     {
       "bn": "জারণ",
+      "pronunciation": "jaron",
       "en": "oxidation",
       "category": "Class 11 · spiral review· Chemistry"
     },
     {
       "bn": "বিজারণ",
+      "pronunciation": "bijaron",
       "en": "reduction",
       "category": "Class 11 · spiral review· Chemistry"
     },
     {
       "bn": "অনুঘটক",
+      "pronunciation": "onughotok",
       "en": "catalyst",
       "category": "Class 11 · spiral review· Chemistry"
     },
     {
       "bn": "ডেটা বিশ্লেষণ",
+      "pronunciation": "ḍeta bishleshon",
       "en": "data analysis",
       "category": "Class 11 · spiral review· Technology and digital society"
     },
     {
       "bn": "ক্লাউড",
+      "pronunciation": "klaud",
       "en": "cloud computing",
       "category": "Class 11 · spiral review· Technology and digital society"
     },
     {
       "bn": "ডিজিটাল সাক্ষরতা",
+      "pronunciation": "dijital sakshorota",
       "en": "digital literacy",
       "category": "Class 11 · spiral review· Technology and digital society"
     },
     {
       "bn": "তথ্য সুরক্ষা",
+      "pronunciation": "tothyo suroksha",
       "en": "information security",
       "category": "Class 11 · spiral review· Technology and digital society"
     },
     {
       "bn": "নৈতিক ব্যবহার",
+      "pronunciation": "noitik byabohar",
       "en": "ethical use",
       "category": "Class 11 · spiral review· Technology and digital society"
     },
     {
       "bn": "সুদের হার",
+      "pronunciation": "suder har",
       "en": "interest rate",
       "category": "Class 11 · spiral review· Economics"
     },
     {
       "bn": "উৎপাদনশীলতা",
+      "pronunciation": "utopadonoshilota",
       "en": "productivity",
       "category": "Class 11 · spiral review· Economics"
     },
     {
       "bn": "আত্মনিয়ন্ত্রণ",
+      "pronunciation": "atmonijontron",
       "en": "self-control",
       "category": "Class 11 · spiral review· Psychology and character"
     },
     {
       "bn": "আত্মসম্মান",
+      "pronunciation": "atmosomman",
       "en": "self-esteem",
       "category": "Class 11 · spiral review· Psychology and character"
     },
     {
       "bn": "মানসিক দৃঢ়তা",
+      "pronunciation": "manosik driṛhota",
       "en": "mental resilience",
       "category": "Class 11 · spiral review· Psychology and character"
     },
     {
       "bn": "সংকল্প",
+      "pronunciation": "songkolp",
       "en": "resolve",
       "category": "Class 11 · spiral review· Psychology and character"
     },
     {
       "bn": "আত্মপর্যালোচনা",
+      "pronunciation": "atmoporjalochona",
       "en": "self-reflection",
       "category": "Class 11 · spiral review· Psychology and character"
     },
     {
       "bn": "আত্মবিশ্লেষণী",
+      "pronunciation": "atmobishleshoni",
       "en": "introspective",
       "category": "Class 11 · spiral review· Psychology and character"
     },
     {
       "bn": "নেতৃত্বগুণসম্পন্ন",
+      "pronunciation": "netritbogunosomponn",
       "en": "leadership-oriented",
       "category": "Class 11 · spiral review· Psychology and character"
     },
     {
       "bn": "আপসহীন",
+      "pronunciation": "aposohin",
       "en": "uncompromising",
       "category": "Class 11 · spiral review· Psychology and character"
     },
     {
       "bn": "সংশ্লেষণ করা",
+      "pronunciation": "songshleshon kora",
       "en": "to synthesize",
       "category": "Class 11 · spiral review· Advanced verbs"
     },
     {
       "bn": "যুক্তি গঠন করা",
+      "pronunciation": "jukti gothon kora",
       "en": "to construct an argument",
       "category": "Class 11 · spiral review· Advanced verbs"
     },
     {
       "bn": "বৈপরীত্য নির্ণয় করা",
+      "pronunciation": "boiporitj nirnojo kora",
       "en": "to determine contrast",
       "category": "Class 11 · spiral review· Advanced verbs"
     },
     {
       "bn": "প্রেক্ষাপট স্থাপন করা",
+      "pronunciation": "prekshapot sthapon kora",
       "en": "to contextualize",
       "category": "Class 11 · spiral review· Advanced verbs"
     },
     {
       "bn": "সাধারণীকরণ করা",
+      "pronunciation": "sadharonikoron kora",
       "en": "to generalize",
       "category": "Class 11 · spiral review· Advanced verbs"
     },
     {
       "bn": "পুনর্মূল্যায়ন করা",
+      "pronunciation": "punormuljajon kora",
       "en": "to reevaluate",
       "category": "Class 11 · spiral review· Advanced verbs"
     },
     {
       "bn": "প্রমাণের শক্তি বিচার করা",
+      "pronunciation": "promaner shokti Bichar kora",
       "en": "to assess the strength of evidence",
       "category": "Class 11 · spiral review· Advanced verbs"
     },
     {
       "bn": "অবস্থান গ্রহণ করা",
+      "pronunciation": "obosthan grohon kora",
       "en": "to take a position",
       "category": "Class 11 · spiral review· Advanced verbs"
     },
     {
       "bn": "সীমাবদ্ধতা চিহ্নিত করা",
+      "pronunciation": "simaboddhota chinnito kora",
       "en": "to identify limitations",
       "category": "Class 11 · spiral review· Advanced verbs"
     },
     {
       "bn": "অগ্রাধিকার দেওয়া",
+      "pronunciation": "ogradhikar deoa",
       "en": "to prioritize",
       "category": "Class 11 · spiral review· Advanced verbs"
     },
     {
       "bn": "অনুমোদন করা",
+      "pronunciation": "Onumodon kora",
       "en": "to approve",
       "category": "Class 11 · spiral review· Advanced verbs"
     },
     {
       "bn": "অভিযোজিত হওয়া",
+      "pronunciation": "obhijojit hooa",
       "en": "to adapt",
       "category": "Class 11 · spiral review· Advanced verbs"
     },
     {
       "bn": "প্রশমন করা",
+      "pronunciation": "proshomon kora",
       "en": "to mitigate",
       "category": "Class 11 · spiral review· Advanced verbs"
     },
     {
       "bn": "অটেকসই",
+      "pronunciation": "otekosoi",
       "en": "unsustainable",
       "category": "Class 11 · spiral review· Advanced adjectives and connectors"
     },
     {
       "bn": "বহুমাত্রিক",
+      "pronunciation": "bohumatrik",
       "en": "multidimensional",
       "category": "Class 11 · spiral review· Advanced adjectives and connectors"
     },
     {
       "bn": "অন্তর্নিহিত",
+      "pronunciation": "ontornihit",
       "en": "implicit",
       "category": "Class 11 · spiral review· Advanced adjectives and connectors"
     },
     {
       "bn": "সুদূরপ্রসারী",
+      "pronunciation": "suduroprosari",
       "en": "far-reaching",
       "category": "Class 11 · spiral review· Advanced adjectives and connectors"
     },
     {
       "bn": "তথাপি",
+      "pronunciation": "tothapi",
       "en": "nevertheless",
       "category": "Class 11 · spiral review· Advanced adjectives and connectors"
     },
     {
       "bn": "সামগ্রিকভাবে",
+      "pronunciation": "samogrikobhabe",
       "en": "overall",
       "category": "Class 11 · spiral review· Advanced adjectives and connectors"
     },
     {
       "bn": "প্রতিপাদ্য",
+      "pronunciation": "protipadj",
       "en": "central thesis",
       "category": "Class 11 · Higher academic words"
     },
     {
       "bn": "যুক্তিক্রম",
+      "pronunciation": "juktikrom",
       "en": "chain of reasoning",
       "category": "Class 11 · Higher academic words"
     },
     {
       "bn": "পূর্বধারণা",
+      "pronunciation": "purbodharona",
       "en": "presupposition",
       "category": "Class 11 · Higher academic words"
     },
     {
       "bn": "ব্যাখ্যামূলক কাঠামো",
+      "pronunciation": "bjakhjamulok kathamo",
       "en": "interpretive framework",
       "category": "Class 11 · Higher academic words"
     },
     {
       "bn": "ধারণাগত সম্পর্ক",
+      "pronunciation": "dharonagot shomporko",
       "en": "conceptual relationship",
       "category": "Class 11 · Higher academic words"
     },
     {
       "bn": "গবেষণা পদ্ধতি",
+      "pronunciation": "gobeshona poddhoti",
       "en": "research methodology",
       "category": "Class 11 · Research and academic writing"
     },
     {
       "bn": "গুণগত তথ্য",
+      "pronunciation": "gunogot tothyo",
       "en": "qualitative data",
       "category": "Class 11 · Research and academic writing"
     },
     {
       "bn": "পরিমাণগত তথ্য",
+      "pronunciation": "porimanogot tothyo",
       "en": "quantitative data",
       "category": "Class 11 · Research and academic writing"
     },
     {
       "bn": "পদ্ধতিগত সীমাবদ্ধতা",
+      "pronunciation": "poddhotigot simaboddhota",
       "en": "methodological limitation",
       "category": "Class 11 · Research and academic writing"
     },
     {
       "bn": "গবেষণার ফলাফল",
+      "pronunciation": "gobeshonar pholaphol",
       "en": "research findings",
       "category": "Class 11 · Research and academic writing"
     },
     {
       "bn": "পুনরুৎপাদনযোগ্যতা",
+      "pronunciation": "punorutopadonojogjota",
       "en": "reproducibility",
       "category": "Class 11 · Research and academic writing"
     },
     {
       "bn": "নিরপেক্ষতা",
+      "pronunciation": "niropekshota",
       "en": "objectivity",
       "category": "Class 11 · Research and academic writing"
     },
     {
       "bn": "বাক্যতত্ত্ব",
+      "pronunciation": "bakjotottb",
       "en": "syntax",
       "category": "Class 11 · Advanced Bengali language"
     },
     {
       "bn": "শব্দতত্ত্ব",
+      "pronunciation": "shobdotottb",
       "en": "lexicology",
       "category": "Class 11 · Advanced Bengali language"
     },
     {
       "bn": "ধ্বনিতত্ত্ব",
+      "pronunciation": "dhbonitottb",
       "en": "phonetics",
       "category": "Class 11 · Advanced Bengali language"
     },
     {
       "bn": "রূপতত্ত্ব",
+      "pronunciation": "rupotottb",
       "en": "morphology",
       "category": "Class 11 · Advanced Bengali language"
     },
     {
       "bn": "ভাবসম্প্রসারণ",
+      "pronunciation": "bhabosomprosaron",
       "en": "idea expansion",
       "category": "Class 11 · Advanced Bengali language"
     },
     {
       "bn": "সারমর্ম",
+      "pronunciation": "saromorm",
       "en": "gist",
       "category": "Class 11 · Advanced Bengali language"
     },
     {
       "bn": "পারিভাষিক শব্দ",
+      "pronunciation": "paribhashik shobdo",
       "en": "technical term",
       "category": "Class 11 · Advanced Bengali language"
     },
     {
       "bn": "প্রমিত ভাষা",
+      "pronunciation": "promit bhasha",
       "en": "standard language",
       "category": "Class 11 · Advanced Bengali language"
     },
     {
       "bn": "আঞ্চলিক ভাষা",
+      "pronunciation": "ancholik bhasha",
       "en": "regional language",
       "category": "Class 11 · Advanced Bengali language"
     },
     {
       "bn": "রীতিভেদ",
+      "pronunciation": "ritibhed",
       "en": "register variation",
       "category": "Class 11 · Advanced Bengali language"
     },
     {
       "bn": "কাহিনির গঠন",
+      "pronunciation": "kahinir gothon",
       "en": "narrative structure",
       "category": "Class 11 · Advanced literary analysis"
     },
     {
       "bn": "অন্তর্দ্বন্দ্ব",
+      "pronunciation": "ontordbondb",
       "en": "internal conflict",
       "category": "Class 11 · Advanced literary analysis"
     },
     {
       "bn": "বহির্দ্বন্দ্ব",
+      "pronunciation": "bohirdbondb",
       "en": "external conflict",
       "category": "Class 11 · Advanced literary analysis"
     },
     {
       "bn": "ট্র্যাজেডি",
+      "pronunciation": "trjajedi",
       "en": "tragedy",
       "category": "Class 11 · Advanced literary analysis"
     },
     {
       "bn": "কৌতুক",
+      "pronunciation": "koutuk",
       "en": "comedy",
       "category": "Class 11 · Advanced literary analysis"
     },
     {
       "bn": "নাটকীয়তা",
+      "pronunciation": "natokijota",
       "en": "dramatic quality",
       "category": "Class 11 · Advanced literary analysis"
     },
     {
       "bn": "বর্ণনাভঙ্গি",
+      "pronunciation": "bornonabhonggi",
       "en": "narrative mode",
       "category": "Class 11 · Advanced literary analysis"
     },
     {
       "bn": "কথক",
+      "pronunciation": "kothok",
       "en": "narrator",
       "category": "Class 11 · Advanced literary analysis"
     },
     {
       "bn": "অবিশ্বস্ত কথক",
+      "pronunciation": "ôbishshosto kothok",
       "en": "unreliable narrator",
       "category": "Class 11 · Advanced literary analysis"
     },
     {
       "bn": "অস্তিত্ব",
+      "pronunciation": "ostitb",
       "en": "existence",
       "category": "Class 11 · Philosophy"
     },
     {
       "bn": "বাস্তবতা",
+      "pronunciation": "bastobota",
       "en": "reality",
       "category": "Class 11 · Philosophy"
     },
     {
       "bn": "নৈতিকতা",
+      "pronunciation": "noitikota",
       "en": "ethics",
       "category": "Class 11 · Philosophy"
     },
     {
       "bn": "স্বাধীন ইচ্ছা",
+      "pronunciation": "shadhin ichchha",
       "en": "free will",
       "category": "Class 11 · Philosophy"
     },
     {
       "bn": "চেতনা",
+      "pronunciation": "chetona",
       "en": "consciousness",
       "category": "Class 11 · Philosophy"
     },
     {
       "bn": "পরিচয়",
+      "pronunciation": "porichoy",
       "en": "identity",
       "category": "Class 11 · Philosophy"
     },
     {
       "bn": "যুক্তিবাদ",
+      "pronunciation": "juktibad",
       "en": "rationalism",
       "category": "Class 11 · Philosophy"
     },
     {
       "bn": "অভিজ্ঞতাবাদ",
+      "pronunciation": "obhijnyotabad",
       "en": "empiricism",
       "category": "Class 11 · Philosophy"
     },
     {
       "bn": "মানবতাবাদ",
+      "pronunciation": "manobotabad",
       "en": "humanism",
       "category": "Class 11 · Philosophy"
     },
     {
       "bn": "ব্যক্তিস্বাধীনতা",
+      "pronunciation": "bjoktisbadhinota",
       "en": "individual liberty",
       "category": "Class 11 · Philosophy"
     },
     {
       "bn": "সামাজিক দায়িত্ব",
+      "pronunciation": "shamajik dayitto",
       "en": "social responsibility",
       "category": "Class 11 · Philosophy"
     },
     {
       "bn": "নৈতিক দ্বন্দ্ব",
+      "pronunciation": "noitik dbondbo",
       "en": "ethical dilemma",
       "category": "Class 11 · Philosophy"
     },
     {
       "bn": "সামাজিক কাঠামো",
+      "pronunciation": "shamajik kathamo",
       "en": "social structure",
       "category": "Class 11 · Sociology"
     },
     {
       "bn": "শ্রেণি",
+      "pronunciation": "shreni",
       "en": "class",
       "category": "Class 11 · Sociology"
     },
     {
       "bn": "মর্যাদা",
+      "pronunciation": "morjada",
       "en": "status",
       "category": "Class 11 · Sociology"
     },
     {
       "bn": "সামাজিক বৈষম্য",
+      "pronunciation": "shamajik boishomj",
       "en": "social inequality",
       "category": "Class 11 · Sociology"
     },
     {
       "bn": "সামাজিক গতিশীলতা",
+      "pronunciation": "shamajik gotishilota",
       "en": "social mobility",
       "category": "Class 11 · Sociology"
     },
     {
       "bn": "সামাজিকীকরণ",
+      "pronunciation": "samajikikoron",
       "en": "socialization",
       "category": "Class 11 · Sociology"
     },
     {
       "bn": "লিঙ্গভিত্তিক ভূমিকা",
+      "pronunciation": "linggobhittik bhumika",
       "en": "gender role",
       "category": "Class 11 · Sociology"
     },
     {
       "bn": "নাগরিক সমাজ",
+      "pronunciation": "nagorik somaj",
       "en": "civil society",
       "category": "Class 11 · Sociology"
     },
     {
       "bn": "ক্ষমতার সম্পর্ক",
+      "pronunciation": "khomotar shomporko",
       "en": "power relations",
       "category": "Class 11 · Sociology"
     },
     {
       "bn": "অন্তর্ভুক্তি",
+      "pronunciation": "ontorbhukti",
       "en": "inclusion",
       "category": "Class 11 · Sociology"
     },
     {
       "bn": "প্রান্তিকতা",
+      "pronunciation": "prantikota",
       "en": "marginalization",
       "category": "Class 11 · Sociology"
     },
     {
       "bn": "সার্বভৌমত্ব",
+      "pronunciation": "sarbobhoumotb",
       "en": "sovereignty",
       "category": "Class 11 · Political science"
     },
     {
       "bn": "রাজনৈতিক দল",
+      "pronunciation": "rajnaitik dol",
       "en": "political party",
       "category": "Class 11 · Political science"
     },
     {
       "bn": "মৌলিক অধিকার",
+      "pronunciation": "moulik odhikar",
       "en": "fundamental rights",
       "category": "Class 11 · Political science"
     },
     {
       "bn": "ক্ষমতার বিভাজন",
+      "pronunciation": "khomotar bibhajon",
       "en": "separation of powers",
       "category": "Class 11 · Political science"
     },
     {
       "bn": "মতপ্রকাশের স্বাধীনতা",
+      "pronunciation": "motoprokasher shadhinota",
       "en": "freedom of expression",
       "category": "Class 11 · Political science"
     },
     {
       "bn": "রাজনৈতিক বৈধতা",
+      "pronunciation": "rajnaitik boidhota",
       "en": "political legitimacy",
       "category": "Class 11 · Political science"
     },
     {
       "bn": "রাষ্ট্রীয় প্রতিষ্ঠান",
+      "pronunciation": "rashtrijo protishthan",
       "en": "state institution",
       "category": "Class 11 · Political science"
     },
     {
       "bn": "সামাজিক আন্দোলন",
+      "pronunciation": "shamajik andolon",
       "en": "social movement",
       "category": "Class 11 · History and source criticism"
     },
     {
       "bn": "ক্ষমতার রূপান্তর",
+      "pronunciation": "khomotar rupantor",
       "en": "transformation of power",
       "category": "Class 11 · History and source criticism"
     },
     {
       "bn": "অর্থনৈতিক পরিবর্তন",
+      "pronunciation": "orthonoitik poriborton",
       "en": "economic change",
       "category": "Class 11 · History and source criticism"
     },
     {
       "bn": "ঐতিহাসিক ব্যাখ্যা",
+      "pronunciation": "oitihashik bjakhja",
       "en": "historical interpretation",
       "category": "Class 11 · History and source criticism"
     },
     {
       "bn": "ঐতিহাসিক স্মৃতি",
+      "pronunciation": "oitihashik smriti",
       "en": "historical memory",
       "category": "Class 11 · History and source criticism"
     },
     {
       "bn": "সূত্রসমালোচনা",
+      "pronunciation": "sutrosomalochona",
       "en": "source criticism",
       "category": "Class 11 · History and source criticism"
     },
     {
       "bn": "প্রতিযোগিতা",
+      "pronunciation": "protijogita",
       "en": "competition",
       "category": "Class 11 · Economics"
     },
     {
       "bn": "মুদ্রানীতি",
+      "pronunciation": "mudraniti",
       "en": "monetary policy",
       "category": "Class 11 · Economics"
     },
     {
       "bn": "রাজস্বনীতি",
+      "pronunciation": "rajosboniti",
       "en": "fiscal policy",
       "category": "Class 11 · Economics"
     },
     {
       "bn": "জাতীয় আয়",
+      "pronunciation": "jatiyo ay",
       "en": "national income",
       "category": "Class 11 · Economics"
     },
     {
       "bn": "বাজার ব্যর্থতা",
+      "pronunciation": "bajar bjorthota",
       "en": "market failure",
       "category": "Class 11 · Economics"
     },
     {
       "bn": "বহিঃপ্রভাব",
+      "pronunciation": "bohihprobhab",
       "en": "externality",
       "category": "Class 11 · Economics"
     },
     {
       "bn": "সুযোগ ব্যয়",
+      "pronunciation": "shujog byoy",
       "en": "opportunity cost",
       "category": "Class 11 · Economics"
     },
     {
       "bn": "প্রণোদনা",
+      "pronunciation": "pronodona",
       "en": "incentive",
       "category": "Class 11 · Economics"
     },
     {
       "bn": "পরিবেশগত ঝুঁকি",
+      "pronunciation": "poribeshogot jhũki",
       "en": "environmental risk",
       "category": "Class 11 · Environment"
     },
     {
       "bn": "পরিবেশগত ন্যায়",
+      "pronunciation": "poribeshogot nyay",
       "en": "environmental justice",
       "category": "Class 11 · Environment"
     },
     {
       "bn": "জলসংকট",
+      "pronunciation": "jolosongkot",
       "en": "water crisis",
       "category": "Class 11 · Environment"
     },
     {
       "bn": "নিয়ন্ত্রণ দল",
+      "pronunciation": "niyontron dol",
       "en": "control group",
       "category": "Class 11 · Scientific reasoning"
     },
     {
       "bn": "পরিসংখ্যানগত সম্পর্ক",
+      "pronunciation": "porisongkhjanogot shomporko",
       "en": "statistical relationship",
       "category": "Class 11 · Scientific reasoning"
     },
     {
       "bn": "সহসম্পর্ক",
+      "pronunciation": "sohosompork",
       "en": "correlation",
       "category": "Class 11 · Scientific reasoning"
     },
     {
       "bn": "ত্রুটির সীমা",
+      "pronunciation": "trutir shima",
       "en": "margin of error",
       "category": "Class 11 · Scientific reasoning"
     },
     {
       "bn": "বৈজ্ঞানিক ঐকমত্য",
+      "pronunciation": "boigganik oikomotj",
       "en": "scientific consensus",
       "category": "Class 11 · Scientific reasoning"
     },
     {
       "bn": "মেশিন লার্নিং",
+      "pronunciation": "machine larning",
       "en": "machine learning",
       "category": "Class 11 · AI and technology"
     },
     {
       "bn": "প্রশিক্ষণ ডেটা",
+      "pronunciation": "proshikkhon ḍeta",
       "en": "training data",
       "category": "Class 11 · AI and technology"
     },
     {
       "bn": "ডিজিটাল পরিচয়",
+      "pronunciation": "dijital porichoy",
       "en": "digital identity",
       "category": "Class 11 · AI and technology"
     },
     {
       "bn": "নজরদারি",
+      "pronunciation": "nojorodari",
       "en": "surveillance",
       "category": "Class 11 · AI and technology"
     },
     {
       "bn": "ডিজিটাল নৈতিকতা",
+      "pronunciation": "dijital noitikota",
       "en": "digital ethics",
       "category": "Class 11 · AI and technology"
     },
     {
       "bn": "প্রযুক্তিগত বৈষম্য",
+      "pronunciation": "projuktigoto boishomj",
       "en": "technological inequality",
       "category": "Class 11 · AI and technology"
     },
     {
       "bn": "অ্যালগরিদমিক সিদ্ধান্ত",
+      "pronunciation": "jalogoridomik shiddhanto",
       "en": "algorithmic decision",
       "category": "Class 11 · AI and technology"
     },
     {
       "bn": "সংবাদ",
+      "pronunciation": "shongbad",
       "en": "news",
       "category": "Class 11 · Media literacy"
     },
     {
       "bn": "সম্পাদকীয়",
+      "pronunciation": "sompadokijo",
       "en": "editorial",
       "category": "Class 11 · Media literacy"
     },
     {
       "bn": "গৌণ",
+      "pronunciation": "gouno",
       "en": "secondary",
       "category": "Class 11 · Media literacy"
     },
     {
       "bn": "প্রচারণা",
+      "pronunciation": "procharona",
       "en": "propaganda",
       "category": "Class 11 · Media literacy"
     },
     {
       "bn": "তথ্য নির্বাচন",
+      "pronunciation": "tothyo nirbachon",
       "en": "information selection",
       "category": "Class 11 · Media literacy"
     },
     {
       "bn": "সম্পাদকীয় অবস্থান",
+      "pronunciation": "sompadokijo obosthan",
       "en": "editorial position",
       "category": "Class 11 · Media literacy"
     },
     {
       "bn": "উৎসের বিশ্বাসযোগ্যতা",
+      "pronunciation": "utoser bishbasojogjota",
       "en": "source credibility",
       "category": "Class 11 · Media literacy"
     },
     {
       "bn": "স্বার্থের সংঘাত",
+      "pronunciation": "sbarther songghat",
       "en": "conflict of interest",
       "category": "Class 11 · Media literacy"
     },
     {
       "bn": "আচরণ",
+      "pronunciation": "achoron",
       "en": "behavior",
       "category": "Class 11 · Psychology"
     },
     {
       "bn": "স্মৃতি",
+      "pronunciation": "smriti",
       "en": "memory",
       "category": "Class 11 · Psychology"
     },
     {
       "bn": "উপলব্ধি",
+      "pronunciation": "Upolabdhi",
       "en": "perception",
       "category": "Class 11 · Psychology"
     },
     {
       "bn": "ব্যক্তিত্ব",
+      "pronunciation": "bektitto",
       "en": "personality",
       "category": "Class 11 · Psychology"
     },
     {
       "bn": "আবেগ",
+      "pronunciation": "abeg",
       "en": "emotion",
       "category": "Class 11 · Psychology"
     },
     {
       "bn": "আত্মপরিচয়",
+      "pronunciation": "atmoporichojo",
       "en": "self-identity",
       "category": "Class 11 · Psychology"
     },
     {
       "bn": "সামাজিক প্রভাব",
+      "pronunciation": "shamajik probhab",
       "en": "social influence",
       "category": "Class 11 · Psychology"
     },
     {
       "bn": "দলগত আচরণ",
+      "pronunciation": "dologot achoron",
       "en": "group behavior",
       "category": "Class 11 · Psychology"
     },
     {
       "bn": "সিদ্ধান্ত গ্রহণ",
+      "pronunciation": "shiddhanto grohon",
       "en": "decision-making",
       "category": "Class 11 · Psychology"
     },
     {
       "bn": "নিশ্চিতকরণ পক্ষপাত",
+      "pronunciation": "nishchitokoron pokshopat",
       "en": "confirmation bias",
       "category": "Class 11 · Psychology"
     },
     {
       "bn": "মানসিক স্থিতিস্থাপকতা",
+      "pronunciation": "manosik sthitisthapokota",
       "en": "psychological resilience",
       "category": "Class 11 · Psychology"
     },
     {
       "bn": "পাল্টা উদাহরণ",
+      "pronunciation": "palta udahoron",
       "en": "counterexample",
       "category": "Class 11 · Logic and critical thinking"
     },
     {
       "bn": "ব্যতিক্রম",
+      "pronunciation": "betickrom",
       "en": "exception",
       "category": "Class 11 · Logic and critical thinking"
     },
     {
       "bn": "যৌক্তিক অসংগতি",
+      "pronunciation": "jouktik osonggoti",
       "en": "logical inconsistency",
       "category": "Class 11 · Logic and critical thinking"
     },
     {
       "bn": "অন্তর্নিহিত অনুমান",
+      "pronunciation": "ontornihit onuman",
       "en": "implicit assumption",
       "category": "Class 11 · Logic and critical thinking"
     },
     {
       "bn": "বিকল্প ব্যাখ্যা",
+      "pronunciation": "bikolp bjakhja",
       "en": "alternative explanation",
       "category": "Class 11 · Logic and critical thinking"
     },
     {
       "bn": "প্রমাণের ভার",
+      "pronunciation": "promaner bhar",
       "en": "burden of proof",
       "category": "Class 11 · Logic and critical thinking"
     },
     {
       "bn": "খণ্ডনযোগ্যতা",
+      "pronunciation": "khondonojogjota",
       "en": "falsifiability",
       "category": "Class 11 · Logic and critical thinking"
     },
     {
       "bn": "একইসঙ্গে",
+      "pronunciation": "ekoisongge",
       "en": "simultaneously",
       "category": "Class 11 · Advanced connectors and contrasts"
     },
     {
       "bn": "পক্ষান্তরে",
+      "pronunciation": "pokshantore",
       "en": "on the other hand",
       "category": "Class 11 · Advanced connectors and contrasts"
     },
     {
       "bn": "ফলত",
+      "pronunciation": "pholot",
       "en": "consequently",
       "category": "Class 11 · Advanced connectors and contrasts"
     },
     {
       "bn": "উল্লেখযোগ্যভাবে",
+      "pronunciation": "ullekhjoggyobhabe",
       "en": "notably",
       "category": "Class 11 · Advanced connectors and contrasts"
     },
     {
       "bn": "বস্তুনিষ্ঠ",
+      "pronunciation": "bostunishth",
       "en": "objective",
       "category": "Class 11 · Advanced connectors and contrasts"
     },
     {
       "bn": "ব্যক্তিনিষ্ঠ",
+      "pronunciation": "bjoktinishth",
       "en": "subjective",
       "category": "Class 11 · Advanced connectors and contrasts"
     },
     {
       "bn": "প্রকাশ্য",
+      "pronunciation": "prokashsho",
       "en": "explicit",
       "category": "Class 11 · Advanced connectors and contrasts"
     },
     {
       "bn": "নির্ভরশীল",
+      "pronunciation": "nirbhoroshil",
       "en": "dependent",
       "category": "Class 11 · Advanced connectors and contrasts"
     },
     {
       "bn": "কেন্দ্রীভূত",
+      "pronunciation": "kendribhut",
       "en": "centralized",
       "category": "Class 11 · Advanced connectors and contrasts"
     },
     {
       "bn": "বিকেন্দ্রীভূত",
+      "pronunciation": "bikendribhut",
       "en": "decentralized",
       "category": "Class 11 · Advanced connectors and contrasts"
     },
     {
       "bn": "সামঞ্জস্য",
+      "pronunciation": "samonyjosj",
       "en": "consistency",
       "category": "Class 11 · Advanced connectors and contrasts"
     },
     {
       "bn": "অসামঞ্জস্য",
+      "pronunciation": "osamonyjosj",
       "en": "inconsistency",
       "category": "Class 11 · Advanced connectors and contrasts"
     },
     {
       "bn": "বর্জন",
+      "pronunciation": "borjon",
       "en": "exclusion",
       "category": "Class 11 · Advanced connectors and contrasts"
     },
     {
       "bn": "কাঠামোগত",
+      "pronunciation": "kathamogot",
       "en": "structural",
       "category": "Class 11 · Advanced connectors and contrasts"
     }
@@ -3695,492 +4432,574 @@
   "phrases": [
     {
       "bn": "লেখকের ভাষাশৈলী পাঠকের অনুভূতিকে নির্দিষ্ট দিকে পরিচালিত করে।",
+      "pronunciation": "lekhoker bhashashoili pathoker onubhutike nirdishto dike porichalit kore",
       "en": "Literary criticism practice 1",
       "context": "Literary criticism",
       "category": "Class 11 · Literary criticism"
     },
     {
       "bn": "চরিত্রটির সিদ্ধান্ত তার অভ্যন্তরীণ দ্বন্দ্বের ফল।",
+      "pronunciation": "choritrotir shiddhanto tar obhjontorin dbondber phol / fol",
       "en": "Literary criticism practice 2",
       "context": "Literary criticism",
       "category": "Class 11 · Literary criticism"
     },
     {
       "bn": "কাহিনির পটভূমি শুধু ঘটনাস্থল নয়, প্রতিপাদ্য গঠনেরও একটি গুরুত্বপূর্ণ উপাদান।",
+      "pronunciation": "kahinir potobhumi shudhu ghotonashthol noy protipadj gothoneroo ekti guruttopurno upadan",
       "en": "Literary criticism practice 3",
       "context": "Literary criticism",
       "category": "Class 11 · Literary criticism"
     },
     {
       "bn": "প্রতীকটির অর্থ পুরো সাহিত্যকর্মের প্রেক্ষাপটে বিবেচনা করা উচিত।",
+      "pronunciation": "protikotir ôrtho puro sahitjokormer prekshapote bibechona kora uchit",
       "en": "Literary criticism practice 4",
       "context": "Literary criticism",
       "category": "Class 11 · Literary criticism"
     },
     {
       "bn": "এই অংশে লেখক ব্যক্তিগত অভিজ্ঞতার মাধ্যমে বৃহত্তর সামাজিক বাস্তবতা তুলে ধরেছেন।",
+      "pronunciation": "ei ongsho-e lekhok byaktigoto obhijnyotar maddhome brihottor shamajik bastobota tule dhorechhen",
       "en": "Literary criticism practice 5",
       "context": "Literary criticism",
       "category": "Class 11 · Literary criticism"
     },
     {
       "bn": "কথকের দৃষ্টিভঙ্গি সীমিত হওয়ায় পাঠক সব তথ্য সরাসরি জানতে পারে না।",
+      "pronunciation": "kothoker drishtibhongi shimito hoojajo pathok shob tothyo shorashori jante pare na",
       "en": "Literary criticism practice 6",
       "context": "Literary criticism",
       "category": "Class 11 · Literary criticism"
     },
     {
       "bn": "কোনো ঐতিহাসিক উৎসকে তার সময়কাল ও উদ্দেশ্যের বাইরে বিচার করা উচিত নয়।",
+      "pronunciation": "kono oitihashik utosoke tar somojokal o uddeshjer baire Bichar kora uchit noy",
       "en": "Historical and economic analysis practice 1",
       "context": "Historical and economic analysis",
       "category": "Class 11 · Historical and economic analysis"
     },
     {
       "bn": "প্রাথমিক উৎস গুরুত্বপূর্ণ হলেও তা স্বয়ংক্রিয়ভাবে নিরপেক্ষ নয়।",
+      "pronunciation": "prathomik utsho guruttopurno holeo ta sbojongkrijobhabe niropeksho noy",
       "en": "Historical and economic analysis practice 2",
       "context": "Historical and economic analysis",
       "category": "Class 11 · Historical and economic analysis"
     },
     {
       "bn": "ঐতিহাসিক পরিবর্তনের পেছনে রাজনৈতিক, অর্থনৈতিক ও সামাজিক কারণ একসঙ্গে কাজ করতে পারে।",
+      "pronunciation": "oitihashik poribortoner pechone rajnaitik orthonoitik o shamajik karon eksongge kaj korte pare",
       "en": "Historical and economic analysis practice 3",
       "context": "Historical and economic analysis",
       "category": "Class 11 · Historical and economic analysis"
     },
     {
       "bn": "পরবর্তী ফলাফল দেখে অতীতের সিদ্ধান্তকে অনিবার্য বলে ধরে নেওয়া ঠিক নয়।",
+      "pronunciation": "poroborti pholaphol dekhe otiter siddhantoke onibarj bole dhore neoa thik noy",
       "en": "Historical and economic analysis practice 4",
       "context": "Historical and economic analysis",
       "category": "Class 11 · Historical and economic analysis"
     },
     {
       "bn": "কোনো নীতির শুধু সরাসরি খরচ নয়, সুযোগ ব্যয়ও বিবেচনা করা দরকার।",
+      "pronunciation": "kono nitir shudhu shorashori khoroch noy shujog bjojoo bibechona kora dorkar",
       "en": "Historical and economic analysis practice 5",
       "context": "Historical and economic analysis",
       "category": "Class 11 · Historical and economic analysis"
     },
     {
       "bn": "অর্থনৈতিক প্রবৃদ্ধি ঘটলেও তার সুফল সমানভাবে বিতরণ নাও হতে পারে।",
+      "pronunciation": "orthonoitik probriddhi ghotoleo tar suphol somanobhabe bitoron nao hote pare",
       "en": "Historical and economic analysis practice 6",
       "context": "Historical and economic analysis",
       "category": "Class 11 · Historical and economic analysis"
     },
     {
       "bn": "একটি নীতির অনিচ্ছাকৃত পার্শ্বপ্রতিক্রিয়াও বিশ্লেষণ করা উচিত।",
+      "pronunciation": "ekti nitir onichchhakrit parshboprotikrijao bishleshon kora uchit",
       "en": "Historical and economic analysis practice 7",
       "context": "Historical and economic analysis",
       "category": "Class 11 · Historical and economic analysis"
     },
     {
       "bn": "ফলাফল অনুমানের সঙ্গে সামঞ্জস্যপূর্ণ হলেও তা অনুমানকে চূড়ান্তভাবে প্রমাণ করে না।",
+      "pronunciation": "pholaphol onumaner shonge samonyjosjopurn holeo ta onumanoke chudantobhabe proman kore na",
       "en": "Scientific reasoning practice 1",
       "context": "Scientific reasoning",
       "category": "Class 11 · Scientific reasoning"
     },
     {
       "bn": "একটি গবেষণার ফল পুনরাবৃত্তি করা গেলে তার বিশ্বাসযোগ্যতা বাড়ে।",
+      "pronunciation": "ekti gobeshonar phol / fol punorabritti kora gele tar bishbasojogjota bare",
       "en": "Scientific reasoning practice 2",
       "context": "Scientific reasoning",
       "category": "Class 11 · Scientific reasoning"
     },
     {
       "bn": "সহসম্পর্ক কারণের ইঙ্গিত দিতে পারে, কিন্তু কারণ প্রমাণ করে না।",
+      "pronunciation": "sohosompork karoner ingit dite pare kintu karon proman kore na",
       "en": "Scientific reasoning practice 3",
       "context": "Scientific reasoning",
       "category": "Class 11 · Scientific reasoning"
     },
     {
       "bn": "নিয়ন্ত্রণ দল না থাকলে পরিবর্তনের প্রকৃত কারণ নির্ধারণ কঠিন হতে পারে।",
+      "pronunciation": "niyontron dol na thakle poribortoner prokrito karon nirdharon kothin hote pare",
       "en": "Scientific reasoning practice 4",
       "context": "Scientific reasoning",
       "category": "Class 11 · Scientific reasoning"
     },
     {
       "bn": "নমুনা প্রতিনিধিত্বশীল না হলে ফলাফল সাধারণীকরণ করা উচিত নয়।",
+      "pronunciation": "nomuna protinidhitboshil na hole pholaphol sadharonikoron kora uchit noy",
       "en": "Scientific reasoning practice 5",
       "context": "Scientific reasoning",
       "category": "Class 11 · Scientific reasoning"
     },
     {
       "bn": "উৎসটির লেখক কে?",
+      "pronunciation": "utosotir lekhok ke",
       "en": "Source evaluation practice 1",
       "context": "Source evaluation",
       "category": "Class 11 · Source evaluation"
     },
     {
       "bn": "লেখকের সংশ্লিষ্ট বিষয়ে দক্ষতা কতটা?",
+      "pronunciation": "lekhoker songshlisht bishoye dokkhota kotota",
       "en": "Source evaluation practice 2",
       "context": "Source evaluation",
       "category": "Class 11 · Source evaluation"
     },
     {
       "bn": "প্রকাশক কে?",
+      "pronunciation": "prokashok ke",
       "en": "Source evaluation practice 3",
       "context": "Source evaluation",
       "category": "Class 11 · Source evaluation"
     },
     {
       "bn": "তথ্য সংগ্রহের পদ্ধতি কী?",
+      "pronunciation": "tothyo songgroher poddhoti ki",
       "en": "Source evaluation practice 4",
       "context": "Source evaluation",
       "category": "Class 11 · Source evaluation"
     },
     {
       "bn": "কোন প্রমাণ ব্যবহার করা হয়েছে?",
+      "pronunciation": "kon proman byabohar kora hoyechhe",
       "en": "Source evaluation practice 5",
       "context": "Source evaluation",
       "category": "Class 11 · Source evaluation"
     },
     {
       "bn": "বিপরীত প্রমাণ উপস্থাপন করা হয়েছে কি?",
+      "pronunciation": "biporit proman uposthapon kora hoyechhe ki",
       "en": "Source evaluation practice 6",
       "context": "Source evaluation",
       "category": "Class 11 · Source evaluation"
     },
     {
       "bn": "উৎসটির আর্থিক, রাজনৈতিক বা ব্যক্তিগত স্বার্থ আছে কি?",
+      "pronunciation": "utosotir arthik rajnaitik ba byaktigoto sbarth achhe ki",
       "en": "Source evaluation practice 7",
       "context": "Source evaluation",
       "category": "Class 11 · Source evaluation"
     },
     {
       "bn": "একই তথ্য অন্য স্বাধীন উৎসে পাওয়া যায় কি?",
+      "pronunciation": "ekoi tothyo ônno shadhin utose paoa Jay ki",
       "en": "Source evaluation practice 8",
       "context": "Source evaluation",
       "category": "Class 11 · Source evaluation"
     },
     {
       "bn": "প্রথমে বিষয়টির ধারণাগত কাঠামো স্পষ্ট করা দরকার।",
+      "pronunciation": "prothome bishoytir dharonagot kathamo sposhto kora dorkar",
       "en": "Critical analysis practice 1",
       "context": "Critical analysis",
       "category": "Class 11 · Critical analysis"
     },
     {
       "bn": "এই প্রশ্নের উত্তর দেওয়ার আগে প্রাসঙ্গিক প্রেক্ষাপট বিবেচনা করা জরুরি।",
+      "pronunciation": "ei proshner uttor dewar age prashongik prekshapot bibechona kora joruri",
       "en": "Critical analysis practice 2",
       "context": "Critical analysis",
       "category": "Class 11 · Critical analysis"
     },
     {
       "bn": "বিষয়টিকে একটি মাত্র কারণ দিয়ে ব্যাখ্যা করা যথেষ্ট নয়।",
+      "pronunciation": "bishojotike ekti matro karon diye bjakhja kora jôtheshto noy",
       "en": "Critical analysis practice 3",
       "context": "Critical analysis",
       "category": "Class 11 · Critical analysis"
     },
     {
       "bn": "উপস্থিত প্রমাণের ভিত্তিতে বলা যায় যে...",
+      "pronunciation": "uposthit promaner bhittite bola Jay je",
       "en": "Critical analysis practice 4",
       "context": "Critical analysis",
       "category": "Class 11 · Critical analysis"
     },
     {
       "bn": "প্রাথমিকভাবে এই সিদ্ধান্ত যুক্তিসঙ্গত মনে হলেও আরও তথ্য প্রয়োজন।",
+      "pronunciation": "prathomikbhabe ei shiddhanto juktishongoto mone holeo aro tothyo proyojon",
       "en": "Critical analysis practice 5",
       "context": "Critical analysis",
       "category": "Class 11 · Critical analysis"
     },
     {
       "bn": "এটিকে নিশ্চিত কারণ না বলে একটি সম্ভাব্য ব্যাখ্যা বলা অধিক যথাযথ।",
+      "pronunciation": "etike nishchito karon na bole ekti sombhabj bjakhja bola odhik jothajoth",
       "en": "Critical analysis practice 6",
       "context": "Critical analysis",
       "category": "Class 11 · Critical analysis"
     },
     {
       "bn": "এই প্রমাণটি দাবিটির সঙ্গে সম্পর্কিত, কারণ...",
+      "pronunciation": "ei promanoti dabitir shonge shômpôrkito karon",
       "en": "Evidence and counterclaims practice 1",
       "context": "Evidence and counterclaims",
       "category": "Class 11 · Evidence and counterclaims"
     },
     {
       "bn": "প্রমাণ ও দাবির মধ্যে সম্পর্ক স্পষ্টভাবে ব্যাখ্যা করা জরুরি।",
+      "pronunciation": "proman o dabir moddhe shomporko sposhtobhabe bjakhja kora joruri",
       "en": "Evidence and counterclaims practice 2",
       "context": "Evidence and counterclaims",
       "category": "Class 11 · Evidence and counterclaims"
     },
     {
       "bn": "প্রমাণটি প্রাসঙ্গিক হলেও যথেষ্ট নয়।",
+      "pronunciation": "promanoti prashongik holeo jôtheshto noy",
       "en": "Evidence and counterclaims practice 3",
       "context": "Evidence and counterclaims",
       "category": "Class 11 · Evidence and counterclaims"
     },
     {
       "bn": "অন্য সম্ভাব্য কারণগুলো নিয়ন্ত্রণ করা হয়নি।",
+      "pronunciation": "ônno sombhabj karonogulo niyontron kora hoyni",
       "en": "Evidence and counterclaims practice 4",
       "context": "Evidence and counterclaims",
       "category": "Class 11 · Evidence and counterclaims"
     },
     {
       "bn": "ফলাফলটি সহসম্পর্ক দেখায়, সরাসরি কারণ নয়।",
+      "pronunciation": "pholapholoti sohosompork dekhay shorashori karon noy",
       "en": "Evidence and counterclaims practice 5",
       "context": "Evidence and counterclaims",
       "category": "Class 11 · Evidence and counterclaims"
     },
     {
       "bn": "বিপরীত অবস্থানের সবচেয়ে শক্তিশালী যুক্তি হলো...",
+      "pronunciation": "biporit obosthaner sobcheye shoktishali jukti holo",
       "en": "Evidence and counterclaims practice 6",
       "context": "Evidence and counterclaims",
       "category": "Class 11 · Evidence and counterclaims"
     },
     {
       "bn": "প্রতিদাবিটি মূল সমস্যার একটি বাস্তব দিক তুলে ধরে।",
+      "pronunciation": "protidabiti mul somosjar ekti bastob dik tule dhore",
       "en": "Evidence and counterclaims practice 7",
       "context": "Evidence and counterclaims",
       "category": "Class 11 · Evidence and counterclaims"
     },
     {
       "bn": "তবে এই যুক্তি একটি গুরুত্বপূর্ণ বিষয় উপেক্ষা করে।",
+      "pronunciation": "tobe ei jukti ekti guruttopurno bishoy upekha kore",
       "en": "Evidence and counterclaims practice 8",
       "context": "Evidence and counterclaims",
       "category": "Class 11 · Evidence and counterclaims"
     },
     {
       "bn": "প্রথম ব্যাখ্যাটি ব্যক্তিগত কারণকে গুরুত্ব দেয়, আর দ্বিতীয়টি কাঠামোগত কারণকে।",
+      "pronunciation": "prothom byakhyati byaktigoto karonoke gurutto dey ar dbitijoti kathamogot karonoke",
       "en": "Comparison and synthesis practice 1",
       "context": "Comparison and synthesis",
       "category": "Class 11 · Comparison and synthesis"
     },
     {
       "bn": "দুটি ব্যাখ্যাই কিছু প্রমাণের সঙ্গে সামঞ্জস্যপূর্ণ।",
+      "pronunciation": "duṭi bjakhjai kichhu promaner shonge samonyjosjopurn",
       "en": "Comparison and synthesis practice 2",
       "context": "Comparison and synthesis",
       "category": "Class 11 · Comparison and synthesis"
     },
     {
       "bn": "সম্ভবত দুটি কারণই একসঙ্গে কাজ করেছে।",
+      "pronunciation": "shombhoboto duṭi karonoi eksongge kaj koreche",
       "en": "Comparison and synthesis practice 3",
       "context": "Comparison and synthesis",
       "category": "Class 11 · Comparison and synthesis"
     },
     {
       "bn": "বিভিন্ন উৎস একত্রে বিবেচনা করলে একটি জটিল চিত্র পাওয়া যায়।",
+      "pronunciation": "bibhinn utsho ekotre bibechona korle ekti jotil chitr paoa Jay",
       "en": "Comparison and synthesis practice 4",
       "context": "Comparison and synthesis",
       "category": "Class 11 · Comparison and synthesis"
     },
     {
       "bn": "দুটি দৃষ্টিভঙ্গি পরস্পরবিরোধী না হয়ে পরিপূরকও হতে পারে।",
+      "pronunciation": "duṭi drishtibhongi porosporobirodhi na hoye poripurokoo hote pare",
       "en": "Comparison and synthesis practice 5",
       "context": "Comparison and synthesis",
       "category": "Class 11 · Comparison and synthesis"
     },
     {
       "bn": "সব তথ্য মিলিয়ে দেখা যায় যে সমস্যাটি বহুমাত্রিক।",
+      "pronunciation": "shob tothyo miliye dekha Jay je shomoshyati bohumatrik",
       "en": "Comparison and synthesis practice 6",
       "context": "Comparison and synthesis",
       "category": "Class 11 · Comparison and synthesis"
     },
     {
       "bn": "একটি সিদ্ধান্ত আইনসম্মত হলেই তা নৈতিকভাবে সঠিক হয় না।",
+      "pronunciation": "ekti shiddhanto ainosommot holei ta noitikobhabe shothik hoy na",
       "en": "Ethical analysis practice 1",
       "context": "Ethical analysis",
       "category": "Class 11 · Ethical analysis"
     },
     {
       "bn": "ব্যক্তিগত স্বাধীনতা ও সামাজিক কল্যাণের মধ্যে ভারসাম্য প্রয়োজন।",
+      "pronunciation": "byaktigoto shadhinota o shamajik koljaner moddhe bharshamyo proyojon",
       "en": "Ethical analysis practice 2",
       "context": "Ethical analysis",
       "category": "Class 11 · Ethical analysis"
     },
     {
       "bn": "একটি নীতির সুবিধা কারা পায় এবং ক্ষতি কারা বহন করে তা বিবেচনা করা উচিত।",
+      "pronunciation": "ekti nitir shubidha kara pay ebong khoti kara bohon kore ta bibechona kora uchit",
       "en": "Ethical analysis practice 3",
       "context": "Ethical analysis",
       "category": "Class 11 · Ethical analysis"
     },
     {
       "bn": "নৈতিক সিদ্ধান্তে উদ্দেশ্য ও ফলাফল উভয়ই গুরুত্বপূর্ণ হতে পারে।",
+      "pronunciation": "noitik siddhante uddeshsho o pholaphol ubhojoi guruttopurno hote pare",
       "en": "Ethical analysis practice 4",
       "context": "Ethical analysis",
       "category": "Class 11 · Ethical analysis"
     },
     {
       "bn": "এই প্রতীকটি বিচ্ছিন্নতার ধারণাকে প্রতিনিধিত্ব করতে পারে।",
+      "pronunciation": "ei protikoti bichchhinnotar dharonake protinidhitb korte pare",
       "en": "Literary interpretation practice 1",
       "context": "Literary interpretation",
       "category": "Class 11 · Literary interpretation"
     },
     {
       "bn": "লেখক প্রকৃতির বর্ণনাকে চরিত্রটির মানসিক অবস্থার প্রতিফলন হিসেবে ব্যবহার করেছেন।",
+      "pronunciation": "lekhok prokritir bornonake choritrotir manosik obosthar protipholon hishebe byabohar korechen",
       "en": "Literary interpretation practice 2",
       "context": "Literary interpretation",
       "category": "Class 11 · Literary interpretation"
     },
     {
       "bn": "পুনরাবৃত্ত শব্দটি স্মৃতি ও অনুতাপের অনুভূতি জোরালো করে।",
+      "pronunciation": "punorabritt shobdoti smriti o onutaper onubhuti joralo kore",
       "en": "Literary interpretation practice 3",
       "context": "Literary interpretation",
       "category": "Class 11 · Literary interpretation"
     },
     {
       "bn": "কথকের সীমিত দৃষ্টিভঙ্গি পাঠকের জ্ঞানকে ইচ্ছাকৃতভাবে সীমাবদ্ধ রাখে।",
+      "pronunciation": "kothoker shimito drishtibhongi pathoker jnyanoke ichchhakritobhabe simaboddh rakhe",
       "en": "Literary interpretation practice 4",
       "context": "Literary interpretation",
       "category": "Class 11 · Literary interpretation"
     },
     {
       "bn": "শেষ দৃশ্যটি পুরো কাহিনির প্রতিপাদ্যকে নতুন অর্থ দেয়।",
+      "pronunciation": "shesh drishjoti puro kahinir protipadjoke notun ôrtho dey",
       "en": "Literary interpretation practice 5",
       "context": "Literary interpretation",
       "category": "Class 11 · Literary interpretation"
     },
     {
       "bn": "কোনো যুক্তির উপসংহার সত্য হতে পারে, কিন্তু তার যুক্তিক্রম দুর্বল হতে পারে।",
+      "pronunciation": "kono juktir uposonghar shotto hote pare kintu tar juktikrom durbol hote pare",
       "en": "Advanced sentences practice 1",
       "context": "Advanced sentences",
       "category": "Class 11 · Advanced sentences"
     },
     {
       "bn": "বস্তুনিষ্ঠতার চেষ্টা জরুরি, তবে গবেষকের নিজের পূর্বধারণা সম্পূর্ণভাবে দূর করা সব সময় সম্ভব নয়।",
+      "pronunciation": "bostunishthotar cheshta joruri tobe gobeshoker nijer purbodharona shompurnobhabe dur kora shob shomoy shombhob noy",
       "en": "Advanced sentences practice 2",
       "context": "Advanced sentences",
       "category": "Class 11 · Advanced sentences"
     },
     {
       "bn": "একটি ঐতিহাসিক ঘটনার ব্যাখ্যা কোন উৎসকে গুরুত্ব দেওয়া হচ্ছে তার ওপরও নির্ভর করে।",
+      "pronunciation": "ekti oitihashik ghotonar bjakhja kon utosoke gurutto deoa hochchhe tar oporoo nirbhor kore",
       "en": "Advanced sentences practice 3",
       "context": "Advanced sentences",
       "category": "Class 11 · Advanced sentences"
     },
     {
       "bn": "একটি পরিসংখ্যানগত সম্পর্ক বাস্তবে গুরুত্বপূর্ণ কি না তা শুধু সংখ্যাগত তাৎপর্য দিয়ে নির্ধারণ করা যায় না।",
+      "pronunciation": "ekti porisongkhjanogot shomporko bastobe guruttopurno ki na ta shudhu songkhjagot tatoporj diye nirdharon kora Jay na",
       "en": "Advanced sentences practice 4",
       "context": "Advanced sentences",
       "category": "Class 11 · Advanced sentences"
     },
     {
       "bn": "সাহিত্যিক ব্যাখ্যা একাধিক হতে পারে, তবে পাঠ্যপ্রমাণের সঙ্গে সামঞ্জস্য থাকা দরকার।",
+      "pronunciation": "sahitjik bjakhja ekadhik hote pare tobe pathjopromaner shonge samonyjosj thaka dorkar",
       "en": "Advanced sentences practice 5",
       "context": "Advanced sentences",
       "category": "Class 11 · Advanced sentences"
     },
     {
       "bn": "মতপ্রকাশের স্বাধীনতা গণতান্ত্রিক সমাজের গুরুত্বপূর্ণ ভিত্তি। তবে সরাসরি সহিংসতার আহ্বান, মানহানি বা ইচ্ছাকৃত ক্ষতিকর মিথ্যা তথ্যের ক্ষেত্রে সীমা নিয়ে বিতর্ক রয়েছে। তাই প্রশ্ন শুধু স্বাধীনতা থাকা উচিত কি না নয়, বরং কোন সীমা ন্যায্য এবং সেই সীমা কে নির্ধারণ করবে।",
+      "pronunciation": "motoprokasher shadhinota gonotantrik somajer guruttopurno bhitti tobe shorashori sohingsotar ahbano manhani ba ichchhakrit khotikor mittha tothjer kshetre shima niye bitork royeche tai proshno shudhu shadhinota thaka uchit ki na noy borong kon shima nyajjo ebong shei shima ke nirdharon korbe",
       "en": "Freedom of expression passage practice 1",
       "context": "Freedom of expression passage",
       "category": "Class 11 · Freedom of expression passage"
     },
     {
       "bn": "অর্থনৈতিক প্রবৃদ্ধি একটি দেশের মোট সম্পদ বাড়াতে পারে, কিন্তু সম্পদ কীভাবে বিতরণ হচ্ছে তা আলাদা প্রশ্ন। সুফল ছোট গোষ্ঠীর কাছে গেলে জাতীয় আয় বাড়লেও বৈষম্য বাড়তে পারে। তাই অর্থনীতির আকারের পাশাপাশি মানুষের বাস্তব জীবনমানও মূল্যায়ন করা জরুরি।",
+      "pronunciation": "orthonoitik probriddhi ekti desher mot shompod badate pare kintu shompod kibhabe bitoron hochchhe ta alada proshno suphol chhoto goshthir kachhe gele jatiyo ay badoleo boishomj barte pare tai orthonitir akarer pashapashi manusher bastob jibonomanoo muljajon kora joruri",
       "en": "Growth and inequality passage practice 1",
       "context": "Growth and inequality passage",
       "category": "Class 11 · Growth and inequality passage"
     },
     {
       "bn": "কৃত্রিম বুদ্ধিমত্তা কিছু কাজ স্বয়ংক্রিয় করতে পারে এবং নতুন কাজও সৃষ্টি করতে পারে। শুধু কত চাকরি হারাবে তা নয়, কোন দক্ষতার চাহিদা বাড়বে সেটিও গুরুত্বপূর্ণ। নতুন দক্ষতা শেখার সুযোগ না থাকলে প্রযুক্তিগত পরিবর্তন বৈষম্য বাড়াতে পারে।",
+      "pronunciation": "kritrim buddhimotta kichhu kaj shoyongkriyo korte pare ebong notun kaj-o srishti korte pare shudhu koto chakri harabe ta noy kon dokkhotar chahida badobe setio guruttopurno notun dokkhota shekhar shujog na thakle projuktigoto poriborton boishomj badate pare",
       "en": "AI and work passage practice 1",
       "context": "AI and work passage",
       "category": "Class 11 · AI and work passage"
     },
     {
       "bn": "এক তরুণ তার বাবার অচল পুরোনো ঘড়ি বহন করে। গুরুত্বপূর্ণ সিদ্ধান্তের আগে সে ঘড়িটি খুলে দেখে এবং পরে বাক্সে রেখে দেয়। অচল ঘড়িটি অতীতের সঙ্গে আবেগগত বন্ধনের প্রতীক; সেটি রেখে দেওয়া অতীতকে অস্বীকার নয়, বরং তার প্রভাব থেকে স্বাধীন হওয়ার ইঙ্গিত।",
+      "pronunciation": "ek torun tar babar ochol purono ghori bohon kore guruttopurno siddhanter age she ghoditi khule dekhe ebong pore bakse rekhe dey ochol ghoditi otiter shonge abegogot bondhoner protik seti rekhe deoa otitoke oshshikar noy borong tar probhab theke shadhin howar ingit",
       "en": "Literary symbol sample practice 1",
       "context": "Literary symbol sample",
       "category": "Class 11 · Literary symbol sample"
     },
     {
       "bn": "যারা প্রতিদিন এক ঘণ্টা পড়ে তাদের গড় ফল বেশি—এটি সহসম্পর্ক, সরাসরি কারণের প্রমাণ নয়।",
+      "pronunciation": "jara protidin ek ghonta pore tader gor phol / fol beshi—eti sohosompork shorashori karoner proman noy",
       "en": "Research analysis practice 1",
       "context": "Research analysis",
       "category": "Class 11 · Research analysis"
     },
     {
       "bn": "পরিবার, শিক্ষক, পূর্বের ফলাফল ও শিক্ষার্থীর আগ্রহের মতো কারণ বিবেচনা করা দরকার।",
+      "pronunciation": "poribar shikkhok purb-er pholaphol o shiksharthir agroher moto karon bibechona kora dorkar",
       "en": "Research analysis practice 2",
       "context": "Research analysis",
       "category": "Class 11 · Research analysis"
     },
     {
       "bn": "কারণ প্রমাণের জন্য তুলনামূলক ও নিয়ন্ত্রিত গবেষণা প্রয়োজন।",
+      "pronunciation": "karon promaner jonno tulonamulok o nijontrit gobeshona proyojon",
       "en": "Research analysis practice 3",
       "context": "Research analysis",
       "category": "Class 11 · Research analysis"
     },
     {
       "bn": "বিদ্যালয়ের ঘোষণায় একটি সীমিত পর্যবেক্ষণ থেকে অতিরিক্ত সাধারণীকরণ রয়েছে।",
+      "pronunciation": "biddaloyer ghoshonajo ekti shimito porjobekshon theke ôtirikto sadharonikoron royeche",
       "en": "Research analysis practice 4",
       "context": "Research analysis",
       "category": "Class 11 · Research analysis"
     },
     {
       "bn": "একজন রোগীর ব্যয়বহুল চিকিৎসা এবং বহু রোগীর মৌলিক চিকিৎসার মধ্যে সীমিত সম্পদ কীভাবে বণ্টন করা উচিত?",
+      "pronunciation": "ekjon rogir bjojobohul chikitsa ebong bohu rogir moulik chikitsar moddhe shimito shompod kibhabe bonton kora uchit",
       "en": "Ethical dilemma practice 1",
       "context": "Ethical dilemma",
       "category": "Class 11 · Ethical dilemma"
     },
     {
       "bn": "ব্যক্তিগত রোগীর অধিকার, সমান সুযোগ, সম্ভাব্য ফলাফল এবং সিদ্ধান্ত গ্রহণের বৈধ ক্ষমতা—সবগুলো মূল্যবোধ বিবেচনা করা দরকার।",
+      "pronunciation": "byaktigoto rogir odhikar shoman shujog sombhabj pholaphol ebong shiddhanto grohoner boidho kshomota—sobogulo muljobodh bibechona kora dorkar",
       "en": "Ethical dilemma practice 2",
       "context": "Ethical dilemma",
       "category": "Class 11 · Ethical dilemma"
     },
     {
       "bn": "ভূমিকায় প্রেক্ষাপট, মূল বিতর্ক ও স্পষ্ট থিসিস দাও।",
+      "pronunciation": "bhumikajo prekshapot mul bitork o sposhto thisis dao",
       "en": "Formal essay structure practice 1",
       "context": "Formal essay structure",
       "category": "Class 11 · Formal essay structure"
     },
     {
       "bn": "মূল অনুচ্ছেদে দাবি, প্রমাণ, বিশ্লেষণ ও তাৎপর্য ব্যাখ্যা করো।",
+      "pronunciation": "mul onuchchhede dabi proman bishleshon o tatoporj bjakhja koro",
       "en": "Formal essay structure practice 2",
       "context": "Formal essay structure",
       "category": "Class 11 · Formal essay structure"
     },
     {
       "bn": "বিপরীত অবস্থানের শক্তিশালী রূপ ন্যায্যভাবে উপস্থাপন করো।",
+      "pronunciation": "biporit obosthaner shoktishali rup njajjobhabe uposthapon koro",
       "en": "Formal essay structure practice 3",
       "context": "Formal essay structure",
       "category": "Class 11 · Formal essay structure"
     },
     {
       "bn": "প্রতিদাবির শক্তি স্বীকার করে তার সীমাবদ্ধতা বিশ্লেষণ করো।",
+      "pronunciation": "protidabir shokti shikar kore tar simaboddhota bishleshon koro",
       "en": "Formal essay structure practice 4",
       "context": "Formal essay structure",
       "category": "Class 11 · Formal essay structure"
     },
     {
       "bn": "বিভিন্ন উৎস ও যুক্তি সংশ্লেষণ করে সূক্ষ্ম সিদ্ধান্ত তৈরি করো।",
+      "pronunciation": "bibhinn utsho o jukti songshleshon kore shukkho shiddhanto toiri koro",
       "en": "Formal essay structure practice 5",
       "context": "Formal essay structure",
       "category": "Class 11 · Formal essay structure"
     },
     {
       "bn": "উপসংহারে থিসিসের তাৎপর্য, সীমাবদ্ধতা ও বৃহত্তর প্রভাব দাও।",
+      "pronunciation": "uposonghare thisiser tatoporj simaboddhota o brihottor probhab dao",
       "en": "Formal essay structure practice 6",
       "context": "Formal essay structure",
       "category": "Class 11 · Formal essay structure"
     },
     {
       "bn": "থিসিস, প্রতিপাদ্য, যুক্তি, প্রমাণ, পূর্বধারণা, অন্তর্নিহিত অর্থ, সীমাবদ্ধতা ও প্রেক্ষাপট বিশ্লেষণ করতে পারা উচিত।",
+      "pronunciation": "thisis protipadj jukti proman purbodharona ontornihit ôrtho simaboddhota o prekshapot bishleshon korte para uchit",
       "en": "End-of-Class 11 skills practice 1",
       "context": "End-of-Class 11 skills",
       "category": "Class 11 · End-of-Class 11 skills"
     },
     {
       "bn": "নির্ভরযোগ্যতা, বৈধতা, প্রাসঙ্গিকতা, প্রতিনিধিত্বশীলতা ও পর্যাপ্ততা আলাদাভাবে বিচার করতে পারা উচিত।",
+      "pronunciation": "nirbhorojogjota boidhota prasonggikota protinidhitboshilota o porjaptota aladabhabe Bichar korte para uchit",
       "en": "End-of-Class 11 skills practice 2",
       "context": "End-of-Class 11 skills",
       "category": "Class 11 · End-of-Class 11 skills"
     },
     {
       "bn": "সহসম্পর্ক, কারণ, বিকল্প ব্যাখ্যা ও বিভ্রান্তিকারী চলকের পার্থক্য বুঝতে পারা উচিত।",
+      "pronunciation": "sohosompork karon bikolp bjakhja o bibhrantikari choloker parthokko bujhte para uchit",
       "en": "End-of-Class 11 skills practice 3",
       "context": "End-of-Class 11 skills",
       "category": "Class 11 · End-of-Class 11 skills"
     },
     {
       "bn": "বিভিন্ন উৎস সংশ্লেষণ করে সূক্ষ্ম ও শর্তসাপেক্ষ উপসংহার তৈরি করতে পারা উচিত।",
+      "pronunciation": "bibhinn utsho songshleshon kore shukkho o shortosapeksh uposonghar toiri korte para uchit",
       "en": "End-of-Class 11 skills practice 4",
       "context": "End-of-Class 11 skills",
       "category": "Class 11 · End-of-Class 11 skills"
     },
     {
       "bn": "বর্ণনাকারীর বিশ্বাসযোগ্যতা, অন্তর্দ্বন্দ্ব, ভাষাশৈলী, ঐতিহাসিক প্রেক্ষাপট ও বহুবিধ ব্যাখ্যা বিশ্লেষণ করতে পারা উচিত।",
+      "pronunciation": "bornonakarir bishbasojogjota ontordbondb bhashashoili oitihashik prekshapot o bohubidh bjakhja bishleshon korte para uchit",
       "en": "End-of-Class 11 skills practice 5",
       "context": "End-of-Class 11 skills",
       "category": "Class 11 · End-of-Class 11 skills"
     },
     {
       "bn": "নৈতিক প্রশ্নে মূল্যবোধের সংঘাত এবং প্রতিটি অবস্থানের শক্তি ও দুর্বলতা ব্যাখ্যা করতে পারা উচিত।",
+      "pronunciation": "noitik proshne muljobodher songghat ebong protiti obosthaner shokti o durbolota bjakhja korte para uchit",
       "en": "End-of-Class 11 skills practice 6",
       "context": "End-of-Class 11 skills",
       "category": "Class 11 · End-of-Class 11 skills"

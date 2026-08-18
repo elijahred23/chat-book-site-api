@@ -62,6 +62,10 @@ test("all twelve Bengali class lessons are saved as JSON", async () => {
     assert.equal(lesson.phrases.length, expectedPhraseCounts[index], `${source}: unexpected phrase count`);
     assert.equal(lesson.practice.length, 3, `${source}: unexpected practice count`);
     assert.equal(lesson.notes.length, 3, `${source}: unexpected notes count`);
+    [...lesson.vocab, ...lesson.phrases].forEach((item) => {
+      assert.ok(String(item.pronunciation || "").trim(), `${source}: missing pronunciation for “${item.bn}”`);
+      assert.doesNotMatch(item.pronunciation, /\p{Script=Bengali}/u, `${source}: Bengali script found in pronunciation for “${item.bn}”`);
+    });
   });
 });
 
