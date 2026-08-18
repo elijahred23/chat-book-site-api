@@ -1,0 +1,3956 @@
+{
+  "id": "class-3",
+  "title": "Bengali Class 3: Reading, grammar, and connected ideas",
+  "topic": "Class 03 · Reading, grammar, and connected ideas",
+  "summary": "A complete Class 3 curriculum with 530 vocabulary entries and 212 sentences, questions, patterns, and passages.",
+  "level": "Class 3",
+  "focus": "Reading comprehension, grammar, opinions, sequence, comparison, cause and effect, and connected writing",
+  "vocab": [
+    {
+      "bn": "প্রতিদিন",
+      "en": "every day",
+      "category": "Class 3 · Important everyday words"
+    },
+    {
+      "bn": "সাধারণত",
+      "en": "usually",
+      "category": "Class 3 · Important everyday words"
+    },
+    {
+      "bn": "নিয়মিত",
+      "en": "regularly",
+      "category": "Class 3 · Important everyday words"
+    },
+    {
+      "bn": "প্রায়ই",
+      "en": "often",
+      "category": "Class 3 · Important everyday words"
+    },
+    {
+      "bn": "মাঝে মাঝে",
+      "en": "occasionally",
+      "category": "Class 3 · Important everyday words"
+    },
+    {
+      "bn": "কখনো",
+      "en": "sometimes/ever",
+      "category": "Class 3 · Important everyday words"
+    },
+    {
+      "bn": "সবসময়",
+      "en": "always",
+      "category": "Class 3 · Important everyday words"
+    },
+    {
+      "bn": "ইতিমধ্যে",
+      "en": "already",
+      "category": "Class 3 · Important everyday words"
+    },
+    {
+      "bn": "হঠাৎ",
+      "en": "suddenly",
+      "category": "Class 3 · Important everyday words"
+    },
+    {
+      "bn": "আবার",
+      "en": "again",
+      "category": "Class 3 · Important everyday words"
+    },
+    {
+      "bn": "একসঙ্গে",
+      "en": "together",
+      "category": "Class 3 · Important everyday words"
+    },
+    {
+      "bn": "আলাদা",
+      "en": "different",
+      "category": "Class 3 · Important everyday words"
+    },
+    {
+      "bn": "নিজে",
+      "en": "oneself",
+      "category": "Class 3 · Important everyday words"
+    },
+    {
+      "bn": "অন্যদিকে",
+      "en": "on the other hand",
+      "category": "Class 3 · Important everyday words"
+    },
+    {
+      "bn": "চারদিকে",
+      "en": "all around",
+      "category": "Class 3 · Important everyday words"
+    },
+    {
+      "bn": "কাছাকাছি",
+      "en": "nearby",
+      "category": "Class 3 · Important everyday words"
+    },
+    {
+      "bn": "দূরে",
+      "en": "far",
+      "category": "Class 3 · Important everyday words"
+    },
+    {
+      "bn": "সামনে",
+      "en": "in front",
+      "category": "Class 3 · Important everyday words"
+    },
+    {
+      "bn": "পিছনে",
+      "en": "behind",
+      "category": "Class 3 · Important everyday words"
+    },
+    {
+      "bn": "শুরু",
+      "en": "start",
+      "category": "Class 3 · Important everyday words"
+    },
+    {
+      "bn": "শেষ",
+      "en": "end",
+      "category": "Class 3 · Important everyday words"
+    },
+    {
+      "bn": "মাঝখান",
+      "en": "middle",
+      "category": "Class 3 · Important everyday words"
+    },
+    {
+      "bn": "সম্পূর্ণ",
+      "en": "complete",
+      "category": "Class 3 · Important everyday words"
+    },
+    {
+      "bn": "প্রয়োজন",
+      "en": "need",
+      "category": "Class 3 · Important everyday words"
+    },
+    {
+      "bn": "সুযোগ",
+      "en": "opportunity",
+      "category": "Class 3 · Important everyday words"
+    },
+    {
+      "bn": "সমস্যা",
+      "en": "problem",
+      "category": "Class 3 · Important everyday words"
+    },
+    {
+      "bn": "সমাধান",
+      "en": "solution",
+      "category": "Class 3 · Important everyday words"
+    },
+    {
+      "bn": "কারণ",
+      "en": "because",
+      "category": "Class 3 · Important everyday words"
+    },
+    {
+      "bn": "ফলাফল",
+      "en": "result",
+      "category": "Class 3 · Important everyday words"
+    },
+    {
+      "bn": "ঘটনা",
+      "en": "event",
+      "category": "Class 3 · Important everyday words"
+    },
+    {
+      "bn": "বিষয়",
+      "en": "subject",
+      "category": "Class 3 · Important everyday words"
+    },
+    {
+      "bn": "উপায়",
+      "en": "way",
+      "category": "Class 3 · Important everyday words"
+    },
+    {
+      "bn": "অভ্যাস",
+      "en": "habit",
+      "category": "Class 3 · Important everyday words"
+    },
+    {
+      "bn": "নিয়ম",
+      "en": "rule",
+      "category": "Class 3 · Important everyday words"
+    },
+    {
+      "bn": "সিদ্ধান্ত",
+      "en": "decision",
+      "category": "Class 3 · Important everyday words"
+    },
+    {
+      "bn": "চেষ্টা",
+      "en": "effort",
+      "category": "Class 3 · Important everyday words"
+    },
+    {
+      "bn": "পরিবর্তন",
+      "en": "change",
+      "category": "Class 3 · Important everyday words"
+    },
+    {
+      "bn": "পরিবার",
+      "en": "family",
+      "category": "Class 3 · Family and relationships"
+    },
+    {
+      "bn": "সদস্য",
+      "en": "member",
+      "category": "Class 3 · Family and relationships"
+    },
+    {
+      "bn": "বাবা-মা",
+      "en": "parents",
+      "category": "Class 3 · Family and relationships"
+    },
+    {
+      "bn": "ভাইবোন",
+      "en": "siblings",
+      "category": "Class 3 · Family and relationships"
+    },
+    {
+      "bn": "আত্মীয়",
+      "en": "relative",
+      "category": "Class 3 · Family and relationships"
+    },
+    {
+      "bn": "প্রতিবেশী",
+      "en": "neighbor",
+      "category": "Class 3 · Family and relationships"
+    },
+    {
+      "bn": "বন্ধু",
+      "en": "friend",
+      "category": "Class 3 · Family and relationships"
+    },
+    {
+      "bn": "সহপাঠী",
+      "en": "classmate",
+      "category": "Class 3 · Family and relationships"
+    },
+    {
+      "bn": "অতিথি",
+      "en": "guest",
+      "category": "Class 3 · Family and relationships"
+    },
+    {
+      "bn": "পরিচিত",
+      "en": "acquaintance",
+      "category": "Class 3 · Family and relationships"
+    },
+    {
+      "bn": "সম্পর্ক",
+      "en": "relationship",
+      "category": "Class 3 · Family and relationships"
+    },
+    {
+      "bn": "বন্ধুত্ব",
+      "en": "friendship",
+      "category": "Class 3 · Family and relationships"
+    },
+    {
+      "bn": "ভালোবাসা",
+      "en": "to love",
+      "category": "Class 3 · Family and relationships"
+    },
+    {
+      "bn": "যত্ন",
+      "en": "care",
+      "category": "Class 3 · Family and relationships"
+    },
+    {
+      "bn": "সম্মান",
+      "en": "respect",
+      "category": "Class 3 · Family and relationships"
+    },
+    {
+      "bn": "সাহায্য",
+      "en": "help",
+      "category": "Class 3 · Family and relationships"
+    },
+    {
+      "bn": "দায়িত্ব",
+      "en": "responsibility",
+      "category": "Class 3 · Family and relationships"
+    },
+    {
+      "bn": "সহযোগিতা",
+      "en": "cooperation",
+      "category": "Class 3 · Family and relationships"
+    },
+    {
+      "bn": "আচরণ",
+      "en": "behavior",
+      "category": "Class 3 · Family and relationships"
+    },
+    {
+      "bn": "বিদ্যালয়",
+      "en": "school",
+      "category": "Class 3 · School and education"
+    },
+    {
+      "bn": "শ্রেণিকক্ষ",
+      "en": "classroom",
+      "category": "Class 3 · School and education"
+    },
+    {
+      "bn": "শিক্ষার্থী",
+      "en": "student",
+      "category": "Class 3 · School and education"
+    },
+    {
+      "bn": "শিক্ষক",
+      "en": "male teacher",
+      "category": "Class 3 · School and education"
+    },
+    {
+      "bn": "পাঠ",
+      "en": "lesson",
+      "category": "Class 3 · School and education"
+    },
+    {
+      "bn": "অধ্যায়",
+      "en": "chapter",
+      "category": "Class 3 · School and education"
+    },
+    {
+      "bn": "বিষয়",
+      "en": "subject",
+      "category": "Class 3 · School and education"
+    },
+    {
+      "bn": "পাঠ্যবই",
+      "en": "textbook",
+      "category": "Class 3 · School and education"
+    },
+    {
+      "bn": "অনুশীলন",
+      "en": "practice",
+      "category": "Class 3 · School and education"
+    },
+    {
+      "bn": "বাড়ির কাজ",
+      "en": "homework",
+      "category": "Class 3 · School and education"
+    },
+    {
+      "bn": "পরীক্ষা",
+      "en": "exam",
+      "category": "Class 3 · School and education"
+    },
+    {
+      "bn": "প্রশ্ন",
+      "en": "question",
+      "category": "Class 3 · School and education"
+    },
+    {
+      "bn": "উত্তর",
+      "en": "north",
+      "category": "Class 3 · School and education"
+    },
+    {
+      "bn": "ফলাফল",
+      "en": "result",
+      "category": "Class 3 · School and education"
+    },
+    {
+      "bn": "নম্বর",
+      "en": "marks",
+      "category": "Class 3 · School and education"
+    },
+    {
+      "bn": "শিক্ষা",
+      "en": "education",
+      "category": "Class 3 · School and education"
+    },
+    {
+      "bn": "জ্ঞান",
+      "en": "knowledge",
+      "category": "Class 3 · School and education"
+    },
+    {
+      "bn": "আলোচনা",
+      "en": "discussion",
+      "category": "Class 3 · School and education"
+    },
+    {
+      "bn": "ব্যাখ্যা",
+      "en": "explanation",
+      "category": "Class 3 · School and education"
+    },
+    {
+      "bn": "উদাহরণ",
+      "en": "example",
+      "category": "Class 3 · School and education"
+    },
+    {
+      "bn": "বানান",
+      "en": "spelling",
+      "category": "Class 3 · School and education"
+    },
+    {
+      "bn": "বাক্য",
+      "en": "sentence",
+      "category": "Class 3 · School and education"
+    },
+    {
+      "bn": "অনুচ্ছেদ",
+      "en": "paragraph",
+      "category": "Class 3 · School and education"
+    },
+    {
+      "bn": "গল্প",
+      "en": "story",
+      "category": "Class 3 · School and education"
+    },
+    {
+      "bn": "কবিতা",
+      "en": "poem",
+      "category": "Class 3 · School and education"
+    },
+    {
+      "bn": "ছড়া",
+      "en": "rhyme",
+      "category": "Class 3 · School and education"
+    },
+    {
+      "bn": "রচনা",
+      "en": "composition",
+      "category": "Class 3 · School and education"
+    },
+    {
+      "bn": "শিরোনাম",
+      "en": "title",
+      "category": "Class 3 · School and education"
+    },
+    {
+      "bn": "অর্থ",
+      "en": "meaning",
+      "category": "Class 3 · School and education"
+    },
+    {
+      "bn": "অভিধান",
+      "en": "dictionary",
+      "category": "Class 3 · School and education"
+    },
+    {
+      "bn": "গ্রন্থাগার",
+      "en": "library",
+      "category": "Class 3 · School and education"
+    },
+    {
+      "bn": "ভাষা",
+      "en": "language",
+      "category": "Class 3 · Language and grammar"
+    },
+    {
+      "bn": "বাংলা",
+      "en": "Bengali",
+      "category": "Class 3 · Language and grammar"
+    },
+    {
+      "bn": "বর্ণ",
+      "en": "character",
+      "category": "Class 3 · Language and grammar"
+    },
+    {
+      "bn": "শব্দ",
+      "en": "word",
+      "category": "Class 3 · Language and grammar"
+    },
+    {
+      "bn": "বাক্য",
+      "en": "sentence",
+      "category": "Class 3 · Language and grammar"
+    },
+    {
+      "bn": "অনুচ্ছেদ",
+      "en": "paragraph",
+      "category": "Class 3 · Language and grammar"
+    },
+    {
+      "bn": "বিশেষ্য",
+      "en": "noun",
+      "category": "Class 3 · Language and grammar"
+    },
+    {
+      "bn": "সর্বনাম",
+      "en": "pronoun",
+      "category": "Class 3 · Language and grammar"
+    },
+    {
+      "bn": "ক্রিয়া",
+      "en": "verb",
+      "category": "Class 3 · Language and grammar"
+    },
+    {
+      "bn": "বিশেষণ",
+      "en": "adjective",
+      "category": "Class 3 · Language and grammar"
+    },
+    {
+      "bn": "একবচন",
+      "en": "singular",
+      "category": "Class 3 · Language and grammar"
+    },
+    {
+      "bn": "বহুবচন",
+      "en": "plural",
+      "category": "Class 3 · Language and grammar"
+    },
+    {
+      "bn": "বর্তমান",
+      "en": "present",
+      "category": "Class 3 · Language and grammar"
+    },
+    {
+      "bn": "অতীত",
+      "en": "past",
+      "category": "Class 3 · Language and grammar"
+    },
+    {
+      "bn": "ভবিষ্যৎ",
+      "en": "future",
+      "category": "Class 3 · Language and grammar"
+    },
+    {
+      "bn": "প্রশ্নবোধক",
+      "en": "interrogative",
+      "category": "Class 3 · Language and grammar"
+    },
+    {
+      "bn": "বিরামচিহ্ন",
+      "en": "punctuation",
+      "category": "Class 3 · Language and grammar"
+    },
+    {
+      "bn": "কমা",
+      "en": "comma",
+      "category": "Class 3 · Language and grammar"
+    },
+    {
+      "bn": "দাঁড়ি",
+      "en": "full stop",
+      "category": "Class 3 · Language and grammar"
+    },
+    {
+      "bn": "বানান",
+      "en": "spelling",
+      "category": "Class 3 · Language and grammar"
+    },
+    {
+      "bn": "উচ্চারণ",
+      "en": "pronunciation",
+      "category": "Class 3 · Language and grammar"
+    },
+    {
+      "bn": "অর্থ",
+      "en": "meaning",
+      "category": "Class 3 · Language and grammar"
+    },
+    {
+      "bn": "বিপরীত শব্দ",
+      "en": "opposite word",
+      "category": "Class 3 · Language and grammar"
+    },
+    {
+      "bn": "সমার্থক শব্দ",
+      "en": "synonym",
+      "category": "Class 3 · Language and grammar"
+    },
+    {
+      "bn": "বাড়ি",
+      "en": "house",
+      "category": "Class 3 · Home and daily life"
+    },
+    {
+      "bn": "উঠান",
+      "en": "yard",
+      "category": "Class 3 · Home and daily life"
+    },
+    {
+      "bn": "বারান্দা",
+      "en": "balcony",
+      "category": "Class 3 · Home and daily life"
+    },
+    {
+      "bn": "রান্নাঘর",
+      "en": "kitchen",
+      "category": "Class 3 · Home and daily life"
+    },
+    {
+      "bn": "শোবার ঘর",
+      "en": "bedroom",
+      "category": "Class 3 · Home and daily life"
+    },
+    {
+      "bn": "বসার ঘর",
+      "en": "living room",
+      "category": "Class 3 · Home and daily life"
+    },
+    {
+      "bn": "দরজা",
+      "en": "door",
+      "category": "Class 3 · Home and daily life"
+    },
+    {
+      "bn": "জানালা",
+      "en": "window",
+      "category": "Class 3 · Home and daily life"
+    },
+    {
+      "bn": "আসবাবপত্র",
+      "en": "furniture",
+      "category": "Class 3 · Home and daily life"
+    },
+    {
+      "bn": "আলমারি",
+      "en": "cupboard",
+      "category": "Class 3 · Home and daily life"
+    },
+    {
+      "bn": "তাক",
+      "en": "shelf",
+      "category": "Class 3 · Home and daily life"
+    },
+    {
+      "bn": "পর্দা",
+      "en": "curtain",
+      "category": "Class 3 · Home and daily life"
+    },
+    {
+      "bn": "বিছানা",
+      "en": "bed",
+      "category": "Class 3 · Home and daily life"
+    },
+    {
+      "bn": "বালিশ",
+      "en": "pillow",
+      "category": "Class 3 · Home and daily life"
+    },
+    {
+      "bn": "চাদর",
+      "en": "sheet",
+      "category": "Class 3 · Home and daily life"
+    },
+    {
+      "bn": "আয়না",
+      "en": "mirror",
+      "category": "Class 3 · Home and daily life"
+    },
+    {
+      "bn": "ঘড়ি",
+      "en": "clock",
+      "category": "Class 3 · Home and daily life"
+    },
+    {
+      "bn": "বাতি",
+      "en": "light",
+      "category": "Class 3 · Home and daily life"
+    },
+    {
+      "bn": "পাখা",
+      "en": "fan",
+      "category": "Class 3 · Home and daily life"
+    },
+    {
+      "bn": "বিদ্যুৎ",
+      "en": "electricity",
+      "category": "Class 3 · Home and daily life"
+    },
+    {
+      "bn": "পরিষ্কার",
+      "en": "clean",
+      "category": "Class 3 · Home and daily life"
+    },
+    {
+      "bn": "পরিচ্ছন্নতা",
+      "en": "cleanliness",
+      "category": "Class 3 · Home and daily life"
+    },
+    {
+      "bn": "কাজ",
+      "en": "work",
+      "category": "Class 3 · Home and daily life"
+    },
+    {
+      "bn": "বিশ্রাম",
+      "en": "rest",
+      "category": "Class 3 · Home and daily life"
+    },
+    {
+      "bn": "সমাজ",
+      "en": "society",
+      "category": "Class 3 · Society and surroundings"
+    },
+    {
+      "bn": "এলাকা",
+      "en": "area",
+      "category": "Class 3 · Society and surroundings"
+    },
+    {
+      "bn": "গ্রাম",
+      "en": "village",
+      "category": "Class 3 · Society and surroundings"
+    },
+    {
+      "bn": "শহর",
+      "en": "city",
+      "category": "Class 3 · Society and surroundings"
+    },
+    {
+      "bn": "রাস্তা",
+      "en": "road",
+      "category": "Class 3 · Society and surroundings"
+    },
+    {
+      "bn": "বাজার",
+      "en": "market",
+      "category": "Class 3 · Society and surroundings"
+    },
+    {
+      "bn": "দোকান",
+      "en": "shop",
+      "category": "Class 3 · Society and surroundings"
+    },
+    {
+      "bn": "হাসপাতাল",
+      "en": "hospital",
+      "category": "Class 3 · Society and surroundings"
+    },
+    {
+      "bn": "বিদ্যালয়",
+      "en": "school",
+      "category": "Class 3 · Society and surroundings"
+    },
+    {
+      "bn": "ডাকঘর",
+      "en": "post office",
+      "category": "Class 3 · Society and surroundings"
+    },
+    {
+      "bn": "থানা",
+      "en": "police station",
+      "category": "Class 3 · Society and surroundings"
+    },
+    {
+      "bn": "মসজিদ",
+      "en": "mosque",
+      "category": "Class 3 · Society and surroundings"
+    },
+    {
+      "bn": "পার্ক",
+      "en": "park",
+      "category": "Class 3 · Society and surroundings"
+    },
+    {
+      "bn": "খেলার মাঠ",
+      "en": "playground",
+      "category": "Class 3 · Society and surroundings"
+    },
+    {
+      "bn": "প্রতিবেশী",
+      "en": "neighbor",
+      "category": "Class 3 · Society and surroundings"
+    },
+    {
+      "bn": "নাগরিক",
+      "en": "citizen",
+      "category": "Class 3 · Society and surroundings"
+    },
+    {
+      "bn": "জনসাধারণ",
+      "en": "public",
+      "category": "Class 3 · Society and surroundings"
+    },
+    {
+      "bn": "যানবাহন",
+      "en": "vehicle",
+      "category": "Class 3 · Society and surroundings"
+    },
+    {
+      "bn": "নিয়ম",
+      "en": "rule",
+      "category": "Class 3 · Society and surroundings"
+    },
+    {
+      "bn": "নিরাপত্তা",
+      "en": "safety",
+      "category": "Class 3 · Society and surroundings"
+    },
+    {
+      "bn": "শিক্ষক",
+      "en": "male teacher",
+      "category": "Class 3 · Professions"
+    },
+    {
+      "bn": "ডাক্তার",
+      "en": "doctor",
+      "category": "Class 3 · Professions"
+    },
+    {
+      "bn": "নার্স",
+      "en": "nurse",
+      "category": "Class 3 · Professions"
+    },
+    {
+      "bn": "কৃষক",
+      "en": "farmer",
+      "category": "Class 3 · Professions"
+    },
+    {
+      "bn": "জেলে",
+      "en": "fisher",
+      "category": "Class 3 · Professions"
+    },
+    {
+      "bn": "পুলিশ",
+      "en": "police officer",
+      "category": "Class 3 · Professions"
+    },
+    {
+      "bn": "চালক",
+      "en": "driver",
+      "category": "Class 3 · Professions"
+    },
+    {
+      "bn": "দোকানদার",
+      "en": "shopkeeper",
+      "category": "Class 3 · Professions"
+    },
+    {
+      "bn": "ব্যবসায়ী",
+      "en": "businessperson",
+      "category": "Class 3 · Professions"
+    },
+    {
+      "bn": "শ্রমিক",
+      "en": "worker",
+      "category": "Class 3 · Professions"
+    },
+    {
+      "bn": "দর্জি",
+      "en": "tailor",
+      "category": "Class 3 · Professions"
+    },
+    {
+      "bn": "রাঁধুনি",
+      "en": "cook",
+      "category": "Class 3 · Professions"
+    },
+    {
+      "bn": "মিস্ত্রি",
+      "en": "craftsperson",
+      "category": "Class 3 · Professions"
+    },
+    {
+      "bn": "ডাকপিয়ন",
+      "en": "postal worker",
+      "category": "Class 3 · Professions"
+    },
+    {
+      "bn": "প্রকৌশলী",
+      "en": "engineer",
+      "category": "Class 3 · Professions"
+    },
+    {
+      "bn": "লেখক",
+      "en": "writer",
+      "category": "Class 3 · Professions"
+    },
+    {
+      "bn": "শিল্পী",
+      "en": "artist",
+      "category": "Class 3 · Professions"
+    },
+    {
+      "bn": "প্রকৃতি",
+      "en": "nature",
+      "category": "Class 3 · Nature and environment"
+    },
+    {
+      "bn": "পরিবেশ",
+      "en": "environment",
+      "category": "Class 3 · Nature and environment"
+    },
+    {
+      "bn": "পৃথিবী",
+      "en": "earth",
+      "category": "Class 3 · Nature and environment"
+    },
+    {
+      "bn": "আকাশ",
+      "en": "sky",
+      "category": "Class 3 · Nature and environment"
+    },
+    {
+      "bn": "সূর্য",
+      "en": "sun",
+      "category": "Class 3 · Nature and environment"
+    },
+    {
+      "bn": "চাঁদ",
+      "en": "moon",
+      "category": "Class 3 · Nature and environment"
+    },
+    {
+      "bn": "তারা",
+      "en": "star",
+      "category": "Class 3 · Nature and environment"
+    },
+    {
+      "bn": "মেঘ",
+      "en": "cloud",
+      "category": "Class 3 · Nature and environment"
+    },
+    {
+      "bn": "বাতাস",
+      "en": "wind",
+      "category": "Class 3 · Nature and environment"
+    },
+    {
+      "bn": "বৃষ্টি",
+      "en": "rain",
+      "category": "Class 3 · Nature and environment"
+    },
+    {
+      "bn": "ঝড়",
+      "en": "storm",
+      "category": "Class 3 · Nature and environment"
+    },
+    {
+      "bn": "বজ্রপাত",
+      "en": "lightning",
+      "category": "Class 3 · Nature and environment"
+    },
+    {
+      "bn": "নদী",
+      "en": "river",
+      "category": "Class 3 · Nature and environment"
+    },
+    {
+      "bn": "সাগর",
+      "en": "sea",
+      "category": "Class 3 · Nature and environment"
+    },
+    {
+      "bn": "পাহাড়",
+      "en": "mountain",
+      "category": "Class 3 · Nature and environment"
+    },
+    {
+      "bn": "বন",
+      "en": "forest",
+      "category": "Class 3 · Nature and environment"
+    },
+    {
+      "bn": "মাঠ",
+      "en": "field",
+      "category": "Class 3 · Nature and environment"
+    },
+    {
+      "bn": "মাটি",
+      "en": "soil",
+      "category": "Class 3 · Nature and environment"
+    },
+    {
+      "bn": "গাছপালা",
+      "en": "plants",
+      "category": "Class 3 · Nature and environment"
+    },
+    {
+      "bn": "ফুল",
+      "en": "flower",
+      "category": "Class 3 · Nature and environment"
+    },
+    {
+      "bn": "ফল",
+      "en": "fruit",
+      "category": "Class 3 · Nature and environment"
+    },
+    {
+      "bn": "বীজ",
+      "en": "seed",
+      "category": "Class 3 · Nature and environment"
+    },
+    {
+      "bn": "প্রাণী",
+      "en": "animal",
+      "category": "Class 3 · Nature and environment"
+    },
+    {
+      "bn": "পাখি",
+      "en": "bird",
+      "category": "Class 3 · Nature and environment"
+    },
+    {
+      "bn": "পোকামাকড়",
+      "en": "insects",
+      "category": "Class 3 · Nature and environment"
+    },
+    {
+      "bn": "পরিবেশ রক্ষা",
+      "en": "environmental protection",
+      "category": "Class 3 · Nature and environment"
+    },
+    {
+      "bn": "দূষণ",
+      "en": "pollution",
+      "category": "Class 3 · Nature and environment"
+    },
+    {
+      "bn": "আবর্জনা",
+      "en": "garbage",
+      "category": "Class 3 · Nature and environment"
+    },
+    {
+      "bn": "আবহাওয়া",
+      "en": "weather",
+      "category": "Class 3 · Weather and seasons"
+    },
+    {
+      "bn": "তাপমাত্রা",
+      "en": "temperature",
+      "category": "Class 3 · Weather and seasons"
+    },
+    {
+      "bn": "রোদ",
+      "en": "sunshine",
+      "category": "Class 3 · Weather and seasons"
+    },
+    {
+      "bn": "বৃষ্টি",
+      "en": "rain",
+      "category": "Class 3 · Weather and seasons"
+    },
+    {
+      "bn": "বাতাস",
+      "en": "wind",
+      "category": "Class 3 · Weather and seasons"
+    },
+    {
+      "bn": "ঝড়",
+      "en": "storm",
+      "category": "Class 3 · Weather and seasons"
+    },
+    {
+      "bn": "কুয়াশা",
+      "en": "fog",
+      "category": "Class 3 · Weather and seasons"
+    },
+    {
+      "bn": "মেঘলা",
+      "en": "cloudy",
+      "category": "Class 3 · Weather and seasons"
+    },
+    {
+      "bn": "গরম",
+      "en": "hot",
+      "category": "Class 3 · Weather and seasons"
+    },
+    {
+      "bn": "ঠান্ডা",
+      "en": "cold",
+      "category": "Class 3 · Weather and seasons"
+    },
+    {
+      "bn": "গ্রীষ্ম",
+      "en": "summer",
+      "category": "Class 3 · Weather and seasons"
+    },
+    {
+      "bn": "বর্ষা",
+      "en": "monsoon",
+      "category": "Class 3 · Weather and seasons"
+    },
+    {
+      "bn": "শরৎ",
+      "en": "autumn",
+      "category": "Class 3 · Weather and seasons"
+    },
+    {
+      "bn": "হেমন্ত",
+      "en": "late autumn",
+      "category": "Class 3 · Weather and seasons"
+    },
+    {
+      "bn": "শীত",
+      "en": "winter",
+      "category": "Class 3 · Weather and seasons"
+    },
+    {
+      "bn": "বসন্ত",
+      "en": "spring",
+      "category": "Class 3 · Weather and seasons"
+    },
+    {
+      "bn": "ঋতু",
+      "en": "season",
+      "category": "Class 3 · Weather and seasons"
+    },
+    {
+      "bn": "পরিবর্তন",
+      "en": "change",
+      "category": "Class 3 · Weather and seasons"
+    },
+    {
+      "bn": "প্রাণী",
+      "en": "animal",
+      "category": "Class 3 · Animal life"
+    },
+    {
+      "bn": "বন্য প্রাণী",
+      "en": "wild animal",
+      "category": "Class 3 · Animal life"
+    },
+    {
+      "bn": "গৃহপালিত প্রাণী",
+      "en": "domestic animal",
+      "category": "Class 3 · Animal life"
+    },
+    {
+      "bn": "পাখি",
+      "en": "bird",
+      "category": "Class 3 · Animal life"
+    },
+    {
+      "bn": "মাছ",
+      "en": "fish",
+      "category": "Class 3 · Animal life"
+    },
+    {
+      "bn": "কীটপতঙ্গ",
+      "en": "insect",
+      "category": "Class 3 · Animal life"
+    },
+    {
+      "bn": "বাসস্থান",
+      "en": "habitat",
+      "category": "Class 3 · Animal life"
+    },
+    {
+      "bn": "খাবার",
+      "en": "food",
+      "category": "Class 3 · Animal life"
+    },
+    {
+      "bn": "শিকার",
+      "en": "prey/hunt",
+      "category": "Class 3 · Animal life"
+    },
+    {
+      "bn": "শিকারি",
+      "en": "hunter/predator",
+      "category": "Class 3 · Animal life"
+    },
+    {
+      "bn": "ডানা",
+      "en": "wing",
+      "category": "Class 3 · Animal life"
+    },
+    {
+      "bn": "পালক",
+      "en": "feather",
+      "category": "Class 3 · Animal life"
+    },
+    {
+      "bn": "লেজ",
+      "en": "tail",
+      "category": "Class 3 · Animal life"
+    },
+    {
+      "bn": "শিং",
+      "en": "horn",
+      "category": "Class 3 · Animal life"
+    },
+    {
+      "bn": "নখ",
+      "en": "claw",
+      "category": "Class 3 · Animal life"
+    },
+    {
+      "bn": "বাসা",
+      "en": "nest",
+      "category": "Class 3 · Animal life"
+    },
+    {
+      "bn": "ডিম",
+      "en": "egg",
+      "category": "Class 3 · Animal life"
+    },
+    {
+      "bn": "বাচ্চা",
+      "en": "child",
+      "category": "Class 3 · Animal life"
+    },
+    {
+      "bn": "দল",
+      "en": "group",
+      "category": "Class 3 · Animal life"
+    },
+    {
+      "bn": "জীবন",
+      "en": "life",
+      "category": "Class 3 · Animal life"
+    },
+    {
+      "bn": "উদ্ভিদ",
+      "en": "plant",
+      "category": "Class 3 · Plants"
+    },
+    {
+      "bn": "গাছ",
+      "en": "tree",
+      "category": "Class 3 · Plants"
+    },
+    {
+      "bn": "শিকড়",
+      "en": "root",
+      "category": "Class 3 · Plants"
+    },
+    {
+      "bn": "কাণ্ড",
+      "en": "stem",
+      "category": "Class 3 · Plants"
+    },
+    {
+      "bn": "ডাল",
+      "en": "branch",
+      "category": "Class 3 · Plants"
+    },
+    {
+      "bn": "পাতা",
+      "en": "leaf",
+      "category": "Class 3 · Plants"
+    },
+    {
+      "bn": "ফুল",
+      "en": "flower",
+      "category": "Class 3 · Plants"
+    },
+    {
+      "bn": "ফল",
+      "en": "fruit",
+      "category": "Class 3 · Plants"
+    },
+    {
+      "bn": "বীজ",
+      "en": "seed",
+      "category": "Class 3 · Plants"
+    },
+    {
+      "bn": "মাটি",
+      "en": "soil",
+      "category": "Class 3 · Plants"
+    },
+    {
+      "bn": "পানি",
+      "en": "water",
+      "category": "Class 3 · Plants"
+    },
+    {
+      "bn": "সূর্যের আলো",
+      "en": "sunlight",
+      "category": "Class 3 · Plants"
+    },
+    {
+      "bn": "বৃদ্ধি",
+      "en": "growth",
+      "category": "Class 3 · Plants"
+    },
+    {
+      "bn": "চারা",
+      "en": "sapling",
+      "category": "Class 3 · Plants"
+    },
+    {
+      "bn": "বাগান",
+      "en": "garden",
+      "category": "Class 3 · Plants"
+    },
+    {
+      "bn": "ফসল",
+      "en": "crop",
+      "category": "Class 3 · Plants"
+    },
+    {
+      "bn": "শরীর",
+      "en": "body",
+      "category": "Class 3 · Body and health"
+    },
+    {
+      "bn": "স্বাস্থ্য",
+      "en": "health",
+      "category": "Class 3 · Body and health"
+    },
+    {
+      "bn": "পরিচ্ছন্নতা",
+      "en": "cleanliness",
+      "category": "Class 3 · Body and health"
+    },
+    {
+      "bn": "ব্যায়াম",
+      "en": "exercise",
+      "category": "Class 3 · Body and health"
+    },
+    {
+      "bn": "বিশ্রাম",
+      "en": "rest",
+      "category": "Class 3 · Body and health"
+    },
+    {
+      "bn": "পুষ্টি",
+      "en": "nutrition",
+      "category": "Class 3 · Body and health"
+    },
+    {
+      "bn": "খাবার",
+      "en": "food",
+      "category": "Class 3 · Body and health"
+    },
+    {
+      "bn": "অসুস্থতা",
+      "en": "illness",
+      "category": "Class 3 · Body and health"
+    },
+    {
+      "bn": "জ্বর",
+      "en": "fever",
+      "category": "Class 3 · Body and health"
+    },
+    {
+      "bn": "সর্দি",
+      "en": "cold",
+      "category": "Class 3 · Body and health"
+    },
+    {
+      "bn": "কাশি",
+      "en": "cough",
+      "category": "Class 3 · Body and health"
+    },
+    {
+      "bn": "ব্যথা",
+      "en": "pain",
+      "category": "Class 3 · Body and health"
+    },
+    {
+      "bn": "চিকিৎসা",
+      "en": "treatment",
+      "category": "Class 3 · Body and health"
+    },
+    {
+      "bn": "ডাক্তার",
+      "en": "doctor",
+      "category": "Class 3 · Body and health"
+    },
+    {
+      "bn": "হাসপাতাল",
+      "en": "hospital",
+      "category": "Class 3 · Body and health"
+    },
+    {
+      "bn": "ওষুধ",
+      "en": "medicine",
+      "category": "Class 3 · Body and health"
+    },
+    {
+      "bn": "সুস্থ",
+      "en": "healthy",
+      "category": "Class 3 · Body and health"
+    },
+    {
+      "bn": "অসুস্থ",
+      "en": "sick",
+      "category": "Class 3 · Body and health"
+    },
+    {
+      "bn": "শক্তি",
+      "en": "strength",
+      "category": "Class 3 · Body and health"
+    },
+    {
+      "bn": "যত্ন",
+      "en": "care",
+      "category": "Class 3 · Body and health"
+    },
+    {
+      "bn": "খাবার",
+      "en": "food",
+      "category": "Class 3 · Food and nutrition"
+    },
+    {
+      "bn": "পুষ্টি",
+      "en": "nutrition",
+      "category": "Class 3 · Food and nutrition"
+    },
+    {
+      "bn": "নাশতা",
+      "en": "breakfast",
+      "category": "Class 3 · Food and nutrition"
+    },
+    {
+      "bn": "দুপুরের খাবার",
+      "en": "lunch",
+      "category": "Class 3 · Food and nutrition"
+    },
+    {
+      "bn": "রাতের খাবার",
+      "en": "dinner",
+      "category": "Class 3 · Food and nutrition"
+    },
+    {
+      "bn": "শাকসবজি",
+      "en": "vegetables",
+      "category": "Class 3 · Food and nutrition"
+    },
+    {
+      "bn": "ফলমূল",
+      "en": "fruits",
+      "category": "Class 3 · Food and nutrition"
+    },
+    {
+      "bn": "মাছ",
+      "en": "fish",
+      "category": "Class 3 · Food and nutrition"
+    },
+    {
+      "bn": "মাংস",
+      "en": "meat",
+      "category": "Class 3 · Food and nutrition"
+    },
+    {
+      "bn": "ডিম",
+      "en": "egg",
+      "category": "Class 3 · Food and nutrition"
+    },
+    {
+      "bn": "দুধ",
+      "en": "milk",
+      "category": "Class 3 · Food and nutrition"
+    },
+    {
+      "bn": "চাল",
+      "en": "uncooked rice",
+      "category": "Class 3 · Food and nutrition"
+    },
+    {
+      "bn": "ডাল",
+      "en": "branch",
+      "category": "Class 3 · Food and nutrition"
+    },
+    {
+      "bn": "পানি",
+      "en": "water",
+      "category": "Class 3 · Food and nutrition"
+    },
+    {
+      "bn": "স্বাস্থ্যকর",
+      "en": "healthy",
+      "category": "Class 3 · Food and nutrition"
+    },
+    {
+      "bn": "তাজা",
+      "en": "fresh",
+      "category": "Class 3 · Food and nutrition"
+    },
+    {
+      "bn": "স্বাদ",
+      "en": "taste",
+      "category": "Class 3 · Food and nutrition"
+    },
+    {
+      "bn": "মিষ্টি",
+      "en": "sweet",
+      "category": "Class 3 · Food and nutrition"
+    },
+    {
+      "bn": "টক",
+      "en": "sour",
+      "category": "Class 3 · Food and nutrition"
+    },
+    {
+      "bn": "ঝাল",
+      "en": "spicy",
+      "category": "Class 3 · Food and nutrition"
+    },
+    {
+      "bn": "তিতা",
+      "en": "bitter",
+      "category": "Class 3 · Food and nutrition"
+    },
+    {
+      "bn": "ভ্রমণ",
+      "en": "travel",
+      "category": "Class 3 · Transportation and travel"
+    },
+    {
+      "bn": "যাত্রা",
+      "en": "journey",
+      "category": "Class 3 · Transportation and travel"
+    },
+    {
+      "bn": "গন্তব্য",
+      "en": "destination",
+      "category": "Class 3 · Transportation and travel"
+    },
+    {
+      "bn": "যানবাহন",
+      "en": "vehicle",
+      "category": "Class 3 · Transportation and travel"
+    },
+    {
+      "bn": "বাস",
+      "en": "bus",
+      "category": "Class 3 · Transportation and travel"
+    },
+    {
+      "bn": "ট্রেন",
+      "en": "train",
+      "category": "Class 3 · Transportation and travel"
+    },
+    {
+      "bn": "নৌকা",
+      "en": "boat",
+      "category": "Class 3 · Transportation and travel"
+    },
+    {
+      "bn": "জাহাজ",
+      "en": "ship",
+      "category": "Class 3 · Transportation and travel"
+    },
+    {
+      "bn": "বিমান",
+      "en": "airplane",
+      "category": "Class 3 · Transportation and travel"
+    },
+    {
+      "bn": "সাইকেল",
+      "en": "bicycle",
+      "category": "Class 3 · Transportation and travel"
+    },
+    {
+      "bn": "স্টেশন",
+      "en": "station",
+      "category": "Class 3 · Transportation and travel"
+    },
+    {
+      "bn": "বিমানবন্দর",
+      "en": "airport",
+      "category": "Class 3 · Transportation and travel"
+    },
+    {
+      "bn": "রাস্তা",
+      "en": "road",
+      "category": "Class 3 · Transportation and travel"
+    },
+    {
+      "bn": "সেতু",
+      "en": "bridge",
+      "category": "Class 3 · Transportation and travel"
+    },
+    {
+      "bn": "টিকিট",
+      "en": "ticket",
+      "category": "Class 3 · Transportation and travel"
+    },
+    {
+      "bn": "যাত্রী",
+      "en": "passenger",
+      "category": "Class 3 · Transportation and travel"
+    },
+    {
+      "bn": "চালক",
+      "en": "driver",
+      "category": "Class 3 · Transportation and travel"
+    },
+    {
+      "bn": "পথ",
+      "en": "path",
+      "category": "Class 3 · Transportation and travel"
+    },
+    {
+      "bn": "দূরত্ব",
+      "en": "distance",
+      "category": "Class 3 · Transportation and travel"
+    },
+    {
+      "bn": "দিক",
+      "en": "direction",
+      "category": "Class 3 · Transportation and travel"
+    },
+    {
+      "bn": "সময়",
+      "en": "time",
+      "category": "Class 3 · Time"
+    },
+    {
+      "bn": "মুহূর্ত",
+      "en": "moment",
+      "category": "Class 3 · Time"
+    },
+    {
+      "bn": "ঘণ্টা",
+      "en": "hour",
+      "category": "Class 3 · Time"
+    },
+    {
+      "bn": "মিনিট",
+      "en": "minute",
+      "category": "Class 3 · Time"
+    },
+    {
+      "bn": "সকাল",
+      "en": "morning",
+      "category": "Class 3 · Time"
+    },
+    {
+      "bn": "দুপুর",
+      "en": "noon",
+      "category": "Class 3 · Time"
+    },
+    {
+      "bn": "বিকেল",
+      "en": "afternoon",
+      "category": "Class 3 · Time"
+    },
+    {
+      "bn": "সন্ধ্যা",
+      "en": "evening",
+      "category": "Class 3 · Time"
+    },
+    {
+      "bn": "রাত",
+      "en": "night",
+      "category": "Class 3 · Time"
+    },
+    {
+      "bn": "গতকাল",
+      "en": "yesterday",
+      "category": "Class 3 · Time"
+    },
+    {
+      "bn": "আজ",
+      "en": "today",
+      "category": "Class 3 · Time"
+    },
+    {
+      "bn": "আগামীকাল",
+      "en": "tomorrow",
+      "category": "Class 3 · Time"
+    },
+    {
+      "bn": "সপ্তাহ",
+      "en": "week",
+      "category": "Class 3 · Time"
+    },
+    {
+      "bn": "মাস",
+      "en": "month",
+      "category": "Class 3 · Time"
+    },
+    {
+      "bn": "বছর",
+      "en": "year",
+      "category": "Class 3 · Time"
+    },
+    {
+      "bn": "অতীত",
+      "en": "past",
+      "category": "Class 3 · Time"
+    },
+    {
+      "bn": "বর্তমান",
+      "en": "present",
+      "category": "Class 3 · Time"
+    },
+    {
+      "bn": "ভবিষ্যৎ",
+      "en": "future",
+      "category": "Class 3 · Time"
+    },
+    {
+      "bn": "প্রথমে",
+      "en": "first",
+      "category": "Class 3 · Time"
+    },
+    {
+      "bn": "এরপর",
+      "en": "next",
+      "category": "Class 3 · Time"
+    },
+    {
+      "bn": "তারপর",
+      "en": "then",
+      "category": "Class 3 · Time"
+    },
+    {
+      "bn": "শেষে",
+      "en": "finally",
+      "category": "Class 3 · Time"
+    },
+    {
+      "bn": "আনন্দ",
+      "en": "joy",
+      "category": "Class 3 · Feelings"
+    },
+    {
+      "bn": "দুঃখ",
+      "en": "sadness",
+      "category": "Class 3 · Feelings"
+    },
+    {
+      "bn": "রাগ",
+      "en": "anger",
+      "category": "Class 3 · Feelings"
+    },
+    {
+      "bn": "ভয়",
+      "en": "fear",
+      "category": "Class 3 · Feelings"
+    },
+    {
+      "bn": "সাহস",
+      "en": "courage",
+      "category": "Class 3 · Feelings"
+    },
+    {
+      "bn": "আশা",
+      "en": "hope",
+      "category": "Class 3 · Feelings"
+    },
+    {
+      "bn": "হতাশা",
+      "en": "disappointment",
+      "category": "Class 3 · Feelings"
+    },
+    {
+      "bn": "অবাক",
+      "en": "surprised",
+      "category": "Class 3 · Feelings"
+    },
+    {
+      "bn": "লজ্জা",
+      "en": "shyness",
+      "category": "Class 3 · Feelings"
+    },
+    {
+      "bn": "চিন্তা",
+      "en": "worry",
+      "category": "Class 3 · Feelings"
+    },
+    {
+      "bn": "উত্তেজনা",
+      "en": "excitement",
+      "category": "Class 3 · Feelings"
+    },
+    {
+      "bn": "শান্তি",
+      "en": "peace",
+      "category": "Class 3 · Feelings"
+    },
+    {
+      "bn": "ভালোবাসা",
+      "en": "to love",
+      "category": "Class 3 · Feelings"
+    },
+    {
+      "bn": "গর্ব",
+      "en": "pride",
+      "category": "Class 3 · Feelings"
+    },
+    {
+      "bn": "কৃতজ্ঞতা",
+      "en": "gratitude",
+      "category": "Class 3 · Feelings"
+    },
+    {
+      "bn": "একাকী",
+      "en": "lonely",
+      "category": "Class 3 · Feelings"
+    },
+    {
+      "bn": "ক্লান্ত",
+      "en": "tired",
+      "category": "Class 3 · Feelings"
+    },
+    {
+      "bn": "বিরক্ত",
+      "en": "annoyed",
+      "category": "Class 3 · Feelings"
+    },
+    {
+      "bn": "আগ্রহ",
+      "en": "interest",
+      "category": "Class 3 · Feelings"
+    },
+    {
+      "bn": "সৎ",
+      "en": "honest",
+      "category": "Class 3 · Character and personality"
+    },
+    {
+      "bn": "অসৎ",
+      "en": "dishonest",
+      "category": "Class 3 · Character and personality"
+    },
+    {
+      "bn": "সাহসী",
+      "en": "brave",
+      "category": "Class 3 · Character and personality"
+    },
+    {
+      "bn": "ভীরু",
+      "en": "cowardly",
+      "category": "Class 3 · Character and personality"
+    },
+    {
+      "bn": "দয়ালু",
+      "en": "kind",
+      "category": "Class 3 · Character and personality"
+    },
+    {
+      "bn": "নিষ্ঠুর",
+      "en": "cruel",
+      "category": "Class 3 · Character and personality"
+    },
+    {
+      "bn": "ভদ্র",
+      "en": "polite",
+      "category": "Class 3 · Character and personality"
+    },
+    {
+      "bn": "অভদ্র",
+      "en": "rude",
+      "category": "Class 3 · Character and personality"
+    },
+    {
+      "bn": "বুদ্ধিমান",
+      "en": "intelligent",
+      "category": "Class 3 · Character and personality"
+    },
+    {
+      "bn": "পরিশ্রমী",
+      "en": "hardworking",
+      "category": "Class 3 · Character and personality"
+    },
+    {
+      "bn": "অলস",
+      "en": "lazy",
+      "category": "Class 3 · Character and personality"
+    },
+    {
+      "bn": "শান্ত",
+      "en": "calm",
+      "category": "Class 3 · Character and personality"
+    },
+    {
+      "bn": "রাগী",
+      "en": "angry",
+      "category": "Class 3 · Character and personality"
+    },
+    {
+      "bn": "বন্ধুত্বপূর্ণ",
+      "en": "friendly",
+      "category": "Class 3 · Character and personality"
+    },
+    {
+      "bn": "সাহায্যকারী",
+      "en": "helpful",
+      "category": "Class 3 · Character and personality"
+    },
+    {
+      "bn": "দায়িত্বশীল",
+      "en": "responsible",
+      "category": "Class 3 · Character and personality"
+    },
+    {
+      "bn": "যত্নশীল",
+      "en": "caring",
+      "category": "Class 3 · Character and personality"
+    },
+    {
+      "bn": "কৌতূহলী",
+      "en": "curious",
+      "category": "Class 3 · Character and personality"
+    },
+    {
+      "bn": "করা",
+      "en": "to do",
+      "category": "Class 3 · Important verbs"
+    },
+    {
+      "bn": "হওয়া",
+      "en": "to be",
+      "category": "Class 3 · Important verbs"
+    },
+    {
+      "bn": "থাকা",
+      "en": "to stay",
+      "category": "Class 3 · Important verbs"
+    },
+    {
+      "bn": "যাওয়া",
+      "en": "to go",
+      "category": "Class 3 · Important verbs"
+    },
+    {
+      "bn": "আসা",
+      "en": "to come",
+      "category": "Class 3 · Important verbs"
+    },
+    {
+      "bn": "ফেরা",
+      "en": "to return",
+      "category": "Class 3 · Important verbs"
+    },
+    {
+      "bn": "দেখা",
+      "en": "to see",
+      "category": "Class 3 · Important verbs"
+    },
+    {
+      "bn": "শোনা",
+      "en": "to hear",
+      "category": "Class 3 · Important verbs"
+    },
+    {
+      "bn": "বলা",
+      "en": "to say",
+      "category": "Class 3 · Important verbs"
+    },
+    {
+      "bn": "পড়া",
+      "en": "to read",
+      "category": "Class 3 · Important verbs"
+    },
+    {
+      "bn": "লেখা",
+      "en": "to write",
+      "category": "Class 3 · Important verbs"
+    },
+    {
+      "bn": "শেখা",
+      "en": "to learn",
+      "category": "Class 3 · Important verbs"
+    },
+    {
+      "bn": "শেখানো",
+      "en": "to teach",
+      "category": "Class 3 · Important verbs"
+    },
+    {
+      "bn": "জানা",
+      "en": "to know",
+      "category": "Class 3 · Important verbs"
+    },
+    {
+      "bn": "বোঝা",
+      "en": "to understand",
+      "category": "Class 3 · Important verbs"
+    },
+    {
+      "bn": "ভাবা",
+      "en": "to think",
+      "category": "Class 3 · Important verbs"
+    },
+    {
+      "bn": "মনে করা",
+      "en": "to think",
+      "category": "Class 3 · Important verbs"
+    },
+    {
+      "bn": "মনে রাখা",
+      "en": "to remember",
+      "category": "Class 3 · Important verbs"
+    },
+    {
+      "bn": "ভুলে যাওয়া",
+      "en": "to forget",
+      "category": "Class 3 · Important verbs"
+    },
+    {
+      "bn": "খোঁজা",
+      "en": "to search",
+      "category": "Class 3 · Important verbs"
+    },
+    {
+      "bn": "পাওয়া",
+      "en": "to get",
+      "category": "Class 3 · Important verbs"
+    },
+    {
+      "bn": "হারানো",
+      "en": "to lose",
+      "category": "Class 3 · Important verbs"
+    },
+    {
+      "bn": "রাখা",
+      "en": "to keep",
+      "category": "Class 3 · Important verbs"
+    },
+    {
+      "bn": "সরানো",
+      "en": "to move",
+      "category": "Class 3 · Important verbs"
+    },
+    {
+      "bn": "ধরা",
+      "en": "to hold",
+      "category": "Class 3 · Important verbs"
+    },
+    {
+      "bn": "ছাড়া",
+      "en": "to release",
+      "category": "Class 3 · Important verbs"
+    },
+    {
+      "bn": "তোলা",
+      "en": "to lift",
+      "category": "Class 3 · Important verbs"
+    },
+    {
+      "bn": "নামানো",
+      "en": "to lower",
+      "category": "Class 3 · Important verbs"
+    },
+    {
+      "bn": "খোলা",
+      "en": "to open",
+      "category": "Class 3 · Important verbs"
+    },
+    {
+      "bn": "বন্ধ করা",
+      "en": "to close",
+      "category": "Class 3 · Important verbs"
+    },
+    {
+      "bn": "শুরু করা",
+      "en": "to start",
+      "category": "Class 3 · Important verbs"
+    },
+    {
+      "bn": "শেষ করা",
+      "en": "to finish",
+      "category": "Class 3 · Important verbs"
+    },
+    {
+      "bn": "চেষ্টা করা",
+      "en": "to try",
+      "category": "Class 3 · Advanced verbs"
+    },
+    {
+      "bn": "সিদ্ধান্ত নেওয়া",
+      "en": "to decide",
+      "category": "Class 3 · Advanced verbs"
+    },
+    {
+      "bn": "সাহায্য করা",
+      "en": "to help",
+      "category": "Class 3 · Advanced verbs"
+    },
+    {
+      "bn": "অপেক্ষা করা",
+      "en": "to wait",
+      "category": "Class 3 · Advanced verbs"
+    },
+    {
+      "bn": "আলোচনা করা",
+      "en": "to discuss",
+      "category": "Class 3 · Advanced verbs"
+    },
+    {
+      "bn": "ব্যাখ্যা করা",
+      "en": "to explain",
+      "category": "Class 3 · Advanced verbs"
+    },
+    {
+      "bn": "বর্ণনা করা",
+      "en": "to describe",
+      "category": "Class 3 · Advanced verbs"
+    },
+    {
+      "bn": "জিজ্ঞাসা করা",
+      "en": "to ask",
+      "category": "Class 3 · Advanced verbs"
+    },
+    {
+      "bn": "উত্তর দেওয়া",
+      "en": "to answer",
+      "category": "Class 3 · Advanced verbs"
+    },
+    {
+      "bn": "নির্বাচন করা",
+      "en": "to choose",
+      "category": "Class 3 · Advanced verbs"
+    },
+    {
+      "bn": "পরিবর্তন করা",
+      "en": "to change",
+      "category": "Class 3 · Advanced verbs"
+    },
+    {
+      "bn": "তৈরি করা",
+      "en": "to create",
+      "category": "Class 3 · Advanced verbs"
+    },
+    {
+      "bn": "ব্যবহার করা",
+      "en": "to use",
+      "category": "Class 3 · Advanced verbs"
+    },
+    {
+      "bn": "রক্ষা করা",
+      "en": "to protect",
+      "category": "Class 3 · Advanced verbs"
+    },
+    {
+      "bn": "পরিষ্কার করা",
+      "en": "to clean",
+      "category": "Class 3 · Advanced verbs"
+    },
+    {
+      "bn": "সংগ্রহ করা",
+      "en": "to collect",
+      "category": "Class 3 · Advanced verbs"
+    },
+    {
+      "bn": "ভাগ করা",
+      "en": "to share",
+      "category": "Class 3 · Advanced verbs"
+    },
+    {
+      "bn": "তুলনা করা",
+      "en": "to compare",
+      "category": "Class 3 · Advanced verbs"
+    },
+    {
+      "bn": "পরীক্ষা করা",
+      "en": "to test",
+      "category": "Class 3 · Advanced verbs"
+    },
+    {
+      "bn": "আবিষ্কার করা",
+      "en": "to discover",
+      "category": "Class 3 · Advanced verbs"
+    },
+    {
+      "bn": "বিশ্বাস করা",
+      "en": "to believe",
+      "category": "Class 3 · Advanced verbs"
+    },
+    {
+      "bn": "আশা করা",
+      "en": "to hope",
+      "category": "Class 3 · Advanced verbs"
+    },
+    {
+      "bn": "পরিকল্পনা করা",
+      "en": "to plan",
+      "category": "Class 3 · Advanced verbs"
+    },
+    {
+      "bn": "বিশাল",
+      "en": "enormous",
+      "category": "Class 3 · Descriptive words"
+    },
+    {
+      "bn": "ক্ষুদ্র",
+      "en": "tiny",
+      "category": "Class 3 · Descriptive words"
+    },
+    {
+      "bn": "সুন্দর",
+      "en": "beautiful",
+      "category": "Class 3 · Descriptive words"
+    },
+    {
+      "bn": "আকর্ষণীয়",
+      "en": "interesting",
+      "category": "Class 3 · Descriptive words"
+    },
+    {
+      "bn": "উজ্জ্বল",
+      "en": "bright",
+      "category": "Class 3 · Descriptive words"
+    },
+    {
+      "bn": "অন্ধকার",
+      "en": "dark",
+      "category": "Class 3 · Descriptive words"
+    },
+    {
+      "bn": "পরিষ্কার",
+      "en": "clean",
+      "category": "Class 3 · Descriptive words"
+    },
+    {
+      "bn": "নোংরা",
+      "en": "dirty",
+      "category": "Class 3 · Descriptive words"
+    },
+    {
+      "bn": "শান্ত",
+      "en": "calm",
+      "category": "Class 3 · Descriptive words"
+    },
+    {
+      "bn": "কোলাহলপূর্ণ",
+      "en": "noisy",
+      "category": "Class 3 · Descriptive words"
+    },
+    {
+      "bn": "দ্রুত",
+      "en": "fast",
+      "category": "Class 3 · Descriptive words"
+    },
+    {
+      "bn": "ধীর",
+      "en": "slow",
+      "category": "Class 3 · Descriptive words"
+    },
+    {
+      "bn": "সহজ",
+      "en": "easy",
+      "category": "Class 3 · Descriptive words"
+    },
+    {
+      "bn": "কঠিন",
+      "en": "difficult",
+      "category": "Class 3 · Descriptive words"
+    },
+    {
+      "bn": "শক্তিশালী",
+      "en": "strong",
+      "category": "Class 3 · Descriptive words"
+    },
+    {
+      "bn": "দুর্বল",
+      "en": "weak",
+      "category": "Class 3 · Descriptive words"
+    },
+    {
+      "bn": "ভারী",
+      "en": "heavy",
+      "category": "Class 3 · Descriptive words"
+    },
+    {
+      "bn": "হালকা",
+      "en": "light",
+      "category": "Class 3 · Descriptive words"
+    },
+    {
+      "bn": "গভীর",
+      "en": "deep",
+      "category": "Class 3 · Descriptive words"
+    },
+    {
+      "bn": "অগভীর",
+      "en": "shallow",
+      "category": "Class 3 · Descriptive words"
+    },
+    {
+      "bn": "প্রশস্ত",
+      "en": "wide",
+      "category": "Class 3 · Descriptive words"
+    },
+    {
+      "bn": "সরু",
+      "en": "narrow",
+      "category": "Class 3 · Descriptive words"
+    },
+    {
+      "bn": "উঁচু",
+      "en": "high",
+      "category": "Class 3 · Descriptive words"
+    },
+    {
+      "bn": "নিচু",
+      "en": "low",
+      "category": "Class 3 · Descriptive words"
+    },
+    {
+      "bn": "কাছের",
+      "en": "nearby",
+      "category": "Class 3 · Descriptive words"
+    },
+    {
+      "bn": "দূরের",
+      "en": "distant",
+      "category": "Class 3 · Descriptive words"
+    },
+    {
+      "bn": "তাজা",
+      "en": "fresh",
+      "category": "Class 3 · Descriptive words"
+    },
+    {
+      "bn": "শুকনো",
+      "en": "dry",
+      "category": "Class 3 · Descriptive words"
+    },
+    {
+      "bn": "ভেজা",
+      "en": "wet",
+      "category": "Class 3 · Descriptive words"
+    },
+    {
+      "bn": "নিরাপদ",
+      "en": "safe",
+      "category": "Class 3 · Descriptive words"
+    },
+    {
+      "bn": "বিপজ্জনক",
+      "en": "dangerous",
+      "category": "Class 3 · Descriptive words"
+    },
+    {
+      "bn": "অনেক",
+      "en": "many",
+      "category": "Class 3 · Quantity and comparison"
+    },
+    {
+      "bn": "অল্প",
+      "en": "a little",
+      "category": "Class 3 · Quantity and comparison"
+    },
+    {
+      "bn": "বেশি",
+      "en": "more",
+      "category": "Class 3 · Quantity and comparison"
+    },
+    {
+      "bn": "কম",
+      "en": "less",
+      "category": "Class 3 · Quantity and comparison"
+    },
+    {
+      "bn": "কয়েকটি",
+      "en": "a few",
+      "category": "Class 3 · Quantity and comparison"
+    },
+    {
+      "bn": "কিছু",
+      "en": "some",
+      "category": "Class 3 · Quantity and comparison"
+    },
+    {
+      "bn": "সব",
+      "en": "all",
+      "category": "Class 3 · Quantity and comparison"
+    },
+    {
+      "bn": "অধিকাংশ",
+      "en": "most",
+      "category": "Class 3 · Quantity and comparison"
+    },
+    {
+      "bn": "অর্ধেক",
+      "en": "half",
+      "category": "Class 3 · Quantity and comparison"
+    },
+    {
+      "bn": "সম্পূর্ণ",
+      "en": "complete",
+      "category": "Class 3 · Quantity and comparison"
+    },
+    {
+      "bn": "সমান",
+      "en": "equal",
+      "category": "Class 3 · Quantity and comparison"
+    },
+    {
+      "bn": "অসমান",
+      "en": "unequal",
+      "category": "Class 3 · Quantity and comparison"
+    },
+    {
+      "bn": "বড়",
+      "en": "big",
+      "category": "Class 3 · Quantity and comparison"
+    },
+    {
+      "bn": "ছোট",
+      "en": "small",
+      "category": "Class 3 · Quantity and comparison"
+    },
+    {
+      "bn": "সবচেয়ে বড়",
+      "en": "biggest",
+      "category": "Class 3 · Quantity and comparison"
+    },
+    {
+      "bn": "সবচেয়ে ছোট",
+      "en": "smallest",
+      "category": "Class 3 · Quantity and comparison"
+    },
+    {
+      "bn": "বেশি",
+      "en": "more",
+      "category": "Class 3 · Quantity and comparison"
+    },
+    {
+      "bn": "সবচেয়ে বেশি",
+      "en": "most",
+      "category": "Class 3 · Quantity and comparison"
+    },
+    {
+      "bn": "কম",
+      "en": "less",
+      "category": "Class 3 · Quantity and comparison"
+    },
+    {
+      "bn": "সবচেয়ে কম",
+      "en": "least",
+      "category": "Class 3 · Quantity and comparison"
+    },
+    {
+      "bn": "উত্তর",
+      "en": "north",
+      "category": "Class 3 · Direction and position"
+    },
+    {
+      "bn": "দক্ষিণ",
+      "en": "south",
+      "category": "Class 3 · Direction and position"
+    },
+    {
+      "bn": "পূর্ব",
+      "en": "east",
+      "category": "Class 3 · Direction and position"
+    },
+    {
+      "bn": "পশ্চিম",
+      "en": "west",
+      "category": "Class 3 · Direction and position"
+    },
+    {
+      "bn": "ডান",
+      "en": "right",
+      "category": "Class 3 · Direction and position"
+    },
+    {
+      "bn": "বাম",
+      "en": "left",
+      "category": "Class 3 · Direction and position"
+    },
+    {
+      "bn": "সামনে",
+      "en": "in front",
+      "category": "Class 3 · Direction and position"
+    },
+    {
+      "bn": "পিছনে",
+      "en": "behind",
+      "category": "Class 3 · Direction and position"
+    },
+    {
+      "bn": "উপরে",
+      "en": "above",
+      "category": "Class 3 · Direction and position"
+    },
+    {
+      "bn": "নিচে",
+      "en": "under",
+      "category": "Class 3 · Direction and position"
+    },
+    {
+      "bn": "ভিতরে",
+      "en": "inside",
+      "category": "Class 3 · Direction and position"
+    },
+    {
+      "bn": "বাইরে",
+      "en": "outside",
+      "category": "Class 3 · Direction and position"
+    },
+    {
+      "bn": "মাঝখানে",
+      "en": "in the middle",
+      "category": "Class 3 · Direction and position"
+    },
+    {
+      "bn": "পাশে",
+      "en": "beside",
+      "category": "Class 3 · Direction and position"
+    },
+    {
+      "bn": "চারদিকে",
+      "en": "all around",
+      "category": "Class 3 · Direction and position"
+    },
+    {
+      "bn": "কাছাকাছি",
+      "en": "nearby",
+      "category": "Class 3 · Direction and position"
+    },
+    {
+      "bn": "দূরে",
+      "en": "far",
+      "category": "Class 3 · Direction and position"
+    },
+    {
+      "bn": "বিপরীতে",
+      "en": "opposite",
+      "category": "Class 3 · Direction and position"
+    },
+    {
+      "bn": "কে",
+      "en": "who",
+      "category": "Class 3 · Question words"
+    },
+    {
+      "bn": "কী",
+      "en": "what",
+      "category": "Class 3 · Question words"
+    },
+    {
+      "bn": "কোথায়",
+      "en": "where",
+      "category": "Class 3 · Question words"
+    },
+    {
+      "bn": "কখন",
+      "en": "when",
+      "category": "Class 3 · Question words"
+    },
+    {
+      "bn": "কেন",
+      "en": "why",
+      "category": "Class 3 · Question words"
+    },
+    {
+      "bn": "কেমন",
+      "en": "how",
+      "category": "Class 3 · Question words"
+    },
+    {
+      "bn": "কোন",
+      "en": "which",
+      "category": "Class 3 · Question words"
+    },
+    {
+      "bn": "কত",
+      "en": "how many",
+      "category": "Class 3 · Question words"
+    },
+    {
+      "bn": "কার",
+      "en": "whose",
+      "category": "Class 3 · Question words"
+    },
+    {
+      "bn": "কাকে",
+      "en": "whom",
+      "category": "Class 3 · Question words"
+    },
+    {
+      "bn": "কীভাবে",
+      "en": "how",
+      "category": "Class 3 · Question words"
+    },
+    {
+      "bn": "কোথা থেকে",
+      "en": "from where",
+      "category": "Class 3 · Question words"
+    },
+    {
+      "bn": "কোথায়",
+      "en": "where",
+      "category": "Class 3 · Question words"
+    },
+    {
+      "bn": "কতক্ষণ",
+      "en": "how long",
+      "category": "Class 3 · Question words"
+    },
+    {
+      "bn": "কতবার",
+      "en": "how many times",
+      "category": "Class 3 · Question words"
+    },
+    {
+      "bn": "এবং",
+      "en": "and",
+      "category": "Class 3 · Connecting words"
+    },
+    {
+      "bn": "আর",
+      "en": "and/more",
+      "category": "Class 3 · Connecting words"
+    },
+    {
+      "bn": "কিন্তু",
+      "en": "but",
+      "category": "Class 3 · Connecting words"
+    },
+    {
+      "bn": "অথবা",
+      "en": "or",
+      "category": "Class 3 · Connecting words"
+    },
+    {
+      "bn": "কারণ",
+      "en": "because",
+      "category": "Class 3 · Connecting words"
+    },
+    {
+      "bn": "তাই",
+      "en": "therefore",
+      "category": "Class 3 · Connecting words"
+    },
+    {
+      "bn": "এজন্য",
+      "en": "for this reason",
+      "category": "Class 3 · Connecting words"
+    },
+    {
+      "bn": "যদি",
+      "en": "if",
+      "category": "Class 3 · Connecting words"
+    },
+    {
+      "bn": "তবে",
+      "en": "then",
+      "category": "Class 3 · Connecting words"
+    },
+    {
+      "bn": "যখন",
+      "en": "when",
+      "category": "Class 3 · Connecting words"
+    },
+    {
+      "bn": "তখন",
+      "en": "then",
+      "category": "Class 3 · Connecting words"
+    },
+    {
+      "bn": "যদিও",
+      "en": "although",
+      "category": "Class 3 · Connecting words"
+    },
+    {
+      "bn": "তবুও",
+      "en": "nevertheless",
+      "category": "Class 3 · Connecting words"
+    },
+    {
+      "bn": "তারপর",
+      "en": "then",
+      "category": "Class 3 · Connecting words"
+    },
+    {
+      "bn": "এরপর",
+      "en": "next",
+      "category": "Class 3 · Connecting words"
+    },
+    {
+      "bn": "শেষে",
+      "en": "finally",
+      "category": "Class 3 · Connecting words"
+    },
+    {
+      "bn": "যেহেতু",
+      "en": "since",
+      "category": "Class 3 · Connecting words"
+    }
+  ],
+  "phrases": [
+    {
+      "bn": "আমার নাম ___।",
+      "en": "About yourself practice 1",
+      "context": "About yourself",
+      "category": "Class 3 · About yourself"
+    },
+    {
+      "bn": "আমি তৃতীয় শ্রেণিতে পড়ি।",
+      "en": "About yourself practice 2",
+      "context": "About yourself",
+      "category": "Class 3 · About yourself"
+    },
+    {
+      "bn": "আমার বয়স আট বছর।",
+      "en": "About yourself practice 3",
+      "context": "About yourself",
+      "category": "Class 3 · About yourself"
+    },
+    {
+      "bn": "আমি প্রতিদিন স্কুলে যাই।",
+      "en": "About yourself practice 4",
+      "context": "About yourself",
+      "category": "Class 3 · About yourself"
+    },
+    {
+      "bn": "বাংলা আমার প্রিয় বিষয়।",
+      "en": "About yourself practice 5",
+      "context": "About yourself",
+      "category": "Class 3 · About yourself"
+    },
+    {
+      "bn": "আমি গল্পের বই পড়তে পছন্দ করি।",
+      "en": "About yourself practice 6",
+      "context": "About yourself",
+      "category": "Class 3 · About yourself"
+    },
+    {
+      "bn": "অবসর সময়ে আমি ছবি আঁকি।",
+      "en": "About yourself practice 7",
+      "context": "About yourself",
+      "category": "Class 3 · About yourself"
+    },
+    {
+      "bn": "আমি বড় হয়ে ডাক্তার হতে চাই।",
+      "en": "About yourself practice 8",
+      "context": "About yourself",
+      "category": "Class 3 · About yourself"
+    },
+    {
+      "bn": "আমার সবচেয়ে ভালো বন্ধুর নাম ___।",
+      "en": "About yourself practice 9",
+      "context": "About yourself",
+      "category": "Class 3 · About yourself"
+    },
+    {
+      "bn": "আমি নতুন কিছু শিখতে ভালোবাসি।",
+      "en": "About yourself practice 10",
+      "context": "About yourself",
+      "category": "Class 3 · About yourself"
+    },
+    {
+      "bn": "আজ আমরা একটি নতুন অধ্যায় পড়ব।",
+      "en": "At school practice 1",
+      "context": "At school",
+      "category": "Class 3 · At school"
+    },
+    {
+      "bn": "আমি প্রশ্নটির উত্তর জানি।",
+      "en": "At school practice 2",
+      "context": "At school",
+      "category": "Class 3 · At school"
+    },
+    {
+      "bn": "আমি প্রশ্নটি ঠিকভাবে বুঝতে পারিনি।",
+      "en": "At school practice 3",
+      "context": "At school",
+      "category": "Class 3 · At school"
+    },
+    {
+      "bn": "আপনি কি বিষয়টি আবার বুঝিয়ে বলবেন?",
+      "en": "At school practice 4",
+      "context": "At school",
+      "category": "Class 3 · At school"
+    },
+    {
+      "bn": "এই শব্দটির অর্থ কী?",
+      "en": "At school practice 5",
+      "context": "At school",
+      "category": "Class 3 · At school"
+    },
+    {
+      "bn": "আমি অভিধানে শব্দটির অর্থ খুঁজে দেখব।",
+      "en": "At school practice 6",
+      "context": "At school",
+      "category": "Class 3 · At school"
+    },
+    {
+      "bn": "আমি আমার বাড়ির কাজ শেষ করেছি।",
+      "en": "At school practice 7",
+      "context": "At school",
+      "category": "Class 3 · At school"
+    },
+    {
+      "bn": "আমরা দল বেঁধে কাজ করছি।",
+      "en": "At school practice 8",
+      "context": "At school",
+      "category": "Class 3 · At school"
+    },
+    {
+      "bn": "আমি আমার সহপাঠীকে সাহায্য করেছি।",
+      "en": "At school practice 9",
+      "context": "At school",
+      "category": "Class 3 · At school"
+    },
+    {
+      "bn": "আজ আমাদের বাংলা পরীক্ষা আছে।",
+      "en": "At school practice 10",
+      "context": "At school",
+      "category": "Class 3 · At school"
+    },
+    {
+      "bn": "আমি উত্তরটি পূর্ণ বাক্যে লিখেছি।",
+      "en": "At school practice 11",
+      "context": "At school",
+      "category": "Class 3 · At school"
+    },
+    {
+      "bn": "আমি প্রতিদিন সকাল সাতটায় ঘুম থেকে উঠি।",
+      "en": "Daily life practice 1",
+      "context": "Daily life",
+      "category": "Class 3 · Daily life"
+    },
+    {
+      "bn": "ঘুম থেকে উঠে আমি দাঁত ব্রাশ করি।",
+      "en": "Daily life practice 2",
+      "context": "Daily life",
+      "category": "Class 3 · Daily life"
+    },
+    {
+      "bn": "নাশতা খাওয়ার পরে আমি স্কুলের জন্য তৈরি হই।",
+      "en": "Daily life practice 3",
+      "context": "Daily life",
+      "category": "Class 3 · Daily life"
+    },
+    {
+      "bn": "স্কুল শেষে আমি বাড়িতে ফিরে আসি।",
+      "en": "Daily life practice 4",
+      "context": "Daily life",
+      "category": "Class 3 · Daily life"
+    },
+    {
+      "bn": "বিকেলে আমি বন্ধুদের সঙ্গে খেলি।",
+      "en": "Daily life practice 5",
+      "context": "Daily life",
+      "category": "Class 3 · Daily life"
+    },
+    {
+      "bn": "সন্ধ্যায় আমি পড়াশোনা করি।",
+      "en": "Daily life practice 6",
+      "context": "Daily life",
+      "category": "Class 3 · Daily life"
+    },
+    {
+      "bn": "রাতে পরিবারের সবাই একসঙ্গে খাবার খাই।",
+      "en": "Daily life practice 7",
+      "context": "Daily life",
+      "category": "Class 3 · Daily life"
+    },
+    {
+      "bn": "ঘুমানোর আগে আমি কিছুক্ষণ গল্পের বই পড়ি।",
+      "en": "Daily life practice 8",
+      "context": "Daily life",
+      "category": "Class 3 · Daily life"
+    },
+    {
+      "bn": "আমার মনে হয় এটি ভালো।",
+      "en": "Opinions practice 1",
+      "context": "Opinions",
+      "category": "Class 3 · Opinions"
+    },
+    {
+      "bn": "আমি মনে করি তুমি ঠিক বলেছ।",
+      "en": "Opinions practice 2",
+      "context": "Opinions",
+      "category": "Class 3 · Opinions"
+    },
+    {
+      "bn": "আমার মতে গল্পটি খুব সুন্দর।",
+      "en": "Opinions practice 3",
+      "context": "Opinions",
+      "category": "Class 3 · Opinions"
+    },
+    {
+      "bn": "আমি এই বইটি পছন্দ করি কারণ এটি মজার।",
+      "en": "Opinions practice 4",
+      "context": "Opinions",
+      "category": "Class 3 · Opinions"
+    },
+    {
+      "bn": "আমার সবচেয়ে ভালো লেগেছে গল্পের শেষ অংশটি।",
+      "en": "Opinions practice 5",
+      "context": "Opinions",
+      "category": "Class 3 · Opinions"
+    },
+    {
+      "bn": "আমি এই কথার সঙ্গে একমত।",
+      "en": "Opinions practice 6",
+      "context": "Opinions",
+      "category": "Class 3 · Opinions"
+    },
+    {
+      "bn": "আমি অন্যভাবে চিন্তা করি।",
+      "en": "Opinions practice 7",
+      "context": "Opinions",
+      "category": "Class 3 · Opinions"
+    },
+    {
+      "bn": "আমি মনে করি আমাদের গাছ লাগানো উচিত।",
+      "en": "Opinions practice 8",
+      "context": "Opinions",
+      "category": "Class 3 · Opinions"
+    },
+    {
+      "bn": "আমি ক্রিকেট খেলতে পছন্দ করি।",
+      "en": "Likes and dislikes practice 1",
+      "context": "Likes and dislikes",
+      "category": "Class 3 · Likes and dislikes"
+    },
+    {
+      "bn": "আমি গল্প পড়তে খুব ভালোবাসি।",
+      "en": "Likes and dislikes practice 2",
+      "context": "Likes and dislikes",
+      "category": "Class 3 · Likes and dislikes"
+    },
+    {
+      "bn": "আমার আম খেতে সবচেয়ে ভালো লাগে।",
+      "en": "Likes and dislikes practice 3",
+      "context": "Likes and dislikes",
+      "category": "Class 3 · Likes and dislikes"
+    },
+    {
+      "bn": "আমি খুব ঝাল খাবার পছন্দ করি না।",
+      "en": "Likes and dislikes practice 4",
+      "context": "Likes and dislikes",
+      "category": "Class 3 · Likes and dislikes"
+    },
+    {
+      "bn": "আমি টেলিভিশনের চেয়ে বই পড়তে বেশি পছন্দ করি।",
+      "en": "Likes and dislikes practice 5",
+      "context": "Likes and dislikes",
+      "category": "Class 3 · Likes and dislikes"
+    },
+    {
+      "bn": "আমার প্রিয় ঋতু হলো শীতকাল।",
+      "en": "Likes and dislikes practice 6",
+      "context": "Likes and dislikes",
+      "category": "Class 3 · Likes and dislikes"
+    },
+    {
+      "bn": "আমি বাড়িতে ছিলাম কারণ বাইরে বৃষ্টি হচ্ছিল।",
+      "en": "Explaining reasons practice 1",
+      "context": "Explaining reasons",
+      "category": "Class 3 · Explaining reasons"
+    },
+    {
+      "bn": "আমি পানি পান করলাম কারণ আমার তৃষ্ণা পেয়েছিল।",
+      "en": "Explaining reasons practice 2",
+      "context": "Explaining reasons",
+      "category": "Class 3 · Explaining reasons"
+    },
+    {
+      "bn": "রাহিম খুশি কারণ সে পরীক্ষায় ভালো করেছে।",
+      "en": "Explaining reasons practice 3",
+      "context": "Explaining reasons",
+      "category": "Class 3 · Explaining reasons"
+    },
+    {
+      "bn": "আমরা তাড়াতাড়ি বের হলাম কারণ স্কুলে দেরি হয়ে যাচ্ছিল।",
+      "en": "Explaining reasons practice 4",
+      "context": "Explaining reasons",
+      "category": "Class 3 · Explaining reasons"
+    },
+    {
+      "bn": "গাছ আমাদের জন্য গুরুত্বপূর্ণ কারণ গাছ অক্সিজেন দেয়।",
+      "en": "Explaining reasons practice 5",
+      "context": "Explaining reasons",
+      "category": "Class 3 · Explaining reasons"
+    },
+    {
+      "bn": "সারাদিন বৃষ্টি হয়েছে, তাই মাঠ ভিজে গেছে।",
+      "en": "Cause and result practice 1",
+      "context": "Cause and result",
+      "category": "Class 3 · Cause and result"
+    },
+    {
+      "bn": "রিমা নিয়মিত পড়াশোনা করেছে, তাই সে ভালো ফল করেছে।",
+      "en": "Cause and result practice 2",
+      "context": "Cause and result",
+      "category": "Class 3 · Cause and result"
+    },
+    {
+      "bn": "গাছটি অনেক দিন পানি পায়নি, তাই পাতাগুলো শুকিয়ে গেছে।",
+      "en": "Cause and result practice 3",
+      "context": "Cause and result",
+      "category": "Class 3 · Cause and result"
+    },
+    {
+      "bn": "আমি দেরিতে ঘুম থেকে উঠেছি, তাই স্কুলে যেতে দেরি হয়েছে।",
+      "en": "Cause and result practice 4",
+      "context": "Cause and result",
+      "category": "Class 3 · Cause and result"
+    },
+    {
+      "bn": "রাস্তা ভেজা ছিল, তাই আমরা সাবধানে হাঁটলাম।",
+      "en": "Cause and result practice 5",
+      "context": "Cause and result",
+      "category": "Class 3 · Cause and result"
+    },
+    {
+      "bn": "প্রথমে আমি ঘুম থেকে উঠলাম।",
+      "en": "Sequence practice 1",
+      "context": "Sequence",
+      "category": "Class 3 · Sequence"
+    },
+    {
+      "bn": "তারপর আমি দাঁত ব্রাশ করলাম।",
+      "en": "Sequence practice 2",
+      "context": "Sequence",
+      "category": "Class 3 · Sequence"
+    },
+    {
+      "bn": "এরপর আমি নাশতা খেলাম।",
+      "en": "Sequence practice 3",
+      "context": "Sequence",
+      "category": "Class 3 · Sequence"
+    },
+    {
+      "bn": "তারপর স্কুলের পোশাক পরলাম।",
+      "en": "Sequence practice 4",
+      "context": "Sequence",
+      "category": "Class 3 · Sequence"
+    },
+    {
+      "bn": "অবশেষে আমি স্কুলে রওনা হলাম।",
+      "en": "Sequence practice 5",
+      "context": "Sequence",
+      "category": "Class 3 · Sequence"
+    },
+    {
+      "bn": "গতকাল আমরা চিড়িয়াখানায় গিয়েছিলাম।",
+      "en": "Past practice 1",
+      "context": "Past",
+      "category": "Class 3 · Past"
+    },
+    {
+      "bn": "সেখানে আমি অনেক বন্য প্রাণী দেখেছিলাম।",
+      "en": "Past practice 2",
+      "context": "Past",
+      "category": "Class 3 · Past"
+    },
+    {
+      "bn": "আমরা একটি বড় হাতি দেখেছিলাম।",
+      "en": "Past practice 3",
+      "context": "Past",
+      "category": "Class 3 · Past"
+    },
+    {
+      "bn": "হাতিটি গাছের পাতা খাচ্ছিল।",
+      "en": "Past practice 4",
+      "context": "Past",
+      "category": "Class 3 · Past"
+    },
+    {
+      "bn": "দুপুরে আমরা একসঙ্গে খাবার খেয়েছিলাম।",
+      "en": "Past practice 5",
+      "context": "Past",
+      "category": "Class 3 · Past"
+    },
+    {
+      "bn": "বিকেলে আমরা বাড়িতে ফিরে এসেছিলাম।",
+      "en": "Past practice 6",
+      "context": "Past",
+      "category": "Class 3 · Past"
+    },
+    {
+      "bn": "দিনটি আমার খুব ভালো লেগেছিল।",
+      "en": "Past practice 7",
+      "context": "Past",
+      "category": "Class 3 · Past"
+    },
+    {
+      "bn": "আগামীকাল আমরা গ্রামে যাব।",
+      "en": "Future practice 1",
+      "context": "Future",
+      "category": "Class 3 · Future"
+    },
+    {
+      "bn": "আমি ছুটির দিনে দাদির সঙ্গে দেখা করব।",
+      "en": "Future practice 2",
+      "context": "Future",
+      "category": "Class 3 · Future"
+    },
+    {
+      "bn": "আমরা নদীর পাশে হাঁটতে যাব।",
+      "en": "Future practice 3",
+      "context": "Future",
+      "category": "Class 3 · Future"
+    },
+    {
+      "bn": "আমি আমার বন্ধুদের সঙ্গে খেলব।",
+      "en": "Future practice 4",
+      "context": "Future",
+      "category": "Class 3 · Future"
+    },
+    {
+      "bn": "পরের সপ্তাহে আমাদের পরীক্ষা হবে।",
+      "en": "Future practice 5",
+      "context": "Future",
+      "category": "Class 3 · Future"
+    },
+    {
+      "bn": "আমি পরীক্ষার জন্য ভালোভাবে পড়াশোনা করব।",
+      "en": "Future practice 6",
+      "context": "Future",
+      "category": "Class 3 · Future"
+    },
+    {
+      "bn": "আমি এখন বই পড়ছি।",
+      "en": "Ongoing actions practice 1",
+      "context": "Ongoing actions",
+      "category": "Class 3 · Ongoing actions"
+    },
+    {
+      "bn": "মা রান্নাঘরে রান্না করছেন।",
+      "en": "Ongoing actions practice 2",
+      "context": "Ongoing actions",
+      "category": "Class 3 · Ongoing actions"
+    },
+    {
+      "bn": "বাবা টেলিভিশন দেখছেন।",
+      "en": "Ongoing actions practice 3",
+      "context": "Ongoing actions",
+      "category": "Class 3 · Ongoing actions"
+    },
+    {
+      "bn": "আমার ভাই মাঠে খেলছে।",
+      "en": "Ongoing actions practice 4",
+      "context": "Ongoing actions",
+      "category": "Class 3 · Ongoing actions"
+    },
+    {
+      "bn": "পাখিগুলো আকাশে উড়ছে।",
+      "en": "Ongoing actions practice 5",
+      "context": "Ongoing actions",
+      "category": "Class 3 · Ongoing actions"
+    },
+    {
+      "bn": "বাইরে বৃষ্টি পড়ছে।",
+      "en": "Ongoing actions practice 6",
+      "context": "Ongoing actions",
+      "category": "Class 3 · Ongoing actions"
+    },
+    {
+      "bn": "শিক্ষক বোর্ডে লিখছেন।",
+      "en": "Ongoing actions practice 7",
+      "context": "Ongoing actions",
+      "category": "Class 3 · Ongoing actions"
+    },
+    {
+      "bn": "হাতি ঘোড়ার চেয়ে বড়।",
+      "en": "Comparisons practice 1",
+      "context": "Comparisons",
+      "category": "Class 3 · Comparisons"
+    },
+    {
+      "bn": "নদীটি পুকুরের চেয়ে গভীর।",
+      "en": "Comparisons practice 2",
+      "context": "Comparisons",
+      "category": "Class 3 · Comparisons"
+    },
+    {
+      "bn": "আমার ভাই আমার চেয়ে লম্বা।",
+      "en": "Comparisons practice 3",
+      "context": "Comparisons",
+      "category": "Class 3 · Comparisons"
+    },
+    {
+      "bn": "এই গল্পটি আগের গল্পটির চেয়ে মজার।",
+      "en": "Comparisons practice 4",
+      "context": "Comparisons",
+      "category": "Class 3 · Comparisons"
+    },
+    {
+      "bn": "আজ গতকালের চেয়ে বেশি গরম।",
+      "en": "Comparisons practice 5",
+      "context": "Comparisons",
+      "category": "Class 3 · Comparisons"
+    },
+    {
+      "bn": "ট্রেন বাসের চেয়ে দ্রুত চলতে পারে।",
+      "en": "Comparisons practice 6",
+      "context": "Comparisons",
+      "category": "Class 3 · Comparisons"
+    },
+    {
+      "bn": "রাহিম করিমের চেয়ে দ্রুত দৌড়ায়।",
+      "en": "Comparisons practice 7",
+      "context": "Comparisons",
+      "category": "Class 3 · Comparisons"
+    },
+    {
+      "bn": "আমি কি বাইরে যেতে পারি?",
+      "en": "Permission practice 1",
+      "context": "Permission",
+      "category": "Class 3 · Permission"
+    },
+    {
+      "bn": "আমি কি আপনার কলমটি ব্যবহার করতে পারি?",
+      "en": "Permission practice 2",
+      "context": "Permission",
+      "category": "Class 3 · Permission"
+    },
+    {
+      "bn": "আমি কি এখানে বসতে পারি?",
+      "en": "Permission practice 3",
+      "context": "Permission",
+      "category": "Class 3 · Permission"
+    },
+    {
+      "bn": "আমি কি একটি প্রশ্ন করতে পারি?",
+      "en": "Permission practice 4",
+      "context": "Permission",
+      "category": "Class 3 · Permission"
+    },
+    {
+      "bn": "আমি কি বইটি বাড়িতে নিয়ে যেতে পারি?",
+      "en": "Permission practice 5",
+      "context": "Permission",
+      "category": "Class 3 · Permission"
+    },
+    {
+      "bn": "তুমি কি আমাকে সাহায্য করতে পারবে?",
+      "en": "Asking for help practice 1",
+      "context": "Asking for help",
+      "category": "Class 3 · Asking for help"
+    },
+    {
+      "bn": "আমি এই অঙ্কটি বুঝতে পারছি না।",
+      "en": "Asking for help practice 2",
+      "context": "Asking for help",
+      "category": "Class 3 · Asking for help"
+    },
+    {
+      "bn": "তুমি কি আমাকে পথটি দেখাতে পারবে?",
+      "en": "Asking for help practice 3",
+      "context": "Asking for help",
+      "category": "Class 3 · Asking for help"
+    },
+    {
+      "bn": "দয়া করে শব্দটির অর্থ বুঝিয়ে বলো।",
+      "en": "Asking for help practice 4",
+      "context": "Asking for help",
+      "category": "Class 3 · Asking for help"
+    },
+    {
+      "bn": "আমার বইটি খুঁজে পেতে সাহায্য করো।",
+      "en": "Asking for help practice 5",
+      "context": "Asking for help",
+      "category": "Class 3 · Asking for help"
+    },
+    {
+      "bn": "তোমার নিয়মিত পড়াশোনা করা উচিত।",
+      "en": "Advice practice 1",
+      "context": "Advice",
+      "category": "Class 3 · Advice"
+    },
+    {
+      "bn": "আমাদের প্রতিদিন দাঁত ব্রাশ করা উচিত।",
+      "en": "Advice practice 2",
+      "context": "Advice",
+      "category": "Class 3 · Advice"
+    },
+    {
+      "bn": "আমাদের বেশি করে পানি পান করা উচিত।",
+      "en": "Advice practice 3",
+      "context": "Advice",
+      "category": "Class 3 · Advice"
+    },
+    {
+      "bn": "আমাদের গাছপালা রক্ষা করা উচিত।",
+      "en": "Advice practice 4",
+      "context": "Advice",
+      "category": "Class 3 · Advice"
+    },
+    {
+      "bn": "রাস্তা পার হওয়ার সময় সাবধান হওয়া উচিত।",
+      "en": "Advice practice 5",
+      "context": "Advice",
+      "category": "Class 3 · Advice"
+    },
+    {
+      "bn": "আমাদের অন্যদের সাহায্য করা উচিত।",
+      "en": "Advice practice 6",
+      "context": "Advice",
+      "category": "Class 3 · Advice"
+    },
+    {
+      "bn": "যদি বৃষ্টি হয়, আমরা ঘরে থাকব।",
+      "en": "If practice 1",
+      "context": "If",
+      "category": "Class 3 · If"
+    },
+    {
+      "bn": "যদি তুমি মন দিয়ে পড়ো, তুমি ভালো ফল করবে।",
+      "en": "If practice 2",
+      "context": "If",
+      "category": "Class 3 · If"
+    },
+    {
+      "bn": "যদি আমার সময় থাকে, আমি তোমার সঙ্গে খেলব।",
+      "en": "If practice 3",
+      "context": "If",
+      "category": "Class 3 · If"
+    },
+    {
+      "bn": "যদি গাছে পানি না দাও, গাছটি শুকিয়ে যাবে।",
+      "en": "If practice 4",
+      "context": "If",
+      "category": "Class 3 · If"
+    },
+    {
+      "bn": "যদি তুমি তাড়াতাড়ি আসো, আমরা একসঙ্গে যেতে পারব।",
+      "en": "If practice 5",
+      "context": "If",
+      "category": "Class 3 · If"
+    },
+    {
+      "bn": "যখন সকাল হয়, সূর্য ওঠে।",
+      "en": "When practice 1",
+      "context": "When",
+      "category": "Class 3 · When"
+    },
+    {
+      "bn": "যখন বৃষ্টি হয়, আমি ছাতা ব্যবহার করি।",
+      "en": "When practice 2",
+      "context": "When",
+      "category": "Class 3 · When"
+    },
+    {
+      "bn": "যখন আমার ক্ষুধা লাগে, আমি খাবার খাই।",
+      "en": "When practice 3",
+      "context": "When",
+      "category": "Class 3 · When"
+    },
+    {
+      "bn": "যখন স্কুল ছুটি হয়, আমরা বাড়িতে ফিরে যাই।",
+      "en": "When practice 4",
+      "context": "When",
+      "category": "Class 3 · When"
+    },
+    {
+      "bn": "যখন আমি গল্প পড়ি, তখন নতুন শব্দ শিখি।",
+      "en": "When practice 5",
+      "context": "When",
+      "category": "Class 3 · When"
+    },
+    {
+      "bn": "যদিও বাইরে বৃষ্টি হচ্ছিল, তবুও আমরা স্কুলে গিয়েছিলাম।",
+      "en": "Although and nevertheless practice 1",
+      "context": "Although and nevertheless",
+      "category": "Class 3 · Although and nevertheless"
+    },
+    {
+      "bn": "যদিও কাজটি কঠিন ছিল, তবুও আমি চেষ্টা করেছি।",
+      "en": "Although and nevertheless practice 2",
+      "context": "Although and nevertheless",
+      "category": "Class 3 · Although and nevertheless"
+    },
+    {
+      "bn": "যদিও রাহিম ছোট, তবুও সে খুব সাহসী।",
+      "en": "Although and nevertheless practice 3",
+      "context": "Although and nevertheless",
+      "category": "Class 3 · Although and nevertheless"
+    },
+    {
+      "bn": "যদিও আমার ক্লান্ত লাগছিল, তবুও আমি বাড়ির কাজ শেষ করেছি।",
+      "en": "Although and nevertheless practice 4",
+      "context": "Although and nevertheless",
+      "category": "Class 3 · Although and nevertheless"
+    },
+    {
+      "bn": "তুমি কেন স্কুলে যাও?",
+      "en": "Full questions and answers practice 1",
+      "context": "Full questions and answers",
+      "category": "Class 3 · Full questions and answers"
+    },
+    {
+      "bn": "আমি নতুন কিছু শেখার জন্য স্কুলে যাই।",
+      "en": "Full questions and answers practice 2",
+      "context": "Full questions and answers",
+      "category": "Class 3 · Full questions and answers"
+    },
+    {
+      "bn": "তুমি কখন ঘুম থেকে ওঠো?",
+      "en": "Full questions and answers practice 3",
+      "context": "Full questions and answers",
+      "category": "Class 3 · Full questions and answers"
+    },
+    {
+      "bn": "আমি প্রতিদিন সকাল সাতটায় ঘুম থেকে উঠি।",
+      "en": "Full questions and answers practice 4",
+      "context": "Full questions and answers",
+      "category": "Class 3 · Full questions and answers"
+    },
+    {
+      "bn": "তোমার প্রিয় খেলা কী?",
+      "en": "Full questions and answers practice 5",
+      "context": "Full questions and answers",
+      "category": "Class 3 · Full questions and answers"
+    },
+    {
+      "bn": "আমার প্রিয় খেলা ক্রিকেট।",
+      "en": "Full questions and answers practice 6",
+      "context": "Full questions and answers",
+      "category": "Class 3 · Full questions and answers"
+    },
+    {
+      "bn": "তুমি অবসর সময়ে কী করো?",
+      "en": "Full questions and answers practice 7",
+      "context": "Full questions and answers",
+      "category": "Class 3 · Full questions and answers"
+    },
+    {
+      "bn": "আমি অবসর সময়ে গল্পের বই পড়ি।",
+      "en": "Full questions and answers practice 8",
+      "context": "Full questions and answers",
+      "category": "Class 3 · Full questions and answers"
+    },
+    {
+      "bn": "তোমার প্রিয় ঋতু কোনটি এবং কেন?",
+      "en": "Full questions and answers practice 9",
+      "context": "Full questions and answers",
+      "category": "Class 3 · Full questions and answers"
+    },
+    {
+      "bn": "আমার প্রিয় ঋতু শীত, কারণ শীতের আবহাওয়া আমার ভালো লাগে।",
+      "en": "Full questions and answers practice 10",
+      "context": "Full questions and answers",
+      "category": "Class 3 · Full questions and answers"
+    },
+    {
+      "bn": "তুমি কীভাবে স্কুলে যাও?",
+      "en": "Full questions and answers practice 11",
+      "context": "Full questions and answers",
+      "category": "Class 3 · Full questions and answers"
+    },
+    {
+      "bn": "আমি বাসে করে স্কুলে যাই।",
+      "en": "Full questions and answers practice 12",
+      "context": "Full questions and answers",
+      "category": "Class 3 · Full questions and answers"
+    },
+    {
+      "bn": "সত্য — মিথ্যা",
+      "en": "Opposites practice 1",
+      "context": "Opposites",
+      "category": "Class 3 · Opposites"
+    },
+    {
+      "bn": "সৎ — অসৎ",
+      "en": "Opposites practice 2",
+      "context": "Opposites",
+      "category": "Class 3 · Opposites"
+    },
+    {
+      "bn": "সাহসী — ভীরু",
+      "en": "Opposites practice 3",
+      "context": "Opposites",
+      "category": "Class 3 · Opposites"
+    },
+    {
+      "bn": "দয়ালু — নিষ্ঠুর",
+      "en": "Opposites practice 4",
+      "context": "Opposites",
+      "category": "Class 3 · Opposites"
+    },
+    {
+      "bn": "ভদ্র — অভদ্র",
+      "en": "Opposites practice 5",
+      "context": "Opposites",
+      "category": "Class 3 · Opposites"
+    },
+    {
+      "bn": "পরিশ্রমী — অলস",
+      "en": "Opposites practice 6",
+      "context": "Opposites",
+      "category": "Class 3 · Opposites"
+    },
+    {
+      "bn": "সুখ — দুঃখ",
+      "en": "Opposites practice 7",
+      "context": "Opposites",
+      "category": "Class 3 · Opposites"
+    },
+    {
+      "bn": "আলো — অন্ধকার",
+      "en": "Opposites practice 8",
+      "context": "Opposites",
+      "category": "Class 3 · Opposites"
+    },
+    {
+      "bn": "শক্তিশালী — দুর্বল",
+      "en": "Opposites practice 9",
+      "context": "Opposites",
+      "category": "Class 3 · Opposites"
+    },
+    {
+      "bn": "সহজ — কঠিন",
+      "en": "Opposites practice 10",
+      "context": "Opposites",
+      "category": "Class 3 · Opposites"
+    },
+    {
+      "bn": "নিরাপদ — বিপজ্জনক",
+      "en": "Opposites practice 11",
+      "context": "Opposites",
+      "category": "Class 3 · Opposites"
+    },
+    {
+      "bn": "পরিষ্কার — নোংরা",
+      "en": "Opposites practice 12",
+      "context": "Opposites",
+      "category": "Class 3 · Opposites"
+    },
+    {
+      "bn": "শুকনো — ভেজা",
+      "en": "Opposites practice 13",
+      "context": "Opposites",
+      "category": "Class 3 · Opposites"
+    },
+    {
+      "bn": "গভীর — অগভীর",
+      "en": "Opposites practice 14",
+      "context": "Opposites",
+      "category": "Class 3 · Opposites"
+    },
+    {
+      "bn": "প্রশস্ত — সরু",
+      "en": "Opposites practice 15",
+      "context": "Opposites",
+      "category": "Class 3 · Opposites"
+    },
+    {
+      "bn": "উঁচু — নিচু",
+      "en": "Opposites practice 16",
+      "context": "Opposites",
+      "category": "Class 3 · Opposites"
+    },
+    {
+      "bn": "দ্রুত — ধীর",
+      "en": "Opposites practice 17",
+      "context": "Opposites",
+      "category": "Class 3 · Opposites"
+    },
+    {
+      "bn": "শুরু — শেষ",
+      "en": "Opposites practice 18",
+      "context": "Opposites",
+      "category": "Class 3 · Opposites"
+    },
+    {
+      "bn": "জয় — পরাজয়",
+      "en": "Opposites practice 19",
+      "context": "Opposites",
+      "category": "Class 3 · Opposites"
+    },
+    {
+      "bn": "লাভ — ক্ষতি",
+      "en": "Opposites practice 20",
+      "context": "Opposites",
+      "category": "Class 3 · Opposites"
+    },
+    {
+      "bn": "সামনে — পিছনে",
+      "en": "Opposites practice 21",
+      "context": "Opposites",
+      "category": "Class 3 · Opposites"
+    },
+    {
+      "bn": "ভিতরে — বাইরে",
+      "en": "Opposites practice 22",
+      "context": "Opposites",
+      "category": "Class 3 · Opposites"
+    },
+    {
+      "bn": "কাছে — দূরে",
+      "en": "Opposites practice 23",
+      "context": "Opposites",
+      "category": "Class 3 · Opposites"
+    },
+    {
+      "bn": "বেশি — কম",
+      "en": "Opposites practice 24",
+      "context": "Opposites",
+      "category": "Class 3 · Opposites"
+    },
+    {
+      "bn": "পুরোনো — নতুন",
+      "en": "Opposites practice 25",
+      "context": "Opposites",
+      "category": "Class 3 · Opposites"
+    },
+    {
+      "bn": "পানি — জল",
+      "en": "Synonyms practice 1",
+      "context": "Synonyms",
+      "category": "Class 3 · Synonyms"
+    },
+    {
+      "bn": "আকাশ — গগন",
+      "en": "Synonyms practice 2",
+      "context": "Synonyms",
+      "category": "Class 3 · Synonyms"
+    },
+    {
+      "bn": "সূর্য — রবি",
+      "en": "Synonyms practice 3",
+      "context": "Synonyms",
+      "category": "Class 3 · Synonyms"
+    },
+    {
+      "bn": "চাঁদ — চন্দ্র",
+      "en": "Synonyms practice 4",
+      "context": "Synonyms",
+      "category": "Class 3 · Synonyms"
+    },
+    {
+      "bn": "পৃথিবী — ধরণি",
+      "en": "Synonyms practice 5",
+      "context": "Synonyms",
+      "category": "Class 3 · Synonyms"
+    },
+    {
+      "bn": "বন — অরণ্য",
+      "en": "Synonyms practice 6",
+      "context": "Synonyms",
+      "category": "Class 3 · Synonyms"
+    },
+    {
+      "bn": "রাস্তা — পথ",
+      "en": "Synonyms practice 7",
+      "context": "Synonyms",
+      "category": "Class 3 · Synonyms"
+    },
+    {
+      "bn": "বাড়ি — গৃহ",
+      "en": "Synonyms practice 8",
+      "context": "Synonyms",
+      "category": "Class 3 · Synonyms"
+    },
+    {
+      "bn": "বন্ধু — সাথি",
+      "en": "Synonyms practice 9",
+      "context": "Synonyms",
+      "category": "Class 3 · Synonyms"
+    },
+    {
+      "bn": "খুশি — আনন্দিত",
+      "en": "Synonyms practice 10",
+      "context": "Synonyms",
+      "category": "Class 3 · Synonyms"
+    },
+    {
+      "bn": "দুঃখ — কষ্ট",
+      "en": "Synonyms practice 11",
+      "context": "Synonyms",
+      "category": "Class 3 · Synonyms"
+    },
+    {
+      "bn": "সকাল — প্রভাত",
+      "en": "Synonyms practice 12",
+      "context": "Synonyms",
+      "category": "Class 3 · Synonyms"
+    },
+    {
+      "bn": "রাত — রাত্রি",
+      "en": "Synonyms practice 13",
+      "context": "Synonyms",
+      "category": "Class 3 · Synonyms"
+    },
+    {
+      "bn": "ফুল — পুষ্প",
+      "en": "Synonyms practice 14",
+      "context": "Synonyms",
+      "category": "Class 3 · Synonyms"
+    },
+    {
+      "bn": "বাতাস — হাওয়া",
+      "en": "Synonyms practice 15",
+      "context": "Synonyms",
+      "category": "Class 3 · Synonyms"
+    },
+    {
+      "bn": "নিজের কাজ নিজে করা আমাদের দায়িত্ব।",
+      "en": "Words in sentences practice 1",
+      "context": "Words in sentences",
+      "category": "Class 3 · Words in sentences"
+    },
+    {
+      "bn": "আমাদের পরিবেশ পরিষ্কার রাখা উচিত।",
+      "en": "Words in sentences practice 2",
+      "context": "Words in sentences",
+      "category": "Class 3 · Words in sentences"
+    },
+    {
+      "bn": "সবাই সহযোগিতা করলে কাজটি সহজ হয়।",
+      "en": "Words in sentences practice 3",
+      "context": "Words in sentences",
+      "category": "Class 3 · Words in sentences"
+    },
+    {
+      "bn": "বিপদের সময় সাহস হারানো উচিত নয়।",
+      "en": "Words in sentences practice 4",
+      "context": "Words in sentences",
+      "category": "Class 3 · Words in sentences"
+    },
+    {
+      "bn": "আমি প্রতিদিন বই পড়ার সিদ্ধান্ত নিয়েছি।",
+      "en": "Words in sentences practice 5",
+      "context": "Words in sentences",
+      "category": "Class 3 · Words in sentences"
+    },
+    {
+      "bn": "পরিশ্রম করলে ভালো ফল পাওয়া যায়।",
+      "en": "Words in sentences practice 6",
+      "context": "Words in sentences",
+      "category": "Class 3 · Words in sentences"
+    },
+    {
+      "bn": "শীত শেষে আবহাওয়ার পরিবর্তন হয়।",
+      "en": "Words in sentences practice 7",
+      "context": "Words in sentences",
+      "category": "Class 3 · Words in sentences"
+    },
+    {
+      "bn": "আমরা একসঙ্গে সমস্যার সমাধান খুঁজলাম।",
+      "en": "Words in sentences practice 8",
+      "context": "Words in sentences",
+      "category": "Class 3 · Words in sentences"
+    },
+    {
+      "bn": "সকালে তাড়াতাড়ি ওঠা একটি ভালো অভ্যাস।",
+      "en": "Words in sentences practice 9",
+      "context": "Words in sentences",
+      "category": "Class 3 · Words in sentences"
+    },
+    {
+      "bn": "আমাদের বড়দের সম্মান করা উচিত।",
+      "en": "Words in sentences practice 10",
+      "context": "Words in sentences",
+      "category": "Class 3 · Words in sentences"
+    },
+    {
+      "bn": "সুস্থ থাকার জন্য পরিষ্কার পানির প্রয়োজন।",
+      "en": "Words in sentences practice 11",
+      "context": "Words in sentences",
+      "category": "Class 3 · Words in sentences"
+    },
+    {
+      "bn": "আমি নতুন বইটি পড়ার সুযোগ পেয়েছি।",
+      "en": "Words in sentences practice 12",
+      "context": "Words in sentences",
+      "category": "Class 3 · Words in sentences"
+    },
+    {
+      "bn": "বৃষ্টি থামার পরে শিশুরা মাঠে খেলতে বের হলো।",
+      "en": "Challenging sentences practice 1",
+      "context": "Challenging sentences",
+      "category": "Class 3 · Challenging sentences"
+    },
+    {
+      "bn": "পাখিটি খাবারের খোঁজে এক গাছ থেকে অন্য গাছে উড়ে গেল।",
+      "en": "Challenging sentences practice 2",
+      "context": "Challenging sentences",
+      "category": "Class 3 · Challenging sentences"
+    },
+    {
+      "bn": "রাহিম তার ভুল বুঝতে পেরে বন্ধুর কাছে ক্ষমা চাইল।",
+      "en": "Challenging sentences practice 3",
+      "context": "Challenging sentences",
+      "category": "Class 3 · Challenging sentences"
+    },
+    {
+      "bn": "নিয়মিত অনুশীলন করলে যেকোনো কাজে উন্নতি করা সম্ভব।",
+      "en": "Challenging sentences practice 4",
+      "context": "Challenging sentences",
+      "category": "Class 3 · Challenging sentences"
+    },
+    {
+      "bn": "আমাদের চারপাশ পরিষ্কার রাখলে পরিবেশ সুন্দর থাকে।",
+      "en": "Challenging sentences practice 5",
+      "context": "Challenging sentences",
+      "category": "Class 3 · Challenging sentences"
+    },
+    {
+      "bn": "কৃষকরা কঠোর পরিশ্রম করে আমাদের জন্য ফসল উৎপাদন করেন।",
+      "en": "Challenging sentences practice 6",
+      "context": "Challenging sentences",
+      "category": "Class 3 · Challenging sentences"
+    },
+    {
+      "bn": "শীতের সকালে ঘন কুয়াশার কারণে দূরের জিনিস স্পষ্ট দেখা যায় না।",
+      "en": "Challenging sentences practice 7",
+      "context": "Challenging sentences",
+      "category": "Class 3 · Challenging sentences"
+    },
+    {
+      "bn": "বন্ধুর বিপদ দেখে মিতা দ্রুত তাকে সাহায্য করতে এগিয়ে গেল।",
+      "en": "Challenging sentences practice 8",
+      "context": "Challenging sentences",
+      "category": "Class 3 · Challenging sentences"
+    },
+    {
+      "bn": "সকাল থেকেই আকাশ মেঘলা ছিল। স্কুলে যাওয়ার সময় রাহিম তার সঙ্গে একটি ছাতা নিয়ে গেল। দুপুরের দিকে হঠাৎ প্রচণ্ড বৃষ্টি শুরু হলো। স্কুল ছুটির পরেও বৃষ্টি থামল না। রাহিম ও তার বন্ধুরা কিছুক্ষণ বিদ্যালয়ের বারান্দায় অপেক্ষা করল। বৃষ্টি একটু কমলে তারা ছাতা মাথায় দিয়ে বাড়ির দিকে রওনা হলো। রাস্তায় অনেক জায়গায় পানি জমে ছিল। রাহিম সাবধানে হেঁটে বাড়িতে পৌঁছাল।",
+      "en": "Reading passages practice 1",
+      "context": "Reading passages",
+      "category": "Class 3 · Reading passages"
+    },
+    {
+      "bn": "গাছ আমাদের খুব উপকারী বন্ধু। গাছ থেকে আমরা ফল, ফুল, কাঠ ও ছায়া পাই। অনেক পাখি গাছে বাসা তৈরি করে। গাছ বাতাস পরিষ্কার রাখতে সাহায্য করে। গাছের শিকড় মাটিকে শক্ত করে ধরে রাখে। তাই আমাদের অকারণে গাছ কাটা উচিত নয়। বরং সুযোগ পেলে নতুন গাছ লাগানো এবং সেগুলোর যত্ন নেওয়া উচিত।",
+      "en": "Reading passages practice 2",
+      "context": "Reading passages",
+      "category": "Class 3 · Reading passages"
+    },
+    {
+      "bn": "সুমন ও রবি একই শ্রেণিতে পড়ে। তারা খুব ভালো বন্ধু। একদিন রবি স্কুলে তার পেন্সিল আনতে ভুলে গেল। সুমনের কাছে দুটি পেন্সিল ছিল। সে একটি পেন্সিল রবিকে দিল। রবি তাকে ধন্যবাদ জানাল। ছুটির পরে তারা একসঙ্গে বাড়ি ফিরল। একজন ভালো বন্ধু বিপদের সময় অন্য বন্ধুকে সাহায্য করে।",
+      "en": "Reading passages practice 3",
+      "context": "Reading passages",
+      "category": "Class 3 · Reading passages"
+    },
+    {
+      "bn": "একদিন মিতা স্কুল থেকে বাড়ি ফিরছিল। রাস্তার পাশে সে একটি ছোট বিড়াল দেখতে পেল। বিড়ালটি ভিজে গিয়েছিল এবং কাঁপছিল। আকাশে তখনও বৃষ্টি হচ্ছিল। মিতা বিড়ালটিকে বাড়িতে নিয়ে গেল। সে একটি তোয়ালে দিয়ে বিড়ালটির শরীর মুছে দিল এবং তাকে কিছু খাবার দিল। কিছুক্ষণ পরে বিড়ালটি আর কাঁপছিল না। মিতা খুব খুশি হলো।",
+      "en": "Comprehension story practice 1",
+      "context": "Comprehension story",
+      "category": "Class 3 · Comprehension story"
+    },
+    {
+      "bn": "১. মিতা কোথা থেকে ফিরছিল?",
+      "en": "Comprehension story practice 2",
+      "context": "Comprehension story",
+      "category": "Class 3 · Comprehension story"
+    },
+    {
+      "bn": "২. সে রাস্তার পাশে কী দেখতে পেল?",
+      "en": "Comprehension story practice 3",
+      "context": "Comprehension story",
+      "category": "Class 3 · Comprehension story"
+    },
+    {
+      "bn": "৩. বিড়ালটি কেন ভিজে গিয়েছিল?",
+      "en": "Comprehension story practice 4",
+      "context": "Comprehension story",
+      "category": "Class 3 · Comprehension story"
+    },
+    {
+      "bn": "৪. মিতা বিড়ালটিকে কোথায় নিয়ে গেল?",
+      "en": "Comprehension story practice 5",
+      "context": "Comprehension story",
+      "category": "Class 3 · Comprehension story"
+    },
+    {
+      "bn": "৫. মিতা কীভাবে বিড়ালটিকে সাহায্য করল?",
+      "en": "Comprehension story practice 6",
+      "context": "Comprehension story",
+      "category": "Class 3 · Comprehension story"
+    },
+    {
+      "bn": "৬. গল্পটি থেকে মিতার চরিত্র সম্পর্কে কী বোঝা যায়?",
+      "en": "Comprehension story practice 7",
+      "context": "Comprehension story",
+      "category": "Class 3 · Comprehension story"
+    },
+    {
+      "bn": "আমি ছাতা নিয়েছি কারণ বাইরে বৃষ্টি হচ্ছে।",
+      "en": "Sentence structures practice 1",
+      "context": "Sentence structures",
+      "category": "Class 3 · Sentence structures"
+    },
+    {
+      "bn": "বাইরে বৃষ্টি হচ্ছে, তাই আমি ছাতা নিয়েছি।",
+      "en": "Sentence structures practice 2",
+      "context": "Sentence structures",
+      "category": "Class 3 · Sentence structures"
+    },
+    {
+      "bn": "আমি খেলতে চেয়েছিলাম, কিন্তু আমার পড়া বাকি ছিল।",
+      "en": "Sentence structures practice 3",
+      "context": "Sentence structures",
+      "category": "Class 3 · Sentence structures"
+    },
+    {
+      "bn": "যদি তুমি নিয়মিত অনুশীলন করো, তবে তোমার পড়া আরও ভালো হবে।",
+      "en": "Sentence structures practice 4",
+      "context": "Sentence structures",
+      "category": "Class 3 · Sentence structures"
+    },
+    {
+      "bn": "যখন স্কুল ছুটি হয়, তখন আমরা বাড়িতে ফিরে যাই।",
+      "en": "Sentence structures practice 5",
+      "context": "Sentence structures",
+      "category": "Class 3 · Sentence structures"
+    },
+    {
+      "bn": "যদিও কাজটি কঠিন ছিল, তবুও সে চেষ্টা চালিয়ে গেল।",
+      "en": "Sentence structures practice 6",
+      "context": "Sentence structures",
+      "category": "Class 3 · Sentence structures"
+    },
+    {
+      "bn": "প্রথমে আমরা বাজারে গেলাম, তারপর কিছু ফল কিনলাম এবং শেষে বাড়িতে ফিরে এলাম।",
+      "en": "Sentence structures practice 7",
+      "context": "Sentence structures",
+      "category": "Class 3 · Sentence structures"
+    },
+    {
+      "bn": "একজন শিক্ষার্থীর ছোট গল্প ও অনুচ্ছেদ নিজে পড়ে বুঝতে পারা উচিত।",
+      "en": "End-of-Class 3 skills practice 1",
+      "context": "End-of-Class 3 skills",
+      "category": "Class 3 · End-of-Class 3 skills"
+    },
+    {
+      "bn": "গল্প পড়ে কে, কী, কোথায়, কখন, কেন এবং কীভাবে প্রশ্নের উত্তর দিতে পারা উচিত।",
+      "en": "End-of-Class 3 skills practice 2",
+      "context": "End-of-Class 3 skills",
+      "category": "Class 3 · End-of-Class 3 skills"
+    },
+    {
+      "bn": "পরিচিত কোনো বিষয় নিয়ে পাঁচ থেকে আটটি সম্পর্কিত বাক্য লিখতে পারা উচিত।",
+      "en": "End-of-Class 3 skills practice 3",
+      "context": "End-of-Class 3 skills",
+      "category": "Class 3 · End-of-Class 3 skills"
+    },
+    {
+      "bn": "ঘটনাগুলো সঠিক ক্রমে বর্ণনা করতে পারা উচিত।",
+      "en": "End-of-Class 3 skills practice 4",
+      "context": "End-of-Class 3 skills",
+      "category": "Class 3 · End-of-Class 3 skills"
+    },
+    {
+      "bn": "বর্তমান, অতীত ও ভবিষ্যৎ সময়ের সহজ বাক্য বুঝতে ও ব্যবহার করতে পারা উচিত।",
+      "en": "End-of-Class 3 skills practice 5",
+      "context": "End-of-Class 3 skills",
+      "category": "Class 3 · End-of-Class 3 skills"
+    },
+    {
+      "bn": "কারণ, তাই, কিন্তু, যদি, যখন, যদিও, তবুও, প্রথমে, তারপর, এরপর, শেষে ব্যবহার করে তুলনামূলকভাবে বড় বাক্য তৈরি করতে পারা উচিত।",
+      "en": "End-of-Class 3 skills practice 6",
+      "context": "End-of-Class 3 skills",
+      "category": "Class 3 · End-of-Class 3 skills"
+    },
+    {
+      "bn": "নিজের পছন্দ, অপছন্দ, অনুভূতি, অভিজ্ঞতা এবং সাধারণ মতামত পূর্ণ বাক্যে প্রকাশ করতে পারা উচিত।",
+      "en": "End-of-Class 3 skills practice 7",
+      "context": "End-of-Class 3 skills",
+      "category": "Class 3 · End-of-Class 3 skills"
+    },
+    {
+      "bn": "নতুন শব্দের অর্থ বাক্যের প্রসঙ্গ থেকে অনুমান করার প্রাথমিক দক্ষতা তৈরি হওয়া উচিত।",
+      "en": "End-of-Class 3 skills practice 8",
+      "context": "End-of-Class 3 skills",
+      "category": "Class 3 · End-of-Class 3 skills"
+    }
+  ],
+  "practice": [
+    {
+      "type": "Comprehension",
+      "prompt": "Read a passage and answer who, what, where, when, why, and how in full sentences.",
+      "answer": "Use evidence from the passage."
+    },
+    {
+      "type": "Connected writing",
+      "prompt": "Write five to eight related sentences using কারণ, তাই, কিন্তু, যদি, যখন, যদিও, and তারপর.",
+      "answer": "Check that events are in a clear order."
+    },
+    {
+      "type": "Tense practice",
+      "prompt": "Describe one event in the present, past, and future.",
+      "answer": "Compare your verbs with the examples."
+    }
+  ],
+  "notes": [
+    "Study one category at a time.",
+    "Repeated entries reinforce different contexts.",
+    "Aim to infer unfamiliar meanings from sentence context and express opinions in full sentences."
+  ]
+}

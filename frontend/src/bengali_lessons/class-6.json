@@ -1,0 +1,3695 @@
+{
+  "id": "class-6",
+  "title": "Bengali Class 6: Argument, analysis, and source evaluation",
+  "topic": "Class 06 · Argument, analysis, and source evaluation",
+  "summary": "A complete Class 6 curriculum with 503 vocabulary entries and 191 sentences, questions, and passages.",
+  "level": "Class 6",
+  "focus": "Literary and informational analysis, evidence-based arguments, source reliability, scientific vocabulary, and structured multi-paragraph writing",
+  "vocab": [
+    {
+      "bn": "উদ্দেশ্য",
+      "en": "purpose",
+      "category": "Class 6 · Everyday and academic words"
+    },
+    {
+      "bn": "প্রয়োজন",
+      "en": "need",
+      "category": "Class 6 · Everyday and academic words"
+    },
+    {
+      "bn": "গুরুত্ব",
+      "en": "importance",
+      "category": "Class 6 · Everyday and academic words"
+    },
+    {
+      "bn": "দায়িত্ব",
+      "en": "responsibility",
+      "category": "Class 6 · Everyday and academic words"
+    },
+    {
+      "bn": "কর্তব্য",
+      "en": "duty",
+      "category": "Class 6 · Everyday and academic words"
+    },
+    {
+      "bn": "অধিকার",
+      "en": "right",
+      "category": "Class 6 · Everyday and academic words"
+    },
+    {
+      "bn": "সুযোগ",
+      "en": "opportunity",
+      "category": "Class 6 · Everyday and academic words"
+    },
+    {
+      "bn": "সীমাবদ্ধতা",
+      "en": "limitation",
+      "category": "Class 6 · Everyday and academic words"
+    },
+    {
+      "bn": "সুবিধা",
+      "en": "advantage",
+      "category": "Class 6 · Everyday and academic words"
+    },
+    {
+      "bn": "অসুবিধা",
+      "en": "disadvantage",
+      "category": "Class 6 · Everyday and academic words"
+    },
+    {
+      "bn": "সমস্যা",
+      "en": "problem",
+      "category": "Class 6 · Everyday and academic words"
+    },
+    {
+      "bn": "সমাধান",
+      "en": "solution",
+      "category": "Class 6 · Everyday and academic words"
+    },
+    {
+      "bn": "কারণ",
+      "en": "because",
+      "category": "Class 6 · Everyday and academic words"
+    },
+    {
+      "bn": "ফলাফল",
+      "en": "result",
+      "category": "Class 6 · Everyday and academic words"
+    },
+    {
+      "bn": "প্রভাব",
+      "en": "effect",
+      "category": "Class 6 · Everyday and academic words"
+    },
+    {
+      "bn": "পরিবর্তন",
+      "en": "change",
+      "category": "Class 6 · Everyday and academic words"
+    },
+    {
+      "bn": "উন্নয়ন",
+      "en": "development",
+      "category": "Class 6 · Everyday and academic words"
+    },
+    {
+      "bn": "অগ্রগতি",
+      "en": "progress",
+      "category": "Class 6 · Everyday and academic words"
+    },
+    {
+      "bn": "অভিজ্ঞতা",
+      "en": "experience",
+      "category": "Class 6 · Everyday and academic words"
+    },
+    {
+      "bn": "সিদ্ধান্ত",
+      "en": "decision",
+      "category": "Class 6 · Everyday and academic words"
+    },
+    {
+      "bn": "পরিকল্পনা",
+      "en": "plan",
+      "category": "Class 6 · Everyday and academic words"
+    },
+    {
+      "bn": "লক্ষ্য",
+      "en": "goal",
+      "category": "Class 6 · Everyday and academic words"
+    },
+    {
+      "bn": "প্রচেষ্টা",
+      "en": "effort",
+      "category": "Class 6 · Everyday and academic words"
+    },
+    {
+      "bn": "সাফল্য",
+      "en": "success",
+      "category": "Class 6 · Everyday and academic words"
+    },
+    {
+      "bn": "ব্যর্থতা",
+      "en": "failure",
+      "category": "Class 6 · Everyday and academic words"
+    },
+    {
+      "bn": "মতামত",
+      "en": "opinion",
+      "category": "Class 6 · Everyday and academic words"
+    },
+    {
+      "bn": "দৃষ্টিভঙ্গি",
+      "en": "perspective",
+      "category": "Class 6 · Everyday and academic words"
+    },
+    {
+      "bn": "যুক্তি",
+      "en": "reasoning",
+      "category": "Class 6 · Everyday and academic words"
+    },
+    {
+      "bn": "প্রমাণ",
+      "en": "evidence",
+      "category": "Class 6 · Everyday and academic words"
+    },
+    {
+      "bn": "উদাহরণ",
+      "en": "example",
+      "category": "Class 6 · Everyday and academic words"
+    },
+    {
+      "bn": "উপসংহার",
+      "en": "conclusion",
+      "category": "Class 6 · Everyday and academic words"
+    },
+    {
+      "bn": "শিক্ষা",
+      "en": "education",
+      "category": "Class 6 · Education and learning"
+    },
+    {
+      "bn": "জ্ঞান",
+      "en": "knowledge",
+      "category": "Class 6 · Education and learning"
+    },
+    {
+      "bn": "দক্ষতা",
+      "en": "skill",
+      "category": "Class 6 · Education and learning"
+    },
+    {
+      "bn": "অধ্যয়ন",
+      "en": "study",
+      "category": "Class 6 · Education and learning"
+    },
+    {
+      "bn": "অনুশীলন",
+      "en": "practice",
+      "category": "Class 6 · Education and learning"
+    },
+    {
+      "bn": "গবেষণা",
+      "en": "research",
+      "category": "Class 6 · Education and learning"
+    },
+    {
+      "bn": "পর্যবেক্ষণ",
+      "en": "observation",
+      "category": "Class 6 · Education and learning"
+    },
+    {
+      "bn": "বিশ্লেষণ",
+      "en": "analysis",
+      "category": "Class 6 · Education and learning"
+    },
+    {
+      "bn": "ব্যাখ্যা",
+      "en": "explanation",
+      "category": "Class 6 · Education and learning"
+    },
+    {
+      "bn": "আলোচনা",
+      "en": "discussion",
+      "category": "Class 6 · Education and learning"
+    },
+    {
+      "bn": "মূল্যায়ন",
+      "en": "assessment",
+      "category": "Class 6 · Education and learning"
+    },
+    {
+      "bn": "উপস্থাপনা",
+      "en": "presentation",
+      "category": "Class 6 · Education and learning"
+    },
+    {
+      "bn": "প্রকল্প",
+      "en": "project",
+      "category": "Class 6 · Education and learning"
+    },
+    {
+      "bn": "প্রতিবেদন",
+      "en": "report",
+      "category": "Class 6 · Education and learning"
+    },
+    {
+      "bn": "রচনা",
+      "en": "composition",
+      "category": "Class 6 · Education and learning"
+    },
+    {
+      "bn": "প্রবন্ধ",
+      "en": "essay",
+      "category": "Class 6 · Education and learning"
+    },
+    {
+      "bn": "সারাংশ",
+      "en": "summary",
+      "category": "Class 6 · Education and learning"
+    },
+    {
+      "bn": "নোট",
+      "en": "notes",
+      "category": "Class 6 · Education and learning"
+    },
+    {
+      "bn": "উৎস",
+      "en": "source",
+      "category": "Class 6 · Education and learning"
+    },
+    {
+      "bn": "তথ্য",
+      "en": "information",
+      "category": "Class 6 · Education and learning"
+    },
+    {
+      "bn": "নির্দেশনা",
+      "en": "instruction",
+      "category": "Class 6 · Education and learning"
+    },
+    {
+      "bn": "প্রশ্ন",
+      "en": "question",
+      "category": "Class 6 · Education and learning"
+    },
+    {
+      "bn": "উত্তর",
+      "en": "north",
+      "category": "Class 6 · Education and learning"
+    },
+    {
+      "bn": "ধারণা",
+      "en": "idea",
+      "category": "Class 6 · Education and learning"
+    },
+    {
+      "bn": "বিষয়বস্তু",
+      "en": "content",
+      "category": "Class 6 · Education and learning"
+    },
+    {
+      "bn": "অধ্যায়",
+      "en": "chapter",
+      "category": "Class 6 · Education and learning"
+    },
+    {
+      "bn": "পাঠ",
+      "en": "lesson",
+      "category": "Class 6 · Education and learning"
+    },
+    {
+      "bn": "বিশেষ্য",
+      "en": "noun",
+      "category": "Class 6 · Bengali language and grammar"
+    },
+    {
+      "bn": "সর্বনাম",
+      "en": "pronoun",
+      "category": "Class 6 · Bengali language and grammar"
+    },
+    {
+      "bn": "ক্রিয়া",
+      "en": "verb",
+      "category": "Class 6 · Bengali language and grammar"
+    },
+    {
+      "bn": "বিশেষণ",
+      "en": "adjective",
+      "category": "Class 6 · Bengali language and grammar"
+    },
+    {
+      "bn": "ক্রিয়াবিশেষণ",
+      "en": "adverb",
+      "category": "Class 6 · Bengali language and grammar"
+    },
+    {
+      "bn": "অব্যয়",
+      "en": "indeclinable",
+      "category": "Class 6 · Bengali language and grammar"
+    },
+    {
+      "bn": "অনুসর্গ",
+      "en": "postposition",
+      "category": "Class 6 · Bengali language and grammar"
+    },
+    {
+      "bn": "বিভক্তি",
+      "en": "case ending",
+      "category": "Class 6 · Bengali language and grammar"
+    },
+    {
+      "bn": "উপসর্গ",
+      "en": "prefix",
+      "category": "Class 6 · Bengali language and grammar"
+    },
+    {
+      "bn": "প্রত্যয়",
+      "en": "suffix",
+      "category": "Class 6 · Bengali language and grammar"
+    },
+    {
+      "bn": "সন্ধি",
+      "en": "euphonic combination",
+      "category": "Class 6 · Bengali language and grammar"
+    },
+    {
+      "bn": "সমাস",
+      "en": "compound formation",
+      "category": "Class 6 · Bengali language and grammar"
+    },
+    {
+      "bn": "একবচন",
+      "en": "singular",
+      "category": "Class 6 · Bengali language and grammar"
+    },
+    {
+      "bn": "বহুবচন",
+      "en": "plural",
+      "category": "Class 6 · Bengali language and grammar"
+    },
+    {
+      "bn": "পুরুষ",
+      "en": "grammatical person",
+      "category": "Class 6 · Bengali language and grammar"
+    },
+    {
+      "bn": "কাল",
+      "en": "tense",
+      "category": "Class 6 · Bengali language and grammar"
+    },
+    {
+      "bn": "বর্তমান কাল",
+      "en": "present tense",
+      "category": "Class 6 · Bengali language and grammar"
+    },
+    {
+      "bn": "অতীত কাল",
+      "en": "past tense",
+      "category": "Class 6 · Bengali language and grammar"
+    },
+    {
+      "bn": "ভবিষ্যৎ কাল",
+      "en": "future tense",
+      "category": "Class 6 · Bengali language and grammar"
+    },
+    {
+      "bn": "কর্তা",
+      "en": "subject",
+      "category": "Class 6 · Bengali language and grammar"
+    },
+    {
+      "bn": "কর্ম",
+      "en": "object",
+      "category": "Class 6 · Bengali language and grammar"
+    },
+    {
+      "bn": "ক্রিয়া",
+      "en": "verb",
+      "category": "Class 6 · Bengali language and grammar"
+    },
+    {
+      "bn": "সরল বাক্য",
+      "en": "simple sentence",
+      "category": "Class 6 · Bengali language and grammar"
+    },
+    {
+      "bn": "যৌগিক বাক্য",
+      "en": "compound sentence",
+      "category": "Class 6 · Bengali language and grammar"
+    },
+    {
+      "bn": "জটিল বাক্য",
+      "en": "complex sentence",
+      "category": "Class 6 · Bengali language and grammar"
+    },
+    {
+      "bn": "সক্রিয় বাক্য",
+      "en": "active sentence",
+      "category": "Class 6 · Bengali language and grammar"
+    },
+    {
+      "bn": "নিষ্ক্রিয় বাক্য",
+      "en": "passive sentence",
+      "category": "Class 6 · Bengali language and grammar"
+    },
+    {
+      "bn": "বিরামচিহ্ন",
+      "en": "punctuation",
+      "category": "Class 6 · Bengali language and grammar"
+    },
+    {
+      "bn": "বাগধারা",
+      "en": "idiom",
+      "category": "Class 6 · Bengali language and grammar"
+    },
+    {
+      "bn": "প্রবাদ",
+      "en": "proverb",
+      "category": "Class 6 · Bengali language and grammar"
+    },
+    {
+      "bn": "সাহিত্য",
+      "en": "literature",
+      "category": "Class 6 · Literature"
+    },
+    {
+      "bn": "কবিতা",
+      "en": "poem",
+      "category": "Class 6 · Literature"
+    },
+    {
+      "bn": "গল্প",
+      "en": "story",
+      "category": "Class 6 · Literature"
+    },
+    {
+      "bn": "উপন্যাস",
+      "en": "novel",
+      "category": "Class 6 · Literature"
+    },
+    {
+      "bn": "নাটক",
+      "en": "drama",
+      "category": "Class 6 · Literature"
+    },
+    {
+      "bn": "প্রবন্ধ",
+      "en": "essay",
+      "category": "Class 6 · Literature"
+    },
+    {
+      "bn": "চরিত্র",
+      "en": "character",
+      "category": "Class 6 · Literature"
+    },
+    {
+      "bn": "প্রধান চরিত্র",
+      "en": "main character",
+      "category": "Class 6 · Literature"
+    },
+    {
+      "bn": "পার্শ্বচরিত্র",
+      "en": "supporting character",
+      "category": "Class 6 · Literature"
+    },
+    {
+      "bn": "কাহিনি",
+      "en": "plot",
+      "category": "Class 6 · Literature"
+    },
+    {
+      "bn": "ঘটনা",
+      "en": "event",
+      "category": "Class 6 · Literature"
+    },
+    {
+      "bn": "সংঘাত",
+      "en": "conflict",
+      "category": "Class 6 · Literature"
+    },
+    {
+      "bn": "পরিবেশ",
+      "en": "environment",
+      "category": "Class 6 · Literature"
+    },
+    {
+      "bn": "পটভূমি",
+      "en": "setting",
+      "category": "Class 6 · Literature"
+    },
+    {
+      "bn": "মূলভাব",
+      "en": "main idea",
+      "category": "Class 6 · Literature"
+    },
+    {
+      "bn": "বিষয়",
+      "en": "subject",
+      "category": "Class 6 · Literature"
+    },
+    {
+      "bn": "বার্তা",
+      "en": "message",
+      "category": "Class 6 · Literature"
+    },
+    {
+      "bn": "শিক্ষা",
+      "en": "education",
+      "category": "Class 6 · Literature"
+    },
+    {
+      "bn": "প্রতীক",
+      "en": "symbol",
+      "category": "Class 6 · Literature"
+    },
+    {
+      "bn": "উপমা",
+      "en": "simile",
+      "category": "Class 6 · Literature"
+    },
+    {
+      "bn": "রূপক",
+      "en": "metaphor",
+      "category": "Class 6 · Literature"
+    },
+    {
+      "bn": "বর্ণনা",
+      "en": "description",
+      "category": "Class 6 · Literature"
+    },
+    {
+      "bn": "সংলাপ",
+      "en": "dialogue",
+      "category": "Class 6 · Literature"
+    },
+    {
+      "bn": "লেখক",
+      "en": "author",
+      "category": "Class 6 · Literature"
+    },
+    {
+      "bn": "কবি",
+      "en": "poet",
+      "category": "Class 6 · Literature"
+    },
+    {
+      "bn": "পাঠক",
+      "en": "reader",
+      "category": "Class 6 · Literature"
+    },
+    {
+      "bn": "সমাজ",
+      "en": "society",
+      "category": "Class 6 · Society and civic life"
+    },
+    {
+      "bn": "নাগরিক",
+      "en": "citizen",
+      "category": "Class 6 · Society and civic life"
+    },
+    {
+      "bn": "রাষ্ট্র",
+      "en": "state",
+      "category": "Class 6 · Society and civic life"
+    },
+    {
+      "bn": "সরকার",
+      "en": "government",
+      "category": "Class 6 · Society and civic life"
+    },
+    {
+      "bn": "আইন",
+      "en": "law",
+      "category": "Class 6 · Society and civic life"
+    },
+    {
+      "bn": "অধিকার",
+      "en": "right",
+      "category": "Class 6 · Society and civic life"
+    },
+    {
+      "bn": "দায়িত্ব",
+      "en": "responsibility",
+      "category": "Class 6 · Society and civic life"
+    },
+    {
+      "bn": "বিচার",
+      "en": "justice",
+      "category": "Class 6 · Society and civic life"
+    },
+    {
+      "bn": "ন্যায়",
+      "en": "justice",
+      "category": "Class 6 · Society and civic life"
+    },
+    {
+      "bn": "অন্যায়",
+      "en": "injustice",
+      "category": "Class 6 · Society and civic life"
+    },
+    {
+      "bn": "স্বাধীনতা",
+      "en": "independence",
+      "category": "Class 6 · Society and civic life"
+    },
+    {
+      "bn": "শৃঙ্খলা",
+      "en": "discipline",
+      "category": "Class 6 · Society and civic life"
+    },
+    {
+      "bn": "নিরাপত্তা",
+      "en": "safety",
+      "category": "Class 6 · Society and civic life"
+    },
+    {
+      "bn": "সহযোগিতা",
+      "en": "cooperation",
+      "category": "Class 6 · Society and civic life"
+    },
+    {
+      "bn": "জনসেবা",
+      "en": "public service",
+      "category": "Class 6 · Society and civic life"
+    },
+    {
+      "bn": "জনস্বাস্থ্য",
+      "en": "public health",
+      "category": "Class 6 · Society and civic life"
+    },
+    {
+      "bn": "শিক্ষা ব্যবস্থা",
+      "en": "education system",
+      "category": "Class 6 · Society and civic life"
+    },
+    {
+      "bn": "স্থানীয় প্রশাসন",
+      "en": "local administration",
+      "category": "Class 6 · Society and civic life"
+    },
+    {
+      "bn": "নির্বাচন",
+      "en": "election",
+      "category": "Class 6 · Society and civic life"
+    },
+    {
+      "bn": "নেতৃত্ব",
+      "en": "leadership",
+      "category": "Class 6 · Society and civic life"
+    },
+    {
+      "bn": "অংশগ্রহণ",
+      "en": "participation",
+      "category": "Class 6 · Society and civic life"
+    },
+    {
+      "bn": "সম্প্রদায়",
+      "en": "community",
+      "category": "Class 6 · Society and civic life"
+    },
+    {
+      "bn": "বৈচিত্র্য",
+      "en": "diversity",
+      "category": "Class 6 · Society and civic life"
+    },
+    {
+      "bn": "সমতা",
+      "en": "equality",
+      "category": "Class 6 · Society and civic life"
+    },
+    {
+      "bn": "দেশ",
+      "en": "country",
+      "category": "Class 6 · Country, nation, and culture"
+    },
+    {
+      "bn": "রাষ্ট্র",
+      "en": "state",
+      "category": "Class 6 · Country, nation, and culture"
+    },
+    {
+      "bn": "জাতি",
+      "en": "nation",
+      "category": "Class 6 · Country, nation, and culture"
+    },
+    {
+      "bn": "নাগরিকত্ব",
+      "en": "citizenship",
+      "category": "Class 6 · Country, nation, and culture"
+    },
+    {
+      "bn": "স্বাধীনতা",
+      "en": "independence",
+      "category": "Class 6 · Country, nation, and culture"
+    },
+    {
+      "bn": "মুক্তি",
+      "en": "freedom",
+      "category": "Class 6 · Country, nation, and culture"
+    },
+    {
+      "bn": "ইতিহাস",
+      "en": "history",
+      "category": "Class 6 · Country, nation, and culture"
+    },
+    {
+      "bn": "ঐতিহ্য",
+      "en": "heritage",
+      "category": "Class 6 · Country, nation, and culture"
+    },
+    {
+      "bn": "সংস্কৃতি",
+      "en": "culture",
+      "category": "Class 6 · Country, nation, and culture"
+    },
+    {
+      "bn": "ভাষা",
+      "en": "language",
+      "category": "Class 6 · Country, nation, and culture"
+    },
+    {
+      "bn": "সাহিত্য",
+      "en": "literature",
+      "category": "Class 6 · Country, nation, and culture"
+    },
+    {
+      "bn": "সংগীত",
+      "en": "music",
+      "category": "Class 6 · Country, nation, and culture"
+    },
+    {
+      "bn": "নৃত্য",
+      "en": "dance",
+      "category": "Class 6 · Country, nation, and culture"
+    },
+    {
+      "bn": "লোকসংস্কৃতি",
+      "en": "folk culture",
+      "category": "Class 6 · Country, nation, and culture"
+    },
+    {
+      "bn": "উৎসব",
+      "en": "festival",
+      "category": "Class 6 · Country, nation, and culture"
+    },
+    {
+      "bn": "স্মৃতিসৌধ",
+      "en": "memorial",
+      "category": "Class 6 · Country, nation, and culture"
+    },
+    {
+      "bn": "ঐতিহাসিক স্থান",
+      "en": "historical site",
+      "category": "Class 6 · Country, nation, and culture"
+    },
+    {
+      "bn": "জাতীয় পরিচয়",
+      "en": "national identity",
+      "category": "Class 6 · Country, nation, and culture"
+    },
+    {
+      "bn": "মূল্যবোধ",
+      "en": "values",
+      "category": "Class 6 · Country, nation, and culture"
+    },
+    {
+      "bn": "প্রজন্ম",
+      "en": "generation",
+      "category": "Class 6 · Country, nation, and culture"
+    },
+    {
+      "bn": "ইতিহাস",
+      "en": "history",
+      "category": "Class 6 · History"
+    },
+    {
+      "bn": "ঐতিহাসিক",
+      "en": "historical",
+      "category": "Class 6 · History"
+    },
+    {
+      "bn": "প্রাচীন",
+      "en": "ancient",
+      "category": "Class 6 · History"
+    },
+    {
+      "bn": "মধ্যযুগ",
+      "en": "Middle Ages",
+      "category": "Class 6 · History"
+    },
+    {
+      "bn": "আধুনিক",
+      "en": "modern",
+      "category": "Class 6 · History"
+    },
+    {
+      "bn": "যুগ",
+      "en": "era",
+      "category": "Class 6 · History"
+    },
+    {
+      "bn": "শতাব্দী",
+      "en": "century",
+      "category": "Class 6 · History"
+    },
+    {
+      "bn": "সাম্রাজ্য",
+      "en": "empire",
+      "category": "Class 6 · History"
+    },
+    {
+      "bn": "রাজা",
+      "en": "king",
+      "category": "Class 6 · History"
+    },
+    {
+      "bn": "শাসক",
+      "en": "ruler",
+      "category": "Class 6 · History"
+    },
+    {
+      "bn": "যুদ্ধ",
+      "en": "war",
+      "category": "Class 6 · History"
+    },
+    {
+      "bn": "সংগ্রাম",
+      "en": "struggle",
+      "category": "Class 6 · History"
+    },
+    {
+      "bn": "আন্দোলন",
+      "en": "movement",
+      "category": "Class 6 · History"
+    },
+    {
+      "bn": "স্বাধীনতা",
+      "en": "independence",
+      "category": "Class 6 · History"
+    },
+    {
+      "bn": "বিজয়",
+      "en": "victory",
+      "category": "Class 6 · History"
+    },
+    {
+      "bn": "পরাজয়",
+      "en": "defeat",
+      "category": "Class 6 · History"
+    },
+    {
+      "bn": "চুক্তি",
+      "en": "treaty",
+      "category": "Class 6 · History"
+    },
+    {
+      "bn": "সভ্যতা",
+      "en": "civilization",
+      "category": "Class 6 · History"
+    },
+    {
+      "bn": "সংস্কৃতি",
+      "en": "culture",
+      "category": "Class 6 · History"
+    },
+    {
+      "bn": "আবিষ্কার",
+      "en": "discovery",
+      "category": "Class 6 · History"
+    },
+    {
+      "bn": "পরিবর্তন",
+      "en": "change",
+      "category": "Class 6 · History"
+    },
+    {
+      "bn": "উত্তরাধিকার",
+      "en": "legacy",
+      "category": "Class 6 · History"
+    },
+    {
+      "bn": "ভূগোল",
+      "en": "geography",
+      "category": "Class 6 · Geography"
+    },
+    {
+      "bn": "পৃথিবী",
+      "en": "earth",
+      "category": "Class 6 · Geography"
+    },
+    {
+      "bn": "মহাদেশ",
+      "en": "continent",
+      "category": "Class 6 · Geography"
+    },
+    {
+      "bn": "মহাসাগর",
+      "en": "ocean",
+      "category": "Class 6 · Geography"
+    },
+    {
+      "bn": "দেশ",
+      "en": "country",
+      "category": "Class 6 · Geography"
+    },
+    {
+      "bn": "সীমান্ত",
+      "en": "border",
+      "category": "Class 6 · Geography"
+    },
+    {
+      "bn": "রাজধানী",
+      "en": "capital",
+      "category": "Class 6 · Geography"
+    },
+    {
+      "bn": "অঞ্চল",
+      "en": "region",
+      "category": "Class 6 · Geography"
+    },
+    {
+      "bn": "জনসংখ্যা",
+      "en": "population",
+      "category": "Class 6 · Geography"
+    },
+    {
+      "bn": "মানচিত্র",
+      "en": "map",
+      "category": "Class 6 · Geography"
+    },
+    {
+      "bn": "অক্ষাংশ",
+      "en": "latitude",
+      "category": "Class 6 · Geography"
+    },
+    {
+      "bn": "দ্রাঘিমাংশ",
+      "en": "longitude",
+      "category": "Class 6 · Geography"
+    },
+    {
+      "bn": "দিক",
+      "en": "direction",
+      "category": "Class 6 · Geography"
+    },
+    {
+      "bn": "উত্তর",
+      "en": "north",
+      "category": "Class 6 · Geography"
+    },
+    {
+      "bn": "দক্ষিণ",
+      "en": "south",
+      "category": "Class 6 · Geography"
+    },
+    {
+      "bn": "পূর্ব",
+      "en": "east",
+      "category": "Class 6 · Geography"
+    },
+    {
+      "bn": "পশ্চিম",
+      "en": "west",
+      "category": "Class 6 · Geography"
+    },
+    {
+      "bn": "নদী",
+      "en": "river",
+      "category": "Class 6 · Geography"
+    },
+    {
+      "bn": "পাহাড়",
+      "en": "mountain",
+      "category": "Class 6 · Geography"
+    },
+    {
+      "bn": "উপত্যকা",
+      "en": "valley",
+      "category": "Class 6 · Geography"
+    },
+    {
+      "bn": "সমভূমি",
+      "en": "plain",
+      "category": "Class 6 · Geography"
+    },
+    {
+      "bn": "মরুভূমি",
+      "en": "desert",
+      "category": "Class 6 · Geography"
+    },
+    {
+      "bn": "দ্বীপ",
+      "en": "island",
+      "category": "Class 6 · Geography"
+    },
+    {
+      "bn": "উপকূল",
+      "en": "coast",
+      "category": "Class 6 · Geography"
+    },
+    {
+      "bn": "পরিবেশ",
+      "en": "environment",
+      "category": "Class 6 · Nature and environment"
+    },
+    {
+      "bn": "প্রকৃতি",
+      "en": "nature",
+      "category": "Class 6 · Nature and environment"
+    },
+    {
+      "bn": "বাস্তুতন্ত্র",
+      "en": "ecosystem",
+      "category": "Class 6 · Nature and environment"
+    },
+    {
+      "bn": "জীববৈচিত্র্য",
+      "en": "biodiversity",
+      "category": "Class 6 · Nature and environment"
+    },
+    {
+      "bn": "বন",
+      "en": "forest",
+      "category": "Class 6 · Nature and environment"
+    },
+    {
+      "bn": "জলাশয়",
+      "en": "body of water",
+      "category": "Class 6 · Nature and environment"
+    },
+    {
+      "bn": "মাটি",
+      "en": "soil",
+      "category": "Class 6 · Nature and environment"
+    },
+    {
+      "bn": "বায়ু",
+      "en": "air",
+      "category": "Class 6 · Nature and environment"
+    },
+    {
+      "bn": "পানি",
+      "en": "water",
+      "category": "Class 6 · Nature and environment"
+    },
+    {
+      "bn": "আবহাওয়া",
+      "en": "weather",
+      "category": "Class 6 · Nature and environment"
+    },
+    {
+      "bn": "জলবায়ু",
+      "en": "climate",
+      "category": "Class 6 · Nature and environment"
+    },
+    {
+      "bn": "দূষণ",
+      "en": "pollution",
+      "category": "Class 6 · Nature and environment"
+    },
+    {
+      "bn": "বায়ুদূষণ",
+      "en": "air pollution",
+      "category": "Class 6 · Nature and environment"
+    },
+    {
+      "bn": "পানিদূষণ",
+      "en": "water pollution",
+      "category": "Class 6 · Nature and environment"
+    },
+    {
+      "bn": "শব্দদূষণ",
+      "en": "noise pollution",
+      "category": "Class 6 · Nature and environment"
+    },
+    {
+      "bn": "বন উজাড়",
+      "en": "deforestation",
+      "category": "Class 6 · Nature and environment"
+    },
+    {
+      "bn": "সংরক্ষণ",
+      "en": "conservation",
+      "category": "Class 6 · Nature and environment"
+    },
+    {
+      "bn": "পুনর্ব্যবহার",
+      "en": "recycling",
+      "category": "Class 6 · Nature and environment"
+    },
+    {
+      "bn": "প্রাকৃতিক সম্পদ",
+      "en": "natural resources",
+      "category": "Class 6 · Nature and environment"
+    },
+    {
+      "bn": "পরিবেশের ভারসাম্য",
+      "en": "ecological balance",
+      "category": "Class 6 · Nature and environment"
+    },
+    {
+      "bn": "বন্যপ্রাণী",
+      "en": "wildlife",
+      "category": "Class 6 · Nature and environment"
+    },
+    {
+      "bn": "বিজ্ঞান",
+      "en": "science",
+      "category": "Class 6 · Science"
+    },
+    {
+      "bn": "বিজ্ঞানী",
+      "en": "scientist",
+      "category": "Class 6 · Science"
+    },
+    {
+      "bn": "পরীক্ষা",
+      "en": "exam",
+      "category": "Class 6 · Science"
+    },
+    {
+      "bn": "পর্যবেক্ষণ",
+      "en": "observation",
+      "category": "Class 6 · Science"
+    },
+    {
+      "bn": "অনুমান",
+      "en": "inference",
+      "category": "Class 6 · Science"
+    },
+    {
+      "bn": "তত্ত্ব",
+      "en": "theory",
+      "category": "Class 6 · Science"
+    },
+    {
+      "bn": "প্রমাণ",
+      "en": "evidence",
+      "category": "Class 6 · Science"
+    },
+    {
+      "bn": "ফলাফল",
+      "en": "result",
+      "category": "Class 6 · Science"
+    },
+    {
+      "bn": "উপসংহার",
+      "en": "conclusion",
+      "category": "Class 6 · Science"
+    },
+    {
+      "bn": "পদার্থ",
+      "en": "matter",
+      "category": "Class 6 · Science"
+    },
+    {
+      "bn": "পরমাণু",
+      "en": "atom",
+      "category": "Class 6 · Science"
+    },
+    {
+      "bn": "অণু",
+      "en": "molecule",
+      "category": "Class 6 · Science"
+    },
+    {
+      "bn": "শক্তি",
+      "en": "strength",
+      "category": "Class 6 · Science"
+    },
+    {
+      "bn": "বল",
+      "en": "force",
+      "category": "Class 6 · Science"
+    },
+    {
+      "bn": "গতি",
+      "en": "motion",
+      "category": "Class 6 · Science"
+    },
+    {
+      "bn": "ঘর্ষণ",
+      "en": "friction",
+      "category": "Class 6 · Science"
+    },
+    {
+      "bn": "তাপ",
+      "en": "heat",
+      "category": "Class 6 · Science"
+    },
+    {
+      "bn": "আলো",
+      "en": "light",
+      "category": "Class 6 · Science"
+    },
+    {
+      "bn": "শব্দ",
+      "en": "word",
+      "category": "Class 6 · Science"
+    },
+    {
+      "bn": "বিদ্যুৎ",
+      "en": "electricity",
+      "category": "Class 6 · Science"
+    },
+    {
+      "bn": "চুম্বক",
+      "en": "magnet",
+      "category": "Class 6 · Science"
+    },
+    {
+      "bn": "রাসায়নিক পরিবর্তন",
+      "en": "chemical change",
+      "category": "Class 6 · Science"
+    },
+    {
+      "bn": "ভৌত পরিবর্তন",
+      "en": "physical change",
+      "category": "Class 6 · Science"
+    },
+    {
+      "bn": "জীব",
+      "en": "living organism",
+      "category": "Class 6 · Biology"
+    },
+    {
+      "bn": "কোষ",
+      "en": "cell",
+      "category": "Class 6 · Biology"
+    },
+    {
+      "bn": "উদ্ভিদ",
+      "en": "plant",
+      "category": "Class 6 · Biology"
+    },
+    {
+      "bn": "প্রাণী",
+      "en": "animal",
+      "category": "Class 6 · Biology"
+    },
+    {
+      "bn": "অঙ্গ",
+      "en": "organ",
+      "category": "Class 6 · Biology"
+    },
+    {
+      "bn": "অঙ্গতন্ত্র",
+      "en": "organ system",
+      "category": "Class 6 · Biology"
+    },
+    {
+      "bn": "শ্বাসপ্রশ্বাস",
+      "en": "respiration",
+      "category": "Class 6 · Biology"
+    },
+    {
+      "bn": "পরিপাক",
+      "en": "digestion",
+      "category": "Class 6 · Biology"
+    },
+    {
+      "bn": "রক্ত",
+      "en": "blood",
+      "category": "Class 6 · Biology"
+    },
+    {
+      "bn": "হৃদপিণ্ড",
+      "en": "heart",
+      "category": "Class 6 · Biology"
+    },
+    {
+      "bn": "ফুসফুস",
+      "en": "lungs",
+      "category": "Class 6 · Biology"
+    },
+    {
+      "bn": "মস্তিষ্ক",
+      "en": "brain",
+      "category": "Class 6 · Biology"
+    },
+    {
+      "bn": "হাড়",
+      "en": "bone",
+      "category": "Class 6 · Biology"
+    },
+    {
+      "bn": "পেশি",
+      "en": "muscle",
+      "category": "Class 6 · Biology"
+    },
+    {
+      "bn": "খাদ্য",
+      "en": "food",
+      "category": "Class 6 · Biology"
+    },
+    {
+      "bn": "পুষ্টি",
+      "en": "nutrition",
+      "category": "Class 6 · Biology"
+    },
+    {
+      "bn": "বৃদ্ধি",
+      "en": "growth",
+      "category": "Class 6 · Biology"
+    },
+    {
+      "bn": "প্রজনন",
+      "en": "reproduction",
+      "category": "Class 6 · Biology"
+    },
+    {
+      "bn": "বাসস্থান",
+      "en": "habitat",
+      "category": "Class 6 · Biology"
+    },
+    {
+      "bn": "অভিযোজন",
+      "en": "adaptation",
+      "category": "Class 6 · Biology"
+    },
+    {
+      "bn": "খাদ্যশৃঙ্খল",
+      "en": "food chain",
+      "category": "Class 6 · Biology"
+    },
+    {
+      "bn": "সূর্য",
+      "en": "sun",
+      "category": "Class 6 · Earth and space"
+    },
+    {
+      "bn": "চাঁদ",
+      "en": "moon",
+      "category": "Class 6 · Earth and space"
+    },
+    {
+      "bn": "পৃথিবী",
+      "en": "earth",
+      "category": "Class 6 · Earth and space"
+    },
+    {
+      "bn": "গ্রহ",
+      "en": "planet",
+      "category": "Class 6 · Earth and space"
+    },
+    {
+      "bn": "নক্ষত্র",
+      "en": "star",
+      "category": "Class 6 · Earth and space"
+    },
+    {
+      "bn": "মহাকাশ",
+      "en": "space",
+      "category": "Class 6 · Earth and space"
+    },
+    {
+      "bn": "সৌরজগৎ",
+      "en": "solar system",
+      "category": "Class 6 · Earth and space"
+    },
+    {
+      "bn": "উপগ্রহ",
+      "en": "satellite",
+      "category": "Class 6 · Earth and space"
+    },
+    {
+      "bn": "কক্ষপথ",
+      "en": "orbit",
+      "category": "Class 6 · Earth and space"
+    },
+    {
+      "bn": "ঘূর্ণন",
+      "en": "rotation",
+      "category": "Class 6 · Earth and space"
+    },
+    {
+      "bn": "পরিক্রমণ",
+      "en": "revolution",
+      "category": "Class 6 · Earth and space"
+    },
+    {
+      "bn": "মহাকর্ষ",
+      "en": "gravity",
+      "category": "Class 6 · Earth and space"
+    },
+    {
+      "bn": "দিন",
+      "en": "day",
+      "category": "Class 6 · Earth and space"
+    },
+    {
+      "bn": "রাত",
+      "en": "night",
+      "category": "Class 6 · Earth and space"
+    },
+    {
+      "bn": "ঋতু",
+      "en": "season",
+      "category": "Class 6 · Earth and space"
+    },
+    {
+      "bn": "গ্রহণ",
+      "en": "eclipse",
+      "category": "Class 6 · Earth and space"
+    },
+    {
+      "bn": "জ্যোতির্বিজ্ঞান",
+      "en": "astronomy",
+      "category": "Class 6 · Earth and space"
+    },
+    {
+      "bn": "স্বাস্থ্য",
+      "en": "health",
+      "category": "Class 6 · Health and nutrition"
+    },
+    {
+      "bn": "পুষ্টি",
+      "en": "nutrition",
+      "category": "Class 6 · Health and nutrition"
+    },
+    {
+      "bn": "সুষম খাদ্য",
+      "en": "balanced diet",
+      "category": "Class 6 · Health and nutrition"
+    },
+    {
+      "bn": "শর্করা",
+      "en": "carbohydrate",
+      "category": "Class 6 · Health and nutrition"
+    },
+    {
+      "bn": "প্রোটিন",
+      "en": "protein",
+      "category": "Class 6 · Health and nutrition"
+    },
+    {
+      "bn": "চর্বি",
+      "en": "fat",
+      "category": "Class 6 · Health and nutrition"
+    },
+    {
+      "bn": "ভিটামিন",
+      "en": "vitamin",
+      "category": "Class 6 · Health and nutrition"
+    },
+    {
+      "bn": "খনিজ",
+      "en": "mineral",
+      "category": "Class 6 · Health and nutrition"
+    },
+    {
+      "bn": "রোগ",
+      "en": "disease",
+      "category": "Class 6 · Health and nutrition"
+    },
+    {
+      "bn": "রোগজীবাণু",
+      "en": "germ",
+      "category": "Class 6 · Health and nutrition"
+    },
+    {
+      "bn": "সংক্রমণ",
+      "en": "infection",
+      "category": "Class 6 · Health and nutrition"
+    },
+    {
+      "bn": "প্রতিরোধ",
+      "en": "prevention",
+      "category": "Class 6 · Health and nutrition"
+    },
+    {
+      "bn": "চিকিৎসা",
+      "en": "treatment",
+      "category": "Class 6 · Health and nutrition"
+    },
+    {
+      "bn": "পরিচ্ছন্নতা",
+      "en": "cleanliness",
+      "category": "Class 6 · Health and nutrition"
+    },
+    {
+      "bn": "ব্যায়াম",
+      "en": "exercise",
+      "category": "Class 6 · Health and nutrition"
+    },
+    {
+      "bn": "বিশ্রাম",
+      "en": "rest",
+      "category": "Class 6 · Health and nutrition"
+    },
+    {
+      "bn": "মানসিক স্বাস্থ্য",
+      "en": "mental health",
+      "category": "Class 6 · Health and nutrition"
+    },
+    {
+      "bn": "স্বাস্থ্যকর অভ্যাস",
+      "en": "healthy habit",
+      "category": "Class 6 · Health and nutrition"
+    },
+    {
+      "bn": "প্রযুক্তি",
+      "en": "technology",
+      "category": "Class 6 · Technology"
+    },
+    {
+      "bn": "কম্পিউটার",
+      "en": "computer",
+      "category": "Class 6 · Technology"
+    },
+    {
+      "bn": "ইন্টারনেট",
+      "en": "internet",
+      "category": "Class 6 · Technology"
+    },
+    {
+      "bn": "সফটওয়্যার",
+      "en": "software",
+      "category": "Class 6 · Technology"
+    },
+    {
+      "bn": "হার্ডওয়্যার",
+      "en": "hardware",
+      "category": "Class 6 · Technology"
+    },
+    {
+      "bn": "তথ্য",
+      "en": "information",
+      "category": "Class 6 · Technology"
+    },
+    {
+      "bn": "ডেটা",
+      "en": "data",
+      "category": "Class 6 · Technology"
+    },
+    {
+      "bn": "নেটওয়ার্ক",
+      "en": "network",
+      "category": "Class 6 · Technology"
+    },
+    {
+      "bn": "যোগাযোগ",
+      "en": "communication",
+      "category": "Class 6 · Technology"
+    },
+    {
+      "bn": "ডিজিটাল",
+      "en": "digital",
+      "category": "Class 6 · Technology"
+    },
+    {
+      "bn": "অনলাইন",
+      "en": "online",
+      "category": "Class 6 · Technology"
+    },
+    {
+      "bn": "গোপনীয়তা",
+      "en": "privacy",
+      "category": "Class 6 · Technology"
+    },
+    {
+      "bn": "নিরাপত্তা",
+      "en": "safety",
+      "category": "Class 6 · Technology"
+    },
+    {
+      "bn": "পাসওয়ার্ড",
+      "en": "password",
+      "category": "Class 6 · Technology"
+    },
+    {
+      "bn": "সামাজিক যোগাযোগমাধ্যম",
+      "en": "social media",
+      "category": "Class 6 · Technology"
+    },
+    {
+      "bn": "অনুসন্ধান",
+      "en": "search",
+      "category": "Class 6 · Technology"
+    },
+    {
+      "bn": "প্রযুক্তির ব্যবহার",
+      "en": "use of technology",
+      "category": "Class 6 · Technology"
+    },
+    {
+      "bn": "অপব্যবহার",
+      "en": "misuse",
+      "category": "Class 6 · Technology"
+    },
+    {
+      "bn": "অর্থনীতি",
+      "en": "economy",
+      "category": "Class 6 · Economics and money"
+    },
+    {
+      "bn": "অর্থ",
+      "en": "money",
+      "category": "Class 6 · Economics and money"
+    },
+    {
+      "bn": "টাকা",
+      "en": "money",
+      "category": "Class 6 · Economics and money"
+    },
+    {
+      "bn": "আয়",
+      "en": "income",
+      "category": "Class 6 · Economics and money"
+    },
+    {
+      "bn": "ব্যয়",
+      "en": "expense",
+      "category": "Class 6 · Economics and money"
+    },
+    {
+      "bn": "সঞ্চয়",
+      "en": "savings",
+      "category": "Class 6 · Economics and money"
+    },
+    {
+      "bn": "বাজেট",
+      "en": "budget",
+      "category": "Class 6 · Economics and money"
+    },
+    {
+      "bn": "মূল্য",
+      "en": "value",
+      "category": "Class 6 · Economics and money"
+    },
+    {
+      "bn": "দাম",
+      "en": "price",
+      "category": "Class 6 · Economics and money"
+    },
+    {
+      "bn": "পণ্য",
+      "en": "product",
+      "category": "Class 6 · Economics and money"
+    },
+    {
+      "bn": "সেবা",
+      "en": "service",
+      "category": "Class 6 · Economics and money"
+    },
+    {
+      "bn": "বাজার",
+      "en": "market",
+      "category": "Class 6 · Economics and money"
+    },
+    {
+      "bn": "চাহিদা",
+      "en": "demand",
+      "category": "Class 6 · Economics and money"
+    },
+    {
+      "bn": "সরবরাহ",
+      "en": "supply",
+      "category": "Class 6 · Economics and money"
+    },
+    {
+      "bn": "ক্রয়",
+      "en": "purchase",
+      "category": "Class 6 · Economics and money"
+    },
+    {
+      "bn": "বিক্রয়",
+      "en": "sale",
+      "category": "Class 6 · Economics and money"
+    },
+    {
+      "bn": "ব্যবসা",
+      "en": "business",
+      "category": "Class 6 · Economics and money"
+    },
+    {
+      "bn": "লাভ",
+      "en": "profit",
+      "category": "Class 6 · Economics and money"
+    },
+    {
+      "bn": "ক্ষতি",
+      "en": "loss",
+      "category": "Class 6 · Economics and money"
+    },
+    {
+      "bn": "সম্পদ",
+      "en": "resource",
+      "category": "Class 6 · Economics and money"
+    },
+    {
+      "bn": "প্রয়োজন",
+      "en": "need",
+      "category": "Class 6 · Economics and money"
+    },
+    {
+      "bn": "ইচ্ছা",
+      "en": "desire",
+      "category": "Class 6 · Economics and money"
+    },
+    {
+      "bn": "আনন্দ",
+      "en": "joy",
+      "category": "Class 6 · Feelings and mental states"
+    },
+    {
+      "bn": "দুঃখ",
+      "en": "sadness",
+      "category": "Class 6 · Feelings and mental states"
+    },
+    {
+      "bn": "হতাশা",
+      "en": "despair",
+      "category": "Class 6 · Feelings and mental states"
+    },
+    {
+      "bn": "আশা",
+      "en": "hope",
+      "category": "Class 6 · Feelings and mental states"
+    },
+    {
+      "bn": "উদ্বেগ",
+      "en": "anxiety",
+      "category": "Class 6 · Feelings and mental states"
+    },
+    {
+      "bn": "ভয়",
+      "en": "fear",
+      "category": "Class 6 · Feelings and mental states"
+    },
+    {
+      "bn": "সাহস",
+      "en": "courage",
+      "category": "Class 6 · Feelings and mental states"
+    },
+    {
+      "bn": "আত্মবিশ্বাস",
+      "en": "confidence",
+      "category": "Class 6 · Feelings and mental states"
+    },
+    {
+      "bn": "কৃতজ্ঞতা",
+      "en": "gratitude",
+      "category": "Class 6 · Feelings and mental states"
+    },
+    {
+      "bn": "গর্ব",
+      "en": "pride",
+      "category": "Class 6 · Feelings and mental states"
+    },
+    {
+      "bn": "লজ্জা",
+      "en": "shyness",
+      "category": "Class 6 · Feelings and mental states"
+    },
+    {
+      "bn": "বিস্ময়",
+      "en": "wonder",
+      "category": "Class 6 · Feelings and mental states"
+    },
+    {
+      "bn": "উত্তেজনা",
+      "en": "excitement",
+      "category": "Class 6 · Feelings and mental states"
+    },
+    {
+      "bn": "একাকিত্ব",
+      "en": "loneliness",
+      "category": "Class 6 · Feelings and mental states"
+    },
+    {
+      "bn": "সহানুভূতি",
+      "en": "empathy",
+      "category": "Class 6 · Feelings and mental states"
+    },
+    {
+      "bn": "সহমর্মিতা",
+      "en": "compassion",
+      "category": "Class 6 · Feelings and mental states"
+    },
+    {
+      "bn": "বিরক্তি",
+      "en": "annoyance",
+      "category": "Class 6 · Feelings and mental states"
+    },
+    {
+      "bn": "আগ্রহ",
+      "en": "interest",
+      "category": "Class 6 · Feelings and mental states"
+    },
+    {
+      "bn": "কৌতূহল",
+      "en": "curiosity",
+      "category": "Class 6 · Feelings and mental states"
+    },
+    {
+      "bn": "সন্তুষ্টি",
+      "en": "satisfaction",
+      "category": "Class 6 · Feelings and mental states"
+    },
+    {
+      "bn": "সৎ",
+      "en": "honest",
+      "category": "Class 6 · Character and personality"
+    },
+    {
+      "bn": "অসৎ",
+      "en": "dishonest",
+      "category": "Class 6 · Character and personality"
+    },
+    {
+      "bn": "ন্যায়পরায়ণ",
+      "en": "just",
+      "category": "Class 6 · Character and personality"
+    },
+    {
+      "bn": "দায়িত্বশীল",
+      "en": "responsible",
+      "category": "Class 6 · Character and personality"
+    },
+    {
+      "bn": "পরিশ্রমী",
+      "en": "hardworking",
+      "category": "Class 6 · Character and personality"
+    },
+    {
+      "bn": "অলস",
+      "en": "lazy",
+      "category": "Class 6 · Character and personality"
+    },
+    {
+      "bn": "সাহসী",
+      "en": "brave",
+      "category": "Class 6 · Character and personality"
+    },
+    {
+      "bn": "ভীরু",
+      "en": "cowardly",
+      "category": "Class 6 · Character and personality"
+    },
+    {
+      "bn": "বিনয়ী",
+      "en": "humble",
+      "category": "Class 6 · Character and personality"
+    },
+    {
+      "bn": "অহংকারী",
+      "en": "arrogant",
+      "category": "Class 6 · Character and personality"
+    },
+    {
+      "bn": "ধৈর্যশীল",
+      "en": "patient",
+      "category": "Class 6 · Character and personality"
+    },
+    {
+      "bn": "অধৈর্য",
+      "en": "impatient",
+      "category": "Class 6 · Character and personality"
+    },
+    {
+      "bn": "বিশ্বস্ত",
+      "en": "trustworthy",
+      "category": "Class 6 · Character and personality"
+    },
+    {
+      "bn": "অবিশ্বস্ত",
+      "en": "untrustworthy",
+      "category": "Class 6 · Character and personality"
+    },
+    {
+      "bn": "উদার",
+      "en": "generous",
+      "category": "Class 6 · Character and personality"
+    },
+    {
+      "bn": "স্বার্থপর",
+      "en": "selfish",
+      "category": "Class 6 · Character and personality"
+    },
+    {
+      "bn": "সহানুভূতিশীল",
+      "en": "empathetic",
+      "category": "Class 6 · Character and personality"
+    },
+    {
+      "bn": "আত্মবিশ্বাসী",
+      "en": "confident",
+      "category": "Class 6 · Character and personality"
+    },
+    {
+      "bn": "কৌতূহলী",
+      "en": "curious",
+      "category": "Class 6 · Character and personality"
+    },
+    {
+      "bn": "শৃঙ্খলাবদ্ধ",
+      "en": "disciplined",
+      "category": "Class 6 · Character and personality"
+    },
+    {
+      "bn": "বিশ্লেষণ করা",
+      "en": "to analyze",
+      "category": "Class 6 · Advanced verbs"
+    },
+    {
+      "bn": "ব্যাখ্যা করা",
+      "en": "to explain",
+      "category": "Class 6 · Advanced verbs"
+    },
+    {
+      "bn": "বর্ণনা করা",
+      "en": "to describe",
+      "category": "Class 6 · Advanced verbs"
+    },
+    {
+      "bn": "মূল্যায়ন করা",
+      "en": "to evaluate",
+      "category": "Class 6 · Advanced verbs"
+    },
+    {
+      "bn": "তুলনা করা",
+      "en": "to compare",
+      "category": "Class 6 · Advanced verbs"
+    },
+    {
+      "bn": "শ্রেণিবদ্ধ করা",
+      "en": "to classify",
+      "category": "Class 6 · Advanced verbs"
+    },
+    {
+      "bn": "নির্ধারণ করা",
+      "en": "to determine",
+      "category": "Class 6 · Advanced verbs"
+    },
+    {
+      "bn": "অনুমান করা",
+      "en": "to infer",
+      "category": "Class 6 · Advanced verbs"
+    },
+    {
+      "bn": "প্রমাণ করা",
+      "en": "to prove",
+      "category": "Class 6 · Advanced verbs"
+    },
+    {
+      "bn": "যুক্তি দেওয়া",
+      "en": "to reason",
+      "category": "Class 6 · Advanced verbs"
+    },
+    {
+      "bn": "উপস্থাপন করা",
+      "en": "to present",
+      "category": "Class 6 · Advanced verbs"
+    },
+    {
+      "bn": "সংক্ষেপ করা",
+      "en": "to summarize",
+      "category": "Class 6 · Advanced verbs"
+    },
+    {
+      "bn": "সমর্থন করা",
+      "en": "to support",
+      "category": "Class 6 · Advanced verbs"
+    },
+    {
+      "bn": "বিরোধিতা করা",
+      "en": "to oppose",
+      "category": "Class 6 · Advanced verbs"
+    },
+    {
+      "bn": "পর্যবেক্ষণ করা",
+      "en": "to observe",
+      "category": "Class 6 · Advanced verbs"
+    },
+    {
+      "bn": "গবেষণা করা",
+      "en": "to research",
+      "category": "Class 6 · Advanced verbs"
+    },
+    {
+      "bn": "আবিষ্কার করা",
+      "en": "to discover",
+      "category": "Class 6 · Advanced verbs"
+    },
+    {
+      "bn": "অনুসন্ধান করা",
+      "en": "to investigate",
+      "category": "Class 6 · Advanced verbs"
+    },
+    {
+      "bn": "পরিকল্পনা করা",
+      "en": "to plan",
+      "category": "Class 6 · Advanced verbs"
+    },
+    {
+      "bn": "সিদ্ধান্ত নেওয়া",
+      "en": "to decide",
+      "category": "Class 6 · Advanced verbs"
+    },
+    {
+      "bn": "অংশগ্রহণ করা",
+      "en": "to participate",
+      "category": "Class 6 · Useful verbs"
+    },
+    {
+      "bn": "নেতৃত্ব দেওয়া",
+      "en": "to lead",
+      "category": "Class 6 · Useful verbs"
+    },
+    {
+      "bn": "সহযোগিতা করা",
+      "en": "to cooperate",
+      "category": "Class 6 · Useful verbs"
+    },
+    {
+      "bn": "উৎসাহিত করা",
+      "en": "to encourage",
+      "category": "Class 6 · Useful verbs"
+    },
+    {
+      "bn": "প্রতিরোধ করা",
+      "en": "to prevent",
+      "category": "Class 6 · Useful verbs"
+    },
+    {
+      "bn": "সংরক্ষণ করা",
+      "en": "to conserve",
+      "category": "Class 6 · Useful verbs"
+    },
+    {
+      "bn": "পরিবর্তন করা",
+      "en": "to change",
+      "category": "Class 6 · Useful verbs"
+    },
+    {
+      "bn": "উন্নত করা",
+      "en": "to improve",
+      "category": "Class 6 · Useful verbs"
+    },
+    {
+      "bn": "প্রভাবিত করা",
+      "en": "to influence",
+      "category": "Class 6 · Useful verbs"
+    },
+    {
+      "bn": "প্রকাশ করা",
+      "en": "to express",
+      "category": "Class 6 · Useful verbs"
+    },
+    {
+      "bn": "উল্লেখ করা",
+      "en": "to mention",
+      "category": "Class 6 · Useful verbs"
+    },
+    {
+      "bn": "স্বীকার করা",
+      "en": "to acknowledge",
+      "category": "Class 6 · Useful verbs"
+    },
+    {
+      "bn": "প্রত্যাখ্যান করা",
+      "en": "to reject",
+      "category": "Class 6 · Useful verbs"
+    },
+    {
+      "bn": "গ্রহণ করা",
+      "en": "to accept",
+      "category": "Class 6 · Useful verbs"
+    },
+    {
+      "bn": "বিবেচনা করা",
+      "en": "to consider",
+      "category": "Class 6 · Useful verbs"
+    },
+    {
+      "bn": "নির্ভর করা",
+      "en": "to depend",
+      "category": "Class 6 · Useful verbs"
+    },
+    {
+      "bn": "সম্পর্ক স্থাপন করা",
+      "en": "to establish a relationship",
+      "category": "Class 6 · Useful verbs"
+    },
+    {
+      "bn": "গুরুত্বপূর্ণ",
+      "en": "important",
+      "category": "Class 6 · Descriptive words"
+    },
+    {
+      "bn": "প্রয়োজনীয়",
+      "en": "necessary",
+      "category": "Class 6 · Descriptive words"
+    },
+    {
+      "bn": "কার্যকর",
+      "en": "effective",
+      "category": "Class 6 · Descriptive words"
+    },
+    {
+      "bn": "অকার্যকর",
+      "en": "ineffective",
+      "category": "Class 6 · Descriptive words"
+    },
+    {
+      "bn": "ইতিবাচক",
+      "en": "positive",
+      "category": "Class 6 · Descriptive words"
+    },
+    {
+      "bn": "নেতিবাচক",
+      "en": "negative",
+      "category": "Class 6 · Descriptive words"
+    },
+    {
+      "bn": "উপকারী",
+      "en": "beneficial",
+      "category": "Class 6 · Descriptive words"
+    },
+    {
+      "bn": "ক্ষতিকর",
+      "en": "harmful",
+      "category": "Class 6 · Descriptive words"
+    },
+    {
+      "bn": "মূল্যবান",
+      "en": "valuable",
+      "category": "Class 6 · Descriptive words"
+    },
+    {
+      "bn": "বিরল",
+      "en": "rare",
+      "category": "Class 6 · Descriptive words"
+    },
+    {
+      "bn": "সাধারণ",
+      "en": "common",
+      "category": "Class 6 · Descriptive words"
+    },
+    {
+      "bn": "জটিল",
+      "en": "complex",
+      "category": "Class 6 · Descriptive words"
+    },
+    {
+      "bn": "সহজ",
+      "en": "simple",
+      "category": "Class 6 · Descriptive words"
+    },
+    {
+      "bn": "যুক্তিসঙ্গত",
+      "en": "reasonable",
+      "category": "Class 6 · Descriptive words"
+    },
+    {
+      "bn": "অযৌক্তিক",
+      "en": "illogical",
+      "category": "Class 6 · Descriptive words"
+    },
+    {
+      "bn": "শক্তিশালী",
+      "en": "strong",
+      "category": "Class 6 · Descriptive words"
+    },
+    {
+      "bn": "দুর্বল",
+      "en": "weak",
+      "category": "Class 6 · Descriptive words"
+    },
+    {
+      "bn": "স্থায়ী",
+      "en": "permanent",
+      "category": "Class 6 · Descriptive words"
+    },
+    {
+      "bn": "অস্থায়ী",
+      "en": "temporary",
+      "category": "Class 6 · Descriptive words"
+    },
+    {
+      "bn": "প্রাচীন",
+      "en": "ancient",
+      "category": "Class 6 · Descriptive words"
+    },
+    {
+      "bn": "আধুনিক",
+      "en": "modern",
+      "category": "Class 6 · Descriptive words"
+    },
+    {
+      "bn": "বিস্তৃত",
+      "en": "extensive",
+      "category": "Class 6 · Descriptive words"
+    },
+    {
+      "bn": "সীমিত",
+      "en": "limited",
+      "category": "Class 6 · Descriptive words"
+    },
+    {
+      "bn": "সঠিক",
+      "en": "correct",
+      "category": "Class 6 · Descriptive words"
+    },
+    {
+      "bn": "ভুল",
+      "en": "incorrect",
+      "category": "Class 6 · Descriptive words"
+    },
+    {
+      "bn": "প্রথমত",
+      "en": "firstly",
+      "category": "Class 6 · Connectors and logical words"
+    },
+    {
+      "bn": "দ্বিতীয়ত",
+      "en": "secondly",
+      "category": "Class 6 · Connectors and logical words"
+    },
+    {
+      "bn": "তৃতীয়ত",
+      "en": "thirdly",
+      "category": "Class 6 · Connectors and logical words"
+    },
+    {
+      "bn": "এছাড়া",
+      "en": "in addition",
+      "category": "Class 6 · Connectors and logical words"
+    },
+    {
+      "bn": "পাশাপাশি",
+      "en": "in addition",
+      "category": "Class 6 · Connectors and logical words"
+    },
+    {
+      "bn": "অন্যদিকে",
+      "en": "on the other hand",
+      "category": "Class 6 · Connectors and logical words"
+    },
+    {
+      "bn": "বিপরীতে",
+      "en": "in contrast",
+      "category": "Class 6 · Connectors and logical words"
+    },
+    {
+      "bn": "উদাহরণস্বরূপ",
+      "en": "for example",
+      "category": "Class 6 · Connectors and logical words"
+    },
+    {
+      "bn": "বিশেষ করে",
+      "en": "especially",
+      "category": "Class 6 · Connectors and logical words"
+    },
+    {
+      "bn": "কারণ",
+      "en": "because",
+      "category": "Class 6 · Connectors and logical words"
+    },
+    {
+      "bn": "তাই",
+      "en": "therefore",
+      "category": "Class 6 · Connectors and logical words"
+    },
+    {
+      "bn": "এজন্য",
+      "en": "for this reason",
+      "category": "Class 6 · Connectors and logical words"
+    },
+    {
+      "bn": "ফলস্বরূপ",
+      "en": "as a result",
+      "category": "Class 6 · Connectors and logical words"
+    },
+    {
+      "bn": "যদিও",
+      "en": "although",
+      "category": "Class 6 · Connectors and logical words"
+    },
+    {
+      "bn": "তবুও",
+      "en": "nevertheless",
+      "category": "Class 6 · Connectors and logical words"
+    },
+    {
+      "bn": "যেহেতু",
+      "en": "since",
+      "category": "Class 6 · Connectors and logical words"
+    },
+    {
+      "bn": "সেহেতু",
+      "en": "therefore",
+      "category": "Class 6 · Connectors and logical words"
+    },
+    {
+      "bn": "যদি",
+      "en": "if",
+      "category": "Class 6 · Connectors and logical words"
+    },
+    {
+      "bn": "তবে",
+      "en": "then",
+      "category": "Class 6 · Connectors and logical words"
+    },
+    {
+      "bn": "অন্যথায়",
+      "en": "otherwise",
+      "category": "Class 6 · Connectors and logical words"
+    },
+    {
+      "bn": "অবশেষে",
+      "en": "finally",
+      "category": "Class 6 · Connectors and logical words"
+    },
+    {
+      "bn": "সবশেষে",
+      "en": "finally",
+      "category": "Class 6 · Connectors and logical words"
+    },
+    {
+      "bn": "সংক্ষেপে",
+      "en": "in brief",
+      "category": "Class 6 · Connectors and logical words"
+    },
+    {
+      "bn": "চরিত্র",
+      "en": "character",
+      "category": "Class 6 · Story analysis"
+    },
+    {
+      "bn": "উদ্দেশ্য",
+      "en": "purpose",
+      "category": "Class 6 · Story analysis"
+    },
+    {
+      "bn": "সমস্যা",
+      "en": "problem",
+      "category": "Class 6 · Story analysis"
+    },
+    {
+      "bn": "সংঘাত",
+      "en": "conflict",
+      "category": "Class 6 · Story analysis"
+    },
+    {
+      "bn": "সিদ্ধান্ত",
+      "en": "decision",
+      "category": "Class 6 · Story analysis"
+    },
+    {
+      "bn": "পরিবর্তন",
+      "en": "change",
+      "category": "Class 6 · Story analysis"
+    },
+    {
+      "bn": "শিক্ষা",
+      "en": "education",
+      "category": "Class 6 · Story analysis"
+    },
+    {
+      "bn": "মূলভাব",
+      "en": "main idea",
+      "category": "Class 6 · Story analysis"
+    },
+    {
+      "bn": "বার্তা",
+      "en": "message",
+      "category": "Class 6 · Story analysis"
+    },
+    {
+      "bn": "পরিবেশ",
+      "en": "environment",
+      "category": "Class 6 · Story analysis"
+    },
+    {
+      "bn": "পটভূমি",
+      "en": "setting",
+      "category": "Class 6 · Story analysis"
+    },
+    {
+      "bn": "ঘটনা",
+      "en": "event",
+      "category": "Class 6 · Story analysis"
+    },
+    {
+      "bn": "সূত্র",
+      "en": "clue",
+      "category": "Class 6 · Story analysis"
+    },
+    {
+      "bn": "প্রমাণ",
+      "en": "evidence",
+      "category": "Class 6 · Story analysis"
+    },
+    {
+      "bn": "সম্পর্ক",
+      "en": "relationship",
+      "category": "Class 6 · Story analysis"
+    },
+    {
+      "bn": "মূল বিষয়",
+      "en": "main topic",
+      "category": "Class 6 · Informational text"
+    },
+    {
+      "bn": "সহায়ক তথ্য",
+      "en": "supporting detail",
+      "category": "Class 6 · Informational text"
+    },
+    {
+      "bn": "তথ্যসূত্র",
+      "en": "source",
+      "category": "Class 6 · Informational text"
+    },
+    {
+      "bn": "উদাহরণ",
+      "en": "example",
+      "category": "Class 6 · Informational text"
+    },
+    {
+      "bn": "কারণ",
+      "en": "because",
+      "category": "Class 6 · Informational text"
+    },
+    {
+      "bn": "ফলাফল",
+      "en": "result",
+      "category": "Class 6 · Informational text"
+    },
+    {
+      "bn": "তুলনা",
+      "en": "comparison",
+      "category": "Class 6 · Informational text"
+    },
+    {
+      "bn": "ব্যাখ্যা",
+      "en": "explanation",
+      "category": "Class 6 · Informational text"
+    },
+    {
+      "bn": "সংজ্ঞা",
+      "en": "definition",
+      "category": "Class 6 · Informational text"
+    },
+    {
+      "bn": "শ্রেণিবিন্যাস",
+      "en": "classification",
+      "category": "Class 6 · Informational text"
+    },
+    {
+      "bn": "উপসংহার",
+      "en": "conclusion",
+      "category": "Class 6 · Informational text"
+    },
+    {
+      "bn": "তথ্য দেওয়া",
+      "en": "to inform",
+      "category": "Class 6 · Author's purpose"
+    },
+    {
+      "bn": "ব্যাখ্যা করা",
+      "en": "to explain",
+      "category": "Class 6 · Author's purpose"
+    },
+    {
+      "bn": "বোঝানো",
+      "en": "to explain",
+      "category": "Class 6 · Author's purpose"
+    },
+    {
+      "bn": "আনন্দ দেওয়া",
+      "en": "to entertain",
+      "category": "Class 6 · Author's purpose"
+    },
+    {
+      "bn": "মতামত প্রকাশ করা",
+      "en": "to express an opinion",
+      "category": "Class 6 · Author's purpose"
+    },
+    {
+      "bn": "পাঠককে প্রভাবিত করা",
+      "en": "to persuade the reader",
+      "category": "Class 6 · Author's purpose"
+    },
+    {
+      "bn": "সতর্ক করা",
+      "en": "to warn",
+      "category": "Class 6 · Author's purpose"
+    },
+    {
+      "bn": "উৎসাহ দেওয়া",
+      "en": "to encourage",
+      "category": "Class 6 · Author's purpose"
+    }
+  ],
+  "phrases": [
+    {
+      "bn": "আমার মতে এই সিদ্ধান্তের পক্ষে বেশ কিছু যুক্তি রয়েছে।",
+      "en": "Expressing opinions practice 1",
+      "context": "Expressing opinions",
+      "category": "Class 6 · Expressing opinions"
+    },
+    {
+      "bn": "আমি মনে করি বিষয়টি একাধিক দৃষ্টিকোণ থেকে দেখা দরকার।",
+      "en": "Expressing opinions practice 2",
+      "context": "Expressing opinions",
+      "category": "Class 6 · Expressing opinions"
+    },
+    {
+      "bn": "আমার দৃষ্টিতে এই সমস্যার সবচেয়ে কার্যকর সমাধান হলো সচেতনতা বৃদ্ধি করা।",
+      "en": "Expressing opinions practice 3",
+      "context": "Expressing opinions",
+      "category": "Class 6 · Expressing opinions"
+    },
+    {
+      "bn": "আমি এই মতের সঙ্গে সম্পূর্ণ একমত নই।",
+      "en": "Expressing opinions practice 4",
+      "context": "Expressing opinions",
+      "category": "Class 6 · Expressing opinions"
+    },
+    {
+      "bn": "আমি আংশিকভাবে একমত, তবে কিছু বিষয় বিবেচনা করা দরকার।",
+      "en": "Expressing opinions practice 5",
+      "context": "Expressing opinions",
+      "category": "Class 6 · Expressing opinions"
+    },
+    {
+      "bn": "আমার ধারণা, সিদ্ধান্ত নেওয়ার আগে আরও তথ্য সংগ্রহ করা উচিত।",
+      "en": "Expressing opinions practice 6",
+      "context": "Expressing opinions",
+      "category": "Class 6 · Expressing opinions"
+    },
+    {
+      "bn": "আমার বক্তব্যের প্রথম কারণ হলো এটি মানুষের উপকারে আসে।",
+      "en": "Giving reasons practice 1",
+      "context": "Giving reasons",
+      "category": "Class 6 · Giving reasons"
+    },
+    {
+      "bn": "দ্বিতীয়ত, এই পদ্ধতিটি তুলনামূলকভাবে কম ব্যয়বহুল।",
+      "en": "Giving reasons practice 2",
+      "context": "Giving reasons",
+      "category": "Class 6 · Giving reasons"
+    },
+    {
+      "bn": "এছাড়া, এটি পরিবেশের ক্ষতিও কমাতে পারে।",
+      "en": "Giving reasons practice 3",
+      "context": "Giving reasons",
+      "category": "Class 6 · Giving reasons"
+    },
+    {
+      "bn": "এই কারণগুলো বিবেচনা করলে সিদ্ধান্তটি যুক্তিসঙ্গত বলে মনে হয়।",
+      "en": "Giving reasons practice 4",
+      "context": "Giving reasons",
+      "category": "Class 6 · Giving reasons"
+    },
+    {
+      "bn": "লেখাটিতে উল্লেখ করা হয়েছে যে এলাকায় গাছের সংখ্যা কমে গেছে।",
+      "en": "Using evidence practice 1",
+      "context": "Using evidence",
+      "category": "Class 6 · Using evidence"
+    },
+    {
+      "bn": "এই তথ্যটি প্রমাণ করে যে বন উজাড় একটি বাস্তব সমস্যা।",
+      "en": "Using evidence practice 2",
+      "context": "Using evidence",
+      "category": "Class 6 · Using evidence"
+    },
+    {
+      "bn": "চরিত্রটির কাজ থেকে বোঝা যায় যে সে অত্যন্ত দায়িত্বশীল।",
+      "en": "Using evidence practice 3",
+      "context": "Using evidence",
+      "category": "Class 6 · Using evidence"
+    },
+    {
+      "bn": "তার সিদ্ধান্তের পক্ষে গল্পে একাধিক উদাহরণ দেওয়া হয়েছে।",
+      "en": "Using evidence practice 4",
+      "context": "Using evidence",
+      "category": "Class 6 · Using evidence"
+    },
+    {
+      "bn": "এর অর্থ হলো সমস্যাটি শুধু একটি ব্যক্তির নয়, বরং পুরো সমাজের।",
+      "en": "Explaining practice 1",
+      "context": "Explaining",
+      "category": "Class 6 · Explaining"
+    },
+    {
+      "bn": "সহজভাবে বলতে গেলে, দূষণ আমাদের পরিবেশ ও স্বাস্থ্যের ক্ষতি করে।",
+      "en": "Explaining practice 2",
+      "context": "Explaining",
+      "category": "Class 6 · Explaining"
+    },
+    {
+      "bn": "এই ঘটনার মূল কারণ ছিল পর্যাপ্ত প্রস্তুতির অভাব।",
+      "en": "Explaining practice 3",
+      "context": "Explaining",
+      "category": "Class 6 · Explaining"
+    },
+    {
+      "bn": "ফলাফলটি বুঝতে হলে আগে কারণটি ভালোভাবে বুঝতে হবে।",
+      "en": "Explaining practice 4",
+      "context": "Explaining",
+      "category": "Class 6 · Explaining"
+    },
+    {
+      "bn": "অতিরিক্ত বন উজাড়ের ফলে মাটির ক্ষয় বৃদ্ধি পায়।",
+      "en": "Cause and effect practice 1",
+      "context": "Cause and effect",
+      "category": "Class 6 · Cause and effect"
+    },
+    {
+      "bn": "বায়ুদূষণ বাড়লে মানুষের শ্বাসকষ্টের ঝুঁকি বাড়তে পারে।",
+      "en": "Cause and effect practice 2",
+      "context": "Cause and effect",
+      "category": "Class 6 · Cause and effect"
+    },
+    {
+      "bn": "নিয়মিত অনুশীলনের কারণে তার দক্ষতা দ্রুত উন্নত হয়েছে।",
+      "en": "Cause and effect practice 3",
+      "context": "Cause and effect",
+      "category": "Class 6 · Cause and effect"
+    },
+    {
+      "bn": "যথেষ্ট বৃষ্টি না হওয়ায় ফসলের উৎপাদন কমে গেছে।",
+      "en": "Cause and effect practice 4",
+      "context": "Cause and effect",
+      "category": "Class 6 · Cause and effect"
+    },
+    {
+      "bn": "গ্রাম ও শহর উভয়ই মানুষের বসবাসের স্থান, তবে জীবনযাত্রায় উল্লেখযোগ্য পার্থক্য রয়েছে।",
+      "en": "Comparison and contrast practice 1",
+      "context": "Comparison and contrast",
+      "category": "Class 6 · Comparison and contrast"
+    },
+    {
+      "bn": "শহরে সুযোগ-সুবিধা বেশি, বিপরীতে গ্রামে পরিবেশ তুলনামূলক শান্ত।",
+      "en": "Comparison and contrast practice 2",
+      "context": "Comparison and contrast",
+      "category": "Class 6 · Comparison and contrast"
+    },
+    {
+      "bn": "দুটি চরিত্রই সাহসী, কিন্তু তাদের সিদ্ধান্ত নেওয়ার ধরন ভিন্ন।",
+      "en": "Comparison and contrast practice 3",
+      "context": "Comparison and contrast",
+      "category": "Class 6 · Comparison and contrast"
+    },
+    {
+      "bn": "দুটি মতের মধ্যে কিছু মিল রয়েছে, তবে মূল পার্থক্যটি উদ্দেশ্যে।",
+      "en": "Comparison and contrast practice 4",
+      "context": "Comparison and contrast",
+      "category": "Class 6 · Comparison and contrast"
+    },
+    {
+      "bn": "প্রথমে সমস্যাটির মূল কারণ নির্ধারণ করা দরকার।",
+      "en": "Problems and solutions practice 1",
+      "context": "Problems and solutions",
+      "category": "Class 6 · Problems and solutions"
+    },
+    {
+      "bn": "এরপর সম্ভাব্য সমাধানগুলোর সুবিধা ও অসুবিধা তুলনা করা উচিত।",
+      "en": "Problems and solutions practice 2",
+      "context": "Problems and solutions",
+      "category": "Class 6 · Problems and solutions"
+    },
+    {
+      "bn": "সবচেয়ে কার্যকর সমাধান নির্বাচন করার আগে তার ফলাফল বিবেচনা করা জরুরি।",
+      "en": "Problems and solutions practice 3",
+      "context": "Problems and solutions",
+      "category": "Class 6 · Problems and solutions"
+    },
+    {
+      "bn": "একটি সমস্যার একাধিক সমাধান থাকতে পারে।",
+      "en": "Problems and solutions practice 4",
+      "context": "Problems and solutions",
+      "category": "Class 6 · Problems and solutions"
+    },
+    {
+      "bn": "লেখার তথ্য থেকে অনুমান করা যায় যে ঘটনাটি বর্ষাকালে ঘটেছে।",
+      "en": "Inference and conclusions practice 1",
+      "context": "Inference and conclusions",
+      "category": "Class 6 · Inference and conclusions"
+    },
+    {
+      "bn": "চরিত্রটির আচরণ দেখে বোঝা যায় সে নিজের সিদ্ধান্ত নিয়ে অনুতপ্ত।",
+      "en": "Inference and conclusions practice 2",
+      "context": "Inference and conclusions",
+      "category": "Class 6 · Inference and conclusions"
+    },
+    {
+      "bn": "যদিও লেখক সরাসরি বলেননি, তবুও ঘটনাগুলো থেকে এই সিদ্ধান্তে পৌঁছানো যায়।",
+      "en": "Inference and conclusions practice 3",
+      "context": "Inference and conclusions",
+      "category": "Class 6 · Inference and conclusions"
+    },
+    {
+      "bn": "উপস্থিত প্রমাণের ভিত্তিতে বলা যায় যে পরিকল্পনাটি সফল হয়েছিল।",
+      "en": "Inference and conclusions practice 4",
+      "context": "Inference and conclusions",
+      "category": "Class 6 · Inference and conclusions"
+    },
+    {
+      "bn": "আমি আপনার বক্তব্যের সঙ্গে একমত, কারণ এতে বাস্তবসম্মত যুক্তি রয়েছে।",
+      "en": "Agreement and disagreement practice 1",
+      "context": "Agreement and disagreement",
+      "category": "Class 6 · Agreement and disagreement"
+    },
+    {
+      "bn": "আমি এই মতের সঙ্গে একমত নই, কারণ এর পক্ষে যথেষ্ট প্রমাণ নেই।",
+      "en": "Agreement and disagreement practice 2",
+      "context": "Agreement and disagreement",
+      "category": "Class 6 · Agreement and disagreement"
+    },
+    {
+      "bn": "আপনার যুক্তিটি গুরুত্বপূর্ণ, তবে এর বিপরীত দিকটিও বিবেচনা করা উচিত।",
+      "en": "Agreement and disagreement practice 3",
+      "context": "Agreement and disagreement",
+      "category": "Class 6 · Agreement and disagreement"
+    },
+    {
+      "bn": "আমি আপনার দৃষ্টিভঙ্গি বুঝতে পারছি, যদিও আমার মতামত কিছুটা ভিন্ন।",
+      "en": "Agreement and disagreement practice 4",
+      "context": "Agreement and disagreement",
+      "category": "Class 6 · Agreement and disagreement"
+    },
+    {
+      "bn": "আমাদের প্রথমে সমস্যাটির প্রকৃতি বুঝতে হবে।",
+      "en": "Discussion language practice 1",
+      "context": "Discussion language",
+      "category": "Class 6 · Discussion language"
+    },
+    {
+      "bn": "এখন আমরা এর সম্ভাব্য কারণগুলো নিয়ে আলোচনা করতে পারি।",
+      "en": "Discussion language practice 2",
+      "context": "Discussion language",
+      "category": "Class 6 · Discussion language"
+    },
+    {
+      "bn": "এই বিষয়ে অন্য কারও ভিন্ন মতামত আছে কি?",
+      "en": "Discussion language practice 3",
+      "context": "Discussion language",
+      "category": "Class 6 · Discussion language"
+    },
+    {
+      "bn": "সবগুলো মতামত বিবেচনা করার পর আমরা সিদ্ধান্ত নিতে পারি।",
+      "en": "Discussion language practice 4",
+      "context": "Discussion language",
+      "category": "Class 6 · Discussion language"
+    },
+    {
+      "bn": "আজ আমি জলবায়ু পরিবর্তনের প্রভাব সম্পর্কে আলোচনা করব।",
+      "en": "Presentation language practice 1",
+      "context": "Presentation language",
+      "category": "Class 6 · Presentation language"
+    },
+    {
+      "bn": "প্রথমে বিষয়টির সংক্ষিপ্ত পরিচয় দেব।",
+      "en": "Presentation language practice 2",
+      "context": "Presentation language",
+      "category": "Class 6 · Presentation language"
+    },
+    {
+      "bn": "এরপর কয়েকটি গুরুত্বপূর্ণ কারণ ব্যাখ্যা করব।",
+      "en": "Presentation language practice 3",
+      "context": "Presentation language",
+      "category": "Class 6 · Presentation language"
+    },
+    {
+      "bn": "তারপর এর প্রভাব ও সম্ভাব্য সমাধান তুলে ধরব।",
+      "en": "Presentation language practice 4",
+      "context": "Presentation language",
+      "category": "Class 6 · Presentation language"
+    },
+    {
+      "bn": "সবশেষে মূল বিষয়গুলো সংক্ষেপে বলব।",
+      "en": "Presentation language practice 5",
+      "context": "Presentation language",
+      "category": "Class 6 · Presentation language"
+    },
+    {
+      "bn": "গত মাসে আমাদের বিদ্যালয়ে একটি বিজ্ঞান প্রদর্শনী অনুষ্ঠিত হয়েছিল।",
+      "en": "Past events practice 1",
+      "context": "Past events",
+      "category": "Class 6 · Past events"
+    },
+    {
+      "bn": "আমাদের দল নবায়নযোগ্য শক্তি নিয়ে একটি প্রকল্প তৈরি করেছিল।",
+      "en": "Past events practice 2",
+      "context": "Past events",
+      "category": "Class 6 · Past events"
+    },
+    {
+      "bn": "প্রথমে আমরা বিষয়টি নিয়ে তথ্য সংগ্রহ করি।",
+      "en": "Past events practice 3",
+      "context": "Past events",
+      "category": "Class 6 · Past events"
+    },
+    {
+      "bn": "এরপর একটি ছোট মডেল তৈরি করে পরীক্ষা চালাই।",
+      "en": "Past events practice 4",
+      "context": "Past events",
+      "category": "Class 6 · Past events"
+    },
+    {
+      "bn": "প্রদর্শনীর দিনে আমরা দর্শকদের আমাদের প্রকল্পের কাজ ব্যাখ্যা করি।",
+      "en": "Past events practice 5",
+      "context": "Past events",
+      "category": "Class 6 · Past events"
+    },
+    {
+      "bn": "এই অভিজ্ঞতা আমাদের দলগতভাবে কাজ করতে শিখিয়েছে।",
+      "en": "Past events practice 6",
+      "context": "Past events",
+      "category": "Class 6 · Past events"
+    },
+    {
+      "bn": "আগামী বছর আমি পড়াশোনার জন্য আরও নিয়মিত সময়সূচি অনুসরণ করব।",
+      "en": "Future plans practice 1",
+      "context": "Future plans",
+      "category": "Class 6 · Future plans"
+    },
+    {
+      "bn": "আমি বিজ্ঞান ও প্রযুক্তি সম্পর্কে আরও বই পড়ার পরিকল্পনা করেছি।",
+      "en": "Future plans practice 2",
+      "context": "Future plans",
+      "category": "Class 6 · Future plans"
+    },
+    {
+      "bn": "পরবর্তী প্রকল্পে আমি তথ্য সংগ্রহ ও উপস্থাপনার দক্ষতা উন্নত করতে চাই।",
+      "en": "Future plans practice 3",
+      "context": "Future plans",
+      "category": "Class 6 · Future plans"
+    },
+    {
+      "bn": "ভবিষ্যতে আমি এমন একটি পেশা বেছে নিতে চাই যেখানে মানুষের উপকার করা যায়।",
+      "en": "Future plans practice 4",
+      "context": "Future plans",
+      "category": "Class 6 · Future plans"
+    },
+    {
+      "bn": "যদি আমরা প্রাকৃতিক সম্পদ অপচয় করি, তবে ভবিষ্যতে সংকট তৈরি হতে পারে।",
+      "en": "Conditions practice 1",
+      "context": "Conditions",
+      "category": "Class 6 · Conditions"
+    },
+    {
+      "bn": "যদি শিক্ষার্থীরা নিয়মিত পড়ে, তবে তাদের ভাষাগত দক্ষতা দ্রুত বাড়বে।",
+      "en": "Conditions practice 2",
+      "context": "Conditions",
+      "category": "Class 6 · Conditions"
+    },
+    {
+      "bn": "যদি পর্যাপ্ত প্রমাণ না থাকে, তবে সিদ্ধান্ত নেওয়া উচিত নয়।",
+      "en": "Conditions practice 3",
+      "context": "Conditions",
+      "category": "Class 6 · Conditions"
+    },
+    {
+      "bn": "যদিও প্রযুক্তি আমাদের জীবন সহজ করেছে, তবুও অতিরিক্ত ব্যবহার সমস্যার সৃষ্টি করতে পারে।",
+      "en": "Although and nevertheless practice 1",
+      "context": "Although and nevertheless",
+      "category": "Class 6 · Although and nevertheless"
+    },
+    {
+      "bn": "যদিও পরীক্ষাটি কঠিন ছিল, তবুও সে ধৈর্য ধরে সব প্রশ্নের উত্তর দিয়েছে।",
+      "en": "Although and nevertheless practice 2",
+      "context": "Although and nevertheless",
+      "category": "Class 6 · Although and nevertheless"
+    },
+    {
+      "bn": "যদিও পরিকল্পনায় কিছু ভুল ছিল, তবুও দলটি শেষ পর্যন্ত কাজটি সম্পন্ন করেছে।",
+      "en": "Although and nevertheless practice 3",
+      "context": "Although and nevertheless",
+      "category": "Class 6 · Although and nevertheless"
+    },
+    {
+      "bn": "যেহেতু বিশুদ্ধ পানি জীবনের জন্য অপরিহার্য, সেহেতু পানির উৎস রক্ষা করা জরুরি।",
+      "en": "Since and therefore practice 1",
+      "context": "Since and therefore",
+      "category": "Class 6 · Since and therefore"
+    },
+    {
+      "bn": "যেহেতু বন অনেক প্রাণীর বাসস্থান, সেহেতু বন উজাড় নিয়ন্ত্রণ করা উচিত।",
+      "en": "Since and therefore practice 2",
+      "context": "Since and therefore",
+      "category": "Class 6 · Since and therefore"
+    },
+    {
+      "bn": "যেহেতু তথ্যটি নির্ভরযোগ্য উৎস থেকে এসেছে, সেহেতু এটি ব্যবহার করা যেতে পারে।",
+      "en": "Since and therefore practice 3",
+      "context": "Since and therefore",
+      "category": "Class 6 · Since and therefore"
+    },
+    {
+      "bn": "একদিকে সামাজিক যোগাযোগমাধ্যম দ্রুত যোগাযোগের সুযোগ দেয়, অন্যদিকে ভুল তথ্য ছড়ানোর ঝুঁকিও রয়েছে।",
+      "en": "On one hand and the other practice 1",
+      "context": "On one hand and the other",
+      "category": "Class 6 · On one hand and the other"
+    },
+    {
+      "bn": "একদিকে শহরে শিক্ষা ও চিকিৎসার সুযোগ বেশি, অন্যদিকে সেখানে জনসংখ্যা ও যানজটও বেশি।",
+      "en": "On one hand and the other practice 2",
+      "context": "On one hand and the other",
+      "category": "Class 6 · On one hand and the other"
+    },
+    {
+      "bn": "একদিকে প্রযুক্তি সময় বাঁচায়, অন্যদিকে অতিরিক্ত নির্ভরতা নতুন সমস্যা তৈরি করতে পারে।",
+      "en": "On one hand and the other practice 3",
+      "context": "On one hand and the other",
+      "category": "Class 6 · On one hand and the other"
+    },
+    {
+      "bn": "ন্যায় — অন্যায়",
+      "en": "Opposites practice 1",
+      "context": "Opposites",
+      "category": "Class 6 · Opposites"
+    },
+    {
+      "bn": "স্বাধীন — পরাধীন",
+      "en": "Opposites practice 2",
+      "context": "Opposites",
+      "category": "Class 6 · Opposites"
+    },
+    {
+      "bn": "সত্য — মিথ্যা",
+      "en": "Opposites practice 3",
+      "context": "Opposites",
+      "category": "Class 6 · Opposites"
+    },
+    {
+      "bn": "সফল — ব্যর্থ",
+      "en": "Opposites practice 4",
+      "context": "Opposites",
+      "category": "Class 6 · Opposites"
+    },
+    {
+      "bn": "উন্নতি — অবনতি",
+      "en": "Opposites practice 5",
+      "context": "Opposites",
+      "category": "Class 6 · Opposites"
+    },
+    {
+      "bn": "গ্রহণ — প্রত্যাখ্যান",
+      "en": "Opposites practice 6",
+      "context": "Opposites",
+      "category": "Class 6 · Opposites"
+    },
+    {
+      "bn": "সমর্থন — বিরোধিতা",
+      "en": "Opposites practice 7",
+      "context": "Opposites",
+      "category": "Class 6 · Opposites"
+    },
+    {
+      "bn": "শক্তিশালী — দুর্বল",
+      "en": "Opposites practice 8",
+      "context": "Opposites",
+      "category": "Class 6 · Opposites"
+    },
+    {
+      "bn": "স্থায়ী — অস্থায়ী",
+      "en": "Opposites practice 9",
+      "context": "Opposites",
+      "category": "Class 6 · Opposites"
+    },
+    {
+      "bn": "প্রাচীন — আধুনিক",
+      "en": "Opposites practice 10",
+      "context": "Opposites",
+      "category": "Class 6 · Opposites"
+    },
+    {
+      "bn": "ইতিবাচক — নেতিবাচক",
+      "en": "Opposites practice 11",
+      "context": "Opposites",
+      "category": "Class 6 · Opposites"
+    },
+    {
+      "bn": "কার্যকর — অকার্যকর",
+      "en": "Opposites practice 12",
+      "context": "Opposites",
+      "category": "Class 6 · Opposites"
+    },
+    {
+      "bn": "যৌক্তিক — অযৌক্তিক",
+      "en": "Opposites practice 13",
+      "context": "Opposites",
+      "category": "Class 6 · Opposites"
+    },
+    {
+      "bn": "উপকারী — ক্ষতিকর",
+      "en": "Opposites practice 14",
+      "context": "Opposites",
+      "category": "Class 6 · Opposites"
+    },
+    {
+      "bn": "নিরাপদ — বিপজ্জনক",
+      "en": "Opposites practice 15",
+      "context": "Opposites",
+      "category": "Class 6 · Opposites"
+    },
+    {
+      "bn": "সমতা — বৈষম্য",
+      "en": "Opposites practice 16",
+      "context": "Opposites",
+      "category": "Class 6 · Opposites"
+    },
+    {
+      "bn": "ঐক্য — বিভেদ",
+      "en": "Opposites practice 17",
+      "context": "Opposites",
+      "category": "Class 6 · Opposites"
+    },
+    {
+      "bn": "শান্তি — অশান্তি",
+      "en": "Opposites practice 18",
+      "context": "Opposites",
+      "category": "Class 6 · Opposites"
+    },
+    {
+      "bn": "আশা — হতাশা",
+      "en": "Opposites practice 19",
+      "context": "Opposites",
+      "category": "Class 6 · Opposites"
+    },
+    {
+      "bn": "সাহস — ভয়",
+      "en": "Opposites practice 20",
+      "context": "Opposites",
+      "category": "Class 6 · Opposites"
+    },
+    {
+      "bn": "চেষ্টা — প্রচেষ্টা",
+      "en": "Synonyms practice 1",
+      "context": "Synonyms",
+      "category": "Class 6 · Synonyms"
+    },
+    {
+      "bn": "সাহায্য — সহায়তা",
+      "en": "Synonyms practice 2",
+      "context": "Synonyms",
+      "category": "Class 6 · Synonyms"
+    },
+    {
+      "bn": "উন্নতি — অগ্রগতি",
+      "en": "Synonyms practice 3",
+      "context": "Synonyms",
+      "category": "Class 6 · Synonyms"
+    },
+    {
+      "bn": "শুরু — আরম্ভ",
+      "en": "Synonyms practice 4",
+      "context": "Synonyms",
+      "category": "Class 6 · Synonyms"
+    },
+    {
+      "bn": "শেষ — সমাপ্তি",
+      "en": "Synonyms practice 5",
+      "context": "Synonyms",
+      "category": "Class 6 · Synonyms"
+    },
+    {
+      "bn": "বুদ্ধি — মেধা",
+      "en": "Synonyms practice 6",
+      "context": "Synonyms",
+      "category": "Class 6 · Synonyms"
+    },
+    {
+      "bn": "জ্ঞান — বিদ্যা",
+      "en": "Synonyms practice 7",
+      "context": "Synonyms",
+      "category": "Class 6 · Synonyms"
+    },
+    {
+      "bn": "মত — অভিমত",
+      "en": "Synonyms practice 8",
+      "context": "Synonyms",
+      "category": "Class 6 · Synonyms"
+    },
+    {
+      "bn": "কারণ — হেতু",
+      "en": "Synonyms practice 9",
+      "context": "Synonyms",
+      "category": "Class 6 · Synonyms"
+    },
+    {
+      "bn": "উদ্দেশ্য — লক্ষ্য",
+      "en": "Synonyms practice 10",
+      "context": "Synonyms",
+      "category": "Class 6 · Synonyms"
+    },
+    {
+      "bn": "স্বাধীনতা — মুক্তি",
+      "en": "Synonyms practice 11",
+      "context": "Synonyms",
+      "category": "Class 6 · Synonyms"
+    },
+    {
+      "bn": "বন্ধু — মিত্র",
+      "en": "Synonyms practice 12",
+      "context": "Synonyms",
+      "category": "Class 6 · Synonyms"
+    },
+    {
+      "bn": "শত্রু — বৈরী",
+      "en": "Synonyms practice 13",
+      "context": "Synonyms",
+      "category": "Class 6 · Synonyms"
+    },
+    {
+      "bn": "দুঃখ — বেদনা",
+      "en": "Synonyms practice 14",
+      "context": "Synonyms",
+      "category": "Class 6 · Synonyms"
+    },
+    {
+      "bn": "আনন্দ — সুখ",
+      "en": "Synonyms practice 15",
+      "context": "Synonyms",
+      "category": "Class 6 · Synonyms"
+    },
+    {
+      "bn": "রাগ — ক্রোধ",
+      "en": "Synonyms practice 16",
+      "context": "Synonyms",
+      "category": "Class 6 · Synonyms"
+    },
+    {
+      "bn": "ভয় — আতঙ্ক",
+      "en": "Synonyms practice 17",
+      "context": "Synonyms",
+      "category": "Class 6 · Synonyms"
+    },
+    {
+      "bn": "দেশ — রাষ্ট্র",
+      "en": "Synonyms practice 18",
+      "context": "Synonyms",
+      "category": "Class 6 · Synonyms"
+    },
+    {
+      "bn": "পথ — রাস্তা",
+      "en": "Synonyms practice 19",
+      "context": "Synonyms",
+      "category": "Class 6 · Synonyms"
+    },
+    {
+      "bn": "বন — অরণ্য",
+      "en": "Synonyms practice 20",
+      "context": "Synonyms",
+      "category": "Class 6 · Synonyms"
+    },
+    {
+      "bn": "চোখে ধুলো দেওয়া — প্রতারণা করা",
+      "en": "Idioms practice 1",
+      "context": "Idioms",
+      "category": "Class 6 · Idioms"
+    },
+    {
+      "bn": "মাথা খাটানো — বুদ্ধি ব্যবহার করা",
+      "en": "Idioms practice 2",
+      "context": "Idioms",
+      "category": "Class 6 · Idioms"
+    },
+    {
+      "bn": "হাত গুটিয়ে বসা — নিষ্ক্রিয় থাকা",
+      "en": "Idioms practice 3",
+      "context": "Idioms",
+      "category": "Class 6 · Idioms"
+    },
+    {
+      "bn": "হাতের পাঁচ — গোপন কৌশল বা শক্তি",
+      "en": "Idioms practice 4",
+      "context": "Idioms",
+      "category": "Class 6 · Idioms"
+    },
+    {
+      "bn": "চোখের মণি — অত্যন্ত প্রিয় ব্যক্তি",
+      "en": "Idioms practice 5",
+      "context": "Idioms",
+      "category": "Class 6 · Idioms"
+    },
+    {
+      "bn": "মুখে কুলুপ আঁটা — একেবারে চুপ থাকা",
+      "en": "Idioms practice 6",
+      "context": "Idioms",
+      "category": "Class 6 · Idioms"
+    },
+    {
+      "bn": "নাকে তেল দিয়ে ঘুমানো — নিশ্চিন্ত থাকা",
+      "en": "Idioms practice 7",
+      "context": "Idioms",
+      "category": "Class 6 · Idioms"
+    },
+    {
+      "bn": "আকাশ-কুসুম কল্পনা — অবাস্তব চিন্তা করা",
+      "en": "Idioms practice 8",
+      "context": "Idioms",
+      "category": "Class 6 · Idioms"
+    },
+    {
+      "bn": "গায়ে পড়া — অযথা কোনো বিষয়ে জড়ানো",
+      "en": "Idioms practice 9",
+      "context": "Idioms",
+      "category": "Class 6 · Idioms"
+    },
+    {
+      "bn": "এক ঢিলে দুই পাখি মারা — এক কাজে দুইটি উদ্দেশ্য পূরণ করা",
+      "en": "Idioms practice 10",
+      "context": "Idioms",
+      "category": "Class 6 · Idioms"
+    },
+    {
+      "bn": "অতি লোভে তাতি নষ্ট।",
+      "en": "Proverbs practice 1",
+      "context": "Proverbs",
+      "category": "Class 6 · Proverbs"
+    },
+    {
+      "bn": "একতাই বল।",
+      "en": "Proverbs practice 2",
+      "context": "Proverbs",
+      "category": "Class 6 · Proverbs"
+    },
+    {
+      "bn": "যেমন কর্ম তেমন ফল।",
+      "en": "Proverbs practice 3",
+      "context": "Proverbs",
+      "category": "Class 6 · Proverbs"
+    },
+    {
+      "bn": "সময় ও স্রোত কারও জন্য অপেক্ষা করে না।",
+      "en": "Proverbs practice 4",
+      "context": "Proverbs",
+      "category": "Class 6 · Proverbs"
+    },
+    {
+      "bn": "পরিশ্রম সৌভাগ্যের প্রসূতি।",
+      "en": "Proverbs practice 5",
+      "context": "Proverbs",
+      "category": "Class 6 · Proverbs"
+    },
+    {
+      "bn": "ইচ্ছা থাকলে উপায় হয়।",
+      "en": "Proverbs practice 6",
+      "context": "Proverbs",
+      "category": "Class 6 · Proverbs"
+    },
+    {
+      "bn": "অল্প বিদ্যা ভয়ংকরী।",
+      "en": "Proverbs practice 7",
+      "context": "Proverbs",
+      "category": "Class 6 · Proverbs"
+    },
+    {
+      "bn": "আগে দর্শনধারী, পরে গুণবিচারী।",
+      "en": "Proverbs practice 8",
+      "context": "Proverbs",
+      "category": "Class 6 · Proverbs"
+    },
+    {
+      "bn": "বিশ্লেষণ: সমস্যাটির প্রকৃত কারণ বুঝতে আগে তথ্য বিশ্লেষণ করতে হবে।",
+      "en": "Words in sentences practice 1",
+      "context": "Words in sentences",
+      "category": "Class 6 · Words in sentences"
+    },
+    {
+      "bn": "প্রভাব: সামাজিক যোগাযোগমাধ্যম মানুষের যোগাযোগের ওপর বড় প্রভাব ফেলেছে।",
+      "en": "Words in sentences practice 2",
+      "context": "Words in sentences",
+      "category": "Class 6 · Words in sentences"
+    },
+    {
+      "bn": "দৃষ্টিভঙ্গি: একই ঘটনা সম্পর্কে দুইজন মানুষের দৃষ্টিভঙ্গি ভিন্ন হতে পারে।",
+      "en": "Words in sentences practice 3",
+      "context": "Words in sentences",
+      "category": "Class 6 · Words in sentences"
+    },
+    {
+      "bn": "মূল্যায়ন: সিদ্ধান্ত নেওয়ার আগে সব বিকল্পের মূল্যায়ন করা উচিত।",
+      "en": "Words in sentences practice 4",
+      "context": "Words in sentences",
+      "category": "Class 6 · Words in sentences"
+    },
+    {
+      "bn": "নির্ভরযোগ্য: তথ্য ব্যবহারের আগে উৎসটি নির্ভরযোগ্য কি না যাচাই করা দরকার।",
+      "en": "Words in sentences practice 5",
+      "context": "Words in sentences",
+      "category": "Class 6 · Words in sentences"
+    },
+    {
+      "bn": "বাস্তুতন্ত্র: একটি বাস্তুতন্ত্রে উদ্ভিদ ও প্রাণী একে অন্যের ওপর নির্ভরশীল।",
+      "en": "Words in sentences practice 6",
+      "context": "Words in sentences",
+      "category": "Class 6 · Words in sentences"
+    },
+    {
+      "bn": "প্রতিরোধ: রোগ ছড়িয়ে পড়া প্রতিরোধ করতে পরিচ্ছন্নতা বজায় রাখা জরুরি।",
+      "en": "Words in sentences practice 7",
+      "context": "Words in sentences",
+      "category": "Class 6 · Words in sentences"
+    },
+    {
+      "bn": "বৈচিত্র্য: একটি সমাজে সাংস্কৃতিক বৈচিত্র্য তার শক্তি হতে পারে।",
+      "en": "Words in sentences practice 8",
+      "context": "Words in sentences",
+      "category": "Class 6 · Words in sentences"
+    },
+    {
+      "bn": "সমতা: সকল মানুষের জন্য সমান সুযোগ নিশ্চিত করা গুরুত্বপূর্ণ।",
+      "en": "Words in sentences practice 9",
+      "context": "Words in sentences",
+      "category": "Class 6 · Words in sentences"
+    },
+    {
+      "bn": "উপসংহার: সব প্রমাণ বিবেচনা করে আমরা একটি উপসংহারে পৌঁছেছি।",
+      "en": "Words in sentences practice 10",
+      "context": "Words in sentences",
+      "category": "Class 6 · Words in sentences"
+    },
+    {
+      "bn": "কোনো মতামতকে শক্তিশালী করতে হলে তার পক্ষে স্পষ্ট যুক্তি, প্রমাণ এবং উদাহরণ দেওয়া উচিত।",
+      "en": "Challenging sentences practice 1",
+      "context": "Challenging sentences",
+      "category": "Class 6 · Challenging sentences"
+    },
+    {
+      "bn": "কেবল তথ্য সংগ্রহ করলেই যথেষ্ট নয়, সেই তথ্য কতটা নির্ভরযোগ্য তাও যাচাই করা জরুরি।",
+      "en": "Challenging sentences practice 2",
+      "context": "Challenging sentences",
+      "category": "Class 6 · Challenging sentences"
+    },
+    {
+      "bn": "প্রযুক্তির উন্নতির ফলে যোগাযোগ সহজ হয়েছে, তবে ব্যক্তিগত তথ্যের নিরাপত্তা নিয়ে নতুন উদ্বেগও সৃষ্টি হয়েছে।",
+      "en": "Challenging sentences practice 3",
+      "context": "Challenging sentences",
+      "category": "Class 6 · Challenging sentences"
+    },
+    {
+      "bn": "একটি সমাজের উন্নয়ন শুধু অর্থনৈতিক অগ্রগতির ওপর নির্ভর করে না, শিক্ষা, স্বাস্থ্য ও ন্যায়বিচারও গুরুত্বপূর্ণ।",
+      "en": "Challenging sentences practice 4",
+      "context": "Challenging sentences",
+      "category": "Class 6 · Challenging sentences"
+    },
+    {
+      "bn": "পরিবেশের ভারসাম্য নষ্ট হলে তার প্রভাব মানুষ, প্রাণী এবং উদ্ভিদ সবার ওপর পড়ে।",
+      "en": "Challenging sentences practice 5",
+      "context": "Challenging sentences",
+      "category": "Class 6 · Challenging sentences"
+    },
+    {
+      "bn": "ইতিহাস বিশ্লেষণ করলে আমরা অতীতের ভুল থেকে শিক্ষা নিয়ে ভবিষ্যতের জন্য ভালো সিদ্ধান্ত নিতে পারি।",
+      "en": "Challenging sentences practice 6",
+      "context": "Challenging sentences",
+      "category": "Class 6 · Challenging sentences"
+    },
+    {
+      "bn": "বর্তমান যুগে প্রযুক্তি শিক্ষার একটি গুরুত্বপূর্ণ অংশ হয়ে উঠেছে। শিক্ষার্থীরা ইন্টারনেটের মাধ্যমে দ্রুত তথ্য খুঁজে পেতে পারে, শিক্ষামূলক ভিডিও দেখতে পারে এবং অনলাইনে বিভিন্ন বিষয়ে অনুশীলন করতে পারে। প্রযুক্তি শিক্ষক ও শিক্ষার্থীর মধ্যে যোগাযোগও সহজ করেছে। তবে সব অনলাইন তথ্য সঠিক নয়। তাই তথ্য ব্যবহারের আগে তার উৎস যাচাই করা জরুরি। এছাড়া অতিরিক্ত পর্দার সামনে সময় কাটানোও স্বাস্থ্যের জন্য ভালো নয়। সঠিকভাবে ব্যবহার করলে প্রযুক্তি শিক্ষাকে আরও কার্যকর করতে পারে।",
+      "en": "Reading passage: Technology and education practice 1",
+      "context": "Reading passage: Technology and education",
+      "category": "Class 6 · Reading passage: Technology and education"
+    },
+    {
+      "bn": "পরিবেশ দূষণ বর্তমানে একটি গুরুত্বপূর্ণ সমস্যা। যানবাহন ও কারখানার ধোঁয়া বায়ুদূষণ সৃষ্টি করে। প্লাস্টিক ও রাসায়নিক বর্জ্য নদী ও জলাশয়ের পানি দূষিত করে। উচ্চ শব্দও মানুষের স্বাস্থ্যের ওপর নেতিবাচক প্রভাব ফেলতে পারে। দূষণ কমাতে গণপরিবহন ব্যবহার, পুনর্ব্যবহার, গাছ লাগানো এবং আবর্জনা সঠিকভাবে ফেলা দরকার। শুধু সরকার নয়, প্রত্যেক নাগরিকেরই পরিবেশ রক্ষায় ভূমিকা রয়েছে।",
+      "en": "Reading passage: Environmental pollution practice 1",
+      "context": "Reading passage: Environmental pollution",
+      "category": "Class 6 · Reading passage: Environmental pollution"
+    },
+    {
+      "bn": "সময় ব্যবস্থাপনা একজন শিক্ষার্থীর জন্য অত্যন্ত গুরুত্বপূর্ণ। পড়াশোনা, খেলাধুলা, বিশ্রাম এবং পরিবারের সঙ্গে সময় কাটানোর জন্য একটি ভারসাম্যপূর্ণ পরিকল্পনা থাকা দরকার। কোনো কাজ শেষ মুহূর্ত পর্যন্ত ফেলে রাখলে অপ্রয়োজনীয় চাপ তৈরি হয়। প্রতিদিনের কাজের তালিকা তৈরি করলে কোন কাজ আগে করতে হবে তা সহজে বোঝা যায়। সময়কে সঠিকভাবে ব্যবহার করার অভ্যাস ভবিষ্যতের জীবনেও কাজে আসে।",
+      "en": "Reading passage: Time management practice 1",
+      "context": "Reading passage: Time management",
+      "category": "Class 6 · Reading passage: Time management"
+    },
+    {
+      "bn": "গল্প: বিদ্যালয়ের বিজ্ঞান প্রতিযোগিতার জন্য নাবিল ও তার তিন বন্ধু একটি জল পরিশোধন প্রকল্প তৈরি করছিল। প্রথম পরীক্ষায় তাদের মডেলটি ঠিকমতো কাজ করল না। দলের দুইজন হতাশ হয়ে প্রকল্প পরিবর্তন করতে চাইল। কিন্তু নাবিল বলল, প্রথমে ভুলের কারণ খুঁজে দেখা উচিত। তারা মডেলটি পরীক্ষা করে দেখল একটি নল ভুলভাবে লাগানো হয়েছে। নলটি ঠিক করার পর মডেলটি সফলভাবে কাজ করল। প্রতিযোগিতায় তাদের দল দ্বিতীয় স্থান অর্জন করল।",
+      "en": "Story analysis practice 1",
+      "context": "Story analysis",
+      "category": "Class 6 · Story analysis"
+    },
+    {
+      "bn": "১. দলটি কী ধরনের প্রকল্প তৈরি করছিল?",
+      "en": "Story analysis practice 2",
+      "context": "Story analysis",
+      "category": "Class 6 · Story analysis"
+    },
+    {
+      "bn": "২. প্রথম পরীক্ষায় কী সমস্যা হয়েছিল?",
+      "en": "Story analysis practice 3",
+      "context": "Story analysis",
+      "category": "Class 6 · Story analysis"
+    },
+    {
+      "bn": "৩. দলের কয়েকজন কী করতে চেয়েছিল?",
+      "en": "Story analysis practice 4",
+      "context": "Story analysis",
+      "category": "Class 6 · Story analysis"
+    },
+    {
+      "bn": "৪. নাবিলের সিদ্ধান্ত কী ছিল?",
+      "en": "Story analysis practice 5",
+      "context": "Story analysis",
+      "category": "Class 6 · Story analysis"
+    },
+    {
+      "bn": "৫. সমস্যার আসল কারণ কী ছিল?",
+      "en": "Story analysis practice 6",
+      "context": "Story analysis",
+      "category": "Class 6 · Story analysis"
+    },
+    {
+      "bn": "৬. নাবিলের কোন ব্যক্তিত্বের গুণ প্রকাশ পেয়েছে?",
+      "en": "Story analysis practice 7",
+      "context": "Story analysis",
+      "category": "Class 6 · Story analysis"
+    },
+    {
+      "bn": "৭. গল্পের মূল শিক্ষা কী?",
+      "en": "Story analysis practice 8",
+      "context": "Story analysis",
+      "category": "Class 6 · Story analysis"
+    },
+    {
+      "bn": "৮. গল্প থেকে এমন একটি বাক্য বা ঘটনা উল্লেখ করো যা দেখায় যে নাবিল সহজে হাল ছাড়েনি।",
+      "en": "Story analysis practice 9",
+      "context": "Story analysis",
+      "category": "Class 6 · Story analysis"
+    },
+    {
+      "bn": "৯. দলটি যদি কারণ খুঁজে না দেখত, তাহলে কী হতে পারত?",
+      "en": "Story analysis practice 10",
+      "context": "Story analysis",
+      "category": "Class 6 · Story analysis"
+    },
+    {
+      "bn": "১০. গল্পটির একটি ভিন্ন শিরোনাম দাও।",
+      "en": "Story analysis practice 11",
+      "context": "Story analysis",
+      "category": "Class 6 · Story analysis"
+    },
+    {
+      "bn": "অনুচ্ছেদ: বই পড়া মানুষের শব্দভান্ডার বাড়ায়, কল্পনাশক্তি উন্নত করে এবং বিভিন্ন বিষয় সম্পর্কে জ্ঞান দেয়। নিয়মিত পড়ার অভ্যাস লেখার দক্ষতাও বাড়াতে পারে। গল্প, বিজ্ঞান, ইতিহাস বা জীবনী, সব ধরনের বই থেকেই নতুন কিছু শেখা যায়।",
+      "en": "Main idea and supporting details practice 1",
+      "context": "Main idea and supporting details",
+      "category": "Class 6 · Main idea and supporting details"
+    },
+    {
+      "bn": "মূলভাব: নিয়মিত বই পড়া জ্ঞান ও ভাষাগত দক্ষতা বৃদ্ধিতে সাহায্য করে।",
+      "en": "Main idea and supporting details practice 2",
+      "context": "Main idea and supporting details",
+      "category": "Class 6 · Main idea and supporting details"
+    },
+    {
+      "bn": "সহায়ক তথ্য: বই শব্দভান্ডার বাড়ায়।",
+      "en": "Main idea and supporting details practice 3",
+      "context": "Main idea and supporting details",
+      "category": "Class 6 · Main idea and supporting details"
+    },
+    {
+      "bn": "সহায়ক তথ্য: বই কল্পনাশক্তি উন্নত করে।",
+      "en": "Main idea and supporting details practice 4",
+      "context": "Main idea and supporting details",
+      "category": "Class 6 · Main idea and supporting details"
+    },
+    {
+      "bn": "সহায়ক তথ্য: বই লেখার দক্ষতা বাড়াতে পারে।",
+      "en": "Main idea and supporting details practice 5",
+      "context": "Main idea and supporting details",
+      "category": "Class 6 · Main idea and supporting details"
+    },
+    {
+      "bn": "লেখা: স্কুলের মাঠে পানি জমে ছিল। আকাশে তখনও ঘন কালো মেঘ। কয়েকজন শিক্ষার্থী ভেজা ছাতা নিয়ে শ্রেণিকক্ষে প্রবেশ করছিল।",
+      "en": "Inference from information practice 1",
+      "context": "Inference from information",
+      "category": "Class 6 · Inference from information"
+    },
+    {
+      "bn": "অনুমান: কিছুক্ষণ আগে বৃষ্টি হয়েছে এবং আবারও বৃষ্টি হতে পারে।",
+      "en": "Inference from information practice 2",
+      "context": "Inference from information",
+      "category": "Class 6 · Inference from information"
+    },
+    {
+      "bn": "লেখা: প্রতিদিন পর্যাপ্ত পানি পান করা শরীরের জন্য গুরুত্বপূর্ণ। পানি শরীরের তাপমাত্রা নিয়ন্ত্রণ করতে এবং বিভিন্ন অঙ্গকে সঠিকভাবে কাজ করতে সাহায্য করে।",
+      "en": "Author's purpose practice 1",
+      "context": "Author's purpose",
+      "category": "Class 6 · Author's purpose"
+    },
+    {
+      "bn": "লেখকের উদ্দেশ্য: পানির গুরুত্ব সম্পর্কে তথ্য দেওয়া।",
+      "en": "Author's purpose practice 2",
+      "context": "Author's purpose",
+      "category": "Class 6 · Author's purpose"
+    },
+    {
+      "bn": "মূল লেখা: রাফি প্রতিদিন স্কুল থেকে ফিরে প্রথমে দুপুরের খাবার খায় এবং কিছুক্ষণ বিশ্রাম নেয়। এরপর সে বাড়ির কাজ শেষ করে। বিকেলে এক ঘণ্টা খেলাধুলা করে। সন্ধ্যার পর পরের দিনের পাঠ পড়ে এবং স্কুলব্যাগ গুছিয়ে রাখে। নির্দিষ্ট সময়ে ঘুমাতে যাওয়ায় সে সকালে সহজে উঠতে পারে।",
+      "en": "Summary writing practice 1",
+      "context": "Summary writing",
+      "category": "Class 6 · Summary writing"
+    },
+    {
+      "bn": "সারাংশ: রাফি একটি নিয়মিত সময়সূচি অনুসরণ করে পড়াশোনা, খেলাধুলা ও বিশ্রামের মধ্যে ভারসাম্য বজায় রাখে।",
+      "en": "Summary writing practice 2",
+      "context": "Summary writing",
+      "category": "Class 6 · Summary writing"
+    },
+    {
+      "bn": "বিষয়: শিক্ষার্থীদের জন্য মোবাইল ফোন উপকারী কি না",
+      "en": "Opinion writing practice 1",
+      "context": "Opinion writing",
+      "category": "Class 6 · Opinion writing"
+    },
+    {
+      "bn": "মোবাইল ফোন শিক্ষার্থীদের জন্য উপকারী হতে পারে, যদি এটি দায়িত্বশীলভাবে ব্যবহার করা হয়। এর মাধ্যমে দ্রুত তথ্য খোঁজা, শিক্ষামূলক ভিডিও দেখা এবং শিক্ষকের সঙ্গে যোগাযোগ করা সম্ভব। অন্যদিকে অতিরিক্ত গেম খেলা বা সামাজিক যোগাযোগমাধ্যম ব্যবহার করলে পড়াশোনায় মনোযোগ কমতে পারে। তাই শিক্ষার্থীদের মোবাইল ব্যবহারের সময় ও উদ্দেশ্য সম্পর্কে নিয়ম থাকা উচিত।",
+      "en": "Opinion writing practice 2",
+      "context": "Opinion writing",
+      "category": "Class 6 · Opinion writing"
+    },
+    {
+      "bn": "মুদ্রিত বই ও ডিজিটাল বই",
+      "en": "Comparative writing practice 1",
+      "context": "Comparative writing",
+      "category": "Class 6 · Comparative writing"
+    },
+    {
+      "bn": "মুদ্রিত বই ও ডিজিটাল বই উভয়ের মাধ্যমেই পড়াশোনা করা যায়। মুদ্রিত বই পড়তে কোনো ইলেকট্রনিক যন্ত্রের প্রয়োজন হয় না এবং অনেক পাঠক কাগজে পড়তে স্বাচ্ছন্দ্যবোধ করেন। অন্যদিকে ডিজিটাল বই সহজে বহন করা যায় এবং একটি যন্ত্রে অনেক বই রাখা সম্ভব। তবে দীর্ঘ সময় পর্দায় পড়লে চোখে ক্লান্তি আসতে পারে। তাই দুই ধরনের বইয়েরই নিজস্ব সুবিধা ও অসুবিধা রয়েছে।",
+      "en": "Comparative writing practice 2",
+      "context": "Comparative writing",
+      "category": "Class 6 · Comparative writing"
+    },
+    {
+      "bn": "বন উজাড়ের প্রভাব",
+      "en": "Cause-and-effect writing practice 1",
+      "context": "Cause-and-effect writing",
+      "category": "Class 6 · Cause-and-effect writing"
+    },
+    {
+      "bn": "মানুষ বিভিন্ন কারণে বন কেটে ফেলছে। বন উজাড় হলে বন্যপ্রাণীরা তাদের বাসস্থান হারায় এবং মাটির ক্ষয় বাড়তে পারে। গাছ কমে গেলে পরিবেশের স্বাভাবিক ভারসাম্যও ক্ষতিগ্রস্ত হয়। তাই বন ব্যবহারের পাশাপাশি নতুন গাছ লাগানো ও বন সংরক্ষণ করা জরুরি।",
+      "en": "Cause-and-effect writing practice 2",
+      "context": "Cause-and-effect writing",
+      "category": "Class 6 · Cause-and-effect writing"
+    },
+    {
+      "bn": "দাবি + কারণ: আমার মতে বিদ্যালয়ে একটি বড় গ্রন্থাগার থাকা উচিত, কারণ নিয়মিত বই পড়ার সুযোগ শিক্ষার্থীদের জ্ঞান বাড়ায়।",
+      "en": "Important sentence structures practice 1",
+      "context": "Important sentence structures",
+      "category": "Class 6 · Important sentence structures"
+    },
+    {
+      "bn": "দাবি + প্রমাণ: চরিত্রটি দায়িত্বশীল ছিল। এর প্রমাণ হলো সে নিজের কাজ শেষ করার পর অন্যদেরও সাহায্য করেছিল।",
+      "en": "Important sentence structures practice 2",
+      "context": "Important sentence structures",
+      "category": "Class 6 · Important sentence structures"
+    },
+    {
+      "bn": "কারণ + ফলাফল: এলাকায় দীর্ঘদিন বৃষ্টি হয়নি। ফলস্বরূপ, অনেক জলাশয়ের পানি কমে গেছে।",
+      "en": "Important sentence structures practice 3",
+      "context": "Important sentence structures",
+      "category": "Class 6 · Important sentence structures"
+    },
+    {
+      "bn": "যদিও + বিপরীত ফল: যদিও দলটি প্রথম পরীক্ষায় ব্যর্থ হয়েছিল, তবুও তারা নতুনভাবে চেষ্টা করে সফল হয়।",
+      "en": "Important sentence structures practice 4",
+      "context": "Important sentence structures",
+      "category": "Class 6 · Important sentence structures"
+    },
+    {
+      "bn": "একদিকে + অন্যদিকে: একদিকে ইন্টারনেট বিশাল তথ্যভান্ডার, অন্যদিকে সব তথ্য সমানভাবে নির্ভরযোগ্য নয়।",
+      "en": "Important sentence structures practice 5",
+      "context": "Important sentence structures",
+      "category": "Class 6 · Important sentence structures"
+    },
+    {
+      "bn": "উদাহরণস্বরূপ: প্রাকৃতিক সম্পদের অপচয় কমানো জরুরি। উদাহরণস্বরূপ, অপ্রয়োজনীয়ভাবে পানি ও বিদ্যুৎ ব্যবহার করা উচিত নয়।",
+      "en": "Important sentence structures practice 6",
+      "context": "Important sentence structures",
+      "category": "Class 6 · Important sentence structures"
+    },
+    {
+      "bn": "সংক্ষেপে: সংক্ষেপে, প্রযুক্তি উপকারী হলেও এটি সচেতন ও দায়িত্বশীলভাবে ব্যবহার করা দরকার।",
+      "en": "Important sentence structures practice 7",
+      "context": "Important sentence structures",
+      "category": "Class 6 · Important sentence structures"
+    },
+    {
+      "bn": "একজন ষষ্ঠ শ্রেণির শিক্ষার্থীর গল্প, প্রবন্ধ ও তথ্যভিত্তিক লেখা পড়ে মূলভাব, সহায়ক তথ্য, কারণ, ফলাফল, চরিত্রের উদ্দেশ্য এবং লেখকের উদ্দেশ্য শনাক্ত করতে পারা উচিত।",
+      "en": "End-of-Class 6 skills practice 1",
+      "context": "End-of-Class 6 skills",
+      "category": "Class 6 · End-of-Class 6 skills"
+    },
+    {
+      "bn": "লেখায় সরাসরি বলা হয়নি এমন তথ্য যুক্তি ও প্রমাণের ভিত্তিতে অনুমান করতে পারা উচিত।",
+      "en": "End-of-Class 6 skills practice 2",
+      "context": "End-of-Class 6 skills",
+      "category": "Class 6 · End-of-Class 6 skills"
+    },
+    {
+      "bn": "নিজের উত্তরের পক্ষে লেখার ভেতর থেকে নির্দিষ্ট তথ্য বা উদাহরণ ব্যবহার করতে পারা উচিত।",
+      "en": "End-of-Class 6 skills practice 3",
+      "context": "End-of-Class 6 skills",
+      "category": "Class 6 · End-of-Class 6 skills"
+    },
+    {
+      "bn": "দুটি লেখা, চরিত্র, ধারণা বা বিষয়ের মিল ও পার্থক্য বিস্তারিতভাবে ব্যাখ্যা করতে পারা উচিত।",
+      "en": "End-of-Class 6 skills practice 4",
+      "context": "End-of-Class 6 skills",
+      "category": "Class 6 · End-of-Class 6 skills"
+    },
+    {
+      "bn": "একটি তথ্যের উৎস কতটা নির্ভরযোগ্য হতে পারে সে সম্পর্কে প্রাথমিকভাবে চিন্তা করতে পারা উচিত।",
+      "en": "End-of-Class 6 skills practice 5",
+      "context": "End-of-Class 6 skills",
+      "category": "Class 6 · End-of-Class 6 skills"
+    },
+    {
+      "bn": "একটি বড় লেখা পড়ে অপ্রয়োজনীয় তথ্য বাদ দিয়ে মূল বিষয়গুলো নিজের ভাষায় সারাংশ করতে পারা উচিত।",
+      "en": "End-of-Class 6 skills practice 6",
+      "context": "End-of-Class 6 skills",
+      "category": "Class 6 · End-of-Class 6 skills"
+    },
+    {
+      "bn": "একটি বিষয় নিয়ে কয়েকটি সুসংগঠিত অনুচ্ছেদ লিখতে পারা উচিত।",
+      "en": "End-of-Class 6 skills practice 7",
+      "context": "End-of-Class 6 skills",
+      "category": "Class 6 · End-of-Class 6 skills"
+    },
+    {
+      "bn": "নিজের মতামতের পক্ষে দাবি, কারণ, প্রমাণ ও উদাহরণ ব্যবহার করার অভ্যাস থাকা ভালো।",
+      "en": "End-of-Class 6 skills practice 8",
+      "context": "End-of-Class 6 skills",
+      "category": "Class 6 · End-of-Class 6 skills"
+    },
+    {
+      "bn": "ভূমিকা, মূল অংশ ও উপসংহার ব্যবহার করে ছোট প্রবন্ধ তৈরি করতে পারা উচিত।",
+      "en": "End-of-Class 6 skills practice 9",
+      "context": "End-of-Class 6 skills",
+      "category": "Class 6 · End-of-Class 6 skills"
+    },
+    {
+      "bn": "প্রথমত, দ্বিতীয়ত, পাশাপাশি, অন্যদিকে, বিপরীতে, উদাহরণস্বরূপ, ফলস্বরূপ, যদিও, তবুও, যেহেতু, সেহেতু, অবশেষে, সংক্ষেপে ইত্যাদি শব্দ ব্যবহার করে পরিষ্কার ও যুক্তিপূর্ণ লেখা তৈরি করতে পারা উচিত।",
+      "en": "End-of-Class 6 skills practice 10",
+      "context": "End-of-Class 6 skills",
+      "category": "Class 6 · End-of-Class 6 skills"
+    }
+  ],
+  "practice": [
+    {
+      "type": "Argument",
+      "prompt": "Make a claim and support it with a reason, evidence, and a relevant example.",
+      "answer": "Connect each piece of evidence to the claim and address a reasonable opposing view."
+    },
+    {
+      "type": "Text analysis",
+      "prompt": "Identify the main idea, supporting details, character or author purpose, and reasonable inferences.",
+      "answer": "Use specific details from the text and explain how they support each conclusion."
+    },
+    {
+      "type": "Source evaluation",
+      "prompt": "Compare two information sources and decide which is more reliable.",
+      "answer": "Consider the author, evidence, date, purpose, and whether other trustworthy sources agree."
+    }
+  ],
+  "notes": [
+    "Study vocabulary by subject area and revisit repeated academic words in different contexts.",
+    "Practice separating claims, reasons, evidence, examples, facts, opinions, and inferences.",
+    "Use an introduction, organized body paragraphs, and a conclusion for extended writing."
+  ]
+}

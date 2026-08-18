@@ -1,0 +1,3339 @@
+{
+  "id": "class-1",
+  "title": "Bengali Class 1: First words and useful phrases",
+  "topic": "Class 01 · First words and useful phrases",
+  "summary": "A complete beginner lesson with 421 categorized vocabulary entries and 200 useful phrases, sentences, questions, instructions, and patterns.",
+  "level": "Class 1",
+  "focus": "Everyday vocabulary, short sentences, questions, instructions, opposites, and foundational sentence patterns",
+  "vocab": [
+    {
+      "bn": "আমি",
+      "en": "I",
+      "category": "Class 1 · Very common words"
+    },
+    {
+      "bn": "তুমি",
+      "en": "you",
+      "category": "Class 1 · Very common words"
+    },
+    {
+      "bn": "সে",
+      "en": "he/she",
+      "category": "Class 1 · Very common words"
+    },
+    {
+      "bn": "আমরা",
+      "en": "we",
+      "category": "Class 1 · Very common words"
+    },
+    {
+      "bn": "তোমরা",
+      "en": "you all",
+      "category": "Class 1 · Very common words"
+    },
+    {
+      "bn": "তারা",
+      "en": "they",
+      "category": "Class 1 · Very common words"
+    },
+    {
+      "bn": "এটা",
+      "en": "this",
+      "category": "Class 1 · Very common words"
+    },
+    {
+      "bn": "ওটা",
+      "en": "that",
+      "category": "Class 1 · Very common words"
+    },
+    {
+      "bn": "এই",
+      "en": "this one",
+      "category": "Class 1 · Very common words"
+    },
+    {
+      "bn": "ওই",
+      "en": "that one",
+      "category": "Class 1 · Very common words"
+    },
+    {
+      "bn": "এখানে",
+      "en": "here",
+      "category": "Class 1 · Very common words"
+    },
+    {
+      "bn": "সেখানে",
+      "en": "there",
+      "category": "Class 1 · Very common words"
+    },
+    {
+      "bn": "কে",
+      "en": "who",
+      "category": "Class 1 · Very common words"
+    },
+    {
+      "bn": "কী",
+      "en": "what",
+      "category": "Class 1 · Very common words"
+    },
+    {
+      "bn": "কোথায়",
+      "en": "where",
+      "category": "Class 1 · Very common words"
+    },
+    {
+      "bn": "কখন",
+      "en": "when",
+      "category": "Class 1 · Very common words"
+    },
+    {
+      "bn": "কেন",
+      "en": "why",
+      "category": "Class 1 · Very common words"
+    },
+    {
+      "bn": "কেমন",
+      "en": "how",
+      "category": "Class 1 · Very common words"
+    },
+    {
+      "bn": "কত",
+      "en": "how many",
+      "category": "Class 1 · Very common words"
+    },
+    {
+      "bn": "হ্যাঁ",
+      "en": "yes",
+      "category": "Class 1 · Very common words"
+    },
+    {
+      "bn": "না",
+      "en": "no",
+      "category": "Class 1 · Very common words"
+    },
+    {
+      "bn": "আছে",
+      "en": "exists/has",
+      "category": "Class 1 · Very common words"
+    },
+    {
+      "bn": "নেই",
+      "en": "does not exist",
+      "category": "Class 1 · Very common words"
+    },
+    {
+      "bn": "হবে",
+      "en": "will be",
+      "category": "Class 1 · Very common words"
+    },
+    {
+      "bn": "ছিল",
+      "en": "was",
+      "category": "Class 1 · Very common words"
+    },
+    {
+      "bn": "খুব",
+      "en": "very",
+      "category": "Class 1 · Very common words"
+    },
+    {
+      "bn": "একটু",
+      "en": "a little",
+      "category": "Class 1 · Very common words"
+    },
+    {
+      "bn": "আবার",
+      "en": "again",
+      "category": "Class 1 · Very common words"
+    },
+    {
+      "bn": "এখন",
+      "en": "now",
+      "category": "Class 1 · Very common words"
+    },
+    {
+      "bn": "আজ",
+      "en": "today",
+      "category": "Class 1 · Very common words"
+    },
+    {
+      "bn": "কাল",
+      "en": "tomorrow",
+      "category": "Class 1 · Very common words"
+    },
+    {
+      "bn": "আগে",
+      "en": "before",
+      "category": "Class 1 · Very common words"
+    },
+    {
+      "bn": "পরে",
+      "en": "after",
+      "category": "Class 1 · Very common words"
+    },
+    {
+      "bn": "মা",
+      "en": "mother",
+      "category": "Class 1 · Family"
+    },
+    {
+      "bn": "বাবা",
+      "en": "father",
+      "category": "Class 1 · Family"
+    },
+    {
+      "bn": "ভাই",
+      "en": "brother",
+      "category": "Class 1 · Family"
+    },
+    {
+      "bn": "বোন",
+      "en": "sister",
+      "category": "Class 1 · Family"
+    },
+    {
+      "bn": "দাদা",
+      "en": "elder brother",
+      "category": "Class 1 · Family"
+    },
+    {
+      "bn": "দাদি",
+      "en": "paternal grandmother",
+      "category": "Class 1 · Family"
+    },
+    {
+      "bn": "নানা",
+      "en": "maternal grandfather",
+      "category": "Class 1 · Family"
+    },
+    {
+      "bn": "নানি",
+      "en": "maternal grandmother",
+      "category": "Class 1 · Family"
+    },
+    {
+      "bn": "চাচা",
+      "en": "paternal uncle",
+      "category": "Class 1 · Family"
+    },
+    {
+      "bn": "চাচি",
+      "en": "paternal aunt",
+      "category": "Class 1 · Family"
+    },
+    {
+      "bn": "মামা",
+      "en": "maternal uncle",
+      "category": "Class 1 · Family"
+    },
+    {
+      "bn": "মামি",
+      "en": "maternal aunt",
+      "category": "Class 1 · Family"
+    },
+    {
+      "bn": "খালা",
+      "en": "maternal aunt",
+      "category": "Class 1 · Family"
+    },
+    {
+      "bn": "খালু",
+      "en": "maternal uncle by marriage",
+      "category": "Class 1 · Family"
+    },
+    {
+      "bn": "পরিবার",
+      "en": "family",
+      "category": "Class 1 · Family"
+    },
+    {
+      "bn": "শিশু",
+      "en": "child",
+      "category": "Class 1 · Family"
+    },
+    {
+      "bn": "ছেলে",
+      "en": "boy",
+      "category": "Class 1 · Family"
+    },
+    {
+      "bn": "মেয়ে",
+      "en": "girl",
+      "category": "Class 1 · Family"
+    },
+    {
+      "bn": "মানুষ",
+      "en": "person",
+      "category": "Class 1 · Family"
+    },
+    {
+      "bn": "বন্ধু",
+      "en": "friend",
+      "category": "Class 1 · Family"
+    },
+    {
+      "bn": "মাথা",
+      "en": "head",
+      "category": "Class 1 · Body"
+    },
+    {
+      "bn": "চুল",
+      "en": "hair",
+      "category": "Class 1 · Body"
+    },
+    {
+      "bn": "মুখ",
+      "en": "face",
+      "category": "Class 1 · Body"
+    },
+    {
+      "bn": "চোখ",
+      "en": "eye",
+      "category": "Class 1 · Body"
+    },
+    {
+      "bn": "কান",
+      "en": "ear",
+      "category": "Class 1 · Body"
+    },
+    {
+      "bn": "নাক",
+      "en": "nose",
+      "category": "Class 1 · Body"
+    },
+    {
+      "bn": "ঠোঁট",
+      "en": "lip",
+      "category": "Class 1 · Body"
+    },
+    {
+      "bn": "মুখ",
+      "en": "mouth",
+      "category": "Class 1 · Body"
+    },
+    {
+      "bn": "দাঁত",
+      "en": "tooth",
+      "category": "Class 1 · Body"
+    },
+    {
+      "bn": "জিহ্বা",
+      "en": "tongue",
+      "category": "Class 1 · Body"
+    },
+    {
+      "bn": "গলা",
+      "en": "throat",
+      "category": "Class 1 · Body"
+    },
+    {
+      "bn": "ঘাড়",
+      "en": "neck",
+      "category": "Class 1 · Body"
+    },
+    {
+      "bn": "কাঁধ",
+      "en": "shoulder",
+      "category": "Class 1 · Body"
+    },
+    {
+      "bn": "বুক",
+      "en": "chest",
+      "category": "Class 1 · Body"
+    },
+    {
+      "bn": "পেট",
+      "en": "stomach",
+      "category": "Class 1 · Body"
+    },
+    {
+      "bn": "পিঠ",
+      "en": "back",
+      "category": "Class 1 · Body"
+    },
+    {
+      "bn": "হাত",
+      "en": "hand",
+      "category": "Class 1 · Body"
+    },
+    {
+      "bn": "আঙুল",
+      "en": "finger",
+      "category": "Class 1 · Body"
+    },
+    {
+      "bn": "পা",
+      "en": "foot",
+      "category": "Class 1 · Body"
+    },
+    {
+      "bn": "হাঁটু",
+      "en": "knee",
+      "category": "Class 1 · Body"
+    },
+    {
+      "bn": "পায়ের আঙুল",
+      "en": "toe",
+      "category": "Class 1 · Body"
+    },
+    {
+      "bn": "বাড়ি",
+      "en": "house",
+      "category": "Class 1 · Home"
+    },
+    {
+      "bn": "ঘর",
+      "en": "room",
+      "category": "Class 1 · Home"
+    },
+    {
+      "bn": "দরজা",
+      "en": "door",
+      "category": "Class 1 · Home"
+    },
+    {
+      "bn": "জানালা",
+      "en": "window",
+      "category": "Class 1 · Home"
+    },
+    {
+      "bn": "ছাদ",
+      "en": "roof",
+      "category": "Class 1 · Home"
+    },
+    {
+      "bn": "দেয়াল",
+      "en": "wall",
+      "category": "Class 1 · Home"
+    },
+    {
+      "bn": "মেঝে",
+      "en": "floor",
+      "category": "Class 1 · Home"
+    },
+    {
+      "bn": "সিঁড়ি",
+      "en": "stairs",
+      "category": "Class 1 · Home"
+    },
+    {
+      "bn": "বারান্দা",
+      "en": "balcony",
+      "category": "Class 1 · Home"
+    },
+    {
+      "bn": "রান্নাঘর",
+      "en": "kitchen",
+      "category": "Class 1 · Home"
+    },
+    {
+      "bn": "বাথরুম",
+      "en": "bathroom",
+      "category": "Class 1 · Home"
+    },
+    {
+      "bn": "বিছানা",
+      "en": "bed",
+      "category": "Class 1 · Home"
+    },
+    {
+      "bn": "বালিশ",
+      "en": "pillow",
+      "category": "Class 1 · Home"
+    },
+    {
+      "bn": "চাদর",
+      "en": "sheet",
+      "category": "Class 1 · Home"
+    },
+    {
+      "bn": "টেবিল",
+      "en": "table",
+      "category": "Class 1 · Home"
+    },
+    {
+      "bn": "চেয়ার",
+      "en": "chair",
+      "category": "Class 1 · Home"
+    },
+    {
+      "bn": "আলমারি",
+      "en": "cupboard",
+      "category": "Class 1 · Home"
+    },
+    {
+      "bn": "আয়না",
+      "en": "mirror",
+      "category": "Class 1 · Home"
+    },
+    {
+      "bn": "বাতি",
+      "en": "light",
+      "category": "Class 1 · Home"
+    },
+    {
+      "bn": "পাখা",
+      "en": "fan",
+      "category": "Class 1 · Home"
+    },
+    {
+      "bn": "ঘড়ি",
+      "en": "clock",
+      "category": "Class 1 · Home"
+    },
+    {
+      "bn": "চাবি",
+      "en": "key",
+      "category": "Class 1 · Home"
+    },
+    {
+      "bn": "স্কুল",
+      "en": "school",
+      "category": "Class 1 · School"
+    },
+    {
+      "bn": "শ্রেণি",
+      "en": "class",
+      "category": "Class 1 · School"
+    },
+    {
+      "bn": "শিক্ষক",
+      "en": "male teacher",
+      "category": "Class 1 · School"
+    },
+    {
+      "bn": "শিক্ষিকা",
+      "en": "female teacher",
+      "category": "Class 1 · School"
+    },
+    {
+      "bn": "ছাত্র",
+      "en": "male student",
+      "category": "Class 1 · School"
+    },
+    {
+      "bn": "ছাত্রী",
+      "en": "female student",
+      "category": "Class 1 · School"
+    },
+    {
+      "bn": "বই",
+      "en": "book",
+      "category": "Class 1 · School"
+    },
+    {
+      "bn": "খাতা",
+      "en": "notebook",
+      "category": "Class 1 · School"
+    },
+    {
+      "bn": "কলম",
+      "en": "pen",
+      "category": "Class 1 · School"
+    },
+    {
+      "bn": "পেন্সিল",
+      "en": "pencil",
+      "category": "Class 1 · School"
+    },
+    {
+      "bn": "রাবার",
+      "en": "eraser",
+      "category": "Class 1 · School"
+    },
+    {
+      "bn": "ব্যাগ",
+      "en": "bag",
+      "category": "Class 1 · School"
+    },
+    {
+      "bn": "কাগজ",
+      "en": "paper",
+      "category": "Class 1 · School"
+    },
+    {
+      "bn": "বোর্ড",
+      "en": "board",
+      "category": "Class 1 · School"
+    },
+    {
+      "bn": "চক",
+      "en": "chalk",
+      "category": "Class 1 · School"
+    },
+    {
+      "bn": "বেঞ্চ",
+      "en": "bench",
+      "category": "Class 1 · School"
+    },
+    {
+      "bn": "পরীক্ষা",
+      "en": "exam",
+      "category": "Class 1 · School"
+    },
+    {
+      "bn": "পড়া",
+      "en": "reading",
+      "category": "Class 1 · School"
+    },
+    {
+      "bn": "লেখা",
+      "en": "writing",
+      "category": "Class 1 · School"
+    },
+    {
+      "bn": "অঙ্ক",
+      "en": "mathematics",
+      "category": "Class 1 · School"
+    },
+    {
+      "bn": "প্রশ্ন",
+      "en": "question",
+      "category": "Class 1 · School"
+    },
+    {
+      "bn": "উত্তর",
+      "en": "answer",
+      "category": "Class 1 · School"
+    },
+    {
+      "bn": "ছুটি",
+      "en": "holiday",
+      "category": "Class 1 · School"
+    },
+    {
+      "bn": "ভাত",
+      "en": "rice",
+      "category": "Class 1 · Food and drink"
+    },
+    {
+      "bn": "রুটি",
+      "en": "flatbread",
+      "category": "Class 1 · Food and drink"
+    },
+    {
+      "bn": "ডাল",
+      "en": "lentils",
+      "category": "Class 1 · Food and drink"
+    },
+    {
+      "bn": "মাছ",
+      "en": "fish",
+      "category": "Class 1 · Food and drink"
+    },
+    {
+      "bn": "মাংস",
+      "en": "meat",
+      "category": "Class 1 · Food and drink"
+    },
+    {
+      "bn": "ডিম",
+      "en": "egg",
+      "category": "Class 1 · Food and drink"
+    },
+    {
+      "bn": "দুধ",
+      "en": "milk",
+      "category": "Class 1 · Food and drink"
+    },
+    {
+      "bn": "পানি",
+      "en": "water",
+      "category": "Class 1 · Food and drink"
+    },
+    {
+      "bn": "চা",
+      "en": "tea",
+      "category": "Class 1 · Food and drink"
+    },
+    {
+      "bn": "জুস",
+      "en": "juice",
+      "category": "Class 1 · Food and drink"
+    },
+    {
+      "bn": "ফল",
+      "en": "fruit",
+      "category": "Class 1 · Food and drink"
+    },
+    {
+      "bn": "সবজি",
+      "en": "vegetable",
+      "category": "Class 1 · Food and drink"
+    },
+    {
+      "bn": "আলু",
+      "en": "potato",
+      "category": "Class 1 · Food and drink"
+    },
+    {
+      "bn": "টমেটো",
+      "en": "tomato",
+      "category": "Class 1 · Food and drink"
+    },
+    {
+      "bn": "পেঁয়াজ",
+      "en": "onion",
+      "category": "Class 1 · Food and drink"
+    },
+    {
+      "bn": "লবণ",
+      "en": "salt",
+      "category": "Class 1 · Food and drink"
+    },
+    {
+      "bn": "চিনি",
+      "en": "sugar",
+      "category": "Class 1 · Food and drink"
+    },
+    {
+      "bn": "তেল",
+      "en": "oil",
+      "category": "Class 1 · Food and drink"
+    },
+    {
+      "bn": "মধু",
+      "en": "honey",
+      "category": "Class 1 · Food and drink"
+    },
+    {
+      "bn": "বিস্কুট",
+      "en": "biscuit",
+      "category": "Class 1 · Food and drink"
+    },
+    {
+      "bn": "কেক",
+      "en": "cake",
+      "category": "Class 1 · Food and drink"
+    },
+    {
+      "bn": "মিষ্টি",
+      "en": "sweet",
+      "category": "Class 1 · Food and drink"
+    },
+    {
+      "bn": "আম",
+      "en": "mango",
+      "category": "Class 1 · Fruit"
+    },
+    {
+      "bn": "কলা",
+      "en": "banana",
+      "category": "Class 1 · Fruit"
+    },
+    {
+      "bn": "আপেল",
+      "en": "apple",
+      "category": "Class 1 · Fruit"
+    },
+    {
+      "bn": "কমলা",
+      "en": "orange",
+      "category": "Class 1 · Fruit"
+    },
+    {
+      "bn": "আঙুর",
+      "en": "grape",
+      "category": "Class 1 · Fruit"
+    },
+    {
+      "bn": "পেয়ারা",
+      "en": "guava",
+      "category": "Class 1 · Fruit"
+    },
+    {
+      "bn": "লিচু",
+      "en": "lychee",
+      "category": "Class 1 · Fruit"
+    },
+    {
+      "bn": "তরমুজ",
+      "en": "watermelon",
+      "category": "Class 1 · Fruit"
+    },
+    {
+      "bn": "নারকেল",
+      "en": "coconut",
+      "category": "Class 1 · Fruit"
+    },
+    {
+      "bn": "কাঁঠাল",
+      "en": "jackfruit",
+      "category": "Class 1 · Fruit"
+    },
+    {
+      "bn": "আনারস",
+      "en": "pineapple",
+      "category": "Class 1 · Fruit"
+    },
+    {
+      "bn": "পেঁপে",
+      "en": "papaya",
+      "category": "Class 1 · Fruit"
+    },
+    {
+      "bn": "লেবু",
+      "en": "lemon",
+      "category": "Class 1 · Fruit"
+    },
+    {
+      "bn": "কুকুর",
+      "en": "dog",
+      "category": "Class 1 · Animals"
+    },
+    {
+      "bn": "বিড়াল",
+      "en": "cat",
+      "category": "Class 1 · Animals"
+    },
+    {
+      "bn": "গরু",
+      "en": "cow",
+      "category": "Class 1 · Animals"
+    },
+    {
+      "bn": "ছাগল",
+      "en": "goat",
+      "category": "Class 1 · Animals"
+    },
+    {
+      "bn": "ঘোড়া",
+      "en": "horse",
+      "category": "Class 1 · Animals"
+    },
+    {
+      "bn": "বাঘ",
+      "en": "tiger",
+      "category": "Class 1 · Animals"
+    },
+    {
+      "bn": "সিংহ",
+      "en": "lion",
+      "category": "Class 1 · Animals"
+    },
+    {
+      "bn": "হাতি",
+      "en": "elephant",
+      "category": "Class 1 · Animals"
+    },
+    {
+      "bn": "বানর",
+      "en": "monkey",
+      "category": "Class 1 · Animals"
+    },
+    {
+      "bn": "হরিণ",
+      "en": "deer",
+      "category": "Class 1 · Animals"
+    },
+    {
+      "bn": "ভালুক",
+      "en": "bear",
+      "category": "Class 1 · Animals"
+    },
+    {
+      "bn": "শিয়াল",
+      "en": "fox",
+      "category": "Class 1 · Animals"
+    },
+    {
+      "bn": "খরগোশ",
+      "en": "rabbit",
+      "category": "Class 1 · Animals"
+    },
+    {
+      "bn": "ইঁদুর",
+      "en": "mouse",
+      "category": "Class 1 · Animals"
+    },
+    {
+      "bn": "সাপ",
+      "en": "snake",
+      "category": "Class 1 · Animals"
+    },
+    {
+      "bn": "মাছ",
+      "en": "fish",
+      "category": "Class 1 · Animals"
+    },
+    {
+      "bn": "ব্যাঙ",
+      "en": "frog",
+      "category": "Class 1 · Animals"
+    },
+    {
+      "bn": "পাখি",
+      "en": "bird",
+      "category": "Class 1 · Birds and insects"
+    },
+    {
+      "bn": "কাক",
+      "en": "crow",
+      "category": "Class 1 · Birds and insects"
+    },
+    {
+      "bn": "কবুতর",
+      "en": "pigeon",
+      "category": "Class 1 · Birds and insects"
+    },
+    {
+      "bn": "চড়ুই",
+      "en": "sparrow",
+      "category": "Class 1 · Birds and insects"
+    },
+    {
+      "bn": "হাঁস",
+      "en": "duck",
+      "category": "Class 1 · Birds and insects"
+    },
+    {
+      "bn": "মুরগি",
+      "en": "hen",
+      "category": "Class 1 · Birds and insects"
+    },
+    {
+      "bn": "মোরগ",
+      "en": "rooster",
+      "category": "Class 1 · Birds and insects"
+    },
+    {
+      "bn": "ঈগল",
+      "en": "eagle",
+      "category": "Class 1 · Birds and insects"
+    },
+    {
+      "bn": "পেঁচা",
+      "en": "owl",
+      "category": "Class 1 · Birds and insects"
+    },
+    {
+      "bn": "প্রজাপতি",
+      "en": "butterfly",
+      "category": "Class 1 · Birds and insects"
+    },
+    {
+      "bn": "মৌমাছি",
+      "en": "bee",
+      "category": "Class 1 · Birds and insects"
+    },
+    {
+      "bn": "পিঁপড়া",
+      "en": "ant",
+      "category": "Class 1 · Birds and insects"
+    },
+    {
+      "bn": "মশা",
+      "en": "mosquito",
+      "category": "Class 1 · Birds and insects"
+    },
+    {
+      "bn": "মাছি",
+      "en": "fly",
+      "category": "Class 1 · Birds and insects"
+    },
+    {
+      "bn": "আকাশ",
+      "en": "sky",
+      "category": "Class 1 · Nature"
+    },
+    {
+      "bn": "সূর্য",
+      "en": "sun",
+      "category": "Class 1 · Nature"
+    },
+    {
+      "bn": "চাঁদ",
+      "en": "moon",
+      "category": "Class 1 · Nature"
+    },
+    {
+      "bn": "তারা",
+      "en": "star",
+      "category": "Class 1 · Nature"
+    },
+    {
+      "bn": "মেঘ",
+      "en": "cloud",
+      "category": "Class 1 · Nature"
+    },
+    {
+      "bn": "বৃষ্টি",
+      "en": "rain",
+      "category": "Class 1 · Nature"
+    },
+    {
+      "bn": "বাতাস",
+      "en": "wind",
+      "category": "Class 1 · Nature"
+    },
+    {
+      "bn": "ঝড়",
+      "en": "storm",
+      "category": "Class 1 · Nature"
+    },
+    {
+      "bn": "নদী",
+      "en": "river",
+      "category": "Class 1 · Nature"
+    },
+    {
+      "bn": "পুকুর",
+      "en": "pond",
+      "category": "Class 1 · Nature"
+    },
+    {
+      "bn": "সাগর",
+      "en": "sea",
+      "category": "Class 1 · Nature"
+    },
+    {
+      "bn": "পাহাড়",
+      "en": "mountain",
+      "category": "Class 1 · Nature"
+    },
+    {
+      "bn": "মাঠ",
+      "en": "field",
+      "category": "Class 1 · Nature"
+    },
+    {
+      "bn": "মাটি",
+      "en": "soil",
+      "category": "Class 1 · Nature"
+    },
+    {
+      "bn": "বালি",
+      "en": "sand",
+      "category": "Class 1 · Nature"
+    },
+    {
+      "bn": "গাছ",
+      "en": "tree",
+      "category": "Class 1 · Nature"
+    },
+    {
+      "bn": "ফুল",
+      "en": "flower",
+      "category": "Class 1 · Nature"
+    },
+    {
+      "bn": "পাতা",
+      "en": "leaf",
+      "category": "Class 1 · Nature"
+    },
+    {
+      "bn": "ঘাস",
+      "en": "grass",
+      "category": "Class 1 · Nature"
+    },
+    {
+      "bn": "বন",
+      "en": "forest",
+      "category": "Class 1 · Nature"
+    },
+    {
+      "bn": "লাল",
+      "en": "red",
+      "category": "Class 1 · Colors"
+    },
+    {
+      "bn": "নীল",
+      "en": "blue",
+      "category": "Class 1 · Colors"
+    },
+    {
+      "bn": "সবুজ",
+      "en": "green",
+      "category": "Class 1 · Colors"
+    },
+    {
+      "bn": "হলুদ",
+      "en": "yellow",
+      "category": "Class 1 · Colors"
+    },
+    {
+      "bn": "কালো",
+      "en": "black",
+      "category": "Class 1 · Colors"
+    },
+    {
+      "bn": "সাদা",
+      "en": "white",
+      "category": "Class 1 · Colors"
+    },
+    {
+      "bn": "গোলাপি",
+      "en": "pink",
+      "category": "Class 1 · Colors"
+    },
+    {
+      "bn": "কমলা",
+      "en": "orange",
+      "category": "Class 1 · Colors"
+    },
+    {
+      "bn": "বাদামি",
+      "en": "brown",
+      "category": "Class 1 · Colors"
+    },
+    {
+      "bn": "বেগুনি",
+      "en": "purple",
+      "category": "Class 1 · Colors"
+    },
+    {
+      "bn": "ধূসর",
+      "en": "gray",
+      "category": "Class 1 · Colors"
+    },
+    {
+      "bn": "এক",
+      "en": "one",
+      "category": "Class 1 · Numbers"
+    },
+    {
+      "bn": "দুই",
+      "en": "two",
+      "category": "Class 1 · Numbers"
+    },
+    {
+      "bn": "তিন",
+      "en": "three",
+      "category": "Class 1 · Numbers"
+    },
+    {
+      "bn": "চার",
+      "en": "four",
+      "category": "Class 1 · Numbers"
+    },
+    {
+      "bn": "পাঁচ",
+      "en": "five",
+      "category": "Class 1 · Numbers"
+    },
+    {
+      "bn": "ছয়",
+      "en": "six",
+      "category": "Class 1 · Numbers"
+    },
+    {
+      "bn": "সাত",
+      "en": "seven",
+      "category": "Class 1 · Numbers"
+    },
+    {
+      "bn": "আট",
+      "en": "eight",
+      "category": "Class 1 · Numbers"
+    },
+    {
+      "bn": "নয়",
+      "en": "nine",
+      "category": "Class 1 · Numbers"
+    },
+    {
+      "bn": "দশ",
+      "en": "ten",
+      "category": "Class 1 · Numbers"
+    },
+    {
+      "bn": "এগারো",
+      "en": "eleven",
+      "category": "Class 1 · Numbers"
+    },
+    {
+      "bn": "বারো",
+      "en": "twelve",
+      "category": "Class 1 · Numbers"
+    },
+    {
+      "bn": "তেরো",
+      "en": "thirteen",
+      "category": "Class 1 · Numbers"
+    },
+    {
+      "bn": "চৌদ্দ",
+      "en": "fourteen",
+      "category": "Class 1 · Numbers"
+    },
+    {
+      "bn": "পনেরো",
+      "en": "fifteen",
+      "category": "Class 1 · Numbers"
+    },
+    {
+      "bn": "ষোলো",
+      "en": "sixteen",
+      "category": "Class 1 · Numbers"
+    },
+    {
+      "bn": "সতেরো",
+      "en": "seventeen",
+      "category": "Class 1 · Numbers"
+    },
+    {
+      "bn": "আঠারো",
+      "en": "eighteen",
+      "category": "Class 1 · Numbers"
+    },
+    {
+      "bn": "উনিশ",
+      "en": "nineteen",
+      "category": "Class 1 · Numbers"
+    },
+    {
+      "bn": "বিশ",
+      "en": "twenty",
+      "category": "Class 1 · Numbers"
+    },
+    {
+      "bn": "সকাল",
+      "en": "morning",
+      "category": "Class 1 · Time"
+    },
+    {
+      "bn": "দুপুর",
+      "en": "noon",
+      "category": "Class 1 · Time"
+    },
+    {
+      "bn": "বিকেল",
+      "en": "afternoon",
+      "category": "Class 1 · Time"
+    },
+    {
+      "bn": "সন্ধ্যা",
+      "en": "evening",
+      "category": "Class 1 · Time"
+    },
+    {
+      "bn": "রাত",
+      "en": "night",
+      "category": "Class 1 · Time"
+    },
+    {
+      "bn": "দিন",
+      "en": "day",
+      "category": "Class 1 · Time"
+    },
+    {
+      "bn": "সপ্তাহ",
+      "en": "week",
+      "category": "Class 1 · Time"
+    },
+    {
+      "bn": "মাস",
+      "en": "month",
+      "category": "Class 1 · Time"
+    },
+    {
+      "bn": "বছর",
+      "en": "year",
+      "category": "Class 1 · Time"
+    },
+    {
+      "bn": "আজ",
+      "en": "today",
+      "category": "Class 1 · Time"
+    },
+    {
+      "bn": "কাল",
+      "en": "tomorrow",
+      "category": "Class 1 · Time"
+    },
+    {
+      "bn": "গতকাল",
+      "en": "yesterday",
+      "category": "Class 1 · Time"
+    },
+    {
+      "bn": "আগামীকাল",
+      "en": "tomorrow",
+      "category": "Class 1 · Time"
+    },
+    {
+      "bn": "এখন",
+      "en": "now",
+      "category": "Class 1 · Time"
+    },
+    {
+      "bn": "পরে",
+      "en": "later",
+      "category": "Class 1 · Time"
+    },
+    {
+      "bn": "আগে",
+      "en": "before",
+      "category": "Class 1 · Time"
+    },
+    {
+      "bn": "তাড়াতাড়ি",
+      "en": "early",
+      "category": "Class 1 · Time"
+    },
+    {
+      "bn": "দেরি",
+      "en": "late",
+      "category": "Class 1 · Time"
+    },
+    {
+      "bn": "শনিবার",
+      "en": "Saturday",
+      "category": "Class 1 · Days of the week"
+    },
+    {
+      "bn": "রবিবার",
+      "en": "Sunday",
+      "category": "Class 1 · Days of the week"
+    },
+    {
+      "bn": "সোমবার",
+      "en": "Monday",
+      "category": "Class 1 · Days of the week"
+    },
+    {
+      "bn": "মঙ্গলবার",
+      "en": "Tuesday",
+      "category": "Class 1 · Days of the week"
+    },
+    {
+      "bn": "বুধবার",
+      "en": "Wednesday",
+      "category": "Class 1 · Days of the week"
+    },
+    {
+      "bn": "বৃহস্পতিবার",
+      "en": "Thursday",
+      "category": "Class 1 · Days of the week"
+    },
+    {
+      "bn": "শুক্রবার",
+      "en": "Friday",
+      "category": "Class 1 · Days of the week"
+    },
+    {
+      "bn": "বাড়ি",
+      "en": "house",
+      "category": "Class 1 · Places"
+    },
+    {
+      "bn": "স্কুল",
+      "en": "school",
+      "category": "Class 1 · Places"
+    },
+    {
+      "bn": "দোকান",
+      "en": "shop",
+      "category": "Class 1 · Places"
+    },
+    {
+      "bn": "বাজার",
+      "en": "market",
+      "category": "Class 1 · Places"
+    },
+    {
+      "bn": "রাস্তা",
+      "en": "road",
+      "category": "Class 1 · Places"
+    },
+    {
+      "bn": "পার্ক",
+      "en": "park",
+      "category": "Class 1 · Places"
+    },
+    {
+      "bn": "মাঠ",
+      "en": "field",
+      "category": "Class 1 · Places"
+    },
+    {
+      "bn": "হাসপাতাল",
+      "en": "hospital",
+      "category": "Class 1 · Places"
+    },
+    {
+      "bn": "গ্রাম",
+      "en": "village",
+      "category": "Class 1 · Places"
+    },
+    {
+      "bn": "শহর",
+      "en": "city",
+      "category": "Class 1 · Places"
+    },
+    {
+      "bn": "দেশ",
+      "en": "country",
+      "category": "Class 1 · Places"
+    },
+    {
+      "bn": "মসজিদ",
+      "en": "mosque",
+      "category": "Class 1 · Places"
+    },
+    {
+      "bn": "বাগান",
+      "en": "garden",
+      "category": "Class 1 · Places"
+    },
+    {
+      "bn": "নদী",
+      "en": "river",
+      "category": "Class 1 · Places"
+    },
+    {
+      "bn": "পুকুর",
+      "en": "pond",
+      "category": "Class 1 · Places"
+    },
+    {
+      "bn": "গাড়ি",
+      "en": "car",
+      "category": "Class 1 · Transportation"
+    },
+    {
+      "bn": "বাস",
+      "en": "bus",
+      "category": "Class 1 · Transportation"
+    },
+    {
+      "bn": "ট্রেন",
+      "en": "train",
+      "category": "Class 1 · Transportation"
+    },
+    {
+      "bn": "রিকশা",
+      "en": "rickshaw",
+      "category": "Class 1 · Transportation"
+    },
+    {
+      "bn": "সাইকেল",
+      "en": "bicycle",
+      "category": "Class 1 · Transportation"
+    },
+    {
+      "bn": "মোটরসাইকেল",
+      "en": "motorcycle",
+      "category": "Class 1 · Transportation"
+    },
+    {
+      "bn": "নৌকা",
+      "en": "boat",
+      "category": "Class 1 · Transportation"
+    },
+    {
+      "bn": "জাহাজ",
+      "en": "ship",
+      "category": "Class 1 · Transportation"
+    },
+    {
+      "bn": "বিমান",
+      "en": "airplane",
+      "category": "Class 1 · Transportation"
+    },
+    {
+      "bn": "চাকা",
+      "en": "wheel",
+      "category": "Class 1 · Transportation"
+    },
+    {
+      "bn": "রাস্তা",
+      "en": "road",
+      "category": "Class 1 · Transportation"
+    },
+    {
+      "bn": "জামা",
+      "en": "clothes",
+      "category": "Class 1 · Clothing"
+    },
+    {
+      "bn": "প্যান্ট",
+      "en": "pants",
+      "category": "Class 1 · Clothing"
+    },
+    {
+      "bn": "শার্ট",
+      "en": "shirt",
+      "category": "Class 1 · Clothing"
+    },
+    {
+      "bn": "জুতা",
+      "en": "shoes",
+      "category": "Class 1 · Clothing"
+    },
+    {
+      "bn": "মোজা",
+      "en": "socks",
+      "category": "Class 1 · Clothing"
+    },
+    {
+      "bn": "টুপি",
+      "en": "hat",
+      "category": "Class 1 · Clothing"
+    },
+    {
+      "bn": "পোশাক",
+      "en": "clothing",
+      "category": "Class 1 · Clothing"
+    },
+    {
+      "bn": "চশমা",
+      "en": "glasses",
+      "category": "Class 1 · Clothing"
+    },
+    {
+      "bn": "ছাতা",
+      "en": "umbrella",
+      "category": "Class 1 · Clothing"
+    },
+    {
+      "bn": "বল",
+      "en": "ball",
+      "category": "Class 1 · Toys and games"
+    },
+    {
+      "bn": "ব্যাট",
+      "en": "bat",
+      "category": "Class 1 · Toys and games"
+    },
+    {
+      "bn": "পুতুল",
+      "en": "doll",
+      "category": "Class 1 · Toys and games"
+    },
+    {
+      "bn": "ঘুড়ি",
+      "en": "kite",
+      "category": "Class 1 · Toys and games"
+    },
+    {
+      "bn": "খেলনা",
+      "en": "toy",
+      "category": "Class 1 · Toys and games"
+    },
+    {
+      "bn": "খেলা",
+      "en": "game",
+      "category": "Class 1 · Toys and games"
+    },
+    {
+      "bn": "দৌড়",
+      "en": "running",
+      "category": "Class 1 · Toys and games"
+    },
+    {
+      "bn": "ফুটবল",
+      "en": "football",
+      "category": "Class 1 · Toys and games"
+    },
+    {
+      "bn": "ক্রিকেট",
+      "en": "cricket",
+      "category": "Class 1 · Toys and games"
+    },
+    {
+      "bn": "লুকোচুরি",
+      "en": "hide-and-seek",
+      "category": "Class 1 · Toys and games"
+    },
+    {
+      "bn": "করা",
+      "en": "to do",
+      "category": "Class 1 · Common verbs"
+    },
+    {
+      "bn": "যাওয়া",
+      "en": "to go",
+      "category": "Class 1 · Common verbs"
+    },
+    {
+      "bn": "আসা",
+      "en": "to come",
+      "category": "Class 1 · Common verbs"
+    },
+    {
+      "bn": "খাওয়া",
+      "en": "to eat",
+      "category": "Class 1 · Common verbs"
+    },
+    {
+      "bn": "পান করা",
+      "en": "to drink",
+      "category": "Class 1 · Common verbs"
+    },
+    {
+      "bn": "দেখা",
+      "en": "to see",
+      "category": "Class 1 · Common verbs"
+    },
+    {
+      "bn": "শোনা",
+      "en": "to hear",
+      "category": "Class 1 · Common verbs"
+    },
+    {
+      "bn": "বলা",
+      "en": "to say",
+      "category": "Class 1 · Common verbs"
+    },
+    {
+      "bn": "পড়া",
+      "en": "to read",
+      "category": "Class 1 · Common verbs"
+    },
+    {
+      "bn": "লেখা",
+      "en": "to write",
+      "category": "Class 1 · Common verbs"
+    },
+    {
+      "bn": "শেখা",
+      "en": "to learn",
+      "category": "Class 1 · Common verbs"
+    },
+    {
+      "bn": "জানা",
+      "en": "to know",
+      "category": "Class 1 · Common verbs"
+    },
+    {
+      "bn": "বোঝা",
+      "en": "to understand",
+      "category": "Class 1 · Common verbs"
+    },
+    {
+      "bn": "বসা",
+      "en": "to sit",
+      "category": "Class 1 · Common verbs"
+    },
+    {
+      "bn": "দাঁড়ানো",
+      "en": "to stand",
+      "category": "Class 1 · Common verbs"
+    },
+    {
+      "bn": "হাঁটা",
+      "en": "to walk",
+      "category": "Class 1 · Common verbs"
+    },
+    {
+      "bn": "দৌড়ানো",
+      "en": "to run",
+      "category": "Class 1 · Common verbs"
+    },
+    {
+      "bn": "খেলা",
+      "en": "to play",
+      "category": "Class 1 · Common verbs"
+    },
+    {
+      "bn": "ঘুমানো",
+      "en": "to sleep",
+      "category": "Class 1 · Common verbs"
+    },
+    {
+      "bn": "জাগা",
+      "en": "to wake",
+      "category": "Class 1 · Common verbs"
+    },
+    {
+      "bn": "হাসা",
+      "en": "to laugh",
+      "category": "Class 1 · Common verbs"
+    },
+    {
+      "bn": "কাঁদা",
+      "en": "to cry",
+      "category": "Class 1 · Common verbs"
+    },
+    {
+      "bn": "দেওয়া",
+      "en": "to give",
+      "category": "Class 1 · Common verbs"
+    },
+    {
+      "bn": "নেওয়া",
+      "en": "to take",
+      "category": "Class 1 · Common verbs"
+    },
+    {
+      "bn": "রাখা",
+      "en": "to keep",
+      "category": "Class 1 · Common verbs"
+    },
+    {
+      "bn": "ধরা",
+      "en": "to hold",
+      "category": "Class 1 · Common verbs"
+    },
+    {
+      "bn": "খোলা",
+      "en": "to open",
+      "category": "Class 1 · Common verbs"
+    },
+    {
+      "bn": "বন্ধ করা",
+      "en": "to close",
+      "category": "Class 1 · Common verbs"
+    },
+    {
+      "bn": "বানানো",
+      "en": "to make",
+      "category": "Class 1 · Common verbs"
+    },
+    {
+      "bn": "আঁকা",
+      "en": "to draw",
+      "category": "Class 1 · Common verbs"
+    },
+    {
+      "bn": "গাওয়া",
+      "en": "to sing",
+      "category": "Class 1 · Common verbs"
+    },
+    {
+      "bn": "নাচা",
+      "en": "to dance",
+      "category": "Class 1 · Common verbs"
+    },
+    {
+      "bn": "চাওয়া",
+      "en": "to want",
+      "category": "Class 1 · Common verbs"
+    },
+    {
+      "bn": "পাওয়া",
+      "en": "to get",
+      "category": "Class 1 · Common verbs"
+    },
+    {
+      "bn": "কেনা",
+      "en": "to buy",
+      "category": "Class 1 · Common verbs"
+    },
+    {
+      "bn": "ডাকা",
+      "en": "to call",
+      "category": "Class 1 · Common verbs"
+    },
+    {
+      "bn": "ওঠা",
+      "en": "to rise",
+      "category": "Class 1 · Common verbs"
+    },
+    {
+      "bn": "নামা",
+      "en": "to descend",
+      "category": "Class 1 · Common verbs"
+    },
+    {
+      "bn": "ফেরা",
+      "en": "to return",
+      "category": "Class 1 · Common verbs"
+    },
+    {
+      "bn": "পড়ে যাওয়া",
+      "en": "to fall down",
+      "category": "Class 1 · Common verbs"
+    },
+    {
+      "bn": "বড়",
+      "en": "big",
+      "category": "Class 1 · Describing words"
+    },
+    {
+      "bn": "ছোট",
+      "en": "small",
+      "category": "Class 1 · Describing words"
+    },
+    {
+      "bn": "লম্বা",
+      "en": "tall",
+      "category": "Class 1 · Describing words"
+    },
+    {
+      "bn": "খাটো",
+      "en": "short",
+      "category": "Class 1 · Describing words"
+    },
+    {
+      "bn": "মোটা",
+      "en": "fat",
+      "category": "Class 1 · Describing words"
+    },
+    {
+      "bn": "পাতলা",
+      "en": "thin",
+      "category": "Class 1 · Describing words"
+    },
+    {
+      "bn": "ভালো",
+      "en": "good",
+      "category": "Class 1 · Describing words"
+    },
+    {
+      "bn": "খারাপ",
+      "en": "bad",
+      "category": "Class 1 · Describing words"
+    },
+    {
+      "bn": "সুন্দর",
+      "en": "beautiful",
+      "category": "Class 1 · Describing words"
+    },
+    {
+      "bn": "পরিষ্কার",
+      "en": "clean",
+      "category": "Class 1 · Describing words"
+    },
+    {
+      "bn": "নোংরা",
+      "en": "dirty",
+      "category": "Class 1 · Describing words"
+    },
+    {
+      "bn": "নতুন",
+      "en": "new",
+      "category": "Class 1 · Describing words"
+    },
+    {
+      "bn": "পুরোনো",
+      "en": "old",
+      "category": "Class 1 · Describing words"
+    },
+    {
+      "bn": "গরম",
+      "en": "hot",
+      "category": "Class 1 · Describing words"
+    },
+    {
+      "bn": "ঠান্ডা",
+      "en": "cold",
+      "category": "Class 1 · Describing words"
+    },
+    {
+      "bn": "মিষ্টি",
+      "en": "sweet",
+      "category": "Class 1 · Describing words"
+    },
+    {
+      "bn": "টক",
+      "en": "sour",
+      "category": "Class 1 · Describing words"
+    },
+    {
+      "bn": "নরম",
+      "en": "soft",
+      "category": "Class 1 · Describing words"
+    },
+    {
+      "bn": "শক্ত",
+      "en": "hard",
+      "category": "Class 1 · Describing words"
+    },
+    {
+      "bn": "ভারী",
+      "en": "heavy",
+      "category": "Class 1 · Describing words"
+    },
+    {
+      "bn": "হালকা",
+      "en": "light",
+      "category": "Class 1 · Describing words"
+    },
+    {
+      "bn": "দ্রুত",
+      "en": "fast",
+      "category": "Class 1 · Describing words"
+    },
+    {
+      "bn": "ধীর",
+      "en": "slow",
+      "category": "Class 1 · Describing words"
+    },
+    {
+      "bn": "কাছে",
+      "en": "near",
+      "category": "Class 1 · Describing words"
+    },
+    {
+      "bn": "দূরে",
+      "en": "far",
+      "category": "Class 1 · Describing words"
+    },
+    {
+      "bn": "সহজ",
+      "en": "easy",
+      "category": "Class 1 · Describing words"
+    },
+    {
+      "bn": "কঠিন",
+      "en": "difficult",
+      "category": "Class 1 · Describing words"
+    },
+    {
+      "bn": "খালি",
+      "en": "empty",
+      "category": "Class 1 · Describing words"
+    },
+    {
+      "bn": "ভরা",
+      "en": "full",
+      "category": "Class 1 · Describing words"
+    },
+    {
+      "bn": "খুশি",
+      "en": "happy",
+      "category": "Class 1 · Feelings"
+    },
+    {
+      "bn": "দুঃখ",
+      "en": "sadness",
+      "category": "Class 1 · Feelings"
+    },
+    {
+      "bn": "রাগ",
+      "en": "anger",
+      "category": "Class 1 · Feelings"
+    },
+    {
+      "bn": "ভয়",
+      "en": "fear",
+      "category": "Class 1 · Feelings"
+    },
+    {
+      "bn": "ভালোবাসা",
+      "en": "love",
+      "category": "Class 1 · Feelings"
+    },
+    {
+      "bn": "আনন্দ",
+      "en": "joy",
+      "category": "Class 1 · Feelings"
+    },
+    {
+      "bn": "কষ্ট",
+      "en": "pain",
+      "category": "Class 1 · Feelings"
+    },
+    {
+      "bn": "ক্ষুধা",
+      "en": "hunger",
+      "category": "Class 1 · Feelings"
+    },
+    {
+      "bn": "তৃষ্ণা",
+      "en": "thirst",
+      "category": "Class 1 · Feelings"
+    },
+    {
+      "bn": "ক্লান্ত",
+      "en": "tired",
+      "category": "Class 1 · Feelings"
+    },
+    {
+      "bn": "উপরে",
+      "en": "above",
+      "category": "Class 1 · Position words"
+    },
+    {
+      "bn": "নিচে",
+      "en": "below",
+      "category": "Class 1 · Position words"
+    },
+    {
+      "bn": "সামনে",
+      "en": "in front",
+      "category": "Class 1 · Position words"
+    },
+    {
+      "bn": "পিছনে",
+      "en": "behind",
+      "category": "Class 1 · Position words"
+    },
+    {
+      "bn": "পাশে",
+      "en": "beside",
+      "category": "Class 1 · Position words"
+    },
+    {
+      "bn": "ভিতরে",
+      "en": "inside",
+      "category": "Class 1 · Position words"
+    },
+    {
+      "bn": "বাইরে",
+      "en": "outside",
+      "category": "Class 1 · Position words"
+    },
+    {
+      "bn": "কাছে",
+      "en": "near",
+      "category": "Class 1 · Position words"
+    },
+    {
+      "bn": "দূরে",
+      "en": "far",
+      "category": "Class 1 · Position words"
+    },
+    {
+      "bn": "ডানে",
+      "en": "right",
+      "category": "Class 1 · Position words"
+    },
+    {
+      "bn": "বামে",
+      "en": "left",
+      "category": "Class 1 · Position words"
+    },
+    {
+      "bn": "মাঝে",
+      "en": "between",
+      "category": "Class 1 · Position words"
+    },
+    {
+      "bn": "কে",
+      "en": "who",
+      "category": "Class 1 · Question words"
+    },
+    {
+      "bn": "কী",
+      "en": "what",
+      "category": "Class 1 · Question words"
+    },
+    {
+      "bn": "কোথায়",
+      "en": "where",
+      "category": "Class 1 · Question words"
+    },
+    {
+      "bn": "কখন",
+      "en": "when",
+      "category": "Class 1 · Question words"
+    },
+    {
+      "bn": "কেন",
+      "en": "why",
+      "category": "Class 1 · Question words"
+    },
+    {
+      "bn": "কেমন",
+      "en": "how",
+      "category": "Class 1 · Question words"
+    },
+    {
+      "bn": "কোন",
+      "en": "which",
+      "category": "Class 1 · Question words"
+    },
+    {
+      "bn": "কত",
+      "en": "how many",
+      "category": "Class 1 · Question words"
+    },
+    {
+      "bn": "কার",
+      "en": "whose",
+      "category": "Class 1 · Question words"
+    },
+    {
+      "bn": "আর",
+      "en": "and/more",
+      "category": "Class 1 · Useful small words"
+    },
+    {
+      "bn": "কিন্তু",
+      "en": "but",
+      "category": "Class 1 · Useful small words"
+    },
+    {
+      "bn": "তাই",
+      "en": "therefore",
+      "category": "Class 1 · Useful small words"
+    },
+    {
+      "bn": "যদি",
+      "en": "if",
+      "category": "Class 1 · Useful small words"
+    },
+    {
+      "bn": "তবে",
+      "en": "then",
+      "category": "Class 1 · Useful small words"
+    },
+    {
+      "bn": "কারণ",
+      "en": "because",
+      "category": "Class 1 · Useful small words"
+    },
+    {
+      "bn": "অথবা",
+      "en": "or",
+      "category": "Class 1 · Useful small words"
+    },
+    {
+      "bn": "সঙ্গে",
+      "en": "with",
+      "category": "Class 1 · Useful small words"
+    },
+    {
+      "bn": "জন্য",
+      "en": "for",
+      "category": "Class 1 · Useful small words"
+    },
+    {
+      "bn": "থেকে",
+      "en": "from",
+      "category": "Class 1 · Useful small words"
+    },
+    {
+      "bn": "পর্যন্ত",
+      "en": "until",
+      "category": "Class 1 · Useful small words"
+    },
+    {
+      "bn": "দিকে",
+      "en": "toward",
+      "category": "Class 1 · Useful small words"
+    },
+    {
+      "bn": "মধ্যে",
+      "en": "among",
+      "category": "Class 1 · Useful small words"
+    },
+    {
+      "bn": "উপর",
+      "en": "on",
+      "category": "Class 1 · Useful small words"
+    },
+    {
+      "bn": "নিচে",
+      "en": "under",
+      "category": "Class 1 · Useful small words"
+    }
+  ],
+  "phrases": [
+    {
+      "bn": "আমার নাম ___।",
+      "en": "My name is ___.",
+      "context": "Introductions and conversation",
+      "category": "Class 1 · Introductions and conversation"
+    },
+    {
+      "bn": "তোমার নাম কী?",
+      "en": "What is your name?",
+      "context": "Introductions and conversation",
+      "category": "Class 1 · Introductions and conversation"
+    },
+    {
+      "bn": "তুমি কেমন আছ?",
+      "en": "How are you?",
+      "context": "Introductions and conversation",
+      "category": "Class 1 · Introductions and conversation"
+    },
+    {
+      "bn": "আমি ভালো আছি।",
+      "en": "I am well.",
+      "context": "Introductions and conversation",
+      "category": "Class 1 · Introductions and conversation"
+    },
+    {
+      "bn": "তুমি কোথায় থাকো?",
+      "en": "Where do you live?",
+      "context": "Introductions and conversation",
+      "category": "Class 1 · Introductions and conversation"
+    },
+    {
+      "bn": "আমি এখানে থাকি।",
+      "en": "I live here.",
+      "context": "Introductions and conversation",
+      "category": "Class 1 · Introductions and conversation"
+    },
+    {
+      "bn": "এটা কী?",
+      "en": "What is this?",
+      "context": "Introductions and conversation",
+      "category": "Class 1 · Introductions and conversation"
+    },
+    {
+      "bn": "ওটা কী?",
+      "en": "What is that?",
+      "context": "Introductions and conversation",
+      "category": "Class 1 · Introductions and conversation"
+    },
+    {
+      "bn": "এটা আমার।",
+      "en": "This is mine.",
+      "context": "Introductions and conversation",
+      "category": "Class 1 · Introductions and conversation"
+    },
+    {
+      "bn": "ওটা তোমার।",
+      "en": "That is yours.",
+      "context": "Introductions and conversation",
+      "category": "Class 1 · Introductions and conversation"
+    },
+    {
+      "bn": "আমি জানি।",
+      "en": "I know.",
+      "context": "Introductions and conversation",
+      "category": "Class 1 · Introductions and conversation"
+    },
+    {
+      "bn": "আমি জানি না।",
+      "en": "I do not know.",
+      "context": "Introductions and conversation",
+      "category": "Class 1 · Introductions and conversation"
+    },
+    {
+      "bn": "আমি বুঝেছি।",
+      "en": "I understood.",
+      "context": "Introductions and conversation",
+      "category": "Class 1 · Introductions and conversation"
+    },
+    {
+      "bn": "আমি বুঝিনি।",
+      "en": "I did not understand.",
+      "context": "Introductions and conversation",
+      "category": "Class 1 · Introductions and conversation"
+    },
+    {
+      "bn": "আবার বলো।",
+      "en": "Say it again.",
+      "context": "Introductions and conversation",
+      "category": "Class 1 · Introductions and conversation"
+    },
+    {
+      "bn": "ধীরে বলো।",
+      "en": "Speak slowly.",
+      "context": "Introductions and conversation",
+      "category": "Class 1 · Introductions and conversation"
+    },
+    {
+      "bn": "ধন্যবাদ।",
+      "en": "Thank you.",
+      "context": "Polite phrases",
+      "category": "Class 1 · Polite phrases"
+    },
+    {
+      "bn": "দয়া করে।",
+      "en": "Please.",
+      "context": "Polite phrases",
+      "category": "Class 1 · Polite phrases"
+    },
+    {
+      "bn": "মাফ করবেন।",
+      "en": "Excuse me.",
+      "context": "Polite phrases",
+      "category": "Class 1 · Polite phrases"
+    },
+    {
+      "bn": "কোনো সমস্যা নেই।",
+      "en": "No problem.",
+      "context": "Polite phrases",
+      "category": "Class 1 · Polite phrases"
+    },
+    {
+      "bn": "স্বাগতম।",
+      "en": "Welcome.",
+      "context": "Polite phrases",
+      "category": "Class 1 · Polite phrases"
+    },
+    {
+      "bn": "শুভ সকাল।",
+      "en": "Good morning.",
+      "context": "Polite phrases",
+      "category": "Class 1 · Polite phrases"
+    },
+    {
+      "bn": "শুভ রাত্রি।",
+      "en": "Good night.",
+      "context": "Polite phrases",
+      "category": "Class 1 · Polite phrases"
+    },
+    {
+      "bn": "বিদায়।",
+      "en": "Goodbye.",
+      "context": "Polite phrases",
+      "category": "Class 1 · Polite phrases"
+    },
+    {
+      "bn": "আবার দেখা হবে।",
+      "en": "See you again.",
+      "context": "Polite phrases",
+      "category": "Class 1 · Polite phrases"
+    },
+    {
+      "bn": "আমি স্কুলে যাই।",
+      "en": "I go to school.",
+      "context": "At school",
+      "category": "Class 1 · At school"
+    },
+    {
+      "bn": "আমি বই পড়ি।",
+      "en": "I read a book.",
+      "context": "At school",
+      "category": "Class 1 · At school"
+    },
+    {
+      "bn": "আমি খাতায় লিখি।",
+      "en": "I write in my notebook.",
+      "context": "At school",
+      "category": "Class 1 · At school"
+    },
+    {
+      "bn": "এটা আমার বই।",
+      "en": "This is my book.",
+      "context": "At school",
+      "category": "Class 1 · At school"
+    },
+    {
+      "bn": "ওটা আমার ব্যাগ।",
+      "en": "That is my bag.",
+      "context": "At school",
+      "category": "Class 1 · At school"
+    },
+    {
+      "bn": "আমার একটি পেন্সিল আছে।",
+      "en": "I have a pencil.",
+      "context": "At school",
+      "category": "Class 1 · At school"
+    },
+    {
+      "bn": "শিক্ষক পড়াচ্ছেন।",
+      "en": "The teacher is teaching.",
+      "context": "At school",
+      "category": "Class 1 · At school"
+    },
+    {
+      "bn": "আমি উত্তর জানি।",
+      "en": "I know the answer.",
+      "context": "At school",
+      "category": "Class 1 · At school"
+    },
+    {
+      "bn": "আমি উত্তর জানি না।",
+      "en": "I do not know the answer.",
+      "context": "At school",
+      "category": "Class 1 · At school"
+    },
+    {
+      "bn": "আমি কি বসতে পারি?",
+      "en": "May I sit?",
+      "context": "At school",
+      "category": "Class 1 · At school"
+    },
+    {
+      "bn": "আমি কি যেতে পারি?",
+      "en": "May I go?",
+      "context": "At school",
+      "category": "Class 1 · At school"
+    },
+    {
+      "bn": "আমাকে সাহায্য করুন।",
+      "en": "Please help me.",
+      "context": "At school",
+      "category": "Class 1 · At school"
+    },
+    {
+      "bn": "আমি বুঝতে পারছি না।",
+      "en": "I do not understand.",
+      "context": "At school",
+      "category": "Class 1 · At school"
+    },
+    {
+      "bn": "আমি বাড়িতে আছি।",
+      "en": "I am at home.",
+      "context": "At home",
+      "category": "Class 1 · At home"
+    },
+    {
+      "bn": "মা রান্না করছেন।",
+      "en": "Mother is cooking.",
+      "context": "At home",
+      "category": "Class 1 · At home"
+    },
+    {
+      "bn": "বাবা বাড়িতে আছেন।",
+      "en": "Father is at home.",
+      "context": "At home",
+      "category": "Class 1 · At home"
+    },
+    {
+      "bn": "আমি ঘুমাতে যাচ্ছি।",
+      "en": "I am going to sleep.",
+      "context": "At home",
+      "category": "Class 1 · At home"
+    },
+    {
+      "bn": "দরজা খোলো।",
+      "en": "Open the door.",
+      "context": "At home",
+      "category": "Class 1 · At home"
+    },
+    {
+      "bn": "দরজা বন্ধ করো।",
+      "en": "Close the door.",
+      "context": "At home",
+      "category": "Class 1 · At home"
+    },
+    {
+      "bn": "বাতি জ্বালাও।",
+      "en": "Turn on the light.",
+      "context": "At home",
+      "category": "Class 1 · At home"
+    },
+    {
+      "bn": "বাতি বন্ধ করো।",
+      "en": "Turn off the light.",
+      "context": "At home",
+      "category": "Class 1 · At home"
+    },
+    {
+      "bn": "এখানে এসো।",
+      "en": "Come here.",
+      "context": "At home",
+      "category": "Class 1 · At home"
+    },
+    {
+      "bn": "ওখানে যাও।",
+      "en": "Go there.",
+      "context": "At home",
+      "category": "Class 1 · At home"
+    },
+    {
+      "bn": "আমার পাশে বসো।",
+      "en": "Sit beside me.",
+      "context": "At home",
+      "category": "Class 1 · At home"
+    },
+    {
+      "bn": "আমার ক্ষুধা লেগেছে।",
+      "en": "I am hungry.",
+      "context": "Food and drink",
+      "category": "Class 1 · Food and drink"
+    },
+    {
+      "bn": "আমার তৃষ্ণা পেয়েছে।",
+      "en": "I am thirsty.",
+      "context": "Food and drink",
+      "category": "Class 1 · Food and drink"
+    },
+    {
+      "bn": "আমি ভাত খাই।",
+      "en": "I eat rice.",
+      "context": "Food and drink",
+      "category": "Class 1 · Food and drink"
+    },
+    {
+      "bn": "আমি পানি পান করি।",
+      "en": "I drink water.",
+      "context": "Food and drink",
+      "category": "Class 1 · Food and drink"
+    },
+    {
+      "bn": "আমি আম খেতে ভালোবাসি।",
+      "en": "I love to eat mangoes.",
+      "context": "Food and drink",
+      "category": "Class 1 · Food and drink"
+    },
+    {
+      "bn": "এটা খুব মিষ্টি।",
+      "en": "This is very sweet.",
+      "context": "Food and drink",
+      "category": "Class 1 · Food and drink"
+    },
+    {
+      "bn": "এটা খুব গরম।",
+      "en": "This is very hot.",
+      "context": "Food and drink",
+      "category": "Class 1 · Food and drink"
+    },
+    {
+      "bn": "এটা ঠান্ডা।",
+      "en": "This is cold.",
+      "context": "Food and drink",
+      "category": "Class 1 · Food and drink"
+    },
+    {
+      "bn": "আমাকে একটু পানি দাও।",
+      "en": "Give me a little water.",
+      "context": "Food and drink",
+      "category": "Class 1 · Food and drink"
+    },
+    {
+      "bn": "আর একটু দাও।",
+      "en": "Give me a little more.",
+      "context": "Food and drink",
+      "category": "Class 1 · Food and drink"
+    },
+    {
+      "bn": "আমার আর লাগবে না।",
+      "en": "I do not need any more.",
+      "context": "Food and drink",
+      "category": "Class 1 · Food and drink"
+    },
+    {
+      "bn": "চলো খেলি।",
+      "en": "Let us play.",
+      "context": "Play and activities",
+      "category": "Class 1 · Play and activities"
+    },
+    {
+      "bn": "আমি বল নিয়ে খেলি।",
+      "en": "I play with a ball.",
+      "context": "Play and activities",
+      "category": "Class 1 · Play and activities"
+    },
+    {
+      "bn": "বলটি আমাকে দাও।",
+      "en": "Give me the ball.",
+      "context": "Play and activities",
+      "category": "Class 1 · Play and activities"
+    },
+    {
+      "bn": "বলটি ধরো।",
+      "en": "Catch the ball.",
+      "context": "Play and activities",
+      "category": "Class 1 · Play and activities"
+    },
+    {
+      "bn": "এখানে দাঁড়াও।",
+      "en": "Stand here.",
+      "context": "Play and activities",
+      "category": "Class 1 · Play and activities"
+    },
+    {
+      "bn": "আমার সঙ্গে এসো।",
+      "en": "Come with me.",
+      "context": "Play and activities",
+      "category": "Class 1 · Play and activities"
+    },
+    {
+      "bn": "চলো বাইরে যাই।",
+      "en": "Let us go outside.",
+      "context": "Play and activities",
+      "category": "Class 1 · Play and activities"
+    },
+    {
+      "bn": "আমি দৌড়াতে পারি।",
+      "en": "I can run.",
+      "context": "Play and activities",
+      "category": "Class 1 · Play and activities"
+    },
+    {
+      "bn": "আমি সাইকেল চালাতে পারি।",
+      "en": "I can ride a bicycle.",
+      "context": "Play and activities",
+      "category": "Class 1 · Play and activities"
+    },
+    {
+      "bn": "আমি ছবি আঁকতে পারি।",
+      "en": "I can draw a picture.",
+      "context": "Play and activities",
+      "category": "Class 1 · Play and activities"
+    },
+    {
+      "bn": "আমি খুশি।",
+      "en": "I am happy.",
+      "context": "Expressing feelings",
+      "category": "Class 1 · Expressing feelings"
+    },
+    {
+      "bn": "আমার মন খারাপ।",
+      "en": "I feel sad.",
+      "context": "Expressing feelings",
+      "category": "Class 1 · Expressing feelings"
+    },
+    {
+      "bn": "আমার ভয় লাগছে।",
+      "en": "I am afraid.",
+      "context": "Expressing feelings",
+      "category": "Class 1 · Expressing feelings"
+    },
+    {
+      "bn": "আমার রাগ হয়েছে।",
+      "en": "I am angry.",
+      "context": "Expressing feelings",
+      "category": "Class 1 · Expressing feelings"
+    },
+    {
+      "bn": "আমি ক্লান্ত।",
+      "en": "I am tired.",
+      "context": "Expressing feelings",
+      "category": "Class 1 · Expressing feelings"
+    },
+    {
+      "bn": "আমি ভালো আছি।",
+      "en": "I am well.",
+      "context": "Expressing feelings",
+      "category": "Class 1 · Expressing feelings"
+    },
+    {
+      "bn": "আমার ব্যথা করছে।",
+      "en": "It hurts.",
+      "context": "Expressing feelings",
+      "category": "Class 1 · Expressing feelings"
+    },
+    {
+      "bn": "চিন্তা করো না।",
+      "en": "Do not worry.",
+      "context": "Expressing feelings",
+      "category": "Class 1 · Expressing feelings"
+    },
+    {
+      "bn": "আমি তোমাকে ভালোবাসি।",
+      "en": "I love you.",
+      "context": "Expressing feelings",
+      "category": "Class 1 · Expressing feelings"
+    },
+    {
+      "bn": "তুমি কী করছ?",
+      "en": "What are you doing?",
+      "context": "Questions and answers",
+      "category": "Class 1 · Questions and answers"
+    },
+    {
+      "bn": "আমি খেলছি।",
+      "en": "I am playing.",
+      "context": "Questions and answers",
+      "category": "Class 1 · Questions and answers"
+    },
+    {
+      "bn": "তুমি কোথায় যাচ্ছ?",
+      "en": "Where are you going?",
+      "context": "Questions and answers",
+      "category": "Class 1 · Questions and answers"
+    },
+    {
+      "bn": "আমি স্কুলে যাচ্ছি।",
+      "en": "I am going to school.",
+      "context": "Questions and answers",
+      "category": "Class 1 · Questions and answers"
+    },
+    {
+      "bn": "তুমি কী খাচ্ছ?",
+      "en": "What are you eating?",
+      "context": "Questions and answers",
+      "category": "Class 1 · Questions and answers"
+    },
+    {
+      "bn": "আমি ভাত খাচ্ছি।",
+      "en": "I am eating rice.",
+      "context": "Questions and answers",
+      "category": "Class 1 · Questions and answers"
+    },
+    {
+      "bn": "কে এসেছে?",
+      "en": "Who has come?",
+      "context": "Questions and answers",
+      "category": "Class 1 · Questions and answers"
+    },
+    {
+      "bn": "মা এসেছেন।",
+      "en": "Mother has come.",
+      "context": "Questions and answers",
+      "category": "Class 1 · Questions and answers"
+    },
+    {
+      "bn": "এটা কার?",
+      "en": "Whose is this?",
+      "context": "Questions and answers",
+      "category": "Class 1 · Questions and answers"
+    },
+    {
+      "bn": "এটা আমার।",
+      "en": "This is mine.",
+      "context": "Questions and answers",
+      "category": "Class 1 · Questions and answers"
+    },
+    {
+      "bn": "তুমি কি যাবে?",
+      "en": "Will you go?",
+      "context": "Questions and answers",
+      "category": "Class 1 · Questions and answers"
+    },
+    {
+      "bn": "হ্যাঁ, আমি যাব।",
+      "en": "Yes, I will go.",
+      "context": "Questions and answers",
+      "category": "Class 1 · Questions and answers"
+    },
+    {
+      "bn": "না, আমি যাব না।",
+      "en": "No, I will not go.",
+      "context": "Questions and answers",
+      "category": "Class 1 · Questions and answers"
+    },
+    {
+      "bn": "বইটি টেবিলের উপর আছে।",
+      "en": "The book is on the table.",
+      "context": "Position",
+      "category": "Class 1 · Position"
+    },
+    {
+      "bn": "বলটি টেবিলের নিচে আছে।",
+      "en": "The ball is under the table.",
+      "context": "Position",
+      "category": "Class 1 · Position"
+    },
+    {
+      "bn": "বিড়ালটি ঘরের ভিতরে আছে।",
+      "en": "The cat is inside the room.",
+      "context": "Position",
+      "category": "Class 1 · Position"
+    },
+    {
+      "bn": "কুকুরটি বাইরে আছে।",
+      "en": "The dog is outside.",
+      "context": "Position",
+      "category": "Class 1 · Position"
+    },
+    {
+      "bn": "আমি তোমার পাশে আছি।",
+      "en": "I am beside you.",
+      "context": "Position",
+      "category": "Class 1 · Position"
+    },
+    {
+      "bn": "স্কুলটি বাড়ির কাছে।",
+      "en": "The school is near the house.",
+      "context": "Position",
+      "category": "Class 1 · Position"
+    },
+    {
+      "bn": "গাছটি বাড়ির সামনে।",
+      "en": "The tree is in front of the house.",
+      "context": "Position",
+      "category": "Class 1 · Position"
+    },
+    {
+      "bn": "আমার একটি বই আছে।",
+      "en": "I have one book.",
+      "context": "Numbers and quantities",
+      "category": "Class 1 · Numbers and quantities"
+    },
+    {
+      "bn": "আমার দুটি পেন্সিল আছে।",
+      "en": "I have two pencils.",
+      "context": "Numbers and quantities",
+      "category": "Class 1 · Numbers and quantities"
+    },
+    {
+      "bn": "তিনটি পাখি আছে।",
+      "en": "There are three birds.",
+      "context": "Numbers and quantities",
+      "category": "Class 1 · Numbers and quantities"
+    },
+    {
+      "bn": "আমাকে একটি দাও।",
+      "en": "Give me one.",
+      "context": "Numbers and quantities",
+      "category": "Class 1 · Numbers and quantities"
+    },
+    {
+      "bn": "কতগুলো আছে?",
+      "en": "How many are there?",
+      "context": "Numbers and quantities",
+      "category": "Class 1 · Numbers and quantities"
+    },
+    {
+      "bn": "এখানে অনেক ফুল আছে।",
+      "en": "There are many flowers here.",
+      "context": "Numbers and quantities",
+      "category": "Class 1 · Numbers and quantities"
+    },
+    {
+      "bn": "এখানে অল্প পানি আছে।",
+      "en": "There is a little water here.",
+      "context": "Numbers and quantities",
+      "category": "Class 1 · Numbers and quantities"
+    },
+    {
+      "bn": "এটি একটি আম।",
+      "en": "This is a mango.",
+      "context": "Easy reading",
+      "category": "Class 1 · Easy reading"
+    },
+    {
+      "bn": "আমটি হলুদ।",
+      "en": "The mango is yellow.",
+      "context": "Easy reading",
+      "category": "Class 1 · Easy reading"
+    },
+    {
+      "bn": "আমটি মিষ্টি।",
+      "en": "The mango is sweet.",
+      "context": "Easy reading",
+      "category": "Class 1 · Easy reading"
+    },
+    {
+      "bn": "এটি একটি লাল বল।",
+      "en": "This is a red ball.",
+      "context": "Easy reading",
+      "category": "Class 1 · Easy reading"
+    },
+    {
+      "bn": "বলটি বড়।",
+      "en": "The ball is big.",
+      "context": "Easy reading",
+      "category": "Class 1 · Easy reading"
+    },
+    {
+      "bn": "রিমা বল নিয়ে খেলে।",
+      "en": "Rima plays with a ball.",
+      "context": "Easy reading",
+      "category": "Class 1 · Easy reading"
+    },
+    {
+      "bn": "একটি বিড়াল আছে।",
+      "en": "There is a cat.",
+      "context": "Easy reading",
+      "category": "Class 1 · Easy reading"
+    },
+    {
+      "bn": "বিড়ালটি ছোট।",
+      "en": "The cat is small.",
+      "context": "Easy reading",
+      "category": "Class 1 · Easy reading"
+    },
+    {
+      "bn": "বিড়ালটি দুধ খায়।",
+      "en": "The cat drinks milk.",
+      "context": "Easy reading",
+      "category": "Class 1 · Easy reading"
+    },
+    {
+      "bn": "আকাশ নীল।",
+      "en": "The sky is blue.",
+      "context": "Easy reading",
+      "category": "Class 1 · Easy reading"
+    },
+    {
+      "bn": "সূর্য ওঠে।",
+      "en": "The sun rises.",
+      "context": "Easy reading",
+      "category": "Class 1 · Easy reading"
+    },
+    {
+      "bn": "পাখি আকাশে ওড়ে।",
+      "en": "A bird flies in the sky.",
+      "context": "Easy reading",
+      "category": "Class 1 · Easy reading"
+    },
+    {
+      "bn": "গাছে সবুজ পাতা আছে।",
+      "en": "The tree has green leaves.",
+      "context": "Easy reading",
+      "category": "Class 1 · Easy reading"
+    },
+    {
+      "bn": "ফুলটি সুন্দর।",
+      "en": "The flower is beautiful.",
+      "context": "Easy reading",
+      "category": "Class 1 · Easy reading"
+    },
+    {
+      "bn": "বৃষ্টি পড়ছে।",
+      "en": "It is raining.",
+      "context": "Easy reading",
+      "category": "Class 1 · Easy reading"
+    },
+    {
+      "bn": "আমি ছাতা নিই।",
+      "en": "I take an umbrella.",
+      "context": "Easy reading",
+      "category": "Class 1 · Easy reading"
+    },
+    {
+      "bn": "আজ খুব গরম।",
+      "en": "Today is very hot.",
+      "context": "Easy reading",
+      "category": "Class 1 · Easy reading"
+    },
+    {
+      "bn": "রাতে চাঁদ ওঠে।",
+      "en": "The moon rises at night.",
+      "context": "Easy reading",
+      "category": "Class 1 · Easy reading"
+    },
+    {
+      "bn": "আমি রাতে ঘুমাই।",
+      "en": "I sleep at night.",
+      "context": "Easy reading",
+      "category": "Class 1 · Easy reading"
+    },
+    {
+      "bn": "সকালে আমি স্কুলে যাই।",
+      "en": "I go to school in the morning.",
+      "context": "Easy reading",
+      "category": "Class 1 · Easy reading"
+    },
+    {
+      "bn": "এসো।",
+      "en": "Come.",
+      "context": "Short instructions",
+      "category": "Class 1 · Short instructions"
+    },
+    {
+      "bn": "যাও।",
+      "en": "Go.",
+      "context": "Short instructions",
+      "category": "Class 1 · Short instructions"
+    },
+    {
+      "bn": "বসো।",
+      "en": "Sit.",
+      "context": "Short instructions",
+      "category": "Class 1 · Short instructions"
+    },
+    {
+      "bn": "দাঁড়াও।",
+      "en": "Stand.",
+      "context": "Short instructions",
+      "category": "Class 1 · Short instructions"
+    },
+    {
+      "bn": "দেখো।",
+      "en": "Look.",
+      "context": "Short instructions",
+      "category": "Class 1 · Short instructions"
+    },
+    {
+      "bn": "শোনো।",
+      "en": "Listen.",
+      "context": "Short instructions",
+      "category": "Class 1 · Short instructions"
+    },
+    {
+      "bn": "বলো।",
+      "en": "Speak.",
+      "context": "Short instructions",
+      "category": "Class 1 · Short instructions"
+    },
+    {
+      "bn": "পড়ো।",
+      "en": "Read.",
+      "context": "Short instructions",
+      "category": "Class 1 · Short instructions"
+    },
+    {
+      "bn": "লেখো।",
+      "en": "Write.",
+      "context": "Short instructions",
+      "category": "Class 1 · Short instructions"
+    },
+    {
+      "bn": "খাও।",
+      "en": "Eat.",
+      "context": "Short instructions",
+      "category": "Class 1 · Short instructions"
+    },
+    {
+      "bn": "পানি খাও।",
+      "en": "Drink water.",
+      "context": "Short instructions",
+      "category": "Class 1 · Short instructions"
+    },
+    {
+      "bn": "ধরো।",
+      "en": "Hold it.",
+      "context": "Short instructions",
+      "category": "Class 1 · Short instructions"
+    },
+    {
+      "bn": "ছাড়ো।",
+      "en": "Let go.",
+      "context": "Short instructions",
+      "category": "Class 1 · Short instructions"
+    },
+    {
+      "bn": "খোলো।",
+      "en": "Open it.",
+      "context": "Short instructions",
+      "category": "Class 1 · Short instructions"
+    },
+    {
+      "bn": "বন্ধ করো।",
+      "en": "Close it.",
+      "context": "Short instructions",
+      "category": "Class 1 · Short instructions"
+    },
+    {
+      "bn": "অপেক্ষা করো।",
+      "en": "Wait.",
+      "context": "Short instructions",
+      "category": "Class 1 · Short instructions"
+    },
+    {
+      "bn": "আবার করো।",
+      "en": "Do it again.",
+      "context": "Short instructions",
+      "category": "Class 1 · Short instructions"
+    },
+    {
+      "bn": "এখানে রাখো।",
+      "en": "Put it here.",
+      "context": "Short instructions",
+      "category": "Class 1 · Short instructions"
+    },
+    {
+      "bn": "ওখানে রাখো।",
+      "en": "Put it there.",
+      "context": "Short instructions",
+      "category": "Class 1 · Short instructions"
+    },
+    {
+      "bn": "আমার সঙ্গে এসো।",
+      "en": "Come with me.",
+      "context": "Short instructions",
+      "category": "Class 1 · Short instructions"
+    },
+    {
+      "bn": "সাবধানে যাও।",
+      "en": "Go carefully.",
+      "context": "Short instructions",
+      "category": "Class 1 · Short instructions"
+    },
+    {
+      "bn": "বড় — ছোট",
+      "en": "big — small",
+      "context": "Important opposites",
+      "category": "Class 1 · Important opposites"
+    },
+    {
+      "bn": "লম্বা — খাটো",
+      "en": "tall — short",
+      "context": "Important opposites",
+      "category": "Class 1 · Important opposites"
+    },
+    {
+      "bn": "ভালো — খারাপ",
+      "en": "good — bad",
+      "context": "Important opposites",
+      "category": "Class 1 · Important opposites"
+    },
+    {
+      "bn": "দিন — রাত",
+      "en": "day — night",
+      "context": "Important opposites",
+      "category": "Class 1 · Important opposites"
+    },
+    {
+      "bn": "সকাল — সন্ধ্যা",
+      "en": "morning — evening",
+      "context": "Important opposites",
+      "category": "Class 1 · Important opposites"
+    },
+    {
+      "bn": "আলো — অন্ধকার",
+      "en": "light — darkness",
+      "context": "Important opposites",
+      "category": "Class 1 · Important opposites"
+    },
+    {
+      "bn": "গরম — ঠান্ডা",
+      "en": "hot — cold",
+      "context": "Important opposites",
+      "category": "Class 1 · Important opposites"
+    },
+    {
+      "bn": "নতুন — পুরোনো",
+      "en": "new — old",
+      "context": "Important opposites",
+      "category": "Class 1 · Important opposites"
+    },
+    {
+      "bn": "উপরে — নিচে",
+      "en": "above — below",
+      "context": "Important opposites",
+      "category": "Class 1 · Important opposites"
+    },
+    {
+      "bn": "সামনে — পিছনে",
+      "en": "in front — behind",
+      "context": "Important opposites",
+      "category": "Class 1 · Important opposites"
+    },
+    {
+      "bn": "ভিতরে — বাইরে",
+      "en": "inside — outside",
+      "context": "Important opposites",
+      "category": "Class 1 · Important opposites"
+    },
+    {
+      "bn": "কাছে — দূরে",
+      "en": "near — far",
+      "context": "Important opposites",
+      "category": "Class 1 · Important opposites"
+    },
+    {
+      "bn": "ডান — বাম",
+      "en": "right — left",
+      "context": "Important opposites",
+      "category": "Class 1 · Important opposites"
+    },
+    {
+      "bn": "দ্রুত — ধীর",
+      "en": "fast — slow",
+      "context": "Important opposites",
+      "category": "Class 1 · Important opposites"
+    },
+    {
+      "bn": "হাসি — কান্না",
+      "en": "laughter — crying",
+      "context": "Important opposites",
+      "category": "Class 1 · Important opposites"
+    },
+    {
+      "bn": "আসা — যাওয়া",
+      "en": "coming — going",
+      "context": "Important opposites",
+      "category": "Class 1 · Important opposites"
+    },
+    {
+      "bn": "খোলা — বন্ধ",
+      "en": "open — closed",
+      "context": "Important opposites",
+      "category": "Class 1 · Important opposites"
+    },
+    {
+      "bn": "ভরা — খালি",
+      "en": "full — empty",
+      "context": "Important opposites",
+      "category": "Class 1 · Important opposites"
+    },
+    {
+      "bn": "শুরু — শেষ",
+      "en": "start — finish",
+      "context": "Important opposites",
+      "category": "Class 1 · Important opposites"
+    },
+    {
+      "bn": "হ্যাঁ — না",
+      "en": "yes — no",
+      "context": "Important opposites",
+      "category": "Class 1 · Important opposites"
+    },
+    {
+      "bn": "আমি খাই।",
+      "en": "I eat.",
+      "context": "আমি + কাজ",
+      "category": "Class 1 · আমি + কাজ"
+    },
+    {
+      "bn": "আমি খেলি।",
+      "en": "I play.",
+      "context": "আমি + কাজ",
+      "category": "Class 1 · আমি + কাজ"
+    },
+    {
+      "bn": "আমি পড়ি।",
+      "en": "I read.",
+      "context": "আমি + কাজ",
+      "category": "Class 1 · আমি + কাজ"
+    },
+    {
+      "bn": "আমি লিখি।",
+      "en": "I write.",
+      "context": "আমি + কাজ",
+      "category": "Class 1 · আমি + কাজ"
+    },
+    {
+      "bn": "আমি যাই।",
+      "en": "I go.",
+      "context": "আমি + কাজ",
+      "category": "Class 1 · আমি + কাজ"
+    },
+    {
+      "bn": "আমি ঘুমাই।",
+      "en": "I sleep.",
+      "context": "আমি + কাজ",
+      "category": "Class 1 · আমি + কাজ"
+    },
+    {
+      "bn": "সে খায়।",
+      "en": "He or she eats.",
+      "context": "সে + কাজ",
+      "category": "Class 1 · সে + কাজ"
+    },
+    {
+      "bn": "সে খেলে।",
+      "en": "He or she plays.",
+      "context": "সে + কাজ",
+      "category": "Class 1 · সে + কাজ"
+    },
+    {
+      "bn": "সে পড়ে।",
+      "en": "He or she reads.",
+      "context": "সে + কাজ",
+      "category": "Class 1 · সে + কাজ"
+    },
+    {
+      "bn": "সে লেখে।",
+      "en": "He or she writes.",
+      "context": "সে + কাজ",
+      "category": "Class 1 · সে + কাজ"
+    },
+    {
+      "bn": "সে যায়।",
+      "en": "He or she goes.",
+      "context": "সে + কাজ",
+      "category": "Class 1 · সে + কাজ"
+    },
+    {
+      "bn": "সে ঘুমায়।",
+      "en": "He or she sleeps.",
+      "context": "সে + কাজ",
+      "category": "Class 1 · সে + কাজ"
+    },
+    {
+      "bn": "এটি একটি বই।",
+      "en": "This is a book.",
+      "context": "এটি + বস্তু",
+      "category": "Class 1 · এটি + বস্তু"
+    },
+    {
+      "bn": "এটি একটি ফুল।",
+      "en": "This is a flower.",
+      "context": "এটি + বস্তু",
+      "category": "Class 1 · এটি + বস্তু"
+    },
+    {
+      "bn": "এটি একটি গাছ।",
+      "en": "This is a tree.",
+      "context": "এটি + বস্তু",
+      "category": "Class 1 · এটি + বস্তু"
+    },
+    {
+      "bn": "এটি একটি বল।",
+      "en": "This is a ball.",
+      "context": "এটি + বস্তু",
+      "category": "Class 1 · এটি + বস্তু"
+    },
+    {
+      "bn": "আমার বই।",
+      "en": "My book.",
+      "context": "আমার + বস্তু",
+      "category": "Class 1 · আমার + বস্তু"
+    },
+    {
+      "bn": "আমার খাতা।",
+      "en": "My notebook.",
+      "context": "আমার + বস্তু",
+      "category": "Class 1 · আমার + বস্তু"
+    },
+    {
+      "bn": "আমার বাড়ি।",
+      "en": "My house.",
+      "context": "আমার + বস্তু",
+      "category": "Class 1 · আমার + বস্তু"
+    },
+    {
+      "bn": "আমার মা।",
+      "en": "My mother.",
+      "context": "আমার + বস্তু",
+      "category": "Class 1 · আমার + বস্তু"
+    },
+    {
+      "bn": "আমার বন্ধু।",
+      "en": "My friend.",
+      "context": "আমার + বস্তু",
+      "category": "Class 1 · আমার + বস্তু"
+    },
+    {
+      "bn": "মা কোথায়?",
+      "en": "Where is mother?",
+      "context": "কোথায় + প্রশ্ন",
+      "category": "Class 1 · কোথায় + প্রশ্ন"
+    },
+    {
+      "bn": "বই কোথায়?",
+      "en": "Where is the book?",
+      "context": "কোথায় + প্রশ্ন",
+      "category": "Class 1 · কোথায় + প্রশ্ন"
+    },
+    {
+      "bn": "বল কোথায়?",
+      "en": "Where is the ball?",
+      "context": "কোথায় + প্রশ্ন",
+      "category": "Class 1 · কোথায় + প্রশ্ন"
+    },
+    {
+      "bn": "তুমি কোথায়?",
+      "en": "Where are you?",
+      "context": "কোথায় + প্রশ্ন",
+      "category": "Class 1 · কোথায় + প্রশ্ন"
+    },
+    {
+      "bn": "এটা কী?",
+      "en": "What is this?",
+      "context": "কী + প্রশ্ন",
+      "category": "Class 1 · কী + প্রশ্ন"
+    },
+    {
+      "bn": "তুমি কী করছ?",
+      "en": "What are you doing?",
+      "context": "কী + প্রশ্ন",
+      "category": "Class 1 · কী + প্রশ্ন"
+    },
+    {
+      "bn": "তুমি কী খাচ্ছ?",
+      "en": "What are you eating?",
+      "context": "কী + প্রশ্ন",
+      "category": "Class 1 · কী + প্রশ্ন"
+    },
+    {
+      "bn": "তুমি কী পড়ছ?",
+      "en": "What are you reading?",
+      "context": "কী + প্রশ্ন",
+      "category": "Class 1 · কী + প্রশ্ন"
+    },
+    {
+      "bn": "এটা কে?",
+      "en": "Who is this?",
+      "context": "কে + প্রশ্ন",
+      "category": "Class 1 · কে + প্রশ্ন"
+    },
+    {
+      "bn": "কে এসেছে?",
+      "en": "Who has come?",
+      "context": "কে + প্রশ্ন",
+      "category": "Class 1 · কে + প্রশ্ন"
+    },
+    {
+      "bn": "কে খেলছে?",
+      "en": "Who is playing?",
+      "context": "কে + প্রশ্ন",
+      "category": "Class 1 · কে + প্রশ্ন"
+    },
+    {
+      "bn": "কে ডাকছে?",
+      "en": "Who is calling?",
+      "context": "কে + প্রশ্ন",
+      "category": "Class 1 · কে + প্রশ্ন"
+    }
+  ],
+  "practice": [
+    {
+      "type": "Daily words",
+      "prompt": "Choose one vocabulary category. Read each Bengali word aloud, then recall its English meaning.",
+      "answer": "Use Word Loop and the audio controls to repeat words you miss."
+    },
+    {
+      "type": "Sentence patterns",
+      "prompt": "Practice one আমি, সে, এটি, আমার, কোথায়, কী, or কে pattern and replace one word to make a new sentence.",
+      "answer": "Keep the pattern unchanged and choose a word from the vocabulary list."
+    },
+    {
+      "type": "Real conversation",
+      "prompt": "Choose five useful phrases and say them in a short conversation with a partner.",
+      "answer": "Listen to each Bengali sentence before repeating it."
+    }
+  ],
+  "notes": [
+    "Work through one category at a time; this lesson is designed as a complete Class 1 reference, not a single sitting.",
+    "Repeated words and phrases are intentionally retained when they teach a second category or sentence pattern.",
+    "Use Games for recognition practice and Word Loop for listening and repetition."
+  ]
+}

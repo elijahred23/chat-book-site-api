@@ -1,0 +1,4614 @@
+{
+  "id": "class-12",
+  "title": "Bengali Class 12: Methodology, fallacies, ethics, and qualified synthesis",
+  "topic": "Class 12 · Methodology, fallacies, ethics, and qualified synthesis",
+  "summary": "A complete Class 12 curriculum with 814 vocabulary entries and 85 sentences, questions, and passages.",
+  "level": "Class 12",
+  "focus": "Research design, formal logic and fallacies, comparative literature, peer review, algorithmic accountability, ethics, and qualified synthesis",
+  "vocab": [
+    {
+      "bn": "বিশ্লেষণ",
+      "en": "analysis",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Academic analysis"
+    },
+    {
+      "bn": "মূল্যায়ন",
+      "en": "assessment",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Academic analysis"
+    },
+    {
+      "bn": "যুক্তি",
+      "en": "reasoning",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Academic analysis"
+    },
+    {
+      "bn": "প্রমাণ",
+      "en": "evidence",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Academic analysis"
+    },
+    {
+      "bn": "দৃষ্টিভঙ্গি",
+      "en": "perspective",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Academic analysis"
+    },
+    {
+      "bn": "ব্যাখ্যা",
+      "en": "explanation",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Academic analysis"
+    },
+    {
+      "bn": "তুলনা",
+      "en": "comparison",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Academic analysis"
+    },
+    {
+      "bn": "বৈপরীত্য",
+      "en": "contrast",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Academic analysis"
+    },
+    {
+      "bn": "উপসংহার",
+      "en": "conclusion",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Academic analysis"
+    },
+    {
+      "bn": "সিদ্ধান্ত",
+      "en": "decision",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Academic analysis"
+    },
+    {
+      "bn": "অনুমান",
+      "en": "inference",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Academic analysis"
+    },
+    {
+      "bn": "ধারণা",
+      "en": "idea",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Academic analysis"
+    },
+    {
+      "bn": "পর্যবেক্ষণ",
+      "en": "observation",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Academic analysis"
+    },
+    {
+      "bn": "গবেষণা",
+      "en": "research",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Academic analysis"
+    },
+    {
+      "bn": "নির্ভরযোগ্যতা",
+      "en": "reliability",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Academic analysis"
+    },
+    {
+      "bn": "পক্ষপাত",
+      "en": "bias",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Academic analysis"
+    },
+    {
+      "bn": "উদ্দেশ্য",
+      "en": "purpose",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Academic analysis"
+    },
+    {
+      "bn": "প্রভাব",
+      "en": "effect",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Academic analysis"
+    },
+    {
+      "bn": "কারণ",
+      "en": "because",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Academic analysis"
+    },
+    {
+      "bn": "ফলাফল",
+      "en": "result",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Academic analysis"
+    },
+    {
+      "bn": "সমস্যা",
+      "en": "problem",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Academic analysis"
+    },
+    {
+      "bn": "সমাধান",
+      "en": "solution",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Academic analysis"
+    },
+    {
+      "bn": "সীমাবদ্ধতা",
+      "en": "limitation",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Academic analysis"
+    },
+    {
+      "bn": "সুবিধা",
+      "en": "advantage",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Academic analysis"
+    },
+    {
+      "bn": "অসুবিধা",
+      "en": "disadvantage",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Academic analysis"
+    },
+    {
+      "bn": "বিকল্প",
+      "en": "alternative",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Academic analysis"
+    },
+    {
+      "bn": "পদ্ধতি",
+      "en": "method",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Academic analysis"
+    },
+    {
+      "bn": "কৌশল",
+      "en": "strategy",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Academic analysis"
+    },
+    {
+      "bn": "অগ্রাধিকার",
+      "en": "priority",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Academic analysis"
+    },
+    {
+      "bn": "সম্ভাবনা",
+      "en": "possibility",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Academic analysis"
+    },
+    {
+      "bn": "ঝুঁকি",
+      "en": "risk",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Academic analysis"
+    },
+    {
+      "bn": "প্রবণতা",
+      "en": "trend",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Academic analysis"
+    },
+    {
+      "bn": "প্রেক্ষাপট",
+      "en": "context",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Academic analysis"
+    },
+    {
+      "bn": "অধ্যয়ন",
+      "en": "study",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Education and study"
+    },
+    {
+      "bn": "পাঠ্যক্রম",
+      "en": "curriculum",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Education and study"
+    },
+    {
+      "bn": "বিষয়বস্তু",
+      "en": "content",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Education and study"
+    },
+    {
+      "bn": "অনুধাবন",
+      "en": "comprehension",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Education and study"
+    },
+    {
+      "bn": "তথ্যসংগ্রহ",
+      "en": "data collection",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Education and study"
+    },
+    {
+      "bn": "উৎস",
+      "en": "source",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Education and study"
+    },
+    {
+      "bn": "তথ্যসূত্র",
+      "en": "source",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Education and study"
+    },
+    {
+      "bn": "রেফারেন্স",
+      "en": "reference",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Education and study"
+    },
+    {
+      "bn": "উদ্ধৃতি",
+      "en": "citation",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Education and study"
+    },
+    {
+      "bn": "সারাংশ",
+      "en": "summary",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Education and study"
+    },
+    {
+      "bn": "প্রতিবেদন",
+      "en": "report",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Education and study"
+    },
+    {
+      "bn": "প্রবন্ধ",
+      "en": "essay",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Education and study"
+    },
+    {
+      "bn": "উপস্থাপনা",
+      "en": "presentation",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Education and study"
+    },
+    {
+      "bn": "প্রকল্প",
+      "en": "project",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Education and study"
+    },
+    {
+      "bn": "বিতর্ক",
+      "en": "debate",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Education and study"
+    },
+    {
+      "bn": "আলোচনা",
+      "en": "discussion",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Education and study"
+    },
+    {
+      "bn": "দক্ষতা",
+      "en": "skill",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Education and study"
+    },
+    {
+      "bn": "জ্ঞান",
+      "en": "knowledge",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Education and study"
+    },
+    {
+      "bn": "প্রয়োগ",
+      "en": "application",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Education and study"
+    },
+    {
+      "bn": "পুনর্বিবেচনা",
+      "en": "revision",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Education and study"
+    },
+    {
+      "bn": "সংশোধন",
+      "en": "correction",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Education and study"
+    },
+    {
+      "bn": "বিশেষ্য",
+      "en": "noun",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Bengali grammar"
+    },
+    {
+      "bn": "সর্বনাম",
+      "en": "pronoun",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Bengali grammar"
+    },
+    {
+      "bn": "ক্রিয়া",
+      "en": "verb",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Bengali grammar"
+    },
+    {
+      "bn": "বিশেষণ",
+      "en": "adjective",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Bengali grammar"
+    },
+    {
+      "bn": "ক্রিয়াবিশেষণ",
+      "en": "adverb",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Bengali grammar"
+    },
+    {
+      "bn": "অব্যয়",
+      "en": "indeclinable",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Bengali grammar"
+    },
+    {
+      "bn": "অনুসর্গ",
+      "en": "postposition",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Bengali grammar"
+    },
+    {
+      "bn": "বিভক্তি",
+      "en": "case ending",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Bengali grammar"
+    },
+    {
+      "bn": "উপসর্গ",
+      "en": "symptom",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Bengali grammar"
+    },
+    {
+      "bn": "প্রত্যয়",
+      "en": "suffix",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Bengali grammar"
+    },
+    {
+      "bn": "সন্ধি",
+      "en": "euphonic combination",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Bengali grammar"
+    },
+    {
+      "bn": "সমাস",
+      "en": "compound formation",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Bengali grammar"
+    },
+    {
+      "bn": "ধাতু",
+      "en": "verb root",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Bengali grammar"
+    },
+    {
+      "bn": "কারক",
+      "en": "grammatical case",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Bengali grammar"
+    },
+    {
+      "bn": "কর্তা",
+      "en": "subject",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Bengali grammar"
+    },
+    {
+      "bn": "কর্ম",
+      "en": "object",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Bengali grammar"
+    },
+    {
+      "bn": "কাল",
+      "en": "tense",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Bengali grammar"
+    },
+    {
+      "bn": "পুরুষ",
+      "en": "grammatical person",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Bengali grammar"
+    },
+    {
+      "bn": "বচন",
+      "en": "number",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Bengali grammar"
+    },
+    {
+      "bn": "সরল বাক্য",
+      "en": "simple sentence",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Bengali grammar"
+    },
+    {
+      "bn": "যৌগিক বাক্য",
+      "en": "compound sentence",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Bengali grammar"
+    },
+    {
+      "bn": "জটিল বাক্য",
+      "en": "complex sentence",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Bengali grammar"
+    },
+    {
+      "bn": "সক্রিয় রূপ",
+      "en": "active voice",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Bengali grammar"
+    },
+    {
+      "bn": "নিষ্ক্রিয় রূপ",
+      "en": "passive voice",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Bengali grammar"
+    },
+    {
+      "bn": "বাগধারা",
+      "en": "idiom",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Bengali grammar"
+    },
+    {
+      "bn": "প্রবাদ",
+      "en": "proverb",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Bengali grammar"
+    },
+    {
+      "bn": "অলংকার",
+      "en": "figure of speech",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Bengali grammar"
+    },
+    {
+      "bn": "বাক্যরূপান্তর",
+      "en": "sentence transformation",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Bengali grammar"
+    },
+    {
+      "bn": "সাহিত্য",
+      "en": "literature",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Literary analysis"
+    },
+    {
+      "bn": "কবিতা",
+      "en": "poem",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Literary analysis"
+    },
+    {
+      "bn": "গল্প",
+      "en": "story",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Literary analysis"
+    },
+    {
+      "bn": "উপন্যাস",
+      "en": "novel",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Literary analysis"
+    },
+    {
+      "bn": "নাটক",
+      "en": "drama",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Literary analysis"
+    },
+    {
+      "bn": "কাহিনি",
+      "en": "plot",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Literary analysis"
+    },
+    {
+      "bn": "প্লট",
+      "en": "plot",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Literary analysis"
+    },
+    {
+      "bn": "চরিত্রায়ন",
+      "en": "characterization",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Literary analysis"
+    },
+    {
+      "bn": "সংঘাত",
+      "en": "conflict",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Literary analysis"
+    },
+    {
+      "bn": "পটভূমি",
+      "en": "setting",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Literary analysis"
+    },
+    {
+      "bn": "পরিবেশ",
+      "en": "environment",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Literary analysis"
+    },
+    {
+      "bn": "আবহ",
+      "en": "atmosphere",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Literary analysis"
+    },
+    {
+      "bn": "সংলাপ",
+      "en": "dialogue",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Literary analysis"
+    },
+    {
+      "bn": "বর্ণনা",
+      "en": "description",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Literary analysis"
+    },
+    {
+      "bn": "মূলভাব",
+      "en": "main idea",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Literary analysis"
+    },
+    {
+      "bn": "বার্তা",
+      "en": "message",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Literary analysis"
+    },
+    {
+      "bn": "প্রতীক",
+      "en": "symbol",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Literary analysis"
+    },
+    {
+      "bn": "উপমা",
+      "en": "simile",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Literary analysis"
+    },
+    {
+      "bn": "রূপক",
+      "en": "metaphor",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Literary analysis"
+    },
+    {
+      "bn": "চিত্রকল্প",
+      "en": "imagery",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Literary analysis"
+    },
+    {
+      "bn": "ব্যঙ্গ",
+      "en": "satire",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Literary analysis"
+    },
+    {
+      "bn": "বিদ্রূপ",
+      "en": "irony",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Literary analysis"
+    },
+    {
+      "bn": "দৃষ্টিকোণ",
+      "en": "point of view",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Literary analysis"
+    },
+    {
+      "bn": "সুর",
+      "en": "tone",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Literary analysis"
+    },
+    {
+      "bn": "লেখকের উদ্দেশ্য",
+      "en": "author's purpose",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Literary analysis"
+    },
+    {
+      "bn": "চরিত্রের বিকাশ",
+      "en": "character development",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Literary analysis"
+    },
+    {
+      "bn": "সমাজ",
+      "en": "society",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Society and citizenship"
+    },
+    {
+      "bn": "নাগরিক",
+      "en": "citizen",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Society and citizenship"
+    },
+    {
+      "bn": "রাষ্ট্র",
+      "en": "state",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Society and citizenship"
+    },
+    {
+      "bn": "সরকার",
+      "en": "government",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Society and citizenship"
+    },
+    {
+      "bn": "প্রশাসন",
+      "en": "administration",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Society and citizenship"
+    },
+    {
+      "bn": "সংবিধান",
+      "en": "constitution",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Society and citizenship"
+    },
+    {
+      "bn": "আইন",
+      "en": "law",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Society and citizenship"
+    },
+    {
+      "bn": "অধিকার",
+      "en": "right",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Society and citizenship"
+    },
+    {
+      "bn": "দায়িত্ব",
+      "en": "responsibility",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Society and citizenship"
+    },
+    {
+      "bn": "কর্তব্য",
+      "en": "duty",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Society and citizenship"
+    },
+    {
+      "bn": "ন্যায়বিচার",
+      "en": "justice",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Society and citizenship"
+    },
+    {
+      "bn": "বৈষম্য",
+      "en": "inequality",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Society and citizenship"
+    },
+    {
+      "bn": "সমতা",
+      "en": "equality",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Society and citizenship"
+    },
+    {
+      "bn": "স্বাধীনতা",
+      "en": "independence",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Society and citizenship"
+    },
+    {
+      "bn": "নিরাপত্তা",
+      "en": "safety",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Society and citizenship"
+    },
+    {
+      "bn": "জনসেবা",
+      "en": "public service",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Society and citizenship"
+    },
+    {
+      "bn": "নির্বাচন",
+      "en": "election",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Society and citizenship"
+    },
+    {
+      "bn": "গণতন্ত্র",
+      "en": "democracy",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Society and citizenship"
+    },
+    {
+      "bn": "নেতৃত্ব",
+      "en": "leadership",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Society and citizenship"
+    },
+    {
+      "bn": "জনমত",
+      "en": "public opinion",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Society and citizenship"
+    },
+    {
+      "bn": "নাগরিক অংশগ্রহণ",
+      "en": "civic participation",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Society and citizenship"
+    },
+    {
+      "bn": "সামাজিক সমস্যা",
+      "en": "social issue",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Society and citizenship"
+    },
+    {
+      "bn": "সম্প্রদায়",
+      "en": "community",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Society and citizenship"
+    },
+    {
+      "bn": "সংস্কার",
+      "en": "reform",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Society and citizenship"
+    },
+    {
+      "bn": "সচেতনতা",
+      "en": "awareness",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Society and citizenship"
+    },
+    {
+      "bn": "ইতিহাস",
+      "en": "history",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · History and politics"
+    },
+    {
+      "bn": "ঐতিহাসিক",
+      "en": "historical",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · History and politics"
+    },
+    {
+      "bn": "সভ্যতা",
+      "en": "civilization",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · History and politics"
+    },
+    {
+      "bn": "সাম্রাজ্য",
+      "en": "empire",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · History and politics"
+    },
+    {
+      "bn": "শাসন",
+      "en": "rule",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · History and politics"
+    },
+    {
+      "bn": "উপনিবেশ",
+      "en": "colony",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · History and politics"
+    },
+    {
+      "bn": "আন্দোলন",
+      "en": "movement",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · History and politics"
+    },
+    {
+      "bn": "সংগ্রাম",
+      "en": "struggle",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · History and politics"
+    },
+    {
+      "bn": "বিপ্লব",
+      "en": "revolution",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · History and politics"
+    },
+    {
+      "bn": "যুদ্ধ",
+      "en": "war",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · History and politics"
+    },
+    {
+      "bn": "চুক্তি",
+      "en": "treaty",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · History and politics"
+    },
+    {
+      "bn": "বিজয়",
+      "en": "victory",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · History and politics"
+    },
+    {
+      "bn": "পরাজয়",
+      "en": "defeat",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · History and politics"
+    },
+    {
+      "bn": "জাতীয়তাবাদ",
+      "en": "nationalism",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · History and politics"
+    },
+    {
+      "bn": "ঐতিহ্য",
+      "en": "heritage",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · History and politics"
+    },
+    {
+      "bn": "উত্তরাধিকার",
+      "en": "legacy",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · History and politics"
+    },
+    {
+      "bn": "রাজনৈতিক পরিবর্তন",
+      "en": "political change",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · History and politics"
+    },
+    {
+      "bn": "ক্ষমতা",
+      "en": "power",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · History and politics"
+    },
+    {
+      "bn": "ভূগোল",
+      "en": "geography",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Geography"
+    },
+    {
+      "bn": "ভূপ্রকৃতি",
+      "en": "landform",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Geography"
+    },
+    {
+      "bn": "অক্ষাংশ",
+      "en": "latitude",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Geography"
+    },
+    {
+      "bn": "দ্রাঘিমাংশ",
+      "en": "longitude",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Geography"
+    },
+    {
+      "bn": "মানচিত্র",
+      "en": "map",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Geography"
+    },
+    {
+      "bn": "স্কেল",
+      "en": "scale",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Geography"
+    },
+    {
+      "bn": "পর্বত",
+      "en": "mountain",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Geography"
+    },
+    {
+      "bn": "উপত্যকা",
+      "en": "valley",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Geography"
+    },
+    {
+      "bn": "সমভূমি",
+      "en": "plain",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Geography"
+    },
+    {
+      "bn": "মালভূমি",
+      "en": "plateau",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Geography"
+    },
+    {
+      "bn": "মরুভূমি",
+      "en": "desert",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Geography"
+    },
+    {
+      "bn": "নদী",
+      "en": "river",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Geography"
+    },
+    {
+      "bn": "বদ্বীপ",
+      "en": "delta",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Geography"
+    },
+    {
+      "bn": "উপকূল",
+      "en": "coast",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Geography"
+    },
+    {
+      "bn": "দ্বীপ",
+      "en": "island",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Geography"
+    },
+    {
+      "bn": "মহাদেশ",
+      "en": "continent",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Geography"
+    },
+    {
+      "bn": "মহাসাগর",
+      "en": "ocean",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Geography"
+    },
+    {
+      "bn": "জলবায়ু",
+      "en": "climate",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Geography"
+    },
+    {
+      "bn": "আবহাওয়া",
+      "en": "weather",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Geography"
+    },
+    {
+      "bn": "জনসংখ্যা",
+      "en": "population",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Geography"
+    },
+    {
+      "bn": "জনঘনত্ব",
+      "en": "population density",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Geography"
+    },
+    {
+      "bn": "নগরায়ণ",
+      "en": "urbanization",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Geography"
+    },
+    {
+      "bn": "অভিবাসন",
+      "en": "migration",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Geography"
+    },
+    {
+      "bn": "প্রাকৃতিক সম্পদ",
+      "en": "natural resources",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Geography"
+    },
+    {
+      "bn": "বাস্তুতন্ত্র",
+      "en": "ecosystem",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Environment and climate"
+    },
+    {
+      "bn": "জীববৈচিত্র্য",
+      "en": "biodiversity",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Environment and climate"
+    },
+    {
+      "bn": "জলবায়ু পরিবর্তন",
+      "en": "climate change",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Environment and climate"
+    },
+    {
+      "bn": "বৈশ্বিক উষ্ণায়ন",
+      "en": "global warming",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Environment and climate"
+    },
+    {
+      "bn": "কার্বন নিঃসরণ",
+      "en": "carbon emissions",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Environment and climate"
+    },
+    {
+      "bn": "দূষণ",
+      "en": "pollution",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Environment and climate"
+    },
+    {
+      "bn": "বন উজাড়",
+      "en": "deforestation",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Environment and climate"
+    },
+    {
+      "bn": "মাটিক্ষয়",
+      "en": "soil erosion",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Environment and climate"
+    },
+    {
+      "bn": "খরা",
+      "en": "drought",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Environment and climate"
+    },
+    {
+      "bn": "বন্যা",
+      "en": "flood",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Environment and climate"
+    },
+    {
+      "bn": "পুনর্ব্যবহার",
+      "en": "recycling",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Environment and climate"
+    },
+    {
+      "bn": "সংরক্ষণ",
+      "en": "conservation",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Environment and climate"
+    },
+    {
+      "bn": "নবায়নযোগ্য শক্তি",
+      "en": "renewable energy",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Environment and climate"
+    },
+    {
+      "bn": "জীবাশ্ম জ্বালানি",
+      "en": "fossil fuel",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Environment and climate"
+    },
+    {
+      "bn": "পরিবেশের ভারসাম্য",
+      "en": "ecological balance",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Environment and climate"
+    },
+    {
+      "bn": "টেকসই উন্নয়ন",
+      "en": "sustainable development",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Environment and climate"
+    },
+    {
+      "bn": "বিজ্ঞান",
+      "en": "science",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Science"
+    },
+    {
+      "bn": "পরীক্ষা",
+      "en": "exam",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Science"
+    },
+    {
+      "bn": "তত্ত্ব",
+      "en": "theory",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Science"
+    },
+    {
+      "bn": "সূত্র",
+      "en": "formula",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Science"
+    },
+    {
+      "bn": "চলক",
+      "en": "variable",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Science"
+    },
+    {
+      "bn": "পরমাণু",
+      "en": "atom",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Science"
+    },
+    {
+      "bn": "অণু",
+      "en": "molecule",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Science"
+    },
+    {
+      "bn": "উপাদান",
+      "en": "element",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Science"
+    },
+    {
+      "bn": "যৌগ",
+      "en": "compound",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Science"
+    },
+    {
+      "bn": "পদার্থ",
+      "en": "matter",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Science"
+    },
+    {
+      "bn": "শক্তি",
+      "en": "strength",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Science"
+    },
+    {
+      "bn": "বল",
+      "en": "force",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Science"
+    },
+    {
+      "bn": "গতি",
+      "en": "motion",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Science"
+    },
+    {
+      "bn": "ঘর্ষণ",
+      "en": "friction",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Science"
+    },
+    {
+      "bn": "চাপ",
+      "en": "pressure",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Science"
+    },
+    {
+      "bn": "তাপ",
+      "en": "heat",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Science"
+    },
+    {
+      "bn": "আলো",
+      "en": "light",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Science"
+    },
+    {
+      "bn": "শব্দ",
+      "en": "word",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Science"
+    },
+    {
+      "bn": "বিদ্যুৎ",
+      "en": "electricity",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Science"
+    },
+    {
+      "bn": "চুম্বকত্ব",
+      "en": "magnetism",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Science"
+    },
+    {
+      "bn": "রাসায়নিক বিক্রিয়া",
+      "en": "chemical reaction",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Science"
+    },
+    {
+      "bn": "কোষ",
+      "en": "cell",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Biology"
+    },
+    {
+      "bn": "টিস্যু",
+      "en": "tissue",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Biology"
+    },
+    {
+      "bn": "অঙ্গ",
+      "en": "organ",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Biology"
+    },
+    {
+      "bn": "অঙ্গতন্ত্র",
+      "en": "organ system",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Biology"
+    },
+    {
+      "bn": "শ্বাসপ্রশ্বাস",
+      "en": "respiration",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Biology"
+    },
+    {
+      "bn": "পরিপাক",
+      "en": "digestion",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Biology"
+    },
+    {
+      "bn": "রক্তসঞ্চালন",
+      "en": "circulation",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Biology"
+    },
+    {
+      "bn": "স্নায়ুতন্ত্র",
+      "en": "nervous system",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Biology"
+    },
+    {
+      "bn": "প্রজনন",
+      "en": "reproduction",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Biology"
+    },
+    {
+      "bn": "বংশগতি",
+      "en": "heredity",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Biology"
+    },
+    {
+      "bn": "অভিযোজন",
+      "en": "adaptation",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Biology"
+    },
+    {
+      "bn": "বিবর্তন",
+      "en": "evolution",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Biology"
+    },
+    {
+      "bn": "বাসস্থান",
+      "en": "habitat",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Biology"
+    },
+    {
+      "bn": "খাদ্যশৃঙ্খল",
+      "en": "food chain",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Biology"
+    },
+    {
+      "bn": "খাদ্যজাল",
+      "en": "food web",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Biology"
+    },
+    {
+      "bn": "উৎপাদক",
+      "en": "producer",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Biology"
+    },
+    {
+      "bn": "ভোক্তা",
+      "en": "consumer",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Biology"
+    },
+    {
+      "bn": "পচনকারী",
+      "en": "decomposer",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Biology"
+    },
+    {
+      "bn": "জীবচক্র",
+      "en": "life cycle",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Biology"
+    },
+    {
+      "bn": "প্রজাতি",
+      "en": "species",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Biology"
+    },
+    {
+      "bn": "প্রযুক্তি",
+      "en": "technology",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Technology and digital life"
+    },
+    {
+      "bn": "সফটওয়্যার",
+      "en": "software",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Technology and digital life"
+    },
+    {
+      "bn": "হার্ডওয়্যার",
+      "en": "hardware",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Technology and digital life"
+    },
+    {
+      "bn": "ইন্টারনেট",
+      "en": "internet",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Technology and digital life"
+    },
+    {
+      "bn": "নেটওয়ার্ক",
+      "en": "network",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Technology and digital life"
+    },
+    {
+      "bn": "ডেটা",
+      "en": "data",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Technology and digital life"
+    },
+    {
+      "bn": "অ্যালগরিদম",
+      "en": "algorithm",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Technology and digital life"
+    },
+    {
+      "bn": "প্রোগ্রামিং",
+      "en": "programming",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Technology and digital life"
+    },
+    {
+      "bn": "কৃত্রিম বুদ্ধিমত্তা",
+      "en": "artificial intelligence",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Technology and digital life"
+    },
+    {
+      "bn": "ডিজিটাল নিরাপত্তা",
+      "en": "digital security",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Technology and digital life"
+    },
+    {
+      "bn": "সাইবার নিরাপত্তা",
+      "en": "cybersecurity",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Technology and digital life"
+    },
+    {
+      "bn": "গোপনীয়তা",
+      "en": "privacy",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Technology and digital life"
+    },
+    {
+      "bn": "তথ্য যাচাই",
+      "en": "fact-checking",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Technology and digital life"
+    },
+    {
+      "bn": "ভুয়া তথ্য",
+      "en": "misinformation",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Technology and digital life"
+    },
+    {
+      "bn": "সামাজিক যোগাযোগমাধ্যম",
+      "en": "social media",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Technology and digital life"
+    },
+    {
+      "bn": "ডিজিটাল পদচিহ্ন",
+      "en": "digital footprint",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Technology and digital life"
+    },
+    {
+      "bn": "প্রযুক্তিনির্ভরতা",
+      "en": "technology dependence",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Technology and digital life"
+    },
+    {
+      "bn": "অর্থনীতি",
+      "en": "economy",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Economics"
+    },
+    {
+      "bn": "আয়",
+      "en": "income",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Economics"
+    },
+    {
+      "bn": "ব্যয়",
+      "en": "expense",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Economics"
+    },
+    {
+      "bn": "সঞ্চয়",
+      "en": "savings",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Economics"
+    },
+    {
+      "bn": "বাজেট",
+      "en": "budget",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Economics"
+    },
+    {
+      "bn": "বিনিয়োগ",
+      "en": "investment",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Economics"
+    },
+    {
+      "bn": "মুদ্রা",
+      "en": "currency",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Economics"
+    },
+    {
+      "bn": "মূল্যস্ফীতি",
+      "en": "inflation",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Economics"
+    },
+    {
+      "bn": "বাজার",
+      "en": "market",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Economics"
+    },
+    {
+      "bn": "পণ্য",
+      "en": "product",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Economics"
+    },
+    {
+      "bn": "সেবা",
+      "en": "service",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Economics"
+    },
+    {
+      "bn": "চাহিদা",
+      "en": "demand",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Economics"
+    },
+    {
+      "bn": "সরবরাহ",
+      "en": "supply",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Economics"
+    },
+    {
+      "bn": "উৎপাদন",
+      "en": "production",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Economics"
+    },
+    {
+      "bn": "ব্যবসা",
+      "en": "business",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Economics"
+    },
+    {
+      "bn": "লাভ",
+      "en": "profit",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Economics"
+    },
+    {
+      "bn": "ক্ষতি",
+      "en": "loss",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Economics"
+    },
+    {
+      "bn": "সম্পদ",
+      "en": "resource",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Economics"
+    },
+    {
+      "bn": "কর্মসংস্থান",
+      "en": "employment",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Economics"
+    },
+    {
+      "bn": "বেকারত্ব",
+      "en": "unemployment",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Economics"
+    },
+    {
+      "bn": "অর্থনৈতিক উন্নয়ন",
+      "en": "economic development",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Economics"
+    },
+    {
+      "bn": "স্বাস্থ্য",
+      "en": "health",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Health and the body"
+    },
+    {
+      "bn": "রোগ",
+      "en": "disease",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Health and the body"
+    },
+    {
+      "bn": "সংক্রমণ",
+      "en": "infection",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Health and the body"
+    },
+    {
+      "bn": "রোগপ্রতিরোধ",
+      "en": "immunity",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Health and the body"
+    },
+    {
+      "bn": "টিকা",
+      "en": "vaccine",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Health and the body"
+    },
+    {
+      "bn": "চিকিৎসা",
+      "en": "treatment",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Health and the body"
+    },
+    {
+      "bn": "রোগনির্ণয়",
+      "en": "diagnosis",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Health and the body"
+    },
+    {
+      "bn": "স্বাস্থ্যবিধি",
+      "en": "hygiene",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Health and the body"
+    },
+    {
+      "bn": "সুষম খাদ্য",
+      "en": "balanced diet",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Health and the body"
+    },
+    {
+      "bn": "পুষ্টি",
+      "en": "nutrition",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Health and the body"
+    },
+    {
+      "bn": "মানসিক স্বাস্থ্য",
+      "en": "mental health",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Health and the body"
+    },
+    {
+      "bn": "শারীরিক স্বাস্থ্য",
+      "en": "physical health",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Health and the body"
+    },
+    {
+      "bn": "ব্যায়াম",
+      "en": "exercise",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Health and the body"
+    },
+    {
+      "bn": "বিশ্রাম",
+      "en": "rest",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Health and the body"
+    },
+    {
+      "bn": "মানসিক চাপ",
+      "en": "mental stress",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Health and the body"
+    },
+    {
+      "bn": "প্রতিরোধ",
+      "en": "prevention",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Health and the body"
+    },
+    {
+      "bn": "আত্মবিশ্বাস",
+      "en": "confidence",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Feelings"
+    },
+    {
+      "bn": "অনিশ্চয়তা",
+      "en": "uncertainty",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Feelings"
+    },
+    {
+      "bn": "উদ্বেগ",
+      "en": "anxiety",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Feelings"
+    },
+    {
+      "bn": "হতাশা",
+      "en": "despair",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Feelings"
+    },
+    {
+      "bn": "আশাবাদ",
+      "en": "optimism",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Feelings"
+    },
+    {
+      "bn": "অনুতাপ",
+      "en": "regret",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Feelings"
+    },
+    {
+      "bn": "সহানুভূতি",
+      "en": "empathy",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Feelings"
+    },
+    {
+      "bn": "সহমর্মিতা",
+      "en": "compassion",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Feelings"
+    },
+    {
+      "bn": "দ্বিধা",
+      "en": "hesitation",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Feelings"
+    },
+    {
+      "bn": "সংকোচ",
+      "en": "inhibition",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Feelings"
+    },
+    {
+      "bn": "উত্তেজনা",
+      "en": "excitement",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Feelings"
+    },
+    {
+      "bn": "গর্ব",
+      "en": "pride",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Feelings"
+    },
+    {
+      "bn": "কৃতজ্ঞতা",
+      "en": "gratitude",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Feelings"
+    },
+    {
+      "bn": "বিরক্তি",
+      "en": "annoyance",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Feelings"
+    },
+    {
+      "bn": "হতবুদ্ধি",
+      "en": "confused",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Feelings"
+    },
+    {
+      "bn": "অনুপ্রেরণা",
+      "en": "motivation",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Feelings"
+    },
+    {
+      "bn": "সন্তুষ্টি",
+      "en": "satisfaction",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Feelings"
+    },
+    {
+      "bn": "হতাশাবাদ",
+      "en": "pessimism",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Feelings"
+    },
+    {
+      "bn": "বিচক্ষণ",
+      "en": "prudent",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Character"
+    },
+    {
+      "bn": "দায়িত্বশীল",
+      "en": "responsible",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Character"
+    },
+    {
+      "bn": "ন্যায়পরায়ণ",
+      "en": "just",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Character"
+    },
+    {
+      "bn": "সৎ",
+      "en": "honest",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Character"
+    },
+    {
+      "bn": "বিশ্বস্ত",
+      "en": "trustworthy",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Character"
+    },
+    {
+      "bn": "ধৈর্যশীল",
+      "en": "patient",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Character"
+    },
+    {
+      "bn": "পরিশ্রমী",
+      "en": "hardworking",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Character"
+    },
+    {
+      "bn": "সাহসী",
+      "en": "brave",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Character"
+    },
+    {
+      "bn": "বিনয়ী",
+      "en": "humble",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Character"
+    },
+    {
+      "bn": "উদার",
+      "en": "generous",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Character"
+    },
+    {
+      "bn": "আত্মনির্ভরশীল",
+      "en": "self-reliant",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Character"
+    },
+    {
+      "bn": "সহানুভূতিশীল",
+      "en": "empathetic",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Character"
+    },
+    {
+      "bn": "যুক্তিবাদী",
+      "en": "rational",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Character"
+    },
+    {
+      "bn": "বাস্তববাদী",
+      "en": "realistic",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Character"
+    },
+    {
+      "bn": "আদর্শবাদী",
+      "en": "idealistic",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Character"
+    },
+    {
+      "bn": "আত্মকেন্দ্রিক",
+      "en": "self-centered",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Character"
+    },
+    {
+      "bn": "স্বার্থপর",
+      "en": "selfish",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Character"
+    },
+    {
+      "bn": "দৃঢ়প্রতিজ্ঞ",
+      "en": "determined",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Character"
+    },
+    {
+      "bn": "কৌশলী",
+      "en": "strategic",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Character"
+    },
+    {
+      "bn": "দূরদর্শী",
+      "en": "far-sighted",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Character"
+    },
+    {
+      "bn": "বিশ্লেষণ করা",
+      "en": "to analyze",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Advanced verbs"
+    },
+    {
+      "bn": "মূল্যায়ন করা",
+      "en": "to evaluate",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Advanced verbs"
+    },
+    {
+      "bn": "ব্যাখ্যা করা",
+      "en": "to explain",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Advanced verbs"
+    },
+    {
+      "bn": "তুলনা করা",
+      "en": "to compare",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Advanced verbs"
+    },
+    {
+      "bn": "বৈপরীত্য দেখানো",
+      "en": "to contrast",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Advanced verbs"
+    },
+    {
+      "bn": "অনুমান করা",
+      "en": "to infer",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Advanced verbs"
+    },
+    {
+      "bn": "যাচাই করা",
+      "en": "to verify",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Advanced verbs"
+    },
+    {
+      "bn": "সিদ্ধান্তে পৌঁছানো",
+      "en": "to reach a conclusion",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Advanced verbs"
+    },
+    {
+      "bn": "যুক্তি উপস্থাপন করা",
+      "en": "to present an argument",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Advanced verbs"
+    },
+    {
+      "bn": "সমর্থন করা",
+      "en": "to support",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Advanced verbs"
+    },
+    {
+      "bn": "খণ্ডন করা",
+      "en": "to refute",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Advanced verbs"
+    },
+    {
+      "bn": "গবেষণা করা",
+      "en": "to research",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Advanced verbs"
+    },
+    {
+      "bn": "শ্রেণিবদ্ধ করা",
+      "en": "to classify",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Advanced verbs"
+    },
+    {
+      "bn": "নির্ধারণ করা",
+      "en": "to determine",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Advanced verbs"
+    },
+    {
+      "bn": "পুনর্বিবেচনা করা",
+      "en": "to reconsider",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Advanced verbs"
+    },
+    {
+      "bn": "ব্যাখ্যার পক্ষে প্রমাণ দেওয়া",
+      "en": "to support an interpretation with evidence",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Advanced verbs"
+    },
+    {
+      "bn": "সংশোধন করা",
+      "en": "to revise",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Advanced verbs"
+    },
+    {
+      "bn": "প্রভাবিত করা",
+      "en": "to influence",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Useful verbs"
+    },
+    {
+      "bn": "বাস্তবায়ন করা",
+      "en": "to implement",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Useful verbs"
+    },
+    {
+      "bn": "প্রতিরোধ করা",
+      "en": "to prevent",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Useful verbs"
+    },
+    {
+      "bn": "সংরক্ষণ করা",
+      "en": "to conserve",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Useful verbs"
+    },
+    {
+      "bn": "উন্নত করা",
+      "en": "to improve",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Useful verbs"
+    },
+    {
+      "bn": "পরিবর্তন করা",
+      "en": "to change",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Useful verbs"
+    },
+    {
+      "bn": "অংশগ্রহণ করা",
+      "en": "to participate",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Useful verbs"
+    },
+    {
+      "bn": "নেতৃত্ব দেওয়া",
+      "en": "to lead",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Useful verbs"
+    },
+    {
+      "bn": "সহযোগিতা করা",
+      "en": "to cooperate",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Useful verbs"
+    },
+    {
+      "bn": "উৎসাহিত করা",
+      "en": "to encourage",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Useful verbs"
+    },
+    {
+      "bn": "সমালোচনা করা",
+      "en": "to criticize",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Useful verbs"
+    },
+    {
+      "bn": "গ্রহণ করা",
+      "en": "to accept",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Useful verbs"
+    },
+    {
+      "bn": "প্রত্যাখ্যান করা",
+      "en": "to reject",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Useful verbs"
+    },
+    {
+      "bn": "স্বীকার করা",
+      "en": "to acknowledge",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Useful verbs"
+    },
+    {
+      "bn": "প্রশ্ন তোলা",
+      "en": "to question",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Useful verbs"
+    },
+    {
+      "bn": "চ্যালেঞ্জ করা",
+      "en": "to challenge",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Useful verbs"
+    },
+    {
+      "bn": "সম্পর্ক স্থাপন করা",
+      "en": "to establish a relationship",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Useful verbs"
+    },
+    {
+      "bn": "যুক্তিসঙ্গত",
+      "en": "reasonable",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Descriptive words"
+    },
+    {
+      "bn": "অযৌক্তিক",
+      "en": "illogical",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Descriptive words"
+    },
+    {
+      "bn": "নির্ভরযোগ্য",
+      "en": "reliable",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Descriptive words"
+    },
+    {
+      "bn": "সন্দেহজনক",
+      "en": "questionable",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Descriptive words"
+    },
+    {
+      "bn": "কার্যকর",
+      "en": "effective",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Descriptive words"
+    },
+    {
+      "bn": "অকার্যকর",
+      "en": "ineffective",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Descriptive words"
+    },
+    {
+      "bn": "প্রাসঙ্গিক",
+      "en": "relevant",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Descriptive words"
+    },
+    {
+      "bn": "অপ্রাসঙ্গিক",
+      "en": "irrelevant",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Descriptive words"
+    },
+    {
+      "bn": "নিরপেক্ষ",
+      "en": "neutral",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Descriptive words"
+    },
+    {
+      "bn": "পক্ষপাতদুষ্ট",
+      "en": "biased",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Descriptive words"
+    },
+    {
+      "bn": "ইতিবাচক",
+      "en": "positive",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Descriptive words"
+    },
+    {
+      "bn": "নেতিবাচক",
+      "en": "negative",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Descriptive words"
+    },
+    {
+      "bn": "জটিল",
+      "en": "complex",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Descriptive words"
+    },
+    {
+      "bn": "সরল",
+      "en": "straightforward",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Descriptive words"
+    },
+    {
+      "bn": "বাস্তবসম্মত",
+      "en": "realistic",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Descriptive words"
+    },
+    {
+      "bn": "অবাস্তব",
+      "en": "unrealistic",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Descriptive words"
+    },
+    {
+      "bn": "স্থায়ী",
+      "en": "permanent",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Descriptive words"
+    },
+    {
+      "bn": "অস্থায়ী",
+      "en": "temporary",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Descriptive words"
+    },
+    {
+      "bn": "সম্ভাব্য",
+      "en": "possible",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Descriptive words"
+    },
+    {
+      "bn": "অনিবার্য",
+      "en": "inevitable",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Descriptive words"
+    },
+    {
+      "bn": "উল্লেখযোগ্য",
+      "en": "significant",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Descriptive words"
+    },
+    {
+      "bn": "সামান্য",
+      "en": "minor",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Descriptive words"
+    },
+    {
+      "bn": "সুস্পষ্ট",
+      "en": "evident",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Descriptive words"
+    },
+    {
+      "bn": "অস্পষ্ট",
+      "en": "unclear",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Descriptive words"
+    },
+    {
+      "bn": "প্রথমত",
+      "en": "firstly",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Connectors"
+    },
+    {
+      "bn": "দ্বিতীয়ত",
+      "en": "secondly",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Connectors"
+    },
+    {
+      "bn": "তৃতীয়ত",
+      "en": "thirdly",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Connectors"
+    },
+    {
+      "bn": "তদুপরি",
+      "en": "furthermore",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Connectors"
+    },
+    {
+      "bn": "এছাড়া",
+      "en": "in addition",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Connectors"
+    },
+    {
+      "bn": "পাশাপাশি",
+      "en": "in addition",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Connectors"
+    },
+    {
+      "bn": "একইভাবে",
+      "en": "similarly",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Connectors"
+    },
+    {
+      "bn": "অন্যদিকে",
+      "en": "on the other hand",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Connectors"
+    },
+    {
+      "bn": "বিপরীতে",
+      "en": "in contrast",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Connectors"
+    },
+    {
+      "bn": "অন্যথায়",
+      "en": "otherwise",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Connectors"
+    },
+    {
+      "bn": "উদাহরণস্বরূপ",
+      "en": "for example",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Connectors"
+    },
+    {
+      "bn": "বিশেষত",
+      "en": "particularly",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Connectors"
+    },
+    {
+      "bn": "মূলত",
+      "en": "primarily",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Connectors"
+    },
+    {
+      "bn": "ফলে",
+      "en": "consequently",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Connectors"
+    },
+    {
+      "bn": "ফলস্বরূপ",
+      "en": "as a result",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Connectors"
+    },
+    {
+      "bn": "যদিও",
+      "en": "although",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Connectors"
+    },
+    {
+      "bn": "তবুও",
+      "en": "nevertheless",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Connectors"
+    },
+    {
+      "bn": "যেহেতু",
+      "en": "since",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Connectors"
+    },
+    {
+      "bn": "সেহেতু",
+      "en": "therefore",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Connectors"
+    },
+    {
+      "bn": "অতএব",
+      "en": "therefore",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Connectors"
+    },
+    {
+      "bn": "অবশেষে",
+      "en": "finally",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Connectors"
+    },
+    {
+      "bn": "সংক্ষেপে",
+      "en": "in brief",
+      "category": "Class 12 · spiral review· spiral review· spiral review· spiral review · Connectors"
+    },
+    {
+      "bn": "ব্যাখ্যামূলক",
+      "en": "explanatory",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Advanced academic words"
+    },
+    {
+      "bn": "সমালোচনামূলক",
+      "en": "critical",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Advanced academic words"
+    },
+    {
+      "bn": "প্রাসঙ্গিকতা",
+      "en": "relevance",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Advanced academic words"
+    },
+    {
+      "bn": "বৈধতা",
+      "en": "validity",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Advanced academic words"
+    },
+    {
+      "bn": "কাঠামো",
+      "en": "structure",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Advanced academic words"
+    },
+    {
+      "bn": "তাৎপর্য",
+      "en": "significance",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Advanced academic words"
+    },
+    {
+      "bn": "পরিণতি",
+      "en": "consequence",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Advanced academic words"
+    },
+    {
+      "bn": "দাবি",
+      "en": "claim",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Advanced academic words"
+    },
+    {
+      "bn": "প্রতিদাবি",
+      "en": "counterclaim",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Advanced academic words"
+    },
+    {
+      "bn": "অবস্থান",
+      "en": "position",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Advanced academic words"
+    },
+    {
+      "bn": "জরিপ",
+      "en": "survey",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Education and research"
+    },
+    {
+      "bn": "সাক্ষাৎকার",
+      "en": "interview",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Education and research"
+    },
+    {
+      "bn": "গবেষণাপত্র",
+      "en": "research paper",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Education and research"
+    },
+    {
+      "bn": "বাচ্য",
+      "en": "voice",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Grammar and language"
+    },
+    {
+      "bn": "সক্রিয় বাচ্য",
+      "en": "active voice",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Grammar and language"
+    },
+    {
+      "bn": "কর্মবাচ্য",
+      "en": "passive voice",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Grammar and language"
+    },
+    {
+      "bn": "শব্দার্থ",
+      "en": "word meaning",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Grammar and language"
+    },
+    {
+      "bn": "ব্যুৎপত্তি",
+      "en": "etymology",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Grammar and language"
+    },
+    {
+      "bn": "গদ্য",
+      "en": "prose",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Literary analysis"
+    },
+    {
+      "bn": "পদ্য",
+      "en": "verse",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Literary analysis"
+    },
+    {
+      "bn": "বর্ণনাকারী",
+      "en": "narrator",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Literary analysis"
+    },
+    {
+      "bn": "উপভাব",
+      "en": "supporting theme",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Literary analysis"
+    },
+    {
+      "bn": "ভাষাশৈলী",
+      "en": "literary style",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Literary analysis"
+    },
+    {
+      "bn": "শব্দচয়ন",
+      "en": "word choice",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Literary analysis"
+    },
+    {
+      "bn": "অন্তর্নিহিত অর্থ",
+      "en": "implicit meaning",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Literary analysis"
+    },
+    {
+      "bn": "প্রতিনিধিত্ব",
+      "en": "representation",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Civics and history"
+    },
+    {
+      "bn": "সামাজিক ন্যায়",
+      "en": "social justice",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Civics and history"
+    },
+    {
+      "bn": "জবাবদিহি",
+      "en": "accountability",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Civics and history"
+    },
+    {
+      "bn": "সামাজিক পরিবর্তন",
+      "en": "social change",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Civics and history"
+    },
+    {
+      "bn": "সামাজিক মূল্যবোধ",
+      "en": "social values",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Civics and history"
+    },
+    {
+      "bn": "ঐতিহাসিক প্রেক্ষাপট",
+      "en": "historical context",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Civics and history"
+    },
+    {
+      "bn": "উপনিবেশবাদ",
+      "en": "colonialism",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Civics and history"
+    },
+    {
+      "bn": "সাম্রাজ্যবাদ",
+      "en": "imperialism",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Civics and history"
+    },
+    {
+      "bn": "ঐতিহাসিক উৎস",
+      "en": "historical source",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Civics and history"
+    },
+    {
+      "bn": "প্রাথমিক উৎস",
+      "en": "primary source",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Civics and history"
+    },
+    {
+      "bn": "দ্বিতীয়িক উৎস",
+      "en": "secondary source",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Civics and history"
+    },
+    {
+      "bn": "কৃষি",
+      "en": "agriculture",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Geography and environment"
+    },
+    {
+      "bn": "নদী অববাহিকা",
+      "en": "river basin",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Geography and environment"
+    },
+    {
+      "bn": "ভূমিক্ষয়",
+      "en": "land erosion",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Geography and environment"
+    },
+    {
+      "bn": "মরুকরণ",
+      "en": "desertification",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Geography and environment"
+    },
+    {
+      "bn": "ভূমি ব্যবহার",
+      "en": "land use",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Geography and environment"
+    },
+    {
+      "bn": "ভূ-অবস্থান",
+      "en": "geographical location",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Geography and environment"
+    },
+    {
+      "bn": "পরিবহন",
+      "en": "transportation",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Geography and environment"
+    },
+    {
+      "bn": "অর্থনৈতিক অঞ্চল",
+      "en": "economic region",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Geography and environment"
+    },
+    {
+      "bn": "গ্রিনহাউস গ্যাস",
+      "en": "greenhouse gas",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Geography and environment"
+    },
+    {
+      "bn": "প্রাকৃতিক দুর্যোগ",
+      "en": "natural disaster",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Geography and environment"
+    },
+    {
+      "bn": "সম্পদ ব্যবস্থাপনা",
+      "en": "resource management",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Geography and environment"
+    },
+    {
+      "bn": "পরিবেশগত প্রভাব",
+      "en": "environmental impact",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Geography and environment"
+    },
+    {
+      "bn": "পরিবেশনীতি",
+      "en": "environmental policy",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Geography and environment"
+    },
+    {
+      "bn": "বৈজ্ঞানিক পদ্ধতি",
+      "en": "scientific method",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Scientific method"
+    },
+    {
+      "bn": "স্বাধীন চলক",
+      "en": "independent variable",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Scientific method"
+    },
+    {
+      "bn": "নির্ভরশীল চলক",
+      "en": "dependent variable",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Scientific method"
+    },
+    {
+      "bn": "নিয়ন্ত্রিত চলক",
+      "en": "controlled variable",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Scientific method"
+    },
+    {
+      "bn": "ত্রুটি",
+      "en": "error",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Scientific method"
+    },
+    {
+      "bn": "নির্ভুলতা",
+      "en": "precision",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Scientific method"
+    },
+    {
+      "bn": "যথার্থতা",
+      "en": "accuracy",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Scientific method"
+    },
+    {
+      "bn": "মডেল",
+      "en": "model",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Scientific method"
+    },
+    {
+      "bn": "পুনরাবৃত্তি",
+      "en": "replication",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Scientific method"
+    },
+    {
+      "bn": "শক্তি রূপান্তর",
+      "en": "energy transformation",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Scientific method"
+    },
+    {
+      "bn": "কোষঝিল্লি",
+      "en": "cell membrane",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Biology"
+    },
+    {
+      "bn": "নিউক্লিয়াস",
+      "en": "nucleus",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Biology"
+    },
+    {
+      "bn": "হরমোন",
+      "en": "hormone",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Biology"
+    },
+    {
+      "bn": "জিন",
+      "en": "gene",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Biology"
+    },
+    {
+      "bn": "ক্রোমোজোম",
+      "en": "chromosome",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Biology"
+    },
+    {
+      "bn": "প্রাকৃতিক নির্বাচন",
+      "en": "natural selection",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Biology"
+    },
+    {
+      "bn": "বেগ",
+      "en": "velocity",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Physics"
+    },
+    {
+      "bn": "ত্বরণ",
+      "en": "acceleration",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Physics"
+    },
+    {
+      "bn": "ভর",
+      "en": "mass",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Physics"
+    },
+    {
+      "bn": "ওজন",
+      "en": "weight",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Physics"
+    },
+    {
+      "bn": "কাজ",
+      "en": "work",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Physics"
+    },
+    {
+      "bn": "তাপমাত্রা",
+      "en": "temperature",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Physics"
+    },
+    {
+      "bn": "প্রতিফলন",
+      "en": "reflection",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Physics"
+    },
+    {
+      "bn": "প্রতিসরণ",
+      "en": "refraction",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Physics"
+    },
+    {
+      "bn": "কম্পন",
+      "en": "vibration",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Physics"
+    },
+    {
+      "bn": "বৈদ্যুতিক প্রবাহ",
+      "en": "electric current",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Physics"
+    },
+    {
+      "bn": "ভোল্টেজ",
+      "en": "voltage",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Physics"
+    },
+    {
+      "bn": "চৌম্বক ক্ষেত্র",
+      "en": "magnetic field",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Physics"
+    },
+    {
+      "bn": "মৌল",
+      "en": "element",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Chemistry"
+    },
+    {
+      "bn": "মিশ্রণ",
+      "en": "mixture",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Chemistry"
+    },
+    {
+      "bn": "আয়ন",
+      "en": "ion",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Chemistry"
+    },
+    {
+      "bn": "রাসায়নিক বন্ধন",
+      "en": "chemical bond",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Chemistry"
+    },
+    {
+      "bn": "বিক্রিয়ক",
+      "en": "reactant",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Chemistry"
+    },
+    {
+      "bn": "উৎপাদ",
+      "en": "product",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Chemistry"
+    },
+    {
+      "bn": "অম্ল",
+      "en": "acid",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Chemistry"
+    },
+    {
+      "bn": "ক্ষার",
+      "en": "base",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Chemistry"
+    },
+    {
+      "bn": "লবণ",
+      "en": "salt",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Chemistry"
+    },
+    {
+      "bn": "দ্রবণ",
+      "en": "solution",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Chemistry"
+    },
+    {
+      "bn": "দ্রাবক",
+      "en": "solvent",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Chemistry"
+    },
+    {
+      "bn": "দ্রব",
+      "en": "solute",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Chemistry"
+    },
+    {
+      "bn": "ঘনত্ব",
+      "en": "concentration",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Chemistry"
+    },
+    {
+      "bn": "ডেটাবেস",
+      "en": "database",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Digital literacy"
+    },
+    {
+      "bn": "স্বয়ংক্রিয়তা",
+      "en": "automation",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Digital literacy"
+    },
+    {
+      "bn": "বিভ্রান্তিকর তথ্য",
+      "en": "disinformation",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Digital literacy"
+    },
+    {
+      "bn": "অনলাইন নিরাপত্তা",
+      "en": "online safety",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Digital literacy"
+    },
+    {
+      "bn": "তথ্যের উৎস",
+      "en": "information source",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Digital literacy"
+    },
+    {
+      "bn": "ভোগ",
+      "en": "consumption",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Economics"
+    },
+    {
+      "bn": "মুদ্রাস্ফীতি",
+      "en": "inflation",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Economics"
+    },
+    {
+      "bn": "ঋণ",
+      "en": "debt",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Economics"
+    },
+    {
+      "bn": "দারিদ্র্য",
+      "en": "poverty",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Economics"
+    },
+    {
+      "bn": "অর্থনৈতিক প্রবৃদ্ধি",
+      "en": "economic growth",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Economics"
+    },
+    {
+      "bn": "অর্থনৈতিক বৈষম্য",
+      "en": "economic inequality",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Economics"
+    },
+    {
+      "bn": "আত্মসন্দেহ",
+      "en": "self-doubt",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Feelings and character"
+    },
+    {
+      "bn": "প্রেরণা",
+      "en": "motivation",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Feelings and character"
+    },
+    {
+      "bn": "তৃপ্তি",
+      "en": "contentment",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Feelings and character"
+    },
+    {
+      "bn": "অসন্তোষ",
+      "en": "dissatisfaction",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Feelings and character"
+    },
+    {
+      "bn": "দৃঢ়তা",
+      "en": "resilience",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Feelings and character"
+    },
+    {
+      "bn": "অসহায়ত্ব",
+      "en": "helplessness",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Feelings and character"
+    },
+    {
+      "bn": "পরিণত",
+      "en": "mature",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Feelings and character"
+    },
+    {
+      "bn": "আবেগপ্রবণ",
+      "en": "emotional",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Feelings and character"
+    },
+    {
+      "bn": "নীতিবান",
+      "en": "ethical",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Feelings and character"
+    },
+    {
+      "bn": "ব্যাখ্যা নির্ণয় করা",
+      "en": "to determine an interpretation",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Advanced verbs"
+    },
+    {
+      "bn": "ব্যাখ্যা পুনর্গঠন করা",
+      "en": "to reconstruct an interpretation",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Advanced verbs"
+    },
+    {
+      "bn": "পর্যালোচনা করা",
+      "en": "to review",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Advanced verbs"
+    },
+    {
+      "bn": "ব্যাখ্যার সীমাবদ্ধতা চিহ্নিত করা",
+      "en": "to identify limitations of an interpretation",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Advanced verbs"
+    },
+    {
+      "bn": "নিয়ন্ত্রণ করা",
+      "en": "to control",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Advanced verbs"
+    },
+    {
+      "bn": "সংস্কার করা",
+      "en": "to reform",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Advanced verbs"
+    },
+    {
+      "bn": "সমন্বয় করা",
+      "en": "to coordinate",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Advanced verbs"
+    },
+    {
+      "bn": "আলোচনায় অংশ নেওয়া",
+      "en": "to participate in discussion",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Advanced verbs"
+    },
+    {
+      "bn": "যুক্তিসঙ্গত করা",
+      "en": "to justify",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Advanced verbs"
+    },
+    {
+      "bn": "যৌক্তিক",
+      "en": "logical",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Analytical adjectives and connectors"
+    },
+    {
+      "bn": "বিশ্বাসযোগ্য",
+      "en": "credible",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Analytical adjectives and connectors"
+    },
+    {
+      "bn": "অবিশ্বাস্য",
+      "en": "not credible",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Analytical adjectives and connectors"
+    },
+    {
+      "bn": "সুসংগত",
+      "en": "coherent",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Analytical adjectives and connectors"
+    },
+    {
+      "bn": "অসংগত",
+      "en": "incoherent",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Analytical adjectives and connectors"
+    },
+    {
+      "bn": "টেকসই",
+      "en": "sustainable",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Analytical adjectives and connectors"
+    },
+    {
+      "bn": "দীর্ঘমেয়াদি",
+      "en": "long-term",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Analytical adjectives and connectors"
+    },
+    {
+      "bn": "স্বল্পমেয়াদি",
+      "en": "short-term",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Analytical adjectives and connectors"
+    },
+    {
+      "bn": "নগণ্য",
+      "en": "negligible",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Analytical adjectives and connectors"
+    },
+    {
+      "bn": "বিতর্কিত",
+      "en": "controversial",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Analytical adjectives and connectors"
+    },
+    {
+      "bn": "উপরন্তু",
+      "en": "moreover",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Analytical adjectives and connectors"
+    },
+    {
+      "bn": "বরং",
+      "en": "rather",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Analytical adjectives and connectors"
+    },
+    {
+      "bn": "সুতরাং",
+      "en": "therefore",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Analytical adjectives and connectors"
+    },
+    {
+      "bn": "পরিশেষে",
+      "en": "finally",
+      "category": "Class 12 · spiral review· spiral review· spiral review· Analytical adjectives and connectors"
+    },
+    {
+      "bn": "সমালোচনা",
+      "en": "criticism",
+      "category": "Class 12 · spiral review· spiral review· Advanced academic words"
+    },
+    {
+      "bn": "সংশ্লেষণ",
+      "en": "synthesis",
+      "category": "Class 12 · spiral review· spiral review· Advanced academic words"
+    },
+    {
+      "bn": "সাধারণীকরণ",
+      "en": "generalization",
+      "category": "Class 12 · spiral review· spiral review· Advanced academic words"
+    },
+    {
+      "bn": "গবেষণা প্রশ্ন",
+      "en": "research question",
+      "category": "Class 12 · spiral review· spiral review· Research and data analysis"
+    },
+    {
+      "bn": "নমুনা",
+      "en": "sample",
+      "category": "Class 12 · spiral review· spiral review· Research and data analysis"
+    },
+    {
+      "bn": "পরিসংখ্যান",
+      "en": "statistics",
+      "category": "Class 12 · spiral review· spiral review· Research and data analysis"
+    },
+    {
+      "bn": "যাচাই",
+      "en": "verification",
+      "category": "Class 12 · spiral review· spiral review· Research and data analysis"
+    },
+    {
+      "bn": "বাক্যসংকোচন",
+      "en": "sentence reduction",
+      "category": "Class 12 · spiral review· spiral review· Grammar and linguistics"
+    },
+    {
+      "bn": "পূর্বাভাস",
+      "en": "foreshadowing",
+      "category": "Class 12 · spiral review· spiral review· Advanced literary analysis"
+    },
+    {
+      "bn": "প্রতীকী অর্থ",
+      "en": "symbolic meaning",
+      "category": "Class 12 · spiral review· spiral review· Advanced literary analysis"
+    },
+    {
+      "bn": "সামাজিক প্রেক্ষাপট",
+      "en": "social context",
+      "category": "Class 12 · spiral review· spiral review· Advanced literary analysis"
+    },
+    {
+      "bn": "আইনের শাসন",
+      "en": "rule of law",
+      "category": "Class 12 · spiral review· spiral review· Society and state"
+    },
+    {
+      "bn": "রাজনৈতিক অংশগ্রহণ",
+      "en": "political participation",
+      "category": "Class 12 · spiral review· spiral review· Society and state"
+    },
+    {
+      "bn": "জননীতি",
+      "en": "public policy",
+      "category": "Class 12 · spiral review· spiral review· Society and state"
+    },
+    {
+      "bn": "প্রতিষ্ঠান",
+      "en": "institution",
+      "category": "Class 12 · spiral review· spiral review· Society and state"
+    },
+    {
+      "bn": "স্বাধীনতা আন্দোলন",
+      "en": "independence movement",
+      "category": "Class 12 · spiral review· spiral review· History"
+    },
+    {
+      "bn": "শাসনব্যবস্থা",
+      "en": "system of government",
+      "category": "Class 12 · spiral review· spiral review· History"
+    },
+    {
+      "bn": "ক্ষমতার পরিবর্তন",
+      "en": "transfer of power",
+      "category": "Class 12 · spiral review· spiral review· History"
+    },
+    {
+      "bn": "রাজনৈতিক আন্দোলন",
+      "en": "political movement",
+      "category": "Class 12 · spiral review· spiral review· History"
+    },
+    {
+      "bn": "শিল্পায়ন",
+      "en": "industrialization",
+      "category": "Class 12 · spiral review· spiral review· Human geography"
+    },
+    {
+      "bn": "অবকাঠামো",
+      "en": "infrastructure",
+      "category": "Class 12 · spiral review· spiral review· Human geography"
+    },
+    {
+      "bn": "আঞ্চলিক বৈষম্য",
+      "en": "regional inequality",
+      "category": "Class 12 · spiral review· spiral review· Human geography"
+    },
+    {
+      "bn": "জনসংখ্যাগত পরিবর্তন",
+      "en": "demographic change",
+      "category": "Class 12 · spiral review· spiral review· Human geography"
+    },
+    {
+      "bn": "পরিবেশগত ভারসাম্য",
+      "en": "ecological balance",
+      "category": "Class 12 · spiral review· spiral review· Environment and sustainability"
+    },
+    {
+      "bn": "পানি সংকট",
+      "en": "water scarcity",
+      "category": "Class 12 · spiral review· spiral review· Environment and sustainability"
+    },
+    {
+      "bn": "প্রশমন",
+      "en": "mitigation",
+      "category": "Class 12 · spiral review· spiral review· Environment and sustainability"
+    },
+    {
+      "bn": "কারণগত সম্পর্ক",
+      "en": "causal relationship",
+      "category": "Class 12 · spiral review· spiral review· Scientific method"
+    },
+    {
+      "bn": "কোষ বিভাজন",
+      "en": "cell division",
+      "category": "Class 12 · spiral review· spiral review· Biology"
+    },
+    {
+      "bn": "ডিএনএ",
+      "en": "DNA",
+      "category": "Class 12 · spiral review· spiral review· Biology"
+    },
+    {
+      "bn": "মিউটেশন",
+      "en": "mutation",
+      "category": "Class 12 · spiral review· spiral review· Biology"
+    },
+    {
+      "bn": "ভরবেগ",
+      "en": "momentum",
+      "category": "Class 12 · spiral review· spiral review· Physics"
+    },
+    {
+      "bn": "তরঙ্গ",
+      "en": "wave",
+      "category": "Class 12 · spiral review· spiral review· Physics"
+    },
+    {
+      "bn": "পিএইচ",
+      "en": "pH",
+      "category": "Class 12 · spiral review· spiral review· Chemistry"
+    },
+    {
+      "bn": "জারণ",
+      "en": "oxidation",
+      "category": "Class 12 · spiral review· spiral review· Chemistry"
+    },
+    {
+      "bn": "বিজারণ",
+      "en": "reduction",
+      "category": "Class 12 · spiral review· spiral review· Chemistry"
+    },
+    {
+      "bn": "অনুঘটক",
+      "en": "catalyst",
+      "category": "Class 12 · spiral review· spiral review· Chemistry"
+    },
+    {
+      "bn": "ডেটা বিশ্লেষণ",
+      "en": "data analysis",
+      "category": "Class 12 · spiral review· spiral review· Technology and digital society"
+    },
+    {
+      "bn": "ক্লাউড",
+      "en": "cloud computing",
+      "category": "Class 12 · spiral review· spiral review· Technology and digital society"
+    },
+    {
+      "bn": "ডিজিটাল সাক্ষরতা",
+      "en": "digital literacy",
+      "category": "Class 12 · spiral review· spiral review· Technology and digital society"
+    },
+    {
+      "bn": "তথ্য সুরক্ষা",
+      "en": "information security",
+      "category": "Class 12 · spiral review· spiral review· Technology and digital society"
+    },
+    {
+      "bn": "নৈতিক ব্যবহার",
+      "en": "ethical use",
+      "category": "Class 12 · spiral review· spiral review· Technology and digital society"
+    },
+    {
+      "bn": "সুদের হার",
+      "en": "interest rate",
+      "category": "Class 12 · spiral review· spiral review· Economics"
+    },
+    {
+      "bn": "উৎপাদনশীলতা",
+      "en": "productivity",
+      "category": "Class 12 · spiral review· spiral review· Economics"
+    },
+    {
+      "bn": "আত্মনিয়ন্ত্রণ",
+      "en": "self-control",
+      "category": "Class 12 · spiral review· spiral review· Psychology and character"
+    },
+    {
+      "bn": "আত্মসম্মান",
+      "en": "self-esteem",
+      "category": "Class 12 · spiral review· spiral review· Psychology and character"
+    },
+    {
+      "bn": "মানসিক দৃঢ়তা",
+      "en": "mental resilience",
+      "category": "Class 12 · spiral review· spiral review· Psychology and character"
+    },
+    {
+      "bn": "সংকল্প",
+      "en": "resolve",
+      "category": "Class 12 · spiral review· spiral review· Psychology and character"
+    },
+    {
+      "bn": "আত্মপর্যালোচনা",
+      "en": "self-reflection",
+      "category": "Class 12 · spiral review· spiral review· Psychology and character"
+    },
+    {
+      "bn": "আত্মবিশ্লেষণী",
+      "en": "introspective",
+      "category": "Class 12 · spiral review· spiral review· Psychology and character"
+    },
+    {
+      "bn": "নেতৃত্বগুণসম্পন্ন",
+      "en": "leadership-oriented",
+      "category": "Class 12 · spiral review· spiral review· Psychology and character"
+    },
+    {
+      "bn": "আপসহীন",
+      "en": "uncompromising",
+      "category": "Class 12 · spiral review· spiral review· Psychology and character"
+    },
+    {
+      "bn": "সংশ্লেষণ করা",
+      "en": "to synthesize",
+      "category": "Class 12 · spiral review· spiral review· Advanced verbs"
+    },
+    {
+      "bn": "যুক্তি গঠন করা",
+      "en": "to construct an argument",
+      "category": "Class 12 · spiral review· spiral review· Advanced verbs"
+    },
+    {
+      "bn": "বৈপরীত্য নির্ণয় করা",
+      "en": "to determine contrast",
+      "category": "Class 12 · spiral review· spiral review· Advanced verbs"
+    },
+    {
+      "bn": "প্রেক্ষাপট স্থাপন করা",
+      "en": "to contextualize",
+      "category": "Class 12 · spiral review· spiral review· Advanced verbs"
+    },
+    {
+      "bn": "সাধারণীকরণ করা",
+      "en": "to generalize",
+      "category": "Class 12 · spiral review· spiral review· Advanced verbs"
+    },
+    {
+      "bn": "পুনর্মূল্যায়ন করা",
+      "en": "to reevaluate",
+      "category": "Class 12 · spiral review· spiral review· Advanced verbs"
+    },
+    {
+      "bn": "প্রমাণের শক্তি বিচার করা",
+      "en": "to assess the strength of evidence",
+      "category": "Class 12 · spiral review· spiral review· Advanced verbs"
+    },
+    {
+      "bn": "অবস্থান গ্রহণ করা",
+      "en": "to take a position",
+      "category": "Class 12 · spiral review· spiral review· Advanced verbs"
+    },
+    {
+      "bn": "সীমাবদ্ধতা চিহ্নিত করা",
+      "en": "to identify limitations",
+      "category": "Class 12 · spiral review· spiral review· Advanced verbs"
+    },
+    {
+      "bn": "অগ্রাধিকার দেওয়া",
+      "en": "to prioritize",
+      "category": "Class 12 · spiral review· spiral review· Advanced verbs"
+    },
+    {
+      "bn": "অনুমোদন করা",
+      "en": "to approve",
+      "category": "Class 12 · spiral review· spiral review· Advanced verbs"
+    },
+    {
+      "bn": "অভিযোজিত হওয়া",
+      "en": "to adapt",
+      "category": "Class 12 · spiral review· spiral review· Advanced verbs"
+    },
+    {
+      "bn": "প্রশমন করা",
+      "en": "to mitigate",
+      "category": "Class 12 · spiral review· spiral review· Advanced verbs"
+    },
+    {
+      "bn": "অটেকসই",
+      "en": "unsustainable",
+      "category": "Class 12 · spiral review· spiral review· Advanced adjectives and connectors"
+    },
+    {
+      "bn": "বহুমাত্রিক",
+      "en": "multidimensional",
+      "category": "Class 12 · spiral review· spiral review· Advanced adjectives and connectors"
+    },
+    {
+      "bn": "অন্তর্নিহিত",
+      "en": "implicit",
+      "category": "Class 12 · spiral review· spiral review· Advanced adjectives and connectors"
+    },
+    {
+      "bn": "সুদূরপ্রসারী",
+      "en": "far-reaching",
+      "category": "Class 12 · spiral review· spiral review· Advanced adjectives and connectors"
+    },
+    {
+      "bn": "তথাপি",
+      "en": "nevertheless",
+      "category": "Class 12 · spiral review· spiral review· Advanced adjectives and connectors"
+    },
+    {
+      "bn": "সামগ্রিকভাবে",
+      "en": "overall",
+      "category": "Class 12 · spiral review· spiral review· Advanced adjectives and connectors"
+    },
+    {
+      "bn": "প্রতিপাদ্য",
+      "en": "central thesis",
+      "category": "Class 12 · spiral review· Higher academic words"
+    },
+    {
+      "bn": "যুক্তিক্রম",
+      "en": "chain of reasoning",
+      "category": "Class 12 · spiral review· Higher academic words"
+    },
+    {
+      "bn": "পূর্বধারণা",
+      "en": "presupposition",
+      "category": "Class 12 · spiral review· Higher academic words"
+    },
+    {
+      "bn": "ব্যাখ্যামূলক কাঠামো",
+      "en": "interpretive framework",
+      "category": "Class 12 · spiral review· Higher academic words"
+    },
+    {
+      "bn": "ধারণাগত সম্পর্ক",
+      "en": "conceptual relationship",
+      "category": "Class 12 · spiral review· Higher academic words"
+    },
+    {
+      "bn": "গবেষণা পদ্ধতি",
+      "en": "research methodology",
+      "category": "Class 12 · spiral review· Research and academic writing"
+    },
+    {
+      "bn": "গুণগত তথ্য",
+      "en": "qualitative data",
+      "category": "Class 12 · spiral review· Research and academic writing"
+    },
+    {
+      "bn": "পরিমাণগত তথ্য",
+      "en": "quantitative data",
+      "category": "Class 12 · spiral review· Research and academic writing"
+    },
+    {
+      "bn": "পদ্ধতিগত সীমাবদ্ধতা",
+      "en": "methodological limitation",
+      "category": "Class 12 · spiral review· Research and academic writing"
+    },
+    {
+      "bn": "গবেষণার ফলাফল",
+      "en": "research findings",
+      "category": "Class 12 · spiral review· Research and academic writing"
+    },
+    {
+      "bn": "পুনরুৎপাদনযোগ্যতা",
+      "en": "reproducibility",
+      "category": "Class 12 · spiral review· Research and academic writing"
+    },
+    {
+      "bn": "নিরপেক্ষতা",
+      "en": "objectivity",
+      "category": "Class 12 · spiral review· Research and academic writing"
+    },
+    {
+      "bn": "বাক্যতত্ত্ব",
+      "en": "syntax",
+      "category": "Class 12 · spiral review· Advanced Bengali language"
+    },
+    {
+      "bn": "শব্দতত্ত্ব",
+      "en": "lexicology",
+      "category": "Class 12 · spiral review· Advanced Bengali language"
+    },
+    {
+      "bn": "ধ্বনিতত্ত্ব",
+      "en": "phonetics",
+      "category": "Class 12 · spiral review· Advanced Bengali language"
+    },
+    {
+      "bn": "রূপতত্ত্ব",
+      "en": "morphology",
+      "category": "Class 12 · spiral review· Advanced Bengali language"
+    },
+    {
+      "bn": "ভাবসম্প্রসারণ",
+      "en": "idea expansion",
+      "category": "Class 12 · spiral review· Advanced Bengali language"
+    },
+    {
+      "bn": "সারমর্ম",
+      "en": "gist",
+      "category": "Class 12 · spiral review· Advanced Bengali language"
+    },
+    {
+      "bn": "পারিভাষিক শব্দ",
+      "en": "technical term",
+      "category": "Class 12 · spiral review· Advanced Bengali language"
+    },
+    {
+      "bn": "প্রমিত ভাষা",
+      "en": "standard language",
+      "category": "Class 12 · spiral review· Advanced Bengali language"
+    },
+    {
+      "bn": "আঞ্চলিক ভাষা",
+      "en": "regional language",
+      "category": "Class 12 · spiral review· Advanced Bengali language"
+    },
+    {
+      "bn": "রীতিভেদ",
+      "en": "register variation",
+      "category": "Class 12 · spiral review· Advanced Bengali language"
+    },
+    {
+      "bn": "কাহিনির গঠন",
+      "en": "narrative structure",
+      "category": "Class 12 · spiral review· Advanced literary analysis"
+    },
+    {
+      "bn": "অন্তর্দ্বন্দ্ব",
+      "en": "internal conflict",
+      "category": "Class 12 · spiral review· Advanced literary analysis"
+    },
+    {
+      "bn": "বহির্দ্বন্দ্ব",
+      "en": "external conflict",
+      "category": "Class 12 · spiral review· Advanced literary analysis"
+    },
+    {
+      "bn": "ট্র্যাজেডি",
+      "en": "tragedy",
+      "category": "Class 12 · spiral review· Advanced literary analysis"
+    },
+    {
+      "bn": "কৌতুক",
+      "en": "comedy",
+      "category": "Class 12 · spiral review· Advanced literary analysis"
+    },
+    {
+      "bn": "নাটকীয়তা",
+      "en": "dramatic quality",
+      "category": "Class 12 · spiral review· Advanced literary analysis"
+    },
+    {
+      "bn": "বর্ণনাভঙ্গি",
+      "en": "narrative mode",
+      "category": "Class 12 · spiral review· Advanced literary analysis"
+    },
+    {
+      "bn": "কথক",
+      "en": "narrator",
+      "category": "Class 12 · spiral review· Advanced literary analysis"
+    },
+    {
+      "bn": "অবিশ্বস্ত কথক",
+      "en": "unreliable narrator",
+      "category": "Class 12 · spiral review· Advanced literary analysis"
+    },
+    {
+      "bn": "অস্তিত্ব",
+      "en": "existence",
+      "category": "Class 12 · spiral review· Philosophy"
+    },
+    {
+      "bn": "বাস্তবতা",
+      "en": "reality",
+      "category": "Class 12 · spiral review· Philosophy"
+    },
+    {
+      "bn": "নৈতিকতা",
+      "en": "ethics",
+      "category": "Class 12 · spiral review· Philosophy"
+    },
+    {
+      "bn": "স্বাধীন ইচ্ছা",
+      "en": "free will",
+      "category": "Class 12 · spiral review· Philosophy"
+    },
+    {
+      "bn": "চেতনা",
+      "en": "consciousness",
+      "category": "Class 12 · spiral review· Philosophy"
+    },
+    {
+      "bn": "পরিচয়",
+      "en": "identity",
+      "category": "Class 12 · spiral review· Philosophy"
+    },
+    {
+      "bn": "যুক্তিবাদ",
+      "en": "rationalism",
+      "category": "Class 12 · spiral review· Philosophy"
+    },
+    {
+      "bn": "অভিজ্ঞতাবাদ",
+      "en": "empiricism",
+      "category": "Class 12 · spiral review· Philosophy"
+    },
+    {
+      "bn": "মানবতাবাদ",
+      "en": "humanism",
+      "category": "Class 12 · spiral review· Philosophy"
+    },
+    {
+      "bn": "ব্যক্তিস্বাধীনতা",
+      "en": "individual liberty",
+      "category": "Class 12 · spiral review· Philosophy"
+    },
+    {
+      "bn": "সামাজিক দায়িত্ব",
+      "en": "social responsibility",
+      "category": "Class 12 · spiral review· Philosophy"
+    },
+    {
+      "bn": "নৈতিক দ্বন্দ্ব",
+      "en": "ethical dilemma",
+      "category": "Class 12 · spiral review· Philosophy"
+    },
+    {
+      "bn": "সামাজিক কাঠামো",
+      "en": "social structure",
+      "category": "Class 12 · spiral review· Sociology"
+    },
+    {
+      "bn": "শ্রেণি",
+      "en": "class",
+      "category": "Class 12 · spiral review· Sociology"
+    },
+    {
+      "bn": "মর্যাদা",
+      "en": "status",
+      "category": "Class 12 · spiral review· Sociology"
+    },
+    {
+      "bn": "সামাজিক বৈষম্য",
+      "en": "social inequality",
+      "category": "Class 12 · spiral review· Sociology"
+    },
+    {
+      "bn": "সামাজিক গতিশীলতা",
+      "en": "social mobility",
+      "category": "Class 12 · spiral review· Sociology"
+    },
+    {
+      "bn": "সামাজিকীকরণ",
+      "en": "socialization",
+      "category": "Class 12 · spiral review· Sociology"
+    },
+    {
+      "bn": "লিঙ্গভিত্তিক ভূমিকা",
+      "en": "gender role",
+      "category": "Class 12 · spiral review· Sociology"
+    },
+    {
+      "bn": "নাগরিক সমাজ",
+      "en": "civil society",
+      "category": "Class 12 · spiral review· Sociology"
+    },
+    {
+      "bn": "ক্ষমতার সম্পর্ক",
+      "en": "power relations",
+      "category": "Class 12 · spiral review· Sociology"
+    },
+    {
+      "bn": "অন্তর্ভুক্তি",
+      "en": "inclusion",
+      "category": "Class 12 · spiral review· Sociology"
+    },
+    {
+      "bn": "প্রান্তিকতা",
+      "en": "marginalization",
+      "category": "Class 12 · spiral review· Sociology"
+    },
+    {
+      "bn": "সার্বভৌমত্ব",
+      "en": "sovereignty",
+      "category": "Class 12 · spiral review· Political science"
+    },
+    {
+      "bn": "রাজনৈতিক দল",
+      "en": "political party",
+      "category": "Class 12 · spiral review· Political science"
+    },
+    {
+      "bn": "মৌলিক অধিকার",
+      "en": "fundamental rights",
+      "category": "Class 12 · spiral review· Political science"
+    },
+    {
+      "bn": "ক্ষমতার বিভাজন",
+      "en": "separation of powers",
+      "category": "Class 12 · spiral review· Political science"
+    },
+    {
+      "bn": "মতপ্রকাশের স্বাধীনতা",
+      "en": "freedom of expression",
+      "category": "Class 12 · spiral review· Political science"
+    },
+    {
+      "bn": "রাজনৈতিক বৈধতা",
+      "en": "political legitimacy",
+      "category": "Class 12 · spiral review· Political science"
+    },
+    {
+      "bn": "রাষ্ট্রীয় প্রতিষ্ঠান",
+      "en": "state institution",
+      "category": "Class 12 · spiral review· Political science"
+    },
+    {
+      "bn": "সামাজিক আন্দোলন",
+      "en": "social movement",
+      "category": "Class 12 · spiral review· History and source criticism"
+    },
+    {
+      "bn": "ক্ষমতার রূপান্তর",
+      "en": "transformation of power",
+      "category": "Class 12 · spiral review· History and source criticism"
+    },
+    {
+      "bn": "অর্থনৈতিক পরিবর্তন",
+      "en": "economic change",
+      "category": "Class 12 · spiral review· History and source criticism"
+    },
+    {
+      "bn": "ঐতিহাসিক ব্যাখ্যা",
+      "en": "historical interpretation",
+      "category": "Class 12 · spiral review· History and source criticism"
+    },
+    {
+      "bn": "ঐতিহাসিক স্মৃতি",
+      "en": "historical memory",
+      "category": "Class 12 · spiral review· History and source criticism"
+    },
+    {
+      "bn": "সূত্রসমালোচনা",
+      "en": "source criticism",
+      "category": "Class 12 · spiral review· History and source criticism"
+    },
+    {
+      "bn": "প্রতিযোগিতা",
+      "en": "competition",
+      "category": "Class 12 · spiral review· Economics"
+    },
+    {
+      "bn": "মুদ্রানীতি",
+      "en": "monetary policy",
+      "category": "Class 12 · spiral review· Economics"
+    },
+    {
+      "bn": "রাজস্বনীতি",
+      "en": "fiscal policy",
+      "category": "Class 12 · spiral review· Economics"
+    },
+    {
+      "bn": "জাতীয় আয়",
+      "en": "national income",
+      "category": "Class 12 · spiral review· Economics"
+    },
+    {
+      "bn": "বাজার ব্যর্থতা",
+      "en": "market failure",
+      "category": "Class 12 · spiral review· Economics"
+    },
+    {
+      "bn": "বহিঃপ্রভাব",
+      "en": "externality",
+      "category": "Class 12 · spiral review· Economics"
+    },
+    {
+      "bn": "সুযোগ ব্যয়",
+      "en": "opportunity cost",
+      "category": "Class 12 · spiral review· Economics"
+    },
+    {
+      "bn": "প্রণোদনা",
+      "en": "incentive",
+      "category": "Class 12 · spiral review· Economics"
+    },
+    {
+      "bn": "পরিবেশগত ঝুঁকি",
+      "en": "environmental risk",
+      "category": "Class 12 · spiral review· Environment"
+    },
+    {
+      "bn": "পরিবেশগত ন্যায়",
+      "en": "environmental justice",
+      "category": "Class 12 · spiral review· Environment"
+    },
+    {
+      "bn": "জলসংকট",
+      "en": "water crisis",
+      "category": "Class 12 · spiral review· Environment"
+    },
+    {
+      "bn": "নিয়ন্ত্রণ দল",
+      "en": "control group",
+      "category": "Class 12 · spiral review· Scientific reasoning"
+    },
+    {
+      "bn": "পরিসংখ্যানগত সম্পর্ক",
+      "en": "statistical relationship",
+      "category": "Class 12 · spiral review· Scientific reasoning"
+    },
+    {
+      "bn": "সহসম্পর্ক",
+      "en": "correlation",
+      "category": "Class 12 · spiral review· Scientific reasoning"
+    },
+    {
+      "bn": "ত্রুটির সীমা",
+      "en": "margin of error",
+      "category": "Class 12 · spiral review· Scientific reasoning"
+    },
+    {
+      "bn": "বৈজ্ঞানিক ঐকমত্য",
+      "en": "scientific consensus",
+      "category": "Class 12 · spiral review· Scientific reasoning"
+    },
+    {
+      "bn": "মেশিন লার্নিং",
+      "en": "machine learning",
+      "category": "Class 12 · spiral review· AI and technology"
+    },
+    {
+      "bn": "প্রশিক্ষণ ডেটা",
+      "en": "training data",
+      "category": "Class 12 · spiral review· AI and technology"
+    },
+    {
+      "bn": "ডিজিটাল পরিচয়",
+      "en": "digital identity",
+      "category": "Class 12 · spiral review· AI and technology"
+    },
+    {
+      "bn": "নজরদারি",
+      "en": "surveillance",
+      "category": "Class 12 · spiral review· AI and technology"
+    },
+    {
+      "bn": "ডিজিটাল নৈতিকতা",
+      "en": "digital ethics",
+      "category": "Class 12 · spiral review· AI and technology"
+    },
+    {
+      "bn": "প্রযুক্তিগত বৈষম্য",
+      "en": "technological inequality",
+      "category": "Class 12 · spiral review· AI and technology"
+    },
+    {
+      "bn": "অ্যালগরিদমিক সিদ্ধান্ত",
+      "en": "algorithmic decision",
+      "category": "Class 12 · spiral review· AI and technology"
+    },
+    {
+      "bn": "সংবাদ",
+      "en": "news",
+      "category": "Class 12 · spiral review· Media literacy"
+    },
+    {
+      "bn": "সম্পাদকীয়",
+      "en": "editorial",
+      "category": "Class 12 · spiral review· Media literacy"
+    },
+    {
+      "bn": "গৌণ",
+      "en": "secondary",
+      "category": "Class 12 · spiral review· Media literacy"
+    },
+    {
+      "bn": "প্রচারণা",
+      "en": "propaganda",
+      "category": "Class 12 · spiral review· Media literacy"
+    },
+    {
+      "bn": "তথ্য নির্বাচন",
+      "en": "information selection",
+      "category": "Class 12 · spiral review· Media literacy"
+    },
+    {
+      "bn": "সম্পাদকীয় অবস্থান",
+      "en": "editorial position",
+      "category": "Class 12 · spiral review· Media literacy"
+    },
+    {
+      "bn": "উৎসের বিশ্বাসযোগ্যতা",
+      "en": "source credibility",
+      "category": "Class 12 · spiral review· Media literacy"
+    },
+    {
+      "bn": "স্বার্থের সংঘাত",
+      "en": "conflict of interest",
+      "category": "Class 12 · spiral review· Media literacy"
+    },
+    {
+      "bn": "আচরণ",
+      "en": "behavior",
+      "category": "Class 12 · spiral review· Psychology"
+    },
+    {
+      "bn": "স্মৃতি",
+      "en": "memory",
+      "category": "Class 12 · spiral review· Psychology"
+    },
+    {
+      "bn": "উপলব্ধি",
+      "en": "perception",
+      "category": "Class 12 · spiral review· Psychology"
+    },
+    {
+      "bn": "ব্যক্তিত্ব",
+      "en": "personality",
+      "category": "Class 12 · spiral review· Psychology"
+    },
+    {
+      "bn": "আবেগ",
+      "en": "emotion",
+      "category": "Class 12 · spiral review· Psychology"
+    },
+    {
+      "bn": "আত্মপরিচয়",
+      "en": "self-identity",
+      "category": "Class 12 · spiral review· Psychology"
+    },
+    {
+      "bn": "সামাজিক প্রভাব",
+      "en": "social influence",
+      "category": "Class 12 · spiral review· Psychology"
+    },
+    {
+      "bn": "দলগত আচরণ",
+      "en": "group behavior",
+      "category": "Class 12 · spiral review· Psychology"
+    },
+    {
+      "bn": "সিদ্ধান্ত গ্রহণ",
+      "en": "decision-making",
+      "category": "Class 12 · spiral review· Psychology"
+    },
+    {
+      "bn": "নিশ্চিতকরণ পক্ষপাত",
+      "en": "confirmation bias",
+      "category": "Class 12 · spiral review· Psychology"
+    },
+    {
+      "bn": "মানসিক স্থিতিস্থাপকতা",
+      "en": "psychological resilience",
+      "category": "Class 12 · spiral review· Psychology"
+    },
+    {
+      "bn": "পাল্টা উদাহরণ",
+      "en": "counterexample",
+      "category": "Class 12 · spiral review· Logic and critical thinking"
+    },
+    {
+      "bn": "ব্যতিক্রম",
+      "en": "exception",
+      "category": "Class 12 · spiral review· Logic and critical thinking"
+    },
+    {
+      "bn": "যৌক্তিক অসংগতি",
+      "en": "logical inconsistency",
+      "category": "Class 12 · spiral review· Logic and critical thinking"
+    },
+    {
+      "bn": "অন্তর্নিহিত অনুমান",
+      "en": "implicit assumption",
+      "category": "Class 12 · spiral review· Logic and critical thinking"
+    },
+    {
+      "bn": "বিকল্প ব্যাখ্যা",
+      "en": "alternative explanation",
+      "category": "Class 12 · spiral review· Logic and critical thinking"
+    },
+    {
+      "bn": "প্রমাণের ভার",
+      "en": "burden of proof",
+      "category": "Class 12 · spiral review· Logic and critical thinking"
+    },
+    {
+      "bn": "খণ্ডনযোগ্যতা",
+      "en": "falsifiability",
+      "category": "Class 12 · spiral review· Logic and critical thinking"
+    },
+    {
+      "bn": "একইসঙ্গে",
+      "en": "simultaneously",
+      "category": "Class 12 · spiral review· Advanced connectors and contrasts"
+    },
+    {
+      "bn": "পক্ষান্তরে",
+      "en": "on the other hand",
+      "category": "Class 12 · spiral review· Advanced connectors and contrasts"
+    },
+    {
+      "bn": "ফলত",
+      "en": "consequently",
+      "category": "Class 12 · spiral review· Advanced connectors and contrasts"
+    },
+    {
+      "bn": "উল্লেখযোগ্যভাবে",
+      "en": "notably",
+      "category": "Class 12 · spiral review· Advanced connectors and contrasts"
+    },
+    {
+      "bn": "বস্তুনিষ্ঠ",
+      "en": "objective",
+      "category": "Class 12 · spiral review· Advanced connectors and contrasts"
+    },
+    {
+      "bn": "ব্যক্তিনিষ্ঠ",
+      "en": "subjective",
+      "category": "Class 12 · spiral review· Advanced connectors and contrasts"
+    },
+    {
+      "bn": "প্রকাশ্য",
+      "en": "explicit",
+      "category": "Class 12 · spiral review· Advanced connectors and contrasts"
+    },
+    {
+      "bn": "নির্ভরশীল",
+      "en": "dependent",
+      "category": "Class 12 · spiral review· Advanced connectors and contrasts"
+    },
+    {
+      "bn": "কেন্দ্রীভূত",
+      "en": "centralized",
+      "category": "Class 12 · spiral review· Advanced connectors and contrasts"
+    },
+    {
+      "bn": "বিকেন্দ্রীভূত",
+      "en": "decentralized",
+      "category": "Class 12 · spiral review· Advanced connectors and contrasts"
+    },
+    {
+      "bn": "সামঞ্জস্য",
+      "en": "consistency",
+      "category": "Class 12 · spiral review· Advanced connectors and contrasts"
+    },
+    {
+      "bn": "অসামঞ্জস্য",
+      "en": "inconsistency",
+      "category": "Class 12 · spiral review· Advanced connectors and contrasts"
+    },
+    {
+      "bn": "বর্জন",
+      "en": "exclusion",
+      "category": "Class 12 · spiral review· Advanced connectors and contrasts"
+    },
+    {
+      "bn": "কাঠামোগত",
+      "en": "structural",
+      "category": "Class 12 · spiral review· Advanced connectors and contrasts"
+    },
+    {
+      "bn": "দ্ব্যর্থতা",
+      "en": "ambiguity",
+      "category": "Class 12 · Higher academic words"
+    },
+    {
+      "bn": "সংশয়",
+      "en": "doubt",
+      "category": "Class 12 · Higher academic words"
+    },
+    {
+      "bn": "গবেষণা নকশা",
+      "en": "research design",
+      "category": "Class 12 · Research and advanced writing"
+    },
+    {
+      "bn": "পদ্ধতিবিদ্যা",
+      "en": "methodology",
+      "category": "Class 12 · Research and advanced writing"
+    },
+    {
+      "bn": "প্রতিনিধিত্বশীলতা",
+      "en": "representativeness",
+      "category": "Class 12 · Research and advanced writing"
+    },
+    {
+      "bn": "পরীক্ষণ",
+      "en": "experimentation",
+      "category": "Class 12 · Research and advanced writing"
+    },
+    {
+      "bn": "গুণগত গবেষণা",
+      "en": "qualitative research",
+      "category": "Class 12 · Research and advanced writing"
+    },
+    {
+      "bn": "পরিমাণগত গবেষণা",
+      "en": "quantitative research",
+      "category": "Class 12 · Research and advanced writing"
+    },
+    {
+      "bn": "প্রাথমিক তথ্য",
+      "en": "primary data",
+      "category": "Class 12 · Research and advanced writing"
+    },
+    {
+      "bn": "গৌণ তথ্য",
+      "en": "secondary data",
+      "category": "Class 12 · Research and advanced writing"
+    },
+    {
+      "bn": "সাহিত্য পর্যালোচনা",
+      "en": "literature review",
+      "category": "Class 12 · Research and advanced writing"
+    },
+    {
+      "bn": "উপদাবি",
+      "en": "subclaim",
+      "category": "Class 12 · Logic and critical thinking"
+    },
+    {
+      "bn": "যৌক্তিকতা",
+      "en": "logical soundness",
+      "category": "Class 12 · Logic and critical thinking"
+    },
+    {
+      "bn": "খণ্ডন",
+      "en": "refutation",
+      "category": "Class 12 · Logic and critical thinking"
+    },
+    {
+      "bn": "দ্বন্দ্ব",
+      "en": "contradiction",
+      "category": "Class 12 · Logic and critical thinking"
+    },
+    {
+      "bn": "অসংগতি",
+      "en": "inconsistency",
+      "category": "Class 12 · Logic and critical thinking"
+    },
+    {
+      "bn": "যুক্তিভ্রান্তি",
+      "en": "logical fallacy",
+      "category": "Class 12 · Logic and critical thinking"
+    },
+    {
+      "bn": "বস্তুনিষ্ঠতা",
+      "en": "objectivity",
+      "category": "Class 12 · Logic and critical thinking"
+    },
+    {
+      "bn": "অতিসাধারণীকরণ",
+      "en": "overgeneralization",
+      "category": "Class 12 · Logical fallacies"
+    },
+    {
+      "bn": "ব্যক্তিগত আক্রমণ",
+      "en": "ad hominem",
+      "category": "Class 12 · Logical fallacies"
+    },
+    {
+      "bn": "ভুয়া দ্বৈততা",
+      "en": "false dilemma",
+      "category": "Class 12 · Logical fallacies"
+    },
+    {
+      "bn": "আবেগের আবেদন",
+      "en": "appeal to emotion",
+      "category": "Class 12 · Logical fallacies"
+    },
+    {
+      "bn": "কর্তৃত্বের আবেদন",
+      "en": "appeal to authority",
+      "category": "Class 12 · Logical fallacies"
+    },
+    {
+      "bn": "জনপ্রিয়তার আবেদন",
+      "en": "appeal to popularity",
+      "category": "Class 12 · Logical fallacies"
+    },
+    {
+      "bn": "ভুল কারণ",
+      "en": "false cause",
+      "category": "Class 12 · Logical fallacies"
+    },
+    {
+      "bn": "বৃত্তাকার যুক্তি",
+      "en": "circular reasoning",
+      "category": "Class 12 · Logical fallacies"
+    },
+    {
+      "bn": "খড়ের পুতুল যুক্তি",
+      "en": "straw man argument",
+      "category": "Class 12 · Logical fallacies"
+    },
+    {
+      "bn": "নির্বাচিত প্রমাণ",
+      "en": "cherry-picked evidence",
+      "category": "Class 12 · Logical fallacies"
+    },
+    {
+      "bn": "পিচ্ছিল ঢাল",
+      "en": "slippery slope",
+      "category": "Class 12 · Logical fallacies"
+    },
+    {
+      "bn": "বিষয়ান্তর",
+      "en": "red herring",
+      "category": "Class 12 · Logical fallacies"
+    },
+    {
+      "bn": "ভাষাতত্ত্ব",
+      "en": "linguistics",
+      "category": "Class 12 · Bengali linguistics"
+    },
+    {
+      "bn": "অর্থতত্ত্ব",
+      "en": "semantics",
+      "category": "Class 12 · Bengali linguistics"
+    },
+    {
+      "bn": "উপভাষা",
+      "en": "dialect",
+      "category": "Class 12 · Bengali linguistics"
+    },
+    {
+      "bn": "ভাষারীতি",
+      "en": "language register",
+      "category": "Class 12 · Bengali linguistics"
+    },
+    {
+      "bn": "সাধু রীতি",
+      "en": "formal literary register",
+      "category": "Class 12 · Bengali linguistics"
+    },
+    {
+      "bn": "চলিত রীতি",
+      "en": "colloquial register",
+      "category": "Class 12 · Bengali linguistics"
+    },
+    {
+      "bn": "সাহিত্য সমালোচনা",
+      "en": "literary criticism",
+      "category": "Class 12 · Literary criticism"
+    },
+    {
+      "bn": "সাহিত্যতত্ত্ব",
+      "en": "literary theory",
+      "category": "Class 12 · Literary criticism"
+    },
+    {
+      "bn": "আখ্যান",
+      "en": "narrative",
+      "category": "Class 12 · Literary criticism"
+    },
+    {
+      "bn": "তুলনামূলক বিশ্লেষণ",
+      "en": "comparative analysis",
+      "category": "Class 12 · Comparative literature"
+    },
+    {
+      "bn": "সাদৃশ্য",
+      "en": "similarity",
+      "category": "Class 12 · Comparative literature"
+    },
+    {
+      "bn": "বৈসাদৃশ্য",
+      "en": "difference",
+      "category": "Class 12 · Comparative literature"
+    },
+    {
+      "bn": "থিম",
+      "en": "theme",
+      "category": "Class 12 · Comparative literature"
+    },
+    {
+      "bn": "সাংস্কৃতিক প্রেক্ষাপট",
+      "en": "cultural context",
+      "category": "Class 12 · Comparative literature"
+    },
+    {
+      "bn": "আন্তঃপাঠ",
+      "en": "intertextuality",
+      "category": "Class 12 · Comparative literature"
+    },
+    {
+      "bn": "পুনর্ব্যাখ্যা",
+      "en": "reinterpretation",
+      "category": "Class 12 · Comparative literature"
+    },
+    {
+      "bn": "ধারাবাহিকতা",
+      "en": "continuity",
+      "category": "Class 12 · History and sociology"
+    },
+    {
+      "bn": "সামাজিক প্রতিষ্ঠান",
+      "en": "social institution",
+      "category": "Class 12 · History and sociology"
+    },
+    {
+      "bn": "সামাজিক পুঁজি",
+      "en": "social capital",
+      "category": "Class 12 · History and sociology"
+    },
+    {
+      "bn": "দলগত পরিচয়",
+      "en": "group identity",
+      "category": "Class 12 · History and sociology"
+    },
+    {
+      "bn": "সামাজিক নিয়ন্ত্রণ",
+      "en": "social control",
+      "category": "Class 12 · History and sociology"
+    },
+    {
+      "bn": "নাগরিক স্বাধীনতা",
+      "en": "civil liberty",
+      "category": "Class 12 · Political science"
+    },
+    {
+      "bn": "রাজনৈতিক মতাদর্শ",
+      "en": "political ideology",
+      "category": "Class 12 · Political science"
+    },
+    {
+      "bn": "ক্ষমতার ভারসাম্য",
+      "en": "balance of power",
+      "category": "Class 12 · Political science"
+    },
+    {
+      "bn": "রাষ্ট্রীয় কর্তৃত্ব",
+      "en": "state authority",
+      "category": "Class 12 · Political science"
+    },
+    {
+      "bn": "অসম তথ্য",
+      "en": "information asymmetry",
+      "category": "Class 12 · Economics and ethics"
+    },
+    {
+      "bn": "সামাজিক কল্যাণ",
+      "en": "social welfare",
+      "category": "Class 12 · Economics and ethics"
+    },
+    {
+      "bn": "উপযোগবাদ",
+      "en": "utilitarianism",
+      "category": "Class 12 · Economics and ethics"
+    },
+    {
+      "bn": "কর্তব্যনীতি",
+      "en": "deontology",
+      "category": "Class 12 · Economics and ethics"
+    },
+    {
+      "bn": "নৈতিক আপেক্ষিকতা",
+      "en": "moral relativism",
+      "category": "Class 12 · Economics and ethics"
+    },
+    {
+      "bn": "নৈতিক সার্বজনীনতা",
+      "en": "moral universalism",
+      "category": "Class 12 · Economics and ethics"
+    },
+    {
+      "bn": "পরিসংখ্যানগত তাৎপর্য",
+      "en": "statistical significance",
+      "category": "Class 12 · Advanced science"
+    },
+    {
+      "bn": "সমকক্ষ পর্যালোচনা",
+      "en": "peer review",
+      "category": "Class 12 · Advanced science"
+    },
+    {
+      "bn": "অ্যালগরিদমিক পক্ষপাত",
+      "en": "algorithmic bias",
+      "category": "Class 12 · AI and media literacy"
+    },
+    {
+      "bn": "স্বয়ংক্রিয় সিদ্ধান্ত",
+      "en": "automated decision",
+      "category": "Class 12 · AI and media literacy"
+    },
+    {
+      "bn": "স্বচ্ছতা",
+      "en": "transparency",
+      "category": "Class 12 · AI and media literacy"
+    },
+    {
+      "bn": "ভুল তথ্য",
+      "en": "misinformation",
+      "category": "Class 12 · AI and media literacy"
+    },
+    {
+      "bn": "মিথ্যা তথ্য",
+      "en": "false information",
+      "category": "Class 12 · AI and media literacy"
+    },
+    {
+      "bn": "তথ্য বিকৃতি",
+      "en": "information distortion",
+      "category": "Class 12 · AI and media literacy"
+    },
+    {
+      "bn": "সম্পাদকীয় নীতি",
+      "en": "editorial policy",
+      "category": "Class 12 · AI and media literacy"
+    },
+    {
+      "bn": "জ্ঞানগত পক্ষপাত",
+      "en": "cognitive bias",
+      "category": "Class 12 · Psychology and climate"
+    },
+    {
+      "bn": "আবেগ নিয়ন্ত্রণ",
+      "en": "emotional regulation",
+      "category": "Class 12 · Psychology and climate"
+    },
+    {
+      "bn": "জলবায়ু সহনশীলতা",
+      "en": "climate resilience",
+      "category": "Class 12 · Psychology and climate"
+    },
+    {
+      "bn": "অনুরূপভাবে",
+      "en": "analogously",
+      "category": "Class 12 · Advanced connectors and certainty"
+    },
+    {
+      "bn": "নিশ্চিত",
+      "en": "certain",
+      "category": "Class 12 · Advanced connectors and certainty"
+    },
+    {
+      "bn": "অনিশ্চিত",
+      "en": "uncertain",
+      "category": "Class 12 · Advanced connectors and certainty"
+    },
+    {
+      "bn": "পূর্ববিশ্বাস",
+      "en": "prior belief",
+      "category": "Class 12 · Advanced connectors and certainty"
+    }
+  ],
+  "phrases": [
+    {
+      "bn": "লেখাটির প্রতিপাদ্য সরাসরি প্রকাশিত না হয়ে বিভিন্ন প্রতীক ও ঘটনার মাধ্যমে গড়ে উঠেছে।",
+      "en": "Literary analysis practice 1",
+      "context": "Literary analysis",
+      "category": "Class 12 · Literary analysis"
+    },
+    {
+      "bn": "কথকের সীমিত দৃষ্টিভঙ্গি পাঠকের তথ্যপ্রাপ্তিকে নিয়ন্ত্রণ করে।",
+      "en": "Literary analysis practice 2",
+      "context": "Literary analysis",
+      "category": "Class 12 · Literary analysis"
+    },
+    {
+      "bn": "চরিত্রটির বাহ্যিক আচরণ ও অভ্যন্তরীণ চিন্তার মধ্যে একটি স্পষ্ট বৈপরীত্য রয়েছে।",
+      "en": "Literary analysis practice 3",
+      "context": "Literary analysis",
+      "category": "Class 12 · Literary analysis"
+    },
+    {
+      "bn": "লেখকের শব্দচয়ন শুধু বর্ণনা নয়, একটি নির্দিষ্ট আবেগও তৈরি করে।",
+      "en": "Literary analysis practice 4",
+      "context": "Literary analysis",
+      "category": "Class 12 · Literary analysis"
+    },
+    {
+      "bn": "এই প্রতীকের একাধিক ব্যাখ্যা সম্ভব, তবে সব ব্যাখ্যাকে পাঠ্যপ্রমাণ দিয়ে সমর্থন করতে হবে।",
+      "en": "Literary analysis practice 5",
+      "context": "Literary analysis",
+      "category": "Class 12 · Literary analysis"
+    },
+    {
+      "bn": "কাহিনির সমাপ্তি আগের ঘটনাগুলোকে নতুনভাবে ব্যাখ্যা করার সুযোগ দেয়।",
+      "en": "Literary analysis practice 6",
+      "context": "Literary analysis",
+      "category": "Class 12 · Literary analysis"
+    },
+    {
+      "bn": "ঐতিহাসিক উৎসের মূল্য নির্ভর করে শুধু তার বয়সের ওপর নয়, তার উদ্দেশ্য ও প্রেক্ষাপটের ওপরও।",
+      "en": "Historical analysis practice 1",
+      "context": "Historical analysis",
+      "category": "Class 12 · Historical analysis"
+    },
+    {
+      "bn": "প্রাথমিক উৎস প্রত্যক্ষ তথ্য দিতে পারে, কিন্তু তা পক্ষপাতমুক্ত হওয়ার নিশ্চয়তা দেয় না।",
+      "en": "Historical analysis practice 2",
+      "context": "Historical analysis",
+      "category": "Class 12 · Historical analysis"
+    },
+    {
+      "bn": "একটি বড় ঐতিহাসিক ঘটনার পেছনে দীর্ঘমেয়াদি এবং তাৎক্ষণিক উভয় কারণ কাজ করতে পারে।",
+      "en": "Historical analysis practice 3",
+      "context": "Historical analysis",
+      "category": "Class 12 · Historical analysis"
+    },
+    {
+      "bn": "পরবর্তী ফলাফল জানার কারণে অতীতের ঘটনাকে অনিবার্য বলে ধরে নেওয়া ঠিক নয়।",
+      "en": "Historical analysis practice 4",
+      "context": "Historical analysis",
+      "category": "Class 12 · Historical analysis"
+    },
+    {
+      "bn": "দুটি উৎসের মধ্যে মতভেদ থাকলে তাদের লেখক, উদ্দেশ্য এবং তথ্যভিত্তি তুলনা করা দরকার।",
+      "en": "Historical analysis practice 5",
+      "context": "Historical analysis",
+      "category": "Class 12 · Historical analysis"
+    },
+    {
+      "bn": "একটি সিদ্ধান্ত আইনসম্মত হলেও তা নৈতিকভাবে গ্রহণযোগ্য নাও হতে পারে।",
+      "en": "Ethical and scientific analysis practice 1",
+      "context": "Ethical and scientific analysis",
+      "category": "Class 12 · Ethical and scientific analysis"
+    },
+    {
+      "bn": "ফলাফল ভালো হলেই ব্যবহৃত পদ্ধতি ন্যায্য হয়ে যায় না।",
+      "en": "Ethical and scientific analysis practice 2",
+      "context": "Ethical and scientific analysis",
+      "category": "Class 12 · Ethical and scientific analysis"
+    },
+    {
+      "bn": "কোন নীতিতে কারা লাভবান এবং কারা ক্ষতিগ্রস্ত হয় তা বিবেচনা করা দরকার।",
+      "en": "Ethical and scientific analysis practice 3",
+      "context": "Ethical and scientific analysis",
+      "category": "Class 12 · Ethical and scientific analysis"
+    },
+    {
+      "bn": "একটি গবেষণার ফল উল্লেখযোগ্য হলেই তা বাস্তব জীবনে গুরুত্বপূর্ণ হবে এমন নয়।",
+      "en": "Ethical and scientific analysis practice 4",
+      "context": "Ethical and scientific analysis",
+      "category": "Class 12 · Ethical and scientific analysis"
+    },
+    {
+      "bn": "ফলাফল পুনরুৎপাদন করা গেলে গবেষণাটির বিশ্বাসযোগ্যতা বাড়ে।",
+      "en": "Ethical and scientific analysis practice 5",
+      "context": "Ethical and scientific analysis",
+      "category": "Class 12 · Ethical and scientific analysis"
+    },
+    {
+      "bn": "একটি গবেষণা কারণের পরিবর্তে শুধু সহসম্পর্ক দেখাতে পারে।",
+      "en": "Ethical and scientific analysis practice 6",
+      "context": "Ethical and scientific analysis",
+      "category": "Class 12 · Ethical and scientific analysis"
+    },
+    {
+      "bn": "লেখক ও প্রকাশক কে?",
+      "en": "Advanced source evaluation practice 1",
+      "context": "Advanced source evaluation",
+      "category": "Class 12 · Advanced source evaluation"
+    },
+    {
+      "bn": "তথ্যটি কখন প্রকাশিত হয়েছে?",
+      "en": "Advanced source evaluation practice 2",
+      "context": "Advanced source evaluation",
+      "category": "Class 12 · Advanced source evaluation"
+    },
+    {
+      "bn": "তথ্য সংগ্রহের পদ্ধতি কী?",
+      "en": "Advanced source evaluation practice 3",
+      "context": "Advanced source evaluation",
+      "category": "Class 12 · Advanced source evaluation"
+    },
+    {
+      "bn": "কোন প্রমাণ ব্যবহৃত হয়েছে?",
+      "en": "Advanced source evaluation practice 4",
+      "context": "Advanced source evaluation",
+      "category": "Class 12 · Advanced source evaluation"
+    },
+    {
+      "bn": "তথ্যটি অন্য স্বাধীন উৎস দ্বারা সমর্থিত কি?",
+      "en": "Advanced source evaluation practice 5",
+      "context": "Advanced source evaluation",
+      "category": "Class 12 · Advanced source evaluation"
+    },
+    {
+      "bn": "বিপরীত তথ্য উপস্থাপন করা হয়েছে কি?",
+      "en": "Advanced source evaluation practice 6",
+      "context": "Advanced source evaluation",
+      "category": "Class 12 · Advanced source evaluation"
+    },
+    {
+      "bn": "গবেষণা বা প্রতিবেদনটি কে অর্থায়ন করেছে?",
+      "en": "Advanced source evaluation practice 7",
+      "context": "Advanced source evaluation",
+      "category": "Class 12 · Advanced source evaluation"
+    },
+    {
+      "bn": "সম্ভাব্য স্বার্থের সংঘাত আছে কি?",
+      "en": "Advanced source evaluation practice 8",
+      "context": "Advanced source evaluation",
+      "category": "Class 12 · Advanced source evaluation"
+    },
+    {
+      "bn": "উৎসটির উদ্দেশ্য তথ্য দেওয়া, প্রভাবিত করা, না কি বিক্রি করা?",
+      "en": "Advanced source evaluation practice 9",
+      "context": "Advanced source evaluation",
+      "category": "Class 12 · Advanced source evaluation"
+    },
+    {
+      "bn": "এই প্রশ্নের উত্তর একটি মাত্র কারণে ব্যাখ্যা করা সম্ভব নয়।",
+      "en": "Qualified claims practice 1",
+      "context": "Qualified claims",
+      "category": "Class 12 · Qualified claims"
+    },
+    {
+      "bn": "বিষয়টিকে ঐতিহাসিক, সামাজিক ও অর্থনৈতিক প্রেক্ষাপটে বিবেচনা করা দরকার।",
+      "en": "Qualified claims practice 2",
+      "context": "Qualified claims",
+      "category": "Class 12 · Qualified claims"
+    },
+    {
+      "bn": "উপস্থিত প্রমাণ ইঙ্গিত করে যে...",
+      "en": "Qualified claims practice 3",
+      "context": "Qualified claims",
+      "category": "Class 12 · Qualified claims"
+    },
+    {
+      "bn": "এটি নিশ্চিতভাবে প্রমাণ না করলেও দাবিটির পক্ষে সমর্থন দেয়।",
+      "en": "Qualified claims practice 4",
+      "context": "Qualified claims",
+      "category": "Class 12 · Qualified claims"
+    },
+    {
+      "bn": "বর্তমান তথ্যের ভিত্তিতে এই সিদ্ধান্তটি সবচেয়ে যুক্তিসঙ্গত বলে মনে হয়।",
+      "en": "Qualified claims practice 5",
+      "context": "Qualified claims",
+      "category": "Class 12 · Qualified claims"
+    },
+    {
+      "bn": "আরও গবেষণা ছাড়া নিশ্চিত সিদ্ধান্তে পৌঁছানো কঠিন।",
+      "en": "Qualified claims practice 6",
+      "context": "Qualified claims",
+      "category": "Class 12 · Qualified claims"
+    },
+    {
+      "bn": "দুটি স্বাধীন উৎস একই প্রবণতা দেখিয়েছে।",
+      "en": "Evidence and counterargument practice 1",
+      "context": "Evidence and counterargument",
+      "category": "Class 12 · Evidence and counterargument"
+    },
+    {
+      "bn": "পরিসংখ্যান এবং বাস্তব উদাহরণ উভয়ই একই সিদ্ধান্তকে সমর্থন করছে।",
+      "en": "Evidence and counterargument practice 2",
+      "context": "Evidence and counterargument",
+      "category": "Class 12 · Evidence and counterargument"
+    },
+    {
+      "bn": "নমুনাটি ছোট এবং পুরো জনগোষ্ঠীকে প্রতিনিধিত্ব নাও করতে পারে।",
+      "en": "Evidence and counterargument practice 3",
+      "context": "Evidence and counterargument",
+      "category": "Class 12 · Evidence and counterargument"
+    },
+    {
+      "bn": "বিকল্প কারণগুলো যথেষ্ট নিয়ন্ত্রণ করা হয়নি।",
+      "en": "Evidence and counterargument practice 4",
+      "context": "Evidence and counterargument",
+      "category": "Class 12 · Evidence and counterargument"
+    },
+    {
+      "bn": "বিপরীত পক্ষের সবচেয়ে শক্তিশালী যুক্তি হলো...",
+      "en": "Evidence and counterargument practice 5",
+      "context": "Evidence and counterargument",
+      "category": "Class 12 · Evidence and counterargument"
+    },
+    {
+      "bn": "এই উদ্বেগ বাস্তব এবং তা অস্বীকার করা উচিত নয়।",
+      "en": "Evidence and counterargument practice 6",
+      "context": "Evidence and counterargument",
+      "category": "Class 12 · Evidence and counterargument"
+    },
+    {
+      "bn": "তবে এই যুক্তি একটি গুরুত্বপূর্ণ পূর্বধারণার ওপর দাঁড়ানো।",
+      "en": "Evidence and counterargument practice 7",
+      "context": "Evidence and counterargument",
+      "category": "Class 12 · Evidence and counterargument"
+    },
+    {
+      "bn": "বৃহত্তর প্রমাণ বিবেচনা করলে ভিন্ন সিদ্ধান্ত পাওয়া যায়।",
+      "en": "Evidence and counterargument practice 8",
+      "context": "Evidence and counterargument",
+      "category": "Class 12 · Evidence and counterargument"
+    },
+    {
+      "bn": "বিভিন্ন উৎস একত্রে বিবেচনা করলে দেখা যায় সমস্যাটি বহুমাত্রিক।",
+      "en": "Synthesis and uncertainty practice 1",
+      "context": "Synthesis and uncertainty",
+      "category": "Class 12 · Synthesis and uncertainty"
+    },
+    {
+      "bn": "প্রথম গবেষণা অর্থনৈতিক কারণকে গুরুত্ব দেয়, দ্বিতীয়টি সামাজিক কারণকে।",
+      "en": "Synthesis and uncertainty practice 2",
+      "context": "Synthesis and uncertainty",
+      "category": "Class 12 · Synthesis and uncertainty"
+    },
+    {
+      "bn": "দুটি ব্যাখ্যা পরস্পরবিরোধী না হয়ে পরিপূরক হতে পারে।",
+      "en": "Synthesis and uncertainty practice 3",
+      "context": "Synthesis and uncertainty",
+      "category": "Class 12 · Synthesis and uncertainty"
+    },
+    {
+      "bn": "সম্ভবত একাধিক কারণ একই সঙ্গে ফলাফলকে প্রভাবিত করছে।",
+      "en": "Synthesis and uncertainty practice 4",
+      "context": "Synthesis and uncertainty",
+      "category": "Class 12 · Synthesis and uncertainty"
+    },
+    {
+      "bn": "সামগ্রিকভাবে প্রমাণগুলো মূল দাবিকে সমর্থন করে।",
+      "en": "Synthesis and uncertainty practice 5",
+      "context": "Synthesis and uncertainty",
+      "category": "Class 12 · Synthesis and uncertainty"
+    },
+    {
+      "bn": "তবে এই সিদ্ধান্তকে চূড়ান্ত বলা উচিত নয়।",
+      "en": "Synthesis and uncertainty practice 6",
+      "context": "Synthesis and uncertainty",
+      "category": "Class 12 · Synthesis and uncertainty"
+    },
+    {
+      "bn": "উপসংহারটি নতুন প্রমাণের আলোকে পুনর্মূল্যায়নের জন্য উন্মুক্ত থাকা উচিত।",
+      "en": "Synthesis and uncertainty practice 7",
+      "context": "Synthesis and uncertainty",
+      "category": "Class 12 · Synthesis and uncertainty"
+    },
+    {
+      "bn": "পক্ষপাত সব সময় সরাসরি মতামতের মাধ্যমে প্রকাশ পায় না।",
+      "en": "Bias and fallacies practice 1",
+      "context": "Bias and fallacies",
+      "category": "Class 12 · Bias and fallacies"
+    },
+    {
+      "bn": "কোন তথ্য বাদ দেওয়া হয়েছে সেটিও গুরুত্বপূর্ণ।",
+      "en": "Bias and fallacies practice 2",
+      "context": "Bias and fallacies",
+      "category": "Class 12 · Bias and fallacies"
+    },
+    {
+      "bn": "শুধু নিজের অবস্থানের পক্ষে প্রমাণ ব্যবহার করা নিশ্চিতকরণ পক্ষপাতের উদাহরণ হতে পারে।",
+      "en": "Bias and fallacies practice 3",
+      "context": "Bias and fallacies",
+      "category": "Class 12 · Bias and fallacies"
+    },
+    {
+      "bn": "একজন ব্যক্তি ভুল করেছেন বলে তার সব বক্তব্য ভুল হয়ে যায় না।",
+      "en": "Bias and fallacies practice 4",
+      "context": "Bias and fallacies",
+      "category": "Class 12 · Bias and fallacies"
+    },
+    {
+      "bn": "অনেক মানুষ কিছু বিশ্বাস করে বলেই সেটি সত্য প্রমাণিত হয় না।",
+      "en": "Bias and fallacies practice 5",
+      "context": "Bias and fallacies",
+      "category": "Class 12 · Bias and fallacies"
+    },
+    {
+      "bn": "দুটি বিকল্প দেখানো হলেও বাস্তবে আরও বিকল্প থাকতে পারে।",
+      "en": "Bias and fallacies practice 6",
+      "context": "Bias and fallacies",
+      "category": "Class 12 · Bias and fallacies"
+    },
+    {
+      "bn": "একটি ঘটনার পরে আরেকটি ঘটনা ঘটলেই প্রথমটি দ্বিতীয়টির কারণ নয়।",
+      "en": "Bias and fallacies practice 7",
+      "context": "Bias and fallacies",
+      "category": "Class 12 · Bias and fallacies"
+    },
+    {
+      "bn": "একটি যুক্তি যৌক্তিকভাবে সঠিকভাবে গঠিত হলেও তার ভিত্তি হিসেবে ব্যবহৃত তথ্য ভুল হলে উপসংহার গ্রহণযোগ্য নাও হতে পারে।",
+      "en": "Advanced sentences practice 1",
+      "context": "Advanced sentences",
+      "category": "Class 12 · Advanced sentences"
+    },
+    {
+      "bn": "পরিসংখ্যানগতভাবে উল্লেখযোগ্য ফলের বাস্তব গুরুত্ব আলাদাভাবে মূল্যায়ন করা প্রয়োজন।",
+      "en": "Advanced sentences practice 2",
+      "context": "Advanced sentences",
+      "category": "Class 12 · Advanced sentences"
+    },
+    {
+      "bn": "একটি উৎসের পক্ষপাত শনাক্ত করা মানে উৎসটিকে সম্পূর্ণ বাতিল করা নয়; বরং তার সীমাবদ্ধতা বুঝে ব্যবহার করা।",
+      "en": "Advanced sentences practice 3",
+      "context": "Advanced sentences",
+      "category": "Class 12 · Advanced sentences"
+    },
+    {
+      "bn": "নৈতিক দ্বন্দ্বে অনেক সময় এমন কোনো সমাধান থাকে না যেখানে সব মূল্যবোধ সম্পূর্ণভাবে রক্ষা করা যায়।",
+      "en": "Advanced sentences practice 4",
+      "context": "Advanced sentences",
+      "category": "Class 12 · Advanced sentences"
+    },
+    {
+      "bn": "প্রযুক্তিগত অগ্রগতির সুফল ও ঝুঁকি সব মানুষের মধ্যে সমানভাবে বণ্টিত নাও হতে পারে।",
+      "en": "Advanced sentences practice 5",
+      "context": "Advanced sentences",
+      "category": "Class 12 · Advanced sentences"
+    },
+    {
+      "bn": "তথ্যের পরিমাণ বাড়ার সঙ্গে সত্য ও মিথ্যার পার্থক্য নির্ধারণ জটিল হয়েছে। কোনো দাবি বিশ্বাস করার আগে উৎস, লেখক, প্রকাশের সময়, প্রমাণ এবং স্বাধীন উৎসের সঙ্গে সামঞ্জস্য যাচাই করা দরকার। তথ্য সাক্ষরতা শুধু শিক্ষাগত দক্ষতা নয়, নাগরিক জীবনেরও গুরুত্বপূর্ণ অংশ।",
+      "en": "Information verification passage practice 1",
+      "context": "Information verification passage",
+      "category": "Class 12 · Information verification passage"
+    },
+    {
+      "bn": "গণতন্ত্র শুধু নির্বাচন আয়োজনের মধ্যে সীমাবদ্ধ নয়। আইনের শাসন, মতপ্রকাশের স্বাধীনতা, স্বাধীন প্রতিষ্ঠান এবং সরকারের জবাবদিহি জরুরি। নাগরিকেরা তথ্য না পেলে বা প্রশ্ন করতে না পারলে ক্ষমতার ওপর কার্যকর নিয়ন্ত্রণ দুর্বল হয়।",
+      "en": "Democracy and accountability passage practice 1",
+      "context": "Democracy and accountability passage",
+      "category": "Class 12 · Democracy and accountability passage"
+    },
+    {
+      "bn": "কৃত্রিম বুদ্ধিমত্তা ঋণ অনুমোদন, চাকরির আবেদন ও চিকিৎসায় সিদ্ধান্তকে প্রভাবিত করছে। কোনো ব্যবস্থা ভুল বা পক্ষপাতপূর্ণ সিদ্ধান্ত দিলে দায় কার হবে তা স্পষ্ট নয়। তাই নির্ভুলতার পাশাপাশি স্বচ্ছতা, মানব তদারকি এবং জবাবদিহিও গুরুত্বপূর্ণ।",
+      "en": "AI accountability passage practice 1",
+      "context": "AI accountability passage",
+      "category": "Class 12 · AI accountability passage"
+    },
+    {
+      "bn": "এক নারী শৈশবের বাড়ির চাবি সঙ্গে রাখেন, যদিও বাড়িটি ভেঙে গেছে। বড় পরিবর্তনের আগে তিনি চাবিটি নদীতে ফেলেন। চাবিটি বিলুপ্ত অতীতের প্রতীক; ফেলে দেওয়া অতীত মুছে ফেলা নয়, বরং স্মৃতিকে বর্তমান জীবন নিয়ন্ত্রণ করতে না দেওয়ার সিদ্ধান্ত।",
+      "en": "Literary symbol sample practice 1",
+      "context": "Literary symbol sample",
+      "category": "Class 12 · Literary symbol sample"
+    },
+    {
+      "bn": "দিনে চার কাপ কফি পানকারীদের রোগের হার কম দেখা যাওয়া কারণ প্রমাণ করে না।",
+      "en": "Research critique practice 1",
+      "context": "Research critique",
+      "category": "Class 12 · Research critique"
+    },
+    {
+      "bn": "বয়স, স্বাস্থ্য ও অন্য অভ্যাস বিভ্রান্তিকারী কারণ হতে পারে।",
+      "en": "Research critique practice 2",
+      "context": "Research critique",
+      "category": "Class 12 · Research critique"
+    },
+    {
+      "bn": "গবেষণাটি পর্যবেক্ষণমূলক না পরীক্ষামূলক ছিল তা জানা জরুরি।",
+      "en": "Research critique practice 3",
+      "context": "Research critique",
+      "category": "Class 12 · Research critique"
+    },
+    {
+      "bn": "“চার কাপ কফি রোগ প্রতিরোধ করে” শিরোনামটি ফলকে অতিরঞ্জিত করতে পারে।",
+      "en": "Research critique practice 4",
+      "context": "Research critique",
+      "category": "Class 12 · Research critique"
+    },
+    {
+      "bn": "শাসকের সরকারি ভাষণ যুদ্ধকে বিজয় হিসেবে দেখাতে পারে, আর নাগরিকের চিঠি খাদ্যসংকট ও বিচ্ছেদের অভিজ্ঞতা দেখাতে পারে। কোনো একক উৎস সম্পূর্ণ চিত্র দেয় না; উভয় উৎসকে তাদের উদ্দেশ্য ও প্রেক্ষাপটে ব্যবহার করা উচিত।",
+      "en": "Historical source synthesis practice 1",
+      "context": "Historical source synthesis",
+      "category": "Class 12 · Historical source synthesis"
+    },
+    {
+      "bn": "সীমিত অর্থে অল্প গুরুতর রোগীর ব্যয়বহুল চিকিৎসা অথবা বহু মানুষের মৌলিক চিকিৎসা—কোনটিকে অগ্রাধিকার দেওয়া ন্যায্য?",
+      "en": "Ethical dilemma practice 1",
+      "context": "Ethical dilemma",
+      "category": "Class 12 · Ethical dilemma"
+    },
+    {
+      "bn": "সর্বাধিক উপকার, গুরুতর প্রয়োজন, সুযোগের সমতা ও ফলাফলের সমতার মধ্যে ভারসাম্য বিশ্লেষণ করতে হবে।",
+      "en": "Ethical dilemma practice 2",
+      "context": "Ethical dilemma",
+      "category": "Class 12 · Ethical dilemma"
+    },
+    {
+      "bn": "দূরবর্তী কাজ যাতায়াতের সময় কমাতে ও উৎপাদনশীলতা বাড়াতে পারে, তবে সামাজিক বিচ্ছিন্নতা ও যোগাযোগের সমস্যা সৃষ্টি করতে পারে। কর্মক্ষেত্র, কাজের ধরন ও কর্মীর প্রয়োজন অনুযায়ী মিশ্র পদ্ধতি কার্যকর হতে পারে।",
+      "en": "Research synthesis practice 1",
+      "context": "Research synthesis",
+      "category": "Class 12 · Research synthesis"
+    },
+    {
+      "bn": "ভূমিকায় প্রেক্ষাপট, মূল বিতর্ক এবং সূক্ষ্ম থিসিস তৈরি করো।",
+      "en": "Formal essay structure practice 1",
+      "context": "Formal essay structure",
+      "category": "Class 12 · Formal essay structure"
+    },
+    {
+      "bn": "মূল অনুচ্ছেদে দাবি, নির্ভরযোগ্য প্রমাণ এবং তার তাৎপর্য বিশ্লেষণ করো।",
+      "en": "Formal essay structure practice 2",
+      "context": "Formal essay structure",
+      "category": "Class 12 · Formal essay structure"
+    },
+    {
+      "bn": "বৃহত্তর সামাজিক, ঐতিহাসিক, অর্থনৈতিক বা নৈতিক প্রেক্ষাপট বিবেচনা করো।",
+      "en": "Formal essay structure practice 3",
+      "context": "Formal essay structure",
+      "category": "Class 12 · Formal essay structure"
+    },
+    {
+      "bn": "বিপরীত পক্ষের সবচেয়ে শক্তিশালী যুক্তি ন্যায্যভাবে তুলে ধরো।",
+      "en": "Formal essay structure practice 4",
+      "context": "Formal essay structure",
+      "category": "Class 12 · Formal essay structure"
+    },
+    {
+      "bn": "প্রতিদাবির শক্তি স্বীকার করে তার সীমাবদ্ধতা বিশ্লেষণ করো।",
+      "en": "Formal essay structure practice 5",
+      "context": "Formal essay structure",
+      "category": "Class 12 · Formal essay structure"
+    },
+    {
+      "bn": "বিভিন্ন প্রমাণ ও দৃষ্টিভঙ্গি সংশ্লেষণ করে পরিণত সিদ্ধান্ত তৈরি করো।",
+      "en": "Formal essay structure practice 6",
+      "context": "Formal essay structure",
+      "category": "Class 12 · Formal essay structure"
+    },
+    {
+      "bn": "উপসংহারে সিদ্ধান্ত, সীমাবদ্ধতা এবং বৃহত্তর তাৎপর্য ব্যাখ্যা করো।",
+      "en": "Formal essay structure practice 7",
+      "context": "Formal essay structure",
+      "category": "Class 12 · Formal essay structure"
+    },
+    {
+      "bn": "থিসিস, প্রতিপাদ্য, যুক্তিক্রম, প্রমাণ, পূর্বধারণা, পক্ষপাত, প্রেক্ষাপট, সীমাবদ্ধতা ও অন্তর্নিহিত অর্থ বিশ্লেষণ করতে পারা উচিত।",
+      "en": "End-of-Class 12 skills practice 1",
+      "context": "End-of-Class 12 skills",
+      "category": "Class 12 · End-of-Class 12 skills"
+    },
+    {
+      "bn": "নির্ভরযোগ্যতা, বৈধতা, প্রতিনিধিত্বশীলতা, প্রাসঙ্গিকতা, পর্যাপ্ততা ও সম্ভাব্য পক্ষপাত পৃথকভাবে মূল্যায়ন করতে পারা উচিত।",
+      "en": "End-of-Class 12 skills practice 2",
+      "context": "End-of-Class 12 skills",
+      "category": "Class 12 · End-of-Class 12 skills"
+    },
+    {
+      "bn": "সহসম্পর্ক, কারণ, বিভ্রান্তিকারী কারণ ও বিকল্প ব্যাখ্যার পার্থক্য করতে পারা উচিত।",
+      "en": "End-of-Class 12 skills practice 3",
+      "context": "End-of-Class 12 skills",
+      "category": "Class 12 · End-of-Class 12 skills"
+    },
+    {
+      "bn": "অতিসাধারণীকরণ, ভুয়া দ্বৈততা, ব্যক্তিগত আক্রমণ, ভুল কারণ, আবেগের আবেদন ও নির্বাচিত প্রমাণ শনাক্ত করতে পারা উচিত।",
+      "en": "End-of-Class 12 skills practice 4",
+      "context": "End-of-Class 12 skills",
+      "category": "Class 12 · End-of-Class 12 skills"
+    },
+    {
+      "bn": "গবেষণার নমুনা, পদ্ধতি, চলক, ত্রুটি, অর্থায়ন, সাধারণীকরণ ও পুনরুৎপাদনযোগ্যতা মূল্যায়ন করতে পারা উচিত।",
+      "en": "End-of-Class 12 skills practice 5",
+      "context": "End-of-Class 12 skills",
+      "category": "Class 12 · End-of-Class 12 skills"
+    },
+    {
+      "bn": "নৈতিক ও রাজনৈতিক প্রশ্নে মূল্যবোধের সংঘাত থেকে সূক্ষ্ম অবস্থান তৈরি করতে পারা উচিত।",
+      "en": "End-of-Class 12 skills practice 6",
+      "context": "End-of-Class 12 skills",
+      "category": "Class 12 · End-of-Class 12 skills"
+    },
+    {
+      "bn": "যোগ্যতাসাপেক্ষ থিসিস, দাবি, প্রমাণ, বিশ্লেষণ, সংশ্লেষণ, প্রতিদাবি, খণ্ডন, সীমাবদ্ধতা, বিকল্প ব্যাখ্যা ও তাৎপর্যসহ আনুষ্ঠানিক প্রবন্ধ লিখতে পারা উচিত।",
+      "en": "End-of-Class 12 skills practice 7",
+      "context": "End-of-Class 12 skills",
+      "category": "Class 12 · End-of-Class 12 skills"
+    }
+  ],
+  "practice": [
+    {
+      "type": "Fallacy analysis",
+      "prompt": "Identify the premise, conclusion, hidden assumption, and any logical fallacy.",
+      "answer": "Name the flaw precisely and explain what evidence would repair the argument."
+    },
+    {
+      "type": "Research appraisal",
+      "prompt": "Evaluate design, representativeness, variables, funding, bias, validity, and reproducibility.",
+      "answer": "State both the evidential value and the limits of generalization."
+    },
+    {
+      "type": "Qualified synthesis",
+      "prompt": "Synthesize complex sources into a nuanced thesis with alternatives and uncertainty.",
+      "answer": "Integrate competing evidence without erasing disagreement or limitations."
+    }
+  ],
+  "notes": [
+    "Class 11 vocabulary is retained as spiral review and extended with Class 12 capstone concepts.",
+    "A biased source may still contain useful evidence when its context and limits are made explicit.",
+    "Treat Bengali as a language for research, debate, ethical reasoning, and mature intellectual work."
+  ]
+}

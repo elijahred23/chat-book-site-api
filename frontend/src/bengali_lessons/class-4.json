@@ -1,0 +1,3725 @@
+{
+  "id": "class-4",
+  "title": "Bengali Class 4: Evidence, inference, and structured writing",
+  "topic": "Class 04 · Evidence, inference, and structured writing",
+  "summary": "A complete Class 4 curriculum with 503 vocabulary entries and 196 sentences, questions, and passages.",
+  "level": "Class 4",
+  "focus": "Evidence, inference, main ideas, summaries, fact and opinion, paragraph structure, and mature connectors",
+  "vocab": [
+    {
+      "bn": "প্রতিদিন",
+      "en": "every day",
+      "category": "Class 4 · Everyday words"
+    },
+    {
+      "bn": "নিয়মিত",
+      "en": "regularly",
+      "category": "Class 4 · Everyday words"
+    },
+    {
+      "bn": "সাধারণত",
+      "en": "usually",
+      "category": "Class 4 · Everyday words"
+    },
+    {
+      "bn": "প্রায়ই",
+      "en": "often",
+      "category": "Class 4 · Everyday words"
+    },
+    {
+      "bn": "কখনো কখনো",
+      "en": "sometimes",
+      "category": "Class 4 · Everyday words"
+    },
+    {
+      "bn": "খুব কম",
+      "en": "rarely",
+      "category": "Class 4 · Everyday words"
+    },
+    {
+      "bn": "সবসময়",
+      "en": "always",
+      "category": "Class 4 · Everyday words"
+    },
+    {
+      "bn": "ইতিমধ্যে",
+      "en": "already",
+      "category": "Class 4 · Everyday words"
+    },
+    {
+      "bn": "হঠাৎ",
+      "en": "suddenly",
+      "category": "Class 4 · Everyday words"
+    },
+    {
+      "bn": "ধীরে ধীরে",
+      "en": "gradually",
+      "category": "Class 4 · Everyday words"
+    },
+    {
+      "bn": "একসঙ্গে",
+      "en": "together",
+      "category": "Class 4 · Everyday words"
+    },
+    {
+      "bn": "আলাদাভাবে",
+      "en": "separately",
+      "category": "Class 4 · Everyday words"
+    },
+    {
+      "bn": "নিজের",
+      "en": "one's own",
+      "category": "Class 4 · Everyday words"
+    },
+    {
+      "bn": "অন্যের",
+      "en": "others'",
+      "category": "Class 4 · Everyday words"
+    },
+    {
+      "bn": "চারদিকে",
+      "en": "all around",
+      "category": "Class 4 · Everyday words"
+    },
+    {
+      "bn": "আশেপাশে",
+      "en": "surroundings",
+      "category": "Class 4 · Everyday words"
+    },
+    {
+      "bn": "সামনে",
+      "en": "in front",
+      "category": "Class 4 · Everyday words"
+    },
+    {
+      "bn": "পিছনে",
+      "en": "behind",
+      "category": "Class 4 · Everyday words"
+    },
+    {
+      "bn": "শুরু",
+      "en": "start",
+      "category": "Class 4 · Everyday words"
+    },
+    {
+      "bn": "শেষ",
+      "en": "end",
+      "category": "Class 4 · Everyday words"
+    },
+    {
+      "bn": "মাঝামাঝি",
+      "en": "midway",
+      "category": "Class 4 · Everyday words"
+    },
+    {
+      "bn": "সম্পূর্ণ",
+      "en": "complete",
+      "category": "Class 4 · Everyday words"
+    },
+    {
+      "bn": "অসম্পূর্ণ",
+      "en": "incomplete",
+      "category": "Class 4 · Everyday words"
+    },
+    {
+      "bn": "প্রয়োজন",
+      "en": "need",
+      "category": "Class 4 · Everyday words"
+    },
+    {
+      "bn": "সুযোগ",
+      "en": "opportunity",
+      "category": "Class 4 · Everyday words"
+    },
+    {
+      "bn": "সমস্যা",
+      "en": "problem",
+      "category": "Class 4 · Everyday words"
+    },
+    {
+      "bn": "সমাধান",
+      "en": "solution",
+      "category": "Class 4 · Everyday words"
+    },
+    {
+      "bn": "কারণ",
+      "en": "because",
+      "category": "Class 4 · Everyday words"
+    },
+    {
+      "bn": "ফলাফল",
+      "en": "result",
+      "category": "Class 4 · Everyday words"
+    },
+    {
+      "bn": "ঘটনা",
+      "en": "event",
+      "category": "Class 4 · Everyday words"
+    },
+    {
+      "bn": "বিষয়",
+      "en": "subject",
+      "category": "Class 4 · Everyday words"
+    },
+    {
+      "bn": "উপায়",
+      "en": "way",
+      "category": "Class 4 · Everyday words"
+    },
+    {
+      "bn": "অভ্যাস",
+      "en": "habit",
+      "category": "Class 4 · Everyday words"
+    },
+    {
+      "bn": "নিয়ম",
+      "en": "rule",
+      "category": "Class 4 · Everyday words"
+    },
+    {
+      "bn": "সিদ্ধান্ত",
+      "en": "decision",
+      "category": "Class 4 · Everyday words"
+    },
+    {
+      "bn": "পরিকল্পনা",
+      "en": "plan",
+      "category": "Class 4 · Everyday words"
+    },
+    {
+      "bn": "চেষ্টা",
+      "en": "effort",
+      "category": "Class 4 · Everyday words"
+    },
+    {
+      "bn": "পরিবর্তন",
+      "en": "change",
+      "category": "Class 4 · Everyday words"
+    },
+    {
+      "bn": "উন্নতি",
+      "en": "improvement",
+      "category": "Class 4 · Everyday words"
+    },
+    {
+      "bn": "অভিজ্ঞতা",
+      "en": "experience",
+      "category": "Class 4 · Everyday words"
+    },
+    {
+      "bn": "পরিবার",
+      "en": "family",
+      "category": "Class 4 · Family and relationships"
+    },
+    {
+      "bn": "সদস্য",
+      "en": "member",
+      "category": "Class 4 · Family and relationships"
+    },
+    {
+      "bn": "বাবা-মা",
+      "en": "parents",
+      "category": "Class 4 · Family and relationships"
+    },
+    {
+      "bn": "ভাইবোন",
+      "en": "siblings",
+      "category": "Class 4 · Family and relationships"
+    },
+    {
+      "bn": "আত্মীয়",
+      "en": "relative",
+      "category": "Class 4 · Family and relationships"
+    },
+    {
+      "bn": "প্রতিবেশী",
+      "en": "neighbor",
+      "category": "Class 4 · Family and relationships"
+    },
+    {
+      "bn": "সহপাঠী",
+      "en": "classmate",
+      "category": "Class 4 · Family and relationships"
+    },
+    {
+      "bn": "বন্ধু",
+      "en": "friend",
+      "category": "Class 4 · Family and relationships"
+    },
+    {
+      "bn": "অতিথি",
+      "en": "guest",
+      "category": "Class 4 · Family and relationships"
+    },
+    {
+      "bn": "পরিচিত",
+      "en": "acquaintance",
+      "category": "Class 4 · Family and relationships"
+    },
+    {
+      "bn": "অপরিচিত",
+      "en": "stranger",
+      "category": "Class 4 · Family and relationships"
+    },
+    {
+      "bn": "সম্পর্ক",
+      "en": "relationship",
+      "category": "Class 4 · Family and relationships"
+    },
+    {
+      "bn": "বন্ধুত্ব",
+      "en": "friendship",
+      "category": "Class 4 · Family and relationships"
+    },
+    {
+      "bn": "ভালোবাসা",
+      "en": "to love",
+      "category": "Class 4 · Family and relationships"
+    },
+    {
+      "bn": "যত্ন",
+      "en": "care",
+      "category": "Class 4 · Family and relationships"
+    },
+    {
+      "bn": "সম্মান",
+      "en": "respect",
+      "category": "Class 4 · Family and relationships"
+    },
+    {
+      "bn": "সহযোগিতা",
+      "en": "cooperation",
+      "category": "Class 4 · Family and relationships"
+    },
+    {
+      "bn": "দায়িত্ব",
+      "en": "responsibility",
+      "category": "Class 4 · Family and relationships"
+    },
+    {
+      "bn": "কর্তব্য",
+      "en": "duty",
+      "category": "Class 4 · Family and relationships"
+    },
+    {
+      "bn": "বিশ্বাস",
+      "en": "trust",
+      "category": "Class 4 · Family and relationships"
+    },
+    {
+      "bn": "ক্ষমা",
+      "en": "forgiveness",
+      "category": "Class 4 · Family and relationships"
+    },
+    {
+      "bn": "সহানুভূতি",
+      "en": "empathy",
+      "category": "Class 4 · Family and relationships"
+    },
+    {
+      "bn": "বিদ্যালয়",
+      "en": "school",
+      "category": "Class 4 · School and education"
+    },
+    {
+      "bn": "শ্রেণিকক্ষ",
+      "en": "classroom",
+      "category": "Class 4 · School and education"
+    },
+    {
+      "bn": "শিক্ষার্থী",
+      "en": "student",
+      "category": "Class 4 · School and education"
+    },
+    {
+      "bn": "শিক্ষক",
+      "en": "male teacher",
+      "category": "Class 4 · School and education"
+    },
+    {
+      "bn": "পাঠ",
+      "en": "lesson",
+      "category": "Class 4 · School and education"
+    },
+    {
+      "bn": "অধ্যায়",
+      "en": "chapter",
+      "category": "Class 4 · School and education"
+    },
+    {
+      "bn": "বিষয়",
+      "en": "subject",
+      "category": "Class 4 · School and education"
+    },
+    {
+      "bn": "পাঠ্যবই",
+      "en": "textbook",
+      "category": "Class 4 · School and education"
+    },
+    {
+      "bn": "অনুশীলন",
+      "en": "practice",
+      "category": "Class 4 · School and education"
+    },
+    {
+      "bn": "বাড়ির কাজ",
+      "en": "homework",
+      "category": "Class 4 · School and education"
+    },
+    {
+      "bn": "পরীক্ষা",
+      "en": "exam",
+      "category": "Class 4 · School and education"
+    },
+    {
+      "bn": "প্রশ্ন",
+      "en": "question",
+      "category": "Class 4 · School and education"
+    },
+    {
+      "bn": "উত্তর",
+      "en": "north",
+      "category": "Class 4 · School and education"
+    },
+    {
+      "bn": "ফলাফল",
+      "en": "result",
+      "category": "Class 4 · School and education"
+    },
+    {
+      "bn": "নম্বর",
+      "en": "marks",
+      "category": "Class 4 · School and education"
+    },
+    {
+      "bn": "শিক্ষা",
+      "en": "education",
+      "category": "Class 4 · School and education"
+    },
+    {
+      "bn": "জ্ঞান",
+      "en": "knowledge",
+      "category": "Class 4 · School and education"
+    },
+    {
+      "bn": "আলোচনা",
+      "en": "discussion",
+      "category": "Class 4 · School and education"
+    },
+    {
+      "bn": "ব্যাখ্যা",
+      "en": "explanation",
+      "category": "Class 4 · School and education"
+    },
+    {
+      "bn": "উদাহরণ",
+      "en": "example",
+      "category": "Class 4 · School and education"
+    },
+    {
+      "bn": "বানান",
+      "en": "spelling",
+      "category": "Class 4 · School and education"
+    },
+    {
+      "bn": "বাক্য",
+      "en": "sentence",
+      "category": "Class 4 · School and education"
+    },
+    {
+      "bn": "অনুচ্ছেদ",
+      "en": "paragraph",
+      "category": "Class 4 · School and education"
+    },
+    {
+      "bn": "গল্প",
+      "en": "story",
+      "category": "Class 4 · School and education"
+    },
+    {
+      "bn": "কবিতা",
+      "en": "poem",
+      "category": "Class 4 · School and education"
+    },
+    {
+      "bn": "ছড়া",
+      "en": "rhyme",
+      "category": "Class 4 · School and education"
+    },
+    {
+      "bn": "রচনা",
+      "en": "composition",
+      "category": "Class 4 · School and education"
+    },
+    {
+      "bn": "প্রবন্ধ",
+      "en": "essay",
+      "category": "Class 4 · School and education"
+    },
+    {
+      "bn": "শিরোনাম",
+      "en": "title",
+      "category": "Class 4 · School and education"
+    },
+    {
+      "bn": "সারাংশ",
+      "en": "summary",
+      "category": "Class 4 · School and education"
+    },
+    {
+      "bn": "অভিধান",
+      "en": "dictionary",
+      "category": "Class 4 · School and education"
+    },
+    {
+      "bn": "গ্রন্থাগার",
+      "en": "library",
+      "category": "Class 4 · School and education"
+    },
+    {
+      "bn": "তথ্য",
+      "en": "information",
+      "category": "Class 4 · School and education"
+    },
+    {
+      "bn": "প্রকল্প",
+      "en": "project",
+      "category": "Class 4 · School and education"
+    },
+    {
+      "bn": "উপস্থাপনা",
+      "en": "presentation",
+      "category": "Class 4 · School and education"
+    },
+    {
+      "bn": "ভাষা",
+      "en": "language",
+      "category": "Class 4 · Language and grammar"
+    },
+    {
+      "bn": "বর্ণ",
+      "en": "character",
+      "category": "Class 4 · Language and grammar"
+    },
+    {
+      "bn": "শব্দ",
+      "en": "word",
+      "category": "Class 4 · Language and grammar"
+    },
+    {
+      "bn": "বাক্য",
+      "en": "sentence",
+      "category": "Class 4 · Language and grammar"
+    },
+    {
+      "bn": "অনুচ্ছেদ",
+      "en": "paragraph",
+      "category": "Class 4 · Language and grammar"
+    },
+    {
+      "bn": "বিশেষ্য",
+      "en": "noun",
+      "category": "Class 4 · Language and grammar"
+    },
+    {
+      "bn": "সর্বনাম",
+      "en": "pronoun",
+      "category": "Class 4 · Language and grammar"
+    },
+    {
+      "bn": "ক্রিয়া",
+      "en": "verb",
+      "category": "Class 4 · Language and grammar"
+    },
+    {
+      "bn": "বিশেষণ",
+      "en": "adjective",
+      "category": "Class 4 · Language and grammar"
+    },
+    {
+      "bn": "ক্রিয়াবিশেষণ",
+      "en": "adverb",
+      "category": "Class 4 · Language and grammar"
+    },
+    {
+      "bn": "একবচন",
+      "en": "singular",
+      "category": "Class 4 · Language and grammar"
+    },
+    {
+      "bn": "বহুবচন",
+      "en": "plural",
+      "category": "Class 4 · Language and grammar"
+    },
+    {
+      "bn": "বর্তমান কাল",
+      "en": "present tense",
+      "category": "Class 4 · Language and grammar"
+    },
+    {
+      "bn": "অতীত কাল",
+      "en": "past tense",
+      "category": "Class 4 · Language and grammar"
+    },
+    {
+      "bn": "ভবিষ্যৎ কাল",
+      "en": "future tense",
+      "category": "Class 4 · Language and grammar"
+    },
+    {
+      "bn": "প্রশ্নবোধক বাক্য",
+      "en": "interrogative sentence",
+      "category": "Class 4 · Language and grammar"
+    },
+    {
+      "bn": "বিস্ময়বোধক বাক্য",
+      "en": "exclamatory sentence",
+      "category": "Class 4 · Language and grammar"
+    },
+    {
+      "bn": "বিরামচিহ্ন",
+      "en": "punctuation",
+      "category": "Class 4 · Language and grammar"
+    },
+    {
+      "bn": "কমা",
+      "en": "comma",
+      "category": "Class 4 · Language and grammar"
+    },
+    {
+      "bn": "দাঁড়ি",
+      "en": "full stop",
+      "category": "Class 4 · Language and grammar"
+    },
+    {
+      "bn": "প্রশ্নবোধক চিহ্ন",
+      "en": "question mark",
+      "category": "Class 4 · Language and grammar"
+    },
+    {
+      "bn": "বানান",
+      "en": "spelling",
+      "category": "Class 4 · Language and grammar"
+    },
+    {
+      "bn": "উচ্চারণ",
+      "en": "pronunciation",
+      "category": "Class 4 · Language and grammar"
+    },
+    {
+      "bn": "অর্থ",
+      "en": "meaning",
+      "category": "Class 4 · Language and grammar"
+    },
+    {
+      "bn": "সমার্থক শব্দ",
+      "en": "synonym",
+      "category": "Class 4 · Language and grammar"
+    },
+    {
+      "bn": "বিপরীত শব্দ",
+      "en": "opposite word",
+      "category": "Class 4 · Language and grammar"
+    },
+    {
+      "bn": "বাক্য গঠন",
+      "en": "sentence structure",
+      "category": "Class 4 · Language and grammar"
+    },
+    {
+      "bn": "সমাজ",
+      "en": "society",
+      "category": "Class 4 · Society and community"
+    },
+    {
+      "bn": "সম্প্রদায়",
+      "en": "community",
+      "category": "Class 4 · Society and community"
+    },
+    {
+      "bn": "নাগরিক",
+      "en": "citizen",
+      "category": "Class 4 · Society and community"
+    },
+    {
+      "bn": "প্রতিবেশী",
+      "en": "neighbor",
+      "category": "Class 4 · Society and community"
+    },
+    {
+      "bn": "জনসাধারণ",
+      "en": "public",
+      "category": "Class 4 · Society and community"
+    },
+    {
+      "bn": "সেবা",
+      "en": "service",
+      "category": "Class 4 · Society and community"
+    },
+    {
+      "bn": "সাহায্য",
+      "en": "help",
+      "category": "Class 4 · Society and community"
+    },
+    {
+      "bn": "দায়িত্ব",
+      "en": "responsibility",
+      "category": "Class 4 · Society and community"
+    },
+    {
+      "bn": "আইন",
+      "en": "law",
+      "category": "Class 4 · Society and community"
+    },
+    {
+      "bn": "নিয়ম",
+      "en": "rule",
+      "category": "Class 4 · Society and community"
+    },
+    {
+      "bn": "নিরাপত্তা",
+      "en": "safety",
+      "category": "Class 4 · Society and community"
+    },
+    {
+      "bn": "পরিচ্ছন্নতা",
+      "en": "cleanliness",
+      "category": "Class 4 · Society and community"
+    },
+    {
+      "bn": "বাজার",
+      "en": "market",
+      "category": "Class 4 · Society and community"
+    },
+    {
+      "bn": "হাসপাতাল",
+      "en": "hospital",
+      "category": "Class 4 · Society and community"
+    },
+    {
+      "bn": "বিদ্যালয়",
+      "en": "school",
+      "category": "Class 4 · Society and community"
+    },
+    {
+      "bn": "ডাকঘর",
+      "en": "post office",
+      "category": "Class 4 · Society and community"
+    },
+    {
+      "bn": "থানা",
+      "en": "police station",
+      "category": "Class 4 · Society and community"
+    },
+    {
+      "bn": "গ্রন্থাগার",
+      "en": "library",
+      "category": "Class 4 · Society and community"
+    },
+    {
+      "bn": "পার্ক",
+      "en": "park",
+      "category": "Class 4 · Society and community"
+    },
+    {
+      "bn": "সেতু",
+      "en": "bridge",
+      "category": "Class 4 · Society and community"
+    },
+    {
+      "bn": "রাস্তা",
+      "en": "road",
+      "category": "Class 4 · Society and community"
+    },
+    {
+      "bn": "যানজট",
+      "en": "traffic jam",
+      "category": "Class 4 · Society and community"
+    },
+    {
+      "bn": "উৎসব",
+      "en": "festival",
+      "category": "Class 4 · Society and community"
+    },
+    {
+      "bn": "অনুষ্ঠান",
+      "en": "event",
+      "category": "Class 4 · Society and community"
+    },
+    {
+      "bn": "শিক্ষক",
+      "en": "male teacher",
+      "category": "Class 4 · Professions"
+    },
+    {
+      "bn": "ডাক্তার",
+      "en": "doctor",
+      "category": "Class 4 · Professions"
+    },
+    {
+      "bn": "নার্স",
+      "en": "nurse",
+      "category": "Class 4 · Professions"
+    },
+    {
+      "bn": "কৃষক",
+      "en": "farmer",
+      "category": "Class 4 · Professions"
+    },
+    {
+      "bn": "জেলে",
+      "en": "fisher",
+      "category": "Class 4 · Professions"
+    },
+    {
+      "bn": "পুলিশ",
+      "en": "police officer",
+      "category": "Class 4 · Professions"
+    },
+    {
+      "bn": "চালক",
+      "en": "driver",
+      "category": "Class 4 · Professions"
+    },
+    {
+      "bn": "দোকানদার",
+      "en": "shopkeeper",
+      "category": "Class 4 · Professions"
+    },
+    {
+      "bn": "ব্যবসায়ী",
+      "en": "businessperson",
+      "category": "Class 4 · Professions"
+    },
+    {
+      "bn": "শ্রমিক",
+      "en": "worker",
+      "category": "Class 4 · Professions"
+    },
+    {
+      "bn": "দর্জি",
+      "en": "tailor",
+      "category": "Class 4 · Professions"
+    },
+    {
+      "bn": "রাঁধুনি",
+      "en": "cook",
+      "category": "Class 4 · Professions"
+    },
+    {
+      "bn": "প্রকৌশলী",
+      "en": "engineer",
+      "category": "Class 4 · Professions"
+    },
+    {
+      "bn": "লেখক",
+      "en": "writer",
+      "category": "Class 4 · Professions"
+    },
+    {
+      "bn": "শিল্পী",
+      "en": "artist",
+      "category": "Class 4 · Professions"
+    },
+    {
+      "bn": "বিজ্ঞানী",
+      "en": "scientist",
+      "category": "Class 4 · Professions"
+    },
+    {
+      "bn": "সাংবাদিক",
+      "en": "journalist",
+      "category": "Class 4 · Professions"
+    },
+    {
+      "bn": "বিচারক",
+      "en": "judge",
+      "category": "Class 4 · Professions"
+    },
+    {
+      "bn": "ডাকপিয়ন",
+      "en": "postal worker",
+      "category": "Class 4 · Professions"
+    },
+    {
+      "bn": "মিস্ত্রি",
+      "en": "craftsperson",
+      "category": "Class 4 · Professions"
+    },
+    {
+      "bn": "প্রকৃতি",
+      "en": "nature",
+      "category": "Class 4 · Nature and environment"
+    },
+    {
+      "bn": "পরিবেশ",
+      "en": "environment",
+      "category": "Class 4 · Nature and environment"
+    },
+    {
+      "bn": "পৃথিবী",
+      "en": "earth",
+      "category": "Class 4 · Nature and environment"
+    },
+    {
+      "bn": "জলবায়ু",
+      "en": "climate",
+      "category": "Class 4 · Nature and environment"
+    },
+    {
+      "bn": "আকাশ",
+      "en": "sky",
+      "category": "Class 4 · Nature and environment"
+    },
+    {
+      "bn": "সূর্য",
+      "en": "sun",
+      "category": "Class 4 · Nature and environment"
+    },
+    {
+      "bn": "চাঁদ",
+      "en": "moon",
+      "category": "Class 4 · Nature and environment"
+    },
+    {
+      "bn": "তারা",
+      "en": "star",
+      "category": "Class 4 · Nature and environment"
+    },
+    {
+      "bn": "মেঘ",
+      "en": "cloud",
+      "category": "Class 4 · Nature and environment"
+    },
+    {
+      "bn": "বাতাস",
+      "en": "wind",
+      "category": "Class 4 · Nature and environment"
+    },
+    {
+      "bn": "বৃষ্টি",
+      "en": "rain",
+      "category": "Class 4 · Nature and environment"
+    },
+    {
+      "bn": "ঝড়",
+      "en": "storm",
+      "category": "Class 4 · Nature and environment"
+    },
+    {
+      "bn": "বজ্রপাত",
+      "en": "lightning",
+      "category": "Class 4 · Nature and environment"
+    },
+    {
+      "bn": "নদী",
+      "en": "river",
+      "category": "Class 4 · Nature and environment"
+    },
+    {
+      "bn": "সাগর",
+      "en": "sea",
+      "category": "Class 4 · Nature and environment"
+    },
+    {
+      "bn": "পাহাড়",
+      "en": "mountain",
+      "category": "Class 4 · Nature and environment"
+    },
+    {
+      "bn": "বন",
+      "en": "forest",
+      "category": "Class 4 · Nature and environment"
+    },
+    {
+      "bn": "মাঠ",
+      "en": "field",
+      "category": "Class 4 · Nature and environment"
+    },
+    {
+      "bn": "মাটি",
+      "en": "soil",
+      "category": "Class 4 · Nature and environment"
+    },
+    {
+      "bn": "গাছপালা",
+      "en": "plants",
+      "category": "Class 4 · Nature and environment"
+    },
+    {
+      "bn": "জীবজন্তু",
+      "en": "animals",
+      "category": "Class 4 · Nature and environment"
+    },
+    {
+      "bn": "পাখি",
+      "en": "bird",
+      "category": "Class 4 · Nature and environment"
+    },
+    {
+      "bn": "পোকামাকড়",
+      "en": "insects",
+      "category": "Class 4 · Nature and environment"
+    },
+    {
+      "bn": "দূষণ",
+      "en": "pollution",
+      "category": "Class 4 · Nature and environment"
+    },
+    {
+      "bn": "আবর্জনা",
+      "en": "garbage",
+      "category": "Class 4 · Nature and environment"
+    },
+    {
+      "bn": "পুনর্ব্যবহার",
+      "en": "recycling",
+      "category": "Class 4 · Nature and environment"
+    },
+    {
+      "bn": "সংরক্ষণ",
+      "en": "conservation",
+      "category": "Class 4 · Nature and environment"
+    },
+    {
+      "bn": "পরিবেশ রক্ষা",
+      "en": "environmental protection",
+      "category": "Class 4 · Nature and environment"
+    },
+    {
+      "bn": "বনায়ন",
+      "en": "afforestation",
+      "category": "Class 4 · Nature and environment"
+    },
+    {
+      "bn": "আবহাওয়া",
+      "en": "weather",
+      "category": "Class 4 · Weather and seasons"
+    },
+    {
+      "bn": "তাপমাত্রা",
+      "en": "temperature",
+      "category": "Class 4 · Weather and seasons"
+    },
+    {
+      "bn": "আর্দ্রতা",
+      "en": "humidity",
+      "category": "Class 4 · Weather and seasons"
+    },
+    {
+      "bn": "রোদ",
+      "en": "sunshine",
+      "category": "Class 4 · Weather and seasons"
+    },
+    {
+      "bn": "বৃষ্টি",
+      "en": "rain",
+      "category": "Class 4 · Weather and seasons"
+    },
+    {
+      "bn": "কুয়াশা",
+      "en": "fog",
+      "category": "Class 4 · Weather and seasons"
+    },
+    {
+      "bn": "ঝড়",
+      "en": "storm",
+      "category": "Class 4 · Weather and seasons"
+    },
+    {
+      "bn": "মেঘলা",
+      "en": "cloudy",
+      "category": "Class 4 · Weather and seasons"
+    },
+    {
+      "bn": "শুষ্ক",
+      "en": "dry",
+      "category": "Class 4 · Weather and seasons"
+    },
+    {
+      "bn": "ভেজা",
+      "en": "wet",
+      "category": "Class 4 · Weather and seasons"
+    },
+    {
+      "bn": "গরম",
+      "en": "hot",
+      "category": "Class 4 · Weather and seasons"
+    },
+    {
+      "bn": "ঠান্ডা",
+      "en": "cold",
+      "category": "Class 4 · Weather and seasons"
+    },
+    {
+      "bn": "গ্রীষ্ম",
+      "en": "summer",
+      "category": "Class 4 · Weather and seasons"
+    },
+    {
+      "bn": "বর্ষা",
+      "en": "monsoon",
+      "category": "Class 4 · Weather and seasons"
+    },
+    {
+      "bn": "শরৎ",
+      "en": "autumn",
+      "category": "Class 4 · Weather and seasons"
+    },
+    {
+      "bn": "হেমন্ত",
+      "en": "late autumn",
+      "category": "Class 4 · Weather and seasons"
+    },
+    {
+      "bn": "শীত",
+      "en": "winter",
+      "category": "Class 4 · Weather and seasons"
+    },
+    {
+      "bn": "বসন্ত",
+      "en": "spring",
+      "category": "Class 4 · Weather and seasons"
+    },
+    {
+      "bn": "ঋতু পরিবর্তন",
+      "en": "seasonal change",
+      "category": "Class 4 · Weather and seasons"
+    },
+    {
+      "bn": "উদ্ভিদ",
+      "en": "plant",
+      "category": "Class 4 · Plants"
+    },
+    {
+      "bn": "শিকড়",
+      "en": "root",
+      "category": "Class 4 · Plants"
+    },
+    {
+      "bn": "কাণ্ড",
+      "en": "stem",
+      "category": "Class 4 · Plants"
+    },
+    {
+      "bn": "ডাল",
+      "en": "branch",
+      "category": "Class 4 · Plants"
+    },
+    {
+      "bn": "পাতা",
+      "en": "leaf",
+      "category": "Class 4 · Plants"
+    },
+    {
+      "bn": "ফুল",
+      "en": "flower",
+      "category": "Class 4 · Plants"
+    },
+    {
+      "bn": "ফল",
+      "en": "fruit",
+      "category": "Class 4 · Plants"
+    },
+    {
+      "bn": "বীজ",
+      "en": "seed",
+      "category": "Class 4 · Plants"
+    },
+    {
+      "bn": "চারা",
+      "en": "sapling",
+      "category": "Class 4 · Plants"
+    },
+    {
+      "bn": "মাটি",
+      "en": "soil",
+      "category": "Class 4 · Plants"
+    },
+    {
+      "bn": "পানি",
+      "en": "water",
+      "category": "Class 4 · Plants"
+    },
+    {
+      "bn": "সূর্যের আলো",
+      "en": "sunlight",
+      "category": "Class 4 · Plants"
+    },
+    {
+      "bn": "বৃদ্ধি",
+      "en": "growth",
+      "category": "Class 4 · Plants"
+    },
+    {
+      "bn": "খাদ্য তৈরি",
+      "en": "food production",
+      "category": "Class 4 · Plants"
+    },
+    {
+      "bn": "বাগান",
+      "en": "garden",
+      "category": "Class 4 · Plants"
+    },
+    {
+      "bn": "ফসল",
+      "en": "crop",
+      "category": "Class 4 · Plants"
+    },
+    {
+      "bn": "কৃষি",
+      "en": "agriculture",
+      "category": "Class 4 · Plants"
+    },
+    {
+      "bn": "পরিচর্যা",
+      "en": "care",
+      "category": "Class 4 · Plants"
+    },
+    {
+      "bn": "বন্য প্রাণী",
+      "en": "wild animal",
+      "category": "Class 4 · Animals"
+    },
+    {
+      "bn": "গৃহপালিত প্রাণী",
+      "en": "domestic animal",
+      "category": "Class 4 · Animals"
+    },
+    {
+      "bn": "শিকারি",
+      "en": "hunter/predator",
+      "category": "Class 4 · Animals"
+    },
+    {
+      "bn": "শিকার",
+      "en": "prey/hunt",
+      "category": "Class 4 · Animals"
+    },
+    {
+      "bn": "বাসস্থান",
+      "en": "habitat",
+      "category": "Class 4 · Animals"
+    },
+    {
+      "bn": "খাদ্য",
+      "en": "food",
+      "category": "Class 4 · Animals"
+    },
+    {
+      "bn": "পালক",
+      "en": "feather",
+      "category": "Class 4 · Animals"
+    },
+    {
+      "bn": "লোম",
+      "en": "fur",
+      "category": "Class 4 · Animals"
+    },
+    {
+      "bn": "ডানা",
+      "en": "wing",
+      "category": "Class 4 · Animals"
+    },
+    {
+      "bn": "শিং",
+      "en": "horn",
+      "category": "Class 4 · Animals"
+    },
+    {
+      "bn": "লেজ",
+      "en": "tail",
+      "category": "Class 4 · Animals"
+    },
+    {
+      "bn": "নখ",
+      "en": "claw",
+      "category": "Class 4 · Animals"
+    },
+    {
+      "bn": "দাঁত",
+      "en": "tooth",
+      "category": "Class 4 · Animals"
+    },
+    {
+      "bn": "দল",
+      "en": "group",
+      "category": "Class 4 · Animals"
+    },
+    {
+      "bn": "বাচ্চা",
+      "en": "child",
+      "category": "Class 4 · Animals"
+    },
+    {
+      "bn": "ডিম",
+      "en": "egg",
+      "category": "Class 4 · Animals"
+    },
+    {
+      "bn": "জীবনচক্র",
+      "en": "life cycle",
+      "category": "Class 4 · Animals"
+    },
+    {
+      "bn": "পরিবেশের ভারসাম্য",
+      "en": "ecological balance",
+      "category": "Class 4 · Animals"
+    },
+    {
+      "bn": "শরীর",
+      "en": "body",
+      "category": "Class 4 · Body and health"
+    },
+    {
+      "bn": "স্বাস্থ্য",
+      "en": "health",
+      "category": "Class 4 · Body and health"
+    },
+    {
+      "bn": "পরিচ্ছন্নতা",
+      "en": "cleanliness",
+      "category": "Class 4 · Body and health"
+    },
+    {
+      "bn": "পুষ্টি",
+      "en": "nutrition",
+      "category": "Class 4 · Body and health"
+    },
+    {
+      "bn": "ব্যায়াম",
+      "en": "exercise",
+      "category": "Class 4 · Body and health"
+    },
+    {
+      "bn": "বিশ্রাম",
+      "en": "rest",
+      "category": "Class 4 · Body and health"
+    },
+    {
+      "bn": "ঘুম",
+      "en": "sleep",
+      "category": "Class 4 · Body and health"
+    },
+    {
+      "bn": "শক্তি",
+      "en": "strength",
+      "category": "Class 4 · Body and health"
+    },
+    {
+      "bn": "অসুস্থতা",
+      "en": "illness",
+      "category": "Class 4 · Body and health"
+    },
+    {
+      "bn": "জ্বর",
+      "en": "fever",
+      "category": "Class 4 · Body and health"
+    },
+    {
+      "bn": "সর্দি",
+      "en": "cold",
+      "category": "Class 4 · Body and health"
+    },
+    {
+      "bn": "কাশি",
+      "en": "cough",
+      "category": "Class 4 · Body and health"
+    },
+    {
+      "bn": "ব্যথা",
+      "en": "pain",
+      "category": "Class 4 · Body and health"
+    },
+    {
+      "bn": "চিকিৎসা",
+      "en": "treatment",
+      "category": "Class 4 · Body and health"
+    },
+    {
+      "bn": "ওষুধ",
+      "en": "medicine",
+      "category": "Class 4 · Body and health"
+    },
+    {
+      "bn": "ডাক্তার",
+      "en": "doctor",
+      "category": "Class 4 · Body and health"
+    },
+    {
+      "bn": "হাসপাতাল",
+      "en": "hospital",
+      "category": "Class 4 · Body and health"
+    },
+    {
+      "bn": "সুস্থ",
+      "en": "healthy",
+      "category": "Class 4 · Body and health"
+    },
+    {
+      "bn": "অসুস্থ",
+      "en": "sick",
+      "category": "Class 4 · Body and health"
+    },
+    {
+      "bn": "সতর্কতা",
+      "en": "precaution",
+      "category": "Class 4 · Body and health"
+    },
+    {
+      "bn": "স্বাস্থ্যকর অভ্যাস",
+      "en": "healthy habit",
+      "category": "Class 4 · Body and health"
+    },
+    {
+      "bn": "খাদ্য",
+      "en": "food",
+      "category": "Class 4 · Food and nutrition"
+    },
+    {
+      "bn": "পুষ্টি",
+      "en": "nutrition",
+      "category": "Class 4 · Food and nutrition"
+    },
+    {
+      "bn": "শর্করা",
+      "en": "carbohydrate",
+      "category": "Class 4 · Food and nutrition"
+    },
+    {
+      "bn": "প্রোটিন",
+      "en": "protein",
+      "category": "Class 4 · Food and nutrition"
+    },
+    {
+      "bn": "চর্বি",
+      "en": "fat",
+      "category": "Class 4 · Food and nutrition"
+    },
+    {
+      "bn": "ভিটামিন",
+      "en": "vitamin",
+      "category": "Class 4 · Food and nutrition"
+    },
+    {
+      "bn": "খনিজ",
+      "en": "mineral",
+      "category": "Class 4 · Food and nutrition"
+    },
+    {
+      "bn": "পানি",
+      "en": "water",
+      "category": "Class 4 · Food and nutrition"
+    },
+    {
+      "bn": "ফলমূল",
+      "en": "fruits",
+      "category": "Class 4 · Food and nutrition"
+    },
+    {
+      "bn": "শাকসবজি",
+      "en": "vegetables",
+      "category": "Class 4 · Food and nutrition"
+    },
+    {
+      "bn": "মাছ",
+      "en": "fish",
+      "category": "Class 4 · Food and nutrition"
+    },
+    {
+      "bn": "মাংস",
+      "en": "meat",
+      "category": "Class 4 · Food and nutrition"
+    },
+    {
+      "bn": "ডিম",
+      "en": "egg",
+      "category": "Class 4 · Food and nutrition"
+    },
+    {
+      "bn": "দুধ",
+      "en": "milk",
+      "category": "Class 4 · Food and nutrition"
+    },
+    {
+      "bn": "চাল",
+      "en": "uncooked rice",
+      "category": "Class 4 · Food and nutrition"
+    },
+    {
+      "bn": "ডাল",
+      "en": "branch",
+      "category": "Class 4 · Food and nutrition"
+    },
+    {
+      "bn": "স্বাস্থ্যকর খাবার",
+      "en": "healthy food",
+      "category": "Class 4 · Food and nutrition"
+    },
+    {
+      "bn": "সুষম খাদ্য",
+      "en": "balanced diet",
+      "category": "Class 4 · Food and nutrition"
+    },
+    {
+      "bn": "তাজা",
+      "en": "fresh",
+      "category": "Class 4 · Food and nutrition"
+    },
+    {
+      "bn": "পচা",
+      "en": "rotten",
+      "category": "Class 4 · Food and nutrition"
+    },
+    {
+      "bn": "স্বাদ",
+      "en": "taste",
+      "category": "Class 4 · Food and nutrition"
+    },
+    {
+      "bn": "বিজ্ঞান",
+      "en": "science",
+      "category": "Class 4 · Science"
+    },
+    {
+      "bn": "পরীক্ষা",
+      "en": "exam",
+      "category": "Class 4 · Science"
+    },
+    {
+      "bn": "পর্যবেক্ষণ",
+      "en": "observation",
+      "category": "Class 4 · Science"
+    },
+    {
+      "bn": "ফলাফল",
+      "en": "result",
+      "category": "Class 4 · Science"
+    },
+    {
+      "bn": "প্রশ্ন",
+      "en": "question",
+      "category": "Class 4 · Science"
+    },
+    {
+      "bn": "ধারণা",
+      "en": "idea",
+      "category": "Class 4 · Science"
+    },
+    {
+      "bn": "প্রমাণ",
+      "en": "evidence",
+      "category": "Class 4 · Science"
+    },
+    {
+      "bn": "পদার্থ",
+      "en": "matter",
+      "category": "Class 4 · Science"
+    },
+    {
+      "bn": "শক্তি",
+      "en": "strength",
+      "category": "Class 4 · Science"
+    },
+    {
+      "bn": "আলো",
+      "en": "light",
+      "category": "Class 4 · Science"
+    },
+    {
+      "bn": "শব্দ",
+      "en": "word",
+      "category": "Class 4 · Science"
+    },
+    {
+      "bn": "তাপ",
+      "en": "heat",
+      "category": "Class 4 · Science"
+    },
+    {
+      "bn": "পানি",
+      "en": "water",
+      "category": "Class 4 · Science"
+    },
+    {
+      "bn": "বায়ু",
+      "en": "air",
+      "category": "Class 4 · Science"
+    },
+    {
+      "bn": "মাটি",
+      "en": "soil",
+      "category": "Class 4 · Science"
+    },
+    {
+      "bn": "উদ্ভিদ",
+      "en": "plant",
+      "category": "Class 4 · Science"
+    },
+    {
+      "bn": "প্রাণী",
+      "en": "animal",
+      "category": "Class 4 · Science"
+    },
+    {
+      "bn": "চুম্বক",
+      "en": "magnet",
+      "category": "Class 4 · Science"
+    },
+    {
+      "bn": "বিদ্যুৎ",
+      "en": "electricity",
+      "category": "Class 4 · Science"
+    },
+    {
+      "bn": "ছায়া",
+      "en": "shade",
+      "category": "Class 4 · Science"
+    },
+    {
+      "bn": "গতি",
+      "en": "motion",
+      "category": "Class 4 · Science"
+    },
+    {
+      "bn": "পৃথিবী",
+      "en": "earth",
+      "category": "Class 4 · Geography and earth"
+    },
+    {
+      "bn": "দেশ",
+      "en": "country",
+      "category": "Class 4 · Geography and earth"
+    },
+    {
+      "bn": "মহাদেশ",
+      "en": "continent",
+      "category": "Class 4 · Geography and earth"
+    },
+    {
+      "bn": "সাগর",
+      "en": "sea",
+      "category": "Class 4 · Geography and earth"
+    },
+    {
+      "bn": "নদী",
+      "en": "river",
+      "category": "Class 4 · Geography and earth"
+    },
+    {
+      "bn": "পাহাড়",
+      "en": "mountain",
+      "category": "Class 4 · Geography and earth"
+    },
+    {
+      "bn": "সমভূমি",
+      "en": "plain",
+      "category": "Class 4 · Geography and earth"
+    },
+    {
+      "bn": "উপত্যকা",
+      "en": "valley",
+      "category": "Class 4 · Geography and earth"
+    },
+    {
+      "bn": "দ্বীপ",
+      "en": "island",
+      "category": "Class 4 · Geography and earth"
+    },
+    {
+      "bn": "মানচিত্র",
+      "en": "map",
+      "category": "Class 4 · Geography and earth"
+    },
+    {
+      "bn": "দিক",
+      "en": "direction",
+      "category": "Class 4 · Geography and earth"
+    },
+    {
+      "bn": "উত্তর",
+      "en": "north",
+      "category": "Class 4 · Geography and earth"
+    },
+    {
+      "bn": "দক্ষিণ",
+      "en": "south",
+      "category": "Class 4 · Geography and earth"
+    },
+    {
+      "bn": "পূর্ব",
+      "en": "east",
+      "category": "Class 4 · Geography and earth"
+    },
+    {
+      "bn": "পশ্চিম",
+      "en": "west",
+      "category": "Class 4 · Geography and earth"
+    },
+    {
+      "bn": "সীমান্ত",
+      "en": "border",
+      "category": "Class 4 · Geography and earth"
+    },
+    {
+      "bn": "গ্রাম",
+      "en": "village",
+      "category": "Class 4 · Geography and earth"
+    },
+    {
+      "bn": "শহর",
+      "en": "city",
+      "category": "Class 4 · Geography and earth"
+    },
+    {
+      "bn": "রাজধানী",
+      "en": "capital",
+      "category": "Class 4 · Geography and earth"
+    },
+    {
+      "bn": "জনসংখ্যা",
+      "en": "population",
+      "category": "Class 4 · Geography and earth"
+    },
+    {
+      "bn": "সময়",
+      "en": "time",
+      "category": "Class 4 · Time and history"
+    },
+    {
+      "bn": "অতীত",
+      "en": "past",
+      "category": "Class 4 · Time and history"
+    },
+    {
+      "bn": "বর্তমান",
+      "en": "present",
+      "category": "Class 4 · Time and history"
+    },
+    {
+      "bn": "ভবিষ্যৎ",
+      "en": "future",
+      "category": "Class 4 · Time and history"
+    },
+    {
+      "bn": "ঘটনা",
+      "en": "event",
+      "category": "Class 4 · Time and history"
+    },
+    {
+      "bn": "ইতিহাস",
+      "en": "history",
+      "category": "Class 4 · Time and history"
+    },
+    {
+      "bn": "পুরোনো",
+      "en": "old",
+      "category": "Class 4 · Time and history"
+    },
+    {
+      "bn": "আধুনিক",
+      "en": "modern",
+      "category": "Class 4 · Time and history"
+    },
+    {
+      "bn": "আগে",
+      "en": "before",
+      "category": "Class 4 · Time and history"
+    },
+    {
+      "bn": "পরে",
+      "en": "later",
+      "category": "Class 4 · Time and history"
+    },
+    {
+      "bn": "প্রথমে",
+      "en": "first",
+      "category": "Class 4 · Time and history"
+    },
+    {
+      "bn": "এরপর",
+      "en": "next",
+      "category": "Class 4 · Time and history"
+    },
+    {
+      "bn": "অবশেষে",
+      "en": "at last",
+      "category": "Class 4 · Time and history"
+    },
+    {
+      "bn": "শতাব্দী",
+      "en": "century",
+      "category": "Class 4 · Time and history"
+    },
+    {
+      "bn": "বছর",
+      "en": "year",
+      "category": "Class 4 · Time and history"
+    },
+    {
+      "bn": "মাস",
+      "en": "month",
+      "category": "Class 4 · Time and history"
+    },
+    {
+      "bn": "দিন",
+      "en": "day",
+      "category": "Class 4 · Time and history"
+    },
+    {
+      "bn": "স্মৃতি",
+      "en": "memory",
+      "category": "Class 4 · Time and history"
+    },
+    {
+      "bn": "আনন্দ",
+      "en": "joy",
+      "category": "Class 4 · Feelings"
+    },
+    {
+      "bn": "দুঃখ",
+      "en": "sadness",
+      "category": "Class 4 · Feelings"
+    },
+    {
+      "bn": "রাগ",
+      "en": "anger",
+      "category": "Class 4 · Feelings"
+    },
+    {
+      "bn": "ভয়",
+      "en": "fear",
+      "category": "Class 4 · Feelings"
+    },
+    {
+      "bn": "আশা",
+      "en": "hope",
+      "category": "Class 4 · Feelings"
+    },
+    {
+      "bn": "হতাশা",
+      "en": "disappointment",
+      "category": "Class 4 · Feelings"
+    },
+    {
+      "bn": "বিস্ময়",
+      "en": "wonder",
+      "category": "Class 4 · Feelings"
+    },
+    {
+      "bn": "লজ্জা",
+      "en": "shyness",
+      "category": "Class 4 · Feelings"
+    },
+    {
+      "bn": "গর্ব",
+      "en": "pride",
+      "category": "Class 4 · Feelings"
+    },
+    {
+      "bn": "কৃতজ্ঞতা",
+      "en": "gratitude",
+      "category": "Class 4 · Feelings"
+    },
+    {
+      "bn": "উদ্বেগ",
+      "en": "anxiety",
+      "category": "Class 4 · Feelings"
+    },
+    {
+      "bn": "শান্তি",
+      "en": "peace",
+      "category": "Class 4 · Feelings"
+    },
+    {
+      "bn": "ভালোবাসা",
+      "en": "to love",
+      "category": "Class 4 · Feelings"
+    },
+    {
+      "bn": "সাহস",
+      "en": "courage",
+      "category": "Class 4 · Feelings"
+    },
+    {
+      "bn": "আত্মবিশ্বাস",
+      "en": "confidence",
+      "category": "Class 4 · Feelings"
+    },
+    {
+      "bn": "উত্তেজনা",
+      "en": "excitement",
+      "category": "Class 4 · Feelings"
+    },
+    {
+      "bn": "বিরক্তি",
+      "en": "annoyance",
+      "category": "Class 4 · Feelings"
+    },
+    {
+      "bn": "আগ্রহ",
+      "en": "interest",
+      "category": "Class 4 · Feelings"
+    },
+    {
+      "bn": "সহানুভূতি",
+      "en": "empathy",
+      "category": "Class 4 · Feelings"
+    },
+    {
+      "bn": "সৎ",
+      "en": "honest",
+      "category": "Class 4 · Character and personality"
+    },
+    {
+      "bn": "অসৎ",
+      "en": "dishonest",
+      "category": "Class 4 · Character and personality"
+    },
+    {
+      "bn": "সাহসী",
+      "en": "brave",
+      "category": "Class 4 · Character and personality"
+    },
+    {
+      "bn": "ভীরু",
+      "en": "cowardly",
+      "category": "Class 4 · Character and personality"
+    },
+    {
+      "bn": "দয়ালু",
+      "en": "kind",
+      "category": "Class 4 · Character and personality"
+    },
+    {
+      "bn": "নিষ্ঠুর",
+      "en": "cruel",
+      "category": "Class 4 · Character and personality"
+    },
+    {
+      "bn": "ভদ্র",
+      "en": "polite",
+      "category": "Class 4 · Character and personality"
+    },
+    {
+      "bn": "অভদ্র",
+      "en": "rude",
+      "category": "Class 4 · Character and personality"
+    },
+    {
+      "bn": "বুদ্ধিমান",
+      "en": "intelligent",
+      "category": "Class 4 · Character and personality"
+    },
+    {
+      "bn": "পরিশ্রমী",
+      "en": "hardworking",
+      "category": "Class 4 · Character and personality"
+    },
+    {
+      "bn": "অলস",
+      "en": "lazy",
+      "category": "Class 4 · Character and personality"
+    },
+    {
+      "bn": "দায়িত্বশীল",
+      "en": "responsible",
+      "category": "Class 4 · Character and personality"
+    },
+    {
+      "bn": "যত্নশীল",
+      "en": "caring",
+      "category": "Class 4 · Character and personality"
+    },
+    {
+      "bn": "কৌতূহলী",
+      "en": "curious",
+      "category": "Class 4 · Character and personality"
+    },
+    {
+      "bn": "ধৈর্যশীল",
+      "en": "patient",
+      "category": "Class 4 · Character and personality"
+    },
+    {
+      "bn": "আত্মবিশ্বাসী",
+      "en": "confident",
+      "category": "Class 4 · Character and personality"
+    },
+    {
+      "bn": "বিনয়ী",
+      "en": "humble",
+      "category": "Class 4 · Character and personality"
+    },
+    {
+      "bn": "বিশ্বস্ত",
+      "en": "trustworthy",
+      "category": "Class 4 · Character and personality"
+    },
+    {
+      "bn": "উদার",
+      "en": "generous",
+      "category": "Class 4 · Character and personality"
+    },
+    {
+      "bn": "স্বার্থপর",
+      "en": "selfish",
+      "category": "Class 4 · Character and personality"
+    },
+    {
+      "bn": "পরিকল্পনা করা",
+      "en": "to plan",
+      "category": "Class 4 · Important verbs"
+    },
+    {
+      "bn": "চেষ্টা করা",
+      "en": "to try",
+      "category": "Class 4 · Important verbs"
+    },
+    {
+      "bn": "সিদ্ধান্ত নেওয়া",
+      "en": "to decide",
+      "category": "Class 4 · Important verbs"
+    },
+    {
+      "bn": "আলোচনা করা",
+      "en": "to discuss",
+      "category": "Class 4 · Important verbs"
+    },
+    {
+      "bn": "ব্যাখ্যা করা",
+      "en": "to explain",
+      "category": "Class 4 · Important verbs"
+    },
+    {
+      "bn": "বর্ণনা করা",
+      "en": "to describe",
+      "category": "Class 4 · Important verbs"
+    },
+    {
+      "bn": "তুলনা করা",
+      "en": "to compare",
+      "category": "Class 4 · Important verbs"
+    },
+    {
+      "bn": "নির্বাচন করা",
+      "en": "to choose",
+      "category": "Class 4 · Important verbs"
+    },
+    {
+      "bn": "ব্যবহার করা",
+      "en": "to use",
+      "category": "Class 4 · Important verbs"
+    },
+    {
+      "bn": "সংগ্রহ করা",
+      "en": "to collect",
+      "category": "Class 4 · Important verbs"
+    },
+    {
+      "bn": "পরীক্ষা করা",
+      "en": "to test",
+      "category": "Class 4 · Important verbs"
+    },
+    {
+      "bn": "আবিষ্কার করা",
+      "en": "to discover",
+      "category": "Class 4 · Important verbs"
+    },
+    {
+      "bn": "পর্যবেক্ষণ করা",
+      "en": "to observe",
+      "category": "Class 4 · Important verbs"
+    },
+    {
+      "bn": "রক্ষা করা",
+      "en": "to protect",
+      "category": "Class 4 · Important verbs"
+    },
+    {
+      "bn": "সংরক্ষণ করা",
+      "en": "to conserve",
+      "category": "Class 4 · Important verbs"
+    },
+    {
+      "bn": "পরিবর্তন করা",
+      "en": "to change",
+      "category": "Class 4 · Important verbs"
+    },
+    {
+      "bn": "উন্নতি করা",
+      "en": "to improve",
+      "category": "Class 4 · Important verbs"
+    },
+    {
+      "bn": "তৈরি করা",
+      "en": "to create",
+      "category": "Class 4 · Important verbs"
+    },
+    {
+      "bn": "ভাগ করা",
+      "en": "to share",
+      "category": "Class 4 · Important verbs"
+    },
+    {
+      "bn": "সমাধান করা",
+      "en": "to solve",
+      "category": "Class 4 · Important verbs"
+    },
+    {
+      "bn": "মনে রাখা",
+      "en": "to remember",
+      "category": "Class 4 · Important verbs"
+    },
+    {
+      "bn": "ভুলে যাওয়া",
+      "en": "to forget",
+      "category": "Class 4 · Important verbs"
+    },
+    {
+      "bn": "আশা করা",
+      "en": "to hope",
+      "category": "Class 4 · Important verbs"
+    },
+    {
+      "bn": "বিশ্বাস করা",
+      "en": "to believe",
+      "category": "Class 4 · Important verbs"
+    },
+    {
+      "bn": "অনুসরণ করা",
+      "en": "to follow",
+      "category": "Class 4 · Advanced verbs"
+    },
+    {
+      "bn": "নেতৃত্ব দেওয়া",
+      "en": "to lead",
+      "category": "Class 4 · Advanced verbs"
+    },
+    {
+      "bn": "সহযোগিতা করা",
+      "en": "to cooperate",
+      "category": "Class 4 · Advanced verbs"
+    },
+    {
+      "bn": "অংশগ্রহণ করা",
+      "en": "to participate",
+      "category": "Class 4 · Advanced verbs"
+    },
+    {
+      "bn": "সতর্ক করা",
+      "en": "to warn",
+      "category": "Class 4 · Advanced verbs"
+    },
+    {
+      "bn": "প্রতিরোধ করা",
+      "en": "to prevent",
+      "category": "Class 4 · Advanced verbs"
+    },
+    {
+      "bn": "অনুমান করা",
+      "en": "to infer",
+      "category": "Class 4 · Advanced verbs"
+    },
+    {
+      "bn": "প্রমাণ করা",
+      "en": "to prove",
+      "category": "Class 4 · Advanced verbs"
+    },
+    {
+      "bn": "প্রকাশ করা",
+      "en": "to express",
+      "category": "Class 4 · Advanced verbs"
+    },
+    {
+      "bn": "উল্লেখ করা",
+      "en": "to mention",
+      "category": "Class 4 · Advanced verbs"
+    },
+    {
+      "bn": "ব্যাখ্যা চাওয়া",
+      "en": "to ask for clarification",
+      "category": "Class 4 · Advanced verbs"
+    },
+    {
+      "bn": "চিন্তা করা",
+      "en": "to think",
+      "category": "Class 4 · Advanced verbs"
+    },
+    {
+      "bn": "বিশ্লেষণ করা",
+      "en": "to analyze",
+      "category": "Class 4 · Advanced verbs"
+    },
+    {
+      "bn": "নির্ধারণ করা",
+      "en": "to determine",
+      "category": "Class 4 · Advanced verbs"
+    },
+    {
+      "bn": "গ্রহণ করা",
+      "en": "to accept",
+      "category": "Class 4 · Advanced verbs"
+    },
+    {
+      "bn": "প্রত্যাখ্যান করা",
+      "en": "to reject",
+      "category": "Class 4 · Advanced verbs"
+    },
+    {
+      "bn": "ক্ষমা করা",
+      "en": "to forgive",
+      "category": "Class 4 · Advanced verbs"
+    },
+    {
+      "bn": "উৎসাহ দেওয়া",
+      "en": "to encourage",
+      "category": "Class 4 · Advanced verbs"
+    },
+    {
+      "bn": "বিশাল",
+      "en": "enormous",
+      "category": "Class 4 · Descriptive words"
+    },
+    {
+      "bn": "ক্ষুদ্র",
+      "en": "tiny",
+      "category": "Class 4 · Descriptive words"
+    },
+    {
+      "bn": "আকর্ষণীয়",
+      "en": "interesting",
+      "category": "Class 4 · Descriptive words"
+    },
+    {
+      "bn": "মনোরম",
+      "en": "pleasant",
+      "category": "Class 4 · Descriptive words"
+    },
+    {
+      "bn": "উজ্জ্বল",
+      "en": "bright",
+      "category": "Class 4 · Descriptive words"
+    },
+    {
+      "bn": "অন্ধকার",
+      "en": "dark",
+      "category": "Class 4 · Descriptive words"
+    },
+    {
+      "bn": "শান্ত",
+      "en": "calm",
+      "category": "Class 4 · Descriptive words"
+    },
+    {
+      "bn": "কোলাহলপূর্ণ",
+      "en": "noisy",
+      "category": "Class 4 · Descriptive words"
+    },
+    {
+      "bn": "দ্রুত",
+      "en": "fast",
+      "category": "Class 4 · Descriptive words"
+    },
+    {
+      "bn": "ধীর",
+      "en": "slow",
+      "category": "Class 4 · Descriptive words"
+    },
+    {
+      "bn": "গভীর",
+      "en": "deep",
+      "category": "Class 4 · Descriptive words"
+    },
+    {
+      "bn": "অগভীর",
+      "en": "shallow",
+      "category": "Class 4 · Descriptive words"
+    },
+    {
+      "bn": "প্রশস্ত",
+      "en": "wide",
+      "category": "Class 4 · Descriptive words"
+    },
+    {
+      "bn": "সরু",
+      "en": "narrow",
+      "category": "Class 4 · Descriptive words"
+    },
+    {
+      "bn": "উঁচু",
+      "en": "high",
+      "category": "Class 4 · Descriptive words"
+    },
+    {
+      "bn": "নিচু",
+      "en": "low",
+      "category": "Class 4 · Descriptive words"
+    },
+    {
+      "bn": "শক্তিশালী",
+      "en": "strong",
+      "category": "Class 4 · Descriptive words"
+    },
+    {
+      "bn": "দুর্বল",
+      "en": "weak",
+      "category": "Class 4 · Descriptive words"
+    },
+    {
+      "bn": "নিরাপদ",
+      "en": "safe",
+      "category": "Class 4 · Descriptive words"
+    },
+    {
+      "bn": "বিপজ্জনক",
+      "en": "dangerous",
+      "category": "Class 4 · Descriptive words"
+    },
+    {
+      "bn": "মূল্যবান",
+      "en": "valuable",
+      "category": "Class 4 · Descriptive words"
+    },
+    {
+      "bn": "বিরল",
+      "en": "rare",
+      "category": "Class 4 · Descriptive words"
+    },
+    {
+      "bn": "সাধারণ",
+      "en": "common",
+      "category": "Class 4 · Descriptive words"
+    },
+    {
+      "bn": "গুরুত্বপূর্ণ",
+      "en": "important",
+      "category": "Class 4 · Descriptive words"
+    },
+    {
+      "bn": "প্রয়োজনীয়",
+      "en": "necessary",
+      "category": "Class 4 · Descriptive words"
+    },
+    {
+      "bn": "উপকারী",
+      "en": "beneficial",
+      "category": "Class 4 · Descriptive words"
+    },
+    {
+      "bn": "ক্ষতিকর",
+      "en": "harmful",
+      "category": "Class 4 · Descriptive words"
+    },
+    {
+      "bn": "সতর্ক",
+      "en": "careful",
+      "category": "Class 4 · Descriptive words"
+    },
+    {
+      "bn": "সফল",
+      "en": "successful",
+      "category": "Class 4 · Descriptive words"
+    },
+    {
+      "bn": "ব্যর্থ",
+      "en": "unsuccessful",
+      "category": "Class 4 · Descriptive words"
+    },
+    {
+      "bn": "অনেক",
+      "en": "many",
+      "category": "Class 4 · Quantity and comparison"
+    },
+    {
+      "bn": "অল্প",
+      "en": "a little",
+      "category": "Class 4 · Quantity and comparison"
+    },
+    {
+      "bn": "কয়েকটি",
+      "en": "a few",
+      "category": "Class 4 · Quantity and comparison"
+    },
+    {
+      "bn": "অধিকাংশ",
+      "en": "most",
+      "category": "Class 4 · Quantity and comparison"
+    },
+    {
+      "bn": "সম্পূর্ণ",
+      "en": "complete",
+      "category": "Class 4 · Quantity and comparison"
+    },
+    {
+      "bn": "অর্ধেক",
+      "en": "half",
+      "category": "Class 4 · Quantity and comparison"
+    },
+    {
+      "bn": "সমান",
+      "en": "equal",
+      "category": "Class 4 · Quantity and comparison"
+    },
+    {
+      "bn": "অসমান",
+      "en": "unequal",
+      "category": "Class 4 · Quantity and comparison"
+    },
+    {
+      "bn": "অধিক",
+      "en": "greater",
+      "category": "Class 4 · Quantity and comparison"
+    },
+    {
+      "bn": "কম",
+      "en": "less",
+      "category": "Class 4 · Quantity and comparison"
+    },
+    {
+      "bn": "সর্বাধিক",
+      "en": "maximum",
+      "category": "Class 4 · Quantity and comparison"
+    },
+    {
+      "bn": "সর্বনিম্ন",
+      "en": "minimum",
+      "category": "Class 4 · Quantity and comparison"
+    },
+    {
+      "bn": "বড়",
+      "en": "big",
+      "category": "Class 4 · Quantity and comparison"
+    },
+    {
+      "bn": "বৃহত্তর",
+      "en": "larger",
+      "category": "Class 4 · Quantity and comparison"
+    },
+    {
+      "bn": "সবচেয়ে বড়",
+      "en": "biggest",
+      "category": "Class 4 · Quantity and comparison"
+    },
+    {
+      "bn": "ছোট",
+      "en": "small",
+      "category": "Class 4 · Quantity and comparison"
+    },
+    {
+      "bn": "ক্ষুদ্রতর",
+      "en": "smaller",
+      "category": "Class 4 · Quantity and comparison"
+    },
+    {
+      "bn": "দ্রুততর",
+      "en": "faster",
+      "category": "Class 4 · Quantity and comparison"
+    },
+    {
+      "bn": "ধীরতর",
+      "en": "slower",
+      "category": "Class 4 · Quantity and comparison"
+    },
+    {
+      "bn": "এবং",
+      "en": "and",
+      "category": "Class 4 · Connecting words"
+    },
+    {
+      "bn": "আর",
+      "en": "and/more",
+      "category": "Class 4 · Connecting words"
+    },
+    {
+      "bn": "কিন্তু",
+      "en": "but",
+      "category": "Class 4 · Connecting words"
+    },
+    {
+      "bn": "অথবা",
+      "en": "or",
+      "category": "Class 4 · Connecting words"
+    },
+    {
+      "bn": "কারণ",
+      "en": "because",
+      "category": "Class 4 · Connecting words"
+    },
+    {
+      "bn": "তাই",
+      "en": "therefore",
+      "category": "Class 4 · Connecting words"
+    },
+    {
+      "bn": "এজন্য",
+      "en": "for this reason",
+      "category": "Class 4 · Connecting words"
+    },
+    {
+      "bn": "যদি",
+      "en": "if",
+      "category": "Class 4 · Connecting words"
+    },
+    {
+      "bn": "তবে",
+      "en": "then",
+      "category": "Class 4 · Connecting words"
+    },
+    {
+      "bn": "যখন",
+      "en": "when",
+      "category": "Class 4 · Connecting words"
+    },
+    {
+      "bn": "তখন",
+      "en": "then",
+      "category": "Class 4 · Connecting words"
+    },
+    {
+      "bn": "যদিও",
+      "en": "although",
+      "category": "Class 4 · Connecting words"
+    },
+    {
+      "bn": "তবুও",
+      "en": "nevertheless",
+      "category": "Class 4 · Connecting words"
+    },
+    {
+      "bn": "যেহেতু",
+      "en": "since",
+      "category": "Class 4 · Connecting words"
+    },
+    {
+      "bn": "সেহেতু",
+      "en": "therefore",
+      "category": "Class 4 · Connecting words"
+    },
+    {
+      "bn": "এরপর",
+      "en": "next",
+      "category": "Class 4 · Connecting words"
+    },
+    {
+      "bn": "তারপর",
+      "en": "then",
+      "category": "Class 4 · Connecting words"
+    },
+    {
+      "bn": "শেষে",
+      "en": "finally",
+      "category": "Class 4 · Connecting words"
+    },
+    {
+      "bn": "অন্যদিকে",
+      "en": "on the other hand",
+      "category": "Class 4 · Connecting words"
+    },
+    {
+      "bn": "পাশাপাশি",
+      "en": "in addition",
+      "category": "Class 4 · Connecting words"
+    }
+  ],
+  "phrases": [
+    {
+      "bn": "আমি চতুর্থ শ্রেণিতে পড়ি।",
+      "en": "About yourself practice 1",
+      "context": "About yourself",
+      "category": "Class 4 · About yourself"
+    },
+    {
+      "bn": "আমি প্রতিদিন নিয়মিত পড়াশোনা করি।",
+      "en": "About yourself practice 2",
+      "context": "About yourself",
+      "category": "Class 4 · About yourself"
+    },
+    {
+      "bn": "বাংলা আমার অন্যতম প্রিয় বিষয়।",
+      "en": "About yourself practice 3",
+      "context": "About yourself",
+      "category": "Class 4 · About yourself"
+    },
+    {
+      "bn": "আমি গল্প, বিজ্ঞান ও ইতিহাসের বই পড়তে পছন্দ করি।",
+      "en": "About yourself practice 4",
+      "context": "About yourself",
+      "category": "Class 4 · About yourself"
+    },
+    {
+      "bn": "অবসর সময়ে আমি ছবি আঁকি এবং খেলাধুলা করি।",
+      "en": "About yourself practice 5",
+      "context": "About yourself",
+      "category": "Class 4 · About yourself"
+    },
+    {
+      "bn": "আমি বড় হয়ে একজন বিজ্ঞানী হতে চাই।",
+      "en": "About yourself practice 6",
+      "context": "About yourself",
+      "category": "Class 4 · About yourself"
+    },
+    {
+      "bn": "আমি নতুন বিষয় জানতে খুব আগ্রহী।",
+      "en": "About yourself practice 7",
+      "context": "About yourself",
+      "category": "Class 4 · About yourself"
+    },
+    {
+      "bn": "আমি মনে করি নিয়মিত অনুশীলন করলে পড়াশোনায় উন্নতি হয়।",
+      "en": "About yourself practice 8",
+      "context": "About yourself",
+      "category": "Class 4 · About yourself"
+    },
+    {
+      "bn": "আজ আমরা একটি নতুন অধ্যায় শুরু করেছি।",
+      "en": "At school practice 1",
+      "context": "At school",
+      "category": "Class 4 · At school"
+    },
+    {
+      "bn": "শিক্ষক বিষয়টি উদাহরণ দিয়ে বুঝিয়ে দিলেন।",
+      "en": "At school practice 2",
+      "context": "At school",
+      "category": "Class 4 · At school"
+    },
+    {
+      "bn": "আমি প্রশ্নটির উত্তর নিজের ভাষায় লিখেছি।",
+      "en": "At school practice 3",
+      "context": "At school",
+      "category": "Class 4 · At school"
+    },
+    {
+      "bn": "আমি এই অংশটি পুরোপুরি বুঝতে পারিনি।",
+      "en": "At school practice 4",
+      "context": "At school",
+      "category": "Class 4 · At school"
+    },
+    {
+      "bn": "আপনি কি আরেকটি উদাহরণ দিতে পারেন?",
+      "en": "At school practice 5",
+      "context": "At school",
+      "category": "Class 4 · At school"
+    },
+    {
+      "bn": "আমি অভিধান থেকে শব্দটির অর্থ খুঁজে বের করেছি।",
+      "en": "At school practice 6",
+      "context": "At school",
+      "category": "Class 4 · At school"
+    },
+    {
+      "bn": "আমরা দলবদ্ধভাবে প্রকল্পটি সম্পন্ন করেছি।",
+      "en": "At school practice 7",
+      "context": "At school",
+      "category": "Class 4 · At school"
+    },
+    {
+      "bn": "আমি আমার সহপাঠীদের মতামত শুনেছি।",
+      "en": "At school practice 8",
+      "context": "At school",
+      "category": "Class 4 · At school"
+    },
+    {
+      "bn": "আমাদের আগামী সপ্তাহে পরীক্ষা হবে।",
+      "en": "At school practice 9",
+      "context": "At school",
+      "category": "Class 4 · At school"
+    },
+    {
+      "bn": "আমি পরীক্ষার জন্য একটি পড়ার পরিকল্পনা তৈরি করেছি।",
+      "en": "At school practice 10",
+      "context": "At school",
+      "category": "Class 4 · At school"
+    },
+    {
+      "bn": "আমার মতে এই সিদ্ধান্তটি সঠিক।",
+      "en": "Expressing opinions practice 1",
+      "context": "Expressing opinions",
+      "category": "Class 4 · Expressing opinions"
+    },
+    {
+      "bn": "আমি মনে করি আমাদের আরও গাছ লাগানো উচিত।",
+      "en": "Expressing opinions practice 2",
+      "context": "Expressing opinions",
+      "category": "Class 4 · Expressing opinions"
+    },
+    {
+      "bn": "আমার কাছে গল্পটির শেষ অংশটি সবচেয়ে আকর্ষণীয় লেগেছে।",
+      "en": "Expressing opinions practice 3",
+      "context": "Expressing opinions",
+      "category": "Class 4 · Expressing opinions"
+    },
+    {
+      "bn": "আমি এই মতের সঙ্গে একমত নই।",
+      "en": "Expressing opinions practice 4",
+      "context": "Expressing opinions",
+      "category": "Class 4 · Expressing opinions"
+    },
+    {
+      "bn": "আমার ধারণা সমস্যাটির অন্য একটি সমাধানও থাকতে পারে।",
+      "en": "Expressing opinions practice 5",
+      "context": "Expressing opinions",
+      "category": "Class 4 · Expressing opinions"
+    },
+    {
+      "bn": "আমি মনে করি চরিত্রটি সাহসী ছিল কারণ সে বিপদের সময় পালিয়ে যায়নি।",
+      "en": "Expressing opinions practice 6",
+      "context": "Expressing opinions",
+      "category": "Class 4 · Expressing opinions"
+    },
+    {
+      "bn": "গাছ আমাদের জন্য গুরুত্বপূর্ণ কারণ তারা পরিবেশের ভারসাম্য রক্ষা করতে সাহায্য করে।",
+      "en": "Explaining reasons practice 1",
+      "context": "Explaining reasons",
+      "category": "Class 4 · Explaining reasons"
+    },
+    {
+      "bn": "আমি তাড়াতাড়ি ঘুমাতে গিয়েছিলাম কারণ পরের দিন আমার পরীক্ষা ছিল।",
+      "en": "Explaining reasons practice 2",
+      "context": "Explaining reasons",
+      "category": "Class 4 · Explaining reasons"
+    },
+    {
+      "bn": "রাস্তায় পানি জমেছিল কারণ সারারাত বৃষ্টি হয়েছিল।",
+      "en": "Explaining reasons practice 3",
+      "context": "Explaining reasons",
+      "category": "Class 4 · Explaining reasons"
+    },
+    {
+      "bn": "আমি বইটি পছন্দ করেছি কারণ গল্পটি খুব আকর্ষণীয় ছিল।",
+      "en": "Explaining reasons practice 4",
+      "context": "Explaining reasons",
+      "category": "Class 4 · Explaining reasons"
+    },
+    {
+      "bn": "রাহিম দেরি করেছে কারণ তার বাস সময়মতো আসেনি।",
+      "en": "Explaining reasons practice 5",
+      "context": "Explaining reasons",
+      "category": "Class 4 · Explaining reasons"
+    },
+    {
+      "bn": "বন কেটে ফেললে অনেক প্রাণী তাদের বাসস্থান হারায়।",
+      "en": "Cause and result practice 1",
+      "context": "Cause and result",
+      "category": "Class 4 · Cause and result"
+    },
+    {
+      "bn": "নিয়মিত ব্যায়াম করলে শরীর সুস্থ থাকে।",
+      "en": "Cause and result practice 2",
+      "context": "Cause and result",
+      "category": "Class 4 · Cause and result"
+    },
+    {
+      "bn": "অতিরিক্ত বৃষ্টি হওয়ায় নদীর পানি বেড়ে গেছে।",
+      "en": "Cause and result practice 3",
+      "context": "Cause and result",
+      "category": "Class 4 · Cause and result"
+    },
+    {
+      "bn": "সে মনোযোগ দিয়ে পড়াশোনা করেছে, তাই পরীক্ষায় ভালো ফল করেছে।",
+      "en": "Cause and result practice 4",
+      "context": "Cause and result",
+      "category": "Class 4 · Cause and result"
+    },
+    {
+      "bn": "আমরা আবর্জনা যেখানে-সেখানে ফেললে পরিবেশ নোংরা হয়।",
+      "en": "Cause and result practice 5",
+      "context": "Cause and result",
+      "category": "Class 4 · Cause and result"
+    },
+    {
+      "bn": "প্রথমে আমরা পরিকল্পনা তৈরি করলাম।",
+      "en": "Sequence practice 1",
+      "context": "Sequence",
+      "category": "Class 4 · Sequence"
+    },
+    {
+      "bn": "এরপর প্রয়োজনীয় জিনিসপত্র সংগ্রহ করলাম।",
+      "en": "Sequence practice 2",
+      "context": "Sequence",
+      "category": "Class 4 · Sequence"
+    },
+    {
+      "bn": "তারপর সবাই মিলে কাজ শুরু করলাম।",
+      "en": "Sequence practice 3",
+      "context": "Sequence",
+      "category": "Class 4 · Sequence"
+    },
+    {
+      "bn": "কাজের মাঝখানে আমরা কিছু সমস্যা পেলাম।",
+      "en": "Sequence practice 4",
+      "context": "Sequence",
+      "category": "Class 4 · Sequence"
+    },
+    {
+      "bn": "শেষে সমস্যাগুলো সমাধান করে প্রকল্পটি সম্পন্ন করলাম।",
+      "en": "Sequence practice 5",
+      "context": "Sequence",
+      "category": "Class 4 · Sequence"
+    },
+    {
+      "bn": "গত সপ্তাহে আমাদের বিদ্যালয়ে একটি বিজ্ঞান মেলা অনুষ্ঠিত হয়েছিল।",
+      "en": "Past practice 1",
+      "context": "Past",
+      "category": "Class 4 · Past"
+    },
+    {
+      "bn": "আমি এবং আমার বন্ধু একটি ছোট প্রকল্প তৈরি করেছিলাম।",
+      "en": "Past practice 2",
+      "context": "Past",
+      "category": "Class 4 · Past"
+    },
+    {
+      "bn": "আমরা বাতাসের সাহায্যে একটি কাগজের চাকা ঘোরানোর পরীক্ষা দেখিয়েছিলাম।",
+      "en": "Past practice 3",
+      "context": "Past",
+      "category": "Class 4 · Past"
+    },
+    {
+      "bn": "অনেক শিক্ষার্থী আমাদের প্রকল্প দেখতে এসেছিল।",
+      "en": "Past practice 4",
+      "context": "Past",
+      "category": "Class 4 · Past"
+    },
+    {
+      "bn": "শিক্ষক আমাদের কাজের প্রশংসা করেছিলেন।",
+      "en": "Past practice 5",
+      "context": "Past",
+      "category": "Class 4 · Past"
+    },
+    {
+      "bn": "সেদিন আমি নতুন অনেক কিছু শিখেছিলাম।",
+      "en": "Past practice 6",
+      "context": "Past",
+      "category": "Class 4 · Past"
+    },
+    {
+      "bn": "আগামী মাসে আমাদের বিদ্যালয়ে ক্রীড়া প্রতিযোগিতা হবে।",
+      "en": "Future practice 1",
+      "context": "Future",
+      "category": "Class 4 · Future"
+    },
+    {
+      "bn": "আমি দৌড় প্রতিযোগিতায় অংশগ্রহণ করব।",
+      "en": "Future practice 2",
+      "context": "Future",
+      "category": "Class 4 · Future"
+    },
+    {
+      "bn": "আগামী সপ্তাহ থেকে আমি প্রতিদিন অনুশীলন করব।",
+      "en": "Future practice 3",
+      "context": "Future",
+      "category": "Class 4 · Future"
+    },
+    {
+      "bn": "আমার বন্ধু ফুটবল খেলায় অংশ নেবে।",
+      "en": "Future practice 4",
+      "context": "Future",
+      "category": "Class 4 · Future"
+    },
+    {
+      "bn": "আমরা আশা করছি আমাদের শ্রেণি ভালো ফল করবে।",
+      "en": "Future practice 5",
+      "context": "Future",
+      "category": "Class 4 · Future"
+    },
+    {
+      "bn": "শিক্ষার্থীরা মাঠে গাছ লাগাচ্ছে।",
+      "en": "Ongoing actions practice 1",
+      "context": "Ongoing actions",
+      "category": "Class 4 · Ongoing actions"
+    },
+    {
+      "bn": "শিক্ষক নতুন বিষয়টি ব্যাখ্যা করছেন।",
+      "en": "Ongoing actions practice 2",
+      "context": "Ongoing actions",
+      "category": "Class 4 · Ongoing actions"
+    },
+    {
+      "bn": "কয়েকজন শিক্ষার্থী বই পড়ছে।",
+      "en": "Ongoing actions practice 3",
+      "context": "Ongoing actions",
+      "category": "Class 4 · Ongoing actions"
+    },
+    {
+      "bn": "অন্যরা পোস্টার তৈরি করছে।",
+      "en": "Ongoing actions practice 4",
+      "context": "Ongoing actions",
+      "category": "Class 4 · Ongoing actions"
+    },
+    {
+      "bn": "বাইরে হালকা বৃষ্টি পড়ছে।",
+      "en": "Ongoing actions practice 5",
+      "context": "Ongoing actions",
+      "category": "Class 4 · Ongoing actions"
+    },
+    {
+      "bn": "কৃষকরা মাঠে ফসল কাটছেন।",
+      "en": "Ongoing actions practice 6",
+      "context": "Ongoing actions",
+      "category": "Class 4 · Ongoing actions"
+    },
+    {
+      "bn": "শহর গ্রামের তুলনায় বেশি জনবহুল।",
+      "en": "Comparisons practice 1",
+      "context": "Comparisons",
+      "category": "Class 4 · Comparisons"
+    },
+    {
+      "bn": "বিমান ট্রেনের চেয়ে দ্রুত চলে।",
+      "en": "Comparisons practice 2",
+      "context": "Comparisons",
+      "category": "Class 4 · Comparisons"
+    },
+    {
+      "bn": "এই নদীটি পাশের নদীর তুলনায় বেশি প্রশস্ত।",
+      "en": "Comparisons practice 3",
+      "context": "Comparisons",
+      "category": "Class 4 · Comparisons"
+    },
+    {
+      "bn": "আমার নতুন ব্যাগটি পুরোনো ব্যাগের চেয়ে হালকা।",
+      "en": "Comparisons practice 4",
+      "context": "Comparisons",
+      "category": "Class 4 · Comparisons"
+    },
+    {
+      "bn": "শীতকালে দিনের তুলনায় রাত বেশি দীর্ঘ হয়।",
+      "en": "Comparisons practice 5",
+      "context": "Comparisons",
+      "category": "Class 4 · Comparisons"
+    },
+    {
+      "bn": "এই গল্পটি আগের গল্পটির চেয়ে বেশি শিক্ষণীয়।",
+      "en": "Comparisons practice 6",
+      "context": "Comparisons",
+      "category": "Class 4 · Comparisons"
+    },
+    {
+      "bn": "সমস্যা: শ্রেণিকক্ষের মেঝেতে অনেক কাগজ পড়ে আছে।",
+      "en": "Problems and solutions practice 1",
+      "context": "Problems and solutions",
+      "category": "Class 4 · Problems and solutions"
+    },
+    {
+      "bn": "সমাধান: সবাই মিলে কাগজগুলো তুলে ডাস্টবিনে ফেলতে পারে।",
+      "en": "Problems and solutions practice 2",
+      "context": "Problems and solutions",
+      "category": "Class 4 · Problems and solutions"
+    },
+    {
+      "bn": "সমস্যা: একটি গাছের পাতা শুকিয়ে যাচ্ছে।",
+      "en": "Problems and solutions practice 3",
+      "context": "Problems and solutions",
+      "category": "Class 4 · Problems and solutions"
+    },
+    {
+      "bn": "সমাধান: গাছটিকে নিয়মিত পানি দিতে হবে এবং পর্যাপ্ত সূর্যের আলো নিশ্চিত করতে হবে।",
+      "en": "Problems and solutions practice 4",
+      "context": "Problems and solutions",
+      "category": "Class 4 · Problems and solutions"
+    },
+    {
+      "bn": "সমস্যা: একজন শিক্ষার্থী পাঠ বুঝতে পারছে না।",
+      "en": "Problems and solutions practice 5",
+      "context": "Problems and solutions",
+      "category": "Class 4 · Problems and solutions"
+    },
+    {
+      "bn": "সমাধান: সে শিক্ষককে প্রশ্ন করতে পারে অথবা বন্ধুর সাহায্য নিতে পারে।",
+      "en": "Problems and solutions practice 6",
+      "context": "Problems and solutions",
+      "category": "Class 4 · Problems and solutions"
+    },
+    {
+      "bn": "আকাশে কালো মেঘ দেখে মনে হচ্ছে বৃষ্টি হতে পারে।",
+      "en": "Inference practice 1",
+      "context": "Inference",
+      "category": "Class 4 · Inference"
+    },
+    {
+      "bn": "ছেলেটির হাতে ছাতা দেখে মনে হচ্ছে বাইরে বৃষ্টি হচ্ছে।",
+      "en": "Inference practice 2",
+      "context": "Inference",
+      "category": "Class 4 · Inference"
+    },
+    {
+      "bn": "গাছের নিচে অনেক শুকনো পাতা দেখে মনে হচ্ছে শরৎকাল এসেছে।",
+      "en": "Inference practice 3",
+      "context": "Inference",
+      "category": "Class 4 · Inference"
+    },
+    {
+      "bn": "সে খুব দ্রুত হাঁটছে, তাই মনে হচ্ছে তার দেরি হয়ে গেছে।",
+      "en": "Inference practice 4",
+      "context": "Inference",
+      "category": "Class 4 · Inference"
+    },
+    {
+      "bn": "কেন মনে হয় রাহিম দয়ালু?",
+      "en": "Answers with evidence practice 1",
+      "context": "Answers with evidence",
+      "category": "Class 4 · Answers with evidence"
+    },
+    {
+      "bn": "আমার মনে হয় রাহিম দয়ালু, কারণ সে আহত পাখিটিকে বাড়িতে নিয়ে গিয়ে যত্ন করেছিল।",
+      "en": "Answers with evidence practice 2",
+      "context": "Answers with evidence",
+      "category": "Class 4 · Answers with evidence"
+    },
+    {
+      "bn": "কেন বলা যায় মিতা পরিশ্রমী?",
+      "en": "Answers with evidence practice 3",
+      "context": "Answers with evidence",
+      "category": "Class 4 · Answers with evidence"
+    },
+    {
+      "bn": "মিতা প্রতিদিন নিয়মিত পড়াশোনা করে এবং সময়মতো বাড়ির কাজ শেষ করে। তাই বলা যায় সে পরিশ্রমী।",
+      "en": "Answers with evidence practice 4",
+      "context": "Answers with evidence",
+      "category": "Class 4 · Answers with evidence"
+    },
+    {
+      "bn": "সুস্থ থাকতে আমাদের নিয়মিত ব্যায়াম করা উচিত।",
+      "en": "Advice practice 1",
+      "context": "Advice",
+      "category": "Class 4 · Advice"
+    },
+    {
+      "bn": "পানি অপচয় না করে প্রয়োজন অনুযায়ী ব্যবহার করা উচিত।",
+      "en": "Advice practice 2",
+      "context": "Advice",
+      "category": "Class 4 · Advice"
+    },
+    {
+      "bn": "রাস্তা পার হওয়ার আগে দুই দিকে তাকানো উচিত।",
+      "en": "Advice practice 3",
+      "context": "Advice",
+      "category": "Class 4 · Advice"
+    },
+    {
+      "bn": "পরিবেশ পরিষ্কার রাখতে আবর্জনা ডাস্টবিনে ফেলা উচিত।",
+      "en": "Advice practice 4",
+      "context": "Advice",
+      "category": "Class 4 · Advice"
+    },
+    {
+      "bn": "পরীক্ষার আগে প্রতিদিন অল্প অল্প করে পড়া ভালো।",
+      "en": "Advice practice 5",
+      "context": "Advice",
+      "category": "Class 4 · Advice"
+    },
+    {
+      "bn": "যদি আমরা নিয়মিত গাছে পানি দিই, তবে গাছটি ভালোভাবে বেড়ে উঠবে।",
+      "en": "If and then practice 1",
+      "context": "If and then",
+      "category": "Class 4 · If and then"
+    },
+    {
+      "bn": "যদি তুমি মনোযোগ দিয়ে পড়ো, তবে পাঠটি সহজে বুঝতে পারবে।",
+      "en": "If and then practice 2",
+      "context": "If and then",
+      "category": "Class 4 · If and then"
+    },
+    {
+      "bn": "যদি বৃষ্টি বেশি হয়, তবে নদীর পানি বাড়তে পারে।",
+      "en": "If and then practice 3",
+      "context": "If and then",
+      "category": "Class 4 · If and then"
+    },
+    {
+      "bn": "যদি সবাই সহযোগিতা করে, তবে কাজটি দ্রুত শেষ হবে।",
+      "en": "If and then practice 4",
+      "context": "If and then",
+      "category": "Class 4 · If and then"
+    },
+    {
+      "bn": "যদিও আবহাওয়া খুব গরম ছিল, তবুও খেলোয়াড়রা খেলা চালিয়ে গেল।",
+      "en": "Although and nevertheless practice 1",
+      "context": "Although and nevertheless",
+      "category": "Class 4 · Although and nevertheless"
+    },
+    {
+      "bn": "যদিও কাজটি কঠিন মনে হচ্ছিল, তবুও আমরা চেষ্টা ছাড়িনি।",
+      "en": "Although and nevertheless practice 2",
+      "context": "Although and nevertheless",
+      "category": "Class 4 · Although and nevertheless"
+    },
+    {
+      "bn": "যদিও রাহিম ভুল করেছিল, তবুও সে পরে নিজের ভুল স্বীকার করেছে।",
+      "en": "Although and nevertheless practice 3",
+      "context": "Although and nevertheless",
+      "category": "Class 4 · Although and nevertheless"
+    },
+    {
+      "bn": "যদিও পথটি অনেক দীর্ঘ ছিল, তবুও তারা হাঁটা চালিয়ে গেল।",
+      "en": "Although and nevertheless practice 4",
+      "context": "Although and nevertheless",
+      "category": "Class 4 · Although and nevertheless"
+    },
+    {
+      "bn": "যেহেতু আজ বিদ্যালয় বন্ধ, সেহেতু আমি বাড়িতে থাকব।",
+      "en": "Since and therefore practice 1",
+      "context": "Since and therefore",
+      "category": "Class 4 · Since and therefore"
+    },
+    {
+      "bn": "যেহেতু গাছটি পানি পাচ্ছে না, সেহেতু এর পাতা শুকিয়ে যাচ্ছে।",
+      "en": "Since and therefore practice 2",
+      "context": "Since and therefore",
+      "category": "Class 4 · Since and therefore"
+    },
+    {
+      "bn": "যেহেতু সামনে পরীক্ষা আছে, সেহেতু আমাকে নিয়মিত পড়তে হবে।",
+      "en": "Since and therefore practice 3",
+      "context": "Since and therefore",
+      "category": "Class 4 · Since and therefore"
+    },
+    {
+      "bn": "গ্রামে পরিবেশ সাধারণত শান্ত। অন্যদিকে, শহরে মানুষের চলাচল ও যানবাহন বেশি।",
+      "en": "On the other hand practice 1",
+      "context": "On the other hand",
+      "category": "Class 4 · On the other hand"
+    },
+    {
+      "bn": "গ্রীষ্মে দিন অনেক গরম হয়। অন্যদিকে, শীতকালে আবহাওয়া ঠান্ডা থাকে।",
+      "en": "On the other hand practice 2",
+      "context": "On the other hand",
+      "category": "Class 4 · On the other hand"
+    },
+    {
+      "bn": "রিমা গল্পের বই পড়তে পছন্দ করে। অন্যদিকে, তার ভাই খেলাধুলা বেশি পছন্দ করে।",
+      "en": "On the other hand practice 3",
+      "context": "On the other hand",
+      "category": "Class 4 · On the other hand"
+    },
+    {
+      "bn": "সত্য — মিথ্যা",
+      "en": "Opposites practice 1",
+      "context": "Opposites",
+      "category": "Class 4 · Opposites"
+    },
+    {
+      "bn": "সফল — ব্যর্থ",
+      "en": "Opposites practice 2",
+      "context": "Opposites",
+      "category": "Class 4 · Opposites"
+    },
+    {
+      "bn": "সৎ — অসৎ",
+      "en": "Opposites practice 3",
+      "context": "Opposites",
+      "category": "Class 4 · Opposites"
+    },
+    {
+      "bn": "সাহসী — ভীরু",
+      "en": "Opposites practice 4",
+      "context": "Opposites",
+      "category": "Class 4 · Opposites"
+    },
+    {
+      "bn": "দয়ালু — নিষ্ঠুর",
+      "en": "Opposites practice 5",
+      "context": "Opposites",
+      "category": "Class 4 · Opposites"
+    },
+    {
+      "bn": "উদার — স্বার্থপর",
+      "en": "Opposites practice 6",
+      "context": "Opposites",
+      "category": "Class 4 · Opposites"
+    },
+    {
+      "bn": "ভদ্র — অভদ্র",
+      "en": "Opposites practice 7",
+      "context": "Opposites",
+      "category": "Class 4 · Opposites"
+    },
+    {
+      "bn": "শক্তিশালী — দুর্বল",
+      "en": "Opposites practice 8",
+      "context": "Opposites",
+      "category": "Class 4 · Opposites"
+    },
+    {
+      "bn": "নিরাপদ — বিপজ্জনক",
+      "en": "Opposites practice 9",
+      "context": "Opposites",
+      "category": "Class 4 · Opposites"
+    },
+    {
+      "bn": "উপকারী — ক্ষতিকর",
+      "en": "Opposites practice 10",
+      "context": "Opposites",
+      "category": "Class 4 · Opposites"
+    },
+    {
+      "bn": "প্রয়োজনীয় — অপ্রয়োজনীয়",
+      "en": "Opposites practice 11",
+      "context": "Opposites",
+      "category": "Class 4 · Opposites"
+    },
+    {
+      "bn": "সম্পূর্ণ — অসম্পূর্ণ",
+      "en": "Opposites practice 12",
+      "context": "Opposites",
+      "category": "Class 4 · Opposites"
+    },
+    {
+      "bn": "আধুনিক — প্রাচীন",
+      "en": "Opposites practice 13",
+      "context": "Opposites",
+      "category": "Class 4 · Opposites"
+    },
+    {
+      "bn": "সাধারণ — অসাধারণ",
+      "en": "Opposites practice 14",
+      "context": "Opposites",
+      "category": "Class 4 · Opposites"
+    },
+    {
+      "bn": "শান্ত — কোলাহলপূর্ণ",
+      "en": "Opposites practice 15",
+      "context": "Opposites",
+      "category": "Class 4 · Opposites"
+    },
+    {
+      "bn": "স্বাস্থ্যকর — অস্বাস্থ্যকর",
+      "en": "Opposites practice 16",
+      "context": "Opposites",
+      "category": "Class 4 · Opposites"
+    },
+    {
+      "bn": "পরিষ্কার — নোংরা",
+      "en": "Opposites practice 17",
+      "context": "Opposites",
+      "category": "Class 4 · Opposites"
+    },
+    {
+      "bn": "শুকনো — ভেজা",
+      "en": "Opposites practice 18",
+      "context": "Opposites",
+      "category": "Class 4 · Opposites"
+    },
+    {
+      "bn": "গভীর — অগভীর",
+      "en": "Opposites practice 19",
+      "context": "Opposites",
+      "category": "Class 4 · Opposites"
+    },
+    {
+      "bn": "প্রশস্ত — সরু",
+      "en": "Opposites practice 20",
+      "context": "Opposites",
+      "category": "Class 4 · Opposites"
+    },
+    {
+      "bn": "উঁচু — নিচু",
+      "en": "Opposites practice 21",
+      "context": "Opposites",
+      "category": "Class 4 · Opposites"
+    },
+    {
+      "bn": "বেশি — কম",
+      "en": "Opposites practice 22",
+      "context": "Opposites",
+      "category": "Class 4 · Opposites"
+    },
+    {
+      "bn": "লাভ — ক্ষতি",
+      "en": "Opposites practice 23",
+      "context": "Opposites",
+      "category": "Class 4 · Opposites"
+    },
+    {
+      "bn": "গ্রহণ — প্রত্যাখ্যান",
+      "en": "Opposites practice 24",
+      "context": "Opposites",
+      "category": "Class 4 · Opposites"
+    },
+    {
+      "bn": "আশা — হতাশা",
+      "en": "Opposites practice 25",
+      "context": "Opposites",
+      "category": "Class 4 · Opposites"
+    },
+    {
+      "bn": "পানি — জল",
+      "en": "Synonyms practice 1",
+      "context": "Synonyms",
+      "category": "Class 4 · Synonyms"
+    },
+    {
+      "bn": "আকাশ — গগন",
+      "en": "Synonyms practice 2",
+      "context": "Synonyms",
+      "category": "Class 4 · Synonyms"
+    },
+    {
+      "bn": "সূর্য — রবি",
+      "en": "Synonyms practice 3",
+      "context": "Synonyms",
+      "category": "Class 4 · Synonyms"
+    },
+    {
+      "bn": "চাঁদ — চন্দ্র",
+      "en": "Synonyms practice 4",
+      "context": "Synonyms",
+      "category": "Class 4 · Synonyms"
+    },
+    {
+      "bn": "পৃথিবী — ধরণি",
+      "en": "Synonyms practice 5",
+      "context": "Synonyms",
+      "category": "Class 4 · Synonyms"
+    },
+    {
+      "bn": "বন — অরণ্য",
+      "en": "Synonyms practice 6",
+      "context": "Synonyms",
+      "category": "Class 4 · Synonyms"
+    },
+    {
+      "bn": "পথ — রাস্তা",
+      "en": "Synonyms practice 7",
+      "context": "Synonyms",
+      "category": "Class 4 · Synonyms"
+    },
+    {
+      "bn": "গৃহ — বাড়ি",
+      "en": "Synonyms practice 8",
+      "context": "Synonyms",
+      "category": "Class 4 · Synonyms"
+    },
+    {
+      "bn": "বন্ধু — সাথি",
+      "en": "Synonyms practice 9",
+      "context": "Synonyms",
+      "category": "Class 4 · Synonyms"
+    },
+    {
+      "bn": "সুখ — আনন্দ",
+      "en": "Synonyms practice 10",
+      "context": "Synonyms",
+      "category": "Class 4 · Synonyms"
+    },
+    {
+      "bn": "দুঃখ — কষ্ট",
+      "en": "Synonyms practice 11",
+      "context": "Synonyms",
+      "category": "Class 4 · Synonyms"
+    },
+    {
+      "bn": "সাহস — বীরত্ব",
+      "en": "Synonyms practice 12",
+      "context": "Synonyms",
+      "category": "Class 4 · Synonyms"
+    },
+    {
+      "bn": "সাহায্য — সহায়তা",
+      "en": "Synonyms practice 13",
+      "context": "Synonyms",
+      "category": "Class 4 · Synonyms"
+    },
+    {
+      "bn": "শুরু — আরম্ভ",
+      "en": "Synonyms practice 14",
+      "context": "Synonyms",
+      "category": "Class 4 · Synonyms"
+    },
+    {
+      "bn": "শেষ — সমাপ্তি",
+      "en": "Synonyms practice 15",
+      "context": "Synonyms",
+      "category": "Class 4 · Synonyms"
+    },
+    {
+      "bn": "কাজ — কর্ম",
+      "en": "Synonyms practice 16",
+      "context": "Synonyms",
+      "category": "Class 4 · Synonyms"
+    },
+    {
+      "bn": "জ্ঞান — বিদ্যা",
+      "en": "Synonyms practice 17",
+      "context": "Synonyms",
+      "category": "Class 4 · Synonyms"
+    },
+    {
+      "bn": "বাতাস — হাওয়া",
+      "en": "Synonyms practice 18",
+      "context": "Synonyms",
+      "category": "Class 4 · Synonyms"
+    },
+    {
+      "bn": "ফুল — পুষ্প",
+      "en": "Synonyms practice 19",
+      "context": "Synonyms",
+      "category": "Class 4 · Synonyms"
+    },
+    {
+      "bn": "সমুদ্র — সাগর",
+      "en": "Synonyms practice 20",
+      "context": "Synonyms",
+      "category": "Class 4 · Synonyms"
+    },
+    {
+      "bn": "বিদ্যালয় পরিষ্কার রাখা আমাদের সবার দায়িত্ব।",
+      "en": "Words in sentences practice 1",
+      "context": "Words in sentences",
+      "category": "Class 4 · Words in sentences"
+    },
+    {
+      "bn": "পারস্পরিক সহযোগিতার মাধ্যমে কঠিন কাজও সহজ করা যায়।",
+      "en": "Words in sentences practice 2",
+      "context": "Words in sentences",
+      "category": "Class 4 · Words in sentences"
+    },
+    {
+      "bn": "সুস্থ জীবনের জন্য পরিষ্কার পরিবেশ প্রয়োজন।",
+      "en": "Words in sentences practice 3",
+      "context": "Words in sentences",
+      "category": "Class 4 · Words in sentences"
+    },
+    {
+      "bn": "আমাদের পানি ও প্রাকৃতিক সম্পদ সংরক্ষণ করা উচিত।",
+      "en": "Words in sentences practice 4",
+      "context": "Words in sentences",
+      "category": "Class 4 · Words in sentences"
+    },
+    {
+      "bn": "বিজ্ঞান পরীক্ষায় সঠিক পর্যবেক্ষণ খুব গুরুত্বপূর্ণ।",
+      "en": "Words in sentences practice 5",
+      "context": "Words in sentences",
+      "category": "Class 4 · Words in sentences"
+    },
+    {
+      "bn": "অনেক চিন্তা করার পর আমরা একটি সিদ্ধান্ত নিলাম।",
+      "en": "Words in sentences practice 6",
+      "context": "Words in sentences",
+      "category": "Class 4 · Words in sentences"
+    },
+    {
+      "bn": "কাজ শুরু করার আগে একটি ভালো পরিকল্পনা তৈরি করা দরকার।",
+      "en": "Words in sentences practice 7",
+      "context": "Words in sentences",
+      "category": "Class 4 · Words in sentences"
+    },
+    {
+      "bn": "নিয়মিত অনুশীলনের কারণে তার হাতের লেখার উন্নতি হয়েছে।",
+      "en": "Words in sentences practice 8",
+      "context": "Words in sentences",
+      "category": "Class 4 · Words in sentences"
+    },
+    {
+      "bn": "ভ্রমণটি আমার জন্য একটি নতুন অভিজ্ঞতা ছিল।",
+      "en": "Words in sentences practice 9",
+      "context": "Words in sentences",
+      "category": "Class 4 · Words in sentences"
+    },
+    {
+      "bn": "অসুস্থ বন্ধুর প্রতি আমাদের সহানুভূতি দেখানো উচিত।",
+      "en": "Words in sentences practice 10",
+      "context": "Words in sentences",
+      "category": "Class 4 · Words in sentences"
+    },
+    {
+      "bn": "সড়কে চলার সময় নিরাপত্তার নিয়ম মানা জরুরি।",
+      "en": "Words in sentences practice 11",
+      "context": "Words in sentences",
+      "category": "Class 4 · Words in sentences"
+    },
+    {
+      "bn": "নিজের উত্তরের পক্ষে গল্প থেকে প্রমাণ দিতে হবে।",
+      "en": "Words in sentences practice 12",
+      "context": "Words in sentences",
+      "category": "Class 4 · Words in sentences"
+    },
+    {
+      "bn": "প্রাকৃতিক সম্পদ সীমিত, তাই আমাদের সেগুলো যত্নের সঙ্গে ব্যবহার করা উচিত।",
+      "en": "Challenging sentences practice 1",
+      "context": "Challenging sentences",
+      "category": "Class 4 · Challenging sentences"
+    },
+    {
+      "bn": "নিয়মিত অনুশীলন এবং ধৈর্যের মাধ্যমে কঠিন বিষয়ও ধীরে ধীরে সহজ হয়ে যায়।",
+      "en": "Challenging sentences practice 2",
+      "context": "Challenging sentences",
+      "category": "Class 4 · Challenging sentences"
+    },
+    {
+      "bn": "বন ধ্বংস হলে শুধু গাছই হারিয়ে যায় না, অনেক প্রাণীও তাদের বাসস্থান হারায়।",
+      "en": "Challenging sentences practice 3",
+      "context": "Challenging sentences",
+      "category": "Class 4 · Challenging sentences"
+    },
+    {
+      "bn": "কোনো সিদ্ধান্ত নেওয়ার আগে সমস্যার বিভিন্ন দিক বিবেচনা করা ভালো।",
+      "en": "Challenging sentences practice 4",
+      "context": "Challenging sentences",
+      "category": "Class 4 · Challenging sentences"
+    },
+    {
+      "bn": "একজন দায়িত্বশীল নাগরিক নিজের পাশাপাশি অন্য মানুষের নিরাপত্তার কথাও চিন্তা করে।",
+      "en": "Challenging sentences practice 5",
+      "context": "Challenging sentences",
+      "category": "Class 4 · Challenging sentences"
+    },
+    {
+      "bn": "আমরা যদি এখন থেকেই পরিবেশ রক্ষা করি, তবে ভবিষ্যৎ প্রজন্ম একটি সুন্দর পৃথিবী পাবে।",
+      "en": "Challenging sentences practice 6",
+      "context": "Challenging sentences",
+      "category": "Class 4 · Challenging sentences"
+    },
+    {
+      "bn": "পরিবেশ আমাদের জীবনের একটি গুরুত্বপূর্ণ অংশ। আমরা যে বাতাসে শ্বাস নিই, যে পানি পান করি এবং যে মাটিতে ফসল জন্মায়, সবই পরিবেশের অংশ। কিন্তু আবর্জনা, ধোঁয়া এবং অতিরিক্ত গাছ কাটার কারণে পরিবেশ দূষিত হয়। পরিবেশ রক্ষার জন্য আমাদের বেশি করে গাছ লাগাতে হবে, যেখানে-সেখানে ময়লা ফেলা বন্ধ করতে হবে এবং পানি অপচয় করা যাবে না। সবাই সচেতন হলে আমাদের চারপাশ আরও সুন্দর ও স্বাস্থ্যকর হবে।",
+      "en": "Reading passages practice 1",
+      "context": "Reading passages",
+      "category": "Class 4 · Reading passages"
+    },
+    {
+      "bn": "সময় আমাদের জীবনের অত্যন্ত মূল্যবান একটি সম্পদ। হারানো টাকা আবার পাওয়া যেতে পারে, কিন্তু চলে যাওয়া সময় ফিরে আসে না। তাই আমাদের সময়ের সঠিক ব্যবহার করা উচিত। পড়াশোনা, খেলাধুলা, বিশ্রাম এবং পরিবারের সঙ্গে সময় কাটানোর জন্য আলাদা সময় রাখা ভালো। কাজ সময়মতো করলে অযথা চাপ কমে যায়। ছোটবেলা থেকেই সময় মেনে চলার অভ্যাস তৈরি করলে ভবিষ্যতে অনেক উপকার পাওয়া যায়।",
+      "en": "Reading passages practice 2",
+      "context": "Reading passages",
+      "category": "Class 4 · Reading passages"
+    },
+    {
+      "bn": "গত মাসে আমাদের শ্রেণি একটি বিজ্ঞান জাদুঘরে গিয়েছিল। সেখানে আমরা বিভিন্ন ধরনের যন্ত্র, পুরোনো আবিষ্কার এবং মহাকাশ সম্পর্কে অনেক তথ্য দেখেছি। একজন গাইড আমাদের বিভিন্ন প্রদর্শনীর কাজ বুঝিয়ে দিয়েছিলেন। সবচেয়ে বেশি আমার ভালো লেগেছিল সৌরজগতের একটি বড় মডেল। সেখানে সূর্য ও গ্রহগুলোর অবস্থান দেখানো হয়েছিল। এই ভ্রমণটি আনন্দদায়ক হওয়ার পাশাপাশি খুব শিক্ষামূলকও ছিল।",
+      "en": "Reading passages practice 3",
+      "context": "Reading passages",
+      "category": "Class 4 · Reading passages"
+    },
+    {
+      "bn": "একদিন বিদ্যালয় থেকে বাড়ি ফেরার পথে তানিয়া রাস্তার পাশে একটি মানিব্যাগ দেখতে পেল। সে ব্যাগটি খুলে দেখল ভেতরে কিছু টাকা এবং একটি পরিচয়পত্র রয়েছে। তানিয়া টাকা নিজের কাছে না রেখে পরিচয়পত্রের ঠিকানা দেখে তার বাবাকে বিষয়টি জানাল। পরে বাবা-মেয়ের দুজন মিলে মানিব্যাগটি মালিকের কাছে পৌঁছে দিল। মানিব্যাগ ফিরে পেয়ে মালিক খুব খুশি হলেন এবং তানিয়াকে ধন্যবাদ জানালেন।",
+      "en": "Comprehension practice 1",
+      "context": "Comprehension",
+      "category": "Class 4 · Comprehension"
+    },
+    {
+      "bn": "১. তানিয়া কোথায় মানিব্যাগটি পেয়েছিল?",
+      "en": "Comprehension practice 2",
+      "context": "Comprehension",
+      "category": "Class 4 · Comprehension"
+    },
+    {
+      "bn": "২. মানিব্যাগের ভেতরে কী ছিল?",
+      "en": "Comprehension practice 3",
+      "context": "Comprehension",
+      "category": "Class 4 · Comprehension"
+    },
+    {
+      "bn": "৩. তানিয়া কেন টাকা নিজের কাছে রাখেনি?",
+      "en": "Comprehension practice 4",
+      "context": "Comprehension",
+      "category": "Class 4 · Comprehension"
+    },
+    {
+      "bn": "৪. সে কীভাবে মালিককে খুঁজে পেল?",
+      "en": "Comprehension practice 5",
+      "context": "Comprehension",
+      "category": "Class 4 · Comprehension"
+    },
+    {
+      "bn": "৫. গল্পটি থেকে তানিয়ার কোন গুণ বোঝা যায়?",
+      "en": "Comprehension practice 6",
+      "context": "Comprehension",
+      "category": "Class 4 · Comprehension"
+    },
+    {
+      "bn": "৬. তুমি তানিয়ার জায়গায় থাকলে কী করতে?",
+      "en": "Comprehension practice 7",
+      "context": "Comprehension",
+      "category": "Class 4 · Comprehension"
+    },
+    {
+      "bn": "৭. গল্পটির একটি উপযুক্ত শিরোনাম দাও।",
+      "en": "Comprehension practice 8",
+      "context": "Comprehension",
+      "category": "Class 4 · Comprehension"
+    },
+    {
+      "bn": "গাছ আমাদের ছায়া দেয়, ফল দেয় এবং বাতাস পরিষ্কার রাখতে সাহায্য করে। অনেক প্রাণী ও পাখি গাছের ওপর নির্ভর করে বেঁচে থাকে। অতিরিক্ত গাছ কাটা হলে পরিবেশের ক্ষতি হয়। তাই আমাদের গাছ রক্ষা করা এবং নতুন গাছ লাগানো উচিত।",
+      "en": "Main idea practice 1",
+      "context": "Main idea",
+      "category": "Class 4 · Main idea"
+    },
+    {
+      "bn": "মূল ভাব: গাছ আমাদের ও পরিবেশের জন্য অত্যন্ত গুরুত্বপূর্ণ, তাই গাছ রক্ষা করা উচিত।",
+      "en": "Main idea practice 2",
+      "context": "Main idea",
+      "category": "Class 4 · Main idea"
+    },
+    {
+      "bn": "তথ্য: পৃথিবী সূর্যের চারদিকে ঘোরে।",
+      "en": "Fact and opinion practice 1",
+      "context": "Fact and opinion",
+      "category": "Class 4 · Fact and opinion"
+    },
+    {
+      "bn": "মতামত: আমার মতে বর্ষাকাল বছরের সবচেয়ে সুন্দর ঋতু।",
+      "en": "Fact and opinion practice 2",
+      "context": "Fact and opinion",
+      "category": "Class 4 · Fact and opinion"
+    },
+    {
+      "bn": "তথ্য: গাছের বেড়ে ওঠার জন্য পানি প্রয়োজন।",
+      "en": "Fact and opinion practice 3",
+      "context": "Fact and opinion",
+      "category": "Class 4 · Fact and opinion"
+    },
+    {
+      "bn": "মতামত: আমার কাছে আম সবচেয়ে সুস্বাদু ফল।",
+      "en": "Fact and opinion practice 4",
+      "context": "Fact and opinion",
+      "category": "Class 4 · Fact and opinion"
+    },
+    {
+      "bn": "মূল লেখা: রাহিম প্রতিদিন সকালে খুব তাড়াতাড়ি ওঠে। সে কিছুক্ষণ ব্যায়াম করে, তারপর নাশতা খায়। এরপর সে স্কুলে যায়। স্কুল থেকে ফিরে বাড়ির কাজ শেষ করে বিকেলে খেলতে যায়।",
+      "en": "Writing a summary practice 1",
+      "context": "Writing a summary",
+      "category": "Class 4 · Writing a summary"
+    },
+    {
+      "bn": "সারাংশ: রাহিম নিয়ম মেনে দিন কাটায়। সে সকালে ব্যায়াম করে, স্কুলে যায়, বাড়ির কাজ করে এবং বিকেলে খেলাধুলা করে।",
+      "en": "Writing a summary practice 2",
+      "context": "Writing a summary",
+      "category": "Class 4 · Writing a summary"
+    },
+    {
+      "bn": "একটি ভালো অনুচ্ছেদে সাধারণত একটি মূল ভাব, কয়েকটি সহায়ক বাক্য এবং একটি শেষ বাক্য থাকে।",
+      "en": "Paragraph structure practice 1",
+      "context": "Paragraph structure",
+      "category": "Class 4 · Paragraph structure"
+    },
+    {
+      "bn": "আমার প্রিয় ঋতু শীতকাল। শীতকালে আবহাওয়া ঠান্ডা ও আরামদায়ক থাকে। সকালে কুয়াশা দেখা যায় এবং নানা ধরনের শীতের সবজি পাওয়া যায়। এই সময় বাইরে খেলাধুলা করতেও ভালো লাগে। এসব কারণে শীতকাল আমার সবচেয়ে প্রিয় ঋতু।",
+      "en": "Paragraph structure practice 2",
+      "context": "Paragraph structure",
+      "category": "Class 4 · Paragraph structure"
+    },
+    {
+      "bn": "আমি বাড়িতে ছিলাম কারণ বাইরে প্রচণ্ড বৃষ্টি হচ্ছিল।",
+      "en": "Important sentence structures practice 1",
+      "context": "Important sentence structures",
+      "category": "Class 4 · Important sentence structures"
+    },
+    {
+      "bn": "বাইরে প্রচণ্ড বৃষ্টি হচ্ছিল, তাই আমি বাড়িতে ছিলাম।",
+      "en": "Important sentence structures practice 2",
+      "context": "Important sentence structures",
+      "category": "Class 4 · Important sentence structures"
+    },
+    {
+      "bn": "যদি আমরা পানি অপচয় বন্ধ করি, তবে ভবিষ্যতের জন্য পানি সংরক্ষণ করা সম্ভব হবে।",
+      "en": "Important sentence structures practice 3",
+      "context": "Important sentence structures",
+      "category": "Class 4 · Important sentence structures"
+    },
+    {
+      "bn": "যখন আমরা কোনো নতুন বিষয় শিখি, তখন প্রশ্ন করা আমাদের বুঝতে সাহায্য করে।",
+      "en": "Important sentence structures practice 4",
+      "context": "Important sentence structures",
+      "category": "Class 4 · Important sentence structures"
+    },
+    {
+      "bn": "যদিও কাজটি কঠিন ছিল, তবুও সবাই মিলে সেটি সম্পন্ন করল।",
+      "en": "Important sentence structures practice 5",
+      "context": "Important sentence structures",
+      "category": "Class 4 · Important sentence structures"
+    },
+    {
+      "bn": "যেহেতু আমাদের পরীক্ষা সামনে, সেহেতু এখন নিয়মিত পড়াশোনা করা দরকার।",
+      "en": "Important sentence structures practice 6",
+      "context": "Important sentence structures",
+      "category": "Class 4 · Important sentence structures"
+    },
+    {
+      "bn": "একদিকে প্রযুক্তি আমাদের কাজ সহজ করে, অন্যদিকে অতিরিক্ত ব্যবহার সময় নষ্ট করতে পারে।",
+      "en": "Important sentence structures practice 7",
+      "context": "Important sentence structures",
+      "category": "Class 4 · Important sentence structures"
+    },
+    {
+      "bn": "চতুর্থ শ্রেণির একজন শিক্ষার্থীর কয়েক অনুচ্ছেদের গল্প বা তথ্যভিত্তিক লেখা পড়ে মূল বিষয় বুঝতে পারা উচিত।",
+      "en": "End-of-Class 4 skills practice 1",
+      "context": "End-of-Class 4 skills",
+      "category": "Class 4 · End-of-Class 4 skills"
+    },
+    {
+      "bn": "গল্প থেকে সরাসরি উত্তর দেওয়ার পাশাপাশি কিছু উত্তর অনুমান করে বের করতে পারা উচিত।",
+      "en": "End-of-Class 4 skills practice 2",
+      "context": "End-of-Class 4 skills",
+      "category": "Class 4 · End-of-Class 4 skills"
+    },
+    {
+      "bn": "নিজের উত্তরের পক্ষে লেখার ভেতর থেকে কারণ বা প্রমাণ দিতে পারা উচিত।",
+      "en": "End-of-Class 4 skills practice 3",
+      "context": "End-of-Class 4 skills",
+      "category": "Class 4 · End-of-Class 4 skills"
+    },
+    {
+      "bn": "একটি পরিচিত বিষয় নিয়ে প্রায় আট থেকে বারোটি সম্পর্কিত বাক্য লিখতে পারা ভালো।",
+      "en": "End-of-Class 4 skills practice 4",
+      "context": "End-of-Class 4 skills",
+      "category": "Class 4 · End-of-Class 4 skills"
+    },
+    {
+      "bn": "একটি ছোট অনুচ্ছেদের মূল ভাব ও গুরুত্বপূর্ণ তথ্য আলাদা করতে পারা উচিত।",
+      "en": "End-of-Class 4 skills practice 5",
+      "context": "End-of-Class 4 skills",
+      "category": "Class 4 · End-of-Class 4 skills"
+    },
+    {
+      "bn": "ঘটনার কারণ ও ফলাফল ব্যাখ্যা করতে পারা উচিত।",
+      "en": "End-of-Class 4 skills practice 6",
+      "context": "End-of-Class 4 skills",
+      "category": "Class 4 · End-of-Class 4 skills"
+    },
+    {
+      "bn": "দুটি ব্যক্তি, বস্তু, স্থান বা ধারণার মধ্যে মিল ও পার্থক্য বলতে পারা উচিত।",
+      "en": "End-of-Class 4 skills practice 7",
+      "context": "End-of-Class 4 skills",
+      "category": "Class 4 · End-of-Class 4 skills"
+    },
+    {
+      "bn": "তথ্য ও মতামতের মধ্যে পার্থক্য বুঝতে পারা উচিত।",
+      "en": "End-of-Class 4 skills practice 8",
+      "context": "End-of-Class 4 skills",
+      "category": "Class 4 · End-of-Class 4 skills"
+    },
+    {
+      "bn": "ছোট লেখা পড়ে নিজের ভাষায় সংক্ষিপ্ত সারাংশ লিখতে পারা উচিত।",
+      "en": "End-of-Class 4 skills practice 9",
+      "context": "End-of-Class 4 skills",
+      "category": "Class 4 · End-of-Class 4 skills"
+    },
+    {
+      "bn": "কারণ, তাই, যদি, তবে, যদিও, তবুও, যেহেতু, সেহেতু, অন্যদিকে, প্রথমে, এরপর, অবশেষে ইত্যাদি শব্দ ব্যবহার করে আরও পরিণত বাক্য তৈরি করতে পারা উচিত।",
+      "en": "End-of-Class 4 skills practice 10",
+      "context": "End-of-Class 4 skills",
+      "category": "Class 4 · End-of-Class 4 skills"
+    }
+  ],
+  "practice": [
+    {
+      "type": "Evidence",
+      "prompt": "Answer a reading question and support it with evidence from the text.",
+      "answer": "State the answer, then cite the event or detail that proves it."
+    },
+    {
+      "type": "Summary",
+      "prompt": "Identify the main idea and write a short summary in your own words.",
+      "answer": "Keep only the central idea and essential details."
+    },
+    {
+      "type": "Structured writing",
+      "prompt": "Write eight to twelve related sentences with a main idea, supporting sentences, and a closing sentence.",
+      "answer": "Use connectors to show sequence, contrast, cause, and result."
+    }
+  ],
+  "notes": [
+    "Study one category at a time.",
+    "Repeated entries reinforce different academic contexts.",
+    "Practice distinguishing facts from opinions and direct answers from inferences."
+  ]
+}

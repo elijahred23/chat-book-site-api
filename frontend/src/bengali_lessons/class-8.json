@@ -1,0 +1,2708 @@
+{
+  "id": "class-8",
+  "title": "Bengali Class 8: Evidence evaluation, bias, and sustained argument",
+  "topic": "Class 08 · Evidence evaluation, bias, and sustained argument",
+  "summary": "A complete Class 8 curriculum with 428 vocabulary entries and 89 sentences, questions, and passages.",
+  "level": "Class 8",
+  "focus": "Evidence quality, source verification, bias, context, sustainability, literary analysis, and claim-evidence-analysis writing",
+  "vocab": [
+    {
+      "bn": "বিশ্লেষণ",
+      "en": "analysis",
+      "category": "Class 8 · Academic analysis"
+    },
+    {
+      "bn": "মূল্যায়ন",
+      "en": "assessment",
+      "category": "Class 8 · Academic analysis"
+    },
+    {
+      "bn": "যুক্তি",
+      "en": "reasoning",
+      "category": "Class 8 · Academic analysis"
+    },
+    {
+      "bn": "প্রমাণ",
+      "en": "evidence",
+      "category": "Class 8 · Academic analysis"
+    },
+    {
+      "bn": "দৃষ্টিভঙ্গি",
+      "en": "perspective",
+      "category": "Class 8 · Academic analysis"
+    },
+    {
+      "bn": "ব্যাখ্যা",
+      "en": "explanation",
+      "category": "Class 8 · Academic analysis"
+    },
+    {
+      "bn": "তুলনা",
+      "en": "comparison",
+      "category": "Class 8 · Academic analysis"
+    },
+    {
+      "bn": "বৈপরীত্য",
+      "en": "contrast",
+      "category": "Class 8 · Academic analysis"
+    },
+    {
+      "bn": "উপসংহার",
+      "en": "conclusion",
+      "category": "Class 8 · Academic analysis"
+    },
+    {
+      "bn": "সিদ্ধান্ত",
+      "en": "decision",
+      "category": "Class 8 · Academic analysis"
+    },
+    {
+      "bn": "অনুমান",
+      "en": "inference",
+      "category": "Class 8 · Academic analysis"
+    },
+    {
+      "bn": "ধারণা",
+      "en": "idea",
+      "category": "Class 8 · Academic analysis"
+    },
+    {
+      "bn": "পর্যবেক্ষণ",
+      "en": "observation",
+      "category": "Class 8 · Academic analysis"
+    },
+    {
+      "bn": "গবেষণা",
+      "en": "research",
+      "category": "Class 8 · Academic analysis"
+    },
+    {
+      "bn": "নির্ভরযোগ্যতা",
+      "en": "reliability",
+      "category": "Class 8 · Academic analysis"
+    },
+    {
+      "bn": "পক্ষপাত",
+      "en": "bias",
+      "category": "Class 8 · Academic analysis"
+    },
+    {
+      "bn": "উদ্দেশ্য",
+      "en": "purpose",
+      "category": "Class 8 · Academic analysis"
+    },
+    {
+      "bn": "প্রভাব",
+      "en": "effect",
+      "category": "Class 8 · Academic analysis"
+    },
+    {
+      "bn": "কারণ",
+      "en": "because",
+      "category": "Class 8 · Academic analysis"
+    },
+    {
+      "bn": "ফলাফল",
+      "en": "result",
+      "category": "Class 8 · Academic analysis"
+    },
+    {
+      "bn": "সমস্যা",
+      "en": "problem",
+      "category": "Class 8 · Academic analysis"
+    },
+    {
+      "bn": "সমাধান",
+      "en": "solution",
+      "category": "Class 8 · Academic analysis"
+    },
+    {
+      "bn": "সীমাবদ্ধতা",
+      "en": "limitation",
+      "category": "Class 8 · Academic analysis"
+    },
+    {
+      "bn": "সুবিধা",
+      "en": "advantage",
+      "category": "Class 8 · Academic analysis"
+    },
+    {
+      "bn": "অসুবিধা",
+      "en": "disadvantage",
+      "category": "Class 8 · Academic analysis"
+    },
+    {
+      "bn": "বিকল্প",
+      "en": "alternative",
+      "category": "Class 8 · Academic analysis"
+    },
+    {
+      "bn": "পদ্ধতি",
+      "en": "method",
+      "category": "Class 8 · Academic analysis"
+    },
+    {
+      "bn": "কৌশল",
+      "en": "strategy",
+      "category": "Class 8 · Academic analysis"
+    },
+    {
+      "bn": "অগ্রাধিকার",
+      "en": "priority",
+      "category": "Class 8 · Academic analysis"
+    },
+    {
+      "bn": "সম্ভাবনা",
+      "en": "possibility",
+      "category": "Class 8 · Academic analysis"
+    },
+    {
+      "bn": "ঝুঁকি",
+      "en": "risk",
+      "category": "Class 8 · Academic analysis"
+    },
+    {
+      "bn": "প্রবণতা",
+      "en": "trend",
+      "category": "Class 8 · Academic analysis"
+    },
+    {
+      "bn": "প্রেক্ষাপট",
+      "en": "context",
+      "category": "Class 8 · Academic analysis"
+    },
+    {
+      "bn": "অধ্যয়ন",
+      "en": "study",
+      "category": "Class 8 · Education and study"
+    },
+    {
+      "bn": "পাঠ্যক্রম",
+      "en": "curriculum",
+      "category": "Class 8 · Education and study"
+    },
+    {
+      "bn": "বিষয়বস্তু",
+      "en": "content",
+      "category": "Class 8 · Education and study"
+    },
+    {
+      "bn": "অনুধাবন",
+      "en": "comprehension",
+      "category": "Class 8 · Education and study"
+    },
+    {
+      "bn": "বিশ্লেষণ",
+      "en": "analysis",
+      "category": "Class 8 · Education and study"
+    },
+    {
+      "bn": "ব্যাখ্যা",
+      "en": "explanation",
+      "category": "Class 8 · Education and study"
+    },
+    {
+      "bn": "গবেষণা",
+      "en": "research",
+      "category": "Class 8 · Education and study"
+    },
+    {
+      "bn": "তথ্যসংগ্রহ",
+      "en": "data collection",
+      "category": "Class 8 · Education and study"
+    },
+    {
+      "bn": "উৎস",
+      "en": "source",
+      "category": "Class 8 · Education and study"
+    },
+    {
+      "bn": "তথ্যসূত্র",
+      "en": "source",
+      "category": "Class 8 · Education and study"
+    },
+    {
+      "bn": "রেফারেন্স",
+      "en": "reference",
+      "category": "Class 8 · Education and study"
+    },
+    {
+      "bn": "উদ্ধৃতি",
+      "en": "citation",
+      "category": "Class 8 · Education and study"
+    },
+    {
+      "bn": "সারাংশ",
+      "en": "summary",
+      "category": "Class 8 · Education and study"
+    },
+    {
+      "bn": "প্রতিবেদন",
+      "en": "report",
+      "category": "Class 8 · Education and study"
+    },
+    {
+      "bn": "প্রবন্ধ",
+      "en": "essay",
+      "category": "Class 8 · Education and study"
+    },
+    {
+      "bn": "উপস্থাপনা",
+      "en": "presentation",
+      "category": "Class 8 · Education and study"
+    },
+    {
+      "bn": "প্রকল্প",
+      "en": "project",
+      "category": "Class 8 · Education and study"
+    },
+    {
+      "bn": "বিতর্ক",
+      "en": "debate",
+      "category": "Class 8 · Education and study"
+    },
+    {
+      "bn": "আলোচনা",
+      "en": "discussion",
+      "category": "Class 8 · Education and study"
+    },
+    {
+      "bn": "মূল্যায়ন",
+      "en": "assessment",
+      "category": "Class 8 · Education and study"
+    },
+    {
+      "bn": "দক্ষতা",
+      "en": "skill",
+      "category": "Class 8 · Education and study"
+    },
+    {
+      "bn": "জ্ঞান",
+      "en": "knowledge",
+      "category": "Class 8 · Education and study"
+    },
+    {
+      "bn": "ধারণা",
+      "en": "idea",
+      "category": "Class 8 · Education and study"
+    },
+    {
+      "bn": "প্রয়োগ",
+      "en": "application",
+      "category": "Class 8 · Education and study"
+    },
+    {
+      "bn": "পুনর্বিবেচনা",
+      "en": "revision",
+      "category": "Class 8 · Education and study"
+    },
+    {
+      "bn": "সংশোধন",
+      "en": "correction",
+      "category": "Class 8 · Education and study"
+    },
+    {
+      "bn": "বিশেষ্য",
+      "en": "noun",
+      "category": "Class 8 · Bengali grammar"
+    },
+    {
+      "bn": "সর্বনাম",
+      "en": "pronoun",
+      "category": "Class 8 · Bengali grammar"
+    },
+    {
+      "bn": "ক্রিয়া",
+      "en": "verb",
+      "category": "Class 8 · Bengali grammar"
+    },
+    {
+      "bn": "বিশেষণ",
+      "en": "adjective",
+      "category": "Class 8 · Bengali grammar"
+    },
+    {
+      "bn": "ক্রিয়াবিশেষণ",
+      "en": "adverb",
+      "category": "Class 8 · Bengali grammar"
+    },
+    {
+      "bn": "অব্যয়",
+      "en": "indeclinable",
+      "category": "Class 8 · Bengali grammar"
+    },
+    {
+      "bn": "অনুসর্গ",
+      "en": "postposition",
+      "category": "Class 8 · Bengali grammar"
+    },
+    {
+      "bn": "বিভক্তি",
+      "en": "case ending",
+      "category": "Class 8 · Bengali grammar"
+    },
+    {
+      "bn": "উপসর্গ",
+      "en": "symptom",
+      "category": "Class 8 · Bengali grammar"
+    },
+    {
+      "bn": "প্রত্যয়",
+      "en": "suffix",
+      "category": "Class 8 · Bengali grammar"
+    },
+    {
+      "bn": "সন্ধি",
+      "en": "euphonic combination",
+      "category": "Class 8 · Bengali grammar"
+    },
+    {
+      "bn": "সমাস",
+      "en": "compound formation",
+      "category": "Class 8 · Bengali grammar"
+    },
+    {
+      "bn": "ধাতু",
+      "en": "verb root",
+      "category": "Class 8 · Bengali grammar"
+    },
+    {
+      "bn": "কারক",
+      "en": "grammatical case",
+      "category": "Class 8 · Bengali grammar"
+    },
+    {
+      "bn": "কর্তা",
+      "en": "subject",
+      "category": "Class 8 · Bengali grammar"
+    },
+    {
+      "bn": "কর্ম",
+      "en": "object",
+      "category": "Class 8 · Bengali grammar"
+    },
+    {
+      "bn": "কাল",
+      "en": "tense",
+      "category": "Class 8 · Bengali grammar"
+    },
+    {
+      "bn": "পুরুষ",
+      "en": "grammatical person",
+      "category": "Class 8 · Bengali grammar"
+    },
+    {
+      "bn": "বচন",
+      "en": "number",
+      "category": "Class 8 · Bengali grammar"
+    },
+    {
+      "bn": "সরল বাক্য",
+      "en": "simple sentence",
+      "category": "Class 8 · Bengali grammar"
+    },
+    {
+      "bn": "যৌগিক বাক্য",
+      "en": "compound sentence",
+      "category": "Class 8 · Bengali grammar"
+    },
+    {
+      "bn": "জটিল বাক্য",
+      "en": "complex sentence",
+      "category": "Class 8 · Bengali grammar"
+    },
+    {
+      "bn": "সক্রিয় রূপ",
+      "en": "active voice",
+      "category": "Class 8 · Bengali grammar"
+    },
+    {
+      "bn": "নিষ্ক্রিয় রূপ",
+      "en": "passive voice",
+      "category": "Class 8 · Bengali grammar"
+    },
+    {
+      "bn": "বাগধারা",
+      "en": "idiom",
+      "category": "Class 8 · Bengali grammar"
+    },
+    {
+      "bn": "প্রবাদ",
+      "en": "proverb",
+      "category": "Class 8 · Bengali grammar"
+    },
+    {
+      "bn": "অলংকার",
+      "en": "figure of speech",
+      "category": "Class 8 · Bengali grammar"
+    },
+    {
+      "bn": "বাক্যরূপান্তর",
+      "en": "sentence transformation",
+      "category": "Class 8 · Bengali grammar"
+    },
+    {
+      "bn": "সাহিত্য",
+      "en": "literature",
+      "category": "Class 8 · Literary analysis"
+    },
+    {
+      "bn": "কবিতা",
+      "en": "poem",
+      "category": "Class 8 · Literary analysis"
+    },
+    {
+      "bn": "গল্প",
+      "en": "story",
+      "category": "Class 8 · Literary analysis"
+    },
+    {
+      "bn": "উপন্যাস",
+      "en": "novel",
+      "category": "Class 8 · Literary analysis"
+    },
+    {
+      "bn": "নাটক",
+      "en": "drama",
+      "category": "Class 8 · Literary analysis"
+    },
+    {
+      "bn": "প্রবন্ধ",
+      "en": "essay",
+      "category": "Class 8 · Literary analysis"
+    },
+    {
+      "bn": "কাহিনি",
+      "en": "plot",
+      "category": "Class 8 · Literary analysis"
+    },
+    {
+      "bn": "প্লট",
+      "en": "plot",
+      "category": "Class 8 · Literary analysis"
+    },
+    {
+      "bn": "চরিত্রায়ন",
+      "en": "characterization",
+      "category": "Class 8 · Literary analysis"
+    },
+    {
+      "bn": "সংঘাত",
+      "en": "conflict",
+      "category": "Class 8 · Literary analysis"
+    },
+    {
+      "bn": "পটভূমি",
+      "en": "setting",
+      "category": "Class 8 · Literary analysis"
+    },
+    {
+      "bn": "পরিবেশ",
+      "en": "environment",
+      "category": "Class 8 · Literary analysis"
+    },
+    {
+      "bn": "আবহ",
+      "en": "atmosphere",
+      "category": "Class 8 · Literary analysis"
+    },
+    {
+      "bn": "সংলাপ",
+      "en": "dialogue",
+      "category": "Class 8 · Literary analysis"
+    },
+    {
+      "bn": "বর্ণনা",
+      "en": "description",
+      "category": "Class 8 · Literary analysis"
+    },
+    {
+      "bn": "মূলভাব",
+      "en": "main idea",
+      "category": "Class 8 · Literary analysis"
+    },
+    {
+      "bn": "বিষয়বস্তু",
+      "en": "content",
+      "category": "Class 8 · Literary analysis"
+    },
+    {
+      "bn": "বার্তা",
+      "en": "message",
+      "category": "Class 8 · Literary analysis"
+    },
+    {
+      "bn": "প্রতীক",
+      "en": "symbol",
+      "category": "Class 8 · Literary analysis"
+    },
+    {
+      "bn": "উপমা",
+      "en": "simile",
+      "category": "Class 8 · Literary analysis"
+    },
+    {
+      "bn": "রূপক",
+      "en": "metaphor",
+      "category": "Class 8 · Literary analysis"
+    },
+    {
+      "bn": "চিত্রকল্প",
+      "en": "imagery",
+      "category": "Class 8 · Literary analysis"
+    },
+    {
+      "bn": "ব্যঙ্গ",
+      "en": "satire",
+      "category": "Class 8 · Literary analysis"
+    },
+    {
+      "bn": "বিদ্রূপ",
+      "en": "irony",
+      "category": "Class 8 · Literary analysis"
+    },
+    {
+      "bn": "দৃষ্টিকোণ",
+      "en": "point of view",
+      "category": "Class 8 · Literary analysis"
+    },
+    {
+      "bn": "সুর",
+      "en": "tone",
+      "category": "Class 8 · Literary analysis"
+    },
+    {
+      "bn": "লেখকের উদ্দেশ্য",
+      "en": "author's purpose",
+      "category": "Class 8 · Literary analysis"
+    },
+    {
+      "bn": "চরিত্রের বিকাশ",
+      "en": "character development",
+      "category": "Class 8 · Literary analysis"
+    },
+    {
+      "bn": "সমাজ",
+      "en": "society",
+      "category": "Class 8 · Society and citizenship"
+    },
+    {
+      "bn": "নাগরিক",
+      "en": "citizen",
+      "category": "Class 8 · Society and citizenship"
+    },
+    {
+      "bn": "রাষ্ট্র",
+      "en": "state",
+      "category": "Class 8 · Society and citizenship"
+    },
+    {
+      "bn": "সরকার",
+      "en": "government",
+      "category": "Class 8 · Society and citizenship"
+    },
+    {
+      "bn": "প্রশাসন",
+      "en": "administration",
+      "category": "Class 8 · Society and citizenship"
+    },
+    {
+      "bn": "সংবিধান",
+      "en": "constitution",
+      "category": "Class 8 · Society and citizenship"
+    },
+    {
+      "bn": "আইন",
+      "en": "law",
+      "category": "Class 8 · Society and citizenship"
+    },
+    {
+      "bn": "অধিকার",
+      "en": "right",
+      "category": "Class 8 · Society and citizenship"
+    },
+    {
+      "bn": "দায়িত্ব",
+      "en": "responsibility",
+      "category": "Class 8 · Society and citizenship"
+    },
+    {
+      "bn": "কর্তব্য",
+      "en": "duty",
+      "category": "Class 8 · Society and citizenship"
+    },
+    {
+      "bn": "ন্যায়বিচার",
+      "en": "justice",
+      "category": "Class 8 · Society and citizenship"
+    },
+    {
+      "bn": "বৈষম্য",
+      "en": "inequality",
+      "category": "Class 8 · Society and citizenship"
+    },
+    {
+      "bn": "সমতা",
+      "en": "equality",
+      "category": "Class 8 · Society and citizenship"
+    },
+    {
+      "bn": "স্বাধীনতা",
+      "en": "independence",
+      "category": "Class 8 · Society and citizenship"
+    },
+    {
+      "bn": "নিরাপত্তা",
+      "en": "safety",
+      "category": "Class 8 · Society and citizenship"
+    },
+    {
+      "bn": "জনসেবা",
+      "en": "public service",
+      "category": "Class 8 · Society and citizenship"
+    },
+    {
+      "bn": "নির্বাচন",
+      "en": "election",
+      "category": "Class 8 · Society and citizenship"
+    },
+    {
+      "bn": "গণতন্ত্র",
+      "en": "democracy",
+      "category": "Class 8 · Society and citizenship"
+    },
+    {
+      "bn": "নেতৃত্ব",
+      "en": "leadership",
+      "category": "Class 8 · Society and citizenship"
+    },
+    {
+      "bn": "জনমত",
+      "en": "public opinion",
+      "category": "Class 8 · Society and citizenship"
+    },
+    {
+      "bn": "নাগরিক অংশগ্রহণ",
+      "en": "civic participation",
+      "category": "Class 8 · Society and citizenship"
+    },
+    {
+      "bn": "সামাজিক সমস্যা",
+      "en": "social issue",
+      "category": "Class 8 · Society and citizenship"
+    },
+    {
+      "bn": "সম্প্রদায়",
+      "en": "community",
+      "category": "Class 8 · Society and citizenship"
+    },
+    {
+      "bn": "সংস্কার",
+      "en": "reform",
+      "category": "Class 8 · Society and citizenship"
+    },
+    {
+      "bn": "সচেতনতা",
+      "en": "awareness",
+      "category": "Class 8 · Society and citizenship"
+    },
+    {
+      "bn": "ইতিহাস",
+      "en": "history",
+      "category": "Class 8 · History and politics"
+    },
+    {
+      "bn": "ঐতিহাসিক",
+      "en": "historical",
+      "category": "Class 8 · History and politics"
+    },
+    {
+      "bn": "সভ্যতা",
+      "en": "civilization",
+      "category": "Class 8 · History and politics"
+    },
+    {
+      "bn": "সাম্রাজ্য",
+      "en": "empire",
+      "category": "Class 8 · History and politics"
+    },
+    {
+      "bn": "শাসন",
+      "en": "rule",
+      "category": "Class 8 · History and politics"
+    },
+    {
+      "bn": "উপনিবেশ",
+      "en": "colony",
+      "category": "Class 8 · History and politics"
+    },
+    {
+      "bn": "স্বাধীনতা",
+      "en": "independence",
+      "category": "Class 8 · History and politics"
+    },
+    {
+      "bn": "আন্দোলন",
+      "en": "movement",
+      "category": "Class 8 · History and politics"
+    },
+    {
+      "bn": "সংগ্রাম",
+      "en": "struggle",
+      "category": "Class 8 · History and politics"
+    },
+    {
+      "bn": "বিপ্লব",
+      "en": "revolution",
+      "category": "Class 8 · History and politics"
+    },
+    {
+      "bn": "যুদ্ধ",
+      "en": "war",
+      "category": "Class 8 · History and politics"
+    },
+    {
+      "bn": "চুক্তি",
+      "en": "treaty",
+      "category": "Class 8 · History and politics"
+    },
+    {
+      "bn": "বিজয়",
+      "en": "victory",
+      "category": "Class 8 · History and politics"
+    },
+    {
+      "bn": "পরাজয়",
+      "en": "defeat",
+      "category": "Class 8 · History and politics"
+    },
+    {
+      "bn": "সংস্কার",
+      "en": "reform",
+      "category": "Class 8 · History and politics"
+    },
+    {
+      "bn": "জাতীয়তাবাদ",
+      "en": "nationalism",
+      "category": "Class 8 · History and politics"
+    },
+    {
+      "bn": "ঐতিহ্য",
+      "en": "heritage",
+      "category": "Class 8 · History and politics"
+    },
+    {
+      "bn": "উত্তরাধিকার",
+      "en": "legacy",
+      "category": "Class 8 · History and politics"
+    },
+    {
+      "bn": "রাজনৈতিক পরিবর্তন",
+      "en": "political change",
+      "category": "Class 8 · History and politics"
+    },
+    {
+      "bn": "ক্ষমতা",
+      "en": "power",
+      "category": "Class 8 · History and politics"
+    },
+    {
+      "bn": "নেতৃত্ব",
+      "en": "leadership",
+      "category": "Class 8 · History and politics"
+    },
+    {
+      "bn": "ভূগোল",
+      "en": "geography",
+      "category": "Class 8 · Geography"
+    },
+    {
+      "bn": "ভূপ্রকৃতি",
+      "en": "landform",
+      "category": "Class 8 · Geography"
+    },
+    {
+      "bn": "অক্ষাংশ",
+      "en": "latitude",
+      "category": "Class 8 · Geography"
+    },
+    {
+      "bn": "দ্রাঘিমাংশ",
+      "en": "longitude",
+      "category": "Class 8 · Geography"
+    },
+    {
+      "bn": "মানচিত্র",
+      "en": "map",
+      "category": "Class 8 · Geography"
+    },
+    {
+      "bn": "স্কেল",
+      "en": "scale",
+      "category": "Class 8 · Geography"
+    },
+    {
+      "bn": "পর্বত",
+      "en": "mountain",
+      "category": "Class 8 · Geography"
+    },
+    {
+      "bn": "উপত্যকা",
+      "en": "valley",
+      "category": "Class 8 · Geography"
+    },
+    {
+      "bn": "সমভূমি",
+      "en": "plain",
+      "category": "Class 8 · Geography"
+    },
+    {
+      "bn": "মালভূমি",
+      "en": "plateau",
+      "category": "Class 8 · Geography"
+    },
+    {
+      "bn": "মরুভূমি",
+      "en": "desert",
+      "category": "Class 8 · Geography"
+    },
+    {
+      "bn": "নদী",
+      "en": "river",
+      "category": "Class 8 · Geography"
+    },
+    {
+      "bn": "বদ্বীপ",
+      "en": "delta",
+      "category": "Class 8 · Geography"
+    },
+    {
+      "bn": "উপকূল",
+      "en": "coast",
+      "category": "Class 8 · Geography"
+    },
+    {
+      "bn": "দ্বীপ",
+      "en": "island",
+      "category": "Class 8 · Geography"
+    },
+    {
+      "bn": "মহাদেশ",
+      "en": "continent",
+      "category": "Class 8 · Geography"
+    },
+    {
+      "bn": "মহাসাগর",
+      "en": "ocean",
+      "category": "Class 8 · Geography"
+    },
+    {
+      "bn": "জলবায়ু",
+      "en": "climate",
+      "category": "Class 8 · Geography"
+    },
+    {
+      "bn": "আবহাওয়া",
+      "en": "weather",
+      "category": "Class 8 · Geography"
+    },
+    {
+      "bn": "জনসংখ্যা",
+      "en": "population",
+      "category": "Class 8 · Geography"
+    },
+    {
+      "bn": "জনঘনত্ব",
+      "en": "population density",
+      "category": "Class 8 · Geography"
+    },
+    {
+      "bn": "নগরায়ণ",
+      "en": "urbanization",
+      "category": "Class 8 · Geography"
+    },
+    {
+      "bn": "অভিবাসন",
+      "en": "migration",
+      "category": "Class 8 · Geography"
+    },
+    {
+      "bn": "প্রাকৃতিক সম্পদ",
+      "en": "natural resources",
+      "category": "Class 8 · Geography"
+    },
+    {
+      "bn": "পরিবেশ",
+      "en": "environment",
+      "category": "Class 8 · Environment and climate"
+    },
+    {
+      "bn": "বাস্তুতন্ত্র",
+      "en": "ecosystem",
+      "category": "Class 8 · Environment and climate"
+    },
+    {
+      "bn": "জীববৈচিত্র্য",
+      "en": "biodiversity",
+      "category": "Class 8 · Environment and climate"
+    },
+    {
+      "bn": "জলবায়ু পরিবর্তন",
+      "en": "climate change",
+      "category": "Class 8 · Environment and climate"
+    },
+    {
+      "bn": "বৈশ্বিক উষ্ণায়ন",
+      "en": "global warming",
+      "category": "Class 8 · Environment and climate"
+    },
+    {
+      "bn": "কার্বন নিঃসরণ",
+      "en": "carbon emissions",
+      "category": "Class 8 · Environment and climate"
+    },
+    {
+      "bn": "দূষণ",
+      "en": "pollution",
+      "category": "Class 8 · Environment and climate"
+    },
+    {
+      "bn": "বন উজাড়",
+      "en": "deforestation",
+      "category": "Class 8 · Environment and climate"
+    },
+    {
+      "bn": "মাটিক্ষয়",
+      "en": "soil erosion",
+      "category": "Class 8 · Environment and climate"
+    },
+    {
+      "bn": "খরা",
+      "en": "drought",
+      "category": "Class 8 · Environment and climate"
+    },
+    {
+      "bn": "বন্যা",
+      "en": "flood",
+      "category": "Class 8 · Environment and climate"
+    },
+    {
+      "bn": "পুনর্ব্যবহার",
+      "en": "recycling",
+      "category": "Class 8 · Environment and climate"
+    },
+    {
+      "bn": "সংরক্ষণ",
+      "en": "conservation",
+      "category": "Class 8 · Environment and climate"
+    },
+    {
+      "bn": "নবায়নযোগ্য শক্তি",
+      "en": "renewable energy",
+      "category": "Class 8 · Environment and climate"
+    },
+    {
+      "bn": "জীবাশ্ম জ্বালানি",
+      "en": "fossil fuel",
+      "category": "Class 8 · Environment and climate"
+    },
+    {
+      "bn": "প্রাকৃতিক সম্পদ",
+      "en": "natural resources",
+      "category": "Class 8 · Environment and climate"
+    },
+    {
+      "bn": "পরিবেশের ভারসাম্য",
+      "en": "ecological balance",
+      "category": "Class 8 · Environment and climate"
+    },
+    {
+      "bn": "টেকসই উন্নয়ন",
+      "en": "sustainable development",
+      "category": "Class 8 · Environment and climate"
+    },
+    {
+      "bn": "বিজ্ঞান",
+      "en": "science",
+      "category": "Class 8 · Science"
+    },
+    {
+      "bn": "পর্যবেক্ষণ",
+      "en": "observation",
+      "category": "Class 8 · Science"
+    },
+    {
+      "bn": "পরীক্ষা",
+      "en": "exam",
+      "category": "Class 8 · Science"
+    },
+    {
+      "bn": "অনুমান",
+      "en": "inference",
+      "category": "Class 8 · Science"
+    },
+    {
+      "bn": "তত্ত্ব",
+      "en": "theory",
+      "category": "Class 8 · Science"
+    },
+    {
+      "bn": "সূত্র",
+      "en": "formula",
+      "category": "Class 8 · Science"
+    },
+    {
+      "bn": "প্রমাণ",
+      "en": "evidence",
+      "category": "Class 8 · Science"
+    },
+    {
+      "bn": "চলক",
+      "en": "variable",
+      "category": "Class 8 · Science"
+    },
+    {
+      "bn": "ফলাফল",
+      "en": "result",
+      "category": "Class 8 · Science"
+    },
+    {
+      "bn": "উপসংহার",
+      "en": "conclusion",
+      "category": "Class 8 · Science"
+    },
+    {
+      "bn": "পরমাণু",
+      "en": "atom",
+      "category": "Class 8 · Science"
+    },
+    {
+      "bn": "অণু",
+      "en": "molecule",
+      "category": "Class 8 · Science"
+    },
+    {
+      "bn": "উপাদান",
+      "en": "element",
+      "category": "Class 8 · Science"
+    },
+    {
+      "bn": "যৌগ",
+      "en": "compound",
+      "category": "Class 8 · Science"
+    },
+    {
+      "bn": "পদার্থ",
+      "en": "matter",
+      "category": "Class 8 · Science"
+    },
+    {
+      "bn": "শক্তি",
+      "en": "strength",
+      "category": "Class 8 · Science"
+    },
+    {
+      "bn": "বল",
+      "en": "force",
+      "category": "Class 8 · Science"
+    },
+    {
+      "bn": "গতি",
+      "en": "motion",
+      "category": "Class 8 · Science"
+    },
+    {
+      "bn": "ঘর্ষণ",
+      "en": "friction",
+      "category": "Class 8 · Science"
+    },
+    {
+      "bn": "চাপ",
+      "en": "pressure",
+      "category": "Class 8 · Science"
+    },
+    {
+      "bn": "তাপ",
+      "en": "heat",
+      "category": "Class 8 · Science"
+    },
+    {
+      "bn": "আলো",
+      "en": "light",
+      "category": "Class 8 · Science"
+    },
+    {
+      "bn": "শব্দ",
+      "en": "word",
+      "category": "Class 8 · Science"
+    },
+    {
+      "bn": "বিদ্যুৎ",
+      "en": "electricity",
+      "category": "Class 8 · Science"
+    },
+    {
+      "bn": "চুম্বকত্ব",
+      "en": "magnetism",
+      "category": "Class 8 · Science"
+    },
+    {
+      "bn": "রাসায়নিক বিক্রিয়া",
+      "en": "chemical reaction",
+      "category": "Class 8 · Science"
+    },
+    {
+      "bn": "কোষ",
+      "en": "cell",
+      "category": "Class 8 · Biology"
+    },
+    {
+      "bn": "টিস্যু",
+      "en": "tissue",
+      "category": "Class 8 · Biology"
+    },
+    {
+      "bn": "অঙ্গ",
+      "en": "organ",
+      "category": "Class 8 · Biology"
+    },
+    {
+      "bn": "অঙ্গতন্ত্র",
+      "en": "organ system",
+      "category": "Class 8 · Biology"
+    },
+    {
+      "bn": "শ্বাসপ্রশ্বাস",
+      "en": "respiration",
+      "category": "Class 8 · Biology"
+    },
+    {
+      "bn": "পরিপাক",
+      "en": "digestion",
+      "category": "Class 8 · Biology"
+    },
+    {
+      "bn": "রক্তসঞ্চালন",
+      "en": "circulation",
+      "category": "Class 8 · Biology"
+    },
+    {
+      "bn": "স্নায়ুতন্ত্র",
+      "en": "nervous system",
+      "category": "Class 8 · Biology"
+    },
+    {
+      "bn": "প্রজনন",
+      "en": "reproduction",
+      "category": "Class 8 · Biology"
+    },
+    {
+      "bn": "বংশগতি",
+      "en": "heredity",
+      "category": "Class 8 · Biology"
+    },
+    {
+      "bn": "অভিযোজন",
+      "en": "adaptation",
+      "category": "Class 8 · Biology"
+    },
+    {
+      "bn": "বিবর্তন",
+      "en": "evolution",
+      "category": "Class 8 · Biology"
+    },
+    {
+      "bn": "বাসস্থান",
+      "en": "habitat",
+      "category": "Class 8 · Biology"
+    },
+    {
+      "bn": "খাদ্যশৃঙ্খল",
+      "en": "food chain",
+      "category": "Class 8 · Biology"
+    },
+    {
+      "bn": "খাদ্যজাল",
+      "en": "food web",
+      "category": "Class 8 · Biology"
+    },
+    {
+      "bn": "উৎপাদক",
+      "en": "producer",
+      "category": "Class 8 · Biology"
+    },
+    {
+      "bn": "ভোক্তা",
+      "en": "consumer",
+      "category": "Class 8 · Biology"
+    },
+    {
+      "bn": "পচনকারী",
+      "en": "decomposer",
+      "category": "Class 8 · Biology"
+    },
+    {
+      "bn": "জীবচক্র",
+      "en": "life cycle",
+      "category": "Class 8 · Biology"
+    },
+    {
+      "bn": "প্রজাতি",
+      "en": "species",
+      "category": "Class 8 · Biology"
+    },
+    {
+      "bn": "জীববৈচিত্র্য",
+      "en": "biodiversity",
+      "category": "Class 8 · Biology"
+    },
+    {
+      "bn": "প্রযুক্তি",
+      "en": "technology",
+      "category": "Class 8 · Technology and digital life"
+    },
+    {
+      "bn": "সফটওয়্যার",
+      "en": "software",
+      "category": "Class 8 · Technology and digital life"
+    },
+    {
+      "bn": "হার্ডওয়্যার",
+      "en": "hardware",
+      "category": "Class 8 · Technology and digital life"
+    },
+    {
+      "bn": "ইন্টারনেট",
+      "en": "internet",
+      "category": "Class 8 · Technology and digital life"
+    },
+    {
+      "bn": "নেটওয়ার্ক",
+      "en": "network",
+      "category": "Class 8 · Technology and digital life"
+    },
+    {
+      "bn": "ডেটা",
+      "en": "data",
+      "category": "Class 8 · Technology and digital life"
+    },
+    {
+      "bn": "অ্যালগরিদম",
+      "en": "algorithm",
+      "category": "Class 8 · Technology and digital life"
+    },
+    {
+      "bn": "প্রোগ্রামিং",
+      "en": "programming",
+      "category": "Class 8 · Technology and digital life"
+    },
+    {
+      "bn": "কৃত্রিম বুদ্ধিমত্তা",
+      "en": "artificial intelligence",
+      "category": "Class 8 · Technology and digital life"
+    },
+    {
+      "bn": "ডিজিটাল নিরাপত্তা",
+      "en": "digital security",
+      "category": "Class 8 · Technology and digital life"
+    },
+    {
+      "bn": "সাইবার নিরাপত্তা",
+      "en": "cybersecurity",
+      "category": "Class 8 · Technology and digital life"
+    },
+    {
+      "bn": "গোপনীয়তা",
+      "en": "privacy",
+      "category": "Class 8 · Technology and digital life"
+    },
+    {
+      "bn": "তথ্য যাচাই",
+      "en": "fact-checking",
+      "category": "Class 8 · Technology and digital life"
+    },
+    {
+      "bn": "ভুয়া তথ্য",
+      "en": "misinformation",
+      "category": "Class 8 · Technology and digital life"
+    },
+    {
+      "bn": "সামাজিক যোগাযোগমাধ্যম",
+      "en": "social media",
+      "category": "Class 8 · Technology and digital life"
+    },
+    {
+      "bn": "ডিজিটাল পদচিহ্ন",
+      "en": "digital footprint",
+      "category": "Class 8 · Technology and digital life"
+    },
+    {
+      "bn": "প্রযুক্তিনির্ভরতা",
+      "en": "technology dependence",
+      "category": "Class 8 · Technology and digital life"
+    },
+    {
+      "bn": "অর্থনীতি",
+      "en": "economy",
+      "category": "Class 8 · Economics"
+    },
+    {
+      "bn": "আয়",
+      "en": "income",
+      "category": "Class 8 · Economics"
+    },
+    {
+      "bn": "ব্যয়",
+      "en": "expense",
+      "category": "Class 8 · Economics"
+    },
+    {
+      "bn": "সঞ্চয়",
+      "en": "savings",
+      "category": "Class 8 · Economics"
+    },
+    {
+      "bn": "বাজেট",
+      "en": "budget",
+      "category": "Class 8 · Economics"
+    },
+    {
+      "bn": "বিনিয়োগ",
+      "en": "investment",
+      "category": "Class 8 · Economics"
+    },
+    {
+      "bn": "মুদ্রা",
+      "en": "currency",
+      "category": "Class 8 · Economics"
+    },
+    {
+      "bn": "মূল্যস্ফীতি",
+      "en": "inflation",
+      "category": "Class 8 · Economics"
+    },
+    {
+      "bn": "বাজার",
+      "en": "market",
+      "category": "Class 8 · Economics"
+    },
+    {
+      "bn": "পণ্য",
+      "en": "product",
+      "category": "Class 8 · Economics"
+    },
+    {
+      "bn": "সেবা",
+      "en": "service",
+      "category": "Class 8 · Economics"
+    },
+    {
+      "bn": "চাহিদা",
+      "en": "demand",
+      "category": "Class 8 · Economics"
+    },
+    {
+      "bn": "সরবরাহ",
+      "en": "supply",
+      "category": "Class 8 · Economics"
+    },
+    {
+      "bn": "উৎপাদন",
+      "en": "production",
+      "category": "Class 8 · Economics"
+    },
+    {
+      "bn": "ভোক্তা",
+      "en": "consumer",
+      "category": "Class 8 · Economics"
+    },
+    {
+      "bn": "ব্যবসা",
+      "en": "business",
+      "category": "Class 8 · Economics"
+    },
+    {
+      "bn": "লাভ",
+      "en": "profit",
+      "category": "Class 8 · Economics"
+    },
+    {
+      "bn": "ক্ষতি",
+      "en": "loss",
+      "category": "Class 8 · Economics"
+    },
+    {
+      "bn": "সম্পদ",
+      "en": "resource",
+      "category": "Class 8 · Economics"
+    },
+    {
+      "bn": "কর্মসংস্থান",
+      "en": "employment",
+      "category": "Class 8 · Economics"
+    },
+    {
+      "bn": "বেকারত্ব",
+      "en": "unemployment",
+      "category": "Class 8 · Economics"
+    },
+    {
+      "bn": "অর্থনৈতিক উন্নয়ন",
+      "en": "economic development",
+      "category": "Class 8 · Economics"
+    },
+    {
+      "bn": "স্বাস্থ্য",
+      "en": "health",
+      "category": "Class 8 · Health and the body"
+    },
+    {
+      "bn": "রোগ",
+      "en": "disease",
+      "category": "Class 8 · Health and the body"
+    },
+    {
+      "bn": "সংক্রমণ",
+      "en": "infection",
+      "category": "Class 8 · Health and the body"
+    },
+    {
+      "bn": "রোগপ্রতিরোধ",
+      "en": "immunity",
+      "category": "Class 8 · Health and the body"
+    },
+    {
+      "bn": "টিকা",
+      "en": "vaccine",
+      "category": "Class 8 · Health and the body"
+    },
+    {
+      "bn": "চিকিৎসা",
+      "en": "treatment",
+      "category": "Class 8 · Health and the body"
+    },
+    {
+      "bn": "উপসর্গ",
+      "en": "symptom",
+      "category": "Class 8 · Health and the body"
+    },
+    {
+      "bn": "রোগনির্ণয়",
+      "en": "diagnosis",
+      "category": "Class 8 · Health and the body"
+    },
+    {
+      "bn": "স্বাস্থ্যবিধি",
+      "en": "hygiene",
+      "category": "Class 8 · Health and the body"
+    },
+    {
+      "bn": "সুষম খাদ্য",
+      "en": "balanced diet",
+      "category": "Class 8 · Health and the body"
+    },
+    {
+      "bn": "পুষ্টি",
+      "en": "nutrition",
+      "category": "Class 8 · Health and the body"
+    },
+    {
+      "bn": "মানসিক স্বাস্থ্য",
+      "en": "mental health",
+      "category": "Class 8 · Health and the body"
+    },
+    {
+      "bn": "শারীরিক স্বাস্থ্য",
+      "en": "physical health",
+      "category": "Class 8 · Health and the body"
+    },
+    {
+      "bn": "ব্যায়াম",
+      "en": "exercise",
+      "category": "Class 8 · Health and the body"
+    },
+    {
+      "bn": "বিশ্রাম",
+      "en": "rest",
+      "category": "Class 8 · Health and the body"
+    },
+    {
+      "bn": "মানসিক চাপ",
+      "en": "mental stress",
+      "category": "Class 8 · Health and the body"
+    },
+    {
+      "bn": "প্রতিরোধ",
+      "en": "prevention",
+      "category": "Class 8 · Health and the body"
+    },
+    {
+      "bn": "সচেতনতা",
+      "en": "awareness",
+      "category": "Class 8 · Health and the body"
+    },
+    {
+      "bn": "আত্মবিশ্বাস",
+      "en": "confidence",
+      "category": "Class 8 · Feelings"
+    },
+    {
+      "bn": "অনিশ্চয়তা",
+      "en": "uncertainty",
+      "category": "Class 8 · Feelings"
+    },
+    {
+      "bn": "উদ্বেগ",
+      "en": "anxiety",
+      "category": "Class 8 · Feelings"
+    },
+    {
+      "bn": "হতাশা",
+      "en": "despair",
+      "category": "Class 8 · Feelings"
+    },
+    {
+      "bn": "আশাবাদ",
+      "en": "optimism",
+      "category": "Class 8 · Feelings"
+    },
+    {
+      "bn": "অনুতাপ",
+      "en": "regret",
+      "category": "Class 8 · Feelings"
+    },
+    {
+      "bn": "সহানুভূতি",
+      "en": "empathy",
+      "category": "Class 8 · Feelings"
+    },
+    {
+      "bn": "সহমর্মিতা",
+      "en": "compassion",
+      "category": "Class 8 · Feelings"
+    },
+    {
+      "bn": "দ্বিধা",
+      "en": "hesitation",
+      "category": "Class 8 · Feelings"
+    },
+    {
+      "bn": "সংকোচ",
+      "en": "inhibition",
+      "category": "Class 8 · Feelings"
+    },
+    {
+      "bn": "উত্তেজনা",
+      "en": "excitement",
+      "category": "Class 8 · Feelings"
+    },
+    {
+      "bn": "গর্ব",
+      "en": "pride",
+      "category": "Class 8 · Feelings"
+    },
+    {
+      "bn": "কৃতজ্ঞতা",
+      "en": "gratitude",
+      "category": "Class 8 · Feelings"
+    },
+    {
+      "bn": "বিরক্তি",
+      "en": "annoyance",
+      "category": "Class 8 · Feelings"
+    },
+    {
+      "bn": "হতবুদ্ধি",
+      "en": "confused",
+      "category": "Class 8 · Feelings"
+    },
+    {
+      "bn": "অনুপ্রেরণা",
+      "en": "motivation",
+      "category": "Class 8 · Feelings"
+    },
+    {
+      "bn": "মানসিক চাপ",
+      "en": "mental stress",
+      "category": "Class 8 · Feelings"
+    },
+    {
+      "bn": "সন্তুষ্টি",
+      "en": "satisfaction",
+      "category": "Class 8 · Feelings"
+    },
+    {
+      "bn": "হতাশাবাদ",
+      "en": "pessimism",
+      "category": "Class 8 · Feelings"
+    },
+    {
+      "bn": "বিচক্ষণ",
+      "en": "prudent",
+      "category": "Class 8 · Character"
+    },
+    {
+      "bn": "দায়িত্বশীল",
+      "en": "responsible",
+      "category": "Class 8 · Character"
+    },
+    {
+      "bn": "ন্যায়পরায়ণ",
+      "en": "just",
+      "category": "Class 8 · Character"
+    },
+    {
+      "bn": "সৎ",
+      "en": "honest",
+      "category": "Class 8 · Character"
+    },
+    {
+      "bn": "বিশ্বস্ত",
+      "en": "trustworthy",
+      "category": "Class 8 · Character"
+    },
+    {
+      "bn": "ধৈর্যশীল",
+      "en": "patient",
+      "category": "Class 8 · Character"
+    },
+    {
+      "bn": "পরিশ্রমী",
+      "en": "hardworking",
+      "category": "Class 8 · Character"
+    },
+    {
+      "bn": "সাহসী",
+      "en": "brave",
+      "category": "Class 8 · Character"
+    },
+    {
+      "bn": "বিনয়ী",
+      "en": "humble",
+      "category": "Class 8 · Character"
+    },
+    {
+      "bn": "উদার",
+      "en": "generous",
+      "category": "Class 8 · Character"
+    },
+    {
+      "bn": "আত্মনির্ভরশীল",
+      "en": "self-reliant",
+      "category": "Class 8 · Character"
+    },
+    {
+      "bn": "সহানুভূতিশীল",
+      "en": "empathetic",
+      "category": "Class 8 · Character"
+    },
+    {
+      "bn": "যুক্তিবাদী",
+      "en": "rational",
+      "category": "Class 8 · Character"
+    },
+    {
+      "bn": "বাস্তববাদী",
+      "en": "realistic",
+      "category": "Class 8 · Character"
+    },
+    {
+      "bn": "আদর্শবাদী",
+      "en": "idealistic",
+      "category": "Class 8 · Character"
+    },
+    {
+      "bn": "আত্মকেন্দ্রিক",
+      "en": "self-centered",
+      "category": "Class 8 · Character"
+    },
+    {
+      "bn": "স্বার্থপর",
+      "en": "selfish",
+      "category": "Class 8 · Character"
+    },
+    {
+      "bn": "দৃঢ়প্রতিজ্ঞ",
+      "en": "determined",
+      "category": "Class 8 · Character"
+    },
+    {
+      "bn": "কৌশলী",
+      "en": "strategic",
+      "category": "Class 8 · Character"
+    },
+    {
+      "bn": "দূরদর্শী",
+      "en": "far-sighted",
+      "category": "Class 8 · Character"
+    },
+    {
+      "bn": "বিশ্লেষণ করা",
+      "en": "to analyze",
+      "category": "Class 8 · Advanced verbs"
+    },
+    {
+      "bn": "মূল্যায়ন করা",
+      "en": "to evaluate",
+      "category": "Class 8 · Advanced verbs"
+    },
+    {
+      "bn": "ব্যাখ্যা করা",
+      "en": "to explain",
+      "category": "Class 8 · Advanced verbs"
+    },
+    {
+      "bn": "তুলনা করা",
+      "en": "to compare",
+      "category": "Class 8 · Advanced verbs"
+    },
+    {
+      "bn": "বৈপরীত্য দেখানো",
+      "en": "to contrast",
+      "category": "Class 8 · Advanced verbs"
+    },
+    {
+      "bn": "অনুমান করা",
+      "en": "to infer",
+      "category": "Class 8 · Advanced verbs"
+    },
+    {
+      "bn": "যাচাই করা",
+      "en": "to verify",
+      "category": "Class 8 · Advanced verbs"
+    },
+    {
+      "bn": "সিদ্ধান্তে পৌঁছানো",
+      "en": "to reach a conclusion",
+      "category": "Class 8 · Advanced verbs"
+    },
+    {
+      "bn": "যুক্তি উপস্থাপন করা",
+      "en": "to present an argument",
+      "category": "Class 8 · Advanced verbs"
+    },
+    {
+      "bn": "সমর্থন করা",
+      "en": "to support",
+      "category": "Class 8 · Advanced verbs"
+    },
+    {
+      "bn": "খণ্ডন করা",
+      "en": "to refute",
+      "category": "Class 8 · Advanced verbs"
+    },
+    {
+      "bn": "গবেষণা করা",
+      "en": "to research",
+      "category": "Class 8 · Advanced verbs"
+    },
+    {
+      "bn": "শ্রেণিবদ্ধ করা",
+      "en": "to classify",
+      "category": "Class 8 · Advanced verbs"
+    },
+    {
+      "bn": "নির্ধারণ করা",
+      "en": "to determine",
+      "category": "Class 8 · Advanced verbs"
+    },
+    {
+      "bn": "পুনর্বিবেচনা করা",
+      "en": "to reconsider",
+      "category": "Class 8 · Advanced verbs"
+    },
+    {
+      "bn": "ব্যাখ্যা করা",
+      "en": "to explain",
+      "category": "Class 8 · Advanced verbs"
+    },
+    {
+      "bn": "ব্যাখ্যার পক্ষে প্রমাণ দেওয়া",
+      "en": "to support an interpretation with evidence",
+      "category": "Class 8 · Advanced verbs"
+    },
+    {
+      "bn": "সংশোধন করা",
+      "en": "to revise",
+      "category": "Class 8 · Advanced verbs"
+    },
+    {
+      "bn": "প্রভাবিত করা",
+      "en": "to influence",
+      "category": "Class 8 · Useful verbs"
+    },
+    {
+      "bn": "বাস্তবায়ন করা",
+      "en": "to implement",
+      "category": "Class 8 · Useful verbs"
+    },
+    {
+      "bn": "প্রতিরোধ করা",
+      "en": "to prevent",
+      "category": "Class 8 · Useful verbs"
+    },
+    {
+      "bn": "সংরক্ষণ করা",
+      "en": "to conserve",
+      "category": "Class 8 · Useful verbs"
+    },
+    {
+      "bn": "উন্নত করা",
+      "en": "to improve",
+      "category": "Class 8 · Useful verbs"
+    },
+    {
+      "bn": "পরিবর্তন করা",
+      "en": "to change",
+      "category": "Class 8 · Useful verbs"
+    },
+    {
+      "bn": "অংশগ্রহণ করা",
+      "en": "to participate",
+      "category": "Class 8 · Useful verbs"
+    },
+    {
+      "bn": "নেতৃত্ব দেওয়া",
+      "en": "to lead",
+      "category": "Class 8 · Useful verbs"
+    },
+    {
+      "bn": "সহযোগিতা করা",
+      "en": "to cooperate",
+      "category": "Class 8 · Useful verbs"
+    },
+    {
+      "bn": "উৎসাহিত করা",
+      "en": "to encourage",
+      "category": "Class 8 · Useful verbs"
+    },
+    {
+      "bn": "সমালোচনা করা",
+      "en": "to criticize",
+      "category": "Class 8 · Useful verbs"
+    },
+    {
+      "bn": "গ্রহণ করা",
+      "en": "to accept",
+      "category": "Class 8 · Useful verbs"
+    },
+    {
+      "bn": "প্রত্যাখ্যান করা",
+      "en": "to reject",
+      "category": "Class 8 · Useful verbs"
+    },
+    {
+      "bn": "স্বীকার করা",
+      "en": "to acknowledge",
+      "category": "Class 8 · Useful verbs"
+    },
+    {
+      "bn": "প্রশ্ন তোলা",
+      "en": "to question",
+      "category": "Class 8 · Useful verbs"
+    },
+    {
+      "bn": "চ্যালেঞ্জ করা",
+      "en": "to challenge",
+      "category": "Class 8 · Useful verbs"
+    },
+    {
+      "bn": "সম্পর্ক স্থাপন করা",
+      "en": "to establish a relationship",
+      "category": "Class 8 · Useful verbs"
+    },
+    {
+      "bn": "যুক্তিসঙ্গত",
+      "en": "reasonable",
+      "category": "Class 8 · Descriptive words"
+    },
+    {
+      "bn": "অযৌক্তিক",
+      "en": "illogical",
+      "category": "Class 8 · Descriptive words"
+    },
+    {
+      "bn": "নির্ভরযোগ্য",
+      "en": "reliable",
+      "category": "Class 8 · Descriptive words"
+    },
+    {
+      "bn": "সন্দেহজনক",
+      "en": "questionable",
+      "category": "Class 8 · Descriptive words"
+    },
+    {
+      "bn": "কার্যকর",
+      "en": "effective",
+      "category": "Class 8 · Descriptive words"
+    },
+    {
+      "bn": "অকার্যকর",
+      "en": "ineffective",
+      "category": "Class 8 · Descriptive words"
+    },
+    {
+      "bn": "প্রাসঙ্গিক",
+      "en": "relevant",
+      "category": "Class 8 · Descriptive words"
+    },
+    {
+      "bn": "অপ্রাসঙ্গিক",
+      "en": "irrelevant",
+      "category": "Class 8 · Descriptive words"
+    },
+    {
+      "bn": "নিরপেক্ষ",
+      "en": "neutral",
+      "category": "Class 8 · Descriptive words"
+    },
+    {
+      "bn": "পক্ষপাতদুষ্ট",
+      "en": "biased",
+      "category": "Class 8 · Descriptive words"
+    },
+    {
+      "bn": "ইতিবাচক",
+      "en": "positive",
+      "category": "Class 8 · Descriptive words"
+    },
+    {
+      "bn": "নেতিবাচক",
+      "en": "negative",
+      "category": "Class 8 · Descriptive words"
+    },
+    {
+      "bn": "জটিল",
+      "en": "complex",
+      "category": "Class 8 · Descriptive words"
+    },
+    {
+      "bn": "সরল",
+      "en": "straightforward",
+      "category": "Class 8 · Descriptive words"
+    },
+    {
+      "bn": "বাস্তবসম্মত",
+      "en": "realistic",
+      "category": "Class 8 · Descriptive words"
+    },
+    {
+      "bn": "অবাস্তব",
+      "en": "unrealistic",
+      "category": "Class 8 · Descriptive words"
+    },
+    {
+      "bn": "স্থায়ী",
+      "en": "permanent",
+      "category": "Class 8 · Descriptive words"
+    },
+    {
+      "bn": "অস্থায়ী",
+      "en": "temporary",
+      "category": "Class 8 · Descriptive words"
+    },
+    {
+      "bn": "সম্ভাব্য",
+      "en": "possible",
+      "category": "Class 8 · Descriptive words"
+    },
+    {
+      "bn": "অনিবার্য",
+      "en": "inevitable",
+      "category": "Class 8 · Descriptive words"
+    },
+    {
+      "bn": "উল্লেখযোগ্য",
+      "en": "significant",
+      "category": "Class 8 · Descriptive words"
+    },
+    {
+      "bn": "সামান্য",
+      "en": "minor",
+      "category": "Class 8 · Descriptive words"
+    },
+    {
+      "bn": "সুস্পষ্ট",
+      "en": "evident",
+      "category": "Class 8 · Descriptive words"
+    },
+    {
+      "bn": "অস্পষ্ট",
+      "en": "unclear",
+      "category": "Class 8 · Descriptive words"
+    },
+    {
+      "bn": "প্রথমত",
+      "en": "firstly",
+      "category": "Class 8 · Connectors"
+    },
+    {
+      "bn": "দ্বিতীয়ত",
+      "en": "secondly",
+      "category": "Class 8 · Connectors"
+    },
+    {
+      "bn": "তৃতীয়ত",
+      "en": "thirdly",
+      "category": "Class 8 · Connectors"
+    },
+    {
+      "bn": "তদুপরি",
+      "en": "furthermore",
+      "category": "Class 8 · Connectors"
+    },
+    {
+      "bn": "এছাড়া",
+      "en": "in addition",
+      "category": "Class 8 · Connectors"
+    },
+    {
+      "bn": "পাশাপাশি",
+      "en": "in addition",
+      "category": "Class 8 · Connectors"
+    },
+    {
+      "bn": "একইভাবে",
+      "en": "similarly",
+      "category": "Class 8 · Connectors"
+    },
+    {
+      "bn": "অন্যদিকে",
+      "en": "on the other hand",
+      "category": "Class 8 · Connectors"
+    },
+    {
+      "bn": "বিপরীতে",
+      "en": "in contrast",
+      "category": "Class 8 · Connectors"
+    },
+    {
+      "bn": "অন্যথায়",
+      "en": "otherwise",
+      "category": "Class 8 · Connectors"
+    },
+    {
+      "bn": "উদাহরণস্বরূপ",
+      "en": "for example",
+      "category": "Class 8 · Connectors"
+    },
+    {
+      "bn": "বিশেষত",
+      "en": "particularly",
+      "category": "Class 8 · Connectors"
+    },
+    {
+      "bn": "মূলত",
+      "en": "primarily",
+      "category": "Class 8 · Connectors"
+    },
+    {
+      "bn": "কারণ",
+      "en": "because",
+      "category": "Class 8 · Connectors"
+    },
+    {
+      "bn": "ফলে",
+      "en": "consequently",
+      "category": "Class 8 · Connectors"
+    },
+    {
+      "bn": "ফলস্বরূপ",
+      "en": "as a result",
+      "category": "Class 8 · Connectors"
+    },
+    {
+      "bn": "যদিও",
+      "en": "although",
+      "category": "Class 8 · Connectors"
+    },
+    {
+      "bn": "তবুও",
+      "en": "nevertheless",
+      "category": "Class 8 · Connectors"
+    },
+    {
+      "bn": "যেহেতু",
+      "en": "since",
+      "category": "Class 8 · Connectors"
+    },
+    {
+      "bn": "সেহেতু",
+      "en": "therefore",
+      "category": "Class 8 · Connectors"
+    },
+    {
+      "bn": "অতএব",
+      "en": "therefore",
+      "category": "Class 8 · Connectors"
+    },
+    {
+      "bn": "অবশেষে",
+      "en": "finally",
+      "category": "Class 8 · Connectors"
+    },
+    {
+      "bn": "সংক্ষেপে",
+      "en": "in brief",
+      "category": "Class 8 · Connectors"
+    }
+  ],
+  "phrases": [
+    {
+      "bn": "আমার মতে বিষয়টি সরলভাবে বিচার করা ঠিক হবে না।",
+      "en": "Opinion and argument practice 1",
+      "context": "Opinion and argument",
+      "category": "Class 8 · Opinion and argument"
+    },
+    {
+      "bn": "আমার দৃষ্টিতে এই সিদ্ধান্তের পক্ষে ও বিপক্ষে উভয় ধরনের যুক্তি রয়েছে।",
+      "en": "Opinion and argument practice 2",
+      "context": "Opinion and argument",
+      "category": "Class 8 · Opinion and argument"
+    },
+    {
+      "bn": "আমি এই বক্তব্যের সঙ্গে আংশিকভাবে একমত।",
+      "en": "Opinion and argument practice 3",
+      "context": "Opinion and argument",
+      "category": "Class 8 · Opinion and argument"
+    },
+    {
+      "bn": "আমি এই মতের সঙ্গে একমত নই, কারণ প্রমাণগুলো অন্য সিদ্ধান্তের দিকে ইঙ্গিত করে।",
+      "en": "Opinion and argument practice 4",
+      "context": "Opinion and argument",
+      "category": "Class 8 · Opinion and argument"
+    },
+    {
+      "bn": "আমার ধারণা, আরও তথ্য ছাড়া নিশ্চিত সিদ্ধান্তে পৌঁছানো কঠিন।",
+      "en": "Opinion and argument practice 5",
+      "context": "Opinion and argument",
+      "category": "Class 8 · Opinion and argument"
+    },
+    {
+      "bn": "বিষয়টিকে বৃহত্তর প্রেক্ষাপটে বিবেচনা করা দরকার।",
+      "en": "Opinion and argument practice 6",
+      "context": "Opinion and argument",
+      "category": "Class 8 · Opinion and argument"
+    },
+    {
+      "bn": "আমার বক্তব্যের পক্ষে সবচেয়ে শক্তিশালী যুক্তি হলো এর দীর্ঘমেয়াদি প্রভাব।",
+      "en": "Opinion and argument practice 7",
+      "context": "Opinion and argument",
+      "category": "Class 8 · Opinion and argument"
+    },
+    {
+      "bn": "প্রথমত, পরিকল্পনাটি বাস্তবসম্মত।",
+      "en": "Opinion and argument practice 8",
+      "context": "Opinion and argument",
+      "category": "Class 8 · Opinion and argument"
+    },
+    {
+      "bn": "দ্বিতীয়ত, এটি তুলনামূলকভাবে কম ব্যয়বহুল।",
+      "en": "Opinion and argument practice 9",
+      "context": "Opinion and argument",
+      "category": "Class 8 · Opinion and argument"
+    },
+    {
+      "bn": "তদুপরি, এর সামাজিক ও পরিবেশগত সুবিধাও রয়েছে।",
+      "en": "Opinion and argument practice 10",
+      "context": "Opinion and argument",
+      "category": "Class 8 · Opinion and argument"
+    },
+    {
+      "bn": "শুধু একটি উদাহরণ পুরো দাবিটি প্রমাণ করার জন্য যথেষ্ট নয়।",
+      "en": "Evaluating evidence practice 1",
+      "context": "Evaluating evidence",
+      "category": "Class 8 · Evaluating evidence"
+    },
+    {
+      "bn": "এই তথ্যের উৎস নির্ভরযোগ্য হলে দাবিটি আরও শক্তিশালী হয়।",
+      "en": "Evaluating evidence practice 2",
+      "context": "Evaluating evidence",
+      "category": "Class 8 · Evaluating evidence"
+    },
+    {
+      "bn": "পরিসংখ্যানটি গুরুত্বপূর্ণ, তবে কীভাবে তথ্য সংগ্রহ করা হয়েছে তা জানা দরকার।",
+      "en": "Evaluating evidence practice 3",
+      "context": "Evaluating evidence",
+      "category": "Class 8 · Evaluating evidence"
+    },
+    {
+      "bn": "দুটি স্বাধীন উৎস একই তথ্য দিলে তার বিশ্বাসযোগ্যতা বাড়ে।",
+      "en": "Evaluating evidence practice 4",
+      "context": "Evaluating evidence",
+      "category": "Class 8 · Evaluating evidence"
+    },
+    {
+      "bn": "প্রমাণটি দাবির সঙ্গে সরাসরি সম্পর্কিত কি না তা বিবেচনা করা উচিত।",
+      "en": "Evaluating evidence practice 5",
+      "context": "Evaluating evidence",
+      "category": "Class 8 · Evaluating evidence"
+    },
+    {
+      "bn": "লেখকের দাবি হলো প্রযুক্তি শিক্ষাকে উন্নত করতে পারে।",
+      "en": "Evaluating evidence practice 6",
+      "context": "Evaluating evidence",
+      "category": "Class 8 · Evaluating evidence"
+    },
+    {
+      "bn": "এই দাবির পক্ষে তিনি কয়েকটি বাস্তব উদাহরণ দিয়েছেন।",
+      "en": "Evaluating evidence practice 7",
+      "context": "Evaluating evidence",
+      "category": "Class 8 · Evaluating evidence"
+    },
+    {
+      "bn": "তবে লেখক সম্ভাব্য অসুবিধাগুলো বিস্তারিতভাবে আলোচনা করেননি।",
+      "en": "Evaluating evidence practice 8",
+      "context": "Evaluating evidence",
+      "category": "Class 8 · Evaluating evidence"
+    },
+    {
+      "bn": "এ কারণে যুক্তিটি কিছুটা অসম্পূর্ণ বলে মনে হয়।",
+      "en": "Evaluating evidence practice 9",
+      "context": "Evaluating evidence",
+      "category": "Class 8 · Evaluating evidence"
+    },
+    {
+      "bn": "চরিত্রটির সিদ্ধান্ত শুধু তার নিজের নয়, অন্য চরিত্রগুলোর জীবনকেও প্রভাবিত করেছে।",
+      "en": "Analysis and comparison practice 1",
+      "context": "Analysis and comparison",
+      "category": "Class 8 · Analysis and comparison"
+    },
+    {
+      "bn": "ঘটনাটি বিশ্লেষণ করলে ব্যক্তিগত ও সামাজিক উভয় ধরনের কারণ দেখা যায়।",
+      "en": "Analysis and comparison practice 2",
+      "context": "Analysis and comparison",
+      "category": "Class 8 · Analysis and comparison"
+    },
+    {
+      "bn": "লেখকের শব্দচয়ন বিষয়টির প্রতি তার মনোভাব প্রকাশ করে।",
+      "en": "Analysis and comparison practice 3",
+      "context": "Analysis and comparison",
+      "category": "Class 8 · Analysis and comparison"
+    },
+    {
+      "bn": "একই ঘটনাকে দুই চরিত্র সম্পূর্ণ ভিন্নভাবে দেখেছে।",
+      "en": "Analysis and comparison practice 4",
+      "context": "Analysis and comparison",
+      "category": "Class 8 · Analysis and comparison"
+    },
+    {
+      "bn": "দুটি লেখাই একই সমস্যা নিয়ে আলোচনা করে, তবে তাদের উদ্দেশ্য আলাদা।",
+      "en": "Analysis and comparison practice 5",
+      "context": "Analysis and comparison",
+      "category": "Class 8 · Analysis and comparison"
+    },
+    {
+      "bn": "প্রথম লেখাটি তথ্য দেওয়ার চেষ্টা করে, বিপরীতে দ্বিতীয়টি পাঠককে প্রভাবিত করতে চায়।",
+      "en": "Analysis and comparison practice 6",
+      "context": "Analysis and comparison",
+      "category": "Class 8 · Analysis and comparison"
+    },
+    {
+      "bn": "দুই চরিত্রের মূল্যবোধের মধ্যে মিল থাকলেও তাদের সিদ্ধান্ত নেওয়ার পদ্ধতি ভিন্ন।",
+      "en": "Analysis and comparison practice 7",
+      "context": "Analysis and comparison",
+      "category": "Class 8 · Analysis and comparison"
+    },
+    {
+      "bn": "দ্রুত নগরায়ণের ফলে অনেক এলাকায় যানজট ও দূষণ বৃদ্ধি পেয়েছে।",
+      "en": "Cause, effect, and solutions practice 1",
+      "context": "Cause, effect, and solutions",
+      "category": "Class 8 · Cause, effect, and solutions"
+    },
+    {
+      "bn": "ভুল তথ্য ছড়ালে জনমত প্রভাবিত হতে পারে।",
+      "en": "Cause, effect, and solutions practice 2",
+      "context": "Cause, effect, and solutions",
+      "category": "Class 8 · Cause, effect, and solutions"
+    },
+    {
+      "bn": "দীর্ঘমেয়াদি খরার ফলে কৃষি উৎপাদন কমে যেতে পারে।",
+      "en": "Cause, effect, and solutions practice 3",
+      "context": "Cause, effect, and solutions",
+      "category": "Class 8 · Cause, effect, and solutions"
+    },
+    {
+      "bn": "শিক্ষায় বৈষম্য থাকলে ভবিষ্যতে অর্থনৈতিক বৈষম্যও বাড়তে পারে।",
+      "en": "Cause, effect, and solutions practice 4",
+      "context": "Cause, effect, and solutions",
+      "category": "Class 8 · Cause, effect, and solutions"
+    },
+    {
+      "bn": "কোনো সমস্যা সমাধানের আগে তার মূল কারণ ও প্রেক্ষাপট বুঝতে হবে।",
+      "en": "Cause, effect, and solutions practice 5",
+      "context": "Cause, effect, and solutions",
+      "category": "Class 8 · Cause, effect, and solutions"
+    },
+    {
+      "bn": "স্বল্পমেয়াদি সমাধান দ্রুত ফল দিতে পারে, কিন্তু দীর্ঘমেয়াদে টেকসই নাও হতে পারে।",
+      "en": "Cause, effect, and solutions practice 6",
+      "context": "Cause, effect, and solutions",
+      "category": "Class 8 · Cause, effect, and solutions"
+    },
+    {
+      "bn": "কার্যকর সমাধান বাস্তবায়নের জন্য পর্যাপ্ত সম্পদ ও পরিকল্পনা প্রয়োজন।",
+      "en": "Cause, effect, and solutions practice 7",
+      "context": "Cause, effect, and solutions",
+      "category": "Class 8 · Cause, effect, and solutions"
+    },
+    {
+      "bn": "সমাধানের ফলাফল নিয়মিত মূল্যায়ন করে প্রয়োজনে পরিবর্তন আনা উচিত।",
+      "en": "Cause, effect, and solutions practice 8",
+      "context": "Cause, effect, and solutions",
+      "category": "Class 8 · Cause, effect, and solutions"
+    },
+    {
+      "bn": "লেখক সরাসরি বলেননি, তবে চরিত্রটির আচরণ থেকে তার হতাশা বোঝা যায়।",
+      "en": "Inference and purpose practice 1",
+      "context": "Inference and purpose",
+      "category": "Class 8 · Inference and purpose"
+    },
+    {
+      "bn": "পটভূমির বর্ণনা থেকে অনুমান করা যায় ঘটনাটি একটি অর্থনৈতিক সংকটের সময় ঘটেছে।",
+      "en": "Inference and purpose practice 2",
+      "context": "Inference and purpose",
+      "category": "Class 8 · Inference and purpose"
+    },
+    {
+      "bn": "উপস্থিত প্রমাণ অনুযায়ী এই ব্যাখ্যাটি সবচেয়ে যুক্তিসঙ্গত।",
+      "en": "Inference and purpose practice 3",
+      "context": "Inference and purpose",
+      "category": "Class 8 · Inference and purpose"
+    },
+    {
+      "bn": "লেখকের উদ্দেশ্য শুধু তথ্য দেওয়া নয়, পাঠকের মতামত প্রভাবিত করাও হতে পারে।",
+      "en": "Inference and purpose practice 4",
+      "context": "Inference and purpose",
+      "category": "Class 8 · Inference and purpose"
+    },
+    {
+      "bn": "আবেগপূর্ণ ভাষার ব্যবহার বোঝায় যে লেখক পাঠকের অনুভূতিতে প্রভাব ফেলতে চাইছেন।",
+      "en": "Inference and purpose practice 5",
+      "context": "Inference and purpose",
+      "category": "Class 8 · Inference and purpose"
+    },
+    {
+      "bn": "লেখক উভয় পক্ষের যুক্তি উপস্থাপন করায় লেখাটি তুলনামূলকভাবে ভারসাম্যপূর্ণ।",
+      "en": "Inference and purpose practice 6",
+      "context": "Inference and purpose",
+      "category": "Class 8 · Inference and purpose"
+    },
+    {
+      "bn": "কোন শব্দগুলো নিরপেক্ষ এবং কোনগুলো আবেগপূর্ণ তা লক্ষ্য করা উচিত।",
+      "en": "Bias and source checks practice 1",
+      "context": "Bias and source checks",
+      "category": "Class 8 · Bias and source checks"
+    },
+    {
+      "bn": "লেখক বিপরীত মতের প্রমাণ উপেক্ষা করেছেন কি না দেখতে হবে।",
+      "en": "Bias and source checks practice 2",
+      "context": "Bias and source checks",
+      "category": "Class 8 · Bias and source checks"
+    },
+    {
+      "bn": "শুধু একটি পক্ষের বক্তব্য ব্যবহার করলে লেখাটি পক্ষপাতদুষ্ট হতে পারে।",
+      "en": "Bias and source checks practice 3",
+      "context": "Bias and source checks",
+      "category": "Class 8 · Bias and source checks"
+    },
+    {
+      "bn": "তথ্যটি কে প্রকাশ করেছে?",
+      "en": "Bias and source checks practice 4",
+      "context": "Bias and source checks",
+      "category": "Class 8 · Bias and source checks"
+    },
+    {
+      "bn": "লেখক বা প্রতিষ্ঠানের দক্ষতা কী?",
+      "en": "Bias and source checks practice 5",
+      "context": "Bias and source checks",
+      "category": "Class 8 · Bias and source checks"
+    },
+    {
+      "bn": "তথ্যের পক্ষে প্রমাণ বা সূত্র দেওয়া হয়েছে কি?",
+      "en": "Bias and source checks practice 6",
+      "context": "Bias and source checks",
+      "category": "Class 8 · Bias and source checks"
+    },
+    {
+      "bn": "তথ্যটি কত পুরোনো?",
+      "en": "Bias and source checks practice 7",
+      "context": "Bias and source checks",
+      "category": "Class 8 · Bias and source checks"
+    },
+    {
+      "bn": "অন্য নির্ভরযোগ্য উৎস একই কথা বলছে কি?",
+      "en": "Bias and source checks practice 8",
+      "context": "Bias and source checks",
+      "category": "Class 8 · Bias and source checks"
+    },
+    {
+      "bn": "লেখাটির উদ্দেশ্য তথ্য দেওয়া, বিক্রি করা, না কি প্রভাবিত করা?",
+      "en": "Bias and source checks practice 9",
+      "context": "Bias and source checks",
+      "category": "Class 8 · Bias and source checks"
+    },
+    {
+      "bn": "আমার মূল দাবি হলো বিদ্যালয়ে ডিজিটাল শিক্ষার সুযোগ বাড়ানো উচিত।",
+      "en": "Debate practice 1",
+      "context": "Debate",
+      "category": "Class 8 · Debate"
+    },
+    {
+      "bn": "এই দাবির পক্ষে তিনটি গুরুত্বপূর্ণ যুক্তি রয়েছে।",
+      "en": "Debate practice 2",
+      "context": "Debate",
+      "category": "Class 8 · Debate"
+    },
+    {
+      "bn": "বিপরীত পক্ষ প্রযুক্তিনির্ভরতার ঝুঁকির কথা উল্লেখ করতে পারে।",
+      "en": "Debate practice 3",
+      "context": "Debate",
+      "category": "Class 8 · Debate"
+    },
+    {
+      "bn": "এই উদ্বেগ যুক্তিসঙ্গত, তবে নিয়ম ও প্রশিক্ষণের মাধ্যমে ঝুঁকি কমানো সম্ভব।",
+      "en": "Debate practice 4",
+      "context": "Debate",
+      "category": "Class 8 · Debate"
+    },
+    {
+      "bn": "সব প্রমাণ বিবেচনা করলে সীমিত ও পরিকল্পিত প্রযুক্তি ব্যবহার সবচেয়ে যুক্তিসঙ্গত সমাধান।",
+      "en": "Debate practice 5",
+      "context": "Debate",
+      "category": "Class 8 · Debate"
+    },
+    {
+      "bn": "একটি তথ্য সত্য কি না তা বিচার করার সময় শুধু তার বিষয়বস্তু নয়, উৎসের নির্ভরযোগ্যতাও বিবেচনা করা দরকার।",
+      "en": "Advanced sentences practice 1",
+      "context": "Advanced sentences",
+      "category": "Class 8 · Advanced sentences"
+    },
+    {
+      "bn": "কোনো লেখকের পক্ষপাত সব সময় সরাসরি প্রকাশ পায় না; কখনো তথ্য নির্বাচন ও শব্দচয়নের মধ্যেও তা দেখা যায়।",
+      "en": "Advanced sentences practice 2",
+      "context": "Advanced sentences",
+      "category": "Class 8 · Advanced sentences"
+    },
+    {
+      "bn": "একই সমস্যার স্বল্পমেয়াদি ও দীর্ঘমেয়াদি সমাধান এক রকম নাও হতে পারে।",
+      "en": "Advanced sentences practice 3",
+      "context": "Advanced sentences",
+      "category": "Class 8 · Advanced sentences"
+    },
+    {
+      "bn": "প্রযুক্তির সুবিধা গ্রহণের পাশাপাশি তার সামাজিক, নৈতিক ও ব্যক্তিগত প্রভাবও বিবেচনা করা দরকার।",
+      "en": "Advanced sentences practice 4",
+      "context": "Advanced sentences",
+      "category": "Class 8 · Advanced sentences"
+    },
+    {
+      "bn": "পরিসংখ্যান গুরুত্বপূর্ণ প্রমাণ হতে পারে, তবে ভুলভাবে উপস্থাপন করলে একই তথ্য বিভ্রান্তিকর হয়ে উঠতে পারে।",
+      "en": "Advanced sentences practice 5",
+      "context": "Advanced sentences",
+      "category": "Class 8 · Advanced sentences"
+    },
+    {
+      "bn": "একজন দক্ষ পাঠক লেখকের বক্তব্য গ্রহণ করার আগে তার যুক্তির শক্তি ও দুর্বলতা বিশ্লেষণ করে।",
+      "en": "Advanced sentences practice 6",
+      "context": "Advanced sentences",
+      "category": "Class 8 · Advanced sentences"
+    },
+    {
+      "bn": "ইন্টারনেটের মাধ্যমে তথ্য খুব দ্রুত ছড়িয়ে পড়ে। এর ফলে মানুষ সহজে সংবাদ ও জ্ঞান পেতে পারে, কিন্তু একই সঙ্গে ভুয়া তথ্যও দ্রুত ছড়াতে পারে। কোনো খবর দেখেই সেটি শেয়ার না করে প্রথমে তার উৎস, প্রকাশের তারিখ এবং অন্য নির্ভরযোগ্য সংবাদমাধ্যমের প্রতিবেদন যাচাই করা উচিত। ছবি ও শিরোনামও বিভ্রান্তিকরভাবে ব্যবহার করা হতে পারে। তাই ডিজিটাল যুগে তথ্য যাচাই একটি গুরুত্বপূর্ণ দক্ষতা।",
+      "en": "False information passage practice 1",
+      "context": "False information passage",
+      "category": "Class 8 · False information passage"
+    },
+    {
+      "bn": "টেকসই উন্নয়ন বলতে এমন উন্নয়ন বোঝায় যা বর্তমান মানুষের প্রয়োজন পূরণ করে, কিন্তু ভবিষ্যৎ প্রজন্মের সুযোগ নষ্ট করে না। অর্থনৈতিক উন্নয়নের জন্য শিল্প ও অবকাঠামো প্রয়োজন, তবে এর ফলে পরিবেশের ক্ষতি হলে দীর্ঘমেয়াদে নতুন সমস্যা সৃষ্টি হতে পারে। নবায়নযোগ্য শক্তি, পানি সংরক্ষণ, পুনর্ব্যবহার এবং দায়িত্বশীল সম্পদ ব্যবহার টেকসই উন্নয়নের গুরুত্বপূর্ণ অংশ।",
+      "en": "Sustainable development passage practice 1",
+      "context": "Sustainable development passage",
+      "category": "Class 8 · Sustainable development passage"
+    },
+    {
+      "bn": "শিক্ষায় প্রযুক্তির ব্যবহার দ্রুত বৃদ্ধি পাচ্ছে। ডিজিটাল বই, অনলাইন ক্লাস এবং শিক্ষামূলক সফটওয়্যার শিক্ষার্থীদের বিভিন্ন উপায়ে শেখার সুযোগ দেয়। প্রযুক্তি দূরের শিক্ষার্থীদের কাছেও শিক্ষা পৌঁছে দিতে পারে। তবে যাদের ইন্টারনেট বা উপযুক্ত যন্ত্র নেই তারা পিছিয়ে পড়তে পারে। তাই প্রযুক্তিভিত্তিক শিক্ষা চালু করার সময় সুযোগের সমতা নিশ্চিত করাও গুরুত্বপূর্ণ।",
+      "en": "Technology in education passage practice 1",
+      "context": "Technology in education passage",
+      "category": "Class 8 · Technology in education passage"
+    },
+    {
+      "bn": "গল্প: বিদ্যালয়ের ছাত্র সংসদ খাবারের অপচয় কমাতে কর্মসূচি নিল। মেহেদী খাবারের পরিমাণ কমানোর প্রস্তাব দিল, কিন্তু সারা তথ্য সংগ্রহের পরামর্শ দিল। তথ্য থেকে দেখা গেল অপচয়ের বেশির ভাগই অপছন্দের খাবার থেকে হচ্ছে। খাবারের তালিকা বদলে ছোট বা বড় অংশ বেছে নেওয়ার সুযোগ দেওয়ার পর অপচয় উল্লেখযোগ্যভাবে কমে গেল।",
+      "en": "Story analysis practice 1",
+      "context": "Story analysis",
+      "category": "Class 8 · Story analysis"
+    },
+    {
+      "bn": "১. ছাত্র সংসদ কোন সমস্যা সমাধান করতে চেয়েছিল?",
+      "en": "Story analysis practice 2",
+      "context": "Story analysis",
+      "category": "Class 8 · Story analysis"
+    },
+    {
+      "bn": "২. মেহেদীর প্রথম প্রস্তাব কী ছিল?",
+      "en": "Story analysis practice 3",
+      "context": "Story analysis",
+      "category": "Class 8 · Story analysis"
+    },
+    {
+      "bn": "৩. সারা কেন সেই প্রস্তাব নিয়ে প্রশ্ন তুলেছিল?",
+      "en": "Story analysis practice 4",
+      "context": "Story analysis",
+      "category": "Class 8 · Story analysis"
+    },
+    {
+      "bn": "৪. তথ্য সংগ্রহ করে শিক্ষার্থীরা কী জানতে পেরেছিল?",
+      "en": "Story analysis practice 5",
+      "context": "Story analysis",
+      "category": "Class 8 · Story analysis"
+    },
+    {
+      "bn": "৫. কোন ঘটনা প্রমাণ করে যে সারা তথ্যভিত্তিক সিদ্ধান্তে বিশ্বাস করে?",
+      "en": "Story analysis practice 6",
+      "context": "Story analysis",
+      "category": "Class 8 · Story analysis"
+    },
+    {
+      "bn": "৬. তথ্য সংগ্রহ না করলে কী ধরনের ভুল সিদ্ধান্ত হতে পারত?",
+      "en": "Story analysis practice 7",
+      "context": "Story analysis",
+      "category": "Class 8 · Story analysis"
+    },
+    {
+      "bn": "দাবি: বিদ্যালয়ে শিক্ষার্থীদের জন্য আরও গাছ লাগানো উচিত।",
+      "en": "Claim, evidence, analysis practice 1",
+      "context": "Claim, evidence, analysis",
+      "category": "Class 8 · Claim, evidence, analysis"
+    },
+    {
+      "bn": "প্রমাণ: গাছ ছায়া দেয়, বাতাসের তাপমাত্রা কমাতে সাহায্য করে এবং বৃষ্টির পানি মাটিতে শোষিত হতে সহায়তা করে।",
+      "en": "Claim, evidence, analysis practice 2",
+      "context": "Claim, evidence, analysis",
+      "category": "Class 8 · Claim, evidence, analysis"
+    },
+    {
+      "bn": "বিশ্লেষণ: এই সুবিধাগুলো বিদ্যালয়ের পরিবেশকে আরও আরামদায়ক ও স্বাস্থ্যকর করতে পারে। তাই গাছ লাগানো শুধু সৌন্দর্যের জন্য নয়, ব্যবহারিক কারণেও গুরুত্বপূর্ণ।",
+      "en": "Claim, evidence, analysis practice 3",
+      "context": "Claim, evidence, analysis",
+      "category": "Class 8 · Claim, evidence, analysis"
+    },
+    {
+      "bn": "নাজিয়া উৎসের নির্ভরযোগ্যতা সম্পর্কে সচেতন এবং যাচাই ছাড়া তথ্য গ্রহণ করতে চায় না।",
+      "en": "Reading and writing practice practice 1",
+      "context": "Reading and writing practice",
+      "category": "Class 8 · Reading and writing practice"
+    },
+    {
+      "bn": "নতুন বাসসেবা চালুর পর প্রতিদিন গড়ে পাঁচ হাজার যাত্রী এটি ব্যবহার করছে—এটি নিরপেক্ষ ও যাচাইযোগ্য দাবি।",
+      "en": "Reading and writing practice practice 2",
+      "context": "Reading and writing practice",
+      "category": "Class 8 · Reading and writing practice"
+    },
+    {
+      "bn": "পুনর্ব্যবহারযোগ্য ব্যাগের ব্যবহার প্লাস্টিক বর্জ্য কমাতে কিছুটা সফল হয়েছে, তবে সমান বাস্তবায়নের জন্য আরও সচেতনতা প্রয়োজন।",
+      "en": "Reading and writing practice practice 3",
+      "context": "Reading and writing practice",
+      "category": "Class 8 · Reading and writing practice"
+    },
+    {
+      "bn": "বিদ্যালয়ের সময় পরে শুরু করার সিদ্ধান্তে শিক্ষার্থীদের স্বাস্থ্যগত সুবিধা ও বাস্তব সমস্যা উভয়ই বিবেচনা করা উচিত।",
+      "en": "Reading and writing practice practice 4",
+      "context": "Reading and writing practice",
+      "category": "Class 8 · Reading and writing practice"
+    },
+    {
+      "bn": "সংবাদপত্র ও সামাজিক যোগাযোগমাধ্যমের তথ্য অন্ধভাবে গ্রহণ না করে উৎস ও প্রমাণ যাচাই করা উচিত।",
+      "en": "Reading and writing practice practice 5",
+      "context": "Reading and writing practice",
+      "category": "Class 8 · Reading and writing practice"
+    },
+    {
+      "bn": "আমার মতে বিদ্যালয়ে আরও গাছ লাগানো উচিত। গবেষণায় দেখা যায় গাছপালা আশপাশের তাপমাত্রা কমাতে সাহায্য করতে পারে। তাই বেশি গাছ শিক্ষার্থীদের জন্য আরও আরামদায়ক পরিবেশ তৈরি করতে পারে।",
+      "en": "Important structures practice 1",
+      "context": "Important structures",
+      "category": "Class 8 · Important structures"
+    },
+    {
+      "bn": "কেউ কেউ বলতে পারে ডিজিটাল বইয়ের জন্য যন্ত্র কেনা ব্যয়বহুল। তবে একটি যন্ত্রে বহু বই রাখা যায়, ফলে দীর্ঘমেয়াদে কিছু খরচ কমতে পারে।",
+      "en": "Important structures practice 2",
+      "context": "Important structures",
+      "category": "Class 8 · Important structures"
+    },
+    {
+      "bn": "এই তথ্যটি বিশ্বাসযোগ্য মনে হলেও উৎসটি কে প্রকাশ করেছে এবং প্রমাণ কোথা থেকে এসেছে তা যাচাই করা দরকার।",
+      "en": "Important structures practice 3",
+      "context": "Important structures",
+      "category": "Class 8 · Important structures"
+    },
+    {
+      "bn": "লেখক বারবার নেতিবাচক শব্দ ব্যবহার করেছেন, যা তার দৃষ্টিভঙ্গিতে পক্ষপাত থাকার ইঙ্গিত দিতে পারে।",
+      "en": "Important structures practice 4",
+      "context": "Important structures",
+      "category": "Class 8 · Important structures"
+    },
+    {
+      "bn": "প্রমাণগুলো একই সিদ্ধান্তকে সমর্থন করছে। অতএব, দাবিটি যুক্তিসঙ্গত বলে মনে হয়।",
+      "en": "Important structures practice 5",
+      "context": "Important structures",
+      "category": "Class 8 · Important structures"
+    },
+    {
+      "bn": "মূলভাব, দৃষ্টিভঙ্গি, লেখকের উদ্দেশ্য, যুক্তি, প্রমাণ এবং পক্ষপাত শনাক্ত করতে পারা উচিত।",
+      "en": "End-of-Class 8 skills practice 1",
+      "context": "End-of-Class 8 skills",
+      "category": "Class 8 · End-of-Class 8 skills"
+    },
+    {
+      "bn": "প্রমাণ কতটা শক্তিশালী, প্রাসঙ্গিক ও নির্ভরযোগ্য তা বিচার করতে পারা উচিত।",
+      "en": "End-of-Class 8 skills practice 2",
+      "context": "End-of-Class 8 skills",
+      "category": "Class 8 · End-of-Class 8 skills"
+    },
+    {
+      "bn": "লেখক, প্রকাশক, তারিখ, প্রমাণ, উদ্দেশ্য ও অন্যান্য উৎসের সঙ্গে সামঞ্জস্য দেখে তথ্যসূত্র যাচাই করতে পারা উচিত।",
+      "en": "End-of-Class 8 skills practice 3",
+      "context": "End-of-Class 8 skills",
+      "category": "Class 8 · End-of-Class 8 skills"
+    },
+    {
+      "bn": "চরিত্রের উদ্দেশ্য, পরিবর্তন ও সিদ্ধান্তের ফলাফল বিশ্লেষণ করতে পারা উচিত।",
+      "en": "End-of-Class 8 skills practice 4",
+      "context": "End-of-Class 8 skills",
+      "category": "Class 8 · End-of-Class 8 skills"
+    },
+    {
+      "bn": "বিপরীত অবস্থান সঠিকভাবে উপস্থাপন করে যুক্তিসঙ্গত প্রতিউত্তর দিতে পারা উচিত।",
+      "en": "End-of-Class 8 skills practice 5",
+      "context": "End-of-Class 8 skills",
+      "category": "Class 8 · End-of-Class 8 skills"
+    },
+    {
+      "bn": "দাবি, প্রমাণ, বিশ্লেষণ, বিপরীত মত ও উপসংহার ব্যবহার করে যুক্তিনির্ভর প্রবন্ধ লিখতে পারা উচিত।",
+      "en": "End-of-Class 8 skills practice 6",
+      "context": "End-of-Class 8 skills",
+      "category": "Class 8 · End-of-Class 8 skills"
+    }
+  ],
+  "practice": [
+    {
+      "type": "Evidence evaluation",
+      "prompt": "Judge whether evidence is relevant, sufficient, current, and reliable.",
+      "answer": "Explain how the source and collection method affect the claim's strength."
+    },
+    {
+      "type": "Bias analysis",
+      "prompt": "Identify loaded language, omitted evidence, and one-sided framing.",
+      "answer": "Separate verifiable facts from evaluation and explain the likely effect on readers."
+    },
+    {
+      "type": "Sustained argument",
+      "prompt": "Write an argument with claims, evidence, analysis, counterargument, response, and conclusion.",
+      "answer": "Use reliable evidence and connect every detail clearly to the central claim."
+    }
+  ],
+  "notes": [
+    "Evaluate evidence rather than merely locating it.",
+    "Check author, publisher, date, purpose, and corroboration before trusting a source.",
+    "Use context and precise connectors in multi-paragraph analysis."
+  ]
+}
