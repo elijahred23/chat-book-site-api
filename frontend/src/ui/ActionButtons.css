@@ -102,6 +102,12 @@
   transform: scale(0.97);
 }
 
+.icon-btn:disabled {
+  cursor: wait;
+  opacity: 0.55;
+  transform: none;
+}
+
 .icon-btn.is-active {
   outline: 3px solid #22c55e;
   outline-offset: 2px;

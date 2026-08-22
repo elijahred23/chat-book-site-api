@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { FaEraser, FaPrint } from "react-icons/fa";
 import { actions, useAppDispatch, useAppState } from "../../context/AppContext.jsx";
 import BENGALI_GLOSSES from "../../data/bengali-glosses.json";
+import ActionButtons from "../../ui/ActionButtons.jsx";
 import Button from "../../ui/Button.jsx";
 import "./BengaliCharacterBreakdown.css";
 
@@ -411,6 +412,22 @@ export default function BengaliCharacterBreakdown({ isOpen }) {
     });
     return words;
   }, [bengaliBreakdownWords]);
+  const breakdownResultsText = useMemo(() => {
+    const results = wordGroups.flatMap((wordSegments) => {
+      const word = wordSegments.map(({ grapheme }) => grapheme).join("");
+      if (!bengaliPattern.test(word)) return [];
+      const lookupWord = normalizeLookupWord(word);
+      const savedPronunciation = contextualWords.get(lookupWord)?.pronunciation
+        || SAVED_BENGALI_PRONUNCIATIONS[lookupWord]
+        || "";
+      const pronunciations = [...new Set([
+        savedPronunciation,
+        approximatePronunciation(word),
+      ].map((value) => value.trim()).filter((value) => value && value !== "—"))];
+      return [`${word}\n${pronunciations.join(" / ")}`];
+    });
+    return results.length ? `Bengali breakdown results\n\n${results.join("\n\n")}` : "";
+  }, [contextualWords, wordGroups]);
   const targetCharacters = useMemo(() => segments.map(({ grapheme }) => grapheme), [segments]);
   const typedCharacters = useMemo(() => segmentText(typedText).map(({ grapheme }) => grapheme), [typedText]);
   const correctCount = typedCharacters.findIndex(
@@ -902,7 +919,13 @@ export default function BengaliCharacterBreakdown({ isOpen }) {
           )}
         </section>
       ) : segments.length ? (
-        <ol className="bengali-breakdown__list" aria-label="Character breakdown">
+        <>
+          {breakdownResultsText ? (
+            <div className="bengali-breakdown__result-actions">
+              <ActionButtons promptText={breakdownResultsText} />
+            </div>
+          ) : null}
+          <ol className="bengali-breakdown__list" aria-label="Character breakdown">
           {wordGroups.map((wordSegments, wordIndex) => {
             const completedWord = wordSegments.map(({ grapheme }) => grapheme).join("");
             const soundEntries = characterSoundEntries(completedWord);
@@ -936,7 +959,8 @@ export default function BengaliCharacterBreakdown({ isOpen }) {
                 </li>
             );
           })}
-        </ol>
+          </ol>
+        </>
       ) : (
         <div className="bengali-breakdown__empty">
           <span lang="bn" aria-hidden="true">অ আ ক খ</span>

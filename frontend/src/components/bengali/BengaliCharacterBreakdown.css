@@ -7,6 +7,7 @@
 .bengali-breakdown__intro > p { margin: 0; color: var(--color-text-muted); }
 .bengali-breakdown__input { min-height: 9rem !important; font-family: "Noto Sans Bengali", "Nirmala UI", "Vrinda", sans-serif; font-size: 1.25rem !important; line-height: 1.7; }
 .bengali-breakdown__toolbar { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: .75rem; color: var(--color-text-muted); font-size: .85rem; font-weight: 700; }
+.bengali-breakdown__result-actions { margin-top: 1rem; border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: .75rem; background: var(--color-surface); }
 .bengali-breakdown__list { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr)); gap: .8rem; margin: 1rem 0 0; padding: 0; list-style: none; }
 .bengali-breakdown__item { min-width: 0; display: grid; grid-template-columns: 4.25rem 1fr; gap: .85rem; border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: .85rem; background: var(--color-surface); box-shadow: var(--shadow-sm); }
 .bengali-breakdown__item.is-completed-word { grid-column: 1 / -1; grid-template-columns: minmax(0, 1fr); border-color: #a7d8c8; background: #f0fdf8; box-shadow: none; }

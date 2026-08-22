@@ -78,3 +78,36 @@ export const getGoogleTtsAudio = async (text, lang = "bn-IN") => {
     inFlightRequests.delete(key);
   }
 };
+
+const splitTextByUtf8Bytes = (text, maxBytes = 4500) => {
+  const encoder = new TextEncoder();
+  const chunks = [];
+  let currentChunk = "";
+
+  String(text || "").match(/\S+\s*/gu)?.forEach((token) => {
+    if (encoder.encode(currentChunk + token).length <= maxBytes) {
+      currentChunk += token;
+      return;
+    }
+    if (currentChunk.trim()) chunks.push(currentChunk.trim());
+    currentChunk = token;
+  });
+  if (currentChunk.trim()) chunks.push(currentChunk.trim());
+  return chunks;
+};
+
+export const getGoogleTtsMp3Download = async (text, lang = "bn-IN") => {
+  const chunks = splitTextByUtf8Bytes(text);
+  if (!chunks.length) throw new Error("Bengali text is required for Google speech.");
+
+  const response = await fetch("/api/tts/batch", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ items: chunks.map((chunk) => ({ text: chunk, lang })) }),
+  });
+  if (!response.ok) {
+    const data = await response.json().catch(() => ({}));
+    throw new Error(data.error || `Google speech download failed (${response.status}).`);
+  }
+  return response.blob();
+};

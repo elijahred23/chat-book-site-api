@@ -8,6 +8,7 @@ import {
   FaCopy,
   FaDownload,
   FaEllipsisH,
+  FaFileAudio,
   FaKeyboard,
   FaLanguage,
   FaLightbulb,
@@ -23,6 +24,7 @@ import { GiGraduateCap, GiNotebook } from "react-icons/gi";
 import { SiMarkdown, SiWikipedia } from "react-icons/si";
 import { actions, useAppDispatch, useAppState } from "../context/AppContext";
 import { useFlyout } from "../context/FlyoutContext";
+import { getGoogleTtsMp3Download } from "../utils/googleTtsAudioCache.js";
 import "./ActionButtons.css";
 
 function removeMarkdown(text) {
@@ -73,8 +75,10 @@ export default function ActionButtons({ promptText, limitButtons = false }) {
   const navigate = useNavigate();
   const { showMessage } = useFlyout();
   const [showAll, setShowAll] = useState(false);
+  const [isDownloadingBengaliMp3, setIsDownloadingBengaliMp3] = useState(false);
   const rawText = promptText || "";
   const cleanText = removeMarkdown(rawText);
+  const bengaliOnlyText = keepBengaliText(cleanText);
 
   const openChat = (prompt) => {
     dispatch(actions.setChatPrompt(prompt));
@@ -87,6 +91,31 @@ export default function ActionButtons({ promptText, limitButtons = false }) {
       showMessage?.({ type: "success", message: `${label} copied to clipboard!` });
     } catch {
       showMessage?.({ type: "error", message: "Copy failed. Try copying manually." });
+    }
+  };
+
+  const downloadBengaliMp3 = async () => {
+    if (!bengaliOnlyText) {
+      showMessage?.({ type: "error", message: "No Bengali text was found to convert." });
+      return;
+    }
+
+    setIsDownloadingBengaliMp3(true);
+    try {
+      const audioBlob = await getGoogleTtsMp3Download(bengaliOnlyText, "bn-IN");
+      const url = URL.createObjectURL(audioBlob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = "bengali-speech.mp3";
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      URL.revokeObjectURL(url);
+      showMessage?.({ type: "success", message: "Bengali MP3 downloaded." });
+    } catch (error) {
+      showMessage?.({ type: "error", message: error.message || "Bengali MP3 download failed." });
+    } finally {
+      setIsDownloadingBengaliMp3(false);
     }
   };
 
@@ -138,6 +167,13 @@ export default function ActionButtons({ promptText, limitButtons = false }) {
     {
       label: "Export",
       buttons: [
+        {
+          icon: FaFileAudio,
+          title: !bengaliOnlyText ? "No Bengali text to download" : isDownloadingBengaliMp3 ? "Creating Bengali MP3…" : "Download Bengali MP3",
+          color: "var(--btn-green)",
+          disabled: !bengaliOnlyText || isDownloadingBengaliMp3,
+          onClick: downloadBengaliMp3,
+        },
         { icon: FaCopy, title: "Copy Text", color: "var(--btn-gray)", onClick: () => copyText(cleanText, "Text") },
         { icon: FaDownload, title: "Download Text", color: "#e2e8f0", iconColor: "#0f172a", onClick: () => downloadText(cleanText, "txt", "text/plain", showMessage) },
         { icon: SiMarkdown, title: "Copy Markdown", color: "#0f766e", onClick: () => copyText(rawText, "Markdown") },
@@ -179,6 +215,7 @@ export default function ActionButtons({ promptText, limitButtons = false }) {
                       key={button.title}
                       type="button"
                       onClick={button.onClick}
+                      disabled={button.disabled}
                       className={`icon-btn${isActive ? " is-active" : ""}`}
                       title={button.title}
                       aria-label={button.title}
