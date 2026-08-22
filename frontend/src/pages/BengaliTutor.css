@@ -58,6 +58,11 @@
 .bn-page .bn-shuffle-btn { min-width: 10rem; box-shadow: none; }
 .bn-page .bn-action-toggle { padding: .65rem .85rem !important; border-color: var(--bn-line) !important; background: #f8faf8 !important; }
 .bn-page .bn-action-toggle input { width: 1.1rem; height: 1.1rem; margin: 0; accent-color: var(--bn-primary); }
+.bn-action-area { display: grid; gap: .75rem; }
+.bn-content-options { display: flex; gap: .55rem 1rem; align-items: center; flex-wrap: wrap; margin: 0; padding: .7rem .85rem; border: 1px solid var(--bn-line); border-radius: 12px; background: #f8faf8; }
+.bn-content-options legend { padding: 0 .3rem; color: var(--bn-muted); font-size: .75rem; font-weight: 850; letter-spacing: .06em; text-transform: uppercase; }
+.bn-content-options label { display: inline-flex; align-items: center; gap: .4rem; color: var(--bn-ink); font-size: .9rem; font-weight: 750; cursor: pointer; }
+.bn-content-options input { width: 1.1rem; height: 1.1rem; margin: 0; accent-color: var(--bn-primary); cursor: pointer; }
 
 .bn-page .bn-phrase-list,
 .bn-page .bn-vocab-list { padding: 0 !important; border: 0; background: transparent; }

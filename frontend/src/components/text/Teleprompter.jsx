@@ -1,7 +1,9 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import {
+  FaBackward,
   FaCompress,
   FaExpand,
+  FaForward,
   FaPause,
   FaPlay,
   FaRedoAlt,
@@ -239,6 +241,36 @@ export default function Teleprompter() {
     updateReadout();
   };
 
+  const skip = (seconds) => {
+    if (!script.trim()) return;
+    measureContent();
+    const height = heightRef.current;
+    if (!height) return;
+    const distance = speedRef.current * seconds * (directionRef.current === "up" ? 1 : -1);
+    offsetRef.current = clamp(offsetRef.current + distance, 0, Math.max(0, height - 0.01));
+    lastFrameRef.current = null;
+    paintPosition();
+    updateReadout();
+  };
+
+  const seekToProgress = (nextProgress) => {
+    if (!script.trim()) return;
+    measureContent();
+    const height = heightRef.current;
+    if (!height) return;
+    const fraction = clamp(nextProgress, 0, 100) / 100;
+    const rawFraction = directionRef.current === "up" ? fraction : 1 - fraction;
+    offsetRef.current = clamp(rawFraction * height, 0, Math.max(0, height - 0.01));
+    lastFrameRef.current = null;
+    paintPosition();
+    updateReadout();
+  };
+
+  const seekFromPointer = (event) => {
+    const bounds = event.currentTarget.getBoundingClientRect();
+    seekToProgress(((event.clientX - bounds.left) / bounds.width) * 100);
+  };
+
   const pasteFromClipboard = async () => {
     try {
       setScript(await navigator.clipboard.readText());
@@ -377,8 +409,14 @@ export default function Teleprompter() {
         </div>
 
         <div className="tp-runtime" aria-label="Playback controls">
+          <button type="button" className="tp-runtime__icon" onClick={() => skip(-10)} disabled={!script.trim()} aria-label="Skip backward 10 seconds" title="Back 10 seconds">
+            <FaBackward aria-hidden="true" />
+          </button>
           <button type="button" className="tp-runtime__icon tp-runtime__play" onClick={togglePause} disabled={!script.trim()} aria-label={isPaused || !isRunning ? "Play" : "Pause"}>
             {isPaused || !isRunning ? <FaPlay /> : <FaPause />}
+          </button>
+          <button type="button" className="tp-runtime__icon" onClick={() => skip(10)} disabled={!script.trim()} aria-label="Skip forward 10 seconds" title="Forward 10 seconds">
+            <FaForward aria-hidden="true" />
           </button>
           <button type="button" className="tp-runtime__icon" onClick={restart} disabled={!script.trim()} aria-label="Restart script"><FaRedoAlt /></button>
           <div className="tp-speed-control" aria-label="Live scroll speed">
@@ -395,8 +433,25 @@ export default function Teleprompter() {
           </button>
         </div>
 
-        <div className="tp-progress" aria-label={`${Math.round(progress)} percent through the script`}>
-          <div><span style={{ width: `${progress}%` }} /></div>
+        <div className="tp-progress">
+          <div
+            role="slider"
+            tabIndex={script.trim() ? 0 : -1}
+            aria-label="Teleprompter position"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            aria-valuenow={Math.round(progress)}
+            aria-valuetext={`${Math.round(progress)} percent through the script`}
+            aria-disabled={!script.trim()}
+            onPointerDown={seekFromPointer}
+            onKeyDown={(event) => {
+              if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+              event.preventDefault();
+              seekToProgress(progress + (event.key === "ArrowRight" ? 5 : -5));
+            }}
+          >
+            <span style={{ width: `${progress}%` }} />
+          </div>
           <p><span>{formatTime(remaining)} remaining</span><span>{speed} px/s</span></p>
         </div>
       </div>

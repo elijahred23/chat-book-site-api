@@ -340,6 +340,11 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
   const scrollSpeedRef = useRef(scrollSpeed);
   const scrollLoopTimeoutRef = useRef(null);
   const [jumpTarget, setJumpTarget] = useState("");
+  const [visibleContent, setVisibleContent] = useState({
+    bengali: true,
+    pronunciation: true,
+    english: true,
+  });
   const [phraseShuffleVersion, setPhraseShuffleVersion] = useState(0);
   const [vocabShuffleVersion, setVocabShuffleVersion] = useState(0);
   const [gameDataset, setGameDataset] = useState("vocab");
@@ -593,12 +598,12 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
     const source = isBreakdownWords ? breakdownWords : isVocab ? orderedVocab : orderedPhrases;
     const label = isBreakdownWords ? "Phrase breakdown words" : isVocab ? "Vocab" : "Phrases";
     const items = source.map((item, index) => [
-      `${index + 1}. ${item.bn}`,
-      item.pronunciation ? `   Pronunciation: ${item.pronunciation}` : "",
-      `   English: ${item.en}`,
+      visibleContent.bengali ? `${index + 1}. ${item.bn}` : `${index + 1}.`,
+      visibleContent.pronunciation && item.pronunciation ? `   Pronunciation: ${item.pronunciation}` : "",
+      visibleContent.english ? `   English: ${item.en}` : "",
     ].filter(Boolean).join("\n"));
     return `${lesson.title}\n${label}\n\n${items.join("\n\n")}`;
-  }, [lesson, breakdownWords, orderedPhrases, orderedVocab, contentTab, gameDataset]);
+  }, [lesson, breakdownWords, orderedPhrases, orderedVocab, contentTab, gameDataset, visibleContent]);
 
   const buildGameQuestion = useCallback((items, direction = gameDirection, stats = matchStatsRef.current) => {
     if (!items?.length || items.length < 2) return null;
@@ -1072,7 +1077,31 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
               ? "Strengthen Bengali recall with focused games from the selected lesson."
               : "Choose a saved lesson, hear pronunciation, and build understanding phrase by phrase."}</p>
           </div>
-          {view === "tutor" && lesson && <ActionButtons promptText={combinedLessonPrompt} />}
+          {view === "tutor" && lesson && (
+            <div className="bn-action-area">
+              <ActionButtons promptText={combinedLessonPrompt} />
+              <fieldset className="bn-content-options">
+                <legend>Content options</legend>
+                {[
+                  ["bengali", "Bengali"],
+                  ["pronunciation", "Pronunciation"],
+                  ["english", "English"],
+                ].map(([key, label]) => (
+                  <label key={key}>
+                    <input
+                      type="checkbox"
+                      checked={visibleContent[key]}
+                      onChange={(event) => setVisibleContent((current) => ({
+                        ...current,
+                        [key]: event.target.checked,
+                      }))}
+                    />
+                    <span>{label}</span>
+                  </label>
+                ))}
+              </fieldset>
+            </div>
+          )}
           {showLessonSelector && (
             <div className="bn-grid">
               <label className="bn-row">
@@ -1214,11 +1243,11 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
                 <h3>Key phrases</h3>
                 {orderedPhrases.map((phrase, idx) => (
                   <article id={`bn-phrases-${idx}`} key={`${phrase.bn}-${idx}`} className="bn-section" style={{ background: "#fff" }}>
-                    <div className="bn-script" lang="bn">{phrase.bn}</div>
-                    <div className="bn-pronunciation">{phrase.pronunciation}</div>
-                    <div className="bn-translation">{phrase.en}</div>
+                    {visibleContent.bengali && <div className="bn-script" lang="bn">{phrase.bn}</div>}
+                    {visibleContent.pronunciation && phrase.pronunciation && <div className="bn-pronunciation">{phrase.pronunciation}</div>}
+                    {visibleContent.english && <div className="bn-translation">{phrase.en}</div>}
                     {phrase.context && <div style={{ color: "#475569" }}>{phrase.context}</div>}
-                    <div className="bn-breakdown">
+                    {(visibleContent.bengali || visibleContent.pronunciation || visibleContent.english) && <div className="bn-breakdown">
                       <div className="bn-breakdown-header">
                         <strong>Phrase breakdown</strong>
                         <label className="bn-breakdown-speech-control">
@@ -1237,7 +1266,7 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
                       <div className="bn-breakdown-list">
                         {phrase.words.map((word, wordIndex) => (
                           <div className="bn-breakdown-word" key={`${phrase.bn}-${word.bn}-${wordIndex}`}>
-                            <button
+                            {visibleContent.bengali && <button
                               type="button"
                               className="bn-script bn-breakdown-speakable"
                               lang="bn"
@@ -1246,13 +1275,13 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
                               onClick={() => speakBreakdownWord(word.bn)}
                             >
                               {word.bn}
-                            </button>
-                            <span className="bn-pronunciation">{word.pronunciation}</span>
-                            <span className="bn-translation">{word.en}</span>
+                            </button>}
+                            {visibleContent.pronunciation && <span className="bn-pronunciation">{word.pronunciation}</span>}
+                            {visibleContent.english && <span className="bn-translation">{word.en}</span>}
                           </div>
                         ))}
                       </div>
-                    </div>
+                    </div>}
                     <BengaliItemActions item={phrase} />
                   </article>
                 ))}
@@ -1264,9 +1293,9 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
                 <h3>Vocabulary</h3>
                 {orderedVocab.map((word, idx) => (
                   <article id={`bn-vocab-${idx}`} key={`${word.bn}-${idx}`} className="bn-section" style={{ background: "#fff" }}>
-                    <div className="bn-script" lang="bn">{word.bn}</div>
-                    <div className="bn-pronunciation">{word.pronunciation}</div>
-                    <div className="bn-translation">{word.en}</div>
+                    {visibleContent.bengali && <div className="bn-script" lang="bn">{word.bn}</div>}
+                    {visibleContent.pronunciation && word.pronunciation && <div className="bn-pronunciation">{word.pronunciation}</div>}
+                    {visibleContent.english && <div className="bn-translation">{word.en}</div>}
                     <BengaliItemActions item={word} />
                   </article>
                 ))}
