@@ -336,6 +336,9 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
   const [isTutorWindowView, setIsTutorWindowView] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
   const tutorContentRef = useRef(null);
+  const scrollProgressRef = useRef(0);
+  const scrollProgressSliderRef = useRef(null);
+  const scrollProgressFillRef = useRef(null);
   const scrollDirectionRef = useRef(scrollDirection);
   const scrollSpeedRef = useRef(scrollSpeed);
   const scrollLoopTimeoutRef = useRef(null);
@@ -380,6 +383,21 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
   const [bingoBoard, setBingoBoard] = useState([]);
   const [bingoTarget, setBingoTarget] = useState(null);
   const [bingoMatched, setBingoMatched] = useState([]);
+
+  const updateScrollProgress = useCallback((nextProgress, forceRender = false) => {
+    const normalizedProgress = Math.max(0, Math.min(100, nextProgress));
+    scrollProgressRef.current = normalizedProgress;
+    if (scrollProgressFillRef.current) {
+      scrollProgressFillRef.current.style.width = `${normalizedProgress}%`;
+    }
+    if (scrollProgressSliderRef.current) {
+      const roundedProgress = Math.round(normalizedProgress);
+      scrollProgressSliderRef.current.setAttribute("aria-valuenow", String(roundedProgress));
+      scrollProgressSliderRef.current.setAttribute("aria-valuetext", `${roundedProgress} percent`);
+    }
+
+    if (forceRender) setScrollProgress(normalizedProgress);
+  }, []);
 
   useEffect(() => {
     scrollDirectionRef.current = scrollDirection;
@@ -442,18 +460,20 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
         preciseScrollTop + scrollDirectionRef.current * scrollSpeedRef.current * elapsedSeconds,
       ));
       container.scrollTop = preciseScrollTop;
-      setScrollProgress(maxScrollTop ? (preciseScrollTop / maxScrollTop) * 100 : 100);
+      updateScrollProgress(maxScrollTop ? (preciseScrollTop / maxScrollTop) * 100 : 100);
 
       const reachedEnd = scrollDirectionRef.current > 0
         ? preciseScrollTop >= maxScrollTop
         : preciseScrollTop <= 0;
       if (reachedEnd) {
+        updateScrollProgress(maxScrollTop ? (preciseScrollTop / maxScrollTop) * 100 : 100, true);
         if (isScrollLooping && scrollDirectionRef.current > 0) {
           setIsAutoScrolling(false);
           scrollLoopTimeoutRef.current = setTimeout(() => {
             const nextContainer = tutorContentRef.current;
             if (!nextContainer) return;
             nextContainer.scrollTop = 0;
+            updateScrollProgress(0, true);
             setIsAutoScrolling(true);
           }, scrollRestartDelay * 1000);
           return;
@@ -466,14 +486,14 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
 
     frame = requestAnimationFrame(scroll);
     return () => cancelAnimationFrame(frame);
-  }, [isAutoScrolling, isScrollLooping, scrollRestartDelay, view]);
+  }, [isAutoScrolling, isScrollLooping, scrollRestartDelay, updateScrollProgress, view]);
 
   useEffect(() => {
     clearTimeout(scrollLoopTimeoutRef.current);
     setIsAutoScrolling(false);
-    setScrollProgress(0);
+    updateScrollProgress(0, true);
     if (tutorContentRef.current) tutorContentRef.current.scrollTop = 0;
-  }, [contentTab, lesson]);
+  }, [contentTab, lesson, updateScrollProgress]);
 
   const activateScrollDirection = (direction) => {
     clearTimeout(scrollLoopTimeoutRef.current);
@@ -494,7 +514,7 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
     const nextPercentage = Math.max(0, Math.min(100, percentage));
     const maxScrollTop = Math.max(0, container.scrollHeight - container.clientHeight);
     container.scrollTop = maxScrollTop * (nextPercentage / 100);
-    setScrollProgress(nextPercentage);
+    updateScrollProgress(nextPercentage, true);
   };
   const [bingoMistakes, setBingoMistakes] = useState(0);
   const [pronunciationQuestion, setPronunciationQuestion] = useState(null);
@@ -608,9 +628,9 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
         : [];
       return [
         visibleContent.bengali ? `${index + 1}. ${item.bn}` : `${index + 1}.`,
-        visibleContent.pronunciation && item.pronunciation ? `   Pronunciation: ${item.pronunciation}` : "",
+        visibleContent.pronunciation && item.pronunciation ? `   ${item.pronunciation}` : "",
         visibleContent.english ? `   English: ${item.en}` : "",
-        breakdown.length ? `   Breakdown:\n${breakdown.map((word) => `      ${word}`).join("\n")}` : "",
+        breakdown.length ? breakdown.map((word) => `   ${word}`).join("\n") : "",
       ].filter(Boolean).join("\n");
     });
     return `${lesson.title}\n${label}\n\n${items.join("\n\n")}`;
@@ -1222,6 +1242,7 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
                 </div>
                 <div
                   className="bn-scroll-progress"
+                  ref={scrollProgressSliderRef}
                   role="slider"
                   tabIndex="0"
                   aria-label="Lesson scroll position"
@@ -1236,10 +1257,10 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
                   onKeyDown={(event) => {
                     if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
                     event.preventDefault();
-                    seekTutorScroll(scrollProgress + (event.key === "ArrowRight" ? 5 : -5));
+                    seekTutorScroll(scrollProgressRef.current + (event.key === "ArrowRight" ? 5 : -5));
                   }}
                 >
-                  <span style={{ width: `${scrollProgress}%` }} />
+                  <span ref={scrollProgressFillRef} style={{ width: `${scrollProgress}%` }} />
                 </div>
                 <div
                   className="bn-tutor-scroll-content"
@@ -1247,7 +1268,7 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
                   onScroll={(event) => {
                     const container = event.currentTarget;
                     const maxScrollTop = Math.max(0, container.scrollHeight - container.clientHeight);
-                    setScrollProgress(maxScrollTop ? (container.scrollTop / maxScrollTop) * 100 : 100);
+                    updateScrollProgress(maxScrollTop ? (container.scrollTop / maxScrollTop) * 100 : 100);
                   }}
                 >
             {contentTab === "phrases" && (
