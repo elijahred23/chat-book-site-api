@@ -344,6 +344,7 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
     bengali: true,
     pronunciation: true,
     english: true,
+    breakdown: true,
   });
   const [phraseShuffleVersion, setPhraseShuffleVersion] = useState(0);
   const [vocabShuffleVersion, setVocabShuffleVersion] = useState(0);
@@ -597,11 +598,21 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
     const isVocab = contentTab === "vocab" || (contentTab === "games" && gameDataset === "vocab");
     const source = isBreakdownWords ? breakdownWords : isVocab ? orderedVocab : orderedPhrases;
     const label = isBreakdownWords ? "Phrase breakdown words" : isVocab ? "Vocab" : "Phrases";
-    const items = source.map((item, index) => [
-      visibleContent.bengali ? `${index + 1}. ${item.bn}` : `${index + 1}.`,
-      visibleContent.pronunciation && item.pronunciation ? `   Pronunciation: ${item.pronunciation}` : "",
-      visibleContent.english ? `   English: ${item.en}` : "",
-    ].filter(Boolean).join("\n"));
+    const items = source.map((item, index) => {
+      const breakdown = visibleContent.breakdown && item.words?.length
+        ? item.words.map((word) => [
+          word.bn,
+          visibleContent.pronunciation && word.pronunciation ? `(${word.pronunciation})` : "",
+          word.en,
+        ].filter(Boolean).join(" — "))
+        : [];
+      return [
+        visibleContent.bengali ? `${index + 1}. ${item.bn}` : `${index + 1}.`,
+        visibleContent.pronunciation && item.pronunciation ? `   Pronunciation: ${item.pronunciation}` : "",
+        visibleContent.english ? `   English: ${item.en}` : "",
+        breakdown.length ? `   Breakdown:\n${breakdown.map((word) => `      ${word}`).join("\n")}` : "",
+      ].filter(Boolean).join("\n");
+    });
     return `${lesson.title}\n${label}\n\n${items.join("\n\n")}`;
   }, [lesson, breakdownWords, orderedPhrases, orderedVocab, contentTab, gameDataset, visibleContent]);
 
@@ -1086,6 +1097,7 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
                   ["bengali", "Bengali"],
                   ["pronunciation", "Pronunciation"],
                   ["english", "English"],
+                  ["breakdown", "Breakdown"],
                 ].map(([key, label]) => (
                   <label key={key}>
                     <input
@@ -1247,7 +1259,7 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
                     {visibleContent.pronunciation && phrase.pronunciation && <div className="bn-pronunciation">{phrase.pronunciation}</div>}
                     {visibleContent.english && <div className="bn-translation">{phrase.en}</div>}
                     {phrase.context && <div style={{ color: "#475569" }}>{phrase.context}</div>}
-                    {(visibleContent.bengali || visibleContent.pronunciation || visibleContent.english) && <div className="bn-breakdown">
+                    {visibleContent.breakdown && <div className="bn-breakdown">
                       <div className="bn-breakdown-header">
                         <strong>Phrase breakdown</strong>
                         <label className="bn-breakdown-speech-control">
@@ -1266,7 +1278,7 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
                       <div className="bn-breakdown-list">
                         {phrase.words.map((word, wordIndex) => (
                           <div className="bn-breakdown-word" key={`${phrase.bn}-${word.bn}-${wordIndex}`}>
-                            {visibleContent.bengali && <button
+                            <button
                               type="button"
                               className="bn-script bn-breakdown-speakable"
                               lang="bn"
@@ -1275,9 +1287,9 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
                               onClick={() => speakBreakdownWord(word.bn)}
                             >
                               {word.bn}
-                            </button>}
+                            </button>
                             {visibleContent.pronunciation && <span className="bn-pronunciation">{word.pronunciation}</span>}
-                            {visibleContent.english && <span className="bn-translation">{word.en}</span>}
+                            <span className="bn-translation">{word.en}</span>
                           </div>
                         ))}
                       </div>
