@@ -4,6 +4,7 @@ import { FaBackward, FaCompressAlt, FaExpandAlt, FaForward, FaPause, FaPlay, FaP
 import { useAppState } from "../../context/AppContext";
 import { useFlyout } from "../../context/FlyoutContext";
 import ActionButtons from "../../ui/ActionButtons";
+import ProgressBar from "../../ui/ProgressBar";
 
 const SAMPLE_MARKDOWN = `# Markdown Viewer
 
@@ -72,6 +73,7 @@ export default function MarkdownViewer() {
   const [scrollSpeed, setScrollSpeed] = useState(() => readStoredScrollSpeed());
   const [restartDelay, setRestartDelay] = useState(() => readStoredRestartDelay());
   const [scrollDirection, setScrollDirection] = useState(1);
+  const [scrollProgress, setScrollProgress] = useState(0);
   const [isWindowView, setIsWindowView] = useState(false);
   const printContentRef = useRef(null);
   const previewRef = useRef(null);
@@ -88,6 +90,14 @@ export default function MarkdownViewer() {
     if (!loopTimeoutRef.current) return;
     clearTimeout(loopTimeoutRef.current);
     loopTimeoutRef.current = null;
+  };
+
+  const updateScrollProgress = () => {
+    const preview = previewRef.current;
+    if (!preview) return;
+
+    const maxScrollTop = Math.max(0, preview.scrollHeight - preview.clientHeight);
+    setScrollProgress(maxScrollTop ? (preview.scrollTop / maxScrollTop) * 100 : 0);
   };
 
   useEffect(() => {
@@ -211,6 +221,17 @@ export default function MarkdownViewer() {
     if (isLooping) return undefined;
     clearLoopTimeout();
   }, [isLooping]);
+
+  useEffect(() => {
+    if (!showPreview) return undefined;
+
+    const animationFrame = requestAnimationFrame(updateScrollProgress);
+    window.addEventListener("resize", updateScrollProgress);
+    return () => {
+      cancelAnimationFrame(animationFrame);
+      window.removeEventListener("resize", updateScrollProgress);
+    };
+  }, [markdown, showPreview, isWindowView]);
 
   const stats = useMemo(
     () => ({
@@ -384,6 +405,17 @@ export default function MarkdownViewer() {
     if (previewRef.current) previewRef.current.scrollTop = 0;
     holdMultiplierRef.current = 1;
     setIsAutoScrolling(false);
+  };
+
+  const seekToProgress = (progress) => {
+    const preview = previewRef.current;
+    if (!preview) return;
+
+    clearLoopTimeout();
+    holdMultiplierRef.current = 1;
+    const maxScrollTop = Math.max(0, preview.scrollHeight - preview.clientHeight);
+    preview.scrollTop = maxScrollTop * (progress / 100);
+    setScrollProgress(progress);
   };
 
   return (
@@ -599,6 +631,23 @@ export default function MarkdownViewer() {
           align-items: center;
           gap: 6px;
           flex-wrap: wrap;
+        }
+        .mv-scroll-progress {
+          display: flex;
+          align-items: center;
+          width: 100%;
+          gap: 10px;
+        }
+        .mv-scroll-progress .progress-container {
+          flex: 1;
+          height: 10px;
+        }
+        .mv-scroll-progress-value {
+          min-width: 3.25rem;
+          color: #475569;
+          font-size: 0.8rem;
+          font-weight: 900;
+          text-align: right;
         }
         .mv-scroll-btn {
           appearance: none;
@@ -990,8 +1039,18 @@ export default function MarkdownViewer() {
                   sec
                 </label>
               </div>
+              <div className="mv-scroll-progress">
+                <ProgressBar
+                  progress={scrollProgress}
+                  label="Reading progress; seek through preview"
+                  onChange={seekToProgress}
+                />
+                <span className="mv-scroll-progress-value" aria-hidden="true">
+                  {Math.round(scrollProgress)}%
+                </span>
+              </div>
             </div>
-            <div className="mv-preview markdown-body" ref={previewRef}>
+            <div className="mv-preview markdown-body" ref={previewRef} onScroll={updateScrollProgress}>
               {markdown.trim() ? <ReactMarkdown>{markdown}</ReactMarkdown> : <div className="mv-empty">No markdown to preview.</div>}
             </div>
           </div>
