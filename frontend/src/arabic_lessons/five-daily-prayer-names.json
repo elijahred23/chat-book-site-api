@@ -1,0 +1,94 @@
+{
+  "id": "five-daily-prayer-names",
+  "title": "The Five Daily Prayer Names",
+  "summary": "Connect each prayer name to its everyday Arabic meaning and time of day.",
+  "level": "beginner",
+  "topic": "Islamic Prayer",
+  "focus": "prayer names and time associations",
+  "vocab": [
+    { "ar": "الْفَجْر", "pronunciation": "al-fajr", "en": "dawn 🌅", "category": "prayer name", "sourcePhrase": "صَلَاةُ الْفَجْرِ عِنْدَ الْفَجْرِ" },
+    { "ar": "الظُّهْر", "pronunciation": "aẓ-ẓuhr", "en": "midday ☀️", "category": "prayer name", "sourcePhrase": "صَلَاةُ الظُّهْرِ وَقْتَ الظَّهِيرَةِ" },
+    { "ar": "الْعَصْر", "pronunciation": "al-ʿaṣr", "en": "afternoon 🌤️", "category": "prayer name", "sourcePhrase": "صَلَاةُ الْعَصْرِ بَعْدَ الظُّهْرِ" },
+    { "ar": "الْمَغْرِب", "pronunciation": "al-maghrib", "en": "sunset / west 🌇", "category": "prayer name", "sourcePhrase": "صَلَاةُ الْمَغْرِبِ عِنْدَ غُرُوبِ الشَّمْسِ" },
+    { "ar": "الْعِشَاء", "pronunciation": "al-ʿishāʾ", "en": "night 🌙", "category": "prayer name", "sourcePhrase": "صَلَاةُ الْعِشَاءِ فِي اللَّيْلِ" }
+  ],
+  "phrases": [
+    {
+      "ar": "صَلَاةُ الْفَجْرِ عِنْدَ الْفَجْرِ",
+      "pronunciation": "ṣalātul-fajri ʿindal-fajr",
+      "en": "Fajr prayer is at dawn 🌅",
+      "context": "Fajr means dawn—the first light of the day.",
+      "category": "prayer association",
+      "words": [
+        { "ar": "صَلَاةُ", "pronunciation": "ṣalātu", "en": "prayer" },
+        { "ar": "الْفَجْرِ", "pronunciation": "al-fajri", "en": "of dawn" },
+        { "ar": "عِنْدَ", "pronunciation": "ʿinda", "en": "at" },
+        { "ar": "الْفَجْرِ", "pronunciation": "al-fajri", "en": "dawn" }
+      ]
+    },
+    {
+      "ar": "صَلَاةُ الظُّهْرِ وَقْتَ الظَّهِيرَةِ",
+      "pronunciation": "ṣalātuẓ-ẓuhri waqt aẓ-ẓahīrah",
+      "en": "Dhuhr prayer is at midday ☀️",
+      "context": "Dhuhr is associated with midday, when the sun has passed its highest point.",
+      "category": "prayer association",
+      "words": [
+        { "ar": "صَلَاةُ", "pronunciation": "ṣalātu", "en": "prayer" },
+        { "ar": "الظُّهْرِ", "pronunciation": "aẓ-ẓuhri", "en": "of midday" },
+        { "ar": "وَقْتَ", "pronunciation": "waqta", "en": "at the time of" },
+        { "ar": "الظَّهِيرَةِ", "pronunciation": "aẓ-ẓahīrah", "en": "midday" }
+      ]
+    },
+    {
+      "ar": "صَلَاةُ الْعَصْرِ بَعْدَ الظُّهْرِ",
+      "pronunciation": "ṣalātul-ʿaṣri baʿdaẓ-ẓuhr",
+      "en": "Asr prayer is in the afternoon 🌤️",
+      "context": "Asr is the afternoon prayer.",
+      "category": "prayer association",
+      "words": [
+        { "ar": "صَلَاةُ", "pronunciation": "ṣalātu", "en": "prayer" },
+        { "ar": "الْعَصْرِ", "pronunciation": "al-ʿaṣri", "en": "of afternoon" },
+        { "ar": "بَعْدَ", "pronunciation": "baʿda", "en": "after" },
+        { "ar": "الظُّهْرِ", "pronunciation": "aẓ-ẓuhr", "en": "midday" }
+      ]
+    },
+    {
+      "ar": "صَلَاةُ الْمَغْرِبِ عِنْدَ غُرُوبِ الشَّمْسِ",
+      "pronunciation": "ṣalātul-maghribi ʿinda ghurūbish-shams",
+      "en": "Maghrib prayer is at sunset 🌇",
+      "context": "Maghrib means the west or sunset—the direction where the sun sets.",
+      "category": "prayer association",
+      "words": [
+        { "ar": "صَلَاةُ", "pronunciation": "ṣalātu", "en": "prayer" },
+        { "ar": "الْمَغْرِبِ", "pronunciation": "al-maghribi", "en": "of sunset / the west" },
+        { "ar": "عِنْدَ", "pronunciation": "ʿinda", "en": "at" },
+        { "ar": "غُرُوبِ", "pronunciation": "ghurūbi", "en": "the setting of" },
+        { "ar": "الشَّمْسِ", "pronunciation": "ash-shams", "en": "the sun" }
+      ]
+    },
+    {
+      "ar": "صَلَاةُ الْعِشَاءِ فِي اللَّيْلِ",
+      "pronunciation": "ṣalātul-ʿishāʾi fil-layl",
+      "en": "Isha prayer is at night 🌙",
+      "context": "Isha is associated with night and darkness after twilight.",
+      "category": "prayer association",
+      "words": [
+        { "ar": "صَلَاةُ", "pronunciation": "ṣalātu", "en": "prayer" },
+        { "ar": "الْعِشَاءِ", "pronunciation": "al-ʿishāʾi", "en": "of night" },
+        { "ar": "فِي", "pronunciation": "fī", "en": "in" },
+        { "ar": "اللَّيْلِ", "pronunciation": "al-layli", "en": "the night" }
+      ]
+    }
+  ],
+  "practice": [
+    { "prompt": "Which prayer name means dawn?", "answer": "Fajr (الْفَجْر) 🌅" },
+    { "prompt": "Which prayer name is connected with midday?", "answer": "Dhuhr (الظُّهْر) ☀️" },
+    { "prompt": "Which prayer name is connected with the afternoon?", "answer": "Asr (الْعَصْر) 🌤️" },
+    { "prompt": "Which prayer name means sunset or west?", "answer": "Maghrib (الْمَغْرِب) 🌇" },
+    { "prompt": "Which prayer name is connected with night?", "answer": "Isha (الْعِشَاء) 🌙" }
+  ],
+  "notes": [
+    "Memory chain: dawn → midday → afternoon → sunset → night.",
+    "Prayer times are defined more precisely in Islamic law; these associations are simple vocabulary memory aids."
+  ]
+}
