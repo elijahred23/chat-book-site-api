@@ -867,13 +867,6 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
     .bn-script { display: inline-block; font-size: 3rem; font-weight: 800; color: #0f172a; border-radius: 10px; padding: 0.08rem 0.35rem; }
     .bn-pronunciation { color: #475569; font-weight: 700; }
     .bn-translation { color: #0f172a; }
-    .bn-breakdown { display: grid; gap: 8px; margin-top: 12px; padding-top: 12px; border-top: 1px solid #e2e8f0; }
-    .bn-breakdown-header { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
-    .bn-breakdown-speech-control { display: flex; align-items: center; gap: 8px; color: #475569; font-size: .82rem; font-weight: 700; }
-    .bn-breakdown-speech-control .bn-select { min-height: 38px; padding: .45rem .65rem; }
-    .bn-breakdown-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 8px; }
-    .bn-breakdown-word { display: grid; gap: 3px; padding: 0.65rem; border: 1px solid #dbe3ef; border-radius: 10px; background: #f8fafc; }
-    .bn-breakdown-word .bn-pronunciation { color: #1d4ed8; }
   `;
 
   return (

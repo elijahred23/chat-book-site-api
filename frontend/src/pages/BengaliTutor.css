@@ -21,7 +21,23 @@
 .bn-select,.bn-input { padding: .7rem; border: 1px solid #dbe3ef; border-radius: 10px; background: #fff; color: #0f172a; font-weight: 700; }
 .bn-script { display: inline-block; padding: .08rem .35rem; border-radius: 10px; color: #0f172a; font-size: 3rem; font-weight: 800; }
 .bn-pronunciation { color: #475569; font-weight: 700; }.bn-translation { color: #0f172a; }
-.bn-breakdown { display: grid; gap: 8px; margin-top: 12px; padding-top: 12px; border-top: 1px solid #e2e8f0; }.bn-breakdown-header{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}.bn-breakdown-speech-control{display:flex;align-items:center;gap:8px;color:#475569;font-size:.82rem;font-weight:700}.bn-breakdown-speech-control .bn-select{min-height:38px;padding:.45rem .65rem}.bn-breakdown-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px}.bn-breakdown-word{display:grid;gap:3px;padding:.65rem;border:1px solid #dbe3ef;border-radius:10px;background:#f8fafc}.bn-breakdown-word .bn-pronunciation{color:#1d4ed8}
+.bn-breakdown { display: grid; gap: .85rem; margin-top: 1rem; padding: 1rem; border: 1px solid #dfe8e2; border-radius: 14px; background: linear-gradient(145deg, #f7faf8, #fff); }
+.bn-breakdown-header { display: flex; align-items: center; justify-content: space-between; gap: .75rem; flex-wrap: wrap; }
+.bn-breakdown-heading { display: grid; gap: .15rem; }
+.bn-breakdown-heading strong { color: var(--bn-ink); font-size: .95rem; }
+.bn-breakdown-heading span { color: var(--bn-muted); font-size: .75rem; }
+.bn-breakdown-speech-control { display: flex; align-items: center; gap: .5rem; color: var(--bn-muted); font-size: .75rem; font-weight: 800; }
+.bn-breakdown-speech-control .bn-select { min-height: 36px; padding: .35rem 2rem .35rem .6rem; font-size: .78rem; }
+.bn-breakdown-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr)); gap: .6rem; }
+.bn-breakdown-word { position: relative; display: grid; min-width: 0; overflow: hidden; border: 1px solid #dce6df; border-radius: 12px; background: #fff; box-shadow: 0 4px 14px rgba(36, 60, 46, .05); }
+.bn-breakdown-number { position: absolute; z-index: 1; top: .45rem; inset-inline-start: .45rem; display: grid; width: 1.35rem; height: 1.35rem; place-items: center; border-radius: 999px; background: #e8f3ec; color: var(--bn-primary); font-size: .66rem; font-weight: 900; }
+.bn-breakdown-speakable { width: 100%; min-height: 4.5rem; padding: 1.65rem .75rem .65rem; border: 0; border-radius: 0; background: transparent; color: var(--bn-ink); cursor: pointer; font-family: "Noto Sans Bengali", "Nirmala UI", sans-serif; font-size: clamp(1.45rem, 3vw, 2rem); font-weight: 800; line-height: 1.35; overflow-wrap: anywhere; transition: background 140ms ease, color 140ms ease; }
+.arabic-page .bn-breakdown-speakable { font-family: "Noto Naskh Arabic", "Geeza Pro", serif; font-size: clamp(1.8rem, 3.5vw, 2.35rem); }
+.bn-breakdown-speakable:hover { color: var(--bn-primary); background: #f2f8f4; }
+.bn-breakdown-speakable:focus-visible { position: relative; z-index: 2; outline: 3px solid rgba(42, 123, 76, .28); outline-offset: -3px; }
+.bn-breakdown-meaning { display: grid; gap: .15rem; min-width: 0; padding: .6rem .75rem .7rem; border-top: 1px solid #edf1ee; background: #fafcfb; text-align: left; }
+.bn-breakdown-meaning .bn-pronunciation { color: var(--bn-primary); font-size: .78rem; line-height: 1.35; overflow-wrap: anywhere; }
+.bn-breakdown-meaning .bn-translation { color: #4b5b51; font-size: .82rem; font-weight: 650; line-height: 1.35; overflow-wrap: anywhere; }
 
 .bn-page .bn-shell { width: min(100% - 2rem, 74rem); max-width: none; gap: 1rem; padding: 0; }
 .bn-page .bn-card { border-color: rgba(211, 222, 214, .9); border-radius: 22px; box-shadow: 0 18px 55px rgba(36, 60, 46, .08); }
@@ -89,9 +105,6 @@
 .bn-content-heading h3 { margin: .1rem 0 0; color: var(--bn-ink); font-size: 1.25rem; }
 .bn-page .bn-phrase-card { display: grid; gap: .45rem; padding: clamp(1rem, 2vw, 1.3rem) !important; border-color: var(--bn-line); border-radius: 16px; box-shadow: 0 7px 22px rgba(36,60,46,.055); }
 .bn-script { color: var(--bn-ink); font-family: "Noto Sans Bengali", "Nirmala UI", sans-serif; font-size: clamp(1.35rem, 3vw, 1.8rem); line-height: 1.45; }
-.bn-breakdown-speakable { border-radius: 6px; background: #eaf2f8; color: var(--bn-ink); cursor: pointer; }
-.bn-breakdown-speakable:hover { color: var(--bn-primary); background: #eef7f1; }
-.bn-breakdown-speakable:focus-visible { outline: 3px solid rgba(42, 123, 76, .28); outline-offset: 3px; }
 .bn-pronunciation { color: var(--bn-primary); font-size: .88rem; font-weight: 700; }
 .bn-translation { color: #39473f; font-size: 1rem; font-weight: 650; }
 .bn-context { display: flex; gap: .5rem; margin-top: .35rem; padding-top: .7rem; border-top: 1px solid #edf1ee; color: var(--bn-muted); font-size: .85rem; }
@@ -176,6 +189,11 @@ body.bn-tutor-window-open { overflow: hidden; }
   .bn-page .bn-game-scoreboard { grid-template-columns: repeat(2,minmax(0,1fr)); }
   .bn-page .bn-game-actions .bn-btn { flex: 1 1 9rem; }
   .bn-page .bn-game-option { padding: .75rem; }
+  .bn-breakdown { margin-inline: -.25rem; padding: .75rem; }
+  .bn-breakdown-header { align-items: flex-start; }
+  .bn-breakdown-speech-control { width: 100%; justify-content: space-between; }
+  .bn-breakdown-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .bn-breakdown-speakable { min-height: 4.25rem; }
   .bn-page .bn-section input,
   .bn-page .bn-section select { min-height: 46px; }
 }
