@@ -5,6 +5,10 @@ import BengaliTutor, { SELECTABLE_SAVED_LESSONS } from "./BengaliTutor.jsx";
 import { phraseBreakdownItems, withPhraseWords } from "../utils/bengaliPhraseBreakdown.js";
 import { getGoogleTtsAudio, GOOGLE_BENGALI_VOICE_KEY } from "../utils/googleTtsAudioCache.js";
 import { actions, useAppDispatch } from "../context/AppContext.jsx";
+import LanguageTutorTabs from "../components/language/LanguageTutorTabs.jsx";
+import LanguageLessonPicker from "../components/language/LanguageLessonPicker.jsx";
+import LanguageVoicePicker from "../components/language/LanguageVoicePicker.jsx";
+import LanguageMp3Downloads from "../components/language/LanguageMp3Downloads.jsx";
 
 const LESSON_KEY = "bengali_lesson_cache";
 const SETTINGS_KEY = "bengali_word_loop_settings";
@@ -34,7 +38,7 @@ const storedLesson = () => {
     return lesson ? withPhraseWords(lesson) : null;
   } catch { return null; }
 };
-const storedSettings = () => {
+const storedSettings = (settingsKey = SETTINGS_KEY) => {
   const defaults = {
     dataset: "vocab",
     mode: "bengali",
@@ -52,11 +56,11 @@ const storedSettings = () => {
     bengaliSpeechSource: "pronunciation",
     translationSetId: "",
   };
-  try { return { ...defaults, ...JSON.parse(localStorage.getItem(SETTINGS_KEY) || "{}") }; } catch { return defaults; }
+  try { return { ...defaults, ...JSON.parse(localStorage.getItem(settingsKey) || "{}") }; } catch { return defaults; }
 };
-const storedTranslations = () => {
+const storedTranslations = (historyKey = TRANSLATION_HISTORY_KEY) => {
   try {
-    const records = JSON.parse(localStorage.getItem(TRANSLATION_HISTORY_KEY) || "[]");
+    const records = JSON.parse(localStorage.getItem(historyKey) || "[]");
     return Array.isArray(records)
       ? records.filter((record) => record?.id && record.bengali && record.pronunciation
         && record.translation && ((Array.isArray(record.sentences) && record.sentences.length)
@@ -106,28 +110,6 @@ const shuffleItems = (items) => {
   }
   return shuffled;
 };
-const buildGoogleTtsChunks = (items, maxBytes = 4500) => {
-  const encoder = new TextEncoder();
-  const separator = "। ";
-  const chunks = [];
-  let current = "";
-
-  items.forEach((item) => {
-    const text = String(item?.bn || "").trim();
-    if (!text) return;
-    const candidate = current ? `${current}${separator}${text}` : text;
-    if (current && encoder.encode(candidate).length > maxBytes) {
-      chunks.push(current);
-      current = text;
-    } else {
-      current = candidate;
-    }
-  });
-
-  if (current) chunks.push(current);
-  return chunks;
-};
-
 export default function BengaliTutorFiltered() {
   const [tab, setTab] = useState("tutor");
   const [lesson, setLesson] = useState(() => {
@@ -183,24 +165,10 @@ export default function BengaliTutorFiltered() {
 
   return (
     <main style={ui.page}>
-      <section style={ui.lessonPicker}>
-        <Field label="Saved lesson category">
-          <select style={ui.input} value={lesson.id} onChange={(event) => selectLesson(event.target.value)}>
-            {SELECTABLE_SAVED_LESSONS.map((savedLesson) => (
-              <option key={savedLesson.id} value={savedLesson.id}>{savedLesson.topic}</option>
-            ))}
-          </select>
-        </Field>
-      </section>
-      <nav className="bn-learning-tabs" style={ui.tabs} aria-label="Bengali tutor sections">
-        <button type="button" style={tab === "tutor" ? ui.active : ui.tab} onClick={() => setTab("tutor")}>Tutor</button>
-        <button type="button" style={tab === "loop" ? ui.active : ui.tab} onClick={() => setTab("loop")}>Word Loop</button>
-        <button type="button" style={tab === "translate" ? ui.active : ui.tab} onClick={() => setTab("translate")}>Bengali → English</button>
-        <button type="button" style={tab === "games" ? ui.active : ui.tab} onClick={() => setTab("games")}>Games</button>
-        <button type="button" style={tab === "downloads" ? ui.active : ui.tab} onClick={() => setTab("downloads")}>MP3 Downloads</button>
-      </nav>
+      <LanguageLessonPicker lessons={SELECTABLE_SAVED_LESSONS} value={lesson.id} onChange={selectLesson} getLabel={(savedLesson) => savedLesson.topic} />
+      <LanguageTutorTabs language="Bengali" activeTab={tab} onChange={setTab} className="bn-learning-tabs" />
       {(tab === "tutor" || tab === "games") && (
-        <VoiceSelect
+        <LanguageVoicePicker
           label="Bengali click voice"
           value={bnVoice}
           voices={bnVoices}
@@ -235,7 +203,7 @@ export default function BengaliTutorFiltered() {
         <WordLoop key={lesson.id} lesson={lesson} voices={voices} bnVoices={bnVoices} enVoices={enVoices} bnVoice={bnVoice} enVoice={enVoice}
           setBnVoice={setBnVoice} setEnVoice={setEnVoice} preview={preview} translationSets={translationPracticeSets} />
       ) : tab === "translate" ? (
-        <BengaliTranslator />
+        <LanguageTranslator />
       ) : tab === "downloads" ? (
         <BengaliMp3Downloads lesson={lesson} translationSets={translationPracticeSets} />
       ) : (
@@ -253,15 +221,9 @@ export default function BengaliTutorFiltered() {
 }
 
 function BengaliMp3Downloads({ lesson, translationSets }) {
-  const [dataset, setDataset] = useState("lesson-phrases");
-  const [speechOrder, setSpeechOrder] = useState("bn");
-  const [translationSetId, setTranslationSetId] = useState(() => translationSets[0]?.id || "");
-  const [downloading, setDownloading] = useState(false);
-  const [status, setStatus] = useState("");
-  const selectedTranslationSet = translationSets.find((set) => set.id === translationSetId) || translationSets[0] || null;
   const translationPhrases = useMemo(
-    () => phraseBreakdownItems({ phrases: selectedTranslationSet?.phrases || [] }),
-    [selectedTranslationSet],
+    () => translationSets.flatMap((set) => phraseBreakdownItems({ phrases: set.phrases || [] })),
+    [translationSets],
   );
   const translationWords = useMemo(() => {
     const uniqueWords = new Map();
@@ -274,101 +236,13 @@ function BengaliMp3Downloads({ lesson, translationSets }) {
     });
     return [...uniqueWords.values()];
   }, [translationPhrases]);
-  const collections = {
-    "lesson-phrases": lesson?.phrases || [],
-    "lesson-vocab": lesson?.vocab || [],
-    "translation-phrases": translationPhrases,
-    "translation-words": translationWords,
-  };
-  const items = collections[dataset].filter((item) => item?.bn);
-  const isTranslationDataset = dataset.startsWith("translation-");
-  const datasetLabel = {
-    "lesson-phrases": "lesson phrases",
-    "lesson-vocab": "lesson vocabulary",
-    "translation-phrases": "saved-translation phrases",
-    "translation-words": "saved-translation words",
-  }[dataset];
-
-  const downloadMp3 = async () => {
-    if (!items.length || downloading) return;
-    setDownloading(true);
-    setStatus(`Generating ${items.length} ${datasetLabel} with Google ${speechOrder === "en-bn" ? "English and Bengali" : "Bengali"} speech…`);
-    try {
-      const batchItems = speechOrder === "en-bn"
-        ? items.flatMap((item) => [
-          { text: String(item.en || "").trim(), lang: "en-US" },
-          { text: String(item.bn || "").trim(), lang: "bn-IN" },
-        ]).filter((item) => item.text)
-        : buildGoogleTtsChunks(items).map((text) => ({ text, lang: "bn-IN" }));
-      const response = await fetch("/api/tts/batch", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ items: batchItems }),
-      });
-      if (!response.ok) {
-        const data = await response.json().catch(() => ({}));
-        throw new Error(data.error || `MP3 generation failed (${response.status}).`);
-      }
-      const audioBlob = await response.blob();
-      const audioUrl = URL.createObjectURL(audioBlob);
-      const sourceName = isTranslationDataset ? selectedTranslationSet?.title : lesson?.title;
-      const link = document.createElement("a");
-      link.href = audioUrl;
-      link.download = `${fileSlug(sourceName || "bengali")}-${dataset}${speechOrder === "en-bn" ? "-english-bengali" : ""}.mp3`;
-      document.body.appendChild(link);
-      link.click();
-      link.remove();
-      setTimeout(() => URL.revokeObjectURL(audioUrl), 1000);
-      setStatus(`Downloaded ${items.length} ${datasetLabel}.`);
-    } catch (error) {
-      setStatus(error.message || "MP3 generation failed.");
-    } finally {
-      setDownloading(false);
-    }
-  };
-
   return (
-    <section style={ui.downloadCard} aria-labelledby="bn-mp3-heading">
-      <div>
-        <strong style={ui.eyebrow}>Google Bengali speech</strong>
-        <h1 id="bn-mp3-heading" style={ui.heading}>Download Bengali as MP3</h1>
-        <p style={ui.muted}>Create one Bengali audio file from the selected lesson or one of your saved translations.</p>
-      </div>
-      <div style={ui.grid}>
-        <Field label="Audio collection">
-          <select style={ui.input} value={dataset} onChange={(event) => { setDataset(event.target.value); setStatus(""); }}>
-            <option value="lesson-phrases">Lesson phrases ({lesson?.phrases?.length || 0})</option>
-            <option value="lesson-vocab">Lesson vocabulary ({lesson?.vocab?.length || 0})</option>
-            <option value="translation-phrases" disabled={!translationSets.length}>Saved translation phrases ({translationPhrases.length})</option>
-            <option value="translation-words" disabled={!translationSets.length}>Saved translation words ({translationWords.length})</option>
-          </select>
-        </Field>
-        <Field label="Speech order">
-          <select style={ui.input} value={speechOrder} onChange={(event) => { setSpeechOrder(event.target.value); setStatus(""); }}>
-            <option value="bn">Bengali only</option>
-            <option value="en-bn">English → Bengali</option>
-          </select>
-        </Field>
-        {isTranslationDataset && translationSets.length > 0 && (
-          <Field label="Saved translation">
-            <select style={ui.input} value={selectedTranslationSet?.id || ""} onChange={(event) => { setTranslationSetId(event.target.value); setStatus(""); }}>
-              {translationSets.map((set, index) => (
-                <option key={set.id} value={set.id}>{index + 1}. {shortTranslationLabel(set.title)}</option>
-              ))}
-            </select>
-          </Field>
-        )}
-      </div>
-      <div style={ui.downloadSummary}>
-        <strong>{items.length} items</strong>
-        <span>{items.slice(0, 4).map((item) => speechOrder === "en-bn" ? `${item.en} → ${item.bn}` : item.bn).join(" · ")}{items.length > 4 ? " …" : ""}</span>
-      </div>
-      <button type="button" style={ui.downloadButtonPrimary} disabled={!items.length || downloading} onClick={downloadMp3}>
-        {downloading ? "Generating MP3…" : `Download ${datasetLabel} MP3`}
-      </button>
-      {status && <div role="status" style={status.startsWith("Downloaded") ? ui.downloadSuccess : ui.downloadStatus}>{status}</div>}
-      <small style={ui.muted}>Requires the API’s configured Google Cloud Text-to-Speech credentials. Large collections can take longer to generate.</small>
-    </section>
+    <LanguageMp3Downloads language="Bengali" languageCode="bn-IN" scriptKey="bn" sourceName={lesson.title} collections={[
+      { id: "lesson-phrases", label: "lesson phrases", items: lesson.phrases || [] },
+      { id: "lesson-vocab", label: "lesson vocabulary", items: lesson.vocab || [] },
+      { id: "translation-phrases", label: "saved-translation phrases", items: translationPhrases },
+      { id: "translation-words", label: "saved-translation words", items: translationWords },
+    ]} className="bn-language-mp3" />
   );
 }
 
@@ -383,14 +257,20 @@ BengaliMp3Downloads.propTypes = {
     title: PropTypes.string.isRequired,
     phrases: PropTypes.arrayOf(PropTypes.object).isRequired,
   })).isRequired,
+  language: PropTypes.string,
+  languageCode: PropTypes.string,
+  languageTag: PropTypes.string,
+  welcomeText: PropTypes.string,
+  cloudVoiceKey: PropTypes.string,
+  settingsKey: PropTypes.string,
 };
 
-function BengaliTranslator() {
+export function LanguageTranslator({ language = "Bengali", sourceCode = "bn", languageCode = "bn-IN", languageTag = "bn", placeholder = "বাংলা লেখা এখানে লিখুন", historyKey = TRANSLATION_HISTORY_KEY, voiceKey = TRANSLATION_VOICE_KEY, enableBreakdownDrawer = true }) {
   const dispatch = useAppDispatch();
   const [text, setText] = useState("");
-  const [translations, setTranslations] = useState(storedTranslations);
+  const [translations, setTranslations] = useState(() => storedTranslations(historyKey));
   const [selectedTranslationId, setSelectedTranslationId] = useState("");
-  const [speechSource, setSpeechSource] = useState(() => storedString(TRANSLATION_VOICE_KEY) || "system");
+  const [speechSource, setSpeechSource] = useState(() => storedString(voiceKey) || "system");
   const [status, setStatus] = useState("idle");
   const [error, setError] = useState("");
   const [speechError, setSpeechError] = useState("");
@@ -407,7 +287,7 @@ function BengaliTranslator() {
   const changeSpeechSource = (value) => {
     setSpeechSource(value);
     try {
-      localStorage.setItem(TRANSLATION_VOICE_KEY, value);
+      localStorage.setItem(voiceKey, value);
     } catch {
       // The selected voice still remains active for this session.
     }
@@ -420,7 +300,7 @@ function BengaliTranslator() {
     window.speechSynthesis?.cancel();
     try {
       if (speechSource === "google") {
-        const audioUrl = URL.createObjectURL(await getGoogleTtsAudio(spokenText, "bn-IN"));
+        const audioUrl = URL.createObjectURL(await getGoogleTtsAudio(spokenText, languageCode));
         const audio = new Audio(audioUrl);
         const release = () => URL.revokeObjectURL(audioUrl);
         audio.addEventListener("ended", release, { once: true });
@@ -435,11 +315,11 @@ function BengaliTranslator() {
       }
       if (!window.speechSynthesis) throw new Error("System speech synthesis is unavailable.");
       const utterance = new SpeechSynthesisUtterance(spokenText);
-      utterance.lang = "bn-IN";
+      utterance.lang = languageCode;
       window.speechSynthesis.speak(utterance);
     } catch (speakError) {
-      console.error("Bengali translation speech error:", speakError);
-      setSpeechError("Bengali audio is unavailable. Try the other voice option.");
+      console.error(`${language} translation speech error:`, speakError);
+      setSpeechError(`${language} audio is unavailable. Try the other voice option.`);
     }
   };
 
@@ -448,8 +328,8 @@ function BengaliTranslator() {
     setTranslations((current) => {
       const next = current.filter((item) => item.id !== record.id);
       try {
-        if (next.length) localStorage.setItem(TRANSLATION_HISTORY_KEY, JSON.stringify(next));
-        else localStorage.removeItem(TRANSLATION_HISTORY_KEY);
+        if (next.length) localStorage.setItem(historyKey, JSON.stringify(next));
+        else localStorage.removeItem(historyKey);
       } catch {
         // The translation is still removed for this session when storage is unavailable.
       }
@@ -520,7 +400,7 @@ function BengaliTranslator() {
       setTranslations((current) => {
         const next = [importedRecord, ...current].slice(0, MAX_SAVED_TRANSLATIONS);
         try {
-          localStorage.setItem(TRANSLATION_HISTORY_KEY, JSON.stringify(next));
+          localStorage.setItem(historyKey, JSON.stringify(next));
         } catch {
           // The uploaded translation remains available for this session.
         }
@@ -543,7 +423,7 @@ function BengaliTranslator() {
       const response = await fetch("/api/translate", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ text: value, source: "bn", target: "en" }),
+        body: JSON.stringify({ text: value, source: sourceCode, target: "en" }),
       });
       const data = await response.json().catch(() => ({}));
       if (!response.ok) throw new Error(data.error || `Translation failed (${response.status}).`);
@@ -562,7 +442,7 @@ function BengaliTranslator() {
       setTranslations((current) => {
         const next = [record, ...current].slice(0, MAX_SAVED_TRANSLATIONS);
         try {
-          localStorage.setItem(TRANSLATION_HISTORY_KEY, JSON.stringify(next));
+          localStorage.setItem(historyKey, JSON.stringify(next));
         } catch {
           // The result still remains available for this session when storage is unavailable.
         }
@@ -575,22 +455,23 @@ function BengaliTranslator() {
     }
   };
 
-  const googleTranslateUrl = `https://translate.google.com/?sl=bn&tl=en&text=${encodeURIComponent(text.trim())}&op=translate`;
+  const googleTranslateUrl = `https://translate.google.com/?sl=${sourceCode}&tl=en&text=${encodeURIComponent(text.trim())}&op=translate`;
 
   return (
-    <section style={ui.translator} aria-labelledby="bengali-translator-title">
+    <section style={ui.translator} aria-labelledby="language-translator-title">
       <div>
-        <strong style={ui.eyebrow}>Bengali → English</strong>
-        <h2 id="bengali-translator-title" style={ui.heading}>Translate Bengali</h2>
-        <p style={ui.muted}>Gemini translates the phrase and explains each Bengali word in order. Successful results are saved on this device.</p>
+        <strong style={ui.eyebrow}>{language} → English</strong>
+        <h2 id="language-translator-title" style={ui.heading}>Translate {language}</h2>
+        <p style={ui.muted}>Gemini translates the phrase and explains each {language} word in order. Successful results are saved on this device.</p>
       </div>
       <form style={ui.translatorForm} onSubmit={translate}>
-        <Field label="Bengali text">
+        <Field label={`${language} text`}>
           <textarea
             style={ui.textarea}
-            lang="bn"
+            lang={languageTag}
+            dir={languageTag === "ar" ? "rtl" : "ltr"}
             maxLength={5000}
-            placeholder="বাংলা লেখা এখানে লিখুন"
+            placeholder={placeholder}
             value={text}
             onChange={(event) => setText(event.target.value)}
           />
@@ -613,13 +494,13 @@ function BengaliTranslator() {
       </form>
       {error && <div style={ui.notice} role="alert">{error} You can still use “Open in Google Translate.”</div>}
       <div style={ui.speechControls}>
-        <Field label="Bengali audio voice">
+        <Field label={`${language} audio voice`}>
           <select style={ui.input} value={speechSource} onChange={(event) => changeSpeechSource(event.target.value)}>
             <option value="system">System default</option>
-            <option value="google">Google Bengali</option>
+            <option value="google">Google {language}</option>
           </select>
         </Field>
-        <span style={ui.speechHint}>Use the play buttons for a full sentence, or select any Bengali word to hear it.</span>
+        <span style={ui.speechHint}>Use the play buttons for a full sentence, or select any {language} word to hear it.</span>
       </div>
       {speechError && <div style={ui.notice} role="alert">{speechError}</div>}
       <div style={ui.translationHistoryHeader}>
@@ -653,15 +534,15 @@ function BengaliTranslator() {
               <div style={ui.translationCardHeader}>
                 <small style={ui.resultLabel}>{record.id === translations[0]?.id && status === "success" ? "New translation" : "Saved translation"}</small>
                 <div style={ui.translationCardActions}>
-                  <button
+                  {enableBreakdownDrawer && <button
                     type="button"
                     style={ui.breakdownButton}
                     onClick={() => openBengaliBreakdown(record)}
-                    aria-label={`Open Bengali breakdown: ${record.translation}`}
-                    title="Open the Bengali text in Bengali Breakdown"
+                    aria-label={`Open ${language} breakdown: ${record.translation}`}
+                    title={`Open the ${language} text in ${language} Breakdown`}
                   >
-                    <FaLanguage aria-hidden="true" /> Bengali breakdown
-                  </button>
+                    <FaLanguage aria-hidden="true" /> {language} breakdown
+                  </button>}
                   <button
                     type="button"
                     style={ui.downloadButton}
@@ -682,11 +563,11 @@ function BengaliTranslator() {
                   </button>
                 </div>
               </div>
-              <div style={ui.resultBengali} lang="bn">{record.bengali}</div>
+              <div style={ui.resultBengali} lang={languageTag} dir={languageTag === "ar" ? "rtl" : "ltr"}>{record.bengali}</div>
               <div style={ui.resultPronunciation}>{record.pronunciation}</div>
               <div style={ui.resultEnglish}>{record.translation}</div>
               <button type="button" style={ui.speakButton} onClick={() => speakBengali(record.bengali)}>
-                <FaPlay aria-hidden="true" /> Read all Bengali
+                <FaPlay aria-hidden="true" /> Read all {language}
               </button>
             </div>
             <div style={ui.breakdown}>
@@ -696,7 +577,7 @@ function BengaliTranslator() {
                   <div style={ui.sentenceHeader}>
                     <div>
                       <small style={ui.sentenceLabel}>Sentence {sentenceIndex + 1}</small>
-                      <div style={ui.sentenceBengali} lang="bn">{sentence.bengali}</div>
+                      <div style={ui.sentenceBengali} lang={languageTag} dir={languageTag === "ar" ? "rtl" : "ltr"}>{sentence.bengali}</div>
                       <div style={ui.resultPronunciation}>{sentence.pronunciation}</div>
                       <div style={ui.resultEnglish}>{sentence.translation}</div>
                     </div>
@@ -704,8 +585,8 @@ function BengaliTranslator() {
                       type="button"
                       style={ui.iconButton}
                       onClick={() => speakBengali(sentence.bengali)}
-                      aria-label={`Read sentence ${sentenceIndex + 1} in Bengali`}
-                      title="Read this sentence in Bengali"
+                      aria-label={`Read sentence ${sentenceIndex + 1} in ${language}`}
+                      title={`Read this sentence in ${language}`}
                     >
                       <FaPlay aria-hidden="true" />
                     </button>
@@ -717,10 +598,10 @@ function BengaliTranslator() {
                         style={ui.breakdownWord}
                         key={`${record.id}-${sentenceIndex}-${word.bn}-${wordIndex}`}
                         onClick={() => speakBengali(word.bn)}
-                        aria-label={`Hear ${word.bn} in Bengali`}
-                        title="Hear this Bengali word"
+                        aria-label={`Hear ${word.bn} in ${language}`}
+                        title={`Hear this ${language} word`}
                       >
-                        <span style={ui.breakdownBengali} lang="bn">{word.bn}</span>
+                        <span style={ui.breakdownBengali} lang={languageTag} dir={languageTag === "ar" ? "rtl" : "ltr"}>{word.bn}</span>
                         <span style={ui.breakdownPronunciation}>{word.pronunciation}</span>
                         <span style={ui.breakdownEnglish}>{word.en}</span>
                       </button>
@@ -737,8 +618,19 @@ function BengaliTranslator() {
   );
 }
 
-function WordLoop({ lesson, voices, bnVoices, enVoices, bnVoice, enVoice, setBnVoice, setEnVoice, preview, translationSets }) {
-  const initial = useMemo(storedSettings, []);
+LanguageTranslator.propTypes = {
+  language: PropTypes.string,
+  sourceCode: PropTypes.string,
+  languageCode: PropTypes.string,
+  languageTag: PropTypes.string,
+  placeholder: PropTypes.string,
+  historyKey: PropTypes.string,
+  voiceKey: PropTypes.string,
+  enableBreakdownDrawer: PropTypes.bool,
+};
+
+export function WordLoop({ lesson, voices, bnVoices, enVoices, bnVoice, enVoice, setBnVoice, setEnVoice, preview, translationSets, language = "Bengali", languageCode = "bn-IN", languageTag = "bn", welcomeText = "স্বাগতম", cloudVoiceKey = GOOGLE_BENGALI_VOICE_KEY, settingsKey = SETTINGS_KEY }) {
+  const initial = useMemo(() => storedSettings(settingsKey), [settingsKey]);
   const [dataset, setDataset] = useState(initial.dataset);
   const [mode, setMode] = useState(initial.mode);
   const [intervalSize, setIntervalSize] = useState(initial.intervalSize);
@@ -859,9 +751,9 @@ function WordLoop({ lesson, voices, bnVoices, enVoices, bnVoice, enVoice, setBnV
 
   useEffect(() => {
     try {
-      localStorage.setItem(SETTINGS_KEY, JSON.stringify({ dataset, mode, intervalSize: size, intervalRepeats: repeats, loopForever, search, facet, chunkSize: safeChunkSize, chunkIndex: safeChunkIndex, showImages, wordDelay: delaySeconds, speechRate: playbackRate, englishOncePerInterval, bengaliSpeechSource, translationSetId }));
+      localStorage.setItem(settingsKey, JSON.stringify({ dataset, mode, intervalSize: size, intervalRepeats: repeats, loopForever, search, facet, chunkSize: safeChunkSize, chunkIndex: safeChunkIndex, showImages, wordDelay: delaySeconds, speechRate: playbackRate, englishOncePerInterval, bengaliSpeechSource, translationSetId }));
     } catch {}
-  }, [dataset, mode, size, repeats, loopForever, search, facet, safeChunkSize, safeChunkIndex, showImages, delaySeconds, playbackRate, englishOncePerInterval, bengaliSpeechSource, translationSetId]);
+  }, [dataset, mode, size, repeats, loopForever, search, facet, safeChunkSize, safeChunkIndex, showImages, delaySeconds, playbackRate, englishOncePerInterval, bengaliSpeechSource, translationSetId, settingsKey]);
 
   useEffect(() => () => stop(), [stop]);
   useEffect(() => {
@@ -884,9 +776,9 @@ function WordLoop({ lesson, voices, bnVoices, enVoices, bnVoice, enVoice, setBnV
   const speak = useCallback(async (text, lang, key) => {
     if (!playingRef.current || !text) return;
 
-    if (key === GOOGLE_BENGALI_VOICE_KEY && /^bn/i.test(lang)) {
+    if (key === cloudVoiceKey && lang === languageCode) {
       try {
-        const audioBlob = await getGoogleTtsAudio(text, "bn-IN");
+        const audioBlob = await getGoogleTtsAudio(text, languageCode);
         if (!playingRef.current) return;
         await new Promise((resolve) => {
           const audioUrl = URL.createObjectURL(audioBlob);
@@ -909,8 +801,8 @@ function WordLoop({ lesson, voices, bnVoices, enVoices, bnVoice, enVoice, setBnV
         });
         return;
       } catch (error) {
-        console.error("Google Bengali loop voice error:", error);
-        setStatus("Google Bengali voice unavailable; using the system voice");
+        console.error(`Google ${language} loop voice error:`, error);
+        setStatus(`Google ${language} voice unavailable; using the system voice`);
       }
     }
 
@@ -923,7 +815,7 @@ function WordLoop({ lesson, voices, bnVoices, enVoices, bnVoice, enVoice, setBnV
       utterance.onerror = resolve;
       window.speechSynthesis.speak(utterance);
     });
-  }, [playbackRate, voices]);
+  }, [cloudVoiceKey, language, languageCode, playbackRate, voices]);
 
   const settlePhotoRequest = useCallback((request, rendered) => {
     if (!request || request.settled) return;
@@ -982,17 +874,17 @@ function WordLoop({ lesson, voices, bnVoices, enVoices, bnVoice, enVoice, setBnV
     const isActive = () => playingRef.current && !pausedRef.current && playbackGenerationRef.current === generation;
     if (!isActive()) return;
     const englishSpeechText = dataset === "breakdowns" || dataset === "translation-breakdowns" ? item.breakdownEnglish || item.en : item.en;
-    const bengaliSpeechText = bnVoice !== GOOGLE_BENGALI_VOICE_KEY && bengaliSpeechSource === "pronunciation" && item.pronunciation?.trim()
+    const bengaliSpeechText = bnVoice !== cloudVoiceKey && bengaliSpeechSource === "pronunciation" && item.pronunciation?.trim()
       ? item.pronunciation.trim()
       : item.bn;
     if (mode === "english-bengali") {
       if (playEnglish) await speak(englishSpeechText, "en-US", enVoice);
-      if (isActive()) await speak(bengaliSpeechText, "bn-IN", bnVoice);
+      if (isActive()) await speak(bengaliSpeechText, languageCode, bnVoice);
       return;
     }
-    await speak(bengaliSpeechText, "bn-IN", bnVoice);
+    await speak(bengaliSpeechText, languageCode, bnVoice);
     if (mode === "bengali-english" && isActive()) await speak(englishSpeechText, "en-US", enVoice);
-  }, [mode, speak, bnVoice, enVoice, requestPhoto, bengaliSpeechSource, dataset]);
+  }, [mode, speak, bnVoice, enVoice, requestPhoto, bengaliSpeechSource, dataset, cloudVoiceKey, languageCode]);
 
   const waitBeforeNextWord = useCallback((generation) => new Promise((resolve) => {
     if (!delaySeconds) return resolve(playingRef.current && !pausedRef.current && playbackGenerationRef.current === generation);
@@ -1121,7 +1013,7 @@ function WordLoop({ lesson, voices, bnVoices, enVoices, bnVoice, enVoice, setBnV
 
   return (
     <section className="bn-word-loop" style={ui.card}>
-      <div><strong style={ui.eyebrow}>Focused practice</strong><h1 style={ui.heading}>Bengali Word Loop</h1>
+      <div><strong style={ui.eyebrow}>Focused practice</strong><h1 style={ui.heading}>{language} Word Loop</h1>
         <p style={ui.muted}>Filter a large lesson, switch between study chunks, and loop only the active chunk.</p></div>
 
       <section style={ui.filterPanel} aria-label="Word filters">
@@ -1158,26 +1050,26 @@ function WordLoop({ lesson, voices, bnVoices, enVoices, bnVoice, enVoice, setBnV
       </section>
 
       <div style={ui.grid}>
-        <Field label="Reading mode"><select style={ui.input} value={mode} onChange={(event) => setMode(event.target.value)}><option value="bengali">Bengali only</option><option value="bengali-english">Bengali, then English</option><option value="english-bengali">English, then Bengali</option></select></Field>
+        <Field label="Reading mode"><select style={ui.input} value={mode} onChange={(event) => setMode(event.target.value)}><option value="bengali">{language} only</option><option value="bengali-english">{language}, then English</option><option value="english-bengali">English, then {language}</option></select></Field>
         <Field label="Words per interval"><input style={ui.input} type="number" min="1" value={intervalSize} onChange={(event) => setIntervalSize(event.target.value)} /></Field>
         <Field label="Repeat each interval"><input style={ui.input} type="number" min="1" value={intervalRepeats} onChange={(event) => setIntervalRepeats(event.target.value)} /></Field>
         <Field label="Delay before next word (seconds)"><input style={ui.input} type="number" min="0" step="0.5" value={wordDelay} onChange={(event) => setWordDelay(event.target.value)} /></Field>
-        {bnVoice === GOOGLE_BENGALI_VOICE_KEY && <Field label="Google Bengali speed"><select style={ui.input} value={playbackRate} onChange={(event) => setSpeechRate(Number(event.target.value))}><option value="0.5">0.5×</option><option value="0.75">0.75×</option><option value="1">1×</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option><option value="2">2×</option></select></Field>}
+        {bnVoice === cloudVoiceKey && <Field label={`Google ${language} speed`}><select style={ui.input} value={playbackRate} onChange={(event) => setSpeechRate(Number(event.target.value))}><option value="0.5">0.5×</option><option value="0.75">0.75×</option><option value="1">1×</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option><option value="2">2×</option></select></Field>}
       </div>
       {items.length > 0 && <Field label={dataset === "breakdowns" || dataset === "phrases" || dataset === "translation-phrases" || dataset === "translation-breakdowns" ? "Skip to phrase in active chunk" : "Skip to word in active chunk"}><select style={ui.input} value={currentIndex} onChange={jumpToWord}>{items.map((word, index) => <option key={`${word.bn}-${word.en}-${index}`} value={index}>{chunkStart + index + 1}. {word.pronunciation || word.bn} · {word.en}</option>)}</select></Field>}
       <div style={ui.grid}>
         <div style={ui.voiceStack}>
           <VoiceSelect
             compact
-            label="Bengali voice"
+            label={`${language} voice`}
             value={bnVoice}
             voices={bnVoices}
-            extraOptions={[{ value: GOOGLE_BENGALI_VOICE_KEY, label: "Google Bengali (Cloud TTS)" }]}
+            extraOptions={[{ value: cloudVoiceKey, label: `Google ${language} (Cloud TTS)` }]}
             onChange={async (value) => {
               setBnVoice(value);
-              if (value === GOOGLE_BENGALI_VOICE_KEY) {
+              if (value === cloudVoiceKey) {
                 try {
-                  const audioUrl = URL.createObjectURL(await getGoogleTtsAudio("স্বাগতম", "bn-IN"));
+                  const audioUrl = URL.createObjectURL(await getGoogleTtsAudio(welcomeText, languageCode));
                   const audio = new Audio(audioUrl);
                   const release = () => URL.revokeObjectURL(audioUrl);
                   audio.addEventListener("ended", release, { once: true });
@@ -1189,24 +1081,24 @@ function WordLoop({ lesson, voices, bnVoices, enVoices, bnVoice, enVoice, setBnV
                     throw error;
                   }
                 } catch (error) {
-                  console.error("Google Bengali voice preview error:", error);
+                  console.error(`Google ${language} voice preview error:`, error);
                 }
               } else if (value) {
-                preview(value, "স্বাগতম", "bn-IN");
+                preview(value, welcomeText, languageCode);
               }
             }}
           />
-          <Field label="Bengali speech source"><select style={ui.input} value={bengaliSpeechSource} onChange={(event) => setBengaliSpeechSource(event.target.value)}><option value="pronunciation">Pronunciation (fallback to Bengali script)</option><option value="bengali">Bengali script</option></select></Field>
+          <Field label={`${language} speech source`}><select style={ui.input} value={bengaliSpeechSource} onChange={(event) => setBengaliSpeechSource(event.target.value)}><option value="pronunciation">Pronunciation (fallback to {language} script)</option><option value="bengali">{language} script</option></select></Field>
         </div>
         <VoiceSelect compact label="English voice" value={enVoice} voices={enVoices} onChange={(value) => { setEnVoice(value); if (value) preview(value, "Welcome to Bengali practice", "en-US"); }} />
       </div>
       <div className="bn-word-loop__toggles" style={ui.toggles}>
-        {mode === "english-bengali" && size === 1 && <label className="bn-word-loop__toggle" style={ui.check}><input type="checkbox" checked={englishOncePerInterval} onChange={(event) => setEnglishOncePerInterval(event.target.checked)} /><span>Play English once, then repeat Bengali only</span></label>}
+        {mode === "english-bengali" && size === 1 && <label className="bn-word-loop__toggle" style={ui.check}><input type="checkbox" checked={englishOncePerInterval} onChange={(event) => setEnglishOncePerInterval(event.target.checked)} /><span>Play English once, then repeat {language} only</span></label>}
         <label className="bn-word-loop__toggle" style={ui.check}><input type="checkbox" checked={loopForever} onChange={(event) => setLoopForever(event.target.checked)} /><span>Loop the active study chunk forever</span></label>
         <label className="bn-word-loop__toggle" style={ui.check}><input type="checkbox" checked={showImages} onChange={(event) => setShowImages(event.target.checked)} /><span>Show stock photos for vocabulary words</span></label>
       </div>
       {!lesson ? <div style={ui.notice}>Generate or upload a lesson in the Tutor tab first.</div> : !items.length ? <div style={ui.notice}>No items match the active filters.</div> : <>
-        <div style={ui.flash}><small>Chunk {safeChunkIndex + 1}/{chunkCount} · {currentIndex + 1}/{items.length} · Overall filtered position {chunkStart + currentIndex + 1}/{orderedMatchingItems.length} · Pass {pass}/{repeats}</small><strong lang="bn" style={ui.bn}>{item?.bn}</strong>{item?.pronunciation && <strong style={ui.activePronunciation}>{item.pronunciation}</strong>}<span style={ui.en}>{item?.en}</span>{(dataset === "breakdowns" || dataset === "phrases" || dataset === "translation-phrases" || dataset === "translation-breakdowns") && <section className="bn-loop-breakdown" aria-label="Complete phrase breakdown"><strong className="bn-loop-breakdown__title">Phrase breakdown</strong><div className="bn-loop-breakdown__literal"><small>Literal Bengali order</small><span>{item?.breakdownEnglish}</span></div><div className="bn-loop-breakdown__grid">{item?.words?.map((word, wordIndex) => <article className="bn-loop-breakdown__word" key={`${item.bn}-${word.bn}-${wordIndex}`}><span lang="bn">{word.bn}</span><strong>{word.pronunciation}</strong><small>{word.en}</small></article>)}</div></section>}
+        <div style={ui.flash}><small>Chunk {safeChunkIndex + 1}/{chunkCount} · {currentIndex + 1}/{items.length} · Overall filtered position {chunkStart + currentIndex + 1}/{orderedMatchingItems.length} · Pass {pass}/{repeats}</small><strong lang={languageTag} dir={languageTag === "ar" ? "rtl" : "ltr"} style={ui.bn}>{item?.bn}</strong>{item?.pronunciation && <strong style={ui.activePronunciation}>{item.pronunciation}</strong>}<span style={ui.en}>{item?.en}</span>{(dataset === "breakdowns" || dataset === "phrases" || dataset === "translation-phrases" || dataset === "translation-breakdowns") && <section className="bn-loop-breakdown" aria-label="Complete phrase breakdown"><strong className="bn-loop-breakdown__title">Phrase breakdown</strong><div className="bn-loop-breakdown__literal"><small>Literal {language} order</small><span>{item?.breakdownEnglish}</span></div><div className="bn-loop-breakdown__grid">{item?.words?.map((word, wordIndex) => <article className="bn-loop-breakdown__word" key={`${item.bn}-${word.bn}-${wordIndex}`}><span lang={languageTag} dir={languageTag === "ar" ? "rtl" : "ltr"}>{word.bn}</span><strong>{word.pronunciation}</strong><small>{word.en}</small></article>)}</div></section>}
           {showImages && <div style={ui.photoFrame} aria-live="polite">
             {photoStatus === "loading" && <span style={ui.muted}>Finding a photo…</span>}
             {photoStatus === "empty" && <span style={ui.muted}>No photo found for this item.</span>}
@@ -1258,6 +1150,12 @@ WordLoop.propTypes = {
     title: PropTypes.string.isRequired,
     phrases: PropTypes.arrayOf(PropTypes.object).isRequired,
   })).isRequired,
+  language: PropTypes.string,
+  languageCode: PropTypes.string,
+  languageTag: PropTypes.string,
+  welcomeText: PropTypes.string,
+  cloudVoiceKey: PropTypes.string,
+  settingsKey: PropTypes.string,
 };
 
 function VoiceSelect({ label, value, voices, onChange, compact, extraOptions = [] }) {

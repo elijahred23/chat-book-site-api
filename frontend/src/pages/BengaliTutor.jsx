@@ -1,8 +1,7 @@
-import React, { useEffect, useMemo, useRef, useState, useCallback } from "react";
+import React, { useEffect, useMemo, useState, useCallback } from "react";
 import PropTypes from "prop-types";
-import { FcGoogle } from "react-icons/fc";
 import { FaVolumeHigh } from "react-icons/fa6";
-import { FaBackward, FaCompressAlt, FaExpandAlt, FaForward, FaLanguage, FaMinus, FaPause, FaPlay, FaPlus, FaRedoAlt, FaStepBackward, FaStepForward, FaUndoAlt } from "react-icons/fa";
+import { FaLanguage } from "react-icons/fa";
 import ActionButtons from "../ui/ActionButtons.jsx";
 import { actions, useAppDispatch } from "../context/AppContext.jsx";
 import { withPhraseWords } from "../utils/bengaliPhraseBreakdown.js";
@@ -37,6 +36,15 @@ import top150SentencesLesson from "../bengali_lessons/top-150-sentences.json";
 import top250WordsLesson from "../bengali_lessons/top-250-words.json";
 import verbsLesson from "../bengali_lessons/verbs.json";
 import "./BengaliTutor.css";
+import LanguageTutorItemList from "../components/language/LanguageTutorItemList.jsx";
+import LanguageTutorContentTabs from "../components/language/LanguageTutorContentTabs.jsx";
+import LanguageTutorScroller from "../components/language/LanguageTutorScroller.jsx";
+import LanguageTutorHero from "../components/language/LanguageTutorHero.jsx";
+import LanguageLessonHeader from "../components/language/LanguageLessonHeader.jsx";
+import LanguageContentOptions from "../components/language/LanguageContentOptions.jsx";
+import LanguageItemActions from "../components/language/LanguageItemActions.jsx";
+import LanguagePhraseBreakdown from "../components/language/LanguagePhraseBreakdown.jsx";
+import { normalizeLanguageItems } from "../utils/languageLessonAdapter.js";
 
 const classLessonModules = import.meta.glob("../bengali_lessons/class-*.json", {
   eager: true,
@@ -56,9 +64,6 @@ const consonantLessons = Object.values(consonantLessonModules);
 
 const LESSON_CACHE_KEY = "bengali_lesson_cache";
 const BREAKDOWN_SPEECH_KEY = "bn_breakdown_speech_source";
-const AUTO_SCROLL_SPEED_KEY = "bengali_tutor_auto_scroll_speed";
-const AUTO_SCROLL_LOOP_KEY = "bengali_tutor_auto_scroll_loop";
-const AUTO_SCROLL_DELAY_KEY = "bengali_tutor_auto_scroll_delay";
 const CORRECT_TIME = 250;
 const INCORRECT_TIME = 700;
 
@@ -119,23 +124,6 @@ const initialBreakdownSpeechSource = () => {
   }
 };
 
-const initialAutoScrollSpeed = () => {
-  try {
-    const value = Number(localStorage.getItem(AUTO_SCROLL_SPEED_KEY));
-    return Number.isFinite(value) && value >= 5 && value <= 200 ? value : 30;
-  } catch {
-    return 30;
-  }
-};
-const initialAutoScrollLoop = () => {
-  try { return localStorage.getItem(AUTO_SCROLL_LOOP_KEY) === "true"; } catch { return false; }
-};
-const initialAutoScrollDelay = () => {
-  try {
-    const value = Number(localStorage.getItem(AUTO_SCROLL_DELAY_KEY));
-    return Number.isFinite(value) && value >= 0 && value <= 60 ? value : 3;
-  } catch { return 3; }
-};
 
 const wordKey = (item) => JSON.stringify([item?.bn || "", item?.en || ""]);
 const bengaliLabel = (item) => item.pronunciation ? `${item.bn} (${item.pronunciation})` : item.bn;
@@ -144,7 +132,6 @@ const optionLabel = (item, direction) => direction === "en-bn" ? bengaliLabel(it
 const shuffle = (items) => [...items].sort(() => Math.random() - 0.5);
 const containsBengali = (value) => /\p{Script=Bengali}/u.test(String(value || ""));
 const normalizeAnswer = (value) => value.trim().toLocaleLowerCase().replace(/[.,!?।'’"-]/g, "").replace(/\s+/g, " ");
-const googleTranslateUrl = (text) => `https://translate.google.com/?sl=bn&tl=en&text=${encodeURIComponent(text)}&op=translate`;
 const shortTranslationLabel = (value, maxLength = 32) => {
   const label = String(value || "").trim().replace(/\s+/g, " ");
   return label.length > maxLength ? `${label.slice(0, maxLength)}…` : label;
@@ -215,74 +202,14 @@ const LanguageIcon = ({ language }) => (
 
 const BengaliItemActions = ({ item }) => {
   const dispatch = useAppDispatch();
-  const [googleSpeechStatus, setGoogleSpeechStatus] = useState("idle");
-
-  const hearGoogleBengali = async () => {
-    setGoogleSpeechStatus("loading");
-    try {
-      window.speechSynthesis?.cancel();
-      await speakWithGoogleTts(item.bn);
-      setGoogleSpeechStatus("idle");
-    } catch (error) {
-      console.error("Google Bengali speech error:", error);
-      setGoogleSpeechStatus("error");
-    }
-  };
-
   return (
-    <div className="bn-game-actions bn-audio-actions" style={{ marginTop: 8 }}>
-      <button
-        className="bn-btn secondary bn-icon-btn"
-        onClick={() => speak(item.bn, "bn")}
-        aria-label="Hear Bengali with system voice"
-        title="Hear Bengali with system voice"
-      >
-        <LanguageIcon language="BN" />
-      </button>
-      <button
-        className="bn-btn secondary bn-icon-btn"
-        onClick={hearGoogleBengali}
-        disabled={googleSpeechStatus === "loading"}
-        aria-label="Hear Bengali with Google Text-to-Speech"
-        title={googleSpeechStatus === "error" ? "Google Bengali speech failed. Try again." : "Hear Bengali with Google Text-to-Speech"}
-      >
-        <span className="bn-google-speech-icon" aria-hidden="true">
-          <FcGoogle />
-          <FaVolumeHigh />
-        </span>
-      </button>
-      <button
-        className="bn-btn secondary bn-icon-btn"
-        onClick={() => speak(item.en, "en")}
-        aria-label="Hear English"
-        title="Hear English"
-      >
-        <LanguageIcon language="EN" />
-      </button>
-      <a
-        className="bn-btn secondary bn-icon-btn"
-        href={googleTranslateUrl(item.bn)}
-        target="_blank"
-        rel="noreferrer"
-        aria-label={`Translate ${item.bn} from Bengali to English in Google Translate`}
-        title="Open in Google Translate"
-      >
-        <FcGoogle aria-hidden="true" />
-      </a>
-      <button
-        className="bn-btn secondary bn-icon-btn"
-        type="button"
-        onClick={() => {
+    <LanguageItemActions item={{ ...item, script: item.bn }} language="Bengali" languageCode="bn-IN" languageShort="BN" translateCode="bn" renderExtraAction={() => (
+      <button className="bn-btn secondary bn-icon-btn" type="button" onClick={() => {
           dispatch(actions.setBengaliBreakdownText(item.bn));
           if (item.words?.length) dispatch(actions.setBengaliBreakdownWords(item.words));
           dispatch(actions.setIsBengaliBreakdownOpen(true));
-        }}
-        aria-label={`Open Bengali breakdown for ${item.bn}`}
-        title="Open in Bengali Breakdown"
-      >
-        <FaLanguage aria-hidden="true" />
-      </button>
-    </div>
+        }} aria-label={`Open Bengali breakdown for ${item.bn}`} title="Open in Bengali Breakdown"><FaLanguage aria-hidden="true" /></button>
+    )} />
   );
 };
 
@@ -302,7 +229,7 @@ BengaliItemActions.propTypes = {
   }).isRequired,
 };
 
-export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLessonSelector = true, translationSets = EMPTY_TRANSLATION_SETS, view = "tutor" }) {
+export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLessonSelector = true, translationSets = EMPTY_TRANSLATION_SETS, view = "tutor", languageName = "Bengali", languageCode = "bn-IN", languageTag = "bn", nativeName = "বাংলা", gameStorageKey = "bn_game_direction", recallPlaceholder = "বাংলায় লিখুন", enableBreakdownDrawer = true }) {
   const dispatch = useAppDispatch();
   const startingLesson = initialLesson || initialSavedLesson();
   const [lesson, setLesson] = useState(startingLesson);
@@ -314,35 +241,20 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
       speakWithGoogleTts(text).catch((error) => console.error("Google Bengali speech error:", error));
       return;
     }
-    speak(text, "bn", bengaliVoice);
-  }, [bengaliVoice]);
+    speak(text, languageCode, bengaliVoice);
+  }, [bengaliVoice, languageCode]);
   const speakBreakdownWord = useCallback((text) => {
     if (breakdownSpeechSource === "system") {
-      speak(text, "bn", bengaliVoice === GOOGLE_BENGALI_VOICE_KEY ? "" : bengaliVoice);
+      speak(text, languageCode, bengaliVoice === GOOGLE_BENGALI_VOICE_KEY ? "" : bengaliVoice);
       return;
     }
     window.speechSynthesis?.cancel();
     speakWithGoogleTts(text).catch((error) => {
       console.error("Google Bengali breakdown speech error:", error);
-      speak(text, "bn", bengaliVoice === GOOGLE_BENGALI_VOICE_KEY ? "" : bengaliVoice);
+      speak(text, languageCode, bengaliVoice === GOOGLE_BENGALI_VOICE_KEY ? "" : bengaliVoice);
     });
-  }, [bengaliVoice, breakdownSpeechSource]);
+  }, [bengaliVoice, breakdownSpeechSource, languageCode]);
   const [contentTab, setContentTab] = useState(view === "games" ? "games" : "phrases");
-  const [isAutoScrolling, setIsAutoScrolling] = useState(false);
-  const [scrollDirection, setScrollDirection] = useState(1);
-  const [scrollSpeed, setScrollSpeed] = useState(initialAutoScrollSpeed);
-  const [isScrollLooping, setIsScrollLooping] = useState(initialAutoScrollLoop);
-  const [scrollRestartDelay, setScrollRestartDelay] = useState(initialAutoScrollDelay);
-  const [isTutorWindowView, setIsTutorWindowView] = useState(false);
-  const [scrollProgress, setScrollProgress] = useState(0);
-  const tutorContentRef = useRef(null);
-  const scrollProgressRef = useRef(0);
-  const scrollProgressSliderRef = useRef(null);
-  const scrollProgressFillRef = useRef(null);
-  const scrollDirectionRef = useRef(scrollDirection);
-  const scrollSpeedRef = useRef(scrollSpeed);
-  const scrollLoopTimeoutRef = useRef(null);
-  const [jumpTarget, setJumpTarget] = useState("");
   const [visibleContent, setVisibleContent] = useState({
     bengali: true,
     pronunciation: true,
@@ -355,7 +267,7 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
   const [translationSetId, setTranslationSetId] = useState(() => translationSets[0]?.id || "");
   const [gameDirection, setGameDirection] = useState(() => {
     try {
-      return localStorage.getItem("bn_game_direction") || "bn-en";
+      return localStorage.getItem(gameStorageKey) || "bn-en";
     } catch {
       return "bn-en";
     }
@@ -384,138 +296,6 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
   const [bingoTarget, setBingoTarget] = useState(null);
   const [bingoMatched, setBingoMatched] = useState([]);
 
-  const updateScrollProgress = useCallback((nextProgress, forceRender = false) => {
-    const normalizedProgress = Math.max(0, Math.min(100, nextProgress));
-    scrollProgressRef.current = normalizedProgress;
-    if (scrollProgressFillRef.current) {
-      scrollProgressFillRef.current.style.width = `${normalizedProgress}%`;
-    }
-    if (scrollProgressSliderRef.current) {
-      const roundedProgress = Math.round(normalizedProgress);
-      scrollProgressSliderRef.current.setAttribute("aria-valuenow", String(roundedProgress));
-      scrollProgressSliderRef.current.setAttribute("aria-valuetext", `${roundedProgress} percent`);
-    }
-
-    if (forceRender) setScrollProgress(normalizedProgress);
-  }, []);
-
-  useEffect(() => {
-    scrollDirectionRef.current = scrollDirection;
-  }, [scrollDirection]);
-
-  useEffect(() => {
-    scrollSpeedRef.current = scrollSpeed;
-    try {
-      localStorage.setItem(AUTO_SCROLL_SPEED_KEY, String(scrollSpeed));
-    } catch {
-      // Local storage can be unavailable in private browsing contexts.
-    }
-  }, [scrollSpeed]);
-
-  useEffect(() => {
-    try {
-      localStorage.setItem(AUTO_SCROLL_LOOP_KEY, String(isScrollLooping));
-      localStorage.setItem(AUTO_SCROLL_DELAY_KEY, String(scrollRestartDelay));
-    } catch {
-      // Local storage can be unavailable in private browsing contexts.
-    }
-  }, [isScrollLooping, scrollRestartDelay]);
-
-  useEffect(() => {
-    if (!isTutorWindowView) return undefined;
-    document.body.classList.add("bn-tutor-window-open");
-    const closeWindowView = (event) => {
-      if (event.key === "Escape") setIsTutorWindowView(false);
-    };
-    window.addEventListener("keydown", closeWindowView);
-    return () => {
-      window.removeEventListener("keydown", closeWindowView);
-      document.body.classList.remove("bn-tutor-window-open");
-    };
-  }, [isTutorWindowView]);
-
-  useEffect(() => () => clearTimeout(scrollLoopTimeoutRef.current), []);
-
-  useEffect(() => {
-    if (!isScrollLooping) clearTimeout(scrollLoopTimeoutRef.current);
-  }, [isScrollLooping]);
-
-  useEffect(() => {
-    if (!isAutoScrolling || view !== "tutor") return undefined;
-    let frame;
-    let previousTime = null;
-    let preciseScrollTop = tutorContentRef.current?.scrollTop || 0;
-
-    const scroll = (timestamp) => {
-      const container = tutorContentRef.current;
-      if (!container) return;
-      if (previousTime === null) previousTime = timestamp;
-      const elapsedSeconds = Math.min((timestamp - previousTime) / 1000, 0.1);
-      previousTime = timestamp;
-      if (Math.abs(container.scrollTop - preciseScrollTop) > 1) preciseScrollTop = container.scrollTop;
-
-      const maxScrollTop = Math.max(0, container.scrollHeight - container.clientHeight);
-      preciseScrollTop = Math.max(0, Math.min(
-        maxScrollTop,
-        preciseScrollTop + scrollDirectionRef.current * scrollSpeedRef.current * elapsedSeconds,
-      ));
-      container.scrollTop = preciseScrollTop;
-      updateScrollProgress(maxScrollTop ? (preciseScrollTop / maxScrollTop) * 100 : 100);
-
-      const reachedEnd = scrollDirectionRef.current > 0
-        ? preciseScrollTop >= maxScrollTop
-        : preciseScrollTop <= 0;
-      if (reachedEnd) {
-        updateScrollProgress(maxScrollTop ? (preciseScrollTop / maxScrollTop) * 100 : 100, true);
-        if (isScrollLooping && scrollDirectionRef.current > 0) {
-          setIsAutoScrolling(false);
-          scrollLoopTimeoutRef.current = setTimeout(() => {
-            const nextContainer = tutorContentRef.current;
-            if (!nextContainer) return;
-            nextContainer.scrollTop = 0;
-            updateScrollProgress(0, true);
-            setIsAutoScrolling(true);
-          }, scrollRestartDelay * 1000);
-          return;
-        }
-        setIsAutoScrolling(false);
-        return;
-      }
-      frame = requestAnimationFrame(scroll);
-    };
-
-    frame = requestAnimationFrame(scroll);
-    return () => cancelAnimationFrame(frame);
-  }, [isAutoScrolling, isScrollLooping, scrollRestartDelay, updateScrollProgress, view]);
-
-  useEffect(() => {
-    clearTimeout(scrollLoopTimeoutRef.current);
-    setIsAutoScrolling(false);
-    updateScrollProgress(0, true);
-    if (tutorContentRef.current) tutorContentRef.current.scrollTop = 0;
-  }, [contentTab, lesson, updateScrollProgress]);
-
-  const activateScrollDirection = (direction) => {
-    clearTimeout(scrollLoopTimeoutRef.current);
-    setScrollDirection(direction);
-    setIsAutoScrolling(true);
-  };
-
-  const nudgeTutorScroll = (change) => {
-    const container = tutorContentRef.current;
-    if (!container) return;
-    const distance = Math.min(240, container.clientHeight * 0.35);
-    container.scrollTop += change * distance;
-  };
-
-  const seekTutorScroll = (percentage) => {
-    const container = tutorContentRef.current;
-    if (!container) return;
-    const nextPercentage = Math.max(0, Math.min(100, percentage));
-    const maxScrollTop = Math.max(0, container.scrollHeight - container.clientHeight);
-    container.scrollTop = maxScrollTop * (nextPercentage / 100);
-    updateScrollProgress(nextPercentage, true);
-  };
   const [bingoMistakes, setBingoMistakes] = useState(0);
   const [pronunciationQuestion, setPronunciationQuestion] = useState(null);
   const [pronunciationResult, setPronunciationResult] = useState(null);
@@ -534,11 +314,11 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
 
   useEffect(() => {
     try {
-      localStorage.setItem("bn_game_direction", gameDirection);
+      localStorage.setItem(gameStorageKey, gameDirection);
     } catch {
       // Local storage can be unavailable in private browsing contexts.
     }
-  }, [gameDirection]);
+  }, [gameDirection, gameStorageKey]);
 
   useEffect(() => {
     try {
@@ -559,6 +339,7 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
     [filteredPhrases, phraseShuffleVersion],
   );
   const activeTutorItems = contentTab === "phrases" ? orderedPhrases : orderedVocab;
+  const normalizedTutorItems = useMemo(() => normalizeLanguageItems(activeTutorItems, "bn"), [activeTutorItems]);
   const selectedTranslationSet = useMemo(
     () => translationSets.find((set) => set.id === translationSetId) || translationSets[0] || null,
     [translationSetId, translationSets],
@@ -673,8 +454,8 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
     const cards = pairs.flatMap((item) => {
       const key = wordKey(item);
       return [
-        { id: `${key}-prompt`, pairKey: key, label: promptLabel(item, gameDirection), language: gameDirection === "bn-en" ? "bn" : "en" },
-        { id: `${key}-answer`, pairKey: key, label: optionLabel(item, gameDirection), language: gameDirection === "bn-en" ? "en" : "bn" },
+        { id: `${key}-prompt`, pairKey: key, label: promptLabel(item, gameDirection), language: gameDirection === "bn-en" ? languageTag : "en" },
+        { id: `${key}-answer`, pairKey: key, label: optionLabel(item, gameDirection), language: gameDirection === "bn-en" ? "en" : languageTag },
       ];
     });
     setMemoryCards(shuffle(cards));
@@ -682,7 +463,7 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
     setMemoryMatched([]);
     setMemoryMoves(0);
     setMemoryLocked(false);
-  }, [gameDirection, gameItems]);
+  }, [gameDirection, gameItems, languageTag]);
 
   const startBingoRound = useCallback(() => {
     const board = shuffle(gameItems).slice(0, Math.min(9, gameItems.length));
@@ -784,7 +565,6 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
 
     setLesson(selectedLesson);
     setContentTab(selectedLesson.phrases?.length ? "phrases" : "vocab");
-    setJumpTarget("");
     setPhraseShuffleVersion(0);
     setVocabShuffleVersion(0);
     setGameDataset(selectedLesson.vocab?.length ? "vocab" : "phrases");
@@ -841,7 +621,7 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
   const handleMemoryCard = (card) => {
     if (memoryLocked || memoryOpen.includes(card.id) || memoryMatched.includes(card.pairKey)) return;
     const cardText = card.label.replace(/\s*\([^)]*\)\s*$/, "");
-    if (card.language.startsWith("bn")) speakSelectedBengali(cardText);
+    if (card.language !== "en") speakSelectedBengali(cardText);
     else speak(cardText, card.language);
     const nextOpen = [...memoryOpen, card.id];
     setMemoryOpen(nextOpen);
@@ -952,7 +732,7 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
           event.preventDefault();
           if (shortcutKey === "r") {
             speakSelectedBengali(targetBengali);
-          } else if (containsBengali(targetBengali)) {
+          } else if (enableBreakdownDrawer && containsBengali(targetBengali)) {
             dispatch(actions.setBengaliBreakdownText(targetBengali));
             dispatch(actions.setIsBengaliBreakdownOpen(true));
           }
@@ -990,6 +770,7 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
     bingoTarget,
     contentTab,
     dispatch,
+    enableBreakdownDrawer,
     gameMode,
     gameQuestion,
     gameResult,
@@ -1100,38 +881,11 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
       <style>{shellStyles}</style>
       <div className="bn-shell">
         {view !== "games" && 
-        <header className="bn-card" style={{ display: "grid", gap: 12 }}>
-          <div>
-            <span className="bn-pill">{view === "games" ? "Practice and recall" : "Learn naturally"}</span>
-            <h1><span lang="bn">বাংলা</span> {view === "games" ? "Games" : "Tutor"}</h1>
-            <p>{view === "games"
-              ? "Strengthen Bengali recall with focused games from the selected lesson."
-              : "Choose a saved lesson, hear pronunciation, and build understanding phrase by phrase."}</p>
-          </div>
+        <LanguageTutorHero nativeName={nativeName} languageCode={languageTag} direction={languageTag === "ar" ? "rtl" : undefined} title={view === "games" ? "Games" : "Tutor"} eyebrow={view === "games" ? "Practice and recall" : "Learn naturally"} description={view === "games" ? `Strengthen ${languageName} recall with focused games from the selected lesson.` : "Choose a saved lesson, hear pronunciation, and build understanding phrase by phrase."} className="bn-card bn-header-card" copyClassName="bn-hero-copy" kickerClassName="bn-kicker">
           {view === "tutor" && lesson && (
             <div className="bn-action-area">
               <ActionButtons promptText={combinedLessonPrompt} />
-              <fieldset className="bn-content-options">
-                <legend>Content options</legend>
-                {[
-                  ["bengali", "Bengali"],
-                  ["pronunciation", "Pronunciation"],
-                  ["english", "English"],
-                  ["breakdown", "Breakdown"],
-                ].map(([key, label]) => (
-                  <label key={key}>
-                    <input
-                      type="checkbox"
-                      checked={visibleContent[key]}
-                      onChange={(event) => setVisibleContent((current) => ({
-                        ...current,
-                        [key]: event.target.checked,
-                      }))}
-                    />
-                    <span>{label}</span>
-                  </label>
-                ))}
-              </fieldset>
+              <LanguageContentOptions value={{ ...visibleContent, script: visibleContent.bengali }} onChange={(next) => setVisibleContent((current) => ({ ...current, bengali: next.script, pronunciation: next.pronunciation, english: next.english, breakdown: next.breakdown }))} scriptLabel="Bengali" showBreakdown className="bn-content-options" />
             </div>
           )}
           {showLessonSelector && (
@@ -1146,35 +900,27 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
               </label>
             </div>
           )}
-        </header>
+        </LanguageTutorHero>
         }
 
         {lesson && (
           <article className="bn-card" style={{ display: "grid", gap: 12 }}>
-            <div>
-              <h2>{usingTranslations ? selectedTranslationSet?.title || "Saved Bengali → English result" : lesson.title}</h2>
-              <p>{usingTranslations
-                ? `Practice this saved translation as ${translationItems.length} phrase${translationItems.length === 1 ? "" : "s"} or ${translationWords.length} word${translationWords.length === 1 ? "" : "s"}.`
-                : lesson.summary}</p>
-              <div className="bn-game-actions">
-                {!usingTranslations && <span className="bn-pill">{lesson.level}</span>}
-                {!usingTranslations && <span className="bn-pill">{lesson.focus}</span>}
-                <span className="bn-pill">{usingTranslations ? gameItems.length : filteredVocab.length + filteredPhrases.length} items</span>
-              </div>
-            </div>
+            <LanguageLessonHeader
+              title={usingTranslations ? selectedTranslationSet?.title || "Saved Bengali → English result" : lesson.title}
+              summary={usingTranslations ? `Practice this saved translation as ${translationItems.length} phrase${translationItems.length === 1 ? "" : "s"} or ${translationWords.length} word${translationWords.length === 1 ? "" : "s"}.` : lesson.summary}
+              badges={[...(!usingTranslations ? [lesson.level, lesson.focus] : []), `${usingTranslations ? gameItems.length : filteredVocab.length + filteredPhrases.length} items`]}
+              className="bn-lesson-heading-shared"
+              badgeClassName="bn-pill"
+            />
 
             {view === "tutor" && (
               <div className="bn-tutor-order-controls">
-                <div className="bn-tabs">
-                  <button className={`bn-tab ${contentTab === "phrases" ? "active" : ""}`} onClick={() => { setContentTab("phrases"); setJumpTarget(""); }} disabled={!filteredPhrases.length}>Key Phrases</button>
-                  <button className={`bn-tab ${contentTab === "vocab" ? "active" : ""}`} onClick={() => { setContentTab("vocab"); setJumpTarget(""); }} disabled={!filteredVocab.length}>Vocabulary</button>
-                </div>
+                <LanguageTutorContentTabs activeTab={contentTab} onChange={setContentTab} phraseCount={filteredPhrases.length} vocabCount={filteredVocab.length} className="bn-tabs" buttonClassName="bn-tab" />
                 <button
                   type="button"
                   className="bn-btn secondary bn-shuffle-btn"
                   disabled={activeTutorItems.length < 2}
                   onClick={() => {
-                    setJumpTarget("");
                     if (contentTab === "phrases") setPhraseShuffleVersion((version) => version + 1);
                     else setVocabShuffleVersion((version) => version + 1);
                   }}
@@ -1185,157 +931,52 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
             )}
 
             {view === "tutor" && (
-              <div className={`bn-tutor-scroll-shell ${isTutorWindowView ? "bn-tutor-window-view" : ""}`}>
-                <div className="bn-auto-scroll" aria-label="Automatic lesson scroll controls">
-                  <div className="bn-scroll-button-group">
-                    <button type="button" className={scrollDirection < 0 ? "active" : ""} onClick={() => activateScrollDirection(-1)} aria-label="Auto-scroll up" title="Auto-scroll up"><FaBackward aria-hidden="true" /></button>
-                    <button type="button" className="primary" onClick={() => setIsAutoScrolling((running) => !running)} aria-label={isAutoScrolling ? "Pause automatic scrolling" : "Start automatic scrolling"}>{isAutoScrolling ? <FaPause aria-hidden="true" /> : <FaPlay aria-hidden="true" />}</button>
-                    <button type="button" className={isScrollLooping ? "active" : ""} onClick={() => setIsScrollLooping((looping) => !looping)} aria-label={isScrollLooping ? "Disable looping" : "Enable looping"} title="Toggle looping"><FaRedoAlt aria-hidden="true" /></button>
-                    <button type="button" className={scrollDirection > 0 ? "active" : ""} onClick={() => activateScrollDirection(1)} aria-label="Auto-scroll down" title="Auto-scroll down"><FaForward aria-hidden="true" /></button>
-                    <button type="button" onClick={() => { setIsAutoScrolling(false); tutorContentRef.current?.scrollTo({ top: 0, behavior: "smooth" }); }} aria-label="Return to top" title="Return to top"><FaUndoAlt aria-hidden="true" /></button>
-                    <button type="button" onClick={() => nudgeTutorScroll(-1)} aria-label="Scroll up a little" title="Scroll up a little"><FaStepBackward aria-hidden="true" /></button>
-                    <button type="button" onClick={() => nudgeTutorScroll(1)} aria-label="Scroll down a little" title="Scroll down a little"><FaStepForward aria-hidden="true" /></button>
-                  </div>
-                  <div className="bn-scroll-settings">
-                    <button type="button" onClick={() => setScrollSpeed((speed) => Math.max(5, speed - 5))} aria-label="Decrease scroll speed" title="Decrease scroll speed"><FaMinus aria-hidden="true" /></button>
-                    <button type="button" onClick={() => setScrollSpeed((speed) => Math.min(200, speed + 5))} aria-label="Increase scroll speed" title="Increase scroll speed"><FaPlus aria-hidden="true" /></button>
-                    <span className="bn-scroll-speed">{scrollSpeed} px/s</span>
-                    <label className="bn-scroll-delay">
-                      <span>Restart</span>
-                      <input type="number" min="0" max="60" step="0.5" value={scrollRestartDelay} onChange={(event) => setScrollRestartDelay(Math.max(0, Math.min(60, Number(event.target.value) || 0)))} aria-label="Loop restart delay in seconds" />
-                      <span>sec</span>
-                    </label>
-                    <button type="button" className="bn-window-button" onClick={() => setIsTutorWindowView((expanded) => !expanded)} aria-label={isTutorWindowView ? "Exit full window view" : "Open lesson in full window view"} title={isTutorWindowView ? "Exit full window (Esc)" : "Full window"}>
-                      {isTutorWindowView ? <FaCompressAlt aria-hidden="true" /> : <FaExpandAlt aria-hidden="true" />}
-                      <span>{isTutorWindowView ? "Exit" : "Full window"}</span>
-                    </button>
-                  </div>
-                  <label className="bn-jump-bar">
-                    <select
-                      className="bn-select"
-                      value={jumpTarget}
-                      aria-label={`Jump to ${contentTab === "phrases" ? "phrase" : "word"}`}
-                      onChange={(event) => {
-                        const targetId = event.target.value;
-                        setJumpTarget(targetId);
-                        setIsAutoScrolling(false);
-                        const container = tutorContentRef.current;
-                        const target = document.getElementById(targetId);
-                        if (!container || !target) return;
-                        const containerRect = container.getBoundingClientRect();
-                        const targetRect = target.getBoundingClientRect();
-                        container.scrollTo({
-                          top: container.scrollTop + targetRect.top - containerRect.top
-                            - Math.max(0, (container.clientHeight - targetRect.height) / 2),
-                          behavior: "smooth",
-                        });
-                      }}
-                    >
-                      <option value="">Choose in English…</option>
-                      {activeTutorItems.map((item, idx) => (
-                        <option key={`${item.bn}-${idx}`} value={`bn-${contentTab}-${idx}`}>
-                          {item.en}
-                        </option>
-                      ))}
-                    </select>
-                  </label>
-                </div>
-                <div
-                  className="bn-scroll-progress"
-                  ref={scrollProgressSliderRef}
-                  role="slider"
-                  tabIndex="0"
-                  aria-label="Lesson scroll position"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                  aria-valuenow={Math.round(scrollProgress)}
-                  aria-valuetext={`${Math.round(scrollProgress)} percent`}
-                  onPointerDown={(event) => {
-                    const bounds = event.currentTarget.getBoundingClientRect();
-                    seekTutorScroll(((event.clientX - bounds.left) / bounds.width) * 100);
-                  }}
-                  onKeyDown={(event) => {
-                    if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
-                    event.preventDefault();
-                    seekTutorScroll(scrollProgressRef.current + (event.key === "ArrowRight" ? 5 : -5));
-                  }}
-                >
-                  <span ref={scrollProgressFillRef} style={{ width: `${scrollProgress}%` }} />
-                </div>
-                <div
-                  className="bn-tutor-scroll-content"
-                  ref={tutorContentRef}
-                  onScroll={(event) => {
-                    const container = event.currentTarget;
-                    const maxScrollTop = Math.max(0, container.scrollHeight - container.clientHeight);
-                    updateScrollProgress(maxScrollTop ? (container.scrollTop / maxScrollTop) * 100 : 100);
-                  }}
-                >
+              <LanguageTutorScroller items={normalizedTutorItems} itemType={contentTab} idPrefix="bn" storagePrefix="bengali-tutor-scroll" scriptKey="script">
             {contentTab === "phrases" && (
-              <section className="bn-section" style={{ display: "grid", gap: 10 }}>
-                <h3>Key phrases</h3>
-                {orderedPhrases.map((phrase, idx) => (
-                  <article id={`bn-phrases-${idx}`} key={`${phrase.bn}-${idx}`} className="bn-section" style={{ background: "#fff" }}>
-                    {visibleContent.bengali && <div className="bn-script" lang="bn">{phrase.bn}</div>}
-                    {visibleContent.pronunciation && phrase.pronunciation && <div className="bn-pronunciation">{phrase.pronunciation}</div>}
-                    {visibleContent.english && <div className="bn-translation">{phrase.en}</div>}
-                    {phrase.context && <div style={{ color: "#475569" }}>{phrase.context}</div>}
-                    {visibleContent.breakdown && <div className="bn-breakdown">
-                      <div className="bn-breakdown-header">
-                        <strong>Phrase breakdown</strong>
-                        <label className="bn-breakdown-speech-control">
-                          <span>Word speech</span>
-                          <select
-                            className="bn-select"
-                            value={breakdownSpeechSource}
-                            onChange={(event) => setBreakdownSpeechSource(event.target.value)}
-                            aria-label="Choose phrase breakdown word speech source"
-                          >
-                            <option value="google">Google voice</option>
-                            <option value="system">System default</option>
-                          </select>
-                        </label>
-                      </div>
-                      <div className="bn-breakdown-list">
-                        {phrase.words.map((word, wordIndex) => (
-                          <div className="bn-breakdown-word" key={`${phrase.bn}-${word.bn}-${wordIndex}`}>
-                            <button
-                              type="button"
-                              className="bn-script bn-breakdown-speakable"
-                              lang="bn"
-                              aria-label={`Hear ${word.bn} in Bengali with ${breakdownSpeechSource === "google" ? "Google voice" : "the system default voice"}`}
-                              title={`Hear with ${breakdownSpeechSource === "google" ? "Google voice" : "system default"}`}
-                              onClick={() => speakBreakdownWord(word.bn)}
-                            >
-                              {word.bn}
-                            </button>
-                            {visibleContent.pronunciation && <span className="bn-pronunciation">{word.pronunciation}</span>}
-                            <span className="bn-translation">{word.en}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>}
-                    <BengaliItemActions item={phrase} />
-                  </article>
-                ))}
-              </section>
+              <LanguageTutorItemList
+                items={normalizeLanguageItems(orderedPhrases, "bn")}
+                kind="phrases"
+                scriptKey="script"
+                languageCode="bn"
+                visibleContent={{ ...visibleContent, script: visibleContent.bengali }}
+                idPrefix="bn"
+                classes={{
+                  section: "bn-section bn-shared-item-list",
+                  heading: "bn-content-heading",
+                  card: "bn-section bn-shared-item-card",
+                  copy: "bn-shared-item-copy",
+                  script: "bn-script",
+                  pronunciation: "bn-pronunciation",
+                  translation: "bn-translation",
+                  context: "bn-context",
+                }}
+                renderBreakdown={(phrase) => <LanguagePhraseBreakdown phrase={phrase} languageCode="bn" speechSource={breakdownSpeechSource} onSpeechSourceChange={setBreakdownSpeechSource} onSpeakWord={speakBreakdownWord} visiblePronunciation={visibleContent.pronunciation} />}
+                renderActions={(phrase) => <BengaliItemActions item={phrase} />}
+              />
             )}
 
             {contentTab === "vocab" && (
-              <section className="bn-section" style={{ display: "grid", gap: 10 }}>
-                <h3>Vocabulary</h3>
-                {orderedVocab.map((word, idx) => (
-                  <article id={`bn-vocab-${idx}`} key={`${word.bn}-${idx}`} className="bn-section" style={{ background: "#fff" }}>
-                    {visibleContent.bengali && <div className="bn-script" lang="bn">{word.bn}</div>}
-                    {visibleContent.pronunciation && word.pronunciation && <div className="bn-pronunciation">{word.pronunciation}</div>}
-                    {visibleContent.english && <div className="bn-translation">{word.en}</div>}
-                    <BengaliItemActions item={word} />
-                  </article>
-                ))}
-              </section>
+              <LanguageTutorItemList
+                items={normalizeLanguageItems(orderedVocab, "bn")}
+                kind="vocab"
+                scriptKey="script"
+                languageCode="bn"
+                visibleContent={{ ...visibleContent, script: visibleContent.bengali }}
+                idPrefix="bn"
+                classes={{
+                  section: "bn-section bn-shared-item-list",
+                  heading: "bn-content-heading",
+                  card: "bn-section bn-shared-item-card",
+                  copy: "bn-shared-item-copy",
+                  script: "bn-script",
+                  pronunciation: "bn-pronunciation",
+                  translation: "bn-translation",
+                  context: "bn-context",
+                }}
+                renderActions={(word) => <BengaliItemActions item={word} />}
+              />
             )}
-                </div>
-              </div>
+              </LanguageTutorScroller>
             )}
 
             {view === "games" && (
@@ -1367,8 +1008,8 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
                   </select>
                 </label>
                 <div className="bn-tabs">
-                  <button className={`bn-tab ${gameDirection === "bn-en" ? "active" : ""}`} onClick={() => setGameDirection("bn-en")}>Bengali to English</button>
-                  <button className={`bn-tab ${gameDirection === "en-bn" ? "active" : ""}`} onClick={() => setGameDirection("en-bn")}>English to Bengali</button>
+                  <button className={`bn-tab ${gameDirection === "bn-en" ? "active" : ""}`} onClick={() => setGameDirection("bn-en")}>{languageName} to English</button>
+                  <button className={`bn-tab ${gameDirection === "en-bn" ? "active" : ""}`} onClick={() => setGameDirection("en-bn")}>English to {languageName}</button>
                 </div>
 
                 <label className="bn-row bn-game-picker">
@@ -1384,7 +1025,7 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
                     <option value="match">🎯 Match It</option>
                     <option value="sprint">⚡ 30s Sprint</option>
                     <option value="sound">🎧 Sound Quest</option>
-                    <option value="bingo">🎵 Bengali Bingo</option>
+                    <option value="bingo">🎵 {languageName} Bingo</option>
                     <option value="pronunciation">🎈 Word Pop</option>
                     <option value="memory">🧠 Memory Flip</option>
                     <option value="recall">✍️ Type Recall</option>
@@ -1408,7 +1049,7 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
                         >
                           {gameDirection === "bn-en" ? (
                             <>
-                              <span lang="bn">{gameQuestion.bn}</span>
+                              <span lang={languageTag} dir={languageTag === "ar" ? "rtl" : undefined}>{gameQuestion.bn}</span>
                               {gameQuestion.pronunciation && <span className="bn-match-pronunciation"> ({gameQuestion.pronunciation})</span>}
                             </>
                           ) : gameQuestion.en}
@@ -1422,8 +1063,8 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
                       </label>
                     </div>
                     <div className="bn-game-actions">
-                      <button className="bn-btn secondary" onClick={() => speakSelectedBengali(gameQuestion.bn)}>Hear target Bengali</button>
-                      {containsBengali(gameQuestion.bn) && (
+                      <button className="bn-btn secondary" onClick={() => speakSelectedBengali(gameQuestion.bn)}>Hear target {languageName}</button>
+                      {enableBreakdownDrawer && containsBengali(gameQuestion.bn) && (
                         <button
                           type="button"
                           className="bn-btn secondary"
@@ -1432,7 +1073,7 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
                             dispatch(actions.setIsBengaliBreakdownOpen(true));
                           }}
                         >
-                          Open Bengali breakdown
+                          Open {languageName} breakdown
                         </button>
                       )}
                       <button className="bn-btn secondary" onClick={() => startNewGameRound()}>New card</button>
@@ -1463,16 +1104,16 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
                   <div className="bn-game-card">
                     <div className="bn-game-card-top">
                       <div>
-                        <div className="bn-game-subtext">Type the {gameDirection === "en-bn" ? "Bengali" : "English"} translation from memory</div>
+                        <div className="bn-game-subtext">Type the {gameDirection === "en-bn" ? languageName : "English"} translation from memory</div>
                         <div className={`bn-game-prompt ${statusClassForKey(matchStats, gameQuestion.key)}`}>{gameQuestion.displayQuestion}</div>
                       </div>
                       <button
                         className="bn-btn secondary bn-icon-btn"
                         onClick={() => speakSelectedBengali(gameQuestion.bn)}
-                        aria-label="Hear Bengali"
-                        title="Hear Bengali"
+                        aria-label={`Hear ${languageName}`}
+                        title={`Hear ${languageName}`}
                       >
-                        <LanguageIcon language="BN" />
+                        <LanguageIcon language={languageTag.toUpperCase()} />
                       </button>
                     </div>
                     <form className="bn-recall-form" onSubmit={handleRecallSubmit}>
@@ -1482,7 +1123,7 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
                           className="bn-input"
                           value={recallAnswer}
                           onChange={(event) => setRecallAnswer(event.target.value)}
-                          placeholder={gameDirection === "en-bn" ? "বাংলায় লিখুন" : "Type in English"}
+                          placeholder={gameDirection === "en-bn" ? recallPlaceholder : "Type in English"}
                           autoComplete="off"
                           disabled={!!recallResult}
                         />
@@ -1522,7 +1163,7 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
                             ) : (
                               <div>
                                 <div className="bn-sound-target">🎧 <span>What did you hear?</span></div>
-                                <div className="bn-game-subtext" lang="bn">{gameQuestion.bengaliDisplay}</div>
+                                <div className="bn-game-subtext" lang={languageTag} dir={languageTag === "ar" ? "rtl" : undefined}>{gameQuestion.bengaliDisplay}</div>
                               </div>
                             )}
                             <div className="bn-game-subtext">{arcadeMessage || "Go!"}</div>
@@ -1546,7 +1187,7 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
                   <div className="bn-game-card">
                     <div className="bn-game-card-top">
                       <div>
-                        <div className="bn-game-prompt">🎵 Bengali Bingo</div>
+                        <div className="bn-game-prompt">🎵 {languageName} Bingo</div>
                         <div className="bn-game-subtext">Listen, then tap the matching meaning. Clear the whole board!</div>
                       </div>
                       <div className="bn-game-actions">
@@ -1556,7 +1197,7 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
                         <button className="bn-btn secondary" onClick={startBingoRound}>New board</button>
                       </div>
                     </div>
-                    {bingoTarget && <div className="bn-game-feedback correct" lang="bn">Find: {bengaliLabel(bingoTarget)}</div>}
+                    {bingoTarget && <div className="bn-game-feedback correct" lang={languageTag} dir={languageTag === "ar" ? "rtl" : undefined}>Find: {bengaliLabel(bingoTarget)}</div>}
                     <div className="bn-bingo-grid">
                       {bingoBoard.map((item, idx) => {
                         const matched = bingoMatched.includes(wordKey(item));
@@ -1571,14 +1212,14 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
                     </div>
                     {!bingoTarget && <div className="bn-game-feedback correct">🎉 BINGO! Board cleared with {bingoMistakes} mistake{bingoMistakes === 1 ? "" : "s"}.</div>}
                   </div>
-                ) : <div style={{ color: "#475569" }}>Add at least two items to play Bengali Bingo.</div>)}
+                ) : <div style={{ color: "#475569" }}>Add at least two items to play {languageName} Bingo.</div>)}
 
                 {gameMode === "pronunciation" && (pronunciationQuestion ? (
                   <div className="bn-game-card">
                     <div className="bn-game-card-top">
                       <div>
                         <div className="bn-game-subtext">Pop the balloon with the matching meaning</div>
-                        <div className="bn-game-prompt" lang="bn">{pronunciationQuestion.bengaliDisplay}</div>
+                        <div className="bn-game-prompt" lang={languageTag} dir={languageTag === "ar" ? "rtl" : undefined}>{pronunciationQuestion.bengaliDisplay}</div>
                       </div>
                       <div className="bn-game-actions">
                         <span className="bn-pill">🏆 {arcadeScore}</span>
@@ -1610,7 +1251,7 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
                     <div className="bn-game-card-top">
                       <div>
                         <div className="bn-game-prompt">Find every matching pair</div>
-                        <div className="bn-game-subtext">Flip a Bengali card and its translation. Cards speak when revealed.</div>
+                        <div className="bn-game-subtext">Flip a {languageName} card and its translation. Cards speak when revealed.</div>
                       </div>
                       <div className="bn-game-actions">
                         <span className="bn-pill">{memoryMatched.length}/{memoryCards.length / 2} pairs</span>
@@ -1677,4 +1318,11 @@ BengaliTutor.propTypes = {
     phrases: PropTypes.arrayOf(PropTypes.object).isRequired,
   })),
   view: PropTypes.oneOf(["tutor", "games"]),
+  languageName: PropTypes.string,
+  languageCode: PropTypes.string,
+  languageTag: PropTypes.string,
+  nativeName: PropTypes.string,
+  gameStorageKey: PropTypes.string,
+  recallPlaceholder: PropTypes.string,
+  enableBreakdownDrawer: PropTypes.bool,
 };

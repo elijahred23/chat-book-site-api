@@ -1,9 +1,7 @@
-import { translateBengaliToEnglish } from './gemini.service.js';
+import { translateLanguageToEnglish } from './gemini.service.js';
 
 export const translateText = async ({ text, source = 'bn', target = 'en' }) => {
-  if (source !== 'bn' || target !== 'en') {
-    throw new Error('Gemini phrase breakdown currently supports Bengali to English only.');
-  }
-  const result = await translateBengaliToEnglish(text);
+  if (!['bn', 'ar'].includes(source) || target !== 'en') throw new Error('Gemini phrase breakdown supports Bengali or Arabic to English.');
+  const result = await translateLanguageToEnglish(text, source === 'ar' ? 'Arabic' : 'Bengali');
   return { ...result, provider: 'gemini' };
 };

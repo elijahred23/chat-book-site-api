@@ -1,0 +1,31 @@
+{
+  "id": "after-prayer-remembrance",
+  "title": "Remembrance After Prayer",
+  "summary": "Learn common words of remembrance said after completing the obligatory prayer.",
+  "level": "beginner",
+  "topic": "Dhikr",
+  "focus": "post-prayer remembrance",
+  "vocab": [
+    { "ar": "أَسْتَغْفِرُ", "pronunciation": "astaghfiru", "en": "I seek forgiveness", "category": "dhikr" },
+    { "ar": "سُبْحَانَ", "pronunciation": "subḥāna", "en": "glory / free from imperfection", "category": "dhikr" },
+    { "ar": "الْحَمْدُ", "pronunciation": "al-ḥamdu", "en": "all praise", "category": "dhikr" },
+    { "ar": "أَكْبَرُ", "pronunciation": "akbar", "en": "greater / greatest", "category": "dhikr" },
+    { "ar": "وَحْدَهُ", "pronunciation": "waḥdahu", "en": "alone", "category": "dhikr" },
+    { "ar": "قَدِيرٌ", "pronunciation": "qadīr", "en": "all-powerful", "category": "dhikr" }
+  ],
+  "phrases": [
+    { "ar": "أَسْتَغْفِرُ اللَّهَ", "pronunciation": "astaghfiru-llāh", "en": "I seek Allah’s forgiveness", "context": "Commonly said three times after prayer", "category": "dhikr", "words": [{"ar":"أَسْتَغْفِرُ","pronunciation":"astaghfiru","en":"I seek forgiveness from"},{"ar":"اللَّهَ","pronunciation":"Allāh","en":"Allah"}] },
+    { "ar": "سُبْحَانَ اللَّهِ", "pronunciation": "subḥāna-llāh", "en": "Glory be to Allah", "context": "Said 33 times in a well-known post-prayer remembrance", "category": "dhikr", "words": [{"ar":"سُبْحَانَ","pronunciation":"subḥāna","en":"glory be to"},{"ar":"اللَّهِ","pronunciation":"Allāh","en":"Allah"}] },
+    { "ar": "الْحَمْدُ لِلَّهِ", "pronunciation": "al-ḥamdu lillāh", "en": "All praise is for Allah", "context": "Said 33 times in a well-known post-prayer remembrance", "category": "dhikr", "words": [{"ar":"الْحَمْدُ","pronunciation":"al-ḥamdu","en":"all praise"},{"ar":"لِلَّهِ","pronunciation":"lillāh","en":"is for Allah"}] },
+    { "ar": "اللَّهُ أَكْبَرُ", "pronunciation": "Allāhu akbar", "en": "Allah is the Greatest", "context": "Said 33 times in a well-known post-prayer remembrance", "category": "dhikr", "words": [{"ar":"اللَّهُ","pronunciation":"Allāhu","en":"Allah"},{"ar":"أَكْبَرُ","pronunciation":"akbar","en":"is the Greatest"}] },
+    { "ar": "لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ، وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ", "pronunciation": "lā ilāha illa-llāhu waḥdahu lā sharīka lah, lahul-mulku wa lahul-ḥamd, wa huwa ʿalā kulli shayʾin qadīr", "en": "None has the right to be worshipped except Allah alone, without partner. His is the sovereignty and praise, and He has power over everything", "context": "Said to complete one hundred after 33 repetitions of each short phrase", "category": "dhikr", "words": [{"ar":"لَا إِلَهَ","pronunciation":"lā ilāha","en":"there is no deity"},{"ar":"إِلَّا اللَّهُ","pronunciation":"illa-llāh","en":"except Allah"},{"ar":"وَحْدَهُ","pronunciation":"waḥdahu","en":"alone"},{"ar":"لَا شَرِيكَ لَهُ","pronunciation":"lā sharīka lah","en":"with no partner"},{"ar":"لَهُ الْمُلْكُ","pronunciation":"lahul-mulku","en":"His is the sovereignty"},{"ar":"وَلَهُ الْحَمْدُ","pronunciation":"wa lahul-ḥamd","en":"and His is the praise"},{"ar":"وَهُوَ","pronunciation":"wa huwa","en":"and He"},{"ar":"عَلَى كُلِّ شَيْءٍ","pronunciation":"ʿalā kulli shayʾin","en":"over everything"},{"ar":"قَدِيرٌ","pronunciation":"qadīr","en":"is all-powerful"}] }
+  ],
+  "practice": [
+    { "prompt": "What does أَسْتَغْفِرُ اللَّهَ mean?", "answer": "I seek Allah’s forgiveness" },
+    { "prompt": "Which phrase means ‘All praise is for Allah’?", "answer": "الْحَمْدُ لِلَّهِ" }
+  ],
+  "notes": [
+    "The 33–33–33 remembrance followed by the longer declaration is reported in Sahih Muslim 597.",
+    "Other authentically reported forms of remembrance also exist."
+  ]
+}

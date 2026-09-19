@@ -26,6 +26,7 @@ import TypingTest from "./components/text/TypingText.jsx";
 import YouTubeTranscript from "./components/youtube/YouTubeTranscript.jsx";
 import AppDrawers from "./layouts/AppDrawers.jsx";
 import ActionButtonStudio from "./pages/ActionButtonStudio.jsx";
+import ArabicTutor from "./pages/ArabicTutor.jsx";
 import ApiCheck from "./pages/ApiCheck.jsx";
 import BengaliTutorWithVoice from "./pages/BengaliTutorWithVoice.jsx";
 import BengaliAlphabet from "./pages/BengaliAlphabet.jsx";
@@ -133,6 +134,7 @@ function AppContent() {
           <Route path="/flashCards" element={<FlashCardApp />} />
           <Route path="/plantUML" element={<PlantUMLViewer />} />
           <Route path="/bengali" element={<BengaliTutorWithVoice />} />
+          <Route path="/arabic" element={<ArabicTutor />} />
           <Route path="/bengali-alphabet" element={<BengaliAlphabet />} />
           <Route path="/coding" element={<CodingProblems />} />
           <Route path="/cpu-simulator" element={<Suspense fallback={null}><CpuSimulatorWithOutputHistory /></Suspense>} />

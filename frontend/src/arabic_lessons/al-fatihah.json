@@ -1,0 +1,35 @@
+{
+  "id": "al-fatihah",
+  "title": "Surah Al-Fatihah",
+  "summary": "Study the seven verses of the opening chapter recited in every unit of prayer.",
+  "level": "beginner",
+  "topic": "Quran in Prayer",
+  "focus": "meaning and pronunciation",
+  "vocab": [
+    { "ar": "الْحَمْدُ", "pronunciation": "al-ḥamdu", "en": "all praise", "category": "Quran vocabulary" },
+    { "ar": "رَبِّ", "pronunciation": "rabbi", "en": "Lord of", "category": "Quran vocabulary" },
+    { "ar": "الْعَالَمِينَ", "pronunciation": "al-ʿālamīn", "en": "all worlds", "category": "Quran vocabulary" },
+    { "ar": "الرَّحْمَنِ", "pronunciation": "ar-raḥmān", "en": "the Most Compassionate", "category": "Quran vocabulary" },
+    { "ar": "نَعْبُدُ", "pronunciation": "naʿbudu", "en": "we worship", "category": "Quran vocabulary" },
+    { "ar": "نَسْتَعِينُ", "pronunciation": "nastaʿīn", "en": "we ask for help", "category": "Quran vocabulary" },
+    { "ar": "اهْدِنَا", "pronunciation": "ihdinā", "en": "guide us", "category": "Quran vocabulary" },
+    { "ar": "الصِّرَاطَ", "pronunciation": "aṣ-ṣirāṭ", "en": "the path", "category": "Quran vocabulary" }
+  ],
+  "phrases": [
+    { "ar": "بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ", "pronunciation": "bismi-llāhir-raḥmānir-raḥīm", "en": "In the Name of Allah—the Most Compassionate, Most Merciful", "context": "Al-Fatihah 1:1", "category": "Quran", "words": [{"ar":"بِسْمِ","pronunciation":"bismi","en":"in the name of"},{"ar":"اللَّهِ","pronunciation":"Allāh","en":"Allah"},{"ar":"الرَّحْمَنِ","pronunciation":"ar-raḥmān","en":"the Most Compassionate"},{"ar":"الرَّحِيمِ","pronunciation":"ar-raḥīm","en":"the Most Merciful"}] },
+    { "ar": "الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ", "pronunciation": "al-ḥamdu lillāhi rabbil-ʿālamīn", "en": "All praise is for Allah—Lord of all worlds", "context": "Al-Fatihah 1:2", "category": "Quran", "words": [{"ar":"الْحَمْدُ","pronunciation":"al-ḥamdu","en":"all praise"},{"ar":"لِلَّهِ","pronunciation":"lillāhi","en":"is for Allah"},{"ar":"رَبِّ","pronunciation":"rabbi","en":"Lord of"},{"ar":"الْعَالَمِينَ","pronunciation":"al-ʿālamīn","en":"all worlds"}] },
+    { "ar": "الرَّحْمَنِ الرَّحِيمِ", "pronunciation": "ar-raḥmānir-raḥīm", "en": "The Most Compassionate, Most Merciful", "context": "Al-Fatihah 1:3", "category": "Quran", "words": [{"ar":"الرَّحْمَنِ","pronunciation":"ar-raḥmān","en":"the Most Compassionate"},{"ar":"الرَّحِيمِ","pronunciation":"ar-raḥīm","en":"the Most Merciful"}] },
+    { "ar": "مَالِكِ يَوْمِ الدِّينِ", "pronunciation": "māliki yawmid-dīn", "en": "Master of the Day of Judgment", "context": "Al-Fatihah 1:4", "category": "Quran", "words": [{"ar":"مَالِكِ","pronunciation":"māliki","en":"Master of"},{"ar":"يَوْمِ","pronunciation":"yawmi","en":"the Day of"},{"ar":"الدِّينِ","pronunciation":"ad-dīn","en":"Judgment"}] },
+    { "ar": "إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ", "pronunciation": "iyyāka naʿbudu wa iyyāka nastaʿīn", "en": "You alone we worship and You alone we ask for help", "context": "Al-Fatihah 1:5", "category": "Quran", "words": [{"ar":"إِيَّاكَ","pronunciation":"iyyāka","en":"You alone"},{"ar":"نَعْبُدُ","pronunciation":"naʿbudu","en":"we worship"},{"ar":"وَإِيَّاكَ","pronunciation":"wa iyyāka","en":"and You alone"},{"ar":"نَسْتَعِينُ","pronunciation":"nastaʿīn","en":"we ask for help"}] },
+    { "ar": "اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ", "pronunciation": "ihdinaṣ-ṣirāṭal-mustaqīm", "en": "Guide us along the Straight Path", "context": "Al-Fatihah 1:6", "category": "Quran", "words": [{"ar":"اهْدِنَا","pronunciation":"ihdinā","en":"guide us"},{"ar":"الصِّرَاطَ","pronunciation":"aṣ-ṣirāṭa","en":"to the path"},{"ar":"الْمُسْتَقِيمَ","pronunciation":"al-mustaqīm","en":"the straight"}] },
+    { "ar": "صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ", "pronunciation": "ṣirāṭal-ladhīna anʿamta ʿalayhim ghayril-maghḍūbi ʿalayhim wa laḍ-ḍāllīn", "en": "The path of those You have blessed—not those You are displeased with, or those who are astray", "context": "Al-Fatihah 1:7", "category": "Quran", "words": [{"ar":"صِرَاطَ","pronunciation":"ṣirāṭa","en":"the path of"},{"ar":"الَّذِينَ","pronunciation":"alladhīna","en":"those whom"},{"ar":"أَنْعَمْتَ","pronunciation":"anʿamta","en":"You have blessed"},{"ar":"عَلَيْهِمْ","pronunciation":"ʿalayhim","en":"upon them"},{"ar":"غَيْرِ","pronunciation":"ghayri","en":"not"},{"ar":"الْمَغْضُوبِ","pronunciation":"al-maghḍūbi","en":"those receiving displeasure"},{"ar":"عَلَيْهِمْ","pronunciation":"ʿalayhim","en":"upon them"},{"ar":"وَلَا","pronunciation":"wa lā","en":"nor"},{"ar":"الضَّالِّينَ","pronunciation":"aḍ-ḍāllīn","en":"those who are astray"}] }
+  ],
+  "practice": [
+    { "prompt": "What does اهْدِنَا mean?", "answer": "Guide us" },
+    { "prompt": "Which verse says that Allah alone is worshipped and asked for help?", "answer": "Al-Fatihah 1:5" }
+  ],
+  "notes": [
+    "English meanings are adapted from The Clear Quran translation displayed by Quran.com.",
+    "Use a qualified teacher for tajwid and precise Qur’anic pronunciation."
+  ]
+}

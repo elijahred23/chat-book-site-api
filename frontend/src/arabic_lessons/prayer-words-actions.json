@@ -1,0 +1,32 @@
+{
+  "id": "prayer-words-actions",
+  "title": "Words and Actions in Salah",
+  "summary": "Learn core phrases heard and recited during the movements of the Islamic prayer.",
+  "level": "beginner",
+  "topic": "Islamic Prayer",
+  "focus": "salah sequence",
+  "vocab": [
+    { "ar": "صَلَاة", "pronunciation": "ṣalāh", "en": "prayer", "category": "worship" },
+    { "ar": "قِيَام", "pronunciation": "qiyām", "en": "standing", "category": "prayer position" },
+    { "ar": "رُكُوع", "pronunciation": "rukūʿ", "en": "bowing", "category": "prayer position" },
+    { "ar": "سُجُود", "pronunciation": "sujūd", "en": "prostration", "category": "prayer position" },
+    { "ar": "رَبِّي", "pronunciation": "rabbī", "en": "my Lord", "category": "prayer word" },
+    { "ar": "السَّلَام", "pronunciation": "as-salām", "en": "peace", "category": "prayer word" }
+  ],
+  "phrases": [
+    { "ar": "اللَّهُ أَكْبَرُ", "pronunciation": "Allāhu akbar", "en": "Allah is the Greatest", "context": "Takbir; said when beginning the prayer and moving between positions", "category": "salah", "words": [{ "ar": "اللَّهُ", "pronunciation": "Allāhu", "en": "Allah" }, { "ar": "أَكْبَرُ", "pronunciation": "akbar", "en": "is the Greatest" }] },
+    { "ar": "سُبْحَانَ رَبِّيَ الْعَظِيمِ", "pronunciation": "subḥāna rabbiyal-ʿaẓīm", "en": "Glory is to my Lord, the Magnificent", "context": "Said while bowing (rukūʿ)", "category": "salah", "words": [{ "ar": "سُبْحَانَ", "pronunciation": "subḥāna", "en": "glory is to" }, { "ar": "رَبِّيَ", "pronunciation": "rabbī", "en": "my Lord" }, { "ar": "الْعَظِيمِ", "pronunciation": "al-ʿaẓīm", "en": "the Magnificent" }] },
+    { "ar": "سَمِعَ اللَّهُ لِمَنْ حَمِدَهُ", "pronunciation": "samiʿa-llāhu liman ḥamidah", "en": "Allah hears the one who praises Him", "context": "Said when rising from bowing", "category": "salah", "words": [{ "ar": "سَمِعَ", "pronunciation": "samiʿa", "en": "hears" }, { "ar": "اللَّهُ", "pronunciation": "Allāhu", "en": "Allah" }, { "ar": "لِمَنْ", "pronunciation": "liman", "en": "the one who" }, { "ar": "حَمِدَهُ", "pronunciation": "ḥamidah", "en": "praises Him" }] },
+    { "ar": "رَبَّنَا وَلَكَ الْحَمْدُ", "pronunciation": "rabbanā wa lakal-ḥamd", "en": "Our Lord, and to You belongs all praise", "context": "Said while standing after bowing", "category": "salah", "words": [{ "ar": "رَبَّنَا", "pronunciation": "rabbanā", "en": "our Lord" }, { "ar": "وَلَكَ", "pronunciation": "wa laka", "en": "and to You" }, { "ar": "الْحَمْدُ", "pronunciation": "al-ḥamdu", "en": "belongs all praise" }] },
+    { "ar": "سُبْحَانَ رَبِّيَ الْأَعْلَى", "pronunciation": "subḥāna rabbiyal-aʿlā", "en": "Glory is to my Lord, the Most High", "context": "Said while prostrating (sujūd)", "category": "salah", "words": [{ "ar": "سُبْحَانَ", "pronunciation": "subḥāna", "en": "glory is to" }, { "ar": "رَبِّيَ", "pronunciation": "rabbī", "en": "my Lord" }, { "ar": "الْأَعْلَى", "pronunciation": "al-aʿlā", "en": "the Most High" }] },
+    { "ar": "السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللَّهِ", "pronunciation": "as-salāmu ʿalaykum wa raḥmatu-llāh", "en": "Peace and Allah’s mercy be upon you", "context": "Taslim; said to conclude the prayer", "category": "salah", "words": [{ "ar": "السَّلَامُ", "pronunciation": "as-salāmu", "en": "peace" }, { "ar": "عَلَيْكُمْ", "pronunciation": "ʿalaykum", "en": "be upon you" }, { "ar": "وَرَحْمَةُ", "pronunciation": "wa raḥmatu", "en": "and the mercy of" }, { "ar": "اللَّهِ", "pronunciation": "Allāh", "en": "Allah" }] }
+  ],
+  "practice": [
+    { "prompt": "Which phrase is recited in bowing?", "answer": "سُبْحَانَ رَبِّيَ الْعَظِيمِ" },
+    { "prompt": "Which phrase is recited in prostration?", "answer": "سُبْحَانَ رَبِّيَ الْأَعْلَى" }
+  ],
+  "notes": [
+    "This lesson teaches language and meaning; details of prayer practice can vary by school of Islamic law.",
+    "The bowing and prostration phrases are established in Jamiʿ at-Tirmidhi 262."
+  ]
+}

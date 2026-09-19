@@ -221,12 +221,12 @@ function normalizeBengaliTranslation(result) {
     return normalized;
 }
 
-async function requestBengaliTranslation(text) {
+async function requestBengaliTranslation(text, language = "Bengali") {
     const response = await getGeminiClient().models.generateContent({
         model: GeminiModel.currentModel,
         contents: text,
         config: {
-            systemInstruction: bengaliTranslationSystemInstruction,
+            systemInstruction: bengaliTranslationSystemInstruction.replaceAll("Bengali", language),
             temperature: 0,
             maxOutputTokens: 16384,
             responseMimeType: "application/json",
@@ -251,6 +251,18 @@ async function translateBengaliToEnglish(text) {
                 }
                 throw error;
             }
+        }
+    }
+}
+
+async function translateLanguageToEnglish(text, language) {
+    if (language === "Bengali") return translateBengaliToEnglish(text);
+    for (let attempt = 1; attempt <= 2; attempt += 1) {
+        try {
+            return await requestBengaliTranslation(text, language);
+        } catch (error) {
+            const retryable = error instanceof SyntaxError || /empty Bengali translation|incomplete Bengali translation breakdown/.test(error?.message || "");
+            if (!retryable || attempt === 2) throw error;
         }
     }
 }
@@ -473,4 +485,4 @@ async function generateCpuProgram(prompt, gemini_model = null) {
 }
 
 
-export { generateCpuProgram, generateGeminiResponse, generatePlantUmlDiagram, listGeminiModels, normalizeGeminiModel, translateBengaliToEnglish };
+export { generateCpuProgram, generateGeminiResponse, generatePlantUmlDiagram, listGeminiModels, normalizeGeminiModel, translateBengaliToEnglish, translateLanguageToEnglish };
