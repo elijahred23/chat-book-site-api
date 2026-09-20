@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import PropTypes from "prop-types";
 import { FaArrowRight, FaBookOpen, FaCode, FaLanguage, FaLayerGroup, FaMicrochip, FaPlay, FaUniversity } from "react-icons/fa";
 import Button from "../ui/Button";
 import Card from "../ui/Card";
@@ -6,6 +7,7 @@ import { Page, PageHeader } from "../ui/Page";
 
 const destinations = [
   { to: "/arabic", icon: FaLanguage, title: "Arabic tutor", text: "Learn useful Arabic phrases with audio and guided practice." },
+  { to: "/arabic-grammar", icon: FaBookOpen, title: "Arabic grammar", text: "Build natural Arabic sentences with guided patterns and audio examples." },
   { to: "/flashCards", icon: FaLayerGroup, title: "Flash cards", text: "Build, refine, and review study cards." },
   { to: "/coding", icon: FaCode, title: "Coding practice", text: "Work through guided programming problems." },
   { to: "/cpu-simulator", icon: FaMicrochip, title: "CPU simulator", text: "Step through a 32-bit processor one clock pulse at a time." },
@@ -48,3 +50,8 @@ export default function Home({ onOpenChat, onOpenTools }) {
     </Page>
   );
 }
+
+Home.propTypes = {
+  onOpenChat: PropTypes.func.isRequired,
+  onOpenTools: PropTypes.func.isRequired,
+};

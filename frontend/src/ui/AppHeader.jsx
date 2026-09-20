@@ -1,6 +1,7 @@
 import { useEffect, useId, useRef } from "react";
 import { createPortal } from "react-dom";
 import { NavLink } from "react-router-dom";
+import PropTypes from "prop-types";
 import { FaBars, FaBookOpen, FaCode, FaCog, FaHome, FaMusic, FaTimes } from "react-icons/fa";
 import Button from "./Button";
 
@@ -14,6 +15,7 @@ const navigationGroups = [
       { to: "/Quran", label: "Quran" },
       { to: "/bengali", label: "Bengali Tutor" },
       { to: "/arabic", label: "Arabic Tutor" },
+      { to: "/arabic-grammar", label: "Arabic Grammar" },
       { to: "/bengali-alphabet", label: "Bengali Grammar" },
     ],
   },
@@ -164,3 +166,9 @@ export default function AppHeader({ isOpen, onToggle, onClose }) {
     </>
   );
 }
+
+AppHeader.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  onToggle: PropTypes.func.isRequired,
+  onClose: PropTypes.func.isRequired,
+};
