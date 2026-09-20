@@ -1,0 +1,1122 @@
+{
+  "id": "asr-prayer-recitation",
+  "title": "Asr Prayer Recitation",
+  "summary": "Learn the Arabic recitations for the four rakʿahs of Asr in prayer order, with pronunciation and meaning.",
+  "level": "intermediate",
+  "topic": "Islamic Prayer",
+  "focus": "four-rakʿah Asr sequence",
+  "vocab": [
+    {
+      "ar": "رَكْعَة",
+      "pronunciation": "rakʿah",
+      "en": "unit of prayer",
+      "category": "prayer structure"
+    },
+    {
+      "ar": "قِيَام",
+      "pronunciation": "qiyām",
+      "en": "standing",
+      "category": "prayer position"
+    },
+    {
+      "ar": "رُكُوع",
+      "pronunciation": "rukūʿ",
+      "en": "bowing",
+      "category": "prayer position"
+    },
+    {
+      "ar": "سُجُود",
+      "pronunciation": "sujūd",
+      "en": "prostration",
+      "category": "prayer position"
+    },
+    {
+      "ar": "تَشَهُّد",
+      "pronunciation": "tashahhud",
+      "en": "testimony recited while sitting",
+      "category": "prayer position"
+    },
+    {
+      "ar": "الْعَصْر",
+      "pronunciation": "al-ʿaṣr",
+      "en": "afternoon",
+      "category": "prayer time"
+    },
+    {
+      "ar": "أَكْبَرُ",
+      "pronunciation": "akbar",
+      "en": "greater / greatest",
+      "category": "key word"
+    },
+    {
+      "ar": "سُبْحَانَ",
+      "pronunciation": "subḥāna",
+      "en": "glory and perfection belong to",
+      "category": "key word"
+    },
+    {
+      "ar": "رَبِّي",
+      "pronunciation": "rabbī",
+      "en": "my Lord",
+      "category": "key word"
+    },
+    {
+      "ar": "الْحَمْدُ",
+      "pronunciation": "al-ḥamdu",
+      "en": "all praise",
+      "category": "key word"
+    },
+    {
+      "ar": "اهْدِنَا",
+      "pronunciation": "ihdinā",
+      "en": "guide us",
+      "category": "key word"
+    },
+    {
+      "ar": "نَعْبُدُ",
+      "pronunciation": "naʿbudu",
+      "en": "we worship",
+      "category": "key word"
+    },
+    {
+      "ar": "نَسْتَعِينُ",
+      "pronunciation": "nastaʿīnu",
+      "en": "we ask for help",
+      "category": "key word"
+    },
+    {
+      "ar": "اغْفِرْ",
+      "pronunciation": "ighfir",
+      "en": "forgive",
+      "category": "key word"
+    },
+    {
+      "ar": "السَّلَامُ",
+      "pronunciation": "as-salāmu",
+      "en": "peace",
+      "category": "key word"
+    }
+  ],
+  "phrases": [
+    {
+      "ar": "اللَّهُ أَكْبَرُ",
+      "pronunciation": "Allāhu akbar",
+      "en": "Allah is the Greatest",
+      "context": "Opening takbir, then repeated when moving between prayer positions across all four rakʿahs.",
+      "category": "First rakʿah · Opening",
+      "words": [
+        {
+          "ar": "اللَّهُ",
+          "pronunciation": "Allāhu",
+          "en": "Allah"
+        },
+        {
+          "ar": "أَكْبَرُ",
+          "pronunciation": "akbar",
+          "en": "is the Greatest"
+        }
+      ]
+    },
+    {
+      "ar": "سُبْحَانَكَ اللَّهُمَّ وَبِحَمْدِكَ، وَتَبَارَكَ اسْمُكَ، وَتَعَالَى جَدُّكَ، وَلَا إِلَهَ غَيْرُكَ",
+      "pronunciation": "subḥānaka Allāhumma wa biḥamdika, wa tabārakasmuka, wa taʿālā jadduka, wa lā ilāha ghayruk",
+      "en": "Glory and praise are Yours, O Allah. Blessed is Your name, exalted is Your majesty, and none has the right to be worshipped but You.",
+      "context": "Opening supplication in the first rakʿah; forms of the opening supplication vary.",
+      "category": "First rakʿah · Opening",
+      "words": [
+        {
+          "ar": "سُبْحَانَكَ",
+          "pronunciation": "subḥānaka",
+          "en": "glory and perfection are Yours"
+        },
+        {
+          "ar": "اللَّهُمَّ",
+          "pronunciation": "Allāhumma",
+          "en": "O Allah"
+        },
+        {
+          "ar": "وَبِحَمْدِكَ",
+          "pronunciation": "wa biḥamdika",
+          "en": "and with Your praise"
+        },
+        {
+          "ar": "وَتَبَارَكَ",
+          "pronunciation": "wa tabāraka",
+          "en": "and blessed is"
+        },
+        {
+          "ar": "اسْمُكَ",
+          "pronunciation": "ismuka",
+          "en": "Your name"
+        },
+        {
+          "ar": "وَتَعَالَى",
+          "pronunciation": "wa taʿālā",
+          "en": "and exalted is"
+        },
+        {
+          "ar": "جَدُّكَ",
+          "pronunciation": "jadduka",
+          "en": "Your majesty"
+        },
+        {
+          "ar": "وَلَا",
+          "pronunciation": "wa lā",
+          "en": "and there is no"
+        },
+        {
+          "ar": "إِلَهَ",
+          "pronunciation": "ilāha",
+          "en": "deity worthy of worship"
+        },
+        {
+          "ar": "غَيْرُكَ",
+          "pronunciation": "ghayruka",
+          "en": "other than You"
+        }
+      ]
+    },
+    {
+      "ar": "أَعُوذُ بِاللَّهِ مِنَ الشَّيْطَانِ الرَّجِيمِ",
+      "pronunciation": "aʿūdhu billāhi minash-shayṭānir-rajīm",
+      "en": "I seek refuge in Allah from Satan, the accursed",
+      "context": "Seeking refuge before Qurʾan recitation in the first rakʿah.",
+      "category": "First rakʿah · Recitation",
+      "words": [
+        {
+          "ar": "أَعُوذُ",
+          "pronunciation": "aʿūdhu",
+          "en": "I seek refuge"
+        },
+        {
+          "ar": "بِاللَّهِ",
+          "pronunciation": "billāhi",
+          "en": "in Allah"
+        },
+        {
+          "ar": "مِنَ",
+          "pronunciation": "mina",
+          "en": "from"
+        },
+        {
+          "ar": "الشَّيْطَانِ",
+          "pronunciation": "ash-shayṭāni",
+          "en": "Satan"
+        },
+        {
+          "ar": "الرَّجِيمِ",
+          "pronunciation": "ar-rajīmi",
+          "en": "the accursed"
+        }
+      ]
+    },
+    {
+      "ar": "بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ",
+      "pronunciation": "bismillāhir-raḥmānir-raḥīm",
+      "en": "In the name of Allah, the Most Compassionate, the Most Merciful",
+      "context": "Beginning Al-Fatihah in all four rakʿahs.",
+      "category": "All four rakʿahs · Al-Fatihah",
+      "words": [
+        {
+          "ar": "بِسْمِ",
+          "pronunciation": "bismi",
+          "en": "in the name of"
+        },
+        {
+          "ar": "اللَّهِ",
+          "pronunciation": "Allāhi",
+          "en": "Allah"
+        },
+        {
+          "ar": "الرَّحْمَنِ",
+          "pronunciation": "ar-raḥmāni",
+          "en": "the Most Compassionate"
+        },
+        {
+          "ar": "الرَّحِيمِ",
+          "pronunciation": "ar-raḥīmi",
+          "en": "the Most Merciful"
+        }
+      ]
+    },
+    {
+      "ar": "الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ",
+      "pronunciation": "al-ḥamdu lillāhi rabbil-ʿālamīn",
+      "en": "All praise is for Allah, Lord of all worlds",
+      "context": "Al-Fatihah 1:2; recited in all four rakʿahs.",
+      "category": "All four rakʿahs · Al-Fatihah",
+      "words": [
+        {
+          "ar": "الْحَمْدُ",
+          "pronunciation": "al-ḥamdu",
+          "en": "all praise"
+        },
+        {
+          "ar": "لِلَّهِ",
+          "pronunciation": "lillāhi",
+          "en": "is for Allah"
+        },
+        {
+          "ar": "رَبِّ",
+          "pronunciation": "rabbi",
+          "en": "Lord of"
+        },
+        {
+          "ar": "الْعَالَمِينَ",
+          "pronunciation": "al-ʿālamīna",
+          "en": "all worlds"
+        }
+      ]
+    },
+    {
+      "ar": "الرَّحْمَنِ الرَّحِيمِ",
+      "pronunciation": "ar-raḥmānir-raḥīm",
+      "en": "The Most Compassionate, the Most Merciful",
+      "context": "Al-Fatihah 1:3; recited in all four rakʿahs.",
+      "category": "All four rakʿahs · Al-Fatihah",
+      "words": [
+        {
+          "ar": "الرَّحْمَنِ",
+          "pronunciation": "ar-raḥmāni",
+          "en": "the Most Compassionate"
+        },
+        {
+          "ar": "الرَّحِيمِ",
+          "pronunciation": "ar-raḥīmi",
+          "en": "the Most Merciful"
+        }
+      ]
+    },
+    {
+      "ar": "مَالِكِ يَوْمِ الدِّينِ",
+      "pronunciation": "māliki yawmid-dīn",
+      "en": "Master of the Day of Judgment",
+      "context": "Al-Fatihah 1:4; recited in all four rakʿahs.",
+      "category": "All four rakʿahs · Al-Fatihah",
+      "words": [
+        {
+          "ar": "مَالِكِ",
+          "pronunciation": "māliki",
+          "en": "Master of"
+        },
+        {
+          "ar": "يَوْمِ",
+          "pronunciation": "yawmi",
+          "en": "the Day of"
+        },
+        {
+          "ar": "الدِّينِ",
+          "pronunciation": "ad-dīni",
+          "en": "Judgment"
+        }
+      ]
+    },
+    {
+      "ar": "إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ",
+      "pronunciation": "iyyāka naʿbudu wa iyyāka nastaʿīn",
+      "en": "You alone we worship, and You alone we ask for help",
+      "context": "Al-Fatihah 1:5; recited in all four rakʿahs.",
+      "category": "All four rakʿahs · Al-Fatihah",
+      "words": [
+        {
+          "ar": "إِيَّاكَ",
+          "pronunciation": "iyyāka",
+          "en": "You alone"
+        },
+        {
+          "ar": "نَعْبُدُ",
+          "pronunciation": "naʿbudu",
+          "en": "we worship"
+        },
+        {
+          "ar": "وَإِيَّاكَ",
+          "pronunciation": "wa iyyāka",
+          "en": "and You alone"
+        },
+        {
+          "ar": "نَسْتَعِينُ",
+          "pronunciation": "nastaʿīnu",
+          "en": "we ask for help"
+        }
+      ]
+    },
+    {
+      "ar": "اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ",
+      "pronunciation": "ihdinaṣ-ṣirāṭal-mustaqīm",
+      "en": "Guide us along the Straight Path",
+      "context": "Al-Fatihah 1:6; recited in all four rakʿahs.",
+      "category": "All four rakʿahs · Al-Fatihah",
+      "words": [
+        {
+          "ar": "اهْدِنَا",
+          "pronunciation": "ihdinā",
+          "en": "guide us"
+        },
+        {
+          "ar": "الصِّرَاطَ",
+          "pronunciation": "aṣ-ṣirāṭa",
+          "en": "to the path"
+        },
+        {
+          "ar": "الْمُسْتَقِيمَ",
+          "pronunciation": "al-mustaqīma",
+          "en": "the straight"
+        }
+      ]
+    },
+    {
+      "ar": "صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ",
+      "pronunciation": "ṣirāṭal-ladhīna anʿamta ʿalayhim ghayril-maghḍūbi ʿalayhim wa laḍ-ḍāllīn",
+      "en": "The path of those You have blessed—not those who earned displeasure or those who went astray",
+      "context": "Al-Fatihah 1:7; recited in all four rakʿahs.",
+      "category": "All four rakʿahs · Al-Fatihah",
+      "words": [
+        {
+          "ar": "صِرَاطَ",
+          "pronunciation": "ṣirāṭa",
+          "en": "the path of"
+        },
+        {
+          "ar": "الَّذِينَ",
+          "pronunciation": "alladhīna",
+          "en": "those whom"
+        },
+        {
+          "ar": "أَنْعَمْتَ",
+          "pronunciation": "anʿamta",
+          "en": "You have blessed"
+        },
+        {
+          "ar": "عَلَيْهِمْ",
+          "pronunciation": "ʿalayhim",
+          "en": "upon them"
+        },
+        {
+          "ar": "غَيْرِ",
+          "pronunciation": "ghayri",
+          "en": "not"
+        },
+        {
+          "ar": "الْمَغْضُوبِ",
+          "pronunciation": "al-maghḍūbi",
+          "en": "those receiving displeasure"
+        },
+        {
+          "ar": "عَلَيْهِمْ",
+          "pronunciation": "ʿalayhim",
+          "en": "upon them"
+        },
+        {
+          "ar": "وَلَا",
+          "pronunciation": "wa lā",
+          "en": "nor"
+        },
+        {
+          "ar": "الضَّالِّينَ",
+          "pronunciation": "aḍ-ḍāllīna",
+          "en": "those who went astray"
+        }
+      ]
+    },
+    {
+      "ar": "آمِينَ",
+      "pronunciation": "āmīn",
+      "en": "O Allah, answer",
+      "context": "Said after Al-Fatihah in all four rakʿahs.",
+      "category": "All four rakʿahs · Recitation",
+      "words": [
+        {
+          "ar": "آمِينَ",
+          "pronunciation": "āmīn",
+          "en": "O Allah, answer"
+        }
+      ]
+    },
+    {
+      "ar": "قُلْ هُوَ اللَّهُ أَحَدٌ",
+      "pronunciation": "qul huwa Allāhu aḥad",
+      "en": "Say: He is Allah, the One",
+      "context": "Al-Ikhlas 112:1; the supplied sequence recites this surah after Al-Fatihah in the first two rakʿahs.",
+      "category": "First two rakʿahs · Al-Ikhlas",
+      "words": [
+        {
+          "ar": "قُلْ",
+          "pronunciation": "qul",
+          "en": "say"
+        },
+        {
+          "ar": "هُوَ",
+          "pronunciation": "huwa",
+          "en": "He is"
+        },
+        {
+          "ar": "اللَّهُ",
+          "pronunciation": "Allāhu",
+          "en": "Allah"
+        },
+        {
+          "ar": "أَحَدٌ",
+          "pronunciation": "aḥadun",
+          "en": "the One"
+        }
+      ]
+    },
+    {
+      "ar": "اللَّهُ الصَّمَدُ",
+      "pronunciation": "Allāhuṣ-ṣamad",
+      "en": "Allah, the Eternal Refuge",
+      "context": "Al-Ikhlas 112:2; recited in the first two rakʿahs in this lesson sequence.",
+      "category": "First two rakʿahs · Al-Ikhlas",
+      "words": [
+        {
+          "ar": "اللَّهُ",
+          "pronunciation": "Allāhu",
+          "en": "Allah"
+        },
+        {
+          "ar": "الصَّمَدُ",
+          "pronunciation": "aṣ-ṣamadu",
+          "en": "the Eternal Refuge"
+        }
+      ]
+    },
+    {
+      "ar": "لَمْ يَلِدْ وَلَمْ يُولَدْ",
+      "pronunciation": "lam yalid wa lam yūlad",
+      "en": "He neither begets nor is born",
+      "context": "Al-Ikhlas 112:3; recited in the first two rakʿahs in this lesson sequence.",
+      "category": "First two rakʿahs · Al-Ikhlas",
+      "words": [
+        {
+          "ar": "لَمْ",
+          "pronunciation": "lam",
+          "en": "not"
+        },
+        {
+          "ar": "يَلِدْ",
+          "pronunciation": "yalid",
+          "en": "does He beget"
+        },
+        {
+          "ar": "وَلَمْ",
+          "pronunciation": "wa lam",
+          "en": "and not"
+        },
+        {
+          "ar": "يُولَدْ",
+          "pronunciation": "yūlad",
+          "en": "is He born"
+        }
+      ]
+    },
+    {
+      "ar": "وَلَمْ يَكُنْ لَهُ كُفُوًا أَحَدٌ",
+      "pronunciation": "wa lam yakun lahu kufuwan aḥad",
+      "en": "And there is none comparable to Him",
+      "context": "Al-Ikhlas 112:4; recited in the first two rakʿahs in this lesson sequence.",
+      "category": "First two rakʿahs · Al-Ikhlas",
+      "words": [
+        {
+          "ar": "وَلَمْ",
+          "pronunciation": "wa lam",
+          "en": "and there is not"
+        },
+        {
+          "ar": "يَكُنْ",
+          "pronunciation": "yakun",
+          "en": "there is"
+        },
+        {
+          "ar": "لَهُ",
+          "pronunciation": "lahu",
+          "en": "for Him"
+        },
+        {
+          "ar": "كُفُوًا",
+          "pronunciation": "kufuwan",
+          "en": "comparable"
+        },
+        {
+          "ar": "أَحَدٌ",
+          "pronunciation": "aḥadun",
+          "en": "anyone"
+        }
+      ]
+    },
+    {
+      "ar": "سُبْحَانَ رَبِّيَ الْعَظِيمِ",
+      "pronunciation": "subḥāna rabbiyal-ʿaẓīm",
+      "en": "Glory is to my Lord, the Magnificent",
+      "context": "Said three times while bowing in each of the four rakʿahs.",
+      "category": "All four rakʿahs · Bowing",
+      "words": [
+        {
+          "ar": "سُبْحَانَ",
+          "pronunciation": "subḥāna",
+          "en": "glory and perfection belong to"
+        },
+        {
+          "ar": "رَبِّيَ",
+          "pronunciation": "rabbī",
+          "en": "my Lord"
+        },
+        {
+          "ar": "الْعَظِيمِ",
+          "pronunciation": "al-ʿaẓīmi",
+          "en": "the Magnificent"
+        }
+      ]
+    },
+    {
+      "ar": "سَمِعَ اللَّهُ لِمَنْ حَمِدَهُ",
+      "pronunciation": "samiʿa Allāhu liman ḥamidah",
+      "en": "Allah hears the one who praises Him",
+      "context": "Said while rising from bowing in each of the four rakʿahs.",
+      "category": "All four rakʿahs · Rising from bowing",
+      "words": [
+        {
+          "ar": "سَمِعَ",
+          "pronunciation": "samiʿa",
+          "en": "hears"
+        },
+        {
+          "ar": "اللَّهُ",
+          "pronunciation": "Allāhu",
+          "en": "Allah"
+        },
+        {
+          "ar": "لِمَنْ",
+          "pronunciation": "liman",
+          "en": "the one who"
+        },
+        {
+          "ar": "حَمِدَهُ",
+          "pronunciation": "ḥamidahu",
+          "en": "praises Him"
+        }
+      ]
+    },
+    {
+      "ar": "رَبَّنَا وَلَكَ الْحَمْدُ",
+      "pronunciation": "rabbanā wa lakal-ḥamd",
+      "en": "Our Lord, and to You belongs all praise",
+      "context": "Said after rising fully from bowing in each of the four rakʿahs.",
+      "category": "All four rakʿahs · Standing after bowing",
+      "words": [
+        {
+          "ar": "رَبَّنَا",
+          "pronunciation": "rabbanā",
+          "en": "our Lord"
+        },
+        {
+          "ar": "وَلَكَ",
+          "pronunciation": "wa laka",
+          "en": "and to You"
+        },
+        {
+          "ar": "الْحَمْدُ",
+          "pronunciation": "al-ḥamdu",
+          "en": "belongs all praise"
+        }
+      ]
+    },
+    {
+      "ar": "سُبْحَانَ رَبِّيَ الْأَعْلَى",
+      "pronunciation": "subḥāna rabbiyal-aʿlā",
+      "en": "Glory is to my Lord, the Most High",
+      "context": "Said three times in each of the two prostrations of every rakʿah.",
+      "category": "All four rakʿahs · Prostration",
+      "words": [
+        {
+          "ar": "سُبْحَانَ",
+          "pronunciation": "subḥāna",
+          "en": "glory and perfection belong to"
+        },
+        {
+          "ar": "رَبِّيَ",
+          "pronunciation": "rabbī",
+          "en": "my Lord"
+        },
+        {
+          "ar": "الْأَعْلَى",
+          "pronunciation": "al-aʿlā",
+          "en": "the Most High"
+        }
+      ]
+    },
+    {
+      "ar": "رَبِّ اغْفِرْ لِي",
+      "pronunciation": "rabbighfir lī",
+      "en": "My Lord, forgive me",
+      "context": "Said while sitting between the two prostrations in every rakʿah.",
+      "category": "All four rakʿahs · Between prostrations",
+      "words": [
+        {
+          "ar": "رَبِّ",
+          "pronunciation": "rabbi",
+          "en": "my Lord"
+        },
+        {
+          "ar": "اغْفِرْ",
+          "pronunciation": "ighfir",
+          "en": "forgive"
+        },
+        {
+          "ar": "لِي",
+          "pronunciation": "lī",
+          "en": "me"
+        }
+      ]
+    },
+    {
+      "ar": "التَّحِيَّاتُ لِلَّهِ وَالصَّلَوَاتُ وَالطَّيِّبَاتُ، السَّلَامُ عَلَيْكَ أَيُّهَا النَّبِيُّ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ، السَّلَامُ عَلَيْنَا وَعَلَى عِبَادِ اللَّهِ الصَّالِحِينَ، أَشْهَدُ أَنْ لَا إِلَهَ إِلَّا اللَّهُ، وَأَشْهَدُ أَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ",
+      "pronunciation": "at-taḥiyyātu lillāhi waṣ-ṣalawātu waṭ-ṭayyibāt, as-salāmu ʿalayka ayyuhan-nabiyyu wa raḥmatullāhi wa barakātuh, as-salāmu ʿalaynā wa ʿalā ʿibādillāhiṣ-ṣāliḥīn, ashhadu an lā ilāha illā Allāh, wa ashhadu anna Muḥammadan ʿabduhu wa rasūluh",
+      "en": "All greetings, prayers, and pure words belong to Allah. Peace be upon you, O Prophet, and Allah’s mercy and blessings. Peace be upon us and upon Allah’s righteous servants. I testify that none has the right to be worshipped except Allah, and I testify that Muhammad is His servant and messenger.",
+      "context": "Tashahhud while sitting after the second rakʿah, then repeated in the final sitting after the fourth.",
+      "category": "Second and fourth rakʿahs · Sitting",
+      "words": [
+        {
+          "ar": "التَّحِيَّاتُ",
+          "pronunciation": "at-taḥiyyātu",
+          "en": "all greetings"
+        },
+        {
+          "ar": "لِلَّهِ",
+          "pronunciation": "lillāhi",
+          "en": "belong to Allah"
+        },
+        {
+          "ar": "وَالصَّلَوَاتُ",
+          "pronunciation": "waṣ-ṣalawātu",
+          "en": "and prayers"
+        },
+        {
+          "ar": "وَالطَّيِّبَاتُ",
+          "pronunciation": "waṭ-ṭayyibātu",
+          "en": "and pure words"
+        },
+        {
+          "ar": "السَّلَامُ",
+          "pronunciation": "as-salāmu",
+          "en": "peace"
+        },
+        {
+          "ar": "عَلَيْكَ",
+          "pronunciation": "ʿalayka",
+          "en": "be upon you"
+        },
+        {
+          "ar": "أَيُّهَا",
+          "pronunciation": "ayyuhā",
+          "en": "O"
+        },
+        {
+          "ar": "النَّبِيُّ",
+          "pronunciation": "an-nabiyyu",
+          "en": "Prophet"
+        },
+        {
+          "ar": "وَرَحْمَةُ",
+          "pronunciation": "wa raḥmatu",
+          "en": "and the mercy of"
+        },
+        {
+          "ar": "اللَّهِ",
+          "pronunciation": "Allāhi",
+          "en": "Allah"
+        },
+        {
+          "ar": "وَبَرَكَاتُهُ",
+          "pronunciation": "wa barakātuhu",
+          "en": "and His blessings"
+        },
+        {
+          "ar": "السَّلَامُ",
+          "pronunciation": "as-salāmu",
+          "en": "peace"
+        },
+        {
+          "ar": "عَلَيْنَا",
+          "pronunciation": "ʿalaynā",
+          "en": "be upon us"
+        },
+        {
+          "ar": "وَعَلَى",
+          "pronunciation": "wa ʿalā",
+          "en": "and upon"
+        },
+        {
+          "ar": "عِبَادِ",
+          "pronunciation": "ʿibādi",
+          "en": "servants of"
+        },
+        {
+          "ar": "اللَّهِ",
+          "pronunciation": "Allāhi",
+          "en": "Allah"
+        },
+        {
+          "ar": "الصَّالِحِينَ",
+          "pronunciation": "aṣ-ṣāliḥīna",
+          "en": "the righteous"
+        },
+        {
+          "ar": "أَشْهَدُ",
+          "pronunciation": "ashhadu",
+          "en": "I testify"
+        },
+        {
+          "ar": "أَنْ",
+          "pronunciation": "an",
+          "en": "that"
+        },
+        {
+          "ar": "لَا",
+          "pronunciation": "lā",
+          "en": "there is no"
+        },
+        {
+          "ar": "إِلَهَ",
+          "pronunciation": "ilāha",
+          "en": "deity worthy of worship"
+        },
+        {
+          "ar": "إِلَّا",
+          "pronunciation": "illā",
+          "en": "except"
+        },
+        {
+          "ar": "اللَّهُ",
+          "pronunciation": "Allāhu",
+          "en": "Allah"
+        },
+        {
+          "ar": "وَأَشْهَدُ",
+          "pronunciation": "wa ashhadu",
+          "en": "and I testify"
+        },
+        {
+          "ar": "أَنَّ",
+          "pronunciation": "anna",
+          "en": "that"
+        },
+        {
+          "ar": "مُحَمَّدًا",
+          "pronunciation": "Muḥammadan",
+          "en": "Muhammad"
+        },
+        {
+          "ar": "عَبْدُهُ",
+          "pronunciation": "ʿabduhu",
+          "en": "is His servant"
+        },
+        {
+          "ar": "وَرَسُولُهُ",
+          "pronunciation": "wa rasūluhu",
+          "en": "and His messenger"
+        }
+      ]
+    },
+    {
+      "ar": "اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ، كَمَا صَلَّيْتَ عَلَى إِبْرَاهِيمَ وَعَلَى آلِ إِبْرَاهِيمَ، إِنَّكَ حَمِيدٌ مَجِيدٌ",
+      "pronunciation": "Allāhumma ṣalli ʿalā Muḥammadin wa ʿalā āli Muḥammad, kamā ṣallayta ʿalā Ibrāhīma wa ʿalā āli Ibrāhīm, innaka ḥamīdun majīd",
+      "en": "O Allah, bestow Your favor upon Muhammad and the family of Muhammad as You bestowed favor upon Abraham and the family of Abraham. You are indeed Praiseworthy, Glorious.",
+      "context": "First half of the Abrahamic prayer in the final sitting after the fourth rakʿah.",
+      "category": "Fourth rakʿah · Final sitting",
+      "words": [
+        {
+          "ar": "اللَّهُمَّ",
+          "pronunciation": "Allāhumma",
+          "en": "O Allah"
+        },
+        {
+          "ar": "صَلِّ",
+          "pronunciation": "ṣalli",
+          "en": "bestow favor"
+        },
+        {
+          "ar": "عَلَى",
+          "pronunciation": "ʿalā",
+          "en": "upon"
+        },
+        {
+          "ar": "مُحَمَّدٍ",
+          "pronunciation": "Muḥammadin",
+          "en": "Muhammad"
+        },
+        {
+          "ar": "وَعَلَى",
+          "pronunciation": "wa ʿalā",
+          "en": "and upon"
+        },
+        {
+          "ar": "آلِ",
+          "pronunciation": "āli",
+          "en": "the family of"
+        },
+        {
+          "ar": "مُحَمَّدٍ",
+          "pronunciation": "Muḥammadin",
+          "en": "Muhammad"
+        },
+        {
+          "ar": "كَمَا",
+          "pronunciation": "kamā",
+          "en": "as"
+        },
+        {
+          "ar": "صَلَّيْتَ",
+          "pronunciation": "ṣallayta",
+          "en": "You bestowed favor"
+        },
+        {
+          "ar": "عَلَى",
+          "pronunciation": "ʿalā",
+          "en": "upon"
+        },
+        {
+          "ar": "إِبْرَاهِيمَ",
+          "pronunciation": "Ibrāhīma",
+          "en": "Abraham"
+        },
+        {
+          "ar": "وَعَلَى",
+          "pronunciation": "wa ʿalā",
+          "en": "and upon"
+        },
+        {
+          "ar": "آلِ",
+          "pronunciation": "āli",
+          "en": "the family of"
+        },
+        {
+          "ar": "إِبْرَاهِيمَ",
+          "pronunciation": "Ibrāhīma",
+          "en": "Abraham"
+        },
+        {
+          "ar": "إِنَّكَ",
+          "pronunciation": "innaka",
+          "en": "indeed You are"
+        },
+        {
+          "ar": "حَمِيدٌ",
+          "pronunciation": "ḥamīdun",
+          "en": "Praiseworthy"
+        },
+        {
+          "ar": "مَجِيدٌ",
+          "pronunciation": "majīdun",
+          "en": "Glorious"
+        }
+      ]
+    },
+    {
+      "ar": "اللَّهُمَّ بَارِكْ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ، كَمَا بَارَكْتَ عَلَى إِبْرَاهِيمَ وَعَلَى آلِ إِبْرَاهِيمَ، إِنَّكَ حَمِيدٌ مَجِيدٌ",
+      "pronunciation": "Allāhumma bārik ʿalā Muḥammadin wa ʿalā āli Muḥammad, kamā bārakta ʿalā Ibrāhīma wa ʿalā āli Ibrāhīm, innaka ḥamīdun majīd",
+      "en": "O Allah, bless Muhammad and the family of Muhammad as You blessed Abraham and the family of Abraham. You are indeed Praiseworthy, Glorious.",
+      "context": "Second half of the Abrahamic prayer in the final sitting after the fourth rakʿah.",
+      "category": "Fourth rakʿah · Final sitting",
+      "words": [
+        {
+          "ar": "اللَّهُمَّ",
+          "pronunciation": "Allāhumma",
+          "en": "O Allah"
+        },
+        {
+          "ar": "بَارِكْ",
+          "pronunciation": "bārik",
+          "en": "bless"
+        },
+        {
+          "ar": "عَلَى",
+          "pronunciation": "ʿalā",
+          "en": "upon"
+        },
+        {
+          "ar": "مُحَمَّدٍ",
+          "pronunciation": "Muḥammadin",
+          "en": "Muhammad"
+        },
+        {
+          "ar": "وَعَلَى",
+          "pronunciation": "wa ʿalā",
+          "en": "and upon"
+        },
+        {
+          "ar": "آلِ",
+          "pronunciation": "āli",
+          "en": "the family of"
+        },
+        {
+          "ar": "مُحَمَّدٍ",
+          "pronunciation": "Muḥammadin",
+          "en": "Muhammad"
+        },
+        {
+          "ar": "كَمَا",
+          "pronunciation": "kamā",
+          "en": "as"
+        },
+        {
+          "ar": "بَارَكْتَ",
+          "pronunciation": "bārakta",
+          "en": "You blessed"
+        },
+        {
+          "ar": "عَلَى",
+          "pronunciation": "ʿalā",
+          "en": "upon"
+        },
+        {
+          "ar": "إِبْرَاهِيمَ",
+          "pronunciation": "Ibrāhīma",
+          "en": "Abraham"
+        },
+        {
+          "ar": "وَعَلَى",
+          "pronunciation": "wa ʿalā",
+          "en": "and upon"
+        },
+        {
+          "ar": "آلِ",
+          "pronunciation": "āli",
+          "en": "the family of"
+        },
+        {
+          "ar": "إِبْرَاهِيمَ",
+          "pronunciation": "Ibrāhīma",
+          "en": "Abraham"
+        },
+        {
+          "ar": "إِنَّكَ",
+          "pronunciation": "innaka",
+          "en": "indeed You are"
+        },
+        {
+          "ar": "حَمِيدٌ",
+          "pronunciation": "ḥamīdun",
+          "en": "Praiseworthy"
+        },
+        {
+          "ar": "مَجِيدٌ",
+          "pronunciation": "majīdun",
+          "en": "Glorious"
+        }
+      ]
+    },
+    {
+      "ar": "رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ",
+      "pronunciation": "rabbanā ātinā fid-dunyā ḥasanatan wa fil-ākhirati ḥasanatan wa qinā ʿadhāban-nār",
+      "en": "Our Lord, give us good in this world and good in the Hereafter, and protect us from the punishment of the Fire",
+      "context": "Supplication before concluding the prayer after the fourth rakʿah; Quran 2:201.",
+      "category": "Fourth rakʿah · Final supplication",
+      "words": [
+        {
+          "ar": "رَبَّنَا",
+          "pronunciation": "rabbanā",
+          "en": "our Lord"
+        },
+        {
+          "ar": "آتِنَا",
+          "pronunciation": "ātinā",
+          "en": "give us"
+        },
+        {
+          "ar": "فِي",
+          "pronunciation": "fī",
+          "en": "in"
+        },
+        {
+          "ar": "الدُّنْيَا",
+          "pronunciation": "ad-dunyā",
+          "en": "this world"
+        },
+        {
+          "ar": "حَسَنَةً",
+          "pronunciation": "ḥasanatan",
+          "en": "good"
+        },
+        {
+          "ar": "وَفِي",
+          "pronunciation": "wa fī",
+          "en": "and in"
+        },
+        {
+          "ar": "الْآخِرَةِ",
+          "pronunciation": "al-ākhirati",
+          "en": "the Hereafter"
+        },
+        {
+          "ar": "حَسَنَةً",
+          "pronunciation": "ḥasanatan",
+          "en": "good"
+        },
+        {
+          "ar": "وَقِنَا",
+          "pronunciation": "wa qinā",
+          "en": "and protect us from"
+        },
+        {
+          "ar": "عَذَابَ",
+          "pronunciation": "ʿadhāba",
+          "en": "the punishment of"
+        },
+        {
+          "ar": "النَّارِ",
+          "pronunciation": "an-nāri",
+          "en": "the Fire"
+        }
+      ]
+    },
+    {
+      "ar": "السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللَّهِ",
+      "pronunciation": "as-salāmu ʿalaykum wa raḥmatullāh",
+      "en": "Peace and Allah’s mercy be upon you",
+      "context": "Taslim to the right and then to the left after the fourth rakʿah to conclude the prayer.",
+      "category": "Conclusion",
+      "words": [
+        {
+          "ar": "السَّلَامُ",
+          "pronunciation": "as-salāmu",
+          "en": "peace"
+        },
+        {
+          "ar": "عَلَيْكُمْ",
+          "pronunciation": "ʿalaykum",
+          "en": "be upon you"
+        },
+        {
+          "ar": "وَرَحْمَةُ",
+          "pronunciation": "wa raḥmatu",
+          "en": "and the mercy of"
+        },
+        {
+          "ar": "اللَّهِ",
+          "pronunciation": "Allāhi",
+          "en": "Allah"
+        }
+      ]
+    }
+  ],
+  "practice": [
+    {
+      "prompt": "In which rakʿahs is Al-Ikhlas included in this Asr sequence?",
+      "answer": "The first and second rakʿahs."
+    },
+    {
+      "prompt": "When is the first tashahhud recited?",
+      "answer": "While sitting after the second rakʿah."
+    },
+    {
+      "prompt": "What follows the tashahhud in the final sitting after the fourth rakʿah?",
+      "answer": "The Abrahamic prayers, a final supplication, and taslim."
+    }
+  ],
+  "notes": [
+    "Asr has four rakʿahs: Al-Fatihah is recited in all four, while this sequence adds Al-Ikhlas in the first two.",
+    "Sit for tashahhud after the second rakʿah, then stand for the third; the full final sitting comes after the fourth.",
+    "This is a language-learning aid, not a ruling on prayer. Recitation forms and some details vary by school and tradition; learn practice and tajwid from a qualified teacher."
+  ]
+}
+
