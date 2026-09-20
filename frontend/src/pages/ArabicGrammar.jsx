@@ -5,8 +5,10 @@ import {
   FaBookOpen,
   FaCheck,
   FaFont,
+  FaGamepad,
   FaLayerGroup,
   FaLightbulb,
+  FaRotateRight,
   FaVolumeHigh,
 } from "react-icons/fa6";
 import { FcGoogle } from "react-icons/fc";
@@ -15,37 +17,42 @@ import "./ArabicGrammar.css";
 
 const STORAGE_KEY = "arabic-grammar-progress";
 const ALPHABET_STORAGE_KEY = "arabic-alphabet-progress";
+const SECTION_STORAGE_KEY = "arabic-grammar-section";
+const VALID_SECTIONS = ["alphabet", "positions", "grammar", "game"];
+const NON_CONNECTING_LETTERS = new Set(["ا", "د", "ذ", "ر", "ز", "و"]);
 
 const ARABIC_ALPHABET = [
-  { letter: "ا", name: "أَلِف", sound: "a / ā", forms: "ا · ـا", example: "أَسَد", romanized: "asad", meaning: "lion" },
-  { letter: "ب", name: "بَاء", sound: "b", forms: "ب · بـ · ـبـ · ـب", example: "بَاب", romanized: "bāb", meaning: "door" },
-  { letter: "ت", name: "تَاء", sound: "t", forms: "ت · تـ · ـتـ · ـت", example: "تُفَّاح", romanized: "tuffāḥ", meaning: "apples" },
-  { letter: "ث", name: "ثَاء", sound: "th", forms: "ث · ثـ · ـثـ · ـث", example: "ثَعْلَب", romanized: "thaʿlab", meaning: "fox" },
-  { letter: "ج", name: "جِيم", sound: "j", forms: "ج · جـ · ـجـ · ـج", example: "جَمَل", romanized: "jamal", meaning: "camel" },
-  { letter: "ح", name: "حَاء", sound: "ḥ", forms: "ح · حـ · ـحـ · ـح", example: "حَلِيب", romanized: "ḥalīb", meaning: "milk" },
-  { letter: "خ", name: "خَاء", sound: "kh", forms: "خ · خـ · ـخـ · ـخ", example: "خُبْز", romanized: "khubz", meaning: "bread" },
-  { letter: "د", name: "دَال", sound: "d", forms: "د · ـد", example: "دَار", romanized: "dār", meaning: "home" },
-  { letter: "ذ", name: "ذَال", sound: "dh", forms: "ذ · ـذ", example: "ذَهَب", romanized: "dhahab", meaning: "gold" },
-  { letter: "ر", name: "رَاء", sound: "r", forms: "ر · ـر", example: "رَجُل", romanized: "rajul", meaning: "man" },
-  { letter: "ز", name: "زَاي", sound: "z", forms: "ز · ـز", example: "زَهْرَة", romanized: "zahrah", meaning: "flower" },
-  { letter: "س", name: "سِين", sound: "s", forms: "س · سـ · ـسـ · ـس", example: "سَمَك", romanized: "samak", meaning: "fish" },
-  { letter: "ش", name: "شِين", sound: "sh", forms: "ش · شـ · ـشـ · ـش", example: "شَمْس", romanized: "shams", meaning: "sun" },
-  { letter: "ص", name: "صَاد", sound: "ṣ", forms: "ص · صـ · ـصـ · ـص", example: "صَقْر", romanized: "ṣaqr", meaning: "falcon" },
-  { letter: "ض", name: "ضَاد", sound: "ḍ", forms: "ض · ضـ · ـضـ · ـض", example: "ضِفْدَع", romanized: "ḍifdaʿ", meaning: "frog" },
-  { letter: "ط", name: "طَاء", sound: "ṭ", forms: "ط · طـ · ـطـ · ـط", example: "طَائِر", romanized: "ṭāʾir", meaning: "bird" },
-  { letter: "ظ", name: "ظَاء", sound: "ẓ", forms: "ظ · ظـ · ـظـ · ـظ", example: "ظَرْف", romanized: "ẓarf", meaning: "envelope" },
-  { letter: "ع", name: "عَيْن", sound: "ʿ", forms: "ع · عـ · ـعـ · ـع", example: "عَيْن", romanized: "ʿayn", meaning: "eye" },
-  { letter: "غ", name: "غَيْن", sound: "gh", forms: "غ · غـ · ـغـ · ـغ", example: "غَزَال", romanized: "ghazāl", meaning: "gazelle" },
-  { letter: "ف", name: "فَاء", sound: "f", forms: "ف · فـ · ـفـ · ـف", example: "فِيل", romanized: "fīl", meaning: "elephant" },
-  { letter: "ق", name: "قَاف", sound: "q", forms: "ق · قـ · ـقـ · ـق", example: "قَمَر", romanized: "qamar", meaning: "moon" },
-  { letter: "ك", name: "كَاف", sound: "k", forms: "ك · كـ · ـكـ · ـك", example: "كِتَاب", romanized: "kitāb", meaning: "book" },
-  { letter: "ل", name: "لَام", sound: "l", forms: "ل · لـ · ـلـ · ـل", example: "لَيْمُون", romanized: "laymūn", meaning: "lemon" },
-  { letter: "م", name: "مِيم", sound: "m", forms: "م · مـ · ـمـ · ـم", example: "مَاء", romanized: "māʾ", meaning: "water" },
-  { letter: "ن", name: "نُون", sound: "n", forms: "ن · نـ · ـنـ · ـن", example: "نَجْم", romanized: "najm", meaning: "star" },
-  { letter: "ه", name: "هَاء", sound: "h", forms: "ه · هـ · ـهـ · ـه", example: "هِلَال", romanized: "hilāl", meaning: "crescent" },
-  { letter: "و", name: "وَاو", sound: "w / ū", forms: "و · ـو", example: "وَرْدَة", romanized: "wardah", meaning: "rose" },
-  { letter: "ي", name: "يَاء", sound: "y / ī", forms: "ي · يـ · ـيـ · ـي", example: "يَد", romanized: "yad", meaning: "hand" },
+  { letter: "ا", name: "أَلِف", sound: "a / ā", forms: ["ا", "ا", "ـا", "ـا"], example: "أَسَد", romanized: "asad", meaning: "lion" },
+  { letter: "ب", name: "بَاء", sound: "b", forms: ["ب", "بـ", "ـبـ", "ـب"], example: "بَاب", romanized: "bāb", meaning: "door" },
+  { letter: "ت", name: "تَاء", sound: "t", forms: ["ت", "تـ", "ـتـ", "ـت"], example: "تُفَّاح", romanized: "tuffāḥ", meaning: "apples" },
+  { letter: "ث", name: "ثَاء", sound: "th", forms: ["ث", "ثـ", "ـثـ", "ـث"], example: "ثَعْلَب", romanized: "thaʿlab", meaning: "fox" },
+  { letter: "ج", name: "جِيم", sound: "j", forms: ["ج", "جـ", "ـجـ", "ـج"], example: "جَمَل", romanized: "jamal", meaning: "camel" },
+  { letter: "ح", name: "حَاء", sound: "ḥ", forms: ["ح", "حـ", "ـحـ", "ـح"], example: "حَلِيب", romanized: "ḥalīb", meaning: "milk" },
+  { letter: "خ", name: "خَاء", sound: "kh", forms: ["خ", "خـ", "ـخـ", "ـخ"], example: "خُبْز", romanized: "khubz", meaning: "bread" },
+  { letter: "د", name: "دَال", sound: "d", forms: ["د", "د", "ـد", "ـد"], example: "دَار", romanized: "dār", meaning: "home" },
+  { letter: "ذ", name: "ذَال", sound: "dh", forms: ["ذ", "ذ", "ـذ", "ـذ"], example: "ذَهَب", romanized: "dhahab", meaning: "gold" },
+  { letter: "ر", name: "رَاء", sound: "r", forms: ["ر", "ر", "ـر", "ـر"], example: "رَجُل", romanized: "rajul", meaning: "man" },
+  { letter: "ز", name: "زَاي", sound: "z", forms: ["ز", "ز", "ـز", "ـز"], example: "زَهْرَة", romanized: "zahrah", meaning: "flower" },
+  { letter: "س", name: "سِين", sound: "s", forms: ["س", "سـ", "ـسـ", "ـس"], example: "سَمَك", romanized: "samak", meaning: "fish" },
+  { letter: "ش", name: "شِين", sound: "sh", forms: ["ش", "شـ", "ـشـ", "ـش"], example: "شَمْس", romanized: "shams", meaning: "sun" },
+  { letter: "ص", name: "صَاد", sound: "ṣ", forms: ["ص", "صـ", "ـصـ", "ـص"], example: "صَقْر", romanized: "ṣaqr", meaning: "falcon" },
+  { letter: "ض", name: "ضَاد", sound: "ḍ", forms: ["ض", "ضـ", "ـضـ", "ـض"], example: "ضِفْدَع", romanized: "ḍifdaʿ", meaning: "frog" },
+  { letter: "ط", name: "طَاء", sound: "ṭ", forms: ["ط", "طـ", "ـطـ", "ـط"], example: "طَائِر", romanized: "ṭāʾir", meaning: "bird" },
+  { letter: "ظ", name: "ظَاء", sound: "ẓ", forms: ["ظ", "ظـ", "ـظـ", "ـظ"], example: "ظَرْف", romanized: "ẓarf", meaning: "envelope" },
+  { letter: "ع", name: "عَيْن", sound: "ʿ", forms: ["ع", "عـ", "ـعـ", "ـع"], example: "عَيْن", romanized: "ʿayn", meaning: "eye" },
+  { letter: "غ", name: "غَيْن", sound: "gh", forms: ["غ", "غـ", "ـغـ", "ـغ"], example: "غَزَال", romanized: "ghazāl", meaning: "gazelle" },
+  { letter: "ف", name: "فَاء", sound: "f", forms: ["ف", "فـ", "ـفـ", "ـف"], example: "فِيل", romanized: "fīl", meaning: "elephant" },
+  { letter: "ق", name: "قَاف", sound: "q", forms: ["ق", "قـ", "ـقـ", "ـق"], example: "قَمَر", romanized: "qamar", meaning: "moon" },
+  { letter: "ك", name: "كَاف", sound: "k", forms: ["ك", "كـ", "ـكـ", "ـك"], example: "كِتَاب", romanized: "kitāb", meaning: "book" },
+  { letter: "ل", name: "لَام", sound: "l", forms: ["ل", "لـ", "ـلـ", "ـل"], example: "لَيْمُون", romanized: "laymūn", meaning: "lemon" },
+  { letter: "م", name: "مِيم", sound: "m", forms: ["م", "مـ", "ـمـ", "ـم"], example: "مَاء", romanized: "māʾ", meaning: "water" },
+  { letter: "ن", name: "نُون", sound: "n", forms: ["ن", "نـ", "ـنـ", "ـن"], example: "نَجْم", romanized: "najm", meaning: "star" },
+  { letter: "ه", name: "هَاء", sound: "h", forms: ["ه", "هـ", "ـهـ", "ـه"], example: "هِلَال", romanized: "hilāl", meaning: "crescent" },
+  { letter: "و", name: "وَاو", sound: "w / ū", forms: ["و", "و", "ـو", "ـو"], example: "وَرْدَة", romanized: "wardah", meaning: "rose" },
+  { letter: "ي", name: "يَاء", sound: "y / ī", forms: ["ي", "يـ", "ـيـ", "ـي"], example: "يَد", romanized: "yad", meaning: "hand" },
 ];
+
+const POSITION_LABELS = ["Isolated", "Initial", "Medial", "Final"];
 
 const LESSONS = [
   {
@@ -206,12 +213,63 @@ const LESSONS = [
   },
 ];
 
+function shuffle(items) {
+  const result = [...items];
+  for (let index = result.length - 1; index > 0; index -= 1) {
+    const randomIndex = Math.floor(Math.random() * (index + 1));
+    [result[index], result[randomIndex]] = [result[randomIndex], result[index]];
+  }
+  return result;
+}
+
+function buildGameQuestions() {
+  const examples = LESSONS.flatMap((lesson) => lesson.examples.map(([arabic, romanized, meaning]) => ({
+    arabic,
+    romanized,
+    meaning,
+    lesson: lesson.title,
+  })));
+
+  return shuffle(examples).slice(0, 10).map((example) => {
+    const distractors = shuffle(examples.filter((item) => item.meaning !== example.meaning)).slice(0, 3);
+    return { ...example, answer: example.meaning, choices: shuffle([example.meaning, ...distractors.map((item) => item.meaning)]) };
+  });
+}
+
+function buildAlphabetGameQuestions(type = "names") {
+  return shuffle(ARABIC_ALPHABET).map((letter, index) => {
+    const distractors = shuffle(ARABIC_ALPHABET.filter((item) => item.name !== letter.name)).slice(0, 3);
+    const formIndex = index % POSITION_LABELS.length;
+    return {
+      ...letter,
+      answer: letter.name,
+      choices: shuffle([letter.name, ...distractors.map((item) => item.name)]),
+      displayForm: type === "positions" ? letter.forms[formIndex] : letter.letter,
+      position: POSITION_LABELS[formIndex],
+    };
+  });
+}
+
 function readProgress() {
   try {
     const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
-    return { lesson: Number(saved.lesson) || 0, completed: Array.isArray(saved.completed) ? saved.completed : [] };
+    const lesson = Math.max(0, Math.min(Number(saved.lesson) || 0, LESSONS.length - 1));
+    const completed = Array.isArray(saved.completed)
+      ? [...new Set(saved.completed.filter((index) => Number.isInteger(index) && index >= 0 && index < LESSONS.length))]
+      : [];
+    return { lesson, completed };
   } catch {
     return { lesson: 0, completed: [] };
+  }
+}
+
+function readLearnedLetters() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(ALPHABET_STORAGE_KEY) || "[]");
+    const validLetters = new Set(ARABIC_ALPHABET.map((item) => item.letter));
+    return Array.isArray(saved) ? [...new Set(saved.filter((letter) => validLetters.has(letter)))] : [];
+  } catch {
+    return [];
   }
 }
 
@@ -237,22 +295,39 @@ async function speakGoogleArabic(text) {
 
 export default function ArabicGrammar() {
   const saved = useMemo(readProgress, []);
-  const [section, setSection] = useState(() => localStorage.getItem("arabic-grammar-section") || "grammar");
-  const [lessonIndex, setLessonIndex] = useState(Math.min(saved.lesson, LESSONS.length - 1));
-  const [completed, setCompleted] = useState(saved.completed);
-  const [learnedLetters, setLearnedLetters] = useState(() => {
-    try { return JSON.parse(localStorage.getItem(ALPHABET_STORAGE_KEY) || "[]"); } catch { return []; }
+  const [section, setSection] = useState(() => {
+    const storedSection = localStorage.getItem(SECTION_STORAGE_KEY);
+    return VALID_SECTIONS.includes(storedSection) ? storedSection : "grammar";
   });
+  const [lessonIndex, setLessonIndex] = useState(saved.lesson);
+  const [completed, setCompleted] = useState(saved.completed);
+  const [learnedLetters, setLearnedLetters] = useState(readLearnedLetters);
+  const [positionFilter, setPositionFilter] = useState("all");
   const [voiceMode, setVoiceMode] = useState(() => localStorage.getItem("arabic-grammar-voice") || "system");
+  const [gameMode, setGameMode] = useState("grammar");
+  const [alphabetGameType, setAlphabetGameType] = useState("names");
+  const [gameQuestions, setGameQuestions] = useState(buildGameQuestions);
+  const [gameIndex, setGameIndex] = useState(0);
+  const [gameAnswer, setGameAnswer] = useState(null);
+  const [gameScore, setGameScore] = useState(0);
+  const [gameStreak, setGameStreak] = useState(0);
+  const [gameBestStreak, setGameBestStreak] = useState(0);
+  const [gameComplete, setGameComplete] = useState(false);
   const lesson = LESSONS[lessonIndex];
+  const gameQuestion = gameQuestions[gameIndex];
   const progress = Math.round((completed.length / LESSONS.length) * 100);
+  const visiblePositionLetters = ARABIC_ALPHABET.filter((item) => {
+    if (positionFilter === "connecting") return !NON_CONNECTING_LETTERS.has(item.letter);
+    if (positionFilter === "non-connecting") return NON_CONNECTING_LETTERS.has(item.letter);
+    return true;
+  });
 
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify({ lesson: lessonIndex, completed }));
   }, [completed, lessonIndex]);
 
   useEffect(() => {
-    localStorage.setItem("arabic-grammar-section", section);
+    localStorage.setItem(SECTION_STORAGE_KEY, section);
     window.speechSynthesis?.cancel();
   }, [section]);
 
@@ -282,13 +357,62 @@ export default function ArabicGrammar() {
 
   const completeAndContinue = () => {
     setCompleted((current) => current.includes(lessonIndex) ? current : [...current, lessonIndex]);
-    goToLesson((lessonIndex + 1) % LESSONS.length);
+    if (lessonIndex < LESSONS.length - 1) {
+      goToLesson(lessonIndex + 1);
+    } else if (completed.includes(lessonIndex)) {
+      goToLesson(0);
+    }
   };
 
   const toggleLetter = (letter) => {
     setLearnedLetters((current) => current.includes(letter)
       ? current.filter((item) => item !== letter)
       : [...current, letter]);
+  };
+
+  const answerGameQuestion = (answer) => {
+    if (gameAnswer) return;
+    const correct = answer === gameQuestion.answer;
+    setGameAnswer(answer);
+    if (correct) {
+      setGameScore((current) => current + 1);
+      setGameStreak((current) => {
+        const next = current + 1;
+        setGameBestStreak((best) => Math.max(best, next));
+        return next;
+      });
+    } else {
+      setGameStreak(0);
+    }
+  };
+
+  const advanceGame = () => {
+    if (gameIndex === gameQuestions.length - 1) {
+      setGameComplete(true);
+      return;
+    }
+    setGameIndex((current) => current + 1);
+    setGameAnswer(null);
+  };
+
+  const resetGame = (mode = gameMode, alphabetType = alphabetGameType) => {
+    setGameQuestions(mode === "alphabet" ? buildAlphabetGameQuestions(alphabetType) : buildGameQuestions());
+    setGameIndex(0);
+    setGameAnswer(null);
+    setGameScore(0);
+    setGameStreak(0);
+    setGameBestStreak(0);
+    setGameComplete(false);
+  };
+
+  const changeGameMode = (mode) => {
+    setGameMode(mode);
+    resetGame(mode, alphabetGameType);
+  };
+
+  const changeAlphabetGameType = (type) => {
+    setAlphabetGameType(type);
+    resetGame("alphabet", type);
   };
 
   return (
@@ -316,7 +440,9 @@ export default function ArabicGrammar() {
             <span>Your Arabic grammar journey</span>
             <strong>{completed.length} of {LESSONS.length} lessons complete</strong>
           </div>
-          <div className="agr-progress-track"><span style={{ width: `${progress}%` }} /></div>
+          <div className="agr-progress-track" role="progressbar" aria-valuemin="0" aria-valuemax={LESSONS.length} aria-valuenow={completed.length}>
+            <span style={{ width: `${progress}%` }} />
+          </div>
           <b>{progress}%</b>
         </section>
 
@@ -326,17 +452,23 @@ export default function ArabicGrammar() {
             <div><strong>Reading voice</strong><small>Hear every Arabic example aloud.</small></div>
           </div>
           <div className="agr-voice-toggle">
-            <button type="button" className={voiceMode === "system" ? "active" : ""} onClick={() => setVoiceMode("system")}><FaVolumeHigh /> System</button>
-            <button type="button" className={voiceMode === "google" ? "active" : ""} onClick={() => setVoiceMode("google")}><FcGoogle /> Google</button>
+            <button type="button" className={voiceMode === "system" ? "active" : ""} aria-pressed={voiceMode === "system"} onClick={() => setVoiceMode("system")}><FaVolumeHigh aria-hidden="true" /> System</button>
+            <button type="button" className={voiceMode === "google" ? "active" : ""} aria-pressed={voiceMode === "google"} onClick={() => setVoiceMode("google")}><FcGoogle aria-hidden="true" /> Google</button>
           </div>
         </section>
 
         <nav className="agr-section-picker" aria-label="Arabic learning sections">
-          <button type="button" className={section === "alphabet" ? "active" : ""} onClick={() => setSection("alphabet")}>
+          <button type="button" className={section === "alphabet" ? "active" : ""} aria-current={section === "alphabet" ? "page" : undefined} onClick={() => setSection("alphabet")}>
             <FaFont aria-hidden="true" /><span><small>START HERE</small>Alphabet · الْحُرُوف</span>
           </button>
-          <button type="button" className={section === "grammar" ? "active" : ""} onClick={() => setSection("grammar")}>
+          <button type="button" className={section === "positions" ? "active" : ""} aria-current={section === "positions" ? "page" : undefined} onClick={() => setSection("positions")}>
+            <FaLayerGroup aria-hidden="true" /><span><small>CONNECT LETTERS</small>Letter positions · أَشْكَالُ الْحُرُوف</span>
+          </button>
+          <button type="button" className={section === "grammar" ? "active" : ""} aria-current={section === "grammar" ? "page" : undefined} onClick={() => setSection("grammar")}>
             <FaBookOpen aria-hidden="true" /><span><small>BUILD SENTENCES</small>Grammar · النَّحْو</span>
+          </button>
+          <button type="button" className={section === "game" ? "active" : ""} aria-current={section === "game" ? "page" : undefined} onClick={() => setSection("game")}>
+            <FaGamepad aria-hidden="true" /><span><small>TEST YOURSELF</small>Grammar game · لُعْبَة</span>
           </button>
         </nav>
 
@@ -349,7 +481,7 @@ export default function ArabicGrammar() {
             </div>
             <div className="agr-alphabet-count"><strong>{learnedLetters.length}</strong><span>of 28 learned</span></div>
           </header>
-          <div className="agr-alphabet-progress" aria-label={`${learnedLetters.length} of 28 Arabic letters learned`}>
+          <div className="agr-alphabet-progress" role="progressbar" aria-label="Arabic letters learned" aria-valuemin="0" aria-valuemax={ARABIC_ALPHABET.length} aria-valuenow={learnedLetters.length}>
             <span style={{ width: `${Math.round((learnedLetters.length / ARABIC_ALPHABET.length) * 100)}%` }} />
           </div>
           <div className="agr-alphabet-grid">
@@ -360,12 +492,12 @@ export default function ArabicGrammar() {
                   <span>{String(index + 1).padStart(2, "0")}</span>
                   <button type="button" className="agr-audio" onClick={() => speak(item.example)} aria-label={`Hear ${item.example}`}><FaVolumeHigh aria-hidden="true" /></button>
                 </div>
-                <button type="button" className="agr-letter-main" onClick={() => { speak(item.name); toggleLetter(item.letter); }} aria-pressed={learned}>
+                <button type="button" className="agr-letter-main" onClick={() => speak(item.name)} aria-label={`Hear the letter ${item.name}`}>
                   <strong lang="ar" dir="rtl">{item.letter}</strong>
                   <b lang="ar" dir="rtl">{item.name}</b>
                   <small>{item.sound}</small>
                 </button>
-                <div className="agr-letter-forms" lang="ar" dir="rtl"><span>Letter forms</span><strong>{item.forms}</strong></div>
+                <div className="agr-letter-forms" lang="ar" dir="rtl"><span>Letter forms</span><strong>{item.forms.join(" · ")}</strong></div>
                 <div className="agr-letter-example">
                   <strong lang="ar" dir="rtl">{item.example}</strong>
                   <span>{item.romanized} · {item.meaning}</span>
@@ -377,6 +509,60 @@ export default function ArabicGrammar() {
             })}
           </div>
           <aside className="agr-note agr-alphabet-note"><span><FaLightbulb aria-hidden="true" /> Reading tip</span><p>Most Arabic letters connect to the letter before and after them. ا، د، ذ، ر، ز، and و connect only to the letter before them, so they create a visual break inside a word.</p></aside>
+        </main>}
+
+        {section === "positions" && <main className="agr-content">
+          <header className="agr-heading">
+            <div>
+              <span className="agr-kicker"><FaLayerGroup aria-hidden="true" /> أَشْكَالُ الْحُرُوف · LETTER POSITIONS</span>
+              <h2>See every letter in context</h2>
+              <p>Arabic letters change shape according to their place in a word. Compare each letter when it stands alone or appears at the beginning, middle, or end.</p>
+            </div>
+          </header>
+          <div className="agr-position-key" aria-label="Letter position explanation">
+            <div><strong>Isolated</strong><span>stands alone</span></div>
+            <div><strong>Initial</strong><span>starts a word</span></div>
+            <div><strong>Medial</strong><span>sits in the middle</span></div>
+            <div><strong>Final</strong><span>ends a word</span></div>
+          </div>
+          <div className="agr-position-toolbar">
+            <div>
+              <strong>Filter letters</strong>
+              <span>{visiblePositionLetters.length} shown</span>
+            </div>
+            <div className="agr-filter-buttons" aria-label="Filter letter positions">
+              <button type="button" className={positionFilter === "all" ? "active" : ""} aria-pressed={positionFilter === "all"} onClick={() => setPositionFilter("all")}>All 28</button>
+              <button type="button" className={positionFilter === "connecting" ? "active" : ""} aria-pressed={positionFilter === "connecting"} onClick={() => setPositionFilter("connecting")}>Connecting</button>
+              <button type="button" className={positionFilter === "non-connecting" ? "active" : ""} aria-pressed={positionFilter === "non-connecting"} onClick={() => setPositionFilter("non-connecting")}>6 non-connecting</button>
+            </div>
+          </div>
+          <div className="agr-positions-list">
+            {visiblePositionLetters.map((item) => {
+              const index = ARABIC_ALPHABET.findIndex((letter) => letter.letter === item.letter);
+              const learned = learnedLetters.includes(item.letter);
+              return <article className={`agr-position-row ${learned ? "learned" : ""}`} key={item.letter}>
+                <div className="agr-position-letter">
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  <button type="button" onClick={() => speak(item.name)} aria-label={`Hear the letter ${item.name}`}>
+                    <strong lang="ar" dir="rtl">{item.name}</strong>
+                    <small>{item.sound}</small>
+                  </button>
+                  <button type="button" className="agr-position-learn" aria-pressed={learned} onClick={() => toggleLetter(item.letter)}>
+                    {learned ? <><FaCheck aria-hidden="true" /> Learned</> : "Mark learned"}
+                  </button>
+                </div>
+                <div className="agr-position-forms">
+                  {item.forms.map((form, formIndex) => (
+                    <div key={POSITION_LABELS[formIndex]}>
+                      <span>{POSITION_LABELS[formIndex]}</span>
+                      <strong lang="ar" dir="rtl">{form}</strong>
+                    </div>
+                  ))}
+                </div>
+              </article>;
+            })}
+          </div>
+          <aside className="agr-note agr-alphabet-note"><span><FaLightbulb aria-hidden="true" /> Connection rule</span><p>Every letter has a positional form, but ا، د، ذ، ر، ز، and و cannot connect to the letter that follows them. Their isolated and initial forms therefore match, as do their medial and final forms.</p></aside>
         </main>}
 
         {section === "grammar" && <main className="agr-content">
@@ -432,10 +618,96 @@ export default function ArabicGrammar() {
             <footer>
               <button type="button" disabled={lessonIndex === 0} onClick={() => goToLesson(lessonIndex - 1)}><FaArrowLeft /> Previous</button>
               <button type="button" className="agr-primary" onClick={completeAndContinue}>
-                {completed.includes(lessonIndex) ? "Next lesson" : "Complete & continue"} <FaArrowRight />
+                {lessonIndex === LESSONS.length - 1
+                  ? (completed.includes(lessonIndex) ? "Review from beginning" : "Complete course")
+                  : (completed.includes(lessonIndex) ? "Next lesson" : "Complete & continue")} <FaArrowRight aria-hidden="true" />
               </button>
             </footer>
           </article>
+        </main>}
+
+        {section === "game" && <main className="agr-content agr-game-content">
+          <header className="agr-heading">
+            <div>
+              <span className="agr-kicker"><FaGamepad aria-hidden="true" /> {gameMode === "alphabet" ? "لُعْبَةُ الْحُرُوف · ALPHABET CHALLENGE" : "لُعْبَةُ النَّحْو · GRAMMAR CHALLENGE"}</span>
+              <h2>{gameMode === "alphabet" ? (alphabetGameType === "positions" ? "Recognize connected letter forms" : "Name every Arabic letter") : "Choose the right meaning"}</h2>
+              <p>{gameMode === "alphabet" ? (alphabetGameType === "positions" ? "Work through all 28 letters shown in randomized isolated, initial, medial, and final forms." : "Work through all 28 Arabic letters, listen when you need a hint, and choose each correct name.") : "Read or listen to each Arabic example, then select its English meaning. Each round draws from the guided grammar lessons."}</p>
+            </div>
+          </header>
+
+          <div className="agr-game-mode" aria-label="Choose a game">
+            <button type="button" className={gameMode === "alphabet" ? "active" : ""} aria-pressed={gameMode === "alphabet"} onClick={() => changeGameMode("alphabet")}>
+              <FaFont aria-hidden="true" /><span><small>LETTERS & SOUNDS</small>Alphabet Challenge</span>
+            </button>
+            <button type="button" className={gameMode === "grammar" ? "active" : ""} aria-pressed={gameMode === "grammar"} onClick={() => changeGameMode("grammar")}>
+              <FaBookOpen aria-hidden="true" /><span><small>SENTENCE MEANINGS</small>Grammar Challenge</span>
+            </button>
+          </div>
+
+          {gameMode === "alphabet" && <div className="agr-alphabet-game-type" aria-label="Choose an alphabet challenge">
+            <button type="button" className={alphabetGameType === "names" ? "active" : ""} aria-pressed={alphabetGameType === "names"} onClick={() => changeAlphabetGameType("names")}>
+              Letter names <small>28 questions</small>
+            </button>
+            <button type="button" className={alphabetGameType === "positions" ? "active" : ""} aria-pressed={alphabetGameType === "positions"} onClick={() => changeAlphabetGameType("positions")}>
+              Position forms <small>28 questions</small>
+            </button>
+          </div>}
+
+          {!gameComplete ? <article className="agr-game-card">
+            <div className="agr-game-stats">
+              <div><span>Question</span><strong>{gameIndex + 1}/{gameQuestions.length}</strong></div>
+              <div><span>Score</span><strong>{gameScore}</strong></div>
+              <div><span>Streak</span><strong>{gameStreak}</strong></div>
+            </div>
+            <div className="agr-game-progress" role="progressbar" aria-label="Game progress" aria-valuemin="0" aria-valuemax={gameQuestions.length} aria-valuenow={gameIndex + 1}>
+              <span style={{ width: `${((gameIndex + 1) / gameQuestions.length) * 100}%` }} />
+            </div>
+            <div className="agr-game-prompt">
+              <span>{gameMode === "alphabet" ? (alphabetGameType === "positions" ? `${gameQuestion.position} form · Which letter is this?` : "Which letter is this?") : gameQuestion.lesson}</span>
+              <button type="button" onClick={() => speak(gameMode === "alphabet" ? gameQuestion.example : gameQuestion.arabic)} aria-label={gameMode === "alphabet" ? `Hear example word ${gameQuestion.example}` : `Hear ${gameQuestion.arabic}`}>
+                <strong className={gameMode === "alphabet" ? "agr-game-letter" : ""} lang="ar" dir="rtl">{gameMode === "alphabet" ? gameQuestion.displayForm : gameQuestion.arabic}</strong>
+                <small>{gameMode === "alphabet" ? `Sound: ${gameQuestion.sound}` : gameQuestion.romanized}</small>
+                <FaVolumeHigh aria-hidden="true" />
+              </button>
+            </div>
+            <div className="agr-game-choices">
+              {gameQuestion.choices.map((choice, index) => {
+                const correct = choice === gameQuestion.answer;
+                const selected = choice === gameAnswer;
+                const state = gameAnswer ? (correct ? "correct" : (selected ? "incorrect" : "")) : "";
+                return <button
+                  type="button"
+                  className={state}
+                  key={choice}
+                  onClick={() => answerGameQuestion(choice)}
+                  disabled={Boolean(gameAnswer)}
+                >
+                  <span>{String.fromCharCode(65 + index)}</span><b lang={gameMode === "alphabet" ? "ar" : undefined} dir={gameMode === "alphabet" ? "rtl" : undefined}>{choice}</b>
+                  {gameAnswer && correct && <FaCheck aria-hidden="true" />}
+                </button>;
+              })}
+            </div>
+            <div className="agr-game-feedback" aria-live="polite">
+              {gameAnswer && <>
+                <div>
+                  <strong>{gameAnswer === gameQuestion.answer ? "Correct — well done!" : "Not quite. Here is the answer:"}</strong>
+                  <span lang={gameMode === "alphabet" ? "ar" : undefined} dir={gameMode === "alphabet" ? "rtl" : undefined}>{gameQuestion.answer}</span>
+                </div>
+                <button type="button" className="agr-primary" onClick={advanceGame}>
+                  {gameIndex === gameQuestions.length - 1 ? "See results" : "Next question"} <FaArrowRight aria-hidden="true" />
+                </button>
+              </>}
+            </div>
+          </article> : <article className="agr-game-results">
+            <div className="agr-game-trophy" aria-hidden="true"><FaGamepad /></div>
+            <span>CHALLENGE COMPLETE</span>
+            <h3>{gameScore} out of {gameQuestions.length}</h3>
+            <p>{gameMode === "alphabet"
+              ? (gameScore >= 9 ? "Excellent work — you know these Arabic letters well." : gameScore >= 7 ? "Great work. Review a few letters, then try another round." : "Good practice. Visit the alphabet section, then try again.")
+              : (gameScore >= 9 ? "Excellent work — your grammar recognition is strong." : gameScore >= 7 ? "Great work. A quick lesson review can take you even higher." : "Good practice. Review the lessons, then try another round.")}</p>
+            <div><span>Accuracy <strong>{Math.round((gameScore / gameQuestions.length) * 100)}%</strong></span><span>Best streak <strong>{gameBestStreak}</strong></span></div>
+            <button type="button" className="agr-primary" onClick={() => resetGame()}><FaRotateRight aria-hidden="true" /> Play again</button>
+          </article>}
         </main>}
       </div>
     </div>
