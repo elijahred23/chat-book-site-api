@@ -3,8 +3,13 @@ import PropTypes from "prop-types";
 import { FaBackward, FaCompressAlt, FaExpandAlt, FaForward, FaMinus, FaPause, FaPlay, FaPlus, FaRedoAlt, FaStepBackward, FaStepForward, FaUndoAlt } from "react-icons/fa";
 import "./LanguageTutorScroller.css";
 
-const storedNumber = (key, fallback) => {
-  try { const value = Number(localStorage.getItem(key)); return Number.isFinite(value) ? value : fallback; } catch { return fallback; }
+const storedNumber = (key, fallback, min, max) => {
+  try {
+    const storedValue = localStorage.getItem(key);
+    if (storedValue === null || storedValue.trim() === "") return fallback;
+    const value = Number(storedValue);
+    return Number.isFinite(value) ? Math.max(min, Math.min(max, value)) : fallback;
+  } catch { return fallback; }
 };
 const storedBoolean = (key, fallback) => {
   try { const value = localStorage.getItem(key); return value === null ? fallback : value === "true"; } catch { return fallback; }
@@ -14,8 +19,8 @@ export default function LanguageTutorScroller({ children, items, itemType, idPre
   const [running, setRunning] = useState(false);
   const [direction, setDirection] = useState(1);
   const [looping, setLooping] = useState(() => storedBoolean(`${storagePrefix}-loop`, false));
-  const [speed, setSpeed] = useState(() => storedNumber(`${storagePrefix}-speed`, 30));
-  const [restartDelay, setRestartDelay] = useState(() => storedNumber(`${storagePrefix}-delay`, 3));
+  const [speed, setSpeed] = useState(() => storedNumber(`${storagePrefix}-speed`, 30, 5, 200));
+  const [restartDelay, setRestartDelay] = useState(() => storedNumber(`${storagePrefix}-delay`, 3, 0, 60));
   const [expanded, setExpanded] = useState(false);
   const [progress, setProgress] = useState(0);
   const [jumpTarget, setJumpTarget] = useState("");
