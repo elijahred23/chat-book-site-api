@@ -278,6 +278,13 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
   });
   const [matchOptionsCount, setMatchOptionsCount] = useState(4);
   const [gameMode, setGameMode] = useState("match");
+  const [matchAutoSpeak, setMatchAutoSpeak] = useState(() => {
+    try {
+      return localStorage.getItem(`${gameStorageKey}_auto_speak`) === "true";
+    } catch {
+      return false;
+    }
+  });
   const [gameQuestion, setGameQuestion] = useState(null);
   const [gameChoice, setGameChoice] = useState(null);
   const [gameResult, setGameResult] = useState(null);
@@ -323,6 +330,14 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
       // Local storage can be unavailable in private browsing contexts.
     }
   }, [gameDirection, gameStorageKey]);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem(`${gameStorageKey}_auto_speak`, String(matchAutoSpeak));
+    } catch {
+      // Local storage can be unavailable in private browsing contexts.
+    }
+  }, [gameStorageKey, matchAutoSpeak]);
 
   useEffect(() => {
     try {
@@ -551,6 +566,12 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
     }
     return undefined;
   }, [arcadeRunning, gameMode, gameQuestion, speakSelectedBengali]);
+
+  useEffect(() => {
+    if (gameMode !== "match" || !matchAutoSpeak || !gameQuestion) return undefined;
+    const timer = setTimeout(() => speakSelectedBengali(gameQuestion.bn), 120);
+    return () => clearTimeout(timer);
+  }, [gameMode, gameQuestion, matchAutoSpeak, speakSelectedBengali]);
 
   useEffect(() => {
     if (gameMode === "bingo" && bingoTarget) {
@@ -1061,6 +1082,14 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
                     </div>
                     <div className="bn-game-actions">
                       <button className="bn-btn secondary" onClick={() => speakSelectedBengali(gameQuestion.bn)}>Hear target {languageName}</button>
+                      <button
+                        type="button"
+                        className="bn-btn secondary"
+                        aria-pressed={matchAutoSpeak}
+                        onClick={() => setMatchAutoSpeak((enabled) => !enabled)}
+                      >
+                        Auto-speak: {matchAutoSpeak ? "On" : "Off"}
+                      </button>
                       {enableBreakdownDrawer && containsBengali(gameQuestion.bn) && (
                         <button
                           type="button"
