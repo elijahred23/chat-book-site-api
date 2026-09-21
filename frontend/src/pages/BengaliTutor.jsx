@@ -146,19 +146,23 @@ const statusForWord = (stats, key) => {
 const statusClassForKey = (stats, key) => `match-${statusForWord(stats, key)}`;
 
 const MATCH_ITEM_WEIGHTS = {
-  unseen: 20,
   incorrect: 30,
   correct: 1,
 };
 
 const pickWeightedItem = (items, stats) => {
+  const pickRandom = (candidates) => candidates[Math.floor(Math.random() * candidates.length)];
+  const unseenItems = items.filter((item) => !stats[wordKey(item)]);
+  if (unseenItems.length) return pickRandom(unseenItems);
+
+  const neverCorrectItems = items.filter((item) => !stats[wordKey(item)]?.correct);
+  if (neverCorrectItems.length) return pickRandom(neverCorrectItems);
+
   const weighted = items.flatMap((item) => {
     const record = stats[wordKey(item)];
-    const weight = !record
-      ? MATCH_ITEM_WEIGHTS.unseen
-      : record.last === "wrong"
-        ? MATCH_ITEM_WEIGHTS.incorrect
-        : MATCH_ITEM_WEIGHTS.correct;
+    const weight = record.last === "wrong"
+      ? MATCH_ITEM_WEIGHTS.incorrect
+      : MATCH_ITEM_WEIGHTS.correct;
     return Array.from({ length: weight }, () => item);
   });
 
