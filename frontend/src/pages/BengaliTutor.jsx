@@ -269,7 +269,15 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
   const [vocabShuffleVersion, setVocabShuffleVersion] = useState(0);
   const [individualDisplay, setIndividualDisplay] = useState(false);
   const [individualIndex, setIndividualIndex] = useState(0);
-  const [individualInterval, setIndividualInterval] = useState("1.0");
+  const [individualAutoPlay, setIndividualAutoPlay] = useState(false);
+  const [individualInterval, setIndividualInterval] = useState(() => {
+    try {
+      const saved = Number(localStorage.getItem(`${gameStorageKey}_individual_interval`));
+      return Number.isFinite(saved) && saved >= 0.1 ? saved.toFixed(1) : "1.0";
+    } catch {
+      return "1.0";
+    }
+  });
   const [gameDataset, setGameDataset] = useState("vocab");
   const [translationSetId, setTranslationSetId] = useState(() => translationSets[0]?.id || "");
   const [gameDirection, setGameDirection] = useState(() => {
@@ -386,8 +394,24 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
   }, [contentTab, lesson, phraseShuffleVersion, vocabShuffleVersion]);
 
   useEffect(() => {
+    try {
+      const seconds = Math.max(0.1, Number(individualInterval) || 1);
+      localStorage.setItem(`${gameStorageKey}_individual_interval`, seconds.toFixed(1));
+    } catch {
+      // Keep the controls usable when browser storage is unavailable.
+    }
+  }, [gameStorageKey, individualInterval]);
+
+  const currentTutorText = activeTutorItems[safeIndividualIndex]?.bn;
+  useEffect(() => {
+    if (view !== "tutor" || !individualDisplay || !individualAutoPlay || !currentTutorText) return undefined;
+    const timer = setTimeout(() => speakSelectedBengali(currentTutorText), 0);
+    return () => clearTimeout(timer);
+  }, [view, individualDisplay, individualAutoPlay, currentTutorText, safeIndividualIndex, speakSelectedBengali]);
+
+  useEffect(() => {
     if (!individualDisplay || activeTutorItems.length < 2) return undefined;
-    const seconds = Math.min(5, Math.max(0.1, Number(individualInterval) || 1));
+    const seconds = Math.max(0.1, Number(individualInterval) || 1);
     const timer = setInterval(() => {
       setIndividualIndex((index) => (index + 1) % activeTutorItems.length);
     }, seconds * 1000);
@@ -975,16 +999,19 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
                   </label>
                   {individualDisplay && (
                     <>
+                      <label className="bn-individual-toggle">
+                        <input type="checkbox" checked={individualAutoPlay} onChange={(event) => setIndividualAutoPlay(event.target.checked)} />
+                        <span>Auto-play current {contentTab === "phrases" ? "phrase" : "vocabulary word"} when switching</span>
+                      </label>
                       <label className="bn-interval-control">
                         <span>Switch every</span>
                         <input
                           type="number"
                           min="0.1"
-                          max="5"
                           step="0.1"
                           value={individualInterval}
                           onChange={(event) => setIndividualInterval(event.target.value)}
-                          onBlur={() => setIndividualInterval(Math.min(5, Math.max(0.1, Number(individualInterval) || 1)).toFixed(1))}
+                          onBlur={() => setIndividualInterval(Math.max(0.1, Number(individualInterval) || 1).toFixed(1))}
                           aria-label="Automatic switch interval in seconds"
                         />
                         <span>seconds</span>
