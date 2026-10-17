@@ -15,7 +15,7 @@ const storedBoolean = (key, fallback) => {
   try { const value = localStorage.getItem(key); return value === null ? fallback : value === "true"; } catch { return fallback; }
 };
 
-export default function LanguageTutorScroller({ children, items, itemType, idPrefix, storagePrefix, scriptKey, className = "" }) {
+export default function LanguageTutorScroller({ children, items, itemType, idPrefix, storagePrefix, scriptKey, showControls = true, className = "" }) {
   const [running, setRunning] = useState(false);
   const [direction, setDirection] = useState(1);
   const [looping, setLooping] = useState(() => storedBoolean(`${storagePrefix}-loop`, false));
@@ -41,6 +41,12 @@ export default function LanguageTutorScroller({ children, items, itemType, idPre
     setRunning(false); setProgress(0); setJumpTarget("");
     if (contentRef.current) contentRef.current.scrollTop = 0;
   }, [itemType, items]);
+
+  useEffect(() => {
+    if (showControls) return;
+    setRunning(false);
+    setExpanded(false);
+  }, [showControls]);
 
   useEffect(() => {
     if (!expanded) return undefined;
@@ -95,7 +101,7 @@ export default function LanguageTutorScroller({ children, items, itemType, idPre
 
   return (
     <div className={`language-tutor-scroller ${expanded ? "language-tutor-scroller--expanded" : ""} ${className}`.trim()}>
-      <div className="language-tutor-scroller__controls" aria-label="Automatic lesson scroll controls">
+      {showControls && <div className="language-tutor-scroller__controls" aria-label="Automatic lesson scroll controls">
         <div className="language-tutor-scroller__buttons">
           <button type="button" className={direction < 0 ? "active" : ""} onClick={() => { setDirection(-1); setRunning(true); }} aria-label="Auto-scroll up"><FaBackward /></button>
           <button type="button" className="primary" onClick={() => setRunning((value) => !value)} aria-label={running ? "Pause automatic scrolling" : "Start automatic scrolling"}>{running ? <FaPause /> : <FaPlay />}</button>
@@ -113,8 +119,8 @@ export default function LanguageTutorScroller({ children, items, itemType, idPre
           <button type="button" className="wide" onClick={() => setExpanded((value) => !value)} aria-label={expanded ? "Exit full window view" : "Open lesson in full window view"}>{expanded ? <FaCompressAlt /> : <FaExpandAlt />}<span>{expanded ? "Exit" : "Full window"}</span></button>
         </div>
         <label className="language-tutor-scroller__jump"><select value={jumpTarget} onChange={(event) => { const id = event.target.value; setJumpTarget(id); setRunning(false); document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "center" }); }} aria-label={`Jump to ${itemType === "phrases" ? "phrase" : "word"}`}><option value="">Choose in English…</option>{items.map((item, index) => <option value={`${idPrefix}-${itemType}-${index}`} key={`${item[scriptKey]}-${index}`}>{item.en}</option>)}</select></label>
-      </div>
-      <div className="language-tutor-scroller__progress" role="slider" tabIndex="0" aria-label="Lesson scroll position" aria-valuemin="0" aria-valuemax="100" aria-valuenow={Math.round(progress)} onPointerDown={(event) => { const bounds = event.currentTarget.getBoundingClientRect(); seek(((event.clientX - bounds.left) / bounds.width) * 100); }} onKeyDown={(event) => { if (event.key === "ArrowLeft" || event.key === "ArrowRight") { event.preventDefault(); seek(progress + (event.key === "ArrowRight" ? 5 : -5)); } }}><span style={{ width: `${progress}%` }} /></div>
+      </div>}
+      {showControls && <div className="language-tutor-scroller__progress" role="slider" tabIndex="0" aria-label="Lesson scroll position" aria-valuemin="0" aria-valuemax="100" aria-valuenow={Math.round(progress)} onPointerDown={(event) => { const bounds = event.currentTarget.getBoundingClientRect(); seek(((event.clientX - bounds.left) / bounds.width) * 100); }} onKeyDown={(event) => { if (event.key === "ArrowLeft" || event.key === "ArrowRight") { event.preventDefault(); seek(progress + (event.key === "ArrowRight" ? 5 : -5)); } }}><span style={{ width: `${progress}%` }} /></div>}
       <div className="language-tutor-scroller__content" ref={contentRef} onScroll={(event) => { const target = event.currentTarget; const max = Math.max(0, target.scrollHeight - target.clientHeight); setProgress(max ? (target.scrollTop / max) * 100 : 100); }}>{children}</div>
     </div>
   );
@@ -127,5 +133,6 @@ LanguageTutorScroller.propTypes = {
   idPrefix: PropTypes.string.isRequired,
   storagePrefix: PropTypes.string.isRequired,
   scriptKey: PropTypes.string.isRequired,
+  showControls: PropTypes.bool,
   className: PropTypes.string,
 };

@@ -267,6 +267,9 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
   });
   const [phraseShuffleVersion, setPhraseShuffleVersion] = useState(0);
   const [vocabShuffleVersion, setVocabShuffleVersion] = useState(0);
+  const [individualDisplay, setIndividualDisplay] = useState(false);
+  const [individualIndex, setIndividualIndex] = useState(0);
+  const [individualInterval, setIndividualInterval] = useState("1.0");
   const [gameDataset, setGameDataset] = useState("vocab");
   const [translationSetId, setTranslationSetId] = useState(() => translationSets[0]?.id || "");
   const [gameDirection, setGameDirection] = useState(() => {
@@ -358,7 +361,11 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
     [filteredPhrases, phraseShuffleVersion],
   );
   const activeTutorItems = contentTab === "phrases" ? orderedPhrases : orderedVocab;
-  const normalizedTutorItems = useMemo(() => normalizeLanguageItems(activeTutorItems, "bn"), [activeTutorItems]);
+  const safeIndividualIndex = activeTutorItems.length ? individualIndex % activeTutorItems.length : 0;
+  const displayedTutorItems = individualDisplay
+    ? activeTutorItems.slice(safeIndividualIndex, safeIndividualIndex + 1)
+    : activeTutorItems;
+  const normalizedTutorItems = useMemo(() => normalizeLanguageItems(displayedTutorItems, "bn"), [displayedTutorItems]);
   const selectedTranslationSet = useMemo(
     () => translationSets.find((set) => set.id === translationSetId) || translationSets[0] || null,
     [translationSetId, translationSets],
@@ -373,6 +380,19 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
       setTranslationSetId(selectedTranslationSet?.id || "");
     }
   }, [selectedTranslationSet, translationSetId]);
+
+  useEffect(() => {
+    setIndividualIndex(0);
+  }, [contentTab, lesson, phraseShuffleVersion, vocabShuffleVersion]);
+
+  useEffect(() => {
+    if (!individualDisplay || activeTutorItems.length < 2) return undefined;
+    const seconds = Math.min(5, Math.max(0.1, Number(individualInterval) || 1));
+    const timer = setInterval(() => {
+      setIndividualIndex((index) => (index + 1) % activeTutorItems.length);
+    }, seconds * 1000);
+    return () => clearInterval(timer);
+  }, [activeTutorItems.length, individualDisplay, individualInterval]);
 
   const breakdownWords = useMemo(() => {
     const uniqueWords = new Map();
@@ -932,27 +952,59 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
             />
 
             {view === "tutor" && (
-              <div className="bn-tutor-order-controls">
-                <LanguageTutorContentTabs activeTab={contentTab} onChange={setContentTab} phraseCount={filteredPhrases.length} vocabCount={filteredVocab.length} className="bn-tabs" buttonClassName="bn-tab" />
-                <button
-                  type="button"
-                  className="bn-btn secondary bn-shuffle-btn"
-                  disabled={activeTutorItems.length < 2}
-                  onClick={() => {
-                    if (contentTab === "phrases") setPhraseShuffleVersion((version) => version + 1);
-                    else setVocabShuffleVersion((version) => version + 1);
-                  }}
-                >
-                  Shuffle {contentTab === "phrases" ? "phrases" : "vocabulary"}
-                </button>
+              <div className="bn-tutor-controls">
+                <div className="bn-tutor-order-controls">
+                  <LanguageTutorContentTabs activeTab={contentTab} onChange={setContentTab} phraseCount={filteredPhrases.length} vocabCount={filteredVocab.length} className="bn-tabs" buttonClassName="bn-tab" />
+                  <button
+                    type="button"
+                    className="bn-btn secondary bn-shuffle-btn"
+                    disabled={activeTutorItems.length < 2}
+                    onClick={() => {
+                      if (contentTab === "phrases") setPhraseShuffleVersion((version) => version + 1);
+                      else setVocabShuffleVersion((version) => version + 1);
+                    }}
+                  >
+                    Shuffle {contentTab === "phrases" ? "phrases" : "vocabulary"}
+                  </button>
+                </div>
+                <fieldset className="bn-individual-controls">
+                  <legend>Display mode</legend>
+                  <label className="bn-individual-toggle">
+                    <input type="checkbox" checked={individualDisplay} onChange={(event) => { setIndividualDisplay(event.target.checked); setIndividualIndex(0); }} />
+                    <span>Show one at a time</span>
+                  </label>
+                  {individualDisplay && (
+                    <>
+                      <label className="bn-interval-control">
+                        <span>Switch every</span>
+                        <input
+                          type="number"
+                          min="0.1"
+                          max="5"
+                          step="0.1"
+                          value={individualInterval}
+                          onChange={(event) => setIndividualInterval(event.target.value)}
+                          onBlur={() => setIndividualInterval(Math.min(5, Math.max(0.1, Number(individualInterval) || 1)).toFixed(1))}
+                          aria-label="Automatic switch interval in seconds"
+                        />
+                        <span>seconds</span>
+                      </label>
+                      <div className="bn-individual-navigation">
+                        <button type="button" className="bn-btn secondary" onClick={() => setIndividualIndex((index) => (index - 1 + activeTutorItems.length) % activeTutorItems.length)} disabled={activeTutorItems.length < 2} aria-label="Show previous item">Previous</button>
+                        <output aria-live="polite">{activeTutorItems.length ? safeIndividualIndex + 1 : 0} of {activeTutorItems.length}</output>
+                        <button type="button" className="bn-btn secondary" onClick={() => setIndividualIndex((index) => (index + 1) % activeTutorItems.length)} disabled={activeTutorItems.length < 2} aria-label="Show next item">Next</button>
+                      </div>
+                    </>
+                  )}
+                </fieldset>
               </div>
             )}
 
             {view === "tutor" && (
-              <LanguageTutorScroller items={normalizedTutorItems} itemType={contentTab} idPrefix="bn" storagePrefix="bengali-tutor-scroll" scriptKey="script">
+              <LanguageTutorScroller items={normalizedTutorItems} itemType={contentTab} idPrefix="bn" storagePrefix="bengali-tutor-scroll" scriptKey="script" showControls={!individualDisplay}>
             {contentTab === "phrases" && (
               <LanguageTutorItemList
-                items={normalizeLanguageItems(orderedPhrases, "bn")}
+                items={normalizeLanguageItems(individualDisplay ? displayedTutorItems : orderedPhrases, "bn")}
                 kind="phrases"
                 scriptKey="script"
                 languageCode="bn"
@@ -975,7 +1027,7 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
 
             {contentTab === "vocab" && (
               <LanguageTutorItemList
-                items={normalizeLanguageItems(orderedVocab, "bn")}
+                items={normalizeLanguageItems(individualDisplay ? displayedTutorItems : orderedVocab, "bn")}
                 kind="vocab"
                 scriptKey="script"
                 languageCode="bn"

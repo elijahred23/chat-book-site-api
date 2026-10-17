@@ -27,7 +27,7 @@ export default function LanguageTutorItemList({
   const isPhrases = kind === "phrases";
   return (
     <section className={styles.section}>
-      <div className={styles.heading}><span>{isPhrases ? "Speak in context" : "Build your foundation"}</span><h3>{items.length} {isPhrases ? "key phrases" : "vocabulary words"}</h3></div>
+      <div className={styles.heading}><span>{isPhrases ? "Speak in context" : "Build your foundation"}</span><h3>{items.length} {isPhrases ? `key phrase${items.length === 1 ? "" : "s"}` : `vocabulary word${items.length === 1 ? "" : "s"}`}</h3></div>
       {items.map((item, index) => (
         <article id={`${idPrefix}-${kind}-${index}`} className={styles.card} key={`${item[scriptKey]}-${index}`}>
           <div className={styles.copy}>

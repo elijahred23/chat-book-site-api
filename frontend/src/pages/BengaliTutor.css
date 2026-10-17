@@ -85,8 +85,18 @@
 .bn-page .bn-content-tabs .bn-tab { flex: 1 0 max-content; min-height: 42px; border: 0; border-radius: 10px; background: transparent; color: var(--bn-muted); box-shadow: none; }
 .bn-page .bn-content-tabs .bn-tab.active { background: var(--bn-primary); color: #fff; box-shadow: 0 7px 18px rgba(23,107,77,.2); }
 .bn-tutor-order-controls { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: stretch; gap: .65rem; }
+.bn-tutor-controls { display: grid; gap: .65rem; }
 .bn-tutor-order-controls .bn-tabs { min-width: 0; }
 .bn-page .bn-shuffle-btn { min-width: 10rem; box-shadow: none; }
+.bn-individual-controls { display: flex; align-items: center; gap: .65rem 1rem; flex-wrap: wrap; margin: 0; padding: .65rem .8rem; border: 1px solid var(--bn-line); border-radius: 12px; background: #f8faf8; }
+.bn-individual-controls legend { padding: 0 .3rem; color: var(--bn-muted); font-size: .72rem; font-weight: 850; letter-spacing: .06em; text-transform: uppercase; }
+.bn-individual-toggle, .bn-interval-control { display: inline-flex; align-items: center; gap: .4rem; color: var(--bn-ink); font-size: .88rem; font-weight: 750; }
+.bn-individual-toggle { cursor: pointer; }
+.bn-individual-toggle input { width: 1.1rem; height: 1.1rem; margin: 0; accent-color: var(--bn-primary); cursor: pointer; }
+.bn-interval-control input { width: 4.5rem; min-height: 38px; padding: .4rem; border: 1px solid var(--bn-line); border-radius: 8px; background: #fff; color: var(--bn-ink); font: inherit; }
+.bn-individual-navigation { display: flex; align-items: center; gap: .5rem; margin-left: auto; }
+.bn-individual-navigation .bn-btn { min-height: 38px; padding: .4rem .65rem; box-shadow: none; }
+.bn-individual-navigation output { min-width: 4.5rem; color: var(--bn-muted); font-size: .8rem; font-weight: 800; text-align: center; }
 .bn-page .bn-action-toggle { padding: .65rem .85rem !important; border-color: var(--bn-line) !important; background: #f8faf8 !important; }
 .bn-page .bn-action-toggle input { width: 1.1rem; height: 1.1rem; margin: 0; accent-color: var(--bn-primary); }
 .bn-action-area { display: grid; gap: .75rem; }
@@ -176,6 +186,9 @@ body.bn-tutor-window-open { overflow: hidden; }
   .bn-page .bn-lesson-card { padding: 1rem !important; }
   .bn-page .bn-content-tabs { margin-right: -1rem; margin-left: -1rem; padding-right: 1rem; padding-left: 1rem; border-right: 0; border-left: 0; border-radius: 0; }
   .bn-tutor-order-controls { grid-template-columns: 1fr; }
+  .bn-individual-controls { align-items: stretch; }
+  .bn-interval-control { flex: 1 1 auto; }
+  .bn-individual-navigation { width: 100%; margin-left: 0; justify-content: space-between; }
   .bn-page .bn-shuffle-btn { width: 100%; }
   .bn-page .bn-phrase-card { border-radius: 14px; }
   .bn-page .bn-phrase-card > div:first-child { align-items: flex-start !important; }
