@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState, useCallback } from "react";
 import PropTypes from "prop-types";
 import { FaVolumeHigh } from "react-icons/fa6";
-import { FaLanguage } from "react-icons/fa";
+import { FaLanguage, FaPause, FaPlay, FaChevronLeft, FaChevronRight, FaMinus, FaPlus } from "react-icons/fa";
 import ActionButtons from "../ui/ActionButtons.jsx";
 import { actions, useAppDispatch } from "../context/AppContext.jsx";
 import { withPhraseWords } from "../utils/bengaliPhraseBreakdown.js";
@@ -268,6 +268,7 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
   const [phraseShuffleVersion, setPhraseShuffleVersion] = useState(0);
   const [vocabShuffleVersion, setVocabShuffleVersion] = useState(0);
   const [individualDisplay, setIndividualDisplay] = useState(false);
+  const [individualSwitchingPaused, setIndividualSwitchingPaused] = useState(false);
   const [individualIndex, setIndividualIndex] = useState(0);
   const [individualAutoPlay, setIndividualAutoPlay] = useState(false);
   const [individualInterval, setIndividualInterval] = useState(() => {
@@ -410,13 +411,13 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
   }, [view, individualDisplay, individualAutoPlay, currentTutorText, safeIndividualIndex, speakSelectedBengali]);
 
   useEffect(() => {
-    if (!individualDisplay || activeTutorItems.length < 2) return undefined;
+    if (!individualDisplay || individualSwitchingPaused || activeTutorItems.length < 2) return undefined;
     const seconds = Math.max(0.1, Number(individualInterval) || 1);
     const timer = setInterval(() => {
       setIndividualIndex((index) => (index + 1) % activeTutorItems.length);
     }, seconds * 1000);
     return () => clearInterval(timer);
-  }, [activeTutorItems.length, individualDisplay, individualInterval]);
+  }, [activeTutorItems.length, individualDisplay, individualInterval, individualSwitchingPaused]);
 
   const breakdownWords = useMemo(() => {
     const uniqueWords = new Map();
@@ -1003,8 +1004,16 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
                         <input type="checkbox" checked={individualAutoPlay} onChange={(event) => setIndividualAutoPlay(event.target.checked)} />
                         <span>Auto-play current {contentTab === "phrases" ? "phrase" : "vocabulary word"} when switching</span>
                       </label>
-                      <label className="bn-interval-control">
+                      <div className="bn-interval-control">
                         <span>Switch every</span>
+                        <button
+                          type="button"
+                          className="bn-btn secondary bn-icon-btn"
+                          onClick={() => setIndividualInterval((value) => Math.max(0.1, (Number(value) || 1) - 0.1).toFixed(1))}
+                          disabled={Number(individualInterval) <= 0.1}
+                          aria-label="Decrease switch interval by 0.1 seconds"
+                          title="Decrease interval by 0.1 seconds (faster)"
+                        ><FaMinus aria-hidden="true" /></button>
                         <input
                           type="number"
                           min="0.1"
@@ -1014,12 +1023,29 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
                           onBlur={() => setIndividualInterval(Math.max(0.1, Number(individualInterval) || 1).toFixed(1))}
                           aria-label="Automatic switch interval in seconds"
                         />
+                        <button
+                          type="button"
+                          className="bn-btn secondary bn-icon-btn"
+                          onClick={() => setIndividualInterval((value) => (Math.max(0.1, Number(value) || 1) + 0.1).toFixed(1))}
+                          aria-label="Increase switch interval by 0.1 seconds"
+                          title="Increase interval by 0.1 seconds (slower)"
+                        ><FaPlus aria-hidden="true" /></button>
                         <span>seconds</span>
-                      </label>
+                      </div>
                       <div className="bn-individual-navigation">
-                        <button type="button" className="bn-btn secondary" onClick={() => setIndividualIndex((index) => (index - 1 + activeTutorItems.length) % activeTutorItems.length)} disabled={activeTutorItems.length < 2} aria-label="Show previous item">Previous</button>
+                        <button
+                          type="button"
+                          className="bn-btn secondary bn-icon-btn"
+                          onClick={() => setIndividualSwitchingPaused((paused) => !paused)}
+                          disabled={activeTutorItems.length < 2}
+                          aria-label={individualSwitchingPaused ? "Play automatic switching" : "Pause automatic switching"}
+                          title={individualSwitchingPaused ? "Play automatic switching" : "Pause automatic switching"}
+                        >
+                          {individualSwitchingPaused ? <FaPlay aria-hidden="true" /> : <FaPause aria-hidden="true" />}
+                        </button>
+                        <button type="button" className="bn-btn secondary bn-icon-btn" onClick={() => setIndividualIndex((index) => (index - 1 + activeTutorItems.length) % activeTutorItems.length)} disabled={activeTutorItems.length < 2} aria-label="Show previous item" title="Show previous item"><FaChevronLeft aria-hidden="true" /></button>
                         <output aria-live="polite">{activeTutorItems.length ? safeIndividualIndex + 1 : 0} of {activeTutorItems.length}</output>
-                        <button type="button" className="bn-btn secondary" onClick={() => setIndividualIndex((index) => (index + 1) % activeTutorItems.length)} disabled={activeTutorItems.length < 2} aria-label="Show next item">Next</button>
+                        <button type="button" className="bn-btn secondary bn-icon-btn" onClick={() => setIndividualIndex((index) => (index + 1) % activeTutorItems.length)} disabled={activeTutorItems.length < 2} aria-label="Show next item" title="Show next item"><FaChevronRight aria-hidden="true" /></button>
                       </div>
                     </>
                   )}
