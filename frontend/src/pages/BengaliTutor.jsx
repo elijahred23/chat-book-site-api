@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState, useCallback } from "react";
+import React, { useEffect, useMemo, useState, useCallback, useRef } from "react";
 import PropTypes from "prop-types";
 import { FaVolumeHigh } from "react-icons/fa6";
 import { FaLanguage, FaPause, FaPlay, FaChevronLeft, FaChevronRight, FaMinus, FaPlus } from "react-icons/fa";
@@ -271,6 +271,19 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
   const [individualSwitchingPaused, setIndividualSwitchingPaused] = useState(false);
   const [individualIndex, setIndividualIndex] = useState(0);
   const [individualAutoPlay, setIndividualAutoPlay] = useState(false);
+  const individualAudioContext = useRef(null);
+  const unlockIndividualAudio = () => {
+    if (bengaliVoice !== GOOGLE_BENGALI_VOICE_KEY) return;
+    const AudioContext = window.AudioContext || window.webkitAudioContext;
+    if (!AudioContext) return;
+    if (!individualAudioContext.current) individualAudioContext.current = new AudioContext();
+    individualAudioContext.current.resume().catch((error) => console.error("Autoplay audio activation failed:", error));
+  };
+
+  useEffect(() => () => {
+    individualAudioContext.current?.close().catch(() => {});
+    individualAudioContext.current = null;
+  }, []);
   const [individualInterval, setIndividualInterval] = useState(() => {
     try {
       const saved = Number(localStorage.getItem(`${gameStorageKey}_individual_interval`));
@@ -406,9 +419,33 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
   const currentTutorText = activeTutorItems[safeIndividualIndex]?.bn;
   useEffect(() => {
     if (view !== "tutor" || !individualDisplay || !individualAutoPlay || !currentTutorText) return undefined;
-    const timer = setTimeout(() => speakSelectedBengali(currentTutorText), 0);
-    return () => clearTimeout(timer);
-  }, [view, individualDisplay, individualAutoPlay, currentTutorText, safeIndividualIndex, speakSelectedBengali]);
+    let cancelled = false;
+    let source;
+    const timer = setTimeout(async () => {
+      try {
+        const context = individualAudioContext.current;
+        if (bengaliVoice !== GOOGLE_BENGALI_VOICE_KEY || !context) {
+          speakSelectedBengali(currentTutorText);
+          return;
+        }
+        const blob = await getGoogleTtsAudio(currentTutorText, "bn-IN");
+        const buffer = await context.decodeAudioData(await blob.arrayBuffer());
+        if (cancelled) return;
+        source = context.createBufferSource();
+        source.buffer = buffer;
+        source.connect(context.destination);
+        source.start();
+      } catch (error) {
+        if (!cancelled) console.error("Tutor autoplay failed:", error);
+      }
+    }, 0);
+    return () => {
+      cancelled = true;
+      clearTimeout(timer);
+      source?.stop();
+      source?.disconnect();
+    };
+  }, [view, individualDisplay, individualAutoPlay, currentTutorText, safeIndividualIndex, speakSelectedBengali, bengaliVoice]);
 
   useEffect(() => {
     if (!individualDisplay || individualSwitchingPaused || activeTutorItems.length < 2) return undefined;
@@ -1001,7 +1038,7 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
                   {individualDisplay && (
                     <>
                       <label className="bn-individual-toggle">
-                        <input type="checkbox" checked={individualAutoPlay} onChange={(event) => setIndividualAutoPlay(event.target.checked)} />
+                        <input type="checkbox" checked={individualAutoPlay} onChange={(event) => { if (event.target.checked) unlockIndividualAudio(); setIndividualAutoPlay(event.target.checked); }} />
                         <span>Auto-play current {contentTab === "phrases" ? "phrase" : "vocabulary word"} when switching</span>
                       </label>
                       <div className="bn-interval-control">
@@ -1036,7 +1073,7 @@ export default function BengaliTutor({ bengaliVoice = "", initialLesson, showLes
                         <button
                           type="button"
                           className="bn-btn secondary bn-icon-btn"
-                          onClick={() => setIndividualSwitchingPaused((paused) => !paused)}
+                          onClick={() => { if (individualSwitchingPaused && individualAutoPlay) unlockIndividualAudio(); setIndividualSwitchingPaused((paused) => !paused); }}
                           disabled={activeTutorItems.length < 2}
                           aria-label={individualSwitchingPaused ? "Play automatic switching" : "Pause automatic switching"}
                           title={individualSwitchingPaused ? "Play automatic switching" : "Pause automatic switching"}
