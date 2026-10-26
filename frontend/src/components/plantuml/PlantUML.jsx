@@ -70,6 +70,10 @@ export default function PlantUMLViewer() {
   const [diagramTitle, setDiagramTitle] = useState("PlantUML diagram");
   const [diagramType, setDiagramType] = useState("");
   const previewRef = useRef(null);
+  const previewPanelRef = useRef(null);
+  const stageRef = useRef(null);
+  const wheelCleanupRef = useRef(null);
+  const [isFullscreen, setIsFullscreen] = useState(false);
   const panzoomRef = useRef(null);
   const diagramUrlRef = useRef("");
   const renderRequestRef = useRef(0);
@@ -88,6 +92,8 @@ export default function PlantUMLViewer() {
   }, []);
 
   const clearPanzoom = useCallback(() => {
+    wheelCleanupRef.current?.();
+    wheelCleanupRef.current = null;
     panzoomRef.current?.destroy();
     panzoomRef.current = null;
   }, []);
@@ -130,17 +136,45 @@ export default function PlantUMLViewer() {
 
   const applyPanzoom = useCallback(() => {
     clearPanzoom();
-    const target = format === "svg"
-      ? previewRef.current?.contentDocument?.querySelector("svg")
-      : previewRef.current;
-    if (target) {
-      panzoomRef.current = Panzoom(target, {
-        contain: "outside",
-        maxScale: 8,
-        minScale: 0.2,
+    const target = previewRef.current;
+    const stage = stageRef.current;
+    if (target && stage) {
+      const panzoom = Panzoom(target, {
+        maxScale: 12,
+        minScale: 0.1,
+        step: 0.2,
       });
+      panzoomRef.current = panzoom;
+      const handleWheel = (event) => panzoom.zoomWithWheel(event);
+      stage.addEventListener("wheel", handleWheel, { passive: false });
+      wheelCleanupRef.current = () => stage.removeEventListener("wheel", handleWheel);
     }
-  }, [clearPanzoom, format]);
+  }, [clearPanzoom]);
+
+  useEffect(() => clearPanzoom, [clearPanzoom]);
+
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      setIsFullscreen(document.fullscreenElement === previewPanelRef.current);
+      window.requestAnimationFrame(() => panzoomRef.current?.reset({ animate: false }));
+    };
+    document.addEventListener("fullscreenchange", handleFullscreenChange);
+    return () => document.removeEventListener("fullscreenchange", handleFullscreenChange);
+  }, []);
+
+  const toggleFullscreen = async () => {
+    try {
+      if (document.fullscreenElement === previewPanelRef.current) {
+        await document.exitFullscreen();
+      } else if (previewPanelRef.current?.requestFullscreen) {
+        await previewPanelRef.current.requestFullscreen();
+      } else {
+        setError("Fullscreen is unavailable in this browser. Use Open PNG to view the diagram in a separate tab.");
+      }
+    } catch {
+      setError("Could not open fullscreen. Check your browser's fullscreen permissions.");
+    }
+  };
 
   const handleGenerateFromPrompt = async () => {
     if (!prompt.trim()) {
@@ -343,31 +377,48 @@ export default function PlantUMLViewer() {
           </div>
         </section>
 
-        <section className="uml-preview-panel" aria-label="Rendered diagram preview">
+        <section className={`uml-preview-panel ${darkMode ? "is-dark" : ""}`} aria-label="Rendered diagram preview" ref={previewPanelRef}>
           <div className="uml-preview-header">
             <div>
               <h3>{diagramTitle}</h3>
               {diagramType && <p>{diagramType}</p>}
             </div>
             <div className="uml-zoom-actions">
-              <button className="uml-icon-btn" onClick={() => panzoomRef.current?.zoomOut()} title="Zoom out" type="button"><FaSearchMinus /></button>
-              <button className="uml-icon-btn" onClick={() => panzoomRef.current?.zoomIn()} title="Zoom in" type="button"><FaSearchPlus /></button>
-              <button className="uml-icon-btn" onClick={() => panzoomRef.current?.reset()} title="Reset zoom" type="button"><FaCompressArrowsAlt /></button>
+              <button className="uml-btn" disabled={!diagramUrl} onClick={toggleFullscreen} type="button">
+                {isFullscreen ? <FaCompressArrowsAlt /> : <FaExpandArrowsAlt />}
+                {isFullscreen ? "Exit fullscreen" : "Fullscreen"}
+              </button>
+              <button className="uml-icon-btn" onClick={() => panzoomRef.current?.zoomOut()} aria-label="Zoom out" title="Zoom out" type="button"><FaSearchMinus /></button>
+              <button className="uml-icon-btn" onClick={() => panzoomRef.current?.zoomIn()} aria-label="Zoom in" title="Zoom in" type="button"><FaSearchPlus /></button>
+              <button className="uml-icon-btn" onClick={() => panzoomRef.current?.reset()} aria-label="Fit diagram" title="Fit diagram" type="button"><FaCompressArrowsAlt /></button>
             </div>
           </div>
 
-          <div className="uml-stage" aria-busy={rendering || loading}>
-            {diagramUrl && format === "svg" && (
-              <object
-                aria-label={diagramTitle}
-                data={diagramUrl}
-                onLoad={applyPanzoom}
-                ref={previewRef}
-                type="image/svg+xml"
-              />
-            )}
-            {diagramUrl && format === "png" && (
-              <img alt={diagramTitle} onLoad={applyPanzoom} ref={previewRef} src={diagramUrl} />
+          <p className="uml-navigation-hint">Scroll to zoom · Drag to pan · Pinch on touch screens · Fit to reset{isFullscreen ? " · Esc to exit" : ""}</p>
+          <div
+            className="uml-stage"
+            aria-busy={rendering || loading}
+            aria-label="Diagram canvas. Use arrow keys to pan, plus and minus to zoom, and zero to fit."
+            ref={stageRef}
+            tabIndex={0}
+            onKeyDown={(event) => {
+              const panzoom = panzoomRef.current;
+              if (!panzoom) return;
+              const directions = { ArrowLeft: [60, 0], ArrowRight: [-60, 0], ArrowUp: [0, 60], ArrowDown: [0, -60] };
+              if (directions[event.key]) {
+                event.preventDefault();
+                const [x, y] = directions[event.key];
+                panzoom.pan(x / panzoom.getScale(), y / panzoom.getScale(), { relative: true, animate: true });
+              } else if (["+", "=", "-", "0"].includes(event.key)) {
+                event.preventDefault();
+                if (event.key === "0") panzoom.reset();
+                else if (event.key === "-") panzoom.zoomOut();
+                else panzoom.zoomIn();
+              }
+            }}
+          >
+            {diagramUrl && (
+              <img alt={diagramTitle} draggable={false} onLoad={applyPanzoom} ref={previewRef} src={diagramUrl} />
             )}
             {!diagramUrl && <p className="uml-empty-state">Paste, upload, or generate PlantUML source.</p>}
             {(rendering || loading) && <div className="uml-loading">{loading ? "Generating diagram" : "Rendering diagram"}</div>}

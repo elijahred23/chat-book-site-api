@@ -216,7 +216,7 @@
   display: grid;
   place-items: center;
   min-height: 34rem;
-  overflow: auto;
+  overflow: hidden;
   border: 1px solid #d9e2ef;
   border-radius: 8px;
   background: #ffffff;
@@ -232,7 +232,9 @@
 .uml-stage img {
   display: block;
   width: min(100%, 58rem);
-  min-width: 18rem;
+  min-width: 0;
+  max-height: 65vh;
+  object-fit: contain;
   height: auto;
 }
 
@@ -312,4 +314,45 @@
   .uml-stage {
     min-height: 24rem;
   }
+}
+
+.uml-navigation-hint {
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.uml-stage:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+.uml-preview-panel:fullscreen {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  box-sizing: border-box;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+  color: #101827;
+  background: #ffffff;
+}
+
+.uml-preview-panel.is-dark:fullscreen {
+  background: #182133;
+  color: #f8fafc;
+}
+
+.uml-preview-panel:fullscreen .uml-stage {
+  flex: 1;
+  min-height: 0;
+}
+
+.uml-preview-panel:fullscreen .uml-stage img {
+  width: auto;
+  max-width: 100%;
+  max-height: calc(100vh - 12rem);
 }
