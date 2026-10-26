@@ -58,6 +58,8 @@ export default function PlantUMLViewer() {
   const { plantUMLPrompt } = useAppState();
   const [uml, setUml] = useState(starterUml);
   const [prompt, setPrompt] = useState("");
+  const [includeExplanation, setIncludeExplanation] = useState(false);
+  const [explanation, setExplanation] = useState(null);
   const [format, setFormat] = useState("svg");
   const [darkMode, setDarkMode] = useState(false);
   const [autoRender, setAutoRender] = useState(true);
@@ -149,8 +151,14 @@ export default function PlantUMLViewer() {
     try {
       setLoading(true);
       setError("");
-      const diagram = await generatePlantUmlDiagram(prompt.trim());
+      setExplanation(null);
+      const diagram = await generatePlantUmlDiagram(prompt.trim(), { includeExplanation });
       setUml(diagram.source);
+      setExplanation(diagram.explanation
+        ? { text: diagram.explanation, source: diagram.source }
+        : includeExplanation
+          ? { text: "The API returned no explanation. Restart the API to load the latest changes, then generate again with Include explanation checked.", source: diagram.source }
+          : null);
       setDiagramTitle(diagram.title || "Generated PlantUML diagram");
       setDiagramType(diagram.diagramType || "");
       await renderDiagram(diagram.source, format);
@@ -274,12 +282,34 @@ export default function PlantUMLViewer() {
               value={prompt}
             />
           </div>
+          <label className="uml-toggle">
+            <input
+              checked={includeExplanation}
+              disabled={loading}
+              onChange={(event) => setIncludeExplanation(event.target.checked)}
+              type="checkbox"
+            />
+            Include explanation
+          </label>
           <div className="uml-button-row">
             <button className="uml-btn" disabled={loading} onClick={handlePromptPaste} type="button"><FaClipboard /> Paste prompt</button>
             <button className="uml-btn uml-btn--primary" disabled={loading} onClick={handleGenerateFromPrompt} type="button">
               <FaBolt /> {loading ? "Generating" : "Generate"}
             </button>
           </div>
+
+          {(includeExplanation || explanation) && (
+            <section className="uml-explanation" aria-labelledby="uml-explanation-heading" aria-live="polite">
+              <h3 id="uml-explanation-heading">Diagram explanation</h3>
+              <p>{loading
+                ? "Generating diagram and explanation…"
+                : explanation?.source === uml
+                  ? explanation.text
+                  : explanation
+                    ? "The source has changed. Generate again with Include explanation checked to get an updated explanation."
+                    : "Check Include explanation, then click Generate to receive a plain-language explanation here."}</p>
+            </section>
+          )}
 
           <div className="uml-field uml-source-field">
             <label htmlFor="uml-source">PlantUML source</label>

@@ -6,11 +6,11 @@ async function readJsonResponse(response, fallbackMessage) {
   return data;
 }
 
-export async function generatePlantUmlDiagram(prompt) {
+export async function generatePlantUmlDiagram(prompt, { includeExplanation = false } = {}) {
   const response = await fetch(`${hostname}/plantuml/generate`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ prompt }),
+    body: JSON.stringify({ prompt, includeExplanation }),
   });
   const data = await readJsonResponse(response, "Could not generate a PlantUML diagram.");
   if (!data.diagram?.source) throw new Error("The generation response did not include PlantUML source.");

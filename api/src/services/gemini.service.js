@@ -342,7 +342,7 @@ function describePlantUmlResponse(rawResponse, parsed, parsedAsJson, source) {
     return details.join("; ");
 }
 
-async function generatePlantUmlDiagram(prompt, gemini_model = null) {
+async function generatePlantUmlDiagram(prompt, gemini_model = null, { includeExplanation = false } = {}) {
     const model = gemini_model || GeminiModel.currentModel;
     if (!model) throw new Error("Model not specified");
 
@@ -350,7 +350,10 @@ async function generatePlantUmlDiagram(prompt, gemini_model = null) {
         model,
         contents: prompt,
         config: {
-            systemInstruction: plantUmlSystemInstruction,
+            systemInstruction: `${plantUmlSystemInstruction}
+${includeExplanation
+                ? "Include an explanation field containing a clear plain-text explanation of the generated diagram, its main elements, relationships, and flow. Keep it consistent with source and separate from the PlantUML document."
+                : "Do not include an explanation field."}`,
             temperature: 0.2,
             maxOutputTokens: 8192,
             responseMimeType: "application/json",
@@ -366,12 +369,18 @@ async function generatePlantUmlDiagram(prompt, gemini_model = null) {
                         enum: plantUmlDiagramTypes,
                         description: "The single diagram type represented by source.",
                     },
+                    ...(includeExplanation ? {
+                        explanation: {
+                            type: Type.STRING,
+                            description: "A plain-language explanation of the diagram's purpose, elements, relationships, and flow. No Markdown or PlantUML source.",
+                        },
+                    } : {}),
                     source: {
                         type: Type.STRING,
                         description: "Only one complete, renderable PlantUML document, beginning with @startuml (or the appropriate PlantUML start marker) and ending with its matching end marker. No Markdown fences or surrounding prose.",
                     },
                 },
-                required: ["title", "diagramType", "source"],
+                required: ["title", "diagramType", "source", ...(includeExplanation ? ["explanation"] : [])],
             },
         },
     });
@@ -397,6 +406,12 @@ async function generatePlantUmlDiagram(prompt, gemini_model = null) {
     const diagramType = typeof parsed?.diagramType === "string" ? parsed.diagramType.trim() : "";
     if (!title || !plantUmlDiagramTypes.includes(diagramType)) {
         throw new Error(`Gemini returned invalid PlantUML response metadata (${responseDescription}; title: ${title ? "present" : "missing"}; diagramType: ${diagramType || "missing"}).`);
+    }
+
+    if (includeExplanation) {
+        const explanation = typeof parsed?.explanation === "string" ? parsed.explanation.trim() : "";
+        if (!explanation) throw new Error("Gemini did not return the requested diagram explanation.");
+        return { title, diagramType, source, explanation };
     }
 
     return { title, diagramType, source };

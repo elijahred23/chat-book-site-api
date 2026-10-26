@@ -18,11 +18,15 @@ export async function renderPlantUml(req, res) {
 }
 
 export async function generatePlantUml(req, res) {
-  const { prompt } = req.body || {};
+  const { prompt, includeExplanation = false } = req.body || {};
   if (typeof prompt !== 'string' || !prompt.trim()) {
     return res.status(400).send({ error: 'Bad Request', message: 'Describe the diagram you want to generate.' });
   }
 
-  const diagram = await generatePlantUmlDiagram(prompt.trim());
+  if (typeof includeExplanation !== 'boolean') {
+    return res.status(400).send({ error: 'Bad Request', message: 'includeExplanation must be a boolean.' });
+  }
+
+  const diagram = await generatePlantUmlDiagram(prompt.trim(), null, { includeExplanation });
   return res.send({ diagram, message: 'success' });
 }

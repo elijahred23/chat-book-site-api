@@ -254,6 +254,28 @@
   box-shadow: 0 8px 18px rgba(29, 78, 216, 0.26);
 }
 
+.uml-explanation {
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 0.875rem;
+}
+
+.is-dark .uml-explanation {
+  border-color: #334155;
+}
+
+.uml-explanation h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.uml-explanation p {
+  margin: 0.5rem 0 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  line-height: 1.6;
+}
+
 .uml-error {
   margin: 0;
   border: 1px solid #fecaca;
